@@ -1,0 +1,34 @@
+{
+  "name": "@pixiv-elements/utils",
+  "version": "3.0.0",
+  "license": "UNLICENSED",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle -f modern,esm,cjs --tsconfig tsconfig.build.json",
+    "typecheck": "tsc --noEmit --project tsconfig.build.json",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "microbundle": "^0.14.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@pixiv-elements/theme": "^4.0.0",
+    "polished": "^4.1.4"
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
+}

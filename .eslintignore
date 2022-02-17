@@ -1,0 +1,10 @@
+dist/
+node_modules/
+__snapshots__/
+.yarn/
+/docs/
+/public/
+/storybook-static/
+/coverage/
+
+/packages/tailwind-diff-cli/bin/tailwind-diff.js

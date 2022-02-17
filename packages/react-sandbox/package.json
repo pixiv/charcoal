@@ -1,0 +1,68 @@
+{
+  "name": "@pixiv-elements/react-sandbox",
+  "version": "1.0.1",
+  "license": "UNLICENSED",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle -f modern,esm,cjs --tsconfig tsconfig.build.json",
+    "typecheck": "tsc --noEmit --project tsconfig.build.json",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.17",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addons": "^6.4.17",
+    "@storybook/api": "^6.4.17",
+    "@storybook/components": "^6.4.17",
+    "@storybook/core-events": "^6.4.17",
+    "@storybook/react": "^6.4.17",
+    "@storybook/theming": "^6.4.17",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/jest-axe": "^3.5.3",
+    "@types/react": "^17.0.38",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.21",
+    "@types/warning": "^3.0.0",
+    "jest-axe": "^5.0.1",
+    "microbundle": "^0.14.2",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "react-spring": "^9.4.2",
+    "rimraf": "^3.0.2",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@pixiv-elements/foundation": "^1.0.0",
+    "@pixiv-elements/pixiv-theme": "^5.0.0",
+    "@pixiv-elements/react": "^1.0.1",
+    "@pixiv-elements/styled": "^3.0.1",
+    "@pixiv-elements/utils": "^3.0.0",
+    "polished": "^4.1.4",
+    "warning": "^4.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1",
+    "react-spring": "^9.0.0-beta.34",
+    "styled-components": ">=5.1.1"
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "example-npm",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwind build source.css -o dump.css"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.0.0"
+  }
+}

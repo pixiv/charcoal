@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "module": "esnext",
+    "types": ["jest", "node"],
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    // "noUncheckedIndexedAccess": true
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": true,
+    "paths": {
+      "@pixiv-elements/*": ["./packages/*/src"]
+    }
+  }
+}

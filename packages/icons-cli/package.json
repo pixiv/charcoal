@@ -1,0 +1,50 @@
+{
+  "name": "@pixiv-elements/icons-cli",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/index.cjs",
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle -f modern,esm,cjs --tsconfig tsconfig.build.json --target node",
+    "typecheck": "tsc --noEmit --project tsconfig.build.json",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@gitbeaker/core": "^25.6.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jsdom": "^16.2.14",
+    "@types/parse5": "^6.0.3",
+    "@types/svgo": "^1.3.3",
+    "@types/yargs": "^17.0.8",
+    "microbundle": "^0.14.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@gitbeaker/node": "^25.6.0",
+    "@octokit/rest": "^18.12.0",
+    "camelcase": "^6.3.0",
+    "figma-js": "^1.14.0",
+    "fs-extra": "^10.0.0",
+    "got": "^11.8.3",
+    "jsdom": "^19.0.0",
+    "p-queue": "^6.6.2",
+    "path-to-regexp": "^6.2.0",
+    "polished": "^4.1.4",
+    "svgo": "^1.3.2",
+    "yargs": "^17.3.1"
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "conventionalCommits": false,
+  "command": {
+    "version": {
+      "message": "chore: publish [skip ci]"
+    },
+    "publish": {
+      "verifyAccess": false,
+      "conventionalCommits": true,
+      "changelog": false,
+      "graphType": "all"
+    },
+    "run": {
+      "stream": true,
+      "loglevel": "success"
+    }
+  }
+}

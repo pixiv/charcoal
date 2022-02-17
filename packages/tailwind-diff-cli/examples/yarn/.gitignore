@@ -1,0 +1,18 @@
+node_modules/
+
+# yarn 2 files
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+._.DS_Store
+.DS_Store
+npm-debug.log
+yarn-error.log
+lerna-debug.log
+.rakeTasks
+.vscode
+.yarn-cache
