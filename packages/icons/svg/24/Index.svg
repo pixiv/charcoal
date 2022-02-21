@@ -1,8 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 7C9 6.44772 9.44772 6 10 6H19C19.5523 6 20 6.44772 20 7C20 7.55228 19.5523 8 19 8H10C9.44772 8 9 7.55228 9 7Z" fill="#858585"/>
-<path d="M9 12C9 11.4477 9.44772 11 10 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H10C9.44772 13 9 12.5523 9 12Z" fill="#858585"/>
-<path d="M10 16C9.44772 16 9 16.4477 9 17C9 17.5523 9.44772 18 10 18H19C19.5523 18 20 17.5523 20 17C20 16.4477 19.5523 16 19 16H10Z" fill="#858585"/>
-<rect x="4" y="5.5" width="3" height="3" rx="1.5" fill="#858585"/>
-<rect x="4" y="10.5" width="3" height="3" rx="1.5" fill="#858585"/>
-<rect x="4" y="15.5" width="3" height="3" rx="1.5" fill="#858585"/>
-</svg>
+<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7a1 1 0 011-1h9a1 1 0 110 2h-9a1 1 0 01-1-1zM9 12a1 1 0 011-1h9a1 1 0 110 2h-9a1 1 0 01-1-1zM10 16a1 1 0 100 2h9a1 1 0 100-2h-9z" fill="currentColor"></path><rect x="4" y="5.5" width="3" height="3" rx="1.5" fill="currentColor"></rect><rect x="4" y="10.5" width="3" height="3" rx="1.5" fill="currentColor"></rect><rect x="4" y="15.5" width="3" height="3" rx="1.5" fill="currentColor"></rect></svg>
