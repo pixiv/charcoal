@@ -21,12 +21,12 @@ jobs:
 
       - name: Build
         run: |
-          yarn build-storybook -o public --quiet
-          cp .storybook/badge.svg public/storybook-badge.svg
-          mv website public/docs
+          yarn build-storybook -o docs --quiet
+          cp .storybook/badge.svg docs/storybook-badge.svg
+          mv website docs/website
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: docs
