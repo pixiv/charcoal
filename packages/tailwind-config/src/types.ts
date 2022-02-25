@@ -1,4 +1,4 @@
-import { Material, Theme } from '@pixiv-elements/theme'
+import { Material, Theme } from '@charcoal/theme'
 
 export type TailwindVersion = 'v1' | 'v2' | 'v3'
 

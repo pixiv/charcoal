@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from 'storybook-dark-mode'
-import createTheme from '@pixiv-elements/styled'
+import createTheme from '@charcoal/styled'
 
 const { light, dark } = createTheme
 

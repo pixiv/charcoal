@@ -1,4 +1,4 @@
-import { Theme, Effect } from '@pixiv-elements/theme'
+import { Theme, Effect } from '@charcoal/theme'
 
 export const GRID_COUNT = 12
 

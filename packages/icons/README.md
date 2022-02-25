@@ -1,11 +1,11 @@
-# `@pixiv-elements/icons`
+# `@charcoal/icons`
 
 Icon library for PIXIV products, written as a [custom element](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_custom_elements).
 
 ### Install
 
 ```
-$ yarn add @pixiv-elements/icons
+$ yarn add @charcoal/icons
 ```
 
 ### How to use
@@ -13,7 +13,7 @@ $ yarn add @pixiv-elements/icons
 Import once in the entrypoint of your project. For Storybook, `preview.(js|ts)` would be the place.
 
 ```ts
-import '@pixiv-elements/icons'
+import '@charcoal/icons'
 ```
 
 Then you can write `<pixiv-icon>` tag in your markup.
@@ -39,7 +39,7 @@ You need to name the new icon like `${size}/${name}`.
 And if you like to use `<pixiv-icon>` in TypeScript environment, you need to extend `KnownIconType` in your d.ts!
 
 ```ts
-import PixivIcon from '@pixiv-elements/icons'
+import PixivIcon from '@charcoal/icons'
 import NewFeature from './NewFeature.svg'
 
 PixivIcon.extend({
@@ -48,7 +48,7 @@ PixivIcon.extend({
   '32/NewFeature': NewFeature,
 })
 
-declare module '@pixiv-elements/icons' {
+declare module '@charcoal/icons' {
   export interface KnownIconType {
     '16/NewFeature': unknown
     '24/NewFeature': unknown
@@ -66,7 +66,7 @@ https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
 If you like to pass `className` (e.g. you are using `styled-components`), you need to create a wrapper component to forward `className`.
 
 ```tsx
-import { Props as IconProps } from '@pixiv-elements/icons'
+import { Props as IconProps } from '@charcoal/icons'
 
 interface Props extends Omit<IconProps, 'class'> {
   className?: string

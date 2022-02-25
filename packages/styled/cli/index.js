@@ -1,11 +1,11 @@
-import createTheme from '@pixiv-elements/styled'
+import createTheme from '@charcoal/styled'
 import fs from 'fs'
 import { parseToRgb } from 'polished'
 
 /**
  * transform color string to [0, 1] clamped value of color object
  *
- * @param { import('@pixiv-elements/theme').Material } material
+ * @param { import('@charcoal/theme').Material } material
  */
 function parseMaterial(material) {
   const { red, green, blue, ...rest } = parseToRgb(material)

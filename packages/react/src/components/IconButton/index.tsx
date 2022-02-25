@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
-import type { KnownIconType } from '@pixiv-elements/icons'
+import type { KnownIconType } from '@charcoal/icons'
 
 type Variant = 'Default' | 'Overlay'
 type Size = 'XS' | 'S' | 'M'

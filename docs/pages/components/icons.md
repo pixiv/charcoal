@@ -1,4 +1,4 @@
-# `@pixiv-elements/icons`
+# `@charcoal/icons`
 
 ピクシブのすべてのプロダクトで利用可能なアイコンライブラリです。中身
 は[Custom Element](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_custom_elements)と
@@ -7,7 +7,7 @@
 ### インストール
 
 ```
-$ yarn add @pixiv-elements/icons
+$ yarn add @charcoal/icons
 ```
 
 ### 使い方
@@ -16,7 +16,7 @@ $ yarn add @pixiv-elements/icons
 良いでしょう。
 
 ```ts
-import '@pixiv-elements/icons'
+import '@charcoal/icons'
 ```
 
 これだけで、 `<pixiv-icon>` という HTML タグが利用可能になります。
@@ -46,7 +46,7 @@ TypeScript 環境下では、`KnownIconType` という型を拡張すること�
 くようになります。
 
 ```ts
-import PixivIcon from '@pixiv-elements/icons'
+import PixivIcon from '@charcoal/icons'
 import NewFeature from './NewFeature.svg'
 
 PixivIcon.extend({
@@ -55,7 +55,7 @@ PixivIcon.extend({
   '32/NewFeature': NewFeature,
 })
 
-declare module '@pixiv-elements/icons' {
+declare module '@charcoal/icons' {
   export interface KnownIconType {
     '16/NewFeature': unknown
     '24/NewFeature': unknown
@@ -74,7 +74,7 @@ https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
 ントを作ってください。
 
 ```tsx
-import { Props as IconProps } from '@pixiv-elements/icons'
+import { Props as IconProps } from '@charcoal/icons'
 
 interface Props extends Omit<IconProps, 'class'> {
   className?: string

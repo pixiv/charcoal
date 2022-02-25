@@ -1,5 +1,5 @@
 {
-  "name": "@pixiv-elements/pixiv-theme",
+  "name": "@charcoal/pixiv-theme",
   "version": "5.0.0",
   "license": "UNLICENSED",
   "type": "module",
@@ -28,8 +28,8 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@pixiv-elements/foundation": "^1.0.0",
-    "@pixiv-elements/theme": "^4.0.0",
+    "@charcoal/foundation": "^1.0.0",
+    "@charcoal/theme": "^4.0.0",
     "polished": "^4.1.4"
   },
   "files": [

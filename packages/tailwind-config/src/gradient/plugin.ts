@@ -1,11 +1,11 @@
 import plugin from 'tailwindcss/plugin'
 import { camelToKebab, flatMapObject, mapKeys, mapObject } from '../util'
-import { GradientMaterial, ThemeColorGradient } from '@pixiv-elements/theme'
+import { GradientMaterial, ThemeColorGradient } from '@charcoal/theme'
 import {
   applyEffectToGradient,
   gradient,
   GradientDirection,
-} from '@pixiv-elements/utils'
+} from '@charcoal/utils'
 import { Values } from '../types'
 import { MergedEffect } from '../foundation'
 

@@ -6,7 +6,7 @@ import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import { Story } from '../_lib/compat'
 import ComponentAbstraction, { DefaultLink } from '../core/ComponentAbstraction'
-import createTheme from '@pixiv-elements/styled'
+import createTheme from '@charcoal/styled'
 const { light, dark } = createTheme
 
 expect.extend(toHaveNoViolations)

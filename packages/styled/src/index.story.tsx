@@ -2,8 +2,8 @@ import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
 import { ElementsTheme } from './theme'
 import createTheme, { ThemeProp } from '.'
-import { GradientMaterial } from '@pixiv-elements/theme'
-import { disabledSelector } from '@pixiv-elements/utils'
+import { GradientMaterial } from '@charcoal/theme'
+import { disabledSelector } from '@charcoal/utils'
 
 export default {
   title: 'styled',

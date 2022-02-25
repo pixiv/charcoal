@@ -14,7 +14,7 @@
     "declaration": true,
     "declarationMap": true,
     "paths": {
-      "@pixiv-elements/*": ["./packages/*/src"]
+      "@charcoal/*": ["./packages/*/src"]
     }
   }
 }

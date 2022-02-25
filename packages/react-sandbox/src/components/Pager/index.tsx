@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import warning from 'warning'
 import DotsIcon from '../icons/DotsIcon'
 import WedgeIcon, { WedgeDirection } from '../icons/WedgeIcon'
-import { useComponentAbstraction } from '@pixiv-elements/react'
+import { useComponentAbstraction } from '@charcoal/react'
 
 declare const __DEV__: object | undefined // actually object|false, but using undefined allows ! assertion
 

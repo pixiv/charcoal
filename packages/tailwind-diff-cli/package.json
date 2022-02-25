@@ -1,5 +1,5 @@
 {
-  "name": "@pixiv-elements/tailwind-diff",
+  "name": "@charcoal/tailwind-diff",
   "version": "1.0.1",
   "bin": "bin/tailwind-diff.js",
   "scripts": {

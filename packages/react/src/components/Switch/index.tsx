@@ -4,7 +4,7 @@ import React, { useRef, useMemo } from 'react'
 import { useToggleState } from 'react-stately'
 import styled from 'styled-components'
 import { theme } from '../../styled'
-import { disabledSelector, px } from '@pixiv-elements/utils'
+import { disabledSelector, px } from '@charcoal/utils'
 
 export type SwitchProps = {
   name: string

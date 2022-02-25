@@ -3,8 +3,8 @@ import {
   halfLeading,
   typography,
   TypographyDescriptor,
-} from '@pixiv-elements/foundation'
-import { px } from '@pixiv-elements/utils'
+} from '@charcoal/foundation'
+import { px } from '@charcoal/utils'
 import { mapObject } from '../util'
 
 const leadingCancel = {

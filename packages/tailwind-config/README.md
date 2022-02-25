@@ -1,4 +1,4 @@
-# `@pixiv-elements/tailwind-config`
+# `@charcoal/tailwind-config`
 
 Provides tailwind.css config based on PIXIV Design System.
 
@@ -7,13 +7,13 @@ Provides tailwind.css config based on PIXIV Design System.
 When you just use default config,
 
 ```js:tailwind.config.js
-module.exports = require('@pixiv-elements/tailwind-config').default;
+module.exports = require('@charcoal/tailwind-config').default;
 ```
 
 or if you prefer
 
 ```js:tailwind.config.js
-const { createTailwindConfig } = require('@pixiv-elements/tailwind-config')
+const { createTailwindConfig } = require('@charcoal/tailwind-config')
 
 // pass color theme
 module.exports = createTailwindConfig({ theme: yourColorTheme });

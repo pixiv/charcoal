@@ -4,7 +4,7 @@ import {
   LinkProps,
   useComponentAbstraction,
 } from '../../core/ComponentAbstraction'
-import { disabledSelector } from '@pixiv-elements/utils'
+import { disabledSelector } from '@charcoal/utils'
 
 interface BaseProps {
   /**

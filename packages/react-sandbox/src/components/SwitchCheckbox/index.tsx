@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled, { css } from 'styled-components'
-import { applyEffect } from '@pixiv-elements/utils'
+import { applyEffect } from '@charcoal/utils'
 
 export interface Props extends React.ComponentPropsWithoutRef<'input'> {
   gtmClass?: string

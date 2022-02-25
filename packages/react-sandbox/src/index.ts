@@ -30,10 +30,7 @@ export {
 export { default as SwitchCheckbox } from './components/SwitchCheckbox'
 export { TextEllipsis } from './components/TextEllipsis'
 export { default as WithIcon } from './components/WithIcon'
-export {
-  ComponentAbstraction,
-  useComponentAbstraction,
-} from '@pixiv-elements/react'
+export { ComponentAbstraction, useComponentAbstraction } from '@charcoal/react'
 export {
   MAIN_COLUMN_HORIZONTAL_MIN_MARGIN,
   RESPONSIVE_LEFT_WIDTH,

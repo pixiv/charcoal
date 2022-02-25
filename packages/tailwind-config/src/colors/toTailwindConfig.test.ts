@@ -1,5 +1,5 @@
 import { colorsToTailwindConfig } from './toTailwindConfig'
-import { light } from '@pixiv-elements/pixiv-theme'
+import { light } from '@charcoal/pixiv-theme'
 import { mergeEffect } from '../foundation'
 
 describe('colors/colorsToTailwindConfig', () => {

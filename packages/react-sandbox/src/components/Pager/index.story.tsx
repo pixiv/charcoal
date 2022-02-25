@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import { Story } from '../../_lib/compat'
 import Pager, { LinkPager } from '.'
-import { ComponentAbstraction } from '@pixiv-elements/react'
+import { ComponentAbstraction } from '@charcoal/react'
 
 export default {
   title: 'Sandbox/Pager',

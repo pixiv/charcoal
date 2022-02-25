@@ -1,3 +1,3 @@
-# `@pixiv-elements/icons-cli`
+# `@charcoal/icons-cli`
 
 SVG Icon collectors & merge request creator

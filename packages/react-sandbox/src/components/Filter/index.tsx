@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { useComponentAbstraction, LinkProps } from '@pixiv-elements/react'
-import { maxWidth } from '@pixiv-elements/utils'
+import { useComponentAbstraction, LinkProps } from '@charcoal/react'
+import { maxWidth } from '@charcoal/utils'
 
 interface Props<T extends HTMLElement> {
   active?: boolean

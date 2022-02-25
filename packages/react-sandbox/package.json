@@ -1,5 +1,5 @@
 {
-  "name": "@pixiv-elements/react-sandbox",
+  "name": "@charcoal/react-sandbox",
   "version": "1.0.1",
   "license": "UNLICENSED",
   "type": "module",
@@ -47,11 +47,11 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@pixiv-elements/foundation": "^1.0.0",
-    "@pixiv-elements/pixiv-theme": "^5.0.0",
-    "@pixiv-elements/react": "^1.0.1",
-    "@pixiv-elements/styled": "^3.0.1",
-    "@pixiv-elements/utils": "^3.0.0",
+    "@charcoal/foundation": "^1.0.0",
+    "@charcoal/pixiv-theme": "^5.0.0",
+    "@charcoal/react": "^1.0.1",
+    "@charcoal/styled": "^3.0.1",
+    "@charcoal/utils": "^3.0.0",
     "polished": "^4.1.4",
     "warning": "^4.0.3"
   },

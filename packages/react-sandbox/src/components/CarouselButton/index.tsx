@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { unreachable } from '../../foundation/utils'
 import NextIcon, { WedgeDirection } from '../icons/NextIcon'
-import { applyEffect } from '@pixiv-elements/utils'
+import { applyEffect } from '@charcoal/utils'
 
 export enum Direction {
   Right = 'right',

@@ -8,7 +8,7 @@ import TextField, {
   SingleLineTextFieldProps,
   TextFieldProps,
 } from '.'
-import { px } from '@pixiv-elements/utils'
+import { px } from '@charcoal/utils'
 
 export default {
   title: 'TextField',

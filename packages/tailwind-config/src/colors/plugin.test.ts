@@ -1,5 +1,5 @@
 import { defineCssVariables } from './plugin'
-import { dark, light } from '@pixiv-elements/pixiv-theme'
+import { dark, light } from '@charcoal/pixiv-theme'
 
 describe('colors/plugin/defineCssVariables', () => {
   const DARK = '@media(prefers-color-scheme: dark)'

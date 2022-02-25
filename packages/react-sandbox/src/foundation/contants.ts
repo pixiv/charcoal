@@ -1,4 +1,4 @@
-import { columnPx, GUTTER_UNIT } from '@pixiv-elements/foundation'
+import { columnPx, GUTTER_UNIT } from '@charcoal/foundation'
 
 export const MAIN_COLUMN_HORIZONTAL_MIN_MARGIN = 72
 

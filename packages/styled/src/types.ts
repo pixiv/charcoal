@@ -1,10 +1,10 @@
-import { TypographyDescriptor } from '@pixiv-elements/foundation'
+import { TypographyDescriptor } from '@charcoal/foundation'
 import {
   Effect,
   GradientMaterial,
   Material,
   OpacityEffect,
-} from '@pixiv-elements/theme'
+} from '@charcoal/theme'
 
 export type EffectType = 'hover' | 'press' | 'disabled'
 

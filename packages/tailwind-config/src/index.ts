@@ -15,9 +15,9 @@ import {
   spacing,
   borderRadius,
   breakpoint,
-} from '@pixiv-elements/foundation'
-import { light } from '@pixiv-elements/pixiv-theme'
-import { px } from '@pixiv-elements/utils'
+} from '@charcoal/foundation'
+import { light } from '@charcoal/pixiv-theme'
+import { px } from '@charcoal/utils'
 import { colorsToTailwindConfig } from './colors/toTailwindConfig'
 
 import cssVariableColorPlugin from './colors/plugin'

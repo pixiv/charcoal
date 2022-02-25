@@ -1,4 +1,4 @@
-import { GradientMaterial, Material } from '@pixiv-elements/theme'
+import { GradientMaterial, Material } from '@charcoal/theme'
 
 export const COLOR_PREFIX = '--tailwind-color-'
 

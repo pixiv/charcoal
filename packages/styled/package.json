@@ -1,5 +1,5 @@
 {
-  "name": "@pixiv-elements/styled",
+  "name": "@charcoal/styled",
   "version": "3.0.1",
   "license": "UNLICENSED",
   "type": "module",
@@ -32,10 +32,10 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@pixiv-elements/foundation": "^1.0.0",
-    "@pixiv-elements/pixiv-theme": "^5.0.0",
-    "@pixiv-elements/theme": "^4.0.0",
-    "@pixiv-elements/utils": "^3.0.0",
+    "@charcoal/foundation": "^1.0.0",
+    "@charcoal/pixiv-theme": "^5.0.0",
+    "@charcoal/theme": "^4.0.0",
+    "@charcoal/utils": "^3.0.0",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
