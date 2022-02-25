@@ -27,7 +27,7 @@
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
     "release": "yarn run clean && yarn run build && lerna publish",
     "postpublish": "./postpublish.sh",
-    "website": "docsify serve website -p 5000"
+    "website": "docsify serve docs -p 5000"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
