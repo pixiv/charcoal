@@ -2,7 +2,6 @@ dist/
 node_modules/
 __snapshots__/
 .yarn/
-/docs/
 /public/
 /storybook-static/
 /coverage/
