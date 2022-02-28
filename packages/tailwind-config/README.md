@@ -70,7 +70,7 @@ module.exports = {
 
 charcoal は Tailwind.css の通常のダークモード（ `dark:〇〇` 系のクラス ）をサポートしません。
 
-なぜなら、charcoal において「色」は同じ名前で light テーマと dark テーマで違うカラーコードであり得るからです。
+なぜなら charcoal における「色」は、同じ名前でも light テーマと dark テーマで違うカラーコードであり得るからです。
 
 これを表現するために `@charcoal/tailwind-config` では `theme` というオプションを受け取ります。
 
@@ -84,7 +84,7 @@ createTailwindConfig({
 })
 ```
 
-↑ は、`:root`（つまり通常ケース）では light テーマを、OS の設定がダークモードである場合は dark テーマを使用することを表現します。`:root` は必須のキーであり、ダークテーマ対応を行わないサービスであっても、必ず自身のプロダクトのカラーテーマを渡す必要があります。
+↑ は、`:root`（つまり通常ケース）では light テーマを、システムの設定がダークモードである場合は dark テーマを使用することを表現します。`:root` は必須のキーであり、ダークテーマ対応を行わないサービスであっても、必ず自身のプロダクトのカラーテーマを渡す必要があります。
 
 `theme` をこのように書くと、`tailwind-config` は内部的に以下のような CSS Variables を生成します。
 
@@ -110,12 +110,19 @@ createTailwindConfig({
 
 ```js
 {
-  // これは間違い！！
-  '@media (prefers-color-scheme: dark)': { ':root': dark },
+  theme: {
+    // これは間違い！！
+    '@media (prefers-color-scheme: dark)': {
+      ':root': dark
+    },
+
+    // 正しくはこう
+    '@media (prefers-color-scheme: dark)': dark
+  }
 }
 ```
 
-theme のキーとして通常のセレクタを指定することもできます。これにより、ダークモードの切り替えが DOM の状態に依存するケースにも対応します。
+theme のキーとして通常のセレクタを指定することもできます。これにより、ダークモードの切り替えが DOM の状態に依存するケースにも対応します。`localStorage` など JS での切り替えを実装しているアプリケーションはこちらの方式（何かしら CSS セレクタで表現できる方法）を使ってください。
 
 ```js
 createTailwindConfig({
