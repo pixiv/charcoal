@@ -1,6 +1,6 @@
 # `@charcoal/icons`
 
-ピクシブのすべてのプロダクトで利用可能なアイコンライブラリです。中身は[Custom Element](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_custom_elements)として実装されています。
+SVG アイコンを [Custom Elements](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_custom_elements)として利用できるライブラリです。
 
 ### インストール
 
