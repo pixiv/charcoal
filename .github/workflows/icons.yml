@@ -1,0 +1,28 @@
+on:
+  schedule:
+    # only on weekday, at 1:00 UTC ( 10:00 JST )
+    - cron: '0 1 * * 1-5'
+
+  workflow_dispatch:
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install deps
+        run: yarn install
+
+      - name: Export
+        run: yarn icons-cli figma:export
+
+      - name: Optimize
+        run: ./icons-cli-optimize.sh
+
+      - name: Create a Pull Request
+        run: yarn icons-cli github:pr
