@@ -19,13 +19,23 @@ jobs:
       - name: Install deps
         run: |
           yarn install
+          cd packages/icons-cli
           yarn build
 
       - name: Export
+        env:
+          FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          OUTPUT_ROOT_DIR: ${{ secrets.OUTPUT_ROOT_DIR }}
         run: yarn icons-cli figma:export
 
       - name: Optimize
         run: ./icons-cli-optimize.sh
 
       - name: Create a Pull Request
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO_OWNER: pixiv
+          GITHUB_REPO_NAME: charcoal
+          GITHUB_DEFAULT_BRANCH: main
         run: yarn icons-cli github:pr
