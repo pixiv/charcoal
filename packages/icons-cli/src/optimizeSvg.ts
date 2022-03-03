@@ -31,28 +31,37 @@ export async function optimizeSvg(input: string, convertedColor: string) {
   return svg.outerHTML
 }
 
+const TARGET_ATTRS = ['fill', 'stroke']
+
 function convertToCurrentColor(svg: SVGSVGElement, convertedColor: string) {
-  const filled = Array.from(svg.querySelectorAll<SVGElement>('[fill]'))
   const targetColor = parseColor(convertedColor)
   if (!targetColor) {
     throw new Error(`${convertedColor} is not a valid color`)
   }
 
-  for (const el of filled) {
-    const fill = parseColor(el.getAttribute('fill')!)
-    if (!fill) {
-      continue
-    }
+  for (const attr of TARGET_ATTRS) {
+    const targets = Array.from(svg.querySelectorAll<SVGElement>(`[${attr}]`))
 
-    if (!colorEquals(fill, targetColor)) {
-      continue
-    }
+    for (const el of targets) {
+      const value = parseColor(el.getAttribute(attr))
+      if (!value) {
+        continue
+      }
 
-    el.setAttribute('fill', 'currentColor')
+      if (!colorEquals(value, targetColor)) {
+        continue
+      }
+
+      el.setAttribute(attr, 'currentColor')
+    }
   }
 }
 
-function parseColor(value: string) {
+function parseColor(value: string | null) {
+  if (value == null) {
+    return null
+  }
+
   try {
     return parseToRgb(value)
   } catch {
