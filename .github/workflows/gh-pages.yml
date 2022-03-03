@@ -18,6 +18,18 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
       - name: Prepare deps
         run: |
           yarn install
@@ -25,12 +37,12 @@ jobs:
 
       - name: Output files
         run: |
-          yarn build-storybook -o docs --quiet
-          cp .storybook/badge.svg docs/storybook-badge.svg
-          mv website docs/website
+          yarn build-storybook -o public --quiet
+          cp .storybook/badge.svg public/storybook-badge.svg
+          mv docs public/docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs
+          publish_dir: public
