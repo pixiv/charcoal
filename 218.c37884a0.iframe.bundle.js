@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[218],{"./packages/icons/svg/32/SansSerif.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/SansSerif.5a874e39.svg"}}]);

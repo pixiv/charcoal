@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[74],{"./packages/icons/svg/24/FaceEdit.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/FaceEdit.013504ea.svg"}}]);

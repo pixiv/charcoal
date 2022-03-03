@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[31],{"./packages/icons/svg/24/AddPeople.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/AddPeople.50fef237.svg"}}]);

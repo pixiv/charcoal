@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[44],{"./packages/icons/svg/24/BringBackward.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/BringBackward.05f1a6ee.svg"}}]);
