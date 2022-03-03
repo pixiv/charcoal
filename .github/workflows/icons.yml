@@ -17,7 +17,9 @@ jobs:
           node-version: '16'
 
       - name: Install deps
-        run: yarn install
+        run: |
+          yarn install
+          yarn build
 
       - name: Export
         run: yarn icons-cli figma:export
