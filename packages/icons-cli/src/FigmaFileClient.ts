@@ -131,7 +131,6 @@ export class FigmaFileClient {
       fullname,
       `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
-/* eslint-disable eslint-comments/no-unlimited-disable */
 /* eslint-disable */
 
 // prettier-ignore
