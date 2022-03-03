@@ -19,8 +19,7 @@ jobs:
       - name: Install deps
         run: |
           yarn install
-          cd packages/icons-cli
-          yarn build
+          yarn workspaces foreach -vptR --from @charcoal/icons-cli run build
 
       - name: Export
         env:
