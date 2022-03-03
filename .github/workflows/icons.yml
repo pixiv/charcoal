@@ -1,5 +1,4 @@
 on:
-  push:
   schedule:
     # only on weekday, at 1:00 UTC ( 10:00 JST )
     - cron: '0 1 * * 1-5'
