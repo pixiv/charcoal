@@ -56,6 +56,8 @@ async function collectGitStatus() {
               ? 'modified'
               : s.startsWith('??')
               ? 'untracked'
+              : s.startsWith(' D')
+              ? 'deleted'
               : null,
           ] as const
       )
