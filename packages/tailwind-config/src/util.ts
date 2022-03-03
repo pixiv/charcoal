@@ -38,7 +38,7 @@ export function getVariantOption(
 }
 
 function setEquals<T>(a: Set<T>, b: Set<T>) {
-  return a.size === b.size && [...a].every((value) => b.has(value))
+  return a.size === b.size && Array.from(a).every((value) => b.has(value))
 }
 
 export function assertAllThemeHaveSameKeys(themeMap: ThemeMap): void {
@@ -53,15 +53,15 @@ export function assertAllThemeHaveSameKeys(themeMap: ThemeMap): void {
     if (!setEquals(colorKeys, expectedColorKeys)) {
       throw new Error(`:root and ${name} does not have same colors.
 
-Expected( :root ): ${JSON.stringify([...expectedColorKeys])}
-Got: ${JSON.stringify([...colorKeys])}`)
+Expected( :root ): ${JSON.stringify(Array.from(expectedColorKeys))}
+Got: ${JSON.stringify(Array.from(colorKeys))}`)
     }
 
     if (!setEquals(effectKeys, expectedEffectKeys)) {
       throw new Error(`:root and ${name} does not have same effects.
 
-Expected( :root ): ${JSON.stringify([...expectedEffectKeys])}
-Got: ${JSON.stringify([...effectKeys])}`)
+Expected( :root ): ${JSON.stringify(Array.from(expectedEffectKeys))}
+Got: ${JSON.stringify(Array.from(effectKeys))}`)
     }
   }
 }
