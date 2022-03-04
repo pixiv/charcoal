@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  icons:
+  version:
     runs-on: ubuntu-latest
 
     steps:
@@ -52,8 +52,7 @@ jobs:
         with:
           body: |
             This commit will bump these packages as follows
-            (Created by [commit-comment][1])
-            [1]: https://github.com/peter-evans/commit-comment
+            (Created by https://github.com/peter-evans/commit-comment )
 
             `yarn lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes`
 
