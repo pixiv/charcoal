@@ -1,0 +1,61 @@
+name: version
+
+on:
+  push:
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # https://github.com/actions/cache/blob/main/examples.md#node---yarn-2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install deps
+        run: |
+          yarn install
+          yarn build
+
+      - name: Get comment body
+        id: get-comment-body
+        run: |
+          yarn lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes > body.txt
+
+          body=$(cat body.txt)
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}"
+
+          echo ::set-output name=body::$body
+
+      - name: Comment to commit
+        uses: peter-evans/commit-comment@v1
+        with:
+          body: |
+            This commit will bump these packages as follows
+            (Created by https://github.com/peter-evans/commit-comment )
+
+            `yarn lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes`
+
+            ```
+            ${{ steps.get-comment-body.outputs.body }}
+            ```
