@@ -7,8 +7,6 @@ on:
 
   workflow_dispatch:
 
-  push:
-
 jobs:
   icons:
     runs-on: ubuntu-latest
