@@ -57,7 +57,12 @@ export class GitlabClient {
 
     for await (const file of getChangedFiles()) {
       actions.push({
-        action: file.status === 'untracked' ? 'create' : 'update',
+        action:
+          file.status === 'untracked'
+            ? 'create'
+            : file.status === 'deleted'
+            ? 'delete'
+            : 'update',
         filePath: file.relativePath,
         content: file.content,
       })
