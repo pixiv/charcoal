@@ -120,7 +120,7 @@ export class GithubClient {
     await this.api.git.updateRef({
       owner: this.repoOwner,
       repo: this.repoName,
-      ref: `heads/${targetBranch.data.ref}`,
+      ref: targetBranch.data.ref,
       sha: commit.data.sha,
     })
 
