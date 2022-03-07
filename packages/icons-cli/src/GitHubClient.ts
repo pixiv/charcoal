@@ -107,13 +107,17 @@ export class GithubClient {
       tree,
     })
 
-    return this.api.git.createCommit({
+    const commit = await this.api.git.createCommit({
       owner: this.repoOwner,
       repo: this.repoName,
       message: this.message,
       tree: newTree.data.sha,
       parents: [parentCommit.data.sha],
     })
+
+    console.log(commit.data)
+
+    return commit
   }
 
   async createPullRequest(targetBranch: RefResponse) {
