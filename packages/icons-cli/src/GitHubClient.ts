@@ -107,6 +107,7 @@ export class GithubClient {
       tree,
     })
 
+    // この時点ではどのブランチにも属さないコミットができる
     const commit = await this.api.git.createCommit({
       owner: this.repoOwner,
       repo: this.repoName,
@@ -115,7 +116,13 @@ export class GithubClient {
       parents: [parentCommit.data.sha],
     })
 
-    console.log(commit.data)
+    // ref を更新することで、commit が targetBranch に属するようになる
+    await this.api.git.updateRef({
+      owner: this.repoOwner,
+      repo: this.repoName,
+      ref: `heads/${targetBranch.data.ref}`,
+      sha: commit.data.sha,
+    })
 
     return commit
   }
