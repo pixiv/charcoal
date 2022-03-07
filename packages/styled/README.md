@@ -1,6 +1,6 @@
 # `@charcoal/styled`
 
-charcoal のテーマの制約を利用可能にする styled-components のためのユティリティ
+charcoal のテーマの制約を利用可能にする styled-components のためのユーティリティ
 
 ## インストール
 
