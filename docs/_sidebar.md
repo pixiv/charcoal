@@ -25,5 +25,5 @@
   - [👀 @charcoal/tailwind-diff-cli](pages/misc/tailwind-diff-cli.md)
   - [🔨 @charcoal/utils](pages/misc/utils.md)
 
-- [コントリビュートしたい方へ](pages/contribution.md)
-- [Changelog](pages/changelog.md)
+- [Storybook](https://pixiv.github.io/charcoal)
+- [Changelogs](https://github.com/pixiv/charcoal/releases)

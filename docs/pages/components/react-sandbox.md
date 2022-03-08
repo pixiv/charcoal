@@ -15,3 +15,7 @@ yarn
 ```bash
 yarn add @charcoal/react-sandbox
 ```
+
+## コンポーネント
+
+[Storybook](https://pixiv.github.io/charcoal) をご覧ください
