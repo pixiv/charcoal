@@ -1,6 +1,6 @@
 # `@charcoal/react`
 
-charcoal デザインシステムに則った React コンポーネントを提供します
+charcoal デザインシステムに則った React コンポーネントを提供します。
 
 ## インストール
 

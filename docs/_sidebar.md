@@ -1,8 +1,4 @@
-- はじめに
-
-  - [ライブラリを選択する](pages/choose.md)
-
-- 定数集
+- 定数
 
   - [🏛 @charcoal/foundation](pages/constants/foundation.md)
   - [🎨 @charcoal/theme](pages/constants/theme.md)

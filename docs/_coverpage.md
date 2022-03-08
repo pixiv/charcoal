@@ -1,10 +1,10 @@
 # Charcoal
 
-> Utility-first & layered design system
+> Design system libraries for pixiv
 
-- Supports both CSS-in-JS and CSS
-- Optimized for gradual adoption
-- Helps you write your components
+- ユーティリティファーストな設計
+- CSS-in-JS と CSS 両方で使える
+- 既存のプロジェクトに導入がしやすい
 
 [GitHub](https://github.com/pixiv/charcoal/)
 [Get Started](#main)
