@@ -1,15 +1,19 @@
+# `@charcoal/styled`
+
+charcoal のテーマの制約を利用可能にする styled-components のためのユーティリティ
+
 ## インストール
 
-### npm
+npm
 
 ```bash
-npm install @charcoal/styled
+npm i @charcoal/styled
 ```
 
-### yarn
+yarn
 
 ```bash
-yarn install @charcoal/styled
+yarn add @charcoal/styled
 ```
 
 ## 使い方
