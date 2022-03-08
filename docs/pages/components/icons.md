@@ -88,3 +88,7 @@ export const Icon: React.FC<Props> = ({ className, ...props }) => (
   <pixiv-icon class={className} {...props} />
 )
 ```
+
+### 収録アイコン
+
+[Storybook](https://pixiv.github.io/charcoal?path=/story/icons-pixivicon-pixiv-icon--default) をご覧ください
