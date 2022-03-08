@@ -55,10 +55,10 @@ const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
   {}
 )
 
-const DefaultStory: Story<{ scale: Props['scale']; color: string }> = ({
-  scale,
-  color,
-}) => (
+const DefaultStory: Story<{
+  scale: NonNullable<Props['scale']>
+  color: string
+}> = ({ scale, color }) => (
   <>
     {Object.entries(groupedIcons).map(([groupName, icons]) => (
       <div key={groupName}>
@@ -84,13 +84,12 @@ const DefaultStory: Story<{ scale: Props['scale']; color: string }> = ({
               }}
             >
               <div style={{ flexShrink: 0 }}>
-                <pixiv-icon name={name} scale={scale} />
+                <pixiv-icon key={scale} name={name} scale={scale} />
               </div>
               <div style={{ flex: '1 0' }}>{name}</div>
             </div>
           ))}
         </div>
-        <hr />
       </div>
     ))}
     <Global />
