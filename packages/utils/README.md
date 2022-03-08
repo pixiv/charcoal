@@ -7,11 +7,11 @@
 npm
 
 ```
-npm i --save-dev @charcoal/utils
+npm i @charcoal/utils
 ```
 
 yarn
 
 ```
-yarn add -D @charcoal/utils
+yarn add @charcoal/utils
 ```

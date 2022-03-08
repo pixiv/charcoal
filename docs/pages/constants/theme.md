@@ -7,11 +7,11 @@ charcoal 全体で制約されるテーマ構造の型を提供します。
 npm
 
 ```bash
-npm i @charcoal/theme
+npm i --save-dev @charcoal/theme
 ```
 
 yarn
 
 ```bash
-yarn add @charcoal/theme
+yarn add -D @charcoal/theme
 ```
