@@ -1,0 +1,52 @@
+:root {
+  --color-brand: #0096FA;
+  --color-surface3: #0000000A; 
+  --color-text2: #000000A3;
+  --pixiv-logo-data-url: url("../images/logo.svg");
+}
+
+html,
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu,
+    Cantarell, 'Noto Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
+    sans-serif;
+  color: #34495e;
+}
+
+section.cover {
+  position: relative;
+}
+
+section.cover::after {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+
+  /**
+   * add alt text and fallback for non-supported browser
+   * https://developer.mozilla.org/ja/docs/Web/CSS/content
+   */
+  content: var(--pixiv-logo-data-url);
+  content: var(--pixiv-logo-data-url) / "pixiv";
+}
+
+section.cover h1 {
+  font-weight: bold;
+}
+
+section.cover ul {
+  margin: 0 auto;
+}
+
+section.cover p {
+  margin: 40px 0 0;
+}
+
+/* GitHub Button */
+section.cover .cover-main > p:last-child a {
+  font-weight: bold;
+  border: 0;
+  background-color: var(--color-surface3);
+  color: var(--color-text2);
+  margin: 0 8px;
+}
