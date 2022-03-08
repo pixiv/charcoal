@@ -107,13 +107,24 @@ export class GithubClient {
       tree,
     })
 
-    return this.api.git.createCommit({
+    // この時点ではどのブランチにも属さないコミットができる
+    const commit = await this.api.git.createCommit({
       owner: this.repoOwner,
       repo: this.repoName,
       message: this.message,
       tree: newTree.data.sha,
       parents: [parentCommit.data.sha],
     })
+
+    // ref を更新することで、commit が targetBranch に属するようになる
+    await this.api.git.updateRef({
+      owner: this.repoOwner,
+      repo: this.repoName,
+      ref: `heads/${this.branch}`,
+      sha: commit.data.sha,
+    })
+
+    return commit
   }
 
   async createPullRequest(targetBranch: RefResponse) {
