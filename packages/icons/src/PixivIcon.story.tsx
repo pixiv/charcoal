@@ -5,27 +5,12 @@ import { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { Props } from './PixivIcon'
 import { PixivIcon } from '.'
+import { KnownIconFile, KNOWN_ICON_FILES } from './filenames'
 
 interface Story<P> {
   (args: P): React.ReactNode
   args?: P
 }
-
-// TODO: 自動生成
-const knownIconFiles = [
-  '32/ShareIos',
-  '32/Dot',
-  '24/Expand',
-  '24/Collapse',
-  '24/Close',
-  '24/Pencil',
-  '24/PencilDraw',
-  '16/More',
-  '16/Back',
-  '16/Search',
-  '16/Add',
-  '16/Check',
-]
 
 PixivIcon.extend({
   // かぶらなそうな名前をつける
@@ -43,7 +28,7 @@ export default {
     name: {
       control: {
         type: 'select',
-        options: [...knownIconFiles, '16/TestIconThatNeverExists'],
+        options: [...KNOWN_ICON_FILES, '16/TestIconThatNeverExists'],
       },
     },
     scale: {
@@ -55,23 +40,66 @@ export default {
   },
 }
 
-const DefaultStory: Story<Props & { color: string }> = ({
-  name,
+const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
+  (map, icon) => {
+    const [prefix] = icon.split('/')
+
+    if (prefix in map) {
+      map[prefix].push(icon)
+    } else {
+      map[prefix] = [icon]
+    }
+
+    return map
+  },
+  {}
+)
+
+const DefaultStory: Story<{ scale: Props['scale']; color: string }> = ({
   scale,
   color,
 }) => (
   <>
-    <div style={{ color, display: 'inline-flex', alignItems: 'center' }}>
-      <pixiv-icon name={name} scale={scale} />
-      アイコンと文字
-    </div>
+    {Object.entries(groupedIcons).map(([groupName, icons]) => (
+      <div key={groupName}>
+        <h2>
+          {groupName} (scale: {scale})
+        </h2>
+        <div
+          style={{
+            color,
+            display: 'grid',
+            gap: 8,
+            gridTemplateColumns: '1fr 1fr 1fr',
+          }}
+        >
+          {icons.map((name) => (
+            <div
+              key={name}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                minHeight: 32,
+              }}
+            >
+              <div style={{ flexShrink: 0 }}>
+                <pixiv-icon name={name} scale={scale} />
+              </div>
+              <div style={{ flex: '1 0' }}>{name}</div>
+            </div>
+          ))}
+        </div>
+        <hr />
+      </div>
+    ))}
     <Global />
   </>
 )
 
 export const Default = DefaultStory.bind({})
 
-Default.args = { name: '16/Add', scale: 1, color: '#000000' }
+Default.args = { scale: 1, color: '#000000' }
 
 const Global = createGlobalStyle`
   .icon-class {
