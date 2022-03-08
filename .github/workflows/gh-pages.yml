@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - deploy-actions # 動作確認
 
   workflow_dispatch:
 
