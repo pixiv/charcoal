@@ -32,6 +32,8 @@ export interface SingleLineTextFieldProps extends TextFieldBaseProps {
   readonly multiline?: false
   readonly rows?: never
   readonly type?: string
+  readonly prefix?: string
+  readonly suffix?: string
 }
 
 export interface MultiLineTextFieldProps extends TextFieldBaseProps {
@@ -39,6 +41,8 @@ export interface MultiLineTextFieldProps extends TextFieldBaseProps {
   readonly multiline: true
   readonly rows?: number
   readonly type?: never
+  readonly prefix?: never
+  readonly suffix?: never
 }
 
 export type TextFieldProps = SingleLineTextFieldProps | MultiLineTextFieldProps
@@ -88,11 +92,17 @@ const SingleLineTextField = React.forwardRef<
     invalid = false,
     assistiveText,
     maxLength,
+    prefix = '',
+    suffix = '',
   } = props
 
   const { visuallyHiddenProps } = useVisuallyHidden()
   const ariaRef = useRef<HTMLInputElement>(null)
+  const prefixRef = useRef<HTMLSpanElement>(null)
+  const suffixRef = useRef<HTMLSpanElement>(null)
   const [count, setCount] = useState(countStringInCodePoints(props.value ?? ''))
+  const [prefixWidth, setPrefixWidth] = useState(0)
+  const [suffixWidth, setSuffixWidth] = useState(0)
 
   const handleChange = useCallback(
     (value: string) => {
@@ -121,6 +131,27 @@ const SingleLineTextField = React.forwardRef<
       ariaRef
     )
 
+  useEffect(() => {
+    const prefixObserver = new ResizeObserver((entries) => {
+      setPrefixWidth(entries[0].contentRect.width)
+    })
+    const suffixObserver = new ResizeObserver((entries) => {
+      setSuffixWidth(entries[0].contentRect.width)
+    })
+
+    if (prefixRef.current !== null) {
+      prefixObserver.observe(prefixRef.current)
+    }
+    if (suffixRef.current !== null) {
+      suffixObserver.observe(suffixRef.current)
+    }
+
+    return () => {
+      suffixObserver.disconnect()
+      prefixObserver.disconnect()
+    }
+  }, [])
+
   return (
     <TextFieldRoot className={className} isDisabled={disabled}>
       <TextFieldLabel
@@ -132,16 +163,24 @@ const SingleLineTextField = React.forwardRef<
         {...(!showLabel ? visuallyHiddenProps : {})}
       />
       <StyledInputContainer>
+        <PrefixContainer ref={prefixRef}>
+          <Affix>{prefix}</Affix>
+        </PrefixContainer>
         <StyledInput
           ref={mergeRefs(forwardRef, ariaRef)}
           invalid={invalid}
+          extraLeftPadding={prefixWidth}
+          extraRightPadding={suffixWidth}
           {...inputProps}
         />
-        {showCount && maxLength && (
-          <SingleLineCounter>
-            {count}/{maxLength}
-          </SingleLineCounter>
-        )}
+        <SuffixContainer ref={suffixRef}>
+          <Affix>{suffix}</Affix>
+          {showCount && maxLength && (
+            <SingleLineCounter>
+              {count}/{maxLength}
+            </SingleLineCounter>
+          )}
+        </SuffixContainer>
       </StyledInputContainer>
       {assistiveText != null && assistiveText.length !== 0 && (
         <AssistiveText
@@ -275,7 +314,34 @@ const StyledInputContainer = styled.div`
   position: relative;
 `
 
-const StyledInput = styled.input<{ invalid: boolean }>`
+const PrefixContainer = styled.span`
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+`
+
+const SuffixContainer = styled.span`
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+
+  display: flex;
+  gap: 8px;
+`
+
+const Affix = styled.span`
+  user-select: none;
+
+  ${theme((o) => [o.typography(14).preserveHalfLeading, o.font.text2])}
+`
+
+const StyledInput = styled.input<{
+  invalid: boolean
+  extraLeftPadding: number
+  extraRightPadding: number
+}>`
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -287,7 +353,10 @@ const StyledInput = styled.input<{ invalid: boolean }>`
   height: calc(40px / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
+  padding-top: calc(9px / 0.875);
+  padding-bottom: calc(9px / 0.875);
+  padding-left: calc((8px + ${(p) => p.extraLeftPadding}px) / 0.875);
+  padding-right: calc((8px + ${(p) => p.extraRightPadding}px) / 0.875);
   border-radius: calc(4px / 0.875);
 
   /* Display box-shadow for iOS Safari */
@@ -359,11 +428,6 @@ const StyledTextarea = styled.textarea<{ invalid: boolean }>`
 `
 
 const SingleLineCounter = styled.span`
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-
   ${theme((o) => [o.typography(14).preserveHalfLeading, o.font.text3])}
 `
 

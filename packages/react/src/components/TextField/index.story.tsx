@@ -75,6 +75,16 @@ HasCount.args = {
   maxLength: 100,
 }
 
+export const HasAffix: Story<Partial<SingleLineTextFieldProps>> = (args) => (
+  <TextField label="Label" placeholder="path/to/your/file" {...args} />
+)
+HasAffix.args = {
+  showCount: true,
+  maxLength: 200,
+  prefix: '/home/john/',
+  suffix: '.png',
+}
+
 export const AutoHeight: Story<Partial<MultiLineTextFieldProps>> = (args) => (
   <TextField label="Label" placeholder="Multi Line" {...args} multiline />
 )
