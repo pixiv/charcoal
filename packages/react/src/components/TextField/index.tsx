@@ -351,7 +351,7 @@ const StyledInput = styled.input<{
   transform-origin: top left;
   transform: scale(0.875);
   width: calc(100% / 0.875);
-  height: calc(40px / 0.875);
+  height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
   padding-top: calc(9px / 0.875);
