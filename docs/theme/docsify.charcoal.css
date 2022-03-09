@@ -2,7 +2,7 @@
   --color-brand: #0096FA;
   --color-surface3: #0000000A; 
   --color-text2: #000000A3;
-  --pixiv-logo-data-url: url("../images/logo.svg");
+  --pixiv-logo-url: url("../images/logo.svg");
 }
 
 html,
@@ -23,8 +23,8 @@ section.cover::after {
    * add alt text and fallback for non-supported browser
    * https://developer.mozilla.org/ja/docs/Web/CSS/content
    */
-  content: var(--pixiv-logo-data-url);
-  content: var(--pixiv-logo-data-url) / "pixiv";
+  content: var(--pixiv-logo-url);
+  content: var(--pixiv-logo-url) / "pixiv";
 }
 
 section.cover h1 {
