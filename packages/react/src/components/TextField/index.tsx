@@ -345,6 +345,7 @@ const StyledInput = styled.input<{
   border: none;
   box-sizing: border-box;
   outline: none;
+  font-family: inherit;
 
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
@@ -389,6 +390,7 @@ const StyledTextarea = styled.textarea<{ invalid: boolean }>`
   box-sizing: border-box;
   outline: none;
   resize: none;
+  font-family: inherit;
 
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
