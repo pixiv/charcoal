@@ -1,6 +1,6 @@
 # Charcoal
 
-> Design system libraries for pixiv
+> Design system for content platforms
 
 - ユーティリティファーストな設計
 - CSS-in-JS と CSS 両方で使える
