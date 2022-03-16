@@ -21,7 +21,7 @@ const defaultConfig = () => ({
   moduleNameMapper: {
     '^@charcoal-ui/(.*)$': '<rootDir>/../$1/src',
   },
-  setupFilesAfterEnv: ['../../jest.setup.js'],
+  setupFilesAfterEnv: ['../../jest.setup.ts'],
 })
 
 /** @type { () => import('@jest/types').Config.InitialOptions } */
@@ -36,7 +36,7 @@ const strictConfig = () => ({
     // es5になった`PixivIcon.ts`がjsdomの提供するHTMLElementと互換がないため、したかなくマッピング
     '^@charcoal-ui/icons$': '<rootDir>/../icons/src',
   },
-  setupFilesAfterEnv: ['../../jest.setup.js'],
+  setupFilesAfterEnv: ['../../jest.setup.ts'],
   globals: {
     'ts-jest': {
       tsconfig: {
