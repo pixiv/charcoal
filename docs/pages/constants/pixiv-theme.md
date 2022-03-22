@@ -1,4 +1,4 @@
-# `@charcoal/pixiv-theme`
+# `@charcoal-ui/pixiv-theme`
 
 TODO
 
@@ -7,11 +7,11 @@ TODO
 npm
 
 ```bash
-npm i @charcoal/pixiv-theme
+npm i @charcoal-ui/pixiv-theme
 ```
 
 yarn
 
 ```bash
-yarn add @charcoal/pixiv-theme
+yarn add @charcoal-ui/pixiv-theme
 ```
