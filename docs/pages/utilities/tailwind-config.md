@@ -1,4 +1,4 @@
-# `@charcoal/tailwind-config`
+# `@charcoal-ui/tailwind-config`
 
 charcoal のカラーテーマやスペーシングなどの定数を元に tailwind.config.js を生成するライブラリです。
 
@@ -7,13 +7,13 @@ charcoal のカラーテーマやスペーシングなどの定数を元に tail
 npm
 
 ```bash
-npm i --save-dev @charcoal/tailwind-config
+npm i --save-dev @charcoal-ui/tailwind-config
 ```
 
 yarn
 
 ```bash
-yarn add -D @charcoal/tailwind-config
+yarn add -D @charcoal-ui/tailwind-config
 ```
 
 ## 使い方
@@ -23,7 +23,7 @@ tailwind.config.js の中で `require` して使います。
 ### デフォルトの config を使う
 
 ```js
-const { config } = require('@charcoal/tailwind-config')
+const { config } = require('@charcoal-ui/tailwind-config')
 
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
@@ -38,8 +38,8 @@ module.exports = {
 ### カスタマイズする
 
 ```js
-const { light, dark } = require('@charcoal/pixiv-theme')
-const { createTailwindConfig } = require('@charcoal/tailwind-config')
+const { light, dark } = require('@charcoal-ui/pixiv-theme')
+const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
 
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
@@ -72,7 +72,7 @@ charcoal は Tailwind.css の通常のダークモード（ `dark:〇〇` 系の
 
 なぜなら charcoal における「色」は、同じ名前でも light テーマと dark テーマで違うカラーコードであり得るからです。
 
-これを表現するために `@charcoal/tailwind-config` では `theme` というオプションを受け取ります。
+これを表現するために `@charcoal-ui/tailwind-config` では `theme` というオプションを受け取ります。
 
 ```js
 createTailwindConfig({

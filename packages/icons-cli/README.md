@@ -1,4 +1,4 @@
-# `@charcoal/icons-cli`
+# `@charcoal-ui/icons-cli`
 
 Figma からアイコンの SVG をダウンロードし、GitHub に自動で更新の Pull Request を作成します。
 
@@ -9,13 +9,13 @@ GitLab にも対応しています。
 npm
 
 ```
-npm i --save-dev @charcoal/icons-cli
+npm i --save-dev @charcoal-ui/icons-cli
 ```
 
 yarn
 
 ```
-yarn add -D @charcoal/icons-cli
+yarn add -D @charcoal-ui/icons-cli
 ```
 
 ## 使い方

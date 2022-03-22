@@ -1,4 +1,4 @@
-# `@charcoal/icons`
+# `@charcoal-ui/icons`
 
 SVG アイコンを [Custom Elements](https://developer.mozilla.org/ja/docs/Web/Web_Components/Using_custom_elements)として利用できるライブラリです。
 
@@ -7,13 +7,13 @@ SVG アイコンを [Custom Elements](https://developer.mozilla.org/ja/docs/Web/
 npm
 
 ```bash
-npm i --save-dev @charcoal/icons
+npm i --save-dev @charcoal-ui/icons
 ```
 
 yarn
 
 ```bash
-yarn add -D @charcoal/icons
+yarn add -D @charcoal-ui/icons
 ```
 
 ### 使い方
@@ -21,7 +21,7 @@ yarn add -D @charcoal/icons
 アプリケーションのエントリポイントで `import` します。 Storybook の場合は `preview.(js|ts)` に書くと良いでしょう。
 
 ```ts
-import '@charcoal/icons'
+import '@charcoal-ui/icons'
 ```
 
 これだけで、 `<pixiv-icon>` という HTML タグが利用可能になります。
@@ -51,7 +51,7 @@ TypeScript 環境下では、`KnownIconType` という型を拡張すること�
 くようになります。
 
 ```ts
-import PixivIcon from '@charcoal/icons'
+import PixivIcon from '@charcoal-ui/icons'
 import NewFeature from './NewFeature.svg'
 
 PixivIcon.extend({
@@ -60,7 +60,7 @@ PixivIcon.extend({
   '32/NewFeature': NewFeature,
 })
 
-declare module '@charcoal/icons' {
+declare module '@charcoal-ui/icons' {
   export interface KnownIconType {
     '16/NewFeature': unknown
     '24/NewFeature': unknown
@@ -78,7 +78,7 @@ https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
 もし `styled-components` などを使っていて `className` を渡せないと困るケースでは、ラッパーコンポーネントを作ってください。
 
 ```tsx
-import { Props as IconProps } from '@charcoal/icons'
+import { Props as IconProps } from '@charcoal-ui/icons'
 
 interface Props extends Omit<IconProps, 'class'> {
   className?: string
