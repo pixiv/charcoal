@@ -7,13 +7,13 @@ SVG アイコンを [Custom Elements](https://developer.mozilla.org/ja/docs/Web/
 npm
 
 ```
-npm i --save-dev @charcoal/icons
+npm i @charcoal/icons
 ```
 
 yarn
 
 ```
-yarn add -D @charcoal/icons
+yarn add @charcoal/icons
 ```
 
 ### 使い方

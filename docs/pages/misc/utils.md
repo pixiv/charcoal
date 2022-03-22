@@ -6,12 +6,12 @@
 
 npm
 
-```
+```bash
 npm i @charcoal/utils
 ```
 
 yarn
 
-```
+```bash
 yarn add @charcoal/utils
 ```
