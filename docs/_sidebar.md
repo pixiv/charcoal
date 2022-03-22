@@ -1,8 +1,4 @@
-- はじめに
-
-  - [ライブラリを選択する](pages/choose.md)
-
-- 定数集
+- 定数
 
   - [🏛 @charcoal/foundation](pages/constants/foundation.md)
   - [🎨 @charcoal/theme](pages/constants/theme.md)
@@ -10,14 +6,20 @@
 
 - ユーテリティ
 
-  - [❓ ユーティリティとはなにか？](pages/utilities/what.md)
   - [💅 @charcoal/styled](pages/utilities/styled.md)
-  - [🍃 @charcoal/tailwind](pages/utilities/tailwind.md)
+  - [🍃 @charcoal/tailwind-config](pages/utilities/tailwind-config.md)
 
 - コンポーネント
 
   - [⚛️ @charcoal/react](pages/components/react.md)
+  - [⏳ @charcoal/react-sandbox](pages/components/react-sandbox.md)
   - [⭐ @charcoal/icons](pages/components/icons.md)
 
-- [コントリビュートしたい方へ](pages/contribution.md)
-- [Changelog](pages/changelog.md)
+- その他
+
+  - [♻️ @charcoal/icons-cli](pages/misc/icons-cli.md)
+  - [👀 @charcoal/tailwind-diff-cli](pages/misc/tailwind-diff-cli.md)
+  - [🔨 @charcoal/utils](pages/misc/utils.md)
+
+- [Storybook](https://pixiv.github.io/charcoal)
+- [Changelogs](https://github.com/pixiv/charcoal/releases)
