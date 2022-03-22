@@ -1,5 +1,5 @@
 import { CSSProp, DefaultTheme } from 'styled-components'
-import { ElementsTheme as Theme } from '@pixiv-elements/styled'
+import { ElementsTheme as Theme } from '@charcoal-ui/styled'
 
 declare module 'styled-components' {
   export interface DefaultTheme extends Theme {}

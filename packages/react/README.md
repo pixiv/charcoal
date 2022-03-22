@@ -1,4 +1,4 @@
-# `@charcoal/react`
+# `@charcoal-ui/react`
 
 charcoal デザインシステムに則った React コンポーネントを提供します
 
@@ -7,12 +7,12 @@ charcoal デザインシステムに則った React コンポーネントを提�
 npm
 
 ```
-npm i @charcoal/react
+npm i @charcoal-ui/react
 ```
 
 yarn
 
 ```
-yarn add @charcoal/react
+yarn add @charcoal-ui/react
 ```
 

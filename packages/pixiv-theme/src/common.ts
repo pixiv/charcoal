@@ -7,7 +7,7 @@ import {
   maxWidth,
   spacing,
   typography,
-} from '@pixiv-elements/foundation'
+} from '@charcoal-ui/foundation'
 
 export const common: CommonTheme = {
   typography: {

@@ -1,4 +1,4 @@
-# `@charcoal/styled`
+# `@charcoal-ui/styled`
 
 charcoal のテーマの制約を利用可能にする styled-components のためのユーティリティ
 
@@ -7,11 +7,11 @@ charcoal のテーマの制約を利用可能にする styled-components のた�
 npm
 
 ```
-npm i @charcoal/styled
+npm i @charcoal-ui/styled
 ```
 
 yarn
 
 ```
-yarn add @charcoal/styled
+yarn add @charcoal-ui/styled
 ```

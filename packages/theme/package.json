@@ -1,6 +1,6 @@
 {
-  "name": "@pixiv-elements/theme",
-  "version": "4.0.0",
+  "name": "@charcoal-ui/theme",
+  "version": "1.0.0-alpha.0",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",

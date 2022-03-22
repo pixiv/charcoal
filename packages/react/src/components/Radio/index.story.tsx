@@ -3,7 +3,7 @@ import React from 'react'
 import { css } from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Radio, { RadioGroup } from '.'
-import { px } from '@pixiv-elements/utils'
+import { px } from '@charcoal-ui/utils'
 
 const options = ['value1', 'value2']
 

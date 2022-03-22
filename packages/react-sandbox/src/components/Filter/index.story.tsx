@@ -9,7 +9,7 @@ import {
   useNavigate,
 } from 'react-router-dom'
 import Filter, { FilterButton, FilterLink } from '.'
-import { ComponentAbstraction } from '@pixiv-elements/react'
+import { ComponentAbstraction } from '@charcoal-ui/react'
 
 export default {
   title: 'Sandbox/Filter',

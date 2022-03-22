@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Story } from '../../_lib/compat'
-import '@pixiv-elements/icons'
+import '@charcoal-ui/icons'
 import IconButton from '.'
-import type { KnownIconType } from '@pixiv-elements/icons'
+import type { KnownIconType } from '@charcoal-ui/icons'
 
 export default {
   title: 'IconButton',

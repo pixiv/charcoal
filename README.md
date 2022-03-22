@@ -1,6 +1,6 @@
-# @pixiv-elements ― PIXIV Design System monorepo
+# @charcoal-ui ― PIXIV Design System monorepo
 
-This is the monorepo for the `@pixiv-elements` packages by pixiv.
+This is the monorepo for the `@charcoal-ui` packages by pixiv.
 
 # Development
 
@@ -17,8 +17,8 @@ yarn lerna bootstrap
 yarn build
 ```
 
-You should build all the packages first so that each package can import another `@pixiv-elements/*` package.
+You should build all the packages first so that each package can import another `@charcoal-ui/*` package.
 
 ## Commit
 
-`@pixiv-elements` is using [commintlint](https://github.com/conventional-changelog/commitlint) and following the [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) rules.
+`@charcoal-ui` is using [commintlint](https://github.com/conventional-changelog/commitlint) and following the [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) rules.

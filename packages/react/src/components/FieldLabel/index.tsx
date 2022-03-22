@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import createTheme from '@pixiv-elements/styled'
+import createTheme from '@charcoal-ui/styled'
 
 export interface FieldLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {

@@ -4,13 +4,13 @@ import {
   Typography,
   TypographyVariant,
   TypographyWeight,
-} from '@pixiv-elements/foundation'
+} from '@charcoal-ui/foundation'
 
 import {
   GradientMaterial,
   Material,
   Theme as BaseTheme,
-} from '@pixiv-elements/theme'
+} from '@charcoal-ui/theme'
 
 interface PixivColor {
   /**

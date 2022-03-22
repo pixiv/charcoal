@@ -33,7 +33,7 @@ export { default as WithIcon } from './components/WithIcon'
 export {
   ComponentAbstraction,
   useComponentAbstraction,
-} from '@pixiv-elements/react'
+} from '@charcoal-ui/react'
 export {
   MAIN_COLUMN_HORIZONTAL_MIN_MARGIN,
   RESPONSIVE_LEFT_WIDTH,

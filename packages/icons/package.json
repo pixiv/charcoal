@@ -1,6 +1,6 @@
 {
-  "name": "@pixiv-elements/icons",
-  "version": "1.0.1",
+  "name": "@charcoal-ui/icons",
+  "version": "1.0.0-alpha.0",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",

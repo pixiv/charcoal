@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import { TextEllipsis } from '../TextEllipsis'
-import { LinkProps, useComponentAbstraction } from '@pixiv-elements/react'
-import { disabledSelector } from '@pixiv-elements/utils'
+import { LinkProps, useComponentAbstraction } from '@charcoal-ui/react'
+import { disabledSelector } from '@charcoal-ui/utils'
 
 interface MenuListItemContextProps {
   padding: 16 | 24

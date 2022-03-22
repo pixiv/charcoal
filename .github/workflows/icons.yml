@@ -37,7 +37,7 @@ jobs:
       - name: Install deps
         run: |
           yarn install
-          yarn workspaces foreach -vptR --from @pixiv-elements/icons-cli run build
+          yarn workspaces foreach -vptR --from @charcoal-ui/icons-cli run build
 
       - name: Export
         env:

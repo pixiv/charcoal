@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Radio, { RadioGroup } from '.'
-import createTheme from '@pixiv-elements/styled'
+import createTheme from '@charcoal-ui/styled'
 const { light } = createTheme
 
 describe('Radio', () => {

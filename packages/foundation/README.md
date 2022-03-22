@@ -1,4 +1,4 @@
-# `@charcoal/foundation`
+# `@charcoal-ui/foundation`
 
 charcoal デザインシステムで利用されるプリミティブな型定義や値を提供します。
 
@@ -7,11 +7,11 @@ charcoal デザインシステムで利用されるプリミティブな型定�
 npm
 
 ```
-npm i @charcoal/foundation
+npm i @charcoal-ui/foundation
 ```
 
 yarn
 
 ```
-yarn add @charcoal/foundation
+yarn add @charcoal-ui/foundation
 ```
