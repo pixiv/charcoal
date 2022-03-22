@@ -1,7 +1,7 @@
 {
   "name": "@pixiv-elements/react",
   "version": "1.0.1",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
   "main": "./dist/index.cjs",

@@ -1,7 +1,7 @@
 {
   "name": "@pixiv-elements/pixiv-theme",
   "version": "5.0.0",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
   "main": "./dist/index.cjs",
