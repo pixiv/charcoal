@@ -119,10 +119,9 @@ export class FigmaFileClient {
    */
   async writeTypeDef(outputDir: string) {
     const fullname = path.resolve(outputDir, 'filenames.ts')
-    const names = Object.values(this.components)
-    const union = names
-      .map(({ name }) => JSON.stringify(filenamify(name)))
-      .join(' | ')
+    const KNOWN_ICON_FILES = Object.values(this.components).map(({ name }) =>
+      filenamify(name)
+    )
 
     console.log(`writing to ${outputDir}`)
 
@@ -134,7 +133,9 @@ export class FigmaFileClient {
 /* eslint-disable */
 
 // prettier-ignore
-export type KnownIconFile = ${union};
+export const KNOWN_ICON_FILES = ${JSON.stringify(KNOWN_ICON_FILES)} as const;
+
+export type KnownIconFile = typeof KNOWN_ICON_FILES[number];
 
 /* eslint-enable */
 `,
