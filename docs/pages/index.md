@@ -10,7 +10,7 @@ charcoal はピクシブ株式会社のデザインシステムです。ここ�
 
 charcoal はいわゆるコンポーネント実装も含みますが、それ以外にも UI の実装に必要なパッケージを多数収録しています。charcoal の設計思想は「定数」「ユーティリティ」「コンポーネント」の三層構造として説明されます。
 
-![デザインシステムの3層構造を説明する図](../images/layers.png)
+![デザインシステムの3層構造を説明する図](/images/layers.png)
 
 - 定数（constants）: デザインシステム上にどういう色やスペーシングのルールがあるかを表す。デザイントークン。
 - ユーティリティ（utilities）: 定数の値を CSS の表現に落とし込み、マークアップに使えるようにしたもの。
@@ -22,7 +22,7 @@ charcoal を導入する場合、最初にまず自分たちの技術スタッ�
 
 以下のフローチャートに従って、`tailwind-config` か `styled` を選択してください。
 
-![ユーティリティを決めるためのフローチャート](../images/flowchart.png)
+![ユーティリティを決めるためのフローチャート](/images/flowchart.png)
 
 - **Q. React を使用しているか？**
   - No → [tailwind-config](pages/utilities/tailwind-config.md) を使用する
