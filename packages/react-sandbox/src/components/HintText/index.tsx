@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import InfoIcon from '../icons/InfoIcon'
-import { maxWidth } from '@pixiv-elements/utils'
+import { maxWidth } from '@charcoal-ui/utils'
 
 type Context = 'page' | 'section'
 interface Props {

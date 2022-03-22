@@ -1,5 +1,5 @@
-import { Material } from '@pixiv-elements/theme'
-import { applyEffect } from '@pixiv-elements/utils'
+import { Material } from '@charcoal-ui/theme'
+import { applyEffect } from '@charcoal-ui/utils'
 import { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { MergedEffect } from '../foundation'
 

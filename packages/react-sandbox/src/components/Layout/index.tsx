@@ -6,8 +6,8 @@ import {
   RESPONSIVE_MAIN_MAX_WIDTH,
 } from '../../foundation/contants'
 import { useMediaScreen1 } from '../../foundation/hooks'
-import { columnPx, GUTTER_UNIT } from '@pixiv-elements/foundation'
-import { maxWidth } from '@pixiv-elements/utils'
+import { columnPx, GUTTER_UNIT } from '@charcoal-ui/foundation'
+import { maxWidth } from '@charcoal-ui/utils'
 
 interface Props {
   menu?: React.ReactNode

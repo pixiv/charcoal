@@ -1,4 +1,4 @@
-import { ElementsTheme, ThemeProp } from '@pixiv-elements/styled'
+import { ElementsTheme, ThemeProp } from '@charcoal-ui/styled'
 import { CSSProp, DefaultTheme } from 'styled-components'
 
 declare module 'react' {

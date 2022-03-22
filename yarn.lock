@@ -1591,6 +1591,261 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@charcoal-ui/foundation@^1.0.0, @charcoal-ui/foundation@workspace:packages/foundation":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/foundation@workspace:packages/foundation"
+  dependencies:
+    microbundle: ^0.14.2
+    npm-run-all: ^4.1.5
+    rimraf: ^3.0.2
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/icons-cli@1.0.0, @charcoal-ui/icons-cli@workspace:packages/icons-cli":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/icons-cli@workspace:packages/icons-cli"
+  dependencies:
+    "@gitbeaker/core": ^25.6.0
+    "@gitbeaker/node": ^25.6.0
+    "@octokit/rest": ^18.12.0
+    "@types/fs-extra": ^9.0.13
+    "@types/jsdom": ^16.2.14
+    "@types/parse5": ^6.0.3
+    "@types/svgo": ^1.3.3
+    "@types/yargs": ^17.0.8
+    camelcase: ^6.3.0
+    figma-js: ^1.14.0
+    fs-extra: ^10.0.0
+    got: ^11.8.3
+    jsdom: ^19.0.0
+    microbundle: ^0.14.2
+    p-queue: ^6.6.2
+    path-to-regexp: ^6.2.0
+    polished: ^4.1.4
+    rimraf: ^3.0.2
+    svgo: ^1.3.2
+    typescript: ^4.5.5
+    yargs: ^17.3.1
+  bin:
+    icons-cli: ./dist/index.cjs
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/icons@^1.0.1, @charcoal-ui/icons@workspace:packages/icons":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/icons@workspace:packages/icons"
+  dependencies:
+    "@types/jest": ^27.4.0
+    "@types/react": ^17.0.38
+    lit-html: ^2.1.2
+    microbundle: ^0.14.2
+    react: ^17.0.2
+    rimraf: ^3.0.2
+    styled-components: ^5.3.3
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/pixiv-theme@^5.0.0, @charcoal-ui/pixiv-theme@workspace:packages/pixiv-theme":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/pixiv-theme@workspace:packages/pixiv-theme"
+  dependencies:
+    "@charcoal-ui/foundation": ^1.0.0
+    "@charcoal-ui/theme": ^4.0.0
+    "@types/react": ^17.0.38
+    "@types/styled-components": ^5.1.21
+    microbundle: ^0.14.2
+    npm-run-all: ^4.1.5
+    polished: ^4.1.4
+    react: ^17.0.2
+    rimraf: ^3.0.2
+    styled-components: ^5.3.3
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/react-sandbox@workspace:packages/react-sandbox":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/react-sandbox@workspace:packages/react-sandbox"
+  dependencies:
+    "@charcoal-ui/foundation": ^1.0.0
+    "@charcoal-ui/pixiv-theme": ^5.0.0
+    "@charcoal-ui/react": ^1.0.1
+    "@charcoal-ui/styled": ^3.0.1
+    "@charcoal-ui/utils": ^3.0.0
+    "@storybook/addon-actions": ^6.4.17
+    "@storybook/addon-knobs": ^6.4.0
+    "@storybook/addons": ^6.4.17
+    "@storybook/api": ^6.4.17
+    "@storybook/components": ^6.4.17
+    "@storybook/core-events": ^6.4.17
+    "@storybook/react": ^6.4.17
+    "@storybook/theming": ^6.4.17
+    "@testing-library/jest-dom": ^5.16.1
+    "@testing-library/react": ^12.1.2
+    "@testing-library/user-event": ^13.5.0
+    "@types/jest": ^27.4.0
+    "@types/jest-axe": ^3.5.3
+    "@types/react": ^17.0.38
+    "@types/react-router-dom": ^5.3.3
+    "@types/styled-components": ^5.1.21
+    "@types/warning": ^3.0.0
+    jest-axe: ^5.0.1
+    microbundle: ^0.14.2
+    npm-run-all: ^4.1.5
+    polished: ^4.1.4
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-router-dom: ^6.2.1
+    react-spring: ^9.4.2
+    rimraf: ^3.0.2
+    styled-components: ^5.3.3
+    typescript: ^4.5.5
+    warning: ^4.0.3
+  peerDependencies:
+    react: ">=16.13.1"
+    react-dom: ">=16.13.1"
+    react-spring: ^9.0.0-beta.34
+    styled-components: ">=5.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/react@^1.0.1, @charcoal-ui/react@workspace:packages/react":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/react@workspace:packages/react"
+  dependencies:
+    "@charcoal-ui/icons": ^1.0.1
+    "@charcoal-ui/pixiv-theme": ^5.0.0
+    "@charcoal-ui/styled": ^3.0.1
+    "@charcoal-ui/utils": ^3.0.0
+    "@react-aria/checkbox": ^3.2.3
+    "@react-aria/switch": ^3.1.3
+    "@react-aria/textfield": ^3.5.0
+    "@react-aria/visually-hidden": ^3.2.3
+    "@react-types/switch": ^3.1.2
+    "@storybook/addon-actions": ^6.4.17
+    "@storybook/addon-knobs": ^6.4.0
+    "@storybook/addons": ^6.4.17
+    "@storybook/api": ^6.4.17
+    "@storybook/components": ^6.4.17
+    "@storybook/core-events": ^6.4.17
+    "@storybook/react": ^6.4.17
+    "@storybook/theming": ^6.4.17
+    "@testing-library/jest-dom": ^5.16.1
+    "@testing-library/react": ^12.1.2
+    "@testing-library/user-event": ^13.5.0
+    "@types/jest": ^27.4.0
+    "@types/jest-axe": ^3.5.3
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    "@types/react-router-dom": ^5.3.3
+    "@types/styled-components": ^5.1.21
+    "@types/warning": ^3.0.0
+    jest-axe: ^5.0.1
+    jest-styled-components: ^7.0.8
+    microbundle: ^0.14.2
+    polished: ^4.1.4
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-router-dom: ^6.2.1
+    react-stately: ^3.11.0
+    rimraf: ^3.0.2
+    styled-components: ^5.3.3
+    typescript: ^4.5.5
+    warning: ^4.0.3
+  peerDependencies:
+    react: ">=16.13.1"
+    styled-components: ">=5.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/styled@^3.0.1, @charcoal-ui/styled@workspace:packages/styled":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/styled@workspace:packages/styled"
+  dependencies:
+    "@charcoal-ui/foundation": ^1.0.0
+    "@charcoal-ui/pixiv-theme": ^5.0.0
+    "@charcoal-ui/theme": ^4.0.0
+    "@charcoal-ui/utils": ^3.0.0
+    "@types/react": ^17.0.38
+    "@types/styled-components": ^5.1.21
+    "@types/warning": ^3.0.0
+    microbundle: ^0.14.2
+    npm-run-all: ^4.1.5
+    polished: ^4.1.4
+    react: ^17.0.2
+    rimraf: ^3.0.2
+    styled-components: ^5.3.3
+    typescript: ^4.5.5
+    warning: ^4.0.3
+  peerDependencies:
+    react: ">=16.13.1"
+    styled-components: ">=5.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/tailwind-config@workspace:packages/tailwind-config":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/tailwind-config@workspace:packages/tailwind-config"
+  dependencies:
+    "@charcoal-ui/foundation": ^1.0.0
+    "@charcoal-ui/pixiv-theme": ^5.0.0
+    "@charcoal-ui/theme": ^4.0.0
+    "@charcoal-ui/utils": ^3.0.0
+    microbundle: ^0.14.2
+    postcss: ^8.4.5
+    postcss-selector-parser: ^6.0.9
+    rimraf: ^3.0.2
+    tailwindcss: ^3.0.5
+    typescript: ^4.5.5
+  peerDependencies:
+    csstype: ">=3.0.0"
+    postcss: ">=7.0.32"
+    tailwindcss: ^1.4.6
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/tailwind-diff@workspace:packages/tailwind-diff-cli":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/tailwind-diff@workspace:packages/tailwind-diff-cli"
+  dependencies:
+    "@types/tailwindcss": ^2.2.4
+    "@types/yargs": ^17.0.8
+    import-from: ^4.0.0
+    postcss: ^8.4.5
+    postcss-selector-parser: ^6.0.9
+    typescript: ^4.5.5
+    yargs: ^17.3.1
+  bin:
+    tailwind-diff: bin/tailwind-diff.js
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/theme@^4.0.0, @charcoal-ui/theme@workspace:packages/theme":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/theme@workspace:packages/theme"
+  dependencies:
+    microbundle: ^0.14.2
+    npm-run-all: ^4.1.5
+    rimraf: ^3.0.2
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@charcoal-ui/utils@^3.0.0, @charcoal-ui/utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@charcoal-ui/utils@workspace:packages/utils"
+  dependencies:
+    "@charcoal-ui/theme": ^4.0.0
+    microbundle: ^0.14.2
+    npm-run-all: ^4.1.5
+    polished: ^4.1.4
+    rimraf: ^3.0.2
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
 "@cnakazawa/watch@npm:^1.0.3":
   version: 1.0.4
   resolution: "@cnakazawa/watch@npm:1.0.4"
@@ -3501,261 +3756,6 @@ __metadata:
   checksum: f122b9aee8f6baddd515e34a0913e73b21d4bc82d6ee59d77a8aaf01b4a02c10867dd013003d087a83dc96db23511893669015af6d30c27cece185e21cf1df89
   languageName: node
   linkType: hard
-
-"@pixiv-elements/foundation@^1.0.0, @pixiv-elements/foundation@workspace:packages/foundation":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/foundation@workspace:packages/foundation"
-  dependencies:
-    microbundle: ^0.14.2
-    npm-run-all: ^4.1.5
-    rimraf: ^3.0.2
-    typescript: ^4.5.5
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/icons-cli@1.0.0, @pixiv-elements/icons-cli@workspace:packages/icons-cli":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/icons-cli@workspace:packages/icons-cli"
-  dependencies:
-    "@gitbeaker/core": ^25.6.0
-    "@gitbeaker/node": ^25.6.0
-    "@octokit/rest": ^18.12.0
-    "@types/fs-extra": ^9.0.13
-    "@types/jsdom": ^16.2.14
-    "@types/parse5": ^6.0.3
-    "@types/svgo": ^1.3.3
-    "@types/yargs": ^17.0.8
-    camelcase: ^6.3.0
-    figma-js: ^1.14.0
-    fs-extra: ^10.0.0
-    got: ^11.8.3
-    jsdom: ^19.0.0
-    microbundle: ^0.14.2
-    p-queue: ^6.6.2
-    path-to-regexp: ^6.2.0
-    polished: ^4.1.4
-    rimraf: ^3.0.2
-    svgo: ^1.3.2
-    typescript: ^4.5.5
-    yargs: ^17.3.1
-  bin:
-    icons-cli: ./dist/index.cjs
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/icons@^1.0.1, @pixiv-elements/icons@workspace:packages/icons":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/icons@workspace:packages/icons"
-  dependencies:
-    "@types/jest": ^27.4.0
-    "@types/react": ^17.0.38
-    lit-html: ^2.1.2
-    microbundle: ^0.14.2
-    react: ^17.0.2
-    rimraf: ^3.0.2
-    styled-components: ^5.3.3
-    typescript: ^4.5.5
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/pixiv-theme@^5.0.0, @pixiv-elements/pixiv-theme@workspace:packages/pixiv-theme":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/pixiv-theme@workspace:packages/pixiv-theme"
-  dependencies:
-    "@pixiv-elements/foundation": ^1.0.0
-    "@pixiv-elements/theme": ^4.0.0
-    "@types/react": ^17.0.38
-    "@types/styled-components": ^5.1.21
-    microbundle: ^0.14.2
-    npm-run-all: ^4.1.5
-    polished: ^4.1.4
-    react: ^17.0.2
-    rimraf: ^3.0.2
-    styled-components: ^5.3.3
-    typescript: ^4.5.5
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/react-sandbox@workspace:packages/react-sandbox":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/react-sandbox@workspace:packages/react-sandbox"
-  dependencies:
-    "@pixiv-elements/foundation": ^1.0.0
-    "@pixiv-elements/pixiv-theme": ^5.0.0
-    "@pixiv-elements/react": ^1.0.1
-    "@pixiv-elements/styled": ^3.0.1
-    "@pixiv-elements/utils": ^3.0.0
-    "@storybook/addon-actions": ^6.4.17
-    "@storybook/addon-knobs": ^6.4.0
-    "@storybook/addons": ^6.4.17
-    "@storybook/api": ^6.4.17
-    "@storybook/components": ^6.4.17
-    "@storybook/core-events": ^6.4.17
-    "@storybook/react": ^6.4.17
-    "@storybook/theming": ^6.4.17
-    "@testing-library/jest-dom": ^5.16.1
-    "@testing-library/react": ^12.1.2
-    "@testing-library/user-event": ^13.5.0
-    "@types/jest": ^27.4.0
-    "@types/jest-axe": ^3.5.3
-    "@types/react": ^17.0.38
-    "@types/react-router-dom": ^5.3.3
-    "@types/styled-components": ^5.1.21
-    "@types/warning": ^3.0.0
-    jest-axe: ^5.0.1
-    microbundle: ^0.14.2
-    npm-run-all: ^4.1.5
-    polished: ^4.1.4
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-router-dom: ^6.2.1
-    react-spring: ^9.4.2
-    rimraf: ^3.0.2
-    styled-components: ^5.3.3
-    typescript: ^4.5.5
-    warning: ^4.0.3
-  peerDependencies:
-    react: ">=16.13.1"
-    react-dom: ">=16.13.1"
-    react-spring: ^9.0.0-beta.34
-    styled-components: ">=5.1.1"
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/react@^1.0.1, @pixiv-elements/react@workspace:packages/react":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/react@workspace:packages/react"
-  dependencies:
-    "@pixiv-elements/icons": ^1.0.1
-    "@pixiv-elements/pixiv-theme": ^5.0.0
-    "@pixiv-elements/styled": ^3.0.1
-    "@pixiv-elements/utils": ^3.0.0
-    "@react-aria/checkbox": ^3.2.3
-    "@react-aria/switch": ^3.1.3
-    "@react-aria/textfield": ^3.5.0
-    "@react-aria/visually-hidden": ^3.2.3
-    "@react-types/switch": ^3.1.2
-    "@storybook/addon-actions": ^6.4.17
-    "@storybook/addon-knobs": ^6.4.0
-    "@storybook/addons": ^6.4.17
-    "@storybook/api": ^6.4.17
-    "@storybook/components": ^6.4.17
-    "@storybook/core-events": ^6.4.17
-    "@storybook/react": ^6.4.17
-    "@storybook/theming": ^6.4.17
-    "@testing-library/jest-dom": ^5.16.1
-    "@testing-library/react": ^12.1.2
-    "@testing-library/user-event": ^13.5.0
-    "@types/jest": ^27.4.0
-    "@types/jest-axe": ^3.5.3
-    "@types/react": ^17.0.38
-    "@types/react-dom": ^17.0.11
-    "@types/react-router-dom": ^5.3.3
-    "@types/styled-components": ^5.1.21
-    "@types/warning": ^3.0.0
-    jest-axe: ^5.0.1
-    jest-styled-components: ^7.0.8
-    microbundle: ^0.14.2
-    polished: ^4.1.4
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-router-dom: ^6.2.1
-    react-stately: ^3.11.0
-    rimraf: ^3.0.2
-    styled-components: ^5.3.3
-    typescript: ^4.5.5
-    warning: ^4.0.3
-  peerDependencies:
-    react: ">=16.13.1"
-    styled-components: ">=5.1.1"
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/styled@^3.0.1, @pixiv-elements/styled@workspace:packages/styled":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/styled@workspace:packages/styled"
-  dependencies:
-    "@pixiv-elements/foundation": ^1.0.0
-    "@pixiv-elements/pixiv-theme": ^5.0.0
-    "@pixiv-elements/theme": ^4.0.0
-    "@pixiv-elements/utils": ^3.0.0
-    "@types/react": ^17.0.38
-    "@types/styled-components": ^5.1.21
-    "@types/warning": ^3.0.0
-    microbundle: ^0.14.2
-    npm-run-all: ^4.1.5
-    polished: ^4.1.4
-    react: ^17.0.2
-    rimraf: ^3.0.2
-    styled-components: ^5.3.3
-    typescript: ^4.5.5
-    warning: ^4.0.3
-  peerDependencies:
-    react: ">=16.13.1"
-    styled-components: ">=5.1.1"
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/tailwind-config@workspace:packages/tailwind-config":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/tailwind-config@workspace:packages/tailwind-config"
-  dependencies:
-    "@pixiv-elements/foundation": ^1.0.0
-    "@pixiv-elements/pixiv-theme": ^5.0.0
-    "@pixiv-elements/theme": ^4.0.0
-    "@pixiv-elements/utils": ^3.0.0
-    microbundle: ^0.14.2
-    postcss: ^8.4.5
-    postcss-selector-parser: ^6.0.9
-    rimraf: ^3.0.2
-    tailwindcss: ^3.0.5
-    typescript: ^4.5.5
-  peerDependencies:
-    csstype: ">=3.0.0"
-    postcss: ">=7.0.32"
-    tailwindcss: ^1.4.6
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/tailwind-diff@workspace:packages/tailwind-diff-cli":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/tailwind-diff@workspace:packages/tailwind-diff-cli"
-  dependencies:
-    "@types/tailwindcss": ^2.2.4
-    "@types/yargs": ^17.0.8
-    import-from: ^4.0.0
-    postcss: ^8.4.5
-    postcss-selector-parser: ^6.0.9
-    typescript: ^4.5.5
-    yargs: ^17.3.1
-  bin:
-    tailwind-diff: bin/tailwind-diff.js
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/theme@^4.0.0, @pixiv-elements/theme@workspace:packages/theme":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/theme@workspace:packages/theme"
-  dependencies:
-    microbundle: ^0.14.2
-    npm-run-all: ^4.1.5
-    rimraf: ^3.0.2
-    typescript: ^4.5.5
-  languageName: unknown
-  linkType: soft
-
-"@pixiv-elements/utils@^3.0.0, @pixiv-elements/utils@workspace:packages/utils":
-  version: 0.0.0-use.local
-  resolution: "@pixiv-elements/utils@workspace:packages/utils"
-  dependencies:
-    "@pixiv-elements/theme": ^4.0.0
-    microbundle: ^0.14.2
-    npm-run-all: ^4.1.5
-    polished: ^4.1.4
-    rimraf: ^3.0.2
-    typescript: ^4.5.5
-  languageName: unknown
-  linkType: soft
 
 "@pmmmwh/react-refresh-webpack-plugin@npm:^0.5.1":
   version: 0.5.4
@@ -9012,6 +9012,59 @@ __metadata:
   checksum: 20274574c70e05e2f81135f3b93285536bc8ff70f37f0809b0d17791a832838f1e49938382899ed4cb444e5bbd4314ca1415231344ba29f4222ce2ccf24fea0b
   languageName: node
   linkType: hard
+
+"charcoal-ui@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "charcoal-ui@workspace:."
+  dependencies:
+    "@charcoal-ui/icons-cli": 1.0.0
+    "@commitlint/cli": ^16.1.0
+    "@commitlint/config-conventional": ^16.0.0
+    "@commitlint/config-lerna-scopes": ^16.0.0
+    "@storybook/addon-a11y": ^6.4.17
+    "@storybook/addon-essentials": ^6.4.17
+    "@storybook/addon-knobs": ^6.4.0
+    "@storybook/addon-links": ^6.4.17
+    "@storybook/addon-storysource": ^6.4.17
+    "@storybook/react": ^6.4.17
+    "@stylelint/postcss-css-in-js": ^0.37.2
+    "@types/eslint": ^8.4.1
+    "@types/jest": ^27.4.0
+    "@types/node": ^17.0.13
+    "@types/prettier": ^2.4.3
+    "@types/webpack": ^5.28.0
+    "@typescript-eslint/eslint-plugin": ^5.10.1
+    "@typescript-eslint/parser": ^5.10.1
+    conventional-changelog-conventionalcommits: ^4.6.3
+    cross-env: ^7.0.3
+    docsify-cli: ^4.4.3
+    esbuild: ^0.14.14
+    esbuild-jest: ^0.5.0
+    eslint: ^8.8.0
+    eslint-config-prettier: ^8.3.0
+    eslint-plugin-react: ^7.28.0
+    eslint-plugin-react-hooks: ^4.3.0
+    eslint-plugin-storybook: ^0.5.6
+    glob: ^7.2.0
+    husky: ^4.3.8
+    jest: ^27.4.7
+    jsdom: ^19.0.0
+    lerna: ^4.0.0
+    npm-run-all: ^4.1.5
+    postcss-syntax: ^0.36.2
+    prettier: ^2.5.1
+    storybook-builder-vite: ^0.1.14
+    storybook-dark-mode: ^1.0.8
+    stylelint: ^14.3.0
+    stylelint-config-prettier: ^9.0.3
+    stylelint-config-recommended: ^6.0.0
+    stylelint-config-standard: ^24.0.0
+    stylelint-config-styled-components: ^0.1.1
+    ts-jest: ^27.1.3
+    typescript: ^4.5.5
+    vite: ^2.7.13
+  languageName: unknown
+  linkType: soft
 
 "chardet@npm:^0.7.0":
   version: 0.7.0
@@ -18682,59 +18735,6 @@ fsevents@^1.2.7:
   checksum: c9994e61b85260bec6c4fc0307016340d9b0c4f4b6550a957afaaff0c9b1ad58fbbea5cfcf083860a25cb27a375442e2b0edf52e2e1e40e69934e08dcc52d227
   languageName: node
   linkType: hard
-
-"pixiv-elements@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "pixiv-elements@workspace:."
-  dependencies:
-    "@commitlint/cli": ^16.1.0
-    "@commitlint/config-conventional": ^16.0.0
-    "@commitlint/config-lerna-scopes": ^16.0.0
-    "@pixiv-elements/icons-cli": 1.0.0
-    "@storybook/addon-a11y": ^6.4.17
-    "@storybook/addon-essentials": ^6.4.17
-    "@storybook/addon-knobs": ^6.4.0
-    "@storybook/addon-links": ^6.4.17
-    "@storybook/addon-storysource": ^6.4.17
-    "@storybook/react": ^6.4.17
-    "@stylelint/postcss-css-in-js": ^0.37.2
-    "@types/eslint": ^8.4.1
-    "@types/jest": ^27.4.0
-    "@types/node": ^17.0.13
-    "@types/prettier": ^2.4.3
-    "@types/webpack": ^5.28.0
-    "@typescript-eslint/eslint-plugin": ^5.10.1
-    "@typescript-eslint/parser": ^5.10.1
-    conventional-changelog-conventionalcommits: ^4.6.3
-    cross-env: ^7.0.3
-    docsify-cli: ^4.4.3
-    esbuild: ^0.14.14
-    esbuild-jest: ^0.5.0
-    eslint: ^8.8.0
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-react: ^7.28.0
-    eslint-plugin-react-hooks: ^4.3.0
-    eslint-plugin-storybook: ^0.5.6
-    glob: ^7.2.0
-    husky: ^4.3.8
-    jest: ^27.4.7
-    jsdom: ^19.0.0
-    lerna: ^4.0.0
-    npm-run-all: ^4.1.5
-    postcss-syntax: ^0.36.2
-    prettier: ^2.5.1
-    storybook-builder-vite: ^0.1.14
-    storybook-dark-mode: ^1.0.8
-    stylelint: ^14.3.0
-    stylelint-config-prettier: ^9.0.3
-    stylelint-config-recommended: ^6.0.0
-    stylelint-config-standard: ^24.0.0
-    stylelint-config-styled-components: ^0.1.1
-    ts-jest: ^27.1.3
-    typescript: ^4.5.5
-    vite: ^2.7.13
-  languageName: unknown
-  linkType: soft
 
 "pkg-dir@npm:^3.0.0":
   version: 3.0.0

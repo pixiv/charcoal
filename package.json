@@ -1,7 +1,7 @@
 {
-  "name": "pixiv-elements",
+  "name": "charcoal-ui",
   "version": "1.0.0",
-  "description": "@pixiv-elements monorepo",
+  "description": "@charcoal-ui monorepo",
   "author": "pixiv",
   "license": "Apache-2.0",
   "private": true,
@@ -30,10 +30,10 @@
     "website": "docsify serve docs -p 5000"
   },
   "devDependencies": {
+    "@charcoal-ui/icons-cli": "1.0.0",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@commitlint/config-lerna-scopes": "^16.0.0",
-    "@pixiv-elements/icons-cli": "1.0.0",
     "@storybook/addon-a11y": "^6.4.17",
     "@storybook/addon-essentials": "^6.4.17",
     "@storybook/addon-knobs": "^6.4.0",

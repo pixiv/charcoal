@@ -9,7 +9,7 @@ import {
 } from 'react'
 import ReactDOM from 'react-dom'
 import { useTheme } from 'styled-components'
-import { maxWidth } from '@pixiv-elements/utils'
+import { maxWidth } from '@charcoal-ui/utils'
 
 declare const __TEST__: object | undefined // actually object|false, but using undefined allows ! assertion
 

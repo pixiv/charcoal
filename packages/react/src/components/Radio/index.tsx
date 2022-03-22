@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useState } from 'react'
 import styled from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
-import { px } from '@pixiv-elements/utils'
+import { px } from '@charcoal-ui/utils'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string

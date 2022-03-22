@@ -19,7 +19,7 @@ const defaultConfig = () => ({
   transformIgnorePatterns: ['../../node_modules/(?!(lit-html))'],
   // tsconfigのpathsに対応 (依存パッケージをビルドせずにテストが可能)
   moduleNameMapper: {
-    '^@pixiv-elements/(.*)$': '<rootDir>/../$1/src',
+    '^@charcoal-ui/(.*)$': '<rootDir>/../$1/src',
   },
 })
 
@@ -33,7 +33,7 @@ const strictConfig = () => ({
   moduleNameMapper: {
     // TODO: 一貫性のために外したい
     // es5になった`PixivIcon.ts`がjsdomの提供するHTMLElementと互換がないため、したかなくマッピング
-    '^@pixiv-elements/icons$': '<rootDir>/../icons/src',
+    '^@charcoal-ui/icons$': '<rootDir>/../icons/src',
   },
   globals: {
     'ts-jest': {

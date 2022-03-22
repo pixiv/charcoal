@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MenuListLinkItem } from '../MenuListItem'
-import { useComponentAbstraction } from '@pixiv-elements/react'
+import { useComponentAbstraction } from '@charcoal-ui/react'
 
 interface Props<ID extends string> {
   links: readonly {

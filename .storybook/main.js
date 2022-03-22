@@ -49,7 +49,7 @@ const alias = async () =>
   Object.fromEntries(
     (await glob(path.resolve(packagesDir, '*'))).map((absolute) => {
       const relative = path.relative(packagesDir, absolute)
-      const from = path.join('@pixiv-elements', relative)
+      const from = path.join('@charcoal-ui', relative)
       const to = path.resolve(absolute, 'src')
       return [from, to]
     })

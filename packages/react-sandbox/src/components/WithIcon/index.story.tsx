@@ -3,7 +3,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import WithIcon from '.'
-import { applyEffect } from '@pixiv-elements/utils'
+import { applyEffect } from '@charcoal-ui/utils'
 
 export default {
   title: 'Sandbox/WithIcon',

@@ -14,7 +14,7 @@ import {
   objectKeys,
   isPresent,
 } from './util'
-import { columnPx, halfLeading } from '@pixiv-elements/foundation'
+import { columnPx, halfLeading } from '@charcoal-ui/foundation'
 import {
   applyEffect,
   applyEffectToGradient,
@@ -24,7 +24,7 @@ import {
   notDisabledSelector,
   disabledSelector,
   px,
-} from '@pixiv-elements/utils'
+} from '@charcoal-ui/utils'
 export { type Modified, type ModifiedArgumented } from './lib'
 
 import { light, dark } from './theme'

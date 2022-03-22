@@ -8,10 +8,10 @@ import {
   typography,
   Breakpoint,
   breakpoint,
-} from '@pixiv-elements/foundation'
-import { light as l, dark as d } from '@pixiv-elements/pixiv-theme'
-import { Effect, Material, OpacityEffect, Theme } from '@pixiv-elements/theme'
-import { applyEffect } from '@pixiv-elements/utils'
+} from '@charcoal-ui/foundation'
+import { light as l, dark as d } from '@charcoal-ui/pixiv-theme'
+import { Effect, Material, OpacityEffect, Theme } from '@charcoal-ui/theme'
+import { applyEffect } from '@charcoal-ui/utils'
 
 export interface ElementsTheme extends StyledTheme {
   color: Theme['color']

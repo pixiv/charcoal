@@ -8,7 +8,7 @@ import {
   GradientMaterial,
   OpacityEffect,
   ReplaceEffect,
-} from '@pixiv-elements/theme'
+} from '@charcoal-ui/theme'
 
 export const GRADIENT_DIRECTIONS = [
   'to top',
@@ -85,7 +85,7 @@ function applySingleEffect(baseColor: string, effect: Effect): string {
       throw new RangeError(
         `Unknown effect type ${
           (effect as Effect).type
-        }, upgrade @pixiv-elements/utils`
+        }, upgrade @charcoal-ui/utils`
       )
   }
 }
