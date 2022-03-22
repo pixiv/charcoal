@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "1.0.1",
+  "version": "1.0.0-alpha.0",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
@@ -47,11 +47,11 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^1.0.0",
-    "@charcoal-ui/pixiv-theme": "^5.0.0",
-    "@charcoal-ui/react": "^1.0.1",
-    "@charcoal-ui/styled": "^3.0.1",
-    "@charcoal-ui/utils": "^3.0.0",
+    "@charcoal-ui/foundation": "1.0.0-alpha.0",
+    "@charcoal-ui/pixiv-theme": "1.0.0-alpha.0",
+    "@charcoal-ui/react": "1.0.0-alpha.0",
+    "@charcoal-ui/styled": "1.0.0-alpha.0",
+    "@charcoal-ui/utils": "1.0.0-alpha.0",
     "polished": "^4.1.4",
     "warning": "^4.0.3"
   },

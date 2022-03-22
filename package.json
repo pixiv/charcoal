@@ -1,6 +1,6 @@
 {
   "name": "charcoal-ui",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "@charcoal-ui monorepo",
   "author": "pixiv",
   "license": "Apache-2.0",
@@ -30,7 +30,7 @@
     "website": "docsify serve docs -p 5000"
   },
   "devDependencies": {
-    "@charcoal-ui/icons-cli": "1.0.0",
+    "@charcoal-ui/icons-cli": "1.0.0-alpha.0",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@commitlint/config-lerna-scopes": "^16.0.0",
