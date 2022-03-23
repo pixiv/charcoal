@@ -1604,7 +1604,7 @@ __metadata:
 
 "@charcoal-ui/icons-cli@file:packages/icons-cli::locator=charcoal-ui%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@charcoal-ui/icons-cli@file:packages/icons-cli#packages/icons-cli::hash=99b488&locator=charcoal-ui%40workspace%3A."
+  resolution: "@charcoal-ui/icons-cli@file:packages/icons-cli#packages/icons-cli::hash=7afe05&locator=charcoal-ui%40workspace%3A."
   dependencies:
     "@gitbeaker/node": ^25.6.0
     "@octokit/rest": ^18.12.0
@@ -1620,7 +1620,7 @@ __metadata:
     yargs: ^17.3.1
   bin:
     icons-cli: ./dist/index.cjs
-  checksum: 77422f4fed29d345f2acba678a78628d83ca06375b06fd3738946552e35d9d8337df47e8fea8cb2d3fbbb684c220258f8a7d478a66c1c3c157ce3320e29cd87b
+  checksum: 93228de72eed0084be595f1d949788e5e7d717ba3591d6dd1db4ad9d25c1973f0614a90fb51c30116cf9941ea0b739d06456a48698702626f6808f1ed18c6d12
   languageName: node
   linkType: hard
 
