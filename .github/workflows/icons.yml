@@ -49,9 +49,16 @@ jobs:
       - name: Optimize
         run: ./icons-cli-optimize.sh
 
+      - name: Generate github token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.CHARCOAL_BOT_APP_ID }}
+          private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
+
       - name: Create a Pull Request
         env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: main
