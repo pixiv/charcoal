@@ -13,7 +13,6 @@ Requires `.npmrc` in CI/CD setting page of the repository.
 ```sh
 nodenv install `cat .node-version`
 yarn install
-yarn lerna bootstrap
 yarn build
 ```
 
