@@ -25,7 +25,7 @@
     "fmt:prettier": "prettier . --write",
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
     "release": "yarn run clean && yarn run build && lerna publish",
-    "postpublish": "./postpublish.sh",
+    "version": "yarn install && git stage yarn.lock",
     "website": "docsify serve docs -p 5000"
   },
   "devDependencies": {
