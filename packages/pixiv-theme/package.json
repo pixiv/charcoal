@@ -35,5 +35,8 @@
   "files": [
     "src",
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

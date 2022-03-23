@@ -46,5 +46,8 @@
     "src",
     "dist",
     "theme.json"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
