@@ -13,7 +13,12 @@ export {
   default as IconButton,
   type IconButtonProps,
 } from './components/IconButton'
-export { default as Radio, type RadioProps } from './components/Radio'
+export {
+  default as Radio,
+  type RadioProps,
+  RadioGroup,
+  type RadioGroupProps,
+} from './components/Radio'
 export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,
