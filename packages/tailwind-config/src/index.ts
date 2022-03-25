@@ -58,6 +58,13 @@ export function createTailwindConfig({
         current: 'currentColor',
         ...colorsToTailwindConfig(version, defaultTheme.color, effects),
       },
+      borderColor: {
+        ...colorsToTailwindConfig(
+          version,
+          mapObject(defaultTheme.border, (k, v) => [k, v.color]),
+          effects
+        ),
+      },
       spacing: mapObject(SPACING, (name, pixel) => [name, px(pixel)]),
       width: {
         full: '100%',
