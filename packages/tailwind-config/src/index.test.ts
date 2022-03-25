@@ -51,10 +51,10 @@ describe('tailwind.config.js', () => {
   })
 
   test('gradient plugin', () => {
-    const varName = '--tailwind-gradient-surface4-gradient-left-hover'
+    const varName = '--tailwind-gradient-surface5-left-hover'
 
     expect(
-      result.getStylesByClassName('bg-surface4-gradient-left-hover')?.[0]
+      result.getStylesByClassName('bg-surface5-left-hover')?.[0]
     ).toContain(`background-image: var(${varName});`)
 
     expect(result.getCssVariable(varName)).toHaveLength(2)
