@@ -1,9 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from 'storybook-dark-mode'
-import createTheme from '@charcoal-ui/styled'
-
-const { light, dark } = createTheme
+import { light, dark } from '@charcoal-ui/theme'
 
 const Theme = ({ children }) => (
   <ThemeProvider theme={useDarkMode() ? dark : light}>{children}</ThemeProvider>
