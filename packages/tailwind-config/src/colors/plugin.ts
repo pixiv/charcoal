@@ -1,4 +1,5 @@
-import { Material, Theme } from '@charcoal-ui/theme'
+import { Material } from '@charcoal-ui/foundation'
+import { CharcoalTheme as Theme } from '@charcoal-ui/theme'
 import { applyEffect } from '@charcoal-ui/utils'
 import plugin, { TailwindPlugin } from 'tailwindcss/plugin'
 import { mergeEffect } from '../foundation'

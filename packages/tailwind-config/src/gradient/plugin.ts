@@ -1,6 +1,7 @@
 import plugin from 'tailwindcss/plugin'
 import { camelToKebab, flatMapObject, mapKeys, mapObject } from '../util'
-import { GradientMaterial, ThemeColorGradient } from '@charcoal-ui/theme'
+import { GradientMaterial } from '@charcoal-ui/foundation'
+import { ThemeColorGradient } from '@charcoal-ui/theme'
 import {
   applyEffectToGradient,
   gradient,
@@ -68,7 +69,7 @@ type Utilities = Record<string, LinearGradient>
 type LinearGradient = `linear-gradient(${string})`
 
 export function getUtilities(
-  gradients: ThemeColorGradient,
+  gradients: Record<string, GradientMaterial>,
   effect: MergedEffect
 ): Utilities {
   const effects = Object.entries(effect)

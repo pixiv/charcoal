@@ -1,18 +1,9 @@
 export interface TypographyDescriptor {
-  lineHeight: number
-  fontSize: number
+  readonly lineHeight: number
+  readonly fontSize: number
 }
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-export type Typography = {
-  [12]: TypographyDescriptor
-  [14]: TypographyDescriptor
-  [16]: TypographyDescriptor
-  [20]: TypographyDescriptor
-  [32]: TypographyDescriptor
-}
-
-export const typography: Typography = {
+export const TYPOGRAPHY_SIZE = {
   12: {
     fontSize: 12,
     lineHeight: 20,
@@ -33,10 +24,7 @@ export const typography: Typography = {
     fontSize: 32,
     lineHeight: 40,
   },
-}
-
-export const halfLeading = ({ fontSize, lineHeight }: TypographyDescriptor) =>
-  (lineHeight - fontSize) / 2
+} as const
 
 export const TYPOGRAPHY_WEIGHT = [
   /**
@@ -55,8 +43,6 @@ export const TYPOGRAPHY_WEIGHT = [
   'bold',
 ] as const
 
-export type TypographyWeight = typeof TYPOGRAPHY_WEIGHT[number]
-
 export const TYPOGRAPHY_VARIANT = [
   /**
    * Proportional font (which has the variable amount of horizontal space)
@@ -69,5 +55,3 @@ export const TYPOGRAPHY_VARIANT = [
    */
   'monospace',
 ] as const
-
-export type TypographyVariant = typeof TYPOGRAPHY_VARIANT[number]

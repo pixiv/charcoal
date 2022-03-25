@@ -1,6 +1,6 @@
 import { TailwindBuild } from './_lib/TailwindBuild'
 import { createTailwindConfig } from '.'
-import { dark, light } from '@charcoal-ui/pixiv-theme'
+import { dark, light } from '@charcoal-ui/theme'
 
 describe('tailwind.config.js', () => {
   const defaultConfig = createTailwindConfig({

@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@charcoal-ui/foundation": "^1.0.0-alpha.2",
-    "@charcoal-ui/pixiv-theme": "^1.0.0-alpha.2",
     "@charcoal-ui/theme": "^1.0.0-alpha.2",
     "@charcoal-ui/utils": "^1.0.0-alpha.2",
     "warning": "^4.0.3"

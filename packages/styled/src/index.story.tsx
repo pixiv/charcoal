@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
-import { ElementsTheme } from './theme'
+import { CharcoalTheme } from '@charcoal-ui/theme'
+import { Material } from '@charcoal-ui/foundation'
 import createTheme, { ThemeProp } from '.'
-import { GradientMaterial } from '@charcoal-ui/theme'
 import { disabledSelector } from '@charcoal-ui/utils'
 
 export default {
@@ -15,21 +15,18 @@ declare module 'react' {
   }
 }
 
-type MyTheme = ElementsTheme & {
-  gradientColor: {
-    callToAction: GradientMaterial
+type MyTheme = CharcoalTheme & {
+  color: {
+    mycolor: Material
   }
 }
 
-function myTheme(theme: ElementsTheme): MyTheme {
+function myTheme(theme: CharcoalTheme): MyTheme {
   return {
     ...theme,
-    gradientColor: {
-      callToAction: [
-        { color: '#d1ff1a', ratio: 0 },
-        { color: '#1ad1ff', ratio: 100 },
-      ],
-      ...theme.gradientColor,
+    color: {
+      ...theme.color,
+      mycolor: '#ff9e8c',
     },
   }
 }
@@ -95,7 +92,7 @@ export const TailwindLike = () => (
   >
     <div
       css={theme((o) => [
-        o.bg.premium.hover.press,
+        o.bg.mycolor.hover.press,
         o.font.text5.hover.press,
         o.typography(14).bold,
         o.padding.all(16),

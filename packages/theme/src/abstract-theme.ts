@@ -1,10 +1,10 @@
-import { TypographyDescriptor } from '@charcoal-ui/foundation'
 import {
-  Effect,
   GradientMaterial,
   Material,
+  TypographyDescriptor,
+  Effect,
   OpacityEffect,
-} from '@charcoal-ui/theme'
+} from '@charcoal-ui/foundation'
 
 export type EffectType = 'hover' | 'press' | 'disabled'
 
@@ -14,7 +14,7 @@ export type ColorStyleTheme = {
   [key in Key]: Material
 }
 
-export interface StyledTheme {
+export interface CharcoalAbstractTheme {
   color: ColorStyleTheme
   gradientColor: { [key in Key]: GradientMaterial }
   effect: { [key in EffectType]?: Effect }
@@ -38,6 +38,19 @@ export interface StyledTheme {
     [key in Key]: {
       color: Material
       weight: number
+    }
+  }
+  grid: {
+    unit: {
+      column: number
+      gutter: number
+    }
+  }
+  transition: {
+    [key in Key]: {
+      duration: number
+      // TODO
+      // easing: string
     }
   }
 }

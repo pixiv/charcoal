@@ -15,4 +15,3 @@ yarn
 ```
 yarn add @charcoal-ui/react-sandbox
 ```
-

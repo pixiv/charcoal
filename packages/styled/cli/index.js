@@ -1,19 +1,17 @@
-import createTheme from '@charcoal-ui/styled'
+import { light, dark } from '@charcoal-ui/theme'
 import fs from 'fs'
 import { parseToRgb } from 'polished'
 
 /**
  * transform color string to [0, 1] clamped value of color object
  *
- * @param { import('@charcoal-ui/theme').Material } material
+ * @param { import('@charcoal-ui/foundation').Material } material
  */
 function parseMaterial(material) {
   const { red, green, blue, ...rest } = parseToRgb(material)
   const alpha = 'alpha' in rest ? rest.alpha : 1
   return { red: red / 255, green: green / 255, blue: blue / 255, alpha }
 }
-
-const { light, dark } = createTheme
 
 const deprecatedColor = ['callToAction']
 

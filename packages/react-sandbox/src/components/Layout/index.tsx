@@ -6,7 +6,7 @@ import {
   RESPONSIVE_MAIN_MAX_WIDTH,
 } from '../../foundation/contants'
 import { useMediaScreen1 } from '../../foundation/hooks'
-import { columnPx, GUTTER_UNIT } from '@charcoal-ui/foundation'
+import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
 import { maxWidth } from '@charcoal-ui/utils'
 
 interface Props {
@@ -100,7 +100,10 @@ const MainArea = styled.div<{ center: boolean }>`
   flex-grow: 1;
   /* https://www.w3.org/TR/css-flexbox-1/#min-size-auto */
   min-width: 0;
-  max-width: ${(p) => (p.center ? columnPx(6) : RESPONSIVE_MAIN_MAX_WIDTH)}px;
+  max-width: ${(p) =>
+    p.center
+      ? columnSystem(6, COLUMN_UNIT, GUTTER_UNIT)
+      : RESPONSIVE_MAIN_MAX_WIDTH}px;
   padding: 40px ${MAIN_COLUMN_HORIZONTAL_MIN_MARGIN}px;
   margin: 0 auto;
   display: flex;

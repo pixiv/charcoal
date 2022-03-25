@@ -49,8 +49,8 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@charcoal-ui/pixiv-theme": "^1.0.0-alpha.2",
     "@charcoal-ui/styled": "^1.0.0-alpha.2",
+    "@charcoal-ui/theme": "^1.0.0-alpha.2",
     "@charcoal-ui/utils": "^1.0.0-alpha.2",
     "@react-aria/checkbox": "^3.2.3",
     "@react-aria/switch": "^3.1.3",

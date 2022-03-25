@@ -1,8 +1,8 @@
 :root {
-  --color-brand: #0096FA;
-  --color-surface3: #0000000A; 
-  --color-text2: #000000A3;
-  --pixiv-logo-url: url("../images/logo.svg");
+  --color-brand: #0096fa;
+  --color-surface3: #0000000a;
+  --color-text2: #000000a3;
+  --pixiv-logo-url: url('../images/logo.svg');
 }
 
 html,
@@ -24,7 +24,7 @@ section.cover::after {
    * https://developer.mozilla.org/ja/docs/Web/CSS/content
    */
   content: var(--pixiv-logo-url);
-  content: var(--pixiv-logo-url) / "pixiv";
+  content: var(--pixiv-logo-url) / 'pixiv';
 }
 
 section.cover h1 {

@@ -1,4 +1,5 @@
-import { ElementsTheme, ThemeProp } from '@charcoal-ui/styled'
+import { ThemeProp } from '@charcoal-ui/styled'
+import { CharcoalTheme } from '@charcoal-ui/theme'
 import { CSSProp, DefaultTheme } from 'styled-components'
 
 declare module 'react' {
@@ -8,5 +9,5 @@ declare module 'react' {
 }
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends ElementsTheme {}
+  export interface DefaultTheme extends CharcoalTheme {}
 }

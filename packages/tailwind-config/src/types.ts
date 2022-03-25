@@ -1,4 +1,5 @@
-import { Material, Theme } from '@charcoal-ui/theme'
+import { Material } from '@charcoal-ui/foundation'
+import { CharcoalTheme as Theme } from '@charcoal-ui/theme'
 
 export type TailwindVersion = 'v1' | 'v2' | 'v3'
 

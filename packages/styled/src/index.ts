@@ -6,7 +6,11 @@ import {
   constFactory,
   modifiedArgumentedFactory,
 } from './lib'
-import { EffectType, StyledTheme as Theme, Key } from './types'
+import {
+  EffectType,
+  CharcoalAbstractTheme as Theme,
+  Key,
+} from '@charcoal-ui/theme'
 import {
   objectAssign,
   unreachable,
@@ -14,8 +18,9 @@ import {
   objectKeys,
   isPresent,
 } from './util'
-import { columnPx, halfLeading } from '@charcoal-ui/foundation'
+import { columnSystem } from '@charcoal-ui/foundation'
 import {
+  halfLeading,
   applyEffect,
   applyEffectToGradient,
   dur,
@@ -26,9 +31,6 @@ import {
   px,
 } from '@charcoal-ui/utils'
 export { type Modified, type ModifiedArgumented } from './lib'
-
-import { light, dark } from './theme'
-export { type ElementsTheme } from './theme'
 
 const colorProperties = ['bg', 'font'] as const
 type ColorProperty = typeof colorProperties[number]
@@ -542,10 +544,12 @@ const createFixedRelativeCss =
     }))
 
 const createFixedColumnCss =
-  <T extends Theme>(_theme: T) =>
+  <T extends Theme>(theme: T) =>
   (property: FixedProperty, span: number): Internal =>
     internal(() => ({
-      [property]: px(columnPx(span)),
+      [property]: px(
+        columnSystem(span, theme.grid.unit.column, theme.grid.unit.gutter)
+      ),
     }))
 
 const createElementEffectCss =
@@ -712,9 +716,6 @@ function createTheme<T extends Theme>(_styled?: ThemedStyledInterface<T>) {
     }
 }
 
-// default export を疑似esmにしないようにする hack
-createTheme.light = light
-createTheme.dark = dark
 export default createTheme
 
 export type ThemeProp<T> = ({ theme }: { theme: T }) => CSSObject | CSSObject[]
