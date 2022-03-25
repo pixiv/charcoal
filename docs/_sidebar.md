@@ -2,7 +2,6 @@
 
   - [🏛 @charcoal-ui/foundation](pages/constants/foundation.md)
   - [🎨 @charcoal-ui/theme](pages/constants/theme.md)
-  - [🖌️ @charcoal-ui/pixiv-theme](pages/constants/pixiv-theme.md)
 
 - ユーテリティ
 
