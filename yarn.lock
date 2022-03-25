@@ -1654,6 +1654,7 @@ __metadata:
     "@charcoal-ui/foundation": ^1.0.0-alpha.2
     "@charcoal-ui/react": ^1.0.0-alpha.2
     "@charcoal-ui/styled": ^1.0.0-alpha.2
+    "@charcoal-ui/theme": ^1.0.0-alpha.2
     "@charcoal-ui/utils": ^1.0.0-alpha.2
     "@storybook/addon-actions": ^6.4.17
     "@storybook/addon-knobs": ^6.4.0
@@ -1753,7 +1754,6 @@ __metadata:
     "@types/warning": ^3.0.0
     microbundle: ^0.14.2
     npm-run-all: ^4.1.5
-    polished: ^4.1.4
     react: ^17.0.2
     rimraf: ^3.0.2
     styled-components: ^5.3.3
@@ -1809,6 +1809,7 @@ __metadata:
     "@charcoal-ui/utils": ^1.0.0-alpha.2
     microbundle: ^0.14.2
     npm-run-all: ^4.1.5
+    polished: ^4.1.4
     rimraf: ^3.0.2
     typescript: ^4.5.5
   languageName: unknown

@@ -13,11 +13,9 @@
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle -f modern,esm,cjs --tsconfig tsconfig.build.json && yarn serialize",
-    "typecheck": "tsc --noEmit --project tsconfig.build.json && yarn typecheck:cli",
-    "typecheck:cli": "tsc --noEmit --project cli/tsconfig.build.json",
-    "clean": "rimraf dist",
-    "serialize": "node cli/index.js"
+    "build": "microbundle -f modern,esm,cjs --tsconfig tsconfig.build.json",
+    "typecheck": "tsc --noEmit --project tsconfig.build.json",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
@@ -25,7 +23,6 @@
     "@types/warning": "^3.0.0",
     "microbundle": "^0.14.2",
     "npm-run-all": "^4.1.5",
-    "polished": "^4.1.4",
     "react": "^17.0.2",
     "rimraf": "^3.0.2",
     "styled-components": "^5.3.3",
@@ -43,8 +40,7 @@
   },
   "files": [
     "src",
-    "dist",
-    "theme.json"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
