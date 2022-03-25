@@ -1,19 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-export type Spacing = {
-  [0]: number
-  [4]: number
-  [8]: number
-  [16]: number
-  [24]: number
-  [40]: number
-  [64]: number
-  [104]: number
-  [168]: number
-  [272]: number
-  [440]: number
-}
-
-export const spacing: Spacing = {
+export const SPACING = {
   0: 0,
   4: 4,
   8: 8,
@@ -25,4 +10,4 @@ export const spacing: Spacing = {
   168: 168,
   272: 272,
   440: 440,
-}
+} as const

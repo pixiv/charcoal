@@ -1,9 +1,6 @@
 import plugin from 'tailwindcss/plugin'
-import {
-  halfLeading,
-  typography,
-  TypographyDescriptor,
-} from '@charcoal-ui/foundation'
+import { TypographyDescriptor, TYPOGRAPHY_SIZE } from '@charcoal-ui/foundation'
+import { halfLeading } from '@charcoal-ui/utils'
 import { px } from '@charcoal-ui/utils'
 import { mapObject } from '../util'
 
@@ -38,7 +35,7 @@ const typographyStyle = (style: TypographyDescriptor) => {
 }
 
 const typographyPlugin = plugin(({ addUtilities }) => {
-  const typographyClasses = mapObject(typography, (fontSize, style) => [
+  const typographyClasses = mapObject(TYPOGRAPHY_SIZE, (fontSize, style) => [
     `.typography-${fontSize}`,
     typographyStyle(style),
   ])

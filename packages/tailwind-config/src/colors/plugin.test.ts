@@ -1,5 +1,5 @@
 import { defineCssVariables } from './plugin'
-import { dark, light } from '@charcoal-ui/pixiv-theme'
+import { dark, light } from '@charcoal-ui/theme'
 
 describe('colors/plugin/defineCssVariables', () => {
   const DARK = '@media(prefers-color-scheme: dark)'

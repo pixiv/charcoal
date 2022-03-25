@@ -38,7 +38,7 @@ module.exports = {
 ### カスタマイズする
 
 ```js:tailwind.config.js
-const { light, dark } = require('@charcoal-ui/pixiv-theme')
+const { light, dark } = require('@charcoal-ui/theme')
 const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
 
 /**

@@ -2,8 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Radio, { RadioGroup } from '.'
-import createTheme from '@charcoal-ui/styled'
-const { light } = createTheme
+import { light } from '@charcoal-ui/theme'
 
 describe('Radio', () => {
   describe('__DEV__ mode', () => {

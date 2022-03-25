@@ -1,4 +1,4 @@
-import { Key } from './types'
+import { Key } from '@charcoal-ui/theme'
 import { unreachable } from './util'
 
 /**

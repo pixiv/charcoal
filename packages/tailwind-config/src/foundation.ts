@@ -1,4 +1,5 @@
-import { Theme, Effect } from '@charcoal-ui/theme'
+import { Effect } from '@charcoal-ui/foundation'
+import { CharcoalTheme as Theme } from '@charcoal-ui/theme'
 
 export const GRID_COUNT = 12
 

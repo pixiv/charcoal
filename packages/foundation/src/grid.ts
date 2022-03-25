@@ -8,13 +8,13 @@ export const COLUMN_UNIT = 80
  */
 export const GUTTER_UNIT = 24
 
+// TODO: Grid definition with breakpoint
+
 /**
- * Calculate px occupied by the span of the columns
+ * Calculate px occupied by the span of the columns with gutter gap
  *
  * @param span column span count
  */
-export function columnPx(span: number) {
-  return span * COLUMN_UNIT + (span - 1) * GUTTER_UNIT
+export function columnSystem(span: number, column: number, gutter: number) {
+  return span * column + (span - 1) * gutter
 }
-
-// TODO: Grid definition with breakpoint

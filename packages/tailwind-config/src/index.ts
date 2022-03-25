@@ -12,11 +12,10 @@ import {
 import {
   COLUMN_UNIT,
   GUTTER_UNIT,
-  spacing,
-  borderRadius,
-  breakpoint,
+  SPACING,
+  BORDER_RADIUS,
 } from '@charcoal-ui/foundation'
-import { light } from '@charcoal-ui/pixiv-theme'
+import { light } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
 import { colorsToTailwindConfig } from './colors/toTailwindConfig'
 
@@ -43,10 +42,10 @@ export function createTailwindConfig({
     theme: {
       screens: {
         screen1: px(0),
-        screen2: px(breakpoint.screen1),
-        screen3: px(breakpoint.screen2),
-        screen4: px(breakpoint.screen3),
-        screen5: px(breakpoint.screen4),
+        screen2: px(defaultTheme.breakpoint.screen1),
+        screen3: px(defaultTheme.breakpoint.screen2),
+        screen4: px(defaultTheme.breakpoint.screen3),
+        screen5: px(defaultTheme.breakpoint.screen4),
       },
       colors: {
         // @deprecated
@@ -59,7 +58,14 @@ export function createTailwindConfig({
         current: 'currentColor',
         ...colorsToTailwindConfig(version, defaultTheme.color, effects),
       },
-      spacing: mapObject(spacing, (name, pixel) => [name, px(pixel)]),
+      borderColor: {
+        ...colorsToTailwindConfig(
+          version,
+          mapObject(defaultTheme.border, (k, v) => [k, v.color]),
+          effects
+        ),
+      },
+      spacing: mapObject(SPACING, (name, pixel) => [name, px(pixel)]),
       width: {
         full: '100%',
         screen: '100vw',
@@ -90,7 +96,10 @@ export function createTailwindConfig({
       gap: {
         fixed: px(GUTTER_UNIT),
       },
-      borderRadius: mapObject(borderRadius, (name, value) => [name, px(value)]),
+      borderRadius: mapObject(BORDER_RADIUS, (name, value) => [
+        name,
+        px(value),
+      ]),
       transitionDuration: {
         [DEFAULT]: '0.2s',
       },

@@ -1,4 +1,4 @@
-import { GradientMaterial, Material } from '@charcoal-ui/theme'
+import { GradientMaterial, Material } from '@charcoal-ui/foundation'
 
 export const COLOR_PREFIX = '--tailwind-color-'
 

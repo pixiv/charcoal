@@ -1,4 +1,4 @@
-import { Material } from '@charcoal-ui/theme'
+import { Material } from '@charcoal-ui/foundation'
 import { applyEffect } from '@charcoal-ui/utils'
 import { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { MergedEffect } from '../foundation'

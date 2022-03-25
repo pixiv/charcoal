@@ -2,13 +2,14 @@ import { linearGradient, parseToRgb, rgba, rgbToColorString } from 'polished'
 import { RgbColor } from 'polished/lib/types/color'
 
 import {
-  AlphaEffect,
-  Effect,
-  Effects,
-  GradientMaterial,
-  OpacityEffect,
-  ReplaceEffect,
-} from '@charcoal-ui/theme'
+  type AlphaEffect,
+  type Effect,
+  type Effects,
+  type GradientMaterial,
+  type OpacityEffect,
+  type ReplaceEffect,
+  type TypographyDescriptor,
+} from '@charcoal-ui/foundation'
 
 export const GRADIENT_DIRECTIONS = [
   'to top',
@@ -59,6 +60,7 @@ interface RgbaColor extends RgbColor {
 }
 
 interface ReadonlyArrayConstructor {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   isArray(value: any): value is readonly any[]
 }
 
@@ -179,3 +181,9 @@ export const disabledSelector = `&:disabled, &[aria-disabled]:not([aria-disabled
 export function maxWidth(breakpoint: number) {
   return `(max-width: ${breakpoint - 1}px)`
 }
+
+/**
+ * Derive half-leading from typography size
+ */
+export const halfLeading = ({ fontSize, lineHeight }: TypographyDescriptor) =>
+  (lineHeight - fontSize) / 2
