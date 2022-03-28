@@ -10,28 +10,35 @@ import { light, dark } from '@charcoal-ui/theme'
 
 expect.extend(toHaveNoViolations)
 
-const stories = glob
+interface StoryWithMetadata<ArgsType = any> {
+  filename: string
+  name: string
+  story: Story<ArgsType>
+  args: ArgsType
+}
+
+const stories: StoryWithMetadata[] = glob
   .sync(path.resolve(__dirname, '**/*.story.tsx'))
-  .flatMap((filename) =>
-    Object.entries(
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      require(`./${path.relative(__dirname, filename)}`) as Record<
-        string,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        Story<any>
-      >
-    )
+  .flatMap((filePath) => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const exports = require(`./${path.relative(
+      __dirname,
+      filePath
+    )}`) as Record<string, any>
+
+    return Object.entries(exports)
       .filter(
-        ([exportName, story]) =>
-          exportName !== 'default' && typeof story === 'function'
+        ([exportName, exportValue]) =>
+          exportName !== 'default' && typeof exportValue === 'function'
       )
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .map<[string, string, Story<any>]>(([exportName, story]) => [
-        path.relative(__dirname, filename),
-        exportName,
-        story,
-      ])
-  )
+      .map(([exportName, exportValue]) => ({
+        filename: path.relative(__dirname, filePath),
+        name: exportName,
+        story: exportValue as Story<any>,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+        args: { ...exports.default.args, ...exportValue.args },
+      }))
+  })
 
 const themes = Object.entries({
   light,
@@ -58,14 +65,14 @@ beforeEach(() => {
 describe.each(themes)('using %s theme', (_name, theme) => {
   describe.each(links)('using %s component', (_name, link) => {
     describe.each(stories)(
-      'storiesOf(%s).add(%s)',
-      (_filename, _exportName, story) => {
+      'storiesOf($filename).add($name)',
+      ({ story, args }) => {
         it('has no accessibility violations', async () => {
           expect(() => {
             render(
               <ThemeProvider theme={theme}>
                 <ComponentAbstraction components={{ Link: link }}>
-                  {story(story.args)}
+                  {story(args)}
                 </ComponentAbstraction>
               </ThemeProvider>
             )
