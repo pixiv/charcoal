@@ -116,9 +116,8 @@ const RadioLabel = styled.div`
   ${theme((o) => [o.typography(14)])}
 `
 
-export type RadioGroupProps = React.PropsWithChildren<{
+export type RadioGroupBaseProps = React.PropsWithChildren<{
   className?: string
-  defaultValue?: string
   label: string
   name: string
   onChange(next: string): void
@@ -126,6 +125,20 @@ export type RadioGroupProps = React.PropsWithChildren<{
   readonly?: boolean
   hasError?: boolean
 }>
+
+export interface ControlledRadioGroupProps extends RadioGroupBaseProps {
+  value?: string
+  defaultValue?: never
+}
+
+export interface UncontrolledRadioGroupProps extends RadioGroupBaseProps {
+  value?: never
+  defaultValue?: string
+}
+
+export type RadioGroupProps =
+  | ControlledRadioGroupProps
+  | UncontrolledRadioGroupProps
 
 // TODO: use (or polyfill) flex gap
 const StyledRadioGroup = styled.div`
@@ -158,7 +171,6 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
 
 export function RadioGroup({
   className,
-  defaultValue,
   label,
   name,
   onChange,
@@ -166,6 +178,8 @@ export function RadioGroup({
   readonly,
   hasError,
   children,
+  value,
+  defaultValue,
 }: RadioGroupProps) {
   const [selected, setSelected] = useState(defaultValue)
 
@@ -181,7 +195,7 @@ export function RadioGroup({
     <RadioGroupContext.Provider
       value={{
         name,
-        selected,
+        selected: value ?? selected,
         disabled: disabled ?? false,
         readonly: readonly ?? false,
         hasError: hasError ?? false,
