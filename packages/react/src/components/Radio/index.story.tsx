@@ -12,10 +12,8 @@ export default {
   component: Radio,
   argTypes: {
     value: {
-      control: { type: 'select', options },
-    },
-    defaultValue: {
-      control: { type: 'select', options },
+      control: { type: 'select' },
+      options,
     },
   },
   args: {
@@ -27,7 +25,8 @@ export default {
   },
 }
 
-interface BaseProps {
+interface Props {
+  value?: string
   hasError: boolean
   parentDisabled: boolean
   childDisabled: boolean
@@ -35,25 +34,13 @@ interface BaseProps {
   readonly: boolean
 }
 
-interface ControlledProps extends BaseProps {
-  value?: string
-  defaultValue?: never
-}
-
-interface UncontrolledProps extends BaseProps {
-  value?: never
-  defaultValue?: string
-}
-
-type Props = ControlledProps | UncontrolledProps
-
 const Template: Story<Partial<Props>> = ({
+  value,
   forceChecked,
   hasError,
   parentDisabled,
   childDisabled,
   readonly,
-  ...valueOrDefaultValue
 }) => (
   <div
     css={css`
@@ -67,11 +54,11 @@ const Template: Story<Partial<Props>> = ({
         key={name}
         label={`選択肢-${name}`}
         name={name}
+        value={value}
         onChange={action('onChange')}
         disabled={parentDisabled}
         readonly={readonly}
         hasError={hasError}
-        {...valueOrDefaultValue}
       >
         {options.map((option) => (
           <Radio
@@ -88,14 +75,4 @@ const Template: Story<Partial<Props>> = ({
   </div>
 )
 
-export const Controlled: Story<Partial<Props>> = Template.bind({})
-Controlled.args = {
-  value: options[0],
-  defaultValue: undefined,
-}
-
-export const Uncontrolled: Story<Partial<Props>> = Template.bind({})
-Uncontrolled.args = {
-  value: undefined,
-  defaultValue: options[0],
-}
+export const Default = Template.bind({})

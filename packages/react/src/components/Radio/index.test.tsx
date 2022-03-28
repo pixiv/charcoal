@@ -31,12 +31,13 @@ describe('Radio', () => {
     })
   })
 
-  describe('defaultValue is the first option', () => {
+  describe('value is the first option', () => {
     let option1: HTMLInputElement
     let option2: HTMLInputElement
+    const handleChange = jest.fn()
 
     beforeEach(() => {
-      render(<TestComponent defaultValue="option1" />)
+      render(<TestComponent value="option1" onChange={handleChange} />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -48,18 +49,16 @@ describe('Radio', () => {
     })
 
     describe('clicking the second', () => {
-      it('the second <Radio> is checked', () => {
+      it('event handler is called', () => {
         fireEvent.click(option2)
-
-        expect(option1.checked).toBeFalsy()
-        expect(option2.checked).toBeTruthy()
+        expect(handleChange).toHaveBeenCalledWith('option2')
       })
     })
   })
 
   describe('<RadioGroup> is disabled', () => {
     it('all <Radio>s are disabled', () => {
-      render(<TestComponent defaultValue="option1" radioGroupDisabled />)
+      render(<TestComponent value="option1" radioGroupDisabled />)
       screen.getAllByRole<HTMLInputElement>('radio').forEach((element) => {
         expect(element.disabled).toBeTruthy()
       })
@@ -71,7 +70,7 @@ describe('Radio', () => {
     let option2: HTMLInputElement
 
     beforeEach(() => {
-      render(<TestComponent defaultValue="option1" option1Disabled />)
+      render(<TestComponent value="option1" option1Disabled />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -91,7 +90,7 @@ describe('Radio', () => {
     let option2: HTMLInputElement
 
     beforeEach(() => {
-      render(<TestComponent defaultValue="option1" readonly />)
+      render(<TestComponent value="option1" readonly />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -109,7 +108,7 @@ describe('Radio', () => {
 })
 
 function TestComponent({
-  defaultValue,
+  value,
   onChange = jest.fn(),
   radioGroupDisabled = false,
   readonly = false,
@@ -117,7 +116,7 @@ function TestComponent({
   option1Disabled = false,
   option2Disabled = false,
 }: {
-  defaultValue: string
+  value?: string
   onChange?: () => void
   radioGroupDisabled?: boolean
   readonly?: boolean
@@ -130,7 +129,7 @@ function TestComponent({
       <RadioGroup
         label="テスト項目"
         name="test"
-        defaultValue={defaultValue}
+        value={value}
         onChange={onChange}
         disabled={radioGroupDisabled}
         readonly={readonly}
