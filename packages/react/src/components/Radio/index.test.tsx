@@ -5,11 +5,9 @@ import Radio, { RadioGroup } from '.'
 import { light } from '@charcoal-ui/theme'
 
 describe('Radio', () => {
-  describe('__DEV__ mode', () => {
+  describe('development mode', () => {
     beforeEach(() => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      global.__DEV__ = {}
+      global.process.env.NODE_ENV = 'development'
     })
 
     describe('<Radio> is not surrounded by <RadioGroup>', () => {

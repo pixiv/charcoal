@@ -4,6 +4,7 @@ import {
   Route,
   Link as RouterLink,
   useParams,
+  Routes,
 } from 'react-router-dom'
 import { Story } from '../../_lib/compat'
 import Pager, { LinkPager } from '.'
@@ -56,10 +57,12 @@ const LinkStory: Story<Props> = ({ page: defaultPage, pageCount }) => (
       )}
       initialIndex={defaultPage - 1}
     >
-      <Route
-        path="/:page"
-        element={<CurrentPager pageCount={pageCount}></CurrentPager>}
-      />
+      <Routes>
+        <Route
+          path="/:page"
+          element={<CurrentPager pageCount={pageCount}></CurrentPager>}
+        />
+      </Routes>
     </Router>
   </ComponentAbstraction>
 )

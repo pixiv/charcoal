@@ -6,8 +6,6 @@ import DotsIcon from '../icons/DotsIcon'
 import WedgeIcon, { WedgeDirection } from '../icons/WedgeIcon'
 import { useComponentAbstraction } from '@charcoal-ui/react'
 
-declare const __DEV__: object | undefined // actually object|false, but using undefined allows ! assertion
-
 function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
   // ページャーのリンク生成例:
   //
@@ -25,7 +23,7 @@ function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
   //
   // デザインの意図: 前後移動時のカーソル移動を最小限にする。
 
-  if (__DEV__) {
+  if (process.env.NODE_ENV !== 'production') {
     warning((page | 0) === page, `\`page\` must be interger (${page})`)
     warning(
       (pageCount | 0) === pageCount,
