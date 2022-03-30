@@ -17,6 +17,7 @@ const stories = glob
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       require(`./${path.relative(__dirname, filename)}`) as Record<
         string,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         Story<any>
       >
     )
@@ -24,6 +25,7 @@ const stories = glob
         ([exportName, story]) =>
           exportName !== 'default' && typeof story === 'function'
       )
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .map<[string, string, Story<any>]>(([exportName, story]) => [
         path.relative(__dirname, filename),
         exportName,

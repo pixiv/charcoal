@@ -111,6 +111,7 @@ function validateIconSize(size: Size, icon: keyof KnownIconType) {
   }
   const [iconSize] = result
   if (iconSize !== requiredIconSize) {
+    // eslint-disable-next-line no-console
     console.warn(
       `IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`
     )

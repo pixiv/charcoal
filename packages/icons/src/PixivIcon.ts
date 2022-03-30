@@ -169,6 +169,7 @@ export class PixivIcon extends HTMLElement {
           ? unsafeSVG(this.svgContent)
           : html`<svg viewBox="0 0 ${size} ${size}"></svg>`}
       `,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.shadowRoot!
     )
   }

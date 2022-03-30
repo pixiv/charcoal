@@ -36,7 +36,7 @@ jobs:
 
       - name: Prepare deps
         run: |
-          yarn install
+          yarn install --immutable --inline-builds
           yarn build
 
       - name: Output files

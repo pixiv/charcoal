@@ -1,17 +1,25 @@
-name: version
-
+name: test
 on:
   push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: 16
 
 jobs:
-  version:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
 
       # https://github.com/actions/cache/blob/main/examples.md#node---yarn-2
       - name: Get yarn cache directory path
@@ -35,27 +43,10 @@ jobs:
           yarn install --immutable --inline-builds
           yarn build
 
-      - name: Get comment body
-        id: get-comment-body
+      # TODO: jobを分けてビルド結果をキャッシュして並列化
+      - name: Test
         run: |
-          yarn lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes > body.txt
-
-          body=$(cat body.txt)
-          body="${body//'%'/'%25'}"
-          body="${body//$'\n'/'%0A'}"
-          body="${body//$'\r'/'%0D'}"
-
-          echo ::set-output name=body::$body
-
-      - name: Comment to commit
-        uses: peter-evans/commit-comment@v1
-        with:
-          body: |
-            This commit will bump these packages as follows
-            (Created by https://github.com/peter-evans/commit-comment )
-
-            `yarn lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes`
-
-            ```
-            ${{ steps.get-comment-body.outputs.body }}
-            ```
+          yarn test
+          yarn lint
+          yarn typecheck:config
+          yarn typecheck

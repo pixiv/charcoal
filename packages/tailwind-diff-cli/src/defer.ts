@@ -15,6 +15,7 @@ export function createDefer() {
       try {
         deferFn()
       } catch (err: unknown) {
+        // eslint-disable-next-line no-console
         console.error('Uncaught defer error:', err)
       }
     }

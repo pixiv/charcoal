@@ -34,9 +34,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install deps
+      - name: Prepare deps
         run: |
-          yarn install
+          yarn install --immutable --inline-builds
           yarn workspaces foreach -vptR --from @charcoal-ui/icons-cli run build
 
       - name: Export
