@@ -45,10 +45,6 @@ const links = Object.entries({
 const div = document.body.appendChild(document.createElement('div'))
 
 beforeEach(() => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  global.__DEV__ = {}
-
   global.IntersectionObserver = jest.fn().mockImplementation(() => ({
     observe() {
       return null
