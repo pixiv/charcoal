@@ -127,6 +127,7 @@ export async function check({
           removed++
         }
       }
+      // eslint-disable-next-line no-console
       console.log(`${added} classes added, ${removed} classes removed.`)
     }
   } finally {

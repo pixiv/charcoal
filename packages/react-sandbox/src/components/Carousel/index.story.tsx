@@ -23,7 +23,7 @@ export default {
   decorators: [withKnobs],
 }
 
-export const carousel = () => {
+export const _Carousel = () => {
   const hasGradient = boolean('Gradient', false)
   const fadeInGradient = boolean('FadeInGradient', false)
   const buttonOffset = number('buttonOffset', 0)

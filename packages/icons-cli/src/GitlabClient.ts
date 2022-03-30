@@ -17,8 +17,10 @@ export class GitlabClient {
     const client = new this(host, projectId, privateToken, defaultBranch)
 
     const diff = await client.createActionsFromDiff()
+    // eslint-disable-next-line no-console
     console.log(`${diff.length} files are changed`)
     if (diff.length === 0) {
+      // eslint-disable-next-line no-console
       console.log('no changes. aborting')
       return
     }

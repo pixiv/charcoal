@@ -97,6 +97,7 @@ function measure(ref: Element | null): ElementSize | undefined {
 
 export function useElementSize(
   ref: React.RefObject<Element>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   deps: any[] = []
 ) {
   // _don't_ call measure synchronously here even if you somehow can

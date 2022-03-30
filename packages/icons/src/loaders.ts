@@ -16,6 +16,7 @@ export class PixivIconLoadError extends Error {
 function createLoader(getPath: (attributeName: string) => Promise<string>) {
   return async function getSvgString(attributeName: string): Promise<string> {
     if (cache.has(attributeName)) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       return cache.get(attributeName)!
     }
 

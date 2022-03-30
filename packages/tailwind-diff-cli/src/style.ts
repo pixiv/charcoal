@@ -68,6 +68,7 @@ export function diffsBetweenStyles(
       diffs.push({
         className: afterClassName,
         status: 'added',
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         css: after.get(afterClassName)!,
       })
     }
@@ -77,6 +78,7 @@ export function diffsBetweenStyles(
       diffs.push({
         className: beforeClassName,
         status: 'removed',
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         css: before.get(beforeClassName)!,
       })
     }

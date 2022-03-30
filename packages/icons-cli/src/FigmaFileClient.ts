@@ -81,13 +81,16 @@ export class FigmaFileClient {
 
     const outputDir = path.join(root, outputRootDir, exportFormat)
 
+    // eslint-disable-next-line no-console
     console.log(`Exporting ${url} components`)
     await client.loadSvg(outputDir)
 
+    // eslint-disable-next-line no-console
     console.log(`Exporting components type`)
     const typedefDir = path.join(root, outputRootDir, 'src')
     await client.writeTypeDef(typedefDir)
 
+    // eslint-disable-next-line no-console
     console.log('success!')
   }
 
@@ -123,6 +126,7 @@ export class FigmaFileClient {
       filenamify(name)
     )
 
+    // eslint-disable-next-line no-console
     console.log(`writing to ${outputDir}`)
 
     await ensureFile(fullname)
@@ -162,6 +166,7 @@ export type KnownIconFile = typeof KNOWN_ICON_FILES[number];
   }
 
   private async loadImageUrls() {
+    // eslint-disable-next-line no-console
     console.log('Getting export urls')
 
     const { data } = await this.client.fileImages(this.fileId, {
@@ -195,6 +200,7 @@ export type KnownIconFile = typeof KNOWN_ICON_FILES[number];
 
         await ensureDir(dirname)
 
+        // eslint-disable-next-line no-console
         console.log(`found: ${filename} => ✅ writing...`)
         await writeFile(fullname, response.body, 'utf8')
       })
@@ -202,6 +208,7 @@ export type KnownIconFile = typeof KNOWN_ICON_FILES[number];
   }
 
   private async getFile() {
+    // eslint-disable-next-line no-console
     console.log('Processing response')
 
     const { data } = await this.client.file(this.fileId.toString())

@@ -46,6 +46,7 @@ void yargs
         OUTPUT_ROOT_DIR,
         format as 'svg' | 'pdf'
       ).catch((e) => {
+        // eslint-disable-next-line no-console
         console.error(e)
         process.exit(1)
       })
@@ -68,6 +69,7 @@ void yargs
         .then((content) => optimizeSvg(content, color))
         .then((optimized) => writeFile(file, optimized))
         .catch((e) => {
+          // eslint-disable-next-line no-console
           console.error(e)
           process.exit(1)
         })
@@ -87,6 +89,7 @@ void yargs
         GITLAB_ACCESS_TOKEN,
         GITLAB_DEFAULT_BRANCH ?? 'main'
       ).catch((e) => {
+        // eslint-disable-next-line no-console
         console.error(e)
         process.exit(1)
       })
@@ -105,6 +108,7 @@ void yargs
         GITHUB_ACCESS_TOKEN,
         GITHUB_DEFAULT_BRANCH ?? 'main'
       ).catch((e) => {
+        // eslint-disable-next-line no-console
         console.error(e)
         process.exit(1)
       })

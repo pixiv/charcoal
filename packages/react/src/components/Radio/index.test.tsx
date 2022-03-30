@@ -14,6 +14,7 @@ describe('Radio', () => {
 
     describe('<Radio> is not surrounded by <RadioGroup>', () => {
       beforeEach(() => {
+        // eslint-disable-next-line no-console
         console.error = jest.fn()
 
         render(
@@ -24,6 +25,7 @@ describe('Radio', () => {
       })
 
       it('console.error()', () => {
+        // eslint-disable-next-line no-console
         expect(console.error).toHaveBeenCalledWith(
           expect.stringMatching(/Perhaps you forgot to wrap with <RadioGroup>/u)
         )

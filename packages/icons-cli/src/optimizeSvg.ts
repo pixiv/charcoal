@@ -94,7 +94,9 @@ function colorEquals(self: RgbColor | RgbaColor, other: RgbColor | RgbaColor) {
 }
 
 function addViewboxToRootSvg(svg: SVGSVGElement) {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const width = svg.getAttribute('width')!
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const height = svg.getAttribute('height')!
 
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
