@@ -1,8 +1,9 @@
 # @charcoal-ui ― PIXIV Design System monorepo
 
-This is the monorepo for the `@charcoal-ui` packages by pixiv.
+[![test](https://github.com/pixiv/charcoal/actions/workflows/test.yml/badge.svg)](https://github.com/pixiv/charcoal/actions/workflows/test.yml)
+[![Storybook](./.storybook/badge.svg)](https://pixiv.github.io/charcoal)
 
-<a href="https://pixiv.github.io/charcoal" target="_blank" rel="noopener noreferrer"><img src="./.storybook/badge.svg"></a>
+This is the monorepo for the `@charcoal-ui` packages by pixiv.
 
 ## How to use
 
