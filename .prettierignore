@@ -6,3 +6,4 @@ __snapshots__/
 /storybook-static/
 /coverage/
 LICENSE
+/packages/theme/theme.json
