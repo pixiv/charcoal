@@ -7,6 +7,7 @@ import {
   Route,
   useParams,
   useNavigate,
+  Routes,
 } from 'react-router-dom'
 import Filter, { FilterButton, FilterLink } from '.'
 import { ComponentAbstraction } from '@charcoal-ui/react'
@@ -27,7 +28,9 @@ export function Default() {
         initialEntries={Array.from({ length: 5 }).map((_, i) => makeUrl(i + 1))}
         initialIndex={0}
       >
-        <Route path="/:page" element={<FilterButtons />} />
+        <Routes>
+          <Route path="/:page" element={<FilterButtons />} />
+        </Routes>
       </Router>
     </ComponentAbstraction>
   )
