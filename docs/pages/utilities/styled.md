@@ -81,3 +81,41 @@ const MyComponent = styled.div<{ big?: boolean }>`
 
 export default () => <MyComponent big={false}>I am not big</MyComponent>
 ```
+
+## テーマのカスタマイズ
+
+styled-components の`DefaultTheme`を拡張することでテーマのカスタマイズを行うことができます。
+
+```tsx
+import { DefaultTheme, ThemeProvider } from 'styled-components'
+import { light, dark, CharcoalTheme } from '@charcoal-ui/theme'
+import { Material } from '@charcoal-ui/foundation'
+
+type MyTheme = CharcoalTheme & {
+  color: {
+    mycolor: Material
+  }
+}
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends MyTheme {}
+}
+
+const myTheme = (theme: CharcoalTheme): MyTheme => ({
+  ...theme,
+  color: {
+    ...theme.color,
+    mycolor: '#ff9e8c',
+  },
+})
+
+export default () => (
+  <ThemeProvider theme={myTheme(light)}>
+    <StyledText>I am text with mycolor</StyledText>
+  </ThemeProvider>
+)
+
+const StyledText = styled.h1`
+  ${theme((o) => [o.font.mycolor])}
+`
+```
