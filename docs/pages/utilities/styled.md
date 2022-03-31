@@ -21,14 +21,12 @@ yarn add @charcoal-ui/styled
 まず `styled-components` を import して ThemeProvider を入れます。
 
 ```tsx
-import styled, { DefaultTheme, ThemeProvider } from 'styled-components'
-import createTheme, { light, Theme } from '@charcoal-ui/styled'
+import { DefaultTheme, ThemeProvider } from 'styled-components'
+import { light, dark, CharcoalTheme } from '@charcoal-ui/theme'
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends CharcoalTheme {}
 }
-
-const theme = createTheme(styled)
 
 export default () => (
   <ThemeProvider theme={light}>
@@ -40,6 +38,10 @@ export default () => (
 こんな感じでコンポーネントを定義します。
 
 ```tsx
+import styled from 'styled-components'
+import createTheme from '@charcoal-ui/styled'
+const theme = createTheme(styled)
+
 const MyComponent = styled.div`
   display: flex;
   justify-content: center;
@@ -74,7 +76,7 @@ const MyComponent = styled.div<{ big?: boolean }>`
 
       // 条件でユーティリティを分岐する
       props.big ? o.typography(20).bold : o.typography(14).bold,
-    ])(props)}
+    ])}
 `
 
 export default () => <MyComponent big={false}>I am not big</MyComponent>
