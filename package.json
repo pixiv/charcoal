@@ -26,7 +26,7 @@
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
     "release": "yarn run clean && yarn run build && lerna publish",
     "postpublish": "./postpublish.sh",
-    "website": "vite docs --base=docs --port 5000"
+    "website": "vite docs --base=charcoal/docs --port 5000"
   },
   "devDependencies": {
     "@charcoal-ui/icons-cli": "workspace:^",
