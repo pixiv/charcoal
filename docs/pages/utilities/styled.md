@@ -171,9 +171,11 @@ const StyledText = styled.h1`
   **注意: デフォルトでハーフリーディングを削る処理が入っている**
 
   ハーフリーディングを削る処理
-  ![ハーフリーディングを削る処理](images/styled-with-halfleading.png)
+
+  ![ハーフリーディングを削る処理](images/styled-without-halfleading.png)
 
   本来の処理 (preserveHalfLeading 指定時)
+
   ![本来の処理 (preserveHalfLeading 指定時)](images/styled-with-halfleading.png)
 
   - `typography(number).[...(bold|monospace|preserveHalfLeading)]`
