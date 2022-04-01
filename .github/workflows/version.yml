@@ -50,9 +50,10 @@ jobs:
 
           echo ::set-output name=body::$body
 
-      - name: Comment to commit
-        uses: peter-evans/commit-comment@v1
+      - name: Comment to Pull Request
+        uses: peter-evans/create-or-update-comment@v1
         with:
+          issue-number: ${{ github.event.pull_request.number }}
           body: |
             This commit will bump these packages as follows
             (Created by https://github.com/peter-evans/commit-comment )
