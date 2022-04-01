@@ -59,7 +59,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             This commit will bump these packages as follows
-            (Created by https://github.com/peter-evans/commit-comment )
+            (Created by https://github.com/peter-evans/create-or-update-comment )
 
             `yarn lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes`
 
