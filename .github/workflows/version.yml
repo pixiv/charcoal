@@ -1,10 +1,13 @@
 name: version
 
 on:
-  push:
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   version:
+    if: github.event.review.state == 'approved' && github.event.pull_request.base.ref == github.event.repository.default_branch
+
     runs-on: ubuntu-latest
 
     steps:
