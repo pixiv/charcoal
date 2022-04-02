@@ -10,7 +10,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "storybook:experimental-vite": "cross-env USE_VITE=1 start-storybook -p 6006",
-    "build": "yarn workspaces foreach -vpt run build",
+    "build": "yarn workspaces foreach -vpt -j unlimited run build",
     "clean": "yarn workspaces foreach -vp run clean",
     "test": "jest",
     "test:strict": "cross-env USE_STRICT=1 jest",
