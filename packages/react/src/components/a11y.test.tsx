@@ -10,6 +10,7 @@ import { light, dark } from '@charcoal-ui/theme'
 
 expect.extend(toHaveNoViolations)
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface StoryWithMetadata<ArgsType = any> {
   filename: string
   name: string
@@ -24,6 +25,7 @@ const stories: StoryWithMetadata[] = glob
     const exports = require(`./${path.relative(
       __dirname,
       filePath
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     )}`) as Record<string, any>
 
     return Object.entries(exports)
@@ -34,6 +36,7 @@ const stories: StoryWithMetadata[] = glob
       .map(([exportName, exportValue]) => ({
         filename: path.relative(__dirname, filePath),
         name: exportName,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         story: exportValue as Story<any>,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
         args: { ...exports.default.args, ...exportValue.args },
