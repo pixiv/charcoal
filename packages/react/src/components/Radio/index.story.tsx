@@ -11,14 +11,22 @@ export default {
   title: 'Radio',
   component: Radio,
   argTypes: {
-    defaultValue: {
-      control: { type: 'select', options },
+    value: {
+      control: { type: 'select' },
+      options,
     },
+  },
+  args: {
+    hasError: false,
+    parentDisabled: false,
+    childDisabled: false,
+    forceChecked: false,
+    readonly: false,
   },
 }
 
 interface Props {
-  defaultValue: string
+  value?: string
   hasError: boolean
   parentDisabled: boolean
   childDisabled: boolean
@@ -26,14 +34,14 @@ interface Props {
   readonly: boolean
 }
 
-const DefaultStory = ({
-  defaultValue,
+const Template: Story<Partial<Props>> = ({
+  value,
   forceChecked,
   hasError,
   parentDisabled,
   childDisabled,
   readonly,
-}: Props) => (
+}) => (
   <div
     css={css`
       display: flex;
@@ -46,7 +54,7 @@ const DefaultStory = ({
         key={name}
         label={`選択肢-${name}`}
         name={name}
-        defaultValue={defaultValue}
+        value={value}
         onChange={action('onChange')}
         disabled={parentDisabled}
         readonly={readonly}
@@ -67,13 +75,4 @@ const DefaultStory = ({
   </div>
 )
 
-export const Normal: Story<Props> = DefaultStory.bind({})
-
-Normal.args = {
-  defaultValue: options[0],
-  hasError: false,
-  parentDisabled: false,
-  childDisabled: false,
-  forceChecked: false,
-  readonly: false,
-}
+export const Default = Template.bind({})

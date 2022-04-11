@@ -27,12 +27,14 @@ const config = {
   },
   env: {
     node: true,
+    'jest/globals': true,
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
+  plugins: ['jest'],
   overrides: [{ files: ['*.cjs', '*.mjs'] }],
 }
 

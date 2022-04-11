@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from 'react'
+import React, { useCallback, useContext } from 'react'
 import styled from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
@@ -118,7 +118,7 @@ const RadioLabel = styled.div`
 
 export type RadioGroupProps = React.PropsWithChildren<{
   className?: string
-  defaultValue?: string
+  value?: string
   label: string
   name: string
   onChange(next: string): void
@@ -158,7 +158,7 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
 
 export function RadioGroup({
   className,
-  defaultValue,
+  value,
   label,
   name,
   onChange,
@@ -167,11 +167,8 @@ export function RadioGroup({
   hasError,
   children,
 }: RadioGroupProps) {
-  const [selected, setSelected] = useState(defaultValue)
-
   const handleChange = useCallback(
     (next: string) => {
-      setSelected(next)
       onChange(next)
     },
     [onChange]
@@ -181,7 +178,7 @@ export function RadioGroup({
     <RadioGroupContext.Provider
       value={{
         name,
-        selected,
+        selected: value,
         disabled: disabled ?? false,
         readonly: readonly ?? false,
         hasError: hasError ?? false,
