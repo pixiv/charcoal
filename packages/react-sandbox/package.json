@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
@@ -48,8 +48,8 @@
   },
   "dependencies": {
     "@charcoal-ui/foundation": "^1.0.0",
-    "@charcoal-ui/react": "^1.0.0",
-    "@charcoal-ui/styled": "^1.0.0",
+    "@charcoal-ui/react": "^2.0.0-alpha.0",
+    "@charcoal-ui/styled": "^1.0.1-alpha.0",
     "@charcoal-ui/theme": "^1.0.0",
     "@charcoal-ui/utils": "^1.0.0",
     "polished": "^4.1.4",
