@@ -6,4 +6,4 @@ __snapshots__/
 /storybook-static/
 /coverage/
 
-/packages/tailwind-diff-cli/bin/tailwind-diff.js
+/packages/tailwind-diff/bin/tailwind-diff.js

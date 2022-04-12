@@ -17,7 +17,7 @@
 - その他
 
   - [♻️ @charcoal-ui/icons-cli](pages/misc/icons-cli.md)
-  - [👀 @charcoal-ui/tailwind-diff-cli](pages/misc/tailwind-diff-cli.md)
+  - [👀 @charcoal-ui/tailwind-diff](pages/misc/tailwind-diff.md)
   - [🔨 @charcoal-ui/utils](pages/misc/utils.md)
 
 - [Storybook](https://pixiv.github.io/charcoal)
