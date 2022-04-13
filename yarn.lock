@@ -1785,9 +1785,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/tailwind-diff@workspace:packages/tailwind-diff-cli":
+"@charcoal-ui/tailwind-diff@workspace:packages/tailwind-diff":
   version: 0.0.0-use.local
-  resolution: "@charcoal-ui/tailwind-diff@workspace:packages/tailwind-diff-cli"
+  resolution: "@charcoal-ui/tailwind-diff@workspace:packages/tailwind-diff"
   dependencies:
     "@types/tailwindcss": ^2.2.4
     "@types/yargs": ^17.0.8
