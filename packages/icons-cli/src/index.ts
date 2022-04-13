@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { readFile, writeFile } from 'fs-extra'
 import yargs from 'yargs'
 import { FigmaFileClient } from './FigmaFileClient'
