@@ -60,7 +60,7 @@ function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
   }
 }
 
-function countStringInCodePoints(string: string) {
+function countCodePointsInString(string: string) {
   // [...string] とするとproduction buildで動かなくなる
   // cf. https://twitter.com/f_subal/status/1497214727511891972
   return Array.from(string).length
@@ -102,13 +102,13 @@ const SingleLineTextField = React.forwardRef<
   const ariaRef = useRef<HTMLInputElement>(null)
   const prefixRef = useRef<HTMLSpanElement>(null)
   const suffixRef = useRef<HTMLSpanElement>(null)
-  const [count, setCount] = useState(countStringInCodePoints(props.value ?? ''))
+  const [count, setCount] = useState(countCodePointsInString(props.value ?? ''))
   const [prefixWidth, setPrefixWidth] = useState(0)
   const [suffixWidth, setSuffixWidth] = useState(0)
 
   const handleChange = useCallback(
     (value: string) => {
-      const count = countStringInCodePoints(value)
+      const count = countCodePointsInString(value)
       if (maxLength !== undefined && count > maxLength) {
         return
       }
@@ -121,7 +121,7 @@ const SingleLineTextField = React.forwardRef<
   )
 
   useEffect(() => {
-    setCount(countStringInCodePoints(props.value ?? ''))
+    setCount(countCodePointsInString(props.value ?? ''))
   }, [props.value])
 
   const { inputProps, labelProps, descriptionProps, errorMessageProps } =
@@ -225,7 +225,7 @@ const MultiLineTextField = React.forwardRef<
   const { visuallyHiddenProps } = useVisuallyHidden()
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const ariaRef = useRef<HTMLTextAreaElement>(null)
-  const [count, setCount] = useState(countStringInCodePoints(props.value ?? ''))
+  const [count, setCount] = useState(countCodePointsInString(props.value ?? ''))
   const [rows, setRows] = useState(initialRows)
 
   const syncHeight = useCallback(
@@ -240,7 +240,7 @@ const MultiLineTextField = React.forwardRef<
 
   const handleChange = useCallback(
     (value: string) => {
-      const count = countStringInCodePoints(value)
+      const count = countCodePointsInString(value)
       if (maxLength !== undefined && count > maxLength) {
         return
       }
@@ -256,7 +256,7 @@ const MultiLineTextField = React.forwardRef<
   )
 
   useEffect(() => {
-    setCount(countStringInCodePoints(props.value ?? ''))
+    setCount(countCodePointsInString(props.value ?? ''))
   }, [props.value])
 
   const { inputProps, labelProps, descriptionProps, errorMessageProps } =
