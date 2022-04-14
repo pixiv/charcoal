@@ -61,7 +61,9 @@ function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
 }
 
 function countStringInCodePoints(string: string) {
-  return [...string].length
+  // [...string] とするとproduction buildで動かなくなる
+  // cf. https://twitter.com/f_subal/status/1497214727511891972
+  return Array.from(string).length
 }
 
 const TextField = React.forwardRef<TextFieldElement, TextFieldProps>(
