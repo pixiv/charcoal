@@ -60,8 +60,10 @@ function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
   }
 }
 
-function countStringInCodePoints(string: string) {
-  return [...string].length
+function countCodePointsInString(string: string) {
+  // [...string] とするとproduction buildで動かなくなる
+  // cf. https://twitter.com/f_subal/status/1497214727511891972
+  return Array.from(string).length
 }
 
 const TextField = React.forwardRef<TextFieldElement, TextFieldProps>(
@@ -100,21 +102,28 @@ const SingleLineTextField = React.forwardRef<
   const ariaRef = useRef<HTMLInputElement>(null)
   const prefixRef = useRef<HTMLSpanElement>(null)
   const suffixRef = useRef<HTMLSpanElement>(null)
-  const [count, setCount] = useState(countStringInCodePoints(props.value ?? ''))
+  const [count, setCount] = useState(countCodePointsInString(props.value ?? ''))
   const [prefixWidth, setPrefixWidth] = useState(0)
   const [suffixWidth, setSuffixWidth] = useState(0)
 
+  const nonControlled = props.value === undefined
   const handleChange = useCallback(
     (value: string) => {
-      const count = countStringInCodePoints(value)
+      const count = countCodePointsInString(value)
       if (maxLength !== undefined && count > maxLength) {
         return
       }
-      setCount(count)
+      if (nonControlled) {
+        setCount(count)
+      }
       onChange?.(value)
     },
-    [maxLength, onChange]
+    [maxLength, nonControlled, onChange]
   )
+
+  useEffect(() => {
+    setCount(countCodePointsInString(props.value ?? ''))
+  }, [props.value])
 
   const { inputProps, labelProps, descriptionProps, errorMessageProps } =
     useTextField(
@@ -217,7 +226,7 @@ const MultiLineTextField = React.forwardRef<
   const { visuallyHiddenProps } = useVisuallyHidden()
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const ariaRef = useRef<HTMLTextAreaElement>(null)
-  const [count, setCount] = useState(countStringInCodePoints(props.value ?? ''))
+  const [count, setCount] = useState(countCodePointsInString(props.value ?? ''))
   const [rows, setRows] = useState(initialRows)
 
   const syncHeight = useCallback(
@@ -230,20 +239,27 @@ const MultiLineTextField = React.forwardRef<
     [initialRows]
   )
 
+  const nonControlled = props.value === undefined
   const handleChange = useCallback(
     (value: string) => {
-      const count = countStringInCodePoints(value)
+      const count = countCodePointsInString(value)
       if (maxLength !== undefined && count > maxLength) {
         return
       }
-      setCount(count)
+      if (nonControlled) {
+        setCount(count)
+      }
       if (autoHeight && textareaRef.current !== null) {
         syncHeight(textareaRef.current)
       }
       onChange?.(value)
     },
-    [autoHeight, maxLength, onChange, syncHeight]
+    [autoHeight, maxLength, nonControlled, onChange, syncHeight]
   )
+
+  useEffect(() => {
+    setCount(countCodePointsInString(props.value ?? ''))
+  }, [props.value])
 
   const { inputProps, labelProps, descriptionProps, errorMessageProps } =
     useTextField(
