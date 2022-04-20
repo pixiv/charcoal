@@ -106,18 +106,19 @@ const SingleLineTextField = React.forwardRef<
   const [prefixWidth, setPrefixWidth] = useState(0)
   const [suffixWidth, setSuffixWidth] = useState(0)
 
+  const nonControlled = props.value === undefined
   const handleChange = useCallback(
     (value: string) => {
       const count = countCodePointsInString(value)
       if (maxLength !== undefined && count > maxLength) {
         return
       }
-      if (props.value === undefined) {
+      if (nonControlled) {
         setCount(count)
       }
       onChange?.(value)
     },
-    [maxLength, onChange]
+    [maxLength, nonControlled, onChange]
   )
 
   useEffect(() => {
@@ -238,13 +239,14 @@ const MultiLineTextField = React.forwardRef<
     [initialRows]
   )
 
+  const nonControlled = props.value === undefined
   const handleChange = useCallback(
     (value: string) => {
       const count = countCodePointsInString(value)
       if (maxLength !== undefined && count > maxLength) {
         return
       }
-      if (props.value === undefined) {
+      if (nonControlled) {
         setCount(count)
       }
       if (autoHeight && textareaRef.current !== null) {
@@ -252,7 +254,7 @@ const MultiLineTextField = React.forwardRef<
       }
       onChange?.(value)
     },
-    [autoHeight, maxLength, onChange, syncHeight]
+    [autoHeight, maxLength, nonControlled, onChange, syncHeight]
   )
 
   useEffect(() => {
