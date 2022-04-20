@@ -19,6 +19,12 @@ export {
   RadioGroup,
   type RadioGroupProps,
 } from './components/Radio'
+export {
+  default as Select,
+  type SelectProps,
+  SelectGroup,
+  type SelectGroupProps,
+} from './components/Select'
 export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,
