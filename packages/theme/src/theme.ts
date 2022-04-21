@@ -55,6 +55,7 @@ export type ThemeColor = {
   readonly surface7: Material
   readonly surface8: Material
   readonly surface9: Material
+  readonly surface10: Material
   readonly link1: Material
   readonly link2: Material
   readonly text1: Material
