@@ -198,7 +198,11 @@ export function SelectGroup({
         onChange: handleChange,
       }}
     >
-      <div className={className} aria-label={ariaLabel}>
+      <div
+        className={className}
+        aria-label={ariaLabel}
+        data-testid="SelectGroup"
+      >
         {children}
       </div>
     </SelectGroupContext.Provider>
