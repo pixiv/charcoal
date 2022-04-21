@@ -22,7 +22,7 @@ describe('colors/colorsToTailwindConfig', () => {
       red: {
         DEFAULT: 'var(--tailwind-color-red, #ff0000)',
         disabled: 'var(--tailwind-color-red--disabled, rgba(255,0,0,0.32))',
-        hover: 'var(--tailwind-color-red--hover, #eb0000)',
+        hover: 'var(--tailwind-color-red--hover, #f50000)',
         outline: 'var(--tailwind-color-red--outline, rgba(255,0,0,0.32))',
         press: 'var(--tailwind-color-red--press, #d60000)',
       },
