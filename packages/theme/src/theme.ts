@@ -51,6 +51,7 @@ export type ThemeColor = {
   readonly surface2: Material
   readonly surface3: Material
   readonly surface4: Material
+  // surface5 はグラデーションなので `ThemeColorGradient` の方に入ってる
   readonly surface6: Material
   readonly surface7: Material
   readonly surface8: Material
