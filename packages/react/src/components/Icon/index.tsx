@@ -1,5 +1,4 @@
-import React from 'react'
-import '@charcoal-ui/icons'
+import React, { useEffect } from 'react'
 import type { KnownIconType, PixivIcon, Props } from '@charcoal-ui/icons'
 
 export interface OwnProps {
@@ -12,10 +11,22 @@ export interface OwnProps {
 export type IconProps = OwnProps &
   Omit<Props, 'class' | 'unsafe-non-guideline-scale'>
 
+let imported = false
+
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   { name, scale, unsafeNonGuidelineScale, className, ...rest },
   ref
 ) {
+  // ブラウザ内で、グローバルに 1 回のみ import
+  // lit-html は node.js 内で import できない
+  useEffect(() => {
+    if (!imported) {
+      void import('@charcoal-ui/icons').then(() => {
+        imported = true
+      })
+    }
+  }, [])
+
   return (
     <pixiv-icon
       ref={ref}
