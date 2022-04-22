@@ -9,7 +9,4 @@ import React from 'react'
  * node_modules/@types/styled-components/ts3.7/index.d.ts
  * `Type alias 'Interpolation' circularly references itself. ts(2456)`
  */
-export interface Story<P> {
-  (args: P): React.ReactNode
-  args?: P
-}
+export type Story<P> = React.ComponentType<P> & { args?: P }

@@ -69,13 +69,13 @@ describe.each(themes)('using %s theme', (_name, theme) => {
   describe.each(links)('using %s component', (_name, link) => {
     describe.each(stories)(
       'storiesOf($filename).add($name)',
-      ({ story, args }) => {
+      ({ story: Story, args }) => {
         it('has no accessibility violations', async () => {
           expect(() => {
             render(
               <ThemeProvider theme={theme}>
                 <ComponentAbstraction components={{ Link: link }}>
-                  {story(args)}
+                  <Story {...args} />
                 </ComponentAbstraction>
               </ThemeProvider>
             )
