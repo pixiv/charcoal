@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon, { IconProps } from '.'
+import Icon, { OwnProps } from '.'
 import { KNOWN_ICON_FILES } from '@charcoal-ui/icons'
 import { Story } from '../../_lib/compat'
 
@@ -22,8 +22,8 @@ export default {
   },
 }
 
-const Template: Story<IconProps> = (props) => <Icon {...props} />
+const Template: Story<OwnProps> = (props) => <Icon {...props} />
 
-export const Default: Story<IconProps> = Template.bind({})
+export const Default: Story<OwnProps> = Template.bind({})
 
 Default.args = { name: KNOWN_ICON_FILES[0], scale: 1 }
