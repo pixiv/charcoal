@@ -18,7 +18,6 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@charcoal-ui/icons": "^1.0.1-alpha.2",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^6.4.17",
     "@storybook/addon-knobs": "^6.4.0",
@@ -51,6 +50,7 @@
   "dependencies": {
     "@charcoal-ui/styled": "^1.0.1-alpha.3",
     "@charcoal-ui/theme": "^2.0.0-alpha.2",
+    "@charcoal-ui/icons": "^1.0.1-alpha.2",
     "@charcoal-ui/utils": "^1.0.1-alpha.0",
     "@react-aria/checkbox": "^3.2.3",
     "@react-aria/switch": "^3.1.3",
