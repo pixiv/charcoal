@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon, { IconProps } from '.'
-import { KNOWN_ICON_FILES } from '../../../../icons/src/filenames'
+import { KNOWN_ICON_FILES } from '@charcoal-ui/icons/src/filenames'
 import { Story } from '../../_lib/compat'
 
 export default {
