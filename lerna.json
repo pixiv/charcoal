@@ -2,7 +2,9 @@
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "conventionalCommits": false,
+  "changelogPreset": {
+    "name": "conventionalcommits"
+  },
   "command": {
     "version": {
       "message": "chore: publish [skip ci]"
