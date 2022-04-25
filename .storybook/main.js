@@ -11,6 +11,17 @@ module.exports = {
     '@storybook/addon-storysource',
     // '@storybook/addon-knobs',
     'storybook-dark-mode',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          postcssOptions: {
+            config: path.resolve(__dirname, 'postcss.config.js'),
+          },
+          implementation: require('postcss'),
+        },
+      },
+    },
   ],
   framework: '@storybook/react',
   async webpackFinal(config, { configType }) {
