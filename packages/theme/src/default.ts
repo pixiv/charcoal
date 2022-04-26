@@ -17,6 +17,8 @@ const outlineEffect = {
 
 const assertive = '#ff2b00'
 const brand = '#0096fa'
+const borderForLight = rgba('#000000', 0.08)
+const borderForDark = rgba('#ffffff', 0.12)
 
 const common = {
   typography: {
@@ -105,10 +107,14 @@ export const light: CharcoalTheme = {
     text5: '#ffffff',
     brand,
     assertive,
+    warning: '#ffaf0f',
+    success: '#b1cc29',
+    updatedItem: rgba(0, 150, 250, 0.04),
+    border: borderForLight,
   },
   border: {
     default: {
-      color: rgba('#000000', 0.08),
+      color: borderForLight,
     },
   },
 }
@@ -148,10 +154,14 @@ export const dark: CharcoalTheme = {
     text5: light.color.text5,
     brand,
     assertive,
+    warning: light.color.warning,
+    success: light.color.success,
+    updatedItem: rgba(0, 150, 250, 0.12),
+    border: borderForDark,
   },
   border: {
     default: {
-      color: rgba('#ffffff', 0.12),
+      color: borderForDark,
     },
   },
 }

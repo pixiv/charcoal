@@ -67,6 +67,10 @@ export type ThemeColor = {
   readonly icon6: Material
   readonly brand: Material
   readonly assertive: Material
+  readonly warning: Material
+  readonly success: Material
+  readonly updatedItem: Material
+  readonly border: Material
 }
 
 export type ThemeEffect = {
