@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[133],{"./packages/icons/svg/24/Palette.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Palette.0ba96391.svg"}}]);

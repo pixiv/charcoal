@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[180],{"./packages/icons/svg/24/Usagi.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Usagi.e5517738.svg"}}]);

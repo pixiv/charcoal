@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{"./packages/icons/svg/16/BookmarkOff.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/BookmarkOff.bb1a2ddc.svg"}}]);

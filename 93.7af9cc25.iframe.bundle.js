@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[93],{"./packages/icons/svg/24/Groups.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Groups.74a61049.svg"}}]);

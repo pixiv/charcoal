@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[201],{"./packages/icons/svg/32/HorizontalWriting.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/HorizontalWriting.be18e223.svg"}}]);
