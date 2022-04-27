@@ -66,6 +66,12 @@ Got: ${JSON.stringify(Array.from(effectKeys))}`)
   }
 }
 
+/**
+ * @example
+ * ```js
+ * mapKeys({ a: 'aa', b: 'bb' }, (key) => key.toUpperCase()) // => { A: "aa", B: "bb" }
+ * ````
+ */
 export function mapKeys<V, K extends string>(
   object: Record<string, V>,
   callback: (key: string) => K
@@ -75,6 +81,14 @@ export function mapKeys<V, K extends string>(
   ) as Record<K, V>
 }
 
+/**
+ * @example
+ * ```js
+ * mapObject({ a: 'aa', b: 'bb', c: 'cc' }, (key, value) =>
+ *   key === 'b' ? undefined : [key + '1', value.toUpperCase()]
+ * ) // => { a1: "AA", c1: "CC" }
+ * ```
+ */
 export function mapObject<
   SourceKey extends string,
   SourceValue,
@@ -99,6 +113,15 @@ export function mapObject<
   ) as Record<DestKey, DestValue>
 }
 
+/**
+ * @example
+ * ```js
+ * flatMapObject({ a: 'aa', b: 'bb' }, (key, value) => [
+ *   [key + '1', value + '1'],
+ *   [key + '2', value + '2'],
+ * ]) // => { a1: "aa1", a2: "aa2", b1: "bb1", b2: "bb2" }
+ * ```
+ */
 export function flatMapObject<
   SourceKey extends string,
   SourceValue,
@@ -115,6 +138,15 @@ export function flatMapObject<
   ) as Record<DestKey, DestValue>
 }
 
+/**
+ * @example
+ * ```ts
+ * filterObject(
+ *   { a: 'aa', b: 'bb', c: 'cc' },
+ *   (value): value is string => value !== 'bb'
+ * ) // => { a: "aa", c: "cc" }
+ * ```
+ */
 export function filterObject<Source, Dest extends Source>(
   source: Record<string, Source>,
   fn: (value: Source) => value is Dest
