@@ -1,4 +1,5 @@
 import { PixivIcon, Props } from './PixivIcon'
+import { __SERVER__ } from './ssr'
 export { PixivIcon, type KnownIconType, type Props } from './PixivIcon'
 export { PixivIconLoadError } from './loaders'
 
@@ -15,8 +16,10 @@ declare global {
   }
 }
 
-// TODO: HMR対応
-if (!window.customElements.get(PixivIcon.tagName)) {
-  window.PixivIcon = PixivIcon
-  window.customElements.define(PixivIcon.tagName, PixivIcon)
+if (!__SERVER__) {
+  // TODO: HMR対応
+  if (!window.customElements.get(PixivIcon.tagName)) {
+    window.PixivIcon = PixivIcon
+    window.customElements.define(PixivIcon.tagName, PixivIcon)
+  }
 }
