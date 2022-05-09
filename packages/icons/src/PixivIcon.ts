@@ -181,6 +181,7 @@ export class PixivIcon extends BaseElement {
       { USE_PROFILES: { svg: true, svgFilters: true } }
     )
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this.shadowRoot!.innerHTML = style + svg
   }
 
