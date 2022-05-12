@@ -15,8 +15,6 @@ const defaultConfig = () => ({
   transform: {
     '^.+\\.(t|j)sx?$': ['esbuild-jest', { target: 'esnext', format: 'cjs' }],
   },
-  // commonjsが提供されていないパッケージをコンパイル
-  transformIgnorePatterns: ['../../node_modules/(?!(lit-html))'],
   // tsconfigのpathsに対応 (依存パッケージをビルドせずにテストが可能)
   moduleNameMapper: {
     '^@charcoal-ui/(.*)$': '<rootDir>/../$1/src',
@@ -30,7 +28,6 @@ const strictConfig = () => ({
   transform: {
     '^.+\\.(t|j)sx?$': 'ts-jest',
   },
-  transformIgnorePatterns: ['../../node_modules/(?!(lit-html))'],
   moduleNameMapper: {
     // TODO: 一貫性のために外したい
     // es5になった`PixivIcon.ts`がjsdomの提供するHTMLElementと互換がないため、したかなくマッピング

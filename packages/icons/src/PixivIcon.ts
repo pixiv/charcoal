@@ -1,8 +1,10 @@
-import { html, render } from 'lit-html'
-import { unsafeSVG } from 'lit-html/directives/unsafe-svg.js'
 import type React from 'react'
+import warning from 'warning'
 import { KnownIconFile } from './filenames'
 import { loaders as defaultLoaders, Loader } from './loaders'
+import { BaseElement, __SERVER__ } from './ssr'
+import { sanitize } from 'dompurify'
+
 const { loadFromFile, loadFromRawUrl } = defaultLoaders
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
@@ -32,7 +34,7 @@ type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがn
   ? false
   : true
 
-export class PixivIcon extends HTMLElement {
+export class PixivIcon extends BaseElement {
   static readonly tagName = 'pixiv-icon'
 
   static extend(
@@ -40,6 +42,11 @@ export class PixivIcon extends HTMLElement {
       ? Record<ExtendedIconFile, string>
       : Record<string, string>
   ) {
+    warning(!__SERVER__, 'Using `PixivIcon.extend()` on server has no effect')
+    if (__SERVER__) {
+      return
+    }
+
     Object.entries(map).forEach(([name, url]) => {
       if (!name.includes('/')) {
         throw new TypeError(
@@ -152,26 +159,30 @@ export class PixivIcon extends HTMLElement {
   render() {
     const size = this.forceResizedSize ?? this.scaledSize
 
-    return render(
-      html`
-        <style>
-          :host {
-            display: inline-flex;
-            --size: ${size}px;
-          }
+    const style = sanitize(
+      `<style>
+  :host {
+    display: inline-flex;
+    --size: ${size}px;
+  }
 
-          svg {
-            width: var(--size);
-            height: var(--size);
-          }
-        </style>
-        ${this.svgContent !== undefined
-          ? unsafeSVG(this.svgContent)
-          : html`<svg viewBox="0 0 ${size} ${size}"></svg>`}
-      `,
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      this.shadowRoot!
+  svg {
+    width: var(--size);
+    height: var(--size);
+  }
+</style>`,
+      { ALLOWED_TAGS: ['style'], FORCE_BODY: true }
     )
+
+    const svg = sanitize(
+      this.svgContent !== undefined
+        ? this.svgContent
+        : `<svg viewBox="0 0 ${size} ${size}"></svg>`,
+      { USE_PROFILES: { svg: true, svgFilters: true } }
+    )
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    this.shadowRoot!.innerHTML = style + svg
   }
 
   private update() {

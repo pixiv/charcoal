@@ -1636,14 +1636,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icons@workspace:packages/icons"
   dependencies:
+    "@types/dompurify": ^2.3.3
     "@types/jest": ^27.4.0
     "@types/react": ^17.0.38
-    lit-html: ^2.1.2
+    dompurify: ^2.3.6
     microbundle: ^0.14.2
     react: ^17.0.2
     rimraf: ^3.0.2
     styled-components: ^5.3.3
     typescript: ^4.5.5
+    warning: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -6156,6 +6158,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dompurify@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "@types/dompurify@npm:2.3.3"
+  dependencies:
+    "@types/trusted-types": "*"
+  checksum: 427e2dc60d94d13d7860a293b926b376727cb2f545a3334a3f2e7de695a2bb23058dd15108e49e0651378229b443ee8ae0028034b6f2df9a9008c04fb7ad6f8f
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.0":
   version: 3.7.3
   resolution: "@types/eslint-scope@npm:3.7.3"
@@ -6598,7 +6609,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/trusted-types@npm:^2.0.2":
+"@types/trusted-types@npm:*":
   version: 2.0.2
   resolution: "@types/trusted-types@npm:2.0.2"
   checksum: 3371eef5f1c50e1c3c07a127c1207b262ba65b83dd167a1c460fc1b135a3fb0c97b9f508efebd383f239cc5dd5b7169093686a692a501fde9c3f7208657d9b0d
@@ -10799,6 +10810,13 @@ __metadata:
   dependencies:
     domelementtype: ^2.2.0
   checksum: d2a2dbf40dd99abf936b65ad83c6b530afdb3605a87cad37a11b5d9220e68423ebef1b86c89e0f6d93ffaf315cc327cf1a988652e7a9a95cce539e3984f4c64d
+  languageName: node
+  linkType: hard
+
+"dompurify@npm:^2.3.6":
+  version: 2.3.6
+  resolution: "dompurify@npm:2.3.6"
+  checksum: 4b2bbf6bc68ebd776aec4a533cef74a5ae30391eed528f3df748af71da318afdc298b6f40449bef093b7454ffd2ae82656636560474de5a3b34316b762c85b12
   languageName: node
   linkType: hard
 
@@ -16033,15 +16051,6 @@ fsevents@^1.2.7:
   version: 1.1.6
   resolution: "lines-and-columns@npm:1.1.6"
   checksum: 198a5436b1fa5cf703bae719c01c686b076f0ad7e1aafd95a58d626cabff302dc0414822126f2f80b58a8c3d66cda8a7b6da064f27130f87e1d3506d6dfd0d68
-  languageName: node
-  linkType: hard
-
-"lit-html@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "lit-html@npm:2.1.2"
-  dependencies:
-    "@types/trusted-types": ^2.0.2
-  checksum: 0c87d83b3577dbb0a2c50743296b6600a6872eac2f23b48da7ba3e604b8c72a8b0e1e48cfe0e00dd6f4ca921ab57f97e20709756f2115077478ffb05efa6cea0
   languageName: node
   linkType: hard
 
