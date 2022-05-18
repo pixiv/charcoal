@@ -1639,6 +1639,7 @@ __metadata:
     "@types/dompurify": ^2.3.3
     "@types/jest": ^27.4.0
     "@types/react": ^17.0.38
+    "@types/warning": ^3.0.0
     dompurify: ^2.3.6
     microbundle: ^0.14.2
     react: ^17.0.2

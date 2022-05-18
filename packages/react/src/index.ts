@@ -30,3 +30,4 @@ export {
   default as TextField,
   type TextFieldProps,
 } from './components/TextField'
+export { default as Icon, type IconProps } from './components/Icon'
