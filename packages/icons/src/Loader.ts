@@ -80,7 +80,7 @@ export class UrlLoader extends Loader {
     pool.set(name, loader)
   }
 
-  constructor(private name: string, private url: string) {
+  private constructor(private name: string, private url: string) {
     super()
   }
 
@@ -109,7 +109,7 @@ export class FileLoader extends Loader {
     return newLoader
   }
 
-  constructor(private name: string) {
+  private constructor(private name: string) {
     super()
   }
 
