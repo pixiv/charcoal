@@ -1,4 +1,4 @@
-const cache = new Map<string, string>()
+const pool = new Map<string, Loader>()
 
 interface SvgModule {
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -14,22 +14,32 @@ export class PixivIconLoadError extends Error {
 }
 
 export abstract class Loader {
+  abstract attributeName: string
+
   private _isLoading = false
+  private _svg: string | undefined = undefined
 
-  constructor(protected attributeName: string) {}
-
-  abstract getPath(attributeName: string): Promise<string>
+  abstract getPath(_attributeName: string): Promise<string>
 
   isLoading() {
     return this._isLoading
   }
 
-  async call() {
-    const { attributeName } = this
+  unwrapToSVG() {
+    if (this._svg === undefined) {
+      throw new Error(
+        `SVG for <pixiv-icon name="${this.attributeName}"> is not loaded yet`
+      )
+    }
 
-    if (cache.has(attributeName)) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      return cache.get(attributeName)!
+    return this._svg
+  }
+
+  async call() {
+    const { attributeName, _svg } = this
+
+    if (_svg !== undefined) {
+      return _svg
     }
 
     try {
@@ -47,8 +57,6 @@ export abstract class Loader {
           return response.text()
         })
 
-      cache.set(attributeName, rawSvg)
-
       return rawSvg
     } finally {
       this._isLoading = false
@@ -57,13 +65,43 @@ export abstract class Loader {
 }
 
 export class UrlLoader extends Loader {
-  getPath(attributeName: string) {
-    return Promise.resolve(attributeName)
+  static find(attributeName: string) {
+    return pool.get(attributeName)
+  }
+
+  static create(attributeName: string, url: string) {
+    const loader = new UrlLoader(attributeName, url)
+
+    return pool.set(attributeName, loader)
+  }
+
+  constructor(public attributeName: string, public url: string) {
+    super()
+  }
+
+  override getPath(_attributeName: string) {
+    return Promise.resolve(this.url)
   }
 }
 
 export class FileLoader extends Loader {
-  async getPath(attributeName: string) {
+  static findOrCreate(attributeName: string) {
+    const existing = pool.get(attributeName)
+    if (existing) {
+      return existing
+    }
+
+    const loader = new FileLoader(attributeName)
+    pool.set(attributeName, loader)
+
+    return loader
+  }
+
+  constructor(public attributeName: string) {
+    super()
+  }
+
+  override async getPath(attributeName: string) {
     const [size, name] = attributeName.split('/')
 
     const { default: filename } = (await import(

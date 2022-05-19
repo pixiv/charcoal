@@ -1,7 +1,7 @@
 import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './filenames'
-import { FileLoader, UrlLoader, Loader } from './Loader'
+import { FileLoader, UrlLoader } from './Loader'
 import { BaseElement, __SERVER__ } from './ssr'
 import { sanitize } from 'dompurify'
 
@@ -24,8 +24,6 @@ export interface Props
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
   class?: string
 }
-
-const loaders = new Map<string, Loader>()
 
 type ExtendedIconFile = Exclude<keyof KnownIconType, KnownIconFile>
 type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがneverならKnownIconTypeは拡張されていない
@@ -52,7 +50,7 @@ export class PixivIcon extends BaseElement {
         )
       }
 
-      loaders.set(name, new UrlLoader(url))
+      UrlLoader.create(name, url)
     })
   }
 
@@ -183,7 +181,7 @@ export class PixivIcon extends BaseElement {
 
   private update() {
     const { name } = this.props
-    const loader = loaders.get(name) ?? new FileLoader(name)
+    const loader = UrlLoader.find(name) ?? FileLoader.findOrCreate(name)
 
     if (loader.isLoading()) {
       return
