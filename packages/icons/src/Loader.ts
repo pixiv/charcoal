@@ -19,7 +19,7 @@ export abstract class Loader {
   private _isLoading = false
   private _svg: string | undefined = undefined
 
-  abstract getPath(_attributeName: string): Promise<string>
+  abstract getPath(): Promise<string>
 
   isLoading() {
     return this._isLoading
@@ -36,21 +36,19 @@ export abstract class Loader {
   }
 
   async call() {
-    const { attributeName, _svg } = this
-
-    if (_svg !== undefined) {
-      return _svg
+    if (this._svg !== undefined) {
+      return this._svg
     }
 
     try {
       this._isLoading = true
 
-      const rawSvg = await this.getPath(attributeName)
+      const rawSvg = await this.getPath()
         .then((path) => fetch(path))
         .then((response) => {
           if (!response.ok) {
             throw new PixivIconLoadError(
-              `Failed to fetch <pixiv-icon name="${attributeName}">`
+              `Failed to fetch <pixiv-icon name="${this.attributeName}">`
             )
           }
 
@@ -65,6 +63,9 @@ export abstract class Loader {
 }
 
 export class UrlLoader extends Loader {
+  attributeName: string
+  url: string
+
   static find(attributeName: string) {
     return pool.get(attributeName)
   }
@@ -75,16 +76,20 @@ export class UrlLoader extends Loader {
     return pool.set(attributeName, loader)
   }
 
-  constructor(public attributeName: string, public url: string) {
+  constructor(attributeName: string, url: string) {
     super()
+    this.attributeName = attributeName
+    this.url = url
   }
 
-  override getPath(_attributeName: string) {
+  override getPath() {
     return Promise.resolve(this.url)
   }
 }
 
 export class FileLoader extends Loader {
+  attributeName: string
+
   static findOrCreate(attributeName: string) {
     const existing = pool.get(attributeName)
     if (existing) {
@@ -97,12 +102,13 @@ export class FileLoader extends Loader {
     return loader
   }
 
-  constructor(public attributeName: string) {
+  constructor(attributeName: string) {
     super()
+    this.attributeName = attributeName
   }
 
-  override async getPath(attributeName: string) {
-    const [size, name] = attributeName.split('/')
+  override async getPath() {
+    const [size, name] = this.attributeName.split('/')
 
     const { default: filename } = (await import(
       `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
