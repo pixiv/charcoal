@@ -64,7 +64,7 @@ export class UrlLoader extends Loader {
   static create(attributeName: string, url: string) {
     const loader = new UrlLoader(attributeName, url)
 
-    return pool.set(attributeName, loader)
+    pool.set(attributeName, loader)
   }
 
   constructor(private attributeName: string, private url: string) {
