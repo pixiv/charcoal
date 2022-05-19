@@ -14,11 +14,10 @@ export class PixivIconLoadError extends Error {
 }
 
 export abstract class Loader {
-  abstract attributeName: string
-
   private _promise: Promise<string> | undefined = undefined
-  private _svg: string | undefined = undefined
+  private _resultSvg: string | undefined = undefined
 
+  abstract getAttributeName(): string
   abstract getPath(): Promise<string>
 
   isLoading() {
@@ -26,8 +25,8 @@ export abstract class Loader {
   }
 
   async fetch() {
-    if (this._svg !== undefined) {
-      return this._svg
+    if (this._resultSvg !== undefined) {
+      return this._resultSvg
     }
 
     if (this._promise) {
@@ -39,15 +38,15 @@ export abstract class Loader {
       .then((response) => {
         if (!response.ok) {
           throw new PixivIconLoadError(
-            `Failed to fetch <pixiv-icon name="${this.attributeName}">`
+            `Failed to fetch <pixiv-icon name="${this.getAttributeName()}">`
           )
         }
 
         return response.text()
       })
       .then((svg) => {
-        this._svg = svg
-        return this._svg
+        this._resultSvg = svg
+        return this._resultSvg
       })
       .finally(() => {
         this._promise = undefined
@@ -58,9 +57,6 @@ export abstract class Loader {
 }
 
 export class UrlLoader extends Loader {
-  attributeName: string
-  url: string
-
   static find(attributeName: string) {
     return pool.get(attributeName)
   }
@@ -71,20 +67,20 @@ export class UrlLoader extends Loader {
     return pool.set(attributeName, loader)
   }
 
-  constructor(attributeName: string, url: string) {
+  constructor(private attributeName: string, private url: string) {
     super()
-    this.attributeName = attributeName
-    this.url = url
   }
 
   override getPath() {
     return Promise.resolve(this.url)
   }
+
+  override getAttributeName() {
+    return this.attributeName
+  }
 }
 
 export class FileLoader extends Loader {
-  attributeName: string
-
   static findOrCreate(attributeName: string) {
     const existing = pool.get(attributeName)
     if (existing) {
@@ -97,18 +93,21 @@ export class FileLoader extends Loader {
     return loader
   }
 
-  constructor(attributeName: string) {
+  constructor(private attributeName: string) {
     super()
-    this.attributeName = attributeName
   }
 
   override async getPath() {
-    const [size, name] = this.attributeName.split('/')
+    const [size, name] = this.getAttributeName().split('/')
 
     const { default: filename } = (await import(
       `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
     )) as SvgModule
 
     return filename
+  }
+
+  override getAttributeName() {
+    return this.attributeName
   }
 }
