@@ -17,8 +17,8 @@ export abstract class Loader {
   private _promise: Promise<string> | undefined = undefined
   private _resultSvg: string | undefined = undefined
 
-  abstract getAttributeName(): string
-  abstract getPath(): Promise<string>
+  abstract getIconName(): string
+  abstract getIconSource(): Promise<string>
 
   isLoading() {
     return this._promise !== undefined
@@ -33,12 +33,12 @@ export abstract class Loader {
       return this._promise
     }
 
-    this._promise = this.getPath()
+    this._promise = this.getIconSource()
       .then((path) => fetch(path))
       .then((response) => {
         if (!response.ok) {
           throw new PixivIconLoadError(
-            `Failed to fetch <pixiv-icon name="${this.getAttributeName()}">`
+            `Failed to fetch <pixiv-icon name="${this.getIconName()}">`
           )
         }
 
@@ -57,48 +57,48 @@ export abstract class Loader {
 }
 
 export class UrlLoader extends Loader {
-  static find(attributeName: string) {
-    return pool.get(attributeName)
+  static find(name: string) {
+    return pool.get(name)
   }
 
-  static create(attributeName: string, url: string) {
-    const loader = new UrlLoader(attributeName, url)
+  static create(name: string, url: string) {
+    const loader = new UrlLoader(name, url)
 
-    pool.set(attributeName, loader)
+    pool.set(name, loader)
   }
 
-  constructor(private attributeName: string, private url: string) {
+  constructor(private name: string, private url: string) {
     super()
   }
 
-  override getPath() {
+  override getIconSource() {
     return Promise.resolve(this.url)
   }
 
-  override getAttributeName() {
-    return this.attributeName
+  override getIconName() {
+    return this.name
   }
 }
 
 export class FileLoader extends Loader {
-  static findOrCreate(attributeName: string) {
-    const existing = pool.get(attributeName)
+  static findOrCreate(name: string) {
+    const existing = pool.get(name)
     if (existing) {
       return existing
     }
 
-    const loader = new FileLoader(attributeName)
-    pool.set(attributeName, loader)
+    const loader = new FileLoader(name)
+    pool.set(name, loader)
 
     return loader
   }
 
-  constructor(private attributeName: string) {
+  constructor(private name: string) {
     super()
   }
 
-  override async getPath() {
-    const [size, name] = this.getAttributeName().split('/')
+  override async getIconSource() {
+    const [size, name] = this.getIconName().split('/')
 
     const { default: filename } = (await import(
       `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
@@ -107,7 +107,7 @@ export class FileLoader extends Loader {
     return filename
   }
 
-  override getAttributeName() {
-    return this.attributeName
+  override getIconName() {
+    return this.name
   }
 }
