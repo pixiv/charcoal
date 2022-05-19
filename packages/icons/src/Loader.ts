@@ -1,3 +1,8 @@
+/**
+ * オブジェクトプール。Loader のインスタンスは作り次第ここに入れる
+ *
+ * 同じアイコンへの複数回のリクエストが起きないためには、Loader がこの中でユニークでないと行けない
+ */
 const pool = new Map<string, Loader>()
 
 interface SvgModule {
@@ -13,6 +18,11 @@ export class PixivIconLoadError extends Error {
   }
 }
 
+/**
+ * SVG アイコンを取得するクラス
+ *
+ * 一度リクエストされたアイコンは（リクエスト中のも含め）何度もリクエストしないようになっている
+ */
 export abstract class Loader {
   private _promise: Promise<string> | undefined = undefined
   private _resultSvg: string | undefined = undefined
@@ -34,7 +44,7 @@ export abstract class Loader {
     }
 
     this._promise = this.getIconSource()
-      .then((path) => fetch(path))
+      .then((src) => fetch(src))
       .then((response) => {
         if (!response.ok) {
           throw new PixivIconLoadError(
@@ -56,12 +66,15 @@ export abstract class Loader {
   }
 }
 
+/**
+ * アイコンを特定の URL から取得する Loader
+ */
 export class UrlLoader extends Loader {
   static find(name: string) {
     return pool.get(name)
   }
 
-  static create(name: string, url: string) {
+  static register(name: string, url: string) {
     const loader = new UrlLoader(name, url)
 
     pool.set(name, loader)
@@ -80,17 +93,20 @@ export class UrlLoader extends Loader {
   }
 }
 
+/**
+ * アイコン名から import すべきファイル名（ このパッケージ内にある ）を解決してくる Loader
+ */
 export class FileLoader extends Loader {
-  static findOrCreate(name: string) {
-    const existing = pool.get(name)
-    if (existing) {
-      return existing
+  static findOrRegister(name: string) {
+    const registeredLoader = pool.get(name)
+    if (registeredLoader) {
+      return registeredLoader
     }
 
-    const loader = new FileLoader(name)
-    pool.set(name, loader)
+    const newLoader = new FileLoader(name)
+    pool.set(name, newLoader)
 
-    return loader
+    return newLoader
   }
 
   constructor(private name: string) {

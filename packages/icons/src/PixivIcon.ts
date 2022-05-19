@@ -50,7 +50,7 @@ export class PixivIcon extends BaseElement {
         )
       }
 
-      UrlLoader.create(name, url)
+      UrlLoader.register(name, url)
     })
   }
 
@@ -181,7 +181,7 @@ export class PixivIcon extends BaseElement {
 
   private update() {
     const { name } = this.props
-    const loader = UrlLoader.find(name) ?? FileLoader.findOrCreate(name)
+    const loader = UrlLoader.find(name) ?? FileLoader.findOrRegister(name)
 
     if (loader.isLoading()) {
       return
