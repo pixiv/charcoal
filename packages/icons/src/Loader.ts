@@ -70,6 +70,9 @@ export abstract class Loader {
  * アイコンを特定の URL から取得する Loader
  */
 export class UrlLoader extends Loader {
+  private name: string
+  private url: string
+
   static find(name: string) {
     return pool.get(name)
   }
@@ -80,8 +83,10 @@ export class UrlLoader extends Loader {
     pool.set(name, loader)
   }
 
-  private constructor(private name: string, private url: string) {
+  private constructor(name: string, url: string) {
     super()
+    this.name = name
+    this.url = url
   }
 
   override getIconSource() {
@@ -97,6 +102,8 @@ export class UrlLoader extends Loader {
  * アイコン名から import すべきファイル名（ このパッケージ内にある ）を解決してくる Loader
  */
 export class FileLoader extends Loader {
+  private name: string
+
   static findOrRegister(name: string) {
     const registeredLoader = pool.get(name)
     if (registeredLoader) {
@@ -109,8 +116,9 @@ export class FileLoader extends Loader {
     return newLoader
   }
 
-  private constructor(private name: string) {
+  private constructor(name: string) {
     super()
+    this.name = name
   }
 
   override async getIconSource() {
