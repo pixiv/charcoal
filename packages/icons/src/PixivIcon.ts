@@ -188,7 +188,7 @@ export class PixivIcon extends BaseElement {
     }
 
     void this.waitUntilVisible().then(async () => {
-      this.svgContent = await loader.call()
+      this.svgContent = await loader.fetch()
       this.render()
     })
   }

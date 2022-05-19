@@ -16,49 +16,44 @@ export class PixivIconLoadError extends Error {
 export abstract class Loader {
   abstract attributeName: string
 
-  private _isLoading = false
+  private _promise: Promise<string> | undefined = undefined
   private _svg: string | undefined = undefined
 
   abstract getPath(): Promise<string>
 
   isLoading() {
-    return this._isLoading
+    return this._promise !== undefined
   }
 
-  unwrapToSVG() {
-    if (this._svg === undefined) {
-      throw new Error(
-        `SVG for <pixiv-icon name="${this.attributeName}"> is not loaded yet`
-      )
-    }
-
-    return this._svg
-  }
-
-  async call() {
+  async fetch() {
     if (this._svg !== undefined) {
       return this._svg
     }
 
-    try {
-      this._isLoading = true
-
-      const rawSvg = await this.getPath()
-        .then((path) => fetch(path))
-        .then((response) => {
-          if (!response.ok) {
-            throw new PixivIconLoadError(
-              `Failed to fetch <pixiv-icon name="${this.attributeName}">`
-            )
-          }
-
-          return response.text()
-        })
-
-      return rawSvg
-    } finally {
-      this._isLoading = false
+    if (this._promise) {
+      return this._promise
     }
+
+    this._promise = this.getPath()
+      .then((path) => fetch(path))
+      .then((response) => {
+        if (!response.ok) {
+          throw new PixivIconLoadError(
+            `Failed to fetch <pixiv-icon name="${this.attributeName}">`
+          )
+        }
+
+        return response.text()
+      })
+      .then((svg) => {
+        this._svg = svg
+        return this._svg
+      })
+      .finally(() => {
+        this._promise = undefined
+      })
+
+    return this._promise
   }
 }
 
