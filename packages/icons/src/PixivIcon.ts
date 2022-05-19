@@ -180,6 +180,10 @@ export class PixivIcon extends BaseElement {
   }
 
   private update() {
+    if (this.svgContent !== undefined) {
+      return
+    }
+
     const { name } = this.props
     const loader = UrlLoader.find(name) ?? FileLoader.findOrRegister(name)
 
