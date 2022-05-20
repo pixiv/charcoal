@@ -11,10 +11,16 @@ export class PixivIconLoadError extends Error {
  * 一度リクエストされたアイコンは（リクエスト中のも含め）何度もリクエストしないようになっている
  */
 export class BaseLoader {
+  private _name: string
+  private _getSource: () => Promise<string>
+
   private _promise: Promise<string> | undefined = undefined
   private _resultSvg: string | undefined = undefined
 
-  constructor(private name: string, private getSource: () => Promise<string>) {}
+  constructor(name: string, getSource: () => Promise<string>) {
+    this._name = name
+    this._getSource = getSource
+  }
 
   isLoading() {
     return this._promise !== undefined
@@ -29,12 +35,12 @@ export class BaseLoader {
       return this._promise
     }
 
-    this._promise = this.getSource()
+    this._promise = this._getSource()
       .then((src) => fetch(src))
       .then((response) => {
         if (!response.ok) {
           throw new PixivIconLoadError(
-            `Failed to fetch <pixiv-icon name="${this.name}">`
+            `Failed to fetch <pixiv-icon name="${this._name}">`
           )
         }
 
