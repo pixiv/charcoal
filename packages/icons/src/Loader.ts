@@ -3,7 +3,7 @@
  *
  * 同じアイコンへの複数回のリクエストが起きないためには、Loader がこの中でユニークでないと行けない
  */
-const pool = new Map<string, Loader>()
+const pool = new Map<string, Loadable>()
 
 interface SvgModule {
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -23,12 +23,11 @@ export class PixivIconLoadError extends Error {
  *
  * 一度リクエストされたアイコンは（リクエスト中のも含め）何度もリクエストしないようになっている
  */
-export abstract class Loader {
+export class SvgFetcher {
   private _promise: Promise<string> | undefined = undefined
   private _resultSvg: string | undefined = undefined
 
-  abstract getIconName(): string
-  abstract getIconSource(): Promise<string>
+  constructor(private name: string, private getSource: () => Promise<string>) {}
 
   isLoading() {
     return this._promise !== undefined
@@ -43,12 +42,12 @@ export abstract class Loader {
       return this._promise
     }
 
-    this._promise = this.getIconSource()
+    this._promise = this.getSource()
       .then((src) => fetch(src))
       .then((response) => {
         if (!response.ok) {
           throw new PixivIconLoadError(
-            `Failed to fetch <pixiv-icon name="${this.getIconName()}">`
+            `Failed to fetch <pixiv-icon name="${this.name}">`
           )
         }
 
@@ -66,12 +65,16 @@ export abstract class Loader {
   }
 }
 
+interface Loadable {
+  fetch(): Promise<string>
+  isLoading(): boolean
+}
+
 /**
  * アイコンを特定の URL から取得する Loader
  */
-export class UrlLoader extends Loader {
-  private name: string
-  private url: string
+export class UrlLoader implements Loadable {
+  private fetcher: SvgFetcher
 
   static find(name: string) {
     return pool.get(name)
@@ -84,25 +87,23 @@ export class UrlLoader extends Loader {
   }
 
   private constructor(name: string, url: string) {
-    super()
-    this.name = name
-    this.url = url
+    this.fetcher = new SvgFetcher(name, () => Promise.resolve(url))
   }
 
-  override getIconSource() {
-    return Promise.resolve(this.url)
+  fetch(): Promise<string> {
+    return this.fetcher.fetch()
   }
 
-  override getIconName() {
-    return this.name
+  isLoading() {
+    return this.fetcher.isLoading()
   }
 }
 
 /**
  * アイコン名から import すべきファイル名（ このパッケージ内にある ）を解決してくる Loader
  */
-export class FileLoader extends Loader {
-  private name: string
+export class FileLoader implements Loadable {
+  private fetcher: SvgFetcher
 
   static findOrRegister(name: string) {
     const registeredLoader = pool.get(name)
@@ -117,21 +118,24 @@ export class FileLoader extends Loader {
   }
 
   private constructor(name: string) {
-    super()
-    this.name = name
+    this.fetcher = new SvgFetcher(name, () => getSourceFromName(name))
   }
 
-  override async getIconSource() {
-    const [size, name] = this.getIconName().split('/')
-
-    const { default: filename } = (await import(
-      `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
-    )) as SvgModule
-
-    return filename
+  fetch(): Promise<string> {
+    return this.fetcher.fetch()
   }
 
-  override getIconName() {
-    return this.name
+  isLoading() {
+    return this.fetcher.isLoading()
   }
+}
+
+async function getSourceFromName(fullName: string) {
+  const [size, name] = fullName.split('/')
+
+  const { default: filename } = (await import(
+    `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
+  )) as SvgModule
+
+  return filename
 }
