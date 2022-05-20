@@ -1,7 +1,7 @@
 import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './filenames'
-import { FileLoader, UrlLoader } from './Loader'
+import { FileLoader, UrlLoader } from './loaders'
 import { BaseElement, __SERVER__ } from './ssr'
 import { sanitize } from 'dompurify'
 
