@@ -692,6 +692,12 @@ function createTheme<T extends Theme>(_styled?: ThemedStyledInterface<T>) {
       ) => Blank | Internal | (Blank | Internal)[]
     ): ThemeProp<T> =>
     ({ theme }) => {
+      if (theme == null) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw new Error(
+          '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
+        )
+      }
       // styled-componentsのランタイムから受け取ったthemeオブジェクトをbuilderに食わせて`o`をつくる
       // さらに、ユーザー定義にbuilderが構築した`o`を食わせる
       // (`o`を一時変数に入れてしまうと型Tの具象化が行われるので関数合成を優先する)
@@ -718,4 +724,8 @@ function createTheme<T extends Theme>(_styled?: ThemedStyledInterface<T>) {
 
 export default createTheme
 
-export type ThemeProp<T> = ({ theme }: { theme: T }) => CSSObject | CSSObject[]
+export type ThemeProp<T> = ({
+  theme,
+}: {
+  theme: T | undefined
+}) => CSSObject | CSSObject[]
