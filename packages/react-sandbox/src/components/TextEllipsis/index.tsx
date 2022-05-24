@@ -26,7 +26,7 @@ export const TextEllipsis = styled.div.attrs(
           white-space: nowrap;
         `
       : css`
-          display: box;
+          display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: ${lineLimit};
           /* Fallback for -webkit-line-clamp */

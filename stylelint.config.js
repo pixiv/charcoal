@@ -12,6 +12,12 @@ const config = {
         ignoreAtRules: ['tailwind'],
       },
     ],
+    'value-no-vendor-prefix': [
+      true,
+      {
+        ignoreValues: ['box'],
+      },
+    ],
   },
   overrides: [
     {
