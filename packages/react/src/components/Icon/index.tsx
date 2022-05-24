@@ -10,7 +10,9 @@ export interface OwnProps {
 
 export interface IconProps
   extends OwnProps,
-    Omit<Props, 'class' | 'unsafe-non-guideline-scale' | 'css' | 'ref'> {}
+    React.PropsWithoutRef<
+      Omit<Props, 'class' | 'unsafe-non-guideline-scale' | 'css'>
+    > {}
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   { name, scale, unsafeNonGuidelineScale, className, ...rest },
