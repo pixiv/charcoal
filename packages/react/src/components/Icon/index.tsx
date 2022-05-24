@@ -1,17 +1,18 @@
 import React from 'react'
 
 import '@charcoal-ui/icons'
-import type { KnownIconType, PixivIcon, Props } from '@charcoal-ui/icons'
+import type { PixivIcon, Props } from '@charcoal-ui/icons'
 
 export interface OwnProps {
-  name: keyof KnownIconType
-  scale?: 1 | 2 | 3
   unsafeNonGuidelineScale?: number
   className?: string
 }
 
-export type IconProps = OwnProps &
-  Omit<Props, 'class' | 'unsafe-non-guideline-scale'>
+export interface IconProps
+  extends OwnProps,
+    React.PropsWithoutRef<
+      Omit<Props, 'class' | 'unsafe-non-guideline-scale' | 'css'>
+    > {}
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   { name, scale, unsafeNonGuidelineScale, className, ...rest },
