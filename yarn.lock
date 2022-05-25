@@ -1632,7 +1632,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/icons@^1.0.1-alpha.2, @charcoal-ui/icons@workspace:packages/icons":
+"@charcoal-ui/icons@^1.0.1-alpha.3, @charcoal-ui/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icons@workspace:packages/icons"
   dependencies:
@@ -1655,8 +1655,8 @@ __metadata:
   resolution: "@charcoal-ui/react-sandbox@workspace:packages/react-sandbox"
   dependencies:
     "@charcoal-ui/foundation": ^1.0.1-alpha.0
-    "@charcoal-ui/react": ^2.0.0-alpha.3
-    "@charcoal-ui/styled": ^1.0.1-alpha.3
+    "@charcoal-ui/react": ^2.0.0-alpha.4
+    "@charcoal-ui/styled": ^1.0.1-alpha.4
     "@charcoal-ui/theme": ^2.0.0-alpha.2
     "@charcoal-ui/utils": ^1.0.1-alpha.0
     "@storybook/addon-actions": ^6.4.17
@@ -1696,12 +1696,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/react@^2.0.0-alpha.3, @charcoal-ui/react@workspace:packages/react":
+"@charcoal-ui/react@^2.0.0-alpha.4, @charcoal-ui/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react@workspace:packages/react"
   dependencies:
-    "@charcoal-ui/icons": ^1.0.1-alpha.2
-    "@charcoal-ui/styled": ^1.0.1-alpha.3
+    "@charcoal-ui/icons": ^1.0.1-alpha.3
+    "@charcoal-ui/styled": ^1.0.1-alpha.4
     "@charcoal-ui/theme": ^2.0.0-alpha.2
     "@charcoal-ui/utils": ^1.0.1-alpha.0
     "@react-aria/checkbox": ^3.2.3
@@ -1745,7 +1745,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/styled@^1.0.1-alpha.3, @charcoal-ui/styled@workspace:packages/styled":
+"@charcoal-ui/styled@^1.0.1-alpha.4, @charcoal-ui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/styled@workspace:packages/styled"
   dependencies:
