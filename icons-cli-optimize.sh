@@ -6,7 +6,7 @@ allowlist=`mktemp`
 denylist=`mktemp`
 
 # packages/icons/**/*.svg にあるファイルから、
-git ls-files packages/icons/svg/**/*.svg | sort > $allowlist
+git status --porcelain packages/icons/svg/**/*.svg | awk '{ print $2 }' | sort > $allowlist
 
 # icons-cli-denylist に書かれたものを除外し
 cat icons-cli-denylist | sort > $denylist

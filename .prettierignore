@@ -7,3 +7,4 @@ __snapshots__/
 /coverage/
 LICENSE
 /packages/theme/theme.json
+/packages/icons/src/filenames.ts

@@ -134,14 +134,9 @@ export class FigmaFileClient {
       fullname,
       `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
-/* eslint-disable */
-
-// prettier-ignore
 export const KNOWN_ICON_FILES = ${JSON.stringify(KNOWN_ICON_FILES)} as const;
 
 export type KnownIconFile = typeof KNOWN_ICON_FILES[number];
-
-/* eslint-enable */
 `,
       { encoding: 'utf8' }
     )
