@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[112],{"./packages/icons/svg/24/LatestWorks.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/LatestWorks.6e687f16.svg"}}]);

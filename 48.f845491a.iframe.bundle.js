@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[48],{"./packages/icons/svg/24/ChangeCharactor.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ChangeCharactor.1be78c4b.svg"}}]);

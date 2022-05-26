@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[184],{"./packages/icons/svg/24/ViewGrid2Columns.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ViewGrid2Columns.2aa7600d.svg"}}]);
