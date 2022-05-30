@@ -1,0 +1,21 @@
+name: 🚀 機能を提案する
+description: charcoal のパッケージに新しい機能を提案する
+title: 'Feat: '
+labels: []
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 必要だと思う機能の内容を書いてください
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: この機能が必要と考えられる理由を書いてください
+    validations:
+      required: true
+  - type: textarea
+    id: how_it_works
+    attributes:
+      label: この機能があった場合にどういう動きをするかの例を書いてください
