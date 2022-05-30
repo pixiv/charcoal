@@ -151,17 +151,19 @@ export class PixivIcon extends BaseElement {
     _oldValue: string | null,
     newValue: string
   ) {
-    if (attr !== 'name') {
-      this.render()
+    // name が変更された場合必ず再読み込みを試みる
+    if (attr === 'name') {
+      this.loadSvg(newValue)
       return
     }
 
+    // SVG が読み込み済み && scale などの変更だけならそこだけ反映すればいい
     if (this.svgContent !== undefined) {
       this.render()
       return
     }
 
-    // name が変わったときかつまだ取得したことないアイコン名だったときは load する
+    // まだ SVG が読み込めてないなら load
     this.loadSvg(newValue)
   }
 
