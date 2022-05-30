@@ -1,11 +1,9 @@
 import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './filenames'
-import { loaders as defaultLoaders, Loader } from './loaders'
+import { FileLoader, UrlLoader } from './loaders'
 import { BaseElement, __SERVER__ } from './ssr'
 import { sanitize } from 'dompurify'
-
-const { loadFromFile, loadFromRawUrl } = defaultLoaders
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
 
@@ -26,8 +24,6 @@ export interface Props
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
   class?: string
 }
-
-const loaders = new Map<string, Loader>()
 
 type ExtendedIconFile = Exclude<keyof KnownIconType, KnownIconFile>
 type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがneverならKnownIconTypeは拡張されていない
@@ -54,9 +50,7 @@ export class PixivIcon extends BaseElement {
         )
       }
 
-      loaders.set(name, function customLoader() {
-        return loadFromRawUrl(url)
-      })
+      UrlLoader.register(name, url)
     })
   }
 
@@ -144,7 +138,7 @@ export class PixivIcon extends BaseElement {
 
   connectedCallback() {
     this.render()
-    this.update()
+    this.loadSvg(this.props.name)
   }
 
   disconnectedCallback() {
@@ -152,8 +146,23 @@ export class PixivIcon extends BaseElement {
     this.observer = undefined
   }
 
-  attributeChangedCallback() {
-    this.update()
+  attributeChangedCallback(
+    attr: string,
+    _oldValue: string | null,
+    newValue: string
+  ) {
+    if (attr !== 'name') {
+      this.render()
+      return
+    }
+
+    if (this.svgContent !== undefined) {
+      this.render()
+      return
+    }
+
+    // name が変わったときかつまだ取得したことないアイコン名だったときは load する
+    this.loadSvg(newValue)
   }
 
   render() {
@@ -185,12 +194,15 @@ export class PixivIcon extends BaseElement {
     this.shadowRoot!.innerHTML = style + svg
   }
 
-  private update() {
-    void this.waitUntilVisible().then(async () => {
-      const { name } = this.props
-      const loader = loaders.get(name) ?? loadFromFile
+  private loadSvg(name: string) {
+    const loader = UrlLoader.find(name) ?? FileLoader.findOrRegister(name)
 
-      this.svgContent = await loader(name)
+    if (loader.isLoading()) {
+      return
+    }
+
+    void this.waitUntilVisible().then(async () => {
+      this.svgContent = await loader.fetch()
       this.render()
     })
   }

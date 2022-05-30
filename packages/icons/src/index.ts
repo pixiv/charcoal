@@ -2,7 +2,7 @@ import { PixivIcon, Props } from './PixivIcon'
 import { __SERVER__ } from './ssr'
 export { PixivIcon, type KnownIconType, type Props } from './PixivIcon'
 export { KNOWN_ICON_FILES } from './filenames'
-export { PixivIconLoadError } from './loaders'
+export { PixivIconLoadError } from './BaseLoader'
 
 declare global {
   interface Window {
