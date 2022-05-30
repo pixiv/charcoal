@@ -77,7 +77,7 @@ async function getSourceFromName(fullName: string) {
   const [size, name] = fullName.split('/')
 
   const { default: filename } = (await import(
-    `../../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
+    `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
   )) as SvgModule
 
   return filename
