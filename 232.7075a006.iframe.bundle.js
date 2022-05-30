@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[232],{"./packages/icons/svg/32/Shopping.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Shopping.cad55e33.svg"}}]);

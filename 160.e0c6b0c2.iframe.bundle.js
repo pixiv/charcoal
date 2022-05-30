@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[160],{"./packages/icons/svg/24/ReadVertical.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ReadVertical.0c41df84.svg"}}]);
