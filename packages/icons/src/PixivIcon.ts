@@ -138,7 +138,7 @@ export class PixivIcon extends BaseElement {
 
   connectedCallback() {
     this.render()
-    this.update()
+    this.loadSvg(this.props.name)
   }
 
   disconnectedCallback() {
@@ -146,8 +146,23 @@ export class PixivIcon extends BaseElement {
     this.observer = undefined
   }
 
-  attributeChangedCallback() {
-    this.update()
+  attributeChangedCallback(
+    attr: string,
+    _oldValue: string | null,
+    newValue: string
+  ) {
+    if (attr !== 'name') {
+      this.render()
+      return
+    }
+
+    if (this.svgContent !== undefined) {
+      this.render()
+      return
+    }
+
+    // name が変わったときかつまだ取得したことないアイコン名だったときは load する
+    this.loadSvg(newValue)
   }
 
   render() {
@@ -179,12 +194,7 @@ export class PixivIcon extends BaseElement {
     this.shadowRoot!.innerHTML = style + svg
   }
 
-  private update() {
-    if (this.svgContent !== undefined) {
-      return
-    }
-
-    const { name } = this.props
+  private loadSvg(name: string) {
     const loader = UrlLoader.find(name) ?? FileLoader.findOrRegister(name)
 
     if (loader.isLoading()) {
