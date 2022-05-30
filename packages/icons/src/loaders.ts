@@ -1,4 +1,4 @@
-import { Loadable, BaseLoader } from './base'
+import { Loadable, BaseLoader } from './BaseLoader'
 
 /**
  * オブジェクトプール。Loader のインスタンスは作り次第ここに入れる
