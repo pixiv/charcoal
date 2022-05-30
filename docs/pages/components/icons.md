@@ -51,7 +51,7 @@ TypeScript 環境下では、`KnownIconType` という型を拡張すること�
 くようになります。
 
 ```ts
-import PixivIcon from '@charcoal-ui/icons'
+import { PixivIcon } from '@charcoal-ui/icons'
 import NewFeature from './NewFeature.svg'
 
 PixivIcon.extend({
