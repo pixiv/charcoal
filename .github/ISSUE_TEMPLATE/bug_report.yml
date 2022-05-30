@@ -14,7 +14,8 @@ body:
     id: environment
     attributes:
       label: 使用している charcoal および周辺環境
-      placeholder: @charcoal-ui/tailwind-config 1.0.0 と tailwindcss 3.0.0 を組み合わせています。
+      placeholder: |
+        @charcoal-ui/tailwind-config 1.0.0 と tailwindcss 3.0.0 を組み合わせています。
     validations:
       required: true
   - type: textarea
