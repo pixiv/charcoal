@@ -2,7 +2,7 @@ import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './filenames'
 import { FileLoader, UrlLoader } from './loaders'
-import { BaseElement, __SERVER__ } from './ssr'
+import { __SERVER__ } from './ssr'
 import { sanitize } from 'dompurify'
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
@@ -30,7 +30,7 @@ type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがn
   ? false
   : true
 
-export class PixivIcon extends BaseElement {
+export class PixivIcon extends HTMLElement {
   static readonly tagName = 'pixiv-icon'
 
   static extend(
