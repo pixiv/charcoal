@@ -199,10 +199,6 @@ export class PixivIcon extends HTMLElement {
   private loadSvg(name: string) {
     const loader = UrlLoader.find(name) ?? FileLoader.findOrRegister(name)
 
-    if (loader.isLoading()) {
-      return
-    }
-
     void this.waitUntilVisible().then(async () => {
       this.svgContent = await loader.fetch()
       this.render()
