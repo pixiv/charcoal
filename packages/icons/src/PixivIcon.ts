@@ -164,7 +164,7 @@ export class PixivIcon extends HTMLElement {
     }
 
     // まだ SVG が読み込めてないなら load
-    this.loadSvg(newValue)
+    this.loadSvg(this.props.name)
   }
 
   render() {
