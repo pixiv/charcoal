@@ -60,6 +60,7 @@ export class PixivIcon extends HTMLElement {
 
   private svgContent?: string
   private observer?: IntersectionObserver
+  private isVisible = false
 
   get props() {
     const partial = Object.fromEntries(
@@ -136,14 +137,17 @@ export class PixivIcon extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     this.render()
-    this.loadSvg(this.props.name)
+    await this.waitUntilVisible()
+    this.isVisible = true
+    await this.loadSvg(this.props.name)
   }
 
   disconnectedCallback() {
     this.observer?.disconnect()
     this.observer = undefined
+    this.isVisible = false
   }
 
   attributeChangedCallback(
@@ -151,9 +155,14 @@ export class PixivIcon extends HTMLElement {
     _oldValue: string | null,
     newValue: string
   ) {
+    // 非表示の場合はロードしない
+    if (!this.isVisible) {
+      return
+    }
+
     // name が変更された場合必ず再読み込みを試みる
     if (attr === 'name') {
-      this.loadSvg(newValue)
+      void this.loadSvg(newValue)
       return
     }
 
@@ -164,7 +173,7 @@ export class PixivIcon extends HTMLElement {
     }
 
     // まだ SVG が読み込めてないなら load
-    this.loadSvg(this.props.name)
+    void this.loadSvg(this.props.name)
   }
 
   render() {
@@ -196,13 +205,11 @@ export class PixivIcon extends HTMLElement {
     this.shadowRoot!.innerHTML = style + svg
   }
 
-  private loadSvg(name: string) {
+  private async loadSvg(name: string) {
     const loader = UrlLoader.find(name) ?? FileLoader.findOrRegister(name)
 
-    void this.waitUntilVisible().then(async () => {
-      this.svgContent = await loader.fetch()
-      this.render()
-    })
+    this.svgContent = await loader.fetch()
+    this.render()
   }
 
   private waitUntilVisible() {
