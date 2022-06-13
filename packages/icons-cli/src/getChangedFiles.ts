@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import { execp } from './utils'
 
-export const targetDir = path.resolve(process.cwd(), 'packages', 'icons', 'svg')
+export const targetDir = path.resolve(process.cwd(), 'packages', 'icons')
 
 /**
  * dir 内で変更があったファイル情報を for await で回せるようにするやつ
