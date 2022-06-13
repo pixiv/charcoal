@@ -176,3 +176,13 @@ export type ModifiedArgumented<
     ...args: TArguments
   ) => ModifiedArgumented<TSource, Exclude<TModifiers, key>, TArguments>
 }
+
+export const customVariableToken = (
+  color: string | number | symbol,
+  modifiers: readonly (string | number | symbol)[] = []
+) =>
+  `--charcoal-${color.toString()}${
+    modifiers.length === 0 ? '' : ['', modifiers].join('-')
+  }`
+
+export const variable = (value: string) => `var(${value})`

@@ -5,6 +5,8 @@ import {
   modifiedFactory,
   constFactory,
   modifiedArgumentedFactory,
+  customVariableToken,
+  variable,
 } from './lib'
 import {
   EffectType,
@@ -31,6 +33,7 @@ import {
   px,
 } from '@charcoal-ui/utils'
 export { type Modified, type ModifiedArgumented } from './lib'
+export { default as TokenProvider } from './TokenProvider'
 
 const colorProperties = ['bg', 'font'] as const
 type ColorProperty = typeof colorProperties[number]
@@ -232,7 +235,7 @@ function onEffectPseudo(effect: EffectType, css: CSSObject) {
 }
 
 const createColorCss =
-  <T extends Theme>(theme: T) =>
+  <T extends Theme>(_theme: T) =>
   (
     target: ColorProperty,
     color: keyof T['color'],
@@ -240,14 +243,13 @@ const createColorCss =
   ): Internal =>
     internal(
       () => ({
-        [targetProperty(target)]: theme.color[color],
+        [targetProperty(target)]: variable(customVariableToken(color)),
         ...effects.filter(isSupportedEffect).reduce<CSSObject>(
           (acc, effect) => ({
             ...acc,
             ...onEffectPseudo(effect, {
-              [targetProperty(target)]: applyEffect(
-                theme.color[color],
-                theme.effect[effect] ?? []
+              [targetProperty(target)]: variable(
+                customVariableToken(color, [effect])
               ),
             }),
           }),
@@ -679,7 +681,9 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  *
  * const theme = createTheme<DefaultTheme>()
  */
-function createTheme<T extends Theme>(_styled?: ThemedStyledInterface<T>) {
+export function createTheme<T extends Theme>(
+  _styled?: ThemedStyledInterface<T>
+) {
   // `theme(o => [...])` の `o` の部分の型推論のためだけに使う意味のない変数
   // Tを型変数のまま渡してcreateThemeが呼ばれるまで型の具象化が行われないようにする
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
@@ -721,8 +725,6 @@ function createTheme<T extends Theme>(_styled?: ThemedStyledInterface<T>) {
       return specDescriptor.map((v) => v[internalSym].operation(context))
     }
 }
-
-export default createTheme
 
 export type ThemeProp<T> = ({
   theme,

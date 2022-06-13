@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
 import { CharcoalTheme } from '@charcoal-ui/theme'
 import { Material } from '@charcoal-ui/foundation'
-import createTheme, { ThemeProp } from '.'
+import { createTheme, ThemeProp } from '.'
 import { disabledSelector } from '@charcoal-ui/utils'
 
 export default {
