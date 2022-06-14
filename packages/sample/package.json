@@ -9,7 +9,7 @@
   "dependencies": {
     "@charcoal-ui/react": "^2.0.0-alpha.22",
     "@charcoal-ui/react-sandbox": "^2.0.0-alpha.11",
-    "@charcoal-ui/styled": "workspace:^",
+    "@charcoal-ui/styled": "^2.0.0",
     "@charcoal-ui/theme": "^2.0.0-alpha.7",
     "next": "^12.3.2",
     "react": "^17.0.2",
