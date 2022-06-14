@@ -18,5 +18,9 @@
       "stream": true,
       "loglevel": "success"
     }
-  }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.0.0"
 }
