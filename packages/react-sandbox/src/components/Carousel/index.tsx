@@ -48,6 +48,7 @@ type Props = CarouselAppearanceProps & {
   children: React.ReactNode
   centerItems?: boolean
   onScrollStateChange?: (canScroll: boolean) => void
+  scrollAmountCoef?: number
 }
 
 export interface CarouselHandlerRef {
@@ -64,6 +65,7 @@ export default function Carousel({
   children,
   centerItems,
   onScrollStateChange,
+  scrollAmountCoef = SCROLL_AMOUNT_COEF,
   ...options
 }: Props) {
   // スクロール位置を保存する
@@ -94,24 +96,31 @@ export default function Carousel({
     // スクロール領域を超えないように、アニメーションを開始
     // アニメーション中にアニメーションが開始されたときに、アニメーション終了予定の位置から再度計算するようにする
     const scroll = Math.min(
-      scrollLeft + clientWidth * SCROLL_AMOUNT_COEF,
+      scrollLeft + clientWidth * scrollAmountCoef,
       maxScrollLeft
     )
     setScrollLeft(scroll, true)
     set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
     animation.current = true
-  }, [animation, maxScrollLeft, scrollLeft, set, setScrollLeft])
+  }, [
+    animation,
+    maxScrollLeft,
+    scrollLeft,
+    set,
+    scrollAmountCoef,
+    setScrollLeft,
+  ])
 
   const handleLeft = useCallback(() => {
     if (visibleAreaRef.current === null) {
       return
     }
     const { clientWidth } = visibleAreaRef.current
-    const scroll = Math.max(scrollLeft - clientWidth * SCROLL_AMOUNT_COEF, 0)
+    const scroll = Math.max(scrollLeft - clientWidth * scrollAmountCoef, 0)
     setScrollLeft(scroll, true)
     set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
     animation.current = true
-  }, [animation, scrollLeft, set, setScrollLeft])
+  }, [animation, scrollLeft, set, scrollAmountCoef, setScrollLeft])
 
   // スクロール可能な場合にボタンを表示する
   // scrollLeftが変化したときに処理する (アニメーション開始時 & 手動スクロール時)
@@ -221,7 +230,7 @@ export default function Carousel({
     const fadeInGradient = options.fadeInGradient ?? false
     const overflowGradient = !fadeInGradient
     return (
-      <Container>
+      <Container ref={visibleAreaRef}>
         <GradientContainer fadeInGradient={fadeInGradient}>
           <RightGradient>
             <LeftGradient show={overflowGradient || scrollLeft > 0}>
@@ -262,7 +271,7 @@ export default function Carousel({
   }
 
   return (
-    <Container>
+    <Container ref={visibleAreaRef}>
       <ScrollArea
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
