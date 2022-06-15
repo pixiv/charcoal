@@ -83,13 +83,14 @@ export default function Carousel({
   const [styles, set] = useSpring(() => ({ scroll: 0 }))
 
   const ref = useRef<HTMLDivElement>(null)
+  const visibleAreaRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLUListElement>(null)
 
   const handleRight = useCallback(() => {
-    if (ref.current === null) {
+    if (visibleAreaRef.current === null) {
       return
     }
-    const { clientWidth } = ref.current
+    const { clientWidth } = visibleAreaRef.current
     // スクロール領域を超えないように、アニメーションを開始
     // アニメーション中にアニメーションが開始されたときに、アニメーション終了予定の位置から再度計算するようにする
     const scroll = Math.min(
@@ -102,10 +103,10 @@ export default function Carousel({
   }, [animation, maxScrollLeft, scrollLeft, set, setScrollLeft])
 
   const handleLeft = useCallback(() => {
-    if (ref.current === null) {
+    if (visibleAreaRef.current === null) {
       return
     }
-    const { clientWidth } = ref.current
+    const { clientWidth } = visibleAreaRef.current
     const scroll = Math.max(scrollLeft - clientWidth * SCROLL_AMOUNT_COEF, 0)
     setScrollLeft(scroll, true)
     set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
