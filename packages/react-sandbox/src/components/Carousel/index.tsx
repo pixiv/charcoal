@@ -215,8 +215,16 @@ export default function Carousel({
     }
   }, [onScroll])
 
+  const [disableGradient, setDisableGradient] = useState(false)
+
+  useLayoutEffect(() => {
+    if (isEdge()) {
+      setDisableGradient(true)
+    }
+  }, [])
+
   // NOTE: Edgeではmaskを使うと要素のレンダリングがバグる（場合によっては画像が表示されない）のでグラデーションを無効にする
-  if (!isEdge() && options.hasGradient === true) {
+  if (!disableGradient && options.hasGradient === true) {
     const fadeInGradient = options.fadeInGradient ?? false
     const overflowGradient = !fadeInGradient
     return (
