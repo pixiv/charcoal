@@ -26,4 +26,4 @@ export function passiveEvents(): boolean {
   }
 }
 
-export const isEdge = navigator.userAgent.includes('Edge/')
+export const isEdge = () => navigator.userAgent.includes('Edge/')
