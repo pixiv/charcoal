@@ -5,7 +5,6 @@ import {
   modifiedFactory,
   constFactory,
   modifiedArgumentedFactory,
-  customVariableToken,
   variable,
 } from './lib'
 import {
@@ -31,6 +30,7 @@ import {
   notDisabledSelector,
   disabledSelector,
   px,
+  customPropertyToken,
 } from '@charcoal-ui/utils'
 export { type Modified, type ModifiedArgumented } from './lib'
 export { default as TokenProvider } from './TokenProvider'
@@ -243,13 +243,13 @@ const createColorCss =
   ): Internal =>
     internal(
       () => ({
-        [targetProperty(target)]: variable(customVariableToken(color)),
+        [targetProperty(target)]: variable(customPropertyToken(color)),
         ...effects.filter(isSupportedEffect).reduce<CSSObject>(
           (acc, effect) => ({
             ...acc,
             ...onEffectPseudo(effect, {
               [targetProperty(target)]: variable(
-                customVariableToken(color, [effect])
+                customPropertyToken(color, [effect])
               ),
             }),
           }),
