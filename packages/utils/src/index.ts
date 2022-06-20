@@ -187,3 +187,14 @@ export function maxWidth(breakpoint: number) {
  */
 export const halfLeading = ({ fontSize, lineHeight }: TypographyDescriptor) =>
   (lineHeight - fontSize) / 2
+
+/**
+ * Namespaced custom property
+ */
+export const customPropertyToken = (
+  id: string | number | symbol,
+  modifiers: readonly (string | number | symbol)[] = []
+) =>
+  `--charcoal-${id.toString()}${
+    modifiers.length === 0 ? '' : ['', modifiers].join('-')
+  }`
