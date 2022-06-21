@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "2.0.0-alpha.8",
+  "version": "2.0.0-alpha.9",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
@@ -49,8 +49,8 @@
   },
   "dependencies": {
     "@charcoal-ui/icons": "^1.1.0-alpha.3",
-    "@charcoal-ui/styled": "^1.0.1-alpha.4",
-    "@charcoal-ui/theme": "^2.0.0-alpha.2",
+    "@charcoal-ui/styled": "^1.0.1-alpha.5",
+    "@charcoal-ui/theme": "^2.0.0-alpha.3",
     "@charcoal-ui/utils": "^1.0.1-alpha.0",
     "@react-aria/checkbox": "^3.2.3",
     "@react-aria/switch": "^3.1.3",
