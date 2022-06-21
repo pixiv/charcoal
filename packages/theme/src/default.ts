@@ -98,7 +98,7 @@ export const light: CharcoalTheme = {
     surface6: rgba('#000000', 0.88),
     surface7: rgba('#000000', 0.02),
     surface8: rgba('#000000', 0.88),
-    surface9: rgba('#ffffff', 0.84),
+    surface9: '#ffffff',
     surface10: rgba('#000000', 0.16),
     text1: '#1f1f1f',
     text2: '#474747',
