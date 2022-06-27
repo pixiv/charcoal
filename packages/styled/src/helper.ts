@@ -1,17 +1,19 @@
 import { useEffect, useMemo, useState } from 'react'
 
-const AVAILABLE_THEME = ['light', 'dark'] as const
-type AvailableTheme = typeof AVAILABLE_THEME[number]
+const LOCAL_STORAGE_KEY = 'charcoal-theme'
+const ROOT_ATTRIBUTE = 'theme'
 
-const LOCAL_STORAGE_KEY = 'theme'
-
-export function initialThemeSetter(
-  setter: (theme: AvailableTheme) => void = themeSetter
-) {
+/**
+ * LocalStorageからテーマ情報を取得してページロード前に同期的にテーマをセットするヘルパ
+ */
+export function initialThemeSetter({
+  key = LOCAL_STORAGE_KEY,
+  setter = themeSetter,
+}: { key?: string; setter?: (theme: string) => void } = {}) {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
   if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
-      const theme = getThemeSync()
+      const theme = getThemeSync(key)
       if (theme !== null) {
         setter(theme)
       }
@@ -19,37 +21,55 @@ export function initialThemeSetter(
   }
 }
 
-export function themeSetter(theme: AvailableTheme) {
-  document.documentElement.dataset.theme = theme
+/**
+ * `<html data-theme="dark">` のような設定を行うデフォルトのセッター
+ */
+export function themeSetter(theme: string | undefined) {
+  if (theme !== undefined) {
+    document.documentElement.dataset[ROOT_ATTRIBUTE] = theme
+  } else {
+    delete document.documentElement.dataset[ROOT_ATTRIBUTE]
+  }
 }
 
-export function useThemeSetter(
-  setter: (theme: AvailableTheme) => void = themeSetter
-) {
-  const [theme] = useTheme()
+/**
+ * LocalStorageからテーマの情報を取得して、変化時にテーマをセットするhooks
+ */
+export function useThemeSetter({
+  key = LOCAL_STORAGE_KEY,
+  setter = themeSetter,
+}: { key?: string; setter?: (theme: string | undefined) => void } = {}) {
+  const [theme, , system] = useTheme(key)
 
   useEffect(() => {
     if (theme === undefined) {
       return
     }
-    setter(theme)
-  }, [setter, theme])
+    // prefers-color-scheme から値を取っている場合にはcssのみで処理したいのでアンセットする
+    setter(system ? undefined : theme)
+  }, [setter, system, theme])
 }
 
-export function getThemeSync() {
-  const theme = localStorage.getItem(LOCAL_STORAGE_KEY)
-  return theme !== null && AVAILABLE_THEME.includes(theme as AvailableTheme)
-    ? (theme as AvailableTheme)
-    : null
+/**
+ * 同期的にLocalStorageからテーマを取得するヘルパ
+ */
+export function getThemeSync(key: string = LOCAL_STORAGE_KEY) {
+  const theme = localStorage.getItem(key)
+  return theme
 }
 
-export const useTheme = () => {
+/**
+ * LocalStorage, prefers-color-scheme からテーマの情報を取得して、現在のテーマを返すhooks
+ *
+ * `dark` `light` という名前だけは特別扱いされていて、prefers-color-schemeにマッチした場合に返ります
+ */
+export const useTheme = (key: string = LOCAL_STORAGE_KEY) => {
   const isDark = useMedia('(prefers-color-scheme: dark)')
   const media = isDark !== undefined ? (isDark ? 'dark' : 'light') : undefined
-  const [local, setTheme, ready] =
-    useLocalStorage<AvailableTheme>(LOCAL_STORAGE_KEY)
+  const [local, setTheme, ready] = useLocalStorage<string>(key)
   const theme = !ready || media === undefined ? undefined : local ?? media
-  return [theme, setTheme, local === undefined] as const
+  const system = local === undefined
+  return [theme, setTheme, system] as const
 }
 
 export function useLocalStorage<T>(key: string, defaultValue?: () => T) {
