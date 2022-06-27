@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
 const LOCAL_STORAGE_KEY = 'charcoal-theme'
-export const DEFAULT_ROOT_ATTRIBUTE = 'theme'
+const DEFAULT_ROOT_ATTRIBUTE = 'theme'
 
 /**
  * LocalStorageからテーマ情報を取得してページロード前に同期的にテーマをセットするヘルパ

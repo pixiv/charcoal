@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { light, dark } from '@charcoal-ui/theme'
 import {
-  TokenProvider,
+  TokenInjector,
   initialThemeSetter,
   useTheme,
   useThemeSetter,
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme === 'dark' ? dark : light}>
       <Component {...pageProps} />
-      <TokenProvider
+      <TokenInjector
         theme={{
           ':root': light,
           [themeSelector('light')]: light,

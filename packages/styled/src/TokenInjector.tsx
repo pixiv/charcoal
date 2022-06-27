@@ -49,7 +49,7 @@ export interface ThemeMap {
 
 type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect'>
 
-export default function TokenProvider({
+export default function TokenInjector({
   theme: themeMap,
 }: {
   theme: ThemeMap

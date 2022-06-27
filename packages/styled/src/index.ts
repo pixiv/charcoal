@@ -33,7 +33,7 @@ import {
   customPropertyToken,
 } from '@charcoal-ui/utils'
 export { type Modified, type ModifiedArgumented } from './lib'
-export { default as TokenProvider } from './TokenProvider'
+export { default as TokenInjector } from './TokenInjector'
 export {
   getThemeSync,
   initialThemeSetter,
