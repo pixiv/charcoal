@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 
 const LOCAL_STORAGE_KEY = 'charcoal-theme'
-const ROOT_ATTRIBUTE = 'theme'
+export const DEFAULT_ROOT_ATTRIBUTE = 'theme'
 
 /**
  * LocalStorageからテーマ情報を取得してページロード前に同期的にテーマをセットするヘルパ
  */
 export function initialThemeSetter({
   key = LOCAL_STORAGE_KEY,
-  setter = themeSetter,
+  setter = themeSetter(),
 }: { key?: string; setter?: (theme: string) => void } = {}) {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
   if (typeof document !== 'undefined') {
@@ -24,12 +24,31 @@ export function initialThemeSetter({
 /**
  * `<html data-theme="dark">` のような設定を行うデフォルトのセッター
  */
-export function themeSetter(theme: string | undefined) {
-  if (theme !== undefined) {
-    document.documentElement.dataset[ROOT_ATTRIBUTE] = theme
-  } else {
-    delete document.documentElement.dataset[ROOT_ATTRIBUTE]
+export const themeSetter =
+  (attr: string = DEFAULT_ROOT_ATTRIBUTE) =>
+  (theme: string | undefined) => {
+    if (theme !== undefined) {
+      document.documentElement.dataset[attr] = theme
+    } else {
+      delete document.documentElement.dataset[attr]
+    }
   }
+
+/**
+ * `<html data-theme="dark">` にマッチするセレクタを生成する
+ */
+export function themeSelector<
+  T extends string,
+  S extends string = typeof DEFAULT_ROOT_ATTRIBUTE
+>(theme: T, attr?: S) {
+  return `:root[data-${attr ?? DEFAULT_ROOT_ATTRIBUTE}='${theme}']` as const
+}
+
+/**
+ * prefers-color-scheme を利用する media クエリを生成する
+ */
+export function prefersColorScheme<T extends string>(theme: T) {
+  return `@media (prefers-color-scheme: ${theme})` as const
 }
 
 /**
@@ -37,7 +56,7 @@ export function themeSetter(theme: string | undefined) {
  */
 export function useThemeSetter({
   key = LOCAL_STORAGE_KEY,
-  setter = themeSetter,
+  setter = themeSetter(),
 }: { key?: string; setter?: (theme: string | undefined) => void } = {}) {
   const [theme, , system] = useTheme(key)
 

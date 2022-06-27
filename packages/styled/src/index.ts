@@ -38,6 +38,8 @@ export {
   getThemeSync,
   initialThemeSetter,
   themeSetter,
+  themeSelector,
+  prefersColorScheme,
   useTheme,
   useThemeSetter,
   useLocalStorage,

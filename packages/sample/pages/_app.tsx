@@ -7,6 +7,8 @@ import {
   initialThemeSetter,
   useTheme,
   useThemeSetter,
+  themeSelector,
+  prefersColorScheme,
 } from '@charcoal-ui/styled'
 
 initialThemeSetter()
@@ -18,7 +20,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme === 'dark' ? dark : light}>
       <Component {...pageProps} />
-      <TokenProvider theme={{ light, dark }} prefersColorScheme />
+      <TokenProvider
+        theme={{
+          ':root': light,
+          [themeSelector('light')]: light,
+          [themeSelector('dark')]: dark,
+          [prefersColorScheme('dark')]: dark,
+        }}
+      />
     </ThemeProvider>
   )
 }

@@ -4,27 +4,23 @@ import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle<{
-  def: ThemeDefinition
-  prefersColorScheme: boolean
+  themeMap: ThemeMap
 }>`
-  ${({ def, prefersColorScheme }) =>
-    Object.entries(def).map(
-      ([key, theme]) => css`
-        ${key === 'light'
-          ? `:root, :root[data-theme=${key}]`
-          : `:root[data-theme=${key}]`} {
-          ${customProperties(theme)}
-        }
-        ${prefersColorScheme &&
-        isCompatibleWithPrefersColorScheme(key) &&
-        css`
-          @media (prefers-color-scheme: ${key}) {
-            :root {
+  ${({ themeMap }) =>
+    Object.entries(themeMap).map(([key, theme]) =>
+      key.startsWith('@media')
+        ? css`
+            ${key} {
+              :root {
+                ${customProperties(theme)}
+              }
+            }
+          `
+        : css`
+            ${key} {
               ${customProperties(theme)}
             }
-          }
-        `}
-      `
+          `
     )}
 `
 
@@ -43,26 +39,20 @@ const customProperties = (
     ])
     .join(';')
 
-const isCompatibleWithPrefersColorScheme = (key: string) =>
-  ['light', 'dark'].includes(key)
-
 const variableDefinition = (prop: string, value: string) => `${prop}: ${value}`
 
-type ThemeDefinition = {
-  [key: string]: Pick<CharcoalAbstractTheme, 'color' | 'effect'>
+export interface ThemeMap {
+  ':root': Theme
+  [mediaQuery: `@media (${string})`]: Theme
+  [selector: string]: Theme
 }
 
+type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect'>
+
 export default function TokenProvider({
-  theme,
-  prefersColorScheme = false,
+  theme: themeMap,
 }: {
-  theme: ThemeDefinition
-  prefersColorScheme?: boolean
+  theme: ThemeMap
 }) {
-  return (
-    <GlobalStyle
-      def={theme}
-      prefersColorScheme={prefersColorScheme}
-    ></GlobalStyle>
-  )
+  return <GlobalStyle themeMap={themeMap}></GlobalStyle>
 }
