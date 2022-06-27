@@ -5,6 +5,8 @@ __snapshots__/
 /public/
 /storybook-static/
 /coverage/
+.next/
+
 LICENSE
 /packages/theme/theme.json
 /packages/icons/src/filenames.ts
