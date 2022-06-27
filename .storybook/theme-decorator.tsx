@@ -2,23 +2,31 @@ import React, { useLayoutEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from 'storybook-dark-mode'
 import { light, dark } from '@charcoal-ui/theme'
-import { TokenProvider } from '@charcoal-ui/styled'
+import { TokenInjector, themeSelector, themeSetter } from '@charcoal-ui/styled'
+
+const setter = themeSetter()
 
 const Theme = ({ children }) => {
   const isDarkMode = useDarkMode()
 
   useLayoutEffect(() => {
     if (isDarkMode) {
-      document.documentElement.dataset.theme = 'dark'
+      setter('dark')
     } else {
-      document.documentElement.dataset.theme = undefined
+      setter('light')
     }
   }, [isDarkMode])
 
   return (
     <ThemeProvider theme={isDarkMode ? dark : light}>
       <div data-dark={isDarkMode}>{children}</div>
-      <TokenProvider theme={{ default: light, dark }}></TokenProvider>
+      <TokenInjector
+        theme={{
+          ':root': light,
+          [themeSelector('dark')]: dark,
+          [themeSelector('light')]: light,
+        }}
+      ></TokenInjector>
     </ThemeProvider>
   )
 }
