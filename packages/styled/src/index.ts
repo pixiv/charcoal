@@ -252,13 +252,15 @@ const createColorCss =
   ): Internal =>
     internal(
       () => ({
-        [targetProperty(target)]: variable(customPropertyToken(color)),
+        [targetProperty(target)]: variable(
+          customPropertyToken(color.toString())
+        ),
         ...effects.filter(isSupportedEffect).reduce<CSSObject>(
           (acc, effect) => ({
             ...acc,
             ...onEffectPseudo(effect, {
               [targetProperty(target)]: variable(
-                customPropertyToken(color, [effect])
+                customPropertyToken(color.toString(), [effect])
               ),
             }),
           }),

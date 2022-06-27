@@ -192,9 +192,7 @@ export const halfLeading = ({ fontSize, lineHeight }: TypographyDescriptor) =>
  * Namespaced custom property
  */
 export const customPropertyToken = (
-  id: string | number | symbol,
-  modifiers: readonly (string | number | symbol)[] = []
+  id: string,
+  modifiers: readonly string[] = []
 ) =>
-  `--charcoal-${id.toString()}${
-    modifiers.length === 0 ? '' : ['', modifiers].join('-')
-  }`
+  `--charcoal-${id}${modifiers.length === 0 ? '' : ['', modifiers].join('-')}`
