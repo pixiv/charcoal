@@ -47,7 +47,7 @@ export function themeSelector<
 /**
  * prefers-color-scheme を利用する media クエリを生成する
  */
-export function prefersColorScheme<T extends string>(theme: T) {
+export function prefersColorScheme<T extends 'light' | 'dark'>(theme: T) {
   return `@media (prefers-color-scheme: ${theme})` as const
 }
 
