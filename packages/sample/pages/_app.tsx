@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           [themeSelector('dark')]: dark,
           [prefersColorScheme('dark')]: dark,
         }}
+        background="background1"
       />
     </ThemeProvider>
   )

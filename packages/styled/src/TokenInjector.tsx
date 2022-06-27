@@ -3,21 +3,33 @@ import { applyEffect, customPropertyToken } from '@charcoal-ui/utils'
 import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle<{
-  themeMap: ThemeMap
-}>`
-  ${({ themeMap }) =>
+const GlobalStyle = createGlobalStyle`
+  ${<T extends Theme>({
+    themeMap,
+    background,
+  }: {
+    themeMap: ThemeMap<T>
+    background?: keyof ThemeMap<T>[string]['color']
+  }) =>
     Object.entries(themeMap).map(([key, theme]) =>
       key.startsWith('@media')
         ? css`
             ${key} {
               :root {
+                ${background !== undefined &&
+                css`
+                  background-color: ${theme.color[background]};
+                `}
                 ${customProperties(theme)}
               }
             }
           `
         : css`
             ${key} {
+              ${background !== undefined &&
+              css`
+                background-color: ${theme.color[background]};
+              `}
               ${customProperties(theme)}
             }
           `
@@ -41,18 +53,20 @@ const customProperties = (
 
 const variableDefinition = (prop: string, value: string) => `${prop}: ${value}`
 
-export interface ThemeMap {
-  ':root': Theme
-  [mediaQuery: `@media (${string})`]: Theme
-  [selector: string]: Theme
+export interface ThemeMap<T extends Theme> {
+  ':root': T
+  [mediaQuery: `@media (${string})`]: T
+  [selector: string]: T
 }
 
 type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect'>
 
-export default function TokenInjector({
+export default function TokenInjector<T extends Theme>({
   theme: themeMap,
+  background,
 }: {
-  theme: ThemeMap
+  theme: ThemeMap<T>
+  background?: keyof ThemeMap<T>[string]['color']
 }) {
-  return <GlobalStyle themeMap={themeMap}></GlobalStyle>
+  return <GlobalStyle themeMap={themeMap} background={background}></GlobalStyle>
 }
