@@ -34,6 +34,15 @@ import {
 } from '@charcoal-ui/utils'
 export { type Modified, type ModifiedArgumented } from './lib'
 export { default as TokenProvider } from './TokenProvider'
+export {
+  getThemeSync,
+  initialThemeSetter,
+  themeSetter,
+  useTheme,
+  useThemeSetter,
+  useLocalStorage,
+  useMedia,
+} from './helper'
 
 const colorProperties = ['bg', 'font'] as const
 type ColorProperty = typeof colorProperties[number]
