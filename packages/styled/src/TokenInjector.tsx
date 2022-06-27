@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
             }
           `
         : css`
+            /* stylelint-disable-next-line no-duplicate-selectors */
             ${key} {
               ${background !== undefined &&
               css`
