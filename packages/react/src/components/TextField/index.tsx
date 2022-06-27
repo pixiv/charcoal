@@ -290,7 +290,7 @@ const MultiLineTextField = React.forwardRef<
         required={required}
         subLabel={subLabel}
         {...labelProps}
-        {...(showLabel ? visuallyHiddenProps : {})}
+        {...(!showLabel ? visuallyHiddenProps : {})}
       />
       <StyledTextareaContainer rows={rows}>
         <StyledTextarea
