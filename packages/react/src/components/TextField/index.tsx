@@ -3,7 +3,7 @@ import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import createTheme from '@charcoal-ui/styled'
+import { createTheme } from '@charcoal-ui/styled'
 
 const theme = createTheme(styled)
 

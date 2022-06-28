@@ -176,3 +176,5 @@ export type ModifiedArgumented<
     ...args: TArguments
   ) => ModifiedArgumented<TSource, Exclude<TModifiers, key>, TArguments>
 }
+
+export const variable = (value: string) => `var(${value})`
