@@ -1650,27 +1650,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/react-sandbox@npm:^1.1.0-alpha.1":
-  version: 1.1.0-alpha.3
-  resolution: "@charcoal-ui/react-sandbox@npm:1.1.0-alpha.3"
-  dependencies:
-    "@charcoal-ui/foundation": ^1.0.1-alpha.0
-    "@charcoal-ui/react": ^2.0.0-alpha.10
-    "@charcoal-ui/styled": ^1.0.1-alpha.5
-    "@charcoal-ui/theme": ^2.0.0-alpha.3
-    "@charcoal-ui/utils": ^1.0.1-alpha.0
-    polished: ^4.1.4
-    warning: ^4.0.3
-  peerDependencies:
-    react: ">=16.13.1"
-    react-dom: ">=16.13.1"
-    react-spring: ^9.0.0-beta.34
-    styled-components: ">=5.1.1"
-  checksum: d0eaac15f2bc5b5e4055f3424b6a8eb3526202a6877b0f1bb62ae50e45da705c655274b63354749754f47be38dd443caf5dd4028d92387fad87681fcfdae8370
-  languageName: node
-  linkType: hard
-
-"@charcoal-ui/react-sandbox@workspace:packages/react-sandbox":
+"@charcoal-ui/react-sandbox@workspace:^, @charcoal-ui/react-sandbox@workspace:packages/react-sandbox":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react-sandbox@workspace:packages/react-sandbox"
   dependencies:
@@ -1716,7 +1696,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/react@^2.0.0-alpha.10, @charcoal-ui/react@^2.0.0-alpha.11, @charcoal-ui/react@^2.0.0-alpha.8, @charcoal-ui/react@workspace:packages/react":
+"@charcoal-ui/react@^2.0.0-alpha.11, @charcoal-ui/react@workspace:^, @charcoal-ui/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react@workspace:packages/react"
   dependencies:
@@ -1769,10 +1749,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/sample@workspace:packages/sample"
   dependencies:
-    "@charcoal-ui/react": ^2.0.0-alpha.8
-    "@charcoal-ui/react-sandbox": ^1.1.0-alpha.1
-    "@charcoal-ui/styled": ^1.0.1-alpha.4
-    "@charcoal-ui/theme": ^2.0.0-alpha.2
+    "@charcoal-ui/react": "workspace:^"
+    "@charcoal-ui/react-sandbox": "workspace:^"
+    "@charcoal-ui/styled": "workspace:^"
+    "@charcoal-ui/theme": "workspace:^"
     "@types/node": ^18.0.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -1786,7 +1766,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/styled@^2.0.0-alpha.0, @charcoal-ui/styled@workspace:packages/styled":
+"@charcoal-ui/styled@^2.0.0-alpha.0, @charcoal-ui/styled@workspace:^, @charcoal-ui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/styled@workspace:packages/styled"
   dependencies:
@@ -1808,21 +1788,6 @@ __metadata:
     styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
-
-"@charcoal-ui/styled@npm:^1.0.1-alpha.4, @charcoal-ui/styled@npm:^1.0.1-alpha.5":
-  version: 1.0.1-alpha.5
-  resolution: "@charcoal-ui/styled@npm:1.0.1-alpha.5"
-  dependencies:
-    "@charcoal-ui/foundation": ^1.0.1-alpha.0
-    "@charcoal-ui/theme": ^2.0.0-alpha.3
-    "@charcoal-ui/utils": ^1.0.1-alpha.0
-    warning: ^4.0.3
-  peerDependencies:
-    react: ">=16.13.1"
-    styled-components: ">=5.1.1"
-  checksum: 0285bf7af6527a2a87da8325f72c56b1ae18132364d592711deed2394ec80f1ae1deb6ab8173ffe7a13f2e55a242953f4e54da4c88dd2b3bcfe51f680bd1d6e4
-  languageName: node
-  linkType: hard
 
 "@charcoal-ui/tailwind-config@workspace:packages/tailwind-config":
   version: 0.0.0-use.local
@@ -1861,7 +1826,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/theme@^2.0.0-alpha.2, @charcoal-ui/theme@^2.0.0-alpha.3, @charcoal-ui/theme@^2.0.0-alpha.4, @charcoal-ui/theme@workspace:packages/theme":
+"@charcoal-ui/theme@^2.0.0-alpha.4, @charcoal-ui/theme@workspace:^, @charcoal-ui/theme@workspace:packages/theme":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/theme@workspace:packages/theme"
   dependencies:
@@ -1887,16 +1852,6 @@ __metadata:
     typescript: ^4.5.5
   languageName: unknown
   linkType: soft
-
-"@charcoal-ui/utils@npm:^1.0.1-alpha.0":
-  version: 1.0.1-alpha.0
-  resolution: "@charcoal-ui/utils@npm:1.0.1-alpha.0"
-  dependencies:
-    "@charcoal-ui/foundation": ^1.0.1-alpha.0
-    polished: ^4.1.4
-  checksum: 4d39869fdf1e62db784dfcc00a8b5cdb3c555472b1f693961ffc308b949b5d27905c3b3d1a3f42804fe873400d9a3415b156130d6c52f85debfcc8bf7b543c49
-  languageName: node
-  linkType: hard
 
 "@cnakazawa/watch@npm:^1.0.3":
   version: 1.0.4
