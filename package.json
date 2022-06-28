@@ -25,7 +25,7 @@
     "fmt:prettier": "prettier . --write",
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
     "release": "yarn run clean && yarn run build && lerna publish --no-changelog",
-    "postpublish": "./postpublish.sh",
+    "postpublish": "./misc/postpublish.sh",
     "website": "vite docs --base=charcoal/docs --port 5000"
   },
   "devDependencies": {
