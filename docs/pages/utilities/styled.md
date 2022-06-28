@@ -39,7 +39,7 @@ export default () => (
 
 ```tsx
 import styled from 'styled-components'
-import createTheme from '@charcoal-ui/styled'
+import { createTheme } from '@charcoal-ui/styled'
 const theme = createTheme(styled)
 
 const MyComponent = styled.div`
