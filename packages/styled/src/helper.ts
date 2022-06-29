@@ -130,16 +130,9 @@ export function useLocalStorage<T>(key: string, defaultValue?: () => T) {
     }
 
     // 同一ウィンドウではstorageイベントが発火しないので、手動で発火させる
-    const event = document.createEvent('StorageEvent')
-    event.initStorageEvent(
+    const event = new StorageEvent(
       'storage',
-      true,
-      false,
-      key,
-      null,
-      null,
-      location.href,
-      localStorage
+      { bubbles: true, cancelable: false, key, url: location.href, storageArea: localStorage }
     )
     dispatchEvent(event)
   }
