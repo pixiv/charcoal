@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "2.0.0-alpha.11",
+  "version": "2.0.0-alpha.12",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@charcoal-ui/icons": "^1.1.0-alpha.3",
-    "@charcoal-ui/styled": "^2.0.0-alpha.0",
+    "@charcoal-ui/styled": "^2.0.0-alpha.1",
     "@charcoal-ui/theme": "^2.0.0-alpha.4",
     "@charcoal-ui/utils": "^1.1.0-alpha.0",
     "@react-aria/checkbox": "^3.2.3",
