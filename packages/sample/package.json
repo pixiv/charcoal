@@ -7,10 +7,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@charcoal-ui/react": "^2.0.0-alpha.8",
-    "@charcoal-ui/react-sandbox": "^1.1.0-alpha.1",
-    "@charcoal-ui/styled": "^1.0.1-alpha.4",
-    "@charcoal-ui/theme": "^2.0.0-alpha.2",
+    "@charcoal-ui/react": "^2.0.0-alpha.11",
+    "@charcoal-ui/react-sandbox": "^2.0.0-alpha.0",
+    "@charcoal-ui/styled": "^2.0.0-alpha.0",
+    "@charcoal-ui/theme": "^2.0.0-alpha.4",
     "next": "^12.1.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
