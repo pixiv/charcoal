@@ -25,7 +25,7 @@
     "fmt:prettier": "prettier . --write",
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
     "release": "yarn run clean && yarn run build && lerna publish --no-changelog",
-    "postpublish": "./postpublish.sh",
+    "postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
     "website": "vite docs --base=charcoal/docs --port 5000"
   },
   "devDependencies": {
@@ -75,7 +75,8 @@
     "stylelint-config-styled-components": "^0.1.1",
     "ts-jest": "^27.1.3",
     "typescript": "^4.5.5",
-    "vite": "^2.7.13"
+    "vite": "^2.7.13",
+    "zx": "^7.0.3"
   },
   "husky": {
     "hooks": {

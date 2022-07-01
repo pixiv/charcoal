@@ -6,6 +6,7 @@ __snapshots__/
 /storybook-static/
 /coverage/
 .next/
+/misc/
 
 /packages/tailwind-diff/bin/tailwind-diff.js
 /packages/icons/src/filenames.ts

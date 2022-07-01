@@ -2,6 +2,9 @@
 
 set -euxo pipefail
 
+# project root で実行
+cd $(dirname $0)/..
+
 default_branch=`git remote show origin | grep 'HEAD branch' | awk '{print $NF}'`
 
 if [[ $default_branch = `git symbolic-ref --short HEAD` ]]; then
