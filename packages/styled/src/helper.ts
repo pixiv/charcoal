@@ -1,25 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
-const LOCAL_STORAGE_KEY = 'charcoal-theme'
-const DEFAULT_ROOT_ATTRIBUTE = 'theme'
-
-/**
- * LocalStorageからテーマ情報を取得してページロード前に同期的にテーマをセットするヘルパ
- */
-export function initialThemeSetter({
-  key = LOCAL_STORAGE_KEY,
-  setter = themeSetter(),
-}: { key?: string; setter?: (theme: string) => void } = {}) {
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
-  if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-      const theme = getThemeSync(key)
-      if (theme !== null) {
-        setter(theme)
-      }
-    })
-  }
-}
+export const LOCAL_STORAGE_KEY = 'charcoal-theme'
+export const DEFAULT_ROOT_ATTRIBUTE = 'theme'
 
 /**
  * `<html data-theme="dark">` のような設定を行うデフォルトのセッター

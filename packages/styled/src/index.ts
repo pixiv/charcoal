@@ -36,7 +36,6 @@ export { type Modified, type ModifiedArgumented } from './lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
   getThemeSync,
-  initialThemeSetter,
   themeSetter,
   themeSelector,
   prefersColorScheme,
@@ -45,6 +44,7 @@ export {
   useLocalStorage,
   useMedia,
 } from './helper'
+export * from './SetThemeScript'
 
 const colorProperties = ['bg', 'font'] as const
 type ColorProperty = typeof colorProperties[number]
