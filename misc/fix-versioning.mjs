@@ -7,7 +7,7 @@ const packages = await glob('packages/*/package.json')
 
 const packagesJson = Object.fromEntries(
   await Promise.all(
-    packages.map((path) => (async () => [path, await fs.readJson(path)])())
+    packages.map(async (path) => [path, await fs.readJson(path)])
   )
 )
 
