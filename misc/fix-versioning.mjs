@@ -1,5 +1,5 @@
 #!/usr/bin/env zx
-import 'zx/build/globals'
+import { cd, glob, fs } from 'zx'
 
 cd(`${__dirname}/..`)
 
