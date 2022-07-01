@@ -4,14 +4,11 @@ import { ThemeProvider } from 'styled-components'
 import { light, dark } from '@charcoal-ui/theme'
 import {
   TokenInjector,
-  initialThemeSetter,
   useTheme,
   useThemeSetter,
   themeSelector,
   prefersColorScheme,
 } from '@charcoal-ui/styled'
-
-initialThemeSetter()
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme] = useTheme()
