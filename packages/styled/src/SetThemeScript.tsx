@@ -12,13 +12,21 @@ interface Props {
  * @returns
  */
 export function SetThemeScript(props: Props) {
-  const src = `
-(() => {
-    let currentTheme = localStorage.getItem('${props.localStorageKey}')
+  if (!/^\w((\w|-)+)$/.test(props.localStorageKey)) {
+    throw new Error(`Unexpected localStorageKey ${props.localStorageKey}. expect /^\\w((\\w|-)+)$/`)
+  }
+  if (!/^\w+$/.test(props.rootAttribute)) {
+    throw new Error(`Unexpected rootAttribute ${props.rootAttribute}. expect /^\\w+$/`)
+  }
+  const src = `'use strict';
+(function () {
+    var localStorageKey = '${props.localStorageKey}'
+    var rootAttribute = '${props.rootAttribute}'
+    var currentTheme = localStorage.getItem(localStorageKey);
     if (currentTheme) {
-        document.documentElement.dataset['${props.rootAttribute}'] = currentTheme
+        document.documentElement.dataset[rootAttribute] = currentTheme;
     }
-})()
+})();
 `
 
   return (
