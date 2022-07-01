@@ -9,7 +9,7 @@ interface Props {
 /**
  * 同期的にテーマをローカルストレージから取得してhtmlの属性に設定するスクリプトタグ
  * @param props localStorageのキー、htmlのdataになる属性のキーを含むオブジェクト
- * @returns 
+ * @returns
  */
 export function SetThemeScript(props: Props) {
   const src = `
