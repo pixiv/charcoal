@@ -1,23 +1,17 @@
 import { useEffect, useMemo, useState } from 'react'
 
-const LOCAL_STORAGE_KEY = 'charcoal-theme'
-const DEFAULT_ROOT_ATTRIBUTE = 'theme'
+export const LOCAL_STORAGE_KEY = 'charcoal-theme'
+export const DEFAULT_ROOT_ATTRIBUTE = 'theme'
+
+const keyStringRegExp = new RegExp(/^(\w|-)+$/)
 
 /**
- * LocalStorageからテーマ情報を取得してページロード前に同期的にテーマをセットするヘルパ
+ * 文字列が英数字_-のみで構成されているか検証する。不正な文字列ならエラーを投げる
+ * @param key 検証するキー
  */
-export function initialThemeSetter({
-  key = LOCAL_STORAGE_KEY,
-  setter = themeSetter(),
-}: { key?: string; setter?: (theme: string) => void } = {}) {
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
-  if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-      const theme = getThemeSync(key)
-      if (theme !== null) {
-        setter(theme)
-      }
-    })
+export function assertKeyString(key: string) {
+  if (!keyStringRegExp.test(key)) {
+    throw new Error(`Unexpected key :${key}, expect: /^(\\w|-)+$/`)
   }
 }
 
@@ -27,6 +21,7 @@ export function initialThemeSetter({
 export const themeSetter =
   (attr: string = DEFAULT_ROOT_ATTRIBUTE) =>
   (theme: string | undefined) => {
+    assertKeyString(attr)
     if (theme !== undefined) {
       document.documentElement.dataset[attr] = theme
     } else {
@@ -83,6 +78,7 @@ export function getThemeSync(key: string = LOCAL_STORAGE_KEY) {
  * `dark` `light` という名前だけは特別扱いされていて、prefers-color-schemeにマッチした場合に返ります
  */
 export const useTheme = (key: string = LOCAL_STORAGE_KEY) => {
+  assertKeyString(key)
   const isDark = useMedia('(prefers-color-scheme: dark)')
   const media = isDark !== undefined ? (isDark ? 'dark' : 'light') : undefined
   const [local, setTheme, ready] = useLocalStorage<string>(key)
