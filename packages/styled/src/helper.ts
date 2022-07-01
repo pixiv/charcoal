@@ -3,12 +3,25 @@ import { useEffect, useMemo, useState } from 'react'
 export const LOCAL_STORAGE_KEY = 'charcoal-theme'
 export const DEFAULT_ROOT_ATTRIBUTE = 'theme'
 
+const keyStringRegExp = new RegExp(/^(\w|-)+$/)
+
+/**
+ * 文字列が英数字_-のみで構成されているか検証する。不正な文字列ならエラーを投げる
+ * @param key 検証するキー
+ */
+export function assertKeyString(key: string) {
+  if (!keyStringRegExp.test(key)) {
+    throw new Error(`Unexpected key :${key}, expect: /^(\\w|-)+$/`)
+  }
+}
+
 /**
  * `<html data-theme="dark">` のような設定を行うデフォルトのセッター
  */
 export const themeSetter =
   (attr: string = DEFAULT_ROOT_ATTRIBUTE) =>
   (theme: string | undefined) => {
+    assertKeyString(attr)
     if (theme !== undefined) {
       document.documentElement.dataset[attr] = theme
     } else {
@@ -65,6 +78,7 @@ export function getThemeSync(key: string = LOCAL_STORAGE_KEY) {
  * `dark` `light` という名前だけは特別扱いされていて、prefers-color-schemeにマッチした場合に返ります
  */
 export const useTheme = (key: string = LOCAL_STORAGE_KEY) => {
+  assertKeyString(key)
   const isDark = useMedia('(prefers-color-scheme: dark)')
   const media = isDark !== undefined ? (isDark ? 'dark' : 'light') : undefined
   const [local, setTheme, ready] = useLocalStorage<string>(key)

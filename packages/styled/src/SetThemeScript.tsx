@@ -1,5 +1,9 @@
 import React from 'react'
-import { DEFAULT_ROOT_ATTRIBUTE, LOCAL_STORAGE_KEY } from './helper'
+import {
+  assertKeyString,
+  DEFAULT_ROOT_ATTRIBUTE,
+  LOCAL_STORAGE_KEY,
+} from './helper'
 
 interface Props {
   localStorageKey: string
@@ -12,16 +16,8 @@ interface Props {
  * @returns
  */
 export function SetThemeScript(props: Props) {
-  if (!/^\w((\w|-)+)$/.test(props.localStorageKey)) {
-    throw new Error(
-      `Unexpected localStorageKey ${props.localStorageKey}. expect /^\\w((\\w|-)+)$/`
-    )
-  }
-  if (!/^\w+$/.test(props.rootAttribute)) {
-    throw new Error(
-      `Unexpected rootAttribute ${props.rootAttribute}. expect /^\\w+$/`
-    )
-  }
+  assertKeyString(props.localStorageKey)
+  assertKeyString(props.rootAttribute)
   const src = `'use strict';
 (function () {
     var localStorageKey = '${props.localStorageKey}'
