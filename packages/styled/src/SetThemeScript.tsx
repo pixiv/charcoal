@@ -13,10 +13,14 @@ interface Props {
  */
 export function SetThemeScript(props: Props) {
   if (!/^\w((\w|-)+)$/.test(props.localStorageKey)) {
-    throw new Error(`Unexpected localStorageKey ${props.localStorageKey}. expect /^\\w((\\w|-)+)$/`)
+    throw new Error(
+      `Unexpected localStorageKey ${props.localStorageKey}. expect /^\\w((\\w|-)+)$/`
+    )
   }
   if (!/^\w+$/.test(props.rootAttribute)) {
-    throw new Error(`Unexpected rootAttribute ${props.rootAttribute}. expect /^\\w+$/`)
+    throw new Error(
+      `Unexpected rootAttribute ${props.rootAttribute}. expect /^\\w+$/`
+    )
   }
   const src = `'use strict';
 (function () {
