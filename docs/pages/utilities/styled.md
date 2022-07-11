@@ -18,11 +18,12 @@ yarn add @charcoal-ui/styled
 
 ## 使い方
 
-まず `styled-components` を import して ThemeProvider を入れます。
+`ThemeProvider`, `TokenInjector` を利用してテーマの定義を入れます。
 
 ```tsx
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 import { light, dark, CharcoalTheme } from '@charcoal-ui/theme'
+import { TokenInjector } from '@charcoal-ui/styled'
 
 declare module 'styled-components' {
   export interface DefaultTheme extends CharcoalTheme {}
@@ -31,6 +32,7 @@ declare module 'styled-components' {
 export default () => (
   <ThemeProvider theme={light}>
     <MyApp />
+    <TokenInjector theme={{ ':root': light }} />
   </ThemeProvider>
 )
 ```
@@ -109,11 +111,16 @@ const myTheme = (theme: CharcoalTheme): MyTheme => ({
   },
 })
 
-export default () => (
-  <ThemeProvider theme={myTheme(light)}>
-    <StyledText>I am text with mycolor</StyledText>
-  </ThemeProvider>
-)
+export default () => {
+  const customizedTheme = myTheme(light)
+
+  return (
+    <ThemeProvider theme={customizedTheme}>
+      <StyledText>I am text with mycolor</StyledText>
+      <TokenInjector theme={{ ':root': customizedTheme }} />
+    </ThemeProvider>
+  )
+}
 
 const StyledText = styled.h1`
   ${theme((o) => [o.font.mycolor])}
