@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[98],{"./packages/icons/svg/24/FrameSize.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/FrameSize.2d55e2c3.svg"}}]);

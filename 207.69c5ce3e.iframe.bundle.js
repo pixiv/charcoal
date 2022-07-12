@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[207],{"./packages/icons/svg/32/Dot.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Dot.f9ac4662.svg"}}]);

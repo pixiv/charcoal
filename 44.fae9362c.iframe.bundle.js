@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[44],{"./packages/icons/svg/24/ArrowDown.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ArrowDown.06f2bfd8.svg"}}]);

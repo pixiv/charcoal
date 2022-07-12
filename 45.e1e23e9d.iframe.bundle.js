@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[45],{"./packages/icons/svg/24/ArrowUp.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ArrowUp.bd05e191.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[167],{"./packages/icons/svg/24/RotateRight.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/RotateRight.2251a3dd.svg"}}]);

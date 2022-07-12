@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[204],{"./packages/icons/svg/32/Collapse.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Collapse.779c160d.svg"}}]);

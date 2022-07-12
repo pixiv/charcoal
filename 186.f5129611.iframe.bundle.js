@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[186],{"./packages/icons/svg/24/Trash.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Trash.2865c0bb.svg"}}]);

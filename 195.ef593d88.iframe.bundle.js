@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[195],{"./packages/icons/svg/24/Video.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Video.36d285ab.svg"}}]);

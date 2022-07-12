@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[59],{"./packages/icons/svg/24/Close.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Close.5a3e89e0.svg"}}]);

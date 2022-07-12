@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[67],{"./packages/icons/svg/24/DeviceRotation.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/DeviceRotation.5c4105da.svg"}}]);

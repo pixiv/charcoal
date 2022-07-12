@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[75],{"./packages/icons/svg/24/Emoji.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Emoji.635ee6b6.svg"}}]);

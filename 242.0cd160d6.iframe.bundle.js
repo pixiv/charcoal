@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[242],{"./packages/icons/svg/Inline/Comment.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Comment.8af76e99.svg"}}]);

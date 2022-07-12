@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[38],{"./packages/icons/svg/24/AddRubi.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/AddRubi.4109b0b7.svg"}}]);

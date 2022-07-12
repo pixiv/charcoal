@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[229],{"./packages/icons/svg/32/Serif.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Serif.97dea1ca.svg"}}]);

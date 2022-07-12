@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[126],{"./packages/icons/svg/24/Manga.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Manga.56ed6a30.svg"}}]);

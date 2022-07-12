@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[68],{"./packages/icons/svg/24/Discovery.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Discovery.b4467a17.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[183],{"./packages/icons/svg/24/Sun.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Sun.ce2acd09.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[28],{"./packages/icons/svg/16/Ranking.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Ranking.b1d27b02.svg"}}]);

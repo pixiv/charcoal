@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[32],{"./packages/icons/svg/16/Speaker.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Speaker.ed40cf16.svg"}}]);

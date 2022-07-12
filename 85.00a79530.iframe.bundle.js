@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[85],{"./packages/icons/svg/24/Flare.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Flare.edc4ab40.svg"}}]);

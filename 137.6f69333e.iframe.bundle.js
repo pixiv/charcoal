@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[137],{"./packages/icons/svg/24/Novels.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Novels.829095be.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[40],{"./packages/icons/svg/24/Alart.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Alart.cb28750c.svg"}}]);

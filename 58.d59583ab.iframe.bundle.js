@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[58],{"./packages/icons/svg/24/ChromaticAberration.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ChromaticAberration.3f3adeff.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[86],{"./packages/icons/svg/24/FormatAlignCenter.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/FormatAlignCenter.6ea2fef0.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[118],{"./packages/icons/svg/24/ItemRemove.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ItemRemove.5687789b.svg"}}]);

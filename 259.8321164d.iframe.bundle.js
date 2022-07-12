@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[259],{"./packages/icons/svg/Inline/SmileOn.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/SmileOn.de5658cc.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[36],{"./packages/icons/svg/24/AddModel.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/AddModel.9d22d8c5.svg"}}]);

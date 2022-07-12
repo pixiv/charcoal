@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[127],{"./packages/icons/svg/24/Menu.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Menu.fce366d2.svg"}}]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[183],{"./packages/icons/svg/24/Subtract.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Subtract.d8fd1f08.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[147],{"./packages/icons/svg/24/PencilText.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/PencilText.e12b3329.svg"}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[87],{"./packages/icons/svg/24/FormatAlignLeft.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/FormatAlignLeft.ec64ff3a.svg"}}]);

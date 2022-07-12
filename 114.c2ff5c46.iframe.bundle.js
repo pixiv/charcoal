@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[114],{"./packages/icons/svg/24/Index.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Index.0afa4120.svg"}}]);

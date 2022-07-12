@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[258],{"./packages/icons/svg/Inline/Smile.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Smile.18658075.svg"}}]);
