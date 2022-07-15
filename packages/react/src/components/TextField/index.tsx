@@ -370,8 +370,6 @@ const StyledInput = styled.input<{
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-top: calc(9px / 0.875);
-  padding-bottom: calc(9px / 0.875);
   padding-left: calc((8px + ${(p) => p.extraLeftPadding}px) / 0.875);
   padding-right: calc((8px + ${(p) => p.extraRightPadding}px) / 0.875);
   border-radius: calc(4px / 0.875);
