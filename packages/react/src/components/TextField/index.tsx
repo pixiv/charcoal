@@ -391,7 +391,6 @@ const StyledInput = styled.input<{
 `
 
 const StyledTextareaContainer = styled.div<{ rows: number }>`
-  display: grid;
   position: relative;
 
   ${({ rows }) => css`
