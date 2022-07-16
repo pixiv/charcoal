@@ -292,11 +292,14 @@ const MultiLineTextField = React.forwardRef<
         {...labelProps}
         {...(!showLabel ? visuallyHiddenProps : {})}
       />
-      <StyledTextareaContainer rows={rows}>
+      <StyledTextareaContainer
+        invalid={invalid}
+        rows={showCount ? rows + 1 : rows}
+      >
         <StyledTextarea
           ref={mergeRefs(textareaRef, forwardRef, ariaRef)}
-          invalid={invalid}
           rows={rows}
+          noBottomPadding={showCount}
           {...inputProps}
         />
         {showCount && <MultiLineCounter>{count}</MultiLineCounter>}
@@ -390,17 +393,30 @@ const StyledInput = styled.input<{
   }
 `
 
-const StyledTextareaContainer = styled.div<{ rows: number }>`
+const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   position: relative;
 
+  ${(p) =>
+    theme((o) => [
+      o.bg.surface3.hover,
+      p.invalid && o.outline.assertive,
+      o.font.text2,
+      o.borderRadius(4),
+    ])}
+
+  padding: 0 8px;
+
+  &:focus-within {
+    ${theme((o) => o.outline.default)}
+  }
+
   ${({ rows }) => css`
-    max-height: calc(22px * ${rows} + 18px);
+    height: calc(22px * ${rows} + 18px);
   `};
 `
 
-const StyledTextarea = styled.textarea<{ invalid: boolean }>`
+const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   border: none;
-  box-sizing: border-box;
   outline: none;
   resize: none;
   font-family: inherit;
@@ -411,23 +427,16 @@ const StyledTextarea = styled.textarea<{ invalid: boolean }>`
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  border-radius: calc(4px / 0.875);
+  padding: calc(9px / 0.875) 0 ${(p) => (p.noBottomPadding ? 0 : '')};
 
-  ${({ rows }) => css`
-    height: calc(22px / 0.875 * ${rows} + 18px / 0.875);
+  ${({ rows = 1 }) => css`
+    height: calc(22px / 0.875 * ${rows});
   `};
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
 
-  ${(p) =>
-    theme((o) => [
-      o.bg.surface3.hover,
-      o.outline.default.focus,
-      p.invalid && o.outline.assertive,
-      o.font.text2,
-    ])}
+  background: none;
 
   &::placeholder {
     ${theme((o) => o.font.text3)}
