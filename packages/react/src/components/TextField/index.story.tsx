@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import React from 'react'
-import { css } from 'styled-components'
+import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
 import TextField, {
@@ -24,13 +24,13 @@ export default {
   },
 }
 
+const Container = styled.div`
+  display: grid;
+  gap: ${({ theme }) => px(theme.spacing[24])};
+`
+
 const Template: Story<Partial<TextFieldProps>> = (args) => (
-  <div
-    css={css`
-      display: grid;
-      gap: ${({ theme }) => px(theme.spacing[24])};
-    `}
-  >
+  <Container>
     <TextField
       label="Label"
       requiredText="*必須"
@@ -57,7 +57,7 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
       {...(args as Partial<MultiLineTextFieldProps>)}
       multiline
     />
-  </div>
+  </Container>
 )
 
 export const Default = Template.bind({})
