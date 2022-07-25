@@ -28,6 +28,7 @@ export async function* getChangedFiles(dir = targetDir) {
       const relativePath = path.relative(process.cwd(), fullpath)
 
       const status = gitStatus[relativePath]
+      console.log(`${fullpath}: ${status ?? 'null'}`)
       if (status == null) {
         // Already up-to-date
         continue
