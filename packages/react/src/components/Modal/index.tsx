@@ -15,6 +15,7 @@ import Icon from '../Icon'
 import Clickable from '../Clickable'
 import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
 import { unreachable } from '../../_lib'
+import { maxWidth } from '@charcoal-ui/utils'
 
 export type Props = OverlayProps &
   AriaDialogProps & {
@@ -80,8 +81,8 @@ const ModalBackground = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  align-content: center;
-  justify-content: center;
+  align-items: center;
+  justify-items: center;
 
   ${theme((o) => [o.bg.surface4])}
 `
@@ -97,6 +98,10 @@ const ModalDialog = styled.div<{ size: 'S' | 'M' | 'L' }>`
       p.size === 'L'
       ? columnSystem(6, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
       : unreachable()}px;
+
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    width: calc(100% - 48px);
+  }
 
   ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
 `
