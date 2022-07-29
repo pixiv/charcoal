@@ -18,6 +18,7 @@ import { unreachable } from '../../_lib'
 import { maxWidth } from '@charcoal-ui/utils'
 import { useMedia } from '@charcoal-ui/styled'
 import { animated, useTransition, easings } from 'react-spring'
+import Button, { ButtonProps } from '../Button'
 
 export type Props = OverlayProps &
   AriaDialogProps & {
@@ -65,6 +66,7 @@ export default function Modal({ children, ...props }: Props) {
       ? { duration: 400, easing: easings.easeOutQuart }
       : { duration: 0 },
   })
+  const showDismiss = !isMobile || bottomSheet !== true
 
   return transition(
     ({ backgroundColor, transform }, item) =>
@@ -84,12 +86,14 @@ export default function Modal({ children, ...props }: Props) {
                 size={size}
                 bottomSheet={bottomSheet}
               >
-                <ModalContext.Provider value={{ titleProps, title }}>
+                <ModalContext.Provider
+                  value={{ titleProps, title, close: onClose, showDismiss }}
+                >
                   {children}
                   {isDismissable === true && (
-                    <ModalDismissButton onClick={onClose}>
+                    <ModalCrossButton onClick={onClose}>
                       <Icon name="24/Close"></Icon>
-                    </ModalDismissButton>
+                    </ModalCrossButton>
                   )}
                 </ModalContext.Provider>
               </ModalDialog>
@@ -103,9 +107,13 @@ export default function Modal({ children, ...props }: Props) {
 const ModalContext = React.createContext<{
   titleProps: React.HTMLAttributes<HTMLElement>
   title: string
+  close?: () => void
+  showDismiss: boolean
 }>({
   titleProps: {},
   title: '',
+  close: undefined,
+  showDismiss: true,
 })
 
 const ModalBackground = animated(styled.div`
@@ -167,7 +175,7 @@ const ModalDialog = animated(styled.div<{
   }
 `)
 
-const ModalDismissButton = styled(Clickable)`
+const ModalCrossButton = styled(Clickable)`
   position: absolute;
   top: 8px;
   right: 8px;
@@ -195,3 +203,17 @@ const ModalHeading = styled.h3`
   font-weight: inherit;
   font-size: inherit;
 `
+
+export function ModalDismissButton({ children, ...props }: ButtonProps) {
+  const { close, showDismiss } = useContext(ModalContext)
+
+  if (!showDismiss) {
+    return null
+  }
+
+  return (
+    <Button {...props} onClick={close} fixed>
+      {children}
+    </Button>
+  )
+}
