@@ -1,6 +1,12 @@
 import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { createTheme } from '@charcoal-ui/styled'
@@ -32,8 +38,8 @@ export interface SingleLineTextFieldProps extends TextFieldBaseProps {
   readonly multiline?: false
   readonly rows?: never
   readonly type?: string
-  readonly prefix?: string
-  readonly suffix?: string
+  readonly prefix?: ReactNode
+  readonly suffix?: ReactNode
 }
 
 export interface MultiLineTextFieldProps extends TextFieldBaseProps {
@@ -94,8 +100,8 @@ const SingleLineTextField = React.forwardRef<
     invalid = false,
     assistiveText,
     maxLength,
-    prefix = '',
-    suffix = '',
+    prefix = null,
+    suffix = null,
   } = props
 
   const { visuallyHiddenProps } = useVisuallyHidden()

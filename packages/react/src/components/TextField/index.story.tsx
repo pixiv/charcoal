@@ -9,6 +9,7 @@ import TextField, {
   TextFieldProps,
 } from '.'
 import { px } from '@charcoal-ui/utils'
+import IconButton from '../IconButton'
 
 export default {
   title: 'TextField',
@@ -91,3 +92,23 @@ export const AutoHeight: Story<Partial<MultiLineTextFieldProps>> = (args) => (
 AutoHeight.args = {
   autoHeight: true,
 }
+
+export const PrefixIcon: Story<Partial<SingleLineTextFieldProps>> = (args) => (
+  <TextField
+    label="Label"
+    placeholder="Icon prefix"
+    prefix={
+      <PrefixIconWrap>
+        <pixiv-icon name="16/Search" />
+      </PrefixIconWrap>
+    }
+    suffix={<IconButton variant="Overlay" icon={'16/Remove'} size="XS" />}
+    {...args}
+  />
+)
+
+const PrefixIconWrap = styled.div`
+  color: ${({ theme }) => theme.color.text4};
+  margin-top: 2px;
+  margin-right: 4px;
+`
