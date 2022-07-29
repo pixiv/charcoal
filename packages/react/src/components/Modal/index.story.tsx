@@ -21,12 +21,20 @@ export default {
     title: 'Title',
     size: 'M',
     isDismissable: true,
+    bottomSheet: false,
   },
   argTypes: {
     size: {
+      options: ['S', 'M', 'L'],
       control: {
         type: 'inline-radio',
-        options: ['S', 'M', 'L'],
+      },
+    },
+    bottomSheet: {
+      options: ['full', 'true', 'false'],
+      mapping: { full: 'full', true: true, false: false },
+      control: {
+        type: 'inline-radio',
       },
     },
   },
@@ -40,43 +48,41 @@ const DefaultStory = (args: Props) => {
     <OverlayProvider>
       <Button onClick={() => state.open()}>Open Modal</Button>
 
-      {state.isOpen && (
-        <Modal onClose={() => state.close()} {...args}>
-          <ModalHeader />
-          <ModalBody>
-            <ModalVStack>
-              <StyledModalText>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                placeat tenetur, necessitatibus laudantium cumque exercitationem
-                provident. Quaerat iure enim, eveniet dolores earum odio quo
-                possimus fugiat aspernatur, numquam, commodi repellat.
-              </StyledModalText>
-              <ModalAlign>
-                <TextField
-                  showLabel
-                  label="Name"
-                  placeholder="Nagisa"
-                ></TextField>
-              </ModalAlign>
-              <ModalAlign>
-                <TextField
-                  showLabel
-                  label="Country"
-                  placeholder="Tokyo"
-                ></TextField>
-              </ModalAlign>
-            </ModalVStack>
-            <ModalButtons>
-              <Button variant="Primary" onClick={() => state.close()} fixed>
-                Apply
-              </Button>
-              <Button onClick={() => state.close()} fixed>
-                Cancel
-              </Button>
-            </ModalButtons>
-          </ModalBody>
-        </Modal>
-      )}
+      <Modal isOpen={state.isOpen} onClose={() => state.close()} {...args}>
+        <ModalHeader />
+        <ModalBody>
+          <ModalVStack>
+            <StyledModalText>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+              placeat tenetur, necessitatibus laudantium cumque exercitationem
+              provident. Quaerat iure enim, eveniet dolores earum odio quo
+              possimus fugiat aspernatur, numquam, commodi repellat.
+            </StyledModalText>
+            <ModalAlign>
+              <TextField
+                showLabel
+                label="Name"
+                placeholder="Nagisa"
+              ></TextField>
+            </ModalAlign>
+            <ModalAlign>
+              <TextField
+                showLabel
+                label="Country"
+                placeholder="Tokyo"
+              ></TextField>
+            </ModalAlign>
+          </ModalVStack>
+          <ModalButtons>
+            <Button variant="Primary" onClick={() => state.close()} fixed>
+              Apply
+            </Button>
+            <Button onClick={() => state.close()} fixed>
+              Cancel
+            </Button>
+          </ModalButtons>
+        </ModalBody>
+      </Modal>
     </OverlayProvider>
   )
 }
