@@ -426,6 +426,7 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   outline: none;
   resize: none;
   font-family: inherit;
+  color: inherit;
 
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
