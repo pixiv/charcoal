@@ -25,6 +25,7 @@ yarn install
 Start the development server on http://localhost:6006
 
 ```
+yarn build
 yarn storybook
 ```
 
