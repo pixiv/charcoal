@@ -243,7 +243,7 @@ const MultiLineTextField = React.forwardRef<
       const rows = `${textarea.value}\n`.match(/\n/gu)?.length ?? 1
       setRows((prevRows) => {
         if (initialRows <= rows) return rows
-        if (initialRows <= prevRows) return initialRows
+        if (initialRows < prevRows) return initialRows
         return prevRows
       })
     },
