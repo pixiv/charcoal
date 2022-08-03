@@ -190,9 +190,9 @@ const SingleLineTextField = React.forwardRef<
         />
         <SuffixContainer ref={suffixRef}>
           <Affix>{suffix}</Affix>
-          {showCount && maxLength && (
+          {showCount && (
             <SingleLineCounter>
-              {count}/{maxLength}
+              {maxLength !== undefined ? `${count}/${maxLength}` : count}
             </SingleLineCounter>
           )}
         </SuffixContainer>
@@ -308,7 +308,11 @@ const MultiLineTextField = React.forwardRef<
           noBottomPadding={showCount}
           {...inputProps}
         />
-        {showCount && <MultiLineCounter>{count}</MultiLineCounter>}
+        {showCount && (
+          <MultiLineCounter>
+            {maxLength !== undefined ? `${count}/${maxLength}` : count}
+          </MultiLineCounter>
+        )}
       </StyledTextareaContainer>
       {assistiveText != null && assistiveText.length !== 0 && (
         <AssistiveText
