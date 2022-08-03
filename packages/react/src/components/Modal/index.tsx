@@ -144,7 +144,7 @@ const ModalDialog = animated(styled.div<{
       : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       p.size === 'L'
       ? columnSystem(6, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      : unreachable()}px;
+      : unreachable(p.size)}px;
 
   ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
 
