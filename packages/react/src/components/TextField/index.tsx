@@ -405,6 +405,7 @@ const StyledInput = styled.input<{
 
 const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   position: relative;
+  overflow: hidden;
 
   ${(p) =>
     theme((o) => [
