@@ -11,14 +11,13 @@ import { theme } from '../../styled'
 import { FocusScope } from '@react-aria/focus'
 import { useDialog } from '@react-aria/dialog'
 import { AriaDialogProps } from '@react-types/dialog'
-import Icon from '../Icon'
-import Clickable from '../Clickable'
 import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
 import { unreachable } from '../../_lib'
 import { maxWidth } from '@charcoal-ui/utils'
 import { useMedia } from '@charcoal-ui/styled'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
+import IconButton from '../IconButton'
 
 export type Props = OverlayProps &
   AriaDialogProps & {
@@ -91,9 +90,11 @@ export default function Modal({ children, ...props }: Props) {
                 >
                   {children}
                   {isDismissable === true && (
-                    <ModalCrossButton onClick={onClose}>
-                      <Icon name="24/Close"></Icon>
-                    </ModalCrossButton>
+                    <ModalCrossButton
+                      size="S"
+                      icon="24/Close"
+                      onClick={onClose}
+                    />
                   )}
                 </ModalContext.Provider>
               </ModalDialog>
@@ -175,16 +176,10 @@ const ModalDialog = animated(styled.div<{
   }
 `)
 
-const ModalCrossButton = styled(Clickable)`
+const ModalCrossButton = styled(IconButton)`
   position: absolute;
   top: 8px;
   right: 8px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: grid;
-  align-content: center;
-  justify-content: center;
 
   ${theme((o) => [o.font.text3.hover.press])}
 `
