@@ -63,6 +63,17 @@ beforeEach(() => {
       return null
     },
   }))
+
+  global.matchMedia = jest.fn().mockImplementation(() => ({
+    matches: true,
+    media: '(max-width: 600px)',
+    addEventListener() {
+      // Do Nothing
+    },
+    removeEventListener() {
+      // Do Nothing
+    },
+  }))
 })
 
 describe.each(themes)('using %s theme', (_name, theme) => {
