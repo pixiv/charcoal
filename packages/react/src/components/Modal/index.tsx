@@ -26,6 +26,10 @@ export type Props = OverlayProps &
     title: string
     size?: 'S' | 'M' | 'L'
     bottomSheet?: boolean | 'full'
+
+    // NOTICE: デフォルト値を与えてはならない
+    // （たとえば document.body をデフォルト値にすると SSR できなくなる）
+    portalContainer?: HTMLElement
   }
 
 const DEFAULT_Z_INDEX = 10
@@ -33,6 +37,7 @@ const DEFAULT_Z_INDEX = 10
 export default function Modal({
   children,
   zIndex = DEFAULT_Z_INDEX,
+  portalContainer,
   ...props
 }: Props) {
   const {
@@ -77,7 +82,7 @@ export default function Modal({
   return transition(
     ({ backgroundColor, transform }, item) =>
       item && (
-        <OverlayContainer>
+        <OverlayContainer portalContainer={portalContainer}>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}
