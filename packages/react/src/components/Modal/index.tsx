@@ -22,12 +22,19 @@ import IconButton from '../IconButton'
 export type Props = OverlayProps &
   AriaDialogProps & {
     children: React.ReactNode
+    zIndex?: number
     title: string
     size?: 'S' | 'M' | 'L'
     bottomSheet?: boolean | 'full'
   }
 
-export default function Modal({ children, ...props }: Props) {
+const DEFAULT_Z_INDEX = 10
+
+export default function Modal({
+  children,
+  zIndex = DEFAULT_Z_INDEX,
+  ...props
+}: Props) {
   const {
     title,
     size = 'M',
@@ -72,6 +79,7 @@ export default function Modal({ children, ...props }: Props) {
       item && (
         <OverlayContainer>
           <ModalBackground
+            zIndex={zIndex}
             {...underlayProps}
             style={transitionEnabled ? { backgroundColor } : {}}
           >
@@ -117,9 +125,8 @@ const ModalContext = React.createContext<{
   showDismiss: true,
 })
 
-const ModalBackground = animated(styled.div`
-  /* TODO */
-  z-index: 10;
+const ModalBackground = animated(styled.div<{ zIndex: number }>`
+  z-index: ${({ zIndex }) => zIndex};
   position: fixed;
   top: 0;
   left: 0;
