@@ -49,7 +49,7 @@ module.exports = {
   ...(process.env.USE_VITE === '1'
     ? {
         core: {
-          builder: 'storybook-builder-vite',
+          builder: '@storybook/builder-vite',
         },
       }
     : {}),
