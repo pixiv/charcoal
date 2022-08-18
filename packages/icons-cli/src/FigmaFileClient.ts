@@ -136,16 +136,9 @@ export class FigmaFileClient {
       fullname,
       `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
-${knownIconFiles
-  .map(
-    (fullName) =>
-      `import icon_${fullName.replace('/', '_')} from '../svg/${fullName}.svg';`
-  )
-  .join('\n')}
-
 const icons = {
 ${knownIconFiles
-  .map((fullName) => `  '${fullName}': icon_${fullName.replace('/', '_')},`)
+  .map((fullName) => `  '${fullName}': require('../svg/${fullName}.svg'),`)
   .join('\n')}
 } as const;
 
