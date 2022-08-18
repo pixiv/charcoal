@@ -1,4 +1,5 @@
-import { Loadable, BaseLoader } from './BaseLoader'
+import { Loadable, BaseLoader, PixivIconLoadError } from './BaseLoader'
+import icons from './icons'
 
 /**
  * オブジェクトプール。Loader のインスタンスは作り次第ここに入れる
@@ -23,6 +24,23 @@ export class UrlLoader implements Loadable {
     pool.set(name, loader)
   }
 
+  static findOrRegisterBundled(name: string) {
+    const registeredLoader = pool.get(name)
+    if (registeredLoader) {
+      return registeredLoader
+    }
+
+    const iconUrl = (icons as Record<string, string | undefined>)[name]
+
+    const newLoader =
+      iconUrl !== undefined
+        ? new UrlLoader(name, iconUrl)
+        : new NotRegisteredLoader(name)
+    pool.set(name, newLoader)
+
+    return newLoader
+  }
+
   private constructor(name: string, url: string) {
     this.fetcher = new BaseLoader(name, () => Promise.resolve(url))
   }
@@ -37,48 +55,24 @@ export class UrlLoader implements Loadable {
 }
 
 /**
- * アイコン名から import すべきファイル名（ このパッケージ内にある ）を解決してくる Loader
+ * アイコンが登録されていない場合に利用する Loader
  */
-export class FileLoader implements Loadable {
-  private fetcher: BaseLoader
+export class NotRegisteredLoader implements Loadable {
+  private _name: string
 
-  static findOrRegister(name: string) {
-    const registeredLoader = pool.get(name)
-    if (registeredLoader) {
-      return registeredLoader
-    }
-
-    const newLoader = new FileLoader(name)
-    pool.set(name, newLoader)
-
-    return newLoader
-  }
-
-  private constructor(name: string) {
-    this.fetcher = new BaseLoader(name, () => getSourceFromName(name))
+  public constructor(name: string) {
+    this._name = name
   }
 
   fetch(): Promise<string> {
-    return this.fetcher.fetch()
+    return new Promise(() => {
+      throw new PixivIconLoadError(
+        `pixiv-icon "${this._name}" is not registered`
+      )
+    })
   }
 
   isLoading() {
-    return this.fetcher.isLoading()
+    return false
   }
-}
-
-interface SvgModule {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  __esModule: true
-  default: string
-}
-
-async function getSourceFromName(fullName: string) {
-  const [size, name] = fullName.split('/')
-
-  const { default: filename } = (await import(
-    `../svg/${encodeURIComponent(size)}/${encodeURIComponent(name)}.svg`
-  )) as SvgModule
-
-  return filename
 }
