@@ -105,7 +105,7 @@ export class UrlLoader implements Loadable {
 export class NotRegisteredLoader implements Loadable {
   private _name: string
 
-  public constructor(name: string) {
+  constructor(name: string) {
     this._name = name
   }
 
