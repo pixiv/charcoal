@@ -42,7 +42,7 @@ export class UrlLoader implements Loadable {
   }
 
   private constructor(name: string, url: string) {
-    this.fetcher = new BaseLoader(name, () => Promise.resolve(url))
+    this.fetcher = new BaseLoader(name, url)
   }
 
   fetch(): Promise<string> {

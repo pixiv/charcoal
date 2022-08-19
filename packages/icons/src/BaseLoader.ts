@@ -12,14 +12,14 @@ export class PixivIconLoadError extends Error {
  */
 export class BaseLoader {
   private _name: string
-  private _getSource: () => Promise<string>
+  private _url: string
 
   private _promise: Promise<string> | undefined = undefined
   private _resultSvg: string | undefined = undefined
 
-  constructor(name: string, getSource: () => Promise<string>) {
+  constructor(name: string, url: string) {
     this._name = name
-    this._getSource = getSource
+    this._url = url
   }
 
   isLoading() {
@@ -35,7 +35,7 @@ export class BaseLoader {
       return this._promise
     }
 
-    this._promise = this._getSource()
+    this._promise = Promise.resolve(this._url)
       .then((src) => fetch(src))
       .then((response) => {
         if (!response.ok) {
