@@ -65,11 +65,9 @@ export class NotRegisteredLoader implements Loadable {
   }
 
   fetch(): Promise<string> {
-    return new Promise(() => {
-      throw new PixivIconLoadError(
-        `pixiv-icon "${this._name}" is not registered`
-      )
-    })
+    return Promise.reject(
+      new PixivIconLoadError(`pixiv-icon "${this._name}" is not registered`)
+    )
   }
 
   isLoading() {
