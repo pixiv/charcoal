@@ -3,7 +3,7 @@ import warning from 'warning'
 import { KnownIconFile } from './filenames'
 import { FileLoader, UrlLoader } from './loaders'
 import { __SERVER__ } from './ssr'
-import { sanitize } from 'dompurify'
+import DOMPurify from 'dompurify'
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
 
@@ -179,7 +179,7 @@ export class PixivIcon extends HTMLElement {
   render() {
     const size = this.forceResizedSize ?? this.scaledSize
 
-    const style = sanitize(
+    const style = DOMPurify.sanitize(
       `<style>
   :host {
     display: inline-flex;
@@ -194,7 +194,7 @@ export class PixivIcon extends HTMLElement {
       { ALLOWED_TAGS: ['style'], FORCE_BODY: true }
     )
 
-    const svg = sanitize(
+    const svg = DOMPurify.sanitize(
       this.svgContent !== undefined
         ? this.svgContent
         : `<svg viewBox="0 0 ${size} ${size}"></svg>`,
