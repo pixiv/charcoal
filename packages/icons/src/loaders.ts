@@ -8,40 +8,40 @@ import icons from './icons'
  */
 const pool = new Map<string, Loadable>()
 
+export function findLoader(name: string) {
+  return pool.get(name)
+}
+
+export function registerUrlLoader(name: string, url: string) {
+  const loader = new UrlLoader(name, url)
+
+  pool.set(name, loader)
+}
+
+export function findLoaderOrRegisterBundled(name: string) {
+  const registeredLoader = findLoader(name)
+  if (registeredLoader) {
+    return registeredLoader
+  }
+
+  const iconUrl = (icons as Record<string, string | undefined>)[name]
+
+  const newLoader =
+    iconUrl !== undefined
+      ? new UrlLoader(name, iconUrl)
+      : new NotRegisteredLoader(name)
+  pool.set(name, newLoader)
+
+  return newLoader
+}
+
 /**
  * アイコンを特定の URL から取得する Loader
  */
 export class UrlLoader implements Loadable {
   private fetcher: BaseLoader
 
-  static find(name: string) {
-    return pool.get(name)
-  }
-
-  static register(name: string, url: string) {
-    const loader = new UrlLoader(name, url)
-
-    pool.set(name, loader)
-  }
-
-  static findOrRegisterBundled(name: string) {
-    const registeredLoader = pool.get(name)
-    if (registeredLoader) {
-      return registeredLoader
-    }
-
-    const iconUrl = (icons as Record<string, string | undefined>)[name]
-
-    const newLoader =
-      iconUrl !== undefined
-        ? new UrlLoader(name, iconUrl)
-        : new NotRegisteredLoader(name)
-    pool.set(name, newLoader)
-
-    return newLoader
-  }
-
-  private constructor(name: string, url: string) {
+  public constructor(name: string, url: string) {
     this.fetcher = new BaseLoader(name, url)
   }
 

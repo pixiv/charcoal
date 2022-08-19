@@ -1,7 +1,7 @@
 import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './icons'
-import { UrlLoader } from './loaders'
+import { findLoaderOrRegisterBundled, registerUrlLoader } from './loaders'
 import { __SERVER__ } from './ssr'
 import DOMPurify from 'dompurify'
 
@@ -50,7 +50,7 @@ export class PixivIcon extends HTMLElement {
         )
       }
 
-      UrlLoader.register(name, url)
+      registerUrlLoader(name, url)
     })
   }
 
@@ -206,7 +206,7 @@ export class PixivIcon extends HTMLElement {
   }
 
   private async loadSvg(name: string) {
-    const loader = UrlLoader.findOrRegisterBundled(name)
+    const loader = findLoaderOrRegisterBundled(name)
 
     this.svgContent = await loader.fetch()
     this.render()
