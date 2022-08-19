@@ -406,6 +406,7 @@ const StyledInput = styled.input<{
 const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   position: relative;
   overflow: hidden;
+  padding: 0 8px;
 
   ${(p) =>
     theme((o) => [
@@ -415,10 +416,9 @@ const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
       o.borderRadius(4),
     ])}
 
-  padding: 0 8px;
-
   &:focus-within {
-    ${theme((o) => o.outline.default)}
+    ${(p) =>
+      theme((o) => (p.invalid ? o.outline.assertive : o.outline.default))}
   }
 
   ${({ rows }) => css`
