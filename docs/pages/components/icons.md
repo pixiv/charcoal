@@ -115,35 +115,30 @@ const nextConfig = {
 
 ### Vite と組み合わせる場合
 
-`@charcoal-ui/icons` は内部で SVG を dynamic import しています。
+`@charcoal-ui/icons` は内部で SVG を require しています。
 
-Vite はデフォルトで dynamic import をサポートしますが、`node_modules` 以下のファイルは `import()` の対象外にする設定がされているため、ここを変更する必要があります。
+Vite ではデフォルトで require が使用できないため、vite.config.ts の設定を変更する必要があります。
 
 ```ts
 // vite.config.ts
-export default defineConfig({
-  plugins: [react(), charcoalIcons()],
-})
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
-function charcoalIcons(): PluginOption {
-  return {
-    name: 'charcoal-icons',
-    config() {
-      return {
-        optimizeDeps: {
-          // 開発環境の Pre-bundling で壊れる
-          // https://vitejs.dev/guide/dep-pre-bundling.html#the-why
-          exclude: ['@charcoal-ui/icons'],
-        },
-        build: {
-          rollupOptions: {
-            // dynamicImport がビルド時に解決されない
-            // https://vitejs.dev/config/#build-dynamicimportvarsoptions
-            plugins: [dynamicImport()],
-          },
-        },
-      }
+export default defineConfig({
+  plugins: [
+    viteCommonjs({ include: ['@charcoal-ui/icons'] }),
+    react()
+  ],
+  optimizeDeps: {
+    // 開発環境の Pre-bundling で壊れる
+    // https://vitejs.dev/guide/dep-pre-bundling.html#the-why
+    exclude: ["@charcoal-ui/icons"],
+  },
+  build: {
+    commonjsOptions: {
+      // require を import に変換する
+      transformMixedEsModules: true,
+      requireReturnsDefault: 'auto',
     },
-  }
-}
+  },
+});
 ```
