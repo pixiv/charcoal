@@ -1,4 +1,3 @@
-import { Loadable, BaseLoader, PixivIconLoadError } from './BaseLoader'
 import icons from './icons'
 
 /**
@@ -35,22 +34,68 @@ export function findLoaderOrRegisterBundled(name: string) {
   return newLoader
 }
 
+export interface Loadable {
+  fetch(): Promise<string>
+  isLoading(): boolean
+}
+
+export class PixivIconLoadError extends Error {
+  constructor(message?: string) {
+    super(message)
+    Object.setPrototypeOf(this, new.target)
+  }
+}
+
 /**
  * アイコンを特定の URL から取得する Loader
+ *
+ * 一度リクエストされたアイコンは（リクエスト中のも含め）何度もリクエストしないようになっている
  */
 export class UrlLoader implements Loadable {
-  private fetcher: BaseLoader
+  private _name: string
+  private _url: string
 
-  public constructor(name: string, url: string) {
-    this.fetcher = new BaseLoader(name, url)
-  }
+  private _promise: Promise<string> | undefined = undefined
+  private _resultSvg: string | undefined = undefined
 
-  fetch(): Promise<string> {
-    return this.fetcher.fetch()
+  constructor(name: string, url: string) {
+    this._name = name
+    this._url = url
   }
 
   isLoading() {
-    return this.fetcher.isLoading()
+    return this._promise !== undefined
+  }
+
+  async fetch() {
+    if (this._resultSvg !== undefined) {
+      return this._resultSvg
+    }
+
+    if (this._promise) {
+      return this._promise
+    }
+
+    this._promise = Promise.resolve(this._url)
+      .then((src) => fetch(src))
+      .then((response) => {
+        if (!response.ok) {
+          throw new PixivIconLoadError(
+            `Failed to fetch <pixiv-icon name="${this._name}">`
+          )
+        }
+
+        return response.text()
+      })
+      .then((svg) => {
+        this._resultSvg = svg
+        return this._resultSvg
+      })
+      .finally(() => {
+        this._promise = undefined
+      })
+
+    return this._promise
   }
 }
 
