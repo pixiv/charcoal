@@ -1,6 +1,7 @@
 const path = require('path')
 const { promisify } = require('util')
 const glob = promisify(require('glob'))
+const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
 module.exports = {
   stories: ['../packages/**/*.story.@(tsx|mdx)'],
@@ -42,6 +43,7 @@ module.exports = {
     if (typeof process.env.CLIENT_PORT !== 'undefined') {
       config.server.hmr.port = process.env.CLIENT_PORT
     }
+    config.plugins.push(viteCommonjs({ include: 'packages/icons' }))
     return config
   },
   // 実験的にviteをpreviewビルドでviteを利用する

@@ -14,6 +14,7 @@ const defaultConfig = () => ({
   // node_modules内のためにjsxも含める
   transform: {
     '^.+\\.(t|j)sx?$': ['esbuild-jest', { target: 'esnext', format: 'cjs' }],
+    '\\.(svg)$': '<rootDir>/../../misc/fileTransformer.js',
   },
   // tsconfigのpathsに対応 (依存パッケージをビルドせずにテストが可能)
   moduleNameMapper: {
@@ -27,6 +28,7 @@ const strictConfig = () => ({
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(t|j)sx?$': 'ts-jest',
+    '\\.(svg)$': '<rootDir>/../../misc/fileTransformer.js',
   },
   moduleNameMapper: {
     // TODO: 一貫性のために外したい

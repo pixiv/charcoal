@@ -121,9 +121,11 @@ export class FigmaFileClient {
    * Generate union of file names for typing
    */
   async writeTypeDef(outputDir: string) {
-    const fullname = path.resolve(outputDir, 'filenames.ts')
-    const KNOWN_ICON_FILES = Object.values(this.components).map(({ name }) =>
-      filenamify(name)
+    const fullname = path.resolve(outputDir, 'icons.ts')
+    const knownIconFiles = Array.from(
+      new Set(
+        Object.values(this.components).map(({ name }) => filenamify(name))
+      )
     )
 
     // eslint-disable-next-line no-console
@@ -134,9 +136,15 @@ export class FigmaFileClient {
       fullname,
       `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
-export const KNOWN_ICON_FILES = ${JSON.stringify(KNOWN_ICON_FILES)} as const;
+const icons = {
+${knownIconFiles
+  .map((fullName) => `  '${fullName}': require('../svg/${fullName}.svg'),`)
+  .join('\n')}
+} as const;
 
-export type KnownIconFile = typeof KNOWN_ICON_FILES[number];
+export default icons;
+export type KnownIconFile = keyof typeof icons;
+export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
 `,
       { encoding: 'utf8' }
     )
