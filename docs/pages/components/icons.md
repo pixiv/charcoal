@@ -124,14 +124,11 @@ Vite ではデフォルトで require が使用できないため、vite.config.
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
 export default defineConfig({
-  plugins: [
-    viteCommonjs({ include: ['@charcoal-ui/icons'] }),
-    react()
-  ],
+  plugins: [viteCommonjs({ include: ['@charcoal-ui/icons'] }), react()],
   optimizeDeps: {
     // 開発環境の Pre-bundling で壊れる
     // https://vitejs.dev/guide/dep-pre-bundling.html#the-why
-    exclude: ["@charcoal-ui/icons"],
+    exclude: ['@charcoal-ui/icons'],
   },
   build: {
     commonjsOptions: {
@@ -140,5 +137,5 @@ export default defineConfig({
       requireReturnsDefault: 'auto',
     },
   },
-});
+})
 ```
