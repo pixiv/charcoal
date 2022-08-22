@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{"./packages/icons/svg/16/Like.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/Like.63f00849.svg"}}]);
