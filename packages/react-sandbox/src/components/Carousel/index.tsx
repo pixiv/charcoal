@@ -162,9 +162,6 @@ export default function Carousel({
     }
   }, [onResize])
 
-  const resizeObserverRef = useRef(new ResizeObserver(handleResize))
-  const resizeObserverInnerRef = useRef(new ResizeObserver(handleResize))
-
   useLayoutEffect(() => {
     const elm = ref.current
     const innerElm = innerRef.current
@@ -178,10 +175,10 @@ export default function Carousel({
       passiveEvents() && { passive: true }
     )
 
-    const resizeObserver = resizeObserverRef.current
+    const resizeObserver = new ResizeObserver(handleResize)
     resizeObserver.observe(elm)
 
-    const resizeObserverInner = resizeObserverInnerRef.current
+    const resizeObserverInner = new ResizeObserver(handleResize)
     resizeObserverInner.observe(innerElm)
 
     return () => {
