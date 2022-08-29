@@ -24,22 +24,21 @@ export async function* getChangedFiles(dir = targetDir) {
 }
 
 async function collectGitStatus() {
-  const map = new Map<string, string | null>()
-  /**
-   * @see https://git-scm.com/docs/git-status#_porcelain_format_version_1
-   */
-  const gitStatus = await execp(`git status --porcelain`)
-  gitStatus.split('\n').forEach((s) => {
-    map.set(
-      s.slice(3),
-      s.startsWith(' M')
-        ? 'modified'
-        : s.startsWith('??')
-        ? 'untracked'
-        : s.startsWith(' D')
-        ? 'deleted'
-        : null
-    )
-  })
-  return map
+  return new Map(
+    /**
+     * @see https://git-scm.com/docs/git-status#_porcelain_format_version_1
+     */
+    (await execp(`git status --porcelain`)).split('\n').map((s) => {
+      return [
+        s.slice(3),
+        s.startsWith(' M')
+          ? 'modified'
+          : s.startsWith('??')
+          ? 'untracked'
+          : s.startsWith(' D')
+          ? 'deleted'
+          : null,
+      ] as const
+    })
+  )
 }
