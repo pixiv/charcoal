@@ -9,7 +9,7 @@ export const targetDir = path.resolve(process.cwd(), 'packages', 'icons')
  */
 export async function* getChangedFiles(dir = targetDir) {
   if (!existsSync(dir))
-    throw new Error(`icons-cli: target directory not found (${targetDir})`)
+    throw new Error(`icons-cli: target directory not found (${dir})`)
   const gitStatus = await collectGitStatus()
   for (const [relativePath, status] of gitStatus) {
     const fullpath = path.resolve(process.cwd(), relativePath)
