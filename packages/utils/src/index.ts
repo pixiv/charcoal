@@ -93,21 +93,16 @@ function applySingleEffect(baseColor: string, effect: Effect): string {
 }
 
 function applyAlpha(baseColor: string, { color, opacity }: AlphaEffect) {
-  try {
-    const base: RgbaColor = parseToRgb(baseColor)
-    const effect: RgbaColor = parseToRgb(color)
-    const src = [base.red, base.green, base.blue, base.alpha ?? 1.0] as const
-    const dst = [
-      effect.red,
-      effect.green,
-      effect.blue,
-      clamp(0, 1, (effect.alpha ?? 1.0) * (opacity ?? 1.0)),
-    ] as const
-    return rgba(...alphaBlend(src, dst))
-  } catch (e) {
-    console.warn({ baseColor, color, opacity })
-    throw e
-  }
+  const base: RgbaColor = parseToRgb(baseColor)
+  const effect: RgbaColor = parseToRgb(color)
+  const src = [base.red, base.green, base.blue, base.alpha ?? 1.0] as const
+  const dst = [
+    effect.red,
+    effect.green,
+    effect.blue,
+    clamp(0, 1, (effect.alpha ?? 1.0) * (opacity ?? 1.0)),
+  ] as const
+  return rgba(...alphaBlend(src, dst))
 }
 
 function applyOpacity(baseColor: string, { opacity }: OpacityEffect) {
