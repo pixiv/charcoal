@@ -71,3 +71,20 @@ export default function TokenInjector<T extends Theme>({
 }) {
   return <GlobalStyle themeMap={themeMap} background={background}></GlobalStyle>
 }
+
+export function defineColorTheme<T extends CharcoalAbstractTheme>(
+  theme: T
+): React.CSSProperties {
+  return Object.fromEntries(
+    Object.entries(theme.color).flatMap(([colorKey, color]) => [
+      [customPropertyToken(colorKey), color] as const,
+      ...Object.entries(theme.effect).map(
+        ([effectKey, effect]) =>
+          [
+            customPropertyToken(colorKey, [effectKey]),
+            applyEffect(color, [effect]),
+          ] as const
+      ),
+    ])
+  )
+}
