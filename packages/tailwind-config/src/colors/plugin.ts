@@ -1,10 +1,14 @@
 import { Material } from '@charcoal-ui/foundation'
 import { CharcoalTheme as Theme } from '@charcoal-ui/theme'
-import { applyEffect } from '@charcoal-ui/utils'
+import {
+  applyEffect,
+  filterObject,
+  flatMapObject,
+  mapObject,
+} from '@charcoal-ui/utils'
 import plugin, { TailwindPlugin } from 'tailwindcss/plugin'
 import { mergeEffect } from '../foundation'
 import { CSSVariableName, CSSVariables, Definition, ThemeMap } from '../types'
-import { filterObject, flatMapObject, mapObject } from '../util'
 import { COLOR_PREFIX, isSingleColor } from './utils'
 
 /**
