@@ -107,13 +107,7 @@ export function defineThemeVariables(
       throw noThemeProvider
     }
 
-    const colors = filterObject(
-      {
-        ...props.theme.color,
-        ...colorParams,
-      },
-      isPresent
-    )
+    const colors = filterObject(colorParams, isPresent)
 
     const effects = Object.entries({
       ...props.theme.effect,

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
 import { CharcoalTheme } from '@charcoal-ui/theme'
 import { Material } from '@charcoal-ui/foundation'
-import { createTheme, ThemeProp, defineColorVariables } from '.'
+import { createTheme, ThemeProp, defineThemeVariables } from '.'
 import { disabledSelector } from '@charcoal-ui/utils'
 
 export default {
@@ -316,7 +316,7 @@ const FullBox = styled.div`
 `
 
 const LocalTheme = styled.div`
-  ${defineColorVariables({ text1: '#ffff00' })}
+  ${defineThemeVariables({ text1: '#ffff00' })}
 
   ${theme((o) => [o.bg.surface4, o.font.text1])}
 `

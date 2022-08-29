@@ -45,7 +45,7 @@ export {
   useLocalStorage,
   useMedia,
 } from './helper'
-export { defineThemeVariables as defineColorVariables } from './util'
+export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
 
 const colorProperties = ['bg', 'font'] as const
