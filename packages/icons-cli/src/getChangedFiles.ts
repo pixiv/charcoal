@@ -9,10 +9,9 @@ export const targetDir = path.resolve(process.cwd(), 'packages', 'icons')
  */
 export async function* getChangedFiles(dir = targetDir) {
   if (!existsSync(dir))
-    throw new Error(`icons-cli: target directory not found (${dir})`)
+    throw new Error(`icons-cli: target directory not found (${targetDir})`)
   const gitStatus = await collectGitStatus()
-  const map = new Map(Object.entries(gitStatus))
-  for (const [relativePath, status] of map) {
+  for (const [relativePath, status] of gitStatus) {
     const fullpath = path.resolve(process.cwd(), relativePath)
     if (!fullpath.startsWith(`${dir}/`)) {
       continue
@@ -25,21 +24,22 @@ export async function* getChangedFiles(dir = targetDir) {
 }
 
 async function collectGitStatus() {
-  return Object.fromEntries(
-    /**
-     * @see https://git-scm.com/docs/git-status#_porcelain_format_version_1
-     */
-    (await execp(`git status --porcelain`)).split('\n').map((s) => {
-      return [
-        s.slice(3),
-        s.startsWith(' M')
-          ? 'modified'
-          : s.startsWith('??')
-          ? 'untracked'
-          : s.startsWith(' D')
-          ? 'deleted'
-          : null,
-      ] as const
-    })
-  )
+  const map = new Map<string, string | null>()
+  /**
+   * @see https://git-scm.com/docs/git-status#_porcelain_format_version_1
+   */
+  const gitStatus = await execp(`git status --porcelain`)
+  gitStatus.split('\n').forEach((s) => {
+    map.set(
+      s.slice(3),
+      s.startsWith(' M')
+        ? 'modified'
+        : s.startsWith('??')
+        ? 'untracked'
+        : s.startsWith(' D')
+        ? 'deleted'
+        : null
+    )
+  })
+  return map
 }
