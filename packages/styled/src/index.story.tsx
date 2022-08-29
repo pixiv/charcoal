@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
 import { CharcoalTheme } from '@charcoal-ui/theme'
 import { Material } from '@charcoal-ui/foundation'
-import { createTheme, ThemeProp } from '.'
+import { createTheme, ThemeProp, defineColorVariables } from '.'
 import { disabledSelector } from '@charcoal-ui/utils'
 
 export default {
@@ -80,6 +80,7 @@ export const Example = () => (
       <FixBox>
         <FullBox>Full width</FullBox>
       </FixBox>
+      <LocalTheme>This is actually text1 !</LocalTheme>
     </Container>
   </ThemeProvider>
 )
@@ -312,4 +313,10 @@ const FullBox = styled.div`
     o.font.text5,
     o.padding.all(16),
   ])}
+`
+
+const LocalTheme = styled.div`
+  ${defineColorVariables({ text1: '#ffff00' })}
+
+  ${theme((o) => [o.bg.surface4, o.font.text1])}
 `

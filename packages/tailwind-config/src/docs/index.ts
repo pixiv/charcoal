@@ -1,4 +1,4 @@
-import { mapObject } from '../util'
+import { mapObject } from '@charcoal-ui/utils'
 
 export type TailwindPlugin = {
   handler: ({

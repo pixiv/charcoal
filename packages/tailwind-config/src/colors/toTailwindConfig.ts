@@ -1,10 +1,11 @@
 import { Material } from '@charcoal-ui/foundation'
-import { applyEffect } from '@charcoal-ui/utils'
+import { applyEffect, filterObject, mapObject } from '@charcoal-ui/utils'
 import { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { MergedEffect } from '../foundation'
 
 import { TailwindVersion } from '../types'
-import { filterObject, getDefaultKeyName, mapObject } from '../util'
+import { getDefaultKeyName } from '../util'
+
 import { AnyColorTheme, COLOR_PREFIX, isSingleColor } from './utils'
 
 export function colorsToTailwindConfig(

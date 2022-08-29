@@ -7,7 +7,6 @@ import {
   assertAllThemeHaveSameKeys,
   getDefaultKeyName,
   getVariantOption,
-  mapObject,
 } from './util'
 import {
   COLUMN_UNIT,
@@ -16,7 +15,7 @@ import {
   BORDER_RADIUS,
 } from '@charcoal-ui/foundation'
 import { light } from '@charcoal-ui/theme'
-import { px } from '@charcoal-ui/utils'
+import { mapObject, px } from '@charcoal-ui/utils'
 import { colorsToTailwindConfig } from './colors/toTailwindConfig'
 
 import cssVariableColorPlugin from './colors/plugin'

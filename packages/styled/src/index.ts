@@ -18,6 +18,7 @@ import {
   ReadonlyArrayConstructor,
   objectKeys,
   isPresent,
+  noThemeProvider,
 } from './util'
 import { columnSystem } from '@charcoal-ui/foundation'
 import {
@@ -44,6 +45,7 @@ export {
   useLocalStorage,
   useMedia,
 } from './helper'
+export { defineThemeVariables as defineColorVariables } from './util'
 export * from './SetThemeScript'
 
 const colorProperties = ['bg', 'font'] as const
@@ -711,9 +713,7 @@ export function createTheme<T extends Theme>(
     ({ theme }) => {
       if (theme == null) {
         // テーマが入っていない場合は復旧不可能なのでエラーにする
-        throw new Error(
-          '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
-        )
+        throw noThemeProvider
       }
       // styled-componentsのランタイムから受け取ったthemeオブジェクトをbuilderに食わせて`o`をつくる
       // さらに、ユーザー定義にbuilderが構築した`o`を食わせる

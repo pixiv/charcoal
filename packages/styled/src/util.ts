@@ -1,3 +1,11 @@
+import {
+  applyEffect,
+  customPropertyToken,
+  filterObject,
+  flatMapObject,
+} from '@charcoal-ui/utils'
+import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+
 /**
  * Function used to assert a given code path is unreachable
  */
@@ -82,4 +90,43 @@ export function extractNonNullKeys<V, K extends keyof V>(obj: {
   return Object.entries(obj)
     .filter(([_, v]) => v !== null)
     .map(([k]) => k) as { [key in K]: V[key] extends null ? never : key }[K][]
+}
+
+export const noThemeProvider = new Error(
+  '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
+)
+
+export function defineThemeVariables(
+  colorParams: Partial<CharcoalAbstractTheme['color']>,
+  effectParams?: Partial<CharcoalAbstractTheme['effect']>
+) {
+  return function toCssObject(props: {
+    theme?: Pick<CharcoalAbstractTheme, 'color' | 'effect'>
+  }) {
+    if (!isPresent(props.theme)) {
+      throw noThemeProvider
+    }
+
+    const colors = filterObject(
+      {
+        ...props.theme.color,
+        ...colorParams,
+      },
+      isPresent
+    )
+
+    const effects = Object.entries({
+      ...props.theme.effect,
+      ...effectParams,
+    })
+
+    return flatMapObject(colors, (colorKey, color) => [
+      [customPropertyToken(colorKey), color],
+
+      ...effects.map<[string, string]>(([effectKey, effect]) => [
+        customPropertyToken(colorKey, [effectKey]),
+        applyEffect(color, [effect]),
+      ]),
+    ])
+  }
 }
