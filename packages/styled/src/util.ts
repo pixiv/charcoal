@@ -5,6 +5,7 @@ import {
   flatMapObject,
 } from '@charcoal-ui/utils'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import { CSSObject } from 'styled-components'
 
 /**
  * Function used to assert a given code path is unreachable
@@ -96,19 +97,35 @@ export const noThemeProvider = new Error(
   '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
 )
 
+/**
+ * 子孫要素で使われるカラーテーマの CSS Variables を上書きする
+ *
+ * @params colorParams - 上書きしたい色の定義（ `theme.color` の一部だけ書けば良い ）
+ * @params effectParams - effect の定義を上書きしたい場合は渡す（必須ではない）
+ *
+ * @example
+ * ```tsx
+ * const LocalTheme = styled.div`
+ *   ${defineThemeVariables({ text1: '#ff0000' })}
+ *   // `text1` is now defined as red
+ *   ${theme((o) => [o.font.text1])}
+ * `
+ * ```
+ */
 export function defineThemeVariables(
   colorParams: Partial<CharcoalAbstractTheme['color']>,
   effectParams?: Partial<CharcoalAbstractTheme['effect']>
 ) {
   return function toCssObject(props: {
     theme?: Pick<CharcoalAbstractTheme, 'color' | 'effect'>
-  }) {
+  }): CSSObject {
     if (!isPresent(props.theme)) {
       throw noThemeProvider
     }
 
     const colors = filterObject(colorParams, isPresent)
 
+    // flatMapObject の中で毎回 Object.entries を呼ぶのは無駄なので外で呼ぶ
     const effects = Object.entries({
       ...props.theme.effect,
       ...effectParams,
