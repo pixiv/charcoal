@@ -52,6 +52,8 @@ jobs:
           yarn typecheck
 
       - name: Check if Storybook builds
+        # storybook の vite build が OOM で落ちることがある
+        # これだけ違う job に分離して強い runner で動かすと良いかも？
         run: |
           yarn build-storybook
           NODE_OPTIONS=--max_old_space_size=8192 yarn cross-env USE_VITE=1 yarn build-storybook
