@@ -54,4 +54,4 @@ jobs:
       - name: Check if Storybook builds
         run: |
           yarn build-storybook
-          yarn cross-env USE_VITE=1 yarn build-storybook
+          NODE_OPTIONS=--max_old_space_size=8192 yarn cross-env USE_VITE=1 yarn build-storybook
