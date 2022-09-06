@@ -136,7 +136,7 @@ export const dark: CharcoalTheme = {
     background1: '#1f1f1f',
     background2: '#000000',
     icon6: light.color.icon6,
-    link1: light.color.link1,
+    link1: '#669FC2',
     link2: light.color.link2,
     surface1: '#1f1f1f',
     surface2: rgba('#000000', 0.16),
