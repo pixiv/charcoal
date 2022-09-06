@@ -19,6 +19,9 @@ interface TextFieldBaseProps
   readonly defaultValue?: string
   readonly value?: string
   readonly onChange?: (value: string) => void
+  readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
+  readonly onFocus?: (event: React.FocusEvent<Element>) => void
+  readonly onBlur?: (event: React.FocusEvent<Element>) => void
   readonly showCount?: boolean
   readonly showLabel?: boolean
   readonly placeholder?: string
