@@ -36,9 +36,7 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
       label="Label"
       requiredText="*必須"
       subLabel={
-        <Clickable to="#" onClick={action('click')}>
-          Text Link
-        </Clickable>
+        <Clickable onClick={action('click')}>Text Link</Clickable>
       }
       placeholder="Single Line"
       onChange={action('change')}
@@ -49,9 +47,7 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
       label="Label"
       requiredText="*必須"
       subLabel={
-        <Clickable to="#" onClick={action('click')}>
-          Text Link
-        </Clickable>
+        <Clickable onClick={action('click')}>Text Link</Clickable>
       }
       placeholder="Multi Line"
       onChange={action('change')}
