@@ -11,10 +11,9 @@ describe('defineThemeVariables', () => {
       '--charcoal-text1': '#ff0000',
       '--charcoal-text1-hover': '#f50000',
       '--charcoal-text1-press': '#d60000',
-      '--charcoal-text1-disabled': 'rgba(255,0,0,0.32)',
     }
 
-    describe('with all effects & elementEffects', () => {
+    describe('with all effects', () => {
       const definition = defineThemeVariables(colorParams)
 
       it('defines css variables', () => {
@@ -36,22 +35,6 @@ describe('defineThemeVariables', () => {
         expect(definition(props)).toEqual({
           ...text1_WITH_DEFAULT_EFFECTS,
           '--charcoal-text1-hover': '#b30000',
-        })
-      })
-    })
-
-    describe('overriding disabled', () => {
-      const definition = defineThemeVariables(colorParams, undefined, {
-        disabled: {
-          type: 'opacity',
-          opacity: 0.5,
-        },
-      })
-
-      it('defines css variables', () => {
-        expect(definition(props)).toEqual({
-          ...text1_WITH_DEFAULT_EFFECTS,
-          '--charcoal-text1-disabled': 'rgba(255,0,0,0.5)',
         })
       })
     })
