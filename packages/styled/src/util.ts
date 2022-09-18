@@ -76,7 +76,7 @@ export function objectAssign<T extends any[]>(...sources: T) {
   return Object.assign({}, ...sources) as ObjectAssign<T>
 }
 
-export function objectKeys<V, K extends keyof V>(obj: V) {
+export function objectKeys<V extends object, K extends keyof V>(obj: V) {
   return Object.keys(obj) as K[]
 }
 
@@ -96,6 +96,8 @@ export function extractNonNullKeys<V, K extends keyof V>(obj: {
 export const noThemeProvider = new Error(
   '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
 )
+
+type NonNullableCSSObject = Record<keyof CSSObject, string | number>
 
 /**
  * 子孫要素で使われるカラーテーマの CSS Variables を上書きする
@@ -118,7 +120,7 @@ export function defineThemeVariables(
 ) {
   return function toCssObject(props: {
     theme?: Pick<CharcoalAbstractTheme, 'color' | 'effect'>
-  }): CSSObject {
+  }): NonNullableCSSObject {
     if (!isPresent(props.theme)) {
       throw noThemeProvider
     }

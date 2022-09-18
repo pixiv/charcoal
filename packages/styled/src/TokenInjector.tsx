@@ -57,7 +57,7 @@ export default function TokenInjector<T extends Theme>({
 
 const defineColorVariableCSS = (theme: Theme) =>
   Object.entries(defineThemeVariables(theme.color)({ theme }))
-    .map(([varName, value]) => variableDefinition(varName, value))
+    .map(([varName, value]) => variableDefinition(varName, value.toString()))
     .join(';')
 
 const variableDefinition = (prop: string, value: string) => `${prop}: ${value}`
