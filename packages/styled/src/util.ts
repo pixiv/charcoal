@@ -120,7 +120,7 @@ export function defineThemeVariables(
   elementEffectParams?: Partial<CharcoalAbstractTheme['elementEffect']>
 ) {
   return function toCssObject(props: {
-    theme?: Pick<CharcoalAbstractTheme, 'color' | 'effect' | 'elementEffect'>
+    theme?: Pick<CharcoalAbstractTheme, 'effect' | 'elementEffect'>
   }): NonNullableCSSObject {
     if (!isPresent(props.theme)) {
       throw noThemeProvider
