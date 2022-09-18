@@ -24,14 +24,14 @@ describe('defineThemeVariables', () => {
     })
 
     describe('overriding hover', () => {
-      it('defines css variables', () => {
-        const definition = defineThemeVariables(colorParams, {
-          hover: {
-            type: 'alpha',
-            color: 'rgba(0, 0, 0, 0.3)',
-          },
-        })
+      const definition = defineThemeVariables(colorParams, {
+        hover: {
+          type: 'alpha',
+          color: 'rgba(0, 0, 0, 0.3)',
+        },
+      })
 
+      it('defines css variables', () => {
         expect(definition(props)).toEqual({
           ...text1_WITH_DEFAULT_EFFECTS,
           '--charcoal-text1-hover': '#b30000',
