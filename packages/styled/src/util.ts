@@ -116,10 +116,11 @@ type NonNullableCSSObject = Record<keyof CSSObject, string | number>
  */
 export function defineThemeVariables(
   colorParams: Partial<CharcoalAbstractTheme['color']>,
-  effectParams?: Partial<CharcoalAbstractTheme['effect']>
+  effectParams?: Partial<CharcoalAbstractTheme['effect']>,
+  elementEffectParams?: Partial<CharcoalAbstractTheme['elementEffect']>
 ) {
   return function toCssObject(props: {
-    theme?: Pick<CharcoalAbstractTheme, 'color' | 'effect'>
+    theme?: Pick<CharcoalAbstractTheme, 'color' | 'effect' | 'elementEffect'>
   }): NonNullableCSSObject {
     if (!isPresent(props.theme)) {
       throw noThemeProvider
@@ -133,10 +134,21 @@ export function defineThemeVariables(
       ...effectParams,
     })
 
+    // flatMapObject の中で毎回 Object.entries を呼ぶのは無駄なので外で呼ぶ
+    const elementEffects = Object.entries({
+      ...props.theme.elementEffect,
+      ...elementEffectParams,
+    })
+
     return flatMapObject(colors, (colorKey, color) => [
       [customPropertyToken(colorKey), color],
 
       ...effects.map<[string, string]>(([effectKey, effect]) => [
+        customPropertyToken(colorKey, [effectKey]),
+        applyEffect(color, [effect]),
+      ]),
+
+      ...elementEffects.map<[string, string]>(([effectKey, effect]) => [
         customPropertyToken(colorKey, [effectKey]),
         applyEffect(color, [effect]),
       ]),

@@ -43,7 +43,7 @@ export interface ThemeMap<T extends Theme> {
   [selector: string]: T
 }
 
-type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect'>
+type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect' | 'elementEffect'>
 
 export default function TokenInjector<T extends Theme>({
   theme: themeMap,
