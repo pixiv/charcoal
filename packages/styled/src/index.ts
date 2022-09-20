@@ -711,7 +711,7 @@ export function createTheme<T extends Theme>(
       ) => Blank | Internal | (Blank | Internal)[]
     ): ThemeProp<T> =>
     ({ theme }) => {
-      if (theme == null) {
+      if (!isPresent(theme)) {
         // テーマが入っていない場合は復旧不可能なのでエラーにする
         throw noThemeProvider
       }
