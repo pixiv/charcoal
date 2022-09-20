@@ -3,6 +3,7 @@ export {
   useComponentAbstraction,
   type LinkProps,
 } from './core/ComponentAbstraction'
+export { SSRProvider } from './core/SSRProvider'
 export { default as Button, type ButtonProps } from './components/Button'
 export {
   default as Clickable,
