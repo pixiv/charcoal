@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
