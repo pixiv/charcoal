@@ -9,7 +9,7 @@ import React, { useRef } from 'react'
 import Loading, { LoadingIcon, LoadingIconHandler } from '.'
 
 export default {
-  title: 'Sandbox/Loading',
+  title: 'Loading',
   component: Loading,
   decorators: [withKnobs],
 }
