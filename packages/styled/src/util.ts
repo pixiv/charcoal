@@ -1,3 +1,12 @@
+import {
+  applyEffect,
+  customPropertyToken,
+  filterObject,
+  flatMapObject,
+} from '@charcoal-ui/utils'
+import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import { CSSObject } from 'styled-components'
+
 /**
  * Function used to assert a given code path is unreachable
  */
@@ -67,7 +76,7 @@ export function objectAssign<T extends any[]>(...sources: T) {
   return Object.assign({}, ...sources) as ObjectAssign<T>
 }
 
-export function objectKeys<V, K extends keyof V>(obj: V) {
+export function objectKeys<V extends object, K extends keyof V>(obj: V) {
   return Object.keys(obj) as K[]
 }
 
@@ -82,4 +91,55 @@ export function extractNonNullKeys<V, K extends keyof V>(obj: {
   return Object.entries(obj)
     .filter(([_, v]) => v !== null)
     .map(([k]) => k) as { [key in K]: V[key] extends null ? never : key }[K][]
+}
+
+export const noThemeProvider = new Error(
+  '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
+)
+
+type NonNullableCSSObject = Record<keyof CSSObject, string | number>
+
+/**
+ * 子孫要素で使われるカラーテーマの CSS Variables を上書きする
+ *
+ * @params colorParams - 上書きしたい色の定義（ `theme.color` の一部だけ書けば良い ）
+ * @params effectParams - effect の定義を上書きしたい場合は渡す（必須ではない）
+ *
+ * @example
+ * ```tsx
+ * const LocalTheme = styled.div`
+ *   ${defineThemeVariables({ text1: '#ff0000' })}
+ *   // `text1` is now defined as red
+ *   ${theme((o) => [o.font.text1])}
+ * `
+ * ```
+ */
+export function defineThemeVariables(
+  colorParams: Partial<CharcoalAbstractTheme['color']>,
+  effectParams?: Partial<CharcoalAbstractTheme['effect']>
+) {
+  return function toCssObject(props: {
+    theme?: Pick<CharcoalAbstractTheme, 'effect'>
+  }): NonNullableCSSObject {
+    if (!isPresent(props.theme)) {
+      throw noThemeProvider
+    }
+
+    const colors = filterObject(colorParams, isPresent)
+
+    // flatMapObject の中で毎回 Object.entries を呼ぶのは無駄なので外で呼ぶ
+    const effects = Object.entries({
+      ...props.theme.effect,
+      ...effectParams,
+    })
+
+    return flatMapObject(colors, (colorKey, color) => [
+      [customPropertyToken(colorKey), color],
+
+      ...effects.map<[string, string]>(([effectKey, effect]) => [
+        customPropertyToken(colorKey, [effectKey]),
+        applyEffect(color, [effect]),
+      ]),
+    ])
+  }
 }

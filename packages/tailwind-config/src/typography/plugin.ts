@@ -1,8 +1,7 @@
 import plugin from 'tailwindcss/plugin'
 import { TypographyDescriptor, TYPOGRAPHY_SIZE } from '@charcoal-ui/foundation'
-import { halfLeading } from '@charcoal-ui/utils'
+import { halfLeading, mapObject } from '@charcoal-ui/utils'
 import { px } from '@charcoal-ui/utils'
-import { mapObject } from '../util'
 
 const leadingCancel = {
   display: 'block',

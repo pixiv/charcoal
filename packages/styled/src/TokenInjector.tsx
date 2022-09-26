@@ -1,7 +1,7 @@
-import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
-import { applyEffect, customPropertyToken } from '@charcoal-ui/utils'
 import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
+import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import { defineThemeVariables } from './util'
 
 const GlobalStyle = createGlobalStyle`
   ${<T extends Theme>({
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
                 css`
                   background-color: ${theme.color[background]};
                 `}
-                ${customProperties(theme)}
+                ${defineColorVariableCSS(theme)}
               }
             }
           `
@@ -31,28 +31,11 @@ const GlobalStyle = createGlobalStyle`
               css`
                 background-color: ${theme.color[background]};
               `}
-              ${customProperties(theme)}
+              ${defineColorVariableCSS(theme)}
             }
           `
     )}
 `
-
-const customProperties = (
-  theme: Pick<CharcoalAbstractTheme, 'color' | 'effect'>
-) =>
-  Object.entries(theme.color)
-    .flatMap(([colorKey, color]) => [
-      variableDefinition(customPropertyToken(colorKey), color),
-      ...Object.entries(theme.effect).map(([effectKey, effect]) =>
-        variableDefinition(
-          customPropertyToken(colorKey, [effectKey]),
-          applyEffect(color, [effect])
-        )
-      ),
-    ])
-    .join(';')
-
-const variableDefinition = (prop: string, value: string) => `${prop}: ${value}`
 
 export interface ThemeMap<T extends Theme> {
   ':root': T
@@ -69,5 +52,12 @@ export default function TokenInjector<T extends Theme>({
   theme: ThemeMap<T>
   background?: keyof ThemeMap<T>[string]['color']
 }) {
-  return <GlobalStyle themeMap={themeMap} background={background}></GlobalStyle>
+  return <GlobalStyle themeMap={themeMap} background={background} />
 }
+
+const defineColorVariableCSS = (theme: Theme) =>
+  Object.entries(defineThemeVariables(theme.color)({ theme }))
+    .map(([varName, value]) => variableDefinition(varName, value.toString()))
+    .join(';')
+
+const variableDefinition = (prop: string, value: string) => `${prop}: ${value}`

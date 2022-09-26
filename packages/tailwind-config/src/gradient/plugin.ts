@@ -1,11 +1,14 @@
 import plugin from 'tailwindcss/plugin'
-import { camelToKebab, flatMapObject, mapKeys, mapObject } from '../util'
+import { camelToKebab } from '../util'
 import { GradientMaterial } from '@charcoal-ui/foundation'
 import { ThemeColorGradient } from '@charcoal-ui/theme'
 import {
   applyEffectToGradient,
+  flatMapObject,
   gradient,
   GradientDirection,
+  mapKeys,
+  mapObject,
 } from '@charcoal-ui/utils'
 import { Values } from '../types'
 import { MergedEffect } from '../foundation'
