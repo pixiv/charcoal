@@ -240,12 +240,8 @@ const MultiLineTextField = React.forwardRef<
 
   const syncHeight = useCallback(
     (textarea: HTMLTextAreaElement) => {
-      const rows = `${textarea.value}\n`.match(/\n/gu)?.length ?? 1
-      setRows((prevRows) => {
-        if (initialRows <= rows) return rows
-        if (initialRows < prevRows) return initialRows
-        return prevRows
-      })
+      const rows = (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
+      setRows(initialRows <= rows ? rows : initialRows)
     },
     [initialRows]
   )
