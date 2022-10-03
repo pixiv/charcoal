@@ -2,19 +2,19 @@ import { transparentize } from 'polished'
 import React, { useImperativeHandle, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-export default function Spinner({
+export default function Loading({
   size = 48,
   padding = 16,
   transparent = false,
 }) {
   return (
-    <SpinnerRoot size={size} padding={padding} transparent={transparent}>
-      <SpinnerIcon />
-    </SpinnerRoot>
+    <LoadingRoot size={size} padding={padding} transparent={transparent}>
+      <LoadingIcon />
+    </LoadingRoot>
   )
 }
 
-const SpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
+const LoadingRoot = styled.div.attrs({ role: 'progressbar' })<{
   size: number
   padding: number
   transparent: boolean
@@ -61,12 +61,12 @@ interface Props {
   once?: boolean
 }
 
-export interface SpinnerIconHandler {
+export interface LoadingIconHandler {
   restart(): void
 }
 
-export const SpinnerIcon = React.forwardRef<SpinnerIconHandler, Props>(
-  function SpinnerIcon({ once = false }, ref) {
+export const LoadingIcon = React.forwardRef<LoadingIconHandler, Props>(
+  function LoadingIcon({ once = false }, ref) {
     const iconRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({

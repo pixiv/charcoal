@@ -42,4 +42,3 @@ export {
 export { default as Carousel } from './components/Carousel'
 export { useElementSize, useMedia, useMediaScreen1 } from './foundation/hooks'
 export { default as Pager, LinkPager } from './components/Pager'
-export { default as Spinner, SpinnerIcon } from './components/Spinner'
