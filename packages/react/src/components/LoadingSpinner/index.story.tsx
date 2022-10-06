@@ -6,7 +6,10 @@ import {
   withKnobs,
 } from '@storybook/addon-knobs'
 import React, { useRef } from 'react'
-import LoadingSpinner, { LoadingSpinnerIcon, LoadingSpinnerIconHandler } from '.'
+import LoadingSpinner, {
+  LoadingSpinnerIcon,
+  LoadingSpinnerIconHandler,
+} from '.'
 
 export default {
   title: 'LoadingSpinner',
@@ -19,7 +22,9 @@ export function Basic() {
   const padding = number('padding', 16)
   const transparent = boolean('transparent', false)
 
-  return <LoadingSpinner size={size} padding={padding} transparent={transparent} />
+  return (
+    <LoadingSpinner size={size} padding={padding} transparent={transparent} />
+  )
 }
 
 export function Icon() {

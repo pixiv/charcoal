@@ -65,22 +65,23 @@ export interface LoadingSpinnerIconHandler {
   restart(): void
 }
 
-export const LoadingSpinnerIcon = React.forwardRef<LoadingSpinnerIconHandler, Props>(
-  function LoadingSpinnerIcon({ once = false }, ref) {
-    const iconRef = useRef<HTMLDivElement>(null)
+export const LoadingSpinnerIcon = React.forwardRef<
+  LoadingSpinnerIconHandler,
+  Props
+>(function LoadingSpinnerIcon({ once = false }, ref) {
+  const iconRef = useRef<HTMLDivElement>(null)
 
-    useImperativeHandle(ref, () => ({
-      restart: () => {
-        if (!iconRef.current) {
-          return
-        }
-        iconRef.current.dataset.resetAnimation = 'true'
-        // Force reflow hack!
-        void iconRef.current.offsetWidth
-        delete iconRef.current.dataset.resetAnimation
-      },
-    }))
+  useImperativeHandle(ref, () => ({
+    restart: () => {
+      if (!iconRef.current) {
+        return
+      }
+      iconRef.current.dataset.resetAnimation = 'true'
+      // Force reflow hack!
+      void iconRef.current.offsetWidth
+      delete iconRef.current.dataset.resetAnimation
+    },
+  }))
 
-    return <Icon ref={iconRef} once={once} />
-  }
-)
+  return <Icon ref={iconRef} once={once} />
+})
