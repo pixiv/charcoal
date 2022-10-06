@@ -6,11 +6,14 @@ import {
   withKnobs,
 } from '@storybook/addon-knobs'
 import React, { useRef } from 'react'
-import Loading, { LoadingIcon, LoadingIconHandler } from '.'
+import LoadingSpinner, {
+  LoadingSpinnerIcon,
+  LoadingSpinnerIconHandler,
+} from '.'
 
 export default {
-  title: 'Loading',
-  component: Loading,
+  title: 'LoadingSpinner',
+  component: LoadingSpinner,
   decorators: [withKnobs],
 }
 
@@ -19,7 +22,9 @@ export function Basic() {
   const padding = number('padding', 16)
   const transparent = boolean('transparent', false)
 
-  return <Loading size={size} padding={padding} transparent={transparent} />
+  return (
+    <LoadingSpinner size={size} padding={padding} transparent={transparent} />
+  )
 }
 
 export function Icon() {
@@ -32,7 +37,7 @@ function IconComponent() {
   const once = boolean('once', false)
   button('restart', () => ref.current?.restart())
 
-  const ref = useRef<LoadingIconHandler>(null)
+  const ref = useRef<LoadingSpinnerIconHandler>(null)
 
   return (
     <div
@@ -41,7 +46,7 @@ function IconComponent() {
         color: ${color};
       `}
     >
-      <LoadingIcon once={once} ref={ref} />
+      <LoadingSpinnerIcon once={once} ref={ref} />
     </div>
   )
 }

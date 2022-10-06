@@ -2,19 +2,19 @@ import { transparentize } from 'polished'
 import React, { useImperativeHandle, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-export default function Loading({
+export default function LoadingSpinner({
   size = 48,
   padding = 16,
   transparent = false,
 }) {
   return (
-    <LoadingRoot size={size} padding={padding} transparent={transparent}>
-      <LoadingIcon />
-    </LoadingRoot>
+    <LoadingSpinnerRoot size={size} padding={padding} transparent={transparent}>
+      <LoadingSpinnerIcon />
+    </LoadingSpinnerRoot>
   )
 }
 
-const LoadingRoot = styled.div.attrs({ role: 'progressbar' })<{
+const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   size: number
   padding: number
   transparent: boolean
@@ -61,26 +61,27 @@ interface Props {
   once?: boolean
 }
 
-export interface LoadingIconHandler {
+export interface LoadingSpinnerIconHandler {
   restart(): void
 }
 
-export const LoadingIcon = React.forwardRef<LoadingIconHandler, Props>(
-  function LoadingIcon({ once = false }, ref) {
-    const iconRef = useRef<HTMLDivElement>(null)
+export const LoadingSpinnerIcon = React.forwardRef<
+  LoadingSpinnerIconHandler,
+  Props
+>(function LoadingSpinnerIcon({ once = false }, ref) {
+  const iconRef = useRef<HTMLDivElement>(null)
 
-    useImperativeHandle(ref, () => ({
-      restart: () => {
-        if (!iconRef.current) {
-          return
-        }
-        iconRef.current.dataset.resetAnimation = 'true'
-        // Force reflow hack!
-        void iconRef.current.offsetWidth
-        delete iconRef.current.dataset.resetAnimation
-      },
-    }))
+  useImperativeHandle(ref, () => ({
+    restart: () => {
+      if (!iconRef.current) {
+        return
+      }
+      iconRef.current.dataset.resetAnimation = 'true'
+      // Force reflow hack!
+      void iconRef.current.offsetWidth
+      delete iconRef.current.dataset.resetAnimation
+    },
+  }))
 
-    return <Icon ref={iconRef} once={once} />
-  }
-)
+  return <Icon ref={iconRef} once={once} />
+})
