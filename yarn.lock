@@ -2153,7 +2153,7 @@ __metadata:
   peerDependencies:
     csstype: ">=3.0.0"
     postcss: ">=7.0.32"
-    tailwindcss: ^1.4.6
+    tailwindcss: ">=1.4.6"
   languageName: unknown
   linkType: soft
 
