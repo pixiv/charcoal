@@ -7,10 +7,10 @@ import { match } from 'path-to-regexp'
 import { concurrently } from './concurrently'
 import { generateTypeDefinition } from './generateCode'
 
-const extracter = match<{ file: string; name: string }>('/file/:file/:name')
+const extractor = match<{ file: string; name: string }>('/file/:file/:name')
 
 function extractFileId(url: string) {
-  const result = extracter(new URL(url).pathname)
+  const result = extractor(new URL(url).pathname)
   if (result === false) {
     throw new Error('no :file in url')
   }
