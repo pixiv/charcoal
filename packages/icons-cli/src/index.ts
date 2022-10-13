@@ -2,7 +2,7 @@
 
 import { readFile, writeFile } from 'fs-extra'
 import yargs from 'yargs'
-import { FigmaFileClient } from './FigmaFileClient'
+import { FigmaFileClient } from './figma/FigmaFileClient'
 import { GithubClient } from './GitHubClient'
 import { GitlabClient } from './GitlabClient'
 import { DEFAULT_CURRENT_COLOR_TARGET, optimizeSvg } from './optimizeSvg'
