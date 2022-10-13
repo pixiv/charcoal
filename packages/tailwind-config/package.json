@@ -34,7 +34,7 @@
   "peerDependencies": {
     "csstype": ">=3.0.0",
     "postcss": ">=7.0.32",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": ">=1.4.6"
   },
   "files": [
     "src",
