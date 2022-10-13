@@ -5,6 +5,7 @@ import { ensureDir, ensureFile, remove, writeFile } from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'
 import { concurrently } from './concurrently'
+import { generateTypeDefinition } from './generateCode'
 
 const extracter = match<{ file: string; name: string }>('/file/:file/:name')
 
@@ -132,22 +133,9 @@ export class FigmaFileClient {
     console.log(`writing to ${outputDir}`)
 
     await ensureFile(fullname)
-    await writeFile(
-      fullname,
-      `/** This file is auto generated. DO NOT EDIT BY HAND. */
-
-const icons = {
-${knownIconFiles
-  .map((fullName) => `  '${fullName}': require('../svg/${fullName}.svg'),`)
-  .join('\n')}
-} as const;
-
-export default icons;
-export type KnownIconFile = keyof typeof icons;
-export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
-`,
-      { encoding: 'utf8' }
-    )
+    await writeFile(fullname, generateTypeDefinition(knownIconFiles), {
+      encoding: 'utf8',
+    })
   }
 
   private async loadComponents() {
