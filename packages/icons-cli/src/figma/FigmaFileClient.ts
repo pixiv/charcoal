@@ -46,15 +46,6 @@ function isIconNode(node: Figma.Node) {
 
 type ExportFormat = 'svg' | 'pdf'
 
-function getContentType(exportFormat: ExportFormat) {
-  switch (exportFormat) {
-    case 'svg':
-      return 'image/svg+xml'
-    case 'pdf':
-      return 'application/pdf'
-  }
-}
-
 interface Component {
   id: string
   name: string
@@ -178,12 +169,7 @@ export class FigmaFileClient {
           return
         }
 
-        const response = await got.get(component.image, {
-          headers: {
-            'Content-Type': getContentType(this.exportFormat),
-          },
-          encoding: 'utf8',
-        })
+        const svg = await got(component.image).text()
 
         const filename = `${filenamify(component.name)}.${this.exportFormat}`
         const fullname = path.join(outputDir, filename)
@@ -193,7 +179,7 @@ export class FigmaFileClient {
 
         // eslint-disable-next-line no-console
         console.log(`found: ${filename} => ✅ writing...`)
-        await writeFile(fullname, response.body, 'utf8')
+        await writeFile(fullname, svg, 'utf8')
       })
     )
   }
