@@ -59,7 +59,6 @@ export class FigmaFileClient {
   private readonly client: Figma.ClientInterface
 
   private components: Record<string, Component> = {}
-  private targets: Figma.Node[] = []
 
   static async runFromCli(
     url: string,
@@ -132,17 +131,17 @@ export class FigmaFileClient {
   private async loadComponents() {
     const { document } = await this.getFile()
 
-    this.targets = document.children.filter((node) => {
-      if (this.nodeId !== undefined) {
-        return node.id === this.nodeId
-      }
+    // nodeIdが指定されている場合は、IDが一致するノードのみを探索対象にする
+    // 指定されていない場合はドキュメント全体が探索対象
+    const targets =
+      this.nodeId !== undefined
+        ? document.children.filter((node) => node.id === this.nodeId)
+        : document.children
 
-      return false
-    })
+    // 対象ノードの子孫を探索してアイコンのコンポーネントを見つける
+    targets.forEach((child) => this.findComponentsRecursively(child))
 
-    this.targets.forEach((child) => this.findComponentsRecursively(child))
-
-    if (Object.values(this.targets).length === 0) {
+    if (Object.keys(this.components).length === 0) {
       throw new Error('No components found!')
     }
   }

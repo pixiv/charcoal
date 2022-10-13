@@ -28,11 +28,11 @@ yarn icons-cli figma:export
 
 必要な環境変数は以下です。
 
-| 名前            | 必須 | 説明                                                         |
-| --------------- | ---- | ------------------------------------------------------------ |
-| FIGMA_FILE_URL  | yes  | Figma の URL です。node-id は含んでいても良いです            |
-| FIGMA_TOKEN     | yes  | Figma API のアクセストークンです                             |
-| OUTPUT_ROOT_DIR | yes  | svg をダウンロードするディレクトリ（ 例: `packages/icons` ） |
+| 名前            | 必須 | 説明                                                                                          |
+| --------------- | ---- | --------------------------------------------------------------------------------------------- |
+| FIGMA_FILE_URL  | yes  | Figma の URL です。node-id を含んでいる場合、その子孫のコンポーネントのみダウンロードします。 |
+| FIGMA_TOKEN     | yes  | Figma API のアクセストークンです                                                              |
+| OUTPUT_ROOT_DIR | yes  | svg をダウンロードするディレクトリ（ 例: `packages/icons` ）                                  |
 
 Figma 内のコンポーネントは以下の命名規則に従います（ 例: `16/Add` `Inline/Add` ）。
 
