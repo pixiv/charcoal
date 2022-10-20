@@ -1,15 +1,15 @@
 import path from 'path'
 import camelCase from 'camelcase'
 import Figma from 'figma-js'
-import { ensureDir, ensureFile, remove, writeFile } from 'fs-extra'
+import { ensureDir, remove, writeFile } from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'
 import { concurrently } from './concurrently'
 
-const extracter = match<{ file: string; name: string }>('/file/:file/:name')
+const extractor = match<{ file: string; name: string }>('/file/:file/:name')
 
 function extractFileId(url: string) {
-  const result = extracter(new URL(url).pathname)
+  const result = extractor(new URL(url).pathname)
   if (result === false) {
     throw new Error('no :file in url')
   }
@@ -45,15 +45,6 @@ function isIconNode(node: Figma.Node) {
 
 type ExportFormat = 'svg' | 'pdf'
 
-function getContentType(exportFormat: ExportFormat) {
-  switch (exportFormat) {
-    case 'svg':
-      return 'image/svg+xml'
-    case 'pdf':
-      return 'application/pdf'
-  }
-}
-
 interface Component {
   id: string
   name: string
@@ -67,7 +58,6 @@ export class FigmaFileClient {
   private readonly client: Figma.ClientInterface
 
   private components: Record<string, Component> = {}
-  private targets: Figma.Node[] = []
 
   static async runFromCli(
     url: string,
@@ -77,18 +67,11 @@ export class FigmaFileClient {
   ) {
     const client = new this(url, token, exportFormat)
 
-    const root = process.cwd()
-
-    const outputDir = path.join(root, outputRootDir, exportFormat)
+    const outputDir = path.join(process.cwd(), outputRootDir, exportFormat)
 
     // eslint-disable-next-line no-console
-    console.log(`Exporting ${url} components`)
+    console.log(`Exporting components from ${url}`)
     await client.loadSvg(outputDir)
-
-    // eslint-disable-next-line no-console
-    console.log(`Exporting components type`)
-    const typedefDir = path.join(root, outputRootDir, 'src')
-    await client.writeTypeDef(typedefDir)
 
     // eslint-disable-next-line no-console
     console.log('success!')
@@ -117,53 +100,20 @@ export class FigmaFileClient {
     await this.downloadImages(outputDir)
   }
 
-  /**
-   * Generate union of file names for typing
-   */
-  async writeTypeDef(outputDir: string) {
-    const fullname = path.resolve(outputDir, 'icons.ts')
-    const knownIconFiles = Array.from(
-      new Set(
-        Object.values(this.components).map(({ name }) => filenamify(name))
-      )
-    )
-
-    // eslint-disable-next-line no-console
-    console.log(`writing to ${outputDir}`)
-
-    await ensureFile(fullname)
-    await writeFile(
-      fullname,
-      `/** This file is auto generated. DO NOT EDIT BY HAND. */
-
-const icons = {
-${knownIconFiles
-  .map((fullName) => `  '${fullName}': require('../svg/${fullName}.svg'),`)
-  .join('\n')}
-} as const;
-
-export default icons;
-export type KnownIconFile = keyof typeof icons;
-export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
-`,
-      { encoding: 'utf8' }
-    )
-  }
-
   private async loadComponents() {
     const { document } = await this.getFile()
 
-    this.targets = document.children.filter((node) => {
-      if (this.nodeId !== undefined) {
-        return node.id === this.nodeId
-      }
+    // nodeIdが指定されている場合は、IDが一致するノードのみを探索対象にする
+    // 指定されていない場合はドキュメント全体が探索対象
+    const targets =
+      this.nodeId !== undefined
+        ? document.children.filter((node) => node.id === this.nodeId)
+        : document.children
 
-      return false
-    })
+    // 対象ノードの子孫を探索してアイコンのコンポーネントを見つける
+    targets.forEach((child) => this.findComponentsRecursively(child))
 
-    this.targets.forEach((child) => this.findComponentsRecursively(child))
-
-    if (Object.values(this.targets).length === 0) {
+    if (Object.keys(this.components).length === 0) {
       throw new Error('No components found!')
     }
   }
@@ -190,12 +140,7 @@ export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
           return
         }
 
-        const response = await got.get(component.image, {
-          headers: {
-            'Content-Type': getContentType(this.exportFormat),
-          },
-          encoding: 'utf8',
-        })
+        const svg = await got(component.image).text()
 
         const filename = `${filenamify(component.name)}.${this.exportFormat}`
         const fullname = path.join(outputDir, filename)
@@ -205,7 +150,7 @@ export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
 
         // eslint-disable-next-line no-console
         console.log(`found: ${filename} => ✅ writing...`)
-        await writeFile(fullname, response.body, 'utf8')
+        await writeFile(fullname, svg, 'utf8')
       })
     )
   }

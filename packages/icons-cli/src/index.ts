@@ -2,10 +2,11 @@
 
 import { readFile, writeFile } from 'fs-extra'
 import yargs from 'yargs'
-import { FigmaFileClient } from './FigmaFileClient'
+import { FigmaFileClient } from './figma/FigmaFileClient'
 import { GithubClient } from './GitHubClient'
 import { GitlabClient } from './GitlabClient'
 import { DEFAULT_CURRENT_COLOR_TARGET, optimizeSvg } from './optimizeSvg'
+import { generateSource } from './generateSource'
 import { mustBeDefined } from './utils'
 
 /**
@@ -75,6 +76,20 @@ void yargs
           console.error(e)
           process.exit(1)
         })
+    }
+  )
+  .command(
+    'source:generate',
+    'Enumerate svg files in output directory and generate icons.ts',
+    {},
+    () => {
+      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
+
+      void generateSource(OUTPUT_ROOT_DIR).catch((e) => {
+        // eslint-disable-next-line no-console
+        console.error(e)
+        process.exit(1)
+      })
     }
   )
   .command(
