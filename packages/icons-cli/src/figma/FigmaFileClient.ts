@@ -36,8 +36,7 @@ function filenamify(name: string) {
   return camelCase(name, { pascalCase: true }).replace(' ', '')
 }
 
-// eslint-disable-next-line prefer-named-capture-group
-const iconName = /^(\d|Inline)+\s*\/\s*/u
+const iconName = /^(?:\d+|Inline)\s*\//u
 
 function isIconNode(node: Figma.Node) {
   return iconName.test(node.name)
