@@ -32,7 +32,7 @@ yarn icons-cli figma:export
 | --------------- | ---- | --------------------------------------------------------------------------------------------- |
 | FIGMA_FILE_URL  | yes  | Figma の URL です。node-id を含んでいる場合、その子孫のコンポーネントのみダウンロードします。 |
 | FIGMA_TOKEN     | yes  | Figma API のアクセストークンです                                                              |
-| OUTPUT_ROOT_DIR | yes  | svg をダウンロードするディレクトリ（ 例: `packages/icons` ）                                  |
+| OUTPUT_ROOT_DIR | yes  | svg をダウンロードするディレクトリです（例: `packages/icons`）                                |
 
 Figma 内のコンポーネントは以下の命名規則に従います（ 例: `16/Add` `Inline/Add` ）。
 
@@ -46,6 +46,18 @@ yarn icons-cli svg:optimize --file path/to/file --color "#000"
 ```
 
 ダウンロードしたファイルに SVGO による最適化をかけつつ、指定した色を `currentColor` に置換します。
+
+### SVG ファイルを`require`する TypeScript ファイルを生成する
+
+```
+yarn icons-cli source:generate
+```
+
+必要な環境変数は以下です。
+
+| 名前            | 必須 | 説明                                                               |
+| --------------- | ---- | ------------------------------------------------------------------ |
+| OUTPUT_ROOT_DIR | yes  | svg ディレクトリが存在するディレクトリです（例: `packages/icons`） |
 
 ### GitHub に Pull Request を作成する
 
