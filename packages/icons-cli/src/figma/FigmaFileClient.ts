@@ -1,11 +1,10 @@
 import path from 'path'
 import camelCase from 'camelcase'
 import Figma from 'figma-js'
-import { ensureDir, ensureFile, remove, writeFile } from 'fs-extra'
+import { ensureDir, remove, writeFile } from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'
 import { concurrently } from './concurrently'
-import { generateTypeDefinition } from './generateCode'
 
 const extractor = match<{ file: string; name: string }>('/file/:file/:name')
 
@@ -68,18 +67,11 @@ export class FigmaFileClient {
   ) {
     const client = new this(url, token, exportFormat)
 
-    const root = process.cwd()
-
-    const outputDir = path.join(root, outputRootDir, exportFormat)
+    const outputDir = path.join(process.cwd(), outputRootDir, exportFormat)
 
     // eslint-disable-next-line no-console
-    console.log(`Exporting ${url} components`)
+    console.log(`Exporting components from ${url}`)
     await client.loadSvg(outputDir)
-
-    // eslint-disable-next-line no-console
-    console.log(`Exporting components type`)
-    const typedefDir = path.join(root, outputRootDir, 'src')
-    await client.writeTypeDef(typedefDir)
 
     // eslint-disable-next-line no-console
     console.log('success!')
@@ -106,26 +98,6 @@ export class FigmaFileClient {
     await this.loadComponents()
     await this.loadImageUrls()
     await this.downloadImages(outputDir)
-  }
-
-  /**
-   * Generate union of file names for typing
-   */
-  async writeTypeDef(outputDir: string) {
-    const fullname = path.resolve(outputDir, 'icons.ts')
-    const knownIconFiles = Array.from(
-      new Set(
-        Object.values(this.components).map(({ name }) => filenamify(name))
-      )
-    )
-
-    // eslint-disable-next-line no-console
-    console.log(`writing to ${outputDir}`)
-
-    await ensureFile(fullname)
-    await writeFile(fullname, generateTypeDefinition(knownIconFiles), {
-      encoding: 'utf8',
-    })
   }
 
   private async loadComponents() {
