@@ -47,7 +47,9 @@ jobs:
         run: yarn icons-cli figma:export
 
       - name: Optimize
-        run: ./misc/icons-cli-optimize.sh
+        env:
+          OUTPUT_ROOT_DIR: ${{ secrets.OUTPUT_ROOT_DIR }}
+        run: yarn icons-cli source:generate --ignoreFile ./misc/icons-cli-denylist
 
       - name: Generate source
         env:
