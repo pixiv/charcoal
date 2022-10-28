@@ -1,10 +1,10 @@
 import React, { forwardRef, memo, useMemo } from 'react'
 import styled, { css } from 'styled-components'
-import { theme } from '../../styled'
 import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
 import { disabledSelector, px } from '@charcoal-ui/utils'
+import { theme } from '../../styled'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 
@@ -19,7 +19,6 @@ type CheckboxLabelProps =
 export type CheckboxProps = CheckboxLabelProps & {
   readonly id?: string
   readonly name?: string
-  readonly ref?: React.Ref<HTMLInputElement>
 
   readonly checked?: boolean
   readonly defaultChecked?: boolean
@@ -32,41 +31,39 @@ export type CheckboxProps = CheckboxLabelProps & {
   readonly onFocus?: () => void
 }
 
-const Checkbox: React.FC<CheckboxProps> = (props) => {
-  const ariaCheckboxProps = useMemo<AriaCheckboxProps>(
-    () => ({
-      ...props,
-      isSelected: props.checked,
-      defaultSelected: props.defaultChecked,
-      // children がいない場合は aria-label をつけないといけない
-      'aria-label': 'children' in props ? undefined : props.label,
-      isDisabled: props.disabled,
-    }),
-    [props]
-  )
-  const state = useToggleState(ariaCheckboxProps)
-  const ref = useObjectRef(props.ref)
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  function CheckboxInner(props, ref) {
+    const ariaCheckboxProps = useMemo<AriaCheckboxProps>(
+      () => ({
+        ...props,
+        isSelected: props.checked,
+        defaultSelected: props.defaultChecked,
+        // children がいない場合は aria-label をつけないといけない
+        'aria-label': 'children' in props ? undefined : props.label,
+        isDisabled: props.disabled,
+      }),
+      [props]
+    )
+    const state = useToggleState(ariaCheckboxProps)
+    const objectRef = useObjectRef(ref)
 
-  const { inputProps } = useCheckbox(ariaCheckboxProps, state, ref)
-  const isDisabled = (props.disabled ?? false) || (props.readonly ?? false)
+    const { inputProps } = useCheckbox(ariaCheckboxProps, state, objectRef)
+    const isDisabled = (props.disabled ?? false) || (props.readonly ?? false)
 
-  return (
-    <InputRoot aria-disabled={isDisabled}>
-      <CheckboxInput type="checkbox" {...inputProps} />
-      <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
-        <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
-      </CheckboxInputOverlay>
+    return (
+      <InputRoot aria-disabled={isDisabled}>
+        <CheckboxInput type="checkbox" {...inputProps} />
+        <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
+          <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
+        </CheckboxInputOverlay>
 
-      {'children' in props && <InputLabel>{props.children}</InputLabel>}
-    </InputRoot>
-  )
-}
-
-export default memo(
-  forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => (
-    <Checkbox {...props} ref={ref} />
-  ))
+        {'children' in props && <InputLabel>{props.children}</InputLabel>}
+      </InputRoot>
+    )
+  }
 )
+
+export default memo(Checkbox)
 
 const hiddenCss = css`
   visibility: hidden;
