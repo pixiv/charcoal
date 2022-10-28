@@ -7,6 +7,7 @@ import { disabledSelector, px } from '@charcoal-ui/utils'
 import { theme } from '../../styled'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
+import Icon from '../Icon'
 
 type CheckboxLabelProps =
   | {
@@ -54,7 +55,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       <InputRoot aria-disabled={isDisabled}>
         <CheckboxInput type="checkbox" {...inputProps} />
         <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
-          <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
+          <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
         </CheckboxInputOverlay>
 
         {'children' in props && <InputLabel>{props.children}</InputLabel>}
