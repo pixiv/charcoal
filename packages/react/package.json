@@ -62,7 +62,7 @@
     "@react-aria/textfield": "^3.5.0",
     "@react-aria/visually-hidden": "^3.2.3",
     "polished": "^4.1.4",
-    "react-stately": "^3.11.0",
+    "react-stately": "^3.18.0",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
