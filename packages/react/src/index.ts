@@ -42,3 +42,4 @@ export {
   default as SegmentedControl,
   type SegmentedControlProps,
 } from './components/SegmentedControl'
+export { default as Checkbox } from './components/Checkbox'

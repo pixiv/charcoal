@@ -4,7 +4,7 @@ import Figma from 'figma-js'
 import { ensureDir, remove, writeFile } from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'
-import { concurrently } from './concurrently'
+import { concurrently } from '../concurrently'
 
 const extractor = match<{ file: string; name: string }>('/file/:file/:name')
 

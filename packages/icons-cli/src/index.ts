@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import { readFile, writeFile } from 'fs-extra'
 import yargs from 'yargs'
 import { FigmaFileClient } from './figma/FigmaFileClient'
 import { GithubClient } from './GitHubClient'
 import { GitlabClient } from './GitlabClient'
-import { DEFAULT_CURRENT_COLOR_TARGET, optimizeSvg } from './optimizeSvg'
+import { DEFAULT_CURRENT_COLOR_TARGET } from './svg/optimizeSvg'
+import { optimizeSvgInDirectory } from './svg/optimizeSvgInDirectory'
 import { generateSource } from './generateSource'
 import { mustBeDefined } from './utils'
 
@@ -57,25 +57,30 @@ void yargs
   )
   .command(
     'svg:optimize',
-    'Optimize given .svg files and overwrite it',
+    'Optimize svg files in output directory',
     () =>
       yargs
-        .option('file', { demandOption: true, type: 'string' })
         .option('color', {
           default: DEFAULT_CURRENT_COLOR_TARGET,
           type: 'string',
           defaultDescription:
             'Color code that should be converted into `currentColor`',
+        })
+        .option('ignoreFile', {
+          type: 'string',
+          describe:
+            'A file that contains the list of path to SVG files that should not be optimized',
         }),
-    ({ file, color }) => {
-      void readFile(file, { encoding: 'utf-8' })
-        .then((content) => optimizeSvg(content, color))
-        .then((optimized) => writeFile(file, optimized))
-        .catch((e) => {
+    ({ color, ignoreFile }) => {
+      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
+
+      void optimizeSvgInDirectory(OUTPUT_ROOT_DIR, color, ignoreFile).catch(
+        (e) => {
           // eslint-disable-next-line no-console
           console.error(e)
           process.exit(1)
-        })
+        }
+      )
     }
   )
   .command(
