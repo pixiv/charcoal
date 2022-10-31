@@ -56,9 +56,13 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
       <SegmentedControlRoot ref={ref} {...radioGroupProps}>
         <RadioProvider value={state}>
           {segmentedControlItems.map((item) => (
-            <Radio key={item.value} value={item.value} disabled={item.disabled}>
+            <Segmented
+              key={item.value}
+              value={item.value}
+              disabled={item.disabled}
+            >
               {item.label}
-            </Radio>
+            </Segmented>
           ))}
         </RadioProvider>
       </SegmentedControlRoot>
@@ -73,7 +77,7 @@ type RadioProps = {
   disabled?: boolean
 }
 
-const Radio: React.FC<RadioProps> = ({ children, ...props }) => {
+const Segmented: React.FC<RadioProps> = ({ children, ...props }) => {
   const state = useRadioContext()
   const ref = useRef<HTMLInputElement>(null)
   const ariaRadioProps = useMemo<AriaRadioProps>(
@@ -88,15 +92,15 @@ const Radio: React.FC<RadioProps> = ({ children, ...props }) => {
   )
 
   return (
-    <RadioRoot
+    <SegmentedRoot
       aria-disabled={isDisabled || state.isReadOnly}
       checked={isSelected}
     >
-      <RadioInput {...inputProps} ref={ref} />
+      <SegmentedInput {...inputProps} ref={ref} />
       <RadioLabel>
-        <RadioLabelInner>{children}</RadioLabelInner>
+        <SegmentedLabelInner>{children}</SegmentedLabelInner>
       </RadioLabel>
-    </RadioRoot>
+    </SegmentedRoot>
   )
 }
 
@@ -107,7 +111,7 @@ const SegmentedControlRoot = styled.div`
   ${theme((o) => [o.bg.surface3, o.borderRadius(16)])}
 `
 
-const RadioRoot = styled.label<{ checked?: boolean }>`
+const SegmentedRoot = styled.label<{ checked?: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -131,7 +135,7 @@ const RadioRoot = styled.label<{ checked?: boolean }>`
       checked === true ? o.font.text5 : o.font.text2,
     ])}
 `
-const RadioInput = styled.input`
+const SegmentedInput = styled.input`
   position: absolute;
 
   height: 0px;
@@ -152,6 +156,6 @@ const RadioLabel = styled.div`
   align-items: center;
   height: 22px;
 `
-const RadioLabelInner = styled.div`
+const SegmentedLabelInner = styled.div`
   ${theme((o) => [o.typography(14)])}
 `
