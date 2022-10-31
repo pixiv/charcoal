@@ -49,7 +49,7 @@ jobs:
       - name: Optimize
         env:
           OUTPUT_ROOT_DIR: ${{ secrets.OUTPUT_ROOT_DIR }}
-        run: yarn icons-cli source:generate --ignoreFile ./misc/icons-cli-denylist
+        run: yarn icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
 
       - name: Generate source
         env:
