@@ -11,14 +11,14 @@ interface Props {
 }
 
 /**
- * 同期的にテーマをローカルストレージから取得してhtmlの属性に設定するスクリプトタグ
+ * 同期的にテーマをローカルストレージから取得してhtmlの属性に設定するコードを取得する
  * @param props localStorageのキー、htmlのdataになる属性のキーを含むオブジェクト
- * @returns
+ * @returns ソースコードの文字列
  */
-export function SetThemeScript(props: Props) {
+export function makeSetThemeScriptCode(props: Props) {
   assertKeyString(props.localStorageKey)
   assertKeyString(props.rootAttribute)
-  const src = `'use strict';
+  return `'use strict';
 (function () {
     var localStorageKey = '${props.localStorageKey}'
     var rootAttribute = '${props.rootAttribute}'
@@ -28,7 +28,15 @@ export function SetThemeScript(props: Props) {
     }
 })();
 `
+}
 
+/**
+ * 同期的にテーマをローカルストレージから取得してhtmlの属性に設定するスクリプトタグ
+ * @param props localStorageのキー、htmlのdataになる属性のキーを含むオブジェクト
+ * @returns
+ */
+export function SetThemeScript(props: Props) {
+  const src = makeSetThemeScriptCode(props)
   return (
     <script
       dangerouslySetInnerHTML={{
