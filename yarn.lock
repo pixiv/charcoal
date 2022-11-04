@@ -2105,7 +2105,7 @@ __metadata:
   dependencies:
     "@charcoal-ui/react": ^2.0.0-alpha.22
     "@charcoal-ui/react-sandbox": ^2.0.0-alpha.11
-    "@charcoal-ui/styled": ../styled
+    "@charcoal-ui/styled": "workspace:^"
     "@charcoal-ui/theme": ^2.0.0-alpha.7
     "@types/node": ^18.0.0
     "@types/react": ^17.0.38
@@ -2120,7 +2120,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/styled@^2.0.0-alpha.5, @charcoal-ui/styled@workspace:packages/styled":
+"@charcoal-ui/styled@^2.0.0-alpha.5, @charcoal-ui/styled@workspace:^, @charcoal-ui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/styled@workspace:packages/styled"
   dependencies:
@@ -2142,21 +2142,6 @@ __metadata:
     styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
-
-"@charcoal-ui/styled@file:../styled::locator=%40charcoal-ui%2Fsample%40workspace%3Apackages%2Fsample":
-  version: 2.0.0-alpha.5
-  resolution: "@charcoal-ui/styled@file:../styled#../styled::hash=3ad892&locator=%40charcoal-ui%2Fsample%40workspace%3Apackages%2Fsample"
-  dependencies:
-    "@charcoal-ui/foundation": ^1.0.1-alpha.1
-    "@charcoal-ui/theme": ^2.0.0-alpha.7
-    "@charcoal-ui/utils": ^1.1.0-alpha.2
-    warning: ^4.0.3
-  peerDependencies:
-    react: ">=16.13.1"
-    styled-components: ">=5.1.1"
-  checksum: cc177df462aa498165b3a1e616c49c00ca440682f0d5dee8c613d2049e33e51a3db832de937f6a99b71561f467cd0b311d2f1db2b5f0c34c87dac9964819629a
-  languageName: node
-  linkType: hard
 
 "@charcoal-ui/tailwind-config@workspace:packages/tailwind-config":
   version: 0.0.0-use.local
