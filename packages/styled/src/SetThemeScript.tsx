@@ -15,7 +15,7 @@ interface Props {
  * @param props localStorageのキー、htmlのdataになる属性のキーを含むオブジェクト
  * @returns ソースコードの文字列
  */
-export function makeSetThemeScriptCode(props: Props) {
+export function makeSetThemeScriptCode(props: Props = defaultProps) {
   assertKeyString(props.localStorageKey)
   assertKeyString(props.rootAttribute)
   return `'use strict';
