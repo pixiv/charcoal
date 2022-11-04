@@ -15,13 +15,16 @@ interface Props {
  * @param props localStorageのキー、htmlのdataになる属性のキーを含むオブジェクト
  * @returns ソースコードの文字列
  */
-export function makeSetThemeScriptCode(props: Props = defaultProps) {
-  assertKeyString(props.localStorageKey)
-  assertKeyString(props.rootAttribute)
+export function makeSetThemeScriptCode({
+  localStorageKey = defaultProps.localStorageKey,
+  rootAttribute = defaultProps.rootAttribute,
+}: Partial<Props> = defaultProps) {
+  assertKeyString(localStorageKey)
+  assertKeyString(rootAttribute)
   return `'use strict';
 (function () {
-    var localStorageKey = '${props.localStorageKey}'
-    var rootAttribute = '${props.rootAttribute}'
+    var localStorageKey = '${localStorageKey}'
+    var rootAttribute = '${rootAttribute}'
     var currentTheme = localStorage.getItem(localStorageKey);
     if (currentTheme) {
         document.documentElement.dataset[rootAttribute] = currentTheme;
