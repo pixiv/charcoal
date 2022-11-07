@@ -2112,7 +2112,7 @@ __metadata:
     "@types/react-dom": ^17.0.11
     "@types/styled-components": ^5.1.21
     babel-plugin-styled-components: ^2.0.7
-    next: 12.3.2
+    next: ^12.3.2
     react: ^17.0.2
     react-dom: ^17.0.2
     styled-components: ^5.3.3
@@ -18549,7 +18549,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"next@npm:12.3.2":
+"next@npm:^12.3.2":
   version: 12.3.2
   resolution: "next@npm:12.3.2"
   dependencies:
