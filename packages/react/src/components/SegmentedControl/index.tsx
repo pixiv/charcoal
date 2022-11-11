@@ -116,18 +116,14 @@ const SegmentedRoot = styled.label<{ checked?: boolean }>`
   display: flex;
   align-items: center;
   cursor: pointer;
+  height: 32px;
 
   ${disabledSelector} {
     cursor: default;
   }
 
-  /**
-   * figma 上では 5px だが..... theme に乗っ取るなら 4px のほうが良い？
-   * 4px にすると box の高さが 30px になるが 5pxにすると 32px になって気持ちが良い。
-   */
   ${({ checked }) =>
     theme((o) => [
-      o.padding.vertical(4),
       o.padding.horizontal(16),
       o.borderRadius(16),
       o.disabled,
