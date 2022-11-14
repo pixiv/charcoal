@@ -5,10 +5,15 @@ import { Loadable } from './Loadable'
  * `PixivIcon.extend()` で登録されたカスタムのアイコンを取得する
  */
 export class CustomIconLoader implements Loadable {
+  private _name: string
+  private _filePathOrUrl: string
   private _resultSvg: string | undefined = undefined
   private _promise: Promise<string> | undefined = undefined
 
-  constructor(private name: string, private filePathOrUrl: string) {}
+  constructor(name: string, filePathOrUrl: string) {
+    this._name = name
+    this._filePathOrUrl = filePathOrUrl
+  }
 
   async fetch(): Promise<string> {
     if (this._resultSvg !== undefined) {
@@ -19,10 +24,10 @@ export class CustomIconLoader implements Loadable {
       return this._promise
     }
 
-    this._promise = fetch(this.filePathOrUrl)
+    this._promise = fetch(this._filePathOrUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new PixivIconLoadError(this.name)
+          throw new PixivIconLoadError(this._name)
         }
 
         return response.text()

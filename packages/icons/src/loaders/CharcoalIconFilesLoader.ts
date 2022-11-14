@@ -6,13 +6,16 @@ import charcoalIconFiles, { KnownIconFile } from '../charcoalIconFiles'
  * `@charcoal-ui/icon-files` に収録されているアイコンを取ってくる
  */
 export class CharcoalIconFilesLoader implements Loadable {
+  private _name: KnownIconFile
   private _resultSvg: string | undefined = undefined
   private _promise: Promise<string> | undefined = undefined
 
-  constructor(private name: KnownIconFile) {}
+  constructor(name: KnownIconFile) {
+    this._name = name
+  }
 
   get importIconFile() {
-    return charcoalIconFiles[this.name]
+    return charcoalIconFiles[this._name]
   }
 
   async fetch(): Promise<string> {
@@ -30,7 +33,7 @@ export class CharcoalIconFilesLoader implements Loadable {
         return this._resultSvg
       })
       .catch(() => {
-        throw new PixivIconLoadError(this.name)
+        throw new PixivIconLoadError(this._name)
       })
       .finally(() => {
         this._promise = undefined
