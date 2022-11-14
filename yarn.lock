@@ -1945,7 +1945,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/icon-files@workspace:packages/icon-files":
+"@charcoal-ui/icon-files@workspace:^, @charcoal-ui/icon-files@workspace:packages/icon-files":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icon-files@workspace:packages/icon-files"
   languageName: unknown
@@ -1986,6 +1986,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icons@workspace:packages/icons"
   dependencies:
+    "@charcoal-ui/icon-files": "workspace:^"
     "@types/dompurify": ^2.3.3
     "@types/jest": ^27.4.0
     "@types/react": ^17.0.38
