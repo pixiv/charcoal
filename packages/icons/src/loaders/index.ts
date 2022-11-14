@@ -2,7 +2,7 @@ import { isKnownIconFile } from '../charcoalUiIconFiles'
 import { CharcoalIconFilesLoader } from './CharcoalIconFilesLoader'
 import { CustomIconLoader } from './CustomIconLoader'
 import { Loadable } from './Loadable'
-import { NullLoader } from './NullLoader'
+import { PixivIconLoadError } from './PixivIconLoadError'
 
 /**
  * icon をロードするオブジェクトのプール。Loader のインスタンスは作り次第ここに入れる
@@ -17,6 +17,9 @@ export function addCustomIcon(name: string, filePathOrUrl: string) {
 
 export function getIcon(name: string) {
   const loader = resolveIconLoader(name)
+  if (loader == null) {
+    throw new PixivIconLoadError(name)
+  }
 
   return loader.fetch()
 }
@@ -38,5 +41,5 @@ function resolveIconLoader(name: string) {
   }
 
   // 存在しないアイコンにはこれを返す
-  return new NullLoader(name)
+  return null
 }

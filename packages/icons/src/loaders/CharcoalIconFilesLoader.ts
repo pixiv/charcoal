@@ -11,6 +11,10 @@ export class CharcoalIconFilesLoader implements Loadable {
 
   constructor(private name: KnownIconFile) {}
 
+  get importIconFile() {
+    return charcoalUiIconFiles[this.name]
+  }
+
   async fetch(): Promise<string> {
     if (this._resultSvg !== undefined) {
       return this._resultSvg
@@ -20,7 +24,7 @@ export class CharcoalIconFilesLoader implements Loadable {
       return this._promise
     }
 
-    this._promise = charcoalUiIconFiles[this.name]()
+    this._promise = this.importIconFile()
       .then((svg) => {
         this._resultSvg = svg
         return this._resultSvg
