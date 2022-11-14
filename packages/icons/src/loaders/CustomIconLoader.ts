@@ -2,7 +2,7 @@ import { PixivIconLoadError } from './PixivIconLoadError'
 import { Loadable } from './Loadable'
 
 /**
- * PixivIcon.extend() で登録されたカスタムのアイコンを取得する
+ * `PixivIcon.extend()` で登録されたカスタムのアイコンを取得する
  */
 export class CustomIconLoader implements Loadable {
   private _resultSvg: string | undefined = undefined

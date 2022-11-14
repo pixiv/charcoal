@@ -1,9 +1,9 @@
 import { PixivIconLoadError } from './PixivIconLoadError'
 import { Loadable } from './Loadable'
-import charcoalUiIconFiles, { KnownIconFile } from '../charcoalUiIconFiles'
+import charcoalIconFiles, { KnownIconFile } from '../charcoalIconFiles'
 
 /**
- * @charcoal-ui/icon-files に収録されているアイコンを取ってくる
+ * `@charcoal-ui/icon-files` に収録されているアイコンを取ってくる
  */
 export class CharcoalIconFilesLoader implements Loadable {
   private _resultSvg: string | undefined = undefined
@@ -12,7 +12,7 @@ export class CharcoalIconFilesLoader implements Loadable {
   constructor(private name: KnownIconFile) {}
 
   get importIconFile() {
-    return charcoalUiIconFiles[this.name]
+    return charcoalIconFiles[this.name]
   }
 
   async fetch(): Promise<string> {

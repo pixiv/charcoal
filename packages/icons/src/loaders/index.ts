@@ -1,4 +1,4 @@
-import { isKnownIconFile } from '../charcoalUiIconFiles'
+import { isKnownIconFile } from '../charcoalIconFiles'
 import { CharcoalIconFilesLoader } from './CharcoalIconFilesLoader'
 import { CustomIconLoader } from './CustomIconLoader'
 import { Loadable } from './Loadable'
@@ -15,7 +15,7 @@ export function addCustomIcon(name: string, filePathOrUrl: string) {
   loaders.set(name, new CustomIconLoader(name, filePathOrUrl))
 }
 
-export function getIcon(name: string) {
+export async function getIcon(name: string) {
   const loader = resolveIconLoader(name)
   if (loader == null) {
     throw new PixivIconLoadError(name)
@@ -32,12 +32,12 @@ function resolveIconLoader(name: string) {
     return registeredLoader
   }
 
-  // @charcoal-ui/icon-files に収録されているアイコンにはこれを返す
+  // `@charcoal-ui/icon-files` に収録されているアイコンにはこれを返す
   if (isKnownIconFile(name)) {
-    const charcoalUiIconLoader = new CharcoalIconFilesLoader(name)
+    const charcoalIconFilesLoader = new CharcoalIconFilesLoader(name)
 
-    loaders.set(name, charcoalUiIconLoader)
-    return charcoalUiIconLoader
+    loaders.set(name, charcoalIconFilesLoader)
+    return charcoalIconFilesLoader
   }
 
   // 存在しないアイコンにはこれを返す
