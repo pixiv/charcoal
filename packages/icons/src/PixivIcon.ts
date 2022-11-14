@@ -43,14 +43,14 @@ export class PixivIcon extends HTMLElement {
       return
     }
 
-    Object.entries(map).forEach(([name, url]) => {
+    Object.entries(map).forEach(([name, filePathOrUrl]) => {
       if (!name.includes('/')) {
         throw new TypeError(
           `${name} is not a valid icon name. "name" must be named like [size]/[Name].`
         )
       }
 
-      addCustomIcon(name, url)
+      addCustomIcon(name, filePathOrUrl)
     })
   }
 
