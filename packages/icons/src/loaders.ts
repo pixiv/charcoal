@@ -1,37 +1,45 @@
-import icons from './icons'
+import charcoalUiIconFiles, { KnownIconFile } from './icons'
 
 /**
  * オブジェクトプール。Loader のインスタンスは作り次第ここに入れる
  *
  * 同じアイコンへの複数回のリクエストが起きないためには、Loader がこの中でユニークでないと行けない
  */
-const pool = new Map<string, Loadable>()
+const loaders = new Map<string, Loadable>()
 
-export function findLoader(name: string) {
-  return pool.get(name)
+export function addCustomIcon(name: string, filePathOrUrl: string) {
+  loaders.set(name, new CustomIconLoader(name, filePathOrUrl))
 }
 
-export function registerUrlLoader(name: string, url: string) {
-  const loader = new UrlLoader(name, url)
+export function getIcon(name: string) {
+  const loader = _getIconLoader(name)
 
-  pool.set(name, loader)
+  return loader.fetch()
 }
 
-export function findLoaderOrRegisterBundled(name: string) {
-  const registeredLoader = findLoader(name)
+function _getIconLoader(name: string) {
+  // 登録済みの場合
+  // PixivIcon.extend() で登録された CustomIconLoader は常にこっちを通る
+  const registeredLoader = loaders.get(name)
   if (registeredLoader) {
     return registeredLoader
   }
 
-  const iconUrl = (icons as Record<string, string | undefined>)[name]
+  // ない
+  if (!(name in charcoalUiIconFiles)) {
+    const nullLoader = new NullLoader(name)
+    loaders.set(name, nullLoader)
 
-  const newLoader =
-    iconUrl !== undefined
-      ? new UrlLoader(name, iconUrl)
-      : new NotRegisteredLoader(name)
-  pool.set(name, newLoader)
+    return nullLoader
+  }
 
-  return newLoader
+  const charcoalUiIconLoader = new CharcoalIconFilesLoader(
+    name,
+    charcoalUiIconFiles[name as KnownIconFile]
+  )
+
+  loaders.set(name, charcoalUiIconLoader)
+  return charcoalUiIconLoader
 }
 
 export interface Loadable {
@@ -40,34 +48,22 @@ export interface Loadable {
 }
 
 export class PixivIconLoadError extends Error {
-  constructor(message?: string) {
-    super(message)
+  constructor(name: string) {
+    super(`Failed to fetch <pixiv-icon name="${name}">`)
     Object.setPrototypeOf(this, new.target)
   }
 }
 
 /**
- * アイコンを特定の URL から取得する Loader
- *
- * 一度リクエストされたアイコンは（リクエスト中のも含め）何度もリクエストしないようになっている
+ * PixivIcon.extend() で登録されたカスタムのアイコンを取得する
  */
-export class UrlLoader implements Loadable {
-  private _name: string
-  private _url: string
-
-  private _promise: Promise<string> | undefined = undefined
+export class CustomIconLoader implements Loadable {
   private _resultSvg: string | undefined = undefined
+  private _promise: Promise<string> | undefined = undefined
 
-  constructor(name: string, url: string) {
-    this._name = name
-    this._url = url
-  }
+  constructor(private name: string, private url: string) {}
 
-  isLoading() {
-    return this._promise !== undefined
-  }
-
-  async fetch() {
+  async fetch(): Promise<string> {
     if (this._resultSvg !== undefined) {
       return this._resultSvg
     }
@@ -76,13 +72,10 @@ export class UrlLoader implements Loadable {
       return this._promise
     }
 
-    this._promise = Promise.resolve(this._url)
-      .then((src) => fetch(src))
+    this._promise = fetch(this.url)
       .then((response) => {
         if (!response.ok) {
-          throw new PixivIconLoadError(
-            `Failed to fetch <pixiv-icon name="${this._name}">`
-          )
+          throw new PixivIconLoadError(this.name)
         }
 
         return response.text()
@@ -97,22 +90,62 @@ export class UrlLoader implements Loadable {
 
     return this._promise
   }
+
+  isLoading() {
+    return this._promise !== undefined
+  }
+}
+
+/**
+ * @charcoal-ui/icon-files に収録されているアイコンを取ってくる
+ */
+export class CharcoalIconFilesLoader implements Loadable {
+  private _resultSvg: string | undefined = undefined
+  private _promise: Promise<string> | undefined = undefined
+
+  constructor(
+    private name: string,
+    private getCharcoalUiIconFile: () => Promise<string>
+  ) {}
+
+  async fetch(): Promise<string> {
+    if (this._resultSvg !== undefined) {
+      return this._resultSvg
+    }
+
+    if (this._promise) {
+      return this._promise
+    }
+
+    this._promise = this.getCharcoalUiIconFile()
+      .then((svg) => {
+        this._resultSvg = svg
+        return this._resultSvg
+      })
+      .catch(() => {
+        throw new PixivIconLoadError(this.name)
+      })
+      .finally(() => {
+        this._promise = undefined
+      })
+
+    return this._promise
+  }
+
+  isLoading() {
+    return this._promise !== undefined
+  }
 }
 
 /**
  * アイコンが登録されていない場合に利用する Loader
  */
-export class NotRegisteredLoader implements Loadable {
-  private _name: string
+export class NullLoader implements Loadable {
+  constructor(private name: string) {}
 
-  constructor(name: string) {
-    this._name = name
-  }
-
-  fetch(): Promise<string> {
-    return Promise.reject(
-      new PixivIconLoadError(`pixiv-icon "${this._name}" is not registered`)
-    )
+  // eslint-disable-next-line @typescript-eslint/require-await
+  async fetch(): Promise<string> {
+    throw new PixivIconLoadError(this.name)
   }
 
   isLoading() {
