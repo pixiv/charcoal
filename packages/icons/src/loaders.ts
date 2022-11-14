@@ -1,4 +1,4 @@
-import charcoalUiIconFiles, { KnownIconFile } from './icons'
+import charcoalUiIconFiles, { KnownIconFile } from './charcoalUiIconFiles'
 
 /**
  * オブジェクトプール。Loader のインスタンスは作り次第ここに入れる

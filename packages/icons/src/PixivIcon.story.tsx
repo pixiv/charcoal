@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { Props } from './PixivIcon'
 import { PixivIcon } from '.'
-import { KnownIconFile, KNOWN_ICON_FILES } from './icons'
+import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalUiIconFiles'
 
 interface Story<P> {
   (args: P): React.ReactNode

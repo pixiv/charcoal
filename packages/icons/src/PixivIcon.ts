@@ -1,6 +1,6 @@
 import type React from 'react'
 import warning from 'warning'
-import { KnownIconFile } from './icons'
+import { KnownIconFile } from './charcoalUiIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { __SERVER__ } from './ssr'
 import DOMPurify from 'dompurify'
