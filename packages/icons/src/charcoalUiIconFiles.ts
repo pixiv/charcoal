@@ -5,3 +5,7 @@ export type KnownIconFile = keyof typeof charcoalUiIconFiles
 export const KNOWN_ICON_FILES = Object.keys(
   charcoalUiIconFiles
 ) as KnownIconFile[]
+
+export function isKnownIconFile(name: string): name is KnownIconFile {
+  return name in charcoalUiIconFiles
+}
