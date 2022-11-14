@@ -40,5 +40,5 @@ export {
 } from './components/LoadingSpinner'
 export {
   default as DropdownSelector,
-  DropdownSelectorItem
-} from "./components/DropdownSelector"
+  DropdownSelectorItem,
+} from './components/DropdownSelector'
