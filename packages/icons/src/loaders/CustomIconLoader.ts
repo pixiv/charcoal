@@ -37,8 +37,4 @@ export class CustomIconLoader implements Loadable {
 
     return this._promise
   }
-
-  isLoading() {
-    return this._promise !== undefined
-  }
 }

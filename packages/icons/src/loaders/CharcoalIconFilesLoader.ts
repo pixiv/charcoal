@@ -38,8 +38,4 @@ export class CharcoalIconFilesLoader implements Loadable {
 
     return this._promise
   }
-
-  isLoading() {
-    return this._promise !== undefined
-  }
 }
