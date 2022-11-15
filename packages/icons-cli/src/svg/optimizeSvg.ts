@@ -16,8 +16,25 @@ const svgo = new Svgo({
   ],
 })
 
-export async function optimizeSvg(input: string, convertedColor: string) {
-  const { data } = await svgo.optimize(input)
+/**
+ * SVGを最適化するオプション
+ */
+interface Options {
+  /**
+   * currentColorに置換する色 #ffffff
+   */
+  convertedColor: string
+  /**
+   * svgoによる最適化を行わない
+   */
+  withoutOptimizeBySVGO?: boolean
+}
+
+export async function optimizeSvg(input: string, options: Options) {
+  const { data } =
+    options.withoutOptimizeBySVGO === true
+      ? { data: input }
+      : await svgo.optimize(input)
 
   const { document } = new JSDOM(data).window
   const svg = document.querySelector('svg')
@@ -26,7 +43,7 @@ export async function optimizeSvg(input: string, convertedColor: string) {
   }
 
   addViewboxToRootSvg(svg)
-  convertToCurrentColor(svg, convertedColor)
+  convertToCurrentColor(svg, options.convertedColor)
 
   return svg.outerHTML
 }
