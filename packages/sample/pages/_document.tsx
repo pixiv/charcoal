@@ -7,14 +7,18 @@ import Document, {
   NextScript,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import { SetThemeScript } from '@charcoal-ui/styled'
+import Script from 'next/script'
+import { makeSetThemeScriptCode } from '@charcoal-ui/styled'
 
 export default class MyDocument extends Document {
   render() {
+    const setThemeScript = makeSetThemeScriptCode()
     return (
       <Html>
         <Head>
-          <SetThemeScript />
+          <Script id="set-theme-script" strategy="beforeInteractive">
+            {setThemeScript}
+          </Script>
         </Head>
         <body>
           <Main />

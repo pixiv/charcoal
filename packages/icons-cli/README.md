@@ -42,10 +42,17 @@ Figma 内のコンポーネントは以下の命名規則に従います（ 例:
 ### SVG ファイルにアイコン向けの変換をかける
 
 ```
-yarn icons-cli svg:optimize --file path/to/file --color "#000"
+yarn icons-cli svg:optimize --color "#000" --ignoreFile ./misc/icons-cli-denylist
 ```
 
-ダウンロードしたファイルに SVGO による最適化をかけつつ、指定した色を `currentColor` に置換します。
+SVG ファイルに SVGO による最適化をかけつつ、指定した色を `currentColor` に置換します。
+`ignoreFile`では、処理から除外する SVG ファイルの一覧を記したファイルを指定することができます。[fast-glob](https://github.com/mrmlnc/fast-glob#pattern-syntax)のパターンを使用できます。
+
+必要な環境変数は以下です。
+
+| 名前            | 必須 | 説明                                                               |
+| --------------- | ---- | ------------------------------------------------------------------ |
+| OUTPUT_ROOT_DIR | yes  | svg ディレクトリが存在するディレクトリです（例: `packages/icons`） |
 
 ### SVG ファイルを`require`する TypeScript ファイルを生成する
 

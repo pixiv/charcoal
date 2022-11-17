@@ -42,3 +42,4 @@ export {
   default as DropdownSelector,
   DropdownSelectorItem,
 } from './components/DropdownSelector'
+export { default as Checkbox } from './components/Checkbox'

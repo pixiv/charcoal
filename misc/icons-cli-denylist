@@ -1,12 +1,2 @@
-packages/icons/svg/32/LikeOff.svg
-packages/icons/svg/32/LikeOn.svg
-packages/icons/svg/32/LikeOnPrivate.svg
-packages/icons/svg/Inline/BookmarkOff.svg
-packages/icons/svg/Inline/PremiumMulticolor.svg
-packages/icons/svg/Inline/LikeOffMulticolor.svg
-packages/icons/svg/Inline/ViewMulticolor.svg
-packages/icons/svg/24/Discovery.svg
-packages/icons/svg/24/Play.svg
-packages/icons/svg/24/Pause.svg
-packages/icons/svg/24/FrameEffect.svg
-packages/icons/svg/24/Dust.svg
+32/Gift.svg
+24/Gift.svg
