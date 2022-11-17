@@ -39,6 +39,37 @@ Default.args = {
   disabled: false,
 }
 
+type HasLabelProps = {
+  disabled?: boolean
+}
+export const HasLabel: Story<HasLabelProps> = ({ disabled }) => {
+  const defaultProps: Omit<DropdownSelectorProps, 'children'> = {
+    required: true,
+    showLabel: true,
+    label: 'Label',
+    requiredText: '*必須',
+    subLabel: <Clickable onClick={action('label-click')}>Text Link</Clickable>,
+    assertiveText: 'Hint',
+  }
+  return (
+    <DropdownSelector
+      {...defaultProps}
+      disabled={disabled}
+      placeholder={'Drop Down menu'}
+      onChange={action('change')}
+      onOpenChange={action('open')}
+    >
+      <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+      <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+      <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+    </DropdownSelector>
+  )
+}
+
+HasLabel.args = {
+  disabled: false,
+}
+
 type WithSeparatorProps = {
   mode: 'default' | 'separator'
 }
