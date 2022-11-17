@@ -39,10 +39,10 @@ Default.args = {
   disabled: false,
 }
 
-type HasLabelProps = {
-  disabled?: boolean
+type WithSeparatorProps = {
+  mode: 'default' | 'separator'
 }
-export const HasLabel: Story<HasLabelProps> = ({ disabled }) => {
+export const WithSeparator: Story<WithSeparatorProps> = ({ mode }) => {
   const defaultProps: Omit<DropdownSelectorProps, 'children'> = {
     required: true,
     showLabel: true,
@@ -54,7 +54,7 @@ export const HasLabel: Story<HasLabelProps> = ({ disabled }) => {
   return (
     <DropdownSelector
       {...defaultProps}
-      disabled={disabled}
+      mode={mode}
       placeholder={'Drop Down menu'}
       onChange={action('change')}
       onOpenChange={action('open')}
@@ -66,8 +66,8 @@ export const HasLabel: Story<HasLabelProps> = ({ disabled }) => {
   )
 }
 
-HasLabel.args = {
-  disabled: false,
+WithSeparator.args = {
+  mode: 'separator',
 }
 
 type InvalidProps = {

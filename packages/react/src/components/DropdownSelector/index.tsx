@@ -6,7 +6,7 @@ import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { useSelect, HiddenSelect } from '@react-aria/select'
 import { useButton } from '@react-aria/button'
 import { SelectProps } from '@react-types/select'
-import Listbox from './Listbox'
+import Listbox, { ListboxProps } from './Listbox'
 import Popover from './Popover'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
@@ -37,6 +37,7 @@ export type DropdownSelectorProps = LabelProps & {
   readonly open?: boolean
   readonly onOpenChange?: (isOpen?: boolean) => void
   readonly onChange?: (key: Key) => void
+  readonly mode?: ListboxProps<DropdownSelectorContext>['mode']
 }
 
 const DropdownSelector = forwardRef<HTMLDivElement, DropdownSelectorProps>(
@@ -52,6 +53,7 @@ const DropdownSelector = forwardRef<HTMLDivElement, DropdownSelectorProps>(
       disabled = false,
       required = false,
       showLabel = false,
+      mode = 'default',
       onChange,
       ...props
     }: DropdownSelectorProps,
@@ -125,7 +127,7 @@ const DropdownSelector = forwardRef<HTMLDivElement, DropdownSelectorProps>(
           </DropdownButton>
           {state.isOpen && (
             <DropdownPopover open={state.isOpen} onClose={() => state.close()}>
-              <Listbox {...menuProps} state={state} />
+              <Listbox {...menuProps} state={state} mode={mode} />
             </DropdownPopover>
           )}
         </DropdownButtonWrapper>

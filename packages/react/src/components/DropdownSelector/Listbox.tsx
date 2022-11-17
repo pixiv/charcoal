@@ -1,4 +1,4 @@
-import React, { memo, useRef } from 'react'
+import React, { memo, useRef, Fragment, useMemo } from 'react'
 import styled, { css } from 'styled-components'
 import { ListProps, ListState } from 'react-stately'
 import { useListBox, useOption } from '@react-aria/listbox'
@@ -10,19 +10,36 @@ import { theme } from '../../styled'
 
 import type { Node } from '@react-types/shared'
 
-type Props<T> = Omit<ListProps<T>, 'children'> & {
+export type ListboxProps<T> = Omit<ListProps<T>, 'children'> & {
   state: ListState<T>
+  mode?: 'default' | 'separator'
 }
 
-const Listbox = <T,>({ state, ...props }: Props<T>) => {
+const Listbox = <T,>({
+  state,
+  mode = 'default',
+  ...props
+}: ListboxProps<T>) => {
   const ref = useRef<HTMLUListElement>(null)
 
   const { listBoxProps } = useListBox(props, state, ref)
+  const collection = useMemo(
+    () =>
+      [...state.collection].map((node, index, self) => ({
+        node,
+        first: index === 0,
+        last: index === self.length - 1,
+      })),
+    [state.collection]
+  )
 
   return (
     <ListboxRoot ref={ref} {...listBoxProps}>
-      {[...state.collection].map((item) => (
-        <Option key={item.key} item={item} state={state} />
+      {collection.map(({ node, last }) => (
+        <Fragment key={node.key}>
+          <Option item={node} state={state} />
+          {!last && mode === 'separator' && <Divider />}
+        </Fragment>
       ))}
     </ListboxRoot>
   )
@@ -41,6 +58,19 @@ const ListboxRoot = styled.ul`
     o.borderRadius(8),
     o.outline.default.focus,
   ])}
+`
+
+const Divider = styled.div.attrs({ role: 'separator' })`
+  display: flex;
+  ${theme((o) => [o.padding.horizontal(8), o.margin.vertical(4)])}
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #00000014;
+  }
 `
 
 type OptionProps<T> = {
@@ -70,7 +100,7 @@ const OptionRoot = styled.li`
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
-  ${theme((o) => [o.padding.horizontal(16)])}
+  ${theme((o) => [o.padding.horizontal(8)])}
 
   &:focus {
     ${theme((o) => [o.bg.surface3])}
