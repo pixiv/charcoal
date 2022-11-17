@@ -27,6 +27,7 @@ type LabelProps = {
 export type DropdownSelectorProps = LabelProps & {
   readonly id?: string
   readonly name?: string
+  readonly autoComplete?: string
   readonly placeholder?: string
   readonly className?: string
   readonly children: CollectionChildren<DropdownSelectorContext>
@@ -49,6 +50,7 @@ const DropdownSelector = forwardRef<HTMLDivElement, DropdownSelectorProps>(
       requiredText = '',
       subLabel,
       assertiveText,
+      autoComplete,
       invalid = false,
       disabled = false,
       required = false,
@@ -109,6 +111,8 @@ const DropdownSelector = forwardRef<HTMLDivElement, DropdownSelectorProps>(
           triggerRef={triggerRef}
           label={label}
           name={props.name}
+          isDisabled={disabled}
+          autoComplete={autoComplete}
         />
         <DropdownButtonWrapper>
           <DropdownButton {...buttonProps} ref={triggerRef} invalid={invalid}>
