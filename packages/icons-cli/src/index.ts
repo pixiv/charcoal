@@ -151,5 +151,6 @@ void yargs
     }
   )
   .demandCommand()
+  .strict()
   .help()
   .parse()
