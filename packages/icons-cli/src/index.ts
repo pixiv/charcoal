@@ -37,64 +37,55 @@ void yargs
   .command(
     'figma:export',
     'Load all icons from Figma and save to files',
-    () => yargs.option('format', { default: 'svg', choices: ['svg', 'pdf'] }),
-    ({ format }) => {
+    {
+      format: {
+        default: 'svg',
+        choices: ['svg', 'pdf'],
+        describe: 'Output format',
+      },
+    },
+    async ({ format }) => {
       mustBeDefined(FIGMA_FILE_URL, 'FIGMA_FILE_URL')
       mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
-      void FigmaFileClient.runFromCli(
+      await FigmaFileClient.runFromCli(
         FIGMA_FILE_URL,
         FIGMA_TOKEN,
         OUTPUT_ROOT_DIR,
         format as 'svg' | 'pdf'
-      ).catch((e) => {
-        // eslint-disable-next-line no-console
-        console.error(e)
-        process.exit(1)
-      })
+      )
     }
   )
   .command(
     'svg:optimize',
     'Optimize svg files in output directory',
-    () =>
-      yargs
-        .option('color', {
-          default: DEFAULT_CURRENT_COLOR_TARGET,
-          type: 'string',
-          defaultDescription:
-            'Color code that should be converted into `currentColor`',
-        })
-        .option('ignoreFile', {
-          type: 'string',
-          describe:
-            'A file that contains the list of path to SVG files that should not be optimized',
-        }),
-    ({ color, ignoreFile }) => {
+    {
+      color: {
+        default: DEFAULT_CURRENT_COLOR_TARGET,
+        type: 'string',
+        describe: 'Color code that should be converted into `currentColor`',
+      },
+      ignoreFile: {
+        type: 'string',
+        describe:
+          'A file that contains the list of path to SVG files that should not be optimized',
+      },
+    },
+    async ({ color, ignoreFile }) => {
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
-      void optimizeSvgInDirectory(OUTPUT_ROOT_DIR, color, ignoreFile).catch(
-        (e) => {
-          // eslint-disable-next-line no-console
-          console.error(e)
-          process.exit(1)
-        }
-      )
+      await optimizeSvgInDirectory(OUTPUT_ROOT_DIR, color, ignoreFile)
     }
   )
   .command(
     'source:generate',
     'Enumerate svg files in output directory and generate icons.ts',
     {},
-    () => {
+    async () => {
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
-      void generateSource(OUTPUT_ROOT_DIR).catch((e) => {
-        // eslint-disable-next-line no-console
-        console.error(e)
-        process.exit(1)
-      })
+      await generateSource(OUTPUT_ROOT_DIR)
     }
   )
   .command(
@@ -115,39 +106,31 @@ void yargs
     'gitlab:mr',
     'Create a merge request in the name of icons-cli',
     {},
-    () => {
+    async () => {
       mustBeDefined(GITLAB_PROJECT_ID, 'GITLAB_PROJECT_ID')
       mustBeDefined(GITLAB_ACCESS_TOKEN, 'GITLAB_ACCESS_TOKEN')
 
-      void GitlabClient.runFromCli(
+      await GitlabClient.runFromCli(
         GITLAB_HOST ?? 'https://gitlab.com',
         Number(GITLAB_PROJECT_ID),
         GITLAB_ACCESS_TOKEN,
         GITLAB_DEFAULT_BRANCH ?? 'main'
-      ).catch((e) => {
-        // eslint-disable-next-line no-console
-        console.error(e)
-        process.exit(1)
-      })
+      )
     }
   )
   .command(
     'github:pr',
     'Create a pull request in the name of icons-cli',
     {},
-    () => {
+    async () => {
       mustBeDefined(GITHUB_ACCESS_TOKEN, 'GITHUB_ACCESS_TOKEN')
 
-      void GithubClient.runFromCli(
+      await GithubClient.runFromCli(
         GITHUB_REPO_OWNER ?? 'pixiv',
         GITHUB_REPO_NAME ?? 'charcoal',
         GITHUB_ACCESS_TOKEN,
         GITHUB_DEFAULT_BRANCH ?? 'main'
-      ).catch((e) => {
-        // eslint-disable-next-line no-console
-        console.error(e)
-        process.exit(1)
-      })
+      )
     }
   )
   .demandCommand()
