@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story } from '../../_lib/compat'
-import Modal, { ModalDismissButton, Props } from '.'
+import Modal, { ModalDismissButton, ModalProps } from '.'
 import { OverlayProvider } from '@react-aria/overlays'
 import { useOverlayTriggerState } from 'react-stately'
 import Button from '../Button'
@@ -37,7 +37,7 @@ export default {
   },
 }
 
-const DefaultStory = (args: Props) => {
+const DefaultStory = (args: ModalProps) => {
   const state = useOverlayTriggerState({})
   return (
     // Application must be wrapped in an OverlayProvider so that it can be
@@ -98,9 +98,9 @@ const StyledModalText = styled(ModalAlign)`
   ${theme((o) => [o.font.text2, o.typography(14)])}
 `
 
-export const Default: Story<Props> = DefaultStory.bind({})
+export const Default: Story<ModalProps> = DefaultStory.bind({})
 
-const FullBottomSheetStory = (args: Props) => {
+const FullBottomSheetStory = (args: ModalProps) => {
   const state = useOverlayTriggerState({})
   return (
     // Application must be wrapped in an OverlayProvider so that it can be
@@ -153,9 +153,9 @@ const FullBottomSheetStory = (args: Props) => {
   )
 }
 
-export const FullBottomSheet: Story<Props> = FullBottomSheetStory.bind({})
+export const FullBottomSheet: Story<ModalProps> = FullBottomSheetStory.bind({})
 
-const BottomSheetStory = (args: Props) => {
+const BottomSheetStory = (args: ModalProps) => {
   const state = useOverlayTriggerState({})
   return (
     // Application must be wrapped in an OverlayProvider so that it can be
@@ -192,4 +192,4 @@ const BottomSheetStory = (args: Props) => {
   )
 }
 
-export const BottomSheet: Story<Props> = BottomSheetStory.bind({})
+export const BottomSheet: Story<ModalProps> = BottomSheetStory.bind({})

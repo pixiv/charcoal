@@ -6,38 +6,27 @@ import got from 'got'
 import { match } from 'path-to-regexp'
 import { concurrently } from '../concurrently'
 
-const extractor = match<{ file: string; name: string }>('/file/:file/:name')
+const matchPath = match<{ fileId: string; name: string }>('/file/:fileId/:name')
 
-function extractFileId(url: string) {
-  const result = extractor(new URL(url).pathname)
+function extractParams(url: string): { fileId: string; nodeId?: string } {
+  const { pathname, searchParams } = new URL(url)
+
+  const result = matchPath(pathname)
   if (result === false) {
-    throw new Error('no :file in url')
+    throw new Error('No fileId found in url')
   }
 
-  return result.params.file
-}
-
-function extractNodeId(url: string) {
-  if (!url.includes('?')) {
-    return undefined
+  return {
+    fileId: result.params.fileId,
+    nodeId: searchParams.get('node-id') ?? undefined,
   }
-
-  const [, query] = url.split('?')
-  const params = new URLSearchParams(query)
-  const nodeId = params.get('node-id')
-  if (nodeId === null) {
-    return undefined
-  }
-
-  return decodeURIComponent(nodeId)
 }
 
 function filenamify(name: string) {
   return camelCase(name, { pascalCase: true }).replace(' ', '')
 }
 
-// eslint-disable-next-line prefer-named-capture-group
-const iconName = /^(\d|Inline)+\s*\/\s*/u
+const iconName = /^(?:\d+|Inline)\s*\//u
 
 function isIconNode(node: Figma.Node) {
   return iconName.test(node.name)
@@ -86,8 +75,10 @@ export class FigmaFileClient {
       personalAccessToken,
     })
 
-    this.fileId = extractFileId(url)
-    this.nodeId = extractNodeId(url)
+    const { fileId, nodeId } = extractParams(url)
+    this.fileId = fileId
+    this.nodeId = nodeId
+
     this.exportFormat = exportFormat
   }
 

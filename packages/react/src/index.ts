@@ -34,6 +34,7 @@ export {
   type MultiLineTextFieldProps,
 } from './components/TextField'
 export { default as Icon, type IconProps } from './components/Icon'
+export { default as Modal, type ModalProps } from './components/Modal'
 export {
   default as LoadingSpinner,
   LoadingSpinnerIcon,
@@ -42,4 +43,8 @@ export {
   default as DropdownSelector,
   DropdownSelectorItem,
 } from './components/DropdownSelector'
+export {
+  default as SegmentedControl,
+  type SegmentedControlProps,
+} from './components/SegmentedControl'
 export { default as Checkbox } from './components/Checkbox'
