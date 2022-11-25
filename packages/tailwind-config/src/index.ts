@@ -69,6 +69,7 @@ export function createTailwindConfig({
         full: '100%',
         screen: '100vw',
         auto: 'auto',
+        fit: 'fit-content',
 
         /**
          * generates classes like "w-col-span-1"
