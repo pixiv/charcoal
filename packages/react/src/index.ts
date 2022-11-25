@@ -34,6 +34,7 @@ export {
   type MultiLineTextFieldProps,
 } from './components/TextField'
 export { default as Icon, type IconProps } from './components/Icon'
+export { default as Modal, type ModalProps } from './components/Modal'
 export {
   default as LoadingSpinner,
   LoadingSpinnerIcon,
