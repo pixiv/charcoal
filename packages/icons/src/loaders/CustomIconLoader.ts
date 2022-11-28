@@ -36,6 +36,9 @@ export class CustomIconLoader implements Loadable {
         this._resultSvg = svg
         return this._resultSvg
       })
+      .catch((e) => {
+        throw new PixivIconLoadError(this._name, e)
+      })
       .finally(() => {
         this._promise = undefined
       })
