@@ -32,8 +32,8 @@ export class CharcoalIconFilesLoader implements Loadable {
         this._resultSvg = svg
         return this._resultSvg
       })
-      .catch(() => {
-        throw new PixivIconLoadError(this._name)
+      .catch((e) => {
+        throw new PixivIconLoadError(this._name, e)
       })
       .finally(() => {
         this._promise = undefined

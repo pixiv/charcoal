@@ -18,7 +18,7 @@ export function addCustomIcon(name: string, filePathOrUrl: string) {
 export async function getIcon(name: string) {
   const loader = resolveIconLoader(name)
   if (loader == null) {
-    throw new PixivIconLoadError(name)
+    throw new PixivIconLoadError(name, 'Loader was not found')
   }
 
   return loader.fetch()

@@ -27,7 +27,7 @@ export class CustomIconLoader implements Loadable {
     this._promise = fetch(this._filePathOrUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new PixivIconLoadError(this._name)
+          throw new PixivIconLoadError(this._name, 'Response is not ok')
         }
 
         return response.text()
