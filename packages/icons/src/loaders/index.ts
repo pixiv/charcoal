@@ -21,7 +21,13 @@ export async function getIcon(name: string) {
     throw new PixivIconLoadError(name, 'Loader was not found')
   }
 
-  return loader.fetch()
+  return loader.fetch().catch((e) => {
+    if (e instanceof PixivIconLoadError) {
+      throw e
+    }
+
+    throw new PixivIconLoadError(name, e)
+  })
 }
 
 function resolveIconLoader(name: string) {
