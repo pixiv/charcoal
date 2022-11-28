@@ -1,19 +1,23 @@
 import React, { FC, memo, PropsWithChildren, useRef } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
-import { usePopupPosition } from './useTooltipPosition'
+import { PopupPositionOptions, usePopupPosition } from './useTooltipPosition'
 
-export type TooltipProps = PropsWithChildren<{
+export type TooltipProps = PopupPositionOptions & {
   content: string
-}>
+}
 
-const Tooltip: FC<TooltipProps> = ({ content, children }) => {
-  const isServerSide = typeof window === "undefined"
+const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
+  content,
+  children,
+  ...options
+}) => {
+  const isServerSide = typeof window === 'undefined'
 
   return (
     <TooltipRoot>
-      <div>{children}</div>
-      {!isServerSide ? <Popover content={content} /> : null}
+      {children}
+      {!isServerSide && <Popover content={content} {...options} />}
     </TooltipRoot>
   )
 }
@@ -24,34 +28,17 @@ const TooltipRoot = styled.div`
   position: relative;
 `
 
-type PopoverProps = {
-  content: string
-}
-const Popover: FC<PopoverProps> = ({ content }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const position = usePopupPosition(ref, {
-    isTooltip: true,
-    relative: true,
-    getRect() {
-      const initial = {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: 0,
-        height: 0,
-      }
-
-      return ref.current?.getBoundingClientRect() ?? initial
-    },
-  })
+const Popover: FC<TooltipProps> = ({ content, ...options }) => {
+  const popoverRef = useRef<HTMLDivElement>(null)
+  const position = usePopupPosition(popoverRef, options)
 
   const { direction, tipLeft, ...style } = position ?? {}
+
   return (
-       <PopoverRoot style={style}>
-        <PopoverInnerText ref={ref}>{content}</PopoverInnerText>
-      </PopoverRoot>   
-  ) 
+    <PopoverRoot style={style}>
+      <PopoverInnerText ref={popoverRef}>{content}</PopoverInnerText>
+    </PopoverRoot>
+  )
 }
 
 const PopoverRoot = styled.div`
@@ -60,13 +47,7 @@ const PopoverRoot = styled.div`
   padding-left: 12px;
   padding-right: 12px;
   max-width: 184px;
-
   ${theme((o) => [o.bg.surface8, o.padding.vertical(8), o.borderRadius(4)])}
-
-  &:after {
-    content: '';
-    position: relative;
-  }
 `
 
 const PopoverInnerText = styled.span`

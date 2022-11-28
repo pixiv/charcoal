@@ -7,10 +7,7 @@ import {
 } from 'react'
 import { unreachable } from '../../_lib'
 
-export enum Direction {
-  Up,
-  Down,
-}
+export type Direction = 'Up' | 'Down'
 
 export interface PopupPositionOptions {
   direction?: Direction
@@ -19,7 +16,7 @@ export interface PopupPositionOptions {
   isTooltip?: boolean
   stickyLeft?: boolean
   getRect(): Rect
-  deps?: any[]
+  deps?: unknown[]
 }
 
 export interface ElementSize {
@@ -33,12 +30,8 @@ function measure(ref: Element | null): ElementSize | undefined {
 
 export function useElementSize(
   ref: React.RefObject<Element>,
-  deps: any[] = []
+  deps: unknown[] = []
 ) {
-  // _don't_ call measure synchronously here even if you somehow can
-  // measurement has to be done outside the render phase, either
-  // as the resize observer callback or as a layout effect
-
   const [size, setSize] = useReducer(
     (
       state: ElementSize | undefined,
@@ -110,8 +103,6 @@ type Rect = Pick<
 function useMemoClientRect(getRect: () => Rect) {
   const [rect, setRect] = useReducer(
     (state: Rect | undefined, next: Rect | undefined): Rect | undefined => {
-      // width, height, etc are not own properties but getters in the prototype
-      // can't use shallowEqual or other iterative checks
       if (state === undefined || next === undefined) {
         return next
       }
@@ -137,18 +128,15 @@ export function usePopupPosition(
   {
     getRect,
     direction: preferredDirection,
-    relative,
-    isTooltip,
-    forceDirection,
-    stickyLeft,
+    relative = false,
+    isTooltip = false,
+    forceDirection = false,
+    stickyLeft = false,
     deps,
   }: PopupPositionOptions
 ) {
   const size = useElementSize(ref, deps)
   const clientRect = useMemoClientRect(getRect)
-  // TODO: use a hook to read these in the layout phase, not in the render phase
-  // although window is not something we can change in the render phase,
-  // so this works ok for now
   const {
     scrollX: offsetX,
     scrollY: offsetY,
@@ -178,19 +166,25 @@ export function usePopupPosition(
       return undefined
     }
 
-    const direction =
-      forceDirection === true && preferredDirection !== undefined
-        ? preferredDirection
-        : preferredDirection === Direction.Down
-          ? clientRect.bottom + height > windowHeight - EdgeMargin
-            ? Direction.Up
-            : Direction.Down
-          : preferredDirection === undefined ||
-            preferredDirection === Direction.Up
-            ? clientRect.top - height < EdgeMargin
-              ? Direction.Down
-              : Direction.Up
-            : unreachable(preferredDirection)
+    const direction = (() => {
+      if (forceDirection && preferredDirection !== undefined) {
+        return preferredDirection
+      }
+      switch (preferredDirection) {
+        case 'Down': {
+          return clientRect.bottom + height > windowHeight - EdgeMargin
+            ? 'Up'
+            : 'Down'
+        }
+        case 'Up':
+        case undefined: {
+          return clientRect.top - height < EdgeMargin ? 'Down' : 'Up'
+        }
+        default: {
+          return unreachable(preferredDirection)
+        }
+      }
+    })()
 
     if (relative) {
       const candidateLeft = Math.floor(clientRect.width / 2 - width / 2)
@@ -206,7 +200,7 @@ export function usePopupPosition(
       // 下にポップアップが出るときに高さ制限をする
       const maxHeight = windowHeight - clientRect.top - clientRect.height - 16
 
-      if (direction === Direction.Up) {
+      if (direction === 'Up') {
         return {
           left,
           bottom: clientRect.height,
@@ -239,10 +233,10 @@ export function usePopupPosition(
         Math.max(20, offsetX + clientRect.left - left + clientRect.width / 2)
       )
 
-      if (direction === Direction.Up) {
+      if (direction === 'Up') {
         return {
           left,
-          top: offsetY + clientRect.top - height - ((isTooltip ?? false) ? 0 : 3),
+          top: offsetY + clientRect.top - height - (isTooltip ? 0 : 3),
           tipLeft,
           direction,
           height,
