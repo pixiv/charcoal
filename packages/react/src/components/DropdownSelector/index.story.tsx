@@ -73,7 +73,10 @@ HasLabel.args = {
 type WithSeparatorProps = {
   mode: 'default' | 'separator'
 }
-export const WithSeparator: Story<WithSeparatorProps> = ({ mode }) => {
+export const WithSeparator: Story<WithSeparatorProps> = ({
+  mode,
+  ...props
+}) => {
   const defaultProps: Omit<DropdownSelectorProps, 'children'> = {
     required: true,
     showLabel: true,
@@ -89,6 +92,7 @@ export const WithSeparator: Story<WithSeparatorProps> = ({ mode }) => {
       placeholder={'Drop Down menu'}
       onChange={action('change')}
       onOpenChange={action('open')}
+      {...props}
     >
       <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
       <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>

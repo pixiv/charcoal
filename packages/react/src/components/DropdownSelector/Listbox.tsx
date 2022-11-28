@@ -10,9 +10,10 @@ import { theme } from '../../styled'
 
 import type { Node } from '@react-types/shared'
 
+type ListMode = 'default' | 'separator'
 export type ListboxProps<T> = Omit<ListProps<T>, 'children'> & {
   state: ListState<T>
-  mode?: 'default' | 'separator'
+  mode?: ListMode
 }
 
 const Listbox = <T,>({
@@ -37,7 +38,7 @@ const Listbox = <T,>({
     <ListboxRoot ref={ref} {...listBoxProps}>
       {collection.map(({ node, last }) => (
         <Fragment key={node.key}>
-          <Option item={node} state={state} />
+          <Option item={node} state={state} mode={mode} />
           {!last && mode === 'separator' && <Divider />}
         </Fragment>
       ))}
@@ -62,7 +63,7 @@ const ListboxRoot = styled.ul`
 
 const Divider = styled.div.attrs({ role: 'separator' })`
   display: flex;
-  ${theme((o) => [o.padding.horizontal(8), o.margin.vertical(4)])}
+  ${theme((o) => [o.padding.horizontal(8)])}
 
   &:before {
     content: '';
@@ -76,31 +77,36 @@ const Divider = styled.div.attrs({ role: 'separator' })`
 type OptionProps<T> = {
   item: Node<T>
   state: ListState<T>
+  mode?: ListMode
 }
 
-const Option = <T,>({ item, state }: OptionProps<T>) => {
+const Option = <T,>({ item, state, mode }: OptionProps<T>) => {
   const ref = useRef<HTMLLIElement>(null)
 
   const { optionProps, isSelected } = useOption(item, state, ref)
   const { focusProps } = useFocusRing()
 
   return (
-    <OptionRoot {...mergeProps(optionProps, focusProps)} ref={ref}>
+    <OptionRoot {...mergeProps(optionProps, focusProps)} ref={ref} mode={mode}>
       <OptionCheckIcon name="16/Check" isSelected={isSelected} />
       <OptionText>{item.rendered}</OptionText>
     </OptionRoot>
   )
 }
 
-const OptionRoot = styled.li`
+const OptionRoot = styled.li<{ mode?: ListMode }>`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => px(theme.spacing[4])};
   height: 40px;
   cursor: pointer;
   outline: none;
-  box-sizing: border-box;
-  ${theme((o) => [o.padding.horizontal(8)])}
+
+  ${({ mode }) =>
+    theme((o) => [
+      o.padding.horizontal(8),
+      mode === 'separator' && o.padding.vertical(4),
+    ])}
 
   &:focus {
     ${theme((o) => [o.bg.surface3])}
