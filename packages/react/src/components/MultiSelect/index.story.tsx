@@ -134,7 +134,11 @@ export const Playground: Story<PlaygroundProps> = (props) => {
   const [selected, setSelected] = useState<string[]>([])
 
   return (
-    <StyledMultiSelectGroup {...props} selected={selected} onChange={setSelected}>
+    <StyledMultiSelectGroup
+      {...props}
+      selected={selected}
+      onChange={setSelected}
+    >
       {[1, 2, 3, 4].map((idx) => (
         <MultiSelect value={`選択肢${idx}`} variant={props.variant} key={idx}>
           選択肢{idx}
