@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Story } from '../../_lib/compat'
 import styled from 'styled-components'
-import { SelectGroup, default as Select } from '.'
+import { MultiSelectGroup, default as MultiSelect } from '.'
 
 export default {
-  title: 'Select',
-  component: Select,
+  title: 'MultiSelect',
+  component: MultiSelect,
   argTypes: {
     name: {
       control: {
@@ -63,7 +63,7 @@ type Props = {
   variant?: 'default' | 'overlay'
 }
 
-const StyledSelectGroup = styled(SelectGroup)`
+const StyledMultiSelectGroup = styled(MultiSelectGroup)`
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
@@ -81,7 +81,7 @@ const Template: Story<Props> = ({
   variant,
 }) => {
   return (
-    <StyledSelectGroup
+    <StyledMultiSelectGroup
       {...{
         name,
         ariaLabel,
@@ -94,16 +94,16 @@ const Template: Story<Props> = ({
       selected={selected ? ['選択肢1', '選択肢3'] : []}
     >
       {[1, 2, 3, 4].map((idx) => (
-        <Select
+        <MultiSelect
           value={`選択肢${idx}`}
           forceChecked={firstOptionForceChecked && idx === 1}
           variant={variant}
           key={idx}
         >
           選択肢{idx}
-        </Select>
+        </MultiSelect>
       ))}
-    </StyledSelectGroup>
+    </StyledMultiSelectGroup>
   )
 }
 
@@ -134,13 +134,13 @@ export const Playground: Story<PlaygroundProps> = (props) => {
   const [selected, setSelected] = useState<string[]>([])
 
   return (
-    <StyledSelectGroup {...props} selected={selected} onChange={setSelected}>
+    <StyledMultiSelectGroup {...props} selected={selected} onChange={setSelected}>
       {[1, 2, 3, 4].map((idx) => (
-        <Select value={`選択肢${idx}`} variant={props.variant} key={idx}>
+        <MultiSelect value={`選択肢${idx}`} variant={props.variant} key={idx}>
           選択肢{idx}
-        </Select>
+        </MultiSelect>
       ))}
-    </StyledSelectGroup>
+    </StyledMultiSelectGroup>
   )
 }
 Playground.args = {

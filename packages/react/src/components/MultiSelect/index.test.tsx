@@ -1,23 +1,23 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { default as Select, SelectGroup } from '.'
+import { default as MultiSelect, MultiSelectGroup } from '.'
 import { light } from '@charcoal-ui/theme'
 
-describe('Select', () => {
+describe('MultiSelect', () => {
   describe('in development mode', () => {
     beforeEach(() => {
       process.env.NODE_ENV = 'development'
     })
 
-    describe('when `<Select />` is used without `<SelectGroup />`', () => {
+    describe('when `<MultiSelect />` is used without `<MultiSelectGroup />`', () => {
       beforeEach(() => {
         // eslint-disable-next-line no-console
         console.error = jest.fn()
 
         render(
           <ThemeProvider theme={light}>
-            <Select value="a" />
+            <MultiSelect value="a" />
           </ThemeProvider>
         )
       })
@@ -26,7 +26,7 @@ describe('Select', () => {
         // eslint-disable-next-line no-console
         expect(console.error).toHaveBeenCalledWith(
           expect.stringMatching(
-            /Perhaps you forgot to wrap with <SelectGroup>/u
+            /Perhaps you forgot to wrap with <MultiSelectGroup>/u
           )
         )
       })
@@ -254,28 +254,28 @@ const TestComponent = ({
 }) => {
   return (
     <ThemeProvider theme={light}>
-      <SelectGroup
+      <MultiSelectGroup
         name="defaultName"
         ariaLabel="defaultAriaLabel"
         disabled={parentDisabled}
         onChange={parentOnChange}
         {...{ selected, readonly, hasError }}
       >
-        <Select
+        <MultiSelect
           value="option1"
           disabled={firstOptionDisabled}
           forceChecked={firstOptionForceChecked}
           onChange={childOnChange}
         >
           Option 1
-        </Select>
-        <Select value="option2" onChange={childOnChange}>
+        </MultiSelect>
+        <MultiSelect value="option2" onChange={childOnChange}>
           Option 2
-        </Select>
-        <Select value="option3" onChange={childOnChange}>
+        </MultiSelect>
+        <MultiSelect value="option3" onChange={childOnChange}>
           Option 3
-        </Select>
-      </SelectGroup>
+        </MultiSelect>
+      </MultiSelectGroup>
     </ThemeProvider>
   )
 }
