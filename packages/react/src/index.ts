@@ -40,6 +40,10 @@ export {
   LoadingSpinnerIcon,
 } from './components/LoadingSpinner'
 export {
+  default as DropdownSelector,
+  DropdownSelectorItem,
+} from './components/DropdownSelector'
+export {
   default as SegmentedControl,
   type SegmentedControlProps,
 } from './components/SegmentedControl'
