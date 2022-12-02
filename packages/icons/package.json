@@ -29,6 +29,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "@charcoal-ui/icon-files": "workspace:^",
     "dompurify": "^2.3.6",
     "warning": "^4.0.3"
   },

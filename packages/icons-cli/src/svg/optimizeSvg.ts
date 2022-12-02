@@ -11,24 +11,40 @@ const svgo = new Svgo({
     // icons-cli に必要なのは「特定の黒っぽい色だけ currentColor に変える」機能
     // なので、convertColors plugin は使わない
     // { convertColors: { currentColor: true } },
-    { removeViewBox: true },
+    { removeViewBox: false },
     { removeAttrs: { attrs: ['stroke-opacity', 'fill-opacity'] } },
   ],
 })
 
-export async function optimizeSvg(input: string, convertedColor: string) {
-  const { data } = await svgo.optimize(input)
+/**
+ * SVGを最適化するオプション
+ */
+interface Options {
+  /**
+   * currentColorに置換する色 #ffffff
+   */
+  convertedColor: string
+  /**
+   * svgoによる最適化を行わない
+   */
+  withoutOptimizeBySVGO?: boolean
+}
 
-  const { document } = new JSDOM(data).window
+export async function optimizeSvg(input: string, options: Options) {
+  const { document } = new JSDOM(input).window
   const svg = document.querySelector('svg')
   if (!svg) {
     throw new Error('optimizeSvg: input string seems not to have <svg>')
   }
 
   addViewboxToRootSvg(svg)
-  convertToCurrentColor(svg, convertedColor)
+  convertToCurrentColor(svg, options.convertedColor)
 
-  return svg.outerHTML
+  if (options.withoutOptimizeBySVGO === true) {
+    return svg.outerHTML
+  } else {
+    return (await svgo.optimize(svg.outerHTML)).data
+  }
 }
 
 const TARGET_ATTRS = ['fill', 'stroke']

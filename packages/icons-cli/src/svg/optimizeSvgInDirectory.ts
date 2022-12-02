@@ -20,7 +20,6 @@ export const optimizeSvgInDirectory = async (
 
   const files = await glob('**/*.svg', {
     cwd: rootDir,
-    ignore: ignorePatterns,
   })
 
   await concurrently(
@@ -29,7 +28,10 @@ export const optimizeSvgInDirectory = async (
       const fullPath = path.join(rootDir, file)
 
       const originalSvg = await fs.readFile(fullPath, 'utf8')
-      const optimizedSvg = await optimizeSvg(originalSvg, replaceColor)
+      const optimizedSvg = await optimizeSvg(originalSvg, {
+        convertedColor: replaceColor,
+        withoutOptimizeBySVGO: ignorePatterns.includes(file),
+      })
       await fs.writeFile(fullPath, optimizedSvg)
     })
   )
