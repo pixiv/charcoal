@@ -16,10 +16,10 @@ export interface PopupPositionOptions {
   deps?: unknown[]
   tooltipMargin?: number
   padding?:
-  | number
-  | [number, number]
-  | [number, number, number]
-  | [number, number, number, number]
+    | number
+    | [number, number]
+    | [number, number, number]
+    | [number, number, number, number]
 }
 
 export interface ElementSize {
@@ -124,7 +124,6 @@ function useMemoClientRect(getRect: () => Rect) {
   return rect
 }
 
-
 export function usePopupPosition(
   ref: React.RefObject<Element>,
   {
@@ -156,11 +155,11 @@ export function usePopupPosition(
 
   const position = useMemo<
     | (Record<'left' | 'height', number> & {
-      top?: number
-      bottom?: number
-      maxHeight?: number
-      direction?: Direction
-    })
+        top?: number
+        bottom?: number
+        maxHeight?: number
+        direction?: Direction
+      })
     | undefined
   >(() => {
     if (
@@ -204,7 +203,6 @@ export function usePopupPosition(
     const tooltipLeft = -((width - clientRect.width) / 2)
 
     const left = Math.floor(Math.min(maxLeft, Math.max(minLeft, tooltipLeft)))
-
 
     if (direction === 'Up') {
       return {

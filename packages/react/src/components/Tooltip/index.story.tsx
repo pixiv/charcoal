@@ -69,7 +69,9 @@ Default.args = {
   left: 16,
 }
 
-export const MultiLine: Story<Omit<TooltipProps, "getRect" | "content">> = (props) => {
+export const MultiLine: Story<Omit<TooltipProps, 'getRect' | 'content'>> = (
+  props
+) => {
   const ref = useRef<ClickableElement>(null)
   const getRect = () => {
     return (
@@ -90,9 +92,9 @@ export const MultiLine: Story<Omit<TooltipProps, "getRect" | "content">> = (prop
       content="ツールチップテキストは最大幅184 pxで改行"
       getRect={getRect}
     >
-        <Button ref={ref} variant="Primary">
-          Button
-        </Button>
+      <Button ref={ref} variant="Primary">
+        Button
+      </Button>
     </Tooltip>
   )
 }
