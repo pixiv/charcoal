@@ -38,3 +38,4 @@ export {
   default as LoadingSpinner,
   LoadingSpinnerIcon,
 } from './components/LoadingSpinner'
+export { default as Tooltip } from './components/Tooltip'
