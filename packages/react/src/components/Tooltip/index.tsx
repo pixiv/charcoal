@@ -1,3 +1,4 @@
+import { useIsSSR } from '@react-aria/ssr'
 import React, { FC, memo, PropsWithChildren, useRef } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
@@ -5,19 +6,21 @@ import { PopupPositionOptions, usePopupPosition } from './useTooltipPosition'
 
 export type TooltipProps = PopupPositionOptions & {
   content: string
+  open?: boolean
 }
 
 const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
   content,
   children,
+  open,
   ...options
 }) => {
-  const isServerSide = typeof window === 'undefined'
+  const isSSR = useIsSSR()
 
   return (
     <TooltipRoot>
       {children}
-      {!isServerSide && <Popover content={content} {...options} />}
+      {!isSSR && open && <Popover content={content} {...options} />}
     </TooltipRoot>
   )
 }
@@ -31,18 +34,22 @@ const TooltipRoot = styled.div`
 const Popover: FC<TooltipProps> = ({ content, ...options }) => {
   const popoverRef = useRef<HTMLDivElement>(null)
   const position = usePopupPosition(popoverRef, options)
-
-  const { direction, tipLeft, ...style } = position ?? {}
+  const { direction, ...style } = position ?? {}
 
   return (
-    <PopoverRoot style={style}>
-      <PopoverInnerText ref={popoverRef}>{content}</PopoverInnerText>
+    <PopoverRoot style={style} role="tooltip">
+      <PopoverInner ref={popoverRef}>
+        <PopoverInnerText>{content}</PopoverInnerText>
+      </PopoverInner>
     </PopoverRoot>
   )
 }
 
 const PopoverRoot = styled.div`
   position: absolute;
+`
+
+const PopoverInner = styled.div`
   width: 184px;
   padding-left: 12px;
   padding-right: 12px;
@@ -53,6 +60,7 @@ const PopoverRoot = styled.div`
 const PopoverInnerText = styled.span`
   display: block;
   width: 100%;
+  text-align: center;
 
   ${theme((o) => [o.font.text5, o.typography(12)])}
 `

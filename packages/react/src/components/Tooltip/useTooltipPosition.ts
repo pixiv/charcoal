@@ -12,11 +12,14 @@ export type Direction = 'Up' | 'Down'
 export interface PopupPositionOptions {
   direction?: Direction
   forceDirection?: boolean
-  relative: boolean
-  isTooltip?: boolean
-  stickyLeft?: boolean
   getRect(): Rect
   deps?: unknown[]
+  tooltipMargin?: number
+  padding?:
+  | number
+  | [number, number]
+  | [number, number, number]
+  | [number, number, number, number]
 }
 
 export interface ElementSize {
@@ -121,40 +124,42 @@ function useMemoClientRect(getRect: () => Rect) {
   return rect
 }
 
-const EdgeMargin = 8
 
 export function usePopupPosition(
   ref: React.RefObject<Element>,
   {
     getRect,
     direction: preferredDirection,
-    relative = false,
-    isTooltip = false,
     forceDirection = false,
-    stickyLeft = false,
     deps,
+    padding = 16,
+    tooltipMargin = 16,
   }: PopupPositionOptions
 ) {
   const size = useElementSize(ref, deps)
   const clientRect = useMemoClientRect(getRect)
-  const {
-    scrollX: offsetX,
-    scrollY: offsetY,
-    innerHeight: windowHeight,
-    innerWidth: windowWidth,
-  } = window
   const width = size && size.width
   const height = size && size.height
-  const nonRelativeWidth = relative
-    ? undefined
-    : document.body.clientWidth || window.innerWidth
+
+  const [paddingTop, paddingRight, paddingBottom, paddingLeft] = useMemo<
+    [number, number, number, number]
+  >(() => {
+    if (!Array.isArray(padding)) return [padding, padding, padding, padding]
+    const [p1, p2, p3, p4] = padding
+    if (p3 === undefined && p4 === undefined) return [p1, p2, p1, p2]
+    else if (p3 !== undefined && p4 === undefined) return [p1, p2, p3, p2]
+    else if (p3 !== undefined && p4 !== undefined) return [p1, p2, p3, p4]
+    else unreachable()
+  }, [padding])
+  const windowHeight = window.innerHeight
+  const windowWidth = document.body.clientWidth || window.innerWidth
 
   const position = useMemo<
-    | (Record<'left' | 'tipLeft' | 'height', number> & {
+    | (Record<'left' | 'height', number> & {
       top?: number
       bottom?: number
-      direction: Direction
       maxHeight?: number
+      direction?: Direction
     })
     | undefined
   >(() => {
@@ -172,13 +177,21 @@ export function usePopupPosition(
       }
       switch (preferredDirection) {
         case 'Down': {
-          return clientRect.bottom + height > windowHeight - EdgeMargin
+          return windowHeight -
+            clientRect.top -
+            clientRect.height -
+            tooltipMargin -
+            height -
+            paddingBottom <
+            0
             ? 'Up'
             : 'Down'
         }
         case 'Up':
         case undefined: {
-          return clientRect.top - height < EdgeMargin ? 'Down' : 'Up'
+          return clientRect.top - height - paddingTop - tooltipMargin < 0
+            ? 'Down'
+            : 'Up'
         }
         default: {
           return unreachable(preferredDirection)
@@ -186,85 +199,41 @@ export function usePopupPosition(
       }
     })()
 
-    if (relative) {
-      const candidateLeft = Math.floor(clientRect.width / 2 - width / 2)
-      const candidateTipLeft = Math.floor(width / 2)
-      // ポップアップが画面右側にはみ出る場合ははみ出ないように右側に余白を入れるよう補正
-      const rawLeft = stickyLeft
-        ? Math.min(windowWidth - 16 - width - clientRect.left, 0)
-        : Math.min(windowWidth - 16 - width - clientRect.left, candidateLeft)
-      // ポップアップが画面左側にはみ出る場合ははみ出ないように左側に余白を入れるよう補正
-      const left =
-        clientRect.left + rawLeft >= 0 ? rawLeft : 16 - clientRect.left
-      const tipLeft = candidateTipLeft - (left - candidateLeft)
-      // 下にポップアップが出るときに高さ制限をする
-      const maxHeight = windowHeight - clientRect.top - clientRect.height - 16
+    const minLeft = -clientRect.left + paddingLeft
+    const maxLeft = windowWidth - width - paddingRight - clientRect.left
+    const tooltipLeft = -((width - clientRect.width) / 2)
 
-      if (direction === 'Up') {
-        return {
-          left,
-          bottom: clientRect.height,
-          tipLeft,
-          direction,
-          height,
-        }
-      } else {
-        return {
-          left,
-          top: clientRect.height,
-          tipLeft,
-          direction,
-          height,
-          maxHeight,
-        }
+    const left = Math.floor(Math.min(maxLeft, Math.max(minLeft, tooltipLeft)))
+
+
+    if (direction === 'Up') {
+      return {
+        left,
+        top: -height - tooltipMargin,
+        height,
+        direction,
       }
-    } else if (nonRelativeWidth !== undefined) {
-      const left = Math.floor(
-        Math.min(
-          offsetX + nonRelativeWidth - width - 8,
-          Math.max(
-            offsetX + 8,
-            offsetX + clientRect.left + clientRect.width / 2 - width / 2
-          )
-        )
-      )
-      const tipLeft = Math.min(
-        width - 20,
-        Math.max(20, offsetX + clientRect.left - left + clientRect.width / 2)
-      )
-
-      if (direction === 'Up') {
-        return {
-          left,
-          top: offsetY + clientRect.top - height - (isTooltip ? 0 : 3),
-          tipLeft,
-          direction,
-          height,
-        }
-      } else {
-        return {
-          left,
-          top: offsetY + clientRect.top + clientRect.height,
-          tipLeft,
-          direction,
-          height,
-        }
+    } else {
+      return {
+        left,
+        bottom: -height - tooltipMargin,
+        height,
+        direction,
       }
     }
   }, [
     width,
     height,
     clientRect,
+    paddingLeft,
+    windowWidth,
+    paddingRight,
+    windowHeight,
     forceDirection,
     preferredDirection,
-    windowHeight,
-    relative,
-    nonRelativeWidth,
-    stickyLeft,
-    windowWidth,
-    offsetX,
-    offsetY,
-    isTooltip,
+    tooltipMargin,
+    paddingBottom,
+    paddingTop,
   ])
 
   return position
