@@ -634,6 +634,7 @@ Array [
   "w-full",
   "w-screen",
   "w-auto",
+  "w-fit",
   "w-col-span-1",
   "w-col-span-2",
   "w-col-span-3",

@@ -19,7 +19,7 @@ import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 
-export type Props = OverlayProps &
+export type ModalProps = OverlayProps &
   AriaDialogProps & {
     children: React.ReactNode
     zIndex?: number
@@ -39,7 +39,7 @@ export default function Modal({
   zIndex = DEFAULT_Z_INDEX,
   portalContainer,
   ...props
-}: Props) {
+}: ModalProps) {
   const {
     title,
     size = 'M',
