@@ -100,6 +100,7 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   align-items: center;
   background: ${({ bgColor }) => bgColor};
   color: ${({ color, theme }) => color ?? theme.color.text5};
+  text-decoration: none;
 
   cursor: pointer;
 
