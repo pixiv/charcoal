@@ -44,3 +44,4 @@ export {
   type SegmentedControlProps,
 } from './components/SegmentedControl'
 export { default as Checkbox } from './components/Checkbox'
+export { default as TagItem, type TagItemProps } from "./components/TagItem"
