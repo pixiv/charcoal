@@ -22,12 +22,15 @@ export default {
 }
 
 export const Default: Story<TagItemProps> = (props) => {
-  return <TagItem {...props} />
+  return <TagItem {...props} onClick={action("click")} onClose={action("close")}/>
 }
 Default.args = {
   label: '#女の子',
   color: '#F5F5F5',
   bgColor: '#7ACCB1',
+  href: "",
+  rel: "",
+  target: ""
 }
 
 export const Playground: Story<TagItemProps> = ({ color, bgColor, label, translatedLabel }) => {
@@ -41,8 +44,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="default"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div />
@@ -54,8 +57,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="default"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div />
@@ -68,8 +71,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="active"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div />
@@ -81,8 +84,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="active"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div />
@@ -95,8 +98,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="inactive"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div>
@@ -107,8 +110,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             disabled
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div>
@@ -119,8 +122,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="inactive"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div>
@@ -132,8 +135,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             disabled
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
       </Container>
@@ -145,8 +148,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="default"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
       </Container>
@@ -158,8 +161,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="active"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
       </Container>
@@ -171,8 +174,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             status="inactive"
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
         <div>
@@ -183,8 +186,8 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             disabled
             color={color}
             bgColor={bgColor}
-            onClick={action('onClick')}
-            onClose={action('onClose')}
+            onClick={action('click')}
+            onClose={action('close')}
           />
         </div>
       </Container>
