@@ -1,7 +1,7 @@
 import type React from 'react'
 import warning from 'warning'
-import { KnownIconFile } from './icons'
-import { findLoaderOrRegisterBundled, registerUrlLoader } from './loaders'
+import { KnownIconFile } from './charcoalIconFiles'
+import { getIcon, addCustomIcon } from './loaders'
 import { __SERVER__ } from './ssr'
 import DOMPurify from 'dompurify'
 
@@ -43,14 +43,14 @@ export class PixivIcon extends HTMLElement {
       return
     }
 
-    Object.entries(map).forEach(([name, url]) => {
+    Object.entries(map).forEach(([name, filePathOrUrl]) => {
       if (!name.includes('/')) {
         throw new TypeError(
           `${name} is not a valid icon name. "name" must be named like [size]/[Name].`
         )
       }
 
-      registerUrlLoader(name, url)
+      addCustomIcon(name, filePathOrUrl)
     })
   }
 
@@ -206,9 +206,7 @@ export class PixivIcon extends HTMLElement {
   }
 
   private async loadSvg(name: string) {
-    const loader = findLoaderOrRegisterBundled(name)
-
-    this.svgContent = await loader.fetch()
+    this.svgContent = await getIcon(name)
     this.render()
   }
 
