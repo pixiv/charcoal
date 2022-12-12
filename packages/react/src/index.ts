@@ -21,11 +21,11 @@ export {
   type RadioGroupProps,
 } from './components/Radio'
 export {
-  default as Select,
-  type SelectProps,
-  SelectGroup,
-  type SelectGroupProps,
-} from './components/Select'
+  default as MultiSelect,
+  type MultiSelectProps,
+  MultiSelectGroup,
+  type MultiSelectGroupProps,
+} from './components/MultiSelect'
 export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,
@@ -39,6 +39,10 @@ export {
   default as LoadingSpinner,
   LoadingSpinnerIcon,
 } from './components/LoadingSpinner'
+export {
+  default as DropdownSelector,
+  DropdownSelectorItem,
+} from './components/DropdownSelector'
 export {
   default as SegmentedControl,
   type SegmentedControlProps,

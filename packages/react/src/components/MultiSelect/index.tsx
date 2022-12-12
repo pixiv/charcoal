@@ -4,9 +4,9 @@ import warning from 'warning'
 import { theme } from '../../styled'
 import { disabledSelector, px } from '@charcoal-ui/utils'
 
-import { SelectGroupContext } from './context'
+import { MultiSelectGroupContext } from './context'
 
-export type SelectProps = React.PropsWithChildren<{
+export type MultiSelectProps = React.PropsWithChildren<{
   value: string
   forceChecked?: boolean
   disabled?: boolean
@@ -14,14 +14,14 @@ export type SelectProps = React.PropsWithChildren<{
   onChange?: (payload: { value: string; selected: boolean }) => void
 }>
 
-export default function Select({
+export default function MultiSelect({
   value,
   forceChecked = false,
   disabled = false,
   onChange,
   variant = 'default',
   children,
-}: SelectProps) {
+}: MultiSelectProps) {
   const {
     name,
     selected,
@@ -29,12 +29,12 @@ export default function Select({
     readonly,
     hasError,
     onChange: parentOnChange,
-  } = useContext(SelectGroupContext)
+  } = useContext(MultiSelectGroupContext)
 
   warning(
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     name !== undefined,
-    `"name" is not Provided for <Select>. Perhaps you forgot to wrap with <SelectGroup> ?`
+    `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`
   )
 
   const isSelected = selected.includes(value) || forceChecked
@@ -52,8 +52,8 @@ export default function Select({
   )
 
   return (
-    <SelectRoot aria-disabled={isDisabled}>
-      <SelectInput
+    <MultiSelectRoot aria-disabled={isDisabled}>
+      <MultiSelectInput
         {...{
           name,
           value,
@@ -65,19 +65,19 @@ export default function Select({
         overlay={variant === 'overlay'}
         aria-invalid={hasError}
       />
-      <SelectInputOverlay
+      <MultiSelectInputOverlay
         overlay={variant === 'overlay'}
         hasError={hasError}
         aria-hidden={true}
       >
         <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
-      </SelectInputOverlay>
-      {Boolean(children) && <SelectLabel>{children}</SelectLabel>}
-    </SelectRoot>
+      </MultiSelectInputOverlay>
+      {Boolean(children) && <MultiSelectLabel>{children}</MultiSelectLabel>}
+    </MultiSelectRoot>
   )
 }
 
-const SelectRoot = styled.label`
+const MultiSelectRoot = styled.label`
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -90,13 +90,13 @@ const SelectRoot = styled.label`
   ${theme((o) => o.disabled)}
 `
 
-const SelectLabel = styled.div`
+const MultiSelectLabel = styled.div`
   display: flex;
   align-items: center;
   ${theme((o) => [o.typography(14), o.font.text1])}
 `
 
-const SelectInput = styled.input.attrs({ type: 'checkbox' })<{
+const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
   hasError: boolean
   overlay: boolean
 }>`
@@ -121,7 +121,10 @@ const SelectInput = styled.input.attrs({ type: 'checkbox' })<{
   }
 `
 
-const SelectInputOverlay = styled.div<{ overlay: boolean; hasError: boolean }>`
+const MultiSelectInputOverlay = styled.div<{
+  overlay: boolean
+  hasError: boolean
+}>`
   position: absolute;
   top: -2px;
   left: -2px;
@@ -148,7 +151,7 @@ const SelectInputOverlay = styled.div<{ overlay: boolean; hasError: boolean }>`
     `}
 `
 
-export type SelectGroupProps = React.PropsWithChildren<{
+export type MultiSelectGroupProps = React.PropsWithChildren<{
   className?: string
   name: string
   ariaLabel: string
@@ -159,7 +162,7 @@ export type SelectGroupProps = React.PropsWithChildren<{
   hasError?: boolean
 }>
 
-export function SelectGroup({
+export function MultiSelectGroup({
   className,
   name,
   ariaLabel,
@@ -169,7 +172,7 @@ export function SelectGroup({
   readonly = false,
   hasError = false,
   children,
-}: SelectGroupProps) {
+}: MultiSelectGroupProps) {
   const handleChange = useCallback(
     (payload: { value: string; selected: boolean }) => {
       const index = selected.indexOf(payload.value)
@@ -188,7 +191,7 @@ export function SelectGroup({
   )
 
   return (
-    <SelectGroupContext.Provider
+    <MultiSelectGroupContext.Provider
       value={{
         name,
         selected: Array.from(new Set(selected)),
@@ -205,6 +208,6 @@ export function SelectGroup({
       >
         {children}
       </div>
-    </SelectGroupContext.Provider>
+    </MultiSelectGroupContext.Provider>
   )
 }
