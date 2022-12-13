@@ -95,7 +95,7 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   color: ${({ color, theme }) => color ?? theme.color.text5};
   text-decoration: none;
 
-  cursor: cursor;
+  cursor: pointer;
 
   ${({ size, status }) =>
     theme((o) => [
