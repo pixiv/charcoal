@@ -54,7 +54,7 @@ jobs:
       - name: Generate source
         env:
           OUTPUT_ROOT_DIR: ${{ secrets.OUTPUT_ROOT_DIR }}
-        run: yarn icons-cli source:generate
+        run: yarn icons-cli files:generate
 
       - name: Generate github token
         id: generate_token
