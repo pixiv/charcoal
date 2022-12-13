@@ -28,11 +28,13 @@ export type KnownIconFile = keyof typeof icons;
 export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
 `
 
-const generateIconSvgEmbededSource = (
-  svgString: string
-) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
-export default '${svgString}'
+const generateIconSvgEmbededSource = (svgString: string) => {
+  const str = svgString.replace(/\r?\n/g, '')
+
+  return `/** This file is auto generated. DO NOT EDIT BY HAND. */
+export default '${str}'
 `
+}
 
 const generateMjsEntrypoint = (
   icons: string[]
