@@ -22,18 +22,23 @@ export default {
 }
 
 export const Default: Story<TagItemProps> = (props) => {
-  return <TagItem {...props} onClick={action("click")} onClose={action("close")}/>
+  return <TagItem {...props} onClick={action('click')} />
 }
 Default.args = {
   label: '#女の子',
   color: '#F5F5F5',
   bgColor: '#7ACCB1',
-  href: "",
-  rel: "",
-  target: ""
+  href: '',
+  rel: '',
+  target: '',
 }
 
-export const Playground: Story<TagItemProps> = ({ color, bgColor, label, translatedLabel }) => {
+export const Playground: Story<TagItemProps> = ({
+  color,
+  bgColor,
+  label,
+  translatedLabel,
+}) => {
   return (
     <div>
       <Container>
@@ -45,7 +50,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div />
@@ -58,7 +62,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div />
@@ -72,7 +75,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div />
@@ -85,7 +87,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div />
@@ -99,7 +100,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div>
@@ -111,7 +111,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div>
@@ -123,7 +122,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div>
@@ -136,7 +134,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
       </Container>
@@ -149,7 +146,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
       </Container>
@@ -162,7 +158,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
       </Container>
@@ -175,7 +170,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
         <div>
@@ -187,7 +181,6 @@ export const Playground: Story<TagItemProps> = ({ color, bgColor, label, transla
             color={color}
             bgColor={bgColor}
             onClick={action('click')}
-            onClose={action('close')}
           />
         </div>
       </Container>
@@ -209,7 +202,7 @@ const Container = styled.div`
 
 Playground.args = {
   label: '#女の子',
-  translatedLabel: "girl",
+  translatedLabel: 'girl',
   color: '#F5F5F5',
   bgColor: '#7ACCB1',
 }

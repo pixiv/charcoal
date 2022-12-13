@@ -3,7 +3,6 @@ import React, {
   memo,
   useMemo,
   ComponentPropsWithoutRef,
-  BaseSyntheticEvent,
 } from 'react'
 import { useObjectRef } from '@react-aria/utils'
 import styled from 'styled-components'
@@ -25,7 +24,6 @@ export type TagItemProps = {
   status?: 'default' | 'active' | 'inactive'
   size?: keyof typeof sizeMap
   disabled?: boolean
-  onClose?: (e: BaseSyntheticEvent) => void
 } & Pick<ComponentPropsWithoutRef<'a'>, 'href' | 'target' | 'rel' | 'onClick'>
 
 const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
@@ -38,7 +36,6 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
       size = 'M',
       disabled,
       status = 'default',
-      onClose,
       ...props
     },
     _ref
@@ -78,11 +75,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
             <Label>{label}</Label>
           </LabelRoot>
         )}
-        {status === 'active' && (
-          <IconButton onClick={onClose} title="close">
-            <Icon name="16/Remove" />
-          </IconButton>
-        )}
+        {status === 'active' && <CloseIcon name="16/Remove" />}
       </TagItemRoot>
     )
   }
@@ -102,7 +95,7 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   color: ${({ color, theme }) => color ?? theme.color.text5};
   text-decoration: none;
 
-  cursor: pointer;
+  cursor: cursor;
 
   ${({ size, status }) =>
     theme((o) => [
@@ -145,9 +138,6 @@ const TranslatedLabelInner = styled.div`
   ${theme((o) => [o.typography(12).bold])}
 `
 
-const IconButton = styled.div`
-  cursor: pointer;
-  color: inherit;
-
-  ${theme((o) => [o.outline.default.focus, o.height.px(16), o.width.px(16)])}
+const CloseIcon = styled(Icon)`
+  ${theme((o) => [o.height.px(16), o.width.px(16)])}
 `
