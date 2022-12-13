@@ -75,7 +75,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
             <Label>{label}</Label>
           </LabelRoot>
         )}
-        {status === 'active' && <CloseIcon name="16/Remove" />}
+        {status === 'active' && <Icon name="16/Remove" />}
       </TagItemRoot>
     )
   }
@@ -138,6 +138,4 @@ const TranslatedLabelInner = styled.div`
   ${theme((o) => [o.typography(12).bold])}
 `
 
-const CloseIcon = styled(Icon)`
-  ${theme((o) => [o.height.px(16), o.width.px(16)])}
-`
+
