@@ -29,7 +29,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@charcoal-ui/icon-files": "workspace:^",
+    "@charcoal-ui/icon-files": "2.0.0",
     "dompurify": "^2.3.6",
     "warning": "^4.0.3"
   },
