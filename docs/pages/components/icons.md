@@ -47,8 +47,7 @@ TypeScript の型定義がグローバルにインストールされるので、
 
 その場合も名前の形式は `${size}/${name}` である必要があります。
 
-TypeScript 環境下では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効
-くようになります。
+TypeScript 環境下では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
 ```ts
 import { PixivIcon } from '@charcoal-ui/icons'
@@ -115,27 +114,35 @@ const nextConfig = {
 
 ### Vite と組み合わせる場合
 
-`@charcoal-ui/icons` は内部で SVG を require しています。
+`@charcoal-ui/icons` は内部で SVG を dynamic import しています。
 
-Vite ではデフォルトで require が使用できないため、vite.config.ts の設定を変更する必要があります。
+Vite はデフォルトで dynamic import をサポートしますが、`node_modules` 以下のファイルは `import()` の対象外にする設定がされているため、ここを変更する必要があります。
 
 ```ts
 // vite.config.ts
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
-
 export default defineConfig({
-  plugins: [viteCommonjs({ include: ['@charcoal-ui/icons'] }), react()],
-  optimizeDeps: {
-    // 開発環境の Pre-bundling で壊れる
-    // https://vitejs.dev/guide/dep-pre-bundling.html#the-why
-    exclude: ['@charcoal-ui/icons'],
-  },
-  build: {
-    commonjsOptions: {
-      // require を import に変換する
-      transformMixedEsModules: true,
-      requireReturnsDefault: 'auto',
-    },
-  },
+  plugins: [react(), charcoalIcons()],
 })
+
+function charcoalIcons(): PluginOption {
+  return {
+    name: 'charcoal-icons',
+    config() {
+      return {
+        optimizeDeps: {
+          // 開発環境の Pre-bundling で壊れる
+          // https://vitejs.dev/guide/dep-pre-bundling.html#the-why
+          exclude: ['@charcoal-ui/icons'],
+        },
+        build: {
+          rollupOptions: {
+            // dynamicImport がビルド時に解決されない
+            // https://vitejs.dev/config/#build-dynamicimportvarsoptions
+            plugins: [dynamicImport()],
+          },
+        },
+      }
+    },
+  }
+}
 ```
