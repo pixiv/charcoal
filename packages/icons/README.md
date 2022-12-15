@@ -47,8 +47,7 @@ TypeScript の型定義がグローバルにインストールされるので、
 
 その場合も名前の形式は `${size}/${name}` である必要があります。
 
-TypeScript 環境下では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効
-くようになります。
+TypeScript 環境下では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
 ```ts
 import { PixivIcon } from '@charcoal-ui/icons'

@@ -6,7 +6,7 @@ import { GithubClient } from './GitHubClient'
 import { GitlabClient } from './GitlabClient'
 import { DEFAULT_CURRENT_COLOR_TARGET } from './svg/optimizeSvg'
 import { optimizeSvgInDirectory } from './svg/optimizeSvgInDirectory'
-import { generateIconSource, generateSource } from './generateSource'
+import { generateIconSource } from './generateSource'
 import { mustBeDefined } from './utils'
 
 /**
@@ -76,16 +76,6 @@ void yargs
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
       await optimizeSvgInDirectory(OUTPUT_ROOT_DIR, color, ignoreFile)
-    }
-  )
-  .command(
-    'source:generate',
-    'Enumerate svg files in output directory and generate icons.ts',
-    {},
-    async () => {
-      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
-
-      await generateSource(OUTPUT_ROOT_DIR)
     }
   )
   .command(
