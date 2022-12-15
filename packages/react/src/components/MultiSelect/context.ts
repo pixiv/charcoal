@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-type SelectGroupContext = {
+type MultiSelectGroupContext = {
   name: string
   selected: string[]
   disabled: boolean
@@ -9,7 +9,7 @@ type SelectGroupContext = {
   onChange: ({ value, selected }: { value: string; selected: boolean }) => void
 }
 
-export const SelectGroupContext = createContext<SelectGroupContext>({
+export const MultiSelectGroupContext = createContext<MultiSelectGroupContext>({
   name: undefined as never,
   selected: [],
   disabled: false,
@@ -17,7 +17,7 @@ export const SelectGroupContext = createContext<SelectGroupContext>({
   hasError: false,
   onChange() {
     throw new Error(
-      'Cannot find `onChange()` handler. Perhaps you forgot to wrap it with `<SelectGroup />` ?'
+      'Cannot find `onChange()` handler. Perhaps you forgot to wrap it with `<MultiSelectGroup />` ?'
     )
   },
 })
