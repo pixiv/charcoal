@@ -6,6 +6,7 @@ __snapshots__/
 /storybook-static/
 /coverage/
 .next/
+lerna.json
 
 LICENSE
 /packages/theme/theme.json
