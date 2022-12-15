@@ -3,7 +3,9 @@
   "useWorkspaces": true,
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": ["#"],
+    "issuePrefixes": [
+      "#"
+    ],
     "types": [
       {
         "type": "feat",
@@ -81,6 +83,8 @@
       "loglevel": "success"
     }
   },
-  "packages": ["packages/*"],
-  "version": "2.0.0"
+  "packages": [
+    "packages/*"
+  ],
+  "version": "2.0.0-rc"
 }
