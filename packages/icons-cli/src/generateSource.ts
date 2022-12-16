@@ -25,7 +25,7 @@ const generateCjsEntrypoint = (
   icons: string[]
 ) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
-export default {
+module.exports = {
 ${icons
   .map((it) => `  '${it}': () => import('./${it}.js').then(m => m.default)`)
   .join(',\n')}
