@@ -99,12 +99,14 @@ void yargs
     async () => {
       mustBeDefined(GITLAB_PROJECT_ID, 'GITLAB_PROJECT_ID')
       mustBeDefined(GITLAB_ACCESS_TOKEN, 'GITLAB_ACCESS_TOKEN')
+      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
       await GitlabClient.runFromCli(
         GITLAB_HOST ?? 'https://gitlab.com',
         Number(GITLAB_PROJECT_ID),
         GITLAB_ACCESS_TOKEN,
-        GITLAB_DEFAULT_BRANCH ?? 'main'
+        GITLAB_DEFAULT_BRANCH ?? 'main',
+        OUTPUT_ROOT_DIR
       )
     }
   )
@@ -114,12 +116,14 @@ void yargs
     {},
     async () => {
       mustBeDefined(GITHUB_ACCESS_TOKEN, 'GITHUB_ACCESS_TOKEN')
+      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
       await GithubClient.runFromCli(
         GITHUB_REPO_OWNER ?? 'pixiv',
         GITHUB_REPO_NAME ?? 'charcoal',
         GITHUB_ACCESS_TOKEN,
-        GITHUB_DEFAULT_BRANCH ?? 'main'
+        GITHUB_DEFAULT_BRANCH ?? 'main',
+        OUTPUT_ROOT_DIR
       )
     }
   )
