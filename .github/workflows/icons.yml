@@ -69,4 +69,5 @@ jobs:
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: main
+          OUTPUT_ROOT_DIR: packages/icon-files/
         run: yarn icons-cli github:pr
