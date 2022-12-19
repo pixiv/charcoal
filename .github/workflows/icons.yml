@@ -7,6 +7,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  OUTPUT_ROOT_DIR: packages/icon-files/
+
 jobs:
   icons:
     runs-on: ubuntu-latest
@@ -43,17 +46,12 @@ jobs:
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-          OUTPUT_ROOT_DIR: packages/icon-files/
         run: yarn icons-cli figma:export
 
       - name: Optimize
-        env:
-          OUTPUT_ROOT_DIR: packages/icon-files/
         run: yarn icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
 
       - name: Generate source
-        env:
-          OUTPUT_ROOT_DIR: packages/icon-files/
         run: yarn icons-cli files:generate
 
       - name: Generate github token

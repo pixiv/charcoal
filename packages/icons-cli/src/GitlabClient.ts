@@ -1,5 +1,6 @@
 import type { CommitAction } from '@gitbeaker/core/dist/types/services/Commits'
 import { Gitlab } from '@gitbeaker/node'
+import path from 'path'
 import { getChangedFiles } from './getChangedFiles'
 
 type GitlabApi = InstanceType<typeof Gitlab>
@@ -12,11 +13,12 @@ export class GitlabClient {
     host: string,
     projectId: number,
     privateToken: string,
-    defaultBranch: string
+    defaultBranch: string,
+    outputDir: string
   ) {
     const client = new this(host, projectId, privateToken, defaultBranch)
-
-    const diff = await client.createActionsFromDiff()
+    const outputDirFullPath = path.resolve(process.cwd(), outputDir)
+    const diff = await client.createActionsFromDiff(outputDirFullPath)
     // eslint-disable-next-line no-console
     console.log(`${diff.length} files are changed`)
     if (diff.length === 0) {
@@ -54,10 +56,10 @@ export class GitlabClient {
     return `[icons-cli] Update icons ${this.now.toDateString()}`
   }
 
-  async createActionsFromDiff(): Promise<CommitAction[]> {
+  async createActionsFromDiff(outputDir: string): Promise<CommitAction[]> {
     const actions: CommitAction[] = []
 
-    for await (const file of getChangedFiles()) {
+    for await (const file of getChangedFiles(outputDir)) {
       actions.push({
         action:
           file.status === 'untracked'

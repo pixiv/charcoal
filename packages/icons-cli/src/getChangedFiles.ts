@@ -2,12 +2,10 @@ import { promises as fs, existsSync } from 'fs'
 import path from 'path'
 import { execp } from './utils'
 
-export const targetDir = path.resolve(process.cwd(), 'packages', 'icons')
-
 /**
  * dir 内で変更があったファイル情報を for await で回せるようにするやつ
  */
-export async function* getChangedFiles(dir = targetDir) {
+export async function* getChangedFiles(dir: string) {
   if (!existsSync(dir))
     throw new Error(`icons-cli: target directory not found (${dir})`)
   const gitStatus = await collectGitStatus()
