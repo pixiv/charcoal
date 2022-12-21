@@ -2059,7 +2059,7 @@ __metadata:
     "@react-aria/checkbox": ^3.2.3
     "@react-aria/dialog": ^3.2.1
     "@react-aria/focus": ^3.6.1
-    "@react-aria/overlays": ^3.9.1
+    "@react-aria/overlays": 3.9.1
     "@react-aria/radio": ^3.4.0
     "@react-aria/select": ^3.8.2
     "@react-aria/ssr": ^3.3.0
@@ -4673,6 +4673,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/overlays@npm:3.9.1":
+  version: 3.9.1
+  resolution: "@react-aria/overlays@npm:3.9.1"
+  dependencies:
+    "@babel/runtime": ^7.6.2
+    "@react-aria/i18n": ^3.4.1
+    "@react-aria/interactions": ^3.9.1
+    "@react-aria/utils": ^3.13.1
+    "@react-aria/visually-hidden": ^3.3.1
+    "@react-stately/overlays": ^3.3.1
+    "@react-types/button": ^3.5.1
+    "@react-types/overlays": ^3.6.1
+    "@react-types/shared": ^3.13.1
+    dom-helpers: ^5.2.1
+    react-transition-group: ^4.4.2
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 6812b68bd17491155b6e57297a1f61b83ca367189d8113042c403341a14eb79a8d5d7ee799861316b24e9414c3b62a59d8d9413ff0b0e174567ed860267c031d
+  languageName: node
+  linkType: hard
+
 "@react-aria/overlays@npm:^3.12.0":
   version: 3.12.0
   resolution: "@react-aria/overlays@npm:3.12.0"
@@ -4692,28 +4714,6 @@ __metadata:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: e76d41b272b245d2cfbea99fe96dcfca34ffd245c5635a04ea82fa186ca35f6f2e49bf105aeba2ac5fecfe2d840098d63587d46cbed566494e7375ae0f74013c
-  languageName: node
-  linkType: hard
-
-"@react-aria/overlays@npm:^3.9.1":
-  version: 3.9.1
-  resolution: "@react-aria/overlays@npm:3.9.1"
-  dependencies:
-    "@babel/runtime": ^7.6.2
-    "@react-aria/i18n": ^3.4.1
-    "@react-aria/interactions": ^3.9.1
-    "@react-aria/utils": ^3.13.1
-    "@react-aria/visually-hidden": ^3.3.1
-    "@react-stately/overlays": ^3.3.1
-    "@react-types/button": ^3.5.1
-    "@react-types/overlays": ^3.6.1
-    "@react-types/shared": ^3.13.1
-    dom-helpers: ^5.2.1
-    react-transition-group: ^4.4.2
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 6812b68bd17491155b6e57297a1f61b83ca367189d8113042c403341a14eb79a8d5d7ee799861316b24e9414c3b62a59d8d9413ff0b0e174567ed860267c031d
   languageName: node
   linkType: hard
 
