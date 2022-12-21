@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "2.0.0-rc.2",
+  "version": "2.0.0-rc.1",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
@@ -27,8 +27,8 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^2.0.0-rc.2",
-    "@charcoal-ui/utils": "^2.0.0-rc.2"
+    "@charcoal-ui/foundation": "^2.0.0-rc.1",
+    "@charcoal-ui/utils": "^2.0.0-rc.1"
   },
   "files": [
     "src",
