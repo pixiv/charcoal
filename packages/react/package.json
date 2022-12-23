@@ -64,6 +64,7 @@
     "@react-aria/textfield": "^3.5.0",
     "@react-aria/visually-hidden": "^3.2.3",
     "polished": "^4.1.4",
+    "react-spring": "^9.0.0",
     "react-stately": "^3.19.0",
     "warning": "^4.0.3"
   },

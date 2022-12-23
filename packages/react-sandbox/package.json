@@ -41,7 +41,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
-    "react-spring": "^9.4.2",
     "rimraf": "^3.0.2",
     "styled-components": "^5.3.3",
     "typescript": "^4.5.5"
@@ -53,12 +52,12 @@
     "@charcoal-ui/theme": "^2.0.0-rc.2",
     "@charcoal-ui/utils": "^2.0.0-rc.2",
     "polished": "^4.1.4",
+    "react-spring": "^9.0.0",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1",
-    "react-spring": "^9.0.0-beta.34",
     "styled-components": ">=5.1.1"
   },
   "files": [
