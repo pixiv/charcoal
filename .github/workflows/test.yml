@@ -1,4 +1,4 @@
-name: test
+name: CI
 on:
   push:
     branches:
@@ -9,7 +9,19 @@ on:
       - main
 
 jobs:
-  test:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+      - run: yarn build
+
+  build-storybook:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,22 +31,72 @@ jobs:
           node-version-file: '.node-version'
           cache: yarn
 
-      - name: Prepare deps
-        run: |
-          yarn install --immutable --inline-builds
-          yarn build
+      - run: yarn install --immutable --inline-builds
+      - run: yarn build
+      - run: yarn build-storybook
 
-      # TODO: jobを分けてビルド結果をキャッシュして並列化
-      - name: Test
-        run: |
-          yarn test
-          yarn lint
-          yarn typecheck:config
-          yarn typecheck
+  build-storybook-vite:
+    runs-on: ubuntu-latest
 
-      - name: Check if Storybook builds
-        # storybook の vite build が OOM で落ちることがある
-        # これだけ違う job に分離して強い runner で動かすと良いかも？
-        run: |
-          yarn build-storybook
-          NODE_OPTIONS=--max_old_space_size=6144 USE_VITE=1 yarn build-storybook
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+      - run: yarn build
+      - run: yarn build-storybook
+        env:
+          NODE_OPTIONS: --max_old_space_size=6144
+          USE_VITE: '1'
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+      - run: yarn test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+      - run: yarn lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+      - run: yarn build
+      - run: yarn typecheck
+
+  typecheck-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+      - run: yarn typecheck:config
