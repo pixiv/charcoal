@@ -1,8 +1,9 @@
 import React, { useContext, useRef } from 'react'
 import {
+  AriaModalOverlayProps,
+  Overlay,
   OverlayContainer,
-  OverlayProps,
-  useModal,
+  useModalOverlay,
   useOverlay,
   usePreventScroll,
 } from '@react-aria/overlays'
@@ -19,13 +20,15 @@ import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 
-export type ModalProps = OverlayProps &
+export type ModalProps = AriaModalOverlayProps &
   AriaDialogProps & {
     children: React.ReactNode
     zIndex?: number
     title: string
     size?: 'S' | 'M' | 'L'
     bottomSheet?: boolean | 'full'
+    isOpen: boolean
+    onClose: () => void
 
     // NOTICE: デフォルト値を与えてはならない
     // （たとえば document.body をデフォルト値にすると SSR できなくなる）
@@ -49,11 +52,29 @@ export default function Modal({
     isOpen = false,
   } = props
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(typeof window !== 'undefined' ? document.createElement('div'): null)
   const { overlayProps, underlayProps } = useOverlay(props, ref)
 
   usePreventScroll()
-  const { modalProps } = useModal()
+  const { modalProps } = useModalOverlay(
+    props,
+    {
+      close: onClose,
+      isOpen: isOpen,
+      // these props are not used actually.
+      // https://github.com/adobe/react-spectrum/blob/df14e3fb129b94b310f0397a701b83f006b51dfe/packages/%40react-aria/overlays/src/useModalOverlay.ts
+      open: () => {
+        // nope
+      },
+      setOpen: () => {
+        // nope
+      },
+      toggle: () => {
+        // nope
+      },
+    },
+    ref
+  )
 
   const { dialogProps, titleProps } = useDialog(props, ref)
 
@@ -82,7 +103,7 @@ export default function Modal({
   return transition(
     ({ backgroundColor, transform }, item) =>
       item && (
-        <OverlayContainer portalContainer={portalContainer}>
+        <Overlay>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}
@@ -113,7 +134,7 @@ export default function Modal({
               </ModalDialog>
             </FocusScope>
           </ModalBackground>
-        </OverlayContainer>
+        </Overlay>
       )
   )
 }
