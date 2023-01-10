@@ -2,7 +2,6 @@ import React, { useContext, useRef } from 'react'
 import {
   AriaModalOverlayProps,
   Overlay,
-  OverlayContainer,
   useModalOverlay,
   useOverlay,
   usePreventScroll,
