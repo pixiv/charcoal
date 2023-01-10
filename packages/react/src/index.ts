@@ -36,6 +36,12 @@ export {
 export { default as Icon, type IconProps } from './components/Icon'
 export { default as Modal, type ModalProps } from './components/Modal'
 export {
+  ModalHeader,
+  ModalAlign,
+  ModalBody,
+  ModalButtons,
+} from './components/Modal/ModalPlumbing'
+export {
   default as LoadingSpinner,
   LoadingSpinnerIcon,
 } from './components/LoadingSpinner'

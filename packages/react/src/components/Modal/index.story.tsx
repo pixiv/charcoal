@@ -46,10 +46,10 @@ const DefaultStory = (args: ModalProps) => {
       <Button onClick={() => state.open()}>Open Modal</Button>
 
       <Modal
+        {...args}
         isOpen={state.isOpen}
         onClose={() => state.close()}
         isDismissable
-        {...args}
       >
         <ModalHeader />
         <ModalBody>
@@ -109,11 +109,11 @@ const FullBottomSheetStory = (args: ModalProps) => {
       <Button onClick={() => state.open()}>Open Modal</Button>
 
       <Modal
-        isOpen={state.isOpen}
-        onClose={() => state.close()}
+        {...args}
         isDismissable
         bottomSheet="full"
-        {...args}
+        isOpen={state.isOpen}
+        onClose={() => state.close()}
       >
         <ModalHeader />
         <ModalBody>
@@ -164,11 +164,11 @@ const BottomSheetStory = (args: ModalProps) => {
       <Button onClick={() => state.open()}>Open Modal</Button>
 
       <Modal
+        {...args}
         isOpen={state.isOpen}
         onClose={() => state.close()}
         bottomSheet
         isDismissable
-        {...args}
       >
         <ModalHeader />
         <ModalBody>

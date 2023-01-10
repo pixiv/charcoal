@@ -2,37 +2,13 @@ import path from 'path'
 import glob from 'fast-glob'
 import fs from 'fs-extra'
 
-export const generateSource = async (outputDir: string) => {
-  const svgRoot = path.join(outputDir, 'svg')
-  const tsPath = path.join(outputDir, 'src/icons.ts')
+const generateIconSvgEmbededSource = (svgString: string) => {
+  const str = svgString.replace(/\r?\n/g, '')
 
-  const icons = (await glob('**/*.svg', { cwd: svgRoot }))
-    .map(
-      (path) => path.slice(0, -4) // e.g. '16/Add.svg' -> '16/Add'
-    )
-    .sort()
-  await fs.ensureFile(tsPath)
-  await fs.writeFile(tsPath, generateTypeDefinition(icons))
+  return `/** This file is auto generated. DO NOT EDIT BY HAND. */
+export default '${str}'
+`
 }
-
-const generateTypeDefinition = (
-  icons: string[]
-) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
-
-const icons = {
-${icons.map((name) => `  '${name}': require('../svg/${name}.svg'),`).join('\n')}
-} as const;
-
-export default icons;
-export type KnownIconFile = keyof typeof icons;
-export const KNOWN_ICON_FILES = Object.keys(icons) as KnownIconFile[];
-`
-
-const generateIconSvgEmbededSource = (
-  svgString: string
-) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
-export default '${svgString}'
-`
 
 const generateMjsEntrypoint = (
   icons: string[]
@@ -49,7 +25,7 @@ const generateCjsEntrypoint = (
   icons: string[]
 ) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
-export default {
+module.exports = {
 ${icons
   .map((it) => `  '${it}': () => import('./${it}.js').then(m => m.default)`)
   .join(',\n')}
