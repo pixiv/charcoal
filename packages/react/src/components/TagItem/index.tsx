@@ -20,7 +20,6 @@ export type TagItemProps = {
   label: string
   translatedLabel?: string
   color?: string
-  bgColor?: string
   status?: 'default' | 'active' | 'inactive'
   size?: keyof typeof sizeMap
   disabled?: boolean
@@ -31,8 +30,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
     {
       label,
       translatedLabel,
-      color,
-      bgColor = '#7ACCB1',
+      color = '#7ACCB1',
       size = 'M',
       disabled,
       status = 'default',
@@ -57,7 +55,6 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
     return (
       <TagItemRoot
         ref={ref}
-        bgColor={bgColor}
         color={color}
         size={hasTranslatedLabel ? 'M' : size}
         status={status}
@@ -83,7 +80,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
 
 export default memo(TagItem)
 
-type TagItemRootProps = Pick<TagItemProps, 'bgColor' | 'color' | 'status'> &
+type TagItemRootProps = Pick<TagItemProps, 'color' | 'status'> &
   Required<Pick<TagItemProps, 'size'>>
 
 const TagItemRoot = styled.a<TagItemRootProps>`
@@ -91,8 +88,7 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   display: inline-flex;
   gap: ${({ theme }) => px(theme.spacing[8])};
   align-items: center;
-  background: ${({ bgColor }) => bgColor};
-  color: ${({ color, theme }) => color ?? theme.color.text5};
+  background: ${({ color }) => color};
   text-decoration: none;
 
   cursor: pointer;
@@ -104,12 +100,13 @@ const TagItemRoot = styled.a<TagItemRootProps>`
       status !== 'active' && size === 'M' && o.padding.horizontal(24),
       status !== 'active' && size === 'S' && o.padding.horizontal(16),
       status === 'inactive' && o.bg.surface3,
-      status === 'inactive' && o.font.text2,
+      status === 'inactive' ? o.font.text2 : o.font.text5,
       ...(status === 'active' ? [o.padding.left(16), o.padding.right(8)] : []),
     ])}
 
   ${disabledSelector} {
     ${theme((o) => [o.disabled])}
+    cursor: default;
   }
 `
 
@@ -137,5 +134,3 @@ const TranslatedLabelRoot = styled.div`
 const TranslatedLabelInner = styled.div`
   ${theme((o) => [o.typography(12).bold])}
 `
-
-
