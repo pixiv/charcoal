@@ -132,7 +132,7 @@ export function usePopupPosition(
     forceDirection = false,
     deps,
     padding = 16,
-    tooltipMargin = 16,
+    tooltipMargin = 8,
   }: PopupPositionOptions
 ) {
   const size = useElementSize(ref, deps)
