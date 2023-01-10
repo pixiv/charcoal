@@ -1,4 +1,5 @@
 import { Octokit } from '@octokit/rest'
+import path from 'path'
 import { getChangedFiles } from './getChangedFiles'
 
 type RefResponse = ReturnType<GithubClient['createBranch']> extends Promise<
@@ -23,11 +24,12 @@ export class GithubClient {
     repoOwner: string,
     repoName: string,
     token: string,
-    defaultBranch: string
+    defaultBranch: string,
+    outputDir: string
   ) {
     const client = new this(repoOwner, repoName, token, defaultBranch)
-
-    const diff = await client.createTreeFromDiff()
+    const outputDirFullPath = path.resolve(process.cwd(), outputDir)
+    const diff = await client.createTreeFromDiff(outputDirFullPath)
     // eslint-disable-next-line no-console
     console.log(`${diff.length} files are changed`)
     if (diff.length === 0) {
@@ -67,10 +69,10 @@ export class GithubClient {
     return `[icons-cli] Update icons ${this.now.toDateString()}`
   }
 
-  async createTreeFromDiff(): Promise<TreeItem[]> {
+  async createTreeFromDiff(outputDir: string): Promise<TreeItem[]> {
     const tree: TreeItem[] = []
 
-    for await (const file of getChangedFiles()) {
+    for await (const file of getChangedFiles(outputDir)) {
       const item = {
         path: file.relativePath,
         // 100 はファイル 644 は実行不可なファイルであるという意味

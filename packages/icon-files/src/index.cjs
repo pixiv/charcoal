@@ -1,6 +1,6 @@
 /** This file is auto generated. DO NOT EDIT BY HAND. */
 
-export default {
+module.exports = {
   '16/Add': () => import('./16/Add.js').then(m => m.default),
   '16/ArrowDown': () => import('./16/ArrowDown.js').then(m => m.default),
   '16/Artwork': () => import('./16/Artwork.js').then(m => m.default),

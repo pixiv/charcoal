@@ -6,7 +6,7 @@ import { GithubClient } from './GitHubClient'
 import { GitlabClient } from './GitlabClient'
 import { DEFAULT_CURRENT_COLOR_TARGET } from './svg/optimizeSvg'
 import { optimizeSvgInDirectory } from './svg/optimizeSvgInDirectory'
-import { generateIconSource, generateSource } from './generateSource'
+import { generateIconSource } from './generateSource'
 import { mustBeDefined } from './utils'
 
 /**
@@ -79,16 +79,6 @@ void yargs
     }
   )
   .command(
-    'source:generate',
-    'Enumerate svg files in output directory and generate icons.ts',
-    {},
-    async () => {
-      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
-
-      await generateSource(OUTPUT_ROOT_DIR)
-    }
-  )
-  .command(
     'files:generate',
     'Enumerate svg files in output directory and generate icon files',
     {},
@@ -109,12 +99,14 @@ void yargs
     async () => {
       mustBeDefined(GITLAB_PROJECT_ID, 'GITLAB_PROJECT_ID')
       mustBeDefined(GITLAB_ACCESS_TOKEN, 'GITLAB_ACCESS_TOKEN')
+      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
       await GitlabClient.runFromCli(
         GITLAB_HOST ?? 'https://gitlab.com',
         Number(GITLAB_PROJECT_ID),
         GITLAB_ACCESS_TOKEN,
-        GITLAB_DEFAULT_BRANCH ?? 'main'
+        GITLAB_DEFAULT_BRANCH ?? 'main',
+        OUTPUT_ROOT_DIR
       )
     }
   )
@@ -124,12 +116,14 @@ void yargs
     {},
     async () => {
       mustBeDefined(GITHUB_ACCESS_TOKEN, 'GITHUB_ACCESS_TOKEN')
+      mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
       await GithubClient.runFromCli(
         GITHUB_REPO_OWNER ?? 'pixiv',
         GITHUB_REPO_NAME ?? 'charcoal',
         GITHUB_ACCESS_TOKEN,
-        GITHUB_DEFAULT_BRANCH ?? 'main'
+        GITHUB_DEFAULT_BRANCH ?? 'main',
+        OUTPUT_ROOT_DIR
       )
     }
   )

@@ -6,8 +6,8 @@ __snapshots__/
 /storybook-static/
 /coverage/
 .next/
+lerna.json
 
 LICENSE
 /packages/theme/theme.json
-/packages/icons/src/icons.ts
 /packages/icon-files/src/
