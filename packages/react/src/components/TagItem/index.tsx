@@ -5,7 +5,7 @@ import React, {
   ComponentPropsWithoutRef,
 } from 'react'
 import { useObjectRef } from '@react-aria/utils'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import { disabledSelector, px } from '@charcoal-ui/utils'
 import { AriaButtonProps, useButton } from '@react-aria/button'
@@ -19,7 +19,8 @@ const sizeMap = {
 export type TagItemProps = {
   label: string
   translatedLabel?: string
-  color?: string
+  bgColor?: string
+  bgImage?: string
   status?: 'default' | 'active' | 'inactive'
   size?: keyof typeof sizeMap
   disabled?: boolean
@@ -30,7 +31,8 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
     {
       label,
       translatedLabel,
-      color = '#7ACCB1',
+      bgColor = '#7ACCB1',
+      bgImage,
       size = 'M',
       disabled,
       status = 'default',
@@ -55,24 +57,23 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
     return (
       <TagItemRoot
         ref={ref}
-        color={color}
         size={hasTranslatedLabel ? 'M' : size}
         status={status}
         {...buttonProps}
       >
-        {hasTranslatedLabel ? (
-          <TranslatedLabelRoot>
-            <TranslatedLabelInner>
-              <Label>{translatedLabel}</Label>
-            </TranslatedLabelInner>
+        <Background bgColor={bgColor} bgImage={bgImage} />
+
+        <Inner>
+          <LabelWrapper isTranslate={hasTranslatedLabel}>
+            {hasTranslatedLabel && (
+              <TranslatedLabel>
+                <Label>{translatedLabel}</Label>
+              </TranslatedLabel>
+            )}
             <Label>{label}</Label>
-          </TranslatedLabelRoot>
-        ) : (
-          <LabelRoot>
-            <Label>{label}</Label>
-          </LabelRoot>
-        )}
-        {status === 'active' && <Icon name="16/Remove" />}
+          </LabelWrapper>
+          {status === 'active' && <Icon name="16/Remove" />}
+        </Inner>
       </TagItemRoot>
     )
   }
@@ -80,18 +81,18 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
 
 export default memo(TagItem)
 
-type TagItemRootProps = Pick<TagItemProps, 'color' | 'status'> &
+type TagItemRootProps = Pick<TagItemProps, 'status'> &
   Required<Pick<TagItemProps, 'size'>>
 
 const TagItemRoot = styled.a<TagItemRootProps>`
+  position: relative;
   height: ${({ size }) => sizeMap[size]}px;
   display: inline-flex;
-  gap: ${({ theme }) => px(theme.spacing[8])};
   align-items: center;
-  background: ${({ color }) => color};
+  justify-content: center;
   text-decoration: none;
-
   cursor: pointer;
+  overflow: hidden;
 
   ${({ size, status }) =>
     theme((o) => [
@@ -110,8 +111,53 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   }
 `
 
-const LabelRoot = styled.div`
+const Background = styled.div<Pick<TagItemProps, 'bgColor' | 'bgImage'>>`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: ${({ bgColor }) => bgColor};
+
+  ${({ bgImage }) =>
+    bgImage !== undefined &&
+    css`
+      ${theme((o) => [o.bg.surface4])}
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-image: url(${bgImage});
+        mix-blend-mode: overlay;
+      }
+    `}
+`
+
+const Inner = styled.div`
+  display: inline-flex;
+  gap: ${({ theme }) => px(theme.spacing[8])};
+  align-items: center;
+  z-index: 2;
+`
+
+const labelCSS = css`
   ${theme((o) => [o.typography(14).bold])}
+`
+const translateLabelCSS = css`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 10px;
+`
+const LabelWrapper = styled.div<{ isTranslate?: boolean }>`
+  ${({ isTranslate }) => (isTranslate ?? false ? translateLabelCSS : labelCSS)}
 `
 
 const Label = styled.span`
@@ -124,13 +170,6 @@ const Label = styled.span`
   line-height: inherit;
 `
 
-const TranslatedLabelRoot = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-size: 10px;
-`
-
-const TranslatedLabelInner = styled.div`
+const TranslatedLabel = styled.div`
   ${theme((o) => [o.typography(12).bold])}
 `

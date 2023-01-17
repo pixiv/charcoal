@@ -8,7 +8,7 @@ export default {
   title: 'TagItem',
   component: TagItem,
   argTypes: {
-    color: {
+    bgColor: {
       control: {
         type: 'color',
       },
@@ -21,14 +21,14 @@ export const Default: Story<TagItemProps> = (props) => {
 }
 Default.args = {
   label: '#女の子',
-  color: '#7ACCB1',
+  bgColor: '#7ACCB1',
   href: '',
   rel: '',
   target: '',
 }
 
 export const Playground: Story<TagItemProps> = ({
-  color,
+  bgColor,
   label,
   translatedLabel,
 }) => {
@@ -40,7 +40,7 @@ export const Playground: Story<TagItemProps> = ({
             label={label}
             size="M"
             status="default"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -51,7 +51,7 @@ export const Playground: Story<TagItemProps> = ({
             translatedLabel={translatedLabel}
             size="M"
             status="default"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -63,7 +63,7 @@ export const Playground: Story<TagItemProps> = ({
             label={label}
             size="M"
             status="active"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -74,7 +74,7 @@ export const Playground: Story<TagItemProps> = ({
             translatedLabel={translatedLabel}
             size="M"
             status="active"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -86,7 +86,7 @@ export const Playground: Story<TagItemProps> = ({
             label={label}
             size="M"
             status="inactive"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -96,7 +96,7 @@ export const Playground: Story<TagItemProps> = ({
             size="M"
             status="inactive"
             disabled
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -106,7 +106,7 @@ export const Playground: Story<TagItemProps> = ({
             translatedLabel={translatedLabel}
             size="M"
             status="inactive"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -117,7 +117,7 @@ export const Playground: Story<TagItemProps> = ({
             size="M"
             status="inactive"
             disabled
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -128,7 +128,7 @@ export const Playground: Story<TagItemProps> = ({
             label={label}
             size="S"
             status="default"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -139,7 +139,7 @@ export const Playground: Story<TagItemProps> = ({
             label={label}
             size="S"
             status="active"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -150,7 +150,7 @@ export const Playground: Story<TagItemProps> = ({
             label={label}
             size="S"
             status="inactive"
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -160,7 +160,7 @@ export const Playground: Story<TagItemProps> = ({
             size="S"
             status="inactive"
             disabled
-            color={color}
+            bgColor={bgColor}
             onClick={action('click')}
           />
         </div>
@@ -184,5 +184,5 @@ const Container = styled.div`
 Playground.args = {
   label: '#女の子',
   translatedLabel: 'girl',
-  color: '#7ACCB1',
+  bgColor: '#7ACCB1',
 }
