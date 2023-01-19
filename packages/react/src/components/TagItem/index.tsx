@@ -85,6 +85,7 @@ type TagItemRootProps = Pick<TagItemProps, 'status'> &
   Required<Pick<TagItemProps, 'size'>>
 
 const TagItemRoot = styled.a<TagItemRootProps>`
+  isolation: isolate;
   position: relative;
   height: ${({ size }) => sizeMap[size]}px;
   display: inline-flex;
