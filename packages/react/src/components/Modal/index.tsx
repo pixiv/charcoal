@@ -36,6 +36,30 @@ export type ModalProps = AriaModalOverlayProps &
 
 const DEFAULT_Z_INDEX = 10
 
+/**
+ * モーダルコンポーネント。
+ *
+ * @example アプリケーションルートで `<OverlayProvider>` で囲った上で利用する
+ * ```tsx
+ * import {
+ *   OverlayProvider,
+ *   Modal,
+ *   ModalHeader,
+ *   ModalBody,
+ *   ModalButtons
+ * } from '@charcoal-ui/react'
+ *
+ * <OverlayProvider>
+ *   <App>
+ *     <Modal isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
+ *       <ModalHeader />
+ *       <ModalBody>...</ModalBody>
+ *       <ModalButtons>...</ModalButtons>
+ *     </Modal>
+ *   </App>
+ * </OverlayProvider>
+ * ```
+ */
 export default function Modal({
   children,
   zIndex = DEFAULT_Z_INDEX,
