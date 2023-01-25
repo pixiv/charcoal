@@ -52,7 +52,7 @@
     "@charcoal-ui/styled": "^2.0.1",
     "@charcoal-ui/theme": "^2.0.1",
     "@charcoal-ui/utils": "^2.0.1",
-    "@react-aria/button": "^3.6.2",
+    "@react-aria/button": "^3.6.3",
     "@react-aria/checkbox": "^3.2.3",
     "@react-aria/dialog": "^3.2.1",
     "@react-aria/focus": "^3.6.1",
