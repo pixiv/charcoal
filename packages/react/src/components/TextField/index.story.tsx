@@ -22,6 +22,7 @@ export default {
     disabled: false,
     required: false,
     invalid: false,
+    autoFocus: false
   },
 }
 
