@@ -4,7 +4,8 @@ export class PixivIconLoadError extends Error {
 
     // TODO: TypeScript 4.6+ になるとここに `{ cause }` が渡せる
     super(message)
-    Object.setPrototypeOf(this, new.target)
+    this.name = 'PixivIconLoadError'
+    Object.setPrototypeOf(this, new.target.prototype)
   }
 }
 
