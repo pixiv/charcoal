@@ -5,8 +5,8 @@ import { TokenInjector } from '@charcoal-ui/styled'
 import { ThemeMap } from '@charcoal-ui/styled/src/TokenInjector'
 import { CharcoalTheme } from '@charcoal-ui/theme'
 
-import { OverlayProvider } from '@react-aria/overlays'
-import { SSRProvider } from '@react-aria/ssr'
+import { OverlayProvider } from './OverlayProvider'
+import { SSRProvider } from './SSRProvider'
 
 interface Props {
   themeMap: ThemeMap<CharcoalTheme>
