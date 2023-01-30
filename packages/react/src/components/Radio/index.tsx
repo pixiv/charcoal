@@ -76,6 +76,7 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     display: block;
     box-sizing: border-box;
 
+    margin: 0;
     padding: 6px;
 
     width: 20px;
@@ -84,14 +85,14 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     ${({ hasError = false }) =>
       theme((o) => [
         o.borderRadius('oval'),
-        o.bg.text5.hover.press,
+        o.bg.surface1.hover.press,
         hasError && o.outline.assertive,
       ])};
 
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;
-      border-color: ${({ theme }) => theme.color.text4};
+      border-color: ${({ theme }) => theme.color.text3};
     }
 
     &:checked {
@@ -113,7 +114,7 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
 `
 
 const RadioLabel = styled.div`
-  ${theme((o) => [o.typography(14)])}
+  ${theme((o) => [o.typography(14), o.font.text2])}
 `
 
 export type RadioGroupProps = React.PropsWithChildren<{
