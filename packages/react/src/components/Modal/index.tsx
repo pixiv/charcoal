@@ -39,7 +39,7 @@ const DEFAULT_Z_INDEX = 10
 /**
  * モーダルコンポーネント。
  *
- * @example アプリケーションルートで `<OverlayProvider>` で囲った上で利用する
+ * @example アプリケーションルートで `<OverlayProvider>` ないし `<CharcoalProvider>` で囲った上で利用する
  * ```tsx
  * import {
  *   OverlayProvider,
