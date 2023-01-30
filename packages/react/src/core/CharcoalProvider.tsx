@@ -23,13 +23,13 @@ export function CharcoalProvider({
   children,
 }: React.PropsWithChildren<Props>) {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      {injectTokens && <TokenInjector theme={themeMap} />}
-      <SSRProvider>
+    <SSRProvider>
+      <ThemeProvider theme={defaultTheme}>
+        {injectTokens && <TokenInjector theme={themeMap} />}
         <ComponentAbstraction components={components}>
           <OverlayProvider>{children}</OverlayProvider>
         </ComponentAbstraction>
-      </SSRProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </SSRProvider>
   )
 }
