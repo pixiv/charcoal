@@ -8,12 +8,12 @@ import { CharcoalTheme } from '@charcoal-ui/theme'
 import { OverlayProvider } from './OverlayProvider'
 import { SSRProvider } from './SSRProvider'
 
-interface Props {
+export type CharcoalProviderProps = React.PropsWithChildren<{
   themeMap: ThemeMap<CharcoalTheme>
   defaultTheme?: CharcoalTheme
   injectTokens?: boolean
   components?: Partial<Components>
-}
+}>
 
 export function CharcoalProvider({
   themeMap,
@@ -21,7 +21,7 @@ export function CharcoalProvider({
   components = {},
   injectTokens = true,
   children,
-}: React.PropsWithChildren<Props>) {
+}: CharcoalProviderProps) {
   return (
     <SSRProvider>
       <ThemeProvider theme={defaultTheme}>
