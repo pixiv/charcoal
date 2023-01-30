@@ -123,5 +123,5 @@ const OptionCheckIcon = styled(Icon)<{ isSelected: boolean }>`
 `
 const OptionText = styled.span`
   display: block;
-  ${theme((o) => [o.typography(14)])}
+  ${theme((o) => [o.typography(14), o.font.text2])}
 `

@@ -58,6 +58,7 @@ export default function SwitchCheckbox(props: SwitchProps) {
 const Label = styled.label`
   display: inline-grid;
   grid-template-columns: auto 1fr;
+  align-items: center;
   gap: ${({ theme }) => px(theme.spacing[4])};
   cursor: pointer;
   outline: 0;
@@ -70,7 +71,7 @@ const Label = styled.label`
 `
 
 const LabelInner = styled.div`
-  ${theme((o) => o.typography(14))}
+  ${theme((o) => [o.typography(14), o.font.text2])}
 `
 
 const SwitchInput = styled.input.attrs({

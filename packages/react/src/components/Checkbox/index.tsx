@@ -118,5 +118,5 @@ const CheckboxInputOverlay = styled.div<{ checked?: boolean }>`
 `
 
 const InputLabel = styled.div`
-  ${theme((o) => [o.typography(14)])}
+  ${theme((o) => [o.typography(14), o.font.text2])}
 `

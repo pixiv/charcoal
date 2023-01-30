@@ -121,7 +121,7 @@ const DropdownSelector = <T extends Record<string, unknown>>({
               : props.placeholder}
           </DropdownButtonText>
 
-          <Icon name="16/Menu" />
+          <DropdownButtonIcon name="16/Menu" />
         </DropdownButton>
         {state.isOpen && (
           <DropdownPopover open={state.isOpen} onClose={() => state.close()}>
@@ -196,12 +196,16 @@ const DropdownButtonText = styled.span`
   ${theme((o) => [o.typography(14), o.font.text2])}
 `
 
+const DropdownButtonIcon = styled(Icon)`
+  ${theme((o) => [o.font.text2])}
+`
+
 const AssertiveText = styled.div<{ invalid: boolean }>`
   ${({ invalid }) =>
     theme((o) => [
       o.typography(14),
       o.margin.top(8),
-      invalid && o.font.assertive,
+      invalid ? o.font.assertive : o.font.text2,
     ])}
 `
 
