@@ -3,20 +3,19 @@
   "version": "2.2.0",
   "license": "Apache-2.0",
   "type": "module",
+  "source": "./src/index.ts",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.module.js",
   "exports": {
     "require": "./dist/index.cjs",
-    "default": "./dist/index.js"
+    "default": "./dist/index.modern.js"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "run-p --print-label 'build:*'",
-    "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
-    "clean": "rimraf dist .tsbuildinfo"
+    "build": "microbundle --compress=false -f modern,esm,cjs --tsconfig tsconfig.build.json --jsx React.createElement --jsxFragment React.Fragment",
+    "typecheck": "tsc --noEmit --project tsconfig.build.json",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@react-types/switch": "^3.1.2",
@@ -40,13 +39,12 @@
     "@types/warning": "^3.0.0",
     "jest-axe": "^5.0.1",
     "jest-styled-components": "^7.0.8",
-    "npm-run-all": "^4.1.5",
+    "microbundle": "^0.14.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
     "rimraf": "^3.0.2",
     "styled-components": "^5.3.3",
-    "tsup": "^6.5.0",
     "typescript": "^4.5.5"
   },
   "dependencies": {

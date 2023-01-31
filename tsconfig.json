@@ -1,4 +1,3 @@
-// ビルドツールなどの設定ファイルのためのTSConfig
 {
   "compilerOptions": {
     "target": "esnext",
@@ -19,7 +18,6 @@
     "**/*.config.cjs",
     "**/*.config.mjs",
     "**/*.config.js",
-    "**/*.config.ts",
     "misc/*.mjs",
     "jest.setup.ts",
     "**/.*.cjs",
