@@ -114,6 +114,7 @@ const OptionRoot = styled.li<{ mode?: ListMode }>`
 `
 const OptionCheckIcon = styled(Icon)<{ isSelected: boolean }>`
   visibility: hidden;
+  ${theme((o) => [o.font.text2])}
 
   ${({ isSelected }) =>
     isSelected &&
