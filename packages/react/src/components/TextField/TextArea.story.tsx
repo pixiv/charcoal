@@ -3,10 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
-import TextField, {
-  MultiLineTextFieldProps,
-  TextFieldProps,
-} from '.'
+import TextField, { MultiLineTextFieldProps, TextFieldProps } from '.'
 import { px } from '@charcoal-ui/utils'
 
 export default {
