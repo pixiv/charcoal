@@ -18,16 +18,33 @@ type Props = Omit<
 >
 export const Default: Story<Props> = (props) => {
   return (
-    <DropdownSelector
-      {...props}
-      placeholder={props.placeholder ?? 'Drop Down menu'}
-      onChange={action('change')}
-      onOpenChange={action('open')}
-    >
-      <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
-      <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
-      <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
-    </DropdownSelector>
+    <>
+      <div style={{ marginBottom: '1em', width: 500 }}>
+        <DropdownSelector
+          {...props}
+          placeholder={props.placeholder ?? 'Drop Down menu'}
+          onChange={action('change')}
+          onOpenChange={action('open')}
+        >
+          <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
+          <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
+          <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
+        </DropdownSelector>
+      </div>
+
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          {...props}
+          placeholder={props.placeholder ?? 'Drop Down menu'}
+          onChange={action('change')}
+          onOpenChange={action('open')}
+        >
+          <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
+          <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
+          <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
+        </DropdownSelector>
+      </div>
+    </>
   )
 }
 Default.args = {
