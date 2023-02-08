@@ -11,6 +11,7 @@ import Popover from './Popover'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
 import { theme } from '../../styled'
+import { useSyncExternalStore } from 'use-sync-external-store/shim'
 
 import type { CollectionBase } from '@react-types/shared'
 import type { ReactNode } from 'react'
@@ -59,6 +60,24 @@ const DropdownSelector = <T extends Record<string, unknown>>({
 }: DropdownSelectorProps<T>) => {
   const { visuallyHiddenProps } = useVisuallyHidden()
   const triggerRef = useRef<HTMLButtonElement>(null)
+  const buttonWidth = useSyncExternalStore(
+    (onStoreSnapshot) => {
+      const el = triggerRef.current
+      if (!el)
+        return () => {
+          /** */
+        }
+
+      onStoreSnapshot()
+      el.addEventListener('resize', onStoreSnapshot)
+
+      return () => {
+        el.removeEventListener('resize', onStoreSnapshot)
+      }
+    },
+    () => triggerRef.current?.offsetWidth,
+    () => undefined
+  )
   const selectProps = useMemo<SelectProps<T>>(
     () => ({
       ...props,
@@ -124,7 +143,11 @@ const DropdownSelector = <T extends Record<string, unknown>>({
           <DropdownButtonIcon name="16/Menu" />
         </DropdownButton>
         {state.isOpen && (
-          <DropdownPopover open={state.isOpen} onClose={() => state.close()}>
+          <DropdownPopover
+            state={state}
+            triggerRef={triggerRef}
+            width={buttonWidth}
+          >
             <Listbox {...menuProps} state={state} mode={mode} />
           </DropdownPopover>
         )}
@@ -209,10 +232,7 @@ const AssertiveText = styled.div<{ invalid: boolean }>`
     ])}
 `
 
-const DropdownPopover = styled(Popover)`
-  position: absolute;
-  width: 100%;
-
-  top: 100%;
+const DropdownPopover = styled(Popover)<{ width?: number }>`
+  width: ${({ width }) => (width !== undefined ? `${width}px` : 'auto')};
   margin-top: 2px;
 `
