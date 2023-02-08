@@ -1,45 +1,37 @@
-import { FocusScope } from '@react-aria/focus'
-import { DismissButton, useOverlay } from '@react-aria/overlays'
+import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import React, {
   FC,
   useRef,
   useMemo,
   PropsWithChildren,
   memo,
-  CSSProperties,
+  RefObject,
 } from 'react'
-import { mergeProps } from '@react-aria/utils'
+import type { OverlayTriggerState } from 'react-stately'
 
 type Props = PropsWithChildren<{
-  open?: boolean
-  onClose?: () => void
-  style?: CSSProperties
   className?: string
+  triggerRef: RefObject<Element>
+  state: OverlayTriggerState
 }>
 
-const Popover: FC<Props> = ({ open, onClose, children, ...props }) => {
+const Popover: FC<Props> = ({ children, state, triggerRef, className }) => {
   const ref = useRef<HTMLDivElement>(null)
 
-  const { overlayProps } = useOverlay(
-    useMemo(
-      () => ({
-        isOpen: open,
-        onClose,
-        shouldCloseOnBlur: true,
-        isDismissable: true,
-      }),
-      [onClose, open]
-    ),
-    ref
+  const { popoverProps, underlayProps } = usePopover(
+    useMemo(() => ({ triggerRef, popoverRef: ref }), [triggerRef]),
+    state
   )
 
   return (
-    <FocusScope restoreFocus>
-      <div {...mergeProps(overlayProps, props)} ref={ref}>
+    <Overlay>
+      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
+      <div {...popoverProps} ref={ref} className={className}>
+        <DismissButton onDismiss={() => state.close()} />
         {children}
-        <DismissButton onDismiss={onClose} />
+        <DismissButton onDismiss={() => state.close()} />
       </div>
-    </FocusScope>
+    </Overlay>
   )
 }
 
