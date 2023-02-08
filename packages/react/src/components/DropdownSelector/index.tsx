@@ -171,6 +171,7 @@ export const DropdownSelectorItem = Item
 const DropdownSelectorRoot = styled.div`
   position: relative;
   display: inline-block;
+  width: 100%;
 
   ${disabledSelector} {
     cursor: default;
@@ -194,7 +195,7 @@ const DropdownButton = styled.button<{ invalid: boolean }>`
   align-items: center;
 
   height: 40px;
-  width: 288px;
+  width: 100%;
   box-sizing: border-box;
   cursor: pointer;
 
