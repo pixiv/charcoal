@@ -1978,7 +1978,7 @@ __metadata:
     typescript: ^4.5.5
     yargs: ^17.3.1
   bin:
-    icons-cli: ./dist/index.cjs
+    icons-cli: ./dist/index.js
   languageName: unknown
   linkType: soft
 
