@@ -29,8 +29,10 @@ export type ModalProps = AriaModalOverlayProps &
     isOpen: boolean
     onClose: () => void
 
-    // NOTICE: デフォルト値を与えてはならない
-    // （たとえば document.body をデフォルト値にすると SSR できなくなる）
+    /**
+     * https://github.com/adobe/react-spectrum/issues/3787
+     * Next.jsで使用する際に発生するエラーの一時的な回避策でdocument.bodyを指定する必要がある
+     */
     portalContainer?: HTMLElement
   }
 
@@ -126,7 +128,7 @@ export default function Modal({
   return transition(
     ({ backgroundColor, transform }, item) =>
       item && (
-        <Overlay>
+        <Overlay portalContainer={portalContainer}>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}
