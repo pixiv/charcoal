@@ -80,7 +80,6 @@ export default function Modal({
   const ref = useRef<HTMLDivElement>(null)
   const { overlayProps, underlayProps } = useOverlay(props, ref)
 
-  usePreventScroll()
   const { modalProps } = useModalOverlay(
     props,
     {
