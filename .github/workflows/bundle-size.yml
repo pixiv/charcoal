@@ -10,4 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: preactjs/compressed-size-action@v2
         with:
-          pattern: './packages/**/dist/*.{ts,cjs,js,map}'
+          pattern: './packages/**/dist/*'
+          exclude: '**/*.map' # sourcemap は見ない
