@@ -19,7 +19,7 @@ type Props = Omit<
 export const Default: Story<Props> = (props) => {
   return (
     <>
-      <div style={{ marginBottom: '1em', width: "100%" }}>
+      <div style={{ marginBottom: '1em', width: '100%' }}>
         <DropdownSelector
           {...props}
           placeholder={props.placeholder ?? 'Drop Down menu'}
