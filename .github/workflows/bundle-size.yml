@@ -10,4 +10,12 @@ jobs:
       - uses: actions/checkout@v2
       - uses: preactjs/compressed-size-action@v2
         with:
-          pattern: './packages/**/dist/**/*.{ts,js,cjs}' # sourcemap は見ない
+          build-script: 'build'
+          clean-script: 'clean'
+
+          # パフォーマンス面の計測よりも、誤って変なものを bundle したことを検知したいので圧縮前で比較する
+          compression: 'none'
+
+          # sourcemap は見ない
+          # d.ts はたまに異常な数の union 型が展開されるとかは検知したいが見なくて良いかもしれない
+          pattern: './packages/**/dist/**/*.{ts,js,cjs}'
