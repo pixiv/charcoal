@@ -4,7 +4,6 @@ import {
   Overlay,
   useModalOverlay,
   useOverlay,
-  usePreventScroll,
 } from '@react-aria/overlays'
 import styled, { css, useTheme } from 'styled-components'
 import { theme } from '../../styled'
