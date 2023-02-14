@@ -127,5 +127,6 @@ const InputLabel = styled.div`
   ${theme((o) => [o.font.text2])}
 
   font-size: 14px;
+  /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
   line-height: 20px;
 `
