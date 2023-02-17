@@ -40,9 +40,11 @@ export function DropdownPopover({
           left: 0,
         }}
       >
-        <DismissButton onDismiss={() => state.close()} />
-        {children}
-        <DismissButton onDismiss={() => state.close()} />
+        <div style={{ margin: '2px 0' }}>
+          <DismissButton onDismiss={() => state.close()} />
+          {children}
+          <DismissButton onDismiss={() => state.close()} />
+        </div>
       </DropdownPopoverDiv>
     </FocusScope>
   )
