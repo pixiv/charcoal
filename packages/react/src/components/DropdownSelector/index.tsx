@@ -7,13 +7,13 @@ import { useSelect, HiddenSelect } from '@react-aria/select'
 import { useButton } from '@react-aria/button'
 import { SelectProps } from '@react-types/select'
 import Listbox, { ListboxProps } from './Listbox'
-import Popover from './Popover'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
 import { theme } from '../../styled'
 
 import type { CollectionBase } from '@react-types/shared'
 import type { ReactNode } from 'react'
+import { DropdownPopover } from './DropdownPopover'
 
 type LabelProps = {
   readonly showLabel?: boolean
@@ -124,7 +124,7 @@ const DropdownSelector = <T extends Record<string, unknown>>({
           <DropdownButtonIcon name="16/Menu" />
         </DropdownButton>
         {state.isOpen && (
-          <DropdownPopover open={state.isOpen} onClose={() => state.close()}>
+          <DropdownPopover state={state} triggerRef={triggerRef}>
             <Listbox {...menuProps} state={state} mode={mode} />
           </DropdownPopover>
         )}
@@ -207,12 +207,4 @@ const AssertiveText = styled.div<{ invalid: boolean }>`
       o.margin.top(8),
       invalid ? o.font.assertive : o.font.text2,
     ])}
-`
-
-const DropdownPopover = styled(Popover)`
-  position: absolute;
-  width: 100%;
-
-  top: 100%;
-  margin-top: 2px;
 `
