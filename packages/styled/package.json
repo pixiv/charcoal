@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/styled",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "license": "Apache-2.0",
   "type": "module",
   "source": "./src/index.ts",
@@ -29,9 +29,9 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^2.2.1",
-    "@charcoal-ui/theme": "^2.2.1",
-    "@charcoal-ui/utils": "^2.2.1",
+    "@charcoal-ui/foundation": "^2.3.0",
+    "@charcoal-ui/theme": "^2.3.0",
+    "@charcoal-ui/utils": "^2.3.0",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
