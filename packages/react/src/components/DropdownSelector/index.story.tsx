@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
+import React, { useState } from 'react'
 import DropdownSelector, {
   DropdownSelectorItem,
   DropdownSelectorProps,
@@ -78,6 +78,32 @@ export const Bottom: Story<DropdownSelectorProps> = (props) => {
         <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
         <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
         <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
+  )
+}
+
+export const Many: Story<DropdownSelectorProps> = (props) => {
+  const [value, setValue] = useState('50')
+  return (
+    <div style={{ padding: '300px 100px' }}>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={(v) => {
+          setValue(v.toString())
+          action('change')
+        }}
+        onOpenChange={action('open')}
+        value={value}
+      >
+        {[...(Array(100) as undefined[])].map((_, i) => {
+          return (
+            <DropdownSelectorItem textValue={i.toString()} key={i}>
+              選択肢{i}
+            </DropdownSelectorItem>
+          )
+        })}
       </DropdownSelector>
     </div>
   )
