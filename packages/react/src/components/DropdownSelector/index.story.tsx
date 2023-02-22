@@ -39,6 +39,50 @@ Default.args = {
   disabled: false,
 }
 
+export const Multiple: Story<DropdownSelectorProps> = (props) => {
+  return (
+    <div>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
+  )
+}
+
+export const Bottom: Story<DropdownSelectorProps> = (props) => {
+  return (
+    <div style={{ marginTop: '1000px' }}>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
+  )
+}
+
 type HasLabelProps = {
   disabled?: boolean
 }

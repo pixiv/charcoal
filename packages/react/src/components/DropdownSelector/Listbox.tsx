@@ -52,6 +52,7 @@ const ListboxRoot = styled.ul`
   margin: 0;
   box-sizing: border-box;
   list-style: none;
+  overflow: hidden;
 
   ${theme((o) => [
     o.bg.background1,
