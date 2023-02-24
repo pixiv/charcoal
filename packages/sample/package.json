@@ -17,6 +17,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/jest": "^29.4.0",
     "@types/node": "^18.0.0",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
