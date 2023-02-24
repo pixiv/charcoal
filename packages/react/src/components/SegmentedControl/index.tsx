@@ -72,10 +72,10 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
 
 export default memo(SegmentedControl)
 
-type RadioProps = {
+type RadioProps = React.PropsWithChildren<{
   value: string
   disabled?: boolean
-}
+}>
 
 const Segmented: React.FC<RadioProps> = ({ children, ...props }) => {
   const state = useRadioContext()

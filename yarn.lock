@@ -4130,16 +4130,18 @@ __metadata:
 
 "@react-aria/dialog@npm:^3.5.0":
   version: 3.5.0
-  resolution: "@react-aria/focus@npm:3.5.0"
+  resolution: "@react-aria/dialog@npm:3.5.0"
   dependencies:
-    "@babel/runtime": "npm:^7.6.2"
-    "@react-aria/interactions": "npm:^3.6.0"
-    "@react-aria/utils": "npm:^3.9.0"
-    "@react-types/shared": "npm:^3.9.0"
-    clsx: "npm:^1.1.1"
+    "@react-aria/focus": ^3.11.0
+    "@react-aria/overlays": ^3.13.0
+    "@react-aria/utils": ^3.15.0
+    "@react-stately/overlays": ^3.5.0
+    "@react-types/dialog": ^3.5.0
+    "@react-types/shared": ^3.17.0
+    "@swc/helpers": ^0.4.14
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: c03d4433bdb1c19d3119b88bec4d44857cc7efaf9205b1b855731f768dd13231e4e88adb1352fd1c64b5ec0454038b8535d30a07e43b605f41d519ae81dbeb6b
+  checksum: 6d0b338cba1a689bb94cbc3d6dc3a1a559ef1165305e78f7ce8157adb59503af326c7cb6faa6917cb4a906bf9f0c651f8b2d3c5bf139df3aeeded921d7df2922
   languageName: node
   linkType: hard
 
@@ -4176,7 +4178,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/interactions@npm:^3.13.0, @react-aria/interactions@npm:^3.13.1, @react-aria/interactions@npm:^3.14.0, @react-aria/interactions@npm:^3.6.0, @react-aria/interactions@npm:^3.9.1":
+"@react-aria/interactions@npm:^3.13.0, @react-aria/interactions@npm:^3.13.1, @react-aria/interactions@npm:^3.14.0, @react-aria/interactions@npm:^3.9.1":
   version: 3.14.0
   resolution: "@react-aria/interactions@npm:3.14.0"
   dependencies:
@@ -4393,7 +4395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/utils@npm:^3.13.1, @react-aria/utils@npm:^3.14.1, @react-aria/utils@npm:^3.14.2, @react-aria/utils@npm:^3.15.0, @react-aria/utils@npm:^3.9.0":
+"@react-aria/utils@npm:^3.13.1, @react-aria/utils@npm:^3.14.1, @react-aria/utils@npm:^3.14.2, @react-aria/utils@npm:^3.15.0":
   version: 3.15.0
   resolution: "@react-aria/utils@npm:3.15.0"
   dependencies:
@@ -5044,7 +5046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/shared@npm:^3.10.1, @react-types/shared@npm:^3.13.1, @react-types/shared@npm:^3.16.0, @react-types/shared@npm:^3.17.0, @react-types/shared@npm:^3.9.0":
+"@react-types/shared@npm:^3.10.1, @react-types/shared@npm:^3.13.1, @react-types/shared@npm:^3.16.0, @react-types/shared@npm:^3.17.0":
   version: 3.17.0
   resolution: "@react-types/shared@npm:3.17.0"
   peerDependencies:
