@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # REVIEW: PnP モードの場合さきに yarn install しないと動かなかった
       - name: Yarn install
         run: |
           yarn install
@@ -16,7 +17,7 @@ jobs:
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: 'build'
-          clean-script: 'clean'
+          clean-script: 'install'
 
           # パフォーマンス面の計測よりも、誤って変なものを bundle したことを検知したいので圧縮前で比較する
           compression: 'none'
