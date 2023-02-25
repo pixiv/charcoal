@@ -13,6 +13,8 @@ jobs:
         run: |
           sed -i.bak -e "s/nodeLinker: pnp/nodeLinker: node_modules/g" .yarnrc.yml
 
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git clean -f
           git commit -am "chore: disable pnp mode"
 
