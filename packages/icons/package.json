@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/dompurify": "^2.3.3",
     "@types/jest": "^27.4.0",
+    "@types/node": "^18.14.1",
     "@types/react": "^17.0.38",
     "@types/warning": "^3.0.0",
     "microbundle": "^0.14.2",

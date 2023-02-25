@@ -19,6 +19,10 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
+    "@react-types/checkbox": "^3.4.2",
+    "@react-types/dialog": "^3.5.0",
+    "@react-types/select": "^3.7.0",
+    "@react-types/shared": "^3.17.0",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^6.4.17",
     "@storybook/addon-knobs": "^6.4.0",
@@ -31,8 +35,10 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/glob": "^8.1.0",
     "@types/jest": "^27.4.0",
     "@types/jest-axe": "^3.5.3",
+    "@types/node": "^18.14.1",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
@@ -50,6 +56,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@charcoal-ui/foundation": "workspace:^",
     "@charcoal-ui/icons": "^2.3.0",
     "@charcoal-ui/styled": "^2.3.0",
     "@charcoal-ui/theme": "^2.3.0",
@@ -67,6 +74,7 @@
     "@react-aria/textfield": "^3.5.0",
     "@react-aria/utils": "^3.14.2",
     "@react-aria/visually-hidden": "^3.2.3",
+    "glob": "^8.1.0",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
     "react-stately": "^3.19.0",

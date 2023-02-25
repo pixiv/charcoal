@@ -18,6 +18,11 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
+    "@mdx-js/react": "^2.3.0",
+    "@storybook/addon-docs": "^6.5.16",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.1",
+    "@types/tailwindcss": "^2.2.4",
     "microbundle": "^0.14.2",
     "postcss": "^8.4.5",
     "postcss-selector-parser": "^6.0.9",
