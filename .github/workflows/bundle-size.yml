@@ -8,6 +8,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Disable PnP
+        run: |
+          sed -i.bak -e "s/nodeLinker: pnp/nodeLinker: node_modules/g" .yarnrc.yml
+
+          git clean -f
+          git commit -am "chore: disable pnp mode"
+
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: 'build'
