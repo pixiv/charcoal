@@ -21,7 +21,7 @@
     "@types/dompurify": "^2.3.3",
     "@types/jest": "^27.4.0",
     "@types/node": "^18.14.1",
-    "@types/react": "^17.0.38",
+    "@types/react": "^18.0.28",
     "@types/styled-components": "^5.1.26",
     "@types/warning": "^3.0.0",
     "@types/webpack-env": "^1.18.0",
