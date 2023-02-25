@@ -1919,6 +1919,7 @@ __metadata:
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@types/styled-components": ^5.1.21
+    "@types/webpack": ^5.28.0
     babel-plugin-styled-components: ^2.0.7
     next: ^12.3.2
     react: ^18.2.0

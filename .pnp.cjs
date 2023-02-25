@@ -12104,6 +12104,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@types/styled-components", "npm:5.1.26"],\
+            ["@types/webpack", "npm:5.28.0"],\
             ["babel-plugin-styled-components", "virtual:1c06ee09d32ed5b3bb84aed0a53ad8f3d4d09de31d4e4313536a3c4d56376a1c1767b07b6fad9f01d1e7a005ca6a951ccd55bc6e077eebc83475c0f54eec2083#npm:2.0.7"],\
             ["next", "virtual:1c06ee09d32ed5b3bb84aed0a53ad8f3d4d09de31d4e4313536a3c4d56376a1c1767b07b6fad9f01d1e7a005ca6a951ccd55bc6e077eebc83475c0f54eec2083#npm:12.3.2"],\
             ["react", "npm:18.2.0"],\
