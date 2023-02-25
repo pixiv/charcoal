@@ -1,12 +1,16 @@
 import React, { useLayoutEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from 'storybook-dark-mode'
-import { light, dark } from '@charcoal-ui/theme'
+import { light, dark, CharcoalTheme } from '@charcoal-ui/theme'
 import { TokenInjector, themeSelector, themeSetter } from '@charcoal-ui/styled'
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends CharcoalTheme {}
+}
 
 const setter = themeSetter()
 
-const Theme = ({ children }) => {
+const Theme: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const isDarkMode = useDarkMode()
 
   useLayoutEffect(() => {
@@ -26,12 +30,12 @@ const Theme = ({ children }) => {
           [themeSelector('dark')]: dark,
           [themeSelector('light')]: light,
         }}
-      ></TokenInjector>
+      />
     </ThemeProvider>
   )
 }
 
-export default (Story) => (
+export default (Story: React.ComponentType) => (
   <Theme>
     <Story />
   </Theme>

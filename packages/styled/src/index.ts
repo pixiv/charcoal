@@ -715,6 +715,7 @@ export function createTheme<T extends Theme>(
         // テーマが入っていない場合は復旧不可能なのでエラーにする
         throw noThemeProvider
       }
+
       // styled-componentsのランタイムから受け取ったthemeオブジェクトをbuilderに食わせて`o`をつくる
       // さらに、ユーザー定義にbuilderが構築した`o`を食わせる
       // (`o`を一時変数に入れてしまうと型Tの具象化が行われるので関数合成を優先する)

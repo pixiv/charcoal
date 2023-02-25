@@ -4,6 +4,10 @@ import { Story } from '../../_lib/compat'
 import { ClickableElement } from '../Clickable'
 import Button, { ButtonProps } from '.'
 
+import { ThemeProvider } from 'styled-components'
+import { light, dark } from '@charcoal-ui/theme'
+import { TokenInjector, themeSelector } from '@charcoal-ui/styled'
+
 export default {
   title: 'Button',
   component: Button,
@@ -21,6 +25,24 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story: React.ComponentType) => {
+      return (
+        <ThemeProvider theme={dark}>
+          <div data-dark={true}>
+            <Story />
+          </div>
+          <TokenInjector
+            theme={{
+              ':root': light,
+              [themeSelector('dark')]: dark,
+              [themeSelector('light')]: light,
+            }}
+          />
+        </ThemeProvider>
+      )
+    },
+  ],
 }
 
 const DefaultStory = (args: ButtonProps) => (
