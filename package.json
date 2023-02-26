@@ -12,6 +12,7 @@
     "storybook:experimental-vite": "USE_VITE=1 start-storybook -p 6006",
     "build": "yarn workspaces foreach -vpt -j unlimited run build",
     "clean": "yarn workspaces foreach -vp run clean",
+    "reset": "./misc/disable-pnp.sh && yarn clean",
     "test": "jest",
     "test:strict": "USE_STRICT=1 jest",
     "typecheck": "yarn workspaces foreach -vp run typecheck",

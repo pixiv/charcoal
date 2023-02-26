@@ -7,18 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Disable PnP
-        # .yarnrc.yml の nodeLinker を変更する
-        # サイズ比較のためにブランチを移動するので、checkout が abort されないよう gitignore する
-        run: |
-          echo .yarnrc.yml >> .gitignore
-          sed -i.bak -e "s/nodeLinker: pnp/nodeLinker: node-modules/g" .yarnrc.yml
-
       - uses: actions/checkout@v2
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: 'build'
-          clean-script: 'clean'
+          clean-script: 'reset'
 
           # パフォーマンス面の計測よりも、誤って変なものを bundle したことを検知したいので圧縮前で比較する
           compression: 'none'
