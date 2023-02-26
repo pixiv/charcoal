@@ -5460,7 +5460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-backgrounds@npm:6.5.16":
+"@storybook/addon-backgrounds@npm:6.5.16, @storybook/addon-backgrounds@npm:^6.5.16":
   version: 6.5.16
   resolution: "@storybook/addon-backgrounds@npm:6.5.16"
   dependencies:
@@ -5684,7 +5684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-measure@npm:6.5.16":
+"@storybook/addon-measure@npm:6.5.16, @storybook/addon-measure@npm:^6.5.16":
   version: 6.5.16
   resolution: "@storybook/addon-measure@npm:6.5.16"
   dependencies:
@@ -5708,7 +5708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-outline@npm:6.5.16":
+"@storybook/addon-outline@npm:6.5.16, @storybook/addon-outline@npm:^6.5.16":
   version: 6.5.16
   resolution: "@storybook/addon-outline@npm:6.5.16"
   dependencies:
@@ -10207,10 +10207,14 @@ __metadata:
     "@jest/types": ^29.4.3
     "@originjs/vite-plugin-commonjs": ^1.0.3
     "@storybook/addon-a11y": ^6.5.16
+    "@storybook/addon-actions": ^6.5.16
+    "@storybook/addon-backgrounds": ^6.5.16
     "@storybook/addon-docs": ^6.5.16
     "@storybook/addon-essentials": ^6.5.16
     "@storybook/addon-knobs": ^6.4.0
     "@storybook/addon-links": ^6.5.16
+    "@storybook/addon-measure": ^6.5.16
+    "@storybook/addon-outline": ^6.5.16
     "@storybook/addon-postcss": ^2.0.0
     "@storybook/addon-storysource": ^6.5.16
     "@storybook/builder-vite": ^0.4.2
