@@ -11,7 +11,9 @@ jobs:
       - uses: preactjs/compressed-size-action@v2
         with:
           build-script: 'build'
-          clean-script: 'reset'
+
+          # compressed-size-action は PnP だとうまく動かない
+          clean-script: 'disable-pnp-before-build'
 
           # パフォーマンス面の計測よりも、誤って変なものを bundle したことを検知したいので圧縮前で比較する
           compression: 'none'
