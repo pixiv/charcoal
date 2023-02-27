@@ -1,6 +1,6 @@
 import path from 'path'
 import camelCase from 'camelcase'
-import Figma from 'figma-js'
+import * as Figma from 'figma-js'
 import { ensureDir, remove, writeFile } from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'

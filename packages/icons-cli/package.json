@@ -2,8 +2,7 @@
   "name": "@charcoal-ui/icons-cli",
   "version": "2.3.0",
   "license": "Apache-2.0",
-  "type": "module",
-  "bin": "./dist/index.cjs",
+  "bin": "./dist/index.js",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
