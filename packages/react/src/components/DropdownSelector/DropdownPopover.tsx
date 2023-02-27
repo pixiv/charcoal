@@ -4,13 +4,13 @@ import { ReactNode } from 'react'
 import {
   AriaPopoverProps,
   DismissButton,
+  Overlay,
   usePopover,
 } from '@react-aria/overlays'
 import styled from 'styled-components'
 import { theme } from '../../styled'
 
 const DropdownPopoverDiv = styled.div`
-  width: 100%;
   ${theme((o) => o.margin.top(4).bottom(4))}
 `
 
@@ -27,13 +27,19 @@ export function DropdownPopover({ children, state, ...props }: Props) {
     {
       ...props,
       popoverRef: ref,
-      containerPadding: 8 // 12(default) - 4(popover space)
+      containerPadding: 0,
     },
     state
   )
 
   useEffect(() => {
-    if (state.isOpen && props.value !== undefined) {
+    if (
+      ref.current &&
+      props.triggerRef.current &&
+      state.isOpen &&
+      props.value !== undefined
+    ) {
+      ref.current.style.width = `${props.triggerRef.current.clientWidth}px`
       // useListbox内部で現在の選択肢までスクロールする処理がある
       // react-ariaより遅らせるためrequestAnimationFrameで呼び出す
       window.requestAnimationFrame(() => {
@@ -50,23 +56,16 @@ export function DropdownPopover({ children, state, ...props }: Props) {
         window.scrollTo(windowScrollX, windowScrollY)
       })
     }
-  }, [props.value, state.isOpen])
+  }, [props.triggerRef, props.value, state.isOpen])
 
   return (
-    <>
+    <Overlay>
       <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
-      <DropdownPopoverDiv
-        {...popoverProps}
-        ref={ref}
-        style={{
-          ...popoverProps.style,
-          left: 0,
-        }}
-      >
+      <DropdownPopoverDiv {...popoverProps} ref={ref}>
         <DismissButton onDismiss={() => state.close()} />
         {children}
         <DismissButton onDismiss={() => state.close()} />
       </DropdownPopoverDiv>
-    </>
+    </Overlay>
   )
 }
