@@ -53,7 +53,6 @@ const ListboxRoot = styled.ul`
   box-sizing: border-box;
   list-style: none;
   overflow: auto;
-  max-height: inherit; // inherit popoverPorps.style
 
   ${theme((o) => [
     o.bg.background1,
