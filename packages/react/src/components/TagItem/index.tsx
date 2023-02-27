@@ -2,7 +2,7 @@ import React, {
   forwardRef,
   memo,
   useMemo,
-  ComponentPropsWithoutRef,
+  ComponentPropsWithoutRef
 } from 'react'
 import { useObjectRef } from '@react-aria/utils'
 import styled, { css } from 'styled-components'
@@ -13,7 +13,7 @@ import Icon from '../Icon'
 
 const sizeMap = {
   S: 32,
-  M: 40,
+  M: 40
 }
 
 export type TagItemProps = {
@@ -45,7 +45,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
       () => ({
         elementType: 'a',
         isDisabled: disabled,
-        ...props,
+        ...props
       }),
       [disabled, props]
     )
@@ -61,7 +61,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
         status={status}
         {...buttonProps}
       >
-        <Background bgColor={bgColor} bgImage={bgImage} />
+        <Background bgColor={bgColor} bgImage={bgImage} status={status} />
 
         <Inner>
           <LabelWrapper isTranslate={hasTranslatedLabel}>
@@ -101,9 +101,8 @@ const TagItemRoot = styled.a<TagItemRootProps>`
       o.borderRadius(4),
       status !== 'active' && size === 'M' && o.padding.horizontal(24),
       status !== 'active' && size === 'S' && o.padding.horizontal(16),
-      status === 'inactive' && o.bg.surface3,
       status === 'inactive' ? o.font.text2 : o.font.text5,
-      ...(status === 'active' ? [o.padding.left(16), o.padding.right(8)] : []),
+      ...(status === 'active' ? [o.padding.left(16), o.padding.right(8)] : [])
     ])}
 
   ${disabledSelector} {
@@ -112,7 +111,9 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   }
 `
 
-const Background = styled.div<Pick<TagItemProps, 'bgColor' | 'bgImage'>>`
+const Background = styled.div<
+  Pick<TagItemProps, 'bgColor' | 'bgImage' | 'status'>
+>`
   position: absolute;
   z-index: 1;
   top: 0;
@@ -121,6 +122,7 @@ const Background = styled.div<Pick<TagItemProps, 'bgColor' | 'bgImage'>>`
   height: 100%;
 
   background-color: ${({ bgColor }) => bgColor};
+  ${({ status }) => status === 'inactive' && theme((o) => o.bg.surface3)}
 
   ${({ bgImage }) =>
     bgImage !== undefined &&
