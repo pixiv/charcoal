@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import React from 'react'
+import { Section } from 'react-stately'
 import DropdownSelector, {
   DropdownSelectorItem,
   DropdownSelectorProps,
@@ -24,9 +25,13 @@ export const Default: Story<Props> = (props) => {
       onChange={action('change')}
       onOpenChange={action('open')}
     >
-      <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
-      <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
-      <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
+      <Section title="hoge">
+        <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
+      </Section>
+      <Section title="hoge2">
+        <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
+      </Section>
     </DropdownSelector>
   )
 }

@@ -61,6 +61,7 @@
     "@react-aria/overlays": "^3.13.0",
     "@react-aria/radio": "^3.5.0",
     "@react-aria/select": "^3.9.0",
+    "@react-aria/separator": "^3.3.0",
     "@react-aria/ssr": "^3.5.0",
     "@react-aria/switch": "^3.4.0",
     "@react-aria/textfield": "^3.9.0",
