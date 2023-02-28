@@ -53,6 +53,7 @@ const ListboxRoot = styled.ul`
   box-sizing: border-box;
   list-style: none;
   overflow: auto;
+  max-height: inherit;
 
   ${theme((o) => [
     o.bg.background1,
