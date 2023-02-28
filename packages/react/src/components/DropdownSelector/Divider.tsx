@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../../styled';
-
+import styled from 'styled-components'
+import { theme } from '../../styled'
 
 export const Divider = styled.div.attrs({ role: 'separator' })`
   display: flex;
@@ -13,4 +12,4 @@ export const Divider = styled.div.attrs({ role: 'separator' })`
     height: 1px;
     background: #00000014;
   }
-`;
+`
