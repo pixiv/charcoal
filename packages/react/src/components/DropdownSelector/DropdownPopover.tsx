@@ -11,6 +11,7 @@ import styled from 'styled-components'
 import { theme } from '../../styled'
 
 const DropdownPopoverDiv = styled.div`
+  width: 100%;
   ${theme((o) => o.margin.top(4).bottom(4))}
 `
 
@@ -33,13 +34,13 @@ export function DropdownPopover({ children, state, ...props }: Props) {
   )
 
   useEffect(() => {
-    if (
-      ref.current &&
-      props.triggerRef.current &&
-      state.isOpen &&
-      props.value !== undefined
-    ) {
+    if (ref.current && props.triggerRef.current) {
       ref.current.style.width = `${props.triggerRef.current.clientWidth}px`
+    }
+  }, [props.triggerRef])
+
+  useEffect(() => {
+    if (state.isOpen && props.value !== undefined) {
       // useListbox内部で現在の選択肢までスクロールする処理がある
       // react-ariaより遅らせるためrequestAnimationFrameで呼び出す
       window.requestAnimationFrame(() => {
@@ -56,7 +57,7 @@ export function DropdownPopover({ children, state, ...props }: Props) {
         window.scrollTo(windowScrollX, windowScrollY)
       })
     }
-  }, [props.triggerRef, props.value, state.isOpen])
+  }, [props.value, state.isOpen])
 
   return (
     <Overlay>
