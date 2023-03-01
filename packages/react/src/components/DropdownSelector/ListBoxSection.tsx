@@ -44,7 +44,7 @@ export function ListBoxSection<T>(props: {
 const SectionSpan = styled.span`
   ${theme((o) => [
     o.font.text3,
-    o.typography(14),
+    o.typography(12).bold,
     o.margin.bottom(8).left(16).top(16),
   ])}
 `
