@@ -61,6 +61,7 @@ const ListboxRoot = styled.ul`
     o.bg.background1,
     o.border.default,
     o.borderRadius(8),
+    o.padding.vertical(8),
     o.outline.default.focus,
   ])}
 `
