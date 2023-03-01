@@ -1,5 +1,5 @@
 import React, { memo, useRef, Fragment, useMemo } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { ListProps, ListState } from 'react-stately'
 import { useListBox, useOption } from '@react-aria/listbox'
 import { mergeProps } from '@react-aria/utils'
@@ -52,7 +52,8 @@ const ListboxRoot = styled.ul`
   margin: 0;
   box-sizing: border-box;
   list-style: none;
-  overflow: hidden;
+  overflow: auto;
+  max-height: inherit;
 
   ${theme((o) => [
     o.bg.background1,
@@ -89,8 +90,8 @@ const Option = <T,>({ item, state, mode }: OptionProps<T>) => {
 
   return (
     <OptionRoot {...mergeProps(optionProps, focusProps)} ref={ref} mode={mode}>
-      <OptionCheckIcon name="16/Check" isSelected={isSelected} />
-      <OptionText>{item.rendered}</OptionText>
+      {isSelected && <OptionCheckIcon name="16/Check" />}
+      <OptionText isSelected={isSelected}>{item.rendered}</OptionText>
     </OptionRoot>
   )
 }
@@ -113,17 +114,17 @@ const OptionRoot = styled.li<{ mode?: ListMode }>`
     ${theme((o) => [o.bg.surface3])}
   }
 `
-const OptionCheckIcon = styled(Icon)<{ isSelected: boolean }>`
-  visibility: hidden;
+const OptionCheckIcon = styled(Icon)`
   ${theme((o) => [o.font.text2])}
-
-  ${({ isSelected }) =>
-    isSelected &&
-    css`
-      visibility: visible;
-    `}
 `
-const OptionText = styled.span`
+
+const OptionText = styled.span<{ isSelected: boolean }>`
   display: block;
-  ${theme((o) => [o.typography(14), o.font.text2])}
+  ${({ isSelected }) =>
+    theme((o) => [
+      o.typography(14),
+      o.font.text2,
+      isSelected ? undefined : o.margin.left(16),
+      isSelected ? undefined : o.padding.left(4),
+    ])}
 `

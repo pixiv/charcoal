@@ -124,7 +124,11 @@ const DropdownSelector = <T extends Record<string, unknown>>({
           <DropdownButtonIcon name="16/Menu" />
         </DropdownButton>
         {state.isOpen && (
-          <DropdownPopover state={state} triggerRef={triggerRef}>
+          <DropdownPopover
+            state={state}
+            triggerRef={triggerRef}
+            value={props.value ?? props.defaultValue}
+          >
             <Listbox {...menuProps} state={state} mode={mode} />
           </DropdownPopover>
         )}
