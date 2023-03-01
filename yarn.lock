@@ -1657,7 +1657,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/react-sandbox@^2.3.0, @charcoal-ui/react-sandbox@workspace:packages/react-sandbox":
+"@charcoal-ui/react-sandbox@^2.4.0, @charcoal-ui/react-sandbox@workspace:packages/react-sandbox":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react-sandbox@workspace:packages/react-sandbox"
   dependencies:
@@ -1702,7 +1702,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/react@^2.3.0, @charcoal-ui/react@^2.4.0, @charcoal-ui/react@workspace:packages/react":
+"@charcoal-ui/react@^2.4.0, @charcoal-ui/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react@workspace:packages/react"
   dependencies:
@@ -1766,10 +1766,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/sample@workspace:packages/sample"
   dependencies:
-    "@charcoal-ui/react": ^2.3.0
-    "@charcoal-ui/react-sandbox": ^2.3.0
-    "@charcoal-ui/styled": ^2.3.0
-    "@charcoal-ui/theme": ^2.3.0
+    "@charcoal-ui/react": ^2.4.0
+    "@charcoal-ui/react-sandbox": ^2.4.0
+    "@charcoal-ui/styled": ^2.4.0
+    "@charcoal-ui/theme": ^2.4.0
     "@types/node": ^18.0.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -1783,7 +1783,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/styled@^2.3.0, @charcoal-ui/styled@^2.4.0, @charcoal-ui/styled@workspace:packages/styled":
+"@charcoal-ui/styled@^2.4.0, @charcoal-ui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/styled@workspace:packages/styled"
   dependencies:
@@ -1843,7 +1843,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/theme@^2.3.0, @charcoal-ui/theme@^2.4.0, @charcoal-ui/theme@workspace:packages/theme":
+"@charcoal-ui/theme@^2.4.0, @charcoal-ui/theme@workspace:packages/theme":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/theme@workspace:packages/theme"
   dependencies:
