@@ -20,6 +20,3 @@ yarn-error.log*
 lerna-debug.log*
 .npmrc
 *.tsbuildinfo
-
-# editor
-.vscode
