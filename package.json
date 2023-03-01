@@ -4,14 +4,12 @@
   "author": "pixiv",
   "license": "Apache-2.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "storybook:experimental-vite": "USE_VITE=1 storybook dev -p 6006",
     "storybook:build": "storybook build",
     "storybook:build-vite": "USE_VITE=1 storybook build",
+    "preinstall": "npx only-allow pnpm",
     "build": "yarn workspaces foreach -vpt -j unlimited run build",
     "clean": "yarn workspaces foreach -vp run clean",
     "test": "jest",
@@ -106,7 +104,6 @@
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
   },
-  "packageManager": "yarn@3.1.0",
   "resolutions": {
     "react-test-renderer": "17.0.2"
   }
