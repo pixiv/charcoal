@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
+import React, { useState } from 'react'
 import DropdownSelector, {
   DropdownSelectorItem,
   DropdownSelectorProps,
@@ -18,16 +18,18 @@ type Props = Omit<
 >
 export const Default: Story<Props> = (props) => {
   return (
-    <DropdownSelector
-      {...props}
-      placeholder={props.placeholder ?? 'Drop Down menu'}
-      onChange={action('change')}
-      onOpenChange={action('open')}
-    >
-      <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
-      <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
-      <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
-    </DropdownSelector>
+    <div style={{ width: 288 }}>
+      <DropdownSelector
+        {...props}
+        placeholder={props.placeholder ?? 'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
   )
 }
 Default.args = {
@@ -37,6 +39,76 @@ Default.args = {
   showLabel: false,
   invalid: false,
   disabled: false,
+}
+
+export const Multiple: Story<DropdownSelectorProps> = (props) => {
+  return (
+    <div>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
+  )
+}
+
+export const Bottom: Story<DropdownSelectorProps> = (props) => {
+  return (
+    <div style={{ marginTop: '1000px' }}>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
+  )
+}
+
+export const Many: Story<DropdownSelectorProps> = (props) => {
+  const [value, setValue] = useState('50')
+  return (
+    <div style={{ padding: '300px 100px' }}>
+      <DropdownSelector
+        {...props}
+        placeholder={'Drop Down menu'}
+        onChange={(v) => {
+          setValue(v.toString())
+          action('change')
+        }}
+        onOpenChange={action('open')}
+        value={value}
+      >
+        {[...(Array(100) as undefined[])].map((_, i) => {
+          return (
+            <DropdownSelectorItem textValue={i.toString()} key={i}>
+              選択肢{i}
+            </DropdownSelectorItem>
+          )
+        })}
+      </DropdownSelector>
+    </div>
+  )
 }
 
 type HasLabelProps = {
@@ -52,17 +124,19 @@ export const HasLabel: Story<HasLabelProps> = ({ disabled }) => {
     assertiveText: 'Hint',
   }
   return (
-    <DropdownSelector
-      {...defaultProps}
-      disabled={disabled}
-      placeholder={'Drop Down menu'}
-      onChange={action('change')}
-      onOpenChange={action('open')}
-    >
-      <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-      <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-      <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-    </DropdownSelector>
+    <div style={{ width: 288 }}>
+      <DropdownSelector
+        {...defaultProps}
+        disabled={disabled}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
   )
 }
 
@@ -86,18 +160,20 @@ export const WithSeparator: Story<WithSeparatorProps> = ({
     assertiveText: 'Hint',
   }
   return (
-    <DropdownSelector
-      {...defaultProps}
-      mode={mode}
-      placeholder={'Drop Down menu'}
-      onChange={action('change')}
-      onOpenChange={action('open')}
-      {...props}
-    >
-      <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-      <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-      <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-    </DropdownSelector>
+    <div style={{ width: 288 }}>
+      <DropdownSelector
+        {...defaultProps}
+        mode={mode}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+        {...props}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
   )
 }
 
@@ -115,17 +191,19 @@ export const Invalid: Story<InvalidProps> = ({ disabled }) => {
     invalid: true,
   }
   return (
-    <DropdownSelector
-      {...props}
-      disabled={disabled}
-      placeholder={'Drop Down menu'}
-      onChange={action('change')}
-      onOpenChange={action('open')}
-    >
-      <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-      <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-      <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-    </DropdownSelector>
+    <div style={{ width: 288 }}>
+      <DropdownSelector
+        {...props}
+        disabled={disabled}
+        placeholder={'Drop Down menu'}
+        onChange={action('change')}
+        onOpenChange={action('open')}
+      >
+        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
   )
 }
 
