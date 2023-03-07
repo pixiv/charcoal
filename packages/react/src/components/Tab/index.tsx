@@ -29,7 +29,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(function TagInner(
       defaultSelectedKey: defaultValue,
       onSelectionChange: onChange,
       isDisabled: disabled,
-      ...props
+      ...props,
     }),
     [children, defaultValue, disabled, onChange, props, value]
   )

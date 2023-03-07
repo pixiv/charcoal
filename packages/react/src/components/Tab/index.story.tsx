@@ -8,12 +8,12 @@ export default {
   component: Tabs,
   argTypes: {
     value: {
-      type: 'string'
+      type: 'string',
     },
     defaultValue: {
-      type: 'string'
-    }
-  }
+      type: 'string',
+    },
+  },
 }
 
 export const Default: Story<Omit<TabsProps, 'children'>> = (props) => {
@@ -29,5 +29,5 @@ export const Default: Story<Omit<TabsProps, 'children'>> = (props) => {
 
 Default.args = {
   disabled: false,
-  size: 'M'
+  size: 'M',
 }

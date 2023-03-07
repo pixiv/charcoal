@@ -42,7 +42,7 @@ const TabRoot = styled.div<Pick<TabProps, 'size'>>`
       o.font.text1,
       o.outline.default.focus,
       o.borderRadius(4),
-      o.padding.horizontal(size === 'S' ? 16 : 24)
+      o.padding.horizontal(size === 'S' ? 16 : 24),
     ])}
 
   &:hover {
@@ -70,6 +70,6 @@ const Text = styled.span<Pick<TabProps, 'size'>>`
   display: block;
   ${({ size }) =>
     theme((o) => [
-      o.typography(size === 'S' ? 14 : 16).preserveHalfLeading.bold
+      o.typography(size === 'S' ? 14 : 16).preserveHalfLeading.bold,
     ])}
 `
