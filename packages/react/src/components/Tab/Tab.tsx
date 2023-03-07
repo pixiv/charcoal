@@ -34,8 +34,8 @@ const TabRoot = styled.div<Pick<TabProps, 'size'>>`
   position: relative;
   box-sizing: border-box;
   cursor: pointer;
-  padding-top: 12px; // figma 上で 12px だった
-  padding-bottom: 12px; // figma 上で 12px だった
+  padding-top: 12px; /* figma 上で 12px だった */
+  padding-bottom: 12px; /* figma 上で 12px だった */
 
   ${({ size }) =>
     theme((o) => [
