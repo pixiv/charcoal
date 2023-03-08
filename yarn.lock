@@ -2064,6 +2064,7 @@ __metadata:
     "@react-aria/select": ^3.9.0
     "@react-aria/ssr": ^3.5.0
     "@react-aria/switch": ^3.4.0
+    "@react-aria/tabs": ^3.4.1
     "@react-aria/textfield": ^3.9.0
     "@react-aria/utils": ^3.15.0
     "@react-aria/visually-hidden": ^3.7.0
@@ -4712,6 +4713,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/tabs@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "@react-aria/tabs@npm:3.4.1"
+  dependencies:
+    "@react-aria/focus": ^3.11.0
+    "@react-aria/i18n": ^3.7.0
+    "@react-aria/interactions": ^3.14.0
+    "@react-aria/selection": ^3.13.1
+    "@react-aria/utils": ^3.15.0
+    "@react-stately/list": ^3.7.0
+    "@react-stately/tabs": ^3.3.0
+    "@react-types/shared": ^3.17.0
+    "@react-types/tabs": ^3.2.0
+    "@swc/helpers": ^0.4.14
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 330ad19e74d4b150985512bb5061466fa8aeca48121ccb42eaf4a3b9c31c7d40b9434583d2403320ce93516cba1be7efd48f0d8943099fdda16b4aa6af9789d3
+  languageName: node
+  linkType: hard
+
 "@react-aria/textfield@npm:^3.9.0":
   version: 3.9.0
   resolution: "@react-aria/textfield@npm:3.9.0"
@@ -5319,6 +5340,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-stately/tabs@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-stately/tabs@npm:3.3.0"
+  dependencies:
+    "@react-stately/list": ^3.7.0
+    "@react-stately/utils": ^3.6.0
+    "@react-types/tabs": ^3.2.0
+    "@swc/helpers": ^0.4.14
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: a66bd3101831decec4c2d63dcb0b026fdfa899b9ff91c2b50aecc5711c88d0c4e4aaf687847da364b4af9b6a82748f19979459b8354cadc06b5f0d6897e2e989
+  languageName: node
+  linkType: hard
+
 "@react-stately/toggle@npm:^3.4.3":
   version: 3.4.3
   resolution: "@react-stately/toggle@npm:3.4.3"
@@ -5733,6 +5768,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 594055894febf86a3f80a32092aff371725785bdb983e5e24699fcf5d174b6012fce9489a714b661198da8d798a26122b9d04be0addc9a92a371f6718fcea6f7
+  languageName: node
+  linkType: hard
+
+"@react-types/tabs@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@react-types/tabs@npm:3.2.0"
+  dependencies:
+    "@react-types/shared": ^3.17.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 5162e0e864e73cc149b214561da1e708ecbf171815db0bfefac77f8eb279d5a5e2ab0ef9a86f339bc98082542a55fec72122d1b1e90a6fde2c60e0c107104803
   languageName: node
   linkType: hard
 
