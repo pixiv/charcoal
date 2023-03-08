@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`theme() <Example /> 1`] = `
+exports[`Story <Example /> 1`] = `
 .c1 {
   background-color: var(--charcoal-surface3);
   color: var(--charcoal-text4);
@@ -753,7 +753,7 @@ exports[`theme() <Example /> 1`] = `
 </div>
 `;
 
-exports[`theme() <TailwindLike /> 1`] = `
+exports[`Story <TailwindLike /> 1`] = `
 <div
   css="
       display: flex;

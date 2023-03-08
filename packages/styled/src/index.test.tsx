@@ -12,7 +12,8 @@ function render(children: JSX.Element) {
     .toJSON()
 }
 
-describe('theme()', () => {
+// TODO: もう少し theme() 関数に対する丁寧なユニットテストが欲しい
+describe('Story', () => {
   test('<Example />', () => {
     expect(render(<Example />)).toMatchSnapshot()
   })
