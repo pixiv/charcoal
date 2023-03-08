@@ -5,6 +5,13 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@adobe/css-tools@npm:^4.0.1":
+  version: 4.2.0
+  resolution: "@adobe/css-tools@npm:4.2.0"
+  checksum: dc5cc92ba3d562e7ffddb79d6d222c7e00b65f255fd2725b3d71490ff268844be322f917415d8c4ab39eca646343b632058db8bd5b1d646193fcc94d1d3e420b
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -1791,11 +1798,14 @@ __metadata:
     "@charcoal-ui/theme": ^2.4.0
     "@charcoal-ui/utils": ^2.4.0
     "@types/react": ^17.0.38
+    "@types/react-test-renderer": ^17.0.2
     "@types/styled-components": ^5.1.21
     "@types/warning": ^3.0.0
+    jest-styled-components: ^7.1.1
     microbundle: ^0.14.2
     npm-run-all: ^4.1.5
     react: ^17.0.2
+    react-test-renderer: ^17.0.2
     rimraf: ^3.0.2
     styled-components: ^5.3.3
     typescript: ^4.5.5
@@ -7327,14 +7337,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17.0.38":
-  version: 17.0.38
-  resolution: "@types/react@npm:17.0.38"
+"@types/react-test-renderer@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "@types/react-test-renderer@npm:17.0.2"
+  dependencies:
+    "@types/react": ^17
+  checksum: 0be325798b6b38cc31fbb11f2f1e1a5578cc3b23eddf1ddd1ab58ccf50966e8f779383084d8bc3a7db3108ad815af8fbae5c0f54329a88d52200e01547d85c33
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*, @types/react@npm:^17, @types/react@npm:^17.0.38":
+  version: 17.0.53
+  resolution: "@types/react@npm:17.0.53"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 4079f4f959cd4a4bfaeda8b89fe8a1b1f8bdc9d87acfdc5f74a0b39cec9ec6a470724357c62778c0f063180b360c250e920c5a142f1dbcda67d9cc25a6d43a85
+  checksum: dacfde02c260fd98bed2eb775ed0c7ce1397be4c0844f907a50763b081a4008f81f57071889a16eb1350ddcf0927f3cf1a6541702c8ad03de3c70383ef931e3f
   languageName: node
   linkType: hard
 
@@ -16405,14 +16424,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-styled-components@npm:^7.0.8":
-  version: 7.0.8
-  resolution: "jest-styled-components@npm:7.0.8"
+"jest-styled-components@npm:^7.0.8, jest-styled-components@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "jest-styled-components@npm:7.1.1"
   dependencies:
-    css: ^3.0.0
+    "@adobe/css-tools": ^4.0.1
   peerDependencies:
     styled-components: ">= 5"
-  checksum: 0fc3a71c54ece55b8fd4c8304a9db283acac97cdfd8350ff27ff3b0c3da8e798dca87c7ee5fc004b1b0577d632dec44ebea31750238b82395152c0f8a471ea7c
+  checksum: 1376d1211855c459e59e6b030af7294519cd2dd78169a2cb0df185ff4390fff417ab51be3dd520f1e975d2f391f50ff266e803c168ff9f03f3ff7ebbb823d2d7
   languageName: node
   linkType: hard
 
@@ -20704,6 +20723,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0":
+  version: 18.2.0
+  resolution: "react-is@npm:18.2.0"
+  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -20802,6 +20828,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-shallow-renderer@npm:^16.13.1":
+  version: 16.15.0
+  resolution: "react-shallow-renderer@npm:16.15.0"
+  dependencies:
+    object-assign: ^4.1.1
+    react-is: ^16.12.0 || ^17.0.0 || ^18.0.0
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 6052c7e3e9627485120ebd8257f128aad8f56386fe8d42374b7743eac1be457c33506d153c7886b4e32923c0c352d402ab805ef9ca02dbcd8393b2bdeb6e5af8
+  languageName: node
+  linkType: hard
+
 "react-sizeme@npm:^3.0.1":
   version: 3.0.1
   resolution: "react-sizeme@npm:3.0.1"
@@ -20878,6 +20916,20 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ">= 0.14.0"
   checksum: fa03880a887bc0c79c0be25fc35924980d75f684f8d05620272bdfcbb9f119f45bb7f8ddd92b9e944103964a4e094b99750d0b19c992fd86f2ce0b70266e89c3
+  languageName: node
+  linkType: hard
+
+"react-test-renderer@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "react-test-renderer@npm:17.0.2"
+  dependencies:
+    object-assign: ^4.1.1
+    react-is: ^17.0.2
+    react-shallow-renderer: ^16.13.1
+    scheduler: ^0.20.2
+  peerDependencies:
+    react: 17.0.2
+  checksum: e6b5c6ed2a0bde2c34f1ab9523ff9bc4c141a271daf730d6b852374e83acc0155d58ab71a318251e953ebfa65b8bebb9c5dce3eba1ccfcbef7cc4e1e8261c401
   languageName: node
   linkType: hard
 

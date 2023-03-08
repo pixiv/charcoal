@@ -21,7 +21,7 @@ type MyTheme = CharcoalTheme & {
   }
 }
 
-function myTheme(theme: CharcoalTheme): MyTheme {
+export function myTheme(theme: CharcoalTheme): MyTheme {
   return {
     ...theme,
     color: {
