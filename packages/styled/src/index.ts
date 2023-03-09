@@ -15,12 +15,7 @@ import typography from './builders/typography'
 
 import { createOutlineColorCss, outlineType } from './builders/outline'
 import { createBorderCss, borderDirections } from './builders/border'
-import {
-  createFixedColumnCss,
-  createFixedPxCss,
-  createFixedRelativeCss,
-  fixedProperties,
-} from './builders/size'
+import size from './builders/size'
 import { createBorderRadiusCss } from './builders/borderRadius'
 import { createElementEffectCss } from './builders/elementEffect'
 import spacing from './builders/spacing'
@@ -59,22 +54,6 @@ function builder<T extends CharcoalAbstractTheme>(
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {} as never
   }
-
-  // 大きさ
-  const fixedPxCss = createFixedPxCss(theme)
-  const fixedColumnCss = createFixedColumnCss(theme)
-  const fixedRelativeCss = createFixedRelativeCss(theme)
-  const fixedObject = factory({}, fixedProperties, (property) =>
-    constFactory(
-      {},
-      {
-        px: (size: keyof T['spacing'] | 'auto') => fixedPxCss(property, size),
-        column: (span: number) => fixedColumnCss(property, span),
-        auto: fixedRelativeCss(property, 'auto'),
-        full: fixedRelativeCss(property, '100%'),
-      }
-    )
-  )
 
   // 要素へのエフェクト (etc: 透過)
   const elementEffectCss = createElementEffectCss(theme)
@@ -123,7 +102,7 @@ function builder<T extends CharcoalAbstractTheme>(
     colors(theme),
     typography(theme),
     spacing(theme),
-    fixedObject,
+    size(theme),
     elementEffectObject,
     borderObject,
     borderRadiusObject,
