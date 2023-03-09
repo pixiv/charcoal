@@ -1,6 +1,7 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
 import { Internal, internal } from './internal'
+import { factory, modifiedArgumentedFactory } from './lib'
 
 export const spacingProperties = ['margin', 'padding'] as const
 export const spacingDirections = [
@@ -90,3 +91,15 @@ export const createSpacingCss =
       hasVerticalPadding ? { hasVerticalPadding: true } : {}
     )
   }
+
+export default function spacing<T extends CharcoalAbstractTheme>(theme: T) {
+  const spacingCss = createSpacingCss(theme)
+  const spacingObject = factory({}, spacingProperties, (spacingProperty) =>
+    modifiedArgumentedFactory(
+      spacingDirections,
+      (modifiers) => spacingCss(spacingProperty, modifiers),
+      {} as keyof T['spacing'] | 'auto' // 推論のためのメタタイプ
+    )
+  )
+  return spacingObject
+}

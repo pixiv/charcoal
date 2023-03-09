@@ -1,10 +1,5 @@
 import { CSSObject, ThemedStyledInterface } from 'styled-components'
-import {
-  factory,
-  modifiedFactory,
-  constFactory,
-  modifiedArgumentedFactory,
-} from './builders/lib'
+import { factory, modifiedFactory, constFactory } from './builders/lib'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { objectAssign, objectKeys, isPresent, noThemeProvider } from './util'
 import { dur } from '@charcoal-ui/utils'
@@ -17,11 +12,7 @@ import {
 } from './builders/internal'
 import colors from './builders/colors'
 import typography from './builders/typography'
-import {
-  createSpacingCss,
-  spacingDirections,
-  spacingProperties,
-} from './builders/spacing'
+
 import { createOutlineColorCss, outlineType } from './builders/outline'
 import { createBorderCss, borderDirections } from './builders/border'
 import {
@@ -32,6 +23,7 @@ import {
 } from './builders/size'
 import { createBorderRadiusCss } from './builders/borderRadius'
 import { createElementEffectCss } from './builders/elementEffect'
+import spacing from './builders/spacing'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -67,16 +59,6 @@ function builder<T extends CharcoalAbstractTheme>(
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {} as never
   }
-
-  // スペーシング
-  const spacingCss = createSpacingCss(theme)
-  const spacingObject = factory({}, spacingProperties, (spacingProperty) =>
-    modifiedArgumentedFactory(
-      spacingDirections,
-      (modifiers) => spacingCss(spacingProperty, modifiers),
-      {} as keyof T['spacing'] | 'auto' // 推論のためのメタタイプ
-    )
-  )
 
   // 大きさ
   const fixedPxCss = createFixedPxCss(theme)
@@ -140,7 +122,7 @@ function builder<T extends CharcoalAbstractTheme>(
   return objectAssign(
     colors(theme),
     typography(theme),
-    spacingObject,
+    spacing(theme),
     fixedObject,
     elementEffectObject,
     borderObject,
