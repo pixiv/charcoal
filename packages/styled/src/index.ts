@@ -7,7 +7,7 @@ import {
 } from './builders/lib'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { objectAssign, objectKeys, isPresent, noThemeProvider } from './util'
-import { dur, GradientDirection } from '@charcoal-ui/utils'
+import { dur } from '@charcoal-ui/utils'
 import {
   Context,
   Internal,
@@ -15,7 +15,7 @@ import {
   TRANSITION_DURATION,
   __DO_NOT_USE_GET_INTERNAL__,
 } from './builders/internal'
-import { createColorCss, createGradientColorCss } from './builders/colors'
+import colors from './builders/colors'
 import { createTypographyCss } from './builders/typography'
 import {
   createSpacingCss,
@@ -67,38 +67,6 @@ function builder<T extends CharcoalAbstractTheme>(
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {} as never
   }
-  const colors = objectKeys(theme.color)
-  const effects = objectKeys(theme.effect)
-
-  // 色
-  const gradientColors = objectKeys(theme.gradientColor)
-  const colorCss = createColorCss(theme)
-  const gradientColorCss = createGradientColorCss(theme)
-  const colorObject = constFactory(
-    {},
-    {
-      bg: objectAssign(
-        factory({}, colors, (color) =>
-          modifiedFactory(effects, (modifiers) =>
-            colorCss('bg', color, modifiers)
-          )
-        ),
-        factory(
-          {},
-          gradientColors,
-          (color) => (direction: GradientDirection) =>
-            modifiedFactory(effects, (modifiers) =>
-              gradientColorCss(color, modifiers, direction)
-            )
-        )
-      ),
-      font: factory({}, colors, (color) =>
-        modifiedFactory(effects, (modifiers) =>
-          colorCss('font', color, modifiers)
-        )
-      ),
-    }
-  )
 
   // タイポグラフィ
   const typographyModifiers = [
@@ -191,7 +159,7 @@ function builder<T extends CharcoalAbstractTheme>(
   )
 
   return objectAssign(
-    colorObject,
+    colors(theme),
     typographyObject,
     spacingObject,
     fixedObject,

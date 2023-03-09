@@ -9,13 +9,21 @@ import {
 } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import warning from 'warning'
+import { objectKeys, objectAssign } from '../util'
 import {
   internal,
   Internal,
   TRANSITION_DURATION,
   useHalfLeadingCanceller,
 } from './internal'
-import { isSupportedEffect, onEffectPseudo, variable } from './lib'
+import {
+  constFactory,
+  factory,
+  isSupportedEffect,
+  modifiedFactory,
+  onEffectPseudo,
+  variable,
+} from './lib'
 
 const colorProperties = ['bg', 'font'] as const
 export type ColorProperty = typeof colorProperties[number]
@@ -134,4 +142,42 @@ const overlayElement: CSSObject = {
   height: '100%',
   top: 0,
   left: 0,
+}
+
+export default function colors<T extends CharcoalAbstractTheme>(theme: T) {
+  const colors = objectKeys(theme.color)
+  const effects = objectKeys(theme.effect)
+
+  // 色
+  const gradientColors = objectKeys(theme.gradientColor)
+  const colorCss = createColorCss(theme)
+  const gradientColorCss = createGradientColorCss(theme)
+
+  const colorObject = constFactory(
+    {},
+    {
+      bg: objectAssign(
+        factory({}, colors, (color) =>
+          modifiedFactory(effects, (modifiers) =>
+            colorCss('bg', color, modifiers)
+          )
+        ),
+        factory(
+          {},
+          gradientColors,
+          (color) => (direction: GradientDirection) =>
+            modifiedFactory(effects, (modifiers) =>
+              gradientColorCss(color, modifiers, direction)
+            )
+        )
+      ),
+      font: factory({}, colors, (color) =>
+        modifiedFactory(effects, (modifiers) =>
+          colorCss('font', color, modifiers)
+        )
+      ),
+    }
+  )
+
+  return colorObject
 }
