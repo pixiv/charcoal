@@ -76,7 +76,9 @@ export function objectAssign<T extends any[]>(...sources: T) {
   return Object.assign({}, ...sources) as ObjectAssign<T>
 }
 
-export function objectKeys<V extends object, K extends keyof V>(obj: V) {
+export function objectKeys<V extends Record<any, any>, K extends keyof V>(
+  obj: V
+) {
   return Object.keys(obj) as K[]
 }
 
@@ -93,6 +95,10 @@ export function extractNonNullKeys<V, K extends keyof V>(obj: {
     .map(([k]) => k) as { [key in K]: V[key] extends null ? never : key }[K][]
 }
 
+export type Blank = null | undefined | false
+
+export const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
+  isPresent(value) && (value as unknown) !== false
 export const noThemeProvider = new Error(
   '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
 )
