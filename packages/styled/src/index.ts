@@ -33,6 +33,7 @@ import {
   spacingProperties,
 } from './builders/spacing'
 import { createOutlineColorCss, outlineType } from './builders/outline'
+import { createBorderCss, borderDirections } from './builders/border'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -50,9 +51,6 @@ export * from './SetThemeScript'
 
 const fixedProperties = ['width', 'height'] as const
 type FixedProperty = typeof fixedProperties[number]
-
-const borderDirections = ['top', 'right', 'bottom', 'left'] as const
-type BorderDirection = typeof borderDirections[number]
 
 /**
  * `theme(o => [...])` の `o` の部分を構築する
@@ -256,35 +254,6 @@ const createElementEffectCss =
         {}
       )
     )
-
-function borderProperty(direction: BorderDirection) {
-  return `border-${direction}`
-}
-
-function borderShorthand(color: string) {
-  return `solid 1px ${color}`
-}
-
-const createBorderCss =
-  <T extends CharcoalAbstractTheme>(theme: T) =>
-  (
-    variant: keyof T['border'],
-    directions: readonly BorderDirection[]
-  ): Internal => {
-    const all = directions.length === 0
-    const value = borderShorthand(theme.border[variant].color)
-    return internal(() => ({
-      ...(all
-        ? { border: value }
-        : directions.reduce<CSSObject>(
-            (acc, direction) => ({
-              ...acc,
-              [borderProperty(direction)]: value,
-            }),
-            {}
-          )),
-    }))
-  }
 
 const createBorderRadiusCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
