@@ -16,12 +16,12 @@ export interface Context {
 const internalSym: unique symbol = Symbol('internal')
 
 export function internal(
-  operation: (context: Context) => CSSObject,
+  toCSS: (context: Context) => CSSObject,
   context: Context = {}
 ): Internal {
   return {
     [internalSym]: {
-      operation,
+      toCSS,
       context,
     },
   }
@@ -33,7 +33,7 @@ export function __DO_NOT_USE_GET_INTERNAL__(internal: Internal) {
 
 export interface Internal {
   [internalSym]: {
-    operation: (context: Context) => CSSObject
+    toCSS: (context: Context) => CSSObject
     context: Context
   }
 }

@@ -106,7 +106,7 @@ export function createTheme<T extends CharcoalAbstractTheme>(
       // 2パス目
       // コンテキストを見ながら最適化されたCSSを構築
       return specDescriptor.map((v) =>
-        __DO_NOT_USE_GET_INTERNAL__(v).operation(context)
+        __DO_NOT_USE_GET_INTERNAL__(v).toCSS(context)
       )
     }
 }
