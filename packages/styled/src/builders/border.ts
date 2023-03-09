@@ -1,6 +1,8 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
+import { objectKeys } from '../util'
 import { Internal, internal } from './internal'
+import { constFactory, factory, modifiedFactory } from './lib'
 
 export const borderDirections = ['top', 'right', 'bottom', 'left'] as const
 type BorderDirection = typeof borderDirections[number]
@@ -33,3 +35,18 @@ export const createBorderCss =
           )),
     }))
   }
+
+export default function border<T extends CharcoalAbstractTheme>(theme: T) {
+  const borderCss = createBorderCss(theme)
+  const borderObject = constFactory(
+    {},
+    {
+      border: factory({}, objectKeys(theme.border), (variant) =>
+        modifiedFactory(borderDirections, (modifiers) =>
+          borderCss(variant, modifiers)
+        )
+      ),
+    }
+  )
+  return borderObject
+}

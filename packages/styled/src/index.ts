@@ -14,7 +14,7 @@ import colors from './builders/colors'
 import typography from './builders/typography'
 
 import { createOutlineColorCss, outlineType } from './builders/outline'
-import { createBorderCss, borderDirections } from './builders/border'
+import border, { createBorderCss, borderDirections } from './builders/border'
 import size from './builders/size'
 import { createBorderRadiusCss } from './builders/borderRadius'
 import elementEffect from './builders/elementEffect'
@@ -55,19 +55,6 @@ function builder<T extends CharcoalAbstractTheme>(
     return {} as never
   }
 
-  // ボーダー
-  const borderCss = createBorderCss(theme)
-  const borderObject = constFactory(
-    {},
-    {
-      border: factory({}, objectKeys(theme.border), (variant) =>
-        modifiedFactory(borderDirections, (modifiers) =>
-          borderCss(variant, modifiers)
-        )
-      ),
-    }
-  )
-
   // 角丸
   const borderRadiusCss = createBorderRadiusCss(theme)
   const borderRadiusObject = constFactory(
@@ -97,7 +84,7 @@ function builder<T extends CharcoalAbstractTheme>(
     spacing(theme),
     size(theme),
     elementEffect(theme),
-    borderObject,
+    border(theme),
     borderRadiusObject,
     outlineObject
   )
