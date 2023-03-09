@@ -2,6 +2,7 @@ import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { halfLeading, px } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import { Internal, internal, useHalfLeadingCanceller } from './internal'
+import { factory, modifiedFactory } from './lib'
 
 export const createTypographyCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
@@ -58,4 +59,30 @@ const leadingCancel: CSSObject = {
   width: 0,
   height: 0,
   content: `''`,
+}
+
+// タイポグラフィ
+const typographyModifiers = [
+  // TODO
+  'monospace',
+  'bold',
+  'preserveHalfLeading',
+] as const
+
+export default function typography<T extends CharcoalAbstractTheme>(theme: T) {
+  const typographyCss = createTypographyCss(theme)
+  const typographyObject = factory(
+    {},
+    ['typography'] as const,
+    (_) => (size: keyof T['typography']['size']) =>
+      modifiedFactory(typographyModifiers, (modifiers) =>
+        typographyCss(size, {
+          preserveHalfLeading: modifiers.includes('preserveHalfLeading'),
+          monospace: modifiers.includes('monospace'),
+          bold: modifiers.includes('bold'),
+        })
+      )
+  )
+
+  return typographyObject
 }

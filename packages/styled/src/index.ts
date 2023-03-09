@@ -16,7 +16,7 @@ import {
   __DO_NOT_USE_GET_INTERNAL__,
 } from './builders/internal'
 import colors from './builders/colors'
-import { createTypographyCss } from './builders/typography'
+import typography from './builders/typography'
 import {
   createSpacingCss,
   spacingDirections,
@@ -67,27 +67,6 @@ function builder<T extends CharcoalAbstractTheme>(
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {} as never
   }
-
-  // タイポグラフィ
-  const typographyModifiers = [
-    // TODO
-    'monospace',
-    'bold',
-    'preserveHalfLeading',
-  ] as const
-  const typographyCss = createTypographyCss(theme)
-  const typographyObject = factory(
-    {},
-    ['typography'] as const,
-    (_) => (size: keyof T['typography']['size']) =>
-      modifiedFactory(typographyModifiers, (modifiers) =>
-        typographyCss(size, {
-          preserveHalfLeading: modifiers.includes('preserveHalfLeading'),
-          monospace: modifiers.includes('monospace'),
-          bold: modifiers.includes('bold'),
-        })
-      )
-  )
 
   // スペーシング
   const spacingCss = createSpacingCss(theme)
@@ -160,7 +139,7 @@ function builder<T extends CharcoalAbstractTheme>(
 
   return objectAssign(
     colors(theme),
-    typographyObject,
+    typography(theme),
     spacingObject,
     fixedObject,
     elementEffectObject,
