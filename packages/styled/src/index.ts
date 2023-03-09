@@ -4,18 +4,9 @@ import {
   modifiedFactory,
   constFactory,
   modifiedArgumentedFactory,
-  onEffectPseudo,
-  isSupportedEffect,
 } from './builders/lib'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
-import {
-  objectAssign,
-  unreachable,
-  ReadonlyArrayConstructor,
-  objectKeys,
-  isPresent,
-  noThemeProvider,
-} from './util'
+import { objectAssign, objectKeys, isPresent, noThemeProvider } from './util'
 import { dur, GradientDirection } from '@charcoal-ui/utils'
 import {
   Context,
@@ -40,6 +31,7 @@ import {
   fixedProperties,
 } from './builders/size'
 import { createBorderRadiusCss } from './builders/borderRadius'
+import { createElementEffectCss } from './builders/elementEffect'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -209,31 +201,6 @@ function builder<T extends CharcoalAbstractTheme>(
     outlineObject
   )
 }
-
-const createElementEffectCss =
-  <
-    T extends CharcoalAbstractTheme,
-    TElementEffect extends T['elementEffect']
-  >(theme: {
-    elementEffect: TElementEffect
-  }) =>
-  (effects: readonly (keyof TElementEffect)[] = []): Internal =>
-    internal(() =>
-      effects.filter(isSupportedEffect).reduce<CSSObject>(
-        (acc, effect) => ({
-          ...acc,
-          ...onEffectPseudo(effect, {
-            opacity:
-              !(Array as ReadonlyArrayConstructor).isArray(
-                theme.elementEffect[effect]
-              ) && theme.elementEffect[effect]?.type === 'opacity'
-                ? theme.elementEffect[effect]?.opacity
-                : unreachable(),
-          }),
-        }),
-        {}
-      )
-    )
 
 const commonSpec = (_theme: unknown): Internal => {
   const duration = dur(TRANSITION_DURATION)
