@@ -7,11 +7,7 @@ import {
   modifiedArgumentedFactory,
   variable,
 } from './builders/lib'
-import {
-  EffectType,
-  CharcoalAbstractTheme as Theme,
-  Key,
-} from '@charcoal-ui/theme'
+import { EffectType, CharcoalAbstractTheme, Key } from '@charcoal-ui/theme'
 import {
   objectAssign,
   unreachable,
@@ -79,7 +75,7 @@ type OutlineType = typeof outlineType[number]
  * @param theme テーマオブジェクト
  * @param isPhantom 型推論のためだけに使う場合にランタイムコストをゼロにするフラグ
  */
-function builder<T extends Theme>(
+function builder<T extends CharcoalAbstractTheme>(
   theme: {
     // factoryの第二引数に入れ込むものだけ明示的に型変数を展開しておくことで型の具象化を遅延する
     color: T['color']
@@ -248,7 +244,7 @@ function onEffectPseudo(effect: EffectType, css: CSSObject) {
 }
 
 const createColorCss =
-  <T extends Theme>(_theme: T) =>
+  <T extends CharcoalAbstractTheme>(_theme: T) =>
   (
     target: ColorProperty,
     color: keyof T['color'],
@@ -286,7 +282,7 @@ const createColorCss =
 const TRANSITION_DURATION = 0.2
 
 const createGradientColorCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (
     color: keyof T['gradientColor'],
     effects: readonly (keyof T['effect'])[] = [],
@@ -378,7 +374,7 @@ const outlineCss = (weight: number, color: string) => ({
 })
 
 const createOutlineColorCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (
     variant: keyof T['outline'],
     modifiers: readonly OutlineType[]
@@ -414,7 +410,7 @@ const useHalfLeadingCanceller = ({
 }: Context) => cancelHalfLeadingPx !== undefined && !hasVerticalPadding
 
 const createTypographyCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (
     size: keyof T['typography']['size'],
     options: {
@@ -478,7 +474,7 @@ function spacingProperty(
 }
 
 const createSpacingCss =
-  <T extends Theme>(theme: { spacing: T['spacing'] }) =>
+  <T extends CharcoalAbstractTheme>(theme: { spacing: T['spacing'] }) =>
   (
     property: SpacingProperty,
     modifiers: readonly [SpacingDirection, keyof T['spacing'] | 'auto'][]
@@ -547,21 +543,21 @@ const createSpacingCss =
   }
 
 const createFixedPxCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (property: FixedProperty, size: keyof T['spacing'] | 'auto'): Internal =>
     internal(() => ({
       [property]: size === 'auto' ? 'auto' : px(theme.spacing[size]),
     }))
 
 const createFixedRelativeCss =
-  <T extends Theme>(_theme: T) =>
+  <T extends CharcoalAbstractTheme>(_theme: T) =>
   (property: FixedProperty, amount: '100%' | 'auto'): Internal =>
     internal(() => ({
       [property]: amount,
     }))
 
 const createFixedColumnCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (property: FixedProperty, span: number): Internal =>
     internal(() => ({
       [property]: px(
@@ -570,7 +566,10 @@ const createFixedColumnCss =
     }))
 
 const createElementEffectCss =
-  <T extends Theme, TElementEffect extends T['elementEffect']>(theme: {
+  <
+    T extends CharcoalAbstractTheme,
+    TElementEffect extends T['elementEffect']
+  >(theme: {
     elementEffect: TElementEffect
   }) =>
   (effects: readonly (keyof TElementEffect)[] = []): Internal =>
@@ -600,7 +599,7 @@ function borderShorthand(color: string) {
 }
 
 const createBorderCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (
     variant: keyof T['border'],
     directions: readonly BorderDirection[]
@@ -621,7 +620,7 @@ const createBorderCss =
   }
 
 const createBorderRadiusCss =
-  <T extends Theme>(theme: T) =>
+  <T extends CharcoalAbstractTheme>(theme: T) =>
   (size: keyof T['borderRadius']): Internal =>
     internal(() => ({
       borderRadius: px(theme.borderRadius[size]),
@@ -696,7 +695,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  *
  * const theme = createTheme<DefaultTheme>()
  */
-export function createTheme<T extends Theme>(
+export function createTheme<T extends CharcoalAbstractTheme>(
   _styled?: ThemedStyledInterface<T>
 ) {
   // `theme(o => [...])` の `o` の部分の型推論のためだけに使う意味のない変数
