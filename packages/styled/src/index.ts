@@ -1,7 +1,6 @@
 import { CSSObject, ThemedStyledInterface } from 'styled-components'
-import { factory, modifiedFactory, constFactory } from './builders/lib'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
-import { objectAssign, objectKeys, isPresent, noThemeProvider } from './util'
+import { isPresent, noThemeProvider } from './util'
 import { dur } from '@charcoal-ui/utils'
 import {
   Context,
@@ -10,15 +9,7 @@ import {
   TRANSITION_DURATION,
   __DO_NOT_USE_GET_INTERNAL__,
 } from './builders/internal'
-import colors from './builders/colors'
-import typography from './builders/typography'
-
-import { createOutlineColorCss, outlineType } from './builders/outline'
-import border, { createBorderCss, borderDirections } from './builders/border'
-import size from './builders/size'
-import borderRadius, { createBorderRadiusCss } from './builders/borderRadius'
-import elementEffect from './builders/elementEffect'
-import spacing from './builders/spacing'
+import createO from './builders'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -33,52 +24,6 @@ export {
 } from './helper'
 export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
-
-/**
- * `theme(o => [...])` の `o` の部分を構築する
- *
- * @param theme テーマオブジェクト
- * @param isPhantom 型推論のためだけに使う場合にランタイムコストをゼロにするフラグ
- */
-function builder<T extends CharcoalAbstractTheme>(
-  theme: {
-    // factoryの第二引数に入れ込むものだけ明示的に型変数を展開しておくことで型の具象化を遅延する
-    color: T['color']
-    gradientColor: T['gradientColor']
-    border: T['border']
-    outline: T['outline']
-  } & Omit<T, 'color' | 'gradientColor' | 'border' | 'outline'>,
-  isPhantom = false
-) {
-  if (isPhantom) {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-    return {} as never
-  }
-
-  // アウトライン
-  const outlineCss = createOutlineColorCss(theme)
-  const outlineObject = constFactory(
-    {},
-    {
-      outline: factory({}, objectKeys(theme.outline), (variant) =>
-        modifiedFactory(outlineType, (modifiers) =>
-          outlineCss(variant, modifiers)
-        )
-      ),
-    }
-  )
-
-  return objectAssign(
-    colors(theme),
-    typography(theme),
-    spacing(theme),
-    size(theme),
-    elementEffect(theme),
-    border(theme),
-    borderRadius(theme),
-    outlineObject
-  )
-}
 
 const commonSpec = (_theme: unknown): Internal => {
   const duration = dur(TRANSITION_DURATION)
@@ -126,23 +71,24 @@ export function createTheme<T extends CharcoalAbstractTheme>(
   // `theme(o => [...])` の `o` の部分の型推論のためだけに使う意味のない変数
   // Tを型変数のまま渡してcreateThemeが呼ばれるまで型の具象化が行われないようにする
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
-  const _phantomBuilder = builder<T>({} as any, true)
+  const _o = createO<T>({} as any, true)
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
   return (
       // ユーザー定義
-      spec: (
-        o: typeof _phantomBuilder
-      ) => Blank | Internal | (Blank | Internal)[]
+      spec: (o: typeof _o) => Blank | Internal | (Blank | Internal)[]
     ): ThemeProp<T> =>
     ({ theme }) => {
       if (!isPresent(theme)) {
         // テーマが入っていない場合は復旧不可能なのでエラーにする
         throw noThemeProvider
       }
+
       // styled-componentsのランタイムから受け取ったthemeオブジェクトをbuilderに食わせて`o`をつくる
       // さらに、ユーザー定義にbuilderが構築した`o`を食わせる
       // (`o`を一時変数に入れてしまうと型Tの具象化が行われるので関数合成を優先する)
-      const rawSpecDescriptor = spec(builder(theme))
+      const o = createO(theme)
+
+      const rawSpecDescriptor = spec(o)
       // ユーザー定義の配列を整形
       const specDescriptor = [
         ...(Array.isArray(rawSpecDescriptor)

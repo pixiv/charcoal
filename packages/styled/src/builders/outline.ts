@@ -1,7 +1,9 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
+import { objectKeys } from '../util'
 import { Internal, internal } from './internal'
+import { constFactory, factory, modifiedFactory } from './lib'
 
 export const outlineType = ['focus'] as const
 type OutlineType = typeof outlineType[number]
@@ -49,3 +51,19 @@ const onFocus = (css: CSSObject) => ({
     },
   },
 })
+
+export default function outline<T extends CharcoalAbstractTheme>(theme: T) {
+  const outlineCss = createOutlineColorCss(theme)
+  const outlineObject = constFactory(
+    {},
+    {
+      outline: factory({}, objectKeys(theme.outline), (variant) =>
+        modifiedFactory(outlineType, (modifiers) =>
+          outlineCss(variant, modifiers)
+        )
+      ),
+    }
+  )
+
+  return outlineObject
+}
