@@ -8,6 +8,11 @@ export interface Context {
   backgroundColorTransition?: boolean
 }
 
+/**
+ * 絶対にこれを export してはいけない
+ *
+ * さもないと `o.bg[internalSym]` みたいな叩き方が可能になってしまう（補完にも意図せず出てしまう）
+ */
 const internalSym: unique symbol = Symbol('internal')
 
 export function internal(
