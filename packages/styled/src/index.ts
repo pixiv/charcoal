@@ -66,9 +66,6 @@ type FixedProperty = typeof fixedProperties[number]
 const borderDirections = ['top', 'right', 'bottom', 'left'] as const
 type BorderDirection = typeof borderDirections[number]
 
-const outlineType = ['focus'] as const
-type OutlineType = typeof outlineType[number]
-
 /**
  * `theme(o => [...])` の `o` の部分を構築する
  *
@@ -223,50 +220,6 @@ function builder<T extends CharcoalAbstractTheme>(
     outlineObject
   )
 }
-
-/**
- * @see https://developer.mozilla.org/ja/docs/Web/CSS/:focus-visible#selectively_showing_the_focus_indicator
- */
-const onFocus = (css: CSSObject) => ({
-  [notDisabledSelector]: {
-    '&:focus, &:active': {
-      outline: 'none',
-      ...css,
-    },
-
-    '&:focus:not(:focus-visible), &:active:not(:focus-visible)': {
-      outline: 'none',
-    },
-
-    '&:focus-visible': {
-      outline: 'none',
-      ...css,
-    },
-  },
-})
-
-const outlineCss = (weight: number, color: string) => ({
-  boxShadow: `0 0 0 ${px(weight)} ${color}`,
-})
-
-const createOutlineColorCss =
-  <T extends CharcoalAbstractTheme>(theme: T) =>
-  (
-    variant: keyof T['outline'],
-    modifiers: readonly OutlineType[]
-  ): Internal => {
-    const weight = theme.outline[variant].weight
-    const color = theme.outline[variant].color
-    return internal(
-      () =>
-        modifiers.includes('focus')
-          ? onFocus(outlineCss(weight, color))
-          : { '&&': { [notDisabledSelector]: outlineCss(weight, color) } },
-      {
-        boxShadowTransition: true,
-      }
-    )
-  }
 
 function spacingProperty(
   property: SpacingProperty,
