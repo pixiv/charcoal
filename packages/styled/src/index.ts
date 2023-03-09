@@ -29,6 +29,12 @@ import {
   px,
   customPropertyToken,
 } from '@charcoal-ui/utils'
+import {
+  Context,
+  Internal,
+  internal,
+  __DO_NOT_USE_GET_INTERNAL__,
+} from './builders/internal'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -626,14 +632,6 @@ const createBorderRadiusCss =
       borderRadius: px(theme.borderRadius[size]),
     }))
 
-interface Context {
-  cancelHalfLeadingPx?: number
-  hasVerticalPadding?: boolean
-  boxShadowTransition?: boolean
-  colorTransition?: boolean
-  backgroundColorTransition?: boolean
-}
-
 const commonSpec = (_theme: unknown): Internal => {
   const duration = dur(TRANSITION_DURATION)
   const transition = (property: string[]) => ({
@@ -653,27 +651,6 @@ const commonSpec = (_theme: unknown): Internal => {
         ].filter(isPresent)
       )
   )
-}
-
-const internalSym: unique symbol = Symbol('internal')
-
-function internal(
-  operation: (context: Context) => CSSObject,
-  context: Context = {}
-): Internal {
-  return {
-    [internalSym]: {
-      operation,
-      context,
-    },
-  }
-}
-
-export interface Internal {
-  [internalSym]: {
-    operation: (context: Context) => CSSObject
-    context: Context
-  }
 }
 
 type Blank = null | undefined | false
@@ -729,12 +706,14 @@ export function createTheme<T extends CharcoalAbstractTheme>(
       // 1パス目
       // 全ユーザー定義を舐めて相互に影響し合う定義をチェックし、その結果(コンテキスト)を取得
       const context = specDescriptor.reduce<Context>(
-        (acc, v) => ({ ...acc, ...v[internalSym].context }),
+        (acc, v) => ({ ...acc, ...__DO_NOT_USE_GET_INTERNAL__(v).context }),
         {}
       )
       // 2パス目
       // コンテキストを見ながら最適化されたCSSを構築
-      return specDescriptor.map((v) => v[internalSym].operation(context))
+      return specDescriptor.map((v) =>
+        __DO_NOT_USE_GET_INTERNAL__(v).operation(context)
+      )
     }
 }
 
