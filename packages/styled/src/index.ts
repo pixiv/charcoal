@@ -6,7 +6,7 @@ import {
   constFactory,
   modifiedArgumentedFactory,
   variable,
-} from './lib'
+} from './builders/lib'
 import {
   EffectType,
   CharcoalAbstractTheme as Theme,
@@ -33,7 +33,7 @@ import {
   px,
   customPropertyToken,
 } from '@charcoal-ui/utils'
-export { type Modified, type ModifiedArgumented } from './lib'
+export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
   getThemeSync,
