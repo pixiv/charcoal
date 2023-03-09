@@ -32,3 +32,13 @@ export interface Internal {
     context: Context
   }
 }
+
+// half-leadingをキャンセルするとき && 垂直方向のpaddingが無い時
+// -> before/afterを入れる
+export const useHalfLeadingCanceller = ({
+  cancelHalfLeadingPx,
+  hasVerticalPadding = false,
+}: Context) => cancelHalfLeadingPx !== undefined && !hasVerticalPadding
+
+// TODO: deprecate
+export const TRANSITION_DURATION = 0.2

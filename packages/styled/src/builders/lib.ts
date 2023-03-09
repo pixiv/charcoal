@@ -1,4 +1,6 @@
-import { Key } from '@charcoal-ui/theme'
+import { EffectType, Key } from '@charcoal-ui/theme'
+import { disabledSelector, notDisabledSelector } from '@charcoal-ui/utils'
+import { CSSObject } from 'styled-components'
 import { unreachable } from '../util'
 
 /**
@@ -178,3 +180,18 @@ export type ModifiedArgumented<
 }
 
 export const variable = (value: string) => `var(${value})`
+
+export function onEffectPseudo(effect: EffectType, css: CSSObject) {
+  return effect === 'hover'
+    ? { '&:hover': { [notDisabledSelector]: css } }
+    : effect === 'press'
+    ? { '&:active': { [notDisabledSelector]: css } }
+    : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    effect === 'disabled'
+    ? { [disabledSelector]: css }
+    : unreachable(effect)
+}
+
+export function isSupportedEffect(effect: Key): effect is EffectType {
+  return ['hover', 'press', 'disabled'].includes(effect as string)
+}

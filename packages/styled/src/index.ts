@@ -1,13 +1,13 @@
 import { CSSObject, ThemedStyledInterface } from 'styled-components'
-import warning from 'warning'
 import {
   factory,
   modifiedFactory,
   constFactory,
   modifiedArgumentedFactory,
-  variable,
+  onEffectPseudo,
+  isSupportedEffect,
 } from './builders/lib'
-import { EffectType, CharcoalAbstractTheme, Key } from '@charcoal-ui/theme'
+import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import {
   objectAssign,
   unreachable,
@@ -19,22 +19,20 @@ import {
 import { columnSystem } from '@charcoal-ui/foundation'
 import {
   halfLeading,
-  applyEffect,
-  applyEffectToGradient,
   dur,
-  gradient,
   GradientDirection,
   notDisabledSelector,
-  disabledSelector,
   px,
-  customPropertyToken,
 } from '@charcoal-ui/utils'
 import {
   Context,
   Internal,
   internal,
+  TRANSITION_DURATION,
+  useHalfLeadingCanceller,
   __DO_NOT_USE_GET_INTERNAL__,
 } from './builders/internal'
+import { createColorCss, createGradientColorCss } from './builders/colors'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -49,9 +47,6 @@ export {
 } from './helper'
 export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
-
-const colorProperties = ['bg', 'font'] as const
-type ColorProperty = typeof colorProperties[number]
 
 const spacingProperties = ['margin', 'padding'] as const
 const spacingDirections = [
@@ -230,130 +225,6 @@ function builder<T extends CharcoalAbstractTheme>(
   )
 }
 
-function targetProperty(target: ColorProperty) {
-  return target === 'bg' ? 'background-color' : 'color'
-}
-
-function isSupportedEffect(effect: Key): effect is EffectType {
-  return ['hover', 'press', 'disabled'].includes(effect as string)
-}
-
-function onEffectPseudo(effect: EffectType, css: CSSObject) {
-  return effect === 'hover'
-    ? { '&:hover': { [notDisabledSelector]: css } }
-    : effect === 'press'
-    ? { '&:active': { [notDisabledSelector]: css } }
-    : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    effect === 'disabled'
-    ? { [disabledSelector]: css }
-    : unreachable(effect)
-}
-
-const createColorCss =
-  <T extends CharcoalAbstractTheme>(_theme: T) =>
-  (
-    target: ColorProperty,
-    color: keyof T['color'],
-    effects: readonly (keyof T['effect'])[] = []
-  ): Internal =>
-    internal(
-      () => ({
-        [targetProperty(target)]: variable(
-          customPropertyToken(color.toString())
-        ),
-        ...effects.filter(isSupportedEffect).reduce<CSSObject>(
-          (acc, effect) => ({
-            ...acc,
-            ...onEffectPseudo(effect, {
-              [targetProperty(target)]: variable(
-                customPropertyToken(color.toString(), [effect])
-              ),
-            }),
-          }),
-          {}
-        ),
-      }),
-      effects.length > 0
-        ? target === 'font'
-          ? {
-              colorTransition: true,
-            }
-          : {
-              backgroundColorTransition: true,
-            }
-        : {}
-    )
-
-// TODO: deprecate
-const TRANSITION_DURATION = 0.2
-
-const createGradientColorCss =
-  <T extends CharcoalAbstractTheme>(theme: T) =>
-  (
-    color: keyof T['gradientColor'],
-    effects: readonly (keyof T['effect'])[] = [],
-    direction: GradientDirection
-  ): Internal => {
-    const toLinearGradient = gradient(direction)
-    return internal((context) => {
-      const optimized = !useHalfLeadingCanceller(context)
-      const duration = dur(TRANSITION_DURATION)
-      if (optimized && effects.length > 0) {
-        return {
-          position: 'relative',
-          zIndex: 0,
-          overflow: 'hidden',
-          ...effects.filter(isSupportedEffect).reduce<CSSObject>(
-            (acc, effect) => ({
-              ...acc,
-              '&::before': {
-                zIndex: -1,
-                ...overlayElement,
-                transition: `${duration} background-color`,
-              },
-              '&::after': {
-                zIndex: -2,
-                ...overlayElement,
-                ...toLinearGradient(theme.gradientColor[color]),
-              },
-              ...onEffectPseudo(effect, {
-                '&::before': {
-                  backgroundColor: applyEffect(
-                    null,
-                    theme.effect[effect] ?? []
-                  ),
-                },
-              }),
-            }),
-            {}
-          ),
-        }
-      } else {
-        warning(
-          effects.length === 0,
-          // eslint-disable-next-line max-len
-          `'Transition' will not be applied. You can get around this by specifying 'preserveHalfLeading' or both 'padding' and 'typograpy'.`
-        )
-        return {
-          ...toLinearGradient(theme.gradientColor[color]),
-          ...effects.filter(isSupportedEffect).reduce<CSSObject>(
-            (acc, effect) => ({
-              ...acc,
-              ...onEffectPseudo(effect, {
-                ...toLinearGradient(
-                  applyEffectToGradient(theme.effect[effect] ?? [])(
-                    theme.gradientColor[color]
-                  )
-                ),
-              }),
-            }),
-            {}
-          ),
-        }
-      }
-    })
-  }
-
 /**
  * @see https://developer.mozilla.org/ja/docs/Web/CSS/:focus-visible#selectively_showing_the_focus_indicator
  */
@@ -397,23 +268,6 @@ const createOutlineColorCss =
       }
     )
   }
-
-const overlayElement: CSSObject = {
-  content: "''",
-  display: 'block',
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  top: 0,
-  left: 0,
-}
-
-// half-leadingをキャンセルするとき && 垂直方向のpaddingが無い時
-// -> before/afterを入れる
-const useHalfLeadingCanceller = ({
-  cancelHalfLeadingPx,
-  hasVerticalPadding = false,
-}: Context) => cancelHalfLeadingPx !== undefined && !hasVerticalPadding
 
 const createTypographyCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
