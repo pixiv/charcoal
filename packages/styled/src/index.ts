@@ -34,6 +34,12 @@ import {
 } from './builders/spacing'
 import { createOutlineColorCss, outlineType } from './builders/outline'
 import { createBorderCss, borderDirections } from './builders/border'
+import {
+  createFixedColumnCss,
+  createFixedPxCss,
+  createFixedRelativeCss,
+  fixedProperties,
+} from './builders/size'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -48,9 +54,6 @@ export {
 } from './helper'
 export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
-
-const fixedProperties = ['width', 'height'] as const
-type FixedProperty = typeof fixedProperties[number]
 
 /**
  * `theme(o => [...])` の `o` の部分を構築する
@@ -206,29 +209,6 @@ function builder<T extends CharcoalAbstractTheme>(
     outlineObject
   )
 }
-
-const createFixedPxCss =
-  <T extends CharcoalAbstractTheme>(theme: T) =>
-  (property: FixedProperty, size: keyof T['spacing'] | 'auto'): Internal =>
-    internal(() => ({
-      [property]: size === 'auto' ? 'auto' : px(theme.spacing[size]),
-    }))
-
-const createFixedRelativeCss =
-  <T extends CharcoalAbstractTheme>(_theme: T) =>
-  (property: FixedProperty, amount: '100%' | 'auto'): Internal =>
-    internal(() => ({
-      [property]: amount,
-    }))
-
-const createFixedColumnCss =
-  <T extends CharcoalAbstractTheme>(theme: T) =>
-  (property: FixedProperty, span: number): Internal =>
-    internal(() => ({
-      [property]: px(
-        columnSystem(span, theme.grid.unit.column, theme.grid.unit.gutter)
-      ),
-    }))
 
 const createElementEffectCss =
   <
