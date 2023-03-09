@@ -3,7 +3,7 @@ import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import { Internal, internal } from './internal'
 
-const outlineType = ['focus'] as const
+export const outlineType = ['focus'] as const
 type OutlineType = typeof outlineType[number]
 
 const outlineCss = (weight: number, color: string) => ({
