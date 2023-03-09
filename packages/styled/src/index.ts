@@ -17,7 +17,7 @@ import { createOutlineColorCss, outlineType } from './builders/outline'
 import { createBorderCss, borderDirections } from './builders/border'
 import size from './builders/size'
 import { createBorderRadiusCss } from './builders/borderRadius'
-import { createElementEffectCss } from './builders/elementEffect'
+import elementEffect from './builders/elementEffect'
 import spacing from './builders/spacing'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
@@ -54,13 +54,6 @@ function builder<T extends CharcoalAbstractTheme>(
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {} as never
   }
-
-  // 要素へのエフェクト (etc: 透過)
-  const elementEffectCss = createElementEffectCss(theme)
-  const elementEffectObject = modifiedFactory(
-    objectKeys(theme.elementEffect),
-    (modifiers) => elementEffectCss(modifiers)
-  )
 
   // ボーダー
   const borderCss = createBorderCss(theme)
@@ -103,7 +96,7 @@ function builder<T extends CharcoalAbstractTheme>(
     typography(theme),
     spacing(theme),
     size(theme),
-    elementEffectObject,
+    elementEffect(theme),
     borderObject,
     borderRadiusObject,
     outlineObject
