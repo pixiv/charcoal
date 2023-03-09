@@ -16,7 +16,7 @@ import typography from './builders/typography'
 import { createOutlineColorCss, outlineType } from './builders/outline'
 import border, { createBorderCss, borderDirections } from './builders/border'
 import size from './builders/size'
-import { createBorderRadiusCss } from './builders/borderRadius'
+import borderRadius, { createBorderRadiusCss } from './builders/borderRadius'
 import elementEffect from './builders/elementEffect'
 import spacing from './builders/spacing'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
@@ -55,16 +55,6 @@ function builder<T extends CharcoalAbstractTheme>(
     return {} as never
   }
 
-  // 角丸
-  const borderRadiusCss = createBorderRadiusCss(theme)
-  const borderRadiusObject = constFactory(
-    {},
-    {
-      borderRadius: (radius: keyof T['borderRadius']) =>
-        borderRadiusCss(radius),
-    }
-  )
-
   // アウトライン
   const outlineCss = createOutlineColorCss(theme)
   const outlineObject = constFactory(
@@ -85,7 +75,7 @@ function builder<T extends CharcoalAbstractTheme>(
     size(theme),
     elementEffect(theme),
     border(theme),
-    borderRadiusObject,
+    borderRadius(theme),
     outlineObject
   )
 }
