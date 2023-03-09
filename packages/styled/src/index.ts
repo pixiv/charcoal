@@ -16,8 +16,7 @@ import {
   isPresent,
   noThemeProvider,
 } from './util'
-import { columnSystem } from '@charcoal-ui/foundation'
-import { dur, GradientDirection, px } from '@charcoal-ui/utils'
+import { dur, GradientDirection } from '@charcoal-ui/utils'
 import {
   Context,
   Internal,
@@ -40,6 +39,7 @@ import {
   createFixedRelativeCss,
   fixedProperties,
 } from './builders/size'
+import { createBorderRadiusCss } from './builders/borderRadius'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -234,13 +234,6 @@ const createElementEffectCss =
         {}
       )
     )
-
-const createBorderRadiusCss =
-  <T extends CharcoalAbstractTheme>(theme: T) =>
-  (size: keyof T['borderRadius']): Internal =>
-    internal(() => ({
-      borderRadius: px(theme.borderRadius[size]),
-    }))
 
 const commonSpec = (_theme: unknown): Internal => {
   const duration = dur(TRANSITION_DURATION)
