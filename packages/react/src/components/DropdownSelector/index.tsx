@@ -1,154 +1,95 @@
-import React, { Key, useMemo, useRef } from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { Item, useSelectState } from 'react-stately'
+import { useOverlayTriggerState } from 'react-stately'
 import { disabledSelector } from '@charcoal-ui/utils'
-import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { useSelect, HiddenSelect } from '@react-aria/select'
-import { useButton } from '@react-aria/button'
-import { SelectProps } from '@react-types/select'
-import Listbox, { ListboxProps } from './Listbox'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
 import { theme } from '../../styled'
 
-import type { CollectionBase } from '@react-types/shared'
-import type { ReactNode } from 'react'
+import { OptionLi } from './OptionLi'
 import { DropdownPopover } from './DropdownPopover'
 
-type LabelProps = {
-  readonly showLabel?: boolean
-  readonly label: string
-  readonly subLabel?: ReactNode
-  readonly requiredText?: string
+export type DropdownSelectorV2Props = {
+  label: string
+  invalid?: boolean
+  assertiveText?: string
+  value: string
+  options: Option[]
+  onChange: (option: Option) => void
 }
 
-type Empty = Record<string, unknown>
-export type DropdownSelectorProps<T extends Empty = Empty> = LabelProps &
-  Readonly<CollectionBase<T>> & {
-    readonly id?: string
-    readonly name?: string
-    readonly autoComplete?: string
-    readonly placeholder?: string
-    readonly className?: string
-    readonly disabled?: boolean
-    readonly required?: boolean
-    readonly invalid?: boolean
-    readonly assertiveText?: string
-    readonly value?: Key
-    readonly defaultValue?: Key
-    readonly open?: boolean
-    readonly onOpenChange?: (isOpen?: boolean) => void
-    readonly onChange?: (key: Key) => void
-    readonly mode?: ListboxProps<T>['mode']
-  }
+export type Option = {
+  label: string
+  id: string
+}
 
-const DropdownSelector = <T extends Record<string, unknown>>({
-  open,
-  className,
-  label = '',
-  requiredText = '',
-  subLabel,
-  assertiveText,
-  autoComplete,
-  invalid = false,
-  disabled = false,
-  required = false,
-  showLabel = false,
-  mode = 'default',
-  ...props
-}: DropdownSelectorProps<T>) => {
-  const { visuallyHiddenProps } = useVisuallyHidden()
+export function DropdownSelector(props: DropdownSelectorV2Props) {
   const triggerRef = useRef<HTMLButtonElement>(null)
-  const selectProps = useMemo<SelectProps<T>>(
-    () => ({
-      ...props,
-      label,
-      isOpen: open,
-      isDisabled: disabled,
-      isRequired: required,
-      errorMessage: invalid && assertiveText,
-      validationState: invalid ? 'invalid' : 'valid',
-      onSelectionChange: props.onChange,
-      selectedKey: props.value,
-      defaultSelectedKey: props.defaultValue,
-    }),
-    [assertiveText, disabled, invalid, label, open, props, required]
-  )
-  const state = useSelectState<T>(selectProps)
-
-  const {
-    labelProps,
-    triggerProps,
-    valueProps,
-    menuProps,
-    errorMessageProps,
-    descriptionProps,
-  } = useSelect<T>(selectProps, state, triggerRef)
-
-  const { buttonProps } = useButton(triggerProps, triggerRef)
-
-  const hasAssertiveText =
-    assertiveText !== undefined && assertiveText.length > 0
-
+  const state = useOverlayTriggerState({})
   return (
-    <DropdownSelectorRoot aria-disabled={disabled} className={className}>
-      <DropdownFieldLabel
-        label={label}
-        required={required}
-        requiredText={requiredText}
-        subLabel={subLabel}
-        {...labelProps}
-        {...(!showLabel ? visuallyHiddenProps : {})}
-      />
-      <HiddenSelect
-        state={state}
-        triggerRef={triggerRef}
-        label={label}
-        name={props.name}
-        isDisabled={disabled}
-        autoComplete={autoComplete}
-      />
+    <DropdownSelectorRoot>
+      <DropdownFieldLabel label={props.label} />
       <DropdownButtonWrapper>
-        <DropdownButton {...buttonProps} ref={triggerRef} invalid={invalid}>
-          <DropdownButtonText {...valueProps}>
-            {/*
-             * react-stately の useSelectState から取得される selectedItem の型が常に
-             * Node<T> であるが runtime では null が帰ってくることがある
-             */}
-            {/* eslint-disable-next-line @typescript-eslint/strict-boolean-expressions,@typescript-eslint/no-unnecessary-condition*/}
-            {state.selectedItem
-              ? state.selectedItem.rendered
-              : props.placeholder}
+        <DropdownButton
+          invalid={props.invalid}
+          onClick={() => state.open()}
+          ref={triggerRef}
+        >
+          <DropdownButtonText>
+            {props.options.find((option) => option.id === props.value)?.label}
           </DropdownButtonText>
-
           <DropdownButtonIcon name="16/Menu" />
         </DropdownButton>
         {state.isOpen && (
           <DropdownPopover
             state={state}
             triggerRef={triggerRef}
-            value={props.value ?? props.defaultValue}
+            value={props.value}
           >
-            <Listbox {...menuProps} state={state} mode={mode} />
+            <ListboxRoot>
+              {props.options.map((option) => {
+                return (
+                  <OptionLi
+                    value={option}
+                    key={option.id}
+                    isSelected={props.value === option.id}
+                    onSelect={() => {
+                      props.onChange(option)
+                      state.close()
+                    }}
+                  >
+                    {option.label}
+                  </OptionLi>
+                )
+              })}
+            </ListboxRoot>
           </DropdownPopover>
         )}
       </DropdownButtonWrapper>
-
-      {hasAssertiveText && (
-        <AssertiveText
-          invalid={invalid}
-          {...(invalid ? errorMessageProps : descriptionProps)}
-        >
-          {assertiveText}
+      {props.assertiveText !== undefined && (
+        <AssertiveText invalid={props.invalid}>
+          {props.assertiveText}
         </AssertiveText>
       )}
     </DropdownSelectorRoot>
   )
 }
 
-export default DropdownSelector
-export const DropdownSelectorItem = Item
+const ListboxRoot = styled.ul`
+  padding-left: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  overflow: auto;
+  max-height: inherit;
 
+  ${theme((o) => [
+    o.bg.background1,
+    o.border.default,
+    o.borderRadius(8),
+    o.padding.vertical(8),
+  ])}
+`
 const DropdownSelectorRoot = styled.div`
   position: relative;
   display: inline-block;
@@ -170,7 +111,7 @@ const DropdownButtonWrapper = styled.div`
   position: relative;
 `
 
-const DropdownButton = styled.button<{ invalid: boolean }>`
+const DropdownButton = styled.button<{ invalid?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -191,7 +132,7 @@ const DropdownButton = styled.button<{ invalid: boolean }>`
       o.outline.default.focus,
       o.bg.surface3,
       o.borderRadius(4),
-      invalid && o.outline.assertive,
+      invalid === true && o.outline.assertive,
     ])}
 `
 
@@ -205,11 +146,11 @@ const DropdownButtonIcon = styled(Icon)`
   ${theme((o) => [o.font.text2])}
 `
 
-const AssertiveText = styled.div<{ invalid: boolean }>`
+const AssertiveText = styled.div<{ invalid?: boolean }>`
   ${({ invalid }) =>
     theme((o) => [
       o.typography(14),
       o.margin.top(8),
-      invalid ? o.font.assertive : o.font.text2,
+      invalid === true ? o.font.assertive : o.font.text2,
     ])}
 `
