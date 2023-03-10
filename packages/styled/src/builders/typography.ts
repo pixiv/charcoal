@@ -7,7 +7,7 @@ import {
   shouldCancelHalfLeading,
   Context,
 } from './internal'
-import { factory, modifiedFactory } from './lib'
+import { factory, modifiedFactory } from '../factories/lib'
 
 export const createTypographyCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>

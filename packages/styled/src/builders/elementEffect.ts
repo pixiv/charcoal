@@ -7,7 +7,7 @@ import {
   unreachable,
 } from '../util'
 import { Internal, createInternal } from './internal'
-import { modifiedFactory, onEffectPseudo } from './lib'
+import { modifiedFactory, onEffectPseudo } from '../factories/lib'
 
 export const createElementEffectCss =
   <

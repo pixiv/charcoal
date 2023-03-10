@@ -8,7 +8,7 @@ import {
 } from './builders/internal'
 import createO from './builders'
 import transition from './builders/transition'
-export { type Modified, type ModifiedArgumented } from './builders/lib'
+export { type Modified, type ModifiedArgumented } from './factories/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
   getThemeSync,

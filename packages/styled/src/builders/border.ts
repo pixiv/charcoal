@@ -2,7 +2,7 @@ import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
 import { objectKeys } from '../util'
 import { Internal, createInternal } from './internal'
-import { constFactory, factory, modifiedFactory } from './lib'
+import { constFactory, factory, modifiedFactory } from '../factories/lib'
 
 export const borderDirections = ['top', 'right', 'bottom', 'left'] as const
 type BorderDirection = typeof borderDirections[number]

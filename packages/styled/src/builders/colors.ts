@@ -23,7 +23,7 @@ import {
   modifiedFactory,
   onEffectPseudo,
   variable,
-} from './lib'
+} from '../factories/lib'
 
 const colorProperties = ['bg', 'font'] as const
 export type ColorProperty = typeof colorProperties[number]

@@ -3,7 +3,7 @@ import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import { objectKeys } from '../util'
 import { Internal, createInternal } from './internal'
-import { constFactory, factory, modifiedFactory } from './lib'
+import { constFactory, factory, modifiedFactory } from '../factories/lib'
 
 export const outlineType = ['focus'] as const
 type OutlineType = typeof outlineType[number]
