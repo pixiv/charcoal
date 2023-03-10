@@ -1,15 +1,13 @@
 import { CSSObject, ThemedStyledInterface } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { isPresent, noThemeProvider } from './util'
-import { dur } from '@charcoal-ui/utils'
 import {
   Context,
   Internal,
-  createInternal,
-  TRANSITION_DURATION,
   __DO_NOT_USE_GET_INTERNAL__,
 } from './builders/internal'
 import createO from './builders'
+import transition from './builders/transition'
 export { type Modified, type ModifiedArgumented } from './builders/lib'
 export { default as TokenInjector } from './TokenInjector'
 export {
@@ -24,29 +22,6 @@ export {
 } from './helper'
 export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
-
-const commonSpec = (_theme: unknown): Internal => {
-  const duration = dur(TRANSITION_DURATION)
-  const transition = (property: string[]) => ({
-    transition: property.map((v) => `${duration} ${v}`).join(', '),
-  })
-
-  function toCSS({
-    colorTransition = false,
-    backgroundColorTransition = false,
-    boxShadowTransition = false,
-  }: Context) {
-    return transition(
-      [
-        colorTransition ? 'color' : null,
-        backgroundColorTransition ? 'background-color' : null,
-        boxShadowTransition ? 'box-shadow' : null,
-      ].filter(isPresent)
-    )
-  }
-
-  return createInternal({ toCSS })
-}
 
 type Blank = null | undefined | false
 
@@ -91,12 +66,13 @@ export function createTheme<T extends CharcoalAbstractTheme>(
       const o = createO(theme)
 
       const rawSpecDescriptor = spec(o)
+
       // ユーザー定義の配列を整形
       const specDescriptor = [
         ...(Array.isArray(rawSpecDescriptor)
           ? rawSpecDescriptor
           : [rawSpecDescriptor]),
-        commonSpec(theme),
+        transition(theme),
       ].filter(nonBlank)
 
       // 1パス目

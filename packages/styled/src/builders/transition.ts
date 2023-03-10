@@ -1,0 +1,34 @@
+import { dur } from '@charcoal-ui/utils'
+import { isPresent } from '../util'
+import {
+  Internal,
+  TRANSITION_DURATION,
+  createInternal,
+  Context,
+} from './internal'
+
+/**
+ * context の状態を元に transition を追加する。必ず一番最後に呼ぶ
+ */
+export default function transition(_theme: unknown): Internal {
+  const duration = dur(TRANSITION_DURATION)
+  const transition = (property: string[]) => ({
+    transition: property.map((v) => `${duration} ${v}`).join(', '),
+  })
+
+  function toCSS({
+    colorTransition = false,
+    backgroundColorTransition = false,
+    boxShadowTransition = false,
+  }: Context) {
+    return transition(
+      [
+        colorTransition ? 'color' : null,
+        backgroundColorTransition ? 'background-color' : null,
+        boxShadowTransition ? 'box-shadow' : null,
+      ].filter(isPresent)
+    )
+  }
+
+  return createInternal({ toCSS })
+}
