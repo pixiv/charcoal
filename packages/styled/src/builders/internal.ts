@@ -15,10 +15,13 @@ export interface Context {
  */
 const internalSym: unique symbol = Symbol('internal')
 
-export function internal(
-  toCSS: (context: Context) => CSSObject,
-  context: Context = {}
-): Internal {
+export function createInternal({
+  toCSS,
+  context = {},
+}: {
+  toCSS: (context: Context) => CSSObject
+  context?: Context
+}): Internal {
   return {
     [internalSym]: {
       toCSS,
@@ -40,7 +43,7 @@ export interface Internal {
 
 // half-leadingをキャンセルするとき && 垂直方向のpaddingが無い時
 // -> before/afterを入れる
-export const useHalfLeadingCanceller = ({
+export const shouldCancelHalfLeading = ({
   cancelHalfLeadingPx,
   hasVerticalPadding = false,
 }: Context) => cancelHalfLeadingPx !== undefined && !hasVerticalPadding

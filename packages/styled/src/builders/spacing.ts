@@ -1,6 +1,7 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
-import { Internal, internal } from './internal'
+import { CSSObject } from 'styled-components'
+import { Internal, createInternal, Context } from './internal'
 import { factory, modifiedArgumentedFactory } from './lib'
 
 export const spacingProperties = ['margin', 'padding'] as const
@@ -59,8 +60,8 @@ export const createSpacingCss =
       top !== 'auto' &&
       bottom !== 'auto'
 
-    return internal(
-      ({ cancelHalfLeadingPx = 0 }) => ({
+    function toCSS({ cancelHalfLeadingPx = 0 }: Context): CSSObject {
+      return {
         ...(top !== undefined && {
           [spacingProperty(property, 'top')]:
             top === 'auto'
@@ -87,9 +88,13 @@ export const createSpacingCss =
           [spacingProperty(property, 'left')]:
             left === 'auto' ? 'auto' : px(theme.spacing[left]),
         }),
-      }),
-      hasVerticalPadding ? { hasVerticalPadding: true } : {}
-    )
+      }
+    }
+
+    return createInternal({
+      toCSS,
+      context: hasVerticalPadding ? { hasVerticalPadding: true } : {},
+    })
   }
 
 export default function spacing<T extends CharcoalAbstractTheme>(theme: T) {

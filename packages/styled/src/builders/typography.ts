@@ -1,7 +1,12 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { halfLeading, px } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
-import { Internal, internal, useHalfLeadingCanceller } from './internal'
+import {
+  Internal,
+  createInternal,
+  shouldCancelHalfLeading,
+  Context,
+} from './internal'
 import { factory, modifiedFactory } from './lib'
 
 export const createTypographyCss =
@@ -22,8 +27,8 @@ export const createTypographyCss =
     const descriptor = theme.typography.size[size]
     const margin = -halfLeading(descriptor)
 
-    return internal(
-      (context) => ({
+    function toCSS(context: Context): CSSObject {
+      return {
         fontSize: px(descriptor.fontSize),
         lineHeight: px(descriptor.lineHeight),
         ...(monospace && {
@@ -32,7 +37,7 @@ export const createTypographyCss =
         ...(bold && {
           fontWeight: 'bold',
         }),
-        ...(useHalfLeadingCanceller(context) && {
+        ...(shouldCancelHalfLeading(context) && {
           // prevent margin collapsing
           display: 'flow-root',
           // cancel half-leading with negative margin
@@ -45,13 +50,17 @@ export const createTypographyCss =
             marginBottom: px(margin),
           },
         }),
-      }),
-      !preserveHalfLeading
+      }
+    }
+
+    return createInternal({
+      toCSS,
+      context: !preserveHalfLeading
         ? {
             cancelHalfLeadingPx: margin,
           }
-        : {}
-    )
+        : {},
+    })
   }
 
 const leadingCancel: CSSObject = {

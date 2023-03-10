@@ -1,7 +1,7 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
 import { objectKeys } from '../util'
-import { Internal, internal } from './internal'
+import { Internal, createInternal } from './internal'
 import { constFactory, factory, modifiedFactory } from './lib'
 
 export const borderDirections = ['top', 'right', 'bottom', 'left'] as const
@@ -23,17 +23,22 @@ export const createBorderCss =
   ): Internal => {
     const all = directions.length === 0
     const value = borderShorthand(theme.border[variant].color)
-    return internal(() => ({
-      ...(all
-        ? { border: value }
-        : directions.reduce<CSSObject>(
-            (acc, direction) => ({
-              ...acc,
-              [borderProperty(direction)]: value,
-            }),
-            {}
-          )),
-    }))
+
+    return createInternal({
+      toCSS() {
+        return {
+          ...(all
+            ? { border: value }
+            : directions.reduce<CSSObject>(
+                (acc, direction) => ({
+                  ...acc,
+                  [borderProperty(direction)]: value,
+                }),
+                {}
+              )),
+        }
+      },
+    })
   }
 
 export default function border<T extends CharcoalAbstractTheme>(theme: T) {

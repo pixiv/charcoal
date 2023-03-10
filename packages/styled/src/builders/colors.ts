@@ -8,13 +8,14 @@ import {
   GradientDirection,
 } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
+import { Context } from 'vm'
 import warning from 'warning'
 import { objectKeys, objectAssign } from '../util'
 import {
-  internal,
+  createInternal,
   Internal,
   TRANSITION_DURATION,
-  useHalfLeadingCanceller,
+  shouldCancelHalfLeading,
 } from './internal'
 import {
   constFactory,
@@ -38,9 +39,9 @@ export const createColorCss =
     target: ColorProperty,
     color: keyof T['color'],
     effects: readonly (keyof T['effect'])[] = []
-  ): Internal =>
-    internal(
-      () => ({
+  ): Internal => {
+    function toCSS() {
+      return {
         [targetProperty(target)]: variable(
           customPropertyToken(color.toString())
         ),
@@ -55,17 +56,23 @@ export const createColorCss =
           }),
           {}
         ),
-      }),
-      effects.length > 0
-        ? target === 'font'
-          ? {
-              colorTransition: true,
-            }
-          : {
-              backgroundColorTransition: true,
-            }
-        : {}
-    )
+      }
+    }
+
+    return createInternal({
+      toCSS,
+      context:
+        effects.length > 0
+          ? target === 'font'
+            ? {
+                colorTransition: true,
+              }
+            : {
+                backgroundColorTransition: true,
+              }
+          : {},
+    })
+  }
 
 export const createGradientColorCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
@@ -75,9 +82,11 @@ export const createGradientColorCss =
     direction: GradientDirection
   ): Internal => {
     const toLinearGradient = gradient(direction)
-    return internal((context) => {
-      const optimized = !useHalfLeadingCanceller(context)
+
+    function toCSS(context: Context): CSSObject {
+      const optimized = !shouldCancelHalfLeading(context)
       const duration = dur(TRANSITION_DURATION)
+
       if (optimized && effects.length > 0) {
         return {
           position: 'relative',
@@ -108,30 +117,33 @@ export const createGradientColorCss =
             {}
           ),
         }
-      } else {
-        warning(
-          effects.length === 0,
-          // eslint-disable-next-line max-len
-          `'Transition' will not be applied. You can get around this by specifying 'preserveHalfLeading' or both 'padding' and 'typograpy'.`
-        )
-        return {
-          ...toLinearGradient(theme.gradientColor[color]),
-          ...effects.filter(isSupportedEffect).reduce<CSSObject>(
-            (acc, effect) => ({
-              ...acc,
-              ...onEffectPseudo(effect, {
-                ...toLinearGradient(
-                  applyEffectToGradient(theme.effect[effect] ?? [])(
-                    theme.gradientColor[color]
-                  )
-                ),
-              }),
-            }),
-            {}
-          ),
-        }
       }
-    })
+
+      warning(
+        effects.length === 0,
+        // eslint-disable-next-line max-len
+        `'Transition' will not be applied. You can get around this by specifying 'preserveHalfLeading' or both 'padding' and 'typograpy'.`
+      )
+
+      return {
+        ...toLinearGradient(theme.gradientColor[color]),
+        ...effects.filter(isSupportedEffect).reduce<CSSObject>(
+          (acc, effect) => ({
+            ...acc,
+            ...onEffectPseudo(effect, {
+              ...toLinearGradient(
+                applyEffectToGradient(theme.effect[effect] ?? [])(
+                  theme.gradientColor[color]
+                )
+              ),
+            }),
+          }),
+          {}
+        ),
+      }
+    }
+
+    return createInternal({ toCSS })
   }
 
 const overlayElement: CSSObject = {

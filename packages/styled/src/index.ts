@@ -5,7 +5,7 @@ import { dur } from '@charcoal-ui/utils'
 import {
   Context,
   Internal,
-  internal,
+  createInternal,
   TRANSITION_DURATION,
   __DO_NOT_USE_GET_INTERNAL__,
 } from './builders/internal'
@@ -30,20 +30,22 @@ const commonSpec = (_theme: unknown): Internal => {
   const transition = (property: string[]) => ({
     transition: property.map((v) => `${duration} ${v}`).join(', '),
   })
-  return internal(
-    ({
-      colorTransition = false,
-      backgroundColorTransition = false,
-      boxShadowTransition = false,
-    }) =>
-      transition(
-        [
-          colorTransition ? 'color' : null,
-          backgroundColorTransition ? 'background-color' : null,
-          boxShadowTransition ? 'box-shadow' : null,
-        ].filter(isPresent)
-      )
-  )
+
+  function toCSS({
+    colorTransition = false,
+    backgroundColorTransition = false,
+    boxShadowTransition = false,
+  }: Context) {
+    return transition(
+      [
+        colorTransition ? 'color' : null,
+        backgroundColorTransition ? 'background-color' : null,
+        boxShadowTransition ? 'box-shadow' : null,
+      ].filter(isPresent)
+    )
+  }
+
+  return createInternal({ toCSS })
 }
 
 type Blank = null | undefined | false

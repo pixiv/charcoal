@@ -2,7 +2,7 @@ import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import { objectKeys } from '../util'
-import { Internal, internal } from './internal'
+import { Internal, createInternal } from './internal'
 import { constFactory, factory, modifiedFactory } from './lib'
 
 export const outlineType = ['focus'] as const
@@ -20,15 +20,17 @@ export const createOutlineColorCss =
   ): Internal => {
     const weight = theme.outline[variant].weight
     const color = theme.outline[variant].color
-    return internal(
-      () =>
-        modifiers.includes('focus')
+
+    return createInternal({
+      toCSS() {
+        return modifiers.includes('focus')
           ? onFocus(outlineCss(weight, color))
-          : { '&&': { [notDisabledSelector]: outlineCss(weight, color) } },
-      {
+          : { '&&': { [notDisabledSelector]: outlineCss(weight, color) } }
+      },
+      context: {
         boxShadowTransition: true,
-      }
-    )
+      },
+    })
   }
 
 /**
