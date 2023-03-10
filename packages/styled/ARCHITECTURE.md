@@ -84,19 +84,8 @@ return {
 }
 ```
 
-`Internal` を定義するのに使われるのが `〇〇factory` である。
+`Internal` を定義するのに使われるのが `factory` である。
 
 1 つの factory が 1 つのメソッドに対応するとは限らない（1 度に複数のメソッドを定義する factory もある）。内部的には最終的に `Object.defineProperties()` が行われる。
 
-`〇〇factory` には以下の種類がある（ TODO: 各 factory の説明 ）。
-
-- `factory()`
-  - メソッド名の配列と実装にあたる関数を受け取って、該当するメソッドを同時に定義する
-- `constFactory()`
-  - factory の省略記法。実装にあたる部分を関数ではなく即値で渡す
-  - メソッドチェーンを表現するために、`factory()` の結果を `constFactory` にわたすこともある
-- `argumentedFactory()`
-- `modifiedFactory()`
-- `modifiedArgumentedFactory()`
-
-※ ここの命名は特に改善の余地がある。
+詳しくは `factories/lib.ts` を参照。
