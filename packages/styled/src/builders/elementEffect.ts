@@ -1,8 +1,13 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
-import { objectKeys, ReadonlyArrayConstructor, unreachable } from '../util'
+import {
+  isSupportedEffect,
+  objectKeys,
+  ReadonlyArrayConstructor,
+  unreachable,
+} from '../util'
 import { Internal, createInternal } from './internal'
-import { isSupportedEffect, modifiedFactory, onEffectPseudo } from './lib'
+import { modifiedFactory, onEffectPseudo } from './lib'
 
 export const createElementEffectCss =
   <

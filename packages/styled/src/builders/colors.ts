@@ -10,7 +10,7 @@ import {
 import { CSSObject } from 'styled-components'
 import { Context } from 'vm'
 import warning from 'warning'
-import { objectKeys, objectAssign } from '../util'
+import { objectKeys, objectAssign, isSupportedEffect } from '../util'
 import {
   createInternal,
   Internal,
@@ -20,7 +20,6 @@ import {
 import {
   constFactory,
   factory,
-  isSupportedEffect,
   modifiedFactory,
   onEffectPseudo,
   variable,

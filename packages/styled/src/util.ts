@@ -4,7 +4,7 @@ import {
   filterObject,
   flatMapObject,
 } from '@charcoal-ui/utils'
-import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import { CharcoalAbstractTheme, EffectType, Key } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
 
 /**
@@ -142,4 +142,8 @@ export function defineThemeVariables(
       ]),
     ])
   }
+}
+
+export function isSupportedEffect(effect: Key): effect is EffectType {
+  return ['hover', 'press', 'disabled'].includes(effect as string)
 }

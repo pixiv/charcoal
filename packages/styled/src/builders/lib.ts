@@ -191,7 +191,3 @@ export function onEffectPseudo(effect: EffectType, css: CSSObject) {
     ? { [disabledSelector]: css }
     : unreachable(effect)
 }
-
-export function isSupportedEffect(effect: Key): effect is EffectType {
-  return ['hover', 'press', 'disabled'].includes(effect as string)
-}
