@@ -18,7 +18,11 @@ import { unreachable } from '../util'
  *
  * console.log(o.red) //=> #ff0000
  */
-export const factory = <TSource, TMember extends readonly Key[], TValue>(
+export const defineProperties = <
+  TSource,
+  TMember extends readonly Key[],
+  TValue
+>(
   source: TSource,
   member: TMember,
   chain: (key: TMember[number]) => TValue
@@ -48,7 +52,7 @@ export const factory = <TSource, TMember extends readonly Key[], TValue>(
  *
  * console.log(o.red(0.5)) //=> #ff000077
  */
-export const argumentedFactory = <
+export const defineMethods = <
   TSource,
   TMember extends readonly string[],
   TValue,
@@ -89,11 +93,14 @@ export const argumentedFactory = <
  *
  * console.log(o.red) //=> #f00
  */
-export const constFactory = <TSource, TDef extends { [key: string]: unknown }>(
+export const defineConstantProperties = <
+  TSource,
+  TDef extends { [key: string]: unknown }
+>(
   source: TSource,
   def: TDef
 ) =>
-  factory(source, Object.keys(def), (key) => def[key]) as TSource &
+  defineProperties(source, Object.keys(def), (key) => def[key]) as TSource &
     Readonly<TDef>
 
 /**
@@ -110,18 +117,18 @@ export const constFactory = <TSource, TDef extends { [key: string]: unknown }>(
  *
  * console.log(o.red.blue) => #f00,#00f
  */
-export const modifiedFactory = <TSource, T extends Key>(
+export const definePropertyChains = <TSource, T extends Key>(
   modifiers: readonly T[],
   source: (applied: readonly T[]) => TSource
 ) =>
-  (function recursiveModifiedFactory(
+  (function defineMethodsRecursively(
     applied: readonly T[]
   ): Modified<TSource, T> {
     const notApplied = modifiers.filter((v) => !applied.includes(v))
-    return factory(source(applied), notApplied, (modifier) =>
+    return defineProperties(source(applied), notApplied, (modifier) =>
       notApplied.length === 0
         ? unreachable()
-        : recursiveModifiedFactory([...applied, modifier])
+        : defineMethodsRecursively([...applied, modifier])
     )
   })([])
 
@@ -144,7 +151,7 @@ export type Modified<TSource, TModifiers extends Key> = TSource & {
  *
  * console.log(o.red(0.5).blue(1)) => #ff000077,#0000ffff
  */
-export const modifiedArgumentedFactory = <
+export const defineMethodChains = <
   TSource,
   T extends string,
   TArguments extends unknown[]
@@ -153,19 +160,19 @@ export const modifiedArgumentedFactory = <
   source: (applied: readonly [T, ...TArguments][]) => TSource,
   ..._inferPhantom: TArguments
 ) =>
-  (function recursiveModifiedFactory(
+  (function defineMethodsRecursively(
     applied: readonly [T, ...TArguments][]
   ): ModifiedArgumented<TSource, T, TArguments> {
     const notApplied = modifiers.filter(
       (v) => !applied.map(([w]) => w).includes(v)
     )
-    return argumentedFactory(
+    return defineMethods(
       source(applied),
       notApplied,
       (modifier, ...args: TArguments) =>
         notApplied.length === 0
           ? unreachable()
-          : recursiveModifiedFactory([...applied, [modifier, ...args]])
+          : defineMethodsRecursively([...applied, [modifier, ...args]])
     )
   })([])
 

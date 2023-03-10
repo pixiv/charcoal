@@ -7,7 +7,7 @@ import {
   unreachable,
 } from '../util'
 import { Internal, createInternal } from './internal'
-import { modifiedFactory, onEffectPseudo } from '../factories/lib'
+import { definePropertyChains, onEffectPseudo } from '../factories/lib'
 
 export const createElementEffectCss =
   <
@@ -41,7 +41,7 @@ export default function elementEffect<T extends CharcoalAbstractTheme>(
 ) {
   // 要素へのエフェクト (etc: 透過)
   const elementEffectCss = createElementEffectCss(theme)
-  const elementEffectObject = modifiedFactory(
+  const elementEffectObject = definePropertyChains(
     objectKeys(theme.elementEffect),
     (modifiers) => elementEffectCss(modifiers)
   )

@@ -2,7 +2,7 @@ import { columnSystem } from '@charcoal-ui/foundation'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
 import { Internal, createInternal } from './internal'
-import { factory, constFactory } from '../factories/lib'
+import { defineProperties, defineConstantProperties } from '../factories/lib'
 
 export const fixedProperties = ['width', 'height'] as const
 type FixedProperty = typeof fixedProperties[number]
@@ -46,8 +46,8 @@ export default function size<T extends CharcoalAbstractTheme>(theme: T) {
   const fixedPxCss = createFixedPxCss(theme)
   const fixedColumnCss = createFixedColumnCss(theme)
   const fixedRelativeCss = createFixedRelativeCss(theme)
-  const fixedObject = factory({}, fixedProperties, (property) =>
-    constFactory(
+  const fixedObject = defineProperties({}, fixedProperties, (property) =>
+    defineConstantProperties(
       {},
       {
         px: (size: keyof T['spacing'] | 'auto') => fixedPxCss(property, size),

@@ -7,7 +7,7 @@ import {
   shouldCancelHalfLeading,
   Context,
 } from './internal'
-import { factory, modifiedFactory } from '../factories/lib'
+import { defineProperties, definePropertyChains } from '../factories/lib'
 
 export const createTypographyCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
@@ -80,11 +80,11 @@ const typographyModifiers = [
 
 export default function typography<T extends CharcoalAbstractTheme>(theme: T) {
   const typographyCss = createTypographyCss(theme)
-  const typographyObject = factory(
+  const typographyObject = defineProperties(
     {},
     ['typography'] as const,
     (_) => (size: keyof T['typography']['size']) =>
-      modifiedFactory(typographyModifiers, (modifiers) =>
+      definePropertyChains(typographyModifiers, (modifiers) =>
         typographyCss(size, {
           preserveHalfLeading: modifiers.includes('preserveHalfLeading'),
           monospace: modifiers.includes('monospace'),

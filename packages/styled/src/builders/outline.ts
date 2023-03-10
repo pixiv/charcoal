@@ -3,7 +3,11 @@ import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import { objectKeys } from '../util'
 import { Internal, createInternal } from './internal'
-import { constFactory, factory, modifiedFactory } from '../factories/lib'
+import {
+  defineConstantProperties,
+  defineProperties,
+  definePropertyChains,
+} from '../factories/lib'
 
 export const outlineType = ['focus'] as const
 type OutlineType = typeof outlineType[number]
@@ -56,11 +60,11 @@ const onFocus = (css: CSSObject) => ({
 
 export default function outline<T extends CharcoalAbstractTheme>(theme: T) {
   const outlineCss = createOutlineColorCss(theme)
-  const outlineObject = constFactory(
+  const outlineObject = defineConstantProperties(
     {},
     {
-      outline: factory({}, objectKeys(theme.outline), (variant) =>
-        modifiedFactory(outlineType, (modifiers) =>
+      outline: defineProperties({}, objectKeys(theme.outline), (variant) =>
+        definePropertyChains(outlineType, (modifiers) =>
           outlineCss(variant, modifiers)
         )
       ),

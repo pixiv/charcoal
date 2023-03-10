@@ -18,9 +18,9 @@ import {
   shouldCancelHalfLeading,
 } from './internal'
 import {
-  constFactory,
-  factory,
-  modifiedFactory,
+  defineConstantProperties,
+  defineProperties,
+  definePropertyChains,
   onEffectPseudo,
   variable,
 } from '../factories/lib'
@@ -164,26 +164,26 @@ export default function colors<T extends CharcoalAbstractTheme>(theme: T) {
   const colorCss = createColorCss(theme)
   const gradientColorCss = createGradientColorCss(theme)
 
-  const colorObject = constFactory(
+  const colorObject = defineConstantProperties(
     {},
     {
       bg: objectAssign(
-        factory({}, colors, (color) =>
-          modifiedFactory(effects, (modifiers) =>
+        defineProperties({}, colors, (color) =>
+          definePropertyChains(effects, (modifiers) =>
             colorCss('bg', color, modifiers)
           )
         ),
-        factory(
+        defineProperties(
           {},
           gradientColors,
           (color) => (direction: GradientDirection) =>
-            modifiedFactory(effects, (modifiers) =>
+            definePropertyChains(effects, (modifiers) =>
               gradientColorCss(color, modifiers, direction)
             )
         )
       ),
-      font: factory({}, colors, (color) =>
-        modifiedFactory(effects, (modifiers) =>
+      font: defineProperties({}, colors, (color) =>
+        definePropertyChains(effects, (modifiers) =>
           colorCss('font', color, modifiers)
         )
       ),
