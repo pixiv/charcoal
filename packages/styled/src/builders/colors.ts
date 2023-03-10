@@ -10,7 +10,13 @@ import {
 import { CSSObject } from 'styled-components'
 import { Context } from 'vm'
 import warning from 'warning'
-import { objectKeys, objectAssign, isSupportedEffect } from '../util'
+import {
+  objectKeys,
+  objectAssign,
+  isSupportedEffect,
+  onEffectPseudo,
+  variable,
+} from '../util'
 import {
   createInternal,
   Internal,
@@ -21,8 +27,6 @@ import {
   defineConstantProperties,
   defineProperties,
   definePropertyChains,
-  onEffectPseudo,
-  variable,
 } from '../factories/lib'
 
 const colorProperties = ['bg', 'font'] as const

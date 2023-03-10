@@ -3,11 +3,12 @@ import { CSSObject } from 'styled-components'
 import {
   isSupportedEffect,
   objectKeys,
+  onEffectPseudo,
   ReadonlyArrayConstructor,
   unreachable,
 } from '../util'
 import { Internal, createInternal } from './internal'
-import { definePropertyChains, onEffectPseudo } from '../factories/lib'
+import { definePropertyChains } from '../factories/lib'
 
 export const createElementEffectCss =
   <
