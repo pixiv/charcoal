@@ -1,6 +1,4 @@
-import { EffectType, Key } from '@charcoal-ui/theme'
-import { disabledSelector, notDisabledSelector } from '@charcoal-ui/utils'
-import { CSSObject } from 'styled-components'
+import { Key } from '@charcoal-ui/theme'
 import { unreachable } from '../util'
 
 /**
@@ -184,17 +182,4 @@ export type ModifiedArgumented<
   readonly [key in TModifiers]: (
     ...args: TArguments
   ) => ModifiedArgumented<TSource, Exclude<TModifiers, key>, TArguments>
-}
-
-export const variable = (value: string) => `var(${value})`
-
-export function onEffectPseudo(effect: EffectType, css: CSSObject) {
-  return effect === 'hover'
-    ? { '&:hover': { [notDisabledSelector]: css } }
-    : effect === 'press'
-    ? { '&:active': { [notDisabledSelector]: css } }
-    : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    effect === 'disabled'
-    ? { [disabledSelector]: css }
-    : unreachable(effect)
 }
