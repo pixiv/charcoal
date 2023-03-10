@@ -44,7 +44,7 @@ export const defineProperties = <
  *
  * @example
  *
- * const o = argumentedFactory({}, ['red', 'blue'],
+ * const o = defineMethods({}, ['red', 'blue'],
  *   (color, alpha: number) => hex(color, alpha)
  * )
  *
@@ -84,7 +84,7 @@ export const defineMethods = <
  *
  * @example
  *
- * const o = constFactory({}, {
+ * const o = defineConstantProperties({}, {
  *   red: '#f00',
  *   blue: '#00f',
  * })
@@ -109,7 +109,7 @@ export const defineConstantProperties = <
  *
  * @example
  *
- * const o = modifiedArgumentedFactory(['red', 'blue'],
+ * const o = definePropertyChains(['red', 'blue'],
  *   modifiers => modifiers.map(color => hex(color)).join(',')
  * )
  *
@@ -119,19 +119,19 @@ export const definePropertyChains = <TSource, T extends Key>(
   modifiers: readonly T[],
   source: (applied: readonly T[]) => TSource
 ) =>
-  (function defineMethodsRecursively(
+  (function definePropertiesRecursively(
     applied: readonly T[]
-  ): Modified<TSource, T> {
+  ): PropertyChain<TSource, T> {
     const notApplied = modifiers.filter((v) => !applied.includes(v))
     return defineProperties(source(applied), notApplied, (modifier) =>
       notApplied.length === 0
         ? unreachable()
-        : defineMethodsRecursively([...applied, modifier])
+        : definePropertiesRecursively([...applied, modifier])
     )
   })([])
 
-export type Modified<TSource, TModifiers extends Key> = TSource & {
-  readonly [key in TModifiers]: Modified<TSource, Exclude<TModifiers, key>>
+export type PropertyChain<TSource, TModifiers extends Key> = TSource & {
+  readonly [key in TModifiers]: PropertyChain<TSource, Exclude<TModifiers, key>>
 }
 
 /**
@@ -143,7 +143,7 @@ export type Modified<TSource, TModifiers extends Key> = TSource & {
  *
  * @example
  *
- * const o = modifiedArgumentedFactory(['red', 'blue'],
+ * const o = defineMethodChains(['red', 'blue'],
  *   modifiers => modifiers.map(([color, alpha]) => hex(color, alpha)).join(',')
  * , {} as [number])
  *
@@ -160,7 +160,7 @@ export const defineMethodChains = <
 ) =>
   (function defineMethodsRecursively(
     applied: readonly [T, ...TArguments][]
-  ): ModifiedArgumented<TSource, T, TArguments> {
+  ): MethodChain<TSource, T, TArguments> {
     const notApplied = modifiers.filter(
       (v) => !applied.map(([w]) => w).includes(v)
     )
@@ -174,12 +174,12 @@ export const defineMethodChains = <
     )
   })([])
 
-export type ModifiedArgumented<
+export type MethodChain<
   TSource,
   TModifiers extends string,
   TArguments extends unknown[]
 > = TSource & {
   readonly [key in TModifiers]: (
     ...args: TArguments
-  ) => ModifiedArgumented<TSource, Exclude<TModifiers, key>, TArguments>
+  ) => MethodChain<TSource, Exclude<TModifiers, key>, TArguments>
 }
