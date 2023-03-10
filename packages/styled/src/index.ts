@@ -1,11 +1,7 @@
 import { CSSObject, ThemedStyledInterface } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { isPresent, noThemeProvider } from './util'
-import {
-  Context,
-  Internal,
-  __DO_NOT_USE_GET_INTERNAL__,
-} from './builders/internal'
+import { Context, Internal, __DO_NOT_USE_GET_INTERNAL__ } from './internals'
 import createO from './builders'
 import transition from './builders/transition'
 export { default as TokenInjector } from './TokenInjector'

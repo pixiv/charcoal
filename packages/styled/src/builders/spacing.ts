@@ -1,7 +1,7 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
-import { Internal, createInternal, Context } from './internal'
+import { Internal, createInternal, Context } from '../internals'
 import { defineProperties, defineMethodChains } from '../factories/lib'
 
 export const spacingProperties = ['margin', 'padding'] as const

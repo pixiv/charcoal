@@ -2,7 +2,7 @@ import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
 import { objectKeys } from '../util'
-import { Internal, createInternal } from './internal'
+import { Internal, createInternal } from '../internals'
 import {
   defineConstantProperties,
   defineProperties,

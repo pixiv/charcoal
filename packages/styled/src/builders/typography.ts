@@ -6,7 +6,7 @@ import {
   createInternal,
   shouldCancelHalfLeading,
   Context,
-} from './internal'
+} from '../internals'
 import { defineProperties, definePropertyChains } from '../factories/lib'
 
 export const createTypographyCss =

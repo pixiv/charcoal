@@ -1,7 +1,7 @@
 import { columnSystem } from '@charcoal-ui/foundation'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
-import { Internal, createInternal } from './internal'
+import { Internal, createInternal } from '../internals'
 import { defineProperties, defineConstantProperties } from '../factories/lib'
 
 export const fixedProperties = ['width', 'height'] as const

@@ -7,7 +7,7 @@ import {
   ReadonlyArrayConstructor,
   unreachable,
 } from '../util'
-import { Internal, createInternal } from './internal'
+import { Internal, createInternal } from '../internals'
 import { definePropertyChains } from '../factories/lib'
 
 export const createElementEffectCss =

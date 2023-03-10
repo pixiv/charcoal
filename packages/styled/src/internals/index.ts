@@ -47,6 +47,3 @@ export const shouldCancelHalfLeading = ({
   cancelHalfLeadingPx,
   hasVerticalPadding = false,
 }: Context) => cancelHalfLeadingPx !== undefined && !hasVerticalPadding
-
-// TODO: deprecate
-export const TRANSITION_DURATION = 0.2

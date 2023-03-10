@@ -1,11 +1,9 @@
 import { dur } from '@charcoal-ui/utils'
 import { isPresent } from '../util'
-import {
-  Internal,
-  TRANSITION_DURATION,
-  createInternal,
-  Context,
-} from './internal'
+import { Internal, createInternal, Context } from '../internals'
+
+// TODO: deprecate
+export const TRANSITION_DURATION = 0.2
 
 /**
  * context の状態を元に transition を追加する。必ず一番最後に呼ぶ

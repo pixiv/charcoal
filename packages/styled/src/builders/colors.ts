@@ -17,17 +17,13 @@ import {
   onEffectPseudo,
   variable,
 } from '../util'
-import {
-  createInternal,
-  Internal,
-  TRANSITION_DURATION,
-  shouldCancelHalfLeading,
-} from './internal'
+import { createInternal, Internal, shouldCancelHalfLeading } from '../internals'
 import {
   defineConstantProperties,
   defineProperties,
   definePropertyChains,
 } from '../factories/lib'
+import { TRANSITION_DURATION } from './transition'
 
 const colorProperties = ['bg', 'font'] as const
 export type ColorProperty = typeof colorProperties[number]
