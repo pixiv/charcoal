@@ -15,6 +15,13 @@ export interface Context {
  */
 const internalSym: unique symbol = Symbol('internal')
 
+/**
+ * CSSObject に変換可能なオブジェクトを作成する
+ *
+ * 実際に CSSObject に変換するには外部から `__DO_NOT_USE_GET_INTERNAL__` を使わなければならない
+ *
+ * これ以降メソッドチェーンが続いてもいいし、続かなくても良い
+ */
 export function createInternal({
   toCSS,
   context = {},
