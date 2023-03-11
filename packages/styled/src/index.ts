@@ -1,7 +1,7 @@
 import { CSSObject, ThemedStyledInterface } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
-import { isPresent, noThemeProvider } from './util'
-import { Context, Internal, __DO_NOT_USE_GET_INTERNAL__ } from './internals'
+import { ArrayOrSingle, isPresent, noThemeProvider, wrapArray } from './util'
+import { Internal, toCSSObjects } from './internals'
 import createO from './builders'
 import transition from './builders/transition'
 export { default as TokenInjector } from './TokenInjector'
@@ -55,8 +55,7 @@ export function createTheme<T extends CharcoalAbstractTheme>(
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
   return function theme(
-    // ユーザー定義
-    specFn: (o: Builder) => Blank | Internal | (Blank | Internal)[]
+    specFn: (o: Builder) => ArrayOrSingle<Internal | Blank>
   ): ThemeProp<T> {
     // styled-components のテンプレートに埋め込める関数
     return function interpolate({ theme }) {
@@ -65,37 +64,28 @@ export function createTheme<T extends CharcoalAbstractTheme>(
         throw noThemeProvider
       }
 
-      /**
-       * こう書いてはいけない
-       *
-       * ❌
-       * ```ts
-       * const o = createO(theme)
-       * const declaration = spec(o)
-       * ```
-       *
-       * `o` を一時変数に入れてしまうと型 `T` の具象化が行われるので関数合成で書く
-       */
-      const declaration = specFn(/** o = */ createO(theme))
+      const internals = [
+        // ユーザーが定義したルール
+        ...wrapArray(
+          /**
+           * こう書いてはいけない
+           *
+           * ❌
+           * ```ts
+           * const o = createO(theme)
+           * const declaration = spec(o)
+           * ```
+           *
+           * `o` を一時変数に入れてしまうと型 `T` の具象化が行われるので関数内に書く
+           */
+          specFn(/** o = */ createO(theme))
+        ),
 
-      // ユーザー定義の配列を整形
-      const specDescriptor = [
-        ...(Array.isArray(declaration) ? declaration : [declaration]),
+        // 必ず挿入される共通のルール
         transition(theme),
       ].filter(nonBlank)
 
-      // 1パス目
-      // 全ユーザー定義を舐めて相互に影響し合う定義をチェックし、その結果(コンテキスト)を取得
-      const context = specDescriptor.reduce<Context>(
-        (acc, v) => ({ ...acc, ...__DO_NOT_USE_GET_INTERNAL__(v).context }),
-        {}
-      )
-
-      // 2パス目
-      // コンテキストを見ながら最適化されたCSSを構築
-      return specDescriptor.map((v) =>
-        __DO_NOT_USE_GET_INTERNAL__(v).toCSS(context)
-      )
+      return toCSSObjects(internals)
     }
   }
 }

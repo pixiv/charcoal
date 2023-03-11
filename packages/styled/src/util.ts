@@ -105,6 +105,15 @@ export function extractNonNullKeys<V, K extends keyof V>(obj: {
     .map(([k]) => k) as { [key in K]: V[key] extends null ? never : key }[K][]
 }
 
+/**
+ * 配列じゃなかったら配列にする
+ */
+export function wrapArray<T>(value: ArrayOrSingle<T>): T[] {
+  return Array.isArray(value) ? value : [value]
+}
+
+export type ArrayOrSingle<T> = T | T[]
+
 export const noThemeProvider = new Error(
   '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
 )
