@@ -2,7 +2,7 @@ import { CSSObject, ThemedStyledInterface } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { ArrayOrSingle, isPresent, noThemeProvider, wrapArray } from './util'
 import { Internal, toCSSObjects } from './internals'
-import createO from './builders'
+import createO from './builders/o'
 import transition from './builders/transition'
 export { default as TokenInjector } from './TokenInjector'
 export {
