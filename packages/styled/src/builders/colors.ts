@@ -11,7 +11,7 @@ import { CSSObject } from 'styled-components'
 import { Context } from 'vm'
 import warning from 'warning'
 import {
-  objectKeys,
+  keyof,
   objectAssign,
   isSupportedEffect,
   onEffectPseudo,
@@ -156,11 +156,11 @@ const overlayElement: CSSObject = {
 }
 
 export default function colors<T extends CharcoalAbstractTheme>(theme: T) {
-  const colors = objectKeys(theme.color)
-  const effects = objectKeys(theme.effect)
+  const colors = keyof<T['color']>(theme.color)
+  const effects = keyof<T['effect']>(theme.effect)
 
   // 色
-  const gradientColors = objectKeys(theme.gradientColor)
+  const gradientColors = keyof<T['gradientColor']>(theme.gradientColor)
   const colorCss = createColorCss(theme)
   const gradientColorCss = createGradientColorCss(theme)
 

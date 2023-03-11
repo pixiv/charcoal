@@ -1,7 +1,7 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px, notDisabledSelector } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
-import { objectKeys } from '../util'
+import { keyof } from '../util'
 import { Internal, createInternal } from '../internals'
 import {
   defineConstantProperties,
@@ -60,13 +60,17 @@ const onFocus = (css: CSSObject) => ({
 
 export default function outline<T extends CharcoalAbstractTheme>(theme: T) {
   const outlineCss = createOutlineColorCss(theme)
+
   const outlineObject = defineConstantProperties(
     {},
     {
-      outline: defineProperties({}, objectKeys(theme.outline), (variant) =>
-        definePropertyChains(outlineType, (modifiers) =>
-          outlineCss(variant, modifiers)
-        )
+      outline: defineProperties(
+        {},
+        keyof<T['outline']>(theme.outline),
+        (variant) =>
+          definePropertyChains(outlineType, (modifiers) =>
+            outlineCss(variant, modifiers)
+          )
       ),
     }
   )

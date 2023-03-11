@@ -1,8 +1,8 @@
-import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import { CharcoalAbstractTheme, EffectType } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
 import {
   isSupportedEffect,
-  objectKeys,
+  keyof,
   onEffectPseudo,
   ReadonlyArrayConstructor,
   unreachable,
@@ -40,11 +40,14 @@ export const createElementEffectCss =
 export default function elementEffect<T extends CharcoalAbstractTheme>(
   theme: T
 ) {
+  const effectTypes = keyof<T['elementEffect']>(
+    theme.elementEffect
+  ) as EffectType[]
+
   // 要素へのエフェクト (etc: 透過)
   const elementEffectCss = createElementEffectCss(theme)
-  const elementEffectObject = definePropertyChains(
-    objectKeys(theme.elementEffect),
-    (modifiers) => elementEffectCss(modifiers)
+  const elementEffectObject = definePropertyChains(effectTypes, (modifiers) =>
+    elementEffectCss(modifiers)
   )
 
   return elementEffectObject

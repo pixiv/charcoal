@@ -78,8 +78,18 @@ export function objectAssign<T extends any[]>(...sources: T) {
   return Object.assign({}, ...sources) as ObjectAssign<T>
 }
 
-export function objectKeys<V extends object, K extends keyof V>(obj: V) {
-  return Object.keys(obj) as K[]
+/**
+ * Object.keys の返り値の型を厳しめにしてくれるやつ。
+ *
+ * ジェネリクスは基本的に明示して使うことを推奨。
+ *
+ * このライブラリでは Theme オブジェクトのジェネリクスを引き回すケースが多く、
+ * ジェネリクスを省略するといつのまにか keys の返り値が `string | number | symbol` になりがちなので
+ *
+ * @param obj - キーを取りたいオブジェクト。ジェネリクスを省略したとき `never[]` のような使えない型が返って欲しいので、型をあえて `V` にしていない
+ */
+export function keyof<V>(obj: object) {
+  return Object.keys(obj) as unknown as (keyof V & string)[]
 }
 
 export interface ReadonlyArrayConstructor {

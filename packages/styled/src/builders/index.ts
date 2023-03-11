@@ -13,7 +13,7 @@ import typography from './typography'
  * `theme(o => [...])` の `o` の部分を構築する
  *
  * @param theme テーマオブジェクト
- * @param isPhantom 型推論のためだけに使う場合にランタイムコストをゼロにするフラグ
+ * @param DO_NOTHING_IT_IS_JUST_CALLED_FOR_TYPE_INFERENCE 型推論のためだけに使う場合にランタイムコストをゼロにするフラグ
  */
 export default function createO<T extends CharcoalAbstractTheme>(
   theme: {
@@ -23,9 +23,9 @@ export default function createO<T extends CharcoalAbstractTheme>(
     border: T['border']
     outline: T['outline']
   } & Omit<T, 'color' | 'gradientColor' | 'border' | 'outline'>,
-  isPhantom = false
+  DO_NOTHING_IT_IS_JUST_CALLED_FOR_TYPE_INFERENCE = false
 ) {
-  if (isPhantom) {
+  if (DO_NOTHING_IT_IS_JUST_CALLED_FOR_TYPE_INFERENCE) {
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {} as never
   }

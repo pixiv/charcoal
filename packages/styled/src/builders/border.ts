@@ -1,6 +1,6 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
-import { objectKeys } from '../util'
+import { keyof } from '../util'
 import { Internal, createInternal } from '../internals'
 import {
   defineConstantProperties,
@@ -46,11 +46,13 @@ export const createBorderCss =
   }
 
 export default function border<T extends CharcoalAbstractTheme>(theme: T) {
+  const borderTypes = keyof<T['border']>(theme.border)
+
   const borderCss = createBorderCss(theme)
   const borderObject = defineConstantProperties(
     {},
     {
-      border: defineProperties({}, objectKeys(theme.border), (variant) =>
+      border: defineProperties({}, borderTypes, (variant) =>
         definePropertyChains(borderDirections, (modifiers) =>
           borderCss(variant, modifiers)
         )
