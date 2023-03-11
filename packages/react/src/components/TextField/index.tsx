@@ -417,6 +417,13 @@ const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
       o.borderRadius(4),
     ])}
 
+  /**
+   * FIXME: o.outline.default を &:focus-within 内に書いてると、外れるときに transition が効かない
+   * 本来 o.outline.default.focus と書けば足してくれるような transition の内容を一旦明示している
+   * o.outline.default.focusWithin のようなものがあればこの行は不要になるはず
+   */
+  transition: box-shadow 0.2s;
+
   &:focus-within {
     ${(p) =>
       theme((o) => (p.invalid ? o.outline.assertive : o.outline.default))}
