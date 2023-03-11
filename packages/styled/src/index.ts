@@ -26,7 +26,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
 /**
  * `theme(o => [...])` の `theme` ユーティリティを構築する
  *
- * @param _styled styled-componnets の `styled` そのもの (型推論のために用いられる)
+ * @param _styled - DEPRECATED: styled-componnets の `styled` そのものを渡すとそれを元に型推論ができる。が、型引数を渡す方が型推論が高速になりやすい
  *
  * @example
  *
