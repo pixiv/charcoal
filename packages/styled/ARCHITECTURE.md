@@ -79,7 +79,7 @@ return {
     context: {},
 
     // CSS を組み立てる関数
-    operation(context: Context): CSSObject
+    toCSS(context: Context): CSSObject
   }
 }
 ```
