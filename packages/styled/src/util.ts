@@ -86,10 +86,15 @@ export function objectAssign<T extends any[]>(...sources: T) {
  * このライブラリでは Theme オブジェクトのジェネリクスを引き回すケースが多く、
  * ジェネリクスを省略するといつのまにか keys の返り値が `string | number | symbol` になりがちなので
  *
- * @param obj - キーを取りたいオブジェクト。ジェネリクスを省略したとき `never[]` のような使えない型が返って欲しいので、型をあえて `V` にしていない
+ * @param obj - キーを取りたいオブジェクト。ジェネリクスを省略したとき `never[]` のような使えない型が返って欲しい
  */
-export function keyof<V>(obj: object) {
-  return Object.keys(obj) as unknown as (keyof V & string)[]
+export function keyof<
+  // このジェネリクスは必須（書かないと返り値が `never[]` になる ）
+  T,
+  // このジェネリクスは書かなくて良い、obj の内容から推論される（ T と矛盾してはいけない ）
+  _ extends T = T
+>(obj: _) {
+  return Object.keys(obj) as unknown as (keyof T & string)[]
 }
 
 export interface ReadonlyArrayConstructor {
