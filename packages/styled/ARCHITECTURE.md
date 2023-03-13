@@ -72,6 +72,9 @@ return {
   get hover() {
     ...
   },
+  get press() {
+    ...
+  },
 
   // 内部状態（ ライブラリ内からしかアクセスできない ）
   [internalSym]: {
