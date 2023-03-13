@@ -3,9 +3,8 @@ import React, {
   useState,
   useCallback,
   useRef,
-  useLayoutEffect,
 } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, useIsomorphicLayoutEffect, useSpring } from 'react-spring'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
 import { passiveEvents, isEdge } from '../../foundation/support'
@@ -35,9 +34,9 @@ export interface CarouselBaseAppearanceProps {
 export type CarouselGradientProps =
   | { hasGradient?: false }
   | {
-      hasGradient: true
-      fadeInGradient?: boolean
-    }
+    hasGradient: true
+    fadeInGradient?: boolean
+  }
 
 type CarouselAppearanceProps = CarouselBaseAppearanceProps &
   CarouselGradientProps
@@ -162,7 +161,7 @@ export default function Carousel({
     }
   }, [onResize])
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const elm = ref.current
     const innerElm = innerRef.current
     if (elm === null || innerElm === null) {
@@ -189,7 +188,7 @@ export default function Carousel({
   }, [handleResize, handleScroll])
 
   // 初期スクロールを行う
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (align !== 'left' || scrollOffset !== 0) {
       const scroll = ref.current
       if (scroll !== null) {
@@ -199,10 +198,10 @@ export default function Carousel({
             align === 'left' && scrollOffset > 0
               ? scrollOffset
               : align === 'center'
-              ? maxScrollLeft / 2 + scrollOffset
-              : align === 'right' && scrollOffset <= maxScrollLeft
-              ? maxScrollLeft - scrollOffset / 2
-              : 0,
+                ? maxScrollLeft / 2 + scrollOffset
+                : align === 'right' && scrollOffset <= maxScrollLeft
+                  ? maxScrollLeft - scrollOffset / 2
+                  : 0,
             maxScrollLeft
           )
         )
@@ -224,7 +223,7 @@ export default function Carousel({
 
   const [disableGradient, setDisableGradient] = useState(false)
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (isEdge()) {
       setDisableGradient(true)
     }
