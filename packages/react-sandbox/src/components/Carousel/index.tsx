@@ -1,9 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-  useCallback,
-  useRef,
-} from 'react'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { animated, useIsomorphicLayoutEffect, useSpring } from 'react-spring'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
@@ -34,9 +29,9 @@ export interface CarouselBaseAppearanceProps {
 export type CarouselGradientProps =
   | { hasGradient?: false }
   | {
-    hasGradient: true
-    fadeInGradient?: boolean
-  }
+      hasGradient: true
+      fadeInGradient?: boolean
+    }
 
 type CarouselAppearanceProps = CarouselBaseAppearanceProps &
   CarouselGradientProps
@@ -198,10 +193,10 @@ export default function Carousel({
             align === 'left' && scrollOffset > 0
               ? scrollOffset
               : align === 'center'
-                ? maxScrollLeft / 2 + scrollOffset
-                : align === 'right' && scrollOffset <= maxScrollLeft
-                  ? maxScrollLeft - scrollOffset / 2
-                  : 0,
+              ? maxScrollLeft / 2 + scrollOffset
+              : align === 'right' && scrollOffset <= maxScrollLeft
+              ? maxScrollLeft - scrollOffset / 2
+              : 0,
             maxScrollLeft
           )
         )
