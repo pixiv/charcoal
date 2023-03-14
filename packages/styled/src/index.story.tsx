@@ -35,7 +35,7 @@ declare module 'styled-components' {
   export interface DefaultTheme extends MyTheme {}
 }
 
-const theme = createTheme<DefaultTheme>()
+const theme = createTheme(styled)
 
 export const Example = () => (
   <ThemeProvider theme={myTheme}>
