@@ -2,7 +2,7 @@ import React, {
   forwardRef,
   memo,
   useMemo,
-  ComponentPropsWithoutRef
+  ComponentPropsWithoutRef,
 } from 'react'
 import { useObjectRef } from '@react-aria/utils'
 import styled, { css } from 'styled-components'
@@ -13,7 +13,7 @@ import Icon from '../Icon'
 
 const sizeMap = {
   S: 32,
-  M: 40
+  M: 40,
 }
 
 export type TagItemProps = {
@@ -45,7 +45,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
       () => ({
         elementType: 'a',
         isDisabled: disabled,
-        ...props
+        ...props,
       }),
       [disabled, props]
     )
@@ -102,7 +102,7 @@ const TagItemRoot = styled.a<TagItemRootProps>`
       status !== 'active' && size === 'M' && o.padding.horizontal(24),
       status !== 'active' && size === 'S' && o.padding.horizontal(16),
       status === 'inactive' ? o.font.text2 : o.font.text5,
-      ...(status === 'active' ? [o.padding.left(16), o.padding.right(8)] : [])
+      ...(status === 'active' ? [o.padding.left(16), o.padding.right(8)] : []),
     ])}
 
   ${disabledSelector} {
