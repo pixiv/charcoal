@@ -8,7 +8,6 @@ import {
   GradientDirection,
 } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
-import { Context } from '../internals'
 import warning from 'warning'
 import {
   keyof,
@@ -17,7 +16,7 @@ import {
   onEffectPseudo,
   variable,
 } from '../util'
-import { createInternal, Internal, shouldCancelHalfLeading } from '../internals'
+import { createInternal, Internal, Context, shouldCancelHalfLeading } from '../internals'
 import {
   defineConstantProperties,
   defineProperties,
