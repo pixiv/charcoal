@@ -16,7 +16,12 @@ import {
   onEffectPseudo,
   variable,
 } from '../util'
-import { createInternal, Internal, Context, shouldCancelHalfLeading } from '../internals'
+import {
+  createInternal,
+  Internal,
+  Context,
+  shouldCancelHalfLeading,
+} from '../internals'
 import {
   defineConstantProperties,
   defineProperties,
