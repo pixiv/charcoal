@@ -4,7 +4,7 @@ import React, { useRef, useMemo } from 'react'
 import { useToggleState } from 'react-stately'
 import styled from 'styled-components'
 import { theme } from '../../styled'
-import { disabledSelector, px } from '@charcoal-ui/utils'
+import { disabledSelector } from '@charcoal-ui/utils'
 
 export type SwitchProps = {
   name: string
@@ -58,7 +58,7 @@ export default function SwitchCheckbox(props: SwitchProps) {
 const Label = styled.label`
   display: inline-grid;
   grid-template-columns: auto 1fr;
-  gap: ${({ theme }) => px(theme.spacing[4])};
+  align-items: center;
   cursor: pointer;
   outline: 0;
 
@@ -70,7 +70,11 @@ const Label = styled.label`
 `
 
 const LabelInner = styled.div`
-  ${theme((o) => o.typography(14))}
+  ${theme((o) => [
+    o.typography(14).preserveHalfLeading,
+    o.font.text2,
+    o.margin.left(4),
+  ])}
 `
 
 const SwitchInput = styled.input.attrs({
@@ -90,6 +94,7 @@ const SwitchInput = styled.input.attrs({
       o.height.px(16),
       o.bg.text4.hover.press,
       o.outline.default.focus,
+      o.margin.all(0),
     ])}
 
     &::after {

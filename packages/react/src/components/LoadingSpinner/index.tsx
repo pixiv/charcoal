@@ -1,6 +1,6 @@
-import { transparentize } from 'polished'
 import React, { useImperativeHandle, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { theme } from '../../styled'
 
 export default function LoadingSpinner({
   size = 48,
@@ -25,11 +25,12 @@ const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   font-size: ${(props) => props.size}px;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
-  background-color: ${({ theme, transparent }) =>
-    transparent
-      ? 'transparent'
-      : transparentize(0.32, theme.color.background1)};
-  color: ${({ theme }) => theme.color.text4};
+  opacity: 0.84;
+  ${({ transparent }) =>
+    theme((o) => [
+      o.font.text4,
+      transparent ? o.bg.transparent : o.bg.background1,
+    ])}
 `
 
 const scaleout = keyframes`

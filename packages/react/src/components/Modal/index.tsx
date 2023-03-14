@@ -4,7 +4,6 @@ import {
   Overlay,
   useModalOverlay,
   useOverlay,
-  usePreventScroll,
 } from '@react-aria/overlays'
 import styled, { css, useTheme } from 'styled-components'
 import { theme } from '../../styled'
@@ -29,13 +28,39 @@ export type ModalProps = AriaModalOverlayProps &
     isOpen: boolean
     onClose: () => void
 
-    // NOTICE: デフォルト値を与えてはならない
-    // （たとえば document.body をデフォルト値にすると SSR できなくなる）
+    /**
+     * https://github.com/adobe/react-spectrum/issues/3787
+     * Next.jsで使用する際に発生するエラーの一時的な回避策でdocument.bodyを指定する必要がある
+     */
     portalContainer?: HTMLElement
   }
 
 const DEFAULT_Z_INDEX = 10
 
+/**
+ * モーダルコンポーネント。
+ *
+ * @example アプリケーションルートで `<OverlayProvider>` ないし `<CharcoalProvider>` で囲った上で利用する
+ * ```tsx
+ * import {
+ *   OverlayProvider,
+ *   Modal,
+ *   ModalHeader,
+ *   ModalBody,
+ *   ModalButtons
+ * } from '@charcoal-ui/react'
+ *
+ * <OverlayProvider>
+ *   <App>
+ *     <Modal isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
+ *       <ModalHeader />
+ *       <ModalBody>...</ModalBody>
+ *       <ModalButtons>...</ModalButtons>
+ *     </Modal>
+ *   </App>
+ * </OverlayProvider>
+ * ```
+ */
 export default function Modal({
   children,
   zIndex = DEFAULT_Z_INDEX,
@@ -54,7 +79,6 @@ export default function Modal({
   const ref = useRef<HTMLDivElement>(null)
   const { overlayProps, underlayProps } = useOverlay(props, ref)
 
-  usePreventScroll()
   const { modalProps } = useModalOverlay(
     props,
     {
@@ -102,7 +126,7 @@ export default function Modal({
   return transition(
     ({ backgroundColor, transform }, item) =>
       item && (
-        <Overlay>
+        <Overlay portalContainer={portalContainer}>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}

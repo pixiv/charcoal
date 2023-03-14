@@ -4,6 +4,11 @@ export {
   type LinkProps,
 } from './core/ComponentAbstraction'
 export { SSRProvider } from './core/SSRProvider'
+export { OverlayProvider } from './core/OverlayProvider'
+export {
+  CharcoalProvider,
+  type CharcoalProviderProps,
+} from './core/CharcoalProvider'
 export { default as Button, type ButtonProps } from './components/Button'
 export {
   default as Clickable,
@@ -55,3 +60,4 @@ export {
   type SegmentedControlProps,
 } from './components/SegmentedControl'
 export { default as Checkbox } from './components/Checkbox'
+export { default as TagItem, type TagItemProps } from './components/TagItem'

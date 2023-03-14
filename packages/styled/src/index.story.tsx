@@ -21,7 +21,7 @@ type MyTheme = CharcoalTheme & {
   }
 }
 
-function myTheme(theme: CharcoalTheme): MyTheme {
+export function myTheme(theme: CharcoalTheme): MyTheme {
   return {
     ...theme,
     color: {
@@ -35,7 +35,7 @@ declare module 'styled-components' {
   export interface DefaultTheme extends MyTheme {}
 }
 
-const theme = createTheme(styled)
+const theme = createTheme<DefaultTheme>()
 
 export const Example = () => (
   <ThemeProvider theme={myTheme}>

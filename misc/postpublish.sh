@@ -17,6 +17,8 @@ if [[ $default_branch = `git symbolic-ref --short HEAD` ]]; then
   else
     echo 'No diff found after yarn install'
   fi
+
+  git push origin --tags
 else
   echo 'Not in default branch'
 fi
