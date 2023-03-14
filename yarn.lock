@@ -1728,6 +1728,7 @@ __metadata:
     "@react-aria/ssr": ^3.5.0
     "@react-aria/switch": ^3.4.0
     "@react-aria/textfield": ^3.9.0
+    "@react-aria/tooltip": ^3.4.0
     "@react-aria/utils": ^3.15.0
     "@react-aria/visually-hidden": ^3.7.0
     "@react-types/switch": ^3.1.2
@@ -4339,6 +4340,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-aria/tooltip@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@react-aria/tooltip@npm:3.4.0"
+  dependencies:
+    "@react-aria/focus": ^3.11.0
+    "@react-aria/interactions": ^3.14.0
+    "@react-aria/utils": ^3.15.0
+    "@react-stately/tooltip": ^3.3.0
+    "@react-types/shared": ^3.17.0
+    "@react-types/tooltip": ^3.3.0
+    "@swc/helpers": ^0.4.14
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 911f9b52fc05f0c77279e07d4293f2da85ec8f2ade061c2cdb1dcc5d589311b56db514a35192629cd03dd990c7279c1e70be4a339a14f83d043e2975c02f81ec
+  languageName: node
+  linkType: hard
+
 "@react-aria/utils@npm:^3.14.1, @react-aria/utils@npm:^3.15.0":
   version: 3.15.0
   resolution: "@react-aria/utils@npm:3.15.0"
@@ -4809,6 +4827,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-stately/tooltip@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-stately/tooltip@npm:3.3.0"
+  dependencies:
+    "@react-stately/overlays": ^3.5.0
+    "@react-stately/utils": ^3.6.0
+    "@react-types/tooltip": ^3.3.0
+    "@swc/helpers": ^0.4.14
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 88ed82119e8747fee85f9b234be540ab4512c23ca01a0c646a4065e34354a10394d0f058131990d3d6ac8a2f91ce3a9f2b1b408a95cb40c65a5f71f8f3369b7e
+  languageName: node
+  linkType: hard
+
 "@react-stately/tree@npm:^3.4.0, @react-stately/tree@npm:^3.5.0":
   version: 3.5.0
   resolution: "@react-stately/tree@npm:3.5.0"
@@ -5081,6 +5113,18 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: b988833a7625f3fdc6f695318d91229b2b03878e951937aa2d7a5d011e2d75c4407b21b3dd33cc793f94eed239f6496e4cab3cddafaa68fe53ad26a4244d311f
+  languageName: node
+  linkType: hard
+
+"@react-types/tooltip@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-types/tooltip@npm:3.3.0"
+  dependencies:
+    "@react-types/overlays": ^3.7.0
+    "@react-types/shared": ^3.17.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 74deee5bb5e4ea0f371e6eac76ac3301db105c2f81b0f7b92b73af70033e65b8e6694cf9a2ce13f30f2e4d700de99cbaeaa5d01d92f061f6e74ce24ab91aeb8f
   languageName: node
   linkType: hard
 

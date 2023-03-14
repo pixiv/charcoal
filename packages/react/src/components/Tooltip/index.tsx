@@ -1,26 +1,61 @@
-import { useIsSSR } from '@react-aria/ssr'
-import React, { FC, memo, PropsWithChildren, useRef } from 'react'
+import React, {
+  FC,
+  memo,
+  PropsWithChildren,
+  useMemo,
+  ComponentPropsWithoutRef,
+  useRef
+} from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
-import { PopupPositionOptions, usePopupPosition } from './useTooltipPosition'
+import { usePopupPosition, PopupPositionOptions } from './useTooltipPosition'
+import { useTooltipTriggerState, TooltipTriggerState } from 'react-stately'
+import {
+  TooltipTriggerProps,
+  useTooltip,
+  useTooltipTrigger
+} from '@react-aria/tooltip'
+import { mergeProps, useObjectRef } from '@react-aria/utils'
 
 export type TooltipProps = PopupPositionOptions & {
   content: string
+  disabled?: boolean
   open?: boolean
+  delay?: number
 }
 
 const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
   content,
   children,
-  open,
-  ...options
+  ...props
 }) => {
-  const isSSR = useIsSSR()
+  const ref = useObjectRef<HTMLDivElement>()
+  const tooltipTriggerProps = useMemo<TooltipTriggerProps>(
+    () => ({
+      isOpen: props.open,
+      isDisabled: props.disabled,
+      ...props
+    }),
+    [props]
+  )
+
+  const state = useTooltipTriggerState(tooltipTriggerProps)
+  const { triggerProps, tooltipProps } = useTooltipTrigger(
+    tooltipTriggerProps,
+    state,
+    ref
+  )
 
   return (
-    <TooltipRoot>
+    <TooltipRoot ref={ref} {...triggerProps}>
       {children}
-      {!isSSR && open && <Popover content={content} {...options} />}
+      {state.isOpen && (
+        <Popover
+          content={content}
+          state={state}
+          {...mergeProps(props, tooltipProps)}
+        />
+      )}
     </TooltipRoot>
   )
 }
@@ -31,14 +66,21 @@ const TooltipRoot = styled.div`
   position: relative;
 `
 
-const Popover: FC<TooltipProps> = ({ content, ...options }) => {
-  const popoverRef = useRef<HTMLDivElement>(null)
-  const position = usePopupPosition(popoverRef, options)
+type PopoverProps = {
+  state: TooltipTriggerState
+  content: string
+} & Omit<ComponentPropsWithoutRef<'div'>, 'style' | 'className' | 'children'> &
+  PopupPositionOptions
+
+const Popover: FC<PopoverProps> = ({ content, state, ...props }) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const { tooltipProps } = useTooltip(props, state)
+  const position = usePopupPosition(ref, props)
   const { direction, ...style } = position ?? {}
 
   return (
-    <PopoverRoot style={style} role="tooltip">
-      <PopoverInner ref={popoverRef}>
+    <PopoverRoot {...mergeProps(props, tooltipProps)} style={style}>
+      <PopoverInner ref={ref}>
         <PopoverInnerText>{content}</PopoverInnerText>
       </PopoverInner>
     </PopoverRoot>
