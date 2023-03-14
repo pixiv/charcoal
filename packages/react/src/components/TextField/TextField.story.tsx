@@ -17,8 +17,8 @@ export default {
     assistiveText: '',
     disabled: false,
     required: false,
-    invalid: false
-  }
+    invalid: false,
+  },
 }
 
 const Container = styled.div`
@@ -46,13 +46,13 @@ export const HasLabel = Template.bind({})
 HasLabel.args = {
   showLabel: true,
   assistiveText: 'Assistive text',
-  required: true
+  required: true,
 }
 
 export const HasCount = Template.bind({})
 HasCount.args = {
   showCount: true,
-  maxLength: 100
+  maxLength: 100,
 }
 
 export const HasAffix: Story<Partial<TextFieldProps>> = (args) => (
@@ -62,7 +62,7 @@ HasAffix.args = {
   showCount: true,
   maxLength: 200,
   prefix: '/home/john/',
-  suffix: '.png'
+  suffix: '.png',
 }
 
 export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (

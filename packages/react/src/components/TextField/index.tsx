@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react'
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
@@ -72,7 +72,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       assistiveText,
       maxLength,
       prefix = null,
-      suffix = null
+      suffix = null,
     } = props
 
     const { visuallyHiddenProps } = useVisuallyHidden()
@@ -114,7 +114,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           description: !invalid && assistiveText,
           errorMessage: invalid && assistiveText,
           onChange: handleChange,
-          ...props
+          ...props,
         },
         ariaRef
       )
@@ -254,7 +254,7 @@ const StyledInput = styled.input<{
       o.bg.surface3.hover,
       o.outline.default.focus,
       p.invalid && o.outline.assertive,
-      o.font.text2
+      o.font.text2,
     ])}
 
   &::placeholder {
@@ -272,6 +272,6 @@ const AssistiveText = styled.p<{ invalid: boolean }>`
       o.typography(14),
       o.margin.top(8),
       o.margin.bottom(0),
-      o.font[p.invalid ? 'assertive' : 'text1']
+      o.font[p.invalid ? 'assertive' : 'text1'],
     ])}
 `
