@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
-import TextField, { MultiLineTextFieldProps, TextFieldProps } from '.'
+import TextField, { TextArea, TextFieldProps } from '.'
 import { px } from '@charcoal-ui/utils'
 
 export default {
@@ -34,7 +34,7 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
         <Clickable onClick={action('label-click')}>Text Link</Clickable>
       }
       placeholder="Text Area"
-      {...(args as Partial<MultiLineTextFieldProps>)}
+      {...(args as Partial<TextArea>)}
       multiline
     />
   </Container>
@@ -55,7 +55,7 @@ HasCount.args = {
   maxLength: 100,
 }
 
-export const AutoHeight: Story<Partial<MultiLineTextFieldProps>> = (args) => (
+export const AutoHeight: Story<Partial<TextArea>> = (args) => (
   <TextField label="Label" placeholder="TextArea" {...args} multiline />
 )
 AutoHeight.args = {
