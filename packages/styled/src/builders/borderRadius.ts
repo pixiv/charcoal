@@ -1,7 +1,6 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { px } from '@charcoal-ui/utils'
 import { Internal, createInternal } from '../internals'
-import { defineConstantProperties } from '../factories/lib'
 
 export const createBorderRadiusCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
@@ -20,13 +19,8 @@ export default function borderRadius<T extends CharcoalAbstractTheme>(
 ) {
   // 角丸
   const borderRadiusCss = createBorderRadiusCss(theme)
-  const borderRadiusObject = defineConstantProperties(
-    {},
-    {
-      borderRadius: (radius: keyof T['borderRadius']) =>
-        borderRadiusCss(radius),
-    }
-  )
 
-  return borderRadiusObject
+  return {
+    borderRadius: (radius: keyof T['borderRadius']) => borderRadiusCss(radius),
+  } as const
 }

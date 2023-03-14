@@ -22,11 +22,7 @@ import {
   Context,
   shouldCancelHalfLeading,
 } from '../internals'
-import {
-  defineConstantProperties,
-  defineProperties,
-  definePropertyChains,
-} from '../factories/lib'
+import { defineProperties, definePropertyChains } from '../factories/lib'
 import { TRANSITION_DURATION } from './transition'
 
 const colorProperties = ['bg', 'font'] as const
@@ -168,31 +164,26 @@ export default function colors<T extends CharcoalAbstractTheme>(theme: T) {
   const colorCss = createColorCss(theme)
   const gradientColorCss = createGradientColorCss(theme)
 
-  const colorObject = defineConstantProperties(
-    {},
-    {
-      bg: objectAssign(
-        defineProperties({}, colors, (color) =>
-          definePropertyChains(effects, (modifiers) =>
-            colorCss('bg', color, modifiers)
-          )
-        ),
-        defineProperties(
-          {},
-          gradientColors,
-          (color) => (direction: GradientDirection) =>
-            definePropertyChains(effects, (modifiers) =>
-              gradientColorCss(color, modifiers, direction)
-            )
-        )
-      ),
-      font: defineProperties({}, colors, (color) =>
+  return {
+    bg: objectAssign(
+      defineProperties({}, colors, (color) =>
         definePropertyChains(effects, (modifiers) =>
-          colorCss('font', color, modifiers)
+          colorCss('bg', color, modifiers)
         )
       ),
-    }
-  )
-
-  return colorObject
+      defineProperties(
+        {},
+        gradientColors,
+        (color) => (direction: GradientDirection) =>
+          definePropertyChains(effects, (modifiers) =>
+            gradientColorCss(color, modifiers, direction)
+          )
+      )
+    ),
+    font: defineProperties({}, colors, (color) =>
+      definePropertyChains(effects, (modifiers) =>
+        colorCss('font', color, modifiers)
+      )
+    ),
+  } as const
 }

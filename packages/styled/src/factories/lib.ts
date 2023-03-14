@@ -77,31 +77,6 @@ export const defineMethods = <
   }
 
 /**
- * オブジェクトで指定したプロパティ名と値を動的に生やす
- *
- * @param source 拡張するオブジェクト
- * @param def オブジェクトに生やす定義(プロパティ名と値)
- *
- * @example
- *
- * const o = defineConstantProperties({}, {
- *   red: '#f00',
- *   blue: '#00f',
- * })
- *
- * console.log(o.red) //=> #f00
- */
-export const defineConstantProperties = <
-  TSource,
-  TDef extends { [key: string]: unknown }
->(
-  source: TSource,
-  def: TDef
-) =>
-  defineProperties(source, Object.keys(def), (key) => def[key]) as TSource &
-    Readonly<TDef>
-
-/**
  * 配列で指定したモディファイア(プロパティ)をチェーン可能な再帰オブジェクトを動的に生やす
  *
  * @param modifiers オブジェクトに生やすモディファイヤ一覧
