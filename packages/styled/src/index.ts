@@ -40,18 +40,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
 export function createTheme<T extends CharcoalAbstractTheme>(
   _styled?: ThemedStyledInterface<T>
 ) {
-  /**
-   * 本当は `type Builder = ReturnType<createO<T>>` みたいな型を作って、それを o の型にしたい。
-   * が、styled がつくられた時点の TypeScript ではこういうジェネリクスの使い方ができなかった
-   * なので代わりに特に意味のない `createO` の呼び出しをやっている
-   */
-  const type_O = createO<T>(
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
-    {} as any,
-    /** DO_NOTHING_IT_IS_JUST_CALLED_FOR_TYPE_INFERENCE = */ true
-  )
-
-  type Builder = typeof type_O
+  type Builder = ReturnType<typeof createO<T>>
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
   return function theme(
