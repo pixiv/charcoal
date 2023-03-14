@@ -2,8 +2,7 @@ export class PixivIconLoadError extends Error {
   constructor(name: string, cause: unknown) {
     const message = formatMessage(name, cause)
 
-    // TODO: TypeScript 4.6+ になるとここに `{ cause }` が渡せる
-    super(message)
+    super(message, { cause })
     this.name = 'PixivIconLoadError'
     Object.setPrototypeOf(this, new.target.prototype)
   }
