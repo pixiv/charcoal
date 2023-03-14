@@ -90,7 +90,7 @@ export function objectAssign<T extends any[]>(...sources: T) {
  */
 export function keyof<
   // このジェネリクスは必須（書かないと返り値が `never[]` になる ）
-  T,
+  T extends Record<never, any>,
   // このジェネリクスは書かなくて良い、obj の内容から推論される（ T と矛盾してはいけない ）
   _ extends T = T
 >(obj: _) {
