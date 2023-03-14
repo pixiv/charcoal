@@ -7,8 +7,10 @@ import { createTheme } from '@charcoal-ui/styled'
 
 const theme = createTheme(styled)
 
-interface TextFieldBaseProps
+export interface TextAreaProps
   extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'> {
+  readonly autoHeight?: boolean
+  readonly rows?: number
   readonly className?: string
   readonly defaultValue?: string
   readonly value?: string
@@ -28,15 +30,6 @@ interface TextFieldBaseProps
    * tab-indexがｰ1かどうか
    */
   readonly excludeFromTabOrder?: boolean
-}
-
-export interface TextAreaProps extends TextFieldBaseProps {
-  readonly autoHeight?: boolean
-  readonly multiline: true
-  readonly rows?: number
-  readonly type?: never
-  readonly prefix?: never
-  readonly suffix?: never
 }
 
 function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
@@ -72,7 +65,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
       assistiveText,
       maxLength,
       autoHeight = false,
-      rows: initialRows = 4,
+      rows: initialRows = 4
     } = props
 
     const { visuallyHiddenProps } = useVisuallyHidden()
@@ -123,7 +116,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           description: !invalid && assistiveText,
           errorMessage: invalid && assistiveText,
           onChange: handleChange,
-          ...props,
+          ...props
         },
         ariaRef
       )
@@ -196,7 +189,7 @@ const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
       o.bg.surface3.hover,
       p.invalid && o.outline.assertive,
       o.font.text2,
-      o.borderRadius(4),
+      o.borderRadius(4)
     ])}
 
   &:focus-within {
@@ -260,6 +253,6 @@ const AssistiveText = styled.p<{ invalid: boolean }>`
       o.typography(14),
       o.margin.top(8),
       o.margin.bottom(0),
-      o.font[p.invalid ? 'assertive' : 'text1'],
+      o.font[p.invalid ? 'assertive' : 'text1']
     ])}
 `

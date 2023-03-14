@@ -3,12 +3,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
-import TextField, { TextArea, TextFieldProps } from '.'
+import TextArea, { TextAreaProps } from '.'
 import { px } from '@charcoal-ui/utils'
 
 export default {
   title: 'TextArea',
-  component: TextField,
+  component: TextArea,
   argTypes: {},
   args: {
     showLabel: false,
@@ -16,8 +16,8 @@ export default {
     assistiveText: '',
     disabled: false,
     required: false,
-    invalid: false,
-  },
+    invalid: false
+  }
 }
 
 const Container = styled.div`
@@ -25,17 +25,16 @@ const Container = styled.div`
   gap: ${({ theme }) => px(theme.spacing[24])};
 `
 
-const Template: Story<Partial<TextFieldProps>> = (args) => (
+const Template: Story<Partial<TextAreaProps>> = (args) => (
   <Container>
-    <TextField
+    <TextArea
       label="Label"
       requiredText="*必須"
       subLabel={
         <Clickable onClick={action('label-click')}>Text Link</Clickable>
       }
       placeholder="Text Area"
-      {...(args as Partial<TextArea>)}
-      multiline
+      {...args}
     />
   </Container>
 )
@@ -46,18 +45,18 @@ export const HasLabel = Template.bind({})
 HasLabel.args = {
   showLabel: true,
   assistiveText: 'Assistive text',
-  required: true,
+  required: true
 }
 
 export const HasCount = Template.bind({})
 HasCount.args = {
   showCount: true,
-  maxLength: 100,
+  maxLength: 100
 }
 
-export const AutoHeight: Story<Partial<TextArea>> = (args) => (
-  <TextField label="Label" placeholder="TextArea" {...args} multiline />
+export const AutoHeight: Story<Partial<TextAreaProps>> = (args) => (
+  <TextArea label="Label" placeholder="TextArea" {...args} />
 )
 AutoHeight.args = {
-  autoHeight: true,
+  autoHeight: true
 }

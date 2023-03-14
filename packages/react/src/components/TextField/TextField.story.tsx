@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
-import TextField, { SingleLineTextFieldProps, TextFieldProps } from '.'
+import TextField, { TextFieldProps } from '.'
 import { px } from '@charcoal-ui/utils'
 import IconButton from '../IconButton'
 
@@ -17,8 +17,8 @@ export default {
     assistiveText: '',
     disabled: false,
     required: false,
-    invalid: false,
-  },
+    invalid: false
+  }
 }
 
 const Container = styled.div`
@@ -35,8 +35,7 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
         <Clickable onClick={action('label-click')}>Text Link</Clickable>
       }
       placeholder="TextField"
-      {...(args as Partial<SingleLineTextFieldProps>)}
-      multiline={false}
+      {...args}
     />
   </Container>
 )
@@ -47,26 +46,26 @@ export const HasLabel = Template.bind({})
 HasLabel.args = {
   showLabel: true,
   assistiveText: 'Assistive text',
-  required: true,
+  required: true
 }
 
 export const HasCount = Template.bind({})
 HasCount.args = {
   showCount: true,
-  maxLength: 100,
+  maxLength: 100
 }
 
-export const HasAffix: Story<Partial<SingleLineTextFieldProps>> = (args) => (
+export const HasAffix: Story<Partial<TextFieldProps>> = (args) => (
   <TextField label="Label" placeholder="path/to/your/file" {...args} />
 )
 HasAffix.args = {
   showCount: true,
   maxLength: 200,
   prefix: '/home/john/',
-  suffix: '.png',
+  suffix: '.png'
 }
 
-export const PrefixIcon: Story<Partial<SingleLineTextFieldProps>> = (args) => (
+export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (
   <TextField
     label="Label"
     placeholder="Icon prefix"
