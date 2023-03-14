@@ -87,7 +87,7 @@ return {
 }
 ```
 
-`Internal` を定義するのに使われるのが `factory` である。
+`Internal` を定義するのに使われるのが `define{Propertyies,Methods,PropertyChains,MethodChains}` である。
 
 1 つの factory が 1 つのメソッドに対応するとは限らない（1 度に複数のメソッドを定義する factory もある）。内部的には最終的に `Object.defineProperties()` が行われる。
 
