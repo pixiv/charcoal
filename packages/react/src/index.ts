@@ -5,6 +5,10 @@ export {
 } from './core/ComponentAbstraction'
 export { SSRProvider } from './core/SSRProvider'
 export { OverlayProvider } from './core/OverlayProvider'
+export {
+  CharcoalProvider,
+  type CharcoalProviderProps,
+} from './core/CharcoalProvider'
 export { default as Button, type ButtonProps } from './components/Button'
 export {
   default as Clickable,

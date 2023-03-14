@@ -53,10 +53,12 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
     return (
       <InputRoot aria-disabled={isDisabled}>
-        <CheckboxInput type="checkbox" {...inputProps} />
-        <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
-          <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
-        </CheckboxInputOverlay>
+        <CheckboxRoot>
+          <CheckboxInput type="checkbox" {...inputProps} />
+          <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
+            <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
+          </CheckboxInputOverlay>
+        </CheckboxRoot>
 
         {'children' in props && <InputLabel>{props.children}</InputLabel>}
       </InputRoot>
@@ -73,7 +75,7 @@ const hiddenCss = css`
 const InputRoot = styled.label`
   position: relative;
   display: flex;
-  align-items: center;
+
   cursor: pointer;
   ${disabledSelector} {
     cursor: default;
@@ -81,6 +83,10 @@ const InputRoot = styled.label`
 
   gap: ${({ theme }) => px(theme.spacing[4])};
   ${theme((o) => [o.disabled])}
+`
+
+const CheckboxRoot = styled.div`
+  position: relative;
 `
 
 const CheckboxInput = styled.input`
@@ -118,5 +124,9 @@ const CheckboxInputOverlay = styled.div<{ checked?: boolean }>`
 `
 
 const InputLabel = styled.div`
-  ${theme((o) => [o.typography(14)])}
+  ${theme((o) => [o.font.text2])}
+
+  font-size: 14px;
+  /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
+  line-height: 20px;
 `

@@ -18,17 +18,35 @@ type Props = {
 export const Labelled: Story<Props> = (props) => {
   return (
     <div>
-      <Checkbox
-        {...props}
-        name="labelled"
-        label="label"
-        onBlur={action('blur')}
-        onClick={action('click')}
-        onChange={action('change')}
-        onFocus={action('focus')}
-      >
-        同意する
-      </Checkbox>
+      <div style={{ marginBottom: '1em' }}>
+        <Checkbox
+          {...props}
+          name="labelled"
+          label="label"
+          onBlur={action('blur')}
+          onClick={action('click')}
+          onChange={action('change')}
+          onFocus={action('focus')}
+        >
+          同意する
+        </Checkbox>
+      </div>
+
+      <div>
+        <Checkbox
+          {...props}
+          name="labelled"
+          label="label"
+          onBlur={action('blur')}
+          onClick={action('click')}
+          onChange={action('change')}
+          onFocus={action('focus')}
+        >
+          <span style={{ width: 200, display: 'block' }}>
+            同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する
+          </span>
+        </Checkbox>
+      </div>
     </div>
   )
 }

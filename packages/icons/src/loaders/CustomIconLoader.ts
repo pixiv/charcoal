@@ -37,6 +37,9 @@ export class CustomIconLoader implements Loadable {
         return this._resultSvg
       })
       .catch((e) => {
+        if (e instanceof PixivIconLoadError) {
+          throw e
+        }
         throw new PixivIconLoadError(this._name, e)
       })
       .finally(() => {

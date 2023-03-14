@@ -1,22 +1,12 @@
 {
   "name": "@charcoal-ui/icons-cli",
-  "version": "2.0.1",
+  "version": "2.4.0",
   "license": "Apache-2.0",
-  "type": "module",
-  "source": "./src/index.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
-  "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
-  },
-  "types": "./dist/index.d.ts",
-  "bin": "./dist/index.cjs",
-  "sideEffects": false,
+  "bin": "./dist/index.js",
   "scripts": {
-    "build": "microbundle --compress=false -f modern,esm,cjs --tsconfig tsconfig.build.json --target node",
-    "typecheck": "tsc --noEmit --project tsconfig.build.json",
-    "clean": "rimraf dist"
+    "build": "FORCE_COLOR=1 tsup-node",
+    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
     "@gitbeaker/core": "^25.6.0",
@@ -25,8 +15,8 @@
     "@types/parse5": "^6.0.3",
     "@types/svgo": "^1.3.3",
     "@types/yargs": "^17.0.8",
-    "microbundle": "^0.14.2",
     "rimraf": "^3.0.2",
+    "tsup": "^6.5.0",
     "typescript": "^4.5.5"
   },
   "dependencies": {

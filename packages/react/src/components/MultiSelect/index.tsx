@@ -93,7 +93,7 @@ const MultiSelectRoot = styled.label`
 const MultiSelectLabel = styled.div`
   display: flex;
   align-items: center;
-  ${theme((o) => [o.typography(14), o.font.text1])}
+  ${theme((o) => [o.typography(14), o.font.text2])}
 `
 
 const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
