@@ -8,7 +8,7 @@ import {
   GradientDirection,
 } from '@charcoal-ui/utils'
 import { CSSObject } from 'styled-components'
-import { Context } from 'vm'
+import { Context } from '../internals'
 import warning from 'warning'
 import {
   keyof,
