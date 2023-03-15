@@ -7,22 +7,22 @@ import {
 } from 'react'
 import { unreachable } from '../../_lib'
 
-export type Direction = 'Up' | 'Down'
+export type Direction = 'up' | 'down'
 
 export interface PopupPositionOptions {
   direction?: Direction
   forceDirection?: boolean
   getRect(): Rect
-  deps?: unknown[]
-  tooltipMargin?: number
-  padding?:
-  | number
-  | [number, number]
-  | [number, number, number]
-  | [number, number, number, number]
+  forceUpdateKeys?: unknown[]
+  offset?: number
+  crossOffset?:
+    | number
+    | [number, number]
+    | [number, number, number]
+    | [number, number, number, number]
 }
 
-export interface ElementSize {
+interface ElementSize {
   width: number
   height: number
 }
@@ -31,10 +31,7 @@ function measure(ref: Element | null): ElementSize | undefined {
   return ref !== null ? ref.getBoundingClientRect() : undefined
 }
 
-function useElementSize(
-  ref: React.RefObject<Element>,
-  deps: unknown[] = []
-) {
+function useElementSize(ref: React.RefObject<Element>, deps: unknown[] = []) {
   const [size, setSize] = useReducer(
     (
       state: ElementSize | undefined,
@@ -130,9 +127,9 @@ export function usePopupPosition(
     getRect,
     direction: preferredDirection,
     forceDirection = false,
-    deps,
-    padding = 16,
-    tooltipMargin = 8,
+    forceUpdateKeys: deps,
+    crossOffset: padding = 16,
+    offset: tooltipMargin = 8,
   }: PopupPositionOptions
 ) {
   const size = useElementSize(ref, deps)
@@ -155,11 +152,11 @@ export function usePopupPosition(
 
   const position = useMemo<
     | (Record<'left' | 'height', number> & {
-      top?: number
-      bottom?: number
-      maxHeight?: number
-      direction?: Direction
-    })
+        top?: number
+        bottom?: number
+        maxHeight?: number
+        direction?: Direction
+      })
     | undefined
   >(() => {
     if (
@@ -175,7 +172,7 @@ export function usePopupPosition(
         return preferredDirection
       }
       switch (preferredDirection) {
-        case 'Down': {
+        case 'down': {
           return windowHeight -
             clientRect.top -
             clientRect.height -
@@ -183,14 +180,14 @@ export function usePopupPosition(
             height -
             paddingBottom <
             0
-            ? 'Up'
-            : 'Down'
+            ? 'up'
+            : 'down'
         }
-        case 'Up':
+        case 'up':
         case undefined: {
           return clientRect.top - height - paddingTop - tooltipMargin < 0
-            ? 'Down'
-            : 'Up'
+            ? 'down'
+            : 'up'
         }
         default: {
           return unreachable(preferredDirection)
@@ -204,7 +201,7 @@ export function usePopupPosition(
 
     const left = Math.floor(Math.min(maxLeft, Math.max(minLeft, tooltipLeft)))
 
-    if (direction === 'Up') {
+    if (direction === 'up') {
       return {
         left,
         top: -height - tooltipMargin,

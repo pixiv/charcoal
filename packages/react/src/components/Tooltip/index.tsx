@@ -4,7 +4,9 @@ import React, {
   PropsWithChildren,
   useMemo,
   ComponentPropsWithoutRef,
-  useRef
+  useRef,
+  RefObject,
+  useCallback,
 } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
@@ -13,20 +15,22 @@ import { useTooltipTriggerState, TooltipTriggerState } from 'react-stately'
 import {
   TooltipTriggerProps,
   useTooltip,
-  useTooltipTrigger
+  useTooltipTrigger,
 } from '@react-aria/tooltip'
 import { mergeProps, useObjectRef } from '@react-aria/utils'
 
-export type TooltipProps = PopupPositionOptions & {
+export type TooltipProps = Omit<PopupPositionOptions, 'getRect'> & {
   content: string
   disabled?: boolean
   open?: boolean
   delay?: number
+  triggerRef: RefObject<HTMLElement>
 }
 
 const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
   content,
   children,
+  triggerRef,
   ...props
 }) => {
   const ref = useObjectRef<HTMLDivElement>()
@@ -34,7 +38,8 @@ const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
     () => ({
       isOpen: props.open,
       isDisabled: props.disabled,
-      ...props
+      delay: props.delay ?? 0,
+      ...props,
     }),
     [props]
   )
@@ -45,6 +50,18 @@ const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
     state,
     ref
   )
+  const getRect = useCallback(() => {
+    return (
+      triggerRef.current?.getBoundingClientRect() ?? {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        width: 0,
+        height: 0,
+      }
+    )
+  }, [triggerRef])
 
   return (
     <TooltipRoot ref={ref} {...triggerProps}>
@@ -53,6 +70,7 @@ const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
         <Popover
           content={content}
           state={state}
+          getRect={getRect}
           {...mergeProps(props, tooltipProps)}
         />
       )}

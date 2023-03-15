@@ -24,8 +24,10 @@ export default {
         options: ['Up', 'Down'],
       },
     },
-    getRect: {
-      type: null,
+    crossOffset: {
+      control: {
+        type: 'number',
+      },
     },
   },
 }
@@ -34,27 +36,10 @@ type Props = Partial<TooltipProps & { top: number; left: number }>
 
 export const Default: Story<Props> = ({ top, left, ...props }) => {
   const ref = useRef<ClickableElement>(null)
-  const getRect = () => {
-    return (
-      ref.current?.getBoundingClientRect() ?? {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: 0,
-        height: 0,
-      }
-    )
-  }
 
   return (
     <div style={{ position: 'absolute', top, left }}>
-      <Tooltip
-        content="ツールチップテキスト"
-        {...props}
-        getRect={getRect}
-        deps={[top, left]}
-      >
+      <Tooltip content="ツールチップテキスト" {...props} triggerRef={ref}>
         <Button ref={ref} variant="Primary">
           Button
         </Button>
@@ -63,42 +48,20 @@ export const Default: Story<Props> = ({ top, left, ...props }) => {
   )
 }
 
-Default.args = {
-  open: true,
-  top: 16,
-  left: 16,
-}
-
-export const MultiLine: Story<Omit<TooltipProps, 'getRect' | 'content'>> = (
+export const MultiLine: Story<Omit<TooltipProps, 'triggerRef' | 'content'>> = (
   props
 ) => {
   const ref = useRef<ClickableElement>(null)
-  const getRect = () => {
-    return (
-      ref.current?.getBoundingClientRect() ?? {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: 0,
-        height: 0,
-      }
-    )
-  }
 
   return (
     <Tooltip
       {...props}
       content="ツールチップテキストは最大幅184 pxで改行"
-      getRect={getRect}
+      triggerRef={ref}
     >
       <Button ref={ref} variant="Primary">
         Button
       </Button>
     </Tooltip>
   )
-}
-
-MultiLine.args = {
-  open: false,
 }
