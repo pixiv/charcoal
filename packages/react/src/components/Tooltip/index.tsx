@@ -7,6 +7,7 @@ import React, {
   useRef,
   RefObject,
   useCallback,
+  forwardRef
 } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
@@ -15,7 +16,7 @@ import { useTooltipTriggerState, TooltipTriggerState } from 'react-stately'
 import {
   TooltipTriggerProps,
   useTooltip,
-  useTooltipTrigger,
+  useTooltipTrigger
 } from '@react-aria/tooltip'
 import { mergeProps, useObjectRef } from '@react-aria/utils'
 
@@ -25,58 +26,59 @@ export type TooltipProps = Omit<PopupPositionOptions, 'getRect'> & {
   open?: boolean
   delay?: number
   triggerRef: RefObject<HTMLElement>
+  className?: string
 }
 
-const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
-  content,
-  children,
-  triggerRef,
-  ...props
-}) => {
-  const ref = useObjectRef<HTMLDivElement>()
-  const tooltipTriggerProps = useMemo<TooltipTriggerProps>(
-    () => ({
-      isOpen: props.open,
-      isDisabled: props.disabled,
-      delay: props.delay ?? 0,
-      ...props,
-    }),
-    [props]
-  )
-
-  const state = useTooltipTriggerState(tooltipTriggerProps)
-  const { triggerProps, tooltipProps } = useTooltipTrigger(
-    tooltipTriggerProps,
-    state,
-    ref
-  )
-  const getRect = useCallback(() => {
-    return (
-      triggerRef.current?.getBoundingClientRect() ?? {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: 0,
-        height: 0,
-      }
+const Tooltip = forwardRef<HTMLDivElement, PropsWithChildren<TooltipProps>>(
+  function TooltipInner(
+    { content, children, triggerRef, className, ...props },
+    forward
+  ) {
+    const ref = useObjectRef<HTMLDivElement>(forward)
+    const tooltipTriggerProps = useMemo<TooltipTriggerProps>(
+      () => ({
+        isOpen: props.open,
+        isDisabled: props.disabled,
+        delay: props.delay ?? 0,
+        ...props
+      }),
+      [props]
     )
-  }, [triggerRef])
 
-  return (
-    <TooltipRoot ref={ref} {...triggerProps}>
-      {children}
-      {state.isOpen && (
-        <Popover
-          content={content}
-          state={state}
-          getRect={getRect}
-          {...mergeProps(props, tooltipProps)}
-        />
-      )}
-    </TooltipRoot>
-  )
-}
+    const state = useTooltipTriggerState(tooltipTriggerProps)
+    const { triggerProps, tooltipProps } = useTooltipTrigger(
+      tooltipTriggerProps,
+      state,
+      ref
+    )
+    const getRect = useCallback(() => {
+      return (
+        triggerRef.current?.getBoundingClientRect() ?? {
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          width: 0,
+          height: 0
+        }
+      )
+    }, [triggerRef])
+
+    return (
+      <TooltipRoot ref={ref} {...triggerProps} className={className}>
+        {children}
+        {state.isOpen && (
+          <Popover
+            content={content}
+            state={state}
+            getRect={getRect}
+            {...mergeProps(props, tooltipProps)}
+          />
+        )}
+      </TooltipRoot>
+    )
+  }
+)
 
 export default memo(Tooltip)
 
