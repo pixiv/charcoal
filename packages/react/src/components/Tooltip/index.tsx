@@ -7,7 +7,7 @@ import React, {
   useRef,
   RefObject,
   useCallback,
-  forwardRef
+  forwardRef,
 } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
@@ -16,7 +16,7 @@ import { useTooltipTriggerState, TooltipTriggerState } from 'react-stately'
 import {
   TooltipTriggerProps,
   useTooltip,
-  useTooltipTrigger
+  useTooltipTrigger,
 } from '@react-aria/tooltip'
 import { mergeProps, useObjectRef } from '@react-aria/utils'
 
@@ -40,7 +40,7 @@ const Tooltip = forwardRef<HTMLDivElement, PropsWithChildren<TooltipProps>>(
         isOpen: props.open,
         isDisabled: props.disabled,
         delay: props.delay ?? 0,
-        ...props
+        ...props,
       }),
       [props]
     )
@@ -59,7 +59,7 @@ const Tooltip = forwardRef<HTMLDivElement, PropsWithChildren<TooltipProps>>(
           left: 0,
           right: 0,
           width: 0,
-          height: 0
+          height: 0,
         }
       )
     }, [triggerRef])
