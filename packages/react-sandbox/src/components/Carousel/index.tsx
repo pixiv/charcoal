@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react'
-import { animated, useIsomorphicLayoutEffect, useSpring } from 'react-spring'
+import { animated, useSpring } from 'react-spring'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
 import { passiveEvents, isEdge } from '../../foundation/support'
+import { useIsomorphicLayoutEffect } from '../../hooks'
 import CarouselButton, { Direction } from '../CarouselButton'
 
 export const GRADIENT_WIDTH = 72
