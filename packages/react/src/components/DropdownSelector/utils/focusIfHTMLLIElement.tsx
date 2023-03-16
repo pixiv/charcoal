@@ -1,4 +1,4 @@
-import { handleFocusByKeyBoard } from "./handleFocusByKeyBoard";
+import { handleFocusByKeyBoard } from './handleFocusByKeyBoard'
 
 /**
  * li要素ならフォーカスしてスクロールスクロール領域に見えるように親要素をスクロールする
@@ -6,7 +6,7 @@ import { handleFocusByKeyBoard } from "./handleFocusByKeyBoard";
  */
 export function focusIfHTMLLIElement(element: Node | null | undefined) {
   if (element instanceof HTMLLIElement) {
-    element.focus({ preventScroll: true });
-    handleFocusByKeyBoard(element);
+    element.focus({ preventScroll: true })
+    handleFocusByKeyBoard(element)
   }
 }

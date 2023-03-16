@@ -52,7 +52,7 @@ export {
 } from './components/LoadingSpinner'
 export {
   default as DropdownSelector,
-  DropdownSelectorItem,
+  type DropdownSelectorOption,
 } from './components/DropdownSelector'
 export {
   default as SegmentedControl,

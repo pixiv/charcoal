@@ -9,21 +9,21 @@ import { theme } from '../../styled'
 import { OptionLi } from './OptionLi'
 import { DropdownPopover } from './DropdownPopover'
 
-export type DropdownSelectorV2Props = {
+export type DropdownSelectorProps = {
   label: string
   invalid?: boolean
   assertiveText?: string
   value: string
-  options: Option[]
-  onChange: (option: Option) => void
+  options: DropdownSelectorOption[]
+  onChange: (option: DropdownSelectorOption) => void
 }
 
-export type Option = {
+export type DropdownSelectorOption = {
   label: string
   id: string
 }
 
-export function DropdownSelector(props: DropdownSelectorV2Props) {
+export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const state = useOverlayTriggerState({})
   return (

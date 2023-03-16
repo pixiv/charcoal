@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DropdownSelectorV2Props, DropdownSelector } from '.'
+import DropdownSelector, { DropdownSelectorProps } from '.'
 import { Story } from '../../_lib/compat'
 
 export default {
@@ -8,10 +8,10 @@ export default {
 }
 
 type Props = Omit<
-  DropdownSelectorV2Props,
+  DropdownSelectorProps,
   'subLabel' | 'children' | 'onOpenChange'
 >
-export const Default: Story<Props> = (props: DropdownSelectorV2Props) => {
+export const Default: Story<Props> = (props: DropdownSelectorProps) => {
   const [selected, setSelected] = useState('50')
   return (
     <div style={{ width: 288 }}>

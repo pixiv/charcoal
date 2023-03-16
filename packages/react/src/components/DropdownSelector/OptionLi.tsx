@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import { px } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import { theme } from '../../styled'
-import { Option } from '.'
+import { DropdownSelectorOption } from '.'
 import { focusIfHTMLLIElement } from './utils/focusIfHTMLLIElement'
 
 type OptionProps = {
   children: ReactNode
   isSelected: boolean
-  value: Option
+  value: DropdownSelectorOption
   onSelect: () => void
 }
 
