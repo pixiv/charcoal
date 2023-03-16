@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import React, { useState } from 'react'
+import { Section } from 'react-stately'
 import DropdownSelector, {
   DropdownSelectorItem,
   DropdownSelectorProps,
@@ -41,7 +42,7 @@ Default.args = {
   disabled: false,
 }
 
-export const Multiple: Story<DropdownSelectorProps> = (props) => {
+export const Sections: Story<DropdownSelectorProps> = (props) => {
   return (
     <div>
       <DropdownSelector
@@ -50,19 +51,13 @@ export const Multiple: Story<DropdownSelectorProps> = (props) => {
         onChange={action('change')}
         onOpenChange={action('open')}
       >
-        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-      </DropdownSelector>
-      <DropdownSelector
-        {...props}
-        placeholder={'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
-      >
-        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+        <Section title="Section1">
+          <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
+        </Section>
+        <Section title="Section2">
+          <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
+          <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+        </Section>
       </DropdownSelector>
     </div>
   )

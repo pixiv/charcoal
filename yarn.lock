@@ -1725,6 +1725,7 @@ __metadata:
     "@react-aria/overlays": ^3.13.0
     "@react-aria/radio": ^3.5.0
     "@react-aria/select": ^3.9.0
+    "@react-aria/separator": ^3.3.0
     "@react-aria/ssr": ^3.5.0
     "@react-aria/switch": ^3.4.0
     "@react-aria/textfield": ^3.9.0
@@ -4277,6 +4278,19 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 11069304b30bb299d9bd7fe486ed5f67222002fccd865386f7c52d18a4adda242a8feffa65454093060005ac95e2c062af0c2767cda5827046e59017dea4aaeb
+  languageName: node
+  linkType: hard
+
+"@react-aria/separator@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@react-aria/separator@npm:3.3.0"
+  dependencies:
+    "@react-aria/utils": ^3.15.0
+    "@react-types/shared": ^3.17.0
+    "@swc/helpers": ^0.4.14
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 4d2570b39a4373a6b25d07c903aa9cd3716730c912a5bf450aaebeb81b4ba95453cebc82f2db6dc6259eb67fe622b03e8ca95791763911a1369f8dbc462f0143
   languageName: node
   linkType: hard
 
