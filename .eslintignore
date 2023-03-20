@@ -7,6 +7,7 @@ __snapshots__/
 /coverage/
 .next/
 /misc/
+docs
 
 /packages/tailwind-diff/bin/tailwind-diff.js
 /packages/icon-files/src/
