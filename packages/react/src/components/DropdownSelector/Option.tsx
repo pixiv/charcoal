@@ -8,41 +8,33 @@ import { px } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import { theme } from '../../styled'
 import { Node } from '@react-types/shared'
-import { ListMode } from './Listbox'
 
 type OptionProps<T> = {
   item: Node<T>
   state: ListState<T>
-  mode?: ListMode
 }
 
-export function Option<T>({ item, state, mode }: OptionProps<T>) {
+export function Option<T>({ item, state }: OptionProps<T>) {
   const ref = useRef<HTMLLIElement>(null)
 
   const { optionProps, isSelected } = useOption(item, state, ref)
   const { focusProps } = useFocusRing()
 
   return (
-    <OptionRoot {...mergeProps(optionProps, focusProps)} ref={ref} mode={mode}>
+    <OptionRoot {...mergeProps(optionProps, focusProps)} ref={ref}>
       <OptionCheckIcon name="16/Check" isSelected={isSelected} />
       <OptionText>{item.rendered}</OptionText>
     </OptionRoot>
   )
 }
 
-const OptionRoot = styled.li<{ mode?: ListMode }>`
+const OptionRoot = styled.li`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => px(theme.spacing[4])};
   height: 40px;
   cursor: pointer;
   outline: none;
-
-  ${({ mode }) =>
-    theme((o) => [
-      o.padding.horizontal(8),
-      mode === 'separator' && o.padding.vertical(4),
-    ])}
 
   &:focus {
     ${theme((o) => [o.bg.surface3])}
