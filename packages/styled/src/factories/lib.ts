@@ -1,5 +1,5 @@
 import { Key } from '@charcoal-ui/theme'
-import { unreachable } from './util'
+import { unreachable } from '../util'
 
 /**
  * 配列で指定したプロパティを動的に生やす
@@ -16,7 +16,11 @@ import { unreachable } from './util'
  *
  * console.log(o.red) //=> #ff0000
  */
-export const factory = <TSource, TMember extends readonly Key[], TValue>(
+export const defineProperties = <
+  TSource,
+  TMember extends readonly Key[],
+  TValue
+>(
   source: TSource,
   member: TMember,
   chain: (key: TMember[number]) => TValue
@@ -40,13 +44,13 @@ export const factory = <TSource, TMember extends readonly Key[], TValue>(
  *
  * @example
  *
- * const o = argumentedFactory({}, ['red', 'blue'],
+ * const o = defineMethods({}, ['red', 'blue'],
  *   (color, alpha: number) => hex(color, alpha)
  * )
  *
  * console.log(o.red(0.5)) //=> #ff000077
  */
-export const argumentedFactory = <
+export const defineMethods = <
   TSource,
   TMember extends readonly string[],
   TValue,
@@ -80,18 +84,21 @@ export const argumentedFactory = <
  *
  * @example
  *
- * const o = constFactory({}, {
+ * const o = defineConstantProperties({}, {
  *   red: '#f00',
  *   blue: '#00f',
  * })
  *
  * console.log(o.red) //=> #f00
  */
-export const constFactory = <TSource, TDef extends { [key: string]: unknown }>(
+export const defineConstantProperties = <
+  TSource,
+  TDef extends { [key: string]: unknown }
+>(
   source: TSource,
   def: TDef
 ) =>
-  factory(source, Object.keys(def), (key) => def[key]) as TSource &
+  defineProperties(source, Object.keys(def), (key) => def[key]) as TSource &
     Readonly<TDef>
 
 /**
@@ -102,29 +109,29 @@ export const constFactory = <TSource, TDef extends { [key: string]: unknown }>(
  *
  * @example
  *
- * const o = modifiedArgumentedFactory(['red', 'blue'],
+ * const o = definePropertyChains(['red', 'blue'],
  *   modifiers => modifiers.map(color => hex(color)).join(',')
  * )
  *
  * console.log(o.red.blue) => #f00,#00f
  */
-export const modifiedFactory = <TSource, T extends Key>(
+export const definePropertyChains = <TSource, T extends Key>(
   modifiers: readonly T[],
   source: (applied: readonly T[]) => TSource
 ) =>
-  (function recursiveModifiedFactory(
+  (function definePropertiesRecursively(
     applied: readonly T[]
-  ): Modified<TSource, T> {
+  ): PropertyChain<TSource, T> {
     const notApplied = modifiers.filter((v) => !applied.includes(v))
-    return factory(source(applied), notApplied, (modifier) =>
+    return defineProperties(source(applied), notApplied, (modifier) =>
       notApplied.length === 0
         ? unreachable()
-        : recursiveModifiedFactory([...applied, modifier])
+        : definePropertiesRecursively([...applied, modifier])
     )
   })([])
 
-export type Modified<TSource, TModifiers extends Key> = TSource & {
-  readonly [key in TModifiers]: Modified<TSource, Exclude<TModifiers, key>>
+export type PropertyChain<TSource, TModifiers extends Key> = TSource & {
+  readonly [key in TModifiers]: PropertyChain<TSource, Exclude<TModifiers, key>>
 }
 
 /**
@@ -136,13 +143,13 @@ export type Modified<TSource, TModifiers extends Key> = TSource & {
  *
  * @example
  *
- * const o = modifiedArgumentedFactory(['red', 'blue'],
+ * const o = defineMethodChains(['red', 'blue'],
  *   modifiers => modifiers.map(([color, alpha]) => hex(color, alpha)).join(',')
  * , {} as [number])
  *
  * console.log(o.red(0.5).blue(1)) => #ff000077,#0000ffff
  */
-export const modifiedArgumentedFactory = <
+export const defineMethodChains = <
   TSource,
   T extends string,
   TArguments extends unknown[]
@@ -151,30 +158,28 @@ export const modifiedArgumentedFactory = <
   source: (applied: readonly [T, ...TArguments][]) => TSource,
   ..._inferPhantom: TArguments
 ) =>
-  (function recursiveModifiedFactory(
+  (function defineMethodsRecursively(
     applied: readonly [T, ...TArguments][]
-  ): ModifiedArgumented<TSource, T, TArguments> {
+  ): MethodChain<TSource, T, TArguments> {
     const notApplied = modifiers.filter(
       (v) => !applied.map(([w]) => w).includes(v)
     )
-    return argumentedFactory(
+    return defineMethods(
       source(applied),
       notApplied,
       (modifier, ...args: TArguments) =>
         notApplied.length === 0
           ? unreachable()
-          : recursiveModifiedFactory([...applied, [modifier, ...args]])
+          : defineMethodsRecursively([...applied, [modifier, ...args]])
     )
   })([])
 
-export type ModifiedArgumented<
+export type MethodChain<
   TSource,
   TModifiers extends string,
   TArguments extends unknown[]
 > = TSource & {
   readonly [key in TModifiers]: (
     ...args: TArguments
-  ) => ModifiedArgumented<TSource, Exclude<TModifiers, key>, TArguments>
+  ) => MethodChain<TSource, Exclude<TModifiers, key>, TArguments>
 }
-
-export const variable = (value: string) => `var(${value})`

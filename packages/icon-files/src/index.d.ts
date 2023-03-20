@@ -218,6 +218,9 @@ declare var _default: {
   '32/Prev': () => Promise<string>;
   '32/PullDown': () => Promise<string>;
   '32/PullUp': () => Promise<string>;
+  '32/ReadHorizontalLeft': () => Promise<string>;
+  '32/ReadHorizontalRight': () => Promise<string>;
+  '32/ReadVertical': () => Promise<string>;
   '32/RollHorizontal': () => Promise<string>;
   '32/RollVertical': () => Promise<string>;
   '32/SansSerif': () => Promise<string>;
