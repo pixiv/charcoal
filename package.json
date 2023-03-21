@@ -75,7 +75,7 @@
     "stylelint-config-standard": "^24.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "ts-jest": "^29.0.5",
-    "typescript": "^5.0.2",
+    "typescript": "^4.9.5",
     "vite": "^3.0.8",
     "zx": "^7.0.3"
   },
