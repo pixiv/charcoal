@@ -188,7 +188,7 @@ __metadata:
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
   version: 2.5.0
-  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=f48ed0&locator=charcoal-web-docs%40workspace%3A."
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=f53b8b&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/icons": ^2.5.0
     "@charcoal-ui/styled": ^2.5.0
@@ -215,7 +215,7 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: 52d0c315ea4d163f8564d00ef2ab1edfcf0a8d10c61da0f23a9acc90d27010af6c5f99eb4b853c885a96bde1ed0bb00d13379ab6c572c6cb154bc775e90c9c21
+  checksum: 86cd48b781b06be599b672987900fc8ecca9df88dd0f2a4ab041e3fb0bac7a824a162945c13daa9dc88ffd8e65f59cead3df2024ade17d412b2ee048e27a1c78
   languageName: node
   linkType: hard
 
@@ -2381,7 +2381,7 @@ __metadata:
     react: ^18.2.0
     react-dom: 18.2.0
     styled-components: ^5.3.6
-    typescript: 4.9.5
+    typescript: ^4.9.5
   languageName: unknown
   linkType: soft
 
@@ -4703,7 +4703,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.5":
+"typescript@npm:^4.9.5":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -4713,7 +4713,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ddd1e8"
   bin:
