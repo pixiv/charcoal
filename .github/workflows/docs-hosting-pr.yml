@@ -50,6 +50,7 @@ jobs:
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
           expires: 7d
           projectId: pixiv-charcoal-web
           firebaseServiceAccount: ${{ env.SERVICE_ACCOUNT_KEY }}
