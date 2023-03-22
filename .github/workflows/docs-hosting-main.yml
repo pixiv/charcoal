@@ -17,13 +17,10 @@ jobs:
         run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
       - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        id: yarn-cache
+      - uses: actions/setup-node@v3
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version-file: '.node-version'
+          cache: yarn
       # charcoal packages
       - run: yarn install --immutable
       - run: yarn build
