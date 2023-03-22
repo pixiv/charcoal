@@ -5,7 +5,7 @@ import { Internal, createInternal } from '../internals'
 import { defineProperties, defineConstantProperties } from '../factories/lib'
 
 export const fixedProperties = ['width', 'height'] as const
-type FixedProperty = typeof fixedProperties[number]
+type FixedProperty = (typeof fixedProperties)[number]
 
 export const createFixedPxCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>

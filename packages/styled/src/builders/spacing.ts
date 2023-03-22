@@ -14,8 +14,8 @@ export const spacingDirections = [
   'horizontal',
   'all',
 ] as const
-type SpacingProperty = typeof spacingProperties[number]
-type SpacingDirection = typeof spacingDirections[number]
+type SpacingProperty = (typeof spacingProperties)[number]
+type SpacingDirection = (typeof spacingDirections)[number]
 
 function spacingProperty(
   property: SpacingProperty,
