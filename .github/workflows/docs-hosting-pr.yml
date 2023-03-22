@@ -14,6 +14,11 @@ permissions:
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
+
+    environment:
+      name: preview-channel
+      url: ${{ steps.preview_deploy.outputs.details_url }}
+
     steps:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -49,7 +54,8 @@ jobs:
         run: |
           echo "SERVICE_ACCOUNT_KEY=$(cat "${{ steps.auth.outputs.credentials_file_path }}" | tr -d '\n')" >> $GITHUB_ENV
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - id: preview_deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           expires: 7d
