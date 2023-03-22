@@ -9,6 +9,7 @@ env:
 permissions:
   contents: read
   id-token: write
+  checks: write
 
 jobs:
   build_and_preview:
