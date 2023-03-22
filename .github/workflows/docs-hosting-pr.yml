@@ -1,0 +1,36 @@
+name: Deploy to Preview Channel
+
+on: [pull_request]
+
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # charcoal packages
+      - run: yarn install --immutable
+      - run: yarn build
+      # docs
+      - run: yarn add ../packages/react
+        working-directory: ./docs
+      - run: yarn install
+        working-directory: ./docs
+      - run: yarn build
+        working-directory: ./docs
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          expires: 7d
+          projectId: pixiv-charcoal-web
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels

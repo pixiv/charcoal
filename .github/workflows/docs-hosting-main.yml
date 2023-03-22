@@ -1,0 +1,40 @@
+name: Deploy to Live Channel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - ".github/workflows/deploy-prod.yml"
+
+jobs:
+  deploy_live_website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # charcoal packages
+      - run: yarn install --immutable
+      - run: yarn build 
+      # docs
+      - run: yarn add ../packages/react
+        working-directory: ./docs
+      - run: yarn install
+        working-directory: ./docs
+      - run: yarn build
+        working-directory: ./docs
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          projectId: pixiv-charcoal-web
+          channelId: live
