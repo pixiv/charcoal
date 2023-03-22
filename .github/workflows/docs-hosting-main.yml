@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "docs/**"
-      - ".github/workflows/deploy-prod.yml"
+      - 'docs/**'
+      - '.github/workflows/deploy-prod.yml'
 
 jobs:
   deploy_live_website:
@@ -26,7 +26,7 @@ jobs:
             ${{ runner.os }}-yarn-
       # charcoal packages
       - run: yarn install --immutable
-      - run: yarn build 
+      - run: yarn build
       # docs
       - run: yarn add ../packages/react
         working-directory: ./docs
