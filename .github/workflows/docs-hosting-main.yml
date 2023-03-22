@@ -20,6 +20,7 @@ jobs:
   deploy_live_website:
     runs-on: ubuntu-latest
 
+    concurrency: live-channel
     environment:
       name: live-channel
       # url: TODO: Edit after
