@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'docs/**'
-      - '.github/workflows/deploy-prod.yml'
+      - '.github/workflows/docs-hosting-main.yml'
 
 jobs:
   deploy_live_website:
