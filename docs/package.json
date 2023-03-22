@@ -10,12 +10,17 @@
   },
   "dependencies": {
     "@charcoal-ui/react": "../packages/react",
+    "@charcoal-ui/styled": "../packages/styled",
     "@types/styled-components": "^5.1.26",
     "highlight.js": "^11.7.0",
     "next": "13.1.6",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.6"
+  },
+  "resolutions": {
+    "@charcoal-ui/react": "../packages/react",
+    "@charcoal-ui/styled": "../packages/styled"
   },
   "devDependencies": {
     "@types/node": "18.11.18",

@@ -94,6 +94,8 @@ export function keyof<
   // このジェネリクスは書かなくて良い、obj の内容から推論される（ T と矛盾してはいけない ）
   _ extends T = T
 >(obj: _) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return Object.keys(obj) as unknown as (keyof T & string)[]
 }
 

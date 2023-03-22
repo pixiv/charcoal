@@ -188,7 +188,7 @@ __metadata:
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
   version: 2.5.0
-  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=f53b8b&locator=charcoal-web-docs%40workspace%3A."
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=abb8ca&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/icons": ^2.5.0
     "@charcoal-ui/styled": ^2.5.0
@@ -215,13 +215,13 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: 86cd48b781b06be599b672987900fc8ecca9df88dd0f2a4ab041e3fb0bac7a824a162945c13daa9dc88ffd8e65f59cead3df2024ade17d412b2ee048e27a1c78
+  checksum: 7b16d7907be5eda197fdd2d5aa77cd1619b6236df0b29bff31b1203e5d53ff026ee12fc0df2b4fc68dabb42bce5ba65f8addc1ada7fcc1f39aafb2fb7b55ccc2
   languageName: node
   linkType: hard
 
-"@charcoal-ui/styled@npm:^2.5.0":
+"@charcoal-ui/styled@file:../packages/styled::locator=charcoal-web-docs%40workspace%3A.":
   version: 2.5.0
-  resolution: "@charcoal-ui/styled@npm:2.5.0"
+  resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=00b6d2&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/foundation": ^2.5.0
     "@charcoal-ui/theme": ^2.5.0
@@ -230,7 +230,7 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: f13a1655258dd17d211d8aba41025b857086381eedf7a22f8dc14ce536948d5324aa7ce7277694694632f417a482f999b4c3749e3955b3bccf82eb612a47a7fa
+  checksum: e2a10768a72735da70470024ca533f2f9f4894c9393dbdcf33948b111a77eb08e32d66d93ccaf859b208bfa22981287aad0edb156684c4f079ec5b4a8656d3c3
   languageName: node
   linkType: hard
 
@@ -2370,6 +2370,7 @@ __metadata:
   resolution: "charcoal-web-docs@workspace:."
   dependencies:
     "@charcoal-ui/react": ../packages/react
+    "@charcoal-ui/styled": ../packages/styled
     "@types/node": 18.11.18
     "@types/react": 18.0.27
     "@types/react-dom": 18.0.10
