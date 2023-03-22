@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - sue445/deploy-to-firebase-hosting # TODO: remove after
     paths:
       - 'docs/**'
       - '.github/workflows/docs-hosting-main.yml'
