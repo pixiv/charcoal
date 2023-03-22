@@ -9,8 +9,8 @@ on:
       - '.github/workflows/docs-hosting-main.yml'
 
 env:
-  WORKLOAD_IDENTITY_PROVIDER: "projects/643536859873/locations/global/workloadIdentityPools/charcoal/providers/github-actions"
-  SERVICE_ACCOUNT_EMAIL: "deployer@pixiv-charcoal-web.iam.gserviceaccount.com"
+  WORKLOAD_IDENTITY_PROVIDER: 'projects/643536859873/locations/global/workloadIdentityPools/charcoal/providers/github-actions'
+  SERVICE_ACCOUNT_EMAIL: 'deployer@pixiv-charcoal-web.iam.gserviceaccount.com'
 
 permissions:
   contents: read
