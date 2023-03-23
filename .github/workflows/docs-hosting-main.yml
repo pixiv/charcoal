@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '.github/workflows/docs-hosting-main.yml'
 
 env:
   WORKLOAD_IDENTITY_PROVIDER: 'projects/643536859873/locations/global/workloadIdentityPools/charcoal/providers/github-actions'
