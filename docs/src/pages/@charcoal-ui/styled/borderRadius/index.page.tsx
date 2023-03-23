@@ -17,7 +17,9 @@ export default function InstallPage(props: any) {
     <ContentRoot>
       <h1>borderRadius</h1>
       <p>
-        <InlineCode>o.botderRadius($number|&apos;oval&apos;|&apos;none&apos;)</InlineCode>
+        <InlineCode>
+          o.botderRadius($number|&apos;oval&apos;|&apos;none&apos;)
+        </InlineCode>
       </p>
       <PreviewDiv>
         <Preview />
