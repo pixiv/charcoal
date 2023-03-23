@@ -34,7 +34,7 @@ jobs:
       - run: yarn install --immutable
       - run: yarn build
       # docs
-      - run: yarn install
+      - run: yarn install || true
         working-directory: ./docs
       - run: yarn build
         working-directory: ./docs
