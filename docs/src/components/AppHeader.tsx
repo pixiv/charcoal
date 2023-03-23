@@ -17,7 +17,7 @@ export const AppHeader: FC = () => {
   const router = useRouter()
   useEffect(() => {
     state.close()
-  }, [router.pathname])
+  }, [router.pathname, state])
   return (
     <HeaderRoot>
       <HeaderMenuIcon onClick={state.open} icon="24/Menu"></HeaderMenuIcon>

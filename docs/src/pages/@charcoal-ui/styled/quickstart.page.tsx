@@ -9,7 +9,10 @@ export default function InstallPage() {
     <ContentRoot>
       <h1>@charcoal-ui/styled クイックスタート</h1>
       <Link href="https://www.npmjs.com/package/@charcoal-ui/styled">
-        <img src="https://img.shields.io/npm/v/@charcoal-ui/styled?label=%40charcoal-ui%2Fstyled&style=flat-square&logo=npm" />
+        <img
+          alt="npm-badge"
+          src="https://img.shields.io/npm/v/@charcoal-ui/styled?label=%40charcoal-ui%2Fstyled&style=flat-square&logo=npm"
+        />
       </Link>
       <h2>インストール</h2>
       <h3>npm</h3>

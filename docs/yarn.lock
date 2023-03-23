@@ -175,6 +175,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@charcoal-ui/icons@file:../packages/icons::locator=charcoal-web-docs%40workspace%3A.":
+  version: 2.5.0
+  resolution: "@charcoal-ui/icons@file:../packages/icons#../packages/icons::hash=1e530c&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/icon-files": ^2.5.0
+    dompurify: ^2.3.6
+    warning: ^4.0.3
+  checksum: f7b6d92845171a90f1e2fa59719ae27e048ec2db7cda1e174a22a0fad133be8eb347c69cefc904c37e9b2fd62c6bd0d3ac2993cae25e57615d287282e794b3b8
+  languageName: node
+  linkType: hard
+
 "@charcoal-ui/icons@npm:^2.5.0":
   version: 2.5.0
   resolution: "@charcoal-ui/icons@npm:2.5.0"
@@ -234,6 +245,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@charcoal-ui/styled@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "@charcoal-ui/styled@npm:2.5.0"
+  dependencies:
+    "@charcoal-ui/foundation": ^2.5.0
+    "@charcoal-ui/theme": ^2.5.0
+    "@charcoal-ui/utils": ^2.5.0
+    warning: ^4.0.3
+  peerDependencies:
+    react: ">=16.13.1"
+    styled-components: ">=5.1.1"
+  checksum: f13a1655258dd17d211d8aba41025b857086381eedf7a22f8dc14ce536948d5324aa7ce7277694694632f417a482f999b4c3749e3955b3bccf82eb612a47a7fa
+  languageName: node
+  linkType: hard
+
+"@charcoal-ui/theme@file:../packages/theme::locator=charcoal-web-docs%40workspace%3A.":
+  version: 2.5.0
+  resolution: "@charcoal-ui/theme@file:../packages/theme#../packages/theme::hash=6ecf96&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^2.5.0
+    "@charcoal-ui/utils": ^2.5.0
+    polished: ^4.1.4
+  checksum: f41ba096ea59a267f3ac53f5b95c25378f18f81ca58c6f1eca35282409c840ebd82dfd0d81f10c49ef5a0f932b5b61e5168dee70a9b65df6be6780cfe56c983f
+  languageName: node
+  linkType: hard
+
 "@charcoal-ui/theme@npm:^2.5.0":
   version: 2.5.0
   resolution: "@charcoal-ui/theme@npm:2.5.0"
@@ -242,6 +279,16 @@ __metadata:
     "@charcoal-ui/utils": ^2.5.0
     polished: ^4.1.4
   checksum: 304a07afed17798f1fb01a070e9cb4e5faff1b850cef128f303cef73bdf6001684f7f9e325878369ceed96c5108b8aed81b93c5a56b2bcb2ff82f903d9f30974
+  languageName: node
+  linkType: hard
+
+"@charcoal-ui/utils@file:../packages/utils::locator=charcoal-web-docs%40workspace%3A.":
+  version: 2.5.0
+  resolution: "@charcoal-ui/utils@file:../packages/utils#../packages/utils::hash=0523f5&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^2.5.0
+    polished: ^4.1.4
+  checksum: e19aece139691f729757ef4d56883594d2e68d2fb9041c214279dc6a50cce9c17d2eaccab3e25d4c54471eac4042799d945b3f73301caab70458b7ff1d6adb25
   languageName: node
   linkType: hard
 
@@ -2369,8 +2416,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "charcoal-web-docs@workspace:."
   dependencies:
+    "@charcoal-ui/icons": ../packages/icons
     "@charcoal-ui/react": ../packages/react
     "@charcoal-ui/styled": ../packages/styled
+    "@charcoal-ui/theme": ../packages/theme
+    "@charcoal-ui/utils": ../packages/utils
     "@types/node": 18.11.18
     "@types/react": 18.0.27
     "@types/react-dom": 18.0.10
@@ -2382,7 +2432,7 @@ __metadata:
     react: ^18.2.0
     react-dom: 18.2.0
     styled-components: ^5.3.6
-    typescript: ^4.9.5
+    typescript: 4.6.3
   languageName: unknown
   linkType: soft
 
@@ -4704,23 +4754,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.9.5":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
+"typescript@npm:4.6.3":
+  version: 4.6.3
+  resolution: "typescript@npm:4.6.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
+  checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ddd1e8"
+"typescript@patch:typescript@4.6.3#~builtin<compat/typescript>":
+  version: 4.6.3
+  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=ddd1e8"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
+  checksum: fe6bdc1afb2f145ddb7b0a3a31f96352209f6a5704d97f038414ea22ff9d8dd42f32cfb6652e30458d7d958d2d4e85de2df11c574899c6f750a6b3c0e90a3a76
   languageName: node
   linkType: hard
 

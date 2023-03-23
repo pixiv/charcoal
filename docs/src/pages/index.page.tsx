@@ -14,6 +14,7 @@ const Home: NextPage = () => {
         `}
       >
         <img
+          alt="charcoal-ogp"
           css={css`
             width: 100%;
             max-width: 640px;

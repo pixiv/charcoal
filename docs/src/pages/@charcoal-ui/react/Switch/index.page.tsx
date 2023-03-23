@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Switch } from '@charcoal-ui/react'
+import { ReactNode, useState } from 'react'
+import { Switch, SwitchProps } from '@charcoal-ui/react'
 import { sections } from './sections'
 import { apiData } from './apiData'
-import { PreviewDivColumn } from '../_components/Previews'
+import { PreviewDivColumn, PreviewMeta } from '../_components/Previews'
 import { SSRHighlight } from '../../../../components/SSRHighlight'
 import { ExampleSwitch } from './ExampleSwitch'
 import { getSrcFile } from '../_utils/getSrcFile'
@@ -10,6 +10,22 @@ import { NextPage } from 'next'
 import { ContentRoot } from '../../../../components/ContentRoot'
 import { ApiTable } from '../_components/ApiTable'
 import { PreviewsList } from '../_components/PreviewsList'
+
+function Preview(meta: PreviewMeta<SwitchProps>, i: number, j: number) {
+  const [checked, setChecked] = useState(false)
+  return (
+    <Switch
+      {...meta.props}
+      key={`${i}${j}`}
+      name={`switch${i}${j}`}
+      label={`switch${i}${j}`}
+      onChange={setChecked}
+      checked={checked}
+    >
+      switch
+    </Switch>
+  )
+}
 
 const SwitchPage: NextPage<{ src: string }> = (props) => {
   return (
@@ -23,24 +39,7 @@ const SwitchPage: NextPage<{ src: string }> = (props) => {
         <SSRHighlight lang="typescript" code={props.src} />
       </PreviewDivColumn>
 
-      <PreviewsList
-        renderer={(meta, i, j) => {
-          const [checked, setChecked] = useState(false)
-          return (
-            <Switch
-              {...meta.props}
-              key={`${i}${j}`}
-              name={`switch${i}${j}`}
-              label={`switch${i}${j}`}
-              onChange={setChecked}
-              checked={checked}
-            >
-              switch
-            </Switch>
-          )
-        }}
-        sections={sections}
-      />
+      <PreviewsList renderer={Preview} sections={sections} />
 
       <h2>Props</h2>
       <ApiTable data={apiData} />

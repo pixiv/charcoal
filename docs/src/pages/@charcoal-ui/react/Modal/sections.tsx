@@ -8,6 +8,33 @@ import {
 } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
+const BottomSheet1 = () => {
+  const text = useScreen1Text(
+    'ウィンドウの幅を狭くしてください',
+    'モバイルデバイス向けのUIです'
+  )
+  return (
+    <ModalBody>
+      <ModalHeader />
+      <ModalAlign style={{ textAlign: 'center' }}>{text}</ModalAlign>
+    </ModalBody>
+  )
+}
+
+const BottomSheet2 = () => {
+  const text = useScreen1Text(
+    'ウィンドウの幅を狭くしてください',
+    '画面の高さいっぱいのシートになります'
+  )
+
+  return (
+    <ModalBody>
+      <ModalHeader />
+      <ModalAlign style={{ textAlign: 'center' }}>{text}</ModalAlign>
+    </ModalBody>
+  )
+}
+
 export const sections: PreviewSection<ModalProps>[] = [
   {
     title: 'size',
@@ -52,18 +79,7 @@ export const sections: PreviewSection<ModalProps>[] = [
     title: 'bottomSheet',
     previewMetas: [
       {
-        children: () => {
-          const text = useScreen1Text(
-            'ウィンドウの幅を狭くしてください',
-            'モバイルデバイス向けのUIです'
-          )
-          return (
-            <ModalBody>
-              <ModalHeader />
-              <ModalAlign style={{ textAlign: 'center' }}>{text}</ModalAlign>
-            </ModalBody>
-          )
-        },
+        children: BottomSheet1,
         additionalData: {
           openText: 'bottomSheet = ture',
         },
@@ -77,19 +93,7 @@ export const sections: PreviewSection<ModalProps>[] = [
         },
       },
       {
-        children: () => {
-          const text = useScreen1Text(
-            'ウィンドウの幅を狭くしてください',
-            '画面の高さいっぱいのシートになります'
-          )
-
-          return (
-            <ModalBody>
-              <ModalHeader />
-              <ModalAlign style={{ textAlign: 'center' }}>{text}</ModalAlign>
-            </ModalBody>
-          )
-        },
+        children: BottomSheet2,
         additionalData: {
           openText: 'bottomSheet = "full"',
         },
@@ -125,5 +129,5 @@ function useWindowResize(callback: () => void) {
     return () => {
       window.removeEventListener('resize', callback)
     }
-  }, [])
+  }, [callback])
 }

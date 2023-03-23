@@ -1,6 +1,6 @@
 import { sections } from './sections'
 import { apiData } from './apiData'
-import { PreviewDivColumn } from '../_components/Previews'
+import { PreviewDivColumn, PreviewMeta } from '../_components/Previews'
 import { SSRHighlight } from '../../../../components/SSRHighlight'
 import { ExampleDropdownSelector } from './ExampleDropdownSelector'
 import { getSrcFile } from '../_utils/getSrcFile'
@@ -11,6 +11,28 @@ import { useState } from 'react'
 import { ContentRoot } from '../../../../components/ContentRoot'
 import { ApiTable } from '../_components/ApiTable'
 import { PreviewsList } from '../_components/PreviewsList'
+import { DropdownSelectorProps } from '@charcoal-ui/react/dist/components/DropdownSelector'
+
+function Preview(
+  meta: PreviewMeta<DropdownSelectorProps>,
+  i: number,
+  j: number
+) {
+  const [selected, setSelected] = useState<string>('option1')
+  return (
+    <div key={`${i}${j}`}>
+      <DropdownSelector
+        {...meta.props}
+        onChange={(k) => setSelected(k.toString())}
+        value={selected}
+      >
+        <DropdownSelectorItem key={'option1'}>Option1</DropdownSelectorItem>
+        <DropdownSelectorItem key={'option2'}>Option2</DropdownSelectorItem>
+        <DropdownSelectorItem key={'option3'}>Option3</DropdownSelectorItem>
+      </DropdownSelector>
+    </div>
+  )
+}
 
 const DropdownSelectorPage: NextPage<{ src: string }> = (props) => {
   return (
@@ -28,31 +50,7 @@ const DropdownSelectorPage: NextPage<{ src: string }> = (props) => {
         <SSRHighlight code={props.src} lang="typescript" />
       </PreviewDivColumn>
 
-      <PreviewsList
-        sections={sections}
-        renderer={(meta, i, j) => {
-          const [selected, setSelected] = useState<string>('option1')
-          return (
-            <div key={`${i}${j}`}>
-              <DropdownSelector
-                {...meta.props}
-                onChange={(k) => setSelected(k.toString())}
-                value={selected}
-              >
-                <DropdownSelectorItem key={'option1'}>
-                  Option1
-                </DropdownSelectorItem>
-                <DropdownSelectorItem key={'option2'}>
-                  Option2
-                </DropdownSelectorItem>
-                <DropdownSelectorItem key={'option3'}>
-                  Option3
-                </DropdownSelectorItem>
-              </DropdownSelector>
-            </div>
-          )
-        }}
-      />
+      <PreviewsList sections={sections} renderer={Preview} />
 
       <h2>Props</h2>
       <ApiTable data={apiData} />
