@@ -10,7 +10,7 @@ import {
 } from '../factories/lib'
 
 export const outlineType = ['focus'] as const
-type OutlineType = typeof outlineType[number]
+type OutlineType = (typeof outlineType)[number]
 
 const outlineCss = (weight: number, color: string) => ({
   boxShadow: `0 0 0 ${px(weight)} ${color}`,

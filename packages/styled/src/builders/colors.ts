@@ -30,7 +30,7 @@ import {
 import { TRANSITION_DURATION } from './transition'
 
 const colorProperties = ['bg', 'font'] as const
-export type ColorProperty = typeof colorProperties[number]
+export type ColorProperty = (typeof colorProperties)[number]
 
 function targetProperty(target: ColorProperty) {
   return target === 'bg' ? 'background-color' : 'color'

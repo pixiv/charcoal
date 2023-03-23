@@ -2,31 +2,31 @@
   "name": "@charcoal-ui/icons",
   "version": "2.5.0",
   "license": "Apache-2.0",
-  "type": "module",
-  "source": "./src/index.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
+    "require": "./dist/index.cjs.js",
+    "default": "./dist/index.esm.js"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": true,
   "scripts": {
-    "build": "microbundle --compress=false -f modern,esm,cjs --tsconfig tsconfig.build.json",
-    "typecheck": "tsc --noEmit --project tsconfig.build.json",
-    "clean": "rimraf dist"
+    "build": "run-p --print-label 'build:*'",
+    "build:bundle": "FORCE_COLOR=1 tsup",
+    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
     "@types/dompurify": "^2.3.3",
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.38",
     "@types/warning": "^3.0.0",
-    "microbundle": "^0.14.2",
     "react": "^17.0.2",
     "rimraf": "^3.0.2",
     "styled-components": "^5.3.3",
-    "typescript": "^4.5.5"
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
     "@charcoal-ui/icon-files": "^2.5.0",
