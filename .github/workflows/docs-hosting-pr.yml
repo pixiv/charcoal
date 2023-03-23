@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+    branches-ignore:
+      - dependabot/**
+      - icons/**
 
 env:
   WORKLOAD_IDENTITY_PROVIDER: 'projects/643536859873/locations/global/workloadIdentityPools/charcoal/providers/github-actions'
