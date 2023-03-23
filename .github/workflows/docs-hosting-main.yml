@@ -39,7 +39,9 @@ jobs:
       - run: yarn install --immutable
       - run: yarn build
       # docs
-      - run: yarn install || true
+      - run: yarn add ../packages/react
+        working-directory: ./docs
+      - run: yarn install
         working-directory: ./docs
       - run: yarn build
         working-directory: ./docs
