@@ -188,7 +188,7 @@ __metadata:
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
   version: 2.5.0
-  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=abb8ca&locator=charcoal-web-docs%40workspace%3A."
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=ba95c8&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/icons": ^2.5.0
     "@charcoal-ui/styled": ^2.5.0
@@ -215,13 +215,13 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: 7b16d7907be5eda197fdd2d5aa77cd1619b6236df0b29bff31b1203e5d53ff026ee12fc0df2b4fc68dabb42bce5ba65f8addc1ada7fcc1f39aafb2fb7b55ccc2
+  checksum: 695b8dac43462eaaf28081358ee535277e7929dbed719e65f8b9cff48540e55febf9a1456ec9e4b232922c887ffba4b5b22411d886cccf4c1dd353dbb1e83df8
   languageName: node
   linkType: hard
 
 "@charcoal-ui/styled@file:../packages/styled::locator=charcoal-web-docs%40workspace%3A.":
   version: 2.5.0
-  resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=00b6d2&locator=charcoal-web-docs%40workspace%3A."
+  resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=965c1f&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/foundation": ^2.5.0
     "@charcoal-ui/theme": ^2.5.0
@@ -230,7 +230,7 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: e2a10768a72735da70470024ca533f2f9f4894c9393dbdcf33948b111a77eb08e32d66d93ccaf859b208bfa22981287aad0edb156684c4f079ec5b4a8656d3c3
+  checksum: 24268d6d6ec14f3775fb2b94b65392f3677533ba92f7feeab6c81c6dd9aa275a87e6e5652b3c7b2d0c22f331237906ee0128c9c37ca4d92494fd2d04dfaa2fc4
   languageName: node
   linkType: hard
 
