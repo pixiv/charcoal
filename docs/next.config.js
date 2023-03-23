@@ -12,11 +12,11 @@ const nextConfig = {
   },
   trailingSlash: true,
   compiler: {
-    styledComponents: true
+    styledComponents: true,
   },
   images: {
-    unoptimized: true
-  }
+    unoptimized: true,
+  },
 }
 
 module.exports = nextConfig

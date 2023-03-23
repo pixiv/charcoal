@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { SegmentedControl } from '@charcoal-ui/react';
+import { useState } from 'react'
+import { SegmentedControl } from '@charcoal-ui/react'
 
 export const ExampleSegmentedControl = () => {
-  const [value, setValue] = useState('option1');
+  const [value, setValue] = useState('option1')
   return (
     <div>
       <p>value: {value}</p>
@@ -13,5 +13,5 @@ export const ExampleSegmentedControl = () => {
         onChange={setValue}
       ></SegmentedControl>
     </div>
-  );
-};
+  )
+}

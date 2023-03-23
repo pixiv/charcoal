@@ -12,4 +12,3 @@ export const Preview = () => {
 const Ex = styled.p`
   ${theme((o) => [o.height.px(104), o.bg.brand])}
 `
-

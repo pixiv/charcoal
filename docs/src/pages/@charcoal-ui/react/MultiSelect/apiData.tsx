@@ -1,7 +1,10 @@
 import { MultiSelectGroupProps, MultiSelectProps } from '@charcoal-ui/react'
 import { ApiTableData } from '../_components/ApiTable'
 
-export const multiSelectApiData: ApiTableData<MultiSelectProps, HTMLInputElement> = {
+export const multiSelectApiData: ApiTableData<
+  MultiSelectProps,
+  HTMLInputElement
+> = {
   value: {
     default: '',
     description: '選択肢の値',

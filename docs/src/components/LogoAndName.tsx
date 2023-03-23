@@ -6,31 +6,29 @@ import { theme } from '../utils/theme'
 
 export const LogoAndName: FC<{ className?: string }> = (props) => {
   return (
-    <>
-      <Link
-        href="/"
-        className={props.className}
+    <Link
+      href="/"
+      className={props.className}
+      css={css`
+        display: flex;
+        text-decoration: none;
+        padding: 0;
+      `}
+    >
+      <Image
         css={css`
-          display: flex;
-          text-decoration: none;
-          padding: 0;
+          margin-right: 8px;
+          background: white;
+          padding: 4px;
+          border-radius: 8px;
         `}
-      >
-        <Image
-          css={css`
-            margin-right: 8px;
-            background: white;
-            padding: 4px;
-            border-radius: 8px;
-          `}
-          alt="logo"
-          width={40}
-          height={40}
-          src="/charcoal-icon.png"
-        />
-        <CharcoalTitle>Charcoal</CharcoalTitle>
-      </Link>
-    </>
+        alt="logo"
+        width={40}
+        height={40}
+        src="/charcoal-icon.png"
+      />
+      <CharcoalTitle>Charcoal</CharcoalTitle>
+    </Link>
   )
 }
 

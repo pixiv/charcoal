@@ -27,16 +27,16 @@ const SwitchPage: NextPage<{ src: string }> = (props) => {
         renderer={(meta, i, j) => {
           const [checked, setChecked] = useState(false)
           return (
-              <Switch
-                {...meta.props}
-                key={`${i}${j}`}
-                name={`switch${i}${j}`}
-                label={`switch${i}${j}`}
-                onChange={setChecked}
-                checked={checked}
-              >
-                switch
-              </Switch>
+            <Switch
+              {...meta.props}
+              key={`${i}${j}`}
+              name={`switch${i}${j}`}
+              label={`switch${i}${j}`}
+              onChange={setChecked}
+              checked={checked}
+            >
+              switch
+            </Switch>
           )
         }}
         sections={sections}

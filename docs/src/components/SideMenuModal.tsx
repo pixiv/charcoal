@@ -8,7 +8,7 @@ import React, { FC, useRef } from 'react'
 import { FocusScope } from '@react-aria/focus'
 import styled from 'styled-components'
 import { theme } from '../utils/theme'
-import { SideMenuDiv } from "./SideMenuDiv"
+import { SideMenuDiv } from './SideMenuDiv'
 
 export const SideMenuModal: FC<
   AriaModalOverlayProps & {
@@ -36,7 +36,7 @@ export const SideMenuModal: FC<
         {...underlayProps}
       >
         <FocusScope contain restoreFocus autoFocus>
-          <SideMenuDiv {...modalProps} ref={ref} >
+          <SideMenuDiv {...modalProps} ref={ref}>
             {children}
           </SideMenuDiv>
         </FocusScope>

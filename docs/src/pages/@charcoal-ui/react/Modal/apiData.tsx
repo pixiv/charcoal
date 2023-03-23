@@ -13,7 +13,8 @@ export const apiData: Omit<
   },
   bottomSheet: {
     default: 'false',
-    description: 'モバイル向けに下からシート形式で表示するかどうか、"full"だと画面の高さいっぱいに表示される',
+    description:
+      'モバイル向けに下からシート形式で表示するかどうか、"full"だと画面の高さいっぱいに表示される',
     required: false,
     type: 'boolean | "full"',
   },

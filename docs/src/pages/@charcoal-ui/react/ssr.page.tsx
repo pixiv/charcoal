@@ -39,7 +39,11 @@ const YourAppProvider: FC<{ children: ReactNode }> = ({ children }) => {
         <InlineCode>makeSetThemeScriptCode</InlineCode>
         を用いてアプリケーションの起動前にテーマを変更するスクリプトを実行してください。
         これによりクライアントサイドのレンダリングによるテーマのチラつきを抑えることができます。
-        Next.js の場合は _document.tsx に下記のように記述することができます（<StyledLink href="https://nextjs.org/docs/advanced-features/custom-document">Next.js の document.tsx について</StyledLink>）。
+        Next.js の場合は _document.tsx に下記のように記述することができます（
+        <StyledLink href="https://nextjs.org/docs/advanced-features/custom-document">
+          Next.js の document.tsx について
+        </StyledLink>
+        ）。
       </p>
       <SSRHighlight
         code={`

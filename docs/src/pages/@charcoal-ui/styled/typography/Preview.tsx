@@ -16,7 +16,8 @@ export const Preview = () => {
       <p>preserveHalfLeading</p>
       <Ex2>preserveHalfLeading</Ex2>
       <Ex2>
-        preserveHalfLeadingを指定することでこのオプションはオプトアウトできます。{EX_TEXT}
+        preserveHalfLeadingを指定することでこのオプションはオプトアウトできます。
+        {EX_TEXT}
       </Ex2>
     </div>
   )

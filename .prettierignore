@@ -7,7 +7,6 @@ __snapshots__/
 /coverage/
 .next/
 lerna.json
-docs
 
 LICENSE
 /packages/theme/theme.json
