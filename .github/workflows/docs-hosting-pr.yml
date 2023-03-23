@@ -1,6 +1,9 @@
 name: Deploy to Preview Channel
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 env:
   WORKLOAD_IDENTITY_PROVIDER: 'projects/643536859873/locations/global/workloadIdentityPools/charcoal/providers/github-actions'
