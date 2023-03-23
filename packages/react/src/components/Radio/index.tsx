@@ -110,6 +110,9 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     }
 
     ${theme((o) => o.outline.default.focus)}
+
+    // FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう
+    transition: all 0.2s !important;
   }
 `
 

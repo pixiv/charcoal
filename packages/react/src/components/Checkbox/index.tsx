@@ -107,8 +107,12 @@ const CheckboxInput = styled.input`
       border-color: ${({ theme }) => theme.color.text4};
     }
     ${theme((o) => [o.outline.default.focus, o.borderRadius(4)])}
+
+    // FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう
+    transition: all 0.2s !important;
   }
 `
+
 const CheckboxInputOverlay = styled.div<{ checked?: boolean }>`
   position: absolute;
   top: -2px;

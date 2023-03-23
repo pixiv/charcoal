@@ -111,6 +111,8 @@ const SwitchInput = styled.input.attrs({
     }
 
     &:checked {
+      // FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう
+      transition: all 0.2s !important;
       ${theme((o) => o.bg.brand.hover.press)}
 
       &::after {
