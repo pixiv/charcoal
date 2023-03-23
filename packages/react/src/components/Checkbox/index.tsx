@@ -108,7 +108,7 @@ const CheckboxInput = styled.input`
     }
     ${theme((o) => [o.outline.default.focus, o.borderRadius(4)])}
 
-    // FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう
+    /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
     transition: all 0.2s !important;
   }
 `
