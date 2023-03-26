@@ -36,6 +36,7 @@ const TabRoot = styled.div<Pick<TabProps, 'size'>>`
   cursor: pointer;
   padding-top: 12px; /* figma 上で 12px だった */
   padding-bottom: 12px; /* figma 上で 12px だった */
+  z-index: 1;
 
   ${({ size }) =>
     theme((o) => [
@@ -54,6 +55,8 @@ const TabRoot = styled.div<Pick<TabProps, 'size'>>`
   }
 
   &[aria-selected='true'] {
+    z-index: 2;
+
     &:after {
       content: '';
       position: absolute;

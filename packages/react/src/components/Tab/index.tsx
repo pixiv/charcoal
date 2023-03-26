@@ -55,4 +55,6 @@ export const TabItem = Item
 const TabNav = styled.div<Pick<TabsProps, 'gap'>>`
   display: flex;
   gap: ${({ gap }) => gap}px;
+  background: inherit;
+  isolation: isolate;
 `
