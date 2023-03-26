@@ -24,6 +24,7 @@ export type TagItemProps = {
   status?: 'default' | 'active' | 'inactive'
   size?: keyof typeof sizeMap
   disabled?: boolean
+  className?: string
 } & Pick<ComponentPropsWithoutRef<'a'>, 'href' | 'target' | 'rel' | 'onClick'>
 
 const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
@@ -36,6 +37,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
       size = 'M',
       disabled,
       status = 'default',
+      className,
       ...props
     },
     _ref
@@ -60,6 +62,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
         size={hasTranslatedLabel ? 'M' : size}
         status={status}
         {...buttonProps}
+        className={className}
       >
         <Background bgColor={bgColor} bgImage={bgImage} status={status} />
 
