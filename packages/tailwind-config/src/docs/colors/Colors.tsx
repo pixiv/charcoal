@@ -65,6 +65,7 @@ export const Colors: React.FC = () => {
               {Object.keys(effectTypes).map((modifier) =>
                 modifier in values ? (
                   <ColorBox
+                    key={modifier}
                     bgColorClass={`bg-${colorName}-${modifier}`}
                     label={`-${modifier}`}
                   />

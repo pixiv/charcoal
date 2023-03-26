@@ -16,7 +16,7 @@ const gradientPlugin: TailwindPlugin = config.plugins
 export const utilityClasses = getUtilities(gradientPlugin)
 
 export const directions = ['top', 'bottom', 'right', 'left'] as const
-export type Direction = typeof directions[number]
+export type Direction = (typeof directions)[number]
 
 export type { EffectType }
 export const effectTypes: { [type in EffectType]: null } = {

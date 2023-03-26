@@ -18,7 +18,7 @@ export const GRADIENT_DIRECTIONS = [
   'to right',
 ] as const
 
-export type GradientDirection = typeof GRADIENT_DIRECTIONS[number]
+export type GradientDirection = (typeof GRADIENT_DIRECTIONS)[number]
 
 export function transparentGradient(
   color: string,

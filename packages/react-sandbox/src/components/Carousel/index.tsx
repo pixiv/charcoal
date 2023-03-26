@@ -1,14 +1,9 @@
-import React, {
-  useEffect,
-  useState,
-  useCallback,
-  useRef,
-  useLayoutEffect,
-} from 'react'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { animated, useSpring } from 'react-spring'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
 import { passiveEvents, isEdge } from '../../foundation/support'
+import { useIsomorphicLayoutEffect } from '../../hooks'
 import CarouselButton, { Direction } from '../CarouselButton'
 
 export const GRADIENT_WIDTH = 72
@@ -162,7 +157,7 @@ export default function Carousel({
     }
   }, [onResize])
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const elm = ref.current
     const innerElm = innerRef.current
     if (elm === null || innerElm === null) {
@@ -189,7 +184,7 @@ export default function Carousel({
   }, [handleResize, handleScroll])
 
   // 初期スクロールを行う
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (align !== 'left' || scrollOffset !== 0) {
       const scroll = ref.current
       if (scroll !== null) {
@@ -224,7 +219,7 @@ export default function Carousel({
 
   const [disableGradient, setDisableGradient] = useState(false)
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (isEdge()) {
       setDisableGradient(true)
     }
