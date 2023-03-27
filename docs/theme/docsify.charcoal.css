@@ -1,0 +1,49 @@
+:root {
+  --color-brand: #0096fa;
+  --color-surface3: #0000000a;
+  --color-text2: #000000a3;
+  --pixiv-logo-url: url('../images/logo.svg');
+}
+
+html,
+body {
+  color: #34495e;
+}
+
+section.cover {
+  position: relative;
+}
+
+section.cover::after {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+
+  /**
+   * add alt text and fallback for non-supported browser
+   * https://developer.mozilla.org/ja/docs/Web/CSS/content
+   */
+  content: var(--pixiv-logo-url);
+  content: var(--pixiv-logo-url) / 'pixiv';
+}
+
+section.cover h1 {
+  font-weight: bold;
+}
+
+section.cover ul {
+  margin: 0 auto;
+}
+
+section.cover p {
+  margin: 40px 0 0;
+}
+
+/* GitHub Button */
+section.cover .cover-main > p:last-child a {
+  font-weight: bold;
+  border: 0;
+  background-color: var(--color-surface3);
+  color: var(--color-text2);
+  margin: 0 8px;
+}
