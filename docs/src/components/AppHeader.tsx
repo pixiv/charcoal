@@ -16,7 +16,13 @@ export const AppHeader: FC = () => {
   const state = useOverlayTriggerState({})
   const router = useRouter()
   useEffect(() => {
-    state.close()
+    const handleRouterChangeStart = () => {
+      state.close()
+    }
+    router.events.on('routeChangeStart', handleRouterChangeStart)
+    return () => {
+      return router.events.off('routeChangeStart', handleRouterChangeStart)
+    }
   }, [router.pathname, state])
   return (
     <HeaderRoot>
