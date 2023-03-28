@@ -1,0 +1,52 @@
+name: version
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  version:
+    if: github.event.review.state == 'approved' && github.event.pull_request.base.ref == github.event.repository.default_branch
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: pnpm
+
+      - name: Prepare deps
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Get comment body
+        id: get-comment-body
+        run: |
+          pnpm lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes > body.txt
+
+          body=$(cat body.txt)
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}"
+
+          echo ::set-output name=body::$body
+
+      - name: Comment to Pull Request
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            This pull request will bump these packages as follows
+            (Created by https://github.com/peter-evans/create-or-update-comment )
+
+            `pnpm lerna version --conventional-commits --no-changelog --no-git-tag-version --no-push --yes`
+
+            ```
+            ${{ steps.get-comment-body.outputs.body }}
+            ```

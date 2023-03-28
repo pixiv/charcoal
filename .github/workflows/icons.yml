@@ -18,24 +18,24 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
       - name: Prepare deps
         run: |
-          yarn install --immutable --inline-builds
-          yarn workspaces foreach -vptR --from @charcoal-ui/icons-cli run build
+          pnpm install --immutable --inline-builds
+          pnpm run build --recursive --resume-from @charcoal-ui/icons-cli
 
       - name: Export
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: yarn icons-cli figma:export
+        run: pnpm icons-cli figma:export
 
       - name: Optimize
-        run: yarn icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
+        run: pnpm icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
 
       - name: Generate source
-        run: yarn icons-cli files:generate
+        run: pnpm icons-cli files:generate
 
       - name: Generate github token
         id: generate_token
@@ -50,4 +50,4 @@ jobs:
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: main
-        run: yarn icons-cli github:pr
+        run: pnpm icons-cli github:pr

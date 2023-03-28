@@ -28,11 +28,11 @@ See our [documentation](https://charcoal-web.pixiv.design/), or README of each p
 
 ### Setup
 
-Requires `yarn` and `nodenv`.
+Requires `pnpm` and `nodenv`.
 
 ```sh
 nodenv install `cat .node-version`
-yarn install
+pnpm install
 ```
 
 ### Development
@@ -40,14 +40,15 @@ yarn install
 Start the development server on http://localhost:6006
 
 ```
-yarn build
-yarn storybook
+pnpm build
+pnpm storybook
 ```
 
 If you want to start development for documentation site, run the following command and go to http://localhost:5000
 
 ```
-yarn website
+cd docs
+pnpm start
 ```
 
 ### Commit
