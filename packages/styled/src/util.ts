@@ -1,10 +1,12 @@
 import {
   applyEffect,
   customPropertyToken,
+  disabledSelector,
   filterObject,
   flatMapObject,
+  notDisabledSelector,
 } from '@charcoal-ui/utils'
-import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import { CharcoalAbstractTheme, EffectType, Key } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
 
 /**
@@ -76,8 +78,23 @@ export function objectAssign<T extends any[]>(...sources: T) {
   return Object.assign({}, ...sources) as ObjectAssign<T>
 }
 
-export function objectKeys<V extends object, K extends keyof V>(obj: V) {
-  return Object.keys(obj) as K[]
+/**
+ * Object.keys の返り値の型を厳しめにしてくれるやつ。
+ *
+ * ジェネリクスは基本的に明示して使うことを推奨。
+ *
+ * このライブラリでは Theme オブジェクトのジェネリクスを引き回すケースが多く、
+ * ジェネリクスを省略するといつのまにか keys の返り値が `string | number | symbol` になりがちなので
+ *
+ * @param obj - キーを取りたいオブジェクト。ジェネリクスを省略したとき `never[]` のような使えない型が返って欲しい
+ */
+export function keyof<
+  // このジェネリクスは必須（書かないと返り値が `never[]` になる ）
+  T extends Record<never, unknown>,
+  // このジェネリクスは書かなくて良い、obj の内容から推論される（ T と矛盾してはいけない ）
+  _ extends T = T
+>(obj: _) {
+  return Object.keys(obj) as unknown as (keyof T & string)[]
 }
 
 export interface ReadonlyArrayConstructor {
@@ -92,6 +109,15 @@ export function extractNonNullKeys<V, K extends keyof V>(obj: {
     .filter(([_, v]) => v !== null)
     .map(([k]) => k) as { [key in K]: V[key] extends null ? never : key }[K][]
 }
+
+/**
+ * 配列じゃなかったら配列にする
+ */
+export function wrapArray<T>(value: ArrayOrSingle<T>): T[] {
+  return Array.isArray(value) ? value : [value]
+}
+
+export type ArrayOrSingle<T> = T | T[]
 
 export const noThemeProvider = new Error(
   '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
@@ -142,4 +168,21 @@ export function defineThemeVariables(
       ]),
     ])
   }
+}
+
+export function isSupportedEffect(effect: Key): effect is EffectType {
+  return ['hover', 'press', 'disabled'].includes(effect as string)
+}
+
+export const variable = (value: string) => `var(${value})`
+
+export function onEffectPseudo(effect: EffectType, css: CSSObject) {
+  return effect === 'hover'
+    ? { '&:hover': { [notDisabledSelector]: css } }
+    : effect === 'press'
+    ? { '&:active': { [notDisabledSelector]: css } }
+    : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    effect === 'disabled'
+    ? { [disabledSelector]: css }
+    : unreachable(effect)
 }

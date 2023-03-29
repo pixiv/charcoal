@@ -20,6 +20,7 @@ const config = {
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     'react/prop-types': 'off',
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'no-console': 'warn',
   },
   parserOptions: {

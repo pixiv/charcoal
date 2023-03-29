@@ -60,7 +60,7 @@ export function DropdownPopover({ children, state, ...props }: Props) {
   }, [props.value, state.isOpen])
 
   return (
-    <Overlay>
+    <Overlay portalContainer={document.body}>
       <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
       <DropdownPopoverDiv {...popoverProps} ref={ref}>
         <DismissButton onDismiss={() => state.close()} />

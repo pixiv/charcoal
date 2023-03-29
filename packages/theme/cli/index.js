@@ -1,6 +1,8 @@
-import { light, dark } from '@charcoal-ui/theme'
-import fs from 'fs'
-import { parseToRgb } from 'polished'
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const { light, dark } = require('@charcoal-ui/theme')
+const fs = require('fs')
+const { parseToRgb } = require('polished')
 
 /**
  * transform color string to [0, 1] clamped value of color object

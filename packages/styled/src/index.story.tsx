@@ -1,9 +1,8 @@
 import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
-import { CharcoalTheme } from '@charcoal-ui/theme'
-import { Material } from '@charcoal-ui/foundation'
 import { createTheme, ThemeProp, defineThemeVariables } from '.'
 import { disabledSelector } from '@charcoal-ui/utils'
+import { MyTheme, myTheme } from './storyHelper'
 
 export default {
   title: 'styled',
@@ -15,27 +14,11 @@ declare module 'react' {
   }
 }
 
-type MyTheme = CharcoalTheme & {
-  color: {
-    mycolor: Material
-  }
-}
-
-function myTheme(theme: CharcoalTheme): MyTheme {
-  return {
-    ...theme,
-    color: {
-      ...theme.color,
-      mycolor: '#ff9e8c',
-    },
-  }
-}
-
 declare module 'styled-components' {
   export interface DefaultTheme extends MyTheme {}
 }
 
-const theme = createTheme(styled)
+const theme = createTheme<DefaultTheme>()
 
 export const Example = () => (
   <ThemeProvider theme={myTheme}>

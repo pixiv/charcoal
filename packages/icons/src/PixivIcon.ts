@@ -65,7 +65,7 @@ export class PixivIcon extends HTMLElement {
   get props() {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)])
-    ) as Record<typeof attributes[number], string | null>
+    ) as Record<(typeof attributes)[number], string | null>
 
     const name = partial.name
 

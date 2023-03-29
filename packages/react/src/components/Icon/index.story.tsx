@@ -22,8 +22,12 @@ export default {
   },
 }
 
-const Template: Story<IconProps> = (props) => <Icon {...props} />
+// NOTICE: コード生成のタイミングで不当に型エラーが出ることがあるので name を any にする
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Template: Story<IconProps & { name: any }> = (props) => (
+  <Icon {...props} />
+)
 
-export const Default: Story<IconProps> = Template.bind({})
+export const Default = Template.bind({})
 
 Default.args = { name: KNOWN_ICON_FILES[0], scale: 1 }

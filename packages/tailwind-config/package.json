@@ -1,35 +1,35 @@
 {
   "name": "@charcoal-ui/tailwind-config",
-  "version": "2.4.0",
+  "version": "2.6.0",
   "license": "Apache-2.0",
-  "type": "module",
-  "source": "./src/index.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.module.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
+    "require": "./dist/index.cjs.js",
+    "default": "./dist/index.esm.js"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle --compress=false -f modern,esm,cjs --tsconfig tsconfig.build.json",
-    "typecheck": "tsc --noEmit --project tsconfig.build.json",
-    "clean": "rimraf dist"
+    "build": "run-p --print-label 'build:*'",
+    "build:bundle": "FORCE_COLOR=1 tsup",
+    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "microbundle": "^0.14.2",
     "postcss": "^8.4.5",
     "postcss-selector-parser": "^6.0.9",
     "react": "^18.0.0",
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.0.5",
-    "typescript": "^4.5.5"
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^2.4.0",
-    "@charcoal-ui/theme": "^2.4.0",
-    "@charcoal-ui/utils": "^2.4.0"
+    "@charcoal-ui/foundation": "^2.6.0",
+    "@charcoal-ui/theme": "^2.6.0",
+    "@charcoal-ui/utils": "^2.6.0"
   },
   "peerDependencies": {
     "csstype": ">=3.0.0",
@@ -47,5 +47,6 @@
     "type": "git",
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/tailwind-config"
-  }
+  },
+  "gitHead": "8579b406b316285a35858512030d2143524ae154"
 }
