@@ -34,6 +34,7 @@ jobs:
         run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
