@@ -1,4 +1,4 @@
-name: Enforce semver labels
+name: Semver のラベルをつけてください
 
 on:
   pull_request:
@@ -9,21 +9,25 @@ env:
   SEMVER_LABELS: '["major", "minor", "patch", "beta"]'
 
 jobs:
-  enforce-sermver:
+  enforce-semver:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v6
         with:
           script: |
+            const { issue, repo } = context
+
             const { data: pull } = await github.rest.issues.get({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              issue_number: issue.number,
+              owner: repo.owner,
+              repo: repo.repo,
             })
 
+            const labels = pull.labels.map(({ name }) => name)
             const SEMVER_LABELS = JSON.parse(process.env.SEMVER_LABELS)
+
             const result = new Set()
-            for (const label of pull.labels) {
+            for (const label of labels) {
               for (const semver of SEMVER_LABELS) {
                 if (label !== semver) {
                   continue
@@ -33,6 +37,18 @@ jobs:
               }
             }
 
-            if (result.size !== 1) {
-              throw new Error(`One of semver labels (${SEMVER_LABELS}) must be set`)
+            switch (result.size) {
+              case 1: {
+                const [next] = result.values()
+                console.log(`Merging this PR will be a ${next} release`)
+                break
+              }
+
+              case 0: {
+                throw new Error(`One of semver labels (${SEMVER_LABELS}) must be set`)
+              }
+
+              default: {
+                throw new Error(`Do not set multiple semver labels: ${labels}`)
+              }
             }
