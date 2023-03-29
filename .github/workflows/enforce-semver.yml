@@ -15,13 +15,11 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            const pull = await github.rest.issues.get({
+            const { data: pull } = await github.rest.issues.get({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
             })
-
-            console.log(pull)
 
             const SEMVER_LABELS = JSON.parse(process.env.SEMVER_LABELS)
             const result = new Set()
