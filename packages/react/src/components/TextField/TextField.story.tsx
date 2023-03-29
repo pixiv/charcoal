@@ -3,11 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
-import TextField, {
-  MultiLineTextFieldProps,
-  SingleLineTextFieldProps,
-  TextFieldProps,
-} from '.'
+import TextField, { TextFieldProps } from '.'
 import { px } from '@charcoal-ui/utils'
 import IconButton from '../IconButton'
 
@@ -38,19 +34,8 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
       subLabel={
         <Clickable onClick={action('label-click')}>Text Link</Clickable>
       }
-      placeholder="Single Line"
-      {...(args as Partial<SingleLineTextFieldProps>)}
-      multiline={false}
-    />
-    <TextField
-      label="Label"
-      requiredText="*必須"
-      subLabel={
-        <Clickable onClick={action('label-click')}>Text Link</Clickable>
-      }
-      placeholder="Multi Line"
-      {...(args as Partial<MultiLineTextFieldProps>)}
-      multiline
+      placeholder="TextField"
+      {...args}
     />
   </Container>
 )
@@ -70,7 +55,7 @@ HasCount.args = {
   maxLength: 100,
 }
 
-export const HasAffix: Story<Partial<SingleLineTextFieldProps>> = (args) => (
+export const HasAffix: Story<Partial<TextFieldProps>> = (args) => (
   <TextField label="Label" placeholder="path/to/your/file" {...args} />
 )
 HasAffix.args = {
@@ -80,14 +65,7 @@ HasAffix.args = {
   suffix: '.png',
 }
 
-export const AutoHeight: Story<Partial<MultiLineTextFieldProps>> = (args) => (
-  <TextField label="Label" placeholder="Multi Line" {...args} multiline />
-)
-AutoHeight.args = {
-  autoHeight: true,
-}
-
-export const PrefixIcon: Story<Partial<SingleLineTextFieldProps>> = (args) => (
+export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (
   <TextField
     label="Label"
     placeholder="Icon prefix"
