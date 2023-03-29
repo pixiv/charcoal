@@ -35,8 +35,9 @@ export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,
   type TextFieldProps,
+  type SingleLineTextFieldProps,
+  type MultiLineTextFieldProps,
 } from './components/TextField'
-export { default as TextArea, type TextAreaProps } from './components/TextArea'
 export { default as Icon, type IconProps } from './components/Icon'
 export { default as Modal, type ModalProps } from './components/Modal'
 export {
