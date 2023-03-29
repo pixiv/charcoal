@@ -1,0 +1,40 @@
+name: Enforce semver labels
+
+on:
+  pull_request:
+    # cf: https://github.com/yogevbd/enforce-label-action#enforce-pr-labels
+    types: [labeled, unlabeled, opened, edited, synchronize]
+
+env:
+  SEMVER_LABELS: '["major", "minor", "patch", "beta"]'
+
+jobs:
+  enforce-sermver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const pull = await github.rest.issues.get({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
+
+            console.log(pull)
+
+            const SEMVER_LABELS = JSON.parse(process.env.SEMVER_LABELS)
+            const result = new Set()
+            for (const label of pull.labels) {
+              for (const semver of SEMVER_LABELS) {
+                if (label !== semver) {
+                  continue
+                }
+
+                result.add(semver)
+              }
+            }
+
+            if (result.size !== 1) {
+              throw new Error(`One of semver labels (${SEMVER_LABELS}) must be set`)
+            }
