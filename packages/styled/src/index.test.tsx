@@ -4,7 +4,8 @@ import 'jest-styled-components'
 import React from 'react'
 import renderder from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
-import { Example, myTheme, TailwindLike } from './index.story'
+import { Example, TailwindLike } from './index.story'
+import { myTheme } from './storyHelper'
 
 function render(children: JSX.Element) {
   return renderder

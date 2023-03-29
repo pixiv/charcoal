@@ -9,7 +9,7 @@ import {
 } from '../factories/lib'
 
 export const borderDirections = ['top', 'right', 'bottom', 'left'] as const
-type BorderDirection = typeof borderDirections[number]
+type BorderDirection = (typeof borderDirections)[number]
 
 function borderProperty(direction: BorderDirection) {
   return `border-${direction}`

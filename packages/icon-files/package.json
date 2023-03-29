@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icon-files",
-  "version": "2.4.0",
+  "version": "2.6.0",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/index.cjs",
@@ -21,5 +21,6 @@
     "type": "git",
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/icon-files"
-  }
+  },
+  "gitHead": "8579b406b316285a35858512030d2143524ae154"
 }

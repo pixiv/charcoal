@@ -52,4 +52,4 @@ yarn website
 
 ### Commit
 
-`@charcoal-ui` is using [commintlint](https://github.com/conventional-changelog/commitlint) and following the [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) rules.
+`@charcoal-ui` is using [commitlint](https://github.com/conventional-changelog/commitlint) and following the [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) rules.
