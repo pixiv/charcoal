@@ -1,4 +1,4 @@
-name: Semver のラベルをつけてください
+name: Check if SemVer label is set
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
     types: [labeled, unlabeled, opened, edited, synchronize]
 
 env:
+  # see: https://github.com/pixiv/charcoal/issues/labels
   SEMVER_LABELS: '["major", "minor", "patch", "beta"]'
 
 jobs:
