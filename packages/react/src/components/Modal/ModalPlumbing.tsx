@@ -2,6 +2,7 @@ import React from 'react'
 import { ModalTitle } from '.'
 import styled from 'styled-components'
 import { theme } from '../../styled'
+import { maxWidth } from '@charcoal-ui/utils'
 
 export function ModalHeader() {
   return (
@@ -23,7 +24,11 @@ const StyledModalTitle = styled(ModalTitle)`
 `
 
 export const ModalAlign = styled.div`
-  ${theme((o) => [o.padding.horizontal(16)])}
+  ${theme((o) => [o.padding.horizontal(24)])}
+
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    ${theme((o) => [o.padding.horizontal(16)])}
+  }
 `
 
 export const ModalBody = styled.div`
@@ -34,6 +39,9 @@ export const ModalButtons = styled.div`
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
+  ${theme((o) => [o.padding.horizontal(24).top(16)])}
 
-  ${theme((o) => [o.padding.horizontal(16).top(16)])}
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    ${theme((o) => [o.padding.horizontal(16)])}
+  }
 `
