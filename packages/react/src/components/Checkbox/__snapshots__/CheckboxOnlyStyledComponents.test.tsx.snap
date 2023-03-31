@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxOnlyStyled <CheckboxOnlyStyled /> 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  border-radius: 4px;
+}
+
+.c2[type='checkbox']:checked {
+  background: #0096fa;
+}
+
+.c2[type='checkbox']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #adadad;
+}
+
+.c2[type='checkbox']:focus {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  visibility: hidden;
+}
+
+<label
+  aria-disabled={false}
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <input
+      aria-label="test"
+      checked={false}
+      className="c2"
+      type="checkbox"
+    />
+    <div
+      aria-hidden={true}
+      checked={false}
+      className="c3"
+    >
+      <pixiv-icon
+        name="24/Check"
+        unsafe-non-guideline-scale={0.6666666666666666}
+      />
+    </div>
+  </div>
+</label>
+`;
