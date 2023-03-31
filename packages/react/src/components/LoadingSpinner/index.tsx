@@ -27,10 +27,10 @@ const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   height: ${(props) => props.size}px;
   opacity: 0.84;
   ${({ transparent }) =>
-    theme((o) => [
-      o.font.text4,
-      transparent ? o.bg.transparent : o.bg.background1,
-    ])}
+    theme(
+      (o) => [o.font.text4, transparent ? o.bg.transparent : o.bg.background1],
+      [transparent]
+    )}
 `
 
 const scaleout = keyframes`

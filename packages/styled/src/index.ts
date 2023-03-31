@@ -27,6 +27,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  * `theme(o => [...])` の `theme` ユーティリティを構築する
  *
  * @param _styled - DEPRECATED: styled-componnets の `styled` そのものを渡すとそれを元に型推論ができる。が、型引数を渡す方が型推論が高速になりやすい
+ * @param experimental___CACHE_MODE - キャッシュモードを有効にする。有効になっていた場合、同じ specFn に対してはキャッシュ済の CSSObject を返す
  *
  * @example
  *
@@ -38,19 +39,46 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  * const theme = createTheme<DefaultTheme>()
  */
 export function createTheme<T extends CharcoalAbstractTheme>(
-  _styled?: ThemedStyledInterface<T>
+  _styled?: ThemedStyledInterface<T>,
+  experimental___CACHE_MODE = false
 ) {
   type Builder = ReturnType<typeof createO<T>>
+  type SpecFunction = (o: Builder) => ArrayOrSingle<Internal | Blank>
+
+  /**
+   * theme(...) に渡している関数の参照が全く同じで、中で使用している deps が同じならキャッシュできるはず
+   */
+  const caches = new WeakMap<
+    SpecFunction,
+    {
+      deps: unknown[]
+      theme: T
+      css: CSSObject | CSSObject[]
+    }
+  >()
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
   return function theme(
-    specFn: (o: Builder) => ArrayOrSingle<Internal | Blank>
+    specFn: SpecFunction,
+    deps: unknown[] = []
   ): ThemeProp<T> {
     // styled-components のテンプレートに埋め込める関数
     return function interpolate({ theme }) {
       if (!isPresent(theme)) {
         // テーマが入っていない場合は復旧不可能なのでエラーにする
         throw noThemeProvider
+      }
+
+      if (experimental___CACHE_MODE) {
+        const cachedResult = caches.get(specFn)
+
+        if (
+          cachedResult &&
+          objectsAre(cachedResult.deps, deps) &&
+          Object.is(cachedResult.theme, theme)
+        ) {
+          return cachedResult.css
+        }
       }
 
       const internals = [
@@ -74,9 +102,32 @@ export function createTheme<T extends CharcoalAbstractTheme>(
         transition(theme),
       ].filter(nonBlank)
 
-      return toCSSObjects(internals)
+      const css = toCSSObjects(internals)
+      caches.set(specFn, { css, theme, deps })
+
+      return css
     }
   }
+}
+
+/**
+ * 配列のすべての要素が同一値であるかを判定する
+ *
+ * `theme(o => [], [...])` の deps が変化していないことを判定するのに使う
+ *
+ * React の useEffect の第2引数とやりたいことは同じなので、`Object.is()` で比較する
+ */
+function objectsAre(previous: unknown[], current: unknown[]) {
+  if (current.length === 0 || previous.length === 0) {
+    return true
+  }
+
+  const changed = previous.some((dep, index) => !Object.is(dep, current[index]))
+  if (!changed) {
+    return true
+  }
+
+  return false
 }
 
 export type ThemeProp<T> = ({
