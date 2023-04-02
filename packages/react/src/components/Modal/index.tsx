@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { forwardRef, memo, useContext, useRef } from 'react'
 import {
   AriaModalOverlayProps,
   Overlay,
@@ -17,6 +17,7 @@ import { useMedia } from '@charcoal-ui/styled'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
+import { useObjectRef } from '@react-aria/utils'
 
 export type ModalProps = AriaModalOverlayProps &
   AriaDialogProps & {
@@ -27,6 +28,7 @@ export type ModalProps = AriaModalOverlayProps &
     bottomSheet?: boolean | 'full'
     isOpen: boolean
     onClose: () => void
+    className?: string
 
     /**
      * https://github.com/adobe/react-spectrum/issues/3787
@@ -61,22 +63,23 @@ const DEFAULT_Z_INDEX = 10
  * </OverlayProvider>
  * ```
  */
-export default function Modal({
+const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner({
   children,
   zIndex = DEFAULT_Z_INDEX,
   portalContainer,
   ...props
-}: ModalProps) {
+}, external) {
   const {
     title,
     size = 'M',
     bottomSheet = false,
     isDismissable,
     onClose,
+    className,
     isOpen = false,
   } = props
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useObjectRef<HTMLDivElement>(external)
   const { overlayProps, underlayProps } = useOverlay(props, ref)
 
   const { modalProps } = useModalOverlay(
@@ -141,6 +144,7 @@ export default function Modal({
                 style={transitionEnabled ? { transform } : {}}
                 size={size}
                 bottomSheet={bottomSheet}
+                className={className}
               >
                 <ModalContext.Provider
                   value={{ titleProps, title, close: onClose, showDismiss }}
@@ -160,7 +164,9 @@ export default function Modal({
         </Overlay>
       )
   )
-}
+})
+
+export default memo(Modal)
 
 const ModalContext = React.createContext<{
   titleProps: React.HTMLAttributes<HTMLElement>
