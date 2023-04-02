@@ -21,9 +21,10 @@ export function Basic() {
   const size = number('size', 48)
   const padding = number('padding', 16)
   const transparent = boolean('transparent', false)
+  const className = text("className", "basic")
 
   return (
-    <LoadingSpinner size={size} padding={padding} transparent={transparent} />
+    <LoadingSpinner size={size} padding={padding} transparent={transparent} className={className} />
   )
 }
 
