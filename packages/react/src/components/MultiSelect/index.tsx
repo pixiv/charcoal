@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useContext } from 'react'
+import React, { ChangeEvent, forwardRef, memo, useCallback, useContext } from 'react'
 import styled, { css } from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
@@ -11,17 +11,19 @@ export type MultiSelectProps = React.PropsWithChildren<{
   forceChecked?: boolean
   disabled?: boolean
   variant?: 'default' | 'overlay'
+  className?: string
   onChange?: (payload: { value: string; selected: boolean }) => void
 }>
 
-export default function MultiSelect({
+const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(function MultiSelectInner({
   value,
   forceChecked = false,
   disabled = false,
   onChange,
   variant = 'default',
+  className,
   children,
-}: MultiSelectProps) {
+}, ref) {
   const {
     name,
     selected,
@@ -52,7 +54,7 @@ export default function MultiSelect({
   )
 
   return (
-    <MultiSelectRoot aria-disabled={isDisabled}>
+    <MultiSelectRoot aria-disabled={isDisabled} className={className} >
       <MultiSelectInput
         {...{
           name,
@@ -64,6 +66,7 @@ export default function MultiSelect({
         onChange={handleChange}
         overlay={variant === 'overlay'}
         aria-invalid={hasError}
+        ref={ref}
       />
       <MultiSelectInputOverlay
         overlay={variant === 'overlay'}
@@ -75,7 +78,9 @@ export default function MultiSelect({
       {Boolean(children) && <MultiSelectLabel>{children}</MultiSelectLabel>}
     </MultiSelectRoot>
   )
-}
+})
+
+export default memo(MultiSelect)
 
 const MultiSelectRoot = styled.label`
   display: grid;
