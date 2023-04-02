@@ -63,12 +63,10 @@ const DEFAULT_Z_INDEX = 10
  * </OverlayProvider>
  * ```
  */
-const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner({
-  children,
-  zIndex = DEFAULT_Z_INDEX,
-  portalContainer,
-  ...props
-}, external) {
+const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
+  { children, zIndex = DEFAULT_Z_INDEX, portalContainer, ...props },
+  external
+) {
   const {
     title,
     size = 'M',

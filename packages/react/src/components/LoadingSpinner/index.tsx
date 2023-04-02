@@ -9,18 +9,24 @@ export type LoadingSpinnerProps = {
   readonly className?: string
 }
 
-const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(function LoadingSpinnerInner({
-  size = 48,
-  padding = 16,
-  transparent = false,
-  className
-}, ref) {
-  return (
-    <LoadingSpinnerRoot size={size} padding={padding} transparent={transparent} className={className} ref={ref}>
-      <LoadingSpinnerIcon />
-    </LoadingSpinnerRoot>
-  )
-})
+const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
+  function LoadingSpinnerInner(
+    { size = 48, padding = 16, transparent = false, className },
+    ref
+  ) {
+    return (
+      <LoadingSpinnerRoot
+        size={size}
+        padding={padding}
+        transparent={transparent}
+        className={className}
+        ref={ref}
+      >
+        <LoadingSpinnerIcon />
+      </LoadingSpinnerRoot>
+    )
+  }
+)
 
 export default memo(LoadingSpinner)
 

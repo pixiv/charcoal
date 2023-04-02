@@ -80,7 +80,7 @@ const Template: Story<Props> = ({
   readonly,
   hasError,
   variant,
-  className
+  className,
 }) => {
   return (
     <StyledMultiSelectGroup
@@ -143,7 +143,12 @@ export const Playground: Story<PlaygroundProps> = ({ className, ...props }) => {
       onChange={setSelected}
     >
       {[1, 2, 3, 4].map((idx) => (
-        <MultiSelect value={`選択肢${idx}`} variant={props.variant} key={idx} className={className}>
+        <MultiSelect
+          value={`選択肢${idx}`}
+          variant={props.variant}
+          key={idx}
+          className={className}
+        >
           選択肢{idx}
         </MultiSelect>
       ))}

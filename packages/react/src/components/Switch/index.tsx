@@ -24,37 +24,39 @@ export type SwitchProps = {
     }
 )
 
-const SwitchCheckbox = forwardRef<HTMLInputElement, SwitchProps>(function SwitchCheckboxInner(props, external) {
-  const { disabled, className } = props
+const SwitchCheckbox = forwardRef<HTMLInputElement, SwitchProps>(
+  function SwitchCheckboxInner(props, external) {
+    const { disabled, className } = props
 
-  const ariaSwitchProps: AriaSwitchProps = useMemo(
-    () => ({
-      ...props,
+    const ariaSwitchProps: AriaSwitchProps = useMemo(
+      () => ({
+        ...props,
 
-      // children がいない場合は aria-label をつけないといけない
-      'aria-label': 'children' in props ? undefined : props.label,
-      isDisabled: props.disabled,
-      isSelected: props.checked,
-    }),
-    [props]
-  )
+        // children がいない場合は aria-label をつけないといけない
+        'aria-label': 'children' in props ? undefined : props.label,
+        isDisabled: props.disabled,
+        isSelected: props.checked,
+      }),
+      [props]
+    )
 
-  const state = useToggleState(ariaSwitchProps)
-  const ref = useObjectRef<HTMLInputElement>(external)
-  const {
-    inputProps: { className: _className, type: _type, ...rest },
-  } = useSwitch(ariaSwitchProps, state, ref)
+    const state = useToggleState(ariaSwitchProps)
+    const ref = useObjectRef<HTMLInputElement>(external)
+    const {
+      inputProps: { className: _className, type: _type, ...rest },
+    } = useSwitch(ariaSwitchProps, state, ref)
 
-  return (
-    <Label className={className} aria-disabled={disabled}>
-      <SwitchInput {...rest} ref={ref} />
-      {'children' in props ? (
-        // eslint-disable-next-line react/destructuring-assignment
-        <LabelInner>{props.children}</LabelInner>
-      ) : undefined}
-    </Label>
-  )
-})
+    return (
+      <Label className={className} aria-disabled={disabled}>
+        <SwitchInput {...rest} ref={ref} />
+        {'children' in props ? (
+          // eslint-disable-next-line react/destructuring-assignment
+          <LabelInner>{props.children}</LabelInner>
+        ) : undefined}
+      </Label>
+    )
+  }
+)
 
 export default memo(SwitchCheckbox)
 

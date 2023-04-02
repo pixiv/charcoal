@@ -54,7 +54,11 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
     }, [props.data])
 
     return (
-      <SegmentedControlRoot ref={ref} {...radioGroupProps} className={props.className}>
+      <SegmentedControlRoot
+        ref={ref}
+        {...radioGroupProps}
+        className={props.className}
+      >
         <RadioProvider value={state}>
           {segmentedControlItems.map((item) => (
             <Segmented

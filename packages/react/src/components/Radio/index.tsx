@@ -11,13 +11,10 @@ export type RadioProps = React.PropsWithChildren<{
   className?: string
 }>
 
-const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner({
-  value,
-  forceChecked = false,
-  disabled = false,
-  children,
-  className,
-}, ref) {
+const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
+  { value, forceChecked = false, disabled = false, children, className },
+  ref
+) {
   const {
     name,
     selected,
@@ -61,7 +58,6 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner({
 })
 
 export default memo(Radio)
-
 
 const RadioRoot = styled.label`
   display: grid;
