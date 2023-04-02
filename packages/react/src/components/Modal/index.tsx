@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useContext, useRef } from 'react'
+import React, { forwardRef, memo, useContext } from 'react'
 import {
   AriaModalOverlayProps,
   Overlay,
