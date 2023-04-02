@@ -11,7 +11,7 @@ export type RadioProps = React.PropsWithChildren<{
   className?: string
 }>
 
-const Radio = forwardRef<HTMLLabelElement, RadioProps>(function RadioInner({
+const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner({
   value,
   forceChecked = false,
   disabled = false,
@@ -45,7 +45,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(function RadioInner({
   )
 
   return (
-    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className} ref={ref}>
+    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className}>
       <RadioInput
         name={name}
         value={value}
@@ -53,6 +53,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(function RadioInner({
         hasError={hasError}
         onChange={handleChange}
         disabled={isDisabled || isReadonly}
+        ref={ref}
       />
       {children != null && <RadioLabel>{children}</RadioLabel>}
     </RadioRoot>
