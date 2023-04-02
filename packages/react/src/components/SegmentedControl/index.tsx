@@ -24,6 +24,7 @@ export type SegmentedControlProps = {
   readonly disabled?: boolean
   readonly readonly?: boolean
   readonly required?: boolean
+  readonly className?: string
 
   readonly value?: string
   readonly defaultValue?: string
@@ -53,7 +54,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
     }, [props.data])
 
     return (
-      <SegmentedControlRoot ref={ref} {...radioGroupProps}>
+      <SegmentedControlRoot ref={ref} {...radioGroupProps} className={props.className}>
         <RadioProvider value={state}>
           {segmentedControlItems.map((item) => (
             <Segmented
