@@ -34,7 +34,10 @@
     "provenance": true
   },
   "devDependencies": {
-    "@charcoal-ui/icons-cli": "workspace:^",
+    "@charcoal-ui/icons-cli": "workspace:^2.6.0",
+    "@charcoal-ui/styled": "workspace:^2.6.0",
+    "@charcoal-ui/tailwind-config": "workspace:^2.6.0",
+    "@charcoal-ui/theme": "workspace:^2.6.0",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@commitlint/config-lerna-scopes": "^16.0.0",
