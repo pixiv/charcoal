@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dump:css": "tailwind build source.css -o dump.css"
+    "build": "tailwind build source.css -o dump.css"
   },
   "author": "",
   "license": "Apache-2.0",
