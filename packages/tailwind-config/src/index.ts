@@ -1,6 +1,6 @@
 import { GRID_COUNT, mergeEffect } from './foundation'
 
-import { TailwindConfig } from 'tailwindcss/tailwind-config'
+import { Config } from 'tailwindcss/types/config'
 import { TailwindVersion, ThemeMap } from './types'
 
 import {
@@ -30,7 +30,7 @@ interface Options {
 export function createTailwindConfig({
   theme = { ':root': light },
   version = 'v3',
-}: Options): TailwindConfig {
+}: Options) {
   assertAllThemeHaveSameKeys(theme)
 
   const defaultTheme = theme[':root']
@@ -108,8 +108,6 @@ export function createTailwindConfig({
     ...getVariantOption(version),
 
     corePlugins: {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error 配列にしろと言ってくるが、たぶん @types が間違っている
       lineHeight: false,
     },
     plugins: [
@@ -124,7 +122,7 @@ export function createTailwindConfig({
         )
       ),
     ],
-  }
+  } as Config
 }
 
-export const config: TailwindConfig = createTailwindConfig({})
+export const config = createTailwindConfig({})

@@ -45,7 +45,7 @@ export default function cssVariableColorPlugin(
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     addUtilities(classRules, {
-      variants: ['responsive'],
+      respectPrefix: true,
     })
   })
 }

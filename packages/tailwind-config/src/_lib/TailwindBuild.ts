@@ -1,7 +1,7 @@
 import postcss, { Result } from 'postcss'
 import postcssSelectorParser from 'postcss-selector-parser'
 import tailwindcss from 'tailwindcss'
-import { TailwindConfig } from 'tailwindcss/tailwind-config'
+import { Config } from 'tailwindcss/types/config'
 
 const selectorParser = postcssSelectorParser()
 
@@ -45,12 +45,9 @@ export class TailwindBuild {
     this.parsedCss = parsedCss
   }
 
-  static async run(config: TailwindConfig, css: string) {
+  static async run(config: Config, css: string) {
     const plugin = tailwindcss({
       ...config,
-
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error safelist が @types/tailwindcss に生えてない
       safelist: [
         {
           // 一切 purge しない

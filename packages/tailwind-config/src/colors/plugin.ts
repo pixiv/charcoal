@@ -6,7 +6,7 @@ import {
   flatMapObject,
   mapObject,
 } from '@charcoal-ui/utils'
-import plugin, { TailwindPlugin } from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin'
 import { mergeEffect } from '../foundation'
 import { CSSVariableName, CSSVariables, Definition, ThemeMap } from '../types'
 import { COLOR_PREFIX, isSingleColor } from './utils'
@@ -17,7 +17,7 @@ import { COLOR_PREFIX, isSingleColor } from './utils'
 export default function cssVariableColorPlugin({
   ':root': _defaultTheme,
   ...themes
-}: ThemeMap): TailwindPlugin {
+}: ThemeMap) {
   const definitions = defineCssVariables(themes)
 
   return plugin(({ addBase }) => {
