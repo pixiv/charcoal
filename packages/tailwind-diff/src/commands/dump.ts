@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import stream from 'stream'
 import importFrom from 'import-from'
-import type { TailwindConfig } from 'tailwindcss/tailwind-config'
+import type { Config } from 'tailwindcss/types/config'
 
 const sourceCSS = `
 @tailwind base;
@@ -24,11 +24,12 @@ export async function dump({ output, config }: DumpConfig) {
   const tailwindcss = importFrom(
     targetDir,
     'tailwindcss'
-  ) as typeof import('tailwindcss')
+  ) as typeof import('tailwindcss').default
   const tailwindConfig = importFrom.silent(
     targetDir,
     config != null ? config : 'tailwind.config.js'
-  ) as TailwindConfig
+  ) as Config
+
   const result = await postcss([tailwindcss(tailwindConfig)]).process(
     sourceCSS,
     {
