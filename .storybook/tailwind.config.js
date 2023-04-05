@@ -2,7 +2,7 @@ const { light, dark } = require('@charcoal-ui/theme')
 const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
 
 /**
- * @type {import('tailwindcss/tailwind-config').TailwindConfig}
+ * @type {import('tailwindcss/tailwind-config').Config}
  */
 module.exports = {
   darkMode: false,

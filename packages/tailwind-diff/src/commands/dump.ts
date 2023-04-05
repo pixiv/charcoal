@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import stream from 'stream'
 import importFrom from 'import-from'
-import type { Config } from 'tailwindcss/types/config'
+import type { Config } from 'tailwindcss'
 
 const sourceCSS = `
 @tailwind base;

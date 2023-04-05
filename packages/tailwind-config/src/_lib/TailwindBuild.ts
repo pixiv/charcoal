@@ -1,7 +1,6 @@
 import postcss, { Result } from 'postcss'
 import postcssSelectorParser from 'postcss-selector-parser'
-import tailwindcss from 'tailwindcss'
-import { Config } from 'tailwindcss/types/config'
+import tailwindcss, { Config } from 'tailwindcss'
 
 const selectorParser = postcssSelectorParser()
 
