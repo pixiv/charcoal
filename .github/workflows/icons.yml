@@ -23,7 +23,7 @@ jobs:
 
       - name: Prepare deps
         run: |
-          pnpm install --immutable --inline-builds
+          pnpm install --frozen-lockfile
           pnpm run build --recursive --resume-from @charcoal-ui/icons-cli
 
       - name: Export
