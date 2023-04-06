@@ -44,50 +44,47 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           subLabel={props.subLabel}
         />
       )}
-      <DropdownButtonWrapper>
-        <DropdownButton
-          invalid={props.invalid}
-          disabled={props.disabled}
-          onClick={() => {
-            if (props.disabled === true) return
-            state.open()
-          }}
-          ref={triggerRef}
+      <DropdownButton
+        invalid={props.invalid}
+        disabled={props.disabled}
+        onClick={() => {
+          if (props.disabled === true) return
+          state.open()
+        }}
+        ref={triggerRef}
+      >
+        <DropdownButtonText>
+          {props.placeholder !== undefined
+            ? props.placeholder
+            : props.options.find((option) => option.id === props.value)?.label}
+        </DropdownButtonText>
+        <DropdownButtonIcon name="16/Menu" />
+      </DropdownButton>
+      {state.isOpen && (
+        <DropdownPopover
+          state={state}
+          triggerRef={triggerRef}
+          value={props.value}
         >
-          <DropdownButtonText>
-            {props.placeholder !== undefined
-              ? props.placeholder
-              : props.options.find((option) => option.id === props.value)
-                  ?.label}
-          </DropdownButtonText>
-          <DropdownButtonIcon name="16/Menu" />
-        </DropdownButton>
-        {state.isOpen && (
-          <DropdownPopover
-            state={state}
-            triggerRef={triggerRef}
-            value={props.value}
-          >
-            <ListboxRoot>
-              {props.options.map((option) => {
-                return (
-                  <OptionLi
-                    value={option}
-                    key={option.id}
-                    isSelected={props.value === option.id}
-                    onSelect={() => {
-                      props.onChange(option)
-                      state.close()
-                    }}
-                  >
-                    {option.label}
-                  </OptionLi>
-                )
-              })}
-            </ListboxRoot>
-          </DropdownPopover>
-        )}
-      </DropdownButtonWrapper>
+          <ListboxRoot>
+            {props.options.map((option) => {
+              return (
+                <OptionLi
+                  value={option}
+                  key={option.id}
+                  isSelected={props.value === option.id}
+                  onSelect={() => {
+                    props.onChange(option)
+                    state.close()
+                  }}
+                >
+                  {option.label}
+                </OptionLi>
+              )
+            })}
+          </ListboxRoot>
+        </DropdownPopover>
+      )}
       {props.assertiveText !== undefined && (
         <AssertiveText invalid={props.invalid}>
           {props.assertiveText}
@@ -113,7 +110,6 @@ const ListboxRoot = styled.ul`
   ])}
 `
 const DropdownSelectorRoot = styled.div`
-  position: relative;
   display: inline-block;
   width: 100%;
 
@@ -127,10 +123,6 @@ const DropdownFieldLabel = styled(FieldLabel)`
   width: 100%;
 
   ${theme((o) => o.margin.bottom(8))}
-`
-
-const DropdownButtonWrapper = styled.div`
-  position: relative;
 `
 
 const DropdownButton = styled.button<{ invalid?: boolean }>`
