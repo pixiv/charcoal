@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons-cli",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "license": "Apache-2.0",
   "bin": "./dist/index.js",
   "scripts": {
@@ -45,5 +45,6 @@
     "type": "git",
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/icons-cli"
-  }
+  },
+  "gitHead": "8579b406b316285a35858512030d2143524ae154"
 }

@@ -1,6 +1,9 @@
 name: Deploy to Preview Channel
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 env:
   WORKLOAD_IDENTITY_PROVIDER: 'projects/643536859873/locations/global/workloadIdentityPools/charcoal/providers/github-actions'
@@ -15,6 +18,10 @@ permissions:
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
+
+    # NOTE: forkされたリポジトリからのPullRequestだと権限の関係でOIDCによる認証が利用できないためスキップする
+    # c.f. https://github.com/pixiv/charcoal/issues/277
+    if: ${{ !github.event.pull_request.head.repo.fork }}
 
     environment:
       name: preview-channel

@@ -25,6 +25,7 @@ Default.args = {
   href: '',
   rel: '',
   target: '',
+  className: '',
 }
 
 export const Playground: Story<TagItemProps> = ({
