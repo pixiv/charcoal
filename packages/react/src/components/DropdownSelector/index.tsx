@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { ReactNode, useRef } from 'react'
 import styled from 'styled-components'
 import { useOverlayTriggerState } from 'react-stately'
 import { disabledSelector } from '@charcoal-ui/utils'
@@ -11,13 +11,16 @@ import { DropdownPopover } from './DropdownPopover'
 
 export type DropdownSelectorProps = {
   label: string
-  invalid?: boolean
-  assertiveText?: string
   value: string
   options: DropdownSelectorOption[]
   disabled?: boolean
   placeholder?: string
   showLabel?: boolean
+  invalid?: boolean
+  assertiveText?: string
+  required?: boolean
+  requiredText?: string
+  subLabel?: ReactNode
   onChange: (option: DropdownSelectorOption) => void
 }
 
@@ -26,12 +29,21 @@ export type DropdownSelectorOption = {
   id: string
 }
 
+const defaultRequiredText = '*必須'
+
 export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const state = useOverlayTriggerState({})
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
-      {props.showLabel === true && <DropdownFieldLabel label={props.label} />}
+      {props.showLabel === true && (
+        <DropdownFieldLabel
+          label={props.label}
+          required={props.required}
+          requiredText={props.requiredText ?? defaultRequiredText}
+          subLabel={props.subLabel}
+        />
+      )}
       <DropdownButtonWrapper>
         <DropdownButton
           invalid={props.invalid}
