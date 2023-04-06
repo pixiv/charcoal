@@ -15,6 +15,7 @@ export type DropdownSelectorProps = {
   assertiveText?: string
   value: string
   options: DropdownSelectorOption[]
+  disabled?: boolean
   onChange: (option: DropdownSelectorOption) => void
 }
 
@@ -27,12 +28,16 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const state = useOverlayTriggerState({})
   return (
-    <DropdownSelectorRoot>
+    <DropdownSelectorRoot aria-disabled={props.disabled}>
       <DropdownFieldLabel label={props.label} />
       <DropdownButtonWrapper>
         <DropdownButton
           invalid={props.invalid}
-          onClick={() => state.open()}
+          disabled={props.disabled}
+          onClick={() => {
+            if (props.disabled === true) return
+            state.open()
+          }}
           ref={triggerRef}
         >
           <DropdownButtonText>
