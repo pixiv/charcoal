@@ -16,6 +16,7 @@ export type DropdownSelectorProps = {
   value: string
   options: DropdownSelectorOption[]
   disabled?: boolean
+  placeholder?: string
   onChange: (option: DropdownSelectorOption) => void
 }
 
@@ -41,7 +42,10 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           ref={triggerRef}
         >
           <DropdownButtonText>
-            {props.options.find((option) => option.id === props.value)?.label}
+            {props.placeholder !== undefined
+              ? props.placeholder
+              : props.options.find((option) => option.id === props.value)
+                  ?.label}
           </DropdownButtonText>
           <DropdownButtonIcon name="16/Menu" />
         </DropdownButton>
