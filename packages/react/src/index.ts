@@ -53,6 +53,7 @@ export {
 export {
   default as DropdownSelector,
   type DropdownSelectorOption,
+  type DropdownSelectorProps
 } from './components/DropdownSelector'
 export {
   default as SegmentedControl,
