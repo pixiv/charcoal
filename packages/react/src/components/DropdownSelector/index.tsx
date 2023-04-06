@@ -17,6 +17,7 @@ export type DropdownSelectorProps = {
   options: DropdownSelectorOption[]
   disabled?: boolean
   placeholder?: string
+  showLabel?: boolean
   onChange: (option: DropdownSelectorOption) => void
 }
 
@@ -30,7 +31,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
   const state = useOverlayTriggerState({})
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
-      <DropdownFieldLabel label={props.label} />
+      {props.showLabel === true && <DropdownFieldLabel label={props.label} />}
       <DropdownButtonWrapper>
         <DropdownButton
           invalid={props.invalid}
