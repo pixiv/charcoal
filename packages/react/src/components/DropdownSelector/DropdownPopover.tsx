@@ -48,6 +48,7 @@ export function DropdownPopover({ children, state, ...props }: Props) {
         `[data-key="${props.value.toString()}"]`
       ) as HTMLElement | undefined
       selectedElement?.scrollIntoView({ block: 'center' })
+      selectedElement?.focus()
       window.scrollTo(windowScrollX, windowScrollY)
     }
   }, [props.value, state.isOpen])

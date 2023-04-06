@@ -1,98 +1,64 @@
-import { DropdownSelectorProps } from '@charcoal-ui/react/dist/components/DropdownSelector'
+import { DropdownSelectorProps } from '@charcoal-ui/react'
 import { ApiTableData, TableItem } from '../_components/ApiTable'
 
-export const apiData: Omit<
-  ApiTableData<DropdownSelectorProps, HTMLInputElement>,
-  'type' | 'checked' | 'name' | 'readonly'
-> = {
+export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
+  onChange: TableItem
+} = {
   assertiveText: {
-    default: '',
-    description: '下に表示するテキスト',
-    required: false,
-    type: 'string',
-  },
-  autoComplete: {
-    default: '',
-    description: 'selectタグに付けるautoComplete属性',
-    required: false,
+    description: '下側に表示するテキスト。',
     type: 'string',
   },
   disabled: {
     default: 'false',
-    description: '入力を無効にする',
-    required: false,
+    description: 'tureであれば入力を無効にする。',
     type: 'boolean',
-  },
-  disabledKeys: {
-    default: '',
-    description: '無効にするアイテムのキー',
-    required: false,
-    type: 'Iterable<Key>',
   },
   invalid: {
     default: 'false',
-    description: '不正な入力',
-    required: false,
+    description:
+      'trueであれば不正な入力であることを示すアウトラインを表示する。',
     type: 'boolean',
   },
   label: {
-    default: '',
-    description: 'ラベル',
+    description: 'ラベル。',
     required: true,
     type: 'string',
   },
-  items: {
-    default: '',
-    description: 'TODO',
-    required: false,
-    type: 'TODO',
-  },
-  mode: {
-    default: '"default"',
-    description: 'TODO',
-    required: false,
-    type: '"default" | "separator"',
-  },
-  onOpenChange: {
-    default: '',
-    description: 'TODO',
-    required: false,
-    type: '() => void',
-  },
-  open: {
-    default: '',
-    description: 'TODO',
-    required: false,
-    type: 'boolean',
-  },
   required: {
-    default: '',
-    description: '必須かどうか',
-    required: false,
+    default: 'false',
+    description: 'trueかつshowLabelがtrueならrequiredTextを表示する。',
     type: 'boolean',
   },
   requiredText: {
-    default: '',
-    description: '必須を示すテキスト、showLabelのとき表示される',
-    required: false,
+    default: '"*必須"',
+    description: '必須であることを示す文字列。',
     type: 'string',
   },
   showLabel: {
-    default: '',
-    description: 'ラベルを表示するかどうか',
-    required: false,
-    type: 'boolean',
+    description:
+      'trueであればlabel,subLabelを表示する。requiredがtrueであればrequiredTextも表示する。',
+    type: 'string',
   },
   subLabel: {
-    default: '',
-    description: 'サブラベル、showLabelの時、右上に表示される',
-    required: false,
+    description: '補助的な内容を示すラベル。',
     type: 'string',
+  },
+  options: {
+    default: '',
+    description: '選択肢の配列。',
+    required: true,
+    type: '{ label: string id: string }',
   },
   value: {
     default: '',
-    description: '',
-    required: false,
+    description: '選択中の選択肢のID。',
+    required: true,
     type: 'string',
+  },
+  onChange: {
+    default: '',
+    description: '選択肢が選択された時に呼び出されるイベント。',
+    required: true,
+    type: '(option: DropdownSelectorOption) => void',
   },
 }
