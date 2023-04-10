@@ -16,9 +16,10 @@ export default function InstallPage(props: any) {
   return (
     <ContentRoot>
       <h1>padding</h1>
-      <p>余白を設定する</p>
       <p>
-        各方向に指定をチェインして記述できる、指定する数字はガイドラインに従ったspacingのみ
+        <InlineCode>:disabled</InlineCode>
+        <InlineCode>[aria-disabled]</InlineCode>
+        のときに利用不可能な状態を表すスタイルを適用する
       </p>
       <p>
         <InlineCode>o.disabled</InlineCode>
