@@ -11,25 +11,21 @@ export const apiData: Omit<
   variant: {
     description: '色の種類',
     type: toEnum(variants),
-    default: 'Default',
-    required: false,
+    default: '"Default"',
   },
   disabled: {
     description: 'ボタンの無効化',
     type: 'boolean',
     default: 'false',
-    required: false,
   },
   fixed: {
-    description: '幅を最大まで広げる',
+    description: '幅の最大化',
     type: 'boolean',
     default: 'false',
-    required: false,
   },
   size: {
     description: 'ボタンの大きさ',
     type: toEnum(sizies),
     default: '"M"',
-    required: false,
   },
 }
