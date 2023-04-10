@@ -15,9 +15,7 @@ export async function getStaticProps() {
 export default function InstallPage(props: any) {
   return (
     <ContentRoot>
-      <h1>API</h1>
-
-      <h2>height</h2>
+      <h1>height</h1>
       <p>
         <InlineCode>o.height.[...(px($num)|column($num))]</InlineCode>
       </p>
