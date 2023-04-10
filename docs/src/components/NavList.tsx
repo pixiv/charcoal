@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { FC, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../utils/theme'
+import pkgJson from '../../../packages/react/package.json'
 
 type ListItem = {
   text: string
@@ -74,7 +75,7 @@ export const NavList: FC<{ className?: string }> = (props) => {
   const href = router.pathname
   return (
     <StyledUl className={props.className}>
-      <ListItemHeader>v2.2.1</ListItemHeader>
+      <ListItemHeader>v{pkgJson.version}</ListItemHeader>
       <ListItemHeader>@charcoal-ui/styled</ListItemHeader>
       {/* <ListItem active={href === '/@charcoal-ui/styled/Colors'}>
         <ListItemLink href="/@charcoal-ui/styled/Colors">Colors</ListItemLink>
