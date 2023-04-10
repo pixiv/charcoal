@@ -4,8 +4,13 @@ import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 import Link from 'next/link'
 import { getSrcFile } from './_utils/getSrcFile'
+import { getStaticPropsTyped } from './_utils/getStaticPropsTyped'
 
-export default function InstallPage(props: any) {
+type PageProps = {
+  src: string
+}
+
+export default function InstallPage(props: PageProps) {
   return (
     <ContentRoot>
       <h1>@charcoal-ui/react クイックスタート</h1>
@@ -49,8 +54,8 @@ export default function InstallPage(props: any) {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps = getStaticPropsTyped<PageProps>(async () => {
   return {
     props: { src: getSrcFile('CharcoalProviderExample.tsx') },
   }
-}
+})
