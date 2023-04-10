@@ -3,8 +3,9 @@ import { StyledLink } from './ssr.page'
 import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 import Link from 'next/link'
+import { getSrcFile } from './_utils/getSrcFile'
 
-export default function InstallPage() {
+export default function InstallPage(props: any) {
   return (
     <ContentRoot>
       <h1>@charcoal-ui/react クイックスタート</h1>
@@ -35,6 +36,21 @@ export default function InstallPage() {
         <InlineCode>SSRProvider</InlineCode>や
         <InlineCode>OverlayProvider</InlineCode>も使用してください。
       </p>
+      <p>
+        また、
+        <InlineCode>ThemeProvider</InlineCode>、
+        <InlineCode>TokenInjector</InlineCode>、
+        <InlineCode>SSRProvider</InlineCode>、
+        <InlineCode>OverlayProvider</InlineCode>を内包した
+        <InlineCode>CharcoalProvider</InlineCode>を使用することもできます。
+      </p>
+      <SSRHighlight code={props.src} lang="typescript" />
     </ContentRoot>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: { src: getSrcFile('CharcoalProviderExample.tsx') },
+  }
 }
