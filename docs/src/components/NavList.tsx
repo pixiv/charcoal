@@ -96,27 +96,31 @@ export const NavList: FC<{ className?: string }> = (props) => {
         )
       })}
       <ListItemHeader>Links</ListItemHeader>
-      <ListItem active={false}>
-        <ListItemLink
-          target={'_blank'}
-          href={'https://github.com/pixiv/charcoal'}
-        >
-          <Icon name="24/OpenInNew" unsafeNonGuidelineScale={0.75} />
-          <span
-            css={css`
-              margin-left: 8px;
-            `}
-          >
-            GitHub
-          </span>
-        </ListItemLink>
-      </ListItem>
+      <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
+      <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />
       <div
         css={css`
           margin-bottom: 64px;
         `}
       ></div>
     </StyledUl>
+  )
+}
+
+const ExternalLink = (props: { href: string; text: string }) => {
+  return (
+    <ListItem active={false}>
+      <ListItemLink target={'_blank'} href={props.href}>
+        <Icon name="24/OpenInNew" unsafeNonGuidelineScale={0.75} />
+        <span
+          css={css`
+            margin-left: 8px;
+          `}
+        >
+          {props.text}
+        </span>
+      </ListItemLink>
+    </ListItem>
   )
 }
 
