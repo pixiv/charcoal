@@ -4,7 +4,7 @@ import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 import Link from 'next/link'
 import { getSrcFile } from './_utils/getSrcFile'
-import { getStaticPropsTyped } from './_utils/getStaticPropsTyped'
+import { GetStaticProps } from 'next'
 
 type PageProps = {
   src: string
@@ -54,8 +54,8 @@ export default function InstallPage(props: PageProps) {
   )
 }
 
-export const getStaticProps = getStaticPropsTyped<PageProps>(async () => {
+export const getStaticProps: GetStaticProps<PageProps> = async () => {
   return {
     props: { src: getSrcFile('CharcoalProviderExample.tsx') },
   }
-})
+}
