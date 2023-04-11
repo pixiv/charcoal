@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
+import React, { useState } from 'react'
 import { Story } from '../../_lib/compat'
 import Switch from '.'
 
@@ -11,6 +11,25 @@ export default {
 interface Props {
   checked: boolean
   disabled: boolean
+}
+
+export const Playground: Story<Props> = (props: Props) => {
+  const [checked, setChecked] = useState(false)
+  return (
+    <div>
+      <Switch
+        {...props}
+        name="name"
+        onChange={(v) => {
+          setChecked(v)
+          action('onChange')
+        }}
+        checked={checked}
+      >
+        選択する
+      </Switch>
+    </div>
+  )
 }
 
 export const Labelled: Story<Props> = (props: Props) => (

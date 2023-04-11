@@ -64,6 +64,10 @@ const Label = styled.label`
 
   ${theme((o) => o.disabled)}
 
+  :active > input {
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
   ${disabledSelector} {
     cursor: default;
   }
@@ -80,44 +84,63 @@ const LabelInner = styled.div`
 const SwitchInput = styled.input.attrs({
   type: 'checkbox',
 })`
-  &[type='checkbox'] {
-    appearance: none;
-    display: inline-flex;
-    position: relative;
-    box-sizing: border-box;
-    width: 28px;
-    border: 2px solid transparent;
-    transition: box-shadow 0.2s, background-color 0.2s;
-    cursor: inherit;
-    ${theme((o) => [
-      o.borderRadius(16),
-      o.height.px(16),
-      o.bg.text4.hover.press,
-      o.outline.default.focus,
-      o.margin.all(0),
-    ])}
+  appearance: none;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  border: 2px solid transparent;
 
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      width: 12px;
-      height: 12px;
-      transform: translateX(0);
-      transition: transform 0.2s;
-      ${theme((o) => [o.bg.text5.hover.press, o.borderRadius('oval')])}
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+  cursor: inherit;
+
+  outline: none;
+  border-radius: 16px;
+  height: 16px;
+  margin: 0;
+  background-color: var(--charcoal-text4);
+  :hover {
+    background-color: var(--charcoal-text4-hover);
+  }
+  :active {
+    background-color: var(--charcoal-text4-press);
+  }
+  :focus {
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    transform: translateX(0);
+    transition: transform 0.2s;
+    border-radius: 1024px;
+    background-color: var(--charcoal-text5);
+    :hover {
+      background-color: var(--charcoal-text5-hover);
     }
+    :active {
+      background-color: var(--charcoal-text5-press);
+    }
+  }
 
-    &:checked {
-      /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
-      transition: all 0.2s !important;
-      ${theme((o) => o.bg.brand.hover.press)}
-
-      &::after {
-        transform: translateX(12px);
-      }
+  &:checked {
+    background-color: var(--charcoal-brand);
+    :hover {
+      background-color: var(--charcoal-brand-hover);
+    }
+    :active {
+      background-color: var(--charcoal-brand-press);
+    }
+    &::after {
+      transform: translateX(12px);
+      transition: transform 0.2s;
     }
   }
 `
