@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { unreachable } from '../../_lib'
 import { theme } from '../../styled'
