@@ -263,7 +263,7 @@ export function ModalDismissButton({ children, ...props }: ButtonProps) {
   }
 
   return (
-    <Button {...props} onClick={close} fixed>
+    <Button {...props} onClick={close} fullWidth>
       {children}
     </Button>
   )
