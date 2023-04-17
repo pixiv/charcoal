@@ -6,37 +6,31 @@ import { ExampleDropdownSelector } from './ExampleDropdownSelector'
 import { getSrcFile } from '../_utils/getSrcFile'
 import { NextPage } from 'next'
 import { InlineCode } from '../../../../components/InlineCode'
-import { DropdownSelector } from '@charcoal-ui/react'
+import { DropdownSelector, OptionItem } from '@charcoal-ui/react'
 import { useState } from 'react'
 import { ContentRoot } from '../../../../components/ContentRoot'
 import { ApiTable } from '../_components/ApiTable'
 import { PreviewsList } from '../_components/PreviewsList'
-import {
-  DropdownSelectorOption,
-  DropdownSelectorProps,
-} from '@charcoal-ui/react'
+import { DropdownSelectorProps } from '@charcoal-ui/react'
 
 function Preview(
   meta: PreviewMeta<DropdownSelectorProps>,
   i: number,
   j: number
 ) {
-  const [selected, setSelected] = useState<string>('option1')
-  const options: DropdownSelectorOption[] = [...Array(3)].map((_, i) => {
-    return {
-      id: `option${i + 1}`,
-      label: `option${i + 1}`,
-    }
-  })
+  const [selected, setSelected] = useState<string>('2')
 
   return (
     <div key={`${i}${j}`} style={{ width: '300px' }}>
       <DropdownSelector
         {...meta.props}
-        onChange={(k) => setSelected(k.id)}
-        options={options}
+        onChange={(v) => setSelected(v)}
         value={selected}
-      ></DropdownSelector>
+      >
+        <OptionItem value="1">option1</OptionItem>
+        <OptionItem value="2">option2</OptionItem>
+        <OptionItem value="3">option3</OptionItem>
+      </DropdownSelector>
     </div>
   )
 }

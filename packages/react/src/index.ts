@@ -53,8 +53,12 @@ export {
 export {
   default as DropdownSelector,
   type DropdownSelectorOption,
-  type DropdownSelectorProps
+  type DropdownSelectorProps,
 } from './components/DropdownSelector'
+export {
+  OptionItem,
+  type OptionItemProps,
+} from './components/DropdownSelector/OptionItem'
 export {
   default as SegmentedControl,
   type SegmentedControlProps,

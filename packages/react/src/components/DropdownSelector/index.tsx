@@ -1,27 +1,32 @@
-import React, { ReactNode, useRef } from 'react'
+import React, { ReactNode, createContext, useRef } from 'react'
 import styled from 'styled-components'
 import { useOverlayTriggerState } from 'react-stately'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
 import { theme } from '../../styled'
-
-import { OptionLi } from './OptionLi'
 import { DropdownPopover } from './DropdownPopover'
+
+export const DropdownSelectorContext = createContext({
+  value: '',
+  setValue: (_v: string) => {
+    // empty
+  },
+})
 
 export type DropdownSelectorProps = {
   label: string
   value: string
-  options: DropdownSelectorOption[]
   disabled?: boolean
   placeholder?: string
   showLabel?: boolean
   invalid?: boolean
-  assertiveText?: string
+  assistiveText?: string
   required?: boolean
   requiredText?: string
   subLabel?: ReactNode
-  onChange: (option: DropdownSelectorOption) => void
+  children?: ReactNode
+  onChange: (value: string) => void
 }
 
 export type DropdownSelectorOption = {
@@ -34,6 +39,20 @@ const defaultRequiredText = '*必須'
 export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const state = useOverlayTriggerState({})
+
+  let preview: ReactNode | undefined
+  const childArray = React.Children.toArray(props.children)
+  for (let i = 0; i < childArray.length; i++) {
+    const child = childArray[i]
+    if (React.isValidElement(child) && 'value' in child.props) {
+      const find = (child.props as { value: string }).value === props.value
+      if (find && 'children' in child.props) {
+        preview = (child.props as { children: ReactNode }).children
+        break
+      }
+    }
+  }
+
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
       {props.showLabel === true && (
@@ -54,9 +73,9 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         ref={triggerRef}
       >
         <DropdownButtonText>
-          {props.placeholder !== undefined
+          {props.placeholder !== undefined && preview === undefined
             ? props.placeholder
-            : props.options.find((option) => option.id === props.value)?.label}
+            : preview}
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
@@ -67,27 +86,23 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           value={props.value}
         >
           <ListboxRoot>
-            {props.options.map((option) => {
-              return (
-                <OptionLi
-                  value={option}
-                  key={option.id}
-                  isSelected={props.value === option.id}
-                  onSelect={() => {
-                    props.onChange(option)
-                    state.close()
-                  }}
-                >
-                  {option.label}
-                </OptionLi>
-              )
-            })}
+            <DropdownSelectorContext.Provider
+              value={{
+                value: props.value,
+                setValue: (v) => {
+                  props.onChange(v)
+                  state.close()
+                },
+              }}
+            >
+              {props.children}
+            </DropdownSelectorContext.Provider>
           </ListboxRoot>
         </DropdownPopover>
       )}
-      {props.assertiveText !== undefined && (
+      {props.assistiveText !== undefined && (
         <AssertiveText invalid={props.invalid}>
-          {props.assertiveText}
+          {props.assistiveText}
         </AssertiveText>
       )}
     </DropdownSelectorRoot>

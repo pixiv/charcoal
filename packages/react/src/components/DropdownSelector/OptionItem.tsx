@@ -1,28 +1,31 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useContext } from 'react'
 import styled from 'styled-components'
 import { px } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import { theme } from '../../styled'
-import { DropdownSelectorOption } from '.'
+import { DropdownSelectorContext } from '.'
 import { focusIfHTMLLIElement } from './utils/focusIfHTMLLIElement'
 
-type OptionProps = {
-  children: ReactNode
-  isSelected: boolean
-  value: DropdownSelectorOption
-  onSelect: () => void
+export type OptionItemProps = {
+  children?: ReactNode
+  value: string
 }
 
-export function OptionLi(props: OptionProps) {
+export function OptionItem(props: OptionItemProps) {
+  const { value, setValue } = useContext(DropdownSelectorContext)
+  const isSelected = props.value === value
+  const onSelect = () => {
+    setValue(props.value)
+  }
   return (
     <OptionRoot
-      data-key={props.value.id}
+      data-key={props.value}
       onMouseMove={(e) => {
         e.currentTarget.focus({ preventScroll: true })
       }}
       onKeyDown={(e) => {
         if (e.key === 'Enter') {
-          props.onSelect()
+          onSelect()
         } else if (e.key === 'ArrowUp') {
           // prevent scroll
           e.preventDefault()
@@ -44,11 +47,11 @@ export function OptionLi(props: OptionProps) {
           e.preventDefault()
         }
       }}
-      onClick={props.onSelect}
+      onClick={onSelect}
       tabIndex={-1}
     >
-      {props.isSelected && <OptionCheckIcon name="16/Check" />}
-      <OptionText isSelected={props.isSelected}>{props.children}</OptionText>
+      {isSelected && <OptionCheckIcon name="16/Check" />}
+      <OptionText isSelected={isSelected}>{props.children}</OptionText>
     </OptionRoot>
   )
 }

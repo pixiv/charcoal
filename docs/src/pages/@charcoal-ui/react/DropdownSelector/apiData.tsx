@@ -4,12 +4,8 @@ import { ApiTableData, TableItem } from '../_components/ApiTable'
 export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
   onChange: TableItem
 } = {
-  assertiveText: {
+  assistiveText: {
     description: '下に表示するヒントテキスト',
-    type: 'string',
-  },
-  autoComplete: {
-    description: 'selectタグに付けるautoComplete属性',
     type: 'string',
   },
   disabled: {
@@ -24,45 +20,39 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
     type: 'boolean',
   },
   label: {
-    description: 'ラベル。',
+    description: 'ラベル',
     required: true,
     type: 'string',
   },
   required: {
     default: 'false',
-    description: 'trueかつshowLabelがtrueならrequiredTextを表示する。',
+    description: '入力の必須化',
     type: 'boolean',
   },
   requiredText: {
     default: '"*必須"',
-    description: '必須であることを示す文字列。',
+    description: '必須であることを示すテキスト',
     type: 'string',
   },
   showLabel: {
     description:
-      'trueであればlabel,subLabelを表示する。requiredがtrueであればrequiredTextも表示する。',
+      'trueであればlabel,subLabelを表示する。requiredがtrueであればrequiredTextも表示する',
     type: 'string',
   },
   subLabel: {
-    description: '補助的な内容を示すラベル。',
+    description: '補助的な内容を示すラベル',
     type: 'string',
-  },
-  options: {
-    default: '',
-    description: '選択肢の配列。',
-    required: true,
-    type: '{ label: string id: string }',
   },
   value: {
     default: '',
-    description: '選択中の選択肢のID。',
+    description: '選択中の選択肢のID',
     required: true,
     type: 'string',
   },
   onChange: {
     default: '',
-    description: '選択肢が選択された時に呼び出されるイベント。',
+    description: '選択肢が選択された時に呼び出されるイベント',
     required: true,
-    type: '(option: DropdownSelectorOption) => void',
+    type: '(value: string) => void',
   },
 }
