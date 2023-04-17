@@ -9,15 +9,11 @@ export const apiData: Partial<ApiTableData<IconProps, HTMLInputElement>> = {
     type: 'IconName',
   },
   scale: {
-    default: '',
     description: '拡大率',
-    required: false,
     type: '1 | 2 | 3',
   },
   unsafeNonGuidelineScale: {
-    default: '',
     description: 'ガイドライン外の拡大率',
-    required: false,
     type: 'number',
   },
 }

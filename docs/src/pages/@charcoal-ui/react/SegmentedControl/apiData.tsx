@@ -13,44 +13,37 @@ export const apiData: ApiTableData<SegmentedControlProps, HTMLInputElement> & {
   },
   disabled: {
     default: 'false',
-    description: '無効化するかどうか',
-    required: false,
+    description: '無効化',
     type: 'boolean',
   },
   readonly: {
     default: 'false',
-    description: '読み取り専用かどうか',
-    required: false,
+    description: '読み取り専用化',
     type: 'boolean',
   },
   name: {
     default: '',
-    description: 'unused',
-    required: false,
+    description: '（廃止）',
     type: 'string',
   },
   required: {
     default: '',
-    description: 'aria-requiredをつけるかどうか',
-    required: false,
+    description: 'aria-requiredの付与',
     type: 'boolean',
   },
   value: {
     default: '',
     description: '現在の値',
-    required: false,
     type: 'string',
   },
   defaultValue: {
     default: '',
     description: '初期値',
-    required: false,
     type: 'string',
   },
   onChange: {
     default: '',
     description: '値が変更された際に呼ばれる関数',
-    required: false,
     type: '(value: string) => void',
   },
 }

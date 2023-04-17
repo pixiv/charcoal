@@ -5,7 +5,11 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
   onChange: TableItem
 } = {
   assertiveText: {
-    description: '下側に表示するテキスト。',
+    description: '下に表示するヒントテキスト',
+    type: 'string',
+  },
+  autoComplete: {
+    description: 'selectタグに付けるautoComplete属性',
     type: 'string',
   },
   disabled: {

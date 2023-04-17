@@ -14,15 +14,13 @@ export const apiData: Omit<
   bottomSheet: {
     default: 'false',
     description:
-      'モバイル向けに下からシート形式で表示するかどうか、"full"だと画面の高さいっぱいに表示される',
-    required: false,
+      'モバイル向けに下からシート形式で表示するかどうか、"full"だと画面の高さに合わせて表示される',
     type: 'boolean | "full"',
   },
   isDismissable: {
     default: 'false',
     description:
-      'バツボタンを表示しモーダルを閉じれるようにする、モーダルの背景をクリックすることで閉じれるようにする',
-    required: false,
+      'バツボタンを表示しモーダルを閉じれるようにする、かつモーダルの背景をクリックすることで閉じれるようにする',
     type: 'boolean',
   },
   isOpen: {
@@ -39,21 +37,17 @@ export const apiData: Omit<
     type: '() => void',
   },
   portalContainer: {
-    default: '',
     description: 'Next.jsで使用する際はdocument.bodyを渡す',
-    required: false,
     type: 'HTMLElement',
   },
   size: {
     default: '"M"',
     description: 'モーダルのサイズ',
-    required: false,
     type: `"S" | "M" | "L"`,
   },
   zIndex: {
     default: '',
     description: 'z-index',
-    required: false,
     type: 'number',
   },
 }
