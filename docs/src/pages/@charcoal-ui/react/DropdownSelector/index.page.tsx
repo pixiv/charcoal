@@ -1,5 +1,5 @@
 import { sections } from './sections'
-import { apiData } from './apiData'
+import { apiData, optionValueApiData } from './apiData'
 import { PreviewDivColumn, PreviewMeta } from '../_components/Previews'
 import { SSRHighlight } from '../../../../components/SSRHighlight'
 import { ExampleDropdownSelector } from './ExampleDropdownSelector'
@@ -41,7 +41,7 @@ const DropdownSelectorPage: NextPage<{ src: string }> = (props) => {
       <h1>DropdownSelector</h1>
       <p>ドロップダウン形式の選択コンポーネント</p>
       <p>
-        <InlineCode>DropdownSelectorItem</InlineCode>
+        <InlineCode>OptionItem</InlineCode>
         と合わせて使用してください。
       </p>
 
@@ -55,6 +55,8 @@ const DropdownSelectorPage: NextPage<{ src: string }> = (props) => {
 
       <h2>Props</h2>
       <ApiTable data={apiData} />
+      <h2>Props (OptionItem)</h2>
+      <ApiTable data={optionValueApiData} />
     </ContentRoot>
   )
 }

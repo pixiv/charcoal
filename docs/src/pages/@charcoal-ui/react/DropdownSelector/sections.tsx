@@ -62,7 +62,7 @@ export const sections: PreviewSection<DropdownSelectorProps>[] = [
     ],
   },
   {
-    title: 'invalid,assertiveText',
+    title: 'invalid,assistiveText',
     previewMetas: [
       {
         props: {
@@ -75,8 +75,8 @@ export const sections: PreviewSection<DropdownSelectorProps>[] = [
         props: {
           ...baseProps,
           invalid: true,
-          label: 'invalid+assertiveText',
-          assertiveText: 'assertiveText',
+          label: 'invalid+assistiveText',
+          assistiveText: 'assistiveText',
         },
       },
     ],

@@ -1,4 +1,4 @@
-import { DropdownSelectorProps } from '@charcoal-ui/react'
+import { DropdownSelectorProps, OptionItemProps } from '@charcoal-ui/react'
 import { ApiTableData, TableItem } from '../_components/ApiTable'
 
 export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
@@ -10,13 +10,12 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
   },
   disabled: {
     default: 'false',
-    description: 'tureであれば入力を無効にする。',
+    description: '無効化',
     type: 'boolean',
   },
   invalid: {
     default: 'false',
-    description:
-      'trueであれば不正な入力であることを示すアウトラインを表示する。',
+    description: '入力の不正化',
     type: 'boolean',
   },
   label: {
@@ -36,7 +35,7 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
   },
   showLabel: {
     description:
-      'trueであればlabel,subLabelを表示する。requiredがtrueであればrequiredTextも表示する',
+      'trueであればlabel,subLabelを表示する requiredがtrueであればrequiredTextも表示する',
     type: 'string',
   },
   subLabel: {
@@ -45,7 +44,7 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
   },
   value: {
     default: '',
-    description: '選択中の選択肢のID',
+    description: '選択中の選択肢の値',
     required: true,
     type: 'string',
   },
@@ -54,5 +53,13 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
     description: '選択肢が選択された時に呼び出されるイベント',
     required: true,
     type: '(value: string) => void',
+  },
+}
+
+export const optionValueApiData: ApiTableData<OptionItemProps, {}> = {
+  value: {
+    description: '選択肢の値',
+    type: 'string',
+    required: true,
   },
 }

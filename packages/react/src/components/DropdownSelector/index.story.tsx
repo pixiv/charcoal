@@ -16,7 +16,7 @@ type Props = Omit<
 const baseProps: DropdownSelectorProps = {
   label: 'Label',
   value: '',
-  placeholder: "placeholder",
+  placeholder: 'placeholder',
   onChange: () => {
     //
   },
