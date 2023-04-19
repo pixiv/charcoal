@@ -38,12 +38,19 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  *
  * const theme = createTheme<DefaultTheme>()
  */
-export function createTheme<T extends CharcoalAbstractTheme>(
+export function createTheme<
+  T extends CharcoalAbstractTheme,
+  EnableCache extends boolean
+>(
   _styled?: ThemedStyledInterface<T>,
-  experimental___CACHE_MODE = false
+  experimental___CACHE_MODE = false as EnableCache
 ) {
   type Builder = ReturnType<typeof createO<T>>
   type SpecFunction = (o: Builder) => ArrayOrSingle<Internal | Blank>
+
+  type ThemeFunction = EnableCache extends true
+    ? (specFn: SpecFunction, deps: unknown[]) => ThemeProp<T>
+    : (specFn: SpecFunction) => ThemeProp<T>
 
   /**
    * theme(...) に渡している関数の参照が全く同じで、中で使用している deps が同じならキャッシュできるはず
@@ -58,10 +65,10 @@ export function createTheme<T extends CharcoalAbstractTheme>(
   >()
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
-  return function theme(
+  const theme = (
     specFn: SpecFunction,
     deps: unknown[] = []
-  ): ThemeProp<T> {
+  ): ThemeProp<T> => {
     // styled-components のテンプレートに埋め込める関数
     return function interpolate({ theme }) {
       if (!isPresent(theme)) {
@@ -108,6 +115,8 @@ export function createTheme<T extends CharcoalAbstractTheme>(
       return css
     }
   }
+
+  return theme as ThemeFunction
 }
 
 /**
