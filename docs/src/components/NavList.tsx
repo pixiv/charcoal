@@ -84,7 +84,7 @@ export const NavList: FC<{ className?: string }> = (props) => {
       <ListItemHeader>@charcoal-ui/styled</ListItemHeader>
       {styledList.map((item) => {
         return (
-          <ListItem key={item.href} active={href == item.href}>
+          <ListItem key={item.href} active={href === item.href}>
             <ListItemLink href={item.href}>{item.text}</ListItemLink>
           </ListItem>
         )
