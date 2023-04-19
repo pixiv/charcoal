@@ -28,6 +28,7 @@ import {
   definePropertyChains,
 } from '../factories/lib'
 import { TRANSITION_DURATION } from './transition'
+import { bg } from './colors2'
 
 const colorProperties = ['bg', 'font'] as const
 export type ColorProperty = (typeof colorProperties)[number]
@@ -172,11 +173,7 @@ export default function colors<T extends CharcoalAbstractTheme>(theme: T) {
     {},
     {
       bg: objectAssign(
-        defineProperties({}, colors, (color) =>
-          definePropertyChains(effects, (modifiers) =>
-            colorCss('bg', color, modifiers)
-          )
-        ),
+        bg,
         defineProperties(
           {},
           gradientColors,
