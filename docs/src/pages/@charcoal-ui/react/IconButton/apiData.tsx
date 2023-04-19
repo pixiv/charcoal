@@ -7,8 +7,7 @@ export const apiData: Omit<
 > = {
   disabled: {
     default: 'false',
-    description: '無効かどうか',
-    required: false,
+    description: '無効化',
     type: 'boolean',
   },
   icon: {
@@ -19,15 +18,12 @@ export const apiData: Omit<
   },
   size: {
     default: '"M"',
-    description:
-      '大きさ、XSの場合は16px、Mの場合は24pxのアイコンのみ受け付けます',
-    required: false,
+    description: '大きさ、XSの場合は16px、Mの場合は24pxのアイコンのみ使用可能',
     type: '"XS" | "S" | "M"',
   },
   variant: {
     default: '"Default"',
-    description: '色',
-    required: false,
+    description: 'スタイルの種類',
     type: '"Default" | "Overlay"',
   },
 }

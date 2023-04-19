@@ -9,24 +9,20 @@ export const apiData: Omit<
     description: '入力の無効化',
     type: 'boolean',
     default: 'false',
-    required: false,
   },
   label: {
-    description: 'childrenがいない場合のaria-label',
+    description: 'childrenがない場合のaria-label',
     type: 'string',
-    default: '',
     required: true,
   },
   readonly: {
-    description: '読み取り専用',
+    description: '読み取り専用化',
     default: 'false',
-    required: false,
     type: 'boolean',
   },
   checked: {
-    description: 'チェックされてるか否か',
+    description: 'チェック状態',
     default: 'false',
-    required: false,
     type: 'boolean',
   },
 }

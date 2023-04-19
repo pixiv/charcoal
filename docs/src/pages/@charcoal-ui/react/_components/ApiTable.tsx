@@ -4,8 +4,8 @@ import { theme } from '../../../../utils/theme'
 export type TableItem = {
   type: string
   description: string
-  default: string
-  required: boolean
+  default?: string
+  required?: boolean
 }
 
 type DomProps<T> = React.DetailedHTMLProps<React.HTMLAttributes<T>, T>
