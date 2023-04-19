@@ -1,3 +1,3 @@
 import styled from 'styled-components'
 import { createTheme } from '@charcoal-ui/styled'
-export const theme = createTheme(styled, /** cache = */ false)
+export const theme = createTheme(styled, /** cache = */ true)
