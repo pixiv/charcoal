@@ -40,7 +40,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  */
 export function createTheme<
   T extends CharcoalAbstractTheme,
-  EnableCache extends boolean
+  EnableCache extends boolean = false
 >(
   _styled?: ThemedStyledInterface<T>,
   experimental___CACHE_MODE = false as EnableCache
@@ -49,25 +49,47 @@ export function createTheme<
   type SpecFunction = (o: Builder) => ArrayOrSingle<Internal | Blank>
 
   type ThemeFunction = EnableCache extends true
-    ? (specFn: SpecFunction, deps: unknown[]) => ThemeProp<T>
+    ? (specFn: SpecFunction, cacheKeys: unknown[]) => ThemeProp<T>
     : (specFn: SpecFunction) => ThemeProp<T>
 
   /**
-   * theme(...) に渡している関数の参照が全く同じで、中で使用している deps が同じならキャッシュできるはず
+   * theme(...) に渡している関数の参照が全く同じで、中で使用している cacheKeys が同じならキャッシュできるはず
    */
   const caches = new WeakMap<
     SpecFunction,
     {
-      deps: unknown[]
+      cacheKeys: unknown[]
       theme: T
       css: CSSObject | CSSObject[]
     }
   >()
 
-  // ランタイムの `theme(o => [...])` のインターフェースを構築する
+  /**
+   * ランタイムの `theme(o => [...])` のインターフェースを構築する
+   *
+   * @param {SpecFunction} specFn - o を引数に受け取る関数。スタイリングの定義
+   * @param {unknown[]} cacheKeys - 依存の値を配列で渡す（ useMemo の deps とか、react-query の keys とかと同じ ）。これは createTheme で experimental___CACHE_MODE を渡したときは必須。
+   *
+   * cacheKeys の中の値が1つでも変わったら、theme(o => ...) の関数を再評価する（ 変更がなければキャッシュが使われる ）
+   *
+   * @example
+   * ```ts
+   * // メソッドチェーンを書く
+   * theme(o => o.bg.background1.hover, [])
+   *
+   * // 配列もかける
+   * theme(o => [o.bg.background1.hover, o.font.text1], [])
+   *
+   * // 条件分岐があるときは cacheKeys を書く
+   * theme(o => [
+   *   o.bg.background1.hover,
+   *   condition ? o.font.text1 : o.font.text2
+   * ], [condition])
+   * ```
+   */
   const theme = (
     specFn: SpecFunction,
-    deps: unknown[] = []
+    cacheKeys: unknown[] = []
   ): ThemeProp<T> => {
     // styled-components のテンプレートに埋め込める関数
     return function interpolate({ theme }) {
@@ -81,7 +103,7 @@ export function createTheme<
 
         if (
           cachedResult &&
-          objectsAre(cachedResult.deps, deps) &&
+          objectsAre(cachedResult.cacheKeys, cacheKeys) &&
           Object.is(cachedResult.theme, theme)
         ) {
           return cachedResult.css
@@ -110,7 +132,7 @@ export function createTheme<
       ].filter(nonBlank)
 
       const css = toCSSObjects(internals)
-      caches.set(specFn, { css, theme, deps })
+      caches.set(specFn, { css, theme, cacheKeys })
 
       return css
     }
