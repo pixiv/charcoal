@@ -6,6 +6,7 @@ import renderder from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 import Checkbox from '.'
 import CheckboxOnlyStyledComponents from './CheckboxOnlyStyledComponents'
+import CheckboxWithAria from './CheckboxWithAria'
 import CheckboxWithoutAria from './CheckboxWithoutAria'
 
 export function render(children: JSX.Element) {
@@ -58,5 +59,20 @@ describe('CheckboxOnlyStyledComponents', () => {
   }
   test('<CheckboxOnlyStyledComponents />', () => {
     render(<ManyCheckboxOnlyStyledComponents />)
+  })
+})
+
+describe('CheckboxWithAria (without @charcoal-ui/styled)', () => {
+  function ManyCheckboxWithAria() {
+    return (
+      <>
+        {array.map((i) => (
+          <CheckboxWithAria key={i} label="test" />
+        ))}
+      </>
+    )
+  }
+  test('<CheckboxOnlyStyledComponents />', () => {
+    render(<ManyCheckboxWithAria />)
   })
 })
