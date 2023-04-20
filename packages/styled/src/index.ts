@@ -54,6 +54,9 @@ export function createTheme<
 
   /**
    * theme(...) に渡している関数の参照が全く同じで、中で使用している cacheKeys が同じならキャッシュできるはず
+   *
+   * より厳密には [SpecFunction, cacheKeys, theme] のタプルを WeakMap のキーとしたいのだが、
+   * JS の配列の同一性比較の仕様上ムリ（ Record & Tuples を待たなければならない ）
    */
   const caches = new WeakMap<
     SpecFunction,
@@ -68,7 +71,7 @@ export function createTheme<
    * ランタイムの `theme(o => [...])` のインターフェースを構築する
    *
    * @param {SpecFunction} specFn - o を引数に受け取る関数。スタイリングの定義
-   * @param {unknown[]} cacheKeys - 依存の値を配列で渡す（ useMemo の deps とか、react-query の keys とかと同じ ）。これは createTheme で experimental___CACHE_MODE を渡したときは必須。
+   * @param {unknown[]} cacheKeys - 依存の値を配列で渡す（ useMemo の cacheKeys とか、react-query の keys とかと同じ ）。これは createTheme で experimental___CACHE_MODE を渡したときは必須。
    *
    * cacheKeys の中の値が1つでも変わったら、theme(o => ...) の関数を再評価する（ 変更がなければキャッシュが使われる ）
    *
@@ -144,7 +147,7 @@ export function createTheme<
 /**
  * 配列のすべての要素が同一値であるかを判定する
  *
- * `theme(o => [], [...])` の deps が変化していないことを判定するのに使う
+ * `theme(o => [], [...])` の cacheKeys が変化していないことを判定するのに使う
  *
  * React の useEffect の第2引数とやりたいことは同じなので、`Object.is()` で比較する
  */
