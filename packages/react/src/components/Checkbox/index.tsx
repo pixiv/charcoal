@@ -82,7 +82,7 @@ const InputRoot = styled.label`
   }
 
   gap: ${({ theme }) => px(theme.spacing[4])};
-  ${theme((o) => [o.disabled], [])}
+  ${theme((o) => [o.disabled])}
 `
 
 const CheckboxRoot = styled.div`
@@ -99,14 +99,14 @@ const CheckboxInput = styled.input`
     height: 20px;
 
     &:checked {
-      ${theme((o) => o.bg.brand.hover.press, [])}
+      ${theme((o) => o.bg.brand.hover.press)}
     }
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;
       border-color: ${({ theme }) => theme.color.text4};
     }
-    ${theme((o) => [o.outline.default.focus, o.borderRadius(4)], [])}
+    ${theme((o) => [o.outline.default.focus, o.borderRadius(4)])}
 
     /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
     transition: all 0.2s !important;
@@ -122,13 +122,13 @@ const CheckboxInputOverlay = styled.div<{ checked?: boolean }>`
   align-items: center;
   justify-content: center;
 
-  ${theme((o) => [o.width.px(24), o.height.px(24), o.font.text5], [])}
+  ${theme((o) => [o.width.px(24), o.height.px(24), o.font.text5])}
 
   ${({ checked }) => checked !== true && hiddenCss};
 `
 
 const InputLabel = styled.div`
-  ${theme((o) => [o.font.text2], [])}
+  ${theme((o) => [o.font.text2])}
 
   font-size: 14px;
   /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
