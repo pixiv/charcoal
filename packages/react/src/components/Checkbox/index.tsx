@@ -4,10 +4,15 @@ import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
 import { disabledSelector, px } from '@charcoal-ui/utils'
-import { theme } from '../../styled'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
+import { CANARY__createTheme } from '@charcoal-ui/styled'
+import { light } from '@charcoal-ui/theme'
+
+const theme = CANARY__createTheme({
+  ':root': light,
+})
 
 type CheckboxLabelProps =
   | {

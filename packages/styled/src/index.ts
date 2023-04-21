@@ -17,6 +17,7 @@ export {
 } from './helper'
 export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
+export { CANARY__createTheme } from './CANARY__createTheme'
 
 type Blank = null | undefined | false
 
