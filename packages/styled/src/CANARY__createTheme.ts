@@ -22,26 +22,16 @@ export function CANARY__createTheme<T extends CharcoalAbstractTheme>(
     throw new Error(':root does not exist')
   }
 
+  const commonResult = [transition(defaultTheme)]
+  const o = createO<T>(defaultTheme)
+
   const theme = (specFn: SpecFunction): ArrayOrSingle<CSSObject> => {
     const internals = [
       // ユーザーが定義したルール
-      ...wrapArray(
-        /**
-         * こう書いてはいけない
-         *
-         * ❌
-         * ```ts
-         * const o = createO(theme)
-         * const declaration = spec(o)
-         * ```
-         *
-         * `o` を一時変数に入れてしまうと型 `T` の具象化が行われるので関数内に書く
-         */
-        specFn(/** o = */ createO(defaultTheme))
-      ),
+      ...wrapArray(specFn(o)),
 
       // 必ず挿入される共通のルール
-      transition(defaultTheme),
+      ...commonResult,
     ].filter(nonBlank)
 
     const css = toCSSObjects(internals)
