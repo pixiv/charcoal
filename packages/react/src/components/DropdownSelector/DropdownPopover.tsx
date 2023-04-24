@@ -41,21 +41,15 @@ export function DropdownPopover({ children, state, ...props }: Props) {
 
   useEffect(() => {
     if (state.isOpen && props.value !== undefined) {
-      // useListbox内部で現在の選択肢までスクロールする処理がある
-      // react-ariaより遅らせるためrequestAnimationFrameで呼び出す
-      window.requestAnimationFrame(() => {
-        if (props.value === undefined) return
-        // react-aria の scrollIntoViewport は 'nearest' なので
-        // listboxの中心に来るように上書きする
-        // 'center'は windowのスクロールも変更されるため戻す処理を入れている。
-        const windowScrollY = window.scrollY
-        const windowScrollX = window.scrollX
-        const selectedElement = document.querySelector(
-          `[data-key="${props.value.toString()}"]`
-        ) as HTMLElement | undefined
-        selectedElement?.scrollIntoView({ block: 'center' })
-        window.scrollTo(windowScrollX, windowScrollY)
-      })
+      // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
+      const windowScrollY = window.scrollY
+      const windowScrollX = window.scrollX
+      const selectedElement = document.querySelector(
+        `[data-key="${props.value.toString()}"]`
+      ) as HTMLElement | undefined
+      selectedElement?.scrollIntoView({ block: 'center' })
+      selectedElement?.focus()
+      window.scrollTo(windowScrollX, windowScrollY)
     }
   }, [props.value, state.isOpen])
 

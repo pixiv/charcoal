@@ -1,12 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import React, { useState } from 'react'
-import { Section } from 'react-stately'
-import DropdownSelector, {
-  DropdownSelectorItem,
-  DropdownSelectorProps,
-} from '.'
+import DropdownSelector, { DropdownSelectorProps } from '.'
 import { Story } from '../../_lib/compat'
-import Clickable from '../Clickable'
+import { OptionItem } from './OptionItem'
 
 export default {
   title: 'DropdownSelector',
@@ -17,88 +12,33 @@ type Props = Omit<
   DropdownSelectorProps,
   'subLabel' | 'children' | 'onOpenChange'
 >
-export const Default: Story<Props> = (props) => {
+
+const baseProps: DropdownSelectorProps = {
+  label: 'Label',
+  value: '',
+  placeholder: 'placeholder',
+  onChange: () => {
+    //
+  },
+}
+
+export const Playground: Story<Props> = (props: DropdownSelectorProps) => {
+  const [selected, setSelected] = useState('50')
   return (
     <div style={{ width: 288 }}>
       <DropdownSelector
         {...props}
-        placeholder={props.placeholder ?? 'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
-      >
-        <DropdownSelectorItem key="k:1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="k:2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="k:3">選択肢3</DropdownSelectorItem>
-      </DropdownSelector>
-    </div>
-  )
-}
-Default.args = {
-  label: 'Label',
-  requiredText: '*必須',
-  required: false,
-  showLabel: false,
-  invalid: false,
-  disabled: false,
-}
-
-export const Sections: Story<DropdownSelectorProps> = (props) => {
-  return (
-    <div>
-      <DropdownSelector
-        {...props}
-        placeholder={'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
-      >
-        <Section title="Section1">
-          <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        </Section>
-        <Section title="Section2">
-          <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-          <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-        </Section>
-      </DropdownSelector>
-    </div>
-  )
-}
-
-export const Bottom: Story<DropdownSelectorProps> = (props) => {
-  return (
-    <div style={{ marginTop: '1000px' }}>
-      <DropdownSelector
-        {...props}
-        placeholder={'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
-      >
-        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-      </DropdownSelector>
-    </div>
-  )
-}
-
-export const Many: Story<DropdownSelectorProps> = (props) => {
-  const [value, setValue] = useState('50')
-  return (
-    <div style={{ padding: '300px 100px' }}>
-      <DropdownSelector
-        {...props}
-        placeholder={'Drop Down menu'}
-        onChange={(v) => {
-          setValue(v.toString())
-          action('change')
+        onChange={(value) => {
+          setSelected(value)
         }}
-        onOpenChange={action('open')}
-        value={value}
+        value={selected}
+        label="label"
       >
         {[...(Array(100) as undefined[])].map((_, i) => {
           return (
-            <DropdownSelectorItem textValue={i.toString()} key={i}>
-              選択肢{i}
-            </DropdownSelectorItem>
+            <OptionItem key={i} value={i.toString()}>
+              {i}
+            </OptionItem>
           )
         })}
       </DropdownSelector>
@@ -106,102 +46,75 @@ export const Many: Story<DropdownSelectorProps> = (props) => {
   )
 }
 
-type HasLabelProps = {
-  disabled?: boolean
-}
-export const HasLabel: Story<HasLabelProps> = ({ disabled }) => {
-  const defaultProps: Omit<DropdownSelectorProps, 'children'> = {
-    required: true,
-    showLabel: true,
-    label: 'Label',
-    requiredText: '*必須',
-    subLabel: <Clickable onClick={action('label-click')}>Text Link</Clickable>,
-    assertiveText: 'Hint',
-  }
-  return (
-    <div style={{ width: 288 }}>
-      <DropdownSelector
-        {...defaultProps}
-        disabled={disabled}
-        placeholder={'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
-      >
-        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-      </DropdownSelector>
-    </div>
-  )
-}
+Playground.args = { ...baseProps }
 
-HasLabel.args = {
-  disabled: false,
-}
-
-type WithSeparatorProps = {
-  mode: 'default' | 'separator'
-}
-export const WithSeparator: Story<WithSeparatorProps> = ({
-  mode,
-  ...props
-}) => {
-  const defaultProps: Omit<DropdownSelectorProps, 'children'> = {
-    required: true,
-    showLabel: true,
-    label: 'Label',
-    requiredText: '*必須',
-    subLabel: <Clickable onClick={action('label-click')}>Text Link</Clickable>,
-    assertiveText: 'Hint',
-  }
-  return (
-    <div style={{ width: 288 }}>
-      <DropdownSelector
-        {...defaultProps}
-        mode={mode}
-        placeholder={'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
-        {...props}
-      >
-        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
-      </DropdownSelector>
-    </div>
-  )
-}
-
-WithSeparator.args = {
-  mode: 'separator',
-}
-
-type InvalidProps = {
-  disabled?: boolean
-}
-export const Invalid: Story<InvalidProps> = ({ disabled }) => {
-  const props: Omit<DropdownSelectorProps, 'children'> = {
-    label: '',
-    assertiveText: 'error message',
-    invalid: true,
-  }
+export const Basic: Story<Props> = (props: DropdownSelectorProps) => {
+  const [selected, setSelected] = useState('')
   return (
     <div style={{ width: 288 }}>
       <DropdownSelector
         {...props}
-        disabled={disabled}
-        placeholder={'Drop Down menu'}
-        onChange={action('change')}
-        onOpenChange={action('open')}
+        onChange={(value) => {
+          setSelected(value)
+        }}
+        value={selected}
+        label="label"
       >
-        <DropdownSelectorItem key="1">選択肢1</DropdownSelectorItem>
-        <DropdownSelectorItem key="2">選択肢2</DropdownSelectorItem>
-        <DropdownSelectorItem key="3">選択肢3</DropdownSelectorItem>
+        <OptionItem value={'10'}>Apple</OptionItem>
+        <OptionItem value={'20'}>Banana</OptionItem>
+        <OptionItem value={'30'}>Orange</OptionItem>
       </DropdownSelector>
     </div>
   )
 }
 
-Invalid.args = {
-  disabled: false,
+Basic.args = { ...baseProps }
+
+export const CustomChildren: Story<Props> = (props: DropdownSelectorProps) => {
+  const [selected, setSelected] = useState('10')
+  return (
+    <div style={{ width: 288 }}>
+      <DropdownSelector
+        {...props}
+        onChange={(value) => {
+          setSelected(value)
+        }}
+        value={selected}
+        label="label"
+      >
+        <OptionItem value={'10'}>
+          <div
+            style={{
+              color: 'pink',
+              fontWeight: 'bold',
+            }}
+          >
+            Apple
+          </div>
+        </OptionItem>
+        <OptionItem value={'20'}>
+          <div
+            style={{
+              color: 'yellowgreen',
+              fontStyle: 'italic',
+            }}
+          >
+            Banana
+          </div>
+        </OptionItem>
+        <OptionItem value={'30'}>
+          <div
+            style={{
+              color: 'orange',
+              fontSize: '24px',
+            }}
+          >
+            Orange
+          </div>
+        </OptionItem>
+      </DropdownSelector>
+    </div>
+  )
 }
+
+CustomChildren.args = { ...baseProps }

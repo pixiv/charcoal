@@ -1,19 +1,24 @@
 import { useState } from 'react'
-import { DropdownSelector, DropdownSelectorItem } from '@charcoal-ui/react'
+import { DropdownSelector, OptionItem } from '@charcoal-ui/react'
 
 export const ExampleDropdownSelector = () => {
-  const [selected, setSelected] = useState<string>('option1')
+  const [selected, setSelected] = useState<string>('50')
+
   return (
-    <div>
+    <div style={{ width: '300px' }}>
       <p>selected: {selected}</p>
       <DropdownSelector
         label="dropdown-selector"
-        onChange={(k) => setSelected(k.toString())}
+        onChange={(value) => setSelected(value)}
         value={selected}
       >
-        <DropdownSelectorItem key={'option1'}>Option1</DropdownSelectorItem>
-        <DropdownSelectorItem key={'option2'}>Option2</DropdownSelectorItem>
-        <DropdownSelectorItem key={'option3'}>Option3</DropdownSelectorItem>
+        {[...Array(100)].map((_, i) => {
+          return (
+            <OptionItem key={i} value={i.toString()}>
+              option{i.toString()}
+            </OptionItem>
+          )
+        })}
       </DropdownSelector>
     </div>
   )

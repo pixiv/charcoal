@@ -76,13 +76,15 @@ export const NavList: FC<{ className?: string }> = (props) => {
   return (
     <StyledUl className={props.className}>
       <ListItemHeader>v{pkgJson.version}</ListItemHeader>
+      <ListItem active={href === '/v3.0.0-guide'}>
+        <ListItemLink href="/v3.0.0-guide">
+          v3.0.0マイグレーションガイド
+        </ListItemLink>
+      </ListItem>
       <ListItemHeader>@charcoal-ui/styled</ListItemHeader>
-      {/* <ListItem active={href === '/@charcoal-ui/styled/Colors'}>
-        <ListItemLink href="/@charcoal-ui/styled/Colors">Colors</ListItemLink>
-      </ListItem> */}
       {styledList.map((item) => {
         return (
-          <ListItem key={item.href} active={href === item.text}>
+          <ListItem key={item.href} active={href === item.href}>
             <ListItemLink href={item.href}>{item.text}</ListItemLink>
           </ListItem>
         )

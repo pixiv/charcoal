@@ -1,68 +1,82 @@
-import { DropdownSelectorProps } from '@charcoal-ui/react/dist/components/DropdownSelector'
+import { DropdownSelectorProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
+
+const baseProps = {
+  label: 'label',
+  options: [
+    {
+      id: 'option1',
+      label: 'option1',
+    },
+  ],
+  value: 'option1',
+  onChange: () => {},
+}
 
 export const sections: PreviewSection<DropdownSelectorProps>[] = [
   {
     title: 'disabled',
     previewMetas: [
       {
-        children: undefined,
         props: {
-          disabled: true,
+          ...baseProps,
           label: 'disabled',
-          children: [],
+          disabled: true,
         },
       },
     ],
   },
   {
-    title: 'showLabel,subLabel,requiredText',
+    title: 'subLabel',
     previewMetas: [
       {
-        children: undefined,
         props: {
+          ...baseProps,
+          label: 'subLabel',
           showLabel: true,
           subLabel: 'subLabel',
-          assertiveText: 'assertiveText',
+        },
+      },
+    ],
+  },
+  {
+    title: 'required',
+    previewMetas: [
+      {
+        props: {
+          ...baseProps,
+          label: 'required',
+          showLabel: true,
           required: true,
-          requiredText: 'requiredText',
-          label: 'label',
-          children: [],
+        },
+      },
+      {
+        props: {
+          ...baseProps,
+          label: 'requiredText',
+          showLabel: true,
+          required: true,
+          requiredText: '*REQUIRED',
         },
       },
     ],
   },
   {
-    title: 'disabledKeys',
+    title: 'invalid,assistiveText',
     previewMetas: [
       {
-        children: undefined,
         props: {
-          disabledKeys: ['option1'],
-          label: 'disabledKeys',
-          children: [],
-        },
-      },
-    ],
-  },
-  {
-    title: 'invalid',
-    previewMetas: [
-      {
-        children: undefined,
-        props: {
+          ...baseProps,
           invalid: true,
-          label: 'invalid1',
-          children: [],
+          label: 'invalid',
         },
       },
       {
-        children: undefined,
         props: {
+          ...baseProps,
           invalid: true,
-          assertiveText: 'assertiveText',
-          label: 'invalid2',
-          children: [],
+          label: 'invalid+assistiveText',
+          assistiveText: 'assistiveText',
         },
       },
     ],
