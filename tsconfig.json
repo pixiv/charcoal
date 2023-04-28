@@ -24,5 +24,6 @@
     "jest.setup.ts",
     "**/.*.cjs",
     "**/.*.js"
-  ]
+  ],
+  "exclude": ["docs"]
 }
