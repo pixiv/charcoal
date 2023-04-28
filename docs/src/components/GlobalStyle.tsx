@@ -9,10 +9,6 @@ const resetPixivIcon = css`
 
     &[name^='Inline/'] {
       --icon-size: 1em;
-
-      &[scale='2'] {
-        --icon-size: 2em;
-      }
     }
 
     &[name^='16/'] {
@@ -21,25 +17,25 @@ const resetPixivIcon = css`
 
     &[name^='24/'] {
       --icon-size: 24px;
-
-      &[scale='2'] {
-        --icon-size: 48px;
-      }
-
-      &[scale='3'] {
-        --icon-size: 72px;
-      }
     }
 
     &[name^='32/'] {
       --icon-size: 32px;
     }
 
-    /** NOTICE: 現状だと attr(... number) はほとんどのブラウザで動かない */
-    &[scale] {
-      --scale: attr(scale number);
+    &[scale='1'] {
+      --scale: 1;
     }
 
+    &[scale='2'] {
+      --scale: 2;
+    }
+
+    &[scale='3'] {
+      --scale: 3;
+    }
+
+    /** NOTICE: 現状だと attr(... number) はほとんどのブラウザで動かない */
     &[unsafe-non-guideline-scale] {
       --scale: attr(unsafe-non-guideline-scale number);
     }
