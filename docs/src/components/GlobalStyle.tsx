@@ -3,6 +3,7 @@ import { theme } from '../utils/theme'
 
 const resetPixivIcon = css`
   pixiv-icon {
+    display: inline-flex;
     width: calc(var(--icon-size, 1em) * var(--scale, 1));
     height: calc(var(--icon-size, 1em) * var(--scale, 1));
 
