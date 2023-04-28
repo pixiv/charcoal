@@ -7,10 +7,6 @@ const resetPixivIcon = css`
     width: calc(var(--icon-size, 1em) * var(--scale, 1));
     height: calc(var(--icon-size, 1em) * var(--scale, 1));
 
-    &[name^='Inline/'] {
-      --icon-size: 1em;
-    }
-
     &[name^='16/'] {
       --icon-size: 16px;
     }
@@ -21,10 +17,6 @@ const resetPixivIcon = css`
 
     &[name^='32/'] {
       --icon-size: 32px;
-    }
-
-    &[scale='1'] {
-      --scale: 1;
     }
 
     &[scale='2'] {
