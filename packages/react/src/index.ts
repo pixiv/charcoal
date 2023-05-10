@@ -52,11 +52,12 @@ export {
 } from './components/LoadingSpinner'
 export {
   default as DropdownSelector,
+  type DropdownSelectorProps,
   DropdownSelectorItem,
 } from './components/DropdownSelector'
 export {
   default as SegmentedControl,
   type SegmentedControlProps,
 } from './components/SegmentedControl'
-export { default as Checkbox } from './components/Checkbox'
+export { default as Checkbox, type CheckboxProps } from './components/Checkbox'
 export { default as TagItem, type TagItemProps } from './components/TagItem'
