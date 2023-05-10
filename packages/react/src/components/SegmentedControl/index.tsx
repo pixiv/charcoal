@@ -41,6 +41,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
         isDisabled: props.disabled,
         isReadOnly: props.readonly,
         isRequired: props.required,
+        'aria-label': props.name,
       }),
       [props]
     )
