@@ -1,5 +1,38 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { theme } from '../utils/theme'
+
+const resetPixivIcon = css`
+  pixiv-icon {
+    display: inline-flex;
+    width: calc(var(--icon-size, 1em) * var(--scale, 1));
+    height: calc(var(--icon-size, 1em) * var(--scale, 1));
+
+    &[name^='16/'] {
+      --icon-size: 16px;
+    }
+
+    &[name^='24/'] {
+      --icon-size: 24px;
+    }
+
+    &[name^='32/'] {
+      --icon-size: 32px;
+    }
+
+    &[scale='2'] {
+      --scale: 2;
+    }
+
+    &[scale='3'] {
+      --scale: 3;
+    }
+
+    /** NOTICE: 現状だと attr(... number) はほとんどのブラウザで動かない */
+    &[unsafe-non-guideline-scale] {
+      --scale: attr(unsafe-non-guideline-scale number);
+    }
+  }
+`
 
 export const GlobalStyle = createGlobalStyle`
 html, body, #__next {
@@ -23,4 +56,5 @@ pre {
   margin-bottom: 0;
 }
 
+${resetPixivIcon}
 `
