@@ -43,6 +43,10 @@ html, body, #__next {
   ${theme((o) => o.font.text1)}
 }
 
+a {
+  ${theme((o) => o.font.link1)};
+}
+
 p {
   line-height: 24px;
 }

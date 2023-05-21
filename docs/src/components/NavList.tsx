@@ -71,6 +71,18 @@ const iconsList: ListItem[] = [
     text: 'クイックスタート',
     href: '/@charcoal-ui/icons/quickstart',
   },
+  {
+    text: '<pixiv-icon>',
+    href: '/@charcoal-ui/icons/element',
+  },
+  {
+    text: '独自のアイコンを登録する',
+    href: '/@charcoal-ui/icons/extend',
+  },
+  {
+    text: 'Reactと組み合わせて使う',
+    href: '/@charcoal-ui/icons/react',
+  },
 ]
 
 export const NavList: FC<{ className?: string }> = (props) => {
