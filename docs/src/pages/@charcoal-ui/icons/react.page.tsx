@@ -23,7 +23,7 @@ export default function ReactPage() {
         <a
           href="https://ja.react.dev/reference/react-dom/components#custom-html-elements"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           参考: React公式ドキュメント
         </a>
