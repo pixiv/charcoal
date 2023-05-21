@@ -16,20 +16,28 @@ export function dedent(tag: TemplateStringsArray) {
   )
 
   return lines
-    .map((line) => line.replace(行の先頭にあるminimumIndent個のスペース, ''))
+    .map((line) => {
+      if (isWhiteSpaceOnly(line)) {
+        return ''
+      }
+
+      return line.replace(行の先頭にあるminimumIndent個のスペース, '')
+    })
     .join('\n')
     .trim()
 }
 
 function getMinimumIndent(lines: string[]) {
-  // 空白しかない行を除く
-  const lineWithNonSpaces = lines.filter((line) => !/^\s+$/.test(line))
-
-  const indents = lineWithNonSpaces
+  const indents = lines
+    .filter((line) => !isWhiteSpaceOnly(line))
     .map(getIndentCount)
     .filter((indent) => indent > 0)
 
   return Math.min(...indents)
+}
+
+function isWhiteSpaceOnly(line: string) {
+  return /^\s+$/.test(line)
 }
 
 function getIndentCount(line: string) {
