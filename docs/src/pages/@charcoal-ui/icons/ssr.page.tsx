@@ -20,7 +20,9 @@ export default function SsrPage() {
         <br />
         これはSSRの際、結果となるHTMLに
         <TagName>pixiv-icon</TagName>
-        要素を含んでも特に問題が起きないという点ではYESです。
+        要素を含んでも特に問題が起きないという点では
+        <strong>YES</strong>
+        です。
         <br />
         <InlineCode>@charcoal-ui/icons</InlineCode>
         は、Node.jsの環境下でimportされたり、APIを呼び出されても問題が起きないように設計されています。
@@ -73,6 +75,25 @@ export default function SsrPage() {
           }
         `}
         lang="css"
+      />
+      <p>
+        ただしコメントにもある通り、
+        <strong>
+          現状
+          <InlineCode>unsafe-non-guideline-scale</InlineCode>
+          をつけた要素はレイアウトシフトが防げません。
+        </strong>
+        <br />
+        CSSの<InlineCode>attr()</InlineCode>
+        が数値の解釈をサポートするまでは、個別にインラインスタイルを用いて大きさを確定させるなどのワークアラウンドが必要です。
+      </p>
+      <SSRHighlight
+        code={dedent`
+          <pixiv-icon name="24/Add" unsafe-non-guideline-scale="0.5" style="--scale: 0.5;">
+
+          <pixiv-icon name="24/Add" unsafe-non-guideline-scale="0.5" style="width: 12px; height: 12px;">
+        `}
+        lang="html"
       />
     </ContentRoot>
   )
