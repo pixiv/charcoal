@@ -25,7 +25,7 @@ export default function ReactPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          参考: React公式ドキュメント
+          React公式ドキュメントより
         </a>
       </blockquote>
 

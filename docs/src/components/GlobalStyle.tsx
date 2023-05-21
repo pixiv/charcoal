@@ -60,5 +60,9 @@ pre {
   margin-bottom: 0;
 }
 
+hr {
+  ${theme((o) => o.border.default)}
+}
+
 ${resetPixivIcon}
 `
