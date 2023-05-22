@@ -76,16 +76,16 @@ const iconsList: ListItem[] = [
     href: '/@charcoal-ui/icons/element',
   },
   {
-    text: 'SSR時のレイアウトシフトを防ぐ',
-    href: '/@charcoal-ui/icons/ssr',
+    text: 'Reactと組み合わせて使う',
+    href: '/@charcoal-ui/icons/react',
   },
   {
     text: '独自のアイコンを登録する',
     href: '/@charcoal-ui/icons/extend',
   },
   {
-    text: 'Reactと組み合わせて使う',
-    href: '/@charcoal-ui/icons/react',
+    text: 'SSR時のレイアウトシフトを防ぐ',
+    href: '/@charcoal-ui/icons/ssr',
   },
 ]
 

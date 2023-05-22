@@ -20,6 +20,9 @@ export default function InstallPage() {
       <SSRHighlight code="npm install @charcoal-ui/icons" lang="shell" />
       <h3>yarn</h3>
       <SSRHighlight code="yarn add @charcoal-ui/icons" lang="shell" />
+
+      <hr />
+
       <h2>使い方</h2>
       <p>
         アプリケーションのエントリポイントで<InlineCode>import</InlineCode>
@@ -27,6 +30,15 @@ export default function InstallPage() {
         <br />
         Storybookの場合は<InlineCode>preview.(js|ts)</InlineCode>
         に書くと良いでしょう。
+      </p>
+      <p>
+        <strong>
+          <InlineCode>@charcoal-ui/react</InlineCode>の{' '}
+          <Link href="/@charcoal-ui/react/Icon">
+            <TagName>Icon</TagName>
+          </Link>
+          コンポーネントを利用している場合、このimportは内部で自動的に行われます。
+        </strong>
       </p>
       <SSRHighlight
         code={dedent`import '@charcoal-ui/icons'`}
@@ -42,9 +54,12 @@ export default function InstallPage() {
       <h2>収録アイコン</h2>
       <p>
         <InlineCode>@charcoal-ui/react</InlineCode>の
-        <Link href="/@charcoal-ui/react/Icon/">Icon</Link>
+        <Link href="/@charcoal-ui/react/Icon/">
+          <TagName>Icon</TagName>
+        </Link>
         のページを見てください。
       </p>
+      <hr />
       <h2>各種バンドラとの組み合わせ</h2>
       <p>
         <InlineCode>@charcoal-ui/icons@v2.0.0</InlineCode>

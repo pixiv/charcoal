@@ -81,7 +81,7 @@ export default function SsrPage() {
         <strong>
           現状
           <InlineCode>unsafe-non-guideline-scale</InlineCode>
-          をつけた要素はレイアウトシフトが防げません。
+          をつけた要素は、リセットCSSだけではレイアウトシフトが防げません。
         </strong>
         <br />
         CSSの<InlineCode>attr()</InlineCode>

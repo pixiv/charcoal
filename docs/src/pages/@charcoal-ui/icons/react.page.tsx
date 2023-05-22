@@ -1,5 +1,7 @@
+import Link from 'next/link'
+import styled from 'styled-components'
 import { ContentRoot } from '../../../components/ContentRoot'
-import { InlineCode } from '../../../components/InlineCode'
+import { InlineCode, TagName } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 import { dedent } from '../../../utils/string'
 
@@ -7,6 +9,20 @@ export default function ReactPage() {
   return (
     <ContentRoot>
       <h1>React と組み合わせて使う</h1>
+
+      <p>
+        <InlineCode>@charcoal-ui/react</InlineCode>に
+        <Link href="/@charcoal-ui/react/Icon">
+          <TagName>Icon</TagName>
+        </Link>
+        コンポーネントが収録されているので、基本的にはそちらを利用してください。
+      </p>
+
+      <hr />
+
+      <h2>
+        <InlineCodeInHead>@charcoal-ui/react</InlineCodeInHead>を使わない場合
+      </h2>
       <p>
         Custom Elementは
         <strong>
@@ -32,7 +48,7 @@ export default function ReactPage() {
       <p>
         もし<InlineCode>styled-components</InlineCode>などを使っていて
         <InlineCode>className</InlineCode>
-        を渡せないと困るケースでは、ラッパーコンポーネントを作ってください。
+        を渡せないと困るケースでは、ラッパーコンポーネントを作ることができます。
       </p>
 
       <SSRHighlight
@@ -52,3 +68,7 @@ export default function ReactPage() {
     </ContentRoot>
   )
 }
+
+export const InlineCodeInHead = styled(InlineCode)`
+  font-size: inherit !important;
+`
