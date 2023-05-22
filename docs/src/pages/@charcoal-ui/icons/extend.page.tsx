@@ -56,13 +56,13 @@ export default function ExtendPage() {
         ロードする設定になっていることを確認してください。
       </p>
       <p>
-        たとえばWebpackの場合、当該アイコンファイルに対するルールは
+        たとえばWebpackの場合、当該アイコンファイルに対するルールのtypeは
         <a
           href="https://webpack.js.org/guides/asset-modules/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <InlineCode>type: 'asset/resource'</InlineCode>
+          <InlineCode>asset/resource</InlineCode>
         </a>
         であるべきです。
         <br />
