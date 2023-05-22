@@ -50,13 +50,28 @@ export default function InstallPage() {
         <InlineCode>@charcoal-ui/icons@v2.0.0</InlineCode>
         以前、このライブラリはアイコンを
         <InlineCode>.svg</InlineCode>
-        ファイルとしてエクスポートしていました。したがって利用の際は、各種バンドラで
+        ファイルとしてエクスポートしていました。
+        <br />
+        したがって利用の際は、各種バンドラで
         <InlineCode>.svg</InlineCode>
         ファイルをimportできるように設定ファイルを変更する必要がありました。
       </p>
       <p>
         <InlineCode>v2.0.0</InlineCode>
-        以降、アイコンはJavaScriptの文字列としてエクスポートされるようになっています。したがってバンドラの設定はもはや必要ありません。
+        以降、アイコンはJavaScriptの文字列としてエクスポートされるようになっています。
+        <br />
+        <strong>
+          したがって、
+          <InlineCode>@charcoal-ui/icons</InlineCode>
+          に収録されたアイコンを利用するだけなら、バンドラの設定は必要ありません。
+        </strong>
+      </p>
+      <p>
+        プロジェクト内のSVGファイルをアイコンとして登録したい場合は、
+        <Link href="/@charcoal-ui/icons/extend">
+          必要に応じて<InlineCode>.svg</InlineCode>
+          をimportできるように設定してください。
+        </Link>
       </p>
     </ContentRoot>
   )
