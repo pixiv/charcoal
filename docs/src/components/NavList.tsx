@@ -41,7 +41,7 @@ const reactList: ListItem[] = [
     href: '/@charcoal-ui/react/quickstart',
   },
   {
-    text: 'SSR',
+    text: 'サーバーサイドレンダリング',
     href: '/@charcoal-ui/react/ssr',
   },
   ...[
