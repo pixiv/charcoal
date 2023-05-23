@@ -6,23 +6,10 @@ import { dedent } from '../../../utils/string'
 export default function SsrPage() {
   return (
     <ContentRoot>
-      <h1>SSR時のレイアウトシフトを防ぐ</h1>
+      <h1>サーバーサイドレンダリング</h1>
       <p>
-        「
-        <strong>
-          <TagName>pixiv-icon</TagName>はCustom
-          Elementですが、サーバーサイドレンダリングをサポートしますか？
-        </strong>
-        」
-      </p>
-      <p>
-        という疑問を受けることがあります。
-        <br />
-        これはSSRの際、結果となるHTMLに
         <TagName>pixiv-icon</TagName>
-        要素を含んでも特に問題が起きないという点では
-        <strong>YES</strong>
-        です。
+        はサーバーサイドレンダリング時にも利用できます。
         <br />
         <InlineCode>@charcoal-ui/icons</InlineCode>
         は、Node.jsの環境下でimportされたり、APIを呼び出されても問題が起きないように設計されています。

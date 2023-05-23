@@ -84,7 +84,7 @@ const iconsList: ListItem[] = [
     href: '/@charcoal-ui/icons/extend',
   },
   {
-    text: 'SSR時のレイアウトシフトを防ぐ',
+    text: 'サーバーサイドレンダリング',
     href: '/@charcoal-ui/icons/ssr',
   },
 ]

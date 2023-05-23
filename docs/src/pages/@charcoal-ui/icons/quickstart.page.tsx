@@ -23,6 +23,27 @@ export default function InstallPage() {
 
       <hr />
 
+      <h2>概要</h2>
+      <p>
+        <InlineCode>@charcoal-ui/icons</InlineCode>は、SVGアイコンを
+        <a
+          href="https://developer.mozilla.org/ja/docs/Web/API/Web_components"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web Components
+        </a>
+        の
+        <a
+          href="https://developer.mozilla.org/ja/docs/Web/API/Web_components/Using_custom_elements"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Custom Elements
+        </a>
+        として利用できるライブラリです。
+      </p>
+
       <h2>使い方</h2>
       <p>
         アプリケーションのエントリポイントで<InlineCode>import</InlineCode>
