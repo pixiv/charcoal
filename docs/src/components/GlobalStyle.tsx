@@ -43,6 +43,10 @@ html, body, #__next {
   ${theme((o) => o.font.text1)}
 }
 
+a {
+  ${theme((o) => o.font.link1)};
+}
+
 p {
   line-height: 24px;
 }
@@ -54,6 +58,10 @@ p {
 pre {
   width: 100%;
   margin-bottom: 0;
+}
+
+hr {
+  ${theme((o) => o.border.default)}
 }
 
 ${resetPixivIcon}
