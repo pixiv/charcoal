@@ -13,6 +13,7 @@ export const StringSegments: Story<SegmentedControlProps> = (props) => {
 }
 
 StringSegments.args = {
+  name: 'test',
   data: ['option1', 'option2', 'option3'],
   disabled: false,
   readonly: false,
@@ -24,6 +25,7 @@ export const ObjectSegments: Story<SegmentedControlProps> = (props) => {
 }
 
 ObjectSegments.args = {
+  name: 'test',
   data: [
     { label: '選択肢1', value: 'option1' },
     { label: '選択肢2', value: 'option2' },

@@ -80,6 +80,23 @@ export const sections: PreviewSection<TextFieldProps>[] = [
     ],
   },
   {
+    title: 'prefix',
+    previewMetas: [
+      {
+        children: undefined,
+        props: {
+          label: 'Label',
+          placeholder: 'placeholder',
+          prefix: (
+            <StyledDiv>
+              <Icon name="24/Search" />
+            </StyledDiv>
+          ),
+        },
+      },
+    ],
+  },
+  {
     title: 'suffix',
     previewMetas: [
       {

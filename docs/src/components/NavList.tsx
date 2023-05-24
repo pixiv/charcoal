@@ -1,7 +1,7 @@
 import { Icon } from '@charcoal-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC, useEffect } from 'react'
+import { FC, useCallback, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../utils/theme'
 import pkgJson from '../../../packages/react/package.json'
@@ -41,7 +41,7 @@ const reactList: ListItem[] = [
     href: '/@charcoal-ui/react/quickstart',
   },
   {
-    text: 'SSR',
+    text: 'サーバーサイドレンダリング',
     href: '/@charcoal-ui/react/ssr',
   },
   ...[
@@ -66,6 +66,29 @@ const reactList: ListItem[] = [
   }),
 ]
 
+const iconsList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/icons/quickstart',
+  },
+  {
+    text: '<pixiv-icon>',
+    href: '/@charcoal-ui/icons/element',
+  },
+  {
+    text: 'Reactと組み合わせて使う',
+    href: '/@charcoal-ui/icons/react',
+  },
+  {
+    text: '独自のアイコンを登録する',
+    href: '/@charcoal-ui/icons/extend',
+  },
+  {
+    text: 'サーバーサイドレンダリング',
+    href: '/@charcoal-ui/icons/ssr',
+  },
+]
+
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
   useEffect(() => {
@@ -73,6 +96,18 @@ export const NavList: FC<{ className?: string }> = (props) => {
     window.scroll({ top: 0, left: 0 })
   }, [router])
   const href = router.pathname
+
+  const renderListItem = useCallback(
+    (item: ListItem) => {
+      return (
+        <ListItem key={item.href} active={href === item.href}>
+          <ListItemLink href={item.href}>{item.text}</ListItemLink>
+        </ListItem>
+      )
+    },
+    [href]
+  )
+
   return (
     <StyledUl className={props.className}>
       <ListItemHeader>v{pkgJson.version}</ListItemHeader>
@@ -90,13 +125,9 @@ export const NavList: FC<{ className?: string }> = (props) => {
         )
       })}
       <ListItemHeader>@charcoal-ui/react</ListItemHeader>
-      {reactList.map((item) => {
-        return (
-          <ListItem key={item.href} active={href == item.href}>
-            <ListItemLink href={item.href}>{item.text}</ListItemLink>
-          </ListItem>
-        )
-      })}
+      {reactList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/icons</ListItemHeader>
+      {iconsList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
       <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
       <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />
