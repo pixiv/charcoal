@@ -33,3 +33,26 @@ export function unreachable(value?: never): never {
       : `unreachable (${JSON.stringify(value)})`
   )
 }
+
+/**
+ * 複数のrefをマージする。
+ *
+ * forwardRefで受け取ったrefと、コンポーネント内で定義したrefを同じ要素につけたいケースなどで使う
+ */
+export function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
+  return (value) => {
+    for (const ref of refs) {
+      if (typeof ref === 'function') {
+        ref(value)
+      } else if (ref !== null) {
+        ;(ref as React.MutableRefObject<T | null>).current = value
+      }
+    }
+  }
+}
+
+export function countCodePointsInString(string: string) {
+  // [...string] とするとproduction buildで動かなくなる
+  // cf. https://twitter.com/f_subal/status/1497214727511891972
+  return Array.from(string).length
+}

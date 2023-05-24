@@ -10,6 +10,7 @@ import React, {
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { createTheme } from '@charcoal-ui/styled'
+import { countCodePointsInString, mergeRefs } from '../../_lib'
 
 const theme = createTheme(styled)
 
@@ -37,24 +38,6 @@ export interface TextFieldProps
    * tab-indexがｰ1かどうか
    */
   readonly excludeFromTabOrder?: boolean
-}
-
-function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
-  return (value) => {
-    for (const ref of refs) {
-      if (typeof ref === 'function') {
-        ref(value)
-      } else if (ref !== null) {
-        ;(ref as React.MutableRefObject<T | null>).current = value
-      }
-    }
-  }
-}
-
-function countCodePointsInString(string: string) {
-  // [...string] とするとproduction buildで動かなくなる
-  // cf. https://twitter.com/f_subal/status/1497214727511891972
-  return Array.from(string).length
 }
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(

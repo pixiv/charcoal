@@ -57,11 +57,12 @@ const reactList: ListItem[] = [
     'SegmentedControl',
     'Switch',
     'TagItem',
+    'TextArea',
     'TextField',
-  ].map((o) => {
+  ].map((component) => {
     return {
-      text: o,
-      href: `/@charcoal-ui/react/${o}`,
+      text: component,
+      href: `/@charcoal-ui/react/${component}`,
     }
   }),
 ]
