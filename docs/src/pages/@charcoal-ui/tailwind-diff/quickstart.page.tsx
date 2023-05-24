@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ContentRoot } from '../../../components/ContentRoot'
 
-import { InlineCode, TagName } from '../../../components/InlineCode'
+import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 import { dedent } from '../../../utils/string'
 
