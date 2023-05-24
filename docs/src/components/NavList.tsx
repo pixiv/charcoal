@@ -89,6 +89,13 @@ const iconsList: ListItem[] = [
   },
 ]
 
+const tailwindDiffList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/tailwind-diff/quickstart',
+  },
+]
+
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
   useEffect(() => {
@@ -120,6 +127,8 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {reactList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/icons</ListItemHeader>
       {iconsList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/tailwind-diff</ListItemHeader>
+      {tailwindDiffList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
       <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
       <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />

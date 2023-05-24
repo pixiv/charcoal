@@ -43,8 +43,15 @@ export default function InstallPage() {
         code={dedent`
         $ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --config tailwind.config.js --json true
 
-        [{"className":"w-fit","status":"added","css":[".w-fit {\n    width: fit-content;\n}"]}]
-        `}
+        [
+          {
+            "className":"w-fit",
+            "status":"added",
+            "css": [
+              ".w-fit { width: fit-content; }"
+            ]
+          }
+        ]`}
         lang="shell"
       />
     </ContentRoot>
