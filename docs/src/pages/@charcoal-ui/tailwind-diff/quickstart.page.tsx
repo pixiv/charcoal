@@ -45,8 +45,8 @@ export default function InstallPage() {
 
         [
           {
-            "className":"w-fit",
-            "status":"added",
+            "className": "w-fit",
+            "status": "added",
             "css": [
               ".w-fit { width: fit-content; }"
             ]

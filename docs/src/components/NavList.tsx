@@ -94,6 +94,14 @@ const tailwindDiffList: ListItem[] = [
     text: 'クイックスタート',
     href: '/@charcoal-ui/tailwind-diff/quickstart',
   },
+  {
+    text: 'checkサブコマンド',
+    href: '/@charcoal-ui/tailwind-diff/check',
+  },
+  {
+    text: 'dumpサブコマンド',
+    href: '/@charcoal-ui/tailwind-diff/dump',
+  },
 ]
 
 export const NavList: FC<{ className?: string }> = (props) => {
