@@ -1,6 +1,6 @@
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { CSSObject } from 'styled-components'
-import { keyof, variable } from '../util'
+import { keyof, variable, withPrefixes } from '../util'
 import { Internal, createInternal } from '../internals'
 import {
   defineConstantProperties,
@@ -17,9 +17,10 @@ export const createBorderCss = <T extends CharcoalAbstractTheme>(
   directions: readonly BorderDirection[]
 ): Internal => {
   const all = directions.length === 0
-  const colorName = `border-${variant.toString()}`
 
-  const value = `solid 1px ${variable(customPropertyToken(colorName))}`
+  const value = `solid 1px ${variable(
+    customPropertyToken(withPrefixes('border', variant.toString()))
+  )}`
 
   return createInternal({
     toCSS() {

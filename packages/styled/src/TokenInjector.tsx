@@ -1,7 +1,7 @@
 import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
-import { defineThemeVariables } from './util'
+import { defineThemeVariables, withPrefixes } from './util'
 import { mapObject } from '@charcoal-ui/utils'
 
 const GlobalStyle = createGlobalStyle`
@@ -59,7 +59,7 @@ export default function TokenInjector<T extends Theme>({
 const defineColorVariableCSS = (theme: Theme) => {
   const borders = mapObject(theme.border, (name, { color }) => [
     // REVIEW: もしtheme.colorにたまたまborder-〇〇で始まる色名がいたら被りうる
-    `border-${name}`,
+    withPrefixes('border', name),
     color,
   ])
 
