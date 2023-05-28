@@ -95,11 +95,11 @@ const tailwindDiffList: ListItem[] = [
     href: '/@charcoal-ui/tailwind-diff/quickstart',
   },
   {
-    text: 'checkサブコマンド',
+    text: 'check',
     href: '/@charcoal-ui/tailwind-diff/check',
   },
   {
-    text: 'dumpサブコマンド',
+    text: 'dump',
     href: '/@charcoal-ui/tailwind-diff/dump',
   },
 ]

@@ -18,11 +18,23 @@ export default function InstallPage() {
       <h2>インストール</h2>
       <h3>npm</h3>
       <SSRHighlight
-        code="npm install @charcoal-ui/tailwind-diff"
+        code={dedent`
+          npm install --save-dev @charcoal-ui/tailwind-diff
+          npx tailwind-diff help
+        `}
         lang="shell"
       />
       <h3>yarn</h3>
-      <SSRHighlight code="yarn add @charcoal-ui/tailwind-diff" lang="shell" />
+      <SSRHighlight
+        code={dedent`
+          yarn add -D @charcoal-ui/tailwind-diff
+          yarn tailwind-diff help
+        `}
+        lang="shell"
+      />
+
+      <p>あるいは、ローカルにインストールせずに実行するのも良いでしょう。</p>
+      <SSRHighlight code="npx @charcoal-ui/tailwind-diff help" lang="shell" />
 
       <hr />
 
@@ -38,20 +50,47 @@ export default function InstallPage() {
       </p>
 
       <h2>使い方</h2>
-      <p>WIP</p>
+      <p>
+        以下の4つのコマンドが実行できます。
+        <InlineCode>check</InlineCode>と<InlineCode>dump</InlineCode>
+        については各ページを参照してください。
+      </p>
+      <ul>
+        <dl>
+          <dt>
+            <Link href="/@charcoal-ui/tailwind-diff/check">check</Link>
+          </dt>
+          <dd>アップデートの結果生じるクラスの差分を出力する</dd>
+        </dl>
+        <dl>
+          <dt>
+            <Link href="/@charcoal-ui/tailwind-diff/dump">dump</Link>
+          </dt>
+          <dd>現在の設定からできあがるCSSを出力する</dd>
+        </dl>
+        <dl>
+          <dt>version</dt>
+          <dd>パッケージのバージョンを出力する</dd>
+        </dl>
+        <dl>
+          <dt>help</dt>
+          <dd>使い方のヘルプを出力する</dd>
+        </dl>
+      </ul>
       <SSRHighlight
         code={dedent`
-        $ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --config tailwind.config.js --json true
+        $ npx @charcoal-ui/tailwind-diff help
 
-        [
-          {
-            "className": "w-fit",
-            "status": "added",
-            "css": [
-              ".w-fit { width: fit-content; }"
-            ]
-          }
-        ]`}
+        tailwind-diff <command>
+
+        Commands:
+          tailwind-diff check  checks diffs due to package updates
+          tailwind-diff dump   dump Tailwind CSS with config
+
+        Options:
+          --version  Show version number                                       [boolean]
+          --help     Show help                                                 [boolean]
+`}
         lang="shell"
       />
     </ContentRoot>
