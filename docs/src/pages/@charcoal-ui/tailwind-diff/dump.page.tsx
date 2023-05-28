@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import { ContentRoot } from '../../../components/ContentRoot'
 import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
+import { Table } from '../../../components/Table'
 
 export default function DumpPage() {
   return (
@@ -16,12 +18,34 @@ export default function DumpPage() {
         指定したコンフィグファイルをもとにCSSを出力します。
         <br />
         できることはTailwind CSS公式の<InlineCode>build</InlineCode>と同じです。
+      </p>
+      <p>
+        <Link href="/@charcoal-ui/tailwind-diff/check">check</Link>
+        コマンドでは
+        <strong>内部的にdumpが利用されています。</strong>
         <br />
-        このコマンドは主にデバッグ用途であり、Tailwind
-        CSSアップデートの際に使うことはあまりないでしょう。
+        内部の利用以外でこのコマンドを直接用いるケースは（デバッグなどを除いて）あまりないと言って良いでしょう。
       </p>
 
       <h2>オプション</h2>
+      <Table data={apiData} />
     </ContentRoot>
   )
+}
+
+const apiData = {
+  output: {
+    description:
+      'ビルド結果のCSSを出力するファイル。省略した場合は標準出力に出る。',
+    alias: '-o または --output',
+    type: 'string',
+    required: true,
+  },
+  config: {
+    description:
+      'ビルド時に使用するTailwind CSSの設定ファイル。省略した場合は"tailwind.config.js"が使われる（現在のパスからの相対）。',
+    alias: '-c または --config',
+    type: 'string',
+    required: true,
+  },
 }
