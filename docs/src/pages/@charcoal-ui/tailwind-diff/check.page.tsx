@@ -118,15 +118,7 @@ export default function CheckPage() {
         code={dedent`
           $ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --config tailwind.config.js --json true
 
-          [
-            {
-              "className": "w-fit",
-              "status": "added",
-              "css": [
-                ".w-fit { width: fit-content; }"
-              ]
-            }
-          ]
+          [{"className":"w-fit","status":"added","css":[".w-fit {\\n    width: fit-content;\\n}"]}]
           `}
         lang="shell"
       />
@@ -136,7 +128,7 @@ export default function CheckPage() {
         というクラスが新しく使えるようになることがわかります。
       </p>
       <p>
-        さらに人間に見やすくするオプションなどは
+        人間に見やすくするオプションなどは
         <strong>ありません。</strong>
         その場合は<InlineCode>jq</InlineCode>
         など、JSONをフォーマットできるコマンドと併用するのが推奨されます。
