@@ -116,7 +116,7 @@ export default function CheckPage() {
       </p>
       <SSRHighlight
         code={dedent`
-          $ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --config tailwind.config.js --json true
+          $ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --json
 
           [{"className":"w-fit","status":"added","css":[".w-fit {\\n    width: fit-content;\\n}"]}]
           `}
@@ -130,9 +130,31 @@ export default function CheckPage() {
       <p>
         人間に見やすくするオプションなどは
         <strong>ありません。</strong>
-        その場合は<InlineCode>jq</InlineCode>
+        その場合は
+        <a
+          href="https://stedolan.github.io/jq/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <InlineCode>jq</InlineCode>
+        </a>
         など、JSONをフォーマットできるコマンドと併用するのが推奨されます。
       </p>
+      <SSRHighlight
+        code={dedent`
+          $ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --json | jq
+
+          [
+            {
+              "className": "w-fit",
+              "status": "added",
+              "css": [
+                ".w-fit {\\n    width: fit-content;\\n}"
+              ]
+            }
+          ]`}
+        lang="shell"
+      />
       <p>
         <strong>
           ステータスの種類は<InlineCode>added</InlineCode>または
