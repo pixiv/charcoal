@@ -3,6 +3,7 @@ import { ContentRoot } from '../../../components/ContentRoot'
 import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 import { Table } from '../../../components/Table'
+import { dedent } from '../../../utils/string'
 
 export default function DumpPage() {
   return (
@@ -28,6 +29,21 @@ export default function DumpPage() {
       </p>
 
       <h2>オプション</h2>
+      <SSRHighlight
+        code={dedent`
+        $ npx @charcoal-ui/tailwind-diff check --help
+        tailwind-diff dump
+
+        dump Tailwind CSS with config
+        
+        Options:
+              --version  Show version number                                   [boolean]
+              --help     Show help                                             [boolean]
+          -o, --output   output file                                            [string]
+          -c, --config   tailwind config file                                   [string]
+        `}
+        lang="shell"
+      />
       <Table data={apiData} />
     </ContentRoot>
   )
