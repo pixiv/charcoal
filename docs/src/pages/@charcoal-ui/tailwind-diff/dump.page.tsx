@@ -29,6 +29,7 @@ export default function DumpPage() {
       </p>
 
       <h2>オプション</h2>
+      <Table data={apiData} />
       <SSRHighlight
         code={dedent`
         $ npx @charcoal-ui/tailwind-diff dump --help
@@ -44,7 +45,6 @@ export default function DumpPage() {
         `}
         lang="shell"
       />
-      <Table data={apiData} />
     </ContentRoot>
   )
 }

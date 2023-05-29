@@ -18,24 +18,6 @@ export default function CheckPage() {
       </p>
 
       <h2>オプション</h2>
-      <SSRHighlight
-        code={dedent`
-        $ npx @charcoal-ui/tailwind-diff check --help
-        tailwind-diff check
-
-        checks diffs due to package updates
-
-        Options:
-              --version        Show version number                             [boolean]
-              --help           Show help                                       [boolean]
-              --before-config  tailwind config used in first build              [string]
-              --after-config   tailwind config used in second build             [string]
-              --packages       packages to be update                             [array]
-              --json           print result as JSON format                     [boolean]
-          -c, --config         tailwind config file                             [string]
-        `}
-        lang="shell"
-      />
       <Table data={apiData} />
       <p>
         ※1 <InlineCode>config</InlineCode>と
@@ -58,6 +40,24 @@ export default function CheckPage() {
         </a>
         のドキュメントを参照。
       </p>
+      <SSRHighlight
+        code={dedent`
+        $ npx @charcoal-ui/tailwind-diff check --help
+        tailwind-diff check
+
+        checks diffs due to package updates
+
+        Options:
+              --version        Show version number                             [boolean]
+              --help           Show help                                       [boolean]
+              --before-config  tailwind config used in first build              [string]
+              --after-config   tailwind config used in second build             [string]
+              --packages       packages to be update                             [array]
+              --json           print result as JSON format                     [boolean]
+          -c, --config         tailwind config file                             [string]
+        `}
+        lang="shell"
+      />
 
       <hr />
 
