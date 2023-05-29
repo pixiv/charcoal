@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DropdownSelector, OptionItem } from '@charcoal-ui/react'
+import { DropdownSelector, DropdownMenuItem } from '@charcoal-ui/react'
 
 export const ExampleDropdownSelector = () => {
   const [selected, setSelected] = useState<string>('50')
@@ -9,14 +9,14 @@ export const ExampleDropdownSelector = () => {
       <p>selected: {selected}</p>
       <DropdownSelector
         label="dropdown-selector"
-        onChange={(value) => setSelected(value)}
+        onChange={(value: string) => setSelected(value)}
         value={selected}
       >
         {[...Array(100)].map((_, i) => {
           return (
-            <OptionItem key={i} value={i.toString()}>
+            <DropdownMenuItem key={i} value={i.toString()}>
               option{i.toString()}
-            </OptionItem>
+            </DropdownMenuItem>
           )
         })}
       </DropdownSelector>

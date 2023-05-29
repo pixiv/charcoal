@@ -1,7 +1,7 @@
 import { TagItemProps } from '@charcoal-ui/react'
 import { ApiTableData } from '../_components/ApiTable'
 
-export const apiData: Partial<ApiTableData<TagItemProps, HTMLInputElement>> = {
+export const apiData: ApiTableData<TagItemProps, HTMLInputElement> = {
   bgColor: {
     default: '',
     description: '背景色、CSSで扱える文字列',

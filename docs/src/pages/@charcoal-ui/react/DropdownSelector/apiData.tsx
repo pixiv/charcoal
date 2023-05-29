@@ -1,4 +1,4 @@
-import { DropdownSelectorProps, OptionItemProps } from '@charcoal-ui/react'
+import { DropdownSelectorProps, DropdownMenuItemProps} from '@charcoal-ui/react'
 import { ApiTableData, TableItem } from '../_components/ApiTable'
 
 export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
@@ -56,10 +56,15 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
   },
 }
 
-export const optionValueApiData: ApiTableData<OptionItemProps, {}> = {
+export const optionValueApiData: ApiTableData<DropdownMenuItemProps, {}> = {
   value: {
     description: '選択肢の値',
     type: 'string',
-    required: true,
+    required: false,
+  },
+  disabled: {
+    description: '選択の無効化',
+    type: 'boolean',
+    required: false,
   },
 }
