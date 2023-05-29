@@ -31,7 +31,7 @@ export default function DumpPage() {
       <h2>オプション</h2>
       <SSRHighlight
         code={dedent`
-        $ npx @charcoal-ui/tailwind-diff check --help
+        $ npx @charcoal-ui/tailwind-diff dump --help
         tailwind-diff dump
 
         dump Tailwind CSS with config
