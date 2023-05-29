@@ -1,38 +1,8 @@
-import React, { Key, useEffect, useRef } from 'react'
-import { OverlayTriggerState } from 'react-stately'
-import { ReactNode } from 'react'
-import {
-  AriaPopoverProps,
-  DismissButton,
-  Overlay,
-  usePopover,
-} from '@react-aria/overlays'
-import styled from 'styled-components'
-import { theme } from '../../styled'
+import React, { useEffect, useRef } from 'react'
+import Popover, { PopoverProps } from './Popover'
 
-const DropdownPopoverDiv = styled.div`
-  width: 100%;
-  ${theme((o) => o.margin.top(4).bottom(4))}
-`
-
-type Props = Omit<AriaPopoverProps, 'popoverRef'> & {
-  state: OverlayTriggerState
-} & {
-  children: ReactNode
-  value?: Key
-}
-
-export function DropdownPopover({ children, state, ...props }: Props) {
+export function DropdownPopover({ children, state, ...props }: PopoverProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const { popoverProps, underlayProps } = usePopover(
-    {
-      ...props,
-      popoverRef: ref,
-      containerPadding: 0,
-    },
-    state
-  )
-
   useEffect(() => {
     if (ref.current && props.triggerRef.current) {
       ref.current.style.width = `${props.triggerRef.current.clientWidth}px`
@@ -54,13 +24,8 @@ export function DropdownPopover({ children, state, ...props }: Props) {
   }, [props.value, state.isOpen])
 
   return (
-    <Overlay portalContainer={document.body}>
-      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
-      <DropdownPopoverDiv {...popoverProps} ref={ref}>
-        <DismissButton onDismiss={() => state.close()} />
-        {children}
-        <DismissButton onDismiss={() => state.close()} />
-      </DropdownPopoverDiv>
-    </Overlay>
+    <Popover state={state} popoverRef={ref} triggerRef={props.triggerRef}>
+      {children}
+    </Popover>
   )
 }

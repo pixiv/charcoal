@@ -52,13 +52,16 @@ export {
 } from './components/LoadingSpinner'
 export {
   default as DropdownSelector,
-  type DropdownSelectorOption,
   type DropdownSelectorProps,
 } from './components/DropdownSelector'
 export {
-  OptionItem,
-  type OptionItemProps,
-} from './components/DropdownSelector/OptionItem'
+  default as DropdownMenuItem,
+  type DropdownMenuItemProps,
+} from './components/DropdownSelector/DropdownMenuItem'
+export {
+  default as MenuGroup,
+  type MenuGroupProps,
+} from './components/DropdownSelector/MenuGroup'
 export {
   default as SegmentedControl,
   type SegmentedControlProps,
