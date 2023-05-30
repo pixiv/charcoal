@@ -9,7 +9,7 @@ export const ExampleDropdownSelector = () => {
       <p>selected: {selected}</p>
       <DropdownSelector
         label="dropdown-selector"
-        onChange={(value: string) => setSelected(value)}
+        onChange={(value) => setSelected(value)}
         value={selected}
       >
         {[...Array(100)].map((_, i) => {
