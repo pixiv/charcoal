@@ -1,7 +1,8 @@
 import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
-import { defineThemeVariables } from './util'
+import { defineThemeVariables, withPrefixes } from './util'
+import { mapObject } from '@charcoal-ui/utils'
 
 const GlobalStyle = createGlobalStyle`
   ${<T extends Theme>({
@@ -43,7 +44,7 @@ export interface ThemeMap<T extends Theme> {
   [selector: string]: T
 }
 
-type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect'>
+type Theme = Pick<CharcoalAbstractTheme, 'color' | 'effect' | 'border'>
 
 export default function TokenInjector<T extends Theme>({
   theme: themeMap,
@@ -55,9 +56,22 @@ export default function TokenInjector<T extends Theme>({
   return <GlobalStyle themeMap={themeMap} background={background} />
 }
 
-const defineColorVariableCSS = (theme: Theme) =>
-  Object.entries(defineThemeVariables(theme.color)({ theme }))
+const defineColorVariableCSS = (theme: Theme) => {
+  const borders = mapObject(theme.border, (name, { color }) => [
+    // REVIEW: もしtheme.colorにたまたまborder-〇〇で始まる色名がいたら被りうる
+    withPrefixes('border', name),
+    color,
+  ])
+
+  const colors = defineThemeVariables({ ...theme.color, ...borders })({ theme })
+
+  return toCSSVariables(colors)
+}
+
+function toCSSVariables(css: Record<string, string | number>) {
+  return Object.entries(css)
     .map(([varName, value]) => variableDefinition(varName, value.toString()))
     .join(';')
+}
 
 const variableDefinition = (prop: string, value: string) => `${prop}: ${value}`
