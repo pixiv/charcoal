@@ -2,7 +2,7 @@ import { LoadingSpinner } from '@charcoal-ui/react'
 import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Partial<
-  ApiTableData<Parameters<typeof LoadingSpinner>[0], HTMLInputElement>
+  ApiTableData<React.ComponentProps<typeof LoadingSpinner>, HTMLInputElement>
 > = {
   padding: {
     default: '16',
