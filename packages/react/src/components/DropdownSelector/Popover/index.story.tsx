@@ -1,34 +1,34 @@
-import React, { useRef, CSSProperties } from 'react'
+import React, { useRef, CSSProperties, useState } from 'react'
 import { Story } from '../../../_lib/compat'
 import Popover, { PopoverProps } from '.'
-import { useOverlayTriggerState } from 'react-stately'
 import Button from '../../Button'
 
 export default {
-  title: 'Popover',
+  title: 'DropdownSelector/Popover',
   component: Popover,
 }
 
 function Base(props: { style?: CSSProperties }) {
-  const state = useOverlayTriggerState({})
+  const [isOpen, setIsOpen] = useState(false)
   const triggerRef = useRef(null)
   return (
     <>
       <Button
         onClick={() => {
-          state.open()
+          setIsOpen(true)
         }}
         style={props.style}
         ref={triggerRef}
       >
         button
       </Button>
-      {state.isOpen && (
-        <Popover state={state} triggerRef={triggerRef}>
-          <h1 style={{ margin: '16px' }}>Hello</h1>
-          <input autoFocus />
-        </Popover>
-      )}
+      <Popover
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+      >
+        <div style={{ margin: '8px 16px' }}>Hello</div>
+      </Popover>
     </>
   )
 }

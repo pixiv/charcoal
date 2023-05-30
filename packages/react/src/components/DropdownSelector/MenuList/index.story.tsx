@@ -6,7 +6,7 @@ import MenuItem from '../MenuItem'
 import MenuGroup from '../MenuGroup'
 
 export default {
-  title: 'MenuList',
+  title: 'DropdownSelector/MenuList',
   component: MenuList,
 }
 
@@ -25,7 +25,6 @@ export const Basic: Story<MenuListProps> = () => {
   return (
     <>
       <MenuList onChange={action('onChange')}>{makeList(10)}</MenuList>
-      <MenuList onChange={action('onChange')}>{makeList(20, 10)}</MenuList>
     </>
   )
 }
@@ -43,7 +42,7 @@ export const Disabled: Story<MenuListProps> = () => {
   )
 }
 
-export const SectionList: Story<MenuListProps> = () => {
+export const Group: Story<MenuListProps> = () => {
   return (
     <MenuList onChange={action('onChange')} value="1">
       <MenuGroup text="Section1">{makeList(5)}</MenuGroup>

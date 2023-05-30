@@ -5,7 +5,7 @@ import Switch from '../../Switch'
 import ListItem, { ListItemProps } from '.'
 
 export default {
-  title: 'ListItem',
+  title: 'DropdownSelector/ListItem',
   component: ListItem,
 }
 
@@ -16,14 +16,9 @@ export const Basic: Story<ListItemProps> = () => {
   }
   return (
     <>
-      <ListItem>Hoge</ListItem>
+      <ListItem>Item</ListItem>
       <ListItem>
-        <Icon name="16/Add" />
-        Add
-      </ListItem>
-      <ListItem>
-        <Icon name="16/Add" />
-        <h1>Hello</h1>
+        <Icon name="16/Add" /> Add
       </ListItem>
       <ListItem onClick={handleCheck}>
         Switch
