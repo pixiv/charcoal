@@ -1,6 +1,5 @@
-import React, { ReactNode, useRef } from 'react'
+import React, { ReactNode, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { useOverlayTriggerState } from 'react-stately'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
@@ -28,7 +27,7 @@ const defaultRequiredText = '*必須'
 
 export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
-  const state = useOverlayTriggerState({})
+  const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
 
   return (
@@ -46,7 +45,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         disabled={props.disabled}
         onClick={() => {
           if (props.disabled === true) return
-          state.open()
+          setIsOpen(true)
         }}
         ref={triggerRef}
       >
@@ -57,23 +56,22 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
-      {state.isOpen && (
-        <DropdownPopover
-          state={state}
-          triggerRef={triggerRef}
+      <DropdownPopover
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+        value={props.value}
+      >
+        <MenuList
           value={props.value}
+          onChange={(v) => {
+            props.onChange(v)
+            setIsOpen(false)
+          }}
         >
-          <MenuList
-            value={props.value}
-            onChange={(v) => {
-              props.onChange(v)
-              state.close()
-            }}
-          >
-            {props.children}
-          </MenuList>
-        </DropdownPopover>
-      )}
+          {props.children}
+        </MenuList>
+      </DropdownPopover>
       {props.assistiveText !== undefined && (
         <AssertiveText invalid={props.invalid}>
           {props.assistiveText}

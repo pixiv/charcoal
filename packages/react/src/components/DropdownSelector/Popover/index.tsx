@@ -1,12 +1,12 @@
 import React, { RefObject, useRef } from 'react'
-import { OverlayTriggerState } from 'react-stately'
 import { ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import styled from 'styled-components'
 import { theme } from '../../../styled'
 
 export type PopoverProps = {
-  state: OverlayTriggerState
+  isOpen: boolean
+  onClose: () => void
   children: ReactNode
   triggerRef: RefObject<Element>
   popoverRef?: RefObject<HTMLDivElement>
@@ -25,22 +25,32 @@ export default function Popover(props: PopoverProps) {
   const defaultPopoverRef = useRef<HTMLDivElement>(null)
   const finalPopoverRef =
     props.popoverRef === undefined ? defaultPopoverRef : props.popoverRef
+  const _empty = () => null
   const { popoverProps, underlayProps } = usePopover(
     {
       triggerRef: props.triggerRef,
       popoverRef: finalPopoverRef,
       containerPadding: 16,
     },
-    props.state
+    {
+      close: props.onClose,
+      isOpen: props.isOpen,
+      // never used
+      open: _empty,
+      setOpen: _empty,
+      toggle: _empty,
+    }
   )
+
+  if (!props.isOpen) return null
 
   return (
     <Overlay portalContainer={document.body}>
       <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
       <DropdownPopoverDiv {...popoverProps} ref={finalPopoverRef}>
-        <DismissButton onDismiss={() => props.state.close()} />
+        <DismissButton onDismiss={() => props.onClose()} />
         {props.children}
-        <DismissButton onDismiss={() => props.state.close()} />
+        <DismissButton onDismiss={() => props.onClose()} />
       </DropdownPopoverDiv>
     </Overlay>
   )

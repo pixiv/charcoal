@@ -13,20 +13,16 @@ type DropdownPopoverProps = PopoverProps & {
  * @param param0
  * @returns
  */
-export function DropdownPopover({
-  children,
-  state,
-  ...props
-}: DropdownPopoverProps) {
+export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    if (ref.current && props.triggerRef.current) {
+    if (props.isOpen && ref.current && props.triggerRef.current) {
       ref.current.style.width = `${props.triggerRef.current.clientWidth}px`
     }
-  }, [props.triggerRef])
+  }, [props.triggerRef, props.isOpen])
 
   useEffect(() => {
-    if (state.isOpen && props.value !== undefined) {
+    if (props.isOpen && props.value !== undefined) {
       // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
       const windowScrollY = window.scrollY
       const windowScrollX = window.scrollX
@@ -37,10 +33,15 @@ export function DropdownPopover({
       selectedElement?.focus()
       window.scrollTo(windowScrollX, windowScrollY)
     }
-  }, [props.value, state.isOpen])
+  }, [props.value, props.isOpen])
 
   return (
-    <Popover state={state} popoverRef={ref} triggerRef={props.triggerRef}>
+    <Popover
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      popoverRef={ref}
+      triggerRef={props.triggerRef}
+    >
       {children}
     </Popover>
   )
