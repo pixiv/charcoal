@@ -18,6 +18,13 @@ export type MenuListProps = {
   onChange?: (v: string) => void
 }
 
+/**
+ * 上下キーでフォーカス移動でき、エンターキーで選択できるリストの項目
+ * 基本的に`<MenuItem>`, `<MenuGroup>`と合わせて使用する
+ *
+ * @param props
+ * @returns
+ */
 export default function MenuList(props: MenuListProps) {
   const root = useRef(null)
   const values: string[] = []

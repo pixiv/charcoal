@@ -10,6 +10,11 @@ export type MenuGroupProps = {
   children: MenuGroupChild | MenuGroupChild[]
 }
 
+/**
+ * 項目のリストを分類する見出しをつけるコンテナ要素
+ * @param props 
+ * @returns 
+ */
 export default function MenuGroup(props: MenuGroupProps) {
   return (
     <StyledLi role="presentation">

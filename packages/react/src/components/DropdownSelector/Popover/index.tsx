@@ -1,4 +1,4 @@
-import React, { RefObject, Key, useRef } from 'react'
+import React, { RefObject, useRef } from 'react'
 import { OverlayTriggerState } from 'react-stately'
 import { ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
@@ -10,9 +10,17 @@ export type PopoverProps = {
   children: ReactNode
   triggerRef: RefObject<Element>
   popoverRef?: RefObject<HTMLDivElement>
-  value?: Key
 }
 
+/**
+ * 画面の全面に動的に開くことができるコンテナ要素
+ * 外の要素をクリックしたり、内部からフォーカスを移動した場合に自動的に閉じる
+ *
+ * triggerRefの付近に画面内に収まるように表示される
+ *
+ * @param props
+ * @returns
+ */
 export default function Popover(props: PopoverProps) {
   const defaultPopoverRef = useRef<HTMLDivElement>(null)
   const finalPopoverRef =

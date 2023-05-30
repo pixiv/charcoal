@@ -4,20 +4,22 @@ import { MenuListContext } from './MenuList/MenuListContext'
 import React, { useContext } from 'react'
 import { theme } from '../../styled'
 import Icon from '../Icon'
-import { CustomJSXElement } from './ListItem'
 
-export type DropdownMenuItemProps<T extends CustomJSXElement = 'div'> =
-  MenuItemProps<T>
+export type DropdownMenuItemProps = Omit<MenuItemProps<'div'>, 'as'>
 
-export default function DropdownMenuItem<T extends CustomJSXElement>(
-  props: MenuItemProps<T>
-) {
+/**
+ * DropdownSelectorの選択肢として使うMenuItem
+ * 
+ * @param props
+ * @returns
+ */
+export default function DropdownMenuItem(props: DropdownMenuItemProps) {
   const { value: ctxValue } = useContext(MenuListContext)
   const isSelected = props.value === ctxValue
-  const { children, as, ...rest } = props
+  const { children, ...rest } = props
 
   return (
-    <MenuItem {...rest} as={as as CustomJSXElement}>
+    <MenuItem {...rest}>
       {isSelected && <Text2ColorIcon name="16/Check" />}
       <StyledSpan isSelected={isSelected}>{props.children}</StyledSpan>
     </MenuItem>
