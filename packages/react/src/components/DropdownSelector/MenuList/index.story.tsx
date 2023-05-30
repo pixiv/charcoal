@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { Story } from '../../../_lib/compat'
 import MenuList, { MenuListProps } from '.'
 import MenuItem from '../MenuItem'
-import MenuGroup from '../MenuGroup'
+import MenuItemGroup from '../MenuItemGroup'
 
 export default {
   title: 'DropdownSelector/MenuList',
@@ -45,8 +45,8 @@ export const Disabled: Story<MenuListProps> = () => {
 export const Group: Story<MenuListProps> = () => {
   return (
     <MenuList onChange={action('onChange')} value="1">
-      <MenuGroup text="Section1">{makeList(5)}</MenuGroup>
-      <MenuGroup text="Section2">{makeList(5, 5)}</MenuGroup>
+      <MenuItemGroup text="Section1">{makeList(5)}</MenuItemGroup>
+      <MenuItemGroup text="Section2">{makeList(5, 5)}</MenuItemGroup>
     </MenuList>
   )
 }

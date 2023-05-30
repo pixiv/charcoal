@@ -3,19 +3,19 @@ import styled from 'styled-components'
 import MenuItem from '../MenuItem'
 import { Divider } from '../Divider'
 
-type MenuGroupChild = React.ReactElement<typeof MenuItem | typeof Divider>
+type MenuItemGroupChild = React.ReactElement<typeof MenuItem | typeof Divider>
 
-export type MenuGroupProps = {
+export type MenuItemGroupProps = {
   text: string
-  children: MenuGroupChild | MenuGroupChild[]
+  children: MenuItemGroupChild | MenuItemGroupChild[]
 }
 
 /**
  * 項目のリストを分類する見出しをつけるコンテナ要素
- * @param props 
- * @returns 
+ * @param props
+ * @returns
  */
-export default function MenuGroup(props: MenuGroupProps) {
+export default function MenuItemGroup(props: MenuItemGroupProps) {
   return (
     <StyledLi role="presentation">
       <TextSpan>{props.text}</TextSpan>

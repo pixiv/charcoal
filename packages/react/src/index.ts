@@ -59,9 +59,9 @@ export {
   type DropdownMenuItemProps,
 } from './components/DropdownSelector/DropdownMenuItem'
 export {
-  default as MenuGroup,
-  type MenuGroupProps,
-} from './components/DropdownSelector/MenuGroup'
+  default as MenuItemGroup,
+  type MenuItemGroupProps,
+} from './components/DropdownSelector/MenuItemGroup'
 export {
   default as SegmentedControl,
   type SegmentedControlProps,

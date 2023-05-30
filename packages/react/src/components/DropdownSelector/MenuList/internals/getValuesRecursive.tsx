@@ -1,7 +1,7 @@
 import React from 'react'
 import MenuItem from '../../MenuItem'
 import { MenuListChildren } from '..'
-import MenuGroup from '../../MenuGroup'
+import MenuItemGroup from '../../MenuItemGroup'
 
 /**
  * valueというpropsを持つ子要素の値を再起的に探索して配列にする
@@ -21,7 +21,7 @@ export function getValuesRecursive(
     if (React.isValidElement(child)) {
       const props = child.props as {
         value?: never
-        children?: React.ReactElement<typeof MenuItem | typeof MenuGroup>[]
+        children?: React.ReactElement<typeof MenuItem | typeof MenuItemGroup>[]
       }
       if ('value' in props && typeof props.value === 'string') {
         const childValue = props.value

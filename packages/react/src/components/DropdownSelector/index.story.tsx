@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import DropdownSelector, { DropdownSelectorProps } from '.'
 import { Story } from '../../_lib/compat'
 import { Divider } from './Divider'
-import MenuGroup from './MenuGroup'
+import MenuItemGroup from './MenuItemGroup'
 import DropdownMenuItem from './DropdownMenuItem'
 
 export default {
@@ -137,17 +137,17 @@ export const SectionList: Story<DropdownSelectorProps> = (
         value={selected}
         label="label"
       >
-        <MenuGroup text="fruits">
+        <MenuItemGroup text="fruits">
           <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
           <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
           <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
-        </MenuGroup>
+        </MenuItemGroup>
         <Divider />
-        <MenuGroup text="vehicle">
+        <MenuItemGroup text="vehicle">
           <DropdownMenuItem value={'40'}>bicycle</DropdownMenuItem>
           <DropdownMenuItem value={'50'}>car</DropdownMenuItem>
           <DropdownMenuItem value={'60'}>train</DropdownMenuItem>
-        </MenuGroup>
+        </MenuItemGroup>
       </DropdownSelector>
     </div>
   )

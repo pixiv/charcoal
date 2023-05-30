@@ -1,7 +1,7 @@
 import {
   DropdownSelectorProps,
   DropdownMenuItem,
-  MenuGroup,
+  MenuItemGroup,
 } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
@@ -95,14 +95,14 @@ export const sections: PreviewSection<DropdownSelectorProps>[] = [
           invalid: true,
           label: 'invalid',
           children: [
-            <MenuGroup text="Group1" key={0}>
+            <MenuItemGroup text="Group1" key={0}>
               <DropdownMenuItem value="1">option1</DropdownMenuItem>
               <DropdownMenuItem value="2">option2</DropdownMenuItem>
-            </MenuGroup>,
-            <MenuGroup text="Group2" key={1}>
+            </MenuItemGroup>,
+            <MenuItemGroup text="Group2" key={1}>
               <DropdownMenuItem value="3">option1</DropdownMenuItem>
               <DropdownMenuItem value="4">option2</DropdownMenuItem>
-            </MenuGroup>,
+            </MenuItemGroup>,
           ],
         },
       },

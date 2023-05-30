@@ -4,10 +4,10 @@ import { MenuListContext } from './MenuListContext'
 import { getValuesRecursive } from './internals/getValuesRecursive'
 import MenuItem from '../MenuItem'
 import { Divider } from '../Divider'
-import MenuGroup from '../MenuGroup'
+import MenuItemGroup from '../MenuItemGroup'
 
 type MenuListChild = React.ReactElement<
-  typeof MenuItem | typeof MenuGroup | typeof Divider
+  typeof MenuItem | typeof MenuItemGroup | typeof Divider
 >
 
 export type MenuListChildren = MenuListChild | MenuListChild[]
