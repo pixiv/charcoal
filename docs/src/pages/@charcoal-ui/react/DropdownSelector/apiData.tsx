@@ -1,4 +1,7 @@
-import { DropdownSelectorProps, DropdownMenuItemProps} from '@charcoal-ui/react'
+import {
+  DropdownSelectorProps,
+  DropdownMenuItemProps,
+} from '@charcoal-ui/react'
 import { ApiTableData, TableItem } from '../_components/ApiTable'
 
 export const apiData: ApiTableData<DropdownSelectorProps, {}> & {

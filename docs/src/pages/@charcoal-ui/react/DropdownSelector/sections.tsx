@@ -1,4 +1,8 @@
-import { DropdownSelectorProps, DropdownMenuItem, MenuGroup } from '@charcoal-ui/react'
+import {
+  DropdownSelectorProps,
+  DropdownMenuItem,
+  MenuGroup,
+} from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
 const baseProps = {

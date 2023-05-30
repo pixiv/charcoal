@@ -14,17 +14,19 @@ export type ListItemProps<T extends CustomJSXElement = 'div'> = {
 
 /**
  * リストのある要素を示すコンポーネント
- * 
+ *
  * asを用いて拡張することができる
  * @example
  * ```
  * <ListItem as="a" href="#">Link</ListItem>
  * <ListItem as={NextLink} href="#">NextLink</ListItem>
  * ```
- * @param props 
- * @returns 
+ * @param props
+ * @returns
  */
-export default function ListItem<T extends CustomJSXElement = 'div'>(props: ListItemProps<T>) {
+export default function ListItem<T extends CustomJSXElement = 'div'>(
+  props: ListItemProps<T>
+) {
   const { children, ...rest } = props
   return (
     <StyledLi role="option">

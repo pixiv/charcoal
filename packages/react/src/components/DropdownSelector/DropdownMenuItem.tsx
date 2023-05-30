@@ -6,7 +6,8 @@ import { theme } from '../../styled'
 import Icon from '../Icon'
 import { CustomJSXElement } from './ListItem'
 
-export type DropdownMenuItemProps<T extends CustomJSXElement = 'div'> = MenuItemProps<T>
+export type DropdownMenuItemProps<T extends CustomJSXElement = 'div'> =
+  MenuItemProps<T>
 
 export default function DropdownMenuItem<T extends CustomJSXElement>(
   props: MenuItemProps<T>
