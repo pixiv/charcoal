@@ -70,10 +70,4 @@ export const optionValueApiData: ApiTableData<DropdownMenuItemProps, {}> = {
     type: 'boolean',
     required: false,
   },
-  as: {
-    description: '利用するコンポーネント',
-    default: 'div',
-    type: 'keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>',
-    required: false,
-  },
 }
