@@ -4,7 +4,7 @@ type MenuListContextType = {
   root?: RefObject<HTMLUListElement>
   value?: string
   values?: string[]
-  setValue?: (v: string) => void
+  setValue: (v: string) => void
 }
 
 export const MenuListContext = createContext<MenuListContextType>({

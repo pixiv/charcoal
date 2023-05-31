@@ -14,7 +14,7 @@ export function useMenuItemHandleKeyDown(
 ): [(e: React.KeyboardEvent<HTMLDivElement>) => void, () => void] {
   const { setValue, root, values } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
-    if (value !== undefined) setValue?.(value)
+    if (value !== undefined) setValue(value)
   }, [value, setValue])
 
   const hnadleKeyDown = useCallback(
