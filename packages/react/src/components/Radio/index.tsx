@@ -12,7 +12,7 @@ export type RadioProps = React.PropsWithChildren<{
 export default function Radio({
   value,
   disabled = false,
-  children
+  children,
 }: RadioProps) {
   const {
     name,
@@ -20,7 +20,7 @@ export default function Radio({
     disabled: isParentDisabled,
     readonly,
     invalid,
-    onChange
+    onChange,
   } = useContext(RadioGroupContext)
 
   warning(
@@ -85,7 +85,7 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
       theme((o) => [
         o.borderRadius('oval'),
         o.bg.surface1.hover.press,
-        invalid && o.outline.assertive
+        invalid && o.outline.assertive,
       ])};
 
     &:not(:checked) {
@@ -156,7 +156,7 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
     throw new Error(
       'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
     )
-  }
+  },
 })
 
 export function RadioGroup({
@@ -168,7 +168,7 @@ export function RadioGroup({
   disabled,
   readonly,
   invalid,
-  children
+  children,
 }: RadioGroupProps) {
   const handleChange = useCallback(
     (next: string) => {
@@ -185,7 +185,7 @@ export function RadioGroup({
         disabled: disabled ?? false,
         readonly: readonly ?? false,
         invalid: invalid ?? false,
-        onChange: handleChange
+        onChange: handleChange,
       }}
     >
       <StyledRadioGroup
