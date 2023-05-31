@@ -162,38 +162,38 @@ __metadata:
   linkType: hard
 
 "@charcoal-ui/foundation@file:../packages/foundation::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/foundation@file:../packages/foundation#../packages/foundation::hash=d957c7&locator=charcoal-web-docs%40workspace%3A."
-  checksum: 9fd3113ff75a72f850d28cccf9874385243506ef440075713eadc074a0feb3a176d310a9ea66d94029c57e8e636453c71043b2748c4d5185537bafd10507071d
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/foundation@file:../packages/foundation#../packages/foundation::hash=1cac55&locator=charcoal-web-docs%40workspace%3A."
+  checksum: 0e22c02312794a828aace7f83498b62e889246705af380a995db7f5dbbadc8d0daae90f8aa09ed017cf519995c9bd18a46a6f1d30f7206b785c06b15a1c68b28
   languageName: node
   linkType: hard
 
 "@charcoal-ui/icon-files@file:../packages/icon-files::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/icon-files@file:../packages/icon-files#../packages/icon-files::hash=046264&locator=charcoal-web-docs%40workspace%3A."
-  checksum: 7ae635a3556fc815ed165f782fbdb48485babbcf94e8bce9ab89b635f961143a38716225aa99428649be0e0478f1df6384939df21c8701c52e6f280522e47d4d
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/icon-files@file:../packages/icon-files#../packages/icon-files::hash=e2168b&locator=charcoal-web-docs%40workspace%3A."
+  checksum: adcdae91f39c47250c056d40cc9a0b300ad73f1a8327a4367df694611d6d035c3b5d35d2407298248e175ab28b15225cbec23760d70336301c3d250b4bc30820
   languageName: node
   linkType: hard
 
 "@charcoal-ui/icons@file:../packages/icons::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/icons@file:../packages/icons#../packages/icons::hash=4c3a94&locator=charcoal-web-docs%40workspace%3A."
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/icons@file:../packages/icons#../packages/icons::hash=2c585a&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
-    "@charcoal-ui/icon-files": ^2.7.0
+    "@charcoal-ui/icon-files": ^3.0.0-beta.2
     dompurify: ^2.3.6
     warning: ^4.0.3
-  checksum: cce419122636c5ab2683714f5c8f1d05756771d2fbaedc8a94e14f4f4dd9b1d409541142ba7afef8add61670b4955eae7bbb53231a3114ec7179d8cac107d8cd
+  checksum: e0306ec1d475ec3fa3cebef564e226783ef49a9f4ac9371e2cd30b3c5e2fdeb211a61e62e44bef419c274b5e2f00223736cc1112f540df98705f14df158a8a81
   languageName: node
   linkType: hard
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=4e474c&locator=charcoal-web-docs%40workspace%3A."
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=63e816&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
-    "@charcoal-ui/icons": ^2.7.0
-    "@charcoal-ui/styled": ^2.7.0
-    "@charcoal-ui/theme": ^2.7.0
-    "@charcoal-ui/utils": ^2.7.0
+    "@charcoal-ui/icons": ^3.0.0-beta.2
+    "@charcoal-ui/styled": ^3.0.0-beta.2
+    "@charcoal-ui/theme": ^3.0.0-beta.2
+    "@charcoal-ui/utils": ^3.0.0-beta.2
     "@react-aria/button": ^3.7.0
     "@react-aria/checkbox": ^3.8.0
     "@react-aria/dialog": ^3.5.0
@@ -215,43 +215,43 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: 0691454c966c4e8f59361b28e1b636f7699a7b3068ae7aa13a121c34ce45c9747739ac1a8793c96098ec29b99642d3b1a1f197695f9951cefe64727639d60fde
+  checksum: 85893534c9f9e5a9e36db52754a09d66bb3802b4aef4bd71f80c060a5276a6599036e34058a848175f1eca2cf60df5fe66a0a16f0c07cc20a4ec862f3e908e7a
   languageName: node
   linkType: hard
 
 "@charcoal-ui/styled@file:../packages/styled::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=7176df&locator=charcoal-web-docs%40workspace%3A."
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=0b9143&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
-    "@charcoal-ui/foundation": ^2.7.0
-    "@charcoal-ui/theme": ^2.7.0
-    "@charcoal-ui/utils": ^2.7.0
+    "@charcoal-ui/foundation": ^3.0.0-beta.2
+    "@charcoal-ui/theme": ^3.0.0-beta.2
+    "@charcoal-ui/utils": ^3.0.0-beta.2
     warning: ^4.0.3
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: 03f48f51eacf726ea5679adf5f0d6284e5b50832efef95ea074b26e3a75bba68e4b1a85ab3eb46d345d83fa6c2f7b30b67256ce6135c7b6127fd70fea0504961
+  checksum: 9a752b3be279dcdf8a19b92ced3ee9b90ee4cf6f1ff808d0a897b63d2825982afce08b13fbe50ecb661150ded2b626c0024f660d62ae515a01d7b02963601897
   languageName: node
   linkType: hard
 
 "@charcoal-ui/theme@file:../packages/theme::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/theme@file:../packages/theme#../packages/theme::hash=5dfd90&locator=charcoal-web-docs%40workspace%3A."
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/theme@file:../packages/theme#../packages/theme::hash=448b36&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
-    "@charcoal-ui/foundation": ^2.7.0
-    "@charcoal-ui/utils": ^2.7.0
+    "@charcoal-ui/foundation": ^3.0.0-beta.2
+    "@charcoal-ui/utils": ^3.0.0-beta.2
     polished: ^4.1.4
-  checksum: 5c279ccfbc555651fcc7c485eebc15917573e8fb051176b269f25b76dd6abfb8c1d6aa9a1569762791de06420838c06ebc1d6690adadf99379cfb08e0b2b9bfa
+  checksum: e8750ed8ca6f6a4e20f85e01468e43d847fc4c6d90554137bf5352fbc4a89cdb60ffe089146dcf012b5a20577a4fe812ac33644ff7c59b0103dbf85f44e20ee0
   languageName: node
   linkType: hard
 
 "@charcoal-ui/utils@file:../packages/utils::locator=charcoal-web-docs%40workspace%3A.":
-  version: 2.7.0
-  resolution: "@charcoal-ui/utils@file:../packages/utils#../packages/utils::hash=494bf5&locator=charcoal-web-docs%40workspace%3A."
+  version: 3.0.0-beta.2
+  resolution: "@charcoal-ui/utils@file:../packages/utils#../packages/utils::hash=1151e0&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
-    "@charcoal-ui/foundation": ^2.7.0
+    "@charcoal-ui/foundation": ^3.0.0-beta.2
     polished: ^4.1.4
-  checksum: 9e4b16d41a44d6e6e8163d6e830a6d2792b131b1c6bea0068ec0a2283587ac0819d97ff2d4d0c0925ddf941879271bd1db4d3739cd2036d6f00d0ebbed354d99
+  checksum: 2602c7dad04c19d30303b2bd4c969bc44a5099a6db27cb7f22c71b60c1fc497fe45c468c61989afcaa0d81917a14188277383df382527c28de6f0139474a1645
   languageName: node
   linkType: hard
 
