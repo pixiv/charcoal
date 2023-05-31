@@ -12,6 +12,8 @@ export type PopoverProps = {
   popoverRef?: RefObject<HTMLDivElement>
 }
 
+const _empty = () => null
+
 /**
  * 画面の全面に動的に開くことができるコンテナ要素
  * 外の要素をクリックしたり、内部からフォーカスを移動した場合に自動的に閉じる
@@ -22,7 +24,6 @@ export default function Popover(props: PopoverProps) {
   const defaultPopoverRef = useRef<HTMLDivElement>(null)
   const finalPopoverRef =
     props.popoverRef === undefined ? defaultPopoverRef : props.popoverRef
-  const _empty = () => null
   const { popoverProps, underlayProps } = usePopover(
     {
       triggerRef: props.triggerRef,
