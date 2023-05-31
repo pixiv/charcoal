@@ -17,7 +17,7 @@ export function useMenuItemHandleKeyDown(
     if (value !== undefined) setValue(value)
   }, [value, setValue])
 
-  const hnadleKeyDown = useCallback(
+  const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
       if (e.key === 'Enter') {
         setContextValue()
@@ -51,5 +51,5 @@ export function useMenuItemHandleKeyDown(
     },
     [setContextValue, value, root, values]
   )
-  return [hnadleKeyDown, setContextValue]
+  return [handleKeyDown, setContextValue]
 }
