@@ -186,3 +186,7 @@ export function onEffectPseudo(effect: EffectType, css: CSSObject) {
     ? { [disabledSelector]: css }
     : unreachable(effect)
 }
+
+export function withPrefixes(...parts: string[]) {
+  return parts.join('-')
+}
