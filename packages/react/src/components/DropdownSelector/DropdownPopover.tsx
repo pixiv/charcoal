@@ -9,9 +9,6 @@ type DropdownPopoverProps = PopoverProps & {
  * DropdownSelectorの選択肢をを表示するためのPopover
  * triggerRefの要素と同じ幅になる
  * 表示の際にvalueが等しいDropdownMenuItemを中央に表示する
- *
- * @param param0
- * @returns
  */
 export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
   const ref = useRef<HTMLDivElement>(null)

@@ -12,8 +12,6 @@ export type MenuItemGroupProps = {
 
 /**
  * 項目のリストを分類する見出しをつけるコンテナ要素
- * @param props
- * @returns
  */
 export default function MenuItemGroup(props: MenuItemGroupProps) {
   return (

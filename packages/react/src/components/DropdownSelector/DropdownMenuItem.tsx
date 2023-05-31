@@ -9,9 +9,6 @@ export type DropdownMenuItemProps = Omit<MenuItemProps<'div'>, 'as'>
 
 /**
  * DropdownSelectorの選択肢として使うMenuItem
- *
- * @param props
- * @returns
  */
 export default function DropdownMenuItem(props: DropdownMenuItemProps) {
   const { value: ctxValue } = useContext(MenuListContext)

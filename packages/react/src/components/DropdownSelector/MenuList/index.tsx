@@ -21,9 +21,6 @@ export type MenuListProps = {
 /**
  * 上下キーでフォーカス移動でき、エンターキーで選択できるリストの項目
  * 基本的に`<MenuItem>`, `<MenuGroup>`と合わせて使用する
- *
- * @param props
- * @returns
  */
 export default function MenuList(props: MenuListProps) {
   const root = useRef(null)

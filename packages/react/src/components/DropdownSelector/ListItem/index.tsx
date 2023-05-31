@@ -21,8 +21,6 @@ export type ListItemProps<T extends CustomJSXElement = 'div'> = {
  * <ListItem as="a" href="#">Link</ListItem>
  * <ListItem as={NextLink} href="#">NextLink</ListItem>
  * ```
- * @param props
- * @returns
  */
 export default function ListItem<T extends CustomJSXElement = 'div'>(
   props: ListItemProps<T>

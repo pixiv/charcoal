@@ -10,9 +10,6 @@ export type MenuItemProps<T extends CustomJSXElement = never> = {
 /**
  * 上下キーでフォーカス移動でき、エンターキーで選択できるリストの項目
  * 基本的に`<MenuList>`, `<MenuGroup>`と合わせて使用する
- *
- * @param props
- * @returns
  */
 export default function MenuItem<T extends CustomJSXElement>(
   props: MenuItemProps<T>
