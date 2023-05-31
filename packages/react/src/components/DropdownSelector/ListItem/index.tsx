@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { ItemDivCustom } from './internals/ItemDivCustom'
+import { theme } from '../../../styled'
 
 export type CustomJSXElement =
   | keyof JSX.IntrinsicElements
@@ -28,13 +28,33 @@ export default function ListItem<T extends CustomJSXElement = 'div'>(
   const { children, ...rest } = props
   return (
     <StyledLi role="option">
-      <ItemDivCustom {...rest} as={props.as}>
+      <ItemDiv {...rest}>
         {props.children}
-      </ItemDivCustom>
+      </ItemDiv>
     </StyledLi>
   )
 }
 
 const StyledLi = styled.li`
   list-style: none;
+`
+
+const ItemDiv = styled.div`
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  cursor: pointer;
+  outline: none;
+
+  ${theme((o) => [o.padding.horizontal(16), o.disabled])}
+
+  &[aria-disabled="true"] {
+    cursor: default;
+  }
+
+  :hover,
+  :focus,
+  :focus-within {
+    ${theme((o) => [o.bg.surface3])}
+  }
 `
