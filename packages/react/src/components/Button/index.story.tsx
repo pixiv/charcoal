@@ -58,7 +58,7 @@ Small.args = {
 
 export const Fixed: Story<ButtonProps> = DefaultStory.bind({})
 Fixed.args = {
-  fixed: true,
+  fullWidth: true,
 }
 
 export const Disabled: Story<ButtonProps> = DefaultStory.bind({})
@@ -121,10 +121,10 @@ const LayoutExampleStory = (args: ButtonProps) => (
         gap: 8px;
       `}
     >
-      <Button {...args} variant="Primary" fixed>
+      <Button {...args} variant="Primary" fullWidth>
         Submit
       </Button>
-      <Button {...args} variant="Default" fixed>
+      <Button {...args} variant="Default" fullWidth>
         Cancel
       </Button>
     </div>
@@ -156,10 +156,10 @@ const LayoutExampleStory = (args: ButtonProps) => (
         }
       `}
     >
-      <Button {...args} variant="Primary" fixed>
+      <Button {...args} variant="Primary" fullWidth>
         Submit
       </Button>
-      <Button {...args} variant="Default" fixed>
+      <Button {...args} variant="Default" fullWidth>
         Cancel
       </Button>
     </div>
@@ -174,7 +174,7 @@ const LayoutExampleStory = (args: ButtonProps) => (
         }
       `}
     >
-      <Button {...args} variant="Primary" fixed>
+      <Button {...args} variant="Primary" fullWidth>
         すべて見る
       </Button>
       <Button {...args} variant="Default">

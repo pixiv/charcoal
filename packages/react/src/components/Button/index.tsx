@@ -19,7 +19,7 @@ interface StyledProps {
   /**
    * 幅を最大まで広げて描画
    */
-  fixed: boolean
+  fullWidth: boolean
 }
 
 export type ButtonProps = Partial<StyledProps> & ClickableProps
@@ -29,7 +29,7 @@ const Button = React.forwardRef<ClickableElement, ButtonProps>(function Button(
     children,
     variant = 'Default',
     size = 'M',
-    fixed = false,
+    fullWidth: fixed = false,
     disabled = false,
     ...rest
   },
@@ -41,7 +41,7 @@ const Button = React.forwardRef<ClickableElement, ButtonProps>(function Button(
       disabled={disabled}
       variant={variant}
       size={size}
-      fixed={fixed}
+      fullWidth={fixed}
       ref={ref}
     >
       {children}
@@ -54,11 +54,11 @@ const StyledButton = styled(Clickable)
   .withConfig<StyledProps>({
     shouldForwardProp(prop) {
       // fixed は <button> 要素に渡ってはいけない
-      return prop !== 'fixed'
+      return prop !== 'fullWidth'
     },
   })
   .attrs<StyledProps, ReturnType<typeof styledProps>>(styledProps)`
-  width: ${(p) => (p.fixed ? 'stretch' : 'min-content')};
+  width: ${(p) => (p.fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
   align-items: center;
   justify-content: center;

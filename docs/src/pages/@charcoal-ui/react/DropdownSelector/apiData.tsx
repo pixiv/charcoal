@@ -1,79 +1,73 @@
-import { DropdownSelectorProps } from '@charcoal-ui/react/dist/components/DropdownSelector'
+import {
+  DropdownSelectorProps,
+  DropdownMenuItemProps,
+} from '@charcoal-ui/react'
 import { ApiTableData, TableItem } from '../_components/ApiTable'
 
-export const apiData: Omit<
-  ApiTableData<DropdownSelectorProps, HTMLInputElement>,
-  'type' | 'checked' | 'name' | 'readonly'
-> = {
-  assertiveText: {
+export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
+  onChange: TableItem
+} = {
+  assistiveText: {
     description: '下に表示するヒントテキスト',
-    type: 'string',
-  },
-  autoComplete: {
-    description: 'selectタグに付けるautoComplete属性',
     type: 'string',
   },
   disabled: {
     default: 'false',
-    description: '入力の無効化',
+    description: '無効化',
     type: 'boolean',
-  },
-  disabledKeys: {
-    description: '無効にするアイテムのキー',
-    type: 'Iterable<Key>',
   },
   invalid: {
     default: 'false',
-    description: '不正な入力化',
+    description: '入力の不正化',
     type: 'boolean',
   },
   label: {
-    description: '上に表示されるラベル',
+    description: 'ラベル',
     required: true,
     type: 'string',
   },
-  items: {
-    description: '（非推奨）',
-    type: '',
-  },
-  mode: {
-    default: '',
-    description: '（非推奨）',
-    type: '"default" | "separator"',
-  },
-  onOpenChange: {
-    default: '',
-    description: '（非推奨）',
-    type: '() => void',
-  },
-  open: {
-    default: '',
-    description: '（非推奨）',
-    type: 'boolean',
-  },
   required: {
-    default: '',
+    default: 'false',
     description: '入力の必須化',
     type: 'boolean',
   },
   requiredText: {
-    default: '',
-    description: '必須を示すテキスト、showLabelがtrueなら表示される',
+    default: '"*必須"',
+    description: '必須であることを示すテキスト',
     type: 'string',
   },
   showLabel: {
-    default: '',
-    description: 'ラベルを表示',
-    type: 'boolean',
+    description:
+      'trueであればlabel,subLabelを表示する requiredがtrueであればrequiredTextも表示する',
+    type: 'string',
   },
   subLabel: {
-    default: '',
-    description: 'サブラベル、showLabel==trueなら表示される',
+    description: '補助的な内容を示すラベル',
     type: 'string',
   },
   value: {
     default: '',
-    description: '選択されている値',
-    type: 'Key',
+    description: '選択中の選択肢の値',
+    required: true,
+    type: 'string',
+  },
+  onChange: {
+    default: '',
+    description: '選択肢が選択された時に呼び出されるイベント',
+    required: true,
+    type: '(value: string) => void',
+  },
+}
+
+export const optionValueApiData: ApiTableData<DropdownMenuItemProps, {}> = {
+  value: {
+    description: '選択肢の値',
+    type: 'string',
+    required: false,
+  },
+  disabled: {
+    description: '選択の無効化',
+    type: 'boolean',
+    required: false,
   },
 }
