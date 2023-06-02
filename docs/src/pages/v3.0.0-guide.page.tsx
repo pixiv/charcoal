@@ -23,6 +23,9 @@ export default function V2toV3GuidePage() {
       </h3>
       <h4>Button</h4>
       <p>幅を最大化するオプション fixed を fullWidth に変更しました。</p>
+      <p>
+        toとComponentAbstractionを用いてaタグを利用する方法から、asによる指定に変更しました。これにより、Next.jsのLinkやstyeld-componentsでスタイルが適用されたリンクを柔軟に使用できるようになりました。
+      </p>
       <h4>DropdownSelector</h4>
       <p>
         子要素の使用方法を変更しました。子要素は DropdownSelectorOption から

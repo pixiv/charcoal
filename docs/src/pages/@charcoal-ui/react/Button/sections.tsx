@@ -2,8 +2,14 @@ import { ButtonProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 import { sizies } from './sizies'
 import { variants } from './variants'
+import Link from 'next/link'
+import styled from 'styled-components'
 
-export const sections: PreviewSection<ButtonProps>[] = [
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`
+
+export const sections: PreviewSection<ButtonProps<any>>[] = [
   {
     title: 'variant',
     previewMetas: variants.map((v) => ({
@@ -41,5 +47,31 @@ export const sections: PreviewSection<ButtonProps>[] = [
       },
       children: variant,
     })),
+  },
+  {
+    title: 'as',
+    previewMetas: [
+      {
+        props: {
+          as: 'a',
+          href: '/@charcoal-ui/react/Button',
+        },
+        children: 'normal link',
+      },
+      {
+        props: {
+          as: Link,
+          href: '/@charcoal-ui/react/Button',
+        },
+        children: 'Next.js Link',
+      },
+      {
+        props: {
+          as: StyledLink,
+          href: '/@charcoal-ui/react/Button',
+        },
+        children: 'Styled Next.js Link',
+      },
+    ],
   },
 ]

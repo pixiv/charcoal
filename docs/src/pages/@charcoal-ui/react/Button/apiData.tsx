@@ -28,4 +28,9 @@ export const apiData: Omit<
     type: toEnum(sizies),
     default: '"M"',
   },
+  as: {
+    description: 'buttonとして使うコンポーネント',
+    type: `keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>`,
+    default: 'button',
+  },
 }
