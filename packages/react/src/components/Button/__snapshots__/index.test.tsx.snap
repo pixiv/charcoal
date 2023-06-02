@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic <Button>Hello</Button> 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 999999px;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  color: var(--charcoal-text2-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  color: var(--charcoal-text2-press);
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled=false]:focus,
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c1[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<button
+  className="c0 c1"
+  disabled={false}
+  height={40}
+  size="M"
+>
+  Hello
+</button>
+`;
+
+exports[`Link <Button to="#">Hello</Button> 1`] = `
+.c0 {
+  color: inherit;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0 .text {
+  top: calc(1em + 2em);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 999999px;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  color: var(--charcoal-text2-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  color: var(--charcoal-text2-press);
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled=false]:focus,
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c1[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<a
+  aria-disabled={false}
+  background="surface3"
+  className="c0 c1"
+  font="text2"
+  height={40}
+  href="#"
+  padding={24}
+  size="M"
+  theme={
+    Object {
+      "border": Object {
+        "default": Object {
+          "color": "rgba(0,0,0,0.08)",
+        },
+      },
+      "borderRadius": Object {
+        "16": 16,
+        "24": 24,
+        "4": 4,
+        "8": 8,
+        "none": 0,
+        "oval": 999999,
+      },
+      "breakpoint": Object {
+        "screen1": 744,
+        "screen2": 952,
+        "screen3": 1160,
+        "screen4": 1368,
+      },
+      "color": Object {
+        "assertive": "#ff2b00",
+        "background1": "#ffffff",
+        "background2": "#f5f5f5",
+        "border": "rgba(0,0,0,0.08)",
+        "brand": "#0096fa",
+        "icon6": "rgba(255,255,255,0.28)",
+        "link1": "#3d7699",
+        "link2": "rgba(255,255,255,0.36)",
+        "success": "#b1cc29",
+        "surface1": "#ffffff",
+        "surface10": "rgba(0,0,0,0.16)",
+        "surface2": "rgba(0,0,0,0.02)",
+        "surface3": "rgba(0,0,0,0.04)",
+        "surface4": "rgba(0,0,0,0.32)",
+        "surface6": "rgba(0,0,0,0.88)",
+        "surface7": "rgba(0,0,0,0.02)",
+        "surface8": "rgba(0,0,0,0.88)",
+        "surface9": "#ffffff",
+        "text1": "#1f1f1f",
+        "text2": "#474747",
+        "text3": "#858585",
+        "text4": "#adadad",
+        "text5": "#ffffff",
+        "transparent": "rgba(0,0,0,0)",
+        "updatedItem": "rgba(0,150,250,0.04)",
+        "warning": "#ffaf0f",
+      },
+      "effect": Object {
+        "hover": Object {
+          "color": "rgba(0,0,0,0.04)",
+          "type": "alpha",
+        },
+        "press": Object {
+          "color": "rgba(0,0,0,0.16)",
+          "type": "alpha",
+        },
+      },
+      "elementEffect": Object {
+        "disabled": Object {
+          "opacity": 0.32,
+          "type": "opacity",
+        },
+      },
+      "gradientColor": Object {
+        "callToAction": Array [
+          Object {
+            "color": "#d1ff1a",
+            "ratio": 0,
+          },
+          Object {
+            "color": "#1ad1ff",
+            "ratio": 100,
+          },
+        ],
+        "surface5": Array [
+          Object {
+            "color": "rgba(0,0,0,0.32)",
+            "ratio": 0,
+          },
+          Object {
+            "color": "rgba(0,0,0,0)",
+            "ratio": 100,
+          },
+        ],
+      },
+      "grid": Object {
+        "unit": Object {
+          "column": 80,
+          "gutter": 24,
+        },
+      },
+      "outline": Object {
+        "assertive": Object {
+          "color": "rgba(255,43,0,0.32)",
+          "weight": 4,
+        },
+        "default": Object {
+          "color": "rgba(0,150,250,0.32)",
+          "weight": 4,
+        },
+      },
+      "spacing": Object {
+        "0": 0,
+        "104": 104,
+        "16": 16,
+        "168": 168,
+        "24": 24,
+        "272": 272,
+        "4": 4,
+        "40": 40,
+        "440": 440,
+        "64": 64,
+        "8": 8,
+      },
+      "transition": Object {
+        "default": Object {
+          "duration": 0.2,
+        },
+      },
+      "typography": Object {
+        "size": Object {
+          "12": Object {
+            "fontSize": 12,
+            "lineHeight": 20,
+          },
+          "14": Object {
+            "fontSize": 14,
+            "lineHeight": 22,
+          },
+          "16": Object {
+            "fontSize": 16,
+            "lineHeight": 24,
+          },
+          "20": Object {
+            "fontSize": 20,
+            "lineHeight": 28,
+          },
+          "32": Object {
+            "fontSize": 32,
+            "lineHeight": 40,
+          },
+        },
+      },
+    }
+  }
+  variant="Default"
+>
+  Hello
+</a>
+`;
