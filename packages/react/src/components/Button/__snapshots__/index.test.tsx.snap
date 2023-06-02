@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic <Button>Hello</Button> 1`] = `
+.c0 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 999999px;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c0:hover:not(:disabled):not([aria-disabled]),
+.c0:hover[aria-disabled=false] {
+  color: var(--charcoal-text2-hover);
+}
+
+.c0:active:not(:disabled):not([aria-disabled]),
+.c0:active[aria-disabled=false] {
+  color: var(--charcoal-text2-press);
+}
+
+.c0:hover:not(:disabled):not([aria-disabled]),
+.c0:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c0:active:not(:disabled):not([aria-disabled]),
+.c0:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled=false]:focus,
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c0[aria-disabled=false]:focus:not(:focus-visible),
+.c0:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c0[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<button
+  className="c0"
+>
+  Hello
+</button>
+`;
+
+exports[`Link <Button to="#">Hello</Button> 1`] = `
+.c0 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 999999px;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c0:hover:not(:disabled):not([aria-disabled]),
+.c0:hover[aria-disabled=false] {
+  color: var(--charcoal-text2-hover);
+}
+
+.c0:active:not(:disabled):not([aria-disabled]),
+.c0:active[aria-disabled=false] {
+  color: var(--charcoal-text2-press);
+}
+
+.c0:hover:not(:disabled):not([aria-disabled]),
+.c0:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c0:active:not(:disabled):not([aria-disabled]),
+.c0:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled=false]:focus,
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c0[aria-disabled=false]:focus:not(:focus-visible),
+.c0:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c0[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<a
+  className="c0"
+  href="#"
+>
+  Hello
+</a>
+`;
+
+exports[`StyledLink StyledLinkをasに渡してスタイルが適応されるか 1`] = `
+.c1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 999999px;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  color: var(--charcoal-text2-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  color: var(--charcoal-text2-press);
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled=false]:focus,
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c1[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0 {
+  color: red;
+}
+
+<a
+  className="c0 c1"
+  href="#"
+>
+  Hello
+</a>
+`;

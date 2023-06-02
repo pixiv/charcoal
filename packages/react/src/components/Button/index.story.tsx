@@ -66,9 +66,15 @@ Disabled.args = {
   disabled: true,
 }
 
-export const Link: Story<ButtonProps> = DefaultStory.bind({})
-Link.args = {
-  to: '#',
+export const Link: Story<ButtonProps<'a'>> = ({
+  as,
+  ...props
+}: ButtonProps<'a'>) => {
+  return (
+    <Button {...props} as="a" href="#">
+      href=#
+    </Button>
+  )
 }
 
 const NihongoStory = (args: ButtonProps) => (

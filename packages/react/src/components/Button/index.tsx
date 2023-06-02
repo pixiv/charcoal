@@ -1,64 +1,107 @@
-import React from 'react'
+import React, { ReactNode, Ref } from 'react'
 import styled from 'styled-components'
 import { unreachable } from '../../_lib'
 import { theme } from '../../styled'
-import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
+import { Spacing, ThemeColor } from '@charcoal-ui/theme'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 type Size = 'S' | 'M'
 
-interface StyledProps {
+type CustomJSXElement =
+  | keyof JSX.IntrinsicElements
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | React.JSXElementConstructor<any>
+
+export type ButtonProps<T extends CustomJSXElement = 'button'> = {
   /**
    * ボタンのスタイル
    */
-  variant: Variant
+  variant?: Variant
   /**
    * ボタンのサイズ
    */
-  size: Size
+  size?: Size
   /**
    * 幅を最大まで広げて描画
    */
-  fullWidth: boolean
-}
+  fullWidth?: boolean
+  as?: T
+  children?: ReactNode
+} & Omit<React.ComponentProps<T>, 'children'>
 
-export type ButtonProps = Partial<StyledProps> & ClickableProps
-
-const Button = React.forwardRef<ClickableElement, ButtonProps>(function Button(
+function Button<T extends CustomJSXElement>(
   {
     children,
     variant = 'Default',
     size = 'M',
-    fullWidth: fixed = false,
-    disabled = false,
+    fullWidth = false,
     ...rest
-  },
-  ref
+  }: ButtonProps<T>,
+  ref: Ref<HTMLButtonElement>
 ) {
+  const colors = variantToProps(variant)
   return (
     <StyledButton
       {...rest}
-      disabled={disabled}
-      variant={variant}
-      size={size}
-      fullWidth={fixed}
+      $height={size === 'M' ? 40 : 32}
+      $padding={size === 'M' ? 24 : 16}
+      $font={colors.font}
+      $background={colors.background}
+      $fullWidth={fullWidth}
       ref={ref}
     >
       {children}
     </StyledButton>
   )
-})
-export default Button
+}
+const ForwardedComponent = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  Button
+) as typeof Button
 
-const StyledButton = styled(Clickable)
-  .withConfig<StyledProps>({
-    shouldForwardProp(prop) {
-      // fixed は <button> 要素に渡ってはいけない
-      return prop !== 'fullWidth'
-    },
-  })
-  .attrs<StyledProps, ReturnType<typeof styledProps>>(styledProps)`
-  width: ${(p) => (p.fullWidth ? 'stretch' : 'min-content')};
+export default ForwardedComponent
+
+type StyledButtonProps = {
+  $fullWidth: boolean
+  $height: number
+  $font: keyof ThemeColor
+  $background: keyof ThemeColor
+  $padding: keyof Spacing
+}
+
+const StyledButton = styled.button<StyledButtonProps>`
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Change the font styles in all browsers. */
+  font: inherit;
+
+  /* Remove the margin in Firefox and Safari. */
+  margin: 0;
+
+  /* Show the overflow in Edge. */
+  overflow: visible;
+
+  /* Remove the inheritance of text transform in Firefox. */
+  text-transform: none;
+
+  /* Remove the inner border and padding in Firefox. */
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
   align-items: center;
   justify-content: center;
@@ -68,26 +111,17 @@ const StyledButton = styled(Clickable)
 
   ${(p) =>
     theme((o) => [
-      o.font[p.font].hover.press,
-      o.bg[p.background].hover.press,
+      o.font[p.$font].hover.press,
+      o.bg[p.$background].hover.press,
       o.typography(14).bold.preserveHalfLeading,
-      o.padding.horizontal(p.padding),
+      o.padding.horizontal(p.$padding),
       o.disabled,
       o.borderRadius('oval'),
       o.outline.default.focus,
     ])}
 
-  /* よく考えたらheight=32って定義が存在しないな... */
-  height: ${(p) => p.height}px;
+  height: ${(p) => p.$height}px;
 `
-
-function styledProps(props: StyledProps) {
-  return {
-    ...props,
-    ...variantToProps(props.variant),
-    ...sizeToProps(props.size),
-  }
-}
 
 function variantToProps(variant: Variant) {
   switch (variant) {
@@ -103,20 +137,5 @@ function variantToProps(variant: Variant) {
       return { font: 'text5', background: 'assertive' } as const
     default:
       return unreachable(variant)
-  }
-}
-
-function sizeToProps(size: Size) {
-  switch (size) {
-    case 'S':
-      return {
-        height: 32,
-        padding: 16,
-      } as const
-    case 'M':
-      return {
-        height: 40,
-        padding: 24,
-      } as const
   }
 }
