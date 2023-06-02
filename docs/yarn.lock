@@ -188,7 +188,7 @@ __metadata:
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
   version: 3.0.0-beta.2
-  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=63e816&locator=charcoal-web-docs%40workspace%3A."
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=0e5825&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/icons": ^3.0.0-beta.2
     "@charcoal-ui/styled": ^3.0.0-beta.2
@@ -215,7 +215,7 @@ __metadata:
   peerDependencies:
     react: ">=16.13.1"
     styled-components: ">=5.1.1"
-  checksum: 85893534c9f9e5a9e36db52754a09d66bb3802b4aef4bd71f80c060a5276a6599036e34058a848175f1eca2cf60df5fe66a0a16f0c07cc20a4ec862f3e908e7a
+  checksum: 77c0913e204a337b8f2f35bcca9df6b87ab710551154292b224f9ca0d0c473a1da7b9a761dcc3b112cb56bf39d399943dc956b2eebe127100b5bd6cc7a913965
   languageName: node
   linkType: hard
 

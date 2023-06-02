@@ -23,15 +23,9 @@ function Preview(meta: PreviewMeta<RadioGroupProps>, i: number, j: number) {
       onChange={setValue}
       value={value}
     >
-      <Radio key={'value1'} value="value1">
-        value1
-      </Radio>
-      <Radio key={'value2'} value="value2">
-        value2
-      </Radio>
-      <Radio key={'value3'} value="value3">
-        value3
-      </Radio>
+      <Radio value="value1">value1</Radio>
+      <Radio value="value2">value2</Radio>
+      <Radio value="value3">value3</Radio>
     </StyledRadioGroup>
   )
 }
