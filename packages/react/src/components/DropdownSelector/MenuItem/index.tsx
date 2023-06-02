@@ -1,5 +1,6 @@
 import React from 'react'
-import ListItem, { CustomJSXElement, ListItemProps } from '../ListItem'
+import ListItem, { ListItemProps } from '../ListItem'
+import { CustomJSXElement } from '../../../types/CustomJSXElement'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
 export type MenuItemProps<T extends CustomJSXElement = never> = {

@@ -3,14 +3,10 @@ import styled from 'styled-components'
 import { unreachable } from '../../_lib'
 import { theme } from '../../styled'
 import { Spacing, ThemeColor } from '@charcoal-ui/theme'
+import { CustomJSXElement } from '../../types/CustomJSXElement'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 type Size = 'S' | 'M'
-
-type CustomJSXElement =
-  | keyof JSX.IntrinsicElements
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  | React.JSXElementConstructor<any>
 
 export type ButtonProps<T extends CustomJSXElement = 'button'> = {
   /**

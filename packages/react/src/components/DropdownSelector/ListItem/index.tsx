@@ -1,11 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../styled'
-
-export type CustomJSXElement =
-  | keyof JSX.IntrinsicElements
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  | React.JSXElementConstructor<any>
+import { CustomJSXElement } from '../../../types/CustomJSXElement'
 
 export type ListItemProps<T extends CustomJSXElement = 'div'> = {
   children?: ReactNode
