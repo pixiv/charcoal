@@ -4,10 +4,8 @@ import { toEnum } from '../_utils/toEnum'
 import { sizies } from './sizies'
 import { variants } from './variants'
 
-export const apiData: Omit<
-  ApiTableData<ButtonProps, HTMLButtonElement>,
-  'type'
-> = {
+// TODO: remove Partial
+export const apiData: Partial<ApiTableData<ButtonProps, HTMLButtonElement>> = {
   variant: {
     description: '色の種類',
     type: toEnum(variants),
