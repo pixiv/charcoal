@@ -2,6 +2,24 @@
 
 exports[`Basic <Button>Hello</Button> 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -31,6 +49,15 @@ exports[`Basic <Button>Hello</Button> 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c0:hover:not(:disabled):not([aria-disabled]),
@@ -86,8 +113,26 @@ exports[`Basic <Button>Hello</Button> 1`] = `
 </button>
 `;
 
-exports[`Link <Button to="#">Hello</Button> 1`] = `
+exports[`Link as="a"でaタグが使えるか 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -117,6 +162,15 @@ exports[`Link <Button to="#">Hello</Button> 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c0:hover:not(:disabled):not([aria-disabled]),
@@ -173,8 +227,26 @@ exports[`Link <Button to="#">Hello</Button> 1`] = `
 </a>
 `;
 
-exports[`StyledLink StyledLinkをasに渡してスタイルが適応されるか 1`] = `
+exports[`StyledLink as={StyledLink}でスタイルが上書きされたaタグが使えるか 1`] = `
 .c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -204,6 +276,15 @@ exports[`StyledLink StyledLinkをasに渡してスタイルが適応されるか
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),

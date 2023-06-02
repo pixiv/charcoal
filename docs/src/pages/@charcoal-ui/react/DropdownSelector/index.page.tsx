@@ -6,7 +6,7 @@ import { ExampleDropdownSelector } from './ExampleDropdownSelector'
 import { getSrcFile } from '../_utils/getSrcFile'
 import { NextPage } from 'next'
 import { InlineCode } from '../../../../components/InlineCode'
-import { DropdownSelector, OptionItem } from '@charcoal-ui/react'
+import { DropdownSelector, DropdownMenuItem } from '@charcoal-ui/react'
 import { useState } from 'react'
 import { ContentRoot } from '../../../../components/ContentRoot'
 import { ApiTable } from '../_components/ApiTable'
@@ -20,16 +20,25 @@ function Preview(
 ) {
   const [selected, setSelected] = useState<string>('2')
 
+  const children =
+    'length' in meta.props.children
+      ? meta.props.children.length > 0
+        ? meta.props.children
+        : [...Array(3)].map((_, i) => (
+            <DropdownMenuItem key={i} value={`${i + 1}`}>
+              option{i + 1}
+            </DropdownMenuItem>
+          ))
+      : []
+
   return (
     <div key={`${i}${j}`} style={{ width: '300px' }}>
       <DropdownSelector
         {...meta.props}
-        onChange={(v) => setSelected(v)}
+        onChange={(v: string) => setSelected(v)}
         value={selected}
       >
-        <OptionItem value="1">option1</OptionItem>
-        <OptionItem value="2">option2</OptionItem>
-        <OptionItem value="3">option3</OptionItem>
+        {children}
       </DropdownSelector>
     </div>
   )
@@ -41,7 +50,7 @@ const DropdownSelectorPage: NextPage<{ src: string }> = (props) => {
       <h1>DropdownSelector</h1>
       <p>ドロップダウン形式の選択コンポーネント</p>
       <p>
-        <InlineCode>OptionItem</InlineCode>
+        <InlineCode>DropdownMenuItem</InlineCode>
         と合わせて使用してください。
       </p>
 
@@ -55,7 +64,7 @@ const DropdownSelectorPage: NextPage<{ src: string }> = (props) => {
 
       <h2>Props</h2>
       <ApiTable data={apiData} />
-      <h2>Props (OptionItem)</h2>
+      <h2>Props (DropdownMenuItem)</h2>
       <ApiTable data={optionValueApiData} />
     </ContentRoot>
   )

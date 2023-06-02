@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
 import DropdownSelector, { DropdownSelectorProps } from '.'
 import { Story } from '../../_lib/compat'
-import { OptionItem } from './OptionItem'
+import { Divider } from './Divider'
+import MenuItemGroup from './MenuItemGroup'
+import DropdownMenuItem from './DropdownMenuItem'
 
 export default {
   title: 'DropdownSelector',
   component: DropdownSelector,
 }
-
-type Props = Omit<
-  DropdownSelectorProps,
-  'subLabel' | 'children' | 'onOpenChange'
->
 
 const baseProps: DropdownSelectorProps = {
   label: 'Label',
@@ -20,9 +17,12 @@ const baseProps: DropdownSelectorProps = {
   onChange: () => {
     //
   },
+  children: <DropdownMenuItem value="item" />,
 }
 
-export const Playground: Story<Props> = (props: DropdownSelectorProps) => {
+export const Playground: Story<DropdownSelectorProps> = (
+  props: DropdownSelectorProps
+) => {
   const [selected, setSelected] = useState('50')
   return (
     <div style={{ width: 288 }}>
@@ -36,9 +36,9 @@ export const Playground: Story<Props> = (props: DropdownSelectorProps) => {
       >
         {[...(Array(100) as undefined[])].map((_, i) => {
           return (
-            <OptionItem key={i} value={i.toString()}>
+            <DropdownMenuItem key={i} value={i.toString()}>
               {i}
-            </OptionItem>
+            </DropdownMenuItem>
           )
         })}
       </DropdownSelector>
@@ -48,7 +48,9 @@ export const Playground: Story<Props> = (props: DropdownSelectorProps) => {
 
 Playground.args = { ...baseProps }
 
-export const Basic: Story<Props> = (props: DropdownSelectorProps) => {
+export const Basic: Story<DropdownSelectorProps> = (
+  props: DropdownSelectorProps
+) => {
   const [selected, setSelected] = useState('')
   return (
     <div style={{ width: 288 }}>
@@ -60,9 +62,9 @@ export const Basic: Story<Props> = (props: DropdownSelectorProps) => {
         value={selected}
         label="label"
       >
-        <OptionItem value={'10'}>Apple</OptionItem>
-        <OptionItem value={'20'}>Banana</OptionItem>
-        <OptionItem value={'30'}>Orange</OptionItem>
+        <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+        <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+        <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
       </DropdownSelector>
     </div>
   )
@@ -70,7 +72,9 @@ export const Basic: Story<Props> = (props: DropdownSelectorProps) => {
 
 Basic.args = { ...baseProps }
 
-export const CustomChildren: Story<Props> = (props: DropdownSelectorProps) => {
+export const CustomChildren: Story<DropdownSelectorProps> = (
+  props: DropdownSelectorProps
+) => {
   const [selected, setSelected] = useState('10')
   return (
     <div style={{ width: 288 }}>
@@ -82,7 +86,7 @@ export const CustomChildren: Story<Props> = (props: DropdownSelectorProps) => {
         value={selected}
         label="label"
       >
-        <OptionItem value={'10'}>
+        <DropdownMenuItem value={'10'}>
           <div
             style={{
               color: 'pink',
@@ -91,8 +95,8 @@ export const CustomChildren: Story<Props> = (props: DropdownSelectorProps) => {
           >
             Apple
           </div>
-        </OptionItem>
-        <OptionItem value={'20'}>
+        </DropdownMenuItem>
+        <DropdownMenuItem value={'20'}>
           <div
             style={{
               color: 'yellowgreen',
@@ -101,8 +105,8 @@ export const CustomChildren: Story<Props> = (props: DropdownSelectorProps) => {
           >
             Banana
           </div>
-        </OptionItem>
-        <OptionItem value={'30'}>
+        </DropdownMenuItem>
+        <DropdownMenuItem value={'30'}>
           <div
             style={{
               color: 'orange',
@@ -111,10 +115,41 @@ export const CustomChildren: Story<Props> = (props: DropdownSelectorProps) => {
           >
             Orange
           </div>
-        </OptionItem>
+        </DropdownMenuItem>
       </DropdownSelector>
     </div>
   )
 }
 
 CustomChildren.args = { ...baseProps }
+
+export const SectionList: Story<DropdownSelectorProps> = (
+  props: DropdownSelectorProps
+) => {
+  const [selected, setSelected] = useState('10')
+  return (
+    <div style={{ width: 288 }}>
+      <DropdownSelector
+        {...props}
+        onChange={(value) => {
+          setSelected(value)
+        }}
+        value={selected}
+        label="label"
+      >
+        <MenuItemGroup text="fruits">
+          <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+          <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+          <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+        </MenuItemGroup>
+        <Divider />
+        <MenuItemGroup text="vehicle">
+          <DropdownMenuItem value={'40'}>bicycle</DropdownMenuItem>
+          <DropdownMenuItem value={'50'}>car</DropdownMenuItem>
+          <DropdownMenuItem value={'60'}>train</DropdownMenuItem>
+        </MenuItemGroup>
+      </DropdownSelector>
+    </div>
+  )
+}
+SectionList.args = { ...baseProps }

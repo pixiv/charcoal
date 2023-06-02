@@ -29,7 +29,7 @@ export default function V2toV3GuidePage() {
       <h4>DropdownSelector</h4>
       <p>
         子要素の使用方法を変更しました。子要素は DropdownSelectorOption から
-        OptionItem に変更しました。
+        DropdownMenuItem に変更しました。
       </p>
       <p>assertiveText から assistiveText へ変更しました。</p>
       <p>onChange の引数を Key 型から string に変更しました。</p>
