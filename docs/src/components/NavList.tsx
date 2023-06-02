@@ -208,6 +208,7 @@ const ListItem = styled.li<{ active: boolean }>`
 `
 
 const ListItemLink = styled(Link)`
+  box-sizing: border-box;
   text-decoration: none;
   display: flex;
   height: 100%;

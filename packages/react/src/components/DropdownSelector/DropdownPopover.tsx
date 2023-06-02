@@ -1,46 +1,25 @@
-import React, { Key, useEffect, useRef } from 'react'
-import { OverlayTriggerState } from 'react-stately'
-import { ReactNode } from 'react'
-import {
-  AriaPopoverProps,
-  DismissButton,
-  Overlay,
-  usePopover,
-} from '@react-aria/overlays'
-import styled from 'styled-components'
-import { theme } from '../../styled'
+import React, { useEffect, useRef } from 'react'
+import Popover, { PopoverProps } from './Popover'
 
-const DropdownPopoverDiv = styled.div`
-  width: 100%;
-  ${theme((o) => o.margin.top(4).bottom(4))}
-`
-
-type Props = Omit<AriaPopoverProps, 'popoverRef'> & {
-  state: OverlayTriggerState
-} & {
-  children: ReactNode
-  value?: Key
+type DropdownPopoverProps = PopoverProps & {
+  value?: React.Key
 }
 
-export function DropdownPopover({ children, state, ...props }: Props) {
+/**
+ * DropdownSelectorの選択肢をを表示するためのPopover
+ * triggerRefの要素と同じ幅になる
+ * 表示の際にvalueが等しいDropdownMenuItemを中央に表示する
+ */
+export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const { popoverProps, underlayProps } = usePopover(
-    {
-      ...props,
-      popoverRef: ref,
-      containerPadding: 0,
-    },
-    state
-  )
-
   useEffect(() => {
-    if (ref.current && props.triggerRef.current) {
+    if (props.isOpen && ref.current && props.triggerRef.current) {
       ref.current.style.width = `${props.triggerRef.current.clientWidth}px`
     }
-  }, [props.triggerRef])
+  }, [props.triggerRef, props.isOpen])
 
   useEffect(() => {
-    if (state.isOpen && props.value !== undefined) {
+    if (props.isOpen && props.value !== undefined) {
       // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
       const windowScrollY = window.scrollY
       const windowScrollX = window.scrollX
@@ -51,16 +30,16 @@ export function DropdownPopover({ children, state, ...props }: Props) {
       selectedElement?.focus()
       window.scrollTo(windowScrollX, windowScrollY)
     }
-  }, [props.value, state.isOpen])
+  }, [props.value, props.isOpen])
 
   return (
-    <Overlay portalContainer={document.body}>
-      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
-      <DropdownPopoverDiv {...popoverProps} ref={ref}>
-        <DismissButton onDismiss={() => state.close()} />
-        {children}
-        <DismissButton onDismiss={() => state.close()} />
-      </DropdownPopoverDiv>
-    </Overlay>
+    <Popover
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      popoverRef={ref}
+      triggerRef={props.triggerRef}
+    >
+      {children}
+    </Popover>
   )
 }

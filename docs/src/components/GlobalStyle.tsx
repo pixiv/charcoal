@@ -51,10 +51,6 @@ p {
   line-height: 24px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 pre {
   width: 100%;
   margin-bottom: 0;

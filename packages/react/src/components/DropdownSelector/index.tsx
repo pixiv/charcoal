@@ -1,18 +1,12 @@
-import React, { ReactNode, createContext, useRef } from 'react'
+import React, { ReactNode, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { useOverlayTriggerState } from 'react-stately'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
 import { theme } from '../../styled'
 import { DropdownPopover } from './DropdownPopover'
-
-export const DropdownSelectorContext = createContext({
-  value: '',
-  setValue: (_v: string) => {
-    // empty
-  },
-})
+import { findPreviewRecursive } from './utils/findPreviewRecursive'
+import MenuList, { MenuListChildren } from './MenuList'
 
 export type DropdownSelectorProps = {
   label: string
@@ -25,33 +19,16 @@ export type DropdownSelectorProps = {
   required?: boolean
   requiredText?: string
   subLabel?: ReactNode
-  children?: ReactNode
+  children: MenuListChildren
   onChange: (value: string) => void
-}
-
-export type DropdownSelectorOption = {
-  label: string
-  id: string
 }
 
 const defaultRequiredText = '*必須'
 
 export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
-  const state = useOverlayTriggerState({})
-
-  let preview: ReactNode | undefined
-  const childArray = React.Children.toArray(props.children)
-  for (let i = 0; i < childArray.length; i++) {
-    const child = childArray[i]
-    if (React.isValidElement(child) && 'value' in child.props) {
-      const find = (child.props as { value: string }).value === props.value
-      if (find && 'children' in child.props) {
-        preview = (child.props as { children: ReactNode }).children
-        break
-      }
-    }
-  }
+  const [isOpen, setIsOpen] = useState(false)
+  const preview = findPreviewRecursive(props.children, props.value)
 
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
@@ -68,7 +45,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         disabled={props.disabled}
         onClick={() => {
           if (props.disabled === true) return
-          state.open()
+          setIsOpen(true)
         }}
         ref={triggerRef}
       >
@@ -79,27 +56,22 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
-      {state.isOpen && (
-        <DropdownPopover
-          state={state}
-          triggerRef={triggerRef}
+      <DropdownPopover
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        triggerRef={triggerRef}
+        value={props.value}
+      >
+        <MenuList
           value={props.value}
+          onChange={(v) => {
+            props.onChange(v)
+            setIsOpen(false)
+          }}
         >
-          <ListboxRoot>
-            <DropdownSelectorContext.Provider
-              value={{
-                value: props.value,
-                setValue: (v) => {
-                  props.onChange(v)
-                  state.close()
-                },
-              }}
-            >
-              {props.children}
-            </DropdownSelectorContext.Provider>
-          </ListboxRoot>
-        </DropdownPopover>
-      )}
+          {props.children}
+        </MenuList>
+      </DropdownPopover>
       {props.assistiveText !== undefined && (
         <AssertiveText invalid={props.invalid}>
           {props.assistiveText}
@@ -109,21 +81,6 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
   )
 }
 
-const ListboxRoot = styled.ul`
-  padding-left: 0;
-  margin: 0;
-  box-sizing: border-box;
-  list-style: none;
-  overflow: auto;
-  max-height: inherit;
-
-  ${theme((o) => [
-    o.bg.background1,
-    o.border.default,
-    o.borderRadius(8),
-    o.padding.vertical(8),
-  ])}
-`
 const DropdownSelectorRoot = styled.div`
   display: inline-block;
   width: 100%;
