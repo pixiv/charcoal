@@ -76,10 +76,10 @@ const DefaultStory = (args: ModalProps) => {
             </ModalAlign>
           </ModalVStack>
           <ModalButtons>
-            <Button variant="Primary" onClick={() => state.close()} fixed>
+            <Button variant="Primary" onClick={() => state.close()} fullWidth>
               Apply
             </Button>
-            <Button onClick={() => state.close()} fixed>
+            <Button onClick={() => state.close()} fullWidth>
               Cancel
             </Button>
           </ModalButtons>
@@ -140,10 +140,10 @@ const FullBottomSheetStory = (args: ModalProps) => {
             </ModalAlign>
           </ModalVStack>
           <ModalButtons>
-            <Button variant="Primary" onClick={() => state.close()} fixed>
+            <Button variant="Primary" onClick={() => state.close()} fullWidth>
               Apply
             </Button>
-            <Button onClick={() => state.close()} fixed>
+            <Button onClick={() => state.close()} fullWidth>
               Cancel
             </Button>
           </ModalButtons>
@@ -181,7 +181,7 @@ const BottomSheetStory = (args: ModalProps) => {
             </StyledModalText>
           </ModalVStack>
           <ModalButtons>
-            <Button variant="Danger" onClick={() => state.close()} fixed>
+            <Button variant="Danger" onClick={() => state.close()} fullWidth>
               削除する
             </Button>
             <ModalDismissButton>キャンセル</ModalDismissButton>
