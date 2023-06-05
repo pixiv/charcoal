@@ -349,6 +349,7 @@ const PrefixContainer = styled.span`
   top: 50%;
   left: 8px;
   transform: translateY(-50%);
+  z-index: 1;
 `
 
 const SuffixContainer = styled.span`

@@ -9,7 +9,7 @@ import { SSRHighlight } from '../../../components/SSRHighlight'
 export default function InstallPage() {
   return (
     <ContentRoot>
-      <h1>SSR</h1>
+      <h1>サーバーサイドレンダリング</h1>
       <p>
         charcoal は<StyledLink href="https://nextjs.org/"> Next.js </StyledLink>
         などのサーバーサイドレンダリングをサポートしています。
