@@ -16,11 +16,6 @@ export const multiSelectApiData: ApiTableData<
     description: '無効化',
     type: 'string',
   },
-  forceChecked: {
-    default: 'false',
-    description: '強制的なチェック',
-    type: 'boolean',
-  },
   variant: {
     default: '"Default"',
     description: 'スタイル',
@@ -34,13 +29,13 @@ export const apiData: ApiTableData<MultiSelectGroupProps, HTMLInputElement> = {
     description: '無効化',
     type: 'boolean',
   },
-  ariaLabel: {
+  label: {
     default: '',
     description: 'aria-label',
     required: true,
     type: 'string',
   },
-  hasError: {
+  invalid: {
     default: 'false',
     description: '入力の不正化',
     type: 'boolean',

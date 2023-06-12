@@ -23,6 +23,10 @@ export default function V2toV3GuidePage() {
       </h3>
       <h4>Button</h4>
       <p>幅を最大化するオプション fixed を fullWidth に変更しました。</p>
+      <h4>MultiSelectGroup</h4>
+      <p>hasErrorをinvalidに変更しました。</p>
+      <h4>MultiSelect</h4>
+      <p>forceCheckedを削除しました。</p>
       <h4>DropdownSelector</h4>
       <p>
         子要素の使用方法を変更しました。子要素は DropdownSelectorOption から
