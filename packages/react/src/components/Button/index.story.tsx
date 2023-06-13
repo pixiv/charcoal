@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Story } from '../../_lib/compat'
 import { ClickableElement } from '../Clickable'
 import Button, { ButtonProps } from '.'

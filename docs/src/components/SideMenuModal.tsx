@@ -4,7 +4,8 @@ import {
   AriaModalOverlayProps,
 } from '@react-aria/overlays'
 import { OverlayTriggerState } from 'react-stately'
-import React, { FC, useRef } from 'react'
+import { FC, useRef } from 'react'
+import * as React from 'react'
 import { FocusScope } from '@react-aria/focus'
 import styled from 'styled-components'
 import { theme } from '../utils/theme'

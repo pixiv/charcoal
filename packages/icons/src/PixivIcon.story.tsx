@@ -1,6 +1,6 @@
 /// <reference types='@types/webpack-env' />
 
-import React from 'react'
+import * as React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { Props } from './PixivIcon'

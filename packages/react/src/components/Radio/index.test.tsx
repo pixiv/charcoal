@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Radio, { RadioGroup } from '.'
 import { light } from '@charcoal-ui/theme'

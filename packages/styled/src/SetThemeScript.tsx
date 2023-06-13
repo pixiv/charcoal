@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   assertKeyString,
   DEFAULT_ROOT_ATTRIBUTE,

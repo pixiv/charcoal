@@ -1,4 +1,4 @@
-import React, { useCallback, useDebugValue, useMemo } from 'react'
+import { memo, useCallback, useDebugValue, useMemo } from 'react'
 
 import styled, { css } from 'styled-components'
 import warning from 'warning'
@@ -75,11 +75,7 @@ export interface PagerProps extends CommonProps {
 }
 
 // this pager is just regular buttons; for links use LinkPager
-export default React.memo(function Pager({
-  page,
-  pageCount,
-  onChange,
-}: PagerProps) {
+export default memo(function Pager({ page, pageCount, onChange }: PagerProps) {
   // TODO: refactor Pager and LinkPager to use a common parent component
   const window = usePagerWindow(page, pageCount)
   const makeClickHandler = useCallback(

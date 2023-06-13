@@ -1,5 +1,4 @@
 import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
-import React from 'react'
 import styled, { css } from 'styled-components'
 import Carousel from '.'
 
