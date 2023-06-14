@@ -27,7 +27,7 @@ export const apiData: Omit<
   },
   excludeFromTabOrder: {
     default: 'false',
-    description: '(非推奨）',
+    description: 'Tabキーを押したときにフォーカスの対象から除く',
     type: 'boolean',
   },
   invalid: {
