@@ -3,13 +3,25 @@ import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import { createTheme } from '@charcoal-ui/styled'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
+import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
+import { theme } from '../../styled'
 
-const theme = createTheme(styled)
+type DOMProps = Omit<
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  >,
+  // react-ariaのhookは、onChangeが`(v: string) => void`想定
+  | 'onChange'
+  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
+  | keyof ReactAreaUseTextFieldCompat
+>
 
 export interface TextAreaProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'> {
+  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
+    DOMProps,
+    ReactAreaUseTextFieldCompat {
   readonly autoHeight?: boolean
   readonly rows?: number
   readonly className?: string

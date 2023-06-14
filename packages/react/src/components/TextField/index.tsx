@@ -9,13 +9,30 @@ import React, {
 } from 'react'
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import { createTheme } from '@charcoal-ui/styled'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
+import { theme } from '../../styled'
+import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 
-const theme = createTheme(styled)
+type DOMProps = Omit<
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >,
+  // react-ariaのhookは、onChangeが`(v: string) => void`想定
+  | 'onChange'
+
+  // RDFa Attributeとかぶる
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/58d57ca87ac7be0d306c0844dc254e90c150bd0d/types/react/index.d.ts#L1951
+  | 'prefix'
+
+  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
+  | keyof ReactAreaUseTextFieldCompat
+>
 
 export interface TextFieldProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'> {
+  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
+    DOMProps,
+    ReactAreaUseTextFieldCompat {
   readonly type?: string
   readonly prefix?: ReactNode
   readonly suffix?: ReactNode
