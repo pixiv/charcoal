@@ -1,8 +1,14 @@
 import { TextFieldProps } from '@charcoal-ui/react'
-import { ApiTableData } from '../_components/ApiTable'
+import { TableItem } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  ApiTableData<TextFieldProps, HTMLInputElement>,
+  Record<
+    Exclude<
+      keyof TextFieldProps,
+      keyof React.InputHTMLAttributes<HTMLInputElement>
+    >,
+    TableItem
+  >,
   'type' | 'value'
 > = {
   label: {
@@ -15,11 +21,6 @@ export const apiData: Omit<
     description: 'エラーのテキスト',
     type: 'string',
   },
-  disabled: {
-    default: 'false',
-    description: '無効にする',
-    type: 'boolean',
-  },
   excludeFromTabOrder: {
     default: 'false',
     description: 'Tabキーを押したときにフォーカスの対象から除く',
@@ -28,21 +29,6 @@ export const apiData: Omit<
   invalid: {
     default: 'false',
     description: '入力が不正か',
-    type: 'boolean',
-  },
-  maxLength: {
-    default: '',
-    description: '入力できる最大値',
-    type: 'number',
-  },
-  required: {
-    default: 'false',
-    description: '入力必須か',
-    type: 'boolean',
-  },
-  autoFocus: {
-    default: 'false',
-    description: 'オートフォーカスをするか',
     type: 'boolean',
   },
   requiredText: {

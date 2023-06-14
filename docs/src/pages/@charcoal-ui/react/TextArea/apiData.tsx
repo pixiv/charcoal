@@ -1,9 +1,15 @@
 import { TextAreaProps } from '@charcoal-ui/react'
-import { ApiTableData } from '../_components/ApiTable'
+import { TableItem } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  ApiTableData<TextAreaProps, HTMLInputElement>,
-  'type' | 'value'
+  Record<
+    Exclude<
+      keyof TextAreaProps,
+      keyof React.InputHTMLAttributes<HTMLTextAreaElement>
+    >,
+    TableItem
+  >,
+  'type' | 'value' | 'cols' | 'dirName' | 'wrap'
 > = {
   label: {
     default: '',
@@ -20,11 +26,6 @@ export const apiData: Omit<
     description: '高さを自動で変える',
     type: 'boolean',
   },
-  disabled: {
-    default: 'false',
-    description: '無効にする',
-    type: 'boolean',
-  },
   excludeFromTabOrder: {
     default: 'false',
     description: 'Tabキーを押したときにフォーカスの対象から除く',
@@ -33,21 +34,6 @@ export const apiData: Omit<
   invalid: {
     default: 'false',
     description: '入力が不正か',
-    type: 'boolean',
-  },
-  maxLength: {
-    default: '',
-    description: '入力できる最大値',
-    type: 'number',
-  },
-  required: {
-    default: 'false',
-    description: '入力必須か',
-    type: 'boolean',
-  },
-  autoFocus: {
-    default: 'false',
-    description: 'オートフォーカスをするか',
     type: 'boolean',
   },
   requiredText: {

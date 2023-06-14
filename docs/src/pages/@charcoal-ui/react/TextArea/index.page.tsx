@@ -39,7 +39,8 @@ const TextAreaPage: FC = () => {
 
       <h2>Props</h2>
       <p>
-        <InlineCode>&lt;input&gt;</InlineCode>の<InlineCode>props</InlineCode>
+        <InlineCode>&lt;textarea&gt;</InlineCode>の
+        <InlineCode>props</InlineCode>
         を継承しています。
       </p>
       <p>
