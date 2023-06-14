@@ -32,7 +32,7 @@ export const apiData: Omit<
   },
   invalid: {
     default: 'false',
-    description: '入力の不正化',
+    description: '入力が不正か',
     type: 'boolean',
   },
   maxLength: {
@@ -42,7 +42,7 @@ export const apiData: Omit<
   },
   required: {
     default: 'false',
-    description: '入力必須化',
+    description: '入力必須か',
     type: 'boolean',
   },
   autoFocus: {

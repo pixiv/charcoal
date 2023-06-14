@@ -27,7 +27,7 @@ export const apiData: Omit<
   },
   invalid: {
     default: 'false',
-    description: '入力の不正化',
+    description: '入力が不正化',
     type: 'boolean',
   },
   maxLength: {
