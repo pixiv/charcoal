@@ -12,7 +12,7 @@ export default function InstallPage() {
       <Link href="https://www.npmjs.com/package/@charcoal-ui/tailwind-diff">
         <img
           alt="npm-badge"
-          src="https://img.shields.io/npm/v/@charcoal-ui/tailwind-diff?label=%40charcoal-ui%2Ficons&style=flat-square&logo=npm"
+          src="https://img.shields.io/npm/v/@charcoal-ui/tailwind-diff?label=%40charcoal-ui%2Ftailwind-diff&style=flat-square&logo=npm"
         />
       </Link>
       <h2>インストール</h2>
