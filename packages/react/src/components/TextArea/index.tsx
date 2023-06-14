@@ -8,10 +8,7 @@ import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 import { theme } from '../../styled'
 
 type DOMProps = Omit<
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  >,
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
   // react-ariaのhookは、onChangeが`(v: string) => void`想定
   | 'onChange'
   // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
@@ -24,22 +21,22 @@ export interface TextAreaProps
     ReactAreaUseTextFieldCompat {
   readonly autoHeight?: boolean
   readonly rows?: number
-  readonly className?: string
+
+  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
   readonly defaultValue?: string
   readonly value?: string
   readonly onChange?: (value: string) => void
+
+  // react-ariaの型定義のせいでHTMLTextAreaElementにできない
   readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
   readonly onFocus?: (event: React.FocusEvent<Element>) => void
   readonly onBlur?: (event: React.FocusEvent<Element>) => void
+
   readonly showCount?: boolean
   readonly showLabel?: boolean
-  readonly placeholder?: string
   readonly assistiveText?: string
-  readonly disabled?: boolean
-  readonly required?: boolean
   readonly invalid?: boolean
-  readonly maxLength?: number
-  readonly autoFocus?: boolean
+
   /**
    * tab-indexがｰ1かどうか
    */

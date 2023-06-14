@@ -14,10 +14,7 @@ import { theme } from '../../styled'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 
 type DOMProps = Omit<
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >,
+  React.InputHTMLAttributes<HTMLInputElement>,
   // react-ariaのhookは、onChangeが`(v: string) => void`想定
   | 'onChange'
 
@@ -33,25 +30,24 @@ export interface TextFieldProps
   extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
     DOMProps,
     ReactAreaUseTextFieldCompat {
-  readonly type?: string
   readonly prefix?: ReactNode
   readonly suffix?: ReactNode
-  readonly className?: string
+
+  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
   readonly defaultValue?: string
   readonly value?: string
   readonly onChange?: (value: string) => void
+
+  // react-ariaの型定義のせいでHTMLInputElementにできない
   readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
   readonly onFocus?: (event: React.FocusEvent<Element>) => void
   readonly onBlur?: (event: React.FocusEvent<Element>) => void
+
   readonly showCount?: boolean
   readonly showLabel?: boolean
-  readonly placeholder?: string
   readonly assistiveText?: string
-  readonly disabled?: boolean
-  readonly required?: boolean
   readonly invalid?: boolean
-  readonly maxLength?: number
-  readonly autoFocus?: boolean
+
   /**
    * tab-indexがｰ1かどうか
    */
