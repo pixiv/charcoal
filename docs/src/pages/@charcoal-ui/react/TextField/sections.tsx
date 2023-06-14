@@ -13,7 +13,8 @@ const StyledDiv = styled.div`
 
 export const sections: PreviewSection<TextFieldProps>[] = [
   {
-    title: 'showLabel, subLabel, requiredText, assistiveText',
+    // autoFocus は先頭の1個だけで有効にする
+    title: 'autoFocus, showLabel, subLabel, requiredText, assistiveText',
     previewMetas: [
       {
         children: undefined,
@@ -25,6 +26,7 @@ export const sections: PreviewSection<TextFieldProps>[] = [
           required: true,
           requiredText: 'requiredText',
           assistiveText: 'assistiveText',
+          autoFocus: true,
         },
       },
     ],

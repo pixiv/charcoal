@@ -3,7 +3,8 @@ import { PreviewSection } from '../_components/Previews'
 
 export const sections: PreviewSection<TextAreaProps>[] = [
   {
-    title: 'showLabel, subLabel, requiredText, assistiveText',
+    // autoFocus は先頭の1個だけで有効にする
+    title: 'autoFocus, showLabel, subLabel, requiredText, assistiveText',
     previewMetas: [
       {
         children: undefined,
@@ -15,6 +16,7 @@ export const sections: PreviewSection<TextAreaProps>[] = [
           required: true,
           requiredText: 'requiredText',
           assistiveText: 'assistiveText',
+          autoFocus: true,
         },
       },
     ],
