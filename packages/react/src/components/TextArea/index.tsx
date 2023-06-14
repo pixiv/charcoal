@@ -27,6 +27,7 @@ export interface TextAreaProps
   readonly required?: boolean
   readonly invalid?: boolean
   readonly maxLength?: number
+  readonly autoFocus?: boolean
   /**
    * tab-indexがｰ1かどうか
    */

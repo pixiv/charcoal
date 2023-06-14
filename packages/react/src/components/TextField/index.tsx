@@ -34,6 +34,7 @@ export interface TextFieldProps
   readonly required?: boolean
   readonly invalid?: boolean
   readonly maxLength?: number
+  readonly autoFocus?: boolean
   /**
    * tab-indexがｰ1かどうか
    */

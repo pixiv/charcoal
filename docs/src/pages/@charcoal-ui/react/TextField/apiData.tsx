@@ -37,7 +37,12 @@ export const apiData: Omit<
   },
   required: {
     default: 'false',
-    description: '入力必須化',
+    description: '入力必須か',
+    type: 'boolean',
+  },
+  autoFocus: {
+    default: 'false',
+    description: 'オートフォーカスをするか',
     type: 'boolean',
   },
   requiredText: {
