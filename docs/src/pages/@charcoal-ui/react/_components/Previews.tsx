@@ -54,7 +54,6 @@ export const PreviewDiv = styled.div`
   ${theme((o) => [o.border.default, o.borderRadius(8)])}
   padding: 16px;
   flex-wrap: wrap;
-  width: 100%;
   gap: 16px;
 `
 
