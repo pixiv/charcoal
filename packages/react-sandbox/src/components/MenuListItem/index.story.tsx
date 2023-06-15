@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import React from 'react'
 import styled from 'styled-components'
 import SwitchCheckbox from '../SwitchCheckbox'
 import WithIcon from '../WithIcon'

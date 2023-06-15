@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Story } from '../../_lib/compat'
 import styled from 'styled-components'
 import { MultiSelectGroup, default as MultiSelect } from '.'

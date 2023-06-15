@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
+import * as React from 'react'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import {
   MAIN_COLUMN_HORIZONTAL_MIN_MARGIN,

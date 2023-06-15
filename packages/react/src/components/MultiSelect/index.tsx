@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useCallback, useContext } from 'react'
+import { ChangeEvent, useCallback, useContext } from 'react'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'

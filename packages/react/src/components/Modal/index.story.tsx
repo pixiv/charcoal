@@ -1,4 +1,3 @@
-import React from 'react'
 import { Story } from '../../_lib/compat'
 import Modal, { ModalDismissButton, ModalProps } from '.'
 import { OverlayProvider } from '@react-aria/overlays'
