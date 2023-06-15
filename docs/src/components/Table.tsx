@@ -22,6 +22,10 @@ function toTableCell(value: unknown) {
       return value
     }
 
+    case 'undefined': {
+      return ''
+    }
+
     default: {
       return value?.toString() ?? JSON.stringify(value) ?? '???'
     }
