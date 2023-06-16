@@ -1,7 +1,6 @@
 import path from 'path'
 import glob from 'glob'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import React from 'react'
 import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import { Story } from '../_lib/compat'

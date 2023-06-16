@@ -1,4 +1,5 @@
-import React, { forwardRef, memo, useMemo } from 'react'
+import { forwardRef, memo, useMemo } from 'react'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'

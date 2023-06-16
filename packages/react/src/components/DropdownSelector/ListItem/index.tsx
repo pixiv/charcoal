@@ -28,9 +28,7 @@ export default function ListItem<T extends CustomJSXElement = 'div'>(
   const { children, ...rest } = props
   return (
     <StyledLi role="option">
-      <ItemDiv {...rest}>
-        {props.children}
-      </ItemDiv>
+      <ItemDiv {...rest}>{props.children}</ItemDiv>
     </StyledLi>
   )
 }

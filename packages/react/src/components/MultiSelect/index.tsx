@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useCallback, useContext } from 'react'
+import { ChangeEvent, useCallback, useContext } from 'react'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
@@ -8,7 +9,6 @@ import { MultiSelectGroupContext } from './context'
 
 export type MultiSelectProps = React.PropsWithChildren<{
   value: string
-  forceChecked?: boolean
   disabled?: boolean
   variant?: 'default' | 'overlay'
   onChange?: (payload: { value: string; selected: boolean }) => void
@@ -16,7 +16,6 @@ export type MultiSelectProps = React.PropsWithChildren<{
 
 export default function MultiSelect({
   value,
-  forceChecked = false,
   disabled = false,
   onChange,
   variant = 'default',
@@ -27,7 +26,7 @@ export default function MultiSelect({
     selected,
     disabled: parentDisabled,
     readonly,
-    hasError,
+    invalid,
     onChange: parentOnChange,
   } = useContext(MultiSelectGroupContext)
 
@@ -37,7 +36,7 @@ export default function MultiSelect({
     `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`
   )
 
-  const isSelected = selected.includes(value) || forceChecked
+  const isSelected = selected.includes(value)
   const isDisabled = disabled || parentDisabled || readonly
 
   const handleChange = useCallback(
@@ -57,17 +56,17 @@ export default function MultiSelect({
         {...{
           name,
           value,
-          hasError,
+          invalid,
         }}
         checked={isSelected}
         disabled={isDisabled}
         onChange={handleChange}
         overlay={variant === 'overlay'}
-        aria-invalid={hasError}
+        aria-invalid={invalid}
       />
       <MultiSelectInputOverlay
         overlay={variant === 'overlay'}
-        hasError={hasError}
+        invalid={invalid}
         aria-hidden={true}
       >
         <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
@@ -97,7 +96,7 @@ const MultiSelectLabel = styled.div`
 `
 
 const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
-  hasError: boolean
+  invalid: boolean
   overlay: boolean
 }>`
   &[type='checkbox'] {
@@ -111,11 +110,11 @@ const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
       ${theme((o) => o.bg.brand.hover.press)}
     }
 
-    ${({ hasError, overlay }) =>
+    ${({ invalid, overlay }) =>
       theme((o) => [
         o.bg.text3.hover.press,
         o.borderRadius('oval'),
-        hasError && !overlay && o.outline.assertive,
+        invalid && !overlay && o.outline.assertive,
         overlay && o.bg.surface4,
       ])};
   }
@@ -123,7 +122,7 @@ const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
 
 const MultiSelectInputOverlay = styled.div<{
   overlay: boolean
-  hasError: boolean
+  invalid: boolean
 }>`
   position: absolute;
   top: -2px;
@@ -133,13 +132,13 @@ const MultiSelectInputOverlay = styled.div<{
   align-items: center;
   justify-content: center;
 
-  ${({ hasError, overlay }) =>
+  ${({ invalid, overlay }) =>
     theme((o) => [
       o.width.px(24),
       o.height.px(24),
       o.borderRadius('oval'),
       o.font.text5,
-      hasError && overlay && o.outline.assertive,
+      invalid && overlay && o.outline.assertive,
     ])}
 
   ${({ overlay }) =>
@@ -154,23 +153,23 @@ const MultiSelectInputOverlay = styled.div<{
 export type MultiSelectGroupProps = React.PropsWithChildren<{
   className?: string
   name: string
-  ariaLabel: string
+  label: string
   selected: string[]
   onChange: (selected: string[]) => void
   disabled?: boolean
   readonly?: boolean
-  hasError?: boolean
+  invalid?: boolean
 }>
 
 export function MultiSelectGroup({
   className,
   name,
-  ariaLabel,
+  label,
   selected,
   onChange,
   disabled = false,
   readonly = false,
-  hasError = false,
+  invalid = false,
   children,
 }: MultiSelectGroupProps) {
   const handleChange = useCallback(
@@ -197,15 +196,11 @@ export function MultiSelectGroup({
         selected: Array.from(new Set(selected)),
         disabled,
         readonly,
-        hasError,
+        invalid,
         onChange: handleChange,
       }}
     >
-      <div
-        className={className}
-        aria-label={ariaLabel}
-        data-testid="SelectGroup"
-      >
+      <div className={className} aria-label={label} data-testid="SelectGroup">
         {children}
       </div>
     </MultiSelectGroupContext.Provider>

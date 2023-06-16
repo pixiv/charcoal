@@ -1,4 +1,3 @@
-import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { defineThemeVariables, withPrefixes } from './util'

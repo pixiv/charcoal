@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import DropdownSelector, { DropdownSelectorProps } from '.'
 import { Story } from '../../_lib/compat'
 import { Divider } from './Divider'

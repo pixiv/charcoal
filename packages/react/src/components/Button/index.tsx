@@ -1,4 +1,4 @@
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 import { unreachable } from '../../_lib'
 import { theme } from '../../styled'
@@ -24,7 +24,7 @@ interface StyledProps {
 
 export type ButtonProps = Partial<StyledProps> & ClickableProps
 
-const Button = React.forwardRef<ClickableElement, ButtonProps>(function Button(
+const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
   {
     children,
     variant = 'Default',

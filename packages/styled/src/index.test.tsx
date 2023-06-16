@@ -1,7 +1,6 @@
 import { light } from '@charcoal-ui/theme'
 import 'jest-styled-components'
 
-import React from 'react'
 import renderder from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 import { Example, TailwindLike } from './index.story'

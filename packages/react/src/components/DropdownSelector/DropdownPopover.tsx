@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import { Key, useEffect, useRef } from 'react'
 import Popover, { PopoverProps } from './Popover'
 
 type DropdownPopoverProps = PopoverProps & {
-  value?: React.Key
+  value?: Key
 }
 
 /**

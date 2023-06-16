@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
 import { css } from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Radio, { RadioGroup } from '.'

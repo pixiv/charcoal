@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Story } from '../../_lib/compat'
 
 import { colors } from '.'

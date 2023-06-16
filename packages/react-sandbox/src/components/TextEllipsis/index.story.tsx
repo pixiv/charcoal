@@ -1,5 +1,4 @@
 import { number, text } from '@storybook/addon-knobs'
-import React from 'react'
 import styled from 'styled-components'
 import { TextEllipsis } from '.'
 
