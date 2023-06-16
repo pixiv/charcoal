@@ -150,6 +150,16 @@ const themeList: ListItem[] = [
     href: '/@charcoal-ui/theme/colors',
   },
 ]
+const tailwindConfigList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/tailwind-config/quickstart',
+  },
+  {
+    text: 'カスタマイズする',
+    href: '/@charcoal-ui/tailwind-config/customize',
+  },
+]
 
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
@@ -196,6 +206,9 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {foundationList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/theme</ListItemHeader>
       {themeList.map(renderListItem)}
+      <ListItemHeader>Links</ListItemHeader>
+      <ListItemHeader>@charcoal-ui/tailwind-config</ListItemHeader>
+      {tailwindConfigList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
       <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
       <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />
