@@ -16,27 +16,24 @@ export default {
     },
   },
   args: {
-    hasError: false,
+    invalid: false,
     parentDisabled: false,
     childDisabled: false,
-    forceChecked: false,
     readonly: false,
   },
 }
 
 interface Props {
   value?: string
-  hasError: boolean
+  invalid: boolean
   parentDisabled: boolean
   childDisabled: boolean
-  forceChecked: boolean
   readonly: boolean
 }
 
 const Template: Story<Partial<Props>> = ({
   value,
-  forceChecked,
-  hasError,
+  invalid,
   parentDisabled,
   childDisabled,
   readonly,
@@ -57,15 +54,10 @@ const Template: Story<Partial<Props>> = ({
         onChange={action('onChange')}
         disabled={parentDisabled}
         readonly={readonly}
-        hasError={hasError}
+        invalid={invalid}
       >
         {options.map((option) => (
-          <Radio
-            key={option}
-            value={option}
-            disabled={childDisabled}
-            forceChecked={forceChecked}
-          >
+          <Radio key={option} value={option} disabled={childDisabled}>
             {name}({option})を選ぶ
           </Radio>
         ))}
