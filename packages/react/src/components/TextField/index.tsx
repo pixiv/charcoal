@@ -9,32 +9,45 @@ import React, {
 } from 'react'
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import { createTheme } from '@charcoal-ui/styled'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
+import { theme } from '../../styled'
+import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 
-const theme = createTheme(styled)
+type DOMProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  // react-ariaのhookは、onChangeが`(v: string) => void`想定
+  | 'onChange'
+
+  // RDFa Attributeとかぶる
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/58d57ca87ac7be0d306c0844dc254e90c150bd0d/types/react/index.d.ts#L1951
+  | 'prefix'
+
+  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
+  | keyof ReactAreaUseTextFieldCompat
+>
 
 export interface TextFieldProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'> {
-  readonly type?: string
+  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
+    DOMProps,
+    ReactAreaUseTextFieldCompat {
   readonly prefix?: ReactNode
   readonly suffix?: ReactNode
-  readonly className?: string
+
+  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
   readonly defaultValue?: string
   readonly value?: string
   readonly onChange?: (value: string) => void
+
+  // react-ariaの型定義のせいでHTMLInputElementにできない
   readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
   readonly onFocus?: (event: React.FocusEvent<Element>) => void
   readonly onBlur?: (event: React.FocusEvent<Element>) => void
+
   readonly showCount?: boolean
   readonly showLabel?: boolean
-  readonly placeholder?: string
   readonly assistiveText?: string
-  readonly disabled?: boolean
-  readonly required?: boolean
   readonly invalid?: boolean
-  readonly maxLength?: number
-  readonly autoFocus?: boolean
+
   /**
    * tab-indexがｰ1かどうか
    */

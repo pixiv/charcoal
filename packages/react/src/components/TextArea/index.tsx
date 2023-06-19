@@ -3,31 +3,40 @@ import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import { createTheme } from '@charcoal-ui/styled'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
+import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
+import { theme } from '../../styled'
 
-const theme = createTheme(styled)
+type DOMProps = Omit<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  // react-ariaのhookは、onChangeが`(v: string) => void`想定
+  | 'onChange'
+  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
+  | keyof ReactAreaUseTextFieldCompat
+>
 
 export interface TextAreaProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'> {
+  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
+    DOMProps,
+    ReactAreaUseTextFieldCompat {
   readonly autoHeight?: boolean
   readonly rows?: number
-  readonly className?: string
+
+  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
   readonly defaultValue?: string
   readonly value?: string
   readonly onChange?: (value: string) => void
+
+  // react-ariaの型定義のせいでHTMLTextAreaElementにできない
   readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
   readonly onFocus?: (event: React.FocusEvent<Element>) => void
   readonly onBlur?: (event: React.FocusEvent<Element>) => void
+
   readonly showCount?: boolean
   readonly showLabel?: boolean
-  readonly placeholder?: string
   readonly assistiveText?: string
-  readonly disabled?: boolean
-  readonly required?: boolean
   readonly invalid?: boolean
-  readonly maxLength?: number
-  readonly autoFocus?: boolean
+
   /**
    * tab-indexがｰ1かどうか
    */
