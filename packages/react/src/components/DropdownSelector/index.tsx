@@ -56,22 +56,24 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
-      <DropdownPopover
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        triggerRef={triggerRef}
-        value={props.value}
-      >
-        <MenuList
+      {isOpen && (
+        <DropdownPopover
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          triggerRef={triggerRef}
           value={props.value}
-          onChange={(v) => {
-            props.onChange(v)
-            setIsOpen(false)
-          }}
         >
-          {props.children}
-        </MenuList>
-      </DropdownPopover>
+          <MenuList
+            value={props.value}
+            onChange={(v) => {
+              props.onChange(v)
+              setIsOpen(false)
+            }}
+          >
+            {props.children}
+          </MenuList>
+        </DropdownPopover>
+      )}
       {props.assistiveText !== undefined && (
         <AssertiveText invalid={props.invalid}>
           {props.assistiveText}
