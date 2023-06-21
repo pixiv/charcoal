@@ -84,6 +84,8 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     width: 20px;
     height: 20px;
 
+    cursor: pointer;
+
     ${({ hasError = false }) =>
       theme((o) => [
         o.borderRadius('oval'),

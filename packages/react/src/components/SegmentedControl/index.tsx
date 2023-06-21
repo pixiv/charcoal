@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo, useRef } from 'react'
+import React, { ReactNode, forwardRef, memo, useMemo, useRef } from 'react'
 import { useRadioGroupState } from 'react-stately'
 import {
   AriaRadioGroupProps,
@@ -42,6 +42,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
         isDisabled: props.disabled,
         isReadOnly: props.readonly,
         isRequired: props.required,
+        'aria-label': props.name,
       }),
       [props]
     )
@@ -80,13 +81,18 @@ export default memo(SegmentedControl)
 type RadioProps = {
   value: string
   disabled?: boolean
+  children?: ReactNode
 }
 
-const Segmented: React.FC<RadioProps> = ({ children, ...props }) => {
+const Segmented = (props: RadioProps) => {
   const state = useRadioContext()
   const ref = useRef<HTMLInputElement>(null)
   const ariaRadioProps = useMemo<AriaRadioProps>(
-    () => ({ ...props, isDisabled: props.disabled }),
+    () => ({
+      value: props.value,
+      isDisabled: props.disabled,
+      children: props.children,
+    }),
     [props]
   )
 
@@ -103,7 +109,7 @@ const Segmented: React.FC<RadioProps> = ({ children, ...props }) => {
     >
       <SegmentedInput {...inputProps} ref={ref} />
       <RadioLabel>
-        <SegmentedLabelInner>{children}</SegmentedLabelInner>
+        <SegmentedLabelInner>{props.children}</SegmentedLabelInner>
       </RadioLabel>
     </SegmentedRoot>
   )

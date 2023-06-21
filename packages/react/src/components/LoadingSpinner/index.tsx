@@ -35,6 +35,7 @@ const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   padding: number
   transparent: boolean
 }>`
+  box-sizing: content-box;
   margin: auto;
   padding: ${(props) => props.padding}px;
   border-radius: 8px;

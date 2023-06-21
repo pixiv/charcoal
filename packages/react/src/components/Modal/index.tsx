@@ -19,13 +19,16 @@ import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
 
+type BottomSheet = boolean | 'full'
+type Size = 'S' | 'M' | 'L'
+
 export type ModalProps = AriaModalOverlayProps &
   AriaDialogProps & {
     children: React.ReactNode
     zIndex?: number
     title: string
-    size?: 'S' | 'M' | 'L'
-    bottomSheet?: boolean | 'full'
+    size?: Size
+    bottomSheet?: BottomSheet
     isOpen: boolean
     onClose: () => void
     className?: string
@@ -54,10 +57,12 @@ const DEFAULT_Z_INDEX = 10
  *
  * <OverlayProvider>
  *   <App>
- *     <Modal isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
+ *     <Modal title="Title" isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
  *       <ModalHeader />
- *       <ModalBody>...</ModalBody>
- *       <ModalButtons>...</ModalButtons>
+ *       <ModalBody>
+ *         ...
+ *         <ModalButtons>...</ModalButtons>
+ *       </ModalBody>
  *     </Modal>
  *   </App>
  * </OverlayProvider>
@@ -134,29 +139,31 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             style={transitionEnabled ? { backgroundColor } : {}}
           >
             <FocusScope contain restoreFocus autoFocus>
-              <ModalDialog
-                ref={ref}
-                {...overlayProps}
-                {...modalProps}
-                {...dialogProps}
-                style={transitionEnabled ? { transform } : {}}
-                size={size}
-                bottomSheet={bottomSheet}
-                className={className}
-              >
-                <ModalContext.Provider
-                  value={{ titleProps, title, close: onClose, showDismiss }}
+              <DialogContainer bottomSheet={bottomSheet} size={size}>
+                <ModalDialog
+                  ref={ref}
+                  {...overlayProps}
+                  {...modalProps}
+                  {...dialogProps}
+                  style={transitionEnabled ? { transform } : {}}
+                  size={size}
+                  bottomSheet={bottomSheet}
+                  className={className}
                 >
-                  {children}
-                  {isDismissable === true && (
-                    <ModalCrossButton
-                      size="S"
-                      icon="24/Close"
-                      onClick={onClose}
-                    />
-                  )}
-                </ModalContext.Provider>
-              </ModalDialog>
+                  <ModalContext.Provider
+                    value={{ titleProps, title, close: onClose, showDismiss }}
+                  >
+                    {children}
+                    {isDismissable === true && (
+                      <ModalCrossButton
+                        size="S"
+                        icon="24/Close"
+                        onClick={onClose}
+                      />
+                    )}
+                  </ModalContext.Provider>
+                </ModalDialog>
+              </DialogContainer>
             </FocusScope>
           </ModalBackground>
         </Overlay>
@@ -180,6 +187,8 @@ const ModalContext = React.createContext<{
 
 const ModalBackground = animated(styled.div<{ zIndex: number }>`
   z-index: ${({ zIndex }) => zIndex};
+  overflow: scroll;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -189,50 +198,61 @@ const ModalBackground = animated(styled.div<{ zIndex: number }>`
   ${theme((o) => [o.bg.surface4])}
 `)
 
-const ModalDialog = animated(styled.div<{
-  size: 'S' | 'M' | 'L'
-  bottomSheet: boolean | 'full'
-}>`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: ${(p) =>
-    p.size === 'S'
-      ? columnSystem(3, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      : p.size === 'M'
-      ? columnSystem(4, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      p.size === 'L'
-      ? columnSystem(6, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      : unreachable(p.size)}px;
-
-  ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
+const DialogContainer = styled.div<{ bottomSheet: BottomSheet; size: Size }>`
+  position: relative;
+  margin: auto;
+  padding: 24px 0;
+  width: ${(p) => {
+    switch (p.size) {
+      case 'S': {
+        return columnSystem(3, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
+      }
+      case 'M': {
+        return columnSystem(4, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
+      }
+      case 'L': {
+        return columnSystem(6, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
+      }
+      default: {
+        return unreachable(p.size)
+      }
+    }
+  }}px;
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    width: calc(100% - 48px);
     ${(p) =>
-      p.bottomSheet === 'full'
-        ? css`
-            top: auto;
-            bottom: 0;
-            left: 0;
-            transform: none;
-            border-radius: 0;
-            width: 100%;
-            height: 100%;
-          `
-        : p.bottomSheet
-        ? css`
-            top: auto;
-            bottom: 0;
-            left: 0;
-            transform: none;
-            border-radius: 0;
-            width: 100%;
-          `
-        : css`
-            width: calc(100% - 48px);
-          `}
+      p.bottomSheet !== false &&
+      css`
+        margin: 0;
+        padding: 0;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        ${p.bottomSheet === 'full' ? 'height: 100%' : ''};
+      `}
+  }
+`
+
+const ModalDialog = animated(styled.div<{
+  size: Size
+  bottomSheet: BottomSheet
+}>`
+  position: relative;
+  margin: auto;
+  padding: 24px 0;
+
+  ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    ${(p) =>
+      p.bottomSheet !== false &&
+      css`
+        border-radius: 0;
+        ${p.bottomSheet === 'full' &&
+        css`
+          height: 100%;
+        `}
+      `}
   }
 `)
 

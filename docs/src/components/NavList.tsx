@@ -1,9 +1,10 @@
 import { Icon } from '@charcoal-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC, useEffect } from 'react'
+import { FC, useCallback, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../utils/theme'
+import pkgJson from '../../../packages/react/package.json'
 
 type ListItem = {
   text: string
@@ -40,7 +41,7 @@ const reactList: ListItem[] = [
     href: '/@charcoal-ui/react/quickstart',
   },
   {
-    text: 'SSR',
+    text: 'サーバーサイドレンダリング',
     href: '/@charcoal-ui/react/ssr',
   },
   ...[
@@ -65,6 +66,44 @@ const reactList: ListItem[] = [
   }),
 ]
 
+const iconsList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/icons/quickstart',
+  },
+  {
+    text: '<pixiv-icon>',
+    href: '/@charcoal-ui/icons/element',
+  },
+  {
+    text: 'Reactと組み合わせて使う',
+    href: '/@charcoal-ui/icons/react',
+  },
+  {
+    text: '独自のアイコンを登録する',
+    href: '/@charcoal-ui/icons/extend',
+  },
+  {
+    text: 'サーバーサイドレンダリング',
+    href: '/@charcoal-ui/icons/ssr',
+  },
+]
+
+const tailwindDiffList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/tailwind-diff/quickstart',
+  },
+  {
+    text: 'check',
+    href: '/@charcoal-ui/tailwind-diff/check',
+  },
+  {
+    text: 'dump',
+    href: '/@charcoal-ui/tailwind-diff/dump',
+  },
+]
+
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
   useEffect(() => {
@@ -72,50 +111,58 @@ export const NavList: FC<{ className?: string }> = (props) => {
     window.scroll({ top: 0, left: 0 })
   }, [router])
   const href = router.pathname
+
+  const renderListItem = useCallback(
+    (item: ListItem) => {
+      return (
+        <ListItem key={item.href} active={href === item.href}>
+          <ListItemLink href={item.href}>{item.text}</ListItemLink>
+        </ListItem>
+      )
+    },
+    [href]
+  )
+
   return (
     <StyledUl className={props.className}>
-      <ListItemHeader>v2.2.1</ListItemHeader>
+      <ListItemHeader>v{pkgJson.version}</ListItemHeader>
       <ListItemHeader>@charcoal-ui/styled</ListItemHeader>
       {/* <ListItem active={href === '/@charcoal-ui/styled/Colors'}>
         <ListItemLink href="/@charcoal-ui/styled/Colors">Colors</ListItemLink>
       </ListItem> */}
-      {styledList.map((item) => {
-        return (
-          <ListItem key={item.href} active={href === item.text}>
-            <ListItemLink href={item.href}>{item.text}</ListItemLink>
-          </ListItem>
-        )
-      })}
+      {styledList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/react</ListItemHeader>
-      {reactList.map((item) => {
-        return (
-          <ListItem key={item.href} active={href == item.href}>
-            <ListItemLink href={item.href}>{item.text}</ListItemLink>
-          </ListItem>
-        )
-      })}
+      {reactList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/icons</ListItemHeader>
+      {iconsList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/tailwind-diff</ListItemHeader>
+      {tailwindDiffList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
-      <ListItem active={false}>
-        <ListItemLink
-          target={'_blank'}
-          href={'https://github.com/pixiv/charcoal'}
-        >
-          <Icon name="24/OpenInNew" unsafeNonGuidelineScale={0.75} />
-          <span
-            css={css`
-              margin-left: 8px;
-            `}
-          >
-            GitHub
-          </span>
-        </ListItemLink>
-      </ListItem>
+      <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
+      <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />
       <div
         css={css`
           margin-bottom: 64px;
         `}
       ></div>
     </StyledUl>
+  )
+}
+
+const ExternalLink = (props: { href: string; text: string }) => {
+  return (
+    <ListItem active={false}>
+      <ListItemLink target={'_blank'} href={props.href}>
+        <Icon name="24/OpenInNew" unsafeNonGuidelineScale={0.75} />
+        <span
+          css={css`
+            margin-left: 8px;
+          `}
+        >
+          {props.text}
+        </span>
+      </ListItemLink>
+    </ListItem>
   )
 }
 

@@ -7,14 +7,12 @@ export const apiData: ApiTableData<SwitchProps, HTMLInputElement> & {
 } = {
   checked: {
     default: 'false',
-    description: 'チェックされているかどうか',
-    required: false,
+    description: 'チェック状態',
     type: 'boolean',
   },
   disabled: {
     default: 'false',
-    description: '無効にするかどうか',
-    required: false,
+    description: '無効化',
     type: 'boolean',
   },
   onChange: {
@@ -38,7 +36,6 @@ export const apiData: ApiTableData<SwitchProps, HTMLInputElement> & {
   value: {
     default: '',
     description: 'input要素のvalue',
-    required: false,
     type: 'string',
   },
 }

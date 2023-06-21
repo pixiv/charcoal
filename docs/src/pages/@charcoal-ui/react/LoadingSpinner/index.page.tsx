@@ -22,10 +22,6 @@ const ButtonPage: FC = () => {
           css={css`
             padding: 32px;
             ${theme((o) => o.bg.surface6)}
-            /* LoadingSpinner is broken with border-box */
-                > div {
-              box-sizing: content-box;
-            }
           `}
         >
           <LoadingSpinner />
@@ -46,10 +42,6 @@ const ButtonPage: FC = () => {
               css={css`
                 padding: 32px;
                 ${theme((o) => o.bg.surface6)}
-                /* LoadingSpinner is broken with border-box */
-                > div {
-                  box-sizing: content-box;
-                }
               `}
             >
               <LoadingSpinner {...meta.props}></LoadingSpinner>

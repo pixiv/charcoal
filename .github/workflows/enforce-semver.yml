@@ -1,0 +1,55 @@
+name: Check if SemVer label is set
+
+on:
+  pull_request:
+    # cf: https://github.com/yogevbd/enforce-label-action#enforce-pr-labels
+    types: [labeled, unlabeled, opened, edited, synchronize]
+
+env:
+  # see: https://github.com/pixiv/charcoal/issues/labels
+  SEMVER_LABELS: '["major", "minor", "patch", "beta"]'
+
+jobs:
+  enforce-semver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const { issue, repo } = context
+
+            const { data: pull } = await github.rest.issues.get({
+              issue_number: issue.number,
+              owner: repo.owner,
+              repo: repo.repo,
+            })
+
+            const labels = pull.labels.map(({ name }) => name)
+            const SEMVER_LABELS = JSON.parse(process.env.SEMVER_LABELS)
+
+            const result = new Set()
+            for (const label of labels) {
+              for (const semver of SEMVER_LABELS) {
+                if (label !== semver) {
+                  continue
+                }
+
+                result.add(semver)
+              }
+            }
+
+            switch (result.size) {
+              case 1: {
+                const [next] = result.values()
+                console.log(`Merging this PR will be a ${next} release`)
+                break
+              }
+
+              case 0: {
+                throw new Error(`One of semver labels (${SEMVER_LABELS}) must be set`)
+              }
+
+              default: {
+                throw new Error(`Do not set multiple semver labels: ${labels}`)
+              }
+            }

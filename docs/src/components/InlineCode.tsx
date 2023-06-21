@@ -9,3 +9,7 @@ export const InlineCode = styled(Code)`
   margin: 0 2px;
   ${theme((o) => o.bg.surface3)}
 `
+
+export const TagName = styled(InlineCode).attrs(({ children }) => ({
+  children: `<${children?.toString()}>` as string,
+}))``

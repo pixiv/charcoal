@@ -47,6 +47,7 @@ export const Sections: Story<DropdownSelectorProps> = (props) => {
     <div>
       <DropdownSelector
         {...props}
+        label="sections"
         placeholder={'Drop Down menu'}
         onChange={action('change')}
         onOpenChange={action('open')}
@@ -68,6 +69,7 @@ export const Bottom: Story<DropdownSelectorProps> = (props) => {
     <div style={{ marginTop: '1000px' }}>
       <DropdownSelector
         {...props}
+        label="bottom"
         placeholder={'Drop Down menu'}
         onChange={action('change')}
         onOpenChange={action('open')}
@@ -86,6 +88,7 @@ export const Many: Story<DropdownSelectorProps> = (props) => {
     <div style={{ padding: '300px 100px' }}>
       <DropdownSelector
         {...props}
+        label="many"
         placeholder={'Drop Down menu'}
         onChange={(v) => {
           setValue(v.toString())
@@ -181,7 +184,7 @@ type InvalidProps = {
 }
 export const Invalid: Story<InvalidProps> = ({ disabled }) => {
   const props: Omit<DropdownSelectorProps, 'children'> = {
-    label: '',
+    label: 'invalid',
     assertiveText: 'error message',
     invalid: true,
   }

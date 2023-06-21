@@ -13,20 +13,17 @@ export const multiSelectApiData: ApiTableData<
   },
   disabled: {
     default: '',
-    description: '無効化するかどうか',
-    required: false,
+    description: '無効化',
     type: 'string',
   },
   forceChecked: {
     default: 'false',
-    description: '強制的に有効にするかどうか',
-    required: false,
+    description: '強制的なチェック',
     type: 'boolean',
   },
   variant: {
     default: '"Default"',
-    description: '見た目の種類',
-    required: false,
+    description: 'スタイル',
     type: '"Default" | "Overlay"',
   },
 }
@@ -34,8 +31,7 @@ export const multiSelectApiData: ApiTableData<
 export const apiData: ApiTableData<MultiSelectGroupProps, HTMLInputElement> = {
   disabled: {
     default: 'false',
-    description: '無効化するかどうか',
-    required: false,
+    description: '無効化',
     type: 'boolean',
   },
   ariaLabel: {
@@ -46,8 +42,7 @@ export const apiData: ApiTableData<MultiSelectGroupProps, HTMLInputElement> = {
   },
   hasError: {
     default: 'false',
-    description: '不正な入力かどうか',
-    required: false,
+    description: '入力の不正化',
     type: 'boolean',
   },
   name: {
@@ -58,8 +53,7 @@ export const apiData: ApiTableData<MultiSelectGroupProps, HTMLInputElement> = {
   },
   readonly: {
     default: '',
-    description: '読み取り専用かどうか',
-    required: false,
+    description: '読み取り専用化',
     type: 'string',
   },
   selected: {
