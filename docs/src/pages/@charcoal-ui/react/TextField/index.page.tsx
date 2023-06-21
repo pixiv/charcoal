@@ -42,12 +42,6 @@ const TextFieldPage: FC = () => {
         <InlineCode>&lt;input&gt;</InlineCode>の<InlineCode>props</InlineCode>
         を継承しています。
       </p>
-      <p>
-        <InlineCode>multiline</InlineCode>
-        の時は<InlineCode>&lt;textarea&gt;</InlineCode>の
-        <InlineCode>props</InlineCode>
-        を継承しています。
-      </p>
       <ApiTable data={apiData} />
     </ContentRoot>
   )
