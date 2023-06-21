@@ -56,6 +56,11 @@ export default function V2toV3GuidePage() {
         <li>onOpenChange の削除</li>
         <li>mode の削除</li>
       </ul>
+      <h4>TextField</h4>
+      <p>
+        multiline
+        propsによって指定していた複数行入力をTextAreaコンポーネントに分離しました。
+      </p>
     </ContentRoot>
   )
 }

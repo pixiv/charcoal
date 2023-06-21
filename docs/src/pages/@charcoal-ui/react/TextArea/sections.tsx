@@ -1,17 +1,7 @@
-import { Icon, TextFieldProps } from '@charcoal-ui/react'
-import styled from 'styled-components'
-import { theme } from '../../../../utils/theme'
+import { TextAreaProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
-const StyledDiv = styled.div`
-  display: flex;
-  ${theme((o) => o.font.text4)}
-  > pixiv-icon {
-    margin: auto;
-  }
-`
-
-export const sections: PreviewSection<TextFieldProps>[] = [
+export const sections: PreviewSection<TextAreaProps>[] = [
   {
     title: 'showLabel, subLabel, requiredText, assistiveText',
     previewMetas: [
@@ -46,7 +36,7 @@ export const sections: PreviewSection<TextFieldProps>[] = [
           label: 'Label',
           placeholder: 'placeholder',
           showCount: true,
-          maxLength: 16,
+          maxLength: 140,
         },
       },
     ],
@@ -80,35 +70,15 @@ export const sections: PreviewSection<TextFieldProps>[] = [
     ],
   },
   {
-    title: 'prefix',
+    title: 'autoHeight',
     previewMetas: [
       {
         children: undefined,
         props: {
-          label: 'Label',
+          label: 'autoHeight',
           placeholder: 'placeholder',
-          prefix: (
-            <StyledDiv>
-              <Icon name="24/Search" />
-            </StyledDiv>
-          ),
-        },
-      },
-    ],
-  },
-  {
-    title: 'suffix',
-    previewMetas: [
-      {
-        children: undefined,
-        props: {
-          label: 'Label',
-          placeholder: 'placeholder',
-          suffix: (
-            <StyledDiv>
-              <Icon name="24/Search" />
-            </StyledDiv>
-          ),
+          showLabel: true,
+          autoHeight: true,
         },
       },
     ],
