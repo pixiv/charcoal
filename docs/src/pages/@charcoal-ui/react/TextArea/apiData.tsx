@@ -26,11 +26,6 @@ export const apiData: Omit<
     description: '高さを自動で変える',
     type: 'boolean',
   },
-  excludeFromTabOrder: {
-    default: 'false',
-    description: 'Tabキーを押したときにフォーカスの対象から除く',
-    type: 'boolean',
-  },
   invalid: {
     default: 'false',
     description: '入力が不正か',

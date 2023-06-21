@@ -36,11 +36,6 @@ export interface TextAreaProps
   readonly showLabel?: boolean
   readonly assistiveText?: string
   readonly invalid?: boolean
-
-  /**
-   * tab-indexがｰ1かどうか
-   */
-  readonly excludeFromTabOrder?: boolean
 }
 
 const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(

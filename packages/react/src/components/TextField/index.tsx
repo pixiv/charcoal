@@ -42,11 +42,6 @@ export interface TextFieldProps
   readonly showLabel?: boolean
   readonly assistiveText?: string
   readonly invalid?: boolean
-
-  /**
-   * tab-indexがｰ1かどうか
-   */
-  readonly excludeFromTabOrder?: boolean
 }
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
