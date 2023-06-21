@@ -1,4 +1,3 @@
-import React from 'react'
 import { ModalTitle } from '.'
 import styled from 'styled-components'
 import { theme } from '../../styled'

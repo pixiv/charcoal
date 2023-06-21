@@ -5,7 +5,7 @@ import {
   text,
   withKnobs,
 } from '@storybook/addon-knobs'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import LoadingSpinner, {
   LoadingSpinnerIcon,
   LoadingSpinnerIconHandler,

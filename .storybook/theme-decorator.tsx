@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from 'storybook-dark-mode'
 import { light, dark } from '@charcoal-ui/theme'

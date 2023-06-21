@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
 import styled from 'styled-components'
 import TagItem, { TagItemProps } from '.'
 import { Story } from '../../_lib/compat'

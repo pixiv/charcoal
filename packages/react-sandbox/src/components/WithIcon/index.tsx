@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { useElementSize } from '../../foundation/hooks'
 

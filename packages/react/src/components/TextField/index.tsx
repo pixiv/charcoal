@@ -1,12 +1,7 @@
 import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'

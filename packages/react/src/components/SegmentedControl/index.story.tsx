@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
 import SegmentedControl, { SegmentedControlProps } from '.'
 import { Story } from '../../_lib/compat'
 

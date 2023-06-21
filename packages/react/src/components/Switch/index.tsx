@@ -1,6 +1,7 @@
 import { useSwitch } from '@react-aria/switch'
 import type { AriaSwitchProps } from '@react-types/switch'
-import React, { useRef, useMemo } from 'react'
+import { useRef, useMemo } from 'react'
+import * as React from 'react'
 import { useToggleState } from 'react-stately'
 import styled from 'styled-components'
 import { theme } from '../../styled'

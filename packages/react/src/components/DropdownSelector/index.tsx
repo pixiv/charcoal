@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
