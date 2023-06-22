@@ -109,6 +109,10 @@ const themeList: ListItem[] = [
     text: 'クイックスタート',
     href: '/@charcoal-ui/theme/quickstart',
   },
+  {
+    text: 'テーマカラー',
+    href: '/@charcoal-ui/theme/colors',
+  },
 ]
 
 export const NavList: FC<{ className?: string }> = (props) => {
