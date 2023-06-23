@@ -56,10 +56,12 @@ const DEFAULT_Z_INDEX = 10
  *
  * <OverlayProvider>
  *   <App>
- *     <Modal isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
+ *     <Modal title="Title" isOpen={state.isOpen} onClose={() => state.close()} isDismissable>
  *       <ModalHeader />
- *       <ModalBody>...</ModalBody>
- *       <ModalButtons>...</ModalButtons>
+ *       <ModalBody>
+ *         ...
+ *         <ModalButtons>...</ModalButtons>
+ *       </ModalBody>
  *     </Modal>
  *   </App>
  * </OverlayProvider>

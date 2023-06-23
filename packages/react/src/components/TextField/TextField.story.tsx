@@ -79,7 +79,7 @@ export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (
 )
 
 const PrefixIconWrap = styled.div`
-  color: ${({ theme }) => theme.color.text4};
+  color: ${({ theme }) => theme.color.text3};
   margin-top: 2px;
   margin-right: 4px;
 `
