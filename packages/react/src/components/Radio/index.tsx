@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react'
+import React, { forwardRef, memo, useCallback, useContext } from 'react'
 import styled from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
@@ -8,14 +8,13 @@ export type RadioProps = React.PropsWithChildren<{
   value: string
   forceChecked?: boolean
   disabled?: boolean
+  className?: string
 }>
 
-export default function Radio({
-  value,
-  forceChecked = false,
-  disabled = false,
-  children,
-}: RadioProps) {
+const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
+  { value, forceChecked = false, disabled = false, children, className },
+  ref
+) {
   const {
     name,
     selected,
@@ -43,7 +42,7 @@ export default function Radio({
   )
 
   return (
-    <RadioRoot aria-disabled={isDisabled || isReadonly}>
+    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className}>
       <RadioInput
         name={name}
         value={value}
@@ -51,11 +50,14 @@ export default function Radio({
         hasError={hasError}
         onChange={handleChange}
         disabled={isDisabled || isReadonly}
+        ref={ref}
       />
       {children != null && <RadioLabel>{children}</RadioLabel>}
     </RadioRoot>
   )
-}
+})
+
+export default memo(Radio)
 
 const RadioRoot = styled.label`
   display: grid;

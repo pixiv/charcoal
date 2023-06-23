@@ -1,4 +1,10 @@
-import React, { ChangeEvent, useCallback, useContext } from 'react'
+import React, {
+  ChangeEvent,
+  forwardRef,
+  memo,
+  useCallback,
+  useContext,
+} from 'react'
 import styled, { css } from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
@@ -11,71 +17,81 @@ export type MultiSelectProps = React.PropsWithChildren<{
   forceChecked?: boolean
   disabled?: boolean
   variant?: 'default' | 'overlay'
+  className?: string
   onChange?: (payload: { value: string; selected: boolean }) => void
 }>
 
-export default function MultiSelect({
-  value,
-  forceChecked = false,
-  disabled = false,
-  onChange,
-  variant = 'default',
-  children,
-}: MultiSelectProps) {
-  const {
-    name,
-    selected,
-    disabled: parentDisabled,
-    readonly,
-    hasError,
-    onChange: parentOnChange,
-  } = useContext(MultiSelectGroupContext)
-
-  warning(
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    name !== undefined,
-    `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`
-  )
-
-  const isSelected = selected.includes(value) || forceChecked
-  const isDisabled = disabled || parentDisabled || readonly
-
-  const handleChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      if (!(event.currentTarget instanceof HTMLInputElement)) {
-        return
-      }
-      if (onChange) onChange({ value, selected: event.currentTarget.checked })
-      parentOnChange({ value, selected: event.currentTarget.checked })
+const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
+  function MultiSelectInner(
+    {
+      value,
+      forceChecked = false,
+      disabled = false,
+      onChange,
+      variant = 'default',
+      className,
+      children,
     },
-    [onChange, parentOnChange, value]
-  )
+    ref
+  ) {
+    const {
+      name,
+      selected,
+      disabled: parentDisabled,
+      readonly,
+      hasError,
+      onChange: parentOnChange,
+    } = useContext(MultiSelectGroupContext)
 
-  return (
-    <MultiSelectRoot aria-disabled={isDisabled}>
-      <MultiSelectInput
-        {...{
-          name,
-          value,
-          hasError,
-        }}
-        checked={isSelected}
-        disabled={isDisabled}
-        onChange={handleChange}
-        overlay={variant === 'overlay'}
-        aria-invalid={hasError}
-      />
-      <MultiSelectInputOverlay
-        overlay={variant === 'overlay'}
-        hasError={hasError}
-        aria-hidden={true}
-      >
-        <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
-      </MultiSelectInputOverlay>
-      {Boolean(children) && <MultiSelectLabel>{children}</MultiSelectLabel>}
-    </MultiSelectRoot>
-  )
-}
+    warning(
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      name !== undefined,
+      `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`
+    )
+
+    const isSelected = selected.includes(value) || forceChecked
+    const isDisabled = disabled || parentDisabled || readonly
+
+    const handleChange = useCallback(
+      (event: ChangeEvent<HTMLInputElement>) => {
+        if (!(event.currentTarget instanceof HTMLInputElement)) {
+          return
+        }
+        if (onChange) onChange({ value, selected: event.currentTarget.checked })
+        parentOnChange({ value, selected: event.currentTarget.checked })
+      },
+      [onChange, parentOnChange, value]
+    )
+
+    return (
+      <MultiSelectRoot aria-disabled={isDisabled} className={className}>
+        <MultiSelectInput
+          {...{
+            name,
+            value,
+            hasError,
+          }}
+          checked={isSelected}
+          disabled={isDisabled}
+          onChange={handleChange}
+          overlay={variant === 'overlay'}
+          aria-invalid={hasError}
+          ref={ref}
+        />
+        <MultiSelectInputOverlay
+          overlay={variant === 'overlay'}
+          hasError={hasError}
+          aria-hidden={true}
+        >
+          <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
+        </MultiSelectInputOverlay>
+        {Boolean(children) && <MultiSelectLabel>{children}</MultiSelectLabel>}
+      </MultiSelectRoot>
+    )
+  }
+)
+
+export default memo(MultiSelect)
 
 const MultiSelectRoot = styled.label`
   display: grid;

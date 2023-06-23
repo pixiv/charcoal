@@ -20,6 +20,7 @@ type CheckboxLabelProps =
 export type CheckboxProps = CheckboxLabelProps & {
   readonly id?: string
   readonly name?: string
+  readonly className?: string
 
   readonly checked?: boolean
   readonly defaultChecked?: boolean
@@ -52,7 +53,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const isDisabled = (props.disabled ?? false) || (props.readonly ?? false)
 
     return (
-      <InputRoot aria-disabled={isDisabled}>
+      <InputRoot aria-disabled={isDisabled} className={props.className}>
         <CheckboxRoot>
           <CheckboxInput type="checkbox" {...inputProps} />
           <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
