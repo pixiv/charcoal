@@ -115,6 +115,7 @@ declare var _default: {
   '24/LikeOff': () => Promise<string>;
   '24/LikeOn': () => Promise<string>;
   '24/Link': () => Promise<string>;
+  '24/List': () => Promise<string>;
   '24/LockLock': () => Promise<string>;
   '24/LockUnlock': () => Promise<string>;
   '24/Logout': () => Promise<string>;

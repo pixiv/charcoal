@@ -115,6 +115,7 @@ module.exports = {
   '24/LikeOff': () => import('./24/LikeOff.js').then(m => m.default),
   '24/LikeOn': () => import('./24/LikeOn.js').then(m => m.default),
   '24/Link': () => import('./24/Link.js').then(m => m.default),
+  '24/List': () => import('./24/List.js').then(m => m.default),
   '24/LockLock': () => import('./24/LockLock.js').then(m => m.default),
   '24/LockUnlock': () => import('./24/LockUnlock.js').then(m => m.default),
   '24/Logout': () => import('./24/Logout.js').then(m => m.default),
