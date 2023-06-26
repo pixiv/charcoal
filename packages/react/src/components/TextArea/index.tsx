@@ -175,6 +175,7 @@ const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   ${(p) =>
     theme((o) => [
       o.bg.surface3.hover,
+      o.outline.default.focus,
       p.invalid && o.outline.assertive,
       o.font.text2,
       o.borderRadius(4),
