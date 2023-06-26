@@ -42,7 +42,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
       `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`
     )
 
-    const isSelected = selected.includes(value) 
+    const isSelected = selected.includes(value)
     const isDisabled = disabled || parentDisabled || readonly
 
     const handleChange = useCallback(

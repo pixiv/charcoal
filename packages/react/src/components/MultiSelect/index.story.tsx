@@ -88,7 +88,12 @@ const Template: Story<Props> = ({
       selected={selected ? ['選択肢1', '選択肢3'] : []}
     >
       {[1, 2, 3, 4].map((idx) => (
-        <MultiSelect value={`選択肢${idx}`} variant={variant} key={idx} className={className}>
+        <MultiSelect
+          value={`選択肢${idx}`}
+          variant={variant}
+          key={idx}
+          className={className}
+        >
           選択肢{idx}
         </MultiSelect>
       ))}
