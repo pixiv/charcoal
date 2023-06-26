@@ -1585,7 +1585,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@charcoal-ui/foundation@^3.0.0-beta.3, @charcoal-ui/foundation@workspace:packages/foundation":
+"@charcoal-ui/foundation@npm:^3.0.0-beta.3":
+  version: 3.0.0-beta.3
+  resolution: "@charcoal-ui/foundation@npm:3.0.0-beta.3"
+  checksum: c22cf7ca4edc1712d4dda6f193189009288bd4f63315a5a1641b0d5eb5a77b0bfcd1293c4979c6025d76713b5e6bdb379778121c9e4b8908bbae3504480058f5
+  languageName: node
+  linkType: hard
+
+"@charcoal-ui/foundation@workspace:packages/foundation":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/foundation@workspace:packages/foundation"
   dependencies:
@@ -1596,7 +1603,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/icon-files@^3.0.0-beta.3, @charcoal-ui/icon-files@workspace:packages/icon-files":
+"@charcoal-ui/icon-files@npm:^3.0.0-beta.3":
+  version: 3.0.0-beta.3
+  resolution: "@charcoal-ui/icon-files@npm:3.0.0-beta.3"
+  checksum: 9519beee07ead865990db44eb409da6d802d72d2cb96b01c1d3adb84c9e8f6c26dc6f341f6b2499d9dc49032e4bd3e4d152a5d71763b8296816840c0364d1697
+  languageName: node
+  linkType: hard
+
+"@charcoal-ui/icon-files@workspace:packages/icon-files":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icon-files@workspace:packages/icon-files"
   languageName: unknown
