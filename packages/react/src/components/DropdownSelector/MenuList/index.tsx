@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import { MenuListContext } from './MenuListContext'
 import { getValuesRecursive } from './internals/getValuesRecursive'

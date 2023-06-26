@@ -1,4 +1,3 @@
-import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Story } from '../../../_lib/compat'
 import MenuList, { MenuListProps } from '.'

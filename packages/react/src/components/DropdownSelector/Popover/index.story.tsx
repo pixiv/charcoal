@@ -1,4 +1,4 @@
-import React, { useRef, CSSProperties, useState } from 'react'
+import { useRef, CSSProperties, useState } from 'react'
 import { Story } from '../../../_lib/compat'
 import Popover, { PopoverProps } from '.'
 import Button from '../../Button'
