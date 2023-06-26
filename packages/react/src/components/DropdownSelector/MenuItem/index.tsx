@@ -1,4 +1,3 @@
-import React from 'react'
 import ListItem, { CustomJSXElement, ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react'
+import { useCallback, useContext } from 'react'
 import { handleFocusByKeyBoard } from './handleFocusByKeyBoard'
 import { MenuListContext } from '../../MenuList/MenuListContext'
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import MenuItem, { MenuItemProps } from './MenuItem'
 import { MenuListContext } from './MenuList/MenuListContext'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { theme } from '../../styled'
 import Icon from '../Icon'
 

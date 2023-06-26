@@ -1,4 +1,4 @@
-import React, { RefObject, useRef } from 'react'
+import { RefObject, useRef } from 'react'
 import { ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import styled from 'styled-components'

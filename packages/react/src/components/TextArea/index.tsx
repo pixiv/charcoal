@@ -1,6 +1,6 @@
 import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
@@ -38,7 +38,7 @@ export interface TextAreaProps
   readonly invalid?: boolean
 }
 
-const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   function TextAreaInner({ onChange, ...props }, forwardRef) {
     const {
       className,
