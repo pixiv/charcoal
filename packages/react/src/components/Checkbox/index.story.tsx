@@ -12,6 +12,7 @@ type Props = {
   defaultChecked: boolean
   disabled: boolean
   readonly: boolean
+  className?: string
 }
 
 export const Labelled: Story<Props> = (props) => {

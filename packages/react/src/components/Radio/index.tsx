@@ -1,4 +1,4 @@
-import { useCallback, useContext } from 'react'
+import { memo, forwardRef, useCallback, useContext } from 'react'
 import * as React from 'react'
 import styled from 'styled-components'
 import warning from 'warning'
@@ -8,13 +8,13 @@ import { px } from '@charcoal-ui/utils'
 export type RadioProps = React.PropsWithChildren<{
   value: string
   disabled?: boolean
+  className?: string
 }>
 
-export default function Radio({
-  value,
-  disabled = false,
-  children,
-}: RadioProps) {
+const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
+  { value, disabled = false, children, className },
+  ref
+) {
   const {
     name,
     selected,
@@ -42,7 +42,7 @@ export default function Radio({
   )
 
   return (
-    <RadioRoot aria-disabled={isDisabled || isReadonly}>
+    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className}>
       <RadioInput
         name={name}
         value={value}
@@ -50,11 +50,14 @@ export default function Radio({
         invalid={invalid}
         onChange={handleChange}
         disabled={isDisabled || isReadonly}
+        ref={ref}
       />
       {children != null && <RadioLabel>{children}</RadioLabel>}
     </RadioRoot>
   )
-}
+})
+
+export default memo(Radio)
 
 const RadioRoot = styled.label`
   display: grid;

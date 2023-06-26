@@ -1,18 +1,34 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react'
+import { forwardRef, useImperativeHandle, useRef, memo } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { theme } from '../../styled'
 
-export default function LoadingSpinner({
-  size = 48,
-  padding = 16,
-  transparent = false,
-}) {
-  return (
-    <LoadingSpinnerRoot size={size} padding={padding} transparent={transparent}>
-      <LoadingSpinnerIcon />
-    </LoadingSpinnerRoot>
-  )
+export type LoadingSpinnerProps = {
+  readonly size?: number
+  readonly padding?: number
+  readonly transparent?: boolean
+  readonly className?: string
 }
+
+const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
+  function LoadingSpinnerInner(
+    { size = 48, padding = 16, transparent = false, className },
+    ref
+  ) {
+    return (
+      <LoadingSpinnerRoot
+        size={size}
+        padding={padding}
+        transparent={transparent}
+        className={className}
+        ref={ref}
+      >
+        <LoadingSpinnerIcon />
+      </LoadingSpinnerRoot>
+    )
+  }
+)
+
+export default memo(LoadingSpinner)
 
 const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   size: number

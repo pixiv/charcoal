@@ -29,6 +29,7 @@ interface Props {
   parentDisabled: boolean
   childDisabled: boolean
   readonly: boolean
+  className?: string
 }
 
 const Template: Story<Partial<Props>> = ({
@@ -37,6 +38,7 @@ const Template: Story<Partial<Props>> = ({
   parentDisabled,
   childDisabled,
   readonly,
+  className,
 }) => (
   <div
     css={css`
@@ -57,7 +59,12 @@ const Template: Story<Partial<Props>> = ({
         invalid={invalid}
       >
         {options.map((option) => (
-          <Radio key={option} value={option} disabled={childDisabled}>
+          <Radio
+            key={option}
+            value={option}
+            disabled={childDisabled}
+            className={className}
+          >
             {name}({option})を選ぶ
           </Radio>
         ))}

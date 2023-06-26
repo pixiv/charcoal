@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/foundation",
-  "version": "3.0.0-beta.3",
+  "version": "2.10.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",

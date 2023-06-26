@@ -55,6 +55,7 @@ type Props = {
   readonly?: boolean
   invalid?: boolean
   variant?: 'default' | 'overlay'
+  className?: string
 }
 
 const StyledMultiSelectGroup = styled(MultiSelectGroup)`
@@ -72,6 +73,7 @@ const Template: Story<Props> = ({
   readonly,
   invalid,
   variant,
+  className,
 }) => {
   return (
     <StyledMultiSelectGroup
@@ -83,11 +85,10 @@ const Template: Story<Props> = ({
         readonly,
         invalid,
       }}
-      className={''}
       selected={selected ? ['選択肢1', '選択肢3'] : []}
     >
       {[1, 2, 3, 4].map((idx) => (
-        <MultiSelect value={`選択肢${idx}`} variant={variant} key={idx}>
+        <MultiSelect value={`選択肢${idx}`} variant={variant} key={idx} className={className}>
           選択肢{idx}
         </MultiSelect>
       ))}
@@ -114,10 +115,11 @@ type PlaygroundProps = {
   disabled?: boolean
   readonly?: boolean
   invalid?: boolean
+  className?: string
   variant?: 'default' | 'overlay'
 }
 
-export const Playground: Story<PlaygroundProps> = (props) => {
+export const Playground: Story<PlaygroundProps> = ({ className, ...props }) => {
   const [selected, setSelected] = useState<string[]>([])
 
   return (
@@ -127,7 +129,12 @@ export const Playground: Story<PlaygroundProps> = (props) => {
       onChange={setSelected}
     >
       {[1, 2, 3, 4].map((idx) => (
-        <MultiSelect value={`選択肢${idx}`} variant={props.variant} key={idx}>
+        <MultiSelect
+          value={`選択肢${idx}`}
+          variant={props.variant}
+          key={idx}
+          className={className}
+        >
           選択肢{idx}
         </MultiSelect>
       ))}
