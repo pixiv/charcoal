@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/styled",
-  "version": "3.0.0-beta.5",
+  "version": "3.0.0-beta.6",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -32,9 +32,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.0.0-beta.5",
-    "@charcoal-ui/theme": "^3.0.0-beta.5",
-    "@charcoal-ui/utils": "^3.0.0-beta.5",
+    "@charcoal-ui/foundation": "^3.0.0-beta.6",
+    "@charcoal-ui/theme": "^3.0.0-beta.6",
+    "@charcoal-ui/utils": "^3.0.0-beta.6",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
