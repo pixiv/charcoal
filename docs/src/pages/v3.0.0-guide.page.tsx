@@ -37,6 +37,7 @@ export default function V2toV3GuidePage() {
       <p>hasErrorをinvalidに変更しました。</p>
       <h4>MultiSelectGroup</h4>
       <p>hasErrorをinvalidに変更しました。</p>
+      <p>ariaLabelをlabelに変更しました。</p>
       <h4>MultiSelect</h4>
       <p>forceCheckedを削除しました。</p>
       <h4>DropdownSelector</h4>
