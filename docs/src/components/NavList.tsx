@@ -104,6 +104,41 @@ const tailwindDiffList: ListItem[] = [
   },
 ]
 
+const foundationList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/foundation/quickstart',
+  },
+  {
+    text: 'borderRadius',
+    href: '/@charcoal-ui/foundation/borderRadius',
+  },
+  {
+    text: 'breakPoints',
+    href: '/@charcoal-ui/foundation/breakPoint',
+  },
+  {
+    text: 'color',
+    href: '/@charcoal-ui/foundation/color',
+  },
+  {
+    text: 'effect',
+    href: '/@charcoal-ui/foundation/effect',
+  },
+  {
+    text: 'grid',
+    href: '/@charcoal-ui/foundation/grid',
+  },
+  {
+    text: 'spacing',
+    href: '/@charcoal-ui/foundation/spacing',
+  },
+  {
+    text: 'typography',
+    href: '/@charcoal-ui/foundation/typography',
+  },
+]
+
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
   useEffect(() => {
@@ -137,6 +172,8 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {iconsList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/tailwind-diff</ListItemHeader>
       {tailwindDiffList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/foundation</ListItemHeader>
+      {foundationList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
       <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
       <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />
