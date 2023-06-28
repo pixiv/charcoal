@@ -6,11 +6,6 @@ import { InlineCode } from '../../../components/InlineCode'
 import { FlexDiv } from '../../../components/FlexDiv'
 
 export default function BorderRadiusPage() {
-  const { none, oval, ...pxItems } = BORDER_RADIUS
-  const items = [...Object.entries(pxItems)].sort(([key1], [key2]) =>
-    key1.padStart(3, '0').localeCompare(key2.padStart(3, '0'))
-  )
-
   return (
     <ContentRoot>
       <h1>border-radius</h1>
@@ -45,6 +40,11 @@ export default function BorderRadiusPage() {
     </ContentRoot>
   )
 }
+
+const { none, oval, ...pxItems } = BORDER_RADIUS
+const items = [...Object.entries(pxItems)].sort(([key1], [key2]) =>
+  key1.padStart(3, '0').localeCompare(key2.padStart(3, '0'))
+)
 
 const Box = styled.div<{ borderRadius: number }>`
   width: 5rem;

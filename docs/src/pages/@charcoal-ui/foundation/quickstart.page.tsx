@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { ContentRoot } from '../../../components/ContentRoot'
-
 import { InlineCode } from '../../../components/InlineCode'
 import { SSRHighlight } from '../../../components/SSRHighlight'
 
@@ -11,7 +10,7 @@ export default function InstallPage() {
       <Link href="https://www.npmjs.com/package/@charcoal-ui/foundation">
         <img
           alt="npm-badge"
-          src="https://img.shields.io/npm/v/@charcoal-uifoundation/?label=%40charcoal-ui%2Ffoundation&style=flat-square&logo=npm"
+          src="https://img.shields.io/npm/v/@charcoal-ui/foundation?label=%40charcoal-ui%2Ffoundation&style=flat-square&logo=npm"
         />
       </Link>
       <h2>インストール</h2>
@@ -22,15 +21,11 @@ export default function InstallPage() {
 
       <hr />
 
-      <section>
-        <h2>概要</h2>
-        <p>
-          <InlineCode>@charcoal-ui</InlineCode>
-          で利用されるプリミティブな型定義や値を提供します。
-        </p>
-      </section>
-
-      <section>{/*  */}</section>
+      <h2>概要</h2>
+      <p>
+        <InlineCode>@charcoal-ui</InlineCode>
+        で利用されるプリミティブな型定義や値を提供します。
+      </p>
     </ContentRoot>
   )
 }

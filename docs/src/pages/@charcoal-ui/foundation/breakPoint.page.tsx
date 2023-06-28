@@ -1,15 +1,9 @@
 import { ContentRoot } from '../../../components/ContentRoot'
-import styled from 'styled-components'
 import { BREAKPOINT, HORIZONTAL_MIN_MARGIN } from '@charcoal-ui/foundation'
-import { theme } from '../../../utils/theme'
 import { InlineCode } from '../../../components/InlineCode'
 import { FlexDiv } from '../../../components/FlexDiv'
 
 export default function BorderRadiusPage() {
-  const items = Object.entries(BREAKPOINT).sort(([key1], [key2]) =>
-    key1.padStart(3, '0').localeCompare(key2.padStart(3, '0'))
-  )
-
   return (
     <ContentRoot>
       <h1>breakpoint</h1>
@@ -41,9 +35,6 @@ export default function BorderRadiusPage() {
   )
 }
 
-const Scrollable = styled.div`
-  overflow-x: scroll;
-`
-const Box = styled.div`
-  ${theme((o) => o.bg.surface10)}
-`
+const items = Object.entries(BREAKPOINT).sort(([key1], [key2]) =>
+  key1.padStart(3, '0').localeCompare(key2.padStart(3, '0'))
+)

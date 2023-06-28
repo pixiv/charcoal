@@ -1,15 +1,9 @@
 import { ContentRoot } from '../../../components/ContentRoot'
 import { InlineCode } from '../../../components/InlineCode'
 import { FlexDiv } from '../../../components/FlexDiv'
-import {
-  columnSystem,
-  COLUMN_UNIT,
-  GUTTER_UNIT,
-  SPACING,
-} from '@charcoal-ui/foundation'
+import { SPACING } from '@charcoal-ui/foundation'
 import styled from 'styled-components'
 import { theme } from '../../../utils/theme'
-import { SSRHighlight } from '../../../components/SSRHighlight'
 
 export default function GridPage() {
   return (
