@@ -19,7 +19,7 @@ export default function BorderRadiusPage() {
       <div>
         <p>
           <InlineCode>
-            border-radius: BORDER_RADIUS[&quote;none&quote;]
+            border-radius: BORDER_RADIUS[&quot;none&quot;]
           </InlineCode>
         </p>
         <Box borderRadius={none} />
@@ -36,7 +36,7 @@ export default function BorderRadiusPage() {
       <div>
         <p>
           <InlineCode>
-            border-radius: BORDER_RADIUS[&quote;oval&quote;]
+            border-radius: BORDER_RADIUS[&quot;oval&quot;]
           </InlineCode>
         </p>
         <Box borderRadius={oval} />
