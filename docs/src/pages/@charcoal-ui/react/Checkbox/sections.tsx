@@ -1,4 +1,4 @@
-import { CheckboxProps } from '@charcoal-ui/react/dist/components/Checkbox'
+import { CheckboxProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
 export const sections: PreviewSection<CheckboxProps>[] = [

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 import ComponentAbstraction, { Components } from './ComponentAbstraction'
 import { TokenInjector } from '@charcoal-ui/styled'

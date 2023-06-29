@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { MenuListLinkItem } from '../MenuListItem'
 import { useComponentAbstraction } from '@charcoal-ui/react'

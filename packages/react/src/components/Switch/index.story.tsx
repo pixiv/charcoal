@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Story } from '../../_lib/compat'
 import Switch from '.'
 

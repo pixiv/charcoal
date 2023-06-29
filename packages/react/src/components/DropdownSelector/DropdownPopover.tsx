@@ -1,72 +1,45 @@
-import React, { Key, useEffect, useRef } from 'react'
-import { OverlayTriggerState } from 'react-stately'
-import { ReactNode } from 'react'
-import {
-  AriaPopoverProps,
-  DismissButton,
-  Overlay,
-  usePopover,
-} from '@react-aria/overlays'
-import styled from 'styled-components'
-import { theme } from '../../styled'
+import { Key, useEffect, useRef } from 'react'
+import Popover, { PopoverProps } from './Popover'
 
-const DropdownPopoverDiv = styled.div`
-  width: 100%;
-  ${theme((o) => o.margin.top(4).bottom(4))}
-`
-
-type Props = Omit<AriaPopoverProps, 'popoverRef'> & {
-  state: OverlayTriggerState
-} & {
-  children: ReactNode
+type DropdownPopoverProps = PopoverProps & {
   value?: Key
 }
 
-export function DropdownPopover({ children, state, ...props }: Props) {
+/**
+ * DropdownSelectorの選択肢をを表示するためのPopover
+ * triggerRefの要素と同じ幅になる
+ * 表示の際にvalueが等しいDropdownMenuItemを中央に表示する
+ */
+export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const { popoverProps, underlayProps } = usePopover(
-    {
-      ...props,
-      popoverRef: ref,
-      containerPadding: 0,
-    },
-    state
-  )
-
   useEffect(() => {
-    if (ref.current && props.triggerRef.current) {
+    if (props.isOpen && ref.current && props.triggerRef.current) {
       ref.current.style.width = `${props.triggerRef.current.clientWidth}px`
     }
-  }, [props.triggerRef])
+  }, [props.triggerRef, props.isOpen])
 
   useEffect(() => {
-    if (state.isOpen && props.value !== undefined) {
-      // useListbox内部で現在の選択肢までスクロールする処理がある
-      // react-ariaより遅らせるためrequestAnimationFrameで呼び出す
-      window.requestAnimationFrame(() => {
-        if (props.value === undefined) return
-        // react-aria の scrollIntoViewport は 'nearest' なので
-        // listboxの中心に来るように上書きする
-        // 'center'は windowのスクロールも変更されるため戻す処理を入れている。
-        const windowScrollY = window.scrollY
-        const windowScrollX = window.scrollX
-        const selectedElement = document.querySelector(
-          `[data-key="${props.value.toString()}"]`
-        ) as HTMLElement | undefined
-        selectedElement?.scrollIntoView({ block: 'center' })
-        window.scrollTo(windowScrollX, windowScrollY)
-      })
+    if (props.isOpen && props.value !== undefined) {
+      // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
+      const windowScrollY = window.scrollY
+      const windowScrollX = window.scrollX
+      const selectedElement = document.querySelector(
+        `[data-key="${props.value.toString()}"]`
+      ) as HTMLElement | undefined
+      selectedElement?.scrollIntoView({ block: 'center' })
+      selectedElement?.focus()
+      window.scrollTo(windowScrollX, windowScrollY)
     }
-  }, [props.value, state.isOpen])
+  }, [props.value, props.isOpen])
 
   return (
-    <Overlay portalContainer={document.body}>
-      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
-      <DropdownPopoverDiv {...popoverProps} ref={ref}>
-        <DismissButton onDismiss={() => state.close()} />
-        {children}
-        <DismissButton onDismiss={() => state.close()} />
-      </DropdownPopoverDiv>
-    </Overlay>
+    <Popover
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      popoverRef={ref}
+      triggerRef={props.triggerRef}
+    >
+      {children}
+    </Popover>
   )
 }

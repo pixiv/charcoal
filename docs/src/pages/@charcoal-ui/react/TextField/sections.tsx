@@ -113,28 +113,4 @@ export const sections: PreviewSection<TextFieldProps>[] = [
       },
     ],
   },
-  {
-    title: 'multiline',
-    previewMetas: [
-      {
-        children: undefined,
-        props: {
-          label: 'multiline',
-          placeholder: 'placeholder',
-          showLabel: true,
-          multiline: true,
-        },
-      },
-      {
-        children: undefined,
-        props: {
-          label: 'autoHeight',
-          placeholder: 'placeholder',
-          showLabel: true,
-          multiline: true,
-          autoHeight: true,
-        },
-      },
-    ],
-  },
 ]

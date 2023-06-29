@@ -33,11 +33,11 @@ export const sections: PreviewSection<ButtonProps>[] = [
     })),
   },
   {
-    title: 'fixed',
+    title: 'fullWidth',
     previewMetas: variants.map((variant) => ({
       props: {
         variant,
-        fixed: true,
+        fullWidth: true,
       },
       children: variant,
     })),

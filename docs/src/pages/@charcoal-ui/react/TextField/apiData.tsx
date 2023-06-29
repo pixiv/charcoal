@@ -1,8 +1,14 @@
 import { TextFieldProps } from '@charcoal-ui/react'
-import { ApiTableData } from '../_components/ApiTable'
+import { TableItem } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  ApiTableData<TextFieldProps, HTMLInputElement>,
+  Record<
+    Exclude<
+      keyof TextFieldProps,
+      keyof React.InputHTMLAttributes<HTMLInputElement>
+    >,
+    TableItem
+  >,
   'type' | 'value'
 > = {
   label: {
@@ -15,50 +21,15 @@ export const apiData: Omit<
     description: 'エラーのテキスト',
     type: 'string',
   },
-  autoHeight: {
-    default: 'false',
-    description: '高さを自動で変える、multilineのみ有効',
-    type: 'boolean',
-  },
-  disabled: {
-    default: 'false',
-    description: '無効にする',
-    type: 'boolean',
-  },
-  excludeFromTabOrder: {
-    default: 'false',
-    description: '(非推奨）',
-    type: 'boolean',
-  },
   invalid: {
     default: 'false',
-    description: '入力の不正化',
-    type: 'boolean',
-  },
-  maxLength: {
-    default: '',
-    description: '入力できる最大値',
-    type: 'number',
-  },
-  multiline: {
-    default: 'false',
-    description: '複数行の入力の有効化、textareaになる',
-    type: 'boolean',
-  },
-  required: {
-    default: 'false',
-    description: '入力必須化',
+    description: '入力が不正か',
     type: 'boolean',
   },
   requiredText: {
     default: '',
     description: '必須を示すのテキスト',
     type: 'string',
-  },
-  rows: {
-    default: '',
-    description: '表示する行数、multilineのみ有効',
-    type: 'number',
   },
   showCount: {
     default: 'false',

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { screens } from '.'
 
 export const Screens: React.FC = () => {

@@ -1,68 +1,109 @@
-import { DropdownSelectorProps } from '@charcoal-ui/react/dist/components/DropdownSelector'
+import {
+  DropdownSelectorProps,
+  DropdownMenuItem,
+  MenuItemGroup,
+} from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
+
+const baseProps = {
+  label: 'label',
+  options: [
+    {
+      id: 'option1',
+      label: 'option1',
+    },
+  ],
+  children: [],
+  value: 'option1',
+  onChange: () => {},
+}
 
 export const sections: PreviewSection<DropdownSelectorProps>[] = [
   {
     title: 'disabled',
     previewMetas: [
       {
-        children: undefined,
         props: {
-          disabled: true,
+          ...baseProps,
           label: 'disabled',
-          children: [],
+          disabled: true,
         },
       },
     ],
   },
   {
-    title: 'showLabel,subLabel,requiredText',
+    title: 'subLabel',
     previewMetas: [
       {
-        children: undefined,
         props: {
+          ...baseProps,
+          label: 'subLabel',
           showLabel: true,
           subLabel: 'subLabel',
-          assertiveText: 'assertiveText',
+        },
+      },
+    ],
+  },
+  {
+    title: 'required',
+    previewMetas: [
+      {
+        props: {
+          ...baseProps,
+          label: 'required',
+          showLabel: true,
           required: true,
-          requiredText: 'requiredText',
-          label: 'label',
-          children: [],
+        },
+      },
+      {
+        props: {
+          ...baseProps,
+          label: 'requiredText',
+          showLabel: true,
+          required: true,
+          requiredText: '*REQUIRED',
         },
       },
     ],
   },
   {
-    title: 'disabledKeys',
+    title: 'invalid,assistiveText',
     previewMetas: [
       {
-        children: undefined,
         props: {
-          disabledKeys: ['option1'],
-          label: 'disabledKeys',
-          children: [],
+          ...baseProps,
+          invalid: true,
+          label: 'invalid',
+        },
+      },
+      {
+        props: {
+          ...baseProps,
+          invalid: true,
+          label: 'invalid+assistiveText',
+          assistiveText: 'assistiveText',
         },
       },
     ],
   },
   {
-    title: 'invalid',
+    title: 'section',
     previewMetas: [
       {
-        children: undefined,
         props: {
+          ...baseProps,
           invalid: true,
-          label: 'invalid1',
-          children: [],
-        },
-      },
-      {
-        children: undefined,
-        props: {
-          invalid: true,
-          assertiveText: 'assertiveText',
-          label: 'invalid2',
-          children: [],
+          label: 'invalid',
+          children: [
+            <MenuItemGroup text="Group1" key={0}>
+              <DropdownMenuItem value="1">option1</DropdownMenuItem>
+              <DropdownMenuItem value="2">option2</DropdownMenuItem>
+            </MenuItemGroup>,
+            <MenuItemGroup text="Group2" key={1}>
+              <DropdownMenuItem value="3">option1</DropdownMenuItem>
+              <DropdownMenuItem value="4">option2</DropdownMenuItem>
+            </MenuItemGroup>,
+          ],
         },
       },
     ],

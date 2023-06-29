@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import InfoIcon from '../icons/InfoIcon'

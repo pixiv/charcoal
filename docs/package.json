@@ -1,6 +1,6 @@
 {
   "name": "charcoal-web-docs",
-  "version": "2.5.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -27,7 +27,7 @@
     "@types/styled-components": "^5.1.26",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
   "resolutions": {
     "@charcoal-ui/foundation": "../packages/foundation",

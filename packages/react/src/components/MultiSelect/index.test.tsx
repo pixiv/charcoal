@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { default as MultiSelect, MultiSelectGroup } from '.'
 import { light } from '@charcoal-ui/theme'
@@ -184,7 +183,7 @@ describe('MultiSelect', () => {
     let allOptions: HTMLInputElement[]
 
     beforeEach(() => {
-      render(<TestComponent selected={['option1']} hasError={true} />)
+      render(<TestComponent selected={['option1']} invalid={true} />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -196,20 +195,6 @@ describe('MultiSelect', () => {
       allOptions.forEach((element) =>
         expect(element.getAttribute('aria-invalid')).toBeTruthy()
       )
-    })
-  })
-
-  describe('option1 is force checked', () => {
-    let option1: HTMLInputElement
-
-    beforeEach(() => {
-      render(<TestComponent selected={[]} firstOptionForceChecked={true} />)
-
-      option1 = screen.getByDisplayValue('option1')
-    })
-
-    it('option1 is force checked', () => {
-      expect(option1.checked).toBeTruthy()
     })
   })
 
@@ -239,8 +224,7 @@ const TestComponent = ({
   childOnChange,
   parentDisabled = false,
   readonly = false,
-  hasError = false,
-  firstOptionForceChecked = false,
+  invalid = false,
   firstOptionDisabled = false,
 }: {
   selected: string[]
@@ -248,23 +232,21 @@ const TestComponent = ({
   childOnChange?: (payload: { value: string; selected: boolean }) => void
   parentDisabled?: boolean
   readonly?: boolean
-  hasError?: boolean
-  firstOptionForceChecked?: boolean
+  invalid?: boolean
   firstOptionDisabled?: boolean
 }) => {
   return (
     <ThemeProvider theme={light}>
       <MultiSelectGroup
         name="defaultName"
-        ariaLabel="defaultAriaLabel"
+        label="defaultAriaLabel"
         disabled={parentDisabled}
         onChange={parentOnChange}
-        {...{ selected, readonly, hasError }}
+        {...{ selected, readonly, invalid }}
       >
         <MultiSelect
           value="option1"
           disabled={firstOptionDisabled}
-          forceChecked={firstOptionForceChecked}
           onChange={childOnChange}
         >
           Option 1

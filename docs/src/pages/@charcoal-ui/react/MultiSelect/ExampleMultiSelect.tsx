@@ -8,7 +8,7 @@ export const ExampleMultiSelect = () => {
     <div>
       <p>selected: [{selectedValues.join(', ')}]</p>
       <StyledMultiSelectGroup
-        ariaLabel="multi-select-1"
+        label="multi-select-1"
         name="multi-select-1"
         onChange={setSelectedValues}
         selected={selectedValues}

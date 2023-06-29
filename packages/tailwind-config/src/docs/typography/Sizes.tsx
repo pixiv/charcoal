@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { sizeClasses } from '.'
 
 export const Sizes: React.FC = () => (

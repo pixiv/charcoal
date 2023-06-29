@@ -1,4 +1,3 @@
-import React from 'react'
 import { Story } from '../../_lib/compat'
 import HintText from '.'
 

@@ -1,4 +1,4 @@
-import { CheckboxProps } from '@charcoal-ui/react/dist/components/Checkbox'
+import { CheckboxProps } from '@charcoal-ui/react'
 import { ApiTableData, TableItem } from '../_components/ApiTable'
 
 export const apiData: Omit<

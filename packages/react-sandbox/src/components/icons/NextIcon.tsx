@@ -1,4 +1,3 @@
-import React from 'react'
 import { unreachable } from '../../foundation/utils'
 import IconBase from './Base'
 

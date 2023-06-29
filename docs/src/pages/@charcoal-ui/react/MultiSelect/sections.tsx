@@ -8,7 +8,7 @@ export const sections: PreviewSection<MultiSelectGroupProps>[] = [
       {
         props: {
           disabled: true,
-          ariaLabel: '',
+          label: '',
           name: '',
           onChange: () => {},
           selected: [],
@@ -18,12 +18,12 @@ export const sections: PreviewSection<MultiSelectGroupProps>[] = [
     ],
   },
   {
-    title: 'hasError',
+    title: 'invalid',
     previewMetas: [
       {
         props: {
-          hasError: true,
-          ariaLabel: '',
+          invalid: true,
+          label: '',
           name: '',
           onChange: () => {},
           selected: [],
@@ -38,7 +38,7 @@ export const sections: PreviewSection<MultiSelectGroupProps>[] = [
       {
         props: {
           readonly: true,
-          ariaLabel: '',
+          label: '',
           name: '',
           onChange: () => {},
           selected: [],
@@ -52,7 +52,7 @@ export const sections: PreviewSection<MultiSelectGroupProps>[] = [
     previewMetas: [
       {
         props: {
-          ariaLabel: '',
+          label: '',
           name: '',
           onChange: () => {},
           selected: [],

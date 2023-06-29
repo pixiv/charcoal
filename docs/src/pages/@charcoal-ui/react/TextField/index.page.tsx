@@ -8,6 +8,8 @@ import { SSRHighlight } from '../../../../components/SSRHighlight'
 import { ContentRoot } from '../../../../components/ContentRoot'
 import { ApiTable } from '../_components/ApiTable'
 import { PreviewsList } from '../_components/PreviewsList'
+import styled from 'styled-components'
+import { theme } from '../../../../utils/theme'
 
 const TextFieldPage: FC = () => {
   return (
@@ -27,7 +29,11 @@ const TextFieldPage: FC = () => {
       <PreviewsList
         sections={sections}
         renderer={(meta, i) => {
-          return <TextField key={i} {...meta.props} />
+          return (
+            <Inner>
+              <TextField key={i} {...meta.props} />
+            </Inner>
+          )
         }}
       />
 
@@ -36,15 +42,11 @@ const TextFieldPage: FC = () => {
         <InlineCode>&lt;input&gt;</InlineCode>の<InlineCode>props</InlineCode>
         を継承しています。
       </p>
-      <p>
-        <InlineCode>multiline</InlineCode>
-        の時は<InlineCode>&lt;textarea&gt;</InlineCode>の
-        <InlineCode>props</InlineCode>
-        を継承しています。
-      </p>
       <ApiTable data={apiData} />
     </ContentRoot>
   )
 }
+
+const Inner = styled.div(theme((o) => o.width.full))
 
 export default TextFieldPage

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { dummyText } from '../../misc/storybook-helper'
 import { theme } from '../../styled'

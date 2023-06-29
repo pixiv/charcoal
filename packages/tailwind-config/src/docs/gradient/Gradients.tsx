@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { utilityClasses, directions, effectTypes } from '.'
 import { getUniqueGradientNames } from './utils'
 
