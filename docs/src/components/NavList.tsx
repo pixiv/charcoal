@@ -57,11 +57,12 @@ const reactList: ListItem[] = [
     'SegmentedControl',
     'Switch',
     'TagItem',
+    'TextArea',
     'TextField',
-  ].map((o) => {
+  ].map((component) => {
     return {
-      text: o,
-      href: `/@charcoal-ui/react/${o}`,
+      text: component,
+      href: `/@charcoal-ui/react/${component}`,
     }
   }),
 ]
@@ -137,11 +138,19 @@ export const NavList: FC<{ className?: string }> = (props) => {
   return (
     <StyledUl className={props.className}>
       <ListItemHeader>v{pkgJson.version}</ListItemHeader>
+      <ListItem active={href === '/v3.0.0-guide'}>
+        <ListItemLink href="/v3.0.0-guide">
+          v3.0.0マイグレーションガイド
+        </ListItemLink>
+      </ListItem>
       <ListItemHeader>@charcoal-ui/styled</ListItemHeader>
-      {/* <ListItem active={href === '/@charcoal-ui/styled/Colors'}>
-        <ListItemLink href="/@charcoal-ui/styled/Colors">Colors</ListItemLink>
-      </ListItem> */}
-      {styledList.map(renderListItem)}
+      {styledList.map((item) => {
+        return (
+          <ListItem key={item.href} active={href === item.href}>
+            <ListItemLink href={item.href}>{item.text}</ListItemLink>
+          </ListItem>
+        )
+      })}
       <ListItemHeader>@charcoal-ui/react</ListItemHeader>
       {reactList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/icons</ListItemHeader>
@@ -213,6 +222,7 @@ const ListItem = styled.li<{ active: boolean }>`
 `
 
 const ListItemLink = styled(Link)`
+  box-sizing: border-box;
   text-decoration: none;
   display: flex;
   height: 100%;

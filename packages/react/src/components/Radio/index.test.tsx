@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Radio, { RadioGroup } from '.'
 import { light } from '@charcoal-ui/theme'
@@ -112,7 +111,7 @@ function TestComponent({
   onChange = jest.fn(),
   radioGroupDisabled = false,
   readonly = false,
-  hasError = false,
+  invalid = false,
   option1Disabled = false,
   option2Disabled = false,
 }: {
@@ -120,7 +119,7 @@ function TestComponent({
   onChange?: () => void
   radioGroupDisabled?: boolean
   readonly?: boolean
-  hasError?: boolean
+  invalid?: boolean
   option1Disabled?: boolean
   option2Disabled?: boolean
 }) {
@@ -133,7 +132,7 @@ function TestComponent({
         onChange={onChange}
         disabled={radioGroupDisabled}
         readonly={readonly}
-        hasError={hasError}
+        invalid={invalid}
       >
         <Radio value="option1" disabled={option1Disabled}>
           option1を選ぶ

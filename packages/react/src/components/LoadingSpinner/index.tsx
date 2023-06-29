@@ -1,18 +1,34 @@
-import React, { useImperativeHandle, useRef } from 'react'
+import { forwardRef, useImperativeHandle, useRef, memo } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { theme } from '../../styled'
 
-export default function LoadingSpinner({
-  size = 48,
-  padding = 16,
-  transparent = false,
-}) {
-  return (
-    <LoadingSpinnerRoot size={size} padding={padding} transparent={transparent}>
-      <LoadingSpinnerIcon />
-    </LoadingSpinnerRoot>
-  )
+export type LoadingSpinnerProps = {
+  readonly size?: number
+  readonly padding?: number
+  readonly transparent?: boolean
+  readonly className?: string
 }
+
+const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
+  function LoadingSpinnerInner(
+    { size = 48, padding = 16, transparent = false, className },
+    ref
+  ) {
+    return (
+      <LoadingSpinnerRoot
+        size={size}
+        padding={padding}
+        transparent={transparent}
+        className={className}
+        ref={ref}
+      >
+        <LoadingSpinnerIcon />
+      </LoadingSpinnerRoot>
+    )
+  }
+)
+
+export default memo(LoadingSpinner)
 
 const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   size: number
@@ -67,23 +83,22 @@ export interface LoadingSpinnerIconHandler {
   restart(): void
 }
 
-export const LoadingSpinnerIcon = React.forwardRef<
-  LoadingSpinnerIconHandler,
-  Props
->(function LoadingSpinnerIcon({ once = false }, ref) {
-  const iconRef = useRef<HTMLDivElement>(null)
+export const LoadingSpinnerIcon = forwardRef<LoadingSpinnerIconHandler, Props>(
+  function LoadingSpinnerIcon({ once = false }, ref) {
+    const iconRef = useRef<HTMLDivElement>(null)
 
-  useImperativeHandle(ref, () => ({
-    restart: () => {
-      if (!iconRef.current) {
-        return
-      }
-      iconRef.current.dataset.resetAnimation = 'true'
-      // Force reflow hack!
-      void iconRef.current.offsetWidth
-      delete iconRef.current.dataset.resetAnimation
-    },
-  }))
+    useImperativeHandle(ref, () => ({
+      restart: () => {
+        if (!iconRef.current) {
+          return
+        }
+        iconRef.current.dataset.resetAnimation = 'true'
+        // Force reflow hack!
+        void iconRef.current.offsetWidth
+        delete iconRef.current.dataset.resetAnimation
+      },
+    }))
 
-  return <Icon ref={iconRef} once={once} />
-})
+    return <Icon ref={iconRef} once={once} />
+  }
+)

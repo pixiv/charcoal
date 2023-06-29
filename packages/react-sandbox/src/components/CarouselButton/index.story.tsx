@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
-import React from 'react'
 import CarouselButton, { Direction, ScrollHintButton } from '.'
 
 export default {

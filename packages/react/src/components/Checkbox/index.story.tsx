@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
 import Checkbox from '.'
 import { Story } from '../../_lib/compat'
 
@@ -13,6 +12,7 @@ type Props = {
   defaultChecked: boolean
   disabled: boolean
   readonly: boolean
+  className?: string
 }
 
 export const Labelled: Story<Props> = (props) => {

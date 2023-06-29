@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Story } from '../../_lib/compat'
 import styled from 'styled-components'
 import { MultiSelectGroup, default as MultiSelect } from '.'
@@ -12,17 +12,12 @@ export default {
         type: 'text',
       },
     },
-    ariaLabel: {
+    label: {
       control: {
         type: 'text',
       },
     },
     selected: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    firstOptionForceChecked: {
       control: {
         type: 'boolean',
       },
@@ -37,7 +32,7 @@ export default {
         type: 'boolean',
       },
     },
-    hasError: {
+    invalid: {
       control: {
         type: 'boolean',
       },
@@ -53,14 +48,14 @@ export default {
 
 type Props = {
   name: string
-  ariaLabel: string
+  label: string
   selected: boolean
-  firstOptionForceChecked: boolean
   onChange: (selected: string[]) => void
   disabled?: boolean
   readonly?: boolean
-  hasError?: boolean
+  invalid?: boolean
   variant?: 'default' | 'overlay'
+  className?: string
 }
 
 const StyledMultiSelectGroup = styled(MultiSelectGroup)`
@@ -71,34 +66,33 @@ const StyledMultiSelectGroup = styled(MultiSelectGroup)`
 
 const Template: Story<Props> = ({
   name,
-  ariaLabel,
+  label,
   selected,
-  firstOptionForceChecked,
   onChange,
   disabled,
   readonly,
-  hasError,
+  invalid,
   variant,
+  className,
 }) => {
   return (
     <StyledMultiSelectGroup
       {...{
         name,
-        ariaLabel,
+        label,
         onChange,
         disabled,
         readonly,
-        hasError,
+        invalid,
       }}
-      className={''}
       selected={selected ? ['選択肢1', '選択肢3'] : []}
     >
       {[1, 2, 3, 4].map((idx) => (
         <MultiSelect
           value={`選択肢${idx}`}
-          forceChecked={firstOptionForceChecked && idx === 1}
           variant={variant}
           key={idx}
+          className={className}
         >
           選択肢{idx}
         </MultiSelect>
@@ -110,12 +104,11 @@ const Template: Story<Props> = ({
 export const Default = Template.bind({})
 Default.args = {
   name: '',
-  ariaLabel: '',
+  label: '',
   selected: true,
-  firstOptionForceChecked: false,
   disabled: false,
   readonly: false,
-  hasError: false,
+  invalid: false,
   variant: 'default',
   // eslint-disable-next-line no-console
   onChange: (selected) => console.log(selected),
@@ -123,14 +116,15 @@ Default.args = {
 
 type PlaygroundProps = {
   name: string
-  ariaLabel: string
+  label: string
   disabled?: boolean
   readonly?: boolean
-  hasError?: boolean
+  invalid?: boolean
+  className?: string
   variant?: 'default' | 'overlay'
 }
 
-export const Playground: Story<PlaygroundProps> = (props) => {
+export const Playground: Story<PlaygroundProps> = ({ className, ...props }) => {
   const [selected, setSelected] = useState<string[]>([])
 
   return (
@@ -140,7 +134,12 @@ export const Playground: Story<PlaygroundProps> = (props) => {
       onChange={setSelected}
     >
       {[1, 2, 3, 4].map((idx) => (
-        <MultiSelect value={`選択肢${idx}`} variant={props.variant} key={idx}>
+        <MultiSelect
+          value={`選択肢${idx}`}
+          variant={props.variant}
+          key={idx}
+          className={className}
+        >
           選択肢{idx}
         </MultiSelect>
       ))}
@@ -149,9 +148,9 @@ export const Playground: Story<PlaygroundProps> = (props) => {
 }
 Playground.args = {
   name: 'defaultName',
-  ariaLabel: '',
+  label: '',
   disabled: false,
   readonly: false,
-  hasError: false,
+  invalid: false,
   variant: 'default',
 }

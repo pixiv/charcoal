@@ -1,10 +1,12 @@
 import { useSwitch } from '@react-aria/switch'
 import type { AriaSwitchProps } from '@react-types/switch'
-import React, { useRef, useMemo } from 'react'
+import { useMemo, memo, forwardRef } from 'react'
+import * as React from 'react'
 import { useToggleState } from 'react-stately'
 import styled from 'styled-components'
 import { theme } from '../../styled'
 import { disabledSelector } from '@charcoal-ui/utils'
+import { useObjectRef } from '@react-aria/utils'
 
 export type SwitchProps = {
   name: string
@@ -23,37 +25,41 @@ export type SwitchProps = {
     }
 )
 
-export default function SwitchCheckbox(props: SwitchProps) {
-  const { disabled, className } = props
+const SwitchCheckbox = forwardRef<HTMLInputElement, SwitchProps>(
+  function SwitchCheckboxInner(props, external) {
+    const { disabled, className } = props
 
-  const ariaSwitchProps: AriaSwitchProps = useMemo(
-    () => ({
-      ...props,
+    const ariaSwitchProps: AriaSwitchProps = useMemo(
+      () => ({
+        ...props,
 
-      // children がいない場合は aria-label をつけないといけない
-      'aria-label': 'children' in props ? undefined : props.label,
-      isDisabled: props.disabled,
-      isSelected: props.checked,
-    }),
-    [props]
-  )
+        // children がいない場合は aria-label をつけないといけない
+        'aria-label': 'children' in props ? undefined : props.label,
+        isDisabled: props.disabled,
+        isSelected: props.checked,
+      }),
+      [props]
+    )
 
-  const state = useToggleState(ariaSwitchProps)
-  const ref = useRef<HTMLInputElement>(null)
-  const {
-    inputProps: { className: _className, type: _type, ...rest },
-  } = useSwitch(ariaSwitchProps, state, ref)
+    const state = useToggleState(ariaSwitchProps)
+    const ref = useObjectRef<HTMLInputElement>(external)
+    const {
+      inputProps: { className: _className, type: _type, ...rest },
+    } = useSwitch(ariaSwitchProps, state, ref)
 
-  return (
-    <Label className={className} aria-disabled={disabled}>
-      <SwitchInput {...rest} ref={ref} />
-      {'children' in props ? (
-        // eslint-disable-next-line react/destructuring-assignment
-        <LabelInner>{props.children}</LabelInner>
-      ) : undefined}
-    </Label>
-  )
-}
+    return (
+      <Label className={className} aria-disabled={disabled}>
+        <SwitchInput {...rest} ref={ref} />
+        {'children' in props ? (
+          // eslint-disable-next-line react/destructuring-assignment
+          <LabelInner>{props.children}</LabelInner>
+        ) : undefined}
+      </Label>
+    )
+  }
+)
+
+export default memo(SwitchCheckbox)
 
 const Label = styled.label`
   display: inline-grid;

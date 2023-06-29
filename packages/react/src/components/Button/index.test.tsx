@@ -1,6 +1,5 @@
 import 'jest-styled-components'
 
-import React from 'react'
 import Button from '.'
 import renderder from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'

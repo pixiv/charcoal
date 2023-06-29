@@ -1,4 +1,5 @@
-import React, { useCallback, useContext } from 'react'
+import { memo, forwardRef, useCallback, useContext } from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import warning from 'warning'
 import { theme } from '../../styled'
@@ -6,22 +7,20 @@ import { px } from '@charcoal-ui/utils'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
-  forceChecked?: boolean
   disabled?: boolean
+  className?: string
 }>
 
-export default function Radio({
-  value,
-  forceChecked = false,
-  disabled = false,
-  children,
-}: RadioProps) {
+const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
+  { value, disabled = false, children, className },
+  ref
+) {
   const {
     name,
     selected,
     disabled: isParentDisabled,
     readonly,
-    hasError,
+    invalid,
     onChange,
   } = useContext(RadioGroupContext)
 
@@ -43,19 +42,22 @@ export default function Radio({
   )
 
   return (
-    <RadioRoot aria-disabled={isDisabled || isReadonly}>
+    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className}>
       <RadioInput
         name={name}
         value={value}
-        checked={forceChecked || isSelected}
-        hasError={hasError}
+        checked={isSelected}
+        invalid={invalid}
         onChange={handleChange}
         disabled={isDisabled || isReadonly}
+        ref={ref}
       />
       {children != null && <RadioLabel>{children}</RadioLabel>}
     </RadioRoot>
   )
-}
+})
+
+export default memo(Radio)
 
 const RadioRoot = styled.label`
   display: grid;
@@ -68,7 +70,7 @@ const RadioRoot = styled.label`
 `
 
 export const RadioInput = styled.input.attrs({ type: 'radio' })<{
-  hasError?: boolean
+  invalid?: boolean
 }>`
   /** Make prior to browser default style */
   &[type='radio'] {
@@ -81,14 +83,13 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
 
     width: 20px;
     height: 20px;
-
     cursor: pointer;
 
-    ${({ hasError = false }) =>
+    ${({ invalid = false }) =>
       theme((o) => [
         o.borderRadius('oval'),
         o.bg.surface1.hover.press,
-        hasError && o.outline.assertive,
+        invalid && o.outline.assertive,
       ])};
 
     &:not(:checked) {
@@ -130,7 +131,7 @@ export type RadioGroupProps = React.PropsWithChildren<{
   onChange(next: string): void
   disabled?: boolean
   readonly?: boolean
-  hasError?: boolean
+  invalid?: boolean
 }>
 
 // TODO: use (or polyfill) flex gap
@@ -145,7 +146,7 @@ interface RadioGroupContext {
   selected?: string
   disabled: boolean
   readonly: boolean
-  hasError: boolean
+  invalid: boolean
   onChange: (next: string) => void
 }
 
@@ -154,7 +155,7 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
   selected: undefined,
   disabled: false,
   readonly: false,
-  hasError: false,
+  invalid: false,
   onChange() {
     throw new Error(
       'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
@@ -170,7 +171,7 @@ export function RadioGroup({
   onChange,
   disabled,
   readonly,
-  hasError,
+  invalid,
   children,
 }: RadioGroupProps) {
   const handleChange = useCallback(
@@ -187,7 +188,7 @@ export function RadioGroup({
         selected: value,
         disabled: disabled ?? false,
         readonly: readonly ?? false,
-        hasError: hasError ?? false,
+        invalid: invalid ?? false,
         onChange: handleChange,
       }}
     >
@@ -195,7 +196,7 @@ export function RadioGroup({
         role="radiogroup"
         aria-orientation="vertical"
         aria-label={label}
-        aria-invalid={hasError}
+        aria-invalid={invalid}
         className={className}
       >
         {children}

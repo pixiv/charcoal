@@ -1,9 +1,4 @@
-import React, {
-  forwardRef,
-  memo,
-  useMemo,
-  ComponentPropsWithoutRef,
-} from 'react'
+import { forwardRef, memo, useMemo, ComponentPropsWithoutRef } from 'react'
 import { useObjectRef } from '@react-aria/utils'
 import styled, { css } from 'styled-components'
 import { theme } from '../../styled'

@@ -22,6 +22,8 @@ const config = {
     'react/prop-types': 'off',
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'no-console': 'warn',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   parserOptions: {
     project: ['./tsconfig.json', './packages/**/tsconfig.json'],

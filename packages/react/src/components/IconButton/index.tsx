@@ -1,4 +1,4 @@
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 import { theme } from '../../styled'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
@@ -15,7 +15,7 @@ interface StyledProps {
 
 export type IconButtonProps = StyledProps & ClickableProps
 
-const IconButton = React.forwardRef<ClickableElement, IconButtonProps>(
+const IconButton = forwardRef<ClickableElement, IconButtonProps>(
   function IconButtonInner(
     { variant = 'Default', size = 'M', icon, ...rest }: IconButtonProps,
     ref

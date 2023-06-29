@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
 import { css } from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Radio, { RadioGroup } from '.'
@@ -17,30 +16,29 @@ export default {
     },
   },
   args: {
-    hasError: false,
+    invalid: false,
     parentDisabled: false,
     childDisabled: false,
-    forceChecked: false,
     readonly: false,
   },
 }
 
 interface Props {
   value?: string
-  hasError: boolean
+  invalid: boolean
   parentDisabled: boolean
   childDisabled: boolean
-  forceChecked: boolean
   readonly: boolean
+  className?: string
 }
 
 const Template: Story<Partial<Props>> = ({
   value,
-  forceChecked,
-  hasError,
+  invalid,
   parentDisabled,
   childDisabled,
   readonly,
+  className,
 }) => (
   <div
     css={css`
@@ -58,14 +56,14 @@ const Template: Story<Partial<Props>> = ({
         onChange={action('onChange')}
         disabled={parentDisabled}
         readonly={readonly}
-        hasError={hasError}
+        invalid={invalid}
       >
         {options.map((option) => (
           <Radio
             key={option}
             value={option}
             disabled={childDisabled}
-            forceChecked={forceChecked}
+            className={className}
           >
             {name}({option})を選ぶ
           </Radio>
