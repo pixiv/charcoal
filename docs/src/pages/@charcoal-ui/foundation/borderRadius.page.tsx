@@ -18,7 +18,9 @@ export default function BorderRadiusPage() {
       <h3>BORDER_RADIUS</h3>
       <div>
         <p>
-          <InlineCode>border-radius: BORDER_RADIUS["none"]</InlineCode>
+          <InlineCode>
+            border-radius: BORDER_RADIUS[&quote;none&quote;]
+          </InlineCode>
         </p>
         <Box borderRadius={none} />
       </div>
@@ -33,7 +35,9 @@ export default function BorderRadiusPage() {
 
       <div>
         <p>
-          <InlineCode>border-radius: BORDER_RADIUS["oval"]</InlineCode>
+          <InlineCode>
+            border-radius: BORDER_RADIUS[&quote;oval&quote;]
+          </InlineCode>
         </p>
         <Box borderRadius={oval} />
       </div>

@@ -23,7 +23,7 @@ export default function BorderRadiusPage() {
 
       <h3>BREAKPOINT</h3>
       {items.map(([key, value]) => (
-        <div>
+        <div key={key}>
           <p>
             <InlineCode>
               BREAKPOINT[{key}]: {value}px
