@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import React from 'react'
 import Checkbox from '.'
 import { Story } from '../../_lib/compat'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
 import { createTheme, ThemeProp, defineThemeVariables } from '.'
 import { disabledSelector } from '@charcoal-ui/utils'

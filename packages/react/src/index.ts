@@ -35,9 +35,8 @@ export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,
   type TextFieldProps,
-  type SingleLineTextFieldProps,
-  type MultiLineTextFieldProps,
 } from './components/TextField'
+export { default as TextArea, type TextAreaProps } from './components/TextArea'
 export { default as Icon, type IconProps } from './components/Icon'
 export { default as Modal, type ModalProps } from './components/Modal'
 export {
@@ -53,8 +52,15 @@ export {
 export {
   default as DropdownSelector,
   type DropdownSelectorProps,
-  DropdownSelectorItem,
 } from './components/DropdownSelector'
+export {
+  default as DropdownMenuItem,
+  type DropdownMenuItemProps,
+} from './components/DropdownSelector/DropdownMenuItem'
+export {
+  default as MenuItemGroup,
+  type MenuItemGroupProps,
+} from './components/DropdownSelector/MenuItemGroup'
 export {
   default as SegmentedControl,
   type SegmentedControlProps,

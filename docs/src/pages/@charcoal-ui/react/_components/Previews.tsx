@@ -14,7 +14,7 @@ export type PreviewMeta<T> = {
   /**
    * プレビューの子要素
    */
-  children: ReactNode | (() => ReactNode)
+  children?: ReactNode | (() => ReactNode)
   /**
    * カスタムするための付属データ
    */
@@ -54,8 +54,7 @@ export const PreviewDiv = styled.div`
   ${theme((o) => [o.border.default, o.borderRadius(8)])}
   padding: 16px;
   flex-wrap: wrap;
-  width: 100%;
-  gap: 8px;
+  gap: 16px;
 `
 
 export const PreviewDivColumn = styled(PreviewDiv)`

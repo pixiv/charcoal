@@ -18,7 +18,7 @@ export const apiData: Omit<
     type: 'boolean',
     default: 'false',
   },
-  fixed: {
+  fullWidth: {
     description: '幅の最大化',
     type: 'boolean',
     default: 'false',

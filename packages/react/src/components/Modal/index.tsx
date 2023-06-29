@@ -1,4 +1,5 @@
-import React, { forwardRef, memo, useContext } from 'react'
+import { useContext, forwardRef, memo } from 'react'
+import * as React from 'react'
 import {
   AriaModalOverlayProps,
   Overlay,
@@ -287,7 +288,7 @@ export function ModalDismissButton({ children, ...props }: ButtonProps) {
   }
 
   return (
-    <Button {...props} onClick={close} fixed>
+    <Button {...props} onClick={close} fullWidth>
       {children}
     </Button>
   )

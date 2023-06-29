@@ -13,7 +13,7 @@ const defaultConfig = () => ({
   testEnvironment: 'jsdom',
   // node_modules内のためにjsxも含める
   transform: {
-    '^.+\\.(t|j)sx?$': ['esbuild-jest', { target: 'esnext', format: 'cjs' }],
+    '^.+\\.(t|j)sx?$': 'babel-jest',
   },
   // tsconfigのpathsに対応 (依存パッケージをビルドせずにテストが可能)
   moduleNameMapper: {

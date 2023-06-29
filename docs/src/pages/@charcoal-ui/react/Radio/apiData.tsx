@@ -8,11 +8,6 @@ export const apiDataRadio: Partial<ApiTableData<RadioProps, HTMLInputElement>> =
       description: '無効化',
       type: 'boolean',
     },
-    forceChecked: {
-      default: 'false',
-      description: '強制的なチェック',
-      type: 'boolean',
-    },
     value: {
       default: '',
       description: '選択肢の値',
@@ -31,18 +26,20 @@ export const apiData: Partial<ApiTableData<RadioGroupProps, HTMLInputElement>> =
     value: {
       default: '',
       description: '選択されている値',
-      required: true,
+      required: false,
       type: 'string',
     },
     disabled: {
       default: 'false',
       description: '無効化',
       type: 'boolean',
+      required: false,
     },
-    hasError: {
+    invalid: {
       default: 'false',
       description: '不正な入力化',
       type: 'boolean',
+      required: false,
     },
     name: {
       default: '',
@@ -52,6 +49,8 @@ export const apiData: Partial<ApiTableData<RadioGroupProps, HTMLInputElement>> =
     },
     readonly: {
       description: '読み取り専用化',
-      type: 'string',
+      default: 'false',
+      required: false,
+      type: 'boolean',
     },
   }

@@ -17,14 +17,14 @@ export const sections: PreviewSection<RadioGroupProps>[] = [
     ],
   },
   {
-    title: 'hasError',
+    title: 'invalid',
     previewMetas: [
       {
         props: {
           label: 'radio',
           name: 'radio',
           onChange: () => {},
-          hasError: true,
+          invalid: true,
         },
         children: undefined,
       },

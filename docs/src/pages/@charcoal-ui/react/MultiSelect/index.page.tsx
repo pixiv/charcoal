@@ -25,7 +25,7 @@ function Preview(
     <StyledMultiSelectGroup
       {...meta.props}
       key={j}
-      ariaLabel={'multi-select' + j.toString()}
+      label={'multi-select' + j.toString()}
       name={'multi-select' + j.toString()}
       onChange={setSelectedValues}
       selected={selectedValues}
