@@ -7,7 +7,7 @@ This is the monorepo for the `@charcoal-ui` packages by pixiv.
 
 ## How to use
 
-See our [documentation](https://pixiv.github.io/charcoal/docs), or README of each package in `/packages`.
+See our [documentation](https://charcoal-web.pixiv.design/), or README of each package in `/packages`.
 
 ## NPM Packages
 
