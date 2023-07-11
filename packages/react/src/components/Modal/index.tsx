@@ -241,7 +241,6 @@ const ModalDialog = animated(styled.div<{
 }>`
   position: relative;
   margin: auto;
-  padding: 24px 0;
 
   ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
