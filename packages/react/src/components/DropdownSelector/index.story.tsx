@@ -72,6 +72,28 @@ export const Basic: Story<DropdownSelectorProps> = (
 
 Basic.args = { ...baseProps }
 
+export const InFormTag: Story<DropdownSelectorProps> = (
+  props: DropdownSelectorProps
+) => {
+  const [selected, setSelected] = useState('')
+  return (
+    <form style={{ width: 288 }}>
+      <DropdownSelector
+        {...props}
+        onChange={(value) => {
+          setSelected(value)
+        }}
+        value={selected}
+        label="label"
+      >
+        <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+        <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+        <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+      </DropdownSelector>
+    </form>
+  )
+}
+
 export const CustomChildren: Story<DropdownSelectorProps> = (
   props: DropdownSelectorProps
 ) => {
