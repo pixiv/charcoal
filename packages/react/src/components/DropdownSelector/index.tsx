@@ -48,6 +48,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           setIsOpen(true)
         }}
         ref={triggerRef}
+        type="button"
       >
         <DropdownButtonText>
           {props.placeholder !== undefined && preview === undefined
