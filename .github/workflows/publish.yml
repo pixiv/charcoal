@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'リリースしたいバージョン名を入力してください'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+      # charcoal packages
+      - run: yarn install --immutable
+      - run: yarn build
