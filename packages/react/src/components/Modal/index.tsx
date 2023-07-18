@@ -188,7 +188,7 @@ const ModalContext = React.createContext<{
 
 const ModalBackground = animated(styled.div<{ zIndex: number }>`
   z-index: ${({ zIndex }) => zIndex};
-  overflow: scroll;
+  overflow: auto;
   display: flex;
   position: fixed;
   top: 0;
