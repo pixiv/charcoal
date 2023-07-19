@@ -27,6 +27,11 @@ jobs:
       - name: Install node dependencies
         run: yarn install --immutable
 
+      - name: Set git username and email
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "actions-user"
+
       - name: Set package version
         run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
 
