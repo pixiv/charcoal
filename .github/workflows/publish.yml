@@ -28,7 +28,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Set package version
-        run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish
+        run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
 
       - name: Update yarn.lock
         run: yarn install
