@@ -35,22 +35,8 @@ jobs:
       - name: Set package version
         run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
 
-      - name: Update yarn.lock
+      - name: Build & Publish to npmjs
+        run: yarn release -y from-package
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
-        run: yarn install
-
-      - name: git commit yarn.lock
-        run: |
-          git add yarn.lock
-          git commit -m "chore: yarn install [ci skip]"
-
-      - name: Build & Publish to npmjs
-        run: yarn release from-package
-        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: git push main branch & tags
-        run: |
-          git push
-          git push origin --tags
