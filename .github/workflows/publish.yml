@@ -1,0 +1,49 @@
+name: Publish to npmjs
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'リリースしたいバージョン名'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+
+      - name: Install node dependencies
+        run: yarn install --immutable
+
+      - name: Set package version
+        run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish
+
+      - name: Update yarn.lock
+        run: yarn install
+
+      - name: git commit yarn.lock
+        run: |
+          git add yarn.lock
+          git commit -m "chore: yarn install [ci skip]"
+
+      - name: Build & Publish to npmjs
+        run: yarn release from-package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: git push main branch & tags
+        run: |
+          git push
+          git push origin --tags
