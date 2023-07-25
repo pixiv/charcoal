@@ -48,7 +48,7 @@ const Label = styled.label`
 `
 
 const RequiredText = styled.span`
-  ${theme((o) => [o.typography(14), o.font.text3])}
+  ${theme((o) => [o.typography(14), o.font.text2])}
 `
 
 const SubLabelClickable = styled.div`
