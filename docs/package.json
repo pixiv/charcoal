@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@charcoal-ui/foundation": "../packages/doundation",
     "@charcoal-ui/icons": "../packages/icons",
     "@charcoal-ui/react": "../packages/react",
     "@charcoal-ui/styled": "../packages/styled",
