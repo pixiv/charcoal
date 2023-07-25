@@ -188,7 +188,7 @@ const ModalContext = React.createContext<{
 
 const ModalBackground = animated(styled.div<{ zIndex: number }>`
   z-index: ${({ zIndex }) => zIndex};
-  overflow: scroll;
+  overflow: auto;
   display: flex;
   position: fixed;
   top: 0;
@@ -241,7 +241,6 @@ const ModalDialog = animated(styled.div<{
 }>`
   position: relative;
   margin: auto;
-  padding: 24px 0;
 
   ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {

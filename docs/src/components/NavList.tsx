@@ -140,6 +140,17 @@ const foundationList: ListItem[] = [
   },
 ]
 
+const themeList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/theme/quickstart',
+  },
+  {
+    text: 'テーマカラー',
+    href: '/@charcoal-ui/theme/colors',
+  },
+]
+
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
   useEffect(() => {
@@ -183,6 +194,8 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {tailwindDiffList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/foundation</ListItemHeader>
       {foundationList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/theme</ListItemHeader>
+      {themeList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
       <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
       <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />

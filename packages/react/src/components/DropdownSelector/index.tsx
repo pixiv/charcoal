@@ -48,6 +48,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           setIsOpen(true)
         }}
         ref={triggerRef}
+        type="button"
       >
         <DropdownButtonText>
           {props.placeholder !== undefined && preview === undefined
@@ -107,6 +108,7 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
   height: 40px;
   width: 100%;
   box-sizing: border-box;
+  border: none;
   cursor: pointer;
 
   ${disabledSelector} {
@@ -115,7 +117,6 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
 
   ${({ invalid }) =>
     theme((o) => [
-      o.border.default,
       o.padding.horizontal(8),
       o.outline.default.focus,
       o.bg.surface3,
