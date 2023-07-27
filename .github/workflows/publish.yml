@@ -48,4 +48,5 @@ jobs:
       - name: Build & Publish to npmjs
         run: yarn release -y from-package
         env:
+          NPM_CONFIG_PROVENANCE: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
