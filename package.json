@@ -29,6 +29,9 @@
     "postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
     "website": "vite docs --base=charcoal/docs --port 5000"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "devDependencies": {
     "@charcoal-ui/icons-cli": "workspace:^",
     "@commitlint/cli": "^16.1.0",
@@ -64,7 +67,7 @@
     "husky": "^4.3.8",
     "jest": "^27.4.7",
     "jsdom": "^19.0.0",
-    "lerna": "^4.0.0",
+    "lerna": "^6.6.2",
     "npm-run-all": "^4.1.5",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.8.4",

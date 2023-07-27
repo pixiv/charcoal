@@ -10,6 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -34,17 +37,12 @@ jobs:
           git config --local user.name "actions-user"
 
       - name: Set package version
-        run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
-
-      - name: Update yarn.lock
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
-        run: yarn install
+        run: yarn lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
 
-      - name: git commit yarn.lock
+      - name: git push version up commits
         run: |
-          git add yarn.lock
-          git commit -m "chore: update yarn.lock [ci skip]"
           git push origin ${{ github.ref_name }}
 
       - name: Build & Publish to npmjs
