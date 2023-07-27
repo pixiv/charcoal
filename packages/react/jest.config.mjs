@@ -4,7 +4,5 @@ const isCI = process.env.CI === 'true'
 
 export default {
   ...config(),
-  testPathIgnorePatterns: isCI
-    ? ['/src/.*performance\\.test\\.tsx$']
-    : [],
+  testPathIgnorePatterns: isCI ? ['/src/.*performance\\.test\\.tsx$'] : [],
 }
