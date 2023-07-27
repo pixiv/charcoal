@@ -45,6 +45,7 @@ jobs:
         run: |
           git add yarn.lock
           git commit -m "chore: update yarn.lock [ci skip]"
+          git push origin ${{ github.ref_name }}
 
       - name: Build & Publish to npmjs
         run: yarn release -y from-package
