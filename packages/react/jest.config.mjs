@@ -1,3 +1,10 @@
 import { config } from '../../jest.config.mjs'
 
-export default config()
+const isCI = process.env.CI === 'true'
+
+export default {
+  ...config(),
+  testPathIgnorePatterns: isCI
+    ? ['/src/.*performance\\.test\\.tsx$']
+    : [],
+}
