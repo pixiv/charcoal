@@ -63,6 +63,8 @@ jobs:
 
       - run: yarn install --immutable --inline-builds
       - run: yarn test
+        env:
+          CI: 'true'
 
   lint:
     runs-on: ubuntu-latest
