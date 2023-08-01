@@ -8,21 +8,17 @@ type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 type Size = 'S' | 'M'
 
 interface StyledProps {
-  /**
-   * ボタンのスタイル
-   */
-  variant: Variant
-  /**
-   * ボタンのサイズ
-   */
-  size: Size
-  /**
-   * 幅を最大まで広げて描画
-   */
-  fullWidth: boolean
+  $variant: Variant
+  $fullWidth: boolean
+  $size: Size
 }
 
-export type ButtonProps = Partial<StyledProps> & ClickableProps
+export type ButtonProps = Partial<{
+  variant: Variant
+  size: Size
+  fullWidth: boolean
+}> &
+  ClickableProps
 
 const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
   {
@@ -39,9 +35,9 @@ const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
     <StyledButton
       {...rest}
       disabled={disabled}
-      variant={variant}
-      size={size}
-      fullWidth={fixed}
+      $variant={variant}
+      $size={size}
+      $fullWidth={fixed}
       ref={ref}
     >
       {children}
@@ -50,15 +46,8 @@ const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
 })
 export default Button
 
-const StyledButton = styled(Clickable)
-  .withConfig<StyledProps>({
-    shouldForwardProp(prop) {
-      // fixed は <button> 要素に渡ってはいけない
-      return prop !== 'fullWidth'
-    },
-  })
-  .attrs<StyledProps, ReturnType<typeof styledProps>>(styledProps)`
-  width: ${(p) => (p.fullWidth ? 'stretch' : 'min-content')};
+const StyledButton = styled(Clickable)<StyledProps>`
+  width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
   align-items: center;
   justify-content: center;
@@ -68,55 +57,49 @@ const StyledButton = styled(Clickable)
 
   ${(p) =>
     theme((o) => [
-      o.font[p.font].hover.press,
-      o.bg[p.background].hover.press,
+      o.font[variantToFont(p.$variant)].hover.press,
+      o.bg[variantToBackgraund(p.$variant)].hover.press,
       o.typography(14).bold.preserveHalfLeading,
-      o.padding.horizontal(p.padding),
+      o.padding.horizontal(p.$size === 'M' ? 24 : 16),
       o.disabled,
       o.borderRadius('oval'),
       o.outline.default.focus,
     ])}
 
   /* よく考えたらheight=32って定義が存在しないな... */
-  height: ${(p) => p.height}px;
+  height: ${(p) => (p.$size === 'M' ? 40 : 32)}px;
 `
 
-function styledProps(props: StyledProps) {
-  return {
-    ...props,
-    ...variantToProps(props.variant),
-    ...sizeToProps(props.size),
-  }
-}
-
-function variantToProps(variant: Variant) {
+function variantToBackgraund(variant: Variant) {
   switch (variant) {
     case 'Overlay':
-      return { font: 'text5', background: 'surface4' } as const
+      return 'surface4'
     case 'Default':
-      return { font: 'text2', background: 'surface3' } as const
+      return 'surface3'
     case 'Primary':
-      return { font: 'text5', background: 'brand' } as const
+      return 'brand'
     case 'Navigation':
-      return { font: 'text5', background: 'surface6' } as const
+      return 'surface6'
     case 'Danger':
-      return { font: 'text5', background: 'assertive' } as const
+      return 'assertive'
     default:
       return unreachable(variant)
   }
 }
 
-function sizeToProps(size: Size) {
-  switch (size) {
-    case 'S':
-      return {
-        height: 32,
-        padding: 16,
-      } as const
-    case 'M':
-      return {
-        height: 40,
-        padding: 24,
-      } as const
+function variantToFont(variant: Variant) {
+  switch (variant) {
+    case 'Overlay':
+      return 'text5'
+    case 'Default':
+      return 'text2'
+    case 'Primary':
+      return 'text5'
+    case 'Navigation':
+      return 'text5'
+    case 'Danger':
+      return 'text5'
+    default:
+      return unreachable(variant)
   }
 }
