@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Snapshot Test dark theme snapshot 1`] = `
+<label
+  aria-disabled={false}
+  className="sc-bdvvtL bWvKyY"
+>
+  <div
+    className="sc-gsDKAQ dFzOKQ"
+  >
+    <input
+      aria-label="test"
+      checked={false}
+      className="sc-dkPtRN lfMjCb"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      onDragStart={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchCancel={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      type="checkbox"
+    />
+    <div
+      aria-hidden={true}
+      checked={false}
+      className="sc-hKwDye hoolJa"
+    >
+      <pixiv-icon
+        name="24/Check"
+        unsafe-non-guideline-scale={0.6666666666666666}
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`Checkbox Snapshot Test light theme snapshot 1`] = `
+<label
+  aria-disabled={false}
+  className="sc-bdvvtL bWvKyY"
+>
+  <div
+    className="sc-gsDKAQ dFzOKQ"
+  >
+    <input
+      aria-label="test"
+      checked={false}
+      className="sc-dkPtRN jYXIQQ"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      onDragStart={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchCancel={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      type="checkbox"
+    />
+    <div
+      aria-hidden={true}
+      checked={false}
+      className="sc-hKwDye hoolJa"
+    >
+      <pixiv-icon
+        name="24/Check"
+        unsafe-non-guideline-scale={0.6666666666666666}
+      />
+    </div>
+  </div>
+</label>
+`;
