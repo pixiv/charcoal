@@ -1,85 +1,763 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox Snapshot Test dark theme snapshot 1`] = `
-<label
-  aria-disabled={false}
-  className="sc-bdvvtL bWvKyY"
->
+exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+}
+
+.c2[type='checkbox']:checked {
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:active[aria-disabled=false] {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c2[type='checkbox']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #5c5c5c;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox'][aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
+  visibility: hidden;
+}
+
+.c4 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+<div>
   <div
-    className="sc-gsDKAQ dFzOKQ"
+    style={
+      Object {
+        "marginBottom": "1em",
+      }
+    }
   >
-    <input
-      aria-label="test"
-      checked={false}
-      className="sc-dkPtRN lfMjCb"
-      disabled={false}
-      onChange={[Function]}
-      onClick={[Function]}
-      onDragStart={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchCancel={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      type="checkbox"
-    />
-    <div
-      aria-hidden={true}
-      checked={false}
-      className="sc-hKwDye hoolJa"
+    <label
+      aria-disabled={false}
+      className="c0"
     >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
-      />
-    </div>
+      <div
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="labelled"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          type="checkbox"
+        />
+        <div
+          aria-hidden={true}
+          checked={false}
+          className="c3"
+        >
+          <pixiv-icon
+            name="24/Check"
+            unsafe-non-guideline-scale={0.6666666666666666}
+          />
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        同意する
+      </div>
+    </label>
   </div>
-</label>
+  <div>
+    <label
+      aria-disabled={false}
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="labelled"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          type="checkbox"
+        />
+        <div
+          aria-hidden={true}
+          checked={false}
+          className="c3"
+        >
+          <pixiv-icon
+            name="24/Check"
+            unsafe-non-guideline-scale={0.6666666666666666}
+          />
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <span
+          style={
+            Object {
+              "display": "block",
+              "width": 200,
+            }
+          }
+        >
+          同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する
+        </span>
+      </div>
+    </label>
+  </div>
+</div>
 `;
 
-exports[`Checkbox Snapshot Test light theme snapshot 1`] = `
-<label
-  aria-disabled={false}
-  className="sc-bdvvtL bWvKyY"
->
-  <div
-    className="sc-gsDKAQ dFzOKQ"
+exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+}
+
+.c2[type='checkbox']:checked {
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:active[aria-disabled=false] {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c2[type='checkbox']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #5c5c5c;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox'][aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
+  visibility: hidden;
+}
+
+<div>
+  <label
+    aria-disabled={false}
+    className="c0"
   >
-    <input
-      aria-label="test"
-      checked={false}
-      className="sc-dkPtRN jYXIQQ"
-      disabled={false}
-      onChange={[Function]}
-      onClick={[Function]}
-      onDragStart={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchCancel={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      type="checkbox"
-    />
     <div
-      aria-hidden={true}
-      checked={false}
-      className="sc-hKwDye hoolJa"
+      className="c1"
     >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
+      <input
+        aria-label="label"
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="unlabelled"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        type="checkbox"
       />
+      <div
+        aria-hidden={true}
+        checked={false}
+        className="c3"
+      >
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
+      </div>
     </div>
+  </label>
+</div>
+`;
+
+exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+}
+
+.c2[type='checkbox']:checked {
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:active[aria-disabled=false] {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c2[type='checkbox']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #adadad;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox'][aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
+  visibility: hidden;
+}
+
+.c4 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+<div>
+  <div
+    style={
+      Object {
+        "marginBottom": "1em",
+      }
+    }
+  >
+    <label
+      aria-disabled={false}
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="labelled"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          type="checkbox"
+        />
+        <div
+          aria-hidden={true}
+          checked={false}
+          className="c3"
+        >
+          <pixiv-icon
+            name="24/Check"
+            unsafe-non-guideline-scale={0.6666666666666666}
+          />
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        同意する
+      </div>
+    </label>
   </div>
-</label>
+  <div>
+    <label
+      aria-disabled={false}
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="labelled"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          type="checkbox"
+        />
+        <div
+          aria-hidden={true}
+          checked={false}
+          className="c3"
+        >
+          <pixiv-icon
+            name="24/Check"
+            unsafe-non-guideline-scale={0.6666666666666666}
+          />
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <span
+          style={
+            Object {
+              "display": "block",
+              "width": 200,
+            }
+          }
+        >
+          同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する
+        </span>
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+}
+
+.c2[type='checkbox']:checked {
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
+.c2[type='checkbox']:checked:active[aria-disabled=false] {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c2[type='checkbox']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #adadad;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox'][aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
+  visibility: hidden;
+}
+
+<div>
+  <label
+    aria-disabled={false}
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <input
+        aria-label="label"
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="unlabelled"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        type="checkbox"
+      />
+      <div
+        aria-hidden={true}
+        checked={false}
+        className="c3"
+      >
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
+      </div>
+    </div>
+  </label>
+</div>
 `;
