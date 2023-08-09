@@ -38,7 +38,7 @@ export type CarouselGradientProps =
 type CarouselAppearanceProps = CarouselBaseAppearanceProps &
   CarouselGradientProps
 
-type Props = CarouselAppearanceProps & {
+export type CarouselProps = CarouselAppearanceProps & {
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   children: React.ReactNode
@@ -63,9 +63,8 @@ export default function Carousel({
   onScrollStateChange,
   scrollAmountCoef = SCROLL_AMOUNT_COEF,
   ...options
-}: Props) {
+}: CarouselProps) {
   // スクロール位置を保存する
-  // アニメーション中の場合は、アニメーション終了時のスクロール位置が保存される
   const [scrollLeft, setScrollLeft] = useDebounceAnimationState(0)
   // アニメーション中かどうか
   const animation = useRef(false)
