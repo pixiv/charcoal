@@ -3,7 +3,7 @@ import * as React from 'react'
 import { animated, useSpring } from 'react-spring'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
-import { passiveEvents, isEdge } from '../../foundation/support'
+import { isEdge } from '../../foundation/support'
 import { useIsomorphicLayoutEffect } from '../../hooks'
 import CarouselButton, { Direction } from '../CarouselButton'
 
@@ -66,18 +66,24 @@ export default function Carousel({
 }: CarouselProps) {
   // スクロール位置を保存する
   const [scrollLeft, setScrollLeft] = useDebounceAnimationState(0)
-  // アニメーション中かどうか
-  const animation = useRef(false)
+
+  // アニメーション中の場合はアニメーション終了時のスクロール位置を保持する
+  // それ以外の時は undefined
+  const [animationTarget, setAnimationTarget] = useState<number | undefined>(
+    undefined
+  )
+
   // スクロール可能な領域を保存する
   const [maxScrollLeft, setMaxScrollLeft] = useState(0)
+
   // 左右のボタンの表示状態を保存する
   const [leftShow, setLeftShow] = useState(false)
   const [rightShow, setRightShow] = useState(false)
 
-  // const [props, set, stop] = useSpring(() => ({
-  //   scroll: 0
-  // }))
-  const [styles, set] = useSpring(() => ({ scroll: 0 }))
+  const [styles, set] = useSpring(() => ({
+    scroll: 0,
+    onRest: () => setAnimationTarget(undefined),
+  }))
 
   const ref = useRef<HTMLDivElement>(null)
   const visibleAreaRef = useRef<HTMLDivElement>(null)
@@ -88,61 +94,59 @@ export default function Carousel({
       return
     }
     const { clientWidth } = visibleAreaRef.current
+    // アニメーション中は現在の終了地点から次の終了地点を計算する
+    const from = animationTarget ?? scrollLeft
     // スクロール領域を超えないように、アニメーションを開始
     // アニメーション中にアニメーションが開始されたときに、アニメーション終了予定の位置から再度計算するようにする
     const scroll = Math.min(
-      scrollLeft + clientWidth * scrollAmountCoef,
+      from + clientWidth * scrollAmountCoef,
       maxScrollLeft
     )
-    setScrollLeft(scroll, true)
-    set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
-    animation.current = true
-  }, [
-    animation,
-    maxScrollLeft,
-    scrollLeft,
-    set,
-    scrollAmountCoef,
-    setScrollLeft,
-  ])
+    setAnimationTarget(scroll)
+    set({ scroll, from: { scroll: scrollLeft } })
+  }, [animationTarget, scrollLeft, scrollAmountCoef, maxScrollLeft, set])
 
   const handleLeft = useCallback(() => {
     if (visibleAreaRef.current === null) {
       return
     }
     const { clientWidth } = visibleAreaRef.current
-    const scroll = Math.max(scrollLeft - clientWidth * scrollAmountCoef, 0)
-    setScrollLeft(scroll, true)
-    set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
-    animation.current = true
-  }, [animation, scrollLeft, set, scrollAmountCoef, setScrollLeft])
+    const from = animationTarget ?? scrollLeft
+    const scroll = Math.max(from - clientWidth * scrollAmountCoef, 0)
+    setAnimationTarget(scroll)
+    set({ scroll, from: { scroll: scrollLeft } })
+  }, [animationTarget, scrollLeft, scrollAmountCoef, set])
+
+  // ボタン以外からスクロールされた場合、ボタンによるアニメーションを中断する
+  const handleAnimationStop = useCallback(() => {
+    styles.scroll.stop()
+  }, [styles.scroll])
 
   // スクロール可能な場合にボタンを表示する
   // scrollLeftが変化したときに処理する (アニメーション開始時 & 手動スクロール時)
   useEffect(() => {
-    const newleftShow = scrollLeft > 0
-    const newrightShow = scrollLeft < maxScrollLeft && maxScrollLeft > 0
+    // 左にスクロール可能 && アニメーション終了時も左にスクロール可能
+    const newleftShow =
+      scrollLeft > 0 && (animationTarget === undefined || animationTarget > 0)
+    // 右にスクロール可能 && アニメーション終了時も右にスクロール可能
+    const newrightShow =
+      scrollLeft < maxScrollLeft &&
+      maxScrollLeft > 0 &&
+      (animationTarget === undefined || animationTarget < maxScrollLeft)
     if (newleftShow !== leftShow || newrightShow !== rightShow) {
       setLeftShow(newleftShow)
       setRightShow(newrightShow)
       onScrollStateChange?.(newleftShow || newrightShow)
     }
-  }, [leftShow, maxScrollLeft, onScrollStateChange, rightShow, scrollLeft])
+  }, [
+    animationTarget,
+    leftShow,
+    maxScrollLeft,
+    onScrollStateChange,
+    rightShow,
+    scrollLeft,
+  ])
 
-  const handleScroll = useCallback(() => {
-    if (ref.current === null) {
-      return
-    }
-    // 手動でスクロールが開始されたときにアニメーションを中断
-    if (animation.current) {
-      styles.scroll.stop()
-      animation.current = false
-    }
-    // スクロール位置を保存 (アニメーションの基準になる)
-    const manualScrollLeft = ref.current.scrollLeft
-    // 過剰にsetStateが走らないようにDebouceする
-    setScrollLeft(manualScrollLeft)
-  }, [animation, setScrollLeft, styles])
 
   // リサイズが起きたときに、アニメーション用のスクロール領域 & ボタンの表示状態 を再計算する
   const handleResize = useCallback(() => {
@@ -164,12 +168,6 @@ export default function Carousel({
       return
     }
 
-    elm.addEventListener(
-      'wheel',
-      handleScroll,
-      passiveEvents() && { passive: true }
-    )
-
     const resizeObserver = new ResizeObserver(handleResize)
     resizeObserver.observe(elm)
 
@@ -177,11 +175,10 @@ export default function Carousel({
     resizeObserverInner.observe(innerElm)
 
     return () => {
-      elm.removeEventListener('wheel', handleScroll)
       resizeObserver.disconnect()
       resizeObserverInner.disconnect()
     }
-  }, [handleResize, handleScroll])
+  }, [handleResize])
 
   // 初期スクロールを行う
   useIsomorphicLayoutEffect(() => {
@@ -215,7 +212,11 @@ export default function Carousel({
     if (onScroll) {
       onScroll(ref.current.scrollLeft)
     }
-  }, [onScroll])
+    // スクロール位置を保存 (アニメーションの基準になる)
+    const currentScrollLeft = ref.current.scrollLeft
+    // 過剰にsetStateが走らないようにDebouceする
+    setScrollLeft(currentScrollLeft)
+  }, [onScroll, setScrollLeft])
 
   const [disableGradient, setDisableGradient] = useState(false)
 
@@ -238,6 +239,8 @@ export default function Carousel({
                 ref={ref}
                 scrollLeft={styles.scroll}
                 onScroll={handleScrollMove}
+                // タップされた時を手動スクロール開始とみなして自動スクロールを止める
+                onTouchStart={handleAnimationStop}
               >
                 <CarouselContainer ref={innerRef} centerItems={centerItems}>
                   {children}
@@ -278,6 +281,8 @@ export default function Carousel({
         ref={ref}
         scrollLeft={styles.scroll}
         onScroll={handleScrollMove}
+        // タップされた時を手動スクロール開始とみなして自動スクロールを止める
+        onTouchStart={handleAnimationStop}
       >
         <CarouselContainer ref={innerRef} centerItems={centerItems}>
           {children}
