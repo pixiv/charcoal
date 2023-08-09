@@ -1,6 +1,6 @@
-import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
+import { number } from '@storybook/addon-knobs'
 import styled, { css } from 'styled-components'
-import Carousel from '.'
+import Carousel, { CarouselProps } from '.'
 
 const dummyText = css`
   color: ${({ theme }) => theme.color.text4};
@@ -19,43 +19,20 @@ const Dummy = styled.div`
 `
 export default {
   title: 'Sandbox/Carousel',
-  decorators: [withKnobs],
+  component: Carousel,
 }
 
-export const _Carousel = () => {
-  const hasGradient = boolean('Gradient', false)
-  const fadeInGradient = boolean('FadeInGradient', false)
-  const buttonOffset = number('buttonOffset', 0)
-  const buttonPadding = number('buttonPadding', 16)
-  const defaultScrollAlign = select(
-    'scrollAlign',
-    {
-      Left: 'left',
-      Center: 'center',
-      Right: 'right',
-    },
-    'left'
-  )
-  const defaultScrollOffset = number('scrollOffset', 0)
+const DefaultStory = (args: CarouselProps) => {
   const itemCount = number('Item count', 20)
   const itemSize = number('Item size', 118)
 
   const items = Array.from({ length: itemCount })
   return (
     <Base>
-      <Carousel
-        buttonOffset={buttonOffset}
-        buttonPadding={buttonPadding}
-        defaultScroll={{
-          align: defaultScrollAlign,
-          offset: defaultScrollOffset,
-        }}
-        hasGradient={hasGradient}
-        fadeInGradient={fadeInGradient}
-      >
+      <Carousel {...args}>
         <Container>
           {items.map((_value, index) => (
-            <Box size={itemSize} key={index}>
+            <Box size={itemSize} key={index} tabIndex={0}>
               Dummy
             </Box>
           ))}
@@ -64,6 +41,9 @@ export const _Carousel = () => {
     </Base>
   )
 }
+
+export const Default = DefaultStory.bind({})
+
 const Base = styled.div`
   width: 100%;
   padding: 0 108px;
