@@ -35,8 +35,6 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
   -webkit-transition: all 0.2s !important;
   transition: all 0.2s !important;
 }
@@ -48,12 +46,12 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
   background-color: var(--charcoal-brand-hover);
 }
 
 .c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled=false] {
+.c2[type='checkbox']:checked:active[aria-disabled='false'] {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -64,22 +62,22 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox'][aria-disabled='false']:focus,
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled=false]:active {
+.c2[type='checkbox'][aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+.c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -263,8 +261,6 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
   -webkit-transition: all 0.2s !important;
   transition: all 0.2s !important;
 }
@@ -276,12 +272,12 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
   background-color: var(--charcoal-brand-hover);
 }
 
 .c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled=false] {
+.c2[type='checkbox']:checked:active[aria-disabled='false'] {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -292,22 +288,22 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox'][aria-disabled='false']:focus,
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled=false]:active {
+.c2[type='checkbox'][aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+.c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -416,8 +412,6 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
   -webkit-transition: all 0.2s !important;
   transition: all 0.2s !important;
 }
@@ -429,12 +423,12 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
   background-color: var(--charcoal-brand-hover);
 }
 
 .c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled=false] {
+.c2[type='checkbox']:checked:active[aria-disabled='false'] {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -445,22 +439,22 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox'][aria-disabled='false']:focus,
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled=false]:active {
+.c2[type='checkbox'][aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+.c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -644,8 +638,6 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
   -webkit-transition: all 0.2s !important;
   transition: all 0.2s !important;
 }
@@ -657,12 +649,12 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled=false] {
+.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
   background-color: var(--charcoal-brand-hover);
 }
 
 .c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled=false] {
+.c2[type='checkbox']:checked:active[aria-disabled='false'] {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -673,22 +665,22 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled=false]:focus,
+.c2[type='checkbox'][aria-disabled='false']:focus,
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled=false]:active {
+.c2[type='checkbox'][aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled=false]:active:not(:focus-visible) {
+.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled=false]:focus-visible {
+.c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }

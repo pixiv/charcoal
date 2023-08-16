@@ -5,7 +5,6 @@ import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
 import { disabledSelector } from '@charcoal-ui/utils'
-import { theme } from '../../styled'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
@@ -109,11 +108,11 @@ const CheckboxInput = styled.input`
 
       // TODO: 整理する
       &:hover:not(:disabled):not([aria-disabled]),
-      &:hover[aria-disabled=false] {
+      &:hover[aria-disabled='false'] {
         background-color: var(--charcoal-brand-hover);
       }
       &:active:not(:disabled):not([aria-disabled]),
-      &:active[aria-disabled=false] {
+      &:active[aria-disabled='false'] {
         background-color: var(--charcoal-brand-press);
       }
     }
@@ -123,7 +122,27 @@ const CheckboxInput = styled.input`
       border-color: var(--charcoal-text4);
     }
     border-radius: 4px;
-    ${theme((o) => [o.outline.default.focus])}
+
+    &:not(:disabled):not([aria-disabled]):focus,
+    &[aria-disabled='false']:focus,
+    &:not(:disabled):not([aria-disabled]):active,
+    &[aria-disabled='false']:active {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+
+    &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+    &[aria-disabled='false']:focus:not(:focus-visible),
+    &:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+    &[aria-disabled='false']:active:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:not(:disabled):not([aria-disabled]):focus-visible,
+    &[aria-disabled='false']:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
 
     /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
     transition: all 0.2s !important;
