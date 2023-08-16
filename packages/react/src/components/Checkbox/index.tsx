@@ -101,6 +101,8 @@ const CheckboxInput = styled.input`
     margin: 0;
     width: 20px;
     height: 20px;
+    border-radius: 4px;
+    transition: 0.2s box-shadow, 0.2s background-color;
 
     &:checked {
       background-color: var(--charcoal-brand);
@@ -112,6 +114,22 @@ const CheckboxInput = styled.input`
         }
         &:active {
           background-color: var(--charcoal-brand-press);
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+          &:not(:focus-visible) {
+            outline: none;
+          }
+        }
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+          &:not(:focus-visible) {
+            outline: none;
+          }
+        }
+        &:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
         }
       }
     }
@@ -121,30 +139,6 @@ const CheckboxInput = styled.input`
       border-style: solid;
       border-color: var(--charcoal-text4);
     }
-    border-radius: 4px;
-
-    &:not(:disabled):not([aria-disabled]):focus,
-    &[aria-disabled='false']:focus,
-    &:not(:disabled):not([aria-disabled]):active,
-    &[aria-disabled='false']:active {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
-
-    &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-    &[aria-disabled='false']:focus:not(:focus-visible),
-    &:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-    &[aria-disabled='false']:active:not(:focus-visible) {
-      outline: none;
-    }
-
-    &:not(:disabled):not([aria-disabled]):focus-visible,
-    &[aria-disabled='false']:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
-
-    transition: 0.2s box-shadow, 0.2s background-color;
   }
 `
 
