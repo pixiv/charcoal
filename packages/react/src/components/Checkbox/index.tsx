@@ -104,7 +104,18 @@ const CheckboxInput = styled.input`
     height: 20px;
 
     &:checked {
-      ${theme((o) => o.bg.brand.hover.press)}
+      background-color: var(--charcoal-brand);
+      transition: 0.2s background-color;
+
+      // TODO: 整理する
+      &:hover:not(:disabled):not([aria-disabled]),
+      &:hover[aria-disabled=false] {
+        background-color: var(--charcoal-brand-hover);
+      }
+      &:active:not(:disabled):not([aria-disabled]),
+      &:active[aria-disabled=false] {
+        background-color: var(--charcoal-brand-press);
+      }
     }
     &:not(:checked) {
       border-width: 2px;
