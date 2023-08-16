@@ -84,7 +84,10 @@ const InputRoot = styled.label`
   }
 
   gap: 4px;
-  ${theme((o) => [o.disabled])}
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 `
 
 const CheckboxRoot = styled.div`

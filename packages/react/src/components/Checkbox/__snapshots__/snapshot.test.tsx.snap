@@ -17,7 +17,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -245,7 +245,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -398,7 +398,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -626,7 +626,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
