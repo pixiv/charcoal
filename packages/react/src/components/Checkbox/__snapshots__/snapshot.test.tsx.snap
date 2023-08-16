@@ -60,7 +60,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
 .c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: #5c5c5c;
+  border-color: var(--charcoal-text4);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
@@ -288,7 +288,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
 .c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: #5c5c5c;
+  border-color: var(--charcoal-text4);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
@@ -441,7 +441,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
 .c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: #adadad;
+  border-color: var(--charcoal-text4);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
@@ -669,7 +669,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
 .c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: #adadad;
+  border-color: var(--charcoal-text4);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,

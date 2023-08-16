@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
-import { disabledSelector, px } from '@charcoal-ui/utils'
+import { disabledSelector } from '@charcoal-ui/utils'
 import { theme } from '../../styled'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
@@ -83,7 +83,7 @@ const InputRoot = styled.label`
     cursor: default;
   }
 
-  gap: ${({ theme }) => px(theme.spacing[4])};
+  gap: 4px;
   ${theme((o) => [o.disabled])}
 `
 
@@ -106,9 +106,10 @@ const CheckboxInput = styled.input`
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;
-      border-color: ${({ theme }) => theme.color.text4};
+      border-color: var(--charcoal-text4);
     }
-    ${theme((o) => [o.outline.default.focus, o.borderRadius(4)])}
+    border-radius: 4px;
+    ${theme((o) => [o.outline.default.focus])}
 
     /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
     transition: all 0.2s !important;
@@ -123,15 +124,15 @@ const CheckboxInputOverlay = styled.div<{ checked?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${theme((o) => [o.width.px(24), o.height.px(24), o.font.text5])}
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
 
   ${({ checked }) => checked !== true && hiddenCss};
 `
 
 const InputLabel = styled.div`
-  ${theme((o) => [o.font.text2])}
-
+  color: var(--charcoal-text2);
   font-size: 14px;
   /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
   line-height: 20px;
