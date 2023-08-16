@@ -105,16 +105,17 @@ const CheckboxInput = styled.input`
     &:checked {
       background-color: var(--charcoal-brand);
 
-      // TODO: 整理する
-      &:hover:not(:disabled):not([aria-disabled]),
-      &:hover[aria-disabled='false'] {
-        background-color: var(--charcoal-brand-hover);
-      }
-      &:active:not(:disabled):not([aria-disabled]),
-      &:active[aria-disabled='false'] {
-        background-color: var(--charcoal-brand-press);
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        &:hover {
+          background-color: var(--charcoal-brand-hover);
+        }
+        &:active {
+          background-color: var(--charcoal-brand-press);
+        }
       }
     }
+
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;

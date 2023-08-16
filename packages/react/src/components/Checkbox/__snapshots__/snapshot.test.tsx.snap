@@ -43,13 +43,13 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
   background-color: var(--charcoal-brand);
 }
 
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='checkbox']:checked[aria-disabled='false']:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox']:checked[aria-disabled='false']:active {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -267,13 +267,13 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
   background-color: var(--charcoal-brand);
 }
 
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='checkbox']:checked[aria-disabled='false']:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox']:checked[aria-disabled='false']:active {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -416,13 +416,13 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
   background-color: var(--charcoal-brand);
 }
 
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='checkbox']:checked[aria-disabled='false']:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox']:checked[aria-disabled='false']:active {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -640,13 +640,13 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
   background-color: var(--charcoal-brand);
 }
 
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='checkbox']:checked[aria-disabled='false']:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox']:checked[aria-disabled='false']:active {
   background-color: var(--charcoal-brand-press);
 }
 
