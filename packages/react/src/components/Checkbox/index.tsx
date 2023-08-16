@@ -104,7 +104,6 @@ const CheckboxInput = styled.input`
 
     &:checked {
       background-color: var(--charcoal-brand);
-      transition: 0.2s background-color;
 
       // TODO: 整理する
       &:hover:not(:disabled):not([aria-disabled]),
@@ -144,8 +143,7 @@ const CheckboxInput = styled.input`
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
     }
 
-    /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
-    transition: all 0.2s !important;
+    transition: 0.2s box-shadow, 0.2s background-color;
   }
 `
 

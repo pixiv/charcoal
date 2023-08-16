@@ -35,14 +35,12 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: all 0.2s !important;
-  transition: all 0.2s !important;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
@@ -261,14 +259,12 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: all 0.2s !important;
-  transition: all 0.2s !important;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
@@ -412,14 +408,12 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: all 0.2s !important;
-  transition: all 0.2s !important;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
@@ -638,14 +632,12 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  -webkit-transition: all 0.2s !important;
-  transition: all 0.2s !important;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
 }
 
 .c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
