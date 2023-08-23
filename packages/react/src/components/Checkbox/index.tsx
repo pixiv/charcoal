@@ -110,27 +110,41 @@ const CheckboxInput = styled.input`
       &:not(:disabled):not([aria-disabled]),
       &[aria-disabled='false'] {
         &:hover {
+          /* &:checked:hover:not(:disabled):not([aria-disabled]) */
+          /* &:checked:hover[aria-disabled=false] */
           background-color: var(--charcoal-brand-hover);
         }
         &:active {
+          /* &:checked:active:not(:disabled):not([aria-disabled]) */
+          /* &:checked:active[aria-disabled=false] */
           background-color: var(--charcoal-brand-press);
-          outline: none;
-          box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-          &:not(:focus-visible) {
-            outline: none;
-          }
         }
-        &:focus {
+      }
+    }
+
+    &:not(:disabled):not([aria-disabled]),
+    &[aria-disabled='false'] {
+      &:focus,
+      &:active {
+        /* &:not(:disabled):not([aria-disabled]):focus */
+        /* &[aria-disabled='false']:focus */
+        /* &:not(:disabled):not([aria-disabled]):active */
+        /* &[aria-disabled='false']:active */
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+        &:not(:focus-visible) {
+          /* &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible) */
+          /* &[aria-disabled]:focus:not(:focus-visible) */
+          /* &:not(:disabled):not([aria-disabled]):active:not(:focus-visible) */
+          /* &[aria-disabled]:active:not(:focus-visible) */
           outline: none;
-          box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-          &:not(:focus-visible) {
-            outline: none;
-          }
         }
-        &:focus-visible {
-          outline: none;
-          box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-        }
+      }
+      &:focus-visible {
+        /* &:not(:disabled):not([aria-disabled]):focus-visible */
+        /* &[aria-disabled='false']:focus-visible */
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
       }
     }
 
