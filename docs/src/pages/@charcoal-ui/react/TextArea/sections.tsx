@@ -42,7 +42,7 @@ export const sections: PreviewSection<TextAreaProps>[] = [
     ],
   },
   {
-    title: 'invalid, assitiveText',
+    title: 'invalid, assistiveText',
     previewMetas: [
       {
         children: undefined,

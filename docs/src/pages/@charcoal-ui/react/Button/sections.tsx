@@ -1,6 +1,6 @@
 import { ButtonProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
-import { sizies } from './sizies'
+import { sizes } from './sizes'
 import { variants } from './variants'
 
 export const sections: PreviewSection<ButtonProps>[] = [
@@ -15,7 +15,7 @@ export const sections: PreviewSection<ButtonProps>[] = [
   },
   {
     title: 'size',
-    previewMetas: sizies.map((size) => ({
+    previewMetas: sizes.map((size) => ({
       props: {
         size,
       },

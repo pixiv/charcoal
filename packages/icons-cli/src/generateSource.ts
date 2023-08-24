@@ -2,7 +2,7 @@ import path from 'path'
 import glob from 'fast-glob'
 import fs from 'fs-extra'
 
-const generateIconSvgEmbededSource = (svgString: string) => {
+const generateIconSvgEmbeddedSource = (svgString: string) => {
   const str = svgString.replace(/\r?\n/g, '')
 
   return `/** This file is auto generated. DO NOT EDIT BY HAND. */
@@ -75,7 +75,7 @@ export const generateIconSource = async (outputDir: string) => {
     await fs.ensureFile(outputPath)
     await fs.writeFile(
       outputPath,
-      generateIconSvgEmbededSource(data.toString())
+      generateIconSvgEmbeddedSource(data.toString())
     )
   }
 

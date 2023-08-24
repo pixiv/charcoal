@@ -5,7 +5,7 @@ import {
   MAIN_COLUMN_HORIZONTAL_MIN_MARGIN,
   RESPONSIVE_LEFT_WIDTH,
   RESPONSIVE_MAIN_MAX_WIDTH,
-} from '../../foundation/contants'
+} from '../../foundation/constants'
 import { useMediaScreen1 } from '../../foundation/hooks'
 import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
 import { maxWidth } from '@charcoal-ui/utils'

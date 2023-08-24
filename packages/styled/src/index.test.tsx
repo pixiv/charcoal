@@ -1,13 +1,13 @@
 import { light } from '@charcoal-ui/theme'
 import 'jest-styled-components'
 
-import renderder from 'react-test-renderer'
+import renderer from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 import { Example, TailwindLike } from './index.story'
 import { myTheme } from './storyHelper'
 
 function render(children: JSX.Element) {
-  return renderder
+  return renderer
     .create(<ThemeProvider theme={myTheme(light)}>{children}</ThemeProvider>)
     .toJSON()
 }

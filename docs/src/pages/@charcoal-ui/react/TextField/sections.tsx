@@ -52,7 +52,7 @@ export const sections: PreviewSection<TextFieldProps>[] = [
     ],
   },
   {
-    title: 'invalid, assitiveText',
+    title: 'invalid, assistiveText',
     previewMetas: [
       {
         children: undefined,

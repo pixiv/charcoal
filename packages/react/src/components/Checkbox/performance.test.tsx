@@ -2,12 +2,12 @@ import { light } from '@charcoal-ui/theme'
 import 'jest-styled-components'
 
 import React from 'react'
-import renderder from 'react-test-renderer'
+import renderer from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 import Checkbox from '.'
 
 export function render(children: JSX.Element) {
-  return renderder
+  return renderer
     .create(<ThemeProvider theme={light}>{children}</ThemeProvider>)
     .toJSON()
 }

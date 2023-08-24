@@ -121,12 +121,12 @@ export default function Carousel({
   // スクロール可能な場合にボタンを表示する
   // scrollLeftが変化したときに処理する (アニメーション開始時 & 手動スクロール時)
   useEffect(() => {
-    const newleftShow = scrollLeft > 0
-    const newrightShow = scrollLeft < maxScrollLeft && maxScrollLeft > 0
-    if (newleftShow !== leftShow || newrightShow !== rightShow) {
-      setLeftShow(newleftShow)
-      setRightShow(newrightShow)
-      onScrollStateChange?.(newleftShow || newrightShow)
+    const newLeftShow = scrollLeft > 0
+    const newRightShow = scrollLeft < maxScrollLeft && maxScrollLeft > 0
+    if (newLeftShow !== leftShow || newRightShow !== rightShow) {
+      setLeftShow(newLeftShow)
+      setRightShow(newRightShow)
+      onScrollStateChange?.(newLeftShow || newRightShow)
     }
   }, [leftShow, maxScrollLeft, onScrollStateChange, rightShow, scrollLeft])
 
@@ -141,7 +141,7 @@ export default function Carousel({
     }
     // スクロール位置を保存 (アニメーションの基準になる)
     const manualScrollLeft = ref.current.scrollLeft
-    // 過剰にsetStateが走らないようにDebouceする
+    // 過剰にsetStateが走らないようにdebounceする
     setScrollLeft(manualScrollLeft)
   }, [animation, setScrollLeft, styles])
 
