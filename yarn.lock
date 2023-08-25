@@ -1702,7 +1702,7 @@ __metadata:
   resolution: "@charcoal-ui/react@workspace:packages/react"
   dependencies:
     "@charcoal-ui/icons": ^3.2.0
-    "@charcoal-ui/styled": ^3.2.0
+    "@charcoal-ui/styled": ../styled
     "@charcoal-ui/theme": ^3.2.0
     "@charcoal-ui/utils": ^3.2.0
     "@react-aria/button": ^3.7.0
@@ -1783,6 +1783,21 @@ __metadata:
     styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
+
+"@charcoal-ui/styled@file:../styled::locator=%40charcoal-ui%2Freact%40workspace%3Apackages%2Freact":
+  version: 3.2.0
+  resolution: "@charcoal-ui/styled@file:../styled#../styled::hash=c93476&locator=%40charcoal-ui%2Freact%40workspace%3Apackages%2Freact"
+  dependencies:
+    "@charcoal-ui/foundation": ^3.2.0
+    "@charcoal-ui/theme": ^3.2.0
+    "@charcoal-ui/utils": ^3.2.0
+    warning: ^4.0.3
+  peerDependencies:
+    react: ">=17.0.0"
+    styled-components: ">=5.1.1"
+  checksum: e7c579b469b01431b7832e5970ce187c8e102805063f3d5af004c29f3689643aa4b6fdf1cc7f3391032c09f540d10063e7c1e78e7cce00d152080cb0c9991fdb
+  languageName: node
+  linkType: hard
 
 "@charcoal-ui/tailwind-config@workspace:packages/tailwind-config":
   version: 0.0.0-use.local

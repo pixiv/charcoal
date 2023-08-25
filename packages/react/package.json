@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@charcoal-ui/icons": "^3.2.0",
-    "@charcoal-ui/styled": "^3.2.0",
+    "@charcoal-ui/styled": "../styled",
     "@charcoal-ui/theme": "^3.2.0",
     "@charcoal-ui/utils": "^3.2.0",
     "@react-aria/button": "^3.7.0",

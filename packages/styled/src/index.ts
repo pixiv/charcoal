@@ -17,6 +17,7 @@ export {
 } from './helper'
 export { defineThemeVariables } from './util'
 export * from './SetThemeScript'
+export * from "./new_builders/createTheme2"
 
 type Blank = null | undefined | false
 
