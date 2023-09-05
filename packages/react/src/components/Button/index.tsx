@@ -58,7 +58,7 @@ const StyledButton = styled(Clickable)<StyledProps>`
   ${(p) =>
     theme((o) => [
       o.font[variantToFont(p.$variant)].hover.press,
-      o.bg[variantToBackgraund(p.$variant)].hover.press,
+      o.bg[variantToBackground(p.$variant)].hover.press,
       o.typography(14).bold.preserveHalfLeading,
       o.padding.horizontal(p.$size === 'M' ? 24 : 16),
       o.disabled,
@@ -70,7 +70,7 @@ const StyledButton = styled(Clickable)<StyledProps>`
   height: ${(p) => (p.$size === 'M' ? 40 : 32)}px;
 `
 
-function variantToBackgraund(variant: Variant) {
+function variantToBackground(variant: Variant) {
   switch (variant) {
     case 'Overlay':
       return 'surface4'

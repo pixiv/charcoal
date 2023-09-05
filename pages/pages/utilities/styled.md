@@ -53,7 +53,7 @@ const MyComponent = styled.div`
     o.font.text2, // 文字色を変える
     o.typography(20).bold, // フォントサイズを 20px にして太字にする
     o.padding.all(40), // padding を全方向に 40px
-    o.margin.vertical(24), // marging を top と bottom だけ 24px
+    o.margin.vertical(24), // margin を top と bottom だけ 24px
   ])}
 `
 

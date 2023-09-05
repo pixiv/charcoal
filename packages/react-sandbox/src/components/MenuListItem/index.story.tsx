@@ -19,7 +19,7 @@ export default {
 export const Default = () => {
   const primary = text('primary', 'Knob to change')
   const secondary = text('secondary', '')
-  const disabled = boolean('diasbled', false)
+  const disabled = boolean('disabled', false)
   const padding = select('padding', { '16': 16, '24': 24 }, 24)
   const noHover = boolean('noHover', false)
   return (

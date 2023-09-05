@@ -8,15 +8,15 @@ import { PackageManagerInfo } from './packageManager'
 /**
  * 指定したバージョンのパッケージが存在する状態で処理を行う
  *
- * @param packageDescripters 欲しいパッケージの一覧
+ * @param packageDescriptors 欲しいパッケージの一覧
  * @param callback 実行したい処理
  */
 export async function withPackages<T>(
   packageManagerInfo: PackageManagerInfo,
-  packageDescripters: readonly string[],
+  packageDescriptors: readonly string[],
   callback: () => T | Promise<T>
 ): Promise<T> {
-  if (packageDescripters.length === 0) {
+  if (packageDescriptors.length === 0) {
     return callback()
   }
 
@@ -56,15 +56,15 @@ export async function withPackages<T>(
     let cmd: string, recoverCmd: string
     switch (packageManagerInfo.type) {
       case 'npm':
-        cmd = `npm install ${packageDescripters.join(' ')}`
+        cmd = `npm install ${packageDescriptors.join(' ')}`
         recoverCmd = 'npm install'
         break
       case 'yarn':
-        cmd = `yarn add ${packageDescripters.join(' ')}`
+        cmd = `yarn add ${packageDescriptors.join(' ')}`
         recoverCmd = 'yarn install'
         break
       case 'pnpm':
-        cmd = `pnpm add ${packageDescripters.join(' ')}`
+        cmd = `pnpm add ${packageDescriptors.join(' ')}`
         recoverCmd = 'pnpm install'
         break
     }

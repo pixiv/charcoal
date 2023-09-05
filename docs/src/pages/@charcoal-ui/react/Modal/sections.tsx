@@ -81,7 +81,7 @@ export const sections: PreviewSection<ModalProps>[] = [
       {
         children: BottomSheet1,
         additionalData: {
-          openText: 'bottomSheet = ture',
+          openText: 'bottomSheet = true',
         },
         props: {
           isOpen: false,

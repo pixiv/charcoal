@@ -24,10 +24,10 @@ function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
   // デザインの意図: 前後移動時のカーソル移動を最小限にする。
 
   if (process.env.NODE_ENV !== 'production') {
-    warning((page | 0) === page, `\`page\` must be interger (${page})`)
+    warning((page | 0) === page, `\`page\` must be integer (${page})`)
     warning(
       (pageCount | 0) === pageCount,
-      `\`pageCount\` must be interger (${pageCount})`
+      `\`pageCount\` must be integer (${pageCount})`
     )
   }
 

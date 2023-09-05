@@ -1,12 +1,12 @@
 import 'jest-styled-components'
 
 import Button from '.'
-import renderder from 'react-test-renderer'
+import renderer from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
 import { light } from '@charcoal-ui/theme'
 
 export function render(children: JSX.Element) {
-  return renderder
+  return renderer
     .create(<ThemeProvider theme={light}>{children}</ThemeProvider>)
     .toJSON()
 }
