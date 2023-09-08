@@ -5,6 +5,7 @@ import { TokenInjector } from '@charcoal-ui/styled'
 import { ThemeMap } from '@charcoal-ui/styled/src/TokenInjector'
 import { CharcoalTheme } from '@charcoal-ui/theme'
 
+import { OverlayProvider } from './OverlayProvider'
 import { SSRProvider } from './SSRProvider'
 
 export type CharcoalProviderProps = React.PropsWithChildren<{
@@ -26,7 +27,7 @@ export function CharcoalProvider({
       <ThemeProvider theme={defaultTheme}>
         {injectTokens && <TokenInjector theme={themeMap} />}
         <ComponentAbstraction components={components}>
-          {children}
+          <OverlayProvider>{children}</OverlayProvider>
         </ComponentAbstraction>
       </ThemeProvider>
     </SSRProvider>
