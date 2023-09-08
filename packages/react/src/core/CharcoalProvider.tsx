@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import ComponentAbstraction, { Components } from './ComponentAbstraction'
 import { TokenInjector } from '@charcoal-ui/styled'
 import { ThemeMap } from '@charcoal-ui/styled/src/TokenInjector'
-import { CharcoalTheme } from '@charcoal-ui/theme'
+import { CharcoalTheme, ThemeColor } from '@charcoal-ui/theme'
 
 import { OverlayProvider } from './OverlayProvider'
 import { SSRProvider } from './SSRProvider'
@@ -13,6 +13,7 @@ export type CharcoalProviderProps = React.PropsWithChildren<{
   defaultTheme?: CharcoalTheme
   injectTokens?: boolean
   components?: Partial<Components>
+  background?: keyof ThemeColor
 }>
 
 export function CharcoalProvider({
@@ -21,11 +22,14 @@ export function CharcoalProvider({
   components = {},
   injectTokens = true,
   children,
+  background,
 }: CharcoalProviderProps) {
   return (
     <SSRProvider>
       <ThemeProvider theme={defaultTheme}>
-        {injectTokens && <TokenInjector theme={themeMap} />}
+        {injectTokens && (
+          <TokenInjector theme={themeMap} background={background} />
+        )}
         <ComponentAbstraction components={components}>
           <OverlayProvider>{children}</OverlayProvider>
         </ComponentAbstraction>
