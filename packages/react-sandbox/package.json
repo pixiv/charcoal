@@ -18,14 +18,6 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.4.17",
-    "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/addons": "^6.4.17",
-    "@storybook/api": "^6.4.17",
-    "@storybook/components": "^6.4.17",
-    "@storybook/core-events": "^6.4.17",
-    "@storybook/react": "^6.4.17",
-    "@storybook/theming": "^6.4.17",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

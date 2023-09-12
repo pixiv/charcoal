@@ -1661,14 +1661,6 @@ __metadata:
     "@charcoal-ui/styled": ^3.2.0
     "@charcoal-ui/theme": ^3.2.0
     "@charcoal-ui/utils": ^3.2.0
-    "@storybook/addon-actions": ^6.4.17
-    "@storybook/addon-knobs": ^6.4.0
-    "@storybook/addons": ^6.4.17
-    "@storybook/api": ^6.4.17
-    "@storybook/components": ^6.4.17
-    "@storybook/core-events": ^6.4.17
-    "@storybook/react": ^6.4.17
-    "@storybook/theming": ^6.4.17
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^12.1.2
     "@testing-library/user-event": ^13.5.0
@@ -1720,14 +1712,6 @@ __metadata:
     "@react-aria/utils": ^3.15.0
     "@react-aria/visually-hidden": ^3.7.0
     "@react-types/switch": ^3.1.2
-    "@storybook/addon-actions": ^6.4.17
-    "@storybook/addon-knobs": ^6.4.0
-    "@storybook/addons": ^6.4.17
-    "@storybook/api": ^6.4.17
-    "@storybook/components": ^6.4.17
-    "@storybook/core-events": ^6.4.17
-    "@storybook/react": ^6.4.17
-    "@storybook/theming": ^6.4.17
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^12.1.2
     "@testing-library/user-event": ^13.5.0
@@ -4935,7 +4919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:6.4.17, @storybook/addon-actions@npm:^6.4.17":
+"@storybook/addon-actions@npm:6.4.17":
   version: 6.4.17
   resolution: "@storybook/addon-actions@npm:6.4.17"
   dependencies:
@@ -5392,7 +5376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addons@npm:6.5.10, @storybook/addons@npm:^6.4.17":
+"@storybook/addons@npm:6.5.10":
   version: 6.5.10
   resolution: "@storybook/addons@npm:6.5.10"
   dependencies:
@@ -5442,7 +5426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/api@npm:6.5.10, @storybook/api@npm:^6.4.17":
+"@storybook/api@npm:6.5.10":
   version: 6.5.10
   resolution: "@storybook/api@npm:6.5.10"
   dependencies:
@@ -5683,7 +5667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/components@npm:6.4.17, @storybook/components@npm:^6.4.17":
+"@storybook/components@npm:6.4.17":
   version: 6.4.17
   resolution: "@storybook/components@npm:6.4.17"
   dependencies:
@@ -5889,7 +5873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-events@npm:6.5.10, @storybook/core-events@npm:^6.4.17":
+"@storybook/core-events@npm:6.5.10":
   version: 6.5.10
   resolution: "@storybook/core-events@npm:6.5.10"
   dependencies:
@@ -6368,7 +6352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:6.5.10, @storybook/theming@npm:^6.4.17":
+"@storybook/theming@npm:6.5.10":
   version: 6.5.10
   resolution: "@storybook/theming@npm:6.5.10"
   dependencies:
