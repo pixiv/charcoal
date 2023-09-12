@@ -33,7 +33,7 @@ jobs:
 
       - run: yarn install --immutable --inline-builds
       - run: yarn build
-      - run: yarn build-storybook
+      - run: yarn storybook:build
 
   build-storybook-vite:
     runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
 
       - run: yarn install --immutable --inline-builds
       - run: yarn build
-      - run: yarn build-storybook
+      - run: yarn storybook:build-vite
         env:
           NODE_OPTIONS: --max_old_space_size=6144
           USE_VITE: '1'

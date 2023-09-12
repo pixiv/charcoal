@@ -24,7 +24,6 @@ module.exports = {
       },
     },
   ],
-  framework: { name: '@storybook/react-webpack5', options: {} },
   async webpackFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
       return config
@@ -55,7 +54,12 @@ module.exports = {
           options: {},
         },
       }
-    : {}),
+    : {
+        framework: {
+          name: '@storybook/react-webpack5',
+          options: {},
+        },
+      }),
 }
 
 const packagesDir = path.resolve(__dirname, '../packages')
