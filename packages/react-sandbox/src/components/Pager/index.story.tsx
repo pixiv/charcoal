@@ -29,9 +29,9 @@ export default {
     pageRangeDisplayed: {
       control: {
         type: 'number',
-        min: 3
-      }
-    }
+        min: 3,
+      },
+    },
   },
 }
 
@@ -54,7 +54,11 @@ Default.args = {
 
 const makeUrl = (page: number) => `/${page}`
 
-const LinkStory: Story<Props> = ({ page: defaultPage, pageCount, pageRangeDisplayed }) => (
+const LinkStory: Story<Props> = ({
+  page: defaultPage,
+  pageCount,
+  pageRangeDisplayed,
+}) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   <ComponentAbstraction components={{ Link: RouterLink }}>
@@ -67,18 +71,36 @@ const LinkStory: Story<Props> = ({ page: defaultPage, pageCount, pageRangeDispla
       <Routes>
         <Route
           path="/:page"
-          element={<CurrentPager pageCount={pageCount} pageRangeDisplayed={pageRangeDisplayed}></CurrentPager>}
+          element={
+            <CurrentPager
+              pageCount={pageCount}
+              pageRangeDisplayed={pageRangeDisplayed}
+            ></CurrentPager>
+          }
         />
       </Routes>
     </Router>
   </ComponentAbstraction>
 )
 
-function CurrentPager({ pageCount, pageRangeDisplayed }: { pageCount: number, pageRangeDisplayed?: number }) {
+function CurrentPager({
+  pageCount,
+  pageRangeDisplayed,
+}: {
+  pageCount: number
+  pageRangeDisplayed?: number
+}) {
   const params = useParams()
   const page = params.page !== undefined ? parseInt(params.page, 10) : 1
 
-  return <LinkPager makeUrl={makeUrl} page={page} pageCount={pageCount} pageRangeDisplayed={pageRangeDisplayed} />
+  return (
+    <LinkPager
+      makeUrl={makeUrl}
+      page={page}
+      pageCount={pageCount}
+      pageRangeDisplayed={pageRangeDisplayed}
+    />
+  )
 }
 
 export const Link = LinkStory.bind({})
@@ -115,5 +137,5 @@ export const LittlePageRangeDisplayed = LinkStory.bind({})
 LittlePageRangeDisplayed.args = {
   page: 1,
   pageCount: 10,
-  pageRangeDisplayed: 4
+  pageRangeDisplayed: 4,
 }
