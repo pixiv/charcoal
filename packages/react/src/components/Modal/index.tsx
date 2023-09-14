@@ -19,6 +19,7 @@ import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
+import { ModalBackgroundContext } from './ModalBackgroundContext'
 
 type BottomSheet = boolean | 'full'
 type Size = 'S' | 'M' | 'L'
@@ -130,11 +131,21 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   })
   const showDismiss = !isMobile || bottomSheet !== true
 
+  const bgRef = React.useRef<HTMLElement>(null)
+  const bgCtx = useContext(ModalBackgroundContext)
+
+  React.useEffect(() => {
+    if (bgRef.current && isOpen) {
+      bgCtx.setElement(bgRef.current)
+    }
+  }, [bgCtx, isOpen])
+
   return transition(
     ({ backgroundColor, transform }, item) =>
       item && (
         <Overlay portalContainer={portalContainer}>
           <ModalBackground
+            ref={bgRef}
             zIndex={zIndex}
             {...underlayProps}
             style={transitionEnabled ? { backgroundColor } : {}}

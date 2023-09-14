@@ -4,6 +4,9 @@ import { Story } from '../../_lib/compat'
 import { Divider } from './Divider'
 import MenuItemGroup from './MenuItemGroup'
 import DropdownMenuItem from './DropdownMenuItem'
+import Modal from '../Modal'
+import { ModalBackgroundProvider } from '../Modal/ModalBackgroundProvider'
+import { ModalBody, ModalHeader } from '../Modal/ModalPlumbing'
 
 export default {
   title: 'DropdownSelector',
@@ -51,26 +54,75 @@ Playground.args = { ...baseProps }
 export const Basic: Story<DropdownSelectorProps> = (
   props: DropdownSelectorProps
 ) => {
-  const [selected, setSelected] = useState('')
   return (
     <div style={{ width: 288 }}>
-      <DropdownSelector
-        {...props}
-        onChange={(value) => {
-          setSelected(value)
-        }}
-        value={selected}
-        label="label"
-      >
-        <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
-        <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
-        <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
-      </DropdownSelector>
+      <PlaygroundDropdownSelector {...props} />
     </div>
   )
 }
 
 Basic.args = { ...baseProps }
+
+function PlaygroundDropdownSelector(props: Partial<DropdownSelectorProps>) {
+  const [selected, setSelected] = useState('')
+  return (
+    <DropdownSelector
+      {...props}
+      onChange={(value) => {
+        setSelected(value)
+      }}
+      value={selected}
+      label="label"
+    >
+      <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+      <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+      <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+    </DropdownSelector>
+  )
+}
+
+export const InModal: Story<DropdownSelectorProps> = () => {
+  return (
+    <div
+      style={{
+        height: '1000px',
+      }}
+    >
+      <ModalBackgroundProvider>
+        <Modal
+          bottomSheet="full"
+          title="modal"
+          isOpen
+          onClose={() => {
+            //
+          }}
+        >
+          <ModalHeader />
+          <ModalBody>
+            <div
+              style={{
+                height: '1000px',
+                padding: '16px',
+              }}
+            >
+              <PlaygroundDropdownSelector />
+              <div
+                style={{
+                  height: '1000px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                1000px
+              </div>
+            </div>
+          </ModalBody>
+        </Modal>
+      </ModalBackgroundProvider>
+    </div>
+  )
+}
 
 export const InFormTag: Story<DropdownSelectorProps> = (
   props: DropdownSelectorProps
