@@ -6,7 +6,7 @@ import DotsIcon from '../icons/DotsIcon'
 import WedgeIcon, { WedgeDirection } from '../icons/WedgeIcon'
 import { useComponentAbstraction } from '@charcoal-ui/react'
 
-function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
+function usePagerWindow(page: number, pageCount: number, pageRangeDisplayed = 7) {
   // ページャーのリンク生成例:
   //
   //     < [ 1 ] [*2*] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] >
@@ -29,23 +29,25 @@ function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
       (pageCount | 0) === pageCount,
       `\`pageCount\` must be integer (${pageCount})`
     )
+    warning((pageRangeDisplayed | 0) === pageRangeDisplayed, `\`pageRangeDisplayed\` must be integer (${pageRangeDisplayed})`)
+    warning(pageRangeDisplayed > 2, `\`windowSize\` must be greater than 2`)
   }
 
   const window = useMemo(() => {
     const visibleFirstPage = 1
     const visibleLastPage = Math.min(
       pageCount,
-      Math.max(page + Math.floor(windowSize / 2), windowSize)
+      Math.max(page + Math.floor(pageRangeDisplayed / 2), pageRangeDisplayed)
     )
 
-    if (visibleLastPage <= windowSize) {
+    if (visibleLastPage <= pageRangeDisplayed) {
       // 表示範囲が1-7ページなら省略は無い。
       return Array.from(
         { length: 1 + visibleLastPage - visibleFirstPage },
         (_, i) => visibleFirstPage + i
       )
     } else {
-      const start = visibleLastPage - (windowSize - 1) + 2
+      const start = visibleLastPage - (pageRangeDisplayed - 1) + 2
       return [
         // 表示範囲が1-7ページを超えるなら、
         // - 1ページ目は固定で表示する
@@ -58,7 +60,7 @@ function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
         ),
       ]
     }
-  }, [page, pageCount, windowSize])
+  }, [page, pageCount, pageRangeDisplayed])
 
   useDebugValue(window)
 
@@ -68,6 +70,7 @@ function usePagerWindow(page: number, pageCount: number, windowSize = 7) {
 interface CommonProps {
   page: number
   pageCount: number
+  pageRangeDisplayed?: number
 }
 
 export interface PagerProps extends CommonProps {
@@ -75,9 +78,9 @@ export interface PagerProps extends CommonProps {
 }
 
 // this pager is just regular buttons; for links use LinkPager
-export default memo(function Pager({ page, pageCount, onChange }: PagerProps) {
+export default memo(function Pager({ page, pageCount, pageRangeDisplayed, onChange }: PagerProps) {
   // TODO: refactor Pager and LinkPager to use a common parent component
-  const window = usePagerWindow(page, pageCount)
+  const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
   const makeClickHandler = useCallback(
     (value: number) => () => {
       onChange(value)
@@ -132,9 +135,9 @@ export interface LinkPagerProps extends CommonProps {
   makeUrl(page: number): string
 }
 
-export function LinkPager({ page, pageCount, makeUrl }: LinkPagerProps) {
+export function LinkPager({ page, pageCount, pageRangeDisplayed, makeUrl }: LinkPagerProps) {
   const { Link } = useComponentAbstraction()
-  const window = usePagerWindow(page, pageCount)
+  const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
 
   const hasNext = page < pageCount
   const hasPrev = page > 1
