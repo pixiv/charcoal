@@ -204,7 +204,8 @@ const ModalBackground = animated(styled.div<{ zIndex: number }>`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: -webkit-fill-available;
+  width: -moz-available;
   height: 100%;
 
   ${theme((o) => [o.bg.surface4])}
