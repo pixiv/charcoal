@@ -4,6 +4,7 @@ import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import styled from 'styled-components'
 import { theme } from '../../../styled'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
+import { usePreventScroll } from './usePreventScroll'
 
 export type PopoverProps = {
   isOpen: boolean
@@ -42,6 +43,7 @@ export default function Popover(props: PopoverProps) {
   )
 
   const bgCtx = useContext(ModalBackgroundContext)
+  usePreventScroll(bgCtx.element, props.isOpen)
 
   if (!props.isOpen) return null
 
