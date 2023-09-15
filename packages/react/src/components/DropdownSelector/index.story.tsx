@@ -64,7 +64,7 @@ export const Basic: Story<DropdownSelectorProps> = (
 Basic.args = { ...baseProps }
 
 function PlaygroundDropdownSelector(props: Partial<DropdownSelectorProps>) {
-  const [selected, setSelected] = useState('')
+  const [selected, setSelected] = useState('10')
   return (
     <DropdownSelector
       {...props}
