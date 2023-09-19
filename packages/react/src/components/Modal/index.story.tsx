@@ -192,3 +192,34 @@ const BottomSheetStory = (args: ModalProps) => {
 }
 
 export const BottomSheet: Story<ModalProps> = BottomSheetStory.bind({})
+
+const BottomSheetOverflowStory = (args: ModalProps) => {
+  const state = useOverlayTriggerState({})
+  return (
+    // Application must be wrapped in an OverlayProvider so that it can be
+    // hidden from screen readers when a modal opens.
+    <OverlayProvider>
+      <Button onClick={() => state.open()}>Open Modal</Button>
+
+      <Modal
+        {...args}
+        isOpen={state.isOpen}
+        onClose={() => state.close()}
+        bottomSheet
+        isDismissable
+      >
+        <ModalHeader />
+        <ModalBody>
+          <div
+            style={{
+              height: 1000,
+            }}
+          ></div>
+        </ModalBody>
+      </Modal>
+    </OverlayProvider>
+  )
+}
+
+export const BottomSheetOverflow: Story<ModalProps> =
+  BottomSheetOverflowStory.bind({})

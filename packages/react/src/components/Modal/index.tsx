@@ -248,6 +248,7 @@ const ModalDialog = animated(styled.div<{
       p.bottomSheet !== false &&
       css`
         border-radius: 0;
+        overflow: auto;
         ${p.bottomSheet === 'full' &&
         css`
           height: 100%;
