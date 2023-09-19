@@ -35,23 +35,6 @@ jobs:
       - run: yarn build
       - run: yarn storybook:build
 
-  build-storybook-vite:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.node-version'
-          cache: yarn
-
-      - run: yarn install --immutable --inline-builds
-      - run: yarn build
-      - run: yarn storybook:build-vite
-        env:
-          NODE_OPTIONS: --max_old_space_size=6144
-          USE_VITE: '1'
-
   test:
     runs-on: ubuntu-latest
     steps:
