@@ -16,3 +16,8 @@ window.matchMedia = jest.fn().mockImplementation((query: string) => ({
   removeEventListener: jest.fn(),
   dispatchEvent: jest.fn(),
 }))
+
+jest.mock('@react-aria/utils', () => ({
+  ...jest.requireActual('@react-aria/utils'),
+  useId: () => 'test-id',
+}))
