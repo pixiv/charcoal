@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots IconButton Default M 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled=false]:focus,
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c1[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    height={40}
+    size="M"
+    title="close"
+    width={40}
+  >
+    <pixiv-icon
+      name="24/Close"
+    />
+  </button>
+</div>
+`;
+
+exports[`Storyshots IconButton Overlay M 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text5);
+  background-color: var(--charcoal-surface4);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c1:hover:not(:disabled):not([aria-disabled]),
+.c1:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface4-hover);
+}
+
+.c1:active:not(:disabled):not([aria-disabled]),
+.c1:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface4-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled=false]:focus,
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c1[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    height={40}
+    size="M"
+    title="close"
+    width={40}
+  >
+    <pixiv-icon
+      name="24/Close"
+    />
+  </button>
+</div>
+`;

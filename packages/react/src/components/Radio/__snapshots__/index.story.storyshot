@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Radio Default 1`] = `
+.c1 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 4px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c2[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 6px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 999999px;
+  background-color: var(--charcoal-surface1);
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+}
+
+.c2[type='radio']:hover:not(:disabled):not([aria-disabled]),
+.c2[type='radio']:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface1-hover);
+}
+
+.c2[type='radio']:active:not(:disabled):not([aria-disabled]),
+.c2[type='radio']:active[aria-disabled=false] {
+  background-color: var(--charcoal-surface1-press);
+}
+
+.c2[type='radio']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #858585;
+}
+
+.c2[type='radio']:checked {
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c2[type='radio']:checked:hover:not(:disabled):not([aria-disabled]),
+.c2[type='radio']:checked:hover[aria-disabled=false] {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c2[type='radio']:checked:active:not(:disabled):not([aria-disabled]),
+.c2[type='radio']:checked:active[aria-disabled=false] {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c2[type='radio']:checked::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  background-color: var(--charcoal-text5);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c2[type='radio']:checked::after:hover:not(:disabled):not([aria-disabled]),
+.c2[type='radio']:checked::after:hover[aria-disabled=false] {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.c2[type='radio']:checked::after:active:not(:disabled):not([aria-disabled]),
+.c2[type='radio']:checked::after:active[aria-disabled=false] {
+  background-color: var(--charcoal-text5-press);
+}
+
+.c2[type='radio']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='radio'][aria-disabled=false]:focus,
+.c2[type='radio']:not(:disabled):not([aria-disabled]):active,
+.c2[type='radio'][aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='radio'][aria-disabled=false]:focus:not(:focus-visible),
+.c2[type='radio']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='radio'][aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c2[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='radio'][aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c0 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+      display: flex;
+      flex-direction: column;
+      gap: ",
+        [Function],
+        ";
+    ",
+      ]
+    }
+  >
+    <div
+      aria-invalid={false}
+      aria-label="選択肢-name1"
+      aria-orientation="vertical"
+      className="c0"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled={false}
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="name1"
+          onChange={[Function]}
+          type="radio"
+          value="value1"
+        />
+        <div
+          className="c3"
+        >
+          name1
+          (
+          value1
+          )を選ぶ
+        </div>
+      </label>
+      <label
+        aria-disabled={false}
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="name1"
+          onChange={[Function]}
+          type="radio"
+          value="value2"
+        />
+        <div
+          className="c3"
+        >
+          name1
+          (
+          value2
+          )を選ぶ
+        </div>
+      </label>
+    </div>
+    <div
+      aria-invalid={false}
+      aria-label="選択肢-name2"
+      aria-orientation="vertical"
+      className="c0"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled={false}
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="name2"
+          onChange={[Function]}
+          type="radio"
+          value="value1"
+        />
+        <div
+          className="c3"
+        >
+          name2
+          (
+          value1
+          )を選ぶ
+        </div>
+      </label>
+      <label
+        aria-disabled={false}
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="name2"
+          onChange={[Function]}
+          type="radio"
+          value="value2"
+        />
+        <div
+          className="c3"
+        >
+          name2
+          (
+          value2
+          )を選ぶ
+        </div>
+      </label>
+    </div>
+    <div
+      aria-invalid={false}
+      aria-label="選択肢-name3"
+      aria-orientation="vertical"
+      className="c0"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled={false}
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="name3"
+          onChange={[Function]}
+          type="radio"
+          value="value1"
+        />
+        <div
+          className="c3"
+        >
+          name3
+          (
+          value1
+          )を選ぶ
+        </div>
+      </label>
+      <label
+        aria-disabled={false}
+        className="c1"
+      >
+        <input
+          checked={false}
+          className="c2"
+          disabled={false}
+          name="name3"
+          onChange={[Function]}
+          type="radio"
+          value="value2"
+        />
+        <div
+          className="c3"
+        >
+          name3
+          (
+          value2
+          )を選ぶ
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;

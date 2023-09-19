@@ -1,0 +1,1271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots TextArea Auto Height 1`] = `
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5:hover:not(:disabled):not([aria-disabled]),
+.c5:hover[aria-disabled=false] {
+  color: var(--charcoal-text3-hover);
+}
+
+.c5:active:not(:disabled):not([aria-disabled]),
+.c5:active[aria-disabled=false] {
+  color: var(--charcoal-text3-press);
+}
+
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled=false]:focus,
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c5[aria-disabled=false]:focus:not(:focus-visible),
+.c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c5[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > .c4 {
+  margin-left: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-bottom: 8px;
+}
+
+.c7 {
+  position: relative;
+  overflow: hidden;
+  padding: 0 8px;
+  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text2);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c7:hover:not(:disabled):not([aria-disabled]),
+.c7:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c7:not(:disabled):not([aria-disabled]):focus,
+.c7[aria-disabled=false]:focus,
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c7:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c7[aria-disabled=false]:focus:not(:focus-visible),
+.c7:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c7[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c7:not(:disabled):not([aria-disabled]):focus-visible,
+.c7[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c7:focus-within {
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+}
+
+.c7:focus-within.c6:focus-within:not(:disabled):not([aria-disabled]),
+.c7:focus-within.c7:focus-within[aria-disabled=false] {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) 0;
+  height: calc(22px / 0.875 * 4);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  -ms-overflow-style: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c8::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8::-webkit-scrollbar {
+  display: none;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1 c2"
+      style={
+        Object {
+          "border": 0,
+          "clip": "rect(0 0 0 0)",
+          "clipPath": "inset(50%)",
+          "height": 1,
+          "margin": "0 -1px -1px 0",
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "whiteSpace": "nowrap",
+          "width": 1,
+        }
+      }
+    >
+      <label
+        className="c3"
+        htmlFor="test-id"
+        id="test-id"
+        onBlur={null}
+        onFocus={null}
+      >
+        Label
+      </label>
+      <div
+        className="c4 c5"
+      >
+        <span />
+      </div>
+    </div>
+    <div
+      className="c6 c7"
+      rows={4}
+    >
+      <textarea
+        aria-labelledby="test-id"
+        className="c8"
+        disabled={false}
+        id="test-id"
+        onChange={[Function]}
+        placeholder="TextArea"
+        readOnly={false}
+        rows={4}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Default 1`] = `
+.c7 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6:hover:not(:disabled):not([aria-disabled]),
+.c6:hover[aria-disabled=false] {
+  color: var(--charcoal-text3-hover);
+}
+
+.c6:active:not(:disabled):not([aria-disabled]),
+.c6:active[aria-disabled=false] {
+  color: var(--charcoal-text3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled=false]:focus,
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c6[aria-disabled=false]:focus:not(:focus-visible),
+.c6:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c6[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c9 {
+  position: relative;
+  overflow: hidden;
+  padding: 0 8px;
+  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text2);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c9:hover:not(:disabled):not([aria-disabled]),
+.c9:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus,
+.c9[aria-disabled=false]:focus,
+.c9:not(:disabled):not([aria-disabled]):active,
+.c9[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c9[aria-disabled=false]:focus:not(:focus-visible),
+.c9:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c9[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus-visible,
+.c9[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9:focus-within {
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+}
+
+.c9:focus-within.c8:focus-within:not(:disabled):not([aria-disabled]),
+.c9:focus-within.c9:focus-within[aria-disabled=false] {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c10 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) 0;
+  height: calc(22px / 0.875 * 4);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  -ms-overflow-style: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c10::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10::-webkit-scrollbar {
+  display: none;
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": 1,
+            "margin": "0 -1px -1px 0",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": 1,
+          }
+        }
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+          onBlur={null}
+          onFocus={null}
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="c7"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c8 c9"
+        rows={4}
+      >
+        <textarea
+          aria-labelledby="test-id"
+          className="c10"
+          disabled={false}
+          id="test-id"
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          rows={4}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Has Count 1`] = `
+.c7 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6:hover:not(:disabled):not([aria-disabled]),
+.c6:hover[aria-disabled=false] {
+  color: var(--charcoal-text3-hover);
+}
+
+.c6:active:not(:disabled):not([aria-disabled]),
+.c6:active[aria-disabled=false] {
+  color: var(--charcoal-text3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled=false]:focus,
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c6[aria-disabled=false]:focus:not(:focus-visible),
+.c6:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c6[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c9 {
+  position: relative;
+  overflow: hidden;
+  padding: 0 8px;
+  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text2);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 5 + 18px);
+}
+
+.c9:hover:not(:disabled):not([aria-disabled]),
+.c9:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus,
+.c9[aria-disabled=false]:focus,
+.c9:not(:disabled):not([aria-disabled]):active,
+.c9[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c9[aria-disabled=false]:focus:not(:focus-visible),
+.c9:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c9[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus-visible,
+.c9[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9:focus-within {
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+}
+
+.c9:focus-within.c8:focus-within:not(:disabled):not([aria-disabled]),
+.c9:focus-within.c9:focus-within[aria-disabled=false] {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c10 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) 0 0;
+  height: calc(22px / 0.875 * 4);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  -ms-overflow-style: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c10::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10::-webkit-scrollbar {
+  display: none;
+}
+
+.c11 {
+  position: absolute;
+  bottom: 9px;
+  right: 8px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": 1,
+            "margin": "0 -1px -1px 0",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": 1,
+          }
+        }
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+          onBlur={null}
+          onFocus={null}
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="c7"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c8 c9"
+        rows={5}
+      >
+        <textarea
+          aria-labelledby="test-id"
+          className="c10"
+          disabled={false}
+          id="test-id"
+          maxLength={100}
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          rows={4}
+        />
+        <span
+          className="c11"
+        >
+          0/100
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Has Label 1`] = `
+.c9 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c9:disabled,
+.c9[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c8 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c8::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c8::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c8:hover:not(:disabled):not([aria-disabled]),
+.c8:hover[aria-disabled=false] {
+  color: var(--charcoal-text3-hover);
+}
+
+.c8:active:not(:disabled):not([aria-disabled]),
+.c8:active[aria-disabled=false] {
+  color: var(--charcoal-text3-press);
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled=false]:focus,
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c8[aria-disabled=false]:focus:not(:focus-visible),
+.c8:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c8[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus-visible,
+.c8[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: 4px;
+}
+
+.c2 > .c7 {
+  margin-left: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c11 {
+  position: relative;
+  overflow: hidden;
+  padding: 0 8px;
+  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text2);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c11:hover:not(:disabled):not([aria-disabled]),
+.c11:hover[aria-disabled=false] {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus,
+.c11[aria-disabled=false]:focus,
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled=false]:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c11[aria-disabled=false]:focus:not(:focus-visible),
+.c11:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c11[aria-disabled=false]:active:not(:focus-visible) {
+  outline: none;
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus-visible,
+.c11[aria-disabled=false]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c11:focus-within {
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+}
+
+.c11:focus-within.c10:focus-within:not(:disabled):not([aria-disabled]),
+.c11:focus-within.c11:focus-within[aria-disabled=false] {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) 0;
+  height: calc(22px / 0.875 * 4);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  -ms-overflow-style: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c12::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c12::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c12:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c12::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c12::-webkit-scrollbar {
+  display: none;
+}
+
+.c13 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  color: var(--charcoal-text1);
+}
+
+.c13::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c13::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <span
+          className="c5 c6"
+        >
+          *必須
+        </span>
+        <div
+          className="c7 c8"
+        >
+          <span>
+            <button
+              className="c9"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c10 c11"
+        rows={4}
+      >
+        <textarea
+          aria-labelledby="test-id"
+          aria-required={true}
+          className="c12"
+          disabled={false}
+          id="test-id"
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          rows={4}
+        />
+      </div>
+      <p
+        className="c13"
+      >
+        Assistive text
+      </p>
+    </div>
+  </div>
+</div>
+`;
