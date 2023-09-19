@@ -6,7 +6,11 @@ import DotsIcon from '../icons/DotsIcon'
 import WedgeIcon, { WedgeDirection } from '../icons/WedgeIcon'
 import { useComponentAbstraction } from '@charcoal-ui/react'
 
-function usePagerWindow(page: number, pageCount: number, pageRangeDisplayed = 7) {
+function usePagerWindow(
+  page: number,
+  pageCount: number,
+  pageRangeDisplayed = 7
+) {
   // ページャーのリンク生成例:
   //
   //     < [ 1 ] [*2*] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] >
@@ -29,7 +33,10 @@ function usePagerWindow(page: number, pageCount: number, pageRangeDisplayed = 7)
       (pageCount | 0) === pageCount,
       `\`pageCount\` must be integer (${pageCount})`
     )
-    warning((pageRangeDisplayed | 0) === pageRangeDisplayed, `\`pageRangeDisplayed\` must be integer (${pageRangeDisplayed})`)
+    warning(
+      (pageRangeDisplayed | 0) === pageRangeDisplayed,
+      `\`pageRangeDisplayed\` must be integer (${pageRangeDisplayed})`
+    )
     warning(pageRangeDisplayed > 2, `\`windowSize\` must be greater than 2`)
   }
 
@@ -78,7 +85,12 @@ export interface PagerProps extends CommonProps {
 }
 
 // this pager is just regular buttons; for links use LinkPager
-export default memo(function Pager({ page, pageCount, pageRangeDisplayed, onChange }: PagerProps) {
+export default memo(function Pager({
+  page,
+  pageCount,
+  pageRangeDisplayed,
+  onChange,
+}: PagerProps) {
   // TODO: refactor Pager and LinkPager to use a common parent component
   const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
   const makeClickHandler = useCallback(
@@ -135,7 +147,12 @@ export interface LinkPagerProps extends CommonProps {
   makeUrl(page: number): string
 }
 
-export function LinkPager({ page, pageCount, pageRangeDisplayed, makeUrl }: LinkPagerProps) {
+export function LinkPager({
+  page,
+  pageCount,
+  pageRangeDisplayed,
+  makeUrl,
+}: LinkPagerProps) {
   const { Link } = useComponentAbstraction()
   const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
 

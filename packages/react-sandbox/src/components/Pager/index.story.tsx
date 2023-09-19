@@ -41,16 +41,27 @@ interface Props {
   pageRangeDisplayed?: number
 }
 
-const DefaultStory: Story<Props> = ({ page: defaultPage, pageCount, pageRangeDisplayed }) => {
+const DefaultStory: Story<Props> = ({
+  page: defaultPage,
+  pageCount,
+  pageRangeDisplayed,
+}) => {
   const [page, setPage] = useState(defaultPage)
-  return <Pager page={page} onChange={setPage} pageCount={pageCount} pageRangeDisplayed={pageRangeDisplayed} />
+  return (
+    <Pager
+      page={page}
+      onChange={setPage}
+      pageCount={pageCount}
+      pageRangeDisplayed={pageRangeDisplayed}
+    />
+  )
 }
 
 export const Default = DefaultStory.bind({})
 Default.args = {
   page: 1,
   pageCount: 10,
-  pageRangeDisplayed: undefined
+  pageRangeDisplayed: undefined,
 }
 
 const makeUrl = (page: number) => `/${page}`
