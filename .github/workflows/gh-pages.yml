@@ -25,7 +25,7 @@ jobs:
 
       - name: Output files
         run: |
-          yarn build-storybook -o public-pages --quiet
+          yarn storybook:build -o public-pages --quiet
           cp .storybook/badge.svg public-pages/storybook-badge.svg
           mv pages public-pages/docs
 
