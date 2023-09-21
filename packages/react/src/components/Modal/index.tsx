@@ -20,7 +20,7 @@ import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
 
-type BottomSheet = boolean | 'full'
+export type BottomSheet = boolean | 'full'
 type Size = 'S' | 'M' | 'L'
 
 export type ModalProps = AriaModalOverlayProps &
@@ -138,6 +138,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             zIndex={zIndex}
             {...underlayProps}
             style={transitionEnabled ? { backgroundColor } : {}}
+            $bottomSheet={bottomSheet}
           >
             <FocusScope contain restoreFocus autoFocus>
               <DialogContainer bottomSheet={bottomSheet} size={size}>
@@ -186,7 +187,10 @@ const ModalContext = React.createContext<{
   showDismiss: true,
 })
 
-const ModalBackground = animated(styled.div<{ zIndex: number }>`
+const ModalBackground = animated(styled.div<{
+  zIndex: number
+  $bottomSheet: BottomSheet
+}>`
   z-index: ${({ zIndex }) => zIndex};
   overflow: auto;
   display: flex;
@@ -197,6 +201,14 @@ const ModalBackground = animated(styled.div<{ zIndex: number }>`
   height: 100%;
 
   ${theme((o) => [o.bg.surface4])}
+
+  ${({ $bottomSheet }) =>
+    ($bottomSheet === true || $bottomSheet === 'full') &&
+    css`
+      @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+        overflow: hidden;
+      }
+    `}
 `)
 
 const DialogContainer = styled.div<{ bottomSheet: BottomSheet; size: Size }>`
@@ -248,6 +260,7 @@ const ModalDialog = animated(styled.div<{
       p.bottomSheet !== false &&
       css`
         border-radius: 0;
+        overflow: hidden;
         ${p.bottomSheet === 'full' &&
         css`
           height: 100%;
