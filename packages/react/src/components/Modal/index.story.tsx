@@ -192,3 +192,31 @@ const BottomSheetStory = (args: ModalProps) => {
 }
 
 export const BottomSheet: Story<ModalProps> = BottomSheetStory.bind({})
+
+export const NotDismmissableStory: Story<ModalProps> = (args: ModalProps) => {
+  const state = useOverlayTriggerState({})
+  return (
+    <OverlayProvider>
+      <Button onClick={() => state.open()}>Open Modal</Button>
+
+      <Modal {...args} isOpen={state.isOpen} onClose={() => state.close()}>
+        <ModalHeader />
+        <ModalBody>
+          <ModalVStack>
+            <StyledModalText>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+              placeat tenetur, necessitatibus laudantium cumque exercitationem
+              provident. Quaerat iure enim, eveniet dolores earum odio quo
+              possimus fugiat aspernatur, numquam, commodi repellat.
+            </StyledModalText>
+          </ModalVStack>
+          <ModalButtons>
+            <Button variant="Primary" onClick={() => state.close()} fullWidth>
+              OK
+            </Button>
+          </ModalButtons>
+        </ModalBody>
+      </Modal>
+    </OverlayProvider>
+  )
+}
