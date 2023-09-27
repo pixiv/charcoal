@@ -99,11 +99,11 @@ export function getUtilities(
 
       return [
         // こういう感じのやつ
-        // { 'hoge1': 'linear-gradienr(to top, ...)' }
+        // { 'hoge1': 'linear-gradient(to top, ...)' }
         [createUtilityName(name, className), toLinearGradient(colors)],
 
         // こういう感じのやつ
-        // { 'hoge1--hover': 'linear-gradienr(to top, ...)' }
+        // { 'hoge1--hover': 'linear-gradient(to top, ...)' }
         ...effects.map<[string, LinearGradient]>(([effectName, effect]) => [
           createUtilityName(name, className, effectName),
           toLinearGradient(applyEffectToGradient(effect)(colors)),

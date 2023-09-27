@@ -8,6 +8,7 @@ import { disabledSelector } from '@charcoal-ui/utils'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
+import { theme } from '../../styled'
 
 type CheckboxLabelProps =
   | {
@@ -26,6 +27,7 @@ export type CheckboxProps = CheckboxLabelProps & {
   readonly defaultChecked?: boolean
   readonly disabled?: boolean
   readonly readonly?: boolean
+  readonly invalid?: boolean
 
   readonly onClick?: () => void
   readonly onChange?: (isSelected: boolean) => void
@@ -34,17 +36,18 @@ export type CheckboxProps = CheckboxLabelProps & {
 }
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  function CheckboxInner(props, ref) {
+  function CheckboxInner({ invalid = false, ...props }, ref) {
     const ariaCheckboxProps = useMemo<AriaCheckboxProps>(
       () => ({
         ...props,
         isSelected: props.checked,
         defaultSelected: props.defaultChecked,
+        validationState: invalid ? 'invalid' : 'valid',
         // children がいない場合は aria-label をつけないといけない
         'aria-label': 'children' in props ? undefined : props.label,
         isDisabled: props.disabled,
       }),
-      [props]
+      [invalid, props]
     )
     const state = useToggleState(ariaCheckboxProps)
     const objectRef = useObjectRef(ref)
@@ -55,7 +58,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <InputRoot aria-disabled={isDisabled} className={props.className}>
         <CheckboxRoot>
-          <CheckboxInput type="checkbox" {...inputProps} />
+          <CheckboxInput type="checkbox" {...inputProps} invalid={invalid} />
           <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
             <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
           </CheckboxInputOverlay>
@@ -93,7 +96,7 @@ const CheckboxRoot = styled.div`
   position: relative;
 `
 
-const CheckboxInput = styled.input`
+const CheckboxInput = styled.input<{ invalid: boolean }>`
   &[type='checkbox'] {
     appearance: none;
     display: block;
@@ -139,6 +142,7 @@ const CheckboxInput = styled.input`
       border-style: solid;
       border-color: var(--charcoal-text4);
     }
+    ${(p) => p.invalid && theme((o) => [o.outline.assertive])}
   }
 `
 

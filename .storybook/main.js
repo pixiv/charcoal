@@ -13,7 +13,7 @@ module.exports = {
     // '@storybook/addon-knobs',
     'storybook-dark-mode',
     {
-      name: '@storybook/addon-postcss',
+      name: '@storybook/addon-styling',
       options: {
         postcssLoaderOptions: {
           postcssOptions: {
@@ -24,7 +24,6 @@ module.exports = {
       },
     },
   ],
-  framework: '@storybook/react',
   async webpackFinal(config, { configType }) {
     if (configType === 'PRODUCTION') {
       return config
@@ -50,11 +49,17 @@ module.exports = {
   // CLIENT_PORT=443 yarn storybook:experimental-vite -p 6007 --no-manager-cache
   ...(process.env.USE_VITE === '1'
     ? {
-        core: {
-          builder: '@storybook/builder-vite',
+        framework: {
+          name: '@storybook/react-vite',
+          options: {},
         },
       }
-    : {}),
+    : {
+        framework: {
+          name: '@storybook/react-webpack5',
+          options: {},
+        },
+      }),
 }
 
 const packagesDir = path.resolve(__dirname, '../packages')

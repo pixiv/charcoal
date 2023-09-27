@@ -21,7 +21,7 @@ const makeUrl = (page: number) => `/${page}`
 export function Default() {
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error TOOD: adapt to react-router@6  (props should be covariant not bivariant)
+    // @ts-expect-error TODO: adapt to react-router@6  (props should be covariant not bivariant)
     <ComponentAbstraction components={{ Link: RouterLink }}>
       <Router
         initialEntries={Array.from({ length: 5 }).map((_, i) => makeUrl(i + 1))}

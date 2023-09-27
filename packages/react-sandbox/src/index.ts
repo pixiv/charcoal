@@ -38,7 +38,7 @@ export {
   MAIN_COLUMN_HORIZONTAL_MIN_MARGIN,
   RESPONSIVE_LEFT_WIDTH,
   RESPONSIVE_MAIN_MAX_WIDTH,
-} from './foundation/contants'
+} from './foundation/constants'
 export { default as Carousel } from './components/Carousel'
 export { useElementSize, useMedia, useMediaScreen1 } from './foundation/hooks'
 export { default as Pager, LinkPager } from './components/Pager'

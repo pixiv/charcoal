@@ -11,12 +11,12 @@ export interface PackageManagerInfo {
 }
 
 export function detectPackageManager(base: string): PackageManagerInfo {
-  const upperbounds = [os.homedir(), path.resolve('/')]
+  const upperBounds = [os.homedir(), path.resolve('/')]
   let dir = fs.statSync(base).isDirectory() ? base : path.dirname(base)
 
   while (!fs.existsSync(path.join(dir, 'package.json'))) {
     const parent = path.dirname(dir)
-    if (upperbounds.includes(parent)) {
+    if (upperBounds.includes(parent)) {
       throw new Error('No node project found.')
     }
     dir = parent
@@ -50,7 +50,7 @@ export function detectPackageManager(base: string): PackageManagerInfo {
     }
 
     dir = path.dirname(dir)
-  } while (!upperbounds.includes(dir))
+  } while (!upperBounds.includes(dir))
 
   return {
     type,

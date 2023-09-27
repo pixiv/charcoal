@@ -50,7 +50,7 @@ const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
     ])}
 `
 
-const scaleout = keyframes`
+const scaleOut = keyframes`
   from {
     transform: scale(0);
     opacity: 1;
@@ -67,7 +67,7 @@ const Icon = styled.div.attrs({ role: 'presentation' })<{ once: boolean }>`
   height: 1em;
   border-radius: 1em;
   background-color: currentColor;
-  animation: ${scaleout} 1s both ease-out;
+  animation: ${scaleOut} 1s both ease-out;
   animation-iteration-count: ${(p) => (p.once ? 1 : 'infinite')};
 
   &[data-reset-animation] {
