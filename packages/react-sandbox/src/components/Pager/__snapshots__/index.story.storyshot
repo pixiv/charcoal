@@ -1152,6 +1152,253 @@ exports[`Storyshots Sandbox/Pager Link 1`] = `
 </div>
 `;
 
+exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
+.c2 {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke: currentColor;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  font-size: 1rem;
+  line-height: calc(1em + 8px);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: box-shadow 0.2s ease 0s,color 0.2s ease 0s, background 0.2s ease 0s,opacity 0.2s ease 0s;
+  transition: box-shadow 0.2s ease 0s,color 0.2s ease 0s, background 0.2s ease 0s,opacity 0.2s ease 0s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: content-box;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transform: translateZ(0);
+  border-radius: 48px;
+  background: transparent;
+  color: #858585;
+}
+
+.c1[hidden] {
+  visibility: hidden;
+  display: block;
+}
+
+.c1:hover {
+  background: rgba(0,0,0,0.04);
+  color: #474747;
+}
+
+.c1[aria-current] {
+  background-color: rgba(0,0,0,0.88);
+  color: #ffffff;
+}
+
+.c1[aria-current]:hover {
+  background-color: rgba(0,0,0,0.88);
+  color: #ffffff;
+}
+
+.c1:hover {
+  background: transparent;
+}
+
+.c3 {
+  font-size: 1rem;
+  line-height: calc(1em + 8px);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: box-shadow 0.2s ease 0s,color 0.2s ease 0s, background 0.2s ease 0s,opacity 0.2s ease 0s;
+  transition: box-shadow 0.2s ease 0s,color 0.2s ease 0s, background 0.2s ease 0s,opacity 0.2s ease 0s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: content-box;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transform: translateZ(0);
+  border-radius: 48px;
+  background: transparent;
+  color: #858585;
+}
+
+.c3[hidden] {
+  visibility: hidden;
+  display: block;
+}
+
+.c3:hover {
+  background: rgba(0,0,0,0.04);
+  color: #474747;
+}
+
+.c3[aria-current] {
+  background-color: rgba(0,0,0,0.88);
+  color: #ffffff;
+}
+
+.c3[aria-current]:hover {
+  background-color: rgba(0,0,0,0.88);
+  color: #ffffff;
+}
+
+<div
+  data-dark={false}
+>
+  <nav
+    className="c0"
+  >
+    <a
+      href="/1"
+      onClick={[Function]}
+    >
+      <button
+        aria-disabled={true}
+        className="c1"
+        hidden={true}
+      >
+        <svg
+          height={16}
+          viewBox="0 0 10 8"
+          width={16}
+        >
+          <polyline
+            className="c2"
+            points="1,2 5,6 9,2"
+            strokeWidth="2"
+            transform="rotate(90 5 4)"
+          />
+        </svg>
+      </button>
+    </a>
+    <button
+      aria-current={true}
+      className="c3"
+      type="button"
+    >
+      <span>
+        1
+      </span>
+    </button>
+    <a
+      href="/2"
+      onClick={[Function]}
+    >
+      <button
+        className="c3"
+        type="button"
+      >
+        <span>
+          2
+        </span>
+      </button>
+    </a>
+    <a
+      href="/3"
+      onClick={[Function]}
+    >
+      <button
+        className="c3"
+        type="button"
+      >
+        <span>
+          3
+        </span>
+      </button>
+    </a>
+    <a
+      href="/4"
+      onClick={[Function]}
+    >
+      <button
+        className="c3"
+        type="button"
+      >
+        <span>
+          4
+        </span>
+      </button>
+    </a>
+    <a
+      href="/2"
+      onClick={[Function]}
+    >
+      <button
+        aria-disabled={false}
+        className="c1"
+        hidden={false}
+      >
+        <svg
+          height={16}
+          viewBox="0 0 10 8"
+          width={16}
+        >
+          <polyline
+            className="c2"
+            points="1,2 5,6 9,2"
+            strokeWidth="2"
+            transform="rotate(-90 5 4)"
+          />
+        </svg>
+      </button>
+    </a>
+  </nav>
+</div>
+`;
+
 exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
 .c2 {
   fill: none;
