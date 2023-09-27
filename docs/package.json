@@ -41,6 +41,7 @@
     "@charcoal-ui/tailwind-config": "../packages/tailwind-config",
     "@charcoal-ui/tailwind-diff": "../packages/tailwind-diff",
     "@charcoal-ui/theme": "../packages/theme",
-    "@charcoal-ui/utils": "../packages/utils"
+    "@charcoal-ui/utils": "../packages/utils",
+    "next/@swc/helpers": "0.4.36"
   }
 }
