@@ -25,7 +25,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
   position: relative;
 }
 
-.c3[type='checkbox'] {
+.c2[type='checkbox'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -37,57 +37,55 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
   border-radius: 4px;
   -webkit-transition: 0.2s box-shadow,0.2s background-color;
   transition: 0.2s box-shadow,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
 }
 
-.c3[type='checkbox']:checked {
+.c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
 }
 
-.c3[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='checkbox']:checked[aria-disabled='false']:hover {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='checkbox']:checked[aria-disabled='false']:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.c3[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='checkbox']:checked[aria-disabled='false']:active {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox']:checked[aria-disabled='false']:active {
   background-color: var(--charcoal-brand-press);
 }
 
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='checkbox'][aria-disabled='false']:focus,
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c3[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='checkbox'][aria-disabled='false']:focus,
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox'][aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c3[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='checkbox'][aria-disabled='false']:focus-visible {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3[type='checkbox']:not(:checked) {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
   border-color: var(--charcoal-text4);
 }
 
-.c3[type='checkbox'].c2[type='checkbox']:not(:disabled):not([aria-disabled]),
-.c3[type='checkbox'].c3[type='checkbox'][aria-disabled=false] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c4 {
+.c3 {
   position: absolute;
   top: -2px;
   left: -2px;
@@ -110,7 +108,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
   visibility: hidden;
 }
 
-.c5 {
+.c4 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 20px;
@@ -126,7 +124,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
     <input
       aria-invalid={true}
       checked={false}
-      className="c2 c3"
+      className="c2"
       disabled={false}
       name="labelled"
       onBlur={[Function]}
@@ -149,7 +147,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
     <div
       aria-hidden={true}
       checked={false}
-      className="c4"
+      className="c3"
     >
       <pixiv-icon
         name="24/Check"
@@ -158,7 +156,7 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
     </div>
   </div>
   <div
-    className="c5"
+    className="c4"
   >
     同意する
   </div>
@@ -237,6 +235,11 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c2[type='checkbox']:not(:checked) {
@@ -463,6 +466,11 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
 .c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
@@ -563,7 +571,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
   position: relative;
 }
 
-.c3[type='checkbox'] {
+.c2[type='checkbox'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -575,57 +583,55 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
   border-radius: 4px;
   -webkit-transition: 0.2s box-shadow,0.2s background-color;
   transition: 0.2s box-shadow,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
 }
 
-.c3[type='checkbox']:checked {
+.c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
 }
 
-.c3[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='checkbox']:checked[aria-disabled='false']:hover {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='checkbox']:checked[aria-disabled='false']:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.c3[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='checkbox']:checked[aria-disabled='false']:active {
+.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox']:checked[aria-disabled='false']:active {
   background-color: var(--charcoal-brand-press);
 }
 
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='checkbox'][aria-disabled='false']:focus,
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c3[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='checkbox'][aria-disabled='false']:focus,
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
+.c2[type='checkbox'][aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c3[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
-.c3[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='checkbox'][aria-disabled='false']:focus-visible {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3[type='checkbox']:not(:checked) {
+.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
   border-color: var(--charcoal-text4);
 }
 
-.c3[type='checkbox'].c2[type='checkbox']:not(:disabled):not([aria-disabled]),
-.c3[type='checkbox'].c3[type='checkbox'][aria-disabled=false] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c4 {
+.c3 {
   position: absolute;
   top: -2px;
   left: -2px;
@@ -648,7 +654,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
   visibility: hidden;
 }
 
-.c5 {
+.c4 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 20px;
@@ -664,7 +670,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
     <input
       aria-invalid={true}
       checked={false}
-      className="c2 c3"
+      className="c2"
       disabled={false}
       name="labelled"
       onBlur={[Function]}
@@ -687,7 +693,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
     <div
       aria-hidden={true}
       checked={false}
-      className="c4"
+      className="c3"
     >
       <pixiv-icon
         name="24/Check"
@@ -696,7 +702,7 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
     </div>
   </div>
   <div
-    className="c5"
+    className="c4"
   >
     同意する
   </div>
@@ -775,6 +781,11 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c2[type='checkbox']:not(:checked) {
@@ -999,6 +1010,11 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c2[type='checkbox']:not(:checked) {

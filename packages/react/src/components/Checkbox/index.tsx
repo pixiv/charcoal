@@ -8,7 +8,6 @@ import { disabledSelector } from '@charcoal-ui/utils'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
-import { theme } from '../../styled'
 
 type CheckboxLabelProps =
   | {
@@ -40,6 +39,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const ariaCheckboxProps = useMemo<AriaCheckboxProps>(
       () => ({
         ...props,
+        isInValid: invalid,
         isSelected: props.checked,
         defaultSelected: props.defaultChecked,
         validationState: invalid ? 'invalid' : 'valid',
@@ -58,7 +58,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <InputRoot aria-disabled={isDisabled} className={props.className}>
         <CheckboxRoot>
-          <CheckboxInput type="checkbox" {...inputProps} invalid={invalid} />
+          <CheckboxInput type="checkbox" {...inputProps} />
           <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
             <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
           </CheckboxInputOverlay>
@@ -96,7 +96,7 @@ const CheckboxRoot = styled.div`
   position: relative;
 `
 
-const CheckboxInput = styled.input<{ invalid: boolean }>`
+const CheckboxInput = styled.input`
   &[type='checkbox'] {
     appearance: none;
     display: block;
@@ -135,6 +135,9 @@ const CheckboxInput = styled.input<{ invalid: boolean }>`
         outline: none;
         box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
       }
+      &[aria-invalid='true'] {
+        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+      }
     }
 
     &:not(:checked) {
@@ -142,7 +145,6 @@ const CheckboxInput = styled.input<{ invalid: boolean }>`
       border-style: solid;
       border-color: var(--charcoal-text4);
     }
-    ${(p) => p.invalid && theme((o) => [o.outline.assertive])}
   }
 `
 
