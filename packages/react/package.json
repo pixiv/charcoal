@@ -61,7 +61,7 @@
     "@react-aria/focus": "^3.11.0",
     "@react-aria/listbox": "^3.8.0",
     "@react-aria/overlays": "^3.13.0",
-    "@react-aria/radio": "^3.5.0",
+    "@react-aria/radio": "^3.8.0",
     "@react-aria/select": "^3.9.0",
     "@react-aria/separator": "^3.3.0",
     "@react-aria/ssr": "^3.5.0",

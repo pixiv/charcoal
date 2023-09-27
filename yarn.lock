@@ -2037,7 +2037,7 @@ __metadata:
     "@react-aria/focus": ^3.11.0
     "@react-aria/listbox": ^3.8.0
     "@react-aria/overlays": ^3.13.0
-    "@react-aria/radio": ^3.5.0
+    "@react-aria/radio": ^3.8.0
     "@react-aria/select": ^3.9.0
     "@react-aria/separator": ^3.3.0
     "@react-aria/ssr": ^3.5.0
@@ -5163,22 +5163,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/radio@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "@react-aria/radio@npm:3.5.0"
+"@react-aria/radio@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "@react-aria/radio@npm:3.8.0"
   dependencies:
-    "@react-aria/focus": ^3.11.0
-    "@react-aria/i18n": ^3.7.0
-    "@react-aria/interactions": ^3.14.0
-    "@react-aria/label": ^3.5.0
-    "@react-aria/utils": ^3.15.0
-    "@react-stately/radio": ^3.7.0
-    "@react-types/radio": ^3.4.0
-    "@react-types/shared": ^3.17.0
-    "@swc/helpers": ^0.4.14
+    "@react-aria/focus": ^3.14.1
+    "@react-aria/i18n": ^3.8.2
+    "@react-aria/interactions": ^3.18.0
+    "@react-aria/label": ^3.7.0
+    "@react-aria/utils": ^3.20.0
+    "@react-stately/radio": ^3.9.0
+    "@react-types/radio": ^3.5.1
+    "@react-types/shared": ^3.20.0
+    "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 165d185e078ddf6a3c2d74a8725bea69130bb31b48507df669019a13250e6881650374fdf7d7f9912f100c5e86fe288005d0557f4c93a7135b40d5d89ec246f6
+  checksum: e6c559e1e372b845fd0f2a5db1f3bdc732e226d07ec3595ddda1495e9dbca87867542bb77e9504ca59e7ad979d045e8efde98439501516cb210f7f72697bab63
   languageName: node
   linkType: hard
 
@@ -5741,20 +5741,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-stately/radio@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@react-stately/radio@npm:3.7.0"
-  dependencies:
-    "@react-stately/utils": ^3.6.0
-    "@react-types/radio": ^3.4.0
-    "@react-types/shared": ^3.17.0
-    "@swc/helpers": ^0.4.14
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 91eea7a9ee6f2660ffcae161c6d1397442702afd7048a54444c8c7b2fbd2f89898af6ba4ee94c9313aca72d87ecf2eec666e086e7c9be317fbcffe3110890b81
-  languageName: node
-  linkType: hard
-
 "@react-stately/radio@npm:^3.9.0":
   version: 3.9.0
   resolution: "@react-stately/radio@npm:3.9.0"
@@ -6171,17 +6157,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 8d944f4e24c83764abb66cd7b36b9bb75a4ae86fb06afe7a2111c6c23a633e6d9e74b74d1f1014509cbb64cf1e216a2a57cdd4f6c452d162447aa0ad4469c87b
-  languageName: node
-  linkType: hard
-
-"@react-types/radio@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "@react-types/radio@npm:3.4.0"
-  dependencies:
-    "@react-types/shared": ^3.17.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: efec133f004b3fbf0d551f9a842e2279d71c3bc3faacddbf997188c7bc88bf980efbcdb0ca883bc145f85024b0e64a5f3997cbcf4f88c6efd29b36bc49efa4f4
   languageName: node
   linkType: hard
 
