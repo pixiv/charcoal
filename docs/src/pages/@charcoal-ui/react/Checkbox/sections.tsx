@@ -43,4 +43,25 @@ export const sections: PreviewSection<CheckboxProps>[] = [
       },
     ],
   },
+  {
+    title: 'invalid',
+    previewMetas: [
+      {
+        children: 'invalid',
+        props: {
+          children: undefined,
+          invalid: true,
+          checked: false,
+        },
+      },
+      {
+        children: 'invalid',
+        props: {
+          children: undefined,
+          invalid: true,
+          checked: true,
+        },
+      },
+    ],
+  },
 ]
