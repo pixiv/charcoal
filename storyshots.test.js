@@ -4,6 +4,6 @@ import initStoryshots, {
 import { styleSheetSerializer } from 'jest-styled-components'
 
 initStoryshots({
-  snapshotSerializers: [styleSheetSerializer],
   test: multiSnapshotWithOptions(),
+  snapshotSerializers: [styleSheetSerializer],
 })
