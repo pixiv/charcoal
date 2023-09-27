@@ -651,6 +651,7 @@
       border-color: ${({theme:theme3})=>theme3.color.text4};
     }
     ${theme((o=>[o.outline.default.focus,o.borderRadius(4)]))}
+    ${p=>p.invalid&&theme((o=>[o.outline.assertive]))}
 
     /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
     transition: all 0.2s !important;
@@ -741,4 +742,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.d9be21e0.iframe.bundle.js.map
+//# sourceMappingURL=6983.596eba25.iframe.bundle.js.map
