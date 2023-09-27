@@ -60,6 +60,30 @@ Labelled.args = {
   invalid: false,
 }
 
+export const Invalid: Story<Omit<Props, 'invalid'>> = (props) => {
+  return (
+    <Checkbox
+      {...props}
+      name="labelled"
+      label="label"
+      invalid
+      onBlur={action('blur')}
+      onClick={action('click')}
+      onChange={action('change')}
+      onFocus={action('focus')}
+    >
+      同意する
+    </Checkbox>
+  )
+}
+
+Invalid.args = {
+  checked: false,
+  defaultChecked: false,
+  disabled: false,
+  readonly: false,
+}
+
 export const Unlabelled: Story<Props> = (props) => {
   return (
     <div>
