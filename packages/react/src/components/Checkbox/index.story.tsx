@@ -13,6 +13,7 @@ type Props = {
   disabled: boolean
   readonly: boolean
   className?: string
+  invalid: boolean
 }
 
 export const Labelled: Story<Props> = (props) => {
@@ -56,6 +57,7 @@ Labelled.args = {
   defaultChecked: false,
   disabled: false,
   readonly: false,
+  invalid: false,
 }
 
 export const Unlabelled: Story<Props> = (props) => {
@@ -79,4 +81,5 @@ Unlabelled.args = {
   defaultChecked: false,
   disabled: false,
   readonly: false,
+  invalid: false,
 }
