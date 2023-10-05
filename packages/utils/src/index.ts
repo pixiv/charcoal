@@ -1,5 +1,8 @@
-import { linearGradient, parseToRgb, rgba, rgbToColorString } from 'polished'
-import { RgbColor } from 'polished/lib/types/color'
+import rgba from 'polished/lib/color/rgba'
+import rgbToColorString from 'polished/lib/color/rgbToColorString'
+import parseToRgb from 'polished/lib/color/parseToRgb'
+import linearGradient from 'polished/lib/mixins/linearGradient'
+import { type RgbColor } from 'polished/lib/types/color'
 
 import {
   type AlphaEffect,
