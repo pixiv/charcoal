@@ -181,7 +181,7 @@ export class PixivIcon extends HTMLElement {
     if (typeof size !== 'number') {
       throw new TypeError(`icon size must be number but found ${typeof size}`)
     }
-    if (Number.isNaN(size)) {
+    if (!Number.isFinite(size)) {
       throw new TypeError(`icon size must not be NaN`)
     }
 
