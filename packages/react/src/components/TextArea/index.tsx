@@ -132,7 +132,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           <StyledTextarea
             ref={mergeRefs(textareaRef, forwardRef, ariaRef)}
             rows={rows}
-            noBottomPadding={showCount}
+            withCountPadding={showCount}
             {...inputProps}
           />
           {showCount && (
@@ -170,7 +170,6 @@ const TextFieldLabel = styled(FieldLabel)`
 const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
 
   ${(p) =>
     theme((o) => [
@@ -191,7 +190,7 @@ const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   `};
 `
 
-const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
+const StyledTextarea = styled.textarea<{ withCountPadding: boolean }>`
   border: none;
   outline: none;
   resize: none;
@@ -201,10 +200,15 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
   transform: scale(0.875);
-  width: calc(100% / 0.875);
+  width: calc((100% - 16px) / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0 ${(p) => (p.noBottomPadding ? 0 : '')};
+  padding: calc(9px / 0.875) calc(8px / 0.875)
+    ${(p) => (p.withCountPadding ? 0 : '')};
+  /* Using padding on textarea will cause text overflow */
+  /*                                             v_________________ (one row (22px) + padding (9px)) / scale (0.875) */
+  border-bottom: ${(p) => (p.withCountPadding ? 'calc(31px / 0.875)' : '0')}
+    transparent solid;
 
   ${({ rows = 1 }) => css`
     height: calc(22px / 0.875 * ${rows});
