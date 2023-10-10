@@ -178,9 +178,6 @@ export class PixivIcon extends HTMLElement {
   render() {
     const size = this.forceResizedSize ?? this.scaledSize
 
-    if (typeof size !== 'number') {
-      throw new TypeError(`icon size must be number but found ${typeof size}`)
-    }
     if (!Number.isFinite(size)) {
       throw new TypeError(`icon size must not be NaN`)
     }
