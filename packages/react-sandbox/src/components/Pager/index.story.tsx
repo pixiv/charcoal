@@ -26,28 +26,51 @@ export default {
         min: 1,
       },
     },
+    pageRangeDisplayed: {
+      control: {
+        type: 'number',
+        min: 3,
+      },
+    },
   },
 }
 
 interface Props {
   page: number
   pageCount: number
+  pageRangeDisplayed?: number
 }
 
-const DefaultStory: Story<Props> = ({ page: defaultPage, pageCount }) => {
+const DefaultStory: Story<Props> = ({
+  page: defaultPage,
+  pageCount,
+  pageRangeDisplayed,
+}) => {
   const [page, setPage] = useState(defaultPage)
-  return <Pager page={page} onChange={setPage} pageCount={pageCount} />
+  return (
+    <Pager
+      page={page}
+      onChange={setPage}
+      pageCount={pageCount}
+      pageRangeDisplayed={pageRangeDisplayed}
+    />
+  )
 }
 
 export const Default = DefaultStory.bind({})
 Default.args = {
   page: 1,
   pageCount: 10,
+  pageRangeDisplayed: undefined,
 }
 
 const makeUrl = (page: number) => `/${page}`
 
-const LinkStory: Story<Props> = ({ page: defaultPage, pageCount }) => (
+const LinkStory: Story<Props> = ({
+  page: defaultPage,
+  pageCount,
+  pageRangeDisplayed,
+}) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   <ComponentAbstraction components={{ Link: RouterLink }}>
@@ -60,18 +83,36 @@ const LinkStory: Story<Props> = ({ page: defaultPage, pageCount }) => (
       <Routes>
         <Route
           path="/:page"
-          element={<CurrentPager pageCount={pageCount}></CurrentPager>}
+          element={
+            <CurrentPager
+              pageCount={pageCount}
+              pageRangeDisplayed={pageRangeDisplayed}
+            ></CurrentPager>
+          }
         />
       </Routes>
     </Router>
   </ComponentAbstraction>
 )
 
-function CurrentPager({ pageCount }: { pageCount: number }) {
+function CurrentPager({
+  pageCount,
+  pageRangeDisplayed,
+}: {
+  pageCount: number
+  pageRangeDisplayed?: number
+}) {
   const params = useParams()
   const page = params.page !== undefined ? parseInt(params.page, 10) : 1
 
-  return <LinkPager makeUrl={makeUrl} page={page} pageCount={pageCount} />
+  return (
+    <LinkPager
+      makeUrl={makeUrl}
+      page={page}
+      pageCount={pageCount}
+      pageRangeDisplayed={pageRangeDisplayed}
+    />
+  )
 }
 
 export const Link = LinkStory.bind({})
@@ -102,4 +143,11 @@ export const One = LinkStory.bind({})
 One.args = {
   page: 1,
   pageCount: 1,
+}
+
+export const LittlePageRangeDisplayed = LinkStory.bind({})
+LittlePageRangeDisplayed.args = {
+  page: 1,
+  pageCount: 10,
+  pageRangeDisplayed: 4,
 }
