@@ -262,6 +262,7 @@ const ModalDialog = animated(styled.div<{
   border-radius: 24px;
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    max-width: 440px;
     width: calc(100% - 48px);
     ${(p) =>
       p.bottomSheet !== false &&
