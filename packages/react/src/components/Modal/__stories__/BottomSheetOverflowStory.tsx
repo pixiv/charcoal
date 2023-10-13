@@ -39,11 +39,12 @@ export const BottomSheetOverflowStory: Story<ModalProps> = (
 
 // underlay padding-top: 40px (desktop)
 // underlay padding-bottom: 40px (desktop)
-// modal header: 64px
+// modal header: 64px (desktop)
+// modal header: 48px (mobile-bottom-sheet)
 // modal padding-bottom: 40px
 // button and space: 56px
 const MAX_HEIGHT_OFFSET = 64 + 40 + 40 + 40
-const MAX_HEIGHT_OFFSET_MOBILE = MAX_HEIGHT_OFFSET - 40 * 2
+const MAX_HEIGHT_OFFSET_MOBILE = MAX_HEIGHT_OFFSET - 40 * 2 - 16
 const ModalBodyOverflowDiv = styled.div<{
   $offset: number
   $bottomSheet?: BottomSheet
