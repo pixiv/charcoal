@@ -7,9 +7,7 @@ import { ModalBody, ModalButtons, ModalHeader } from '../ModalPlumbing'
 import styled, { css } from 'styled-components'
 import { maxWidth } from '@charcoal-ui/utils'
 
-export const InternalScrollStory: Story<ModalProps> = (
-  args: ModalProps
-) => {
+export const InternalScrollStory: Story<ModalProps> = (args: ModalProps) => {
   const state = useOverlayTriggerState({})
   return (
     <OverlayProvider>
