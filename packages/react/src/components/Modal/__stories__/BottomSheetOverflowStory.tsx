@@ -26,33 +26,51 @@ export const BottomSheetOverflowStory: Story<ModalProps> = (
               }}
             ></div>
           </ModalBodyOverflowDiv>
-          <ModalButtons>
+          <TopBorderButtons>
             <Button fullWidth onClick={() => state.close()}>
               Close
             </Button>
-          </ModalButtons>
+          </TopBorderButtons>
         </ModalBody>
       </Modal>
     </OverlayProvider>
   )
 }
 
-// underlay padding-top: 24px (desktop)
-// underlay padding-bottom: 24px (desktop)
+// underlay padding-top: 40px (desktop)
+// underlay padding-bottom: 40px (desktop)
 // modal header: 64px
 // modal padding-bottom: 40px
 // button and space: 56px
+const MAX_HEIGHT_OFFSET = 64 + 40 + 40 + 40
+const MAX_HEIGHT_OFFSET_MOBILE = MAX_HEIGHT_OFFSET - 40 * 2
 const ModalBodyOverflowDiv = styled.div<{
   $offset: number
   $bottomSheet?: BottomSheet
 }>`
   overflow: auto;
-  max-height: calc(100vh - 152px - ${({ $offset }) => $offset}px);
+  max-height: calc(
+    100vh - ${MAX_HEIGHT_OFFSET}px - ${({ $offset }) => $offset}px
+  );
   ${({ $bottomSheet, $offset }) =>
     ($bottomSheet === true || $bottomSheet === 'full') &&
     css`
       @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
-        max-height: calc(100vh - 104px - ${$offset}px);
+        max-height: calc(100vh - ${MAX_HEIGHT_OFFSET_MOBILE}px - ${$offset}px);
       }
     `}
+`
+
+const TopBorderButtons = styled(ModalButtons)`
+  position: relative;
+  &::before {
+    content: '';
+    pointer-events: none;
+    border-top: 1px solid ${({ theme }) => theme.border.default.color};
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 `

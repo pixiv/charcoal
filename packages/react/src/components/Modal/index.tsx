@@ -4,11 +4,9 @@ import {
   AriaModalOverlayProps,
   Overlay,
   useModalOverlay,
-  useOverlay,
 } from '@react-aria/overlays'
 import styled, { css, useTheme } from 'styled-components'
 import { theme } from '../../styled'
-import { FocusScope } from '@react-aria/focus'
 import { useDialog } from '@react-aria/dialog'
 import { AriaDialogProps } from '@react-types/dialog'
 import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
@@ -84,9 +82,8 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   } = props
 
   const ref = useObjectRef<HTMLDivElement>(external)
-  const { overlayProps, underlayProps } = useOverlay(props, ref)
 
-  const { modalProps } = useModalOverlay(
+  const { modalProps, underlayProps } = useModalOverlay(
     props,
     {
       close: onClose,
@@ -106,85 +103,108 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     ref
   )
 
-  const { dialogProps, titleProps } = useDialog(props, ref)
-
   const theme = useTheme()
   const isMobile = useMedia(maxWidth(theme.breakpoint.screen1)) ?? false
   const transitionEnabled = isMobile && bottomSheet !== false
+  const showDismiss = !isMobile || bottomSheet !== true
+
   const transition = useTransition(isOpen, {
     from: {
       transform: 'translateY(100%)',
       backgroundColor: 'rgba(0, 0, 0, 0)',
+      overflow: 'hidden',
     },
     enter: {
       transform: 'translateY(0%)',
       backgroundColor: 'rgba(0, 0, 0, 0.4)',
     },
+    update: {
+      overflow: 'auto',
+    },
     leave: {
       transform: 'translateY(100%)',
       backgroundColor: 'rgba(0, 0, 0, 0)',
+      overflow: 'hidden',
     },
     config: transitionEnabled
       ? { duration: 400, easing: easings.easeOutQuart }
       : { duration: 0 },
   })
-  const showDismiss = !isMobile || bottomSheet !== true
 
-  return transition(
-    ({ backgroundColor, transform }, item) =>
+  return transition(({ backgroundColor, transform, overflow }, item) => {
+    return (
       item && (
         <Overlay portalContainer={portalContainer}>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}
-            style={transitionEnabled ? { backgroundColor } : {}}
+            style={transitionEnabled ? { backgroundColor, overflow } : {}}
             $bottomSheet={bottomSheet}
           >
-            <FocusScope contain restoreFocus autoFocus>
-              <DialogContainer bottomSheet={bottomSheet} size={size}>
-                <ModalDialog
-                  ref={ref}
-                  {...overlayProps}
-                  {...modalProps}
-                  {...dialogProps}
-                  style={transitionEnabled ? { transform } : {}}
-                  size={size}
-                  bottomSheet={bottomSheet}
-                  className={className}
+            <ModalDialog
+              ref={ref}
+              {...modalProps}
+              style={transitionEnabled ? { transform } : {}}
+              size={size}
+              bottomSheet={bottomSheet}
+              className={className}
+            >
+              <Dialog>
+                <ModalContext.Provider
+                  value={{
+                    titleProps: {},
+                    title,
+                    close: onClose,
+                    showDismiss,
+                    bottomSheet,
+                  }}
                 >
-                  <ModalContext.Provider
-                    value={{ titleProps, title, close: onClose, showDismiss }}
-                  >
-                    {children}
-                    {isDismissable === true && (
-                      <ModalCrossButton
-                        size="S"
-                        icon="24/Close"
-                        onClick={onClose}
-                      />
-                    )}
-                  </ModalContext.Provider>
-                </ModalDialog>
-              </DialogContainer>
-            </FocusScope>
+                  {children}
+                  {isDismissable === true && (
+                    <ModalCrossButton
+                      size="S"
+                      icon="24/Close"
+                      onClick={onClose}
+                    />
+                  )}
+                </ModalContext.Provider>
+              </Dialog>
+            </ModalDialog>
           </ModalBackground>
         </Overlay>
       )
-  )
+    )
+  })
 })
 
 export default memo(Modal)
 
-const ModalContext = React.createContext<{
+function Dialog({ children }: { children: React.ReactNode }) {
+  const r = React.useRef(null)
+  const { dialogProps } = useDialog(
+    {
+      role: 'dialog',
+    },
+    r
+  )
+  return <div {...dialogProps}>{children}</div>
+}
+
+export const ModalContext = React.createContext<{
+  /**
+   * @deprecated
+   */
   titleProps: React.HTMLAttributes<HTMLElement>
   title: string
   close?: () => void
   showDismiss: boolean
+  bottomSheet: BottomSheet
 }>({
   titleProps: {},
   title: '',
   close: undefined,
   showDismiss: true,
+  bottomSheet: false,
 })
 
 const ModalBackground = animated(styled.div<{
@@ -199,22 +219,18 @@ const ModalBackground = animated(styled.div<{
   left: 0;
   width: 100%;
   height: 100%;
+  justify-content: center;
 
   ${theme((o) => [o.bg.surface4])}
-
-  ${({ $bottomSheet }) =>
-    ($bottomSheet === true || $bottomSheet === 'full') &&
-    css`
-      @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
-        overflow: hidden;
-      }
-    `}
 `)
 
-const DialogContainer = styled.div<{ bottomSheet: BottomSheet; size: Size }>`
+const ModalDialog = animated(styled.div<{
+  size: Size
+  bottomSheet: BottomSheet
+}>`
+  margin: 40px 0;
   position: relative;
-  margin: auto;
-  padding: 24px 0;
+  height: fit-content;
   width: ${(p) => {
     switch (p.size) {
       case 'S': {
@@ -232,38 +248,17 @@ const DialogContainer = styled.div<{ bottomSheet: BottomSheet; size: Size }>`
     }
   }}px;
 
-  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
-    width: calc(100% - 48px);
-    ${(p) =>
-      p.bottomSheet !== false &&
-      css`
-        margin: 0;
-        padding: 0;
-        bottom: 0;
-        position: absolute;
-        width: 100%;
-        ${p.bottomSheet === 'full' ? 'height: 100%' : ''};
-      `}
-  }
-`
-
-const ModalDialog = animated(styled.div<{
-  size: Size
-  bottomSheet: BottomSheet
-}>`
-  position: relative;
-  margin: auto;
-
   ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
     ${(p) =>
       p.bottomSheet !== false &&
       css`
+        width: 100%;
         border-radius: 0;
-        overflow: hidden;
+        margin: auto 0 0 0;
         ${p.bottomSheet === 'full' &&
         css`
-          height: 100%;
+          min-height: 100%;
         `}
       `}
   }
