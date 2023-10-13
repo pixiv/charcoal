@@ -223,7 +223,15 @@ const ModalBackground = animated(styled.div<{
   padding: 40px 0;
   box-sizing: border-box;
 
-  ${theme((o) => [o.bg.surface4])}
+  background-color: ${({ theme }) => theme.color.surface4};
+
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    ${(p) =>
+      p.$bottomSheet !== false &&
+      css`
+        padding: 0;
+      `}
+  }
 `)
 
 const ModalDialog = animated(styled.div<{
@@ -250,8 +258,11 @@ const ModalDialog = animated(styled.div<{
     }
   }}px;
 
-  ${theme((o) => [o.bg.background1, o.borderRadius(24)])}
+  background-color: ${({ theme }) => theme.color.background1};
+  border-radius: 24px;
+
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    width: calc(100% - 48px);
     ${(p) =>
       p.bottomSheet !== false &&
       css`
