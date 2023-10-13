@@ -194,4 +194,4 @@ const BottomSheetStory = (args: ModalProps) => {
 
 export const BottomSheet: Story<ModalProps> = BottomSheetStory.bind({})
 
-export { BottomSheetOverflowStory } from './__stories__/BottomSheetOverflowStory'
+export { InternalScrollStory as InternalScroll } from './__stories__/InternalScrollStory'
