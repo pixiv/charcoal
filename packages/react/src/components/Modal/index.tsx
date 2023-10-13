@@ -132,13 +132,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   const showDismiss = !isMobile || bottomSheet !== true
 
   const bgRef = React.useRef<HTMLElement>(null)
-  const bgCtx = useContext(ModalBackgroundContext)
-
-  React.useEffect(() => {
-    if (bgRef.current && isOpen) {
-      bgCtx.setElement(bgRef.current)
-    }
-  }, [bgCtx, isOpen])
 
   return transition(
     ({ backgroundColor, transform }, item) =>
@@ -150,33 +143,35 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             {...underlayProps}
             style={transitionEnabled ? { backgroundColor } : {}}
           >
-            <FocusScope contain restoreFocus autoFocus>
-              <DialogContainer bottomSheet={bottomSheet} size={size}>
-                <ModalDialog
-                  ref={ref}
-                  {...overlayProps}
-                  {...modalProps}
-                  {...dialogProps}
-                  style={transitionEnabled ? { transform } : {}}
-                  size={size}
-                  bottomSheet={bottomSheet}
-                  className={className}
-                >
-                  <ModalContext.Provider
-                    value={{ titleProps, title, close: onClose, showDismiss }}
+            <ModalBackgroundContext.Provider value={bgRef.current}>
+              <FocusScope contain restoreFocus autoFocus>
+                <DialogContainer bottomSheet={bottomSheet} size={size}>
+                  <ModalDialog
+                    ref={ref}
+                    {...overlayProps}
+                    {...modalProps}
+                    {...dialogProps}
+                    style={transitionEnabled ? { transform } : {}}
+                    size={size}
+                    bottomSheet={bottomSheet}
+                    className={className}
                   >
-                    {children}
-                    {isDismissable === true && (
-                      <ModalCrossButton
-                        size="S"
-                        icon="24/Close"
-                        onClick={onClose}
-                      />
-                    )}
-                  </ModalContext.Provider>
-                </ModalDialog>
-              </DialogContainer>
-            </FocusScope>
+                    <ModalContext.Provider
+                      value={{ titleProps, title, close: onClose, showDismiss }}
+                    >
+                      {children}
+                      {isDismissable === true && (
+                        <ModalCrossButton
+                          size="S"
+                          icon="24/Close"
+                          onClick={onClose}
+                        />
+                      )}
+                    </ModalContext.Provider>
+                  </ModalDialog>
+                </DialogContainer>
+              </FocusScope>
+            </ModalBackgroundContext.Provider>
           </ModalBackground>
         </Overlay>
       )

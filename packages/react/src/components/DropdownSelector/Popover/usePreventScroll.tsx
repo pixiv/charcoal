@@ -5,7 +5,9 @@ export function usePreventScroll(element: HTMLElement | null, isOpen: boolean) {
     if (isOpen && element) {
       const defaultPaddingRight = element.style.paddingRight
       const defaultOverflow = element.style.overflow
-      element.style.paddingRight = document.documentElement.style.paddingRight
+      element.style.paddingRight = `${
+        window.innerWidth - element.clientWidth
+      }px`
       element.style.overflow = 'hidden'
       return () => {
         element.style.paddingRight = defaultPaddingRight

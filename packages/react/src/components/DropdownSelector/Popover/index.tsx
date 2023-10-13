@@ -42,21 +42,27 @@ export default function Popover(props: PopoverProps) {
     }
   )
 
-  const bgCtx = useContext(ModalBackgroundContext)
-  usePreventScroll(bgCtx.element, props.isOpen)
+  const modalBackground = useContext(ModalBackgroundContext)
+  usePreventScroll(modalBackground, props.isOpen)
 
   if (!props.isOpen) return null
 
-  return (
-    <Overlay portalContainer={bgCtx.element ?? document.body}>
+  const children = (
+    <>
       <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
       <DropdownPopoverDiv {...popoverProps} ref={finalPopoverRef}>
         <DismissButton onDismiss={() => props.onClose()} />
         {props.children}
         <DismissButton onDismiss={() => props.onClose()} />
       </DropdownPopoverDiv>
-    </Overlay>
+    </>
   )
+
+  if (modalBackground) {
+    return children
+  }
+
+  return <Overlay portalContainer={document.body}>{children}</Overlay>
 }
 
 const DropdownPopoverDiv = styled.div`

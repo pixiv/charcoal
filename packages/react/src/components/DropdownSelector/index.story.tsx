@@ -5,8 +5,9 @@ import { Divider } from './Divider'
 import MenuItemGroup from './MenuItemGroup'
 import DropdownMenuItem from './DropdownMenuItem'
 import Modal from '../Modal'
-import { ModalBackgroundProvider } from '../Modal/ModalBackgroundProvider'
 import { ModalBody, ModalHeader } from '../Modal/ModalPlumbing'
+import styled from 'styled-components'
+import Button from '../Button'
 
 export default {
   title: 'DropdownSelector',
@@ -29,6 +30,7 @@ export const Playground: Story<DropdownSelectorProps> = (
   const [selected, setSelected] = useState('50')
   return (
     <div style={{ width: 288 }}>
+      <Button></Button>
       <DropdownSelector
         {...props}
         onChange={(value) => {
@@ -81,45 +83,47 @@ function PlaygroundDropdownSelector(props: Partial<DropdownSelectorProps>) {
   )
 }
 
+const DummyBox = styled.div`
+  border: solid 1px ${({ theme }) => theme.border.default.color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 256px;
+`
+
 export const InModal: Story<DropdownSelectorProps> = () => {
+  const [open, setOpen] = useState(true)
   return (
     <div
       style={{
-        height: '1000px',
+        height: '10px',
       }}
     >
-      <ModalBackgroundProvider>
-        <Modal
-          bottomSheet="full"
-          title="modal"
-          isOpen
-          onClose={() => {
-            //
-          }}
-        >
-          <ModalHeader />
-          <ModalBody>
-            <div
-              style={{
-                height: '1000px',
-                padding: '16px',
-              }}
-            >
-              <PlaygroundDropdownSelector />
-              <div
-                style={{
-                  height: '1000px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                1000px
-              </div>
-            </div>
-          </ModalBody>
-        </Modal>
-      </ModalBackgroundProvider>
+      <button onClick={() => setOpen(true)}>open</button>
+      <Modal
+        bottomSheet="full"
+        title="modal"
+        isOpen={open}
+        isDismissable
+        onClose={() => {
+          setOpen(false)
+        }}
+      >
+        <ModalHeader />
+        <ModalBody>
+          <div
+            style={{
+              padding: '16px',
+            }}
+          >
+            <DummyBox>256px</DummyBox>
+            <PlaygroundDropdownSelector />
+            <DummyBox>256px</DummyBox>
+            <PlaygroundDropdownSelector />
+            <DummyBox>256px</DummyBox>
+          </div>
+        </ModalBody>
+      </Modal>
     </div>
   )
 }
