@@ -220,6 +220,8 @@ const ModalBackground = animated(styled.div<{
   width: 100%;
   height: 100%;
   justify-content: center;
+  padding: 40px 0;
+  box-sizing: border-box;
 
   ${theme((o) => [o.bg.surface4])}
 `)
@@ -228,7 +230,7 @@ const ModalDialog = animated(styled.div<{
   size: Size
   bottomSheet: BottomSheet
 }>`
-  margin: 40px 0;
+  margin: auto;
   position: relative;
   height: fit-content;
   width: ${(p) => {
