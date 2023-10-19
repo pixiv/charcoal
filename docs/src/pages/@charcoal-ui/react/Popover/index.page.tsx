@@ -8,8 +8,31 @@ import { ApiTable } from '../_components/ApiTable'
 import { apiData } from './apiData'
 import { Button, Popover, PopoverProps, TextField } from '@charcoal-ui/react'
 import { useRef, useState } from 'react'
-import { Placement } from '@charcoal-ui/react/dist/components/Popover'
 import { PreviewsList } from '../_components/PreviewsList'
+
+function PreviewRenderer(props: PopoverProps) {
+  const [isOpen, setIsOpen] = useState(false)
+  const ref = useRef(null)
+  return (
+    <>
+      <Button ref={ref} onClick={() => setIsOpen(true)}>
+        {props.placement}
+      </Button>
+      {isOpen && (
+        <Popover
+          triggerRef={ref}
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          placement={props.placement}
+        >
+          <div style={{ padding: 8 }}>
+            <TextField label="text" showLabel assistiveText="assistiveText" />
+          </div>
+        </Popover>
+      )}
+    </>
+  )
+}
 
 const PopoverPage: NextPage<{ src: string }> = (props) => {
   return (
@@ -24,31 +47,7 @@ const PopoverPage: NextPage<{ src: string }> = (props) => {
 
       <PreviewsList
         renderer={(meta, _, __) => {
-          const [isOpen, setIsOpen] = useState(false)
-          const ref = useRef(null)
-          return (
-            <>
-              <Button ref={ref} onClick={() => setIsOpen(true)}>
-                {meta.props.placement}
-              </Button>
-              {isOpen && (
-                <Popover
-                  triggerRef={ref}
-                  isOpen={isOpen}
-                  onClose={() => setIsOpen(false)}
-                  placement={meta.props.placement as Placement}
-                >
-                  <div style={{ padding: 8 }}>
-                    <TextField
-                      label="text"
-                      showLabel
-                      assistiveText="assistiveText"
-                    />
-                  </div>
-                </Popover>
-              )}
-            </>
-          )
+          return <PreviewRenderer {...meta.props} />
         }}
         sections={[
           {
