@@ -53,6 +53,7 @@ const reactList: ListItem[] = [
     'LoadingSpinner',
     'Modal',
     'MultiSelect',
+    'Popover',
     'Radio',
     'SegmentedControl',
     'Switch',
