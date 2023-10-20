@@ -28,8 +28,17 @@ export type ClickableElement = HTMLButtonElement & HTMLAnchorElement
 const Clickable = React.forwardRef<ClickableElement, ClickableProps>(
   function Clickable(props, ref) {
     const { Link } = useComponentAbstraction()
-    const as = 'to' in props ? Link : 'button'
-    return <StyledClickableDiv {...props} ref={ref} as={as} aria-disabled={props.disabled} />
+    const isLink = 'to' in props
+    const as = isLink ? Link : 'button'
+    const ariaDisabled = isLink && props.disabled === true ? true : undefined
+    return (
+      <StyledClickableDiv
+        {...props}
+        ref={ref}
+        as={as}
+        aria-disabled={ariaDisabled}
+      />
+    )
   }
 )
 export default Clickable
