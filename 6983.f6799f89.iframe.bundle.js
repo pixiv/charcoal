@@ -393,7 +393,7 @@
   ${theme((o=>[o.typography(14).preserveHalfLeading,o.font.text3]))}
 `,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.p`
   ${p=>theme((o=>[o.typography(14),o.margin.top(8),o.margin.bottom(0),o.font[p.invalid?"assertive":"text1"]]))}
-`,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function IconInner({name,scale,unsafeNonGuidelineScale,className,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{ref,name,scale,"unsafe-non-guideline-scale":unsafeNonGuidelineScale,class:className,...rest})})));function columnSystem(span,column,gutter){return span*column+(span-1)*gutter}var ModalContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext({titleProps:{},title:"",close:void 0,showDismiss:!0});(0,react_spring__WEBPACK_IMPORTED_MODULE_7__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
+`,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function IconInner({name,scale,unsafeNonGuidelineScale,className,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{ref,name,scale,"unsafe-non-guideline-scale":unsafeNonGuidelineScale,class:className,...rest})})));function columnSystem(span,column,gutter){return span*column+(span-1)*gutter}var ModalContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext({titleProps:{},title:"",close:void 0,showDismiss:!0,bottomSheet:!1});(0,react_spring__WEBPACK_IMPORTED_MODULE_7__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   z-index: ${({zIndex})=>zIndex};
   overflow: auto;
   display: flex;
@@ -402,35 +402,35 @@
   left: 0;
   width: 100%;
   height: 100%;
+  justify-content: center;
+  padding: 40px 0;
+  box-sizing: border-box;
 
-  ${theme((o=>[o.bg.surface4]))}
-`),styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
-  position: relative;
-  margin: auto;
-  padding: 24px 0;
-  width: ${p=>{switch(p.size){case"S":return columnSystem(3,80,24)+48;case"M":return columnSystem(4,80,24)+48;case"L":return columnSystem(6,80,24)+48;default:return unreachable(p.size)}}}px;
+  background-color: ${({theme:theme3})=>theme3.color.surface4};
 
   @media ${({theme:theme3})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__.kk)(theme3.breakpoint.screen1)} {
-    width: calc(100% - 48px);
-    ${p=>!1!==p.bottomSheet&&styled_components__WEBPACK_IMPORTED_MODULE_3__.iv`
-        margin: 0;
+    ${p=>!1!==p.$bottomSheet&&styled_components__WEBPACK_IMPORTED_MODULE_3__.iv`
         padding: 0;
-        bottom: 0;
-        position: absolute;
-        width: 100%;
-        ${"full"===p.bottomSheet?"height: 100%":""};
       `}
   }
-`,(0,react_spring__WEBPACK_IMPORTED_MODULE_7__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
-  position: relative;
+`),(0,react_spring__WEBPACK_IMPORTED_MODULE_7__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   margin: auto;
+  position: relative;
+  height: fit-content;
+  width: ${p=>{switch(p.size){case"S":return columnSystem(3,80,24)+48;case"M":return columnSystem(4,80,24)+48;case"L":return columnSystem(6,80,24)+48;default:return unreachable(p.size)}}}px;
 
-  ${theme((o=>[o.bg.background1,o.borderRadius(24)]))}
+  background-color: ${({theme:theme3})=>theme3.color.background1};
+  border-radius: 24px;
+
   @media ${({theme:theme3})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__.kk)(theme3.breakpoint.screen1)} {
+    max-width: 440px;
+    width: calc(100% - 48px);
     ${p=>!1!==p.bottomSheet&&styled_components__WEBPACK_IMPORTED_MODULE_3__.iv`
+        width: 100%;
         border-radius: 0;
+        margin: auto 0 0 0;
         ${"full"===p.bottomSheet&&styled_components__WEBPACK_IMPORTED_MODULE_3__.iv`
-          height: 100%;
+          min-height: 100%;
         `}
       `}
   }
@@ -449,6 +449,11 @@
   display: grid;
   align-content: center;
   justify-content: center;
+  @media ${({theme:theme3})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__.kk)(theme3.breakpoint.screen1)} {
+    ${p=>!1!==p.$bottomSheet&&styled_components__WEBPACK_IMPORTED_MODULE_3__.iv`
+        height: 48px;
+      `}
+  }
 `,(0,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP)((function ModalTitle(props){const{titleProps,title}=(0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ModalContext);return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ModalHeading,{...titleProps,...props,children:title})}))`
   ${theme((o=>[o.font.text1,o.typography(16).bold]))}
 `,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
@@ -742,4 +747,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.596eba25.iframe.bundle.js.map
+//# sourceMappingURL=6983.f6799f89.iframe.bundle.js.map
