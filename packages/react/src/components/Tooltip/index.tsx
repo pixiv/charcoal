@@ -2,7 +2,6 @@ import React, { memo, useMemo, RefObject } from 'react'
 import { useTooltipTriggerState } from 'react-stately'
 import { TooltipTriggerProps, useTooltipTrigger } from '@react-aria/tooltip'
 import { TooltipPopover } from './TooltipPopover'
-import styled from 'styled-components'
 
 export type TooltipProps = {
   content: string
@@ -11,17 +10,10 @@ export type TooltipProps = {
   delay?: number
   triggerRef: RefObject<HTMLElement>
   className?: string
-  children?: React.ReactNode
+  children: React.ReactElement
 }
 
-function Tooltip({
-  open,
-  disabled,
-  content,
-  children,
-  triggerRef,
-  className,
-}: TooltipProps) {
+function Tooltip({ open, disabled, content, children }: TooltipProps) {
   const ref = React.useRef(null)
 
   const tooltipTriggerProps = useMemo<TooltipTriggerProps>(
@@ -42,24 +34,26 @@ function Tooltip({
     ref
   )
 
+  const child = React.cloneElement(children, {
+    onPointerEnter: triggerProps.onPointerEnter,
+    onPointerLeave: triggerProps.onPointerLeave,
+    'aria-describedby': triggerProps['aria-describedby'],
+    ref,
+  })
+
   return (
-    <TooltipWrapper {...triggerProps} ref={ref} className={className}>
-      {children}
+    <>
+      {child}
       {state.isOpen && (
         <TooltipPopover
           content={content}
           state={state}
-          triggerRef={triggerRef}
+          triggerRef={ref}
           id={tooltipProps.id}
         />
       )}
-    </TooltipWrapper>
+    </>
   )
 }
-
-const TooltipWrapper = styled.div`
-  display: flex;
-  width: fit-content;
-`
 
 export default memo(Tooltip)

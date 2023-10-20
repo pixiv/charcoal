@@ -13,9 +13,23 @@ export const Default: Story<TooltipProps> = (props) => {
   const ref = useRef<ClickableElement>(null)
 
   return (
-    <Tooltip {...props} content="ツールチップテキスト" triggerRef={ref}>
-      <Button ref={ref}>Button</Button>
-    </Tooltip>
+    <div
+      style={{
+        position: 'absolute',
+        left: '64px',
+        top: '32px',
+      }}
+    >
+      <Tooltip {...props} content="ツールチップテキスト" triggerRef={ref}>
+        <Button
+          onClick={() => {
+            alert('clicked')
+          }}
+        >
+          Button
+        </Button>
+      </Tooltip>
+    </div>
   )
 }
 

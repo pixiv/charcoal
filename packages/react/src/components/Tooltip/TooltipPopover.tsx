@@ -2,7 +2,8 @@ import React, { useRef } from 'react'
 import { TooltipTriggerState } from 'react-stately'
 import { useTooltip } from '@react-aria/tooltip'
 import { Overlay, useOverlayPosition } from '@react-aria/overlays'
-import { TooltipPresenter } from './TooltipPresenter'
+import { TextDiv, TooltipDiv } from './TooltipPresenter'
+import { ArrowSVG } from './ArrowSVG'
 
 type TooltipPopoverProps = {
   id?: string
@@ -24,7 +25,7 @@ export function TooltipPopover({
     },
     state
   )
-  const { overlayProps } = useOverlayPosition({
+  const { overlayProps, arrowProps, placement } = useOverlayPosition({
     overlayRef: ref,
     targetRef: triggerRef,
     containerPadding: 16,
@@ -34,7 +35,7 @@ export function TooltipPopover({
 
   return (
     <Overlay>
-      <TooltipPresenter
+      <TooltipDiv
         id={id}
         onPointerEnter={tooltipProps.onPointerEnter}
         onPointerLeave={tooltipProps.onPointerLeave}
@@ -42,8 +43,12 @@ export function TooltipPopover({
         style={overlayProps.style}
         ref={ref}
       >
-        {content}
-      </TooltipPresenter>
+        <ArrowSVG
+          left={arrowProps.style?.left}
+          isBottom={placement === 'bottom'}
+        />
+        <TextDiv>{content}</TextDiv>
+      </TooltipDiv>
     </Overlay>
   )
 }
