@@ -203,7 +203,8 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 8px ${(p) => (p.noBottomPadding ? 0 : 'calc(9px / 0.875)')} 8px;
+  padding: calc(9px / 0.875) 8px
+    ${(p) => (p.noBottomPadding ? 0 : 'calc(9px / 0.875)')} 8px;
   box-sizing: border-box;
 
   ${({ rows = 1, noBottomPadding }) => css`
