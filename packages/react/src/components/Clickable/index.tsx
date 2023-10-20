@@ -31,9 +31,14 @@ const Clickable = React.forwardRef<ClickableElement, ClickableProps>(
     const isLink = 'to' in props
     const as = isLink ? Link : 'button'
     const ariaDisabled = isLink && props.disabled === true ? true : undefined
+    let rest = props
+    if (isLink) {
+      const { disabled, ..._rest } = props
+      rest = _rest
+    }
     return (
       <StyledClickableDiv
-        {...props}
+        {...rest}
         ref={ref}
         as={as}
         aria-disabled={ariaDisabled}
