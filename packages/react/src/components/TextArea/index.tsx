@@ -131,7 +131,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         >
           <StyledTextarea
             ref={mergeRefs(textareaRef, forwardRef, ariaRef)}
-            rows={rows}
+            rows={showCount ? rows + 1 : rows}
             noBottomPadding={showCount}
             {...inputProps}
           />
@@ -170,7 +170,6 @@ const TextFieldLabel = styled(FieldLabel)`
 const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
 
   ${(p) =>
     theme((o) => [
@@ -204,10 +203,11 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0 ${(p) => (p.noBottomPadding ? 0 : '')};
+  padding: calc(9px / 0.875) 8px ${(p) => (p.noBottomPadding ? 0 : 'calc(9px / 0.875)')} 8px;
+  box-sizing: border-box;
 
-  ${({ rows = 1 }) => css`
-    height: calc(22px / 0.875 * ${rows});
+  ${({ rows = 1, noBottomPadding }) => css`
+    height: calc(22px / 0.875 * ${rows} + ${noBottomPadding ? '18px' : 0});
   `};
 
   /* Display box-shadow for iOS Safari */
