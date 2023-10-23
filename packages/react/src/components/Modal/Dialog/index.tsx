@@ -66,6 +66,7 @@ const AnimatedStyledDialogDiv = animated(styled.div<{
     ${(p) =>
       p.bottomSheet !== false &&
       css`
+        max-width: unset;
         width: 100%;
         border-radius: 0;
         margin: auto 0 0 0;
