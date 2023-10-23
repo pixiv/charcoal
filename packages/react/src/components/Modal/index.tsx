@@ -17,6 +17,7 @@ import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
+import { FocusScope } from '@react-aria/focus'
 
 export type BottomSheet = boolean | 'full'
 type Size = 'S' | 'M' | 'L'
@@ -134,7 +135,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   return transition(({ backgroundColor, transform, overflow }, item) => {
     return (
       item && (
-        <Overlay portalContainer={portalContainer}>
+        <Overlay portalContainer={document.body}>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}
@@ -149,26 +150,28 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
               bottomSheet={bottomSheet}
               className={className}
             >
-              <Dialog>
-                <ModalContext.Provider
-                  value={{
-                    titleProps: {},
-                    title,
-                    close: onClose,
-                    showDismiss,
-                    bottomSheet,
-                  }}
-                >
-                  {children}
-                  {isDismissable === true && (
-                    <ModalCrossButton
-                      size="S"
-                      icon="24/Close"
-                      onClick={onClose}
-                    />
-                  )}
-                </ModalContext.Provider>
-              </Dialog>
+              <FocusScope autoFocus restoreFocus contain>
+                <Dialog>
+                  <ModalContext.Provider
+                    value={{
+                      titleProps: {},
+                      title,
+                      close: onClose,
+                      showDismiss,
+                      bottomSheet,
+                    }}
+                  >
+                    {children}
+                    {isDismissable === true && (
+                      <ModalCrossButton
+                        size="S"
+                        icon="24/Close"
+                        onClick={onClose}
+                      />
+                    )}
+                  </ModalContext.Provider>
+                </Dialog>
+              </FocusScope>
             </ModalDialog>
           </ModalBackground>
         </Overlay>
