@@ -132,7 +132,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   return transition(({ backgroundColor, transform, overflow }, item) => {
     return (
       item && (
-        <Overlay portalContainer={document.body}>
+        <Overlay portalContainer={portalContainer}>
           <ModalBackground
             zIndex={zIndex}
             {...underlayProps}
