@@ -400,7 +400,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: -webkit-fill-available;
+  width: -moz-available;
   height: 100%;
   justify-content: center;
   padding: 40px 0;
@@ -747,4 +748,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.f6799f89.iframe.bundle.js.map
+//# sourceMappingURL=6983.9efcc642.iframe.bundle.js.map
