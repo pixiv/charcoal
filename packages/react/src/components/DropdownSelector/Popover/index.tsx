@@ -47,22 +47,16 @@ export default function Popover(props: PopoverProps) {
 
   if (!props.isOpen) return null
 
-  const children = (
-    <>
+  return (
+    <Overlay portalContainer={document.body}>
       <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
       <DropdownPopoverDiv {...popoverProps} ref={finalPopoverRef}>
         <DismissButton onDismiss={() => props.onClose()} />
         {props.children}
         <DismissButton onDismiss={() => props.onClose()} />
       </DropdownPopoverDiv>
-    </>
+    </Overlay>
   )
-
-  if (modalBackground) {
-    return children
-  }
-
-  return <Overlay portalContainer={document.body}>{children}</Overlay>
 }
 
 const DropdownPopoverDiv = styled.div`
