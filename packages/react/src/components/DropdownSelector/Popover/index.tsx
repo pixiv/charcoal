@@ -49,7 +49,17 @@ export default function Popover(props: PopoverProps) {
 
   return (
     <Overlay portalContainer={document.body}>
-      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
+      <div
+        {...underlayProps}
+        style={{
+          position: 'fixed',
+          zIndex:
+            typeof popoverProps.style?.zIndex === 'number'
+              ? popoverProps.style.zIndex - 1
+              : 99999,
+          inset: 0,
+        }}
+      />
       <DropdownPopoverDiv {...popoverProps} ref={finalPopoverRef}>
         <DismissButton onDismiss={() => props.onClose()} />
         {props.children}
