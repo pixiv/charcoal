@@ -7,20 +7,17 @@ import {
 } from '@react-aria/overlays'
 import styled, { css, useTheme } from 'styled-components'
 import { theme } from '../../styled'
-import { useDialog } from '@react-aria/dialog'
 import { AriaDialogProps } from '@react-types/dialog'
-import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
-import { unreachable } from '../../_lib'
 import { maxWidth } from '@charcoal-ui/utils'
 import { useMedia } from '@charcoal-ui/styled'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
-import { FocusScope } from '@react-aria/focus'
+import { Dialog } from './Dialog'
 
 export type BottomSheet = boolean | 'full'
-type Size = 'S' | 'M' | 'L'
+export type Size = 'S' | 'M' | 'L'
 
 export type ModalProps = AriaModalOverlayProps &
   AriaDialogProps & {
@@ -142,7 +139,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             style={transitionEnabled ? { backgroundColor, overflow } : {}}
             $bottomSheet={bottomSheet}
           >
-            <ModalDialog
+            <Dialog
               ref={ref}
               {...modalProps}
               style={transitionEnabled ? { transform } : {}}
@@ -150,29 +147,25 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
               bottomSheet={bottomSheet}
               className={className}
             >
-              <FocusScope autoFocus restoreFocus contain>
-                <Dialog>
-                  <ModalContext.Provider
-                    value={{
-                      titleProps: {},
-                      title,
-                      close: onClose,
-                      showDismiss,
-                      bottomSheet,
-                    }}
-                  >
-                    {children}
-                    {isDismissable === true && (
-                      <ModalCrossButton
-                        size="S"
-                        icon="24/Close"
-                        onClick={onClose}
-                      />
-                    )}
-                  </ModalContext.Provider>
-                </Dialog>
-              </FocusScope>
-            </ModalDialog>
+              <ModalContext.Provider
+                value={{
+                  titleProps: {},
+                  title,
+                  close: onClose,
+                  showDismiss,
+                  bottomSheet,
+                }}
+              >
+                {children}
+                {isDismissable === true && (
+                  <ModalCrossButton
+                    size="S"
+                    icon="24/Close"
+                    onClick={onClose}
+                  />
+                )}
+              </ModalContext.Provider>
+            </Dialog>
           </ModalBackground>
         </Overlay>
       )
@@ -181,17 +174,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
 })
 
 export default memo(Modal)
-
-function Dialog({ children }: { children: React.ReactNode }) {
-  const r = React.useRef(null)
-  const { dialogProps } = useDialog(
-    {
-      role: 'dialog',
-    },
-    r
-  )
-  return <div {...dialogProps}>{children}</div>
-}
 
 export const ModalContext = React.createContext<{
   /**
@@ -233,50 +215,6 @@ const ModalBackground = animated(styled.div<{
       p.$bottomSheet !== false &&
       css`
         padding: 0;
-      `}
-  }
-`)
-
-const ModalDialog = animated(styled.div<{
-  size: Size
-  bottomSheet: BottomSheet
-}>`
-  margin: auto;
-  position: relative;
-  height: fit-content;
-  width: ${(p) => {
-    switch (p.size) {
-      case 'S': {
-        return columnSystem(3, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      }
-      case 'M': {
-        return columnSystem(4, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      }
-      case 'L': {
-        return columnSystem(6, COLUMN_UNIT, GUTTER_UNIT) + GUTTER_UNIT * 2
-      }
-      default: {
-        return unreachable(p.size)
-      }
-    }
-  }}px;
-
-  background-color: ${({ theme }) => theme.color.background1};
-  border-radius: 24px;
-
-  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
-    max-width: 440px;
-    width: calc(100% - 48px);
-    ${(p) =>
-      p.bottomSheet !== false &&
-      css`
-        width: 100%;
-        border-radius: 0;
-        margin: auto 0 0 0;
-        ${p.bottomSheet === 'full' &&
-        css`
-          min-height: 100%;
-        `}
       `}
   }
 `)
