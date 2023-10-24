@@ -70,6 +70,7 @@ const M = (props: ModalProps) => {
           </ModalAlign>
           <ModalAlign>
             <TextField
+              autoFocus
               showLabel
               label="Country"
               placeholder="Tokyo"
