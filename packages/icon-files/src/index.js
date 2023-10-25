@@ -2,6 +2,7 @@
 
 export default {
   '16/Add': () => import('./16/Add.js').then(m => m.default),
+  '16/Archive': () => import('./16/Archive.js').then(m => m.default),
   '16/ArrowDown': () => import('./16/ArrowDown.js').then(m => m.default),
   '16/Artwork': () => import('./16/Artwork.js').then(m => m.default),
   '16/Back': () => import('./16/Back.js').then(m => m.default),
@@ -18,6 +19,7 @@ export default {
   '16/Like': () => import('./16/Like.js').then(m => m.default),
   '16/Menu': () => import('./16/Menu.js').then(m => m.default),
   '16/More': () => import('./16/More.js').then(m => m.default),
+  '16/Nextworks': () => import('./16/Nextworks.js').then(m => m.default),
   '16/Pencil': () => import('./16/Pencil.js').then(m => m.default),
   '16/Question': () => import('./16/Question.js').then(m => m.default),
   '16/Ranking': () => import('./16/Ranking.js').then(m => m.default),

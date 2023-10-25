@@ -2,6 +2,7 @@
 
 declare var _default: {
   '16/Add': () => Promise<string>;
+  '16/Archive': () => Promise<string>;
   '16/ArrowDown': () => Promise<string>;
   '16/Artwork': () => Promise<string>;
   '16/Back': () => Promise<string>;
@@ -18,6 +19,7 @@ declare var _default: {
   '16/Like': () => Promise<string>;
   '16/Menu': () => Promise<string>;
   '16/More': () => Promise<string>;
+  '16/Nextworks': () => Promise<string>;
   '16/Pencil': () => Promise<string>;
   '16/Question': () => Promise<string>;
   '16/Ranking': () => Promise<string>;
