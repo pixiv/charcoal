@@ -81,6 +81,18 @@ exports[`Storyshots Icons/PixivIcon (<pixiv-icon>) Default 1`] = `
         color="#000000"
       >
         <pixiv-icon
+          name="16/Archive"
+          scale={1}
+        />
+        <div>
+          16/Archive
+        </div>
+      </div>
+      <div
+        className="c3"
+        color="#000000"
+      >
+        <pixiv-icon
           name="16/ArrowDown"
           scale={1}
         />
@@ -266,6 +278,18 @@ exports[`Storyshots Icons/PixivIcon (<pixiv-icon>) Default 1`] = `
         />
         <div>
           16/More
+        </div>
+      </div>
+      <div
+        className="c3"
+        color="#000000"
+      >
+        <pixiv-icon
+          name="16/Nextworks"
+          scale={1}
+        />
+        <div>
+          16/Nextworks
         </div>
       </div>
       <div
