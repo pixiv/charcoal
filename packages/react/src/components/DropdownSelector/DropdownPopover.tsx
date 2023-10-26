@@ -26,7 +26,6 @@ export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
       const selectedElement = document.querySelector(
         `[data-key="${props.value.toString()}"]`
       ) as HTMLElement | undefined
-      selectedElement?.scrollIntoView({ block: 'center' })
       selectedElement?.focus()
       window.scrollTo(windowScrollX, windowScrollY)
     }

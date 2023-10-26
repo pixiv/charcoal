@@ -15,6 +15,7 @@ import Button, { ButtonProps } from '../Button'
 import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
+import { ModalBackgroundContext } from './ModalBackgroundContext'
 
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'
@@ -129,48 +130,54 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
       : { duration: 0 },
   })
 
-  return transition(({ backgroundColor, transform, overflow }, item) => {
-    return (
+  const bgRef = React.useRef<HTMLElement>(null)
+
+  return transition(
+    ({ backgroundColor, overflow, transform }, item) =>
       item && (
         <Overlay portalContainer={portalContainer}>
           <ModalBackground
+            ref={bgRef}
             zIndex={zIndex}
             {...underlayProps}
             style={transitionEnabled ? { backgroundColor, overflow } : {}}
             $bottomSheet={bottomSheet}
           >
-            <Dialog
-              ref={ref}
-              {...modalProps}
-              style={transitionEnabled ? { transform } : {}}
-              size={size}
-              bottomSheet={bottomSheet}
-              className={className}
-            >
-              <ModalContext.Provider
-                value={{
-                  titleProps: {},
-                  title,
-                  close: onClose,
-                  showDismiss,
-                  bottomSheet,
-                }}
+            <ModalBackgroundContext.Provider value={bgRef.current}>
+              <Dialog
+                ref={ref}
+                {...modalProps}
+                style={transitionEnabled ? { transform } : {}}
+                size={size}
+                bottomSheet={bottomSheet}
+                className={className}
               >
-                {children}
-                {isDismissable === true && (
-                  <ModalCrossButton
-                    size="S"
-                    icon="24/Close"
-                    onClick={onClose}
-                  />
-                )}
-              </ModalContext.Provider>
-            </Dialog>
+                <Dialog>
+                  <ModalContext.Provider
+                    value={{
+                      titleProps: {},
+                      title,
+                      close: onClose,
+                      showDismiss,
+                      bottomSheet,
+                    }}
+                  >
+                    {children}
+                    {isDismissable === true && (
+                      <ModalCrossButton
+                        size="S"
+                        icon="24/Close"
+                        onClick={onClose}
+                      />
+                    )}
+                  </ModalContext.Provider>
+                </Dialog>
+              </Dialog>
+            </ModalBackgroundContext.Provider>
           </ModalBackground>
         </Overlay>
       )
-    )
-  })
+  )
 })
 
 export default memo(Modal)
@@ -202,7 +209,8 @@ const ModalBackground = animated(styled.div<{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: -webkit-fill-available;
+  width: -moz-available;
   height: 100%;
   justify-content: center;
   padding: 40px 0;

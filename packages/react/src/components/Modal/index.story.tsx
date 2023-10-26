@@ -12,6 +12,8 @@ import {
 import styled from 'styled-components'
 import { theme } from '../../styled'
 import TextField from '../TextField'
+import DropdownSelector from '../DropdownSelector'
+import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 
 export default {
   title: 'Modal',
@@ -75,6 +77,19 @@ const M = (props: ModalProps) => {
               label="Country"
               placeholder="Tokyo"
             ></TextField>
+          </ModalAlign>
+          <ModalAlign>
+            <DropdownSelector
+              onChange={() => null}
+              value="10"
+              showLabel
+              label="Fruits"
+              placeholder="Apple"
+            >
+              <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+              <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+              <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+            </DropdownSelector>
           </ModalAlign>
         </ModalVStack>
         <ModalButtons>
