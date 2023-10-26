@@ -152,26 +152,24 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
                 bottomSheet={bottomSheet}
                 className={className}
               >
-                <Dialog>
-                  <ModalContext.Provider
-                    value={{
-                      titleProps: {},
-                      title,
-                      close: onClose,
-                      showDismiss,
-                      bottomSheet,
-                    }}
-                  >
-                    {children}
-                    {isDismissable === true && (
-                      <ModalCrossButton
-                        size="S"
-                        icon="24/Close"
-                        onClick={onClose}
-                      />
-                    )}
-                  </ModalContext.Provider>
-                </Dialog>
+                <ModalContext.Provider
+                  value={{
+                    titleProps: {},
+                    title,
+                    close: onClose,
+                    showDismiss,
+                    bottomSheet,
+                  }}
+                >
+                  {children}
+                  {isDismissable === true && (
+                    <ModalCrossButton
+                      size="S"
+                      icon="24/Close"
+                      onClick={onClose}
+                    />
+                  )}
+                </ModalContext.Provider>
               </Dialog>
             </ModalBackgroundContext.Provider>
           </ModalBackground>
