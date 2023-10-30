@@ -42,6 +42,7 @@
     "@commitlint/config-lerna-scopes": "^16.0.0",
     "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@storybook/addon-a11y": "^7.4.1",
+    "@storybook/addon-docs": "^7.5.1",
     "@storybook/addon-essentials": "^7.4.1",
     "@storybook/addon-interactions": "^7.4.1",
     "@storybook/addon-links": "^7.4.1",
