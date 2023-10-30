@@ -23,7 +23,9 @@
     "misc/*.mjs",
     "jest.setup.ts",
     "**/.*.cjs",
-    "**/.*.js"
+    "**/.*.js",
+    "storyshots.*",
+    "__mocks__/*.ts"
   ],
   "exclude": ["docs"]
 }
