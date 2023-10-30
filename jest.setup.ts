@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 export {}
 
 globalThis.ResizeObserver = jest.fn().mockImplementation(() => ({
@@ -20,4 +22,9 @@ window.matchMedia = jest.fn().mockImplementation((query: string) => ({
 jest.mock('@react-aria/utils', () => ({
   ...jest.requireActual('@react-aria/utils'),
   useId: () => 'test-id',
+}))
+
+jest.mock('@react-aria/overlays', () => ({
+  ...jest.requireActual('@react-aria/overlays'),
+  Overlay: jest.fn(({ children }: { children: ReactNode }) => children),
 }))
