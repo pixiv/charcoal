@@ -596,6 +596,21 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1 {
+  margin: auto;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 440px;
+  background-color: #ffffff;
+  border-radius: 24px;
+}
+
+.c1:focus {
+  outline: none;
+}
+
 .c0 {
   z-index: 10;
   overflow: auto;
@@ -616,17 +631,6 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   padding: 40px 0;
   box-sizing: border-box;
   background-color: rgba(0,0,0,0.32);
-}
-
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: #ffffff;
-  border-radius: 24px;
 }
 
 .c13 {
@@ -712,19 +716,20 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 }
 
 @media (max-width:743px) {
-  .c0 {
-    padding: 0;
-  }
-}
-
-@media (max-width:743px) {
   .c1 {
     max-width: 440px;
     width: calc(100% - 48px);
+    max-width: unset;
     width: 100%;
     border-radius: 0;
     margin: auto 0 0 0;
     min-height: 100%;
+  }
+}
+
+@media (max-width:743px) {
+  .c0 {
+    padding: 0;
   }
 }
 
@@ -756,103 +761,99 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
     >
       <div
         className="c1"
-        onBlur={null}
+        onBlur={[Function]}
         onFocus={null}
         onKeyDown={[Function]}
+        role="dialog"
         size="M"
         style={Object {}}
+        tabIndex={-1}
       >
         <div
-          onBlur={[Function]}
-          role="dialog"
-          tabIndex={-1}
+          className="c2"
+        >
+          <h3
+            className="c3 c4"
+          >
+            modal
+          </h3>
+        </div>
+        <div
+          className="c5"
         >
           <div
-            className="c2"
-          >
-            <h3
-              className="c3 c4"
-            >
-              modal
-            </h3>
-          </div>
-          <div
-            className="c5"
+            style={
+              Object {
+                "padding": "16px",
+              }
+            }
           >
             <div
-              style={
-                Object {
-                  "padding": "16px",
-                }
-              }
+              className="c6"
             >
-              <div
-                className="c6"
+              256px
+            </div>
+            <div
+              className="c7"
+            >
+              <button
+                className="c8"
+                onClick={[Function]}
+                type="button"
               >
-                256px
-              </div>
-              <div
-                className="c7"
-              >
-                <button
-                  className="c8"
-                  onClick={[Function]}
-                  type="button"
+                <span
+                  className="c9"
                 >
-                  <span
-                    className="c9"
-                  >
-                    Apple
-                  </span>
-                  <pixiv-icon
-                    class="c10"
-                    name="16/Menu"
-                  />
-                </button>
-              </div>
-              <div
-                className="c6"
+                  Apple
+                </span>
+                <pixiv-icon
+                  class="c10"
+                  name="16/Menu"
+                />
+              </button>
+            </div>
+            <div
+              className="c6"
+            >
+              256px
+            </div>
+            <div
+              className="c7"
+            >
+              <button
+                className="c8"
+                onClick={[Function]}
+                type="button"
               >
-                256px
-              </div>
-              <div
-                className="c7"
-              >
-                <button
-                  className="c8"
-                  onClick={[Function]}
-                  type="button"
+                <span
+                  className="c9"
                 >
-                  <span
-                    className="c9"
-                  >
-                    Apple
-                  </span>
-                  <pixiv-icon
-                    class="c10"
-                    name="16/Menu"
-                  />
-                </button>
-              </div>
-              <div
-                className="c6"
-              >
-                256px
-              </div>
+                  Apple
+                </span>
+                <pixiv-icon
+                  class="c10"
+                  name="16/Menu"
+                />
+              </button>
+            </div>
+            <div
+              className="c6"
+            >
+              256px
             </div>
           </div>
-          <button
-            className="c11 c12 c13 sc-gWXbKe c13"
-            height={32}
-            onClick={[Function]}
-            size="S"
-            width={32}
-          >
-            <pixiv-icon
-              name="24/Close"
-            />
-          </button>
         </div>
+        <button
+          className="c11 c12 c13 sc-gWXbKe c13"
+          height={32}
+          onClick={[Function]}
+          size="S"
+          width={32}
+        >
+          <pixiv-icon
+            name="24/Close"
+          />
+        </button>
       </div>
     </div>
   </div>
