@@ -924,10 +924,8 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -952,22 +950,22 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }

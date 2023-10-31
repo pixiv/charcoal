@@ -64,10 +64,8 @@ exports[`Storyshots Button Danger 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -92,22 +90,22 @@ exports[`Storyshots Button Danger 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -194,10 +192,8 @@ exports[`Storyshots Button Default 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -222,22 +218,22 @@ exports[`Storyshots Button Default 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -324,10 +320,8 @@ exports[`Storyshots Button Disabled 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -352,22 +346,22 @@ exports[`Storyshots Button Disabled 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -454,10 +448,8 @@ exports[`Storyshots Button Fixed 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -482,22 +474,22 @@ exports[`Storyshots Button Fixed 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -584,10 +576,8 @@ exports[`Storyshots Button Focus 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -612,22 +602,22 @@ exports[`Storyshots Button Focus 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -714,10 +704,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -742,22 +730,22 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -794,10 +782,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -822,22 +808,22 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c2:not(:disabled):not([aria-disabled]):focus,
-.c2[aria-disabled=false]:focus,
+.c2[aria-disabled='false']:focus,
 .c2:not(:disabled):not([aria-disabled]):active,
-.c2[aria-disabled=false]:active {
+.c2[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[aria-disabled=false]:focus:not(:focus-visible),
+.c2[aria-disabled='false']:focus:not(:focus-visible),
 .c2:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[aria-disabled=false]:active:not(:focus-visible) {
+.c2[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c2:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[aria-disabled=false]:focus-visible {
+.c2[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -874,10 +860,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -902,22 +886,22 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled=false]:focus,
+.c3[aria-disabled='false']:focus,
 .c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled=false]:active {
+.c3[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[aria-disabled=false]:focus:not(:focus-visible),
+.c3[aria-disabled='false']:focus:not(:focus-visible),
 .c3:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c3[aria-disabled=false]:active:not(:focus-visible) {
+.c3[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled=false]:focus-visible {
+.c3[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -954,10 +938,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -982,22 +964,22 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c4:not(:disabled):not([aria-disabled]):focus,
-.c4[aria-disabled=false]:focus,
+.c4[aria-disabled='false']:focus,
 .c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled=false]:active {
+.c4[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c4:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c4[aria-disabled=false]:focus:not(:focus-visible),
+.c4[aria-disabled='false']:focus:not(:focus-visible),
 .c4:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c4[aria-disabled=false]:active:not(:focus-visible) {
+.c4[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c4:not(:disabled):not([aria-disabled]):focus-visible,
-.c4[aria-disabled=false]:focus-visible {
+.c4[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1034,10 +1016,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -1062,22 +1042,22 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled=false]:focus,
+.c5[aria-disabled='false']:focus,
 .c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled=false]:active {
+.c5[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled=false]:focus:not(:focus-visible),
+.c5[aria-disabled='false']:focus:not(:focus-visible),
 .c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c5[aria-disabled=false]:active:not(:focus-visible) {
+.c5[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled=false]:focus-visible {
+.c5[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1286,10 +1266,8 @@ exports[`Storyshots Button Link 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -1314,22 +1292,22 @@ exports[`Storyshots Button Link 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1416,10 +1394,8 @@ exports[`Storyshots Button Navigation 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -1444,22 +1420,22 @@ exports[`Storyshots Button Navigation 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1546,10 +1522,8 @@ exports[`Storyshots Button Nihongo 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -1574,22 +1548,22 @@ exports[`Storyshots Button Nihongo 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1676,10 +1650,8 @@ exports[`Storyshots Button Overlay 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface4);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -1704,22 +1676,22 @@ exports[`Storyshots Button Overlay 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1806,10 +1778,8 @@ exports[`Storyshots Button Primary 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 40px;
 }
 
@@ -1834,22 +1804,22 @@ exports[`Storyshots Button Primary 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1936,10 +1906,8 @@ exports[`Storyshots Button Small 1`] = `
   padding-left: 16px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color;
-  transition: 0.2s color,0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
+  transition: 0.2s color,0.2s background-color,0.2s border-color;
   height: 32px;
 }
 
@@ -1964,22 +1932,22 @@ exports[`Storyshots Button Small 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
+.c1[aria-disabled='false]:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible),
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
+.c1[aria-disabled='false]:active:not(:focus-visible) {
   outline: none;
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }

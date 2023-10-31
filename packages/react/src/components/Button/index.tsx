@@ -1,7 +1,6 @@
 import { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { unreachable } from '../../_lib'
-import { theme } from '../../styled'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
@@ -96,9 +95,28 @@ const StyledButton = styled(Clickable)<StyledProps>`
       --charcoal-${(p) => variantToBackground(p.$variant)}-press
     );
   }
-  transition: 0.2s color, 0.2s background-color;
 
-  ${theme((o) => o.outline.default.focus)}
+  &:not(:disabled):not([aria-disabled]):focus,
+  &[aria-disabled='false']:focus,
+  &:not(:disabled):not([aria-disabled]):active,
+  &[aria-disabled='false]:active {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+  }
+  &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+  &[aria-disabled='false']:focus:not(:focus-visible),
+  &:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
+  &[aria-disabled='false]:active:not(
+      :focus-visible
+    ) {
+    outline: none;
+  }
+  &:not(:disabled):not([aria-disabled]):focus-visible,
+  &[aria-disabled='false']:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+  transition: 0.2s color, 0.2s background-color, 0.2s border-color;
 
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
