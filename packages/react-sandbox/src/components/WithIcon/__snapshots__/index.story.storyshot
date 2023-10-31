@@ -1,0 +1,852 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Sandbox/WithIcon Collapse 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+  margin-right: 4px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c2 > svg {
+  display: block;
+}
+
+.c3 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          "
+          background-color: ",
+          [Function],
+          ";
+        ",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          <div
+            className="c2"
+          >
+            <div
+              className="c3"
+            />
+          </div>
+        </div>
+        <div
+          className="c4"
+        >
+          Selection
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Default 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 0;
+  width: 0px;
+  visibility: visible;
+  margin-left: 4px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c3 > svg {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 22px;
+  height: 22px;
+}
+
+.c4::before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          "
+          background-color: ",
+          [Function],
+          ";
+        ",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          Menu
+        </div>
+        <div
+          className="c2"
+          width={0}
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Hide 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: hidden;
+  margin-right: 4px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c2 > svg {
+  display: block;
+}
+
+.c3 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          "
+          background-color: ",
+          [Function],
+          ";
+        ",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          <div
+            className="c2"
+          >
+            <div
+              className="c3"
+            />
+          </div>
+        </div>
+        <div
+          className="c4"
+        >
+          Selection
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Long Text 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: visible;
+  margin-left: 4px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c3 > svg {
+  display: block;
+}
+
+.c4 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css="
+      width: 200px;
+    "
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          Long Long Long Long Long Long Long Long Long Long Text
+        </div>
+        <div
+          className="c2"
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Long Text Overflow 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: visible;
+  margin-left: 4px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c3 > svg {
+  display: block;
+}
+
+.c4 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css="
+      width: 200px;
+    "
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          Long Long Long Long Long Long Long Long Long Long Text
+        </div>
+        <div
+          className="c2"
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Naive 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: visible;
+  margin-left: 4px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c3 > svg {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 22px;
+  height: 22px;
+}
+
+.c4::before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          "
+          background-color: ",
+          [Function],
+          ";
+        ",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          Menu
+        </div>
+        <div
+          className="c2"
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Performance 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 0;
+  width: 16px;
+  visibility: visible;
+  margin-left: 4px;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c3 > svg {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 22px;
+  height: 22px;
+}
+
+.c4::before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          "
+          background-color: ",
+          [Function],
+          ";
+        ",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+        >
+          Menu
+        </div>
+        <div
+          className="c2"
+          width={16}
+        >
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sandbox/WithIcon Prefix 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 0;
+  width: 0px;
+  visibility: visible;
+  margin-right: 4px;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c2 > svg {
+  display: block;
+}
+
+.c3 {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css={
+      Array [
+        "
+        ",
+        [Function],
+        "
+        display: flex;
+      ",
+      ]
+    }
+  >
+    <div
+      css={
+        Array [
+          "
+          background-color: ",
+          [Function],
+          ";
+        ",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div
+          className="c1"
+          width={0}
+        >
+          <div
+            className="c2"
+          >
+            <div
+              className="c3"
+            />
+          </div>
+        </div>
+        <div
+          className="c4"
+        >
+          Selection
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
