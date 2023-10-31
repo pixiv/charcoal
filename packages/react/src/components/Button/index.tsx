@@ -85,15 +85,11 @@ const StyledButton = styled(Clickable)<StyledProps>`
   background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)});
   &:hover:not(:disabled):not([aria-disabled]),
   &:hover[aria-disabled='false'] {
-    background-color: var(
-      --charcoal-${(p) => variantToBackground(p.$variant)}-hover
-    );
+    background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)}-hover);
   }
   &:active:not(:disabled):not([aria-disabled]),
   &:active[aria-disabled='false'] {
-    background-color: var(
-      --charcoal-${(p) => variantToBackground(p.$variant)}-press
-    );
+    background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)}-press);
   }
 
   &:not(:disabled):not([aria-disabled]):focus,
@@ -106,9 +102,7 @@ const StyledButton = styled(Clickable)<StyledProps>`
   &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
   &[aria-disabled='false']:focus:not(:focus-visible),
   &:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-  &[aria-disabled='false]:active:not(
-      :focus-visible
-    ) {
+  &[aria-disabled='false]:active:not(:focus-visible) {
     outline: none;
   }
   &:not(:disabled):not([aria-disabled]):focus-visible,

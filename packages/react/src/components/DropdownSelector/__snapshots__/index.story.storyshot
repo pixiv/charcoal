@@ -941,12 +941,12 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
 
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
-  background-color: var( --charcoal-surface3-hover );
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
-  background-color: var( --charcoal-surface3-press );
+  background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
