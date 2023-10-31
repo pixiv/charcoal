@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { unreachable } from '../../_lib'
 import { theme } from '../../styled'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
@@ -46,6 +46,15 @@ const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
 })
 export default Button
 
+const horizontalPaddingSmall = css`
+  padding-right: 16px;
+  padding-left: 16px;
+`
+const horizontalPaddingMedium = css`
+  padding-right: 24px;
+  padding-left: 24px;
+`
+
 const StyledButton = styled(Clickable)<StyledProps>`
   width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
@@ -63,11 +72,12 @@ const StyledButton = styled(Clickable)<StyledProps>`
   line-height: 22px;
   font-weight: bold;
 
+  ${(p) => (p.$size === 'M' ? horizontalPaddingMedium : horizontalPaddingSmall)}
+
   ${(p) =>
     theme((o) => [
       o.font[variantToFont(p.$variant)].hover.press,
       o.bg[variantToBackground(p.$variant)].hover.press,
-      o.padding.horizontal(p.$size === 'M' ? 24 : 16),
       o.outline.default.focus,
     ])}
 
