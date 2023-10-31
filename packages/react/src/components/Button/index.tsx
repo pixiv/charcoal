@@ -67,11 +67,7 @@ const StyledButton = styled(Clickable)<StyledButtonProps>`
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-
-  // borderRadius['oval']
   border-radius: 999999px;
-
-  // preserveHalfLeading
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
