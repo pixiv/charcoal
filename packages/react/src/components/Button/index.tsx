@@ -58,11 +58,15 @@ const StyledButton = styled(Clickable)<StyledProps>`
   // borderRadius['oval']
   border-radius: 999999px;
 
+  // preserveHalfLeading
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+
   ${(p) =>
     theme((o) => [
       o.font[variantToFont(p.$variant)].hover.press,
       o.bg[variantToBackground(p.$variant)].hover.press,
-      o.typography(14).bold.preserveHalfLeading,
       o.padding.horizontal(p.$size === 'M' ? 24 : 16),
       o.outline.default.focus,
     ])}

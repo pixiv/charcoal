@@ -917,11 +917,11 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   user-select: none;
   white-space: nowrap;
   border-radius: 999999px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
   padding-right: 24px;
   padding-left: 24px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
