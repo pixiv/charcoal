@@ -2,6 +2,7 @@
 
 exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -20,7 +21,11 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -30,11 +35,6 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {

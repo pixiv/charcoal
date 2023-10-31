@@ -2,6 +2,7 @@
 
 exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -20,7 +21,11 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -30,11 +35,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -135,6 +135,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Default 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -153,7 +154,11 @@ exports[`Storyshots Modal Default 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -163,11 +168,6 @@ exports[`Storyshots Modal Default 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -268,6 +268,7 @@ exports[`Storyshots Modal Default 1`] = `
 
 exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -286,7 +287,11 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -296,11 +301,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -401,6 +401,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Internal Scroll 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -419,7 +420,11 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -429,11 +434,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {

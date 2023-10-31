@@ -265,6 +265,7 @@ exports[`Storyshots TextArea Auto Height 1`] = `
 
 exports[`Storyshots TextArea Default 1`] = `
 .c7 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -283,7 +284,11 @@ exports[`Storyshots TextArea Default 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c7:focus {
@@ -293,11 +298,6 @@ exports[`Storyshots TextArea Default 1`] = `
 .c7::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c4 {
@@ -580,6 +580,7 @@ exports[`Storyshots TextArea Default 1`] = `
 
 exports[`Storyshots TextArea Has Count 1`] = `
 .c7 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -598,7 +599,11 @@ exports[`Storyshots TextArea Has Count 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c7:focus {
@@ -608,11 +613,6 @@ exports[`Storyshots TextArea Has Count 1`] = `
 .c7::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c4 {
@@ -910,6 +910,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
 
 exports[`Storyshots TextArea Has Label 1`] = `
 .c9 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -928,7 +929,11 @@ exports[`Storyshots TextArea Has Label 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c9:disabled,
+.c9[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c9:focus {
@@ -938,11 +943,6 @@ exports[`Storyshots TextArea Has Label 1`] = `
 .c9::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c9:disabled,
-.c9[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c4 {

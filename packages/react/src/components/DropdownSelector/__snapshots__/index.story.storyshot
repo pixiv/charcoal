@@ -402,6 +402,7 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
 
 exports[`Storyshots DropdownSelector In Modal 1`] = `
 .c11 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -420,7 +421,11 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c11:disabled,
+.c11[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c11:focus {
@@ -430,11 +435,6 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 .c11::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c7 {
@@ -844,7 +844,7 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
           </div>
         </div>
         <button
-          className="c11 c12 c13 sc-gWXbKe c13"
+          className="c11 c12 c13 sc-hiCibw c13"
           height={32}
           onClick={[Function]}
           size="S"
@@ -862,6 +862,7 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 
 exports[`Storyshots DropdownSelector Playground 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -880,7 +881,11 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -890,11 +895,6 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {

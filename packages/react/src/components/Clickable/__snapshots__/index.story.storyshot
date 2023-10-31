@@ -2,6 +2,7 @@
 
 exports[`Storyshots Clickable Button 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -20,7 +21,11 @@ exports[`Storyshots Clickable Button 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -30,11 +35,6 @@ exports[`Storyshots Clickable Button 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 <div
@@ -51,16 +51,25 @@ exports[`Storyshots Clickable Button 1`] = `
 
 exports[`Storyshots Clickable Link 1`] = `
 .c0 {
-  color: inherit;
   cursor: pointer;
-}
-
-.c0:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
   outline: none;
-}
-
-.c0 .text {
-  top: calc(1em + 2em);
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
 }
 
 .c0:disabled,
@@ -68,11 +77,19 @@ exports[`Storyshots Clickable Link 1`] = `
   cursor: default;
 }
 
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 <div
   data-dark={false}
 >
   <a
-    aria-disabled={false}
     className="c0"
     href="#"
     onClick={[Function]}

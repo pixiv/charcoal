@@ -2,6 +2,7 @@
 
 exports[`Storyshots Button Danger 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -20,7 +21,11 @@ exports[`Storyshots Button Danger 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -30,11 +35,6 @@ exports[`Storyshots Button Danger 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -130,6 +130,7 @@ exports[`Storyshots Button Danger 1`] = `
 
 exports[`Storyshots Button Default 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -148,7 +149,11 @@ exports[`Storyshots Button Default 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -158,11 +163,6 @@ exports[`Storyshots Button Default 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -258,6 +258,7 @@ exports[`Storyshots Button Default 1`] = `
 
 exports[`Storyshots Button Disabled 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -276,7 +277,11 @@ exports[`Storyshots Button Disabled 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -286,11 +291,6 @@ exports[`Storyshots Button Disabled 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -386,6 +386,7 @@ exports[`Storyshots Button Disabled 1`] = `
 
 exports[`Storyshots Button Fixed 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -404,7 +405,11 @@ exports[`Storyshots Button Fixed 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -414,11 +419,6 @@ exports[`Storyshots Button Fixed 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -514,6 +514,7 @@ exports[`Storyshots Button Fixed 1`] = `
 
 exports[`Storyshots Button Focus 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -532,7 +533,11 @@ exports[`Storyshots Button Focus 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -542,11 +547,6 @@ exports[`Storyshots Button Focus 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -642,6 +642,7 @@ exports[`Storyshots Button Focus 1`] = `
 
 exports[`Storyshots Button Layout Example 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -660,7 +661,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -670,11 +675,6 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -1204,21 +1204,39 @@ exports[`Storyshots Button Layout Example 1`] = `
 
 exports[`Storyshots Button Link 1`] = `
 .c0 {
-  color: inherit;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
   outline: none;
 }
 
-.c0 .text {
-  top: calc(1em + 2em);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c1 {
@@ -1303,7 +1321,6 @@ exports[`Storyshots Button Link 1`] = `
   data-dark={false}
 >
   <a
-    aria-disabled={false}
     className="c0 c1"
     href="#"
     onClick={[Function]}
@@ -1315,6 +1332,7 @@ exports[`Storyshots Button Link 1`] = `
 
 exports[`Storyshots Button Navigation 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1333,7 +1351,11 @@ exports[`Storyshots Button Navigation 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -1343,11 +1365,6 @@ exports[`Storyshots Button Navigation 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -1443,6 +1460,7 @@ exports[`Storyshots Button Navigation 1`] = `
 
 exports[`Storyshots Button Nihongo 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1461,7 +1479,11 @@ exports[`Storyshots Button Nihongo 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -1471,11 +1493,6 @@ exports[`Storyshots Button Nihongo 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -1571,6 +1588,7 @@ exports[`Storyshots Button Nihongo 1`] = `
 
 exports[`Storyshots Button Overlay 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1589,7 +1607,11 @@ exports[`Storyshots Button Overlay 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -1599,11 +1621,6 @@ exports[`Storyshots Button Overlay 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -1699,6 +1716,7 @@ exports[`Storyshots Button Overlay 1`] = `
 
 exports[`Storyshots Button Primary 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1717,7 +1735,11 @@ exports[`Storyshots Button Primary 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -1727,11 +1749,6 @@ exports[`Storyshots Button Primary 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
@@ -1827,6 +1844,7 @@ exports[`Storyshots Button Primary 1`] = `
 
 exports[`Storyshots Button Small 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1845,7 +1863,11 @@ exports[`Storyshots Button Small 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -1855,11 +1877,6 @@ exports[`Storyshots Button Small 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
