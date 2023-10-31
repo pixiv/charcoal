@@ -1,11 +1,10 @@
-"use strict";(self.webpackChunkcharcoal_ui=self.webpackChunkcharcoal_ui||[]).push([[6983],{"./packages/react/dist/index.esm.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{BB:()=>useComponentAbstraction,h$:()=>ComponentAbstraction});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js"),styled_components__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./packages/styled/dist/index.esm.js"),_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__("./packages/utils/dist/index.esm.js"),react_spring__WEBPACK_IMPORTED_MODULE_7__=(__webpack_require__("./node_modules/warning/warning.js"),__webpack_require__("./packages/icons/dist/index.esm.js"),__webpack_require__("./node_modules/react-spring/dist/react-spring.esm.js")),DefaultValue={Link:react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function DefaultLink2({to,children,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a",{href:to,ref,...rest,children})}))},ComponentAbstractionContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext(DefaultValue);function ComponentAbstraction({children,components}){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ComponentAbstractionContext.Provider,{value:{...DefaultValue,...components},children})}function useComponentAbstraction(){return(0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ComponentAbstractionContext)}function unreachable(value){throw new Error(0===arguments.length?"unreachable":`unreachable (${JSON.stringify(value)})`)}var theme=(0,_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_2__.jG)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP),Clickable_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function Clickable2(props,ref){const{Link}=useComponentAbstraction();if("to"in props){const{onClick,disabled=!1,...rest}=props;return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(A,{...rest,as:disabled?void 0:Link,onClick:disabled?void 0:onClick,"aria-disabled":disabled,ref})}return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Button,{...props,ref})})),clickableCss=styled_components__WEBPACK_IMPORTED_MODULE_3__.iv`
-  /* Clickable style */
+"use strict";(self.webpackChunkcharcoal_ui=self.webpackChunkcharcoal_ui||[]).push([[6983],{"./packages/react/dist/index.esm.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{BB:()=>useComponentAbstraction,h$:()=>ComponentAbstraction});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js"),styled_components__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./packages/styled/dist/index.esm.js"),_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__("./packages/utils/dist/index.esm.js"),react_spring__WEBPACK_IMPORTED_MODULE_7__=(__webpack_require__("./node_modules/warning/warning.js"),__webpack_require__("./packages/icons/dist/index.esm.js"),__webpack_require__("./node_modules/react-spring/dist/react-spring.esm.js")),DefaultValue={Link:react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function DefaultLink2({to,children,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a",{href:to,ref,...rest,children})}))},ComponentAbstractionContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext(DefaultValue);function ComponentAbstraction({children,components}){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ComponentAbstractionContext.Provider,{value:{...DefaultValue,...components},children})}function useComponentAbstraction(){return(0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ComponentAbstractionContext)}function unreachable(value){throw new Error(0===arguments.length?"unreachable":`unreachable (${JSON.stringify(value)})`)}var theme=(0,_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_2__.jG)(styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP),Clickable_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function Clickable2(props,ref){const{Link}=useComponentAbstraction(),isLink="to"in props,as=isLink?Link:"button",ariaDisabled=!(!isLink||!0!==props.disabled)||void 0;let rest=props;if(isLink){const{disabled,..._rest}=props;rest=_rest}return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledClickableDiv,{...rest,ref,as,"aria-disabled":ariaDisabled})})),StyledClickableDiv=styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   cursor: pointer;
 
   ${_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__.t0} {
     cursor: default;
   }
-`,Button=styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.button`
+
   /* Reset button appearance */
   appearance: none;
   background: transparent;
@@ -38,21 +37,6 @@
     border-style: none;
     padding: 0;
   }
-
-  ${clickableCss}
-`,A=styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.span`
-  /* Reset a-tag appearance */
-  color: inherit;
-
-  &:focus {
-    outline: none;
-  }
-
-  .text {
-    top: calc(1em + 2em);
-  }
-
-  ${clickableCss}
 `;(0,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP)(Clickable_default)`
   width: ${p=>p.$fullWidth?"stretch":"min-content"};
   display: inline-grid;
@@ -752,4 +736,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_3__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.d1d3b8bb.iframe.bundle.js.map
+//# sourceMappingURL=6983.c8dc91b7.iframe.bundle.js.map
