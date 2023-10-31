@@ -83,13 +83,22 @@ const StyledButton = styled(Clickable)<StyledProps>`
   &:active[aria-disabled='false'] {
     color: var(--charcoal-${(p) => variantToFont(p.$variant)}-press);
   }
-  transition: 0.2s color;
+  background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)});
+  &:hover:not(:disabled):not([aria-disabled]),
+  &:hover[aria-disabled='false'] {
+    background-color: var(
+      --charcoal-${(p) => variantToBackground(p.$variant)}-hover
+    );
+  }
+  &:active:not(:disabled):not([aria-disabled]),
+  &:active[aria-disabled='false'] {
+    background-color: var(
+      --charcoal-${(p) => variantToBackground(p.$variant)}-press
+    );
+  }
+  transition: 0.2s color, 0.2s background-color;
 
-  ${(p) =>
-    theme((o) => [
-      o.bg[variantToBackground(p.$variant)].hover.press,
-      o.outline.default.focus,
-    ])}
+  ${theme((o) => o.outline.default.focus)}
 
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {

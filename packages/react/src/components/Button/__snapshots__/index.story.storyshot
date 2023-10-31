@@ -63,11 +63,11 @@ exports[`Storyshots Button Danger 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -82,13 +82,13 @@ exports[`Storyshots Button Danger 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-assertive-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-assertive-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-assertive-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-assertive-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -193,11 +193,11 @@ exports[`Storyshots Button Default 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -212,13 +212,13 @@ exports[`Storyshots Button Default 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -323,11 +323,11 @@ exports[`Storyshots Button Disabled 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -342,13 +342,13 @@ exports[`Storyshots Button Disabled 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -453,11 +453,11 @@ exports[`Storyshots Button Fixed 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -472,13 +472,13 @@ exports[`Storyshots Button Fixed 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -583,11 +583,11 @@ exports[`Storyshots Button Focus 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -602,13 +602,13 @@ exports[`Storyshots Button Focus 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -713,11 +713,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -732,13 +732,13 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -793,11 +793,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -812,13 +812,13 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c2:hover:not(:disabled):not([aria-disabled]),
-.c2:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface6-hover);
+.c2:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface6-hover );
 }
 
 .c2:active:not(:disabled):not([aria-disabled]),
-.c2:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface6-press);
+.c2:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface6-press );
 }
 
 .c2:not(:disabled):not([aria-disabled]):focus,
@@ -873,11 +873,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -892,13 +892,13 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c3:hover:not(:disabled):not([aria-disabled]),
-.c3:hover[aria-disabled=false] {
-  background-color: var(--charcoal-assertive-hover);
+.c3:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-assertive-hover );
 }
 
 .c3:active:not(:disabled):not([aria-disabled]),
-.c3:active[aria-disabled=false] {
-  background-color: var(--charcoal-assertive-press);
+.c3:active[aria-disabled='false'] {
+  background-color: var( --charcoal-assertive-press );
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus,
@@ -953,11 +953,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -972,13 +972,13 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c4:hover:not(:disabled):not([aria-disabled]),
-.c4:hover[aria-disabled=false] {
-  background-color: var(--charcoal-brand-hover);
+.c4:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-brand-hover );
 }
 
 .c4:active:not(:disabled):not([aria-disabled]),
-.c4:active[aria-disabled=false] {
-  background-color: var(--charcoal-brand-press);
+.c4:active[aria-disabled='false'] {
+  background-color: var( --charcoal-brand-press );
 }
 
 .c4:not(:disabled):not([aria-disabled]):focus,
@@ -1033,11 +1033,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -1052,13 +1052,13 @@ exports[`Storyshots Button Layout Example 1`] = `
 }
 
 .c5:hover:not(:disabled):not([aria-disabled]),
-.c5:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c5:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c5:active:not(:disabled):not([aria-disabled]),
-.c5:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c5:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c5:not(:disabled):not([aria-disabled]):focus,
@@ -1285,11 +1285,11 @@ exports[`Storyshots Button Link 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -1304,13 +1304,13 @@ exports[`Storyshots Button Link 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -1415,11 +1415,11 @@ exports[`Storyshots Button Navigation 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -1434,13 +1434,13 @@ exports[`Storyshots Button Navigation 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface6-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface6-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface6-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface6-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -1545,11 +1545,11 @@ exports[`Storyshots Button Nihongo 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -1564,13 +1564,13 @@ exports[`Storyshots Button Nihongo 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -1675,11 +1675,11 @@ exports[`Storyshots Button Overlay 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface4);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -1694,13 +1694,13 @@ exports[`Storyshots Button Overlay 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface4-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface4-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface4-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface4-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -1805,11 +1805,11 @@ exports[`Storyshots Button Primary 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text5);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -1824,13 +1824,13 @@ exports[`Storyshots Button Primary 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-brand-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-brand-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-brand-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-brand-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -1935,11 +1935,11 @@ exports[`Storyshots Button Small 1`] = `
   padding-right: 16px;
   padding-left: 16px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 32px;
 }
 
@@ -1954,13 +1954,13 @@ exports[`Storyshots Button Small 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,

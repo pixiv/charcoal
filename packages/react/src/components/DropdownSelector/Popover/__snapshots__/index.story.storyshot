@@ -63,11 +63,11 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   padding-right: 24px;
   padding-left: 24px;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
+  -webkit-transition: 0.2s color,0.2s background-color;
+  transition: 0.2s color,0.2s background-color;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
   height: 40px;
 }
 
@@ -82,13 +82,13 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
+.c1:hover[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-hover );
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+.c1:active[aria-disabled='false'] {
+  background-color: var( --charcoal-surface3-press );
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
