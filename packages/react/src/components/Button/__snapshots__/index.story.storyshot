@@ -64,8 +64,8 @@ exports[`Storyshots Button Danger 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -192,8 +192,8 @@ exports[`Storyshots Button Default 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -320,8 +320,8 @@ exports[`Storyshots Button Disabled 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -448,8 +448,8 @@ exports[`Storyshots Button Fixed 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -576,8 +576,8 @@ exports[`Storyshots Button Focus 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -704,8 +704,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -782,8 +782,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -860,8 +860,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -938,8 +938,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1016,8 +1016,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1266,8 +1266,8 @@ exports[`Storyshots Button Link 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1394,8 +1394,8 @@ exports[`Storyshots Button Navigation 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1522,8 +1522,8 @@ exports[`Storyshots Button Nihongo 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1650,8 +1650,8 @@ exports[`Storyshots Button Overlay 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface4);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1778,8 +1778,8 @@ exports[`Storyshots Button Primary 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 
@@ -1906,8 +1906,8 @@ exports[`Storyshots Button Small 1`] = `
   padding-left: 16px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 32px;
 }
 

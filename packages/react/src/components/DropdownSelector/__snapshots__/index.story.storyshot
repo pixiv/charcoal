@@ -924,8 +924,8 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s border-color;
-  transition: 0.2s color,0.2s background-color,0.2s border-color;
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
 }
 

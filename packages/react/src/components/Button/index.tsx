@@ -74,6 +74,9 @@ const StyledButton = styled(Clickable)<StyledProps>`
   ${(p) => (p.$size === 'M' ? horizontalPaddingMedium : horizontalPaddingSmall)}
 
   color: var(--charcoal-${(p) => variantToFont(p.$variant)});
+  background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)});
+  transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
+
   &:hover:not(:disabled):not([aria-disabled]),
   &:hover[aria-disabled='false'] {
     color: var(--charcoal-${(p) => variantToFont(p.$variant)}-hover);
@@ -82,7 +85,6 @@ const StyledButton = styled(Clickable)<StyledProps>`
   &:active[aria-disabled='false'] {
     color: var(--charcoal-${(p) => variantToFont(p.$variant)}-press);
   }
-  background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)});
   &:hover:not(:disabled):not([aria-disabled]),
   &:hover[aria-disabled='false'] {
     background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)}-hover);
@@ -110,7 +112,6 @@ const StyledButton = styled(Clickable)<StyledProps>`
     outline: none;
     box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
-  transition: 0.2s color, 0.2s background-color, 0.2s border-color;
 
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
