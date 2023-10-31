@@ -89,11 +89,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -113,6 +108,11 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -222,11 +222,6 @@ exports[`Storyshots Modal Default 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -246,6 +241,11 @@ exports[`Storyshots Modal Default 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -355,11 +355,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -379,6 +374,11 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -488,11 +488,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -512,6 +507,11 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div

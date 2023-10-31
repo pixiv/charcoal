@@ -61,10 +61,14 @@ const StyledButton = styled(Clickable)<StyledProps>`
       o.bg[variantToBackground(p.$variant)].hover.press,
       o.typography(14).bold.preserveHalfLeading,
       o.padding.horizontal(p.$size === 'M' ? 24 : 16),
-      o.disabled,
       o.borderRadius('oval'),
       o.outline.default.focus,
     ])}
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 
   /* よく考えたらheight=32って定義が存在しないな... */
   height: ${(p) => (p.$size === 'M' ? 40 : 32)}px;

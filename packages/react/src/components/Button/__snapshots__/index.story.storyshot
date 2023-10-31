@@ -89,11 +89,6 @@ exports[`Storyshots Button Danger 1`] = `
   background-color: var(--charcoal-assertive-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -113,6 +108,11 @@ exports[`Storyshots Button Danger 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -217,11 +217,6 @@ exports[`Storyshots Button Default 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -241,6 +236,11 @@ exports[`Storyshots Button Default 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -345,11 +345,6 @@ exports[`Storyshots Button Disabled 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -369,6 +364,11 @@ exports[`Storyshots Button Disabled 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -473,11 +473,6 @@ exports[`Storyshots Button Fixed 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -497,6 +492,11 @@ exports[`Storyshots Button Fixed 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -601,11 +601,6 @@ exports[`Storyshots Button Focus 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -625,6 +620,11 @@ exports[`Storyshots Button Focus 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -729,11 +729,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -753,6 +748,11 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c2 {
@@ -807,11 +807,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   background-color: var(--charcoal-surface6-press);
 }
 
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c2:not(:disabled):not([aria-disabled]):focus,
 .c2[aria-disabled=false]:focus,
 .c2:not(:disabled):not([aria-disabled]):active,
@@ -831,6 +826,11 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c2[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2:disabled,
+.c2[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c3 {
@@ -885,11 +885,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   background-color: var(--charcoal-assertive-press);
 }
 
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c3:not(:disabled):not([aria-disabled]):focus,
 .c3[aria-disabled=false]:focus,
 .c3:not(:disabled):not([aria-disabled]):active,
@@ -909,6 +904,11 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c3[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3:disabled,
+.c3[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c4 {
@@ -963,11 +963,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   background-color: var(--charcoal-brand-press);
 }
 
-.c4:disabled,
-.c4[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c4:not(:disabled):not([aria-disabled]):focus,
 .c4[aria-disabled=false]:focus,
 .c4:not(:disabled):not([aria-disabled]):active,
@@ -987,6 +982,11 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c4[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c4:disabled,
+.c4[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c5 {
@@ -1041,11 +1041,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c5:not(:disabled):not([aria-disabled]):focus,
 .c5[aria-disabled=false]:focus,
 .c5:not(:disabled):not([aria-disabled]):active,
@@ -1065,6 +1060,11 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c5[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c5:disabled,
+.c5[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -1291,11 +1291,6 @@ exports[`Storyshots Button Link 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -1315,6 +1310,11 @@ exports[`Storyshots Button Link 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -1419,11 +1419,6 @@ exports[`Storyshots Button Navigation 1`] = `
   background-color: var(--charcoal-surface6-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -1443,6 +1438,11 @@ exports[`Storyshots Button Navigation 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -1547,11 +1547,6 @@ exports[`Storyshots Button Nihongo 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -1571,6 +1566,11 @@ exports[`Storyshots Button Nihongo 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -1675,11 +1675,6 @@ exports[`Storyshots Button Overlay 1`] = `
   background-color: var(--charcoal-surface4-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -1699,6 +1694,11 @@ exports[`Storyshots Button Overlay 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -1803,11 +1803,6 @@ exports[`Storyshots Button Primary 1`] = `
   background-color: var(--charcoal-brand-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -1827,6 +1822,11 @@ exports[`Storyshots Button Primary 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
@@ -1931,11 +1931,6 @@ exports[`Storyshots Button Small 1`] = `
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
-}
-
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled=false]:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
@@ -1955,6 +1950,11 @@ exports[`Storyshots Button Small 1`] = `
 .c1[aria-disabled=false]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 <div
