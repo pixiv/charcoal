@@ -34,7 +34,8 @@ const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
     <StyledButton
       {...rest}
       disabled={disabled}
-      $variant={variant}
+      $background={variantToBackground(variant)}
+      $color={variantToFont(variant)}
       $size={size}
       $fullWidth={fixed}
       ref={ref}
@@ -54,7 +55,11 @@ const horizontalPaddingMedium = css`
   padding-left: 24px;
 `
 
-const StyledButton = styled(Clickable)<StyledProps>`
+type StyledButtonProps = Omit<StyledProps, '$variant'> & {
+  $background: ReturnType<typeof variantToBackground>
+  $color: ReturnType<typeof variantToFont>
+}
+const StyledButton = styled(Clickable)<StyledButtonProps>`
   width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
   align-items: center;
@@ -73,44 +78,27 @@ const StyledButton = styled(Clickable)<StyledProps>`
 
   ${(p) => (p.$size === 'M' ? horizontalPaddingMedium : horizontalPaddingSmall)}
 
-  color: var(--charcoal-${(p) => variantToFont(p.$variant)});
-  background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)});
+  color: var(--charcoal-${(p) => p.$color});
+  background-color: var(--charcoal-${(p) => p.$background});
   transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
 
-  &:hover:not(:disabled):not([aria-disabled]),
-  &:hover[aria-disabled='false'] {
-    color: var(--charcoal-${(p) => variantToFont(p.$variant)}-hover);
-  }
-  &:active:not(:disabled):not([aria-disabled]),
-  &:active[aria-disabled='false'] {
-    color: var(--charcoal-${(p) => variantToFont(p.$variant)}-press);
-  }
-  &:hover:not(:disabled):not([aria-disabled]),
-  &:hover[aria-disabled='false'] {
-    background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)}-hover);
-  }
-  &:active:not(:disabled):not([aria-disabled]),
-  &:active[aria-disabled='false'] {
-    background-color: var(--charcoal-${(p) => variantToBackground(p.$variant)}-press);
-  }
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:active,
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
 
-  &:not(:disabled):not([aria-disabled]):focus,
-  &[aria-disabled='false']:focus,
-  &:not(:disabled):not([aria-disabled]):active,
-  &[aria-disabled='false]:active {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-  }
-  &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-  &[aria-disabled='false']:focus:not(:focus-visible),
-  &:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-  &[aria-disabled='false]:active:not(:focus-visible) {
-    outline: none;
-  }
-  &:not(:disabled):not([aria-disabled]):focus-visible,
-  &[aria-disabled='false']:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    &:hover {
+      color: var(--charcoal-${(p) => p.$color}-hover);
+      background-color: var(--charcoal-${(p) => p.$background}-hover);
+    }
+    &:active {
+      color: var(--charcoal-${(p) => p.$color}-press);
+      background-color: var(--charcoal-${(p) => p.$background}-press);
+    }
   }
 
   &:disabled,

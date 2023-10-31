@@ -72,35 +72,34 @@ exports[`Storyshots Button Danger 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-assertive-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-assertive-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -200,35 +199,34 @@ exports[`Storyshots Button Default 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -328,35 +326,34 @@ exports[`Storyshots Button Disabled 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -456,35 +453,34 @@ exports[`Storyshots Button Fixed 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -584,35 +580,34 @@ exports[`Storyshots Button Focus 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -712,35 +707,34 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -790,35 +784,34 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c2:hover:not(:disabled):not([aria-disabled]),
 .c2:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c2:active:not(:disabled):not([aria-disabled]),
-.c2:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c2:hover:not(:disabled):not([aria-disabled]),
-.c2:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface6-hover);
 }
 
 .c2:active:not(:disabled):not([aria-disabled]),
 .c2:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface6-press);
 }
 
 .c2:not(:disabled):not([aria-disabled]):focus,
-.c2[aria-disabled='false']:focus,
-.c2:not(:disabled):not([aria-disabled]):active,
-.c2[aria-disabled='false]:active {
+.c2[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[aria-disabled='false']:focus:not(:focus-visible),
+.c2[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c2:not(:disabled):not([aria-disabled]):active,
+.c2[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c2:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[aria-disabled='false]:active:not(:focus-visible) {
+.c2[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -868,35 +861,34 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c3:hover:not(:disabled):not([aria-disabled]),
 .c3:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c3:active:not(:disabled):not([aria-disabled]),
-.c3:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c3:hover:not(:disabled):not([aria-disabled]),
-.c3:hover[aria-disabled='false'] {
   background-color: var(--charcoal-assertive-hover);
 }
 
 .c3:active:not(:disabled):not([aria-disabled]),
 .c3:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-assertive-press);
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus,
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false]:active {
+.c3[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[aria-disabled='false']:focus:not(:focus-visible),
+.c3[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c3:not(:disabled):not([aria-disabled]):active,
+.c3[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c3:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c3[aria-disabled='false]:active:not(:focus-visible) {
+.c3[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -946,35 +938,34 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c4:hover:not(:disabled):not([aria-disabled]),
 .c4:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c4:active:not(:disabled):not([aria-disabled]),
-.c4:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c4:hover:not(:disabled):not([aria-disabled]),
-.c4:hover[aria-disabled='false'] {
   background-color: var(--charcoal-brand-hover);
 }
 
 .c4:active:not(:disabled):not([aria-disabled]),
 .c4:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
 .c4:not(:disabled):not([aria-disabled]):focus,
-.c4[aria-disabled='false']:focus,
-.c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled='false]:active {
+.c4[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c4:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c4[aria-disabled='false']:focus:not(:focus-visible),
+.c4[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c4:not(:disabled):not([aria-disabled]):active,
+.c4[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c4:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c4[aria-disabled='false]:active:not(:focus-visible) {
+.c4[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1024,35 +1015,34 @@ exports[`Storyshots Button Layout Example 1`] = `
 .c5:hover:not(:disabled):not([aria-disabled]),
 .c5:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c5:active:not(:disabled):not([aria-disabled]),
-.c5:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c5:hover:not(:disabled):not([aria-disabled]),
-.c5:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c5:active:not(:disabled):not([aria-disabled]),
 .c5:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false]:active {
+.c5[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled='false']:focus:not(:focus-visible),
+.c5[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c5[aria-disabled='false]:active:not(:focus-visible) {
+.c5[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1274,35 +1264,34 @@ exports[`Storyshots Button Link 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1402,35 +1391,34 @@ exports[`Storyshots Button Navigation 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface6-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface6-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1530,35 +1518,34 @@ exports[`Storyshots Button Nihongo 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1658,35 +1645,34 @@ exports[`Storyshots Button Overlay 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface4-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface4-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1786,35 +1772,34 @@ exports[`Storyshots Button Primary 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text5-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text5-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-brand-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
@@ -1914,35 +1899,34 @@ exports[`Storyshots Button Small 1`] = `
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled='false'] {
   color: var(--charcoal-text2-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled='false'] {
   background-color: var(--charcoal-surface3-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false]:active {
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled='false]:active:not(:focus-visible) {
+.c1[aria-disabled='false']:active:not(:focus-visible) {
   outline: none;
 }
 
