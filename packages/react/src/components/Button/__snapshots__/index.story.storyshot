@@ -56,6 +56,7 @@ exports[`Storyshots Button Danger 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-assertive);
   font-size: 14px;
@@ -63,7 +64,6 @@ exports[`Storyshots Button Danger 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -184,6 +184,7 @@ exports[`Storyshots Button Default 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -191,7 +192,6 @@ exports[`Storyshots Button Default 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -312,6 +312,7 @@ exports[`Storyshots Button Disabled 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -319,7 +320,6 @@ exports[`Storyshots Button Disabled 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -440,6 +440,7 @@ exports[`Storyshots Button Fixed 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -447,7 +448,6 @@ exports[`Storyshots Button Fixed 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -568,6 +568,7 @@ exports[`Storyshots Button Focus 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -575,7 +576,6 @@ exports[`Storyshots Button Focus 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -696,6 +696,7 @@ exports[`Storyshots Button Layout Example 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -703,7 +704,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -774,6 +774,7 @@ exports[`Storyshots Button Layout Example 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface6);
   font-size: 14px;
@@ -781,7 +782,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -852,6 +852,7 @@ exports[`Storyshots Button Layout Example 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-assertive);
   font-size: 14px;
@@ -859,7 +860,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -930,6 +930,7 @@ exports[`Storyshots Button Layout Example 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-brand);
   font-size: 14px;
@@ -937,7 +938,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1008,6 +1008,7 @@ exports[`Storyshots Button Layout Example 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -1015,7 +1016,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1258,6 +1258,7 @@ exports[`Storyshots Button Link 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -1265,7 +1266,6 @@ exports[`Storyshots Button Link 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1386,6 +1386,7 @@ exports[`Storyshots Button Navigation 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface6);
   font-size: 14px;
@@ -1393,7 +1394,6 @@ exports[`Storyshots Button Navigation 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1514,6 +1514,7 @@ exports[`Storyshots Button Nihongo 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -1521,7 +1522,6 @@ exports[`Storyshots Button Nihongo 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1642,6 +1642,7 @@ exports[`Storyshots Button Overlay 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-surface4);
   font-size: 14px;
@@ -1649,7 +1650,6 @@ exports[`Storyshots Button Overlay 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1770,6 +1770,7 @@ exports[`Storyshots Button Primary 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text5);
   background-color: var(--charcoal-brand);
   font-size: 14px;
@@ -1777,7 +1778,6 @@ exports[`Storyshots Button Primary 1`] = `
   font-weight: bold;
   padding-right: 24px;
   padding-left: 24px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
@@ -1898,6 +1898,7 @@ exports[`Storyshots Button Small 1`] = `
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
+  border-radius: 999999px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   font-size: 14px;
@@ -1905,7 +1906,6 @@ exports[`Storyshots Button Small 1`] = `
   font-weight: bold;
   padding-right: 16px;
   padding-left: 16px;
-  border-radius: 999999px;
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 32px;
