@@ -260,6 +260,6 @@ const AssistiveText = styled.p<{ invalid: boolean }>`
       o.typography(14),
       o.margin.top(8),
       o.margin.bottom(0),
-      o.font[p.invalid ? 'assertive' : 'text1'],
+      o.font[p.invalid ? 'assertive' : 'text2'],
     ])}
 `
