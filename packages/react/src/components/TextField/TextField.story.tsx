@@ -67,7 +67,7 @@ HasAffix.args = {
 export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (
   <TextField
     label="Label"
-    placeholder="Icon prefix"
+    placeholder="作品を検索"
     prefix={
       <PrefixIconWrap>
         <pixiv-icon name="16/Search" />
@@ -79,7 +79,6 @@ export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (
 )
 
 const PrefixIconWrap = styled.div`
+  height: 16px;
   color: ${({ theme }) => theme.color.text3};
-  margin-top: 2px;
-  margin-right: 4px;
 `
