@@ -2,10 +2,11 @@ import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
-import FieldLabel, { FieldLabelProps } from '../FieldLabel'
+import { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
-import { theme } from '../../styled'
+import { AssistiveText, TextFieldLabel } from '../TextField'
+import { useFocusWithClick } from '../TextField/useFocusWithClick'
 
 type DOMProps = Omit<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,
@@ -115,6 +116,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       }
     }, [autoHeight, syncHeight])
 
+    const containerRef = useRef(null)
+
+    useFocusWithClick(containerRef, ariaRef)
+
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
         <TextFieldLabel
@@ -126,6 +131,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
         <StyledTextareaContainer
+          ref={containerRef}
           invalid={invalid}
           rows={showCount ? rows + 1 : rows}
         >
@@ -163,32 +169,29 @@ const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
   ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
 `
 
-const TextFieldLabel = styled(FieldLabel)`
-  ${theme((o) => o.margin.bottom(8))}
-`
-
 const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
 
-  ${(p) =>
-    theme((o) => [
-      o.bg.surface3.hover,
-      o.outline.default.focus,
-      p.invalid && o.outline.assertive,
-      o.font.text2,
-      o.borderRadius(4),
-    ])}
-
-  &:focus-within {
-    ${(p) =>
-      theme((o) => (p.invalid ? o.outline.assertive : o.outline.default))}
-  }
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  transition: 0.2s background-color, 0.2s box-shadow;
 
   ${({ rows }) => css`
     height: calc(22px * ${rows} + 18px);
   `};
+
+  :not(:disabled):not([aria-disabled]):hover,
+  [aria-disabled='false']:hover {
+    background-color: var(--charcoal-surface3-hover);
+  }
+
+  &:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 4px
+      ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
+  }
 `
 
 const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
@@ -197,6 +200,7 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   resize: none;
   font-family: inherit;
   color: inherit;
+  box-sizing: border-box;
 
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
@@ -204,10 +208,11 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0 ${(p) => (p.noBottomPadding ? 0 : '')};
+  padding: calc(9px / 0.875) calc(8px / 0.875)
+    ${(p) => (p.noBottomPadding ? 0 : '')};
 
-  ${({ rows = 1 }) => css`
-    height: calc(22px / 0.875 * ${rows});
+  ${({ rows = 1, noBottomPadding }) => css`
+    height: calc(22px / 0.875 * ${rows} + ${noBottomPadding ? 9 : 20}px);
   `};
 
   /* Display box-shadow for iOS Safari */
@@ -216,16 +221,8 @@ const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`
   background: none;
 
   &::placeholder {
-    ${theme((o) => o.font.text3)}
+    color: var(--charcoal-text3);
   }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 `
 
 const MultiLineCounter = styled.span`
@@ -233,15 +230,7 @@ const MultiLineCounter = styled.span`
   bottom: 9px;
   right: 8px;
 
-  ${theme((o) => [o.typography(14).preserveHalfLeading, o.font.text3])}
-`
-
-const AssistiveText = styled.p<{ invalid: boolean }>`
-  ${(p) =>
-    theme((o) => [
-      o.typography(14),
-      o.margin.top(8),
-      o.margin.bottom(0),
-      o.font[p.invalid ? 'assertive' : 'text2'],
-    ])}
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--charcoal-text3);
 `
