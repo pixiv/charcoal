@@ -201,6 +201,7 @@ exports[`Storyshots TextField Default 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  color: var(--charcoal-text2);
 }
 
 .c9::-webkit-input-placeholder {
@@ -480,6 +481,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  color: var(--charcoal-text2);
 }
 
 .c8::-webkit-input-placeholder {
@@ -789,6 +791,7 @@ exports[`Storyshots TextField Has Count 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  color: var(--charcoal-text2);
 }
 
 .c9::-webkit-input-placeholder {
@@ -1123,6 +1126,7 @@ exports[`Storyshots TextField Has Label 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  color: var(--charcoal-text2);
 }
 
 .c11::-webkit-input-placeholder {
@@ -1503,6 +1507,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   -moz-appearance: none;
   appearance: none;
   background: transparent;
+  color: var(--charcoal-text2);
 }
 
 .c9::-webkit-input-placeholder {

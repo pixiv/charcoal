@@ -5,7 +5,6 @@ import * as React from 'react'
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { theme } from '../../styled'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 import { useFocusWithClick } from './useFocusWithClick'
 
@@ -230,8 +229,9 @@ const StyledInput = styled.input<{
   appearance: none;
   background: transparent;
 
+  color: var(--charcoal-text2);
   &::placeholder {
-    ${theme((o) => o.font.text3)}
+    color: var(--charcoal-text3);
   }
 `
 
