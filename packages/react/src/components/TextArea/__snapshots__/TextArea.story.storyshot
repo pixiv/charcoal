@@ -1183,7 +1183,7 @@ exports[`Storyshots TextArea Has Label 1`] = `
   display: flow-root;
   margin-top: 8px;
   margin-bottom: 0px;
-  color: var(--charcoal-text1);
+  color: var(--charcoal-text2);
 }
 
 .c13::before {

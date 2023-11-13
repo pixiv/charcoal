@@ -1146,7 +1146,7 @@ exports[`Storyshots TextField Has Label 1`] = `
   line-height: 22px;
   margin-top: 4px;
   margin-bottom: -4px;
-  color: var(--charcoal-text1);
+  color: var(--charcoal-text2);
 }
 
 .c0 {

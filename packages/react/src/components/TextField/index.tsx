@@ -246,5 +246,5 @@ const AssistiveText = styled.p<{ invalid: boolean }>`
   line-height: 22px;
   margin-top: 4px;
   margin-bottom: -4px;
-  color: ${(p) => `var(--charcoal-${p.invalid ? `assertive` : `text1`})`};
+  color: ${(p) => `var(--charcoal-${p.invalid ? `assertive` : `text2`})`};
 `
