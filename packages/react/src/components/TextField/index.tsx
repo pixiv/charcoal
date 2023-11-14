@@ -5,8 +5,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { theme } from '../../styled'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
+import { useFocusWithClick } from './useFocusWithClick'
 
 type DOMProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -64,13 +64,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
 
     const { visuallyHiddenProps } = useVisuallyHidden()
     const ariaRef = useRef<HTMLInputElement>(null)
-    const prefixRef = useRef<HTMLSpanElement>(null)
-    const suffixRef = useRef<HTMLSpanElement>(null)
     const [count, setCount] = useState(
       countCodePointsInString(props.value ?? '')
     )
-    const [prefixWidth, setPrefixWidth] = useState(0)
-    const [suffixWidth, setSuffixWidth] = useState(0)
 
     const nonControlled = props.value === undefined
     const handleChange = useCallback(
@@ -106,26 +102,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         ariaRef
       )
 
-    useEffect(() => {
-      const prefixObserver = new ResizeObserver((entries) => {
-        setPrefixWidth(entries[0].contentRect.width)
-      })
-      const suffixObserver = new ResizeObserver((entries) => {
-        setSuffixWidth(entries[0].contentRect.width)
-      })
+    const containerRef = useRef(null)
 
-      if (prefixRef.current !== null) {
-        prefixObserver.observe(prefixRef.current)
-      }
-      if (suffixRef.current !== null) {
-        suffixObserver.observe(suffixRef.current)
-      }
-
-      return () => {
-        suffixObserver.disconnect()
-        prefixObserver.disconnect()
-      }
-    }, [])
+    useFocusWithClick(containerRef, ariaRef)
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
@@ -137,25 +116,23 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           {...labelProps}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
-        <StyledInputContainer>
-          <PrefixContainer ref={prefixRef}>
-            <Affix>{prefix}</Affix>
-          </PrefixContainer>
+        <StyledInputContainer ref={containerRef} invalid={invalid}>
+          {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
           <StyledInput
             ref={mergeRefs(forwardRef, ariaRef)}
             invalid={invalid}
-            extraLeftPadding={prefixWidth}
-            extraRightPadding={suffixWidth}
             {...inputProps}
           />
-          <SuffixContainer ref={suffixRef}>
-            <Affix>{suffix}</Affix>
-            {showCount && (
-              <SingleLineCounter>
-                {maxLength !== undefined ? `${count}/${maxLength}` : count}
-              </SingleLineCounter>
-            )}
-          </SuffixContainer>
+          {(suffix || showCount) && (
+            <SuffixContainer>
+              {suffix}
+              {showCount && (
+                <SingleLineCounter>
+                  {maxLength !== undefined ? `${count}/${maxLength}` : count}
+                </SingleLineCounter>
+              )}
+            </SuffixContainer>
+          )}
         </StyledInputContainer>
         {assistiveText != null && assistiveText.length !== 0 && (
           <AssistiveText
@@ -180,43 +157,57 @@ const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
 `
 
 const TextFieldLabel = styled(FieldLabel)`
-  ${theme((o) => o.margin.bottom(8))}
+  margin-bottom: 8px;
 `
 
-const StyledInputContainer = styled.div`
+const StyledInputContainer = styled.div<{
+  invalid: boolean
+}>`
+  display: flex;
   height: 40px;
-  display: grid;
-  position: relative;
+
+  transition: 0.2s background-color, 0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+
+  :not(:disabled):not([aria-disabled]):hover,
+  [aria-disabled='false']:hover {
+    background-color: var(--charcoal-surface3-hover);
+  }
+
+  :not(:disabled):not([aria-disabled]):active,
+  [aria-disabled='false']:active {
+    outline: none;
+    box-shadow: 0 0 0 4px
+      ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
+  }
+
+  :focus-within {
+    outline: none;
+    box-shadow: 0 0 0 4px
+      ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
+  }
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
 `
 
-const PrefixContainer = styled.span`
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  transform: translateY(-50%);
-  z-index: 1;
+const PrefixContainer = styled.div`
+  display: flex;
+  padding-left: 8px;
+  align-items: center;
 `
 
 const SuffixContainer = styled.span`
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-
   display: flex;
+  align-items: center;
   gap: 8px;
-`
-
-const Affix = styled.span`
-  user-select: none;
-
-  ${theme((o) => [o.typography(14).preserveHalfLeading, o.font.text2])}
 `
 
 const StyledInput = styled.input<{
   invalid: boolean
-  extraLeftPadding: number
-  extraRightPadding: number
 }>`
   border: none;
   box-sizing: border-box;
@@ -230,36 +221,30 @@ const StyledInput = styled.input<{
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-left: calc((8px + ${(p) => p.extraLeftPadding}px) / 0.875);
-  padding-right: calc((8px + ${(p) => p.extraRightPadding}px) / 0.875);
+  padding-left: 0;
+  padding-right: 0;
   border-radius: calc(4px / 0.875);
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
+  background: transparent;
 
-  ${(p) =>
-    theme((o) => [
-      o.bg.surface3.hover,
-      o.outline.default.focus,
-      p.invalid && o.outline.assertive,
-      o.font.text2,
-    ])}
-
+  color: var(--charcoal-text2);
   &::placeholder {
-    ${theme((o) => o.font.text3)}
+    color: var(--charcoal-text3);
   }
 `
 
 const SingleLineCounter = styled.span`
-  ${theme((o) => [o.typography(14).preserveHalfLeading, o.font.text3])}
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--charcoal-text3);
 `
 
 const AssistiveText = styled.p<{ invalid: boolean }>`
-  ${(p) =>
-    theme((o) => [
-      o.typography(14),
-      o.margin.top(8),
-      o.margin.bottom(0),
-      o.font[p.invalid ? 'assertive' : 'text1'],
-    ])}
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  color: ${(p) => `var(--charcoal-${p.invalid ? `assertive` : `text2`})`};
 `
