@@ -2,7 +2,7 @@ import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import * as React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
@@ -116,7 +116,11 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           {...labelProps}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
-        <StyledInputContainer ref={containerRef} invalid={invalid}>
+        <StyledInputContainer
+          ref={containerRef}
+          invalid={invalid}
+          aria-disabled={disabled === true ? true : undefined}
+        >
           {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
           <StyledInput
             ref={mergeRefs(forwardRef, ariaRef)}
@@ -165,10 +169,14 @@ const StyledInputContainer = styled.div<{
 }>`
   display: flex;
   height: 40px;
-
   transition: 0.2s background-color, 0.2s box-shadow;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
 
   :not(:disabled):not([aria-disabled]):hover,
   [aria-disabled='false']:hover {
@@ -187,11 +195,12 @@ const StyledInputContainer = styled.div<{
     box-shadow: 0 0 0 4px
       ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
   }
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
+
+  ${(p) =>
+    p.invalid &&
+    css`
+      box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+    `}
 `
 
 const PrefixContainer = styled.div`
@@ -209,6 +218,7 @@ const SuffixContainer = styled.span`
 const StyledInput = styled.input<{
   invalid: boolean
 }>`
+  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -217,7 +227,7 @@ const StyledInput = styled.input<{
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
   transform: scale(0.875);
-  width: calc(100% / 0.875);
+  min-width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
