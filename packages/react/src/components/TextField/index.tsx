@@ -120,6 +120,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           ref={containerRef}
           invalid={invalid}
           aria-disabled={disabled === true ? true : undefined}
+          hasPrefix={prefix != null}
+          hasSuffix={suffix != null || showCount}
         >
           {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
           <StyledInput
@@ -166,8 +168,14 @@ const TextFieldLabel = styled(FieldLabel)`
 
 const StyledInputContainer = styled.div<{
   invalid: boolean
+  hasPrefix: boolean
+  hasSuffix: boolean
 }>`
-  display: flex;
+  display: grid;
+  grid-template-columns: ${(p) =>
+    [p.hasPrefix && 'auto', '1fr', p.hasSuffix && 'auto']
+      .filter(Boolean)
+      .join(' ')};
   height: 40px;
   transition: 0.2s background-color, 0.2s box-shadow;
   color: var(--charcoal-text2);
@@ -218,7 +226,6 @@ const SuffixContainer = styled.span`
 const StyledInput = styled.input<{
   invalid: boolean
 }>`
-  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -227,7 +234,7 @@ const StyledInput = styled.input<{
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
   transform: scale(0.875);
-  min-width: calc(100% / 0.875);
+  width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);

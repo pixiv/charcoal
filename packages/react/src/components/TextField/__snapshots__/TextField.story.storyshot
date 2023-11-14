@@ -147,10 +147,8 @@ exports[`Storyshots TextField Default 1`] = `
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   height: 40px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
@@ -180,10 +178,6 @@ exports[`Storyshots TextField Default 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -194,7 +188,7 @@ exports[`Storyshots TextField Default 1`] = `
   -webkit-transform: scale(0.875);
   -ms-transform: scale(0.875);
   transform: scale(0.875);
-  min-width: calc(100% / 0.875);
+  width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
@@ -407,10 +401,8 @@ exports[`Storyshots TextField Has Affix 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   height: 40px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
@@ -464,10 +456,6 @@ exports[`Storyshots TextField Has Affix 1`] = `
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -478,7 +466,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
   -webkit-transform: scale(0.875);
   -ms-transform: scale(0.875);
   transform: scale(0.875);
-  min-width: calc(100% / 0.875);
+  width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
@@ -733,10 +721,8 @@ exports[`Storyshots TextField Has Count 1`] = `
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   height: 40px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
@@ -778,10 +764,6 @@ exports[`Storyshots TextField Has Count 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -792,7 +774,7 @@ exports[`Storyshots TextField Has Count 1`] = `
   -webkit-transform: scale(0.875);
   -ms-transform: scale(0.875);
   transform: scale(0.875);
-  min-width: calc(100% / 0.875);
+  width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
@@ -1084,10 +1066,8 @@ exports[`Storyshots TextField Has Label 1`] = `
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   height: 40px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
@@ -1117,10 +1097,6 @@ exports[`Storyshots TextField Has Label 1`] = `
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1131,7 +1107,7 @@ exports[`Storyshots TextField Has Label 1`] = `
   -webkit-transform: scale(0.875);
   -ms-transform: scale(0.875);
   transform: scale(0.875);
-  min-width: calc(100% / 0.875);
+  width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
@@ -1445,10 +1421,8 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   height: 40px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
@@ -1502,10 +1476,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1516,7 +1486,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   -webkit-transform: scale(0.875);
   -ms-transform: scale(0.875);
   transform: scale(0.875);
-  min-width: calc(100% / 0.875);
+  width: calc(100% / 0.875);
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
