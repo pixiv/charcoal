@@ -2,8 +2,11 @@ import { useRef, CSSProperties, useState } from 'react'
 import { Story } from '../../../_lib/compat'
 import Popover, { PopoverProps } from '..'
 import Button from '../../Button'
+import TextField from '../../TextField'
 
-function Base(props: { style?: CSSProperties }) {
+export function PopoverButton(
+  props: { style?: CSSProperties; text?: string } & Partial<PopoverProps>
+) {
   const [isOpen, setIsOpen] = useState(false)
   const triggerRef = useRef(null)
   return (
@@ -17,7 +20,7 @@ function Base(props: { style?: CSSProperties }) {
         style={props.style}
         ref={triggerRef}
       >
-        button
+        {props.text ?? 'open'}
       </Button>
       {isOpen && (
         <Popover
@@ -26,43 +29,49 @@ function Base(props: { style?: CSSProperties }) {
             setIsOpen(false)
           }}
           triggerRef={triggerRef}
+          {...props}
         >
-          <div
-            style={{
-              padding: '8px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '8px',
+          <PopoverContent
+            onClose={() => {
+              setIsOpen(false)
             }}
-          >
-            <Button
-              onClick={() => {
-                alert('ok')
-                setIsOpen(false)
-              }}
-              variant="Primary"
-            >
-              ok
-            </Button>
-            <Button
-              onClick={() => {
-                alert('close')
-                setIsOpen(false)
-              }}
-            >
-              close
-            </Button>
-            <div
-              style={{
-                backgroundColor: 'red',
-              }}
-            ></div>
-          </div>
+          />
         </Popover>
       )}
     </>
+  )
+}
+
+export function PopoverContent({
+  onClose,
+  ...rest
+}: { onClose: () => void } & React.ComponentProps<'div'>) {
+  return (
+    <div
+      {...rest}
+      style={{
+        minWidth: '216px',
+        boxSizing: 'border-box',
+        padding: '16px',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        gap: '16px',
+        ...rest.style,
+      }}
+    >
+      <TextField label="text" showLabel placeholder="text" />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'end',
+        }}
+      >
+        <Button onClick={onClose} variant="Primary">
+          ok
+        </Button>
+      </div>
+    </div>
   )
 }
 
@@ -76,7 +85,7 @@ export const Basic: Story<PopoverProps> = () => {
         { bottom: 16, right: 16 },
         { left: '50%', top: '50%' },
       ].map((style, i) => (
-        <Base key={i} style={{ position: 'absolute', ...style }} />
+        <PopoverButton key={i} style={{ position: 'absolute', ...style }} />
       ))}
     </>
   )

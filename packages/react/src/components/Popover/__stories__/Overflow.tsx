@@ -2,6 +2,7 @@ import { useRef, CSSProperties, useState } from 'react'
 import { Story } from '../../../_lib/compat'
 import Popover, { PopoverProps } from '..'
 import Button from '../../Button'
+import { PopoverContent } from './Basic'
 
 function Base(props: { style?: CSSProperties }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,40 +28,14 @@ function Base(props: { style?: CSSProperties }) {
           }}
           triggerRef={triggerRef}
         >
-          <div
+          <PopoverContent
             style={{
-              padding: '8px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '8px',
-              height: '500px',
+              minHeight: '500px',
             }}
-          >
-            <Button
-              onClick={() => {
-                alert('ok')
-                setIsOpen(false)
-              }}
-              variant="Primary"
-            >
-              ok
-            </Button>
-            <Button
-              onClick={() => {
-                alert('close')
-                setIsOpen(false)
-              }}
-            >
-              close
-            </Button>
-            <div
-              style={{
-                backgroundColor: 'red',
-              }}
-            ></div>
-          </div>
+            onClose={() => {
+              setIsOpen(false)
+            }}
+          />
         </Popover>
       )}
     </>
