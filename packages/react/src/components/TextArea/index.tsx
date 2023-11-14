@@ -134,6 +134,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={containerRef}
           invalid={invalid}
           rows={showCount ? rows + 1 : rows}
+          aria-disabled={disabled === true ? 'true' : undefined}
         >
           <StyledTextarea
             ref={mergeRefs(textareaRef, forwardRef, ariaRef)}
@@ -182,16 +183,21 @@ const StyledTextareaContainer = styled.div<{ rows: number; invalid: boolean }>`
     height: calc(22px * ${rows} + 18px);
   `};
 
-  :not(:disabled):not([aria-disabled]):hover,
+  :not([aria-disabled]):hover,
   [aria-disabled='false']:hover {
     background-color: var(--charcoal-surface3-hover);
   }
-
-  &:focus-within {
+  :focus-within {
     outline: none;
     box-shadow: 0 0 0 4px
       ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
   }
+
+  ${(p) =>
+    p.invalid &&
+    css`
+      box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+    `}
 `
 
 const StyledTextarea = styled.textarea<{ noBottomPadding: boolean }>`

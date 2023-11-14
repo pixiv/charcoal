@@ -121,7 +121,7 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c6:not(:disabled):not([aria-disabled]):hover,
+.c6:not([aria-disabled]):hover,
 .c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
@@ -385,7 +385,7 @@ exports[`Storyshots TextArea Default 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
+.c8:not([aria-disabled]):hover,
 .c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
@@ -665,7 +665,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
   height: calc(22px * 5 + 18px);
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
+.c8:not([aria-disabled]):hover,
 .c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
@@ -995,7 +995,7 @@ exports[`Storyshots TextArea Has Label 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c10:not(:disabled):not([aria-disabled]):hover,
+.c10:not([aria-disabled]):hover,
 .c10 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
