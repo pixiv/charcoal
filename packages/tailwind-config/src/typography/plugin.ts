@@ -53,7 +53,7 @@ const typographyPlugin = plugin(({ addUtilities }) => {
       },
     },
     {
-      variants: ['responsive'],
+      respectPrefix: true,
     }
   )
 })

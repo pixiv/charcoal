@@ -4,7 +4,7 @@ const rootConfig = {
   passWithNoTests: true,
 }
 
-// strictの場合は事前に`yarn build`が必要
+// strictの場合は事前に`build`が必要
 export const config = () =>
   process.env.USE_STRICT === '1' ? strictConfig() : defaultConfig()
 

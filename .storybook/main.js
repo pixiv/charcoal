@@ -49,7 +49,7 @@ module.exports = {
     return config
   },
   // 実験的にviteをpreviewビルドでviteを利用する
-  // CLIENT_PORT=443 yarn storybook:experimental-vite -p 6007 --no-manager-cache
+  // CLIENT_PORT=443 pnpm storybook:experimental-vite -p 6007 --no-manager-cache
   ...(process.env.USE_VITE === '1'
     ? {
         framework: {
