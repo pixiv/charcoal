@@ -13,6 +13,7 @@
     "@charcoal-ui/icons": "../packages/icons",
     "@charcoal-ui/react": "../packages/react",
     "@charcoal-ui/styled": "../packages/styled",
+    "@charcoal-ui/tailwind-react": "../packages/tailwind-react",
     "@charcoal-ui/theme": "../packages/theme",
     "@charcoal-ui/utils": "../packages/utils",
     "highlight.js": "^11.7.0",
@@ -26,8 +27,11 @@
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "@types/styled-components": "^5.1.26",
+    "autoprefixer": "^10.4.16",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.0.4"
   },
   "resolutions": {
