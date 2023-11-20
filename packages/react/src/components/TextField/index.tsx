@@ -156,7 +156,7 @@ const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
   ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
 `
 
-const TextFieldLabel = styled(FieldLabel)`
+export const TextFieldLabel = styled(FieldLabel)`
   margin-bottom: 8px;
 `
 
@@ -241,7 +241,7 @@ const SingleLineCounter = styled.span`
   color: var(--charcoal-text3);
 `
 
-const AssistiveText = styled.p<{ invalid: boolean }>`
+export const AssistiveText = styled.p<{ invalid: boolean }>`
   font-size: 14px;
   line-height: 22px;
   margin-top: 4px;
