@@ -2,7 +2,7 @@ import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import * as React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
@@ -116,7 +116,13 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           {...labelProps}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
-        <StyledInputContainer ref={containerRef} invalid={invalid}>
+        <StyledInputContainer
+          ref={containerRef}
+          invalid={invalid}
+          aria-disabled={disabled === true ? true : undefined}
+          hasPrefix={prefix != null}
+          hasSuffix={suffix != null || showCount}
+        >
           {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
           <StyledInput
             ref={mergeRefs(forwardRef, ariaRef)}
@@ -162,13 +168,23 @@ export const TextFieldLabel = styled(FieldLabel)`
 
 const StyledInputContainer = styled.div<{
   invalid: boolean
+  hasPrefix: boolean
+  hasSuffix: boolean
 }>`
-  display: flex;
+  display: grid;
+  grid-template-columns: ${(p) =>
+    [p.hasPrefix && 'auto', '1fr', p.hasSuffix && 'auto']
+      .filter(Boolean)
+      .join(' ')};
   height: 40px;
-
   transition: 0.2s background-color, 0.2s box-shadow;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
 
   :not(:disabled):not([aria-disabled]):hover,
   [aria-disabled='false']:hover {
@@ -187,11 +203,12 @@ const StyledInputContainer = styled.div<{
     box-shadow: 0 0 0 4px
       ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
   }
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
+
+  ${(p) =>
+    p.invalid &&
+    css`
+      box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+    `}
 `
 
 const PrefixContainer = styled.div`
