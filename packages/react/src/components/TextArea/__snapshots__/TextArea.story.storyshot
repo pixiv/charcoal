@@ -96,6 +96,10 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   margin-left: auto;
 }
 
+.c2 {
+  margin-bottom: 8px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -106,64 +110,34 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c7 {
+.c6 {
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
-  background-color: var(--charcoal-surface3);
   color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
   border-radius: 4px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
   height: calc(22px * 4 + 18px);
 }
 
-.c7:hover:not(:disabled):not([aria-disabled]),
-.c7:hover[aria-disabled=false] {
+.c6:not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled=false]:focus,
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled=false]:active {
+.c6:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c7:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c7[aria-disabled=false]:focus:not(:focus-visible),
-.c7:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c7[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7:focus-within {
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c7:focus-within.c6:focus-within:not(:disabled):not([aria-disabled]),
-.c7:focus-within.c7:focus-within[aria-disabled=false] {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8 {
+.c7 {
   border: none;
   outline: none;
   resize: none;
   font-family: inherit;
   color: inherit;
+  box-sizing: border-box;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -173,37 +147,28 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0;
-  height: calc(22px / 0.875 * 4);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: none;
-  -ms-overflow-style: none;
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
 }
 
-.c8::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8::-moz-placeholder {
+.c7::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8::placeholder {
+.c7::placeholder {
   color: var(--charcoal-text3);
-}
-
-.c8::-webkit-scrollbar {
-  display: none;
 }
 
 <div
@@ -245,12 +210,12 @@ exports[`Storyshots TextArea Auto Height 1`] = `
       </div>
     </div>
     <div
-      className="c6 c7"
+      className="c6"
       rows={4}
     >
       <textarea
         aria-labelledby="test-id"
-        className="c8"
+        className="c7"
         disabled={false}
         id="test-id"
         onChange={[Function]}
@@ -395,6 +360,10 @@ exports[`Storyshots TextArea Default 1`] = `
   margin-left: auto;
 }
 
+.c3 {
+  margin-bottom: 8px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -405,64 +374,34 @@ exports[`Storyshots TextArea Default 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  margin-bottom: 8px;
-}
-
-.c9 {
+.c8 {
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
-  background-color: var(--charcoal-surface3);
   color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
   border-radius: 4px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
   height: calc(22px * 4 + 18px);
 }
 
-.c9:hover:not(:disabled):not([aria-disabled]),
-.c9:hover[aria-disabled=false] {
+.c8:not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c9:not(:disabled):not([aria-disabled]):focus,
-.c9[aria-disabled=false]:focus,
-.c9:not(:disabled):not([aria-disabled]):active,
-.c9[aria-disabled=false]:active {
+.c8:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c9[aria-disabled=false]:focus:not(:focus-visible),
-.c9:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c9[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus-visible,
-.c9[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9:focus-within {
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c9:focus-within.c8:focus-within:not(:disabled):not([aria-disabled]),
-.c9:focus-within.c9:focus-within[aria-disabled=false] {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c10 {
+.c9 {
   border: none;
   outline: none;
   resize: none;
   font-family: inherit;
   color: inherit;
+  box-sizing: border-box;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -472,37 +411,28 @@ exports[`Storyshots TextArea Default 1`] = `
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0;
-  height: calc(22px / 0.875 * 4);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: none;
-  -ms-overflow-style: none;
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
 }
 
-.c10::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
-}
-
-.c10::-webkit-scrollbar {
-  display: none;
 }
 
 .c0 {
@@ -559,12 +489,12 @@ exports[`Storyshots TextArea Default 1`] = `
         </div>
       </div>
       <div
-        className="c8 c9"
+        className="c8"
         rows={4}
       >
         <textarea
           aria-labelledby="test-id"
-          className="c10"
+          className="c9"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -710,6 +640,10 @@ exports[`Storyshots TextArea Has Count 1`] = `
   margin-left: auto;
 }
 
+.c3 {
+  margin-bottom: 8px;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -720,64 +654,34 @@ exports[`Storyshots TextArea Has Count 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  margin-bottom: 8px;
-}
-
-.c9 {
+.c8 {
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
-  background-color: var(--charcoal-surface3);
   color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
   border-radius: 4px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
   height: calc(22px * 5 + 18px);
 }
 
-.c9:hover:not(:disabled):not([aria-disabled]),
-.c9:hover[aria-disabled=false] {
+.c8:not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c9:not(:disabled):not([aria-disabled]):focus,
-.c9[aria-disabled=false]:focus,
-.c9:not(:disabled):not([aria-disabled]):active,
-.c9[aria-disabled=false]:active {
+.c8:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c9[aria-disabled=false]:focus:not(:focus-visible),
-.c9:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c9[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus-visible,
-.c9[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9:focus-within {
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c9:focus-within.c8:focus-within:not(:disabled):not([aria-disabled]),
-.c9:focus-within.c9:focus-within[aria-disabled=false] {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c10 {
+.c9 {
   border: none;
   outline: none;
   resize: none;
   font-family: inherit;
   color: inherit;
+  box-sizing: border-box;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -787,45 +691,36 @@ exports[`Storyshots TextArea Has Count 1`] = `
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0 0;
-  height: calc(22px / 0.875 * 4);
+  padding: calc(9px / 0.875) calc(8px / 0.875) 0;
+  height: calc(22px / 0.875 * 4 + 9px);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: none;
-  -ms-overflow-style: none;
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
 }
 
-.c10::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::-webkit-scrollbar {
-  display: none;
-}
-
-.c11 {
+.c10 {
   position: absolute;
   bottom: 9px;
   right: 8px;
-  font-size: 14px;
   line-height: 22px;
+  font-size: 14px;
   color: var(--charcoal-text3);
 }
 
@@ -883,12 +778,12 @@ exports[`Storyshots TextArea Has Count 1`] = `
         </div>
       </div>
       <div
-        className="c8 c9"
+        className="c8"
         rows={5}
       >
         <textarea
           aria-labelledby="test-id"
-          className="c10"
+          className="c9"
           disabled={false}
           id="test-id"
           maxLength={100}
@@ -898,7 +793,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
           rows={4}
         />
         <span
-          className="c11"
+          className="c10"
         >
           0/100
         </span>
@@ -1067,6 +962,18 @@ exports[`Storyshots TextArea Has Label 1`] = `
   margin-left: auto;
 }
 
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c12 {
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  color: var(--charcoal-text2);
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1077,64 +984,34 @@ exports[`Storyshots TextArea Has Label 1`] = `
   flex-direction: column;
 }
 
-.c3 {
-  margin-bottom: 8px;
-}
-
-.c11 {
+.c10 {
   position: relative;
   overflow: hidden;
-  padding: 0 8px;
-  background-color: var(--charcoal-surface3);
   color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
   border-radius: 4px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
   height: calc(22px * 4 + 18px);
 }
 
-.c11:hover:not(:disabled):not([aria-disabled]),
-.c11:hover[aria-disabled=false] {
+.c10:not([aria-disabled]):hover,
+.c10 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled=false]:focus,
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled=false]:active {
+.c10:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled=false]:focus:not(:focus-visible),
-.c11:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c11[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:focus-within {
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c11:focus-within.c10:focus-within:not(:disabled):not([aria-disabled]),
-.c11:focus-within.c11:focus-within[aria-disabled=false] {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12 {
+.c11 {
   border: none;
   outline: none;
   resize: none;
   font-family: inherit;
   color: inherit;
+  box-sizing: border-box;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1144,62 +1021,28 @@ exports[`Storyshots TextArea Has Label 1`] = `
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) 0;
-  height: calc(22px / 0.875 * 4);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: none;
-  -ms-overflow-style: none;
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
 }
 
-.c12::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c12::-moz-placeholder {
+.c11::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c12:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c12::placeholder {
+.c11::placeholder {
   color: var(--charcoal-text3);
-}
-
-.c12::-webkit-scrollbar {
-  display: none;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  margin-top: 8px;
-  margin-bottom: 0px;
-  color: var(--charcoal-text2);
-}
-
-.c13::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c13::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
 }
 
 .c0 {
@@ -1245,13 +1088,13 @@ exports[`Storyshots TextArea Has Label 1`] = `
         </div>
       </div>
       <div
-        className="c10 c11"
+        className="c10"
         rows={4}
       >
         <textarea
           aria-labelledby="test-id"
           aria-required={true}
-          className="c12"
+          className="c11"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -1261,7 +1104,7 @@ exports[`Storyshots TextArea Has Label 1`] = `
         />
       </div>
       <p
-        className="c13"
+        className="c12"
       >
         Assistive text
       </p>
