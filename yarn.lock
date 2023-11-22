@@ -7754,20 +7754,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/docs-tools@npm:7.4.6":
-  version: 7.4.6
-  resolution: "@storybook/docs-tools@npm:7.4.6"
-  dependencies:
-    "@storybook/core-common": 7.4.6
-    "@storybook/preview-api": 7.4.6
-    "@storybook/types": 7.4.6
-    "@types/doctrine": ^0.0.3
-    doctrine: ^3.0.0
-    lodash: ^4.17.21
-  checksum: 130a574a91638299f18c9cc9de2cf6c797f311f3fb87ae6b0bd8438d6dbd1d222a227778f45914a8efe47321a6c8680f6696f2e5f153522f0d60f165c4c80ae5
-  languageName: node
-  linkType: hard
-
 "@storybook/global@npm:^5.0.0":
   version: 5.0.0
   resolution: "@storybook/global@npm:5.0.0"
