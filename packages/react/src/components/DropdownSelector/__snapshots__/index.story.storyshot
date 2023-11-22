@@ -844,11 +844,8 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
           </div>
         </div>
         <button
-          className="c11 c12 c13 sc-hiCibw c13"
-          height={32}
+          className="c11 c12 c13"
           onClick={[Function]}
-          size="S"
-          width={32}
         >
           <pixiv-icon
             name="24/Close"

@@ -104,10 +104,7 @@ exports[`Storyshots IconButton Default M 1`] = `
 >
   <button
     className="c0 c1"
-    height={40}
-    size="M"
     title="close"
-    width={40}
   >
     <pixiv-icon
       name="24/Close"
@@ -220,10 +217,7 @@ exports[`Storyshots IconButton Overlay M 1`] = `
 >
   <button
     className="c0 c1"
-    height={40}
-    size="M"
     title="close"
-    width={40}
   >
     <pixiv-icon
       name="24/Close"

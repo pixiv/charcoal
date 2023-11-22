@@ -1588,9 +1588,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
       >
         <button
           className="c11 c12"
-          height={20}
-          size="XS"
-          width={20}
         >
           <pixiv-icon
             name="16/Remove"
