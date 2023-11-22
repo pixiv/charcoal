@@ -4,6 +4,10 @@ import { Story } from '../../_lib/compat'
 import { Divider } from './Divider'
 import MenuItemGroup from './MenuItemGroup'
 import DropdownMenuItem from './DropdownMenuItem'
+import Modal from '../Modal'
+import { ModalBody, ModalHeader } from '../Modal/ModalPlumbing'
+import styled from 'styled-components'
+import Button from '../Button'
 
 export default {
   title: 'DropdownSelector',
@@ -26,6 +30,7 @@ export const Playground: Story<DropdownSelectorProps> = (
   const [selected, setSelected] = useState('50')
   return (
     <div style={{ width: 288 }}>
+      <Button></Button>
       <DropdownSelector
         {...props}
         onChange={(value) => {
@@ -51,26 +56,77 @@ Playground.args = { ...baseProps }
 export const Basic: Story<DropdownSelectorProps> = (
   props: DropdownSelectorProps
 ) => {
-  const [selected, setSelected] = useState('')
   return (
     <div style={{ width: 288 }}>
-      <DropdownSelector
-        {...props}
-        onChange={(value) => {
-          setSelected(value)
-        }}
-        value={selected}
-        label="label"
-      >
-        <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
-        <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
-        <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
-      </DropdownSelector>
+      <PlaygroundDropdownSelector {...props} />
     </div>
   )
 }
 
 Basic.args = { ...baseProps }
+
+function PlaygroundDropdownSelector(props: Partial<DropdownSelectorProps>) {
+  const [selected, setSelected] = useState('10')
+  return (
+    <DropdownSelector
+      {...props}
+      onChange={(value) => {
+        setSelected(value)
+      }}
+      value={selected}
+      label="label"
+    >
+      <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+      <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+      <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+    </DropdownSelector>
+  )
+}
+
+const DummyBox = styled.div`
+  border: solid 1px ${({ theme }) => theme.border.default.color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 256px;
+`
+
+export const InModal: Story<DropdownSelectorProps> = () => {
+  const [open, setOpen] = useState(true)
+  return (
+    <div
+      style={{
+        height: '10px',
+      }}
+    >
+      <button onClick={() => setOpen(true)}>open</button>
+      <Modal
+        bottomSheet="full"
+        title="modal"
+        isOpen={open}
+        isDismissable
+        onClose={() => {
+          setOpen(false)
+        }}
+      >
+        <ModalHeader />
+        <ModalBody>
+          <div
+            style={{
+              padding: '16px',
+            }}
+          >
+            <DummyBox>256px</DummyBox>
+            <PlaygroundDropdownSelector />
+            <DummyBox>256px</DummyBox>
+            <PlaygroundDropdownSelector />
+            <DummyBox>256px</DummyBox>
+          </div>
+        </ModalBody>
+      </Modal>
+    </div>
+  )
+}
 
 export const InFormTag: Story<DropdownSelectorProps> = (
   props: DropdownSelectorProps

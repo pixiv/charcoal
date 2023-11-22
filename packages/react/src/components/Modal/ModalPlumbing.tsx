@@ -1,20 +1,32 @@
-import { ModalTitle } from '.'
-import styled from 'styled-components'
+import { BottomSheet, ModalContext, ModalTitle } from '.'
+import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
+import { useContext } from 'react'
+import { maxWidth } from '@charcoal-ui/utils'
 
 export function ModalHeader() {
+  const modalCtx = useContext(ModalContext)
   return (
-    <ModalHeaderRoot>
+    <ModalHeaderRoot $bottomSheet={modalCtx.bottomSheet}>
       <StyledModalTitle />
     </ModalHeaderRoot>
   )
 }
 
-const ModalHeaderRoot = styled.div`
+const ModalHeaderRoot = styled.div<{
+  $bottomSheet: BottomSheet
+}>`
   height: 64px;
   display: grid;
   align-content: center;
   justify-content: center;
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+    ${(p) =>
+      p.$bottomSheet !== false &&
+      css`
+        height: 48px;
+      `}
+  }
 `
 
 const StyledModalTitle = styled(ModalTitle)`

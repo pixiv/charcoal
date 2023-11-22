@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Basic <Button>Hello</Button> 1`] = `
+exports[`Storyshots IconButton Default M 1`] = `
 .c0 {
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -20,7 +21,11 @@ exports[`Basic <Button>Hello</Button> 1`] = `
   margin: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
@@ -32,16 +37,17 @@ exports[`Basic <Button>Hello</Button> 1`] = `
   padding: 0;
 }
 
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
 .c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -50,43 +56,21 @@ exports[`Basic <Button>Hello</Button> 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
   border-radius: 999999px;
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled=false] {
-  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-transparent-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled=false] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+  background-color: var(--charcoal-transparent-press);
 }
 
 .c1:disabled,
@@ -115,38 +99,71 @@ exports[`Basic <Button>Hello</Button> 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-<button
-  className="c0 c1"
-  disabled={false}
+<div
+  data-dark={false}
 >
-  Hello
-</button>
+  <button
+    className="c0 c1"
+    height={40}
+    size="M"
+    title="close"
+    width={40}
+  >
+    <pixiv-icon
+      name="24/Close"
+    />
+  </button>
+</div>
 `;
 
-exports[`Link <Button to="#">Hello</Button> 1`] = `
+exports[`Storyshots IconButton Overlay M 1`] = `
 .c0 {
-  color: inherit;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
 }
 
 .c0:focus {
   outline: none;
 }
 
-.c0 .text {
-  top: calc(1em + 2em);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -155,43 +172,21 @@ exports[`Link <Button to="#">Hello</Button> 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
+  color: var(--charcoal-text5);
+  background-color: var(--charcoal-surface4);
   border-radius: 999999px;
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
 }
 
 .c1:hover:not(:disabled):not([aria-disabled]),
 .c1:hover[aria-disabled=false] {
-  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-surface4-hover);
 }
 
 .c1:active:not(:disabled):not([aria-disabled]),
 .c1:active[aria-disabled=false] {
-  color: var(--charcoal-text2-press);
-}
-
-.c1:hover:not(:disabled):not([aria-disabled]),
-.c1:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:active:not(:disabled):not([aria-disabled]),
-.c1:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-press);
+  background-color: var(--charcoal-surface4-press);
 }
 
 .c1:disabled,
@@ -220,11 +215,19 @@ exports[`Link <Button to="#">Hello</Button> 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-<a
-  aria-disabled={false}
-  className="c0 c1"
-  href="#"
+<div
+  data-dark={false}
 >
-  Hello
-</a>
+  <button
+    className="c0 c1"
+    height={40}
+    size="M"
+    title="close"
+    width={40}
+  >
+    <pixiv-icon
+      name="24/Close"
+    />
+  </button>
+</div>
 `;

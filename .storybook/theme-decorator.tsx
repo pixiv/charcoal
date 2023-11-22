@@ -26,6 +26,7 @@ const Theme = ({ children }) => {
           [themeSelector('dark')]: dark,
           [themeSelector('light')]: light,
         }}
+        background="background1"
       ></TokenInjector>
     </ThemeProvider>
   )

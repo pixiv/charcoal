@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import {
   LinkProps,
   useComponentAbstraction,
@@ -28,34 +28,33 @@ export type ClickableElement = HTMLButtonElement & HTMLAnchorElement
 const Clickable = React.forwardRef<ClickableElement, ClickableProps>(
   function Clickable(props, ref) {
     const { Link } = useComponentAbstraction()
-    if ('to' in props) {
-      const { onClick, disabled = false, ...rest } = props
-      return (
-        <A<typeof Link>
-          {...rest}
-          as={disabled ? undefined : Link}
-          onClick={disabled ? undefined : onClick}
-          aria-disabled={disabled}
-          ref={ref}
-        />
-      )
-    } else {
-      return <Button {...props} ref={ref} />
+    const isLink = 'to' in props
+    const as = isLink ? Link : 'button'
+    const ariaDisabled = isLink && props.disabled === true ? true : undefined
+    let rest = props
+    if (isLink) {
+      const { disabled, ..._rest } = props
+      rest = _rest
     }
+    return (
+      <StyledClickableDiv
+        {...rest}
+        ref={ref}
+        as={as}
+        aria-disabled={ariaDisabled}
+      />
+    )
   }
 )
 export default Clickable
 
-const clickableCss = css`
-  /* Clickable style */
+const StyledClickableDiv = styled.div`
   cursor: pointer;
 
   ${disabledSelector} {
     cursor: default;
   }
-`
 
-const Button = styled.button`
   /* Reset button appearance */
   appearance: none;
   background: transparent;
@@ -88,21 +87,4 @@ const Button = styled.button`
     border-style: none;
     padding: 0;
   }
-
-  ${clickableCss}
-`
-
-const A = styled.span`
-  /* Reset a-tag appearance */
-  color: inherit;
-
-  &:focus {
-    outline: none;
-  }
-
-  .text {
-    top: calc(1em + 2em);
-  }
-
-  ${clickableCss}
 `

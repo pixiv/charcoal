@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Switch Labelled 1`] = `
+.c0 {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:active > input {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c2 {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-text2);
+  margin-left: 4px;
+}
+
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  border: 2px solid transparent;
+  -webkit-transition-property: background-color,box-shadow;
+  transition-property: background-color,box-shadow;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  cursor: inherit;
+  outline: none;
+  border-radius: 16px;
+  height: 16px;
+  margin: 0;
+  background-color: var(--charcoal-text4);
+}
+
+.c1:hover {
+  background-color: var(--charcoal-text4-hover);
+}
+
+.c1:active {
+  background-color: var(--charcoal-text4-press);
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  border-radius: 1024px;
+  background-color: var(--charcoal-text5);
+}
+
+.c1::after:hover {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.c1::after:active {
+  background-color: var(--charcoal-text5-press);
+}
+
+.c1:checked {
+  background-color: var(--charcoal-brand);
+}
+
+.c1:checked:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c1:checked:active {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c1:checked::after {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+
+<div
+  data-dark={false}
+>
+  <div>
+    <label
+      aria-disabled={false}
+      className="c0"
+    >
+      <input
+        checked={false}
+        className="c1"
+        disabled={false}
+        name="name"
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        className="c2"
+      >
+        選択する
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Switch Playground 1`] = `
+.c0 {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:active > input {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c2 {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-text2);
+  margin-left: 4px;
+}
+
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  border: 2px solid transparent;
+  -webkit-transition-property: background-color,box-shadow;
+  transition-property: background-color,box-shadow;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  cursor: inherit;
+  outline: none;
+  border-radius: 16px;
+  height: 16px;
+  margin: 0;
+  background-color: var(--charcoal-text4);
+}
+
+.c1:hover {
+  background-color: var(--charcoal-text4-hover);
+}
+
+.c1:active {
+  background-color: var(--charcoal-text4-press);
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  border-radius: 1024px;
+  background-color: var(--charcoal-text5);
+}
+
+.c1::after:hover {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.c1::after:active {
+  background-color: var(--charcoal-text5-press);
+}
+
+.c1:checked {
+  background-color: var(--charcoal-brand);
+}
+
+.c1:checked:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c1:checked:active {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c1:checked::after {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+
+<div
+  data-dark={false}
+>
+  <div>
+    <label
+      className="c0"
+    >
+      <input
+        checked={false}
+        className="c1"
+        disabled={false}
+        name="name"
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        className="c2"
+      >
+        選択する
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Switch Unlabelled 1`] = `
+.c0 {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:active > input {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  border: 2px solid transparent;
+  -webkit-transition-property: background-color,box-shadow;
+  transition-property: background-color,box-shadow;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  cursor: inherit;
+  outline: none;
+  border-radius: 16px;
+  height: 16px;
+  margin: 0;
+  background-color: var(--charcoal-text4);
+}
+
+.c1:hover {
+  background-color: var(--charcoal-text4-hover);
+}
+
+.c1:active {
+  background-color: var(--charcoal-text4-press);
+}
+
+.c1:focus {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  border-radius: 1024px;
+  background-color: var(--charcoal-text5);
+}
+
+.c1::after:hover {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.c1::after:active {
+  background-color: var(--charcoal-text5-press);
+}
+
+.c1:checked {
+  background-color: var(--charcoal-brand);
+}
+
+.c1:checked:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c1:checked:active {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c1:checked::after {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+
+<div
+  data-dark={false}
+>
+  <div>
+    <label
+      aria-disabled={false}
+      className="c0"
+    >
+      <input
+        aria-label="label"
+        checked={false}
+        className="c1"
+        disabled={false}
+        name="name"
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="switch"
+        type="checkbox"
+      />
+    </label>
+  </div>
+</div>
+`;
