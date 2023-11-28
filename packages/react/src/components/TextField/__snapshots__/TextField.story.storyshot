@@ -49,7 +49,7 @@ exports[`Storyshots TextField Default 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-top: -4px;
 }
 
@@ -57,7 +57,7 @@ exports[`Storyshots TextField Default 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-bottom: -4px;
 }
 
@@ -303,7 +303,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-top: -4px;
 }
 
@@ -311,7 +311,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-bottom: -4px;
 }
 
@@ -623,7 +623,7 @@ exports[`Storyshots TextField Has Count 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-top: -4px;
 }
 
@@ -631,7 +631,7 @@ exports[`Storyshots TextField Has Count 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-bottom: -4px;
 }
 
@@ -941,7 +941,7 @@ exports[`Storyshots TextField Has Label 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-top: -4px;
 }
 
@@ -949,7 +949,7 @@ exports[`Storyshots TextField Has Label 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-bottom: -4px;
 }
 
@@ -1261,7 +1261,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-top: -4px;
 }
 
@@ -1269,7 +1269,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: '';
+  content: "";
   margin-bottom: -4px;
 }
 

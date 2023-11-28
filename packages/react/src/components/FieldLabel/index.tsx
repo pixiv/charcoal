@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { createTheme } from '@charcoal-ui/styled'
+import { theme } from '../../styled'
 
 export interface FieldLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -41,10 +41,27 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
 
 export default FieldLabel
 
-const theme = createTheme(styled)
-
 const Label = styled.label`
-  ${theme((o) => [o.typography(14).bold, o.font.text1])}
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 const RequiredText = styled.span`
