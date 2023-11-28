@@ -86,33 +86,22 @@ exports[`Storyshots TextField Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c6:hover:not(:disabled):not([aria-disabled]),
-.c6:hover[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c6:active:not(:disabled):not([aria-disabled]),
-.c6:active[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled=false]:focus,
 .c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled=false]:focus:not(:focus-visible),
-.c6:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c6[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
 .c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled=false]:focus-visible {
+.c6[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -340,33 +329,22 @@ exports[`Storyshots TextField Has Affix 1`] = `
   margin-bottom: -4px;
 }
 
-.c5:hover:not(:disabled):not([aria-disabled]),
-.c5:hover[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c5:active:not(:disabled):not([aria-disabled]),
-.c5:active[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled=false]:focus,
 .c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled=false]:focus:not(:focus-visible),
-.c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c5[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
 .c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled=false]:focus-visible {
+.c5[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -660,33 +638,22 @@ exports[`Storyshots TextField Has Count 1`] = `
   margin-bottom: -4px;
 }
 
-.c6:hover:not(:disabled):not([aria-disabled]),
-.c6:hover[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c6:active:not(:disabled):not([aria-disabled]),
-.c6:active[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled=false]:focus,
 .c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled=false]:focus:not(:focus-visible),
-.c6:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c6[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
 .c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled=false]:focus-visible {
+.c6[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1002,33 +969,22 @@ exports[`Storyshots TextField Has Label 1`] = `
   margin-bottom: -4px;
 }
 
-.c8:hover:not(:disabled):not([aria-disabled]),
-.c8:hover[aria-disabled=false] {
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c8:active:not(:disabled):not([aria-disabled]),
-.c8:active[aria-disabled=false] {
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled=false]:focus,
 .c8:not(:disabled):not([aria-disabled]):active,
-.c8[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c8[aria-disabled=false]:focus:not(:focus-visible),
-.c8:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c8[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c8[aria-disabled='false']:active,
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled='false']:focus,
 .c8:not(:disabled):not([aria-disabled]):focus-visible,
-.c8[aria-disabled=false]:focus-visible {
+.c8[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1299,33 +1255,22 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   margin-bottom: -4px;
 }
 
-.c5:hover:not(:disabled):not([aria-disabled]),
-.c5:hover[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c5:active:not(:disabled):not([aria-disabled]),
-.c5:active[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled=false]:focus,
 .c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled=false]:focus:not(:focus-visible),
-.c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c5[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
 .c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled=false]:focus-visible {
+.c5[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
