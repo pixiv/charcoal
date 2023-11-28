@@ -46,44 +46,29 @@ const StyledIconButton = styled(Clickable).attrs<
   border-radius: 999999px;
   transition: 0.2s background-color, 0.2s box-shadow;
 
-  &:hover:not(:disabled):not([aria-disabled]),
-  &:hover[aria-disabled='false'] {
-    background-color: var(
-      ${({ background }) => `--charcoal-${background}-hover`}
-    );
-  }
-
-  &:active:not(:disabled):not([aria-disabled]),
-  &:active[aria-disabled='false'] {
-    background-color: var(
-      ${({ background }) => `--charcoal-${background}-press`}
-    );
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      background-color: var(
+        ${({ background }) => `--charcoal-${background}-hover`}
+      );
+    }
+    &:active {
+      background-color: var(
+        ${({ background }) => `--charcoal-${background}-press`}
+      );
+    }
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
   }
 
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
     opacity: 0.32;
-  }
-
-  &:not(:disabled):not([aria-disabled]):focus,
-  &[aria-disabled='false']:focus,
-  &:not(:disabled):not([aria-disabled]):active,
-  &[aria-disabled='false']:active {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-  }
-
-  &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-  &[aria-disabled='false']:focus:not(:focus-visible),
-  &:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-  &[aria-disabled='false']:active:not(:focus-visible) {
-    outline: none;
-  }
-
-  &:not(:disabled):not([aria-disabled]):focus-visible,
-  &[aria-disabled='false']:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
 `
 
