@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { theme } from '../../styled'
 
 export interface FieldLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
