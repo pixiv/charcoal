@@ -1,6 +1,5 @@
 import { BottomSheet, ModalContext, ModalTitle } from '.'
 import styled, { css } from 'styled-components'
-import { theme } from '../../styled'
 import { useContext } from 'react'
 import { maxWidth } from '@charcoal-ui/utils'
 
@@ -20,7 +19,7 @@ const ModalHeaderRoot = styled.div<{
   display: grid;
   align-content: center;
   justify-content: center;
-  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+  @media ${maxWidth(744)} {
     ${(p) =>
       p.$bottomSheet !== false &&
       css`
@@ -30,15 +29,35 @@ const ModalHeaderRoot = styled.div<{
 `
 
 const StyledModalTitle = styled(ModalTitle)`
-  ${theme((o) => [o.font.text1, o.typography(16).bold])}
+  color: var(--charcoal-text1);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  display: flow-root;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 export const ModalAlign = styled.div`
-  ${theme((o) => [o.padding.horizontal(16)])}
+  padding-left: 16px;
+  padding-right: 16px;
 `
 
 export const ModalBody = styled.div`
-  ${theme((o) => [o.padding.bottom(40)])}
+  padding-bottom: 40px;
 `
 
 export const ModalButtons = styled.div`
@@ -46,5 +65,7 @@ export const ModalButtons = styled.div`
   grid-auto-flow: row;
   grid-row-gap: 8px;
 
-  ${theme((o) => [o.padding.horizontal(16).top(16)])}
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 `
