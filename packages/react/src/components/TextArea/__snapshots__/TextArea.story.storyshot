@@ -13,7 +13,7 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-top: -4px;
 }
 
@@ -21,7 +21,7 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-bottom: -4px;
 }
 
@@ -277,7 +277,7 @@ exports[`Storyshots TextArea Default 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-top: -4px;
 }
 
@@ -285,7 +285,7 @@ exports[`Storyshots TextArea Default 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-bottom: -4px;
 }
 
@@ -557,7 +557,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-top: -4px;
 }
 
@@ -565,7 +565,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-bottom: -4px;
 }
 
@@ -852,7 +852,7 @@ exports[`Storyshots TextArea Has Label 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-top: -4px;
 }
 
@@ -860,13 +860,14 @@ exports[`Storyshots TextArea Has Label 1`] = `
   display: block;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
   margin-bottom: -4px;
 }
 
 .c6 {
   font-size: 14px;
   line-height: 22px;
+  font-weight: bold;
   display: flow-root;
   color: var(--charcoal-text2);
 }

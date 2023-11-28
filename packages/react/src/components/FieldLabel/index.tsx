@@ -65,7 +65,26 @@ const Label = styled.label`
 `
 
 const RequiredText = styled.span`
-  ${theme((o) => [o.typography(14), o.font.text2])}
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text2);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 const SubLabelClickable = styled.div`
