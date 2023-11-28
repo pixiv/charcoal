@@ -131,10 +131,10 @@ const FieldLabelWrapper = styled.div`
   align-items: center;
 
   > ${RequiredText} {
-    ${theme((o) => o.margin.left(4))}
+    margin-left: 4px;
   }
 
   > ${SubLabelClickable} {
-    ${theme((o) => o.margin.left('auto'))}
+    margin-left: auto;
   }
 `
