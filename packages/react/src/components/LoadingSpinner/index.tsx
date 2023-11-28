@@ -1,6 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef, memo } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { theme } from '../../styled'
 
 export type LoadingSpinnerProps = {
   readonly size?: number
@@ -43,11 +42,11 @@ const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
   opacity: 0.84;
-  ${({ transparent }) =>
-    theme((o) => [
-      o.font.text4,
-      transparent ? o.bg.transparent : o.bg.background1,
-    ])}
+  color: var(--charcoal-text4);
+  background-color: var(
+    ${({ transparent }) =>
+      `--charcoal-${transparent ? 'transparent' : 'background1'}`}
+  );
 `
 
 const scaleOut = keyframes`
