@@ -6,7 +6,6 @@ import {
   useModalOverlay,
 } from '@react-aria/overlays'
 import styled, { css, useTheme } from 'styled-components'
-import { theme } from '../../styled'
 import { AriaDialogProps } from '@react-types/dialog'
 import { maxWidth } from '@charcoal-ui/utils'
 import { useMedia } from '@charcoal-ui/styled'
@@ -214,9 +213,9 @@ const ModalBackground = animated(styled.div<{
   padding: 40px 0;
   box-sizing: border-box;
 
-  background-color: ${({ theme }) => theme.color.surface4};
+  background-color: var(--charcoal-surface4);
 
-  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
+  @media ${maxWidth(744)} {
     ${(p) =>
       p.$bottomSheet !== false &&
       css`
@@ -230,7 +229,18 @@ const ModalCrossButton = styled(IconButton)`
   top: 8px;
   right: 8px;
 
-  ${theme((o) => [o.font.text3.hover.press])}
+  color: var(--charcoal-text3);
+  transition: 0.2s color;
+
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      color: var(--charcoal-text3-hover);
+    }
+    &:active {
+      color: var(--charcoal-text3-press);
+    }
+  }
 `
 
 export function ModalTitle(props: React.HTMLAttributes<HTMLHeadingElement>) {
