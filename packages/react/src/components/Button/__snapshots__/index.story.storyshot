@@ -17,6 +17,8 @@ exports[`Storyshots Button Danger 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -126,6 +128,8 @@ exports[`Storyshots Button Default 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -235,6 +239,8 @@ exports[`Storyshots Button Disabled 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -344,6 +350,8 @@ exports[`Storyshots Button Fixed 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -453,6 +461,8 @@ exports[`Storyshots Button Focus 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -562,6 +572,8 @@ exports[`Storyshots Button Layout Example 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1029,6 +1041,8 @@ exports[`Storyshots Button Link 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1138,6 +1152,8 @@ exports[`Storyshots Button Navigation 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1247,6 +1263,8 @@ exports[`Storyshots Button Nihongo 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1356,6 +1374,8 @@ exports[`Storyshots Button Overlay 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1465,6 +1485,8 @@ exports[`Storyshots Button Primary 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1574,6 +1596,8 @@ exports[`Storyshots Button Small 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
