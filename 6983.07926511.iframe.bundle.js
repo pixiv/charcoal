@@ -88,17 +88,17 @@
 
   /* よく考えたらheight=32って定義が存在しないな... */
   height: ${p=>"M"===p.$size?40:32}px;
-`;var theme=(0,_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_4__.jG)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP),IconButton_default=(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,variant,size,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})})),StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default).attrs((function styledProps(props){return{...props,...variantToProps(props.variant),...sizeToProps(props.size)}}))`
+`;var theme=(0,_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_4__.jG)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP),IconButton_default=(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,$size:size,$variant:variant,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})})),StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default).attrs((function styledProps({$size,$variant}){return{...variantToProps($variant),...sizeToProps($size)}}))`
   user-select: none;
 
-  width: ${p=>p.width}px;
-  height: ${p=>p.height}px;
+  width: ${p=>p.$width}px;
+  height: ${p=>p.$height}px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  ${({font,background})=>theme((o=>[o.font[font],o.bg[background].hover.press,o.disabled,o.borderRadius("oval"),o.outline.default.focus]))}
-`;function variantToProps(variant){switch(variant){case"Default":return{font:"text3",background:"transparent"};case"Overlay":return{font:"text5",background:"surface4"}}}function sizeToProps(size){switch(size){case"XS":return{width:20,height:20};case"S":return{width:32,height:32};case"M":return{width:40,height:40}}}styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
+  ${({$font,$background})=>theme((o=>[o.font[$font],o.bg[$background].hover.press,o.disabled,o.borderRadius("oval"),o.outline.default.focus]))}
+`;function variantToProps(variant){switch(variant){case"Default":return{$font:"text3",$background:"transparent"};case"Overlay":return{$font:"text5",$background:"surface4"}}}function sizeToProps(size){switch(size){case"XS":return{$width:20,$height:20};case"S":return{$width:32,$height:32};case"M":return{$width:40,$height:40}}}styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: ${({theme:theme3})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.px)(theme3.spacing[4])};
@@ -804,4 +804,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.81c7f0c8.iframe.bundle.js.map
+//# sourceMappingURL=6983.07926511.iframe.bundle.js.map
