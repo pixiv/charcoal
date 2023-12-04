@@ -66,6 +66,7 @@
   text-rendering: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  text-decoration: none;
 
   &:focus {
     outline: none;
@@ -96,4 +97,4 @@
 
   ${(0,styled.r)((o=>[o.bg.background1,o.border.default,o.borderRadius(8),o.padding.vertical(8)]))}
 `;try{Popover.displayName="Popover",Popover.__docgenInfo={description:"画面の全面に動的に開くことができるコンテナ要素\n外の要素をクリックしたり、内部からフォーカスを移動した場合に自動的に閉じる\n\ntriggerRefの付近に画面内に収まるように表示される",displayName:"Popover",props:{isOpen:{defaultValue:null,description:"",name:"isOpen",required:!0,type:{name:"boolean"}},onClose:{defaultValue:null,description:"",name:"onClose",required:!0,type:{name:"() => void"}},triggerRef:{defaultValue:null,description:"",name:"triggerRef",required:!0,type:{name:"RefObject<Element>"}},popoverRef:{defaultValue:null,description:"",name:"popoverRef",required:!1,type:{name:"RefObject<HTMLDivElement>"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/DropdownSelector/Popover/index.tsx#Popover"]={docgenInfo:Popover.__docgenInfo,name:"Popover",path:"packages/react/src/components/DropdownSelector/Popover/index.tsx#Popover"})}catch(__react_docgen_typescript_loader_error){}},"./packages/react/src/components/Modal/ModalBackgroundContext.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{C:()=>ModalBackgroundContext});const ModalBackgroundContext=__webpack_require__("./node_modules/react/index.js").createContext(null);try{ModalBackgroundContext.displayName="ModalBackgroundContext",ModalBackgroundContext.__docgenInfo={description:"ModalBackgroundのElementが入ったコンテキスト",displayName:"ModalBackgroundContext",props:{}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/Modal/ModalBackgroundContext.tsx#ModalBackgroundContext"]={docgenInfo:ModalBackgroundContext.__docgenInfo,name:"ModalBackgroundContext",path:"packages/react/src/components/Modal/ModalBackgroundContext.tsx#ModalBackgroundContext"})}catch(__react_docgen_typescript_loader_error){}},"./packages/react/src/styled.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{r:()=>theme});var styled_components__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js");const theme=(0,__webpack_require__("./packages/styled/dist/index.esm.js").jG)(styled_components__WEBPACK_IMPORTED_MODULE_1__.ZP)}}]);
-//# sourceMappingURL=react-src-components-DropdownSelector-Popover-index-story.f44aa66e.iframe.bundle.js.map
+//# sourceMappingURL=react-src-components-DropdownSelector-Popover-index-story.40cb2d3f.iframe.bundle.js.map

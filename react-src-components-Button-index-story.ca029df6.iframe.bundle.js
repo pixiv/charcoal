@@ -66,6 +66,7 @@
   text-rendering: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  text-decoration: none;
 
   &:focus {
     outline: none;
@@ -89,4 +90,4 @@
     padding: 0;
   }
 `;try{Clickable.displayName="Clickable",Clickable.__docgenInfo={description:"",displayName:"Clickable",props:{disabled:{defaultValue:null,description:"クリックの無効化",name:"disabled",required:!1,type:{name:"boolean"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}},to:{defaultValue:null,description:"リンクのURL。指定するとbuttonタグではなくaタグとして描画される",name:"to",required:!0,type:{name:"string"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/Clickable/index.tsx#Clickable"]={docgenInfo:Clickable.__docgenInfo,name:"Clickable",path:"packages/react/src/components/Clickable/index.tsx#Clickable"})}catch(__react_docgen_typescript_loader_error){}}}]);
-//# sourceMappingURL=react-src-components-Button-index-story.82e545a7.iframe.bundle.js.map
+//# sourceMappingURL=react-src-components-Button-index-story.ca029df6.iframe.bundle.js.map

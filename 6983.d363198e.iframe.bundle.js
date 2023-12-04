@@ -15,6 +15,7 @@
   text-rendering: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  text-decoration: none;
 
   &:focus {
     outline: none;
@@ -804,4 +805,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.07926511.iframe.bundle.js.map
+//# sourceMappingURL=6983.d363198e.iframe.bundle.js.map
