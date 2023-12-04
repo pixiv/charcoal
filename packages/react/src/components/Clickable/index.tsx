@@ -65,6 +65,7 @@ const StyledClickableDiv = styled.div`
   text-rendering: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  text-decoration: none;
 
   &:focus {
     outline: none;
