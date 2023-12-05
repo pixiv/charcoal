@@ -2,7 +2,6 @@ import { RefObject, useContext, useRef } from 'react'
 import { ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import styled from 'styled-components'
-import { theme } from '../../../styled'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
 import { usePreventScroll } from './usePreventScroll'
 
