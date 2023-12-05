@@ -74,11 +74,9 @@ const DropdownPopoverDiv = styled.div`
   list-style: none;
   overflow: auto;
   max-height: inherit;
-
-  ${theme((o) => [
-    o.bg.background1,
-    o.border.default,
-    o.borderRadius(8),
-    o.padding.vertical(8),
-  ])}
+  background-color: var(--charcoal-background1);
+  border: solid 1px var(--charcoal-border-default);
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 `
