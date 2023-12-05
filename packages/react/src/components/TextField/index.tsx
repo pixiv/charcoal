@@ -213,7 +213,6 @@ const StyledInputContainer = styled.div<{
 
 const PrefixContainer = styled.div`
   display: flex;
-  padding-left: 8px;
   align-items: center;
 `
 

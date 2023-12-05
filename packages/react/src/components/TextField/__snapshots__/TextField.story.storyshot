@@ -266,7 +266,6 @@ exports[`Storyshots TextField Default 1`] = `
           <span>
             <button
               className="c7"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -438,7 +437,6 @@ exports[`Storyshots TextField Has Affix 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -860,7 +858,6 @@ exports[`Storyshots TextField Has Count 1`] = `
           <span>
             <button
               className="c7"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -1186,7 +1183,6 @@ exports[`Storyshots TextField Has Label 1`] = `
           <span>
             <button
               className="c9"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -1464,7 +1460,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1525,7 +1520,14 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c8 {
-  height: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #858585;
 }
 
@@ -1590,12 +1592,14 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
         placeholder="作品を検索"
         readOnly={false}
         type="text"
+        value=""
       />
       <span
         className="c10"
       >
         <button
           className="c11 c12"
+          onClick={[Function]}
         >
           <pixiv-icon
             name="16/Remove"
