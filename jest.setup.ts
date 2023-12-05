@@ -34,10 +34,10 @@ import type { OverlayTriggerProps } from 'react-stately'
 jest.mock('react-stately', () => ({
   ...jest.requireActual('react-stately'),
   useOverlayTriggerState: (args: OverlayTriggerProps) => {
-    const state = jest
-      .requireActual<typeof import('react-stately')>('react-stately')
-      .useOverlayTriggerState(args)
+    const { useOverlayTriggerState } =
+      jest.requireActual<typeof import('react-stately')>('react-stately')
+    const state = useOverlayTriggerState(args)
 
-    return { state, isOpen: true }
+    return { ...state, isOpen: true }
   },
 }))
