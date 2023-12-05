@@ -66,7 +66,6 @@ const Label = styled.label`
 const RequiredText = styled.span`
   font-size: 14px;
   line-height: 22px;
-  font-weight: bold;
   display: flow-root;
   color: var(--charcoal-text2);
 
