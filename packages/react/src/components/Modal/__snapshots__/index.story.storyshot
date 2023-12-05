@@ -17,6 +17,8 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -240,40 +242,29 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c14:hover:not(:disabled):not([aria-disabled]),
-.c14:hover[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-hover);
+.c14:not(:disabled):not([aria-disabled]):hover,
+.c14[aria-disabled='false']:hover {
+  background-color: var( --charcoal-transparent-hover );
 }
 
-.c14:active:not(:disabled):not([aria-disabled]),
-.c14:active[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c14:disabled,
-.c14[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
+.c14:not(:disabled):not([aria-disabled]):active,
+.c14[aria-disabled='false']:active {
+  background-color: var( --charcoal-transparent-press );
 }
 
 .c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled=false]:focus,
+.c14[aria-disabled='false']:focus,
 .c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c14:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c14[aria-disabled=false]:focus:not(:focus-visible),
-.c14:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c14[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c14[aria-disabled='false']:active,
 .c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled=false]:focus-visible {
+.c14[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c14:disabled,
+.c14[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c3 {
@@ -513,11 +504,8 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
           </div>
         </div>
         <button
-          className="c0 c14 c15 sc-hiCibw c15"
-          height={32}
+          className="c0 c14 c15"
           onClick={[Function]}
-          size="S"
-          width={32}
         >
           <pixiv-icon
             name="24/Close"
@@ -546,6 +534,8 @@ exports[`Storyshots Modal Default 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -949,40 +939,29 @@ exports[`Storyshots Modal Default 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c27:hover:not(:disabled):not([aria-disabled]),
-.c27:hover[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-hover);
+.c27:not(:disabled):not([aria-disabled]):hover,
+.c27[aria-disabled='false']:hover {
+  background-color: var( --charcoal-transparent-hover );
 }
 
-.c27:active:not(:disabled):not([aria-disabled]),
-.c27:active[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c27:disabled,
-.c27[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
+.c27:not(:disabled):not([aria-disabled]):active,
+.c27[aria-disabled='false']:active {
+  background-color: var( --charcoal-transparent-press );
 }
 
 .c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled=false]:focus,
+.c27[aria-disabled='false']:focus,
 .c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c27[aria-disabled=false]:focus:not(:focus-visible),
-.c27:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c27[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c27[aria-disabled='false']:active,
 .c27:not(:disabled):not([aria-disabled]):focus-visible,
-.c27[aria-disabled=false]:focus-visible {
+.c27[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:disabled,
+.c27[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c3 {
@@ -1413,11 +1392,8 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="c0 c27 c28 sc-hiCibw c28"
-          height={32}
+          className="c0 c27 c28"
           onClick={[Function]}
-          size="S"
-          width={32}
         >
           <pixiv-icon
             name="24/Close"
@@ -1446,6 +1422,8 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1764,40 +1742,29 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c22:hover:not(:disabled):not([aria-disabled]),
-.c22:hover[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-hover);
+.c22:not(:disabled):not([aria-disabled]):hover,
+.c22[aria-disabled='false']:hover {
+  background-color: var( --charcoal-transparent-hover );
 }
 
-.c22:active:not(:disabled):not([aria-disabled]),
-.c22:active[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c22:disabled,
-.c22[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
+.c22:not(:disabled):not([aria-disabled]):active,
+.c22[aria-disabled='false']:active {
+  background-color: var( --charcoal-transparent-press );
 }
 
 .c22:not(:disabled):not([aria-disabled]):focus,
-.c22[aria-disabled=false]:focus,
+.c22[aria-disabled='false']:focus,
 .c22:not(:disabled):not([aria-disabled]):active,
-.c22[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c22:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c22[aria-disabled=false]:focus:not(:focus-visible),
-.c22:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c22[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c22[aria-disabled='false']:active,
 .c22:not(:disabled):not([aria-disabled]):focus-visible,
-.c22[aria-disabled=false]:focus-visible {
+.c22[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c22:disabled,
+.c22[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c3 {
@@ -2200,11 +2167,8 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
           </div>
         </div>
         <button
-          className="c0 c22 c23 sc-hiCibw c23"
-          height={32}
+          className="c0 c22 c23"
           onClick={[Function]}
-          size="S"
-          width={32}
         >
           <pixiv-icon
             name="24/Close"
@@ -2233,6 +2197,8 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;

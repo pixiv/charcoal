@@ -17,6 +17,8 @@ exports[`Storyshots TextField Default 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -264,7 +266,6 @@ exports[`Storyshots TextField Default 1`] = `
           <span>
             <button
               className="c7"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -436,7 +437,6 @@ exports[`Storyshots TextField Has Affix 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -591,6 +591,8 @@ exports[`Storyshots TextField Has Count 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -856,7 +858,6 @@ exports[`Storyshots TextField Has Count 1`] = `
           <span>
             <button
               className="c7"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -909,6 +910,8 @@ exports[`Storyshots TextField Has Label 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1180,7 +1183,6 @@ exports[`Storyshots TextField Has Label 1`] = `
           <span>
             <button
               className="c9"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -1229,6 +1231,8 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1370,40 +1374,29 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c12:hover:not(:disabled):not([aria-disabled]),
-.c12:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface4-hover);
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
+  background-color: var( --charcoal-surface4-hover );
 }
 
-.c12:active:not(:disabled):not([aria-disabled]),
-.c12:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface4-press);
-}
-
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
+  background-color: var( --charcoal-surface4-press );
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled=false]:focus,
+.c12[aria-disabled='false']:focus,
 .c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled=false]:focus:not(:focus-visible),
-.c12:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c12[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c12[aria-disabled='false']:active,
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled=false]:focus-visible {
+.c12[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c0 {
@@ -1456,7 +1449,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 8px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1517,7 +1509,14 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c8 {
-  height: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #858585;
 }
 
@@ -1582,15 +1581,14 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
         placeholder="作品を検索"
         readOnly={false}
         type="text"
+        value=""
       />
       <span
         className="c10"
       >
         <button
           className="c11 c12"
-          height={20}
-          size="XS"
-          width={20}
+          onClick={[Function]}
         >
           <pixiv-icon
             name="16/Remove"
