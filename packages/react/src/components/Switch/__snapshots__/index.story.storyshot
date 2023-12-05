@@ -69,6 +69,14 @@ exports[`Storyshots Switch Labelled 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1::after {
   content: '';
   position: absolute;
@@ -224,6 +232,14 @@ exports[`Storyshots Switch Playground 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1::after {
   content: '';
   position: absolute;
@@ -368,6 +384,14 @@ exports[`Storyshots Switch Unlabelled 1`] = `
 }
 
 .c1:focus {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 

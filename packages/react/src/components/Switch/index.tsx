@@ -116,6 +116,14 @@ const SwitchInput = styled.input.attrs({
     box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
 
+  :focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+
+  :focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
   &::after {
     content: '';
     position: absolute;

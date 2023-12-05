@@ -62,6 +62,14 @@ exports[`Storyshots DropdownSelector/ListItem Basic 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c4:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c4::after {
   content: '';
   position: absolute;
