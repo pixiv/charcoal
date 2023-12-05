@@ -43,10 +43,8 @@ const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
   height: ${(props) => props.size}px;
   opacity: 0.84;
   color: var(--charcoal-text4);
-  background-color: var(
-    ${({ transparent }) =>
-      `--charcoal-${transparent ? 'transparent' : 'background1'}`}
-  );
+  background-color: ${({ transparent }) =>
+    `var(--charcoal-${transparent ? 'transparent' : 'background1'})`};
 `
 
 const scaleOut = keyframes`

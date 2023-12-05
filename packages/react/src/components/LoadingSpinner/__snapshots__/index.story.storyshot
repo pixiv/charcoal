@@ -11,7 +11,7 @@ exports[`Storyshots LoadingSpinner Basic 1`] = `
   height: 48px;
   opacity: 0.84;
   color: var(--charcoal-text4);
-  background-color: var( --charcoal-background1 );
+  background-color: var(--charcoal-background1);
 }
 
 .c1 {
