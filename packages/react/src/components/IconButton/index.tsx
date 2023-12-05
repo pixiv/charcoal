@@ -65,8 +65,12 @@ const StyledIconButton = styled(Clickable).attrs<
         ${({ $background }) => `--charcoal-${$background}-press`}
       );
     }
-    &:focus,
     &:active,
+    &:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: none;
+    }
+
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);

@@ -1384,10 +1384,14 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   background-color: var( --charcoal-surface4-press );
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active,
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
 .c12[aria-disabled='false']:focus-visible {
   outline: none;
