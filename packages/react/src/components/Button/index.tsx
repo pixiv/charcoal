@@ -59,6 +59,18 @@ type StyledButtonProps = Omit<StyledProps, '$variant'> & {
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
 }
+
+/* 
+
+```
+&:focus:not(:focus-visible) {
+  ...
+}
+```
+polyfill for :focus-visible
+cf. https://github.com/WICG/focus-visible#backwards-compatibility
+
+*/
 const StyledButton = styled(Clickable)<StyledButtonProps>`
   width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
@@ -81,7 +93,15 @@ const StyledButton = styled(Clickable)<StyledButtonProps>`
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
     &:active,
-    &:focus,
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+
+    &:focus:not(:focus-visible) {
+      box-shadow: none;
+    }
+
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);

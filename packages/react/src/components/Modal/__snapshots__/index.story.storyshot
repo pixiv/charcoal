@@ -74,7 +74,16 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
@@ -190,7 +199,16 @@ exports[`Storyshots Modal Default 1`] = `
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
@@ -306,7 +324,16 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
@@ -422,7 +449,16 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
