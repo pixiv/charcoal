@@ -834,7 +834,6 @@ exports[`Storyshots TextArea Has Label 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 22px;
-  font-weight: bold;
   display: flow-root;
   color: var(--charcoal-text2);
 }
