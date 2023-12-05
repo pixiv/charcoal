@@ -337,7 +337,6 @@
     `}
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   display: flex;
-  padding-left: 8px;
   align-items: center;
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.span`
   display: flex;
@@ -805,4 +804,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.d363198e.iframe.bundle.js.map
+//# sourceMappingURL=6983.ffcd9b67.iframe.bundle.js.map
