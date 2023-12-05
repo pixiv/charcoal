@@ -19,7 +19,7 @@ const ModalHeaderRoot = styled.div<{
   display: grid;
   align-content: center;
   justify-content: center;
-  @media ${maxWidth(744)} {
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
     ${(p) =>
       p.$bottomSheet !== false &&
       css`

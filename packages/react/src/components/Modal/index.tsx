@@ -215,7 +215,7 @@ const ModalBackground = animated(styled.div<{
 
   background-color: var(--charcoal-surface4);
 
-  @media ${maxWidth(744)} {
+  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
     ${(p) =>
       p.$bottomSheet !== false &&
       css`
