@@ -245,6 +245,8 @@ exports[`Storyshots TextArea Default 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -525,6 +527,8 @@ exports[`Storyshots TextArea Has Count 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -820,6 +824,8 @@ exports[`Storyshots TextArea Has Label 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;

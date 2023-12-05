@@ -1,10 +1,10 @@
-import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
 import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
 import TextField, { TextFieldProps } from '.'
 import { px } from '@charcoal-ui/utils'
 import IconButton from '../IconButton'
+import { useCallback, useState } from 'react'
 
 export default {
   title: 'TextField',
@@ -30,9 +30,7 @@ const Template: Story<Partial<TextFieldProps>> = (args) => (
     <TextField
       label="Label"
       requiredText="*必須"
-      subLabel={
-        <Clickable onClick={action('label-click')}>Text Link</Clickable>
-      }
+      subLabel={<Clickable>Text Link</Clickable>}
       placeholder="TextField"
       {...args}
     />
@@ -64,21 +62,40 @@ HasAffix.args = {
   suffix: '.png',
 }
 
-export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => (
-  <TextField
-    label="Label"
-    placeholder="作品を検索"
-    prefix={
-      <PrefixIconWrap>
-        <pixiv-icon name="16/Search" />
-      </PrefixIconWrap>
-    }
-    suffix={<IconButton variant="Overlay" icon={'16/Remove'} size="XS" />}
-    {...args}
-  />
-)
+export const PrefixIcon: Story<Partial<TextFieldProps>> = (args) => {
+  const [value, setValue] = useState('')
+  const handleChange = useCallback((value: string) => {
+    setValue(value)
+  }, [])
+  const handleClear = useCallback(() => {
+    setValue('')
+  }, [])
+  return (
+    <TextField
+      {...args}
+      label="Label"
+      placeholder="作品を検索"
+      value={value}
+      onChange={handleChange}
+      prefix={
+        <PrefixIconWrap>
+          <pixiv-icon name="16/Search" />
+        </PrefixIconWrap>
+      }
+      suffix={
+        <IconButton
+          variant="Overlay"
+          icon={'16/Remove'}
+          size="XS"
+          onClick={handleClear}
+        />
+      }
+    />
+  )
+}
 
 const PrefixIconWrap = styled.div`
-  height: 16px;
+  display: flex;
+  align-items: center;
   color: ${({ theme }) => theme.color.text3};
 `

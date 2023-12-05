@@ -17,6 +17,8 @@ exports[`Storyshots IconButton Default M 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -93,10 +95,7 @@ exports[`Storyshots IconButton Default M 1`] = `
 >
   <button
     className="c0 c1"
-    height={40}
-    size="M"
     title="close"
-    width={40}
   >
     <pixiv-icon
       name="24/Close"
@@ -122,6 +121,8 @@ exports[`Storyshots IconButton Overlay M 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -198,10 +199,7 @@ exports[`Storyshots IconButton Overlay M 1`] = `
 >
   <button
     className="c0 c1"
-    height={40}
-    size="M"
     title="close"
-    width={40}
   >
     <pixiv-icon
       name="24/Close"
