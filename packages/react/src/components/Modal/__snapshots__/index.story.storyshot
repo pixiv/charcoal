@@ -846,12 +846,6 @@ exports[`Storyshots Modal Default 1`] = `
 .c19:disabled,
 .c19[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
-}
-
-.c19:disabled:disabled,
-.c19[aria-disabled]:not([aria-disabled=false]):disabled,
-.c19:disabled[aria-disabled]:not([aria-disabled=false]),
-.c19[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
   opacity: 0.32;
 }
 
@@ -892,22 +886,11 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c21:not(:disabled):not([aria-disabled]):focus,
-.c21[aria-disabled=false]:focus,
+.c21[aria-disabled='false']:focus,
 .c21:not(:disabled):not([aria-disabled]):active,
-.c21[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c21:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c21[aria-disabled=false]:focus:not(:focus-visible),
-.c21:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c21[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c21[aria-disabled='false']:active,
 .c21:not(:disabled):not([aria-disabled]):focus-visible,
-.c21[aria-disabled=false]:focus-visible {
+.c21[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
