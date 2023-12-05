@@ -562,40 +562,29 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c12:hover:not(:disabled):not([aria-disabled]),
-.c12:hover[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-hover);
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
+  background-color: var( --charcoal-transparent-hover );
 }
 
-.c12:active:not(:disabled):not([aria-disabled]),
-.c12:active[aria-disabled=false] {
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]) {
-  opacity: 0.32;
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
+  background-color: var( --charcoal-transparent-press );
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled=false]:focus,
+.c12[aria-disabled='false']:focus,
 .c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled=false]:focus:not(:focus-visible),
-.c12:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c12[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c12[aria-disabled='false']:active,
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled=false]:focus-visible {
+.c12[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c1 {

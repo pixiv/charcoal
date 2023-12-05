@@ -1,6 +1,5 @@
 import { forwardRef } from 'react'
 import styled from 'styled-components'
-import { theme } from '../../styled'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
 import type { KnownIconType } from '@charcoal-ui/icons'
 
@@ -49,15 +48,35 @@ const StyledIconButton = styled(Clickable).attrs<
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(${({ $font }) => `--charcoal-${$font}`});
+  background-color: var(${({ $background }) => `--charcoal-${$background}`});
+  border-radius: 999999px;
+  transition: 0.2s background-color, 0.2s box-shadow;
 
-  ${({ $font, $background }) =>
-    theme((o) => [
-      o.font[$font],
-      o.bg[$background].hover.press,
-      o.disabled,
-      o.borderRadius('oval'),
-      o.outline.default.focus,
-    ])}
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      background-color: var(
+        ${({ $background }) => `--charcoal-${$background}-hover`}
+      );
+    }
+    &:active {
+      background-color: var(
+        ${({ $background }) => `--charcoal-${$background}-press`}
+      );
+    }
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 `
 
 function styledProps({ $size, $variant }: StyledIconButtonProps) {
