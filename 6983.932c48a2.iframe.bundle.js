@@ -719,8 +719,11 @@
     cursor: default;
   }
 
-  gap: ${({theme:theme3})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.px)(theme3.spacing[4])};
-  ${theme((o=>[o.disabled]))}
+  gap: 4px;
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   position: relative;
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.input`
@@ -731,20 +734,47 @@
     margin: 0;
     width: 20px;
     height: 20px;
+    border-radius: 4px;
+    transition: 0.2s box-shadow, 0.2s background-color;
 
     &:checked {
-      ${theme((o=>o.bg.brand.hover.press))}
+      background-color: var(--charcoal-brand);
+
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        &:hover {
+          background-color: var(--charcoal-brand-hover);
+        }
+        &:active {
+          background-color: var(--charcoal-brand-press);
+        }
+      }
     }
+
+    &:not(:disabled):not([aria-disabled]),
+    &[aria-disabled='false'] {
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+        &:not(:focus-visible) {
+          outline: none;
+        }
+      }
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+      }
+      &[aria-invalid='true'] {
+        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+      }
+    }
+
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;
-      border-color: ${({theme:theme3})=>theme3.color.text4};
+      border-color: var(--charcoal-text4);
     }
-    ${theme((o=>[o.outline.default.focus,o.borderRadius(4)]))}
-    ${p=>p.invalid&&theme((o=>[o.outline.assertive]))}
-
-    /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
-    transition: all 0.2s !important;
   }
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   position: absolute;
@@ -754,13 +784,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${theme((o=>[o.width.px(24),o.height.px(24),o.font.text5]))}
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
 
   ${({checked})=>!0!==checked&&hiddenCss};
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
-  ${theme((o=>[o.font.text2]))}
-
+  color: var(--charcoal-text2);
   font-size: 14px;
   /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
   line-height: 20px;
@@ -832,4 +862,4 @@
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   ${theme((o=>[o.typography(12).bold]))}
 `}}]);
-//# sourceMappingURL=6983.af641ae2.iframe.bundle.js.map
+//# sourceMappingURL=6983.932c48a2.iframe.bundle.js.map
