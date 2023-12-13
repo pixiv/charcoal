@@ -13,7 +13,7 @@ exports[`Storyshots Radio Default 1`] = `
 }
 
 .c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
+.c1[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -32,42 +32,28 @@ exports[`Storyshots Radio Default 1`] = `
   background-color: var(--charcoal-surface1);
   -webkit-transition: 0.2s background-color;
   transition: 0.2s background-color;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
   -webkit-transition: all 0.2s !important;
   transition: all 0.2s !important;
 }
 
-.c2[type='radio']:hover:not(:disabled):not([aria-disabled]),
-.c2[type='radio']:hover[aria-disabled=false] {
+.c2[type='radio']:not(:disabled):not([aria-disabled]):hover,
+.c2[type='radio'][aria-disabled='false']:hover {
   background-color: var(--charcoal-surface1-hover);
 }
 
-.c2[type='radio']:active:not(:disabled):not([aria-disabled]),
-.c2[type='radio']:active[aria-disabled=false] {
+.c2[type='radio']:not(:disabled):not([aria-disabled]):active,
+.c2[type='radio'][aria-disabled='false']:active {
   background-color: var(--charcoal-surface1-press);
 }
 
 .c2[type='radio']:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: #858585;
+  border-color: var(--charcoal-text3);
 }
 
 .c2[type='radio']:checked {
   background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
-}
-
-.c2[type='radio']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='radio']:checked:hover[aria-disabled=false] {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='radio']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='radio']:checked:active[aria-disabled=false] {
-  background-color: var(--charcoal-brand-press);
 }
 
 .c2[type='radio']:checked::after {
@@ -78,37 +64,36 @@ exports[`Storyshots Radio Default 1`] = `
   pointer-events: none;
   background-color: var(--charcoal-text5);
   border-radius: 999999px;
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c2[type='radio']:checked::after:hover:not(:disabled):not([aria-disabled]),
-.c2[type='radio']:checked::after:hover[aria-disabled=false] {
+.c2[type='radio']:checked:not(:disabled):not([aria-disabled]):hover,
+.c2[type='radio']:checked[aria-disabled='false']:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c2[type='radio']:checked:not(:disabled):not([aria-disabled]):hover::after,
+.c2[type='radio']:checked[aria-disabled='false']:hover::after {
   background-color: var(--charcoal-text5-hover);
 }
 
-.c2[type='radio']:checked::after:active:not(:disabled):not([aria-disabled]),
-.c2[type='radio']:checked::after:active[aria-disabled=false] {
+.c2[type='radio']:checked:not(:disabled):not([aria-disabled]):active,
+.c2[type='radio']:checked[aria-disabled='false']:active {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c2[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
+.c2[type='radio']:checked[aria-disabled='false']:active::after {
   background-color: var(--charcoal-text5-press);
 }
 
 .c2[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='radio'][aria-disabled=false]:focus,
+.c2[type='radio'][aria-disabled='false']:focus,
 .c2[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c2[type='radio'][aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='radio'][aria-disabled=false]:focus:not(:focus-visible),
-.c2[type='radio']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='radio'][aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c2[type='radio'][aria-disabled='false']:active,
 .c2[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='radio'][aria-disabled=false]:focus-visible {
+.c2[type='radio'][aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
