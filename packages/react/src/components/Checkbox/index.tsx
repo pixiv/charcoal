@@ -4,8 +4,7 @@ import styled, { css } from 'styled-components'
 import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
-import { disabledSelector, px } from '@charcoal-ui/utils'
-import { theme } from '../../styled'
+import { disabledSelector } from '@charcoal-ui/utils'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
@@ -40,6 +39,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const ariaCheckboxProps = useMemo<AriaCheckboxProps>(
       () => ({
         ...props,
+        isInValid: invalid,
         isSelected: props.checked,
         defaultSelected: props.defaultChecked,
         validationState: invalid ? 'invalid' : 'valid',
@@ -58,7 +58,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <InputRoot aria-disabled={isDisabled} className={props.className}>
         <CheckboxRoot>
-          <CheckboxInput type="checkbox" {...inputProps} invalid={invalid} />
+          <CheckboxInput type="checkbox" {...inputProps} />
           <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
             <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
           </CheckboxInputOverlay>
@@ -85,15 +85,18 @@ const InputRoot = styled.label`
     cursor: default;
   }
 
-  gap: ${({ theme }) => px(theme.spacing[4])};
-  ${theme((o) => [o.disabled])}
+  gap: 4px;
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 `
 
 const CheckboxRoot = styled.div`
   position: relative;
 `
 
-const CheckboxInput = styled.input<{ invalid: boolean }>`
+const CheckboxInput = styled.input`
   &[type='checkbox'] {
     appearance: none;
     display: block;
@@ -101,20 +104,47 @@ const CheckboxInput = styled.input<{ invalid: boolean }>`
     margin: 0;
     width: 20px;
     height: 20px;
+    border-radius: 4px;
+    transition: 0.2s box-shadow, 0.2s background-color;
 
     &:checked {
-      ${theme((o) => o.bg.brand.hover.press)}
+      background-color: var(--charcoal-brand);
+
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        &:hover {
+          background-color: var(--charcoal-brand-hover);
+        }
+        &:active {
+          background-color: var(--charcoal-brand-press);
+        }
+      }
     }
+
+    &:not(:disabled):not([aria-disabled]),
+    &[aria-disabled='false'] {
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+        &:not(:focus-visible) {
+          outline: none;
+        }
+      }
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+      }
+      &[aria-invalid='true'] {
+        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+      }
+    }
+
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;
-      border-color: ${({ theme }) => theme.color.text4};
+      border-color: var(--charcoal-text4);
     }
-    ${theme((o) => [o.outline.default.focus, o.borderRadius(4)])}
-    ${(p) => p.invalid && theme((o) => [o.outline.assertive])}
-
-    /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
-    transition: all 0.2s !important;
   }
 `
 
@@ -126,15 +156,15 @@ const CheckboxInputOverlay = styled.div<{ checked?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${theme((o) => [o.width.px(24), o.height.px(24), o.font.text5])}
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
 
   ${({ checked }) => checked !== true && hiddenCss};
 `
 
 const InputLabel = styled.div`
-  ${theme((o) => [o.font.text2])}
-
+  color: var(--charcoal-text2);
   font-size: 14px;
   /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
   line-height: 20px;

@@ -56,12 +56,12 @@
     "@charcoal-ui/theme": "^3.5.0",
     "@charcoal-ui/utils": "^3.5.0",
     "@react-aria/button": "^3.7.0",
-    "@react-aria/checkbox": "^3.8.0",
+    "@react-aria/checkbox": "^3.11.0",
     "@react-aria/dialog": "^3.5.0",
     "@react-aria/focus": "^3.11.0",
     "@react-aria/listbox": "^3.8.0",
     "@react-aria/overlays": "^3.13.0",
-    "@react-aria/radio": "^3.5.0",
+    "@react-aria/radio": "^3.8.0",
     "@react-aria/select": "^3.9.0",
     "@react-aria/separator": "^3.3.0",
     "@react-aria/ssr": "^3.5.0",
@@ -71,7 +71,7 @@
     "@react-aria/visually-hidden": "^3.7.0",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
-    "react-stately": "^3.19.0",
+    "react-stately": "^3.26.0",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
