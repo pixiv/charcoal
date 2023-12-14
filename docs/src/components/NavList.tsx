@@ -100,6 +100,10 @@ const tailwindConfigList: ListItem[] = [
     href: '/@charcoal-ui/tailwind-config/customize',
   },
   {
+    text: 'Colors',
+    href: '/@charcoal-ui/tailwind-config/colors',
+  },
+  {
     text: 'Typography',
     href: '/@charcoal-ui/tailwind-config/typography',
   },
@@ -215,6 +219,7 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {iconsList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/tailwind-config</ListItemHeader>
       {tailwindConfigList.map(renderListItem)}
+      <ListItemHeader>Links</ListItemHeader>
       <ListItemHeader>@charcoal-ui/tailwind-diff</ListItemHeader>
       {tailwindDiffList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/foundation</ListItemHeader>
