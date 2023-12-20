@@ -30,10 +30,8 @@ exports[`Storyshots Radio Default 1`] = `
   cursor: pointer;
   border-radius: 999999px;
   background-color: var(--charcoal-surface1);
-  -webkit-transition: 0.2s background-color;
-  transition: 0.2s background-color;
-  -webkit-transition: all 0.2s !important;
-  transition: all 0.2s !important;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
 }
 
 .c2[type='radio']:not(:disabled):not([aria-disabled]):hover,
@@ -44,6 +42,16 @@ exports[`Storyshots Radio Default 1`] = `
 .c2[type='radio']:not(:disabled):not([aria-disabled]):active,
 .c2[type='radio'][aria-disabled='false']:active {
   background-color: var(--charcoal-surface1-press);
+}
+
+.c2[type='radio']:not(:disabled):not([aria-disabled]):focus,
+.c2[type='radio'][aria-disabled='false']:focus,
+.c2[type='radio']:not(:disabled):not([aria-disabled]):active,
+.c2[type='radio'][aria-disabled='false']:active,
+.c2[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[type='radio'][aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='radio']:not(:checked) {
@@ -86,16 +94,6 @@ exports[`Storyshots Radio Default 1`] = `
 .c2[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
 .c2[type='radio']:checked[aria-disabled='false']:active::after {
   background-color: var(--charcoal-text5-press);
-}
-
-.c2[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='radio'][aria-disabled='false']:focus,
-.c2[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c2[type='radio'][aria-disabled='false']:active,
-.c2[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='radio'][aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3 {

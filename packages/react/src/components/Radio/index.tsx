@@ -63,6 +63,7 @@ const RadioRoot = styled.label`
   grid-gap: 4px;
   align-items: center;
   cursor: pointer;
+
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
     opacity: 0.32;
@@ -86,7 +87,7 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     cursor: pointer;
     border-radius: 999999px;
     background-color: var(--charcoal-surface1);
-    transition: 0.2s background-color;
+    transition: 0.2s background-color, 0.2s box-shadow;
 
     &:not(:disabled):not([aria-disabled]),
     &[aria-disabled='false'] {
@@ -101,6 +102,12 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
       }
       &:active {
         background-color: var(--charcoal-surface1-press);
+      }
+      &:focus,
+      &:active,
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
       }
     }
 
@@ -139,19 +146,6 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
         }
       }
     }
-
-    &:not(:disabled):not([aria-disabled]),
-    &[aria-disabled='false'] {
-      &:focus,
-      &:active,
-      &:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-      }
-    }
-
-    /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
-    transition: all 0.2s !important;
   }
 `
 
