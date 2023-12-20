@@ -15,7 +15,7 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
   const { children, ...rest } = props
 
   return (
-    <MenuItem {...rest} data-dropdown-menu-item="true">
+    <MenuItem {...rest}>
       {isSelected && <Text2ColorIcon name="16/Check" />}
       <StyledSpan isSelected={isSelected}>{props.children}</StyledSpan>
     </MenuItem>
