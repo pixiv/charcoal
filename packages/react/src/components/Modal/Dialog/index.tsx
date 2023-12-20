@@ -57,7 +57,7 @@ const AnimatedStyledDialogDiv = animated(styled.div<{
     }
   }}px;
 
-  background-color: ${({ theme }) => theme.color.background1};
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
