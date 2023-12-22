@@ -40,7 +40,7 @@ export default function InstallPage() {
 
       <h2>使い方</h2>
       <p>
-        tailwind.config.js の中で <InlineCode>require</InlineCode>{' '}
+        tailwind.config.js の中で <InlineCode>require</InlineCode>
         して使います。
       </p>
 
@@ -62,10 +62,10 @@ export default function InstallPage() {
         lang="javascript"
       />
       <p>
-        テーマの調整などが必要な場合は{' '}
+        テーマの調整などが必要な場合は
         <Link href="/@charcoal-ui/tailwind-config/customize">
           カスタマイズする
-        </Link>{' '}
+        </Link>
         のページを見てください。
       </p>
     </ContentRoot>

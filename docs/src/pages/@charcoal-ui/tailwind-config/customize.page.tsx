@@ -9,7 +9,7 @@ export default function CustomizeTailwindConfig() {
     <ContentRoot>
       <h1>カスタマイズする</h1>
       <p>
-        <InlineCode>createTailwindConfig()</InlineCode>{' '}
+        <InlineCode>createTailwindConfig()</InlineCode>
         を利用することでお使いの環境、色などに適応させることができます。
       </p>
 
@@ -38,21 +38,21 @@ export default function CustomizeTailwindConfig() {
         lang="javascript"
       />
       <p>
-        <InlineCode>createTailwindConfig</InlineCode>{' '}
+        <InlineCode>createTailwindConfig</InlineCode>
         には以下のオプションを渡すことができます。
       </p>
       <Table data={options} />
 
       <h2>ThemaMap について</h2>
       <p>
-        charcoal は Tailwind.css の通常のダークモード（{' '}
+        charcoal は Tailwind.css の通常のダークモード（
         <InlineCode>dark:〇〇</InlineCode> 系のクラス ）をサポートしません。
         <br />
         なぜなら charcoal における「色」は、同じ名前でも light テーマと dark
         テーマで違うカラーコードであり得るからです。
         <br />
-        これを表現するために{' '}
-        <InlineCode>@charcoal-ui/tailwind-config</InlineCode> では{' '}
+        これを表現するために
+        <InlineCode>@charcoal-ui/tailwind-config</InlineCode> では
         <InlineCode>theme</InlineCode> というオプションを受け取ります。
         <br />
       </p>
@@ -74,9 +74,9 @@ export default function CustomizeTailwindConfig() {
         lang="javascript"
       />
       <p>
-        <InlineCode>theme</InlineCode>{' '}
-        オプションを設定する場合、ダークテーマ対応を行わないサービスであっても{' '}
-        <InlineCode>:root</InlineCode>{' '}
+        <InlineCode>theme</InlineCode>
+        オプションを設定する場合、ダークテーマ対応を行わないサービスであっても
+        <InlineCode>:root</InlineCode>
         に必ず自身のプロダクトのカラーテーマを渡す必要があります。
       </p>
       <p>
@@ -106,7 +106,7 @@ export default function CustomizeTailwindConfig() {
       <p>
         このとき、以下のように書く必要はありません。
         <br />
-        キーが <InlineCode>@media</InlineCode> で始まる場合はビルド時に{' '}
+        キーが <InlineCode>@media</InlineCode> で始まる場合はビルド時に
         <InlineCode>:root</InlineCode> が補われます。
       </p>
       <SSRHighlight
@@ -126,10 +126,10 @@ export default function CustomizeTailwindConfig() {
             `}
       />
       <p>
-        <InlineCode>theme</InlineCode>{' '}
+        <InlineCode>theme</InlineCode>
         のキーとして通常のセレクタを指定することもできます。
         <br />
-        これによりダークモードの切り替えがDOMの状態に依存するケースにも対応します。{' '}
+        これによりダークモードの切り替えがDOMの状態に依存するケースにも対応します。
         <InlineCode>localStorage</InlineCode> などで JS
         での切り替えを実装しているアプリケーションはこのような手法が好ましいでしょう。
       </p>
