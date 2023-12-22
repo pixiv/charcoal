@@ -14,4 +14,7 @@ module.exports = {
     }),
   ],
   safelist: [{ pattern: /.*/ }],
+  corePlugins: {
+    preflight: false,
+  },
 }
