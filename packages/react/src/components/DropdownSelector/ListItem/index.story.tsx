@@ -14,41 +14,42 @@ const CustomLink = styled.a`
   color: red;
 `
 
+const basicRender = () => {
+  const [checked, setChecked] = useState(false)
+  const handleCheck = () => {
+    setChecked((v) => !v)
+  }
+  return (
+    <>
+      <ListItem>Item</ListItem>
+      <ListItem>
+        <Icon name="16/Add" /> Add
+      </ListItem>
+      <ListItem as="a" href="#">
+        Normal Link
+      </ListItem>
+      <ListItem as={CustomLink} href="#">
+        Custom Link
+      </ListItem>
+      <ListItem onClick={handleCheck}>
+        Switch
+        <div
+          style={{
+            marginLeft: 'auto',
+          }}
+        >
+          <Switch
+            label="hello"
+            name="hello"
+            onChange={handleCheck}
+            checked={checked}
+          />
+        </div>
+      </ListItem>
+    </>
+  )
+}
+
 export const Basic: StoryObj<typeof ListItem> = {
-  render: () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [checked, setChecked] = useState(false)
-    const handleCheck = () => {
-      setChecked((v) => !v)
-    }
-    return (
-      <>
-        <ListItem>Item</ListItem>
-        <ListItem>
-          <Icon name="16/Add" /> Add
-        </ListItem>
-        <ListItem as="a" href="#">
-          Normal Link
-        </ListItem>
-        <ListItem as={CustomLink} href="#">
-          Custom Link
-        </ListItem>
-        <ListItem onClick={handleCheck}>
-          Switch
-          <div
-            style={{
-              marginLeft: 'auto',
-            }}
-          >
-            <Switch
-              label="hello"
-              name="hello"
-              onChange={handleCheck}
-              checked={checked}
-            />
-          </div>
-        </ListItem>
-      </>
-    )
-  },
+  render: basicRender,
 }
