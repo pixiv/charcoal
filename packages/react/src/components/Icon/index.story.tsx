@@ -23,7 +23,6 @@ export default {
     name: KNOWN_ICON_FILES[0],
     scale: 1,
   },
-  render: (props) => <Icon {...props} />,
 } as Meta<typeof Icon>
 
 export const Default: StoryObj<typeof Icon> = {}
