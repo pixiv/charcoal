@@ -80,21 +80,10 @@ const Label = styled.label`
 `
 
 const LabelInner = styled.div`
-  /* font-size: 14px;
+  font-size: 14px;
   line-height: 22px;
-  display: flow-root;
-  &:before {
-    display: block;
-    content: "";
-  }
-  &:after {
-  } */
-
-  ${theme((o) => [
-    o.typography(14).preserveHalfLeading,
-    o.font.text2,
-    o.margin.left(4),
-  ])}
+  color: var(--charcoal-text2);
+  margin-left: 4px;
 `
 
 const SwitchInput = styled.input.attrs({
