@@ -68,18 +68,28 @@ const Label = styled.label`
   cursor: pointer;
   outline: 0;
 
-  ${theme((o) => o.disabled)}
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+    cursor: default;
+  }
 
   :active > input {
     box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
-
-  ${disabledSelector} {
-    cursor: default;
-  }
 `
 
 const LabelInner = styled.div`
+  /* font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  &:before {
+    display: block;
+    content: "";
+  }
+  &:after {
+  } */
+
   ${theme((o) => [
     o.typography(14).preserveHalfLeading,
     o.font.text2,
