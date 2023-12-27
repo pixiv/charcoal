@@ -1,12 +1,12 @@
 import { useRef, CSSProperties, useState } from 'react'
-import { Story } from '../../../_lib/compat'
-import Popover, { PopoverProps } from '.'
+import Popover from '.'
 import Button from '../../Button'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'DropdownSelector/Popover',
   component: Popover,
-}
+} as Meta<typeof Popover>
 
 function Base(props: { style?: CSSProperties }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,8 +33,8 @@ function Base(props: { style?: CSSProperties }) {
   )
 }
 
-export const Basic: Story<PopoverProps> = () => {
-  return (
+export const Basic: StoryObj = {
+  render: () => (
     <>
       <Base
         style={{
@@ -61,5 +61,5 @@ export const Basic: Story<PopoverProps> = () => {
         }}
       />
     </>
-  )
+  ),
 }
