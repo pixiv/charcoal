@@ -90,6 +90,17 @@ const iconsList: ListItem[] = [
   },
 ]
 
+const tailwindConfigList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/tailwind-config/quickstart',
+  },
+  {
+    text: 'カスタマイズする',
+    href: '/@charcoal-ui/tailwind-config/customize',
+  },
+]
+
 const tailwindDiffList: ListItem[] = [
   {
     text: 'クイックスタート',
@@ -190,6 +201,8 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {reactList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/icons</ListItemHeader>
       {iconsList.map(renderListItem)}
+      <ListItemHeader>@charcoal-ui/tailwind-config</ListItemHeader>
+      {tailwindConfigList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/tailwind-diff</ListItemHeader>
       {tailwindDiffList.map(renderListItem)}
       <ListItemHeader>@charcoal-ui/foundation</ListItemHeader>

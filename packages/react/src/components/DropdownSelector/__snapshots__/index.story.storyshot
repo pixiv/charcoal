@@ -526,7 +526,7 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   height: -moz-fit-content;
   height: fit-content;
   width: 440px;
-  background-color: #ffffff;
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 }
 
@@ -553,7 +553,7 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   justify-content: center;
   padding: 40px 0;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.32);
+  background-color: var(--charcoal-surface4);
 }
 
 .c13 {
@@ -565,13 +565,13 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   transition: 0.2s color;
 }
 
-.c13:hover:not(:disabled):not([aria-disabled]),
-.c13:hover[aria-disabled=false] {
+.c13:not(:disabled):not([aria-disabled]):hover,
+.c13[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c13:active:not(:disabled):not([aria-disabled]),
-.c13:active[aria-disabled=false] {
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
