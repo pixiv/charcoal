@@ -4,8 +4,6 @@ import { useMemo, memo, forwardRef } from 'react'
 import * as React from 'react'
 import { useToggleState } from 'react-stately'
 import styled from 'styled-components'
-import { theme } from '../../styled'
-import { disabledSelector } from '@charcoal-ui/utils'
 import { useObjectRef } from '@react-aria/utils'
 
 export type SwitchProps = {
@@ -86,9 +84,7 @@ const LabelInner = styled.div`
   margin-left: 4px;
 `
 
-const SwitchInput = styled.input.attrs({
-  type: 'checkbox',
-})`
+const SwitchInput = styled.input.attrs({ type: 'checkbox' })`
   appearance: none;
   display: inline-flex;
   position: relative;
