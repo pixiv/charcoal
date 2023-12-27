@@ -154,3 +154,63 @@ Playground.args = {
   invalid: false,
   variant: 'default',
 }
+
+export const Invalid: Story<PlaygroundProps> = ({ className, ...props }) => {
+  const [selected, setSelected] = useState<string[]>([])
+
+  return (
+    <StyledMultiSelectGroup
+      {...props}
+      selected={selected}
+      onChange={setSelected}
+      invalid
+    >
+      {[1, 2, 3, 4].map((idx) => (
+        <MultiSelect
+          value={`選択肢${idx}`}
+          variant={props.variant}
+          key={idx}
+          className={className}
+        >
+          選択肢{idx}
+        </MultiSelect>
+      ))}
+    </StyledMultiSelectGroup>
+  )
+}
+Invalid.args = {
+  name: 'defaultName',
+  label: '',
+  disabled: false,
+  readonly: false,
+  variant: 'default',
+}
+
+export const Overlay: Story<PlaygroundProps> = ({ className, ...props }) => {
+  const [selected, setSelected] = useState<string[]>([])
+
+  return (
+    <StyledMultiSelectGroup
+      {...props}
+      selected={selected}
+      onChange={setSelected}
+    >
+      {[1, 2, 3, 4].map((idx) => (
+        <MultiSelect
+          value={`選択肢${idx}`}
+          variant="overlay"
+          key={idx}
+          className={className}
+        >
+          選択肢{idx}
+        </MultiSelect>
+      ))}
+    </StyledMultiSelectGroup>
+  )
+}
+Overlay.args = {
+  name: 'defaultName',
+  label: '',
+  disabled: false,
+  readonly: false,
+}
