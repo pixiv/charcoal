@@ -274,7 +274,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: -moz-fit-content;
   height: fit-content;
   width: 440px;
-  background-color: #ffffff;
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 }
 
@@ -301,7 +301,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   justify-content: center;
   padding: 40px 0;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.32);
+  background-color: var(--charcoal-surface4);
 }
 
 .c15 {
@@ -313,13 +313,13 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   transition: 0.2s color;
 }
 
-.c15:hover:not(:disabled):not([aria-disabled]),
-.c15:hover[aria-disabled=false] {
+.c15:not(:disabled):not([aria-disabled]):hover,
+.c15[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c15:active:not(:disabled):not([aria-disabled]),
-.c15:active[aria-disabled=false] {
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -366,8 +366,8 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 }
 
 .c9 {
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c7 {
@@ -379,8 +379,8 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c8 {
@@ -782,33 +782,22 @@ exports[`Storyshots Modal Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c16:hover:not(:disabled):not([aria-disabled]),
-.c16:hover[aria-disabled=false] {
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c16:active:not(:disabled):not([aria-disabled]),
-.c16:active[aria-disabled=false] {
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled=false]:focus,
 .c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c16:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c16[aria-disabled=false]:focus:not(:focus-visible),
-.c16:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c16[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c16[aria-disabled='false']:active,
+.c16:not(:disabled):not([aria-disabled]):focus,
+.c16[aria-disabled='false']:focus,
 .c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled=false]:focus-visible {
+.c16[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -971,7 +960,7 @@ exports[`Storyshots Modal Default 1`] = `
   height: -moz-fit-content;
   height: fit-content;
   width: 440px;
-  background-color: #ffffff;
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 }
 
@@ -998,7 +987,7 @@ exports[`Storyshots Modal Default 1`] = `
   justify-content: center;
   padding: 40px 0;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.32);
+  background-color: var(--charcoal-surface4);
 }
 
 .c28 {
@@ -1010,13 +999,13 @@ exports[`Storyshots Modal Default 1`] = `
   transition: 0.2s color;
 }
 
-.c28:hover:not(:disabled):not([aria-disabled]),
-.c28:hover[aria-disabled=false] {
+.c28:not(:disabled):not([aria-disabled]):hover,
+.c28[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c28:active:not(:disabled):not([aria-disabled]),
-.c28:active[aria-disabled=false] {
+.c28:not(:disabled):not([aria-disabled]):active,
+.c28[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1063,8 +1052,8 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c9 {
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c7 {
@@ -1076,8 +1065,8 @@ exports[`Storyshots Modal Default 1`] = `
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c11 {
@@ -1670,33 +1659,22 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-bottom: -4px;
 }
 
-.c16:hover:not(:disabled):not([aria-disabled]),
-.c16:hover[aria-disabled=false] {
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c16:active:not(:disabled):not([aria-disabled]),
-.c16:active[aria-disabled=false] {
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled=false]:focus,
 .c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c16:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c16[aria-disabled=false]:focus:not(:focus-visible),
-.c16:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c16[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c16[aria-disabled='false']:active,
+.c16:not(:disabled):not([aria-disabled]):focus,
+.c16[aria-disabled='false']:focus,
 .c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled=false]:focus-visible {
+.c16[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1774,7 +1752,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: -moz-fit-content;
   height: fit-content;
   width: 440px;
-  background-color: #ffffff;
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 }
 
@@ -1801,7 +1779,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   justify-content: center;
   padding: 40px 0;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.32);
+  background-color: var(--charcoal-surface4);
 }
 
 .c23 {
@@ -1813,13 +1791,13 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   transition: 0.2s color;
 }
 
-.c23:hover:not(:disabled):not([aria-disabled]),
-.c23:hover[aria-disabled=false] {
+.c23:not(:disabled):not([aria-disabled]):hover,
+.c23[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c23:active:not(:disabled):not([aria-disabled]),
-.c23:active[aria-disabled=false] {
+.c23:not(:disabled):not([aria-disabled]):active,
+.c23[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1866,8 +1844,8 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 }
 
 .c9 {
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c7 {
@@ -1879,8 +1857,8 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c11 {
@@ -2344,7 +2322,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: -moz-fit-content;
   height: fit-content;
   width: 440px;
-  background-color: #ffffff;
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 }
 
@@ -2371,7 +2349,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   justify-content: center;
   padding: 40px 0;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.32);
+  background-color: var(--charcoal-surface4);
 }
 
 .c5 {
@@ -2425,8 +2403,8 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
-  padding-right: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 .c8 {
