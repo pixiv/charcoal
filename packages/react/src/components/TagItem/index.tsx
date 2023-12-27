@@ -1,8 +1,7 @@
 import { forwardRef, memo, useMemo, ComponentPropsWithoutRef } from 'react'
 import { useObjectRef } from '@react-aria/utils'
 import styled, { css } from 'styled-components'
-import { theme } from '../../styled'
-import { disabledSelector, px } from '@charcoal-ui/utils'
+import { px } from '@charcoal-ui/utils'
 import { AriaButtonProps, useButton } from '@react-aria/button'
 import Icon from '../Icon'
 
@@ -82,6 +81,24 @@ export default memo(TagItem)
 type TagItemRootProps = Pick<TagItemProps, 'status'> &
   Required<Pick<TagItemProps, 'size'>>
 
+type Horizontal = {
+  left: number
+  right: number
+}
+const horizontalPadding = ({ left, right }: Horizontal) => css`
+  padding-right: ${px(right)};
+  padding-left: ${px(left)};
+`
+const tagItemRootSize = (size: TagItemProps['size']) => {
+  switch (size) {
+    case 'M':
+      return horizontalPadding({ left: 24, right: 24 })
+    case 'S':
+      return horizontalPadding({ left: 16, right: 16 })
+  }
+}
+const activeTagItemRoot = horizontalPadding({ left: 16, right: 8 })
+
 const TagItemRoot = styled.a<TagItemRootProps>`
   isolation: isolate;
   position: relative;
@@ -92,19 +109,27 @@ const TagItemRoot = styled.a<TagItemRootProps>`
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 4px;
+  ${({ size, status }) => status !== 'active' && tagItemRootSize(size)}
+  ${({ status }) => status === 'active' && activeTagItemRoot}
+  color: ${({ status }) =>
+    status === 'inactive' ? 'var(--charcoal-text2)' : 'var(--charcoal-text5)'};
 
-  ${({ size, status }) =>
-    theme((o) => [
-      o.outline.default.focus,
-      o.borderRadius(4),
-      status !== 'active' && size === 'M' && o.padding.horizontal(24),
-      status !== 'active' && size === 'S' && o.padding.horizontal(16),
-      status === 'inactive' ? o.font.text2 : o.font.text5,
-      ...(status === 'active' ? [o.padding.left(16), o.padding.right(8)] : []),
-    ])}
+  transition: 0.2s box-shadow;
 
-  ${disabledSelector} {
-    ${theme((o) => [o.disabled])}
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
     cursor: default;
   }
 `
@@ -120,12 +145,17 @@ const Background = styled.div<
   height: 100%;
 
   background-color: ${({ bgColor }) => bgColor};
-  ${({ status }) => status === 'inactive' && theme((o) => o.bg.surface3)}
+  ${({ status }) =>
+    status === 'inactive' &&
+    css`
+      background-color: var(--charcoal-surface3);
+    `}
 
   ${({ bgImage }) =>
     bgImage !== undefined &&
     css`
-      ${theme((o) => [o.bg.surface4])}
+      background-color: var(--charcoal-surface4);
+
       &::before {
         content: '';
         position: absolute;
@@ -143,13 +173,31 @@ const Background = styled.div<
 
 const Inner = styled.div`
   display: inline-flex;
-  gap: ${({ theme }) => px(theme.spacing[8])};
+  gap: 8px;
   align-items: center;
   z-index: 2;
 `
 
 const labelCSS = css`
-  ${theme((o) => [o.typography(14).bold])}
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 const translateLabelCSS = css`
   display: flex;
@@ -172,5 +220,22 @@ const Label = styled.span`
 `
 
 const TranslatedLabel = styled.div`
-  ${theme((o) => [o.typography(12).bold])}
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  display: flow-root;
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
