@@ -1,4 +1,4 @@
-"use strict";(self.webpackChunkcharcoal_ui=self.webpackChunkcharcoal_ui||[]).push([[6983],{"./packages/react/dist/index.esm.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{BB:()=>useComponentAbstraction,h$:()=>ComponentAbstraction});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js"),styled_components__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./packages/utils/dist/index.esm.js"),_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_5__=(__webpack_require__("./node_modules/warning/warning.js"),__webpack_require__("./packages/styled/dist/index.esm.js")),react_spring__WEBPACK_IMPORTED_MODULE_7__=(__webpack_require__("./packages/icons/dist/index.esm.js"),__webpack_require__("./node_modules/react-spring/dist/react-spring.esm.js")),DefaultValue={Link:react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function DefaultLink2({to,children,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a",{href:to,ref,...rest,children})}))},ComponentAbstractionContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext(DefaultValue);function ComponentAbstraction({children,components}){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ComponentAbstractionContext.Provider,{value:{...DefaultValue,...components},children})}function useComponentAbstraction(){return(0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ComponentAbstractionContext)}function unreachable(value){throw new Error(0===arguments.length?"unreachable":`unreachable (${JSON.stringify(value)})`)}var Clickable_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function Clickable2(props,ref){const{Link}=useComponentAbstraction(),isLink="to"in props,as=isLink?Link:"button",ariaDisabled=!(!isLink||!0!==props.disabled)||void 0;let rest=props;if(isLink){const{disabled,..._rest}=props;rest=_rest}return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledClickableDiv,{...rest,ref,as,"aria-disabled":ariaDisabled})})),StyledClickableDiv=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
+"use strict";(self.webpackChunkcharcoal_ui=self.webpackChunkcharcoal_ui||[]).push([[6983],{"./packages/react/dist/index.esm.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{BB:()=>useComponentAbstraction,h$:()=>ComponentAbstraction});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js"),styled_components__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./packages/utils/dist/index.esm.js"),react_spring__WEBPACK_IMPORTED_MODULE_6__=(__webpack_require__("./node_modules/warning/warning.js"),__webpack_require__("./packages/icons/dist/index.esm.js"),__webpack_require__("./node_modules/react-spring/dist/react-spring.esm.js")),_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_7__=__webpack_require__("./packages/styled/dist/index.esm.js"),DefaultValue={Link:react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function DefaultLink2({to,children,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a",{href:to,ref,...rest,children})}))},ComponentAbstractionContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext(DefaultValue);function ComponentAbstraction({children,components}){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ComponentAbstractionContext.Provider,{value:{...DefaultValue,...components},children})}function useComponentAbstraction(){return(0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ComponentAbstractionContext)}function unreachable(value){throw new Error(0===arguments.length?"unreachable":`unreachable (${JSON.stringify(value)})`)}var Clickable_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function Clickable2(props,ref){const{Link}=useComponentAbstraction(),isLink="to"in props,as=isLink?Link:"button",ariaDisabled=!(!isLink||!0!==props.disabled)||void 0;let rest=props;if(isLink){const{disabled,..._rest}=props;rest=_rest}return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledClickableDiv,{...rest,ref,as,"aria-disabled":ariaDisabled})})),StyledClickableDiv=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   cursor: pointer;
 
   ${_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.t0} {
@@ -345,24 +345,27 @@
       border-width: 2px;
       border-style: solid;
     `}
-`;var theme=(0,_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_5__.jG)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP),FieldLabel_default=(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
+`;styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
   display: inline-grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   cursor: pointer;
   outline: 0;
 
-  ${theme((o=>o.disabled))}
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+    cursor: default;
+  }
 
   :active > input {
     box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
-
-  ${_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.t0} {
-    cursor: default;
-  }
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
-  ${theme((o=>[o.typography(14).preserveHalfLeading,o.font.text2,o.margin.left(4)]))}
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-text2);
+  margin-left: 4px;
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.input.attrs({type:"checkbox"})`
   appearance: none;
   display: inline-flex;
@@ -423,7 +426,7 @@
       transition: transform 0.2s;
     }
   }
-`,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function FieldLabel2({style,className,label,required=!1,requiredText,subLabel,...labelProps},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(FieldLabelWrapper,{style,className,children:[(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label2,{ref,...labelProps,children:label}),required&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RequiredText,{children:requiredText}),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SubLabelClickable,{children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span",{children:subLabel})})]})}))),Label2=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
+`;var FieldLabel_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function FieldLabel2({style,className,label,required=!1,requiredText,subLabel,...labelProps},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(FieldLabelWrapper,{style,className,children:[(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label2,{ref,...labelProps,children:label}),required&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RequiredText,{children:requiredText}),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SubLabelClickable,{children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span",{children:subLabel})})]})})),Label2=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
@@ -663,7 +666,7 @@
   line-height: 22px;
   font-size: 14px;
   color: var(--charcoal-text3);
-`;var Icon_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function IconInner({name,scale,unsafeNonGuidelineScale,className,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{ref,name,scale,"unsafe-non-guideline-scale":unsafeNonGuidelineScale,class:className,...rest})}));function columnSystem(span,column,gutter){return span*column+(span-1)*gutter}(0,react_spring__WEBPACK_IMPORTED_MODULE_7__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
+`;var Icon_default=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function IconInner({name,scale,unsafeNonGuidelineScale,className,...rest},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{ref,name,scale,"unsafe-non-guideline-scale":unsafeNonGuidelineScale,class:className,...rest})}));function columnSystem(span,column,gutter){return span*column+(span-1)*gutter}(0,react_spring__WEBPACK_IMPORTED_MODULE_6__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   margin: auto;
   position: relative;
   height: fit-content;
@@ -688,7 +691,7 @@
   :focus {
     outline: none;
   }
-`);var ModalContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext({titleProps:{},title:"",close:void 0,showDismiss:!0,bottomSheet:!1});(0,react_spring__WEBPACK_IMPORTED_MODULE_7__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
+`);var ModalContext=react__WEBPACK_IMPORTED_MODULE_0__.createContext({titleProps:{},title:"",close:void 0,showDismiss:!0,bottomSheet:!1});(0,react_spring__WEBPACK_IMPORTED_MODULE_6__.animated)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   z-index: ${({zIndex})=>zIndex};
   overflow: auto;
   display: flex;
@@ -795,7 +798,7 @@
     transform: scale(1);
     opacity: 0;
   }
-`;styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div.attrs({role:"presentation"})`
+`,theme=(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div.attrs({role:"presentation"})`
   width: 1em;
   height: 1em;
   border-radius: 1em;
@@ -806,7 +809,7 @@
   &[data-reset-animation] {
     animation: none;
   }
-`;styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
+`,(0,_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_7__.jG)(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP));styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   margin: 4px 0;
   list-style: none;
   overflow: auto;
@@ -1169,4 +1172,4 @@
     margin-bottom: -4px;
   }
 `}}]);
-//# sourceMappingURL=6983.3cd3f86c.iframe.bundle.js.map
+//# sourceMappingURL=6983.8680ded0.iframe.bundle.js.map
