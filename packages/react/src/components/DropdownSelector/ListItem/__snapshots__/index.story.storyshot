@@ -13,17 +13,13 @@ exports[`Storyshots DropdownSelector/ListItem Basic 1`] = `
 }
 
 .c3:disabled,
-.c3[aria-disabled]:not([aria-disabled=false]) {
+.c3[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c3:active > input {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c4 {
