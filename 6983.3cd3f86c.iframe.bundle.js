@@ -1045,7 +1045,10 @@
   font-size: 14px;
   /** checkbox の height が 20px なのでcheckbox と text が揃っているように見せるために行ボックスの高さを 20px にしている */
   line-height: 20px;
-`,{S:32,M:40}),labelCSS=(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.a`
+`,{S:32,M:40}),horizontalPadding=({left,right})=>styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+  padding-right: ${(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.px)(right)};
+  padding-left: ${(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.px)(left)};
+`,activeTagItemRoot=horizontalPadding({left:16,right:8}),labelCSS=(styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.a`
   isolation: isolate;
   position: relative;
   height: ${({size})=>sizeMap[size]}px;
@@ -1055,11 +1058,26 @@
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 4px;
+  ${({size,status})=>"active"!==status&&(size=>{switch(size){case"M":return horizontalPadding({left:24,right:24});case"S":return horizontalPadding({left:16,right:16})}})(size)}
+  ${({status})=>"active"===status&&activeTagItemRoot}
+  color: ${({status})=>"inactive"===status?"var(--charcoal-text2)":"var(--charcoal-text5)"};
 
-  ${({size,status})=>theme((o=>[o.outline.default.focus,o.borderRadius(4),"active"!==status&&"M"===size&&o.padding.horizontal(24),"active"!==status&&"S"===size&&o.padding.horizontal(16),"inactive"===status?o.font.text2:o.font.text5,..."active"===status?[o.padding.left(16),o.padding.right(8)]:[]]))}
+  transition: 0.2s box-shadow;
 
-  ${_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.t0} {
-    ${theme((o=>[o.disabled]))}
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
     cursor: default;
   }
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
@@ -1071,10 +1089,13 @@
   height: 100%;
 
   background-color: ${({bgColor})=>bgColor};
-  ${({status})=>"inactive"===status&&theme((o=>o.bg.surface3))}
+  ${({status})=>"inactive"===status&&styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+      background-color: var(--charcoal-surface3);
+    `}
 
   ${({bgImage})=>void 0!==bgImage&&styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
-      ${theme((o=>[o.bg.surface4]))}
+      background-color: var(--charcoal-surface4);
+
       &::before {
         content: '';
         position: absolute;
@@ -1090,11 +1111,29 @@
     `}
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
   display: inline-flex;
-  gap: ${({theme:theme2})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_3__.px)(theme2.spacing[8])};
+  gap: 8px;
   align-items: center;
   z-index: 2;
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
-  ${theme((o=>[o.typography(14).bold]))}
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `),translateLabelCSS=styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
   display: flex;
   align-items: center;
@@ -1111,6 +1150,23 @@
   color: inherit;
   line-height: inherit;
 `,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
-  ${theme((o=>[o.typography(12).bold]))}
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  display: flow-root;
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `}}]);
-//# sourceMappingURL=6983.f137fbb8.iframe.bundle.js.map
+//# sourceMappingURL=6983.3cd3f86c.iframe.bundle.js.map
