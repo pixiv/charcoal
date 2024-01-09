@@ -22,11 +22,8 @@ exports[`Storyshots DropdownSelector/MenuList Basic 1`] = `
 }
 
 .c2:disabled,
-.c2[aria-disabled]:not([aria-disabled=false]) {
+.c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c2[aria-disabled="true"] {
   cursor: default;
 }
 
@@ -233,11 +230,8 @@ exports[`Storyshots DropdownSelector/MenuList Disabled 1`] = `
 }
 
 .c2:disabled,
-.c2[aria-disabled]:not([aria-disabled=false]) {
+.c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c2[aria-disabled="true"] {
   cursor: default;
 }
 
@@ -315,11 +309,8 @@ exports[`Storyshots DropdownSelector/MenuList Group 1`] = `
 }
 
 .c5:disabled,
-.c5[aria-disabled]:not([aria-disabled=false]) {
+.c5[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c5[aria-disabled="true"] {
   cursor: default;
 }
 
@@ -336,7 +327,7 @@ exports[`Storyshots DropdownSelector/MenuList Group 1`] = `
 
 .c2 {
   display: block;
-  color: #858585;
+  color: var(--charcoal-text3);
   font-size: 12px;
   font-weight: bold;
   padding: 12px 0 8px 16px;
