@@ -1,9 +1,8 @@
 import { ReactNode, useState, useRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
-import { theme } from '../../styled'
 import { DropdownPopover } from './DropdownPopover'
 import { findPreviewRecursive } from './utils/findPreviewRecursive'
 import MenuList, { MenuListChildren } from './MenuList'
@@ -90,14 +89,13 @@ const DropdownSelectorRoot = styled.div`
 
   ${disabledSelector} {
     cursor: default;
-    ${theme((o) => o.disabled)}
+    opacity: 0.32;
   }
 `
 
 const DropdownFieldLabel = styled(FieldLabel)`
   width: 100%;
-
-  ${theme((o) => o.margin.bottom(8))}
+  margin-bottom: 8px;
 `
 
 const DropdownButton = styled.button<{ invalid?: boolean }>`
@@ -115,31 +113,83 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
     cursor: default;
   }
 
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+
+  transition: 0.2s box-shadow;
+
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+
   ${({ invalid }) =>
-    theme((o) => [
-      o.padding.horizontal(8),
-      o.outline.default.focus,
-      o.bg.surface3,
-      o.borderRadius(4),
-      invalid === true && o.outline.assertive,
-    ])}
+    invalid === true &&
+    css`
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+      }
+    `}
 `
 
 const DropdownButtonText = styled.span`
   text-align: left;
-
-  ${theme((o) => [o.typography(14), o.font.text2])}
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 const DropdownButtonIcon = styled(Icon)`
-  ${theme((o) => [o.font.text2])}
+  color: var(--charcoal-text2);
 `
 
 const AssertiveText = styled.div<{ invalid?: boolean }>`
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--charcoal-text2);
+  line-height: 22px;
+  display: flow-root;
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
+
   ${({ invalid }) =>
-    theme((o) => [
-      o.typography(14),
-      o.margin.top(8),
-      invalid === true ? o.font.assertive : o.font.text2,
-    ])}
+    invalid === true &&
+    css`
+      color: var(--charcoal-assertive);
+    `}
 `

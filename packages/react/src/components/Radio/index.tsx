@@ -1,9 +1,7 @@
 import { memo, forwardRef, useCallback, useContext } from 'react'
 import * as React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import warning from 'warning'
-import { theme } from '../../styled'
-import { px } from '@charcoal-ui/utils'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
@@ -62,11 +60,14 @@ export default memo(Radio)
 const RadioRoot = styled.label`
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: ${({ theme }) => px(theme.spacing[4])};
+  grid-gap: 4px;
   align-items: center;
   cursor: pointer;
 
-  ${theme((o) => [o.disabled])}
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 `
 
 export const RadioInput = styled.input.attrs({ type: 'radio' })<{
@@ -84,43 +85,90 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     width: 20px;
     height: 20px;
     cursor: pointer;
+    border-radius: 999999px;
+    background-color: var(--charcoal-surface1);
+    transition: 0.2s background-color, 0.2s box-shadow;
 
-    ${({ invalid = false }) =>
-      theme((o) => [
-        o.borderRadius('oval'),
-        o.bg.surface1.hover.press,
-        invalid && o.outline.assertive,
-      ])};
+    &:not(:disabled):not([aria-disabled]),
+    &[aria-disabled='false'] {
+      ${({ invalid = false }) =>
+        invalid &&
+        css`
+          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+        `}
+
+      &:hover {
+        background-color: var(--charcoal-surface1-hover);
+      }
+      &:active {
+        background-color: var(--charcoal-surface1-press);
+      }
+      &:focus,
+      &:active,
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+      }
+    }
 
     &:not(:checked) {
       border-width: 2px;
       border-style: solid;
-      border-color: ${({ theme }) => theme.color.text3};
+      border-color: var(--charcoal-text3);
     }
 
     &:checked {
-      ${theme((o) => o.bg.brand.hover.press)}
-
+      background-color: var(--charcoal-brand);
       &::after {
         content: '';
         display: block;
         width: 8px;
         height: 8px;
         pointer-events: none;
+        background-color: var(--charcoal-text5);
+        border-radius: 999999px;
+        transition: 0.2s background-color, 0.2s box-shadow;
+      }
 
-        ${theme((o) => [o.bg.text5.hover.press, o.borderRadius('oval')])}
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        &:hover {
+          background-color: var(--charcoal-brand-hover);
+          &::after {
+            background-color: var(--charcoal-text5-hover);
+          }
+        }
+        &:active {
+          background-color: var(--charcoal-brand-press);
+          &::after {
+            background-color: var(--charcoal-text5-press);
+          }
+        }
       }
     }
-
-    ${theme((o) => o.outline.default.focus)}
-
-    /* FIXME: o.outline.default.focus の transition に o.bg.brand の transition が打ち消されてしまう */
-    transition: all 0.2s !important;
   }
 `
 
 const RadioLabel = styled.div`
-  ${theme((o) => [o.typography(14), o.font.text2])}
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 export type RadioGroupProps = React.PropsWithChildren<{
@@ -138,7 +186,7 @@ export type RadioGroupProps = React.PropsWithChildren<{
 const StyledRadioGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${({ theme }) => px(theme.spacing[8])};
+  grid-gap: 8px;
 `
 
 interface RadioGroupContext {

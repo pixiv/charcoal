@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active,
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus,
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  color: var(--charcoal-text2-press);
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "position": "absolute",
+      }
+    }
+  >
+    button
+  </button>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "position": "absolute",
+        "right": 8,
+      }
+    }
+  >
+    button
+  </button>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "bottom": 8,
+        "position": "absolute",
+      }
+    }
+  >
+    button
+  </button>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "bottom": 8,
+        "position": "absolute",
+        "right": 8,
+      }
+    }
+  >
+    button
+  </button>
+</div>
+`;

@@ -12,6 +12,8 @@ import {
 import styled from 'styled-components'
 import { theme } from '../../styled'
 import TextField from '../TextField'
+import DropdownSelector from '../DropdownSelector'
+import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 
 export default {
   title: 'Modal',
@@ -43,48 +45,63 @@ const DefaultStory = (args: ModalProps) => {
     // hidden from screen readers when a modal opens.
     <OverlayProvider>
       <Button onClick={() => state.open()}>Open Modal</Button>
-
-      <Modal
+      <M
         {...args}
+        isDismissable
         isOpen={state.isOpen}
         onClose={() => state.close()}
-        isDismissable
-      >
-        <ModalHeader />
-        <ModalBody>
-          <ModalVStack>
-            <StyledModalText>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              placeat tenetur, necessitatibus laudantium cumque exercitationem
-              provident. Quaerat iure enim, eveniet dolores earum odio quo
-              possimus fugiat aspernatur, numquam, commodi repellat.
-            </StyledModalText>
-            <ModalAlign>
-              <TextField
-                showLabel
-                label="Name"
-                placeholder="Nagisa"
-              ></TextField>
-            </ModalAlign>
-            <ModalAlign>
-              <TextField
-                showLabel
-                label="Country"
-                placeholder="Tokyo"
-              ></TextField>
-            </ModalAlign>
-          </ModalVStack>
-          <ModalButtons>
-            <Button variant="Primary" onClick={() => state.close()} fullWidth>
-              Apply
-            </Button>
-            <Button onClick={() => state.close()} fullWidth>
-              Cancel
-            </Button>
-          </ModalButtons>
-        </ModalBody>
-      </Modal>
+      />
     </OverlayProvider>
+  )
+}
+
+const M = (props: ModalProps) => {
+  return (
+    <Modal {...props}>
+      <ModalHeader />
+      <ModalBody>
+        <ModalVStack>
+          <StyledModalText>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+            placeat tenetur, necessitatibus laudantium cumque exercitationem
+            provident. Quaerat iure enim, eveniet dolores earum odio quo
+            possimus fugiat aspernatur, numquam, commodi repellat.
+          </StyledModalText>
+          <ModalAlign>
+            <TextField showLabel label="Name" placeholder="Nagisa"></TextField>
+          </ModalAlign>
+          <ModalAlign>
+            <TextField
+              autoFocus
+              showLabel
+              label="Country"
+              placeholder="Tokyo"
+            ></TextField>
+          </ModalAlign>
+          <ModalAlign>
+            <DropdownSelector
+              onChange={() => null}
+              value="10"
+              showLabel
+              label="Fruits"
+              placeholder="Apple"
+            >
+              <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
+              <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
+              <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+            </DropdownSelector>
+          </ModalAlign>
+        </ModalVStack>
+        <ModalButtons>
+          <Button variant="Primary" onClick={() => props.onClose()} fullWidth>
+            Apply
+          </Button>
+          <Button onClick={() => props.onClose()} fullWidth>
+            Cancel
+          </Button>
+        </ModalButtons>
+      </ModalBody>
+    </Modal>
   )
 }
 
@@ -220,3 +237,4 @@ export const NotDismmissableStory: Story<ModalProps> = (args: ModalProps) => {
     </OverlayProvider>
   )
 }
+export { InternalScrollStory as InternalScroll } from './__stories__/InternalScrollStory'

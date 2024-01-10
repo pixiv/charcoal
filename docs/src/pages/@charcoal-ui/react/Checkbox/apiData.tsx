@@ -25,4 +25,9 @@ export const apiData: Omit<
     default: 'false',
     type: 'boolean',
   },
+  invalid: {
+    description: '入力の不正化',
+    default: 'false',
+    type: 'boolean',
+  },
 }

@@ -1,0 +1,1076 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots TextArea Auto Height 1`] = `
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > .c4 {
+  margin-left: auto;
+}
+
+.c2 {
+  margin-bottom: 8px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  position: relative;
+  overflow: hidden;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c6:not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c6:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c7 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+.c7::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c7::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c7:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c7::placeholder {
+  color: var(--charcoal-text3);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1 c2"
+      style={
+        Object {
+          "border": 0,
+          "clip": "rect(0 0 0 0)",
+          "clipPath": "inset(50%)",
+          "height": 1,
+          "margin": "0 -1px -1px 0",
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "whiteSpace": "nowrap",
+          "width": 1,
+        }
+      }
+    >
+      <label
+        className="c3"
+        htmlFor="test-id"
+        id="test-id"
+        onBlur={null}
+        onFocus={null}
+      >
+        Label
+      </label>
+      <div
+        className="c4 c5"
+      >
+        <span />
+      </div>
+    </div>
+    <div
+      className="c6"
+      rows={4}
+    >
+      <textarea
+        aria-labelledby="test-id"
+        className="c7"
+        disabled={false}
+        id="test-id"
+        onChange={[Function]}
+        placeholder="TextArea"
+        readOnly={false}
+        rows={4}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Default 1`] = `
+.c7 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: auto;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  position: relative;
+  overflow: hidden;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c8:not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c8:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+.c9::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": 1,
+            "margin": "0 -1px -1px 0",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": 1,
+          }
+        }
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+          onBlur={null}
+          onFocus={null}
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="c7"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c8"
+        rows={4}
+      >
+        <textarea
+          aria-labelledby="test-id"
+          className="c9"
+          disabled={false}
+          id="test-id"
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          rows={4}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Has Count 1`] = `
+.c7 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: auto;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  position: relative;
+  overflow: hidden;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 5 + 18px);
+}
+
+.c8:not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c8:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) calc(8px / 0.875) 0;
+  height: calc(22px / 0.875 * 4 + 9px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+.c9::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10 {
+  position: absolute;
+  bottom: 9px;
+  right: 8px;
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": 1,
+            "margin": "0 -1px -1px 0",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": 1,
+          }
+        }
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+          onBlur={null}
+          onFocus={null}
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="c7"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c8"
+        rows={5}
+      >
+        <textarea
+          aria-labelledby="test-id"
+          className="c9"
+          disabled={false}
+          id="test-id"
+          maxLength={100}
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          rows={4}
+        />
+        <span
+          className="c10"
+        >
+          0/100
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Has Label 1`] = `
+.c9 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c9:disabled,
+.c9[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c9:focus {
+  outline: none;
+}
+
+.c9::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c8 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c8::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c8::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled='false']:active,
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled='false']:focus,
+.c8:not(:disabled):not([aria-disabled]):focus-visible,
+.c8[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: 4px;
+}
+
+.c2 > .c7 {
+  margin-left: auto;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c12 {
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  color: var(--charcoal-text2);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  position: relative;
+  overflow: hidden;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c10:not([aria-disabled]):hover,
+.c10 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c10:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c11 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+.c11::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <span
+          className="c5 c6"
+        >
+          *必須
+        </span>
+        <div
+          className="c7 c8"
+        >
+          <span>
+            <button
+              className="c9"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c10"
+        rows={4}
+      >
+        <textarea
+          aria-labelledby="test-id"
+          aria-required={true}
+          className="c11"
+          disabled={false}
+          id="test-id"
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          rows={4}
+        />
+      </div>
+      <p
+        className="c12"
+      >
+        Assistive text
+      </p>
+    </div>
+  </div>
+</div>
+`;

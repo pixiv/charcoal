@@ -4,7 +4,7 @@ const glob = promisify(require('glob'))
 const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
 module.exports = {
-  stories: ['../packages/**/*.story.@(tsx|mdx)'],
+  stories: ['../packages/**/*.mdx', '../packages/**/*.story.@(tsx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
@@ -15,6 +15,9 @@ module.exports = {
     {
       name: '@storybook/addon-styling',
       options: {
+        postCss: {
+          implementation: require.resolve('postcss'),
+        },
         postcssLoaderOptions: {
           postcssOptions: {
             config: path.resolve(__dirname, 'postcss.config.js'),

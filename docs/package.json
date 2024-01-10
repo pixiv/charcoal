@@ -26,8 +26,11 @@
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "@types/styled-components": "^5.1.26",
+    "autoprefixer": "^10.4.16",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
     "typescript": "^5.0.4"
   },
   "resolutions": {
@@ -41,6 +44,7 @@
     "@charcoal-ui/tailwind-config": "../packages/tailwind-config",
     "@charcoal-ui/tailwind-diff": "../packages/tailwind-diff",
     "@charcoal-ui/theme": "../packages/theme",
-    "@charcoal-ui/utils": "../packages/utils"
+    "@charcoal-ui/utils": "../packages/utils",
+    "next/@swc/helpers": "0.4.36"
   }
 }

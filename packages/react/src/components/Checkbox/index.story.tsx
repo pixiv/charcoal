@@ -13,6 +13,7 @@ type Props = {
   disabled: boolean
   readonly: boolean
   className?: string
+  invalid: boolean
 }
 
 export const Labelled: Story<Props> = (props) => {
@@ -56,6 +57,31 @@ Labelled.args = {
   defaultChecked: false,
   disabled: false,
   readonly: false,
+  invalid: false,
+}
+
+export const Invalid: Story<Omit<Props, 'invalid'>> = (props) => {
+  return (
+    <Checkbox
+      {...props}
+      name="labelled"
+      label="label"
+      invalid
+      onBlur={action('blur')}
+      onClick={action('click')}
+      onChange={action('change')}
+      onFocus={action('focus')}
+    >
+      同意する
+    </Checkbox>
+  )
+}
+
+Invalid.args = {
+  checked: false,
+  defaultChecked: false,
+  disabled: false,
+  readonly: false,
 }
 
 export const Unlabelled: Story<Props> = (props) => {
@@ -79,4 +105,5 @@ Unlabelled.args = {
   defaultChecked: false,
   disabled: false,
   readonly: false,
+  invalid: false,
 }

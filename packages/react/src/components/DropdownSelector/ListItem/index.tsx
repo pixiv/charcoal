@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import styled from 'styled-components'
-import { theme } from '../../../styled'
 
 export type CustomJSXElement =
   | keyof JSX.IntrinsicElements
@@ -44,15 +43,18 @@ const ItemDiv = styled.div`
   cursor: pointer;
   outline: none;
 
-  ${theme((o) => [o.padding.horizontal(16), o.disabled])}
+  padding-right: 16px;
+  padding-left: 16px;
 
-  &[aria-disabled="true"] {
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
     cursor: default;
   }
 
   :hover,
   :focus,
   :focus-within {
-    ${theme((o) => [o.bg.surface3])}
+    background-color: var(--charcoal-surface3);
   }
 `

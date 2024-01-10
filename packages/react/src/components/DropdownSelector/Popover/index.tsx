@@ -1,8 +1,9 @@
-import { RefObject, useRef } from 'react'
+import { RefObject, useContext, useRef } from 'react'
 import { ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import styled from 'styled-components'
-import { theme } from '../../../styled'
+import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
+import { usePreventScroll } from './usePreventScroll'
 
 export type PopoverProps = {
   isOpen: boolean
@@ -40,11 +41,24 @@ export default function Popover(props: PopoverProps) {
     }
   )
 
+  const modalBackground = useContext(ModalBackgroundContext)
+  usePreventScroll(modalBackground, props.isOpen)
+
   if (!props.isOpen) return null
 
   return (
     <Overlay portalContainer={document.body}>
-      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
+      <div
+        {...underlayProps}
+        style={{
+          position: 'fixed',
+          zIndex:
+            typeof popoverProps.style?.zIndex === 'number'
+              ? popoverProps.style.zIndex - 1
+              : 99999,
+          inset: 0,
+        }}
+      />
       <DropdownPopoverDiv {...popoverProps} ref={finalPopoverRef}>
         <DismissButton onDismiss={() => props.onClose()} />
         {props.children}
@@ -59,11 +73,9 @@ const DropdownPopoverDiv = styled.div`
   list-style: none;
   overflow: auto;
   max-height: inherit;
-
-  ${theme((o) => [
-    o.bg.background1,
-    o.border.default,
-    o.borderRadius(8),
-    o.padding.vertical(8),
-  ])}
+  background-color: var(--charcoal-background1);
+  border: solid 1px var(--charcoal-border-default);
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 `
