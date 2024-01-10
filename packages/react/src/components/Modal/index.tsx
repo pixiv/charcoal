@@ -82,7 +82,12 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   const ref = useObjectRef<HTMLDivElement>(external)
 
   const { modalProps, underlayProps } = useModalOverlay(
-    props,
+    {
+      ...props,
+      isKeyboardDismissDisabled:
+        isDismissable === undefined || isDismissable === false,
+    },
+
     {
       close: onClose,
       isOpen: isOpen,
