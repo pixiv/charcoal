@@ -1,4 +1,4 @@
-import { rgba } from 'polished'
+import rgba from 'polished/lib/color/rgba'
 import { CharcoalTheme } from './theme'
 import {
   BORDER_RADIUS,
