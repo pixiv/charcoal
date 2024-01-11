@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
+exports[`DropdownSelector/Popover Basic smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -98,58 +98,24 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-    style={
-      Object {
-        "position": "absolute",
-      }
-    }
+<div data-dark="false">
+  <button class="c0 c1"
+          style="position: absolute;"
   >
     button
   </button>
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-    style={
-      Object {
-        "position": "absolute",
-        "right": 8,
-      }
-    }
+  <button class="c0 c1"
+          style="position: absolute; right: 8px;"
   >
     button
   </button>
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-    style={
-      Object {
-        "bottom": 8,
-        "position": "absolute",
-      }
-    }
+  <button class="c0 c1"
+          style="position: absolute; bottom: 8px;"
   >
     button
   </button>
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-    style={
-      Object {
-        "bottom": 8,
-        "position": "absolute",
-        "right": 8,
-      }
-    }
+  <button class="c0 c1"
+          style="position: absolute; right: 8px; bottom: 8px;"
   >
     button
   </button>

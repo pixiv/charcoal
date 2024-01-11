@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Radio Default 1`] = `
+exports[`Radio Default smoke-test 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -125,175 +125,104 @@ exports[`Storyshots Radio Default 1`] = `
   grid-gap: 8px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
+<div data-dark="false">
+  <div css="
       display: flex;
       flex-direction: column;
-      gap: ",
-        [Function],
-        ";
-    ",
-      ]
-    }
-  >
-    <div
-      aria-invalid={false}
-      aria-label="選択肢-name1"
-      aria-orientation="vertical"
-      className="c0"
-      role="radiogroup"
+      gap: ,({
+    theme
+  }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_4__.px)(theme.spacing[24]),;
+    ">
+    <div role="radiogroup"
+         aria-orientation="vertical"
+         aria-label="選択肢-name1"
+         aria-invalid="false"
+         class="c0"
     >
-      <label
-        aria-disabled={false}
-        className="c1"
+      <label aria-disabled="false"
+             class="c1"
       >
-        <input
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="name1"
-          onChange={[Function]}
-          type="radio"
-          value="value1"
-        />
-        <div
-          className="c3"
+        <input name="name1"
+               type="radio"
+               class="c2"
+               value="value1"
         >
-          name1
-          (
-          value1
-          )を選ぶ
+        <div class="c3">
+          name1(value1)を選ぶ
         </div>
       </label>
-      <label
-        aria-disabled={false}
-        className="c1"
+      <label aria-disabled="false"
+             class="c1"
       >
-        <input
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="name1"
-          onChange={[Function]}
-          type="radio"
-          value="value2"
-        />
-        <div
-          className="c3"
+        <input name="name1"
+               type="radio"
+               class="c2"
+               value="value2"
         >
-          name1
-          (
-          value2
-          )を選ぶ
+        <div class="c3">
+          name1(value2)を選ぶ
         </div>
       </label>
     </div>
-    <div
-      aria-invalid={false}
-      aria-label="選択肢-name2"
-      aria-orientation="vertical"
-      className="c0"
-      role="radiogroup"
+    <div role="radiogroup"
+         aria-orientation="vertical"
+         aria-label="選択肢-name2"
+         aria-invalid="false"
+         class="c0"
     >
-      <label
-        aria-disabled={false}
-        className="c1"
+      <label aria-disabled="false"
+             class="c1"
       >
-        <input
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="name2"
-          onChange={[Function]}
-          type="radio"
-          value="value1"
-        />
-        <div
-          className="c3"
+        <input name="name2"
+               type="radio"
+               class="c2"
+               value="value1"
         >
-          name2
-          (
-          value1
-          )を選ぶ
+        <div class="c3">
+          name2(value1)を選ぶ
         </div>
       </label>
-      <label
-        aria-disabled={false}
-        className="c1"
+      <label aria-disabled="false"
+             class="c1"
       >
-        <input
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="name2"
-          onChange={[Function]}
-          type="radio"
-          value="value2"
-        />
-        <div
-          className="c3"
+        <input name="name2"
+               type="radio"
+               class="c2"
+               value="value2"
         >
-          name2
-          (
-          value2
-          )を選ぶ
+        <div class="c3">
+          name2(value2)を選ぶ
         </div>
       </label>
     </div>
-    <div
-      aria-invalid={false}
-      aria-label="選択肢-name3"
-      aria-orientation="vertical"
-      className="c0"
-      role="radiogroup"
+    <div role="radiogroup"
+         aria-orientation="vertical"
+         aria-label="選択肢-name3"
+         aria-invalid="false"
+         class="c0"
     >
-      <label
-        aria-disabled={false}
-        className="c1"
+      <label aria-disabled="false"
+             class="c1"
       >
-        <input
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="name3"
-          onChange={[Function]}
-          type="radio"
-          value="value1"
-        />
-        <div
-          className="c3"
+        <input name="name3"
+               type="radio"
+               class="c2"
+               value="value1"
         >
-          name3
-          (
-          value1
-          )を選ぶ
+        <div class="c3">
+          name3(value1)を選ぶ
         </div>
       </label>
-      <label
-        aria-disabled={false}
-        className="c1"
+      <label aria-disabled="false"
+             class="c1"
       >
-        <input
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="name3"
-          onChange={[Function]}
-          type="radio"
-          value="value2"
-        />
-        <div
-          className="c3"
+        <input name="name3"
+               type="radio"
+               class="c2"
+               value="value2"
         >
-          name3
-          (
-          value2
-          )を選ぶ
+        <div class="c3">
+          name3(value2)を選ぶ
         </div>
       </label>
     </div>

@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Carousel/CarouselButton Carousel Button 1`] = `
-.c3 {
-  stroke: none;
-  fill: currentColor;
-  width: 24px;
-  height: 24px;
-  line-height: 0;
-  font-size: 0;
-  vertical-align: middle;
-}
-
+exports[`Sandbox/Carousel/CarouselButton _CarouselButton smoke-test 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,51 +56,28 @@ exports[`Storyshots Sandbox/Carousel/CarouselButton Carousel Button 1`] = `
   color: #d6d6d6;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0"
-    onClick={[Function]}
-    style={
-      Object {
-        "left": 0,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-      }
-    }
-    type="button"
+<div data-dark="false">
+  <button type="button"
+          class="c0"
+          style="left: 0px; padding-left: 0px; padding-bottom: 0px;"
   >
-    <div
-      className="c1 c2"
-    >
-      <svg
-        className="c3"
-        size={24}
-        viewBox="0 0 24 24"
+    <div class="c1 c2">
+      <svg viewbox="0 0 24 24"
+           size="24"
+           class="gyClQP"
       >
-        <path
-          d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
-          transform="rotate(180 12 12)"
-        />
+        <path d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
+              transform="rotate(180 12 12)"
+        >
+        </path>
       </svg>
     </div>
   </button>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Carousel/CarouselButton Scroll Hint Button 1`] = `
-.c2 {
-  stroke: none;
-  fill: currentColor;
-  width: 24px;
-  height: 24px;
-  line-height: 0;
-  font-size: 0;
-  vertical-align: middle;
-}
-
-.c0 {
+exports[`Sandbox/Carousel/CarouselButton _ScrollHintButton smoke-test 1`] = `
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -132,36 +99,40 @@ exports[`Storyshots Sandbox/Carousel/CarouselButton Scroll Hint Button 1`] = `
   color: #ffffff;
 }
 
-.c1 {
-  cursor: pointer;
-}
-
-.c1:hover {
+.bdpGAM:hover .c0 {
   background-color: rgba(0,0,0,0.3472);
   color: #f5f5f5;
 }
 
-.c1:active {
+.bdpGAM:active .c0 {
   background-color: rgba(0,0,0,0.4288);
   color: #d6d6d6;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0 c1"
-    onClick={[Function]}
-  >
-    <svg
-      className="c2"
-      size={24}
-      viewBox="0 0 24 24"
+.c2 {
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: rgba(0,0,0,0.3472);
+  color: #f5f5f5;
+}
+
+.c2:active {
+  background-color: rgba(0,0,0,0.4288);
+  color: #d6d6d6;
+}
+
+<div data-dark="false">
+  <div class="c0 c1 c2">
+    <svg viewbox="0 0 24 24"
+         size="24"
+         class="gyClQP"
     >
-      <path
-        d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
-        transform="rotate(180 12 12)"
-      />
+      <path d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
+            transform="rotate(180 12 12)"
+      >
+      </path>
     </svg>
   </div>
 </div>

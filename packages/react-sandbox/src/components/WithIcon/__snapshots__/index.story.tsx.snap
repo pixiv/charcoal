@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/WithIcon Collapse 1`] = `
+exports[`Sandbox/WithIcon Collapse smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,49 +50,49 @@ exports[`Storyshots Sandbox/WithIcon Collapse 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
-        display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css={
-        Array [
-          "
-          background-color: ",
-          [Function],
-          ";
-        ",
-        ]
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
       }
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
-          <div
-            className="c2"
-          >
-            <div
-              className="c3"
-            />
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
+        display: flex;
+      ">
+    <div css="
+          background-color: ,({
+        theme
+      }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_6__.applyEffect)(theme.color.brand, theme.elementEffect.disabled),;
+        ">
+      <div class="c0">
+        <div class="c1">
+          <div class="c2">
+            <div class="c3">
+            </div>
           </div>
         </div>
-        <div
-          className="c4"
-        >
+        <div class="c4">
           Selection
         </div>
       </div>
@@ -101,7 +101,7 @@ exports[`Storyshots Sandbox/WithIcon Collapse 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Default 1`] = `
+exports[`Sandbox/WithIcon Default smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -127,7 +127,7 @@ exports[`Storyshots Sandbox/WithIcon Default 1`] = `
   display: flex;
   position: relative;
   height: 0;
-  width: 0px;
+  width: 16px;
   visibility: visible;
   margin-left: 4px;
 }
@@ -169,50 +169,51 @@ exports[`Storyshots Sandbox/WithIcon Default 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
-        display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css={
-        Array [
-          "
-          background-color: ",
-          [Function],
-          ";
-        ",
-        ]
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
       }
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
+        display: flex;
+      ">
+    <div css="
+          background-color: ,({
+        theme
+      }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_6__.applyEffect)(theme.color.brand, theme.elementEffect.disabled),;
+        ">
+      <div class="c0">
+        <div class="c1">
           Menu
         </div>
-        <div
-          className="c2"
-          width={0}
+        <div width="16"
+             class="c2"
         >
-          <div
-            className="c3"
-          >
-            <div
-              className="c4"
-            />
+          <div class="c3">
+            <div class="c4">
+            </div>
           </div>
         </div>
       </div>
@@ -221,7 +222,7 @@ exports[`Storyshots Sandbox/WithIcon Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Hide 1`] = `
+exports[`Sandbox/WithIcon Hide smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -271,49 +272,49 @@ exports[`Storyshots Sandbox/WithIcon Hide 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
-        display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css={
-        Array [
-          "
-          background-color: ",
-          [Function],
-          ";
-        ",
-        ]
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
       }
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
-          <div
-            className="c2"
-          >
-            <div
-              className="c3"
-            />
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
+        display: flex;
+      ">
+    <div css="
+          background-color: ,({
+        theme
+      }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_6__.applyEffect)(theme.color.brand, theme.elementEffect.disabled),;
+        ">
+      <div class="c0">
+        <div class="c1">
+          <div class="c2">
+            <div class="c3">
+            </div>
           </div>
         </div>
-        <div
-          className="c4"
-        >
+        <div class="c4">
           Selection
         </div>
       </div>
@@ -322,7 +323,7 @@ exports[`Storyshots Sandbox/WithIcon Hide 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Long Text 1`] = `
+exports[`Sandbox/WithIcon LongText smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -372,43 +373,47 @@ exports[`Storyshots Sandbox/WithIcon Long Text 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
+      }
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
         display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css="
+      ">
+    <div css="
       width: 200px;
-    "
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
+    ">
+      <div class="c0">
+        <div class="c1">
           Long Long Long Long Long Long Long Long Long Long Text
         </div>
-        <div
-          className="c2"
-        >
-          <div
-            className="c3"
-          >
-            <div
-              className="c4"
-            />
+        <div class="c2">
+          <div class="c3">
+            <div class="c4">
+            </div>
           </div>
         </div>
       </div>
@@ -417,7 +422,7 @@ exports[`Storyshots Sandbox/WithIcon Long Text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Long Text Overflow 1`] = `
+exports[`Sandbox/WithIcon LongTextOverflow smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -465,43 +470,47 @@ exports[`Storyshots Sandbox/WithIcon Long Text Overflow 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
+      }
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
         display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css="
+      ">
+    <div css="
       width: 200px;
-    "
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
+    ">
+      <div class="c0">
+        <div class="c1">
           Long Long Long Long Long Long Long Long Long Long Text
         </div>
-        <div
-          className="c2"
-        >
-          <div
-            className="c3"
-          >
-            <div
-              className="c4"
-            />
+        <div class="c2">
+          <div class="c3">
+            <div class="c4">
+            </div>
           </div>
         </div>
       </div>
@@ -510,7 +519,7 @@ exports[`Storyshots Sandbox/WithIcon Long Text Overflow 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Naive 1`] = `
+exports[`Sandbox/WithIcon Naive smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -575,49 +584,49 @@ exports[`Storyshots Sandbox/WithIcon Naive 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
-        display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css={
-        Array [
-          "
-          background-color: ",
-          [Function],
-          ";
-        ",
-        ]
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
       }
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
+        display: flex;
+      ">
+    <div css="
+          background-color: ,({
+        theme
+      }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_6__.applyEffect)(theme.color.brand, theme.elementEffect.disabled),;
+        ">
+      <div class="c0">
+        <div class="c1">
           Menu
         </div>
-        <div
-          className="c2"
-        >
-          <div
-            className="c3"
-          >
-            <div
-              className="c4"
-            />
+        <div class="c2">
+          <div class="c3">
+            <div class="c4">
+            </div>
           </div>
         </div>
       </div>
@@ -626,7 +635,7 @@ exports[`Storyshots Sandbox/WithIcon Naive 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Performance 1`] = `
+exports[`Sandbox/WithIcon Performance smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -694,50 +703,51 @@ exports[`Storyshots Sandbox/WithIcon Performance 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
-        display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css={
-        Array [
-          "
-          background-color: ",
-          [Function],
-          ";
-        ",
-        ]
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
       }
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-        >
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
+        display: flex;
+      ">
+    <div css="
+          background-color: ,({
+        theme
+      }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_6__.applyEffect)(theme.color.brand, theme.elementEffect.disabled),;
+        ">
+      <div class="c0">
+        <div class="c1">
           Menu
         </div>
-        <div
-          className="c2"
-          width={16}
+        <div width="16"
+             class="c2"
         >
-          <div
-            className="c3"
-          >
-            <div
-              className="c4"
-            />
+          <div class="c3">
+            <div class="c4">
+            </div>
           </div>
         </div>
       </div>
@@ -746,7 +756,7 @@ exports[`Storyshots Sandbox/WithIcon Performance 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Prefix 1`] = `
+exports[`Sandbox/WithIcon Prefix smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -772,7 +782,7 @@ exports[`Storyshots Sandbox/WithIcon Prefix 1`] = `
   display: flex;
   position: relative;
   height: 0;
-  width: 0px;
+  width: 16px;
   visibility: visible;
   margin-right: 4px;
 }
@@ -799,50 +809,51 @@ exports[`Storyshots Sandbox/WithIcon Prefix 1`] = `
   background-color: currentColor;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css={
-      Array [
-        "
-        ",
-        [Function],
-        "
-        display: flex;
-      ",
-      ]
-    }
-  >
-    <div
-      css={
-        Array [
-          "
-          background-color: ",
-          [Function],
-          ";
-        ",
-        ]
+<div data-dark="false">
+  <div css="
+        ,function interpolate({
+      theme
+    }) {
+      if (!(0,_util__WEBPACK_IMPORTED_MODULE_2__.isPresent)(theme)) {
+        // テーマが入っていない場合は復旧不可能なのでエラーにする
+        throw _util__WEBPACK_IMPORTED_MODULE_2__.noThemeProvider;
       }
-    >
-      <div
-        className="c0"
-      >
-        <div
-          className="c1"
-          width={0}
+      const internals = [
+      // ユーザーが定義したルール
+      ...(0,_util__WEBPACK_IMPORTED_MODULE_2__.wrapArray)(
+      /**
+       * こう書いてはいけない
+       *
+       * ❌
+       * \`\`\`ts
+       * const o = createO(theme)
+       * const declaration = spec(o)
+       * \`\`\`
+       *
+       * \`o\` を一時変数に入れてしまうと型 \`T\` の具象化が行われるので関数内に書く
+       */
+      specFn( /** o = */(0,_builders_o__WEBPACK_IMPORTED_MODULE_4__[&quot;default&quot;])(theme))),
+      // 必ず挿入される共通のルール
+      (0,_builders_transition__WEBPACK_IMPORTED_MODULE_5__[&quot;default&quot;])(theme)].filter(nonBlank);
+      return (0,_internals__WEBPACK_IMPORTED_MODULE_6__.toCSSObjects)(internals);
+    },
+        display: flex;
+      ">
+    <div css="
+          background-color: ,({
+        theme
+      }) => (0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_6__.applyEffect)(theme.color.brand, theme.elementEffect.disabled),;
+        ">
+      <div class="c0">
+        <div width="16"
+             class="c1"
         >
-          <div
-            className="c2"
-          >
-            <div
-              className="c3"
-            />
+          <div class="c2">
+            <div class="c3">
+            </div>
           </div>
         </div>
-        <div
-          className="c4"
-        >
+        <div class="c4">
           Selection
         </div>
       </div>

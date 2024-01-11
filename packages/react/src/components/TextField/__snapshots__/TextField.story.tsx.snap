@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TextField Default 1`] = `
+exports[`TextField Default smoke-test 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -214,73 +214,41 @@ exports[`Storyshots TextField Default 1`] = `
   gap: 24px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": 1,
-          }
-        }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2 c3"
+           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
-          onBlur={null}
-          onFocus={null}
+        <label id="test-id"
+               for="test-id"
+               class="c4"
         >
           Label
         </label>
-        <div
-          className="c5 c6"
-        >
+        <div class="c5 c6">
           <span>
-            <button
-              className="c7"
-            >
+            <button class="c7">
               Text Link
             </button>
           </span>
         </div>
       </div>
-      <div
-        className="c8"
-      >
-        <input
-          aria-labelledby="test-id"
-          className="c9"
-          disabled={false}
-          id="test-id"
-          onChange={[Function]}
-          placeholder="TextField"
-          readOnly={false}
-          type="text"
-        />
+      <div class="c8">
+        <input type="text"
+               placeholder="TextField"
+               id="test-id"
+               aria-labelledby="test-id"
+               class="c9"
+               value
+        >
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots TextField Has Affix 1`] = `
+exports[`TextField HasAffix smoke-test 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -480,70 +448,37 @@ exports[`Storyshots TextField Has Affix 1`] = `
   color: var(--charcoal-text3);
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1 c2"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": 1,
-          "margin": "0 -1px -1px 0",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": 1,
-        }
-      }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1 c2"
+         style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
-      <label
-        className="c3"
-        htmlFor="test-id"
-        id="test-id"
-        onBlur={null}
-        onFocus={null}
+      <label id="test-id"
+             for="test-id"
+             class="c3"
       >
         Label
       </label>
-      <div
-        className="c4 c5"
-      >
-        <span />
+      <div class="c4 c5">
+        <span>
+        </span>
       </div>
     </div>
-    <div
-      className="c6"
-    >
-      <div
-        className="c7"
-      >
+    <div class="c6">
+      <div class="c7">
         /home/john/
       </div>
-      <input
-        aria-labelledby="test-id"
-        className="c8"
-        disabled={false}
-        id="test-id"
-        maxLength={200}
-        onChange={[Function]}
-        placeholder="path/to/your/file"
-        readOnly={false}
-        type="text"
-      />
-      <span
-        className="c9"
+      <input type="text"
+             maxlength="200"
+             placeholder="path/to/your/file"
+             id="test-id"
+             aria-labelledby="test-id"
+             class="c8"
+             value
       >
+      <span class="c9">
         .png
-        <span
-          className="c10"
-        >
+        <span class="c10">
           0/200
         </span>
       </span>
@@ -552,7 +487,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Has Count 1`] = `
+exports[`TextField HasCount smoke-test 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -784,73 +719,37 @@ exports[`Storyshots TextField Has Count 1`] = `
   gap: 24px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": 1,
-          }
-        }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2 c3"
+           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
-          onBlur={null}
-          onFocus={null}
+        <label id="test-id"
+               for="test-id"
+               class="c4"
         >
           Label
         </label>
-        <div
-          className="c5 c6"
-        >
+        <div class="c5 c6">
           <span>
-            <button
-              className="c7"
-            >
+            <button class="c7">
               Text Link
             </button>
           </span>
         </div>
       </div>
-      <div
-        className="c8"
-      >
-        <input
-          aria-labelledby="test-id"
-          className="c9"
-          disabled={false}
-          id="test-id"
-          maxLength={100}
-          onChange={[Function]}
-          placeholder="TextField"
-          readOnly={false}
-          type="text"
-        />
-        <span
-          className="c10"
+      <div class="c8">
+        <input type="text"
+               maxlength="100"
+               placeholder="TextField"
+               id="test-id"
+               aria-labelledby="test-id"
+               class="c9"
+               value
         >
-          <span
-            className="c11"
-          >
+        <span class="c10">
+          <span class="c11">
             0/100
           </span>
         </span>
@@ -860,7 +759,7 @@ exports[`Storyshots TextField Has Count 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Has Label 1`] = `
+exports[`TextField HasLabel smoke-test 1`] = `
 .c9 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1109,59 +1008,40 @@ exports[`Storyshots TextField Has Label 1`] = `
   gap: 24px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-      >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2 c3">
+        <label id="test-id"
+               for="test-id"
+               class="c4"
         >
           Label
         </label>
-        <span
-          className="c5 c6"
-        >
+        <span class="c5 c6">
           *必須
         </span>
-        <div
-          className="c7 c8"
-        >
+        <div class="c7 c8">
           <span>
-            <button
-              className="c9"
-            >
+            <button class="c9">
               Text Link
             </button>
           </span>
         </div>
       </div>
-      <div
-        className="c10"
-      >
-        <input
-          aria-labelledby="test-id"
-          aria-required={true}
-          className="c11"
-          disabled={false}
-          id="test-id"
-          onChange={[Function]}
-          placeholder="TextField"
-          readOnly={false}
-          type="text"
-        />
+      <div class="c10">
+        <input type="text"
+               aria-required="true"
+               placeholder="TextField"
+               id="test-id"
+               aria-labelledby="test-id"
+               aria-describedby="test-id"
+               class="c11"
+               value
+        >
       </div>
-      <p
-        className="c12"
+      <p id="test-id"
+         class="c12"
       >
         Assistive text
       </p>
@@ -1170,7 +1050,7 @@ exports[`Storyshots TextField Has Label 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Prefix Icon 1`] = `
+exports[`TextField PrefixIcon smoke-test 1`] = `
 .c11 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1293,57 +1173,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   margin-left: auto;
 }
 
-.c12 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 20px;
-  height: 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-surface4);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
-  background-color: var( --charcoal-surface4-hover );
-}
-
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
-  background-color: var( --charcoal-surface4-press );
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1453,6 +1282,57 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   color: var(--charcoal-text3);
 }
 
+.c12 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text5);
+  background-color: var(--charcoal-surface4);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
+  background-color: var( --charcoal-surface4-hover );
+}
+
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
+  background-color: var( --charcoal-surface4-press );
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus,
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active,
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1465,79 +1345,40 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   color: #858585;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1 c2"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": 1,
-          "margin": "0 -1px -1px 0",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": 1,
-        }
-      }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1 c2"
+         style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
-      <label
-        className="c3"
-        htmlFor="test-id"
-        id="test-id"
-        onBlur={null}
-        onFocus={null}
+      <label id="test-id"
+             for="test-id"
+             class="c3"
       >
         Label
       </label>
-      <div
-        className="c4 c5"
-      >
-        <span />
+      <div class="c4 c5">
+        <span>
+        </span>
       </div>
     </div>
-    <div
-      className="c6"
-    >
-      <div
-        className="c7"
-      >
-        <div
-          className="c8"
-        >
-          <pixiv-icon
-            name="16/Search"
-          />
+    <div class="c6">
+      <div class="c7">
+        <div class="c8">
+          <pixiv-icon name="16/Search">
+          </pixiv-icon>
         </div>
       </div>
-      <input
-        aria-labelledby="test-id"
-        className="c9"
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="作品を検索"
-        readOnly={false}
-        type="text"
-        value=""
-      />
-      <span
-        className="c10"
+      <input type="text"
+             placeholder="作品を検索"
+             id="test-id"
+             aria-labelledby="test-id"
+             class="c9"
+             value
       >
-        <button
-          className="c11 c12"
-          onClick={[Function]}
-        >
-          <pixiv-icon
-            name="16/Remove"
-          />
+      <span class="c10">
+        <button class="c11 c12">
+          <pixiv-icon name="16/Remove">
+          </pixiv-icon>
         </button>
       </span>
     </div>

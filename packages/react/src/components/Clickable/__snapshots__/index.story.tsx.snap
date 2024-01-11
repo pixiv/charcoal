@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Clickable Button 1`] = `
+exports[`Clickable Button smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -39,19 +39,14 @@ exports[`Storyshots Clickable Button 1`] = `
   padding: 0;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0"
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0">
     button
   </button>
 </div>
 `;
 
-exports[`Storyshots Clickable Link 1`] = `
+exports[`Clickable Link smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -90,13 +85,9 @@ exports[`Storyshots Clickable Link 1`] = `
   padding: 0;
 }
 
-<div
-  data-dark={false}
->
-  <a
-    className="c0"
-    href="#"
-    onClick={[Function]}
+<div data-dark="false">
+  <a href="#"
+     class="c0"
   >
     link
   </a>
