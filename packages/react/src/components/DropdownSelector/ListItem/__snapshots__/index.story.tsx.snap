@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DropdownSelector/ListItem Basic 1`] = `
+exports[`DropdownSelector/ListItem Basic smoke-test 1`] = `
 .c3 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -141,95 +141,54 @@ exports[`Storyshots DropdownSelector/ListItem Basic 1`] = `
   color: red;
 }
 
-<div
-  data-dark={false}
->
-  <li
-    className="c0"
-    role="option"
+<div data-dark="false">
+  <li role="option"
+      class="c0"
   >
-    <div
-      className="c1"
-    >
+    <div class="c1">
       Item
     </div>
   </li>
-  <li
-    className="c0"
-    role="option"
+  <li role="option"
+      class="c0"
   >
-    <div
-      className="c1"
-    >
-      <pixiv-icon
-        name="16/Add"
-      />
-       Add
+    <div class="c1">
+      <pixiv-icon name="16/Add">
+      </pixiv-icon>
+      Add
     </div>
   </li>
-  <li
-    className="c0"
-    role="option"
+  <li role="option"
+      class="c0"
   >
-    <a
-      className="c1"
-      href="#"
+    <a href="#"
+       class="c1"
     >
       Normal Link
     </a>
   </li>
-  <li
-    className="c0"
-    role="option"
+  <li role="option"
+      class="c0"
   >
-    <a
-      className="c2 c1"
-      href="#"
+    <a href="#"
+       class="c2 c1"
     >
       Custom Link
     </a>
   </li>
-  <li
-    className="c0"
-    role="option"
+  <li role="option"
+      class="c0"
   >
-    <div
-      className="c1"
-      onClick={[Function]}
-    >
+    <div class="c1">
       Switch
-      <div
-        style={
-          Object {
-            "marginLeft": "auto",
-          }
-        }
-      >
-        <label
-          className="c3"
-        >
-          <input
-            aria-label="hello"
-            checked={false}
-            className="c4"
-            disabled={false}
-            name="hello"
-            onChange={[Function]}
-            onClick={[Function]}
-            onDragStart={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            role="switch"
-            type="checkbox"
-          />
+      <div style="margin-left: auto;">
+        <label class="c3">
+          <input aria-label="hello"
+                 name="hello"
+                 role="switch"
+                 type="checkbox"
+                 class="c4"
+          >
         </label>
       </div>
     </div>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Checkbox Invalid 1`] = `
+exports[`Checkbox Invalid smoke-test 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -114,60 +114,33 @@ exports[`Storyshots Checkbox Invalid 1`] = `
   line-height: 20px;
 }
 
-<div
-  data-dark={false}
->
-  <label
-    aria-disabled={false}
-    className="c0"
+<div data-dark="false">
+  <label aria-disabled="false"
+         class="c0"
   >
-    <div
-      className="c1"
-    >
-      <input
-        aria-invalid={true}
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="labelled"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={false}
-        className="c3"
+    <div class="c1">
+      <input type="checkbox"
+             aria-invalid="true"
+             name="labelled"
+             class="c2"
       >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
+      <div aria-hidden="true"
+           class="c3"
+      >
+        <pixiv-icon name="24/Check"
+                    unsafe-non-guideline-scale="0.6666666666666666"
+        >
+        </pixiv-icon>
       </div>
     </div>
-    <div
-      className="c4"
-    >
+    <div class="c4">
       同意する
     </div>
   </label>
 </div>
 `;
 
-exports[`Storyshots Checkbox Labelled 1`] = `
+exports[`Checkbox Labelled smoke-test 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -281,116 +254,51 @@ exports[`Storyshots Checkbox Labelled 1`] = `
   line-height: 20px;
 }
 
-<div
-  data-dark={false}
->
+<div data-dark="false">
   <div>
-    <div
-      style={
-        Object {
-          "marginBottom": "1em",
-        }
-      }
-    >
-      <label
-        aria-disabled={false}
-        className="c0"
+    <div style="margin-bottom: 1em;">
+      <label aria-disabled="false"
+             class="c0"
       >
-        <div
-          className="c1"
-        >
-          <input
-            checked={false}
-            className="c2"
-            disabled={false}
-            name="labelled"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onDragStart={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            type="checkbox"
-          />
-          <div
-            aria-hidden={true}
-            checked={false}
-            className="c3"
+        <div class="c1">
+          <input type="checkbox"
+                 name="labelled"
+                 class="c2"
           >
-            <pixiv-icon
-              name="24/Check"
-              unsafe-non-guideline-scale={0.6666666666666666}
-            />
+          <div aria-hidden="true"
+               class="c3"
+          >
+            <pixiv-icon name="24/Check"
+                        unsafe-non-guideline-scale="0.6666666666666666"
+            >
+            </pixiv-icon>
           </div>
         </div>
-        <div
-          className="c4"
-        >
+        <div class="c4">
           同意する
         </div>
       </label>
     </div>
     <div>
-      <label
-        aria-disabled={false}
-        className="c0"
+      <label aria-disabled="false"
+             class="c0"
       >
-        <div
-          className="c1"
-        >
-          <input
-            checked={false}
-            className="c2"
-            disabled={false}
-            name="labelled"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onDragStart={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            type="checkbox"
-          />
-          <div
-            aria-hidden={true}
-            checked={false}
-            className="c3"
+        <div class="c1">
+          <input type="checkbox"
+                 name="labelled"
+                 class="c2"
           >
-            <pixiv-icon
-              name="24/Check"
-              unsafe-non-guideline-scale={0.6666666666666666}
-            />
+          <div aria-hidden="true"
+               class="c3"
+          >
+            <pixiv-icon name="24/Check"
+                        unsafe-non-guideline-scale="0.6666666666666666"
+            >
+            </pixiv-icon>
           </div>
         </div>
-        <div
-          className="c4"
-        >
-          <span
-            style={
-              Object {
-                "display": "block",
-                "width": 200,
-              }
-            }
-          >
+        <div class="c4">
+          <span style="width: 200px; display: block;">
             同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する
           </span>
         </div>
@@ -400,7 +308,7 @@ exports[`Storyshots Checkbox Labelled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Unlabelled 1`] = `
+exports[`Checkbox Unlabelled smoke-test 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -508,49 +416,24 @@ exports[`Storyshots Checkbox Unlabelled 1`] = `
   visibility: hidden;
 }
 
-<div
-  data-dark={false}
->
+<div data-dark="false">
   <div>
-    <label
-      aria-disabled={false}
-      className="c0"
+    <label aria-disabled="false"
+           class="c0"
     >
-      <div
-        className="c1"
-      >
-        <input
-          aria-label="label"
-          checked={false}
-          className="c2"
-          disabled={false}
-          name="unlabelled"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          type="checkbox"
-        />
-        <div
-          aria-hidden={true}
-          checked={false}
-          className="c3"
+      <div class="c1">
+        <input type="checkbox"
+               aria-label="label"
+               name="unlabelled"
+               class="c2"
         >
-          <pixiv-icon
-            name="24/Check"
-            unsafe-non-guideline-scale={0.6666666666666666}
-          />
+        <div aria-hidden="true"
+             class="c3"
+        >
+          <pixiv-icon name="24/Check"
+                      unsafe-non-guideline-scale="0.6666666666666666"
+          >
+          </pixiv-icon>
         </div>
       </div>
     </label>

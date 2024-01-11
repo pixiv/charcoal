@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Pager Collapsed With Dots 1`] = `
-.c5 {
-  fill: currentColor;
-}
-
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager CollapsedWithDots smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -89,7 +78,7 @@ exports[`Storyshots Sandbox/Pager Collapsed With Dots 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -127,177 +116,138 @@ exports[`Storyshots Sandbox/Pager Collapsed With Dots 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c4.c4 {
+.c3.c3 {
   color: #858585;
   background: none;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <a
-      href="/4"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+<div data-dark="false">
+  <nav class="c0">
+    <a href="/4">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/1">
+      <button type="button"
+              class="c2"
       >
         <span>
           1
         </span>
       </button>
     </a>
-    <button
-      className="c3 c4"
-      disabled={true}
-      type="button"
+    <button type="button"
+            disabled
+            class="c2 c3"
     >
-      <svg
-        className="c5"
-        height={20}
-        viewBox="0 0 20 6"
-        width={20}
+      <svg viewbox="0 0 20 6"
+           width="20"
+           height="20"
+           class="yynJn"
       >
-        <path
-          d="M5,14.5 C3.61928813,14.5 2.5,13.3807119 2.5,12 C2.5,10.6192881 3.61928813,9.5 5,9.5
+        <path fill-rule="evenodd"
+              d="M5,14.5 C3.61928813,14.5 2.5,13.3807119 2.5,12 C2.5,10.6192881 3.61928813,9.5 5,9.5
           C6.38071187,9.5 7.5,10.6192881 7.5,12 C7.5,13.3807119 6.38071187,14.5 5,14.5 Z M12,14.5
           C10.6192881,14.5 9.5,13.3807119 9.5,12 C9.5,10.6192881 10.6192881,9.5 12,9.5
           C13.3807119,9.5 14.5,10.6192881 14.5,12 C14.5,13.3807119 13.3807119,14.5 12,14.5 Z M19,14.5
           C17.6192881,14.5 16.5,13.3807119 16.5,12 C16.5,10.6192881 17.6192881,9.5 19,9.5
           C20.3807119,9.5 21.5,10.6192881 21.5,12 C21.5,13.3807119 20.3807119,14.5 19,14.5 Z"
-          fillRule="evenodd"
-          transform="translate(-2 -9)"
-        />
+              transform="translate(-2 -9)"
+        >
+        </path>
       </svg>
     </button>
-    <a
-      href="/4"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/4">
+      <button type="button"
+              class="c2"
       >
         <span>
           4
         </span>
       </button>
     </a>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         5
       </span>
     </button>
-    <a
-      href="/6"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/6">
+      <button type="button"
+              class="c2"
       >
         <span>
           6
         </span>
       </button>
     </a>
-    <a
-      href="/7"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/7">
+      <button type="button"
+              class="c2"
       >
         <span>
           7
         </span>
       </button>
     </a>
-    <a
-      href="/8"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/8">
+      <button type="button"
+              class="c2"
       >
         <span>
           8
         </span>
       </button>
     </a>
-    <a
-      href="/6"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+    <a href="/6">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(-90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(-90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
@@ -305,14 +255,7 @@ exports[`Storyshots Sandbox/Pager Collapsed With Dots 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Default 1`] = `
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager Default smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -390,7 +333,7 @@ exports[`Storyshots Sandbox/Pager Default 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -428,151 +371,115 @@ exports[`Storyshots Sandbox/Pager Default 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <button
-      className="c1"
-      disabled={true}
-      hidden={true}
-      onClick={[Function]}
-      type="button"
+<div data-dark="false">
+  <nav class="c0">
+    <button type="button"
+            hidden
+            disabled
+            class="c1"
     >
-      <svg
-        height={16}
-        viewBox="0 0 10 8"
-        width={16}
+      <svg viewbox="0 0 10 8"
+           width="16"
+           height="16"
       >
-        <polyline
-          className="c2"
-          points="1,2 5,6 9,2"
-          strokeWidth="2"
-          transform="rotate(90 5 4)"
-        />
+        <polyline stroke-width="2"
+                  points="1,2 5,6 9,2"
+                  transform="rotate(90 5 4)"
+                  class="mxPpn"
+        >
+        </polyline>
       </svg>
     </button>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         1
       </span>
     </button>
-    <button
-      className="c3"
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c2"
     >
       <span>
         2
       </span>
     </button>
-    <button
-      className="c3"
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c2"
     >
       <span>
         3
       </span>
     </button>
-    <button
-      className="c3"
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c2"
     >
       <span>
         4
       </span>
     </button>
-    <button
-      className="c3"
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c2"
     >
       <span>
         5
       </span>
     </button>
-    <button
-      className="c3"
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c2"
     >
       <span>
         6
       </span>
     </button>
-    <button
-      className="c3"
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c2"
     >
       <span>
         7
       </span>
     </button>
-    <button
-      className="c1"
-      disabled={false}
-      hidden={false}
-      onClick={[Function]}
-      type="button"
+    <button type="button"
+            class="c1"
     >
-      <svg
-        height={16}
-        viewBox="0 0 10 8"
-        width={16}
+      <svg viewbox="0 0 10 8"
+           width="16"
+           height="16"
       >
-        <polyline
-          className="c2"
-          points="1,2 5,6 9,2"
-          strokeWidth="2"
-          transform="rotate(-90 5 4)"
-        />
+        <polyline stroke-width="2"
+                  points="1,2 5,6 9,2"
+                  transform="rotate(-90 5 4)"
+                  class="mxPpn"
+        >
+        </polyline>
       </svg>
     </button>
   </nav>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Last Page 1`] = `
-.c5 {
-  fill: currentColor;
-}
-
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager LastPage smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -650,7 +557,7 @@ exports[`Storyshots Sandbox/Pager Last Page 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -688,177 +595,139 @@ exports[`Storyshots Sandbox/Pager Last Page 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c4.c4 {
+.c3.c3 {
   color: #858585;
   background: none;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <a
-      href="/102"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+<div data-dark="false">
+  <nav class="c0">
+    <a href="/102">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/1">
+      <button type="button"
+              class="c2"
       >
         <span>
           1
         </span>
       </button>
     </a>
-    <button
-      className="c3 c4"
-      disabled={true}
-      type="button"
+    <button type="button"
+            disabled
+            class="c2 c3"
     >
-      <svg
-        className="c5"
-        height={20}
-        viewBox="0 0 20 6"
-        width={20}
+      <svg viewbox="0 0 20 6"
+           width="20"
+           height="20"
+           class="yynJn"
       >
-        <path
-          d="M5,14.5 C3.61928813,14.5 2.5,13.3807119 2.5,12 C2.5,10.6192881 3.61928813,9.5 5,9.5
+        <path fill-rule="evenodd"
+              d="M5,14.5 C3.61928813,14.5 2.5,13.3807119 2.5,12 C2.5,10.6192881 3.61928813,9.5 5,9.5
           C6.38071187,9.5 7.5,10.6192881 7.5,12 C7.5,13.3807119 6.38071187,14.5 5,14.5 Z M12,14.5
           C10.6192881,14.5 9.5,13.3807119 9.5,12 C9.5,10.6192881 10.6192881,9.5 12,9.5
           C13.3807119,9.5 14.5,10.6192881 14.5,12 C14.5,13.3807119 13.3807119,14.5 12,14.5 Z M19,14.5
           C17.6192881,14.5 16.5,13.3807119 16.5,12 C16.5,10.6192881 17.6192881,9.5 19,9.5
           C20.3807119,9.5 21.5,10.6192881 21.5,12 C21.5,13.3807119 20.3807119,14.5 19,14.5 Z"
-          fillRule="evenodd"
-          transform="translate(-2 -9)"
-        />
+              transform="translate(-2 -9)"
+        >
+        </path>
       </svg>
     </button>
-    <a
-      href="/99"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/99">
+      <button type="button"
+              class="c2"
       >
         <span>
           99
         </span>
       </button>
     </a>
-    <a
-      href="/100"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/100">
+      <button type="button"
+              class="c2"
       >
         <span>
           100
         </span>
       </button>
     </a>
-    <a
-      href="/101"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/101">
+      <button type="button"
+              class="c2"
       >
         <span>
           101
         </span>
       </button>
     </a>
-    <a
-      href="/102"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/102">
+      <button type="button"
+              class="c2"
       >
         <span>
           102
         </span>
       </button>
     </a>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         103
       </span>
     </button>
-    <a
-      href="/103"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={true}
-        className="c1"
-        hidden={true}
+    <a href="/103">
+      <button hidden
+              aria-disabled="true"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(-90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(-90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
@@ -866,14 +735,7 @@ exports[`Storyshots Sandbox/Pager Last Page 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Link 1`] = `
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager Link smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -951,7 +813,7 @@ exports[`Storyshots Sandbox/Pager Link 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -989,162 +851,122 @@ exports[`Storyshots Sandbox/Pager Link 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={true}
-        className="c1"
-        hidden={true}
+<div data-dark="false">
+  <nav class="c0">
+    <a href="/1">
+      <button hidden
+              aria-disabled="true"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         1
       </span>
     </button>
-    <a
-      href="/2"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/2">
+      <button type="button"
+              class="c2"
       >
         <span>
           2
         </span>
       </button>
     </a>
-    <a
-      href="/3"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/3">
+      <button type="button"
+              class="c2"
       >
         <span>
           3
         </span>
       </button>
     </a>
-    <a
-      href="/4"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/4">
+      <button type="button"
+              class="c2"
       >
         <span>
           4
         </span>
       </button>
     </a>
-    <a
-      href="/5"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/5">
+      <button type="button"
+              class="c2"
       >
         <span>
           5
         </span>
       </button>
     </a>
-    <a
-      href="/6"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/6">
+      <button type="button"
+              class="c2"
       >
         <span>
           6
         </span>
       </button>
     </a>
-    <a
-      href="/7"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/7">
+      <button type="button"
+              class="c2"
       >
         <span>
           7
         </span>
       </button>
     </a>
-    <a
-      href="/2"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+    <a href="/2">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(-90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(-90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
@@ -1152,14 +974,7 @@ exports[`Storyshots Sandbox/Pager Link 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager LittlePageRangeDisplayed smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1237,7 +1052,7 @@ exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -1275,123 +1090,95 @@ exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={true}
-        className="c1"
-        hidden={true}
+<div data-dark="false">
+  <nav class="c0">
+    <a href="/1">
+      <button hidden
+              aria-disabled="true"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         1
       </span>
     </button>
-    <a
-      href="/2"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/2">
+      <button type="button"
+              class="c2"
       >
         <span>
           2
         </span>
       </button>
     </a>
-    <a
-      href="/3"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/3">
+      <button type="button"
+              class="c2"
       >
         <span>
           3
         </span>
       </button>
     </a>
-    <a
-      href="/4"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/4">
+      <button type="button"
+              class="c2"
       >
         <span>
           4
         </span>
       </button>
     </a>
-    <a
-      href="/2"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+    <a href="/2">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(-90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(-90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
@@ -1399,14 +1186,7 @@ exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager NotCollapsed smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1484,7 +1264,7 @@ exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -1522,162 +1302,121 @@ exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <a
-      href="/3"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+<div data-dark="false">
+  <nav class="c0">
+    <a href="/3">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/1">
+      <button type="button"
+              class="c2"
       >
         <span>
           1
         </span>
       </button>
     </a>
-    <a
-      href="/2"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/2">
+      <button type="button"
+              class="c2"
       >
         <span>
           2
         </span>
       </button>
     </a>
-    <a
-      href="/3"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/3">
+      <button type="button"
+              class="c2"
       >
         <span>
           3
         </span>
       </button>
     </a>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         4
       </span>
     </button>
-    <a
-      href="/5"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/5">
+      <button type="button"
+              class="c2"
       >
         <span>
           5
         </span>
       </button>
     </a>
-    <a
-      href="/6"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/6">
+      <button type="button"
+              class="c2"
       >
         <span>
           6
         </span>
       </button>
     </a>
-    <a
-      href="/7"
-      onClick={[Function]}
-    >
-      <button
-        className="c3"
-        type="button"
+    <a href="/7">
+      <button type="button"
+              class="c2"
       >
         <span>
           7
         </span>
       </button>
     </a>
-    <a
-      href="/5"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={false}
-        className="c1"
-        hidden={false}
+    <a href="/5">
+      <button aria-disabled="false"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(-90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(-90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
@@ -1685,14 +1424,7 @@ exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager One 1`] = `
-.c2 {
-  fill: none;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: currentColor;
-}
-
+exports[`Sandbox/Pager One smoke-test 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1770,7 +1502,7 @@ exports[`Storyshots Sandbox/Pager One 1`] = `
   background: transparent;
 }
 
-.c3 {
+.c2 {
   font-size: 1rem;
   line-height: calc(1em + 8px);
   -webkit-text-decoration: none;
@@ -1808,84 +1540,69 @@ exports[`Storyshots Sandbox/Pager One 1`] = `
   color: #858585;
 }
 
-.c3[hidden] {
+.c2[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.c3:hover {
+.c2:hover {
   background: rgba(0,0,0,0.04);
   color: #474747;
 }
 
-.c3[aria-current] {
+.c2[aria-current] {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-.c3[aria-current]:hover {
+.c2[aria-current]:hover {
   background-color: rgba(0,0,0,0.88);
   color: #ffffff;
 }
 
-<div
-  data-dark={false}
->
-  <nav
-    className="c0"
-  >
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={true}
-        className="c1"
-        hidden={true}
+<div data-dark="false">
+  <nav class="c0">
+    <a href="/1">
+      <button hidden
+              aria-disabled="true"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>
-    <button
-      aria-current={true}
-      className="c3"
-      type="button"
+    <button type="button"
+            aria-current="true"
+            class="c2"
     >
       <span>
         1
       </span>
     </button>
-    <a
-      href="/1"
-      onClick={[Function]}
-    >
-      <button
-        aria-disabled={true}
-        className="c1"
-        hidden={true}
+    <a href="/1">
+      <button hidden
+              aria-disabled="true"
+              class="c1"
       >
-        <svg
-          height={16}
-          viewBox="0 0 10 8"
-          width={16}
+        <svg viewbox="0 0 10 8"
+             width="16"
+             height="16"
         >
-          <polyline
-            className="c2"
-            points="1,2 5,6 9,2"
-            strokeWidth="2"
-            transform="rotate(-90 5 4)"
-          />
+          <polyline stroke-width="2"
+                    points="1,2 5,6 9,2"
+                    transform="rotate(-90 5 4)"
+                    class="mxPpn"
+          >
+          </polyline>
         </svg>
       </button>
     </a>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TextArea Auto Height 1`] = `
+exports[`TextArea AutoHeight smoke-test 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -160,64 +160,38 @@ exports[`Storyshots TextArea Auto Height 1`] = `
   color: var(--charcoal-text3);
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1 c2"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": 1,
-          "margin": "0 -1px -1px 0",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": 1,
-        }
-      }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1 c2"
+         style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
     >
-      <label
-        className="c3"
-        htmlFor="test-id"
-        id="test-id"
-        onBlur={null}
-        onFocus={null}
+      <label id="test-id"
+             for="test-id"
+             class="c3"
       >
         Label
       </label>
-      <div
-        className="c4 c5"
-      >
-        <span />
+      <div class="c4 c5">
+        <span>
+        </span>
       </div>
     </div>
-    <div
-      className="c6"
-      rows={4}
+    <div rows="4"
+         class="c6"
     >
-      <textarea
-        aria-labelledby="test-id"
-        className="c7"
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="TextArea"
-        readOnly={false}
-        rows={4}
-      />
+      <textarea rows="4"
+                placeholder="TextArea"
+                id="test-id"
+                aria-labelledby="test-id"
+                class="c7"
+      >
+      </textarea>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots TextArea Default 1`] = `
+exports[`TextArea Default smoke-test 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -420,75 +394,43 @@ exports[`Storyshots TextArea Default 1`] = `
   gap: 24px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": 1,
-          }
-        }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2 c3"
+           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
-          onBlur={null}
-          onFocus={null}
+        <label id="test-id"
+               for="test-id"
+               class="c4"
         >
           Label
         </label>
-        <div
-          className="c5 c6"
-        >
+        <div class="c5 c6">
           <span>
-            <button
-              className="c7"
-              onClick={[Function]}
-            >
+            <button class="c7">
               Text Link
             </button>
           </span>
         </div>
       </div>
-      <div
-        className="c8"
-        rows={4}
+      <div rows="4"
+           class="c8"
       >
-        <textarea
-          aria-labelledby="test-id"
-          className="c9"
-          disabled={false}
-          id="test-id"
-          onChange={[Function]}
-          placeholder="Text Area"
-          readOnly={false}
-          rows={4}
-        />
+        <textarea rows="4"
+                  placeholder="Text Area"
+                  id="test-id"
+                  aria-labelledby="test-id"
+                  class="c9"
+        >
+        </textarea>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots TextArea Has Count 1`] = `
+exports[`TextArea HasCount smoke-test 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -700,72 +642,38 @@ exports[`Storyshots TextArea Has Count 1`] = `
   gap: 24px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": 1,
-          }
-        }
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2 c3"
+           style="border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
-          onBlur={null}
-          onFocus={null}
+        <label id="test-id"
+               for="test-id"
+               class="c4"
         >
           Label
         </label>
-        <div
-          className="c5 c6"
-        >
+        <div class="c5 c6">
           <span>
-            <button
-              className="c7"
-              onClick={[Function]}
-            >
+            <button class="c7">
               Text Link
             </button>
           </span>
         </div>
       </div>
-      <div
-        className="c8"
-        rows={5}
+      <div rows="5"
+           class="c8"
       >
-        <textarea
-          aria-labelledby="test-id"
-          className="c9"
-          disabled={false}
-          id="test-id"
-          maxLength={100}
-          onChange={[Function]}
-          placeholder="Text Area"
-          readOnly={false}
-          rows={4}
-        />
-        <span
-          className="c10"
+        <textarea rows="4"
+                  maxlength="100"
+                  placeholder="Text Area"
+                  id="test-id"
+                  aria-labelledby="test-id"
+                  class="c9"
         >
+        </textarea>
+        <span class="c10">
           0/100
         </span>
       </div>
@@ -774,7 +682,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea Has Label 1`] = `
+exports[`TextArea HasLabel smoke-test 1`] = `
 .c9 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1012,61 +920,42 @@ exports[`Storyshots TextArea Has Label 1`] = `
   gap: 24px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-      >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2 c3">
+        <label id="test-id"
+               for="test-id"
+               class="c4"
         >
           Label
         </label>
-        <span
-          className="c5 c6"
-        >
+        <span class="c5 c6">
           *必須
         </span>
-        <div
-          className="c7 c8"
-        >
+        <div class="c7 c8">
           <span>
-            <button
-              className="c9"
-              onClick={[Function]}
-            >
+            <button class="c9">
               Text Link
             </button>
           </span>
         </div>
       </div>
-      <div
-        className="c10"
-        rows={4}
+      <div rows="4"
+           class="c10"
       >
-        <textarea
-          aria-labelledby="test-id"
-          aria-required={true}
-          className="c11"
-          disabled={false}
-          id="test-id"
-          onChange={[Function]}
-          placeholder="Text Area"
-          readOnly={false}
-          rows={4}
-        />
+        <textarea rows="4"
+                  aria-required="true"
+                  placeholder="Text Area"
+                  id="test-id"
+                  aria-labelledby="test-id"
+                  aria-describedby="test-id"
+                  class="c11"
+        >
+        </textarea>
       </div>
-      <p
-        className="c12"
+      <p id="test-id"
+         class="c12"
       >
         Assistive text
       </p>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Filter Button 1`] = `
+exports[`Sandbox/Filter Button smoke-test 1`] = `
 .c0 {
   display: block;
   outline: none;
@@ -29,23 +29,31 @@ exports[`Storyshots Sandbox/Filter Button 1`] = `
 }
 
 @media (max-width:743px) {
+
+}
+
+@media (max-width:743px) {
   .c0 {
     padding: 5px 16px;
   }
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0"
-  >
+@media (max-width:743px) {
+
+}
+
+@media (max-width:743px) {
+
+}
+
+<div data-dark="false">
+  <button class="c0">
     Label
   </button>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Filter Default 1`] = `
+exports[`Sandbox/Filter Default smoke-test 1`] = `
 .c3 {
   display: block;
   outline: none;
@@ -146,54 +154,32 @@ exports[`Storyshots Sandbox/Filter Default 1`] = `
   }
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <a
-      href="/0"
-      onClick={[Function]}
-    >
-      <span
-        className="c1"
-      >
+<div data-dark="false">
+  <div class="c0">
+    <a href="/0">
+      <span class="c1">
         新しい順
       </span>
     </a>
-    <span
-      className="c2"
-    >
+    <span class="c2">
       古い順
     </span>
-    <button
-      className="c3"
-      onClick={[Function]}
-    >
+    <button class="c3">
       人気順
     </button>
-    <a
-      href="/3"
-      onClick={[Function]}
-    >
-      <span
-        className="c1"
-      >
+    <a href="/3">
+      <span class="c1">
         これはリンク
       </span>
     </a>
-    <button
-      className="c3"
-      onClick={[Function]}
-    >
+    <button class="c3">
       これはボタン
     </button>
   </div>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Filter Link 1`] = `
+exports[`Sandbox/Filter Link smoke-test 1`] = `
 .c0 {
   display: block;
   outline: none;
@@ -222,17 +208,25 @@ exports[`Storyshots Sandbox/Filter Link 1`] = `
 }
 
 @media (max-width:743px) {
+
+}
+
+@media (max-width:743px) {
+
+}
+
+@media (max-width:743px) {
+
+}
+
+@media (max-width:743px) {
   .c0 {
     padding: 5px 16px;
   }
 }
 
-<div
-  data-dark={false}
->
-  <span
-    className="c0"
-  >
+<div data-dark="false">
+  <span class="c0">
     Label
   </span>
 </div>

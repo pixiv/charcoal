@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Danger 1`] = `
+exports[`Button Danger smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -98,20 +98,14 @@ exports[`Storyshots Button Danger 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Default 1`] = `
+exports[`Button Default smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -209,20 +203,14 @@ exports[`Storyshots Button Default 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Disabled 1`] = `
+exports[`Button Disabled smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -320,20 +308,16 @@ exports[`Storyshots Button Disabled 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={true}
-    onClick={[Function]}
+<div data-dark="false">
+  <button disabled
+          class="c0 c1"
   >
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Fixed 1`] = `
+exports[`Button Fixed smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -431,20 +415,14 @@ exports[`Storyshots Button Fixed 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Focus 1`] = `
+exports[`Button Focus smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -542,20 +520,14 @@ exports[`Storyshots Button Focus 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onMouseOver={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Mouse over to focus
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Layout Example 1`] = `
+exports[`Button LayoutExample smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -771,65 +743,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   opacity: 0.32;
 }
 
-.c4 {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled='false']:active,
-.c4:not(:disabled):not([aria-disabled]):focus,
-.c4[aria-disabled='false']:focus,
-.c4:not(:disabled):not([aria-disabled]):focus-visible,
-.c4[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4:not(:disabled):not([aria-disabled]):hover,
-.c4[aria-disabled='false']:hover {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled='false']:active {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-brand-press);
-}
-
-.c4:disabled,
-.c4[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c5 {
   width: -webkit-fill-available;
   width: -moz-available;
@@ -889,134 +802,143 @@ exports[`Storyshots Button Layout Example 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    css="
+.c4 {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text5);
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c4:not(:disabled):not([aria-disabled]):active,
+.c4[aria-disabled='false']:active,
+.c4:not(:disabled):not([aria-disabled]):focus,
+.c4[aria-disabled='false']:focus,
+.c4:not(:disabled):not([aria-disabled]):focus-visible,
+.c4[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c4:not(:disabled):not([aria-disabled]):hover,
+.c4[aria-disabled='false']:hover {
+  color: var(--charcoal-text5-hover);
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c4:not(:disabled):not([aria-disabled]):active,
+.c4[aria-disabled='false']:active {
+  color: var(--charcoal-text5-press);
+  background-color: var(--charcoal-brand-press);
+}
+
+.c4:disabled,
+.c4[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+<div data-dark="false">
+  <div css="
       display: grid;
       gap: 24px;
-    "
-  >
-    <div
-      css="
+    ">
+    <div css="
         display: grid;
         grid: auto / auto-flow min-content;
         gap: 8px;
-      "
-    >
-      <button
-        className="c0 c1"
-        disabled={false}
-      >
+      ">
+      <button class="c0 c1">
         Grid
       </button>
-      <button
-        className="c0 c2"
-        disabled={false}
-      >
+      <button class="c0 c2">
         Layout
       </button>
-      <button
-        className="c0 c3"
-        disabled={false}
-      >
+      <button class="c0 c3">
         Sample
       </button>
     </div>
-    <div
-      css="
+    <div css="
         display: grid;
         grid: auto-flow auto / 392px;
         gap: 8px;
-      "
-    >
-      <button
-        className="c0 c4"
-        disabled={false}
-      >
+      ">
+      <button class="c0 c4">
         Submit
       </button>
-      <button
-        className="c0 c5"
-        disabled={false}
-      >
+      <button class="c0 c5">
         Cancel
       </button>
     </div>
-    <div
-      css="
+    <div css="
         display: flex;
 
-        & > * + * {
+        &amp; > * + * {
           margin-left: 8px;
         }
-      "
-    >
-      <button
-        className="c0 c1"
-        disabled={false}
-      >
+      ">
+      <button class="c0 c1">
         Flex
       </button>
-      <button
-        className="c0 c2"
-        disabled={false}
-      >
+      <button class="c0 c2">
         Layout
       </button>
-      <button
-        className="c0 c3"
-        disabled={false}
-      >
+      <button class="c0 c3">
         Sample
       </button>
     </div>
-    <div
-      css="
+    <div css="
         display: flex;
         flex-direction: column;
         width: 392px;
 
-        & > * + * {
+        &amp; > * + * {
           margin-top: 8px;
         }
-      "
-    >
-      <button
-        className="c0 c4"
-        disabled={false}
-      >
+      ">
+      <button class="c0 c4">
         Submit
       </button>
-      <button
-        className="c0 c5"
-        disabled={false}
-      >
+      <button class="c0 c5">
         Cancel
       </button>
     </div>
-    <div
-      css="
+    <div css="
         display: flex;
         flex-direction: column;
         width: 392px;
 
-        & > * + * {
+        &amp; > * + * {
           margin-top: 8px;
         }
-      "
-    >
-      <button
-        className="c0 c4"
-        disabled={false}
-      >
+      ">
+      <button class="c0 c4">
         すべて見る
       </button>
-      <button
-        className="c0 c1"
-        disabled={false}
-      >
+      <button class="c0 c1">
         作品を投稿
       </button>
     </div>
@@ -1024,7 +946,7 @@ exports[`Storyshots Button Layout Example 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Link 1`] = `
+exports[`Button Link smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1122,20 +1044,16 @@ exports[`Storyshots Button Link 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <a
-    className="c0 c1"
-    href="#"
-    onClick={[Function]}
+<div data-dark="false">
+  <a href="#"
+     class="c0 c1"
   >
     Button
   </a>
 </div>
 `;
 
-exports[`Storyshots Button Navigation 1`] = `
+exports[`Button Navigation smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1233,20 +1151,14 @@ exports[`Storyshots Button Navigation 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Nihongo 1`] = `
+exports[`Button Nihongo smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1344,20 +1256,14 @@ exports[`Storyshots Button Nihongo 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     日本語だよ
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Overlay 1`] = `
+exports[`Button Overlay smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1455,20 +1361,14 @@ exports[`Storyshots Button Overlay 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Primary 1`] = `
+exports[`Button Primary smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1566,20 +1466,14 @@ exports[`Storyshots Button Primary 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>
 `;
 
-exports[`Storyshots Button Small 1`] = `
+exports[`Button Small smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1677,14 +1571,8 @@ exports[`Storyshots Button Small 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-    onClick={[Function]}
-  >
+<div data-dark="false">
+  <button class="c0 c1">
     Button
   </button>
 </div>

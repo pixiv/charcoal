@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots IconButton Default M 1`] = `
+exports[`IconButton DefaultM smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -90,21 +90,17 @@ exports[`Storyshots IconButton Default M 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    title="close"
+<div data-dark="false">
+  <button title="close"
+          class="c0 c1"
   >
-    <pixiv-icon
-      name="24/Close"
-    />
+    <pixiv-icon name="24/Close">
+    </pixiv-icon>
   </button>
 </div>
 `;
 
-exports[`Storyshots IconButton Overlay M 1`] = `
+exports[`IconButton OverlayM smoke-test 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -194,16 +190,12 @@ exports[`Storyshots IconButton Overlay M 1`] = `
   opacity: 0.32;
 }
 
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    title="close"
+<div data-dark="false">
+  <button title="close"
+          class="c0 c1"
   >
-    <pixiv-icon
-      name="24/Close"
-    />
+    <pixiv-icon name="24/Close">
+    </pixiv-icon>
   </button>
 </div>
 `;

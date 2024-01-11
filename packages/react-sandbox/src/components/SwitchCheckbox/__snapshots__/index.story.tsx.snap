@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Default 1`] = `
+exports[`Sandbox/Selection Control/SwitchCheckbox Default smoke-test 1`] = `
 .c7 {
   margin-left: 8px;
 }
@@ -101,41 +101,27 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Default 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-<div
-  data-dark={false}
->
-  <label
-    aria-disabled={false}
-    className="c0"
+<div data-dark="false">
+  <label class="c0"
+         aria-disabled="false"
   >
-    <span
-      className="c1"
-    >
-      <input
-        className="c2"
-        defaultChecked={false}
-        disabled={false}
-        onChange={[Function]}
-        type="checkbox"
-      />
-      <div
-        className="c3 c4"
+    <span class="c1">
+      <input type="checkbox"
+             class="c2"
       >
-        <div
-          className="c5 c6"
-        />
+      <div class="c3 c4">
+        <div class="c5 c6">
+        </div>
       </div>
     </span>
-    <span
-      className="c7"
-    >
+    <span class="c7">
       label
     </span>
   </label>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Disabled 1`] = `
+exports[`Sandbox/Selection Control/SwitchCheckbox Disabled smoke-test 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -232,35 +218,26 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Disabled 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-<div
-  data-dark={false}
->
-  <label
-    aria-disabled={true}
-    className="c0"
+<div data-dark="false">
+  <label class="c0"
+         aria-disabled="true"
   >
-    <span
-      className="c1"
-    >
-      <input
-        checked={true}
-        className="c2"
-        disabled={true}
-        type="checkbox"
-      />
-      <div
-        className="c3 c4"
+    <span class="c1">
+      <input disabled
+             type="checkbox"
+             class="c2"
+             checked
       >
-        <div
-          className="c5 c6"
-        />
+      <div class="c3 c4">
+        <div class="c5 c6">
+        </div>
       </div>
     </span>
   </label>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Off 1`] = `
+exports[`Sandbox/Selection Control/SwitchCheckbox Off smoke-test 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -357,33 +334,22 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Off 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-<div
-  data-dark={false}
->
-  <label
-    className="c0"
-  >
-    <span
-      className="c1"
-    >
-      <input
-        checked={false}
-        className="c2"
-        type="checkbox"
-      />
-      <div
-        className="c3 c4"
+<div data-dark="false">
+  <label class="c0">
+    <span class="c1">
+      <input type="checkbox"
+             class="c2"
       >
-        <div
-          className="c5 c6"
-        />
+      <div class="c3 c4">
+        <div class="c5 c6">
+        </div>
       </div>
     </span>
   </label>
 </div>
 `;
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox On 1`] = `
+exports[`Sandbox/Selection Control/SwitchCheckbox On smoke-test 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -480,26 +446,16 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox On 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-<div
-  data-dark={false}
->
-  <label
-    className="c0"
-  >
-    <span
-      className="c1"
-    >
-      <input
-        checked={true}
-        className="c2"
-        type="checkbox"
-      />
-      <div
-        className="c3 c4"
+<div data-dark="false">
+  <label class="c0">
+    <span class="c1">
+      <input type="checkbox"
+             class="c2"
+             checked
       >
-        <div
-          className="c5 c6"
-        />
+      <div class="c3 c4">
+        <div class="c5 c6">
+        </div>
       </div>
     </span>
   </label>

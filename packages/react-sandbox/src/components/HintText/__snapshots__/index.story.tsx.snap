@@ -1,21 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/HintText Default 1`] = `
-.c2 {
-  stroke: none;
-  fill: currentColor;
-  width: 16px;
-  height: 16px;
-  line-height: 0;
-  font-size: 0;
-  vertical-align: middle;
-}
-
-.c3 {
-  fill: #ffffff;
-  fill-rule: evenodd;
-}
-
+exports[`Sandbox/HintText Default smoke-test 1`] = `
 .c0 {
   background-color: var(--charcoal-surface3);
   border-radius: 8px;
@@ -47,7 +32,7 @@ exports[`Storyshots Sandbox/HintText Default 1`] = `
   margin: -4px 4px -4px 0;
 }
 
-.c4 {
+.c2 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
@@ -55,7 +40,7 @@ exports[`Storyshots Sandbox/HintText Default 1`] = `
   margin: 0;
 }
 
-.c4::before {
+.c2::before {
   display: block;
   width: 0;
   height: 0;
@@ -63,7 +48,7 @@ exports[`Storyshots Sandbox/HintText Default 1`] = `
   margin-top: -4px;
 }
 
-.c4::after {
+.c2::after {
   display: block;
   width: 0;
   height: 0;
@@ -80,38 +65,24 @@ exports[`Storyshots Sandbox/HintText Default 1`] = `
   }
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-    default={
-      Object {
-        "horizontal": 16,
-        "vertical": 16,
-      }
-    }
+<div data-dark="false">
+  <div class="c0"
+       default
   >
-    <div
-      className="c1"
-    >
-      <svg
-        className="c2"
-        size={16}
-        viewBox="0 0 16 16"
+    <div class="c1">
+      <svg viewbox="0 0 16 16"
+           size="16"
+           class="bWJIjT"
       >
-        <path
-          d="M8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16Z"
-        />
-        <path
-          className="c3"
-          d="M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8 6.25C8.69036 6.25 9.25 5.69036 9.25 5C9.25 4.30964 8.69036 3.75 8 3.75C7.30964 3.75 6.75 4.30964 6.75 5C6.75 5.69036 7.30964 6.25 8 6.25ZM7 7.75V11.25C7 11.8023 7.44772 12.25 8 12.25C8.55228 12.25 9 11.8023 9 11.25V7.75C9 7.19772 8.55228 6.75 8 6.75C7.44772 6.75 7 7.19772 7 7.75Z"
-        />
+        <path d="M8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16Z">
+        </path>
+        <path d="M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8 6.25C8.69036 6.25 9.25 5.69036 9.25 5C9.25 4.30964 8.69036 3.75 8 3.75C7.30964 3.75 6.75 4.30964 6.75 5C6.75 5.69036 7.30964 6.25 8 6.25ZM7 7.75V11.25C7 11.8023 7.44772 12.25 8 12.25C8.55228 12.25 9 11.8023 9 11.25V7.75C9 7.19772 8.55228 6.75 8 6.75C7.44772 6.75 7 7.19772 7 7.75Z"
+              class="epMzKO"
+        >
+        </path>
       </svg>
     </div>
-    <p
-      className="c4"
-    >
+    <p class="c2">
       ヒントテキストだよおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
     </p>
   </div>

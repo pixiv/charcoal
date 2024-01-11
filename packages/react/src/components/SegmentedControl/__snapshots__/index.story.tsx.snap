@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots SegmentedControl Object Segments 1`] = `
+exports[`SegmentedControl ObjectSegments smoke-test 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -88,169 +88,69 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
   margin-bottom: -4px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    aria-label="test"
-    aria-orientation="vertical"
-    className="c0"
-    id="react-aria-1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    role="radiogroup"
+<div data-dark="false">
+  <div aria-label="test"
+       role="radiogroup"
+       aria-orientation="vertical"
+       id="test-id"
+       class="c0"
   >
-    <label
-      aria-disabled={false}
-      checked={false}
-      className="c1"
+    <label aria-disabled="false"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        tabIndex={0}
-        type="radio"
-        value="option1"
-      />
-      <div
-        className="c3"
+      <input tabindex="0"
+             type="radio"
+             name="test"
+             class="c2"
+             value="option1"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           選択肢1
         </div>
       </div>
     </label>
-    <label
-      aria-disabled={false}
-      checked={false}
-      className="c1"
+    <label aria-disabled="false"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        tabIndex={0}
-        type="radio"
-        value="option2"
-      />
-      <div
-        className="c3"
+      <input tabindex="0"
+             type="radio"
+             name="test"
+             class="c2"
+             value="option2"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           選択肢2
         </div>
       </div>
     </label>
-    <label
-      aria-disabled={false}
-      checked={false}
-      className="c1"
+    <label aria-disabled="false"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        tabIndex={0}
-        type="radio"
-        value="option3"
-      />
-      <div
-        className="c3"
+      <input tabindex="0"
+             type="radio"
+             name="test"
+             class="c2"
+             value="option3"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           選択肢3
         </div>
       </div>
     </label>
-    <label
-      aria-disabled={true}
-      checked={false}
-      className="c1"
+    <label aria-disabled="true"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={true}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        type="radio"
-        value="option4"
-      />
-      <div
-        className="c3"
+      <input type="radio"
+             name="test"
+             disabled
+             class="c2"
+             value="option4"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           選択肢4
         </div>
       </div>
@@ -259,7 +159,7 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
 </div>
 `;
 
-exports[`Storyshots SegmentedControl String Segments 1`] = `
+exports[`SegmentedControl StringSegments smoke-test 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -347,132 +247,54 @@ exports[`Storyshots SegmentedControl String Segments 1`] = `
   margin-bottom: -4px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    aria-label="test"
-    aria-orientation="vertical"
-    className="c0"
-    id="react-aria-5"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    role="radiogroup"
+<div data-dark="false">
+  <div aria-label="test"
+       role="radiogroup"
+       aria-orientation="vertical"
+       id="test-id"
+       class="c0"
   >
-    <label
-      aria-disabled={false}
-      checked={false}
-      className="c1"
+    <label aria-disabled="false"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        tabIndex={0}
-        type="radio"
-        value="option1"
-      />
-      <div
-        className="c3"
+      <input tabindex="0"
+             type="radio"
+             name="test"
+             class="c2"
+             value="option1"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           option1
         </div>
       </div>
     </label>
-    <label
-      aria-disabled={false}
-      checked={false}
-      className="c1"
+    <label aria-disabled="false"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        tabIndex={0}
-        type="radio"
-        value="option2"
-      />
-      <div
-        className="c3"
+      <input tabindex="0"
+             type="radio"
+             name="test"
+             class="c2"
+             value="option2"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           option2
         </div>
       </div>
     </label>
-    <label
-      aria-disabled={false}
-      checked={false}
-      className="c1"
+    <label aria-disabled="false"
+           class="c1"
     >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="test"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        required={false}
-        tabIndex={0}
-        type="radio"
-        value="option3"
-      />
-      <div
-        className="c3"
+      <input tabindex="0"
+             type="radio"
+             name="test"
+             class="c2"
+             value="option3"
       >
-        <div
-          className="c4"
-        >
+      <div class="c3">
+        <div class="c4">
           option3
         </div>
       </div>

@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Carousel Carousel 1`] = `
-.c12 {
-  stroke: none;
-  fill: currentColor;
-  width: 24px;
-  height: 24px;
-  line-height: 0;
-  font-size: 0;
-  vertical-align: middle;
-}
-
+exports[`Sandbox/Carousel _Carousel smoke-test 1`] = `
 .c11 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -65,6 +55,39 @@ exports[`Storyshots Sandbox/Carousel Carousel 1`] = `
 }
 
 .c9:active .c10 {
+  background-color: rgba(0,0,0,0.4288);
+  color: #d6d6d6;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  min-width: 40px;
+  border: none;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: 0.4s visibility,0.4s opacity;
+  transition: 0.4s visibility,0.4s opacity;
+  z-index: 1;
+}
+
+.c12:hover .c10 {
+  background-color: rgba(0,0,0,0.3472);
+  color: #f5f5f5;
+}
+
+.c12:active .c10 {
   background-color: rgba(0,0,0,0.4288);
   color: #d6d6d6;
 }
@@ -155,201 +178,143 @@ exports[`Storyshots Sandbox/Carousel Carousel 1`] = `
   height: 118px;
 }
 
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2"
-        onScroll={[Function]}
-      >
-        <ul
-          className="c3"
-        >
-          <div
-            className="c4"
-          >
-            <div
-              className="c5 c6"
-              size={118}
+<div data-dark="false">
+  <div class="c0">
+    <div class="c1">
+      <div class="c2">
+        <ul class="c3">
+          <div class="c4">
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
-            <div
-              className="c5 c6"
-              size={118}
+            <div size="118"
+                 class="c5 c6"
             >
               Dummy
             </div>
           </div>
         </ul>
       </div>
-      <div
-        className="c7 c8"
-      >
-        <button
-          className="c9"
-          onClick={[Function]}
-          style={
-            Object {
-              "left": 0,
-              "paddingBottom": 0,
-              "paddingLeft": 16,
-            }
-          }
-          type="button"
+      <div class="c7 c8">
+        <button type="button"
+                class="c9"
+                style="left: 0px; padding-left: 16px; padding-bottom: 0px;"
         >
-          <div
-            className="c10 c11"
-          >
-            <svg
-              className="c12"
-              size={24}
-              viewBox="0 0 24 24"
+          <div class="c10 c11">
+            <svg viewbox="0 0 24 24"
+                 size="24"
+                 class="gyClQP"
             >
-              <path
-                d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
-                transform="rotate(180 12 12)"
-              />
+              <path d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
+                    transform="rotate(180 12 12)"
+              >
+              </path>
             </svg>
           </div>
         </button>
-        <button
-          className="c9"
-          onClick={[Function]}
-          style={
-            Object {
-              "paddingBottom": 0,
-              "paddingRight": 16,
-              "right": 0,
-            }
-          }
-          type="button"
+        <button type="button"
+                class="c12"
+                style="right: 0px; padding-right: 16px; padding-bottom: 0px;"
         >
-          <div
-            className="c10 c11"
-          >
-            <svg
-              className="c12"
-              size={24}
-              viewBox="0 0 24 24"
+          <div class="c10 c11">
+            <svg viewbox="0 0 24 24"
+                 size="24"
+                 class="gyClQP"
             >
-              <path
-                d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z"
-              />
+              <path d="M8.08579 16.5858C7.30474 17.3668 7.30474 18.6332 8.08579 19.4142C8.86684 20.1953 10.1332 20.1953 10.9142 19.4142L18.3284 12L10.9142 4.58579C10.1332 3.80474 8.86684 3.80474 8.08579 4.58579C7.30474 5.36684 7.30474 6.63317 8.08579 7.41421L12.6716 12L8.08579 16.5858Z">
+              </path>
             </svg>
           </div>
         </button>
