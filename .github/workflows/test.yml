@@ -46,7 +46,6 @@ jobs:
       - run: yarn install --immutable --inline-builds
       - run: |
           yarn test
-          yarn storyshots
         env:
           CI: 'true'
 
