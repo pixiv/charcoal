@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Danger smoke-test 1`] = `
+exports[`Storyshots Button Danger 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -98,226 +98,242 @@ exports[`Button Danger smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
-    Button
-  </button>
-</div>
-`;
-
-exports[`Button Default smoke-test 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div data-dark="false">
-  <button class="c0 c1">
-    Button
-  </button>
-</div>
-`;
-
-exports[`Button Disabled smoke-test 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div data-dark="false">
-  <button disabled
-          class="c0 c1"
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
   >
     Button
   </button>
 </div>
 `;
 
-exports[`Button Fixed smoke-test 1`] = `
+exports[`Storyshots Button Default 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active,
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus,
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  color: var(--charcoal-text2-press);
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button Disabled 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active,
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus,
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  color: var(--charcoal-text2-press);
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button Fixed 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -415,14 +431,20 @@ exports[`Button Fixed smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
     Button
   </button>
 </div>
 `;
 
-exports[`Button Focus smoke-test 1`] = `
+exports[`Storyshots Button Focus 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -520,14 +542,20 @@ exports[`Button Focus smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onMouseOver={[Function]}
+  >
     Mouse over to focus
   </button>
 </div>
 `;
 
-exports[`Button LayoutExample smoke-test 1`] = `
+exports[`Storyshots Button Layout Example 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -743,65 +771,6 @@ exports[`Button LayoutExample smoke-test 1`] = `
   opacity: 0.32;
 }
 
-.c5 {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c4 {
   width: -webkit-fill-available;
   width: -moz-available;
@@ -861,84 +830,193 @@ exports[`Button LayoutExample smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <div css="
+.c5 {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
+  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
+  color: var(--charcoal-text2-press);
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c5:disabled,
+.c5[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css="
       display: grid;
       gap: 24px;
-    ">
-    <div css="
+    "
+  >
+    <div
+      css="
         display: grid;
         grid: auto / auto-flow min-content;
         gap: 8px;
-      ">
-      <button class="c0 c1">
+      "
+    >
+      <button
+        className="c0 c1"
+        disabled={false}
+      >
         Grid
       </button>
-      <button class="c0 c2">
+      <button
+        className="c0 c2"
+        disabled={false}
+      >
         Layout
       </button>
-      <button class="c0 c3">
+      <button
+        className="c0 c3"
+        disabled={false}
+      >
         Sample
       </button>
     </div>
-    <div css="
+    <div
+      css="
         display: grid;
         grid: auto-flow auto / 392px;
         gap: 8px;
-      ">
-      <button class="c0 c4">
+      "
+    >
+      <button
+        className="c0 c4"
+        disabled={false}
+      >
         Submit
       </button>
-      <button class="c0 c5">
+      <button
+        className="c0 c5"
+        disabled={false}
+      >
         Cancel
       </button>
     </div>
-    <div css="
+    <div
+      css="
         display: flex;
 
-        &amp; > * + * {
+        & > * + * {
           margin-left: 8px;
         }
-      ">
-      <button class="c0 c1">
+      "
+    >
+      <button
+        className="c0 c1"
+        disabled={false}
+      >
         Flex
       </button>
-      <button class="c0 c2">
+      <button
+        className="c0 c2"
+        disabled={false}
+      >
         Layout
       </button>
-      <button class="c0 c3">
+      <button
+        className="c0 c3"
+        disabled={false}
+      >
         Sample
       </button>
     </div>
-    <div css="
+    <div
+      css="
         display: flex;
         flex-direction: column;
         width: 392px;
 
-        &amp; > * + * {
+        & > * + * {
           margin-top: 8px;
         }
-      ">
-      <button class="c0 c4">
+      "
+    >
+      <button
+        className="c0 c4"
+        disabled={false}
+      >
         Submit
       </button>
-      <button class="c0 c5">
+      <button
+        className="c0 c5"
+        disabled={false}
+      >
         Cancel
       </button>
     </div>
-    <div css="
+    <div
+      css="
         display: flex;
         flex-direction: column;
         width: 392px;
 
-        &amp; > * + * {
+        & > * + * {
           margin-top: 8px;
         }
-      ">
-      <button class="c0 c4">
+      "
+    >
+      <button
+        className="c0 c4"
+        disabled={false}
+      >
         すべて見る
       </button>
-      <button class="c0 c1">
+      <button
+        className="c0 c1"
+        disabled={false}
+      >
         作品を投稿
       </button>
     </div>
@@ -946,7 +1024,7 @@ exports[`Button LayoutExample smoke-test 1`] = `
 </div>
 `;
 
-exports[`Button Link smoke-test 1`] = `
+exports[`Storyshots Button Link 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1044,16 +1122,20 @@ exports[`Button Link smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <a href="#"
-     class="c0 c1"
+<div
+  data-dark={false}
+>
+  <a
+    className="c0 c1"
+    href="#"
+    onClick={[Function]}
   >
     Button
   </a>
 </div>
 `;
 
-exports[`Button Navigation smoke-test 1`] = `
+exports[`Storyshots Button Navigation 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1151,14 +1233,20 @@ exports[`Button Navigation smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
     Button
   </button>
 </div>
 `;
 
-exports[`Button Nihongo smoke-test 1`] = `
+exports[`Storyshots Button Nihongo 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1256,14 +1344,20 @@ exports[`Button Nihongo smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
     日本語だよ
   </button>
 </div>
 `;
 
-exports[`Button Overlay smoke-test 1`] = `
+exports[`Storyshots Button Overlay 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1361,14 +1455,20 @@ exports[`Button Overlay smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
     Button
   </button>
 </div>
 `;
 
-exports[`Button Primary smoke-test 1`] = `
+exports[`Storyshots Button Primary 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1466,14 +1566,20 @@ exports[`Button Primary smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
     Button
   </button>
 </div>
 `;
 
-exports[`Button Small smoke-test 1`] = `
+exports[`Storyshots Button Small 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1571,8 +1677,14 @@ exports[`Button Small smoke-test 1`] = `
   opacity: 0.32;
 }
 
-<div data-dark="false">
-  <button class="c0 c1">
+<div
+  data-dark={false}
+>
+  <button
+    className="c0 c1"
+    disabled={false}
+    onClick={[Function]}
+  >
     Button
   </button>
 </div>

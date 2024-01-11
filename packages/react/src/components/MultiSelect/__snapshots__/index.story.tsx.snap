@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MultiSelect Default smoke-test 1`] = `
+exports[`Storyshots MultiSelect Default 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -119,102 +119,139 @@ exports[`MultiSelect Default smoke-test 1`] = `
   gap: 8px;
 }
 
-<div data-dark="false">
-  <div class="c0"
-       aria-label
-       data-testid="SelectGroup"
+<div
+  data-dark={false}
+>
+  <div
+    aria-label=""
+    className="c0"
+    data-testid="SelectGroup"
   >
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢1"
-             checked
+      <input
+        aria-invalid={false}
+        checked={true}
+        className="c2"
+        disabled={false}
+        name=""
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢1"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢1
+      <div
+        className="c4"
+      >
+        選択肢
+        1
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢2"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name=""
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢2"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢2
+      <div
+        className="c4"
+      >
+        選択肢
+        2
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢3"
-             checked
+      <input
+        aria-invalid={false}
+        checked={true}
+        className="c2"
+        disabled={false}
+        name=""
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢3"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢3
+      <div
+        className="c4"
+      >
+        選択肢
+        3
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢4"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name=""
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢4"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢4
+      <div
+        className="c4"
+      >
+        選択肢
+        4
       </div>
     </label>
   </div>
 </div>
 `;
 
-exports[`MultiSelect Invalid smoke-test 1`] = `
+exports[`Storyshots MultiSelect Invalid 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -338,100 +375,139 @@ exports[`MultiSelect Invalid smoke-test 1`] = `
   gap: 8px;
 }
 
-<div data-dark="false">
-  <div class="c0"
-       aria-label
-       data-testid="SelectGroup"
+<div
+  data-dark={false}
+>
+  <div
+    aria-label=""
+    className="c0"
+    data-testid="SelectGroup"
   >
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="true"
-             type="checkbox"
-             class="c2"
-             value="選択肢1"
+      <input
+        aria-invalid={true}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢1"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢1
+      <div
+        className="c4"
+      >
+        選択肢
+        1
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="true"
-             type="checkbox"
-             class="c2"
-             value="選択肢2"
+      <input
+        aria-invalid={true}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢2"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢2
+      <div
+        className="c4"
+      >
+        選択肢
+        2
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="true"
-             type="checkbox"
-             class="c2"
-             value="選択肢3"
+      <input
+        aria-invalid={true}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢3"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢3
+      <div
+        className="c4"
+      >
+        選択肢
+        3
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="true"
-             type="checkbox"
-             class="c2"
-             value="選択肢4"
+      <input
+        aria-invalid={true}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢4"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢4
+      <div
+        className="c4"
+      >
+        選択肢
+        4
       </div>
     </label>
   </div>
 </div>
 `;
 
-exports[`MultiSelect Overlay smoke-test 1`] = `
+exports[`Storyshots MultiSelect Overlay 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -554,100 +630,139 @@ exports[`MultiSelect Overlay smoke-test 1`] = `
   gap: 8px;
 }
 
-<div data-dark="false">
-  <div class="c0"
-       aria-label
-       data-testid="SelectGroup"
+<div
+  data-dark={false}
+>
+  <div
+    aria-label=""
+    className="c0"
+    data-testid="SelectGroup"
   >
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢1"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢1"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢1
+      <div
+        className="c4"
+      >
+        選択肢
+        1
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢2"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢2"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢2
+      <div
+        className="c4"
+      >
+        選択肢
+        2
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢3"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢3"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢3
+      <div
+        className="c4"
+      >
+        選択肢
+        3
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢4"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢4"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢4
+      <div
+        className="c4"
+      >
+        選択肢
+        4
       </div>
     </label>
   </div>
 </div>
 `;
 
-exports[`MultiSelect Playground smoke-test 1`] = `
+exports[`Storyshots MultiSelect Playground 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -766,93 +881,132 @@ exports[`MultiSelect Playground smoke-test 1`] = `
   gap: 8px;
 }
 
-<div data-dark="false">
-  <div class="c0"
-       aria-label
-       data-testid="SelectGroup"
+<div
+  data-dark={false}
+>
+  <div
+    aria-label=""
+    className="c0"
+    data-testid="SelectGroup"
   >
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢1"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢1"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢1
+      <div
+        className="c4"
+      >
+        選択肢
+        1
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢2"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢2"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢2
+      <div
+        className="c4"
+      >
+        選択肢
+        2
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢3"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢3"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢3
+      <div
+        className="c4"
+      >
+        選択肢
+        3
       </div>
     </label>
-    <label aria-disabled="false"
-           class="c1"
+    <label
+      aria-disabled={false}
+      className="c1"
     >
-      <input name="defaultName"
-             aria-invalid="false"
-             type="checkbox"
-             class="c2"
-             value="選択肢4"
+      <input
+        aria-invalid={false}
+        checked={false}
+        className="c2"
+        disabled={false}
+        name="defaultName"
+        onChange={[Function]}
+        type="checkbox"
+        value="選択肢4"
+      />
+      <div
+        aria-hidden={true}
+        className="c3"
       >
-      <div aria-hidden="true"
-           class="c3"
-      >
-        <pixiv-icon name="24/Check"
-                    unsafe-non-guideline-scale="0.6666666666666666"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
       </div>
-      <div class="c4">
-        選択肢4
+      <div
+        className="c4"
+      >
+        選択肢
+        4
       </div>
     </label>
   </div>

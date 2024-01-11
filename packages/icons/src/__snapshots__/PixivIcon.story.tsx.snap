@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icons/PixivIcon (<pixiv-icon>) Default smoke-test 1`] = `
+exports[`Storyshots Icons/PixivIcon (<pixiv-icon>) Default 1`] = `
 .c2 {
   display: grid;
   gap: 8px;
@@ -47,2900 +47,3199 @@ exports[`Icons/PixivIcon (<pixiv-icon>) Default smoke-test 1`] = `
   margin: 16px 0;
 }
 
-<div data-dark="false">
-  <div class="c0 ">
-    <h2 class="c1">
-      16 (scale: 1)
+<div
+  data-dark={false}
+>
+  <div
+    className="c0 "
+  >
+    <h2
+      className="c1"
+    >
+      16
+       (scale: 
+      1
+      )
     </h2>
-    <div class="c2">
-      <div color="#000000"
-           class="c3"
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Add"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Add"
+          scale={1}
+        />
         <div>
           16/Add
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Archive"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Archive"
+          scale={1}
+        />
         <div>
           16/Archive
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/ArrowDown"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/ArrowDown"
+          scale={1}
+        />
         <div>
           16/ArrowDown
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Artwork"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Artwork"
+          scale={1}
+        />
         <div>
           16/Artwork
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Back"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Back"
+          scale={1}
+        />
         <div>
           16/Back
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Book"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Book"
+          scale={1}
+        />
         <div>
           16/Book
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/BookmarkOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/BookmarkOff"
+          scale={1}
+        />
         <div>
           16/BookmarkOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/BookmarkOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/BookmarkOn"
+          scale={1}
+        />
         <div>
           16/BookmarkOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Check"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Check"
+          scale={1}
+        />
         <div>
           16/Check
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Comment"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Comment"
+          scale={1}
+        />
         <div>
           16/Comment
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Dot"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Dot"
+          scale={1}
+        />
         <div>
           16/Dot
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Error"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Error"
+          scale={1}
+        />
         <div>
           16/Error
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Filter"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Filter"
+          scale={1}
+        />
         <div>
           16/Filter
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/ImageResponse"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/ImageResponse"
+          scale={1}
+        />
         <div>
           16/ImageResponse
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Info"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Info"
+          scale={1}
+        />
         <div>
           16/Info
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Like"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Like"
+          scale={1}
+        />
         <div>
           16/Like
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Menu"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Menu"
+          scale={1}
+        />
         <div>
           16/Menu
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/More"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/More"
+          scale={1}
+        />
         <div>
           16/More
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Nextworks"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Nextworks"
+          scale={1}
+        />
         <div>
           16/Nextworks
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Pencil"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Pencil"
+          scale={1}
+        />
         <div>
           16/Pencil
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Question"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Question"
+          scale={1}
+        />
         <div>
           16/Question
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Ranking"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Ranking"
+          scale={1}
+        />
         <div>
           16/Ranking
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Remove"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Remove"
+          scale={1}
+        />
         <div>
           16/Remove
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Search"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Search"
+          scale={1}
+        />
         <div>
           16/Search
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Smile"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Smile"
+          scale={1}
+        />
         <div>
           16/Smile
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/Speaker"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/Speaker"
+          scale={1}
+        />
         <div>
           16/Speaker
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="16/View"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="16/View"
+          scale={1}
+        />
         <div>
           16/View
         </div>
       </div>
     </div>
   </div>
-  <div class="c0 ">
-    <h2 class="c1">
-      24 (scale: 1)
+  <div
+    className="c0 "
+  >
+    <h2
+      className="c1"
+    >
+      24
+       (scale: 
+      1
+      )
     </h2>
-    <div class="c2">
-      <div color="#000000"
-           class="c3"
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Add"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Add"
+          scale={1}
+        />
         <div>
           24/Add
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/AddImage"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/AddImage"
+          scale={1}
+        />
         <div>
           24/AddImage
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/AddModel"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/AddModel"
+          scale={1}
+        />
         <div>
           24/AddModel
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/AddPeople"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/AddPeople"
+          scale={1}
+        />
         <div>
           24/AddPeople
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/AddRubi"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/AddRubi"
+          scale={1}
+        />
         <div>
           24/AddRubi
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/AddText"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/AddText"
+          scale={1}
+        />
         <div>
           24/AddText
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Alart"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Alart"
+          scale={1}
+        />
         <div>
           24/Alart
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Announcement"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Announcement"
+          scale={1}
+        />
         <div>
           24/Announcement
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Ar"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Ar"
+          scale={1}
+        />
         <div>
           24/Ar
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Archive"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Archive"
+          scale={1}
+        />
         <div>
           24/Archive
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ArrowDown"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ArrowDown"
+          scale={1}
+        />
         <div>
           24/ArrowDown
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ArrowUp"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ArrowUp"
+          scale={1}
+        />
         <div>
           24/ArrowUp
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Binet"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Binet"
+          scale={1}
+        />
         <div>
           24/Binet
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Body"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Body"
+          scale={1}
+        />
         <div>
           24/Body
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/BodyEdit"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/BodyEdit"
+          scale={1}
+        />
         <div>
           24/BodyEdit
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Book"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Book"
+          scale={1}
+        />
         <div>
           24/Book
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/BringBackward"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/BringBackward"
+          scale={1}
+        />
         <div>
           24/BringBackward
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/BringForward"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/BringForward"
+          scale={1}
+        />
         <div>
           24/BringForward
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Calendar"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Calendar"
+          scale={1}
+        />
         <div>
           24/Calendar
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Camera"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Camera"
+          scale={1}
+        />
         <div>
           24/Camera
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/CameraVideo"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/CameraVideo"
+          scale={1}
+        />
         <div>
           24/CameraVideo
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ChangeCharactor"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ChangeCharactor"
+          scale={1}
+        />
         <div>
           24/ChangeCharactor
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ChatBot"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ChatBot"
+          scale={1}
+        />
         <div>
           24/ChatBot
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Check"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Check"
+          scale={1}
+        />
         <div>
           24/Check
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ChromaticAberration"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ChromaticAberration"
+          scale={1}
+        />
         <div>
           24/ChromaticAberration
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Close"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Close"
+          scale={1}
+        />
         <div>
           24/Close
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Codes"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Codes"
+          scale={1}
+        />
         <div>
           24/Codes
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Collapse"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Collapse"
+          scale={1}
+        />
         <div>
           24/Collapse
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/CommentFill"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/CommentFill"
+          scale={1}
+        />
         <div>
           24/CommentFill
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/CommentOutline"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/CommentOutline"
+          scale={1}
+        />
         <div>
           24/CommentOutline
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Contest"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Contest"
+          scale={1}
+        />
         <div>
           24/Contest
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Contrast"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Contrast"
+          scale={1}
+        />
         <div>
           24/Contrast
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Description"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Description"
+          scale={1}
+        />
         <div>
           24/Description
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/DeviceRotation"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/DeviceRotation"
+          scale={1}
+        />
         <div>
           24/DeviceRotation
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Discovery"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Discovery"
+          scale={1}
+        />
         <div>
           24/Discovery
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Dot"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Dot"
+          scale={1}
+        />
         <div>
           24/Dot
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/DotAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/DotAlt"
+          scale={1}
+        />
         <div>
           24/DotAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Down"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Down"
+          scale={1}
+        />
         <div>
           24/Down
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/DownloadAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/DownloadAlt"
+          scale={1}
+        />
         <div>
           24/DownloadAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Duplicate"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Duplicate"
+          scale={1}
+        />
         <div>
           24/Duplicate
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Dust"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Dust"
+          scale={1}
+        />
         <div>
           24/Dust
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Emoji"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Emoji"
+          scale={1}
+        />
         <div>
           24/Emoji
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Error"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Error"
+          scale={1}
+        />
         <div>
           24/Error
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ErrorOctagon"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ErrorOctagon"
+          scale={1}
+        />
         <div>
           24/ErrorOctagon
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Events"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Events"
+          scale={1}
+        />
         <div>
           24/Events
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Expand"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Expand"
+          scale={1}
+        />
         <div>
           24/Expand
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FaceEdit"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FaceEdit"
+          scale={1}
+        />
         <div>
           24/FaceEdit
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Fashion"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Fashion"
+          scale={1}
+        />
         <div>
           24/Fashion
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Feed"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Feed"
+          scale={1}
+        />
         <div>
           24/Feed
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/File"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/File"
+          scale={1}
+        />
         <div>
           24/File
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Filter"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Filter"
+          scale={1}
+        />
         <div>
           24/Filter
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Flare"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Flare"
+          scale={1}
+        />
         <div>
           24/Flare
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatAlignCenter"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatAlignCenter"
+          scale={1}
+        />
         <div>
           24/FormatAlignCenter
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatAlignLeft"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatAlignLeft"
+          scale={1}
+        />
         <div>
           24/FormatAlignLeft
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatAlignRight"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatAlignRight"
+          scale={1}
+        />
         <div>
           24/FormatAlignRight
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatColorFill"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatColorFill"
+          scale={1}
+        />
         <div>
           24/FormatColorFill
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatColorFillNoColor"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatColorFillNoColor"
+          scale={1}
+        />
         <div>
           24/FormatColorFillNoColor
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatFontFamily"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatFontFamily"
+          scale={1}
+        />
         <div>
           24/FormatFontFamily
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatFontSize"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatFontSize"
+          scale={1}
+        />
         <div>
           24/FormatFontSize
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatLetterSpacing"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatLetterSpacing"
+          scale={1}
+        />
         <div>
           24/FormatLetterSpacing
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FormatLineSpacing"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FormatLineSpacing"
+          scale={1}
+        />
         <div>
           24/FormatLineSpacing
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Fov"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Fov"
+          scale={1}
+        />
         <div>
           24/Fov
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FrameEffect"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FrameEffect"
+          scale={1}
+        />
         <div>
           24/FrameEffect
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/FrameSize"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/FrameSize"
+          scale={1}
+        />
         <div>
           24/FrameSize
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Gift"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Gift"
+          scale={1}
+        />
         <div>
           24/Gift
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Glow"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Glow"
+          scale={1}
+        />
         <div>
           24/Glow
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Groups"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Groups"
+          scale={1}
+        />
         <div>
           24/Groups
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/HairEdit"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/HairEdit"
+          scale={1}
+        />
         <div>
           24/HairEdit
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Hashtag"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Hashtag"
+          scale={1}
+        />
         <div>
           24/Hashtag
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Hide"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Hide"
+          scale={1}
+        />
         <div>
           24/Hide
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Home"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Home"
+          scale={1}
+        />
         <div>
           24/Home
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Hue"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Hue"
+          scale={1}
+        />
         <div>
           24/Hue
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Idea"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Idea"
+          scale={1}
+        />
         <div>
           24/Idea
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Image"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Image"
+          scale={1}
+        />
         <div>
           24/Image
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ImageAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ImageAlt"
+          scale={1}
+        />
         <div>
           24/ImageAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ImageHidden"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ImageHidden"
+          scale={1}
+        />
         <div>
           24/ImageHidden
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ImageReplace"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ImageReplace"
+          scale={1}
+        />
         <div>
           24/ImageReplace
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Images"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Images"
+          scale={1}
+        />
         <div>
           24/Images
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ImgContain"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ImgContain"
+          scale={1}
+        />
         <div>
           24/ImgContain
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ImgCover"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ImgCover"
+          scale={1}
+        />
         <div>
           24/ImgCover
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Index"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Index"
+          scale={1}
+        />
         <div>
           24/Index
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Info"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Info"
+          scale={1}
+        />
         <div>
           24/Info
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Invalid"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Invalid"
+          scale={1}
+        />
         <div>
           24/Invalid
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Invoice"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Invoice"
+          scale={1}
+        />
         <div>
           24/Invoice
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ItemRemove"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ItemRemove"
+          scale={1}
+        />
         <div>
           24/ItemRemove
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/LatestWorks"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/LatestWorks"
+          scale={1}
+        />
         <div>
           24/LatestWorks
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/LikeOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/LikeOff"
+          scale={1}
+        />
         <div>
           24/LikeOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/LikeOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/LikeOn"
+          scale={1}
+        />
         <div>
           24/LikeOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Link"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Link"
+          scale={1}
+        />
         <div>
           24/Link
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/List"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/List"
+          scale={1}
+        />
         <div>
           24/List
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/LockLock"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/LockLock"
+          scale={1}
+        />
         <div>
           24/LockLock
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/LockUnlock"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/LockUnlock"
+          scale={1}
+        />
         <div>
           24/LockUnlock
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Logout"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Logout"
+          scale={1}
+        />
         <div>
           24/Logout
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Manga"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Manga"
+          scale={1}
+        />
         <div>
           24/Manga
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Menu"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Menu"
+          scale={1}
+        />
         <div>
           24/Menu
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Message"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Message"
+          scale={1}
+        />
         <div>
           24/Message
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Microphone"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Microphone"
+          scale={1}
+        />
         <div>
           24/Microphone
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/MobilePhone"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/MobilePhone"
+          scale={1}
+        />
         <div>
           24/MobilePhone
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Move1"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Move1"
+          scale={1}
+        />
         <div>
           24/Move1
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Next"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Next"
+          scale={1}
+        />
         <div>
           24/Next
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/NoImage"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/NoImage"
+          scale={1}
+        />
         <div>
           24/NoImage
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Notification"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Notification"
+          scale={1}
+        />
         <div>
           24/Notification
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/NotificationOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/NotificationOff"
+          scale={1}
+        />
         <div>
           24/NotificationOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Novels"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Novels"
+          scale={1}
+        />
         <div>
           24/Novels
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/OpenInNew"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/OpenInNew"
+          scale={1}
+        />
         <div>
           24/OpenInNew
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Options"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Options"
+          scale={1}
+        />
         <div>
           24/Options
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/OptionsAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/OptionsAlt"
+          scale={1}
+        />
         <div>
           24/OptionsAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Overlay"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Overlay"
+          scale={1}
+        />
         <div>
           24/Overlay
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Palette"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Palette"
+          scale={1}
+        />
         <div>
           24/Palette
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Pause"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Pause"
+          scale={1}
+        />
         <div>
           24/Pause
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/PauseAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/PauseAlt"
+          scale={1}
+        />
         <div>
           24/PauseAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Pencil"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Pencil"
+          scale={1}
+        />
         <div>
           24/Pencil
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/PencilDraw"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/PencilDraw"
+          scale={1}
+        />
         <div>
           24/PencilDraw
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/PencilLive"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/PencilLive"
+          scale={1}
+        />
         <div>
           24/PencilLive
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/PencilText"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/PencilText"
+          scale={1}
+        />
         <div>
           24/PencilText
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Person"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Person"
+          scale={1}
+        />
         <div>
           24/Person
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Play"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Play"
+          scale={1}
+        />
         <div>
           24/Play
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Pose"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Pose"
+          scale={1}
+        />
         <div>
           24/Pose
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Prev"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Prev"
+          scale={1}
+        />
         <div>
           24/Prev
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Projects"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Projects"
+          scale={1}
+        />
         <div>
           24/Projects
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/PullDown"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/PullDown"
+          scale={1}
+        />
         <div>
           24/PullDown
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/PullUp"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/PullUp"
+          scale={1}
+        />
         <div>
           24/PullUp
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Question"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Question"
+          scale={1}
+        />
         <div>
           24/Question
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/QuestionOutline"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/QuestionOutline"
+          scale={1}
+        />
         <div>
           24/QuestionOutline
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Ranking"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Ranking"
+          scale={1}
+        />
         <div>
           24/Ranking
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ReadHorizontalLeft"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ReadHorizontalLeft"
+          scale={1}
+        />
         <div>
           24/ReadHorizontalLeft
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ReadHorizontalRight"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ReadHorizontalRight"
+          scale={1}
+        />
         <div>
           24/ReadHorizontalRight
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ReadVertical"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ReadVertical"
+          scale={1}
+        />
         <div>
           24/ReadVertical
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Reload"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Reload"
+          scale={1}
+        />
         <div>
           24/Reload
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ReloadLoop"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ReloadLoop"
+          scale={1}
+        />
         <div>
           24/ReloadLoop
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Reorder"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Reorder"
+          scale={1}
+        />
         <div>
           24/Reorder
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Roll"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Roll"
+          scale={1}
+        />
         <div>
           24/Roll
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Rotate90DegreesC"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Rotate90DegreesC"
+          scale={1}
+        />
         <div>
           24/Rotate90DegreesC
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Rotate90DegreesCc"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Rotate90DegreesCc"
+          scale={1}
+        />
         <div>
           24/Rotate90DegreesCc
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/RotateRight"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/RotateRight"
+          scale={1}
+        />
         <div>
           24/RotateRight
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Saturation"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Saturation"
+          scale={1}
+        />
         <div>
           24/Saturation
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Save"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Save"
+          scale={1}
+        />
         <div>
           24/Save
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Search"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Search"
+          scale={1}
+        />
         <div>
           24/Search
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Send"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Send"
+          scale={1}
+        />
         <div>
           24/Send
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Services"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Services"
+          scale={1}
+        />
         <div>
           24/Services
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Set"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Set"
+          scale={1}
+        />
         <div>
           24/Set
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Settings"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Settings"
+          scale={1}
+        />
         <div>
           24/Settings
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ShareAndroid"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ShareAndroid"
+          scale={1}
+        />
         <div>
           24/ShareAndroid
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ShareIos"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ShareIos"
+          scale={1}
+        />
         <div>
           24/ShareIos
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Shopping"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Shopping"
+          scale={1}
+        />
         <div>
           24/Shopping
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Show"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Show"
+          scale={1}
+        />
         <div>
           24/Show
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ShowOutline"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ShowOutline"
+          scale={1}
+        />
         <div>
           24/ShowOutline
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Shutter"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Shutter"
+          scale={1}
+        />
         <div>
           24/Shutter
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Star"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Star"
+          scale={1}
+        />
         <div>
           24/Star
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Subtract"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Subtract"
+          scale={1}
+        />
         <div>
           24/Subtract
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Sun"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Sun"
+          scale={1}
+        />
         <div>
           24/Sun
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Temperature"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Temperature"
+          scale={1}
+        />
         <div>
           24/Temperature
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Text"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Text"
+          scale={1}
+        />
         <div>
           24/Text
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Trash"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Trash"
+          scale={1}
+        />
         <div>
           24/Trash
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/TrashAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/TrashAlt"
+          scale={1}
+        />
         <div>
           24/TrashAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Up"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Up"
+          scale={1}
+        />
         <div>
           24/Up
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Upload"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Upload"
+          scale={1}
+        />
         <div>
           24/Upload
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/UploadAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/UploadAlt"
+          scale={1}
+        />
         <div>
           24/UploadAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Usagi"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Usagi"
+          scale={1}
+        />
         <div>
           24/Usagi
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/UsagiAlt"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/UsagiAlt"
+          scale={1}
+        />
         <div>
           24/UsagiAlt
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Users"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Users"
+          scale={1}
+        />
         <div>
           24/Users
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Video"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Video"
+          scale={1}
+        />
         <div>
           24/Video
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ViewGrid2Columns"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ViewGrid2Columns"
+          scale={1}
+        />
         <div>
           24/ViewGrid2Columns
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ViewGrid3Columns"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ViewGrid3Columns"
+          scale={1}
+        />
         <div>
           24/ViewGrid3Columns
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/ViewList"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/ViewList"
+          scale={1}
+        />
         <div>
           24/ViewList
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="24/Warning"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="24/Warning"
+          scale={1}
+        />
         <div>
           24/Warning
         </div>
       </div>
     </div>
   </div>
-  <div class="c0 ">
-    <h2 class="c1">
-      32 (scale: 1)
+  <div
+    className="c0 "
+  >
+    <h2
+      className="c1"
+    >
+      32
+       (scale: 
+      1
+      )
     </h2>
-    <div class="c2">
-      <div color="#000000"
-           class="c3"
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/BookmarkOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/BookmarkOff"
+          scale={1}
+        />
         <div>
           32/BookmarkOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/BookmarkOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/BookmarkOn"
+          scale={1}
+        />
         <div>
           32/BookmarkOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Camera"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Camera"
+          scale={1}
+        />
         <div>
           32/Camera
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Close"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Close"
+          scale={1}
+        />
         <div>
           32/Close
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Collapse"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Collapse"
+          scale={1}
+        />
         <div>
           32/Collapse
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/CommentOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/CommentOff"
+          scale={1}
+        />
         <div>
           32/CommentOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/CommentOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/CommentOn"
+          scale={1}
+        />
         <div>
           32/CommentOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Delete"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Delete"
+          scale={1}
+        />
         <div>
           32/Delete
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Dot"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Dot"
+          scale={1}
+        />
         <div>
           32/Dot
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Edit"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Edit"
+          scale={1}
+        />
         <div>
           32/Edit
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Expand"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Expand"
+          scale={1}
+        />
         <div>
           32/Expand
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Gift"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Gift"
+          scale={1}
+        />
         <div>
           32/Gift
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Home"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Home"
+          scale={1}
+        />
         <div>
           32/Home
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/HorizontalWriting"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/HorizontalWriting"
+          scale={1}
+        />
         <div>
           32/HorizontalWriting
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Index"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Index"
+          scale={1}
+        />
         <div>
           32/Index
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/LikeOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/LikeOff"
+          scale={1}
+        />
         <div>
           32/LikeOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/LikeOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/LikeOn"
+          scale={1}
+        />
         <div>
           32/LikeOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/LikeOnPrivate"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/LikeOnPrivate"
+          scale={1}
+        />
         <div>
           32/LikeOnPrivate
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Message"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Message"
+          scale={1}
+        />
         <div>
           32/Message
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Next"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Next"
+          scale={1}
+        />
         <div>
           32/Next
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Notification"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Notification"
+          scale={1}
+        />
         <div>
           32/Notification
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/NotificationOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/NotificationOff"
+          scale={1}
+        />
         <div>
           32/NotificationOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/NovelViewerSettings"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/NovelViewerSettings"
+          scale={1}
+        />
         <div>
           32/NovelViewerSettings
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Pan"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Pan"
+          scale={1}
+        />
         <div>
           32/Pan
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Prev"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Prev"
+          scale={1}
+        />
         <div>
           32/Prev
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/PullDown"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/PullDown"
+          scale={1}
+        />
         <div>
           32/PullDown
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/PullUp"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/PullUp"
+          scale={1}
+        />
         <div>
           32/PullUp
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/ReadHorizontalLeft"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/ReadHorizontalLeft"
+          scale={1}
+        />
         <div>
           32/ReadHorizontalLeft
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/ReadHorizontalRight"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/ReadHorizontalRight"
+          scale={1}
+        />
         <div>
           32/ReadHorizontalRight
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/ReadVertical"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/ReadVertical"
+          scale={1}
+        />
         <div>
           32/ReadVertical
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/RollHorizontal"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/RollHorizontal"
+          scale={1}
+        />
         <div>
           32/RollHorizontal
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/RollVertical"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/RollVertical"
+          scale={1}
+        />
         <div>
           32/RollVertical
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/SansSerif"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/SansSerif"
+          scale={1}
+        />
         <div>
           32/SansSerif
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Serif"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Serif"
+          scale={1}
+        />
         <div>
           32/Serif
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/ShareAndroid"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/ShareAndroid"
+          scale={1}
+        />
         <div>
           32/ShareAndroid
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/ShareIos"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/ShareIos"
+          scale={1}
+        />
         <div>
           32/ShareIos
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Shopping"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Shopping"
+          scale={1}
+        />
         <div>
           32/Shopping
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/Upload"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/Upload"
+          scale={1}
+        />
         <div>
           32/Upload
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/User"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/User"
+          scale={1}
+        />
         <div>
           32/User
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/VerticalWriting"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/VerticalWriting"
+          scale={1}
+        />
         <div>
           32/VerticalWriting
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="32/ZoomIn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="32/ZoomIn"
+          scale={1}
+        />
         <div>
           32/ZoomIn
         </div>
       </div>
     </div>
   </div>
-  <div class="c0 ">
-    <h2 class="c1">
-      Inline (scale: 1)
+  <div
+    className="c0 "
+  >
+    <h2
+      className="c1"
+    >
+      Inline
+       (scale: 
+      1
+      )
     </h2>
-    <div class="c2">
-      <div color="#000000"
-           class="c3"
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Add"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Add"
+          scale={1}
+        />
         <div>
           Inline/Add
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/BookmarkOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/BookmarkOff"
+          scale={1}
+        />
         <div>
           Inline/BookmarkOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/BookmarkOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/BookmarkOn"
+          scale={1}
+        />
         <div>
           Inline/BookmarkOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Breadcrumbs"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Breadcrumbs"
+          scale={1}
+        />
         <div>
           Inline/Breadcrumbs
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Check"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Check"
+          scale={1}
+        />
         <div>
           Inline/Check
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Comment"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Comment"
+          scale={1}
+        />
         <div>
           Inline/Comment
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/ContextMenu"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/ContextMenu"
+          scale={1}
+        />
         <div>
           Inline/ContextMenu
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/External"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/External"
+          scale={1}
+        />
         <div>
           Inline/External
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Filter"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Filter"
+          scale={1}
+        />
         <div>
           Inline/Filter
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Folder"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Folder"
+          scale={1}
+        />
         <div>
           Inline/Folder
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/ImageResponse"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/ImageResponse"
+          scale={1}
+        />
         <div>
           Inline/ImageResponse
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Images"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Images"
+          scale={1}
+        />
         <div>
           Inline/Images
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Like"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Like"
+          scale={1}
+        />
         <div>
           Inline/Like
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/LikeOff"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/LikeOff"
+          scale={1}
+        />
         <div>
           Inline/LikeOff
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/List"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/List"
+          scale={1}
+        />
         <div>
           Inline/List
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Location"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Location"
+          scale={1}
+        />
         <div>
           Inline/Location
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Lock"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Lock"
+          scale={1}
+        />
         <div>
           Inline/Lock
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/More"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/More"
+          scale={1}
+        />
         <div>
           Inline/More
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Nextworks"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Nextworks"
+          scale={1}
+        />
         <div>
           Inline/Nextworks
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/OpenInNew"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/OpenInNew"
+          scale={1}
+        />
         <div>
           Inline/OpenInNew
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Pencil"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Pencil"
+          scale={1}
+        />
         <div>
           Inline/Pencil
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Remove"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Remove"
+          scale={1}
+        />
         <div>
           Inline/Remove
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Smile"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Smile"
+          scale={1}
+        />
         <div>
           Inline/Smile
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/SmileOn"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/SmileOn"
+          scale={1}
+        />
         <div>
           Inline/SmileOn
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/Users"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/Users"
+          scale={1}
+        />
         <div>
           Inline/Users
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/View"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/View"
+          scale={1}
+        />
         <div>
           Inline/View
         </div>
       </div>
-      <div color="#000000"
-           class="c3"
+      <div
+        className="c3"
+        color="#000000"
       >
-        <pixiv-icon name="Inline/ViewOutline"
-                    scale="1"
-        >
-        </pixiv-icon>
+        <pixiv-icon
+          name="Inline/ViewOutline"
+          scale={1}
+        />
         <div>
           Inline/ViewOutline
         </div>
@@ -2950,7 +3249,7 @@ exports[`Icons/PixivIcon (<pixiv-icon>) Default smoke-test 1`] = `
 </div>
 `;
 
-exports[`Icons/PixivIcon (<pixiv-icon>) WithAttributes smoke-test 1`] = `
+exports[`Storyshots Icons/PixivIcon (<pixiv-icon>) With Attributes 1`] = `
 .c0 {
   color: #000000;
   display: -webkit-inline-box;
@@ -2980,21 +3279,18 @@ exports[`Icons/PixivIcon (<pixiv-icon>) WithAttributes smoke-test 1`] = `
   line-height: 22px;
 }
 
-.c1 {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-<div data-dark="false">
-  <div color="#000000"
-       class="c0"
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+    color="#000000"
   >
-    <pixiv-icon class="c1"
-                name="16/Add"
-                scale="1"
-    >
-    </pixiv-icon>
+    <pixiv-icon
+      class="icon-class"
+      name="16/Add"
+      scale={1}
+    />
     <div>
       アイコンと文字
     </div>
@@ -3002,7 +3298,7 @@ exports[`Icons/PixivIcon (<pixiv-icon>) WithAttributes smoke-test 1`] = `
 </div>
 `;
 
-exports[`Icons/PixivIcon (<pixiv-icon>) WithUnsafe smoke-test 1`] = `
+exports[`Storyshots Icons/PixivIcon (<pixiv-icon>) With Unsafe 1`] = `
 .c0 {
   color: #000000;
   display: -webkit-inline-box;
@@ -3032,15 +3328,18 @@ exports[`Icons/PixivIcon (<pixiv-icon>) WithUnsafe smoke-test 1`] = `
   line-height: 22px;
 }
 
-<div data-dark="false">
-  <div color="#000000"
-       class="c0"
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+    color="#000000"
   >
-    <pixiv-icon unsafe-non-guideline-scale="3.75"
-                name="16/Add"
-                scale="1"
-    >
-    </pixiv-icon>
+    <pixiv-icon
+      name="16/Add"
+      scale={1}
+      unsafe-non-guideline-scale="3.75"
+    />
     アイコンと文字
   </div>
 </div>

@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon Default smoke-test 1`] = `
-<div data-dark="false">
-  <pixiv-icon name="16/Add"
-              scale="1"
-  >
-  </pixiv-icon>
+exports[`Storyshots Icon Default 1`] = `
+<div
+  data-dark={false}
+>
+  <pixiv-icon
+    name="16/Add"
+    scale={1}
+  />
 </div>
 `;

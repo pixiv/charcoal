@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Switch Labelled smoke-test 1`] = `
+exports[`Storyshots Switch Labelled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -112,17 +112,38 @@ exports[`Switch Labelled smoke-test 1`] = `
   transition: transform 0.2s;
 }
 
-<div data-dark="false">
+<div
+  data-dark={false}
+>
   <div>
-    <label class="c0"
-           aria-disabled="false"
+    <label
+      aria-disabled={false}
+      className="c0"
     >
-      <input name="name"
-             role="switch"
-             type="checkbox"
-             class="c1"
+      <input
+        checked={false}
+        className="c1"
+        disabled={false}
+        name="name"
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        className="c2"
       >
-      <div class="c2">
         選択する
       </div>
     </label>
@@ -130,7 +151,7 @@ exports[`Switch Labelled smoke-test 1`] = `
 </div>
 `;
 
-exports[`Switch Playground smoke-test 1`] = `
+exports[`Storyshots Switch Playground 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -242,15 +263,37 @@ exports[`Switch Playground smoke-test 1`] = `
   transition: transform 0.2s;
 }
 
-<div data-dark="false">
+<div
+  data-dark={false}
+>
   <div>
-    <label class="c0">
-      <input name="name"
-             role="switch"
-             type="checkbox"
-             class="c1"
+    <label
+      className="c0"
+    >
+      <input
+        checked={false}
+        className="c1"
+        disabled={false}
+        name="name"
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        className="c2"
       >
-      <div class="c2">
         選択する
       </div>
     </label>
@@ -258,7 +301,7 @@ exports[`Switch Playground smoke-test 1`] = `
 </div>
 `;
 
-exports[`Switch Unlabelled smoke-test 1`] = `
+exports[`Storyshots Switch Unlabelled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -363,17 +406,36 @@ exports[`Switch Unlabelled smoke-test 1`] = `
   transition: transform 0.2s;
 }
 
-<div data-dark="false">
+<div
+  data-dark={false}
+>
   <div>
-    <label class="c0"
-           aria-disabled="false"
+    <label
+      aria-disabled={false}
+      className="c0"
     >
-      <input aria-label="label"
-             name="name"
-             role="switch"
-             type="checkbox"
-             class="c1"
-      >
+      <input
+        aria-label="label"
+        checked={false}
+        className="c1"
+        disabled={false}
+        name="name"
+        onChange={[Function]}
+        onClick={[Function]}
+        onDragStart={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchCancel={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="switch"
+        type="checkbox"
+      />
     </label>
   </div>
 </div>

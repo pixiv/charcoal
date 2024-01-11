@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sandbox/Layout Basic smoke-test 1`] = `
+exports[`Storyshots Sandbox/Layout Basic 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -163,10 +163,6 @@ exports[`Sandbox/Layout Basic smoke-test 1`] = `
 }
 
 @media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
   .c0 {
     background-color: #ffffff;
   }
@@ -263,107 +259,178 @@ exports[`Sandbox/Layout Basic smoke-test 1`] = `
   }
 }
 
-<div data-dark="false">
-  <div class="c0">
-    <div class="c1">
-      <div class="c2">
-        <a href="#hello">
-          <div aria-current="true"
-               class="c3"
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <a
+          href="#hello"
+        >
+          <div
+            aria-current={true}
+            className="c3"
           >
             Hello
           </div>
         </a>
-        <a href="#world">
-          <div class="c3">
+        <a
+          href="#world"
+        >
+          <div
+            className="c3"
+          >
             World
           </div>
         </a>
-        <a href="#dummy">
-          <div class="c3">
+        <a
+          href="#dummy"
+        >
+          <div
+            className="c3"
+          >
             Dummy
           </div>
         </a>
-        <a href="#menu">
-          <div class="c3">
+        <a
+          href="#menu"
+        >
+          <div
+            className="c3"
+          >
             Menu
           </div>
         </a>
       </div>
     </div>
-    <div class="c4">
-      <div class="c5">
+    <div
+      className="c4"
+    >
+      <div
+        className="c5"
+      >
         Header
       </div>
-      <div class="c6">
-        <div span="3"
-             class="c7"
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+          span={3}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Dummy
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Span 3
             </div>
           </div>
         </div>
-        <div span="2"
-             class="c11"
+        <div
+          className="c11"
+          span={2}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Dummy
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Span 2
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c12"
+        <div
+          className="c12"
+          span={1}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Dummy
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Span 1
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c12"
+        <div
+          className="c12"
+          span={1}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Dummy
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Span 1
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c12"
+        <div
+          className="c12"
+          span={1}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Dummy
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Span 1
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c12"
+        <div
+          className="c12"
+          span={1}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Dummy
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Span 1
             </div>
           </div>
@@ -374,7 +441,7 @@ exports[`Sandbox/Layout Basic smoke-test 1`] = `
 </div>
 `;
 
-exports[`Sandbox/Layout Center smoke-test 1`] = `
+exports[`Storyshots Sandbox/Layout Center 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -477,14 +544,6 @@ exports[`Sandbox/Layout Center smoke-test 1`] = `
   }
 }
 
-@media 1160 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
 @media (max-width:743px) {
   .c1 {
     padding: 0;
@@ -517,30 +576,6 @@ exports[`Sandbox/Layout Center smoke-test 1`] = `
   }
 }
 
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
 @media 1160 {
   .c4 {
     grid-column-end: span 2;
@@ -553,30 +588,6 @@ exports[`Sandbox/Layout Center smoke-test 1`] = `
     border-radius: 0;
     padding-bottom: 40px;
   }
-}
-
-@media 1160 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1160 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
 }
 
 @media (max-width:743px) {
@@ -592,34 +603,43 @@ exports[`Sandbox/Layout Center smoke-test 1`] = `
 }
 
 @media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
   .c6 {
     padding: 16px 16px 0;
   }
 }
 
-@media (max-width:743px) {
-
-}
-
-<div data-dark="false">
-  <div class="c0">
-    <div class="c1">
-      <div class="c2">
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
         Header
       </div>
-      <div class="c3">
-        <div span="3"
-             class="c4"
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          span={3}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Center
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Hello, Flexible Grid Layout!
             </div>
           </div>
@@ -630,7 +650,7 @@ exports[`Sandbox/Layout Center smoke-test 1`] = `
 </div>
 `;
 
-exports[`Sandbox/Layout NoMenu smoke-test 1`] = `
+exports[`Storyshots Sandbox/Layout No Menu 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -747,10 +767,6 @@ exports[`Sandbox/Layout NoMenu smoke-test 1`] = `
   }
 }
 
-@media 1160 {
-
-}
-
 @media (max-width:743px) {
   .c1 {
     padding: 0;
@@ -781,30 +797,6 @@ exports[`Sandbox/Layout NoMenu smoke-test 1`] = `
     background-color: #ffffff;
     padding-bottom: 60px;
   }
-}
-
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
 }
 
 @media 1160 {
@@ -860,85 +852,133 @@ exports[`Sandbox/Layout NoMenu smoke-test 1`] = `
   }
 }
 
-@media (max-width:743px) {
-
-}
-
-<div data-dark="false">
-  <div class="c0">
-    <div class="c1">
-      <div class="c2">
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
         Header
       </div>
-      <div class="c3">
-        <div span="3"
-             class="c4"
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          span={3}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Dummy
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Span 3
             </div>
           </div>
         </div>
-        <div span="2"
-             class="c8"
+        <div
+          className="c8"
+          span={2}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Dummy
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Span 2
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c9"
+        <div
+          className="c9"
+          span={1}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Dummy
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Span 1
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c9"
+        <div
+          className="c9"
+          span={1}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Dummy
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Span 1
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c9"
+        <div
+          className="c9"
+          span={1}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Dummy
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Span 1
             </div>
           </div>
         </div>
-        <div span="1"
-             class="c9"
+        <div
+          className="c9"
+          span={1}
         >
-          <div class="c5">
+          <div
+            className="c5"
+          >
             Dummy
           </div>
-          <div class="c6">
-            <div class="c7">
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            >
               Span 1
             </div>
           </div>
@@ -949,7 +989,7 @@ exports[`Sandbox/Layout NoMenu smoke-test 1`] = `
 </div>
 `;
 
-exports[`Sandbox/Layout Wide smoke-test 1`] = `
+exports[`Storyshots Sandbox/Layout Wide 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1151,50 +1191,6 @@ exports[`Sandbox/Layout Wide smoke-test 1`] = `
   }
 }
 
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1368 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1160 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1160 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media 1160 {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
-}
-
 @media (max-width:743px) {
   .c8 {
     margin-top: 4px;
@@ -1208,60 +1204,88 @@ exports[`Sandbox/Layout Wide smoke-test 1`] = `
 }
 
 @media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
   .c9 {
     padding: 16px 16px 0;
   }
 }
 
-@media (max-width:743px) {
-
-}
-
-<div data-dark="false">
-  <div class="c0">
-    <div class="c1">
-      <div class="c2">
-        <a href="#hello">
-          <div aria-current="true"
-               class="c3"
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <a
+          href="#hello"
+        >
+          <div
+            aria-current={true}
+            className="c3"
           >
             Hello
           </div>
         </a>
-        <a href="#world">
-          <div class="c3">
+        <a
+          href="#world"
+        >
+          <div
+            className="c3"
+          >
             World
           </div>
         </a>
-        <a href="#dummy">
-          <div class="c3">
+        <a
+          href="#dummy"
+        >
+          <div
+            className="c3"
+          >
             Dummy
           </div>
         </a>
-        <a href="#menu">
-          <div class="c3">
+        <a
+          href="#menu"
+        >
+          <div
+            className="c3"
+          >
             Menu
           </div>
         </a>
       </div>
     </div>
-    <div class="c4">
-      <div class="c5">
+    <div
+      className="c4"
+    >
+      <div
+        className="c5"
+      >
         Header
       </div>
-      <div class="c6">
-        <div span="3"
-             class="c7"
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+          span={3}
         >
-          <div class="c8">
+          <div
+            className="c8"
+          >
             Wide
           </div>
-          <div class="c9">
-            <div class="c10">
+          <div
+            className="c9"
+          >
+            <div
+              className="c10"
+            >
               Hello, Flexible Grid Layout!
             </div>
           </div>

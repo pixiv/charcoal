@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoadingSpinner Basic smoke-test 1`] = `
+exports[`Storyshots LoadingSpinner Basic 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;
@@ -30,20 +30,23 @@ exports[`LoadingSpinner Basic smoke-test 1`] = `
   animation: none;
 }
 
-<div data-dark="false">
-  <div size="48"
-       class="c0 "
-       role="progressbar"
+<div
+  data-dark={false}
+>
+  <div
+    className="c0 basic"
+    role="progressbar"
+    size={48}
   >
-    <div role="presentation"
-         class="c1"
-    >
-    </div>
+    <div
+      className="c1"
+      role="presentation"
+    />
   </div>
 </div>
 `;
 
-exports[`LoadingSpinner Icon smoke-test 1`] = `
+exports[`Storyshots LoadingSpinner Icon 1`] = `
 .c0 {
   width: 1em;
   height: 1em;
@@ -60,15 +63,19 @@ exports[`LoadingSpinner Icon smoke-test 1`] = `
   animation: none;
 }
 
-<div data-dark="false">
-  <div css="
+<div
+  data-dark={false}
+>
+  <div
+    css="
         font-size: 12px;
         color: #B1CC29;
-      ">
-    <div role="presentation"
-         class="c0"
-    >
-    </div>
+      "
+  >
+    <div
+      className="c0"
+      role="presentation"
+    />
   </div>
 </div>
 `;

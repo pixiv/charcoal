@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`styled Example smoke-test 1`] = `
+exports[`Storyshots styled Example 1`] = `
 .c1 {
   background-color: var(--charcoal-surface3);
   color: var(--charcoal-text4);
@@ -618,99 +618,157 @@ exports[`styled Example smoke-test 1`] = `
   color: var(--charcoal-text1);
 }
 
-<div data-dark="false">
-  <div class="">
-    <div class="c0">
+<div
+  data-dark={false}
+>
+  <div
+    className=""
+  >
+    <div
+      className="c0"
+    >
       Sample
     </div>
-    <div class="c1">
+    <div
+      className="c1"
+    >
       Left Top Padding
     </div>
-    <div class="c2">
-      <div class="c3">
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
         Nested
       </div>
     </div>
-    <div class="c4">
+    <div
+      className="c4"
+    >
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolores, recusandae quidem mollitia eum non vel architecto possimus repudiandae quis molestias neque facilis rem dolorum voluptatem impedit nemo praesentium voluptas.
     </div>
-    <div class="c4 c5">
+    <div
+      className="c4 c5"
+    >
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolores, recusandae quidem mollitia eum non vel architecto possimus repudiandae quis molestias neque facilis rem dolorum voluptatem impedit nemo praesentium voluptas.
     </div>
-    <div class="c6">
+    <div
+      className="c6"
+    >
       With effects
     </div>
-    <div class="c7">
+    <div
+      className="c7"
+    >
       Without half-leading
     </div>
-    <div class="c8">
+    <div
+      className="c8"
+    >
       Without half-leading (No optimization)
     </div>
-    <div class="c9">
+    <div
+      className="c9"
+    >
       With half-leading
     </div>
-    <div class="c10">
+    <div
+      className="c10"
+    >
       Fixed size box
     </div>
-    <div class="c11">
-      <button class="c12">
+    <div
+      className="c11"
+    >
+      <button
+        className="c12"
+      >
         Button
       </button>
-      <button disabled
-              class="c12"
+      <button
+        className="c12"
+        disabled={true}
       >
         Disabled
       </button>
     </div>
-    <div class="c11">
-      <input type="text"
-             class="c13"
-             value="text field"
-      >
-      <input disabled
-             type="text"
-             class="c13"
-             value="disabled"
-      >
-      <input type="text"
-             class="c14"
-             value="invalid"
-      >
+    <div
+      className="c11"
+    >
+      <input
+        className="c13"
+        type="text"
+        value="text field"
+      />
+      <input
+        className="c13"
+        disabled={true}
+        type="text"
+        value="disabled"
+      />
+      <input
+        className="c14"
+        type="text"
+        value="invalid"
+      />
     </div>
-    <div class="c15">
+    <div
+      className="c15"
+    >
       Border
     </div>
-    <div class="c16">
+    <div
+      className="c16"
+    >
       Gradient
     </div>
-    <div class="c17">
+    <div
+      className="c17"
+    >
       Gradient (Warning)
     </div>
-    <div css="
+    <div
+      css="
       display: flex;
-    ">
-      <div>
+    "
+    >
+      <div
+        css={[Function]}
+      >
         Tailwind like
       </div>
     </div>
-    <div class="c18">
-      <div class="c19">
+    <div
+      className="c18"
+    >
+      <div
+        className="c19"
+      >
         Full width
       </div>
     </div>
-    <div class="c20">
+    <div
+      className="c20"
+    >
       This is actually text1 !
     </div>
   </div>
 </div>
 `;
 
-exports[`styled TailwindLike smoke-test 1`] = `
-<div data-dark="false">
-  <div css="
+exports[`Storyshots styled Tailwind Like 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    css="
       display: flex;
-    ">
-    <div>
+    "
+  >
+    <div
+      css={[Function]}
+    >
       Tailwind like
     </div>
   </div>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TagItem Default smoke-test 1`] = `
+exports[`Storyshots TagItem Default 1`] = `
 .c0 {
   isolation: isolate;
   position: relative;
@@ -101,19 +101,42 @@ exports[`TagItem Default smoke-test 1`] = `
   line-height: inherit;
 }
 
-<div data-dark="false">
-  <a role="button"
-     tabindex="0"
-     href
-     target
-     rel
-     class="c0"
+<div
+  data-dark={false}
+>
+  <a
+    className="c0"
+    href=""
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    rel=""
+    role="button"
+    size="M"
+    tabIndex={0}
+    target=""
   >
-    <div class="c1">
-    </div>
-    <div class="c2">
-      <div class="c3">
-        <span class="c4">
+    <div
+      className="c1"
+    />
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <span
+          className="c4"
+        >
           #女の子
         </span>
       </div>
@@ -122,7 +145,7 @@ exports[`TagItem Default smoke-test 1`] = `
 </div>
 `;
 
-exports[`TagItem Playground smoke-test 1`] = `
+exports[`Storyshots TagItem Playground 1`] = `
 .c1 {
   isolation: isolate;
   position: relative;
@@ -513,109 +536,228 @@ exports[`TagItem Playground smoke-test 1`] = `
   padding: 1em;
 }
 
-<div data-dark="false">
+<div
+  data-dark={false}
+>
   <div>
-    <div class="c0">
+    <div
+      className="c0"
+    >
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c1"
+        <a
+          className="c1"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
+          tabIndex={0}
         >
-          <div class="c2">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c2"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
           </div>
         </a>
       </div>
+      <div />
       <div>
-      </div>
-      <div>
-        <a role="button"
-           tabindex="0"
-           class="c1"
+        <a
+          className="c1"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
+          tabIndex={0}
         >
-          <div class="c2">
-          </div>
-          <div class="c3">
-            <div class="c6">
-              <div class="c7">
-                <span class="c5">
+          <div
+            className="c2"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c6"
+            >
+              <div
+                className="c7"
+              >
+                <span
+                  className="c5"
+                >
                   girl
                 </span>
               </div>
-              <span class="c5">
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
           </div>
         </a>
       </div>
-      <div>
-      </div>
+      <div />
     </div>
-    <div class="c0">
+    <div
+      className="c0"
+    >
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c8"
+        <a
+          className="c8"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
+          tabIndex={0}
         >
-          <div class="c2">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c2"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
-            <pixiv-icon name="16/Remove">
-            </pixiv-icon>
+            <pixiv-icon
+              name="16/Remove"
+            />
           </div>
         </a>
       </div>
+      <div />
       <div>
-      </div>
-      <div>
-        <a role="button"
-           tabindex="0"
-           class="c8"
+        <a
+          className="c8"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
+          tabIndex={0}
         >
-          <div class="c2">
-          </div>
-          <div class="c3">
-            <div class="c6">
-              <div class="c7">
-                <span class="c5">
+          <div
+            className="c2"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c6"
+            >
+              <div
+                className="c7"
+              >
+                <span
+                  className="c5"
+                >
                   girl
                 </span>
               </div>
-              <span class="c5">
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
-            <pixiv-icon name="16/Remove">
-            </pixiv-icon>
+            <pixiv-icon
+              name="16/Remove"
+            />
           </div>
         </a>
       </div>
-      <div>
-      </div>
+      <div />
     </div>
-    <div class="c0">
+    <div
+      className="c0"
+    >
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c9"
+        <a
+          className="c9"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
+          tabIndex={0}
         >
-          <div class="c10">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c10"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
@@ -623,15 +765,36 @@ exports[`TagItem Playground smoke-test 1`] = `
         </a>
       </div>
       <div>
-        <a role="button"
-           aria-disabled="true"
-           class="c9"
+        <a
+          aria-disabled={true}
+          className="c9"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
         >
-          <div class="c10">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c10"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
@@ -639,20 +802,45 @@ exports[`TagItem Playground smoke-test 1`] = `
         </a>
       </div>
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c9"
+        <a
+          className="c9"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
+          tabIndex={0}
         >
-          <div class="c10">
-          </div>
-          <div class="c3">
-            <div class="c6">
-              <div class="c7">
-                <span class="c5">
+          <div
+            className="c10"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c6"
+            >
+              <div
+                className="c7"
+              >
+                <span
+                  className="c5"
+                >
                   girl
                 </span>
               </div>
-              <span class="c5">
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
@@ -660,20 +848,45 @@ exports[`TagItem Playground smoke-test 1`] = `
         </a>
       </div>
       <div>
-        <a role="button"
-           aria-disabled="true"
-           class="c9"
+        <a
+          aria-disabled={true}
+          className="c9"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="M"
         >
-          <div class="c10">
-          </div>
-          <div class="c3">
-            <div class="c6">
-              <div class="c7">
-                <span class="c5">
+          <div
+            className="c10"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c6"
+            >
+              <div
+                className="c7"
+              >
+                <span
+                  className="c5"
+                >
                   girl
                 </span>
               </div>
-              <span class="c5">
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
@@ -681,17 +894,40 @@ exports[`TagItem Playground smoke-test 1`] = `
         </a>
       </div>
     </div>
-    <div class="c0">
+    <div
+      className="c0"
+    >
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c11"
+        <a
+          className="c11"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="S"
+          tabIndex={0}
         >
-          <div class="c2">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c2"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
@@ -699,37 +935,84 @@ exports[`TagItem Playground smoke-test 1`] = `
         </a>
       </div>
     </div>
-    <div class="c0">
+    <div
+      className="c0"
+    >
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c12"
+        <a
+          className="c12"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="S"
+          tabIndex={0}
         >
-          <div class="c2">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c2"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
-            <pixiv-icon name="16/Remove">
-            </pixiv-icon>
+            <pixiv-icon
+              name="16/Remove"
+            />
           </div>
         </a>
       </div>
     </div>
-    <div class="c0">
+    <div
+      className="c0"
+    >
       <div>
-        <a role="button"
-           tabindex="0"
-           class="c13"
+        <a
+          className="c13"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="S"
+          tabIndex={0}
         >
-          <div class="c10">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c10"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
@@ -737,15 +1020,36 @@ exports[`TagItem Playground smoke-test 1`] = `
         </a>
       </div>
       <div>
-        <a role="button"
-           aria-disabled="true"
-           class="c13"
+        <a
+          aria-disabled={true}
+          className="c13"
+          onClick={[Function]}
+          onDragStart={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchCancel={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          size="S"
         >
-          <div class="c10">
-          </div>
-          <div class="c3">
-            <div class="c4">
-              <span class="c5">
+          <div
+            className="c10"
+          />
+          <div
+            className="c3"
+          >
+            <div
+              className="c4"
+            >
+              <span
+                className="c5"
+              >
                 #女の子
               </span>
             </div>
