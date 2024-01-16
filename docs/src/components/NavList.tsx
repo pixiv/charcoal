@@ -107,6 +107,10 @@ const tailwindConfigList: ListItem[] = [
     text: 'Spacing',
     href: '/@charcoal-ui/tailwind-config/spacing',
   },
+  {
+    text: 'Break points',
+    href: '/@charcoal-ui/tailwind-config/screens',
+  },
 ]
 
 const tailwindDiffList: ListItem[] = [
@@ -167,20 +171,6 @@ const themeList: ListItem[] = [
   {
     text: 'テーマカラー',
     href: '/@charcoal-ui/theme/colors',
-  },
-]
-const tailwindConfigList: ListItem[] = [
-  {
-    text: 'クイックスタート',
-    href: '/@charcoal-ui/tailwind-config/quickstart',
-  },
-  {
-    text: 'カスタマイズする',
-    href: '/@charcoal-ui/tailwind-config/customize',
-  },
-  {
-    text: 'Break points',
-    href: '/@charcoal-ui/tailwind-config/screens',
   },
 ]
 
