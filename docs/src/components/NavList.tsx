@@ -161,6 +161,20 @@ const themeList: ListItem[] = [
     href: '/@charcoal-ui/theme/colors',
   },
 ]
+const tailwindConfigList: ListItem[] = [
+  {
+    text: 'クイックスタート',
+    href: '/@charcoal-ui/tailwind-config/quickstart',
+  },
+  {
+    text: 'カスタマイズする',
+    href: '/@charcoal-ui/tailwind-config/customize',
+  },
+  {
+    text: 'Typography',
+    href: '/@charcoal-ui/tailwind-config/typography',
+  },
+]
 
 export const NavList: FC<{ className?: string }> = (props) => {
   const router = useRouter()
