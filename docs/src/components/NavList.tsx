@@ -107,6 +107,10 @@ const tailwindConfigList: ListItem[] = [
     text: 'Spacing',
     href: '/@charcoal-ui/tailwind-config/spacing',
   },
+  {
+    text: 'Break points',
+    href: '/@charcoal-ui/tailwind-config/screens',
+  },
 ]
 
 const tailwindDiffList: ListItem[] = [
