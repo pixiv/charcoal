@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components'
 
 /**
  * `&:focus:not(:focus-visible)` is backwards compatibility for legacy browsers.
