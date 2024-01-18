@@ -60,6 +60,16 @@ exports[`Storyshots Radio Default 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c2[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c2[type='radio'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c2[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
+.c2[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
 .c2[type='radio']:not(:checked) {
   border-width: 2px;
   border-style: solid;
@@ -159,6 +169,7 @@ exports[`Storyshots Radio Default 1`] = `
         className="c1"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c2"
           disabled={false}
@@ -181,6 +192,7 @@ exports[`Storyshots Radio Default 1`] = `
         className="c1"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c2"
           disabled={false}
@@ -211,6 +223,7 @@ exports[`Storyshots Radio Default 1`] = `
         className="c1"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c2"
           disabled={false}
@@ -233,6 +246,7 @@ exports[`Storyshots Radio Default 1`] = `
         className="c1"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c2"
           disabled={false}
@@ -263,6 +277,7 @@ exports[`Storyshots Radio Default 1`] = `
         className="c1"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c2"
           disabled={false}
@@ -285,6 +300,7 @@ exports[`Storyshots Radio Default 1`] = `
         className="c1"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c2"
           disabled={false}
