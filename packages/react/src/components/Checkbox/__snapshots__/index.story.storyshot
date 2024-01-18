@@ -69,8 +69,7 @@ exports[`Storyshots Checkbox Invalid 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+.c2[type='checkbox'][aria-invalid='true'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
@@ -231,8 +230,7 @@ exports[`Storyshots Checkbox Labelled 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+.c2[type='checkbox'][aria-invalid='true'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
@@ -459,8 +457,7 @@ exports[`Storyshots Checkbox Unlabelled 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+.c2[type='checkbox'][aria-invalid='true'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
