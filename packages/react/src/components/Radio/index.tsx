@@ -2,6 +2,7 @@ import { memo, forwardRef, useCallback, useContext } from 'react'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import warning from 'warning'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
@@ -103,12 +104,7 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
       &:active {
         background-color: var(--charcoal-surface1-press);
       }
-      &:focus,
-      &:active,
-      &:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-      }
+      ${focusVisibleFocusRingCss}
     }
 
     &:not(:checked) {

@@ -5,6 +5,7 @@ import warning from 'warning'
 import { px } from '@charcoal-ui/utils'
 
 import { MultiSelectGroupContext } from './context'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 export type MultiSelectProps = React.PropsWithChildren<{
   value: string
@@ -167,6 +168,8 @@ const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
         background-color: var(--charcoal-text3-press);
       }
     }
+
+    ${focusVisibleFocusRingCss}
 
     ${({ invalid, overlay }) =>
       invalid &&

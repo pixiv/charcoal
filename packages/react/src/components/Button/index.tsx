@@ -2,6 +2,7 @@ import { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { unreachable } from '../../_lib'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 type Size = 'S' | 'M'
@@ -59,6 +60,7 @@ type StyledButtonProps = Omit<StyledProps, '$variant'> & {
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
 }
+
 const StyledButton = styled(Clickable)<StyledButtonProps>`
   width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
@@ -80,12 +82,7 @@ const StyledButton = styled(Clickable)<StyledButtonProps>`
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    &:active,
-    &:focus,
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
+    ${focusVisibleFocusRingCss}
 
     &:hover {
       color: var(--charcoal-${(p) => p.$color}-hover);
