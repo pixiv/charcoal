@@ -45,12 +45,18 @@ exports[`Storyshots Radio Default 1`] = `
 }
 
 .c2[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='radio'][aria-disabled='false']:focus,
-.c2[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c2[type='radio'][aria-disabled='false']:active,
+.c2[type='radio'][aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c2[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='radio'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 

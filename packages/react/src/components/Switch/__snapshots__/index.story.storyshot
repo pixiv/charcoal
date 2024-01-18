@@ -18,10 +18,6 @@ exports[`Storyshots Switch Labelled 1`] = `
   cursor: default;
 }
 
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c2 {
   font-size: 14px;
   line-height: 22px;
@@ -62,6 +58,15 @@ exports[`Storyshots Switch Labelled 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -169,10 +174,6 @@ exports[`Storyshots Switch Playground 1`] = `
   cursor: default;
 }
 
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c2 {
   font-size: 14px;
   line-height: 22px;
@@ -213,6 +214,15 @@ exports[`Storyshots Switch Playground 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -319,10 +329,6 @@ exports[`Storyshots Switch Unlabelled 1`] = `
   cursor: default;
 }
 
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -356,6 +362,15 @@ exports[`Storyshots Switch Unlabelled 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 

@@ -71,13 +71,19 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -130,13 +136,19 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
 .c12[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -189,13 +201,19 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active,
 .c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus,
+.c13[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c13[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c13:not(:disabled):not([aria-disabled]):focus-visible,
 .c13[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -253,12 +271,18 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 }
 
 .c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
+.c14[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c14:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c14[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c14:not(:disabled):not([aria-disabled]):focus-visible,
 .c14[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -588,13 +612,19 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -647,13 +677,19 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active,
 .c25:not(:disabled):not([aria-disabled]):focus,
-.c25[aria-disabled='false']:focus,
+.c25[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c25:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c25[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c25:not(:disabled):not([aria-disabled]):focus-visible,
 .c25[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -706,13 +742,19 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
-.c26:not(:disabled):not([aria-disabled]):active,
-.c26[aria-disabled='false']:active,
 .c26:not(:disabled):not([aria-disabled]):focus,
-.c26[aria-disabled='false']:focus,
+.c26[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c26:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c26[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c26:not(:disabled):not([aria-disabled]):focus-visible,
 .c26[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -865,12 +907,18 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c21:not(:disabled):not([aria-disabled]):focus,
-.c21[aria-disabled='false']:focus,
-.c21:not(:disabled):not([aria-disabled]):active,
-.c21[aria-disabled='false']:active,
+.c21[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c21:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c21[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c21:not(:disabled):not([aria-disabled]):focus-visible,
 .c21[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -939,12 +987,18 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled='false']:focus,
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active,
+.c27[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c27[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c27:not(:disabled):not([aria-disabled]):focus-visible,
 .c27[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1101,12 +1155,6 @@ exports[`Storyshots Modal Default 1`] = `
 .c17:not(:disabled):not([aria-disabled]):hover,
 .c17 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
-}
-
-.c17:not(:disabled):not([aria-disabled]):active,
-.c17 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c17:focus-within {
@@ -1465,13 +1513,19 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1524,13 +1578,19 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c20:not(:disabled):not([aria-disabled]):active,
-.c20[aria-disabled='false']:active,
 .c20:not(:disabled):not([aria-disabled]):focus,
-.c20[aria-disabled='false']:focus,
+.c20[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c20:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c20[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c20:not(:disabled):not([aria-disabled]):focus-visible,
 .c20[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1583,13 +1643,19 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c21:not(:disabled):not([aria-disabled]):active,
-.c21[aria-disabled='false']:active,
 .c21:not(:disabled):not([aria-disabled]):focus,
-.c21[aria-disabled='false']:focus,
+.c21[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c21:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c21[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c21:not(:disabled):not([aria-disabled]):focus-visible,
 .c21[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1731,12 +1797,18 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 }
 
 .c22:not(:disabled):not([aria-disabled]):focus,
-.c22[aria-disabled='false']:focus,
-.c22:not(:disabled):not([aria-disabled]):active,
-.c22[aria-disabled='false']:active,
+.c22[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c22[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c22:not(:disabled):not([aria-disabled]):focus-visible,
 .c22[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1893,12 +1965,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c17:not(:disabled):not([aria-disabled]):hover,
 .c17 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
-}
-
-.c17:not(:disabled):not([aria-disabled]):active,
-.c17 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c17:focus-within {
@@ -2229,13 +2295,19 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -2288,13 +2360,19 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: 40px;
 }
 
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active,
 .c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled='false']:focus,
+.c11[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c11[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c11:not(:disabled):not([aria-disabled]):focus-visible,
 .c11[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -2584,13 +2662,19 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -2643,13 +2727,19 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   height: 40px;
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
 .c12[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 

@@ -54,23 +54,18 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] =
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus,
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
-  outline: none;
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -217,23 +212,18 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`] 
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus,
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
-  outline: none;
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -446,23 +436,18 @@ exports[`using dark theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1`
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus,
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
-  outline: none;
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -600,23 +585,18 @@ exports[`using light theme storiesOf(index.story.tsx).add(Invalid) snapshot 1`] 
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus,
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
-  outline: none;
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -763,23 +743,18 @@ exports[`using light theme storiesOf(index.story.tsx).add(Labelled) snapshot 1`]
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus,
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
-  outline: none;
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -992,23 +967,18 @@ exports[`using light theme storiesOf(index.story.tsx).add(Unlabelled) snapshot 1
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus,
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox'][aria-disabled='false']:active {
+.c2[type='checkbox'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible),
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:active:not(:focus-visible) {
-  outline: none;
+.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
 .c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 

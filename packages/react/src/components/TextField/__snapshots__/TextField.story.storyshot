@@ -157,12 +157,6 @@ exports[`Storyshots TextField Default 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c8:not(:disabled):not([aria-disabled]):active,
-.c8 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c8:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
@@ -397,12 +391,6 @@ exports[`Storyshots TextField Has Affix 1`] = `
 .c6:not(:disabled):not([aria-disabled]):hover,
 .c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c6:focus-within {
@@ -707,12 +695,6 @@ exports[`Storyshots TextField Has Count 1`] = `
 .c8:not(:disabled):not([aria-disabled]):hover,
 .c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
-}
-
-.c8:not(:disabled):not([aria-disabled]):active,
-.c8 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c8:focus-within {
@@ -1044,12 +1026,6 @@ exports[`Storyshots TextField Has Label 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c10:not(:disabled):not([aria-disabled]):active,
-.c10 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c10:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
@@ -1330,12 +1306,18 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
 .c12[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1376,12 +1358,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 .c6:not(:disabled):not([aria-disabled]):hover,
 .c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6 [aria-disabled='false']:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c6:focus-within {

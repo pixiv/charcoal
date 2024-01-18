@@ -44,12 +44,18 @@ exports[`Storyshots DropdownSelector Basic 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -158,12 +164,18 @@ exports[`Storyshots DropdownSelector Custom Children 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -281,12 +293,18 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -431,12 +449,18 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 }
 
 .c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled='false']:focus,
-.c8:not(:disabled):not([aria-disabled]):active,
-.c8[aria-disabled='false']:active,
+.c8[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c8[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c8:not(:disabled):not([aria-disabled]):focus-visible,
 .c8[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -505,12 +529,18 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
 .c12[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -851,13 +881,19 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -921,12 +957,18 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
 }
 
 .c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus,
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active,
+.c3[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c3:not(:disabled):not([aria-disabled]):focus-visible,
 .c3[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -1039,12 +1081,18 @@ exports[`Storyshots DropdownSelector Section List 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
-  outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
