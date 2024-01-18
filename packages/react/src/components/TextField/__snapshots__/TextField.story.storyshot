@@ -241,13 +241,13 @@ exports[`Storyshots TextField Default 1`] = `
             "border": 0,
             "clip": "rect(0 0 0 0)",
             "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
+            "height": "1px",
+            "margin": "-1px",
             "overflow": "hidden",
             "padding": 0,
             "position": "absolute",
             "whiteSpace": "nowrap",
-            "width": 1,
+            "width": "1px",
           }
         }
       >
@@ -255,8 +255,6 @@ exports[`Storyshots TextField Default 1`] = `
           className="c4"
           htmlFor="test-id"
           id="test-id"
-          onBlur={null}
-          onFocus={null}
         >
           Label
         </label>
@@ -283,7 +281,9 @@ exports[`Storyshots TextField Default 1`] = `
           onChange={[Function]}
           placeholder="TextField"
           readOnly={false}
+          required={false}
           type="text"
+          value=""
         />
       </div>
     </div>
@@ -515,13 +515,13 @@ exports[`Storyshots TextField Has Affix 1`] = `
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
-          "height": 1,
-          "margin": "0 -1px -1px 0",
+          "height": "1px",
+          "margin": "-1px",
           "overflow": "hidden",
           "padding": 0,
           "position": "absolute",
           "whiteSpace": "nowrap",
-          "width": 1,
+          "width": "1px",
         }
       }
     >
@@ -529,8 +529,6 @@ exports[`Storyshots TextField Has Affix 1`] = `
         className="c3"
         htmlFor="test-id"
         id="test-id"
-        onBlur={null}
-        onFocus={null}
       >
         Label
       </label>
@@ -557,7 +555,9 @@ exports[`Storyshots TextField Has Affix 1`] = `
         onChange={[Function]}
         placeholder="path/to/your/file"
         readOnly={false}
+        required={false}
         type="text"
+        value=""
       />
       <span
         className="c9"
@@ -833,13 +833,13 @@ exports[`Storyshots TextField Has Count 1`] = `
             "border": 0,
             "clip": "rect(0 0 0 0)",
             "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
+            "height": "1px",
+            "margin": "-1px",
             "overflow": "hidden",
             "padding": 0,
             "position": "absolute",
             "whiteSpace": "nowrap",
-            "width": 1,
+            "width": "1px",
           }
         }
       >
@@ -847,8 +847,6 @@ exports[`Storyshots TextField Has Count 1`] = `
           className="c4"
           htmlFor="test-id"
           id="test-id"
-          onBlur={null}
-          onFocus={null}
         >
           Label
         </label>
@@ -876,7 +874,9 @@ exports[`Storyshots TextField Has Count 1`] = `
           onChange={[Function]}
           placeholder="TextField"
           readOnly={false}
+          required={false}
           type="text"
+          value=""
         />
         <span
           className="c10"
@@ -1201,7 +1201,9 @@ exports[`Storyshots TextField Has Label 1`] = `
           onChange={[Function]}
           placeholder="TextField"
           readOnly={false}
+          required={false}
           type="text"
+          value=""
         />
       </div>
       <p
@@ -1533,13 +1535,13 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
-          "height": 1,
-          "margin": "0 -1px -1px 0",
+          "height": "1px",
+          "margin": "-1px",
           "overflow": "hidden",
           "padding": 0,
           "position": "absolute",
           "whiteSpace": "nowrap",
-          "width": 1,
+          "width": "1px",
         }
       }
     >
@@ -1547,8 +1549,6 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
         className="c3"
         htmlFor="test-id"
         id="test-id"
-        onBlur={null}
-        onFocus={null}
       >
         Label
       </label>
@@ -1580,6 +1580,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
         onChange={[Function]}
         placeholder="作品を検索"
         readOnly={false}
+        required={false}
         type="text"
         value=""
       />
