@@ -25,8 +25,7 @@
     "**/.*.cjs",
     "**/.*.js",
     "storyshots.*",
-    "__mocks__/*.ts",
-    "styled-story-serializer"
+    "__mocks__/*.ts"
   ],
   "exclude": ["docs"]
 }
