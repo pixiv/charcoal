@@ -72,7 +72,7 @@ const Icon = styled.div.attrs({ role: 'presentation' })<{ once: boolean }>`
   }
 `
 
-interface Props {
+type Props = {
   once?: boolean
 }
 
