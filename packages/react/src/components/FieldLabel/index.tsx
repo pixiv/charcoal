@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { createTheme } from '@charcoal-ui/styled'
 
 export interface FieldLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -41,22 +40,88 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
 
 export default FieldLabel
 
-const theme = createTheme(styled)
-
 const Label = styled.label`
-  ${theme((o) => [o.typography(14).bold, o.font.text1])}
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 const RequiredText = styled.span`
-  ${theme((o) => [o.typography(14), o.font.text2])}
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 const SubLabelClickable = styled.div`
-  ${theme((o) => [
-    o.typography(14),
-    o.font.text3.hover.press,
-    o.outline.default.focus,
-  ])}
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  transition: 0.2s color, 0.2s box-shadow;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
+
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      color: var(--charcoal-text3-hover);
+    }
+    &:active {
+      color: var(--charcoal-text3-press);
+    }
+    &:active,
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
 `
 
 const FieldLabelWrapper = styled.div`
@@ -64,10 +129,10 @@ const FieldLabelWrapper = styled.div`
   align-items: center;
 
   > ${RequiredText} {
-    ${theme((o) => o.margin.left(4))}
+    margin-left: 4px;
   }
 
   > ${SubLabelClickable} {
-    ${theme((o) => o.margin.left('auto'))}
+    margin-left: auto;
   }
 `

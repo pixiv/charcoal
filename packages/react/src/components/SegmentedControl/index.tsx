@@ -7,11 +7,9 @@ import {
   useRadio,
   useRadioGroup,
 } from '@react-aria/radio'
-import styled from 'styled-components'
-import { disabledSelector } from '@charcoal-ui/utils'
+import styled, { css } from 'styled-components'
 
 import { RadioProvider, useRadioContext } from './RadioGroupContext'
-import { theme } from '../../styled'
 
 type SegmentedControlItem = {
   label: React.ReactNode
@@ -120,7 +118,8 @@ const SegmentedControlRoot = styled.div`
   display: inline-flex;
   align-items: center;
 
-  ${theme((o) => [o.bg.surface3, o.borderRadius(16)])}
+  background-color: var(--charcoal-surface3);
+  border-radius: 16px;
 `
 
 const SegmentedRoot = styled.label<{ checked?: boolean }>`
@@ -130,18 +129,22 @@ const SegmentedRoot = styled.label<{ checked?: boolean }>`
   cursor: pointer;
   height: 32px;
 
-  ${disabledSelector} {
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 16px;
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
     cursor: default;
+    opacity: 0.32;
   }
+  color: var(--charcoal-text2);
 
-  ${({ checked }) =>
-    theme((o) => [
-      o.padding.horizontal(16),
-      o.borderRadius(16),
-      o.disabled,
-      checked === true && o.bg.brand,
-      checked === true ? o.font.text5 : o.font.text2,
-    ])}
+  ${({ checked = false }) =>
+    checked &&
+    css`
+      background-color: var(--charcoal-brand);
+      color: var(--charcoal-text5);
+    `}
 `
 const SegmentedInput = styled.input`
   position: absolute;
@@ -165,5 +168,22 @@ const RadioLabel = styled.div`
   height: 22px;
 `
 const SegmentedLabelInner = styled.div`
-  ${theme((o) => [o.typography(14)])}
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `

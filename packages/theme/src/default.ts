@@ -1,4 +1,4 @@
-import { rgba } from 'polished'
+import rgba from 'polished/lib/color/rgba'
 import { CharcoalTheme } from './theme'
 import {
   BORDER_RADIUS,
@@ -143,7 +143,7 @@ export const dark: CharcoalTheme = {
     surface3: rgba('#ffffff', 0.12),
     surface4: light.color.surface4,
     surface6: rgba('#ffffff', 0.12),
-    surface7: light.color.surface7,
+    surface7: rgba('#000000', 0),
     surface8: light.color.surface8,
     surface9: '#333333',
     surface10: rgba('#ffffff', 0.2),

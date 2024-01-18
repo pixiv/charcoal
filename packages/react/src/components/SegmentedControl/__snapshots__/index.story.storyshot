@@ -33,12 +33,8 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
 }
 
 .c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
+.c1[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
   opacity: 0.32;
 }
 
@@ -99,7 +95,7 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
     aria-label="test"
     aria-orientation="vertical"
     className="c0"
-    id="test-id"
+    id="react-aria-1"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -114,7 +110,7 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -153,7 +149,7 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -192,7 +188,7 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -231,7 +227,7 @@ exports[`Storyshots SegmentedControl Object Segments 1`] = `
         checked={false}
         className="c2"
         disabled={true}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -296,12 +292,8 @@ exports[`Storyshots SegmentedControl String Segments 1`] = `
 }
 
 .c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
+.c1[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
   opacity: 0.32;
 }
 
@@ -362,7 +354,7 @@ exports[`Storyshots SegmentedControl String Segments 1`] = `
     aria-label="test"
     aria-orientation="vertical"
     className="c0"
-    id="test-id"
+    id="react-aria-5"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -377,7 +369,7 @@ exports[`Storyshots SegmentedControl String Segments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -416,7 +408,7 @@ exports[`Storyshots SegmentedControl String Segments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -455,7 +447,7 @@ exports[`Storyshots SegmentedControl String Segments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}

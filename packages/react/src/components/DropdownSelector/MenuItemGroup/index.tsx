@@ -23,7 +23,7 @@ export default function MenuItemGroup(props: MenuItemGroupProps) {
 
 const TextSpan = styled.span`
   display: block;
-  color: ${({ theme }) => theme.color.text3};
+  color: var(--charcoal-text3);
   font-size: 12px;
   font-weight: bold;
   padding: 12px 0 8px 16px;

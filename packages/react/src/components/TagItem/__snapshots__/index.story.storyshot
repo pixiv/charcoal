@@ -30,36 +30,19 @@ exports[`Storyshots TagItem Default 1`] = `
 }
 
 .c0:not(:disabled):not([aria-disabled]):focus,
-.c0[aria-disabled=false]:focus,
+.c0[aria-disabled='false']:focus,
 .c0:not(:disabled):not([aria-disabled]):active,
-.c0[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c0[aria-disabled=false]:focus:not(:focus-visible),
-.c0:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c0[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus-visible,
-.c0[aria-disabled=false]:focus-visible {
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:disabled:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]):disabled,
-.c0:disabled[aria-disabled]:not([aria-disabled=false]),
-.c0[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c1 {
@@ -192,36 +175,19 @@ exports[`Storyshots TagItem Playground 1`] = `
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled=false]:focus,
+.c1[aria-disabled='false']:focus,
 .c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled=false]:focus:not(:focus-visible),
-.c1:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c1[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled=false]:focus-visible {
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:disabled:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]):disabled,
-.c1:disabled[aria-disabled]:not([aria-disabled=false]),
-.c1[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c1[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c8 {
@@ -245,44 +211,27 @@ exports[`Storyshots TagItem Playground 1`] = `
   cursor: pointer;
   overflow: hidden;
   border-radius: 4px;
-  color: var(--charcoal-text5);
-  padding-left: 16px;
   padding-right: 8px;
+  padding-left: 16px;
+  color: var(--charcoal-text5);
   -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
 }
 
 .c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled=false]:focus,
+.c8[aria-disabled='false']:focus,
 .c8:not(:disabled):not([aria-disabled]):active,
-.c8[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c8[aria-disabled=false]:focus:not(:focus-visible),
-.c8:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c8[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c8[aria-disabled='false']:active,
 .c8:not(:disabled):not([aria-disabled]):focus-visible,
-.c8[aria-disabled=false]:focus-visible {
+.c8[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c8:disabled,
-.c8[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c8:disabled:disabled,
-.c8[aria-disabled]:not([aria-disabled=false]):disabled,
-.c8:disabled[aria-disabled]:not([aria-disabled=false]),
-.c8[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c8[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c9 {
@@ -314,36 +263,19 @@ exports[`Storyshots TagItem Playground 1`] = `
 }
 
 .c9:not(:disabled):not([aria-disabled]):focus,
-.c9[aria-disabled=false]:focus,
+.c9[aria-disabled='false']:focus,
 .c9:not(:disabled):not([aria-disabled]):active,
-.c9[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c9[aria-disabled=false]:focus:not(:focus-visible),
-.c9:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c9[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c9[aria-disabled='false']:active,
 .c9:not(:disabled):not([aria-disabled]):focus-visible,
-.c9[aria-disabled=false]:focus-visible {
+.c9[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c9:disabled,
-.c9[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c9:disabled:disabled,
-.c9[aria-disabled]:not([aria-disabled=false]):disabled,
-.c9:disabled[aria-disabled]:not([aria-disabled=false]),
-.c9[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c9[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c11 {
@@ -375,36 +307,19 @@ exports[`Storyshots TagItem Playground 1`] = `
 }
 
 .c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled=false]:focus,
+.c11[aria-disabled='false']:focus,
 .c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled=false]:focus:not(:focus-visible),
-.c11:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c11[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c11[aria-disabled='false']:active,
 .c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled=false]:focus-visible {
+.c11[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c11:disabled,
-.c11[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c11:disabled:disabled,
-.c11[aria-disabled]:not([aria-disabled=false]):disabled,
-.c11:disabled[aria-disabled]:not([aria-disabled=false]),
-.c11[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c11[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c12 {
@@ -428,44 +343,27 @@ exports[`Storyshots TagItem Playground 1`] = `
   cursor: pointer;
   overflow: hidden;
   border-radius: 4px;
-  color: var(--charcoal-text5);
-  padding-left: 16px;
   padding-right: 8px;
+  padding-left: 16px;
+  color: var(--charcoal-text5);
   -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled=false]:focus,
+.c12[aria-disabled='false']:focus,
 .c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled=false]:focus:not(:focus-visible),
-.c12:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c12[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c12[aria-disabled='false']:active,
 .c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled=false]:focus-visible {
+.c12[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c12:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c12:disabled:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]):disabled,
-.c12:disabled[aria-disabled]:not([aria-disabled=false]),
-.c12[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c12[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c13 {
@@ -497,36 +395,19 @@ exports[`Storyshots TagItem Playground 1`] = `
 }
 
 .c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled=false]:focus,
+.c13[aria-disabled='false']:focus,
 .c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c13[aria-disabled=false]:focus:not(:focus-visible),
-.c13:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c13[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c13[aria-disabled='false']:active,
 .c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled=false]:focus-visible {
+.c13[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c13:disabled,
-.c13[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c13:disabled:disabled,
-.c13[aria-disabled]:not([aria-disabled=false]):disabled,
-.c13:disabled[aria-disabled]:not([aria-disabled=false]),
-.c13[aria-disabled]:not([aria-disabled=false])[aria-disabled]:not([aria-disabled=false]) {
+.c13[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c2 {
