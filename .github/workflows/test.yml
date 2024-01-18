@@ -60,6 +60,7 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: yarn
+
       - run: yarn install --immutable --inline-builds
 
       - name: Install Playwgith
@@ -74,7 +75,7 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-storybook"
+            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook"
 
   lint:
     runs-on: ubuntu-latest
