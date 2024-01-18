@@ -13,6 +13,8 @@ import { AppProvider } from '../components/AppProvider'
 import { SideMenuDiv } from '../components/SideMenuDiv'
 import Head from 'next/head'
 
+import '../tailwind.css'
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

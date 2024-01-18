@@ -2,8 +2,7 @@ import { ChangeEvent, useCallback, useContext, forwardRef, memo } from 'react'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import warning from 'warning'
-import { theme } from '../../styled'
-import { disabledSelector, px } from '@charcoal-ui/utils'
+import { px } from '@charcoal-ui/utils'
 
 import { MultiSelectGroupContext } from './context'
 
@@ -92,17 +91,36 @@ const MultiSelectRoot = styled.label`
   align-items: center;
   position: relative;
   cursor: pointer;
-  ${disabledSelector} {
+  gap: ${({ theme }) => px(theme.spacing[4])};
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
     cursor: default;
   }
-  gap: ${({ theme }) => px(theme.spacing[4])};
-  ${theme((o) => o.disabled)}
 `
 
 const MultiSelectLabel = styled.div`
   display: flex;
   align-items: center;
-  ${theme((o) => [o.typography(14), o.font.text2])}
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
 `
 
 const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
@@ -115,18 +133,55 @@ const MultiSelectInput = styled.input.attrs({ type: 'checkbox' })<{
     width: 20px;
     height: 20px;
     margin: 0;
+    background-color: var(--charcoal-text3);
+    border-radius: 999999px;
+    transition: 0.2s background-color, 0.2s box-shadow;
 
     &:checked {
-      ${theme((o) => o.bg.brand.hover.press)}
+      background-color: var(--charcoal-brand);
+      &:hover {
+        &:not(:disabled):not([aria-disabled]),
+        &[aria-disabled='false'] {
+          background-color: var(--charcoal-brand-hover);
+        }
+      }
+
+      &:active {
+        &:not(:disabled):not([aria-disabled]),
+        &[aria-disabled='false'] {
+          background-color: var(--charcoal-brand-press);
+        }
+      }
+    }
+
+    &:hover {
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        background-color: var(--charcoal-text3-hover);
+      }
+    }
+
+    &:active {
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        background-color: var(--charcoal-text3-press);
+      }
     }
 
     ${({ invalid, overlay }) =>
-      theme((o) => [
-        o.bg.text3.hover.press,
-        o.borderRadius('oval'),
-        invalid && !overlay && o.outline.assertive,
-        overlay && o.bg.surface4,
-      ])};
+      invalid &&
+      !overlay &&
+      css`
+        &:not(:disabled):not([aria-disabled]),
+        &[aria-disabled='false'] {
+          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+        }
+      `}
+    ${({ overlay }) =>
+      overlay &&
+      css`
+        background-color: var(--charcoal-surface4);
+      `}
   }
 `
 
@@ -141,20 +196,25 @@ const MultiSelectInputOverlay = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: 24px;
+  height: 24px;
+  border-radius: 999999px;
+  color: var(--charcoal-text5);
+  transition: 0.2s box-shadow;
   ${({ invalid, overlay }) =>
-    theme((o) => [
-      o.width.px(24),
-      o.height.px(24),
-      o.borderRadius('oval'),
-      o.font.text5,
-      invalid && overlay && o.outline.assertive,
-    ])}
+    invalid &&
+    overlay &&
+    css`
+      &:not(:disabled):not([aria-disabled]),
+      &[aria-disabled='false'] {
+        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+      }
+    `}
 
   ${({ overlay }) =>
     overlay &&
     css`
-      border-color: ${({ theme }) => theme.color.text5};
+      border-color: var(--charcoal-text5);
       border-width: 2px;
       border-style: solid;
     `}

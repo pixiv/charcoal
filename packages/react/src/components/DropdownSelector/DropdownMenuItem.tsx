@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import MenuItem, { MenuItemProps } from './MenuItem'
 import { MenuListContext } from './MenuList/MenuListContext'
 import { useContext } from 'react'
-import { theme } from '../../styled'
 import Icon from '../Icon'
 
 export type DropdownMenuItemProps = Omit<MenuItemProps<'div'>, 'as'>
@@ -27,7 +26,24 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
  * アイコンがない時を考慮して20px（16pxのwidthと4pxのgap）の余白をとる
  */
 const StyledSpan = styled.span<{ isSelected?: boolean }>`
-  ${theme((o) => [o.typography(14), o.font.text2])};
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-text2);
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
+
   display: flex;
   align-items: center;
   width: 100%;
@@ -35,6 +51,6 @@ const StyledSpan = styled.span<{ isSelected?: boolean }>`
 `
 
 const Text2ColorIcon = styled(Icon)`
-  ${theme((o) => [o.font.text2])}
+  color: var(--charcoal-text2);
   padding-right: 4px;
 `

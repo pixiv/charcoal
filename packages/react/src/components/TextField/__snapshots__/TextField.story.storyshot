@@ -17,6 +17,8 @@ exports[`Storyshots TextField Default 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -86,33 +88,22 @@ exports[`Storyshots TextField Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c6:hover:not(:disabled):not([aria-disabled]),
-.c6:hover[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c6:active:not(:disabled):not([aria-disabled]),
-.c6:active[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled=false]:focus,
 .c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled=false]:focus:not(:focus-visible),
-.c6:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c6[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
 .c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled=false]:focus-visible {
+.c6[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -147,46 +138,37 @@ exports[`Storyshots TextField Default 1`] = `
 }
 
 .c8 {
-  height: 40px;
   display: grid;
-  position: relative;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8 [aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c9 {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.c12 {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 8px;
-}
-
-.c10 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--charcoal-text2);
-}
-
-.c11 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -201,57 +183,29 @@ exports[`Storyshots TextField Default 1`] = `
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-left: calc((8px + 0px) / 0.875);
-  padding-right: calc((8px + 0px) / 0.875);
+  padding-left: 0;
+  padding-right: 0;
   border-radius: calc(4px / 0.875);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--charcoal-surface3);
+  background: transparent;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c11:hover:not(:disabled):not([aria-disabled]),
-.c11:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled=false]:focus,
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled=false]:focus:not(:focus-visible),
-.c11:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c11[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -301,7 +255,6 @@ exports[`Storyshots TextField Default 1`] = `
           <span>
             <button
               className="c7"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -311,16 +264,9 @@ exports[`Storyshots TextField Default 1`] = `
       <div
         className="c8"
       >
-        <span
-          className="c9"
-        >
-          <span
-            className="c10"
-          />
-        </span>
         <input
           aria-labelledby="test-id"
-          className="c11"
+          className="c9"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -328,13 +274,6 @@ exports[`Storyshots TextField Default 1`] = `
           readOnly={false}
           type="text"
         />
-        <span
-          className="c12"
-        >
-          <span
-            className="c10"
-          />
-        </span>
       </div>
     </div>
   </div>
@@ -391,33 +330,22 @@ exports[`Storyshots TextField Has Affix 1`] = `
   margin-bottom: -4px;
 }
 
-.c5:hover:not(:disabled):not([aria-disabled]),
-.c5:hover[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c5:active:not(:disabled):not([aria-disabled]),
-.c5:active[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled=false]:focus,
 .c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled=false]:focus:not(:focus-visible),
-.c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c5[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
 .c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled=false]:focus-visible {
+.c5[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -452,46 +380,60 @@ exports[`Storyshots TextField Has Affix 1`] = `
 }
 
 .c6 {
-  height: 40px;
   display: grid;
-  position: relative;
+  grid-template-columns: auto 1fr auto;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6 [aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c7 {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.c10 {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 8px;
 }
 
 .c8 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--charcoal-text2);
-}
-
-.c9 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -506,63 +448,35 @@ exports[`Storyshots TextField Has Affix 1`] = `
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-left: calc((8px + 0px) / 0.875);
-  padding-right: calc((8px + 0px) / 0.875);
+  padding-left: 0;
+  padding-right: 0;
   border-radius: calc(4px / 0.875);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--charcoal-surface3);
+  background: transparent;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c9:hover:not(:disabled):not([aria-disabled]),
-.c9:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus,
-.c9[aria-disabled=false]:focus,
-.c9:not(:disabled):not([aria-disabled]):active,
-.c9[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c9[aria-disabled=false]:focus:not(:focus-visible),
-.c9:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c9[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus-visible,
-.c9[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9::-moz-placeholder {
+.c8::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9::placeholder {
+.c8::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11 {
-  font-size: 14px;
+.c10 {
   line-height: 22px;
+  font-size: 14px;
   color: var(--charcoal-text3);
 }
 
@@ -607,18 +521,14 @@ exports[`Storyshots TextField Has Affix 1`] = `
     <div
       className="c6"
     >
-      <span
+      <div
         className="c7"
       >
-        <span
-          className="c8"
-        >
-          /home/john/
-        </span>
-      </span>
+        /home/john/
+      </div>
       <input
         aria-labelledby="test-id"
-        className="c9"
+        className="c8"
         disabled={false}
         id="test-id"
         maxLength={200}
@@ -628,15 +538,11 @@ exports[`Storyshots TextField Has Affix 1`] = `
         type="text"
       />
       <span
-        className="c10"
+        className="c9"
       >
+        .png
         <span
-          className="c8"
-        >
-          .png
-        </span>
-        <span
-          className="c11"
+          className="c10"
         >
           0/200
         </span>
@@ -663,6 +569,8 @@ exports[`Storyshots TextField Has Count 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -732,33 +640,22 @@ exports[`Storyshots TextField Has Count 1`] = `
   margin-bottom: -4px;
 }
 
-.c6:hover:not(:disabled):not([aria-disabled]),
-.c6:hover[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c6:active:not(:disabled):not([aria-disabled]),
-.c6:active[aria-disabled=false] {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled=false]:focus,
 .c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled=false]:focus:not(:focus-visible),
-.c6:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c6[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
 .c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled=false]:focus-visible {
+.c6[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -793,46 +690,49 @@ exports[`Storyshots TextField Has Count 1`] = `
 }
 
 .c8 {
-  height: 40px;
   display: grid;
-  position: relative;
+  grid-template-columns: 1fr auto;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
 }
 
-.c9 {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1;
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c12 {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8 [aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 8px;
 }
 
-.c10 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--charcoal-text2);
-}
-
-.c11 {
+.c9 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -847,63 +747,35 @@ exports[`Storyshots TextField Has Count 1`] = `
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-left: calc((8px + 0px) / 0.875);
-  padding-right: calc((8px + 0px) / 0.875);
+  padding-left: 0;
+  padding-right: 0;
   border-radius: calc(4px / 0.875);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--charcoal-surface3);
+  background: transparent;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c11:hover:not(:disabled):not([aria-disabled]),
-.c11:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled=false]:focus,
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled=false]:focus:not(:focus-visible),
-.c11:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c11[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13 {
-  font-size: 14px;
+.c11 {
   line-height: 22px;
+  font-size: 14px;
   color: var(--charcoal-text3);
 }
 
@@ -953,7 +825,6 @@ exports[`Storyshots TextField Has Count 1`] = `
           <span>
             <button
               className="c7"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -963,16 +834,9 @@ exports[`Storyshots TextField Has Count 1`] = `
       <div
         className="c8"
       >
-        <span
-          className="c9"
-        >
-          <span
-            className="c10"
-          />
-        </span>
         <input
           aria-labelledby="test-id"
-          className="c11"
+          className="c9"
           disabled={false}
           id="test-id"
           maxLength={100}
@@ -982,13 +846,10 @@ exports[`Storyshots TextField Has Count 1`] = `
           type="text"
         />
         <span
-          className="c12"
+          className="c10"
         >
           <span
-            className="c10"
-          />
-          <span
-            className="c13"
+            className="c11"
           >
             0/100
           </span>
@@ -1016,6 +877,8 @@ exports[`Storyshots TextField Has Label 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
@@ -1108,33 +971,22 @@ exports[`Storyshots TextField Has Label 1`] = `
   margin-bottom: -4px;
 }
 
-.c8:hover:not(:disabled):not([aria-disabled]),
-.c8:hover[aria-disabled=false] {
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c8:active:not(:disabled):not([aria-disabled]),
-.c8:active[aria-disabled=false] {
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled=false]:focus,
 .c8:not(:disabled):not([aria-disabled]):active,
-.c8[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c8[aria-disabled=false]:focus:not(:focus-visible),
-.c8:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c8[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c8[aria-disabled='false']:active,
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled='false']:focus,
 .c8:not(:disabled):not([aria-disabled]):focus-visible,
-.c8[aria-disabled=false]:focus-visible {
+.c8[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1173,46 +1025,37 @@ exports[`Storyshots TextField Has Label 1`] = `
 }
 
 .c10 {
-  height: 40px;
   display: grid;
-  position: relative;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c10:not(:disabled):not([aria-disabled]):active,
+.c10 [aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c10:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c11 {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.c14 {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 8px;
-}
-
-.c12 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--charcoal-text2);
-}
-
-.c13 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1227,83 +1070,38 @@ exports[`Storyshots TextField Has Label 1`] = `
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-left: calc((8px + 0px) / 0.875);
-  padding-right: calc((8px + 0px) / 0.875);
+  padding-left: 0;
+  padding-right: 0;
   border-radius: calc(4px / 0.875);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--charcoal-surface3);
+  background: transparent;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c13:hover:not(:disabled):not([aria-disabled]),
-.c13:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled=false]:focus,
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c13[aria-disabled=false]:focus:not(:focus-visible),
-.c13:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c13[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13::-webkit-input-placeholder {
+.c11::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13::-moz-placeholder {
+.c11::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13:-ms-input-placeholder {
+.c11:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13::placeholder {
+.c11::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c15 {
+.c12 {
   font-size: 14px;
   line-height: 22px;
-  display: flow-root;
-  margin-top: 8px;
-  margin-bottom: 0px;
-  color: var(--charcoal-text2);
-}
-
-.c15::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c15::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
+  margin-top: 4px;
   margin-bottom: -4px;
+  color: var(--charcoal-text2);
 }
 
 .c0 {
@@ -1341,7 +1139,6 @@ exports[`Storyshots TextField Has Label 1`] = `
           <span>
             <button
               className="c9"
-              onClick={[Function]}
             >
               Text Link
             </button>
@@ -1351,17 +1148,10 @@ exports[`Storyshots TextField Has Label 1`] = `
       <div
         className="c10"
       >
-        <span
-          className="c11"
-        >
-          <span
-            className="c12"
-          />
-        </span>
         <input
           aria-labelledby="test-id"
           aria-required={true}
-          className="c13"
+          className="c11"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -1369,16 +1159,9 @@ exports[`Storyshots TextField Has Label 1`] = `
           readOnly={false}
           type="text"
         />
-        <span
-          className="c14"
-        >
-          <span
-            className="c12"
-          />
-        </span>
       </div>
       <p
-        className="c15"
+        className="c12"
       >
         Assistive text
       </p>
@@ -1388,7 +1171,7 @@ exports[`Storyshots TextField Has Label 1`] = `
 `;
 
 exports[`Storyshots TextField Prefix Icon 1`] = `
-.c12 {
+.c11 {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1404,22 +1187,24 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   -ms-letter-spacing: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font: inherit;
   margin: 0;
   overflow: visible;
   text-transform: none;
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]) {
+.c11:disabled,
+.c11[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c12:focus {
+.c11:focus {
   outline: none;
 }
 
-.c12::-moz-focus-inner {
+.c11::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -1473,33 +1258,22 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   margin-bottom: -4px;
 }
 
-.c5:hover:not(:disabled):not([aria-disabled]),
-.c5:hover[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c5:active:not(:disabled):not([aria-disabled]),
-.c5:active[aria-disabled=false] {
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled=false]:focus,
 .c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled=false]:focus:not(:focus-visible),
-.c5:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c5[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
 .c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled=false]:focus-visible {
+.c5[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
@@ -1519,7 +1293,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   margin-left: auto;
 }
 
-.c13 {
+.c12 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1545,40 +1319,29 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c13:hover:not(:disabled):not([aria-disabled]),
-.c13:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface4-hover);
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
+  background-color: var( --charcoal-surface4-hover );
 }
 
-.c13:active:not(:disabled):not([aria-disabled]),
-.c13:active[aria-disabled=false] {
-  background-color: var(--charcoal-surface4-press);
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
+  background-color: var( --charcoal-surface4-press );
 }
 
-.c13:disabled,
-.c13[aria-disabled]:not([aria-disabled=false]) {
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus,
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active,
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled=false]:focus,
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c13[aria-disabled=false]:focus:not(:focus-visible),
-.c13:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c13[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c0 {
@@ -1596,46 +1359,60 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c6 {
-  height: 40px;
   display: grid;
-  position: relative;
+  grid-template-columns: auto 1fr auto;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6 [aria-disabled='false']:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c7 {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.c11 {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 8px;
-}
-
-.c8 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--charcoal-text2);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.c9 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1650,64 +1427,42 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
   height: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding-left: calc((8px + 0px) / 0.875);
-  padding-right: calc((8px + 0px) / 0.875);
+  padding-left: 0;
+  padding-right: 0;
   border-radius: calc(4px / 0.875);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--charcoal-surface3);
+  background: transparent;
   color: var(--charcoal-text2);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c10:hover:not(:disabled):not([aria-disabled]),
-.c10:hover[aria-disabled=false] {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c10:not(:disabled):not([aria-disabled]):focus,
-.c10[aria-disabled=false]:focus,
-.c10:not(:disabled):not([aria-disabled]):active,
-.c10[aria-disabled=false]:active {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c10:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c10[aria-disabled=false]:focus:not(:focus-visible),
-.c10:not(:disabled):not([aria-disabled]):active:not(:focus-visible),
-.c10[aria-disabled=false]:active:not(:focus-visible) {
-  outline: none;
-}
-
-.c10:not(:disabled):not([aria-disabled]):focus-visible,
-.c10[aria-disabled=false]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c10::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #858585;
-  margin-top: 2px;
-  margin-right: 4px;
 }
 
 <div
@@ -1751,48 +1506,39 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
     <div
       className="c6"
     >
-      <span
+      <div
         className="c7"
       >
-        <span
+        <div
           className="c8"
         >
-          <div
-            className="c9"
-          >
-            <pixiv-icon
-              name="16/Search"
-            />
-          </div>
-        </span>
-      </span>
+          <pixiv-icon
+            name="16/Search"
+          />
+        </div>
+      </div>
       <input
         aria-labelledby="test-id"
-        className="c10"
+        className="c9"
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        placeholder="Icon prefix"
+        placeholder="作品を検索"
         readOnly={false}
         type="text"
+        value=""
       />
       <span
-        className="c11"
+        className="c10"
       >
-        <span
-          className="c8"
+        <button
+          className="c11 c12"
+          onClick={[Function]}
         >
-          <button
-            className="c12 c13"
-            height={20}
-            size="XS"
-            width={20}
-          >
-            <pixiv-icon
-              name="16/Remove"
-            />
-          </button>
-        </span>
+          <pixiv-icon
+            name="16/Remove"
+          />
+        </button>
       </span>
     </div>
   </div>

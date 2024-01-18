@@ -1,6 +1,5 @@
 import { forwardRef } from 'react'
 import styled from 'styled-components'
-import { theme } from '../../styled'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
 import type { KnownIconType } from '@charcoal-ui/icons'
 
@@ -22,7 +21,7 @@ const IconButton = forwardRef<ClickableElement, IconButtonProps>(
   ) {
     validateIconSize(size, icon)
     return (
-      <StyledIconButton {...rest} ref={ref} variant={variant} size={size}>
+      <StyledIconButton {...rest} ref={ref} $size={size} $variant={variant}>
         <pixiv-icon name={icon} />
       </StyledIconButton>
     )
@@ -31,42 +30,68 @@ const IconButton = forwardRef<ClickableElement, IconButtonProps>(
 
 export default IconButton
 
+type StyledIconButtonProps = Required<{
+  [key in keyof Pick<
+    StyledProps,
+    'size' | 'variant'
+  > as `$${key}`]: StyledProps[key]
+}>
+
 const StyledIconButton = styled(Clickable).attrs<
-  Required<StyledProps>,
+  StyledIconButtonProps,
   ReturnType<typeof styledProps>
->(styledProps)`
+>(styledProps)<StyledIconButtonProps>`
   user-select: none;
 
-  width: ${(p) => p.width}px;
-  height: ${(p) => p.height}px;
+  width: ${(p) => p.$width}px;
+  height: ${(p) => p.$height}px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(${({ $font }) => `--charcoal-${$font}`});
+  background-color: var(${({ $background }) => `--charcoal-${$background}`});
+  border-radius: 999999px;
+  transition: 0.2s background-color, 0.2s box-shadow;
 
-  ${({ font, background }) =>
-    theme((o) => [
-      o.font[font],
-      o.bg[background].hover.press,
-      o.disabled,
-      o.borderRadius('oval'),
-      o.outline.default.focus,
-    ])}
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      background-color: var(
+        ${({ $background }) => `--charcoal-${$background}-hover`}
+      );
+    }
+    &:active {
+      background-color: var(
+        ${({ $background }) => `--charcoal-${$background}-press`}
+      );
+    }
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
 `
 
-function styledProps(props: Required<StyledProps>) {
+function styledProps({ $size, $variant }: StyledIconButtonProps) {
   return {
-    ...props,
-    ...variantToProps(props.variant),
-    ...sizeToProps(props.size),
+    ...variantToProps($variant),
+    ...sizeToProps($size),
   }
 }
 
 function variantToProps(variant: Variant) {
   switch (variant) {
     case 'Default':
-      return { font: 'text3', background: 'transparent' } as const
+      return { $font: 'text3', $background: 'transparent' } as const
     case 'Overlay':
-      return { font: 'text5', background: 'surface4' } as const
+      return { $font: 'text5', $background: 'surface4' } as const
   }
 }
 
@@ -74,18 +99,18 @@ function sizeToProps(size: Size) {
   switch (size) {
     case 'XS':
       return {
-        width: 20,
-        height: 20,
+        $width: 20,
+        $height: 20,
       }
     case 'S':
       return {
-        width: 32,
-        height: 32,
+        $width: 32,
+        $height: 32,
       }
     case 'M':
       return {
-        width: 40,
-        height: 40,
+        $width: 40,
+        $height: 40,
       }
   }
 }

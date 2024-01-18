@@ -1,5 +1,4 @@
-import { forwardRef } from 'react'
-import * as React from 'react'
+import { forwardRef, PropsWithChildren } from 'react'
 import styled, { css } from 'styled-components'
 import { useDialog } from '@react-aria/dialog'
 import { columnSystem, COLUMN_UNIT, GUTTER_UNIT } from '@charcoal-ui/foundation'
@@ -9,34 +8,30 @@ import { animated } from 'react-spring'
 import { useForwardedRef } from '../../../_lib/useForwardedRef'
 import { Size, BottomSheet } from '..'
 
-export const Dialog = forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<typeof AnimatedStyledDialogDiv>
->(function Dialog(props, forwardRef) {
-  const ref = useForwardedRef(forwardRef)
-  const { dialogProps } = useDialog(
-    {
-      role: 'dialog',
-    },
-    ref
-  )
-
-  return (
-    <AnimatedStyledDialogDiv
-      {...props}
-      role={dialogProps.role}
-      tabIndex={dialogProps.tabIndex}
-      aria-labelledby={dialogProps['aria-labelledby']}
-      onBlur={dialogProps.onBlur}
-      ref={ref}
-    />
-  )
-})
-
-const AnimatedStyledDialogDiv = animated(styled.div<{
+type Props = {
   size: Size
   bottomSheet: BottomSheet
-}>`
+}
+
+export const Dialog = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
+  function Dialog(props, forwardRef) {
+    const ref = useForwardedRef(forwardRef)
+    const { dialogProps } = useDialog({ role: 'dialog' }, ref)
+
+    return (
+      <AnimatedStyledDialogDiv
+        {...props}
+        role={dialogProps.role}
+        tabIndex={dialogProps.tabIndex}
+        aria-labelledby={dialogProps['aria-labelledby']}
+        onBlur={dialogProps.onBlur}
+        ref={ref}
+      />
+    )
+  }
+) as unknown as typeof AnimatedStyledDialogDiv
+
+const AnimatedStyledDialogDiv = animated(styled.div<Props>`
   margin: auto;
   position: relative;
   height: fit-content;
@@ -57,7 +52,7 @@ const AnimatedStyledDialogDiv = animated(styled.div<{
     }
   }}px;
 
-  background-color: ${({ theme }) => theme.color.background1};
+  background-color: var(--charcoal-surface1);
   border-radius: 24px;
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {

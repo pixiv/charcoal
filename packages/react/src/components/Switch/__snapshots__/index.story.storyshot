@@ -13,17 +13,13 @@ exports[`Storyshots Switch Labelled 1`] = `
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c0:active > input {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c2 {
@@ -168,17 +164,13 @@ exports[`Storyshots Switch Playground 1`] = `
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c0:active > input {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c2 {
@@ -322,17 +314,13 @@ exports[`Storyshots Switch Unlabelled 1`] = `
 }
 
 .c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c0:active > input {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
 }
 
 .c1 {
