@@ -2,15 +2,11 @@
 
 exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -19,27 +15,6 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -71,30 +46,31 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -102,8 +78,7 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
     style={
       Object {
@@ -114,8 +89,7 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
     button
   </button>
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
     style={
       Object {
@@ -127,8 +101,7 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
     button
   </button>
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
     style={
       Object {
@@ -140,8 +113,7 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
     button
   </button>
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
     style={
       Object {

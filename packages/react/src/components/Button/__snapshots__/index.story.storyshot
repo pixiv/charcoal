@@ -2,15 +2,11 @@
 
 exports[`Storyshots Button Danger 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -19,27 +15,6 @@ exports[`Storyshots Button Danger 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -71,30 +46,31 @@ exports[`Storyshots Button Danger 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-assertive-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-assertive-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -102,8 +78,7 @@ exports[`Storyshots Button Danger 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button
@@ -113,15 +88,11 @@ exports[`Storyshots Button Danger 1`] = `
 
 exports[`Storyshots Button Default 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -130,27 +101,6 @@ exports[`Storyshots Button Default 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -182,30 +132,31 @@ exports[`Storyshots Button Default 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -213,8 +164,7 @@ exports[`Storyshots Button Default 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button
@@ -224,15 +174,11 @@ exports[`Storyshots Button Default 1`] = `
 
 exports[`Storyshots Button Disabled 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -241,27 +187,6 @@ exports[`Storyshots Button Disabled 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -293,30 +218,31 @@ exports[`Storyshots Button Disabled 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -324,7 +250,7 @@ exports[`Storyshots Button Disabled 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
+    className="c0"
     disabled={true}
     onClick={[Function]}
   >
@@ -335,15 +261,11 @@ exports[`Storyshots Button Disabled 1`] = `
 
 exports[`Storyshots Button Fixed 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -352,27 +274,6 @@ exports[`Storyshots Button Fixed 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -404,30 +305,31 @@ exports[`Storyshots Button Fixed 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -435,8 +337,7 @@ exports[`Storyshots Button Fixed 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button
@@ -446,15 +347,11 @@ exports[`Storyshots Button Fixed 1`] = `
 
 exports[`Storyshots Button Focus 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -463,27 +360,6 @@ exports[`Storyshots Button Focus 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -515,30 +391,31 @@ exports[`Storyshots Button Focus 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -546,8 +423,7 @@ exports[`Storyshots Button Focus 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onMouseOver={[Function]}
   >
     Mouse over to focus
@@ -557,15 +433,11 @@ exports[`Storyshots Button Focus 1`] = `
 
 exports[`Storyshots Button Layout Example 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -574,27 +446,6 @@ exports[`Storyshots Button Layout Example 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -626,34 +477,48 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c2 {
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -685,34 +550,48 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
-.c2:not(:disabled):not([aria-disabled]):active,
-.c2[aria-disabled='false']:active,
-.c2:not(:disabled):not([aria-disabled]):focus,
-.c2[aria-disabled='false']:focus,
-.c2:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[aria-disabled='false']:focus-visible {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active,
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus,
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c2:not(:disabled):not([aria-disabled]):hover,
-.c2[aria-disabled='false']:hover {
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-surface6-hover);
 }
 
-.c2:not(:disabled):not([aria-disabled]):active,
-.c2[aria-disabled='false']:active {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface6-press);
 }
 
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled='false']) {
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c3 {
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -744,34 +623,48 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active,
-.c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus,
-.c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled='false']:focus-visible {
+.c2:not(:disabled):not([aria-disabled]):active,
+.c2[aria-disabled='false']:active,
+.c2:not(:disabled):not([aria-disabled]):focus,
+.c2[aria-disabled='false']:focus,
+.c2:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3[aria-disabled='false']:hover {
+.c2:not(:disabled):not([aria-disabled]):hover,
+.c2[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-assertive-hover);
 }
 
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active {
+.c2:not(:disabled):not([aria-disabled]):active,
+.c2[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-assertive-press);
 }
 
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled='false']) {
+.c2:disabled,
+.c2[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c4 {
+.c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -803,34 +696,48 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
-.c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled='false']:active,
-.c4:not(:disabled):not([aria-disabled]):focus,
-.c4[aria-disabled='false']:focus,
-.c4:not(:disabled):not([aria-disabled]):focus-visible,
-.c4[aria-disabled='false']:focus-visible {
+.c3:not(:disabled):not([aria-disabled]):active,
+.c3[aria-disabled='false']:active,
+.c3:not(:disabled):not([aria-disabled]):focus,
+.c3[aria-disabled='false']:focus,
+.c3:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c4:not(:disabled):not([aria-disabled]):hover,
-.c4[aria-disabled='false']:hover {
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-brand-hover);
 }
 
-.c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled='false']:active {
+.c3:not(:disabled):not([aria-disabled]):active,
+.c3[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
-.c4:disabled,
-.c4[aria-disabled]:not([aria-disabled='false']) {
+.c3:disabled,
+.c3[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c5 {
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -862,30 +769,31 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
+.c4:not(:disabled):not([aria-disabled]):active,
+.c4[aria-disabled='false']:active,
+.c4:not(:disabled):not([aria-disabled]):focus,
+.c4[aria-disabled='false']:focus,
+.c4:not(:disabled):not([aria-disabled]):focus-visible,
+.c4[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
+.c4:not(:disabled):not([aria-disabled]):hover,
+.c4[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
+.c4:not(:disabled):not([aria-disabled]):active,
+.c4[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled='false']) {
+.c4:disabled,
+.c4[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -906,20 +814,17 @@ exports[`Storyshots Button Layout Example 1`] = `
       "
     >
       <button
-        className="c0 c1"
-        disabled={false}
+        className="c0"
       >
         Grid
       </button>
       <button
-        className="c0 c2"
-        disabled={false}
+        className="c1"
       >
         Layout
       </button>
       <button
-        className="c0 c3"
-        disabled={false}
+        className="c2"
       >
         Sample
       </button>
@@ -932,14 +837,12 @@ exports[`Storyshots Button Layout Example 1`] = `
       "
     >
       <button
-        className="c0 c4"
-        disabled={false}
+        className="c3"
       >
         Submit
       </button>
       <button
-        className="c0 c5"
-        disabled={false}
+        className="c4"
       >
         Cancel
       </button>
@@ -954,20 +857,17 @@ exports[`Storyshots Button Layout Example 1`] = `
       "
     >
       <button
-        className="c0 c1"
-        disabled={false}
+        className="c0"
       >
         Flex
       </button>
       <button
-        className="c0 c2"
-        disabled={false}
+        className="c1"
       >
         Layout
       </button>
       <button
-        className="c0 c3"
-        disabled={false}
+        className="c2"
       >
         Sample
       </button>
@@ -984,14 +884,12 @@ exports[`Storyshots Button Layout Example 1`] = `
       "
     >
       <button
-        className="c0 c4"
-        disabled={false}
+        className="c3"
       >
         Submit
       </button>
       <button
-        className="c0 c5"
-        disabled={false}
+        className="c4"
       >
         Cancel
       </button>
@@ -1008,14 +906,12 @@ exports[`Storyshots Button Layout Example 1`] = `
       "
     >
       <button
-        className="c0 c4"
-        disabled={false}
+        className="c3"
       >
         すべて見る
       </button>
       <button
-        className="c0 c1"
-        disabled={false}
+        className="c0"
       >
         作品を投稿
       </button>
@@ -1024,128 +920,13 @@ exports[`Storyshots Button Layout Example 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Link 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div
-  data-dark={false}
->
-  <a
-    className="c0 c1"
-    href="#"
-    onClick={[Function]}
-  >
-    Button
-  </a>
-</div>
-`;
-
 exports[`Storyshots Button Navigation 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1154,27 +935,6 @@ exports[`Storyshots Button Navigation 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1206,30 +966,31 @@ exports[`Storyshots Button Navigation 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-surface6-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface6-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -1237,8 +998,7 @@ exports[`Storyshots Button Navigation 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button
@@ -1248,15 +1008,11 @@ exports[`Storyshots Button Navigation 1`] = `
 
 exports[`Storyshots Button Nihongo 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1265,27 +1021,6 @@ exports[`Storyshots Button Nihongo 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1317,30 +1052,31 @@ exports[`Storyshots Button Nihongo 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -1348,8 +1084,7 @@ exports[`Storyshots Button Nihongo 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     日本語だよ
@@ -1359,15 +1094,11 @@ exports[`Storyshots Button Nihongo 1`] = `
 
 exports[`Storyshots Button Overlay 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1376,27 +1107,6 @@ exports[`Storyshots Button Overlay 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1428,30 +1138,31 @@ exports[`Storyshots Button Overlay 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-surface4-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface4-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -1459,8 +1170,7 @@ exports[`Storyshots Button Overlay 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button
@@ -1470,15 +1180,11 @@ exports[`Storyshots Button Overlay 1`] = `
 
 exports[`Storyshots Button Primary 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1487,27 +1193,6 @@ exports[`Storyshots Button Primary 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1539,30 +1224,31 @@ exports[`Storyshots Button Primary 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-brand-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -1570,8 +1256,7 @@ exports[`Storyshots Button Primary 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button
@@ -1581,15 +1266,11 @@ exports[`Storyshots Button Primary 1`] = `
 
 exports[`Storyshots Button Small 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1598,27 +1279,6 @@ exports[`Storyshots Button Small 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1650,30 +1310,31 @@ exports[`Storyshots Button Small 1`] = `
   height: 32px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -1681,8 +1342,7 @@ exports[`Storyshots Button Small 1`] = `
   data-dark={false}
 >
   <button
-    className="c0 c1"
-    disabled={false}
+    className="c0"
     onClick={[Function]}
   >
     Button

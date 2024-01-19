@@ -782,15 +782,11 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 
 exports[`Storyshots DropdownSelector Playground 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -799,27 +795,6 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -851,45 +826,46 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c2 {
-  display: inline-block;
-  width: 100%;
-}
-
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled=false]) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c3 {
+.c1 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -915,22 +891,22 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   transition: 0.2s box-shadow;
 }
 
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled=false]) {
+.c2:disabled,
+.c2[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus,
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active,
-.c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled='false']:focus-visible {
+.c2:not(:disabled):not([aria-disabled]):focus,
+.c2[aria-disabled='false']:focus,
+.c2:not(:disabled):not([aria-disabled]):active,
+.c2[aria-disabled='false']:active,
+.c2:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c4 {
+.c3 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -938,7 +914,7 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c4::before {
+.c3::before {
   display: block;
   width: 0;
   height: 0;
@@ -946,7 +922,7 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   margin-top: -4px;
 }
 
-.c4::after {
+.c3::after {
   display: block;
   width: 0;
   height: 0;
@@ -954,7 +930,7 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   margin-bottom: -4px;
 }
 
-.c5 {
+.c4 {
   color: var(--charcoal-text2);
 }
 
@@ -969,24 +945,23 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
     }
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="c0"
     />
     <div
-      className="c2"
+      className="c1"
     >
       <button
-        className="c3"
+        className="c2"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c4"
+          className="c3"
         >
           50
         </span>
         <pixiv-icon
-          class="c5"
+          class="c4"
           name="16/Menu"
         />
       </button>

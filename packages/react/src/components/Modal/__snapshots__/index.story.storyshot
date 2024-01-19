@@ -2,15 +2,11 @@
 
 exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -19,27 +15,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -71,34 +46,48 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c12 {
+.c11 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -130,34 +119,48 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active,
+.c11:not(:disabled):not([aria-disabled]):focus,
+.c11[aria-disabled='false']:focus,
+.c11:not(:disabled):not([aria-disabled]):focus-visible,
+.c11[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c11:not(:disabled):not([aria-disabled]):hover,
+.c11[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-assertive-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-assertive-press);
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled='false']) {
+.c11:disabled,
+.c11[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c13 {
+.c12 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -189,31 +192,70 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active,
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus,
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled='false']:focus-visible {
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active,
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus,
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c13:not(:disabled):not([aria-disabled]):hover,
-.c13[aria-disabled='false']:hover {
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active {
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c13:disabled,
-.c13[aria-disabled]:not([aria-disabled='false']) {
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
+}
+
+.c13 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c13:disabled,
+.c13[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c13:focus {
+  outline: none;
+}
+
+.c13::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c14 {
@@ -267,7 +309,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   opacity: 0.32;
 }
 
-.c3 {
+.c2 {
   margin: auto;
   position: relative;
   height: -webkit-fit-content;
@@ -278,11 +320,11 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   border-radius: 24px;
 }
 
-.c3:focus {
+.c2:focus {
   outline: none;
 }
 
-.c2 {
+.c1 {
   z-index: 10;
   overflow: auto;
   display: -webkit-box;
@@ -323,13 +365,13 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   color: var(--charcoal-text3-press);
 }
 
-.c5 {
+.c4 {
   margin: 0;
   font-weight: inherit;
   font-size: inherit;
 }
 
-.c4 {
+.c3 {
   height: 64px;
   display: grid;
   -webkit-align-content: center;
@@ -341,7 +383,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   color: var(--charcoal-text1);
   font-size: 16px;
   line-height: 24px;
@@ -349,7 +391,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   display: flow-root;
 }
 
-.c6::before {
+.c5::before {
   display: block;
   width: 0;
   height: 0;
@@ -357,7 +399,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   margin-top: -4px;
 }
 
-.c6::after {
+.c5::after {
   display: block;
   width: 0;
   height: 0;
@@ -365,16 +407,16 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   margin-bottom: -4px;
 }
 
-.c9 {
+.c8 {
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 40px;
 }
 
-.c11 {
+.c10 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
@@ -383,19 +425,19 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   padding-right: 16px;
 }
 
-.c8 {
+.c7 {
   display: grid;
   gap: 24px;
 }
 
-.c10 {
+.c9 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c10::before {
+.c9::before {
   display: block;
   width: 0;
   height: 0;
@@ -403,7 +445,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   margin-top: -4px;
 }
 
-.c10::after {
+.c9::after {
   display: block;
   width: 0;
   height: 0;
@@ -412,7 +454,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 }
 
 @media (max-width:743px) {
-  .c3 {
+  .c2 {
     max-width: 440px;
     width: calc(100% - 48px);
     max-width: unset;
@@ -423,13 +465,13 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 }
 
 @media (max-width:743px) {
-  .c2 {
+  .c1 {
     padding: 0;
   }
 }
 
 @media (max-width:743px) {
-  .c4 {
+  .c3 {
     height: 48px;
   }
 }
@@ -442,19 +484,18 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
     data-overlay-container={true}
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="c0"
       onClick={[Function]}
     >
       Open Modal
     </button>
     <div
-      className="c2"
+      className="c1"
       onPointerDown={[Function]}
       style={Object {}}
     >
       <div
-        className="c3"
+        className="c2"
         onBlur={[Function]}
         onFocus={null}
         onKeyDown={[Function]}
@@ -464,39 +505,37 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c4"
+          className="c3"
         >
           <h3
-            className="c5 c6"
+            className="c4 c5"
           >
             Title
           </h3>
         </div>
         <div
-          className="c7"
+          className="c6"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <div
-              className="c9 c10"
+              className="c8 c9"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
           </div>
           <div
-            className="c11"
+            className="c10"
           >
             <button
-              className="c0 c12"
-              disabled={false}
+              className="c11"
               onClick={[Function]}
             >
               削除する
             </button>
             <button
-              className="c0 c13"
-              disabled={false}
+              className="c12"
               onClick={[Function]}
             >
               キャンセル
@@ -504,7 +543,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
           </div>
         </div>
         <button
-          className="c0 c14 c15"
+          className="c13 c14 c15"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -519,15 +558,11 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Default 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -536,27 +571,6 @@ exports[`Storyshots Modal Default 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -588,34 +602,48 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c25 {
+.c24 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -647,34 +675,48 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active,
-.c25:not(:disabled):not([aria-disabled]):focus,
-.c25[aria-disabled='false']:focus,
-.c25:not(:disabled):not([aria-disabled]):focus-visible,
-.c25[aria-disabled='false']:focus-visible {
+.c24:not(:disabled):not([aria-disabled]):active,
+.c24[aria-disabled='false']:active,
+.c24:not(:disabled):not([aria-disabled]):focus,
+.c24[aria-disabled='false']:focus,
+.c24:not(:disabled):not([aria-disabled]):focus-visible,
+.c24[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c25:not(:disabled):not([aria-disabled]):hover,
-.c25[aria-disabled='false']:hover {
+.c24:not(:disabled):not([aria-disabled]):hover,
+.c24[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-brand-hover);
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active {
+.c24:not(:disabled):not([aria-disabled]):active,
+.c24[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
-.c25:disabled,
-.c25[aria-disabled]:not([aria-disabled='false']) {
+.c24:disabled,
+.c24[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c26 {
+.c25 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -706,34 +748,73 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
-.c26:not(:disabled):not([aria-disabled]):active,
-.c26[aria-disabled='false']:active,
-.c26:not(:disabled):not([aria-disabled]):focus,
-.c26[aria-disabled='false']:focus,
-.c26:not(:disabled):not([aria-disabled]):focus-visible,
-.c26[aria-disabled='false']:focus-visible {
+.c25:not(:disabled):not([aria-disabled]):active,
+.c25[aria-disabled='false']:active,
+.c25:not(:disabled):not([aria-disabled]):focus,
+.c25[aria-disabled='false']:focus,
+.c25:not(:disabled):not([aria-disabled]):focus-visible,
+.c25[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c26:not(:disabled):not([aria-disabled]):hover,
-.c26[aria-disabled='false']:hover {
+.c25:not(:disabled):not([aria-disabled]):hover,
+.c25[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c26:not(:disabled):not([aria-disabled]):active,
-.c26[aria-disabled='false']:active {
+.c25:not(:disabled):not([aria-disabled]):active,
+.c25[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c26:disabled,
-.c26[aria-disabled]:not([aria-disabled='false']) {
+.c25:disabled,
+.c25[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c14 {
+.c26 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c26:disabled,
+.c26[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c26:focus {
+  outline: none;
+}
+
+.c26::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c13 {
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
@@ -741,7 +822,7 @@ exports[`Storyshots Modal Default 1`] = `
   color: var(--charcoal-text1);
 }
 
-.c14::before {
+.c13::before {
   display: block;
   width: 0;
   height: 0;
@@ -749,7 +830,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-top: -4px;
 }
 
-.c14::after {
+.c13::after {
   display: block;
   width: 0;
   height: 0;
@@ -757,7 +838,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c16 {
+.c15 {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
@@ -766,7 +847,7 @@ exports[`Storyshots Modal Default 1`] = `
   transition: 0.2s color,0.2s box-shadow;
 }
 
-.c16::before {
+.c15::before {
   display: block;
   width: 0;
   height: 0;
@@ -774,7 +855,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-top: -4px;
 }
 
-.c16::after {
+.c15::after {
   display: block;
   width: 0;
   height: 0;
@@ -782,27 +863,27 @@ exports[`Storyshots Modal Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c16:not(:disabled):not([aria-disabled]):hover,
-.c16[aria-disabled='false']:hover {
+.c15:not(:disabled):not([aria-disabled]):hover,
+.c15[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active {
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active,
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled='false']:focus,
-.c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled='false']:focus-visible {
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active,
+.c15:not(:disabled):not([aria-disabled]):focus,
+.c15[aria-disabled='false']:focus,
+.c15:not(:disabled):not([aria-disabled]):focus-visible,
+.c15[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12 {
+.c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -813,27 +894,27 @@ exports[`Storyshots Modal Default 1`] = `
   align-items: center;
 }
 
-.c12 > .c15 {
+.c11 > .c14 {
   margin-left: auto;
 }
 
-.c19 {
+.c18 {
   display: inline-block;
   width: 100%;
 }
 
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled=false]) {
+.c18:disabled,
+.c18[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c20 {
+.c19 {
   width: 100%;
   margin-bottom: 8px;
 }
 
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -859,22 +940,22 @@ exports[`Storyshots Modal Default 1`] = `
   transition: 0.2s box-shadow;
 }
 
-.c21:disabled,
-.c21[aria-disabled]:not([aria-disabled=false]) {
+.c20:disabled,
+.c20[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c21:not(:disabled):not([aria-disabled]):focus,
-.c21[aria-disabled='false']:focus,
-.c21:not(:disabled):not([aria-disabled]):active,
-.c21[aria-disabled='false']:active,
-.c21:not(:disabled):not([aria-disabled]):focus-visible,
-.c21[aria-disabled='false']:focus-visible {
+.c20:not(:disabled):not([aria-disabled]):focus,
+.c20[aria-disabled='false']:focus,
+.c20:not(:disabled):not([aria-disabled]):active,
+.c20[aria-disabled='false']:active,
+.c20:not(:disabled):not([aria-disabled]):focus-visible,
+.c20[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c22 {
+.c21 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -882,7 +963,7 @@ exports[`Storyshots Modal Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c22::before {
+.c21::before {
   display: block;
   width: 0;
   height: 0;
@@ -890,7 +971,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-top: -4px;
 }
 
-.c22::after {
+.c21::after {
   display: block;
   width: 0;
   height: 0;
@@ -898,7 +979,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c23 {
+.c22 {
   color: var(--charcoal-text2);
 }
 
@@ -953,7 +1034,7 @@ exports[`Storyshots Modal Default 1`] = `
   opacity: 0.32;
 }
 
-.c3 {
+.c2 {
   margin: auto;
   position: relative;
   height: -webkit-fit-content;
@@ -964,11 +1045,11 @@ exports[`Storyshots Modal Default 1`] = `
   border-radius: 24px;
 }
 
-.c3:focus {
+.c2:focus {
   outline: none;
 }
 
-.c2 {
+.c1 {
   z-index: 10;
   overflow: auto;
   display: -webkit-box;
@@ -1009,13 +1090,13 @@ exports[`Storyshots Modal Default 1`] = `
   color: var(--charcoal-text3-press);
 }
 
-.c5 {
+.c4 {
   margin: 0;
   font-weight: inherit;
   font-size: inherit;
 }
 
-.c4 {
+.c3 {
   height: 64px;
   display: grid;
   -webkit-align-content: center;
@@ -1027,7 +1108,7 @@ exports[`Storyshots Modal Default 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   color: var(--charcoal-text1);
   font-size: 16px;
   line-height: 24px;
@@ -1035,7 +1116,7 @@ exports[`Storyshots Modal Default 1`] = `
   display: flow-root;
 }
 
-.c6::before {
+.c5::before {
   display: block;
   width: 0;
   height: 0;
@@ -1043,7 +1124,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-top: -4px;
 }
 
-.c6::after {
+.c5::after {
   display: block;
   width: 0;
   height: 0;
@@ -1051,16 +1132,16 @@ exports[`Storyshots Modal Default 1`] = `
   margin-bottom: -4px;
 }
 
-.c9 {
+.c8 {
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 40px;
 }
 
-.c24 {
+.c23 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
@@ -1069,7 +1150,7 @@ exports[`Storyshots Modal Default 1`] = `
   padding-right: 16px;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1079,11 +1160,11 @@ exports[`Storyshots Modal Default 1`] = `
   flex-direction: column;
 }
 
-.c13 {
+.c12 {
   margin-bottom: 8px;
 }
 
-.c17 {
+.c16 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1098,23 +1179,23 @@ exports[`Storyshots Modal Default 1`] = `
   font-size: 14px;
 }
 
-.c17:not(:disabled):not([aria-disabled]):hover,
-.c17 [aria-disabled='false']:hover {
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c17:not(:disabled):not([aria-disabled]):active,
-.c17 [aria-disabled='false']:active {
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16 [aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c17:focus-within {
+.c16:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c18 {
+.c17 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1139,35 +1220,35 @@ exports[`Storyshots Modal Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c18::-webkit-input-placeholder {
+.c17::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c18::-moz-placeholder {
+.c17::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c18:-ms-input-placeholder {
+.c17:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c18::placeholder {
+.c17::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8 {
+.c7 {
   display: grid;
   gap: 24px;
 }
 
-.c10 {
+.c9 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c10::before {
+.c9::before {
   display: block;
   width: 0;
   height: 0;
@@ -1175,7 +1256,7 @@ exports[`Storyshots Modal Default 1`] = `
   margin-top: -4px;
 }
 
-.c10::after {
+.c9::after {
   display: block;
   width: 0;
   height: 0;
@@ -1184,7 +1265,7 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 @media (max-width:743px) {
-  .c3 {
+  .c2 {
     max-width: 440px;
     width: calc(100% - 48px);
   }
@@ -1206,19 +1287,18 @@ exports[`Storyshots Modal Default 1`] = `
     data-overlay-container={true}
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="c0"
       onClick={[Function]}
     >
       Open Modal
     </button>
     <div
-      className="c2"
+      className="c1"
       onPointerDown={[Function]}
       style={Object {}}
     >
       <div
-        className="c3"
+        className="c2"
         onBlur={[Function]}
         onFocus={null}
         onKeyDown={[Function]}
@@ -1228,53 +1308,53 @@ exports[`Storyshots Modal Default 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c4"
+          className="c3"
         >
           <h3
-            className="c5 c6"
+            className="c4 c5"
           >
             Title
           </h3>
         </div>
         <div
-          className="c7"
+          className="c6"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <div
-              className="c9 c10"
+              className="c8 c9"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
             <div
-              className="c9"
+              className="c8"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <div
-                  className="c12 c13"
+                  className="c11 c12"
                 >
                   <label
-                    className="c14"
+                    className="c13"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c15 c16"
+                    className="c14 c15"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c18"
+                    className="c17"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1286,33 +1366,33 @@ exports[`Storyshots Modal Default 1`] = `
               </div>
             </div>
             <div
-              className="c9"
+              className="c8"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <div
-                  className="c12 c13"
+                  className="c11 c12"
                 >
                   <label
-                    className="c14"
+                    className="c13"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c15 c16"
+                    className="c14 c15"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c18"
+                    className="c17"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1324,37 +1404,37 @@ exports[`Storyshots Modal Default 1`] = `
               </div>
             </div>
             <div
-              className="c9"
+              className="c8"
             >
               <div
-                className="c19"
+                className="c18"
               >
                 <div
-                  className="c12 c20"
+                  className="c11 c19"
                 >
                   <label
-                    className="c14"
+                    className="c13"
                   >
                     Fruits
                   </label>
                   <div
-                    className="c15 c16"
+                    className="c14 c15"
                   >
                     <span />
                   </div>
                 </div>
                 <button
-                  className="c21"
+                  className="c20"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c22"
+                    className="c21"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c23"
+                    class="c22"
                     name="16/Menu"
                   />
                 </button>
@@ -1362,18 +1442,16 @@ exports[`Storyshots Modal Default 1`] = `
             </div>
           </div>
           <div
-            className="c24"
+            className="c23"
           >
             <button
-              className="c0 c25"
-              disabled={false}
+              className="c24"
               onClick={[Function]}
             >
               Apply
             </button>
             <button
-              className="c0 c26"
-              disabled={false}
+              className="c25"
               onClick={[Function]}
             >
               Cancel
@@ -1381,7 +1459,7 @@ exports[`Storyshots Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="c0 c27 c28"
+          className="c26 c27 c28"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1396,15 +1474,11 @@ exports[`Storyshots Modal Default 1`] = `
 
 exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1413,27 +1487,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1465,34 +1518,48 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c20 {
+.c19 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1524,34 +1591,48 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c20:not(:disabled):not([aria-disabled]):active,
-.c20[aria-disabled='false']:active,
-.c20:not(:disabled):not([aria-disabled]):focus,
-.c20[aria-disabled='false']:focus,
-.c20:not(:disabled):not([aria-disabled]):focus-visible,
-.c20[aria-disabled='false']:focus-visible {
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active,
+.c19:not(:disabled):not([aria-disabled]):focus,
+.c19[aria-disabled='false']:focus,
+.c19:not(:disabled):not([aria-disabled]):focus-visible,
+.c19[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c20:not(:disabled):not([aria-disabled]):hover,
-.c20[aria-disabled='false']:hover {
+.c19:not(:disabled):not([aria-disabled]):hover,
+.c19[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-brand-hover);
 }
 
-.c20:not(:disabled):not([aria-disabled]):active,
-.c20[aria-disabled='false']:active {
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
-.c20:disabled,
-.c20[aria-disabled]:not([aria-disabled='false']) {
+.c19:disabled,
+.c19[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c21 {
+.c20 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1583,34 +1664,73 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
-.c21:not(:disabled):not([aria-disabled]):active,
-.c21[aria-disabled='false']:active,
-.c21:not(:disabled):not([aria-disabled]):focus,
-.c21[aria-disabled='false']:focus,
-.c21:not(:disabled):not([aria-disabled]):focus-visible,
-.c21[aria-disabled='false']:focus-visible {
+.c20:not(:disabled):not([aria-disabled]):active,
+.c20[aria-disabled='false']:active,
+.c20:not(:disabled):not([aria-disabled]):focus,
+.c20[aria-disabled='false']:focus,
+.c20:not(:disabled):not([aria-disabled]):focus-visible,
+.c20[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c21:not(:disabled):not([aria-disabled]):hover,
-.c21[aria-disabled='false']:hover {
+.c20:not(:disabled):not([aria-disabled]):hover,
+.c20[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c21:not(:disabled):not([aria-disabled]):active,
-.c21[aria-disabled='false']:active {
+.c20:not(:disabled):not([aria-disabled]):active,
+.c20[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c21:disabled,
-.c21[aria-disabled]:not([aria-disabled='false']) {
+.c20:disabled,
+.c20[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c14 {
+.c21 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c21:disabled,
+.c21[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c21:focus {
+  outline: none;
+}
+
+.c21::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c13 {
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
@@ -1618,7 +1738,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   color: var(--charcoal-text1);
 }
 
-.c14::before {
+.c13::before {
   display: block;
   width: 0;
   height: 0;
@@ -1626,7 +1746,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-top: -4px;
 }
 
-.c14::after {
+.c13::after {
   display: block;
   width: 0;
   height: 0;
@@ -1634,7 +1754,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-bottom: -4px;
 }
 
-.c16 {
+.c15 {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
@@ -1643,7 +1763,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   transition: 0.2s color,0.2s box-shadow;
 }
 
-.c16::before {
+.c15::before {
   display: block;
   width: 0;
   height: 0;
@@ -1651,7 +1771,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-top: -4px;
 }
 
-.c16::after {
+.c15::after {
   display: block;
   width: 0;
   height: 0;
@@ -1659,27 +1779,27 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-bottom: -4px;
 }
 
-.c16:not(:disabled):not([aria-disabled]):hover,
-.c16[aria-disabled='false']:hover {
+.c15:not(:disabled):not([aria-disabled]):hover,
+.c15[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active {
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active,
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled='false']:focus,
-.c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled='false']:focus-visible {
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active,
+.c15:not(:disabled):not([aria-disabled]):focus,
+.c15[aria-disabled='false']:focus,
+.c15:not(:disabled):not([aria-disabled]):focus-visible,
+.c15[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12 {
+.c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1690,7 +1810,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   align-items: center;
 }
 
-.c12 > .c15 {
+.c11 > .c14 {
   margin-left: auto;
 }
 
@@ -1745,7 +1865,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   opacity: 0.32;
 }
 
-.c3 {
+.c2 {
   margin: auto;
   position: relative;
   height: -webkit-fit-content;
@@ -1756,11 +1876,11 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   border-radius: 24px;
 }
 
-.c3:focus {
+.c2:focus {
   outline: none;
 }
 
-.c2 {
+.c1 {
   z-index: 10;
   overflow: auto;
   display: -webkit-box;
@@ -1801,13 +1921,13 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   color: var(--charcoal-text3-press);
 }
 
-.c5 {
+.c4 {
   margin: 0;
   font-weight: inherit;
   font-size: inherit;
 }
 
-.c4 {
+.c3 {
   height: 64px;
   display: grid;
   -webkit-align-content: center;
@@ -1819,7 +1939,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   color: var(--charcoal-text1);
   font-size: 16px;
   line-height: 24px;
@@ -1827,7 +1947,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   display: flow-root;
 }
 
-.c6::before {
+.c5::before {
   display: block;
   width: 0;
   height: 0;
@@ -1835,7 +1955,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-top: -4px;
 }
 
-.c6::after {
+.c5::after {
   display: block;
   width: 0;
   height: 0;
@@ -1843,16 +1963,16 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-bottom: -4px;
 }
 
-.c9 {
+.c8 {
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 40px;
 }
 
-.c19 {
+.c18 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
@@ -1861,7 +1981,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   padding-right: 16px;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1871,11 +1991,11 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   flex-direction: column;
 }
 
-.c13 {
+.c12 {
   margin-bottom: 8px;
 }
 
-.c17 {
+.c16 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1890,23 +2010,23 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   font-size: 14px;
 }
 
-.c17:not(:disabled):not([aria-disabled]):hover,
-.c17 [aria-disabled='false']:hover {
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c17:not(:disabled):not([aria-disabled]):active,
-.c17 [aria-disabled='false']:active {
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16 [aria-disabled='false']:active {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c17:focus-within {
+.c16:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c18 {
+.c17 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1931,35 +2051,35 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c18::-webkit-input-placeholder {
+.c17::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c18::-moz-placeholder {
+.c17::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c18:-ms-input-placeholder {
+.c17:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c18::placeholder {
+.c17::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8 {
+.c7 {
   display: grid;
   gap: 24px;
 }
 
-.c10 {
+.c9 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c10::before {
+.c9::before {
   display: block;
   width: 0;
   height: 0;
@@ -1967,7 +2087,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   margin-top: -4px;
 }
 
-.c10::after {
+.c9::after {
   display: block;
   width: 0;
   height: 0;
@@ -1976,7 +2096,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 }
 
 @media (max-width:743px) {
-  .c3 {
+  .c2 {
     max-width: 440px;
     width: calc(100% - 48px);
     max-width: unset;
@@ -1988,13 +2108,13 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 }
 
 @media (max-width:743px) {
-  .c2 {
+  .c1 {
     padding: 0;
   }
 }
 
 @media (max-width:743px) {
-  .c4 {
+  .c3 {
     height: 48px;
   }
 }
@@ -2007,19 +2127,18 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
     data-overlay-container={true}
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="c0"
       onClick={[Function]}
     >
       Open Modal
     </button>
     <div
-      className="c2"
+      className="c1"
       onPointerDown={[Function]}
       style={Object {}}
     >
       <div
-        className="c3"
+        className="c2"
         onBlur={[Function]}
         onFocus={null}
         onKeyDown={[Function]}
@@ -2029,53 +2148,53 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c4"
+          className="c3"
         >
           <h3
-            className="c5 c6"
+            className="c4 c5"
           >
             Title
           </h3>
         </div>
         <div
-          className="c7"
+          className="c6"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <div
-              className="c9 c10"
+              className="c8 c9"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
             <div
-              className="c9"
+              className="c8"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <div
-                  className="c12 c13"
+                  className="c11 c12"
                 >
                   <label
-                    className="c14"
+                    className="c13"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c15 c16"
+                    className="c14 c15"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c18"
+                    className="c17"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -2087,33 +2206,33 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
               </div>
             </div>
             <div
-              className="c9"
+              className="c8"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <div
-                  className="c12 c13"
+                  className="c11 c12"
                 >
                   <label
-                    className="c14"
+                    className="c13"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c15 c16"
+                    className="c14 c15"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c18"
+                    className="c17"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -2126,18 +2245,16 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
             </div>
           </div>
           <div
-            className="c19"
+            className="c18"
           >
             <button
-              className="c0 c20"
-              disabled={false}
+              className="c19"
               onClick={[Function]}
             >
               Apply
             </button>
             <button
-              className="c0 c21"
-              disabled={false}
+              className="c20"
               onClick={[Function]}
             >
               Cancel
@@ -2145,7 +2262,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
           </div>
         </div>
         <button
-          className="c0 c22 c23"
+          className="c21 c22 c23"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -2160,15 +2277,11 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Internal Scroll 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -2177,27 +2290,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -2229,34 +2321,48 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c11 {
+.c10 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -2288,34 +2394,35 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: 40px;
 }
 
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active,
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled='false']:focus,
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled='false']:focus-visible {
+.c10:not(:disabled):not([aria-disabled]):active,
+.c10[aria-disabled='false']:active,
+.c10:not(:disabled):not([aria-disabled]):focus,
+.c10[aria-disabled='false']:focus,
+.c10:not(:disabled):not([aria-disabled]):focus-visible,
+.c10[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c11:not(:disabled):not([aria-disabled]):hover,
-.c11[aria-disabled='false']:hover {
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active {
+.c10:not(:disabled):not([aria-disabled]):active,
+.c10[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled='false']) {
+.c10:disabled,
+.c10[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c3 {
+.c2 {
   margin: auto;
   position: relative;
   height: -webkit-fit-content;
@@ -2326,11 +2433,11 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   border-radius: 24px;
 }
 
-.c3:focus {
+.c2:focus {
   outline: none;
 }
 
-.c2 {
+.c1 {
   z-index: 10;
   overflow: auto;
   display: -webkit-box;
@@ -2352,13 +2459,13 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c5 {
+.c4 {
   margin: 0;
   font-weight: inherit;
   font-size: inherit;
 }
 
-.c4 {
+.c3 {
   height: 64px;
   display: grid;
   -webkit-align-content: center;
@@ -2370,7 +2477,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   color: var(--charcoal-text1);
   font-size: 16px;
   line-height: 24px;
@@ -2378,7 +2485,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   display: flow-root;
 }
 
-.c6::before {
+.c5::before {
   display: block;
   width: 0;
   height: 0;
@@ -2386,7 +2493,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   margin-top: -4px;
 }
 
-.c6::after {
+.c5::after {
   display: block;
   width: 0;
   height: 0;
@@ -2394,11 +2501,11 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   margin-bottom: -4px;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 40px;
 }
 
-.c9 {
+.c8 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
@@ -2407,16 +2514,16 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   padding-right: 16px;
 }
 
-.c8 {
+.c7 {
   overflow: auto;
   max-height: calc( 100vh - 184px - 56px );
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c10::before {
+.c9::before {
   content: '';
   pointer-events: none;
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -2428,7 +2535,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 }
 
 @media (max-width:743px) {
-  .c3 {
+  .c2 {
     max-width: 440px;
     width: calc(100% - 48px);
   }
@@ -2450,19 +2557,18 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
     data-overlay-container={true}
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="c0"
       onClick={[Function]}
     >
       Open Modal
     </button>
     <div
-      className="c2"
+      className="c1"
       onPointerDown={[Function]}
       style={Object {}}
     >
       <div
-        className="c3"
+        className="c2"
         onBlur={[Function]}
         onFocus={null}
         onKeyDown={[Function]}
@@ -2472,19 +2578,19 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c4"
+          className="c3"
         >
           <h3
-            className="c5 c6"
+            className="c4 c5"
           >
             Title
           </h3>
         </div>
         <div
-          className="c7"
+          className="c6"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <div
               style={
@@ -2496,11 +2602,10 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
             />
           </div>
           <div
-            className="c9 c10"
+            className="c8 c9"
           >
             <button
-              className="c0 c11"
-              disabled={false}
+              className="c10"
               onClick={[Function]}
             >
               Close
@@ -2515,15 +2620,11 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 .c0 {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
-  padding: 0;
   border-style: none;
   outline: none;
-  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -2532,27 +2633,6 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   word-spacing: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -2584,34 +2664,48 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active,
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus,
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active,
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus,
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
+.c0:not(:disabled):not([aria-disabled]):hover,
+.c0[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
+.c0:not(:disabled):not([aria-disabled]):active,
+.c0[aria-disabled='false']:active {
   color: var(--charcoal-text2-press);
   background-color: var(--charcoal-surface3-press);
 }
 
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c12 {
+.c11 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -2643,34 +2737,35 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   height: 40px;
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active,
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus,
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active,
+.c11:not(:disabled):not([aria-disabled]):focus,
+.c11[aria-disabled='false']:focus,
+.c11:not(:disabled):not([aria-disabled]):focus-visible,
+.c11[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c11:not(:disabled):not([aria-disabled]):hover,
+.c11[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-brand-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-brand-press);
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled='false']) {
+.c11:disabled,
+.c11[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
-.c3 {
+.c2 {
   margin: auto;
   position: relative;
   height: -webkit-fit-content;
@@ -2681,11 +2776,11 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   border-radius: 24px;
 }
 
-.c3:focus {
+.c2:focus {
   outline: none;
 }
 
-.c2 {
+.c1 {
   z-index: 10;
   overflow: auto;
   display: -webkit-box;
@@ -2707,13 +2802,13 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c5 {
+.c4 {
   margin: 0;
   font-weight: inherit;
   font-size: inherit;
 }
 
-.c4 {
+.c3 {
   height: 64px;
   display: grid;
   -webkit-align-content: center;
@@ -2725,7 +2820,7 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   color: var(--charcoal-text1);
   font-size: 16px;
   line-height: 24px;
@@ -2733,7 +2828,7 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   display: flow-root;
 }
 
-.c6::before {
+.c5::before {
   display: block;
   width: 0;
   height: 0;
@@ -2741,7 +2836,7 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   margin-top: -4px;
 }
 
-.c6::after {
+.c5::after {
   display: block;
   width: 0;
   height: 0;
@@ -2749,16 +2844,16 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   margin-bottom: -4px;
 }
 
-.c9 {
+.c8 {
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 40px;
 }
 
-.c11 {
+.c10 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
@@ -2767,19 +2862,19 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   padding-right: 16px;
 }
 
-.c8 {
+.c7 {
   display: grid;
   gap: 24px;
 }
 
-.c10 {
+.c9 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c10::before {
+.c9::before {
   display: block;
   width: 0;
   height: 0;
@@ -2787,7 +2882,7 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   margin-top: -4px;
 }
 
-.c10::after {
+.c9::after {
   display: block;
   width: 0;
   height: 0;
@@ -2796,7 +2891,7 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 }
 
 @media (max-width:743px) {
-  .c3 {
+  .c2 {
     max-width: 440px;
     width: calc(100% - 48px);
   }
@@ -2818,19 +2913,18 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
     data-overlay-container={true}
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="c0"
       onClick={[Function]}
     >
       Open Modal
     </button>
     <div
-      className="c2"
+      className="c1"
       onPointerDown={[Function]}
       style={Object {}}
     >
       <div
-        className="c3"
+        className="c2"
         onBlur={[Function]}
         onFocus={null}
         onKeyDown={[Function]}
@@ -2840,32 +2934,31 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c4"
+          className="c3"
         >
           <h3
-            className="c5 c6"
+            className="c4 c5"
           >
             Title
           </h3>
         </div>
         <div
-          className="c7"
+          className="c6"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <div
-              className="c9 c10"
+              className="c8 c9"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
           </div>
           <div
-            className="c11"
+            className="c10"
           >
             <button
-              className="c0 c12"
-              disabled={false}
+              className="c11"
               onClick={[Function]}
             >
               OK
