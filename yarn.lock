@@ -2031,20 +2031,17 @@ __metadata:
     "@charcoal-ui/styled": ^3.6.0
     "@charcoal-ui/theme": ^3.6.0
     "@charcoal-ui/utils": ^3.6.0
-    "@react-aria/button": ^3.9.0
-    "@react-aria/checkbox": ^3.12.0
-    "@react-aria/dialog": ^3.5.8
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/listbox": ^3.11.2
-    "@react-aria/overlays": ^3.19.0
-    "@react-aria/radio": ^3.9.0
-    "@react-aria/select": ^3.14.0
-    "@react-aria/separator": ^3.3.8
-    "@react-aria/ssr": ^3.9.0
-    "@react-aria/switch": ^3.5.7
-    "@react-aria/textfield": ^3.13.0
-    "@react-aria/utils": ^3.22.0
-    "@react-aria/visually-hidden": ^3.8.7
+    "@react-aria/button": ^3.9.1
+    "@react-aria/checkbox": ^3.13.0
+    "@react-aria/dialog": ^3.5.10
+    "@react-aria/focus": ^3.16.0
+    "@react-aria/overlays": ^3.20.0
+    "@react-aria/radio": ^3.10.0
+    "@react-aria/ssr": ^3.9.1
+    "@react-aria/switch": ^3.6.0
+    "@react-aria/textfield": ^3.14.1
+    "@react-aria/utils": ^3.23.0
+    "@react-aria/visually-hidden": ^3.8.8
     "@react-types/switch": ^3.1.2
     "@storybook/addon-actions": ^7.4.1
     "@storybook/addon-knobs": ^7.0.2
@@ -4915,24 +4912,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/button@npm:^3.9.0":
-  version: 3.9.0
-  resolution: "@react-aria/button@npm:3.9.0"
+"@react-aria/button@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "@react-aria/button@npm:3.9.1"
   dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/utils": ^3.22.0
+    "@react-aria/focus": ^3.16.0
+    "@react-aria/interactions": ^3.20.1
+    "@react-aria/utils": ^3.23.0
     "@react-stately/toggle": ^3.7.0
     "@react-types/button": ^3.9.1
     "@react-types/shared": ^3.22.0
     "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 267788203dbbc0a006bfbb4cd02e90c1dd22c6130805dc797f46714d3464c641a77a025eead6cbd1bd150e1b83d9225ba3248af2dbb9aaae8bf06af7e50e1598
+  checksum: 9314b44d867e014a0f0d9af425982ee53dcdfbb738df550b79a6eeb6a023ea700f6f02b3671fc43923c4df5a28a147502338563ad518c650a91667730445cf11
   languageName: node
   linkType: hard
 
-"@react-aria/checkbox@npm:^3.12.0":
+"@react-aria/checkbox@npm:^3.13.0":
   version: 3.13.0
   resolution: "@react-aria/checkbox@npm:3.13.0"
   dependencies:
@@ -4952,35 +4949,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/dialog@npm:^3.5.8":
-  version: 3.5.8
-  resolution: "@react-aria/dialog@npm:3.5.8"
+"@react-aria/dialog@npm:^3.5.10":
+  version: 3.5.10
+  resolution: "@react-aria/dialog@npm:3.5.10"
   dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/overlays": ^3.19.0
-    "@react-aria/utils": ^3.22.0
+    "@react-aria/focus": ^3.16.0
+    "@react-aria/overlays": ^3.20.0
+    "@react-aria/utils": ^3.23.0
     "@react-types/dialog": ^3.5.7
     "@react-types/shared": ^3.22.0
     "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 605f9be0d7b6f80924e4b1977531193c5ea677053a0039d442bd1d8e335f3dc3973fff7e3ff471c2d58b757b27e9e212a9691114c0ee46446cd4d7ac275d6a14
-  languageName: node
-  linkType: hard
-
-"@react-aria/focus@npm:^3.15.0":
-  version: 3.15.0
-  resolution: "@react-aria/focus@npm:3.15.0"
-  dependencies:
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/utils": ^3.22.0
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-    clsx: ^1.1.1
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 28db7975faf3295b91a68ff61e77f02e3fa260a2b1f3376fd3fd52cade8f8c916f1c725d71b2ceddeb29999d4ddcf0e2a22f2ececaa4788f756977677985fc1c
+  checksum: 5ef3cdc4414b26f84eb364b4c53fa53d6f2b24605c09d76624cd4a7d8fb1e4a76026fd025295bfe3707e1702d64be7fff39a35a56ecb6429fb15441aaf6acb09
   languageName: node
   linkType: hard
 
@@ -4999,7 +4981,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/form@npm:^3.0.0, @react-aria/form@npm:^3.0.1":
+"@react-aria/form@npm:^3.0.1":
   version: 3.0.1
   resolution: "@react-aria/form@npm:3.0.1"
   dependencies:
@@ -5014,7 +4996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/i18n@npm:^3.10.0, @react-aria/i18n@npm:^3.9.0":
+"@react-aria/i18n@npm:^3.10.0":
   version: 3.10.0
   resolution: "@react-aria/i18n@npm:3.10.0"
   dependencies:
@@ -5032,7 +5014,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/interactions@npm:^3.20.0, @react-aria/interactions@npm:^3.20.1":
+"@react-aria/interactions@npm:^3.20.1":
   version: 3.20.1
   resolution: "@react-aria/interactions@npm:3.20.1"
   dependencies:
@@ -5046,7 +5028,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/label@npm:^3.7.3, @react-aria/label@npm:^3.7.4":
+"@react-aria/label@npm:^3.7.4":
   version: 3.7.4
   resolution: "@react-aria/label@npm:3.7.4"
   dependencies:
@@ -5059,51 +5041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/listbox@npm:^3.11.2":
-  version: 3.11.2
-  resolution: "@react-aria/listbox@npm:3.11.2"
-  dependencies:
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/label": ^3.7.3
-    "@react-aria/selection": ^3.17.2
-    "@react-aria/utils": ^3.22.0
-    "@react-stately/collections": ^3.10.3
-    "@react-stately/list": ^3.10.1
-    "@react-types/listbox": ^3.4.6
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 25e6e132297c7d836f77fc1b7e9597fcd3dbda22fed292f7dc5d7dc69e47f7a5662fc2aaa1b6723512f5a24c8b1f9ae1a87110a390796a2d1402f3baf2e49ebe
-  languageName: node
-  linkType: hard
-
-"@react-aria/menu@npm:^3.11.2":
-  version: 3.11.2
-  resolution: "@react-aria/menu@npm:3.11.2"
-  dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/i18n": ^3.9.0
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/overlays": ^3.19.0
-    "@react-aria/selection": ^3.17.2
-    "@react-aria/utils": ^3.22.0
-    "@react-stately/collections": ^3.10.3
-    "@react-stately/menu": ^3.5.7
-    "@react-stately/tree": ^3.7.4
-    "@react-types/button": ^3.9.1
-    "@react-types/menu": ^3.9.6
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: f2c3ee4077bd606dc4594ea1c107e3392745bb18c2639f95ab0a2e5120fe8eded473fa794908aebdbd4af708ce270646b0d19fb501a9f8a915b2cd11baa14cd0
-  languageName: node
-  linkType: hard
-
-"@react-aria/overlays@npm:^3.19.0":
+"@react-aria/overlays@npm:^3.20.0":
   version: 3.20.0
   resolution: "@react-aria/overlays@npm:3.20.0"
   dependencies:
@@ -5125,83 +5063,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/radio@npm:^3.9.0":
-  version: 3.9.0
-  resolution: "@react-aria/radio@npm:3.9.0"
+"@react-aria/radio@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "@react-aria/radio@npm:3.10.0"
   dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/form": ^3.0.0
-    "@react-aria/i18n": ^3.9.0
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/label": ^3.7.3
-    "@react-aria/utils": ^3.22.0
-    "@react-stately/radio": ^3.10.0
-    "@react-types/radio": ^3.6.0
+    "@react-aria/focus": ^3.16.0
+    "@react-aria/form": ^3.0.1
+    "@react-aria/i18n": ^3.10.0
+    "@react-aria/interactions": ^3.20.1
+    "@react-aria/label": ^3.7.4
+    "@react-aria/utils": ^3.23.0
+    "@react-stately/radio": ^3.10.1
+    "@react-types/radio": ^3.7.0
     "@react-types/shared": ^3.22.0
     "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: b226ce81e4d624a1f298768cd1e0ee48fed45489d623230e260337bb82afeeea6d84b2f15a9ac92c47809b11ad402ae195b2a7203d26442fcd798c88cfd7334d
+  checksum: ac9878e11221aace3e9581c69ba2eefb01a778440e073923e6d53b7fe3cb8e9a594ab73caafc823e2d5da78fa59026caaf2a182691221a2f0d9c2bb80b4e7ee6
   languageName: node
   linkType: hard
 
-"@react-aria/select@npm:^3.14.0":
-  version: 3.14.0
-  resolution: "@react-aria/select@npm:3.14.0"
-  dependencies:
-    "@react-aria/form": ^3.0.0
-    "@react-aria/i18n": ^3.9.0
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/label": ^3.7.3
-    "@react-aria/listbox": ^3.11.2
-    "@react-aria/menu": ^3.11.2
-    "@react-aria/selection": ^3.17.2
-    "@react-aria/utils": ^3.22.0
-    "@react-aria/visually-hidden": ^3.8.7
-    "@react-stately/select": ^3.6.0
-    "@react-types/button": ^3.9.1
-    "@react-types/select": ^3.9.0
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 81da775a41c3cb2ad92e49b939aa60cfb144cea2ef968ee5e5a4843f3c839c9c04616cd552def08b98305da91f224a65c95630aecbd2baa384961f0d1f3cee11
-  languageName: node
-  linkType: hard
-
-"@react-aria/selection@npm:^3.17.2":
-  version: 3.17.2
-  resolution: "@react-aria/selection@npm:3.17.2"
-  dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/i18n": ^3.9.0
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/utils": ^3.22.0
-    "@react-stately/selection": ^3.14.1
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: b707a07f095904884916ba68b9517e5c2754f3408d8a16e9d9c20aed412db9e39a8012b48867dd3a751e715e61c86d56d93c7c7bbf9bfc897d2c22a20faa6f5f
-  languageName: node
-  linkType: hard
-
-"@react-aria/separator@npm:^3.3.8":
-  version: 3.3.8
-  resolution: "@react-aria/separator@npm:3.3.8"
-  dependencies:
-    "@react-aria/utils": ^3.22.0
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 0363c206b58c2e046e4154f1a96fe419ab98a9dd6e6e8bc87b978a9aaad731d37d0dc4830d52ef114767da0af2de88e0d7db76e977fa97551bee079a7092e444
-  languageName: node
-  linkType: hard
-
-"@react-aria/ssr@npm:^3.9.0, @react-aria/ssr@npm:^3.9.1":
+"@react-aria/ssr@npm:^3.9.1":
   version: 3.9.1
   resolution: "@react-aria/ssr@npm:3.9.1"
   dependencies:
@@ -5212,28 +5094,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/switch@npm:^3.5.7":
-  version: 3.5.7
-  resolution: "@react-aria/switch@npm:3.5.7"
+"@react-aria/switch@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "@react-aria/switch@npm:3.6.0"
   dependencies:
-    "@react-aria/toggle": ^3.9.0
+    "@react-aria/toggle": ^3.10.0
     "@react-stately/toggle": ^3.7.0
     "@react-types/switch": ^3.5.0
     "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 4b39d6a71229da2a190ecaa5c1624c5eac38bd1a2eec57062f0e51c5aa69e41813492ede5db1580ae6df86d8ec084eafd8cdda1940898756bc61d4b2feddcb49
+  checksum: 7f08e52c28ba5f61263b507c8f2d472d2661695f884fcb80ae7a8de58deed38d2dd011b1c2079180ce49ccaf279171345ba5be56844ed10bc233e9fec73756ed
   languageName: node
   linkType: hard
 
-"@react-aria/textfield@npm:^3.13.0":
-  version: 3.13.0
-  resolution: "@react-aria/textfield@npm:3.13.0"
+"@react-aria/textfield@npm:^3.14.1":
+  version: 3.14.1
+  resolution: "@react-aria/textfield@npm:3.14.1"
   dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/form": ^3.0.0
-    "@react-aria/label": ^3.7.3
-    "@react-aria/utils": ^3.22.0
+    "@react-aria/focus": ^3.16.0
+    "@react-aria/form": ^3.0.1
+    "@react-aria/label": ^3.7.4
+    "@react-aria/utils": ^3.23.0
     "@react-stately/form": ^3.0.0
     "@react-stately/utils": ^3.9.0
     "@react-types/shared": ^3.22.0
@@ -5241,7 +5123,7 @@ __metadata:
     "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: ed41dd6a420ffe18f169e3370286b6f210c6986a73f32c3a525951631bcbba0165b9bd16e1a5f872d53a674fd3a8e5f1aedf967fb9b0371cfdf6d09579ea2d01
+  checksum: c1750b02fb0376726385ef4f8c62494bc911f75d6ee69789597ac656028743385a96e38569956090700d71355f25423a46c3bb25f8442d74ade9077353d1547b
   languageName: node
   linkType: hard
 
@@ -5261,23 +5143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria/toggle@npm:^3.9.0":
-  version: 3.9.0
-  resolution: "@react-aria/toggle@npm:3.9.0"
-  dependencies:
-    "@react-aria/focus": ^3.15.0
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/utils": ^3.22.0
-    "@react-stately/toggle": ^3.7.0
-    "@react-types/checkbox": ^3.6.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: a6c3ca65d24f93d5fc38a6e2a74115bdc669daf866dab9001a0428989a01e81770e4a815c249c9465b1969c5026ae7b1efa6e6a8df1cb6236c22eda0d94e4599
-  languageName: node
-  linkType: hard
-
-"@react-aria/utils@npm:^3.22.0, @react-aria/utils@npm:^3.23.0":
+"@react-aria/utils@npm:^3.23.0":
   version: 3.23.0
   resolution: "@react-aria/utils@npm:3.23.0"
   dependencies:
@@ -5289,20 +5155,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 704f31a0712687d90c5563afabf3a1dcbdd713fd4e4bc80869b32009316790613291fc182639f967007ee276088cb9f7b1bc8a0f244817643a7e4c8e50212123
-  languageName: node
-  linkType: hard
-
-"@react-aria/visually-hidden@npm:^3.8.7":
-  version: 3.8.7
-  resolution: "@react-aria/visually-hidden@npm:3.8.7"
-  dependencies:
-    "@react-aria/interactions": ^3.20.0
-    "@react-aria/utils": ^3.22.0
-    "@react-types/shared": ^3.22.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: 72cc9e6614bf424c1af298fa3e8dbd79400bb8290d37e5d278de2df4cd54417ee9a00fb69295727dad187bd1b7cb3e893e82be023c3a4f0f2accf698f5002b82
   languageName: node
   linkType: hard
 
@@ -5663,6 +5515,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-stately/radio@npm:^3.10.1":
+  version: 3.10.1
+  resolution: "@react-stately/radio@npm:3.10.1"
+  dependencies:
+    "@react-stately/form": ^3.0.0
+    "@react-stately/utils": ^3.9.0
+    "@react-types/radio": ^3.7.0
+    "@react-types/shared": ^3.22.0
+    "@swc/helpers": ^0.5.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 93ad0c31b00bf7fbe7c71c892d72e4e7b20fe053d454b04bcb96b52fd1309dd624964dc10b5fc62a53d1e6d3563f049692d66e007645f1beccdfea84c653d6d2
+  languageName: node
+  linkType: hard
+
 "@react-stately/searchfield@npm:^3.5.0":
   version: 3.5.0
   resolution: "@react-stately/searchfield@npm:3.5.0"
@@ -5898,17 +5765,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/listbox@npm:^3.4.6":
-  version: 3.4.6
-  resolution: "@react-types/listbox@npm:3.4.6"
-  dependencies:
-    "@react-types/shared": ^3.22.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: e829857ff24f37f5a7660ad19e6629793241177f94df78193b80b294301e35b1193397edc426cb98e807a342ce47f1d2e83f71caf8bb9b904b4196c86d6e6062
-  languageName: node
-  linkType: hard
-
 "@react-types/menu@npm:^3.9.6":
   version: 3.9.6
   resolution: "@react-types/menu@npm:3.9.6"
@@ -5943,7 +5799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/radio@npm:^3.6.0":
+"@react-types/radio@npm:^3.6.0, @react-types/radio@npm:^3.7.0":
   version: 3.7.0
   resolution: "@react-types/radio@npm:3.7.0"
   dependencies:
@@ -5966,7 +5822,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-types/select@npm:^3.9.0, @react-types/select@npm:^3.9.1":
+"@react-types/select@npm:^3.9.1":
   version: 3.9.1
   resolution: "@react-types/select@npm:3.9.1"
   dependencies:
@@ -11711,13 +11567,6 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: d06418b7335897209e77bdd430d04f882189582e67bd1f75a04565f3f07f5b3f119a9d670c943b6697d0afb100f03b866b3b8a1f91d4d02d72c4ecf2bb64b5dd
-  languageName: node
-  linkType: hard
-
-"clsx@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "clsx@npm:1.1.1"
-  checksum: ff052650329773b9b245177305fc4c4dc3129f7b2be84af4f58dc5defa99538c61d4207be7419405a5f8f3d92007c954f4daba5a7b74e563d5de71c28c830063
   languageName: node
   linkType: hard
 
