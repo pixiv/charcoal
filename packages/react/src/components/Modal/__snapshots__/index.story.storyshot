@@ -456,7 +456,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -1220,7 +1219,6 @@ exports[`Storyshots Modal Default 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -1280,7 +1278,9 @@ exports[`Storyshots Modal Default 1`] = `
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -1318,7 +1318,9 @@ exports[`Storyshots Modal Default 1`] = `
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2021,7 +2023,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -2081,7 +2082,9 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2119,7 +2122,9 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2464,7 +2469,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -2832,7 +2836,6 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"

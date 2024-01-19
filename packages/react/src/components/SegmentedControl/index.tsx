@@ -1,6 +1,6 @@
 import { ReactNode, forwardRef, memo, useMemo, useRef } from 'react'
 import * as React from 'react'
-import { useRadioGroupState } from 'react-stately'
+import { useRadioGroupState } from '@react-stately/radio'
 import {
   AriaRadioGroupProps,
   AriaRadioProps,
