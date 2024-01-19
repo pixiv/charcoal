@@ -66,11 +66,6 @@ Disabled.args = {
   disabled: true,
 }
 
-export const Link: Story<ButtonProps> = DefaultStory.bind({})
-Link.args = {
-  to: '#',
-}
-
 const NihongoStory = (args: ButtonProps) => (
   <Button {...args} onClick={action('click')}>
     日本語だよ

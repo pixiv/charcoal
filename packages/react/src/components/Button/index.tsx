@@ -1,7 +1,7 @@
-import { forwardRef } from 'react'
+import { ForwardedRef, ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { unreachable } from '../../_lib'
-import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
+import { CustomJSXElement } from '../DropdownSelector/ListItem'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 type Size = 'S' | 'M'
@@ -12,38 +12,38 @@ interface StyledProps {
   $size: Size
 }
 
-export type ButtonProps = Partial<{
-  variant: Variant
-  size: Size
-  fullWidth: boolean
-}> &
-  ClickableProps
+export type ButtonProps<T extends CustomJSXElement = 'button'> = {
+  children?: ReactNode
+  variant?: Variant
+  size?: Size
+  fullWidth?: boolean
+  as?: T
+} & Omit<React.ComponentPropsWithRef<T>, 'children'>
 
-const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
+const Button = forwardRef(function Button<
+  T extends CustomJSXElement = 'button'
+>(
   {
-    children,
     variant = 'Default',
+    fullWidth = false,
     size = 'M',
-    fullWidth: fixed = false,
-    disabled = false,
-    ...rest
-  },
-  ref
+    as,
+    ...props
+  }: ButtonProps<T>,
+  ref: ForwardedRef<HTMLButtonElement>
 ) {
   return (
     <StyledButton
-      {...rest}
-      disabled={disabled}
+      {...props}
       $background={variantToBackground(variant)}
       $color={variantToFont(variant)}
       $size={size}
-      $fullWidth={fixed}
+      $fullWidth={fullWidth}
       ref={ref}
-    >
-      {children}
-    </StyledButton>
+    ></StyledButton>
   )
-})
+}) as <T extends CustomJSXElement = 'button'>(p: ButtonProps<T>) => JSX.Element
+
 export default Button
 
 const horizontalPaddingSmall = css`
@@ -59,7 +59,16 @@ type StyledButtonProps = Omit<StyledProps, '$variant'> & {
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
 }
-const StyledButton = styled(Clickable)<StyledButtonProps>`
+const StyledButton = styled.button<StyledButtonProps>`
+  /* Reset button appearance */
+  appearance: none;
+  border-style: none;
+  outline: none;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  text-decoration: none;
+
   width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
   align-items: center;
@@ -99,6 +108,7 @@ const StyledButton = styled(Clickable)<StyledButtonProps>`
 
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
+    cursor: default;
     opacity: 0.32;
   }
 
