@@ -1,5 +1,5 @@
 import { unreachable } from '../../../_lib'
-import { Variant } from '..'
+import type { Variant } from '..'
 
 export function variantToBackground(variant: Variant) {
   switch (variant) {
