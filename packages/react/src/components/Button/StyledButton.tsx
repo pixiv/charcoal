@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import Clickable from '../Clickable'
 import { variantToFont } from './lib/variantToFont'
 import { variantToBackground } from './lib/variantToBackground'
-import { Variant, Size } from '.'
+import type { Size } from '.'
 
 const horizontalPaddingSmall = css`
   padding-right: 16px;
@@ -14,13 +14,9 @@ const horizontalPaddingMedium = css`
   padding-left: 24px;
 `
 
-type StyledProps = {
-  $variant: Variant
+type StyledButtonProps = {
   $fullWidth: boolean
   $size: Size
-}
-
-type StyledButtonProps = Omit<StyledProps, '$variant'> & {
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
 }
