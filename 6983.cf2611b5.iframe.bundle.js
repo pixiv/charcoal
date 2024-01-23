@@ -44,7 +44,7 @@
 `,horizontalPaddingMedium=styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
   padding-right: 24px;
   padding-left: 24px;
-`;(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default)`
+`,IconButton_default=((0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default)`
   width: ${p=>p.$fullWidth?"stretch":"min-content"};
   display: inline-grid;
   align-items: center;
@@ -58,7 +58,6 @@
   font-weight: bold;
 
   ${p=>"M"===p.$size?horizontalPaddingMedium:horizontalPaddingSmall}
-
   color: var(--charcoal-${p=>p.$color});
   background-color: var(--charcoal-${p=>p.$background});
   transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
@@ -86,10 +85,8 @@
   &[aria-disabled]:not([aria-disabled='false']) {
     opacity: 0.32;
   }
-
-  /* よく考えたらheight=32って定義が存在しないな... */
   height: ${p=>"M"===p.$size?40:32}px;
-`;var IconButton_default=(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,$size:size,$variant:variant,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})})),StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default).attrs((function styledProps({$size,$variant}){return{...variantToProps($variant),...sizeToProps($size)}}))`
+`,(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,$size:size,$variant:variant,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})}))),StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default).attrs((function styledProps({$size,$variant}){return{...variantToProps($variant),...sizeToProps($size)}}))`
   user-select: none;
 
   width: ${p=>p.$width}px;
@@ -1254,4 +1251,4 @@
     margin-bottom: -4px;
   }
 `}}]);
-//# sourceMappingURL=6983.4a504018.iframe.bundle.js.map
+//# sourceMappingURL=6983.cf2611b5.iframe.bundle.js.map
