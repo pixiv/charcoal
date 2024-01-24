@@ -850,7 +850,7 @@
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
 
-  transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow, 0.2s background-color;
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
@@ -859,6 +859,9 @@
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+    &:hover {
+      background-color: var(--charcoal-surface3-hover);
     }
   }
 
@@ -1251,4 +1254,4 @@
     margin-bottom: -4px;
   }
 `}}]);
-//# sourceMappingURL=6983.cf2611b5.iframe.bundle.js.map
+//# sourceMappingURL=6983.e7b4bc53.iframe.bundle.js.map
