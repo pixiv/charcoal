@@ -65,6 +65,39 @@ export const Basic: Story<DropdownSelectorProps> = (
 
 Basic.args = { ...baseProps }
 
+export const LongNames: Story<DropdownSelectorProps> = (
+  props: DropdownSelectorProps
+) => {
+  const [selected, setSelected] = useState('10')
+  return (
+    <div
+      style={{
+        width: 288,
+      }}
+    >
+      <DropdownSelector
+        {...props}
+        onChange={(value) => {
+          setSelected(value)
+        }}
+        value={selected}
+        label="label"
+      >
+        <DropdownMenuItem value={'10'}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        </DropdownMenuItem>
+        <DropdownMenuItem value={'20'}>
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </DropdownMenuItem>
+        <DropdownMenuItem value={'30'}>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.
+        </DropdownMenuItem>
+      </DropdownSelector>
+    </div>
+  )
+}
+
 function PlaygroundDropdownSelector(props: Partial<DropdownSelectorProps>) {
   const [selected, setSelected] = useState('10')
   return (
