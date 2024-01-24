@@ -2,19 +2,6 @@
 
 exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -70,24 +57,10 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c11 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -143,24 +116,10 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c11:disabled,
 .c11[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c12 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -216,7 +175,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c12:disabled,
 .c12[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
@@ -497,7 +455,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
       <div
         className="c2"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -558,19 +515,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Default 1`] = `
 .c0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -626,24 +570,10 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c24 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -699,24 +629,10 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c24:disabled,
 .c24[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c25 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -772,7 +688,6 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c25:disabled,
 .c25[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
@@ -932,12 +847,13 @@ exports[`Storyshots Modal Default 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c20:disabled,
@@ -955,28 +871,20 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c20:not(:disabled):not([aria-disabled]):hover,
+.c20[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c21 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c21::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c21::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c22 {
@@ -1300,7 +1208,6 @@ exports[`Storyshots Modal Default 1`] = `
       <div
         className="c2"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -1360,7 +1267,9 @@ exports[`Storyshots Modal Default 1`] = `
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -1398,7 +1307,9 @@ exports[`Storyshots Modal Default 1`] = `
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -1474,19 +1385,6 @@ exports[`Storyshots Modal Default 1`] = `
 
 exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1542,24 +1440,10 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c19 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1615,24 +1499,10 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c19:disabled,
 .c19[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c20 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1688,7 +1558,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c20:disabled,
 .c20[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
@@ -2140,7 +2009,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
       <div
         className="c2"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -2200,7 +2068,9 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2238,7 +2108,9 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2277,19 +2149,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Internal Scroll 1`] = `
 .c0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -2345,24 +2204,10 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c10 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -2418,7 +2263,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 .c10:disabled,
 .c10[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
@@ -2570,7 +2414,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
       <div
         className="c2"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -2620,19 +2463,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 .c0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -2688,24 +2518,10 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
 .c11 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-style: none;
-  outline: none;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -2761,7 +2577,6 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 
 .c11:disabled,
 .c11[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
   opacity: 0.32;
 }
 
@@ -2926,7 +2741,6 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
       <div
         className="c2"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"

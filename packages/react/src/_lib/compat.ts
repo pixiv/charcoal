@@ -28,4 +28,12 @@ export interface ReactAreaUseTextFieldCompat<E = Element> {
   readonly onSelect?: React.ReactEventHandler<E>
   readonly onBeforeInput?: React.FormEventHandler<E>
   readonly onInput?: React.FormEventHandler<E>
+  readonly autoCapitalize?:
+    | 'none'
+    | 'on'
+    | 'off'
+    | 'sentences'
+    | 'words'
+    | 'characters'
+    | undefined
 }

@@ -21,19 +21,6 @@ jobs:
       - run: yarn install --immutable --inline-builds
       - run: yarn build
 
-  build-storybook:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.node-version'
-          cache: yarn
-
-      - run: yarn install --immutable --inline-builds
-      - run: yarn build
-      - run: yarn storybook:build
-
   test:
     runs-on: ubuntu-latest
     steps:
@@ -49,6 +36,33 @@ jobs:
           yarn storyshots
         env:
           CI: 'true'
+
+  test-storybook:
+    runs-on: ubuntu-latest
+    env:
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+
+      - name: Install Playwgith
+        run: npx playwright install --with-deps
+
+      - name: Build Storybook
+        run: |
+          yarn build
+          yarn storybook:build --quiet
+
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook"
 
   lint:
     runs-on: ubuntu-latest

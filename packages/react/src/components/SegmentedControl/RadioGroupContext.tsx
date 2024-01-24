@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 import * as React from 'react'
-import { RadioGroupState } from 'react-stately'
+import type { RadioGroupState } from '@react-stately/radio'
 
 const RadioContext = createContext<RadioGroupState | null>(null)
 
