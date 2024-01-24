@@ -90,20 +90,7 @@
   font-size: 14px;
   line-height: 22px;
   color: var(--charcoal-text2);
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
+  padding: 9px 0;
 
   display: flex;
   align-items: center;
@@ -169,6 +156,7 @@
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
 
   ${index_esm.t0} {
     cursor: default;
@@ -206,20 +194,9 @@
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `,DropdownButtonIcon=(0,styled_components_browser_esm.ZP)(Icon.Z)`
   color: var(--charcoal-text2);
 `,AssertiveText=styled_components_browser_esm.ZP.div`
@@ -484,4 +461,4 @@
   font-weight: inherit;
   font-size: inherit;
 `;function ModalDismissButton({children,...props}){const{close,showDismiss}=(0,react.useContext)(ModalContext);return showDismiss?(0,jsx_runtime.jsx)(Button.Z,{...props,onClick:close,fullWidth:!0,children}):null}ModalDismissButton.displayName="ModalDismissButton";try{ModalTitle.displayName="ModalTitle",ModalTitle.__docgenInfo={description:"",displayName:"ModalTitle",props:{}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/Modal/index.tsx#ModalTitle"]={docgenInfo:ModalTitle.__docgenInfo,name:"ModalTitle",path:"packages/react/src/components/Modal/index.tsx#ModalTitle"})}catch(__react_docgen_typescript_loader_error){}try{ModalDismissButton.displayName="ModalDismissButton",ModalDismissButton.__docgenInfo={description:"",displayName:"ModalDismissButton",props:{variant:{defaultValue:null,description:"",name:"variant",required:!1,type:{name:"enum",value:[{value:'"Default"'},{value:'"Overlay"'},{value:'"Primary"'},{value:'"Danger"'},{value:'"Navigation"'}]}},size:{defaultValue:null,description:"",name:"size",required:!1,type:{name:"enum",value:[{value:'"S"'},{value:'"M"'}]}},fullWidth:{defaultValue:null,description:"",name:"fullWidth",required:!1,type:{name:"boolean"}},disabled:{defaultValue:null,description:"クリックの無効化",name:"disabled",required:!1,type:{name:"boolean"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}},to:{defaultValue:null,description:"リンクのURL。指定するとbuttonタグではなくaタグとして描画される",name:"to",required:!0,type:{name:"string"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/Modal/index.tsx#ModalDismissButton"]={docgenInfo:ModalDismissButton.__docgenInfo,name:"ModalDismissButton",path:"packages/react/src/components/Modal/index.tsx#ModalDismissButton"})}catch(__react_docgen_typescript_loader_error){}try{Modal.displayName="Modal",Modal.__docgenInfo={description:"モーダルコンポーネント。",displayName:"Modal",props:{zIndex:{defaultValue:{value:"10"},description:"",name:"zIndex",required:!1,type:{name:"number"}},title:{defaultValue:null,description:"",name:"title",required:!0,type:{name:"string"}},size:{defaultValue:null,description:"",name:"size",required:!1,type:{name:"enum",value:[{value:'"S"'},{value:'"M"'},{value:'"L"'}]}},bottomSheet:{defaultValue:null,description:"",name:"bottomSheet",required:!1,type:{name:"BottomSheet"}},isOpen:{defaultValue:null,description:"",name:"isOpen",required:!0,type:{name:"boolean"}},onClose:{defaultValue:null,description:"",name:"onClose",required:!0,type:{name:"() => void"}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},portalContainer:{defaultValue:null,description:"https://github.com/adobe/react-spectrum/issues/3787\nNext.jsで使用する際に発生するエラーの一時的な回避策でdocument.bodyを指定する必要がある",name:"portalContainer",required:!1,type:{name:"HTMLElement"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/Modal/index.tsx#Modal"]={docgenInfo:Modal.__docgenInfo,name:"Modal",path:"packages/react/src/components/Modal/index.tsx#Modal"})}catch(__react_docgen_typescript_loader_error){}}}]);
-//# sourceMappingURL=2780.b0089e5a.iframe.bundle.js.map
+//# sourceMappingURL=2780.99c4a605.iframe.bundle.js.map
