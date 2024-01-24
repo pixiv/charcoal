@@ -873,6 +873,11 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c21:not(:disabled):not([aria-disabled]):hover,
+.c21[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c22 {
   text-align: left;
   font-size: 14px;
