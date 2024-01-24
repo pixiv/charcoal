@@ -118,7 +118,7 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
 
-  transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow, 0.2s background-color;
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
