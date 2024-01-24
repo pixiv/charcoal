@@ -28,6 +28,7 @@ export default {
   '16/Smile': () => import('./16/Smile.js').then(m => m.default),
   '16/Speaker': () => import('./16/Speaker.js').then(m => m.default),
   '16/View': () => import('./16/View.js').then(m => m.default),
+  '16/Warning': () => import('./16/Warning.js').then(m => m.default),
   '24/Add': () => import('./24/Add.js').then(m => m.default),
   '24/AddImage': () => import('./24/AddImage.js').then(m => m.default),
   '24/AddModel': () => import('./24/AddModel.js').then(m => m.default),
