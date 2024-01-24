@@ -850,6 +850,7 @@ exports[`Storyshots Modal Default 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
@@ -884,22 +885,9 @@ exports[`Storyshots Modal Default 1`] = `
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c22::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c22::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c23 {
