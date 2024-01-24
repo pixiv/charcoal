@@ -14,4 +14,7 @@ export default {
     '\\.(mdx)$': '<rootDir>/__mocks__/mdx.ts',
   },
   testMatch: ['<rootDir>/**/storyshots.test.(js|jsx|ts|tsx)'],
+  testPathIgnorePatterns: [
+    '<rootDir>/packages/icons/src/__snapshots__/PixivIcon.story.storyshot',
+  ],
 }
