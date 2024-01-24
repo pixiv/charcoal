@@ -855,8 +855,8 @@ exports[`Storyshots Modal Default 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c21:disabled,
@@ -872,6 +872,11 @@ exports[`Storyshots Modal Default 1`] = `
 .c21[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c21:not(:disabled):not([aria-disabled]):hover,
+.c21[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c22 {
