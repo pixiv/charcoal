@@ -34,8 +34,8 @@ exports[`Storyshots DropdownSelector Basic 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -51,6 +51,11 @@ exports[`Storyshots DropdownSelector Basic 1`] = `
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c2 {
@@ -148,8 +153,8 @@ exports[`Storyshots DropdownSelector Custom Children 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -165,6 +170,11 @@ exports[`Storyshots DropdownSelector Custom Children 1`] = `
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c2 {
@@ -271,8 +281,8 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -288,6 +298,11 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c2 {
@@ -421,8 +436,8 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c8:disabled,
@@ -438,6 +453,11 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 .c8[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c9 {
@@ -910,8 +930,8 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c3:disabled,
@@ -927,6 +947,11 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
 .c3[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c4 {
@@ -1028,8 +1053,8 @@ exports[`Storyshots DropdownSelector Section List 1`] = `
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -1045,6 +1070,11 @@ exports[`Storyshots DropdownSelector Section List 1`] = `
 .c1[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
 .c2 {
