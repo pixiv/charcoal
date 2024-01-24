@@ -6,5 +6,5 @@ import { styleSheetSerializer } from 'jest-styled-components'
 initStoryshots({
   test: multiSnapshotWithOptions(),
   snapshotSerializers: [styleSheetSerializer],
-  storyKindRegex: /^((?!Icons\/).)*$/
+  storyKindRegex: /^((?!Icons\/).)*$/,
 })
