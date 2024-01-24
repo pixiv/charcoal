@@ -128,6 +128,9 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
       outline: none;
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
     }
+    &:hover {
+      background-color: var(--charcoal-surface3-hover);
+    }
   }
 
   ${({ invalid }) =>
