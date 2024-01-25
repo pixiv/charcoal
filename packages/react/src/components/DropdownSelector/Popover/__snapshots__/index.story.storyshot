@@ -5,8 +5,11 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -44,6 +47,10 @@ exports[`Storyshots DropdownSelector/Popover Basic 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,

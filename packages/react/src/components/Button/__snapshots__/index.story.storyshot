@@ -5,8 +5,11 @@ exports[`Storyshots Button Danger 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -44,6 +47,10 @@ exports[`Storyshots Button Danger 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -91,8 +98,11 @@ exports[`Storyshots Button Default 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -130,6 +140,10 @@ exports[`Storyshots Button Default 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -177,8 +191,11 @@ exports[`Storyshots Button Disabled 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -216,6 +233,10 @@ exports[`Storyshots Button Disabled 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -264,8 +285,11 @@ exports[`Storyshots Button Fixed 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -303,6 +327,10 @@ exports[`Storyshots Button Fixed 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -350,8 +378,11 @@ exports[`Storyshots Button Focus 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -389,6 +420,10 @@ exports[`Storyshots Button Focus 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -436,8 +471,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -477,6 +515,10 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c0:not(:disabled):not([aria-disabled]):active,
 .c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus,
@@ -509,8 +551,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -550,6 +595,10 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
+.c1:focus {
+  outline: none;
+}
+
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active,
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -582,8 +631,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -623,6 +675,10 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c2:not(:disabled):not([aria-disabled]):active,
 .c2[aria-disabled='false']:active,
 .c2:not(:disabled):not([aria-disabled]):focus,
@@ -655,8 +711,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -696,6 +755,10 @@ exports[`Storyshots Button Layout Example 1`] = `
   height: 40px;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 .c3:not(:disabled):not([aria-disabled]):active,
 .c3[aria-disabled='false']:active,
 .c3:not(:disabled):not([aria-disabled]):focus,
@@ -728,8 +791,11 @@ exports[`Storyshots Button Layout Example 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -767,6 +833,10 @@ exports[`Storyshots Button Layout Example 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c4:focus {
+  outline: none;
 }
 
 .c4:not(:disabled):not([aria-disabled]):active,
@@ -925,8 +995,11 @@ exports[`Storyshots Button Navigation 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -964,6 +1037,10 @@ exports[`Storyshots Button Navigation 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -1011,8 +1088,11 @@ exports[`Storyshots Button Nihongo 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1050,6 +1130,10 @@ exports[`Storyshots Button Nihongo 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -1097,8 +1181,11 @@ exports[`Storyshots Button Overlay 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1136,6 +1223,10 @@ exports[`Storyshots Button Overlay 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -1183,8 +1274,11 @@ exports[`Storyshots Button Primary 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1222,6 +1316,10 @@ exports[`Storyshots Button Primary 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,
@@ -1269,8 +1367,11 @@ exports[`Storyshots Button Small 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: transparent;
+  padding: 0;
   border-style: none;
   outline: none;
+  color: inherit;
   text-rendering: inherit;
   -webkit-letter-spacing: inherit;
   -moz-letter-spacing: inherit;
@@ -1308,6 +1409,10 @@ exports[`Storyshots Button Small 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 32px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c0:not(:disabled):not([aria-disabled]):active,

@@ -2,6 +2,22 @@
 
 exports[`Storyshots Modal Bottom Sheet 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -33,6 +49,10 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c0:not(:disabled):not([aria-disabled]):active,
 .c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus,
@@ -57,10 +77,27 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c11 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -92,6 +129,10 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
+.c11:focus {
+  outline: none;
+}
+
 .c11:not(:disabled):not([aria-disabled]):active,
 .c11[aria-disabled='false']:active,
 .c11:not(:disabled):not([aria-disabled]):focus,
@@ -116,10 +157,27 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c11:disabled,
 .c11[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c12 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -151,6 +209,10 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   height: 40px;
 }
 
+.c12:focus {
+  outline: none;
+}
+
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active,
 .c12:not(:disabled):not([aria-disabled]):focus,
@@ -175,6 +237,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c12:disabled,
 .c12[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -515,6 +578,22 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Default 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -546,6 +625,10 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c0:not(:disabled):not([aria-disabled]):active,
 .c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus,
@@ -570,10 +653,27 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c24 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -605,6 +705,10 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
+.c24:focus {
+  outline: none;
+}
+
 .c24:not(:disabled):not([aria-disabled]):active,
 .c24[aria-disabled='false']:active,
 .c24:not(:disabled):not([aria-disabled]):focus,
@@ -629,10 +733,27 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c24:disabled,
 .c24[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c25 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -664,6 +785,10 @@ exports[`Storyshots Modal Default 1`] = `
   height: 40px;
 }
 
+.c25:focus {
+  outline: none;
+}
+
 .c25:not(:disabled):not([aria-disabled]):active,
 .c25[aria-disabled='false']:active,
 .c25:not(:disabled):not([aria-disabled]):focus,
@@ -688,6 +813,7 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c25:disabled,
 .c25[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -1385,6 +1511,22 @@ exports[`Storyshots Modal Default 1`] = `
 
 exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -1416,6 +1558,10 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c0:not(:disabled):not([aria-disabled]):active,
 .c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus,
@@ -1440,10 +1586,27 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c19 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1475,6 +1638,10 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
+.c19:focus {
+  outline: none;
+}
+
 .c19:not(:disabled):not([aria-disabled]):active,
 .c19[aria-disabled='false']:active,
 .c19:not(:disabled):not([aria-disabled]):focus,
@@ -1499,10 +1666,27 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c19:disabled,
 .c19[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c20 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1534,6 +1718,10 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
   height: 40px;
 }
 
+.c20:focus {
+  outline: none;
+}
+
 .c20:not(:disabled):not([aria-disabled]):active,
 .c20[aria-disabled='false']:active,
 .c20:not(:disabled):not([aria-disabled]):focus,
@@ -1558,6 +1746,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c20:disabled,
 .c20[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -2149,6 +2338,22 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 exports[`Storyshots Modal Internal Scroll 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -2180,6 +2385,10 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: 40px;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c0:not(:disabled):not([aria-disabled]):active,
 .c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus,
@@ -2204,10 +2413,27 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c10 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -2239,6 +2465,10 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
   height: 40px;
 }
 
+.c10:focus {
+  outline: none;
+}
+
 .c10:not(:disabled):not([aria-disabled]):active,
 .c10[aria-disabled='false']:active,
 .c10:not(:disabled):not([aria-disabled]):focus,
@@ -2263,6 +2493,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 .c10:disabled,
 .c10[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
@@ -2463,6 +2694,22 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 
 exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 .c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -2494,6 +2741,10 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   height: 40px;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c0:not(:disabled):not([aria-disabled]):active,
 .c0[aria-disabled='false']:active,
 .c0:not(:disabled):not([aria-disabled]):focus,
@@ -2518,10 +2769,27 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c11 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -2553,6 +2821,10 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
   height: 40px;
 }
 
+.c11:focus {
+  outline: none;
+}
+
 .c11:not(:disabled):not([aria-disabled]):active,
 .c11[aria-disabled='false']:active,
 .c11:not(:disabled):not([aria-disabled]):focus,
@@ -2577,6 +2849,7 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
 
 .c11:disabled,
 .c11[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 

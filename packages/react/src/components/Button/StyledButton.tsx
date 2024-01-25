@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import Clickable from '../Clickable'
 import { variantToFont } from './lib/variantToFont'
 import { variantToBackground } from './lib/variantToBackground'
 import type { Size } from '.'
@@ -21,7 +20,22 @@ type StyledButtonProps = {
   $color: ReturnType<typeof variantToFont>
 }
 
-export const StyledButton = styled(Clickable)<StyledButtonProps>`
+export const StyledButton = styled.button<StyledButtonProps>`
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+
   width: ${(p) => (p.$fullWidth ? 'stretch' : 'min-content')};
   display: inline-grid;
   align-items: center;
@@ -60,6 +74,7 @@ export const StyledButton = styled(Clickable)<StyledButtonProps>`
 
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
+    cursor: default;
     opacity: 0.32;
   }
   height: ${(p) => (p.$size === 'M' ? 40 : 32)}px;
