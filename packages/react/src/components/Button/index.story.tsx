@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions'
 import { useRef } from 'react'
 import { ClickableElement } from '../Clickable'
 import Button, { ButtonProps } from '.'
@@ -75,16 +74,11 @@ export const Link: StoryObj<typeof Button> = {
 }
 
 export const Nihongo: StoryObj<typeof Button> = {
-  render: (args) => (
-    <Button {...args} onClick={action('click')}>
-      日本語だよ
-    </Button>
-  ),
+  render: (args) => <Button {...args}>日本語だよ</Button>,
 }
 
 export const Focus: StoryObj<typeof Button> = {
-  render: (args: ButtonProps) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  render: function Render(args) {
     const ref = useRef<ClickableElement>(null)
     const focus = () => ref.current?.focus()
     return (

@@ -1344,7 +1344,6 @@ exports[`Storyshots Button Nihongo 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     日本語だよ
   </button>
