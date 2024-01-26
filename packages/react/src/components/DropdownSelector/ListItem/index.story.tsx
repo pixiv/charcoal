@@ -14,7 +14,7 @@ const CustomLink = styled.a`
   color: red;
 `
 
-const basicRender = () => {
+const BasicRender = () => {
   const [checked, setChecked] = useState(false)
   const handleCheck = () => {
     setChecked((v) => !v)
@@ -51,5 +51,5 @@ const basicRender = () => {
 }
 
 export const Basic: StoryObj<typeof ListItem> = {
-  render: basicRender,
+  render: BasicRender,
 }

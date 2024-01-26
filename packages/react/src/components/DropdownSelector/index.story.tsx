@@ -94,8 +94,7 @@ const DummyBox = styled.div`
 `
 
 export const InModal: StoryObj<typeof DropdownSelector> = {
-  render: () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  render: function Render() {
     const [open, setOpen] = useState(true)
     return (
       <div
@@ -134,8 +133,7 @@ export const InModal: StoryObj<typeof DropdownSelector> = {
 }
 
 export const InFormTag: StoryObj<typeof DropdownSelector> = {
-  render: (props) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  render: function Render(props) {
     const [selected, setSelected] = useState('')
     return (
       <form style={{ width: 288 }}>
@@ -158,8 +156,7 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
 
 export const CustomChildren: StoryObj<typeof DropdownSelector> = {
   args: { ...baseProps },
-  render: (props) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  render: function Render(props) {
     const [selected, setSelected] = useState('10')
     return (
       <div style={{ width: 288 }}>
@@ -209,8 +206,7 @@ export const CustomChildren: StoryObj<typeof DropdownSelector> = {
 
 export const SectionList: StoryObj<typeof DropdownSelector> = {
   args: { ...baseProps },
-  render: (props) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  render: function Render(props) {
     const [selected, setSelected] = useState('10')
     return (
       <div style={{ width: 288 }}>
