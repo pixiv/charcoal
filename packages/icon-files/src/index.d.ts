@@ -54,6 +54,7 @@ declare var _default: {
   '24/ChatBot': () => Promise<string>;
   '24/Check': () => Promise<string>;
   '24/ChromaticAberration': () => Promise<string>;
+  '24/Click': () => Promise<string>;
   '24/Close': () => Promise<string>;
   '24/Codes': () => Promise<string>;
   '24/Collapse': () => Promise<string>;

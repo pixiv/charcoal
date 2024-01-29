@@ -54,6 +54,7 @@ export default {
   '24/ChatBot': () => import('./24/ChatBot.js').then(m => m.default),
   '24/Check': () => import('./24/Check.js').then(m => m.default),
   '24/ChromaticAberration': () => import('./24/ChromaticAberration.js').then(m => m.default),
+  '24/Click': () => import('./24/Click.js').then(m => m.default),
   '24/Close': () => import('./24/Close.js').then(m => m.default),
   '24/Codes': () => import('./24/Codes.js').then(m => m.default),
   '24/Collapse': () => import('./24/Collapse.js').then(m => m.default),
