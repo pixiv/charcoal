@@ -104,7 +104,6 @@ exports[`Storyshots Button Danger 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -215,7 +214,6 @@ exports[`Storyshots Button Default 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -326,7 +324,6 @@ exports[`Storyshots Button Disabled 1`] = `
   <button
     className="c0 c1"
     disabled={true}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -437,7 +434,6 @@ exports[`Storyshots Button Fixed 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -894,16 +890,16 @@ exports[`Storyshots Button Layout Example 1`] = `
 >
   <div
     css="
-      display: grid;
-      gap: 24px;
-    "
+        display: grid;
+        gap: 24px;
+      "
   >
     <div
       css="
-        display: grid;
-        grid: auto / auto-flow min-content;
-        gap: 8px;
-      "
+          display: grid;
+          grid: auto / auto-flow min-content;
+          gap: 8px;
+        "
     >
       <button
         className="c0 c1"
@@ -926,10 +922,10 @@ exports[`Storyshots Button Layout Example 1`] = `
     </div>
     <div
       css="
-        display: grid;
-        grid: auto-flow auto / 392px;
-        gap: 8px;
-      "
+          display: grid;
+          grid: auto-flow auto / 392px;
+          gap: 8px;
+        "
     >
       <button
         className="c0 c4"
@@ -946,12 +942,12 @@ exports[`Storyshots Button Layout Example 1`] = `
     </div>
     <div
       css="
-        display: flex;
+          display: flex;
 
-        & > * + * {
-          margin-left: 8px;
-        }
-      "
+          & > * + * {
+            margin-left: 8px;
+          }
+        "
     >
       <button
         className="c0 c1"
@@ -974,14 +970,14 @@ exports[`Storyshots Button Layout Example 1`] = `
     </div>
     <div
       css="
-        display: flex;
-        flex-direction: column;
-        width: 392px;
+          display: flex;
+          flex-direction: column;
+          width: 392px;
 
-        & > * + * {
-          margin-top: 8px;
-        }
-      "
+          & > * + * {
+            margin-top: 8px;
+          }
+        "
     >
       <button
         className="c0 c4"
@@ -998,14 +994,14 @@ exports[`Storyshots Button Layout Example 1`] = `
     </div>
     <div
       css="
-        display: flex;
-        flex-direction: column;
-        width: 392px;
+          display: flex;
+          flex-direction: column;
+          width: 392px;
 
-        & > * + * {
-          margin-top: 8px;
-        }
-      "
+          & > * + * {
+            margin-top: 8px;
+          }
+        "
     >
       <button
         className="c0 c4"
@@ -1128,7 +1124,6 @@ exports[`Storyshots Button Link 1`] = `
   <a
     className="c0 c1"
     href="#"
-    onClick={[Function]}
   >
     Button
   </a>
@@ -1239,7 +1234,6 @@ exports[`Storyshots Button Navigation 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -1350,7 +1344,6 @@ exports[`Storyshots Button Nihongo 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     日本語だよ
   </button>
@@ -1461,7 +1454,6 @@ exports[`Storyshots Button Overlay 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -1572,7 +1564,6 @@ exports[`Storyshots Button Primary 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
@@ -1683,7 +1674,6 @@ exports[`Storyshots Button Small 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onClick={[Function]}
   >
     Button
   </button>
