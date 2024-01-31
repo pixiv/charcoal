@@ -30,12 +30,13 @@ exports[`Storyshots DropdownSelector Basic 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -59,28 +60,20 @@ exports[`Storyshots DropdownSelector Basic 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c2::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c2::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c3 {
@@ -150,12 +143,13 @@ exports[`Storyshots DropdownSelector Custom Children 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -179,28 +173,20 @@ exports[`Storyshots DropdownSelector Custom Children 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c2::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c2::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c3 {
@@ -279,12 +265,13 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -308,28 +295,20 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c2::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c2::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c3 {
@@ -435,12 +414,13 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c8:disabled,
@@ -464,28 +444,20 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c9 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c9::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c9::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c10 {
@@ -715,7 +687,6 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
       <div
         className="c1"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -805,6 +776,119 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
           />
         </button>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropdownSelector Long Names 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
     </div>
   </div>
 </div>
@@ -943,12 +1027,13 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c3:disabled,
@@ -972,28 +1057,20 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c4 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c5 {
@@ -1067,12 +1144,13 @@ exports[`Storyshots DropdownSelector Section List 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c1:disabled,
@@ -1096,28 +1174,20 @@ exports[`Storyshots DropdownSelector Section List 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c2::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c2::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c3 {

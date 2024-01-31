@@ -173,13 +173,13 @@ exports[`Storyshots TextArea Auto Height 1`] = `
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
-          "height": 1,
-          "margin": "0 -1px -1px 0",
+          "height": "1px",
+          "margin": "-1px",
           "overflow": "hidden",
           "padding": 0,
           "position": "absolute",
           "whiteSpace": "nowrap",
-          "width": 1,
+          "width": "1px",
         }
       }
     >
@@ -187,8 +187,6 @@ exports[`Storyshots TextArea Auto Height 1`] = `
         className="c3"
         htmlFor="test-id"
         id="test-id"
-        onBlur={null}
-        onFocus={null}
       >
         Label
       </label>
@@ -210,7 +208,9 @@ exports[`Storyshots TextArea Auto Height 1`] = `
         onChange={[Function]}
         placeholder="TextArea"
         readOnly={false}
+        required={false}
         rows={4}
+        value=""
       />
     </div>
   </div>
@@ -436,13 +436,13 @@ exports[`Storyshots TextArea Default 1`] = `
             "border": 0,
             "clip": "rect(0 0 0 0)",
             "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
+            "height": "1px",
+            "margin": "-1px",
             "overflow": "hidden",
             "padding": 0,
             "position": "absolute",
             "whiteSpace": "nowrap",
-            "width": 1,
+            "width": "1px",
           }
         }
       >
@@ -450,8 +450,6 @@ exports[`Storyshots TextArea Default 1`] = `
           className="c4"
           htmlFor="test-id"
           id="test-id"
-          onBlur={null}
-          onFocus={null}
         >
           Label
         </label>
@@ -480,7 +478,9 @@ exports[`Storyshots TextArea Default 1`] = `
           onChange={[Function]}
           placeholder="Text Area"
           readOnly={false}
+          required={false}
           rows={4}
+          value=""
         />
       </div>
     </div>
@@ -716,13 +716,13 @@ exports[`Storyshots TextArea Has Count 1`] = `
             "border": 0,
             "clip": "rect(0 0 0 0)",
             "clipPath": "inset(50%)",
-            "height": 1,
-            "margin": "0 -1px -1px 0",
+            "height": "1px",
+            "margin": "-1px",
             "overflow": "hidden",
             "padding": 0,
             "position": "absolute",
             "whiteSpace": "nowrap",
-            "width": 1,
+            "width": "1px",
           }
         }
       >
@@ -730,8 +730,6 @@ exports[`Storyshots TextArea Has Count 1`] = `
           className="c4"
           htmlFor="test-id"
           id="test-id"
-          onBlur={null}
-          onFocus={null}
         >
           Label
         </label>
@@ -761,7 +759,9 @@ exports[`Storyshots TextArea Has Count 1`] = `
           onChange={[Function]}
           placeholder="Text Area"
           readOnly={false}
+          required={false}
           rows={4}
+          value=""
         />
         <span
           className="c10"
@@ -1062,7 +1062,9 @@ exports[`Storyshots TextArea Has Label 1`] = `
           onChange={[Function]}
           placeholder="Text Area"
           readOnly={false}
+          required={false}
           rows={4}
+          value=""
         />
       </div>
       <p

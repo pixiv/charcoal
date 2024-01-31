@@ -480,7 +480,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -893,12 +892,13 @@ exports[`Storyshots Modal Default 1`] = `
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
 }
 
 .c21:disabled,
@@ -922,28 +922,20 @@ exports[`Storyshots Modal Default 1`] = `
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
+.c21:not(:disabled):not([aria-disabled]):hover,
+.c21[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
 .c22 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-}
-
-.c22::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c22::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c23 {
@@ -1268,7 +1260,6 @@ exports[`Storyshots Modal Default 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -1328,7 +1319,9 @@ exports[`Storyshots Modal Default 1`] = `
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -1366,7 +1359,9 @@ exports[`Storyshots Modal Default 1`] = `
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2087,7 +2082,6 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -2147,7 +2141,9 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2185,7 +2181,9 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
+                    required={false}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -2542,7 +2540,6 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"
@@ -2922,7 +2919,6 @@ exports[`Storyshots Modal Not Dismmissable Story 1`] = `
       <div
         className="c3"
         onBlur={[Function]}
-        onFocus={null}
         onKeyDown={[Function]}
         role="dialog"
         size="M"

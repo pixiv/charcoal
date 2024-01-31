@@ -29,20 +29,7 @@ const StyledSpan = styled.span<{ isSelected?: boolean }>`
   font-size: 14px;
   line-height: 22px;
   color: var(--charcoal-text2);
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
+  padding: 9px 0;
 
   display: flex;
   align-items: center;

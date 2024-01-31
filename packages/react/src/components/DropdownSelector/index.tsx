@@ -109,6 +109,7 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
   box-sizing: border-box;
   border: none;
   cursor: pointer;
+  gap: 4px;
 
   ${disabledSelector} {
     cursor: default;
@@ -119,11 +120,14 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
 
-  transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow, 0.2s background-color;
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
     ${focusVisibleFocusRingCss}
+    &:hover {
+      background-color: var(--charcoal-surface3-hover);
+    }
   }
 
   ${({ invalid }) =>
@@ -142,20 +146,9 @@ const DropdownButtonText = styled.span`
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `
 
 const DropdownButtonIcon = styled(Icon)`

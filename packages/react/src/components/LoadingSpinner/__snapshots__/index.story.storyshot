@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots LoadingSpinner Basic 1`] = `
+exports[`Storyshots LoadingSpinner Default 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;
@@ -40,40 +40,6 @@ exports[`Storyshots LoadingSpinner Basic 1`] = `
   >
     <div
       className="c1"
-      role="presentation"
-    />
-  </div>
-</div>
-`;
-
-exports[`Storyshots LoadingSpinner Icon 1`] = `
-.c0 {
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  background-color: currentColor;
-  -webkit-animation: cNZOgq 1s both ease-out;
-  animation: cNZOgq 1s both ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.c0[data-reset-animation] {
-  -webkit-animation: none;
-  animation: none;
-}
-
-<div
-  data-dark={false}
->
-  <div
-    css="
-        font-size: 12px;
-        color: #B1CC29;
-      "
-  >
-    <div
-      className="c0"
       role="presentation"
     />
   </div>

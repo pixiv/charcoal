@@ -28,6 +28,7 @@ declare var _default: {
   '16/Smile': () => Promise<string>;
   '16/Speaker': () => Promise<string>;
   '16/View': () => Promise<string>;
+  '16/Warning': () => Promise<string>;
   '24/Add': () => Promise<string>;
   '24/AddImage': () => Promise<string>;
   '24/AddModel': () => Promise<string>;
@@ -53,6 +54,7 @@ declare var _default: {
   '24/ChatBot': () => Promise<string>;
   '24/Check': () => Promise<string>;
   '24/ChromaticAberration': () => Promise<string>;
+  '24/Click': () => Promise<string>;
   '24/Close': () => Promise<string>;
   '24/Codes': () => Promise<string>;
   '24/Collapse': () => Promise<string>;
