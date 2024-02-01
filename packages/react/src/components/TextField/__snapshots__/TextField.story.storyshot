@@ -1323,12 +1323,12 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 
 .c12:not(:disabled):not([aria-disabled]):hover,
 .c12[aria-disabled='false']:hover {
-  background-color: var( --charcoal-surface4-hover );
+  background-color: var(--charcoal-surface4-hover);
 }
 
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active {
-  background-color: var( --charcoal-surface4-press );
+  background-color: var(--charcoal-surface4-press);
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,

@@ -67,12 +67,12 @@ exports[`Storyshots IconButton Default M 1`] = `
 
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
-  background-color: var( --charcoal-transparent-hover );
+  background-color: var(--charcoal-transparent-hover);
 }
 
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active {
-  background-color: var( --charcoal-transparent-press );
+  background-color: var(--charcoal-transparent-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,
@@ -171,12 +171,12 @@ exports[`Storyshots IconButton Overlay M 1`] = `
 
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
-  background-color: var( --charcoal-surface4-hover );
+  background-color: var(--charcoal-surface4-hover);
 }
 
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active {
-  background-color: var( --charcoal-surface4-press );
+  background-color: var(--charcoal-surface4-press);
 }
 
 .c1:not(:disabled):not([aria-disabled]):focus,

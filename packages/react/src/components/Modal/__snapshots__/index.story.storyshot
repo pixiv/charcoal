@@ -244,12 +244,12 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 
 .c14:not(:disabled):not([aria-disabled]):hover,
 .c14[aria-disabled='false']:hover {
-  background-color: var( --charcoal-transparent-hover );
+  background-color: var(--charcoal-transparent-hover);
 }
 
 .c14:not(:disabled):not([aria-disabled]):active,
 .c14[aria-disabled='false']:active {
-  background-color: var( --charcoal-transparent-press );
+  background-color: var(--charcoal-transparent-press);
 }
 
 .c14:not(:disabled):not([aria-disabled]):focus,
@@ -879,6 +879,11 @@ exports[`Storyshots Modal Default 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
+.c21:not(:disabled):not([aria-disabled]):active,
+.c21[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
 .c22 {
   text-align: left;
   font-size: 14px;
@@ -922,12 +927,12 @@ exports[`Storyshots Modal Default 1`] = `
 
 .c27:not(:disabled):not([aria-disabled]):hover,
 .c27[aria-disabled='false']:hover {
-  background-color: var( --charcoal-transparent-hover );
+  background-color: var(--charcoal-transparent-hover);
 }
 
 .c27:not(:disabled):not([aria-disabled]):active,
 .c27[aria-disabled='false']:active {
-  background-color: var( --charcoal-transparent-press );
+  background-color: var(--charcoal-transparent-press);
 }
 
 .c27:not(:disabled):not([aria-disabled]):focus,
@@ -1717,12 +1722,12 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 
 .c22:not(:disabled):not([aria-disabled]):hover,
 .c22[aria-disabled='false']:hover {
-  background-color: var( --charcoal-transparent-hover );
+  background-color: var(--charcoal-transparent-hover);
 }
 
 .c22:not(:disabled):not([aria-disabled]):active,
 .c22[aria-disabled='false']:active {
-  background-color: var( --charcoal-transparent-press );
+  background-color: var(--charcoal-transparent-press);
 }
 
 .c22:not(:disabled):not([aria-disabled]):focus,
