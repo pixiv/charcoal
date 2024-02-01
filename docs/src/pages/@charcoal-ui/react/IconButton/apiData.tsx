@@ -26,4 +26,9 @@ export const apiData: Omit<
     description: 'スタイルの種類',
     type: '"Default" | "Overlay"',
   },
+  active: {
+    description: 'ボタンの押下状態',
+    type: 'boolean',
+    default: 'false',
+  },
 }
