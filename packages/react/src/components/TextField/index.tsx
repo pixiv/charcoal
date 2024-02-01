@@ -171,6 +171,7 @@ const StyledInputContainer = styled.div<{
   hasPrefix: boolean
   hasSuffix: boolean
 }>`
+  position: relative;
   display: grid;
   grid-template-columns: ${(p) =>
     [p.hasPrefix && 'auto', '1fr', p.hasSuffix && 'auto']
@@ -225,10 +226,13 @@ const SuffixContainer = styled.span`
 const StyledInput = styled.input<{
   invalid: boolean
 }>`
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+
+  left: 8px;
 
   /* Prevent zooming for iOS Safari */
   transform-origin: top left;
