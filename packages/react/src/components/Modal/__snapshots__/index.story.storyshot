@@ -1076,6 +1076,7 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c17 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1107,10 +1108,12 @@ exports[`Storyshots Modal Default 1`] = `
 }
 
 .c18 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1871,6 +1874,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 }
 
 .c17 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1902,10 +1906,12 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 }
 
 .c18 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;

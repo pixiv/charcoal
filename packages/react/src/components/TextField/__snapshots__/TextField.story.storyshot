@@ -138,6 +138,7 @@ exports[`Storyshots TextField Default 1`] = `
 }
 
 .c8 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -169,10 +170,12 @@ exports[`Storyshots TextField Default 1`] = `
 }
 
 .c9 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -380,6 +383,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
 }
 
 .c6 {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto;
   height: 40px;
@@ -434,10 +438,12 @@ exports[`Storyshots TextField Has Affix 1`] = `
 }
 
 .c8 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -690,6 +696,7 @@ exports[`Storyshots TextField Has Count 1`] = `
 }
 
 .c8 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   height: 40px;
@@ -733,10 +740,12 @@ exports[`Storyshots TextField Has Count 1`] = `
 }
 
 .c9 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1025,6 +1034,7 @@ exports[`Storyshots TextField Has Label 1`] = `
 }
 
 .c10 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1056,10 +1066,12 @@ exports[`Storyshots TextField Has Label 1`] = `
 }
 
 .c11 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
@@ -1361,6 +1373,7 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c6 {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto;
   height: 40px;
@@ -1415,10 +1428,12 @@ exports[`Storyshots TextField Prefix Icon 1`] = `
 }
 
 .c9 {
+  position: absolute;
   border: none;
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  left: 8px;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
