@@ -19,6 +19,7 @@ type StyledButtonProps = {
   $size: Size
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
+  $active: boolean
 }
 
 export const StyledButton = styled(Clickable)<StyledButtonProps>`
@@ -48,14 +49,22 @@ export const StyledButton = styled(Clickable)<StyledButtonProps>`
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
     }
 
-    &:hover {
-      color: var(--charcoal-${(p) => p.$color}-hover);
-      background-color: var(--charcoal-${(p) => p.$background}-hover);
-    }
-    &:active {
-      color: var(--charcoal-${(p) => p.$color}-press);
-      background-color: var(--charcoal-${(p) => p.$background}-press);
-    }
+    ${({ $active, $color, $background }) =>
+      $active
+        ? css`
+            color: var(--charcoal-${$color}-press);
+            background-color: var(--charcoal-${$background}-press);
+          `
+        : css`
+            &:hover {
+              color: var(--charcoal-${$color}-hover);
+              background-color: var(--charcoal-${$background}-hover);
+            }
+            &:active {
+              color: var(--charcoal-${$color}-press);
+              background-color: var(--charcoal-${$background}-press);
+            }
+          `}
   }
 
   &:disabled,

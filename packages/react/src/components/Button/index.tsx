@@ -17,6 +17,7 @@ export type ButtonProps = Partial<{
   variant: Variant
   size: Size
   fullWidth: boolean
+  active: boolean
 }> &
   ClickableProps
 
@@ -27,6 +28,7 @@ const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
     size = 'M',
     fullWidth: fixed = false,
     disabled = false,
+    active = false,
     ...rest
   },
   ref
@@ -39,6 +41,7 @@ const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
       $color={variantToFont(variant)}
       $size={size}
       $fullWidth={fixed}
+      $active={active}
       ref={ref}
     >
       {children}
