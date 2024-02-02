@@ -47,7 +47,7 @@ export const sections: PreviewSection<ButtonProps>[] = [
     previewMetas: variants.map((variant) => ({
       props: {
         variant,
-        active: true,
+        isActive: true,
       },
       children: variant,
     })),

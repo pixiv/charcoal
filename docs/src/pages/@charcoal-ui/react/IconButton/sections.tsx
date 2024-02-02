@@ -76,7 +76,7 @@ export const sections: PreviewSection<IconButtonProps>[] = [
         props: {
           icon: '24/Add',
           variant: 'Default',
-          active: true,
+          isActive: true,
         },
       },
       {
@@ -84,7 +84,7 @@ export const sections: PreviewSection<IconButtonProps>[] = [
         props: {
           icon: '24/Add',
           variant: 'Overlay',
-          active: true,
+          isActive: true,
         },
       },
     ],
