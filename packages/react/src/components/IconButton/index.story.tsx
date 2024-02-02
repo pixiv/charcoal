@@ -19,13 +19,18 @@ export default {
         options: ['M', 'S', 'XS'],
       },
     },
+    isActive: {
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 }
 
 type Props = {
   variant?: 'Default' | 'Overlay'
   size?: 'M' | 'S' | 'XS'
-  active?: boolean
+  isActive?: boolean
 }
 
 const Template: Story<Props> = (props) => {
@@ -46,7 +51,7 @@ DefaultM.args = {
 
 export const Active: Story<Props> = Template.bind({})
 Active.args = {
-  active: true,
+  isActive: true,
 }
 
 export const OverlayM: Story<Props> = Template.bind({})

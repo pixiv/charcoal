@@ -10,7 +10,7 @@ interface StyledProps {
   readonly variant?: Variant
   readonly size?: Size
   readonly icon: keyof KnownIconType
-  readonly active?: boolean
+  readonly isActive?: boolean
 }
 
 export type IconButtonProps = StyledProps & ClickableProps
@@ -21,7 +21,7 @@ const IconButton = forwardRef<ClickableElement, IconButtonProps>(
       variant = 'Default',
       size = 'M',
       icon,
-      active = false,
+      isActive = false,
       ...rest
     }: IconButtonProps,
     ref
@@ -33,7 +33,7 @@ const IconButton = forwardRef<ClickableElement, IconButtonProps>(
         ref={ref}
         $size={size}
         $variant={variant}
-        $active={active}
+        $isActive={isActive}
       >
         <pixiv-icon name={icon} />
       </StyledIconButton>
@@ -46,7 +46,7 @@ export default IconButton
 type StyledIconButtonProps = Required<{
   [key in keyof Pick<
     StyledProps,
-    'size' | 'variant' | 'active'
+    'size' | 'variant' | 'isActive'
   > as `$${key}`]: StyledProps[key]
 }>
 
@@ -68,8 +68,8 @@ const StyledIconButton = styled(Clickable).attrs<
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    ${({ $active, $background }) =>
-      $active
+    ${({ $isActive, $background }) =>
+      $isActive
         ? css`
             background-color: var(--charcoal-${$background}-press);
           `

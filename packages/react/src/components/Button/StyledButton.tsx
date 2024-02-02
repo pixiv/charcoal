@@ -19,7 +19,7 @@ type StyledButtonProps = {
   $size: Size
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
-  $active: boolean
+  $isActive: boolean
 }
 
 export const StyledButton = styled(Clickable)<StyledButtonProps>`
@@ -49,7 +49,7 @@ export const StyledButton = styled(Clickable)<StyledButtonProps>`
       box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
     }
 
-    ${({ $active, $color, $background }) =>
+    ${({ $isActive: $active, $color, $background }) =>
       $active
         ? css`
             color: var(--charcoal-${$color}-press);
