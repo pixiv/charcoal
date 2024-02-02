@@ -25,6 +25,7 @@ export default {
 type Props = {
   variant?: 'Default' | 'Overlay'
   size?: 'M' | 'S' | 'XS'
+  active?: boolean
 }
 
 const Template: Story<Props> = (props) => {
@@ -41,6 +42,11 @@ export const DefaultM: Story<Props> = Template.bind({})
 DefaultM.args = {
   variant: 'Default',
   size: 'M',
+}
+
+export const Active: Story<Props> = Template.bind({})
+Active.args = {
+  active: true,
 }
 
 export const OverlayM: Story<Props> = Template.bind({})

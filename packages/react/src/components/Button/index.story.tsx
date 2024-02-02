@@ -67,6 +67,12 @@ export const Disabled: StoryObj<typeof Button> = {
   },
 }
 
+export const Active: StoryObj<typeof Button> = {
+  args: {
+    active: true,
+  },
+}
+
 export const Link: StoryObj<typeof Button> = {
   args: {
     to: '#',
