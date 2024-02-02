@@ -69,7 +69,7 @@ export const sections: PreviewSection<IconButtonProps>[] = [
     ],
   },
   {
-    title: 'active',
+    title: 'isActive',
     previewMetas: [
       {
         children: undefined,
