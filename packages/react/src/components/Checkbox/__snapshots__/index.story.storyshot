@@ -74,11 +74,6 @@ exports[`Storyshots Checkbox Invalid 1`] = `
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
 .c2[type='checkbox']:not(:checked) {
   border-width: 2px;
   border-style: solid;
@@ -238,11 +233,6 @@ exports[`Storyshots Checkbox Labelled 1`] = `
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
 .c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true']:focus {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
@@ -471,11 +461,6 @@ exports[`Storyshots Checkbox Unlabelled 1`] = `
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
 .c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true']:focus {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
