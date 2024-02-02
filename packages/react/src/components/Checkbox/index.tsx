@@ -127,9 +127,6 @@ const CheckboxInput = styled.input`
       ${focusVisibleFocusRingCss}
       &[aria-invalid='true'] {
         box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        &:focus {
-          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        }
       }
     }
 
