@@ -106,7 +106,6 @@ exports[`Storyshots TagItem Default 1`] = `
 >
   <a
     className="c0"
-    href=""
     onClick={[Function]}
     onDragStart={[Function]}
     onKeyDown={[Function]}
@@ -119,11 +118,9 @@ exports[`Storyshots TagItem Default 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
-    rel=""
     role="button"
     size="M"
     tabIndex={0}
-    target=""
   >
     <div
       className="c1"
