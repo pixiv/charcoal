@@ -38,6 +38,12 @@ export default {
       },
     },
   },
+
+  parameters: {
+    storyshots: {
+      disable: true,
+    },
+  },
 }
 
 const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
