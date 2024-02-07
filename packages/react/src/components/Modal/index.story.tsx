@@ -1,4 +1,3 @@
-import { Story } from '../../_lib/compat'
 import Modal, { ModalDismissButton, ModalProps } from '.'
 import { OverlayProvider } from '@react-aria/overlays'
 import { useOverlayTriggerState } from 'react-stately'
@@ -14,6 +13,7 @@ import { theme } from '../../styled'
 import TextField from '../TextField'
 import DropdownSelector from '../DropdownSelector'
 import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'Modal',
@@ -27,6 +27,7 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      defaultValue: 'M',
     },
     bottomSheet: {
       options: ['full', 'true', 'false'],
@@ -34,26 +35,26 @@ export default {
       control: {
         type: 'inline-radio',
       },
+      defaultValue: false,
     },
   },
-}
-
-const DefaultStory = (args: ModalProps) => {
-  const state = useOverlayTriggerState({})
-  return (
-    // Application must be wrapped in an OverlayProvider so that it can be
-    // hidden from screen readers when a modal opens.
-    <OverlayProvider>
-      <Button onClick={() => state.open()}>Open Modal</Button>
-      <M
-        {...args}
-        isDismissable
-        isOpen={state.isOpen}
-        onClose={() => state.close()}
-      />
-    </OverlayProvider>
-  )
-}
+  render: function Render(args) {
+    const state = useOverlayTriggerState({})
+    return (
+      // Application must be wrapped in an OverlayProvider so that it can be
+      // hidden from screen readers when a modal opens.
+      <OverlayProvider>
+        <Button onClick={() => state.open()}>Open Modal</Button>
+        <M
+          {...args}
+          isDismissable
+          isOpen={state.isOpen}
+          onClose={() => state.close()}
+        />
+      </OverlayProvider>
+    )
+  },
+} as Meta<typeof Modal>
 
 const M = (props: ModalProps) => {
   return (
@@ -114,127 +115,132 @@ const StyledModalText = styled(ModalAlign)`
   ${theme((o) => [o.font.text2, o.typography(14)])}
 `
 
-export const Default: Story<ModalProps> = DefaultStory.bind({})
+export const Default: StoryObj<typeof Modal> = {}
 
-const FullBottomSheetStory = (args: ModalProps) => {
-  const state = useOverlayTriggerState({})
-  return (
-    // Application must be wrapped in an OverlayProvider so that it can be
-    // hidden from screen readers when a modal opens.
-    <OverlayProvider>
-      <Button onClick={() => state.open()}>Open Modal</Button>
+export const FullBottomSheet: StoryObj<typeof Modal> = {
+  args: {
+    bottomSheet: 'full',
+  },
+  render: function Render(args) {
+    const state = useOverlayTriggerState({})
+    return (
+      // Application must be wrapped in an OverlayProvider so that it can be
+      // hidden from screen readers when a modal opens.
+      <OverlayProvider>
+        <Button onClick={() => state.open()}>Open Modal</Button>
 
-      <Modal
-        {...args}
-        isDismissable
-        bottomSheet="full"
-        isOpen={state.isOpen}
-        onClose={() => state.close()}
-      >
-        <ModalHeader />
-        <ModalBody>
-          <ModalVStack>
-            <StyledModalText>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              placeat tenetur, necessitatibus laudantium cumque exercitationem
-              provident. Quaerat iure enim, eveniet dolores earum odio quo
-              possimus fugiat aspernatur, numquam, commodi repellat.
-            </StyledModalText>
-            <ModalAlign>
-              <TextField
-                showLabel
-                label="Name"
-                placeholder="Nagisa"
-              ></TextField>
-            </ModalAlign>
-            <ModalAlign>
-              <TextField
-                showLabel
-                label="Country"
-                placeholder="Tokyo"
-              ></TextField>
-            </ModalAlign>
-          </ModalVStack>
-          <ModalButtons>
-            <Button variant="Primary" onClick={() => state.close()} fullWidth>
-              Apply
-            </Button>
-            <Button onClick={() => state.close()} fullWidth>
-              Cancel
-            </Button>
-          </ModalButtons>
-        </ModalBody>
-      </Modal>
-    </OverlayProvider>
-  )
+        <Modal
+          {...args}
+          isDismissable
+          isOpen={state.isOpen}
+          onClose={() => state.close()}
+        >
+          <ModalHeader />
+          <ModalBody>
+            <ModalVStack>
+              <StyledModalText>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                placeat tenetur, necessitatibus laudantium cumque exercitationem
+                provident. Quaerat iure enim, eveniet dolores earum odio quo
+                possimus fugiat aspernatur, numquam, commodi repellat.
+              </StyledModalText>
+              <ModalAlign>
+                <TextField
+                  showLabel
+                  label="Name"
+                  placeholder="Nagisa"
+                ></TextField>
+              </ModalAlign>
+              <ModalAlign>
+                <TextField
+                  showLabel
+                  label="Country"
+                  placeholder="Tokyo"
+                ></TextField>
+              </ModalAlign>
+            </ModalVStack>
+            <ModalButtons>
+              <Button variant="Primary" onClick={() => state.close()} fullWidth>
+                Apply
+              </Button>
+              <Button onClick={() => state.close()} fullWidth>
+                Cancel
+              </Button>
+            </ModalButtons>
+          </ModalBody>
+        </Modal>
+      </OverlayProvider>
+    )
+  },
 }
 
-export const FullBottomSheet: Story<ModalProps> = FullBottomSheetStory.bind({})
+export const BottomSheet: StoryObj<typeof Modal> = {
+  render: function Render(args) {
+    const state = useOverlayTriggerState({})
+    return (
+      // Application must be wrapped in an OverlayProvider so that it can be
+      // hidden from screen readers when a modal opens.
+      <OverlayProvider>
+        <Button onClick={() => state.open()}>Open Modal</Button>
 
-const BottomSheetStory = (args: ModalProps) => {
-  const state = useOverlayTriggerState({})
-  return (
-    // Application must be wrapped in an OverlayProvider so that it can be
-    // hidden from screen readers when a modal opens.
-    <OverlayProvider>
-      <Button onClick={() => state.open()}>Open Modal</Button>
-
-      <Modal
-        {...args}
-        isOpen={state.isOpen}
-        onClose={() => state.close()}
-        bottomSheet
-        isDismissable
-      >
-        <ModalHeader />
-        <ModalBody>
-          <ModalVStack>
-            <StyledModalText>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              placeat tenetur, necessitatibus laudantium cumque exercitationem
-              provident. Quaerat iure enim, eveniet dolores earum odio quo
-              possimus fugiat aspernatur, numquam, commodi repellat.
-            </StyledModalText>
-          </ModalVStack>
-          <ModalButtons>
-            <Button variant="Danger" onClick={() => state.close()} fullWidth>
-              削除する
-            </Button>
-            <ModalDismissButton>キャンセル</ModalDismissButton>
-          </ModalButtons>
-        </ModalBody>
-      </Modal>
-    </OverlayProvider>
-  )
+        <Modal
+          {...args}
+          isOpen={state.isOpen}
+          onClose={() => state.close()}
+          bottomSheet
+          isDismissable
+        >
+          <ModalHeader />
+          <ModalBody>
+            <ModalVStack>
+              <StyledModalText>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                placeat tenetur, necessitatibus laudantium cumque exercitationem
+                provident. Quaerat iure enim, eveniet dolores earum odio quo
+                possimus fugiat aspernatur, numquam, commodi repellat.
+              </StyledModalText>
+            </ModalVStack>
+            <ModalButtons>
+              <Button variant="Danger" onClick={() => state.close()} fullWidth>
+                削除する
+              </Button>
+              <ModalDismissButton>キャンセル</ModalDismissButton>
+            </ModalButtons>
+          </ModalBody>
+        </Modal>
+      </OverlayProvider>
+    )
+  },
 }
 
-export const BottomSheet: Story<ModalProps> = BottomSheetStory.bind({})
+export const NotDismmissableStory: StoryObj<typeof Modal> = {
+  render: function Render(args) {
+    const state = useOverlayTriggerState({})
+    return (
+      <OverlayProvider>
+        <Button onClick={() => state.open()}>Open Modal</Button>
 
-export const NotDismmissableStory: Story<ModalProps> = (args: ModalProps) => {
-  const state = useOverlayTriggerState({})
-  return (
-    <OverlayProvider>
-      <Button onClick={() => state.open()}>Open Modal</Button>
-
-      <Modal {...args} isOpen={state.isOpen} onClose={() => state.close()}>
-        <ModalHeader />
-        <ModalBody>
-          <ModalVStack>
-            <StyledModalText>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              placeat tenetur, necessitatibus laudantium cumque exercitationem
-              provident. Quaerat iure enim, eveniet dolores earum odio quo
-              possimus fugiat aspernatur, numquam, commodi repellat.
-            </StyledModalText>
-          </ModalVStack>
-          <ModalButtons>
-            <Button variant="Primary" onClick={() => state.close()} fullWidth>
-              OK
-            </Button>
-          </ModalButtons>
-        </ModalBody>
-      </Modal>
-    </OverlayProvider>
-  )
+        <Modal {...args} isOpen={state.isOpen} onClose={() => state.close()}>
+          <ModalHeader />
+          <ModalBody>
+            <ModalVStack>
+              <StyledModalText>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                placeat tenetur, necessitatibus laudantium cumque exercitationem
+                provident. Quaerat iure enim, eveniet dolores earum odio quo
+                possimus fugiat aspernatur, numquam, commodi repellat.
+              </StyledModalText>
+            </ModalVStack>
+            <ModalButtons>
+              <Button variant="Primary" onClick={() => state.close()} fullWidth>
+                OK
+              </Button>
+            </ModalButtons>
+          </ModalBody>
+        </Modal>
+      </OverlayProvider>
+    )
+  },
 }
+
 export { InternalScrollStory as InternalScroll } from './__stories__/InternalScrollStory'
