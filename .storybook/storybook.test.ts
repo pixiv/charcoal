@@ -47,7 +47,7 @@ const options = {
   storyKindRegex: /^.*?DontTest$/,
   storyNameRegex: /UNSET/,
   snapshotsDirName: '__snapshots__',
-  snapshotExtension: '.storyshot',
+  snapshotExtension: 'snap',
 }
 
 describe(options.suite, () => {
@@ -83,11 +83,12 @@ describe(options.suite, () => {
       stories.forEach(({ name, story }) => {
         // Instead of not running the test, you can create logic to skip it, flagging it accordingly in the test results.
         const testFn = story.parameters.storyshots?.skip ? it.skip : it
-        const snapshotPath = path.join(
-          path.dirname(filePath),
-          '__snapshots__',
-          `${path.basename(filePath, '.tsx')}.storyshot`
-        )
+        const dir = path.join(path.dirname(filePath), options.snapshotsDirName)
+        const filename = `${path.basename(filePath, '.tsx')}.${
+          options.snapshotExtension
+        }`
+
+        const snapshotPath = path.join(dir, filename)
 
         testFn(name, async () => {
           const mounted = renderer.create(story()).toJSON()
