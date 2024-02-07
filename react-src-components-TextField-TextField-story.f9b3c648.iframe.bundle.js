@@ -1,0 +1,258 @@
+"use strict";(self.webpackChunkcharcoal_ui=self.webpackChunkcharcoal_ui||[]).push([[2896],{"./node_modules/@react-aria/label/dist/import.mjs":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{U:()=>$2baaea4c71418dea$export$294aa081a6c6f55d});var _react_aria_utils__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/@react-aria/utils/dist/import.mjs");function $d191a55c9702f145$export$8467354a121f1b9f(props){let{id,label,"aria-labelledby":ariaLabelledby,"aria-label":ariaLabel,labelElementType="label"}=props;id=(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_0__.Me)(id);let labelId=(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_0__.Me)(),labelProps={};return label?(ariaLabelledby=ariaLabelledby?`${labelId} ${ariaLabelledby}`:labelId,labelProps={id:labelId,htmlFor:"label"===labelElementType?id:void 0}):ariaLabelledby||ariaLabel||console.warn("If you do not provide a visible label, you must specify an aria-label or aria-labelledby attribute for accessibility"),{labelProps,fieldProps:(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_0__.bE)({id,"aria-label":ariaLabel,"aria-labelledby":ariaLabelledby})}}function $2baaea4c71418dea$export$294aa081a6c6f55d(props){let{description,errorMessage,isInvalid,validationState}=props,{labelProps,fieldProps}=$d191a55c9702f145$export$8467354a121f1b9f(props),descriptionId=(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_0__.mp)([Boolean(description),Boolean(errorMessage),isInvalid,validationState]),errorMessageId=(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_0__.mp)([Boolean(description),Boolean(errorMessage),isInvalid,validationState]);return fieldProps=(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_0__.dG)(fieldProps,{"aria-describedby":[descriptionId,errorMessageId,props["aria-describedby"]].filter(Boolean).join(" ")||void 0}),{labelProps,fieldProps,descriptionProps:{id:descriptionId},errorMessageProps:{id:errorMessageId}}}},"./node_modules/@react-aria/textfield/dist/import.mjs":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{E:()=>$2d73ec29415bd339$export$712718f7aec83d5});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),_react_aria_utils__WEBPACK_IMPORTED_MODULE_5__=__webpack_require__("./node_modules/@react-aria/utils/dist/import.mjs"),_react_stately_utils__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/@react-stately/utils/dist/import.mjs"),_react_aria_label__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__("./node_modules/@react-aria/label/dist/import.mjs"),_react_aria_focus__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/@react-aria/focus/dist/import.mjs"),_react_aria_form__WEBPACK_IMPORTED_MODULE_6__=__webpack_require__("./node_modules/@react-aria/form/dist/import.mjs"),_react_stately_form__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./node_modules/@react-stately/form/dist/import.mjs");function $2d73ec29415bd339$export$712718f7aec83d5(props,ref){let{inputElementType="input",isDisabled=!1,isRequired=!1,isReadOnly=!1,type="text",validationBehavior="aria"}=props,[value,setValue]=(0,_react_stately_utils__WEBPACK_IMPORTED_MODULE_1__.zk)(props.value,props.defaultValue||"",props.onChange),{focusableProps}=(0,_react_aria_focus__WEBPACK_IMPORTED_MODULE_2__.kc)(props,ref),validationState=(0,_react_stately_form__WEBPACK_IMPORTED_MODULE_3__.Q3)({...props,value}),{isInvalid,validationErrors,validationDetails}=validationState.displayValidation,{labelProps,fieldProps,descriptionProps,errorMessageProps}=(0,_react_aria_label__WEBPACK_IMPORTED_MODULE_4__.U)({...props,isInvalid,errorMessage:props.errorMessage||validationErrors}),domProps=(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_5__.zL)(props,{labelable:!0});const inputOnlyProps={type,pattern:props.pattern};return(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_5__.y$)(ref,value,setValue),(0,_react_aria_form__WEBPACK_IMPORTED_MODULE_6__.Q)(props,validationState,ref),(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)((()=>{if(ref.current instanceof(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_5__.kR)(ref.current).HTMLTextAreaElement){let input=ref.current;Object.defineProperty(input,"defaultValue",{get:()=>input.value,set:()=>{},configurable:!0})}}),[ref]),{labelProps,inputProps:(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_5__.dG)(domProps,"input"===inputElementType&&inputOnlyProps,{disabled:isDisabled,readOnly:isReadOnly,required:isRequired&&"native"===validationBehavior,"aria-required":isRequired&&"aria"===validationBehavior||void 0,"aria-invalid":isInvalid||void 0,"aria-errormessage":props["aria-errormessage"],"aria-activedescendant":props["aria-activedescendant"],"aria-autocomplete":props["aria-autocomplete"],"aria-haspopup":props["aria-haspopup"],value,onChange:e=>setValue(e.target.value),autoComplete:props.autoComplete,autoCapitalize:props.autoCapitalize,maxLength:props.maxLength,minLength:props.minLength,name:props.name,placeholder:props.placeholder,inputMode:props.inputMode,onCopy:props.onCopy,onCut:props.onCut,onPaste:props.onPaste,onCompositionEnd:props.onCompositionEnd,onCompositionStart:props.onCompositionStart,onCompositionUpdate:props.onCompositionUpdate,onSelect:props.onSelect,onBeforeInput:props.onBeforeInput,onInput:props.onInput,...focusableProps,...fieldProps}),descriptionProps,errorMessageProps,isInvalid,validationErrors,validationDetails}}},"./node_modules/@react-aria/visually-hidden/dist/import.mjs":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{S:()=>$5c3e21d68f1c4674$export$a966af930f325cab,T:()=>$5c3e21d68f1c4674$export$439d29a4e110a164});var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/@react-aria/utils/dist/import.mjs"),react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),_react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/@react-aria/interactions/dist/import.mjs");const $5c3e21d68f1c4674$var$styles={border:0,clip:"rect(0 0 0 0)",clipPath:"inset(50%)",height:"1px",margin:"-1px",overflow:"hidden",padding:0,position:"absolute",width:"1px",whiteSpace:"nowrap"};function $5c3e21d68f1c4674$export$a966af930f325cab(props={}){let{style,isFocusable}=props,[isFocused,setFocused]=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(!1),{focusWithinProps}=(0,_react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__.L_)({isDisabled:!isFocusable,onFocusWithinChange:val=>setFocused(val)});return{visuallyHiddenProps:{...focusWithinProps,style:(0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)((()=>isFocused?style:style?{...$5c3e21d68f1c4674$var$styles,...style}:$5c3e21d68f1c4674$var$styles),[isFocused])}}}function $5c3e21d68f1c4674$export$439d29a4e110a164(props){let{children,elementType:Element="div",isFocusable,style,...otherProps}=props,{visuallyHiddenProps}=$5c3e21d68f1c4674$export$a966af930f325cab(props);return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Element,(0,_react_aria_utils__WEBPACK_IMPORTED_MODULE_2__.dG)(otherProps,visuallyHiddenProps),children)}},"./packages/react/src/components/TextField/TextField.story.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,{Default:()=>Default,HasAffix:()=>HasAffix,HasCount:()=>HasCount,HasLabel:()=>HasLabel,PrefixIcon:()=>PrefixIcon,__namedExportsOrder:()=>__namedExportsOrder,default:()=>__WEBPACK_DEFAULT_EXPORT__});var styled_components__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_Clickable__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./packages/react/src/components/Clickable/index.tsx"),___WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./packages/react/src/components/TextField/index.tsx"),_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_5__=__webpack_require__("./packages/utils/dist/index.esm.js"),_IconButton__WEBPACK_IMPORTED_MODULE_6__=__webpack_require__("./packages/react/src/components/IconButton/index.tsx"),react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js");const __WEBPACK_DEFAULT_EXPORT__={title:"TextField",component:___WEBPACK_IMPORTED_MODULE_2__.ZP,argTypes:{},args:{showLabel:!1,assistiveText:"",disabled:!1,required:!1,invalid:!1,label:"Label",requiredText:"*必須",subLabel:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Clickable__WEBPACK_IMPORTED_MODULE_3__.Z,{children:"Text Link"}),placeholder:"TextField"},render:function Render(args){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Container,{children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(___WEBPACK_IMPORTED_MODULE_2__.ZP,{...args})})}},Container=styled_components__WEBPACK_IMPORTED_MODULE_4__.ZP.div`
+  display: grid;
+  gap: ${({theme})=>(0,_charcoal_ui_utils__WEBPACK_IMPORTED_MODULE_5__.px)(theme.spacing[24])};
+`,Default={},HasLabel={args:{showLabel:!0,assistiveText:"Assistive text",required:!0}},HasCount={args:{showCount:!0,maxLength:100}},HasAffix={args:{showCount:!0,maxLength:200,prefix:"/home/john/",suffix:".png"}},PrefixIconWrap=styled_components__WEBPACK_IMPORTED_MODULE_4__.ZP.div`
+  display: flex;
+  align-items: center;
+  color: ${({theme})=>theme.color.text3};
+`,PrefixIcon={render:function Render(args){const[value,setValue]=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),handleChange=(0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((value=>{setValue(value)}),[]),handleClear=(0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((()=>{setValue("")}),[]);return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(___WEBPACK_IMPORTED_MODULE_2__.ZP,{...args,label:"Label",placeholder:"作品を検索",value,onChange:handleChange,prefix:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(PrefixIconWrap,{children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:"16/Search"})}),suffix:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_IconButton__WEBPACK_IMPORTED_MODULE_6__.Z,{variant:"Overlay",icon:"16/Remove",size:"XS",onClick:handleClear})})}};Default.parameters={...Default.parameters,docs:{...Default.parameters?.docs,source:{originalSource:"{}",...Default.parameters?.docs?.source}}},HasLabel.parameters={...HasLabel.parameters,docs:{...HasLabel.parameters?.docs,source:{originalSource:"{\n  args: {\n    showLabel: true,\n    assistiveText: 'Assistive text',\n    required: true\n  }\n}",...HasLabel.parameters?.docs?.source}}},HasCount.parameters={...HasCount.parameters,docs:{...HasCount.parameters?.docs,source:{originalSource:"{\n  args: {\n    showCount: true,\n    maxLength: 100\n  }\n}",...HasCount.parameters?.docs?.source}}},HasAffix.parameters={...HasAffix.parameters,docs:{...HasAffix.parameters?.docs,source:{originalSource:"{\n  args: {\n    showCount: true,\n    maxLength: 200,\n    prefix: '/home/john/',\n    suffix: '.png'\n  }\n}",...HasAffix.parameters?.docs?.source}}},PrefixIcon.parameters={...PrefixIcon.parameters,docs:{...PrefixIcon.parameters?.docs,source:{originalSource:'{\n  render: function Render(args) {\n    const [value, setValue] = useState(\'\');\n    const handleChange = useCallback((value: string) => {\n      setValue(value);\n    }, []);\n    const handleClear = useCallback(() => {\n      setValue(\'\');\n    }, []);\n    return <TextField {...args} label="Label" placeholder="作品を検索" value={value} onChange={handleChange} prefix={<PrefixIconWrap>\n            <pixiv-icon name="16/Search" />\n          </PrefixIconWrap>} suffix={<IconButton variant="Overlay" icon={\'16/Remove\'} size="XS" onClick={handleClear} />} />;\n  }\n}',...PrefixIcon.parameters?.docs?.source}}};const __namedExportsOrder=["Default","HasLabel","HasCount","HasAffix","PrefixIcon"]},"./packages/react/src/_lib/index.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{function unreachable(value){throw new Error(0===arguments.length?"unreachable":`unreachable (${JSON.stringify(value)})`)}function mergeRefs(...refs){return value=>{for(const ref of refs)"function"==typeof ref?ref(value):null!==ref&&(ref.current=value)}}function countCodePointsInString(string){return Array.from(string).length}__webpack_require__.d(__webpack_exports__,{$j:()=>countCodePointsInString,lq:()=>mergeRefs,t1:()=>unreachable})},"./packages/react/src/components/Clickable/index.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{Z:()=>components_Clickable});var react=__webpack_require__("./node_modules/react/index.js"),styled_components_browser_esm=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),jsx_runtime=__webpack_require__("./node_modules/react/jsx-runtime.js");const DefaultLink=react.forwardRef((function DefaultLink({to,children,...rest},ref){return(0,jsx_runtime.jsx)("a",{href:to,ref,...rest,children})})),DefaultValue={Link:DefaultLink},ComponentAbstractionContext=react.createContext(DefaultValue);function ComponentAbstraction({children,components}){return(0,jsx_runtime.jsx)(ComponentAbstractionContext.Provider,{value:{...DefaultValue,...components},children})}ComponentAbstraction.displayName="ComponentAbstraction";try{ComponentAbstraction.displayName="ComponentAbstraction",ComponentAbstraction.__docgenInfo={description:"",displayName:"ComponentAbstraction",props:{components:{defaultValue:null,description:"",name:"components",required:!0,type:{name:"Partial<Components>"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/core/ComponentAbstraction.tsx#ComponentAbstraction"]={docgenInfo:ComponentAbstraction.__docgenInfo,name:"ComponentAbstraction",path:"packages/react/src/core/ComponentAbstraction.tsx#ComponentAbstraction"})}catch(__react_docgen_typescript_loader_error){}try{DefaultLink.displayName="DefaultLink",DefaultLink.__docgenInfo={description:"",displayName:"DefaultLink",props:{to:{defaultValue:null,description:"リンクのURL",name:"to",required:!0,type:{name:"string"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/core/ComponentAbstraction.tsx#DefaultLink"]={docgenInfo:DefaultLink.__docgenInfo,name:"DefaultLink",path:"packages/react/src/core/ComponentAbstraction.tsx#DefaultLink"})}catch(__react_docgen_typescript_loader_error){}var index_esm=__webpack_require__("./packages/utils/dist/index.esm.js");const Clickable=react.forwardRef((function Clickable(props,ref){const{Link}=function useComponentAbstraction(){return(0,react.useContext)(ComponentAbstractionContext)}(),isLink="to"in props,as=isLink?Link:"button",ariaDisabled=!(!isLink||!0!==props.disabled)||void 0;let rest=props;if(isLink){const{disabled,..._rest}=props;rest=_rest}return(0,jsx_runtime.jsx)(StyledClickableDiv,{...rest,ref,as,"aria-disabled":ariaDisabled})})),components_Clickable=Clickable,StyledClickableDiv=styled_components_browser_esm.ZP.div`
+  cursor: pointer;
+
+  ${index_esm.t0} {
+    cursor: default;
+  }
+
+  /* Reset button appearance */
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Change the font styles in all browsers. */
+  font: inherit;
+
+  /* Remove the margin in Firefox and Safari. */
+  margin: 0;
+
+  /* Show the overflow in Edge. */
+  overflow: visible;
+
+  /* Remove the inheritance of text transform in Firefox. */
+  text-transform: none;
+
+  /* Remove the inner border and padding in Firefox. */
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+`;try{Clickable.displayName="Clickable",Clickable.__docgenInfo={description:"",displayName:"Clickable",props:{disabled:{defaultValue:null,description:"クリックの無効化",name:"disabled",required:!1,type:{name:"boolean"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}},to:{defaultValue:null,description:"リンクのURL。指定するとbuttonタグではなくaタグとして描画される",name:"to",required:!0,type:{name:"string"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/Clickable/index.tsx#Clickable"]={docgenInfo:Clickable.__docgenInfo,name:"Clickable",path:"packages/react/src/components/Clickable/index.tsx#Clickable"})}catch(__react_docgen_typescript_loader_error){}},"./packages/react/src/components/FieldLabel/index.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{Z:()=>__WEBPACK_DEFAULT_EXPORT__});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),styled_components__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js");const FieldLabel=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function FieldLabel({style,className,label,required=!1,requiredText,subLabel,...labelProps},ref){return(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(FieldLabelWrapper,{style,className,children:[(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Label,{ref,...labelProps,children:label}),required&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(RequiredText,{children:requiredText}),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SubLabelClickable,{children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span",{children:subLabel})})]})})),__WEBPACK_DEFAULT_EXPORT__=FieldLabel,Label=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.label`
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
+`,RequiredText=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.span`
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
+`,SubLabelClickable=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  transition: 0.2s color, 0.2s box-shadow;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-top: -4px;
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '';
+    margin-bottom: -4px;
+  }
+
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      color: var(--charcoal-text3-hover);
+    }
+    &:active {
+      color: var(--charcoal-text3-press);
+    }
+    &:active,
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+`,FieldLabelWrapper=styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP.div`
+  display: inline-flex;
+  align-items: center;
+
+  > ${RequiredText} {
+    margin-left: 4px;
+  }
+
+  > ${SubLabelClickable} {
+    margin-left: auto;
+  }
+`;try{FieldLabel.displayName="FieldLabel",FieldLabel.__docgenInfo={description:"",displayName:"FieldLabel",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"string"}},subLabel:{defaultValue:null,description:"",name:"subLabel",required:!1,type:{name:"ReactNode"}},required:{defaultValue:{value:"false"},description:"",name:"required",required:!1,type:{name:"boolean"}},requiredText:{defaultValue:null,description:"",name:"requiredText",required:!1,type:{name:"string"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/FieldLabel/index.tsx#FieldLabel"]={docgenInfo:FieldLabel.__docgenInfo,name:"FieldLabel",path:"packages/react/src/components/FieldLabel/index.tsx#FieldLabel"})}catch(__react_docgen_typescript_loader_error){}},"./packages/react/src/components/IconButton/index.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{Z:()=>__WEBPACK_DEFAULT_EXPORT__});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),styled_components__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_Clickable__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./packages/react/src/components/Clickable/index.tsx"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js");const IconButton=(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,$size:size,$variant:variant,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})})),__WEBPACK_DEFAULT_EXPORT__=IconButton,StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(_Clickable__WEBPACK_IMPORTED_MODULE_3__.Z).attrs((function styledProps({$size,$variant}){return{...variantToProps($variant),...sizeToProps($size)}}))`
+  user-select: none;
+
+  width: ${p=>p.$width}px;
+  height: ${p=>p.$height}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(${({$font})=>`--charcoal-${$font}`});
+  background-color: var(${({$background})=>`--charcoal-${$background}`});
+  border-radius: 999999px;
+  transition: 0.2s background-color, 0.2s box-shadow;
+
+  &:not(:disabled):not([aria-disabled]),
+  &[aria-disabled='false'] {
+    &:hover {
+      background-color: var(
+        ${({$background})=>`--charcoal-${$background}-hover`}
+      );
+    }
+    &:active {
+      background-color: var(
+        ${({$background})=>`--charcoal-${$background}-press`}
+      );
+    }
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+  }
+`;function variantToProps(variant){switch(variant){case"Default":return{$font:"text3",$background:"transparent"};case"Overlay":return{$font:"text5",$background:"surface4"}}}function sizeToProps(size){switch(size){case"XS":return{$width:20,$height:20};case"S":return{$width:32,$height:32};case"M":return{$width:40,$height:40}}}try{IconButton.displayName="IconButton",IconButton.__docgenInfo={description:"",displayName:"IconButton",props:{variant:{defaultValue:{value:"Default"},description:"",name:"variant",required:!1,type:{name:"enum",value:[{value:'"Default"'},{value:'"Overlay"'}]}},size:{defaultValue:{value:"M"},description:"",name:"size",required:!1,type:{name:"enum",value:[{value:'"S"'},{value:'"M"'},{value:'"XS"'}]}},icon:{defaultValue:null,description:"",name:"icon",required:!0,type:{name:"enum",value:[{value:'"16/Add"'},{value:'"16/Archive"'},{value:'"16/ArrowDown"'},{value:'"16/Artwork"'},{value:'"16/Back"'},{value:'"16/Book"'},{value:'"16/BookmarkOff"'},{value:'"16/BookmarkOn"'},{value:'"16/Check"'},{value:'"16/Comment"'},{value:'"16/Dot"'},{value:'"16/Error"'},{value:'"16/Filter"'},{value:'"16/ImageResponse"'},{value:'"16/Info"'},{value:'"16/Like"'},{value:'"16/Menu"'},{value:'"16/More"'},{value:'"16/Nextworks"'},{value:'"16/Pencil"'},{value:'"16/Question"'},{value:'"16/Ranking"'},{value:'"16/Remove"'},{value:'"16/Search"'},{value:'"16/Smile"'},{value:'"16/Speaker"'},{value:'"16/View"'},{value:'"16/Warning"'},{value:'"24/Add"'},{value:'"24/AddImage"'},{value:'"24/AddModel"'},{value:'"24/AddPeople"'},{value:'"24/AddRubi"'},{value:'"24/AddText"'},{value:'"24/Alart"'},{value:'"24/Announcement"'},{value:'"24/Ar"'},{value:'"24/Archive"'},{value:'"24/ArrowDown"'},{value:'"24/ArrowUp"'},{value:'"24/Binet"'},{value:'"24/Body"'},{value:'"24/BodyEdit"'},{value:'"24/Book"'},{value:'"24/BringBackward"'},{value:'"24/BringForward"'},{value:'"24/Calendar"'},{value:'"24/Camera"'},{value:'"24/CameraVideo"'},{value:'"24/ChangeCharactor"'},{value:'"24/ChatBot"'},{value:'"24/Check"'},{value:'"24/ChromaticAberration"'},{value:'"24/Click"'},{value:'"24/Close"'},{value:'"24/Codes"'},{value:'"24/Collapse"'},{value:'"24/CommentFill"'},{value:'"24/CommentOutline"'},{value:'"24/Contest"'},{value:'"24/Contrast"'},{value:'"24/Description"'},{value:'"24/DeviceRotation"'},{value:'"24/Discovery"'},{value:'"24/Dot"'},{value:'"24/DotAlt"'},{value:'"24/Down"'},{value:'"24/DownloadAlt"'},{value:'"24/Duplicate"'},{value:'"24/Dust"'},{value:'"24/Emoji"'},{value:'"24/Error"'},{value:'"24/ErrorOctagon"'},{value:'"24/Events"'},{value:'"24/Expand"'},{value:'"24/FaceEdit"'},{value:'"24/Fashion"'},{value:'"24/Feed"'},{value:'"24/File"'},{value:'"24/Filter"'},{value:'"24/Flare"'},{value:'"24/FormatAlignCenter"'},{value:'"24/FormatAlignLeft"'},{value:'"24/FormatAlignRight"'},{value:'"24/FormatColorFill"'},{value:'"24/FormatColorFillNoColor"'},{value:'"24/FormatFontFamily"'},{value:'"24/FormatFontSize"'},{value:'"24/FormatLetterSpacing"'},{value:'"24/FormatLineSpacing"'},{value:'"24/Fov"'},{value:'"24/FrameEffect"'},{value:'"24/FrameSize"'},{value:'"24/Gift"'},{value:'"24/Glow"'},{value:'"24/Groups"'},{value:'"24/HairEdit"'},{value:'"24/Hashtag"'},{value:'"24/Hide"'},{value:'"24/Home"'},{value:'"24/Hue"'},{value:'"24/Idea"'},{value:'"24/Image"'},{value:'"24/ImageAlt"'},{value:'"24/ImageHidden"'},{value:'"24/ImageReplace"'},{value:'"24/Images"'},{value:'"24/ImgContain"'},{value:'"24/ImgCover"'},{value:'"24/Index"'},{value:'"24/Info"'},{value:'"24/Invalid"'},{value:'"24/Invoice"'},{value:'"24/ItemRemove"'},{value:'"24/LatestWorks"'},{value:'"24/LikeOff"'},{value:'"24/LikeOn"'},{value:'"24/Link"'},{value:'"24/List"'},{value:'"24/LockLock"'},{value:'"24/LockUnlock"'},{value:'"24/Logout"'},{value:'"24/Manga"'},{value:'"24/Menu"'},{value:'"24/Message"'},{value:'"24/Microphone"'},{value:'"24/MobilePhone"'},{value:'"24/Move1"'},{value:'"24/Next"'},{value:'"24/NoImage"'},{value:'"24/Notification"'},{value:'"24/NotificationOff"'},{value:'"24/Novels"'},{value:'"24/OpenInNew"'},{value:'"24/Options"'},{value:'"24/OptionsAlt"'},{value:'"24/Overlay"'},{value:'"24/Palette"'},{value:'"24/Pause"'},{value:'"24/PauseAlt"'},{value:'"24/Pencil"'},{value:'"24/PencilDraw"'},{value:'"24/PencilLive"'},{value:'"24/PencilText"'},{value:'"24/Person"'},{value:'"24/Play"'},{value:'"24/Pose"'},{value:'"24/Prev"'},{value:'"24/Projects"'},{value:'"24/PullDown"'},{value:'"24/PullUp"'},{value:'"24/Question"'},{value:'"24/QuestionOutline"'},{value:'"24/Ranking"'},{value:'"24/ReadHorizontalLeft"'},{value:'"24/ReadHorizontalRight"'},{value:'"24/ReadVertical"'},{value:'"24/Reload"'},{value:'"24/ReloadLoop"'},{value:'"24/Reorder"'},{value:'"24/Roll"'},{value:'"24/Rotate90DegreesC"'},{value:'"24/Rotate90DegreesCc"'},{value:'"24/RotateRight"'},{value:'"24/Saturation"'},{value:'"24/Save"'},{value:'"24/Search"'},{value:'"24/Send"'},{value:'"24/Services"'},{value:'"24/Set"'},{value:'"24/Settings"'},{value:'"24/ShareAndroid"'},{value:'"24/ShareIos"'},{value:'"24/Shopping"'},{value:'"24/Show"'},{value:'"24/ShowOutline"'},{value:'"24/Shutter"'},{value:'"24/Star"'},{value:'"24/Subtract"'},{value:'"24/Sun"'},{value:'"24/Temperature"'},{value:'"24/Text"'},{value:'"24/Trash"'},{value:'"24/TrashAlt"'},{value:'"24/Up"'},{value:'"24/Upload"'},{value:'"24/UploadAlt"'},{value:'"24/Usagi"'},{value:'"24/UsagiAlt"'},{value:'"24/Users"'},{value:'"24/Video"'},{value:'"24/ViewGrid2Columns"'},{value:'"24/ViewGrid3Columns"'},{value:'"24/ViewList"'},{value:'"24/Warning"'},{value:'"32/BookmarkOff"'},{value:'"32/BookmarkOn"'},{value:'"32/Camera"'},{value:'"32/Close"'},{value:'"32/Collapse"'},{value:'"32/CommentOff"'},{value:'"32/CommentOn"'},{value:'"32/Delete"'},{value:'"32/Dot"'},{value:'"32/Edit"'},{value:'"32/Expand"'},{value:'"32/Gift"'},{value:'"32/Home"'},{value:'"32/HorizontalWriting"'},{value:'"32/Index"'},{value:'"32/LikeOff"'},{value:'"32/LikeOn"'},{value:'"32/LikeOnPrivate"'},{value:'"32/Message"'},{value:'"32/Next"'},{value:'"32/Notification"'},{value:'"32/NotificationOff"'},{value:'"32/NovelViewerSettings"'},{value:'"32/Pan"'},{value:'"32/Prev"'},{value:'"32/PullDown"'},{value:'"32/PullUp"'},{value:'"32/ReadHorizontalLeft"'},{value:'"32/ReadHorizontalRight"'},{value:'"32/ReadVertical"'},{value:'"32/RollHorizontal"'},{value:'"32/RollVertical"'},{value:'"32/SansSerif"'},{value:'"32/Serif"'},{value:'"32/ShareAndroid"'},{value:'"32/ShareIos"'},{value:'"32/Shopping"'},{value:'"32/Upload"'},{value:'"32/User"'},{value:'"32/VerticalWriting"'},{value:'"32/ZoomIn"'},{value:'"Inline/Add"'},{value:'"Inline/BookmarkOff"'},{value:'"Inline/BookmarkOn"'},{value:'"Inline/Breadcrumbs"'},{value:'"Inline/Check"'},{value:'"Inline/Comment"'},{value:'"Inline/ContextMenu"'},{value:'"Inline/External"'},{value:'"Inline/Filter"'},{value:'"Inline/Folder"'},{value:'"Inline/ImageResponse"'},{value:'"Inline/Images"'},{value:'"Inline/Like"'},{value:'"Inline/LikeOff"'},{value:'"Inline/List"'},{value:'"Inline/Location"'},{value:'"Inline/Lock"'},{value:'"Inline/More"'},{value:'"Inline/Nextworks"'},{value:'"Inline/OpenInNew"'},{value:'"Inline/Pencil"'},{value:'"Inline/Remove"'},{value:'"Inline/Smile"'},{value:'"Inline/SmileOn"'},{value:'"Inline/Users"'},{value:'"Inline/View"'},{value:'"Inline/ViewOutline"'}]}},disabled:{defaultValue:null,description:"クリックの無効化",name:"disabled",required:!1,type:{name:"boolean"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}},to:{defaultValue:null,description:"リンクのURL。指定するとbuttonタグではなくaタグとして描画される",name:"to",required:!0,type:{name:"string"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/IconButton/index.tsx#IconButton"]={docgenInfo:IconButton.__docgenInfo,name:"IconButton",path:"packages/react/src/components/IconButton/index.tsx#IconButton"})}catch(__react_docgen_typescript_loader_error){}},"./packages/react/src/components/TextField/index.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{TT:()=>AssistiveText,ZP:()=>__WEBPACK_DEFAULT_EXPORT__,pU:()=>TextFieldLabel});var _react_aria_textfield__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__("./node_modules/@react-aria/textfield/dist/import.mjs"),_react_aria_visually_hidden__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__("./node_modules/@react-aria/visually-hidden/dist/import.mjs"),react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js"),styled_components__WEBPACK_IMPORTED_MODULE_6__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),_FieldLabel__WEBPACK_IMPORTED_MODULE_7__=__webpack_require__("./packages/react/src/components/FieldLabel/index.tsx"),_lib__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__("./packages/react/src/_lib/index.ts"),_useFocusWithClick__WEBPACK_IMPORTED_MODULE_5__=__webpack_require__("./packages/react/src/components/TextField/useFocusWithClick.tsx"),react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__("./node_modules/react/jsx-runtime.js");const TextField=react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((function SingleLineTextFieldInner({onChange,...props},forwardRef){const{className,showLabel=!1,showCount=!1,label,requiredText,subLabel,disabled=!1,required,invalid=!1,assistiveText,maxLength,prefix=null,suffix=null}=props,{visuallyHiddenProps}=(0,_react_aria_visually_hidden__WEBPACK_IMPORTED_MODULE_2__.S)(),ariaRef=(0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null),[count,setCount]=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((0,_lib__WEBPACK_IMPORTED_MODULE_3__.$j)(props.value??"")),nonControlled=void 0===props.value,handleChange=(0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((value=>{const count=(0,_lib__WEBPACK_IMPORTED_MODULE_3__.$j)(value);void 0!==maxLength&&count>maxLength||(nonControlled&&setCount(count),onChange?.(value))}),[maxLength,nonControlled,onChange]);(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)((()=>{setCount((0,_lib__WEBPACK_IMPORTED_MODULE_3__.$j)(props.value??""))}),[props.value]);const{inputProps,labelProps,descriptionProps,errorMessageProps}=(0,_react_aria_textfield__WEBPACK_IMPORTED_MODULE_4__.E)({inputElementType:"input",isDisabled:disabled,isRequired:required,validationState:invalid?"invalid":"valid",description:!invalid&&assistiveText,errorMessage:invalid&&assistiveText,onChange:handleChange,...props},ariaRef),containerRef=(0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);return(0,_useFocusWithClick__WEBPACK_IMPORTED_MODULE_5__.Q)(containerRef,ariaRef),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(TextFieldRoot,{className,isDisabled:disabled,children:[(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(TextFieldLabel,{label,requiredText,required,subLabel,...labelProps,...showLabel?{}:visuallyHiddenProps}),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(StyledInputContainer,{ref:containerRef,invalid,"aria-disabled":!0===disabled||void 0,hasPrefix:null!=prefix,hasSuffix:null!=suffix||showCount,children:[prefix&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(PrefixContainer,{children:prefix}),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledInput,{ref:(0,_lib__WEBPACK_IMPORTED_MODULE_3__.lq)(forwardRef,ariaRef),invalid,...inputProps}),(suffix||showCount)&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(SuffixContainer,{children:[suffix,showCount&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(SingleLineCounter,{children:void 0!==maxLength?`${count}/${maxLength}`:count})]})]}),null!=assistiveText&&0!==assistiveText.length&&(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(AssistiveText,{invalid,...invalid?errorMessageProps:descriptionProps,children:assistiveText})]})})),__WEBPACK_DEFAULT_EXPORT__=TextField,TextFieldRoot=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.div`
+  display: flex;
+  flex-direction: column;
+
+  ${p=>p.isDisabled&&{opacity:p.theme.elementEffect.disabled.opacity}}
+`,TextFieldLabel=(0,styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP)(_FieldLabel__WEBPACK_IMPORTED_MODULE_7__.Z)`
+  margin-bottom: 8px;
+`,StyledInputContainer=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.div`
+  display: grid;
+  grid-template-columns: ${p=>[p.hasPrefix&&"auto","1fr",p.hasSuffix&&"auto"].filter(Boolean).join(" ")};
+  height: 40px;
+  transition: 0.2s background-color, 0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+
+  :not(:disabled):not([aria-disabled]):hover,
+  [aria-disabled='false']:hover {
+    background-color: var(--charcoal-surface3-hover);
+  }
+
+  :not(:disabled):not([aria-disabled]):active,
+  [aria-disabled='false']:active {
+    outline: none;
+    box-shadow: 0 0 0 4px
+      ${p=>p.invalid?"rgba(255,43,0,0.32)":"rgba(0, 150, 250, 0.32);"};
+  }
+
+  :focus-within {
+    outline: none;
+    box-shadow: 0 0 0 4px
+      ${p=>p.invalid?"rgba(255,43,0,0.32)":"rgba(0, 150, 250, 0.32);"};
+  }
+
+  ${p=>p.invalid&&styled_components__WEBPACK_IMPORTED_MODULE_6__.iv`
+      box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+    `}
+`,PrefixContainer=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.div`
+  display: flex;
+  align-items: center;
+`,SuffixContainer=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.span`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`,StyledInput=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.input`
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+
+  /* Prevent zooming for iOS Safari */
+  transform-origin: top left;
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+
+  /* Display box-shadow for iOS Safari */
+  appearance: none;
+  background: transparent;
+
+  color: var(--charcoal-text2);
+  &::placeholder {
+    color: var(--charcoal-text3);
+  }
+`,SingleLineCounter=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.span`
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--charcoal-text3);
+`,AssistiveText=styled_components__WEBPACK_IMPORTED_MODULE_6__.ZP.p`
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  color: ${p=>`var(--charcoal-${p.invalid?"assertive":"text2"})`};
+`;try{TextField.displayName="TextField",TextField.__docgenInfo={description:"",displayName:"TextField",props:{prefix:{defaultValue:null,description:"",name:"prefix",required:!1,type:{name:"ReactNode"}},suffix:{defaultValue:null,description:"",name:"suffix",required:!1,type:{name:"ReactNode"}},defaultValue:{defaultValue:null,description:"",name:"defaultValue",required:!1,type:{name:"string"}},value:{defaultValue:null,description:"",name:"value",required:!1,type:{name:"string"}},onChange:{defaultValue:null,description:"",name:"onChange",required:!1,type:{name:"((value: string) => void)"}},onKeyDown:{defaultValue:null,description:"",name:"onKeyDown",required:!1,type:{name:"((event: KeyboardEvent<Element>) => void)"}},onFocus:{defaultValue:null,description:"",name:"onFocus",required:!1,type:{name:"((event: FocusEvent<Element, Element>) => void)"}},onBlur:{defaultValue:null,description:"",name:"onBlur",required:!1,type:{name:"((event: FocusEvent<Element, Element>) => void)"}},showCount:{defaultValue:null,description:"",name:"showCount",required:!1,type:{name:"boolean"}},showLabel:{defaultValue:null,description:"",name:"showLabel",required:!1,type:{name:"boolean"}},assistiveText:{defaultValue:null,description:"",name:"assistiveText",required:!1,type:{name:"string"}},invalid:{defaultValue:null,description:"",name:"invalid",required:!1,type:{name:"boolean"}},label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"string"}},requiredText:{defaultValue:null,description:"",name:"requiredText",required:!1,type:{name:"string"}},subLabel:{defaultValue:null,description:"",name:"subLabel",required:!1,type:{name:"ReactNode"}},onCopy:{defaultValue:null,description:"",name:"onCopy",required:!1,type:{name:"ClipboardEventHandler<Element>"}},onPaste:{defaultValue:null,description:"",name:"onPaste",required:!1,type:{name:"ClipboardEventHandler<Element>"}},onCut:{defaultValue:null,description:"",name:"onCut",required:!1,type:{name:"ClipboardEventHandler<Element>"}},onCompositionStart:{defaultValue:null,description:"",name:"onCompositionStart",required:!1,type:{name:"CompositionEventHandler<Element>"}},onCompositionEnd:{defaultValue:null,description:"",name:"onCompositionEnd",required:!1,type:{name:"CompositionEventHandler<Element>"}},onCompositionUpdate:{defaultValue:null,description:"",name:"onCompositionUpdate",required:!1,type:{name:"CompositionEventHandler<Element>"}},onSelect:{defaultValue:null,description:"",name:"onSelect",required:!1,type:{name:"ReactEventHandler<Element>"}},onBeforeInput:{defaultValue:null,description:"",name:"onBeforeInput",required:!1,type:{name:"FormEventHandler<Element>"}},onInput:{defaultValue:null,description:"",name:"onInput",required:!1,type:{name:"FormEventHandler<Element>"}},autoCapitalize:{defaultValue:null,description:"",name:"autoCapitalize",required:!1,type:{name:"enum",value:[{value:'"none"'},{value:'"on"'},{value:'"off"'},{value:'"sentences"'},{value:'"words"'},{value:'"characters"'}]}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/TextField/index.tsx#TextField"]={docgenInfo:TextField.__docgenInfo,name:"TextField",path:"packages/react/src/components/TextField/index.tsx#TextField"})}catch(__react_docgen_typescript_loader_error){}try{TextFieldLabel.displayName="TextFieldLabel",TextFieldLabel.__docgenInfo={description:"",displayName:"TextFieldLabel",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}},label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"string"}},required:{defaultValue:null,description:"",name:"required",required:!1,type:{name:"boolean"}},requiredText:{defaultValue:null,description:"",name:"requiredText",required:!1,type:{name:"string"}},subLabel:{defaultValue:null,description:"",name:"subLabel",required:!1,type:{name:"ReactNode"}},theme:{defaultValue:null,description:"",name:"theme",required:!1,type:{name:"DefaultTheme"}},as:{defaultValue:null,description:"",name:"as",required:!1,type:{name:"undefined"}},forwardedAs:{defaultValue:null,description:"",name:"forwardedAs",required:!1,type:{name:"undefined"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/TextField/index.tsx#TextFieldLabel"]={docgenInfo:TextFieldLabel.__docgenInfo,name:"TextFieldLabel",path:"packages/react/src/components/TextField/index.tsx#TextFieldLabel"})}catch(__react_docgen_typescript_loader_error){}try{AssistiveText.displayName="AssistiveText",AssistiveText.__docgenInfo={description:"",displayName:"AssistiveText",props:{css:{defaultValue:null,description:"",name:"css",required:!1,type:{name:"CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>"}},ref:{defaultValue:null,description:"",name:"ref",required:!1,type:{name:"((instance: HTMLParagraphElement | null) => void) | RefObject<HTMLParagraphElement> | null"}},invalid:{defaultValue:null,description:"",name:"invalid",required:!0,type:{name:"boolean"}},theme:{defaultValue:null,description:"",name:"theme",required:!1,type:{name:"DefaultTheme"}},as:{defaultValue:null,description:"",name:"as",required:!1,type:{name:"undefined"}},forwardedAs:{defaultValue:null,description:"",name:"forwardedAs",required:!1,type:{name:"undefined"}}}},"undefined"!=typeof STORYBOOK_REACT_CLASSES&&(STORYBOOK_REACT_CLASSES["packages/react/src/components/TextField/index.tsx#AssistiveText"]={docgenInfo:AssistiveText.__docgenInfo,name:"AssistiveText",path:"packages/react/src/components/TextField/index.tsx#AssistiveText"})}catch(__react_docgen_typescript_loader_error){}},"./packages/react/src/components/TextField/useFocusWithClick.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{Q:()=>useFocusWithClick});var react__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__("./node_modules/react/index.js");function useFocusWithClick(containerRef,inputRef){(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)((()=>{const el=containerRef.current;if(el){const handleDown=e=>{e.target!==inputRef.current&&inputRef.current?.focus()};return el.addEventListener("click",handleDown),()=>{el.removeEventListener("click",handleDown)}}}))}}}]);
+//# sourceMappingURL=react-src-components-TextField-TextField-story.f9b3c648.iframe.bundle.js.map
