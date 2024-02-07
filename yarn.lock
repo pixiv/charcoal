@@ -6801,78 +6801,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-storyshots@npm:7.4.1":
-  version: 7.4.1
-  resolution: "@storybook/addon-storyshots@npm:7.4.1"
-  dependencies:
-    "@jest/transform": ^29.3.1
-    "@storybook/babel-plugin-require-context-hook": 1.0.1
-    "@storybook/client-api": 7.4.1
-    "@storybook/core-common": 7.4.1
-    "@storybook/core-webpack": 7.4.1
-    "@storybook/global": ^5.0.0
-    "@storybook/preview-api": 7.4.1
-    "@storybook/types": 7.4.1
-    "@types/jest-specific-snapshot": ^0.5.6
-    glob: ^10.0.0
-    jest-specific-snapshot: ^8.0.0
-    preact-render-to-string: ^5.1.19
-    pretty-format: ^29.0.0
-    react-test-renderer: ^16.8.0 || ^17.0.0 || ^18.0.0
-    read-pkg-up: ^7.0.1
-    ts-dedent: ^2.0.0
-  peerDependencies:
-    "@angular/core": ">=13.0.0"
-    "@angular/platform-browser-dynamic": ">=13.0.0"
-    "@storybook/angular": "*"
-    "@storybook/react": "*"
-    "@storybook/vue": "*"
-    "@storybook/vue3": "*"
-    jest: "*"
-    jest-preset-angular: " >= 12.2.3"
-    jest-vue-preprocessor: "*"
-    preact: ^10.5.13
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    rxjs: "*"
-    svelte: "*"
-    vue: "*"
-    vue-jest: "*"
-  peerDependenciesMeta:
-    "@angular/core":
-      optional: true
-    "@angular/platform-browser-dynamic":
-      optional: true
-    "@storybook/angular":
-      optional: true
-    "@storybook/react":
-      optional: true
-    "@storybook/vue":
-      optional: true
-    "@storybook/vue3":
-      optional: true
-    jest-preset-angular:
-      optional: true
-    jest-vue-preprocessor:
-      optional: true
-    preact:
-      optional: true
-    react:
-      optional: true
-    react-dom:
-      optional: true
-    rxjs:
-      optional: true
-    svelte:
-      optional: true
-    vue:
-      optional: true
-    vue-jest:
-      optional: true
-  checksum: 573badc153ef7c7ff7d501bfeb3d9ba714df4def44d8b21f351cdd7c614a3c74c69d7da33a38db56c638384cfbcd4a548c5e9c7f1b19d3bd59d15252411a74c0
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-storysource@npm:^7.4.1":
   version: 7.4.1
   resolution: "@storybook/addon-storysource@npm:7.4.1"
@@ -7031,13 +6959,6 @@ __metadata:
     react-dom:
       optional: true
   checksum: 71369369ef7f78cfe3742c8c598c3263a73476305224dd9bab4be743e365b857c11f25bd30d77e3034c41677a4b29835ce4fd8436ffc3d3a7e83a983d4679220
-  languageName: node
-  linkType: hard
-
-"@storybook/babel-plugin-require-context-hook@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@storybook/babel-plugin-require-context-hook@npm:1.0.1"
-  checksum: 6f86f8b9218bedd21e4e18b9cdaa504c4393539bf2dcff3ea896a89b7e3b366ac0ec2bef43c539fb438d7c62e52e4274405eccb001315f5a7aff0e10c683fd3b
   languageName: node
   linkType: hard
 
@@ -9295,15 +9216,6 @@ __metadata:
     "@types/jest": "*"
     axe-core: ^3.5.5
   checksum: 39a146d5e20e2bffcdafdbaebb0af24656774c2f4a99b720e170a16c49af74ec93efe040e58eec5ae840264fb1c60c09f7b768e18e6e77452f69dda0ce815d7d
-  languageName: node
-  linkType: hard
-
-"@types/jest-specific-snapshot@npm:^0.5.6":
-  version: 0.5.9
-  resolution: "@types/jest-specific-snapshot@npm:0.5.9"
-  dependencies:
-    "@types/jest": "*"
-  checksum: b452e423a024d20aa1091cb962f4b0c81c04fc5065af7e1ecb2b4b46f90255ebefd18463d9c39fcd2a15ba34c4ab09bfc4f03e35d8227da5f1bb73f79b9836d1
   languageName: node
   linkType: hard
 
@@ -12191,7 +12103,6 @@ __metadata:
     "@storybook/addon-interactions": ^7.4.1
     "@storybook/addon-links": ^7.4.1
     "@storybook/addon-onboarding": ^1.0.8
-    "@storybook/addon-storyshots": 7.4.1
     "@storybook/addon-storysource": ^7.4.1
     "@storybook/addon-styling": ^1.3.7
     "@storybook/addon-styling-webpack": ^0.0.5
@@ -23139,17 +23050,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact-render-to-string@npm:^5.1.19":
-  version: 5.2.6
-  resolution: "preact-render-to-string@npm:5.2.6"
-  dependencies:
-    pretty-format: ^3.8.0
-  peerDependencies:
-    preact: ">=10"
-  checksum: be8d5d8fb502d422c503e68af7bcccb6facd942f3ae9a4d093ebe3f1d4f0b15c540624bdac434d53a2a8e8fb7afa4606383414e937c40933ca43445470a026ff
-  languageName: node
-  linkType: hard
-
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -23214,7 +23114,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^29.0.0, pretty-format@npm:^29.7.0":
+"pretty-format@npm:^29.7.0":
   version: 29.7.0
   resolution: "pretty-format@npm:29.7.0"
   dependencies:
@@ -23222,13 +23122,6 @@ __metadata:
     ansi-styles: ^5.0.0
     react-is: ^18.0.0
   checksum: 032c1602383e71e9c0c02a01bbd25d6759d60e9c7cf21937dde8357aa753da348fcec5def5d1002c9678a8524d5fe099ad98861286550ef44de8808cc61e43b6
-  languageName: node
-  linkType: hard
-
-"pretty-format@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "pretty-format@npm:3.8.0"
-  checksum: 21a114d43ef06978f8f7f6212be4649b0b094f05d9b30e14e37550bf35c8ca24d8adbca9e5adc4cc15d9eaf7a1e7a30478a4dc37b30982bfdf0292a5b385484c
   languageName: node
   linkType: hard
 

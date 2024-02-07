@@ -24,7 +24,6 @@
     "jest.setup.ts",
     "**/.*.cjs",
     "**/.*.js",
-    "storyshots.*",
     "__mocks__/*.ts",
     ".storybook"
   ],
