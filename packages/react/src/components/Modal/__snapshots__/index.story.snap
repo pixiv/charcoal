@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Modal Bottom Sheet 1`] = `
+exports[`Storybook Tests Modal BottomSheet 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -158,65 +158,6 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 }
 
 .c13 {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active,
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus,
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13:not(:disabled):not([aria-disabled]):hover,
-.c13[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c13:disabled,
-.c13[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c14 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -242,28 +183,28 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
+.c13:not(:disabled):not([aria-disabled]):hover,
+.c13[aria-disabled='false']:hover {
   background-color: var( --charcoal-transparent-hover );
 }
 
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active {
   background-color: var( --charcoal-transparent-press );
 }
 
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
+.c13:not(:disabled):not([aria-disabled]):focus,
+.c13[aria-disabled='false']:focus,
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active,
+.c13:not(:disabled):not([aria-disabled]):focus-visible,
+.c13[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c14:disabled,
-.c14[aria-disabled]:not([aria-disabled='false']) {
+.c13:disabled,
+.c13[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -304,7 +245,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c15 {
+.c14 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -313,13 +254,13 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
   transition: 0.2s color;
 }
 
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15[aria-disabled='false']:hover {
+.c14:not(:disabled):not([aria-disabled]):hover,
+.c14[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c15:not(:disabled):not([aria-disabled]):active,
-.c15[aria-disabled='false']:active {
+.c14:not(:disabled):not([aria-disabled]):active,
+.c14[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -451,7 +392,12 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
     <div
       className="c2"
       onPointerDown={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "overflow": "hidden",
+        }
+      }
     >
       <div
         className="c3"
@@ -459,7 +405,11 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
         onKeyDown={[Function]}
         role="dialog"
         size="M"
-        style={Object {}}
+        style={
+          Object {
+            "transform": " translateY(100%)",
+          }
+        }
         tabIndex={-1}
       >
         <div
@@ -493,17 +443,10 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
             >
               削除する
             </button>
-            <button
-              className="c0 c13"
-              disabled={false}
-              onClick={[Function]}
-            >
-              キャンセル
-            </button>
           </div>
         </div>
         <button
-          className="c0 c14 c15"
+          className="c0 c13 c14"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -516,7 +459,7 @@ exports[`Storyshots Modal Bottom Sheet 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal Default 1`] = `
+exports[`Storybook Tests Modal Default 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1389,7 +1332,7 @@ exports[`Storyshots Modal Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal Full Bottom Sheet 1`] = `
+exports[`Storybook Tests Modal FullBottomSheet 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -2011,7 +1954,12 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
     <div
       className="c2"
       onPointerDown={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "overflow": "hidden",
+        }
+      }
     >
       <div
         className="c3"
@@ -2019,7 +1967,11 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
         onKeyDown={[Function]}
         role="dialog"
         size="M"
-        style={Object {}}
+        style={
+          Object {
+            "transform": " translateY(100%)",
+          }
+        }
         tabIndex={-1}
       >
         <div
@@ -2156,7 +2108,7 @@ exports[`Storyshots Modal Full Bottom Sheet 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal Internal Scroll 1`] = `
+exports[`Storybook Tests Modal InternalScroll 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -2510,7 +2462,7 @@ exports[`Storyshots Modal Internal Scroll 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal Not Dismmissable Story 1`] = `
+exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;

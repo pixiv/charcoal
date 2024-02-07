@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TextField Default 1`] = `
+exports[`Storybook Tests TextField Default 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -280,7 +280,7 @@ exports[`Storyshots TextField Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Has Affix 1`] = `
+exports[`Storybook Tests TextField HasAffix 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -605,7 +605,7 @@ exports[`Storyshots TextField Has Affix 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Has Count 1`] = `
+exports[`Storybook Tests TextField HasCount 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -913,7 +913,7 @@ exports[`Storyshots TextField Has Count 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Has Label 1`] = `
+exports[`Storybook Tests TextField HasLabel 1`] = `
 .c9 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1225,7 +1225,7 @@ exports[`Storyshots TextField Has Label 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextField Prefix Icon 1`] = `
+exports[`Storybook Tests TextField PrefixIcon 1`] = `
 .c6 {
   cursor: pointer;
   -webkit-appearance: none;

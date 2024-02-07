@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Radio Basic 1`] = `
+exports[`Storybook Tests Radio Basic 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -213,7 +213,7 @@ exports[`Storyshots Radio Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Radio Disabled 1`] = `
+exports[`Storybook Tests Radio Disabled 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -426,7 +426,7 @@ exports[`Storyshots Radio Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Radio Invalid 1`] = `
+exports[`Storybook Tests Radio Invalid 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -645,7 +645,7 @@ exports[`Storyshots Radio Invalid 1`] = `
 </div>
 `;
 
-exports[`Storyshots Radio Partial Disabled 1`] = `
+exports[`Storybook Tests Radio PartialDisabled 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -858,7 +858,7 @@ exports[`Storyshots Radio Partial Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Radio Readonly 1`] = `
+exports[`Storybook Tests Radio Readonly 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
