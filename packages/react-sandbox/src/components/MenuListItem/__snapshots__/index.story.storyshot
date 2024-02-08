@@ -1,0 +1,1389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests Sandbox/MenuListItem Default 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-disabled={false}
+    className="c0"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="Knob to change"
+        >
+          Knob to change
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem Disabled 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-disabled={true}
+    className="c0"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="Disabled item"
+        >
+          Disabled item
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem HardLink 1`] = `
+.c4 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:disabled:hover,
+.c1[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c0 {
+  display: block;
+}
+
+<div
+  data-dark={false}
+>
+  <a
+    className="c0"
+    href="#linkTo"
+    onClick={[Function]}
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <div
+      aria-disabled={false}
+      className="c1"
+      onClick={[Function]}
+      role="button"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            title="This is link with target \\"_blank\\""
+          >
+            This is link with target "_blank"
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem Icon 1`] = `
+.c4 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:disabled:hover,
+.c1[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c0 {
+  display: block;
+}
+
+.c5 {
+  display: grid;
+  gap: 8px;
+  grid-auto-flow: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 {
+  color: #858585;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <a
+    className="c0"
+    href="#linkTo"
+  >
+    <div
+      aria-disabled={false}
+      className="c1"
+      onClick={[Function]}
+      role="button"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            title="Link with 24px icon"
+          >
+            <div
+              className="c5"
+            >
+              <div
+                className="c6"
+              >
+                <div
+                  className="c7"
+                />
+              </div>
+              Link with 24px icon
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem InlineIcon 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: visible;
+  margin-left: 4px;
+}
+
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c7 > svg {
+  display: block;
+}
+
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8::before {
+  content: '';
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-color: currentColor;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-disabled={false}
+    className="c0"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="Label with inline icon"
+        >
+          <div
+            className="c4"
+          >
+            <div
+              className="c5"
+            >
+              Label with inline icon
+            </div>
+            <div
+              className="c6"
+            >
+              <div
+                className="c7"
+              >
+                <div
+                  className="c8"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem Label 1`] = `
+.c4 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:disabled:hover,
+.c1[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c0 {
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #858585;
+  margin-top: -2px;
+  margin-bottom: 6px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    Label
+  </div>
+  <div
+    aria-disabled={false}
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          title="Label grouped items"
+        >
+          Label grouped items
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem Link 1`] = `
+.c4 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c1:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c1:disabled:hover,
+.c1[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c0 {
+  display: block;
+}
+
+<div
+  data-dark={false}
+>
+  <a
+    className="c0"
+    href="#linkTo"
+    onClick={[Function]}
+  >
+    <div
+      aria-disabled={false}
+      className="c1"
+      onClick={[Function]}
+      role="button"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            title="This is link"
+          >
+            This is link
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem NoHoverEffect 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c4[aria-disabled='true'] {
+  cursor: auto;
+}
+
+.c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  z-index: 0;
+}
+
+.c8 {
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  height: 16px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background: #adadad;
+  -webkit-transition: box-shadow 0.2s,background-color 0.2s;
+  transition: box-shadow 0.2s,background-color 0.2s;
+}
+
+.c10 {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+
+.c6 {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  opacity: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c6:checked ~ .c7 {
+  background-color: #0096fa;
+}
+
+.c6:checked ~ .c7 .c9 {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+.c6:disabled {
+  cursor: auto;
+}
+
+.c6:disabled ~ .c7 {
+  opacity: 0.32;
+}
+
+.c6:not(:disabled):focus ~ .c7 {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-disabled={false}
+    className="c0"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="With toggle (no hover effect)"
+        >
+          With toggle (no hover effect)
+        </div>
+      </div>
+    </div>
+    <label
+      className="c4"
+    >
+      <span
+        className="c5"
+      >
+        <input
+          checked={true}
+          className="c6"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <div
+          className="c7 c8"
+        >
+          <div
+            className="c9 c10"
+          />
+        </div>
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem Simple 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c4 {
+  color: #858585;
+  line-height: 18px;
+  font-size: 10px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-disabled={false}
+    className="c0"
+    onClick={[Function]}
+    role="button"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="Simple item"
+        >
+          Simple item
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <div
+          className="c3"
+          title="with secondary"
+        >
+          with secondary
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem Spacer 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+.c4 {
+  height: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-disabled={false}
+    className="c0"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="↓ This is spacer"
+        >
+          ↓ This is spacer
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c4"
+  />
+  <div
+    aria-disabled={false}
+    className="c0"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          title="↑ This is spacer"
+        >
+          ↑ This is spacer
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Sandbox/MenuListItem TextEllipsis 1`] = `
+.c3 {
+  overflow: hidden;
+  line-height: 22px;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-transition: 0.2s background-color;
+  transition: 0.2s background-color;
+}
+
+.c0:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  opacity: 0.32;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c0:disabled:hover,
+.c0[aria-disabled]:not([aria-disabled=false]):hover {
+  background-color: unset;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  color: #474747;
+  line-height: 22px;
+  font-size: 14px;
+  display: grid;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    css="
+      width: 300px;
+    "
+  >
+    <div
+      aria-disabled={false}
+      className="c0"
+      onClick={[Function]}
+    >
+      <div
+        className="c1"
+      >
+        <div
+          className="c2"
+        >
+          <div
+            className="c3"
+            title="Loooooooooooooooooooooooooong texxxxxxxxxxxxxxxxxxxxxxxxxt"
+          >
+            Loooooooooooooooooooooooooong texxxxxxxxxxxxxxxxxxxxxxxxxt
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

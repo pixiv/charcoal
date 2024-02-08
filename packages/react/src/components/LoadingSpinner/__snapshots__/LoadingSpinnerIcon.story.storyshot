@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests LoadingSpinnerIcon Icon 1`] = `
+.c0 {
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background-color: currentColor;
+  -webkit-animation: cNZOgq 1s both ease-out;
+  animation: cNZOgq 1s both ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.c0[data-reset-animation] {
+  -webkit-animation: none;
+  animation: none;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+    role="presentation"
+  />
+</div>
+`;
