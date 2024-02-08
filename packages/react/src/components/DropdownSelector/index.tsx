@@ -6,6 +6,7 @@ import FieldLabel from '../FieldLabel'
 import { DropdownPopover } from './DropdownPopover'
 import { findPreviewRecursive } from './utils/findPreviewRecursive'
 import MenuList, { MenuListChildren } from './MenuList'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 export type DropdownSelectorProps = {
   label: string
@@ -123,12 +124,7 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    &:focus,
-    &:active,
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
+    ${focusVisibleFocusRingCss}
     &:hover {
       background-color: var(--charcoal-surface3-hover);
     }

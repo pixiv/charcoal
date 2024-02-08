@@ -191,13 +191,6 @@ const StyledInputContainer = styled.div<{
     background-color: var(--charcoal-surface3-hover);
   }
 
-  :not(:disabled):not([aria-disabled]):active,
-  [aria-disabled='false']:active {
-    outline: none;
-    box-shadow: 0 0 0 4px
-      ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
-  }
-
   :focus-within {
     outline: none;
     box-shadow: 0 0 0 4px

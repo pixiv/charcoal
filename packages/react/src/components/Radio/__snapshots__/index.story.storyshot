@@ -45,13 +45,29 @@ exports[`Storybook Tests Radio Basic 1`] = `
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
+.c3[type='radio'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[type='radio'][aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c3[type='radio']:not(:checked) {
@@ -153,6 +169,7 @@ exports[`Storybook Tests Radio Basic 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="c3"
           disabled={false}
@@ -173,6 +190,7 @@ exports[`Storybook Tests Radio Basic 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={false}
@@ -193,6 +211,7 @@ exports[`Storybook Tests Radio Basic 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={false}
@@ -258,13 +277,29 @@ exports[`Storybook Tests Radio Disabled 1`] = `
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
+.c3[type='radio'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[type='radio'][aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c3[type='radio']:not(:checked) {
@@ -366,6 +401,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="c3"
           disabled={true}
@@ -386,6 +422,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={true}
@@ -406,6 +443,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={true}
@@ -460,11 +498,6 @@ exports[`Storybook Tests Radio Invalid 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c3[type='radio']:not(:disabled):not([aria-disabled]),
-.c3[type='radio'][aria-disabled='false'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
 .c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
 .c3[type='radio'][aria-disabled='false']:hover {
   background-color: var(--charcoal-surface1-hover);
@@ -476,13 +509,29 @@ exports[`Storybook Tests Radio Invalid 1`] = `
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
+.c3[type='radio'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[type='radio'][aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c3[type='radio']:not(:checked) {
@@ -585,6 +634,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={true}
           checked={true}
           className="c3"
           disabled={false}
@@ -605,6 +655,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={true}
           checked={false}
           className="c3"
           disabled={false}
@@ -625,6 +676,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={true}
           checked={false}
           className="c3"
           disabled={false}
@@ -690,13 +742,29 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
+.c3[type='radio'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[type='radio'][aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c3[type='radio']:not(:checked) {
@@ -798,6 +866,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="c3"
           disabled={false}
@@ -818,6 +887,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={true}
@@ -838,6 +908,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={false}
@@ -903,13 +974,29 @@ exports[`Storybook Tests Radio Readonly 1`] = `
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active,
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
+.c3[type='radio'][aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[type='radio'][aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
+.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
 .c3[type='radio']:not(:checked) {
@@ -1011,6 +1098,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="c3"
           disabled={false}
@@ -1031,6 +1119,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={true}
@@ -1051,6 +1140,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
         className="c2"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="c3"
           disabled={true}

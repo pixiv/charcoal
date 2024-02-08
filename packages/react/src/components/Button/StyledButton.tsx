@@ -3,6 +3,7 @@ import Clickable from '../Clickable'
 import { variantToFont } from './lib/variantToFont'
 import { variantToBackground } from './lib/variantToBackground'
 import type { Size } from '.'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 const horizontalPaddingSmall = css`
   padding-right: 16px;
@@ -41,12 +42,7 @@ export const StyledButton = styled(Clickable)<StyledButtonProps>`
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    &:active,
-    &:focus,
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
+    ${focusVisibleFocusRingCss}
 
     &:hover {
       color: var(--charcoal-${(p) => p.$color}-hover);
