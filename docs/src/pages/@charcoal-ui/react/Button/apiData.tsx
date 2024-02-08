@@ -28,4 +28,9 @@ export const apiData: Omit<
     type: toEnum(sizes),
     default: '"M"',
   },
+  isActive: {
+    description: 'ボタンの押下状態',
+    type: 'boolean',
+    default: 'false',
+  },
 }

@@ -49,6 +49,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         }}
         ref={triggerRef}
         type="button"
+        $active={isOpen}
       >
         <DropdownButtonText>
           {props.placeholder !== undefined && preview === undefined
@@ -99,7 +100,7 @@ const DropdownFieldLabel = styled(FieldLabel)`
   margin-bottom: 8px;
 `
 
-const DropdownButton = styled.button<{ invalid?: boolean }>`
+const DropdownButton = styled.button<{ invalid?: boolean; $active?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,9 +126,19 @@ const DropdownButton = styled.button<{ invalid?: boolean }>`
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
     ${focusVisibleFocusRingCss}
-    &:hover {
-      background-color: var(--charcoal-surface3-hover);
-    }
+    ${({ $active }) =>
+      $active === true
+        ? css`
+            background-color: var(--charcoal-surface3-press);
+          `
+        : css`
+            &:hover {
+              background-color: var(--charcoal-surface3-hover);
+            }
+            &:active {
+              background-color: var(--charcoal-surface3-press);
+            }
+          `}
   }
 
   ${({ invalid }) =>

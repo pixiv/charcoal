@@ -20,6 +20,7 @@ type StyledButtonProps = {
   $size: Size
   $background: ReturnType<typeof variantToBackground>
   $color: ReturnType<typeof variantToFont>
+  $isActive: boolean
 }
 
 export const StyledButton = styled(Clickable)<StyledButtonProps>`
@@ -44,14 +45,22 @@ export const StyledButton = styled(Clickable)<StyledButtonProps>`
   &[aria-disabled='false'] {
     ${focusVisibleFocusRingCss}
 
-    &:hover {
-      color: var(--charcoal-${(p) => p.$color}-hover);
-      background-color: var(--charcoal-${(p) => p.$background}-hover);
-    }
-    &:active {
-      color: var(--charcoal-${(p) => p.$color}-press);
-      background-color: var(--charcoal-${(p) => p.$background}-press);
-    }
+    ${({ $isActive: $active, $color, $background }) =>
+      $active
+        ? css`
+            color: var(--charcoal-${$color}-press);
+            background-color: var(--charcoal-${$background}-press);
+          `
+        : css`
+            &:hover {
+              color: var(--charcoal-${$color}-hover);
+              background-color: var(--charcoal-${$background}-hover);
+            }
+            &:active {
+              color: var(--charcoal-${$color}-press);
+              background-color: var(--charcoal-${$background}-press);
+            }
+          `}
   }
 
   &:disabled,

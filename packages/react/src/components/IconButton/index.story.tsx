@@ -19,6 +19,11 @@ export default {
         options: ['M', 'S', 'XS'],
       },
     },
+    isActive: {
+      control: {
+        type: 'boolean',
+      },
+    },
   },
   render: (props) => {
     const { size } = props
@@ -35,6 +40,12 @@ export const DefaultM: StoryObj<typeof IconButton> = {
   args: {
     variant: 'Default',
     size: 'M',
+  },
+}
+
+export const IsActive: StoryObj<typeof IconButton> = {
+  args: {
+    isActive: true,
   },
 }
 

@@ -65,6 +65,11 @@ exports[`Storybook Tests DropdownSelector Basic 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
@@ -176,6 +181,11 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
 }
 
 .c2 {
@@ -298,6 +308,11 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
 }
 
 .c2 {
@@ -449,6 +464,11 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
 .c9 {
   text-align: left;
   font-size: 14px;
@@ -492,12 +512,12 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
 
 .c12:not(:disabled):not([aria-disabled]):hover,
 .c12[aria-disabled='false']:hover {
-  background-color: var( --charcoal-transparent-hover );
+  background-color: var(--charcoal-transparent-hover);
 }
 
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active {
-  background-color: var( --charcoal-transparent-press );
+  background-color: var(--charcoal-transparent-press);
 }
 
 .c12:not(:disabled):not([aria-disabled]):focus,
@@ -855,6 +875,11 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
@@ -1071,6 +1096,11 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
   background-color: var(--charcoal-surface3-hover);
 }
 
+.c3:not(:disabled):not([aria-disabled]):active,
+.c3[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
 .c4 {
   text-align: left;
   font-size: 14px;
@@ -1186,6 +1216,11 @@ exports[`Storybook Tests DropdownSelector SectionList 1`] = `
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
 }
 
 .c2 {

@@ -68,4 +68,25 @@ export const sections: PreviewSection<IconButtonProps>[] = [
       },
     ],
   },
+  {
+    title: 'isActive',
+    previewMetas: [
+      {
+        children: undefined,
+        props: {
+          icon: '24/Add',
+          variant: 'Default',
+          isActive: true,
+        },
+      },
+      {
+        children: undefined,
+        props: {
+          icon: '24/Add',
+          variant: 'Overlay',
+          isActive: true,
+        },
+      },
+    ],
+  },
 ]

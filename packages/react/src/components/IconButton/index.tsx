@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
 import type { KnownIconType } from '@charcoal-ui/icons'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
@@ -11,18 +11,31 @@ interface StyledProps {
   readonly variant?: Variant
   readonly size?: Size
   readonly icon: keyof KnownIconType
+  readonly isActive?: boolean
 }
 
 export type IconButtonProps = StyledProps & ClickableProps
 
 const IconButton = forwardRef<ClickableElement, IconButtonProps>(
   function IconButtonInner(
-    { variant = 'Default', size = 'M', icon, ...rest }: IconButtonProps,
+    {
+      variant = 'Default',
+      size = 'M',
+      icon,
+      isActive = false,
+      ...rest
+    }: IconButtonProps,
     ref
   ) {
     validateIconSize(size, icon)
     return (
-      <StyledIconButton {...rest} ref={ref} $size={size} $variant={variant}>
+      <StyledIconButton
+        {...rest}
+        ref={ref}
+        $size={size}
+        $variant={variant}
+        $isActive={isActive}
+      >
         <pixiv-icon name={icon} />
       </StyledIconButton>
     )
@@ -34,7 +47,7 @@ export default IconButton
 type StyledIconButtonProps = Required<{
   [key in keyof Pick<
     StyledProps,
-    'size' | 'variant'
+    'size' | 'variant' | 'isActive'
   > as `$${key}`]: StyledProps[key]
 }>
 
@@ -56,16 +69,19 @@ const StyledIconButton = styled(Clickable).attrs<
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    &:hover {
-      background-color: var(
-        ${({ $background }) => `--charcoal-${$background}-hover`}
-      );
-    }
-    &:active {
-      background-color: var(
-        ${({ $background }) => `--charcoal-${$background}-press`}
-      );
-    }
+    ${({ $isActive, $background }) =>
+      $isActive
+        ? css`
+            background-color: var(--charcoal-${$background}-press);
+          `
+        : css`
+            &:hover {
+              background-color: var(--charcoal-${$background}-hover);
+            }
+            &:active {
+              background-color: var(--charcoal-${$background}-press);
+            }
+          `}
     ${focusVisibleFocusRingCss}
   }
 
