@@ -9219,6 +9219,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest-specific-snapshot@npm:^0.5.9":
+  version: 0.5.9
+  resolution: "@types/jest-specific-snapshot@npm:0.5.9"
+  dependencies:
+    "@types/jest": "*"
+  checksum: b452e423a024d20aa1091cb962f4b0c81c04fc5065af7e1ecb2b4b46f90255ebefd18463d9c39fcd2a15ba34c4ab09bfc4f03e35d8227da5f1bb73f79b9836d1
+  languageName: node
+  linkType: hard
+
 "@types/jest@npm:*, @types/jest@npm:^27.4.0":
   version: 27.4.0
   resolution: "@types/jest@npm:27.4.0"
@@ -12117,6 +12126,7 @@ __metadata:
     "@stylelint/postcss-css-in-js": ^0.37.2
     "@types/eslint": ^8.4.1
     "@types/jest": ^27.4.0
+    "@types/jest-specific-snapshot": ^0.5.9
     "@types/node": ^17.0.13
     "@types/prettier": ^2.4.3
     "@types/styled-components": ^5.1.21
