@@ -62,6 +62,7 @@
     "@storybook/react-webpack5": "^7.4.1",
     "@storybook/test-runner": "^0.16.0",
     "@storybook/testing-library": "^0.2.0",
+    "@storybook/web-components": "^7.6.13",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "@types/eslint": "^8.4.1",
     "@types/jest": "^27.4.0",
