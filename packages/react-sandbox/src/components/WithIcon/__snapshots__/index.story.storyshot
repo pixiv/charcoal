@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/WithIcon Collapse 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon Collapse 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -101,7 +101,7 @@ exports[`Storyshots Sandbox/WithIcon Collapse 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Default 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon Default 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -221,7 +221,7 @@ exports[`Storyshots Sandbox/WithIcon Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Hide 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon Hide 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -322,7 +322,7 @@ exports[`Storyshots Sandbox/WithIcon Hide 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Long Text 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon LongText 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -417,7 +417,7 @@ exports[`Storyshots Sandbox/WithIcon Long Text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Long Text Overflow 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon LongTextOverflow 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -510,7 +510,7 @@ exports[`Storyshots Sandbox/WithIcon Long Text Overflow 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Naive 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon Naive 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -626,7 +626,7 @@ exports[`Storyshots Sandbox/WithIcon Naive 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Performance 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon Performance 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -746,7 +746,7 @@ exports[`Storyshots Sandbox/WithIcon Performance 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/WithIcon Prefix 1`] = `
+exports[`Storybook Tests Sandbox/WithIcon Prefix 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

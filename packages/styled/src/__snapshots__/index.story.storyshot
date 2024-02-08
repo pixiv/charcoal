@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots styled Example 1`] = `
+exports[`Storybook Tests styled Example 1`] = `
 .c1 {
   background-color: var(--charcoal-surface3);
   color: var(--charcoal-text4);
@@ -757,7 +757,7 @@ exports[`Storyshots styled Example 1`] = `
 </div>
 `;
 
-exports[`Storyshots styled Tailwind Like 1`] = `
+exports[`Storybook Tests styled TailwindLike 1`] = `
 <div
   data-dark={false}
 >

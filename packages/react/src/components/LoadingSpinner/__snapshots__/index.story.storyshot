@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots LoadingSpinner Default 1`] = `
+exports[`Storybook Tests LoadingSpinner Default 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;

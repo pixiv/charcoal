@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots IconButton Default M 1`] = `
+exports[`Storybook Tests IconButton DefaultM 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -104,7 +104,7 @@ exports[`Storyshots IconButton Default M 1`] = `
 </div>
 `;
 
-exports[`Storyshots IconButton Overlay M 1`] = `
+exports[`Storybook Tests IconButton OverlayM 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;

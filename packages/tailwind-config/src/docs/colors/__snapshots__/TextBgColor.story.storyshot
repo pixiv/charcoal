@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots tailwind-config/Colors/Text bg color Playground 1`] = `
+exports[`Storybook Tests tailwind-config/Colors/Text bg color Playground 1`] = `
 <div
   data-dark={false}
 >

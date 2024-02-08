@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TagItem Default 1`] = `
+exports[`Storybook Tests TagItem Default 1`] = `
 .c0 {
   isolation: isolate;
   position: relative;
@@ -142,7 +142,7 @@ exports[`Storyshots TagItem Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots TagItem Playground 1`] = `
+exports[`Storybook Tests TagItem Playground 1`] = `
 .c1 {
   isolation: isolate;
   position: relative;

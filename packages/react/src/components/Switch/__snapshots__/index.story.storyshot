@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Switch Basic 1`] = `
+exports[`Storybook Tests Switch Basic 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -139,7 +139,7 @@ exports[`Storyshots Switch Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Switch Checked 1`] = `
+exports[`Storybook Tests Switch Checked 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -278,7 +278,7 @@ exports[`Storyshots Switch Checked 1`] = `
 </div>
 `;
 
-exports[`Storyshots Switch Disabled 1`] = `
+exports[`Storybook Tests Switch Disabled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -429,7 +429,7 @@ exports[`Storyshots Switch Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Switch Labelled 1`] = `
+exports[`Storybook Tests Switch Labelled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
