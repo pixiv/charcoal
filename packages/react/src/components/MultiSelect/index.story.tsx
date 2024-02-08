@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { MultiSelectGroup, default as MultiSelect } from '.'
 import { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 
 const StyledMultiSelectGroup = styled(MultiSelectGroup)`
   display: grid;
@@ -32,10 +33,7 @@ export const Basic: StoryObj<typeof MultiSelect> = {
       <StyledMultiSelectGroup
         name="name"
         label="label"
-        onChange={() => {
-          // eslint-disable-next-line no-console
-          console.log('click')
-        }}
+        onChange={action('click')}
         selected={['選択肢1', '選択肢3']}
       >
         {options.map((option) => (
@@ -55,10 +53,7 @@ export const Invalid: StoryObj<typeof MultiSelect> = {
       <StyledMultiSelectGroup
         name="name"
         label="label"
-        onChange={() => {
-          // eslint-disable-next-line no-console
-          console.log('click')
-        }}
+        onChange={action('click')}
         selected={[]}
         invalid
       >
@@ -79,10 +74,7 @@ export const Overlay: StoryObj<typeof MultiSelect> = {
       <StyledMultiSelectGroup
         name="name"
         label="label"
-        onChange={() => {
-          // eslint-disable-next-line no-console
-          console.log('click')
-        }}
+        onChange={action('click')}
         selected={[]}
       >
         {options.map((option) => (
