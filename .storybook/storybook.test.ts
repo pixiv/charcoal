@@ -1,13 +1,13 @@
-import path from 'path'
+import path from 'node:path'
 import * as glob from 'glob'
 
 import { composeStories } from '@storybook/react'
 import renderer from 'react-test-renderer'
 import { addSerializer } from 'jest-specific-snapshot'
+import { styleSheetSerializer } from 'jest-styled-components'
 
 import type { Meta, StoryFn } from '@storybook/react'
 
-import { styleSheetSerializer } from 'jest-styled-components'
 addSerializer(styleSheetSerializer)
 
 type StoryFile = {
@@ -54,12 +54,17 @@ describe(options.suite, () => {
   getAllStoryFiles().forEach(({ storyFile, filePath }) => {
     const meta = storyFile.default
     const title = meta.title || filePath
+    const dir = path.join(path.dirname(filePath), options.snapshotsDirName)
+    const filename = [
+      path.basename(filePath, '.tsx'),
+      options.snapshotExtension,
+    ].join('.')
+    const snapshotPath = path.join(dir, filename)
 
     if (
       options.storyKindRegex.test(title) ||
       meta.parameters?.storyshots?.disable
     ) {
-      // Skip component tests if they are disabled
       return
     }
 
@@ -67,7 +72,6 @@ describe(options.suite, () => {
       const stories = Object.entries(compose(storyFile))
         .map(([name, story]) => ({ name, story }))
         .filter(({ name, story }) => {
-          // Implements a filtering mechanism to avoid running stories that are disabled via parameters or that match a specific regex mirroring the default behavior of Storyshots.
           return (
             !options.storyNameRegex.test(name) &&
             !story.parameters.storyshots?.disable
@@ -80,23 +84,14 @@ describe(options.suite, () => {
         )
       }
 
-      stories.forEach(({ name, story }) => {
-        // Instead of not running the test, you can create logic to skip it, flagging it accordingly in the test results.
-        const testFn = story.parameters.storyshots?.skip ? it.skip : it
-        const dir = path.join(path.dirname(filePath), options.snapshotsDirName)
-        const filename = `${path.basename(filePath, '.tsx')}.${
-          options.snapshotExtension
-        }`
-
-        const snapshotPath = path.join(dir, filename)
+      for (const { name, story } of stories) {
+        const testFn = story.parameters.storyshots?.skip ? test.skip : test
 
         testFn(name, async () => {
           const mounted = renderer.create(story()).toJSON()
-          // Ensures a consistent snapshot by waiting for the component to render by adding a delay of 1 ms before taking the snapshot.
-          await new Promise((resolve) => setTimeout(resolve, 1))
           expect(mounted).toMatchSpecificSnapshot(snapshotPath)
         })
-      })
+      }
     })
   })
 })
