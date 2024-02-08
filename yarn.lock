@@ -9219,6 +9219,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest-image-snapshot@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "@types/jest-image-snapshot@npm:6.4.0"
+  dependencies:
+    "@types/jest": "*"
+    "@types/pixelmatch": "*"
+    ssim.js: ^3.1.1
+  checksum: db751a487f3a8aef7a6f7d4209378fb147670a8d5f7bb08739426ce6cc6a034bc02dca12b9eefcb7a9fe0deec4dc0a809d436445ca405d3e796d6058da4e0568
+  languageName: node
+  linkType: hard
+
 "@types/jest-specific-snapshot@npm:^0.5.9":
   version: 0.5.9
   resolution: "@types/jest-specific-snapshot@npm:0.5.9"
@@ -9372,6 +9383,15 @@ __metadata:
   version: 6.0.3
   resolution: "@types/parse5@npm:6.0.3"
   checksum: ddb59ee4144af5dfcc508a8dcf32f37879d11e12559561e65788756b95b33e6f03ea027d88e1f5408f9b7bfb656bf630ace31a2169edf44151daaf8dd58df1b7
+  languageName: node
+  linkType: hard
+
+"@types/pixelmatch@npm:*":
+  version: 5.2.6
+  resolution: "@types/pixelmatch@npm:5.2.6"
+  dependencies:
+    "@types/node": "*"
+  checksum: 8299207286913414bfd95ac980418342f58e7bc93dc78befbd48ccab110b0341b400712f89fea2b0f0a3a4ad0b1aed18e98e26100b529abe60d4bcc14e11d2e3
   languageName: node
   linkType: hard
 
@@ -12126,6 +12146,7 @@ __metadata:
     "@stylelint/postcss-css-in-js": ^0.37.2
     "@types/eslint": ^8.4.1
     "@types/jest": ^27.4.0
+    "@types/jest-image-snapshot": ^6.4.0
     "@types/jest-specific-snapshot": ^0.5.9
     "@types/node": ^17.0.13
     "@types/prettier": ^2.4.3
@@ -12146,6 +12167,7 @@ __metadata:
     glob: ^7.2.0
     husky: ^4.3.8
     jest: ^27.4.7
+    jest-image-snapshot: ^6.4.0
     jest-specific-snapshot: ^8.0.0
     jsdom: ^19.0.0
     lerna: ^6.6.2
@@ -16273,6 +16295,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-stdin@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "get-stdin@npm:5.0.1"
+  checksum: f9784638ad3e68a0a8bdc031aedf0fca749843cd134956fbd4f3bbac17c359e0fb9210343fcbed72ee79fb19d8e4c49b7a6e742cc5d44e94ac1405e9371d4b3e
+  languageName: node
+  linkType: hard
+
 "get-stdin@npm:^8.0.0":
   version: 8.0.0
   resolution: "get-stdin@npm:8.0.0"
@@ -16693,6 +16722,13 @@ __metadata:
   version: 0.1.4
   resolution: "globjoin@npm:0.1.4"
   checksum: 0a47d88d566122d9e42da946453ee38b398e0021515ac6a95d13f980ba8c1e42954e05ee26cfcbffce1ac1ee094d0524b16ce1dd874ca52408d6db5c6d39985b
+  languageName: node
+  linkType: hard
+
+"glur@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "glur@npm:1.1.2"
+  checksum: d80a50fe7f713a564cf50a8e46e2385e5256233c1180b94c06dfdf038655c8b11aa648dd8516b66025abfe437f4201aa10c0e759b68b9a37241375707cf107ea
   languageName: node
   linkType: hard
 
@@ -18773,6 +18809,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jest-image-snapshot@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "jest-image-snapshot@npm:6.4.0"
+  dependencies:
+    chalk: ^4.0.0
+    get-stdin: ^5.0.1
+    glur: ^1.1.2
+    lodash: ^4.17.4
+    pixelmatch: ^5.1.0
+    pngjs: ^3.4.0
+    rimraf: ^2.6.2
+    ssim.js: ^3.1.1
+  peerDependencies:
+    jest: ">=20 <=29"
+  peerDependenciesMeta:
+    jest:
+      optional: true
+  checksum: f3b8a0cbba6e4bd4c19080e8cb807b4dd03e60d43bc69e0bf5898c09dbbb0ee812c04ad66d027ee64121f169bb5ef0cd81d5903efd2772e085e619aa6415676b
+  languageName: node
+  linkType: hard
+
 "jest-jasmine2@npm:^27.4.6":
   version: 27.4.6
   resolution: "jest-jasmine2@npm:27.4.6"
@@ -20272,7 +20329,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
+"lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -22787,6 +22844,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pixelmatch@npm:^5.1.0":
+  version: 5.3.0
+  resolution: "pixelmatch@npm:5.3.0"
+  dependencies:
+    pngjs: ^6.0.0
+  bin:
+    pixelmatch: bin/pixelmatch
+  checksum: f542713d89536551181ad9ddb666a1792ba00a8632d831093232a075cb3ccac05856e7a453ed7d0a41aaef64dcb5962e8ae5cbe646dd2761790d8ee51b0a0743
+  languageName: node
+  linkType: hard
+
 "pkg-dir@npm:^3.0.0":
   version: 3.0.0
   resolution: "pkg-dir@npm:3.0.0"
@@ -22853,6 +22921,20 @@ __metadata:
   dependencies:
     semver-compare: ^1.0.0
   checksum: d87c41581a2a022fbe25965a97006238cd9b8cbbf49b39f78d262548149a9d30bd2bdf35fec3d810e0001e630cd46ef13c7e19c389dea8de7e64db271a2381bb
+  languageName: node
+  linkType: hard
+
+"pngjs@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "pngjs@npm:3.4.0"
+  checksum: 8bd40bd698abd16b72c97b85cb858c80894fbedc76277ce72a784aa441e14795d45d9856e97333ca469b34b67528860ffc8a7317ca6beea349b645366df00bcd
+  languageName: node
+  linkType: hard
+
+"pngjs@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "pngjs@npm:6.0.0"
+  checksum: ab6c285086060087097eab9fe6b5a528a24f9e79c03dea2b4fd6264ed4fdb5beff4a3257eeeaf2a9dc18249b539609c2a4e4013c567164a1f6b5ba2c974d5ecb
   languageName: node
   linkType: hard
 
@@ -24555,7 +24637,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^2.6.1, rimraf@npm:^2.6.3":
+"rimraf@npm:^2.6.1, rimraf@npm:^2.6.2, rimraf@npm:^2.6.3":
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
   dependencies:
@@ -25461,6 +25543,13 @@ __metadata:
     sshpk-sign: bin/sshpk-sign
     sshpk-verify: bin/sshpk-verify
   checksum: 5e76afd1cedc780256f688b7c09327a8a650902d18e284dfeac97489a735299b03c3e72c6e8d22af03dbbe4d6f123fdfd5f3c4ed6bedbec72b9529a55051b857
+  languageName: node
+  linkType: hard
+
+"ssim.js@npm:^3.1.1":
+  version: 3.5.0
+  resolution: "ssim.js@npm:3.5.0"
+  checksum: 3f3a63ac8bec9c45e9f72252b786dcb4c91d7a74316b49c20e7935fd6e3869541e9324233b00eb0ab6bd15701016becd62740a5fb8c98f7b5115a9237efb2d4a
   languageName: node
   linkType: hard
 
