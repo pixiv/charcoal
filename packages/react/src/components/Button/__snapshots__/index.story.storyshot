@@ -71,22 +71,6 @@ exports[`Storybook Tests Button Danger 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
@@ -185,22 +169,6 @@ exports[`Storybook Tests Button Default 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,
@@ -303,22 +271,6 @@ exports[`Storybook Tests Button Disabled 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
@@ -419,22 +371,6 @@ exports[`Storybook Tests Button Fixed 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
@@ -533,22 +469,6 @@ exports[`Storybook Tests Button Focus 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,
@@ -652,22 +572,6 @@ exports[`Storybook Tests Button LayoutExample 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
@@ -715,22 +619,6 @@ exports[`Storybook Tests Button LayoutExample 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
-}
-
-.c2:not(:disabled):not([aria-disabled]):focus,
-.c2[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2:not(:disabled):not([aria-disabled]):hover,
@@ -782,22 +670,6 @@ exports[`Storybook Tests Button LayoutExample 1`] = `
   height: 40px;
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c3:not(:disabled):not([aria-disabled]):hover,
 .c3[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
@@ -847,22 +719,6 @@ exports[`Storybook Tests Button LayoutExample 1`] = `
   height: 40px;
 }
 
-.c4:not(:disabled):not([aria-disabled]):focus,
-.c4[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c4[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c4:not(:disabled):not([aria-disabled]):focus-visible,
-.c4[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c4:not(:disabled):not([aria-disabled]):hover,
 .c4[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
@@ -910,22 +766,6 @@ exports[`Storybook Tests Button LayoutExample 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c5:not(:disabled):not([aria-disabled]):hover,
@@ -1151,22 +991,6 @@ exports[`Storybook Tests Button Link 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
@@ -1265,22 +1089,6 @@ exports[`Storybook Tests Button Navigation 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,
@@ -1383,22 +1191,6 @@ exports[`Storybook Tests Button Nihongo 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
@@ -1497,22 +1289,6 @@ exports[`Storybook Tests Button Overlay 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,
@@ -1615,22 +1391,6 @@ exports[`Storybook Tests Button Primary 1`] = `
   height: 40px;
 }
 
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
@@ -1729,22 +1489,6 @@ exports[`Storybook Tests Button Small 1`] = `
   -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   transition: 0.2s color,0.2s background-color,0.2s box-shadow;
   height: 32px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,

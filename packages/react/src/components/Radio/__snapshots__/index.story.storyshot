@@ -44,22 +44,6 @@ exports[`Storybook Tests Radio Basic 1`] = `
   background-color: var(--charcoal-surface1-press);
 }
 
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
 .c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
@@ -276,22 +260,6 @@ exports[`Storybook Tests Radio Disabled 1`] = `
   background-color: var(--charcoal-surface1-press);
 }
 
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
 .c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
@@ -506,22 +474,6 @@ exports[`Storybook Tests Radio Invalid 1`] = `
 .c3[type='radio']:not(:disabled):not([aria-disabled]):active,
 .c3[type='radio'][aria-disabled='false']:active {
   background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
@@ -741,22 +693,6 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
   background-color: var(--charcoal-surface1-press);
 }
 
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
 .c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
 .c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
@@ -971,22 +907,6 @@ exports[`Storybook Tests Radio Readonly 1`] = `
 .c3[type='radio']:not(:disabled):not([aria-disabled]):active,
 .c3[type='radio'][aria-disabled='false']:active {
   background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
