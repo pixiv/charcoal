@@ -85,6 +85,39 @@ export const Basic: StoryObj<typeof DropdownSelector> = {
   ),
 }
 
+export const LongNames: StoryObj<typeof DropdownSelector> = {
+  render: function Render(args) {
+    const [selected, setSelected] = useState('10')
+    return (
+      <div
+        style={{
+          width: 288,
+        }}
+      >
+        <DropdownSelector
+          {...args}
+          onChange={(value) => {
+            setSelected(value)
+          }}
+          value={selected}
+          label="label"
+        >
+          <DropdownMenuItem value={'10'}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          </DropdownMenuItem>
+          <DropdownMenuItem value={'20'}>
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </DropdownMenuItem>
+          <DropdownMenuItem value={'30'}>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+          </DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
 const DummyBox = styled.div`
   border: solid 1px ${({ theme }) => theme.border.default.color};
   display: flex;

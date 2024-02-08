@@ -760,6 +760,113 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests DropdownSelector LongNames 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus,
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active,
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests DropdownSelector Playground 1`] = `
 .c0 {
   cursor: pointer;
