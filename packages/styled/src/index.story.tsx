@@ -2,10 +2,11 @@ import styled, { CSSProp, DefaultTheme, ThemeProvider } from 'styled-components'
 import { createTheme, ThemeProp, defineThemeVariables } from '.'
 import { disabledSelector } from '@charcoal-ui/utils'
 import { MyTheme, myTheme } from './storyHelper'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'styled',
-}
+} as Meta
 
 declare module 'react' {
   interface Attributes {
@@ -19,55 +20,57 @@ declare module 'styled-components' {
 
 const theme = createTheme<DefaultTheme>()
 
-export const Example = () => (
-  <ThemeProvider theme={myTheme}>
-    <Container>
-      <Normal>Sample</Normal>
-      <LeftTopPadding>Left Top Padding</LeftTopPadding>
-      <NestedWrap>
-        <Nested>Nested</Nested>
-      </NestedWrap>
-      <Multiline>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolores,
-        recusandae quidem mollitia eum non vel architecto possimus repudiandae
-        quis molestias neque facilis rem dolorum voluptatem impedit nemo
-        praesentium voluptas.
-      </Multiline>
-      <MultilineOverflow>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem dolores,
-        recusandae quidem mollitia eum non vel architecto possimus repudiandae
-        quis molestias neque facilis rem dolorum voluptatem impedit nemo
-        praesentium voluptas.
-      </MultilineOverflow>
-      <WithEffects>With effects</WithEffects>
-      <WithoutHalfLeading>Without half-leading</WithoutHalfLeading>
-      <WithoutHalfLeadingNoOptimization>
-        Without half-leading (No optimization)
-      </WithoutHalfLeadingNoOptimization>
-      <WithHalfLeading>With half-leading</WithHalfLeading>
-      <FixedSizeBox>Fixed size box</FixedSizeBox>
-      <InputContainer>
-        <Button>Button</Button>
-        <Button disabled>Disabled</Button>
-      </InputContainer>
-      <InputContainer>
-        <TextField value="text field" />
-        <TextField value="disabled" disabled />
-        <TextField value="invalid" assertive />
-      </InputContainer>
-      <BorderedBox>Border</BorderedBox>
-      <GradientBox>Gradient</GradientBox>
-      <WarningGradientBox>Gradient (Warning)</WarningGradientBox>
-      <TailwindLike />
-      <FixBox>
-        <FullBox>Full width</FullBox>
-      </FixBox>
-      <LocalTheme>This is actually text1 !</LocalTheme>
-    </Container>
-  </ThemeProvider>
-)
+export const Example: StoryObj = {
+  render: () => (
+    <ThemeProvider theme={myTheme}>
+      <Container>
+        <Normal>Sample</Normal>
+        <LeftTopPadding>Left Top Padding</LeftTopPadding>
+        <NestedWrap>
+          <Nested>Nested</Nested>
+        </NestedWrap>
+        <Multiline>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+          dolores, recusandae quidem mollitia eum non vel architecto possimus
+          repudiandae quis molestias neque facilis rem dolorum voluptatem
+          impedit nemo praesentium voluptas.
+        </Multiline>
+        <MultilineOverflow>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+          dolores, recusandae quidem mollitia eum non vel architecto possimus
+          repudiandae quis molestias neque facilis rem dolorum voluptatem
+          impedit nemo praesentium voluptas.
+        </MultilineOverflow>
+        <WithEffects>With effects</WithEffects>
+        <WithoutHalfLeading>Without half-leading</WithoutHalfLeading>
+        <WithoutHalfLeadingNoOptimization>
+          Without half-leading (No optimization)
+        </WithoutHalfLeadingNoOptimization>
+        <WithHalfLeading>With half-leading</WithHalfLeading>
+        <FixedSizeBox>Fixed size box</FixedSizeBox>
+        <InputContainer>
+          <Button>Button</Button>
+          <Button disabled>Disabled</Button>
+        </InputContainer>
+        <InputContainer>
+          <TextField value="text field" />
+          <TextField value="disabled" disabled />
+          <TextField value="invalid" assertive />
+        </InputContainer>
+        <BorderedBox>Border</BorderedBox>
+        <GradientBox>Gradient</GradientBox>
+        <WarningGradientBox>Gradient (Warning)</WarningGradientBox>
+        <TailwindLikeElement />
+        <FixBox>
+          <FullBox>Full width</FullBox>
+        </FixBox>
+        <LocalTheme>This is actually text1 !</LocalTheme>
+      </Container>
+    </ThemeProvider>
+  ),
+}
 
-export const TailwindLike = () => (
+const TailwindLikeElement = () => (
   <div
     css={`
       display: flex;
@@ -86,6 +89,10 @@ export const TailwindLike = () => (
     </div>
   </div>
 )
+
+export const TailwindLike: StoryObj = {
+  render: () => <TailwindLikeElement />,
+}
 
 const Container = styled.div``
 
