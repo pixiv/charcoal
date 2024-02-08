@@ -47,7 +47,7 @@ const options = {
   storyKindRegex: /^.*?DontTest$/,
   storyNameRegex: /UNSET/,
   snapshotsDirName: '__snapshots__',
-  snapshotExtension: 'snap',
+  snapshotExtension: 'storyshot',
 }
 
 describe(options.suite, () => {
