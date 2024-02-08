@@ -1,7 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests TextArea AutoHeight 1`] = `
-.c3 {
+.c7 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c4 {
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
@@ -9,7 +47,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   color: var(--charcoal-text1);
 }
 
-.c3::before {
+.c4::before {
   display: block;
   width: 0;
   height: 0;
@@ -17,7 +55,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   margin-top: -4px;
 }
 
-.c3::after {
+.c4::after {
   display: block;
   width: 0;
   height: 0;
@@ -25,7 +63,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   margin-bottom: -4px;
 }
 
-.c5 {
+.c6 {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
@@ -34,7 +72,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   transition: 0.2s color,0.2s box-shadow;
 }
 
-.c5::before {
+.c6::before {
   display: block;
   width: 0;
   height: 0;
@@ -42,7 +80,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   margin-top: -4px;
 }
 
-.c5::after {
+.c6::after {
   display: block;
   width: 0;
   height: 0;
@@ -50,27 +88,27 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   margin-bottom: -4px;
 }
 
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c1 {
+.c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -81,15 +119,15 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   align-items: center;
 }
 
-.c1 > .c4 {
+.c2 > .c5 {
   margin-left: auto;
 }
 
-.c2 {
+.c3 {
   margin-bottom: 8px;
 }
 
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -99,7 +137,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c8 {
   position: relative;
   overflow: hidden;
   color: var(--charcoal-text2);
@@ -110,17 +148,17 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
+.c8:not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c6:focus-within {
+.c8:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c7 {
+.c9 {
   border: none;
   outline: none;
   resize: none;
@@ -144,20 +182,25 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
   background: none;
 }
 
-.c7::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c7::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c7:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c7::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
 }
 
 <div
@@ -167,51 +210,62 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
     className="c0"
   >
     <div
-      className="c1 c2"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      className="c1"
     >
-      <label
-        className="c3"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="c4 c5"
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
       >
-        <span />
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="c7"
+              onClick={[Function]}
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      className="c6"
-      rows={4}
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="c7"
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="TextArea"
-        readOnly={false}
-        required={false}
+      <div
+        className="c8"
         rows={4}
-        value=""
-      />
+      >
+        <textarea
+          aria-labelledby="test-id"
+          className="c9"
+          disabled={false}
+          id="test-id"
+          onChange={[Function]}
+          placeholder="Text Area"
+          readOnly={false}
+          required={false}
+          rows={4}
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>
