@@ -66,14 +66,19 @@
   &[aria-disabled='false'] {
     ${_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_4__.L_}
 
-    &:hover {
-      color: var(--charcoal-${p=>p.$color}-hover);
-      background-color: var(--charcoal-${p=>p.$background}-hover);
-    }
-    &:active {
-      color: var(--charcoal-${p=>p.$color}-press);
-      background-color: var(--charcoal-${p=>p.$background}-press);
-    }
+    ${({$isActive:$active,$color,$background})=>$active?styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            color: var(--charcoal-${$color}-press);
+            background-color: var(--charcoal-${$background}-press);
+          `:styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            &:hover {
+              color: var(--charcoal-${$color}-hover);
+              background-color: var(--charcoal-${$background}-hover);
+            }
+            &:active {
+              color: var(--charcoal-${$color}-press);
+              background-color: var(--charcoal-${$background}-press);
+            }
+          `}
   }
 
   &:disabled,
@@ -81,7 +86,7 @@
     opacity: 0.32;
   }
   height: ${p=>"M"===p.$size?40:32}px;
-`,(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,$size:size,$variant:variant,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})}))),StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default).attrs((function styledProps({$size,$variant}){return{...variantToProps($variant),...sizeToProps($size)}}))`
+`,(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((function IconButtonInner({variant="Default",size="M",icon,isActive=!1,...rest},ref){return function validateIconSize(size,icon){let requiredIconSize;switch(size){case"XS":requiredIconSize="16";break;case"S":case"M":requiredIconSize="24"}const result=/^\d*/u.exec(icon);if(null==result)throw new Error("Invalid icon name");const[iconSize]=result;iconSize!==requiredIconSize&&console.warn(`IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`)}(size,icon),(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyledIconButton,{...rest,ref,$size:size,$variant:variant,$isActive:isActive,children:(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pixiv-icon",{name:icon})})}))),StyledIconButton=(0,styled_components__WEBPACK_IMPORTED_MODULE_2__.ZP)(Clickable_default).attrs((function styledProps({$size,$variant}){return{...variantToProps($variant),...sizeToProps($size)}}))`
   user-select: none;
 
   width: ${p=>p.$width}px;
@@ -96,16 +101,16 @@
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    &:hover {
-      background-color: var(
-        ${({$background})=>`--charcoal-${$background}-hover`}
-      );
-    }
-    &:active {
-      background-color: var(
-        ${({$background})=>`--charcoal-${$background}-press`}
-      );
-    }
+    ${({$isActive,$background})=>$isActive?styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            background-color: var(--charcoal-${$background}-press);
+          `:styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            &:hover {
+              background-color: var(--charcoal-${$background}-hover);
+            }
+            &:active {
+              background-color: var(--charcoal-${$background}-press);
+            }
+          `}
     ${_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_4__.L_}
   }
 
@@ -832,9 +837,16 @@
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
     ${_charcoal_ui_styled__WEBPACK_IMPORTED_MODULE_4__.L_}
-    &:hover {
-      background-color: var(--charcoal-surface3-hover);
-    }
+    ${({$active})=>!0===$active?styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            background-color: var(--charcoal-surface3-press);
+          `:styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            &:hover {
+              background-color: var(--charcoal-surface3-hover);
+            }
+            &:active {
+              background-color: var(--charcoal-surface3-press);
+            }
+          `}
   }
 
   ${({invalid})=>!0===invalid&&styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
@@ -1186,4 +1198,4 @@
     margin-bottom: -4px;
   }
 `}}]);
-//# sourceMappingURL=6983.f78a84c2.iframe.bundle.js.map
+//# sourceMappingURL=6983.32195869.iframe.bundle.js.map
