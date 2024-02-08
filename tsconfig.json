@@ -24,8 +24,8 @@
     "jest.setup.ts",
     "**/.*.cjs",
     "**/.*.js",
-    "storyshots.*",
-    "__mocks__/*.ts"
+    "__mocks__/*.ts",
+    ".storybook"
   ],
   "exclude": ["docs"]
 }

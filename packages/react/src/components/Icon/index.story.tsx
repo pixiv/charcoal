@@ -1,6 +1,6 @@
-import Icon, { IconProps } from '.'
+import Icon from '.'
 import { KNOWN_ICON_FILES } from '@charcoal-ui/icons'
-import { Story } from '../../_lib/compat'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'Icon',
@@ -19,14 +19,10 @@ export default {
       },
     },
   },
-}
+  args: {
+    name: KNOWN_ICON_FILES[0],
+    scale: 1,
+  },
+} as Meta<typeof Icon>
 
-// NOTICE: コード生成のタイミングで不当に型エラーが出ることがあるので name を any にする
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Template: Story<IconProps & { name: any }> = (props) => (
-  <Icon {...props} />
-)
-
-export const Default = Template.bind({})
-
-Default.args = { name: KNOWN_ICON_FILES[0], scale: 1 }
+export const Default: StoryObj<typeof Icon> = {}

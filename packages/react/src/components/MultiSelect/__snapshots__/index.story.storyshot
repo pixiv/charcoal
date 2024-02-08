@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots MultiSelect Default 1`] = `
+exports[`Storybook Tests MultiSelect Default 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -86,6 +86,19 @@ exports[`Storyshots MultiSelect Default 1`] = `
 .c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
 .c2[type='checkbox']:active[aria-disabled='false'] {
   background-color: var(--charcoal-text3-press);
+}
+
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3 {
@@ -251,7 +264,7 @@ exports[`Storyshots MultiSelect Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots MultiSelect Invalid 1`] = `
+exports[`Storybook Tests MultiSelect Invalid 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -337,6 +350,19 @@ exports[`Storyshots MultiSelect Invalid 1`] = `
 .c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
 .c2[type='checkbox']:active[aria-disabled='false'] {
   background-color: var(--charcoal-text3-press);
+}
+
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]),
@@ -507,7 +533,7 @@ exports[`Storyshots MultiSelect Invalid 1`] = `
 </div>
 `;
 
-exports[`Storyshots MultiSelect Overlay 1`] = `
+exports[`Storybook Tests MultiSelect Overlay 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -594,6 +620,19 @@ exports[`Storyshots MultiSelect Overlay 1`] = `
 .c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
 .c2[type='checkbox']:active[aria-disabled='false'] {
   background-color: var(--charcoal-text3-press);
+}
+
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3 {
@@ -762,7 +801,7 @@ exports[`Storyshots MultiSelect Overlay 1`] = `
 </div>
 `;
 
-exports[`Storyshots MultiSelect Playground 1`] = `
+exports[`Storybook Tests MultiSelect Playground 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -848,6 +887,19 @@ exports[`Storyshots MultiSelect Playground 1`] = `
 .c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
 .c2[type='checkbox']:active[aria-disabled='false'] {
   background-color: var(--charcoal-text3-press);
+}
+
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3 {

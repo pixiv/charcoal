@@ -5,6 +5,7 @@ import * as React from 'react'
 import { useToggleState } from 'react-stately'
 import styled from 'styled-components'
 import { useObjectRef } from '@react-aria/utils'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 export type SwitchProps = {
   name: string
@@ -71,10 +72,6 @@ const Label = styled.label`
     opacity: 0.32;
     cursor: default;
   }
-
-  :active > input {
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-  }
 `
 
 const LabelInner = styled.div`
@@ -107,9 +104,7 @@ const SwitchInput = styled.input.attrs({ type: 'checkbox' })`
   :active {
     background-color: var(--charcoal-text4-press);
   }
-  :focus {
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-  }
+  ${focusVisibleFocusRingCss}
 
   &::after {
     content: '';

@@ -2,6 +2,7 @@ import { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
 import type { KnownIconType } from '@charcoal-ui/icons'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 type Variant = 'Default' | 'Overlay'
 type Size = 'XS' | 'S' | 'M'
@@ -81,12 +82,7 @@ const StyledIconButton = styled(Clickable).attrs<
               background-color: var(--charcoal-${$background}-press);
             }
           `}
-    &:focus,
-    &:active,
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
+    ${focusVisibleFocusRingCss}
   }
 
   &:disabled,

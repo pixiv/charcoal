@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 import { px } from '@charcoal-ui/utils'
 import { AriaButtonProps, useButton } from '@react-aria/button'
 import Icon from '../Icon'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 const sizeMap = {
   S: 32,
@@ -119,12 +120,7 @@ const TagItemRoot = styled.a<TagItemRootProps>`
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    &:focus,
-    &:active,
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
+    ${focusVisibleFocusRingCss}
   }
 
   &:disabled,

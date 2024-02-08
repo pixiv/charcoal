@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/TextEllipsis Default 1`] = `
+exports[`Storybook Tests Sandbox/TextEllipsis Default 1`] = `
 .c1 {
   overflow: hidden;
   line-height: 22px;

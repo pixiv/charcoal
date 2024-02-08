@@ -1,7 +1,7 @@
-import type { Story } from '../../_lib/compat'
 import '@charcoal-ui/icons'
 import IconButton from '.'
 import type { KnownIconType } from '@charcoal-ui/icons'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'IconButton',
@@ -25,37 +25,33 @@ export default {
       },
     },
   },
+  render: (props) => {
+    const { size } = props
+    const icon: keyof KnownIconType = {
+      XS: '16/Remove' as const,
+      S: '24/Close' as const,
+      M: '24/Close' as const,
+    }[size ?? 'M']
+    return <IconButton title="close" {...props} icon={icon} />
+  },
+} as Meta<typeof IconButton>
+
+export const DefaultM: StoryObj<typeof IconButton> = {
+  args: {
+    variant: 'Default',
+    size: 'M',
+  },
 }
 
-type Props = {
-  variant?: 'Default' | 'Overlay'
-  size?: 'M' | 'S' | 'XS'
-  isActive?: boolean
+export const IsActive: StoryObj<typeof IconButton> = {
+  args: {
+    isActive: true,
+  },
 }
 
-const Template: Story<Props> = (props) => {
-  const { size } = props
-  const icon: keyof KnownIconType = {
-    XS: '16/Remove' as const,
-    S: '24/Close' as const,
-    M: '24/Close' as const,
-  }[size ?? 'M']
-  return <IconButton title="close" {...props} icon={icon} />
-}
-
-export const DefaultM: Story<Props> = Template.bind({})
-DefaultM.args = {
-  variant: 'Default',
-  size: 'M',
-}
-
-export const Active: Story<Props> = Template.bind({})
-Active.args = {
-  isActive: true,
-}
-
-export const OverlayM: Story<Props> = Template.bind({})
-OverlayM.args = {
-  variant: 'Overlay',
-  size: 'M',
+export const OverlayM: StoryObj<typeof IconButton> = {
+  args: {
+    variant: 'Overlay',
+    size: 'M',
+  },
 }

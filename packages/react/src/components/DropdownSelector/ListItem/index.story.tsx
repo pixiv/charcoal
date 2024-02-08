@@ -1,20 +1,20 @@
 import { useState } from 'react'
-import { Story } from '../../../_lib/compat'
 import Icon from '../../Icon'
 import Switch from '../../Switch'
-import ListItem, { ListItemProps } from '.'
+import ListItem from '.'
 import styled from 'styled-components'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'DropdownSelector/ListItem',
   component: ListItem,
-}
+} as Meta<typeof ListItem>
 
 const CustomLink = styled.a`
   color: red;
 `
 
-export const Basic: Story<ListItemProps> = () => {
+const BasicRender = () => {
   const [checked, setChecked] = useState(false)
   const handleCheck = () => {
     setChecked((v) => !v)
@@ -48,4 +48,8 @@ export const Basic: Story<ListItemProps> = () => {
       </ListItem>
     </>
   )
+}
+
+export const Basic: StoryObj<typeof ListItem> = {
+  render: BasicRender,
 }

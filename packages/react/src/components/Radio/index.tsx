@@ -1,7 +1,8 @@
 import { memo, forwardRef, useCallback, useContext } from 'react'
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import warning from 'warning'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
@@ -45,7 +46,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
         name={name}
         value={value}
         checked={isSelected}
-        invalid={invalid}
+        aria-invalid={invalid}
         onChange={handleChange}
         disabled={isDisabled || isReadonly}
         ref={ref}
@@ -70,9 +71,7 @@ const RadioRoot = styled.label`
   }
 `
 
-export const RadioInput = styled.input.attrs({ type: 'radio' })<{
-  invalid?: boolean
-}>`
+export const RadioInput = styled.input.attrs({ type: 'radio' })`
   /** Make prior to browser default style */
   &[type='radio'] {
     appearance: none;
@@ -91,23 +90,18 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
 
     &:not(:disabled):not([aria-disabled]),
     &[aria-disabled='false'] {
-      ${({ invalid = false }) =>
-        invalid &&
-        css`
-          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        `}
-
       &:hover {
         background-color: var(--charcoal-surface1-hover);
       }
       &:active {
         background-color: var(--charcoal-surface1-press);
       }
-      &:focus,
-      &:active,
-      &:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+      ${focusVisibleFocusRingCss}
+      &[aria-invalid='true'] {
+        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+        &:focus {
+          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+        }
       }
     }
 

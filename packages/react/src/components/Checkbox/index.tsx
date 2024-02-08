@@ -8,6 +8,7 @@ import { disabledSelector } from '@charcoal-ui/utils'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
+import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
 type CheckboxLabelProps =
   | {
@@ -123,18 +124,7 @@ const CheckboxInput = styled.input`
 
     &:not(:disabled):not([aria-disabled]),
     &[aria-disabled='false'] {
-      &:focus,
-      &:active {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-        &:not(:focus-visible) {
-          outline: none;
-        }
-      }
-      &:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-      }
+      ${focusVisibleFocusRingCss}
       &[aria-invalid='true'] {
         box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
       }

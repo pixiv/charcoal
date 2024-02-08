@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/HintText Default 1`] = `
+exports[`Storybook Tests Sandbox/HintText Default 1`] = `
 .c2 {
   stroke: none;
   fill: currentColor;

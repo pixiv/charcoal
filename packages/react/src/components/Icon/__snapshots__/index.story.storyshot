@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Icon Default 1`] = `
+exports[`Storybook Tests Icon Default 1`] = `
 <div
   data-dark={false}
 >

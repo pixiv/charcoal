@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components'
-import { Story } from '../../_lib/compat'
 import Clickable from '../Clickable'
-import TextArea, { TextAreaProps } from '.'
+import TextArea from '.'
 import { px } from '@charcoal-ui/utils'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'TextArea',
@@ -12,50 +12,47 @@ export default {
   args: {
     showLabel: false,
     label: 'Label',
+    requiredText: '*必須',
     assistiveText: '',
     disabled: false,
     required: false,
     invalid: false,
+    subLabel: <Clickable onClick={action('label-click')}>Text Link</Clickable>,
+    placeholder: 'Text Area',
   },
-}
+  render: function Render(args) {
+    return (
+      <Container>
+        <TextArea {...args} />
+      </Container>
+    )
+  },
+} as Meta<typeof TextArea>
 
 const Container = styled.div`
   display: grid;
   gap: ${({ theme }) => px(theme.spacing[24])};
 `
 
-const Template: Story<Partial<TextAreaProps>> = (args) => (
-  <Container>
-    <TextArea
-      label="Label"
-      requiredText="*必須"
-      subLabel={
-        <Clickable onClick={action('label-click')}>Text Link</Clickable>
-      }
-      placeholder="Text Area"
-      {...args}
-    />
-  </Container>
-)
+export const Default: StoryObj<typeof TextArea> = {}
 
-export const Default = Template.bind({})
-
-export const HasLabel = Template.bind({})
-HasLabel.args = {
-  showLabel: true,
-  assistiveText: 'Assistive text',
-  required: true,
+export const HasLabel: StoryObj<typeof TextArea> = {
+  args: {
+    showLabel: true,
+    assistiveText: 'Assistive text',
+    required: true,
+  },
 }
 
-export const HasCount = Template.bind({})
-HasCount.args = {
-  showCount: true,
-  maxLength: 100,
+export const HasCount: StoryObj<typeof TextArea> = {
+  args: {
+    showCount: true,
+    maxLength: 100,
+  },
 }
 
-export const AutoHeight: Story<Partial<TextAreaProps>> = (args) => (
-  <TextArea label="Label" placeholder="TextArea" {...args} />
-)
-AutoHeight.args = {
-  autoHeight: true,
+export const AutoHeight: StoryObj<typeof TextArea> = {
+  args: {
+    autoHeight: true,
+  },
 }

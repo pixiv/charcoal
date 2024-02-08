@@ -1,6 +1,6 @@
 /** @type { import('@jest/types').Config.InitialOptions } */
 const rootConfig = {
-  projects: ['packages/*'],
+  projects: ['packages/*', '.storybook'],
   passWithNoTests: true,
 }
 

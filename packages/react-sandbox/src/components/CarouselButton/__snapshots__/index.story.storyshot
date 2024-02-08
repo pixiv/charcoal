@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Carousel/CarouselButton Carousel Button 1`] = `
+exports[`Storybook Tests Sandbox/Carousel/CarouselButton _CarouselButton 1`] = `
 .c3 {
   stroke: none;
   fill: currentColor;
@@ -99,7 +99,7 @@ exports[`Storyshots Sandbox/Carousel/CarouselButton Carousel Button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Carousel/CarouselButton Scroll Hint Button 1`] = `
+exports[`Storybook Tests Sandbox/Carousel/CarouselButton _ScrollHintButton 1`] = `
 .c2 {
   stroke: none;
   fill: currentColor;

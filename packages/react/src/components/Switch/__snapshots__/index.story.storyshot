@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Switch Basic 1`] = `
+exports[`Storybook Tests Switch Basic 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -16,10 +16,6 @@ exports[`Storyshots Switch Basic 1`] = `
 .c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
-}
-
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1 {
@@ -55,6 +51,15 @@ exports[`Storyshots Switch Basic 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -139,7 +144,7 @@ exports[`Storyshots Switch Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Switch Checked 1`] = `
+exports[`Storybook Tests Switch Checked 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -155,10 +160,6 @@ exports[`Storyshots Switch Checked 1`] = `
 .c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
-}
-
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1 {
@@ -194,6 +195,15 @@ exports[`Storyshots Switch Checked 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -278,7 +288,7 @@ exports[`Storyshots Switch Checked 1`] = `
 </div>
 `;
 
-exports[`Storyshots Switch Disabled 1`] = `
+exports[`Storybook Tests Switch Disabled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -294,10 +304,6 @@ exports[`Storyshots Switch Disabled 1`] = `
 .c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
-}
-
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2 {
@@ -340,6 +346,15 @@ exports[`Storyshots Switch Disabled 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
@@ -429,7 +444,7 @@ exports[`Storyshots Switch Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Switch Labelled 1`] = `
+exports[`Storybook Tests Switch Labelled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -445,10 +460,6 @@ exports[`Storyshots Switch Labelled 1`] = `
 .c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
-}
-
-.c0:active > input {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2 {
@@ -491,6 +502,15 @@ exports[`Storyshots Switch Labelled 1`] = `
 }
 
 .c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 

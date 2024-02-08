@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots LoadingSpinnerIcon Icon 1`] = `
+exports[`Storybook Tests LoadingSpinnerIcon Icon 1`] = `
 .c0 {
   width: 1em;
   height: 1em;
