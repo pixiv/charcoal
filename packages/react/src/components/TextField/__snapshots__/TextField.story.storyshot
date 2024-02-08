@@ -1360,6 +1360,22 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   background-color: var( --charcoal-surface4-press );
 }
 
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c12:disabled,
 .c12[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;

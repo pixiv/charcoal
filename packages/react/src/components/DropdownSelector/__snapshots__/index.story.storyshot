@@ -44,6 +44,22 @@ exports[`Storybook Tests DropdownSelector Basic 1`] = `
   cursor: default;
 }
 
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
@@ -139,6 +155,22 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 .c1:disabled,
 .c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,
@@ -245,6 +277,22 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 .c1:disabled,
 .c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,
@@ -380,6 +428,22 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   cursor: default;
 }
 
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c8[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus-visible,
+.c8[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c8:not(:disabled):not([aria-disabled]):hover,
 .c8[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
@@ -434,6 +498,22 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active {
   background-color: var( --charcoal-transparent-press );
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c12:disabled,
@@ -754,6 +834,22 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
   cursor: default;
 }
 
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
@@ -878,6 +974,22 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
   height: 40px;
 }
 
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
   color: var(--charcoal-text2-hover);
@@ -936,6 +1048,22 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
 .c3:disabled,
 .c3[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
+}
+
+.c3:not(:disabled):not([aria-disabled]):focus,
+.c3[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c3:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3:not(:disabled):not([aria-disabled]):hover,
@@ -1037,6 +1165,22 @@ exports[`Storybook Tests DropdownSelector SectionList 1`] = `
 .c1:disabled,
 .c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1:not(:disabled):not([aria-disabled]):hover,

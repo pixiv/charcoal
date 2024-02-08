@@ -29,6 +29,22 @@ exports[`Storybook Tests TagItem Default 1`] = `
   transition: 0.2s box-shadow;
 }
 
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c0[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
@@ -161,6 +177,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
   transition: 0.2s box-shadow;
 }
 
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1:disabled,
 .c1[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
@@ -193,6 +225,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
   color: var(--charcoal-text5);
   -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c8[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c8:not(:disabled):not([aria-disabled]):focus-visible,
+.c8[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c8:disabled,
@@ -229,6 +277,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
   transition: 0.2s box-shadow;
 }
 
+.c9:not(:disabled):not([aria-disabled]):focus,
+.c9[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c9[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c9:not(:disabled):not([aria-disabled]):focus-visible,
+.c9[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c9:disabled,
 .c9[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
@@ -261,6 +325,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
   color: var(--charcoal-text5);
   -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus,
+.c11[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c11[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c11:not(:disabled):not([aria-disabled]):focus-visible,
+.c11[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c11:disabled,
@@ -297,6 +377,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
   transition: 0.2s box-shadow;
 }
 
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c12:disabled,
 .c12[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
@@ -329,6 +425,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
   color: var(--charcoal-text2);
   -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
+}
+
+.c13:not(:disabled):not([aria-disabled]):focus,
+.c13[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c13[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c13:not(:disabled):not([aria-disabled]):focus-visible,
+.c13[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c13:disabled,

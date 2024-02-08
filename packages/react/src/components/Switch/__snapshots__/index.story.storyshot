@@ -50,6 +50,19 @@ exports[`Storybook Tests Switch Basic 1`] = `
   background-color: var(--charcoal-text4-press);
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c1::after {
   content: '';
   position: absolute;
@@ -179,6 +192,19 @@ exports[`Storybook Tests Switch Checked 1`] = `
 
 .c1:active {
   background-color: var(--charcoal-text4-press);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1::after {
@@ -317,6 +343,19 @@ exports[`Storybook Tests Switch Disabled 1`] = `
 
 .c1:active {
   background-color: var(--charcoal-text4-press);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1::after {
@@ -460,6 +499,19 @@ exports[`Storybook Tests Switch Labelled 1`] = `
 
 .c1:active {
   background-color: var(--charcoal-text4-press);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c1::after {

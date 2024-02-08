@@ -88,6 +88,19 @@ exports[`Storybook Tests MultiSelect Default 1`] = `
   background-color: var(--charcoal-text3-press);
 }
 
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c3 {
   position: absolute;
   top: -2px;
@@ -337,6 +350,19 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
 .c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
 .c2[type='checkbox']:active[aria-disabled='false'] {
   background-color: var(--charcoal-text3-press);
+}
+
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c2[type='checkbox']:not(:disabled):not([aria-disabled]),
@@ -596,6 +622,19 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
   background-color: var(--charcoal-text3-press);
 }
 
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c3 {
   position: absolute;
   top: -2px;
@@ -848,6 +887,19 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
 .c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
 .c2[type='checkbox']:active[aria-disabled='false'] {
   background-color: var(--charcoal-text3-press);
+}
+
+.c2[type='checkbox']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2[type='checkbox']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2[type='checkbox']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
 .c3 {
