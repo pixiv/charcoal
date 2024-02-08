@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Filter Button 1`] = `
+exports[`Storybook Tests Sandbox/Filter Button 1`] = `
 .c0 {
   display: block;
   outline: none;
@@ -45,7 +45,7 @@ exports[`Storyshots Sandbox/Filter Button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Filter Default 1`] = `
+exports[`Storybook Tests Sandbox/Filter Default 1`] = `
 .c3 {
   display: block;
   outline: none;
@@ -193,7 +193,7 @@ exports[`Storyshots Sandbox/Filter Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Filter Link 1`] = `
+exports[`Storybook Tests Sandbox/Filter Link 1`] = `
 .c0 {
   display: block;
   outline: none;

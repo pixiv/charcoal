@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/MenuListItem Default 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Default 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;
@@ -97,7 +97,7 @@ exports[`Storyshots Sandbox/MenuListItem Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Disabled 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Disabled 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;
@@ -194,7 +194,7 @@ exports[`Storyshots Sandbox/MenuListItem Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Hard Link 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem HardLink 1`] = `
 .c4 {
   overflow: hidden;
   line-height: 22px;
@@ -303,7 +303,7 @@ exports[`Storyshots Sandbox/MenuListItem Hard Link 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Icon 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Icon 1`] = `
 .c4 {
   overflow: hidden;
   line-height: 22px;
@@ -445,7 +445,7 @@ exports[`Storyshots Sandbox/MenuListItem Icon 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Inline Icon 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem InlineIcon 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;
@@ -623,7 +623,7 @@ exports[`Storyshots Sandbox/MenuListItem Inline Icon 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Label 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Label 1`] = `
 .c4 {
   overflow: hidden;
   line-height: 22px;
@@ -733,7 +733,7 @@ exports[`Storyshots Sandbox/MenuListItem Label 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Link 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Link 1`] = `
 .c4 {
   overflow: hidden;
   line-height: 22px;
@@ -840,7 +840,7 @@ exports[`Storyshots Sandbox/MenuListItem Link 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem No Hover Effect 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem NoHoverEffect 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;
@@ -1050,7 +1050,7 @@ exports[`Storyshots Sandbox/MenuListItem No Hover Effect 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Simple 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Simple 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;
@@ -1163,7 +1163,7 @@ exports[`Storyshots Sandbox/MenuListItem Simple 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Spacer 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem Spacer 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;
@@ -1286,7 +1286,7 @@ exports[`Storyshots Sandbox/MenuListItem Spacer 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/MenuListItem Text Ellipsis 1`] = `
+exports[`Storybook Tests Sandbox/MenuListItem TextEllipsis 1`] = `
 .c3 {
   overflow: hidden;
   line-height: 22px;

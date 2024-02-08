@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DropdownSelector Basic 1`] = `
+exports[`Storybook Tests DropdownSelector Basic 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -113,7 +113,7 @@ exports[`Storyshots DropdownSelector Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots DropdownSelector Custom Children 1`] = `
+exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -235,7 +235,7 @@ exports[`Storyshots DropdownSelector Custom Children 1`] = `
 </div>
 `;
 
-exports[`Storyshots DropdownSelector In Form Tag 1`] = `
+exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -346,7 +346,7 @@ exports[`Storyshots DropdownSelector In Form Tag 1`] = `
 </div>
 `;
 
-exports[`Storyshots DropdownSelector In Modal 1`] = `
+exports[`Storybook Tests DropdownSelector InModal 1`] = `
 .c11 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -682,7 +682,12 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
     <div
       className="c0"
       onPointerDown={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "overflow": "hidden",
+        }
+      }
     >
       <div
         className="c1"
@@ -690,7 +695,11 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
         onKeyDown={[Function]}
         role="dialog"
         size="M"
-        style={Object {}}
+        style={
+          Object {
+            "transform": " translateY(100%)",
+          }
+        }
         tabIndex={-1}
       >
         <div
@@ -781,7 +790,7 @@ exports[`Storyshots DropdownSelector In Modal 1`] = `
 </div>
 `;
 
-exports[`Storyshots DropdownSelector Long Names 1`] = `
+exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -894,7 +903,7 @@ exports[`Storyshots DropdownSelector Long Names 1`] = `
 </div>
 `;
 
-exports[`Storyshots DropdownSelector Playground 1`] = `
+exports[`Storybook Tests DropdownSelector Playground 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1114,7 +1123,7 @@ exports[`Storyshots DropdownSelector Playground 1`] = `
 </div>
 `;
 
-exports[`Storyshots DropdownSelector Section List 1`] = `
+exports[`Storybook Tests DropdownSelector SectionList 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;

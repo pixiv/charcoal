@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Pager Collapsed With Dots 1`] = `
+exports[`Storybook Tests Sandbox/Pager CollapsedWithDots 1`] = `
 .c5 {
   fill: currentColor;
 }
@@ -305,7 +305,7 @@ exports[`Storyshots Sandbox/Pager Collapsed With Dots 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Default 1`] = `
+exports[`Storybook Tests Sandbox/Pager Default 1`] = `
 .c2 {
   fill: none;
   stroke-linejoin: round;
@@ -561,7 +561,7 @@ exports[`Storyshots Sandbox/Pager Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Last Page 1`] = `
+exports[`Storybook Tests Sandbox/Pager LastPage 1`] = `
 .c5 {
   fill: currentColor;
 }
@@ -866,7 +866,7 @@ exports[`Storyshots Sandbox/Pager Last Page 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Link 1`] = `
+exports[`Storybook Tests Sandbox/Pager Link 1`] = `
 .c2 {
   fill: none;
   stroke-linejoin: round;
@@ -1152,7 +1152,7 @@ exports[`Storyshots Sandbox/Pager Link 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
+exports[`Storybook Tests Sandbox/Pager LittlePageRangeDisplayed 1`] = `
 .c2 {
   fill: none;
   stroke-linejoin: round;
@@ -1399,7 +1399,7 @@ exports[`Storyshots Sandbox/Pager Little Page Range Displayed 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
+exports[`Storybook Tests Sandbox/Pager NotCollapsed 1`] = `
 .c2 {
   fill: none;
   stroke-linejoin: round;
@@ -1685,7 +1685,7 @@ exports[`Storyshots Sandbox/Pager Not Collapsed 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Pager One 1`] = `
+exports[`Storybook Tests Sandbox/Pager One 1`] = `
 .c2 {
   fill: none;
   stroke-linejoin: round;

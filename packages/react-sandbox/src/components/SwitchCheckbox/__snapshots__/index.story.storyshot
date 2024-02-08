@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Default 1`] = `
+exports[`Storybook Tests Sandbox/Selection Control/SwitchCheckbox Default 1`] = `
 .c7 {
   margin-left: 8px;
 }
@@ -135,7 +135,7 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Disabled 1`] = `
+exports[`Storybook Tests Sandbox/Selection Control/SwitchCheckbox Disabled 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -260,7 +260,7 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Off 1`] = `
+exports[`Storybook Tests Sandbox/Selection Control/SwitchCheckbox Off 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -383,7 +383,7 @@ exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox Off 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Selection Control/SwitchCheckbox On 1`] = `
+exports[`Storybook Tests Sandbox/Selection Control/SwitchCheckbox On 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

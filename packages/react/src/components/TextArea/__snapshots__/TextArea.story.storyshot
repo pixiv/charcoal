@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TextArea Auto Height 1`] = `
+exports[`Storybook Tests TextArea AutoHeight 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -217,7 +217,7 @@ exports[`Storyshots TextArea Auto Height 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea Default 1`] = `
+exports[`Storybook Tests TextArea Default 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -488,7 +488,7 @@ exports[`Storyshots TextArea Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea Has Count 1`] = `
+exports[`Storybook Tests TextArea HasCount 1`] = `
 .c7 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -774,7 +774,7 @@ exports[`Storyshots TextArea Has Count 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea Has Label 1`] = `
+exports[`Storybook Tests TextArea HasLabel 1`] = `
 .c9 {
   cursor: pointer;
   -webkit-appearance: none;

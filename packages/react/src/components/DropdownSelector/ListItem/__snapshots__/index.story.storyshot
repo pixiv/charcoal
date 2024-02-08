@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots DropdownSelector/ListItem Basic 1`] = `
+exports[`Storybook Tests DropdownSelector/ListItem Basic 1`] = `
+.c0 {
+  list-style: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 40px;
+  cursor: pointer;
+  outline: none;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.c1:hover,
+.c1:focus,
+.c1:focus-within {
+  background-color: var(--charcoal-surface3);
+}
+
 .c3 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -108,38 +140,6 @@ exports[`Storyshots DropdownSelector/ListItem Basic 1`] = `
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
-}
-
-.c0 {
-  list-style: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 40px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 16px;
-  padding-left: 16px;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c1:hover,
-.c1:focus,
-.c1:focus-within {
-  background-color: var(--charcoal-surface3);
 }
 
 .c2 {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Layout Basic 1`] = `
+exports[`Storybook Tests Sandbox/Layout Basic 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -441,7 +441,7 @@ exports[`Storyshots Sandbox/Layout Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Layout Center 1`] = `
+exports[`Storybook Tests Sandbox/Layout Center 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -650,7 +650,7 @@ exports[`Storyshots Sandbox/Layout Center 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Layout No Menu 1`] = `
+exports[`Storybook Tests Sandbox/Layout NoMenu 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -989,7 +989,7 @@ exports[`Storyshots Sandbox/Layout No Menu 1`] = `
 </div>
 `;
 
-exports[`Storyshots Sandbox/Layout Wide 1`] = `
+exports[`Storybook Tests Sandbox/Layout Wide 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;

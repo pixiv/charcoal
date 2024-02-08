@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots MultiSelect Default 1`] = `
+exports[`Storybook Tests MultiSelect Default 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -264,7 +264,7 @@ exports[`Storyshots MultiSelect Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots MultiSelect Invalid 1`] = `
+exports[`Storybook Tests MultiSelect Invalid 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -533,7 +533,7 @@ exports[`Storyshots MultiSelect Invalid 1`] = `
 </div>
 `;
 
-exports[`Storyshots MultiSelect Overlay 1`] = `
+exports[`Storybook Tests MultiSelect Overlay 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -801,7 +801,7 @@ exports[`Storyshots MultiSelect Overlay 1`] = `
 </div>
 `;
 
-exports[`Storyshots MultiSelect Playground 1`] = `
+exports[`Storybook Tests MultiSelect Playground 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;

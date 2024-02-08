@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Checkbox Invalid 1`] = `
+exports[`Storybook Tests Checkbox Invalid 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -162,7 +162,7 @@ exports[`Storyshots Checkbox Invalid 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Labelled 1`] = `
+exports[`Storybook Tests Checkbox Labelled 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -390,7 +390,7 @@ exports[`Storyshots Checkbox Labelled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Unlabelled 1`] = `
+exports[`Storybook Tests Checkbox Unlabelled 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;

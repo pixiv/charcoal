@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Sandbox/Carousel Carousel 1`] = `
+exports[`Storybook Tests Sandbox/Carousel _Carousel 1`] = `
 .c12 {
   stroke: none;
   fill: currentColor;

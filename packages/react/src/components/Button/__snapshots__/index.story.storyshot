@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Danger 1`] = `
+exports[`Storybook Tests Button Danger 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -116,7 +116,7 @@ exports[`Storyshots Button Danger 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Default 1`] = `
+exports[`Storybook Tests Button Default 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -232,7 +232,7 @@ exports[`Storyshots Button Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Disabled 1`] = `
+exports[`Storybook Tests Button Disabled 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -348,7 +348,7 @@ exports[`Storyshots Button Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Fixed 1`] = `
+exports[`Storybook Tests Button Fixed 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -464,7 +464,7 @@ exports[`Storyshots Button Fixed 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Focus 1`] = `
+exports[`Storybook Tests Button Focus 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -581,7 +581,7 @@ exports[`Storyshots Button Focus 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Layout Example 1`] = `
+exports[`Storybook Tests Button LayoutExample 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1080,7 +1080,7 @@ exports[`Storyshots Button Layout Example 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Link 1`] = `
+exports[`Storybook Tests Button Link 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1196,7 +1196,7 @@ exports[`Storyshots Button Link 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Navigation 1`] = `
+exports[`Storybook Tests Button Navigation 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1312,7 +1312,7 @@ exports[`Storyshots Button Navigation 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Nihongo 1`] = `
+exports[`Storybook Tests Button Nihongo 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1428,7 +1428,7 @@ exports[`Storyshots Button Nihongo 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Overlay 1`] = `
+exports[`Storybook Tests Button Overlay 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1544,7 +1544,7 @@ exports[`Storyshots Button Overlay 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Primary 1`] = `
+exports[`Storybook Tests Button Primary 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1660,7 +1660,7 @@ exports[`Storyshots Button Primary 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Small 1`] = `
+exports[`Storybook Tests Button Small 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
