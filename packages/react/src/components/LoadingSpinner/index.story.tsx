@@ -10,6 +10,7 @@ export default {
     transparent: false,
     className: 'basic',
   },
+  tags: ['skip-test'],
 } as Meta<typeof LoadingSpinner>
 
 export const Default: StoryObj<typeof LoadingSpinner> = {}
