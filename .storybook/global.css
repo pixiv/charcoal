@@ -3,7 +3,9 @@
 @tailwind components;
 
 :root {
-  font-family: sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 #storybook-docs pre {
