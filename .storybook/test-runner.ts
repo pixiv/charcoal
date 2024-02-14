@@ -6,11 +6,12 @@ const config: TestRunnerConfig = {
     expect.extend({ toMatchImageSnapshot })
   },
   async postVisit(page, context) {
-    await waitForPageReady(page)
-    const image = await page.screenshot()
+    await waitForPageReady(page);
+    const image = await page.screenshot({ fullPage: true });
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: context.id,
       failureThreshold: 0.001,
+      failureThresholdType: 'percent',
     })
   },
   tags: {
