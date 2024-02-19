@@ -67,11 +67,13 @@ exports[`Storybook Tests IconButton DefaultM 1`] = `
 
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
@@ -177,6 +179,7 @@ exports[`Storybook Tests IconButton IsActive 1`] = `
 
 .c1:not(:disabled):not([aria-disabled]),
 .c1[aria-disabled='false'] {
+  color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
@@ -282,11 +285,13 @@ exports[`Storybook Tests IconButton OverlayM 1`] = `
 
 .c1:not(:disabled):not([aria-disabled]):hover,
 .c1[aria-disabled='false']:hover {
+  color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-surface4-hover);
 }
 
 .c1:not(:disabled):not([aria-disabled]):active,
 .c1[aria-disabled='false']:active {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface4-press);
 }
 

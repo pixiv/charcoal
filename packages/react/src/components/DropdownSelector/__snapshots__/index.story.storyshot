@@ -512,11 +512,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
 
 .c12:not(:disabled):not([aria-disabled]):hover,
 .c12[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
