@@ -101,13 +101,16 @@
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    ${({$isActive,$background})=>$isActive?styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+    ${({$isActive,$background,$font})=>$isActive?styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
+            color: var(--charcoal-${$font}-press);
             background-color: var(--charcoal-${$background}-press);
           `:styled_components__WEBPACK_IMPORTED_MODULE_2__.iv`
             &:hover {
+              color: var(--charcoal-${$font}-hover);
               background-color: var(--charcoal-${$background}-hover);
             }
             &:active {
+              color: var(--charcoal-${$font}-press);
               background-color: var(--charcoal-${$background}-press);
             }
           `}
@@ -1198,4 +1201,4 @@
     margin-bottom: -4px;
   }
 `}}]);
-//# sourceMappingURL=6983.32195869.iframe.bundle.js.map
+//# sourceMappingURL=6983.e9548a4f.iframe.bundle.js.map
