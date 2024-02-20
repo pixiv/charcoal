@@ -69,16 +69,19 @@ const StyledIconButton = styled(Clickable).attrs<
 
   &:not(:disabled):not([aria-disabled]),
   &[aria-disabled='false'] {
-    ${({ $isActive, $background }) =>
+    ${({ $isActive, $background, $font }) =>
       $isActive
         ? css`
+            color: var(--charcoal-${$font}-press);
             background-color: var(--charcoal-${$background}-press);
           `
         : css`
             &:hover {
+              color: var(--charcoal-${$font}-hover);
               background-color: var(--charcoal-${$background}-hover);
             }
             &:active {
+              color: var(--charcoal-${$font}-press);
               background-color: var(--charcoal-${$background}-press);
             }
           `}

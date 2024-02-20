@@ -1352,11 +1352,13 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
 
 .c12:not(:disabled):not([aria-disabled]):hover,
 .c12[aria-disabled='false']:hover {
+  color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-surface4-hover);
 }
 
 .c12:not(:disabled):not([aria-disabled]):active,
 .c12[aria-disabled='false']:active {
+  color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface4-press);
 }
 

@@ -197,11 +197,13 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 
 .c13:not(:disabled):not([aria-disabled]):hover,
 .c13[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
 .c13:not(:disabled):not([aria-disabled]):active,
 .c13[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
@@ -912,11 +914,13 @@ exports[`Storybook Tests Modal Default 1`] = `
 
 .c27:not(:disabled):not([aria-disabled]):hover,
 .c27[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
 .c27:not(:disabled):not([aria-disabled]):active,
 .c27[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
@@ -1725,11 +1729,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
 
 .c22:not(:disabled):not([aria-disabled]):hover,
 .c22[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
 .c22:not(:disabled):not([aria-disabled]):active,
 .c22[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
