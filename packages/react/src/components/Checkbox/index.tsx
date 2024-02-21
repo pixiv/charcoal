@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components'
 import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
-import { disabledSelector } from '@charcoal-ui/utils'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
