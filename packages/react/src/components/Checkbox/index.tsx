@@ -82,13 +82,11 @@ const InputRoot = styled.label`
   display: flex;
 
   cursor: pointer;
-  ${disabledSelector} {
-    cursor: default;
-  }
 
   gap: 4px;
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
+    cursor: default;
     opacity: 0.32;
   }
 `
@@ -107,6 +105,10 @@ const CheckboxInput = styled.input`
     height: 20px;
     border-radius: 4px;
     transition: 0.2s box-shadow, 0.2s background-color;
+
+    &:disabled {
+      cursor: default;
+    }
 
     &:checked {
       background-color: var(--charcoal-brand);
