@@ -65,9 +65,9 @@ const RadioRoot = styled.label`
   align-items: center;
   cursor: pointer;
 
-  &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
     opacity: 0.32;
+    cursor: default;
   }
 `
 
@@ -87,6 +87,10 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })`
     border-radius: 999999px;
     background-color: var(--charcoal-surface1);
     transition: 0.2s background-color, 0.2s box-shadow;
+
+    :disabled {
+      cursor: default;
+    }
 
     &:not(:disabled):not([aria-disabled]),
     &[aria-disabled='false'] {
