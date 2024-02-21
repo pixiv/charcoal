@@ -58,7 +58,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <InputRoot aria-disabled={isDisabled} className={props.className}>
         <CheckboxRoot>
-          <CheckboxInput type="checkbox" {...inputProps} />
+          <CheckboxInput
+            type="checkbox"
+            {...inputProps}
+            readOnly={props.readonly}
+          />
           <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
             <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
           </CheckboxInputOverlay>
@@ -106,6 +110,9 @@ const CheckboxInput = styled.input`
     transition: 0.2s box-shadow, 0.2s background-color;
 
     &:disabled {
+      cursor: default;
+    }
+    &:read-only {
       cursor: default;
     }
 
