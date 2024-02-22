@@ -39,6 +39,14 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
   cursor: default;
 }
 
+.c2[type='checkbox']:-moz-read-only {
+  cursor: default;
+}
+
+.c2[type='checkbox']:read-only {
+  cursor: default;
+}
+
 .c2[type='checkbox']:checked {
   background-color: var(--charcoal-brand);
 }
@@ -140,6 +148,7 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
+        readOnly={false}
         type="checkbox"
       />
       <div
@@ -198,6 +207,14 @@ exports[`Storybook Tests Checkbox Labelled 1`] = `
 }
 
 .c2[type='checkbox']:disabled {
+  cursor: default;
+}
+
+.c2[type='checkbox']:-moz-read-only {
+  cursor: default;
+}
+
+.c2[type='checkbox']:read-only {
   cursor: default;
 }
 
@@ -309,6 +326,7 @@ exports[`Storybook Tests Checkbox Labelled 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
+            readOnly={false}
             type="checkbox"
           />
           <div
@@ -357,6 +375,7 @@ exports[`Storybook Tests Checkbox Labelled 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
+            readOnly={false}
             type="checkbox"
           />
           <div
@@ -426,6 +445,14 @@ exports[`Storybook Tests Checkbox Unlabelled 1`] = `
 }
 
 .c2[type='checkbox']:disabled {
+  cursor: default;
+}
+
+.c2[type='checkbox']:-moz-read-only {
+  cursor: default;
+}
+
+.c2[type='checkbox']:read-only {
   cursor: default;
 }
 
@@ -525,6 +552,7 @@ exports[`Storybook Tests Checkbox Unlabelled 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          readOnly={false}
           type="checkbox"
         />
         <div
