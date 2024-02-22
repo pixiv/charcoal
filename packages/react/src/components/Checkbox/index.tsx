@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components'
 import { useCheckbox } from '@react-aria/checkbox'
 import { useObjectRef } from '@react-aria/utils'
 import { useToggleState } from 'react-stately'
-import { disabledSelector } from '@charcoal-ui/utils'
 
 import type { AriaCheckboxProps } from '@react-types/checkbox'
 import Icon from '../Icon'
@@ -59,7 +58,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <InputRoot aria-disabled={isDisabled} className={props.className}>
         <CheckboxRoot>
-          <CheckboxInput type="checkbox" {...inputProps} />
+          <CheckboxInput
+            type="checkbox"
+            {...inputProps}
+            readOnly={props.readonly}
+          />
           <CheckboxInputOverlay aria-hidden={true} checked={inputProps.checked}>
             <Icon name="24/Check" unsafeNonGuidelineScale={2 / 3} />
           </CheckboxInputOverlay>
@@ -82,13 +85,11 @@ const InputRoot = styled.label`
   display: flex;
 
   cursor: pointer;
-  ${disabledSelector} {
-    cursor: default;
-  }
 
   gap: 4px;
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
+    cursor: default;
     opacity: 0.32;
   }
 `
@@ -107,6 +108,13 @@ const CheckboxInput = styled.input`
     height: 20px;
     border-radius: 4px;
     transition: 0.2s box-shadow, 0.2s background-color;
+
+    &:disabled {
+      cursor: default;
+    }
+    &:read-only {
+      cursor: default;
+    }
 
     &:checked {
       background-color: var(--charcoal-brand);

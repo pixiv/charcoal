@@ -12,9 +12,9 @@ exports[`Storybook Tests Radio Basic 1`] = `
   cursor: pointer;
 }
 
-.c2:disabled,
 .c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c3[type='radio'] {
@@ -32,6 +32,10 @@ exports[`Storybook Tests Radio Basic 1`] = `
   background-color: var(--charcoal-surface1);
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c3[type='radio']:disabled {
+  cursor: default;
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
@@ -244,9 +248,9 @@ exports[`Storybook Tests Radio Disabled 1`] = `
   cursor: pointer;
 }
 
-.c2:disabled,
 .c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c3[type='radio'] {
@@ -264,6 +268,10 @@ exports[`Storybook Tests Radio Disabled 1`] = `
   background-color: var(--charcoal-surface1);
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c3[type='radio']:disabled {
+  cursor: default;
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
@@ -476,9 +484,9 @@ exports[`Storybook Tests Radio Invalid 1`] = `
   cursor: pointer;
 }
 
-.c2:disabled,
 .c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c3[type='radio'] {
@@ -496,6 +504,10 @@ exports[`Storybook Tests Radio Invalid 1`] = `
   background-color: var(--charcoal-surface1);
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c3[type='radio']:disabled {
+  cursor: default;
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
@@ -709,9 +721,9 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
   cursor: pointer;
 }
 
-.c2:disabled,
 .c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c3[type='radio'] {
@@ -729,6 +741,10 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
   background-color: var(--charcoal-surface1);
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c3[type='radio']:disabled {
+  cursor: default;
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
@@ -941,9 +957,9 @@ exports[`Storybook Tests Radio Readonly 1`] = `
   cursor: pointer;
 }
 
-.c2:disabled,
 .c2[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
+  cursor: default;
 }
 
 .c3[type='radio'] {
@@ -961,6 +977,10 @@ exports[`Storybook Tests Radio Readonly 1`] = `
   background-color: var(--charcoal-surface1);
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c3[type='radio']:disabled {
+  cursor: default;
 }
 
 .c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
