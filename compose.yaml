@@ -1,0 +1,19 @@
+services:
+  test-runner:
+    # To build inside image, set context to project root
+    &test-runner
+    build:
+      context: .
+      dockerfile: docker/storybook-server/Dockerfile
+    expose:
+      - 6006
+    ports:
+      - 6006:6006
+    command: 'concurrently -k -s first -n "SB,TEST" -c "magenta,blue" "http-server storybook-static --port 6006 --silent" "wait-on tcp:127.0.0.1:6006 && yarn test-storybook"'
+    volumes:
+      - ./__diff_output__/:/workspace/__diff_output__/
+      - ./packages/:/workspace/packages/
+
+  update-snapshot:
+    <<: *test-runner
+    command: 'concurrently -k -s first -n "SB,TEST" -c "magenta,blue" "http-server storybook-static --port 6006 --silent" "wait-on tcp:127.0.0.1:6006 && yarn test-storybook --updateSnapshot"'

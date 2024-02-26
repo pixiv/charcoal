@@ -1,0 +1,7 @@
+node_modules/
+storybook-static/
+docker/
+.yarn/cache/
+.yarn/install-state.gz
+.vscode/
+.git/
