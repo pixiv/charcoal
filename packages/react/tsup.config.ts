@@ -1,4 +1,5 @@
 import { defineConfig } from 'tsup'
+import { styledComponentsPlugin } from '@charcoal-ui/esbuild-plugin-styled-components'
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -10,4 +11,5 @@ export default defineConfig({
   },
   target: 'esnext',
   sourcemap: true,
+  esbuildPlugins: [styledComponentsPlugin],
 })
