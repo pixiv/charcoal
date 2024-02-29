@@ -932,120 +932,17 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 
 exports[`Storybook Tests DropdownSelector Playground 1`] = `
 .c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
+  display: inline-block;
+  width: 100%;
 }
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+  opacity: 0.32;
 }
 
 .c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c2 {
-  display: inline-block;
-  width: 100%;
-}
-
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1072,38 +969,38 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled=false]) {
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus {
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[aria-disabled='false']:focus:not(:focus-visible) {
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled='false']:focus-visible {
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3[aria-disabled='false']:hover {
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c4 {
+.c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -1114,7 +1011,7 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
   white-space: nowrap;
 }
 
-.c5 {
+.c3 {
   color: var(--charcoal-text2);
 }
 
@@ -1129,24 +1026,23 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
     }
   >
     <button
-      className="c0 c1"
-      disabled={false}
+      className="charcoal-button"
     />
     <div
-      className="c2"
+      className="c0"
     >
       <button
-        className="c3"
+        className="c1"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c4"
+          className="c2"
         >
           50
         </span>
         <pixiv-icon
-          class="c5"
+          class="c3"
           name="16/Menu"
         />
       </button>
