@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { ClickableElement } from '../Clickable'
-import Button, { ButtonProps } from '.'
+import Button from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
@@ -93,98 +93,4 @@ export const Focus: StoryObj<typeof Button> = {
       </Button>
     )
   },
-}
-
-export const LayoutExample: StoryObj<typeof Button> = {
-  render: (args: ButtonProps) => (
-    <div
-      css={`
-        display: grid;
-        gap: 24px;
-      `}
-    >
-      <div
-        css={`
-          display: grid;
-          grid: auto / auto-flow min-content;
-          gap: 8px;
-        `}
-      >
-        <Button {...args}>Grid</Button>
-        <Button {...args} variant="Navigation">
-          Layout
-        </Button>
-        <Button {...args} variant="Danger">
-          Sample
-        </Button>
-      </div>
-      <div
-        css={`
-          display: grid;
-          grid: auto-flow auto / 392px;
-          gap: 8px;
-        `}
-      >
-        <Button {...args} variant="Primary" fullWidth>
-          Submit
-        </Button>
-        <Button {...args} variant="Default" fullWidth>
-          Cancel
-        </Button>
-      </div>
-      <div
-        css={`
-          display: flex;
-
-          & > * + * {
-            margin-left: 8px;
-          }
-        `}
-      >
-        <Button {...args}>Flex</Button>
-        <Button {...args} variant="Navigation">
-          Layout
-        </Button>
-        <Button {...args} variant="Danger">
-          Sample
-        </Button>
-      </div>
-      <div
-        css={`
-          display: flex;
-          flex-direction: column;
-          width: 392px;
-
-          & > * + * {
-            margin-top: 8px;
-          }
-        `}
-      >
-        <Button {...args} variant="Primary" fullWidth>
-          Submit
-        </Button>
-        <Button {...args} variant="Default" fullWidth>
-          Cancel
-        </Button>
-      </div>
-      <div
-        css={`
-          display: flex;
-          flex-direction: column;
-          width: 392px;
-
-          & > * + * {
-            margin-top: 8px;
-          }
-        `}
-      >
-        <Button {...args} variant="Primary" fullWidth>
-          すべて見る
-        </Button>
-        <Button {...args} variant="Default">
-          作品を投稿
-        </Button>
-      </div>
-    </div>
-  ),
 }

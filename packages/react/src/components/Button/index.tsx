@@ -1,52 +1,49 @@
-import { forwardRef } from 'react'
-import { ClickableElement, ClickableProps } from '../Clickable'
-import { variantToFont } from './lib/variantToFont'
-import { variantToBackground } from './lib/variantToBackground'
-import { StyledButton } from './StyledButton'
+import './index.css'
 
-export type Variant =
-  | 'Primary'
-  | 'Default'
-  | 'Overlay'
-  | 'Danger'
-  | 'Navigation'
+import { ForwardedRef, ReactNode, forwardRef, useMemo } from 'react'
 
-export type Size = 'S' | 'M'
+import { CustomJSXElement } from '../DropdownSelector/ListItem'
 
-export type ButtonProps = Partial<{
-  variant: Variant
-  size: Size
-  fullWidth: boolean
-  isActive: boolean
-}> &
-  ClickableProps
+type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 
-const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
+type Size = 'S' | 'M'
+
+export type ButtonProps<T extends CustomJSXElement = 'button'> = {
+  children?: ReactNode
+  variant?: Variant
+  size?: Size
+  fullWidth?: boolean
+  isActive?: boolean
+  as?: T
+} & Omit<React.ComponentPropsWithRef<T>, 'children'>
+
+const Button = forwardRef(function Button<T extends CustomJSXElement>(
   {
-    children,
-    variant = 'Default',
-    size = 'M',
-    fullWidth: fixed = false,
-    disabled = false,
-    isActive = false,
-    ...rest
-  },
-  ref
+    variant,
+    fullWidth,
+    size,
+    className,
+    as,
+    isActive,
+    ...props
+  }: ButtonProps<T>,
+  ref: ForwardedRef<HTMLButtonElement>
 ) {
-  return (
-    <StyledButton
-      {...rest}
-      disabled={disabled}
-      $background={variantToBackground(variant)}
-      $color={variantToFont(variant)}
-      $size={size}
-      $fullWidth={fixed}
-      $isActive={isActive}
-      ref={ref}
-    >
-      {children}
-    </StyledButton>
+  const Component = useMemo(() => as ?? 'button', [as])
+  const classNames = useMemo(
+    () => ['charcoal-button', className].filter((v) => v).join(' '),
+    [className]
   )
-})
-
+  return (
+    <Component
+      {...props}
+      className={classNames}
+      data-variant={variant}
+      data-size={size}
+      data-full-width={fullWidth}
+      data-active={isActive}
+      ref={ref}
+    />
+  )
+}) as <T extends CustomJSXElement = 'button'>(p: ButtonProps<T>) => JSX.Element
 export default Button
