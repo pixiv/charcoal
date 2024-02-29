@@ -15,6 +15,8 @@ import Head from 'next/head'
 
 import '../tailwind.css'
 
+import "@charcoal-ui/react/dist/index.css"
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
