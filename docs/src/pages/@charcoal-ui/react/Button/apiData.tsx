@@ -3,11 +3,18 @@ import { ApiTableData } from '../_components/ApiTable'
 import { toEnum } from '../_utils/toEnum'
 import { sizes } from './sizes'
 import { variants } from './variants'
+import { ComponentPropsWithRef } from 'react'
 
 export const apiData: Omit<
-  ApiTableData<ButtonProps, HTMLButtonElement>,
-  'type'
+  ApiTableData<ButtonProps<'button'>, HTMLButtonElement>,
+  keyof Omit<ComponentPropsWithRef<'button'>, 'disabled'>
 > = {
+  as: {
+    description:
+      'keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>',
+    type: 'keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>',
+    default: 'button',
+  },
   variant: {
     description: '色の種類',
     type: toEnum(variants),
