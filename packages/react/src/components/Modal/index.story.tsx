@@ -243,4 +243,27 @@ export const NotDismmissableStory: StoryObj<typeof Modal> = {
   },
 }
 
+export const BackgroundScroll: StoryObj<typeof Modal> = {
+  render: function Render(args) {
+    const state = useOverlayTriggerState({})
+    return (
+      <OverlayProvider>
+        <div
+          style={{
+            height: 1024,
+          }}
+        >
+          <Button onClick={() => state.open()}>Open Modal</Button>
+        </div>
+        <M
+          {...args}
+          isDismissable
+          isOpen={state.isOpen}
+          onClose={() => state.close()}
+        />
+      </OverlayProvider>
+    )
+  },
+}
+
 export { InternalScrollStory as InternalScroll } from './__stories__/InternalScrollStory'
