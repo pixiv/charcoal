@@ -5,6 +5,7 @@ import {
   ariaHideOutside,
   useOverlay,
   useOverlayFocusContain,
+  usePreventScroll,
 } from '@react-aria/overlays'
 
 /**
@@ -26,6 +27,10 @@ export function useCharcoalModalOverlay(
     },
     ref
   )
+
+  usePreventScroll({
+    isDisabled: !state.isOpen,
+  })
 
   useOverlayFocusContain()
 
