@@ -12,6 +12,7 @@ services:
     command: 'concurrently -k -s first -n "SB,TEST" -c "magenta,blue" "http-server storybook-static --port 6006 --silent" "wait-on tcp:127.0.0.1:6006 && yarn test-storybook"'
     volumes:
       - ./__diff_output__/:/workspace/__diff_output__/
+      - ./__image_snapshots/:/workspace/__image_snapshots__/
       - ./packages/:/workspace/packages/
 
   update-snapshot:
