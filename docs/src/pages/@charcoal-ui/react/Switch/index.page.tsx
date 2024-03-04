@@ -35,7 +35,9 @@ const SwitchPage: NextPage<{ src: string }> = (props) => {
 
       <h2>BASIC</h2>
       <PreviewDivColumn>
-        <ExampleSwitch />
+        <div>
+          <ExampleSwitch />
+        </div>
         <SSRHighlight lang="typescript" code={props.src} />
       </PreviewDivColumn>
 
