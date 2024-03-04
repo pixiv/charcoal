@@ -37,6 +37,26 @@ const Container = styled.div`
 
 export const Default = {}
 
+export const Number: StoryObj<typeof TextField> = {
+  render: function Render(args) {
+    const [count, setCount] = useState(0)
+    return (
+      <Container>
+        <TextField
+          {...args}
+          type="number"
+          value={count.toString()}
+          onChange={(value) => setCount(parseInt(value))}
+          onWheel={(e) => {
+            e.currentTarget.blur()
+            e.stopPropagation()
+          }}
+        />
+      </Container>
+    )
+  },
+}
+
 export const HasLabel = {
   args: {
     showLabel: true,

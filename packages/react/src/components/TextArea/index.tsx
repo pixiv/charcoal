@@ -7,6 +7,7 @@ import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 import { AssistiveText, TextFieldLabel } from '../TextField'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
+import { mergeProps } from '@react-aria/utils'
 
 type DOMProps = Omit<
   React.TextareaHTMLAttributes<HTMLTextAreaElement>,
@@ -55,6 +56,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       maxLength,
       autoHeight = false,
       rows: initialRows = 4,
+      ...restProps
     } = props
 
     const { visuallyHiddenProps } = useVisuallyHidden()
@@ -95,20 +97,24 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       setCount(countCodePointsInString(props.value ?? ''))
     }, [props.value])
 
-    const { inputProps, labelProps, descriptionProps, errorMessageProps } =
-      useTextField(
-        {
-          inputElementType: 'textarea',
-          isDisabled: disabled,
-          isRequired: required,
-          validationState: invalid ? 'invalid' : 'valid',
-          description: !invalid && assistiveText,
-          errorMessage: invalid && assistiveText,
-          onChange: handleChange,
-          ...props,
-        },
-        ariaRef
-      )
+    const {
+      inputProps: ariaInputProps,
+      labelProps,
+      descriptionProps,
+      errorMessageProps,
+    } = useTextField(
+      {
+        inputElementType: 'textarea',
+        isDisabled: disabled,
+        isRequired: required,
+        validationState: invalid ? 'invalid' : 'valid',
+        description: !invalid && assistiveText,
+        errorMessage: invalid && assistiveText,
+        onChange: handleChange,
+        ...props,
+      },
+      ariaRef
+    )
 
     useEffect(() => {
       if (autoHeight && textareaRef.current !== null) {
@@ -119,6 +125,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const containerRef = useRef(null)
 
     useFocusWithClick(containerRef, ariaRef)
+
+    const inputProps = mergeProps(restProps, ariaInputProps)
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
