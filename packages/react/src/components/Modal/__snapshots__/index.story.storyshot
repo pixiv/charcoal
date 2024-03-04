@@ -2214,6 +2214,7 @@ exports[`Storybook Tests Modal Default 1`] = `
                 >
                   <input
                     aria-labelledby="test-id"
+                    autoFocus={true}
                     className="c18"
                     disabled={false}
                     id="test-id"
