@@ -703,6 +703,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
     </button>
     <div
       className="c0"
+      onClick={[Function]}
       onPointerDown={[Function]}
       style={
         Object {
