@@ -50,61 +50,6 @@ const ExampleProvider: FC<{ children: ReactNode }> = ({ children }) => {
 }`.trimStart()}
         lang="typescript"
       />
-      <p>
-        <InlineCode>createTheme</InlineCode>よりテーマを取得して使います。
-      </p>
-      <SSRHighlight
-        code={`
-import styled from 'styled-components'
-import { createTheme } from '@charcoal-ui/styled'
-
-const theme = createTheme(styled)
-`.trimStart()}
-      />
-      <p>
-        色や文字色など、テーマで定義できる値については
-        <InlineCode>theme(o =&gt; )</InlineCode>
-        で提供されます。
-      </p>
-      <p>
-        <InlineCode>theme(o =&gt; )</InlineCode>
-        関数の引数のブジェクトにあるプロパティを用いて
-        <InlineCode>styled-components</InlineCode>
-        のCSSオブジェクトを生成します。戻り値は配列もしくはオブジェクトです。
-      </p>
-      <SSRHighlight
-        code={`
-theme(o => o.font.text1)
-`.trimStart()}
-      />
-      <SSRHighlight
-        code={`
-theme(o => [o.font.text1, o.bg.brand])
-`.trimStart()}
-      />
-
-      <SSRHighlight
-        code={`
-import styled from 'styled-components'
-import { createTheme } from '@charcoal-ui/styled'
-
-const theme = createTheme(styled)
-
-const MyComponent = styled.div\`
-  display: flex;
-  justify-content: center;
-
-  \${theme((o) => [
-    o.bg.surface2,         // 背景色を変える
-    o.font.text2,          // 文字色を変える
-    o.typography(20).bold, // フォントサイズを 20px にして太字にする
-    o.padding.all(40),     // padding を全方向に 40px
-    o.margin.vertical(24), // margin を top と bottom だけ 24px
-  ])}
-\`
-`.trimStart()}
-        lang="typescript"
-      />
     </ContentRoot>
   )
 }
