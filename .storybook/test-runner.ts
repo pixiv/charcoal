@@ -8,7 +8,6 @@ const config: TestRunnerConfig = {
   async postVisit(page, context) {
     await waitForPageReady(page)
     const image = await page.screenshot()
-    console.log(`${process.cwd()}/__image_snapshots__`)
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: context.id,
       customDiffDir: `${process.cwd()}/__diff_output__`,
