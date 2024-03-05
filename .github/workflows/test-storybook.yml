@@ -57,7 +57,7 @@ jobs:
       - name: Upload main branch snapshots
         uses: actions/upload-artifact@v4
         with:
-          name: main-branch-image-snapshots
+          name: main__image-snapshots__
           path: __image_snapshots__/
 
   test-storybook:
@@ -93,21 +93,56 @@ jobs:
         run: |
           yarn build
           yarn storybook:build --quiet
+      - name: Check label
+        uses: actions/github-script@v7
+        id: label-checking
+        env:
+          SNAPSHOT_UPDATE_LABEL: image snapshots update
+        with:
+          result-encoding: string
+          script: |
+            const { issue, repo } = context
+            const { data: pull } = await github.rest.issues.get({
+              issue_number: issue.number,
+              owner: repo.owner,
+              repo: repo.repo
+            })
+
+            const labels = pull.labels.map(({ name }) => name)
+
+            if(labels.includes(process.env.SNAPSHOT_UPDATE_LABEL)){
+              console.log(`Found "${process.env.SNAPSHOT_UPDATE_LABEL}" label, image snapshots will be updated."`)
+              return 'true'
+            }
+
+            console.log(`Not fount "${process.env.SNAPSHOT_UPDATE_LABEL}" label. Compare with image snapshots of main branch.`)
+            return 'false'
       - name: Load main branch image snapshots
         uses: actions/download-artifact@v4
+        if: steps.label-checking.outputs.result != 'true'
         with:
-          name: main-branch-image-snapshots
+          name: main__image-snapshots__
           path: __image_snapshots__/
       - name: Serve Storybook and run tests
+        if: steps.label-checking.outputs.result != 'true'
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook"
-      - run: ls -al
-        if: always()
+      - name: Serve Storybook and take new image snapshots
+        if: steps.label-checking.outputs.result == 'true'
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook --updateSnapshot"
       - name: Archive image snapshot diffs
         uses: actions/upload-artifact@v4
-        if: ${{ failure() }}
+        if: failure() && steps.label-checking.outputs.result != 'true'
         with:
-          name: diff-outputs
           path: __diff_output__/
+      - name: Archive new image snapshots
+        if: steps.label-checking.outputs.result == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: new__image_snapshots__
+          path: __image_snapshots__/
