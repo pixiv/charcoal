@@ -29,30 +29,30 @@ export function padding(
   arg4?: keyof Spacing
 ) {
   return css`
-    padding: ${pxIfNum(arg1)} ${pxIfNum(arg2)} ${pxIfNum(arg3)} ${pxIfNum(arg4)};
+    padding: ${arg1}px ${pxIfNum(arg2)} ${pxIfNum(arg3)} ${pxIfNum(arg4)};
   `
 }
 
 export function paddingTop(v: keyof Spacing) {
   return css`
-    padding-top: ${pxIfNum(v)};
+    padding-top: ${v}px;
   `
 }
 
 export function paddingBottom(v: keyof Spacing) {
   return css`
-    padding-bottom: ${pxIfNum(v)};
+    padding-bottom: ${v}px;
   `
 }
 
 export function paddingLeft(v: keyof Spacing) {
   return css`
-    padding-left: ${pxIfNum(v)};
+    padding-left: ${v}px;
   `
 }
 
 export function paddingRight(v: keyof Spacing) {
   return css`
-    padding-right: ${pxIfNum(v)};
+    padding-right: ${v}px;
   `
 }

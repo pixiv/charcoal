@@ -11,18 +11,18 @@ export function gap(
 
 export function gap(v1: keyof Spacing, v2?: keyof Spacing) {
   return css`
-    gap: ${pxIfNum(v1)} ${pxIfNum(v2)};
+    gap: ${v1}px ${pxIfNum(v2)};
   `
 }
 
 export function rowGap(v: keyof Spacing) {
   return css`
-    row-gap: ${pxIfNum(v)};
+    row-gap: ${v}px;
   `
 }
 
 export function columnGap(v: keyof Spacing) {
   return css`
-    column-gap: ${pxIfNum(v)};
+    column-gap: ${v}px;
   `
 }
