@@ -8,7 +8,6 @@ import {
   useThemeSetter,
   themeSelector,
   prefersColorScheme,
-  addThemeUtils,
 } from '@charcoal-ui/styled'
 
 import { light, dark } from '@charcoal-ui/theme'
@@ -17,10 +16,9 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [theme] = useTheme()
   useThemeSetter()
 
-  const themeWithUtils = addThemeUtils(theme === 'dark' ? dark : light)
   return (
     <SSRProvider>
-      <ThemeProvider theme={themeWithUtils}>
+      <ThemeProvider theme={theme === 'dark' ? dark : light}>
         <GlobalStyle />
         <TokenInjector
           theme={{
