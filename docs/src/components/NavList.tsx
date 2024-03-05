@@ -15,24 +15,6 @@ const styledList: ListItem[] = [
     text: 'クイックスタート',
     href: '/@charcoal-ui/styled/quickstart',
   },
-  ...[
-    'bg',
-    'font',
-    'typography',
-    'margin',
-    'padding',
-    'width',
-    'height',
-    'border',
-    'borderRadius',
-    'outline',
-    'disabled',
-  ].map((o) => {
-    return {
-      text: o,
-      href: `/@charcoal-ui/styled/${o}`,
-    }
-  }),
 ]
 
 const reactList: ListItem[] = [
