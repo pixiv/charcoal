@@ -1,6 +1,13 @@
 import { Spacing } from '@charcoal-ui/theme'
-import { css } from 'styled-components'
+import { css, FlattenSimpleInterpolation } from 'styled-components'
 import { pxIfNum } from './helpers/pxIfNum'
+
+export function gap(v1: keyof Spacing): FlattenSimpleInterpolation
+
+export function gap(
+  v1: keyof Spacing,
+  v2: keyof Spacing
+): FlattenSimpleInterpolation
 
 export function gap(v1: keyof Spacing, v2?: keyof Spacing) {
   return css`

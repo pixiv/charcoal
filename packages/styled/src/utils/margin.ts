@@ -1,6 +1,26 @@
-import { css } from 'styled-components'
+import { css, FlattenSimpleInterpolation } from 'styled-components'
 import { SpacingType } from './helpers/SpacingType'
 import { pxIfNum } from './helpers/pxIfNum'
+
+export function margin(arg1: SpacingType): FlattenSimpleInterpolation
+
+export function margin(
+  arg1: SpacingType,
+  arg2: SpacingType
+): FlattenSimpleInterpolation
+
+export function margin(
+  arg1: SpacingType,
+  arg2: SpacingType,
+  arg3: SpacingType
+): FlattenSimpleInterpolation
+
+export function margin(
+  arg1: SpacingType,
+  arg2: SpacingType,
+  arg3: SpacingType,
+  arg4: SpacingType
+): FlattenSimpleInterpolation
 
 export function margin(
   arg1: SpacingType,
