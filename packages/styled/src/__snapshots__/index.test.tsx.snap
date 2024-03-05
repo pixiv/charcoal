@@ -166,3 +166,108 @@ exports[`Story <Example /> 1`] = `
   </div>
 </div>
 `;
+
+exports[`ThemeUtilsTest <ThemeUtilsTest /> 1`] = `
+.c0 {
+  margin: 0px 4px 8px auto;
+  margin-top: 0px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  padding: 0px 4px 8px auto;
+  padding-top: 0px;
+  padding-right: 4px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  gap: 0px 4px;
+  row-gap: 0px;
+  -webkit-column-gap: 4px;
+  column-gap: 4px;
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:disabled,
+.c0 [aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 20px;
+  display: flow-root;
+}
+
+.c1::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c1::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c2 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  font-weight: bold;
+}
+
+.c2::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c2::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 24px;
+  display: flow-root;
+  font-weight: bold;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+</div>
+`;
