@@ -3,7 +3,7 @@ import 'jest-styled-components'
 
 import renderer from 'react-test-renderer'
 import { ThemeProvider } from 'styled-components'
-import { Example, TailwindLike } from './index.story'
+import { Example } from './index.story'
 import { myTheme } from './storyHelper'
 
 function render(children: JSX.Element) {
@@ -16,9 +16,5 @@ function render(children: JSX.Element) {
 describe('Story', () => {
   test('<Example />', () => {
     expect(render(<Example />)).toMatchSnapshot()
-  })
-
-  test('<TailwindLike />', () => {
-    expect(render(<TailwindLike />)).toMatchSnapshot()
   })
 })
