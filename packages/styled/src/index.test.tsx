@@ -38,16 +38,23 @@ declare module 'styled-components' {
 }
 
 const ThemeUtilsTest = styled.div`
+  ${({ theme }) => theme.utils.margin(0)}
+  ${({ theme }) => theme.utils.margin(0, 'auto')}
+  ${({ theme }) => theme.utils.margin('auto', 4, 8)}
   ${({ theme }) => theme.utils.margin(0, 4, 8, 'auto')}
   ${({ theme }) => theme.utils.marginTop(0)}
   ${({ theme }) => theme.utils.marginRight(4)}
   ${({ theme }) => theme.utils.marginBottom(8)}
   ${({ theme }) => theme.utils.marginRight(16)}
-  ${({ theme }) => theme.utils.padding(0, 4, 8, 'auto')}
+  ${({ theme }) => theme.utils.padding(0)}
+  ${({ theme }) => theme.utils.padding(0, 4)}
+  ${({ theme }) => theme.utils.padding(0, 4, 8)}
+  ${({ theme }) => theme.utils.padding(0, 4, 8, 16)}
   ${({ theme }) => theme.utils.paddingTop(0)}
   ${({ theme }) => theme.utils.paddingRight(4)}
   ${({ theme }) => theme.utils.paddingBottom(8)}
   ${({ theme }) => theme.utils.paddingRight(16)}
+  ${({ theme }) => theme.utils.gap(0)}
   ${({ theme }) => theme.utils.gap(0, 4)}
   ${({ theme }) => theme.utils.rowGap(0)}
   ${({ theme }) => theme.utils.columnGap(4)}
