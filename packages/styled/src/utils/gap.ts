@@ -1,21 +1,21 @@
+import { Spacing } from '@charcoal-ui/theme'
 import { css } from 'styled-components'
 import { pxIfNum } from './helpers/pxIfNum'
-import { SpacingType } from './helpers/SpacingType'
 
-export function gap(v1: SpacingType, v2?: SpacingType) {
+export function gap(v1: keyof Spacing, v2?: keyof Spacing) {
   return css`
     gap: ${pxIfNum(v1)} ${pxIfNum(v2)};
   `
 }
 
-export function rowGap(v: SpacingType) {
+export function rowGap(v: keyof Spacing) {
   return css`
     row-gap: ${pxIfNum(v)};
   `
 }
 
-export function columnGap(v: SpacingType) {
+export function columnGap(v: keyof Spacing) {
   return css`
-    row-gap: ${pxIfNum(v)};
+    column-gap: ${pxIfNum(v)};
   `
 }
