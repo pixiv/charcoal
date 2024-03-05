@@ -2,6 +2,7 @@
 
 exports[`Story <Example /> 1`] = `
 .c0 {
+  gap: 40px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9,7 +10,6 @@ exports[`Story <Example /> 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 40px;
   white-space: nowrap;
   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
 }

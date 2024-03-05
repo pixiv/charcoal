@@ -12,7 +12,7 @@ import {
   paddingRight,
   paddingTop,
 } from './padding'
-import { gap } from './gap'
+import { columnGap, gap, rowGap } from './gap'
 import { disabledCss } from '../styles/disabledCss'
 import { typography } from './typographyCss'
 import { focusVisibleFocusRingCss } from '../styles/focusVisibleFocusRingCss'
@@ -31,6 +31,8 @@ export type CharcoalThemeUtils = {
     paddingBottom: typeof paddingBottom
     paddingRight: typeof paddingRight
     gap: typeof gap
+    rowGap: typeof rowGap
+    columnGap: typeof columnGap
     typography: typeof typography
     /**
      * Generally use with `transition: 0.2s box-shadow`.

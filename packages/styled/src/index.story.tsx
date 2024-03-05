@@ -45,9 +45,9 @@ export const Example = () => (
 )
 
 const RootDiv = styled.div`
+  ${({ theme }) => theme.utils.gap(40)}
   display: flex;
   flex-direction: column;
-  gap: 40px;
   white-space: nowrap;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;

@@ -14,7 +14,7 @@ import {
   paddingRight,
   paddingTop,
 } from './padding'
-import { gap } from './gap'
+import { columnGap, gap, rowGap } from './gap'
 import { disabledCss } from '../styles/disabledCss'
 import { typography } from './typographyCss'
 import { focusVisibleFocusRingCss } from '../styles/focusVisibleFocusRingCss'
@@ -41,6 +41,8 @@ export function addThemeUtils(
       paddingBottom,
       paddingRight,
       gap,
+      rowGap,
+      columnGap,
       typography,
       focusVisibleFocusRingCss,
       assertiveRingCss,
