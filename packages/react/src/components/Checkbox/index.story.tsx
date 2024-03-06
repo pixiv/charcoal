@@ -1,103 +1,60 @@
-import { action } from '@storybook/addon-actions'
 import Checkbox from '.'
 import { Meta, StoryObj } from '@storybook/react'
+import { useState } from 'react'
 
 export default {
   title: 'Checkbox',
   component: Checkbox,
 } as Meta<typeof Checkbox>
 
-export const Labelled: StoryObj<typeof Checkbox> = {
-  args: {
-    checked: false,
-    defaultChecked: false,
-    disabled: false,
-    readonly: false,
-    invalid: false,
+export const Default: StoryObj<typeof Checkbox> = {
+  render: function Render(args) {
+    return <Checkbox {...args} />
   },
-  render: (props) => {
-    return (
-      <div>
-        <div style={{ marginBottom: '1em' }}>
-          <Checkbox
-            {...props}
-            name="labelled"
-            label="label"
-            onBlur={action('blur')}
-            onClick={action('click')}
-            onChange={action('change')}
-            onFocus={action('focus')}
-          >
-            同意する
-          </Checkbox>
-        </div>
+  argTypes: {
+    label: {
+      type: 'string',
+    },
+  },
+}
 
-        <div>
-          <Checkbox
-            {...props}
-            name="labelled"
-            label="label"
-            onBlur={action('blur')}
-            onClick={action('click')}
-            onChange={action('change')}
-            onFocus={action('focus')}
-          >
-            <span style={{ width: 200, display: 'block' }}>
-              同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する
-            </span>
-          </Checkbox>
-        </div>
-      </div>
+export const Label: StoryObj<typeof Checkbox> = {
+  render: function Render() {
+    const [checked, setChecked] = useState(false)
+    return (
+      <Checkbox
+        label="Accelerate creativity."
+        checked={checked}
+        onChange={setChecked}
+      />
+    )
+  },
+}
+
+export const Disabled: StoryObj<typeof Checkbox> = {
+  render: function Render() {
+    const [checked, setChecked] = useState(false)
+    return (
+      <Checkbox
+        label="Accelerate creativity."
+        checked={checked}
+        onChange={setChecked}
+        disabled
+      />
     )
   },
 }
 
 export const Invalid: StoryObj<typeof Checkbox> = {
-  args: {
-    checked: false,
-    defaultChecked: false,
-    disabled: false,
-    readonly: false,
-  },
-  render: (props) => {
+  render: function Render() {
+    const [checked, setChecked] = useState(false)
     return (
       <Checkbox
-        {...props}
-        name="labelled"
-        label="label"
+        label="Accelerate creativity."
+        checked={checked}
+        onChange={setChecked}
         invalid
-        onBlur={action('blur')}
-        onClick={action('click')}
-        onChange={action('change')}
-        onFocus={action('focus')}
-      >
-        同意する
-      </Checkbox>
-    )
-  },
-}
-
-export const Unlabelled: StoryObj<typeof Checkbox> = {
-  args: {
-    checked: false,
-    defaultChecked: false,
-    disabled: false,
-    readonly: false,
-    invalid: false,
-  },
-  render: (props) => {
-    return (
-      <div>
-        <Checkbox
-          {...props}
-          name="unlabelled"
-          label="label"
-          onBlur={action('blur')}
-          onClick={action('click')}
-          onChange={action('change')}
-          onFocus={action('focus')}
-        />
-      </div>
+      />
     )
   },
 }
