@@ -3,6 +3,7 @@ import './index.css'
 import { ForwardedRef, ReactNode, forwardRef, useMemo } from 'react'
 
 import { CustomJSXElement } from '../DropdownSelector/ListItem'
+import { useClassNames } from '../../_lib/useClassNames'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 
@@ -30,10 +31,7 @@ const Button = forwardRef(function Button<T extends CustomJSXElement>(
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   const Component = useMemo(() => as ?? 'button', [as])
-  const classNames = useMemo(
-    () => ['charcoal-button', className].filter((v) => v).join(' '),
-    [className]
-  )
+  const classNames = useClassNames('charcoal-button', className)
   return (
     <Component
       {...props}
