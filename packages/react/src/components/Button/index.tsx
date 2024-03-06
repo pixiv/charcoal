@@ -1,15 +1,14 @@
 import './index.css'
 
-import { ForwardedRef, ReactNode, forwardRef, useMemo } from 'react'
+import React, { ForwardedRef, ReactNode, forwardRef, useMemo } from 'react'
 
-import { CustomJSXElement } from '../DropdownSelector/ListItem'
 import { useClassNames } from '../../_lib/useClassNames'
 
 type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 
 type Size = 'S' | 'M'
 
-export type ButtonProps<T extends CustomJSXElement = 'button'> = {
+export type ButtonProps<T extends React.ElementType = 'button'> = {
   children?: ReactNode
   variant?: Variant
   size?: Size
@@ -18,7 +17,7 @@ export type ButtonProps<T extends CustomJSXElement = 'button'> = {
   as?: T
 } & Omit<React.ComponentPropsWithRef<T>, 'children'>
 
-const Button = forwardRef(function Button<T extends CustomJSXElement>(
+const Button = forwardRef(function Button<T extends React.ElementType>(
   {
     variant,
     fullWidth,
@@ -43,5 +42,5 @@ const Button = forwardRef(function Button<T extends CustomJSXElement>(
       ref={ref}
     />
   )
-}) as <T extends CustomJSXElement = 'button'>(p: ButtonProps<T>) => JSX.Element
+}) as <T extends React.ElementType = 'button'>(p: ButtonProps<T>) => JSX.Element
 export default Button
