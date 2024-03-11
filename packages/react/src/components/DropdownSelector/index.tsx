@@ -7,6 +7,8 @@ import { DropdownPopover } from './DropdownPopover'
 import { findPreviewRecursive } from './utils/findPreviewRecursive'
 import MenuList, { MenuListChildren } from './MenuList'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
+import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
+import { useVisuallyHidden } from '@react-aria/visually-hidden'
 
 export type DropdownSelectorProps = {
   label: string
@@ -19,6 +21,10 @@ export type DropdownSelectorProps = {
   required?: boolean
   requiredText?: string
   subLabel?: ReactNode
+  /**
+   * the name of hidden `<select />`
+   */
+  name?: string
   children: MenuListChildren
   onChange: (value: string) => void
 }
@@ -30,6 +36,10 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
 
+  const propsArray = getValuesRecursive(props.children)
+
+  const { visuallyHiddenProps } = useVisuallyHidden()
+
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
       {props.showLabel === true && (
@@ -40,6 +50,21 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           subLabel={props.subLabel}
         />
       )}
+      <div {...visuallyHiddenProps}>
+        <select name={props.name} value={props.value}>
+          {propsArray.map((itemProps) => {
+            return (
+              <option
+                key={itemProps.value}
+                value={itemProps.value}
+                disabled={itemProps.disabled}
+              >
+                {itemProps.value}
+              </option>
+            )
+          })}
+        </select>
+      </div>
       <DropdownButton
         invalid={props.invalid}
         disabled={props.disabled}

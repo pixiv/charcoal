@@ -122,6 +122,42 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -245,6 +281,42 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="bold"
+        >
+          <option
+            value="normal"
+          >
+            normal
+          </option>
+          <option
+            value="bold"
+          >
+            bold
+          </option>
+          <option
+            value="italic"
+          >
+            italic
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -371,6 +443,42 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value=""
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -490,6 +598,42 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
       aria-disabled={true}
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         disabled={true}
@@ -609,6 +753,53 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="2"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            disabled={true}
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -630,6 +821,109 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
+.c4 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c4:disabled,
+.c4[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c4::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c5 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text5);
+  background-color: var(--charcoal-brand);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c5[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
+  color: var(--charcoal-text5-hover);
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
+  color: var(--charcoal-text5-press);
+  background-color: var(--charcoal-brand-press);
+}
+
+.c5:disabled,
+.c5[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
 .c0 {
   display: inline-block;
   width: 100%;
@@ -718,8 +1012,11 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
   data-dark={false}
 >
   <form
+    onSubmit={[Function]}
     style={
       Object {
+        "display": "grid",
+        "gap": 16,
         "width": 288,
       }
     }
@@ -727,6 +1024,43 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          name="exampleOption"
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -743,6 +1077,13 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
         />
       </button>
     </div>
+    <button
+      className="c4 c5"
+      disabled={false}
+      type="submit"
+    >
+      submit
+    </button>
   </form>
 </div>
 `;
@@ -1436,6 +1777,42 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                   <span />
                 </div>
               </div>
+              <div
+                style={
+                  Object {
+                    "border": 0,
+                    "clip": "rect(0 0 0 0)",
+                    "clipPath": "inset(50%)",
+                    "height": "1px",
+                    "margin": "-1px",
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "whiteSpace": "nowrap",
+                    "width": "1px",
+                  }
+                }
+              >
+                <select
+                  value="1"
+                >
+                  <option
+                    value="1"
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3
+                  </option>
+                </select>
+              </div>
               <button
                 className="c14"
                 onClick={[Function]}
@@ -1573,6 +1950,42 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 >
                   <span />
                 </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "border": 0,
+                    "clip": "rect(0 0 0 0)",
+                    "clipPath": "inset(50%)",
+                    "height": "1px",
+                    "margin": "-1px",
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "whiteSpace": "nowrap",
+                    "width": "1px",
+                  }
+                }
+              >
+                <select
+                  value="2"
+                >
+                  <option
+                    value="1"
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3
+                  </option>
+                </select>
               </div>
               <button
                 className="c14"
@@ -1714,6 +2127,42 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -1862,6 +2311,42 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -2088,6 +2573,42 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
           <span />
         </div>
       </div>
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c6"
         onClick={[Function]}
@@ -2206,6 +2727,42 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -2464,6 +3021,42 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
           <span />
         </div>
       </div>
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
       <button
         className="c8"
         onClick={[Function]}
@@ -2582,6 +3175,57 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
     <div
       className="c0"
     >
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="banana"
+        >
+          <option
+            value="apple"
+          >
+            apple
+          </option>
+          <option
+            value="banana"
+          >
+            banana
+          </option>
+          <option
+            value="orange"
+          >
+            orange
+          </option>
+          <option
+            value="bicycle"
+          >
+            bicycle
+          </option>
+          <option
+            value="car"
+          >
+            car
+          </option>
+          <option
+            value="train"
+          >
+            train
+          </option>
+        </select>
+      </div>
       <button
         className="c1"
         onClick={[Function]}
@@ -2809,6 +3453,42 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
             SubLabel
           </span>
         </div>
+      </div>
+      <div
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
       </div>
       <button
         className="c6"

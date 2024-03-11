@@ -8,6 +8,7 @@ import { ModalBody, ModalHeader } from '../Modal/ModalPlumbing'
 import { Meta, StoryObj } from '@storybook/react'
 import TextField from '../TextField'
 import TextArea from '../TextArea'
+import Button from '../Button'
 
 export default {
   title: 'DropdownSelector',
@@ -322,7 +323,17 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
   render: function Render(props) {
     const [selected, setSelected] = useState('1')
     return (
-      <form style={{ width: 288 }}>
+      <form
+        style={{ width: 288, display: 'grid', gap: 16 }}
+        onSubmit={(e) => {
+          const target = e.target as HTMLFormElement
+          const select = target.elements.namedItem(
+            'exampleOption'
+          ) as HTMLSelectElement
+          alert(`value: Option ${select.value}`)
+          e.preventDefault()
+        }}
+      >
         <DropdownSelector
           {...props}
           onChange={(value) => {
@@ -330,11 +341,15 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
           }}
           value={selected}
           label="label"
+          name="exampleOption"
         >
           <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
           <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
           <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
         </DropdownSelector>
+        <Button variant="Primary" type="submit">
+          submit
+        </Button>
       </form>
     )
   },

@@ -19,7 +19,7 @@ export function useMenuItemHandleKeyDown(
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' || e.key === ' ') {
         setContextValue()
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
         const isForward = e.key === 'ArrowDown'
