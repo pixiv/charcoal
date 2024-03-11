@@ -1,52 +1,46 @@
-import { forwardRef } from 'react'
-import { ClickableElement, ClickableProps } from '../Clickable'
-import { variantToFont } from './lib/variantToFont'
-import { variantToBackground } from './lib/variantToBackground'
-import { StyledButton } from './StyledButton'
+import './index.css'
 
-export type Variant =
-  | 'Primary'
-  | 'Default'
-  | 'Overlay'
-  | 'Danger'
-  | 'Navigation'
+import React, { ForwardedRef, ReactNode, forwardRef, useMemo } from 'react'
 
-export type Size = 'S' | 'M'
+import { useClassNames } from '../../_lib/useClassNames'
 
-export type ButtonProps = Partial<{
-  variant: Variant
-  size: Size
-  fullWidth: boolean
-  isActive: boolean
-}> &
-  ClickableProps
+type Variant = 'Primary' | 'Default' | 'Overlay' | 'Danger' | 'Navigation'
 
-const Button = forwardRef<ClickableElement, ButtonProps>(function Button(
+type Size = 'S' | 'M'
+
+export type ButtonProps<T extends React.ElementType = 'button'> = {
+  children?: ReactNode
+  variant?: Variant
+  size?: Size
+  fullWidth?: boolean
+  isActive?: boolean
+  as?: T
+} & Omit<React.ComponentPropsWithRef<T>, 'children'>
+
+const Button = forwardRef(function Button<T extends React.ElementType>(
   {
-    children,
-    variant = 'Default',
-    size = 'M',
-    fullWidth: fixed = false,
-    disabled = false,
-    isActive = false,
-    ...rest
-  },
-  ref
+    variant,
+    fullWidth,
+    size,
+    className,
+    as,
+    isActive,
+    ...props
+  }: ButtonProps<T>,
+  ref: ForwardedRef<HTMLButtonElement>
 ) {
+  const Component = useMemo(() => as ?? 'button', [as])
+  const classNames = useClassNames('charcoal-button', className)
   return (
-    <StyledButton
-      {...rest}
-      disabled={disabled}
-      $background={variantToBackground(variant)}
-      $color={variantToFont(variant)}
-      $size={size}
-      $fullWidth={fixed}
-      $isActive={isActive}
+    <Component
+      {...props}
+      className={classNames}
+      data-variant={variant}
+      data-size={size}
+      data-full-width={fullWidth}
+      data-active={isActive}
       ref={ref}
-    >
-      {children}
-    </StyledButton>
+    />
   )
-})
-
+}) as <T extends React.ElementType = 'button'>(p: ButtonProps<T>) => JSX.Element
 export default Button
