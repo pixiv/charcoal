@@ -78,7 +78,7 @@ export const Disabled: StoryObj<typeof DropdownSelector> = {
 
 export const DisabledItem: StoryObj<typeof DropdownSelector> = {
   render: function Render() {
-    const [selected, setSelected] = useState('1')
+    const [selected, setSelected] = useState('2')
     return (
       <div style={{ width: 288 }}>
         <DropdownSelector value={selected} onChange={setSelected} label="Label">
@@ -87,6 +87,8 @@ export const DisabledItem: StoryObj<typeof DropdownSelector> = {
             Option 2 (disabled)
           </DropdownMenuItem>
           <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+          <DropdownMenuItem value="4">Option 4</DropdownMenuItem>
+          <DropdownMenuItem value="5">Option 5</DropdownMenuItem>
         </DropdownSelector>
       </div>
     )
