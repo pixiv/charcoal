@@ -1,15 +1,14 @@
 import './index.css'
 
-import * as React from 'react'
-import { forwardRef, memo } from 'react'
+import React, { forwardRef, memo } from 'react'
 import { useId } from '@react-aria/utils'
-
 import CheckboxInput, { CheckboxInputProps } from '../CheckboxInput'
 import { useClassNames } from '../../_lib/useClassNames'
 
 export type CheckboxProps = CheckboxInputProps & {
   label?: string | React.ReactNode
 }
+
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   function CheckboxInner({ disabled, className, id, label, ...props }, ref) {
     const classNames = useClassNames('charcoal-checkbox__label', className)

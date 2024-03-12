@@ -1,7 +1,6 @@
 import './index.css'
 
-import { forwardRef, memo } from 'react'
-import * as React from 'react'
+import { forwardRef, memo, useCallback } from 'react'
 import Icon from '../Icon'
 import { useClassNames } from '../../_lib/useClassNames'
 
@@ -16,7 +15,7 @@ export type CheckboxInputProps = CharcoalCheckboxInputProps &
 
 const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   function CheckboxInput({ onChange, checked, invalid, ...props }, ref) {
-    const handleChange = React.useCallback(
+    const handleChange = useCallback(
       (e: React.ChangeEvent<HTMLInputElement>) => {
         const el = e.currentTarget
         onChange?.(el.checked)
