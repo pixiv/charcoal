@@ -6,7 +6,8 @@
   "module": "./dist/index.esm.js",
   "exports": {
     "require": "./dist/index.cjs.js",
-    "default": "./dist/index.esm.js"
+    "default": "./dist/index.esm.js",
+    "types": "./dist/index.d.ts"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": true,
