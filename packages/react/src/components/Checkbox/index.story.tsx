@@ -12,7 +12,7 @@ export const Default: StoryObj<typeof Checkbox> = {
     return <Checkbox {...args} />
   },
   argTypes: {
-    label: {
+    children: {
       type: 'string',
     },
   },
@@ -22,11 +22,9 @@ export const Label: StoryObj<typeof Checkbox> = {
   render: function Render() {
     const [checked, setChecked] = useState(false)
     return (
-      <Checkbox
-        label="Accelerate creativity."
-        checked={checked}
-        onChange={setChecked}
-      />
+      <Checkbox checked={checked} onChange={setChecked}>
+        Accelerate creativity.
+      </Checkbox>
     )
   },
 }
@@ -35,12 +33,9 @@ export const Disabled: StoryObj<typeof Checkbox> = {
   render: function Render() {
     const [checked, setChecked] = useState(false)
     return (
-      <Checkbox
-        label="Accelerate creativity."
-        checked={checked}
-        onChange={setChecked}
-        disabled
-      />
+      <Checkbox checked={checked} onChange={setChecked} disabled>
+        Accelerate creativity.
+      </Checkbox>
     )
   },
 }
@@ -49,12 +44,9 @@ export const Invalid: StoryObj<typeof Checkbox> = {
   render: function Render() {
     const [checked, setChecked] = useState(false)
     return (
-      <Checkbox
-        label="Accelerate creativity."
-        checked={checked}
-        onChange={setChecked}
-        invalid
-      />
+      <Checkbox checked={checked} onChange={setChecked} invalid>
+        Accelerate creativity.
+      </Checkbox>
     )
   },
 }
