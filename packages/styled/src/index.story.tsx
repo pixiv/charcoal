@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { MyTheme, myTheme } from './storyHelper'
 
 export default {
-  title: 'styled',
+  title: 'styled/example',
 }
 
 declare module 'styled-components' {
