@@ -1,0 +1,44 @@
+import { Canvas, Meta } from '@storybook/blocks'
+
+import * as CheckboxStories from './index.story'
+
+<Meta title="styled/addThemeUtils" />
+
+# Theme Utils
+
+We offer utilities for spacing and common classes through `theme.utils`, which enable type-safe spacing.
+
+## Setup
+
+You can add utilities using `addThemeUtils` by passing the object to the ThemeProvider.
+
+```tsx
+// ...
+import { addThemeUtils } from '@charcoal-ui/styled'
+
+const ExampleProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const [theme] = useTheme()
+  const themeWithUtils = addThemeUtils(theme === 'dark' ? dark : light)
+  useThemeSetter()
+  return (
+    <ThemeProvider theme={themeWithUtils}>
+      {...}
+    </ThemeProvider>
+  )
+}
+```
+
+## Usage
+
+You can access the theme object using [styled theming](https://styled-components.com/docs/advanced#theming).
+
+```tsx
+const AssertiveRingDiv = styled.div`
+  ${({ theme }) => [theme.utils.assertiveRingCss, theme.utils.margin(8)]}
+  transition: 0.2s box-shadow;
+`
+```
+
+### Example
+
+<Canvas of={CheckboxStories.Example} />

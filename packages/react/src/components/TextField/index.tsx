@@ -7,6 +7,7 @@ import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 import { useFocusWithClick } from './useFocusWithClick'
+import { mergeProps } from '@react-aria/utils'
 
 type DOMProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -60,6 +61,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       maxLength,
       prefix = null,
       suffix = null,
+      ...restProps
     } = props
 
     const { visuallyHiddenProps } = useVisuallyHidden()
@@ -87,24 +89,30 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       setCount(countCodePointsInString(props.value ?? ''))
     }, [props.value])
 
-    const { inputProps, labelProps, descriptionProps, errorMessageProps } =
-      useTextField(
-        {
-          inputElementType: 'input',
-          isDisabled: disabled,
-          isRequired: required,
-          validationState: invalid ? 'invalid' : 'valid',
-          description: !invalid && assistiveText,
-          errorMessage: invalid && assistiveText,
-          onChange: handleChange,
-          ...props,
-        },
-        ariaRef
-      )
+    const {
+      inputProps: ariaInputProps,
+      labelProps,
+      descriptionProps,
+      errorMessageProps,
+    } = useTextField(
+      {
+        inputElementType: 'input',
+        isDisabled: disabled,
+        isRequired: required,
+        validationState: invalid ? 'invalid' : 'valid',
+        description: !invalid && assistiveText,
+        errorMessage: invalid && assistiveText,
+        onChange: handleChange,
+        ...props,
+      },
+      ariaRef
+    )
 
     const containerRef = useRef(null)
 
     useFocusWithClick(containerRef, ariaRef)
+
+    const inputProps = mergeProps(restProps, ariaInputProps)
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>

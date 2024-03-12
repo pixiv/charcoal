@@ -24,6 +24,13 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
   isPresent(value) && (value as unknown) !== false
 
 /**
+ * @deprecated
+ * 実行時のパフォーマンスが低い問題があります。
+ * ref. https://github.com/pixiv/charcoal/pull/377
+ *
+ * styled-components の theming 方法を推奨します。
+ * ref. https://styled-components.com/docs/advanced#theming
+ *
  * `theme(o => [...])` の `theme` ユーティリティを構築する
  *
  * @param _styled - DEPRECATED: styled-components の `styled` そのものを渡すとそれを元に型推論ができる。が、型引数を渡す方が型推論が高速になりやすい
@@ -85,4 +92,8 @@ export type ThemeProp<T> = ({
   theme: T | undefined
 }) => CSSObject | CSSObject[]
 
-export * from './styles/focusVisibleFocusRingCss'
+export { focusVisibleFocusRingCss } from './styles/focusVisibleFocusRingCss'
+export { disabledCss } from './styles/disabledCss'
+export { assertiveRingCss } from './styles/assertiveRingCss'
+export type { CharcoalThemeUtils } from './utils/CharcoalStyledTheme'
+export { addThemeUtils } from './utils/addThemeUtils'
