@@ -3,6 +3,7 @@
 exports[`Story <Example /> 1`] = `
 .c0 {
   gap: 40px;
+  color: #1f1f1f;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

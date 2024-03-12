@@ -46,6 +46,7 @@ export const Example = () => (
 
 const RootDiv = styled.div`
   ${({ theme }) => theme.utils.gap(40)}
+  color: ${({ theme }) => theme.color.text1};
   display: flex;
   flex-direction: column;
   white-space: nowrap;
