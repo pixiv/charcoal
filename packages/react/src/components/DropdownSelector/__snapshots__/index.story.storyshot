@@ -617,7 +617,7 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
         <span
           className="c2"
         >
-          Option 1
+          Option 2 (disabled)
         </span>
         <pixiv-icon
           class="c3"
