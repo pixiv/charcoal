@@ -1,7 +1,7 @@
 import { Icon } from '@charcoal-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC, useCallback, useEffect } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../utils/theme'
 import pkgJson from '../../../packages/react/package.json'
@@ -210,7 +210,7 @@ export const NavList: FC<{ className?: string }> = (props) => {
       {themeList.map(renderListItem)}
       <ListItemHeader>Links</ListItemHeader>
       <ExternalLink href="https://github.com/pixiv/charcoal" text="GitHub" />
-      <ExternalLink href="https://pixiv.github.io/charcoal/" text="Storybook" />
+      <StorybookLinkItem />
       <div
         css={css`
           margin-bottom: 64px;
@@ -218,6 +218,17 @@ export const NavList: FC<{ className?: string }> = (props) => {
       ></div>
     </StyledUl>
   )
+}
+
+function StorybookLinkItem() {
+  const [path, setPath] = useState('https://pixiv.github.io/charcoal/')
+  useEffect(() => {
+    const isPreviewEnv = window.location.hostname.endsWith('web.app')
+    if (isPreviewEnv) {
+      setPath('/storybook')
+    }
+  }, [])
+  return <ExternalLink href={path} text="Storybook" />
 }
 
 const ExternalLink = (props: { href: string; text: string }) => {
