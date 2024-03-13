@@ -348,7 +348,7 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-text3);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
