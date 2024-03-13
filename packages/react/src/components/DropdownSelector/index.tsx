@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef } from 'react'
+import { ReactNode, useState, useRef, useMemo } from 'react'
 import styled, { css } from 'styled-components'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
@@ -35,6 +35,11 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
+
+  const isPlaceholder = useMemo(
+    () => props.placeholder !== undefined && preview === undefined,
+    [preview, props.placeholder]
+  )
 
   const propsArray = getValuesRecursive(props.children)
 
@@ -76,10 +81,8 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         type="button"
         $active={isOpen}
       >
-        <DropdownButtonText>
-          {props.placeholder !== undefined && preview === undefined
-            ? props.placeholder
-            : preview}
+        <DropdownButtonText $isText3={isPlaceholder}>
+          {isPlaceholder ? props.placeholder : preview}
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
@@ -176,12 +179,12 @@ const DropdownButton = styled.button<{ invalid?: boolean; $active?: boolean }>`
     `}
 `
 
-const DropdownButtonText = styled.span`
+const DropdownButtonText = styled.span<{ $isText3: boolean }>`
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-${(p) => (p.$isText3 ? 'text3' : 'text2')});
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
