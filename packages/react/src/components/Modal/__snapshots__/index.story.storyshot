@@ -863,6 +863,44 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                     <span />
                   </div>
                 </div>
+                <div
+                  aria-hidden="true"
+                  style={
+                    Object {
+                      "border": 0,
+                      "clip": "rect(0 0 0 0)",
+                      "clipPath": "inset(50%)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                >
+                  <select
+                    tabIndex={-1}
+                    value="10"
+                  >
+                    <option
+                      value="10"
+                    >
+                      10
+                    </option>
+                    <option
+                      value="20"
+                    >
+                      20
+                    </option>
+                    <option
+                      value="30"
+                    >
+                      30
+                    </option>
+                  </select>
+                </div>
                 <button
                   className="c21"
                   onClick={[Function]}
@@ -2248,6 +2286,44 @@ exports[`Storybook Tests Modal Default 1`] = `
                   >
                     <span />
                   </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  style={
+                    Object {
+                      "border": 0,
+                      "clip": "rect(0 0 0 0)",
+                      "clipPath": "inset(50%)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                >
+                  <select
+                    tabIndex={-1}
+                    value="10"
+                  >
+                    <option
+                      value="10"
+                    >
+                      10
+                    </option>
+                    <option
+                      value="20"
+                    >
+                      20
+                    </option>
+                    <option
+                      value="30"
+                    >
+                      30
+                    </option>
+                  </select>
                 </div>
                 <button
                   className="c21"
