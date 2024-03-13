@@ -13,7 +13,7 @@ const config: TestRunnerConfig = {
       customDiffDir: `${process.cwd()}/__diff_output__`,
       customSnapshotsDir: `${process.cwd()}/__image_snapshots__`,
       failureThresholdType: 'percent',
-      failureThreshold: 0.001,
+      failureThreshold: 0.0001,
     })
   },
   tags: {
