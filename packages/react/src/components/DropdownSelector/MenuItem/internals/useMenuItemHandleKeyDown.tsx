@@ -12,7 +12,7 @@ import { MenuListContext } from '../../MenuList/MenuListContext'
 export function useMenuItemHandleKeyDown(
   value?: string
 ): [(e: React.KeyboardEvent<HTMLDivElement>) => void, () => void] {
-  const { setValue, root, values } = useContext(MenuListContext)
+  const { setValue, root, propsArray } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
     if (value !== undefined) setValue(value)
   }, [value, setValue])
@@ -22,34 +22,45 @@ export function useMenuItemHandleKeyDown(
       if (e.key === 'Enter') {
         setContextValue()
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        const isForward = e.key === 'ArrowDown'
         // prevent scroll
         e.preventDefault()
-        if (!values || value === undefined) return
-        const index = values.indexOf(value)
+        if (!propsArray || value === undefined) return
+        const values = propsArray
+          .map((props) => props.value)
+          .filter((v) => v) as string[]
+        let index = values.indexOf(value)
         if (index === -1) return
 
-        const focusValue =
-          e.key === 'ArrowUp'
+        for (let n = 0; n < values.length; n++) {
+          const focusValue = isForward
             ? // prev or last
-              index - 1 < 0
-              ? values[values.length - 1]
-              : values[index - 1]
+              index + 1 >= values.length
+              ? values[0]
+              : values[index + 1]
             : // next or first
-            index + 1 >= values.length
-            ? values[0]
-            : values[index + 1]
+            index - 1 < 0
+            ? values[values.length - 1]
+            : values[index - 1]
+          const next = root?.current?.querySelector(
+            `[data-key='${focusValue}']`
+          )
 
-        const next = root?.current?.querySelector(`[data-key='${focusValue}']`)
-
-        if (next instanceof HTMLElement) {
-          next.focus({ preventScroll: true })
-          if (root?.current?.parentElement) {
-            handleFocusByKeyBoard(next, root.current.parentElement)
+          if (next instanceof HTMLElement) {
+            if (next.ariaDisabled === 'true') {
+              index += isForward ? 1 : -1
+              continue
+            }
+            next.focus({ preventScroll: true })
+            if (root?.current?.parentElement) {
+              handleFocusByKeyBoard(next, root.current.parentElement)
+            }
+            break
           }
         }
       }
     },
-    [setContextValue, value, root, values]
+    [setContextValue, propsArray, value, root]
   )
   return [handleKeyDown, setContextValue]
 }
