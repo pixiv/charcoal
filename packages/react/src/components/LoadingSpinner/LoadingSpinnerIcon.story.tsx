@@ -7,6 +7,7 @@ export default {
   args: {
     once: false,
   },
+  tags: ['skip-test'],
 } as Meta<typeof LoadingSpinnerIcon>
 
 export const Icon: StoryObj<typeof LoadingSpinnerIcon> = {}

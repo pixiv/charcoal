@@ -1,93 +1,209 @@
 import { useState } from 'react'
-import DropdownSelector, { DropdownSelectorProps } from '.'
+import DropdownSelector from '.'
 import { Divider } from './Divider'
 import MenuItemGroup from './MenuItemGroup'
 import DropdownMenuItem from './DropdownMenuItem'
 import Modal from '../Modal'
 import { ModalBody, ModalHeader } from '../Modal/ModalPlumbing'
-import styled from 'styled-components'
-import Button from '../Button'
 import { Meta, StoryObj } from '@storybook/react'
+import TextField from '../TextField'
+import TextArea from '../TextArea'
 
 export default {
   title: 'DropdownSelector',
   component: DropdownSelector,
 } as Meta<typeof DropdownSelector>
 
-const baseProps: DropdownSelectorProps = {
-  label: 'Label',
-  value: '',
-  placeholder: 'placeholder',
-  onChange: () => {
-    //
-  },
-  children: <DropdownMenuItem value="item" />,
-}
-
-export const Playground: StoryObj<typeof DropdownSelector> = {
-  args: {
-    ...baseProps,
-  },
-  render: (props) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [selected, setSelected] = useState('50')
+export const Default: StoryObj<typeof DropdownSelector> = {
+  render: function Render(args) {
+    const [selected, setSelected] = useState('')
 
     return (
       <div style={{ width: 288 }}>
-        <Button></Button>
         <DropdownSelector
-          {...props}
-          onChange={(value) => {
-            setSelected(value)
-          }}
-          value={selected}
-          label="label"
+          {...args}
+          onChange={setSelected}
+          value={args.value ? args.value : selected}
+          placeholder="Placeholder"
+          label="Label"
         >
-          {[...(Array(100) as undefined[])].map((_, i) => {
-            return (
-              <DropdownMenuItem key={i} value={i.toString()}>
-                {i}
-              </DropdownMenuItem>
-            )
-          })}
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
         </DropdownSelector>
       </div>
     )
   },
 }
 
-function PlaygroundDropdownSelector(props: Partial<DropdownSelectorProps>) {
-  const [selected, setSelected] = useState('10')
-  return (
-    <DropdownSelector
-      {...props}
-      onChange={(value) => {
-        setSelected(value)
-      }}
-      value={selected}
-      label="label"
-    >
-      <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
-      <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
-      <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
-    </DropdownSelector>
-  )
+export const Label: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          onChange={setSelected}
+          label="Label"
+          showLabel
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
 }
 
-export const Basic: StoryObj<typeof DropdownSelector> = {
-  args: {
-    ...baseProps,
+export const Disabled: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          disabled
+          onChange={setSelected}
+          label="Label"
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
   },
-  render: (props) => (
-    <div style={{ width: 288 }}>
-      <PlaygroundDropdownSelector {...props} />
-    </div>
-  ),
+}
+
+export const DisabledItem: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('2')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector value={selected} onChange={setSelected} label="Label">
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2" disabled>
+            Option 2 (disabled)
+          </DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+          <DropdownMenuItem value="4">Option 4</DropdownMenuItem>
+          <DropdownMenuItem value="5">Option 5</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+export const Invalid: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          invalid
+          onChange={setSelected}
+          label="Label"
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+export const AssistiveText: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          onChange={setSelected}
+          label="Label"
+          assistiveText="assistiveText"
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+export const InvalidAssistiveText: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          onChange={setSelected}
+          label="Label"
+          invalid
+          assistiveText="assistiveText"
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+export const RequiredText: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          invalid
+          onChange={setSelected}
+          label="Label"
+          showLabel
+          required
+          requiredText="required"
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+export const SubLabel: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          invalid
+          onChange={setSelected}
+          label="Label"
+          showLabel
+          subLabel="SubLabel"
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
 }
 
 export const LongNames: StoryObj<typeof DropdownSelector> = {
   render: function Render(args) {
-    const [selected, setSelected] = useState('10')
+    const [selected, setSelected] = useState('1')
     return (
       <div
         style={{
@@ -102,13 +218,13 @@ export const LongNames: StoryObj<typeof DropdownSelector> = {
           value={selected}
           label="label"
         >
-          <DropdownMenuItem value={'10'}>
+          <DropdownMenuItem value={'1'}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           </DropdownMenuItem>
-          <DropdownMenuItem value={'20'}>
+          <DropdownMenuItem value={'2'}>
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </DropdownMenuItem>
-          <DropdownMenuItem value={'30'}>
+          <DropdownMenuItem value={'3'}>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </DropdownMenuItem>
@@ -118,17 +234,11 @@ export const LongNames: StoryObj<typeof DropdownSelector> = {
   },
 }
 
-const DummyBox = styled.div`
-  border: solid 1px ${({ theme }) => theme.border.default.color};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 256px;
-`
-
 export const InModal: StoryObj<typeof DropdownSelector> = {
   render: function Render() {
     const [open, setOpen] = useState(true)
+    const [selected1, setSelected1] = useState('1')
+    const [selected2, setSelected2] = useState('2')
     return (
       <div
         style={{
@@ -149,14 +259,57 @@ export const InModal: StoryObj<typeof DropdownSelector> = {
           <ModalBody>
             <div
               style={{
-                padding: '16px',
+                padding: 16,
+                display: 'grid',
+                gap: 40,
               }}
             >
-              <DummyBox>256px</DummyBox>
-              <PlaygroundDropdownSelector />
-              <DummyBox>256px</DummyBox>
-              <PlaygroundDropdownSelector />
-              <DummyBox>256px</DummyBox>
+              <DropdownSelector
+                value={selected1}
+                onChange={setSelected1}
+                label="DropdownSelector1"
+                showLabel
+                required
+                requiredText="required"
+                placeholder="placeholder"
+                assistiveText="assistiveText"
+              >
+                <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+                <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+                <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+              </DropdownSelector>
+
+              <TextField
+                label="TextField"
+                showLabel
+                required
+                requiredText="required"
+                placeholder="placeholder"
+                assistiveText="assistiveText"
+              />
+              <TextArea
+                label="TextArea"
+                showLabel
+                required
+                requiredText="required"
+                placeholder="placeholder"
+                assistiveText="assistiveText"
+              />
+
+              <DropdownSelector
+                value={selected2}
+                onChange={setSelected2}
+                label="DropdownSelector2"
+                showLabel
+                required
+                requiredText="required"
+                placeholder="placeholder"
+                assistiveText="assistiveText"
+              >
+                <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+                <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+                <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+              </DropdownSelector>
             </div>
           </ModalBody>
         </Modal>
@@ -167,7 +320,7 @@ export const InModal: StoryObj<typeof DropdownSelector> = {
 
 export const InFormTag: StoryObj<typeof DropdownSelector> = {
   render: function Render(props) {
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('1')
     return (
       <form style={{ width: 288 }}>
         <DropdownSelector
@@ -178,9 +331,9 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
           value={selected}
           label="label"
         >
-          <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
-          <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
-          <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
         </DropdownSelector>
       </form>
     )
@@ -188,9 +341,8 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
 }
 
 export const CustomChildren: StoryObj<typeof DropdownSelector> = {
-  args: { ...baseProps },
   render: function Render(props) {
-    const [selected, setSelected] = useState('10')
+    const [selected, setSelected] = useState('bold')
     return (
       <div style={{ width: 288 }}>
         <DropdownSelector
@@ -201,34 +353,23 @@ export const CustomChildren: StoryObj<typeof DropdownSelector> = {
           value={selected}
           label="label"
         >
-          <DropdownMenuItem value={'10'}>
+          <DropdownMenuItem value={'normal'}>Normal</DropdownMenuItem>
+          <DropdownMenuItem value={'bold'}>
             <div
               style={{
-                color: 'pink',
                 fontWeight: 'bold',
               }}
             >
-              Apple
+              Bold
             </div>
           </DropdownMenuItem>
-          <DropdownMenuItem value={'20'}>
+          <DropdownMenuItem value={'italic'}>
             <div
               style={{
-                color: 'yellowgreen',
                 fontStyle: 'italic',
               }}
             >
-              Banana
-            </div>
-          </DropdownMenuItem>
-          <DropdownMenuItem value={'30'}>
-            <div
-              style={{
-                color: 'orange',
-                fontSize: '24px',
-              }}
-            >
-              Orange
+              Italic
             </div>
           </DropdownMenuItem>
         </DropdownSelector>
@@ -237,10 +378,9 @@ export const CustomChildren: StoryObj<typeof DropdownSelector> = {
   },
 }
 
-export const SectionList: StoryObj<typeof DropdownSelector> = {
-  args: { ...baseProps },
+export const Section: StoryObj<typeof DropdownSelector> = {
   render: function Render(props) {
-    const [selected, setSelected] = useState('10')
+    const [selected, setSelected] = useState('banana')
     return (
       <div style={{ width: 288 }}>
         <DropdownSelector
@@ -252,15 +392,15 @@ export const SectionList: StoryObj<typeof DropdownSelector> = {
           label="label"
         >
           <MenuItemGroup text="fruits">
-            <DropdownMenuItem value={'10'}>Apple</DropdownMenuItem>
-            <DropdownMenuItem value={'20'}>Banana</DropdownMenuItem>
-            <DropdownMenuItem value={'30'}>Orange</DropdownMenuItem>
+            <DropdownMenuItem value={'apple'}>Apple</DropdownMenuItem>
+            <DropdownMenuItem value={'banana'}>Banana</DropdownMenuItem>
+            <DropdownMenuItem value={'orange'}>Orange</DropdownMenuItem>
           </MenuItemGroup>
           <Divider />
           <MenuItemGroup text="vehicle">
-            <DropdownMenuItem value={'40'}>bicycle</DropdownMenuItem>
-            <DropdownMenuItem value={'50'}>car</DropdownMenuItem>
-            <DropdownMenuItem value={'60'}>train</DropdownMenuItem>
+            <DropdownMenuItem value={'bicycle'}>bicycle</DropdownMenuItem>
+            <DropdownMenuItem value={'car'}>car</DropdownMenuItem>
+            <DropdownMenuItem value={'train'}>train</DropdownMenuItem>
           </MenuItemGroup>
         </DropdownSelector>
       </div>

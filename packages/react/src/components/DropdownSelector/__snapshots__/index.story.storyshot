@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests DropdownSelector Basic 1`] = `
+exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -85,6 +85,30 @@ exports[`Storybook Tests DropdownSelector Basic 1`] = `
   color: var(--charcoal-text2);
 }
 
+.c4 {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--charcoal-text2);
+  line-height: 22px;
+  display: flow-root;
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
 <div
   data-dark={false}
 >
@@ -106,13 +130,18 @@ exports[`Storybook Tests DropdownSelector Basic 1`] = `
         <span
           className="c2"
         >
-          Apple
+          Option 1
         </span>
         <pixiv-icon
           class="c3"
           name="16/Menu"
         />
       </button>
+      <div
+        className="c4"
+      >
+        assistiveText
+      </div>
     </div>
   </div>
 </div>
@@ -227,13 +256,368 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
           <div
             style={
               Object {
-                "color": "pink",
                 "fontWeight": "bold",
               }
             }
           >
-            Apple
+            Bold
           </div>
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector Default 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Placeholder
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector Disabled 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      aria-disabled={true}
+      className="c0"
+    >
+      <button
+        className="c1"
+        disabled={true}
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Option 1
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Option 2 (disabled)
         </span>
         <pixiv-icon
           class="c3"
@@ -350,7 +734,9 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
       >
         <span
           className="c2"
-        />
+        >
+          Option 1
+        </span>
         <pixiv-icon
           class="c3"
           name="16/Menu"
@@ -362,7 +748,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c11 {
+.c26 {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -386,32 +772,148 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   text-transform: none;
 }
 
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled=false]) {
+.c26:disabled,
+.c26[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c11:focus {
+.c26:focus {
   outline: none;
 }
 
-.c11::-moz-focus-inner {
+.c26::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
+.c9 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c9::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c9::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c11 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+}
+
+.c11::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c11::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c13 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c13::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c13::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c13:not(:disabled):not([aria-disabled]):hover,
+.c13[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active,
+.c13:not(:disabled):not([aria-disabled]):focus,
+.c13[aria-disabled='false']:focus,
+.c13:not(:disabled):not([aria-disabled]):focus-visible,
+.c13[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
 .c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7 > .c10 {
+  margin-left: 4px;
+}
+
+.c7 > .c12 {
+  margin-left: auto;
+}
+
+.c6 {
   display: inline-block;
   width: 100%;
 }
 
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
 .c8 {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -438,38 +940,38 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c8:disabled,
-.c8[aria-disabled]:not([aria-disabled=false]) {
+.c14:disabled,
+.c14[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled='false']:focus {
+.c14:not(:disabled):not([aria-disabled]):focus,
+.c14[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c8[aria-disabled='false']:focus:not(:focus-visible) {
+.c14:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c14[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus-visible,
-.c8[aria-disabled='false']:focus-visible {
+.c14:not(:disabled):not([aria-disabled]):focus-visible,
+.c14[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8[aria-disabled='false']:hover {
+.c14:not(:disabled):not([aria-disabled]):hover,
+.c14[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c8:not(:disabled):not([aria-disabled]):active,
-.c8[aria-disabled='false']:active {
+.c14:not(:disabled):not([aria-disabled]):active,
+.c14[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c9 {
+.c15 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -480,11 +982,35 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   white-space: nowrap;
 }
 
-.c10 {
+.c16 {
   color: var(--charcoal-text2);
 }
 
-.c12 {
+.c17 {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--charcoal-text2);
+  line-height: 22px;
+  display: flow-root;
+}
+
+.c17::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c17::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c27 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -510,36 +1036,36 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c27:not(:disabled):not([aria-disabled]):hover,
+.c27[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c27:not(:disabled):not([aria-disabled]):active,
+.c27[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus {
+.c27:not(:disabled):not([aria-disabled]):focus,
+.c27[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled='false']:focus:not(:focus-visible) {
+.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c27[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c27:not(:disabled):not([aria-disabled]):focus-visible,
+.c27[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled='false']) {
+.c27:disabled,
+.c27[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -580,7 +1106,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c13 {
+.c28 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -589,13 +1115,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s color;
 }
 
-.c13:not(:disabled):not([aria-disabled]):hover,
-.c13[aria-disabled='false']:hover {
+.c28:not(:disabled):not([aria-disabled]):hover,
+.c28[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active {
+.c28:not(:disabled):not([aria-disabled]):active,
+.c28[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -645,21 +1171,163 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   padding-bottom: 40px;
 }
 
-.c6 {
-  border: solid 1px rgba(0,0,0,0.08);
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 256px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c19 {
+  margin-bottom: 8px;
+}
+
+.c20 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c20:not(:disabled):not([aria-disabled]):hover,
+.c20 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c20:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c21 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
+}
+
+.c21::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c21::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c21:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c21::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c22 {
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  color: var(--charcoal-text2);
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c24 {
+  position: relative;
+  overflow: hidden;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  height: calc(22px * 4 + 18px);
+}
+
+.c24:not([aria-disabled]):hover,
+.c24 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c24:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c25 {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * 4 + 20px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+.c25::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c25::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c25:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c25::placeholder {
+  color: var(--charcoal-text3);
 }
 
 @media (max-width:743px) {
@@ -740,67 +1408,197 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
           <div
             style={
               Object {
-                "padding": "16px",
+                "display": "grid",
+                "gap": 40,
+                "padding": 16,
               }
             }
           >
             <div
               className="c6"
             >
-              256px
-            </div>
-            <div
-              className="c7"
-            >
+              <div
+                className="c7 c8"
+              >
+                <label
+                  className="c9"
+                >
+                  DropdownSelector1
+                </label>
+                <span
+                  className="c10 c11"
+                >
+                  required
+                </span>
+                <div
+                  className="c12 c13"
+                >
+                  <span />
+                </div>
+              </div>
               <button
-                className="c8"
+                className="c14"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="c9"
+                  className="c15"
                 >
-                  Apple
+                  Option 1
                 </span>
                 <pixiv-icon
-                  class="c10"
+                  class="c16"
                   name="16/Menu"
                 />
               </button>
+              <div
+                className="c17"
+              >
+                assistiveText
+              </div>
+            </div>
+            <div
+              className="c18"
+            >
+              <div
+                className="c7 c19"
+              >
+                <label
+                  className="c9"
+                  htmlFor="test-id"
+                  id="test-id"
+                >
+                  TextField
+                </label>
+                <span
+                  className="c10 c11"
+                >
+                  required
+                </span>
+                <div
+                  className="c12 c13"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                className="c20"
+              >
+                <input
+                  aria-labelledby="test-id"
+                  aria-required={true}
+                  className="c21"
+                  disabled={false}
+                  id="test-id"
+                  onChange={[Function]}
+                  placeholder="placeholder"
+                  readOnly={false}
+                  required={false}
+                  type="text"
+                  value=""
+                />
+              </div>
+              <p
+                className="c22"
+              >
+                assistiveText
+              </p>
+            </div>
+            <div
+              className="c23"
+            >
+              <div
+                className="c7 c19"
+              >
+                <label
+                  className="c9"
+                  htmlFor="test-id"
+                  id="test-id"
+                >
+                  TextArea
+                </label>
+                <span
+                  className="c10 c11"
+                >
+                  required
+                </span>
+                <div
+                  className="c12 c13"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                className="c24"
+                rows={4}
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  aria-required={true}
+                  className="c25"
+                  disabled={false}
+                  id="test-id"
+                  onChange={[Function]}
+                  placeholder="placeholder"
+                  readOnly={false}
+                  required={false}
+                  rows={4}
+                  value=""
+                />
+              </div>
+              <p
+                className="c22"
+              >
+                assistiveText
+              </p>
             </div>
             <div
               className="c6"
             >
-              256px
-            </div>
-            <div
-              className="c7"
-            >
+              <div
+                className="c7 c8"
+              >
+                <label
+                  className="c9"
+                >
+                  DropdownSelector2
+                </label>
+                <span
+                  className="c10 c11"
+                >
+                  required
+                </span>
+                <div
+                  className="c12 c13"
+                >
+                  <span />
+                </div>
+              </div>
               <button
-                className="c8"
+                className="c14"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="c9"
+                  className="c15"
                 >
-                  Apple
+                  Option 2
                 </span>
                 <pixiv-icon
-                  class="c10"
+                  class="c16"
                   name="16/Menu"
                 />
               </button>
-            </div>
-            <div
-              className="c6"
-            >
-              256px
+              <div
+                className="c17"
+              >
+                assistiveText
+              </div>
             </div>
           </div>
         </div>
         <button
-          className="c11 c12 c13"
+          className="c26 c27 c28"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -808,6 +1606,503 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
           />
         </button>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector Invalid 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:not(:disabled):not([aria-disabled]),
+.c1[aria-disabled='false'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Option 1
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c1:not(:disabled):not([aria-disabled]),
+.c1[aria-disabled='false'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  color: var(--charcoal-text2);
+}
+
+.c4 {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--charcoal-text2);
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-assertive);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c2"
+        >
+          Option 1
+        </span>
+        <pixiv-icon
+          class="c3"
+          name="16/Menu"
+        />
+      </button>
+      <div
+        className="c4"
+      >
+        assistiveText
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector Label 1`] = `
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > .c4 {
+  margin-left: auto;
+}
+
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c2 {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c6[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c7 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <div
+        className="c1 c2"
+      >
+        <label
+          className="c3"
+        >
+          Label
+        </label>
+        <div
+          className="c4 c5"
+        >
+          <span />
+        </div>
+      </div>
+      <button
+        className="c6"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c7"
+        >
+          Option 1
+        </span>
+        <pixiv-icon
+          class="c8"
+          name="16/Menu"
+        />
+      </button>
     </div>
   </div>
 </div>
@@ -931,122 +2226,135 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Playground 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
+exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c7 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c7::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c7::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active,
+.c7:not(:disabled):not([aria-disabled]):focus,
+.c7[aria-disabled='false']:focus,
+.c7:not(:disabled):not([aria-disabled]):focus-visible,
+.c7[aria-disabled='false']:focus-visible {
   outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > .c4 {
+  margin-left: 4px;
+}
+
+.c1 > .c6 {
+  margin-left: auto;
+}
+
+.c0 {
+  display: inline-block;
+  width: 100%;
 }
 
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
 .c2 {
-  display: inline-block;
   width: 100%;
+  margin-bottom: 8px;
 }
 
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c3 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1073,38 +2381,43 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled=false]) {
+.c8:disabled,
+.c8[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus {
+.c8:not(:disabled):not([aria-disabled]):focus,
+.c8[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[aria-disabled='false']:focus:not(:focus-visible) {
+.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c8[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled='false']:focus-visible {
+.c8:not(:disabled):not([aria-disabled]):focus-visible,
+.c8[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3[aria-disabled='false']:hover {
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active {
+.c8:not(:disabled):not([aria-disabled]):active,
+.c8[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c4 {
+.c8:not(:disabled):not([aria-disabled]),
+.c8[aria-disabled='false'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c9 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -1115,7 +2428,7 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
   white-space: nowrap;
 }
 
-.c5 {
+.c10 {
   color: var(--charcoal-text2);
 }
 
@@ -1129,25 +2442,40 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
       }
     }
   >
-    <button
-      className="c0 c1"
-      disabled={false}
-    />
     <div
-      className="c2"
+      className="c0"
     >
+      <div
+        className="c1 c2"
+      >
+        <label
+          className="c3"
+        >
+          Label
+        </label>
+        <span
+          className="c4 c5"
+        >
+          required
+        </span>
+        <div
+          className="c6 c7"
+        >
+          <span />
+        </div>
+      </div>
       <button
-        className="c3"
+        className="c8"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c4"
+          className="c9"
         >
-          50
+          Option 1
         </span>
         <pixiv-icon
-          class="c5"
+          class="c10"
           name="16/Menu"
         />
       </button>
@@ -1156,7 +2484,7 @@ exports[`Storybook Tests DropdownSelector Playground 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector SectionList 1`] = `
+exports[`Storybook Tests DropdownSelector Section 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -1262,10 +2590,238 @@ exports[`Storybook Tests DropdownSelector SectionList 1`] = `
         <span
           className="c2"
         >
-          Apple
+          Banana
         </span>
         <pixiv-icon
           class="c3"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active,
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus,
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > .c4 {
+  margin-left: auto;
+}
+
+.c0 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c2 {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c6[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]),
+.c6[aria-disabled='false'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c7 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  color: var(--charcoal-text2);
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <div
+        className="c1 c2"
+      >
+        <label
+          className="c3"
+        >
+          Label
+        </label>
+        <div
+          className="c4 c5"
+        >
+          <span>
+            SubLabel
+          </span>
+        </div>
+      </div>
+      <button
+        className="c6"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="c7"
+        >
+          Option 1
+        </span>
+        <pixiv-icon
+          class="c8"
           name="16/Menu"
         />
       </button>

@@ -35,3 +35,5 @@ lerna-debug.log*
 # tests
 /__diff_output__
 /__image_snapshots__
+
+*.log

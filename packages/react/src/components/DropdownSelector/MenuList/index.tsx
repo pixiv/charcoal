@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import styled from 'styled-components'
 import { MenuListContext } from './MenuListContext'
 import { getValuesRecursive } from './internals/getValuesRecursive'
@@ -24,8 +24,10 @@ export type MenuListProps = {
  */
 export default function MenuList(props: MenuListProps) {
   const root = useRef(null)
-  const values: string[] = []
-  getValuesRecursive(props.children, values)
+  const propsArray = useMemo(
+    () => getValuesRecursive(props.children),
+    [props.children]
+  )
 
   return (
     <StyledUl ref={root}>
@@ -33,7 +35,7 @@ export default function MenuList(props: MenuListProps) {
         value={{
           value: props.value ?? '',
           root,
-          values,
+          propsArray,
           setValue: (v) => {
             props.onChange?.(v)
           },
