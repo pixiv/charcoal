@@ -50,8 +50,8 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           subLabel={props.subLabel}
         />
       )}
-      <div {...visuallyHiddenProps}>
-        <select name={props.name} value={props.value}>
+      <div {...visuallyHiddenProps} aria-hidden="true">
+        <select name={props.name} value={props.value} tabIndex={-1}>
           {propsArray.map((itemProps) => {
             return (
               <option

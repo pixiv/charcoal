@@ -864,6 +864,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </div>
                 </div>
                 <div
+                  aria-hidden="true"
                   style={
                     Object {
                       "border": 0,
@@ -880,6 +881,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   }
                 >
                   <select
+                    tabIndex={-1}
                     value="10"
                   >
                     <option
@@ -2286,6 +2288,7 @@ exports[`Storybook Tests Modal Default 1`] = `
                   </div>
                 </div>
                 <div
+                  aria-hidden="true"
                   style={
                     Object {
                       "border": 0,
@@ -2302,6 +2305,7 @@ exports[`Storybook Tests Modal Default 1`] = `
                   }
                 >
                   <select
+                    tabIndex={-1}
                     value="10"
                   >
                     <option

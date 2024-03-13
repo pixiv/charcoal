@@ -324,13 +324,13 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
     const [selected, setSelected] = useState('1')
     return (
       <form
-        style={{ width: 288, display: 'grid', gap: 16 }}
+        style={{ width: 288, display: 'flex' }}
         onSubmit={(e) => {
           const target = e.target as HTMLFormElement
           const select = target.elements.namedItem(
             'exampleOption'
           ) as HTMLSelectElement
-          alert(`value: Option ${select.value}`)
+          alert(`selected value: Option ${select.value}`)
           e.preventDefault()
         }}
       >
@@ -347,7 +347,13 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
           <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
           <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
         </DropdownSelector>
-        <Button variant="Primary" type="submit">
+        <Button
+          variant="Primary"
+          type="submit"
+          style={{
+            marginLeft: 16,
+          }}
+        >
           submit
         </Button>
       </form>

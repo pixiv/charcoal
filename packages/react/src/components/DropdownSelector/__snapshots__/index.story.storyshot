@@ -123,6 +123,7 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -139,6 +140,7 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -282,6 +284,7 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -298,6 +301,7 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="bold"
         >
           <option
@@ -444,6 +448,7 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -460,6 +465,7 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value=""
         >
           <option
@@ -599,6 +605,7 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -615,6 +622,7 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -754,6 +762,7 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -770,6 +779,7 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="2"
         >
           <option
@@ -1015,8 +1025,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
     onSubmit={[Function]}
     style={
       Object {
-        "display": "grid",
-        "gap": 16,
+        "display": "flex",
         "width": 288,
       }
     }
@@ -1025,6 +1034,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -1042,6 +1052,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
       >
         <select
           name="exampleOption"
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -1080,6 +1091,11 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
     <button
       className="c4 c5"
       disabled={false}
+      style={
+        Object {
+          "marginLeft": 16,
+        }
+      }
       type="submit"
     >
       submit
@@ -1778,6 +1794,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
+                aria-hidden="true"
                 style={
                   Object {
                     "border": 0,
@@ -1794,6 +1811,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 }
               >
                 <select
+                  tabIndex={-1}
                   value="1"
                 >
                   <option
@@ -1952,6 +1970,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
+                aria-hidden="true"
                 style={
                   Object {
                     "border": 0,
@@ -1968,6 +1987,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 }
               >
                 <select
+                  tabIndex={-1}
                   value="2"
                 >
                   <option
@@ -2128,6 +2148,7 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -2144,6 +2165,7 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -2312,6 +2334,7 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -2328,6 +2351,7 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -2574,6 +2598,7 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
         </div>
       </div>
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -2590,6 +2615,7 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -2728,6 +2754,7 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -2744,6 +2771,7 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -3022,6 +3050,7 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
         </div>
       </div>
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -3038,6 +3067,7 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
@@ -3176,6 +3206,7 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
       className="c0"
     >
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -3192,6 +3223,7 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="banana"
         >
           <option
@@ -3455,6 +3487,7 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
         </div>
       </div>
       <div
+        aria-hidden="true"
         style={
           Object {
             "border": 0,
@@ -3471,6 +3504,7 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
         }
       >
         <select
+          tabIndex={-1}
           value="1"
         >
           <option
