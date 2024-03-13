@@ -19,6 +19,8 @@ exports[`Storybook Tests DropdownSelector/ListItem Basic 1`] = `
   outline: none;
   padding-right: 16px;
   padding-left: 16px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .c1:disabled,
@@ -27,9 +29,9 @@ exports[`Storybook Tests DropdownSelector/ListItem Basic 1`] = `
   cursor: default;
 }
 
-.c1:hover,
-.c1:focus,
-.c1:focus-within {
+.c1:hover:not(disabled):not([aria-disabled='true']),
+.c1:focus:not(disabled):not([aria-disabled='true']),
+.c1:focus-within:not(disabled):not([aria-disabled='true']) {
   background-color: var(--charcoal-surface3);
 }
 

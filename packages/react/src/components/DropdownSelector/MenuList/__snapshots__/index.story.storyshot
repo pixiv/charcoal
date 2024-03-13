@@ -24,6 +24,8 @@ exports[`Storybook Tests DropdownSelector/MenuList Basic 1`] = `
   outline: none;
   padding-right: 16px;
   padding-left: 16px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .c2:disabled,
@@ -32,9 +34,9 @@ exports[`Storybook Tests DropdownSelector/MenuList Basic 1`] = `
   cursor: default;
 }
 
-.c2:hover,
-.c2:focus,
-.c2:focus-within {
+.c2:hover:not(disabled):not([aria-disabled='true']),
+.c2:focus:not(disabled):not([aria-disabled='true']),
+.c2:focus-within:not(disabled):not([aria-disabled='true']) {
   background-color: var(--charcoal-surface3);
 }
 
@@ -232,6 +234,8 @@ exports[`Storybook Tests DropdownSelector/MenuList Disabled 1`] = `
   outline: none;
   padding-right: 16px;
   padding-left: 16px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .c2:disabled,
@@ -240,9 +244,9 @@ exports[`Storybook Tests DropdownSelector/MenuList Disabled 1`] = `
   cursor: default;
 }
 
-.c2:hover,
-.c2:focus,
-.c2:focus-within {
+.c2:hover:not(disabled):not([aria-disabled='true']),
+.c2:focus:not(disabled):not([aria-disabled='true']),
+.c2:focus-within:not(disabled):not([aria-disabled='true']) {
   background-color: var(--charcoal-surface3);
 }
 
@@ -331,6 +335,8 @@ exports[`Storybook Tests DropdownSelector/MenuList Group 1`] = `
   outline: none;
   padding-right: 16px;
   padding-left: 16px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .c5:disabled,
@@ -339,9 +345,9 @@ exports[`Storybook Tests DropdownSelector/MenuList Group 1`] = `
   cursor: default;
 }
 
-.c5:hover,
-.c5:focus,
-.c5:focus-within {
+.c5:hover:not(disabled):not([aria-disabled='true']),
+.c5:focus:not(disabled):not([aria-disabled='true']),
+.c5:focus-within:not(disabled):not([aria-disabled='true']) {
   background-color: var(--charcoal-surface3);
 }
 
