@@ -1,5 +1,3 @@
-import { useRef } from 'react'
-import { ClickableElement } from '../Clickable'
 import Button from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
@@ -42,16 +40,4 @@ export const Disabled: StoryObj<typeof Button> = {
 
 export const IsActive: StoryObj<typeof Button> = {
   render: () => <Button isActive>Active</Button>,
-}
-
-export const Focus: StoryObj<typeof Button> = {
-  render: function Render(args) {
-    const ref = useRef<ClickableElement>(null)
-    const focus = () => ref.current?.focus()
-    return (
-      <Button {...args} onMouseOver={focus} ref={ref}>
-        Mouse over to focus
-      </Button>
-    )
-  },
 }
