@@ -26,6 +26,11 @@ export const apiData: ApiTableData<DropdownSelectorProps, {}> & {
     required: true,
     type: 'string',
   },
+  name: {
+    description: '非表示の<select />に付与されるname属性',
+    required: true,
+    type: 'string',
+  },
   required: {
     default: 'false',
     description: '入力の必須化',
