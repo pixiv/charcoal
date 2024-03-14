@@ -27,7 +27,7 @@
     "fmt:eslint": "DEBUG=eslint:cli-engine eslint . --fix --max-warnings=0",
     "fmt:prettier": "prettier . --write",
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
-    "release": "yarn && yarn run clean && yarn run build && lerna publish --no-changelog --no-private",
+    "release": "yarn && yarn run clean && yarn run build && lerna publish --no-changelog --no-private --dist-tag ${0}",
     "release:alpha": "yarn release --conventional-prerelease --dist-tag alpha",
     "postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
     "website": "vite docs --base=charcoal/docs --port 5000"
