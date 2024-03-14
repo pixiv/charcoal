@@ -1,11 +1,13 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "3.8.0",
+  "version": "3.10.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "exports": {
+    "types": "./dist/index.d.ts",
     "require": "./dist/index.cjs.js",
+    "import": "./dist/index.esm.js",
     "default": "./dist/index.esm.js"
   },
   "types": "./dist/index.d.ts",
@@ -18,7 +20,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^3.8.0",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^3.10.0",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-knobs": "^7.0.2",
     "@storybook/addons": "^7.4.1",
@@ -48,11 +50,11 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.8.0",
-    "@charcoal-ui/react": "^3.8.0",
-    "@charcoal-ui/styled": "^3.8.0",
-    "@charcoal-ui/theme": "^3.8.0",
-    "@charcoal-ui/utils": "^3.8.0",
+    "@charcoal-ui/foundation": "^3.10.0",
+    "@charcoal-ui/react": "^3.10.0",
+    "@charcoal-ui/styled": "^3.10.0",
+    "@charcoal-ui/theme": "^3.10.0",
+    "@charcoal-ui/utils": "^3.10.0",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
     "warning": "^4.0.3"

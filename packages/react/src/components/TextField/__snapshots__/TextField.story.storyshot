@@ -1201,6 +1201,281 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests TextField Number 1`] = `
+.c7 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c7::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c8 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c8:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
+}
+
+.c9::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="c7"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c8"
+      >
+        <input
+          aria-labelledby="test-id"
+          className="c9"
+          disabled={false}
+          id="test-id"
+          onChange={[Function]}
+          onWheel={[Function]}
+          placeholder="TextField"
+          readOnly={false}
+          required={false}
+          type="number"
+          value="0"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests TextField PrefixIcon 1`] = `
 .c6 {
   cursor: pointer;

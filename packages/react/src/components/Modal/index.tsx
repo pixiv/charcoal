@@ -1,10 +1,6 @@
 import { useContext, forwardRef, memo } from 'react'
 import * as React from 'react'
-import {
-  AriaModalOverlayProps,
-  Overlay,
-  useModalOverlay,
-} from '@react-aria/overlays'
+import { AriaModalOverlayProps, Overlay } from '@react-aria/overlays'
 import styled, { css, useTheme } from 'styled-components'
 import { AriaDialogProps } from '@react-types/dialog'
 import { maxWidth } from '@charcoal-ui/utils'
@@ -15,6 +11,7 @@ import IconButton from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
+import { useCharcoalModalOverlay } from './useCustomModalOverlay'
 
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'
@@ -81,27 +78,15 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
 
   const ref = useObjectRef<HTMLDivElement>(external)
 
-  const { modalProps, underlayProps } = useModalOverlay(
+  const { modalProps, underlayProps } = useCharcoalModalOverlay(
     {
       ...props,
       isKeyboardDismissDisabled:
         isDismissable === undefined || isDismissable === false,
     },
-
     {
-      close: onClose,
-      isOpen: isOpen,
-      // these props are not used actually.
-      // https://github.com/adobe/react-spectrum/blob/df14e3fb129b94b310f0397a701b83f006b51dfe/packages/%40react-aria/overlays/src/useModalOverlay.ts
-      open: () => {
-        // nope
-      },
-      setOpen: () => {
-        // nope
-      },
-      toggle: () => {
-        // nope
-      },
+      onClose,
+      isOpen,
     },
     ref
   )
@@ -136,6 +121,15 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
 
   const bgRef = React.useRef<HTMLElement>(null)
 
+  const handleClick = React.useCallback(
+    (e: MouseEvent) => {
+      if (e.currentTarget === e.target) {
+        onClose()
+      }
+    },
+    [onClose]
+  )
+
   return transition(
     ({ backgroundColor, overflow, transform }, item) =>
       item && (
@@ -146,6 +140,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             {...underlayProps}
             style={transitionEnabled ? { backgroundColor, overflow } : {}}
             $bottomSheet={bottomSheet}
+            onClick={handleClick}
           >
             <ModalBackgroundContext.Provider value={bgRef.current}>
               <Dialog

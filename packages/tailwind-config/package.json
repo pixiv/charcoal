@@ -1,11 +1,13 @@
 {
   "name": "@charcoal-ui/tailwind-config",
-  "version": "3.8.0",
+  "version": "3.10.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "exports": {
+    "types": "./dist/index.d.ts",
     "require": "./dist/index.cjs.js",
+    "import": "./dist/index.esm.js",
     "default": "./dist/index.esm.js"
   },
   "types": "./dist/index.d.ts",
@@ -27,9 +29,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.8.0",
-    "@charcoal-ui/theme": "^3.8.0",
-    "@charcoal-ui/utils": "^3.8.0"
+    "@charcoal-ui/foundation": "^3.10.0",
+    "@charcoal-ui/theme": "^3.10.0",
+    "@charcoal-ui/utils": "^3.10.0"
   },
   "peerDependencies": {
     "csstype": ">=3.0.0",

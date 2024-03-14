@@ -48,6 +48,7 @@ jobs:
         working-directory: ./docs
       - run: yarn build
         working-directory: ./docs
+      - run: yarn storybook:build -o public/storybook
 
       - id: auth
         uses: google-github-actions/auth@v1

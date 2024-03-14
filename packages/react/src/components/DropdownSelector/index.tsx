@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef } from 'react'
+import { ReactNode, useState, useRef, useMemo } from 'react'
 import styled, { css } from 'styled-components'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
@@ -7,6 +7,8 @@ import { DropdownPopover } from './DropdownPopover'
 import { findPreviewRecursive } from './utils/findPreviewRecursive'
 import MenuList, { MenuListChildren } from './MenuList'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
+import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
+import { useVisuallyHidden } from '@react-aria/visually-hidden'
 
 export type DropdownSelectorProps = {
   label: string
@@ -19,6 +21,10 @@ export type DropdownSelectorProps = {
   required?: boolean
   requiredText?: string
   subLabel?: ReactNode
+  /**
+   * the name of hidden `<select />`
+   */
+  name?: string
   children: MenuListChildren
   onChange: (value: string) => void
 }
@@ -30,6 +36,15 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
 
+  const isPlaceholder = useMemo(
+    () => props.placeholder !== undefined && preview === undefined,
+    [preview, props.placeholder]
+  )
+
+  const propsArray = getValuesRecursive(props.children)
+
+  const { visuallyHiddenProps } = useVisuallyHidden()
+
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
       {props.showLabel === true && (
@@ -40,6 +55,21 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           subLabel={props.subLabel}
         />
       )}
+      <div {...visuallyHiddenProps} aria-hidden="true">
+        <select name={props.name} value={props.value} tabIndex={-1}>
+          {propsArray.map((itemProps) => {
+            return (
+              <option
+                key={itemProps.value}
+                value={itemProps.value}
+                disabled={itemProps.disabled}
+              >
+                {itemProps.value}
+              </option>
+            )
+          })}
+        </select>
+      </div>
       <DropdownButton
         invalid={props.invalid}
         disabled={props.disabled}
@@ -51,10 +81,8 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         type="button"
         $active={isOpen}
       >
-        <DropdownButtonText>
-          {props.placeholder !== undefined && preview === undefined
-            ? props.placeholder
-            : preview}
+        <DropdownButtonText $isText3={isPlaceholder}>
+          {isPlaceholder ? props.placeholder : preview}
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
@@ -151,12 +179,12 @@ const DropdownButton = styled.button<{ invalid?: boolean; $active?: boolean }>`
     `}
 `
 
-const DropdownButtonText = styled.span`
+const DropdownButtonText = styled.span<{ $isText3: boolean }>`
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-${(p) => (p.$isText3 ? 'text3' : 'text2')});
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

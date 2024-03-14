@@ -1,0 +1,142 @@
+name: test-storybook
+on:
+  pull_request:
+    types: [labeled, unlabeled, opened, edited, synchronize]
+    branches:
+      - main
+
+jobs:
+  prepare-main-branch:
+    name: Prepare main branch image snapshots
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Check commit hash
+        id: commit-hash
+        run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+      - name: Restore image snapshot from cache
+        uses: actions/cache@v4
+        id: cache-image-snapshots
+        with:
+          path: __image_snapshots__
+          key: image-snapshots-${{ steps.commit-hash.outputs.hash }}
+      - uses: actions/setup-node@v3
+        if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+      - name: Install dependencies
+        if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
+        run: yarn install --immutable --inline-builds
+      - name: Cache Playwright runners
+        if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            /home/runner/.cache/ms-playwright/
+          key: ${{ runner.os }}-playwright-runner
+      - name: Install Playwgith
+        if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
+        run: yarn playwright install --with-deps
+      - name: Build Storybook
+        if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
+        run: |
+          yarn build
+          yarn storybook:build --quiet
+      - name: Serve Storybook and run tests
+        if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook --updateSnapshot"
+      - name: Upload main branch snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: main__image-snapshots__
+          path: __image_snapshots__/
+
+  test-storybook:
+    name: Build Storybook
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    needs: prepare-main-branch
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Check commit hash
+        id: commit-hash
+        run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --immutable --inline-builds
+      - name: Cache Playwright runners
+        uses: actions/cache@v4
+        with:
+          path: |
+            /home/runner/.cache/ms-playwright/
+          key: ${{ runner.os }}-playwright-runner
+      - name: Install Playwgith
+        run: yarn playwright install --with-deps
+      - name: Build Storybook
+        run: |
+          yarn build
+          yarn storybook:build --quiet
+      - name: Check label
+        uses: actions/github-script@v7
+        id: label-checking
+        env:
+          SNAPSHOT_UPDATE_LABEL: image snapshots update
+        with:
+          result-encoding: string
+          script: |
+            const { issue, repo } = context
+            const { data: pull } = await github.rest.issues.get({
+              issue_number: issue.number,
+              owner: repo.owner,
+              repo: repo.repo
+            })
+
+            const labels = pull.labels.map(({ name }) => name)
+
+            if(labels.includes(process.env.SNAPSHOT_UPDATE_LABEL)){
+              console.log(`Found "${process.env.SNAPSHOT_UPDATE_LABEL}" label, image snapshots will be updated."`)
+              return 'true'
+            }
+
+            console.log(`Not fount "${process.env.SNAPSHOT_UPDATE_LABEL}" label. Compare with image snapshots of main branch.`)
+            return 'false'
+      - name: Load main branch image snapshots
+        uses: actions/download-artifact@v4
+        if: steps.label-checking.outputs.result != 'true'
+        with:
+          name: main__image-snapshots__
+          path: __image_snapshots__/
+      - name: Serve Storybook and run tests
+        if: steps.label-checking.outputs.result != 'true'
+        run: yarn test:image-snapshot
+      - name: Serve Storybook and take new image snapshots
+        if: steps.label-checking.outputs.result == 'true'
+        run: yarn test:image-snapshot --updateSnapshot
+      - name: Archive image snapshot diffs
+        uses: actions/upload-artifact@v4
+        if: failure() && steps.label-checking.outputs.result != 'true'
+        with:
+          path: __diff_output__/
+      - name: Archive new image snapshots
+        if: steps.label-checking.outputs.result == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: new__image_snapshots__
+          path: __image_snapshots__/
