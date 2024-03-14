@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/tailwind-diff",
-  "version": "4.0.0-beta.0",
+  "version": "3.10.1-beta.1",
   "bin": "bin/tailwind-diff.js",
   "scripts": {
     "build": "tsc",
@@ -25,5 +25,5 @@
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/tailwind-diff"
   },
-  "gitHead": "8579b406b316285a35858512030d2143524ae154"
+  "gitHead": "e1ece2e43901ae667afdd5c178040607d939dcd5"
 }
