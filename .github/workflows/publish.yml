@@ -6,6 +6,14 @@ on:
       version:
         description: 'リリースしたいバージョン名'
         required: true
+      release_tag:
+        description: 'Release tag'
+        required: true
+        default: 'latest'
+        type: choice
+        options:
+          - latest
+          - beta
 
 jobs:
   build:
@@ -46,7 +54,7 @@ jobs:
           git push origin ${{ github.ref_name }}
 
       - name: Build & Publish to npmjs
-        run: yarn release -y from-package
+        run: yarn release -y from-package --dist-tag ${{ github.event.inputs.release_tag }}
         env:
           NPM_CONFIG_PROVENANCE: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
