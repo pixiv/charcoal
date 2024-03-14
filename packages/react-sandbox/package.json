@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "3.10.0",
+  "version": "3.10.1-beta.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -20,7 +20,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^3.10.0",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^3.10.1-beta.0",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-knobs": "^7.0.2",
     "@storybook/addons": "^7.4.1",
@@ -50,11 +50,11 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.10.0",
-    "@charcoal-ui/react": "^3.10.0",
-    "@charcoal-ui/styled": "^3.10.0",
-    "@charcoal-ui/theme": "^3.10.0",
-    "@charcoal-ui/utils": "^3.10.0",
+    "@charcoal-ui/foundation": "^3.10.1-beta.0",
+    "@charcoal-ui/react": "^3.10.1-beta.0",
+    "@charcoal-ui/styled": "^3.10.1-beta.0",
+    "@charcoal-ui/theme": "^3.10.1-beta.0",
+    "@charcoal-ui/utils": "^3.10.1-beta.0",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
     "warning": "^4.0.3"
@@ -76,5 +76,5 @@
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/react-sandbox"
   },
-  "gitHead": "8579b406b316285a35858512030d2143524ae154"
+  "gitHead": "c10c7d7ba9f75598ca2c3497c2437efae940b577"
 }
