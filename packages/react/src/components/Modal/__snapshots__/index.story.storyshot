@@ -881,6 +881,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   }
                 >
                   <select
+                    onChange={[Function]}
                     tabIndex={-1}
                     value="10"
                   >
@@ -2305,6 +2306,7 @@ exports[`Storybook Tests Modal Default 1`] = `
                   }
                 >
                   <select
+                    onChange={[Function]}
                     tabIndex={-1}
                     value="10"
                   >
