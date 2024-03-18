@@ -1,7 +1,8 @@
 .charcoal-button {
   appearance: none;
   background: transparent;
-  padding: 0;
+  box-sizing: border-box;
+  padding: 0 24px;
   border-style: none;
   outline: none;
   text-rendering: inherit;
@@ -23,8 +24,6 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
