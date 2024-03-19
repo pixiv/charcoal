@@ -14,8 +14,12 @@ export type ButtonProps<T extends React.ElementType = 'button'> = {
   size?: Size
   fullWidth?: boolean
   isActive?: boolean
-  as?: T
-} & Omit<React.ComponentPropsWithRef<T>, 'children'>
+  /**
+   * The component used for root node.
+   * @type `T extends React.ElementType = 'button'`
+   */
+  component?: T
+} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'component'>
 
 const Button = forwardRef(function Button<T extends React.ElementType>(
   {
@@ -23,13 +27,13 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
     fullWidth,
     size,
     className,
-    as,
+    component,
     isActive,
     ...props
   }: ButtonProps<T>,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
-  const Component = useMemo(() => as ?? 'button', [as])
+  const Component = useMemo(() => component ?? 'button', [component])
   const classNames = useClassNames('charcoal-button', className)
   return (
     <Component
