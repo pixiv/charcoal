@@ -15,11 +15,15 @@ export type ButtonProps<T extends React.ElementType = 'button'> = {
   fullWidth?: boolean
   isActive?: boolean
   /**
-   * The component used for root node.
-   * @type `T extends React.ElementType = 'button'`
+   * The component used for element.
+   * @type T extends React.ElementType = 'button'
    */
-  component?: T
-} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'component'>
+  as?: T
+  /**
+   * The as property of the component specified by the Button component's as attribute.
+   */
+  componentAs?: React.ComponentPropsWithRef<T>['as']
+} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
 
 const Button = forwardRef(function Button<T extends React.ElementType>(
   {
@@ -27,17 +31,19 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
     fullWidth,
     size,
     className,
-    component,
+    as,
     isActive,
+    componentAs,
     ...props
   }: ButtonProps<T>,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
-  const Component = useMemo(() => component ?? 'button', [component])
+  const Component = useMemo(() => as ?? 'button', [as])
   const classNames = useClassNames('charcoal-button', className)
   return (
     <Component
       {...props}
+      as={componentAs}
       className={classNames}
       data-variant={variant}
       data-size={size}
