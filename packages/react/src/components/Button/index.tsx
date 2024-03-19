@@ -15,7 +15,7 @@ export type ButtonProps<T extends React.ElementType = 'button'> = {
   fullWidth?: boolean
   isActive?: boolean
   /**
-   * The component used for element.
+   * The component used for root element.
    * @type T extends React.ElementType = 'button'
    */
   as?: T
