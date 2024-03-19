@@ -6,65 +6,38 @@ import { Meta, StoryObj } from '@storybook/react'
 export default {
   title: 'Button',
   component: Button,
-  argTypes: {
-    variant: {
-      control: {
-        type: 'inline-radio',
-        options: ['Primary', 'Default', 'Overlay', 'Danger', 'Navigation'],
-      },
-    },
-    size: {
-      control: {
-        type: 'inline-radio',
-        options: ['S', 'M'],
-      },
-    },
-  },
-  render: (args) => <Button {...args}>Button</Button>,
 } as Meta<typeof Button>
 
-export const Default: StoryObj<typeof Button> = {}
+export const Default: StoryObj<typeof Button> = {
+  render: (args) => <Button {...args}>Button</Button>,
+}
 
 export const Primary: StoryObj<typeof Button> = {
-  args: {
-    variant: 'Primary',
-  },
+  render: () => <Button variant="Primary">Primary</Button>,
 }
 
 export const Navigation: StoryObj<typeof Button> = {
-  args: {
-    variant: 'Navigation',
-  },
+  render: () => <Button variant="Navigation">Navigation</Button>,
 }
 
 export const Overlay: StoryObj<typeof Button> = {
-  args: {
-    variant: 'Overlay',
-  },
+  render: () => <Button variant="Overlay">Overlay</Button>,
 }
 
 export const Danger: StoryObj<typeof Button> = {
-  args: {
-    variant: 'Danger',
-  },
+  render: () => <Button variant="Danger">Danger</Button>,
 }
 
 export const Small: StoryObj<typeof Button> = {
-  args: {
-    size: 'S',
-  },
+  render: () => <Button size="S">Small</Button>,
 }
 
-export const Fixed: StoryObj<typeof Button> = {
-  args: {
-    fullWidth: true,
-  },
+export const FullWidth: StoryObj<typeof Button> = {
+  render: () => <Button fullWidth>Full width</Button>,
 }
 
 export const Disabled: StoryObj<typeof Button> = {
-  args: {
-    disabled: true,
-  },
+  render: () => <Button disabled>Disabled</Button>,
 }
 
 export const Active: StoryObj<typeof Button> = {

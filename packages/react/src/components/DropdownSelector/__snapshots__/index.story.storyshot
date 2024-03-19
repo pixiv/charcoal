@@ -140,6 +140,7 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -301,6 +302,7 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="bold"
         >
@@ -465,6 +467,7 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value=""
         >
@@ -622,6 +625,7 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -779,6 +783,7 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="2"
         >
@@ -949,6 +954,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
       >
         <select
           name="exampleOption"
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -1708,6 +1714,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 }
               >
                 <select
+                  onChange={[Function]}
                   tabIndex={-1}
                   value="1"
                 >
@@ -1884,6 +1891,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 }
               >
                 <select
+                  onChange={[Function]}
                   tabIndex={-1}
                   value="2"
                 >
@@ -2062,6 +2070,7 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -2248,6 +2257,7 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -2512,6 +2522,7 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -2668,6 +2679,7 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -2964,6 +2976,7 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >
@@ -3120,6 +3133,7 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="banana"
         >
@@ -3401,6 +3415,7 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
         }
       >
         <select
+          onChange={[Function]}
           tabIndex={-1}
           value="1"
         >

@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef, useMemo } from 'react'
+import React, { ReactNode, useState, useRef, useMemo, useCallback } from 'react'
 import styled, { css } from 'styled-components'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
@@ -31,7 +31,10 @@ export type DropdownSelectorProps = {
 
 const defaultRequiredText = '*必須'
 
-export default function DropdownSelector(props: DropdownSelectorProps) {
+export default function DropdownSelector({
+  onChange,
+  ...props
+}: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
@@ -45,6 +48,13 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
 
   const { visuallyHiddenProps } = useVisuallyHidden()
 
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      onChange(e.target.value)
+    },
+    [onChange]
+  )
+
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
       {props.showLabel === true && (
@@ -56,7 +66,12 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         />
       )}
       <div {...visuallyHiddenProps} aria-hidden="true">
-        <select name={props.name} value={props.value} tabIndex={-1}>
+        <select
+          name={props.name}
+          value={props.value}
+          onChange={handleChange}
+          tabIndex={-1}
+        >
           {propsArray.map((itemProps) => {
             return (
               <option
@@ -96,7 +111,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           <MenuList
             value={props.value}
             onChange={(v) => {
-              props.onChange(v)
+              onChange(v)
               setIsOpen(false)
             }}
           >
