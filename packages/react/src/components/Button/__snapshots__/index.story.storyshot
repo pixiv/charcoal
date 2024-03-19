@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Button Active 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-active={true}
-  >
-    Button
-  </button>
-</div>
-`;
-
 exports[`Storybook Tests Button Danger 1`] = `
 <div
   data-dark={false}
@@ -51,7 +38,7 @@ exports[`Storybook Tests Button Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Fixed 1`] = `
+exports[`Storybook Tests Button FullWidth 1`] = `
 <div
   data-dark={false}
 >
@@ -64,28 +51,15 @@ exports[`Storybook Tests Button Fixed 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Focus 1`] = `
+exports[`Storybook Tests Button IsActive 1`] = `
 <div
   data-dark={false}
 >
   <button
     className="charcoal-button"
-    onMouseOver={[Function]}
+    data-active={true}
   >
     Active
-  </button>
-</div>
-`;
-
-exports[`Storybook Tests Button Link 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    to="#"
-  >
-    Button
   </button>
 </div>
 `;
@@ -98,19 +72,7 @@ exports[`Storybook Tests Button Navigation 1`] = `
     className="charcoal-button"
     data-variant="Navigation"
   >
-    Button
-  </button>
-</div>
-`;
-
-exports[`Storybook Tests Button Nihongo 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-  >
-    日本語だよ
+    Navigation
   </button>
 </div>
 `;
