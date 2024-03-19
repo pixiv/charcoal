@@ -1,16 +1,10 @@
 /// <reference types='@types/webpack-env' />
 
-import * as React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
-import { Props } from './PixivIcon'
-import { PixivIcon } from '.'
+import { PixivIcon, Props } from '.'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
-
-interface Story<P> {
-  (args: P): React.ReactNode
-  args?: P
-}
+import { Meta, StoryObj } from '@storybook/web-components'
 
 PixivIcon.extend({
   // かぶらなそうな名前をつける
@@ -38,13 +32,32 @@ export default {
       },
     },
   },
-
   parameters: {
     storyshots: {
       disable: true,
     },
   },
-}
+  render: ({ scale, color }) => (
+    <>
+      {Object.entries(groupedIcons).map(([groupName, icons]) => (
+        <Group key={groupName}>
+          <Heading>
+            {groupName} (scale: {scale})
+          </Heading>
+          <Grid>
+            {icons.map((name) => (
+              <IconDef color={color} key={name}>
+                <pixiv-icon key={scale} name={name} scale={scale} />
+                <div>{name}</div>
+              </IconDef>
+            ))}
+          </Grid>
+        </Group>
+      ))}
+      <Global />
+    </>
+  ),
+} as Meta<Props>
 
 const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
   (map, icon) => {
@@ -84,8 +97,8 @@ const Group = styled.div`
   }
 `
 
-const IconDef = styled.div<{ color: string }>`
-  color: ${({ color }) => color};
+const IconDef = styled.div<{ color?: string }>`
+  color: ${({ color }) => color ?? '#000000'};
   display: inline-flex;
   align-items: center;
   min-height: 32px;
@@ -110,62 +123,46 @@ const Heading = styled.h2`
   margin: 16px 0;
 `
 
-const DefaultStory: Story<{
-  scale: NonNullable<Props['scale']>
-  color: string
-}> = ({ scale, color }) => (
-  <>
-    {Object.entries(groupedIcons).map(([groupName, icons]) => (
-      <Group key={groupName}>
-        <Heading>
-          {groupName} (scale: {scale})
-        </Heading>
-        <Grid>
-          {icons.map((name) => (
-            <IconDef color={color} key={name}>
-              <pixiv-icon key={scale} name={name} scale={scale} />
-              <div>{name}</div>
-            </IconDef>
-          ))}
-        </Grid>
-      </Group>
-    ))}
-    <Global />
-  </>
-)
+export const Default: StoryObj<Props> = {
+  args: { scale: 1, color: '#000000' },
+}
 
-export const Default = DefaultStory.bind({})
+export const WithAttributes: StoryObj<Props> = {
+  render: ({ color, name, scale }) => (
+    <>
+      <IconDef color={color}>
+        <pixiv-icon class="icon-class" name={name} scale={scale} />
+        <div>アイコンと文字</div>
+      </IconDef>
+      <Global />
+    </>
+  ),
+  args: {
+    name: '16/Add',
+    scale: 1,
+    color: '#000000',
+  },
+}
 
-Default.args = { scale: 1, color: '#000000' }
-
-export const WithAttributes: Story<Props & { color: string }> = ({
-  name,
-  scale,
-  color,
-}) => (
-  <>
-    <IconDef color={color}>
-      <pixiv-icon class="icon-class" name={name} scale={scale} />
-      <div>アイコンと文字</div>
-    </IconDef>
-    <Global />
-  </>
-)
-
-WithAttributes.args = { name: '16/Add', scale: 1, color: '#000000' }
-
-export const WithUnsafe: Story<Props & { color: string }> = ({
-  name,
-  scale,
-  color,
-}) => (
-  <>
-    <IconDef color={color}>
-      <pixiv-icon unsafe-non-guideline-scale="3.75" name={name} scale={scale} />
-      アイコンと文字
-    </IconDef>
-    <Global />
-  </>
-)
-
-WithUnsafe.args = { name: '16/Add', scale: 1, color: '#000000' }
+export const WithUnsafe: StoryObj<Props> = {
+  render: ({ color, name, scale, ...args }) => {
+    return (
+      <>
+        <IconDef color={color}>
+          <pixiv-icon
+            unsafe-non-guideline-scale={args['unsafe-non-guideline-scale']}
+            name={name}
+            scale={scale}
+          />
+          アイコンと文字
+        </IconDef>
+        <Global />
+      </>
+    )
+  },
+  args: {
+    name: '16/Add',
+    'unsafe-non-guideline-scale': '3.75',
+    color: '#000000',
+  },
+}
