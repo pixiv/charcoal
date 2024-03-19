@@ -1,115 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Button Active 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]),
-.c1[aria-disabled='false'] {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-  >
-    Button
-  </button>
-</div>
-`;
-
 exports[`Storybook Tests Button Danger 1`] = `
 .c0 {
   cursor: pointer;
@@ -221,7 +111,7 @@ exports[`Storybook Tests Button Danger 1`] = `
     className="c0 c1"
     disabled={false}
   >
-    Button
+    Danger
   </button>
 </div>
 `;
@@ -453,12 +343,12 @@ exports[`Storybook Tests Button Disabled 1`] = `
     className="c0 c1"
     disabled={true}
   >
-    Button
+    Disabled
   </button>
 </div>
 `;
 
-exports[`Storybook Tests Button Fixed 1`] = `
+exports[`Storybook Tests Button FullWidth 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -569,12 +459,12 @@ exports[`Storybook Tests Button Fixed 1`] = `
     className="c0 c1"
     disabled={false}
   >
-    Button
+    Full width
   </button>
 </div>
 `;
 
-exports[`Storybook Tests Button Focus 1`] = `
+exports[`Storybook Tests Button IsActive 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -645,6 +535,12 @@ exports[`Storybook Tests Button Focus 1`] = `
   height: 40px;
 }
 
+.c1:not(:disabled):not([aria-disabled]),
+.c1[aria-disabled='false'] {
+  color: var(--charcoal-text2-press);
+  background-color: var(--charcoal-surface3-press);
+}
+
 .c1:not(:disabled):not([aria-disabled]):focus,
 .c1[aria-disabled='false']:focus {
   outline: none;
@@ -659,18 +555,6 @@ exports[`Storybook Tests Button Focus 1`] = `
 .c1:not(:disabled):not([aria-disabled]):focus-visible,
 .c1[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
 }
 
 .c1:disabled,
@@ -684,625 +568,9 @@ exports[`Storybook Tests Button Focus 1`] = `
   <button
     className="c0 c1"
     disabled={false}
-    onMouseOver={[Function]}
   >
-    Mouse over to focus
+    Active
   </button>
-</div>
-`;
-
-exports[`Storybook Tests Button LayoutExample 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c2 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-surface6);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c2:not(:disabled):not([aria-disabled]):focus,
-.c2[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2:not(:disabled):not([aria-disabled]):hover,
-.c2[aria-disabled='false']:hover {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-surface6-hover);
-}
-
-.c2:not(:disabled):not([aria-disabled]):active,
-.c2[aria-disabled='false']:active {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-surface6-press);
-}
-
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c3 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-assertive);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c3:not(:disabled):not([aria-disabled]):focus,
-.c3[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3[aria-disabled='false']:hover {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-assertive-hover);
-}
-
-.c3:not(:disabled):not([aria-disabled]):active,
-.c3[aria-disabled='false']:active {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-assertive-press);
-}
-
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c4 {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-brand);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c4:not(:disabled):not([aria-disabled]):focus,
-.c4[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c4[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c4:not(:disabled):not([aria-disabled]):focus-visible,
-.c4[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4:not(:disabled):not([aria-disabled]):hover,
-.c4[aria-disabled='false']:hover {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c4:not(:disabled):not([aria-disabled]):active,
-.c4[aria-disabled='false']:active {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-brand-press);
-}
-
-.c4:disabled,
-.c4[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c5 {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c5[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div
-  data-dark={false}
->
-  <div
-    css="
-        display: grid;
-        gap: 24px;
-      "
-  >
-    <div
-      css="
-          display: grid;
-          grid: auto / auto-flow min-content;
-          gap: 8px;
-        "
-    >
-      <button
-        className="c0 c1"
-        disabled={false}
-      >
-        Grid
-      </button>
-      <button
-        className="c0 c2"
-        disabled={false}
-      >
-        Layout
-      </button>
-      <button
-        className="c0 c3"
-        disabled={false}
-      >
-        Sample
-      </button>
-    </div>
-    <div
-      css="
-          display: grid;
-          grid: auto-flow auto / 392px;
-          gap: 8px;
-        "
-    >
-      <button
-        className="c0 c4"
-        disabled={false}
-      >
-        Submit
-      </button>
-      <button
-        className="c0 c5"
-        disabled={false}
-      >
-        Cancel
-      </button>
-    </div>
-    <div
-      css="
-          display: flex;
-
-          & > * + * {
-            margin-left: 8px;
-          }
-        "
-    >
-      <button
-        className="c0 c1"
-        disabled={false}
-      >
-        Flex
-      </button>
-      <button
-        className="c0 c2"
-        disabled={false}
-      >
-        Layout
-      </button>
-      <button
-        className="c0 c3"
-        disabled={false}
-      >
-        Sample
-      </button>
-    </div>
-    <div
-      css="
-          display: flex;
-          flex-direction: column;
-          width: 392px;
-
-          & > * + * {
-            margin-top: 8px;
-          }
-        "
-    >
-      <button
-        className="c0 c4"
-        disabled={false}
-      >
-        Submit
-      </button>
-      <button
-        className="c0 c5"
-        disabled={false}
-      >
-        Cancel
-      </button>
-    </div>
-    <div
-      css="
-          display: flex;
-          flex-direction: column;
-          width: 392px;
-
-          & > * + * {
-            margin-top: 8px;
-          }
-        "
-    >
-      <button
-        className="c0 c4"
-        disabled={false}
-      >
-        すべて見る
-      </button>
-      <button
-        className="c0 c1"
-        disabled={false}
-      >
-        作品を投稿
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests Button Link 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div
-  data-dark={false}
->
-  <a
-    className="c0 c1"
-    href="#"
-  >
-    Button
-  </a>
 </div>
 `;
 
@@ -1417,123 +685,7 @@ exports[`Storybook Tests Button Navigation 1`] = `
     className="c0 c1"
     disabled={false}
   >
-    Button
-  </button>
-</div>
-`;
-
-exports[`Storybook Tests Button Nihongo 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c1 {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: inline-grid;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  border-radius: 999999px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
-  height: 40px;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-<div
-  data-dark={false}
->
-  <button
-    className="c0 c1"
-    disabled={false}
-  >
-    日本語だよ
+    Navigation
   </button>
 </div>
 `;
@@ -1649,7 +801,7 @@ exports[`Storybook Tests Button Overlay 1`] = `
     className="c0 c1"
     disabled={false}
   >
-    Button
+    Overlay
   </button>
 </div>
 `;
@@ -1765,7 +917,7 @@ exports[`Storybook Tests Button Primary 1`] = `
     className="c0 c1"
     disabled={false}
   >
-    Button
+    Primary
   </button>
 </div>
 `;
@@ -1881,7 +1033,7 @@ exports[`Storybook Tests Button Small 1`] = `
     className="c0 c1"
     disabled={false}
   >
-    Button
+    Small
   </button>
 </div>
 `;
