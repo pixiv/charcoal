@@ -14,8 +14,16 @@ export type ButtonProps<T extends React.ElementType = 'button'> = {
   size?: Size
   fullWidth?: boolean
   isActive?: boolean
+  /**
+   * The component used for root element.
+   * @type T extends React.ElementType = 'button'
+   */
   as?: T
-} & Omit<React.ComponentPropsWithRef<T>, 'children'>
+  /**
+   * The as property of the component specified by the Button component's as attribute.
+   */
+  componentAs?: React.ComponentPropsWithRef<T>['as']
+} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
 
 const Button = forwardRef(function Button<T extends React.ElementType>(
   {
@@ -25,6 +33,7 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
     className,
     as,
     isActive,
+    componentAs,
     ...props
   }: ButtonProps<T>,
   ref: ForwardedRef<HTMLButtonElement>
@@ -34,6 +43,7 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
   return (
     <Component
       {...props}
+      as={componentAs}
       className={classNames}
       data-variant={variant}
       data-size={size}

@@ -10,9 +10,8 @@ export const apiData: Omit<
   keyof Omit<ComponentPropsWithRef<'button'>, 'disabled'>
 > = {
   as: {
-    description:
-      'keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>',
-    type: 'keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>',
+    description: 'コンポーネントのルートノードとして描画する要素',
+    type: "T extends React.ElementType = 'button'",
     default: 'button',
   },
   variant: {
@@ -39,5 +38,9 @@ export const apiData: Omit<
     description: 'ボタンの押下状態',
     type: 'boolean',
     default: 'false',
+  },
+  componentAs: {
+    description: 'as で指定したコンポーネントの as プロパティ',
+    type: 'React.ElementType',
   },
 }
