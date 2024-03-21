@@ -5,8 +5,8 @@ import {
   ariaHideOutside,
   useOverlay,
   useOverlayFocusContain,
-  usePreventScroll,
 } from '@react-aria/overlays'
+import { usePreventScroll } from '../DropdownSelector/Popover/usePreventScroll'
 
 /**
  * We want to enable scrolling on the modal background,
@@ -28,9 +28,7 @@ export function useCharcoalModalOverlay(
     ref
   )
 
-  usePreventScroll({
-    isDisabled: !state.isOpen,
-  })
+  usePreventScroll(document.body, state.isOpen)
 
   useOverlayFocusContain()
 
