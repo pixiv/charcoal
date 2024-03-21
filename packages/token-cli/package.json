@@ -1,0 +1,19 @@
+{
+  "name": "@charcoal-ui/token-cli",
+  "bin": "./dist/index.js",
+  "scripts": {
+    "build": "FORCE_COLOR=1 tsup-node",
+    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "clean": "rimraf dist .tsbuildinfo"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.32",
+    "fs-extra": "^11.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "yargs": "^17.7.2"
+  }
+}
