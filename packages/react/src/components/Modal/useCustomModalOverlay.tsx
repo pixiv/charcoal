@@ -28,7 +28,10 @@ export function useCharcoalModalOverlay(
     ref
   )
 
-  usePreventScroll(document.body, state.isOpen)
+  usePreventScroll(
+    typeof document !== 'undefined' ? document.body : null,
+    state.isOpen
+  )
 
   useOverlayFocusContain()
 
