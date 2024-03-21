@@ -1,13 +1,14 @@
 import { action } from '@storybook/addon-actions'
 import Checkbox from '.'
 import { Meta, StoryObj } from '@storybook/react'
+import { useCallback, useState } from 'react'
 
 export default {
   title: 'Checkbox',
   component: Checkbox,
 } as Meta<typeof Checkbox>
 
-export const Labelled: StoryObj<typeof Checkbox> = {
+export const Default: StoryObj<typeof Checkbox> = {
   args: {
     checked: false,
     defaultChecked: false,
@@ -16,37 +17,26 @@ export const Labelled: StoryObj<typeof Checkbox> = {
     invalid: false,
   },
   render: (props) => {
+    const [checked, setChecked] = useState(props.checked)
+    const handleChange = useCallback((isSelected: boolean) => {
+      setChecked(isSelected)
+      action('change')(isSelected)
+    }, [])
+
     return (
       <div>
-        <div style={{ marginBottom: '1em' }}>
-          <Checkbox
-            {...props}
-            name="labelled"
-            label="label"
-            onBlur={action('blur')}
-            onClick={action('click')}
-            onChange={action('change')}
-            onFocus={action('focus')}
-          >
-            同意する
-          </Checkbox>
-        </div>
-
-        <div>
-          <Checkbox
-            {...props}
-            name="labelled"
-            label="label"
-            onBlur={action('blur')}
-            onClick={action('click')}
-            onChange={action('change')}
-            onFocus={action('focus')}
-          >
-            <span style={{ width: 200, display: 'block' }}>
-              同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する同意する
-            </span>
-          </Checkbox>
-        </div>
+        <Checkbox
+          {...props}
+          checked={checked ?? props.checked}
+          name="labelled"
+          label="label"
+          onBlur={action('blur')}
+          onClick={action('click')}
+          onChange={handleChange}
+          onFocus={action('focus')}
+        >
+          <span style={{ userSelect: 'none' }}>同意する</span>
+        </Checkbox>
       </div>
     )
   },
