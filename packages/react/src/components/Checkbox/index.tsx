@@ -46,6 +46,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         // children がいない場合は aria-label をつけないといけない
         'aria-label': 'children' in props ? undefined : props.label,
         isDisabled: props.disabled,
+        isReadOnly: props.readonly,
       }),
       [invalid, props]
     )
