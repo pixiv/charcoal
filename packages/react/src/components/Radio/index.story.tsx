@@ -22,15 +22,17 @@ const LayoutDiv = styled.div`
   gap: ${({ theme }) => px(theme.spacing[24])};
 `
 
-export const Basic: StoryObj<typeof Radio> = {
-  render: function Render() {
+export const Default: StoryObj<typeof Radio> = {
+  render: function Render(args) {
     const options = ['1', '2', '3']
     const [value, setValue] = useState(options[0])
+
     return (
       <LayoutDiv>
         <RadioGroup
           label={'label'}
           name={'name'}
+          {...args}
           value={value}
           onChange={setValue}
         >
