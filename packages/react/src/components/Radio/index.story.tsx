@@ -7,10 +7,6 @@ import { useState } from 'react'
 export default {
   title: 'Radio',
   component: Radio,
-  args: {
-    name: 'name',
-    label: 'label',
-  },
   parameters: {
     layout: 'centered',
   },
