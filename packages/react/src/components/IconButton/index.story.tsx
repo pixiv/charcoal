@@ -5,6 +5,9 @@ import { Meta, StoryObj } from '@storybook/react'
 export default {
   title: 'IconButton',
   component: IconButton,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<typeof IconButton>
 
 export const Default: StoryObj<typeof IconButton> = {
