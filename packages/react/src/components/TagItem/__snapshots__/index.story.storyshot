@@ -1,5 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Tests TagItem BGImage 1`] = `
+.c0 {
+  isolation: isolate;
+  position: relative;
+  height: 40px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text5);
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus,
+.c0[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c0[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:not(:disabled):not([aria-disabled]):focus-visible,
+.c0[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.c1 {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7ACCB1;
+  background-color: var(--charcoal-surface4);
+}
+
+.c1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://charcoal-web.pixiv.design/charcoal-ogp.jpg);
+  mix-blend-mode: overlay;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 8px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+}
+
+.c3::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c3::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c4 {
+  max-width: 152px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+<div
+  data-dark={false}
+>
+  <a
+    className="c0"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    role="button"
+    size="M"
+    tabIndex={0}
+  >
+    <div
+      className="c1"
+    />
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <span
+          className="c4"
+        >
+          背景画像
+        </span>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
 exports[`Storybook Tests TagItem Default 1`] = `
 .c0 {
   isolation: isolate;
