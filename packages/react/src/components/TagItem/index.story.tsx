@@ -13,15 +13,28 @@ export default {
       },
     },
   },
-  render: function Render(args) {
-    return <TagItem {...args} />
+  parameters: {
+    layout: 'centered',
   },
 } as Meta<typeof TagItem>
 
 export const Default: StoryObj<typeof TagItem> = {
   args: {
     label: '#女の子',
-    bgColor: '#7ACCB1',
+  },
+  render: function Render(args) {
+    return <TagItem {...args} />
+  },
+}
+
+export const BGImage: StoryObj<typeof TagItem> = {
+  render: function Render() {
+    return (
+      <TagItem
+        label="背景画像"
+        bgImage="https://charcoal-web.pixiv.design/charcoal-ogp.jpg"
+      />
+    )
   },
 }
 
