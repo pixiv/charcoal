@@ -10,14 +10,6 @@ import { mustBeDefined } from './utils'
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN
 const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID
 
-/**
- * GitHub
- */
-const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN
-const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER
-const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME
-const GITHUB_DEFAULT_BRANCH = process.env.GITHUB_DEFAULT_BRANCH
-
 void yargs
   .scriptName('token-cli')
   .command('test', 'test figma variables api', {}, async () => {
@@ -25,6 +17,8 @@ void yargs
     mustBeDefined(FIGMA_NODE_ID, 'FIGMA_NODE_ID')
 
     const res = await getDesignToken(FIGMA_TOKEN, FIGMA_NODE_ID)
+
+    console.dir(res)
 
     await ensureDir(path.join(__dirname, '..', 'out'))
     await writeFile(
