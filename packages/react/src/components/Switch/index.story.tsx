@@ -46,7 +46,7 @@ export const Checked: StoryObj<typeof Switch> = {
   },
 }
 
-export const Labelled: StoryObj<typeof Switch> = {
+export const Label: StoryObj<typeof Switch> = {
   render: function Render() {
     const [checked, setChecked] = useState(false)
     return (
