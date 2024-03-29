@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests CheckboxInput Checked 1`] = `
+exports[`Storybook Tests React/Internal/CheckboxInput Checked 1`] = `
 <div
   data-dark={false}
 >
@@ -27,7 +27,7 @@ exports[`Storybook Tests CheckboxInput Checked 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests CheckboxInput Default 1`] = `
+exports[`Storybook Tests React/Internal/CheckboxInput Default 1`] = `
 <div
   data-dark={false}
 >
@@ -52,7 +52,7 @@ exports[`Storybook Tests CheckboxInput Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests CheckboxInput Disabled 1`] = `
+exports[`Storybook Tests React/Internal/CheckboxInput Disabled 1`] = `
 <div
   data-dark={false}
 >
@@ -80,7 +80,7 @@ exports[`Storybook Tests CheckboxInput Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests CheckboxInput Invalid 1`] = `
+exports[`Storybook Tests React/Internal/CheckboxInput Invalid 1`] = `
 <div
   data-dark={false}
 >
