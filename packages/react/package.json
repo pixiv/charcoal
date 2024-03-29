@@ -1,12 +1,14 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "3.9.1",
+  "version": "4.0.0-beta.3",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
     },
     "./dist/index.css": {
@@ -24,7 +26,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^3.9.1",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^4.0.0-beta.3",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-knobs": "^7.0.2",
@@ -58,10 +60,10 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/icons": "^3.9.1",
-    "@charcoal-ui/styled": "^3.9.1",
-    "@charcoal-ui/theme": "^3.9.1",
-    "@charcoal-ui/utils": "^3.9.1",
+    "@charcoal-ui/icons": "^4.0.0-beta.3",
+    "@charcoal-ui/styled": "^4.0.0-beta.3",
+    "@charcoal-ui/theme": "^4.0.0-beta.3",
+    "@charcoal-ui/utils": "^4.0.0-beta.3",
     "@react-aria/button": "^3.9.1",
     "@react-aria/checkbox": "^3.13.0",
     "@react-aria/dialog": "^3.5.10",
@@ -94,5 +96,5 @@
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/react"
   },
-  "gitHead": "8579b406b316285a35858512030d2143524ae154"
+  "gitHead": "e1ece2e43901ae667afdd5c178040607d939dcd5"
 }

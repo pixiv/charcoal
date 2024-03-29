@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Button Active 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-active={true}
-  >
-    Button
-  </button>
-</div>
-`;
-
 exports[`Storybook Tests Button Danger 1`] = `
 <div
   data-dark={false}
@@ -21,7 +8,7 @@ exports[`Storybook Tests Button Danger 1`] = `
     className="charcoal-button"
     data-variant="Danger"
   >
-    Button
+    Danger
   </button>
 </div>
 `;
@@ -46,12 +33,12 @@ exports[`Storybook Tests Button Disabled 1`] = `
     className="charcoal-button"
     disabled={true}
   >
-    Button
+    Disabled
   </button>
 </div>
 `;
 
-exports[`Storybook Tests Button Fixed 1`] = `
+exports[`Storybook Tests Button FullWidth 1`] = `
 <div
   data-dark={false}
 >
@@ -59,33 +46,20 @@ exports[`Storybook Tests Button Fixed 1`] = `
     className="charcoal-button"
     data-full-width={true}
   >
-    Button
+    Full width
   </button>
 </div>
 `;
 
-exports[`Storybook Tests Button Focus 1`] = `
+exports[`Storybook Tests Button IsActive 1`] = `
 <div
   data-dark={false}
 >
   <button
     className="charcoal-button"
-    onMouseOver={[Function]}
+    data-active={true}
   >
-    Mouse over to focus
-  </button>
-</div>
-`;
-
-exports[`Storybook Tests Button Link 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    to="#"
-  >
-    Button
+    Active
   </button>
 </div>
 `;
@@ -98,19 +72,7 @@ exports[`Storybook Tests Button Navigation 1`] = `
     className="charcoal-button"
     data-variant="Navigation"
   >
-    Button
-  </button>
-</div>
-`;
-
-exports[`Storybook Tests Button Nihongo 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-  >
-    日本語だよ
+    Navigation
   </button>
 </div>
 `;
@@ -123,7 +85,7 @@ exports[`Storybook Tests Button Overlay 1`] = `
     className="charcoal-button"
     data-variant="Overlay"
   >
-    Button
+    Overlay
   </button>
 </div>
 `;
@@ -136,7 +98,7 @@ exports[`Storybook Tests Button Primary 1`] = `
     className="charcoal-button"
     data-variant="Primary"
   >
-    Button
+    Primary
   </button>
 </div>
 `;
@@ -149,7 +111,7 @@ exports[`Storybook Tests Button Small 1`] = `
     className="charcoal-button"
     data-size="S"
   >
-    Button
+    Small
   </button>
 </div>
 `;

@@ -46,6 +46,8 @@ const ItemDiv = styled.div`
   padding-right: 16px;
   padding-left: 16px;
 
+  transition: background-color 0.2s;
+
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
     opacity: 0.32;
@@ -55,6 +57,8 @@ const ItemDiv = styled.div`
   :hover,
   :focus,
   :focus-within {
-    background-color: var(--charcoal-surface3);
+    &:not(disabled):not([aria-disabled='true']) {
+      background-color: var(--charcoal-surface3);
+    }
   }
 `

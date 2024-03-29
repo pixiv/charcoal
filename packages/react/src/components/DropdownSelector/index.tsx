@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef } from 'react'
+import React, { ReactNode, useState, useRef, useMemo, useCallback } from 'react'
 import styled, { css } from 'styled-components'
 import { disabledSelector } from '@charcoal-ui/utils'
 import Icon from '../Icon'
@@ -31,14 +31,29 @@ export type DropdownSelectorProps = {
 
 const defaultRequiredText = '*必須'
 
-export default function DropdownSelector(props: DropdownSelectorProps) {
+export default function DropdownSelector({
+  onChange,
+  ...props
+}: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
 
+  const isPlaceholder = useMemo(
+    () => props.placeholder !== undefined && preview === undefined,
+    [preview, props.placeholder]
+  )
+
   const propsArray = getValuesRecursive(props.children)
 
   const { visuallyHiddenProps } = useVisuallyHidden()
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      onChange(e.target.value)
+    },
+    [onChange]
+  )
 
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
@@ -51,7 +66,12 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         />
       )}
       <div {...visuallyHiddenProps} aria-hidden="true">
-        <select name={props.name} value={props.value} tabIndex={-1}>
+        <select
+          name={props.name}
+          value={props.value}
+          onChange={handleChange}
+          tabIndex={-1}
+        >
           {propsArray.map((itemProps) => {
             return (
               <option
@@ -76,10 +96,8 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
         type="button"
         $active={isOpen}
       >
-        <DropdownButtonText>
-          {props.placeholder !== undefined && preview === undefined
-            ? props.placeholder
-            : preview}
+        <DropdownButtonText $isText3={isPlaceholder}>
+          {isPlaceholder ? props.placeholder : preview}
         </DropdownButtonText>
         <DropdownButtonIcon name="16/Menu" />
       </DropdownButton>
@@ -93,7 +111,7 @@ export default function DropdownSelector(props: DropdownSelectorProps) {
           <MenuList
             value={props.value}
             onChange={(v) => {
-              props.onChange(v)
+              onChange(v)
               setIsOpen(false)
             }}
           >
@@ -176,12 +194,12 @@ const DropdownButton = styled.button<{ invalid?: boolean; $active?: boolean }>`
     `}
 `
 
-const DropdownButtonText = styled.span`
+const DropdownButtonText = styled.span<{ $isText3: boolean }>`
   text-align: left;
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-${(p) => (p.$isText3 ? 'text3' : 'text2')});
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

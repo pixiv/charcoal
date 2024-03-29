@@ -7,13 +7,14 @@ const config: TestRunnerConfig = {
   },
   async postVisit(page, context) {
     await waitForPageReady(page)
+    await page.waitForTimeout(200)
     const image = await page.screenshot()
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: context.id,
       customDiffDir: `${process.cwd()}/__diff_output__`,
       customSnapshotsDir: `${process.cwd()}/__image_snapshots__`,
       failureThresholdType: 'percent',
-      failureThreshold: 0.001,
+      failureThreshold: 0.0001,
     })
   },
   tags: {
