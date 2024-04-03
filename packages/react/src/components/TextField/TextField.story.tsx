@@ -74,7 +74,7 @@ export const AssistiveText: StoryObj<typeof TextField> = {
   render() {
     return (
       <Container>
-        <TextField label="Label" assistiveText="Assistive Text" />
+        <TextField label="Label" assistiveText="説明が入ります" />
       </Container>
     )
   },
@@ -114,7 +114,7 @@ export const Invalid: StoryObj<typeof TextField> = {
   render() {
     return (
       <Container>
-        <TextField label="Label" invalid assistiveText="error message" />
+        <TextField label="Label" invalid assistiveText="エラーメッセージ" />
       </Container>
     )
   },
