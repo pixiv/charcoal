@@ -497,7 +497,7 @@ exports[`Storybook Tests TextField AssistiveText 1`] = `
       <p
         className="c9"
       >
-        Assistive Text
+        説明が入ります
       </p>
     </div>
   </div>
@@ -1246,7 +1246,7 @@ exports[`Storybook Tests TextField Invalid 1`] = `
       <p
         className="c9"
       >
-        error message
+        エラーメッセージ
       </p>
     </div>
   </div>
