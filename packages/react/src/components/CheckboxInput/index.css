@@ -75,7 +75,3 @@
   display: none;
   pointer-events: none;
 }
-
-.charcoal-checkbox-input__overlay[data-checked='true'] {
-  display: flex;
-}
