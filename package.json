@@ -30,7 +30,8 @@
     "release": "yarn && yarn run clean && yarn run build && lerna publish --no-changelog --no-private",
     "release:alpha": "yarn release --conventional-prerelease --dist-tag alpha",
     "postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
-    "website": "vite docs --base=charcoal/docs --port 5000"
+    "website": "vite docs --base=charcoal/docs --port 5000",
+    "prepare": "husky"
   },
   "publishConfig": {
     "provenance": true
@@ -87,7 +88,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "glob": "^7.2.0",
     "http-server": "^14.1.1",
-    "husky": "^4.3.8",
+    "husky": "^9.0.11",
     "jest": "^27.4.7",
     "jest-image-snapshot": "^6.4.0",
     "jest-specific-snapshot": "^8.0.0",
@@ -112,11 +113,6 @@
     "vite": "^3.0.8",
     "wait-on": "^7.2.0",
     "zx": "^7.0.3"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
-    }
   },
   "packageManager": "yarn@3.1.0",
   "resolutions": {
