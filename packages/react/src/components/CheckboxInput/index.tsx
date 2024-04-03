@@ -5,7 +5,6 @@ import Icon from '../Icon'
 import { useClassNames } from '../../_lib/useClassNames'
 
 type CharcoalCheckboxInputProps = {
-  checked?: boolean
   invalid?: boolean
   onChange?: (checked: boolean) => void
 }
@@ -35,8 +34,8 @@ const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
           className="charcoal-checkbox-input__input"
           type="checkbox"
           onChange={handleChange}
-          checked={checked}
           aria-invalid={invalid}
+          checked={checked}
           {...props}
         />
         <div
