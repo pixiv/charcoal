@@ -2,6 +2,7 @@ dist/
 node_modules/
 __snapshots__/
 .yarn/
+yarn.lock
 /public/
 /storybook-static/
 /coverage/
