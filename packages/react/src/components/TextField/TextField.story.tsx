@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import Clickable from '../Clickable'
 import TextField from '.'
 import { px } from '@charcoal-ui/utils'
-import IconButton from '../IconButton'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
