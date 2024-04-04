@@ -20,7 +20,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@storybook/web-components": "^8.0.5",
+    "@storybook/react": "^8.0.5",
     "@types/dompurify": "^2.3.3",
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.38",
