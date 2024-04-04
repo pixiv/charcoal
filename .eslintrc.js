@@ -7,6 +7,7 @@ const config = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:storybook/recommended',
+    'plugin:import/recommended',
     'prettier',
   ],
   rules: {
@@ -24,6 +25,19 @@ const config = {
     'no-console': 'warn',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '*.config.ts',
+          '**/*.config.ts',
+          '**/*.test.ts',
+          '**/*.test.tsx',
+          '**/*.story.tsx',
+          '**/_lib/**',
+        ],
+      },
+    ],
   },
   parserOptions: {
     project: ['./tsconfig.json', './packages/**/tsconfig.json'],
@@ -36,8 +50,11 @@ const config = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      typescript: {},
+    },
   },
-  plugins: ['jest'],
+  plugins: ['jest', 'import'],
   overrides: [{ files: ['*.cjs', '*.mjs'] }],
 }
 
