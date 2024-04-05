@@ -443,7 +443,7 @@ exports[`Storybook Tests Switch Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Switch Labelled 1`] = `
+exports[`Storybook Tests Switch Label 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -571,7 +571,7 @@ exports[`Storybook Tests Switch Labelled 1`] = `
         checked={false}
         className="c1"
         disabled={false}
-        name="labeled"
+        name="label"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
