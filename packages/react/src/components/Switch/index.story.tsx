@@ -51,7 +51,7 @@ export const Label: StoryObj<typeof Switch> = {
     const [checked, setChecked] = useState(false)
     return (
       <div>
-        <Switch name="labeled" checked={checked} onChange={setChecked}>
+        <Switch name="label" checked={checked} onChange={setChecked}>
           Label
         </Switch>
       </div>
