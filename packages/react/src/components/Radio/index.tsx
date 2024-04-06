@@ -169,12 +169,12 @@ const RadioLabel = styled.div`
   }
 `
 
-export type RadioGroupProps = React.PropsWithChildren<{
+export type RadioGroupProps<Value extends string = string> = React.PropsWithChildren<{
   className?: string
-  value?: string
+  value?: Value
   label: string
   name: string
-  onChange(next: string): void
+  onChange(next: Value): void
   disabled?: boolean
   readonly?: boolean
   invalid?: boolean
@@ -209,7 +209,7 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
   },
 })
 
-export function RadioGroup({
+export function RadioGroup<Value extends string = string>({
   className,
   value,
   label,
@@ -219,10 +219,10 @@ export function RadioGroup({
   readonly,
   invalid,
   children,
-}: RadioGroupProps) {
+}: RadioGroupProps<Value>) {
   const handleChange = useCallback(
     (next: string) => {
-      onChange(next)
+      onChange(next as Value)
     },
     [onChange]
   )
