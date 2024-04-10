@@ -8,6 +8,15 @@ globalThis.ResizeObserver = jest.fn().mockImplementation(() => ({
   disconnect: jest.fn(),
 }))
 
+global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+  observe() {
+    return null
+  },
+  disconnect() {
+    return null
+  },
+}))
+
 window.matchMedia = jest.fn().mockImplementation((query: string) => ({
   matches: false,
   media: query,

@@ -158,4 +158,4 @@ https://tailwindcss.com/
 
 `@charcoal-ui/tailwind-config` が独自に定義しているクラスについては Storybook を見てください。
 
-https://pixiv.github.io/charcoal/?path=/docs/tailwind-config-colors-doc--colors
+https://pixiv.github.io/charcoal/?path=/docs/tailwind-config-colors-doc--docs
