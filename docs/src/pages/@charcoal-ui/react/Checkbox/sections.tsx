@@ -1,7 +1,7 @@
 import { CheckboxProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
-export const sections: PreviewSection<CheckboxProps>[] = [
+export const sections: PreviewSection<Omit<CheckboxProps, 'ref'>>[] = [
   {
     title: 'disabled',
     previewMetas: [
@@ -17,27 +17,6 @@ export const sections: PreviewSection<CheckboxProps>[] = [
         props: {
           children: undefined,
           disabled: true,
-          checked: true,
-        },
-      },
-    ],
-  },
-  {
-    title: 'readonly',
-    previewMetas: [
-      {
-        children: 'readonly',
-        props: {
-          children: undefined,
-          readonly: true,
-          checked: false,
-        },
-      },
-      {
-        children: 'readonly',
-        props: {
-          children: undefined,
-          readonly: true,
           checked: true,
         },
       },
