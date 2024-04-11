@@ -51,12 +51,14 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
     const hasTranslatedLabel =
       translatedLabel !== undefined && translatedLabel.length > 0
     const className = useClassNames(
-      useClassNames('charcoal-tag-item', props.className),
+      'charcoal-tag-item',
+      'charcoal-tag-item__bg',
+      props.className,
       linkProps.className
     )
     const bgVariant =
       bgImage !== undefined && bgImage.length > 0 ? 'image' : 'color'
-    const bg = bgVariant === 'color' ? bgColor : bgImage
+    const bg = bgVariant === 'color' ? bgColor : `url(${bgImage ?? ''})`
 
     return (
       <a
@@ -64,36 +66,28 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
         {...linkProps}
         className={className}
         data-state={status}
+        data-bg-variant={bgVariant}
         data-pressed={isPressed}
         data-size={hasTranslatedLabel ? 'M' : size}
+        style={{ '--charcoal-tag-item-bg': bg }}
       >
         <div
-          className="charcoal-tag-item__bg"
-          data-state={status}
-          data-variant={bgVariant}
-          aria-hidden="true"
-          style={{ '--charcoal-tag-item-bg': bg }}
-        />
-
-        <div className="charcoal-tag-item__inner">
-          <div
-            className="charcoal-tag-item__label-wrapper"
-            data-has-translate-label={hasTranslatedLabel}
-          >
-            {hasTranslatedLabel && (
-              <span className="charcoal-tag-item__translated-label charcoal-tag-item-text">
-                {translatedLabel}
-              </span>
-            )}
-            <span
-              className="charcoal-tag-item-text charcoal-tag-item__label "
-              data-has-translate-label={hasTranslatedLabel}
-            >
-              {label}
+          className="charcoal-tag-item__label"
+          data-has-translate={hasTranslatedLabel}
+        >
+          {hasTranslatedLabel && (
+            <span className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated">
+              {translatedLabel}
             </span>
-          </div>
-          {status === 'active' && <Icon name="16/Remove" />}
+          )}
+          <span
+            className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+            data-has-translate={hasTranslatedLabel}
+          >
+            {label}
+          </span>
         </div>
+        {status === 'active' && <Icon name="16/Remove" />}
       </a>
     )
   }
