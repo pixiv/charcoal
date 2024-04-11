@@ -5,7 +5,8 @@ exports[`Storybook Tests TagItem Default 1`] = `
   data-dark={false}
 >
   <a
-    className="charcoal-tag-item"
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
     data-pressed={false}
     data-size="M"
     data-state="default"
@@ -20,32 +21,22 @@ exports[`Storybook Tests TagItem Default 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "#7ACCB1",
+      }
+    }
   >
     <div
-      aria-hidden="true"
-      className="charcoal-tag-item__bg"
-      data-state="default"
-      data-variant="color"
-      style={
-        Object {
-          "--charcoal-tag-item-bg": "#7ACCB1",
-        }
-      }
-    />
-    <div
-      className="charcoal-tag-item__inner"
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
     >
-      <div
-        className="charcoal-tag-item__label-wrapper"
-        data-has-translate-label={false}
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
       >
-        <span
-          className="charcoal-tag-item-text charcoal-tag-item__label "
-          data-has-translate-label={false}
-        >
-          #女の子
-        </span>
-      </div>
+        #女の子
+      </span>
     </div>
   </a>
 </div>
@@ -82,7 +73,8 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="default"
@@ -97,39 +89,30 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="default"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
+              #女の子
+            </span>
           </div>
         </a>
       </div>
       <div />
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="default"
@@ -144,37 +127,27 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="default"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={true}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={true}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
             >
-              <span
-                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
-              >
-                girl
-              </span>
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={true}
-              >
-                #女の子
-              </span>
-            </div>
+              girl
+            </span>
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={true}
+            >
+              #女の子
+            </span>
           </div>
         </a>
       </div>
@@ -185,7 +158,8 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="active"
@@ -200,42 +174,33 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="active"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
-            <pixiv-icon
-              name="16/Remove"
-            />
+              #女の子
+            </span>
           </div>
+          <pixiv-icon
+            name="16/Remove"
+          />
         </a>
       </div>
       <div />
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="active"
@@ -250,41 +215,31 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="active"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={true}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={true}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
             >
-              <span
-                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
-              >
-                girl
-              </span>
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={true}
-              >
-                #女の子
-              </span>
-            </div>
-            <pixiv-icon
-              name="16/Remove"
-            />
+              girl
+            </span>
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={true}
+            >
+              #女の子
+            </span>
           </div>
+          <pixiv-icon
+            name="16/Remove"
+          />
         </a>
       </div>
       <div />
@@ -294,7 +249,8 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="inactive"
@@ -309,39 +265,30 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="inactive"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
+              #女の子
+            </span>
           </div>
         </a>
       </div>
       <div>
         <a
           aria-disabled={true}
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="inactive"
@@ -356,38 +303,29 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="inactive"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
+              #女の子
+            </span>
           </div>
         </a>
       </div>
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="inactive"
@@ -402,44 +340,35 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="inactive"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={true}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={true}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
             >
-              <span
-                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
-              >
-                girl
-              </span>
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={true}
-              >
-                #女の子
-              </span>
-            </div>
+              girl
+            </span>
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={true}
+            >
+              #女の子
+            </span>
           </div>
         </a>
       </div>
       <div>
         <a
           aria-disabled={true}
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="M"
           data-state="inactive"
@@ -454,37 +383,27 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="inactive"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={true}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={true}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
             >
-              <span
-                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
-              >
-                girl
-              </span>
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={true}
-              >
-                #女の子
-              </span>
-            </div>
+              girl
+            </span>
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={true}
+            >
+              #女の子
+            </span>
           </div>
         </a>
       </div>
@@ -494,7 +413,8 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="S"
           data-state="default"
@@ -509,32 +429,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="default"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
+              #女の子
+            </span>
           </div>
         </a>
       </div>
@@ -544,7 +454,8 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="S"
           data-state="active"
@@ -559,36 +470,26 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="active"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
-            <pixiv-icon
-              name="16/Remove"
-            />
+              #女の子
+            </span>
           </div>
+          <pixiv-icon
+            name="16/Remove"
+          />
         </a>
       </div>
     </div>
@@ -597,7 +498,8 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="S"
           data-state="inactive"
@@ -612,39 +514,30 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="inactive"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
+              #女の子
+            </span>
           </div>
         </a>
       </div>
       <div>
         <a
           aria-disabled={true}
-          className="charcoal-tag-item"
+          className="charcoal-tag-item charcoal-tag-item__bg"
+          data-bg-variant="color"
           data-pressed={false}
           data-size="S"
           data-state="inactive"
@@ -659,32 +552,22 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
+          style={
+            Object {
+              "--charcoal-tag-item-bg": "#7ACCB1",
+            }
+          }
         >
           <div
-            aria-hidden="true"
-            className="charcoal-tag-item__bg"
-            data-state="inactive"
-            data-variant="color"
-            style={
-              Object {
-                "--charcoal-tag-item-bg": "#7ACCB1",
-              }
-            }
-          />
-          <div
-            className="charcoal-tag-item__inner"
+            className="charcoal-tag-item__label"
+            data-has-translate={false}
           >
-            <div
-              className="charcoal-tag-item__label-wrapper"
-              data-has-translate-label={false}
+            <span
+              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+              data-has-translate={false}
             >
-              <span
-                className="charcoal-tag-item-text charcoal-tag-item__label "
-                data-has-translate-label={false}
-              >
-                #女の子
-              </span>
-            </div>
+              #女の子
+            </span>
           </div>
         </a>
       </div>
