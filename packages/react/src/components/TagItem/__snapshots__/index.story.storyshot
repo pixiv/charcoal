@@ -1,121 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests TagItem Default 1`] = `
-.c0 {
-  isolation: isolate;
-  position: relative;
-  height: 40px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus,
-.c0[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c0[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus-visible,
-.c0[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c1 {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #7ACCB1;
-}
-
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  gap: 8px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 2;
-}
-
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c4 {
-  max-width: 152px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
-}
-
 <div
   data-dark={false}
 >
   <a
-    className="c0"
+    className="charcoal-tag-item"
+    data-pressed={false}
+    data-size="M"
+    data-state="default"
     onClick={[Function]}
     onDragStart={[Function]}
     onKeyDown={[Function]}
-    onKeyUp={[Function]}
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -124,21 +20,28 @@ exports[`Storybook Tests TagItem Default 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
-    role="button"
-    size="M"
-    tabIndex={0}
   >
     <div
-      className="c1"
+      aria-hidden="true"
+      className="charcoal-tag-item__bg"
+      data-state="default"
+      data-variant="color"
+      style={
+        Object {
+          "--charcoal-tag-item-bg": "#7ACCB1",
+        }
+      }
     />
     <div
-      className="c2"
+      className="charcoal-tag-item__inner"
     >
       <div
-        className="c3"
+        className="charcoal-tag-item__label-wrapper"
+        data-has-translate-label={false}
       >
         <span
-          className="c4"
+          className="charcoal-tag-item-text charcoal-tag-item__label "
+          data-has-translate-label={false}
         >
           #女の子
         </span>
@@ -149,411 +52,6 @@ exports[`Storybook Tests TagItem Default 1`] = `
 `;
 
 exports[`Storybook Tests TagItem Playground 1`] = `
-.c1 {
-  isolation: isolate;
-  position: relative;
-  height: 40px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c8 {
-  isolation: isolate;
-  position: relative;
-  height: 40px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 8px;
-  padding-left: 16px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c8[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c8:not(:disabled):not([aria-disabled]):focus-visible,
-.c8[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8:disabled,
-.c8[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c9 {
-  isolation: isolate;
-  position: relative;
-  height: 40px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 24px;
-  padding-left: 24px;
-  color: var(--charcoal-text2);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus,
-.c9[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c9[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c9:not(:disabled):not([aria-disabled]):focus-visible,
-.c9[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9:disabled,
-.c9[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c11 {
-  isolation: isolate;
-  position: relative;
-  height: 32px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 16px;
-  padding-left: 16px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c12 {
-  isolation: isolate;
-  position: relative;
-  height: 32px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 8px;
-  padding-left: 16px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c13 {
-  isolation: isolate;
-  position: relative;
-  height: 32px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  padding-right: 16px;
-  padding-left: 16px;
-  color: var(--charcoal-text2);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c13[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c13:disabled,
-.c13[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c2 {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #7ACCB1;
-}
-
-.c10 {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #7ACCB1;
-  background-color: var(--charcoal-surface3);
-}
-
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  gap: 8px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  z-index: 2;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  font-size: 10px;
-}
-
-.c5 {
-  max-width: 152px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
-}
-
-.c7 {
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c7::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c7::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 .c0 {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -584,11 +82,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="c1"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="default"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -597,21 +97,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
-          tabIndex={0}
         >
           <div
-            className="c2"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="default"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -622,11 +129,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
       <div />
       <div>
         <a
-          className="c1"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="default"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -635,30 +144,33 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
-          tabIndex={0}
         >
           <div
-            className="c2"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="default"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c6"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={true}
             >
-              <div
-                className="c7"
-              >
-                <span
-                  className="c5"
-                >
-                  girl
-                </span>
-              </div>
               <span
-                className="c5"
+                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
+              >
+                girl
+              </span>
+              <span
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={true}
               >
                 #女の子
               </span>
@@ -673,11 +185,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="c8"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="active"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -686,21 +200,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
-          tabIndex={0}
         >
           <div
-            className="c2"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="active"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -714,11 +235,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
       <div />
       <div>
         <a
-          className="c8"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="active"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -727,30 +250,33 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
-          tabIndex={0}
         >
           <div
-            className="c2"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="active"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c6"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={true}
             >
-              <div
-                className="c7"
-              >
-                <span
-                  className="c5"
-                >
-                  girl
-                </span>
-              </div>
               <span
-                className="c5"
+                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
+              >
+                girl
+              </span>
+              <span
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={true}
               >
                 #女の子
               </span>
@@ -768,11 +294,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="c9"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="inactive"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -781,21 +309,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
-          tabIndex={0}
         >
           <div
-            className="c10"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="inactive"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -806,11 +341,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
       <div>
         <a
           aria-disabled={true}
-          className="c9"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="inactive"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -819,20 +356,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
         >
           <div
-            className="c10"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="inactive"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -842,11 +387,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
       </div>
       <div>
         <a
-          className="c9"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="inactive"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -855,30 +402,33 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
-          tabIndex={0}
         >
           <div
-            className="c10"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="inactive"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c6"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={true}
             >
-              <div
-                className="c7"
-              >
-                <span
-                  className="c5"
-                >
-                  girl
-                </span>
-              </div>
               <span
-                className="c5"
+                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
+              >
+                girl
+              </span>
+              <span
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={true}
               >
                 #女の子
               </span>
@@ -889,11 +439,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
       <div>
         <a
           aria-disabled={true}
-          className="c9"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="M"
+          data-state="inactive"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -902,29 +454,33 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="M"
         >
           <div
-            className="c10"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="inactive"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c6"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={true}
             >
-              <div
-                className="c7"
-              >
-                <span
-                  className="c5"
-                >
-                  girl
-                </span>
-              </div>
               <span
-                className="c5"
+                className="charcoal-tag-item__translated-label charcoal-tag-item-text"
+              >
+                girl
+              </span>
+              <span
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={true}
               >
                 #女の子
               </span>
@@ -938,11 +494,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="c11"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="S"
+          data-state="default"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -951,21 +509,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="S"
-          tabIndex={0}
         >
           <div
-            className="c2"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="default"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -979,11 +544,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="c12"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="S"
+          data-state="active"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -992,21 +559,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="S"
-          tabIndex={0}
         >
           <div
-            className="c2"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="active"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -1023,11 +597,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
     >
       <div>
         <a
-          className="c13"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="S"
+          data-state="inactive"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -1036,21 +612,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="S"
-          tabIndex={0}
         >
           <div
-            className="c10"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="inactive"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
@@ -1061,11 +644,13 @@ exports[`Storybook Tests TagItem Playground 1`] = `
       <div>
         <a
           aria-disabled={true}
-          className="c13"
+          className="charcoal-tag-item"
+          data-pressed={false}
+          data-size="S"
+          data-state="inactive"
           onClick={[Function]}
           onDragStart={[Function]}
           onKeyDown={[Function]}
-          onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
@@ -1074,20 +659,28 @@ exports[`Storybook Tests TagItem Playground 1`] = `
           onTouchEnd={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
-          role="button"
-          size="S"
         >
           <div
-            className="c10"
+            aria-hidden="true"
+            className="charcoal-tag-item__bg"
+            data-state="inactive"
+            data-variant="color"
+            style={
+              Object {
+                "--charcoal-tag-item-bg": "#7ACCB1",
+              }
+            }
           />
           <div
-            className="c3"
+            className="charcoal-tag-item__inner"
           >
             <div
-              className="c4"
+              className="charcoal-tag-item__label-wrapper"
+              data-has-translate-label={false}
             >
               <span
-                className="c5"
+                className="charcoal-tag-item-text charcoal-tag-item__label "
+                data-has-translate-label={false}
               >
                 #女の子
               </span>
