@@ -16,7 +16,7 @@ const CheckboxPage: FC = () => {
 
       <h2>BASIC</h2>
       <PreviewDivColumn>
-        <Checkbox label="checkbox">Checkbox</Checkbox>
+        <Checkbox>Checkbox</Checkbox>
         <SSRHighlight
           code={`<Checkbox label="checkbox">Checkbox</Checkbox>`}
           lang="typescript"
@@ -24,12 +24,8 @@ const CheckboxPage: FC = () => {
       </PreviewDivColumn>
 
       <PreviewsList
-        renderer={(meta, i, j) => (
-          <Checkbox
-            key={`${i}${j}`}
-            {...meta.props}
-            label={'label' + `${i}${j}`}
-          >
+        renderer={({ ...meta }, i, j) => (
+          <Checkbox key={`${i}${j}`} {...meta.props}>
             {typeof meta.children === 'function'
               ? meta.children()
               : meta.children}
