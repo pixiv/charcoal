@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ReactPortal } from 'react'
 
 export {}
 
@@ -28,19 +28,22 @@ window.matchMedia = jest.fn().mockImplementation((query: string) => ({
   dispatchEvent: jest.fn(),
 }))
 
-jest.mock('@react-aria/utils', () => ({
+jest.mock<typeof import('@react-aria/utils')>('@react-aria/utils', () => ({
   ...jest.requireActual('@react-aria/utils'),
   useId: () => 'test-id',
 }))
 
-jest.mock('@react-aria/overlays', () => ({
-  ...jest.requireActual('@react-aria/overlays'),
-  Overlay: jest.fn(({ children }: { children: ReactNode }) => children),
-}))
+jest.mock<typeof import('@react-aria/overlays')>(
+  '@react-aria/overlays',
+  () => ({
+    ...jest.requireActual('@react-aria/overlays'),
+    Overlay: jest.fn(({ children }) => children as ReactPortal),
+  })
+)
 
 import type { OverlayTriggerProps } from 'react-stately'
 
-jest.mock('react-stately', () => ({
+jest.mock<typeof import('react-stately')>('react-stately', () => ({
   ...jest.requireActual('react-stately'),
   useOverlayTriggerState: (args: OverlayTriggerProps) => {
     const { useOverlayTriggerState } =
