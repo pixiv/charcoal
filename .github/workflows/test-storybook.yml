@@ -4,6 +4,7 @@ on:
     types: [labeled, unlabeled, opened, edited, synchronize]
     branches:
       - main
+      - v4.0.0
 
 jobs:
   prepare-main-branch:
