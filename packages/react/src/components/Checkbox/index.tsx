@@ -1,29 +1,37 @@
 import './index.css'
 
-import React, { forwardRef, memo } from 'react'
+import { forwardRef, memo } from 'react'
 import { useId } from '@react-aria/utils'
 import CheckboxInput, { CheckboxInputProps } from '../CheckboxInput'
-import { useClassNames } from '../../_lib/useClassNames'
+import { CheckboxWithLabel } from './CheckboxWithLabel'
 
-export type CheckboxProps = CheckboxInputProps & {
-  children?: React.ReactNode
-}
+export type CheckboxProps = CheckboxInputProps
 
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  function CheckboxInner({ disabled, className, id, children, ...props }, ref) {
-    const classNames = useClassNames('charcoal-checkbox__label', className)
+const Checkbox = forwardRef<HTMLInputElement, CheckboxInputProps>(
+  function Checkbox({ disabled, className, id, children, ...props }, ref) {
     const htmlId = useId(id)
+    const noChildren = children === undefined
     const input = (
-      <CheckboxInput {...props} id={htmlId} disabled={disabled} ref={ref} />
+      <CheckboxInput
+        {...props}
+        className={noChildren ? className : undefined}
+        disabled={disabled}
+        id={htmlId}
+        ref={ref}
+      />
     )
-    if (children === undefined) {
+    if (noChildren) {
       return input
     }
     return (
-      <label htmlFor={htmlId} aria-disabled={disabled} className={classNames}>
-        {input}
-        <div className="charcoal-checkbox__text">{children}</div>
-      </label>
+      <CheckboxWithLabel
+        className={className}
+        disabled={disabled}
+        id={htmlId}
+        input={input}
+      >
+        {children}
+      </CheckboxWithLabel>
     )
   }
 )

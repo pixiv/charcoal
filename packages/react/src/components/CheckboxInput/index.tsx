@@ -9,8 +9,10 @@ type CharcoalCheckboxInputProps = {
   onChange?: (checked: boolean) => void
 }
 
+type InputProps = React.HTMLProps<HTMLInputElement>
+
 export type CheckboxInputProps = CharcoalCheckboxInputProps &
-  Omit<React.ComponentProps<'input'>, keyof CharcoalCheckboxInputProps>
+  Omit<InputProps, keyof CharcoalCheckboxInputProps | 'ref'>
 
 const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   function CheckboxInput({ onChange, checked, invalid, ...props }, ref) {

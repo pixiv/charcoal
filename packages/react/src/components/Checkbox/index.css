@@ -13,7 +13,7 @@
   opacity: 1;
 }
 
-.charcoal-checkbox__text {
+.charcoal-checkbox__label_div {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 20px;
