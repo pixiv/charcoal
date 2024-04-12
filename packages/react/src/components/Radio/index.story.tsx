@@ -18,7 +18,7 @@ const LayoutDiv = styled.div`
   gap: ${({ theme }) => px(theme.spacing[24])};
 `
 const options = ['1', '2', '3'] as const
-type Option = typeof options[number];
+type Option = (typeof options)[number]
 
 export const Default: StoryObj<typeof Radio> = {
   render: function Render(args) {

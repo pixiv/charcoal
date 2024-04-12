@@ -169,16 +169,17 @@ const RadioLabel = styled.div`
   }
 `
 
-export type RadioGroupProps<Value extends string = string> = React.PropsWithChildren<{
-  className?: string
-  value?: Value
-  label: string
-  name: string
-  onChange(next: Value): void
-  disabled?: boolean
-  readonly?: boolean
-  invalid?: boolean
-}>
+export type RadioGroupProps<Value extends string = string> =
+  React.PropsWithChildren<{
+    className?: string
+    value?: Value
+    label: string
+    name: string
+    onChange(next: Value): void
+    disabled?: boolean
+    readonly?: boolean
+    invalid?: boolean
+  }>
 
 // TODO: use (or polyfill) flex gap
 const StyledRadioGroup = styled.div`
