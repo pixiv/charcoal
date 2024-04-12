@@ -2,17 +2,17 @@ import * as React from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 
 export const SwitchWithLabel = React.memo(function SwitchWithLabel({
-  className,
   children,
-  input,
-  id,
+  className,
   disabled,
+  id,
+  input,
 }: {
   children: React.ReactNode
-  input: React.ReactNode
-  disabled?: boolean
   className?: string
+  disabled?: boolean
   id?: string
+  input: React.ReactNode
 }) {
   const classNames = useClassNames('charcoal-switch__label', className)
   return (

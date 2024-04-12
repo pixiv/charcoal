@@ -2,10 +2,10 @@ import './index.css'
 
 import { memo, forwardRef } from 'react'
 import { useId } from '@react-aria/utils'
-import SwitchInput, { type SwitchProps } from './SwitchInput'
+import SwitchInput, { type SwitchInputProps } from './SwitchInput'
 import { SwitchWithLabel } from './SwitchWithLabel'
 
-export type { SwitchProps } from './SwitchInput'
+export type SwitchProps = SwitchInputProps
 
 const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   { children, onChange, disabled, className, id, ...props },
@@ -15,13 +15,13 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   const noChildren = children === undefined
   const input = (
     <SwitchInput
+      {...props}
       className={noChildren ? className : undefined}
       id={htmlId}
-      type="checkbox"
-      ref={noChildren ? ref : undefined}
-      role="switch"
       onChange={onChange}
-      {...props}
+      ref={ref}
+      role="switch"
+      type="checkbox"
     />
   )
 
@@ -31,10 +31,10 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
 
   return (
     <SwitchWithLabel
-      input={input}
       className={className}
       disabled={disabled}
       id={htmlId}
+      input={input}
     >
       {children}
     </SwitchWithLabel>

@@ -7,32 +7,34 @@ export type CharcoalSwitchProps = {
   onChange?: (checked: boolean) => void
 }
 
-type InputProps = Omit<React.HTMLProps<HTMLInputElement>, 'ref'>
+type InputProps = React.HTMLProps<HTMLInputElement>
 
-export type SwitchProps = CharcoalSwitchProps &
-  Omit<InputProps, keyof CharcoalSwitchProps>
+export type SwitchInputProps = CharcoalSwitchProps &
+  Omit<InputProps, keyof CharcoalSwitchProps | 'ref'>
 
-const SwitchInput = forwardRef<HTMLInputElement, Omit<SwitchProps, 'children'>>(
-  function SwitchInput({ onChange, className, ...props }, ref) {
-    const handleChange = useCallback(
-      (e: React.ChangeEvent<HTMLInputElement>) => {
-        const el = e.currentTarget
-        onChange?.(el.checked)
-      },
-      [onChange]
-    )
-    props.children
+const SwitchInput = forwardRef<
+  HTMLInputElement,
+  Omit<SwitchInputProps, 'children'>
+>(function SwitchInput({ onChange, className, ...props }, ref) {
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const el = e.currentTarget
+      onChange?.(el.checked)
+    },
+    [onChange]
+  )
+  props.children
 
-    const classNames = useClassNames('charcoal-switch-input', className)
-    return (
-      <input
-        ref={ref}
-        className={classNames}
-        type="checkbox"
-        onChange={handleChange}
-        {...props}
-      />
-    )
-  }
-)
+  const classNames = useClassNames('charcoal-switch-input', className)
+  return (
+    <input
+      ref={ref}
+      className={classNames}
+      type="checkbox"
+      onChange={handleChange}
+      {...props}
+    />
+  )
+})
+
 export default SwitchInput
