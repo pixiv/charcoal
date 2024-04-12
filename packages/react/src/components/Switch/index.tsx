@@ -2,8 +2,10 @@ import './index.css'
 
 import { memo, forwardRef } from 'react'
 import { useId } from '@react-aria/utils'
-import SwitchInput, { SwitchProps } from './SwitchInput'
+import SwitchInput, { type SwitchProps } from './SwitchInput'
 import { SwitchWithLabel } from './SwitchWithLabel'
+
+export type { SwitchProps } from './SwitchInput'
 
 const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   { children, onChange, disabled, className, id, ...props },
