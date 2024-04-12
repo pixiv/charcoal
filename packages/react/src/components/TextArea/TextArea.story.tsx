@@ -1,14 +1,17 @@
 import { action } from '@storybook/addon-actions'
-import styled from 'styled-components'
 import Clickable from '../Clickable'
 import TextArea from '.'
-import { px } from '@charcoal-ui/utils'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'TextArea',
   component: TextArea,
-  argTypes: {},
+  parameters: {
+    layout: 'centered',
+  },
+} as Meta<typeof TextArea>
+
+export const Default: StoryObj<typeof TextArea> = {
   args: {
     showLabel: false,
     label: 'Label',
@@ -17,42 +20,77 @@ export default {
     disabled: false,
     required: false,
     invalid: false,
+    readOnly: false,
     subLabel: <Clickable onClick={action('label-click')}>Text Link</Clickable>,
     placeholder: 'Text Area',
   },
-  render: function Render(args) {
-    return (
-      <Container>
-        <TextArea {...args} />
-      </Container>
-    )
-  },
-} as Meta<typeof TextArea>
-
-const Container = styled.div`
-  display: grid;
-  gap: ${({ theme }) => px(theme.spacing[24])};
-`
-
-export const Default: StoryObj<typeof TextArea> = {}
-
-export const HasLabel: StoryObj<typeof TextArea> = {
-  args: {
-    showLabel: true,
-    assistiveText: 'Assistive text',
-    required: true,
+  render(args) {
+    return <TextArea {...args} />
   },
 }
 
-export const HasCount: StoryObj<typeof TextArea> = {
-  args: {
-    showCount: true,
-    maxLength: 100,
+export const Label: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea showLabel label="Label" />
+  },
+}
+
+export const Placeholder: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea placeholder="Placeholder" label="Label" />
+  },
+}
+
+export const Required: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea required label="Label" requiredText="*必須" />
+  },
+}
+
+export const AssistiveText: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea label="Label" assistiveText="説明が入ります" />
+  },
+}
+
+export const SubLabel: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea
+        showLabel
+        label="Label"
+        subLabel={<Clickable>Text Link</Clickable>}
+      />
+    )
+  },
+}
+
+export const ShowCount: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea showCount maxLength={100} label="Label" />
+  },
+}
+
+export const Disabled: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea disabled label="Label" />
+  },
+}
+
+export const Invalid: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea label="Label" invalid assistiveText="エラーメッセージ" />
+  },
+}
+
+export const ReadOnly: StoryObj<typeof TextArea> = {
+  render() {
+    return <TextArea label="Label" readOnly value="読み取り専用" />
   },
 }
 
 export const AutoHeight: StoryObj<typeof TextArea> = {
-  args: {
-    autoHeight: true,
+  render: function Render() {
+    return <TextArea autoHeight label="Label" />
   },
 }

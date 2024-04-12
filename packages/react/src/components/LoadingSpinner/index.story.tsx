@@ -4,13 +4,24 @@ import LoadingSpinner from '.'
 export default {
   title: 'LoadingSpinner',
   component: LoadingSpinner,
-  args: {
-    size: 48,
-    padding: 16,
-    transparent: false,
-    className: 'basic',
-  },
   tags: ['skip-test'],
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<typeof LoadingSpinner>
 
-export const Default: StoryObj<typeof LoadingSpinner> = {}
+export const Default: StoryObj<typeof LoadingSpinner> = {
+  render: (props) => <LoadingSpinner {...props} />,
+}
+
+export const Transparent: StoryObj<typeof LoadingSpinner> = {
+  render: () => <LoadingSpinner transparent />,
+}
+
+export const Size: StoryObj<typeof LoadingSpinner> = {
+  render: () => <LoadingSpinner size={128} />,
+}
+
+export const Padding: StoryObj<typeof LoadingSpinner> = {
+  render: () => <LoadingSpinner padding={24} />,
+}
