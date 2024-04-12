@@ -1,0 +1,65 @@
+.charcoal-switch-input {
+  cursor: pointer;
+  appearance: none;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  border: 2px solid transparent;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+
+  outline: none;
+  border-radius: 16px;
+  height: 16px;
+  margin: 0;
+  background-color: var(--charcoal-text4);
+}
+
+.charcoal-switch-input:hover {
+  background-color: var(--charcoal-text4-hover);
+}
+
+.charcoal-switch-input:active {
+  background-color: var(--charcoal-text4-press);
+}
+
+.charcoal-switch-input::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateX(0);
+  transition: transform 0.2s;
+  border-radius: 1024px;
+  background-color: var(--charcoal-text5);
+}
+
+.charcoal-switch-input::after:hover {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.charcoal-switch-input::after:active {
+  background-color: var(--charcoal-text5-press);
+}
+
+.charcoal-switch-input:checked {
+  background-color: var(--charcoal-brand);
+}
+
+.charcoal-switch-input:checked:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.charcoal-switch-input:checked:active {
+  background-color: var(--charcoal-brand-press);
+}
+
+.charcoal-switch-input:checked::after {
+  transform: translateX(12px);
+  transition: transform 0.2s;
+}

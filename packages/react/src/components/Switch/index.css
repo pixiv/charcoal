@@ -1,0 +1,19 @@
+.charcoal-switch__label {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.charcoal-switch__label:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.charcoal-switch__label_div {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-text2);
+  margin-left: 4px;
+}
