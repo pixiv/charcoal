@@ -103,7 +103,7 @@ export const resolveValue = (
 ): string => {
   const value = variable.valuesByMode[modeId]
 
-  // aliasだった場合は再起的にみる
+  // if alias, look at it recursively.
   if (typeof value === 'object' && 'type' in value && 'id' in value) {
     const v = variableMap.get(value.id)
     if (!v) throw new Error(`can't find variable ${value.id}`)
