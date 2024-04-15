@@ -115,13 +115,7 @@ export const resolveValue = (
         `can't find variable collection ${v.variableCollectionId}`
       )
 
-    return resolveValue(
-      variableCollectionMap,
-      variableMap,
-      resolvedType,
-      v,
-      variableCollection.defaultModeId
-    )
+    return `{${variableCollection.name}.${v.name}}`
   }
 
   switch (resolvedType) {
@@ -137,4 +131,4 @@ export const resolveValue = (
 
 export const resolveColor = (value: Color) => colorToRgba(value)
 
-export const resolveFloat = (value: number) => `${value}rem`
+export const resolveFloat = (value: number) => `${value}`

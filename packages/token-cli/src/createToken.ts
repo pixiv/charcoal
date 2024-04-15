@@ -54,10 +54,10 @@ export const createToken = (
   return Object.entries(res.meta.variableCollections)
     .filter(([_, it]) => isTargetCollection(it, variableCollectionNames))
     .map(([_, collection]) => {
+      const modeId = getModeId(collection, modeName)
       const variables = collection.variableIds
         .filter((it) => variableMap.get(it))
         .map((it) => {
-          const modeId = getModeId(collection, modeName)
           const v = variableMap.get(it)
 
           if (!v) throw new Error(`can't find variable: ${it}`)
@@ -74,8 +74,21 @@ export const createToken = (
             },
           }
         })
-        .reduce((prev, current) => ({ ...prev, ...current }))
+        .reduce((prev, current) => ({
+          ...prev,
+          ...current,
+        }))
+
+      if (modeName != undefined && collection.defaultModeId != modeId)
+        return { [collection.name]: { [modeName]: variables } }
+
       return { [collection.name]: variables }
     })
-    .reduce((prev, current) => ({ ...prev, ...current }))
+    .reduce<{ [key: string]: object }>(
+      (prev, current) => ({
+        ...prev,
+        ...current,
+      }),
+      {}
+    )
 }

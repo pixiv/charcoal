@@ -69,7 +69,11 @@ void yargs
       const buffer = readFileSync(path.join(__dirname, '..', args.source))
       const raw = JSON.parse(buffer.toString()) as FigmaResponse
 
-      const tokens = createToken(raw, args['variable-collection-names'])
+      const tokens = createToken(
+        raw,
+        args['variable-collection-names'],
+        args['mode-name']
+      )
 
       await ensureFile(path.join(__dirname, '..', args.output))
       await writeFile(
