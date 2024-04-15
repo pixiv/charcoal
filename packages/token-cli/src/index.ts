@@ -1,4 +1,4 @@
-import { ensureDir, readFileSync, writeFile } from 'fs-extra'
+import { ensureFile, readFileSync, writeFile, existsSync } from 'fs-extra'
 import path from 'path'
 import yargs from 'yargs'
 import {
@@ -18,132 +18,128 @@ const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID
 
 void yargs
   .scriptName('token-cli')
-  .command('fetch:primitive', 'Fetch Figma variables', {}, async () => {
-    mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
-    mustBeDefined(FIGMA_NODE_ID, 'FIGMA_NODE_ID')
+  .command(
+    'fetch',
+    'Fetch Figma variables',
+    {
+      output: {
+        type: 'string',
+        demandOption: true,
+        alias: 'o',
+      },
+    },
+    async (args) => {
+      mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
+      mustBeDefined(FIGMA_NODE_ID, 'FIGMA_NODE_ID')
 
-    const res = await getDesignToken(FIGMA_TOKEN, FIGMA_NODE_ID)
+      const res = await getDesignToken(FIGMA_TOKEN, FIGMA_NODE_ID)
 
-    await ensureDir(path.join(__dirname, '..', 'out'))
-    await writeFile(
-      path.join(__dirname, '..', 'out', 'raw_primitives.json'),
-      JSON.stringify(res.data),
-      'utf8'
-    )
-  })
-  .command('fetch:applied', 'Fetch Figma variables', {}, async () => {
-    mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
-    mustBeDefined(FIGMA_NODE_ID, 'FIGMA_NODE_ID')
+      await ensureFile(path.join(__dirname, '..', args.output))
+      await writeFile(
+        path.join(__dirname, '..', args.output),
+        JSON.stringify(res.data),
+        'utf8'
+      )
+    }
+  )
+  .command(
+    'transform',
+    'Transform tokens from source file',
+    {
+      'mode-name': {
+        type: 'string',
+        default: undefined,
+      },
+      'variable-collection-names': {
+        type: 'array',
+        default: [] as string[],
+      },
+      source: {
+        type: 'string',
+        demandOption: true,
+      },
+      output: {
+        type: 'string',
+        demandOption: true,
+        alias: 'o',
+      },
+    },
+    async (args) => {
+      if (!existsSync(path.join(__dirname, '..', args.source))) {
+        throw new Error(
+          `${path.join(__dirname, '..', args.source)} not exists.`
+        )
+      }
 
-    const res = await getDesignToken(FIGMA_TOKEN, FIGMA_NODE_ID)
+      const buffer = readFileSync(path.join(__dirname, '..', args.source))
+      const raw = JSON.parse(buffer.toString()) as FigmaResponse
 
-    await ensureDir(path.join(__dirname, '..', 'out'))
-    await writeFile(
-      path.join(__dirname, '..', 'out', 'raw_applieds.json'),
-      JSON.stringify(res.data),
-      'utf8'
-    )
-  })
-  .command('transform', 'Transform Fetched variables', {}, async () => {
-    const buffer = readFileSync(
-      path.join(__dirname, '..', 'out', 'raw_primitives.json')
-    )
-    const tokens = JSON.parse(buffer.toString()) as FigmaResponse
-
-    const variableMap = new Map<string, Variable>()
-    Object.entries(tokens.meta.variables).forEach(([key, it]) => {
-      variableMap.set(key, it)
-    })
-
-    const variableCollectionMap = new Map<string, VariableCollection>()
-    Object.entries(tokens.meta.variableCollections).forEach(([key, it]) =>
-      variableCollectionMap.set(key, it)
-    )
-
-    const primitives = Object.entries(tokens.meta.variableCollections)
-      .filter(([_, it]) => !it.remote)
-      .map(([_, collection]) => {
-        const variables = collection.variableIds
-          .filter((it) => variableMap.get(it))
-          .map((it) => {
-            const v = variableMap.get(it)
-
-            if (!v) throw new Error(`can't find variable: ${it}`)
-
-            return {
-              [v.name]: {
-                value: resolveValue(
-                  variableCollectionMap,
-                  variableMap,
-                  v.resolvedType,
-                  v,
-                  collection.defaultModeId
-                ),
-              },
-            }
-          })
-          .reduce((prev, current) => ({ ...prev, ...current }))
-        return { [collection.name]: variables }
+      const variableMap = new Map<string, Variable>()
+      Object.entries(raw.meta.variables).forEach(([key, it]) => {
+        variableMap.set(key, it)
       })
-      .reduce((prev, current) => ({ ...prev, ...current }))
 
-    await ensureDir(path.join(__dirname, '..', 'out'))
-    await writeFile(
-      path.join(__dirname, '..', 'out', 'transformed.json'),
-      JSON.stringify(primitives),
-      'utf8'
-    )
-  })
-  .command('transform:applied', 'Transform Fetched variables', {}, async () => {
-    const buffer = readFileSync(
-      path.join(__dirname, '..', 'out', 'raw_applieds.json')
-    )
-    const tokens = JSON.parse(buffer.toString()) as FigmaResponse
+      const variableCollectionMap = new Map<string, VariableCollection>()
+      Object.entries(raw.meta.variableCollections).forEach(([key, it]) =>
+        variableCollectionMap.set(key, it)
+      )
 
-    const variableMap = new Map<string, Variable>()
-    Object.entries(tokens.meta.variables).forEach(([key, it]) => {
-      variableMap.set(key, it)
-    })
+      const tokens = Object.entries(raw.meta.variableCollections)
+        .filter(([_, it]) => {
+          // if specify "variable-collection-name", only filter that variable collection
+          // if not specified, only filter not remotes
+          if (args['variable-collection-names'].length != 0) {
+            return (
+              args['variable-collection-names'].includes(it.name) && !it.remote
+            )
+          }
+          return !it.remote
+        })
+        .map(([_, collection]) => {
+          const variables = collection.variableIds
+            .filter((it) => variableMap.get(it))
+            .map((it) => {
+              const modeId = (() => {
+                // if specify "mode-name", return that mode id
+                // if not specified, return collection.defaultModeId
+                if (args['mode-name'] != undefined) {
+                  return (
+                    collection.modes.find((it) => it.name == args['mode-name'])
+                      ?.modeId ?? collection.defaultModeId
+                  )
+                }
+                return collection.defaultModeId
+              })()
 
-    const variableCollectionMap = new Map<string, VariableCollection>()
-    Object.entries(tokens.meta.variableCollections).forEach(([key, it]) =>
-      variableCollectionMap.set(key, it)
-    )
+              const v = variableMap.get(it)
 
-    const primitives = Object.entries(tokens.meta.variableCollections)
-      .filter(([_, it]) => !it.remote)
-      .map(([_, collection]) => {
-        const variables = collection.variableIds
-          .filter((it) => variableMap.get(it))
-          .map((it) => {
-            const v = variableMap.get(it)
+              if (!v) throw new Error(`can't find variable: ${it}`)
 
-            if (!v) throw new Error(`can't find variable: ${it}`)
+              return {
+                [v.name]: {
+                  value: resolveValue(
+                    variableCollectionMap,
+                    variableMap,
+                    v.resolvedType,
+                    v,
+                    modeId
+                  ),
+                },
+              }
+            })
+            .reduce((prev, current) => ({ ...prev, ...current }))
+          return { [collection.name]: variables }
+        })
+        .reduce((prev, current) => ({ ...prev, ...current }))
 
-            return {
-              [v.name]: {
-                value: resolveValue(
-                  variableCollectionMap,
-                  variableMap,
-                  v.resolvedType,
-                  v,
-                  collection.defaultModeId
-                ),
-              },
-            }
-          })
-          .reduce((prev, current) => ({ ...prev, ...current }))
-        return { [collection.name]: variables }
-      })
-      .reduce((prev, current) => ({ ...prev, ...current }))
-
-    await ensureDir(path.join(__dirname, '..', 'out'))
-    await writeFile(
-      path.join(__dirname, '..', 'out', 'transformed.json'),
-      JSON.stringify(primitives),
-      'utf8'
-    )
-  })
+      await ensureFile(path.join(__dirname, '..', args.output))
+      await writeFile(
+        path.join(__dirname, '..', args.output),
+        JSON.stringify(tokens),
+        'utf8'
+      )
+    }
+  )
   .demandCommand()
   .strict()
   .help()
