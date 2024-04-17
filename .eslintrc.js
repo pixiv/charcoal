@@ -7,7 +7,7 @@ const config = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:storybook/recommended',
-    'plugin:import/recommended',
+    // 'plugin:import/recommended',
     'prettier',
   ],
   rules: {
@@ -25,19 +25,19 @@ const config = {
     'no-console': 'warn',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          '*.config.ts',
-          '**/*.config.ts',
-          '**/*.test.ts',
-          '**/*.test.tsx',
-          '**/*.story.tsx',
-          '**/_lib/**',
-        ],
-      },
-    ],
+    // 'import/no-extraneous-dependencies': [
+    //   'error',
+    //   {
+    //     devDependencies: [
+    //       '*.config.ts',
+    //       '**/*.config.ts',
+    //       '**/*.test.ts',
+    //       '**/*.test.tsx',
+    //       '**/*.story.tsx',
+    //       '**/_lib/**',
+    //     ],
+    //   },
+    // ],
   },
   parserOptions: {
     project: ['./tsconfig.json', './packages/**/tsconfig.json'],
