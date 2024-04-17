@@ -1,6 +1,6 @@
 import type { ReactPortal } from 'react'
 
-export {}
+export { }
 
 globalThis.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),
@@ -28,12 +28,12 @@ window.matchMedia = jest.fn().mockImplementation((query: string) => ({
   dispatchEvent: jest.fn(),
 }))
 
-jest.mock<typeof import('@react-aria/utils')>('@react-aria/utils', () => ({
+jest.mock('@react-aria/utils', () => ({
   ...jest.requireActual('@react-aria/utils'),
   useId: () => 'test-id',
 }))
 
-jest.mock<typeof import('@react-aria/overlays')>(
+jest.mock(
   '@react-aria/overlays',
   () => ({
     ...jest.requireActual('@react-aria/overlays'),
@@ -43,7 +43,7 @@ jest.mock<typeof import('@react-aria/overlays')>(
 
 import type { OverlayTriggerProps } from 'react-stately'
 
-jest.mock<typeof import('react-stately')>('react-stately', () => ({
+jest.mock('react-stately', () => ({
   ...jest.requireActual('react-stately'),
   useOverlayTriggerState: (args: OverlayTriggerProps) => {
     const { useOverlayTriggerState } =
