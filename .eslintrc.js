@@ -51,7 +51,9 @@ const config = {
       version: 'detect',
     },
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        project: ['./tsconfig.json', './packages/**/tsconfig.json'],
+      },
     },
   },
   plugins: ['jest', 'import'],
