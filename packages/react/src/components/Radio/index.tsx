@@ -1,8 +1,9 @@
-import { memo, forwardRef, useCallback, useContext } from 'react'
+import { memo, forwardRef, useCallback, useContext, useMemo } from 'react'
 import * as React from 'react'
-import styled from 'styled-components'
 import warning from 'warning'
-import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
+import { useClassNames } from '../../_lib/useClassNames'
+
+import './index.css'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
@@ -11,7 +12,7 @@ export type RadioProps = React.PropsWithChildren<{
 }>
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
-  { value, disabled = false, children, className },
+  { value, disabled = false, children, ...props },
   ref
 ) {
   const {
@@ -22,6 +23,8 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
     invalid,
     onChange,
   } = useContext(RadioGroupContext)
+
+  const className = useClassNames('charcoal-radio', props.className)
 
   warning(
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -41,8 +44,10 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   )
 
   return (
-    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className}>
-      <RadioInput
+    <label aria-disabled={isDisabled || isReadonly} className={className}>
+      <input
+        type="checkbox"
+        className="charcoal-radio__input"
         name={name}
         value={value}
         checked={isSelected}
@@ -51,123 +56,14 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
         disabled={isDisabled || isReadonly}
         ref={ref}
       />
-      {children != null && <RadioLabel>{children}</RadioLabel>}
-    </RadioRoot>
+      {children != null && (
+        <div className="charcoal-radio__label">{children}</div>
+      )}
+    </label>
   )
 })
 
 export default memo(Radio)
-
-const RadioRoot = styled.label`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  align-items: center;
-  cursor: pointer;
-
-  &[aria-disabled]:not([aria-disabled='false']) {
-    opacity: 0.32;
-    cursor: default;
-  }
-`
-
-export const RadioInput = styled.input.attrs({ type: 'radio' })`
-  /** Make prior to browser default style */
-  &[type='radio'] {
-    appearance: none;
-    display: block;
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 6px;
-
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border-radius: 999999px;
-    background-color: var(--charcoal-surface1);
-    transition: 0.2s background-color, 0.2s box-shadow;
-
-    :disabled {
-      cursor: default;
-    }
-
-    &:not(:disabled):not([aria-disabled]),
-    &[aria-disabled='false'] {
-      &:hover {
-        background-color: var(--charcoal-surface1-hover);
-      }
-      &:active {
-        background-color: var(--charcoal-surface1-press);
-      }
-      ${focusVisibleFocusRingCss}
-      &[aria-invalid='true'] {
-        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        &:focus {
-          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        }
-      }
-    }
-
-    &:not(:checked) {
-      border-width: 2px;
-      border-style: solid;
-      border-color: var(--charcoal-text3);
-    }
-
-    &:checked {
-      background-color: var(--charcoal-brand);
-      &::after {
-        content: '';
-        display: block;
-        width: 8px;
-        height: 8px;
-        pointer-events: none;
-        background-color: var(--charcoal-text5);
-        border-radius: 999999px;
-        transition: 0.2s background-color, 0.2s box-shadow;
-      }
-
-      &:not(:disabled):not([aria-disabled]),
-      &[aria-disabled='false'] {
-        &:hover {
-          background-color: var(--charcoal-brand-hover);
-          &::after {
-            background-color: var(--charcoal-text5-hover);
-          }
-        }
-        &:active {
-          background-color: var(--charcoal-brand-press);
-          &::after {
-            background-color: var(--charcoal-text5-press);
-          }
-        }
-      }
-    }
-  }
-`
-
-const RadioLabel = styled.div`
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-`
 
 export type RadioGroupProps = React.PropsWithChildren<{
   className?: string
@@ -179,13 +75,6 @@ export type RadioGroupProps = React.PropsWithChildren<{
   readonly?: boolean
   invalid?: boolean
 }>
-
-// TODO: use (or polyfill) flex gap
-const StyledRadioGroup = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-`
 
 interface RadioGroupContext {
   name: string
@@ -210,7 +99,6 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
 })
 
 export function RadioGroup({
-  className,
   value,
   label,
   name,
@@ -219,7 +107,10 @@ export function RadioGroup({
   readonly,
   invalid,
   children,
+  ...props
 }: RadioGroupProps) {
+  const className = useClassNames('charcoal-radio-group', props.className)
+
   const handleChange = useCallback(
     (next: string) => {
       onChange(next)
@@ -227,18 +118,21 @@ export function RadioGroup({
     [onChange]
   )
 
+  const contextValue = useMemo(
+    () => ({
+      name,
+      selected: value,
+      disabled: disabled ?? false,
+      readonly: readonly ?? false,
+      invalid: invalid ?? false,
+      onChange: handleChange,
+    }),
+    [disabled, handleChange, invalid, name, readonly, value]
+  )
+
   return (
-    <RadioGroupContext.Provider
-      value={{
-        name,
-        selected: value,
-        disabled: disabled ?? false,
-        readonly: readonly ?? false,
-        invalid: invalid ?? false,
-        onChange: handleChange,
-      }}
-    >
-      <StyledRadioGroup
+    <RadioGroupContext.Provider value={contextValue}>
+      <div
         role="radiogroup"
         aria-orientation="vertical"
         aria-label={label}
@@ -246,7 +140,7 @@ export function RadioGroup({
         className={className}
       >
         {children}
-      </StyledRadioGroup>
+      </div>
     </RadioGroupContext.Provider>
   )
 }
