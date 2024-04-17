@@ -46,7 +46,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   return (
     <label aria-disabled={isDisabled || isReadonly} className={className}>
       <input
-        type="checkbox"
+        type="radio"
         className="charcoal-radio__input"
         name={name}
         value={value}
