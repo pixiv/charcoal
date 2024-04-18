@@ -1,5 +1,8 @@
-import { forwardRef, useImperativeHandle, useRef, memo } from 'react'
-import styled, { keyframes } from 'styled-components'
+import { forwardRef, useImperativeHandle, useRef, memo, useMemo } from 'react'
+import { useProgressBar } from '@react-aria/progress'
+import { useClassNames } from '../../_lib/useClassNames'
+
+import './index.css'
 
 export type LoadingSpinnerProps = {
   readonly size?: number
@@ -10,67 +13,32 @@ export type LoadingSpinnerProps = {
 
 const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
   function LoadingSpinnerInner(
-    { size = 48, padding = 16, transparent = false, className },
+    { size = 48, padding = 16, transparent = false, ...props },
     ref
   ) {
+    const { progressBarProps } = useProgressBar(
+      useMemo(() => ({ isIndeterminate: true }), [])
+    )
+    const className = useClassNames('charcoal-loading-spinner', props.className)
+
     return (
-      <LoadingSpinnerRoot
-        size={size}
-        padding={padding}
-        transparent={transparent}
+      <div
+        {...progressBarProps}
+        style={{
+          '--charcoal-loading-spinner-size': `${size}px`,
+          '--charcoal-loading-spinner-padding': `${padding}px`,
+        }}
+        data-transparent={transparent}
         className={className}
         ref={ref}
       >
         <LoadingSpinnerIcon />
-      </LoadingSpinnerRoot>
+      </div>
     )
   }
 )
 
 export default memo(LoadingSpinner)
-
-const LoadingSpinnerRoot = styled.div.attrs({ role: 'progressbar' })<{
-  size: number
-  padding: number
-  transparent: boolean
-}>`
-  box-sizing: content-box;
-  margin: auto;
-  padding: ${(props) => props.padding}px;
-  border-radius: 8px;
-  font-size: ${(props) => props.size}px;
-  width: ${(props) => props.size}px;
-  height: ${(props) => props.size}px;
-  opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: ${({ transparent }) =>
-    `var(--charcoal-${transparent ? 'transparent' : 'background1'})`};
-`
-
-const scaleOut = keyframes`
-  from {
-    transform: scale(0);
-    opacity: 1;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 0;
-  }
-`
-
-const Icon = styled.div.attrs({ role: 'presentation' })<{ once: boolean }>`
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  background-color: currentColor;
-  animation: ${scaleOut} 1s both ease-out;
-  animation-iteration-count: ${(p) => (p.once ? 1 : 'infinite')};
-
-  &[data-reset-animation] {
-    animation: none;
-  }
-`
 
 type Props = {
   once?: boolean
@@ -96,6 +64,13 @@ export const LoadingSpinnerIcon = forwardRef<LoadingSpinnerIconHandler, Props>(
       },
     }))
 
-    return <Icon ref={iconRef} once={once} />
+    return (
+      <div
+        role="presentation"
+        ref={iconRef}
+        data-once={once}
+        className="charcoal-loading-spinner-icon"
+      />
+    )
   }
 )
