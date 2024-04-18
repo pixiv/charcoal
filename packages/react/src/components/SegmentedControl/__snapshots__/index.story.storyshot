@@ -1,100 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: var(--charcoal-surface3);
-  border-radius: 16px;
-}
-
-.c1 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  height: 32px;
-  padding-right: 16px;
-  padding-left: 16px;
-  border-radius: 16px;
-  color: var(--charcoal-text2);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2 {
-  position: absolute;
-  height: 0px;
-  width: 0px;
-  padding: 0;
-  margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  overflow: hidden;
-  white-space: nowrap;
-  opacity: 0;
-}
-
-.c3 {
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 22px;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
   <div
     aria-label="test"
     aria-orientation="vertical"
-    className="c0"
+    className="charcoal-segmented-control"
     id="test-id"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -103,12 +16,12 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
   >
     <label
       aria-disabled={false}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -131,10 +44,10 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         value="option1"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           選択肢1
         </div>
@@ -142,12 +55,12 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
     </label>
     <label
       aria-disabled={false}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -170,10 +83,10 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         value="option2"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           選択肢2
         </div>
@@ -181,12 +94,12 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
     </label>
     <label
       aria-disabled={false}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -209,10 +122,10 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         value="option3"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           選択肢3
         </div>
@@ -220,12 +133,12 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
     </label>
     <label
       aria-disabled={true}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={true}
         name="test-id"
         onChange={[Function]}
@@ -246,10 +159,10 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         value="option4"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           選択肢4
         </div>
@@ -260,100 +173,13 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
 `;
 
 exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
-.c0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: var(--charcoal-surface3);
-  border-radius: 16px;
-}
-
-.c1 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  height: 32px;
-  padding-right: 16px;
-  padding-left: 16px;
-  border-radius: 16px;
-  color: var(--charcoal-text2);
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2 {
-  position: absolute;
-  height: 0px;
-  width: 0px;
-  padding: 0;
-  margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  overflow: hidden;
-  white-space: nowrap;
-  opacity: 0;
-}
-
-.c3 {
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 22px;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
   <div
     aria-label="test"
     aria-orientation="vertical"
-    className="c0"
+    className="charcoal-segmented-control"
     id="test-id"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -362,12 +188,12 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
   >
     <label
       aria-disabled={false}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -390,10 +216,10 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
         value="option1"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           option1
         </div>
@@ -401,12 +227,12 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
     </label>
     <label
       aria-disabled={false}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -429,10 +255,10 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
         value="option2"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           option2
         </div>
@@ -440,12 +266,12 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
     </label>
     <label
       aria-disabled={false}
-      checked={false}
-      className="c1"
+      className="charcoal-segmented"
+      data-checked={false}
     >
       <input
         checked={false}
-        className="c2"
+        className="charcoal-segmented__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -468,10 +294,10 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
         value="option3"
       />
       <div
-        className="c3"
+        className="charcoal-segmented__radio-label"
       >
         <div
-          className="c4"
+          className="charcoal-segmented__radio-label__inner"
         >
           option3
         </div>
