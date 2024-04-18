@@ -65,7 +65,9 @@
 .charcoal-radio__input:not(:disabled):focus:not(:focus-visible) {
   box-shadow: none;
 }
-.charcoal-radio__input[aria-invalid='true'] {
+
+.charcoal-radio__input:not(:disabled)[aria-invalid='true'],
+.charcoal-radio__input:not(:disabled)[aria-invalid='true']:focus {
   box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
 }
 
