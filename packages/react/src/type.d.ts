@@ -6,6 +6,9 @@ declare module 'styled-components' {
 }
 
 declare module 'react' {
+  interface CSSProperties {
+    [key: `--${string}`]: string | undefined
+  }
   interface Attributes {
     css?: CSSProp<DefaultTheme>
   }
