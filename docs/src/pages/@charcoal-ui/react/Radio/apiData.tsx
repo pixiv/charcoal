@@ -17,6 +17,12 @@ export const apiDataRadio: Partial<ApiTableData<RadioProps, HTMLInputElement>> =
   }
 export const apiData: Partial<ApiTableData<RadioGroupProps, HTMLInputElement>> =
   {
+    label: {
+      default: '',
+      description: 'ラベル',
+      required: true,
+      type: 'string',
+    },
     value: {
       default: '',
       description: '選択されている値',

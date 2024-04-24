@@ -22,37 +22,19 @@ exports[`Storybook Tests Radio Basic 1`] = `
       aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
-      id="test-id"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
       role="radiogroup"
     >
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={0}
           type="radio"
           value="1"
         />
@@ -64,30 +46,16 @@ exports[`Storybook Tests Radio Basic 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="2"
         />
@@ -99,30 +67,16 @@ exports[`Storybook Tests Radio Basic 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="3"
         />
@@ -157,39 +111,22 @@ exports[`Storybook Tests Radio Disabled 1`] = `
     className="c0"
   >
     <div
-      aria-disabled={true}
       aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
-      id="test-id"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
       role="radiogroup"
     >
       <label
+        aria-disabled={true}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={true}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
           type="radio"
           value="1"
         />
@@ -201,28 +138,16 @@ exports[`Storybook Tests Radio Disabled 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={true}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={true}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
           type="radio"
           value="2"
         />
@@ -234,28 +159,16 @@ exports[`Storybook Tests Radio Disabled 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={true}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={true}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
           type="radio"
           value="3"
         />
@@ -294,37 +207,19 @@ exports[`Storybook Tests Radio Invalid 1`] = `
       aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
-      id="test-id"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
       role="radiogroup"
     >
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={true}
           checked={true}
           className="charcoal-radio__input"
-          data-invalid={true}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={0}
           type="radio"
           value="1"
         />
@@ -336,30 +231,16 @@ exports[`Storybook Tests Radio Invalid 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={true}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={true}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="2"
         />
@@ -371,30 +252,16 @@ exports[`Storybook Tests Radio Invalid 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={true}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={true}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="3"
         />
@@ -432,37 +299,19 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
       aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
-      id="test-id"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
       role="radiogroup"
     >
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={0}
           type="radio"
           value="1"
         />
@@ -474,28 +323,16 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={true}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={true}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
           type="radio"
           value="2"
         />
@@ -507,30 +344,16 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="3"
         />
@@ -567,39 +390,20 @@ exports[`Storybook Tests Radio Readonly 1`] = `
     <div
       aria-label="label"
       aria-orientation="vertical"
-      aria-readonly={true}
       className="charcoal-radio-group"
-      id="test-id"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
       role="radiogroup"
     >
       <label
+        aria-disabled={false}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={true}
           className="charcoal-radio__input"
-          data-invalid={false}
           disabled={false}
-          name="test-id"
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={0}
           type="radio"
           value="1"
         />
@@ -611,30 +415,16 @@ exports[`Storybook Tests Radio Readonly 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={true}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
-          disabled={false}
-          name="test-id"
+          disabled={true}
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="2"
         />
@@ -646,30 +436,16 @@ exports[`Storybook Tests Radio Readonly 1`] = `
         </div>
       </label>
       <label
+        aria-disabled={true}
         className="charcoal-radio"
       >
         <input
+          aria-invalid={false}
           checked={false}
           className="charcoal-radio__input"
-          data-invalid={false}
-          disabled={false}
-          name="test-id"
+          disabled={true}
+          name="name"
           onChange={[Function]}
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          required={false}
-          tabIndex={-1}
           type="radio"
           value="3"
         />

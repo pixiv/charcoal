@@ -10,14 +10,22 @@ describe('Radio', () => {
     })
 
     describe('<Radio> is not surrounded by <RadioGroup>', () => {
-      it('throw error', () => {
-        expect(() =>
-          render(
-            <ThemeProvider theme={light}>
-              <Radio value="option1" />
-            </ThemeProvider>
-          )
-        ).toThrow('Perhaps you forgot to wrap with <RadioGroup>')
+      beforeEach(() => {
+        // eslint-disable-next-line no-console
+        console.error = jest.fn()
+
+        render(
+          <ThemeProvider theme={light}>
+            <Radio value="option1" />
+          </ThemeProvider>
+        )
+      })
+
+      it('console.error()', () => {
+        // eslint-disable-next-line no-console
+        expect(console.error).toHaveBeenCalledWith(
+          expect.stringMatching(/Perhaps you forgot to wrap with <RadioGroup>/u)
+        )
       })
     })
   })
@@ -92,8 +100,8 @@ describe('Radio', () => {
       expect(option1.disabled).toBeFalsy()
     })
 
-    it('Non-first <Radio>s are prevent keyboard navigate', () => {
-      expect(option2.tabIndex).toEqual(-1)
+    it('Non-first <Radio>s are disabled', () => {
+      expect(option2.disabled).toBeTruthy()
     })
   })
 })
@@ -118,7 +126,7 @@ function TestComponent({
   return (
     <ThemeProvider theme={light}>
       <RadioGroup
-        aria-label="テスト項目"
+        label="テスト項目"
         name="test"
         value={value}
         onChange={onChange}

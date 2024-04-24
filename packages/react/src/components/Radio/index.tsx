@@ -1,17 +1,7 @@
-import { memo, forwardRef, useMemo } from 'react'
+import { memo, forwardRef, useCallback, useContext, useMemo } from 'react'
 import * as React from 'react'
+import warning from 'warning'
 import { useClassNames } from '../../_lib/useClassNames'
-
-import { useRadioGroupState } from 'react-stately'
-import { RadioGroupProvider, useRadioGroupContext } from './context'
-import {
-  type AriaRadioGroupProps,
-  type AriaRadioProps,
-  useRadio,
-  useRadioGroup,
-} from '@react-aria/radio'
-import { useObjectRef } from '@react-aria/utils'
-import type { AriaLabelingProps } from '@react-types/shared'
 
 import './index.css'
 
@@ -23,28 +13,47 @@ export type RadioProps = React.PropsWithChildren<{
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   { value, disabled = false, children, ...props },
-  external
+  ref
 ) {
-  const ref = useObjectRef(external)
-  const ariaRadioProps = useMemo<AriaRadioProps>(
-    () => ({
-      value,
-      isDisabled: disabled,
-      children,
-    }),
-    [children, disabled, value]
-  )
-  const state = useRadioGroupContext()
-  const { inputProps } = useRadio(ariaRadioProps, state, ref)
+  const {
+    name,
+    selected,
+    disabled: isParentDisabled,
+    readonly,
+    invalid,
+    onChange,
+  } = useContext(RadioGroupContext)
 
   const className = useClassNames('charcoal-radio', props.className)
 
+  warning(
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    name !== undefined,
+    `"name" is not Provided for <Radio>. Perhaps you forgot to wrap with <RadioGroup> ?`
+  )
+
+  const isSelected = value === selected
+  const isDisabled = disabled || isParentDisabled
+  const isReadonly = readonly && !isSelected
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange(e.currentTarget.value)
+    },
+    [onChange]
+  )
+
   return (
-    <label className={className}>
+    <label aria-disabled={isDisabled || isReadonly} className={className}>
       <input
+        type="radio"
         className="charcoal-radio__input"
-        {...inputProps}
-        data-invalid={state.isInvalid}
+        name={name}
+        value={value}
+        checked={isSelected}
+        aria-invalid={invalid}
+        onChange={handleChange}
+        disabled={isDisabled || isReadonly}
         ref={ref}
       />
       {children != null && (
@@ -56,52 +65,82 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
 
 export default memo(Radio)
 
-export type RadioGroupProps = React.PropsWithChildren<
-  AriaLabelingProps & {
-    className?: string
-    name: string
-    value?: string
+export type RadioGroupProps = React.PropsWithChildren<{
+  className?: string
+  value?: string
+  label: string
+  name: string
+  onChange(next: string): void
+  disabled?: boolean
+  readonly?: boolean
+  invalid?: boolean
+}>
 
-    disabled?: boolean
-    readonly?: boolean
-    invalid?: boolean
-    required?: boolean
+interface RadioGroupContext {
+  name: string
+  selected?: string
+  disabled: boolean
+  readonly: boolean
+  invalid: boolean
+  onChange: (next: string) => void
+}
 
-    onChange?(next: string): void
-    onBlur?(): void
-    onFocus?(): void
-  }
->
+const RadioGroupContext = React.createContext<RadioGroupContext>({
+  name: undefined as never,
+  selected: undefined,
+  disabled: false,
+  readonly: false,
+  invalid: false,
+  onChange() {
+    throw new Error(
+      'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
+    )
+  },
+})
 
 export function RadioGroup({
+  value,
+  label,
+  name,
+  onChange,
   disabled,
   readonly,
   invalid,
-  required,
   children,
   ...props
 }: RadioGroupProps) {
   const className = useClassNames('charcoal-radio-group', props.className)
-  const ariaRadioGroupProps = useMemo<AriaRadioGroupProps>(
-    () => ({
-      ...props,
-      isDisabled: disabled,
-      isInvalid: invalid,
-      isReadOnly: readonly,
-      isRequired: required,
-      orientation: 'vertical',
-    }),
-    [props, disabled, invalid, readonly, required]
+
+  const handleChange = useCallback(
+    (next: string) => {
+      onChange(next)
+    },
+    [onChange]
   )
 
-  const state = useRadioGroupState(ariaRadioGroupProps)
-  const { radioGroupProps } = useRadioGroup(ariaRadioGroupProps, state)
+  const contextValue = useMemo(
+    () => ({
+      name,
+      selected: value,
+      disabled: disabled ?? false,
+      readonly: readonly ?? false,
+      invalid: invalid ?? false,
+      onChange: handleChange,
+    }),
+    [disabled, handleChange, invalid, name, readonly, value]
+  )
 
   return (
-    <RadioGroupProvider value={state}>
-      <div className={className} {...radioGroupProps}>
+    <RadioGroupContext.Provider value={contextValue}>
+      <div
+        role="radiogroup"
+        aria-orientation="vertical"
+        aria-label={label}
+        aria-invalid={invalid}
+        className={className}
+      >
         {children}
       </div>
-    </RadioGroupProvider>
+    </RadioGroupContext.Provider>
   )
 }
