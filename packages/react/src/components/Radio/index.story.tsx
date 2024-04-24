@@ -28,12 +28,7 @@ export const Basic: StoryObj<typeof Radio> = {
     const [value, setValue] = useState(options[0])
     return (
       <LayoutDiv>
-        <RadioGroup
-          label={'label'}
-          name={'name'}
-          value={value}
-          onChange={setValue}
-        >
+        <RadioGroup name={'name'} value={value} onChange={setValue}>
           {options.map((option) => (
             <Radio key={option} value={option}>
               Value {option}
@@ -51,13 +46,7 @@ export const Disabled: StoryObj<typeof Radio> = {
     const [value, setValue] = useState(options[0])
     return (
       <LayoutDiv>
-        <RadioGroup
-          label={'label'}
-          name={'name'}
-          value={value}
-          onChange={setValue}
-          disabled
-        >
+        <RadioGroup name={'name'} value={value} onChange={setValue} disabled>
           {options.map((option) => (
             <Radio key={option} value={option} disabled>
               Value {option}
@@ -75,12 +64,7 @@ export const PartialDisabled: StoryObj<typeof Radio> = {
     const [value, setValue] = useState(options[0])
     return (
       <LayoutDiv>
-        <RadioGroup
-          label={'label'}
-          name={'name'}
-          value={value}
-          onChange={setValue}
-        >
+        <RadioGroup name={'name'} value={value} onChange={setValue}>
           {options.map((option) => (
             <Radio key={option} value={option} disabled={option === '2'}>
               Value {option}
@@ -98,13 +82,7 @@ export const Readonly: StoryObj<typeof Radio> = {
     const [value, setValue] = useState(options[0])
     return (
       <LayoutDiv>
-        <RadioGroup
-          label={'label'}
-          name={'name'}
-          value={value}
-          onChange={setValue}
-          readonly
-        >
+        <RadioGroup name={'name'} value={value} onChange={setValue} readonly>
           {options.map((option) => (
             <Radio key={option} value={option}>
               Value {option}
@@ -122,13 +100,7 @@ export const Invalid: StoryObj<typeof Radio> = {
     const [value, setValue] = useState(options[0])
     return (
       <LayoutDiv>
-        <RadioGroup
-          label={'label'}
-          name={'name'}
-          value={value}
-          onChange={setValue}
-          invalid
-        >
+        <RadioGroup name={'name'} value={value} onChange={setValue} invalid>
           {options.map((option) => (
             <Radio key={option} value={option}>
               Value {option}

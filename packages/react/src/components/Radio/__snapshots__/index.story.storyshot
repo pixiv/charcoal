@@ -19,7 +19,6 @@ exports[`Storybook Tests Radio Basic 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
@@ -111,7 +110,6 @@ exports[`Storybook Tests Radio Disabled 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
@@ -204,7 +202,6 @@ exports[`Storybook Tests Radio Invalid 1`] = `
   >
     <div
       aria-invalid={true}
-      aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
@@ -296,7 +293,6 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
@@ -388,7 +384,6 @@ exports[`Storybook Tests Radio Readonly 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"

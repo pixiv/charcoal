@@ -68,7 +68,6 @@ export default memo(Radio)
 export type RadioGroupProps = React.PropsWithChildren<{
   className?: string
   value?: string
-  label: string
   name: string
   onChange(next: string): void
   disabled?: boolean
@@ -100,7 +99,6 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
 
 export function RadioGroup({
   value,
-  label,
   name,
   onChange,
   disabled,
@@ -135,7 +133,6 @@ export function RadioGroup({
       <div
         role="radiogroup"
         aria-orientation="vertical"
-        aria-label={label}
         aria-invalid={invalid}
         className={className}
       >
