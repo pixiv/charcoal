@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { PixivIcon, Props } from '.'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
-import { Meta, StoryObj } from '@storybook/web-components'
+import type { Meta, StoryObj } from '@storybook/react'
 
 PixivIcon.extend({
   // かぶらなそうな名前をつける
@@ -129,13 +129,13 @@ export const Default: StoryObj<Props> = {
 
 export const WithAttributes: StoryObj<Props> = {
   render: ({ color, name, scale }) => (
-    <>
+    <div>
       <IconDef color={color}>
         <pixiv-icon class="icon-class" name={name} scale={scale} />
         <div>アイコンと文字</div>
       </IconDef>
       <Global />
-    </>
+    </div>
   ),
   args: {
     name: '16/Add',

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ReactPortal } from 'react'
 
 export {}
 
@@ -35,7 +35,7 @@ jest.mock('@react-aria/utils', () => ({
 
 jest.mock('@react-aria/overlays', () => ({
   ...jest.requireActual('@react-aria/overlays'),
-  Overlay: jest.fn(({ children }: { children: ReactNode }) => children),
+  Overlay: jest.fn(({ children }) => children as ReactPortal),
 }))
 
 import type { OverlayTriggerProps } from 'react-stately'

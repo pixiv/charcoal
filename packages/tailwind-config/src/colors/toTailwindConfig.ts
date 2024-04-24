@@ -1,6 +1,6 @@
 import { Material } from '@charcoal-ui/foundation'
 import { applyEffect, filterObject, mapObject } from '@charcoal-ui/utils'
-import { TailwindConfig } from 'tailwindcss/tailwind-config'
+import type { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { MergedEffect } from '../foundation'
 
 import { TailwindVersion } from '../types'
