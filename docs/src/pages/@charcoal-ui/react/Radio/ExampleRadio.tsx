@@ -9,7 +9,7 @@ export const ExampleRadio = () => {
       <p>value: {value}</p>
       <StyledRadioGroup
         name="radio"
-        label="radio"
+        aria-label="radio"
         onChange={setValue}
         value={value}
       >

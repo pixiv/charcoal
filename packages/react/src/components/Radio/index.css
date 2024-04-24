@@ -66,8 +66,8 @@
   box-shadow: none;
 }
 
-.charcoal-radio__input:not(:disabled)[aria-invalid='true'],
-.charcoal-radio__input:not(:disabled)[aria-invalid='true']:focus {
+.charcoal-radio__input:not(:disabled)[data-invalid='true'],
+.charcoal-radio__input:not(:disabled)[data-invalid='true']:focus {
   box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
 }
 

@@ -29,7 +29,7 @@ export const Basic: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup
-          label={'label'}
+          aria-label={'label'}
           name={'name'}
           value={value}
           onChange={setValue}
@@ -52,7 +52,7 @@ export const Disabled: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup
-          label={'label'}
+          aria-label={'label'}
           name={'name'}
           value={value}
           onChange={setValue}
@@ -76,7 +76,7 @@ export const PartialDisabled: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup
-          label={'label'}
+          aria-label={'label'}
           name={'name'}
           value={value}
           onChange={setValue}
@@ -99,7 +99,7 @@ export const Readonly: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup
-          label={'label'}
+          aria-label={'label'}
           name={'name'}
           value={value}
           onChange={setValue}
@@ -123,7 +123,7 @@ export const Invalid: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup
-          label={'label'}
+          aria-label={'label'}
           name={'name'}
           value={value}
           onChange={setValue}
