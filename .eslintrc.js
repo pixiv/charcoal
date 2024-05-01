@@ -35,6 +35,7 @@ const config = {
           '**/*.test.tsx',
           '**/*.story.tsx',
           '**/_lib/**',
+          '**/*.config.js',
         ],
       },
     ],
