@@ -1,44 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests TextField Default 1`] = `
-.c7 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c7:focus {
-  outline: none;
-}
-
-.c7::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c4 {
   font-size: 14px;
   line-height: 22px;
@@ -137,7 +99,7 @@ exports[`Storybook Tests TextField Default 1`] = `
   margin-bottom: 8px;
 }
 
-.c8 {
+.c7 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -152,17 +114,17 @@ exports[`Storybook Tests TextField Default 1`] = `
   font-size: 14px;
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c8:focus-within {
+.c7:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c9 {
+.c8 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -187,19 +149,19 @@ exports[`Storybook Tests TextField Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c9::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9::-moz-placeholder {
+.c8::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9::placeholder {
+.c8::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -246,7 +208,7 @@ exports[`Storybook Tests TextField Default 1`] = `
         >
           <span>
             <button
-              className="c7"
+              className="charcoal-clickable"
             >
               Text Link
             </button>
@@ -254,11 +216,11 @@ exports[`Storybook Tests TextField Default 1`] = `
         </div>
       </div>
       <div
-        className="c8"
+        className="c7"
       >
         <input
           aria-labelledby="test-id"
-          className="c9"
+          className="c8"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -275,44 +237,6 @@ exports[`Storybook Tests TextField Default 1`] = `
 `;
 
 exports[`Storybook Tests TextField HasAffix 1`] = `
-.c7 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c7:focus {
-  outline: none;
-}
-
-.c7::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c4 {
   font-size: 14px;
   line-height: 22px;
@@ -411,7 +335,7 @@ exports[`Storybook Tests TextField HasAffix 1`] = `
   margin-bottom: 8px;
 }
 
-.c8 {
+.c7 {
   display: grid;
   grid-template-columns: auto 1fr auto;
   height: 40px;
@@ -426,333 +350,25 @@ exports[`Storybook Tests TextField HasAffix 1`] = `
   font-size: 14px;
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c8:focus-within {
+.c7:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.c10 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c10::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c10::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c10:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c10::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c12 {
-  line-height: 22px;
-  font-size: 14px;
-  color: var(--charcoal-text3);
-}
-
-.c0 {
-  display: grid;
-  gap: 24px;
-}
-
-<div
-  data-dark={false}
->
-  <div
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <div
-        className="c2 c3"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": "1px",
-            "margin": "-1px",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": "1px",
-          }
-        }
-      >
-        <label
-          className="c4"
-          htmlFor="test-id"
-          id="test-id"
-        >
-          Label
-        </label>
-        <div
-          className="c5 c6"
-        >
-          <span>
-            <button
-              className="c7"
-            >
-              Text Link
-            </button>
-          </span>
-        </div>
-      </div>
-      <div
-        className="c8"
-      >
-        <div
-          className="c9"
-        >
-          /home/john/
-        </div>
-        <input
-          aria-labelledby="test-id"
-          className="c10"
-          disabled={false}
-          id="test-id"
-          maxLength={200}
-          onChange={[Function]}
-          placeholder="TextField"
-          readOnly={false}
-          required={false}
-          type="text"
-          value=""
-        />
-        <span
-          className="c11"
-        >
-          .png
-          <span
-            className="c12"
-          >
-            0/200
-          </span>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests TextField HasCount 1`] = `
-.c7 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c7:focus {
-  outline: none;
-}
-
-.c7::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c6 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c6::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c6::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c6:not(:disabled):not([aria-disabled]):hover,
-.c6[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled='false']:active,
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled='false']:focus,
-.c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 > .c5 {
-  margin-left: auto;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  margin-bottom: 8px;
 }
 
 .c8 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c8:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c10 {
@@ -857,7 +473,7 @@ exports[`Storybook Tests TextField HasCount 1`] = `
         >
           <span>
             <button
-              className="c7"
+              className="charcoal-clickable"
             >
               Text Link
             </button>
@@ -865,11 +481,281 @@ exports[`Storybook Tests TextField HasCount 1`] = `
         </div>
       </div>
       <div
-        className="c8"
+        className="c7"
       >
+        <div
+          className="c8"
+        >
+          /home/john/
+        </div>
         <input
           aria-labelledby="test-id"
           className="c9"
+          disabled={false}
+          id="test-id"
+          maxLength={200}
+          onChange={[Function]}
+          placeholder="TextField"
+          readOnly={false}
+          required={false}
+          type="text"
+          value=""
+        />
+        <span
+          className="c10"
+        >
+          .png
+          <span
+            className="c11"
+          >
+            0/200
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests TextField HasCount 1`] = `
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c4::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c4::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c6::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c6::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active,
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus,
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 > .c5 {
+  margin-left: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin-bottom: 8px;
+}
+
+.c7 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c7:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.c8 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
+}
+
+.c8::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c8::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10 {
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 c3"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="c4"
+          htmlFor="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="c5 c6"
+        >
+          <span>
+            <button
+              className="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        className="c7"
+      >
+        <input
+          aria-labelledby="test-id"
+          className="c8"
           disabled={false}
           id="test-id"
           maxLength={100}
@@ -881,10 +767,10 @@ exports[`Storybook Tests TextField HasCount 1`] = `
           value=""
         />
         <span
-          className="c10"
+          className="c9"
         >
           <span
-            className="c11"
+            className="c10"
           >
             0/100
           </span>
@@ -896,44 +782,6 @@ exports[`Storybook Tests TextField HasCount 1`] = `
 `;
 
 exports[`Storybook Tests TextField HasLabel 1`] = `
-.c9 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c9:disabled,
-.c9[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c9:focus {
-  outline: none;
-}
-
-.c9::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c4 {
   font-size: 14px;
   line-height: 22px;
@@ -1059,7 +907,7 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
   margin-bottom: 8px;
 }
 
-.c10 {
+.c9 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1074,17 +922,17 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
   font-size: 14px;
 }
 
-.c10:not(:disabled):not([aria-disabled]):hover,
-.c10 [aria-disabled='false']:hover {
+.c9:not(:disabled):not([aria-disabled]):hover,
+.c9 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c10:focus-within {
+.c9:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c11 {
+.c10 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1109,23 +957,23 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c11::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11::-moz-placeholder {
+.c10::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c11::placeholder {
+.c10::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c12 {
+.c11 {
   font-size: 14px;
   line-height: 22px;
   margin-top: 4px;
@@ -1167,7 +1015,7 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
         >
           <span>
             <button
-              className="c9"
+              className="charcoal-clickable"
             >
               Text Link
             </button>
@@ -1175,12 +1023,12 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
         </div>
       </div>
       <div
-        className="c10"
+        className="c9"
       >
         <input
           aria-labelledby="test-id"
           aria-required={true}
-          className="c11"
+          className="c10"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -1192,7 +1040,7 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
         />
       </div>
       <p
-        className="c12"
+        className="c11"
       >
         Assistive text
       </p>
@@ -1202,44 +1050,6 @@ exports[`Storybook Tests TextField HasLabel 1`] = `
 `;
 
 exports[`Storybook Tests TextField Number 1`] = `
-.c7 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c7:focus {
-  outline: none;
-}
-
-.c7::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c4 {
   font-size: 14px;
   line-height: 22px;
@@ -1338,7 +1148,7 @@ exports[`Storybook Tests TextField Number 1`] = `
   margin-bottom: 8px;
 }
 
-.c8 {
+.c7 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1353,17 +1163,17 @@ exports[`Storybook Tests TextField Number 1`] = `
   font-size: 14px;
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c8:focus-within {
+.c7:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c9 {
+.c8 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1388,19 +1198,19 @@ exports[`Storybook Tests TextField Number 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c9::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9::-moz-placeholder {
+.c8::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9::placeholder {
+.c8::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -1447,7 +1257,7 @@ exports[`Storybook Tests TextField Number 1`] = `
         >
           <span>
             <button
-              className="c7"
+              className="charcoal-clickable"
             >
               Text Link
             </button>
@@ -1455,11 +1265,11 @@ exports[`Storybook Tests TextField Number 1`] = `
         </div>
       </div>
       <div
-        className="c8"
+        className="c7"
       >
         <input
           aria-labelledby="test-id"
-          className="c9"
+          className="c8"
           disabled={false}
           id="test-id"
           onChange={[Function]}
@@ -1477,44 +1287,6 @@ exports[`Storybook Tests TextField Number 1`] = `
 `;
 
 exports[`Storybook Tests TextField PrefixIcon 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1599,7 +1371,7 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   margin-left: auto;
 }
 
-.c12 {
+.c11 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1625,36 +1397,36 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c11:not(:disabled):not([aria-disabled]):hover,
+.c11[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-surface4-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-surface4-press);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus {
+.c11:not(:disabled):not([aria-disabled]):focus,
+.c11[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled='false']:focus:not(:focus-visible) {
+.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c11[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c11:not(:disabled):not([aria-disabled]):focus-visible,
+.c11[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled='false']) {
+.c11:disabled,
+.c11[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1672,7 +1444,7 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   margin-bottom: 8px;
 }
 
-.c7 {
+.c6 {
   display: grid;
   grid-template-columns: auto 1fr auto;
   height: 40px;
@@ -1687,17 +1459,17 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   font-size: 14px;
 }
 
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7 [aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c7:focus-within {
+.c6:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1708,7 +1480,7 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   align-items: center;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1720,7 +1492,7 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   gap: 8px;
 }
 
-.c10 {
+.c9 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1745,23 +1517,23 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c10::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1808,7 +1580,7 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
       >
         <span>
           <button
-            className="c6"
+            className="charcoal-clickable"
           >
             Text Link
           </button>
@@ -1816,13 +1588,13 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
     >
       <div
-        className="c8"
+        className="c7"
       >
         <div
-          className="c9"
+          className="c8"
         >
           <pixiv-icon
             name="16/Search"
@@ -1831,7 +1603,7 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
       </div>
       <input
         aria-labelledby="test-id"
-        className="c10"
+        className="c9"
         disabled={false}
         id="test-id"
         onChange={[Function]}
@@ -1842,10 +1614,10 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
         value=""
       />
       <span
-        className="c11"
+        className="c10"
       >
         <button
-          className="c6 c12"
+          className="charcoal-clickable c11"
           onClick={[Function]}
         >
           <pixiv-icon
