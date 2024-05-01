@@ -212,65 +212,6 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c24 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c24:not(:disabled):not([aria-disabled]):focus,
-.c24[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c24:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c24[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c24:not(:disabled):not([aria-disabled]):focus-visible,
-.c24[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c24:disabled,
-.c24[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   margin: auto;
   position: relative;
@@ -308,7 +249,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c25 {
+.c24 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -317,13 +258,13 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s color;
 }
 
-.c25:not(:disabled):not([aria-disabled]):hover,
-.c25[aria-disabled='false']:hover {
+.c24:not(:disabled):not([aria-disabled]):hover,
+.c24[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active {
+.c24:not(:disabled):not([aria-disabled]):active,
+.c24[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -745,7 +686,10 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="c23 c24 c25"
+          className="c23 charcoal-icon-button c24"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -797,65 +741,6 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   padding: 0;
 }
 
-.c11 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c11:not(:disabled):not([aria-disabled]):hover,
-.c11[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   margin: auto;
   position: relative;
@@ -893,7 +778,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c12 {
+.c11 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -902,13 +787,13 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c11:not(:disabled):not([aria-disabled]):hover,
+.c11[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1095,7 +980,10 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="c10 c11 c12"
+          className="c10 charcoal-icon-button c11"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1320,65 +1208,6 @@ exports[`Storybook Tests Modal Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c24 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c24:not(:disabled):not([aria-disabled]):focus,
-.c24[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c24:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c24[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c24:not(:disabled):not([aria-disabled]):focus-visible,
-.c24[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c24:disabled,
-.c24[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   margin: auto;
   position: relative;
@@ -1416,7 +1245,7 @@ exports[`Storybook Tests Modal Default 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c25 {
+.c24 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1425,13 +1254,13 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s color;
 }
 
-.c25:not(:disabled):not([aria-disabled]):hover,
-.c25[aria-disabled='false']:hover {
+.c24:not(:disabled):not([aria-disabled]):hover,
+.c24[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active {
+.c24:not(:disabled):not([aria-disabled]):active,
+.c24[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1845,7 +1674,10 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="c23 c24 c25"
+          className="c23 charcoal-icon-button c24"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1981,65 +1813,6 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   margin-left: auto;
 }
 
-.c19 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   margin: auto;
   position: relative;
@@ -2077,7 +1850,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c20 {
+.c19 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -2086,13 +1859,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c20:not(:disabled):not([aria-disabled]):hover,
-.c20[aria-disabled='false']:hover {
+.c19:not(:disabled):not([aria-disabled]):hover,
+.c19[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c20:not(:disabled):not([aria-disabled]):active,
-.c20[aria-disabled='false']:active {
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -2447,7 +2220,10 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="c18 c19 c20"
+          className="c18 charcoal-icon-button c19"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
