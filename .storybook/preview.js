@@ -1,6 +1,9 @@
 import themeDecorator from './theme-decorator'
+import { DocsContainer } from './docs-container'
+
 import './global.css'
 
+/** @type  */
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z0-9].*' },
   controls: {
@@ -8,6 +11,10 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  viewMode: 'docs',
+  docs: {
+    container: DocsContainer,
   },
 }
 

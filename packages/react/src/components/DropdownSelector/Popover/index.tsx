@@ -1,5 +1,4 @@
-import { RefObject, useContext, useRef } from 'react'
-import { ReactNode } from 'react'
+import { RefObject, useContext, useRef, ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import styled from 'styled-components'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
