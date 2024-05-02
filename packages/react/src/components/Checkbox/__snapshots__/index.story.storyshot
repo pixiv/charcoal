@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Tests Checkbox Checked 1`] = `
+<div
+  data-dark={false}
+>
+  <label
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
+  >
+    <div
+      className="charcoal-checkbox-input__root"
+    >
+      <input
+        checked={true}
+        id="test-id"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <div
+        aria-hidden={true}
+        className="charcoal-checkbox-input__overlay"
+        data-checked={true}
+      >
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
+      </div>
+    </div>
+    <div
+      className="charcoal-checkbox__label_div"
+    >
+      Accelerate creativity.
+    </div>
+  </label>
+</div>
+`;
+
 exports[`Storybook Tests Checkbox Default 1`] = `
 <div
   data-dark={false}
@@ -9,7 +46,10 @@ exports[`Storybook Tests Checkbox Default 1`] = `
   >
     <input
       id="test-id"
+      onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
       type="checkbox"
     />
     <div
@@ -38,7 +78,6 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
       className="charcoal-checkbox-input__root"
     >
       <input
-        checked={false}
         disabled={true}
         id="test-id"
         onChange={[Function]}
@@ -47,7 +86,6 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
       <div
         aria-hidden={true}
         className="charcoal-checkbox-input__overlay"
-        data-checked={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -77,15 +115,14 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
     >
       <input
         aria-invalid={true}
-        checked={false}
         id="test-id"
+        name="labelled"
         onChange={[Function]}
         type="checkbox"
       />
       <div
         aria-hidden={true}
         className="charcoal-checkbox-input__overlay"
-        data-checked={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -114,7 +151,6 @@ exports[`Storybook Tests Checkbox Label 1`] = `
       className="charcoal-checkbox-input__root"
     >
       <input
-        checked={false}
         id="test-id"
         onChange={[Function]}
         type="checkbox"
@@ -122,7 +158,43 @@ exports[`Storybook Tests Checkbox Label 1`] = `
       <div
         aria-hidden={true}
         className="charcoal-checkbox-input__overlay"
-        data-checked={false}
+      >
+        <pixiv-icon
+          name="24/Check"
+          unsafe-non-guideline-scale={0.6666666666666666}
+        />
+      </div>
+    </div>
+    <div
+      className="charcoal-checkbox__label_div"
+    >
+      Accelerate creativity.
+    </div>
+  </label>
+</div>
+`;
+
+exports[`Storybook Tests Checkbox ReadOnly 1`] = `
+<div
+  data-dark={false}
+>
+  <label
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
+  >
+    <div
+      className="charcoal-checkbox-input__root"
+    >
+      <input
+        id="test-id"
+        name="labelled"
+        onChange={[Function]}
+        readOnly={true}
+        type="checkbox"
+      />
+      <div
+        aria-hidden={true}
+        className="charcoal-checkbox-input__overlay"
       >
         <pixiv-icon
           name="24/Check"

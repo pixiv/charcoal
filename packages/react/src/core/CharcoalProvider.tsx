@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 import ComponentAbstraction, { Components } from './ComponentAbstraction'
 import { TokenInjector } from '@charcoal-ui/styled'
-import { ThemeMap } from '@charcoal-ui/styled/src/TokenInjector'
+import type { ThemeMap } from '@charcoal-ui/styled/src/TokenInjector'
 import { CharcoalTheme, ThemeColor } from '@charcoal-ui/theme'
 
 import { OverlayProvider } from './OverlayProvider'
