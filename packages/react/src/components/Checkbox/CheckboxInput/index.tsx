@@ -1,7 +1,7 @@
 import './index.css'
 
 import { forwardRef, memo, useCallback } from 'react'
-import { useClassNames } from '../../_lib/useClassNames'
+import { useClassNames } from '../../../_lib/useClassNames'
 
 type CharcoalCheckboxInputProps = {
   invalid?: boolean
