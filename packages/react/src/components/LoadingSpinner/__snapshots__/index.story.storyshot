@@ -7,9 +7,90 @@ exports[`Storybook Tests LoadingSpinner Default 1`] = `
   <div
     aria-valuemax={100}
     aria-valuemin={0}
-    className="charcoal-loading-spinner basic"
+    className="charcoal-loading-spinner"
     data-transparent={false}
     id="react-aria-1"
+    role="progressbar"
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "16px",
+        "--charcoal-loading-spinner-size": "48px",
+      }
+    }
+  >
+    <div
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
+      role="presentation"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests LoadingSpinner Padding 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    aria-valuemax={100}
+    aria-valuemin={0}
+    className="charcoal-loading-spinner"
+    data-transparent={false}
+    id="react-aria-3"
+    role="progressbar"
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "24px",
+        "--charcoal-loading-spinner-size": "48px",
+      }
+    }
+  >
+    <div
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
+      role="presentation"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests LoadingSpinner Size 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    aria-valuemax={100}
+    aria-valuemin={0}
+    className="charcoal-loading-spinner"
+    data-transparent={false}
+    id="react-aria-5"
+    role="progressbar"
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "16px",
+        "--charcoal-loading-spinner-size": "128px",
+      }
+    }
+  >
+    <div
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
+      role="presentation"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests LoadingSpinner Transparent 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    aria-valuemax={100}
+    aria-valuemin={0}
+    className="charcoal-loading-spinner"
+    data-transparent={true}
+    id="react-aria-7"
     role="progressbar"
     style={
       Object {

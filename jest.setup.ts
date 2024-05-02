@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ReactPortal } from 'react'
 
 export {}
 
@@ -6,6 +6,15 @@ globalThis.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),
   unobserve: jest.fn(),
   disconnect: jest.fn(),
+}))
+
+global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+  observe() {
+    return null
+  },
+  disconnect() {
+    return null
+  },
 }))
 
 window.matchMedia = jest.fn().mockImplementation((query: string) => ({
@@ -26,7 +35,7 @@ jest.mock('@react-aria/utils', () => ({
 
 jest.mock('@react-aria/overlays', () => ({
   ...jest.requireActual('@react-aria/overlays'),
-  Overlay: jest.fn(({ children }: { children: ReactNode }) => children),
+  Overlay: jest.fn(({ children }) => children as ReactPortal),
 }))
 
 import type { OverlayTriggerProps } from 'react-stately'
