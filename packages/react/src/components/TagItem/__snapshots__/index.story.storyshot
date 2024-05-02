@@ -1,5 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Tests TagItem Active 1`] = `
+<div
+  data-dark={false}
+>
+  <a
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
+    data-pressed={false}
+    data-size="M"
+    data-state="active"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "#7ACCB1",
+      }
+    }
+  >
+    <div
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
+    >
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
+      >
+        #女の子
+      </span>
+    </div>
+    <pixiv-icon
+      name="16/Remove"
+    />
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests TagItem BGColor 1`] = `
+<div
+  data-dark={false}
+>
+  <a
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
+    data-pressed={false}
+    data-size="M"
+    data-state="default"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "var(--charcoal-brand)",
+      }
+    }
+  >
+    <div
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
+    >
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
+      >
+        女の子
+      </span>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests TagItem BGImage 1`] = `
+<div
+  data-dark={false}
+>
+  <a
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="image"
+    data-pressed={false}
+    data-size="M"
+    data-state="default"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "url(https://charcoal-web.pixiv.design/charcoal-ogp.jpg)",
+      }
+    }
+  >
+    <div
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
+    >
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
+      >
+        #女の子
+      </span>
+    </div>
+  </a>
+</div>
+`;
+
 exports[`Storybook Tests TagItem Default 1`] = `
 <div
   data-dark={false}
@@ -42,536 +171,176 @@ exports[`Storybook Tests TagItem Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem Playground 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-}
-
-.c0 > div {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1em;
-}
-
+exports[`Storybook Tests TagItem Disabled 1`] = `
 <div
   data-dark={false}
 >
-  <div>
+  <a
+    aria-disabled={true}
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
+    data-pressed={false}
+    data-size="M"
+    data-state="default"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "#7ACCB1",
+      }
+    }
+  >
     <div
-      className="c0"
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
     >
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="default"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-      <div />
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="default"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={true}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
-            >
-              girl
-            </span>
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={true}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-      <div />
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
+      >
+        #女の子
+      </span>
     </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests TagItem InActive 1`] = `
+<div
+  data-dark={false}
+>
+  <a
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
+    data-pressed={false}
+    data-size="M"
+    data-state="inactive"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "#7ACCB1",
+      }
+    }
+  >
     <div
-      className="c0"
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
     >
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="active"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-          <pixiv-icon
-            name="16/Remove"
-          />
-        </a>
-      </div>
-      <div />
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="active"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={true}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
-            >
-              girl
-            </span>
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={true}
-            >
-              #女の子
-            </span>
-          </div>
-          <pixiv-icon
-            name="16/Remove"
-          />
-        </a>
-      </div>
-      <div />
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
+      >
+        #女の子
+      </span>
     </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests TagItem Small 1`] = `
+<div
+  data-dark={false}
+>
+  <a
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
+    data-pressed={false}
+    data-size="S"
+    data-state="default"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "#7ACCB1",
+      }
+    }
+  >
     <div
-      className="c0"
+      className="charcoal-tag-item__label"
+      data-has-translate={false}
     >
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="inactive"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-      <div>
-        <a
-          aria-disabled={true}
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="inactive"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="inactive"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={true}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
-            >
-              girl
-            </span>
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={true}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-      <div>
-        <a
-          aria-disabled={true}
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="M"
-          data-state="inactive"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={true}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
-            >
-              girl
-            </span>
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={true}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={false}
+      >
+        #女の子
+      </span>
     </div>
+  </a>
+</div>
+`;
+
+exports[`Storybook Tests TagItem TranslatedLabel 1`] = `
+<div
+  data-dark={false}
+>
+  <a
+    className="charcoal-tag-item charcoal-tag-item__bg"
+    data-bg-variant="color"
+    data-pressed={false}
+    data-size="M"
+    data-state="default"
+    onClick={[Function]}
+    onDragStart={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "--charcoal-tag-item-bg": "#7ACCB1",
+      }
+    }
+  >
     <div
-      className="c0"
+      className="charcoal-tag-item__label"
+      data-has-translate={true}
     >
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="S"
-          data-state="default"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated"
+      >
+        girl
+      </span>
+      <span
+        className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+        data-has-translate={true}
+      >
+        #女の子
+      </span>
     </div>
-    <div
-      className="c0"
-    >
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="S"
-          data-state="active"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-          <pixiv-icon
-            name="16/Remove"
-          />
-        </a>
-      </div>
-    </div>
-    <div
-      className="c0"
-    >
-      <div>
-        <a
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="S"
-          data-state="inactive"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-      <div>
-        <a
-          aria-disabled={true}
-          className="charcoal-tag-item charcoal-tag-item__bg"
-          data-bg-variant="color"
-          data-pressed={false}
-          data-size="S"
-          data-state="inactive"
-          onClick={[Function]}
-          onDragStart={[Function]}
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchCancel={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={
-            Object {
-              "--charcoal-tag-item-bg": "#7ACCB1",
-            }
-          }
-        >
-          <div
-            className="charcoal-tag-item__label"
-            data-has-translate={false}
-          >
-            <span
-              className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
-              data-has-translate={false}
-            >
-              #女の子
-            </span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+  </a>
 </div>
 `;

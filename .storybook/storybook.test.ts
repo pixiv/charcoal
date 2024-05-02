@@ -31,9 +31,11 @@ const compose = (
 
 function getAllStoryFiles() {
   // Place the glob you want to match your stories files
-  const storyFiles = glob.sync(
-    path.join(__dirname, '../packages/**/*.{stories,story}.{js,jsx,mjs,ts,tsx}')
-  )
+  const globPatterns = '../packages/**/*.{stories,story}.{js,jsx,mjs,ts,tsx}'
+  const ignorePatterns = /node_modules|react-sandbox/
+  const storyFiles = glob
+    .sync(path.join(__dirname, globPatterns))
+    .filter((filePath) => !ignorePatterns.test(filePath))
 
   return storyFiles.map((filePath) => {
     const storyFile = require(filePath)

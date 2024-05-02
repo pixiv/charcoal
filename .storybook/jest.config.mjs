@@ -7,6 +7,7 @@ export default {
       '<rootDir>/../__mocks__/file.ts',
     '\\.(styl|css|less|scss)$': '<rootDir>/../__mocks__/style.ts',
     '\\.(mdx)$': '<rootDir>/../__mocks__/mdx.ts',
+    '@storybook/react-dom-shim': '@storybook/react-dom-shim/dist/react-16',
   },
   setupFilesAfterEnv: ['../jest.setup.ts', './jest.setup.ts'],
 }
