@@ -1,44 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Modal BackgroundScroll 1`] = `
-.c23 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c23:focus {
-  outline: none;
-}
-
-.c23::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c12 {
   font-size: 14px;
   line-height: 22px;
@@ -249,7 +211,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c24 {
+.c23 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -258,13 +220,13 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s color;
 }
 
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
+.c23:not(:disabled):not([aria-disabled]):hover,
+.c23[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
+.c23:not(:disabled):not([aria-disabled]):active,
+.c23[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -686,10 +648,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="c23 charcoal-icon-button c24"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
+          className="charcoal-button charcoal-icon-button c23"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -703,44 +662,6 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
 `;
 
 exports[`Storybook Tests Modal BottomSheet 1`] = `
-.c10 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c10:disabled,
-.c10[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c1 {
   margin: auto;
   position: relative;
@@ -778,7 +699,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c11 {
+.c10 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -787,13 +708,13 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c11:not(:disabled):not([aria-disabled]):hover,
-.c11[aria-disabled='false']:hover {
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active {
+.c10:not(:disabled):not([aria-disabled]):active,
+.c10[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -980,10 +901,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="c10 charcoal-icon-button c11"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
+          className="charcoal-button charcoal-icon-button c10"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -997,44 +915,6 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests Modal Default 1`] = `
-.c23 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c23:focus {
-  outline: none;
-}
-
-.c23::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c12 {
   font-size: 14px;
   line-height: 22px;
@@ -1245,7 +1125,7 @@ exports[`Storybook Tests Modal Default 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c24 {
+.c23 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1254,13 +1134,13 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s color;
 }
 
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
+.c23:not(:disabled):not([aria-disabled]):hover,
+.c23[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
+.c23:not(:disabled):not([aria-disabled]):active,
+.c23[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1674,10 +1554,7 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="c23 charcoal-icon-button c24"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
+          className="charcoal-button charcoal-icon-button c23"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1691,44 +1568,6 @@ exports[`Storybook Tests Modal Default 1`] = `
 `;
 
 exports[`Storybook Tests Modal FullBottomSheet 1`] = `
-.c18 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c18:disabled,
-.c18[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c18:focus {
-  outline: none;
-}
-
-.c18::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c12 {
   font-size: 14px;
   line-height: 22px;
@@ -1850,7 +1689,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c19 {
+.c18 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1859,13 +1698,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -2220,10 +2059,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="c18 charcoal-icon-button c19"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
+          className="charcoal-button charcoal-icon-button c18"
           onClick={[Function]}
         >
           <pixiv-icon

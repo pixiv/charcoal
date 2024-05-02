@@ -1008,44 +1008,6 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c26 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c26:disabled,
-.c26[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c26:focus {
-  outline: none;
-}
-
-.c26::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c9 {
   font-size: 14px;
   line-height: 22px;
@@ -1307,7 +1269,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c27 {
+.c26 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1316,13 +1278,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s color;
 }
 
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
+.c26:not(:disabled):not([aria-disabled]):hover,
+.c26[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
+.c26:not(:disabled):not([aria-disabled]):active,
+.c26[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1877,10 +1839,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
           </div>
         </div>
         <button
-          className="c26 charcoal-icon-button c27"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
+          className="charcoal-button charcoal-icon-button c26"
           onClick={[Function]}
         >
           <pixiv-icon
