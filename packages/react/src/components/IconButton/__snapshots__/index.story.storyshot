@@ -5,7 +5,10 @@ exports[`Storybook Tests IconButton DefaultM 1`] = `
   data-dark={false}
 >
   <button
-    className="charcoal-button charcoal-icon-button"
+    className="charcoal-icon-button"
+    data-active={false}
+    data-size="M"
+    data-variant="Default"
     title="close"
   >
     <pixiv-icon
@@ -20,7 +23,10 @@ exports[`Storybook Tests IconButton IsActive 1`] = `
   data-dark={false}
 >
   <button
-    className="charcoal-button charcoal-icon-button"
+    className="charcoal-icon-button"
+    data-active={true}
+    data-size="M"
+    data-variant="Default"
     title="close"
   >
     <pixiv-icon
@@ -35,7 +41,10 @@ exports[`Storybook Tests IconButton OverlayM 1`] = `
   data-dark={false}
 >
   <button
-    className="charcoal-button charcoal-icon-button"
+    className="charcoal-icon-button"
+    data-active={false}
+    data-size="M"
+    data-variant="Overlay"
     title="close"
   >
     <pixiv-icon

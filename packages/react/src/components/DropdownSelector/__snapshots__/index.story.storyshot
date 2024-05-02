@@ -1839,7 +1839,10 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-button charcoal-icon-button c26"
+          className="charcoal-icon-button c26"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon

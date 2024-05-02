@@ -648,7 +648,10 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-button charcoal-icon-button c23"
+          className="charcoal-icon-button c23"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -901,7 +904,10 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-button charcoal-icon-button c10"
+          className="charcoal-icon-button c10"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1554,7 +1560,10 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-button charcoal-icon-button c23"
+          className="charcoal-icon-button c23"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -2059,7 +2068,10 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-button charcoal-icon-button c18"
+          className="charcoal-icon-button c18"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon

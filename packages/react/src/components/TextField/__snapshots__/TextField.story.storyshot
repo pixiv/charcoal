@@ -1786,7 +1786,10 @@ exports[`Storybook Tests TextField PrefixIcon 1`] = `
         className="c11"
       >
         <button
-          className="charcoal-button charcoal-icon-button"
+          className="charcoal-icon-button"
+          data-active={false}
+          data-size="XS"
+          data-variant="Overlay"
           onClick={[Function]}
         >
           <pixiv-icon
