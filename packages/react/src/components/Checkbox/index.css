@@ -2,6 +2,7 @@
   position: relative;
   cursor: pointer;
   display: flex;
+  gap: 4px;
 }
 
 .charcoal-checkbox__label[aria-disabled='true'] {
@@ -17,5 +18,4 @@
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 20px;
-  margin-left: 4px;
 }
