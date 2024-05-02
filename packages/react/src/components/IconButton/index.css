@@ -1,4 +1,20 @@
 .charcoal-icon-button {
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+
   user-select: none;
   display: flex;
   align-items: center;
@@ -9,7 +25,15 @@
 
 .charcoal-icon-button:disabled,
 .charcoal-icon-button[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
+}
+.charcoal-icon-button:focus {
+  outline: none;
+}
+.charcoal-icon-button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .charcoal-icon-button[data-size='XS'] {

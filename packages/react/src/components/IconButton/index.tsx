@@ -1,6 +1,5 @@
-import React, { ForwardedRef, forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef, useMemo } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
-import Button, { ButtonProps } from '../Button'
 import type { KnownIconType } from '@charcoal-ui/icons'
 
 import './index.css'
@@ -8,15 +7,14 @@ import './index.css'
 type Variant = 'Default' | 'Overlay'
 type Size = 'XS' | 'S' | 'M'
 
-interface StyledProps {
+export type IconButtonProps<T extends React.ElementType = 'button'> = {
   readonly variant?: Variant
   readonly size?: Size
   readonly icon: keyof KnownIconType
   readonly isActive?: boolean
-}
-
-export type IconButtonProps<T extends React.ElementType = 'button'> =
-  StyledProps & ButtonProps<T>
+  as?: T
+  componentAs?: React.ComponentPropsWithRef<T>['as']
+} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
 
 const IconButton = forwardRef(function IconButtonInner<
   T extends React.ElementType
@@ -26,17 +24,20 @@ const IconButton = forwardRef(function IconButtonInner<
     size = 'M',
     icon,
     isActive = false,
+    componentAs,
+    as,
     ...rest
   }: IconButtonProps<T>,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   validateIconSize(size, icon)
-
+  const Component = useMemo(() => as ?? 'button', [as])
   const className = useClassNames('charcoal-icon-button', rest.className)
 
   return (
-    <Button
+    <Component
       {...rest}
+      as={componentAs}
       ref={ref}
       className={className}
       data-size={size}
@@ -44,7 +45,7 @@ const IconButton = forwardRef(function IconButtonInner<
       data-variant={variant}
     >
       <pixiv-icon name={icon} />
-    </Button>
+    </Component>
   )
 }) as <T extends React.ElementType = 'button'>(
   p: IconButtonProps<T>
