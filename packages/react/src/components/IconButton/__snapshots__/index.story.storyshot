@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests IconButton DefaultM 1`] = `
+exports[`Storybook Tests IconButton Default 1`] = `
 .c0 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -65,10 +65,10 @@ exports[`Storybook Tests IconButton DefaultM 1`] = `
 >
   <button
     className="charcoal-clickable c0"
-    title="close"
+    title="add"
   >
     <pixiv-icon
-      name="24/Close"
+      name="16/Add"
     />
   </button>
 </div>
@@ -133,16 +133,15 @@ exports[`Storybook Tests IconButton IsActive 1`] = `
 >
   <button
     className="charcoal-clickable c0"
-    title="close"
   >
     <pixiv-icon
-      name="24/Close"
+      name="16/Add"
     />
   </button>
 </div>
 `;
 
-exports[`Storybook Tests IconButton OverlayM 1`] = `
+exports[`Storybook Tests IconButton Overlay 1`] = `
 .c0 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -207,10 +206,9 @@ exports[`Storybook Tests IconButton OverlayM 1`] = `
 >
   <button
     className="charcoal-clickable c0"
-    title="close"
   >
     <pixiv-icon
-      name="24/Close"
+      name="16/Add"
     />
   </button>
 </div>
