@@ -122,6 +122,7 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
     htmlFor="test-id"
   >
     <input
+      checked={true}
       className="charcoal-checkbox-input"
       id="test-id"
       name="labelled"

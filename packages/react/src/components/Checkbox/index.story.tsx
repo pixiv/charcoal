@@ -50,7 +50,7 @@ export const Disabled: StoryObj<typeof Checkbox> = {
 export const ReadOnly: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
-      <Checkbox name="labelled" readOnly>
+      <Checkbox checked name="labelled" readOnly>
         Accelerate creativity.
       </Checkbox>
     )
