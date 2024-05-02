@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons",
-  "version": "4.0.0-beta.3",
+  "version": "4.0.0-beta.4",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -20,6 +20,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
+    "@storybook/react": "^8.0.5",
     "@types/dompurify": "^2.3.3",
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.38",
@@ -32,7 +33,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/icon-files": "^4.0.0-beta.3",
+    "@charcoal-ui/icon-files": "^4.0.0-beta.4",
     "dompurify": "^2.3.6",
     "warning": "^4.0.3"
   },

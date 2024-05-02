@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests IconButton DefaultM 1`] = `
+exports[`Storybook Tests IconButton Default 1`] = `
 <div
   data-dark={false}
 >
@@ -9,10 +9,10 @@ exports[`Storybook Tests IconButton DefaultM 1`] = `
     data-active={false}
     data-size="M"
     data-variant="Default"
-    title="close"
+    title="add"
   >
     <pixiv-icon
-      name="24/Close"
+      name="16/Add"
     />
   </button>
 </div>
@@ -27,16 +27,15 @@ exports[`Storybook Tests IconButton IsActive 1`] = `
     data-active={true}
     data-size="M"
     data-variant="Default"
-    title="close"
   >
     <pixiv-icon
-      name="24/Close"
+      name="16/Add"
     />
   </button>
 </div>
 `;
 
-exports[`Storybook Tests IconButton OverlayM 1`] = `
+exports[`Storybook Tests IconButton Overlay 1`] = `
 <div
   data-dark={false}
 >
@@ -45,10 +44,9 @@ exports[`Storybook Tests IconButton OverlayM 1`] = `
     data-active={false}
     data-size="M"
     data-variant="Overlay"
-    title="close"
   >
     <pixiv-icon
-      name="24/Close"
+      name="16/Add"
     />
   </button>
 </div>

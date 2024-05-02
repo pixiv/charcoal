@@ -1,5 +1,5 @@
 import path from 'path'
-import glob from 'glob'
+import * as glob from 'glob'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { render } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'

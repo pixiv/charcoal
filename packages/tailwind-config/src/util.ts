@@ -1,4 +1,4 @@
-import { TailwindConfig } from 'tailwindcss/tailwind-config'
+import type { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { TailwindVersion, ThemeMap } from './types'
 
 /**
