@@ -1,7 +1,6 @@
 import '@charcoal-ui/icons'
-import IconButton from '.'
+import IconButton, { IconButtonProps } from '.'
 import { Meta, StoryObj } from '@storybook/react'
-import { useRef } from 'react'
 
 export default {
   title: 'IconButton',
