@@ -4,26 +4,12 @@ exports[`Storybook Tests React/Internal/CheckboxInput Checked 1`] = `
 <div
   data-dark={false}
 >
-  <div
-    className="charcoal-checkbox-input__root"
-  >
-    <input
-      checked={true}
-      className="charcoal-checkbox-input__input"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <div
-      aria-hidden={true}
-      className="charcoal-checkbox-input__overlay"
-      data-checked={true}
-    >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
-      />
-    </div>
-  </div>
+  <input
+    checked={true}
+    className="charcoal-checkbox-input"
+    onChange={[Function]}
+    type="checkbox"
+  />
 </div>
 `;
 
@@ -31,24 +17,11 @@ exports[`Storybook Tests React/Internal/CheckboxInput Default 1`] = `
 <div
   data-dark={false}
 >
-  <div
-    className="charcoal-checkbox-input__root"
-  >
-    <input
-      className="charcoal-checkbox-input__input"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <div
-      aria-hidden={true}
-      className="charcoal-checkbox-input__overlay"
-    >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
-      />
-    </div>
-  </div>
+  <input
+    className="charcoal-checkbox-input"
+    onChange={[Function]}
+    type="checkbox"
+  />
 </div>
 `;
 
@@ -56,27 +29,13 @@ exports[`Storybook Tests React/Internal/CheckboxInput Disabled 1`] = `
 <div
   data-dark={false}
 >
-  <div
-    className="charcoal-checkbox-input__root"
-  >
-    <input
-      checked={false}
-      className="charcoal-checkbox-input__input"
-      disabled={true}
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <div
-      aria-hidden={true}
-      className="charcoal-checkbox-input__overlay"
-      data-checked={false}
-    >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
-      />
-    </div>
-  </div>
+  <input
+    checked={false}
+    className="charcoal-checkbox-input"
+    disabled={true}
+    onChange={[Function]}
+    type="checkbox"
+  />
 </div>
 `;
 
@@ -84,26 +43,12 @@ exports[`Storybook Tests React/Internal/CheckboxInput Invalid 1`] = `
 <div
   data-dark={false}
 >
-  <div
-    className="charcoal-checkbox-input__root"
-  >
-    <input
-      aria-invalid={true}
-      checked={false}
-      className="charcoal-checkbox-input__input"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <div
-      aria-hidden={true}
-      className="charcoal-checkbox-input__overlay"
-      data-checked={false}
-    >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
-      />
-    </div>
-  </div>
+  <input
+    aria-invalid={true}
+    checked={false}
+    className="charcoal-checkbox-input"
+    onChange={[Function]}
+    type="checkbox"
+  />
 </div>
 `;
