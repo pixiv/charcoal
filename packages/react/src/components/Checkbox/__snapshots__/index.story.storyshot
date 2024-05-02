@@ -13,6 +13,7 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
     >
       <input
         checked={true}
+        className="charcoal-checkbox-input__input"
         id="test-id"
         onChange={[Function]}
         type="checkbox"
@@ -45,6 +46,7 @@ exports[`Storybook Tests Checkbox Default 1`] = `
     className="charcoal-checkbox-input__root"
   >
     <input
+      className="charcoal-checkbox-input__input"
       id="test-id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -78,6 +80,7 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
       className="charcoal-checkbox-input__root"
     >
       <input
+        className="charcoal-checkbox-input__input"
         disabled={true}
         id="test-id"
         onChange={[Function]}
@@ -115,6 +118,7 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
     >
       <input
         aria-invalid={true}
+        className="charcoal-checkbox-input__input"
         id="test-id"
         name="labelled"
         onChange={[Function]}
@@ -151,6 +155,7 @@ exports[`Storybook Tests Checkbox Label 1`] = `
       className="charcoal-checkbox-input__root"
     >
       <input
+        className="charcoal-checkbox-input__input"
         id="test-id"
         onChange={[Function]}
         type="checkbox"
@@ -186,6 +191,7 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
       className="charcoal-checkbox-input__root"
     >
       <input
+        className="charcoal-checkbox-input__input"
         id="test-id"
         name="labelled"
         onChange={[Function]}

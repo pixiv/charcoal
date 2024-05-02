@@ -15,7 +15,10 @@ export type CheckboxInputProps = CharcoalCheckboxInputProps &
   Omit<InputProps, keyof CharcoalCheckboxInputProps | 'ref'>
 
 const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
-  function CheckboxInput({ onChange, checked, invalid, ...props }, ref) {
+  function CheckboxInput(
+    { onChange, checked, invalid, className, ...props },
+    ref
+  ) {
     const handleChange = useCallback(
       (e: React.ChangeEvent<HTMLInputElement>) => {
         const el = e.currentTarget
@@ -24,10 +27,7 @@ const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
       [onChange]
     )
 
-    const classNames = useClassNames(
-      'charcoal-checkbox-input__root',
-      props.className
-    )
+    const classNames = useClassNames('charcoal-checkbox-input__root', className)
 
     return (
       <div className={classNames}>
