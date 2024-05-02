@@ -1,7 +1,7 @@
-import { forwardRef } from 'react'
-import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
-import type { KnownIconType } from '@charcoal-ui/icons'
+import React, { ForwardedRef, forwardRef } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
+import Button, { ButtonProps } from '../Button'
+import type { KnownIconType } from '@charcoal-ui/icons'
 
 import './index.css'
 
@@ -15,37 +15,40 @@ interface StyledProps {
   readonly isActive?: boolean
 }
 
-export type IconButtonProps = StyledProps & ClickableProps
+export type IconButtonProps<T extends React.ElementType = 'button'> =
+  StyledProps & ButtonProps<T>
 
-const IconButton = forwardRef<ClickableElement, IconButtonProps>(
-  function IconButtonInner(
-    {
-      variant = 'Default',
-      size = 'M',
-      icon,
-      isActive = false,
-      ...rest
-    }: IconButtonProps,
-    ref
-  ) {
-    validateIconSize(size, icon)
+const IconButton = forwardRef(function IconButtonInner<
+  T extends React.ElementType
+>(
+  {
+    variant = 'Default',
+    size = 'M',
+    icon,
+    isActive = false,
+    ...rest
+  }: IconButtonProps<T>,
+  ref: ForwardedRef<HTMLButtonElement>
+) {
+  validateIconSize(size, icon)
 
-    const className = useClassNames('charcoal-icon-button', rest.className)
+  const className = useClassNames('charcoal-icon-button', rest.className)
 
-    return (
-      <Clickable
-        {...rest}
-        ref={ref}
-        className={className}
-        data-size={size}
-        data-active={isActive}
-        data-variant={variant}
-      >
-        <pixiv-icon name={icon} />
-      </Clickable>
-    )
-  }
-)
+  return (
+    <Button
+      {...rest}
+      ref={ref}
+      className={className}
+      data-size={size}
+      data-active={isActive}
+      data-variant={variant}
+    >
+      <pixiv-icon name={icon} />
+    </Button>
+  )
+}) as <T extends React.ElementType = 'button'>(
+  p: IconButtonProps<T>
+) => JSX.Element
 
 export default IconButton
 

@@ -1,7 +1,7 @@
 import '@charcoal-ui/icons'
-import IconButton from '.'
-import type { KnownIconType } from '@charcoal-ui/icons'
+import IconButton, { IconButtonProps } from '.'
 import { Meta, StoryObj } from '@storybook/react'
+import { useRef } from 'react'
 
 export default {
   title: 'IconButton',
@@ -25,16 +25,18 @@ export default {
       },
     },
   },
-  render: (props) => {
+  render: function Render(props) {
     const { size } = props
-    const icon: keyof KnownIconType = {
+    const icon = {
       XS: '16/Remove' as const,
       S: '24/Close' as const,
       M: '24/Close' as const,
     }[size ?? 'M']
-    return <IconButton title="close" {...props} icon={icon} />
+    const ref = useRef<HTMLAnchorElement>(null)
+
+    return <IconButton title="close" {...props} icon={icon} ref={ref} />
   },
-} as Meta<typeof IconButton>
+} as Meta<IconButtonProps<'button'>>
 
 export const DefaultM: StoryObj<typeof IconButton> = {
   args: {
