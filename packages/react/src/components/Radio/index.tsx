@@ -65,15 +65,16 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
 
 export default memo(Radio)
 
-export type RadioGroupProps = React.PropsWithChildren<{
-  className?: string
-  value?: string
-  name: string
-  onChange(next: string): void
-  disabled?: boolean
-  readonly?: boolean
-  invalid?: boolean
-}>
+export type RadioGroupProps<Value extends string = string> =
+  React.PropsWithChildren<{
+    className?: string
+    value?: Value
+    name: string
+    onChange(next: Value): void
+    disabled?: boolean
+    readonly?: boolean
+    invalid?: boolean
+  }>
 
 interface RadioGroupContext {
   name: string
@@ -97,7 +98,7 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
   },
 })
 
-export function RadioGroup({
+export function RadioGroup<Value extends string = string>({
   value,
   name,
   onChange,
@@ -106,12 +107,12 @@ export function RadioGroup({
   invalid,
   children,
   ...props
-}: RadioGroupProps) {
+}: RadioGroupProps<Value>) {
   const className = useClassNames('charcoal-radio-group', props.className)
 
   const handleChange = useCallback(
     (next: string) => {
-      onChange(next)
+      onChange(next as Value)
     },
     [onChange]
   )

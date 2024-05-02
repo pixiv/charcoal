@@ -7,10 +7,6 @@ import { useState } from 'react'
 export default {
   title: 'Radio',
   component: Radio,
-  args: {
-    name: 'name',
-    label: 'label',
-  },
   parameters: {
     layout: 'centered',
   },
@@ -21,14 +17,21 @@ const LayoutDiv = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => px(theme.spacing[24])};
 `
+const options = ['1', '2', '3'] as const
+type Option = (typeof options)[number]
 
-export const Basic: StoryObj<typeof Radio> = {
-  render: function Render() {
-    const options = ['1', '2', '3']
-    const [value, setValue] = useState(options[0])
+export const Default: StoryObj<typeof Radio> = {
+  render: function Render(args) {
+    const [value, setValue] = useState<Option>(options[0])
+
     return (
       <LayoutDiv>
-        <RadioGroup name={'name'} value={value} onChange={setValue}>
+        <RadioGroup<Option>
+          name={'name'}
+          {...args}
+          value={value}
+          onChange={setValue}
+        >
           {options.map((option) => (
             <Radio key={option} value={option}>
               Value {option}
@@ -42,11 +45,16 @@ export const Basic: StoryObj<typeof Radio> = {
 
 export const Disabled: StoryObj<typeof Radio> = {
   render: function Render() {
-    const options = ['1', '2', '3']
-    const [value, setValue] = useState(options[0])
+    const [value, setValue] = useState<Option>(options[0])
+
     return (
       <LayoutDiv>
-        <RadioGroup name={'name'} value={value} onChange={setValue} disabled>
+        <RadioGroup<Option>
+          name={'name'}
+          value={value}
+          onChange={setValue}
+          disabled
+        >
           {options.map((option) => (
             <Radio key={option} value={option} disabled>
               Value {option}
@@ -60,11 +68,11 @@ export const Disabled: StoryObj<typeof Radio> = {
 
 export const PartialDisabled: StoryObj<typeof Radio> = {
   render: function Render() {
-    const options = ['1', '2', '3']
-    const [value, setValue] = useState(options[0])
+    const [value, setValue] = useState<Option>(options[0])
+
     return (
       <LayoutDiv>
-        <RadioGroup name={'name'} value={value} onChange={setValue}>
+        <RadioGroup<Option> name={'name'} value={value} onChange={setValue}>
           {options.map((option) => (
             <Radio key={option} value={option} disabled={option === '2'}>
               Value {option}
@@ -78,11 +86,16 @@ export const PartialDisabled: StoryObj<typeof Radio> = {
 
 export const Readonly: StoryObj<typeof Radio> = {
   render: function Render() {
-    const options = ['1', '2', '3']
-    const [value, setValue] = useState(options[0])
+    const [value, setValue] = useState<Option>(options[0])
+
     return (
       <LayoutDiv>
-        <RadioGroup name={'name'} value={value} onChange={setValue} readonly>
+        <RadioGroup<Option>
+          name={'name'}
+          value={value}
+          onChange={setValue}
+          readonly
+        >
           {options.map((option) => (
             <Radio key={option} value={option}>
               Value {option}
@@ -96,11 +109,16 @@ export const Readonly: StoryObj<typeof Radio> = {
 
 export const Invalid: StoryObj<typeof Radio> = {
   render: function Render() {
-    const options = ['1', '2', '3']
-    const [value, setValue] = useState(options[0])
+    const [value, setValue] = useState<Option>(options[0])
+
     return (
       <LayoutDiv>
-        <RadioGroup name={'name'} value={value} onChange={setValue} invalid>
+        <RadioGroup<Option>
+          name={'name'}
+          value={value}
+          onChange={setValue}
+          invalid
+        >
           {options.map((option) => (
             <Radio key={option} value={option}>
               Value {option}
