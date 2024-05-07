@@ -1,29 +1,34 @@
 import Checkbox from '.'
 import { Meta, StoryObj } from '@storybook/react'
 import { useCallback, useState } from 'react'
-import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<typeof Checkbox>
 
 export const Default: StoryObj<typeof Checkbox> = {
+  argTypes: {
+    checked: { type: 'boolean' },
+    children: { type: 'string' },
+    disabled: { type: 'boolean' },
+    invalid: { type: 'boolean' },
+    readOnly: { type: 'boolean' },
+  },
   render: function Render(props) {
     const [checked, setChecked] = useState(props.checked)
     const handleChange = useCallback((isSelected: boolean) => {
       setChecked(isSelected)
-      action('change')(isSelected)
     }, [])
 
     return (
       <Checkbox
         {...props}
         checked={checked ?? props.checked}
-        onBlur={action('blur')}
-        onClick={action('click')}
         onChange={handleChange}
-        onFocus={action('focus')}
       />
     )
   },
@@ -31,19 +36,19 @@ export const Default: StoryObj<typeof Checkbox> = {
 
 export const Label: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox>Accelerate creativity.</Checkbox>
+    return <Checkbox>Checkbox</Checkbox>
   },
 }
 
 export const Checked: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox checked>Accelerate creativity.</Checkbox>
+    return <Checkbox checked>Checked</Checkbox>
   },
 }
 
 export const Disabled: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox disabled>Accelerate creativity.</Checkbox>
+    return <Checkbox disabled>Disabled</Checkbox>
   },
 }
 
@@ -51,7 +56,7 @@ export const ReadOnly: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
       <Checkbox checked name="labelled" readOnly>
-        Accelerate creativity.
+        ReadOnly
       </Checkbox>
     )
   },
@@ -61,7 +66,7 @@ export const Invalid: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
       <Checkbox name="labelled" invalid>
-        Accelerate creativity.
+        Invalid
       </Checkbox>
     )
   },

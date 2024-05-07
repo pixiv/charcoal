@@ -18,7 +18,7 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
     <div
       className="charcoal-checkbox__label_div"
     >
-      Accelerate creativity.
+      Checked
     </div>
   </label>
 </div>
@@ -31,10 +31,7 @@ exports[`Storybook Tests Checkbox Default 1`] = `
   <input
     className="charcoal-checkbox-input"
     id="test-id"
-    onBlur={[Function]}
     onChange={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
     type="checkbox"
   />
 </div>
@@ -59,7 +56,7 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
     <div
       className="charcoal-checkbox__label_div"
     >
-      Accelerate creativity.
+      Disabled
     </div>
   </label>
 </div>
@@ -84,7 +81,7 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
     <div
       className="charcoal-checkbox__label_div"
     >
-      Accelerate creativity.
+      Invalid
     </div>
   </label>
 </div>
@@ -107,7 +104,7 @@ exports[`Storybook Tests Checkbox Label 1`] = `
     <div
       className="charcoal-checkbox__label_div"
     >
-      Accelerate creativity.
+      Checkbox
     </div>
   </label>
 </div>
@@ -133,7 +130,7 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
     <div
       className="charcoal-checkbox__label_div"
     >
-      Accelerate creativity.
+      ReadOnly
     </div>
   </label>
 </div>
