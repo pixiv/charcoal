@@ -88,7 +88,7 @@ const InputRoot = styled.label`
   cursor: pointer;
 
   gap: 4px;
-  &:has(input[readonly]){
+  &:has(input[readonly]) {
     cursor: default;
   }
   &:disabled,
