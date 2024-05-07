@@ -11,6 +11,10 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
   gap: 4px;
 }
 
+.c0:has(input[readonly]) {
+  cursor: default;
+}
+
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
@@ -39,12 +43,9 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
   cursor: default;
 }
 
-.c2[type='checkbox']:-moz-read-only {
+.c2[type='checkbox'][readonly] {
   cursor: default;
-}
-
-.c2[type='checkbox']:read-only {
-  cursor: default;
+  opacity: 0.32;
 }
 
 .c2[type='checkbox']:checked {
@@ -110,6 +111,12 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
   color: var(--charcoal-text5);
 }
 
+.c4 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
+}
+
 <div
   data-dark={false}
 >
@@ -121,11 +128,10 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
       className="c1"
     >
       <input
-        aria-label="同意する"
         checked={true}
         className="c2"
         disabled={false}
-        name="labelled"
+        name="checked"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -152,6 +158,11 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
         />
       </div>
     </div>
+    <div
+      className="c4"
+    >
+      Checked
+    </div>
   </label>
 </div>
 `;
@@ -165,6 +176,10 @@ exports[`Storybook Tests Checkbox Default 1`] = `
   display: flex;
   cursor: pointer;
   gap: 4px;
+}
+
+.c0:has(input[readonly]) {
+  cursor: default;
 }
 
 .c0:disabled,
@@ -195,12 +210,9 @@ exports[`Storybook Tests Checkbox Default 1`] = `
   cursor: default;
 }
 
-.c2[type='checkbox']:-moz-read-only {
+.c2[type='checkbox'][readonly] {
   cursor: default;
-}
-
-.c2[type='checkbox']:read-only {
-  cursor: default;
+  opacity: 0.32;
 }
 
 .c2[type='checkbox']:checked {
@@ -282,12 +294,10 @@ exports[`Storybook Tests Checkbox Default 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="labelled"
-        onBlur={[Function]}
+        name="default"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
-        onFocus={[Function]}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onMouseDown={[Function]}
@@ -326,6 +336,10 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
   gap: 4px;
 }
 
+.c0:has(input[readonly]) {
+  cursor: default;
+}
+
 .c0:disabled,
 .c0[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
@@ -354,12 +368,9 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
   cursor: default;
 }
 
-.c2[type='checkbox']:-moz-read-only {
+.c2[type='checkbox'][readonly] {
   cursor: default;
-}
-
-.c2[type='checkbox']:read-only {
-  cursor: default;
+  opacity: 0.32;
 }
 
 .c2[type='checkbox']:checked {
@@ -426,6 +437,12 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
   visibility: hidden;
 }
 
+.c4 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
+}
+
 <div
   data-dark={false}
 >
@@ -437,11 +454,10 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
       className="c1"
     >
       <input
-        aria-label="同意する"
         checked={false}
         className="c2"
         disabled={true}
-        name="labelled"
+        name="disabled"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -468,6 +484,11 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
         />
       </div>
     </div>
+    <div
+      className="c4"
+    >
+      Disabled
+    </div>
   </label>
 </div>
 `;
@@ -481,6 +502,10 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
   display: flex;
   cursor: pointer;
   gap: 4px;
+}
+
+.c0:has(input[readonly]) {
+  cursor: default;
 }
 
 .c0:disabled,
@@ -511,12 +536,9 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
   cursor: default;
 }
 
-.c2[type='checkbox']:-moz-read-only {
+.c2[type='checkbox'][readonly] {
   cursor: default;
-}
-
-.c2[type='checkbox']:read-only {
-  cursor: default;
+  opacity: 0.32;
 }
 
 .c2[type='checkbox']:checked {
@@ -604,7 +626,7 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="labelled"
+        name="invalid"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -634,7 +656,7 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
     <div
       className="c4"
     >
-      同意する
+      Invalid
     </div>
   </label>
 </div>
@@ -649,6 +671,10 @@ exports[`Storybook Tests Checkbox Label 1`] = `
   display: flex;
   cursor: pointer;
   gap: 4px;
+}
+
+.c0:has(input[readonly]) {
+  cursor: default;
 }
 
 .c0:disabled,
@@ -679,12 +705,9 @@ exports[`Storybook Tests Checkbox Label 1`] = `
   cursor: default;
 }
 
-.c2[type='checkbox']:-moz-read-only {
+.c2[type='checkbox'][readonly] {
   cursor: default;
-}
-
-.c2[type='checkbox']:read-only {
-  cursor: default;
+  opacity: 0.32;
 }
 
 .c2[type='checkbox']:checked {
@@ -757,13 +780,6 @@ exports[`Storybook Tests Checkbox Label 1`] = `
   line-height: 20px;
 }
 
-.c5 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 <div
   data-dark={false}
 >
@@ -778,7 +794,7 @@ exports[`Storybook Tests Checkbox Label 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="labelled"
+        name="checkbox"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -808,11 +824,7 @@ exports[`Storybook Tests Checkbox Label 1`] = `
     <div
       className="c4"
     >
-      <span
-        className="c5"
-      >
-        同意する
-      </span>
+      Checkbox
     </div>
   </label>
 </div>
@@ -827,6 +839,10 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
   display: flex;
   cursor: pointer;
   gap: 4px;
+}
+
+.c0:has(input[readonly]) {
+  cursor: default;
 }
 
 .c0:disabled,
@@ -857,12 +873,9 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
   cursor: default;
 }
 
-.c2[type='checkbox']:-moz-read-only {
+.c2[type='checkbox'][readonly] {
   cursor: default;
-}
-
-.c2[type='checkbox']:read-only {
-  cursor: default;
+  opacity: 0.32;
 }
 
 .c2[type='checkbox']:checked {
@@ -926,26 +939,30 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
   width: 24px;
   height: 24px;
   color: var(--charcoal-text5);
-  visibility: hidden;
+}
+
+.c4 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
 }
 
 <div
   data-dark={false}
 >
   <label
-    aria-disabled={true}
+    aria-disabled={false}
     className="c0"
   >
     <div
       className="c1"
     >
       <input
-        aria-label="同意する"
         aria-readonly={true}
-        checked={false}
+        checked={true}
         className="c2"
         disabled={false}
-        name="labelled"
+        name="readonly"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -964,7 +981,7 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
       />
       <div
         aria-hidden={true}
-        checked={false}
+        checked={true}
         className="c3"
       >
         <pixiv-icon
@@ -972,6 +989,11 @@ exports[`Storybook Tests Checkbox ReadOnly 1`] = `
           unsafe-non-guideline-scale={0.6666666666666666}
         />
       </div>
+    </div>
+    <div
+      className="c4"
+    >
+      ReadOnly
     </div>
   </label>
 </div>

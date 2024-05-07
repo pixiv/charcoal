@@ -54,7 +54,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const objectRef = useObjectRef(ref)
 
     const { inputProps } = useCheckbox(ariaCheckboxProps, state, objectRef)
-    const isDisabled = (props.disabled ?? false) || (props.readonly ?? false)
+    const isDisabled = props.disabled ?? false
 
     return (
       <InputRoot aria-disabled={isDisabled} className={props.className}>
@@ -88,6 +88,9 @@ const InputRoot = styled.label`
   cursor: pointer;
 
   gap: 4px;
+  &:has(input[readonly]) {
+    cursor: default;
+  }
   &:disabled,
   &[aria-disabled]:not([aria-disabled='false']) {
     cursor: default;
@@ -113,8 +116,9 @@ const CheckboxInput = styled.input`
     &:disabled {
       cursor: default;
     }
-    &:read-only {
+    &[readonly] {
       cursor: default;
+      opacity: 0.32;
     }
 
     &:checked {

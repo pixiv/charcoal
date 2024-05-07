@@ -1,36 +1,36 @@
-import { action } from '@storybook/addon-actions'
 import Checkbox from '.'
 import { Meta, StoryObj } from '@storybook/react'
 import { useCallback, useState } from 'react'
-import styled from 'styled-components'
 
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<typeof Checkbox>
 
-const InnerText = styled.span`
-  user-select: none;
-`
-
 export const Default: StoryObj<typeof Checkbox> = {
-  render: (props) => {
+  argTypes: {
+    checked: { type: 'boolean' },
+    children: { type: 'string' },
+    disabled: { type: 'boolean' },
+    invalid: { type: 'boolean' },
+    readonly: { type: 'boolean' },
+  },
+  render: function Render(props) {
     const [checked, setChecked] = useState(props.checked)
     const handleChange = useCallback((isSelected: boolean) => {
       setChecked(isSelected)
-      action('change')(isSelected)
     }, [])
 
     return (
       <Checkbox
         {...props}
-        checked={checked ?? props.checked}
-        name="labelled"
+        checked={props.checked ?? checked}
+        name="default"
         label="label"
-        onBlur={action('blur')}
-        onClick={action('click')}
         onChange={handleChange}
-        onFocus={action('focus')}
       />
     )
   },
@@ -38,37 +38,45 @@ export const Default: StoryObj<typeof Checkbox> = {
 
 export const Label: StoryObj<typeof Checkbox> = {
   render: () => {
-    return (
-      <Checkbox name="labelled">
-        <InnerText>同意する</InnerText>
-      </Checkbox>
-    )
+    return <Checkbox name="checkbox">Checkbox</Checkbox>
   },
 }
 
 export const Checked: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox name="labelled" label="同意する" checked />
+    return (
+      <Checkbox name="checked" checked>
+        Checked
+      </Checkbox>
+    )
   },
 }
 
 export const Disabled: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox name="labelled" label="同意する" disabled />
+    return (
+      <Checkbox name="disabled" disabled>
+        Disabled
+      </Checkbox>
+    )
   },
 }
 
 export const ReadOnly: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox name="labelled" label="同意する" readonly />
+    return (
+      <Checkbox checked name="readonly" readonly>
+        ReadOnly
+      </Checkbox>
+    )
   },
 }
 
 export const Invalid: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
-      <Checkbox name="labelled" invalid>
-        同意する
+      <Checkbox name="invalid" invalid>
+        Invalid
       </Checkbox>
     )
   },
