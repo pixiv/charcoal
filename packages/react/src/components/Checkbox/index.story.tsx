@@ -18,7 +18,7 @@ export const Default: StoryObj<typeof Checkbox> = {
     invalid: { type: 'boolean' },
     readonly: { type: 'boolean' },
   },
-  render: (props) => {
+  render: function Render(props) {
     const [checked, setChecked] = useState(props.checked)
     const handleChange = useCallback((isSelected: boolean) => {
       setChecked(isSelected)
