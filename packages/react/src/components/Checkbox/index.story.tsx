@@ -11,6 +11,13 @@ export default {
 } as Meta<typeof Checkbox>
 
 export const Default: StoryObj<typeof Checkbox> = {
+  argTypes: {
+    checked: { type: 'boolean' },
+    children: { type: 'string' },
+    disabled: { type: 'boolean' },
+    invalid: { type: 'boolean' },
+    readonly: { type: 'boolean' },
+  },
   render: (props) => {
     const [checked, setChecked] = useState(props.checked)
     const handleChange = useCallback((isSelected: boolean) => {
@@ -20,7 +27,7 @@ export const Default: StoryObj<typeof Checkbox> = {
     return (
       <Checkbox
         {...props}
-        checked={checked ?? props.checked}
+        checked={props.checked ?? checked}
         name="default"
         label="label"
         onChange={handleChange}
@@ -58,7 +65,7 @@ export const Disabled: StoryObj<typeof Checkbox> = {
 export const ReadOnly: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
-      <Checkbox name="readonly" readonly>
+      <Checkbox checked name="readonly" readonly>
         ReadOnly
       </Checkbox>
     )
