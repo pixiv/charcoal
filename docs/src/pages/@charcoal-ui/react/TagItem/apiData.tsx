@@ -32,11 +32,6 @@ export const apiData: Omit<
     description: 'タグの状態',
     type: '"default" | "active" | "inactive"',
   },
-  target: {
-    default: '',
-    description: 'a要素のtarget',
-    type: 'boolean',
-  },
   translatedLabel: {
     default: '',
     description:
