@@ -4,7 +4,7 @@ import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Omit<
   ApiTableData<CheckboxProps, HTMLInputElement>,
-  keyof ComponentPropsWithRef<'input'>
+  keyof React.HTMLProps<HTMLInputElement>
 > = {
   invalid: {
     description: '入力の不正化',

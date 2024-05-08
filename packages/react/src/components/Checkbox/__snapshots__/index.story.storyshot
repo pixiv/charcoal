@@ -1,28 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Checkbox Default 1`] = `
+exports[`Storybook Tests Checkbox Checked 1`] = `
 <div
   data-dark={false}
 >
-  <div
-    className="charcoal-checkbox-input__root"
+  <label
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
   >
     <input
-      className="charcoal-checkbox-input__input"
+      checked={true}
+      className="charcoal-checkbox-input"
       id="test-id"
       onChange={[Function]}
       type="checkbox"
     />
     <div
-      aria-hidden={true}
-      className="charcoal-checkbox-input__overlay"
+      className="charcoal-checkbox__label_div"
     >
-      <pixiv-icon
-        name="24/Check"
-        unsafe-non-guideline-scale={0.6666666666666666}
-      />
+      Checked
     </div>
-  </div>
+  </label>
+</div>
+`;
+
+exports[`Storybook Tests Checkbox Default 1`] = `
+<div
+  data-dark={false}
+>
+  <input
+    className="charcoal-checkbox-input"
+    id="test-id"
+    onChange={[Function]}
+    type="checkbox"
+  />
 </div>
 `;
 
@@ -35,32 +46,17 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
     className="charcoal-checkbox__label"
     htmlFor="test-id"
   >
+    <input
+      className="charcoal-checkbox-input"
+      disabled={true}
+      id="test-id"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="charcoal-checkbox-input__root"
+      className="charcoal-checkbox__label_div"
     >
-      <input
-        checked={false}
-        className="charcoal-checkbox-input__input"
-        disabled={true}
-        id="test-id"
-        onChange={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        className="charcoal-checkbox-input__overlay"
-        data-checked={false}
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="charcoal-checkbox__text"
-    >
-      Accelerate creativity.
+      Disabled
     </div>
   </label>
 </div>
@@ -74,32 +70,18 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
     className="charcoal-checkbox__label"
     htmlFor="test-id"
   >
+    <input
+      aria-invalid={true}
+      className="charcoal-checkbox-input"
+      id="test-id"
+      name="labelled"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="charcoal-checkbox-input__root"
+      className="charcoal-checkbox__label_div"
     >
-      <input
-        aria-invalid={true}
-        checked={false}
-        className="charcoal-checkbox-input__input"
-        id="test-id"
-        onChange={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        className="charcoal-checkbox-input__overlay"
-        data-checked={false}
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="charcoal-checkbox__text"
-    >
-      Accelerate creativity.
+      Invalid
     </div>
   </label>
 </div>
@@ -113,31 +95,42 @@ exports[`Storybook Tests Checkbox Label 1`] = `
     className="charcoal-checkbox__label"
     htmlFor="test-id"
   >
+    <input
+      className="charcoal-checkbox-input"
+      id="test-id"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="charcoal-checkbox-input__root"
+      className="charcoal-checkbox__label_div"
     >
-      <input
-        checked={false}
-        className="charcoal-checkbox-input__input"
-        id="test-id"
-        onChange={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        className="charcoal-checkbox-input__overlay"
-        data-checked={false}
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
+      Checkbox
     </div>
+  </label>
+</div>
+`;
+
+exports[`Storybook Tests Checkbox ReadOnly 1`] = `
+<div
+  data-dark={false}
+>
+  <label
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
+  >
+    <input
+      checked={true}
+      className="charcoal-checkbox-input"
+      id="test-id"
+      name="labelled"
+      onChange={[Function]}
+      readOnly={true}
+      type="checkbox"
+    />
     <div
-      className="charcoal-checkbox__text"
+      className="charcoal-checkbox__label_div"
     >
-      Accelerate creativity.
+      ReadOnly
     </div>
   </label>
 </div>
