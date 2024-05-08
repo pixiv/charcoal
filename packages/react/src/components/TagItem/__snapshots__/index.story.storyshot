@@ -4,23 +4,11 @@ exports[`Storybook Tests TagItem Active 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="M"
     data-state="active"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "#7ACCB1",
@@ -41,7 +29,7 @@ exports[`Storybook Tests TagItem Active 1`] = `
     <pixiv-icon
       name="16/Remove"
     />
-  </a>
+  </button>
 </div>
 `;
 
@@ -49,23 +37,11 @@ exports[`Storybook Tests TagItem BGColor 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="M"
     data-state="default"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "var(--charcoal-brand)",
@@ -83,7 +59,7 @@ exports[`Storybook Tests TagItem BGColor 1`] = `
         女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;
 
@@ -91,23 +67,11 @@ exports[`Storybook Tests TagItem BGImage 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="image"
-    data-pressed={false}
     data-size="M"
     data-state="default"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "url(https://charcoal-web.pixiv.design/charcoal-ogp.jpg)",
@@ -125,7 +89,7 @@ exports[`Storybook Tests TagItem BGImage 1`] = `
         #女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;
 
@@ -133,23 +97,11 @@ exports[`Storybook Tests TagItem Default 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="M"
     data-state="default"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "#7ACCB1",
@@ -167,7 +119,7 @@ exports[`Storybook Tests TagItem Default 1`] = `
         #女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;
 
@@ -175,24 +127,12 @@ exports[`Storybook Tests TagItem Disabled 1`] = `
 <div
   data-dark={false}
 >
-  <a
-    aria-disabled={true}
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="M"
     data-state="default"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
+    disabled={true}
     style={
       Object {
         "--charcoal-tag-item-bg": "#7ACCB1",
@@ -210,7 +150,7 @@ exports[`Storybook Tests TagItem Disabled 1`] = `
         #女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;
 
@@ -218,23 +158,11 @@ exports[`Storybook Tests TagItem InActive 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="M"
     data-state="inactive"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "#7ACCB1",
@@ -252,7 +180,7 @@ exports[`Storybook Tests TagItem InActive 1`] = `
         #女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;
 
@@ -260,23 +188,11 @@ exports[`Storybook Tests TagItem Small 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="S"
     data-state="default"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "#7ACCB1",
@@ -294,7 +210,7 @@ exports[`Storybook Tests TagItem Small 1`] = `
         #女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;
 
@@ -302,23 +218,11 @@ exports[`Storybook Tests TagItem TranslatedLabel 1`] = `
 <div
   data-dark={false}
 >
-  <a
+  <button
     className="charcoal-tag-item charcoal-tag-item__bg"
     data-bg-variant="color"
-    data-pressed={false}
     data-size="M"
     data-state="default"
-    onClick={[Function]}
-    onDragStart={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
         "--charcoal-tag-item-bg": "#7ACCB1",
@@ -341,6 +245,6 @@ exports[`Storybook Tests TagItem TranslatedLabel 1`] = `
         #女の子
       </span>
     </div>
-  </a>
+  </button>
 </div>
 `;

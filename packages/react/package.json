@@ -64,7 +64,6 @@
     "@react-aria/checkbox": "^3.13.0",
     "@react-aria/dialog": "^3.5.10",
     "@react-aria/focus": "^3.16.0",
-    "@react-aria/link": "^3.6.5",
     "@react-aria/overlays": "^3.20.0",
     "@react-aria/radio": "^3.10.0",
     "@react-aria/ssr": "^3.9.1",

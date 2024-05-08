@@ -7,6 +7,10 @@
   isolation: isolate;
   position: relative;
 
+  appearance: none;
+  outline: none;
+  border-style: none;
+
   display: inline-flex;
   gap: 8px;
   align-items: center;
@@ -46,21 +50,24 @@
   --charcoal-tag-item-padding-right: 8px;
 }
 
+.charcoal-tag-item:disabled,
 .charcoal-tag-item[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
 }
-.charcoal-tag-item:not([aria-disabled]):focus-visible,
+.charcoal-tag-item:not(:disabled):not([aria-disabled]):focus-visible,
 .charcoal-tag-item[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
-.charcoal-tag-item:not([aria-disabled]):focus,
+.charcoal-tag-item:not(:disabled):not([aria-disabled]):focus,
 .charcoal-tag-item[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
-.charcoal-tag-item:not([aria-disabled]):focus:not(:focus-visible),
+.charcoal-tag-item:not(:disabled):not([aria-disabled]):focus:not(
+    :focus-visible
+  ),
 .charcoal-tag-item[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
