@@ -1,7 +1,11 @@
 import { TagItemProps } from '@charcoal-ui/react'
+import { ComponentPropsWithRef } from 'react'
 import { ApiTableData } from '../_components/ApiTable'
 
-export const apiData: Partial<ApiTableData<TagItemProps, HTMLInputElement>> = {
+export const apiData: Omit<
+  ApiTableData<TagItemProps<'button'>, HTMLButtonElement>,
+  keyof Omit<ComponentPropsWithRef<'button'>, 'disabled'>
+> = {
   bgColor: {
     default: '',
     description: '背景色、CSSで扱える文字列',
@@ -12,21 +16,11 @@ export const apiData: Partial<ApiTableData<TagItemProps, HTMLInputElement>> = {
     description: '背景画像のURL',
     type: 'string',
   },
-  href: {
-    default: '',
-    description: 'a要素のhref',
-    type: 'string',
-  },
   label: {
     default: '',
     description: '表示するテキスト',
     required: true,
     type: 'string',
-  },
-  rel: {
-    default: '',
-    description: 'a要素のrel',
-    type: 'boolean',
   },
   size: {
     default: '"M"',
