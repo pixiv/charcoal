@@ -6,6 +6,11 @@ export const apiData: Omit<
   ApiTableData<TagItemProps<'button'>, HTMLButtonElement>,
   keyof Omit<ComponentPropsWithRef<'button'>, 'disabled'>
 > = {
+  as: {
+    description: 'コンポーネントのルートノードとして描画する要素',
+    type: "T extends React.ElementType = 'button'",
+    default: 'button',
+  },
   bgColor: {
     default: '',
     description: '背景色、CSSで扱える文字列',
@@ -42,5 +47,9 @@ export const apiData: Omit<
     default: '',
     description: '無効化',
     type: 'boolean',
+  },
+  componentAs: {
+    description: 'as で指定したコンポーネントの as プロパティ',
+    type: 'React.ElementType',
   },
 }
