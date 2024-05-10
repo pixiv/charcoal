@@ -1,0 +1,44 @@
+import { Meta, Story } from '@storybook/addon-docs'
+
+<Meta title="styled/README" />
+
+# Install
+
+## yarn
+
+```
+yarn add @charcoal-ui/styled
+```
+
+# Usage
+
+```tsx
+import { FC, ReactNode } from 'react'
+import { light, dark } from '@charcoal-ui/theme'
+import {
+  TokenInjector,
+  useTheme,
+  useThemeSetter,
+  themeSelector,
+  prefersColorScheme,
+} from '@charcoal-ui/styled'
+
+const ExampleProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const [theme] = useTheme()
+  useThemeSetter()
+  return (
+    <ThemeProvider theme={theme === 'dark' ? dark : light}>
+      <TokenInjector
+        theme={{
+          ':root': light,
+          [themeSelector('light')]: light,
+          [themeSelector('dark')]: dark,
+          [prefersColorScheme('dark')]: dark,
+        }}
+        background="background1"
+      />
+      {children}
+    </ThemeProvider>
+  )
+}
+```
