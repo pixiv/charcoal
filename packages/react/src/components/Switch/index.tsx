@@ -16,6 +16,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   const input = (
     <SwitchInput
       {...props}
+      disabled={disabled}
       className={noChildren ? className : undefined}
       id={htmlId}
       onChange={onChange}

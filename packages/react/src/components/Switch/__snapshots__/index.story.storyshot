@@ -50,6 +50,7 @@ exports[`Storybook Tests Switch Disabled 1`] = `
       <input
         checked={false}
         className="charcoal-switch-input"
+        disabled={true}
         id="test-id"
         name="disabled"
         onChange={[Function]}

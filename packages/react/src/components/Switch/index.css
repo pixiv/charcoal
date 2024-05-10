@@ -4,16 +4,20 @@
   align-items: center;
   cursor: pointer;
   outline: 0;
+  gap: 4px;
 }
 
-.charcoal-switch__label:disabled {
+.charcoal-switch__label[aria-disabled='true'] {
   opacity: 0.32;
   cursor: default;
+}
+
+.charcoal-switch__label[aria-disabled='true'] > input {
+  opacity: 1;
 }
 
 .charcoal-switch__label_div {
   font-size: 14px;
   line-height: 22px;
   color: var(--charcoal-text2);
-  margin-left: 4px;
 }

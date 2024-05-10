@@ -17,12 +17,10 @@
   background-color: var(--charcoal-text4);
 }
 
-.charcoal-switch-input:hover {
-  background-color: var(--charcoal-text4-hover);
-}
-
-.charcoal-switch-input:active {
-  background-color: var(--charcoal-text4-press);
+.charcoal-switch-input:disabled,
+.charcoal-switch-input[readonly] {
+  opacity: 0.32;
+  cursor: default;
 }
 
 .charcoal-switch-input::after {
@@ -39,27 +37,35 @@
   background-color: var(--charcoal-text5);
 }
 
-.charcoal-switch-input::after:hover {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.charcoal-switch-input::after:active {
-  background-color: var(--charcoal-text5-press);
+.charcoal-switch-input:checked::after {
+  transform: translateX(12px);
+  transition: transform 0.2s;
 }
 
 .charcoal-switch-input:checked {
   background-color: var(--charcoal-brand);
 }
 
-.charcoal-switch-input:checked:hover {
+.charcoal-switch-input:not(:disabled):hover {
+  background-color: var(--charcoal-text4-hover);
+}
+
+.charcoal-switch-input:not(:disabled):active {
+  background-color: var(--charcoal-text4-press);
+}
+
+.charcoal-switch-input:not(:disabled)::after:hover {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.charcoal-switch-input:not(:disabled)::after:active {
+  background-color: var(--charcoal-text5-press);
+}
+
+.charcoal-switch-input:not(:disabled):checked:hover {
   background-color: var(--charcoal-brand-hover);
 }
 
-.charcoal-switch-input:checked:active {
+.charcoal-switch-input:not(:disabled):checked:active {
   background-color: var(--charcoal-brand-press);
-}
-
-.charcoal-switch-input:checked::after {
-  transform: translateX(12px);
-  transition: transform 0.2s;
 }
