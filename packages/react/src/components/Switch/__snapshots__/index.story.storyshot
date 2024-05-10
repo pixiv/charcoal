@@ -1,24 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Switch Basic 1`] = `
-<div
-  data-dark={false}
->
-  <div>
-    <input
-      checked={false}
-      className="charcoal-switch-input"
-      id="test-id"
-      label="label"
-      name="name"
-      onChange={[Function]}
-      role="switch"
-      type="checkbox"
-    />
-  </div>
-</div>
-`;
-
 exports[`Storybook Tests Switch Checked 1`] = `
 <div
   data-dark={false}
@@ -28,7 +9,25 @@ exports[`Storybook Tests Switch Checked 1`] = `
       checked={true}
       className="charcoal-switch-input"
       id="test-id"
-      label="label"
+      label="checked"
+      name="name"
+      onChange={[Function]}
+      role="switch"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Switch Default 1`] = `
+<div
+  data-dark={false}
+>
+  <div>
+    <input
+      checked={false}
+      className="charcoal-switch-input"
+      id="test-id"
       name="name"
       onChange={[Function]}
       role="switch"
@@ -52,8 +51,7 @@ exports[`Storybook Tests Switch Disabled 1`] = `
         checked={false}
         className="charcoal-switch-input"
         id="test-id"
-        label="label"
-        name="name"
+        name="disabled"
         onChange={[Function]}
         role="switch"
         type="checkbox"
@@ -68,7 +66,7 @@ exports[`Storybook Tests Switch Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Switch Labelled 1`] = `
+exports[`Storybook Tests Switch Label 1`] = `
 <div
   data-dark={false}
 >
@@ -81,8 +79,7 @@ exports[`Storybook Tests Switch Labelled 1`] = `
         checked={false}
         className="charcoal-switch-input"
         id="test-id"
-        label="label"
-        name="name"
+        name="label"
         onChange={[Function]}
         role="switch"
         type="checkbox"

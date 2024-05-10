@@ -1,83 +1,94 @@
 import styled from 'styled-components'
 import Clickable from '../Clickable'
 import TextField from '.'
-import { px } from '@charcoal-ui/utils'
-import IconButton from '../IconButton'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
   title: 'TextField',
   component: TextField,
-  argTypes: {},
+  parameters: {
+    layout: 'centered',
+  },
+} as Meta<typeof TextField>
+
+export const Default: StoryObj<typeof TextField> = {
   args: {
     showLabel: false,
     assistiveText: '',
     disabled: false,
     required: false,
     invalid: false,
+    readOnly: false,
     label: 'Label',
     requiredText: '*必須',
     subLabel: <Clickable>Text Link</Clickable>,
     placeholder: 'TextField',
   },
-  render: function Render(args) {
+  render(args) {
+    return <TextField {...args} />
+  },
+}
+
+export const Label: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField showLabel label="Label" />
+  },
+}
+
+export const Placeholder: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" placeholder="Placeholder" />
+  },
+}
+
+export const RequiredText: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" showLabel required requiredText="*必須" />
+  },
+}
+
+export const AssistiveText: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" assistiveText="説明が入ります" />
+  },
+}
+
+export const SubLabel: StoryObj<typeof TextField> = {
+  render() {
     return (
-      <Container>
-        <TextField {...args} />
-      </Container>
+      <TextField label="Label" subLabel={<Clickable>Text Link</Clickable>} />
     )
   },
-} as Meta<typeof TextField>
+}
 
-const Container = styled.div`
-  display: grid;
-  gap: ${({ theme }) => px(theme.spacing[24])};
-`
-
-export const Default = {}
-
-export const Number: StoryObj<typeof TextField> = {
-  render: function Render(args) {
-    const [count, setCount] = useState(0)
-    return (
-      <Container>
-        <TextField
-          {...args}
-          type="number"
-          value={count.toString()}
-          onChange={(value) => setCount(parseInt(value))}
-          onWheel={(e) => {
-            e.currentTarget.blur()
-            e.stopPropagation()
-          }}
-        />
-      </Container>
-    )
+export const ShowCount = {
+  render() {
+    return <TextField label="Label" showCount maxLength={100} />
   },
 }
 
-export const HasLabel = {
-  args: {
-    showLabel: true,
-    assistiveText: 'Assistive text',
-    required: true,
+export const Disabled: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" disabled />
   },
 }
 
-export const HasCount = {
-  args: {
-    showCount: true,
-    maxLength: 100,
+export const Invalid: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" invalid assistiveText="エラーメッセージ" />
   },
 }
 
-export const HasAffix: StoryObj<typeof TextField> = {
-  args: {
-    showCount: true,
-    maxLength: 200,
-    prefix: '/home/john/',
-    suffix: '.png',
+export const ReadOnly: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" readOnly value="読み取り専用" />
+  },
+}
+
+export const Affix: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" prefix="/home/john/" suffix=".png" />
   },
 }
 
@@ -87,35 +98,34 @@ const PrefixIconWrap = styled.div`
   color: ${({ theme }) => theme.color.text3};
 `
 
-export const PrefixIcon: StoryObj<typeof TextField> = {
-  render: function Render(args) {
-    const [value, setValue] = useState('')
-    const handleChange = useCallback((value: string) => {
-      setValue(value)
-    }, [])
-    const handleClear = useCallback(() => {
-      setValue('')
-    }, [])
+export const Prefix: StoryObj<typeof TextField> = {
+  render() {
     return (
       <TextField
-        {...args}
         label="Label"
-        placeholder="作品を検索"
-        value={value}
-        onChange={handleChange}
         prefix={
           <PrefixIconWrap>
             <pixiv-icon name="16/Search" />
           </PrefixIconWrap>
         }
-        suffix={
-          <IconButton
-            variant="Overlay"
-            icon={'16/Remove'}
-            size="XS"
-            onClick={handleClear}
-          />
-        }
+      />
+    )
+  },
+}
+
+export const Number: StoryObj<typeof TextField> = {
+  render: function Render(args) {
+    const [count, setCount] = useState(0)
+    return (
+      <TextField
+        {...args}
+        type="number"
+        value={count.toString()}
+        onChange={(value) => setCount(parseInt(value))}
+        onWheel={(e) => {
+          e.currentTarget.blur()
+          e.stopPropagation()
+        }}
       />
     )
   },

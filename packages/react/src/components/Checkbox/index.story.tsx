@@ -1,51 +1,72 @@
 import Checkbox from '.'
 import { Meta, StoryObj } from '@storybook/react'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<typeof Checkbox>
 
 export const Default: StoryObj<typeof Checkbox> = {
-  render: function Render(args) {
-    return <Checkbox {...args} />
-  },
   argTypes: {
-    children: {
-      type: 'string',
-    },
+    checked: { type: 'boolean' },
+    children: { type: 'string' },
+    disabled: { type: 'boolean' },
+    invalid: { type: 'boolean' },
+    readOnly: { type: 'boolean' },
   },
-}
+  render: function Render(props) {
+    const [checked, setChecked] = useState(props.checked)
+    const handleChange = useCallback((isSelected: boolean) => {
+      setChecked(isSelected)
+    }, [])
 
-export const Label: StoryObj<typeof Checkbox> = {
-  render: function Render() {
-    const [checked, setChecked] = useState(false)
     return (
-      <Checkbox checked={checked} onChange={setChecked}>
-        Accelerate creativity.
-      </Checkbox>
+      <Checkbox
+        {...props}
+        checked={checked ?? props.checked}
+        onChange={handleChange}
+      />
     )
   },
 }
 
+export const Label: StoryObj<typeof Checkbox> = {
+  render: () => {
+    return <Checkbox>Checkbox</Checkbox>
+  },
+}
+
+export const Checked: StoryObj<typeof Checkbox> = {
+  render: () => {
+    return <Checkbox checked>Checked</Checkbox>
+  },
+}
+
 export const Disabled: StoryObj<typeof Checkbox> = {
-  render: function Render() {
-    const [checked, setChecked] = useState(false)
+  render: () => {
+    return <Checkbox disabled>Disabled</Checkbox>
+  },
+}
+
+export const ReadOnly: StoryObj<typeof Checkbox> = {
+  render: () => {
     return (
-      <Checkbox checked={checked} onChange={setChecked} disabled>
-        Accelerate creativity.
+      <Checkbox checked name="labelled" readOnly>
+        ReadOnly
       </Checkbox>
     )
   },
 }
 
 export const Invalid: StoryObj<typeof Checkbox> = {
-  render: function Render() {
-    const [checked, setChecked] = useState(false)
+  render: () => {
     return (
-      <Checkbox checked={checked} onChange={setChecked} invalid>
-        Accelerate creativity.
+      <Checkbox name="labelled" invalid>
+        Invalid
       </Checkbox>
     )
   },

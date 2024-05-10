@@ -6,6 +6,7 @@ import { px } from '@charcoal-ui/utils'
 
 import { MultiSelectGroupContext } from './context'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
+import Icon from '../Icon'
 
 export type MultiSelectProps = React.PropsWithChildren<{
   value: string
@@ -76,7 +77,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
           invalid={invalid}
           aria-hidden={true}
         >
-          <pixiv-icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
+          <Icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
         </MultiSelectInputOverlay>
         {Boolean(children) && <MultiSelectLabel>{children}</MultiSelectLabel>}
       </MultiSelectRoot>

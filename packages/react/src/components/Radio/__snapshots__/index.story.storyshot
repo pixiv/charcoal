@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Radio Basic 1`] = `
+exports[`Storybook Tests Radio Default 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests React/Internal/CheckboxInput Checked 1`] = `
+<div
+  data-dark={false}
+>
+  <input
+    checked={true}
+    className="charcoal-checkbox-input"
+    onChange={[Function]}
+    type="checkbox"
+  />
+</div>
+`;
+
+exports[`Storybook Tests React/Internal/CheckboxInput Default 1`] = `
+<div
+  data-dark={false}
+>
+  <input
+    className="charcoal-checkbox-input"
+    onChange={[Function]}
+    type="checkbox"
+  />
+</div>
+`;
+
+exports[`Storybook Tests React/Internal/CheckboxInput Disabled 1`] = `
+<div
+  data-dark={false}
+>
+  <input
+    checked={false}
+    className="charcoal-checkbox-input"
+    disabled={true}
+    onChange={[Function]}
+    type="checkbox"
+  />
+</div>
+`;
+
+exports[`Storybook Tests React/Internal/CheckboxInput Invalid 1`] = `
+<div
+  data-dark={false}
+>
+  <input
+    aria-invalid={true}
+    checked={false}
+    className="charcoal-checkbox-input"
+    onChange={[Function]}
+    type="checkbox"
+  />
+</div>
+`;
