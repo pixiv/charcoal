@@ -1,14 +1,12 @@
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 import { Switch, SwitchProps } from '@charcoal-ui/react'
 import { sections } from './sections'
-import { apiData } from './apiData'
 import { PreviewDivColumn, PreviewMeta } from '../_components/Previews'
 import { SSRHighlight } from '../../../../components/SSRHighlight'
 import { ExampleSwitch } from './ExampleSwitch'
 import { getSrcFile } from '../_utils/getSrcFile'
 import { NextPage } from 'next'
 import { ContentRoot } from '../../../../components/ContentRoot'
-import { ApiTable } from '../_components/ApiTable'
 import { PreviewsList } from '../_components/PreviewsList'
 
 function Preview(meta: PreviewMeta<SwitchProps>, i: number, j: number) {
@@ -42,9 +40,6 @@ const SwitchPage: NextPage<{ src: string }> = (props) => {
       </PreviewDivColumn>
 
       <PreviewsList renderer={Preview} sections={sections} />
-
-      <h2>Props</h2>
-      <ApiTable data={apiData} />
     </ContentRoot>
   )
 }
