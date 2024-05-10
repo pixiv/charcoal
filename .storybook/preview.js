@@ -12,6 +12,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      order: ['DOCS'],
+    },
+  },
   viewMode: 'docs',
   docs: {
     container: DocsContainer,
