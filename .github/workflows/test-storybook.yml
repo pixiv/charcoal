@@ -71,15 +71,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: prepare-base-branch
     steps:
-      - name: Checkout base branch
+      - name: Checkout branch
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.base.ref }}
-          fetch-depth: 0
-      - name: Check commit hash
-        id: commit-hash
-        run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
