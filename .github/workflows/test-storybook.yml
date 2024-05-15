@@ -6,16 +6,20 @@ on:
       - main
       - v4.0.0
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  prepare-main-branch:
-    name: Prepare main branch image snapshots
+  prepare-base-branch:
+    name: Prepare base branch image snapshots
     timeout-minutes: 20
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout base branch
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event.pull_request.base.ref }}
           fetch-depth: 0
       - name: Check commit hash
         id: commit-hash
@@ -26,7 +30,7 @@ jobs:
         with:
           path: __image_snapshots__
           key: image-snapshots-${{ steps.commit-hash.outputs.hash }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         with:
           node-version-file: '.node-version'
@@ -41,7 +45,7 @@ jobs:
           path: |
             /home/runner/.cache/ms-playwright/
           key: ${{ runner.os }}-playwright-runner
-      - name: Install Playwgith
+      - name: Install Playwright
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: yarn playwright install --with-deps
       - name: Build Storybook
@@ -55,28 +59,28 @@ jobs:
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook --updateSnapshot"
-      - name: Upload main branch snapshots
+      - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
         with:
-          name: main__image-snapshots__
+          name: base__image-snapshots__
           path: __image_snapshots__/
 
   test-storybook:
     name: Build Storybook
     timeout-minutes: 20
     runs-on: ubuntu-latest
-    needs: prepare-main-branch
+    needs: prepare-base-branch
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v3
+      - name: Checkout base branch
+        uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event.pull_request.base.ref }}
           fetch-depth: 0
       - name: Check commit hash
         id: commit-hash
         run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
           cache: yarn
@@ -88,7 +92,7 @@ jobs:
           path: |
             /home/runner/.cache/ms-playwright/
           key: ${{ runner.os }}-playwright-runner
-      - name: Install Playwgith
+      - name: Install Playwright
         run: yarn playwright install --with-deps
       - name: Build Storybook
         run: |
@@ -118,11 +122,11 @@ jobs:
 
             console.log(`Not fount "${process.env.SNAPSHOT_UPDATE_LABEL}" label. Compare with image snapshots of main branch.`)
             return 'false'
-      - name: Load main branch image snapshots
+      - name: Load base branch image snapshots
         uses: actions/download-artifact@v4
         if: steps.label-checking.outputs.result != 'true'
         with:
-          name: main__image-snapshots__
+          name: base__image-snapshots__
           path: __image_snapshots__/
       - name: Serve Storybook and run tests
         if: steps.label-checking.outputs.result != 'true'
