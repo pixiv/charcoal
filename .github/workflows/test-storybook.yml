@@ -1,7 +1,7 @@
 name: test-storybook
 on:
   pull_request:
-    types: [labeled, unlabeled, opened, edited, synchronize]
+    types: [labeled, unlabeled, opened, synchronize, reopened]
     branches:
       - main
       - v4.0.0
