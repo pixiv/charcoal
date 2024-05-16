@@ -25,7 +25,7 @@ exports[`Storybook Tests Radio Default 1`] = `
     >
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -38,7 +38,7 @@ exports[`Storybook Tests Radio Default 1`] = `
           value="1"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -46,7 +46,7 @@ exports[`Storybook Tests Radio Default 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -59,7 +59,7 @@ exports[`Storybook Tests Radio Default 1`] = `
           value="2"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -67,7 +67,7 @@ exports[`Storybook Tests Radio Default 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -80,7 +80,7 @@ exports[`Storybook Tests Radio Default 1`] = `
           value="3"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -116,7 +116,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
     >
       <label
         aria-disabled={true}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -129,7 +129,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
           value="1"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -137,7 +137,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -150,7 +150,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
           value="2"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -158,7 +158,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -171,7 +171,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
           value="3"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -208,7 +208,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
     >
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={true}
@@ -221,7 +221,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
           value="1"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -229,7 +229,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={true}
@@ -242,7 +242,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
           value="2"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -250,7 +250,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={true}
@@ -263,7 +263,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
           value="3"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -299,7 +299,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
     >
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -312,7 +312,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
           value="1"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -320,7 +320,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -333,7 +333,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
           value="2"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -341,7 +341,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -354,7 +354,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
           value="3"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -390,7 +390,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
     >
       <label
         aria-disabled={false}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -403,7 +403,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
           value="1"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -411,7 +411,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -424,7 +424,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
           value="2"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -432,7 +432,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="charcoal-radio"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
@@ -445,7 +445,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
           value="3"
         />
         <div
-          className="charcoal-radio__label"
+          className="charcoal-radio__label_div"
         >
           Value 
           3

@@ -24,7 +24,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
     onChange,
   } = useContext(RadioGroupContext)
 
-  const className = useClassNames('charcoal-radio', props.className)
+  const className = useClassNames('charcoal-radio__label', props.className)
 
   warning(
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -57,7 +57,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
         ref={ref}
       />
       {children != null && (
-        <div className="charcoal-radio__label">{children}</div>
+        <div className="charcoal-radio__label_div">{children}</div>
       )}
     </label>
   )

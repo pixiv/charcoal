@@ -1,4 +1,4 @@
-.charcoal-radio {
+.charcoal-radio__label {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 4px;
@@ -84,20 +84,20 @@
   background-color: var(--charcoal-text5-press);
 }
 
-.charcoal-radio__label {
+.charcoal-radio__label_div {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text2);
 }
-.charcoal-radio__label::before {
+.charcoal-radio__label_div::before {
   display: block;
   width: 0;
   height: 0;
   content: '';
   margin-top: -4px;
 }
-.charcoal-radio__label::after {
+.charcoal-radio__label_div::after {
   display: block;
   width: 0;
   height: 0;
