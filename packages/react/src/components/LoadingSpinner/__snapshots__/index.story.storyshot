@@ -5,11 +5,8 @@ exports[`Storybook Tests LoadingSpinner Default 1`] = `
   data-dark={false}
 >
   <div
-    aria-valuemax={100}
-    aria-valuemin={0}
     className="charcoal-loading-spinner"
     data-transparent={false}
-    id="react-aria-1"
     role="progressbar"
     style={
       Object {
@@ -32,11 +29,8 @@ exports[`Storybook Tests LoadingSpinner Padding 1`] = `
   data-dark={false}
 >
   <div
-    aria-valuemax={100}
-    aria-valuemin={0}
     className="charcoal-loading-spinner"
     data-transparent={false}
-    id="react-aria-3"
     role="progressbar"
     style={
       Object {
@@ -59,11 +53,8 @@ exports[`Storybook Tests LoadingSpinner Size 1`] = `
   data-dark={false}
 >
   <div
-    aria-valuemax={100}
-    aria-valuemin={0}
     className="charcoal-loading-spinner"
     data-transparent={false}
-    id="react-aria-5"
     role="progressbar"
     style={
       Object {
@@ -86,11 +77,8 @@ exports[`Storybook Tests LoadingSpinner Transparent 1`] = `
   data-dark={false}
 >
   <div
-    aria-valuemax={100}
-    aria-valuemin={0}
     className="charcoal-loading-spinner"
     data-transparent={true}
-    id="react-aria-7"
     role="progressbar"
     style={
       Object {
