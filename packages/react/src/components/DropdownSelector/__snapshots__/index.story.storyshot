@@ -1784,21 +1784,18 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 className="c20"
               >
                 <input
+                  aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  aria-required={true}
                   className="c21"
-                  disabled={false}
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
-                  readOnly={false}
-                  required={false}
                   type="text"
-                  value=""
                 />
               </div>
               <p
                 className="c22"
+                id="test-id"
               >
                 assistiveText
               </p>
@@ -1811,7 +1808,6 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
               >
                 <label
                   className="c9"
-                  htmlFor="test-id"
                   id="test-id"
                 >
                   TextArea
@@ -1832,21 +1828,18 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 rows={4}
               >
                 <textarea
+                  aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  aria-required={true}
                   className="c25"
-                  disabled={false}
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
-                  readOnly={false}
-                  required={false}
                   rows={4}
-                  value=""
                 />
               </div>
               <p
                 className="c22"
+                id="test-id"
               >
                 assistiveText
               </p>

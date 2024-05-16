@@ -1,71 +1,55 @@
-import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
-import { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
 import { AssistiveText, TextFieldLabel } from '../TextField'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
-import { mergeProps } from '@react-aria/utils'
+import { useId } from '@react-aria/utils'
 
-type DOMProps = Omit<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  // react-ariaのhookは、onChangeが`(v: string) => void`想定
-  | 'onChange'
-  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
-  | keyof ReactAreaUseTextFieldCompat
->
+export type TextAreaProps = {
+  value?: string
+  onChange?: (value: string) => void
 
-export interface TextAreaProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
-    DOMProps,
-    ReactAreaUseTextFieldCompat {
-  readonly autoHeight?: boolean
-  readonly rows?: number
+  showCount?: boolean
+  showLabel?: boolean
+  assistiveText?: string
+  invalid?: boolean
 
-  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
-  readonly defaultValue?: string
-  readonly value?: string
-  readonly onChange?: (value: string) => void
+  label?: string
+  requiredText?: string
+  disabled?: boolean
+  subLabel?: React.ReactNode
+  autoHeight?: boolean
 
-  // react-ariaの型定義のせいでHTMLTextAreaElementにできない
-  readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
-  readonly onFocus?: (event: React.FocusEvent<Element>) => void
-  readonly onBlur?: (event: React.FocusEvent<Element>) => void
-
-  readonly showCount?: boolean
-  readonly showLabel?: boolean
-  readonly assistiveText?: string
-  readonly invalid?: boolean
-}
+  getCount?: (value: string) => number
+} & Omit<React.ComponentPropsWithoutRef<'textarea'>, 'onChange'>
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  function TextAreaInner({ onChange, ...props }, forwardRef) {
-    const {
+  function TextAreaInner(
+    {
+      onChange,
       className,
+      value,
       showCount = false,
       showLabel = false,
-      label,
+      label = '',
       requiredText,
       subLabel,
       disabled = false,
       required,
-      invalid = false,
-      readOnly = false,
       assistiveText,
       maxLength,
       autoHeight = false,
       rows: initialRows = 4,
-      ...restProps
-    } = props
-
+      getCount = countCodePointsInString,
+      ...props
+    },
+    forwardRef
+  ) {
     const { visuallyHiddenProps } = useVisuallyHidden()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
-    const ariaRef = useRef<HTMLTextAreaElement>(null)
-    const [count, setCount] = useState(
-      countCodePointsInString(props.value ?? '')
-    )
+    const textAreaRef = useRef<HTMLTextAreaElement>(null)
+    const [count, setCount] = useState(getCount(value ?? ''))
     const [rows, setRows] = useState(initialRows)
 
     const syncHeight = useCallback(
@@ -76,10 +60,11 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       [initialRows]
     )
 
-    const nonControlled = props.value === undefined
+    const nonControlled = value === undefined
     const handleChange = useCallback(
-      (value: string) => {
-        const count = countCodePointsInString(value)
+      (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const value = e.target.value
+        const count = getCount(value)
         if (maxLength !== undefined && count > maxLength) {
           return
         }
@@ -91,32 +76,12 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         }
         onChange?.(value)
       },
-      [autoHeight, maxLength, nonControlled, onChange, syncHeight]
+      [autoHeight, getCount, maxLength, nonControlled, onChange, syncHeight]
     )
 
     useEffect(() => {
-      setCount(countCodePointsInString(props.value ?? ''))
-    }, [props.value])
-
-    const {
-      inputProps: ariaInputProps,
-      labelProps,
-      descriptionProps,
-      errorMessageProps,
-    } = useTextField(
-      {
-        inputElementType: 'textarea',
-        isDisabled: disabled,
-        isRequired: required,
-        isReadOnly: readOnly,
-        validationState: invalid ? 'invalid' : 'valid',
-        description: !invalid && assistiveText,
-        errorMessage: invalid && assistiveText,
-        onChange: handleChange,
-        ...props,
-      },
-      ariaRef
-    )
+      setCount(getCount(value ?? ''))
+    }, [getCount, value])
 
     useEffect(() => {
       if (autoHeight && textareaRef.current !== null) {
@@ -126,31 +91,44 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
     const containerRef = useRef(null)
 
-    useFocusWithClick(containerRef, ariaRef)
+    useFocusWithClick(containerRef, textAreaRef)
 
-    const inputProps = mergeProps(restProps, ariaInputProps)
+    const textAreaId = useId(props.id)
+    const describedbyId = useId()
+    const labelledbyId = useId()
+
+    const showAssistiveText =
+      assistiveText != null && assistiveText.length !== 0
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
         <TextFieldLabel
+          htmlFor={textAreaId}
+          id={labelledbyId}
           label={label}
-          requiredText={requiredText}
           required={required}
+          requiredText={requiredText}
           subLabel={subLabel}
-          {...labelProps}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
         <StyledTextareaContainer
-          ref={containerRef}
-          invalid={invalid}
-          rows={showCount ? rows + 1 : rows}
           aria-disabled={disabled === true ? 'true' : undefined}
+          invalid={props.invalid === true}
+          ref={containerRef}
+          rows={showCount ? rows + 1 : rows}
         >
           <StyledTextarea
-            ref={mergeRefs(textareaRef, forwardRef, ariaRef)}
-            rows={rows}
+            aria-describedby={describedbyId}
+            aria-invalid={props.invalid}
+            aria-labelledby={labelledbyId}
+            id={textAreaId}
+            maxLength={maxLength}
             noBottomPadding={showCount}
-            {...inputProps}
+            onChange={handleChange}
+            ref={mergeRefs(forwardRef, textAreaRef)}
+            rows={rows}
+            value={value}
+            {...props}
           />
           {showCount && (
             <MultiLineCounter>
@@ -158,11 +136,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             </MultiLineCounter>
           )}
         </StyledTextareaContainer>
-        {assistiveText != null && assistiveText.length !== 0 && (
-          <AssistiveText
-            invalid={invalid}
-            {...(invalid ? errorMessageProps : descriptionProps)}
-          >
+        {showAssistiveText && (
+          <AssistiveText invalid={props.invalid === true} id={describedbyId}>
             {assistiveText}
           </AssistiveText>
         )}

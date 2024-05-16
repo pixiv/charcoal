@@ -1,143 +1,122 @@
-import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
-import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
+import FieldLabel from '../FieldLabel'
+import { countCodePointsInString } from '../../_lib'
 import { useFocusWithClick } from './useFocusWithClick'
-import { mergeProps } from '@react-aria/utils'
+import { mergeRefs, useId } from '@react-aria/utils'
 
-type DOMProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  // react-ariaのhookは、onChangeが`(v: string) => void`想定
-  | 'onChange'
+export type TextFieldProps = {
+  prefix?: ReactNode
+  suffix?: ReactNode
 
-  // RDFa Attributeとかぶる
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/58d57ca87ac7be0d306c0844dc254e90c150bd0d/types/react/index.d.ts#L1951
-  | 'prefix'
+  value?: string
+  onChange?: (value: string) => void
 
-  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
-  | keyof ReactAreaUseTextFieldCompat
->
+  showCount?: boolean
+  showLabel?: boolean
+  assistiveText?: string
+  invalid?: boolean
 
-export interface TextFieldProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
-    DOMProps,
-    ReactAreaUseTextFieldCompat {
-  readonly prefix?: ReactNode
-  readonly suffix?: ReactNode
+  label?: string
+  requiredText?: string
+  disabled?: boolean
+  subLabel?: React.ReactNode
+  htmlPrefix?: string
 
-  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
-  readonly defaultValue?: string
-  readonly value?: string
-  readonly onChange?: (value: string) => void
-
-  // react-ariaの型定義のせいでHTMLInputElementにできない
-  readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
-  readonly onFocus?: (event: React.FocusEvent<Element>) => void
-  readonly onBlur?: (event: React.FocusEvent<Element>) => void
-
-  readonly showCount?: boolean
-  readonly showLabel?: boolean
-  readonly assistiveText?: string
-  readonly invalid?: boolean
-}
+  getCount?: (value: string) => number
+} & Omit<React.ComponentPropsWithoutRef<'input'>, 'prefix' | 'onChange'>
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  function SingleLineTextFieldInner({ onChange, ...props }, forwardRef) {
-    const {
-      className,
-      showLabel = false,
-      showCount = false,
-      label,
-      requiredText,
-      subLabel,
-      disabled = false,
-      required,
-      invalid = false,
-      readOnly = false,
+  function SingleLineTextFieldInner(
+    {
       assistiveText,
+      className,
+      disabled = false,
+      label = '',
       maxLength,
+      onChange,
       prefix = null,
+      required,
+      requiredText,
+      showCount = false,
+      showLabel = false,
+      subLabel,
       suffix = null,
-      ...restProps
-    } = props
+      type = 'text',
+      value,
+      getCount = countCodePointsInString,
+      ...props
+    },
+    forwardRef
+  ) {
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const { visuallyHiddenProps } = useVisuallyHidden()
-    const ariaRef = useRef<HTMLInputElement>(null)
-    const [count, setCount] = useState(
-      countCodePointsInString(props.value ?? '')
-    )
 
-    const nonControlled = props.value === undefined
+    const [count, setCount] = useState(getCount(value ?? ''))
+
     const handleChange = useCallback(
-      (value: string) => {
-        const count = countCodePointsInString(value)
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        const count = getCount(value)
         if (maxLength !== undefined && count > maxLength) {
           return
         }
-        if (nonControlled) {
-          setCount(count)
-        }
+        setCount(count)
         onChange?.(value)
       },
-      [maxLength, nonControlled, onChange]
+      [getCount, maxLength, onChange]
     )
 
     useEffect(() => {
-      setCount(countCodePointsInString(props.value ?? ''))
-    }, [props.value])
-
-    const {
-      inputProps: ariaInputProps,
-      labelProps,
-      descriptionProps,
-      errorMessageProps,
-    } = useTextField(
-      {
-        inputElementType: 'input',
-        isDisabled: disabled,
-        isRequired: required,
-        isReadOnly: readOnly,
-        validationState: invalid ? 'invalid' : 'valid',
-        description: !invalid && assistiveText,
-        errorMessage: invalid && assistiveText,
-        onChange: handleChange,
-        ...props,
-      },
-      ariaRef
-    )
+      setCount(getCount(value ?? ''))
+    }, [getCount, value])
 
     const containerRef = useRef(null)
 
-    useFocusWithClick(containerRef, ariaRef)
+    useFocusWithClick(containerRef, inputRef)
 
-    const inputProps = mergeProps(restProps, ariaInputProps)
+    const inputId = useId(props.id)
+    const describedbyId = useId()
+    const labelledbyId = useId()
+
+    const showAssistiveText =
+      assistiveText != null && assistiveText.length !== 0
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
         <TextFieldLabel
+          htmlFor={inputId}
+          id={labelledbyId}
           label={label}
-          requiredText={requiredText}
           required={required}
+          requiredText={requiredText}
           subLabel={subLabel}
-          {...labelProps}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
         <StyledInputContainer
-          ref={containerRef}
-          invalid={invalid}
           aria-disabled={disabled === true ? true : undefined}
           hasPrefix={prefix != null}
           hasSuffix={suffix != null || showCount}
+          invalid={props.invalid === true}
+          ref={containerRef}
         >
           {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
           <StyledInput
-            ref={mergeRefs(forwardRef, ariaRef)}
-            invalid={invalid}
-            {...inputProps}
+            aria-describedby={showAssistiveText ? describedbyId : undefined}
+            aria-invalid={props.invalid}
+            aria-labelledby={labelledbyId}
+            id={inputId}
+            invalid={props.invalid === true}
+            maxLength={maxLength}
+            onChange={handleChange}
+            prefix={props.htmlPrefix}
+            ref={mergeRefs(forwardRef, inputRef)}
+            type={type}
+            value={value}
+            {...props}
           />
           {(suffix || showCount) && (
             <SuffixContainer>
@@ -150,11 +129,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             </SuffixContainer>
           )}
         </StyledInputContainer>
-        {assistiveText != null && assistiveText.length !== 0 && (
-          <AssistiveText
-            invalid={invalid}
-            {...(invalid ? errorMessageProps : descriptionProps)}
-          >
+        {showAssistiveText && (
+          <AssistiveText invalid={props.invalid === true} id={describedbyId}>
             {assistiveText}
           </AssistiveText>
         )}
