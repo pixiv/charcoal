@@ -105,16 +105,16 @@ const Segmented = (props: RadioProps) => {
 
   return (
     <label
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       aria-disabled={isDisabled || state.isReadOnly}
       data-checked={isSelected}
     >
-      <input className="charcoal-segmented__input" {...inputProps} ref={ref} />
-      <div className="charcoal-segmented__radio-label">
-        <div className="charcoal-segmented__radio-label__inner">
-          {props.children}
-        </div>
-      </div>
+      <input
+        className="charcoal-segmented-control-radio__input"
+        {...inputProps}
+        ref={ref}
+      />
+      {props.children}
     </label>
   )
 }

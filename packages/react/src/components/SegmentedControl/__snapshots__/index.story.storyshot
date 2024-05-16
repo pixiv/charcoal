@@ -16,12 +16,12 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
   >
     <label
       aria-disabled={false}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -43,24 +43,16 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         type="radio"
         value="option1"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          選択肢1
-        </div>
-      </div>
+      選択肢1
     </label>
     <label
       aria-disabled={false}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -82,24 +74,16 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         type="radio"
         value="option2"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          選択肢2
-        </div>
-      </div>
+      選択肢2
     </label>
     <label
       aria-disabled={false}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -121,24 +105,16 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         type="radio"
         value="option3"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          選択肢3
-        </div>
-      </div>
+      選択肢3
     </label>
     <label
       aria-disabled={true}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={true}
         name="test-id"
         onChange={[Function]}
@@ -158,15 +134,7 @@ exports[`Storybook Tests SegmentedControl ObjectSegments 1`] = `
         type="radio"
         value="option4"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          選択肢4
-        </div>
-      </div>
+      選択肢4
     </label>
   </div>
 </div>
@@ -188,12 +156,12 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
   >
     <label
       aria-disabled={false}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -215,24 +183,16 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
         type="radio"
         value="option1"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          option1
-        </div>
-      </div>
+      option1
     </label>
     <label
       aria-disabled={false}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -254,24 +214,16 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
         type="radio"
         value="option2"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          option2
-        </div>
-      </div>
+      option2
     </label>
     <label
       aria-disabled={false}
-      className="charcoal-segmented"
+      className="charcoal-segmented-control-radio__label"
       data-checked={false}
     >
       <input
         checked={false}
-        className="charcoal-segmented__input"
+        className="charcoal-segmented-control-radio__input"
         disabled={false}
         name="test-id"
         onChange={[Function]}
@@ -293,15 +245,7 @@ exports[`Storybook Tests SegmentedControl StringSegments 1`] = `
         type="radio"
         value="option3"
       />
-      <div
-        className="charcoal-segmented__radio-label"
-      >
-        <div
-          className="charcoal-segmented__radio-label__inner"
-        >
-          option3
-        </div>
-      </div>
+      option3
     </label>
   </div>
 </div>
