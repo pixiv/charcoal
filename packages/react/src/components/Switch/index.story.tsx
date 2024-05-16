@@ -11,6 +11,11 @@ export default {
 } as Meta<typeof Switch>
 
 export const Default: StoryObj<typeof Switch> = {
+  argTypes: {
+    checked: { type: 'boolean' },
+    children: { type: 'string' },
+    disabled: { type: 'boolean' },
+  },
   render: function Render(args) {
     const [checked, setChecked] = useState(false)
     return (

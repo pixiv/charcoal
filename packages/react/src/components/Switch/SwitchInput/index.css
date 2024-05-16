@@ -1,0 +1,82 @@
+.charcoal-switch-input {
+  cursor: pointer;
+  appearance: none;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 28px;
+  border: 2px solid transparent;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+
+  outline: none;
+  border-radius: 16px;
+  height: 16px;
+  margin: 0;
+  background-color: var(--charcoal-text4);
+}
+
+.charcoal-switch-input:disabled,
+.charcoal-switch-input[readonly] {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.charcoal-switch-input::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateX(0);
+  transition: transform 0.2s;
+  border-radius: 1024px;
+  background-color: var(--charcoal-text5);
+}
+
+.charcoal-switch-input:checked::after {
+  transform: translateX(12px);
+  transition: transform 0.2s;
+}
+
+.charcoal-switch-input:checked {
+  background-color: var(--charcoal-brand);
+}
+
+.charcoal-switch-input:not(:disabled):hover {
+  background-color: var(--charcoal-text4-hover);
+}
+
+.charcoal-switch-input:not(:disabled):active {
+  background-color: var(--charcoal-text4-press);
+}
+
+.charcoal-switch-input:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+}
+.charcoal-switch-input:not(:disabled):focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+}
+.charcoal-switch-input:not(:disabled):focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.charcoal-switch-input:not(:disabled)::after:hover {
+  background-color: var(--charcoal-text5-hover);
+}
+
+.charcoal-switch-input:not(:disabled)::after:active {
+  background-color: var(--charcoal-text5-press);
+}
+
+.charcoal-switch-input:not(:disabled):checked:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.charcoal-switch-input:not(:disabled):checked:active {
+  background-color: var(--charcoal-brand-press);
+}
