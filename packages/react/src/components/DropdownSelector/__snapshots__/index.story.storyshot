@@ -1808,6 +1808,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
               >
                 <label
                   className="c9"
+                  htmlFor="test-id"
                   id="test-id"
                 >
                   TextArea

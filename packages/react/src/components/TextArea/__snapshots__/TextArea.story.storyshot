@@ -193,6 +193,7 @@ exports[`Storybook Tests TextArea AssistiveText 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -411,6 +412,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -661,6 +663,7 @@ exports[`Storybook Tests TextArea Default 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -884,6 +887,7 @@ exports[`Storybook Tests TextArea Disabled 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -1106,6 +1110,7 @@ exports[`Storybook Tests TextArea Invalid 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -1311,6 +1316,7 @@ exports[`Storybook Tests TextArea Label 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -1523,6 +1529,7 @@ exports[`Storybook Tests TextArea Placeholder 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -1736,6 +1743,7 @@ exports[`Storybook Tests TextArea ReadOnly 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -1977,6 +1985,7 @@ exports[`Storybook Tests TextArea Required 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -2203,6 +2212,7 @@ exports[`Storybook Tests TextArea ShowCount 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
@@ -2445,6 +2455,7 @@ exports[`Storybook Tests TextArea SubLabel 1`] = `
     >
       <label
         className="c3"
+        htmlFor="test-id"
         id="test-id"
       >
         Label
