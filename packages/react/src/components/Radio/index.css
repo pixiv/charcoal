@@ -87,22 +87,7 @@
 .charcoal-radio__label_div {
   font-size: 14px;
   line-height: 22px;
-  display: flow-root;
   color: var(--charcoal-text2);
-}
-.charcoal-radio__label_div::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-.charcoal-radio__label_div::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
 }
 
 .charcoal-radio-group {
