@@ -1,5 +1,4 @@
-import { forwardRef, useImperativeHandle, useRef, memo, useMemo } from 'react'
-import { useProgressBar } from '@react-aria/progress'
+import { forwardRef, useImperativeHandle, useRef, memo } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 
 import './index.css'
@@ -16,14 +15,11 @@ const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
     { size = 48, padding = 16, transparent = false, ...props },
     ref
   ) {
-    const { progressBarProps } = useProgressBar(
-      useMemo(() => ({ isIndeterminate: true }), [])
-    )
     const className = useClassNames('charcoal-loading-spinner', props.className)
 
     return (
       <div
-        {...progressBarProps}
+        role="progressbar"
         style={{
           '--charcoal-loading-spinner-size': `${size}px`,
           '--charcoal-loading-spinner-padding': `${padding}px`,
