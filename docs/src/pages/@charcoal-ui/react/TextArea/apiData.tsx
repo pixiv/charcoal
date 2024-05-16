@@ -1,22 +1,10 @@
 import { TextAreaProps } from '@charcoal-ui/react'
-import { TableItem } from '../_components/ApiTable'
+import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  Record<
-    Exclude<
-      keyof TextAreaProps,
-      keyof React.InputHTMLAttributes<HTMLTextAreaElement>
-    >,
-    TableItem
-  >,
-  'type' | 'value' | 'cols' | 'dirName' | 'wrap'
+  ApiTableData<TextAreaProps, HTMLInputElement>,
+  keyof React.HTMLProps<HTMLInputElement> | 'dirName'
 > = {
-  label: {
-    default: '',
-    description: 'ラベル',
-    required: true,
-    type: 'string',
-  },
   assistiveText: {
     description: 'エラーのテキスト',
     type: 'string',
@@ -36,11 +24,6 @@ export const apiData: Omit<
     description: '必須を示すのテキスト',
     type: 'string',
   },
-  rows: {
-    default: '',
-    description: '表示する行数、multilineのみ有効',
-    type: 'number',
-  },
   showCount: {
     default: 'false',
     description: '入力文字数の表示',
@@ -54,5 +37,9 @@ export const apiData: Omit<
   subLabel: {
     description: '右側に表示されるラベル',
     type: 'string',
+  },
+  getCount: {
+    description: 'textの長さを計算する関数',
+    type: '(value: string) => number',
   },
 }

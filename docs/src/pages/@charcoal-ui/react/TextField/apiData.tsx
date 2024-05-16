@@ -1,22 +1,10 @@
 import { TextFieldProps } from '@charcoal-ui/react'
-import { TableItem } from '../_components/ApiTable'
+import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  Record<
-    Exclude<
-      keyof TextFieldProps,
-      keyof React.InputHTMLAttributes<HTMLInputElement>
-    >,
-    TableItem
-  >,
-  'type' | 'value'
+  ApiTableData<TextFieldProps, HTMLInputElement>,
+  keyof React.HTMLProps<HTMLInputElement> | 'enterKeyHint'
 > = {
-  label: {
-    default: '',
-    description: 'ラベル',
-    required: true,
-    type: 'string',
-  },
   assistiveText: {
     description: 'エラーのテキスト',
     type: 'string',
@@ -48,5 +36,13 @@ export const apiData: Omit<
   suffix: {
     description: 'フィールドの末尾の要素、multilineでは無効',
     type: 'ReactNode',
+  },
+  getCount: {
+    description: 'textの長さを計算する関数',
+    type: '(value: string) => number',
+  },
+  htmlPrefix: {
+    description: 'input要素のprefix',
+    type: 'string',
   },
 }

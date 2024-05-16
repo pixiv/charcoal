@@ -195,7 +195,7 @@ __metadata:
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
   version: 4.0.0-beta.4
-  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=eb9106&locator=charcoal-web-docs%40workspace%3A."
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=ad4272&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.4
     "@charcoal-ui/icons": ^4.0.0-beta.4
@@ -210,7 +210,6 @@ __metadata:
     "@react-aria/radio": ^3.10.0
     "@react-aria/ssr": ^3.9.1
     "@react-aria/switch": ^3.6.0
-    "@react-aria/textfield": ^3.14.1
     "@react-aria/utils": ^3.23.0
     "@react-aria/visually-hidden": ^3.8.8
     "@react-stately/radio": ^3.10.2
@@ -221,7 +220,7 @@ __metadata:
   peerDependencies:
     react: ">=17.0.0"
     styled-components: ">=5.1.1"
-  checksum: 0e37c93ee4867d748196b48a5b7c6780d8cddfcb4051bb60d42f93364883bc1f94efa7df1bf148d768a1c8b2a3e4ce795ea54aeafa2f1f7ad85859cebbd52d60
+  checksum: 16f091a0e3faddb16826416c1cd961323842348bb1ba61264dd841cdfd17b54d8cc6c80bd88ee8b6d45c8dc03be215301edbfb33edca10d7fe3816861d391794
   languageName: node
   linkType: hard
 
@@ -903,25 +902,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 7f08e52c28ba5f61263b507c8f2d472d2661695f884fcb80ae7a8de58deed38d2dd011b1c2079180ce49ccaf279171345ba5be56844ed10bc233e9fec73756ed
-  languageName: node
-  linkType: hard
-
-"@react-aria/textfield@npm:^3.14.1":
-  version: 3.14.1
-  resolution: "@react-aria/textfield@npm:3.14.1"
-  dependencies:
-    "@react-aria/focus": ^3.16.0
-    "@react-aria/form": ^3.0.1
-    "@react-aria/label": ^3.7.4
-    "@react-aria/utils": ^3.23.0
-    "@react-stately/form": ^3.0.0
-    "@react-stately/utils": ^3.9.0
-    "@react-types/shared": ^3.22.0
-    "@react-types/textfield": ^3.9.0
-    "@swc/helpers": ^0.5.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-  checksum: c1750b02fb0376726385ef4f8c62494bc911f75d6ee69789597ac656028743385a96e38569956090700d71355f25423a46c3bb25f8442d74ade9077353d1547b
   languageName: node
   linkType: hard
 
