@@ -2,10 +2,10 @@ import { useTextField } from '@react-aria/textfield'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
-import { FieldLabelProps } from '../FieldLabel'
+import FieldLabel, { FieldLabelProps } from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
-import { AssistiveText, TextFieldLabel } from '../TextField'
+import { AssistiveText } from '../TextField'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
 import { mergeProps } from '@react-aria/utils'
 
@@ -132,7 +132,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
-        <TextFieldLabel
+        <FieldLabel
           label={label}
           requiredText={requiredText}
           required={required}
@@ -174,8 +174,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 export default TextArea
 
 const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
 
   ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
 `
