@@ -136,6 +136,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     ({ backgroundColor, overflow, transform }, item) =>
       item && (
         <Overlay portalContainer={portalContainer}>
+          {/* https://github.com/pmndrs/react-spring/issues/1515 */}
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/* @ts-ignore */}
           <animated.div
@@ -151,6 +152,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             onClick={handleClick}
           >
             <ModalBackgroundContext.Provider value={bgRef.current}>
+              {/* https://github.com/pmndrs/react-spring/issues/1515 */}
               {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
               {/* @ts-ignore */}
               <AnimatedDialog
