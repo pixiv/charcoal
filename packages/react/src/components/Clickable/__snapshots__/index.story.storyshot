@@ -1,49 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Clickable Button 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 <div
   data-dark={false}
 >
   <button
-    className="c0"
+    className="charcoal-clickable"
     onClick={[Function]}
   >
     button
@@ -52,49 +14,11 @@ exports[`Storybook Tests Clickable Button 1`] = `
 `;
 
 exports[`Storybook Tests Clickable Link 1`] = `
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 <div
   data-dark={false}
 >
   <a
-    className="c0"
+    className="charcoal-clickable"
     href="#"
     onClick={[Function]}
   >

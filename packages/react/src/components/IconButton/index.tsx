@@ -1,6 +1,6 @@
-import { forwardRef } from 'react'
+import React, { ForwardedRef, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
-import Clickable, { ClickableElement, ClickableProps } from '../Clickable'
+import Clickable, { ClickableProps } from '../Clickable'
 import type { KnownIconType } from '@charcoal-ui/icons'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 
@@ -14,33 +14,36 @@ interface StyledProps {
   readonly isActive?: boolean
 }
 
-export type IconButtonProps = StyledProps & ClickableProps
+export type IconButtonProps<T extends React.ElementType> = StyledProps &
+  ClickableProps<T>
 
-const IconButton = forwardRef<ClickableElement, IconButtonProps>(
-  function IconButtonInner(
-    {
-      variant = 'Default',
-      size = 'M',
-      icon,
-      isActive = false,
-      ...rest
-    }: IconButtonProps,
-    ref
-  ) {
-    validateIconSize(size, icon)
-    return (
-      <StyledIconButton
-        {...rest}
-        ref={ref}
-        $size={size}
-        $variant={variant}
-        $isActive={isActive}
-      >
-        <pixiv-icon name={icon} />
-      </StyledIconButton>
-    )
-  }
-)
+const IconButton = forwardRef(function IconButtonInner<
+  T extends React.ElementType
+>(
+  {
+    variant = 'Default',
+    size = 'M',
+    icon,
+    isActive = false,
+    ...rest
+  }: IconButtonProps<T>,
+  ref: ForwardedRef<HTMLButtonElement>
+) {
+  validateIconSize(size, icon)
+  return (
+    <StyledIconButton
+      {...rest}
+      ref={ref}
+      $size={size}
+      $variant={variant}
+      $isActive={isActive}
+    >
+      <pixiv-icon name={icon} />
+    </StyledIconButton>
+  )
+}) as <T extends React.ElementType = 'button'>(
+  p: IconButtonProps<T>
+) => JSX.Element
 
 export default IconButton
 

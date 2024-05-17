@@ -1,91 +1,31 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import {
-  LinkProps,
-  useComponentAbstraction,
-} from '../../core/ComponentAbstraction'
-import { disabledSelector } from '@charcoal-ui/utils'
+import React, { useMemo, forwardRef } from 'react'
+import { useClassNames } from '../../_lib/useClassNames'
+import './index.css'
 
-interface BaseProps {
+export type ClickableProps<T extends React.ElementType = 'button'> = {
   /**
-   * クリックの無効化
+   * The component used for root element.
+   * @type T extends React.ElementType = 'button'
    */
-  disabled?: boolean
-}
-
-interface LinkBaseProps {
+  as?: T
   /**
-   * リンクのURL。指定するとbuttonタグではなくaタグとして描画される
+   * The as property of the component specified by the Button component's as attribute.
    */
-  to: string
-}
+  componentAs?: React.ComponentPropsWithRef<T>['as']
+} & Omit<React.ComponentPropsWithRef<T>, 'as'>
 
-export type ClickableProps =
-  | (BaseProps & Omit<React.ComponentPropsWithoutRef<'button'>, 'disabled'>)
-  | (BaseProps & LinkBaseProps & Omit<LinkProps, 'to'>)
-export type ClickableElement = HTMLButtonElement & HTMLAnchorElement
+const Clickable = forwardRef(function Clickable<T extends React.ElementType>(
+  { componentAs, as, ...props }: ClickableProps<T>,
+  ref: React.ForwardedRef<HTMLButtonElement>
+) {
+  const className = useClassNames('charcoal-clickable', props.className)
 
-const Clickable = React.forwardRef<ClickableElement, ClickableProps>(
-  function Clickable(props, ref) {
-    const { Link } = useComponentAbstraction()
-    const isLink = 'to' in props
-    const as = isLink ? Link : 'button'
-    const ariaDisabled = isLink && props.disabled === true ? true : undefined
-    let rest = props
-    if (isLink) {
-      const { disabled, ..._rest } = props
-      rest = _rest
-    }
-    return (
-      <StyledClickableDiv
-        {...rest}
-        ref={ref}
-        as={as}
-        aria-disabled={ariaDisabled}
-      />
-    )
-  }
-)
+  const Component = useMemo(() => as ?? 'button', [as])
+
+  return (
+    <Component {...props} ref={ref} className={className} as={componentAs} />
+  )
+}) as <T extends React.ElementType = 'button'>(
+  p: ClickableProps<T>
+) => JSX.Element
 export default Clickable
-
-const StyledClickableDiv = styled.div`
-  cursor: pointer;
-
-  ${disabledSelector} {
-    cursor: default;
-  }
-
-  /* Reset button appearance */
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  text-decoration: none;
-
-  &:focus {
-    outline: none;
-  }
-
-  /* Change the font styles in all browsers. */
-  font: inherit;
-
-  /* Remove the margin in Firefox and Safari. */
-  margin: 0;
-
-  /* Show the overflow in Edge. */
-  overflow: visible;
-
-  /* Remove the inheritance of text transform in Firefox. */
-  text-transform: none;
-
-  /* Remove the inner border and padding in Firefox. */
-  &::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-`

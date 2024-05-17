@@ -487,44 +487,6 @@ exports[`Storybook Tests TextField AssistiveText 1`] = `
 `;
 
 exports[`Storybook Tests TextField Default 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -623,7 +585,7 @@ exports[`Storybook Tests TextField Default 1`] = `
   margin-bottom: 8px;
 }
 
-.c7 {
+.c6 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -638,17 +600,17 @@ exports[`Storybook Tests TextField Default 1`] = `
   font-size: 14px;
 }
 
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7 [aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c7:focus-within {
+.c6:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8 {
+.c7 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -673,19 +635,19 @@ exports[`Storybook Tests TextField Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c8::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8::-moz-placeholder {
+.c7::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8::placeholder {
+.c7::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -724,7 +686,7 @@ exports[`Storybook Tests TextField Default 1`] = `
       >
         <span>
           <button
-            className="c6"
+            className="charcoal-clickable"
           >
             Text Link
           </button>
@@ -732,11 +694,11 @@ exports[`Storybook Tests TextField Default 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
     >
       <input
         aria-labelledby="test-id"
-        className="c8"
+        className="c7"
         disabled={false}
         id="test-id"
         onChange={[Function]}
@@ -2813,44 +2775,6 @@ exports[`Storybook Tests TextField ShowCount 1`] = `
 `;
 
 exports[`Storybook Tests TextField SubLabel 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2949,7 +2873,7 @@ exports[`Storybook Tests TextField SubLabel 1`] = `
   margin-bottom: 8px;
 }
 
-.c7 {
+.c6 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -2964,17 +2888,17 @@ exports[`Storybook Tests TextField SubLabel 1`] = `
   font-size: 14px;
 }
 
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7 [aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c7:focus-within {
+.c6:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8 {
+.c7 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -2999,19 +2923,19 @@ exports[`Storybook Tests TextField SubLabel 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c8::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8::-moz-placeholder {
+.c7::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c8::placeholder {
+.c7::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -3050,7 +2974,7 @@ exports[`Storybook Tests TextField SubLabel 1`] = `
       >
         <span>
           <button
-            className="c6"
+            className="charcoal-clickable"
           >
             Text Link
           </button>
@@ -3058,11 +2982,11 @@ exports[`Storybook Tests TextField SubLabel 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
     >
       <input
         aria-labelledby="test-id"
-        className="c8"
+        className="c7"
         disabled={false}
         id="test-id"
         onChange={[Function]}
