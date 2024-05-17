@@ -16,10 +16,10 @@ import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Modal',
+  title: 'react/Modal',
   component: Modal,
   args: {
-    title: 'Title',
+    title: 'react/Title',
   },
   argTypes: {
     size: {

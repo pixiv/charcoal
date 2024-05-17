@@ -3,7 +3,7 @@ import Clickable from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Clickable',
+  title: 'react/Clickable',
   component: Clickable,
 } as Meta<typeof Clickable>
 

@@ -11,7 +11,7 @@ const StyledMultiSelectGroup = styled(MultiSelectGroup)`
 `
 
 export default {
-  title: 'MultiSelect',
+  title: 'react/MultiSelect',
   component: MultiSelect,
   argTypes: {
     variant: {

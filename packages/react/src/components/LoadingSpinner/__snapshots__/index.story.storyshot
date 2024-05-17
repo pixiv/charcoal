@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests LoadingSpinner Default 1`] = `
+exports[`Storybook Tests react/LoadingSpinner Default 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;
@@ -46,7 +46,7 @@ exports[`Storybook Tests LoadingSpinner Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests LoadingSpinner Padding 1`] = `
+exports[`Storybook Tests react/LoadingSpinner Padding 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;
@@ -92,7 +92,7 @@ exports[`Storybook Tests LoadingSpinner Padding 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests LoadingSpinner Size 1`] = `
+exports[`Storybook Tests react/LoadingSpinner Size 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;
@@ -138,7 +138,7 @@ exports[`Storybook Tests LoadingSpinner Size 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests LoadingSpinner Transparent 1`] = `
+exports[`Storybook Tests react/LoadingSpinner Transparent 1`] = `
 .c0 {
   box-sizing: content-box;
   margin: auto;

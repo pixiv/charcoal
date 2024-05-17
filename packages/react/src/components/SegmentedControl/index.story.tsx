@@ -2,7 +2,7 @@ import SegmentedControl from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'SegmentedControl',
+  title: 'react/SegmentedControl',
   component: SegmentedControl,
 } as Meta<typeof SegmentedControl>
 
