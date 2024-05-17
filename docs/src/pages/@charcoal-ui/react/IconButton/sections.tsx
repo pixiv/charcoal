@@ -1,7 +1,7 @@
 import { IconButtonProps } from '@charcoal-ui/react'
 import { PreviewSection } from '../_components/Previews'
 
-export const sections: PreviewSection<IconButtonProps>[] = [
+export const sections: PreviewSection<IconButtonProps<'button'>>[] = [
   {
     title: 'variant',
     previewMetas: [

@@ -1,9 +1,10 @@
 import { IconButtonProps } from '@charcoal-ui/react'
+import { ComponentPropsWithRef } from 'react'
 import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  ApiTableData<IconButtonProps, HTMLInputElement>,
-  'type'
+  ApiTableData<IconButtonProps<'button'>, HTMLInputElement>,
+  keyof Omit<ComponentPropsWithRef<'button'>, 'disabled'>
 > = {
   disabled: {
     default: 'false',
@@ -30,5 +31,14 @@ export const apiData: Omit<
     description: 'ボタンの押下状態',
     type: 'boolean',
     default: 'false',
+  },
+  as: {
+    description: 'コンポーネントのルートノードとして描画する要素',
+    type: "T extends React.ElementType = 'button'",
+    default: 'button',
+  },
+  componentAs: {
+    description: 'as で指定したコンポーネントの as プロパティ',
+    type: 'React.ElementType',
   },
 }

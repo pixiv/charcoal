@@ -13,7 +13,7 @@ export const Button: StoryObj = {
 
 export const Link: StoryObj = {
   render: () => (
-    <Clickable to="#" onClick={action('click')}>
+    <Clickable as="a" href="#" onClick={action('click')}>
       link
     </Clickable>
   ),

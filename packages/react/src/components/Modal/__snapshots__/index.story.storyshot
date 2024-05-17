@@ -1,44 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Modal BackgroundScroll 1`] = `
-.c23 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c23:focus {
-  outline: none;
-}
-
-.c23::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c12 {
   font-size: 14px;
   line-height: 22px;
@@ -212,7 +174,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c24 {
+.c23 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -238,36 +200,36 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
+.c23:not(:disabled):not([aria-disabled]):hover,
+.c23[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
+.c23:not(:disabled):not([aria-disabled]):active,
+.c23[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c24:not(:disabled):not([aria-disabled]):focus,
-.c24[aria-disabled='false']:focus {
+.c23:not(:disabled):not([aria-disabled]):focus,
+.c23[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c24:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c24[aria-disabled='false']:focus:not(:focus-visible) {
+.c23:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c23[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c24:not(:disabled):not([aria-disabled]):focus-visible,
-.c24[aria-disabled='false']:focus-visible {
+.c23:not(:disabled):not([aria-disabled]):focus-visible,
+.c23[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c24:disabled,
-.c24[aria-disabled]:not([aria-disabled='false']) {
+.c23:disabled,
+.c23[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -308,7 +270,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c25 {
+.c24 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -317,13 +279,13 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s color;
 }
 
-.c25:not(:disabled):not([aria-disabled]):hover,
-.c25[aria-disabled='false']:hover {
+.c24:not(:disabled):not([aria-disabled]):hover,
+.c24[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active {
+.c24:not(:disabled):not([aria-disabled]):active,
+.c24[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -737,7 +699,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="c23 c24 c25"
+          className="charcoal-clickable c23 c24"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -752,44 +714,6 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
 
 exports[`Storybook Tests Modal BottomSheet 1`] = `
 .c10 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c10:disabled,
-.c10[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c11 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -815,36 +739,36 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c11:not(:disabled):not([aria-disabled]):hover,
-.c11[aria-disabled='false']:hover {
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active {
+.c10:not(:disabled):not([aria-disabled]):active,
+.c10[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled='false']:focus {
+.c10:not(:disabled):not([aria-disabled]):focus,
+.c10[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled='false']:focus:not(:focus-visible) {
+.c10:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c10[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled='false']:focus-visible {
+.c10:not(:disabled):not([aria-disabled]):focus-visible,
+.c10[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled='false']) {
+.c10:disabled,
+.c10[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -885,7 +809,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c12 {
+.c11 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -894,13 +818,13 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c11:not(:disabled):not([aria-disabled]):hover,
+.c11[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1087,7 +1011,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="c10 c11 c12"
+          className="charcoal-clickable c10 c11"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1101,44 +1025,6 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests Modal Default 1`] = `
-.c23 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c23:focus {
-  outline: none;
-}
-
-.c23::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c12 {
   font-size: 14px;
   line-height: 22px;
@@ -1312,7 +1198,7 @@ exports[`Storybook Tests Modal Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c24 {
+.c23 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1338,36 +1224,36 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
+.c23:not(:disabled):not([aria-disabled]):hover,
+.c23[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
+.c23:not(:disabled):not([aria-disabled]):active,
+.c23[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c24:not(:disabled):not([aria-disabled]):focus,
-.c24[aria-disabled='false']:focus {
+.c23:not(:disabled):not([aria-disabled]):focus,
+.c23[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c24:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c24[aria-disabled='false']:focus:not(:focus-visible) {
+.c23:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c23[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c24:not(:disabled):not([aria-disabled]):focus-visible,
-.c24[aria-disabled='false']:focus-visible {
+.c23:not(:disabled):not([aria-disabled]):focus-visible,
+.c23[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c24:disabled,
-.c24[aria-disabled]:not([aria-disabled='false']) {
+.c23:disabled,
+.c23[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1408,7 +1294,7 @@ exports[`Storybook Tests Modal Default 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c25 {
+.c24 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1417,13 +1303,13 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s color;
 }
 
-.c25:not(:disabled):not([aria-disabled]):hover,
-.c25[aria-disabled='false']:hover {
+.c24:not(:disabled):not([aria-disabled]):hover,
+.c24[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c25:not(:disabled):not([aria-disabled]):active,
-.c25[aria-disabled='false']:active {
+.c24:not(:disabled):not([aria-disabled]):active,
+.c24[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1829,7 +1715,7 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="c23 c24 c25"
+          className="charcoal-clickable c23 c24"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1843,44 +1729,6 @@ exports[`Storybook Tests Modal Default 1`] = `
 `;
 
 exports[`Storybook Tests Modal FullBottomSheet 1`] = `
-.c18 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c18:disabled,
-.c18[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c18:focus {
-  outline: none;
-}
-
-.c18::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
 .c12 {
   font-size: 14px;
   line-height: 22px;
@@ -1965,7 +1813,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   margin-left: auto;
 }
 
-.c19 {
+.c18 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1991,36 +1839,36 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
+.c18:not(:disabled):not([aria-disabled]):focus,
+.c18[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
+.c18:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c18[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
+.c18:not(:disabled):not([aria-disabled]):focus-visible,
+.c18[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled='false']) {
+.c18:disabled,
+.c18[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -2061,7 +1909,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c20 {
+.c19 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -2070,13 +1918,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c20:not(:disabled):not([aria-disabled]):hover,
-.c20[aria-disabled='false']:hover {
+.c19:not(:disabled):not([aria-disabled]):hover,
+.c19[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c20:not(:disabled):not([aria-disabled]):active,
-.c20[aria-disabled='false']:active {
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -2423,7 +2271,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="c18 c19 c20"
+          className="charcoal-clickable c18 c19"
           onClick={[Function]}
         >
           <pixiv-icon
