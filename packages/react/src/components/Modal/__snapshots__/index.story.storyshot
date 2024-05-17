@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Modal BackgroundScroll 1`] = `
-.c12 {
+.c5 {
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
@@ -9,7 +9,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   color: var(--charcoal-text1);
 }
 
-.c12::before {
+.c5::before {
   display: block;
   width: 0;
   height: 0;
@@ -17,7 +17,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   margin-top: -4px;
 }
 
-.c12::after {
+.c5::after {
   display: block;
   width: 0;
   height: 0;
@@ -25,7 +25,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   margin-bottom: -4px;
 }
 
-.c14 {
+.c7 {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
@@ -34,7 +34,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s color,0.2s box-shadow;
 }
 
-.c14::before {
+.c7::before {
   display: block;
   width: 0;
   height: 0;
@@ -42,7 +42,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   margin-top: -4px;
 }
 
-.c14::after {
+.c7::after {
   display: block;
   width: 0;
   height: 0;
@@ -50,27 +50,27 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   margin-bottom: -4px;
 }
 
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active,
+.c7:not(:disabled):not([aria-disabled]):focus,
+.c7[aria-disabled='false']:focus,
+.c7:not(:disabled):not([aria-disabled]):focus-visible,
+.c7[aria-disabled='false']:focus-visible {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10 {
+.c3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -81,27 +81,27 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   align-items: center;
 }
 
-.c10 > .c13 {
+.c3 > .c6 {
   margin-left: auto;
 }
 
-.c17 {
+.c10 {
   display: inline-block;
   width: 100%;
 }
 
-.c17:disabled,
-.c17[aria-disabled]:not([aria-disabled=false]) {
+.c10:disabled,
+.c10[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c18 {
+.c11 {
   width: 100%;
   margin-bottom: 8px;
 }
 
-.c19 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -128,38 +128,38 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled=false]) {
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c20 {
+.c13 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -170,11 +170,11 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   white-space: nowrap;
 }
 
-.c21 {
+.c14 {
   color: var(--charcoal-text2);
 }
 
-.c23 {
+.c15 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -200,156 +200,40 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c23:not(:disabled):not([aria-disabled]):hover,
-.c23[aria-disabled='false']:hover {
+.c15:not(:disabled):not([aria-disabled]):hover,
+.c15[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c23:not(:disabled):not([aria-disabled]):active,
-.c23[aria-disabled='false']:active {
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus,
-.c23[aria-disabled='false']:focus {
+.c15:not(:disabled):not([aria-disabled]):focus,
+.c15[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c23[aria-disabled='false']:focus:not(:focus-visible) {
+.c15:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c15[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus-visible,
-.c23[aria-disabled='false']:focus-visible {
+.c15:not(:disabled):not([aria-disabled]):focus-visible,
+.c15[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled='false']) {
+.c15:disabled,
+.c15[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-.c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c24 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
-}
-
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
 .c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c22 {
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -359,11 +243,11 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c4 {
   margin-bottom: 8px;
 }
 
-.c15 {
+.c8 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -378,17 +262,17 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   font-size: 14px;
 }
 
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c15:focus-within {
+.c8:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c16 {
+.c9 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -413,35 +297,35 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c16::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c6 {
+.c0 {
   display: grid;
   gap: 24px;
 }
 
-.c8 {
+.c1 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c8::before {
+.c1::before {
   display: block;
   width: 0;
   height: 0;
@@ -449,27 +333,12 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   margin-top: -4px;
 }
 
-.c8::after {
+.c1::after {
   display: block;
   width: 0;
   height: 0;
   content: '';
   margin-bottom: -4px;
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-  }
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
 }
 
 <div
@@ -494,68 +363,73 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
       </button>
     </div>
     <div
-      className="c0"
+      className="charcoal-modal-background"
+      data-bottom-sheet={false}
       onClick={[Function]}
       onPointerDown={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "zIndex": 10,
+        }
+      }
     >
       <div
-        className="c1"
-        onBlur={[Function]}
+        className="charcoal-modal-dialog"
+        data-bottom-sheet={false}
         onKeyDown={[Function]}
         role="dialog"
-        size="M"
         style={Object {}}
         tabIndex={-1}
       >
         <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            Title
-          </h3>
-        </div>
-        <div
-          className="c5"
+          className="charcoal-modal-header-root"
+          data-bottom-sheet={false}
         >
           <div
-            className="c6"
+            className="charcoal-modal-header-title"
+          >
+            Title
+          </div>
+        </div>
+        <div
+          className="charcoal-modal-body"
+        >
+          <div
+            className="c0"
           >
             <div
-              className="c7 c8"
+              className="charcoal-modal-align c1"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
             <div
-              className="c7"
+              className="charcoal-modal-align"
             >
               <div
-                className="c9"
+                className="c2"
               >
                 <div
-                  className="c10 c11"
+                  className="c3 c4"
                 >
                   <label
-                    className="c12"
+                    className="c5"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c13 c14"
+                    className="c6 c7"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c8"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c9"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -569,34 +443,34 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               </div>
             </div>
             <div
-              className="c7"
+              className="charcoal-modal-align"
             >
               <div
-                className="c9"
+                className="c2"
               >
                 <div
-                  className="c10 c11"
+                  className="c3 c4"
                 >
                   <label
-                    className="c12"
+                    className="c5"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c13 c14"
+                    className="c6 c7"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c8"
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c16"
+                    className="c9"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -610,21 +484,21 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               </div>
             </div>
             <div
-              className="c7"
+              className="charcoal-modal-align"
             >
               <div
-                className="c17"
+                className="c10"
               >
                 <div
-                  className="c10 c18"
+                  className="c3 c11"
                 >
                   <label
-                    className="c12"
+                    className="c5"
                   >
                     Fruits
                   </label>
                   <div
-                    className="c13 c14"
+                    className="c6 c7"
                   >
                     <span />
                   </div>
@@ -669,17 +543,17 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c19"
+                  className="c12"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c20"
+                    className="c13"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c21"
+                    class="c14"
                     name="16/Menu"
                   />
                 </button>
@@ -687,7 +561,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
             </div>
           </div>
           <div
-            className="c22"
+            className="charcoal-modal-buttons"
           >
             <button
               className="charcoal-button"
@@ -707,7 +581,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c23 c24"
+          className="charcoal-clickable c15 charcoal-modal-close-button"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -721,6 +595,851 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
 `;
 
 exports[`Storybook Tests Modal BottomSheet 1`] = `
+.c2 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c2:not(:disabled):not([aria-disabled]):hover,
+.c2[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c2:not(:disabled):not([aria-disabled]):active,
+.c2[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c2:not(:disabled):not([aria-disabled]):focus,
+.c2[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c2[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c2:not(:disabled):not([aria-disabled]):focus-visible,
+.c2[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c2:disabled,
+.c2[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+.c1 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+}
+
+.c1::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c1::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-hidden={null}
+    data-overlay-container={true}
+  >
+    <button
+      className="charcoal-button"
+      onClick={[Function]}
+    >
+      Open Modal
+    </button>
+    <div
+      className="charcoal-modal-background"
+      data-bottom-sheet={true}
+      onClick={[Function]}
+      onPointerDown={[Function]}
+      style={
+        Object {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "overflow": "hidden",
+          "zIndex": 10,
+        }
+      }
+    >
+      <div
+        className="charcoal-modal-dialog"
+        data-bottom-sheet={true}
+        onKeyDown={[Function]}
+        role="dialog"
+        style={
+          Object {
+            "transform": " translateY(100%)",
+          }
+        }
+        tabIndex={-1}
+      >
+        <div
+          className="charcoal-modal-header-root"
+          data-bottom-sheet={true}
+        >
+          <div
+            className="charcoal-modal-header-title"
+          >
+            Title
+          </div>
+        </div>
+        <div
+          className="charcoal-modal-body"
+        >
+          <div
+            className="c0"
+          >
+            <div
+              className="charcoal-modal-align c1"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+            </div>
+          </div>
+          <div
+            className="charcoal-modal-buttons"
+          >
+            <button
+              className="charcoal-button"
+              data-full-width={true}
+              data-variant="Danger"
+              onClick={[Function]}
+            >
+              削除する
+            </button>
+          </div>
+        </div>
+        <button
+          className="charcoal-clickable c2 charcoal-modal-close-button"
+          onClick={[Function]}
+        >
+          <pixiv-icon
+            name="24/Close"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Modal Default 1`] = `
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c7 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c7::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c7::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active,
+.c7:not(:disabled):not([aria-disabled]):focus,
+.c7[aria-disabled='false']:focus,
+.c7:not(:disabled):not([aria-disabled]):focus-visible,
+.c7[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 > .c6 {
+  margin-left: auto;
+}
+
+.c10 {
+  display: inline-block;
+  width: 100%;
+}
+
+.c10:disabled,
+.c10[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c11 {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  gap: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus,
+.c12[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c12[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c12:not(:disabled):not([aria-disabled]):focus-visible,
+.c12[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12[aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c12:not(:disabled):not([aria-disabled]):active,
+.c12[aria-disabled='false']:active {
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c13 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c14 {
+  color: var(--charcoal-text2);
+}
+
+.c15 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c15:not(:disabled):not([aria-disabled]):hover,
+.c15[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c15:not(:disabled):not([aria-disabled]):active,
+.c15[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c15:not(:disabled):not([aria-disabled]):focus,
+.c15[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c15:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c15[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c15:not(:disabled):not([aria-disabled]):focus-visible,
+.c15[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c15:disabled,
+.c15[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  margin-bottom: 8px;
+}
+
+.c8 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c8:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c9 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
+}
+
+.c9::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c9::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c0 {
+  display: grid;
+  gap: 24px;
+}
+
+.c1 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+}
+
+.c1::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c1::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+<div
+  data-dark={false}
+>
+  <div
+    aria-hidden={null}
+    data-overlay-container={true}
+  >
+    <button
+      className="charcoal-button"
+      onClick={[Function]}
+    >
+      Open Modal
+    </button>
+    <div
+      className="charcoal-modal-background"
+      data-bottom-sheet={false}
+      onClick={[Function]}
+      onPointerDown={[Function]}
+      style={
+        Object {
+          "zIndex": 10,
+        }
+      }
+    >
+      <div
+        className="charcoal-modal-dialog"
+        data-bottom-sheet={false}
+        onKeyDown={[Function]}
+        role="dialog"
+        style={Object {}}
+        tabIndex={-1}
+      >
+        <div
+          className="charcoal-modal-header-root"
+          data-bottom-sheet={false}
+        >
+          <div
+            className="charcoal-modal-header-title"
+          >
+            Title
+          </div>
+        </div>
+        <div
+          className="charcoal-modal-body"
+        >
+          <div
+            className="c0"
+          >
+            <div
+              className="charcoal-modal-align c1"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+            </div>
+            <div
+              className="charcoal-modal-align"
+            >
+              <div
+                className="c2"
+              >
+                <div
+                  className="c3 c4"
+                >
+                  <label
+                    className="c5"
+                    htmlFor="test-id"
+                    id="test-id"
+                  >
+                    Name
+                  </label>
+                  <div
+                    className="c6 c7"
+                  >
+                    <span />
+                  </div>
+                </div>
+                <div
+                  className="c8"
+                >
+                  <input
+                    aria-labelledby="test-id"
+                    className="c9"
+                    disabled={false}
+                    id="test-id"
+                    onChange={[Function]}
+                    placeholder="Nagisa"
+                    readOnly={false}
+                    required={false}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="charcoal-modal-align"
+            >
+              <div
+                className="c2"
+              >
+                <div
+                  className="c3 c4"
+                >
+                  <label
+                    className="c5"
+                    htmlFor="test-id"
+                    id="test-id"
+                  >
+                    Country
+                  </label>
+                  <div
+                    className="c6 c7"
+                  >
+                    <span />
+                  </div>
+                </div>
+                <div
+                  className="c8"
+                >
+                  <input
+                    aria-labelledby="test-id"
+                    autoFocus={true}
+                    className="c9"
+                    disabled={false}
+                    id="test-id"
+                    onChange={[Function]}
+                    placeholder="Tokyo"
+                    readOnly={false}
+                    required={false}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="charcoal-modal-align"
+            >
+              <div
+                className="c10"
+              >
+                <div
+                  className="c3 c11"
+                >
+                  <label
+                    className="c5"
+                  >
+                    Fruits
+                  </label>
+                  <div
+                    className="c6 c7"
+                  >
+                    <span />
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  style={
+                    Object {
+                      "border": 0,
+                      "clip": "rect(0 0 0 0)",
+                      "clipPath": "inset(50%)",
+                      "height": "1px",
+                      "margin": "-1px",
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "whiteSpace": "nowrap",
+                      "width": "1px",
+                    }
+                  }
+                >
+                  <select
+                    onChange={[Function]}
+                    tabIndex={-1}
+                    value="10"
+                  >
+                    <option
+                      value="10"
+                    >
+                      10
+                    </option>
+                    <option
+                      value="20"
+                    >
+                      20
+                    </option>
+                    <option
+                      value="30"
+                    >
+                      30
+                    </option>
+                  </select>
+                </div>
+                <button
+                  className="c12"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="c13"
+                  >
+                    Apple
+                  </span>
+                  <pixiv-icon
+                    class="c14"
+                    name="16/Menu"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="charcoal-modal-buttons"
+          >
+            <button
+              className="charcoal-button"
+              data-full-width={true}
+              data-variant="Primary"
+              onClick={[Function]}
+            >
+              Apply
+            </button>
+            <button
+              className="charcoal-button"
+              data-full-width={true}
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+        <button
+          className="charcoal-clickable c15 charcoal-modal-close-button"
+          onClick={[Function]}
+        >
+          <pixiv-icon
+            name="24/Close"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests Modal FullBottomSheet 1`] = `
+.c5 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c5::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c5::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c7 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c7::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c7::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active,
+.c7:not(:disabled):not([aria-disabled]):focus,
+.c7[aria-disabled='false']:focus,
+.c7:not(:disabled):not([aria-disabled]):focus-visible,
+.c7[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 > .c6 {
+  margin-left: auto;
+}
+
 .c10 {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -780,608 +1499,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
   opacity: 0.32;
 }
 
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-.c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c11 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
-}
-
-.c11:not(:disabled):not([aria-disabled]):hover,
-.c11[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
 .c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c9 {
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c6 {
-  display: grid;
-  gap: 24px;
-}
-
-.c8 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c8::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c8::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-    max-width: unset;
-    width: 100%;
-    border-radius: 0;
-    margin: auto 0 0 0;
-  }
-}
-
-@media (max-width:743px) {
-  .c0 {
-    padding: 0;
-  }
-}
-
-@media (max-width:743px) {
-  .c2 {
-    height: 48px;
-  }
-}
-
-<div
-  data-dark={false}
->
-  <div
-    aria-hidden={null}
-    data-overlay-container={true}
-  >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
-    <div
-      className="c0"
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
-        }
-      }
-    >
-      <div
-        className="c1"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="dialog"
-        size="M"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
-        tabIndex={-1}
-      >
-        <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            Title
-          </h3>
-        </div>
-        <div
-          className="c5"
-        >
-          <div
-            className="c6"
-          >
-            <div
-              className="c7 c8"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
-            </div>
-          </div>
-          <div
-            className="c9"
-          >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Danger"
-              onClick={[Function]}
-            >
-              削除する
-            </button>
-          </div>
-        </div>
-        <button
-          className="charcoal-clickable c10 c11"
-          onClick={[Function]}
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests Modal Default 1`] = `
-.c12 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c12::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c12::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c10 > .c13 {
-  margin-left: auto;
-}
-
-.c17 {
-  display: inline-block;
-  width: 100%;
-}
-
-.c17:disabled,
-.c17[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c18 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c20 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c21 {
-  color: var(--charcoal-text2);
-}
-
-.c23 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c23:not(:disabled):not([aria-disabled]):hover,
-.c23[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c23:not(:disabled):not([aria-disabled]):active,
-.c23[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c23:not(:disabled):not([aria-disabled]):focus,
-.c23[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c23:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c23[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c23:not(:disabled):not([aria-disabled]):focus-visible,
-.c23[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-.c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c24 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
-}
-
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c22 {
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1391,11 +1509,11 @@ exports[`Storybook Tests Modal Default 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c4 {
   margin-bottom: 8px;
 }
 
-.c15 {
+.c8 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1410,17 +1528,17 @@ exports[`Storybook Tests Modal Default 1`] = `
   font-size: 14px;
 }
 
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
+.c8:not(:disabled):not([aria-disabled]):hover,
+.c8 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c15:focus-within {
+.c8:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c16 {
+.c9 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1445,658 +1563,35 @@ exports[`Storybook Tests Modal Default 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c16::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16::-moz-placeholder {
+.c9::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16::placeholder {
+.c9::placeholder {
   color: var(--charcoal-text3);
-}
-
-.c6 {
-  display: grid;
-  gap: 24px;
-}
-
-.c8 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c8::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c8::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-  }
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
-}
-
-<div
-  data-dark={false}
->
-  <div
-    aria-hidden={null}
-    data-overlay-container={true}
-  >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
-    <div
-      className="c0"
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={Object {}}
-    >
-      <div
-        className="c1"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="dialog"
-        size="M"
-        style={Object {}}
-        tabIndex={-1}
-      >
-        <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            Title
-          </h3>
-        </div>
-        <div
-          className="c5"
-        >
-          <div
-            className="c6"
-          >
-            <div
-              className="c7 c8"
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
-            </div>
-            <div
-              className="c7"
-            >
-              <div
-                className="c9"
-              >
-                <div
-                  className="c10 c11"
-                >
-                  <label
-                    className="c12"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Name
-                  </label>
-                  <div
-                    className="c13 c14"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  className="c15"
-                >
-                  <input
-                    aria-labelledby="test-id"
-                    className="c16"
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Nagisa"
-                    readOnly={false}
-                    required={false}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="c7"
-            >
-              <div
-                className="c9"
-              >
-                <div
-                  className="c10 c11"
-                >
-                  <label
-                    className="c12"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Country
-                  </label>
-                  <div
-                    className="c13 c14"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  className="c15"
-                >
-                  <input
-                    aria-labelledby="test-id"
-                    autoFocus={true}
-                    className="c16"
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Tokyo"
-                    readOnly={false}
-                    required={false}
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="c7"
-            >
-              <div
-                className="c17"
-              >
-                <div
-                  className="c10 c18"
-                >
-                  <label
-                    className="c12"
-                  >
-                    Fruits
-                  </label>
-                  <div
-                    className="c13 c14"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  aria-hidden="true"
-                  style={
-                    Object {
-                      "border": 0,
-                      "clip": "rect(0 0 0 0)",
-                      "clipPath": "inset(50%)",
-                      "height": "1px",
-                      "margin": "-1px",
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "position": "absolute",
-                      "whiteSpace": "nowrap",
-                      "width": "1px",
-                    }
-                  }
-                >
-                  <select
-                    onChange={[Function]}
-                    tabIndex={-1}
-                    value="10"
-                  >
-                    <option
-                      value="10"
-                    >
-                      10
-                    </option>
-                    <option
-                      value="20"
-                    >
-                      20
-                    </option>
-                    <option
-                      value="30"
-                    >
-                      30
-                    </option>
-                  </select>
-                </div>
-                <button
-                  className="c19"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="c20"
-                  >
-                    Apple
-                  </span>
-                  <pixiv-icon
-                    class="c21"
-                    name="16/Menu"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            className="c22"
-          >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Primary"
-              onClick={[Function]}
-            >
-              Apply
-            </button>
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              onClick={[Function]}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-        <button
-          className="charcoal-clickable c23 c24"
-          onClick={[Function]}
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests Modal FullBottomSheet 1`] = `
-.c12 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c12::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c12::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c10 > .c13 {
-  margin-left: auto;
-}
-
-.c18 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c18:not(:disabled):not([aria-disabled]):hover,
-.c18[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c18:not(:disabled):not([aria-disabled]):active,
-.c18[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c18:not(:disabled):not([aria-disabled]):focus,
-.c18[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c18[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c18:not(:disabled):not([aria-disabled]):focus-visible,
-.c18[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18:disabled,
-.c18[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
 }
 
 .c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c19 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
-}
-
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c17 {
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  margin-bottom: 8px;
-}
-
-.c15 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c15:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c16 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c16::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c6 {
   display: grid;
   gap: 24px;
 }
 
-.c8 {
+.c1 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c8::before {
+.c1::before {
   display: block;
   width: 0;
   height: 0;
@@ -2104,36 +1599,12 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   margin-top: -4px;
 }
 
-.c8::after {
+.c1::after {
   display: block;
   width: 0;
   height: 0;
   content: '';
   margin-bottom: -4px;
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-    max-width: unset;
-    width: 100%;
-    border-radius: 0;
-    margin: auto 0 0 0;
-    min-height: 100%;
-  }
-}
-
-@media (max-width:743px) {
-  .c0 {
-    padding: 0;
-  }
-}
-
-@media (max-width:743px) {
-  .c2 {
-    height: 48px;
-  }
 }
 
 <div
@@ -2150,22 +1621,23 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
       Open Modal
     </button>
     <div
-      className="c0"
+      className="charcoal-modal-background"
+      data-bottom-sheet="full"
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
         Object {
           "backgroundColor": "rgba(0, 0, 0, 0)",
           "overflow": "hidden",
+          "zIndex": 10,
         }
       }
     >
       <div
-        className="c1"
-        onBlur={[Function]}
+        className="charcoal-modal-dialog"
+        data-bottom-sheet="full"
         onKeyDown={[Function]}
         role="dialog"
-        size="M"
         style={
           Object {
             "transform": " translateY(100%)",
@@ -2174,53 +1646,54 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            Title
-          </h3>
-        </div>
-        <div
-          className="c5"
+          className="charcoal-modal-header-root"
+          data-bottom-sheet="full"
         >
           <div
-            className="c6"
+            className="charcoal-modal-header-title"
+          >
+            Title
+          </div>
+        </div>
+        <div
+          className="charcoal-modal-body"
+        >
+          <div
+            className="c0"
           >
             <div
-              className="c7 c8"
+              className="charcoal-modal-align c1"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
             <div
-              className="c7"
+              className="charcoal-modal-align"
             >
               <div
-                className="c9"
+                className="c2"
               >
                 <div
-                  className="c10 c11"
+                  className="c3 c4"
                 >
                   <label
-                    className="c12"
+                    className="c5"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c13 c14"
+                    className="c6 c7"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c8"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c9"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -2234,33 +1707,33 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
               </div>
             </div>
             <div
-              className="c7"
+              className="charcoal-modal-align"
             >
               <div
-                className="c9"
+                className="c2"
               >
                 <div
-                  className="c10 c11"
+                  className="c3 c4"
                 >
                   <label
-                    className="c12"
+                    className="c5"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c13 c14"
+                    className="c6 c7"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c8"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c9"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -2275,7 +1748,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
             </div>
           </div>
           <div
-            className="c17"
+            className="charcoal-modal-buttons"
           >
             <button
               className="charcoal-button"
@@ -2295,7 +1768,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c18 c19"
+          className="charcoal-clickable c10 charcoal-modal-close-button"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -2309,108 +1782,16 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests Modal InternalScroll 1`] = `
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
 .c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c7 {
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c6 {
   overflow: auto;
   max-height: calc( 100vh - 184px - 56px );
 }
 
-.c8 {
+.c1 {
   position: relative;
 }
 
-.c8::before {
+.c1::before {
   content: '';
   pointer-events: none;
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -2419,21 +1800,6 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
   top: 0;
   width: 100%;
   height: 100%;
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-  }
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
 }
 
 <div
@@ -2450,34 +1816,39 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
       Open Modal
     </button>
     <div
-      className="c0"
+      className="charcoal-modal-background"
+      data-bottom-sheet={false}
       onClick={[Function]}
       onPointerDown={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "zIndex": 10,
+        }
+      }
     >
       <div
-        className="c1"
-        onBlur={[Function]}
+        className="charcoal-modal-dialog"
+        data-bottom-sheet={false}
         onKeyDown={[Function]}
         role="dialog"
-        size="M"
         style={Object {}}
         tabIndex={-1}
       >
         <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            Title
-          </h3>
-        </div>
-        <div
-          className="c5"
+          className="charcoal-modal-header-root"
+          data-bottom-sheet={false}
         >
           <div
-            className="c6"
+            className="charcoal-modal-header-title"
+          >
+            Title
+          </div>
+        </div>
+        <div
+          className="charcoal-modal-body"
+        >
+          <div
+            className="c0"
           >
             <div
               style={
@@ -2489,7 +1860,7 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
             />
           </div>
           <div
-            className="c7 c8"
+            className="charcoal-modal-buttons c1"
           >
             <button
               className="charcoal-button"
@@ -2507,116 +1878,19 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
 `;
 
 exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
 .c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c9 {
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.c6 {
   display: grid;
   gap: 24px;
 }
 
-.c8 {
+.c1 {
   color: var(--charcoal-text2);
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
 }
 
-.c8::before {
+.c1::before {
   display: block;
   width: 0;
   height: 0;
@@ -2624,27 +1898,12 @@ exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
   margin-top: -4px;
 }
 
-.c8::after {
+.c1::after {
   display: block;
   width: 0;
   height: 0;
   content: '';
   margin-bottom: -4px;
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-  }
-}
-
-@media (max-width:743px) {
-
-}
-
-@media (max-width:743px) {
-
 }
 
 <div
@@ -2661,43 +1920,48 @@ exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
       Open Modal
     </button>
     <div
-      className="c0"
+      className="charcoal-modal-background"
+      data-bottom-sheet={false}
       onClick={[Function]}
       onPointerDown={[Function]}
-      style={Object {}}
+      style={
+        Object {
+          "zIndex": 10,
+        }
+      }
     >
       <div
-        className="c1"
-        onBlur={[Function]}
+        className="charcoal-modal-dialog"
+        data-bottom-sheet={false}
         onKeyDown={[Function]}
         role="dialog"
-        size="M"
         style={Object {}}
         tabIndex={-1}
       >
         <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            Title
-          </h3>
-        </div>
-        <div
-          className="c5"
+          className="charcoal-modal-header-root"
+          data-bottom-sheet={false}
         >
           <div
-            className="c6"
+            className="charcoal-modal-header-title"
+          >
+            Title
+          </div>
+        </div>
+        <div
+          className="charcoal-modal-body"
+        >
+          <div
+            className="c0"
           >
             <div
-              className="c7 c8"
+              className="charcoal-modal-align c1"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
           </div>
           <div
-            className="c9"
+            className="charcoal-modal-buttons"
           >
             <button
               className="charcoal-button"

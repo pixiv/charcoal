@@ -1,7 +1,7 @@
 import { useContext, forwardRef, memo } from 'react'
 import * as React from 'react'
 import { AriaModalOverlayProps, Overlay } from '@react-aria/overlays'
-import styled, { css, useTheme } from 'styled-components'
+import { useTheme } from 'styled-components'
 import type { AriaDialogProps } from '@react-types/dialog'
 import { maxWidth } from '@charcoal-ui/utils'
 import { useMedia } from '@charcoal-ui/styled'
@@ -12,6 +12,8 @@ import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
 import { useCharcoalModalOverlay } from './useCustomModalOverlay'
+
+import './index.css'
 
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'
@@ -119,10 +121,10 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
       : { duration: 0 },
   })
 
-  const bgRef = React.useRef<HTMLElement>(null)
+  const bgRef = React.useRef<HTMLDivElement>(null)
 
   const handleClick = React.useCallback(
-    (e: MouseEvent) => {
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       if (e.currentTarget === e.target) {
         onClose()
       }
@@ -134,16 +136,24 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     ({ backgroundColor, overflow, transform }, item) =>
       item && (
         <Overlay portalContainer={portalContainer}>
-          <ModalBackground
+          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+          {/* @ts-ignore */}
+          <animated.div
+            className="charcoal-modal-background"
             ref={bgRef}
-            zIndex={zIndex}
             {...underlayProps}
-            style={transitionEnabled ? { backgroundColor, overflow } : {}}
-            $bottomSheet={bottomSheet}
+            style={
+              transitionEnabled
+                ? { backgroundColor, overflow, zIndex }
+                : { zIndex }
+            }
+            data-bottom-sheet={bottomSheet}
             onClick={handleClick}
           >
             <ModalBackgroundContext.Provider value={bgRef.current}>
-              <Dialog
+              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+              {/* @ts-ignore */}
+              <AnimatedDialog
                 ref={ref}
                 {...modalProps}
                 style={transitionEnabled ? { transform } : {}}
@@ -162,20 +172,23 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
                 >
                   {children}
                   {isDismissable === true && (
-                    <ModalCrossButton
+                    <IconButton
+                      className="charcoal-modal-close-button"
                       size="S"
                       icon="24/Close"
                       onClick={onClose}
                     />
                   )}
                 </ModalContext.Provider>
-              </Dialog>
+              </AnimatedDialog>
             </ModalBackgroundContext.Provider>
-          </ModalBackground>
+          </animated.div>
         </Overlay>
       )
   )
 })
+
+const AnimatedDialog = animated(Dialog)
 
 export default memo(Modal)
 
@@ -195,68 +208,6 @@ export const ModalContext = React.createContext<{
   showDismiss: true,
   bottomSheet: false,
 })
-
-const ModalBackground = animated(styled.div<{
-  zIndex: number
-  $bottomSheet: BottomSheet
-}>`
-  z-index: ${({ zIndex }) => zIndex};
-  overflow: auto;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-
-  background-color: var(--charcoal-surface4);
-
-  @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
-    ${(p) =>
-      p.$bottomSheet !== false &&
-      css`
-        padding: 0;
-      `}
-  }
-`)
-
-const ModalCrossButton = styled(IconButton)`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  color: var(--charcoal-text3);
-  transition: 0.2s color;
-
-  &:not(:disabled):not([aria-disabled]),
-  &[aria-disabled='false'] {
-    &:hover {
-      color: var(--charcoal-text3-hover);
-    }
-    &:active {
-      color: var(--charcoal-text3-press);
-    }
-  }
-`
-
-export function ModalTitle(props: React.HTMLAttributes<HTMLHeadingElement>) {
-  const { titleProps, title } = useContext(ModalContext)
-  return (
-    <ModalHeading {...titleProps} {...props}>
-      {title}
-    </ModalHeading>
-  )
-}
-
-const ModalHeading = styled.h3`
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-`
 
 export function ModalDismissButton({ children, ...props }: ButtonProps) {
   const { close, showDismiss } = useContext(ModalContext)
