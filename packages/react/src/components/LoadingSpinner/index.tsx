@@ -15,7 +15,10 @@ const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
     { size = 48, padding = 16, transparent = false, ...props },
     ref
   ) {
-    const className = useClassNames('charcoal-loading-spinner', props.className)
+    const classNames = useClassNames(
+      'charcoal-loading-spinner',
+      props.className
+    )
 
     return (
       <div
@@ -25,7 +28,7 @@ const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
           '--charcoal-loading-spinner-padding': `${padding}px`,
         }}
         data-transparent={transparent}
-        className={className}
+        className={classNames}
         ref={ref}
       >
         <LoadingSpinnerIcon />
