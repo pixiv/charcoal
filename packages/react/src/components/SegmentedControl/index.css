@@ -1,0 +1,50 @@
+.charcoal-segmented-control {
+  display: inline-flex;
+  align-items: center;
+
+  background-color: var(--charcoal-surface3);
+  border-radius: 16px;
+}
+
+.charcoal-segmented-control-radio__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 32px;
+
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 16px;
+  color: var(--charcoal-text2);
+
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.charcoal-segmented-control-radio__label[aria-disabled]:not(
+    [aria-disabled='false']
+  ) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.charcoal-segmented-control-radio__label[data-checked='true'] {
+  background-color: var(--charcoal-brand);
+  color: var(--charcoal-text5);
+}
+
+.charcoal-segmented-control-radio__input {
+  position: absolute;
+
+  height: 0px;
+  width: 0px;
+  padding: 0;
+  margin: 0;
+
+  appearance: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+}

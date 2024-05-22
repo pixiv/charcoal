@@ -13,7 +13,6 @@ export { default as Button, type ButtonProps } from './components/Button'
 export {
   default as Clickable,
   type ClickableProps,
-  type ClickableElement,
 } from './components/Clickable'
 export {
   default as IconButton,
