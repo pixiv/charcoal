@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Button Danger 1`] = `
+exports[`Storybook Tests react/Button Danger 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -116,7 +116,7 @@ exports[`Storybook Tests Button Danger 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Default 1`] = `
+exports[`Storybook Tests react/Button Default 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -232,7 +232,7 @@ exports[`Storybook Tests Button Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Disabled 1`] = `
+exports[`Storybook Tests react/Button Disabled 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -348,7 +348,7 @@ exports[`Storybook Tests Button Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button FullWidth 1`] = `
+exports[`Storybook Tests react/Button FullWidth 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -464,7 +464,7 @@ exports[`Storybook Tests Button FullWidth 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button IsActive 1`] = `
+exports[`Storybook Tests react/Button IsActive 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -574,7 +574,7 @@ exports[`Storybook Tests Button IsActive 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Navigation 1`] = `
+exports[`Storybook Tests react/Button Navigation 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -690,7 +690,7 @@ exports[`Storybook Tests Button Navigation 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Overlay 1`] = `
+exports[`Storybook Tests react/Button Overlay 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -806,7 +806,7 @@ exports[`Storybook Tests Button Overlay 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Primary 1`] = `
+exports[`Storybook Tests react/Button Primary 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -922,7 +922,7 @@ exports[`Storybook Tests Button Primary 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Button Small 1`] = `
+exports[`Storybook Tests react/Button Small 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;

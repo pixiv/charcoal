@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { useCallback, useState } from 'react'
 
 export default {
-  title: 'Checkbox',
+  title: 'react/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Modal BackgroundScroll 1`] = `
+exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -748,7 +748,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           <h3
             className="c5 c6"
           >
-            Title
+            react/Title
           </h3>
         </div>
         <div
@@ -953,7 +953,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal BottomSheet 1`] = `
+exports[`Storybook Tests react/Modal BottomSheet 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1392,7 +1392,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           <h3
             className="c5 c6"
           >
-            Title
+            react/Title
           </h3>
         </div>
         <div
@@ -1433,7 +1433,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal Default 1`] = `
+exports[`Storybook Tests react/Modal Default 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -2173,7 +2173,7 @@ exports[`Storybook Tests Modal Default 1`] = `
           <h3
             className="c5 c6"
           >
-            Title
+            react/Title
           </h3>
         </div>
         <div
@@ -2378,7 +2378,7 @@ exports[`Storybook Tests Modal Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal FullBottomSheet 1`] = `
+exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -3047,7 +3047,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           <h3
             className="c5 c6"
           >
-            Title
+            react/Title
           </h3>
         </div>
         <div
@@ -3175,7 +3175,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal InternalScroll 1`] = `
+exports[`Storybook Tests react/Modal InternalScroll 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -3506,7 +3506,7 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
           <h3
             className="c5 c6"
           >
-            Title
+            react/Title
           </h3>
         </div>
         <div
@@ -3542,7 +3542,7 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
+exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -3886,7 +3886,7 @@ exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
           <h3
             className="c5 c6"
           >
-            Title
+            react/Title
           </h3>
         </div>
         <div

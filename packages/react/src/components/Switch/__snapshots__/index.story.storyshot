@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Switch Checked 1`] = `
+exports[`Storybook Tests react/Switch Checked 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -144,7 +144,7 @@ exports[`Storybook Tests Switch Checked 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Switch Default 1`] = `
+exports[`Storybook Tests react/Switch Default 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -287,7 +287,7 @@ exports[`Storybook Tests Switch Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Switch Disabled 1`] = `
+exports[`Storybook Tests react/Switch Disabled 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -443,7 +443,7 @@ exports[`Storybook Tests Switch Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Switch Label 1`] = `
+exports[`Storybook Tests react/Switch Label 1`] = `
 .c0 {
   display: inline-grid;
   grid-template-columns: auto 1fr;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
+exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -186,7 +186,7 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
+exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -351,7 +351,7 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Default 1`] = `
+exports[`Storybook Tests react/DropdownSelector Default 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -508,7 +508,7 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Disabled 1`] = `
+exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -667,7 +667,7 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
+exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -835,7 +835,7 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
+exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
 .c4 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1110,613 +1110,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c26 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c26:disabled,
-.c26[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c26:focus {
-  outline: none;
-}
-
-.c26::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c9 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c9::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c9::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c11 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c11::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c11::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c13::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c13::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c13:not(:disabled):not([aria-disabled]):hover,
-.c13[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active,
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus,
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c7 > .c10 {
-  margin-left: 4px;
-}
-
-.c7 > .c12 {
-  margin-left: auto;
-}
-
-.c6 {
-  display: inline-block;
-  width: 100%;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c8 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c14:disabled,
-.c14[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c14:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c14[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c15 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c16 {
-  color: var(--charcoal-text2);
-}
-
-.c17 {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--charcoal-text2);
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c17::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c17::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c27 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c27[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus-visible,
-.c27[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:disabled,
-.c27[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-.c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c28 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
-}
-
-.c28:not(:disabled):not([aria-disabled]):hover,
-.c28[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c28:not(:disabled):not([aria-disabled]):active,
-.c28[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  margin-bottom: 8px;
-}
-
-.c20 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c20:not(:disabled):not([aria-disabled]):hover,
-.c20 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c20:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c21 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c21::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c21::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c21:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c21::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c22 {
-  font-size: 14px;
-  line-height: 22px;
-  margin-top: 4px;
-  margin-bottom: -4px;
-  color: var(--charcoal-text2);
-}
-
-.c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c24 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c24:not([aria-disabled]):hover,
-.c24 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c24:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c25 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c25::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c25::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c25:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c25::placeholder {
-  color: var(--charcoal-text3);
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-    max-width: unset;
-    width: 100%;
-    border-radius: 0;
-    margin: auto 0 0 0;
-    min-height: 100%;
-  }
-}
-
-@media (max-width:743px) {
-  .c0 {
-    padding: 0;
-  }
-}
-
-@media (max-width:743px) {
-  .c2 {
-    height: 48px;
-  }
-}
-
+exports[`Storybook Tests react/DropdownSelector InModal 1`] = `
 <div
   data-dark={false}
 >
@@ -1732,327 +1126,11 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
     >
       open
     </button>
-    <div
-      className="c0"
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
-        }
-      }
-    >
-      <div
-        className="c1"
-        onBlur={[Function]}
-        onKeyDown={[Function]}
-        role="dialog"
-        size="M"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
-        tabIndex={-1}
-      >
-        <div
-          className="c2"
-        >
-          <h3
-            className="c3 c4"
-          >
-            modal
-          </h3>
-        </div>
-        <div
-          className="c5"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 40,
-                "padding": 16,
-              }
-            }
-          >
-            <div
-              className="c6"
-            >
-              <div
-                className="c7 c8"
-              >
-                <label
-                  className="c9"
-                >
-                  DropdownSelector1
-                </label>
-                <span
-                  className="c10 c11"
-                >
-                  required
-                </span>
-                <div
-                  className="c12 c13"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                aria-hidden="true"
-                style={
-                  Object {
-                    "border": 0,
-                    "clip": "rect(0 0 0 0)",
-                    "clipPath": "inset(50%)",
-                    "height": "1px",
-                    "margin": "-1px",
-                    "overflow": "hidden",
-                    "padding": 0,
-                    "position": "absolute",
-                    "whiteSpace": "nowrap",
-                    "width": "1px",
-                  }
-                }
-              >
-                <select
-                  onChange={[Function]}
-                  tabIndex={-1}
-                  value="1"
-                >
-                  <option
-                    value="1"
-                  >
-                    1
-                  </option>
-                  <option
-                    value="2"
-                  >
-                    2
-                  </option>
-                  <option
-                    value="3"
-                  >
-                    3
-                  </option>
-                </select>
-              </div>
-              <button
-                className="c14"
-                onClick={[Function]}
-                type="button"
-              >
-                <span
-                  className="c15"
-                >
-                  Option 1
-                </span>
-                <pixiv-icon
-                  class="c16"
-                  name="16/Menu"
-                />
-              </button>
-              <div
-                className="c17"
-              >
-                assistiveText
-              </div>
-            </div>
-            <div
-              className="c18"
-            >
-              <div
-                className="c7 c19"
-              >
-                <label
-                  className="c9"
-                  htmlFor="test-id"
-                  id="test-id"
-                >
-                  TextField
-                </label>
-                <span
-                  className="c10 c11"
-                >
-                  required
-                </span>
-                <div
-                  className="c12 c13"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                className="c20"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  aria-required={true}
-                  className="c21"
-                  disabled={false}
-                  id="test-id"
-                  onChange={[Function]}
-                  placeholder="placeholder"
-                  readOnly={false}
-                  required={false}
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                className="c22"
-              >
-                assistiveText
-              </p>
-            </div>
-            <div
-              className="c23"
-            >
-              <div
-                className="c7 c19"
-              >
-                <label
-                  className="c9"
-                  htmlFor="test-id"
-                  id="test-id"
-                >
-                  TextArea
-                </label>
-                <span
-                  className="c10 c11"
-                >
-                  required
-                </span>
-                <div
-                  className="c12 c13"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                className="c24"
-                rows={4}
-              >
-                <textarea
-                  aria-labelledby="test-id"
-                  aria-required={true}
-                  className="c25"
-                  disabled={false}
-                  id="test-id"
-                  onChange={[Function]}
-                  placeholder="placeholder"
-                  readOnly={false}
-                  required={false}
-                  rows={4}
-                  value=""
-                />
-              </div>
-              <p
-                className="c22"
-              >
-                assistiveText
-              </p>
-            </div>
-            <div
-              className="c6"
-            >
-              <div
-                className="c7 c8"
-              >
-                <label
-                  className="c9"
-                >
-                  DropdownSelector2
-                </label>
-                <span
-                  className="c10 c11"
-                >
-                  required
-                </span>
-                <div
-                  className="c12 c13"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                aria-hidden="true"
-                style={
-                  Object {
-                    "border": 0,
-                    "clip": "rect(0 0 0 0)",
-                    "clipPath": "inset(50%)",
-                    "height": "1px",
-                    "margin": "-1px",
-                    "overflow": "hidden",
-                    "padding": 0,
-                    "position": "absolute",
-                    "whiteSpace": "nowrap",
-                    "width": "1px",
-                  }
-                }
-              >
-                <select
-                  onChange={[Function]}
-                  tabIndex={-1}
-                  value="2"
-                >
-                  <option
-                    value="1"
-                  >
-                    1
-                  </option>
-                  <option
-                    value="2"
-                  >
-                    2
-                  </option>
-                  <option
-                    value="3"
-                  >
-                    3
-                  </option>
-                </select>
-              </div>
-              <button
-                className="c14"
-                onClick={[Function]}
-                type="button"
-              >
-                <span
-                  className="c15"
-                >
-                  Option 2
-                </span>
-                <pixiv-icon
-                  class="c16"
-                  name="16/Menu"
-                />
-              </button>
-              <div
-                className="c17"
-              >
-                assistiveText
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          className="c26 c27 c28"
-          onClick={[Function]}
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
-      </div>
-    </div>
   </div>
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Invalid 1`] = `
+exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -2214,7 +1292,7 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
+exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -2406,7 +1484,7 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Label 1`] = `
+exports[`Storybook Tests react/DropdownSelector Label 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2666,7 +1744,7 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector LongNames 1`] = `
+exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -2823,7 +1901,7 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
+exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -3120,7 +2198,7 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Section 1`] = `
+exports[`Storybook Tests react/DropdownSelector Section 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -3292,7 +2370,7 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
+exports[`Storybook Tests react/DropdownSelector SubLabel 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
