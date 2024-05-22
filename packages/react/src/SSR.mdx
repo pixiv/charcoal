@@ -2,13 +2,13 @@ import { Meta } from '@storybook/addon-docs'
 
 <Meta title="react/SSR Guide" />
 
-# Server-Side Rendering
+# サーバーサイドレンダリング
 
-charcoal supports server-side rendering frameworks such as [Next.js](https://nextjs.org/).
+charcoal は [Next.js](https://nextjs.org/) などのサーバーサイドレンダリングをサポートしています。
 
 ## SSRProvider
 
-When using SSR, apply `SSRProvider` to your application.
+SSR を利用する際は`SSRProvider`をアプリケーションに適用してください。
 
 ```typescript
 import { FC, ReactNode } from 'react'
@@ -19,9 +19,9 @@ const YourAppProvider: FC<{ children: ReactNode }> = ({ children }) => {
 }
 ```
 
-## Dark Theme
+## ダークテーマ
 
-When using the dark theme, use `makeSetThemeScriptCode` to run a script that changes the theme before the application starts. This helps prevent theme flickering due to client-side rendering. For Next.js, you can add the following to `_document.tsx` ([Next.js Custom Document](https://nextjs.org/docs/advanced-features/custom-document)).
+ダークテーマを利用する場合は、`makeSetThemeScriptCode`を用いてアプリケーションの起動前にテーマを変更するスクリプトを実行してください。これによりクライアントサイドのレンダリングによるテーマのチラつきを抑えることができます。Next.js の場合は `_document.tsx` に下記のように記述することができます（[Next.js の document.tsx について](https://nextjs.org/docs/advanced-features/custom-document)）。
 
 ```typescript
 export default class MyDocument extends Document {
@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
 
 ## Modal
 
-When using [Modal](/docs/react-modal--docs), apply `document.body` to `portalContainer`. Do not set `isOpen` to `true` on the server side, as it will cause an error due to the inability to reference `document`.
+[Modal](/docs/react-modal--docs) を利用する際は `portalContainer`に `document.body`を適用してください。このとき、サーバサイドでは`isOpen`を `true` にしないでください。`document`を参照できずにエラーになります。
 
 ```typescript
 import { FC, ReactNode } from 'react'

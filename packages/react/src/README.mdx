@@ -4,13 +4,11 @@ import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
 
 # Quickstart
 
-This guide explains how to quickly start a project using `@charcoal-ui/react`.
+[![npmバッジ](https://img.shields.io/npm/v/@charcoal-ui/react?label=%40charcoal-ui%2Freact&style=flat-square&logo=npm)](https://www.npmjs.com/package/@charcoal-ui/react)
 
-[![npm-badge](https://img.shields.io/npm/v/@charcoal-ui/react?label=%40charcoal-ui%2Freact&style=flat-square&logo=npm)](https://www.npmjs.com/package/@charcoal-ui/react)
+## インストール
 
-## Installation
-
-Please install using one of the following package managers:
+以下のいずれかのパッケージマネージャーを使用してインストールしてください
 
 ### npm
 
@@ -38,12 +36,12 @@ bun add @charcoal-ui/react
 
 ## Usage
 
-Please use it together with `@charcoal-ui/styled`.  
-Use `ThemeProvider` and `TokenInjector`.
+`@charcoal-ui/styled`と合わせて使用してください。
+`ThemeProvider`、`TokenInjector`を使用してください。詳しくは `@charcoal-ui/styled`のクイックスタートを参照してください。
 
-If necessary, also use `SSRProvider` and `OverlayProvider`.
+必要に応じて`SSRProvider`や`OverlayProvider`も使用してください。
 
-You can also use `CharcoalProvider`, which includes `ThemeProvider`, `TokenInjector`, `SSRProvider`, and `OverlayProvider`.
+また、`ThemeProvider`、`TokenInjector`、`SSRProvider`、`OverlayProvider`を内包した CharcoalProvider を使用することもできます。
 
 ```tsx
 import { CharcoalProvider } from '@charcoal-ui/react'
@@ -68,5 +66,3 @@ export const CharcoalProviderExample: FC<{ children: ReactNode }> = ({
   )
 }
 ```
-
-## Server Side Rendering
