@@ -32,14 +32,14 @@ const IconButton = forwardRef(function IconButtonInner<
 ) {
   validateIconSize(size, icon)
   const Component = useMemo(() => as ?? 'button', [as])
-  const className = useClassNames('charcoal-icon-button', rest.className)
+  const classNames = useClassNames('charcoal-icon-button', rest.className)
 
   return (
     <Component
       {...rest}
       as={componentAs}
       ref={ref}
-      className={className}
+      className={classNames}
       data-size={size}
       data-active={isActive}
       data-variant={variant}
