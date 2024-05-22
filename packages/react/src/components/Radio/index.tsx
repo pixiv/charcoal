@@ -74,6 +74,7 @@ export type RadioGroupProps<Value extends string = string> =
     disabled?: boolean
     readonly?: boolean
     invalid?: boolean
+    ref?: React.Ref<HTMLDivElement>
   }>
 
 interface RadioGroupContext {
@@ -98,47 +99,44 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
   },
 })
 
-export function RadioGroup<Value extends string = string>({
-  value,
-  name,
-  onChange,
-  disabled,
-  readonly,
-  invalid,
-  children,
-  ...props
-}: RadioGroupProps<Value>) {
-  const className = useClassNames('charcoal-radio-group', props.className)
+export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
+  function RadioGroupInner(
+    { value, name, onChange, disabled, readonly, invalid, children, ...props },
+    ref
+  ) {
+    const className = useClassNames('charcoal-radio-group', props.className)
 
-  const handleChange = useCallback(
-    (next: string) => {
-      onChange(next as Value)
-    },
-    [onChange]
-  )
+    const handleChange = useCallback(
+      (next: string) => {
+        onChange(next)
+      },
+      [onChange]
+    )
 
-  const contextValue = useMemo(
-    () => ({
-      name,
-      selected: value,
-      disabled: disabled ?? false,
-      readonly: readonly ?? false,
-      invalid: invalid ?? false,
-      onChange: handleChange,
-    }),
-    [disabled, handleChange, invalid, name, readonly, value]
-  )
+    const contextValue = useMemo(
+      () => ({
+        name,
+        selected: value,
+        disabled: disabled ?? false,
+        readonly: readonly ?? false,
+        invalid: invalid ?? false,
+        onChange: handleChange,
+      }),
+      [disabled, handleChange, invalid, name, readonly, value]
+    )
 
-  return (
-    <RadioGroupContext.Provider value={contextValue}>
-      <div
-        role="radiogroup"
-        aria-orientation="vertical"
-        aria-invalid={invalid}
-        className={className}
-      >
-        {children}
-      </div>
-    </RadioGroupContext.Provider>
-  )
-}
+    return (
+      <RadioGroupContext.Provider value={contextValue}>
+        <div
+          role="radiogroup"
+          aria-orientation="vertical"
+          aria-invalid={invalid}
+          className={className}
+          ref={ref}
+        >
+          {children}
+        </div>
+      </RadioGroupContext.Provider>
+    )
+  }
+) as <Value extends string>(props: RadioGroupProps<Value>) => JSX.Element
