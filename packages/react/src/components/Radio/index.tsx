@@ -24,7 +24,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
     onChange,
   } = useContext(RadioGroupContext)
 
-  const className = useClassNames('charcoal-radio__label', props.className)
+  const classNames = useClassNames('charcoal-radio__label', props.className)
 
   warning(
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -44,7 +44,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   )
 
   return (
-    <label aria-disabled={isDisabled || isReadonly} className={className}>
+    <label aria-disabled={isDisabled || isReadonly} className={classNames}>
       <input
         type="radio"
         className="charcoal-radio__input"
@@ -104,7 +104,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
     { value, name, onChange, disabled, readonly, invalid, children, ...props },
     ref
   ) {
-    const className = useClassNames('charcoal-radio-group', props.className)
+    const classNames = useClassNames('charcoal-radio-group', props.className)
 
     const handleChange = useCallback(
       (next: string) => {
@@ -131,7 +131,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
           role="radiogroup"
           aria-orientation="vertical"
           aria-invalid={invalid}
-          className={className}
+          className={classNames}
           ref={ref}
         >
           {children}
