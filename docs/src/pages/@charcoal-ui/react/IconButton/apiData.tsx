@@ -3,14 +3,9 @@ import { ComponentPropsWithRef } from 'react'
 import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Omit<
-  ApiTableData<IconButtonProps<'button'>, HTMLButtonElement>,
+  ApiTableData<IconButtonProps<'button'>, HTMLInputElement>,
   keyof Omit<ComponentPropsWithRef<'button'>, 'disabled'>
 > = {
-  as: {
-    description: 'コンポーネントのルートノードとして描画する要素',
-    type: "T extends React.ElementType = 'button'",
-    default: 'button',
-  },
   disabled: {
     default: 'false',
     description: '無効化',
@@ -36,6 +31,11 @@ export const apiData: Omit<
     description: 'ボタンの押下状態',
     type: 'boolean',
     default: 'false',
+  },
+  as: {
+    description: 'コンポーネントのルートノードとして描画する要素',
+    type: "T extends React.ElementType = 'button'",
+    default: 'button',
   },
   componentAs: {
     description: 'as で指定したコンポーネントの as プロパティ',

@@ -17,7 +17,9 @@
     }
   },
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "build": "run-p --print-label 'build:*'",
     "build:bundle": "FORCE_COLOR=1 tsup",
