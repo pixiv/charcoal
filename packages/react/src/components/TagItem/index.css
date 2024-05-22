@@ -98,37 +98,6 @@
   background-color: var(--charcoal-surface3);
 }
 
-/* half-leading text styling */
-.charcoal-tag-item-half-leading-text {
-  --charcoal-tag-item-text-font-size: 14px;
-  --charcoal-tag-item-text-line-height: 22px;
-  --charcoal-tag-item-half-leading: calc(
-    (
-        var(--charcoal-tag-item-text-line-height) -
-          var(--charcoal-tag-item-text-font-size)
-      ) / 2
-  );
-
-  display: flow-root;
-  font-size: var(--charcoal-tag-item-text-font-size);
-  line-height: var(--charcoal-tag-item-text-line-height);
-}
-
-.charcoal-tag-item-half-leading-text::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: calc(-1 * var(--charcoal-tag-item-half-leading));
-}
-.charcoal-tag-item-half-leading-text::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: calc(-1 * var(--charcoal-tag-item-half-leading));
-}
-
 .charcoal-tag-item__label {
   height: 100%;
   display: flex;
