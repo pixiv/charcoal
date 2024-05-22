@@ -72,12 +72,12 @@ const TagItem = forwardRef(function TagItemInner<T extends React.ElementType>(
         data-has-translate={hasTranslatedLabel}
       >
         {hasTranslatedLabel && (
-          <span className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__translated">
+          <span className="charcoal-tag-item__label__translated">
             {translatedLabel}
           </span>
         )}
         <span
-          className="charcoal-tag-item-half-leading-text charcoal-tag-item__label__text"
+          className="charcoal-tag-item__label__text"
           data-has-translate={hasTranslatedLabel}
         >
           {label}
