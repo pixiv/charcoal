@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="react/SSR Guide" />
+
+# Server-Side Rendering
+
+charcoal supports server-side rendering frameworks such as [Next.js](https://nextjs.org/).
+
+## SSRProvider
+
+When using SSR, apply `SSRProvider` to your application.
+
+```typescript
+import { FC, ReactNode } from 'react'
+import { SSRProvider } from '@charcoal-ui/react'
+
+const YourAppProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  return <SSRProvider>{children}</SSRProvider>
+}
+```
+
+## Dark Theme
+
+When using the dark theme, use `makeSetThemeScriptCode` to run a script that changes the theme before the application starts. This helps prevent theme flickering due to client-side rendering. For Next.js, you can add the following to `_document.tsx` ([Next.js Custom Document](https://nextjs.org/docs/advanced-features/custom-document)).
+
+```typescript
+export default class MyDocument extends Document {
+  render() {
+    const setThemeScript = makeSetThemeScriptCode()
+    return (
+      <Html>
+        <Head>
+          <Script id="set-theme-script" strategy="beforeInteractive">
+            {setThemeScript}
+          </Script>
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+```
+
+## Modal
+
+When using [Modal](/docs/react-modal--docs), apply `document.body` to `portalContainer`. Do not set `isOpen` to `true` on the server side, as it will cause an error due to the inability to reference `document`.
+
+```typescript
+import { FC, ReactNode } from 'react'
+import { Modal } from '@charcoal-ui/react'
+
+const Example: FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <Modal
+      title="modal"
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      portalContainer={document.body}
+    >
+      {children}
+    </Modal>
+  )
+}
+```
