@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
+
+<Meta title="icons/SSR" />
+
+# サーバーサイドレンダリング
+
+`<pixiv-icon>` はサーバーサイドレンダリング時にも利用できます。
+`@charcoal-ui/icons` は、Node.js の環境下で import されたり、API を呼び出されても問題が起きないように設計されています。
+
+一方、Custom Element であるということは、**SVG アイコンの読み込みはクライアントサイドで行われます**。  
+したがって、大きさが確定せずにレイアウトシフトが起こりうるのは、SSR における注意点の一つと言えます。
+
+以下のようなコードをリセット CSS に含めることで、`<pixiv-icon>` によるレイアウトシフトの発生を防ぐことができます。  
+（簡単のため、ネスト記法が利用できるケースを意図しています）
+
+```css
+pixiv-icon {
+  display: inline-flex;
+  width: calc(var(--icon-size, 1em) * var(--scale, 1));
+  height: calc(var(--icon-size, 1em) * var(--scale, 1));
+}
+
+&[name~='16/'] {
+  --icon-size: 16px;
+}
+
+&[name~='24/'] {
+  --icon-size: 24px;
+}
+
+&[name~='32/'] {
+  --icon-size: 32px;
+}
+
+&[scale='2'] {
+  --scale: 2;
+}
+
+&[scale='3'] {
+  --scale: 3;
+}
+
+/* NOTICE: 現状と attr(... number) ほぼ変とのブラウザも少ない */
+&[unsafe-non-guideline-scale] {
+  --scale: attr(unsafe-non-guideline-scale number);
+}
+```
+
+ただしコメントにもある通り、**現状 `unsafe-non-guideline-scale` をつけた要素は、リセット CSS だけではレイアウトシフトが防げません。**
+CSS の `attr()` が数値の解釈をサポートするまで、個別にインラインスタイルを用いて大きさを確定させるなどのワークアラウンドが必要です。
+
+```html
+<pixiv-icon
+  name="24/Add"
+  unsafe-non-guideline-scale="0.5"
+  style="--scale: 0.5;"
+></pixiv-icon>
+<pixiv-icon
+  name="24/Add"
+  unsafe-non-guideline-scale="0.5"
+  style="width: 12px; height: 12px;"
+></pixiv-icon>
+```

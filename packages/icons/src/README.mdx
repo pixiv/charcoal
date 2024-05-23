@@ -1,0 +1,92 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
+
+<Meta title="icons/README" />
+
+# @charcoal-ui/icons クイックスタート
+
+[![npmバッジ](https://img.shields.io/npm/v/@charcoal-ui/icons?label=%40charcoal-ui%2Ficons&style=flat-square&logo=npm)](https://www.npmjs.com/package/@charcoal-ui/icons)
+
+## インストール
+
+以下のいずれかのパッケージマネージャーを使用してインストールしてください
+
+### npm
+
+```bash
+npm install @charcoal-ui/icons
+```
+
+### yarn
+
+```bash
+yarn add @charcoal-ui/icons
+```
+
+### pnpm
+
+```bash
+pnpm add @charcoal-ui/icons
+```
+
+### bun
+
+```bash
+bun add @charcoal-ui/icons
+```
+
+## 概要
+
+`@charcoal-ui/icons` は、SVG アイコンを [Web Components](https://developer.mozilla.org/ja/docs/Web/API/Web_components) の [Custom Elements](https://developer.mozilla.org/ja/docs/Web/API/Web_components/Using_custom_elements) として利用できるライブラリです。
+
+## 使い方
+
+アプリケーションのエントリポイントで `import` します。
+Storybook の場合は `preview.(js|ts)` に書くと良いでしょう。
+
+`@charcoal-ui/react` の `<Icon>` コンポーネントを利用している場合、この `import` は内部で自動的に行われます。
+
+```typescript
+import '@charcoal-ui/icons'
+```
+
+これだけで、`<pixiv-icon>` という HTML タグが利用可能になります。
+TypeScript の型定義がグローバルにインストールされるので、JSX で `<pixiv-icon>` を書く際にも型チェックが効きます。
+
+## 収録アイコン
+
+`@charcoal-ui/react` の `<Icon>` のページを見てください。
+
+## 各種バンドラとの組み合わせ
+
+`@charcoal-ui/icons@v2.0.0` 以前、このライブラリはアイコンを `.svg` ファイルとしてエクスポートしていました。
+したがって、利用の際は各種バンドラで `.svg` ファイルを `import` できるように設定ファイルを変更する必要がありました。
+
+`v2.0.0` 以降、アイコンは JavaScript の文字列としてエクスポートされるようになっています。
+したがって、`@charcoal-ui/icons` に収録されたアイコンを利用するだけなら、バンドラの設定は必要ありません。
+
+プロジェクト内の SVG ファイルをアイコンとして登録したい場合は、[必要に応じて .svg を import できるように設定してください](/docs/icons-custom-icon--docs)。
+
+## React と組み合わせて使う
+
+`@charcoal-ui/react` に `<Icon>` コンポーネントが収録されているので、基本的にはそちらを利用してください。
+
+### `@charcoal-ui/react` を使わない場合
+
+Custom Element は `className` という props を受け取ることが通常できません。
+
+> Custom elements accept `class` rather than `className`, and `for` rather than `htmlFor`.  
+> [React 公式ドキュメントより](https://reactjs.org/docs/web-components.html#using-web-components-in-react)
+
+もし `styled-components` などを使っていて `className` を渡せないと困るケースでは、ラッパーコンポーネントを作ることができます。
+
+```typescript
+import { Props as IconProps } from '@charcoal-ui/icons'
+
+interface Props extends Omit<IconProps, 'class'> {
+  className?: string
+}
+
+export const Icon: React.FC<Props> = ({ className, ...props }) => (
+  <pixiv-icon class={className} {...props} />
+)
+```
