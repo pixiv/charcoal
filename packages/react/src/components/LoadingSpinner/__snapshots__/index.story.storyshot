@@ -1,45 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests LoadingSpinner Default 1`] = `
-.c0 {
-  box-sizing: content-box;
-  margin: auto;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 48px;
-  width: 48px;
-  height: 48px;
-  opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-background1);
-}
-
-.c1 {
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  background-color: currentColor;
-  -webkit-animation: cNZOgq 1s both ease-out;
-  animation: cNZOgq 1s both ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.c1[data-reset-animation] {
-  -webkit-animation: none;
-  animation: none;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    className="charcoal-loading-spinner"
+    data-transparent={false}
     role="progressbar"
-    size={48}
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "16px",
+        "--charcoal-loading-spinner-size": "48px",
+      }
+    }
   >
     <div
-      className="c1"
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
       role="presentation"
     />
   </div>
@@ -47,45 +25,23 @@ exports[`Storybook Tests LoadingSpinner Default 1`] = `
 `;
 
 exports[`Storybook Tests LoadingSpinner Padding 1`] = `
-.c0 {
-  box-sizing: content-box;
-  margin: auto;
-  padding: 24px;
-  border-radius: 8px;
-  font-size: 48px;
-  width: 48px;
-  height: 48px;
-  opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-background1);
-}
-
-.c1 {
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  background-color: currentColor;
-  -webkit-animation: cNZOgq 1s both ease-out;
-  animation: cNZOgq 1s both ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.c1[data-reset-animation] {
-  -webkit-animation: none;
-  animation: none;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    className="charcoal-loading-spinner"
+    data-transparent={false}
     role="progressbar"
-    size={48}
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "24px",
+        "--charcoal-loading-spinner-size": "48px",
+      }
+    }
   >
     <div
-      className="c1"
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
       role="presentation"
     />
   </div>
@@ -93,45 +49,23 @@ exports[`Storybook Tests LoadingSpinner Padding 1`] = `
 `;
 
 exports[`Storybook Tests LoadingSpinner Size 1`] = `
-.c0 {
-  box-sizing: content-box;
-  margin: auto;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 128px;
-  width: 128px;
-  height: 128px;
-  opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-background1);
-}
-
-.c1 {
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  background-color: currentColor;
-  -webkit-animation: cNZOgq 1s both ease-out;
-  animation: cNZOgq 1s both ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.c1[data-reset-animation] {
-  -webkit-animation: none;
-  animation: none;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    className="charcoal-loading-spinner"
+    data-transparent={false}
     role="progressbar"
-    size={128}
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "16px",
+        "--charcoal-loading-spinner-size": "128px",
+      }
+    }
   >
     <div
-      className="c1"
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
       role="presentation"
     />
   </div>
@@ -139,45 +73,23 @@ exports[`Storybook Tests LoadingSpinner Size 1`] = `
 `;
 
 exports[`Storybook Tests LoadingSpinner Transparent 1`] = `
-.c0 {
-  box-sizing: content-box;
-  margin: auto;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 48px;
-  width: 48px;
-  height: 48px;
-  opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-transparent);
-}
-
-.c1 {
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  background-color: currentColor;
-  -webkit-animation: cNZOgq 1s both ease-out;
-  animation: cNZOgq 1s both ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.c1[data-reset-animation] {
-  -webkit-animation: none;
-  animation: none;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    className="charcoal-loading-spinner"
+    data-transparent={true}
     role="progressbar"
-    size={48}
+    style={
+      Object {
+        "--charcoal-loading-spinner-padding": "16px",
+        "--charcoal-loading-spinner-size": "48px",
+      }
+    }
   >
     <div
-      className="c1"
+      className="charcoal-loading-spinner-icon"
+      data-once={false}
       role="presentation"
     />
   </div>
