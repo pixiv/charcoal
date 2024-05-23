@@ -9,6 +9,7 @@
   "devDependencies": {
     "@types/yargs": "^17.0.32",
     "fs-extra": "^11.2.0",
+    "style-dictionary": "^3.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
   },

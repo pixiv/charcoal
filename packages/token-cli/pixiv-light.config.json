@@ -1,0 +1,19 @@
+{
+  "source": ["tokens/base.json", "tokens/pixiv-light.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "prefix": "charcoal",
+      "files": [
+        {
+          "destination": "_variables_light.css",
+          "format": "css/variables"
+        }
+      ],
+      "options": {
+        "outputReferences": true
+      }
+    }
+  }
+}
