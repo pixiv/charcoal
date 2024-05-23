@@ -1,150 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Radio Default 1`] = `
-.c2 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c3[type='radio'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 6px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border-radius: 999999px;
-  background-color: var(--charcoal-surface1);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:disabled {
-  cursor: default;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio'][aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface1-hover);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active {
-  background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text3);
-}
-
-.c3[type='radio']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c3[type='radio']:checked::after {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
-  background-color: var(--charcoal-text5);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover::after,
-.c3[type='radio']:checked[aria-disabled='false']:hover::after {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
-.c3[type='radio']:checked[aria-disabled='false']:active::after {
-  background-color: var(--charcoal-text5-press);
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -163,19 +19,18 @@ exports[`Storybook Tests Radio Default 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
-      className="c1"
+      className="charcoal-radio-group"
       role="radiogroup"
     >
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={true}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -183,7 +38,7 @@ exports[`Storybook Tests Radio Default 1`] = `
           value="1"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -191,12 +46,12 @@ exports[`Storybook Tests Radio Default 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -204,7 +59,7 @@ exports[`Storybook Tests Radio Default 1`] = `
           value="2"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -212,12 +67,12 @@ exports[`Storybook Tests Radio Default 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -225,7 +80,7 @@ exports[`Storybook Tests Radio Default 1`] = `
           value="3"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -237,150 +92,6 @@ exports[`Storybook Tests Radio Default 1`] = `
 `;
 
 exports[`Storybook Tests Radio Disabled 1`] = `
-.c2 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c3[type='radio'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 6px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border-radius: 999999px;
-  background-color: var(--charcoal-surface1);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:disabled {
-  cursor: default;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio'][aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface1-hover);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active {
-  background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text3);
-}
-
-.c3[type='radio']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c3[type='radio']:checked::after {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
-  background-color: var(--charcoal-text5);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover::after,
-.c3[type='radio']:checked[aria-disabled='false']:hover::after {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
-.c3[type='radio']:checked[aria-disabled='false']:active::after {
-  background-color: var(--charcoal-text5-press);
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -399,19 +110,18 @@ exports[`Storybook Tests Radio Disabled 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
-      className="c1"
+      className="charcoal-radio-group"
       role="radiogroup"
     >
       <label
         aria-disabled={true}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={true}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={true}
           name="name"
           onChange={[Function]}
@@ -419,7 +129,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
           value="1"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -427,12 +137,12 @@ exports[`Storybook Tests Radio Disabled 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={true}
           name="name"
           onChange={[Function]}
@@ -440,7 +150,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
           value="2"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -448,12 +158,12 @@ exports[`Storybook Tests Radio Disabled 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={true}
           name="name"
           onChange={[Function]}
@@ -461,7 +171,7 @@ exports[`Storybook Tests Radio Disabled 1`] = `
           value="3"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -473,150 +183,6 @@ exports[`Storybook Tests Radio Disabled 1`] = `
 `;
 
 exports[`Storybook Tests Radio Invalid 1`] = `
-.c2 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c3[type='radio'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 6px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border-radius: 999999px;
-  background-color: var(--charcoal-surface1);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:disabled {
-  cursor: default;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio'][aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface1-hover);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active {
-  background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text3);
-}
-
-.c3[type='radio']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c3[type='radio']:checked::after {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
-  background-color: var(--charcoal-text5);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover::after,
-.c3[type='radio']:checked[aria-disabled='false']:hover::after {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
-.c3[type='radio']:checked[aria-disabled='false']:active::after {
-  background-color: var(--charcoal-text5-press);
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -636,19 +202,18 @@ exports[`Storybook Tests Radio Invalid 1`] = `
   >
     <div
       aria-invalid={true}
-      aria-label="label"
       aria-orientation="vertical"
-      className="c1"
+      className="charcoal-radio-group"
       role="radiogroup"
     >
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={true}
           checked={true}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -656,7 +221,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
           value="1"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -664,12 +229,12 @@ exports[`Storybook Tests Radio Invalid 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={true}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -677,7 +242,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
           value="2"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -685,12 +250,12 @@ exports[`Storybook Tests Radio Invalid 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={true}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -698,7 +263,7 @@ exports[`Storybook Tests Radio Invalid 1`] = `
           value="3"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -710,150 +275,6 @@ exports[`Storybook Tests Radio Invalid 1`] = `
 `;
 
 exports[`Storybook Tests Radio PartialDisabled 1`] = `
-.c2 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c3[type='radio'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 6px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border-radius: 999999px;
-  background-color: var(--charcoal-surface1);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:disabled {
-  cursor: default;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio'][aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface1-hover);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active {
-  background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text3);
-}
-
-.c3[type='radio']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c3[type='radio']:checked::after {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
-  background-color: var(--charcoal-text5);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover::after,
-.c3[type='radio']:checked[aria-disabled='false']:hover::after {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
-.c3[type='radio']:checked[aria-disabled='false']:active::after {
-  background-color: var(--charcoal-text5-press);
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -872,19 +293,18 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
-      className="c1"
+      className="charcoal-radio-group"
       role="radiogroup"
     >
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={true}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -892,7 +312,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
           value="1"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -900,12 +320,12 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={true}
           name="name"
           onChange={[Function]}
@@ -913,7 +333,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
           value="2"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -921,12 +341,12 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
       </label>
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -934,7 +354,7 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
           value="3"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
@@ -946,150 +366,6 @@ exports[`Storybook Tests Radio PartialDisabled 1`] = `
 `;
 
 exports[`Storybook Tests Radio Readonly 1`] = `
-.c2 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c3[type='radio'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 6px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border-radius: 999999px;
-  background-color: var(--charcoal-surface1);
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:disabled {
-  cursor: default;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio'][aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface1-hover);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio'][aria-disabled='false']:active {
-  background-color: var(--charcoal-surface1-press);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus,
-.c3[type='radio'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c3[type='radio'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled]):focus-visible,
-.c3[type='radio'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:disabled):not([aria-disabled])[aria-invalid='true']:focus,
-.c3[type='radio'][aria-disabled='false'][aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3[type='radio']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text3);
-}
-
-.c3[type='radio']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c3[type='radio']:checked::after {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
-  background-color: var(--charcoal-text5);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover,
-.c3[type='radio']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):hover::after,
-.c3[type='radio']:checked[aria-disabled='false']:hover::after {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active,
-.c3[type='radio']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c3[type='radio']:checked:not(:disabled):not([aria-disabled]):active::after,
-.c3[type='radio']:checked[aria-disabled='false']:active::after {
-  background-color: var(--charcoal-text5-press);
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1108,19 +384,18 @@ exports[`Storybook Tests Radio Readonly 1`] = `
     className="c0"
   >
     <div
-      aria-label="label"
       aria-orientation="vertical"
-      className="c1"
+      className="charcoal-radio-group"
       role="radiogroup"
     >
       <label
         aria-disabled={false}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={true}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={false}
           name="name"
           onChange={[Function]}
@@ -1128,7 +403,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
           value="1"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           1
@@ -1136,12 +411,12 @@ exports[`Storybook Tests Radio Readonly 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={true}
           name="name"
           onChange={[Function]}
@@ -1149,7 +424,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
           value="2"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           2
@@ -1157,12 +432,12 @@ exports[`Storybook Tests Radio Readonly 1`] = `
       </label>
       <label
         aria-disabled={true}
-        className="c2"
+        className="charcoal-radio__label"
       >
         <input
           aria-invalid={false}
           checked={false}
-          className="c3"
+          className="charcoal-radio__input"
           disabled={true}
           name="name"
           onChange={[Function]}
@@ -1170,7 +445,7 @@ exports[`Storybook Tests Radio Readonly 1`] = `
           value="3"
         />
         <div
-          className="c4"
+          className="charcoal-radio__label_div"
         >
           Value 
           3
