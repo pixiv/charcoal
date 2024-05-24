@@ -126,7 +126,6 @@ function TestComponent({
   return (
     <ThemeProvider theme={light}>
       <RadioGroup
-        label="テスト項目"
         name="test"
         value={value}
         onChange={onChange}

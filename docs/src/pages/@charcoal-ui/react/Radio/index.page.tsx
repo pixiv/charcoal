@@ -18,7 +18,6 @@ function Preview(meta: PreviewMeta<RadioGroupProps>, i: number, j: number) {
     <StyledRadioGroup
       {...meta.props}
       key={j}
-      label={'radio' + j.toString()}
       name={'radio' + j.toString()}
       onChange={setValue}
       value={value}

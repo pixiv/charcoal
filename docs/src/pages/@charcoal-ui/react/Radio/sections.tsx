@@ -7,7 +7,6 @@ export const sections: PreviewSection<RadioGroupProps>[] = [
     previewMetas: [
       {
         props: {
-          label: 'radio',
           name: 'radio',
           onChange: () => {},
           disabled: true,
@@ -21,7 +20,6 @@ export const sections: PreviewSection<RadioGroupProps>[] = [
     previewMetas: [
       {
         props: {
-          label: 'radio',
           name: 'radio',
           onChange: () => {},
           invalid: true,
@@ -35,7 +33,6 @@ export const sections: PreviewSection<RadioGroupProps>[] = [
     previewMetas: [
       {
         props: {
-          label: 'radio',
           name: 'radio',
           onChange: () => {},
           readonly: true,

@@ -1,8 +1,9 @@
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
+import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { AssistiveText, TextFieldLabel } from '../TextField'
+import { AssistiveText } from '../TextField'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
 import { useId } from '@react-aria/utils'
 
@@ -102,7 +103,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
-        <TextFieldLabel
+        <FieldLabel
           htmlFor={textAreaId}
           id={labelledbyId}
           label={label}
@@ -149,8 +150,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 export default TextArea
 
 const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
 
   ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
 `
