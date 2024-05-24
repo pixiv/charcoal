@@ -118,7 +118,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           rows={showCount ? rows + 1 : rows}
         >
           <StyledTextarea
-            aria-describedby={describedbyId}
+            aria-describedby={showAssistiveText ? describedbyId : undefined}
             aria-invalid={props.invalid}
             aria-labelledby={labelledbyId}
             id={textAreaId}

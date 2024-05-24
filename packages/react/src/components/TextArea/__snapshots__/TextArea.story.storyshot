@@ -428,7 +428,6 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
@@ -648,7 +647,6 @@ exports[`Storybook Tests TextArea Default 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-invalid={false}
         aria-labelledby="test-id"
         className="c7"
@@ -866,7 +864,6 @@ exports[`Storybook Tests TextArea Disabled 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
@@ -1294,7 +1291,6 @@ exports[`Storybook Tests TextArea Label 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
@@ -1507,7 +1503,6 @@ exports[`Storybook Tests TextArea Placeholder 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
@@ -1721,7 +1716,6 @@ exports[`Storybook Tests TextArea ReadOnly 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
@@ -1968,7 +1962,6 @@ exports[`Storybook Tests TextArea Required 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c9"
         id="test-id"
@@ -2190,7 +2183,6 @@ exports[`Storybook Tests TextArea ShowCount 1`] = `
       rows={5}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
@@ -2401,7 +2393,6 @@ exports[`Storybook Tests TextArea SubLabel 1`] = `
       rows={4}
     >
       <textarea
-        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c7"
         id="test-id"
