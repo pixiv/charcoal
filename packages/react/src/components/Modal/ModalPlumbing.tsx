@@ -24,7 +24,7 @@ export const ModalButtons = createDivComponent('charcoal-modal-buttons')
 
 function createDivComponent(mainClassName: string) {
   return forwardRef<HTMLDivElement, React.ComponentPropsWithRef<'div'>>(
-    function ModalBody({ className, ...props }, ref) {
+    function DivComponent({ className, ...props }, ref) {
       const classNames = useClassNames(mainClassName, className)
       return <div className={classNames} ref={ref} {...props} />
     }
