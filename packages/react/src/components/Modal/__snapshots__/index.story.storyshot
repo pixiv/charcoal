@@ -1,111 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Modal BackgroundScroll 1`] = `
-.c5 {
-  font-size: 14px;
+.c2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c7::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c7::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active,
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled='false']:focus,
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled='false']:focus-visible {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c4 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c3 > .c6 {
-  margin-left: auto;
+.c4::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c10 {
-  display: inline-block;
+.c4::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c4:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c4::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c5 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
-.c10:disabled,
-.c10[aria-disabled]:not([aria-disabled=false]) {
+.c5:disabled,
+.c5[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c11 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c6 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -128,38 +111,38 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]) {
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus {
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled='false']:focus:not(:focus-visible) {
+.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c6[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c13 {
+.c7 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -170,11 +153,11 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
+.c8 {
   color: var(--charcoal-text2);
 }
 
-.c15 {
+.c9 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -200,117 +183,37 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15[aria-disabled='false']:hover {
+.c9:not(:disabled):not([aria-disabled]):hover,
+.c9[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c15:not(:disabled):not([aria-disabled]):active,
-.c15[aria-disabled='false']:active {
+.c9:not(:disabled):not([aria-disabled]):active,
+.c9[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c15:not(:disabled):not([aria-disabled]):focus,
-.c15[aria-disabled='false']:focus {
+.c9:not(:disabled):not([aria-disabled]):focus,
+.c9[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c15:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c15[aria-disabled='false']:focus:not(:focus-visible) {
+.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c9[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c15:not(:disabled):not([aria-disabled]):focus-visible,
-.c15[aria-disabled='false']:focus-visible {
+.c9:not(:disabled):not([aria-disabled]):focus-visible,
+.c9[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c15:disabled,
-.c15[aria-disabled]:not([aria-disabled='false']) {
+.c9:disabled,
+.c9[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  margin-bottom: 8px;
-}
-
-.c8 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c8:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c9::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::placeholder {
-  color: var(--charcoal-text3);
 }
 
 .c0 {
@@ -409,27 +312,27 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                 className="c2"
               >
                 <div
-                  className="c3 c4"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c8"
+                  className="c3"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c9"
+                    className="c4"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -449,28 +352,28 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                 className="c2"
               >
                 <div
-                  className="c3 c4"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c8"
+                  className="c3"
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c9"
+                    className="c4"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -487,18 +390,18 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c10"
+                className="c5"
               >
                 <div
-                  className="c3 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                   >
                     Fruits
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
@@ -543,17 +446,17 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c12"
+                  className="c6"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c13"
+                    className="c7"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c14"
+                    class="c8"
                     name="16/Menu"
                   />
                 </button>
@@ -581,7 +484,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c15 charcoal-modal-close-button"
+          className="charcoal-clickable c9 charcoal-modal-close-button"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -770,111 +673,94 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests Modal Default 1`] = `
-.c5 {
-  font-size: 14px;
+.c2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c7::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c7::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active,
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled='false']:focus,
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled='false']:focus-visible {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c4 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c3 > .c6 {
-  margin-left: auto;
+.c4::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c10 {
-  display: inline-block;
+.c4::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c4:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c4::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c5 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
-.c10:disabled,
-.c10[aria-disabled]:not([aria-disabled=false]) {
+.c5:disabled,
+.c5[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c11 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c6 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -897,38 +783,38 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c12:disabled,
-.c12[aria-disabled]:not([aria-disabled=false]) {
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus {
+.c6:not(:disabled):not([aria-disabled]):focus,
+.c6[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled='false']:focus:not(:focus-visible) {
+.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c6[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c6:not(:disabled):not([aria-disabled]):focus-visible,
+.c6[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c6:not(:disabled):not([aria-disabled]):active,
+.c6[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c13 {
+.c7 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -939,11 +825,11 @@ exports[`Storybook Tests Modal Default 1`] = `
   white-space: nowrap;
 }
 
-.c14 {
+.c8 {
   color: var(--charcoal-text2);
 }
 
-.c15 {
+.c9 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -969,117 +855,37 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15[aria-disabled='false']:hover {
+.c9:not(:disabled):not([aria-disabled]):hover,
+.c9[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c15:not(:disabled):not([aria-disabled]):active,
-.c15[aria-disabled='false']:active {
+.c9:not(:disabled):not([aria-disabled]):active,
+.c9[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c15:not(:disabled):not([aria-disabled]):focus,
-.c15[aria-disabled='false']:focus {
+.c9:not(:disabled):not([aria-disabled]):focus,
+.c9[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c15:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c15[aria-disabled='false']:focus:not(:focus-visible) {
+.c9:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c9[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c15:not(:disabled):not([aria-disabled]):focus-visible,
-.c15[aria-disabled='false']:focus-visible {
+.c9:not(:disabled):not([aria-disabled]):focus-visible,
+.c9[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c15:disabled,
-.c15[aria-disabled]:not([aria-disabled='false']) {
+.c9:disabled,
+.c9[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  margin-bottom: 8px;
-}
-
-.c8 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c8:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c9::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::placeholder {
-  color: var(--charcoal-text3);
 }
 
 .c0 {
@@ -1170,27 +976,27 @@ exports[`Storybook Tests Modal Default 1`] = `
                 className="c2"
               >
                 <div
-                  className="c3 c4"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c8"
+                  className="c3"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c9"
+                    className="c4"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1210,28 +1016,28 @@ exports[`Storybook Tests Modal Default 1`] = `
                 className="c2"
               >
                 <div
-                  className="c3 c4"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c8"
+                  className="c3"
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c9"
+                    className="c4"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1248,18 +1054,18 @@ exports[`Storybook Tests Modal Default 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c10"
+                className="c5"
               >
                 <div
-                  className="c3 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                   >
                     Fruits
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
@@ -1304,17 +1110,17 @@ exports[`Storybook Tests Modal Default 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c12"
+                  className="c6"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c13"
+                    className="c7"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c14"
+                    class="c8"
                     name="16/Menu"
                   />
                 </button>
@@ -1342,7 +1148,7 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c15 charcoal-modal-close-button"
+          className="charcoal-clickable c9 charcoal-modal-close-button"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1356,91 +1162,79 @@ exports[`Storybook Tests Modal Default 1`] = `
 `;
 
 exports[`Storybook Tests Modal FullBottomSheet 1`] = `
-.c5 {
-  font-size: 14px;
+.c2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c7::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c7::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active,
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled='false']:focus,
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled='false']:focus-visible {
+.c3:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c4 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c3 > .c6 {
-  margin-left: auto;
+.c4::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c10 {
+.c4::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c4:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c4::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c5 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1466,117 +1260,37 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c10:not(:disabled):not([aria-disabled]):hover,
-.c10[aria-disabled='false']:hover {
+.c5:not(:disabled):not([aria-disabled]):hover,
+.c5[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c10:not(:disabled):not([aria-disabled]):active,
-.c10[aria-disabled='false']:active {
+.c5:not(:disabled):not([aria-disabled]):active,
+.c5[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c10:not(:disabled):not([aria-disabled]):focus,
-.c10[aria-disabled='false']:focus {
+.c5:not(:disabled):not([aria-disabled]):focus,
+.c5[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c10[aria-disabled='false']:focus:not(:focus-visible) {
+.c5:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c5[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c10:not(:disabled):not([aria-disabled]):focus-visible,
-.c10[aria-disabled='false']:focus-visible {
+.c5:not(:disabled):not([aria-disabled]):focus-visible,
+.c5[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10:disabled,
-.c10[aria-disabled]:not([aria-disabled='false']) {
+.c5:disabled,
+.c5[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  margin-bottom: 8px;
-}
-
-.c8 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c8:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c9::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::placeholder {
-  color: var(--charcoal-text3);
 }
 
 .c0 {
@@ -1673,27 +1387,27 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                 className="c2"
               >
                 <div
-                  className="c3 c4"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c8"
+                  className="c3"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c9"
+                    className="c4"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1713,27 +1427,27 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                 className="c2"
               >
                 <div
-                  className="c3 c4"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c5"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c6 c7"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c8"
+                  className="c3"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c9"
+                    className="c4"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1768,7 +1482,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c10 charcoal-modal-close-button"
+          className="charcoal-clickable c5 charcoal-modal-close-button"
           onClick={[Function]}
         >
           <pixiv-icon

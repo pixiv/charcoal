@@ -118,7 +118,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
 
     return (
       <TextFieldRoot className={className} isDisabled={disabled}>
-        <TextFieldLabel
+        <FieldLabel
           label={label}
           requiredText={requiredText}
           required={required}
@@ -166,14 +166,11 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
 export default TextField
 
 const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
 
   ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
-`
-
-export const TextFieldLabel = styled(FieldLabel)`
-  margin-bottom: 8px;
 `
 
 const StyledInputContainer = styled.div<{
@@ -263,7 +260,6 @@ const SingleLineCounter = styled.span`
 export const AssistiveText = styled.p<{ invalid: boolean }>`
   font-size: 14px;
   line-height: 22px;
-  margin-top: 4px;
-  margin-bottom: -4px;
+  margin: 0;
   color: ${(p) => `var(--charcoal-${p.invalid ? `assertive` : `text2`})`};
 `
