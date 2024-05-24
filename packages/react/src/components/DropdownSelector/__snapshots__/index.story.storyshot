@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+  color: var(--charcoal-text2);
+}
+
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -13,10 +22,8 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -83,30 +90,6 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
 
 .c3 {
   color: var(--charcoal-text2);
-}
-
-.c4 {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--charcoal-text2);
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
 }
 
 <div
@@ -176,11 +159,11 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
           name="16/Menu"
         />
       </button>
-      <div
+      <p
         className="c4"
       >
         assistiveText
-      </div>
+      </p>
     </div>
   </div>
 </div>
@@ -188,7 +171,9 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
 
 exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -199,10 +184,8 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -353,7 +336,9 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 
 exports[`Storybook Tests DropdownSelector Default 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -364,10 +349,8 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -510,7 +493,9 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
 
 exports[`Storybook Tests DropdownSelector Disabled 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -521,10 +506,8 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -669,7 +652,9 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
 
 exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -680,10 +665,8 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -837,7 +820,9 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
 
 exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -848,10 +833,8 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1008,119 +991,89 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c9 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c9::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c9::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 .c11 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c12 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
   color: var(--charcoal-text2);
-}
-
-.c11::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c11::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c13 {
-  font-size: 14px;
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
+  font-size: 14px;
 }
 
-.c13::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c12:not(:disabled):not([aria-disabled]):hover,
+.c12 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c13::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c13:not(:disabled):not([aria-disabled]):hover,
-.c13[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active,
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus,
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled='false']:focus-visible {
+.c12:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c13 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c7 > .c10 {
-  margin-left: 4px;
+.c13::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c7 > .c12 {
-  margin-left: auto;
+.c13::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c13:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c13::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c10 {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+  color: var(--charcoal-text2);
 }
 
 .c6 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -1130,16 +1083,9 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   opacity: 0.32;
 }
 
-.c8 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c7 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1162,38 +1108,38 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c14:disabled,
-.c14[aria-disabled]:not([aria-disabled=false]) {
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus {
+.c7:not(:disabled):not([aria-disabled]):focus,
+.c7[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c14:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c14[aria-disabled='false']:focus:not(:focus-visible) {
+.c7:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c7[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
+.c7:not(:disabled):not([aria-disabled]):focus-visible,
+.c7[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
+.c7:not(:disabled):not([aria-disabled]):hover,
+.c7[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
+.c7:not(:disabled):not([aria-disabled]):active,
+.c7[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c15 {
+.c8 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -1204,35 +1150,11 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   white-space: nowrap;
 }
 
-.c16 {
+.c9 {
   color: var(--charcoal-text2);
 }
 
 .c17 {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--charcoal-text2);
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c17::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c17::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c26 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1258,36 +1180,36 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c26:not(:disabled):not([aria-disabled]):hover,
-.c26[aria-disabled='false']:hover {
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c26:not(:disabled):not([aria-disabled]):active,
-.c26[aria-disabled='false']:active {
+.c17:not(:disabled):not([aria-disabled]):active,
+.c17[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c26:not(:disabled):not([aria-disabled]):focus,
-.c26[aria-disabled='false']:focus {
+.c17:not(:disabled):not([aria-disabled]):focus,
+.c17[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c26:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c26[aria-disabled='false']:focus:not(:focus-visible) {
+.c17:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c17[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c26:not(:disabled):not([aria-disabled]):focus-visible,
-.c26[aria-disabled='false']:focus-visible {
+.c17:not(:disabled):not([aria-disabled]):focus-visible,
+.c17[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c26:disabled,
-.c26[aria-disabled]:not([aria-disabled='false']) {
+.c17:disabled,
+.c17[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1328,7 +1250,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c27 {
+.c18 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1337,13 +1259,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s color;
 }
 
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1393,105 +1315,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   padding-bottom: 40px;
 }
 
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  margin-bottom: 8px;
-}
-
-.c20 {
+.c14 {
   display: grid;
   grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
+  grid-gap: 4px;
 }
 
-.c20:not(:disabled):not([aria-disabled]):hover,
-.c20 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c20:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c21 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c21::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c21::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c21:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c21::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c22 {
-  font-size: 14px;
-  line-height: 22px;
-  margin-top: 4px;
-  margin-bottom: -4px;
-  color: var(--charcoal-text2);
-}
-
-.c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c24 {
+.c15 {
   position: relative;
   overflow: hidden;
   color: var(--charcoal-text2);
@@ -1502,17 +1332,17 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c24:not([aria-disabled]):hover,
-.c24 [aria-disabled='false']:hover {
+.c15:not([aria-disabled]):hover,
+.c15 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c24:focus-within {
+.c15:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c25 {
+.c16 {
   border: none;
   outline: none;
   resize: none;
@@ -1536,19 +1366,19 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background: none;
 }
 
-.c25::-webkit-input-placeholder {
+.c16::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c25::-moz-placeholder {
+.c16::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c25:-ms-input-placeholder {
+.c16:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c25::placeholder {
+.c16::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -1640,20 +1470,20 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
               className="c6"
             >
               <div
-                className="c7 c8"
+                className="charcoal-field-label-root"
               >
                 <label
-                  className="c9"
+                  className="charcoal-field-label"
                 >
                   DropdownSelector1
                 </label>
-                <span
-                  className="c10 c11"
+                <div
+                  className="charcoal-field-label-required-text"
                 >
                   required
-                </span>
+                </div>
                 <div
-                  className="c12 c13"
+                  className="charcoal-field-label-sub-label"
                 >
                   <span />
                 </div>
@@ -1698,57 +1528,57 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </select>
               </div>
               <button
-                className="c14"
+                className="c7"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="c15"
+                  className="c8"
                 >
                   Option 1
                 </span>
                 <pixiv-icon
-                  class="c16"
+                  class="c9"
                   name="16/Menu"
                 />
               </button>
-              <div
-                className="c17"
+              <p
+                className="c10"
               >
                 assistiveText
-              </div>
+              </p>
             </div>
             <div
-              className="c18"
+              className="c11"
             >
               <div
-                className="c7 c19"
+                className="charcoal-field-label-root"
               >
                 <label
-                  className="c9"
+                  className="charcoal-field-label"
                   htmlFor="test-id"
                   id="test-id"
                 >
                   TextField
                 </label>
-                <span
-                  className="c10 c11"
+                <div
+                  className="charcoal-field-label-required-text"
                 >
                   required
-                </span>
+                </div>
                 <div
-                  className="c12 c13"
+                  className="charcoal-field-label-sub-label"
                 >
                   <span />
                 </div>
               </div>
               <div
-                className="c20"
+                className="c12"
               >
                 <input
                   aria-labelledby="test-id"
                   aria-required={true}
-                  className="c21"
+                  className="c13"
                   disabled={false}
                   id="test-id"
                   onChange={[Function]}
@@ -1760,43 +1590,43 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 />
               </div>
               <p
-                className="c22"
+                className="c10"
               >
                 assistiveText
               </p>
             </div>
             <div
-              className="c23"
+              className="c14"
             >
               <div
-                className="c7 c19"
+                className="charcoal-field-label-root"
               >
                 <label
-                  className="c9"
+                  className="charcoal-field-label"
                   htmlFor="test-id"
                   id="test-id"
                 >
                   TextArea
                 </label>
-                <span
-                  className="c10 c11"
+                <div
+                  className="charcoal-field-label-required-text"
                 >
                   required
-                </span>
+                </div>
                 <div
-                  className="c12 c13"
+                  className="charcoal-field-label-sub-label"
                 >
                   <span />
                 </div>
               </div>
               <div
-                className="c24"
+                className="c15"
                 rows={4}
               >
                 <textarea
                   aria-labelledby="test-id"
                   aria-required={true}
-                  className="c25"
+                  className="c16"
                   disabled={false}
                   id="test-id"
                   onChange={[Function]}
@@ -1808,7 +1638,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 />
               </div>
               <p
-                className="c22"
+                className="c10"
               >
                 assistiveText
               </p>
@@ -1817,20 +1647,20 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
               className="c6"
             >
               <div
-                className="c7 c8"
+                className="charcoal-field-label-root"
               >
                 <label
-                  className="c9"
+                  className="charcoal-field-label"
                 >
                   DropdownSelector2
                 </label>
-                <span
-                  className="c10 c11"
+                <div
+                  className="charcoal-field-label-required-text"
                 >
                   required
-                </span>
+                </div>
                 <div
-                  className="c12 c13"
+                  className="charcoal-field-label-sub-label"
                 >
                   <span />
                 </div>
@@ -1875,30 +1705,30 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </select>
               </div>
               <button
-                className="c14"
+                className="c7"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="c15"
+                  className="c8"
                 >
                   Option 2
                 </span>
                 <pixiv-icon
-                  class="c16"
+                  class="c9"
                   name="16/Menu"
                 />
               </button>
-              <div
-                className="c17"
+              <p
+                className="c10"
               >
                 assistiveText
-              </div>
+              </p>
             </div>
           </div>
         </div>
         <button
-          className="charcoal-clickable c26 c27"
+          className="charcoal-clickable c17 c18"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1913,7 +1743,9 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
 
 exports[`Storybook Tests DropdownSelector Invalid 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -1924,10 +1756,8 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2074,8 +1904,17 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
+.c4 {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+  color: var(--charcoal-assertive);
+}
+
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -2086,10 +1925,8 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2163,31 +2000,6 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c4 {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--charcoal-text2);
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-assertive);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
@@ -2255,103 +2067,21 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
           name="16/Menu"
         />
       </button>
-      <div
+      <p
         className="c4"
       >
         assistiveText
-      </div>
+      </p>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests DropdownSelector Label 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -2361,16 +2091,9 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
   opacity: 0.32;
 }
 
-.c2 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c1 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2393,38 +2116,38 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled='false']:focus {
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled='false']:focus:not(:focus-visible) {
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled='false']:focus-visible {
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):hover,
-.c6[aria-disabled='false']:hover {
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled='false']:active {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c7 {
+.c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -2435,7 +2158,7 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
+.c3 {
   color: var(--charcoal-text2);
 }
 
@@ -2453,15 +2176,15 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
       className="c0"
     >
       <div
-        className="c1 c2"
+        className="charcoal-field-label-root"
       >
         <label
-          className="c3"
+          className="charcoal-field-label"
         >
           Label
         </label>
         <div
-          className="c4 c5"
+          className="charcoal-field-label-sub-label"
         >
           <span />
         </div>
@@ -2506,17 +2229,17 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
         </select>
       </div>
       <button
-        className="c6"
+        className="c1"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c7"
+          className="c2"
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c8"
+          class="c3"
           name="16/Menu"
         />
       </button>
@@ -2527,7 +2250,9 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
 
 exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -2538,10 +2263,8 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2683,119 +2406,10 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c7::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c7::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active,
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled='false']:focus,
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: 4px;
-}
-
-.c1 > .c6 {
-  margin-left: auto;
-}
-
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -2805,16 +2419,9 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
   opacity: 0.32;
 }
 
-.c2 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c1 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2837,43 +2444,43 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c8:disabled,
-.c8[aria-disabled]:not([aria-disabled=false]) {
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus,
-.c8[aria-disabled='false']:focus {
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c8[aria-disabled='false']:focus:not(:focus-visible) {
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c8:not(:disabled):not([aria-disabled]):focus-visible,
-.c8[aria-disabled='false']:focus-visible {
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c8:not(:disabled):not([aria-disabled]):hover,
-.c8[aria-disabled='false']:hover {
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c8:not(:disabled):not([aria-disabled]):active,
-.c8[aria-disabled='false']:active {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c8:not(:disabled):not([aria-disabled]),
-.c8[aria-disabled='false'] {
+.c1:not(:disabled):not([aria-disabled]),
+.c1[aria-disabled='false'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
-.c9 {
+.c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -2884,7 +2491,7 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
   white-space: nowrap;
 }
 
-.c10 {
+.c3 {
   color: var(--charcoal-text2);
 }
 
@@ -2902,20 +2509,20 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
       className="c0"
     >
       <div
-        className="c1 c2"
+        className="charcoal-field-label-root"
       >
         <label
-          className="c3"
+          className="charcoal-field-label"
         >
           Label
         </label>
-        <span
-          className="c4 c5"
+        <div
+          className="charcoal-field-label-required-text"
         >
           required
-        </span>
+        </div>
         <div
-          className="c6 c7"
+          className="charcoal-field-label-sub-label"
         >
           <span />
         </div>
@@ -2960,17 +2567,17 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
         </select>
       </div>
       <button
-        className="c8"
+        className="c1"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c9"
+          className="c2"
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c10"
+          class="c3"
           name="16/Menu"
         />
       </button>
@@ -2981,7 +2588,9 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
 
 exports[`Storybook Tests DropdownSelector Section 1`] = `
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -2992,10 +2601,8 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -3152,92 +2759,10 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
 .c0 {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
@@ -3247,16 +2772,9 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
   opacity: 0.32;
 }
 
-.c2 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c1 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -3279,43 +2797,43 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled='false']:focus {
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled='false']:focus:not(:focus-visible) {
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled='false']:focus-visible {
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):hover,
-.c6[aria-disabled='false']:hover {
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled='false']:active {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c6:not(:disabled):not([aria-disabled]),
-.c6[aria-disabled='false'] {
+.c1:not(:disabled):not([aria-disabled]),
+.c1[aria-disabled='false'] {
   box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
 }
 
-.c7 {
+.c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -3326,7 +2844,7 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
+.c3 {
   color: var(--charcoal-text2);
 }
 
@@ -3344,15 +2862,15 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
       className="c0"
     >
       <div
-        className="c1 c2"
+        className="charcoal-field-label-root"
       >
         <label
-          className="c3"
+          className="charcoal-field-label"
         >
           Label
         </label>
         <div
-          className="c4 c5"
+          className="charcoal-field-label-sub-label"
         >
           <span>
             SubLabel
@@ -3399,17 +2917,17 @@ exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
         </select>
       </div>
       <button
-        className="c6"
+        className="c1"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c7"
+          className="c2"
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c8"
+          class="c3"
           name="16/Menu"
         />
       </button>

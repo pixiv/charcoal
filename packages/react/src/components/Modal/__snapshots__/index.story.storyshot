@@ -1,111 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests Modal BackgroundScroll 1`] = `
-.c12 {
-  font-size: 14px;
+.c9 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c10 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c12::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c12::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
+.c10:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c11 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c10 > .c13 {
-  margin-left: auto;
+.c11::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c17 {
-  display: inline-block;
+.c11::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c12 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
-.c17:disabled,
-.c17[aria-disabled]:not([aria-disabled=false]) {
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c18 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c13 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -128,38 +111,38 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled=false]) {
+.c13:disabled,
+.c13[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
+.c13:not(:disabled):not([aria-disabled]):focus,
+.c13[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
+.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c13[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
+.c13:not(:disabled):not([aria-disabled]):focus-visible,
+.c13[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c13:not(:disabled):not([aria-disabled]):hover,
+.c13[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c20 {
+.c14 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -170,11 +153,11 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   white-space: nowrap;
 }
 
-.c21 {
+.c15 {
   color: var(--charcoal-text2);
 }
 
-.c23 {
+.c17 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -200,36 +183,36 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c23:not(:disabled):not([aria-disabled]):hover,
-.c23[aria-disabled='false']:hover {
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c23:not(:disabled):not([aria-disabled]):active,
-.c23[aria-disabled='false']:active {
+.c17:not(:disabled):not([aria-disabled]):active,
+.c17[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus,
-.c23[aria-disabled='false']:focus {
+.c17:not(:disabled):not([aria-disabled]):focus,
+.c17[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c23[aria-disabled='false']:focus:not(:focus-visible) {
+.c17:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c17[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus-visible,
-.c23[aria-disabled='false']:focus-visible {
+.c17:not(:disabled):not([aria-disabled]):focus-visible,
+.c17[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled='false']) {
+.c17:disabled,
+.c17[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -270,7 +253,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c24 {
+.c18 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -279,13 +262,13 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s color;
 }
 
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -340,93 +323,13 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   padding-bottom: 40px;
 }
 
-.c22 {
+.c16 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  margin-bottom: 8px;
-}
-
-.c15 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c15:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c16 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c16::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::placeholder {
-  color: var(--charcoal-text3);
 }
 
 .c6 {
@@ -535,27 +438,27 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                 className="c9"
               >
                 <div
-                  className="c10 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c10"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c11"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -575,28 +478,28 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                 className="c9"
               >
                 <div
-                  className="c10 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c10"
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c16"
+                    className="c11"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -613,18 +516,18 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               className="c7"
             >
               <div
-                className="c17"
+                className="c12"
               >
                 <div
-                  className="c10 c18"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                   >
                     Fruits
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
@@ -669,17 +572,17 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c19"
+                  className="c13"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c20"
+                    className="c14"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c21"
+                    class="c15"
                     name="16/Menu"
                   />
                 </button>
@@ -687,7 +590,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
             </div>
           </div>
           <div
-            className="c22"
+            className="c16"
           >
             <button
               className="charcoal-button"
@@ -707,7 +610,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c23 c24"
+          className="charcoal-clickable c17 c18"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1033,111 +936,94 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests Modal Default 1`] = `
-.c12 {
-  font-size: 14px;
+.c9 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c10 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c12::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c12::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
+.c10:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c11 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c10 > .c13 {
-  margin-left: auto;
+.c11::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c17 {
-  display: inline-block;
+.c11::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c12 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 }
 
-.c17:disabled,
-.c17[aria-disabled]:not([aria-disabled=false]) {
+.c12:disabled,
+.c12[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c18 {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.c13 {
+  display: grid;
+  grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -1160,38 +1046,38 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled=false]) {
+.c13:disabled,
+.c13[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
+.c13:not(:disabled):not([aria-disabled]):focus,
+.c13[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
+.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c13[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
+.c13:not(:disabled):not([aria-disabled]):focus-visible,
+.c13[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c13:not(:disabled):not([aria-disabled]):hover,
+.c13[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c20 {
+.c14 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -1202,11 +1088,11 @@ exports[`Storybook Tests Modal Default 1`] = `
   white-space: nowrap;
 }
 
-.c21 {
+.c15 {
   color: var(--charcoal-text2);
 }
 
-.c23 {
+.c17 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1232,36 +1118,36 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c23:not(:disabled):not([aria-disabled]):hover,
-.c23[aria-disabled='false']:hover {
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c23:not(:disabled):not([aria-disabled]):active,
-.c23[aria-disabled='false']:active {
+.c17:not(:disabled):not([aria-disabled]):active,
+.c17[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus,
-.c23[aria-disabled='false']:focus {
+.c17:not(:disabled):not([aria-disabled]):focus,
+.c17[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c23[aria-disabled='false']:focus:not(:focus-visible) {
+.c17:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c17[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c23:not(:disabled):not([aria-disabled]):focus-visible,
-.c23[aria-disabled='false']:focus-visible {
+.c17:not(:disabled):not([aria-disabled]):focus-visible,
+.c17[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c23:disabled,
-.c23[aria-disabled]:not([aria-disabled='false']) {
+.c17:disabled,
+.c17[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1302,7 +1188,7 @@ exports[`Storybook Tests Modal Default 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c24 {
+.c18 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1311,13 +1197,13 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s color;
 }
 
-.c24:not(:disabled):not([aria-disabled]):hover,
-.c24[aria-disabled='false']:hover {
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c24:not(:disabled):not([aria-disabled]):active,
-.c24[aria-disabled='false']:active {
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1372,93 +1258,13 @@ exports[`Storybook Tests Modal Default 1`] = `
   padding-bottom: 40px;
 }
 
-.c22 {
+.c16 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  margin-bottom: 8px;
-}
-
-.c15 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c15:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c16 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c16::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::placeholder {
-  color: var(--charcoal-text3);
 }
 
 .c6 {
@@ -1559,27 +1365,27 @@ exports[`Storybook Tests Modal Default 1`] = `
                 className="c9"
               >
                 <div
-                  className="c10 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c10"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c11"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1599,28 +1405,28 @@ exports[`Storybook Tests Modal Default 1`] = `
                 className="c9"
               >
                 <div
-                  className="c10 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c10"
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c16"
+                    className="c11"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -1637,18 +1443,18 @@ exports[`Storybook Tests Modal Default 1`] = `
               className="c7"
             >
               <div
-                className="c17"
+                className="c12"
               >
                 <div
-                  className="c10 c18"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                   >
                     Fruits
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
@@ -1693,17 +1499,17 @@ exports[`Storybook Tests Modal Default 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c19"
+                  className="c13"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c20"
+                    className="c14"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c21"
+                    class="c15"
                     name="16/Menu"
                   />
                 </button>
@@ -1711,7 +1517,7 @@ exports[`Storybook Tests Modal Default 1`] = `
             </div>
           </div>
           <div
-            className="c22"
+            className="c16"
           >
             <button
               className="charcoal-button"
@@ -1731,7 +1537,7 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c23 c24"
+          className="charcoal-clickable c17 c18"
           onClick={[Function]}
         >
           <pixiv-icon
@@ -1745,91 +1551,79 @@ exports[`Storybook Tests Modal Default 1`] = `
 `;
 
 exports[`Storybook Tests Modal FullBottomSheet 1`] = `
-.c12 {
-  font-size: 14px;
+.c9 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
+}
+
+.c10 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c12::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c12::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c10:not(:disabled):not([aria-disabled]):hover,
+.c10 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active,
-.c14:not(:disabled):not([aria-disabled]):focus,
-.c14[aria-disabled='false']:focus,
-.c14:not(:disabled):not([aria-disabled]):focus-visible,
-.c14[aria-disabled='false']:focus-visible {
+.c10:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c11 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c10 > .c13 {
-  margin-left: auto;
+.c11::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c18 {
+.c11::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c11::placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c13 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1855,36 +1649,36 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c18:not(:disabled):not([aria-disabled]):hover,
-.c18[aria-disabled='false']:hover {
+.c13:not(:disabled):not([aria-disabled]):hover,
+.c13[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c18:not(:disabled):not([aria-disabled]):active,
-.c18[aria-disabled='false']:active {
+.c13:not(:disabled):not([aria-disabled]):active,
+.c13[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c18:not(:disabled):not([aria-disabled]):focus,
-.c18[aria-disabled='false']:focus {
+.c13:not(:disabled):not([aria-disabled]):focus,
+.c13[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c18:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c18[aria-disabled='false']:focus:not(:focus-visible) {
+.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c13[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c18:not(:disabled):not([aria-disabled]):focus-visible,
-.c18[aria-disabled='false']:focus-visible {
+.c13:not(:disabled):not([aria-disabled]):focus-visible,
+.c13[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c18:disabled,
-.c18[aria-disabled]:not([aria-disabled='false']) {
+.c13:disabled,
+.c13[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1925,7 +1719,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c19 {
+.c14 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1934,13 +1728,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c14:not(:disabled):not([aria-disabled]):hover,
+.c14[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c14:not(:disabled):not([aria-disabled]):active,
+.c14[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1995,93 +1789,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
   padding-bottom: 40px;
 }
 
-.c17 {
+.c12 {
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 8px;
   padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  margin-bottom: 8px;
-}
-
-.c15 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c15:not(:disabled):not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c15:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c16 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c16::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c16::placeholder {
-  color: var(--charcoal-text3);
 }
 
 .c6 {
@@ -2200,27 +1914,27 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                 className="c9"
               >
                 <div
-                  className="c10 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Name
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c10"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c11"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -2240,27 +1954,27 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                 className="c9"
               >
                 <div
-                  className="c10 c11"
+                  className="charcoal-field-label-root"
                 >
                   <label
-                    className="c12"
+                    className="charcoal-field-label"
                     htmlFor="test-id"
                     id="test-id"
                   >
                     Country
                   </label>
                   <div
-                    className="c13 c14"
+                    className="charcoal-field-label-sub-label"
                   >
                     <span />
                   </div>
                 </div>
                 <div
-                  className="c15"
+                  className="c10"
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c16"
+                    className="c11"
                     disabled={false}
                     id="test-id"
                     onChange={[Function]}
@@ -2275,7 +1989,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
             </div>
           </div>
           <div
-            className="c17"
+            className="c12"
           >
             <button
               className="charcoal-button"
@@ -2295,7 +2009,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c18 c19"
+          className="charcoal-clickable c13 c14"
           onClick={[Function]}
         >
           <pixiv-icon

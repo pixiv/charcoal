@@ -9,6 +9,7 @@ import MenuList, { MenuListChildren } from './MenuList'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
+import { AssistiveText } from '../TextField'
 
 export type DropdownSelectorProps = {
   label: string
@@ -58,7 +59,7 @@ export default function DropdownSelector({
   return (
     <DropdownSelectorRoot aria-disabled={props.disabled}>
       {props.showLabel === true && (
-        <DropdownFieldLabel
+        <FieldLabel
           label={props.label}
           required={props.required}
           requiredText={props.requiredText ?? defaultRequiredText}
@@ -120,16 +121,18 @@ export default function DropdownSelector({
         </DropdownPopover>
       )}
       {props.assistiveText !== undefined && (
-        <AssertiveText invalid={props.invalid}>
+        <AssistiveText invalid={props.invalid === true}>
           {props.assistiveText}
-        </AssertiveText>
+        </AssistiveText>
       )}
     </DropdownSelectorRoot>
   )
 }
 
 const DropdownSelectorRoot = styled.div`
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 4px;
   width: 100%;
 
   ${disabledSelector} {
@@ -138,13 +141,9 @@ const DropdownSelectorRoot = styled.div`
   }
 `
 
-const DropdownFieldLabel = styled(FieldLabel)`
-  width: 100%;
-  margin-bottom: 8px;
-`
-
 const DropdownButton = styled.button<{ invalid?: boolean; $active?: boolean }>`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
   align-items: center;
 
@@ -207,32 +206,4 @@ const DropdownButtonText = styled.span<{ $isText3: boolean }>`
 
 const DropdownButtonIcon = styled(Icon)`
   color: var(--charcoal-text2);
-`
-
-const AssertiveText = styled.div<{ invalid?: boolean }>`
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--charcoal-text2);
-  line-height: 22px;
-  display: flow-root;
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-
-  ${({ invalid }) =>
-    invalid === true &&
-    css`
-      color: var(--charcoal-assertive);
-    `}
 `
