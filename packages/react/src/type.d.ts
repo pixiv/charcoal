@@ -12,4 +12,7 @@ declare module 'react' {
   interface Attributes {
     css?: CSSProp<DefaultTheme>
   }
+  interface CSSProperties {
+    [key: `--${string}`]: string | undefined
+  }
 }
