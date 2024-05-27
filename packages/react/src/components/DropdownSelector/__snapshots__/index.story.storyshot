@@ -991,13 +991,13 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c11 {
+.c5 {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
 }
 
-.c12 {
+.c6 {
   display: grid;
   grid-template-columns: 1fr;
   height: 40px;
@@ -1012,17 +1012,17 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   font-size: 14px;
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12 [aria-disabled='false']:hover {
+.c6:not(:disabled):not([aria-disabled]):hover,
+.c6 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c12:focus-within {
+.c6:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c13 {
+.c7 {
   border: none;
   box-sizing: border-box;
   outline: none;
@@ -1047,43 +1047,43 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c13::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13::-moz-placeholder {
+.c7::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c13::placeholder {
+.c7::placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10 {
+.c4 {
   font-size: 14px;
   line-height: 22px;
   margin: 0;
   color: var(--charcoal-text2);
 }
 
-.c6 {
+.c0 {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
   width: 100%;
 }
 
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c7 {
+.c1 {
   display: grid;
   grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
@@ -1108,38 +1108,38 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c7:disabled,
-.c7[aria-disabled]:not([aria-disabled=false]) {
+.c1:disabled,
+.c1[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled='false']:focus {
+.c1:not(:disabled):not([aria-disabled]):focus,
+.c1[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c7:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c7[aria-disabled='false']:focus:not(:focus-visible) {
+.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c1[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled='false']:focus-visible {
+.c1:not(:disabled):not([aria-disabled]):focus-visible,
+.c1[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7[aria-disabled='false']:hover {
+.c1:not(:disabled):not([aria-disabled]):hover,
+.c1[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active {
+.c1:not(:disabled):not([aria-disabled]):active,
+.c1[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c8 {
+.c2 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -1150,11 +1150,11 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   white-space: nowrap;
 }
 
-.c9 {
+.c3 {
   color: var(--charcoal-text2);
 }
 
-.c17 {
+.c11 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1180,148 +1180,46 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c17:not(:disabled):not([aria-disabled]):hover,
-.c17[aria-disabled='false']:hover {
+.c11:not(:disabled):not([aria-disabled]):hover,
+.c11[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c17:not(:disabled):not([aria-disabled]):active,
-.c17[aria-disabled='false']:active {
+.c11:not(:disabled):not([aria-disabled]):active,
+.c11[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c17:not(:disabled):not([aria-disabled]):focus,
-.c17[aria-disabled='false']:focus {
+.c11:not(:disabled):not([aria-disabled]):focus,
+.c11[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c17:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c17[aria-disabled='false']:focus:not(:focus-visible) {
+.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c11[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c17:not(:disabled):not([aria-disabled]):focus-visible,
-.c17[aria-disabled='false']:focus-visible {
+.c11:not(:disabled):not([aria-disabled]):focus-visible,
+.c11[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c17:disabled,
-.c17[aria-disabled]:not([aria-disabled='false']) {
+.c11:disabled,
+.c11[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
-.c1 {
-  margin: auto;
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 440px;
-  background-color: var(--charcoal-surface1);
-  border-radius: 24px;
-}
-
-.c1:focus {
-  outline: none;
-}
-
-.c0 {
-  z-index: 10;
-  overflow: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 40px 0;
-  box-sizing: border-box;
-  background-color: var(--charcoal-surface4);
-}
-
-.c18 {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color;
-  transition: 0.2s color;
-}
-
-.c18:not(:disabled):not([aria-disabled]):hover,
-.c18[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c18:not(:disabled):not([aria-disabled]):active,
-.c18[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c3 {
-  margin: 0;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.c2 {
-  height: 64px;
-  display: grid;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c4 {
-  color: var(--charcoal-text1);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bold;
-  display: flow-root;
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  padding-bottom: 40px;
-}
-
-.c14 {
+.c8 {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
 }
 
-.c15 {
+.c9 {
   position: relative;
   overflow: hidden;
   color: var(--charcoal-text2);
@@ -1332,17 +1230,17 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c15:not([aria-disabled]):hover,
-.c15 [aria-disabled='false']:hover {
+.c9:not([aria-disabled]):hover,
+.c9 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c15:focus-within {
+.c9:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c16 {
+.c10 {
   border: none;
   outline: none;
   resize: none;
@@ -1366,44 +1264,20 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background: none;
 }
 
-.c16::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16::-moz-placeholder {
+.c10::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c16::placeholder {
+.c10::placeholder {
   color: var(--charcoal-text3);
-}
-
-@media (max-width:743px) {
-  .c1 {
-    max-width: 440px;
-    width: calc(100% - 48px);
-    max-width: unset;
-    width: 100%;
-    border-radius: 0;
-    margin: auto 0 0 0;
-    min-height: 100%;
-  }
-}
-
-@media (max-width:743px) {
-  .c0 {
-    padding: 0;
-  }
-}
-
-@media (max-width:743px) {
-  .c2 {
-    height: 48px;
-  }
 }
 
 <div
@@ -1422,22 +1296,23 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
       open
     </button>
     <div
-      className="c0"
+      className="charcoal-modal-background"
+      data-bottom-sheet="full"
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
         Object {
           "backgroundColor": "rgba(0, 0, 0, 0)",
           "overflow": "hidden",
+          "zIndex": 10,
         }
       }
     >
       <div
-        className="c1"
-        onBlur={[Function]}
+        className="charcoal-modal-dialog"
+        data-bottom-sheet="full"
         onKeyDown={[Function]}
         role="dialog"
-        size="M"
         style={
           Object {
             "transform": " translateY(100%)",
@@ -1446,16 +1321,17 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c2"
+          className="charcoal-modal-header-root"
+          data-bottom-sheet="full"
         >
-          <h3
-            className="c3 c4"
+          <div
+            className="charcoal-modal-header-title"
           >
             modal
-          </h3>
+          </div>
         </div>
         <div
-          className="c5"
+          className="charcoal-modal-body"
         >
           <div
             style={
@@ -1467,7 +1343,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
             }
           >
             <div
-              className="c6"
+              className="c0"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1528,28 +1404,28 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </select>
               </div>
               <button
-                className="c7"
+                className="c1"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="c8"
+                  className="c2"
                 >
                   Option 1
                 </span>
                 <pixiv-icon
-                  class="c9"
+                  class="c3"
                   name="16/Menu"
                 />
               </button>
               <p
-                className="c10"
+                className="c4"
               >
                 assistiveText
               </p>
             </div>
             <div
-              className="c11"
+              className="c5"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1573,12 +1449,12 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
-                className="c12"
+                className="c6"
               >
                 <input
                   aria-labelledby="test-id"
                   aria-required={true}
-                  className="c13"
+                  className="c7"
                   disabled={false}
                   id="test-id"
                   onChange={[Function]}
@@ -1590,13 +1466,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 />
               </div>
               <p
-                className="c10"
+                className="c4"
               >
                 assistiveText
               </p>
             </div>
             <div
-              className="c14"
+              className="c8"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1620,13 +1496,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
-                className="c15"
+                className="c9"
                 rows={4}
               >
                 <textarea
                   aria-labelledby="test-id"
                   aria-required={true}
-                  className="c16"
+                  className="c10"
                   disabled={false}
                   id="test-id"
                   onChange={[Function]}
@@ -1638,13 +1514,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 />
               </div>
               <p
-                className="c10"
+                className="c4"
               >
                 assistiveText
               </p>
             </div>
             <div
-              className="c6"
+              className="c0"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1705,22 +1581,22 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </select>
               </div>
               <button
-                className="c7"
+                className="c1"
                 onClick={[Function]}
                 type="button"
               >
                 <span
-                  className="c8"
+                  className="c2"
                 >
                   Option 2
                 </span>
                 <pixiv-icon
-                  class="c9"
+                  class="c3"
                   name="16/Menu"
                 />
               </button>
               <p
-                className="c10"
+                className="c4"
               >
                 assistiveText
               </p>
@@ -1728,7 +1604,7 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c17 c18"
+          className="charcoal-clickable c11 charcoal-modal-close-button"
           onClick={[Function]}
         >
           <pixiv-icon
