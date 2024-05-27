@@ -52,3 +52,26 @@ exports[`Storybook Tests React/Internal/CheckboxInput Invalid 1`] = `
   />
 </div>
 `;
+
+exports[`Storybook Tests React/Internal/CheckboxInput Rounded 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "var(--charcoal-background2)",
+        "padding": 8,
+      }
+    }
+  >
+    <input
+      checked={false}
+      className="charcoal-checkbox-input"
+      data-rounded={true}
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
