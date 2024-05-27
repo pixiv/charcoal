@@ -6,8 +6,8 @@ export default {
   title: 'React/Internal/CheckboxInput',
   component: CheckboxInput,
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 } as Meta<typeof CheckboxInput>
 
 export const Default: StoryObj<typeof CheckboxInput> = {
