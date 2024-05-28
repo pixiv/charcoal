@@ -23,7 +23,7 @@ export type TextFieldProps = {
   requiredText?: string
   disabled?: boolean
   subLabel?: React.ReactNode
-  htmlPrefix?: string
+  rdfaPredix?: string
 
   getCount?: (value: string) => number
 } & Omit<React.ComponentPropsWithoutRef<'input'>, 'prefix' | 'onChange'>
@@ -112,7 +112,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             invalid={props.invalid === true}
             maxLength={maxLength}
             onChange={handleChange}
-            prefix={props.htmlPrefix}
+            prefix={props.rdfaPredix}
             ref={mergeRefs(forwardRef, inputRef)}
             type={type}
             value={value}

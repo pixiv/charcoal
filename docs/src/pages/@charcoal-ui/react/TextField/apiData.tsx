@@ -41,7 +41,7 @@ export const apiData: Omit<
     description: 'textの長さを計算する関数',
     type: '(value: string) => number',
   },
-  htmlPrefix: {
+  rdfaPredix: {
     description: 'input要素のprefix',
     type: 'string',
   },
