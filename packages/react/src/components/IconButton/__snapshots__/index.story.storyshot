@@ -1,70 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests IconButton Default 1`] = `
-.c0 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 40px;
-  height: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c0:not(:disabled):not([aria-disabled]):hover,
-.c0[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c0:not(:disabled):not([aria-disabled]):active,
-.c0[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus,
-.c0[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c0[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus-visible,
-.c0[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 <div
   data-dark={false}
 >
   <button
-    className="charcoal-clickable c0"
+    className="charcoal-icon-button"
+    data-active={false}
+    data-size="M"
+    data-variant="Default"
     title="add"
   >
     <pixiv-icon
@@ -75,64 +19,14 @@ exports[`Storybook Tests IconButton Default 1`] = `
 `;
 
 exports[`Storybook Tests IconButton IsActive 1`] = `
-.c0 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 40px;
-  height: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c0:not(:disabled):not([aria-disabled]),
-.c0[aria-disabled='false'] {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus,
-.c0[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c0[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus-visible,
-.c0[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 <div
   data-dark={false}
 >
   <button
-    className="charcoal-clickable c0"
+    className="charcoal-icon-button"
+    data-active={true}
+    data-size="M"
+    data-variant="Default"
   >
     <pixiv-icon
       name="16/Add"
@@ -142,70 +36,14 @@ exports[`Storybook Tests IconButton IsActive 1`] = `
 `;
 
 exports[`Storybook Tests IconButton Overlay 1`] = `
-.c0 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 40px;
-  height: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-surface4);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c0:not(:disabled):not([aria-disabled]):hover,
-.c0[aria-disabled='false']:hover {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-surface4-hover);
-}
-
-.c0:not(:disabled):not([aria-disabled]):active,
-.c0[aria-disabled='false']:active {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-surface4-press);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus,
-.c0[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c0[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c0:not(:disabled):not([aria-disabled]):focus-visible,
-.c0[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 <div
   data-dark={false}
 >
   <button
-    className="charcoal-clickable c0"
+    className="charcoal-icon-button"
+    data-active={false}
+    data-size="M"
+    data-variant="Overlay"
   >
     <pixiv-icon
       name="16/Add"
