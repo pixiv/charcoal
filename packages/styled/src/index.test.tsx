@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { Example } from './index.story'
 import { MyTheme, myTheme } from './storyHelper'
 
-import type { JSX } from "react";
+import type { JSX } from 'react'
 
 function render(children: JSX.Element) {
   return renderer
