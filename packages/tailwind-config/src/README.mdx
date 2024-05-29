@@ -1,0 +1,61 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
+
+<Meta title="tailwind-config/Quickstart" />
+
+# @charcoal-ui/tailwind-config クイックスタート
+
+[![npmバッジ](https://img.shields.io/npm/v/@charcoal-ui/tailwind-config?label=%40charcoal-ui%2Ftailwind-config&style=flat-square&logo=npm)](https://www.npmjs.com/package/@charcoal-ui/tailwind-config)
+
+## インストール
+
+以下のいずれかのパッケージマネージャーを使用してインストールしてください
+
+### npm
+
+```bash
+npm install --save-dev @charcoal-ui/tailwind-config
+```
+
+### yarn
+
+```bash
+yarn add -D @charcoal-ui/tailwind-config
+```
+
+### pnpm
+
+```bash
+pnpm add -D @charcoal-ui/tailwind-config
+```
+
+### bun
+
+```bash
+bun add -D @charcoal-ui/tailwind-config
+```
+
+## 概要
+
+`@charcoal-ui/tailwind-config` は、Tailwind に `@charcoal-ui/foundation` を適用します。
+
+## 使い方
+
+`tailwind.config.js` の中で `require` して使います。
+
+### デフォルトの config を使う
+
+```javascript
+const { config } = require('@charcoal-ui/tailwind-config')
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+  presets: [config],
+}
+```
+
+テーマの調整などが必要な場合は[カスタマイズする](/docs/tailwind-config-custom--docs)のページを見てください。
