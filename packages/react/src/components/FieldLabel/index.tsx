@@ -1,5 +1,7 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import { useClassNames } from '../../_lib/useClassNames'
+
+import './index.css'
 
 export interface FieldLabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -24,115 +26,23 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
     },
     ref
   ) {
+    const classNames = useClassNames('charcoal-field-label-root', className)
     return (
-      <FieldLabelWrapper style={style} className={className}>
-        <Label ref={ref} {...labelProps}>
+      <div style={style} className={classNames}>
+        <label ref={ref} className="charcoal-field-label" {...labelProps}>
           {label}
-        </Label>
-        {required && <RequiredText>{requiredText}</RequiredText>}
-        <SubLabelClickable>
+        </label>
+        {required && (
+          <div className="charcoal-field-label-required-text">
+            {requiredText}
+          </div>
+        )}
+        <div className="charcoal-field-label-sub-label">
           <span>{subLabel}</span>
-        </SubLabelClickable>
-      </FieldLabelWrapper>
+        </div>
+      </div>
     )
   }
 )
 
 export default FieldLabel
-
-const Label = styled.label`
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-`
-
-const RequiredText = styled.span`
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-`
-
-const SubLabelClickable = styled.div`
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  transition: 0.2s color, 0.2s box-shadow;
-
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-
-  &:not(:disabled):not([aria-disabled]),
-  &[aria-disabled='false'] {
-    &:hover {
-      color: var(--charcoal-text3-hover);
-    }
-    &:active {
-      color: var(--charcoal-text3-press);
-    }
-    &:active,
-    &:focus,
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-    }
-  }
-`
-
-const FieldLabelWrapper = styled.div`
-  display: inline-flex;
-  align-items: center;
-
-  > ${RequiredText} {
-    margin-left: 4px;
-  }
-
-  > ${SubLabelClickable} {
-    margin-left: auto;
-  }
-`

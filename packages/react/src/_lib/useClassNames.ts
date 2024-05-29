@@ -1,14 +1,8 @@
 import { useMemo } from 'react'
 
 /**
- * Join two class names if propsClassName is defined.
+ * Join some class names if propsClassName is defined.
  */
-export function useClassNames(
-  defaultClassName: string,
-  propsClassName?: string
-) {
-  return useMemo(
-    () => [defaultClassName, propsClassName].filter((v) => v).join(' '),
-    [defaultClassName, propsClassName]
-  )
+export function useClassNames(...classNames: (string | undefined)[]) {
+  return useMemo(() => classNames.filter((v) => v).join(' '), [classNames])
 }
