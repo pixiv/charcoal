@@ -43,7 +43,7 @@ bun add @charcoal-ui/icons
 アプリケーションのエントリポイントで `import` します。
 Storybook の場合は `preview.(js|ts)` に書くと良いでしょう。
 
-`@charcoal-ui/react` の `<Icon>` コンポーネントを利用している場合、この `import` は内部で自動的に行われます。
+**`@charcoal-ui/react` の [`<Icon>`](/docs/react-icon--docs) コンポーネントを利用している場合、この `import` は内部で自動的に行われます。**
 
 ```typescript
 import '@charcoal-ui/icons'
@@ -54,7 +54,7 @@ TypeScript の型定義がグローバルにインストールされるので、
 
 ## 収録アイコン
 
-`@charcoal-ui/react` の `<Icon>` のページを見てください。
+[PixivIcon](/docs/icons-pixivicon-pixiv-icon--docs) のページを見てください。
 
 ## 各種バンドラとの組み合わせ
 
@@ -74,7 +74,7 @@ TypeScript の型定義がグローバルにインストールされるので、
 
 Custom Element は `className` という props を受け取ることが通常できません。
 
-> Custom elements accept `class` rather than `className`, and `for` rather than `htmlFor`.  
+> Custom elements accept `class` rather than `className`, and `for` rather than `htmlFor`.
 > [React 公式ドキュメントより](https://reactjs.org/docs/web-components.html#using-web-components-in-react)
 
 もし `styled-components` などを使っていて `className` を渡せないと困るケースでは、ラッパーコンポーネントを作ることができます。
