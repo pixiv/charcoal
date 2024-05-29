@@ -1,12 +1,6 @@
 // https://github.com/fernandopasik/react-children-utilities/blob/971d8a0324e6183734d8d1af9a65dbad18ab3d00/src/lib/onlyText.ts
 
-import {
-  Children,
-  isValidElement,
-  ReactElement,
-  ReactNode,
-  ReactText,
-} from 'react'
+import { Children, isValidElement, ReactElement, ReactNode } from 'react';
 
 const hasChildren = (
   element: ReactNode
@@ -16,7 +10,7 @@ const hasChildren = (
 
 export const childToString = (
   // eslint-disable-next-line @typescript-eslint/ban-types
-  child?: ReactText | boolean | {} | null
+  child?: number | string | boolean | {} | null
 ): string => {
   if (
     typeof child === 'undefined' ||
