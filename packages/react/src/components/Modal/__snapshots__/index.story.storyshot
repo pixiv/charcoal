@@ -274,14 +274,10 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   <input
                     aria-labelledby="test-id"
                     className="c4"
-                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Nagisa"
-                    readOnly={false}
-                    required={false}
                     type="text"
-                    value=""
                   />
                 </div>
               </div>
@@ -315,14 +311,10 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                     aria-labelledby="test-id"
                     autoFocus={true}
                     className="c4"
-                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Tokyo"
-                    readOnly={false}
-                    required={false}
                     type="text"
-                    value=""
                   />
                 </div>
               </div>
@@ -826,14 +818,10 @@ exports[`Storybook Tests Modal Default 1`] = `
                   <input
                     aria-labelledby="test-id"
                     className="c4"
-                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Nagisa"
-                    readOnly={false}
-                    required={false}
                     type="text"
-                    value=""
                   />
                 </div>
               </div>
@@ -867,14 +855,10 @@ exports[`Storybook Tests Modal Default 1`] = `
                     aria-labelledby="test-id"
                     autoFocus={true}
                     className="c4"
-                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Tokyo"
-                    readOnly={false}
-                    required={false}
                     type="text"
-                    value=""
                   />
                 </div>
               </div>
@@ -1181,14 +1165,10 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                   <input
                     aria-labelledby="test-id"
                     className="c4"
-                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Nagisa"
-                    readOnly={false}
-                    required={false}
                     type="text"
-                    value=""
                   />
                 </div>
               </div>
@@ -1221,14 +1201,10 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                   <input
                     aria-labelledby="test-id"
                     className="c4"
-                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Tokyo"
-                    readOnly={false}
-                    required={false}
                     type="text"
-                    value=""
                   />
                 </div>
               </div>
