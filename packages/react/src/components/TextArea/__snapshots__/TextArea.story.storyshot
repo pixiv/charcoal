@@ -116,19 +116,17 @@ exports[`Storybook Tests TextArea AssistiveText 1`] = `
       rows={4}
     >
       <textarea
+        aria-describedby="test-id"
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
     <p
       className="c3"
+      id="test-id"
     >
       説明が入ります
     </p>
@@ -247,13 +245,9 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -376,16 +370,14 @@ exports[`Storybook Tests TextArea Default 1`] = `
       rows={4}
     >
       <textarea
+        aria-invalid={false}
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
         placeholder="Text Area"
         readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -505,13 +497,9 @@ exports[`Storybook Tests TextArea Disabled 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={true}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -635,20 +623,18 @@ exports[`Storybook Tests TextArea Invalid 1`] = `
       rows={4}
     >
       <textarea
+        aria-describedby="test-id"
         aria-invalid={true}
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
     <p
       className="c3"
+      id="test-id"
     >
       エラーメッセージ
     </p>
@@ -753,13 +739,9 @@ exports[`Storybook Tests TextArea Label 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -877,14 +859,10 @@ exports[`Storybook Tests TextArea Placeholder 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
         placeholder="Placeholder"
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -1002,11 +980,9 @@ exports[`Storybook Tests TextArea ReadOnly 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
         readOnly={true}
-        required={false}
         rows={4}
         value="読み取り専用"
       />
@@ -1130,15 +1106,10 @@ exports[`Storybook Tests TextArea Required 1`] = `
     >
       <textarea
         aria-labelledby="test-id"
-        aria-required={true}
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -1265,14 +1236,10 @@ exports[`Storybook Tests TextArea ShowCount 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         maxLength={100}
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
       <span
         className="c3"
@@ -1387,13 +1354,9 @@ exports[`Storybook Tests TextArea SubLabel 1`] = `
       <textarea
         aria-labelledby="test-id"
         className="c2"
-        disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>

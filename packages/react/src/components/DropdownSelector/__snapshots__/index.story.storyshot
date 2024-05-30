@@ -1154,65 +1154,6 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c11 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c11:not(:disabled):not([aria-disabled]):hover,
-.c11[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c11:not(:disabled):not([aria-disabled]):active,
-.c11[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus,
-.c11[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c11[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c11:not(:disabled):not([aria-disabled]):focus-visible,
-.c11[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c11:disabled,
-.c11[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c8 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1452,21 +1393,18 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 className="c6"
               >
                 <input
+                  aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  aria-required={true}
                   className="c7"
-                  disabled={false}
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
-                  readOnly={false}
-                  required={false}
                   type="text"
-                  value=""
                 />
               </div>
               <p
                 className="c4"
+                id="test-id"
               >
                 assistiveText
               </p>
@@ -1500,21 +1438,18 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 rows={4}
               >
                 <textarea
+                  aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  aria-required={true}
                   className="c10"
-                  disabled={false}
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
-                  readOnly={false}
-                  required={false}
                   rows={4}
-                  value=""
                 />
               </div>
               <p
                 className="c4"
+                id="test-id"
               >
                 assistiveText
               </p>
@@ -1604,7 +1539,10 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
           </div>
         </div>
         <button
-          className="charcoal-clickable c11 charcoal-modal-close-button"
+          className="charcoal-icon-button charcoal-modal-close-button"
+          data-active={false}
+          data-size="S"
+          data-variant="Default"
           onClick={[Function]}
         >
           <pixiv-icon
