@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-text2);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -159,11 +152,12 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
           name="16/Menu"
         />
       </button>
-      <p
-        className="c4"
+      <div
+        className="charcoal-text-field-assistive-text"
+        data-invalid={false}
       >
         assistiveText
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -991,85 +985,6 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c5 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c6 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c6:not(:disabled):not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-text2);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1154,13 +1069,13 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c8 {
+.c4 {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
 }
 
-.c9 {
+.c5 {
   position: relative;
   overflow: hidden;
   color: var(--charcoal-text2);
@@ -1171,17 +1086,17 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   height: calc(22px * 4 + 18px);
 }
 
-.c9:not([aria-disabled]):hover,
-.c9 [aria-disabled='false']:hover {
+.c5:not([aria-disabled]):hover,
+.c5 [aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c9:focus-within {
+.c5:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c10 {
+.c6 {
   border: none;
   outline: none;
   resize: none;
@@ -1205,19 +1120,19 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   background: none;
 }
 
-.c10::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::-moz-placeholder {
+.c6::-moz-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: var(--charcoal-text3);
 }
 
-.c10::placeholder {
+.c6::placeholder {
   color: var(--charcoal-text3);
 }
 
@@ -1359,14 +1274,16 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                   name="16/Menu"
                 />
               </button>
-              <p
-                className="c4"
+              <div
+                className="charcoal-text-field-assistive-text"
+                data-invalid={false}
               >
                 assistiveText
-              </p>
+              </div>
             </div>
             <div
-              className="c5"
+              aria-disabled={false}
+              className="charcoal-text-field-root"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1390,27 +1307,31 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
-                className="c6"
+                className="charcoal-text-field-container"
+                data-invalid={false}
               >
                 <input
                   aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  className="c7"
+                  className="charcoal-text-field-input"
+                  data-invalid={false}
+                  disabled={false}
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
                   type="text"
                 />
               </div>
-              <p
-                className="c4"
+              <div
+                className="charcoal-text-field-assistive-text"
+                data-invalid={false}
                 id="test-id"
               >
                 assistiveText
-              </p>
+              </div>
             </div>
             <div
-              className="c8"
+              className="c4"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1434,25 +1355,26 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
-                className="c9"
+                className="c5"
                 rows={4}
               >
                 <textarea
                   aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  className="c10"
+                  className="c6"
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
                   rows={4}
                 />
               </div>
-              <p
-                className="c4"
+              <div
+                className="charcoal-text-field-assistive-text"
+                data-invalid={false}
                 id="test-id"
               >
                 assistiveText
-              </p>
+              </div>
             </div>
             <div
               className="c0"
@@ -1530,11 +1452,12 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                   name="16/Menu"
                 />
               </button>
-              <p
-                className="c4"
+              <div
+                className="charcoal-text-field-assistive-text"
+                data-invalid={false}
               >
                 assistiveText
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1718,13 +1641,6 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
 `;
 
 exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-assertive);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1881,11 +1797,12 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
           name="16/Menu"
         />
       </button>
-      <p
-        className="c4"
+      <div
+        className="charcoal-text-field-assistive-text"
+        data-invalid={true}
       >
         assistiveText
-      </p>
+      </div>
     </div>
   </div>
 </div>

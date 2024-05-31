@@ -9,7 +9,7 @@ import MenuList, { MenuListChildren } from './MenuList'
 import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
 import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { AssistiveText } from '../TextField'
+import { AssistiveText } from '../TextField/AssistiveText'
 
 export type DropdownSelectorProps = {
   label: string
@@ -121,7 +121,7 @@ export default function DropdownSelector({
         </DropdownPopover>
       )}
       {props.assistiveText !== undefined && (
-        <AssistiveText invalid={props.invalid === true}>
+        <AssistiveText data-invalid={props.invalid === true}>
           {props.assistiveText}
         </AssistiveText>
       )}

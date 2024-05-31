@@ -5,88 +5,16 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
-}
-
-.c3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c3:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c4::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c5 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
   width: 100%;
 }
 
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled=false]) {
+.c2:disabled,
+.c2[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c6 {
+.c3 {
   display: grid;
   grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
@@ -111,38 +39,38 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
+.c3:disabled,
+.c3[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled='false']:focus {
+.c3:not(:disabled):not([aria-disabled]):focus,
+.c3[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled='false']:focus:not(:focus-visible) {
+.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled='false']:focus-visible {
+.c3:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):hover,
-.c6[aria-disabled='false']:hover {
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled='false']:active {
+.c3:not(:disabled):not([aria-disabled]):active,
+.c3[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c7 {
+.c4 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -153,7 +81,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
+.c5 {
   color: var(--charcoal-text2);
 }
 
@@ -250,7 +178,8 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c2"
+                aria-disabled={false}
+                className="charcoal-text-field-root"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -269,11 +198,14 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c3"
+                  className="charcoal-text-field-container"
+                  data-invalid={false}
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c4"
+                    className="charcoal-text-field-input"
+                    data-invalid={false}
+                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Nagisa"
@@ -286,7 +218,8 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c2"
+                aria-disabled={false}
+                className="charcoal-text-field-root"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -305,12 +238,15 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c3"
+                  className="charcoal-text-field-container"
+                  data-invalid={false}
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c4"
+                    className="charcoal-text-field-input"
+                    data-invalid={false}
+                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Tokyo"
@@ -323,7 +259,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c5"
+                className="c2"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -379,17 +315,17 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c6"
+                  className="c3"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c7"
+                    className="c4"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c8"
+                    class="c5"
                     name="16/Menu"
                   />
                 </button>
@@ -557,88 +493,16 @@ exports[`Storybook Tests Modal Default 1`] = `
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
-}
-
-.c3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c3:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c4::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c5 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
   width: 100%;
 }
 
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled=false]) {
+.c2:disabled,
+.c2[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
   opacity: 0.32;
 }
 
-.c6 {
+.c3 {
   display: grid;
   grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
@@ -663,38 +527,38 @@ exports[`Storybook Tests Modal Default 1`] = `
   transition: 0.2s box-shadow,0.2s background-color;
 }
 
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
+.c3:disabled,
+.c3[aria-disabled]:not([aria-disabled=false]) {
   cursor: default;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus,
-.c6[aria-disabled='false']:focus {
+.c3:not(:disabled):not([aria-disabled]):focus,
+.c3[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c6[aria-disabled='false']:focus:not(:focus-visible) {
+.c3:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c3[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c6:not(:disabled):not([aria-disabled]):focus-visible,
-.c6[aria-disabled='false']:focus-visible {
+.c3:not(:disabled):not([aria-disabled]):focus-visible,
+.c3[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c6:not(:disabled):not([aria-disabled]):hover,
-.c6[aria-disabled='false']:hover {
+.c3:not(:disabled):not([aria-disabled]):hover,
+.c3[aria-disabled='false']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
-.c6:not(:disabled):not([aria-disabled]):active,
-.c6[aria-disabled='false']:active {
+.c3:not(:disabled):not([aria-disabled]):active,
+.c3[aria-disabled='false']:active {
   background-color: var(--charcoal-surface3-press);
 }
 
-.c7 {
+.c4 {
   text-align: left;
   font-size: 14px;
   line-height: 22px;
@@ -705,7 +569,7 @@ exports[`Storybook Tests Modal Default 1`] = `
   white-space: nowrap;
 }
 
-.c8 {
+.c5 {
   color: var(--charcoal-text2);
 }
 
@@ -794,7 +658,8 @@ exports[`Storybook Tests Modal Default 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c2"
+                aria-disabled={false}
+                className="charcoal-text-field-root"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -813,11 +678,14 @@ exports[`Storybook Tests Modal Default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c3"
+                  className="charcoal-text-field-container"
+                  data-invalid={false}
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c4"
+                    className="charcoal-text-field-input"
+                    data-invalid={false}
+                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Nagisa"
@@ -830,7 +698,8 @@ exports[`Storybook Tests Modal Default 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c2"
+                aria-disabled={false}
+                className="charcoal-text-field-root"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -849,12 +718,15 @@ exports[`Storybook Tests Modal Default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c3"
+                  className="charcoal-text-field-container"
+                  data-invalid={false}
                 >
                   <input
                     aria-labelledby="test-id"
                     autoFocus={true}
-                    className="c4"
+                    className="charcoal-text-field-input"
+                    data-invalid={false}
+                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Tokyo"
@@ -867,7 +739,7 @@ exports[`Storybook Tests Modal Default 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c5"
+                className="c2"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -923,17 +795,17 @@ exports[`Storybook Tests Modal Default 1`] = `
                   </select>
                 </div>
                 <button
-                  className="c6"
+                  className="c3"
                   onClick={[Function]}
                   type="button"
                 >
                   <span
-                    className="c7"
+                    className="c4"
                   >
                     Apple
                   </span>
                   <pixiv-icon
-                    class="c8"
+                    class="c5"
                     name="16/Menu"
                   />
                 </button>
@@ -978,78 +850,6 @@ exports[`Storybook Tests Modal Default 1`] = `
 `;
 
 exports[`Storybook Tests Modal FullBottomSheet 1`] = `
-.c2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c3:not(:disabled):not([aria-disabled]):hover,
-.c3 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c3:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c4::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c4::placeholder {
-  color: var(--charcoal-text3);
-}
-
 .c0 {
   display: grid;
   gap: 24px;
@@ -1141,7 +941,8 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c2"
+                aria-disabled={false}
+                className="charcoal-text-field-root"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -1160,11 +961,14 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c3"
+                  className="charcoal-text-field-container"
+                  data-invalid={false}
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c4"
+                    className="charcoal-text-field-input"
+                    data-invalid={false}
+                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Nagisa"
@@ -1177,7 +981,8 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
               className="charcoal-modal-align"
             >
               <div
-                className="c2"
+                aria-disabled={false}
+                className="charcoal-text-field-root"
               >
                 <div
                   className="charcoal-field-label-root"
@@ -1196,11 +1001,14 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c3"
+                  className="charcoal-text-field-container"
+                  data-invalid={false}
                 >
                   <input
                     aria-labelledby="test-id"
-                    className="c4"
+                    className="charcoal-text-field-input"
+                    data-invalid={false}
+                    disabled={false}
                     id="test-id"
                     onChange={[Function]}
                     placeholder="Tokyo"

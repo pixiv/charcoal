@@ -3,9 +3,9 @@ import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { AssistiveText } from '../TextField'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
 import { useId } from '@react-aria/utils'
+import { AssistiveText } from '../TextField/AssistiveText'
 
 export type TextAreaProps = {
   value?: string
@@ -138,7 +138,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           )}
         </StyledTextareaContainer>
         {showAssistiveText && (
-          <AssistiveText invalid={props.invalid === true} id={describedbyId}>
+          <AssistiveText
+            data-invalid={props.invalid === true}
+            id={describedbyId}
+          >
             {assistiveText}
           </AssistiveText>
         )}

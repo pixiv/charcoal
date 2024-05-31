@@ -1,8 +1,8 @@
 import { ModalContext } from '.'
-import { forwardRef, useContext } from 'react'
-import { useClassNames } from '../../_lib/useClassNames'
+import { useContext } from 'react'
 
 import './ModalPlumbing.css'
+import { createDivComponent } from '../../_lib/createDivComponent'
 
 export function ModalHeader() {
   const modalCtx = useContext(ModalContext)
@@ -21,12 +21,3 @@ export const ModalAlign = createDivComponent('charcoal-modal-align')
 export const ModalBody = createDivComponent('charcoal-modal-body')
 
 export const ModalButtons = createDivComponent('charcoal-modal-buttons')
-
-function createDivComponent(mainClassName: string) {
-  return forwardRef<HTMLDivElement, React.ComponentPropsWithRef<'div'>>(
-    function DivComponent({ className, ...props }, ref) {
-      const classNames = useClassNames(mainClassName, className)
-      return <div className={classNames} ref={ref} {...props} />
-    }
-  )
-}
