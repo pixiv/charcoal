@@ -1069,73 +1069,6 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
   color: var(--charcoal-text2);
 }
 
-.c4 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c5 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c5:not([aria-disabled]):hover,
-.c5 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c5:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c6 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c6::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c6::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c6:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c6::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
@@ -1331,7 +1264,8 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
               </div>
             </div>
             <div
-              className="c4"
+              aria-disabled={false}
+              className="charcoal-text-area-root"
             >
               <div
                 className="charcoal-field-label-root"
@@ -1355,13 +1289,20 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
                 </div>
               </div>
               <div
-                className="c5"
-                rows={4}
+                aria-invalid={false}
+                className="charcoal-text-area-container"
+                style={
+                  Object {
+                    "--charcoal-text-area-rows": "4",
+                  }
+                }
               >
                 <textarea
                   aria-describedby="test-id"
                   aria-labelledby="test-id"
-                  className="c6"
+                  className="charcoal-text-area-textarea"
+                  data-no-bottom-padding={false}
+                  disabled={false}
                   id="test-id"
                   onChange={[Function]}
                   placeholder="placeholder"
