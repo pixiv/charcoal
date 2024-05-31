@@ -2,40 +2,6 @@
 
 exports[`Storybook Tests DropdownSelector/ListItem Basic 1`] = `
 .c0 {
-  list-style: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 40px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 16px;
-  padding-left: 16px;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c1:hover:not(disabled):not([aria-disabled='true']),
-.c1:focus:not(disabled):not([aria-disabled='true']),
-.c1:focus-within:not(disabled):not([aria-disabled='true']) {
-  background-color: var(--charcoal-surface3);
-}
-
-.c2 {
   color: red;
 }
 
@@ -43,77 +9,52 @@ exports[`Storybook Tests DropdownSelector/ListItem Basic 1`] = `
   data-dark={false}
 >
   <li
-    className="c0"
-    role="option"
+    className="charcoal-list-item"
   >
+    Item
+  </li>
+  <li
+    className="charcoal-list-item"
+  >
+    <pixiv-icon
+      name="16/Add"
+    />
+     Add
+  </li>
+  <a
+    className="charcoal-list-item"
+    href="#"
+  >
+    Normal Link
+  </a>
+  <a
+    className="c0 charcoal-list-item"
+    href="#"
+  >
+    Custom Link
+  </a>
+  <li
+    className="charcoal-list-item"
+    onClick={[Function]}
+  >
+    Switch
     <div
-      className="c1"
-    >
-      Item
-    </div>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <div
-      className="c1"
-    >
-      <pixiv-icon
-        name="16/Add"
-      />
-       Add
-    </div>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <a
-      className="c1"
-      href="#"
-    >
-      Normal Link
-    </a>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <a
-      className="c2 c1"
-      href="#"
-    >
-      Custom Link
-    </a>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <div
-      className="c1"
-      onClick={[Function]}
-    >
-      Switch
-      <div
-        style={
-          Object {
-            "marginLeft": "auto",
-          }
+      style={
+        Object {
+          "marginLeft": "auto",
         }
-      >
-        <input
-          checked={false}
-          className="charcoal-switch-input"
-          id="test-id"
-          label="hello"
-          name="hello"
-          onChange={[Function]}
-          role="switch"
-          type="checkbox"
-        />
-      </div>
+      }
+    >
+      <input
+        checked={false}
+        className="charcoal-switch-input"
+        id="test-id"
+        label="hello"
+        name="hello"
+        onChange={[Function]}
+        role="switch"
+        type="checkbox"
+      />
     </div>
   </li>
 </div>
