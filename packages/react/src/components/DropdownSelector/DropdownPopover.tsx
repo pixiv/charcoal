@@ -19,15 +19,22 @@ export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
   }, [props.triggerRef, props.isOpen])
 
   useEffect(() => {
-    if (props.isOpen && props.value !== undefined) {
-      // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
-      const windowScrollY = window.scrollY
-      const windowScrollX = window.scrollX
-      const selectedElement = document.querySelector(
-        `[data-key="${props.value.toString()}"]`
-      ) as HTMLElement | undefined
-      selectedElement?.focus()
-      window.scrollTo(windowScrollX, windowScrollY)
+    if (props.isOpen) {
+      if (props.value !== undefined && props.value !== '') {
+        // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
+        const windowScrollY = window.scrollY
+        const windowScrollX = window.scrollX
+        const selectedElement = document.querySelector(
+          `[data-key="${props.value.toString()}"]`
+        ) as HTMLElement | undefined
+        selectedElement?.focus()
+        window.scrollTo(windowScrollX, windowScrollY)
+      } else {
+        const el = ref.current?.querySelector("[role='option']")
+        if (el instanceof HTMLElement) {
+          el.focus()
+        }
+      }
     }
   }, [props.value, props.isOpen])
 

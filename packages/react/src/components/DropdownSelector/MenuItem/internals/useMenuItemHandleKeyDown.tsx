@@ -11,14 +11,14 @@ import { MenuListContext } from '../../MenuList/MenuListContext'
  */
 export function useMenuItemHandleKeyDown(
   value?: string
-): [(e: React.KeyboardEvent<HTMLDivElement>) => void, () => void] {
+): [(e: React.KeyboardEvent<HTMLElement>) => void, () => void] {
   const { setValue, root, propsArray } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
     if (value !== undefined) setValue(value)
   }, [value, setValue])
 
   const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLDivElement>) => {
+    (e: React.KeyboardEvent<HTMLElement>) => {
       if (e.key === 'Enter') {
         setContextValue()
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
