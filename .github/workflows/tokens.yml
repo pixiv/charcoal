@@ -3,7 +3,12 @@ name: tokens
 on:
   schedule:
     - cron: '0 1 * * 1'
+
   workflow_dispatch:
+
+  pull_request:
+    branches:
+      - main
 
 jobs:
   token:
