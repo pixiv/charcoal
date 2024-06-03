@@ -123,6 +123,8 @@ export const resolveValue = (
       return resolveColor(value as Color)
     case 'FLOAT':
       return resolveFloat(value as number)
+    case 'STRING':
+      return resolveString(value as string)
 
     default:
       throw new Error('unsupport resolvedType')
@@ -132,3 +134,5 @@ export const resolveValue = (
 export const resolveColor = (value: Color) => colorToRgba(value)
 
 export const resolveFloat = (value: number) => `${value}`
+
+export const resolveString = (value: string) => value
