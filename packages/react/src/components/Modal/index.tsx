@@ -164,7 +164,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
                 >
                   {children}
                   {isDismissable === true && (
-                    <ModalCrossButton
+                    <ModalCloseButton
                       size="S"
                       icon="24/Close"
                       type="button"
@@ -228,7 +228,7 @@ const ModalBackground = animated(styled.div<{
   }
 `)
 
-const ModalCrossButton = styled(IconButton)`
+export const ModalCloseButton = styled(IconButton)`
   position: absolute;
   top: 8px;
   right: 8px;
