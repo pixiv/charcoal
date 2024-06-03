@@ -26,6 +26,7 @@ export type ModalProps = AriaModalOverlayProps &
     isOpen: boolean
     onClose: () => void
     className?: string
+    closeButtonAriaLabel?: string
 
     /**
      * https://github.com/adobe/react-spectrum/issues/3787
@@ -74,6 +75,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     onClose,
     className,
     isOpen = false,
+    closeButtonAriaLabel = 'Close',
   } = props
 
   const ref = useObjectRef<HTMLDivElement>(external)
@@ -165,6 +167,8 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
                     <ModalCrossButton
                       size="S"
                       icon="24/Close"
+                      type="button"
+                      aria-label={closeButtonAriaLabel}
                       onClick={onClose}
                     />
                   )}
