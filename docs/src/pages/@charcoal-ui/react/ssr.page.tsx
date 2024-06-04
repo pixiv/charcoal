@@ -16,7 +16,7 @@ export default function InstallPage() {
       </p>
       <h2>SSRProvider</h2>
       <p>
-        SSRを利用する際は<InlineCode>SSRProvider</InlineCode>
+        React 18 以下で SSRを利用する際は<InlineCode>SSRProvider</InlineCode>
         をアプリケーションに適用してください。
       </p>
       <SSRHighlight
