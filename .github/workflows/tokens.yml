@@ -1,4 +1,4 @@
-name: tokens
+name: Generate CSS variables
 
 on:
   schedule:
@@ -51,5 +51,5 @@ jobs:
 
       - name: Generate CSS variables
         run: |
-          yarn style-dictionary build -c pixiv-light.config.json
-          yarn style-dictionary build -c pixiv-dark.config.json
+          yarn style-dictionary build -c pixiv-light.config.js
+          yarn style-dictionary build -c pixiv-dark.config.js
