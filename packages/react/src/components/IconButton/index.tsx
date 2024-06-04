@@ -36,7 +36,7 @@ const IconButton = forwardRef<ClickableElement, IconButtonProps>(
         $variant={variant}
         $isActive={isActive}
       >
-        <pixiv-icon aria-hidden="true" name={icon} />
+        <pixiv-icon name={icon} />
       </StyledIconButton>
     )
   }

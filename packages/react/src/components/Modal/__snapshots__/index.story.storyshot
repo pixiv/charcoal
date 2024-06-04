@@ -940,13 +940,10 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
-          aria-label="Close"
           className="c0 c27 c28"
           onClick={[Function]}
-          type="button"
         >
           <pixiv-icon
-            aria-hidden="true"
             name="24/Close"
           />
         </button>
@@ -1423,13 +1420,10 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
           </div>
         </div>
         <button
-          aria-label="Close"
           className="c0 c13 c14"
           onClick={[Function]}
-          type="button"
         >
           <pixiv-icon
-            aria-hidden="true"
             name="24/Close"
           />
         </button>
@@ -2371,13 +2365,10 @@ exports[`Storybook Tests react/Modal Default 1`] = `
           </div>
         </div>
         <button
-          aria-label="Close"
           className="c0 c27 c28"
           onClick={[Function]}
-          type="button"
         >
           <pixiv-icon
-            aria-hidden="true"
             name="24/Close"
           />
         </button>
@@ -3171,13 +3162,10 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
-          aria-label="Close"
           className="c0 c22 c23"
           onClick={[Function]}
-          type="button"
         >
           <pixiv-icon
-            aria-hidden="true"
             name="24/Close"
           />
         </button>
