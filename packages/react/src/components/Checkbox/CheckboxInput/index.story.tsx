@@ -5,6 +5,9 @@ import { useState } from 'react'
 export default {
   title: 'React/Internal/CheckboxInput',
   component: CheckboxInput,
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<typeof CheckboxInput>
 
 export const Default: StoryObj<typeof CheckboxInput> = {
@@ -31,5 +34,18 @@ export const Invalid: StoryObj<typeof CheckboxInput> = {
   render: function Render() {
     const [checked, setChecked] = useState(false)
     return <CheckboxInput checked={checked} onChange={setChecked} invalid />
+  },
+}
+
+export const Rounded: StoryObj<typeof CheckboxInput> = {
+  render: function Render() {
+    const [checked, setChecked] = useState(false)
+    return (
+      <div
+        style={{ padding: 8, backgroundColor: 'var(--charcoal-background2)' }}
+      >
+        <CheckboxInput checked={checked} onChange={setChecked} rounded />
+      </div>
+    )
   },
 }
