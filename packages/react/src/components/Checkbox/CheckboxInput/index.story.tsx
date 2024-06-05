@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
 export default {
-  title: 'React/Internal/CheckboxInput',
+  title: 'react/internals/CheckboxInput',
   component: CheckboxInput,
   parameters: {
     layout: 'centered',
