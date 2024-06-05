@@ -177,7 +177,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
                   {children}
                   {isDismissable === true && (
                     <ModalCloseButton
-                     aria-label={closeButtonAriaLabel}
+                      aria-label={closeButtonAriaLabel}
                       onClick={onClose}
                     />
                   )}
@@ -211,14 +211,16 @@ export const ModalContext = React.createContext<{
   bottomSheet: false,
 })
 
-export function ModalCloseButton(props: Omit<IconButtonProps, 'icon'>){
-  return <IconButton
-  className="charcoal-modal-close-button"
-  size="S"
-  icon="24/Close"
-  type="button"
-  {...props}
-/>
+export function ModalCloseButton(props: Omit<IconButtonProps, 'icon'>) {
+  return (
+    <IconButton
+      className="charcoal-modal-close-button"
+      size="S"
+      icon="24/Close"
+      type="button"
+      {...props}
+    />
+  )
 }
 
 export function ModalDismissButton({ children, ...props }: ButtonProps) {
