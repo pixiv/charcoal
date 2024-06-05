@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests TextField Affix 1`] = `
+exports[`Storybook Tests react/TextField Affix 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -157,7 +157,7 @@ exports[`Storybook Tests TextField Affix 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField AssistiveText 1`] = `
+exports[`Storybook Tests react/TextField AssistiveText 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -295,7 +295,7 @@ exports[`Storybook Tests TextField AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Default 1`] = `
+exports[`Storybook Tests react/TextField Default 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -428,7 +428,7 @@ exports[`Storybook Tests TextField Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Disabled 1`] = `
+exports[`Storybook Tests react/TextField Disabled 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -554,7 +554,7 @@ exports[`Storybook Tests TextField Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Invalid 1`] = `
+exports[`Storybook Tests react/TextField Invalid 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -694,7 +694,7 @@ exports[`Storybook Tests TextField Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Label 1`] = `
+exports[`Storybook Tests react/TextField Label 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -804,7 +804,7 @@ exports[`Storybook Tests TextField Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Number 1`] = `
+exports[`Storybook Tests react/TextField Number 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -930,7 +930,7 @@ exports[`Storybook Tests TextField Number 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Placeholder 1`] = `
+exports[`Storybook Tests react/TextField Placeholder 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1055,7 +1055,7 @@ exports[`Storybook Tests TextField Placeholder 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField Prefix 1`] = `
+exports[`Storybook Tests react/TextField Prefix 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1213,7 +1213,7 @@ exports[`Storybook Tests TextField Prefix 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField ReadOnly 1`] = `
+exports[`Storybook Tests react/TextField ReadOnly 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1339,7 +1339,7 @@ exports[`Storybook Tests TextField ReadOnly 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField RequiredText 1`] = `
+exports[`Storybook Tests react/TextField RequiredText 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1454,7 +1454,7 @@ exports[`Storybook Tests TextField RequiredText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField ShowCount 1`] = `
+exports[`Storybook Tests react/TextField ShowCount 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1606,7 +1606,7 @@ exports[`Storybook Tests TextField ShowCount 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextField SubLabel 1`] = `
+exports[`Storybook Tests react/TextField SubLabel 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;

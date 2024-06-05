@@ -5,7 +5,7 @@ import { StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
 export default {
-  title: 'Radio',
+  title: 'react/Radio',
   component: Radio,
   parameters: {
     layout: 'centered',

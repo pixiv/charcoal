@@ -2,7 +2,7 @@ import TagItem from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'TagItem',
+  title: 'react/TagItem',
   component: TagItem,
   parameters: {
     layout: 'centered',

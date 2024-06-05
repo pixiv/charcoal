@@ -4,7 +4,7 @@ import Button from '../../Button'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'DropdownSelector/Popover',
+  title: 'react/internals/Popover',
   component: Popover,
 } as Meta<typeof Popover>
 

@@ -18,7 +18,7 @@ yarn add @charcoal-ui/react
 
 ## Server Side Rendering を行う場合の注意点
 
-SSR を行う場合はアプリケーション全体を`<SSRProvider>`で囲む必要があります。
+React 18 以下で SSR を行う場合はアプリケーション全体を`<SSRProvider>`で囲む必要があります。
 
 ```jsx
 import { SSRProvider } from '@charcoal-ui/react'

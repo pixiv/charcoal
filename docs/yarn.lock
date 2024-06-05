@@ -169,20 +169,33 @@ __metadata:
   linkType: hard
 
 "@charcoal-ui/foundation@file:../packages/foundation::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/foundation@file:../packages/foundation#../packages/foundation::hash=fe5bab&locator=charcoal-web-docs%40workspace%3A."
   checksum: 25d17d091f00a75111c8601a1ea56b4267ee66f3c96d708ab07172c08cc5979bc48a59515f34f00754fa9fd0e4531692babec1aa8c45d05fd360180d2e7c36db
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/foundation@file:../packages/foundation#../packages/foundation::hash=310187&locator=charcoal-web-docs%40workspace%3A."
+  checksum: ffe799380bc699a82ad6c456afdd7b99a4a092850a3400d168a9cdc8af1e94613499f864d442e4af8eb23c0e9e173cc5a7ce2820fd2db6a8871bfcdd10c147c0
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/icon-files@file:../packages/icon-files::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/icon-files@file:../packages/icon-files#../packages/icon-files::hash=4e8276&locator=charcoal-web-docs%40workspace%3A."
   checksum: 82afe37aff85f93c86f39f6b9e2f8e4e140ad8dd2db7cb93beb7711d63d32f4361fdb683226d087c8835854b5b1579984f2aa69300eb09bfc2876fe8e64def3f
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/icon-files@file:../packages/icon-files#../packages/icon-files::hash=161883&locator=charcoal-web-docs%40workspace%3A."
+  checksum: a2271c5e559c54dd250ece7ef041a9b5ef9776a46bce9b70aa60ae4d9831c83d34d152a84ef203e407507ff991b95674f205a6b8bd780f7c9b61b53dad9eb65d
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/icons@file:../packages/icons::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/icons@file:../packages/icons#../packages/icons::hash=894c3a&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
@@ -190,10 +203,20 @@ __metadata:
     dompurify: ^2.3.6
     warning: ^4.0.3
   checksum: 5ec553a55a545773a461e308e7192e4bef48b3b981363fdca1e5ad1203500fdee20f4c721c1ef526b3fa84cbef854feb429af7a117f665217433888b32342f45
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/icons@file:../packages/icons#../packages/icons::hash=d600c6&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/icon-files": ^3.13.0-beta.0
+    dompurify: ^2.3.6
+    warning: ^4.0.3
+  checksum: 326b05185e17c48efc4e95024455a9161e9d91fab9306736c131f31bf02bf2fe9200011b3f70d61020c0d95bedd48505287413783525f8327f25f44dba7663b0
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/react@file:../packages/react::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=8077ae&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
@@ -202,6 +225,16 @@ __metadata:
     "@charcoal-ui/styled": ^4.0.0-beta.4
     "@charcoal-ui/theme": ^4.0.0-beta.4
     "@charcoal-ui/utils": ^4.0.0-beta.4
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/react@file:../packages/react#../packages/react::hash=58a812&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^3.13.0-beta.0
+    "@charcoal-ui/icons": ^3.13.0-beta.0
+    "@charcoal-ui/styled": ^3.13.0-beta.0
+    "@charcoal-ui/theme": ^3.13.0-beta.0
+    "@charcoal-ui/utils": ^3.13.0-beta.0
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
     "@react-aria/button": ^3.9.1
     "@react-aria/checkbox": ^3.13.0
     "@react-aria/dialog": ^3.5.10
@@ -220,41 +253,72 @@ __metadata:
   peerDependencies:
     react: ">=17.0.0"
     styled-components: ">=5.1.1"
+<<<<<<< HEAD
   checksum: 317dc2198a9b89b080cb6b10c61de451ea378e927949cab5a9dead70cfb2fdd3ec37ef2acf0b22299372d096bed15815363993ecf5a328c410cd8984c7b0649a
+=======
+  checksum: e0625d63a3ea9c2523f60b01b72f17d886f622168b2168fe9a7d54a82c231ff3245a7cd205db6660a5c5193bbdf80019c228315b287d7f36d49075c62f65b5f3
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/styled@file:../packages/styled::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=d8457d&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.4
     "@charcoal-ui/theme": ^4.0.0-beta.4
     "@charcoal-ui/utils": ^4.0.0-beta.4
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/styled@file:../packages/styled#../packages/styled::hash=858e6a&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^3.13.0-beta.0
+    "@charcoal-ui/theme": ^3.13.0-beta.0
+    "@charcoal-ui/utils": ^3.13.0-beta.0
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
     warning: ^4.0.3
   peerDependencies:
     react: ">=17.0.0"
     styled-components: ">=5.1.1"
+<<<<<<< HEAD
   checksum: e659b9631d04297981255704ce770075e6f3a1b59bc1e61a45de1e1d3b81e5058405e4d7d517b160d9f40f7e43759b40b7128c0b0906f4fa1adb2d18065e069a
+=======
+  checksum: e8f9f91ce7c8fc15efb0553daadace40eba064429e24aad64d4c50dd9303f335c36325b3cf183f7f668173d8e519f95ea65fbf3c856c82a484f81add393e4291
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/tailwind-config@file:../packages/tailwind-config::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/tailwind-config@file:../packages/tailwind-config#../packages/tailwind-config::hash=b3edb3&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.4
     "@charcoal-ui/theme": ^4.0.0-beta.4
     "@charcoal-ui/utils": ^4.0.0-beta.4
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/tailwind-config@file:../packages/tailwind-config#../packages/tailwind-config::hash=360b23&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^3.13.0-beta.0
+    "@charcoal-ui/theme": ^3.13.0-beta.0
+    "@charcoal-ui/utils": ^3.13.0-beta.0
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   peerDependencies:
     csstype: ">=3.0.0"
     postcss: ">=7.0.32"
     tailwindcss: ">=1.4.6"
+<<<<<<< HEAD
   checksum: fdecf5c689550acb3ddace1fca85265aa5c2124f6b568a6facb6e83f23cea6980401b6e14864dca61f5164ef9b66b41a76c6c1ed28ced027df4010a4a22ec4e5
+=======
+  checksum: 853275aa37607f20384ac7d25b46b2a2dfd83ff5c2bf74b06e805515a65123be216b5fdb689bb97542c8d707fbfed8b1150214fefc7b20fedbdef2cf05166d27
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/theme@file:../packages/theme::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/theme@file:../packages/theme#../packages/theme::hash=4f5cb2&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
@@ -262,16 +326,34 @@ __metadata:
     "@charcoal-ui/utils": ^4.0.0-beta.4
     polished: ^4.1.4
   checksum: 5bdc9ee25e029b2ba8127c473adb74821a5b072412227f94d900e77406e9342d2844e36d8b89708515f38a3f49f86a22c54bdc40bc9cb3f8b5075b65874dfd7d
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/theme@file:../packages/theme#../packages/theme::hash=d9cc7c&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^3.13.0-beta.0
+    "@charcoal-ui/utils": ^3.13.0-beta.0
+    polished: ^4.1.4
+  checksum: 4a85a0b9505e4ba0eaa593e904f1b6943b533798d160e9bbcbbf6dc078574849def8cd37f37fbbfe2c6818dd3925175f238ff19954ccf55482cf1f5b11b8d289
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
 "@charcoal-ui/utils@file:../packages/utils::locator=charcoal-web-docs%40workspace%3A.":
+<<<<<<< HEAD
   version: 4.0.0-beta.4
   resolution: "@charcoal-ui/utils@file:../packages/utils#../packages/utils::hash=33a3f7&locator=charcoal-web-docs%40workspace%3A."
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.4
     polished: ^4.1.4
   checksum: ba3bd84bd141f13f339976359a28b1cd55f488fe11a91292f78a27c55f74a3217f5b9d647c59e7150d61f1134ec10d8ed323c5e6d7667ba51ae9df01e372e467
+=======
+  version: 3.13.0-beta.0
+  resolution: "@charcoal-ui/utils@file:../packages/utils#../packages/utils::hash=dbde2f&locator=charcoal-web-docs%40workspace%3A."
+  dependencies:
+    "@charcoal-ui/foundation": ^3.13.0-beta.0
+    polished: ^4.1.4
+  checksum: f14f5519b41e1d8e6f6fa2c0aaaac7f196ee71d130666ef4b10f3a9dc600388831c2ad31dea91f962b3cbac782084c3b07be9af0e943ab8452e8a22554d84957
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
@@ -1221,6 +1303,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@react-stately/form@npm:^3.0.2":
   version: 3.0.2
   resolution: "@react-stately/form@npm:3.0.2"
@@ -1230,6 +1313,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: 9dfae1935405e2ca0d6c85666f794d4b7a5532c15b611fa95da5086fc495abd3162aa74eec05eddf3c9825ca5021f58c6c17019905c775c521a0d168df67543a
+=======
+"@react-stately/form@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@react-stately/form@npm:3.0.3"
+  dependencies:
+    "@react-types/shared": ^3.23.1
+    "@swc/helpers": ^0.5.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 667a34eb0d8edb66ebb93df00c70283954cd12568f0d017f7d40a5005cb7ab840a82b7e66d8edde1f26b268ccb674e26fbb102cbbd05deca7c21d924bc77eb96
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
@@ -1336,6 +1430,7 @@ __metadata:
   linkType: hard
 
 "@react-stately/radio@npm:^3.10.2":
+<<<<<<< HEAD
   version: 3.10.3
   resolution: "@react-stately/radio@npm:3.10.3"
   dependencies:
@@ -1347,6 +1442,19 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: f8d356f86a6fd8a04e25b09906e26d4b1bdf88a247da70d799d9163a0aa127664bca337be07f88e9d0f20f9526ef30e0191be777bd1af95525940cb8aa13db62
+=======
+  version: 3.10.4
+  resolution: "@react-stately/radio@npm:3.10.4"
+  dependencies:
+    "@react-stately/form": ^3.0.3
+    "@react-stately/utils": ^3.10.1
+    "@react-types/radio": ^3.8.1
+    "@react-types/shared": ^3.23.1
+    "@swc/helpers": ^0.5.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: 73283d79a4d35351361b19438bd8ba59f3afa5fac3a4ebac4ff00c42ce38bea61f05ff5e161107dbaec6dd270e530430b1462c97e4a987b4b6eabfb289331bc5
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
@@ -1481,14 +1589,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@react-stately/utils@npm:^3.10.0":
   version: 3.10.0
   resolution: "@react-stately/utils@npm:3.10.0"
+=======
+"@react-stately/utils@npm:^3.10.1":
+  version: 3.10.1
+  resolution: "@react-stately/utils@npm:3.10.1"
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   dependencies:
     "@swc/helpers": ^0.5.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+<<<<<<< HEAD
   checksum: 780dab35815ad8afe949e5347ec658023c096d2fb33a11c17fa22c3d8f3defbe3b5c65574d44632f6a3355e5ca23af9e5856e86c66cc92d99f76fb4ea2ef18d2
+=======
+  checksum: b5252fcab7a6c5fe413030613a5891e2893070b6d65e318b3233e5d96af7f122045329a9b3754f47ceab5a652d51e2fb95e256a7060e595638f2b045741f2258
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
@@ -1641,6 +1759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@react-types/radio@npm:^3.8.0":
   version: 3.8.0
   resolution: "@react-types/radio@npm:3.8.0"
@@ -1649,6 +1768,16 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: f868f13ff24434f44681d12cd7e7ac6e4ecdd38f7c5382a142992faea7f16ef79ba35875994efae37380323940a0894874e383adf7247e2a78d27a4ca907efd2
+=======
+"@react-types/radio@npm:^3.8.1":
+  version: 3.8.1
+  resolution: "@react-types/radio@npm:3.8.1"
+  dependencies:
+    "@react-types/shared": ^3.23.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: acdb76043990a1965ff6f85d5a5420f1493496e69131dc07ebc75b11476a77ab16814368cca902a39f212609b57ea417002ea8a7f621c9cb470499effcf83f38
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
@@ -1684,12 +1813,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@react-types/shared@npm:^3.23.0":
   version: 3.23.0
   resolution: "@react-types/shared@npm:3.23.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
   checksum: aa3507ef30b1b2d58c60d0d9ddd08be2f15989399332e83a6155f88067f4e737f9fcbd303cff234267075ef0df338b923841c8a54e425c5c178300e11faecd4d
+=======
+"@react-types/shared@npm:^3.23.1":
+  version: 3.23.1
+  resolution: "@react-types/shared@npm:3.23.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+  checksum: a180d8b34b1ccf98f9d50bbbb0451090444aa576e1fecc46a769b24cf827658e1a77e5affb17407cfac25897ba461fb4234a160e5c8efa484880fcb4f230c2fe
+>>>>>>> 7319d92677e1c7e4df7ec604f05cb00ea93a8db7
   languageName: node
   linkType: hard
 
