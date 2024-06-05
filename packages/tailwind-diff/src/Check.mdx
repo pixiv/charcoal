@@ -1,0 +1,108 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="tailwind-diff/Check" />
+
+# tailwind-diff check
+
+## 概要
+
+Tailwind CSS のバージョンや設定ファイルの変更をもとに、利用できるクラスの差分を出力します。  
+内部的には、Tailwind CSS のビルドを 2 回実行し、結果を tmp ディレクトリに保存し、内容を比較しています。
+
+## オプション
+
+| name          | description                                                                                              | alias                | type          | required |
+| ------------- | -------------------------------------------------------------------------------------------------------- | -------------------- | ------------- | -------- |
+| after-config  | 2 回目のビルド時に使用する Tailwind CSS の設定ファイル。設定ファイルが変化するシナリオで用いる           | --after-config のみ  | string        | NO       |
+| before-config | 1 回目のビルド時に使用する Tailwind CSS の設定ファイル。設定ファイルが変化するシナリオで用いる           | --before-config のみ | string        | NO       |
+| config        | ビルド時に使用する Tailwind CSS の設定ファイル。設定ファイルが特に変化しない場合これだけを指定する。(※1) | -c または --config   | string        | NO       |
+| json          | 出力フォーマットを JSON にするかどうか                                                                   | --json のみ          | boolean       | NO       |
+| packages      | 1 回目のビルドと 2 回目のビルドの間にアップデートすべきパッケージ群                                      | --packages のみ      | string[] (※2) | NO       |
+
+※1 `config` と `before-config` あるいは `after-config` がどちらも指定されないときの動作は未定義。どちらかは必ず指定する。
+また、たとえば `config` と `before-config` だけを指定した際の動作も未定義。
+
+※2 `--packages a b` と `--packages a --packages b` はどちらも OK。詳しくは [yargs](https://yargs.js.org/docs/#api-reference-arraykey) のドキュメントを参照。
+
+```bash
+$ npx @charcoal-ui/tailwind-diff check --help
+tailwind-diff check
+
+checks diffs due to package updates
+
+Options:
+      --version        Show version number                             [boolean]
+      --help           Show help                                       [boolean]
+      --before-config  tailwind config used in first build              [string]
+      --after-config   tailwind config used in second build             [string]
+      --packages       packages to be update                             [array]
+      --json           print result as JSON format                     [boolean]
+  -c, --config         tailwind config file                             [string]
+```
+
+## 使い方の例
+
+### `tailwindcss` はそのまま、`@charcoal-ui/tailwind-config` をアップデートする
+
+```bash
+npx @charcoal-ui/tailwind-diff check -c ./tailwind.config.js --packages @charcoal-ui/tailwind-config@3.13.0
+```
+
+### `@charcoal-ui/tailwind-config` はそのまま、`tailwindcss` をアップデートする
+
+```bash
+npx @charcoal-ui/tailwind-diff check -c ./tailwind.config.js --packages tailwindcss@latest
+```
+
+### パッケージをアップデートせず、`tailwind.config.js` を変更する
+
+手動で新たに `tailwind.config.new.js` のようなファイルを作成した上で以下を実行します。
+
+```bash
+npx @charcoal-ui/tailwind-diff check --before-config ./tailwind.config.js --after-config ./tailwind.config.new.js
+```
+
+## 出力の形式
+
+### デフォルトの形式
+
+変更内容の詳細は出力せず、増減があったかだけを出力します。
+
+```bash
+$ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --config tailwind.config.js
+
+1 classes added, 0 classes removed.
+```
+
+増減に変化が 0 件であることを確認したいケースなどはそちらが適用です。
+
+### JSON 形式
+
+`--json` を指定した場合
+
+```bash
+$ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --json
+
+[{"className":"w-fit","status":"added","css":[".w-fit {\n    width: fit-content;\n}"]}]
+```
+
+この場合、`@charcoal-ui/tailwind-config` をアップデートすると w-fit というクラスが新しく使えるようになることがわかります。
+
+人間に見やすくするオプションなどはありません。その場合は [jq](https://jqlang.github.io/jq/) など、JSON をフォーマットできるコマンドと併用するのが推奨されます。
+
+```bash
+$ npx @charcoal-ui/tailwind-diff check --packages @charcoal-ui/tailwind-config@latest --json | jq
+
+[
+  {
+    "className": "w-fit",
+    "status": "added",
+    "css": [
+      ".w-fit {\n    width: fit-content;\n}"
+    ]
+  }
+]
+```
+
+**ステータスの種類は `added` または `removed` の 2 種類です。**
+クラスが変更された場合に `改名した` と訳してくれることはなく、1 件の追加と 1 件の削除としてカウントされます。
