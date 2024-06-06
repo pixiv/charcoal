@@ -53,3 +53,15 @@ jobs:
         run: |
           yarn style-dictionary build -c pixiv-light.config.js
           yarn style-dictionary build -c pixiv-dark.config.js
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated css
+          path: packages/token-cli/build/css
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated tokens json
+          path: packages/token-cli/tokens
