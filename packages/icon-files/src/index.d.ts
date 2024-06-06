@@ -142,6 +142,7 @@ declare var _default: {
   '24/Pause': () => Promise<string>;
   '24/PauseAlt': () => Promise<string>;
   '24/Pencil': () => Promise<string>;
+  '24/PencilAdd': () => Promise<string>;
   '24/PencilDraw': () => Promise<string>;
   '24/PencilLive': () => Promise<string>;
   '24/PencilText': () => Promise<string>;

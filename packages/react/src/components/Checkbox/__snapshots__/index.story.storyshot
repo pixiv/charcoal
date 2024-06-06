@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Checkbox Checked 1`] = `
+exports[`Storybook Tests react/Checkbox Checked 1`] = `
 <div
   data-dark={false}
 >
@@ -24,7 +24,7 @@ exports[`Storybook Tests Checkbox Checked 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Checkbox Default 1`] = `
+exports[`Storybook Tests react/Checkbox Default 1`] = `
 <div
   data-dark={false}
 >
@@ -37,7 +37,7 @@ exports[`Storybook Tests Checkbox Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Checkbox Disabled 1`] = `
+exports[`Storybook Tests react/Checkbox Disabled 1`] = `
 <div
   data-dark={false}
 >
@@ -62,7 +62,7 @@ exports[`Storybook Tests Checkbox Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Checkbox Invalid 1`] = `
+exports[`Storybook Tests react/Checkbox Invalid 1`] = `
 <div
   data-dark={false}
 >
@@ -87,7 +87,7 @@ exports[`Storybook Tests Checkbox Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Checkbox Label 1`] = `
+exports[`Storybook Tests react/Checkbox Label 1`] = `
 <div
   data-dark={false}
 >
@@ -110,7 +110,7 @@ exports[`Storybook Tests Checkbox Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Checkbox ReadOnly 1`] = `
+exports[`Storybook Tests react/Checkbox ReadOnly 1`] = `
 <div
   data-dark={false}
 >

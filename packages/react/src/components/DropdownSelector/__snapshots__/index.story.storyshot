@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
+exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -163,7 +163,7 @@ exports[`Storybook Tests DropdownSelector AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
+exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -328,7 +328,7 @@ exports[`Storybook Tests DropdownSelector CustomChildren 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Default 1`] = `
+exports[`Storybook Tests react/DropdownSelector Default 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -485,7 +485,7 @@ exports[`Storybook Tests DropdownSelector Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Disabled 1`] = `
+exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -644,7 +644,7 @@ exports[`Storybook Tests DropdownSelector Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
+exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -812,7 +812,7 @@ exports[`Storybook Tests DropdownSelector DisabledItem 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
+exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -984,91 +984,7 @@ exports[`Storybook Tests DropdownSelector InFormTag 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector InModal 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
+exports[`Storybook Tests react/DropdownSelector InModal 1`] = `
 <div
   data-dark={false}
 >
@@ -1084,342 +1000,11 @@ exports[`Storybook Tests DropdownSelector InModal 1`] = `
     >
       open
     </button>
-    <div
-      className="charcoal-modal-background"
-      data-bottom-sheet="full"
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
-          "zIndex": 10,
-        }
-      }
-    >
-      <div
-        className="charcoal-modal-dialog"
-        data-bottom-sheet="full"
-        onKeyDown={[Function]}
-        role="dialog"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
-        tabIndex={-1}
-      >
-        <div
-          className="charcoal-modal-header-root"
-          data-bottom-sheet="full"
-        >
-          <div
-            className="charcoal-modal-header-title"
-          >
-            modal
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 40,
-                "padding": 16,
-              }
-            }
-          >
-            <div
-              className="c0"
-            >
-              <div
-                className="charcoal-field-label-root"
-              >
-                <label
-                  className="charcoal-field-label"
-                >
-                  DropdownSelector1
-                </label>
-                <div
-                  className="charcoal-field-label-required-text"
-                >
-                  required
-                </div>
-                <div
-                  className="charcoal-field-label-sub-label"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                aria-hidden="true"
-                style={
-                  Object {
-                    "border": 0,
-                    "clip": "rect(0 0 0 0)",
-                    "clipPath": "inset(50%)",
-                    "height": "1px",
-                    "margin": "-1px",
-                    "overflow": "hidden",
-                    "padding": 0,
-                    "position": "absolute",
-                    "whiteSpace": "nowrap",
-                    "width": "1px",
-                  }
-                }
-              >
-                <select
-                  onChange={[Function]}
-                  tabIndex={-1}
-                  value="1"
-                >
-                  <option
-                    value="1"
-                  >
-                    1
-                  </option>
-                  <option
-                    value="2"
-                  >
-                    2
-                  </option>
-                  <option
-                    value="3"
-                  >
-                    3
-                  </option>
-                </select>
-              </div>
-              <button
-                className="c1"
-                onClick={[Function]}
-                type="button"
-              >
-                <span
-                  className="c2"
-                >
-                  Option 1
-                </span>
-                <pixiv-icon
-                  class="c3"
-                  name="16/Menu"
-                />
-              </button>
-              <div
-                className="charcoal-text-field-assistive-text"
-                data-invalid={false}
-              >
-                assistiveText
-              </div>
-            </div>
-            <div
-              aria-disabled={false}
-              className="charcoal-text-field-root"
-            >
-              <div
-                className="charcoal-field-label-root"
-              >
-                <label
-                  className="charcoal-field-label"
-                  htmlFor="test-id"
-                  id="test-id"
-                >
-                  TextField
-                </label>
-                <div
-                  className="charcoal-field-label-required-text"
-                >
-                  required
-                </div>
-                <div
-                  className="charcoal-field-label-sub-label"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                className="charcoal-text-field-container"
-                data-invalid={false}
-              >
-                <input
-                  aria-describedby="test-id"
-                  aria-labelledby="test-id"
-                  className="charcoal-text-field-input"
-                  data-invalid={false}
-                  disabled={false}
-                  id="test-id"
-                  onChange={[Function]}
-                  placeholder="placeholder"
-                  type="text"
-                />
-              </div>
-              <div
-                className="charcoal-text-field-assistive-text"
-                data-invalid={false}
-                id="test-id"
-              >
-                assistiveText
-              </div>
-            </div>
-            <div
-              aria-disabled={false}
-              className="charcoal-text-area-root"
-            >
-              <div
-                className="charcoal-field-label-root"
-              >
-                <label
-                  className="charcoal-field-label"
-                  htmlFor="test-id"
-                  id="test-id"
-                >
-                  TextArea
-                </label>
-                <div
-                  className="charcoal-field-label-required-text"
-                >
-                  required
-                </div>
-                <div
-                  className="charcoal-field-label-sub-label"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                aria-invalid={false}
-                className="charcoal-text-area-container"
-                style={
-                  Object {
-                    "--charcoal-text-area-rows": "4",
-                  }
-                }
-              >
-                <textarea
-                  aria-describedby="test-id"
-                  aria-labelledby="test-id"
-                  className="charcoal-text-area-textarea"
-                  data-no-bottom-padding={false}
-                  disabled={false}
-                  id="test-id"
-                  onChange={[Function]}
-                  placeholder="placeholder"
-                  rows={4}
-                />
-              </div>
-              <div
-                className="charcoal-text-field-assistive-text"
-                data-invalid={false}
-                id="test-id"
-              >
-                assistiveText
-              </div>
-            </div>
-            <div
-              className="c0"
-            >
-              <div
-                className="charcoal-field-label-root"
-              >
-                <label
-                  className="charcoal-field-label"
-                >
-                  DropdownSelector2
-                </label>
-                <div
-                  className="charcoal-field-label-required-text"
-                >
-                  required
-                </div>
-                <div
-                  className="charcoal-field-label-sub-label"
-                >
-                  <span />
-                </div>
-              </div>
-              <div
-                aria-hidden="true"
-                style={
-                  Object {
-                    "border": 0,
-                    "clip": "rect(0 0 0 0)",
-                    "clipPath": "inset(50%)",
-                    "height": "1px",
-                    "margin": "-1px",
-                    "overflow": "hidden",
-                    "padding": 0,
-                    "position": "absolute",
-                    "whiteSpace": "nowrap",
-                    "width": "1px",
-                  }
-                }
-              >
-                <select
-                  onChange={[Function]}
-                  tabIndex={-1}
-                  value="2"
-                >
-                  <option
-                    value="1"
-                  >
-                    1
-                  </option>
-                  <option
-                    value="2"
-                  >
-                    2
-                  </option>
-                  <option
-                    value="3"
-                  >
-                    3
-                  </option>
-                </select>
-              </div>
-              <button
-                className="c1"
-                onClick={[Function]}
-                type="button"
-              >
-                <span
-                  className="c2"
-                >
-                  Option 2
-                </span>
-                <pixiv-icon
-                  class="c3"
-                  name="16/Menu"
-                />
-              </button>
-              <div
-                className="charcoal-text-field-assistive-text"
-                data-invalid={false}
-              >
-                assistiveText
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          className="charcoal-icon-button charcoal-modal-close-button"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
-          onClick={[Function]}
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
-      </div>
-    </div>
   </div>
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Invalid 1`] = `
+exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1581,7 +1166,7 @@ exports[`Storybook Tests DropdownSelector Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
+exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1749,7 +1334,7 @@ exports[`Storybook Tests DropdownSelector InvalidAssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Label 1`] = `
+exports[`Storybook Tests react/DropdownSelector Label 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1920,7 +1505,7 @@ exports[`Storybook Tests DropdownSelector Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector LongNames 1`] = `
+exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -2077,7 +1662,7 @@ exports[`Storybook Tests DropdownSelector LongNames 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
+exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -2258,7 +1843,7 @@ exports[`Storybook Tests DropdownSelector RequiredText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector Section 1`] = `
+exports[`Storybook Tests react/DropdownSelector Section 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -2430,7 +2015,7 @@ exports[`Storybook Tests DropdownSelector Section 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector SubLabel 1`] = `
+exports[`Storybook Tests react/DropdownSelector SubLabel 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: 1fr;

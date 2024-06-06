@@ -1,5 +1,4 @@
 import { CheckboxProps } from '@charcoal-ui/react'
-import { ComponentPropsWithRef } from 'react'
 import { ApiTableData } from '../_components/ApiTable'
 
 export const apiData: Omit<
@@ -8,6 +7,11 @@ export const apiData: Omit<
 > = {
   invalid: {
     description: '入力の不正化',
+    default: 'false',
+    type: 'boolean',
+  },
+  rounded: {
+    description: '角丸の有効化',
     default: 'false',
     type: 'boolean',
   },

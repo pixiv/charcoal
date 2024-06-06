@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests IconButton Default 1`] = `
+exports[`Storybook Tests react/IconButton Default 1`] = `
 <div
   data-dark={false}
 >
@@ -18,7 +18,7 @@ exports[`Storybook Tests IconButton Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests IconButton IsActive 1`] = `
+exports[`Storybook Tests react/IconButton IsActive 1`] = `
 <div
   data-dark={false}
 >
@@ -35,7 +35,7 @@ exports[`Storybook Tests IconButton IsActive 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests IconButton Overlay 1`] = `
+exports[`Storybook Tests react/IconButton Overlay 1`] = `
 <div
   data-dark={false}
 >
