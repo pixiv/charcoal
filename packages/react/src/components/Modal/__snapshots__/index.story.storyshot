@@ -1060,7 +1060,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   opacity: 0.32;
 }
 
-.c12 {
+.c17 {
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
@@ -1092,40 +1092,156 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   height: 40px;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus,
-.c12[aria-disabled='false']:focus {
+.c17:not(:disabled):not([aria-disabled]):focus,
+.c17[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c12[aria-disabled='false']:focus:not(:focus-visible) {
+.c17:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c17[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c12:not(:disabled):not([aria-disabled]):focus-visible,
-.c12[aria-disabled='false']:focus-visible {
+.c17:not(:disabled):not([aria-disabled]):focus-visible,
+.c17[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12:not(:disabled):not([aria-disabled]):hover,
-.c12[aria-disabled='false']:hover {
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17[aria-disabled='false']:hover {
   color: var(--charcoal-text5-hover);
   background-color: var(--charcoal-assertive-hover);
 }
 
-.c12:not(:disabled):not([aria-disabled]):active,
-.c12[aria-disabled='false']:active {
+.c17:not(:disabled):not([aria-disabled]):active,
+.c17[aria-disabled='false']:active {
   color: var(--charcoal-text5-press);
   background-color: var(--charcoal-assertive-press);
 }
 
+.c17:disabled,
+.c17[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c12 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.c12:has(input[readonly]) {
+  cursor: default;
+}
+
 .c12:disabled,
 .c12[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
   opacity: 0.32;
 }
 
 .c13 {
+  position: relative;
+}
+
+.c14[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  -webkit-transition: 0.2s box-shadow,0.2s background-color;
+  transition: 0.2s box-shadow,0.2s background-color;
+}
+
+.c14[type='checkbox']:disabled {
+  cursor: default;
+}
+
+.c14[type='checkbox'][readonly] {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.c14[type='checkbox']:checked {
+  background-color: var(--charcoal-brand);
+}
+
+.c14[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
+.c14[type='checkbox']:checked[aria-disabled='false']:hover {
+  background-color: var(--charcoal-brand-hover);
+}
+
+.c14[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
+.c14[type='checkbox']:checked[aria-disabled='false']:active {
+  background-color: var(--charcoal-brand-press);
+}
+
+.c14[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
+.c14[type='checkbox'][aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c14[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c14[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c14[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
+.c14[type='checkbox'][aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c14[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
+.c14[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c14[type='checkbox']:not(:checked) {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--charcoal-text4);
+}
+
+.c15 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal-text5);
+}
+
+.c16 {
+  color: var(--charcoal-text2);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c18 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1151,36 +1267,36 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   transition: 0.2s background-color,0.2s box-shadow;
 }
 
-.c13:not(:disabled):not([aria-disabled]):hover,
-.c13[aria-disabled='false']:hover {
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
   background-color: var(--charcoal-transparent-hover);
 }
 
-.c13:not(:disabled):not([aria-disabled]):active,
-.c13[aria-disabled='false']:active {
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
   background-color: var(--charcoal-transparent-press);
 }
 
-.c13:not(:disabled):not([aria-disabled]):focus,
-.c13[aria-disabled='false']:focus {
+.c18:not(:disabled):not([aria-disabled]):focus,
+.c18[aria-disabled='false']:focus {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c13:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c13[aria-disabled='false']:focus:not(:focus-visible) {
+.c18:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c18[aria-disabled='false']:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
-.c13:not(:disabled):not([aria-disabled]):focus-visible,
-.c13[aria-disabled='false']:focus-visible {
+.c18:not(:disabled):not([aria-disabled]):focus-visible,
+.c18[aria-disabled='false']:focus-visible {
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c13:disabled,
-.c13[aria-disabled]:not([aria-disabled='false']) {
+.c18:disabled,
+.c18[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1221,7 +1337,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c14 {
+.c19 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1230,13 +1346,13 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c14:not(:disabled):not([aria-disabled]):hover,
-.c14[aria-disabled='false']:hover {
+.c19:not(:disabled):not([aria-disabled]):hover,
+.c19[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c14:not(:disabled):not([aria-disabled]):active,
-.c14[aria-disabled='false']:active {
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1413,8 +1529,51 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
           <div
             className="c11"
           >
+            <label
+              aria-disabled={false}
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                <input
+                  checked={true}
+                  className="c14"
+                  disabled={false}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onDragStart={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchCancel={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  type="checkbox"
+                />
+                <div
+                  aria-hidden={true}
+                  checked={true}
+                  className="c15"
+                >
+                  <pixiv-icon
+                    name="24/Check"
+                    unsafe-non-guideline-scale={0.6666666666666666}
+                  />
+                </div>
+              </div>
+              <div
+                className="c16"
+              >
+                test checkbox
+              </div>
+            </label>
             <button
-              className="c0 c12"
+              className="c0 c17"
               disabled={false}
               onClick={[Function]}
             >
@@ -1424,7 +1583,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
         </div>
         <button
           aria-label="Close"
-          className="c0 c13 c14"
+          className="c0 c18 c19"
           onClick={[Function]}
           type="button"
         >
