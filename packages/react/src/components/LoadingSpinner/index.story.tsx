@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import LoadingSpinner from '.'
 
 export default {
-  title: 'LoadingSpinner',
+  title: 'react/LoadingSpinner',
   component: LoadingSpinner,
   tags: ['skip-test'],
   parameters: {

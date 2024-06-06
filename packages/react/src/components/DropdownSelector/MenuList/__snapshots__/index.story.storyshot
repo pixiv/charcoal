@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests DropdownSelector/MenuList Basic 1`] = `
+exports[`Storybook Tests react/internals/MenuList Basic 1`] = `
 .c0 {
   padding: 0;
   margin: 0;
@@ -210,7 +210,7 @@ exports[`Storybook Tests DropdownSelector/MenuList Basic 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector/MenuList Disabled 1`] = `
+exports[`Storybook Tests react/internals/MenuList Disabled 1`] = `
 .c0 {
   padding: 0;
   margin: 0;
@@ -291,7 +291,7 @@ exports[`Storybook Tests DropdownSelector/MenuList Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests DropdownSelector/MenuList Group 1`] = `
+exports[`Storybook Tests react/internals/MenuList Group 1`] = `
 .c0 {
   padding: 0;
   margin: 0;

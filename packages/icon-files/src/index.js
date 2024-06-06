@@ -142,6 +142,7 @@ export default {
   '24/Pause': () => import('./24/Pause.js').then(m => m.default),
   '24/PauseAlt': () => import('./24/PauseAlt.js').then(m => m.default),
   '24/Pencil': () => import('./24/Pencil.js').then(m => m.default),
+  '24/PencilAdd': () => import('./24/PencilAdd.js').then(m => m.default),
   '24/PencilDraw': () => import('./24/PencilDraw.js').then(m => m.default),
   '24/PencilLive': () => import('./24/PencilLive.js').then(m => m.default),
   '24/PencilText': () => import('./24/PencilText.js').then(m => m.default),

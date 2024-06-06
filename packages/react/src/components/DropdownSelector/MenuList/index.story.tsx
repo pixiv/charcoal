@@ -5,7 +5,7 @@ import MenuItemGroup from '../MenuItemGroup'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'DropdownSelector/MenuList',
+  title: 'react/internals/MenuList',
   component: MenuList,
 } as Meta<typeof MenuList>
 
