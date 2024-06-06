@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+/** @type { import('style-dictionary') } */
 module.exports = {
   source: ['tokens/base.json', 'tokens/pixiv-light.json'],
   transform: {

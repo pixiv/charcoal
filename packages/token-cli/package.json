@@ -7,14 +7,15 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/yargs": "^17.0.32",
-    "fs-extra": "^11.2.0",
     "style-dictionary": "^3.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
   },
   "dependencies": {
     "axios": "^1.6.7",
+    "fs-extra": "^11.2.0",
     "yargs": "^17.7.2"
   }
 }
