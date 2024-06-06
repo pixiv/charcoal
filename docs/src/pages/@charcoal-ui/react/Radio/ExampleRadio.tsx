@@ -7,7 +7,12 @@ export const ExampleRadio = () => {
   return (
     <div>
       <p>value: {value}</p>
-      <StyledRadioGroup name="radio" onChange={setValue} value={value}>
+      <StyledRadioGroup
+        label="radio"
+        name="radio"
+        onChange={setValue}
+        value={value}
+      >
         <Radio value="value1">value1</Radio>
         <Radio value="value2">value2</Radio>
         <Radio value="value3">value3</Radio>
