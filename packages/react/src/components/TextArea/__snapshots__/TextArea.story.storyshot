@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-text2);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -124,12 +117,13 @@ exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
         rows={4}
       />
     </div>
-    <p
-      className="c3"
+    <div
+      className="charcoal-text-field-assistive-text"
+      data-invalid={false}
       id="test-id"
     >
       説明が入ります
-    </p>
+    </div>
   </div>
 </div>
 `;
@@ -507,13 +501,6 @@ exports[`Storybook Tests react/TextArea Disabled 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Invalid 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-assertive);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -632,12 +619,13 @@ exports[`Storybook Tests react/TextArea Invalid 1`] = `
         rows={4}
       />
     </div>
-    <p
-      className="c3"
+    <div
+      className="charcoal-text-field-assistive-text"
+      data-invalid={true}
       id="test-id"
     >
       エラーメッセージ
-    </p>
+    </div>
   </div>
 </div>
 `;

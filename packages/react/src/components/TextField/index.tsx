@@ -1,11 +1,14 @@
+import './index.css'
+
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import * as React from 'react'
-import styled, { css } from 'styled-components'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString } from '../../_lib'
 import { useFocusWithClick } from './useFocusWithClick'
 import { mergeRefs, useId } from '@react-aria/utils'
+import { AssistiveText } from './AssistiveText'
+import { useClassNames } from '../../_lib/useClassNames'
 
 export type TextFieldProps = {
   prefix?: ReactNode
@@ -45,6 +48,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       subLabel,
       suffix = null,
       type = 'text',
+      invalid,
       value,
       getCount = countCodePointsInString,
       ...props
@@ -85,8 +89,10 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const showAssistiveText =
       assistiveText != null && assistiveText.length !== 0
 
+    const classNames = useClassNames('charcoal-text-field-root')
+
     return (
-      <TextFieldRoot className={className} isDisabled={disabled}>
+      <div className={classNames} aria-disabled={disabled}>
         <FieldLabel
           htmlFor={inputId}
           id={labelledbyId}
@@ -96,146 +102,47 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           subLabel={subLabel}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
-        <StyledInputContainer
+        <div
+          className="charcoal-text-field-container"
           aria-disabled={disabled === true ? true : undefined}
-          hasPrefix={prefix != null}
-          hasSuffix={suffix != null || showCount}
-          invalid={props.invalid === true}
+          data-invalid={invalid === true}
           ref={containerRef}
         >
-          {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
-          <StyledInput
+          {prefix && <div className="charcoal-text-field-prefix">{prefix}</div>}
+          <input
+            className="charcoal-text-field-input"
             aria-describedby={showAssistiveText ? describedbyId : undefined}
-            aria-invalid={props.invalid}
+            aria-invalid={invalid}
             aria-labelledby={labelledbyId}
             id={inputId}
-            invalid={props.invalid === true}
+            data-invalid={invalid === true}
             maxLength={maxLength}
             onChange={handleChange}
-            prefix={props.rdfaPredix}
+            disabled={disabled}
             ref={mergeRefs(forwardRef, inputRef)}
             type={type}
             value={value}
             {...props}
           />
           {(suffix || showCount) && (
-            <SuffixContainer>
+            <div className="charcoal-text-field-suffix">
               {suffix}
               {showCount && (
-                <SingleLineCounter>
+                <span className="charcoal-text-field-line-counter">
                   {maxLength !== undefined ? `${count}/${maxLength}` : count}
-                </SingleLineCounter>
+                </span>
               )}
-            </SuffixContainer>
+            </div>
           )}
-        </StyledInputContainer>
+        </div>
         {showAssistiveText && (
-          <AssistiveText invalid={props.invalid === true} id={describedbyId}>
+          <AssistiveText data-invalid={invalid === true} id={describedbyId}>
             {assistiveText}
           </AssistiveText>
         )}
-      </TextFieldRoot>
+      </div>
     )
   }
 )
 
 export default TextField
-
-const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-
-  ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
-`
-
-const StyledInputContainer = styled.div<{
-  invalid: boolean
-  hasPrefix: boolean
-  hasSuffix: boolean
-}>`
-  display: grid;
-  grid-template-columns: ${(p) =>
-    [p.hasPrefix && 'auto', '1fr', p.hasSuffix && 'auto']
-      .filter(Boolean)
-      .join(' ')};
-  height: 40px;
-  transition: 0.2s background-color, 0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-
-  :not(:disabled):not([aria-disabled]):hover,
-  [aria-disabled='false']:hover {
-    background-color: var(--charcoal-surface3-hover);
-  }
-
-  :focus-within {
-    outline: none;
-    box-shadow: 0 0 0 4px
-      ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
-  }
-
-  ${(p) =>
-    p.invalid &&
-    css`
-      box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-    `}
-`
-
-const PrefixContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const SuffixContainer = styled.span`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`
-
-const StyledInput = styled.input<{
-  invalid: boolean
-}>`
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-
-  /* Prevent zooming for iOS Safari */
-  transform-origin: top left;
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-
-  /* Display box-shadow for iOS Safari */
-  appearance: none;
-  background: transparent;
-
-  color: var(--charcoal-text2);
-  &::placeholder {
-    color: var(--charcoal-text3);
-  }
-`
-
-const SingleLineCounter = styled.span`
-  line-height: 22px;
-  font-size: 14px;
-  color: var(--charcoal-text3);
-`
-
-export const AssistiveText = styled.p<{ invalid: boolean }>`
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: ${(p) => `var(--charcoal-${p.invalid ? `assertive` : `text2`})`};
-`

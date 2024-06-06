@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-text2);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -159,11 +152,12 @@ exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
           name="16/Menu"
         />
       </button>
-      <p
-        className="c4"
+      <div
+        className="charcoal-text-field-assistive-text"
+        data-invalid={false}
       >
         assistiveText
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -1173,13 +1167,6 @@ exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
-.c4 {
-  font-size: 14px;
-  line-height: 22px;
-  margin: 0;
-  color: var(--charcoal-assertive);
-}
-
 .c0 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1336,11 +1323,12 @@ exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
           name="16/Menu"
         />
       </button>
-      <p
-        className="c4"
+      <div
+        className="charcoal-text-field-assistive-text"
+        data-invalid={true}
       >
         assistiveText
-      </p>
+      </div>
     </div>
   </div>
 </div>
