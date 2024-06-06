@@ -50,12 +50,17 @@
   width: calc(100% / 0.875);
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875) 0;
+  padding: calc(9px / 0.875) calc(8px / 0.875);
+  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20px);
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
 
   background: none;
+}
+.charcoal-text-area-textarea[data-no-bottom-padding='true'] {
+  padding: calc(9px / 0.875) calc(8px / 0.875) 0;
+  height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 9px);
 }
 
 .charcoal-text-area-textarea::placeholder {
