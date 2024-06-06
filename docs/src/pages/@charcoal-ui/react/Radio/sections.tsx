@@ -8,6 +8,7 @@ export const sections: PreviewSection<RadioGroupProps>[] = [
       {
         props: {
           name: 'radio',
+          label: 'radio',
           onChange: () => {},
           disabled: true,
         },
