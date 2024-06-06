@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Modal BackgroundScroll 1`] = `
+exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -232,7 +232,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           <div
             className="charcoal-modal-header-title"
           >
-            Title
+            react/Title
           </div>
         </div>
         <div
@@ -417,11 +417,13 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
           </div>
         </div>
         <button
+          aria-label="Close"
           className="charcoal-icon-button charcoal-modal-close-button"
           data-active={false}
           data-size="S"
           data-variant="Default"
           onClick={[Function]}
+          type="button"
         >
           <pixiv-icon
             name="24/Close"
@@ -433,7 +435,7 @@ exports[`Storybook Tests Modal BackgroundScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal BottomSheet 1`] = `
+exports[`Storybook Tests react/Modal BottomSheet 1`] = `
 .c0 {
   display: grid;
   gap: 24px;
@@ -507,7 +509,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           <div
             className="charcoal-modal-header-title"
           >
-            Title
+            react/Title
           </div>
         </div>
         <div
@@ -536,11 +538,13 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
           </div>
         </div>
         <button
+          aria-label="Close"
           className="charcoal-icon-button charcoal-modal-close-button"
           data-active={false}
           data-size="S"
           data-variant="Default"
           onClick={[Function]}
+          type="button"
         >
           <pixiv-icon
             name="24/Close"
@@ -552,7 +556,7 @@ exports[`Storybook Tests Modal BottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal Default 1`] = `
+exports[`Storybook Tests react/Modal Default 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -776,7 +780,7 @@ exports[`Storybook Tests Modal Default 1`] = `
           <div
             className="charcoal-modal-header-title"
           >
-            Title
+            react/Title
           </div>
         </div>
         <div
@@ -961,11 +965,13 @@ exports[`Storybook Tests Modal Default 1`] = `
           </div>
         </div>
         <button
+          aria-label="Close"
           className="charcoal-icon-button charcoal-modal-close-button"
           data-active={false}
           data-size="S"
           data-variant="Default"
           onClick={[Function]}
+          type="button"
         >
           <pixiv-icon
             name="24/Close"
@@ -977,7 +983,7 @@ exports[`Storybook Tests Modal Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal FullBottomSheet 1`] = `
+exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1123,7 +1129,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           <div
             className="charcoal-modal-header-title"
           >
-            Title
+            react/Title
           </div>
         </div>
         <div
@@ -1231,11 +1237,13 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
           </div>
         </div>
         <button
+          aria-label="Close"
           className="charcoal-icon-button charcoal-modal-close-button"
           data-active={false}
           data-size="S"
           data-variant="Default"
           onClick={[Function]}
+          type="button"
         >
           <pixiv-icon
             name="24/Close"
@@ -1247,7 +1255,7 @@ exports[`Storybook Tests Modal FullBottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal InternalScroll 1`] = `
+exports[`Storybook Tests react/Modal InternalScroll 1`] = `
 .c0 {
   overflow: auto;
   max-height: calc( 100vh - 184px - 56px );
@@ -1307,7 +1315,7 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
           <div
             className="charcoal-modal-header-title"
           >
-            Title
+            react/Title
           </div>
         </div>
         <div
@@ -1343,7 +1351,7 @@ exports[`Storybook Tests Modal InternalScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
+exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
 .c0 {
   display: grid;
   gap: 24px;
@@ -1411,7 +1419,7 @@ exports[`Storybook Tests Modal NotDismmissableStory 1`] = `
           <div
             className="charcoal-modal-header-title"
           >
-            Title
+            react/Title
           </div>
         </div>
         <div

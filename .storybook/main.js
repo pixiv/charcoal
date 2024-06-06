@@ -5,7 +5,11 @@ const glob = promisify(require('glob'))
 const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
 module.exports = {
-  stories: ['../packages/**/*.mdx', '../packages/**/*.story.@(tsx)'],
+  stories: [
+    '../packages/**/*.mdx',
+    '../packages/**/*.story.@(tsx)',
+    './src/**/*.mdx',
+  ],
 
   addons: [
     getAbsolutePath('@storybook/addon-essentials'),

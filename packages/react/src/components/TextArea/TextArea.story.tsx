@@ -4,7 +4,7 @@ import TextArea from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'TextArea',
+  title: 'react/TextArea',
   component: TextArea,
   parameters: {
     layout: 'centered',

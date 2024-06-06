@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests Clickable Button 1`] = `
+exports[`Storybook Tests react/Clickable Button 1`] = `
 <div
   data-dark={false}
 >
@@ -13,7 +13,7 @@ exports[`Storybook Tests Clickable Button 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests Clickable Link 1`] = `
+exports[`Storybook Tests react/Clickable Link 1`] = `
 <div
   data-dark={false}
 >

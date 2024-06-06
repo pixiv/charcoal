@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'DropdownSelector/ListItem',
+  title: 'react/internals/ListItem',
   component: ListItem,
 } as Meta<typeof ListItem>
 

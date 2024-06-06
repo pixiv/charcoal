@@ -2,7 +2,7 @@ import Button from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Button',
+  title: 'react/Button',
   component: Button,
 } as Meta<typeof Button>
 

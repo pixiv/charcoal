@@ -3,7 +3,7 @@ import 'jest-styled-components'
 
 import renderer from 'react-test-renderer'
 import styled, { ThemeProvider } from 'styled-components'
-import { Example } from './index.story'
+import { Example } from './addThemeUtils.story'
 import { MyTheme, myTheme } from './storyHelper'
 
 function render(children: JSX.Element) {

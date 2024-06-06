@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests TagItem Active 1`] = `
+exports[`Storybook Tests react/TagItem Active 1`] = `
 <div
   data-dark={false}
 >
@@ -33,7 +33,7 @@ exports[`Storybook Tests TagItem Active 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem BGColor 1`] = `
+exports[`Storybook Tests react/TagItem BGColor 1`] = `
 <div
   data-dark={false}
 >
@@ -63,7 +63,7 @@ exports[`Storybook Tests TagItem BGColor 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem BGImage 1`] = `
+exports[`Storybook Tests react/TagItem BGImage 1`] = `
 <div
   data-dark={false}
 >
@@ -93,7 +93,7 @@ exports[`Storybook Tests TagItem BGImage 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem Default 1`] = `
+exports[`Storybook Tests react/TagItem Default 1`] = `
 <div
   data-dark={false}
 >
@@ -123,7 +123,7 @@ exports[`Storybook Tests TagItem Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem Disabled 1`] = `
+exports[`Storybook Tests react/TagItem Disabled 1`] = `
 <div
   data-dark={false}
 >
@@ -154,7 +154,7 @@ exports[`Storybook Tests TagItem Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem InActive 1`] = `
+exports[`Storybook Tests react/TagItem InActive 1`] = `
 <div
   data-dark={false}
 >
@@ -184,7 +184,7 @@ exports[`Storybook Tests TagItem InActive 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem Small 1`] = `
+exports[`Storybook Tests react/TagItem Small 1`] = `
 <div
   data-dark={false}
 >
@@ -214,7 +214,7 @@ exports[`Storybook Tests TagItem Small 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TagItem TranslatedLabel 1`] = `
+exports[`Storybook Tests react/TagItem TranslatedLabel 1`] = `
 <div
   data-dark={false}
 >

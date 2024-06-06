@@ -31,7 +31,11 @@ export {
 } from './components/TextField'
 export { default as TextArea, type TextAreaProps } from './components/TextArea'
 export { default as Icon, type IconProps } from './components/Icon'
-export { default as Modal, type ModalProps } from './components/Modal'
+export {
+  default as Modal,
+  type ModalProps,
+  ModalCloseButton,
+} from './components/Modal'
 export {
   ModalHeader,
   ModalAlign,

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'TextField',
+  title: 'react/TextField',
   component: TextField,
   parameters: {
     layout: 'centered',
