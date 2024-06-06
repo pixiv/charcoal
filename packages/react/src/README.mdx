@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
+
+<Meta title="react/README" />
+
+# Quickstart
+
+[![npmバッジ](https://img.shields.io/npm/v/@charcoal-ui/react?label=%40charcoal-ui%2Freact&style=flat-square&logo=npm)](https://www.npmjs.com/package/@charcoal-ui/react)
+
+## インストール
+
+以下のいずれかのパッケージマネージャーを使用してインストールしてください
+
+### npm
+
+```bash
+npm install @charcoal-ui/react
+```
+
+### yarn
+
+```bash
+yarn add @charcoal-ui/react
+```
+
+### pnpm
+
+```bash
+pnpm add @charcoal-ui/react
+```
+
+### bun
+
+```bash
+bun add @charcoal-ui/react
+```
+
+## Usage
+
+`@charcoal-ui/styled`と合わせて使用してください。
+`ThemeProvider`、`TokenInjector`を使用してください。詳しくは `@charcoal-ui/styled`のクイックスタートを参照してください。
+
+必要に応じて`SSRProvider`や`OverlayProvider`も使用してください。
+
+また、`ThemeProvider`、`TokenInjector`、`SSRProvider`、`OverlayProvider`を内包した CharcoalProvider を使用することもできます。
+
+```tsx
+import { CharcoalProvider } from '@charcoal-ui/react'
+import { prefersColorScheme, themeSelector } from '@charcoal-ui/styled'
+import { dark, light } from '@charcoal-ui/theme'
+import { FC, ReactNode } from 'react'
+
+export const CharcoalProviderExample: FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <CharcoalProvider
+      themeMap={{
+        ':root': light,
+        [themeSelector('light')]: light,
+        [themeSelector('dark')]: dark,
+        [prefersColorScheme('dark')]: dark,
+      }}
+    >
+      {children}
+    </CharcoalProvider>
+  )
+}
+```
