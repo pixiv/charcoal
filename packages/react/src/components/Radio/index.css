@@ -5,7 +5,8 @@
   align-items: center;
   cursor: pointer;
 }
-.charcoal-radio[aria-disabled]:not([aria-disabled='false']) {
+
+.charcoal-radio__label[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
 }
@@ -94,4 +95,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 8px;
+}
+
+.charcoal-radio-group[aria-disabled='true'] {
+  opacity: 0.32;
 }

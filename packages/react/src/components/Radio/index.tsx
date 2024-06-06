@@ -69,6 +69,10 @@ export type RadioGroupProps<Value extends string = string> =
   React.PropsWithChildren<{
     className?: string
     value?: Value
+    /**
+     * aria-label of RadioGroup
+     */
+    label: string
     name: string
     onChange(next: Value): void
     disabled?: boolean
@@ -79,6 +83,7 @@ export type RadioGroupProps<Value extends string = string> =
 
 interface RadioGroupContext {
   name: string
+  label: string
   selected?: string
   disabled: boolean
   readonly: boolean
@@ -92,6 +97,7 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
   disabled: false,
   readonly: false,
   invalid: false,
+  label: '',
   onChange() {
     throw new Error(
       'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
@@ -101,7 +107,17 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
 
 export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
   function RadioGroupInner(
-    { value, name, onChange, disabled, readonly, invalid, children, ...props },
+    {
+      value,
+      label,
+      name,
+      onChange,
+      disabled,
+      readonly,
+      invalid,
+      children,
+      ...props
+    },
     ref
   ) {
     const classNames = useClassNames('charcoal-radio-group', props.className)
@@ -116,21 +132,23 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
     const contextValue = useMemo(
       () => ({
         name,
+        label,
         selected: value,
         disabled: disabled ?? false,
         readonly: readonly ?? false,
         invalid: invalid ?? false,
         onChange: handleChange,
       }),
-      [disabled, handleChange, invalid, name, readonly, value]
+      [disabled, handleChange, invalid, label, name, readonly, value]
     )
 
     return (
       <RadioGroupContext.Provider value={contextValue}>
         <div
           role="radiogroup"
-          aria-orientation="vertical"
           aria-invalid={invalid}
+          aria-disabled={disabled}
+          aria-label={label}
           className={classNames}
           ref={ref}
         >
