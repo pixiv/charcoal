@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
+
+<Meta title="icons/Custom Icon" />
+
+# 独自のアイコンを登録する
+
+`<pixiv-icon>` の `name` に存在しない SVG をアイコンとして登録することができます。
+
+```typescript
+import { PixivIcon } from '@charcoal-ui/icons'
+import NewFeature from './icons/16/NewFeature.svg'
+
+PixivIcon.extend({
+  '16/NewFeature': require('./icons/16/NewFeature.svg'),
+  '24/NewFeature': 'https://example.com/hoge.svg',
+  '32/NewFeature': NewFeature,
+})
+
+declare module '@charcoal-ui/icons' {
+  export interface KnownIconType {
+    '16/NewFeature': unknown
+    '24/NewFeature': unknown
+    '32/NewFeature': unknown
+  }
+}
+```
+
+その場合も名前の形式は `{size}/{name}` である必要があります。
+TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
+
+## 独自アイコンのためのバンドラ設定
+
+`PixivIcon.extend()` に渡すオブジェクトはキーがアイコン名、値が SVG ファイルに対するパス名または URL である必要があります（内部的には、ここで渡した文字列に対して `fetch()` が走ります）。
+
+SVG ファイルを `import` して渡す場合、プロジェクトのバンドラが `*.svg` を **パス文字列として**（ファイルの内容の文字列ではなく）ロードする設定になっていることを確認してください。
+
+例えば Webpack の場合、当該アイコンファイルに対するルールの type は [`asset/resource`](https://webpack.js.org/guides/asset-modules/) であるべきです。
+[svgr](https://react-svgr.com/) など、SVG ファイルを文字列以外の値にトランスフォームするツールを使っているプロジェクトでは、`PixivIcon.extend()` に渡す用の `*.svg` ファイルをその対象から除いてください。
