@@ -9,7 +9,7 @@ import { mustBeDefined } from './utils'
  * Figma
  */
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN
-const FIGMA_NODE_ID = process.env.FIGMA_NODE_ID
+const FIGMA_FILE_ID = process.env.FIGMA_FILE_ID
 
 void yargs
   .scriptName('token-cli')
@@ -25,9 +25,9 @@ void yargs
     },
     async (args) => {
       mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
-      mustBeDefined(FIGMA_NODE_ID, 'FIGMA_NODE_ID')
+      mustBeDefined(FIGMA_FILE_ID, 'FIGMA_FILE_ID')
 
-      const res = await getDesignToken(FIGMA_TOKEN, FIGMA_NODE_ID)
+      const res = await getDesignToken(FIGMA_TOKEN, FIGMA_FILE_ID)
 
       await ensureFile(path.join(__dirname, '..', args.output))
       await writeFile(
