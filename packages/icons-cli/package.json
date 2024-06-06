@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons-cli",
-  "version": "3.13.0",
+  "version": "3.13.1",
   "license": "Apache-2.0",
   "bin": "./dist/index.js",
   "scripts": {
