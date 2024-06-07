@@ -20,6 +20,7 @@ exports[`Storybook Tests react/Radio Default 1`] = `
   >
     <div
       aria-label="default story"
+      aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
     >
@@ -112,6 +113,7 @@ exports[`Storybook Tests react/Radio Disabled 1`] = `
     <div
       aria-disabled={true}
       aria-label="disabled_stroy"
+      aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
     >
@@ -204,6 +206,7 @@ exports[`Storybook Tests react/Radio Invalid 1`] = `
     <div
       aria-invalid={true}
       aria-label="invalid story"
+      aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
     >
@@ -295,6 +298,7 @@ exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
   >
     <div
       aria-label="partial disabled story"
+      aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
     >
@@ -386,6 +390,7 @@ exports[`Storybook Tests react/Radio Readonly 1`] = `
   >
     <div
       aria-label="readonly story"
+      aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
     >
