@@ -72,18 +72,19 @@ export type RadioGroupProps<Value extends string = string> =
     /**
      * aria-label of RadioGroup
      */
-    label: string
+    label?: string
     name: string
     onChange(next: Value): void
     disabled?: boolean
     readonly?: boolean
     invalid?: boolean
     ref?: React.Ref<HTMLDivElement>
+    'aria-labelledby'?: React.ComponentProps<'div'>['aria-labelledby']
+    'aria-orientation'?: React.ComponentProps<'div'>['aria-orientation']
   }>
 
 interface RadioGroupContext {
   name: string
-  label: string
   selected?: string
   disabled: boolean
   readonly: boolean
@@ -97,7 +98,6 @@ const RadioGroupContext = React.createContext<RadioGroupContext>({
   disabled: false,
   readonly: false,
   invalid: false,
-  label: '',
   onChange() {
     throw new Error(
       'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
@@ -132,23 +132,24 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
     const contextValue = useMemo(
       () => ({
         name,
-        label,
         selected: value,
         disabled: disabled ?? false,
         readonly: readonly ?? false,
         invalid: invalid ?? false,
         onChange: handleChange,
       }),
-      [disabled, handleChange, invalid, label, name, readonly, value]
+      [disabled, handleChange, invalid, name, readonly, value]
     )
 
     return (
       <RadioGroupContext.Provider value={contextValue}>
         <div
           role="radiogroup"
-          aria-invalid={invalid}
           aria-disabled={disabled}
+          aria-invalid={invalid}
           aria-label={label}
+          aria-labelledby={props['aria-labelledby']}
+          aria-orientation={props['aria-orientation']}
           className={classNames}
           ref={ref}
         >
