@@ -1,78 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -105,13 +39,20 @@ exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-describedby="test-id"
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         rows={4}
@@ -129,78 +70,12 @@ exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -233,12 +108,19 @@ exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         rows={4}
@@ -249,78 +131,12 @@ exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Default 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -360,13 +176,20 @@ exports[`Storybook Tests react/TextArea Default 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-invalid={false}
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         placeholder="Text Area"
@@ -379,79 +202,12 @@ exports[`Storybook Tests react/TextArea Default 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Disabled 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={true}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -485,12 +241,19 @@ exports[`Storybook Tests react/TextArea Disabled 1`] = `
     </div>
     <div
       aria-disabled="true"
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={true}
         id="test-id"
         onChange={[Function]}
         rows={4}
@@ -501,79 +264,12 @@ exports[`Storybook Tests react/TextArea Disabled 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Invalid 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -606,14 +302,21 @@ exports[`Storybook Tests react/TextArea Invalid 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={true}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-describedby="test-id"
         aria-invalid={true}
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         rows={4}
@@ -631,78 +334,12 @@ exports[`Storybook Tests react/TextArea Invalid 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Label 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -721,12 +358,19 @@ exports[`Storybook Tests react/TextArea Label 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         rows={4}
@@ -737,78 +381,12 @@ exports[`Storybook Tests react/TextArea Label 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Placeholder 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -841,12 +419,19 @@ exports[`Storybook Tests react/TextArea Placeholder 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         placeholder="Placeholder"
@@ -858,78 +443,12 @@ exports[`Storybook Tests react/TextArea Placeholder 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -962,12 +481,19 @@ exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         readOnly={true}
@@ -980,78 +506,12 @@ exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea Required 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -1089,12 +549,19 @@ exports[`Storybook Tests react/TextArea Required 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         rows={4}
@@ -1105,87 +572,12 @@ exports[`Storybook Tests react/TextArea Required 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea ShowCount 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 5 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875) 0;
-  height: calc(22px / 0.875 * 4 + 9px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c3 {
-  position: absolute;
-  bottom: 9px;
-  right: 8px;
-  line-height: 22px;
-  font-size: 14px;
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -1218,19 +610,26 @@ exports[`Storybook Tests react/TextArea ShowCount 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={5}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "5",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={true}
+        disabled={false}
         id="test-id"
         maxLength={100}
         onChange={[Function]}
         rows={4}
       />
       <span
-        className="c3"
+        className="charcoal-text-area-counter"
       >
         0/100
       </span>
@@ -1240,78 +639,12 @@ exports[`Storybook Tests react/TextArea ShowCount 1`] = `
 `;
 
 exports[`Storybook Tests react/TextArea SubLabel 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-}
-
-.c1 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c1:not([aria-disabled]):hover,
-.c1 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c2::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
       className="charcoal-field-label-root"
@@ -1336,12 +669,19 @@ exports[`Storybook Tests react/TextArea SubLabel 1`] = `
       </div>
     </div>
     <div
-      className="c1"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c2"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
+        disabled={false}
         id="test-id"
         onChange={[Function]}
         rows={4}
