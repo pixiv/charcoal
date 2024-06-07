@@ -1,11 +1,12 @@
 import './index.css'
 
-import { memo, forwardRef, useCallback, useContext } from 'react'
+import { memo, forwardRef, useContext } from 'react'
 import * as React from 'react'
 import warning from 'warning'
 import { useClassNames } from '../../_lib/useClassNames'
 
 import { RadioGroupContext } from './RadioGroupContext'
+import RadioInput from './RadioInput'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
@@ -38,23 +39,14 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   const isDisabled = disabled || isParentDisabled
   const isReadonly = readonly && !isSelected
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      onChange(e.currentTarget.value)
-    },
-    [onChange]
-  )
-
   return (
     <label aria-disabled={isDisabled || isReadonly} className={classNames}>
-      <input
-        type="radio"
-        className="charcoal-radio__input"
+      <RadioInput
         name={name}
         value={value}
         checked={isSelected}
         aria-invalid={invalid}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={isDisabled || isReadonly}
         ref={ref}
       />
