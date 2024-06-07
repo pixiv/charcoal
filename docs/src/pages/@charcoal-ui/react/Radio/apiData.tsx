@@ -44,7 +44,7 @@ export const apiData: Partial<ApiTableData<RadioGroupProps, HTMLInputElement>> =
     label: {
       default: '',
       description: 'radiogroupのaria-label',
-      required: true,
+      required: false,
       type: 'string',
     },
     readonly: {
