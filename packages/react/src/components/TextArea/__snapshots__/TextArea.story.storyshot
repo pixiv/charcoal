@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests TextArea AssistiveText 1`] = `
+exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
 <div
   data-dark={false}
 >
@@ -69,7 +69,7 @@ exports[`Storybook Tests TextArea AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea AutoHeight 1`] = `
+exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
 <div
   data-dark={false}
 >
@@ -130,7 +130,7 @@ exports[`Storybook Tests TextArea AutoHeight 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea Default 1`] = `
+exports[`Storybook Tests react/TextArea Default 1`] = `
 <div
   data-dark={false}
 >
@@ -201,7 +201,7 @@ exports[`Storybook Tests TextArea Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea Disabled 1`] = `
+exports[`Storybook Tests react/TextArea Disabled 1`] = `
 <div
   data-dark={false}
 >
@@ -263,7 +263,7 @@ exports[`Storybook Tests TextArea Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea Invalid 1`] = `
+exports[`Storybook Tests react/TextArea Invalid 1`] = `
 <div
   data-dark={false}
 >
@@ -333,7 +333,7 @@ exports[`Storybook Tests TextArea Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea Label 1`] = `
+exports[`Storybook Tests react/TextArea Label 1`] = `
 <div
   data-dark={false}
 >
@@ -380,7 +380,7 @@ exports[`Storybook Tests TextArea Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea Placeholder 1`] = `
+exports[`Storybook Tests react/TextArea Placeholder 1`] = `
 <div
   data-dark={false}
 >
@@ -442,7 +442,7 @@ exports[`Storybook Tests TextArea Placeholder 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea ReadOnly 1`] = `
+exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
 <div
   data-dark={false}
 >
@@ -505,7 +505,7 @@ exports[`Storybook Tests TextArea ReadOnly 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea Required 1`] = `
+exports[`Storybook Tests react/TextArea Required 1`] = `
 <div
   data-dark={false}
 >
@@ -571,7 +571,7 @@ exports[`Storybook Tests TextArea Required 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea ShowCount 1`] = `
+exports[`Storybook Tests react/TextArea ShowCount 1`] = `
 <div
   data-dark={false}
 >
@@ -638,7 +638,7 @@ exports[`Storybook Tests TextArea ShowCount 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests TextArea SubLabel 1`] = `
+exports[`Storybook Tests react/TextArea SubLabel 1`] = `
 <div
   data-dark={false}
 >

@@ -50,4 +50,9 @@ export const apiData: Omit<
     description: 'z-index',
     type: 'number',
   },
+  closeButtonAriaLabel: {
+    default: '',
+    description: 'Pass to Modal close button `aria-label` attribute',
+    type: 'string',
+  },
 }

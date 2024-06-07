@@ -7,7 +7,7 @@ import { maxWidth } from '@charcoal-ui/utils'
 import { useMedia } from '@charcoal-ui/styled'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
-import IconButton from '../IconButton'
+import IconButton, { IconButtonProps } from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
@@ -28,6 +28,7 @@ export type ModalProps = AriaModalOverlayProps &
     isOpen: boolean
     onClose: () => void
     className?: string
+    closeButtonAriaLabel?: string
 
     /**
      * https://github.com/adobe/react-spectrum/issues/3787
@@ -76,6 +77,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     onClose,
     className,
     isOpen = false,
+    closeButtonAriaLabel = 'Close',
   } = props
 
   const ref = useObjectRef<HTMLDivElement>(external)
@@ -174,10 +176,8 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
                 >
                   {children}
                   {isDismissable === true && (
-                    <IconButton
-                      className="charcoal-modal-close-button"
-                      size="S"
-                      icon="24/Close"
+                    <ModalCloseButton
+                      aria-label={closeButtonAriaLabel}
                       onClick={onClose}
                     />
                   )}
@@ -210,6 +210,18 @@ export const ModalContext = React.createContext<{
   showDismiss: true,
   bottomSheet: false,
 })
+
+export function ModalCloseButton(props: Omit<IconButtonProps, 'icon'>) {
+  return (
+    <IconButton
+      className="charcoal-modal-close-button"
+      size="S"
+      icon="24/Close"
+      type="button"
+      {...props}
+    />
+  )
+}
 
 export function ModalDismissButton({ children, ...props }: ButtonProps) {
   const { close, showDismiss } = useContext(ModalContext)

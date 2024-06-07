@@ -11,7 +11,7 @@ import TextArea from '../TextArea'
 import Button from '../Button'
 
 export default {
-  title: 'DropdownSelector',
+  title: 'react/DropdownSelector',
   component: DropdownSelector,
 } as Meta<typeof DropdownSelector>
 
@@ -233,7 +233,7 @@ export const LongNames: StoryObj<typeof DropdownSelector> = {
 
 export const InModal: StoryObj<typeof DropdownSelector> = {
   render: function Render() {
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const [selected1, setSelected1] = useState('1')
     const [selected2, setSelected2] = useState('2')
     return (

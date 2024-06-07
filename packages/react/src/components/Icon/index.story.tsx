@@ -3,7 +3,7 @@ import { KNOWN_ICON_FILES } from '@charcoal-ui/icons'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-  title: 'Icon',
+  title: 'react/Icon',
   component: Icon,
   argTypes: {
     name: {

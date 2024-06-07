@@ -24,12 +24,6 @@ export {
   RadioGroup,
   type RadioGroupProps,
 } from './components/Radio'
-export {
-  default as MultiSelect,
-  type MultiSelectProps,
-  MultiSelectGroup,
-  type MultiSelectGroupProps,
-} from './components/MultiSelect'
 export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,
@@ -37,7 +31,11 @@ export {
 } from './components/TextField'
 export { default as TextArea, type TextAreaProps } from './components/TextArea'
 export { default as Icon, type IconProps } from './components/Icon'
-export { default as Modal, type ModalProps } from './components/Modal'
+export {
+  default as Modal,
+  type ModalProps,
+  ModalCloseButton,
+} from './components/Modal'
 export {
   ModalHeader,
   ModalAlign,

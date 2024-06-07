@@ -6,6 +6,7 @@ import { useClassNames } from '../../../_lib/useClassNames'
 type CharcoalCheckboxInputProps = {
   invalid?: boolean
   onChange?: (checked: boolean) => void
+  rounded?: boolean
 }
 
 type InputProps = React.HTMLProps<HTMLInputElement>
@@ -15,7 +16,7 @@ export type CheckboxInputProps = CharcoalCheckboxInputProps &
 
 const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   function CheckboxInput(
-    { onChange, checked, invalid, className, ...props },
+    { onChange, checked, invalid, className, rounded, ...props },
     ref
   ) {
     const handleChange = useCallback(
@@ -36,6 +37,7 @@ const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
         onChange={handleChange}
         aria-invalid={invalid}
         checked={checked}
+        data-rounded={rounded}
         {...props}
       />
     )

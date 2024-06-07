@@ -8,6 +8,7 @@ import { countCodePointsInString } from '../../_lib'
 import { useFocusWithClick } from './useFocusWithClick'
 import { mergeRefs, useId } from '@react-aria/utils'
 import { AssistiveText } from './AssistiveText'
+import { useClassNames } from '../../_lib/useClassNames'
 
 export type TextFieldProps = {
   prefix?: ReactNode
@@ -88,8 +89,10 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const showAssistiveText =
       assistiveText != null && assistiveText.length !== 0
 
+    const classNames = useClassNames('charcoal-text-field-root')
+
     return (
-      <div className={'charcoal-text-field-root'} aria-disabled={disabled}>
+      <div className={classNames} aria-disabled={disabled}>
         <FieldLabel
           htmlFor={inputId}
           id={labelledbyId}

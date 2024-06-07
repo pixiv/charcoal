@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { useCallback, useState } from 'react'
 
 export default {
-  title: 'Checkbox',
+  title: 'react/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',
@@ -27,7 +27,7 @@ export const Default: StoryObj<typeof Checkbox> = {
     return (
       <Checkbox
         {...props}
-        checked={checked ?? props.checked}
+        checked={props.checked ?? checked}
         onChange={handleChange}
       />
     )
