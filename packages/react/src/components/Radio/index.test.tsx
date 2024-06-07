@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
-import Radio, { RadioGroup } from '.'
+import Radio from '.'
+import { RadioGroup } from './RadioGroup'
 import { light } from '@charcoal-ui/theme'
 
 describe('Radio', () => {

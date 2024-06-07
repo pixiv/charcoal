@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import Radio, { RadioGroup } from '.'
+import Radio from '.'
+import { RadioGroup } from './RadioGroup'
 import { px } from '@charcoal-ui/utils'
 import { StoryObj } from '@storybook/react'
 import { useState } from 'react'
