@@ -34,6 +34,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
       readonly,
       invalid,
       children,
+      'aria-orientation': ariaOrientation = 'vertical',
       ...props
     },
     ref
@@ -67,7 +68,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
           aria-invalid={invalid}
           aria-label={label}
           aria-labelledby={props['aria-labelledby']}
-          aria-orientation={props['aria-orientation']}
+          aria-orientation={ariaOrientation}
           className={classNames}
           ref={ref}
         >
