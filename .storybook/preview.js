@@ -14,7 +14,13 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['react', ['*', 'internals']],
+      order: [
+        'README',
+        'react',
+        ['*', 'internals'],
+        '*',
+        ['README', 'Custom', 'SSR Guide', '*'],
+      ],
     },
   },
   viewMode: 'docs',
