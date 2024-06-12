@@ -1,6 +1,7 @@
+import './index.css'
+
 import { RefObject, useContext, useRef, ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
-import styled from 'styled-components'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
 import { usePreventScroll } from './usePreventScroll'
 
@@ -58,23 +59,13 @@ export default function Popover(props: PopoverProps) {
           inset: 0,
         }}
       />
-      <DropdownPopoverDiv {...popoverProps} ref={finalPopoverRef}>
+      <div {...popoverProps} ref={finalPopoverRef} className="charcoal-popover">
         <DismissButton onDismiss={() => props.onClose()} />
+        <div tabIndex={0} onFocus={props.onClose} />
         {props.children}
+        <div tabIndex={0} onFocus={props.onClose} />
         <DismissButton onDismiss={() => props.onClose()} />
-      </DropdownPopoverDiv>
+      </div>
     </Overlay>
   )
 }
-
-const DropdownPopoverDiv = styled.div`
-  margin: 4px 0;
-  list-style: none;
-  overflow: auto;
-  max-height: inherit;
-  background-color: var(--charcoal-background1);
-  border: solid 1px var(--charcoal-border-default);
-  border-radius: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-`

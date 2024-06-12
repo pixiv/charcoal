@@ -1,0 +1,24 @@
+.charcoal-list-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  cursor: pointer;
+  outline: none;
+
+  padding-right: 16px;
+  padding-left: 16px;
+
+  transition: background-color 0.2s;
+}
+
+.charcoal-list-item:not([aria-disabled='true']):hover,
+.charcoal-list-item:not([aria-disabled='true']):focus,
+.charcoal-list-item:not([aria-disabled='true']):focus-within {
+  background-color: var(--charcoal-surface3);
+}
+
+.charcoal-list-item[aria-disabled='true'] {
+  opacity: 0.32;
+  cursor: default;
+}

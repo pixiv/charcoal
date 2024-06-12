@@ -25,8 +25,6 @@ export const Default: StoryObj<typeof DropdownSelector> = {
           {...args}
           onChange={setSelected}
           value={args.value ? args.value : selected}
-          placeholder="Placeholder"
-          label="Label"
         >
           <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
           <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
@@ -164,7 +162,6 @@ export const RequiredText: StoryObj<typeof DropdownSelector> = {
       <div style={{ width: 288 }}>
         <DropdownSelector
           value={selected}
-          invalid
           onChange={setSelected}
           label="Label"
           showLabel
@@ -187,7 +184,6 @@ export const SubLabel: StoryObj<typeof DropdownSelector> = {
       <div style={{ width: 288 }}>
         <DropdownSelector
           value={selected}
-          invalid
           onChange={setSelected}
           label="Label"
           showLabel

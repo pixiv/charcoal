@@ -1,90 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -96,8 +12,37 @@ exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -138,23 +83,28 @@ exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-describedby="test-id"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
       <div
         className="charcoal-text-field-assistive-text"
         data-invalid={false}
+        id="test-id"
       >
         assistiveText
       </div>
@@ -164,90 +114,6 @@ exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -259,8 +125,37 @@ exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -301,12 +196,15 @@ exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           <div
             style={
@@ -319,7 +217,7 @@ exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
           </div>
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -329,90 +227,6 @@ exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector Default 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -424,8 +238,35 @@ exports[`Storybook Tests react/DropdownSelector Default 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        />
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -466,17 +307,18 @@ exports[`Storybook Tests react/DropdownSelector Default 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
-        >
-          Placeholder
-        </span>
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
+        />
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -486,90 +328,6 @@ exports[`Storybook Tests react/DropdownSelector Default 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -582,8 +340,37 @@ exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
   >
     <div
       aria-disabled={true}
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -624,18 +411,21 @@ exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         disabled={true}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -645,90 +435,6 @@ exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -740,8 +446,37 @@ exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -793,17 +528,20 @@ exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 2 (disabled)
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -813,90 +551,6 @@ exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -910,8 +564,37 @@ exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -953,17 +636,20 @@ exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -1005,95 +691,6 @@ exports[`Storybook Tests react/DropdownSelector InModal 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:not(:disabled):not([aria-disabled]),
-.c1[aria-disabled='false'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -1105,338 +702,28 @@ exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
     }
   >
     <div
-      className="c0"
-    >
-      <div
-        aria-hidden="true"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": "1px",
-            "margin": "-1px",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": "1px",
-          }
-        }
-      >
-        <select
-          onChange={[Function]}
-          tabIndex={-1}
-          value="1"
-        >
-          <option
-            value="1"
-          >
-            1
-          </option>
-          <option
-            value="2"
-          >
-            2
-          </option>
-          <option
-            value="3"
-          >
-            3
-          </option>
-        </select>
-      </div>
-      <button
-        className="c1"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="c2"
-        >
-          Option 1
-        </span>
-        <pixiv-icon
-          class="c3"
-          name="16/Menu"
-        />
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:not(:disabled):not([aria-disabled]),
-.c1[aria-disabled='false'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
-<div
-  data-dark={false}
->
-  <div
-    style={
-      Object {
-        "width": 288,
-      }
-    }
-  >
-    <div
-      className="c0"
-    >
-      <div
-        aria-hidden="true"
-        style={
-          Object {
-            "border": 0,
-            "clip": "rect(0 0 0 0)",
-            "clipPath": "inset(50%)",
-            "height": "1px",
-            "margin": "-1px",
-            "overflow": "hidden",
-            "padding": 0,
-            "position": "absolute",
-            "whiteSpace": "nowrap",
-            "width": "1px",
-          }
-        }
-      >
-        <select
-          onChange={[Function]}
-          tabIndex={-1}
-          value="1"
-        >
-          <option
-            value="1"
-          >
-            1
-          </option>
-          <option
-            value="2"
-          >
-            2
-          </option>
-          <option
-            value="3"
-          >
-            3
-          </option>
-        </select>
-      </div>
-      <button
-        className="c1"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="c2"
-        >
-          Option 1
-        </span>
-        <pixiv-icon
-          class="c3"
-          name="16/Menu"
-        />
-      </button>
-      <div
-        className="charcoal-text-field-assistive-text"
-        data-invalid={true}
-      >
-        assistiveText
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests react/DropdownSelector Label 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
-<div
-  data-dark={false}
->
-  <div
-    style={
-      Object {
-        "width": 288,
-      }
-    }
-  >
-    <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
       <div
         className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
       >
         <label
           className="charcoal-field-label"
+          id="test-id"
         >
           Label
         </label>
@@ -1486,17 +773,21 @@ exports[`Storybook Tests react/DropdownSelector Label 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-invalid={true}
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -1505,91 +796,7 @@ exports[`Storybook Tests react/DropdownSelector Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
+exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
 <div
   data-dark={false}
 >
@@ -1601,8 +808,37 @@ exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -1643,115 +879,38 @@ exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-describedby="test-id"
+        aria-invalid={true}
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
+      <div
+        className="charcoal-text-field-assistive-text"
+        data-invalid={true}
+        id="test-id"
+      >
+        assistiveText
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:not(:disabled):not([aria-disabled]),
-.c1[aria-disabled='false'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
+exports[`Storybook Tests react/DropdownSelector Label 1`] = `
 <div
   data-dark={false}
 >
@@ -1763,13 +922,210 @@ exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
       <div
         className="charcoal-field-label-root"
       >
         <label
           className="charcoal-field-label"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          onChange={[Function]}
+          tabIndex={-1}
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <button
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
+        >
+          Option 1
+        </span>
+        <pixiv-icon
+          class="charcoal-ui-dropdown-selector-icon"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="charcoal-dropdown-selector-root"
+    >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <select
+          onChange={[Function]}
+          tabIndex={-1}
+          value="1"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+        </select>
+      </div>
+      <button
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        </span>
+        <pixiv-icon
+          class="charcoal-ui-dropdown-selector-icon"
+          name="16/Menu"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
+<div
+  data-dark={false}
+>
+  <div
+    style={
+      Object {
+        "width": 288,
+      }
+    }
+  >
+    <div
+      className="charcoal-dropdown-selector-root"
+    >
+      <div
+        className="charcoal-field-label-root"
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
         >
           Label
         </label>
@@ -1824,17 +1180,20 @@ exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -1844,90 +1203,6 @@ exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector Section 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -1939,8 +1214,37 @@ exports[`Storybook Tests react/DropdownSelector Section 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
+      <div
+        className="charcoal-field-label-root"
+        style={
+          Object {
+            "border": 0,
+            "clip": "rect(0 0 0 0)",
+            "clipPath": "inset(50%)",
+            "height": "1px",
+            "margin": "-1px",
+            "overflow": "hidden",
+            "padding": 0,
+            "position": "absolute",
+            "whiteSpace": "nowrap",
+            "width": "1px",
+          }
+        }
+      >
+        <label
+          className="charcoal-field-label"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          className="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
       <div
         aria-hidden="true"
         style={
@@ -1996,17 +1300,20 @@ exports[`Storybook Tests react/DropdownSelector Section 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Banana
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
@@ -2016,95 +1323,6 @@ exports[`Storybook Tests react/DropdownSelector Section 1`] = `
 `;
 
 exports[`Storybook Tests react/DropdownSelector SubLabel 1`] = `
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 4px;
-  width: 100%;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  cursor: pointer;
-  gap: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus,
-.c1[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c1[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c1:not(:disabled):not([aria-disabled]):focus-visible,
-.c1[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1:not(:disabled):not([aria-disabled]):hover,
-.c1[aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c1:not(:disabled):not([aria-disabled]):active,
-.c1[aria-disabled='false']:active {
-  background-color: var(--charcoal-surface3-press);
-}
-
-.c1:not(:disabled):not([aria-disabled]),
-.c1[aria-disabled='false'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2 {
-  text-align: left;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c3 {
-  color: var(--charcoal-text2);
-}
-
 <div
   data-dark={false}
 >
@@ -2116,13 +1334,14 @@ exports[`Storybook Tests react/DropdownSelector SubLabel 1`] = `
     }
   >
     <div
-      className="c0"
+      className="charcoal-dropdown-selector-root"
     >
       <div
         className="charcoal-field-label-root"
       >
         <label
           className="charcoal-field-label"
+          id="test-id"
         >
           Label
         </label>
@@ -2174,17 +1393,20 @@ exports[`Storybook Tests react/DropdownSelector SubLabel 1`] = `
         </select>
       </div>
       <button
-        className="c1"
+        aria-labelledby="test-id"
+        className="charcoal-dropdown-selector-button"
+        data-active={false}
         onClick={[Function]}
         type="button"
       >
         <span
-          className="c2"
+          className="charcoal-ui-dropdown-selector-text"
+          data-placeholder={false}
         >
           Option 1
         </span>
         <pixiv-icon
-          class="c3"
+          class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"
         />
       </button>
