@@ -2781,6 +2781,7 @@ __metadata:
     "@types/yargs": ^17.0.32
     axios: ^1.6.7
     fs-extra: ^11.2.0
+    rimraf: ^3.0.2
     style-dictionary: ^3.9.2
     tsup: ^8.0.2
     typescript: ^5.4.2
