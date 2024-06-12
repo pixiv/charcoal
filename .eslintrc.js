@@ -57,7 +57,15 @@ const config = {
     },
   },
   plugins: ['jest', 'import'],
-  overrides: [{ files: ['*.cjs', '*.mjs'] }],
+  overrides: [
+    { files: ['*.cjs', '*.mjs'] },
+    {
+      files: ['**/docs/**'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
 }
 
 module.exports = config
