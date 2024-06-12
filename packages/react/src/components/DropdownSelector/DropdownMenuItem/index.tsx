@@ -25,7 +25,7 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
       )}
       <span
         className="charcoal-dropdown-selector-menu-item"
-        aria-selected={isSelected}
+        data-selected={isSelected}
       >
         {props.children}
       </span>

@@ -10,7 +10,7 @@
   margin-left: 20px;
 }
 
-.charcoal-dropdown-selector-menu-item[aria-selected='true'] {
+.charcoal-dropdown-selector-menu-item[data-selected='true'] {
   margin-left: 0px;
 }
 
