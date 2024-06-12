@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import Radio, { RadioGroup } from '.'
+import Radio from '.'
+import { RadioGroup } from './RadioGroup'
 import { px } from '@charcoal-ui/utils'
 import { StoryObj } from '@storybook/react'
 import { useState } from 'react'
@@ -27,7 +28,8 @@ export const Default: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          name={'name'}
+          name="default_story"
+          label="default story"
           {...args}
           value={value}
           onChange={setValue}
@@ -50,7 +52,8 @@ export const Disabled: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          name={'name'}
+          label="disabled_stroy"
+          name="disabled story"
           value={value}
           onChange={setValue}
           disabled
@@ -72,7 +75,12 @@ export const PartialDisabled: StoryObj<typeof Radio> = {
 
     return (
       <LayoutDiv>
-        <RadioGroup<Option> name={'name'} value={value} onChange={setValue}>
+        <RadioGroup<Option>
+          name={'partial_disabled_story'}
+          label={'partial disabled story'}
+          value={value}
+          onChange={setValue}
+        >
           {options.map((option) => (
             <Radio key={option} value={option} disabled={option === '2'}>
               Value {option}
@@ -91,7 +99,8 @@ export const Readonly: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          name={'name'}
+          name="readonly_story"
+          label="readonly story"
           value={value}
           onChange={setValue}
           readonly
@@ -114,7 +123,8 @@ export const Invalid: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          name={'name'}
+          name="invalid_story"
+          label="invalid story"
           value={value}
           onChange={setValue}
           invalid
