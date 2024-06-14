@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import '@charcoal-ui/icons'
 import type { PixivIcon, Props } from '@charcoal-ui/icons'
 
 export interface OwnProps {
