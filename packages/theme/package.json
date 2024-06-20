@@ -11,7 +11,9 @@
     "default": "./dist/index.esm.js"
   },
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "build": "npm-run-all --print-label --parallel 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
