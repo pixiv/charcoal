@@ -1,8 +1,7 @@
-// declare module 'react' {
-//   interface CSSProperties {
-//     [key: `--${string}`]: string | undefined
-//   }
-//   interface CSSProperties {
-//     [key: `--${string}`]: string | undefined
-//   }
-// }
+import 'react'
+
+declare module 'react' {
+  interface CSSProperties {
+    [key: `--${string}`]: string | number
+  }
+}
