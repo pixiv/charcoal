@@ -48,9 +48,9 @@ void yargs
     'Create a pull request in the name of pullrequest-cli',
     {
       category: {
-        type: "string",
-        alias: "c",
-        default: "CI",
+        type: 'string',
+        alias: 'c',
+        default: 'CI',
       },
       title: {
         type: 'string',
