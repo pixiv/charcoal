@@ -82,3 +82,27 @@ jobs:
 
       - run: yarn install --immutable --inline-builds
       - run: yarn typecheck:config
+
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: yarn
+
+      - run: yarn install --immutable --inline-builds
+
+      - name: Cache Playwright runners
+        uses: actions/cache@v4
+        with:
+          path: |
+            /home/runner/.cache/ms-playwright/
+          key: ${{ runner.os }}-playwright-runner
+      - name: Install Playwright
+        run: yarn playwright install --with-deps
+
+      - name: a11y test by Run TestRunner
+        run: |
+          yarn test:a11y
