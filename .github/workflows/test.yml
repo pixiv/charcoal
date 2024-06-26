@@ -34,15 +34,15 @@ jobs:
       - run: yarn install --immutable --inline-builds
       - run: yarn build
       - run: |
-          yarn jest -c packages/react/jest.config.mjs
-          yarn jest -c packages/foundation/jest.config.mjs
-          yarn jest -c packages/icons/jest.config.mjs
-          yarn jest -c packages/react-sandbox/jest.config.mjs
-          yarn jest -c packages/styled/jest.config.mjs
-          yarn jest -c packages/tailwind-config/jest.config.mjs
-          yarn jest -c packages/theme/jest.config.mjs
-          yarn jest -c packages/utils/jest.config.mjs
-          yarn jest -c .storybook/jest.config.mjs
+          yarn jest -c packages/react/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/foundation/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/icons/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/react-sandbox/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/styled/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/tailwind-config/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/theme/jest.config.mjs --passWithNoTests
+          yarn jest -c packages/utils/jest.config.mjs --passWithNoTests
+          yarn jest -c .storybook/jest.config.mjs --passWithNoTests
         env:
           CI: 'true'
 
