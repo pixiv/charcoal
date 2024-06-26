@@ -1,5 +1,6 @@
 {
   "name": "@charcoal-ui/pullrequest-cli",
+  "private": "true",
   "license": "Apache-2.0",
   "bin": "./dist/index.js",
   "scripts": {
