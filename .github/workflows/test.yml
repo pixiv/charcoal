@@ -103,6 +103,11 @@ jobs:
       - name: Install Playwright
         run: yarn playwright install --with-deps
 
+      - name: Build Storybook
+        run: |
+          yarn build
+          yarn storybook:build --quiet
+
       - name: a11y test by Run TestRunner
         run: |
           yarn test:a11y
