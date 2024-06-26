@@ -18,8 +18,7 @@ const defaultConfig = () => ({
   // tsconfigのpathsに対応 (依存パッケージをビルドせずにテストが可能)
   moduleNameMapper: {
     '^@charcoal-ui/(.*)$': '<rootDir>/../$1/src',
-    // https://github.com/jestjs/jest/issues/3094#issuecomment-385164816
-    '\\.(css)$': 'identity-obj-proxy',
+    '\\.(styl|css|less|scss)$': '<rootDir>/../../__mocks__/file.ts',
   },
   setupFilesAfterEnv: ['../../jest.setup.ts'],
 })
