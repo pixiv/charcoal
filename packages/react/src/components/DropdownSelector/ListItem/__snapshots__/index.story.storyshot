@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/internals/ListItem Basic 1`] = `
-.c0 {
-  color: red;
-}
-
 <div
   data-dark={false}
 >
@@ -28,8 +24,13 @@ exports[`Storybook Tests react/internals/ListItem Basic 1`] = `
     Normal Link
   </a>
   <a
-    className="c0 charcoal-list-item"
+    className="charcoal-list-item"
     href="#"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
   >
     Custom Link
   </a>

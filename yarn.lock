@@ -2664,7 +2664,6 @@ __metadata:
     "@charcoal-ui/esbuild-plugin-styled-components": ^4.0.0-beta.8
     "@charcoal-ui/foundation": ^4.0.0-beta.8
     "@charcoal-ui/icons": ^4.0.0-beta.8
-    "@charcoal-ui/styled": ^4.0.0-beta.8
     "@charcoal-ui/theme": ^4.0.0-beta.8
     "@charcoal-ui/utils": ^4.0.0-beta.8
     "@react-aria/button": ^3.9.1
@@ -2691,11 +2690,9 @@ __metadata:
     "@types/react-dom": ^17.0.11
     "@types/react-router-dom": ^5.3.3
     "@types/react-test-renderer": ^18.3.0
-    "@types/styled-components": ^5.1.21
     "@types/warning": ^3.0.0
     autoprefixer: ^10.4.19
     jest-axe: ^5.0.1
-    jest-styled-components: ^7.0.8
     npm-run-all: ^4.1.5
     polished: ^4.1.4
     react: ^17.0.2
@@ -2704,7 +2701,6 @@ __metadata:
     react-spring: ^9.0.0
     react-stately: ^3.26.0
     rimraf: ^3.0.2
-    styled-components: ^5.3.3
     tsup: ^6.5.0
     typescript: ^4.9.5
     warning: ^4.0.3
@@ -20226,7 +20222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-styled-components@npm:^7.0.8, jest-styled-components@npm:^7.1.1":
+"jest-styled-components@npm:^7.1.1":
   version: 7.1.1
   resolution: "jest-styled-components@npm:7.1.1"
   dependencies:

@@ -1,34 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
-.c0 {
-  display: grid;
-  gap: 24px;
-}
-
-.c1 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c1::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c1::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
@@ -83,10 +55,21 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
           className="charcoal-modal-body"
         >
           <div
-            className="c0"
+            style={
+              Object {
+                "display": "grid",
+                "gap": 24,
+              }
+            }
           >
             <div
-              className="charcoal-modal-align c1"
+              style={
+                Object {
+                  "color": "var(--charcoal-text2)",
+                  "fontSize": 14,
+                  "lineHeight": 22,
+                }
+              }
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
@@ -292,34 +275,6 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 `;
 
 exports[`Storybook Tests react/Modal BottomSheet 1`] = `
-.c0 {
-  display: grid;
-  gap: 24px;
-}
-
-.c1 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c1::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c1::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
@@ -340,8 +295,6 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
       onPointerDown={[Function]}
       style={
         Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
           "zIndex": 10,
         }
       }
@@ -351,11 +304,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
         data-bottom-sheet={true}
         onKeyDown={[Function]}
         role="dialog"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -372,10 +321,21 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
           className="charcoal-modal-body"
         >
           <div
-            className="c0"
+            style={
+              Object {
+                "display": "grid",
+                "gap": 24,
+              }
+            }
           >
             <div
-              className="charcoal-modal-align c1"
+              style={
+                Object {
+                  "color": "var(--charcoal-text2)",
+                  "fontSize": 14,
+                  "lineHeight": 22,
+                }
+              }
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
@@ -390,6 +350,13 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
               onClick={[Function]}
             >
               削除する
+            </button>
+            <button
+              className="charcoal-button"
+              data-full-width={true}
+              onClick={[Function]}
+            >
+              キャンセル
             </button>
           </div>
         </div>
@@ -413,34 +380,6 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests react/Modal Default 1`] = `
-.c0 {
-  display: grid;
-  gap: 24px;
-}
-
-.c1 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c1::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c1::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
@@ -487,10 +426,21 @@ exports[`Storybook Tests react/Modal Default 1`] = `
           className="charcoal-modal-body"
         >
           <div
-            className="c0"
+            style={
+              Object {
+                "display": "grid",
+                "gap": 24,
+              }
+            }
           >
             <div
-              className="charcoal-modal-align c1"
+              style={
+                Object {
+                  "color": "var(--charcoal-text2)",
+                  "fontSize": 14,
+                  "lineHeight": 22,
+                }
+              }
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
@@ -696,34 +646,6 @@ exports[`Storybook Tests react/Modal Default 1`] = `
 `;
 
 exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
-.c0 {
-  display: grid;
-  gap: 24px;
-}
-
-.c1 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c1::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c1::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
 <div
   data-dark={false}
 >
@@ -744,8 +666,6 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
       onPointerDown={[Function]}
       style={
         Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
           "zIndex": 10,
         }
       }
@@ -755,11 +675,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
         data-bottom-sheet="full"
         onKeyDown={[Function]}
         role="dialog"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -776,10 +692,21 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
           className="charcoal-modal-body"
         >
           <div
-            className="c0"
+            style={
+              Object {
+                "display": "grid",
+                "gap": 24,
+              }
+            }
           >
             <div
-              className="charcoal-modal-align c1"
+              style={
+                Object {
+                  "color": "var(--charcoal-text2)",
+                  "fontSize": 14,
+                  "lineHeight": 22,
+                }
+              }
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>
@@ -903,27 +830,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal InternalScroll 1`] = `
-.c0 {
-  overflow: auto;
-  max-height: calc( 100vh - 184px - 56px );
-}
-
-.c1 {
-  position: relative;
-}
-
-.c1::before {
-  content: '';
-  pointer-events: none;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
+exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
 <div
   data-dark={false}
 >
@@ -970,114 +877,21 @@ exports[`Storybook Tests react/Modal InternalScroll 1`] = `
           className="charcoal-modal-body"
         >
           <div
-            className="c0"
+            style={
+              Object {
+                "display": "grid",
+                "gap": 24,
+              }
+            }
           >
             <div
               style={
                 Object {
-                  "background": "linear-gradient(#e66465, #9198e5)",
-                  "height": 1000,
+                  "color": "var(--charcoal-text2)",
+                  "fontSize": 14,
+                  "lineHeight": 22,
                 }
               }
-            />
-          </div>
-          <div
-            className="charcoal-modal-buttons c1"
-          >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              onClick={[Function]}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
-.c0 {
-  display: grid;
-  gap: 24px;
-}
-
-.c1 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-}
-
-.c1::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c1::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-<div
-  data-dark={false}
->
-  <div
-    aria-hidden={null}
-    data-overlay-container={true}
-  >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
-    <div
-      className="charcoal-modal-background"
-      data-bottom-sheet={false}
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "zIndex": 10,
-        }
-      }
-    >
-      <div
-        className="charcoal-modal-dialog"
-        data-bottom-sheet={false}
-        onKeyDown={[Function]}
-        role="dialog"
-        style={Object {}}
-        tabIndex={-1}
-      >
-        <div
-          className="charcoal-modal-header-root"
-          data-bottom-sheet={false}
-        >
-          <div
-            className="charcoal-modal-header-title"
-          >
-            react/Title
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            className="c0"
-          >
-            <div
-              className="charcoal-modal-align c1"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
             </div>

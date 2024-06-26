@@ -2,10 +2,8 @@ import path from 'path'
 import * as glob from 'glob'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { render } from '@testing-library/react'
-import { ThemeProvider } from 'styled-components'
-import { Story } from '../_lib/compat'
 import ComponentAbstraction, { DefaultLink } from '../core/ComponentAbstraction'
-import { light, dark } from '@charcoal-ui/theme'
+import { StoryFn } from '@storybook/react'
 
 expect.extend(toHaveNoViolations)
 
@@ -13,7 +11,7 @@ expect.extend(toHaveNoViolations)
 interface StoryWithMetadata<ArgsType = any> {
   filename: string
   name: string
-  story: Story<ArgsType>
+  story: StoryFn<ArgsType>
   args: ArgsType
 }
 
@@ -36,16 +34,11 @@ const stories: StoryWithMetadata[] = glob
         filename: path.relative(__dirname, filePath),
         name: exportName,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        story: exportValue as Story<any>,
+        story: exportValue as StoryFn<any>,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
         args: { ...exports.default.args, ...exportValue.args },
       }))
   })
-
-const themes = Object.entries({
-  light,
-  dark,
-})
 
 const links = Object.entries({
   DefaultLink,
@@ -75,25 +68,21 @@ beforeEach(() => {
   }))
 })
 
-describe.each(themes)('using %s theme', (_name, theme) => {
-  describe.each(links)('using %s component', (_name, link) => {
-    describe.each(stories)(
-      'storiesOf($filename).add($name)',
-      ({ story: Story, args }) => {
-        it('has no accessibility violations', async () => {
-          expect(() => {
-            render(
-              <ThemeProvider theme={theme}>
-                <ComponentAbstraction components={{ Link: link }}>
-                  <Story {...args} />
-                </ComponentAbstraction>
-              </ThemeProvider>
-            )
-          }).not.toThrow()
+describe.each(links)('using %s component', (_name, link) => {
+  describe.each(stories)(
+    'storiesOf($filename).add($name)',
+    ({ story: Story, args }) => {
+      it('has no accessibility violations', async () => {
+        expect(() => {
+          render(
+            <ComponentAbstraction components={{ Link: link }}>
+              <Story {...args} />
+            </ComponentAbstraction>
+          )
+        }).not.toThrow()
 
-          expect(await axe(div)).toHaveNoViolations()
-        })
-      }
-    )
-  })
+        expect(await axe(div)).toHaveNoViolations()
+      })
+    }
+  )
 })

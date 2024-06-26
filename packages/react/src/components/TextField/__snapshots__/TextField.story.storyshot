@@ -475,18 +475,6 @@ exports[`Storybook Tests react/TextField Placeholder 1`] = `
 `;
 
 exports[`Storybook Tests react/TextField Prefix 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #858585;
-}
-
 <div
   data-dark={false}
 >
@@ -532,7 +520,13 @@ exports[`Storybook Tests react/TextField Prefix 1`] = `
         className="charcoal-text-field-prefix"
       >
         <div
-          className="c0"
+          style={
+            Object {
+              "alignItems": "center",
+              "color": "var(--charcoal-text3)",
+              "display": "flex",
+            }
+          }
         >
           <pixiv-icon
             name="16/Search"
