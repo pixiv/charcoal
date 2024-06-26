@@ -11,7 +11,7 @@ exports[`Storybook Tests react/TextField Affix 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -77,7 +77,7 @@ exports[`Storybook Tests react/TextField AssistiveText 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -141,7 +141,7 @@ exports[`Storybook Tests react/TextField Default 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -206,7 +206,7 @@ exports[`Storybook Tests react/TextField Disabled 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -263,7 +263,7 @@ exports[`Storybook Tests react/TextField Invalid 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -370,7 +370,7 @@ exports[`Storybook Tests react/TextField Number 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -428,7 +428,7 @@ exports[`Storybook Tests react/TextField Placeholder 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -485,7 +485,7 @@ exports[`Storybook Tests react/TextField Prefix 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -521,7 +521,7 @@ exports[`Storybook Tests react/TextField Prefix 1`] = `
       >
         <div
           style={
-            Object {
+            {
               "alignItems": "center",
               "color": "var(--charcoal-text3)",
               "display": "flex",
@@ -558,7 +558,7 @@ exports[`Storybook Tests react/TextField ReadOnly 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -663,7 +663,7 @@ exports[`Storybook Tests react/TextField ShowCount 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -729,7 +729,7 @@ exports[`Storybook Tests react/TextField SubLabel 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",

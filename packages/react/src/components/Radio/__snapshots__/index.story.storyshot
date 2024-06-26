@@ -6,7 +6,7 @@ exports[`Storybook Tests react/Radio Default 1`] = `
 >
   <div
     style={
-      Object {
+      {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -93,7 +93,7 @@ exports[`Storybook Tests react/Radio Disabled 1`] = `
 >
   <div
     style={
-      Object {
+      {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -181,7 +181,7 @@ exports[`Storybook Tests react/Radio Invalid 1`] = `
 >
   <div
     style={
-      Object {
+      {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -269,7 +269,7 @@ exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
 >
   <div
     style={
-      Object {
+      {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -356,7 +356,7 @@ exports[`Storybook Tests react/Radio Readonly 1`] = `
 >
   <div
     style={
-      Object {
+      {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,

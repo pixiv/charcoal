@@ -11,7 +11,7 @@ exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -42,7 +42,7 @@ exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -80,7 +80,7 @@ exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -111,7 +111,7 @@ exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -141,7 +141,7 @@ exports[`Storybook Tests react/TextArea Default 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -179,7 +179,7 @@ exports[`Storybook Tests react/TextArea Default 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -212,7 +212,7 @@ exports[`Storybook Tests react/TextArea Disabled 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -244,7 +244,7 @@ exports[`Storybook Tests react/TextArea Disabled 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -274,7 +274,7 @@ exports[`Storybook Tests react/TextArea Invalid 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -305,7 +305,7 @@ exports[`Storybook Tests react/TextArea Invalid 1`] = `
       aria-invalid={true}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -361,7 +361,7 @@ exports[`Storybook Tests react/TextArea Label 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -391,7 +391,7 @@ exports[`Storybook Tests react/TextArea Placeholder 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -422,7 +422,7 @@ exports[`Storybook Tests react/TextArea Placeholder 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -453,7 +453,7 @@ exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -484,7 +484,7 @@ exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -516,7 +516,7 @@ exports[`Storybook Tests react/TextArea Required 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -552,7 +552,7 @@ exports[`Storybook Tests react/TextArea Required 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }
@@ -582,7 +582,7 @@ exports[`Storybook Tests react/TextArea ShowCount 1`] = `
     <div
       className="charcoal-field-label-root"
       style={
-        Object {
+        {
           "border": 0,
           "clip": "rect(0 0 0 0)",
           "clipPath": "inset(50%)",
@@ -613,7 +613,7 @@ exports[`Storybook Tests react/TextArea ShowCount 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "5",
         }
       }
@@ -672,7 +672,7 @@ exports[`Storybook Tests react/TextArea SubLabel 1`] = `
       aria-invalid={false}
       className="charcoal-text-area-container"
       style={
-        Object {
+        {
           "--charcoal-text-area-rows": "4",
         }
       }

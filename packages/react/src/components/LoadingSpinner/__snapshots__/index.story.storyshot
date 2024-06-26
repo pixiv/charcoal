@@ -9,7 +9,7 @@ exports[`Storybook Tests react/LoadingSpinner Default 1`] = `
     data-transparent={false}
     role="progressbar"
     style={
-      Object {
+      {
         "--charcoal-loading-spinner-padding": "16px",
         "--charcoal-loading-spinner-size": "48px",
       }
@@ -33,7 +33,7 @@ exports[`Storybook Tests react/LoadingSpinner Padding 1`] = `
     data-transparent={false}
     role="progressbar"
     style={
-      Object {
+      {
         "--charcoal-loading-spinner-padding": "24px",
         "--charcoal-loading-spinner-size": "48px",
       }
@@ -57,7 +57,7 @@ exports[`Storybook Tests react/LoadingSpinner Size 1`] = `
     data-transparent={false}
     role="progressbar"
     style={
-      Object {
+      {
         "--charcoal-loading-spinner-padding": "16px",
         "--charcoal-loading-spinner-size": "128px",
       }
@@ -81,7 +81,7 @@ exports[`Storybook Tests react/LoadingSpinner Transparent 1`] = `
     data-transparent={true}
     role="progressbar"
     style={
-      Object {
+      {
         "--charcoal-loading-spinner-padding": "16px",
         "--charcoal-loading-spinner-size": "48px",
       }
