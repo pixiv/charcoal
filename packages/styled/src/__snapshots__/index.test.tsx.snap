@@ -1,29 +1,137 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Story <Example /> 1`] = `
+.c0 {
+  gap: 40px;
+  color: #1f1f1f;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  white-space: nowrap;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
+}
+
+.c4 {
+  margin: 0;
+}
+
+.c5 {
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
+}
+
+.c2 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  font-weight: bold;
+}
+
+.c2::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c2::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c3 {
+  color: #1f1f1f;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin: 16px auto;
+  padding: 4px 8px 16px 24px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.c6 {
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+  margin: 8px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+}
+
+.c7 {
+  padding: 0px 16px;
+  margin: 16px;
+  -webkit-transition: 0.2s box-shadow;
+  transition: 0.2s box-shadow;
+  cursor: pointer;
+  height: 40px;
+  background-color: #0096fa;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c7:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c7:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c7:disabled,
+.c7 [aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.c7:not(:disabled):active {
+  background-color: var(--charcoal-brand-press);
+}
+
 <div
-  className=""
+  className="c0"
 >
   <div
-    className=""
+    className="c1"
   >
     <div
-      className=""
+      className="c2"
     >
       \${({ theme }) =&gt; theme.utils.typography(14, true)}
     </div>
   </div>
   <div
-    className=""
+    className="c1"
   >
     <div
-      className=""
+      className="c3"
     >
       <pre
-        className=""
+        className="c4"
       >
         <code
-          className=""
+          className="c5"
         >
           \${({ theme }) =&gt; [
     theme.utils.margin(16, 'auto'),
@@ -34,24 +142,24 @@ exports[`Story <Example /> 1`] = `
     </div>
   </div>
   <div
-    className=""
+    className="c1"
   >
     <div
-      className=""
+      className="c6"
     >
       theme.utils.assertiveRingCss
     </div>
   </div>
   <div
-    className=""
+    className="c1"
   >
     <button
-      className=""
+      className="c7"
     >
       theme.utils.focusVisibleFocusRingCss
     </button>
     <button
-      className=""
+      className="c7"
       disabled={true}
     >
       theme.utils.disabledCss
@@ -61,17 +169,113 @@ exports[`Story <Example /> 1`] = `
 `;
 
 exports[`ThemeUtilsTest <ThemeUtilsTest /> 1`] = `
+.c0 {
+  margin: 0px;
+  margin: 0px auto;
+  margin: auto 4px 8px;
+  margin: 0px 4px 8px auto;
+  margin-top: 0px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  padding: 0px;
+  padding: 0px 4px;
+  padding: 0px 4px 8px;
+  padding: 0px 4px 8px 16px;
+  padding-top: 0px;
+  padding-right: 4px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  gap: 0px;
+  gap: 0px 4px;
+  row-gap: 0px;
+  -webkit-column-gap: 4px;
+  column-gap: 4px;
+  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c0:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c0:disabled,
+.c0 [aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 20px;
+  display: flow-root;
+}
+
+.c1::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c1::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c2 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  font-weight: bold;
+}
+
+.c2::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c2::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 24px;
+  display: flow-root;
+  font-weight: bold;
+}
+
 <div
-  className=""
+  className="c0"
 >
   <div
-    className=""
+    className="c1"
   />
   <div
-    className=""
+    className="c2"
   />
   <div
-    className=""
+    className="c3"
   />
 </div>
 `;
