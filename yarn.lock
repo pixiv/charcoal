@@ -2601,7 +2601,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/pullrequest-cli@workspace:packages/pullrequest-cli":
+"@charcoal-ui/pullrequest-cli@workspace:^, @charcoal-ui/pullrequest-cli@workspace:packages/pullrequest-cli":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/pullrequest-cli@workspace:packages/pullrequest-cli"
   dependencies:
@@ -11644,6 +11644,7 @@ __metadata:
     "@babel/preset-react": ^7.23.3
     "@babel/preset-typescript": ^7.23.3
     "@charcoal-ui/icons-cli": "workspace:^"
+    "@charcoal-ui/pullrequest-cli": "workspace:^"
     "@commitlint/cli": ^16.1.0
     "@commitlint/config-conventional": ^16.0.0
     "@commitlint/config-lerna-scopes": ^16.0.0

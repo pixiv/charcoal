@@ -61,13 +61,13 @@ jobs:
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
 
       - name: Create Pull Request
-        working-directory: packages/pullrequest-cli
+        working-directory: ./
         env:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: main
-          TARGET_DIR: ./../theme
+          TARGET_DIR: packages/theme
         run: yarn pullrequest-cli github:pr
 
       - name: Upload artifacts
