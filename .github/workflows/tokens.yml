@@ -68,7 +68,7 @@ jobs:
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: main
           TARGET_DIR: packages/theme
-        run: yarn pullrequest-cli github:pr
+        run: yarn pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

@@ -25,9 +25,18 @@ export class GithubClient {
     repoName: string,
     token: string,
     defaultBranch: string,
-    outputDir: string
+    outputDir: string,
+    category: string,
+    pullrequestTitle: string
   ) {
-    const client = new this(repoOwner, repoName, token, defaultBranch)
+    const client = new this(
+      repoOwner,
+      repoName,
+      token,
+      defaultBranch,
+      category,
+      pullrequestTitle
+    )
     const outputDirFullPath = path.resolve(process.cwd(), outputDir)
     const diff = await client.createTreeFromDiff(outputDirFullPath)
     // eslint-disable-next-line no-console
@@ -49,6 +58,8 @@ export class GithubClient {
     private readonly repoName: string,
     token: string,
     private readonly defaultBranch: string,
+    private readonly category: string,
+    private readonly message: string,
     now = new Date()
   ) {
     this.api = new Octokit({
@@ -59,14 +70,11 @@ export class GithubClient {
   }
 
   get branch() {
-    return `icons/update/${this.now.getTime()}`
+    return `${this.category}/update/${this.now.getTime()}`
   }
 
-  /**
-   * both used for commit message or pull request title
-   */
-  get message() {
-    return `[icons-cli] Update icons ${this.now.toDateString()}`
+  get title() {
+    return `[${this.category}]${this.message} ${this.now.toDateString()}`
   }
 
   async createTreeFromDiff(outputDir: string): Promise<TreeItem[]> {
@@ -139,7 +147,7 @@ export class GithubClient {
       repo: this.repoName,
       head: targetBranch.data.ref,
       base: defaultBranch.data.ref,
-      title: this.message,
+      title: this.title,
       body: '',
     })
   }

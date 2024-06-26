@@ -46,8 +46,19 @@ void yargs
   .command(
     'github:pr',
     'Create a pull request in the name of pullrequest-cli',
-    {},
-    async () => {
+    {
+      category: {
+        type: "string",
+        alias: "c",
+        default: "CI",
+      },
+      title: {
+        type: 'string',
+        alias: 't',
+        default: 'Pull request from CI',
+      },
+    },
+    async ({ title, category }) => {
       mustBeDefined(GITHUB_ACCESS_TOKEN, 'GITHUB_ACCESS_TOKEN')
       mustBeDefined(TARGET_DIR, 'TARGET_DIR')
 
@@ -56,7 +67,9 @@ void yargs
         GITHUB_REPO_NAME ?? 'charcoal',
         GITHUB_ACCESS_TOKEN,
         GITHUB_DEFAULT_BRANCH ?? 'main',
-        TARGET_DIR
+        TARGET_DIR,
+        category,
+        title
       )
     }
   )
