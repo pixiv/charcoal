@@ -21,6 +21,7 @@ jobs:
         run: |
           yarn install --immutable --inline-builds
           yarn workspaces foreach -vptR --from @charcoal-ui/token-cli run build
+          yarn workspaces foreach -vptR --from @charcoal-ui/pullrequest-cli run build
 
       - name: Fetch primitive variables
         env:
