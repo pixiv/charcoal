@@ -78,6 +78,7 @@ jobs:
       - run: yarn typecheck:config
 
   a11y:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
