@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import {
   Button,
   Modal,
@@ -18,33 +18,38 @@ import { getSrcFile } from '../_utils/getSrcFile'
 import { ContentRoot } from '../../../../components/ContentRoot'
 import { ApiTable } from '../_components/ApiTable'
 import { PreviewsList } from '../_components/PreviewsList'
+import { useIsSSR } from './useIsSSR'
 
 function Preview(meta: PreviewMeta<ModalProps>, i: number, j: number) {
   const [isOpen, setIsOpen] = useState(false)
+  const isSSR = useIsSSR()
+
   return (
     <div key={i}>
       <Button onClick={() => setIsOpen(true)}>
         {meta.additionalData?.openText ?? 'open'}
       </Button>
-      <Modal
-        {...meta.props}
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        portalContainer={
-          typeof document !== 'undefined' ? document.body : undefined
-        }
-      >
-        {meta.children && typeof meta.children === 'function' ? (
-          meta.children()
-        ) : (
-          <ModalBody>
-            <ModalHeader />
-            <ModalAlign style={{ textAlign: 'center' }}>
-              <Button onClick={() => setIsOpen(false)}>close</Button>
-            </ModalAlign>
-          </ModalBody>
-        )}
-      </Modal>
+      {!isSSR && (
+        <Modal
+          {...meta.props}
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          portalContainer={
+            typeof document !== 'undefined' ? document.body : undefined
+          }
+        >
+          {meta.children && typeof meta.children === 'function' ? (
+            meta.children()
+          ) : (
+            <ModalBody>
+              <ModalHeader />
+              <ModalAlign style={{ textAlign: 'center' }}>
+                <Button onClick={() => setIsOpen(false)}>close</Button>
+              </ModalAlign>
+            </ModalBody>
+          )}
+        </Modal>
+      )}
     </div>
   )
 }
