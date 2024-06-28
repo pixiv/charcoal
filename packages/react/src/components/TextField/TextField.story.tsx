@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import Clickable from '../Clickable'
 import TextField from '.'
 import { useState } from 'react'
@@ -92,21 +91,21 @@ export const Affix: StoryObj<typeof TextField> = {
   },
 }
 
-const PrefixIconWrap = styled.div`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.color.text3};
-`
-
 export const Prefix: StoryObj<typeof TextField> = {
   render() {
     return (
       <TextField
         label="Label"
         prefix={
-          <PrefixIconWrap>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              color: 'var(--charcoal-text3)',
+            }}
+          >
             <pixiv-icon name="16/Search" />
-          </PrefixIconWrap>
+          </div>
         }
       />
     )

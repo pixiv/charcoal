@@ -13,7 +13,7 @@ export const Dialog = forwardRef<
     size: Size
     bottomSheet: BottomSheet
   }
->(function Dialog({ size, bottomSheet, css, className, ...props }, forwardRef) {
+>(function Dialog({ size, bottomSheet, className, ...props }, forwardRef) {
   const ref = useForwardedRef(forwardRef)
   const { dialogProps } = useDialog(
     {

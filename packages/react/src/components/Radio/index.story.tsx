@@ -1,7 +1,5 @@
-import styled from 'styled-components'
 import Radio from '.'
 import { RadioGroup } from './RadioGroup'
-import { px } from '@charcoal-ui/utils'
 import { StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
@@ -13,13 +11,22 @@ export default {
   },
 }
 
-const LayoutDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => px(theme.spacing[24])};
-`
 const options = ['1', '2', '3'] as const
 type Option = (typeof options)[number]
+
+const LayoutDiv = (props: { children: React.ReactNode }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24,
+      }}
+    >
+      {props.children}
+    </div>
+  )
+}
 
 export const Default: StoryObj<typeof Radio> = {
   render: function Render(args) {

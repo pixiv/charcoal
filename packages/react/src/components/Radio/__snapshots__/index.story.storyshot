@@ -1,22 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests react/Radio Default 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 24px;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    style={
+      {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": 24,
+      }
+    }
   >
     <div
       aria-label="default story"
@@ -93,22 +88,17 @@ exports[`Storybook Tests react/Radio Default 1`] = `
 `;
 
 exports[`Storybook Tests react/Radio Disabled 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 24px;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    style={
+      {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": 24,
+      }
+    }
   >
     <div
       aria-disabled={true}
@@ -186,22 +176,17 @@ exports[`Storybook Tests react/Radio Disabled 1`] = `
 `;
 
 exports[`Storybook Tests react/Radio Invalid 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 24px;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    style={
+      {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": 24,
+      }
+    }
   >
     <div
       aria-invalid={true}
@@ -279,22 +264,17 @@ exports[`Storybook Tests react/Radio Invalid 1`] = `
 `;
 
 exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 24px;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    style={
+      {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": 24,
+      }
+    }
   >
     <div
       aria-label="partial disabled story"
@@ -371,22 +351,17 @@ exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
 `;
 
 exports[`Storybook Tests react/Radio Readonly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 24px;
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    style={
+      {
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": 24,
+      }
+    }
   >
     <div
       aria-label="readonly story"
