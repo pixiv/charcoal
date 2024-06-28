@@ -56,11 +56,8 @@ jobs:
       - name: Serve Storybook and run tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook --updateSnapshot"
+          yarn test:image-snapshot --updateSnapshot
           ls
-          cd __image_snapshots__ && ls
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
         with:
