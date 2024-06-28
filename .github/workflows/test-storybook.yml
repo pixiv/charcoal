@@ -55,9 +55,7 @@ jobs:
           yarn storybook:build --quiet
       - name: Serve Storybook and run tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: |
-          yarn test:image-snapshot --updateSnapshot
-          ls
+        run: yarn test:image-snapshot --updateSnapshot
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
         with:
