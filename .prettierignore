@@ -12,3 +12,8 @@ lerna.json
 LICENSE
 /packages/theme/theme.json
 /packages/icon-files/src/
+/packages/token-cli/build/
+/packages/token-cli/tokens/
+/packages/token-cli/out/
+/packages/theme/src/json/
+/packages/theme/src/css/
