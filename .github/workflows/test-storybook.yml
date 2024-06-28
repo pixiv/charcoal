@@ -60,6 +60,7 @@ jobs:
             "npx http-server storybook-static --port 6006 --silent" \
             "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook --updateSnapshot"
           ls
+          cd __image_snapshots__ && ls
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
         with:
