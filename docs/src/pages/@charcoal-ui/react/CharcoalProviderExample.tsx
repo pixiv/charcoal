@@ -6,16 +6,5 @@ import { FC, ReactNode } from 'react'
 export const CharcoalProviderExample: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  return (
-    <CharcoalProvider
-      themeMap={{
-        ':root': light,
-        [themeSelector('light')]: light,
-        [themeSelector('dark')]: dark,
-        [prefersColorScheme('dark')]: dark,
-      }}
-    >
-      {children}
-    </CharcoalProvider>
-  )
+  return <CharcoalProvider>{children}</CharcoalProvider>
 }

@@ -1,17 +1,17 @@
 import { useContext, forwardRef, memo } from 'react'
 import * as React from 'react'
 import { AriaModalOverlayProps, Overlay } from '@react-aria/overlays'
-import { useTheme } from 'styled-components'
 import type { AriaDialogProps } from '@react-types/dialog'
-import { maxWidth } from '@charcoal-ui/utils'
-import { useMedia } from '@charcoal-ui/styled'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton, { IconButtonProps } from '../IconButton'
 import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
-import { useCharcoalModalOverlay } from './useCustomModalOverlay'
+import {
+  useCharcoalModalOverlay,
+  useWindowWidth,
+} from './useCustomModalOverlay'
 
 import './index.css'
 
@@ -95,8 +95,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     ref
   )
 
-  const theme = useTheme()
-  const isMobile = useMedia(maxWidth(theme.breakpoint.screen1)) ?? false
+  const isMobile = useWindowWidth() < 744
   const transitionEnabled = isMobile && bottomSheet !== false
   const showDismiss = !isMobile || bottomSheet !== true
 
