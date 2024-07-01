@@ -21,16 +21,12 @@ export type TagItemProps<T extends React.ElementType = 'button'> = {
    * The component used for root element.
    * @type T extends React.ElementType = 'button'
    */
-  as?: T
-  /**
-   * The as property of the component specified by the Button component's as attribute.
-   */
-  componentAs?: React.ComponentPropsWithRef<T>['as']
-} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
+  component?: T
+} & Omit<React.ComponentPropsWithRef<T>, 'children'>
 
 const TagItem = forwardRef(function TagItemInner<T extends React.ElementType>(
   {
-    as,
+    component,
     label,
     translatedLabel,
     bgColor = '#7ACCB1',
@@ -55,7 +51,7 @@ const TagItem = forwardRef(function TagItemInner<T extends React.ElementType>(
     bgImage !== undefined && bgImage.length > 0 ? 'image' : 'color'
   const bg = bgVariant === 'color' ? bgColor : `url(${bgImage ?? ''})`
 
-  const Component = useMemo(() => as ?? 'button', [as])
+  const Component = useMemo(() => component ?? 'button', [component])
 
   return (
     <Component
