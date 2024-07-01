@@ -1,0 +1,75 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import { Unstyled } from '@storybook/blocks'
+
+<Meta title="react/docs/v4.0.0" />
+
+# v4.0.0
+
+- `styled-components`への依存を無くし、css ファイルベースのスタイリングに変更しました。
+
+## Button
+
+- `ComponentAbstraction`と`to`を用いたカスタム要素の設定を、`component`に`React.ElementType`を指定することによって行えるように変更しました。
+
+Before
+
+```tsx
+<ComponentAbstraction components={{ Link: RouterLink }}>
+  <Button to="...">Link</Button>
+</ComponentAbstraction>
+```
+
+After
+
+```tsx
+<Button as="a" href="...">Link</Button>
+<Button as={RouterLink} to="...">Link</Button>
+<Button as={NextLink} href="...">Link</Button>
+```
+
+## Checkbox
+
+- `Checkbox`の`input`要素を`children`がない場合に label で囲わないようにしました。
+- `React.HTMLProps<HTMLInputElement>`を継承するように変更しました。
+- アイコンを CSS で表示するように変更しました。
+
+## Clickable
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## DropdownSelector
+
+- `aria-labelledby`,`aria-describedby`を適用するように変更しました。
+
+## IconButton
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## MultiSelect
+
+- コンポーネントを廃止し、`Checkbox`の`rounded`プロパティに統合されました。
+
+## RadioGroup
+
+- `aria-labelledby`, `aria-orientation`をプロパティに追加しました。
+- `label`をオプショナルに変更しました。
+
+## Switch
+
+- `Checkbox`の`input`要素を常に`label`で囲わないようにしました。
+- `React.HTMLProps<HTMLInputElement>`を継承するように変更しました。
+
+## TagItem
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## TextArea
+
+- `textarea`要素の`props`を継承するように変更しました。
+
+- 文字数の計算ロジックを`getCount`で上書きできるように変更しました。
+
+## TextField
+
+- `input`要素の`props`を継承するように変更しました。
+- 文字数の計算ロジックを`getCount`で上書きできるように変更しました。
