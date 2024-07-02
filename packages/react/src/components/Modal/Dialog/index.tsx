@@ -31,6 +31,7 @@ export const Dialog = forwardRef<
       tabIndex={dialogProps.tabIndex}
       aria-labelledby={dialogProps['aria-labelledby']}
       onBlur={dialogProps.onBlur}
+      data-size={size}
       ref={ref}
       {...props}
     />

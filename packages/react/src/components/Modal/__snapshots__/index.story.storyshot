@@ -36,6 +36,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={false}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
         style={{}}
@@ -67,7 +68,8 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                 {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16",
                 }
               }
             >
@@ -302,6 +304,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={true}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
         style={{}}
@@ -333,7 +336,8 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
                 {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16",
                 }
               }
             >
@@ -407,6 +411,7 @@ exports[`Storybook Tests react/Modal Default 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={false}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
         style={{}}
@@ -438,7 +443,8 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                 {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16",
                 }
               }
             >
@@ -673,6 +679,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet="full"
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
         style={{}}
@@ -704,7 +711,8 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
                 {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16",
                 }
               }
             >
@@ -858,6 +866,7 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={false}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
         style={{}}
@@ -889,7 +898,8 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
                 {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16",
                 }
               }
             >
