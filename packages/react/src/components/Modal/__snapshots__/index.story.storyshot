@@ -69,7 +69,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
-                  "padding": "0 16",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -337,7 +337,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
-                  "padding": "0 16",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -444,7 +444,7 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
-                  "padding": "0 16",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -712,7 +712,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
-                  "padding": "0 16",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -899,7 +899,7 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
-                  "padding": "0 16",
+                  "padding": "0 16px",
                 }
               }
             >
