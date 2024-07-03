@@ -1,6 +1,6 @@
 /** @type { import('style-dictionary') } */
 module.exports = {
-  source: ['tokens/base.json', 'tokens/pixiv-light.json'],
+  source: ['tokens/base.json', 'tokens/pixiv-dark.json'],
   transform: {
     'name/cti/kebab': {
       type: 'name',
