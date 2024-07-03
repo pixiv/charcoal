@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
-import { useComponentAbstraction, LinkProps } from '@charcoal-ui/react'
 import { maxWidth } from '@charcoal-ui/utils'
+import { LinkProps, useComponentAbstraction } from '../../_lib/ComponentAbstraction'
 
 interface Props<T extends HTMLElement> {
   active?: boolean
