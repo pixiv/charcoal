@@ -213,8 +213,11 @@ export class PixivIcon extends HTMLElement {
   private waitUntilVisible() {
     return new Promise<void>((resolve) => {
       this.observer = new IntersectionObserver(
-        ([first]) => {
-          if (first.isIntersecting) {
+        (entries) => {
+          // In Chromium based browsers, multiple entries can be returned even only observe once.
+          // Here, we don't care about the entry time but only if isIntersecting happened.
+          const isIntersecting = entries.some((entry) => entry.isIntersecting)
+          if (isIntersecting) {
             this.observer?.disconnect()
             this.observer = undefined
             resolve()

@@ -1,0 +1,84 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="tailwind-diff/README" />
+
+# @charcoal-ui/tailwind-diff クイックスタート
+
+[![npmバッジ](https://img.shields.io/npm/v/@charcoal-ui/tailwind-diff?label=%40charcoal-ui%2Ftailwind-diff&style=flat-square&logo=npm)](https://www.npmjs.com/package/@charcoal-ui/tailwind-diff)
+
+## インストール
+
+### npm
+
+```bash
+npm install --save-dev @charcoal-ui/tailwind-diff
+npx tailwind-diff --help
+```
+
+### yarn
+
+```bash
+yarn add -D @charcoal-ui/tailwind-diff
+yarn tailwind-diff --help
+```
+
+### pnpm
+
+```bash
+pnpm add -D @charcoal-ui/tailwind-diff
+pnpm tailwind-diff --help
+```
+
+### bun
+
+```bash
+bun add -d @charcoal-ui/tailwind-diff
+bunx tailwind-diff --help
+```
+
+あるいは、ローカルにインストールせずに実行するのも良いでしょう。
+
+```bash
+npx @charcoal-ui/tailwind-diff --help
+```
+
+## 概要
+
+`@charcoal-ui/tailwind-diff` は、Tailwind CSS をアップデートした際、または設定をアップデートした際に吐き出されるクラスの差分を表示する CLI ツールです。  
+`@charcoal-ui/tailwind-config` をアップデートした際のみならず、`tailwind-diff` はそのままに、Tailwind CSS をアップデートした際に起こる変化を検出し、アップデートを補助します。
+
+## 使い方
+
+以下のコマンドが実行できます。[check](/docs/tailwind-diff-check--docs) と [dump](/docs/tailwind-diff-dump--docs) については各ページを参照してください。
+
+### check
+
+アップデートの結果生じるクラスの差分を出力する
+
+### dump
+
+現在の設定から生成される CSS を出力する
+
+また、サブコマンド以下でも以下のオプションを利用できます
+
+### --version
+
+バージョン番号を出力する
+
+### --help
+
+使い方のヘルプを出力する
+
+```bash
+$ npx @charcoal-ui/tailwind-diff --help
+
+tailwind-diff <command>
+
+Commands:
+  tailwind-diff check  checks diffs due to package updates
+  tailwind-diff dump   dump Tailwind CSS with config
+
+Options:
+  --version   Show version number                                      [boolean]
+  --help      Show help                                                [boolean]
+```
