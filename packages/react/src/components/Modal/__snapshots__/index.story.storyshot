@@ -347,23 +347,6 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
           <div
             className="charcoal-modal-buttons"
           >
-            <label
-              className="charcoal-checkbox__label"
-              htmlFor="test-id"
-            >
-              <input
-                checked={true}
-                className="charcoal-checkbox-input"
-                id="test-id"
-                onChange={[Function]}
-                type="checkbox"
-              />
-              <div
-                className="charcoal-checkbox__label_div"
-              >
-                test checkbox
-              </div>
-            </label>
             <button
               className="charcoal-button"
               data-full-width={true}
