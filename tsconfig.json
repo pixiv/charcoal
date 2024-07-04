@@ -25,8 +25,7 @@
     "**/.*.cjs",
     "**/.*.js",
     "__mocks__/*.ts",
-    ".storybook",
     "vite.config.ts"
   ],
-  "exclude": ["docs"]
+  "exclude": ["docs", ".storybook"]
 }

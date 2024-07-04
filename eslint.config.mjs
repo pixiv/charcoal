@@ -1,22 +1,109 @@
-import { fixupConfigRules, fixupPluginRules } from '@eslint/compat'
-import jest from 'eslint-plugin-jest'
-import _import from 'eslint-plugin-import'
+// @ts-nocheck
+import eslint from '@eslint/js'
+import _import from 'eslint-plugin-import-x'
 import globals from 'globals'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import js from '@eslint/js'
-import { FlatCompat } from '@eslint/eslintrc'
+import tseslint from 'typescript-eslint'
+import eslintPluginReact from 'eslint-plugin-react'
+import eslintPluginReactHook from 'eslint-plugin-react-hooks'
+import eslintPluginPrettierRecommended from 'eslint-config-prettier'
+import { fixupPluginRules } from '@eslint/compat'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-})
+const tseslintConfig = tseslint.config(
+  ...tseslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'module',
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        project: ['./tsconfig.json', 'packages/**/tsconfig.json'],
+        tsconfigRootDir: __dirname,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-empty-function': 'error',
+      '@typescript-eslint/adjacent-overload-signatures': 'error',
+      '@typescript-eslint/no-empty-interface': 'error',
+      '@typescript-eslint/no-inferrable-types': 'error',
+      '@typescript-eslint/ban-ts-comment': 'error',
+      '@typescript-eslint/prefer-namespace-keyword': 'error',
+      '@typescript-eslint/no-unsafe-assignment': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'error',
+    },
+  }
+)
 
-export default [
+const typescriptConfig = [
+  ...tseslintConfig,
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      import: _import,
+    },
+    rules: {
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', ignoreRestSiblings: true },
+      ],
+      '@typescript-eslint/no-unnecessary-condition': 'error',
+      '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/consistent-type-definitions': 'off',
+      '@typescript-eslint/no-empty-interface': 'off',
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: [
+            '*.config.ts',
+            '**/*.config.ts',
+            '**/*.test.ts',
+            '**/*.test.tsx',
+            '**/*.story.tsx',
+            '**/_lib/**',
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['**/*.tsx', '**/*.ts'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+    plugins: {
+      react: eslintPluginReact,
+      'react-hooks': fixupPluginRules(eslintPluginReactHook),
+    },
+    rules: {
+      ...eslintPluginReact.configs.recommended.rules,
+      ...eslintPluginReactHook.configs.recommended.rules,
+      'react/prop-types': 'off',
+      'react/no-unknown-property': ['error', { ignore: ['css'] }],
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+]
+
+const config = [
+  eslint.configs.recommended,
+  eslintPluginPrettierRecommended,
+  ...typescriptConfig,
   {
     ignores: [
       '**/dist/',
@@ -31,105 +118,49 @@ export default [
       'packages/tailwind-diff/bin/tailwind-diff.js',
       'packages/icon-files/src/',
       'eslint.config.mjs',
+      '.storybook',
     ],
   },
-  ...fixupConfigRules(
-    compat.extends(
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:@typescript-eslint/recommended-requiring-type-checking',
-      'plugin:react/recommended',
-      'plugin:react-hooks/recommended',
-      'plugin:storybook/recommended',
-      'plugin:import/recommended',
-      'prettier'
-    )
-  ),
   {
-    plugins: {
-      jest,
-      import: fixupPluginRules(_import),
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    rules: {
+      'no-console': 'warn',
+      'no-undef': 'off',
+      'no-constant-condition': 'error',
     },
-
+  },
+  {
+    files: [
+      '**/*.test.ts',
+      '**/*.test.tsx',
+      '**/__tests__/**',
+      '**/*.config.*',
+      '*.config.*',
+      '**/*.story.*',
+      '.storybook/**',
+    ],
     languageOptions: {
       globals: {
         ...globals.node,
-        ...jest.environments.globals.globals,
-      },
-
-      ecmaVersion: 5,
-      sourceType: 'commonjs',
-
-      parserOptions: {
-        project: ['./tsconfig.json', './packages/**/tsconfig.json'],
+        ...globals.jest,
       },
     },
-
-    settings: {
-      react: {
-        version: 'detect',
-      },
-
-      'import/resolver': {
-        typescript: {
-          project: ['./tsconfig.json', './packages/**/tsconfig.json'],
-        },
-      },
+    plugins: {
+      import: _import,
     },
-
     rules: {
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '^_',
-          ignoreRestSiblings: true,
-        },
-      ],
-
-      '@typescript-eslint/no-unnecessary-condition': 'error',
-      '@typescript-eslint/strict-boolean-expressions': 'error',
-      '@typescript-eslint/consistent-type-definitions': 'off',
-      '@typescript-eslint/no-empty-interface': 'off',
-      'react/prop-types': 'off',
-
-      'react/no-unknown-property': [
-        'error',
-        {
-          ignore: ['css'],
-        },
-      ],
-
-      'no-console': 'warn',
-      'react/jsx-uses-react': 'off',
-      'react/react-in-jsx-scope': 'off',
-
-      'import/no-extraneous-dependencies': [
-        'error',
-        {
-          devDependencies: [
-            '*.config.js',
-            '*.config.mjs',
-            '*.config.ts',
-            '**/*.config.ts',
-            '**/*.test.ts',
-            '**/*.test.tsx',
-            '**/*.story.tsx',
-            '**/_lib/**',
-          ],
-        },
-      ],
+      'import/no-extraneous-dependencies': 'off',
     },
-  },
-  {
-    files: ['**/*.cjs', '**/*.mjs'],
   },
   {
     files: ['**/docs/**'],
-
+    plugins: {
+      import: _import,
+    },
     rules: {
       'import/no-extraneous-dependencies': 'off',
     },
   },
 ]
+
+export default config
