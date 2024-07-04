@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { MenuListLinkItem } from '../MenuListItem'
-import { useComponentAbstraction } from '@charcoal-ui/react'
+import { useComponentAbstraction } from '../../_lib/ComponentAbstraction'
 
 interface Props<ID extends string> {
   links: readonly {

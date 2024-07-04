@@ -1,8 +1,3 @@
-export {
-  default as ComponentAbstraction,
-  useComponentAbstraction,
-  type LinkProps,
-} from './core/ComponentAbstraction'
 export { SSRProvider } from './core/SSRProvider'
 export { OverlayProvider } from './core/OverlayProvider'
 export {

@@ -3,7 +3,10 @@ import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import { TextEllipsis } from '../TextEllipsis'
-import { LinkProps, useComponentAbstraction } from '@charcoal-ui/react'
+import {
+  LinkProps,
+  useComponentAbstraction,
+} from '../../_lib/ComponentAbstraction'
 import { disabledSelector } from '@charcoal-ui/utils'
 
 interface MenuListItemContextProps {
