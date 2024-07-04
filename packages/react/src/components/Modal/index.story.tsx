@@ -10,7 +10,6 @@ import {
 } from './ModalPlumbing'
 import TextField from '../TextField'
 import DropdownSelector from '../DropdownSelector'
-import Checkbox from '../Checkbox'
 import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 import { Meta, StoryObj } from '@storybook/react'
 
@@ -217,7 +216,6 @@ export const BottomSheet: StoryObj<typeof Modal> = {
               </StyledModalText>
             </ModalVStack>
             <ModalButtons>
-              <Checkbox checked>test checkbox</Checkbox>
               <Button variant="Danger" onClick={() => state.close()} fullWidth>
                 削除する
               </Button>
