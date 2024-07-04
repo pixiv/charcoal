@@ -43,6 +43,7 @@
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@charcoal-ui/icons-cli": "workspace:^",
+    "@charcoal-ui/pullrequest-cli": "workspace:^",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@commitlint/config-lerna-scopes": "^16.0.0",

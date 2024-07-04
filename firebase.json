@@ -1,6 +1,68 @@
 {
   "hosting": {
-    "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "public": "storybook-static",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/@charcoal-ui/styled/quickstart/",
+        "destination": "/?path=/docs/styled-readme--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/react/quickstart/",
+        "destination": "/?path=/docs/react-readme--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/react/ssr/",
+        "destination": "/?path=/docs/react-ssr-guide--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/icons/quickstart/",
+        "destination": "/?path=/docs/icons-readme--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/icons/react/",
+        "destination": "/?path=/docs/icons-readme--docs#react-と組み合わせて使う",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/icons/extend/",
+        "destination": "/?path=/docs/icons-custom--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/icons/ssr/",
+        "destination": "/?path=/docs/icons-ssr-guide--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/tailwind-config/quickstart/",
+        "destination": "/?path=/docs/tailwind-config-readme--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/tailwind-config/customize/",
+        "destination": "/?path=/docs/tailwind-config-custom--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/tailwind-diff/quickstart/",
+        "destination": "/?path=/docs/tailwind-diff-readme--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/foundation/quickstart/",
+        "destination": "/?path=/docs/foundation-readme--docs",
+        "type": 301
+      },
+      {
+        "source": "/@charcoal-ui/theme/quickstart/",
+        "destination": "/?path=/docs/theme-readme--docs",
+        "type": 301
+      }
+    ]
   }
 }

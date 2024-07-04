@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="tailwind-diff/Dump" />
+
+# tailwind-diff dump
+
+```bash
+npx @charcoal-ui/tailwind-diff dump -c ./path/to/tailwind.config.js -o dump.css
+```
+
+## 概要
+
+指定したコンフィグファイルをもとに CSS を出力します。
+できることは Tailwind CSS などの `build` と同じです。
+
+**[check](/docs/tailwind-diff-check--docs)コマンドとは内部的に`dump`が利用されています。**
+内部分の利用以外でこのコマンドを直接利用するケースは（デバッグなどを除いて）あまりないと言って良いでしょう。
+
+## オプション
+
+| name   | description                                                                                                               | alias              | type   | required |
+| ------ | ------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------ | -------- |
+| config | ビルド時に使用する Tailwind CSS の設定ファイル。省略した場合は `tailwind.config.js`が使われれる（現在のパスからの相対）。 | -c または --config | string | YES      |
+| output | ビルド結果の CSS を出力するファイル。省略した場合は標準出力に出る。                                                       | -o または --output | string | YES      |
+
+```bash
+$ npx @charcoal-ui/tailwind-diff dump --help
+tailwind-diff dump
+
+dump Tailwind CSS with config
+
+Options:
+      --version  Show version number                                   [boolean]
+      --help     Show help                                             [boolean]
+  -o, --output   output file                                            [string]
+  -c, --config   tailwind config file                                   [string]
+```
