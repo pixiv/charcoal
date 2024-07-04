@@ -6,7 +6,6 @@ export function passiveEvents(): boolean {
 
   passiveEventsResult = false
   try {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const options = Object.defineProperty({}, 'passive', {
       get() {
         return (passiveEventsResult = true)

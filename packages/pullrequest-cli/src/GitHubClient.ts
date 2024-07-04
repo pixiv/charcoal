@@ -107,14 +107,14 @@ export class GithubClient {
     const parentCommit = await this.api.git.getCommit({
       owner: this.repoOwner,
       repo: this.repoName,
-      // eslint-disable-next-line @typescript-eslint/naming-convention
+
       commit_sha: targetBranch.data.object.sha,
     })
 
     const newTree = await this.api.git.createTree({
       owner: this.repoOwner,
       repo: this.repoName,
-      // eslint-disable-next-line @typescript-eslint/naming-convention
+
       base_tree: parentCommit.data.tree.sha,
       tree,
     })

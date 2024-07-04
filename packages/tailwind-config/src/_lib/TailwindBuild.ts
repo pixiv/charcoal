@@ -49,7 +49,6 @@ export class TailwindBuild {
     const plugin = tailwindcss({
       ...config,
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error safelist が @types/tailwindcss に生えてない
       safelist: [
         {

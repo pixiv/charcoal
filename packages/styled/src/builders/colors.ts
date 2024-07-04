@@ -124,7 +124,7 @@ export const createGradientColorCss =
 
       warning(
         effects.length === 0,
-        // eslint-disable-next-line max-len
+
         `'Transition' will not be applied. You can get around this by specifying 'preserveHalfLeading' or both 'padding' and 'typography'.`
       )
 

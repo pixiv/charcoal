@@ -20,7 +20,7 @@ export function unreachable(): never
  * @param value Value to be asserted as unreachable
  */
 // NOTE: Uses separate overloads, _not_ `value?: never`, to not allow `undefined` to be passed
-// eslint-disable-next-line @typescript-eslint/unified-signatures
+
 export function unreachable(value: never): never
 export function unreachable(value?: never): never {
   throw new Error(

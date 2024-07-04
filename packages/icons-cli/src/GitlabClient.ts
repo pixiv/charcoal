@@ -82,7 +82,6 @@ export class GitlabClient {
       this.message,
       diff,
       {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         start_branch: this.defaultBranch,
       }
     )
