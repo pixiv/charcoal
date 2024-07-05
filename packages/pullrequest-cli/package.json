@@ -25,6 +25,7 @@
     "src",
     "dist"
   ],
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
