@@ -36,7 +36,8 @@
     "prepare": "husky"
   },
   "publishConfig": {
-    "provenance": true
+    "provenance": true,
+    "access": "public"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",
