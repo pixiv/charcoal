@@ -1,11 +1,18 @@
 {
   "name": "@charcoal-ui/token-cli",
   "bin": "./dist/index.js",
+  "type": "commonjs",
+  "version": "4.0.0-beta.8",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/yargs": "^17.0.32",
