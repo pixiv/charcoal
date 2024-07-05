@@ -2,7 +2,7 @@
   "name": "@charcoal-ui/token-cli",
   "bin": "./dist/index.js",
   "type": "commonjs",
-  "version": "4.0.0-beta.8",
+  "version": "4.0.0-beta.9",
   "license": "Apache-2.0",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
