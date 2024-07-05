@@ -12,8 +12,7 @@ export type IconButtonProps<T extends React.ElementType = 'button'> = {
   readonly size?: Size
   readonly icon: keyof KnownIconType
   readonly isActive?: boolean
-  as?: T
-  componentAs?: React.ComponentPropsWithRef<T>['as']
+  component?: T
 } & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
 
 const IconButton = forwardRef(function IconButtonInner<
@@ -24,20 +23,19 @@ const IconButton = forwardRef(function IconButtonInner<
     size = 'M',
     icon,
     isActive = false,
-    componentAs,
-    as,
+    component,
     ...rest
   }: IconButtonProps<T>,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   validateIconSize(size, icon)
-  const Component = useMemo(() => as ?? 'button', [as])
+  const Component = useMemo(() => component ?? 'button', [component])
   const classNames = useClassNames('charcoal-icon-button', rest.className)
 
   return (
     <Component
       {...rest}
-      as={componentAs}
+      as={component}
       ref={ref}
       className={classNames}
       data-size={size}
