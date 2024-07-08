@@ -6,7 +6,7 @@ test('tests transformer real case', () => {
   )
 })
 test('tests transformer unreal case', () => {
-  expect(transformer({ path: ['Color', 'Container/Secondary/DefaultABCDEF'] })).toBe(
-    'color-container-secondary-default-a-b-c-d-e-f'
-  )
+  expect(
+    transformer({ path: ['Color', 'Container/Secondary/DefaultABCDEF'] })
+  ).toBe('color-container-secondary-default-a-b-c-d-e-f')
 })

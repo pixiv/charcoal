@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { transformer } = require('./src/transformer');
+const { transformer } = require('./src/transformer')
 
 /** @type { import('style-dictionary') } */
 module.exports = {
