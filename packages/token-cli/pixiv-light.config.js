@@ -7,6 +7,7 @@ module.exports = {
       transformer: (token) => {
         return token.path
           .join('-')
+          .replace(/(.)([A-Z])/g, '$1-$2')
           .toLowerCase()
           .replaceAll('/', '-')
           .replaceAll(' ', '-')
