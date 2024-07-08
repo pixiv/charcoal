@@ -79,9 +79,6 @@ export const createToken = (
           ...current,
         }))
 
-      if (modeName != undefined && collection.defaultModeId != modeId)
-        return { [collection.name]: { [modeName]: variables } }
-
       return { [collection.name]: variables }
     })
     .reduce<{ [key: string]: object }>(
