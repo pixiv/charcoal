@@ -35,7 +35,6 @@ const IconButton = forwardRef(function IconButtonInner<
   return (
     <Component
       {...rest}
-      as={component}
       ref={ref}
       className={classNames}
       data-size={size}
