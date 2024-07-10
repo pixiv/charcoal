@@ -10,7 +10,7 @@ const transformer = (token) => {
     .toLowerCase()
     .replaceAll('/', '-')
     .replaceAll(' ', '-')
-    .replaceAll('--', '-')
+    .replace(/(--)(\D)/g, '-$2')
 }
 
 module.exports = {
