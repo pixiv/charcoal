@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import Radio, { RadioGroup } from '.'
 import { light } from '@charcoal-ui/theme'
+import { vi } from 'vitest'
 
 describe('Radio', () => {
   describe('development mode', () => {
@@ -12,7 +13,7 @@ describe('Radio', () => {
     describe('<Radio> is not surrounded by <RadioGroup>', () => {
       beforeEach(() => {
         // eslint-disable-next-line no-console
-        console.error = jest.fn()
+        console.error = vi.fn()
 
         render(
           <ThemeProvider theme={light}>
@@ -33,7 +34,7 @@ describe('Radio', () => {
   describe('value is the first option', () => {
     let option1: HTMLInputElement
     let option2: HTMLInputElement
-    const handleChange = jest.fn()
+    const handleChange = vi.fn()
 
     beforeEach(() => {
       render(<TestComponent value="option1" onChange={handleChange} />)
@@ -108,7 +109,7 @@ describe('Radio', () => {
 
 function TestComponent({
   value,
-  onChange = jest.fn(),
+  onChange = vi.fn(),
   radioGroupDisabled = false,
   readonly = false,
   invalid = false,

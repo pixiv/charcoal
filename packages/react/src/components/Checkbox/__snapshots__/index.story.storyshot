@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/Checkbox Checked 1`] = `
+exports[`Storybook Tests > react/Checkbox > Checked 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -167,7 +167,7 @@ exports[`Storybook Tests react/Checkbox Checked 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Checkbox Default 1`] = `
+exports[`Storybook Tests > react/Checkbox > Default 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -325,7 +325,7 @@ exports[`Storybook Tests react/Checkbox Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Checkbox Disabled 1`] = `
+exports[`Storybook Tests > react/Checkbox > Disabled 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -493,7 +493,7 @@ exports[`Storybook Tests react/Checkbox Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Checkbox Invalid 1`] = `
+exports[`Storybook Tests > react/Checkbox > Invalid 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -662,7 +662,7 @@ exports[`Storybook Tests react/Checkbox Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Checkbox Label 1`] = `
+exports[`Storybook Tests > react/Checkbox > Label 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;
@@ -830,7 +830,7 @@ exports[`Storybook Tests react/Checkbox Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Checkbox ReadOnly 1`] = `
+exports[`Storybook Tests > react/Checkbox > ReadOnly 1`] = `
 .c0 {
   position: relative;
   display: -webkit-box;

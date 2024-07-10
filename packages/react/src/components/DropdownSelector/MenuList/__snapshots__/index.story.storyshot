@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/internals/MenuList Basic 1`] = `
+exports[`Storybook Tests > react/internals/MenuList > Basic 1`] = `
 .c0 {
   padding: 0;
   margin: 0;
@@ -210,7 +210,7 @@ exports[`Storybook Tests react/internals/MenuList Basic 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/internals/MenuList Disabled 1`] = `
+exports[`Storybook Tests > react/internals/MenuList > Disabled 1`] = `
 .c0 {
   padding: 0;
   margin: 0;
@@ -291,30 +291,10 @@ exports[`Storybook Tests react/internals/MenuList Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/internals/MenuList Group 1`] = `
+exports[`Storybook Tests > react/internals/MenuList > Group 1`] = `
 .c0 {
   padding: 0;
   margin: 0;
-}
-
-.c2 {
-  display: block;
-  color: var(--charcoal-text3);
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 0 8px 16px;
-}
-
-.c3 {
-  padding-left: 0;
-  margin: 0;
-  box-sizing: border-box;
-  list-style: none;
-  overflow: hidden;
-}
-
-.c1 {
-  display: block;
 }
 
 .c4 {
@@ -349,6 +329,26 @@ exports[`Storybook Tests react/internals/MenuList Group 1`] = `
 .c5:focus:not(disabled):not([aria-disabled='true']),
 .c5:focus-within:not(disabled):not([aria-disabled='true']) {
   background-color: var(--charcoal-surface3);
+}
+
+.c2 {
+  display: block;
+  color: var(--charcoal-text3);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 0 8px 16px;
+}
+
+.c3 {
+  padding-left: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  overflow: hidden;
+}
+
+.c1 {
+  display: block;
 }
 
 <div

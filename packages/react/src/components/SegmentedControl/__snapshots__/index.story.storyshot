@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > ObjectSegments 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -95,7 +95,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
     aria-label="test"
     aria-orientation="vertical"
     className="c0"
-    id="test-id"
+    id="react-aria-35"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -110,7 +110,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -149,7 +149,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -188,7 +188,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -227,7 +227,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="c2"
         disabled={true}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -259,7 +259,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > StringSegments 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -354,7 +354,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
     aria-label="test"
     aria-orientation="vertical"
     className="c0"
-    id="test-id"
+    id="react-aria-31"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -369,7 +369,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -408,7 +408,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -447,7 +447,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
         checked={false}
         className="c2"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}

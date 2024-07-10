@@ -3,7 +3,7 @@
     "target": "esnext",
     "lib": ["esnext", "dom"],
     "module": "esnext",
-    "types": ["jest", "node"],
+    "types": ["node", "vitest/globals"],
     "skipLibCheck": true,
     "moduleResolution": "node",
     "strict": true,

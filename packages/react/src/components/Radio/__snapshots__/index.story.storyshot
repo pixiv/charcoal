@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/Radio Default 1`] = `
+exports[`Storybook Tests > react/Radio > Default 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -236,7 +236,7 @@ exports[`Storybook Tests react/Radio Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio Disabled 1`] = `
+exports[`Storybook Tests > react/Radio > Disabled 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -472,7 +472,7 @@ exports[`Storybook Tests react/Radio Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio Invalid 1`] = `
+exports[`Storybook Tests > react/Radio > Invalid 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -709,7 +709,7 @@ exports[`Storybook Tests react/Radio Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
+exports[`Storybook Tests > react/Radio > PartialDisabled 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -945,7 +945,7 @@ exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio Readonly 1`] = `
+exports[`Storybook Tests > react/Radio > Readonly 1`] = `
 .c2 {
   display: grid;
   grid-template-columns: auto 1fr;

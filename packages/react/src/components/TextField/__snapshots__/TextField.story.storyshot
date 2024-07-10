@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/TextField Affix 1`] = `
+exports[`Storybook Tests > react/TextField > Affix 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -213,8 +213,8 @@ exports[`Storybook Tests react/TextField Affix 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-123"
+        id="react-aria-124"
       >
         Label
       </label>
@@ -233,10 +233,10 @@ exports[`Storybook Tests react/TextField Affix 1`] = `
         /home/john/
       </div>
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-124"
         className="c8"
         disabled={false}
-        id="test-id"
+        id="react-aria-123"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -253,7 +253,7 @@ exports[`Storybook Tests react/TextField Affix 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField AssistiveText 1`] = `
+exports[`Storybook Tests > react/TextField > AssistiveText 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -451,8 +451,8 @@ exports[`Storybook Tests react/TextField AssistiveText 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-99"
+        id="react-aria-100"
       >
         Label
       </label>
@@ -466,10 +466,10 @@ exports[`Storybook Tests react/TextField AssistiveText 1`] = `
       className="c6"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-100"
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-99"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -486,45 +486,7 @@ exports[`Storybook Tests react/TextField AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Default 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
+exports[`Storybook Tests > react/TextField > Default 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -607,6 +569,44 @@ exports[`Storybook Tests react/TextField Default 1`] = `
 
 .c1 > .c4 {
   margin-left: auto;
+}
+
+.c6 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c0 {
@@ -714,8 +714,8 @@ exports[`Storybook Tests react/TextField Default 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-83"
+        id="react-aria-84"
       >
         Label
       </label>
@@ -735,10 +735,10 @@ exports[`Storybook Tests react/TextField Default 1`] = `
       className="c7"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-84"
         className="c8"
         disabled={false}
-        id="test-id"
+        id="react-aria-83"
         onChange={[Function]}
         placeholder="TextField"
         readOnly={false}
@@ -751,7 +751,7 @@ exports[`Storybook Tests react/TextField Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Disabled 1`] = `
+exports[`Storybook Tests > react/TextField > Disabled 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -942,8 +942,8 @@ exports[`Storybook Tests react/TextField Disabled 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-111"
+        id="react-aria-112"
       >
         Label
       </label>
@@ -958,10 +958,10 @@ exports[`Storybook Tests react/TextField Disabled 1`] = `
       className="c6"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-112"
         className="c7"
         disabled={true}
-        id="test-id"
+        id="react-aria-111"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -973,7 +973,7 @@ exports[`Storybook Tests react/TextField Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Invalid 1`] = `
+exports[`Storybook Tests > react/TextField > Invalid 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1172,8 +1172,8 @@ exports[`Storybook Tests react/TextField Invalid 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-115"
+        id="react-aria-116"
       >
         Label
       </label>
@@ -1188,10 +1188,10 @@ exports[`Storybook Tests react/TextField Invalid 1`] = `
     >
       <input
         aria-invalid={true}
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-116"
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-115"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -1208,7 +1208,7 @@ exports[`Storybook Tests react/TextField Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Label 1`] = `
+exports[`Storybook Tests > react/TextField > Label 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1384,8 +1384,8 @@ exports[`Storybook Tests react/TextField Label 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-87"
+        id="react-aria-88"
       >
         Label
       </label>
@@ -1399,10 +1399,10 @@ exports[`Storybook Tests react/TextField Label 1`] = `
       className="c6"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-88"
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-87"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -1414,7 +1414,7 @@ exports[`Storybook Tests react/TextField Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Number 1`] = `
+exports[`Storybook Tests > react/TextField > Number 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1617,7 +1617,7 @@ exports[`Storybook Tests react/TextField Number 1`] = `
       <input
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-131"
         onChange={[Function]}
         onWheel={[Function]}
         readOnly={false}
@@ -1630,7 +1630,7 @@ exports[`Storybook Tests react/TextField Number 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Placeholder 1`] = `
+exports[`Storybook Tests > react/TextField > Placeholder 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1820,8 +1820,8 @@ exports[`Storybook Tests react/TextField Placeholder 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-91"
+        id="react-aria-92"
       >
         Label
       </label>
@@ -1835,10 +1835,10 @@ exports[`Storybook Tests react/TextField Placeholder 1`] = `
       className="c6"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-92"
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-91"
         onChange={[Function]}
         placeholder="Placeholder"
         readOnly={false}
@@ -1851,7 +1851,7 @@ exports[`Storybook Tests react/TextField Placeholder 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField Prefix 1`] = `
+exports[`Storybook Tests > react/TextField > Prefix 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2064,8 +2064,8 @@ exports[`Storybook Tests react/TextField Prefix 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-127"
+        id="react-aria-128"
       >
         Label
       </label>
@@ -2090,10 +2090,10 @@ exports[`Storybook Tests react/TextField Prefix 1`] = `
         </div>
       </div>
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-128"
         className="c9"
         disabled={false}
-        id="test-id"
+        id="react-aria-127"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -2105,7 +2105,7 @@ exports[`Storybook Tests react/TextField Prefix 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField ReadOnly 1`] = `
+exports[`Storybook Tests > react/TextField > ReadOnly 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2295,8 +2295,8 @@ exports[`Storybook Tests react/TextField ReadOnly 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-119"
+        id="react-aria-120"
       >
         Label
       </label>
@@ -2310,10 +2310,10 @@ exports[`Storybook Tests react/TextField ReadOnly 1`] = `
       className="c6"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-120"
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-119"
         onChange={[Function]}
         readOnly={true}
         required={false}
@@ -2325,7 +2325,7 @@ exports[`Storybook Tests react/TextField ReadOnly 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField RequiredText 1`] = `
+exports[`Storybook Tests > react/TextField > RequiredText 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2528,8 +2528,8 @@ exports[`Storybook Tests react/TextField RequiredText 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-95"
+        id="react-aria-96"
       >
         Label
       </label>
@@ -2548,11 +2548,11 @@ exports[`Storybook Tests react/TextField RequiredText 1`] = `
       className="c8"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-96"
         aria-required={true}
         className="c9"
         disabled={false}
-        id="test-id"
+        id="react-aria-95"
         onChange={[Function]}
         readOnly={false}
         required={false}
@@ -2564,7 +2564,7 @@ exports[`Storybook Tests react/TextField RequiredText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField ShowCount 1`] = `
+exports[`Storybook Tests > react/TextField > ShowCount 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2772,8 +2772,8 @@ exports[`Storybook Tests react/TextField ShowCount 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-107"
+        id="react-aria-108"
       >
         Label
       </label>
@@ -2787,10 +2787,10 @@ exports[`Storybook Tests react/TextField ShowCount 1`] = `
       className="c6"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-108"
         className="c7"
         disabled={false}
-        id="test-id"
+        id="react-aria-107"
         maxLength={100}
         onChange={[Function]}
         readOnly={false}
@@ -2812,45 +2812,7 @@ exports[`Storybook Tests react/TextField ShowCount 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextField SubLabel 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
+exports[`Storybook Tests > react/TextField > SubLabel 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2933,6 +2895,44 @@ exports[`Storybook Tests react/TextField SubLabel 1`] = `
 
 .c1 > .c4 {
   margin-left: auto;
+}
+
+.c6 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
 }
 
 .c0 {
@@ -3040,8 +3040,8 @@ exports[`Storybook Tests react/TextField SubLabel 1`] = `
     >
       <label
         className="c3"
-        htmlFor="test-id"
-        id="test-id"
+        htmlFor="react-aria-103"
+        id="react-aria-104"
       >
         Label
       </label>
@@ -3061,10 +3061,10 @@ exports[`Storybook Tests react/TextField SubLabel 1`] = `
       className="c7"
     >
       <input
-        aria-labelledby="test-id"
+        aria-labelledby="react-aria-104"
         className="c8"
         disabled={false}
-        id="test-id"
+        id="react-aria-103"
         onChange={[Function]}
         readOnly={false}
         required={false}

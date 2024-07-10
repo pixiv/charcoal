@@ -1,6 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
+exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
+.c14 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c14::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c14::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c16 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c16::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c16::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active,
+.c16:not(:disabled):not([aria-disabled]):focus,
+.c16[aria-disabled='false']:focus,
+.c16:not(:disabled):not([aria-disabled]):focus-visible,
+.c16[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 > .c15 {
+  margin-left: auto;
+}
+
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -37,6 +121,65 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
+}
+
+.c27 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c27:not(:disabled):not([aria-disabled]):hover,
+.c27[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c27:not(:disabled):not([aria-disabled]):active,
+.c27[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus,
+.c27[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c27[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus-visible,
+.c27[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:disabled,
+.c27[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c1 {
@@ -234,88 +377,84 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
   opacity: 0.32;
 }
 
-.c14 {
-  font-size: 14px;
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c13 {
+  margin-bottom: 8px;
+}
+
+.c17 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c16 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c16::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c16::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c16:not(:disabled):not([aria-disabled]):hover,
-.c16[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active,
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled='false']:focus,
-.c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled='false']:focus-visible {
+.c17:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c18 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c12 > .c15 {
-  margin-left: auto;
+.c18::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18::placeholder {
+  color: var(--charcoal-text3);
 }
 
 .c19 {
@@ -405,65 +544,6 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 
 .c23 {
   color: var(--charcoal-text2);
-}
-
-.c27 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c27[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus-visible,
-.c27[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:disabled,
-.c27[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
 }
 
 .c3 {
@@ -582,86 +662,6 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
   padding-right: 16px;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c13 {
-  margin-bottom: 8px;
-}
-
-.c17 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c17:not(:disabled):not([aria-disabled]):hover,
-.c17 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c17:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c18::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18::placeholder {
-  color: var(--charcoal-text3);
-}
-
 .c8 {
   display: grid;
   gap: 24px;
@@ -773,8 +773,8 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                 >
                   <label
                     className="c14"
-                    htmlFor="test-id"
-                    id="test-id"
+                    htmlFor="react-aria-22"
+                    id="react-aria-23"
                   >
                     Name
                   </label>
@@ -788,10 +788,10 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                   className="c17"
                 >
                   <input
-                    aria-labelledby="test-id"
+                    aria-labelledby="react-aria-23"
                     className="c18"
                     disabled={false}
-                    id="test-id"
+                    id="react-aria-22"
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
@@ -813,8 +813,8 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                 >
                   <label
                     className="c14"
-                    htmlFor="test-id"
-                    id="test-id"
+                    htmlFor="react-aria-26"
+                    id="react-aria-27"
                   >
                     Country
                   </label>
@@ -828,11 +828,11 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                   className="c17"
                 >
                   <input
-                    aria-labelledby="test-id"
+                    aria-labelledby="react-aria-27"
                     autoFocus={true}
                     className="c18"
                     disabled={false}
-                    id="test-id"
+                    id="react-aria-26"
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
@@ -956,7 +956,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal BottomSheet 1`] = `
+exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -993,6 +993,65 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
+}
+
+.c19 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c19:not(:disabled):not([aria-disabled]):hover,
+.c19[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c19:not(:disabled):not([aria-disabled]):focus,
+.c19[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c19[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c19:not(:disabled):not([aria-disabled]):focus-visible,
+.c19[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c19:disabled,
+.c19[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c1 {
@@ -1125,6 +1184,71 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   opacity: 0.32;
 }
 
+.c18 {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  display: inline-grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 999999px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  -webkit-transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  transition: 0.2s color,0.2s background-color,0.2s box-shadow;
+  height: 40px;
+}
+
+.c18:not(:disabled):not([aria-disabled]):focus,
+.c18[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c18:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c18[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c18:not(:disabled):not([aria-disabled]):focus-visible,
+.c18[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c18:not(:disabled):not([aria-disabled]):hover,
+.c18[aria-disabled='false']:hover {
+  color: var(--charcoal-text2-hover);
+  background-color: var(--charcoal-surface3-hover);
+}
+
+.c18:not(:disabled):not([aria-disabled]):active,
+.c18[aria-disabled='false']:active {
+  color: var(--charcoal-text2-press);
+  background-color: var(--charcoal-surface3-press);
+}
+
+.c18:disabled,
+.c18[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
 .c12 {
   position: relative;
   display: -webkit-box;
@@ -1241,65 +1365,6 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   line-height: 20px;
 }
 
-.c18 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c18:not(:disabled):not([aria-disabled]):hover,
-.c18[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c18:not(:disabled):not([aria-disabled]):active,
-.c18[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c18:not(:disabled):not([aria-disabled]):focus,
-.c18[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c18[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c18:not(:disabled):not([aria-disabled]):focus-visible,
-.c18[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18:disabled,
-.c18[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c3 {
   margin: auto;
   position: relative;
@@ -1337,7 +1402,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   background-color: var(--charcoal-surface4);
 }
 
-.c19 {
+.c20 {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1346,13 +1411,13 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
   transition: 0.2s color;
 }
 
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
+.c20:not(:disabled):not([aria-disabled]):hover,
+.c20[aria-disabled='false']:hover {
   color: var(--charcoal-text3-hover);
 }
 
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
+.c20:not(:disabled):not([aria-disabled]):active,
+.c20[aria-disabled='false']:active {
   color: var(--charcoal-text3-press);
 }
 
@@ -1485,12 +1550,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
       className="c2"
       onClick={[Function]}
       onPointerDown={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
-        }
-      }
+      style={Object {}}
     >
       <div
         className="c3"
@@ -1498,11 +1558,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
         onKeyDown={[Function]}
         role="dialog"
         size="M"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -1579,11 +1635,18 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
             >
               削除する
             </button>
+            <button
+              className="c0 c18"
+              disabled={false}
+              onClick={[Function]}
+            >
+              キャンセル
+            </button>
           </div>
         </div>
         <button
           aria-label="Close"
-          className="c0 c18 c19"
+          className="c0 c19 c20"
           onClick={[Function]}
           type="button"
         >
@@ -1598,7 +1661,91 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal Default 1`] = `
+exports[`Storybook Tests > react/Modal > Default 1`] = `
+.c14 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c14::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c14::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c16 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c16::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c16::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active,
+.c16:not(:disabled):not([aria-disabled]):focus,
+.c16[aria-disabled='false']:focus,
+.c16:not(:disabled):not([aria-disabled]):focus-visible,
+.c16[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 > .c15 {
+  margin-left: auto;
+}
+
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1635,6 +1782,65 @@ exports[`Storybook Tests react/Modal Default 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
+}
+
+.c27 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c27:not(:disabled):not([aria-disabled]):hover,
+.c27[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c27:not(:disabled):not([aria-disabled]):active,
+.c27[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus,
+.c27[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c27[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus-visible,
+.c27[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:disabled,
+.c27[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c1 {
@@ -1832,88 +2038,84 @@ exports[`Storybook Tests react/Modal Default 1`] = `
   opacity: 0.32;
 }
 
-.c14 {
-  font-size: 14px;
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c13 {
+  margin-bottom: 8px;
+}
+
+.c17 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
   line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c16 {
   font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
 }
 
-.c16::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c16::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c16:not(:disabled):not([aria-disabled]):hover,
-.c16[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active,
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled='false']:focus,
-.c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled='false']:focus-visible {
+.c17:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c12 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c18 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c12 > .c15 {
-  margin-left: auto;
+.c18::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18::placeholder {
+  color: var(--charcoal-text3);
 }
 
 .c19 {
@@ -2003,65 +2205,6 @@ exports[`Storybook Tests react/Modal Default 1`] = `
 
 .c23 {
   color: var(--charcoal-text2);
-}
-
-.c27 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c27[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus-visible,
-.c27[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:disabled,
-.c27[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
 }
 
 .c3 {
@@ -2180,86 +2323,6 @@ exports[`Storybook Tests react/Modal Default 1`] = `
   padding-right: 16px;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c13 {
-  margin-bottom: 8px;
-}
-
-.c17 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c17:not(:disabled):not([aria-disabled]):hover,
-.c17 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c17:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c18::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18::placeholder {
-  color: var(--charcoal-text3);
-}
-
 .c8 {
   display: grid;
   gap: 24px;
@@ -2363,8 +2426,8 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                 >
                   <label
                     className="c14"
-                    htmlFor="test-id"
-                    id="test-id"
+                    htmlFor="react-aria-2"
+                    id="react-aria-3"
                   >
                     Name
                   </label>
@@ -2378,10 +2441,10 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                   className="c17"
                 >
                   <input
-                    aria-labelledby="test-id"
+                    aria-labelledby="react-aria-3"
                     className="c18"
                     disabled={false}
-                    id="test-id"
+                    id="react-aria-2"
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
@@ -2403,8 +2466,8 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                 >
                   <label
                     className="c14"
-                    htmlFor="test-id"
-                    id="test-id"
+                    htmlFor="react-aria-6"
+                    id="react-aria-7"
                   >
                     Country
                   </label>
@@ -2418,11 +2481,11 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                   className="c17"
                 >
                   <input
-                    aria-labelledby="test-id"
+                    aria-labelledby="react-aria-7"
                     autoFocus={true}
                     className="c18"
                     disabled={false}
-                    id="test-id"
+                    id="react-aria-6"
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
@@ -2546,7 +2609,91 @@ exports[`Storybook Tests react/Modal Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
+exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
+.c14 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-text1);
+}
+
+.c14::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c14::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c16 {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-text3);
+  -webkit-transition: 0.2s color,0.2s box-shadow;
+  transition: 0.2s color,0.2s box-shadow;
+}
+
+.c16::before {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-top: -4px;
+}
+
+.c16::after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  margin-bottom: -4px;
+}
+
+.c16:not(:disabled):not([aria-disabled]):hover,
+.c16[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+}
+
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+}
+
+.c16:not(:disabled):not([aria-disabled]):active,
+.c16[aria-disabled='false']:active,
+.c16:not(:disabled):not([aria-disabled]):focus,
+.c16[aria-disabled='false']:focus,
+.c16:not(:disabled):not([aria-disabled]):focus-visible,
+.c16[aria-disabled='false']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c12 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 > .c15 {
+  margin-left: auto;
+}
+
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -2583,6 +2730,65 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
 .c0::-moz-focus-inner {
   border-style: none;
   padding: 0;
+}
+
+.c22 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c22:not(:disabled):not([aria-disabled]):hover,
+.c22[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c22:not(:disabled):not([aria-disabled]):active,
+.c22[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus,
+.c22[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c22[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus-visible,
+.c22[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c22:disabled,
+.c22[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
 }
 
 .c1 {
@@ -2780,147 +2986,84 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
   opacity: 0.32;
 }
 
-.c14 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c14::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c14::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c16 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c16::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c16::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c16:not(:disabled):not([aria-disabled]):hover,
-.c16[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c16:not(:disabled):not([aria-disabled]):active,
-.c16[aria-disabled='false']:active,
-.c16:not(:disabled):not([aria-disabled]):focus,
-.c16[aria-disabled='false']:focus,
-.c16:not(:disabled):not([aria-disabled]):focus-visible,
-.c16[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c12 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c12 > .c15 {
-  margin-left: auto;
-}
-
-.c22 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c13 {
+  margin-bottom: 8px;
+}
+
+.c17 {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 40px;
   -webkit-transition: 0.2s background-color,0.2s box-shadow;
   transition: 0.2s background-color,0.2s box-shadow;
+  color: var(--charcoal-text2);
+  background-color: var(--charcoal-surface3);
+  border-radius: 4px;
+  gap: 4px;
+  padding: 0 8px;
+  line-height: 22px;
+  font-size: 14px;
 }
 
-.c22:not(:disabled):not([aria-disabled]):hover,
-.c22[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
+.c17:not(:disabled):not([aria-disabled]):hover,
+.c17 [aria-disabled='false']:hover {
+  background-color: var(--charcoal-surface3-hover);
 }
 
-.c22:not(:disabled):not([aria-disabled]):active,
-.c22[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c22:not(:disabled):not([aria-disabled]):focus,
-.c22[aria-disabled='false']:focus {
+.c17:focus-within {
   outline: none;
   box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
 }
 
-.c22:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c22[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
+.c18 {
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0.875);
+  -ms-transform: scale(0.875);
+  transform: scale(0.875);
+  width: calc(100% / 0.875);
+  height: calc(100% / 0.875);
+  font-size: calc(14px / 0.875);
+  line-height: calc(22px / 0.875);
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: calc(4px / 0.875);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: var(--charcoal-text2);
 }
 
-.c22:not(:disabled):not([aria-disabled]):focus-visible,
-.c22[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+.c18::-webkit-input-placeholder {
+  color: var(--charcoal-text3);
 }
 
-.c22:disabled,
-.c22[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
+.c18::-moz-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18:-ms-input-placeholder {
+  color: var(--charcoal-text3);
+}
+
+.c18::placeholder {
+  color: var(--charcoal-text3);
 }
 
 .c3 {
@@ -3039,86 +3182,6 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
   padding-right: 16px;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c13 {
-  margin-bottom: 8px;
-}
-
-.c17 {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 40px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-}
-
-.c17:not(:disabled):not([aria-disabled]):hover,
-.c17 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c17:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c18 {
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  color: var(--charcoal-text2);
-}
-
-.c18::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c18::placeholder {
-  color: var(--charcoal-text3);
-}
-
 .c8 {
   display: grid;
   gap: 24px;
@@ -3189,12 +3252,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
       className="c2"
       onClick={[Function]}
       onPointerDown={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0, 0, 0, 0)",
-          "overflow": "hidden",
-        }
-      }
+      style={Object {}}
     >
       <div
         className="c3"
@@ -3202,11 +3260,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
         onKeyDown={[Function]}
         role="dialog"
         size="M"
-        style={
-          Object {
-            "transform": " translateY(100%)",
-          }
-        }
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -3240,8 +3294,8 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
                 >
                   <label
                     className="c14"
-                    htmlFor="test-id"
-                    id="test-id"
+                    htmlFor="react-aria-11"
+                    id="react-aria-12"
                   >
                     Name
                   </label>
@@ -3255,10 +3309,10 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
                   className="c17"
                 >
                   <input
-                    aria-labelledby="test-id"
+                    aria-labelledby="react-aria-12"
                     className="c18"
                     disabled={false}
-                    id="test-id"
+                    id="react-aria-11"
                     onChange={[Function]}
                     placeholder="Nagisa"
                     readOnly={false}
@@ -3280,8 +3334,8 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
                 >
                   <label
                     className="c14"
-                    htmlFor="test-id"
-                    id="test-id"
+                    htmlFor="react-aria-15"
+                    id="react-aria-16"
                   >
                     Country
                   </label>
@@ -3295,10 +3349,10 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
                   className="c17"
                 >
                   <input
-                    aria-labelledby="test-id"
+                    aria-labelledby="react-aria-16"
                     className="c18"
                     disabled={false}
-                    id="test-id"
+                    id="react-aria-15"
                     onChange={[Function]}
                     placeholder="Tokyo"
                     readOnly={false}
@@ -3346,7 +3400,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal InternalScroll 1`] = `
+exports[`Storybook Tests > react/Modal > InternalScroll 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -3713,7 +3767,7 @@ exports[`Storybook Tests react/Modal InternalScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
+exports[`Storybook Tests > react/Modal > NotDismmissableStory 1`] = `
 .c0 {
   cursor: pointer;
   -webkit-appearance: none;
