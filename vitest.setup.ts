@@ -52,7 +52,9 @@ beforeAll(() => {
   })
 
   vi.mock('react-stately', async () => {
-    const stately = await vi.importActual<typeof import('react-stately')>('react-stately')
+    const stately = await vi.importActual<typeof import('react-stately')>(
+      'react-stately'
+    )
 
     return {
       ...stately,
