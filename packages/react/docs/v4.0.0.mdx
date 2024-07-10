@@ -3,9 +3,10 @@ import { Unstyled } from '@storybook/blocks'
 
 <Meta title="react/docs/v4.0.0" />
 
-# v4.0.0
+# @charcoal-ui/react@v4.0.0
 
-- `styled-components`への依存を無くし、css ファイルベースのスタイリングに変更しました。
+- `v4.0.0`では多くの破壊的な変更があります。
+- `styled-components`への依存を無くし、css ファイルを読み込む方式に変更しました。
 
 ## Button
 
@@ -47,7 +48,8 @@ After
 
 ## MultiSelect
 
-- コンポーネントを廃止し、`Checkbox`の`rounded`プロパティに統合されました。
+- コンポーネントを削除しました。
+- `overlay`の代替として`Checkbox`の`rounded`が追加されました。
 
 ## RadioGroup
 
@@ -66,10 +68,9 @@ After
 ## TextArea
 
 - `textarea`要素の`props`を継承するように変更しました。
-
-- 文字数の計算ロジックを`getCount`で上書きできるように変更しました。
+- 文字数の計算ロジックを`getCount`プロパティで上書きできるように変更しました。
 
 ## TextField
 
 - `input`要素の`props`を継承するように変更しました。
-- 文字数の計算ロジックを`getCount`で上書きできるように変更しました。
+- 文字数の計算ロジックを`getCount`プロパティで上書きできるように変更しました。
