@@ -50,7 +50,6 @@ const SwitchCheckbox = forwardRef<HTMLInputElement, SwitchProps>(
       <Label className={className} aria-disabled={disabled}>
         <SwitchInput {...rest} ref={ref} />
         {'children' in props ? (
-          // eslint-disable-next-line react/destructuring-assignment
           <LabelInner>{props.children}</LabelInner>
         ) : undefined}
       </Label>

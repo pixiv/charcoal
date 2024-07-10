@@ -354,7 +354,6 @@ interface StyledCancelLayoutItemBodyPaddingProps {
   cancelTop?: boolean
 }
 
-/* eslint-disable max-len */
 export const StyledCancelLayoutItemBodyPadding = styled.div<StyledCancelLayoutItemBodyPaddingProps>`
   margin: 0 -${(p) => (p.wide ? LAYOUT_ITEM_BODY_PADDING.wide.x : LAYOUT_ITEM_BODY_PADDING.default.x)}px;
   margin-top: -${({ cancelTop = false, wide }) => (!cancelTop ? 0 : wide ? LAYOUT_ITEM_BODY_PADDING.wide.y : LAYOUT_ITEM_BODY_PADDING.default.y)}px;
@@ -364,4 +363,3 @@ export const StyledCancelLayoutItemBodyPadding = styled.div<StyledCancelLayoutIt
     margin-top: -${({ cancelTop = false }) => (!cancelTop ? 0 : LAYOUT_ITEM_BODY_PADDING.column1.x)}px;
   }
 `
-/* eslint-enable max-len */
