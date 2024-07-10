@@ -55,7 +55,13 @@ module.exports = {
       return config
     }
     // 事前ビルドが不要になるようにマッピング
-    config.resolve.alias = { ...config.resolve.alias, ...(await alias()) }
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      react: getAbsolutePath('react'),
+      'react-dom': getAbsolutePath('react-dom'),
+      '@storybook/react-dom-shim': '@storybook/react-dom-shim',
+      ...(await alias()),
+    }
     return config
   },
 
