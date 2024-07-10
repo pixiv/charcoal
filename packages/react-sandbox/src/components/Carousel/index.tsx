@@ -96,7 +96,11 @@ export default function Carousel({
       maxScrollLeft
     )
     setScrollLeft(scroll, true)
-    set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
+    void set({
+      scroll,
+      from: { scroll: scrollLeft },
+      reset: !animation.current,
+    })
     animation.current = true
   }, [
     animation,
@@ -114,7 +118,11 @@ export default function Carousel({
     const { clientWidth } = visibleAreaRef.current
     const scroll = Math.max(scrollLeft - clientWidth * scrollAmountCoef, 0)
     setScrollLeft(scroll, true)
-    set({ scroll, from: { scroll: scrollLeft }, reset: !animation.current })
+    void set({
+      scroll,
+      from: { scroll: scrollLeft },
+      reset: !animation.current,
+    })
     animation.current = true
   }, [animation, scrollLeft, set, scrollAmountCoef, setScrollLeft])
 
@@ -206,7 +214,6 @@ export default function Carousel({
         setScrollLeft(scrollLength, true)
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref.current])
 
   const handleScrollMove = useCallback(() => {

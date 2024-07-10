@@ -6,7 +6,7 @@
     "allowJs": true,
     "checkJs": true,
     "module": "esnext",
-    "types": ["jest", "node"],
+    "types": ["node", "vitest/globals"],
     "noEmit": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
@@ -21,12 +21,11 @@
     "**/*.config.js",
     "**/*.config.ts",
     "misc/*.mjs",
-    "jest.setup.ts",
     "**/.*.cjs",
     "**/.*.js",
     "__mocks__/*.ts",
-    ".storybook",
-    "vite.config.ts"
+    "vite.config.ts",
+    "vitest.setup.ts"
   ],
-  "exclude": ["docs"]
+  "exclude": ["docs", ".storybook"]
 }

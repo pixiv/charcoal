@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`tailwind.config.js list of classes 1`] = `
+exports[`tailwind.config.js > list of classes 1`] = `
 [
   "sr-only",
   "not-sr-only",
@@ -4222,7 +4222,7 @@ exports[`tailwind.config.js list of classes 1`] = `
 ]
 `;
 
-exports[`tailwind.config.js list of css variables 1`] = `
+exports[`tailwind.config.js > list of css variables 1`] = `
 [
   "--tailwind-color-transparent",
   "--tailwind-color-transparent--disabled",

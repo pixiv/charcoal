@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > ObjectSegments 1`] = `
 <div
   data-dark={false}
 >
@@ -8,7 +8,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
     aria-label="test"
     aria-orientation="vertical"
     className="charcoal-segmented-control"
-    id="test-id"
+    id="react-aria-10"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -23,7 +23,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -54,7 +54,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -85,7 +85,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -116,7 +116,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={true}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -140,7 +140,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > StringSegments 1`] = `
 <div
   data-dark={false}
 >
@@ -148,7 +148,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
     aria-label="test"
     aria-orientation="vertical"
     className="charcoal-segmented-control"
-    id="test-id"
+    id="react-aria-6"
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -163,7 +163,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -194,7 +194,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}
@@ -225,7 +225,7 @@ exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
         checked={false}
         className="charcoal-segmented-control-radio__input"
         disabled={false}
-        name="test-id"
+        name="test"
         onChange={[Function]}
         onClick={[Function]}
         onDragStart={[Function]}

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/Radio Default 1`] = `
+exports[`Storybook Tests > react/Radio > Default 1`] = `
 <div
   data-dark={false}
 >
   <div
     style={
-      {
+      Object {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -87,13 +87,13 @@ exports[`Storybook Tests react/Radio Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio Disabled 1`] = `
+exports[`Storybook Tests > react/Radio > Disabled 1`] = `
 <div
   data-dark={false}
 >
   <div
     style={
-      {
+      Object {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -175,13 +175,13 @@ exports[`Storybook Tests react/Radio Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio Invalid 1`] = `
+exports[`Storybook Tests > react/Radio > Invalid 1`] = `
 <div
   data-dark={false}
 >
   <div
     style={
-      {
+      Object {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -263,13 +263,13 @@ exports[`Storybook Tests react/Radio Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
+exports[`Storybook Tests > react/Radio > PartialDisabled 1`] = `
 <div
   data-dark={false}
 >
   <div
     style={
-      {
+      Object {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,
@@ -350,13 +350,13 @@ exports[`Storybook Tests react/Radio PartialDisabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Radio Readonly 1`] = `
+exports[`Storybook Tests > react/Radio > Readonly 1`] = `
 <div
   data-dark={false}
 >
   <div
     style={
-      {
+      Object {
         "display": "flex",
         "flexDirection": "column",
         "gap": 24,

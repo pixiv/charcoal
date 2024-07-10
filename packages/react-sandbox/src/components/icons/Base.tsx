@@ -69,7 +69,6 @@ export const IconBasePath = ({
       />
     )
   } else {
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{path}</>
   }
 }

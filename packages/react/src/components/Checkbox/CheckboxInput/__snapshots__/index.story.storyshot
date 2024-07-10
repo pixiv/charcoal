@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/internals/CheckboxInput Checked 1`] = `
+exports[`Storybook Tests > react/internals/CheckboxInput > Checked 1`] = `
 <div
   data-dark={false}
 >
@@ -13,7 +13,7 @@ exports[`Storybook Tests react/internals/CheckboxInput Checked 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/internals/CheckboxInput Default 1`] = `
+exports[`Storybook Tests > react/internals/CheckboxInput > Default 1`] = `
 <div
   data-dark={false}
 >
@@ -25,7 +25,7 @@ exports[`Storybook Tests react/internals/CheckboxInput Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/internals/CheckboxInput Disabled 1`] = `
+exports[`Storybook Tests > react/internals/CheckboxInput > Disabled 1`] = `
 <div
   data-dark={false}
 >
@@ -39,7 +39,7 @@ exports[`Storybook Tests react/internals/CheckboxInput Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/internals/CheckboxInput Invalid 1`] = `
+exports[`Storybook Tests > react/internals/CheckboxInput > Invalid 1`] = `
 <div
   data-dark={false}
 >
@@ -53,13 +53,13 @@ exports[`Storybook Tests react/internals/CheckboxInput Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/internals/CheckboxInput Rounded 1`] = `
+exports[`Storybook Tests > react/internals/CheckboxInput > Rounded 1`] = `
 <div
   data-dark={false}
 >
   <div
     style={
-      {
+      Object {
         "backgroundColor": "var(--charcoal-background2)",
         "padding": 8,
       }

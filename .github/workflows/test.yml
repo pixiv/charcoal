@@ -50,7 +50,11 @@ jobs:
           cache: yarn
 
       - run: yarn install --immutable --inline-builds
-      - run: yarn lint
+      - run: |
+          yarn lint:eslint
+          yarn lint:prettier
+          # v4.0.0 になったら有効化する
+          # yarn lint:styleilnt
 
   typecheck:
     runs-on: ubuntu-latest
