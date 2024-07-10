@@ -1,3 +1,4 @@
+// @ts-nocheck
 import themeDecorator from './theme-decorator'
 import { DocsContainer } from './docs-container'
 
