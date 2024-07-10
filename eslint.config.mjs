@@ -143,7 +143,6 @@ const config = [
     languageOptions: {
       globals: {
         ...globals.node,
-        ...globals.jest,
       },
     },
     plugins: {

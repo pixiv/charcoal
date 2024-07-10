@@ -21,7 +21,6 @@
     "**/*.config.js",
     "**/*.config.ts",
     "misc/*.mjs",
-    "jest.setup.ts",
     "**/.*.cjs",
     "**/.*.js",
     "__mocks__/*.ts",
