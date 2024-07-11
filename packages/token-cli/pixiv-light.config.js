@@ -1,29 +1,31 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { transformer } = require('./src/transformer')
+const { nameTransformer } = require('./src/transformer')
 
-/** @type { import('style-dictionary') } */
+/** @type { import('style-dictionary').Config } */
 module.exports = {
   source: ['tokens/base.json', 'tokens/pixiv-light.json'],
   transform: {
-    'name/cti/kebab': {
+    'charcoal/kebab': {
       type: 'name',
-      transformer: transformer,
+      transformer: nameTransformer,
     },
   },
   platforms: {
     css: {
+      transforms: ['charcoal/kebab'],
       transformGroup: 'css',
       buildPath: 'build/css/',
-      prefix: 'charcoal',
       files: [
         {
           destination: '_variables_light.css',
           format: 'css/variables',
+          options: {
+            selector:
+              ":root[data-color-scheme='light'], :root:not([data-color-scheme])",
+            outputReferences: true,
+          },
         },
       ],
-      options: {
-        outputReferences: true,
-      },
     },
   },
 }

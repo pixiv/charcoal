@@ -2,8 +2,8 @@
  * @param {import('style-dictionary').TransformedToken} token
  * @return {string}
  */
-const transformer = (token) => {
-  return token.path
+const nameTransformer = (token) => {
+  const name = token.path
     .join('-')
     .replace(/(.)([A-Z])/g, '$1-$2')
     .replace(/([A-Z])([A-Z])/g, '$1-$2')
@@ -11,8 +11,10 @@ const transformer = (token) => {
     .replaceAll('/', '-')
     .replaceAll(' ', '-')
     .replace(/(--)(\D)/g, '-$2')
+
+  return `charcoal-${name}`
 }
 
 module.exports = {
-  transformer,
+  nameTransformer,
 }
