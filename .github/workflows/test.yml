@@ -31,7 +31,6 @@ jobs:
           cache: yarn
 
       - run: yarn install --immutable --inline-builds
-      - run: yarn build
       - run: yarn test
         env:
           CI: 'true'
