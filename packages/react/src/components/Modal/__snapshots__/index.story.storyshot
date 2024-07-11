@@ -123,65 +123,6 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
   margin-left: auto;
 }
 
-.c27 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c27[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus-visible,
-.c27[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:disabled,
-.c27[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -374,6 +315,65 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
 
 .c26:disabled,
 .c26[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c27 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c27:not(:disabled):not([aria-disabled]):hover,
+.c27[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c27:not(:disabled):not([aria-disabled]):active,
+.c27[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus,
+.c27[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c27[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus-visible,
+.c27[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:disabled,
+.c27[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -995,65 +995,6 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
   padding: 0;
 }
 
-.c19 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c19:not(:disabled):not([aria-disabled]):hover,
-.c19[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c19:not(:disabled):not([aria-disabled]):active,
-.c19[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus,
-.c19[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c19[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c19:not(:disabled):not([aria-disabled]):focus-visible,
-.c19[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c19:disabled,
-.c19[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -1246,6 +1187,65 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
 
 .c18:disabled,
 .c18[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c19 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c19:not(:disabled):not([aria-disabled]):hover,
+.c19[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c19:not(:disabled):not([aria-disabled]):active,
+.c19[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c19:not(:disabled):not([aria-disabled]):focus,
+.c19[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c19:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c19[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c19:not(:disabled):not([aria-disabled]):focus-visible,
+.c19[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c19:disabled,
+.c19[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -1784,65 +1784,6 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
   margin-left: auto;
 }
 
-.c27 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c27:not(:disabled):not([aria-disabled]):hover,
-.c27[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c27:not(:disabled):not([aria-disabled]):active,
-.c27[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus,
-.c27[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c27[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c27:not(:disabled):not([aria-disabled]):focus-visible,
-.c27[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c27:disabled,
-.c27[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -2035,6 +1976,65 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
 
 .c26:disabled,
 .c26[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c27 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c27:not(:disabled):not([aria-disabled]):hover,
+.c27[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c27:not(:disabled):not([aria-disabled]):active,
+.c27[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus,
+.c27[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c27[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c27:not(:disabled):not([aria-disabled]):focus-visible,
+.c27[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c27:disabled,
+.c27[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
@@ -2732,65 +2732,6 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
   margin-left: auto;
 }
 
-.c22 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c22:not(:disabled):not([aria-disabled]):hover,
-.c22[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-  background-color: var(--charcoal-transparent-hover);
-}
-
-.c22:not(:disabled):not([aria-disabled]):active,
-.c22[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-  background-color: var(--charcoal-transparent-press);
-}
-
-.c22:not(:disabled):not([aria-disabled]):focus,
-.c22[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c22:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c22[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c22:not(:disabled):not([aria-disabled]):focus-visible,
-.c22[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c22:disabled,
-.c22[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-}
-
 .c1 {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -2983,6 +2924,65 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
 
 .c21:disabled,
 .c21[aria-disabled]:not([aria-disabled='false']) {
+  opacity: 0.32;
+}
+
+.c22 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--charcoal-text3);
+  background-color: var(--charcoal-transparent);
+  border-radius: 999999px;
+  -webkit-transition: 0.2s background-color,0.2s box-shadow;
+  transition: 0.2s background-color,0.2s box-shadow;
+}
+
+.c22:not(:disabled):not([aria-disabled]):hover,
+.c22[aria-disabled='false']:hover {
+  color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-transparent-hover);
+}
+
+.c22:not(:disabled):not([aria-disabled]):active,
+.c22[aria-disabled='false']:active {
+  color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-transparent-press);
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus,
+.c22[aria-disabled='false']:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+.c22[aria-disabled='false']:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.c22:not(:disabled):not([aria-disabled]):focus-visible,
+.c22[aria-disabled='false']:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+}
+
+.c22:disabled,
+.c22[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
 }
 
