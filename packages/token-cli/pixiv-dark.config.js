@@ -20,7 +20,7 @@ module.exports = {
           destination: '_variables_dark.css',
           format: 'css/variables',
           options: {
-            selector: ":root[data-color-scheme='dark']",
+            selector: ":root[data-theme='dark']",
             outputReferences: true,
           },
         },
