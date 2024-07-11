@@ -20,5 +20,15 @@ export default defineConfig({
         ),
       },
     ],
+    server: {
+      deps: {
+        inline: [
+          /@react-aria\/(.*)/,
+          /@react-stately\/(.*)/,
+          /react-stately/,
+          /@charcoal-ui\/(.*)/,
+        ]
+      }
+    }
   },
 })
