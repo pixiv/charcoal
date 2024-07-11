@@ -27,8 +27,8 @@ export default defineConfig({
           /@react-stately\/(.*)/,
           /react-stately/,
           /@charcoal-ui\/(.*)/,
-        ]
-      }
-    }
+        ],
+      },
+    },
   },
 })
