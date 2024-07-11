@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/MultiSelect Basic 1`] = `
+exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -260,7 +260,7 @@ exports[`Storybook Tests react/MultiSelect Basic 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/MultiSelect Invalid 1`] = `
+exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -525,7 +525,7 @@ exports[`Storybook Tests react/MultiSelect Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/MultiSelect Overlay 1`] = `
+exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -789,7 +789,7 @@ exports[`Storybook Tests react/MultiSelect Overlay 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/MultiSelect Playground 1`] = `
+exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
 .c1 {
   display: grid;
   grid-template-columns: auto 1fr;

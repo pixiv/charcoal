@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import { default as MultiSelect, MultiSelectGroup } from '.'
 import { light } from '@charcoal-ui/theme'
+import { vi } from 'vitest'
 
 describe('MultiSelect', () => {
   describe('in development mode', () => {
@@ -12,7 +13,7 @@ describe('MultiSelect', () => {
     describe('when `<MultiSelect />` is used without `<MultiSelectGroup />`', () => {
       beforeEach(() => {
         // eslint-disable-next-line no-console
-        console.error = jest.fn()
+        console.error = vi.fn()
 
         render(
           <ThemeProvider theme={light}>
@@ -38,8 +39,8 @@ describe('MultiSelect', () => {
     let option3: HTMLInputElement
     let allOptions: HTMLInputElement[]
     let parent: HTMLDivElement
-    const childOnChange = jest.fn()
-    const parentOnChange = jest.fn()
+    const childOnChange = vi.fn()
+    const parentOnChange = vi.fn()
 
     beforeEach(() => {
       render(
@@ -89,8 +90,8 @@ describe('MultiSelect', () => {
     let option1: HTMLInputElement
     let option2: HTMLInputElement
     let option3: HTMLInputElement
-    const childOnChange = jest.fn()
-    const parentOnChange = jest.fn()
+    const childOnChange = vi.fn()
+    const parentOnChange = vi.fn()
 
     beforeEach(() => {
       render(

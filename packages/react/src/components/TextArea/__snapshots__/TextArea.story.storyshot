@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
+exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -229,7 +229,7 @@ exports[`Storybook Tests react/TextArea AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
+exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -445,7 +445,7 @@ exports[`Storybook Tests react/TextArea AutoHeight 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea Default 1`] = `
+exports[`Storybook Tests > react/TextArea > Default 1`] = `
 .c6 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -707,7 +707,7 @@ exports[`Storybook Tests react/TextArea Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea Disabled 1`] = `
+exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -925,7 +925,7 @@ exports[`Storybook Tests react/TextArea Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea Invalid 1`] = `
+exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1156,7 +1156,7 @@ exports[`Storybook Tests react/TextArea Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea Label 1`] = `
+exports[`Storybook Tests > react/TextArea > Label 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1358,7 +1358,7 @@ exports[`Storybook Tests react/TextArea Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea Placeholder 1`] = `
+exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1575,7 +1575,7 @@ exports[`Storybook Tests react/TextArea Placeholder 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
+exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1791,7 +1791,7 @@ exports[`Storybook Tests react/TextArea ReadOnly 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea Required 1`] = `
+exports[`Storybook Tests > react/TextArea > Required 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2040,7 +2040,7 @@ exports[`Storybook Tests react/TextArea Required 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea ShowCount 1`] = `
+exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2271,7 +2271,7 @@ exports[`Storybook Tests react/TextArea ShowCount 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/TextArea SubLabel 1`] = `
+exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
 .c6 {
   cursor: pointer;
   -webkit-appearance: none;

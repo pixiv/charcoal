@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > AssistiveText 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -186,7 +186,7 @@ exports[`Storybook Tests react/DropdownSelector AssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > CustomChildren 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -351,7 +351,7 @@ exports[`Storybook Tests react/DropdownSelector CustomChildren 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector Default 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -508,7 +508,7 @@ exports[`Storybook Tests react/DropdownSelector Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > Disabled 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -667,7 +667,7 @@ exports[`Storybook Tests react/DropdownSelector Disabled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > DisabledItem 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -835,7 +835,7 @@ exports[`Storybook Tests react/DropdownSelector DisabledItem 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > InFormTag 1`] = `
 .c4 {
   cursor: pointer;
   -webkit-appearance: none;
@@ -1110,7 +1110,7 @@ exports[`Storybook Tests react/DropdownSelector InFormTag 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector InModal 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > InModal 1`] = `
 <div
   data-dark={false}
 >
@@ -1130,7 +1130,7 @@ exports[`Storybook Tests react/DropdownSelector InModal 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > Invalid 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -1292,7 +1292,7 @@ exports[`Storybook Tests react/DropdownSelector Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > InvalidAssistiveText 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -1484,7 +1484,7 @@ exports[`Storybook Tests react/DropdownSelector InvalidAssistiveText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector Label 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > Label 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -1744,7 +1744,7 @@ exports[`Storybook Tests react/DropdownSelector Label 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > LongNames 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -1901,7 +1901,7 @@ exports[`Storybook Tests react/DropdownSelector LongNames 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > RequiredText 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2198,7 +2198,7 @@ exports[`Storybook Tests react/DropdownSelector RequiredText 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector Section 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > Section 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
@@ -2370,7 +2370,7 @@ exports[`Storybook Tests react/DropdownSelector Section 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/DropdownSelector SubLabel 1`] = `
+exports[`Storybook Tests > react/DropdownSelector > SubLabel 1`] = `
 .c3 {
   font-size: 14px;
   line-height: 22px;

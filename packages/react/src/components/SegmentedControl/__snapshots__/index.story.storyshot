@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > ObjectSegments 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -259,7 +259,7 @@ exports[`Storybook Tests react/SegmentedControl ObjectSegments 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/SegmentedControl StringSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > StringSegments 1`] = `
 .c0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

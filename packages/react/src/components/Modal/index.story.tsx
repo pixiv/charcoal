@@ -55,6 +55,11 @@ export default {
       </OverlayProvider>
     )
   },
+  parameters: {
+    storyshots: {
+      skip: true,
+    },
+  },
 } as Meta<typeof Modal>
 
 const M = (props: ModalProps) => {

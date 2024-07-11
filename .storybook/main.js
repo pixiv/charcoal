@@ -51,6 +51,13 @@ module.exports = {
   ],
 
   async webpackFinal(config, { configType }) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      react: getAbsolutePath('react'),
+      'react-dom': getAbsolutePath('react-dom'),
+      '@storybook/react-dom-shim': '@storybook/react-dom-shim',
+    }
+
     if (configType === 'PRODUCTION') {
       return config
     }

@@ -118,6 +118,7 @@ const config = [
       'packages/tailwind-diff/bin/tailwind-diff.js',
       'packages/icon-files/src/',
       'eslint.config.mjs',
+      'vitest.*',
       '.storybook',
     ],
   },
@@ -142,7 +143,6 @@ const config = [
     languageOptions: {
       globals: {
         ...globals.node,
-        ...globals.jest,
       },
     },
     plugins: {
