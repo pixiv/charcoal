@@ -1,8 +1,8 @@
 import { beforeAll, vi } from 'vitest'
-import type { ReactPortal } from 'react'
 import { setProjectAnnotations } from '@storybook/react'
-
 import * as projectAnnotations from './.storybook/preview'
+
+import type { ReactPortal } from 'react'
 
 setProjectAnnotations(projectAnnotations)
 

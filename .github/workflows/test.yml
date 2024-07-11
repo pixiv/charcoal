@@ -34,9 +34,7 @@ jobs:
       - run: yarn install --immutable --inline-builds
       - run: yarn build
       - name: Test
-        run: |
-          yarn test
-          yarn snapshot
+        run: yarn test
         env:
           CI: 'true'
 
@@ -50,11 +48,7 @@ jobs:
           cache: yarn
 
       - run: yarn install --immutable --inline-builds
-      - run: |
-          yarn lint:eslint
-          yarn lint:prettier
-          # v4.0.0 になったら有効化する
-          # yarn lint:styleilnt
+      - run: yarn lint
 
   typecheck:
     runs-on: ubuntu-latest

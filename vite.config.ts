@@ -11,7 +11,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
     alias: {
-      '^@charcoal-ui/(.*)$': path.resolve(__dirname, '../$1/src'),
+      '^@charcoal-ui/(.*)$': path.resolve(__dirname, 'packages/$1/src'),
     },
   },
 })
