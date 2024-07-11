@@ -15,5 +15,4 @@ LICENSE
 /packages/token-cli/build/
 /packages/token-cli/tokens/
 /packages/token-cli/out/
-/packages/theme/src/json/
 /packages/theme/src/css/
