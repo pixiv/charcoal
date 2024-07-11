@@ -20,8 +20,7 @@ module.exports = {
           destination: '_variables_light.css',
           format: 'css/variables',
           options: {
-            selector:
-              ":root[data-color-scheme='light'], :root:not([data-color-scheme])",
+            selector: ":root[data-theme='light'], :root:not([data-theme])",
             outputReferences: true,
           },
         },
