@@ -446,6 +446,44 @@ exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > Default 1`] = `
+.c6 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -528,44 +566,6 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
 
 .c1 > .c4 {
   margin-left: auto;
-}
-
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
 }
 
 .c2 {
@@ -2272,6 +2272,44 @@ exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
+.c6 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c6:disabled,
+.c6[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+.c6::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 .c3 {
   font-size: 14px;
   line-height: 22px;
@@ -2354,44 +2392,6 @@ exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
 
 .c1 > .c4 {
   margin-left: auto;
-}
-
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
 }
 
 .c2 {

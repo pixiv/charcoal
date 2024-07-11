@@ -1,6 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 .c14 {
   font-size: 14px;
   line-height: 22px;
@@ -83,44 +121,6 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
 
 .c12 > .c15 {
   margin-left: auto;
-}
-
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
 }
 
 .c27 {
@@ -1662,6 +1662,44 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests > react/Modal > Default 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 .c14 {
   font-size: 14px;
   line-height: 22px;
@@ -1744,44 +1782,6 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
 
 .c12 > .c15 {
   margin-left: auto;
-}
-
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
 }
 
 .c27 {
@@ -2610,6 +2610,44 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
 `;
 
 exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
+.c0 {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+.c0:disabled,
+.c0[aria-disabled]:not([aria-disabled=false]) {
+  cursor: default;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c0::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
 .c14 {
   font-size: 14px;
   line-height: 22px;
@@ -2692,44 +2730,6 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
 
 .c12 > .c15 {
   margin-left: auto;
-}
-
-.c0 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
 }
 
 .c22 {
