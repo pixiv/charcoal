@@ -6,8 +6,11 @@ export default defineConfig({
   test: {
     globals: true,
     setupFiles: ['../../vitest.setup.ts'],
-    alias: {
-      '^@charcoal-ui/(.*)$': path.resolve(__dirname, '../$1/src'),
-    },
+    alias: [
+      {
+        find: /@charcoal-ui\/(.*)/,
+        replacement: path.join(path.resolve(__dirname, '..'), '$1', 'src'),
+      },
+    ],
   },
 })
