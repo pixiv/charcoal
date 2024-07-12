@@ -1,9 +1,10 @@
 // import { loaders } from './loaders'
 import { PixivIcon } from '.'
+import { vi } from 'vitest'
 
 describe('PixivIcon', () => {
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   let icon: PixivIcon

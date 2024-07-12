@@ -6,7 +6,7 @@ export function createDefer() {
   }
 
   const dispose = () => {
-    // eslint-disable-next-line no-constant-condition, @typescript-eslint/no-unnecessary-condition
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     while (true) {
       const deferFn = defers.pop()
       if (deferFn == null) {

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Story <Example /> 1`] = `
+exports[`Story > <Example /> 1`] = `
 .c0 {
   gap: 40px;
   color: #1f1f1f;
@@ -168,7 +168,7 @@ exports[`Story <Example /> 1`] = `
 </div>
 `;
 
-exports[`ThemeUtilsTest <ThemeUtilsTest /> 1`] = `
+exports[`ThemeUtilsTest > <ThemeUtilsTest /> 1`] = `
 .c0 {
   margin: 0px;
   margin: 0px auto;
