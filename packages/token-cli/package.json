@@ -2,7 +2,7 @@
   "name": "@charcoal-ui/token-cli",
   "bin": "./dist/index.js",
   "type": "commonjs",
-  "version": "4.0.0-beta.11",
+  "version": "4.0.0-beta.12",
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
