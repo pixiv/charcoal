@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/internals/ListItem Basic 1`] = `
+exports[`Storybook Tests > react/internals/ListItem > Basic 1`] = `
 <div
   data-dark={false}
 >
@@ -27,7 +27,7 @@ exports[`Storybook Tests react/internals/ListItem Basic 1`] = `
     className="charcoal-list-item"
     href="#"
     style={
-      {
+      Object {
         "color": "red",
       }
     }
@@ -41,7 +41,7 @@ exports[`Storybook Tests react/internals/ListItem Basic 1`] = `
     Switch
     <div
       style={
-        {
+        Object {
           "marginLeft": "auto",
         }
       }

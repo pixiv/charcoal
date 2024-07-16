@@ -108,7 +108,6 @@ export function createTailwindConfig({
     ...getVariantOption(version),
 
     corePlugins: {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error 配列にしろと言ってくるが、たぶん @types が間違っている
       lineHeight: false,
     },

@@ -10,6 +10,7 @@ import {
 } from './ModalPlumbing'
 import TextField from '../TextField'
 import DropdownSelector from '../DropdownSelector'
+import Checkbox from '../Checkbox'
 import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 import { Meta, StoryObj } from '@storybook/react'
 
@@ -121,7 +122,8 @@ const StyledModalText = (props: Omit<React.ComponentProps<'div'>, 'style'>) => {
     <div
       style={{
         fontSize: 14,
-        lineHeight: 22,
+        lineHeight: '22px',
+        padding: '0 16px',
         color: 'var(--charcoal-text2)',
       }}
       {...props}
@@ -215,6 +217,7 @@ export const BottomSheet: StoryObj<typeof Modal> = {
               </StyledModalText>
             </ModalVStack>
             <ModalButtons>
+              <Checkbox checked>test checkbox</Checkbox>
               <Button variant="Danger" onClick={() => state.close()} fullWidth>
                 削除する
               </Button>

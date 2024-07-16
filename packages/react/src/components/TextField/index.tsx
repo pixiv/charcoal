@@ -26,7 +26,7 @@ export type TextFieldProps = {
   requiredText?: string
   disabled?: boolean
   subLabel?: React.ReactNode
-  rdfaPredix?: string
+  rdfaPrefix?: string
 
   getCount?: (value: string) => number
 } & Omit<React.ComponentPropsWithoutRef<'input'>, 'prefix' | 'onChange'>

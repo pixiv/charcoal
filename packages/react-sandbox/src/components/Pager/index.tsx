@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import warning from 'warning'
 import DotsIcon from '../icons/DotsIcon'
 import WedgeIcon, { WedgeDirection } from '../icons/WedgeIcon'
-import { useComponentAbstraction } from '@charcoal-ui/react'
+import { useComponentAbstraction } from '../../_lib/ComponentAbstraction'
 
 function usePagerWindow(
   page: number,

@@ -37,10 +37,13 @@ function getAllStoryFiles() {
     .sync(path.join(__dirname, globPatterns))
     .filter((filePath) => !ignorePatterns.test(filePath))
 
-  return storyFiles.map((filePath) => {
-    const storyFile = require(filePath)
-    return { filePath, storyFile }
-  })
+  return Promise.all(
+    storyFiles.map(async (filePath) => {
+      const storyFile = await import(filePath)
+
+      return { filePath, storyFile }
+    })
+  )
 }
 
 // Recreate similar options to Storyshots. Place your configuration below
@@ -52,8 +55,9 @@ const options = {
   snapshotExtension: 'storyshot',
 }
 
-describe(options.suite, () => {
-  getAllStoryFiles().forEach(({ storyFile, filePath }) => {
+describe(options.suite, async () => {
+  const files = await getAllStoryFiles()
+  files.forEach(({ storyFile, filePath }) => {
     const meta = storyFile.default
     const title = meta.title || filePath
     const dir = path.join(path.dirname(filePath), options.snapshotsDirName)

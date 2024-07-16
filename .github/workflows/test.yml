@@ -34,9 +34,7 @@ jobs:
       - run: yarn install --immutable --inline-builds
       - run: yarn build
       - name: Test
-        run: |
-          yarn test
-          yarn snapshot
+        run: yarn test
         env:
           CI: 'true'
 

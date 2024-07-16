@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
+exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
 <div
   data-dark={false}
 >
@@ -10,7 +10,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
   >
     <div
       style={
-        {
+        Object {
           "height": 1024,
         }
       }
@@ -28,7 +28,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
-        {
+        Object {
           "zIndex": 10,
         }
       }
@@ -36,9 +36,10 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={false}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
-        style={{}}
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -56,7 +57,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
         >
           <div
             style={
-              {
+              Object {
                 "display": "grid",
                 "gap": 24,
               }
@@ -64,10 +65,11 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
           >
             <div
               style={
-                {
+                Object {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -178,7 +180,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
                 <div
                   aria-hidden="true"
                   style={
-                    {
+                    Object {
                       "border": 0,
                       "clip": "rect(0 0 0 0)",
                       "clipPath": "inset(50%)",
@@ -274,7 +276,7 @@ exports[`Storybook Tests react/Modal BackgroundScroll 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal BottomSheet 1`] = `
+exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
 <div
   data-dark={false}
 >
@@ -294,7 +296,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
-        {
+        Object {
           "zIndex": 10,
         }
       }
@@ -302,9 +304,10 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={true}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
-        style={{}}
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -322,7 +325,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
         >
           <div
             style={
-              {
+              Object {
                 "display": "grid",
                 "gap": 24,
               }
@@ -330,10 +333,11 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
           >
             <div
               style={
-                {
+                Object {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -343,6 +347,23 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
           <div
             className="charcoal-modal-buttons"
           >
+            <label
+              className="charcoal-checkbox__label"
+              htmlFor="test-id"
+            >
+              <input
+                checked={true}
+                className="charcoal-checkbox-input"
+                id="test-id"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <div
+                className="charcoal-checkbox__label_div"
+              >
+                test checkbox
+              </div>
+            </label>
             <button
               className="charcoal-button"
               data-full-width={true}
@@ -379,7 +400,7 @@ exports[`Storybook Tests react/Modal BottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal Default 1`] = `
+exports[`Storybook Tests > react/Modal > Default 1`] = `
 <div
   data-dark={false}
 >
@@ -399,7 +420,7 @@ exports[`Storybook Tests react/Modal Default 1`] = `
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
-        {
+        Object {
           "zIndex": 10,
         }
       }
@@ -407,9 +428,10 @@ exports[`Storybook Tests react/Modal Default 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={false}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
-        style={{}}
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -427,7 +449,7 @@ exports[`Storybook Tests react/Modal Default 1`] = `
         >
           <div
             style={
-              {
+              Object {
                 "display": "grid",
                 "gap": 24,
               }
@@ -435,10 +457,11 @@ exports[`Storybook Tests react/Modal Default 1`] = `
           >
             <div
               style={
-                {
+                Object {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -549,7 +572,7 @@ exports[`Storybook Tests react/Modal Default 1`] = `
                 <div
                   aria-hidden="true"
                   style={
-                    {
+                    Object {
                       "border": 0,
                       "clip": "rect(0 0 0 0)",
                       "clipPath": "inset(50%)",
@@ -645,7 +668,7 @@ exports[`Storybook Tests react/Modal Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
+exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
 <div
   data-dark={false}
 >
@@ -665,7 +688,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
-        {
+        Object {
           "zIndex": 10,
         }
       }
@@ -673,9 +696,10 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet="full"
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
-        style={{}}
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -693,7 +717,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
         >
           <div
             style={
-              {
+              Object {
                 "display": "grid",
                 "gap": 24,
               }
@@ -701,10 +725,11 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
           >
             <div
               style={
-                {
+                Object {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16px",
                 }
               }
             >
@@ -830,7 +855,7 @@ exports[`Storybook Tests react/Modal FullBottomSheet 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
+exports[`Storybook Tests > react/Modal > NotDismmissableStory 1`] = `
 <div
   data-dark={false}
 >
@@ -850,7 +875,7 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
       onClick={[Function]}
       onPointerDown={[Function]}
       style={
-        {
+        Object {
           "zIndex": 10,
         }
       }
@@ -858,9 +883,10 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
       <div
         className="charcoal-modal-dialog"
         data-bottom-sheet={false}
+        data-size="M"
         onKeyDown={[Function]}
         role="dialog"
-        style={{}}
+        style={Object {}}
         tabIndex={-1}
       >
         <div
@@ -878,7 +904,7 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
         >
           <div
             style={
-              {
+              Object {
                 "display": "grid",
                 "gap": 24,
               }
@@ -886,10 +912,11 @@ exports[`Storybook Tests react/Modal NotDismmissableStory 1`] = `
           >
             <div
               style={
-                {
+                Object {
                   "color": "var(--charcoal-text2)",
                   "fontSize": 14,
-                  "lineHeight": 22,
+                  "lineHeight": "22px",
+                  "padding": "0 16px",
                 }
               }
             >
