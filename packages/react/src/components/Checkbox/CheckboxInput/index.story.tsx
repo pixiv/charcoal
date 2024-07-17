@@ -44,7 +44,7 @@ export const Rounded: StoryObj<typeof CheckboxInput> = {
       <div
         style={{
           padding: 8,
-          backgroundColor: 'var(--charcoal-color-background2)',
+          backgroundColor: 'var(--charcoal-color-background-secondary)',
         }}
       >
         <CheckboxInput checked={checked} onChange={setChecked} rounded />

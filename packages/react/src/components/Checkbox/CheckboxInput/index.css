@@ -36,7 +36,7 @@
 .charcoal-checkbox-input:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--charcoal-color-text4);
+  border-color: var(--charcoal-color-border-default);
 }
 
 .charcoal-checkbox-input:not(:disabled):focus {
