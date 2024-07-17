@@ -84,7 +84,7 @@
 }
 
 .charcoal-button[data-variant='Navigation'] {
-  color: var(--charcoal-color-text-on-primary-default);
+  color: var(--charcoal-color-text-on-h-u-d-default);
   background-color: var(--charcoal-color-container-h-u-d-default);
 }
 
@@ -100,18 +100,18 @@
 }
 
 .charcoal-button[data-variant='Danger'] {
-  color: var(--charcoal-color-text-on-primary-default);
-  background-color: var(--charcoal-color-container-discovery-default);
+  color: var(--charcoal-color-text-on-negative-default);
+  background-color: var(--charcoal-color-container-negative-default);
 }
 .charcoal-button[data-variant='Danger']:hover:not(:disabled) {
-  color: var(--charcoal-color-text-on-primary-hover);
-  background-color: var(--charcoal-color-container-discovery-hover);
+  color: var(--charcoal-color-text-on-negative-hover);
+  background-color: var(--charcoal-color-container-negative-hover);
 }
 
 .charcoal-button[data-variant='Danger']:active:not(:disabled),
 .charcoal-button[data-variant='Danger'][data-active='true'] {
-  color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-discovery-press);
+  color: var(--charcoal-color-text-on-negative-press);
+  background-color: var(--charcoal-color-container-negative-press);
 }
 
 .charcoal-button[data-size='S'] {
