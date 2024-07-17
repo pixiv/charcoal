@@ -1,8 +1,12 @@
-import { useLayoutEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useDarkMode } from 'storybook-dark-mode'
 import { light, dark } from '@charcoal-ui/theme'
-import { TokenInjector, themeSelector, themeSetter } from '@charcoal-ui/styled'
+import { themeSetter } from '@charcoal-ui/styled'
+
+//
+import '../packages/theme/src/css/_variables_dark.css'
+import '../packages/theme/src/css/_variables_light.css'
 
 const setter = themeSetter()
 
@@ -20,14 +24,6 @@ const Theme = ({ children }) => {
   return (
     <ThemeProvider theme={isDarkMode ? dark : light}>
       <div data-dark={isDarkMode}>{children}</div>
-      <TokenInjector
-        theme={{
-          ':root': light,
-          [themeSelector('dark')]: dark,
-          [themeSelector('light')]: light,
-        }}
-        background="background1"
-      ></TokenInjector>
     </ThemeProvider>
   )
 }
