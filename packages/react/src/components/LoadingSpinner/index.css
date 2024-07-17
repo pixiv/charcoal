@@ -1,17 +1,17 @@
 .charcoal-loading-spinner {
   box-sizing: content-box;
   margin: auto;
-  padding: var(--charcoal-loading-spinner-padding);
+  padding: var(--charcoal-color-loading-spinner-padding);
   border-radius: 8px;
-  font-size: var(--charcoal-loading-spinner-size);
-  width: var(--charcoal-loading-spinner-size);
-  height: var(--charcoal-loading-spinner-size);
+  font-size: var(--charcoal-color-loading-spinner-size);
+  width: var(--charcoal-color-loading-spinner-size);
+  height: var(--charcoal-color-loading-spinner-size);
   opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-background1);
+  color: var(--charcoal-color-text4);
+  background-color: var(--charcoal-color-background1);
 }
 .charcoal-loading-spinner[data-transparent='true'] {
-  background-color: var(--charcoal-transparent);
+  background-color: var(--charcoal-color-transparent);
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {

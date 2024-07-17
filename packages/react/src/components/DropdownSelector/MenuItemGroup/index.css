@@ -4,7 +4,7 @@
 
 .charcoal-menu-item-group > span {
   display: block;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text3);
   font-size: 12px;
   font-weight: bold;
   padding: 12px 0 8px 16px;

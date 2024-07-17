@@ -1,5 +1,5 @@
 .charcoal-tag-item {
-  --charcoal-tag-item-color: var(--charcoal-text5);
+  --charcoal-tag-item-color: var(--charcoal-color-text5);
   --charcoal-tag-item-size: 40px;
   --charcoal-tag-item-padding-left: 24px;
   --charcoal-tag-item-padding-right: 24px;
@@ -20,12 +20,12 @@
   cursor: pointer;
   overflow: hidden;
 
-  color: var(--charcoal-tag-item-color);
-  height: var(--charcoal-tag-item-size);
+  color: var(--charcoal-color-tag-item-color);
+  height: var(--charcoal-color-tag-item-size);
   padding-top: 4px;
   padding-bottom: 4px;
-  padding-left: var(--charcoal-tag-item-padding-left);
-  padding-right: var(--charcoal-tag-item-padding-right);
+  padding-left: var(--charcoal-color-tag-item-padding-left);
+  padding-right: var(--charcoal-color-tag-item-padding-right);
   box-sizing: border-box;
   border-radius: 4px;
 
@@ -43,7 +43,7 @@
   --charcoal-tag-item-padding-right: 16px;
 }
 .charcoal-tag-item[data-state='inactive'] {
-  --charcoal-tag-item-color: var(--charcoal-text2);
+  --charcoal-tag-item-color: var(--charcoal-color-text2);
 }
 .charcoal-tag-item[data-state='active'] {
   --charcoal-tag-item-padding-left: 16px;
@@ -73,11 +73,11 @@
 }
 
 .charcoal-tag-item__bg {
-  background-color: var(--charcoal-tag-item-bg);
+  background-color: var(--charcoal-color-tag-item-bg);
 }
 
 .charcoal-tag-item__bg[data-bg-variant='image'] {
-  background-color: var(--charcoal-surface4);
+  background-color: var(--charcoal-color-surface4);
 }
 
 .charcoal-tag-item__bg[data-bg-variant='image']::before {
@@ -90,12 +90,12 @@
   height: 100%;
   background-position: center;
   background-size: cover;
-  background-image: var(--charcoal-tag-item-bg);
+  background-image: var(--charcoal-color-tag-item-bg);
   mix-blend-mode: overlay;
 }
 
 .charcoal-tag-item__bg[data-state='inactive'] {
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-surface3);
 }
 
 .charcoal-tag-item__label {

@@ -12,11 +12,11 @@
   position: relative;
   overflow: hidden;
 
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-color-text2);
+  background-color: var(--charcoal-color-surface3);
   border-radius: 4px;
   transition: 0.2s background-color, 0.2s box-shadow;
-  height: calc(22px * var(--charcoal-text-area-rows) + 18px);
+  height: calc(22px * var(--charcoal-color-text-area-rows) + 18px);
 }
 
 .charcoal-text-area-container[aria-invalid='true'] {
@@ -29,7 +29,7 @@
 }
 
 .charcoal-text-area-container:not(aria-disabled='true'):hover {
-  background-color: var(--charcoal-surface3-hover);
+  background-color: var(--charcoal-color-surface3-hover);
 }
 
 .charcoal-text-area-container[aria-invalid='true']:focus-within {
@@ -51,7 +51,7 @@
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
   padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20px);
+  height: calc(22px / 0.875 * var(--charcoal-color-text-area-rows) + 20px);
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
@@ -60,11 +60,11 @@
 }
 .charcoal-text-area-textarea[data-no-bottom-padding='true'] {
   padding: calc(9px / 0.875) calc(8px / 0.875) 0;
-  height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 9px);
+  height: calc(22px / 0.875 * (var(--charcoal-color-text-area-rows) - 1) + 9px);
 }
 
 .charcoal-text-area-textarea::placeholder {
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text3);
 }
 
 .charcoal-text-area-counter {
@@ -74,5 +74,5 @@
 
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text3);
 }

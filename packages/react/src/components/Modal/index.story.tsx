@@ -124,7 +124,7 @@ const StyledModalText = (props: Omit<React.ComponentProps<'div'>, 'style'>) => {
         fontSize: 14,
         lineHeight: '22px',
         padding: '0 16px',
-        color: 'var(--charcoal-text2)',
+        color: 'var(--charcoal-color-text2)',
       }}
       {...props}
     />

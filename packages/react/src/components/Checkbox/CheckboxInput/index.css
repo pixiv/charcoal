@@ -18,7 +18,7 @@
 }
 
 .charcoal-checkbox-input:checked {
-  background-color: var(--charcoal-brand);
+  background-color: var(--charcoal-color-brand);
 }
 
 .charcoal-checkbox-input:checked::after {
@@ -36,7 +36,7 @@
 .charcoal-checkbox-input:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--charcoal-text4);
+  border-color: var(--charcoal-color-text4);
 }
 
 .charcoal-checkbox-input:not(:disabled):focus {
@@ -51,10 +51,10 @@
 }
 
 .charcoal-checkbox-input:checked:not(:disabled):hover {
-  background-color: var(--charcoal-brand-hover);
+  background-color: var(--charcoal-color-brand-hover);
 }
 .charcoal-checkbox-input:checked:not(:disabled):active {
-  background-color: var(--charcoal-brand-press);
+  background-color: var(--charcoal-color-brand-press);
 }
 
 .charcoal-checkbox-input[aria-invalid='true'],
@@ -64,19 +64,19 @@
 
 .charcoal-checkbox-input[data-rounded='true'] {
   border-radius: 10px;
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-surface3);
   border: 2px solid transparent;
 }
 
 .charcoal-checkbox-input[data-rounded='true']:checked {
-  background-color: var(--charcoal-brand);
+  background-color: var(--charcoal-color-brand);
 }
 
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):hover {
-  background-color: var(--charcoal-surface3-hover);
+  background-color: var(--charcoal-color-surface3-hover);
 }
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):active {
-  background-color: var(--charcoal-surface3-press);
+  background-color: var(--charcoal-color-surface3-press);
 }
 
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):focus-visible {
@@ -84,10 +84,10 @@
 }
 
 .charcoal-checkbox-input[data-rounded='true']:checked:not(:disabled):hover {
-  background-color: var(--charcoal-brand-hover);
+  background-color: var(--charcoal-color-brand-hover);
 }
 .charcoal-checkbox-input[data-rounded='true']:checked:not(:disabled):active {
-  background-color: var(--charcoal-brand-press);
+  background-color: var(--charcoal-color-brand-press);
 }
 
 .charcoal-checkbox-input[data-rounded='true'][aria-invalid='true'],

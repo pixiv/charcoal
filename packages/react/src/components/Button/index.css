@@ -24,8 +24,8 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-color-text2);
+  background-color: var(--charcoal-color-surface3);
   transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
   height: 40px;
 }
@@ -41,77 +41,77 @@
 }
 
 .charcoal-button:not(:disabled):hover {
-  color: var(--charcoal-text2-hover);
-  background-color: var(--charcoal-surface3-hover);
+  color: var(--charcoal-color-text2-hover);
+  background-color: var(--charcoal-color-surface3-hover);
 }
 
 .charcoal-button:not(:disabled):active,
 .charcoal-button[data-active='true'] {
-  color: var(--charcoal-text2-press);
-  background-color: var(--charcoal-surface3-press);
+  color: var(--charcoal-color-text2-press);
+  background-color: var(--charcoal-color-surface3-press);
 }
 
 .charcoal-button[data-variant='Primary'] {
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-brand);
+  color: var(--charcoal-color-text5);
+  background-color: var(--charcoal-color-brand);
 }
 
 .charcoal-button[data-variant='Primary']:hover:not(:disabled) {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-brand-hover);
+  color: var(--charcoal-color-text5-hover);
+  background-color: var(--charcoal-color-brand-hover);
 }
 
 .charcoal-button[data-variant='Primary']:active:not(:disabled),
 .charcoal-button[data-variant='Primary'][data-active='true'] {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-brand-press);
+  color: var(--charcoal-color-text5-press);
+  background-color: var(--charcoal-color-brand-press);
 }
 
 .charcoal-button[data-variant='Overlay'] {
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-surface4);
+  color: var(--charcoal-color-text5);
+  background-color: var(--charcoal-color-surface4);
 }
 
 .charcoal-button[data-variant='Overlay']:hover:not(:disabled) {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-surface4-hover);
+  color: var(--charcoal-color-text5-hover);
+  background-color: var(--charcoal-color-surface4-hover);
 }
 
 .charcoal-button[data-variant='Overlay']:active:not(:disabled),
 .charcoal-button[data-variant='Overlay'][data-active='true'] {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-surface4-press);
+  color: var(--charcoal-color-text5-press);
+  background-color: var(--charcoal-color-surface4-press);
 }
 
 .charcoal-button[data-variant='Navigation'] {
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-surface6);
+  color: var(--charcoal-color-text5);
+  background-color: var(--charcoal-color-surface6);
 }
 
 .charcoal-button[data-variant='Navigation']:hover:not(:disabled) {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-surface6-hover);
+  color: var(--charcoal-color-text5-hover);
+  background-color: var(--charcoal-color-surface6-hover);
 }
 
 .charcoal-button[data-variant='Navigation']:active:not(:disabled),
 .charcoal-button[data-variant='Navigation'][data-active='true'] {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-surface6-press);
+  color: var(--charcoal-color-text5-press);
+  background-color: var(--charcoal-color-surface6-press);
 }
 
 .charcoal-button[data-variant='Danger'] {
-  color: var(--charcoal-text5);
-  background-color: var(--charcoal-assertive);
+  color: var(--charcoal-color-text5);
+  background-color: var(--charcoal-color-assertive);
 }
 .charcoal-button[data-variant='Danger']:hover:not(:disabled) {
-  color: var(--charcoal-text5-hover);
-  background-color: var(--charcoal-assertive-hover);
+  color: var(--charcoal-color-text5-hover);
+  background-color: var(--charcoal-color-assertive-hover);
 }
 
 .charcoal-button[data-variant='Danger']:active:not(:disabled),
 .charcoal-button[data-variant='Danger'][data-active='true'] {
-  color: var(--charcoal-text5-press);
-  background-color: var(--charcoal-assertive-press);
+  color: var(--charcoal-color-text5-press);
+  background-color: var(--charcoal-color-assertive-press);
 }
 
 .charcoal-button[data-size='S'] {

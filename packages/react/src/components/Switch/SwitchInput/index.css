@@ -14,7 +14,7 @@
   border-radius: 16px;
   height: 16px;
   margin: 0;
-  background-color: var(--charcoal-text4);
+  background-color: var(--charcoal-color-text4);
 }
 
 .charcoal-switch-input:disabled,
@@ -34,7 +34,7 @@
   transform: translateX(0);
   transition: transform 0.2s;
   border-radius: 1024px;
-  background-color: var(--charcoal-text5);
+  background-color: var(--charcoal-color-text5);
 }
 
 .charcoal-switch-input:checked::after {
@@ -43,15 +43,15 @@
 }
 
 .charcoal-switch-input:checked {
-  background-color: var(--charcoal-brand);
+  background-color: var(--charcoal-color-brand);
 }
 
 .charcoal-switch-input:not(:disabled):hover {
-  background-color: var(--charcoal-text4-hover);
+  background-color: var(--charcoal-color-text4-hover);
 }
 
 .charcoal-switch-input:not(:disabled):active {
-  background-color: var(--charcoal-text4-press);
+  background-color: var(--charcoal-color-text4-press);
 }
 
 .charcoal-switch-input:not(:disabled):focus {
@@ -66,17 +66,17 @@
 }
 
 .charcoal-switch-input:not(:disabled)::after:hover {
-  background-color: var(--charcoal-text5-hover);
+  background-color: var(--charcoal-color-text5-hover);
 }
 
 .charcoal-switch-input:not(:disabled)::after:active {
-  background-color: var(--charcoal-text5-press);
+  background-color: var(--charcoal-color-text5-press);
 }
 
 .charcoal-switch-input:not(:disabled):checked:hover {
-  background-color: var(--charcoal-brand-hover);
+  background-color: var(--charcoal-color-brand-hover);
 }
 
 .charcoal-switch-input:not(:disabled):checked:active {
-  background-color: var(--charcoal-brand-press);
+  background-color: var(--charcoal-color-brand-press);
 }
