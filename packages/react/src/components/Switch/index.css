@@ -19,5 +19,5 @@
 .charcoal-switch__label_div {
   font-size: 14px;
   line-height: 22px;
-  color: var(--charcoal-color-text2);
+  color: var(--charcoal-color-text-secondary-default);
 }

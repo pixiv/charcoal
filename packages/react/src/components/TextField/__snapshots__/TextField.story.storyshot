@@ -523,7 +523,7 @@ exports[`Storybook Tests > react/TextField > Prefix 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "color": "var(--charcoal-text3)",
+              "color": "var(--charcoal-color-text-tertiary-default)",
               "display": "flex",
             }
           }

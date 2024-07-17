@@ -34,7 +34,7 @@
   transform: translateX(0);
   transition: transform 0.2s;
   border-radius: 1024px;
-  background-color: var(--charcoal-color-text5);
+  background-color: var(--charcoal-color-text-on-primary-default);
 }
 
 .charcoal-switch-input:checked::after {
@@ -43,7 +43,7 @@
 }
 
 .charcoal-switch-input:checked {
-  background-color: var(--charcoal-color-brand);
+  background-color: var(--charcoal-color-container-primary-default);
 }
 
 .charcoal-switch-input:not(:disabled):hover {
@@ -66,17 +66,17 @@
 }
 
 .charcoal-switch-input:not(:disabled)::after:hover {
-  background-color: var(--charcoal-color-text5-hover);
+  background-color: var(--charcoal-color-text-on-primary-hover);
 }
 
 .charcoal-switch-input:not(:disabled)::after:active {
-  background-color: var(--charcoal-color-text5-press);
+  background-color: var(--charcoal-color-text-on-primary-press);
 }
 
 .charcoal-switch-input:not(:disabled):checked:hover {
-  background-color: var(--charcoal-color-brand-hover);
+  background-color: var(--charcoal-color-container-primary-hover);
 }
 
 .charcoal-switch-input:not(:disabled):checked:active {
-  background-color: var(--charcoal-color-brand-press);
+  background-color: var(--charcoal-color-container-primary-press);
 }

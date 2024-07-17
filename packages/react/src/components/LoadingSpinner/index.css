@@ -1,14 +1,17 @@
 .charcoal-loading-spinner {
+  --charcoal-loading-spinner-size: 48px;
+  --charcoal-loading-spinner-padding: 16px;
+
   box-sizing: content-box;
   margin: auto;
-  padding: var(--charcoal-color-loading-spinner-padding);
+  padding: var(--charcoal-loading-spinner-padding);
   border-radius: 8px;
-  font-size: var(--charcoal-color-loading-spinner-size);
-  width: var(--charcoal-color-loading-spinner-size);
-  height: var(--charcoal-color-loading-spinner-size);
+  font-size: var(--charcoal-loading-spinner-size);
+  width: var(--charcoal-loading-spinner-size);
+  height: var(--charcoal-loading-spinner-size);
   opacity: 0.84;
   color: var(--charcoal-color-text4);
-  background-color: var(--charcoal-color-background1);
+  background-color: var(--charcoal-color-background-default);
 }
 .charcoal-loading-spinner[data-transparent='true'] {
   background-color: var(--charcoal-color-transparent);
