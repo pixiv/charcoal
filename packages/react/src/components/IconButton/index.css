@@ -77,28 +77,28 @@
 
 .charcoal-icon-button[data-variant='Overlay'] {
   color: var(--charcoal-color-text-on-primary-default);
-  background-color: var(--charcoal-color-container-neutral-default);
+  background-color: var(--charcoal-color-container-on-img-default);
 }
 .charcoal-icon-button[data-variant='Overlay'][data-active='true']:not(
     :disabled
   ):not([aria-disabled]),
 .charcoal-icon-button[data-variant='Overlay'][data-active='true'][aria-disabled='false'] {
   color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-neutral-press);
+  background-color: var(--charcoal-color-container-on-img-press);
 }
 .charcoal-icon-button[data-variant='Overlay'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):hover,
 .charcoal-icon-button[data-variant='Overlay'][data-active='false'][aria-disabled='false']:hover {
   color: var(--charcoal-color-text-on-primary-hover);
-  background-color: var(--charcoal-color-container-neutral-hover);
+  background-color: var(--charcoal-color-container-on-img-hover);
 }
 .charcoal-icon-button[data-variant='Overlay'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):active,
 .charcoal-icon-button[data-variant='Overlay'][data-active='false'][aria-disabled='false']:active {
   color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-neutral-press);
+  background-color: var(--charcoal-color-container-on-img-press);
 }
 
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus,
