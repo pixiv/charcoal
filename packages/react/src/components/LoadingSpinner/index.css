@@ -13,7 +13,7 @@
   background-color: var(--charcoal-color-background-default);
 }
 .charcoal-loading-spinner[data-transparent='true'] {
-  background-color: var(--charcoal-color-transparent);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {

@@ -51,7 +51,7 @@
 
 .charcoal-icon-button[data-variant='Default'] {
   color: var(--charcoal-color-text-tertiary-default);
-  background-color: var(--charcoal-color-transparent);
+  background-color: rgba(0, 0, 0, 0);
 }
 .charcoal-icon-button[data-variant='Default'][data-active='true']:not(
     :disabled
