@@ -58,21 +58,21 @@
   ):not([aria-disabled]),
 .charcoal-icon-button[data-variant='Default'][data-active='true'][aria-disabled='false'] {
   color: var(--charcoal-color-text-tertiary-press);
-  background-color: var(--charcoal-color-transparent-press);
+  background-color: var(--charcoal-color-container-press-a);
 }
 .charcoal-icon-button[data-variant='Default'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):hover,
 .charcoal-icon-button[data-variant='Default'][data-active='false'][aria-disabled='false']:hover {
   color: var(--charcoal-color-text-tertiary-hover);
-  background-color: var(--charcoal-color-transparent-hover);
+  background-color: var(--charcoal-color-container-hover-a);
 }
 .charcoal-icon-button[data-variant='Default'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):active,
 .charcoal-icon-button[data-variant='Default'][data-active='false'][aria-disabled='false']:active {
   color: var(--charcoal-color-text-tertiary-press);
-  background-color: var(--charcoal-color-transparent-press);
+  background-color: var(--charcoal-color-container-press-a);
 }
 
 .charcoal-icon-button[data-variant='Overlay'] {
