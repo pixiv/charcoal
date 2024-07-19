@@ -14,7 +14,7 @@
   border-radius: 16px;
   height: 16px;
   margin: 0;
-  background-color: var(--charcoal-color-text4);
+  background-color: var(--charcoal-color-container-neutral-default);
 }
 
 .charcoal-switch-input:disabled,
@@ -47,11 +47,11 @@
 }
 
 .charcoal-switch-input:not(:disabled):hover {
-  background-color: var(--charcoal-color-text4-hover);
+  background-color: var(--charcoal-color-container-neutral-hover);
 }
 
 .charcoal-switch-input:not(:disabled):active {
-  background-color: var(--charcoal-color-text4-press);
+  background-color: var(--charcoal-color-container-neutral-press);
 }
 
 .charcoal-switch-input:not(:disabled):focus {
