@@ -19,7 +19,10 @@ const extractUsedVariables = (cssContent: string): string[] => {
 }
 
 const variablesSet = new Set<string>()
-const variableFiles = glob.sync(join(__dirname, '../../theme/src/css/*.css'))
+const variableFiles = [
+  join(__dirname, './index.css'),
+  ...glob.sync(join(__dirname, '../../theme/src/css/*.css')),
+]
 
 for (const file of variableFiles) {
   const content = await readFile(file, 'utf-8')
