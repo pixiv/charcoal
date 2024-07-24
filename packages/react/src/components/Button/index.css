@@ -68,19 +68,19 @@
 }
 
 .charcoal-button[data-variant='Overlay'] {
-  color: var(--charcoal-color-text-on-primary-default);
-  background-color: var(--charcoal-color-container-neutral-default);
+  color: var(--charcoal-color-text-on-on-img-default);
+  background-color: var(--charcoal-color-container-on-img-default);
 }
 
 .charcoal-button[data-variant='Overlay']:hover:not(:disabled) {
-  color: var(--charcoal-color-text-on-primary-hover);
-  background-color: var(--charcoal-color-container-neutral-hover);
+  color: var(--charcoal-color-text-on-on-img-hover);
+  background-color: var(--charcoal-color-container-on-img-hover);
 }
 
 .charcoal-button[data-variant='Overlay']:active:not(:disabled),
 .charcoal-button[data-variant='Overlay'][data-active='true'] {
-  color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-neutral-press);
+  color: var(--charcoal-color-text-on-on-img-press);
+  background-color: var(--charcoal-color-container-on-img-press);
 }
 
 .charcoal-button[data-variant='Navigation'] {
