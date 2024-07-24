@@ -49,11 +49,11 @@
 
 .charcoal-radio-input:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-radio-input:not(:disabled):focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-radio-input:not(:disabled):focus:not(:focus-visible) {
@@ -62,7 +62,7 @@
 
 .charcoal-radio-input:not(:disabled)[aria-invalid='true'],
 .charcoal-radio-input:not(:disabled)[aria-invalid='true']:focus {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
 .charcoal-radio-input:checked:not(:disabled):hover {

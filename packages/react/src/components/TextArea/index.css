@@ -21,12 +21,12 @@
 }
 
 .charcoal-text-area-container[aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
 .charcoal-text-area-container:focus-within {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-text-area-container:not(aria-disabled='true'):hover {
@@ -34,7 +34,7 @@
 }
 
 .charcoal-text-area-container[aria-invalid='true']:focus-within {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
 .charcoal-text-area-textarea {

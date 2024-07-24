@@ -104,11 +104,11 @@
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus,
 .charcoal-icon-button[aria-disabled='false']:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus-visible,
 .charcoal-icon-button[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus:not(
     :focus-visible

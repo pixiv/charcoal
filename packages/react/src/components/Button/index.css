@@ -37,7 +37,7 @@
 
 .charcoal-button:not(:disabled):focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-button:not(:disabled):hover {
