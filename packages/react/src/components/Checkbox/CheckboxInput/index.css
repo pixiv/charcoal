@@ -13,8 +13,8 @@
 
 .charcoal-checkbox-input:disabled,
 .charcoal-checkbox-input[readonly] {
-  opacity: 0.32;
   cursor: default;
+  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-checkbox-input:checked {
