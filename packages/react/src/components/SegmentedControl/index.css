@@ -26,7 +26,8 @@
     [aria-disabled='false']
   ) {
   cursor: default;
-  opacity: 0.32;
+  color: var(--charcoal-color-text-disable);
+  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-segmented-control-radio__label[data-checked='true'] {

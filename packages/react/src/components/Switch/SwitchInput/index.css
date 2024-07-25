@@ -19,8 +19,9 @@
 
 .charcoal-switch-input:disabled,
 .charcoal-switch-input[readonly] {
-  opacity: 0.32;
   cursor: default;
+  color: var(--charcoal-color-text-disable);
+  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-switch-input::after {

@@ -3,19 +3,16 @@
   cursor: pointer;
   display: flex;
   gap: 4px;
+  color: var(--charcoal-color-text-secondary-default);
 }
 
 .charcoal-checkbox__label[aria-disabled='true'] {
   cursor: default;
-  opacity: 0.32;
-}
-
-.charcoal-checkbox__label[aria-disabled='true'] > input {
-  opacity: 1;
+  color: var(--charcoal-color-text-disable);
 }
 
 .charcoal-checkbox__label_div {
-  color: var(--charcoal-color-text-secondary-default);
+  color: inherit;
   font-size: 14px;
   line-height: 20px;
 }

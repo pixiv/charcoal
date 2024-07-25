@@ -53,8 +53,9 @@
 
 .charcoal-tag-item:disabled,
 .charcoal-tag-item[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
   cursor: default;
+  color: var(--charcoal-color-text-disable);
+  background-color: var(--charcoal-color-container-disable);
 }
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus-visible,
 .charcoal-tag-item[aria-disabled='false']:focus-visible {

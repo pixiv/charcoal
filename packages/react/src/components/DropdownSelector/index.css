@@ -7,7 +7,8 @@
 
 .charcoal-dropdown-selector-root[aria-disabled='true'] {
   cursor: default;
-  opacity: 0.32;
+  color: var(--charcoal-color-text-disable);
+  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-dropdown-selector-button {

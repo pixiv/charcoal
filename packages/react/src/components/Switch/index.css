@@ -8,8 +8,9 @@
 }
 
 .charcoal-switch__label[aria-disabled='true'] {
-  opacity: 0.32;
   cursor: default;
+  color: var(--charcoal-color-text-disable);
+  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-switch__label[aria-disabled='true'] > input {

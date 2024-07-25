@@ -26,7 +26,8 @@
 .charcoal-icon-button:disabled,
 .charcoal-icon-button[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
-  opacity: 0.32;
+  color: var(--charcoal-color-text-disable);
+  background-color: var(--charcoal-color-container-disable);
 }
 .charcoal-icon-button:focus {
   outline: none;

@@ -4,10 +4,6 @@
   grid-gap: 4px;
 }
 
-.charcoal-text-field-root[aria-disabled='true'] {
-  opacity: 0.32;
-}
-
 .charcoal-text-field-container {
   display: flex;
   height: 40px;
@@ -22,6 +18,10 @@
 
 .charcoal-text-field-container[data-invalid='true'] {
   box-shadow: var(--charcoal-color-custom-error-effect);
+}
+
+.charcoal-text-field-container[aria-disabled='true'] {
+  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-text-field-container:not([aria-disabled='true']):hover {
@@ -74,6 +74,10 @@
   background: transparent;
 
   color: var(--charcoal-color-text-secondary-default);
+}
+
+.charcoal-text-field-input[aria-disabled='true'] {
+  color: var(--charcoal-color-text-disable);
 }
 
 .charcoal-text-field-input::placeholder {
