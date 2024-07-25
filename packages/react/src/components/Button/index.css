@@ -83,6 +83,13 @@
   background-color: var(--charcoal-color-container-on-img-press);
 }
 
+/*
+ * HUD 要素ではないが、以下の理由で HUD を色として利用する。
+ * 1. UI パッケージであるがゆえにデザインを大幅に変えたくない
+ *   a. このコンポーネントデザインは改善できると思っている
+ * 2. この要素を説明するための Applied Token が存在しないため、例外的に Component Token という位置づけを追加することになる
+ * 改善するとなくなる要素のために新しく Token を追加することは避けたいので、今回は最も近しい Applied Token の HUD を利用することにした。
+ */
 .charcoal-button[data-variant='Navigation'] {
   color: var(--charcoal-color-text-on-h-u-d-default);
   background-color: var(--charcoal-color-container-h-u-d-default);
