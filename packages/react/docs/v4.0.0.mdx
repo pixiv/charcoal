@@ -8,6 +8,78 @@ import { Meta } from '@storybook/addon-docs'
 
 ```css
 :root {
+  --charcoal-background1: var(--charcoal-color-background-default);
+  --charcoal-background1-hover: var(--charcoal-color-background-hover);
+  --charcoal-background1-press: var(--charcoal-color-background-press);
+
+  --charcoal-background2: var(--charcoal-color-background-secondary-default);
+  --charcoal-background2-hover: var(
+    --charcoal-color-background-secondary-hover
+  );
+  --charcoal-background2-press: var(
+    --charcoal-color-background-secondary-press
+  );
+
+  --charcoal-surface1: var(--charcoal-color-container-default);
+  --charcoal-surface1-hover: var(--charcoal-color-container-hover);
+  --charcoal-surface1-press: var(--charcoal-color-container-press);
+
+  --charcoal-surface2: var(--charcoal-color-container-tertiary-default);
+  --charcoal-surface2: var(--charcoal-color-container-tertiary-hover);
+  --charcoal-surface2: var(--charcoal-color-container-tertiary-press);
+
+  --charcoal-surface3: var(--charcoal-color-container-secondary-default);
+  --charcoal-surface3-hover: var(--charcoal-color-container-secondary-hover);
+  --charcoal-surface3-press: var(--charcoal-color-container-secondary-press);
+
+  --charcoal-surface4: var(--charcoal-color-container-neutral-default);
+  --charcoal-surface4-hover: var(--charcoal-color-container-neutral-hover);
+  --charcoal-surface4-press: var(--charcoal-color-container-neutral-press);
+
+  --charcoal-surface6: var(--charcoal-color-container-h-u-d-default);
+  --charcoal-surface6-hover: var(--charcoal-color-container-h-u-d-hover);
+  --charcoal-surface6-press: var(--charcoal-color-container-h-u-d-press);
+
+  --charcoal-surface7: var(--charcoal-color-container-teritary-default);
+  --charcoal-surface7-hover: var(--charcoal-color-container-teritary-hover);
+  --charcoal-surface7-press: var(--charcoal-color-container-teritary-press);
+
+  --charcoal-surface8: var(--charcoal-color-container-h-u-d-default);
+  --charcoal-surface8-hover: var(--charcoal-color-container-h-u-d-hover);
+  --charcoal-surface8-press: var(--charcoal-color-container-h-u-d-press);
+
+  --charcoal-surface9: var(--charcoal-color-container-default);
+  --charcoal-surface9-hover: var(--charcoal-color-container-hover);
+  --charcoal-surface9-press: var(--charcoal-color-container-press);
+
+  /* charcoal 内では brand が使われいたが figma の導入ガイドには primary が書かれていたので両方記述 */
+  --charcoal-primary: var(--charcoal-color-container-primary-default);
+  --charcoal-primary-hover: var(--charcoal-color-container-primary-hover);
+  --charcoal-primary-press: var(--charcoal-color-container-primary-press);
+
+  --charcoal-brand: var(--charcoal-color-container-primary-default);
+  --charcoal-brand-hover: var(--charcoal-color-container-primary-hover);
+  --charcoal-brand-press: var(--charcoal-color-container-primary-press);
+
+  --charcoal-link1: var(--charcoal-color-text-info-default);
+  --charcoal-link1-hover: var(--charcoal-color-text-info-hover);
+  --charcoal-link1-press: var(--charcoal-color-text-info-press);
+
+  --charcoal-transparent: rgba(0, 0, 0, 0);
+  --charcoal-transparent-hover: var(--charcoal-color-container-hover-a);
+  --charcoal-transparent-press: var(--charcoal-color-container-press-a);
+
+  --charcoal-border: var(--charcoal-color-border-default);
+  --charcoal-border-hover: var(--charcoal-color-border-hover);
+  --charcoal-border-press: var(--charcoal-color-border-press);
+  --charcoal-border-default: var(--charcoal-border);
+  --charcoal-border-default-hover: var(--charcoal-border-hover);
+  --charcoal-border-default-press: var(--charcoal-border-press);
+
+  --charcoal-text1: var(--charcoal-color-text-default);
+  --charcoal-text1-hover: var(--charcoal-color-text-hover);
+  --charcoal-text1-press: var(--charcoal-color-text-press);
+
   --charcoal-text2: var(--charcoal-color-text-secondary-default);
   --charcoal-text2-hover: var(--charcoal-color-text-secondary-hover);
   --charcoal-text2-press: var(--charcoal-color-text-secondary-press);
@@ -16,30 +88,49 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-text3-hover: var(--charcoal-color-text-tertiary-hover);
   --charcoal-text3-press: var(--charcoal-color-text-tertiary-press);
 
-  --charcoal-background1: var(-charcoal-color-background-default);
-  --charcoal-background1-hover: var(-charcoal-color-background-hover);
-  --charcoal-background1-press: var(-charcoal-color-background-press);
-
-  --charcoal-surface1: var(--charcoal-color-container-default);
-  --charcoal-surface1-hover: var(--charcoal-color-container-hover);
-  --charcoal-surface1-press: var(--charcoal-color-container-press);
-
-  --charcoal-surface3: var(--charcoal-color-container-secondary-default);
-  --charcoal-surface3-hover: var(--charcoal-color-container-secondary-hover);
-  --charcoal-surface3-press: var(--charcoal-color-container-secondary-press);
-
-  --charcoal-brand: var(--charcoal-color-container-primary-default);
-  --charcoal-brand-hover: var(--charcoal-color-container-primary-hover);
-  --charcoal-brand-press: var(--charcoal-color-container-primary-press);
-
-  --charcoal-transparent: rgba(0, 0, 0, 0);
-  --charcoal-transparent-hover: var(--charcoal-color-container-hover-a);
-  --charcoal-transparent-press: var(--charcoal-color-container-press-a);
+  --charcoal-text4: var(--charcoal-color-text-tertiary-default);
+  --charcoal-text4-hover: var(--charcoal-color-text-tertiary-hover);
+  --charcoal-text4-press: var(--charcoal-color-text-tertiary-press);
 }
 ```
 
+### icon で使用する
+
 ```css
-/* assetive な要素 */
+:root {
+  --charcoal-text1: var(--charcoal-color-icon-default);
+  --charcoal-text1-hover: var(--charcoal-color-icon-hover);
+  --charcoal-text1-press: var(--charcoal-color-icon-press);
+
+  --charcoal-text2: var(--charcoal-color-icon-secondary-default);
+  --charcoal-text2-hover: var(--charcoal-color-icon-secondary-hover);
+  --charcoal-text2-press: var(--charcoal-color-icon-secondary-press);
+
+  --charcoal-assertive: var(--charcoal-color-icon-negative-default);
+  --charcoal-assertive-hover: var(--charcoal-color-icon-negative-hover);
+  --charcoal-assertive-press: var(--charcoal-color-icon-negative-press);
+
+  --charcoal-success: var(--charcoal-color-icon-positive-default);
+  --charcoal-success-hover: var(--charcoal-color-icon-positive-hover);
+  --charcoal-success-press: var(--charcoal-color-icon-positive-press);
+
+  --charcoal-warning: var(--charcoal-color-icon-notice-default);
+  --charcoal-warning-hover: var(--charcoal-color-icon-notice-hover);
+  --charcoal-warning-press: var(--charcoal-color-icon-notice-press);
+}
+```
+
+### wargning な要素で使用する
+
+```css
+
+```
+
+### assertive な要素で使用する
+
+エラーや減少など、ネガティブな感情と状況を示します。
+
+```css
 :root {
   --charcoal-text5: var(--charcoal-color-text-on-negative-default);
   --charcoal-assertive: var(--charcoal-color-container-nagative-default);
@@ -52,17 +143,27 @@ import { Meta } from '@storybook/addon-docs'
 }
 ```
 
+### brand な要素で使用する
+
 ```css
-/* 背景が brand なら */
 :root {
   --charcoal-text5: var(--charcoal-color-text-on-primary-default);
   --charcoal-text5-hover: var(--charcoal-color-text-on-primary-hover);
   --charcoal-text5-press: var(--charcoal-color-text-on-primary-press);
+
+  --charcoal-primary: var(--charcoal-color-container-primary-default);
+  --charcoal-primary-hover: var(--charcoal-color-container-primary-hover);
+  --charcoal-primary-press: var(--charcoal-color-container-primary-press);
+
+  --charcoal-brand: var(--charcoal-color-container-primary-default);
+  --charcoal-brand-hover: var(--charcoal-color-container-primary-hover);
+  --charcoal-brand-press: var(--charcoal-color-container-primary-press);
 }
 ```
 
+### 背景が画像の要素で使用する
+
 ```css
-/* 画像の上にのせる要素 */
 :root {
   --charcoal-text5: var(--charcoal-color-text-on-on-img-default);
   --charcoal-surface4: var(--charcoal-color-container-on-img-default);
@@ -75,7 +176,7 @@ import { Meta } from '@storybook/addon-docs'
 }
 ```
 
-### FocusEffect
+### フォーカスリング
 
 focus 時の styling が変わります。新トークンでは 2 種類の token を用いて focus の styling を定義します。
 
@@ -84,11 +185,11 @@ focus 時の styling が変わります。新トークンでは 2 種類の toke
 +  box-shadow:  inset 0px 0px 0px 1px var(--charcoal-color-border-focus-1), 0px 0px 0px 2px var(--charcoal-color-border-focus-2);
 ```
 
-### ErrorEffect
+### エラー表示
 
 error 時の styling が変わります。新トークンでは 2 種類の token を用いて error の styling を定義します。
 
 ```diff
--  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
 +  box-shadow:  0px 0px 0px 2px var(--charcoal-color-border-negative);
 ```
