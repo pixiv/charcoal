@@ -103,6 +103,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -143,6 +144,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     autoFocus={true}
                     className="charcoal-text-field-input"
@@ -495,6 +497,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -535,6 +538,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     autoFocus={true}
                     className="charcoal-text-field-input"
@@ -763,6 +767,7 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -803,6 +808,7 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
