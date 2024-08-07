@@ -4,15 +4,10 @@ exports[`Story > <Example /> 1`] = `
 .c0 {
   gap: 40px;
   color: #1f1f1f;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   white-space: nowrap;
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
 }
 
 .c4 {
@@ -20,7 +15,7 @@ exports[`Story > <Example /> 1`] = `
 }
 
 .c5 {
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
 }
 
 .c2 {
@@ -56,9 +51,6 @@ exports[`Story > <Example /> 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   background-color: #ffffff;
   border: 1px solid rgba(0,0,0,0.08);
@@ -67,16 +59,14 @@ exports[`Story > <Example /> 1`] = `
 }
 
 .c6 {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
   margin: 8px;
-  -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
 }
 
 .c7 {
   padding: 0px 16px;
   margin: 16px;
-  -webkit-transition: 0.2s box-shadow;
   transition: 0.2s box-shadow;
   cursor: pointer;
   height: 40px;
@@ -88,7 +78,7 @@ exports[`Story > <Example /> 1`] = `
 
 .c7:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
 .c7:focus:not(:focus-visible) {
@@ -96,16 +86,16 @@ exports[`Story > <Example /> 1`] = `
 }
 
 .c7:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-.c7:disabled,
+.c7 :disabled,
 .c7 [aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
 }
 
-.c7:not(:disabled):active {
+.c7 :not(:disabled):active {
   background-color: var(--charcoal-brand-press);
 }
 
@@ -189,14 +179,13 @@ exports[`ThemeUtilsTest > <ThemeUtilsTest /> 1`] = `
   gap: 0px;
   gap: 0px 4px;
   row-gap: 0px;
-  -webkit-column-gap: 4px;
   column-gap: 4px;
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
+  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
 }
 
 .c0:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
 .c0:focus:not(:focus-visible) {
@@ -204,10 +193,10 @@ exports[`ThemeUtilsTest > <ThemeUtilsTest /> 1`] = `
 }
 
 .c0:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-.c0:disabled,
+.c0 :disabled,
 .c0 [aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;

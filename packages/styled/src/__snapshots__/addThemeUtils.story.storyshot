@@ -1,140 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > styled/addThemeUtils > Example 1`] = `
-.c0 {
-  gap: 40px;
-  color: #1f1f1f;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  white-space: nowrap;
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
-}
-
-.c4 {
-  margin: 0;
-}
-
-.c5 {
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas, 'Liberation Mono','Courier New',monospace;
-}
-
-.c2 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  font-weight: bold;
-}
-
-.c2::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c2::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c3 {
-  color: #1f1f1f;
-  background-color: #f5f5f5;
-  border: 1px solid rgba(0,0,0,0.08);
-  margin: 16px auto;
-  padding: 4px 8px 16px 24px;
-}
-
-.c1 {
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.c6 {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-  margin: 8px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c7 {
-  padding: 0px 16px;
-  margin: 16px;
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-  cursor: pointer;
-  height: 40px;
-  background-color: #0096fa;
-  color: #ffffff;
-  border: none;
-  border-radius: 9999px;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c7:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7:disabled,
-.c7 [aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c7:not(:disabled):active {
-  background-color: var(--charcoal-brand-press);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    className="bSWiBs"
   >
     <div
-      className="c1"
+      className="lepCYt"
     >
       <div
-        className="c2"
+        className="eVAiYw"
       >
         \${({ theme }) =&gt; theme.utils.typography(14, true)}
       </div>
     </div>
     <div
-      className="c1"
+      className="lepCYt"
     >
       <div
-        className="c3"
+        className="joIyKB"
       >
         <pre
-          className="c4"
+          className="dOTXRz"
         >
           <code
-            className="c5"
+            className="ZAqoC"
           >
             \${({ theme }) =&gt; [
     theme.utils.margin(16, 'auto'),
@@ -145,24 +37,24 @@ exports[`Storybook Tests > styled/addThemeUtils > Example 1`] = `
       </div>
     </div>
     <div
-      className="c1"
+      className="lepCYt"
     >
       <div
-        className="c6"
+        className="fsXOln"
       >
         theme.utils.assertiveRingCss
       </div>
     </div>
     <div
-      className="c1"
+      className="lepCYt"
     >
       <button
-        className="c7"
+        className="gwUpzD"
       >
         theme.utils.focusVisibleFocusRingCss
       </button>
       <button
-        className="c7"
+        className="gwUpzD"
         disabled={true}
       >
         theme.utils.disabledCss

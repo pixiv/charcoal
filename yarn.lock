@@ -11231,6 +11231,7 @@ __metadata:
     identity-obj-proxy: ^3.0.0
     jest-image-snapshot: ^6.4.0
     jest-specific-snapshot: ^8.0.0
+    jest-styled-components: ^7.2.0
     jsdom: ^19.0.0
     lerna: ^6.6.2
     lint-staged: ^15.2.2
@@ -18806,6 +18807,17 @@ __metadata:
   peerDependencies:
     styled-components: ">= 5"
   checksum: 1376d1211855c459e59e6b030af7294519cd2dd78169a2cb0df185ff4390fff417ab51be3dd520f1e975d2f391f50ff266e803c168ff9f03f3ff7ebbb823d2d7
+  languageName: node
+  linkType: hard
+
+"jest-styled-components@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "jest-styled-components@npm:7.2.0"
+  dependencies:
+    "@adobe/css-tools": ^4.0.1
+  peerDependencies:
+    styled-components: ">= 5"
+  checksum: 9eb440fb98571520fa6309ebec5464bdd6a15fd29989c7a583badc24f390264459f21d1d09253e6a449f4f6e41ca0d8f630f762941794b51b327df9bfdcce030
   languageName: node
   linkType: hard
 
