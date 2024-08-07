@@ -281,8 +281,6 @@ export default function Carousel({
   return (
     <Container ref={visibleAreaRef}>
       <ScrollArea
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
         ref={ref}
         scrollLeft={styles.scroll}
         onScroll={handleScrollMove}

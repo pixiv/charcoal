@@ -29,7 +29,6 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^4.0.0-beta.13",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^8.0.5",
     "@storybook/react": "^8.0.5",
@@ -79,8 +78,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "react": ">=18.0.0",
-    "styled-components": ">=5.1.1"
+    "react": ">=18.0.0"
   },
   "files": [
     "src",

@@ -2013,9 +2013,10 @@ __metadata:
     "@vitejs/plugin-react": ^4.3.1
     dompurify: ^2.3.6
     jsdom: ^24.1.0
+    npm-run-all: ^4.1.5
     react: ^18.3.1
     rimraf: ^3.0.2
-    styled-components: ^5.3.3
+    styled-components: ^6.1.12
     tsup: ^6.5.0
     typescript: ^4.9.5
     vitest: ^2.0.1
@@ -2058,7 +2059,7 @@ __metadata:
     "@types/react": ^18.3.3
     "@types/react-dom": ^18.3.0
     "@types/react-router-dom": ^5.3.3
-    "@types/styled-components": ^5.1.21
+    "@types/styled-components": ^5.1.34
     "@types/warning": ^3.0.0
     "@vitejs/plugin-react": ^4.3.1
     jsdom: ^24.1.0
@@ -2069,7 +2070,7 @@ __metadata:
     react-router-dom: ^6.26.0
     react-spring: ^9.0.0
     rimraf: ^3.0.2
-    styled-components: ^5.3.3
+    styled-components: ^6.1.12
     tsup: ^6.5.0
     typescript: ^4.9.5
     use-resize-observer: ^9.1.0
@@ -2078,7 +2079,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-    styled-components: ">=5.1.1"
+    styled-components: ">=6.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2086,7 +2087,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react@workspace:packages/react"
   dependencies:
-    "@charcoal-ui/esbuild-plugin-styled-components": ^4.0.0-beta.13
     "@charcoal-ui/foundation": ^4.0.0-beta.13
     "@charcoal-ui/icons": ^4.0.0-beta.13
     "@charcoal-ui/theme": ^4.0.0-beta.13
@@ -2134,7 +2134,6 @@ __metadata:
     warning: ^4.0.3
   peerDependencies:
     react: ">=18.0.0"
-    styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
 
@@ -2147,7 +2146,6 @@ __metadata:
     "@charcoal-ui/utils": ^4.0.0-beta.13
     "@types/react": ^18.3.3
     "@types/react-test-renderer": ^18.3.0
-    "@types/styled-components": ^5.1.21
     "@types/warning": ^3.0.0
     "@vitejs/plugin-react": ^4.3.1
     jest-styled-components: ^7.1.1
@@ -2156,14 +2154,14 @@ __metadata:
     react: ^18.3.1
     react-test-renderer: ^18.3.1
     rimraf: ^3.0.2
-    styled-components: ^5.3.3
+    styled-components: ^6.1.12
     tsup: ^6.5.0
     typescript: ^4.9.5
     vitest: ^2.0.2
     warning: ^4.0.3
   peerDependencies:
     react: ">=18.0.0"
-    styled-components: ">=5.1.1"
+    styled-components: ">=6.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2482,6 +2480,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:1.2.2":
+  version: 1.2.2
+  resolution: "@emotion/is-prop-valid@npm:1.2.2"
+  dependencies:
+    "@emotion/memoize": ^0.8.1
+  checksum: 61f6b128ea62b9f76b47955057d5d86fcbe2a6989d2cd1e583daac592901a950475a37d049b9f7a7c6aa8758a33b408735db759fdedfd1f629df0f85ab60ea25
+  languageName: node
+  linkType: hard
+
 "@emotion/is-prop-valid@npm:^0.8.8":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
@@ -2498,10 +2505,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/memoize@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "@emotion/memoize@npm:0.8.1"
+  checksum: a19cc01a29fcc97514948eaab4dc34d8272e934466ed87c07f157887406bc318000c69ae6f813a9001c6a225364df04249842a50e692ef7a9873335fbcc141b0
+  languageName: node
+  linkType: hard
+
 "@emotion/stylis@npm:^0.8.4":
   version: 0.8.5
   resolution: "@emotion/stylis@npm:0.8.5"
   checksum: 67ff5958449b2374b329fb96e83cb9025775ffe1e79153b499537c6c8b2eb64b77f32d7b5d004d646973662356ceb646afd9269001b97c54439fceea3203ce65
+  languageName: node
+  linkType: hard
+
+"@emotion/unitless@npm:0.8.1":
+  version: 0.8.1
+  resolution: "@emotion/unitless@npm:0.8.1"
+  checksum: 385e21d184d27853bb350999471f00e1429fa4e83182f46cd2c164985999d9b46d558dc8b9cc89975cb337831ce50c31ac2f33b15502e85c299892e67e7b4a88
   languageName: node
   linkType: hard
 
@@ -8282,6 +8303,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/styled-components@npm:^5.1.34":
+  version: 5.1.34
+  resolution: "@types/styled-components@npm:5.1.34"
+  dependencies:
+    "@types/hoist-non-react-statics": "*"
+    "@types/react": "*"
+    csstype: ^3.0.2
+  checksum: 7868066a15afe42d8b353953fc196a7f11a9918b1c980f51d21bb9b49e309c7fe2d730be2d3dc48e92ab4de20f44a3c9dfe6cc98b6ea4dd02655e6f8128171b6
+  languageName: node
+  linkType: hard
+
+"@types/stylis@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@types/stylis@npm:4.2.5"
+  checksum: 24f91719db5569979e9e2f197e050ef82e1fd72474e8dc45bca38d48ee56481eae0f0d4a7ac172540d7774b45a2a78d901a4c6d07bba77a33dbccff464ea3edf
+  languageName: node
+  linkType: hard
+
 "@types/svgo@npm:^1.3.3":
   version: 1.3.6
   resolution: "@types/svgo@npm:1.3.6"
@@ -12246,6 +12285,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-to-react-native@npm:3.2.0":
+  version: 3.2.0
+  resolution: "css-to-react-native@npm:3.2.0"
+  dependencies:
+    camelize: ^1.0.0
+    css-color-keywords: ^1.0.0
+    postcss-value-parser: ^4.0.2
+  checksum: 263be65e805aef02c3f20c064665c998a8c35293e1505dbe6e3054fb186b01a9897ac6cf121f9840e5a9dfe3fb3994f6fcd0af84a865f1df78ba5bf89e77adce
+  languageName: node
+  linkType: hard
+
 "css-to-react-native@npm:^3.0.0":
   version: 3.0.0
   resolution: "css-to-react-native@npm:3.0.0"
@@ -12356,6 +12406,13 @@ __metadata:
   dependencies:
     rrweb-cssom: ^0.6.0
   checksum: 4b2fdd81c565b1f8f24a792f85d3a19269a2f201e731c3fe3531d7fc78b4bc6b31906ed17aba7edba7b1c8b7672574fc6c09fe925556da3a9a9458dbf8c4fa22
+  languageName: node
+  linkType: hard
+
+"csstype@npm:3.1.3":
+  version: 3.1.3
+  resolution: "csstype@npm:3.1.3"
+  checksum: 8db785cc92d259102725b3c694ec0c823f5619a84741b5c7991b8ad135dfaa66093038a1cc63e03361a6cd28d122be48f2106ae72334e067dd619a51f49eddf7
   languageName: node
   linkType: hard
 
@@ -24942,7 +24999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shallowequal@npm:^1.1.0":
+"shallowequal@npm:1.1.0, shallowequal@npm:^1.1.0":
   version: 1.1.0
   resolution: "shallowequal@npm:1.1.0"
   checksum: f4c1de0837f106d2dbbfd5d0720a5d059d1c66b42b580965c8f06bb1db684be8783538b684092648c981294bf817869f743a066538771dbecb293df78f765e00
@@ -25887,6 +25944,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"styled-components@npm:^6.1.12":
+  version: 6.1.12
+  resolution: "styled-components@npm:6.1.12"
+  dependencies:
+    "@emotion/is-prop-valid": 1.2.2
+    "@emotion/unitless": 0.8.1
+    "@types/stylis": 4.2.5
+    css-to-react-native: 3.2.0
+    csstype: 3.1.3
+    postcss: 8.4.38
+    shallowequal: 1.1.0
+    stylis: 4.3.2
+    tslib: 2.6.2
+  peerDependencies:
+    react: ">= 16.8.0"
+    react-dom: ">= 16.8.0"
+  checksum: ce88075297588ee3910e00d9f8dba09a2d31e6dd0b329d96a7c4afed3d6fddddf6cfb4a29e63b91d7a3137a9e774fafeaaf589237269ea6bd5240a838bdf93e9
+  languageName: node
+  linkType: hard
+
 "stylelint-config-prettier@npm:^9.0.3":
   version: 9.0.3
   resolution: "stylelint-config-prettier@npm:9.0.3"
@@ -25973,6 +26050,13 @@ __metadata:
   bin:
     stylelint: bin/stylelint.js
   checksum: aaec6712f875da4e71ad0b748ba2b001ab56ab892cd31aedb553fffc265ce427b668b817975a612c53e8f0e0d5b7edd211cc8842f201bc2622055a74befaedf0
+  languageName: node
+  linkType: hard
+
+"stylis@npm:4.3.2":
+  version: 4.3.2
+  resolution: "stylis@npm:4.3.2"
+  checksum: 0faa8a97ff38369f47354376cd9f0def9bf12846da54c28c5987f64aaf67dcb6f00dce88a8632013bfb823b2c4d1d62a44f4ac20363a3505a7ab4e21b70179fc
   languageName: node
   linkType: hard
 
@@ -26730,6 +26814,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.6.2, tslib@npm:^2.0.3":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.13.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -26748,13 +26839,6 @@ __metadata:
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2.0.3":
-  version: 2.6.2
-  resolution: "tslib@npm:2.6.2"
-  checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
   languageName: node
   linkType: hard
 

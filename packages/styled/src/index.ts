@@ -1,9 +1,10 @@
-import { CSSObject, ThemedStyledInterface } from 'styled-components'
+import { CSSObject, LibraryStyled, Styled, styled, StyledInstance } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { ArrayOrSingle, isPresent, noThemeProvider, wrapArray } from './util'
 import { Internal, toCSSObjects } from './internals'
 import createO from './builders/o'
 import transition from './builders/transition'
+import { BaseObject, Runtime, StyledTarget } from 'styled-components/dist/types'
 export { default as TokenInjector } from './TokenInjector'
 export {
   getThemeSync,
@@ -44,9 +45,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  *
  * const theme = createTheme<DefaultTheme>()
  */
-export function createTheme<T extends CharcoalAbstractTheme>(
-  _styled?: ThemedStyledInterface<T>
-) {
+export function createTheme<T extends CharcoalAbstractTheme>(_?: unknown) {
   type Builder = ReturnType<typeof createO<T>>
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
@@ -97,3 +96,7 @@ export { disabledCss } from './styles/disabledCss'
 export { assertiveRingCss } from './styles/assertiveRingCss'
 export type { CharcoalThemeUtils } from './utils/CharcoalStyledTheme'
 export { addThemeUtils } from './utils/addThemeUtils'
+
+const a = styled.div`
+  ${({ theme }) => [theme.border.default]}
+`

@@ -1,26 +1,26 @@
 import { Spacing } from '@charcoal-ui/theme'
-import { css, FlattenSimpleInterpolation } from 'styled-components'
+import { css, RuleSet } from 'styled-components'
 import { pxIfNum } from './helpers/pxIfNum'
 
-export function padding(arg1: keyof Spacing): FlattenSimpleInterpolation
+export function padding(arg1: keyof Spacing): RuleSet
 
 export function padding(
   arg1: keyof Spacing,
   arg2: keyof Spacing
-): FlattenSimpleInterpolation
+): RuleSet
 
 export function padding(
   arg1: keyof Spacing,
   arg2: keyof Spacing,
   arg3: keyof Spacing
-): FlattenSimpleInterpolation
+): RuleSet
 
 export function padding(
   arg1: keyof Spacing,
   arg2: keyof Spacing,
   arg3: keyof Spacing,
   arg4: keyof Spacing
-): FlattenSimpleInterpolation
+): RuleSet
 
 export function padding(
   arg1: keyof Spacing,

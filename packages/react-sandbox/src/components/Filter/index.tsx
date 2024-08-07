@@ -109,7 +109,7 @@ interface ButtonCssProps {
   reactive?: boolean
 }
 
-const buttonCss = css`
+const buttonCss = css<ButtonCssProps>`
   display: block;
   outline: none;
   border: none;
@@ -128,13 +128,13 @@ const buttonCss = css`
     color: ${({ theme }) => theme.color.text2};
   }
 
-  ${({ hover = false }: ButtonCssProps) =>
+  ${({ hover = false }) =>
     hover &&
     css`
       color: ${({ theme }) => theme.color.text2};
     `}
 
-  ${({ active = false }: ButtonCssProps) =>
+  ${({ active = false }) =>
     active &&
     css`
       background-color: ${({ theme }) => theme.color.surface3};
@@ -161,11 +161,11 @@ const padding0Css = css`
   }
 `
 
-const ButtonLike = styled.button`
+const ButtonLike = styled.button<ButtonCssProps>`
   ${buttonCss}
 `
 
-const PlainElement = styled.span`
+const PlainElement = styled.span<ButtonCssProps>`
   ${buttonCss}
 `
 
