@@ -4,10 +4,7 @@ import { pxIfNum } from './helpers/pxIfNum'
 
 export function gap(v1: keyof Spacing): RuleSet
 
-export function gap(
-  v1: keyof Spacing,
-  v2: keyof Spacing
-): RuleSet
+export function gap(v1: keyof Spacing, v2: keyof Spacing): RuleSet
 
 export function gap(v1: keyof Spacing, v2?: keyof Spacing) {
   return css`

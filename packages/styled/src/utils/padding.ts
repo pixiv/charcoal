@@ -4,10 +4,7 @@ import { pxIfNum } from './helpers/pxIfNum'
 
 export function padding(arg1: keyof Spacing): RuleSet
 
-export function padding(
-  arg1: keyof Spacing,
-  arg2: keyof Spacing
-): RuleSet
+export function padding(arg1: keyof Spacing, arg2: keyof Spacing): RuleSet
 
 export function padding(
   arg1: keyof Spacing,

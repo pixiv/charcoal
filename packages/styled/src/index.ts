@@ -1,10 +1,9 @@
-import { CSSObject, LibraryStyled, Styled, styled, StyledInstance } from 'styled-components'
+import { CSSObject, styled } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { ArrayOrSingle, isPresent, noThemeProvider, wrapArray } from './util'
 import { Internal, toCSSObjects } from './internals'
 import createO from './builders/o'
 import transition from './builders/transition'
-import { BaseObject, Runtime, StyledTarget } from 'styled-components/dist/types'
 export { default as TokenInjector } from './TokenInjector'
 export {
   getThemeSync,

@@ -4,10 +4,7 @@ import { pxIfNum } from './helpers/pxIfNum'
 
 export function margin(arg1: SpacingType): RuleSet
 
-export function margin(
-  arg1: SpacingType,
-  arg2: SpacingType
-): RuleSet
+export function margin(arg1: SpacingType, arg2: SpacingType): RuleSet
 
 export function margin(
   arg1: SpacingType,
