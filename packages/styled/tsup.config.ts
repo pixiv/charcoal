@@ -5,7 +5,7 @@ export default defineConfig({
   format: ['esm', 'cjs'],
   target: 'esnext',
   sourcemap: true,
-  tsconfig: "./tsconfig.build.json",
+  tsconfig: './tsconfig.build.json',
   clean: true,
   dts: true,
 })
