@@ -11,7 +11,7 @@ declare module 'styled-components' {
 }
 
 export const Example = () => (
-  <ThemeProvider theme={myTheme(light)}>
+  <ThemeProvider theme={(theme) => myTheme(theme ?? light)}>
     <RootDiv>
       <Bg1Div>
         <TypographyDiv>
