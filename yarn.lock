@@ -2124,7 +2124,6 @@ __metadata:
     warning: ^4.0.3
   peerDependencies:
     react: ">=18.0.0"
-    styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
 
