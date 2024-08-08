@@ -4,12 +4,10 @@ import { styledComponentsPlugin } from '@charcoal-ui/esbuild-plugin-styled-compo
 export default defineConfig({
   entry: ['src/index.ts'],
   format: ['esm', 'cjs'],
-  outExtension({ format }) {
-    return {
-      js: `.${format}.js`,
-    }
-  },
   target: 'esnext',
   sourcemap: true,
   esbuildPlugins: [styledComponentsPlugin],
+  clean: true,
+  tsconfig: "./tsconfig.build.json",
+  dts: true,
 })
