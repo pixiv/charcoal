@@ -2,22 +2,26 @@
   "name": "@charcoal-ui/theme",
   "version": "4.0.0-beta.13",
   "license": "Apache-2.0",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs.js",
-    "import": "./dist/index.esm.js",
-    "default": "./dist/index.esm.js"
-  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "require": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
   "sideEffects": [
     "*.css"
   ],
   "scripts": {
-    "build": "npm-run-all --print-label --parallel 'build:*' --sequential serialize",
-    "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
+    "build:tsup": "FORCE_COLOR=1 tsup",
     "build:copy-css": "cpx 'src/css/**/*.css' dist/css && cpx 'src/json/**/*.json' dist/json",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
@@ -30,7 +34,7 @@
     "cpx": "^1.5.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "tsup": "^6.5.0",
+    "tsup": "^8.2.4",
     "typescript": "^4.9.5",
     "vitest": "^2.0.2"
   },
