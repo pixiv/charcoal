@@ -21,16 +21,16 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@types/react": "^17.0.38",
-    "@types/react-test-renderer": "^17.0.2",
+    "@types/react": "^18.3.3",
+    "@types/react-test-renderer": "^18.3.0",
     "@types/styled-components": "^5.1.21",
     "@types/warning": "^3.0.0",
     "@vitejs/plugin-react": "^4.3.1",
     "jest-styled-components": "^7.1.1",
     "jsdom": "^24.1.0",
     "npm-run-all": "^4.1.5",
-    "react": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
+    "react": "^18.3.1",
+    "react-test-renderer": "^18.3.1",
     "rimraf": "^3.0.2",
     "styled-components": "^5.3.3",
     "tsup": "^6.5.0",
@@ -44,7 +44,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "react": ">=17.0.0",
+    "react": ">=18.0.0",
     "styled-components": ">=5.1.1"
   },
   "files": [
