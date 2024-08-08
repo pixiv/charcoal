@@ -89,8 +89,8 @@ exports[`Storybook Tests > styled/addThemeUtils > Example 1`] = `
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-.c7 :disabled,
-.c7 [aria-disabled]:not([aria-disabled='false']) {
+.c7:disabled,
+.c7[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
 }
