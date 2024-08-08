@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
 import * as React from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, AnimatedComponent, useSpring } from 'react-spring'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
 import { passiveEvents, isEdge } from '../../foundation/support'
@@ -281,8 +281,6 @@ export default function Carousel({
   return (
     <Container ref={visibleAreaRef}>
       <ScrollArea
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
         ref={ref}
         scrollLeft={styles.scroll}
         onScroll={handleScrollMove}
@@ -360,7 +358,9 @@ const ScrollArea = styled(animated.div)`
   }
 
   scrollbar-width: none;
-`
+` as unknown as React.ComponentType<
+  Omit<React.ComponentProps<AnimatedComponent<'div'>>, 'css'>
+>
 
 const GradientContainer = styled.div<{ fadeInGradient: boolean }>`
   /* NOTE: LeftGradientがはみ出るためhidden */

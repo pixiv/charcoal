@@ -24,4 +24,4 @@ jobs:
           # sourcemap は見ない
           # d.ts はたまに異常な数の union 型が展開されるとかは検知したいが見なくて良いかもしれない
           pattern: './packages/**/dist/**/*.{ts,js,cjs}'
-          exclude: '{**/node_modules/**}'
+          exclude: '{**/node_modules/**,./packages/**/node_modules/**}'

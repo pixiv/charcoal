@@ -103,8 +103,13 @@ const forceCenteringCss = css`
   }
 `
 
-const iconAnchorCss = css`
-  ${(p: { show: boolean | 'collapse'; pre: boolean }) =>
+type IconAnchorProps = {
+  show: boolean | 'collapse'
+  pre: boolean
+}
+
+const iconAnchorCss = css<IconAnchorProps>`
+  ${(p) =>
     p.show === 'collapse'
       ? css`
           display: none;
@@ -122,7 +127,7 @@ const iconAnchorCss = css`
         `}
 `
 
-const IconAnchorNaive = styled.div`
+const IconAnchorNaive = styled.div<IconAnchorProps>`
   display: flex;
   align-items: center;
 
