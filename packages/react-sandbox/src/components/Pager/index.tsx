@@ -197,7 +197,7 @@ const PagerContainer = styled.nav`
   align-items: center;
 `
 
-const CircleButton = styled.button`
+const CircleButton = styled.button<{ noBackground?: boolean }>`
   font-size: 1rem;
   line-height: calc(1em + 8px);
   text-decoration: none;
@@ -249,7 +249,7 @@ const CircleButton = styled.button`
     color: ${({ theme }) => theme.color.text5};
   }
 
-  ${({ noBackground = false }: { noBackground?: boolean }) =>
+  ${({ noBackground = false }) =>
     noBackground &&
     css`
       /* stylelint-disable-next-line no-duplicate-selectors */
