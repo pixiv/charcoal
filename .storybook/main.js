@@ -4,6 +4,7 @@ const { promisify } = require('util')
 const glob = promisify(require('glob'))
 const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
+/** @type {import('@storybook/react-vite').StorybookConfig} */
 module.exports = {
   stories: [
     '../packages/**/*.mdx',
@@ -114,6 +115,7 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  staticDirs: ['./static'],
 }
 
 const packagesDir = path.resolve(__dirname, '../packages')
