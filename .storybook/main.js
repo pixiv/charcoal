@@ -4,6 +4,7 @@ const { promisify } = require('util')
 const glob = promisify(require('glob'))
 const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
+/** @type {import('@storybook/react-vite').StorybookConfig}*/
 module.exports = {
   stories: [
     '../packages/**/*.mdx',
@@ -114,6 +115,23 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  staticDirs: ['./static'],
+  managerHead: (head) => `${head}
+    <title>Charcoal ドキュメント</title>
+    <meta
+      property="description"
+      content="ピクシブ株式会社のデザインシステム charcoal のドキュメントサイト"
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="charcoal"} />
+    <meta property="og:site_name" content="Charcoal ドキュメント" />
+    <meta
+      property="og:description"
+      content="ピクシブ株式会社のデザインシステム charcoal のドキュメントサイト"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/charcoal-ogp.jpg" />
+  `,
 }
 
 const packagesDir = path.resolve(__dirname, '../packages')
