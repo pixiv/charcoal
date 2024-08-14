@@ -28,7 +28,7 @@
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-.charcoal-text-area-container:not(aria-disabled='true'):hover {
+.charcoal-text-area-container:not[aria-disabled='true']:hover {
   background-color: var(--charcoal-surface3-hover);
 }
 
