@@ -6,6 +6,9 @@ import { Meta } from '@storybook/addon-docs'
 
 ## 新トークン移行
 
+新トークンへ移行する際に旧トークンも引き続き利用したい場合は、以下のマイグレーション css を適用できます。
+部分的にカラーを変更したい場合は、新トークンのカラーを上書きしてください。
+
 ```css
 :root {
   --charcoal-background1: var(--charcoal-color-background-default);
@@ -75,6 +78,11 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-link1-hover: var(--charcoal-color-text-info-hover);
   --charcoal-link1-press: var(--charcoal-color-text-info-press);
 
+  /* 対応無し */
+  --charcoal-link2: ;
+  --charcoal-link2-hover: ;
+  --charcoal-link2-press: ;
+
   --charcoal-transparent: rgba(0, 0, 0, 0);
   --charcoal-transparent-hover: var(--charcoal-color-container-hover-a);
   --charcoal-transparent-press: var(--charcoal-color-container-press-a);
@@ -113,5 +121,26 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-success: var(--charcoal-color-container-positive-default);
   --charcoal-success-hover: var(--charcoal-color-container-positive-hover);
   --charcoal-success-press: var(--charcoal-color-container-positive-press);
+}
+```
+
+### カラーの上書き
+
+ライトモードは `:root` に、ダークモードは `:root[data-theme='dark']` のセレクターに対応しています。
+`@charcoal-react/dist/index.css` の後に記述すると上書きされます。
+
+#### ライトモード
+
+```css
+:root {
+  /*  */
+}
+```
+
+### ダークモード
+
+```css
+:root[data-theme='dark'] {
+  /*  */
 }
 ```
