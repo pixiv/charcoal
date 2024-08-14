@@ -12,13 +12,15 @@
       "default": "./dist/index.js"
     },
     "import": {
-      "types": "./dist/index.d.mts",
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.mjs"
     }
   },
   "sideEffects": false,
   "scripts": {
-    "build": "FORCE_COLOR=1 tsup",
+    "build": "run-p --print-label 'build:*'",
+    "build:bundle": "FORCE_COLOR=1 tsup",
+    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
@@ -35,6 +37,7 @@
     "@types/warning": "^3.0.0",
     "@vitejs/plugin-react": "^4.3.1",
     "jsdom": "^24.1.0",
+    "npm-run-all": "^4.1.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.2.1",

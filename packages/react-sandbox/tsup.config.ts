@@ -9,5 +9,4 @@ export default defineConfig({
   esbuildPlugins: [styledComponentsPlugin],
   clean: true,
   tsconfig: './tsconfig.build.json',
-  dts: true,
 })
