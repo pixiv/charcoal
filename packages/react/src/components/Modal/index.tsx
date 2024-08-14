@@ -95,7 +95,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     ref
   )
 
-  const isMobile = useWindowWidth() < 744
+  const isMobile = (useWindowWidth() ?? Infinity) < 744
   const transitionEnabled = isMobile && bottomSheet !== false
   const showDismiss = !isMobile || bottomSheet !== true
 
