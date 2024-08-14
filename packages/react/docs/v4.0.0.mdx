@@ -36,6 +36,11 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-surface4-hover: var(--charcoal-color-container-neutral-hover);
   --charcoal-surface4-press: var(--charcoal-color-container-neutral-press);
 
+  /* 対応無し */
+  --charcoal-surface5: ;
+  --charcoal-surface5-hover: ;
+  --charcoal-surface5-press: ;
+
   --charcoal-surface6: var(--charcoal-color-container-h-u-d-default);
   --charcoal-surface6-hover: var(--charcoal-color-container-h-u-d-hover);
   --charcoal-surface6-press: var(--charcoal-color-container-h-u-d-press);
@@ -51,6 +56,11 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-surface9: var(--charcoal-color-container-default);
   --charcoal-surface9-hover: var(--charcoal-color-container-hover);
   --charcoal-surface9-press: var(--charcoal-color-container-press);
+
+  /* 対応無し */
+  --charcoal-surface10: ;
+  --charcoal-surface10-hover: ;
+  --charcoal-surface10-press: ;
 
   /* charcoal 内では brand が使われいたが figma の導入ガイドには primary が書かれていたので両方記述 */
   --charcoal-primary: var(--charcoal-color-container-primary-default);
@@ -91,105 +101,17 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-text4: var(--charcoal-color-text-tertiary-default);
   --charcoal-text4-hover: var(--charcoal-color-text-tertiary-hover);
   --charcoal-text4-press: var(--charcoal-color-text-tertiary-press);
-}
-```
 
-### icon で使用する
-
-```css
-:root {
-  --charcoal-text1: var(--charcoal-color-icon-default);
-  --charcoal-text1-hover: var(--charcoal-color-icon-hover);
-  --charcoal-text1-press: var(--charcoal-color-icon-press);
-
-  --charcoal-text2: var(--charcoal-color-icon-secondary-default);
-  --charcoal-text2-hover: var(--charcoal-color-icon-secondary-hover);
-  --charcoal-text2-press: var(--charcoal-color-icon-secondary-press);
-
-  --charcoal-assertive: var(--charcoal-color-icon-negative-default);
-  --charcoal-assertive-hover: var(--charcoal-color-icon-negative-hover);
-  --charcoal-assertive-press: var(--charcoal-color-icon-negative-press);
-
-  --charcoal-success: var(--charcoal-color-icon-positive-default);
-  --charcoal-success-hover: var(--charcoal-color-icon-positive-hover);
-  --charcoal-success-press: var(--charcoal-color-icon-positive-press);
-
-  --charcoal-warning: var(--charcoal-color-icon-notice-default);
-  --charcoal-warning-hover: var(--charcoal-color-icon-notice-hover);
-  --charcoal-warning-press: var(--charcoal-color-icon-notice-press);
-}
-```
-
-### wargning な要素で使用する
-
-```css
-
-```
-
-### assertive な要素で使用する
-
-エラーや減少など、ネガティブな感情と状況を示します。
-
-```css
-:root {
-  --charcoal-text5: var(--charcoal-color-text-on-negative-default);
-  --charcoal-assertive: var(--charcoal-color-container-nagative-default);
-
-  --charcoal-text5-hover: var(--charcoal-color-text-on-negative-hover);
-  --charcoal-assertive-hover: var(--charcoal-color-container-nagative-hover);
-
-  --charcoal-text5-press: var(--charcoal-color-text-on-negative-press);
-  --charcoal-assertive-press: var(--charcoal-color-container-nagative-press);
-}
-```
-
-### brand な要素で使用する
-
-```css
-:root {
   --charcoal-text5: var(--charcoal-color-text-on-primary-default);
   --charcoal-text5-hover: var(--charcoal-color-text-on-primary-hover);
   --charcoal-text5-press: var(--charcoal-color-text-on-primary-press);
 
-  --charcoal-primary: var(--charcoal-color-container-primary-default);
-  --charcoal-primary-hover: var(--charcoal-color-container-primary-hover);
-  --charcoal-primary-press: var(--charcoal-color-container-primary-press);
+  --charcoal-warning: var(--charcoal-color-container-negative-default);
+  --charcoal-warning-hover: var(--charcoal-color-container-negative-hover);
+  --charcoal-warning-press: var(--charcoal-color-container-negative-press);
 
-  --charcoal-brand: var(--charcoal-color-container-primary-default);
-  --charcoal-brand-hover: var(--charcoal-color-container-primary-hover);
-  --charcoal-brand-press: var(--charcoal-color-container-primary-press);
+  --charcoal-success: var(--charcoal-color-container-positive-default);
+  --charcoal-success-hover: var(--charcoal-color-container-positive-hover);
+  --charcoal-success-press: var(--charcoal-color-container-positive-press);
 }
-```
-
-### 背景が画像の要素で使用する
-
-```css
-:root {
-  --charcoal-text5: var(--charcoal-color-text-on-on-img-default);
-  --charcoal-surface4: var(--charcoal-color-container-on-img-default);
-
-  --charocal-text5-hover: var(--charcoal-color-text-on-on-img-hover);
-  --charcoal-surface4-hover: var(--charcoal-color-container-on-img-hover);
-
-  --charcoal-text5-press: var(--charcoal-color-text-on-on-img-press);
-  --charcoal-surface4-press: var(--charcoal-color-container-on-img-press);
-}
-```
-
-### フォーカスリング
-
-focus 時の styling が変わります。新トークンでは 2 種類の token を用いて focus の styling を定義します。
-
-```diff
--  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-+  box-shadow:  inset 0px 0px 0px 1px var(--charcoal-color-border-focus-1), 0px 0px 0px 2px var(--charcoal-color-border-focus-2);
-```
-
-### エラー表示
-
-error 時の styling が変わります。新トークンでは 2 種類の token を用いて error の styling を定義します。
-
-```diff
--  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-+  box-shadow:  0px 0px 0px 2px var(--charcoal-color-border-negative);
 ```
