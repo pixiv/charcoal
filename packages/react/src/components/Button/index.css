@@ -92,19 +92,19 @@
  * 改善するとなくなる要素のために新しく Token を追加することは避けたいので、今回は最も近しい Applied Token の HUD を利用することにした。
  */
 .charcoal-button[data-variant='Navigation'] {
-  color: var(--charcoal-color-text-on-h-u-d-default);
-  background-color: var(--charcoal-color-container-h-u-d-default);
+  color: var(--charcoal-color-text-on-hud-default);
+  background-color: var(--charcoal-color-container-hud-default);
 }
 
 .charcoal-button[data-variant='Navigation']:hover:not(:disabled) {
   color: var(--charcoal-color-text-on-primary-hover);
-  background-color: var(--charcoal-color-container-h-u-d-hover);
+  background-color: var(--charcoal-color-container-hud-hover);
 }
 
 .charcoal-button[data-variant='Navigation']:active:not(:disabled),
 .charcoal-button[data-variant='Navigation'][data-active='true'] {
   color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-h-u-d-press);
+  background-color: var(--charcoal-color-container-hud-press);
 }
 
 .charcoal-button[data-variant='Danger'] {

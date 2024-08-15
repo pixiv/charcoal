@@ -1,8 +1,5 @@
 :root {
   /* charcoal custom css variables */
-  --charcoal-color-custom-focus-effect: inset 0px 0px 0px 1px
-      var(--charcoal-color-border-focus-1),
-    0px 0px 0px 2px var(--charcoal-color-border-focus-2);
-  --charcoal-color-custom-error-effect: 0px 0px 0px 2px
-    var(--charcoal-color-border-negative);
+  --charcoal-color-custom-focus-effect: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  --charcoal-color-custom-error-effect: 0 0 0 4px rgba(255, 43, 0, 0.32);
 }
