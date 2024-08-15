@@ -1,13 +1,12 @@
 import { Meta } from '@storybook/addon-docs'
 
-<Meta title="react/docs/v4.0.0" />
+<Meta title="react/v4.0.0" />
 
 # @charcoal-ui/react@v4.0.0
 
 ## 新トークン移行
 
-新トークンへ移行する際に旧トークンも引き続き利用したい場合は、以下のマイグレーション css を適用できます。
-部分的にカラーを変更したい場合は、新トークンのカラーを上書きしてください。
+新トークンへの移行時に旧トークンも引き続き利用したい場合は、以下のマイグレーション用 CSS を適用してください。特定のカラーだけを新トークンに変更したい場合は、該当するカラーを上書きすることができます。
 
 ```css
 :root {
@@ -28,8 +27,8 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-surface1-press: var(--charcoal-color-container-press);
 
   --charcoal-surface2: var(--charcoal-color-container-tertiary-default);
-  --charcoal-surface2: var(--charcoal-color-container-tertiary-hover);
-  --charcoal-surface2: var(--charcoal-color-container-tertiary-press);
+  --charcoal-surface2-hover: var(--charcoal-color-container-tertiary-hover);
+  --charcoal-surface2-press: var(--charcoal-color-container-tertiary-press);
 
   --charcoal-surface3: var(--charcoal-color-container-secondary-default);
   --charcoal-surface3-hover: var(--charcoal-color-container-secondary-hover);
@@ -48,9 +47,9 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-surface6-hover: var(--charcoal-color-container-h-u-d-hover);
   --charcoal-surface6-press: var(--charcoal-color-container-h-u-d-press);
 
-  --charcoal-surface7: var(--charcoal-color-container-teritary-default);
-  --charcoal-surface7-hover: var(--charcoal-color-container-teritary-hover);
-  --charcoal-surface7-press: var(--charcoal-color-container-teritary-press);
+  --charcoal-surface7: var(--charcoal-color-container-tertiary-default);
+  --charcoal-surface7-hover: var(--charcoal-color-container-tertiary-hover);
+  --charcoal-surface7-press: var(--charcoal-color-container-tertiary-press);
 
   --charcoal-surface8: var(--charcoal-color-container-h-u-d-default);
   --charcoal-surface8-hover: var(--charcoal-color-container-h-u-d-hover);
@@ -65,7 +64,7 @@ import { Meta } from '@storybook/addon-docs'
   --charcoal-surface10-hover: ;
   --charcoal-surface10-press: ;
 
-  /* charcoal 内では brand が使われいたが figma の導入ガイドには primary が書かれていたので両方記述 */
+  /* charcoal 内では brand が使用されていたが、figma の導入ガイドには primary が記載されていたので両方記述 */
   --charcoal-primary: var(--charcoal-color-container-primary-default);
   --charcoal-primary-hover: var(--charcoal-color-container-primary-hover);
   --charcoal-primary-press: var(--charcoal-color-container-primary-press);
@@ -126,21 +125,24 @@ import { Meta } from '@storybook/addon-docs'
 
 ### カラーの上書き
 
-ライトモードは `:root` に、ダークモードは `:root[data-theme='dark']` のセレクターに対応しています。
-`@charcoal-react/dist/index.css` の後に記述すると上書きされます。
+ライトモードの場合は `:root`、ダークモードの場合は `:root[data-theme='dark']` セレクターに対応しています。`@charcoal-react/dist/index.css` の後に記述することで、トークンを上書きできます。
 
 #### ライトモード
 
+**例**: ブランドカラーを変更する場合
+
 ```css
 :root {
-  /*  */
+  --charcoal-color-container-primary-default: #0096fa;
 }
 ```
 
-### ダークモード
+#### ダークモード
+
+**例**: ブランドカラーを変更する場合
 
 ```css
 :root[data-theme='dark'] {
-  /*  */
+  --charcoal-color-container-primary-default: #0096fa;
 }
 ```
