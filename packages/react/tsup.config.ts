@@ -2,6 +2,7 @@ import { defineConfig } from 'tsup'
 import { styledComponentsPlugin } from '@charcoal-ui/esbuild-plugin-styled-components'
 import postcss from 'postcss'
 import fs from 'node:fs/promises'
+import path from 'node:path'
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -49,6 +50,9 @@ export default defineConfig({
             },
           })
 
+          // https://github.com/evanw/esbuild/issues/2999
+          // this will be called before dist is created
+          await fs.mkdir(path.dirname(layeredCssFilePath), { recursive: true })
           await Promise.all([
             fs.writeFile(layeredCssFilePath, layeredCssOutput.content),
             fs.writeFile(
