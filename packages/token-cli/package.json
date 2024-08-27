@@ -1,5 +1,6 @@
 {
   "name": "@charcoal-ui/token-cli",
+  "private": true,
   "bin": "./dist/index.js",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
