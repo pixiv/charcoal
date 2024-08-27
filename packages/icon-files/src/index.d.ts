@@ -83,6 +83,7 @@ declare var _default: {
   '24/Filter': () => Promise<string>;
   '24/Flare': () => Promise<string>;
   '24/FormatAlignCenter': () => Promise<string>;
+  '24/FormatAlignJustified': () => Promise<string>;
   '24/FormatAlignLeft': () => Promise<string>;
   '24/FormatAlignRight': () => Promise<string>;
   '24/FormatColorFill': () => Promise<string>;
@@ -159,6 +160,7 @@ declare var _default: {
   '24/ReadHorizontalLeft': () => Promise<string>;
   '24/ReadHorizontalRight': () => Promise<string>;
   '24/ReadVertical': () => Promise<string>;
+  '24/Redo': () => Promise<string>;
   '24/Reload': () => Promise<string>;
   '24/ReloadLoop': () => Promise<string>;
   '24/Reorder': () => Promise<string>;
@@ -186,6 +188,7 @@ declare var _default: {
   '24/Text': () => Promise<string>;
   '24/Trash': () => Promise<string>;
   '24/TrashAlt': () => Promise<string>;
+  '24/Undo': () => Promise<string>;
   '24/Up': () => Promise<string>;
   '24/Upload': () => Promise<string>;
   '24/UploadAlt': () => Promise<string>;
