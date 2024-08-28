@@ -33,6 +33,33 @@ function App() {
 - テーマに関する属性が削除されました。
   - `themeMap`, `defaultTheme`, `injectTokens`, `components`, `background`
 
+Before
+
+```tsx
+// ...
+
+<CharcoalProvider themeMap={themeMap}>
+  <YourApp />
+</CharcoalProvider>
+```
+
+After
+
+styled を継続して利用する場合
+
+```tsx
+// ...
+import { TokenInjector } from '@charcoal-ui/styled'
+import { ThemeProvider } from 'styled-components'
+
+<CharcoalProvider>
+  <TokenInjector theme={themeMap} />
+  <ThemeProvider theme={themeMap[':root']}>
+    <YourApp />
+  </ThemeProvider>
+</CharcoalProvider>
+```
+
 ## Button
 
 - `ComponentAbstraction`と`to`を用いたカスタム要素の設定を、`component`に`React.ElementType`を指定することによって行えるように変更しました。
