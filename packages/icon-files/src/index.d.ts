@@ -242,6 +242,7 @@ declare var _default: {
   '32/VerticalWriting': () => Promise<string>;
   '32/ZoomIn': () => Promise<string>;
   'Inline/Add': () => Promise<string>;
+  'Inline/Back': () => Promise<string>;
   'Inline/BookmarkOff': () => Promise<string>;
   'Inline/BookmarkOn': () => Promise<string>;
   'Inline/Breadcrumbs': () => Promise<string>;
@@ -253,6 +254,7 @@ declare var _default: {
   'Inline/Folder': () => Promise<string>;
   'Inline/ImageResponse': () => Promise<string>;
   'Inline/Images': () => Promise<string>;
+  'Inline/Latest': () => Promise<string>;
   'Inline/Like': () => Promise<string>;
   'Inline/LikeOff': () => Promise<string>;
   'Inline/List': () => Promise<string>;
