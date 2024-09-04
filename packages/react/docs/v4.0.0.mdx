@@ -1,0 +1,245 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import { Unstyled } from '@storybook/blocks'
+
+<Meta title="react/docs/v4.0.0" />
+
+# @charcoal-ui/react@v4.0.0
+
+- `v4.0.0`では多くの破壊的な変更があります。
+- `styled-components`への依存を無くし、css ファイルを読み込む方式に変更しました。
+
+```tsx
+import { CharcoalProvider, Button } from '@charcoal-ui/react'
+
+import '@charcoal-ui/react/dist/index.css'
+
+function App() {
+  return (
+    <CharcoalProvider>
+      <Button>Charcoal</Button>
+    </CharcoalProvider>
+  )
+}
+```
+
+## ComponentAbstraction
+
+- `ComponentAbstraction`が削除されました。
+- `useComponentAbstraction`が削除されました。
+- `type LinkProps`が削除されました。
+
+## CharcoalProvider
+
+- テーマに関する属性が削除されました。
+  - `themeMap`, `defaultTheme`, `injectTokens`, `components`, `background`
+
+## Button
+
+- `ComponentAbstraction`と`to`を用いたカスタム要素の設定を、`component`に`React.ElementType`を指定することによって行えるように変更しました。
+
+Before
+
+```tsx
+<ComponentAbstraction components={{ Link: RouterLink }}>
+  <Button to="...">Link</Button>
+</ComponentAbstraction>
+```
+
+After
+
+```tsx
+<Button component="a" href="...">Link</Button>
+<Button component={RouterLink} to="...">Link</Button>
+<Button component={NextLink} href="...">Link</Button>
+```
+
+## Checkbox
+
+- `Checkbox`の`input`要素を`children`がない場合に label で囲わないようにしました。
+- `React.HTMLProps<HTMLInputElement>`を継承するように変更しました。
+- アイコンを CSS を用いて表示するように変更しました。
+
+## Clickable
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+- `type ClickableElement`が削除されました。
+
+## DropdownSelector
+
+- `aria-labelledby`,`aria-describedby`を適用するように変更しました。
+
+## IconButton
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## MultiSelect
+
+- コンポーネントが削除されました。
+- `overlay`の代替として`Checkbox`の`rounded`が追加されました。
+
+## RadioGroup
+
+- `aria-labelledby`, `aria-orientation`をプロパティに追加しました。
+- `label`をオプショナルに変更しました。
+
+## Switch
+
+- `Checkbox`の`input`要素を常に`label`で囲わないようにしました。
+- `React.HTMLProps<HTMLInputElement>`を継承するように変更しました。
+
+## TagItem
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## TextArea
+
+- `textarea`要素の`props`を継承するように変更しました。
+- 文字数の計算ロジックを`getCount`プロパティで上書きできるように変更しました。
+
+## TextField
+
+- `input`要素の`props`を継承するように変更しました。
+- 文字数の計算ロジックを`getCount`プロパティで上書きできるように変更しました。
+
+## 新トークン移行
+
+新トークンへの移行時に旧トークンも引き続き利用したい場合は、以下のマイグレーション用 CSS を適用してください。特定のカラーだけを新トークンに変更したい場合は、該当するカラーを上書きすることができます。
+
+```css
+:root {
+  --charcoal-background1: var(--charcoal-color-background-default);
+  --charcoal-background1-hover: var(--charcoal-color-background-hover);
+  --charcoal-background1-press: var(--charcoal-color-background-press);
+
+  --charcoal-background2: var(--charcoal-color-background-secondary-default);
+  --charcoal-background2-hover: var(
+    --charcoal-color-background-secondary-hover
+  );
+  --charcoal-background2-press: var(
+    --charcoal-color-background-secondary-press
+  );
+
+  --charcoal-surface1: var(--charcoal-color-container-default);
+  --charcoal-surface1-hover: var(--charcoal-color-container-hover);
+  --charcoal-surface1-press: var(--charcoal-color-container-press);
+
+  --charcoal-surface2: var(--charcoal-color-container-tertiary-default);
+  --charcoal-surface2-hover: var(--charcoal-color-container-tertiary-hover);
+  --charcoal-surface2-press: var(--charcoal-color-container-tertiary-press);
+
+  --charcoal-surface3: var(--charcoal-color-container-secondary-default);
+  --charcoal-surface3-hover: var(--charcoal-color-container-secondary-hover);
+  --charcoal-surface3-press: var(--charcoal-color-container-secondary-press);
+
+  --charcoal-surface4: var(--charcoal-color-container-neutral-default);
+  --charcoal-surface4-hover: var(--charcoal-color-container-neutral-hover);
+  --charcoal-surface4-press: var(--charcoal-color-container-neutral-press);
+
+  /* 対応無し */
+  --charcoal-surface5: ;
+  --charcoal-surface5-hover: ;
+  --charcoal-surface5-press: ;
+
+  --charcoal-surface6: var(--charcoal-color-container-hud-default);
+  --charcoal-surface6-hover: var(--charcoal-color-container-hud-hover);
+  --charcoal-surface6-press: var(--charcoal-color-container-hud-press);
+
+  --charcoal-surface7: var(--charcoal-color-container-tertiary-default);
+  --charcoal-surface7-hover: var(--charcoal-color-container-tertiary-hover);
+  --charcoal-surface7-press: var(--charcoal-color-container-tertiary-press);
+
+  --charcoal-surface8: var(--charcoal-color-container-hud-default);
+  --charcoal-surface8-hover: var(--charcoal-color-container-hud-hover);
+  --charcoal-surface8-press: var(--charcoal-color-container-hud-press);
+
+  --charcoal-surface9: var(--charcoal-color-container-default);
+  --charcoal-surface9-hover: var(--charcoal-color-container-hover);
+  --charcoal-surface9-press: var(--charcoal-color-container-press);
+
+  /* 対応無し */
+  --charcoal-surface10: ;
+  --charcoal-surface10-hover: ;
+  --charcoal-surface10-press: ;
+
+  /* charcoal 内では brand が使用されていたが、figma の導入ガイドには primary が記載されていたので両方記述 */
+  --charcoal-primary: var(--charcoal-color-container-primary-default);
+  --charcoal-primary-hover: var(--charcoal-color-container-primary-hover);
+  --charcoal-primary-press: var(--charcoal-color-container-primary-press);
+
+  --charcoal-brand: var(--charcoal-color-container-primary-default);
+  --charcoal-brand-hover: var(--charcoal-color-container-primary-hover);
+  --charcoal-brand-press: var(--charcoal-color-container-primary-press);
+
+  --charcoal-link1: var(--charcoal-color-text-info-default);
+  --charcoal-link1-hover: var(--charcoal-color-text-info-hover);
+  --charcoal-link1-press: var(--charcoal-color-text-info-press);
+
+  /* 対応無し */
+  --charcoal-link2: ;
+  --charcoal-link2-hover: ;
+  --charcoal-link2-press: ;
+
+  --charcoal-transparent: rgba(0, 0, 0, 0);
+  --charcoal-transparent-hover: var(--charcoal-color-container-hover-a);
+  --charcoal-transparent-press: var(--charcoal-color-container-press-a);
+
+  --charcoal-border: var(--charcoal-color-border-default);
+  --charcoal-border-hover: var(--charcoal-color-border-hover);
+  --charcoal-border-press: var(--charcoal-color-border-press);
+  --charcoal-border-default: var(--charcoal-border);
+  --charcoal-border-default-hover: var(--charcoal-border-hover);
+  --charcoal-border-default-press: var(--charcoal-border-press);
+
+  --charcoal-text1: var(--charcoal-color-text-default);
+  --charcoal-text1-hover: var(--charcoal-color-text-hover);
+  --charcoal-text1-press: var(--charcoal-color-text-press);
+
+  --charcoal-text2: var(--charcoal-color-text-secondary-default);
+  --charcoal-text2-hover: var(--charcoal-color-text-secondary-hover);
+  --charcoal-text2-press: var(--charcoal-color-text-secondary-press);
+
+  --charcoal-text3: var(--charcoal-color-text-tertiary-default);
+  --charcoal-text3-hover: var(--charcoal-color-text-tertiary-hover);
+  --charcoal-text3-press: var(--charcoal-color-text-tertiary-press);
+
+  --charcoal-text4: var(--charcoal-color-text-tertiary-default);
+  --charcoal-text4-hover: var(--charcoal-color-text-tertiary-hover);
+  --charcoal-text4-press: var(--charcoal-color-text-tertiary-press);
+
+  --charcoal-text5: var(--charcoal-color-text-on-primary-default);
+  --charcoal-text5-hover: var(--charcoal-color-text-on-primary-hover);
+  --charcoal-text5-press: var(--charcoal-color-text-on-primary-press);
+
+  --charcoal-warning: var(--charcoal-color-container-negative-default);
+  --charcoal-warning-hover: var(--charcoal-color-container-negative-hover);
+  --charcoal-warning-press: var(--charcoal-color-container-negative-press);
+
+  --charcoal-success: var(--charcoal-color-container-positive-default);
+  --charcoal-success-hover: var(--charcoal-color-container-positive-hover);
+  --charcoal-success-press: var(--charcoal-color-container-positive-press);
+}
+```
+
+### カラーの上書き
+
+ライトモードの場合は `:root`、ダークモードの場合は `:root[data-theme='dark']` セレクターに対応しています。`@charcoal-react/dist/index.css` の後に記述することで、トークンを上書きできます。
+
+#### ライトモード
+
+**例**: ブランドカラーを変更する場合
+
+```css
+:root {
+  --charcoal-color-container-primary-default: #0096fa;
+}
+```
+
+#### ダークモード
+
+**例**: ブランドカラーを変更する場合
+
+```css
+:root[data-theme='dark'] {
+  --charcoal-color-container-primary-default: #0096fa;
+}
+```
