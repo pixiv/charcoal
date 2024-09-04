@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/styled",
-  "version": "4.0.0-beta.13",
+  "version": "4.0.0-beta.14",
   "license": "Apache-2.0",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs.js",
@@ -38,9 +38,9 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.0.0-beta.13",
-    "@charcoal-ui/theme": "^4.0.0-beta.13",
-    "@charcoal-ui/utils": "^4.0.0-beta.13",
+    "@charcoal-ui/foundation": "^4.0.0-beta.14",
+    "@charcoal-ui/theme": "^4.0.0-beta.14",
+    "@charcoal-ui/utils": "^4.0.0-beta.14",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
