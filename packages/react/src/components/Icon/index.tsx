@@ -2,6 +2,8 @@ import * as React from 'react'
 
 import type { PixivIcon, Props } from '@charcoal-ui/icons'
 
+import '@charcoal-ui/icons'
+
 export interface OwnProps {
   unsafeNonGuidelineScale?: number
   className?: string
