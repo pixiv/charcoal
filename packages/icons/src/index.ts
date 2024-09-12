@@ -8,11 +8,13 @@ declare global {
   interface Window {
     PixivIcon: typeof PixivIcon
   }
+}
 
+declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace JSX {
+  namespace JSX {
     interface IntrinsicElements {
-      'pixiv-icon': Props
+      'pixiv-icon': import('./PixivIcon').Props
     }
   }
 }
