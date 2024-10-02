@@ -10,14 +10,6 @@
       "require": "./dist/index.cjs.js",
       "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
-    },
-    "./dark.css": {
-      "require": "./dist/css/_variables_dark.css",
-      "import": "./dist/css/_variables_dark.css"
-    },
-    "./light.css": {
-      "require": "./dist/css/_variables_light.css",
-      "import": "./dist/css/_variables_light.css"
     }
   },
   "types": "./dist/index.d.ts",
