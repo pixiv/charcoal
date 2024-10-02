@@ -1,4 +1,5 @@
 .charcoal-text-area-root {
+  --charcoal-text-area-rows: ;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
