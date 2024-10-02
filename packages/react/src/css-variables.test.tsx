@@ -10,12 +10,10 @@ const extractVariables = (cssContent: string): string[] => {
 }
 const extractUsedVariables = (cssContent: string): string[] => {
   const usedVariablePattern = /var\((--[\w-]+)\)/g
-  const matches = []
-  let match
-  while ((match = usedVariablePattern.exec(cssContent)) !== null) {
-    matches.push(match[1])
-  }
-  return matches
+  return Array.from(
+    cssContent.matchAll(usedVariablePattern),
+    (match) => match[1]
+  )
 }
 
 const variablesSet = new Set<string>()
