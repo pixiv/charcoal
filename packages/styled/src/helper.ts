@@ -81,7 +81,8 @@ export const useTheme = (localStorageKey: string = LOCAL_STORAGE_KEY) => {
   assertKeyString(localStorageKey)
   const isDark = useMedia('(prefers-color-scheme: dark)')
   const media = isDark !== undefined ? (isDark ? 'dark' : 'light') : undefined
-  const [local, setTheme, ready] = useLocalStorage<typeof media>(localStorageKey)
+  const [local, setTheme, ready] =
+    useLocalStorage<typeof media>(localStorageKey)
   const theme = !ready || media === undefined ? undefined : local ?? media
   const system = local === undefined
   return [theme, setTheme, system] as const
