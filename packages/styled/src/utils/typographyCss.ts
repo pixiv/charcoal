@@ -4,7 +4,7 @@ const boldCss = css`
   font-weight: bold;
 `
 
-const removeHalfLeadingCss = css`
+export const removeHalfLeadingCss = css`
   &::before {
     display: block;
     width: 0;
