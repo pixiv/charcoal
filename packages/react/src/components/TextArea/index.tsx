@@ -130,6 +130,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             aria-describedby={showAssistiveText ? describedbyId : undefined}
             aria-invalid={invalid}
             aria-labelledby={labelledbyId}
+            aria-disabled={props['aria-disabled'] ?? disabled}
             id={textAreaId}
             maxLength={maxLength}
             data-no-bottom-padding={showCount}
