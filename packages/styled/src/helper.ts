@@ -77,11 +77,12 @@ export function getThemeSync(key: string = LOCAL_STORAGE_KEY) {
  *
  * `dark` `light` という名前だけは特別扱いされていて、prefers-color-schemeにマッチした場合に返ります
  */
-export const useTheme = (key: string = LOCAL_STORAGE_KEY) => {
-  assertKeyString(key)
+export const useTheme = (localStorageKey: string = LOCAL_STORAGE_KEY) => {
+  assertKeyString(localStorageKey)
   const isDark = useMedia('(prefers-color-scheme: dark)')
   const media = isDark !== undefined ? (isDark ? 'dark' : 'light') : undefined
-  const [local, setTheme, ready] = useLocalStorage<string>(key)
+  const [local, setTheme, ready] =
+    useLocalStorage<typeof media>(localStorageKey)
   const theme = !ready || media === undefined ? undefined : local ?? media
   const system = local === undefined
   return [theme, setTheme, system] as const
