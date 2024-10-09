@@ -43,8 +43,8 @@ jobs:
 
       - name: Transform applied token
         run: |
-          yarn token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-light.json --variable-collection-names color space radius --mode-name "pixiv/light"
-          yarn token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-dark.json --variable-collection-names color space radius --mode-name "pixiv/dark"
+          yarn token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-light.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/light"
+          yarn token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-dark.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/dark"
 
       - name: Generate CSS variables
         run: |
