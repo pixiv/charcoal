@@ -1,11 +1,4 @@
 {
-  "brand-color": {
-    "pixiv": { "value": "rgba(0, 150, 250, 1)" },
-    "premium": { "value": "rgba(253, 158, 22, 1)" },
-    "comic": { "value": "rgba(255, 196, 0, 1)" },
-    "booth": { "value": "rgba(252, 77, 80, 1)" },
-    "factory": { "value": "rgba(0, 184, 205, 1)" }
-  },
   "text": {
     "font-size/0": { "value": "11" },
     "font-size/1": { "value": "12" },
@@ -39,28 +32,12 @@
     "line-height/100": { "value": "72" },
     "font-family/sans": { "value": "Sarasa UI J" }
   },
-  "space": {
-    "0": { "value": "0" },
-    "1": { "value": "2" },
-    "10": { "value": "4" },
-    "15": { "value": "6" },
-    "20": { "value": "8" },
-    "25": { "value": "12" },
-    "30": { "value": "16" },
-    "35": { "value": "20" },
-    "40": { "value": "24" },
-    "43": { "value": "28" },
-    "46": { "value": "32" },
-    "50": { "value": "40" },
-    "55": { "value": "48" },
-    "60": { "value": "64" },
-    "63": { "value": "80" },
-    "66": { "value": "96" },
-    "70": { "value": "104" },
-    "80": { "value": "168" },
-    "90": { "value": "272" },
-    "100": { "value": "440" },
-    "999": { "value": "999999" }
+  "brand-color": {
+    "pixiv": { "value": "rgba(0, 150, 250, 1)" },
+    "premium": { "value": "rgba(253, 158, 22, 1)" },
+    "comic": { "value": "rgba(255, 196, 0, 1)" },
+    "booth": { "value": "rgba(252, 77, 80, 1)" },
+    "factory": { "value": "rgba(0, 184, 205, 1)" }
   },
   "color": {
     "light/neutral/0": { "value": "rgba(255, 255, 255, 1)" },
@@ -323,5 +300,28 @@
     "dark/magenta/70": { "value": "rgba(243, 163, 200, 1)" },
     "dark/magenta/80": { "value": "rgba(247, 184, 213, 1)" },
     "dark/magenta/90": { "value": "rgba(253, 217, 233, 1)" }
+  },
+  "space": {
+    "0": { "value": "0" },
+    "1": { "value": "2" },
+    "10": { "value": "4" },
+    "15": { "value": "6" },
+    "20": { "value": "8" },
+    "25": { "value": "12" },
+    "30": { "value": "16" },
+    "35": { "value": "20" },
+    "40": { "value": "24" },
+    "43": { "value": "28" },
+    "46": { "value": "32" },
+    "50": { "value": "40" },
+    "55": { "value": "48" },
+    "60": { "value": "64" },
+    "63": { "value": "80" },
+    "66": { "value": "96" },
+    "70": { "value": "104" },
+    "80": { "value": "168" },
+    "90": { "value": "272" },
+    "100": { "value": "440" },
+    "999": { "value": "999999" }
   }
 }
