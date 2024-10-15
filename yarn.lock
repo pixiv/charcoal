@@ -1739,12 +1739,12 @@ __metadata:
   dependencies:
     "@charcoal-ui/icon-files": ^3.15.0
     "@storybook/react": ^8.0.5
-    "@types/dompurify": ^2.3.3
+    "@types/dompurify": 2.4.0
     "@types/jest": ^27.4.0
     "@types/react": ^17.0.38
     "@types/warning": ^3.0.0
     "@types/webpack-env": ^1.18.1
-    dompurify: ^2.3.6
+    dompurify: 2.5.7
     react: ^17.0.2
     rimraf: ^3.0.2
     styled-components: ^5.3.3
@@ -7386,12 +7386,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/dompurify@npm:^2.3.3":
-  version: 2.3.3
-  resolution: "@types/dompurify@npm:2.3.3"
+"@types/dompurify@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@types/dompurify@npm:2.4.0"
   dependencies:
     "@types/trusted-types": "*"
-  checksum: 427e2dc60d94d13d7860a293b926b376727cb2f545a3334a3f2e7de695a2bb23058dd15108e49e0651378229b443ee8ae0028034b6f2df9a9008c04fb7ad6f8f
+  checksum: b48cd81e997794ebc390c7c5bef1a67ec14a6f2f0521973e07e06af186c7583abe114d94d24868c0632b9573f5bd77131a4b76f3fffdf089ba99a4e53dd46c39
   languageName: node
   linkType: hard
 
@@ -12363,10 +12363,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^2.3.6":
-  version: 2.3.6
-  resolution: "dompurify@npm:2.3.6"
-  checksum: 4b2bbf6bc68ebd776aec4a533cef74a5ae30391eed528f3df748af71da318afdc298b6f40449bef093b7454ffd2ae82656636560474de5a3b34316b762c85b12
+"dompurify@npm:2.5.7":
+  version: 2.5.7
+  resolution: "dompurify@npm:2.5.7"
+  checksum: 9652139743130b5ebaf5278fadec06d9b3920019b80c205565b9b8d52cd0cea90ff690c1994c5c0da5bc9d57a94dc19236cdf1ccabdc1c6cff7c255e1e597031
   languageName: node
   linkType: hard
 
