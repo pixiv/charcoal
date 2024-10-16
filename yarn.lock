@@ -2224,6 +2224,7 @@ __metadata:
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.14
     "@charcoal-ui/utils": ^4.0.0-beta.14
+    change-case: ^5.4.4
     cpx: ^1.5.0
     deepmerge: ^4.3.1
     npm-run-all: ^4.1.5
@@ -12290,6 +12291,13 @@ __metadata:
     snake-case: ^3.0.4
     tslib: ^2.0.3
   checksum: e4bc4a093a1f7cce8b33896665cf9e456e3bc3cc0def2ad7691b1994cfca99b3188d0a513b16855b01a6bd20692fcde12a7d4d87a5615c4c515bbbf0e651f116
+  languageName: node
+  linkType: hard
+
+"change-case@npm:^5.4.4":
+  version: 5.4.4
+  resolution: "change-case@npm:5.4.4"
+  checksum: a22a25a763719658424ffbcd41e931d2d19cc22399cc765dca447fbe1eaf13e179d5e8ab1677af75f2e814dbddf74e42ffdecb526cd5bc906cc859f62aa154b2
   languageName: node
   linkType: hard
 

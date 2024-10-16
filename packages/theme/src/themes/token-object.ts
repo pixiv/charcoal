@@ -1,5 +1,12 @@
 import deepmerge from 'deepmerge'
-import { NestedObject, Tokens, MappedTokenObject, TokenMap } from './types'
+import {
+  NestedObject,
+  Tokens,
+  MappedTokenObject,
+  TokenMap,
+  ChainCaseToCamelCase,
+} from './types'
+import { camelCase } from 'change-case'
 
 const isNonEmptyArray = <T>(arr: T[]): arr is [T, ...T[]] => arr.length > 0
 
@@ -23,7 +30,7 @@ export const mappedTokenObject = <T extends Tokens>(
   let result = {}
   for (const key in tokens) {
     const { value } = tokens[key]
-    const splitted = key.split('/')
+    const splitted = key.split('/').map((key) => camelCase(key))
     if (!isNonEmptyArray(splitted)) continue
 
     const v = pathToObject(splitted, value)
@@ -64,12 +71,16 @@ export const createTemplateResolver = <T extends TokenMap>(
 export const createTokenObject = <T extends TokenMap>(
   tokenMap: T,
   baseToken: TokenMap
-): { [K in keyof T]: MappedTokenObject<T[K]> } => {
-  const result = {} as { [K in keyof T]: MappedTokenObject<T[K]> }
+): {
+  [K in keyof T as ChainCaseToCamelCase<T & string>]: MappedTokenObject<T[K]>
+} => {
+  const result = {} as Record<string, unknown>
   const templateResolver = createTemplateResolver(tokenMap, baseToken)
 
-  for (const key in tokenMap) {
-    const value = tokenMap[key]
+  for (const category in tokenMap) {
+    const value = tokenMap[category]
+
+    // category ごとに template を展開していく
     const transformed = Object.fromEntries(
       Object.entries(value).map(([key, value]) => [
         key,
@@ -77,8 +88,10 @@ export const createTokenObject = <T extends TokenMap>(
       ])
     ) as typeof value
 
-    result[key] = mappedTokenObject(transformed)
+    result[camelCase(category)] = mappedTokenObject(transformed)
   }
 
-  return result
+  return result as {
+    [K in keyof T as ChainCaseToCamelCase<T & string>]: MappedTokenObject<T[K]>
+  }
 }

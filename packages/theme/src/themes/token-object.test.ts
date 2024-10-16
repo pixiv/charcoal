@@ -9,8 +9,7 @@ import darkToken from '../json/pixiv-dark.json'
 import baseToken from '../json/base.json'
 import deepmerge from 'deepmerge'
 import { Tokens } from './types'
-
-
+import { camelCase } from 'change-case'
 
 describe.each([
   ['light theme', lightToken],
@@ -37,7 +36,10 @@ describe.each([
         const splitted = key.split('/')
         const tokenValue: { value: string } = tokens[key as keyof typeof tokens]
 
-        expect(theme).toHaveProperty([_category, ...splitted], templateResolver(tokenValue.value))
+        expect(theme).toHaveProperty(
+          [_category, ...splitted].map((key) => camelCase(key)),
+          templateResolver(tokenValue.value)
+        )
       }
     )
   })

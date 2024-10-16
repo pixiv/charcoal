@@ -7,12 +7,19 @@ type UnionToIntersection<U> =
 type TokenValue = string
 export type Tokens = Record<string, { value: TokenValue }>
 export type TokenMap = Record<string, Tokens>
+
+export type ChainCaseToCamelCase<
+  S extends string,
+  D extends string = '-'
+> = S extends `${infer F}${D}${infer R}`
+  ? `${F}${Capitalize<ChainCaseToCamelCase<R>>}`
+  : S
 type ToTokenObject<S extends string, V> = S extends `${infer F}/${infer R}`
   ? {
-      [K in F]: ToTokenObject<R, V>
+      [K in F as ChainCaseToCamelCase<K>]: ToTokenObject<R, V>
     }
   : {
-      [K in S]: V
+      [K in S as ChainCaseToCamelCase<K>]: V
     }
 
 export type MappedTokenObject<T extends Tokens> = UnionToIntersection<
