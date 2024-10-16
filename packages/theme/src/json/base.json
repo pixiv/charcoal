@@ -1,4 +1,11 @@
 {
+  "brand-color": {
+    "pixiv": { "value": "rgba(0, 150, 250, 1)" },
+    "premium": { "value": "rgba(253, 158, 22, 1)" },
+    "comic": { "value": "rgba(255, 196, 0, 1)" },
+    "booth": { "value": "rgba(252, 77, 80, 1)" },
+    "factory": { "value": "rgba(0, 184, 205, 1)" }
+  },
   "color": {
     "light/neutral/0": { "value": "rgba(255, 255, 255, 1)" },
     "light/neutral-a/0": { "value": "rgba(31, 31, 31, 0)" },
@@ -260,13 +267,6 @@
     "dark/magenta/70": { "value": "rgba(243, 163, 200, 1)" },
     "dark/magenta/80": { "value": "rgba(247, 184, 213, 1)" },
     "dark/magenta/90": { "value": "rgba(253, 217, 233, 1)" }
-  },
-  "brand-color": {
-    "pixiv": { "value": "rgba(0, 150, 250, 1)" },
-    "premium": { "value": "rgba(253, 158, 22, 1)" },
-    "comic": { "value": "rgba(255, 196, 0, 1)" },
-    "booth": { "value": "rgba(252, 77, 80, 1)" },
-    "factory": { "value": "rgba(0, 184, 205, 1)" }
   },
   "space": {
     "0": { "value": "0" },
