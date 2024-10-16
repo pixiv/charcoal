@@ -4,9 +4,7 @@ import {
   Tokens,
   MappedTokenObject,
   TokenMap,
-  ChainCaseToCamelCase,
 } from './types'
-import { camelCase } from 'change-case'
 
 const isNonEmptyArray = <T>(arr: T[]): arr is [T, ...T[]] => arr.length > 0
 
@@ -30,7 +28,7 @@ export const mappedTokenObject = <T extends Tokens>(
   let result = {}
   for (const key in tokens) {
     const { value } = tokens[key]
-    const splitted = key.split('/').map((key) => camelCase(key))
+    const splitted = key.split('/')
     if (!isNonEmptyArray(splitted)) continue
 
     const v = pathToObject(splitted, value)
@@ -70,11 +68,9 @@ export const createTemplateResolver = <T extends TokenMap>(
 
 export const createTokenObject = <T extends TokenMap>(
   tokenMap: T,
-  baseToken: TokenMap
-): {
-  [K in keyof T as ChainCaseToCamelCase<T & string>]: MappedTokenObject<T[K]>
-} => {
-  const result = {} as Record<string, unknown>
+  baseToken: TokenMap,
+): { [K in keyof T]: MappedTokenObject<T[K]> } => {
+  const result = {} as { [K in keyof T]: MappedTokenObject<T[K]> }
   const templateResolver = createTemplateResolver(tokenMap, baseToken)
 
   for (const category in tokenMap) {
@@ -88,10 +84,8 @@ export const createTokenObject = <T extends TokenMap>(
       ])
     ) as typeof value
 
-    result[camelCase(category)] = mappedTokenObject(transformed)
+    result[category] = mappedTokenObject(transformed)
   }
 
-  return result as {
-    [K in keyof T as ChainCaseToCamelCase<T & string>]: MappedTokenObject<T[K]>
-  }
+  return result
 }

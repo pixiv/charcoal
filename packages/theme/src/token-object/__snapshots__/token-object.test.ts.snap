@@ -2,7 +2,7 @@
 
 exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
 {
-  "borderWidth": {
+  "border-width": {
     "focus": {
       "1": "1",
       "2": "2",
@@ -33,7 +33,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
     },
     "container": {
       "default": "rgba(31, 31, 31, 1)",
-      "defaultA": "rgba(228, 228, 228, 0)",
+      "default-a": "rgba(228, 228, 228, 0)",
       "disable": "rgba(51, 51, 51, 1)",
       "discovery": {
         "default": "rgba(197, 60, 51, 1)",
@@ -41,7 +41,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "press": "rgba(233, 114, 102, 1)",
       },
       "hover": "rgba(41, 41, 41, 1)",
-      "hoverA": "rgba(228, 228, 228, 0.05)",
+      "hover-a": "rgba(228, 228, 228, 0.05)",
       "hud": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(202, 202, 202, 1)",
@@ -62,7 +62,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "hover": "rgba(231, 199, 80, 1)",
         "press": "rgba(252, 227, 145, 1)",
       },
-      "onImg": {
+      "on-img": {
         "default": "rgba(31, 31, 31, 0.37)",
         "hover": "rgba(31, 31, 31, 0.475)",
         "press": "rgba(31, 31, 31, 0.635)",
@@ -73,7 +73,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "press": "rgba(86, 169, 79, 1)",
       },
       "press": "rgba(51, 51, 51, 1)",
-      "pressA": "rgba(228, 228, 228, 0.1)",
+      "press-a": "rgba(228, 228, 228, 0.1)",
       "primary": {
         "default": "rgba(8, 114, 190, 1)",
         "hover": "rgba(55, 136, 208, 1)",
@@ -81,19 +81,19 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       },
       "secondary": {
         "default": "rgba(41, 41, 41, 1)",
-        "defaultA": "rgba(228, 228, 228, 0.05)",
+        "default-a": "rgba(228, 228, 228, 0.05)",
         "hover": "rgba(51, 51, 51, 1)",
-        "hoverA": "rgba(228, 228, 228, 0.1)",
+        "hover-a": "rgba(228, 228, 228, 0.1)",
         "press": "rgba(81, 81, 81, 1)",
-        "pressA": "rgba(228, 228, 228, 0.255)",
+        "press-a": "rgba(228, 228, 228, 0.255)",
       },
       "skeleton": "rgba(228, 228, 228, 0.05)",
       "subtle": "rgba(228, 228, 228, 0.02)",
       "tertiary": {
         "default": "rgba(51, 51, 51, 1)",
-        "defaultA": "rgba(228, 228, 228, 0.1)",
+        "default-a": "rgba(228, 228, 228, 0.1)",
         "hover": "rgba(81, 81, 81, 1)",
-        "hoverA": "rgba(228, 228, 228, 0.255)",
+        "hover-a": "rgba(228, 228, 228, 0.255)",
         "press": "rgba(112, 112, 112, 1)",
         "pressA": "rgba(228, 228, 228, 0.41)",
       },
@@ -112,32 +112,32 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "hover": "rgba(231, 199, 80, 1)",
         "press": "rgba(252, 227, 145, 1)",
       },
-      "onNegative": {
+      "on-negative": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onNeutral": {
+      "on-neutral": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onNotice": {
+      "on-notice": {
         "default": "rgba(41, 41, 41, 1)",
         "hover": "rgba(41, 41, 41, 1)",
         "press": "rgba(41, 41, 41, 1)",
       },
-      "onOnImg": {
+      "on-on-img": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onPositive": {
+      "on-positive": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onPrimary": {
+      "on-primary": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
@@ -160,7 +160,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       },
     },
     "text": {
-      "brandPremium": {
+      "brand-premium": {
         "default": "rgba(253, 158, 22, 1)",
         "hover": "rgba(243, 152, 21, 1)",
         "press": "rgba(213, 133, 18, 1)",
@@ -183,37 +183,37 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "hover": "rgba(231, 199, 80, 1)",
         "press": "rgba(252, 227, 145, 1)",
       },
-      "onDiscovery": {
+      "on-discovery": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onHud": {
+      "on-hud": {
         "default": "rgba(31, 31, 31, 1)",
         "hover": "rgba(31, 31, 31, 1)",
         "press": "rgba(31, 31, 31, 1)",
       },
-      "onNegative": {
+      "on-negative": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onNotice": {
+      "on-notice": {
         "default": "rgba(41, 41, 41, 1)",
         "hover": "rgba(41, 41, 41, 1)",
         "press": "rgba(41, 41, 41, 1)",
       },
-      "onOnImg": {
+      "on-on-img": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onPositive": {
+      "on-positive": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onPrimary": {
+      "on-primary": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
@@ -246,16 +246,16 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       },
     },
   },
-  "paragraphWidth": {
+  "paragraph-width": {
     "l": "672",
-    "lCompact": "588",
-    "lCozy": "924",
+    "l-compact": "588",
+    "l-cozy": "924",
     "m": "448",
-    "mCompact": "392",
-    "mCozy": "616",
+    "m-compact": "392",
+    "m-cozy": "616",
     "s": "320",
-    "sCompact": "280",
-    "sCozy": "588",
+    "s-compact": "280",
+    "s-cozy": "588",
   },
   "radius": {
     "0": "0",
@@ -268,7 +268,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
     "xxl": "24",
   },
   "space": {
-    "betweenCheckboxes": {
+    "between-checkboxes": {
       "horizontal": "12",
       "vertical": "0",
     },
@@ -294,7 +294,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
     },
   },
   "text": {
-    "fontSize": {
+    "font-size": {
       "body": "16",
       "caption": {
         "m": "14",
@@ -313,11 +313,11 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       },
       "paragraph": "16",
     },
-    "fontWeight": {
+    "font-weight": {
       "bold": "700",
       "regular": "400",
     },
-    "lineHeight": {
+    "line-height": {
       "body": "24",
       "caption": {
         "m": "20",
@@ -342,7 +342,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
 
 exports[`createTokenObject test: light theme > should match snapshot 1`] = `
 {
-  "borderWidth": {
+  "border-width": {
     "focus": {
       "1": "1",
       "2": "2",
@@ -373,7 +373,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
     },
     "container": {
       "default": "rgba(255, 255, 255, 1)",
-      "defaultA": "rgba(31, 31, 31, 0)",
+      "default-a": "rgba(31, 31, 31, 0)",
       "disable": "rgba(232, 232, 232, 1)",
       "discovery": {
         "default": "rgba(253, 91, 78, 1)",
@@ -381,7 +381,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "press": "rgba(147, 33, 28, 1)",
       },
       "hover": "rgba(243, 243, 243, 1)",
-      "hoverA": "rgba(31, 31, 31, 0.055)",
+      "hover-a": "rgba(31, 31, 31, 0.055)",
       "hud": {
         "default": "rgba(56, 56, 56, 1)",
         "hover": "rgba(81, 81, 81, 1)",
@@ -402,7 +402,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "hover": "rgba(245, 183, 17, 1)",
         "press": "rgba(231, 157, 20, 1)",
       },
-      "onImg": {
+      "on-img": {
         "default": "rgba(31, 31, 31, 0.37)",
         "hover": "rgba(31, 31, 31, 0.475)",
         "press": "rgba(31, 31, 31, 0.635)",
@@ -413,7 +413,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "press": "rgba(4, 93, 0, 1)",
       },
       "press": "rgba(232, 232, 232, 1)",
-      "pressA": "rgba(31, 31, 31, 0.102)",
+      "press-a": "rgba(31, 31, 31, 0.102)",
       "primary": {
         "default": "rgba(0, 150, 250, 1)",
         "hover": "rgba(31, 117, 188, 1)",
@@ -421,19 +421,19 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       },
       "secondary": {
         "default": "rgba(243, 243, 243, 1)",
-        "defaultA": "rgba(31, 31, 31, 0.055)",
+        "default-a": "rgba(31, 31, 31, 0.055)",
         "hover": "rgba(232, 232, 232, 1)",
-        "hoverA": "rgba(31, 31, 31, 0.102)",
+        "hover-a": "rgba(31, 31, 31, 0.102)",
         "press": "rgba(217, 217, 217, 1)",
-        "pressA": "rgba(31, 31, 31, 0.17)",
+        "press-a": "rgba(31, 31, 31, 0.17)",
       },
       "skeleton": "rgba(31, 31, 31, 0.055)",
       "subtle": "rgba(31, 31, 31, 0.02)",
       "tertiary": {
         "default": "rgba(232, 232, 232, 1)",
-        "defaultA": "rgba(31, 31, 31, 0.102)",
+        "default-a": "rgba(31, 31, 31, 0.102)",
         "hover": "rgba(217, 217, 217, 1)",
-        "hoverA": "rgba(31, 31, 31, 0.17)",
+        "hover-a": "rgba(31, 31, 31, 0.17)",
         "press": "rgba(194, 194, 194, 1)",
         "pressA": "rgba(31, 31, 31, 0.27)",
       },
@@ -452,32 +452,32 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "hover": "rgba(110, 72, 5, 1)",
         "press": "rgba(74, 51, 7, 1)",
       },
-      "onNegative": {
+      "on-negative": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onNeutral": {
+      "on-neutral": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(243, 243, 243, 1)",
         "press": "rgba(232, 232, 232, 1)",
       },
-      "onNotice": {
+      "on-notice": {
         "default": "rgba(31, 31, 31, 1)",
         "hover": "rgba(31, 31, 31, 1)",
         "press": "rgba(31, 31, 31, 1)",
       },
-      "onOnImg": {
+      "on-on-img": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onPositive": {
+      "on-positive": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onPrimary": {
+      "on-primary": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
@@ -500,7 +500,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       },
     },
     "text": {
-      "brandPremium": {
+      "brand-premium": {
         "default": "rgba(253, 158, 22, 1)",
         "hover": "rgba(243, 152, 21, 1)",
         "press": "rgba(213, 133, 18, 1)",
@@ -523,37 +523,37 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "hover": "rgba(110, 72, 5, 1)",
         "press": "rgba(74, 51, 7, 1)",
       },
-      "onDiscovery": {
+      "on-discovery": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onHud": {
+      "on-hud": {
         "default": "rgba(228, 228, 228, 1)",
         "hover": "rgba(228, 228, 228, 1)",
         "press": "rgba(228, 228, 228, 1)",
       },
-      "onNegative": {
+      "on-negative": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onNotice": {
+      "on-notice": {
         "default": "rgba(31, 31, 31, 1)",
         "hover": "rgba(31, 31, 31, 1)",
         "press": "rgba(31, 31, 31, 1)",
       },
-      "onOnImg": {
+      "on-on-img": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onPositive": {
+      "on-positive": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
       },
-      "onPrimary": {
+      "on-primary": {
         "default": "rgba(255, 255, 255, 1)",
         "hover": "rgba(255, 255, 255, 1)",
         "press": "rgba(255, 255, 255, 1)",
@@ -586,16 +586,16 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       },
     },
   },
-  "paragraphWidth": {
+  "paragraph-width": {
     "l": "672",
-    "lCompact": "588",
-    "lCozy": "924",
+    "l-compact": "588",
+    "l-cozy": "924",
     "m": "448",
-    "mCompact": "392",
-    "mCozy": "616",
+    "m-compact": "392",
+    "m-cozy": "616",
     "s": "320",
-    "sCompact": "280",
-    "sCozy": "588",
+    "s-compact": "280",
+    "s-cozy": "588",
   },
   "radius": {
     "0": "0",
@@ -608,7 +608,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
     "xxl": "24",
   },
   "space": {
-    "betweenCheckboxes": {
+    "between-checkboxes": {
       "horizontal": "12",
       "vertical": "0",
     },
@@ -634,7 +634,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
     },
   },
   "text": {
-    "fontSize": {
+    "font-size": {
       "body": "16",
       "caption": {
         "m": "14",
@@ -653,11 +653,11 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       },
       "paragraph": "16",
     },
-    "fontWeight": {
+    "font-weight": {
       "bold": "700",
       "regular": "400",
     },
-    "lineHeight": {
+    "line-height": {
       "body": "24",
       "caption": {
         "m": "20",
