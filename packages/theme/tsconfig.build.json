@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "incremental": true,
+    "resolveJsonModule": true,
     "outDir": "./dist",
     "tsBuildInfoFile": "./.tsbuildinfo"
   },

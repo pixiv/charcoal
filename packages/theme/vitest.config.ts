@@ -5,7 +5,9 @@ import * as path from 'node:path'
 export default defineConfig({
   test: {
     globals: true,
-    setupFiles: ['../../vitest.setup.ts'],
+    typecheck: {
+      enabled: true,
+    },
     alias: [
       {
         find: /@charcoal-ui\/(.*)/,
