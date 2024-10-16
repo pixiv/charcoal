@@ -1,9 +1,5 @@
-import {
-  createTemplateResolver,
-  createTokenObject,
-  mappedTokenObject,
-  pathToObject,
-} from './token-object'
+import { createTokenObject, toTokenObject } from '.'
+import { createReferenceTokenResolver } from './reference-token'
 import lightToken from '../json/pixiv-light.json'
 import darkToken from '../json/pixiv-dark.json'
 import baseToken from '../json/base.json'
@@ -18,7 +14,7 @@ describe.each([
   const keys = Object.keys(token)
   // 結局実装で使ってるコードで検証してるので意味ないかも
   // とはいえほぼこの実装になると思うどうしよう
-  const templateResolver = createTemplateResolver(token, baseToken)
+  const templateResolver = createReferenceTokenResolver(token, baseToken)
 
   // スナップショット
   it('should match snapshot', () => {
@@ -44,45 +40,7 @@ describe.each([
   })
 })
 
-describe('pathToObject', () => {
-  it('should create a nested object from a single key path', () => {
-    const path: ['a'] = ['a']
-    const value = 'value'
-    const result = pathToObject(path, value)
-    expect(result).toEqual({ a: value })
-  })
-
-  it('should create a nested object from a multi-level key path', () => {
-    const path: ['a', 'b', 'c'] = ['a', 'b', 'c']
-    const value = 'value'
-    const result = pathToObject(path, value)
-    expect(result).toEqual({ a: { b: { c: value } } })
-  })
-
-  it('should handle nested paths correctly', () => {
-    const path: ['theme', 'color', 'background', 'default'] = [
-      'theme',
-      'color',
-      'background',
-      'default',
-    ]
-    const value = '#ffffff'
-    const result = pathToObject(path, value)
-    expect(result).toEqual({
-      theme: { color: { background: { default: value } } },
-    })
-  })
-
-  it('should throw an error if an empty path is provided', () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    expect(() => pathToObject([], 'value')).toThrowError(
-      'Path must be a non-empty array'
-    )
-  })
-})
-
-describe('mappedTokenObject', () => {
+describe('toTokenObject test', () => {
   const tokens: Tokens = {
     'color/background/default': { value: '#ffffff' },
     'color/background/secondary': { value: '#f2f2f2' },
@@ -91,7 +49,7 @@ describe('mappedTokenObject', () => {
   }
 
   it('should create a nested object from token paths', () => {
-    const result = mappedTokenObject(tokens)
+    const result = toTokenObject(tokens)
 
     expect(result).toEqual({
       color: {
@@ -116,8 +74,8 @@ describe('mappedTokenObject', () => {
     }
 
     const mergedResult = deepmerge(
-      mappedTokenObject(tokens),
-      mappedTokenObject(additionalTokens)
+      toTokenObject(tokens),
+      toTokenObject(additionalTokens)
     )
 
     expect(mergedResult).toEqual({
@@ -138,7 +96,7 @@ describe('mappedTokenObject', () => {
   })
 
   it('should return an empty object for empty tokens', () => {
-    const result = mappedTokenObject({})
+    const result = toTokenObject({})
     expect(result).toEqual({})
   })
 })

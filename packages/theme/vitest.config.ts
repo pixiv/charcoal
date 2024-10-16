@@ -5,6 +5,9 @@ import * as path from 'node:path'
 export default defineConfig({
   test: {
     globals: true,
+    typecheck: {
+      enabled: true,
+    },
     alias: [
       {
         find: /@charcoal-ui\/(.*)/,
