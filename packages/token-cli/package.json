@@ -9,7 +9,7 @@
     "build": "FORCE_COLOR=1 tsup-node",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "jest"
+    "test": "vitest --passWithNoTests"
   },
   "files": [
     "dist",
