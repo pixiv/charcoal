@@ -214,6 +214,7 @@ declare var _default: {
   '32/Gift': () => Promise<string>;
   '32/Home': () => Promise<string>;
   '32/HorizontalWriting': () => Promise<string>;
+  '32/ImageHidden': () => Promise<string>;
   '32/Index': () => Promise<string>;
   '32/LikeOff': () => Promise<string>;
   '32/LikeOn': () => Promise<string>;
