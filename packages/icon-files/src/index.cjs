@@ -214,6 +214,7 @@ module.exports = {
   '32/Gift': () => import('./32/Gift.js').then(m => m.default),
   '32/Home': () => import('./32/Home.js').then(m => m.default),
   '32/HorizontalWriting': () => import('./32/HorizontalWriting.js').then(m => m.default),
+  '32/ImageHidden': () => import('./32/ImageHidden.js').then(m => m.default),
   '32/Index': () => import('./32/Index.js').then(m => m.default),
   '32/LikeOff': () => import('./32/LikeOff.js').then(m => m.default),
   '32/LikeOn': () => import('./32/LikeOn.js').then(m => m.default),
