@@ -8,13 +8,17 @@ on:
 
 env:
   OUTPUT_ROOT_DIR: packages/icon-files/
+  TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'main' }}
 
 jobs:
   icons:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
@@ -49,5 +53,5 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
-          GITHUB_DEFAULT_BRANCH: main
+          GITHUB_DEFAULT_BRANCH: ${{ env.TARGET_BRANCH }}
         run: yarn icons-cli github:pr
