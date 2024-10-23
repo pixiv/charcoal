@@ -1,4 +1,5 @@
-import { createTokenObject, toTokenObject } from '.'
+import { createTokenObject } from '.'
+import { toTokenObject } from './to-token-object'
 import { createReferenceTokenResolver } from './reference-token'
 import lightToken from '../json/pixiv-light.json'
 import darkToken from '../json/pixiv-dark.json'
