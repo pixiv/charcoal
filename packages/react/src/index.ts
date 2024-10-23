@@ -1,3 +1,7 @@
+/** build のためのエントリーポイント
+ *  build 後は js, css に分離されるので js を import すると
+ *  css が一緒に読み込まれるということはない
+ **/
 import './index.css'
 
 export { SSRProvider } from './core/SSRProvider'
