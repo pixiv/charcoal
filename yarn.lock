@@ -2224,7 +2224,7 @@ __metadata:
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.15
     "@charcoal-ui/utils": ^4.0.0-beta.15
-    change-case: ^5.4.4
+    change-case-all: ^2.1.0
     cpx: ^1.5.0
     deepmerge: ^4.3.1
     npm-run-all: ^4.1.5
@@ -12274,6 +12274,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"change-case-all@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "change-case-all@npm:2.1.0"
+  dependencies:
+    change-case: ^5.2.0
+    sponge-case: ^2.0.2
+    swap-case: ^3.0.2
+    title-case: ^3.0.3
+  checksum: 0aadbdbde682976a9b34b05de930013404052a0eef75145405a99f7d59b06cbbad5a683d0c101b1823564e8d80b37da502884b9d9f6e7c36b8912fe5b2d3ac45
+  languageName: node
+  linkType: hard
+
 "change-case@npm:^4.1.2":
   version: 4.1.2
   resolution: "change-case@npm:4.1.2"
@@ -12294,7 +12306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"change-case@npm:^5.4.4":
+"change-case@npm:^5.2.0":
   version: 5.4.4
   resolution: "change-case@npm:5.4.4"
   checksum: a22a25a763719658424ffbcd41e931d2d19cc22399cc765dca447fbe1eaf13e179d5e8ab1677af75f2e814dbddf74e42ffdecb526cd5bc906cc859f62aa154b2
@@ -26932,6 +26944,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sponge-case@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "sponge-case@npm:2.0.3"
+  checksum: e66fd121e05c9414780283f286d78d487319cc678835bd47a173144261610329435a2a4b7752cd1c4df1531fce08951f5241a6235b291c6679ce1030932f5bc1
+  languageName: node
+  linkType: hard
+
 "sprintf-js@npm:~1.0.2":
   version: 1.0.3
   resolution: "sprintf-js@npm:1.0.3"
@@ -27593,6 +27612,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swap-case@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "swap-case@npm:3.0.3"
+  checksum: af210c61c9eecd8af539a214ba42c7f6ece7a9849dcd365bdd3e197200f909b134872b7ffa17f8227fed05215a1c46da343d08a8086f0b3400269ebd4676efe0
+  languageName: node
+  linkType: hard
+
 "swc-loader@npm:^0.2.3":
   version: 0.2.3
   resolution: "swc-loader@npm:0.2.3"
@@ -27987,6 +28013,15 @@ __metadata:
   version: 3.0.0
   resolution: "tinyspy@npm:3.0.0"
   checksum: b5b686acff2b88de60ff8ecf89a2042320406aaeee2fba1828a7ea8a925fad3ed9f5e4d7a068154a9134473c472aa03da8ca92ee994bc57a741c5ede5fa7de4d
+  languageName: node
+  linkType: hard
+
+"title-case@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "title-case@npm:3.0.3"
+  dependencies:
+    tslib: ^2.0.3
+  checksum: e8b7ea006b53cf3208d278455d9f1e22c409459d7f9878da324fa3b18cc0aef8560924c19c744e870394a5d9cddfdbe029ebae9875909ee7f4fc562e7cbfc53e
   languageName: node
   linkType: hard
 

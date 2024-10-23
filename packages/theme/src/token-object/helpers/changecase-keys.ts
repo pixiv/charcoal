@@ -1,4 +1,4 @@
-import { camelCase } from 'change-case'
+import { camelCase } from 'change-case-all'
 
 const isObject = (value: unknown): value is Record<string, unknown> => {
   if (value instanceof RegExp) return false

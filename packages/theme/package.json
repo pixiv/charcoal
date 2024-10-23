@@ -37,7 +37,7 @@
   "dependencies": {
     "@charcoal-ui/foundation": "^4.0.0-beta.15",
     "@charcoal-ui/utils": "^4.0.0-beta.15",
-    "change-case": "^5.4.4",
+    "change-case-all": "^2.1.0",
     "deepmerge": "^4.3.1",
     "polished": "^4.1.4"
   },
