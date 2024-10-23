@@ -9,7 +9,6 @@
 .charcoal-radio__label[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
   color: var(--charcoal-color-text-disable);
-  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-radio__label_div {
