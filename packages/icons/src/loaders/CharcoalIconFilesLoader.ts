@@ -1,6 +1,6 @@
 import { PixivIconLoadError } from './PixivIconLoadError'
 import { Loadable } from './Loadable'
-import charcoalIconFiles, { KnownIconFile } from '../charcoalIconFiles'
+import { KnownIconFile } from '../charcoalIconFiles'
 
 /**
  * `@charcoal-ui/icon-files` に収録されているアイコンを取ってくる
@@ -15,7 +15,12 @@ export class CharcoalIconFilesLoader implements Loadable {
   }
 
   get importIconFile() {
-    return charcoalIconFiles[this._name]
+    const [size, name] = this._name.split('/')
+
+    return () =>
+      import(`@charcoal-ui/icon-files/src/${size}/${name}.js`).then(
+        (res: { default: string }) => res.default
+      )
   }
 
   async fetch(): Promise<string> {
