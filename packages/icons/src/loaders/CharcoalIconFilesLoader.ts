@@ -14,6 +14,10 @@ export class CharcoalIconFilesLoader implements Loadable {
     this._name = name
   }
 
+  get trusted() {
+    return true
+  }
+
   get importIconFile() {
     return charcoalIconFiles[this._name]
   }
