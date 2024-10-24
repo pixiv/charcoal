@@ -32,6 +32,9 @@ type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがn
 export class PixivIcon extends HTMLElement {
   static readonly tagName = 'pixiv-icon'
 
+  /**
+   * NOTE: icon content should be sanitized before pass to extend()
+   */
   static extend(
     map: Extended extends true
       ? Record<ExtendedIconFile, string>
@@ -199,21 +202,13 @@ export class PixivIcon extends HTMLElement {
         ? this.svgContent
         : `<svg viewBox="0 0 ${size} ${size}"></svg>`
 
+    // NOTE: User should sanitize the svg content before passing to charcoal.
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this.shadowRoot!.innerHTML = style + svg
   }
 
   private async loadSvg(name: string) {
-    const iconResult = await getIcon(name)
-
-    if (iconResult.trusted) {
-      this.svgContent = iconResult.svgContent
-    } else {
-      const { default: DOMPurify } = await import('dompurify')
-      this.svgContent = DOMPurify.sanitize(iconResult.svgContent, {
-        USE_PROFILES: { svg: true, svgFilters: true },
-      })
-    }
+    this.svgContent = await getIcon(name)
     this.render()
   }
 
