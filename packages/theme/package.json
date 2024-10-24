@@ -4,13 +4,21 @@
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs.js",
-    "import": "./dist/index.esm.js",
-    "default": "./dist/index.esm.js"
-  },
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./token-object": {
+      "types": "./dist/token-object/index.d.ts",
+      "require": "./dist/token-object/index.cjs.js",
+      "import": "./dist/token-object/index.esm.js",
+      "default": "./dist/token-object/index.esm.js"
+    }
+  },
   "sideEffects": [
     "*.css"
   ],
@@ -18,20 +26,25 @@
     "build": "npm-run-all --print-label --parallel 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "build:copy-css": "cpx 'src/css/**/*.css' dist/css && cpx 'src/json/**/*.json' dist/json",
+    "build:copy-css": "cpx 'src/css/**/*.css' dist/css",
+    "build:token-object": "npm-run-all token-object",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
     "typecheck:main": "tsc --project tsconfig.build.json --pretty --noEmit",
     "typecheck:cli": "tsc --project cli/tsconfig.build.json --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests",
-    "bench": "vitest bench --passWithNoTests"
+    "bench": "vitest bench --passWithNoTests",
+    "token-object": "npm-run-all --print-label --parallel 'token-object:*'",
+    "token-object:light": "tsx cli/token-object --token ./src/json/pixiv-light.json --base ./src/json/base.json --output ./dist/json/pixiv-light.json",
+    "token-object:dark": "tsx cli/token-object --token ./src/json/pixiv-dark.json --base ./src/json/base.json --output ./dist/json/pixiv-dark.json"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "tsup": "^6.5.0",
+    "tsx": "^4.19.1",
     "typescript": "^4.9.5",
     "vitest": "^2.0.2"
   },
