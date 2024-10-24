@@ -1,4 +1,4 @@
-import { createTokenObject } from '.'
+import { createCSSTokenObject, createTokenObject } from '.'
 import { toTokenObject } from './to-token-object'
 import { createReferenceTokenResolver } from './reference-token'
 import lightToken from '../json/pixiv-light.json'
@@ -6,6 +6,17 @@ import darkToken from '../json/pixiv-dark.json'
 import baseToken from '../json/base.json'
 import deepmerge from 'deepmerge'
 import { Tokens } from './types'
+import { readFile } from 'fs/promises'
+import { join } from 'node:path'
+import { parse } from 'css'
+
+const isObject = (value: unknown): value is Record<string, unknown> => {
+  if (value instanceof RegExp) return false
+  if (value instanceof Date) return false
+  if (value instanceof Error) return false
+
+  return typeof value === 'object' && value !== null
+}
 
 describe.each([
   ['light theme', lightToken],
@@ -40,6 +51,66 @@ describe.each([
     )
   })
 })
+
+describe.each([
+  ['light theme', lightToken, '../css/_variables_light.css'],
+  ['dark theme', darkToken, '../css/_variables_dark.css'],
+] as const)(
+  'createCSSTokenObject test: %s',
+  async (description, token, cssFilePath) => {
+    const theme = createCSSTokenObject(token, (value) => `charcoal-${value}`)
+    const keys = Object.keys(token)
+    const css = await readFile(join(__dirname, cssFilePath), 'utf-8')
+
+    // スナップショット
+    it('should match snapshot', () => {
+      expect(theme).toMatchSnapshot()
+    })
+
+    const cssVariables = new Map<string, string>()
+    for (const rule of parse(css).stylesheet?.rules ?? []) {
+      if (rule.type !== 'rule') continue
+
+      for (const declaration of rule.declarations ?? []) {
+        if (
+          declaration.type !== 'declaration' ||
+          declaration.property?.startsWith('--charcoal') !== true
+        )
+          continue
+        cssVariables.set(declaration.property, declaration.value ?? '')
+      }
+    }
+
+    describe.each(keys)(`[${description}] Category: %s`, (category) => {
+      const _category = category as keyof typeof token
+      const tokens = token[_category]
+
+      it.each(Object.keys(tokens))(
+        `[${description}] ${category} should have %s`,
+        (key) => {
+          const splitted = key.split('/')
+
+          expect(theme).toHaveProperty(
+            [_category, ...splitted],
+            expect.any(String)
+          )
+          const variable = splitted.reduce((acc, key) => {
+            if (typeof acc === 'string') return acc
+
+            const next = acc[key]
+            if (typeof next === 'string') return next
+
+            return isObject(next) ? next : acc
+          }, theme[_category] as Record<string, unknown> | string)
+
+          expect(
+            Array.from(cssVariables.keys()).map((x) => `var(${x})`)
+          ).toContain(variable)
+        }
+      )
+    })
+  }
+)
 
 describe('toTokenObject test', () => {
   const tokens: Tokens = {

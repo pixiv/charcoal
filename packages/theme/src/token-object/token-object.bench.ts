@@ -1,4 +1,4 @@
-import { camelCaseKeys, createTokenObject } from '.'
+import { camelCaseKeys, createCSSTokenObject, createTokenObject } from '.'
 import lightToken from '../json/pixiv-light.json'
 import darkToken from '../json/pixiv-dark.json'
 import baseToken from '../json/base.json'
@@ -15,5 +15,9 @@ describe.each([
 
   bench('benchmarks token object creation with camelCase formatting', () => {
     camelCaseKeys(createTokenObject(token, baseToken))
+  })
+
+  bench('benchmarks css token object creation', () => {
+    createCSSTokenObject(token, (value) => `charcoal-${value}`)
   })
 })

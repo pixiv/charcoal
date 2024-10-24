@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import { readFileSync, writeFileSync } from 'fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'fs'
 import path from 'path'
-import { createTokenObject } from '../src/token-object'
+import { createCSSTokenObject, createTokenObject } from '../src/token-object'
 import type { TokenDictionary } from '../src/token-object/types'
 import { parseArgs } from 'node:util'
 import { camelCaseKeys } from '../src/token-object'
@@ -49,13 +49,17 @@ switch (format) {
     tokenObject = camelCaseKeys(createTokenObject(tokenJson, baseJson))
     break
   }
+  case 'css': {
+    tokenObject = createCSSTokenObject(tokenJson, (x) => `charcoal-${x}`)
+    break
+  }
   default: {
     console.error(`Error: Unknown format ${format}`)
     process.exit(1)
   }
 }
 
-// 結果をファイルに書き込む
+mkdirSync(path.dirname(outputFilePath), { recursive: true })
 writeFileSync(
   path.resolve(outputFilePath),
   JSON.stringify(tokenObject, null, 2)

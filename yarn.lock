@@ -2224,8 +2224,10 @@ __metadata:
   dependencies:
     "@charcoal-ui/foundation": ^4.0.0-beta.15
     "@charcoal-ui/utils": ^4.0.0-beta.15
+    "@types/css": ^0.0.38
     change-case-all: ^2.1.0
     cpx: ^1.5.0
+    css: ^3.0.0
     deepmerge: ^4.3.1
     npm-run-all: ^4.1.5
     polished: ^4.1.4
@@ -8906,6 +8908,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 06d50fa1e1370ef60b9c9085b76adec7d7bc20728fbb02b3c2061d4d922312acf1ba56a7c94d88c27a22fc6241ab6b970c936f3294038a9c97a719fbc8eb8a76
+  languageName: node
+  linkType: hard
+
+"@types/css@npm:^0.0.38":
+  version: 0.0.38
+  resolution: "@types/css@npm:0.0.38"
+  checksum: c2275227be4af587485a0c1749601b0d96f13d8d430bff19c83242d39f17a764f9ea78c019b6e3b7372f43a35a3245518ad15fb57fdf3fada5f99eb40283c8d7
   languageName: node
   linkType: hard
 
