@@ -8,6 +8,7 @@ export default defineConfig({
     typecheck: {
       enabled: true,
     },
+    benchmark: {},
     alias: [
       {
         find: /@charcoal-ui\/(.*)/,

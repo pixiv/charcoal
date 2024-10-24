@@ -24,7 +24,8 @@
     "typecheck:main": "tsc --project tsconfig.build.json --pretty --noEmit",
     "typecheck:cli": "tsc --project cli/tsconfig.build.json --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "bench": "vitest bench --passWithNoTests"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
