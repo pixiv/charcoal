@@ -37,12 +37,12 @@
     "bench": "vitest bench --passWithNoTests",
     "token-object": "npm-run-all --print-label --parallel 'token-object:*'",
     "token-object:light": "npm-run-all --print-label --parallel 'token-object:light:*'",
+    "token-object:light:default": "tsx cli/token-object --token ./src/json/pixiv-light.json --base ./src/json/base.json --output ./dist/json/pixiv-light.json",
     "token-object:light:camel": "tsx cli/token-object --token ./src/json/pixiv-light.json --base ./src/json/base.json --output ./dist/json/camel/pixiv-light.json --format camel",
-    "token-object:light:kebab": "tsx cli/token-object --token ./src/json/pixiv-light.json --base ./src/json/base.json --output ./dist/json/kebab/pixiv-light.json --format kebab",
     "token-object:light:css": "tsx cli/token-object --token ./src/json/pixiv-light.json --base ./src/json/base.json --output ./dist/json/css/pixiv-light.json --format css",
     "token-object:dark": "npm-run-all --print-label --parallel 'token-object:dark:*'",
+    "token-object:dark:default": "tsx cli/token-object --token ./src/json/pixiv-dark.json --base ./src/json/base.json --output ./dist/json/pixiv-dark.json",
     "token-object:dark:camel": "tsx cli/token-object --token ./src/json/pixiv-dark.json --base ./src/json/base.json --output ./dist/json/camel/pixiv-dark.json --format camel",
-    "token-object:dark:kebab": "tsx cli/token-object --token ./src/json/pixiv-dark.json --base ./src/json/base.json --output ./dist/json/kebab/pixiv-dark.json --format kebab",
     "token-object:dark:css": "tsx cli/token-object --token ./src/json/pixiv-dark.json --base ./src/json/base.json --output ./dist/json/css/pixiv-dark.json --format css"
   },
   "devDependencies": {

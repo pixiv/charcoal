@@ -12,14 +12,14 @@ const args = parseArgs({
     token: { type: 'string' },
     base: { type: 'string' },
     output: { type: 'string' },
-    format: { type: 'string', short: 'f', default: 'kebab' },
+    format: { type: 'string', short: 'f' },
   },
 })
 
 const tokenFilePath = args.values.token
 const baseFilePath = args.values.base
 const outputFilePath = args.values.output
-const format = args.values.format ?? 'camel'
+const format = args.values.format
 
 if (
   tokenFilePath === undefined ||
@@ -41,10 +41,6 @@ const baseJson = JSON.parse(
 // トークンオブジェクトの生成
 let tokenObject = {}
 switch (format) {
-  case 'kebab': {
-    tokenObject = createTokenObject(tokenJson, baseJson)
-    break
-  }
   case 'camel': {
     tokenObject = camelCaseKeys(createTokenObject(tokenJson, baseJson))
     break
@@ -54,8 +50,8 @@ switch (format) {
     break
   }
   default: {
-    console.error(`Error: Unknown format ${format}`)
-    process.exit(1)
+    tokenObject = createTokenObject(tokenJson, baseJson)
+    break
   }
 }
 
