@@ -49,6 +49,7 @@ exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
     >
       <textarea
         aria-describedby="test-id"
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -117,6 +118,7 @@ exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -185,6 +187,7 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-invalid={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
@@ -250,6 +253,7 @@ exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
       }
     >
       <textarea
+        aria-disabled={true}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -312,6 +316,7 @@ exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
     >
       <textarea
         aria-describedby="test-id"
+        aria-disabled={false}
         aria-invalid={true}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
@@ -367,6 +372,7 @@ exports[`Storybook Tests > react/TextArea > Label 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -428,6 +434,7 @@ exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -490,6 +497,7 @@ exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -558,6 +566,7 @@ exports[`Storybook Tests > react/TextArea > Required 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
@@ -619,6 +628,7 @@ exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={true}
@@ -678,6 +688,7 @@ exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
       }
     >
       <textarea
+        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-area-textarea"
         data-no-bottom-padding={false}
