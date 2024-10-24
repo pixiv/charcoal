@@ -132,13 +132,13 @@ const config = [
   },
   {
     files: [
-      '**/*.test.ts',
-      '**/*.test.tsx',
+      '**/*.test.{ts,tsx}',
       '**/__tests__/**',
       '**/*.config.*',
       '*.config.*',
       '**/*.story.*',
       '.storybook/**',
+      '**/*.bench.{ts,tsx}',
     ],
     languageOptions: {
       globals: {
