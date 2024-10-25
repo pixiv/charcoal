@@ -38,19 +38,18 @@
     "*.css"
   ],
   "scripts": {
-    "build": "npm-run-all --print-label --parallel 'build:*' --sequential serialize",
+    "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "build:copy-css": "cpx 'src/css/**' dist/css",
-    "build:token-object": "npm-run-all token-object",
+    "build:copy-css": "cpx --clean 'src/css/**/*.{css,d.ts}' dist/css",
+    "build:token-object": "tsx cli/token-object.ts",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
     "typecheck:main": "tsc --project tsconfig.build.json --pretty --noEmit",
     "typecheck:cli": "tsc --project cli/tsconfig.build.json --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests",
-    "bench": "vitest bench --passWithNoTests",
-    "token-object": "tsx cli/token-object.ts"
+    "bench": "vitest bench --passWithNoTests"
   },
   "devDependencies": {
     "@types/css": "^0.0.38",
