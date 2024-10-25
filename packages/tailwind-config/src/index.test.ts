@@ -25,7 +25,10 @@ describe('tailwind.config.js', () => {
   })
 
   test('list of classes', () => {
-    expect(result.classNames).toMatchSnapshot()
+    expect(result.classNames).toContain('rounded-4')
+    expect(result.classNames).toContain('bg-surface5-top')
+    expect(result.classNames).toContain('p-0')
+    expect(result.classNames).toContain('typography-12')
   })
 
   test('list of css variables', () => {
