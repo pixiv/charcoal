@@ -17,6 +17,21 @@
       "require": "./dist/token-object/index.cjs.js",
       "import": "./dist/token-object/index.esm.js",
       "default": "./dist/token-object/index.esm.js"
+    },
+    "./css/*": "./dist/css/*",
+    "./tokens/*": "./dist/tokens/*"
+  },
+  "typesVersions": {
+    "*": {
+      "token-object": [
+        "./dist/token-object/index.d.ts"
+      ],
+      "tokens/*": [
+        "./dist/tokens/*"
+      ],
+      "css/*": [
+        "./dist/css/*"
+      ]
     }
   },
   "sideEffects": [
@@ -26,7 +41,7 @@
     "build": "npm-run-all --print-label --parallel 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "build:copy-css": "cpx 'src/css/**/*.css' dist/css",
+    "build:copy-css": "cpx 'src/css/**' dist/css",
     "build:token-object": "npm-run-all token-object",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
