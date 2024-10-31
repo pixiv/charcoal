@@ -71,3 +71,31 @@ export function camelToKebab(value: string) {
     .replace(/(?<small>[\da-z]|(?=[A-Z]))(?<capital>[A-Z])/gu, '$1-$2')
     .toLowerCase()
 }
+
+export const mapDefault = <O extends object>(o: O) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return JSON.parse(JSON.stringify(o), function reviver(k: string, v: string) {
+    if (k === 'default') {
+      const DefaultKey = getDefaultKeyName('v3')
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this[DefaultKey] = v
+      return undefined
+    }
+    return v
+  })
+}
+
+export const flattenKey = <O extends object>(
+  o: O,
+  join?: (key: string) => boolean
+) => {
+  return Object.fromEntries(
+    // @ts-expect-error FIXME
+    Object.entries(o).flatMap(([key, v]) => {
+      if (typeof v === 'string') return [[key, v]]
+      return Object.entries(v as object).map(([kk, vv]) => {
+        return [join?.(key) ?? true ? [key, kk].join('-') : kk, vv]
+      })
+    })
+  )
+}
