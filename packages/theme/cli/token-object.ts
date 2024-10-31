@@ -50,14 +50,7 @@ const configurations: Config[] = [
   {
     tokenFile: './src/json/pixiv-light.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/tokens/css-variables/pixiv-light.json',
-    keyStyle: undefined,
-    valueStyle: 'cssVariable',
-  },
-  {
-    tokenFile: './src/json/pixiv-dark.json',
-    baseFile: './src/json/base.json',
-    outputFile: './dist/tokens/css-variables/pixiv-dark.json',
+    outputFile: './dist/tokens/css-variables.json',
     keyStyle: undefined,
     valueStyle: 'cssVariable',
   },
@@ -65,14 +58,7 @@ const configurations: Config[] = [
   {
     tokenFile: './src/json/pixiv-light.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/tokens/css-variables/camel/pixiv-light.json',
-    keyStyle: 'camelCase',
-    valueStyle: 'cssVariable',
-  },
-  {
-    tokenFile: './src/json/pixiv-dark.json',
-    baseFile: './src/json/base.json',
-    outputFile: './dist/tokens/css-variables/camel/pixiv-dark.json',
+    outputFile: './dist/tokens/camel/css-variables.json',
     keyStyle: 'camelCase',
     valueStyle: 'cssVariable',
   },
