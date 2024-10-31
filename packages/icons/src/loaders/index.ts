@@ -21,16 +21,13 @@ export async function getIcon(name: string) {
     throw new PixivIconLoadError(name, 'Loader was not found')
   }
 
-  return loader
-    .fetch()
-    .then((svgContent) => ({ trusted: loader.trusted, svgContent }))
-    .catch((e) => {
-      if (e instanceof PixivIconLoadError) {
-        throw e
-      }
+  return loader.fetch().catch((e) => {
+    if (e instanceof PixivIconLoadError) {
+      throw e
+    }
 
-      throw new PixivIconLoadError(name, e)
-    })
+    throw new PixivIconLoadError(name, e)
+  })
 }
 
 function resolveIconLoader(name: string) {

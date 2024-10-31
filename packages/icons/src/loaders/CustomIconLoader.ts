@@ -15,10 +15,6 @@ export class CustomIconLoader implements Loadable {
     this._filePathOrUrl = filePathOrUrl
   }
 
-  get trusted() {
-    return false
-  }
-
   async fetch(): Promise<string> {
     if (this._resultSvg !== undefined) {
       return this._resultSvg
