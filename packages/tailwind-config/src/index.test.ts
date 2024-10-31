@@ -11,6 +11,10 @@ describe('tailwind.config.js', () => {
     },
   })
 
+  test('defaultConfig', () => {
+    expect(defaultConfig).toMatchSnapshot()
+  })
+
   let result: TailwindBuild
 
   beforeAll(async () => {
