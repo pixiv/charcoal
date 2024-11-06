@@ -3,7 +3,6 @@ import warning from 'warning'
 import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { __SERVER__ } from './ssr'
-import DOMPurify from 'dompurify'
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
 
@@ -33,6 +32,9 @@ type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがn
 export class PixivIcon extends HTMLElement {
   static readonly tagName = 'pixiv-icon'
 
+  /**
+   * NOTE: icon content should be sanitized before pass to extend()
+   */
   static extend(
     map: Extended extends true
       ? Record<ExtendedIconFile, string>
@@ -179,8 +181,11 @@ export class PixivIcon extends HTMLElement {
   render() {
     const size = this.forceResizedSize ?? this.scaledSize
 
-    const style = DOMPurify.sanitize(
-      `<style>
+    if (!Number.isFinite(size)) {
+      throw new TypeError(`icon size must not be NaN`)
+    }
+
+    const style = `<style>
   :host {
     display: inline-flex;
     --size: ${size}px;
@@ -190,17 +195,14 @@ export class PixivIcon extends HTMLElement {
     width: var(--size);
     height: var(--size);
   }
-</style>`,
-      { ALLOWED_TAGS: ['style'], FORCE_BODY: true }
-    )
+</style>`
 
-    const svg = DOMPurify.sanitize(
+    const svg =
       this.svgContent !== undefined
         ? this.svgContent
-        : `<svg viewBox="0 0 ${size} ${size}"></svg>`,
-      { USE_PROFILES: { svg: true, svgFilters: true } }
-    )
+        : `<svg viewBox="0 0 ${size} ${size}"></svg>`
 
+    // NOTE: User should sanitize the svg content before passing to charcoal.
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     this.shadowRoot!.innerHTML = style + svg
   }

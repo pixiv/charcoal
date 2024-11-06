@@ -1,7 +1,10 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: {
+    index: 'src/index.ts',
+    'token-object/index': 'src/token-object/index.ts',
+  },
   format: ['esm', 'cjs'],
   outExtension({ format }) {
     return {
@@ -10,4 +13,5 @@ export default defineConfig({
   },
   target: 'esnext',
   sourcemap: true,
+  clean: true,
 })

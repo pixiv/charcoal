@@ -70,7 +70,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/jest-image-snapshot": "^6.4.0",
     "@types/jest-specific-snapshot": "^0.5.9",
-    "@types/node": "^17.0.13",
+    "@types/node": "^18.19.59",
     "@types/prettier": "^2.4.3",
     "@types/styled-components": "^5.1.21",
     "@types/webpack": "^5.28.0",
