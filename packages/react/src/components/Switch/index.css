@@ -9,11 +9,7 @@
 
 .charcoal-switch__label[aria-disabled='true'] {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
-}
-
-.charcoal-switch__label[aria-disabled='true'] > input {
-  opacity: 1;
+  opacity: 0.32;
 }
 
 .charcoal-switch__label_div {

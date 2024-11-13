@@ -32,8 +32,7 @@
 
 .charcoal-button:disabled {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
-  background-color: var(--charcoal-color-container-disable);
+  opacity: 0.32;
 }
 
 .charcoal-button:not(:disabled):focus-visible {

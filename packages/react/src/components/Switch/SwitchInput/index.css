@@ -20,8 +20,6 @@
 .charcoal-switch-input:disabled,
 .charcoal-switch-input[readonly] {
   cursor: default;
-  color: var(--charcoal-color-icon-disable);
-  background-color: var(--charcoal-color-container-disable);
 }
 
 .charcoal-switch-input::after {

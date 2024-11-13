@@ -24,10 +24,10 @@
 }
 
 .charcoal-icon-button:disabled,
+.charcoal-icon-button[data-variant]:disabled,
 .charcoal-icon-button[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
-  background-color: var(--charcoal-color-container-disable);
+  opacity: 0.32;
 }
 .charcoal-icon-button:focus {
   outline: none;

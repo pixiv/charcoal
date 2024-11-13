@@ -8,7 +8,11 @@
 
 .charcoal-checkbox__label[aria-disabled='true'] {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
+  opacity: 0.32;
+}
+
+.charcoal-checkbox__label:has(input:read-only) {
+  cursor: default;
 }
 
 .charcoal-checkbox__label_div {

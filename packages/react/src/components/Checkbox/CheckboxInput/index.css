@@ -18,10 +18,12 @@
 .charcoal-checkbox-input:active {
   background-color: var(--charcoal-color-container-press);
 }
-.charcoal-checkbox-input:disabled,
-.charcoal-checkbox-input[readonly] {
+.charcoal-checkbox-input:disabled {
   cursor: default;
-  background-color: var(--charcoal-color-container-disable);
+}
+.charcoal-checkbox-input:read-only {
+  cursor: default;
+  opacity: 0.32;
 }
 
 .charcoal-checkbox-input:checked {
@@ -61,15 +63,16 @@
 .charcoal-checkbox-input:not(:disabled):focus-visible {
   box-shadow: var(--charcoal-color-custom-focus-effect);
 }
-.charcoal-checkbox-input:not(:disabled):focus:not(:focus-visible) {
-  box-shadow: none;
-}
 
-.charcoal-checkbox-input:checked:not(:disabled):hover {
+.charcoal-checkbox-input:checked:not(:disabled, :read-only):hover {
   background-color: var(--charcoal-color-container-primary-hover);
 }
-.charcoal-checkbox-input:checked:not(:disabled):active {
+.charcoal-checkbox-input:checked:not(:disabled, :read-only):active {
   background-color: var(--charcoal-color-container-primary-press);
+}
+
+.charcoal-checkbox-input:not(:disabled):focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 .charcoal-checkbox-input[aria-invalid='true'],
