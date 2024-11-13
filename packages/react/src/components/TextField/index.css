@@ -9,7 +9,7 @@
   height: 40px;
   transition: 0.2s background-color, 0.2s box-shadow;
   color: var(--charcoal-color-text-secondary-default);
-  background-color: var(--charcoal-color-container-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
   padding: 0 8px;
   line-height: 22px;
@@ -25,7 +25,7 @@
 }
 
 .charcoal-text-field-container:not([aria-disabled='true']):hover {
-  background-color: var(--charcoal-color-container-secondary-hover);
+  background-color: var(--charcoal-color-container-secondary-hover-a);
 }
 
 .charcoal-text-field-container:not([aria-disabled='true']):focus-within {

@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
 
-  background-color: var(--charcoal-color-container-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 16px;
 }
 

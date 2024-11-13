@@ -20,7 +20,7 @@
 .charcoal-switch-input:disabled,
 .charcoal-switch-input[readonly] {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
+  color: var(--charcoal-color-icon-disable);
   background-color: var(--charcoal-color-container-disable);
 }
 
@@ -35,7 +35,7 @@
   transform: translateX(0);
   transition: transform 0.2s;
   border-radius: 1024px;
-  background-color: var(--charcoal-color-text-on-primary-default);
+  background-color: var(--charcoal-color-icon-on-primary-default);
 }
 
 .charcoal-switch-input:checked::after {
@@ -67,11 +67,11 @@
 }
 
 .charcoal-switch-input:not(:disabled)::after:hover {
-  background-color: var(--charcoal-color-text-on-primary-hover);
+  background-color: var(--charcoal-color-icon-on-primary-hover);
 }
 
 .charcoal-switch-input:not(:disabled)::after:active {
-  background-color: var(--charcoal-color-text-on-primary-press);
+  background-color: var(--charcoal-color-icon-on-primary-press);
 }
 
 .charcoal-switch-input:not(:disabled):checked:hover {

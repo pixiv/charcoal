@@ -10,7 +10,7 @@
   overflow: hidden;
 
   color: var(--charcoal-color-text-secondary-default);
-  background-color: var(--charcoal-color-container-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
   transition: 0.2s background-color, 0.2s box-shadow;
   height: calc(22px * var(--charcoal-text-area-rows) + 18px);
@@ -30,7 +30,7 @@
 }
 
 .charcoal-text-area-container:not([aria-disabled='true']):hover {
-  background-color: var(--charcoal-color-container-secondary-hover);
+  background-color: var(--charcoal-color-container-secondary-hover-a);
 }
 
 .charcoal-text-area-container[aria-invalid='true']:focus-within {

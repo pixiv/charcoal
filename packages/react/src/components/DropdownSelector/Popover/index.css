@@ -4,7 +4,7 @@
   overflow: auto;
   max-height: inherit;
   background-color: var(--charcoal-color-background-default);
-  border: solid 1px var(--charcoal-color-border-default);
+  border: solid 1px var(--charcoal-color-border-secondary);
   border-radius: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
