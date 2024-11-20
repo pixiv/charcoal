@@ -8,11 +8,11 @@
 
 .charcoal-radio__label[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
+  opacity: 0.32;
 }
 
 .charcoal-radio__label_div {
   font-size: 14px;
   line-height: 22px;
-  color: var(--charcoal-color-text-secondary-default);
+  color: var(--charcoal-color-text-default);
 }

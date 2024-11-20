@@ -10,6 +10,7 @@
   width: var(--charcoal-loading-spinner-size);
   height: var(--charcoal-loading-spinner-size);
   opacity: 0.84;
+  color: var(--charcoal-color-icon-tertiary-default);
   background-color: var(--charcoal-color-background-default);
 }
 .charcoal-loading-spinner[data-transparent='true'] {

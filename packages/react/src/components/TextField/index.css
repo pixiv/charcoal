@@ -4,12 +4,17 @@
   grid-gap: 4px;
 }
 
+.charcoal-text-field-root[aria-disabled='true'] {
+  cursor: default;
+  opacity: 0.32;
+}
+
 .charcoal-text-field-container {
   display: flex;
   height: 40px;
   transition: 0.2s background-color, 0.2s box-shadow;
   color: var(--charcoal-color-text-secondary-default);
-  background-color: var(--charcoal-color-container-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
   padding: 0 8px;
   line-height: 22px;
@@ -20,23 +25,16 @@
   box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
-.charcoal-text-field-container[aria-disabled='true'] {
-  background-color: var(--charcoal-color-container-disable);
-}
-
-.charcoal-text-field-container:not([aria-disabled='true']):hover {
-  background-color: var(--charcoal-color-container-secondary-hover);
-}
-
-.charcoal-text-field-container:not([aria-disabled='true']):focus-within {
+.charcoal-text-field-container:not(
+    [aria-disabled='true'],
+    [data-invalid='true']
+  ):focus-within {
   outline: none;
   box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
-.charcoal-text-field-container:not(
-    [aria-disabled='true']
-  )[data-invalid='true']:focus-within {
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+.charcoal-text-field-container:not([aria-disabled='true']):hover {
+  background-color: var(--charcoal-color-container-secondary-hover-a);
 }
 
 .charcoal-text-field-prefix {
@@ -77,7 +75,7 @@
 }
 
 .charcoal-text-field-input[aria-disabled='true'] {
-  color: var(--charcoal-color-text-disable);
+  opacity: 0.32;
 }
 
 .charcoal-text-field-input::placeholder {

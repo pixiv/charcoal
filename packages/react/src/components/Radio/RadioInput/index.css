@@ -24,7 +24,7 @@
   width: 8px;
   height: 8px;
   pointer-events: none;
-  background-color: var(--charcoal-color-text-on-primary-default);
+  background-color: var(--charcoal-color-icon-on-primary-default);
   border-radius: 999999px;
   transition: 0.2s background-color, 0.2s box-shadow;
 }
@@ -70,7 +70,7 @@
 }
 
 .charcoal-radio-input:checked:not(:disabled):hover::after {
-  background-color: var(--charcoal-color-text-on-primary-hover);
+  background-color: var(--charcoal-color-icon-on-primary-hover);
 }
 
 .charcoal-radio-input:checked:not(:disabled):active {
@@ -78,5 +78,5 @@
 }
 
 .charcoal-radio-input:checked:not(:disabled):active::after {
-  background-color: var(--charcoal-color-text-on-primary-press);
+  background-color: var(--charcoal-color-icon-on-primary-press);
 }

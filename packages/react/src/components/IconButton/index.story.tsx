@@ -32,3 +32,9 @@ export const Overlay: StoryObj<typeof IconButton> = {
     return <IconButton icon="16/Add" variant="Overlay" />
   },
 }
+
+export const Disabled: StoryObj<typeof IconButton> = {
+  render: () => {
+    return <IconButton icon="16/Add" disabled />
+  },
+}

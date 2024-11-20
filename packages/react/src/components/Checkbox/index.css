@@ -3,12 +3,16 @@
   cursor: pointer;
   display: flex;
   gap: 4px;
-  color: var(--charcoal-color-text-secondary-default);
+  color: var(--charcoal-color-text-default);
 }
 
 .charcoal-checkbox__label[aria-disabled='true'] {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
+  opacity: 0.32;
+}
+
+.charcoal-checkbox__label:has(input[readonly]) {
+  cursor: default;
 }
 
 .charcoal-checkbox__label_div {

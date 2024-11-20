@@ -20,6 +20,5 @@
 
 .charcoal-list-item[aria-disabled='true'] {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
-  background-color: var(--charcoal-color-container-disable);
+  opacity: 0.32;
 }

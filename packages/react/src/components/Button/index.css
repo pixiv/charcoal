@@ -24,16 +24,15 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
-  color: var(--charcoal-color-text-secondary-default);
-  background-color: var(--charcoal-color-container-secondary-default);
+  color: var(--charcoal-color-text-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
   height: 40px;
 }
 
 .charcoal-button:disabled {
   cursor: default;
-  color: var(--charcoal-color-text-disable);
-  background-color: var(--charcoal-color-container-disable);
+  opacity: 0.32;
 }
 
 .charcoal-button:not(:disabled):focus-visible {
@@ -42,14 +41,14 @@
 }
 
 .charcoal-button:not(:disabled):hover {
-  color: var(--charcoal-color-text-secondary-hover);
-  background-color: var(--charcoal-color-container-secondary-hover);
+  color: var(--charcoal-color-text-hover);
+  background-color: var(--charcoal-color-container-secondary-hover-a);
 }
 
 .charcoal-button:not(:disabled):active,
-.charcoal-button[data-active='true'] {
-  color: var(--charcoal-color-text-secondary-press);
-  background-color: var(--charcoal-color-container-secondary-press);
+.charcoal-button:not(:disabled)[data-active='true'] {
+  color: var(--charcoal-color-text-press);
+  background-color: var(--charcoal-color-container-secondary-press-a);
 }
 
 .charcoal-button[data-variant='Primary'] {

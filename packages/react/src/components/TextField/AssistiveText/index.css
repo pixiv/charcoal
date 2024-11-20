@@ -6,5 +6,5 @@
 }
 
 .charcoal-text-field-assistive-text[data-invalid='true'] {
-  color: var(--charcoal-color-container-negative-default);
+  color: var(--charcoal-color-text-negative-default);
 }

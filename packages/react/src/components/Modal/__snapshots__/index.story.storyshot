@@ -66,7 +66,6 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-color-text-secondary-default)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -336,7 +335,6 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-color-text-secondary-default)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -460,7 +458,6 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-color-text-secondary-default)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -730,7 +727,6 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-color-text-secondary-default)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -919,7 +915,6 @@ exports[`Storybook Tests > react/Modal > NotDismmissableStory 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-color-text-secondary-default)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
