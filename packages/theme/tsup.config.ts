@@ -6,12 +6,9 @@ export default defineConfig({
     'token-object/index': 'src/token-object/index.ts',
   },
   format: ['esm', 'cjs'],
-  outExtension({ format }) {
-    return {
-      js: `.${format}.js`,
-    }
-  },
   target: 'esnext',
   sourcemap: true,
+  dts: true,
   clean: true,
+  tsconfig: './tsconfig.build.json',
 })

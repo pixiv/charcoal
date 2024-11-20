@@ -2,21 +2,30 @@
   "name": "@charcoal-ui/theme",
   "version": "4.0.0-beta.16",
   "license": "Apache-2.0",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.js",
-      "default": "./dist/index.esm.js"
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./token-object": {
-      "types": "./dist/token-object/index.d.ts",
-      "require": "./dist/token-object/index.cjs.js",
-      "import": "./dist/token-object/index.esm.js",
-      "default": "./dist/token-object/index.esm.js"
+      "require": {
+        "types": "./dist/token-object/index.d.ts",
+        "default": "./dist/token-object/index.js"
+      },
+      "import": {
+        "types": "./dist/token-object/index.d.mts",
+        "default": "./dist/token-object/index.mjs"
+      }
     },
     "./css/*": "./dist/css/*",
     "./tokens/*": "./dist/tokens/*"
@@ -40,7 +49,6 @@
   "scripts": {
     "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "build:copy-css": "cpx --clean 'src/css/**/*.{css,d.ts}' dist/css",
     "build:token-object": "tsx cli/token-object.ts",
     "serialize": "node cli/index.js",
@@ -57,7 +65,7 @@
     "css": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "tsup": "^6.5.0",
+    "tsup": "^8.2.4",
     "tsx": "^4.19.1",
     "typescript": "^4.9.5",
     "vitest": "^2.0.2"
