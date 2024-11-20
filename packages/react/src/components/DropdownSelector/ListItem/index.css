@@ -15,10 +15,10 @@
 .charcoal-list-item:not([aria-disabled='true']):hover,
 .charcoal-list-item:not([aria-disabled='true']):focus,
 .charcoal-list-item:not([aria-disabled='true']):focus-within {
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-container-secondary-default);
 }
 
 .charcoal-list-item[aria-disabled='true'] {
-  opacity: 0.32;
   cursor: default;
+  opacity: 0.32;
 }

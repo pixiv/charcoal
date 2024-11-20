@@ -14,12 +14,11 @@
   border-radius: 16px;
   height: 16px;
   margin: 0;
-  background-color: var(--charcoal-text4);
+  background-color: var(--charcoal-color-container-neutral-default);
 }
 
 .charcoal-switch-input:disabled,
 .charcoal-switch-input[readonly] {
-  opacity: 0.32;
   cursor: default;
 }
 
@@ -34,7 +33,7 @@
   transform: translateX(0);
   transition: transform 0.2s;
   border-radius: 1024px;
-  background-color: var(--charcoal-text5);
+  background-color: var(--charcoal-color-icon-on-primary-default);
 }
 
 .charcoal-switch-input:checked::after {
@@ -43,40 +42,40 @@
 }
 
 .charcoal-switch-input:checked {
-  background-color: var(--charcoal-brand);
+  background-color: var(--charcoal-color-container-primary-default);
 }
 
 .charcoal-switch-input:not(:disabled):hover {
-  background-color: var(--charcoal-text4-hover);
+  background-color: var(--charcoal-color-container-neutral-hover);
 }
 
 .charcoal-switch-input:not(:disabled):active {
-  background-color: var(--charcoal-text4-press);
+  background-color: var(--charcoal-color-container-neutral-press);
 }
 
 .charcoal-switch-input:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 .charcoal-switch-input:not(:disabled):focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 .charcoal-switch-input:not(:disabled):focus:not(:focus-visible) {
   box-shadow: none;
 }
 
 .charcoal-switch-input:not(:disabled)::after:hover {
-  background-color: var(--charcoal-text5-hover);
+  background-color: var(--charcoal-color-icon-on-primary-hover);
 }
 
 .charcoal-switch-input:not(:disabled)::after:active {
-  background-color: var(--charcoal-text5-press);
+  background-color: var(--charcoal-color-icon-on-primary-press);
 }
 
 .charcoal-switch-input:not(:disabled):checked:hover {
-  background-color: var(--charcoal-brand-hover);
+  background-color: var(--charcoal-color-container-primary-hover);
 }
 
 .charcoal-switch-input:not(:disabled):checked:active {
-  background-color: var(--charcoal-brand-press);
+  background-color: var(--charcoal-color-container-primary-press);
 }

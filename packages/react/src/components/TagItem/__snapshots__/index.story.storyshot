@@ -44,7 +44,7 @@ exports[`Storybook Tests > react/TagItem > BGColor 1`] = `
     data-state="default"
     style={
       Object {
-        "--charcoal-tag-item-bg": "var(--charcoal-brand)",
+        "--charcoal-tag-item-bg": "var(--charcoal-color-container-primary-default)",
       }
     }
   >

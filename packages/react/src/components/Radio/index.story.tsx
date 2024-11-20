@@ -1,3 +1,4 @@
+import { useId } from '@react-aria/utils'
 import Radio from '.'
 import { RadioGroup } from './RadioGroup'
 import { StoryObj } from '@storybook/react'
@@ -29,14 +30,17 @@ const LayoutDiv = (props: { children: React.ReactNode }) => {
 }
 
 export const Default: StoryObj<typeof Radio> = {
+  argTypes: {
+    disabled: { type: 'boolean', defaultValue: false },
+  },
   render: function Render(args) {
     const [value, setValue] = useState<Option>(options[0])
-
+    const id = useId()
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          name="default_story"
-          label="default story"
+          name={`default_story_${id}`}
+          label={`default story ${id}`}
           {...args}
           value={value}
           onChange={setValue}

@@ -3,6 +3,7 @@
   grid-template-columns: 1fr;
   grid-gap: 4px;
   width: 100%;
+  border-radius: 4px;
 }
 
 .charcoal-dropdown-selector-root[aria-disabled='true'] {
@@ -25,7 +26,7 @@
 
   padding-right: 8px;
   padding-left: 8px;
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
 
   transition: 0.2s box-shadow, 0.2s background-color;
@@ -37,20 +38,20 @@
 
 .charcoal-dropdown-selector-button:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled)[data-active='true'],
 .charcoal-dropdown-selector-button:not(:disabled):active {
-  background-color: var(--charcoal-surface3-press);
+  background-color: var(--charcoal-color-container-secondary-press-a);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):hover {
-  background-color: var(--charcoal-surface3-hover);
+  background-color: var(--charcoal-color-container-secondary-hover-a);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):focus:not(:focus-visible) {
@@ -61,7 +62,7 @@
 .charcoal-dropdown-selector-button:not(
     :disabled
   )[aria-invalid='true']:focus:not(:focus-visible) {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
 .charcoal-ui-dropdown-selector-text {
@@ -69,16 +70,16 @@
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-default);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .charcoal-ui-dropdown-selector-text[data-placeholder='true'] {
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text-placeholder-default);
 }
 
 .charcoal-ui-dropdown-selector-icon {
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-icon-secondary-default);
 }
