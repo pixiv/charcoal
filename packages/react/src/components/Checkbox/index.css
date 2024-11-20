@@ -11,7 +11,7 @@
   opacity: 0.32;
 }
 
-.charcoal-checkbox__label:has(input:read-only) {
+.charcoal-checkbox__label:has(input[readonly]) {
   cursor: default;
 }
 
