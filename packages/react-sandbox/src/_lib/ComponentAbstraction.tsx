@@ -18,8 +18,9 @@ export const DefaultLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
   }
 )
 
+type DefaultLinkProps = LinkProps & React.RefAttributes<HTMLAnchorElement>
 export interface Components {
-  Link: React.ComponentType<React.ComponentPropsWithRef<typeof DefaultLink>>
+  Link: React.ComponentType<React.PropsWithoutRef<DefaultLinkProps>>
 }
 
 const DefaultValue: Components = {
