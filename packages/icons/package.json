@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons",
-  "version": "4.0.0-beta.14",
+  "version": "4.0.0-beta.16",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -36,8 +36,7 @@
     "vitest": "^2.0.1"
   },
   "dependencies": {
-    "@charcoal-ui/icon-files": "^4.0.0-beta.14",
-    "dompurify": "^2.3.6",
+    "@charcoal-ui/icon-files": "^4.0.0-beta.16",
     "warning": "^4.0.3"
   },
   "files": [
