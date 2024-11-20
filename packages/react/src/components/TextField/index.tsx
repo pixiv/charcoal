@@ -89,7 +89,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const showAssistiveText =
       assistiveText != null && assistiveText.length !== 0
 
-    const classNames = useClassNames('charcoal-text-field-root')
+    const classNames = useClassNames('charcoal-text-field-root', className)
 
     return (
       <div className={classNames} aria-disabled={disabled}>

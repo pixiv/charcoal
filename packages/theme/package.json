@@ -1,19 +1,46 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "4.0.0-beta.13",
+  "version": "4.0.0-beta.16",
   "license": "Apache-2.0",
   "type": "commonjs",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    "require": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+    ".": {
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
-    "import": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
+    "./token-object": {
+      "require": {
+        "types": "./dist/token-object/index.d.ts",
+        "default": "./dist/token-object/index.js"
+      },
+      "import": {
+        "types": "./dist/token-object/index.d.mts",
+        "default": "./dist/token-object/index.mjs"
+      }
+    },
+    "./css/*": "./dist/css/*",
+    "./tokens/*": "./dist/tokens/*"
+  },
+  "typesVersions": {
+    "*": {
+      "token-object": [
+        "./dist/token-object/index.d.ts"
+      ],
+      "tokens/*": [
+        "./dist/tokens/*"
+      ],
+      "css/*": [
+        "./dist/css/*"
+      ]
     }
   },
   "sideEffects": [
@@ -21,26 +48,33 @@
   ],
   "scripts": {
     "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
-    "build:tsup": "FORCE_COLOR=1 tsup",
-    "build:copy-css": "cpx 'src/css/**/*.css' dist/css && cpx 'src/json/**/*.json' dist/json",
+    "build:bundle": "FORCE_COLOR=1 tsup",
+    "build:copy-css": "cpx --clean 'src/css/**/*.{css,d.ts}' dist/css",
+    "build:token-object": "tsx cli/token-object.ts",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
     "typecheck:main": "tsc --project tsconfig.build.json --pretty --noEmit",
     "typecheck:cli": "tsc --project cli/tsconfig.build.json --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "bench": "vitest bench --passWithNoTests"
   },
   "devDependencies": {
+    "@types/css": "^0.0.38",
     "cpx": "^1.5.0",
+    "css": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "tsup": "^8.2.4",
+    "tsx": "^4.19.1",
     "typescript": "^4.9.5",
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.0.0-beta.13",
-    "@charcoal-ui/utils": "^4.0.0-beta.13",
+    "@charcoal-ui/foundation": "^4.0.0-beta.16",
+    "@charcoal-ui/utils": "^4.0.0-beta.16",
+    "change-case-all": "^2.1.0",
+    "deepmerge": "^4.3.1",
     "polished": "^4.1.4"
   },
   "files": [
