@@ -3,6 +3,7 @@ import themeDecorator from './theme-decorator'
 import { DocsContainer } from './docs-container'
 
 import './global.css'
+import '../packages/react/dist/index.css'
 
 /** @type  */
 export const parameters = {
