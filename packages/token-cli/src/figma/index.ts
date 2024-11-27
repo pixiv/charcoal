@@ -133,6 +133,6 @@ export const resolveValue = (
 
 export const resolveColor = (value: Color) => colorToRgba(value)
 
-export const resolveFloat = (value: number) => `${value}`
+export const resolveFloat = (value: number) => `${value}px`
 
 export const resolveString = (value: string) => value
