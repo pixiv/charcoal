@@ -1,0 +1,20 @@
+{
+    "name": "@charcoal-ui/style-dictionary-plugins",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "FORCE_COLOR=1 tsup-node",
+        "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit"
+    },
+    "devDependencies": {
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2"
+    },
+    "dependencies": {
+        "style-dictionary": "^4.2.0"
+    },
+    "main": "./dist/index.js",
+    "files": [
+        "dist"
+    ]
+}

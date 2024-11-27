@@ -1,8 +1,8 @@
 {
   "name": "@charcoal-ui/token-cli",
   "bin": "./dist/index.js",
-  "type": "commonjs",
   "version": "4.0.0-beta.16",
+  "type": "module",
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
@@ -16,10 +16,12 @@
     "README.md"
   ],
   "devDependencies": {
+    "@charcoal-ui/style-dictionary-plugins": "workspace:^",
     "@types/fs-extra": "^11.0.4",
     "@types/yargs": "^17.0.32",
+    "prettier": "^3.4.1",
     "rimraf": "^3.0.2",
-    "style-dictionary": "^3.9.2",
+    "style-dictionary": "^4.2.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2",
     "vitest": "^2.0.2"
