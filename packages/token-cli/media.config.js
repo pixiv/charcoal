@@ -1,21 +1,19 @@
-import { nameTransformer } from './src/transformer/index.js'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { nameTransformer } = require('./src/transformer')
 
 /** @type { import('style-dictionary').Config } */
-export default {
-  source: ['tokens/base.json'],
-  hooks: {
-    transform: {
-      'charcoal/kebab': {
-        type: 'name',
-        platforms: ['css'],
-        transformer: nameTransformer,
-      },
+module.exports = {
+  source: ['tokens/base.json', 'tokens/pixiv-light.json'],
+  transform: {
+    'charcoal/kebab': {
+      type: 'name',
+      transformer: nameTransformer,
     },
   },
   platforms: {
     css: {
       transforms: ['charcoal/kebab'],
-      transformGroup: ['css'],
+      transformGroup: 'css',
       buildPath: 'build/css/',
       files: [
         {
