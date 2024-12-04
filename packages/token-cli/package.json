@@ -19,9 +19,8 @@
     "@charcoal-ui/style-dictionary-plugins": "workspace:^",
     "@types/fs-extra": "^11.0.4",
     "@types/yargs": "^17.0.32",
-    "prettier": "^3.4.1",
     "rimraf": "^3.0.2",
-    "style-dictionary": "^4.2.0",
+    "style-dictionary": "4.1.4",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2",
     "vitest": "^2.0.2"
