@@ -58,7 +58,7 @@ describe.each([
 ] as const)(
   'createCSSTokenObject test: %s',
   async (description, token, cssFilePath) => {
-    const theme = createCSSTokenObject(token, (value) => `charcoal-${value}`)
+    const theme = createCSSTokenObject(token, (value) => `ch-${value}`)
     const keys = Object.keys(token)
     const css = await readFile(join(__dirname, cssFilePath), 'utf-8')
 

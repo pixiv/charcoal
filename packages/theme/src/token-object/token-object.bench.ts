@@ -18,6 +18,6 @@ describe.each([
   })
 
   bench('benchmarks css token object creation', () => {
-    createCSSTokenObject(token, (value) => `charcoal-${value}`)
+    createCSSTokenObject(token, (value) => `ch-${value}`)
   })
 })
