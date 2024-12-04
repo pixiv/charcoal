@@ -12,7 +12,7 @@ const nameTransformer = (token) => {
     .replaceAll(' ', '-')
     .replace(/(--)(\D)/g, '-$2')
 
-  return `charcoal-${name}`
+  return `ch-${name}`
 }
 
 module.exports = {
