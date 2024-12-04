@@ -106,13 +106,16 @@ export const resolveValue = (
   // if alias, look at it recursively.
   if (typeof value === 'object' && 'type' in value && 'id' in value) {
     const v = variableMap.get(value.id)
-    if (!v) throw new Error(`can't find variable ${value.id}`)
+    if (!v)
+      throw new Error(
+        `can't find variable alias "${variable.name}:${value.id}"`
+      )
 
     const variableCollection = variableCollectionMap.get(v.variableCollectionId)
 
     if (!variableCollection)
       throw new Error(
-        `can't find variable collection ${v.variableCollectionId}`
+        `can't find variable collection "${variable.name}:${v.variableCollectionId}"`
       )
 
     return `{${variableCollection.name}.${v.name}}`

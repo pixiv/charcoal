@@ -62,18 +62,36 @@ export const createToken = (
 
           if (!v) throw new Error(`can't find variable: ${it}`)
 
-          return {
-            [v.name]: {
-              value: resolveValue(
-                variableCollectionMap,
-                variableMap,
-                v.resolvedType,
-                v,
-                modeId
-              ),
-            },
+          try {
+            const value = resolveValue(
+              variableCollectionMap,
+              variableMap,
+              v.resolvedType,
+              v,
+              modeId
+            )
+            return {
+              [v.name]: {
+                value,
+              },
+            }
+          } catch (e) {
+            if (e instanceof Error) {
+              // eslint-disable-next-line no-console
+              console.warn(`[warn]: ${e.message}`)
+            }
+            return undefined
           }
         })
+        .filter(
+          (
+            it
+          ): it is {
+            [x: string]: {
+              value: string
+            }
+          } => it !== undefined
+        )
         .reduce((prev, current) => ({
           ...prev,
           ...current,
