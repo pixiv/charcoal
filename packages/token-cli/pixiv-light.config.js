@@ -1,21 +1,19 @@
 import { nameTransformer } from './src/transformer/index.js'
+import StyleDictionary from 'style-dictionary'
+
+StyleDictionary.registerTransform({
+  name: 'charcoal/kebab',
+  type: 'name',
+  transform: nameTransformer,
+})
 
 /** @type { import('style-dictionary').Config } */
 export default {
-  source: ['tokens/base.json'],
-  hooks: {
-    transform: {
-      'charcoal/kebab': {
-        type: 'name',
-        platforms: ['css'],
-        transformer: nameTransformer,
-      },
-    },
-  },
+  source: ['tokens/base.json', 'tokens/pixiv-light.json'],
   platforms: {
     css: {
       transforms: ['charcoal/kebab'],
-      transformGroup: ['css'],
+      transformGroup: 'css',
       buildPath: 'build/css/',
       files: [
         {
