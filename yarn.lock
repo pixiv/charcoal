@@ -2193,11 +2193,11 @@ __metadata:
   resolution: "@charcoal-ui/style-dictionary-plugins@workspace:packages/style-dictionary-plugins"
   dependencies:
     npm-run-all: ^4.1.5
-    style-dictionary: ^4.2.0
+    style-dictionary: 4.1.4
     tsup: ^8.3.5
     typescript: ^5.7.2
   peerDependencies:
-    style-dictionary: ^4.2.0
+    style-dictionary: 4.1.4
   languageName: unknown
   linkType: soft
 
@@ -2299,9 +2299,8 @@ __metadata:
     "@types/yargs": ^17.0.32
     axios: ^1.6.7
     fs-extra: ^11.2.0
-    prettier: ^3.4.1
     rimraf: ^3.0.2
-    style-dictionary: ^4.2.0
+    style-dictionary: 4.1.4
     tsup: ^8.0.2
     typescript: ^5.4.2
     vitest: ^2.0.2
@@ -25403,15 +25402,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "prettier@npm:3.4.1"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: f83ae83e38ae38f42c0b174833f58f820ed6eb063abfc5aa6725e8f9c1d626b54b1cb9d595cace525f8d59de89e186285f6bbcb460dc644ea9d8a7823cc54aca
-  languageName: node
-  linkType: hard
-
 "pretty-error@npm:^4.0.0":
   version: 4.0.0
   resolution: "pretty-error@npm:4.0.0"
@@ -28386,9 +28376,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"style-dictionary@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "style-dictionary@npm:4.2.0"
+"style-dictionary@npm:4.1.4":
+  version: 4.1.4
+  resolution: "style-dictionary@npm:4.1.4"
   dependencies:
     "@bundled-es-modules/deepmerge": ^4.3.1
     "@bundled-es-modules/glob": ^10.4.2
@@ -28402,11 +28392,9 @@ __metadata:
     patch-package: ^8.0.0
     path-unified: ^0.1.0
     tinycolor2: ^1.6.0
-  peerDependencies:
-    prettier: 3.x
   bin:
     style-dictionary: bin/style-dictionary.js
-  checksum: a893dcfcb6a528e80aff911cad19f7e994eb82444e8e0cf7aeb8e02f7a8594ca5f88bb157ff9cd598eefc6bb6e16b706e4d1df53e3978dc7b24b711184f2adeb
+  checksum: 3489ab63ec9e5ecda585a4d8ea7e69ead04a64aea9c3c35cb831f4caf8c6fd40f20f02197422b3edf78997ac7757858637d5435acd84e2e7ea2588a7c43a97d5
   languageName: node
   linkType: hard
 

@@ -1,11 +1,6 @@
-import { nameTransformer } from './src/transformer/index.js'
-import StyleDictionary from 'style-dictionary'
+import { transforms } from '@charcoal-ui/style-dictionary-plugins'
 
-StyleDictionary.registerTransform({
-  name: 'charcoal/kebab',
-  type: 'name',
-  transform: nameTransformer,
-})
+transforms.registerCharcoalTransforms()
 
 /** @type { import('style-dictionary').Config } */
 export default {
