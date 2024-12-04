@@ -2196,6 +2196,7 @@ __metadata:
     style-dictionary: 4.1.4
     tsup: ^8.3.5
     typescript: ^5.7.2
+    vitest: ^2.0.2
   peerDependencies:
     style-dictionary: 4.1.4
   languageName: unknown
