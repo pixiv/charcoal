@@ -80,7 +80,7 @@ for (const {
   ): Record<string, unknown> => {
     switch (valueStyle) {
       case 'cssVariable': {
-        return createCSSTokenObject(value, (x) => `charcoal-${x}`)
+        return createCSSTokenObject(value, (x) => `ch-${x}`)
       }
       default: {
         return createTokenObject(value, baseJson)
