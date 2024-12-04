@@ -3,7 +3,7 @@
   cursor: pointer;
   display: flex;
   gap: 4px;
-  color: var(--charcoal-color-text-default);
+  color: var(--ch-color-text-default);
 }
 
 .charcoal-checkbox__label[aria-disabled='true'] {

@@ -43,7 +43,7 @@ exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -113,7 +113,7 @@ exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -182,7 +182,7 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -248,7 +248,7 @@ exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -310,7 +310,7 @@ exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -367,7 +367,7 @@ exports[`Storybook Tests > react/TextArea > Label 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -429,7 +429,7 @@ exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -492,7 +492,7 @@ exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -561,7 +561,7 @@ exports[`Storybook Tests > react/TextArea > Required 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >
@@ -623,7 +623,7 @@ exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "5",
+          "--ch-text-area-rows": "5",
         }
       }
     >
@@ -683,7 +683,7 @@ exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
       className="charcoal-text-area-container"
       style={
         Object {
-          "--charcoal-text-area-rows": "4",
+          "--ch-text-area-rows": "4",
         }
       }
     >

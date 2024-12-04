@@ -51,65 +51,65 @@
 }
 
 .charcoal-icon-button[data-variant='Default'] {
-  color: var(--charcoal-color-icon-tertiary-default);
+  color: var(--ch-color-icon-tertiary-default);
   background-color: rgba(0, 0, 0, 0);
 }
 .charcoal-icon-button[data-variant='Default'][data-active='true']:not(
     :disabled
   ):not([aria-disabled]),
 .charcoal-icon-button[data-variant='Default'][data-active='true'][aria-disabled='false'] {
-  color: var(--charcoal-color-icon-tertiary-press);
-  background-color: var(--charcoal-color-container-press-a);
+  color: var(--ch-color-icon-tertiary-press);
+  background-color: var(--ch-color-container-press-a);
 }
 .charcoal-icon-button[data-variant='Default'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):hover,
 .charcoal-icon-button[data-variant='Default'][data-active='false'][aria-disabled='false']:hover {
-  color: var(--charcoal-color-icon-tertiary-hover);
-  background-color: var(--charcoal-color-container-hover-a);
+  color: var(--ch-color-icon-tertiary-hover);
+  background-color: var(--ch-color-container-hover-a);
 }
 .charcoal-icon-button[data-variant='Default'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):active,
 .charcoal-icon-button[data-variant='Default'][data-active='false'][aria-disabled='false']:active {
-  color: var(--charcoal-color-icon-tertiary-press);
-  background-color: var(--charcoal-color-container-press-a);
+  color: var(--ch-color-icon-tertiary-press);
+  background-color: var(--ch-color-container-press-a);
 }
 
 .charcoal-icon-button[data-variant='Overlay'] {
-  color: var(--charcoal-color-icon-on-on-img-default);
-  background-color: var(--charcoal-color-container-on-img-default);
+  color: var(--ch-color-icon-on-on-img-default);
+  background-color: var(--ch-color-container-on-img-default);
 }
 .charcoal-icon-button[data-variant='Overlay'][data-active='true']:not(
     :disabled
   ):not([aria-disabled]),
 .charcoal-icon-button[data-variant='Overlay'][data-active='true'][aria-disabled='false'] {
-  color: var(--charcoal-color-icon-on-on-img-press);
-  background-color: var(--charcoal-color-container-on-img-press);
+  color: var(--ch-color-icon-on-on-img-press);
+  background-color: var(--ch-color-container-on-img-press);
 }
 .charcoal-icon-button[data-variant='Overlay'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):hover,
 .charcoal-icon-button[data-variant='Overlay'][data-active='false'][aria-disabled='false']:hover {
-  color: var(--charcoal-color-icon-on-on-img-hover);
-  background-color: var(--charcoal-color-container-on-img-hover);
+  color: var(--ch-color-icon-on-on-img-hover);
+  background-color: var(--ch-color-container-on-img-hover);
 }
 .charcoal-icon-button[data-variant='Overlay'][data-active='false']:not(
     :disabled
   ):not([aria-disabled]):active,
 .charcoal-icon-button[data-variant='Overlay'][data-active='false'][aria-disabled='false']:active {
-  color: var(--charcoal-color-icon-on-on-img-press);
-  background-color: var(--charcoal-color-container-on-img-press);
+  color: var(--ch-color-icon-on-on-img-press);
+  background-color: var(--ch-color-container-on-img-press);
 }
 
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus,
 .charcoal-icon-button[aria-disabled='false']:focus {
   outline: none;
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus-visible,
 .charcoal-icon-button[aria-disabled='false']:focus-visible {
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 .charcoal-icon-button:not(:disabled):not([aria-disabled]):focus:not(
     :focus-visible

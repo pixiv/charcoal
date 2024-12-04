@@ -1,5 +1,5 @@
 .charcoal-text-area-root {
-  --charcoal-text-area-rows: ;
+  --ch-text-area-rows: ;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
@@ -13,24 +13,24 @@
   position: relative;
   overflow: hidden;
 
-  color: var(--charcoal-color-text-secondary-default);
-  background-color: var(--charcoal-color-container-secondary-default-a);
+  color: var(--ch-color-text-secondary-default);
+  background-color: var(--ch-color-container-secondary-default-a);
   border-radius: 4px;
   transition: 0.2s background-color, 0.2s box-shadow;
-  height: calc(22px * var(--charcoal-text-area-rows) + 18px);
+  height: calc(22px * var(--ch-text-area-rows) + 18px);
 }
 
 .charcoal-text-area-container[aria-invalid='true'] {
-  box-shadow: var(--charcoal-color-custom-error-effect);
+  box-shadow: var(--ch-color-custom-error-effect);
 }
 
 .charcoal-text-area-container:focus-within {
   outline: none;
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-text-area-container[aria-invalid='true']:focus-within {
-  box-shadow: var(--charcoal-color-custom-error-effect);
+  box-shadow: var(--ch-color-custom-error-effect);
 }
 
 .charcoal-text-area-textarea {
@@ -48,7 +48,7 @@
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
   padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20px);
+  height: calc(22px / 0.875 * var(--ch-text-area-rows) + 20px);
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
@@ -57,11 +57,11 @@
 }
 .charcoal-text-area-textarea[data-no-bottom-padding='true'] {
   padding: calc(9px / 0.875) calc(8px / 0.875) 0;
-  height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 9px);
+  height: calc(22px / 0.875 * (var(--ch-text-area-rows) - 1) + 9px);
 }
 
 .charcoal-text-area-textarea::placeholder {
-  color: var(--charcoal-color-text-placeholder-default);
+  color: var(--ch-color-text-placeholder-default);
 }
 
 .charcoal-text-area-counter {
@@ -71,5 +71,5 @@
 
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-color-text-tertiary-default);
+  color: var(--ch-color-text-tertiary-default);
 }

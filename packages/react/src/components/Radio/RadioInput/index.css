@@ -10,12 +10,12 @@
   height: 20px;
   cursor: pointer;
   border-radius: 999999px;
-  background-color: var(--charcoal-color-container-default);
+  background-color: var(--ch-color-container-default);
   transition: 0.2s background-color, 0.2s box-shadow;
 }
 
 .charcoal-radio-input:checked {
-  background-color: var(--charcoal-color-container-primary-default);
+  background-color: var(--ch-color-container-primary-default);
 }
 
 .charcoal-radio-input:checked::after {
@@ -24,7 +24,7 @@
   width: 8px;
   height: 8px;
   pointer-events: none;
-  background-color: var(--charcoal-color-icon-on-primary-default);
+  background-color: var(--ch-color-icon-on-primary-default);
   border-radius: 999999px;
   transition: 0.2s background-color, 0.2s box-shadow;
 }
@@ -32,7 +32,7 @@
 .charcoal-radio-input:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--charcoal-color-text-tertiary-default);
+  border-color: var(--ch-color-text-tertiary-default);
 }
 
 .charcoal-radio-input:disabled {
@@ -40,20 +40,20 @@
 }
 
 .charcoal-radio-input:not(:disabled):hover {
-  background-color: var(--charcoal-color-container-hover);
+  background-color: var(--ch-color-container-hover);
 }
 
 .charcoal-radio-input:not(:disabled):active {
-  background-color: var(--charcoal-color-container-press);
+  background-color: var(--ch-color-container-press);
 }
 
 .charcoal-radio-input:not(:disabled):focus {
   outline: none;
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-radio-input:not(:disabled):focus-visible {
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-radio-input:not(:disabled):focus:not(:focus-visible) {
@@ -62,21 +62,21 @@
 
 .charcoal-radio-input:not(:disabled)[aria-invalid='true'],
 .charcoal-radio-input:not(:disabled)[aria-invalid='true']:focus {
-  box-shadow: var(--charcoal-color-custom-error-effect);
+  box-shadow: var(--ch-color-custom-error-effect);
 }
 
 .charcoal-radio-input:checked:not(:disabled):hover {
-  background-color: var(--charcoal-color-container-primary-hover);
+  background-color: var(--ch-color-container-primary-hover);
 }
 
 .charcoal-radio-input:checked:not(:disabled):hover::after {
-  background-color: var(--charcoal-color-icon-on-primary-hover);
+  background-color: var(--ch-color-icon-on-primary-hover);
 }
 
 .charcoal-radio-input:checked:not(:disabled):active {
-  background-color: var(--charcoal-color-container-primary-press);
+  background-color: var(--ch-color-container-primary-press);
 }
 
 .charcoal-radio-input:checked:not(:disabled):active::after {
-  background-color: var(--charcoal-color-icon-on-primary-press);
+  background-color: var(--ch-color-icon-on-primary-press);
 }

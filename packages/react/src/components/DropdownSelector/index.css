@@ -26,7 +26,7 @@
 
   padding-right: 8px;
   padding-left: 8px;
-  background-color: var(--charcoal-color-container-secondary-default-a);
+  background-color: var(--ch-color-container-secondary-default-a);
   border-radius: 4px;
 
   transition: 0.2s box-shadow, 0.2s background-color;
@@ -38,20 +38,20 @@
 
 .charcoal-dropdown-selector-button:not(:disabled):focus {
   outline: none;
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):focus-visible {
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled)[data-active='true'],
 .charcoal-dropdown-selector-button:not(:disabled):active {
-  background-color: var(--charcoal-color-container-secondary-press-a);
+  background-color: var(--ch-color-container-secondary-press-a);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):hover {
-  background-color: var(--charcoal-color-container-secondary-hover-a);
+  background-color: var(--ch-color-container-secondary-hover-a);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):focus:not(:focus-visible) {
@@ -62,7 +62,7 @@
 .charcoal-dropdown-selector-button:not(
     :disabled
   )[aria-invalid='true']:focus:not(:focus-visible) {
-  box-shadow: var(--charcoal-color-custom-error-effect);
+  box-shadow: var(--ch-color-custom-error-effect);
 }
 
 .charcoal-ui-dropdown-selector-text {
@@ -70,16 +70,16 @@
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-color-text-default);
+  color: var(--ch-color-text-default);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .charcoal-ui-dropdown-selector-text[data-placeholder='true'] {
-  color: var(--charcoal-color-text-placeholder-default);
+  color: var(--ch-color-text-placeholder-default);
 }
 
 .charcoal-ui-dropdown-selector-icon {
-  color: var(--charcoal-color-icon-secondary-default);
+  color: var(--ch-color-icon-secondary-default);
 }

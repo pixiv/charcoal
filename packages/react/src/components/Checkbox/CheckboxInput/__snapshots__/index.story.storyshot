@@ -60,7 +60,7 @@ exports[`Storybook Tests > react/internals/CheckboxInput > Rounded 1`] = `
   <div
     style={
       Object {
-        "backgroundColor": "var(--charcoal-color-background-secondary)",
+        "backgroundColor": "var(--ch-color-background-secondary)",
         "padding": 8,
       }
     }
