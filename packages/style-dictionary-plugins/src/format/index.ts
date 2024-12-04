@@ -1,19 +1,40 @@
-import { Formatter, formatHelpers } from 'style-dictionary/types'
+import { fileHeader, formattedVariables } from 'style-dictionary/utils'
+import type {
+  FormatFnArguments,
+  Config,
+  LocalOptions,
+} from 'style-dictionary/types'
+import StyleDictionary from 'style-dictionary'
 
-export const variables: Formatter = ({ dictionary, options = {}, file }) => {
-  const selector =
-    typeof options.selector == 'string' && options.selector
-      ? options.selector
-      : `:root`
+/** style-dictionaryのtypesがany多用しててつらい */
+export const charcoalVariables = ({
+  dictionary,
+  options = {},
+  file,
+}: Omit<FormatFnArguments, 'options'> & {
+  options: Config &
+    LocalOptions & {
+      selector?: string
+    }
+}) => {
+  const selector = options.selector ?? `:root`
   const { outputReferences } = options
   return (
-    formatHelpers.fileHeader({ file }) +
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands, @typescript-eslint/no-base-to-string
+    fileHeader({ file }) +
     `${selector} {\n` +
-    formatHelpers.formattedVariables({
+    formattedVariables({
       format: 'css',
       dictionary,
       outputReferences,
     }) +
     `\n}\n`
   )
+}
+
+export const registerCharcoalFormats = () => {
+  StyleDictionary.registerFormat({
+    name: 'css/charcoal-variables',
+    format: charcoalVariables,
+  })
 }
