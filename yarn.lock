@@ -2304,7 +2304,7 @@ __metadata:
     vitest: ^2.0.2
     yargs: ^17.7.2
   bin:
-    token-cli: ./dist/index.js
+    token-cli: ./dist/index.cjs
   languageName: unknown
   linkType: soft
 
