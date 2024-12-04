@@ -3,14 +3,18 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "build": "FORCE_COLOR=1 tsup-node",
+        "build": "run-p --print-label 'build:*'",
+        "build:bundle": "FORCE_COLOR=1 tsup-node",
+        "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
         "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit"
     },
     "devDependencies": {
+        "npm-run-all": "^4.1.5",
+        "style-dictionary": "^4.2.0",
         "tsup": "^8.3.5",
         "typescript": "^5.7.2"
     },
-    "dependencies": {
+    "peerDependencies": {
         "style-dictionary": "^4.2.0"
     },
     "main": "./dist/index.js",
