@@ -24,8 +24,8 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
-  color: var(--charcoal-color-text-default);
-  background-color: var(--charcoal-color-container-secondary-default-a);
+  color: var(--ch-color-text-default);
+  background-color: var(--ch-color-container-secondary-default-a);
   transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
   height: 40px;
 }
@@ -37,50 +37,50 @@
 
 .charcoal-button:not(:disabled):focus-visible {
   outline: none;
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-button:not(:disabled):hover {
-  color: var(--charcoal-color-text-hover);
-  background-color: var(--charcoal-color-container-secondary-hover-a);
+  color: var(--ch-color-text-hover);
+  background-color: var(--ch-color-container-secondary-hover-a);
 }
 
 .charcoal-button:not(:disabled):active,
 .charcoal-button:not(:disabled)[data-active='true'] {
-  color: var(--charcoal-color-text-press);
-  background-color: var(--charcoal-color-container-secondary-press-a);
+  color: var(--ch-color-text-press);
+  background-color: var(--ch-color-container-secondary-press-a);
 }
 
 .charcoal-button[data-variant='Primary'] {
-  color: var(--charcoal-color-text-on-primary-default);
-  background-color: var(--charcoal-color-container-primary-default);
+  color: var(--ch-color-text-on-primary-default);
+  background-color: var(--ch-color-container-primary-default);
 }
 
 .charcoal-button[data-variant='Primary']:hover:not(:disabled) {
-  color: var(--charcoal-color-text-on-primary-hover);
-  background-color: var(--charcoal-color-container-primary-hover);
+  color: var(--ch-color-text-on-primary-hover);
+  background-color: var(--ch-color-container-primary-hover);
 }
 
 .charcoal-button[data-variant='Primary']:active:not(:disabled),
 .charcoal-button[data-variant='Primary'][data-active='true'] {
-  color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-primary-press);
+  color: var(--ch-color-text-on-primary-press);
+  background-color: var(--ch-color-container-primary-press);
 }
 
 .charcoal-button[data-variant='Overlay'] {
-  color: var(--charcoal-color-text-on-on-img-default);
-  background-color: var(--charcoal-color-container-on-img-default);
+  color: var(--ch-color-text-on-on-img-default);
+  background-color: var(--ch-color-container-on-img-default);
 }
 
 .charcoal-button[data-variant='Overlay']:hover:not(:disabled) {
-  color: var(--charcoal-color-text-on-on-img-hover);
-  background-color: var(--charcoal-color-container-on-img-hover);
+  color: var(--ch-color-text-on-on-img-hover);
+  background-color: var(--ch-color-container-on-img-hover);
 }
 
 .charcoal-button[data-variant='Overlay']:active:not(:disabled),
 .charcoal-button[data-variant='Overlay'][data-active='true'] {
-  color: var(--charcoal-color-text-on-on-img-press);
-  background-color: var(--charcoal-color-container-on-img-press);
+  color: var(--ch-color-text-on-on-img-press);
+  background-color: var(--ch-color-container-on-img-press);
 }
 
 /*
@@ -91,34 +91,34 @@
  * 改善するとなくなる要素のために新しく Token を追加することは避けたいので、今回は最も近しい Applied Token の HUD を利用することにした。
  */
 .charcoal-button[data-variant='Navigation'] {
-  color: var(--charcoal-color-text-on-hud-default);
-  background-color: var(--charcoal-color-container-hud-default);
+  color: var(--ch-color-text-on-hud-default);
+  background-color: var(--ch-color-container-hud-default);
 }
 
 .charcoal-button[data-variant='Navigation']:hover:not(:disabled) {
-  color: var(--charcoal-color-text-on-primary-hover);
-  background-color: var(--charcoal-color-container-hud-hover);
+  color: var(--ch-color-text-on-primary-hover);
+  background-color: var(--ch-color-container-hud-hover);
 }
 
 .charcoal-button[data-variant='Navigation']:active:not(:disabled),
 .charcoal-button[data-variant='Navigation'][data-active='true'] {
-  color: var(--charcoal-color-text-on-primary-press);
-  background-color: var(--charcoal-color-container-hud-press);
+  color: var(--ch-color-text-on-primary-press);
+  background-color: var(--ch-color-container-hud-press);
 }
 
 .charcoal-button[data-variant='Danger'] {
-  color: var(--charcoal-color-text-on-negative-default);
-  background-color: var(--charcoal-color-container-negative-default);
+  color: var(--ch-color-text-on-negative-default);
+  background-color: var(--ch-color-container-negative-default);
 }
 .charcoal-button[data-variant='Danger']:hover:not(:disabled) {
-  color: var(--charcoal-color-text-on-negative-hover);
-  background-color: var(--charcoal-color-container-negative-hover);
+  color: var(--ch-color-text-on-negative-hover);
+  background-color: var(--ch-color-container-negative-hover);
 }
 
 .charcoal-button[data-variant='Danger']:active:not(:disabled),
 .charcoal-button[data-variant='Danger'][data-active='true'] {
-  color: var(--charcoal-color-text-on-negative-press);
-  background-color: var(--charcoal-color-container-negative-press);
+  color: var(--ch-color-text-on-negative-press);
+  background-color: var(--ch-color-container-negative-press);
 }
 
 .charcoal-button[data-size='S'] {

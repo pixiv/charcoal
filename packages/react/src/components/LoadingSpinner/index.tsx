@@ -24,8 +24,8 @@ const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
       <div
         role="progressbar"
         style={{
-          '--charcoal-loading-spinner-size': `${size}px`,
-          '--charcoal-loading-spinner-padding': `${padding}px`,
+          '--ch-loading-spinner-size': `${size}px`,
+          '--ch-loading-spinner-padding': `${padding}px`,
         }}
         data-transparent={transparent}
         className={classNames}

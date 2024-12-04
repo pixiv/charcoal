@@ -6,7 +6,7 @@
   font-family: 'Noto Sans JP', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background-color: var(--charcoal-color-background-default);
+  background-color: var(--ch-color-background-default);
 }
 
 #storybook-docs pre {

@@ -9,7 +9,7 @@ exports[`Storybook Tests > react/Clickable > Button 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "var(--charcoal-color-text-secondary-default)",
+        "color": "var(--ch-color-text-secondary-default)",
       }
     }
   >
@@ -28,7 +28,7 @@ exports[`Storybook Tests > react/Clickable > Link 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "var(--charcoal-color-text-secondary-default)",
+        "color": "var(--ch-color-text-secondary-default)",
       }
     }
   >

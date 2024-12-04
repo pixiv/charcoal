@@ -101,7 +101,7 @@ export const Prefix: StoryObj<typeof TextField> = {
             style={{
               display: 'flex',
               alignItems: 'center',
-              color: 'var(--charcoal-color-text-tertiary-default)',
+              color: 'var(--ch-color-text-tertiary-default)',
             }}
           >
             <pixiv-icon name="16/Search" />
