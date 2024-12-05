@@ -1,10 +1,15 @@
-import { transforms } from '@charcoal-ui/style-dictionary-plugins'
-
-transforms.registerCharcoalTransforms()
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { nameTransformer } = require('./src/transformer')
 
 /** @type { import('style-dictionary').Config } */
-export default {
+module.exports = {
   source: ['tokens/base.json', 'tokens/pixiv-light.json'],
+  transform: {
+    'charcoal/kebab': {
+      type: 'name',
+      transformer: nameTransformer,
+    },
+  },
   platforms: {
     css: {
       transforms: ['charcoal/kebab'],
