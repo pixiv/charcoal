@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "incremental": true,
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  },
+  "include": ["./src"]
+}
