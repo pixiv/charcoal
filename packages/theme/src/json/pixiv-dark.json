@@ -1,4 +1,34 @@
 {
+  "space": {
+    "gap/gap-buttons": { "value": "{space.layout/20}" },
+    "padding/padding-card": { "value": "{space.layout/40}" },
+    "target/xs": { "value": "24px" },
+    "target/s": { "value": "32px" },
+    "target/m": { "value": "40px" },
+    "target/l": { "value": "48px" },
+    "gap/gap-form-items": { "value": "{space.layout/40}" },
+    "component/0": { "value": "{space.0}" },
+    "component/10": { "value": "{space.10}" },
+    "component/20": { "value": "{space.20}" },
+    "component/25": { "value": "{space.25}" },
+    "component/30": { "value": "{space.30}" },
+    "component/40": { "value": "{space.40}" },
+    "component/50": { "value": "{space.50}" },
+    "layout/0": { "value": "{space.0}" },
+    "layout/10": { "value": "{space.10}" },
+    "layout/20": { "value": "{space.20}" },
+    "layout/25": { "value": "{space.25}" },
+    "layout/30": { "value": "{space.30}" },
+    "layout/40": { "value": "{space.40}" },
+    "layout/50": { "value": "{space.50}" },
+    "layout/60": { "value": "{space.60}" },
+    "layout/70": { "value": "{space.70}" },
+    "layout/80": { "value": "{space.80}" },
+    "layout/90": { "value": "{space.90}" },
+    "layout/100": { "value": "{space.100}" },
+    "between-checkboxes/vertical": { "value": "{space.layout/0}" },
+    "between-checkboxes/horizontal": { "value": "{space.layout/25}" }
+  },
   "color": {
     "background/default": { "value": "{color.dark/neutral/0}" },
     "background/secondary": { "value": "{color.dark/neutral/-5}" },
@@ -147,45 +177,11 @@
     "icon/on-positive/hover": { "value": "{color.text/on-positive/hover}" },
     "icon/on-positive/press": { "value": "{color.text/on-positive/press}" }
   },
-  "space": {
-    "gap/gap-buttons": { "value": "{space.layout/20}" },
-    "padding/padding-card": { "value": "{space.layout/40}" },
-    "target/xs": { "value": "24px" },
-    "target/s": { "value": "32px" },
-    "target/m": { "value": "40px" },
-    "target/l": { "value": "48px" },
-    "gap/gap-form-items": { "value": "{space.layout/40}" },
-    "component/0": { "value": "{space.0}" },
-    "component/10": { "value": "{space.10}" },
-    "component/20": { "value": "{space.20}" },
-    "component/25": { "value": "{space.25}" },
-    "component/30": { "value": "{space.30}" },
-    "component/40": { "value": "{space.40}" },
-    "component/50": { "value": "{space.50}" },
-    "layout/0": { "value": "{space.0}" },
-    "layout/10": { "value": "{space.10}" },
-    "layout/20": { "value": "{space.20}" },
-    "layout/25": { "value": "{space.25}" },
-    "layout/30": { "value": "{space.30}" },
-    "layout/40": { "value": "{space.40}" },
-    "layout/50": { "value": "{space.50}" },
-    "layout/60": { "value": "{space.60}" },
-    "layout/70": { "value": "{space.70}" },
-    "layout/80": { "value": "{space.80}" },
-    "layout/90": { "value": "{space.90}" },
-    "layout/100": { "value": "{space.100}" },
-    "between-checkboxes/vertical": { "value": "{space.layout/0}" },
-    "between-checkboxes/horizontal": { "value": "{space.layout/25}" }
-  },
-  "radius": {
-    "0": { "value": "{space.0}" },
-    "xs": { "value": "{space.1}" },
-    "s": { "value": "{space.10}" },
-    "m": { "value": "{space.20}" },
-    "l": { "value": "{space.25}" },
-    "xl": { "value": "{space.30}" },
-    "xxl": { "value": "{space.40}" },
-    "oval": { "value": "999999px" }
+  "border-width": {
+    "m": { "value": "1px" },
+    "l": { "value": "2px" },
+    "focus/1": { "value": "{border-width.m}" },
+    "focus/2": { "value": "{border-width.l}" }
   },
   "paragraph-width": {
     "s": { "value": "320px" },
@@ -197,12 +193,6 @@
     "s-cozy": { "value": "588px" },
     "m-cozy": { "value": "616px" },
     "l-cozy": { "value": "924px" }
-  },
-  "border-width": {
-    "m": { "value": "1px" },
-    "l": { "value": "2px" },
-    "focus/1": { "value": "{border-width.m}" },
-    "focus/2": { "value": "{border-width.l}" }
   },
   "text": {
     "font-size/paragraph": { "value": "{text.font-size/10}" },
@@ -233,5 +223,15 @@
     "font-size/caption/s": { "value": "{text.font-size/1}" },
     "font-weight/regular": { "value": "{text.font-weight/40}" },
     "font-weight/bold": { "value": "{text.font-weight/70}" }
+  },
+  "radius": {
+    "0": { "value": "{space.0}" },
+    "xs": { "value": "{space.1}" },
+    "s": { "value": "{space.10}" },
+    "m": { "value": "{space.20}" },
+    "l": { "value": "{space.25}" },
+    "xl": { "value": "{space.30}" },
+    "xxl": { "value": "{space.40}" },
+    "oval": { "value": "999999px" }
   }
 }
