@@ -95,10 +95,7 @@ export const flattenKey = <O extends object>(
     Object.entries(o).flatMap(([key, v]) => {
       if (typeof v === 'string') return [[key, v]]
       return Object.entries(v as object).map(([kk, vv]) => {
-        return [
-          join?.(key) ?? true ? [key, kk].join('-') : kk,
-          vv,
-        ]
+        return [join?.(key) ?? true ? [key, kk].join('-') : kk, vv]
       })
     })
   )

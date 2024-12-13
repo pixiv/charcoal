@@ -13,9 +13,9 @@ export function unstable_createTailwindConfigTokenV2() {
           [
             k,
             [
-              (v),
+              v,
               // @ts-expect-error k should be keyof line-height
-              { lineHeight: (light.text['line-height'][k]) },
+              { lineHeight: light.text['line-height'][k] },
             ],
           ],
         ]
@@ -25,9 +25,9 @@ export function unstable_createTailwindConfigTokenV2() {
         return [
           [k, kk].join('-'),
           [
-            (vv),
+            vv,
             // @ts-expect-error k should be keyof line-height
-            { lineHeight: (light.text['line-height'][k][kk]) },
+            { lineHeight: light.text['line-height'][k][kk] },
           ],
         ]
       })
@@ -41,7 +41,7 @@ export function unstable_createTailwindConfigTokenV2() {
       width: light['paragraph-width'],
       borderWidth: flattenKey(light['border-width']),
       borderRadius: Object.fromEntries(
-        Object.entries(light.radius).map(([k, v]) => [k, (v)])
+        Object.entries(light.radius).map(([k, v]) => [k, v])
       ),
       // @ts-expect-error FIXME
       fontSize,
