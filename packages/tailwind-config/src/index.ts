@@ -21,6 +21,7 @@ import { colorsToTailwindConfig } from './colors/toTailwindConfig'
 import cssVariableColorPlugin from './colors/plugin'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
+export { unstable_createTailwindConfigTokenV2 } from './tokenV2'
 
 interface Options {
   version?: TailwindVersion

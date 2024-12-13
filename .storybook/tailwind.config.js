@@ -1,5 +1,8 @@
 const { light, dark } = require('@charcoal-ui/theme')
-const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
+const {
+  createTailwindConfig,
+  unstable_createTailwindConfigTokenV2,
+} = require('@charcoal-ui/tailwind-config')
 
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
@@ -15,6 +18,7 @@ module.exports = {
         '[data-dark="true"]': dark,
       },
     }),
+    unstable_createTailwindConfigTokenV2(),
   ],
   corePlugins: {
     preflight: false,

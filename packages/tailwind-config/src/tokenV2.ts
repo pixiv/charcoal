@@ -1,19 +1,22 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { TailwindBuild } from './_lib/TailwindBuild'
 import light from '@charcoal-ui/theme/tokens/css-variables.json'
 import { TailwindConfig } from 'tailwindcss/tailwind-config'
 import { flattenKey, mapDefault } from './util'
 
-describe('v2', async () => {
+export function unstable_createTailwindConfigTokenV2() {
   const fontSize = Object.fromEntries(
     Object.entries(light.text['font-size']).flatMap(([k, v]) => {
       if (typeof v === 'string') {
         return [
           [
             k,
-            // @ts-expect-error k should be keyof line-height
-            [v, { lineHeight: light.text['line-height'][k] }],
+            [
+              (v),
+              // @ts-expect-error k should be keyof line-height
+              { lineHeight: (light.text['line-height'][k]) },
+            ],
           ],
         ]
       }
@@ -21,8 +24,11 @@ describe('v2', async () => {
       return Object.entries(v as Record<string, string>).map(([kk, vv]) => {
         return [
           [k, kk].join('-'),
-          // @ts-expect-error k should be keyof line-height
-          [vv, { lineHeight: light.text['line-height'][k][kk] }],
+          [
+            (vv),
+            // @ts-expect-error k should be keyof line-height
+            { lineHeight: (light.text['line-height'][k][kk]) },
+          ],
         ]
       })
     })
@@ -34,7 +40,9 @@ describe('v2', async () => {
       spacing: flattenKey(light.space, (key) => key.includes('between')),
       width: light['paragraph-width'],
       borderWidth: flattenKey(light['border-width']),
-      borderRadius: light.radius,
+      borderRadius: Object.fromEntries(
+        Object.entries(light.radius).map(([k, v]) => [k, (v)])
+      ),
       // @ts-expect-error FIXME
       fontSize,
       fontWeight: light.text['font-weight'],
@@ -42,19 +50,5 @@ describe('v2', async () => {
     },
   }
 
-  const result = await TailwindBuild.run(
-    config,
-    `
-        @import 'tailwindcss/base';
-        @import 'tailwindcss/utilities';
-        @import 'tailwindcss/components';
-      `
-  )
-  test('config object', () => {
-    expect(config).toMatchSnapshot()
-  })
-
-  test('list of classes', () => {
-    expect(result.classNames).toMatchSnapshot()
-  })
-})
+  return config
+}
