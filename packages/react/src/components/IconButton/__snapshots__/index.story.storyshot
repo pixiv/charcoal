@@ -18,24 +18,6 @@ exports[`Storybook Tests > react/IconButton > Default 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests > react/IconButton > Disabled 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-icon-button"
-    data-active={false}
-    data-size="M"
-    data-variant="Default"
-    disabled={true}
-  >
-    <pixiv-icon
-      name="16/Add"
-    />
-  </button>
-</div>
-`;
-
 exports[`Storybook Tests > react/IconButton > IsActive 1`] = `
 <div
   data-dark={false}

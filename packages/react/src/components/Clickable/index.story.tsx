@@ -8,28 +8,12 @@ export default {
 } as Meta<typeof Clickable>
 
 export const Button: StoryObj = {
-  render: () => (
-    <Clickable
-      style={{
-        color: 'var(--charcoal-color-text-secondary-default)',
-      }}
-      onClick={action('click')}
-    >
-      button
-    </Clickable>
-  ),
+  render: () => <Clickable onClick={action('click')}>button</Clickable>,
 }
 
 export const Link: StoryObj = {
   render: () => (
-    <Clickable
-      style={{
-        color: 'var(--charcoal-color-text-secondary-default)',
-      }}
-      component="a"
-      href="#"
-      onClick={action('click')}
-    >
+    <Clickable component="a" href="#" onClick={action('click')}>
       link
     </Clickable>
   ),

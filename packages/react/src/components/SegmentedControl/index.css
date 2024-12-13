@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
 
-  background-color: var(--charcoal-color-container-secondary-default-a);
+  background-color: var(--charcoal-surface3);
   border-radius: 16px;
 }
 
@@ -16,7 +16,7 @@
   padding-right: 16px;
   padding-left: 16px;
   border-radius: 16px;
-  color: var(--charcoal-color-text-secondary-default);
+  color: var(--charcoal-text2);
 
   font-size: 14px;
   line-height: 22px;
@@ -30,8 +30,8 @@
 }
 
 .charcoal-segmented-control-radio__label[data-checked='true'] {
-  background-color: var(--charcoal-color-container-primary-default);
-  color: var(--charcoal-color-text-on-primary-default);
+  background-color: var(--charcoal-brand);
+  color: var(--charcoal-text5);
 }
 
 .charcoal-segmented-control-radio__input {

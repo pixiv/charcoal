@@ -48,7 +48,6 @@ exports[`Storybook Tests > react/TextField > Affix 1`] = `
         /home/john/
       </div>
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -111,7 +110,6 @@ exports[`Storybook Tests > react/TextField > AssistiveText 1`] = `
     >
       <input
         aria-describedby="test-id"
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -181,7 +179,6 @@ exports[`Storybook Tests > react/TextField > Default 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-invalid={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
@@ -242,7 +239,6 @@ exports[`Storybook Tests > react/TextField > Disabled 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={true}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -300,7 +296,6 @@ exports[`Storybook Tests > react/TextField > Invalid 1`] = `
     >
       <input
         aria-describedby="test-id"
-        aria-disabled={false}
         aria-invalid={true}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
@@ -351,7 +346,6 @@ exports[`Storybook Tests > react/TextField > Label 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -408,7 +402,6 @@ exports[`Storybook Tests > react/TextField > Number 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -467,7 +460,6 @@ exports[`Storybook Tests > react/TextField > Placeholder 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -531,7 +523,7 @@ exports[`Storybook Tests > react/TextField > Prefix 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "color": "var(--charcoal-color-text-tertiary-default)",
+              "color": "var(--charcoal-text3)",
               "display": "flex",
             }
           }
@@ -542,7 +534,6 @@ exports[`Storybook Tests > react/TextField > Prefix 1`] = `
         </div>
       </div>
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -599,7 +590,6 @@ exports[`Storybook Tests > react/TextField > ReadOnly 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -649,7 +639,6 @@ exports[`Storybook Tests > react/TextField > RequiredText 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -706,7 +695,6 @@ exports[`Storybook Tests > react/TextField > ShowCount 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
@@ -779,7 +767,6 @@ exports[`Storybook Tests > react/TextField > SubLabel 1`] = `
       data-invalid={false}
     >
       <input
-        aria-disabled={false}
         aria-labelledby="test-id"
         className="charcoal-text-field-input"
         data-invalid={false}
