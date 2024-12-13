@@ -260,9 +260,7 @@ exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
         <label
           className="charcoal-field-label"
           id="test-id"
-        >
-          Label
-        </label>
+        />
         <div
           className="charcoal-field-label-sub-label"
         >
@@ -317,10 +315,8 @@ exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
       >
         <span
           className="charcoal-ui-dropdown-selector-text"
-          data-placeholder={true}
-        >
-          Placeholder
-        </span>
+          data-placeholder={false}
+        />
         <pixiv-icon
           class="charcoal-ui-dropdown-selector-icon"
           name="16/Menu"

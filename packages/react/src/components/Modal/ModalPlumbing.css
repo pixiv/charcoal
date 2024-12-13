@@ -13,7 +13,7 @@
 }
 
 .charcoal-modal-header-title {
-  color: var(--charcoal-color-text-default);
+  color: var(--charcoal-text1);
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
@@ -27,7 +27,6 @@
 
 .charcoal-modal-body {
   padding-bottom: 40px;
-  color: var(--charcoal-color-text-default);
 }
 
 .charcoal-modal-buttons {

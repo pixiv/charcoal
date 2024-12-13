@@ -7,11 +7,6 @@ exports[`Storybook Tests > react/Clickable > Button 1`] = `
   <button
     className="charcoal-clickable"
     onClick={[Function]}
-    style={
-      Object {
-        "color": "var(--charcoal-color-text-secondary-default)",
-      }
-    }
   >
     button
   </button>
@@ -26,11 +21,6 @@ exports[`Storybook Tests > react/Clickable > Link 1`] = `
     className="charcoal-clickable"
     href="#"
     onClick={[Function]}
-    style={
-      Object {
-        "color": "var(--charcoal-color-text-secondary-default)",
-      }
-    }
   >
     link
   </a>
