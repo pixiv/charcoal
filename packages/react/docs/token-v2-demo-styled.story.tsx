@@ -11,11 +11,11 @@ import tokens from '../../theme/dist/tokens/camel/css-variables.json'
 import { Button, Icon } from '@charcoal-ui/react'
 
 export default {
-  title: 'react/docs/Token-v2-demo',
+  title: 'theme/Token v2 demo',
   component: Demo,
 } as Meta<typeof Demo>
 
-export const Styled: StoryObj<typeof Demo> = {
+export const StyledComponents: StoryObj<typeof Demo> = {
   render: Demo,
 }
 
@@ -90,16 +90,16 @@ const Container = styled.section`
 
 const H2 = styled.h2`
   color: ${tokens.color.text.secondary.default};
-  font-size: calc(${tokens.text.fontSize.heading.xs} * 1px);
-  line-height: calc(${tokens.text.lineHeight.heading.xs} * 1px);
+  font-size: ${tokens.text.fontSize.heading.xs};
+  line-height: ${tokens.text.lineHeight.heading.xs};
 `
 
 const Tab = styled.a`
   cursor: pointer;
   font-weight: bold;
-  font-size: calc(${tokens.text.fontSize.body} * 1px);
-  line-height: calc(${tokens.text.lineHeight.body} * 1px);
-  padding: 13px calc(${tokens.space.layout[30]} * 1px);
+  font-size: ${tokens.text.fontSize.body};
+  line-height: ${tokens.text.lineHeight.body};
+  padding: 13px ${tokens.space.layout[30]};
   border-top: 2px transparent;
 
   color: ${tokens.color.text.tertiary.default};
@@ -135,7 +135,7 @@ const UserInfo = styled.div`
   grid-auto-flow: column;
   justify-content: left;
   align-items: center;
-  gap: calc(${tokens.space.layout[20]} * 1px);
+  gap: ${tokens.space.layout[20]};
 `
 
 const User = styled.a`
@@ -143,7 +143,7 @@ const User = styled.a`
   height: 40px;
   display: grid;
   place-items: center;
-  border-radius: calc(${tokens.radius.oval} * 1px);
+  border-radius: ${tokens.radius.oval};
   cursor: pointer;
 
   color: ${tokens.color.icon.default};
@@ -160,8 +160,8 @@ const User = styled.a`
 
 const UserName = styled.span`
   color: ${tokens.color.text.default};
-  font-size: calc(${tokens.text.fontSize.caption.m} * 1px);
-  line-height: calc(${tokens.text.lineHeight.caption.m} * 1px);
+  font-size: ${tokens.text.fontSize.caption.m};
+  line-height: ${tokens.text.lineHeight.caption.m};
   font-weight: bold;
 `
 
@@ -177,15 +177,15 @@ const ShowAll = styled.a`
   }
   text-align: right;
   align-content: center;
-  font-size: calc(${tokens.text.fontSize.caption.m} * 1px);
-  line-height: calc(${tokens.text.lineHeight.caption.m} * 1px);
+  font-size: ${tokens.text.fontSize.caption.m};
+  line-height: ${tokens.text.lineHeight.caption.m};
 `
 
 const ArtworkList = styled.ul`
   grid-area: ArtworkList;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: calc(${tokens.space.layout[20]} * 1px);
+  gap: ${tokens.space.layout[20]};
   list-style: none;
   padding: 0;
   max-width: 424px;
@@ -193,22 +193,22 @@ const ArtworkList = styled.ul`
 
 const Artwork = styled.article`
   display: grid;
-  gap: calc(${tokens.space.layout[10]} * 1px);
+  gap: ${tokens.space.layout[10]};
 `
 const ArtworkThumbnail = styled.img`
   width: 100%;
   aspect-ratio: 3 / 2;
-  border-radius: calc(${tokens.radius.m} * 1px);
+  border-radius: ${tokens.radius.m};
 `
 const ArtworkTitle = styled.h3`
   color: ${tokens.color.text.default};
-  font-size: calc(${tokens.text.fontSize.caption.m} * 1px);
-  line-height: calc(${tokens.text.lineHeight.caption.m} * 1px);
+  font-size: ${tokens.text.fontSize.caption.m};
+  line-height: ${tokens.text.lineHeight.caption.m};
   margin: 0;
 `
 const ArtworkDescription = styled.p`
   margin: 0;
   color: ${tokens.color.text.tertiary.default};
-  font-size: calc(${tokens.text.fontSize.caption.s} * 1px);
-  line-height: calc(${tokens.text.lineHeight.caption.s} * 1px);
+  font-size: ${tokens.text.fontSize.caption.s};
+  line-height: ${tokens.text.lineHeight.caption.s};
 `

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
+exports[`Storybook Tests > theme/Token v2 demo > StyledComponents 1`] = `
 .c0 {
   -webkit-transition: 0.3s color ease-in-out;
   transition: 0.3s color ease-in-out;
@@ -13,16 +13,16 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
 
 .c2 {
   color: var(--charcoal-color-text-secondary-default);
-  font-size: calc(var(--charcoal-text-font-size-heading-xs) * 1px);
-  line-height: calc(var(--charcoal-text-line-height-heading-xs) * 1px);
+  font-size: var(--charcoal-text-font-size-heading-xs);
+  line-height: var(--charcoal-text-line-height-heading-xs);
 }
 
 .c1 {
   cursor: pointer;
   font-weight: bold;
-  font-size: calc(var(--charcoal-text-font-size-body) * 1px);
-  line-height: calc(var(--charcoal-text-line-height-body) * 1px);
-  padding: 13px calc(var(--charcoal-space-layout-30) * 1px);
+  font-size: var(--charcoal-text-font-size-body);
+  line-height: var(--charcoal-text-line-height-body);
+  padding: 13px var(--charcoal-space-layout-30);
   border-top: 2px transparent;
   color: var(--charcoal-color-text-tertiary-default);
 }
@@ -65,7 +65,7 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: calc(var(--charcoal-space-layout-20) * 1px);
+  gap: var(--charcoal-space-layout-20);
 }
 
 .c5 {
@@ -73,7 +73,7 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
   height: 40px;
   display: grid;
   place-items: center;
-  border-radius: calc(var(--charcoal-radius-oval) * 1px);
+  border-radius: var(--charcoal-radius-oval);
   cursor: pointer;
   color: var(--charcoal-color-icon-default);
   background-color: var(--charcoal-color-container-secondary-default);
@@ -91,8 +91,8 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
 
 .c6 {
   color: var(--charcoal-color-text-default);
-  font-size: calc(var(--charcoal-text-font-size-caption-m) * 1px);
-  line-height: calc(var(--charcoal-text-line-height-caption-m) * 1px);
+  font-size: var(--charcoal-text-font-size-caption-m);
+  line-height: var(--charcoal-text-line-height-caption-m);
   font-weight: bold;
 }
 
@@ -104,8 +104,8 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
-  font-size: calc(var(--charcoal-text-font-size-caption-m) * 1px);
-  line-height: calc(var(--charcoal-text-line-height-caption-m) * 1px);
+  font-size: var(--charcoal-text-font-size-caption-m);
+  line-height: var(--charcoal-text-line-height-caption-m);
 }
 
 .c7:hover {
@@ -120,7 +120,7 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
   grid-area: ArtworkList;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: calc(var(--charcoal-space-layout-20) * 1px);
+  gap: var(--charcoal-space-layout-20);
   list-style: none;
   padding: 0;
   max-width: 424px;
@@ -128,27 +128,27 @@ exports[`Storybook Tests > react/docs/Token-v2-demo > Styled 1`] = `
 
 .c9 {
   display: grid;
-  gap: calc(var(--charcoal-space-layout-10) * 1px);
+  gap: var(--charcoal-space-layout-10);
 }
 
 .c10 {
   width: 100%;
   aspect-ratio: 3 / 2;
-  border-radius: calc(var(--charcoal-radius-m) * 1px);
+  border-radius: var(--charcoal-radius-m);
 }
 
 .c11 {
   color: var(--charcoal-color-text-default);
-  font-size: calc(var(--charcoal-text-font-size-caption-m) * 1px);
-  line-height: calc(var(--charcoal-text-line-height-caption-m) * 1px);
+  font-size: var(--charcoal-text-font-size-caption-m);
+  line-height: var(--charcoal-text-line-height-caption-m);
   margin: 0;
 }
 
 .c12 {
   margin: 0;
   color: var(--charcoal-color-text-tertiary-default);
-  font-size: calc(var(--charcoal-text-font-size-caption-s) * 1px);
-  line-height: calc(var(--charcoal-text-line-height-caption-s) * 1px);
+  font-size: var(--charcoal-text-font-size-caption-s);
+  line-height: var(--charcoal-text-line-height-caption-s);
 }
 
 <div
