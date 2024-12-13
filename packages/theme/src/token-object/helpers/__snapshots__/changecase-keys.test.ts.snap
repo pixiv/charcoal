@@ -326,8 +326,8 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
       "paragraph": "16px",
     },
     "fontWeight": {
-      "bold": "700px",
-      "regular": "400px",
+      "bold": "700",
+      "regular": "400",
     },
     "lineHeight": {
       "body": "24px",
@@ -678,8 +678,8 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
       "paragraph": "16px",
     },
     "fontWeight": {
-      "bold": "700px",
-      "regular": "400px",
+      "bold": "700",
+      "regular": "400",
     },
     "lineHeight": {
       "body": "24px",

@@ -1030,8 +1030,8 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       "paragraph": "16px",
     },
     "font-weight": {
-      "bold": "700px",
-      "regular": "400px",
+      "bold": "700",
+      "regular": "400",
     },
     "line-height": {
       "body": "24px",
@@ -1382,8 +1382,8 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       "paragraph": "16px",
     },
     "font-weight": {
-      "bold": "700px",
-      "regular": "400px",
+      "bold": "700",
+      "regular": "400",
     },
     "line-height": {
       "body": "24px",
