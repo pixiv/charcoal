@@ -66,7 +66,6 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -103,6 +102,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -143,6 +143,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     autoFocus={true}
                     className="charcoal-text-field-input"
@@ -334,7 +335,6 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -458,7 +458,6 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -495,6 +494,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -535,6 +535,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     autoFocus={true}
                     className="charcoal-text-field-input"
@@ -726,7 +727,6 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",
@@ -763,6 +763,7 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -803,6 +804,7 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
                   data-invalid={false}
                 >
                   <input
+                    aria-disabled={false}
                     aria-labelledby="test-id"
                     className="charcoal-text-field-input"
                     data-invalid={false}
@@ -913,7 +915,6 @@ exports[`Storybook Tests > react/Modal > NotDismmissableStory 1`] = `
             <div
               style={
                 Object {
-                  "color": "var(--charcoal-text2)",
                   "fontSize": 14,
                   "lineHeight": "22px",
                   "padding": "0 16px",

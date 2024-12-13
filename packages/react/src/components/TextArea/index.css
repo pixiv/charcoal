@@ -1,4 +1,5 @@
 .charcoal-text-area-root {
+  --charcoal-text-area-rows: ;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
@@ -12,28 +13,24 @@
   position: relative;
   overflow: hidden;
 
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-color-text-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
   transition: 0.2s background-color, 0.2s box-shadow;
   height: calc(22px * var(--charcoal-text-area-rows) + 18px);
 }
 
 .charcoal-text-area-container[aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
 .charcoal-text-area-container:focus-within {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-}
-
-.charcoal-text-area-container:not(aria-disabled='true'):hover {
-  background-color: var(--charcoal-surface3-hover);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 
 .charcoal-text-area-container[aria-invalid='true']:focus-within {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: var(--charcoal-color-custom-error-effect);
 }
 
 .charcoal-text-area-textarea {
@@ -64,7 +61,7 @@
 }
 
 .charcoal-text-area-textarea::placeholder {
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text-placeholder-default);
 }
 
 .charcoal-text-area-counter {
@@ -74,5 +71,5 @@
 
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text-tertiary-default);
 }

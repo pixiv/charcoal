@@ -1,4 +1,7 @@
 .charcoal-loading-spinner {
+  --charcoal-loading-spinner-size: 48px;
+  --charcoal-loading-spinner-padding: 16px;
+
   box-sizing: content-box;
   margin: auto;
   padding: var(--charcoal-loading-spinner-padding);
@@ -7,11 +10,11 @@
   width: var(--charcoal-loading-spinner-size);
   height: var(--charcoal-loading-spinner-size);
   opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-background1);
+  color: var(--charcoal-color-icon-tertiary-default);
+  background-color: var(--charcoal-color-background-default);
 }
 .charcoal-loading-spinner[data-transparent='true'] {
-  background-color: var(--charcoal-transparent);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {
