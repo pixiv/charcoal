@@ -61,7 +61,7 @@ const TagItem = forwardRef(function TagItemInner<T extends React.ElementType>(
       data-state={status}
       data-bg-variant={bgVariant}
       data-size={hasTranslatedLabel ? 'M' : size}
-      style={{ '--charcoal-tag-item-bg': bg }}
+      style={{ '--ch-tag-item-bg': bg }}
     >
       <div
         className="charcoal-tag-item__label"

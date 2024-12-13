@@ -11,7 +11,7 @@ export const Button: StoryObj = {
   render: () => (
     <Clickable
       style={{
-        color: 'var(--charcoal-color-text-secondary-default)',
+        color: 'var(--ch-color-text-secondary-default)',
       }}
       onClick={action('click')}
     >
@@ -24,7 +24,7 @@ export const Link: StoryObj = {
   render: () => (
     <Clickable
       style={{
-        color: 'var(--charcoal-color-text-secondary-default)',
+        color: 'var(--ch-color-text-secondary-default)',
       }}
       component="a"
       href="#"

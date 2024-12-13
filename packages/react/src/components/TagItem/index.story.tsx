@@ -29,7 +29,7 @@ export const BGColor: StoryObj<typeof TagItem> = {
     return (
       <TagItem
         label="女の子"
-        bgColor="var(--charcoal-color-container-primary-default)"
+        bgColor="var(--ch-color-container-primary-default)"
       />
     )
   },

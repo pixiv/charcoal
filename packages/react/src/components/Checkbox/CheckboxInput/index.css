@@ -9,14 +9,14 @@
   transition: 0.2s box-shadow, 0.2s background-color;
   position: relative;
   box-sizing: border-box;
-  background-color: var(--charcoal-color-container-default);
+  background-color: var(--ch-color-container-default);
 }
 
 .charcoal-checkbox-input:hover {
-  background-color: var(--charcoal-color-container-hover);
+  background-color: var(--ch-color-container-hover);
 }
 .charcoal-checkbox-input:active {
-  background-color: var(--charcoal-color-container-press);
+  background-color: var(--ch-color-container-press);
 }
 .charcoal-checkbox-input:disabled {
   cursor: default;
@@ -27,12 +27,12 @@
 }
 
 .charcoal-checkbox-input:checked {
-  background-color: var(--charcoal-color-container-primary-default);
+  background-color: var(--ch-color-container-primary-default);
 }
 
 .charcoal-checkbox-input:checked::after {
   content: '';
-  background-color: var(--charcoal-color-icon-on-primary-default);
+  background-color: var(--ch-color-icon-on-primary-default);
   display: flex;
   margin: auto;
   width: 16px;
@@ -43,32 +43,32 @@
 }
 
 .charcoal-checkbox-input:checked:hover::after {
-  background-color: var(--charcoal-color-icon-on-primary-hover);
+  background-color: var(--ch-color-icon-on-primary-hover);
 }
 
 .charcoal-checkbox-input:checked:active::after {
-  background-color: var(--charcoal-color-icon-on-primary-press);
+  background-color: var(--ch-color-icon-on-primary-press);
 }
 
 .charcoal-checkbox-input:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--charcoal-color-border-default);
+  border-color: var(--ch-color-border-default);
 }
 
 .charcoal-checkbox-input:not(:disabled):focus {
   outline: none;
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 .charcoal-checkbox-input:not(:disabled):focus-visible {
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-checkbox-input:checked:not(:disabled, :read-only):hover {
-  background-color: var(--charcoal-color-container-primary-hover);
+  background-color: var(--ch-color-container-primary-hover);
 }
 .charcoal-checkbox-input:checked:not(:disabled, :read-only):active {
-  background-color: var(--charcoal-color-container-primary-press);
+  background-color: var(--ch-color-container-primary-press);
 }
 
 .charcoal-checkbox-input:not(:disabled):focus:not(:focus-visible) {
@@ -77,42 +77,42 @@
 
 .charcoal-checkbox-input[aria-invalid='true'],
 .charcoal-checkbox-input[aria-invalid='true']:not(:disabled):focus {
-  box-shadow: var(--charcoal-color-custom-error-effect);
+  box-shadow: var(--ch-color-custom-error-effect);
 }
 
 .charcoal-checkbox-input[data-rounded='true'] {
   border-radius: 10px;
-  background-color: var(--charcoal-color-container-secondary-default);
+  background-color: var(--ch-color-container-secondary-default);
   border: 2px solid transparent;
 }
 
 .charcoal-checkbox-input[data-rounded='true']:checked {
-  background-color: var(--charcoal-color-container-primary-default);
+  background-color: var(--ch-color-container-primary-default);
 }
 
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):hover {
-  background-color: var(--charcoal-color-container-secondary-hover);
+  background-color: var(--ch-color-container-secondary-hover);
 }
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):active {
-  background-color: var(--charcoal-color-container-secondary-press);
+  background-color: var(--ch-color-container-secondary-press);
 }
 
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):focus-visible {
-  box-shadow: var(--charcoal-color-custom-focus-effect);
+  box-shadow: var(--ch-color-custom-focus-effect);
 }
 
 .charcoal-checkbox-input[data-rounded='true']:checked:not(:disabled):hover {
-  background-color: var(--charcoal-color-container-primary-hover);
+  background-color: var(--ch-color-container-primary-hover);
 }
 .charcoal-checkbox-input[data-rounded='true']:checked:not(:disabled):active {
-  background-color: var(--charcoal-color-container-primary-press);
+  background-color: var(--ch-color-container-primary-press);
 }
 
 .charcoal-checkbox-input[data-rounded='true'][aria-invalid='true'],
 .charcoal-checkbox-input[data-rounded='true'][aria-invalid='true']:not(
     :disabled
   ):focus {
-  box-shadow: var(--charcoal-color-custom-error-effect);
+  box-shadow: var(--ch-color-custom-error-effect);
 }
 
 .charcoal-checkbox-input[data-rounded='true']::before {

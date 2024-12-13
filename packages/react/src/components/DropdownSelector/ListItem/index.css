@@ -15,7 +15,7 @@
 .charcoal-list-item:not([aria-disabled='true']):hover,
 .charcoal-list-item:not([aria-disabled='true']):focus,
 .charcoal-list-item:not([aria-disabled='true']):focus-within {
-  background-color: var(--charcoal-color-container-secondary-default);
+  background-color: var(--ch-color-container-secondary-default);
 }
 
 .charcoal-list-item[aria-disabled='true'] {
