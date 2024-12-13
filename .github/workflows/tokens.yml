@@ -55,8 +55,8 @@ jobs:
         run: |
           rm -rf ../theme/src/json
           rm -rf ../theme/src/css/*.css
-          cp -r ./tokens/ ../theme/src/json
-          cp -r ./build/css/ ../theme/src/css
+          cp -r ./tokens/ ../theme/src/json/
+          cp -r ./build/css/ ../theme/src/css/
           find ../theme/src
 
       - name: Run prettier
