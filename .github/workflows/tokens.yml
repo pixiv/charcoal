@@ -53,7 +53,7 @@ jobs:
 
       - name: Copy to theme package
         run: |
-          rm -rf ../theme/src/json
+          rm -rf ../theme/src/json/*.json
           rm -rf ../theme/src/css/*.css
           cp -r ./tokens/*.json ../theme/src/json/
           cp -r ./build/css/*.css ../theme/src/css/
