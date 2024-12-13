@@ -57,6 +57,7 @@ jobs:
           rm -rf ../theme/src/css/*.css
           cp -r ./tokens/ ../theme/src/json
           cp -r ./build/css/ ../theme/src/css
+          find ../theme/src
 
       - name: Run prettier
         working-directory: ./
