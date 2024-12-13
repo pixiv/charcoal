@@ -125,7 +125,7 @@ export const resolveValue = (
     case 'COLOR':
       return resolveColor(value as Color)
     case 'FLOAT':
-      if (variable.name.includes('font-weight')){
+      if (variable.name.includes('font-weight')) {
         return resolveFloat(value as number)
       }
       return resolveFloatPx(value as number)
