@@ -72,7 +72,7 @@ export function camelToKebab(value: string) {
     .toLowerCase()
 }
 
-export const mapDefault = <O extends object>(o: O) => {
+export const mapDefaultKey = <O extends object>(o: O) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return JSON.parse(JSON.stringify(o), function reviver(k: string, v: string) {
     if (k === 'default') {

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`tokenV2 > config object 1`] = `
+exports[`unstable_createTailwindConfigTokenV2 > config object 1`] = `
 {
   "theme": {
     "borderRadius": {
@@ -374,7 +374,7 @@ exports[`tokenV2 > config object 1`] = `
 }
 `;
 
-exports[`tokenV2 > list of classes 1`] = `
+exports[`unstable_createTailwindConfigTokenV2 > list of classes 1`] = `
 [
   "sr-only",
   "not-sr-only",
