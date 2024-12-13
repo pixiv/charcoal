@@ -16,6 +16,7 @@ export {
   useMedia,
 } from './helper'
 export { defineThemeVariables } from './util'
+export { removeHalfLeadingCss } from './utils/typographyCss'
 export * from './SetThemeScript'
 
 type Blank = null | undefined | false
