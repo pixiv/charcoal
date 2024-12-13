@@ -125,7 +125,10 @@ export const resolveValue = (
     case 'COLOR':
       return resolveColor(value as Color)
     case 'FLOAT':
-      return resolveFloat(value as number)
+      if (variable.name.includes('font-weight')){
+        return resolveFloat(value as number)
+      }
+      return resolveFloatPx(value as number)
     case 'STRING':
       return resolveString(value as string)
 
@@ -136,6 +139,7 @@ export const resolveValue = (
 
 export const resolveColor = (value: Color) => colorToRgba(value)
 
-export const resolveFloat = (value: number) => `${value}px`
+export const resolveFloat = (value: number) => `${value}`
+export const resolveFloatPx = (value: number) => `${value}px`
 
 export const resolveString = (value: string) => value
