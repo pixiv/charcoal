@@ -1,17 +1,23 @@
 import { useState } from 'react'
-import styled from 'styled-components'
-import { MultiSelectGroup, default as MultiSelect } from '.'
+import {
+  MultiSelectGroup,
+  default as MultiSelect,
+  MultiSelectGroupProps,
+} from '.'
 import { Meta, StoryObj } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-const StyledMultiSelectGroup = styled(MultiSelectGroup)`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-`
+const StyledMultiSelectGroup = (props: MultiSelectGroupProps) => {
+  return (
+    <MultiSelectGroup
+      style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px' }}
+      {...props}
+    />
+  )
+}
 
 export default {
-  title: 'MultiSelect',
+  title: 'react/MultiSelect',
   component: MultiSelect,
   argTypes: {
     variant: {

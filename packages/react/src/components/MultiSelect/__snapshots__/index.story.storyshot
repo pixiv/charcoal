@@ -1,153 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests MultiSelect Basic 1`] = `
-.c1 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  background-color: var(--charcoal-text3);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-hover);
-}
-
-.c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:active[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-press);
-}
-
-.c2[type='checkbox']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 999999px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-
+exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
 <div
   data-dark={false}
 >
   <div
     aria-label="label"
-    className="c0"
     data-testid="SelectGroup"
+    style={
+      Object {
+        "display": "grid",
+        "gap": "8px",
+        "gridTemplateColumns": "1fr",
+      }
+    }
   >
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={true}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -156,7 +32,9 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -164,19 +42,20 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢1
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -185,7 +64,9 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -193,19 +74,20 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢2
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={true}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -214,7 +96,9 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -222,19 +106,20 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢3
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -243,7 +128,9 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -251,7 +138,7 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢4
       </div>
@@ -260,159 +147,30 @@ exports[`Storybook Tests MultiSelect Basic 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests MultiSelect Invalid 1`] = `
-.c1 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  background-color: var(--charcoal-text3);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-hover);
-}
-
-.c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:active[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-press);
-}
-
-.c2[type='checkbox']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox'][aria-disabled='false'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 999999px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-
+exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
 <div
   data-dark={false}
 >
   <div
     aria-label="label"
-    className="c0"
     data-testid="SelectGroup"
+    style={
+      Object {
+        "display": "grid",
+        "gap": "8px",
+        "gridTemplateColumns": "1fr",
+      }
+    }
   >
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={true}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -421,7 +179,9 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={true}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -429,19 +189,20 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢1
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={true}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -450,7 +211,9 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={true}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -458,19 +221,20 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢2
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={true}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -479,7 +243,9 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={true}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -487,19 +253,20 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢3
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={true}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -508,7 +275,9 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={true}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -516,7 +285,7 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢4
       </div>
@@ -525,158 +294,30 @@ exports[`Storybook Tests MultiSelect Invalid 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests MultiSelect Overlay 1`] = `
-.c1 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  background-color: var(--charcoal-text3);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  background-color: var(--charcoal-surface4);
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-hover);
-}
-
-.c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:active[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-press);
-}
-
-.c2[type='checkbox']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 999999px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-  border-color: var(--charcoal-text5);
-  border-width: 2px;
-  border-style: solid;
-}
-
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-
+exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
 <div
   data-dark={false}
 >
   <div
     aria-label="label"
-    className="c0"
     data-testid="SelectGroup"
+    style={
+      Object {
+        "display": "grid",
+        "gap": "8px",
+        "gridTemplateColumns": "1fr",
+      }
+    }
   >
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={true}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -685,7 +326,9 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={true}
       >
         <pixiv-icon
           name="24/Check"
@@ -693,19 +336,20 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢1
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={true}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -714,7 +358,9 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={true}
       >
         <pixiv-icon
           name="24/Check"
@@ -722,19 +368,20 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢2
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={true}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -743,7 +390,9 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={true}
       >
         <pixiv-icon
           name="24/Check"
@@ -751,19 +400,20 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢3
       </div>
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={true}
         disabled={false}
         name="name"
         onChange={[Function]}
@@ -772,7 +422,9 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={true}
       >
         <pixiv-icon
           name="24/Check"
@@ -780,7 +432,7 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢4
       </div>
@@ -789,154 +441,30 @@ exports[`Storybook Tests MultiSelect Overlay 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests MultiSelect Playground 1`] = `
-.c1 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c4::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c4::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  background-color: var(--charcoal-text3);
-  border-radius: 999999px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:checked:active[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:hover:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-hover);
-}
-
-.c2[type='checkbox']:active:not(:disabled):not([aria-disabled]),
-.c2[type='checkbox']:active[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-press);
-}
-
-.c2[type='checkbox']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 999999px;
-  color: var(--charcoal-text5);
-  -webkit-transition: 0.2s box-shadow;
-  transition: 0.2s box-shadow;
-}
-
-.c0 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-
+exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
 <div
   data-dark={false}
 >
   <div
     aria-label=""
-    className="c0"
     data-testid="SelectGroup"
+    style={
+      Object {
+        "display": "grid",
+        "gap": "8px",
+        "gridTemplateColumns": "1fr",
+      }
+    }
   >
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name=""
         onChange={[Function]}
@@ -945,7 +473,9 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -953,7 +483,7 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢
         1
@@ -961,12 +491,13 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name=""
         onChange={[Function]}
@@ -975,7 +506,9 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -983,7 +516,7 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢
         2
@@ -991,12 +524,13 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name=""
         onChange={[Function]}
@@ -1005,7 +539,9 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -1013,7 +549,7 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢
         3
@@ -1021,12 +557,13 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
     </label>
     <label
       aria-disabled={false}
-      className="c1"
+      className="charcoal-multi-select"
     >
       <input
         aria-invalid={false}
         checked={false}
-        className="c2"
+        className="charcoal-multi-select-input"
+        data-overlay={false}
         disabled={false}
         name=""
         onChange={[Function]}
@@ -1035,7 +572,9 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
       />
       <div
         aria-hidden={true}
-        className="c3"
+        aria-invalid={false}
+        className="charcoal-multi-select-overlay"
+        data-overlay={false}
       >
         <pixiv-icon
           name="24/Check"
@@ -1043,7 +582,7 @@ exports[`Storybook Tests MultiSelect Playground 1`] = `
         />
       </div>
       <div
-        className="c4"
+        className="charcoal-multi-select-label"
       >
         選択肢
         4
