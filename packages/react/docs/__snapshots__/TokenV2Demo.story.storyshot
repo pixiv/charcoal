@@ -342,7 +342,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         <a
           aria-controls="panel-Illustration"
           aria-selected={true}
-          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-border-selected text-text"
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
           id="category-Illustration"
           onClick={[Function]}
           role="tab"

@@ -37,6 +37,12 @@ export function unstable_createTailwindConfigTokenV2() {
       })
     })
   )
+  // space.gap.gapButtons -> p-gap-buttons
+  // space.betweenCheckboxes.vertical -> p-between-checkboxes-horizontal
+  const spacing = flattenKeys(light.space, (key) => key.includes('between'))
+  // color.container.default -> bg-container
+  // color.container.hover -> bg-container-hover
+  const colors = mapDefaultKeys(light.color)
 
   const config: TailwindConfig = {
     theme: {
@@ -44,18 +50,16 @@ export function unstable_createTailwindConfigTokenV2() {
       // borderWidth.focus.1 -> border-focus-1
       borderWidth: flattenKeys(light['border-width']),
       borderRadius: light.radius,
-      // color.container.default -> bg-container
-      // color.container.hover -> bg-container-hover
-      colors: mapDefaultKeys(light.color),
+      borderColor: flattenKeys(colors.border),
+
+      colors,
 
       // @ts-expect-error FIXME
       fontSize,
       fontWeight: light.text['font-weight'],
-      darkMode: false,
 
-      // space.gap.gapButtons -> p-gap-buttons
-      // space.betweenCheckboxes.vertical -> p-between-checkboxes-horizontal
-      spacing: flattenKeys(light.space, (key) => key.includes('between')),
+      spacing: spacing,
+      gap: spacing,
       width: light['paragraph-width'],
     },
   }

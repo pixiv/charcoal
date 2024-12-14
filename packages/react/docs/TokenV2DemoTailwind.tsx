@@ -1,5 +1,3 @@
-/* lint runs before build so json does not exist */
-
 import { useState } from 'react'
 import { Button, Icon } from '@charcoal-ui/react'
 
@@ -21,7 +19,7 @@ export default function TokenV2Tailwind() {
             <a
               className={`text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold ${
                 category === selected
-                  ? 'border-border-selected text-text'
+                  ? 'border-selected text-text'
                   : 'border-[transparent]'
               }`}
               id={`category-${category}`}
