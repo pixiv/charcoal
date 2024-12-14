@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import light from '@charcoal-ui/theme/tokens/css-variables.json'
-import { TailwindConfig } from 'tailwindcss/tailwind-config'
+import {
+  TailwindConfig,
+  TailwindThemeFontSizes,
+} from 'tailwindcss/tailwind-config'
 import {
   flattenKey as flattenKeys,
   mapDefaultKey as mapDefaultKeys,
@@ -17,7 +20,7 @@ export function unstable_createTailwindConfigTokenV2() {
             k,
             [
               v,
-              // @ts-expect-error k should be keyof line-height
+              // @ts-expect-error k is keyof line-height
               { lineHeight: light.text['line-height'][k] },
             ],
           ],
@@ -30,21 +33,23 @@ export function unstable_createTailwindConfigTokenV2() {
           [k, kk].join('-'),
           [
             vv,
-            // @ts-expect-error k should be keyof line-height
+            // @ts-expect-error k is keyof line-height
             { lineHeight: light.text['line-height'][k][kk] },
           ],
         ]
       })
     })
-  )
+  ) as TailwindThemeFontSizes
+
+  // space.target.s -> p-target-s
   // space.gap.gapButtons -> p-gap-buttons
-  // space.betweenCheckboxes.vertical -> p-between-checkboxes-horizontal
-  const spacing = flattenKeys(light.space, (key) => key.includes('between'))
+  const spacing = flattenKeys(light.space, (key) => !/(gap|padding)/.test(key))
   // color.container.default -> bg-container
   // color.container.hover -> bg-container-hover
   const colors = mapDefaultKeys(light.color)
 
   const config: TailwindConfig = {
+    darkMode: 'media',
     theme: {
       // borderWidth.m -> border-m
       // borderWidth.focus.1 -> border-focus-1
@@ -54,7 +59,6 @@ export function unstable_createTailwindConfigTokenV2() {
 
       colors,
 
-      // @ts-expect-error FIXME
       fontSize,
       fontWeight: light.text['font-weight'],
 
