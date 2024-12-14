@@ -60,10 +60,8 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
       <label aria-disabled={isDisabled} className={classNames}>
         <input
           className="charcoal-multi-select-input"
-          {...{
-            name,
-            value,
-          }}
+          name={name}
+          value={value}
           type="checkbox"
           checked={isSelected}
           disabled={isDisabled}
