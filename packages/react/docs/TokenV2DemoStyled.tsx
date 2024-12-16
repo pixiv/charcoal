@@ -4,7 +4,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 // This does not work :(
 // import tokens from '@charcoal-ui/theme/tokens/camel/css-variables.json'
-import tokens from '../../theme/dist/tokens/camel/css-variables.json'
+import tokens from '../../theme/dist/unstable-tokens/camel/css-variables.json'
 import { Button, Icon } from '@charcoal-ui/react'
 
 const categories = ['Illustration', 'Comic', 'Novel', '3D', 'Shopping']
