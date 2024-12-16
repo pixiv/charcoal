@@ -17,7 +17,7 @@ export default function TokenV2Tailwind() {
         <div aria-label="Categories" role="tablist">
           {categories.map((category) => (
             <a
-              className={`text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold ${
+              className={`text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold ${
                 category === selected
                   ? 'border-selected text-text'
                   : 'border-[transparent]'
@@ -45,7 +45,7 @@ export default function TokenV2Tailwind() {
         role="tabpanel"
         aria-labelledby={`category-${selected}`}
       >
-        <div className="grid grid-flow-col items-center justify-start gap-20 [grid-area:UserInfo]">
+        <div className="grid grid-flow-col items-center justify-start gap-layout-20 [grid-area:UserInfo]">
           <a
             className="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
             aria-label="UserIcon"
@@ -62,11 +62,11 @@ export default function TokenV2Tailwind() {
         </a>
         <ul
           key={selected}
-          className="grid max-w-[424px] list-none grid-cols-3 gap-20 p-0 [grid-area:ArtworkList]"
+          className="grid max-w-[424px] list-none grid-cols-3 gap-layout-20 p-0 [grid-area:ArtworkList]"
         >
           {artworks.map((a) => (
             <li key={a.id}>
-              <article className="grid gap-10">
+              <article className="grid gap-layout-10">
                 <img
                   className="rounded-m aspect-[3/2] w-[100%]"
                   src={a.thumbnail}

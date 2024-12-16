@@ -342,7 +342,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         <a
           aria-controls="panel-Illustration"
           aria-selected={true}
-          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
           id="category-Illustration"
           onClick={[Function]}
           role="tab"
@@ -352,7 +352,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         <a
           aria-controls="panel-Comic"
           aria-selected={false}
-          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
           id="category-Comic"
           onClick={[Function]}
           role="tab"
@@ -362,7 +362,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         <a
           aria-controls="panel-Novel"
           aria-selected={false}
-          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
           id="category-Novel"
           onClick={[Function]}
           role="tab"
@@ -372,7 +372,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         <a
           aria-controls="panel-3D"
           aria-selected={false}
-          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
           id="category-3D"
           onClick={[Function]}
           role="tab"
@@ -382,7 +382,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         <a
           aria-controls="panel-Shopping"
           aria-selected={false}
-          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
           id="category-Shopping"
           onClick={[Function]}
           role="tab"
@@ -403,7 +403,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
       role="tabpanel"
     >
       <div
-        className="grid grid-flow-col items-center justify-start gap-20 [grid-area:UserInfo]"
+        className="grid grid-flow-col items-center justify-start gap-layout-20 [grid-area:UserInfo]"
       >
         <a
           aria-label="UserIcon"
@@ -432,11 +432,11 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         Show all
       </a>
       <ul
-        className="grid max-w-[424px] list-none grid-cols-3 gap-20 p-0 [grid-area:ArtworkList]"
+        className="grid max-w-[424px] list-none grid-cols-3 gap-layout-20 p-0 [grid-area:ArtworkList]"
       >
         <li>
           <article
-            className="grid gap-10"
+            className="grid gap-layout-10"
           >
             <img
               alt="Title"
@@ -457,7 +457,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         </li>
         <li>
           <article
-            className="grid gap-10"
+            className="grid gap-layout-10"
           >
             <img
               alt="Title"
@@ -478,7 +478,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
         </li>
         <li>
           <article
-            className="grid gap-10"
+            className="grid gap-layout-10"
           >
             <img
               alt="Title"
