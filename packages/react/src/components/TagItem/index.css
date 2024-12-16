@@ -1,8 +1,9 @@
 .charcoal-tag-item {
-  --charcoal-tag-item-color: var(--charcoal-text5);
+  --charcoal-tag-item-color: var(--charcoal-color-text-on-primary-default);
   --charcoal-tag-item-size: 40px;
   --charcoal-tag-item-padding-left: 24px;
   --charcoal-tag-item-padding-right: 24px;
+  --charcoal-tag-item-bg: ;
 
   isolation: isolate;
   position: relative;
@@ -43,7 +44,7 @@
   --charcoal-tag-item-padding-right: 16px;
 }
 .charcoal-tag-item[data-state='inactive'] {
-  --charcoal-tag-item-color: var(--charcoal-text2);
+  --charcoal-tag-item-color: var(--charcoal-color-text-secondary-default);
 }
 .charcoal-tag-item[data-state='active'] {
   --charcoal-tag-item-padding-left: 16px;
@@ -52,18 +53,18 @@
 
 .charcoal-tag-item:disabled,
 .charcoal-tag-item[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
   cursor: default;
+  opacity: 0.32;
 }
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus-visible,
 .charcoal-tag-item[aria-disabled='false']:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus,
 .charcoal-tag-item[aria-disabled='false']:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: var(--charcoal-color-custom-focus-effect);
 }
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus:not(
     :focus-visible
@@ -77,7 +78,7 @@
 }
 
 .charcoal-tag-item__bg[data-bg-variant='image'] {
-  background-color: var(--charcoal-surface4);
+  background-color: var(--charcoal-color-container-on-img-default);
 }
 
 .charcoal-tag-item__bg[data-bg-variant='image']::before {
@@ -95,7 +96,7 @@
 }
 
 .charcoal-tag-item__bg[data-state='inactive'] {
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-container-secondary-default);
 }
 
 .charcoal-tag-item__label {

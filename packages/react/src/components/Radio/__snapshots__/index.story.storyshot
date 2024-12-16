@@ -14,7 +14,7 @@ exports[`Storybook Tests > react/Radio > Default 1`] = `
     }
   >
     <div
-      aria-label="default story"
+      aria-label="default story test-id"
       aria-orientation="vertical"
       className="charcoal-radio-group"
       role="radiogroup"
@@ -28,7 +28,7 @@ exports[`Storybook Tests > react/Radio > Default 1`] = `
           checked={true}
           className="charcoal-radio-input"
           disabled={false}
-          name="default_story"
+          name="default_story_test-id"
           onChange={[Function]}
           type="radio"
           value="1"
@@ -49,7 +49,7 @@ exports[`Storybook Tests > react/Radio > Default 1`] = `
           checked={false}
           className="charcoal-radio-input"
           disabled={false}
-          name="default_story"
+          name="default_story_test-id"
           onChange={[Function]}
           type="radio"
           value="2"
@@ -70,7 +70,7 @@ exports[`Storybook Tests > react/Radio > Default 1`] = `
           checked={false}
           className="charcoal-radio-input"
           disabled={false}
-          name="default_story"
+          name="default_story_test-id"
           onChange={[Function]}
           type="radio"
           value="3"
