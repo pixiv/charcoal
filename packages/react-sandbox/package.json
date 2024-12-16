@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "4.0.0-beta.16",
+  "version": "4.0.0-beta.17",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -21,7 +21,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^4.0.0-beta.16",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^4.0.0-beta.17",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-knobs": "^7.0.2",
     "@storybook/addons": "^7.4.1",
@@ -54,11 +54,11 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.0.0-beta.16",
-    "@charcoal-ui/react": "^4.0.0-beta.16",
-    "@charcoal-ui/styled": "^4.0.0-beta.16",
-    "@charcoal-ui/theme": "^4.0.0-beta.16",
-    "@charcoal-ui/utils": "^4.0.0-beta.16",
+    "@charcoal-ui/foundation": "^4.0.0-beta.17",
+    "@charcoal-ui/react": "^4.0.0-beta.17",
+    "@charcoal-ui/styled": "^4.0.0-beta.17",
+    "@charcoal-ui/theme": "^4.0.0-beta.17",
+    "@charcoal-ui/utils": "^4.0.0-beta.17",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
     "warning": "^4.0.3"
