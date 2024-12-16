@@ -134,9 +134,13 @@ export function createTailwindConfig({
       transitionDuration: {
         [DEFAULT]: '0.2s',
       },
-      borderWidth: borderWidthV2,
-      fontSize: fontSizeV2,
-      fontWeight: fontWeightV2,
+      ...(unstableTokenV2
+        ? {
+            borderWidth: borderWidthV2,
+            fontSize: fontSizeV2,
+            fontWeight: fontWeightV2,
+          }
+        : {}),
     },
 
     ...getVariantOption(version),
