@@ -1,23 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* lint runs before build so json does not exist */
 
-import { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import styled from 'styled-components'
 // This does not work :(
 // import tokens from '@charcoal-ui/theme/tokens/camel/css-variables.json'
 import tokens from '../../theme/dist/tokens/camel/css-variables.json'
 import { Button, Icon } from '@charcoal-ui/react'
-
-export default {
-  title: 'theme/Token v2 demo',
-  component: Demo,
-} as Meta<typeof Demo>
-
-export const StyledComponents: StoryObj<typeof Demo> = {
-  render: Demo,
-}
 
 const categories = ['Illustration', 'Comic', 'Novel', '3D', 'Shopping']
 const artworks = Array.from({ length: 3 }, (_, id) => ({
@@ -27,7 +15,7 @@ const artworks = Array.from({ length: 3 }, (_, id) => ({
   description: 'Description',
 }))
 
-function Demo() {
+export default function TokenV2Styled() {
   const [selected, setSelected] = useState(categories[0])
   return (
     <Container>
@@ -89,6 +77,7 @@ const Container = styled.section`
 `
 
 const H2 = styled.h2`
+  margin: 0;
   color: ${tokens.color.text.secondary.default};
   font-size: ${tokens.text.fontSize.heading.xs};
   line-height: ${tokens.text.lineHeight.heading.xs};

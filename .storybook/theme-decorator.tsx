@@ -6,6 +6,7 @@ import { TokenInjector, themeSelector, themeSetter } from '@charcoal-ui/styled'
 
 import '../packages/theme/src/css/_variables_dark.css'
 import '../packages/theme/src/css/_variables_light.css'
+import '../packages/react/dist/index.css'
 
 const setter = themeSetter()
 
