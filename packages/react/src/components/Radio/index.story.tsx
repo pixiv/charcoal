@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-import Radio, { RadioGroup } from '.'
-import { px } from '@charcoal-ui/utils'
+import Radio from '.'
+import { RadioGroup } from './RadioGroup'
 import { StoryObj } from '@storybook/react'
 import { useState } from 'react'
 
@@ -12,13 +11,22 @@ export default {
   },
 }
 
-const LayoutDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => px(theme.spacing[24])};
-`
 const options = ['1', '2', '3'] as const
 type Option = (typeof options)[number]
+
+const LayoutDiv = (props: { children: React.ReactNode }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24,
+      }}
+    >
+      {props.children}
+    </div>
+  )
+}
 
 export const Default: StoryObj<typeof Radio> = {
   render: function Render(args) {
@@ -27,8 +35,8 @@ export const Default: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          label={'label'}
-          name={'name'}
+          name="default_story"
+          label="default story"
           {...args}
           value={value}
           onChange={setValue}
@@ -51,8 +59,8 @@ export const Disabled: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          label={'label'}
-          name={'name'}
+          label="disabled_stroy"
+          name="disabled story"
           value={value}
           onChange={setValue}
           disabled
@@ -75,8 +83,8 @@ export const PartialDisabled: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          label={'label'}
-          name={'name'}
+          name={'partial_disabled_story'}
+          label={'partial disabled story'}
           value={value}
           onChange={setValue}
         >
@@ -98,8 +106,8 @@ export const Readonly: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          label={'label'}
-          name={'name'}
+          name="readonly_story"
+          label="readonly story"
           value={value}
           onChange={setValue}
           readonly
@@ -122,8 +130,8 @@ export const Invalid: StoryObj<typeof Radio> = {
     return (
       <LayoutDiv>
         <RadioGroup<Option>
-          label={'label'}
-          name={'name'}
+          name="invalid_story"
+          label="invalid story"
           value={value}
           onChange={setValue}
           invalid

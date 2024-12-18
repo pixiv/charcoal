@@ -1,549 +1,295 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/internals/MenuList > Basic 1`] = `
-.c0 {
-  padding: 0;
-  margin: 0;
-}
-
-.c1 {
-  list-style: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 40px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 16px;
-  padding-left: 16px;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-}
-
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c2:hover:not(disabled):not([aria-disabled='true']),
-.c2:focus:not(disabled):not([aria-disabled='true']),
-.c2:focus-within:not(disabled):not([aria-disabled='true']) {
-  background-color: var(--charcoal-surface3);
-}
-
 <div
   data-dark={false}
 >
   <ul
-    className="c0"
+    className="charcoal-menu-list"
   >
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="0"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="0"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="0"
-      >
-        Menu 
-        0
-      </div>
+      Menu 
+      0
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="1"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="1"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="1"
-      >
-        Menu 
-        1
-      </div>
+      Menu 
+      1
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="2"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="2"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="2"
-      >
-        Menu 
-        2
-      </div>
+      Menu 
+      2
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="3"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="3"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="3"
-      >
-        Menu 
-        3
-      </div>
+      Menu 
+      3
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="4"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="4"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="4"
-      >
-        Menu 
-        4
-      </div>
+      Menu 
+      4
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="5"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="5"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="5"
-      >
-        Menu 
-        5
-      </div>
+      Menu 
+      5
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="6"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="6"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="6"
-      >
-        Menu 
-        6
-      </div>
+      Menu 
+      6
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="7"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="7"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="7"
-      >
-        Menu 
-        7
-      </div>
+      Menu 
+      7
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="8"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="8"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="8"
-      >
-        Menu 
-        8
-      </div>
+      Menu 
+      8
     </li>
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="9"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="9"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="9"
-      >
-        Menu 
-        9
-      </div>
+      Menu 
+      9
     </li>
   </ul>
 </div>
 `;
 
 exports[`Storybook Tests > react/internals/MenuList > Disabled 1`] = `
-.c0 {
-  padding: 0;
-  margin: 0;
-}
-
-.c1 {
-  list-style: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 40px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 16px;
-  padding-left: 16px;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-}
-
-.c2:disabled,
-.c2[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c2:hover:not(disabled):not([aria-disabled='true']),
-.c2:focus:not(disabled):not([aria-disabled='true']),
-.c2:focus-within:not(disabled):not([aria-disabled='true']) {
-  background-color: var(--charcoal-surface3);
-}
-
 <div
   data-dark={false}
 >
   <ul
-    className="c0"
+    className="charcoal-menu-list"
   >
     <li
-      className="c1"
+      className="charcoal-list-item"
+      data-key="1"
+      onClick={[Function]}
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        className="c2"
-        data-key="1"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="1"
-      >
-        MenuItem
-      </div>
+      MenuItem
     </li>
     <li
-      className="c1"
+      aria-disabled={true}
+      className="charcoal-list-item"
+      data-key="2"
+      onKeyDown={[Function]}
       role="option"
+      tabIndex={-1}
     >
-      <div
-        aria-disabled={true}
-        className="c2"
-        data-key="2"
-        disabled={true}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        value="2"
-      >
-        Disabled MenuItem
-      </div>
+      Disabled MenuItem
     </li>
   </ul>
 </div>
 `;
 
 exports[`Storybook Tests > react/internals/MenuList > Group 1`] = `
-.c0 {
-  padding: 0;
-  margin: 0;
-}
-
-.c4 {
-  list-style: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 40px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 16px;
-  padding-left: 16px;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-}
-
-.c5:disabled,
-.c5[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c5:hover:not(disabled):not([aria-disabled='true']),
-.c5:focus:not(disabled):not([aria-disabled='true']),
-.c5:focus-within:not(disabled):not([aria-disabled='true']) {
-  background-color: var(--charcoal-surface3);
-}
-
-.c2 {
-  display: block;
-  color: var(--charcoal-text3);
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 0 8px 16px;
-}
-
-.c3 {
-  padding-left: 0;
-  margin: 0;
-  box-sizing: border-box;
-  list-style: none;
-  overflow: hidden;
-}
-
-.c1 {
-  display: block;
-}
-
 <div
   data-dark={false}
 >
   <ul
-    className="c0"
+    className="charcoal-menu-list"
   >
     <li
-      className="c1"
+      className="charcoal-menu-item-group"
       role="presentation"
     >
-      <span
-        className="c2"
-      >
+      <span>
         Section1
       </span>
       <ul
-        className="c3"
         role="group"
       >
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="0"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="0"
-          >
-            Menu 
-            0
-          </div>
+          Menu 
+          0
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="1"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="1"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="1"
-          >
-            Menu 
-            1
-          </div>
+          Menu 
+          1
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="2"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="2"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="2"
-          >
-            Menu 
-            2
-          </div>
+          Menu 
+          2
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="3"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="3"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="3"
-          >
-            Menu 
-            3
-          </div>
+          Menu 
+          3
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="4"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="4"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="4"
-          >
-            Menu 
-            4
-          </div>
+          Menu 
+          4
         </li>
       </ul>
     </li>
     <li
-      className="c1"
+      className="charcoal-menu-item-group"
       role="presentation"
     >
-      <span
-        className="c2"
-      >
+      <span>
         Section2
       </span>
       <ul
-        className="c3"
         role="group"
       >
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="5"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="5"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="5"
-          >
-            Menu 
-            5
-          </div>
+          Menu 
+          5
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="6"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="6"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="6"
-          >
-            Menu 
-            6
-          </div>
+          Menu 
+          6
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="7"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="7"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="7"
-          >
-            Menu 
-            7
-          </div>
+          Menu 
+          7
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="8"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="8"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="8"
-          >
-            Menu 
-            8
-          </div>
+          Menu 
+          8
         </li>
         <li
-          className="c4"
+          className="charcoal-list-item"
+          data-key="9"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="option"
+          tabIndex={-1}
         >
-          <div
-            className="c5"
-            data-key="9"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            tabIndex={-1}
-            value="9"
-          >
-            Menu 
-            9
-          </div>
+          Menu 
+          9
         </li>
       </ul>
     </li>

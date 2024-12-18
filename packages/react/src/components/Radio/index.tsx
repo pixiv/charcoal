@@ -1,8 +1,12 @@
-import { memo, forwardRef, useCallback, useContext } from 'react'
+import './index.css'
+
+import { memo, forwardRef, useContext } from 'react'
 import * as React from 'react'
-import styled from 'styled-components'
 import warning from 'warning'
-import { focusVisibleFocusRingCss } from '@charcoal-ui/styled'
+import { useClassNames } from '../../_lib/useClassNames'
+
+import { RadioGroupContext } from './RadioGroupContext'
+import RadioInput from './RadioInput'
 
 export type RadioProps = React.PropsWithChildren<{
   value: string
@@ -11,7 +15,7 @@ export type RadioProps = React.PropsWithChildren<{
 }>
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
-  { value, disabled = false, children, className },
+  { value, disabled = false, children, ...props },
   ref
 ) {
   const {
@@ -23,6 +27,8 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
     onChange,
   } = useContext(RadioGroupContext)
 
+  const classNames = useClassNames('charcoal-radio__label', props.className)
+
   warning(
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     name !== undefined,
@@ -33,221 +39,22 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   const isDisabled = disabled || isParentDisabled
   const isReadonly = readonly && !isSelected
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      onChange(e.currentTarget.value)
-    },
-    [onChange]
-  )
-
   return (
-    <RadioRoot aria-disabled={isDisabled || isReadonly} className={className}>
+    <label aria-disabled={isDisabled || isReadonly} className={classNames}>
       <RadioInput
         name={name}
         value={value}
         checked={isSelected}
         aria-invalid={invalid}
-        onChange={handleChange}
+        onChange={onChange}
         disabled={isDisabled || isReadonly}
         ref={ref}
       />
-      {children != null && <RadioLabel>{children}</RadioLabel>}
-    </RadioRoot>
+      {children != null && (
+        <div className="charcoal-radio__label_div">{children}</div>
+      )}
+    </label>
   )
 })
 
 export default memo(Radio)
-
-const RadioRoot = styled.label`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 4px;
-  align-items: center;
-  cursor: pointer;
-
-  &[aria-disabled]:not([aria-disabled='false']) {
-    opacity: 0.32;
-    cursor: default;
-  }
-`
-
-export const RadioInput = styled.input.attrs({ type: 'radio' })`
-  /** Make prior to browser default style */
-  &[type='radio'] {
-    appearance: none;
-    display: block;
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 6px;
-
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border-radius: 999999px;
-    background-color: var(--charcoal-surface1);
-    transition: 0.2s background-color, 0.2s box-shadow;
-
-    :disabled {
-      cursor: default;
-    }
-
-    &:not(:disabled):not([aria-disabled]),
-    &[aria-disabled='false'] {
-      &:hover {
-        background-color: var(--charcoal-surface1-hover);
-      }
-      &:active {
-        background-color: var(--charcoal-surface1-press);
-      }
-      ${focusVisibleFocusRingCss}
-      &[aria-invalid='true'] {
-        box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        &:focus {
-          box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-        }
-      }
-    }
-
-    &:not(:checked) {
-      border-width: 2px;
-      border-style: solid;
-      border-color: var(--charcoal-text3);
-    }
-
-    &:checked {
-      background-color: var(--charcoal-brand);
-      &::after {
-        content: '';
-        display: block;
-        width: 8px;
-        height: 8px;
-        pointer-events: none;
-        background-color: var(--charcoal-text5);
-        border-radius: 999999px;
-        transition: 0.2s background-color, 0.2s box-shadow;
-      }
-
-      &:not(:disabled):not([aria-disabled]),
-      &[aria-disabled='false'] {
-        &:hover {
-          background-color: var(--charcoal-brand-hover);
-          &::after {
-            background-color: var(--charcoal-text5-hover);
-          }
-        }
-        &:active {
-          background-color: var(--charcoal-brand-press);
-          &::after {
-            background-color: var(--charcoal-text5-press);
-          }
-        }
-      }
-    }
-  }
-`
-
-const RadioLabel = styled.div`
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-`
-
-export type RadioGroupProps<Value extends string = string> =
-  React.PropsWithChildren<{
-    className?: string
-    value?: Value
-    label: string
-    name: string
-    onChange(next: Value): void
-    disabled?: boolean
-    readonly?: boolean
-    invalid?: boolean
-  }>
-
-// TODO: use (or polyfill) flex gap
-const StyledRadioGroup = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
-`
-
-interface RadioGroupContext {
-  name: string
-  selected?: string
-  disabled: boolean
-  readonly: boolean
-  invalid: boolean
-  onChange: (next: string) => void
-}
-
-const RadioGroupContext = React.createContext<RadioGroupContext>({
-  name: undefined as never,
-  selected: undefined,
-  disabled: false,
-  readonly: false,
-  invalid: false,
-  onChange() {
-    throw new Error(
-      'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
-    )
-  },
-})
-
-export function RadioGroup<Value extends string = string>({
-  className,
-  value,
-  label,
-  name,
-  onChange,
-  disabled,
-  readonly,
-  invalid,
-  children,
-}: RadioGroupProps<Value>) {
-  const handleChange = useCallback(
-    (next: string) => {
-      onChange(next as Value)
-    },
-    [onChange]
-  )
-
-  return (
-    <RadioGroupContext.Provider
-      value={{
-        name,
-        selected: value,
-        disabled: disabled ?? false,
-        readonly: readonly ?? false,
-        invalid: invalid ?? false,
-        onChange: handleChange,
-      }}
-    >
-      <StyledRadioGroup
-        role="radiogroup"
-        aria-orientation="vertical"
-        aria-label={label}
-        aria-invalid={invalid}
-        className={className}
-      >
-        {children}
-      </StyledRadioGroup>
-    </RadioGroupContext.Provider>
-  )
-}

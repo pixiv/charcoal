@@ -15,7 +15,7 @@ export async function* getChangedFiles(dir: string) {
       continue
     }
     if (!existsSync(fullpath))
-      throw new Error(`pullrequest-cli: could not load svg (${fullpath})`)
+      throw new Error(`pullrequest-cli: could not find file (${fullpath})`)
     const content = await fs.readFile(fullpath, { encoding: 'utf-8' })
     yield { relativePath, content, status }
   }

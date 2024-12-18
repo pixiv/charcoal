@@ -7,9 +7,10 @@ import {
   useRadio,
   useRadioGroup,
 } from '@react-aria/radio'
-import styled, { css } from 'styled-components'
-
 import { RadioProvider, useRadioContext } from './RadioGroupContext'
+import { useClassNames } from '../../_lib/useClassNames'
+
+import './index.css'
 
 type SegmentedControlItem = {
   label: React.ReactNode
@@ -35,6 +36,11 @@ export type SegmentedControlProps = {
 
 const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
   function SegmentedControlInner(props, ref) {
+    const className = useClassNames(
+      'charcoal-segmented-control',
+      props.className
+    )
+
     const ariaRadioGroupProps = useMemo<AriaRadioGroupProps>(
       () => ({
         ...props,
@@ -54,11 +60,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
     }, [props.data])
 
     return (
-      <SegmentedControlRoot
-        ref={ref}
-        {...radioGroupProps}
-        className={props.className}
-      >
+      <div ref={ref} {...radioGroupProps} className={className}>
         <RadioProvider value={state}>
           {segmentedControlItems.map((item) => (
             <Segmented
@@ -70,7 +72,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
             </Segmented>
           ))}
         </RadioProvider>
-      </SegmentedControlRoot>
+      </div>
     )
   }
 )
@@ -102,88 +104,17 @@ const Segmented = (props: RadioProps) => {
   )
 
   return (
-    <SegmentedRoot
+    <label
+      className="charcoal-segmented-control-radio__label"
       aria-disabled={isDisabled || state.isReadOnly}
-      checked={isSelected}
+      data-checked={isSelected}
     >
-      <SegmentedInput {...inputProps} ref={ref} />
-      <RadioLabel>
-        <SegmentedLabelInner>{props.children}</SegmentedLabelInner>
-      </RadioLabel>
-    </SegmentedRoot>
+      <input
+        className="charcoal-segmented-control-radio__input"
+        {...inputProps}
+        ref={ref}
+      />
+      {props.children}
+    </label>
   )
 }
-
-const SegmentedControlRoot = styled.div`
-  display: inline-flex;
-  align-items: center;
-
-  background-color: var(--charcoal-surface3);
-  border-radius: 16px;
-`
-
-const SegmentedRoot = styled.label<{ checked?: boolean }>`
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  height: 32px;
-
-  padding-right: 16px;
-  padding-left: 16px;
-  border-radius: 16px;
-  &:disabled,
-  &[aria-disabled]:not([aria-disabled='false']) {
-    cursor: default;
-    opacity: 0.32;
-  }
-  color: var(--charcoal-text2);
-
-  ${({ checked = false }) =>
-    checked &&
-    css`
-      background-color: var(--charcoal-brand);
-      color: var(--charcoal-text5);
-    `}
-`
-const SegmentedInput = styled.input`
-  position: absolute;
-
-  height: 0px;
-  width: 0px;
-  padding: 0;
-  margin: 0;
-
-  appearance: none;
-  box-sizing: border-box;
-  overflow: hidden;
-  white-space: nowrap;
-  opacity: 0;
-`
-
-const RadioLabel = styled.div`
-  background: transparent;
-  display: flex;
-  align-items: center;
-  height: 22px;
-`
-const SegmentedLabelInner = styled.div`
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-top: -4px;
-  }
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    content: '';
-    margin-bottom: -4px;
-  }
-`

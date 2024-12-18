@@ -1,36 +1,72 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "3.16.0",
+  "version": "4.0.0-rc.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs.js",
-    "import": "./dist/index.esm.js",
-    "default": "./dist/index.esm.js"
-  },
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./unstable-token-object": {
+      "types": "./dist/unstable-token-object/index.d.ts",
+      "require": "./dist/unstable-token-object/index.cjs.js",
+      "import": "./dist/unstable-token-object/index.esm.js",
+      "default": "./dist/unstable-token-object/index.esm.js"
+    },
+    "./unstable-css/*": "./dist/unstable-css/*",
+    "./unstable-tokens/*": "./dist/unstable-tokens/*"
+  },
+  "typesVersions": {
+    "*": {
+      "unstable-token-object": [
+        "./dist/token-object/index.d.ts"
+      ],
+      "unstable-tokens/*": [
+        "./dist/unstable-tokens/*"
+      ],
+      "unstable-css/*": [
+        "./dist/unstable-css/*"
+      ]
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
-    "build": "npm-run-all --print-label --parallel 'build:*' --sequential serialize",
+    "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build:copy-css": "cpx --clean 'src/unstable-css/**/*.{css,d.ts}' dist/unstable-css",
+    "build:token-object": "tsx cli/token-object.ts",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
     "typecheck:main": "tsc --project tsconfig.build.json --pretty --noEmit",
     "typecheck:cli": "tsc --project cli/tsconfig.build.json --noEmit",
-    "clean": "rimraf dist .tsbuildinfo"
+    "clean": "rimraf dist .tsbuildinfo",
+    "test": "vitest run --passWithNoTests",
+    "bench": "vitest bench --passWithNoTests"
   },
   "devDependencies": {
+    "@types/css": "^0.0.38",
+    "cpx": "^1.5.0",
+    "css": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "tsup": "^6.5.0",
-    "typescript": "^4.9.5"
+    "tsx": "^4.19.1",
+    "typescript": "^4.9.5",
+    "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.16.0",
-    "@charcoal-ui/utils": "^3.16.0",
+    "@charcoal-ui/foundation": "^4.0.0-rc.0",
+    "@charcoal-ui/utils": "^4.0.0-rc.0",
+    "change-case-all": "^2.1.0",
+    "deepmerge": "^4.3.1",
     "polished": "^4.1.4"
   },
   "files": [

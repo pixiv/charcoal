@@ -1,165 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Checkbox > Checked 1`] = `
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c0:has(input[readonly]) {
-  cursor: default;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  cursor: pointer;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c2[type='checkbox']:disabled {
-  cursor: default;
-}
-
-.c2[type='checkbox'][readonly] {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c2[type='checkbox']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text4);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--charcoal-text5);
-}
-
-.c4 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 20px;
-}
-
 <div
   data-dark={false}
 >
   <label
-    aria-disabled={false}
-    className="c0"
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
   >
+    <input
+      checked={true}
+      className="charcoal-checkbox-input"
+      id="test-id"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="c1"
-    >
-      <input
-        checked={true}
-        className="c2"
-        disabled={false}
-        name="checked"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={true}
-        className="c3"
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="c4"
+      className="charcoal-checkbox__label_div"
     >
       Checked
     </div>
@@ -168,324 +25,36 @@ exports[`Storybook Tests > react/Checkbox > Checked 1`] = `
 `;
 
 exports[`Storybook Tests > react/Checkbox > Default 1`] = `
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c0:has(input[readonly]) {
-  cursor: default;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  cursor: pointer;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c2[type='checkbox']:disabled {
-  cursor: default;
-}
-
-.c2[type='checkbox'][readonly] {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c2[type='checkbox']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text4);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--charcoal-text5);
-  visibility: hidden;
-}
-
 <div
   data-dark={false}
 >
-  <label
-    aria-disabled={false}
-    className="c0"
-  >
-    <div
-      className="c1"
-    >
-      <input
-        aria-label="label"
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="default"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={false}
-        className="c3"
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-  </label>
+  <input
+    className="charcoal-checkbox-input"
+    id="test-id"
+    onChange={[Function]}
+    type="checkbox"
+  />
 </div>
 `;
 
 exports[`Storybook Tests > react/Checkbox > Disabled 1`] = `
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c0:has(input[readonly]) {
-  cursor: default;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  cursor: pointer;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c2[type='checkbox']:disabled {
-  cursor: default;
-}
-
-.c2[type='checkbox'][readonly] {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c2[type='checkbox']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text4);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--charcoal-text5);
-  visibility: hidden;
-}
-
-.c4 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 20px;
-}
-
 <div
   data-dark={false}
 >
   <label
     aria-disabled={true}
-    className="c0"
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
   >
+    <input
+      className="charcoal-checkbox-input"
+      disabled={true}
+      id="test-id"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="c1"
-    >
-      <input
-        checked={false}
-        className="c2"
-        disabled={true}
-        name="disabled"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={false}
-        className="c3"
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="c4"
+      className="charcoal-checkbox__label_div"
     >
       Disabled
     </div>
@@ -494,167 +63,23 @@ exports[`Storybook Tests > react/Checkbox > Disabled 1`] = `
 `;
 
 exports[`Storybook Tests > react/Checkbox > Invalid 1`] = `
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c0:has(input[readonly]) {
-  cursor: default;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  cursor: pointer;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c2[type='checkbox']:disabled {
-  cursor: default;
-}
-
-.c2[type='checkbox'][readonly] {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c2[type='checkbox']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text4);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--charcoal-text5);
-  visibility: hidden;
-}
-
-.c4 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 20px;
-}
-
 <div
   data-dark={false}
 >
   <label
-    aria-disabled={false}
-    className="c0"
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
   >
+    <input
+      aria-invalid={true}
+      className="charcoal-checkbox-input"
+      id="test-id"
+      name="labelled"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="c1"
-    >
-      <input
-        aria-invalid={true}
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="invalid"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={false}
-        className="c3"
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="c4"
+      className="charcoal-checkbox__label_div"
     >
       Invalid
     </div>
@@ -663,166 +88,21 @@ exports[`Storybook Tests > react/Checkbox > Invalid 1`] = `
 `;
 
 exports[`Storybook Tests > react/Checkbox > Label 1`] = `
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c0:has(input[readonly]) {
-  cursor: default;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  cursor: pointer;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c2[type='checkbox']:disabled {
-  cursor: default;
-}
-
-.c2[type='checkbox'][readonly] {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c2[type='checkbox']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text4);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--charcoal-text5);
-  visibility: hidden;
-}
-
-.c4 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 20px;
-}
-
 <div
   data-dark={false}
 >
   <label
-    aria-disabled={false}
-    className="c0"
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
   >
+    <input
+      className="charcoal-checkbox-input"
+      id="test-id"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <div
-      className="c1"
-    >
-      <input
-        checked={false}
-        className="c2"
-        disabled={false}
-        name="checkbox"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={false}
-        className="c3"
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="c4"
+      className="charcoal-checkbox__label_div"
     >
       Checkbox
     </div>
@@ -831,167 +111,24 @@ exports[`Storybook Tests > react/Checkbox > Label 1`] = `
 `;
 
 exports[`Storybook Tests > react/Checkbox > ReadOnly 1`] = `
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.c0:has(input[readonly]) {
-  cursor: default;
-}
-
-.c0:disabled,
-.c0[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  cursor: pointer;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  -webkit-transition: 0.2s box-shadow,0.2s background-color;
-  transition: 0.2s box-shadow,0.2s background-color;
-}
-
-.c2[type='checkbox']:disabled {
-  cursor: default;
-}
-
-.c2[type='checkbox'][readonly] {
-  cursor: default;
-  opacity: 0.32;
-}
-
-.c2[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):hover,
-.c2[type='checkbox']:checked[aria-disabled='false']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c2[type='checkbox']:checked:not(:disabled):not([aria-disabled]):active,
-.c2[type='checkbox']:checked[aria-disabled='false']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus,
-.c2[type='checkbox'][aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
-.c2[type='checkbox'][aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled]):focus-visible,
-.c2[type='checkbox'][aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c2[type='checkbox']:not(:disabled):not([aria-disabled])[aria-invalid='true'],
-.c2[type='checkbox'][aria-disabled='false'][aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c2[type='checkbox']:not(:checked) {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--charcoal-text4);
-}
-
-.c3 {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--charcoal-text5);
-}
-
-.c4 {
-  color: var(--charcoal-text2);
-  font-size: 14px;
-  line-height: 20px;
-}
-
 <div
   data-dark={false}
 >
   <label
-    aria-disabled={false}
-    className="c0"
+    className="charcoal-checkbox__label"
+    htmlFor="test-id"
   >
+    <input
+      checked={true}
+      className="charcoal-checkbox-input"
+      id="test-id"
+      name="labelled"
+      onChange={[Function]}
+      readOnly={true}
+      type="checkbox"
+    />
     <div
-      className="c1"
-    >
-      <input
-        aria-readonly={true}
-        checked={true}
-        className="c2"
-        disabled={false}
-        name="readonly"
-        onChange={[Function]}
-        onClick={[Function]}
-        onDragStart={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchCancel={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        readOnly={true}
-        type="checkbox"
-      />
-      <div
-        aria-hidden={true}
-        checked={true}
-        className="c3"
-      >
-        <pixiv-icon
-          name="24/Check"
-          unsafe-non-guideline-scale={0.6666666666666666}
-        />
-      </div>
-    </div>
-    <div
-      className="c4"
+      className="charcoal-checkbox__label_div"
     >
       ReadOnly
     </div>

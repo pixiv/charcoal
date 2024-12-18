@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { ThemeProvider } from 'styled-components'
-import Radio, { RadioGroup } from '.'
-import { light } from '@charcoal-ui/theme'
+import Radio from '.'
+import { RadioGroup } from './RadioGroup'
 import { vi } from 'vitest'
 
 describe('Radio', () => {
@@ -15,11 +14,7 @@ describe('Radio', () => {
         // eslint-disable-next-line no-console
         console.error = vi.fn()
 
-        render(
-          <ThemeProvider theme={light}>
-            <Radio value="option1" />
-          </ThemeProvider>
-        )
+        render(<Radio value="option1" />)
       })
 
       it('console.error()', () => {
@@ -125,23 +120,20 @@ function TestComponent({
   option2Disabled?: boolean
 }) {
   return (
-    <ThemeProvider theme={light}>
-      <RadioGroup
-        label="テスト項目"
-        name="test"
-        value={value}
-        onChange={onChange}
-        disabled={radioGroupDisabled}
-        readonly={readonly}
-        invalid={invalid}
-      >
-        <Radio value="option1" disabled={option1Disabled}>
-          option1を選ぶ
-        </Radio>
-        <Radio value="option2" disabled={option2Disabled}>
-          option2を選ぶ
-        </Radio>
-      </RadioGroup>
-    </ThemeProvider>
+    <RadioGroup
+      name="test"
+      value={value}
+      onChange={onChange}
+      disabled={radioGroupDisabled}
+      readonly={readonly}
+      invalid={invalid}
+    >
+      <Radio value="option1" disabled={option1Disabled}>
+        option1を選ぶ
+      </Radio>
+      <Radio value="option2" disabled={option2Disabled}>
+        option2を選ぶ
+      </Radio>
+    </RadioGroup>
   )
 }

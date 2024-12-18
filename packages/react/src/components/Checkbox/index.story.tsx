@@ -16,7 +16,7 @@ export const Default: StoryObj<typeof Checkbox> = {
     children: { type: 'string' },
     disabled: { type: 'boolean' },
     invalid: { type: 'boolean' },
-    readonly: { type: 'boolean' },
+    readOnly: { type: 'boolean' },
   },
   render: function Render(props) {
     const [checked, setChecked] = useState(props.checked)
@@ -28,8 +28,6 @@ export const Default: StoryObj<typeof Checkbox> = {
       <Checkbox
         {...props}
         checked={props.checked ?? checked}
-        name="default"
-        label="label"
         onChange={handleChange}
       />
     )
@@ -38,34 +36,26 @@ export const Default: StoryObj<typeof Checkbox> = {
 
 export const Label: StoryObj<typeof Checkbox> = {
   render: () => {
-    return <Checkbox name="checkbox">Checkbox</Checkbox>
+    return <Checkbox>Checkbox</Checkbox>
   },
 }
 
 export const Checked: StoryObj<typeof Checkbox> = {
   render: () => {
-    return (
-      <Checkbox name="checked" checked>
-        Checked
-      </Checkbox>
-    )
+    return <Checkbox checked>Checked</Checkbox>
   },
 }
 
 export const Disabled: StoryObj<typeof Checkbox> = {
   render: () => {
-    return (
-      <Checkbox name="disabled" disabled>
-        Disabled
-      </Checkbox>
-    )
+    return <Checkbox disabled>Disabled</Checkbox>
   },
 }
 
 export const ReadOnly: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
-      <Checkbox checked name="readonly" readonly>
+      <Checkbox checked name="labelled" readOnly>
         ReadOnly
       </Checkbox>
     )
@@ -75,7 +65,7 @@ export const ReadOnly: StoryObj<typeof Checkbox> = {
 export const Invalid: StoryObj<typeof Checkbox> = {
   render: () => {
     return (
-      <Checkbox name="invalid" invalid>
+      <Checkbox name="labelled" invalid>
         Invalid
       </Checkbox>
     )

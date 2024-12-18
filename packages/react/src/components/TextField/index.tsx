@@ -1,269 +1,148 @@
-import { useTextField } from '@react-aria/textfield'
+import './index.css'
+
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import * as React from 'react'
-import styled, { css } from 'styled-components'
-import FieldLabel, { FieldLabelProps } from '../FieldLabel'
-import { countCodePointsInString, mergeRefs } from '../../_lib'
-import { ReactAreaUseTextFieldCompat } from '../../_lib/compat'
+import FieldLabel from '../FieldLabel'
+import { countCodePointsInString } from '../../_lib'
 import { useFocusWithClick } from './useFocusWithClick'
-import { mergeProps } from '@react-aria/utils'
+import { mergeRefs, useId } from '@react-aria/utils'
+import { AssistiveText } from './AssistiveText'
+import { useClassNames } from '../../_lib/useClassNames'
 
-type DOMProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  // react-ariaのhookは、onChangeが`(v: string) => void`想定
-  | 'onChange'
+export type TextFieldProps = {
+  prefix?: ReactNode
+  suffix?: ReactNode
 
-  // RDFa Attributeとかぶる
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/58d57ca87ac7be0d306c0844dc254e90c150bd0d/types/react/index.d.ts#L1951
-  | 'prefix'
+  value?: string
+  onChange?: (value: string) => void
 
-  // ReactAreaUseTextFieldCompatに書いてあるような事情で、ここにあるイベントハンドラの型をゆるめる
-  | keyof ReactAreaUseTextFieldCompat
->
+  showCount?: boolean
+  showLabel?: boolean
+  assistiveText?: string
+  invalid?: boolean
 
-export interface TextFieldProps
-  extends Pick<FieldLabelProps, 'label' | 'requiredText' | 'subLabel'>,
-    DOMProps,
-    ReactAreaUseTextFieldCompat {
-  readonly prefix?: ReactNode
-  readonly suffix?: ReactNode
+  label?: string
+  requiredText?: string
+  disabled?: boolean
+  subLabel?: React.ReactNode
+  rdfaPrefix?: string
 
-  // <input> 要素は number とか string[] もありうるが、今はこれしか想定してない
-  readonly defaultValue?: string
-  readonly value?: string
-  readonly onChange?: (value: string) => void
-
-  // react-ariaの型定義のせいでHTMLInputElementにできない
-  readonly onKeyDown?: (event: React.KeyboardEvent<Element>) => void
-  readonly onFocus?: (event: React.FocusEvent<Element>) => void
-  readonly onBlur?: (event: React.FocusEvent<Element>) => void
-
-  readonly showCount?: boolean
-  readonly showLabel?: boolean
-  readonly assistiveText?: string
-  readonly invalid?: boolean
-}
+  getCount?: (value: string) => number
+} & Omit<React.ComponentPropsWithoutRef<'input'>, 'prefix' | 'onChange'>
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  function SingleLineTextFieldInner({ onChange, ...props }, forwardRef) {
-    const {
-      className,
-      showLabel = false,
-      showCount = false,
-      label,
-      requiredText,
-      subLabel,
-      disabled = false,
-      required,
-      invalid = false,
-      readOnly = false,
+  function SingleLineTextFieldInner(
+    {
       assistiveText,
+      className,
+      disabled = false,
+      label = '',
       maxLength,
+      onChange,
       prefix = null,
+      required,
+      requiredText,
+      showCount = false,
+      showLabel = false,
+      subLabel,
       suffix = null,
-      ...restProps
-    } = props
+      type = 'text',
+      invalid,
+      value,
+      getCount = countCodePointsInString,
+      ...props
+    },
+    forwardRef
+  ) {
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const { visuallyHiddenProps } = useVisuallyHidden()
-    const ariaRef = useRef<HTMLInputElement>(null)
-    const [count, setCount] = useState(
-      countCodePointsInString(props.value ?? '')
-    )
 
-    const nonControlled = props.value === undefined
+    const [count, setCount] = useState(getCount(value ?? ''))
+
     const handleChange = useCallback(
-      (value: string) => {
-        const count = countCodePointsInString(value)
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        const count = getCount(value)
         if (maxLength !== undefined && count > maxLength) {
           return
         }
-        if (nonControlled) {
-          setCount(count)
-        }
+        setCount(count)
         onChange?.(value)
       },
-      [maxLength, nonControlled, onChange]
+      [getCount, maxLength, onChange]
     )
 
     useEffect(() => {
-      setCount(countCodePointsInString(props.value ?? ''))
-    }, [props.value])
-
-    const {
-      inputProps: ariaInputProps,
-      labelProps,
-      descriptionProps,
-      errorMessageProps,
-    } = useTextField(
-      {
-        inputElementType: 'input',
-        isDisabled: disabled,
-        isRequired: required,
-        isReadOnly: readOnly,
-        validationState: invalid ? 'invalid' : 'valid',
-        description: !invalid && assistiveText,
-        errorMessage: invalid && assistiveText,
-        onChange: handleChange,
-        ...props,
-      },
-      ariaRef
-    )
+      setCount(getCount(value ?? ''))
+    }, [getCount, value])
 
     const containerRef = useRef(null)
 
-    useFocusWithClick(containerRef, ariaRef)
+    useFocusWithClick(containerRef, inputRef)
 
-    const inputProps = mergeProps(restProps, ariaInputProps)
+    const inputId = useId(props.id)
+    const describedbyId = useId()
+    const labelledbyId = useId()
+
+    const showAssistiveText =
+      assistiveText != null && assistiveText.length !== 0
+
+    const classNames = useClassNames('charcoal-text-field-root', className)
 
     return (
-      <TextFieldRoot className={className} isDisabled={disabled}>
-        <TextFieldLabel
+      <div className={classNames} aria-disabled={disabled}>
+        <FieldLabel
+          htmlFor={inputId}
+          id={labelledbyId}
           label={label}
-          requiredText={requiredText}
           required={required}
+          requiredText={requiredText}
           subLabel={subLabel}
-          {...labelProps}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
-        <StyledInputContainer
-          ref={containerRef}
-          invalid={invalid}
+        <div
+          className="charcoal-text-field-container"
           aria-disabled={disabled === true ? true : undefined}
-          hasPrefix={prefix != null}
-          hasSuffix={suffix != null || showCount}
+          data-invalid={invalid === true}
+          ref={containerRef}
         >
-          {prefix && <PrefixContainer>{prefix}</PrefixContainer>}
-          <StyledInput
-            ref={mergeRefs(forwardRef, ariaRef)}
-            invalid={invalid}
-            {...inputProps}
+          {prefix && <div className="charcoal-text-field-prefix">{prefix}</div>}
+          <input
+            className="charcoal-text-field-input"
+            aria-describedby={showAssistiveText ? describedbyId : undefined}
+            aria-invalid={invalid}
+            aria-labelledby={labelledbyId}
+            id={inputId}
+            data-invalid={invalid === true}
+            maxLength={maxLength}
+            onChange={handleChange}
+            disabled={disabled}
+            ref={mergeRefs(forwardRef, inputRef)}
+            type={type}
+            value={value}
+            {...props}
           />
           {(suffix || showCount) && (
-            <SuffixContainer>
+            <div className="charcoal-text-field-suffix">
               {suffix}
               {showCount && (
-                <SingleLineCounter>
+                <span className="charcoal-text-field-line-counter">
                   {maxLength !== undefined ? `${count}/${maxLength}` : count}
-                </SingleLineCounter>
+                </span>
               )}
-            </SuffixContainer>
+            </div>
           )}
-        </StyledInputContainer>
-        {assistiveText != null && assistiveText.length !== 0 && (
-          <AssistiveText
-            invalid={invalid}
-            {...(invalid ? errorMessageProps : descriptionProps)}
-          >
+        </div>
+        {showAssistiveText && (
+          <AssistiveText data-invalid={invalid === true} id={describedbyId}>
             {assistiveText}
           </AssistiveText>
         )}
-      </TextFieldRoot>
+      </div>
     )
   }
 )
 
 export default TextField
-
-const TextFieldRoot = styled.div<{ isDisabled: boolean }>`
-  display: flex;
-  flex-direction: column;
-
-  ${(p) => p.isDisabled && { opacity: p.theme.elementEffect.disabled.opacity }}
-`
-
-export const TextFieldLabel = styled(FieldLabel)`
-  margin-bottom: 8px;
-`
-
-const StyledInputContainer = styled.div<{
-  invalid: boolean
-  hasPrefix: boolean
-  hasSuffix: boolean
-}>`
-  display: grid;
-  grid-template-columns: ${(p) =>
-    [p.hasPrefix && 'auto', '1fr', p.hasSuffix && 'auto']
-      .filter(Boolean)
-      .join(' ')};
-  height: 40px;
-  transition: 0.2s background-color, 0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  gap: 4px;
-  padding: 0 8px;
-  line-height: 22px;
-  font-size: 14px;
-
-  :not(:disabled):not([aria-disabled]):hover,
-  [aria-disabled='false']:hover {
-    background-color: var(--charcoal-surface3-hover);
-  }
-
-  :focus-within {
-    outline: none;
-    box-shadow: 0 0 0 4px
-      ${(p) => (p.invalid ? `rgba(255,43,0,0.32)` : `rgba(0, 150, 250, 0.32);`)};
-  }
-
-  ${(p) =>
-    p.invalid &&
-    css`
-      box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
-    `}
-`
-
-const PrefixContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const SuffixContainer = styled.span`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`
-
-const StyledInput = styled.input<{
-  invalid: boolean
-}>`
-  border: none;
-  box-sizing: border-box;
-  outline: none;
-  font-family: inherit;
-
-  /* Prevent zooming for iOS Safari */
-  transform-origin: top left;
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  height: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: calc(4px / 0.875);
-
-  /* Display box-shadow for iOS Safari */
-  appearance: none;
-  background: transparent;
-
-  color: var(--charcoal-text2);
-  &::placeholder {
-    color: var(--charcoal-text3);
-  }
-`
-
-const SingleLineCounter = styled.span`
-  line-height: 22px;
-  font-size: 14px;
-  color: var(--charcoal-text3);
-`
-
-export const AssistiveText = styled.p<{ invalid: boolean }>`
-  font-size: 14px;
-  line-height: 22px;
-  margin-top: 4px;
-  margin-bottom: -4px;
-  color: ${(p) => `var(--charcoal-${p.invalid ? `assertive` : `text2`})`};
-`

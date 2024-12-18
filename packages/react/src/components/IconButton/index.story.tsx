@@ -1,5 +1,5 @@
 import '@charcoal-ui/icons'
-import IconButton from '.'
+import IconButton, { IconButtonProps } from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
@@ -8,7 +8,7 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof IconButton>
+} as Meta<IconButtonProps<'button'>>
 
 export const Default: StoryObj<typeof IconButton> = {
   args: {

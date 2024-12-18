@@ -1,7 +1,8 @@
-import ListItem, { CustomJSXElement, ListItemProps } from '../ListItem'
+import { ForwardedRef, forwardRef } from 'react'
+import ListItem, { ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
-export type MenuItemProps<T extends CustomJSXElement = never> = {
+export type MenuItemProps<T extends React.ElementType = 'li'> = {
   value?: string
   disabled?: boolean
 } & ListItemProps<T>
@@ -10,22 +11,26 @@ export type MenuItemProps<T extends CustomJSXElement = never> = {
  * 上下キーでフォーカス移動でき、エンターキーで選択できるリストの項目
  * 基本的に`<MenuList>`, `<MenuGroup>`と合わせて使用する
  */
-export default function MenuItem<T extends CustomJSXElement>(
-  props: MenuItemProps<T>
+const MenuItem = forwardRef(function MenuItem<
+  T extends React.ElementType = 'li'
+>(
+  { className, value, disabled, ...props }: MenuItemProps<T>,
+  ref: ForwardedRef<HTMLLIElement>
 ) {
-  const { children, as, ...rest } = props
-  const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(props.value)
+  const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
   return (
     <ListItem
-      {...rest}
-      as={as as CustomJSXElement}
-      data-key={props.value}
+      {...props}
+      ref={ref}
+      data-key={value}
       onKeyDown={handleKeyDown}
-      onClick={props.disabled === true ? undefined : setContextValue}
+      onClick={disabled === true ? undefined : setContextValue}
       tabIndex={-1}
-      aria-disabled={props.disabled}
+      aria-disabled={disabled}
+      role="option"
     >
       {props.children}
     </ListItem>
   )
-}
+})
+export default MenuItem

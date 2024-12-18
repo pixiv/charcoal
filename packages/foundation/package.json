@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/foundation",
-  "version": "3.16.0",
+  "version": "4.0.0-rc.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -17,13 +17,15 @@
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
-    "clean": "rimraf dist .tsbuildinfo"
+    "clean": "rimraf dist .tsbuildinfo",
+    "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "tsup": "^6.5.0",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vitest": "^2.0.1"
   },
   "files": [
     "src",

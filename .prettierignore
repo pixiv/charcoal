@@ -15,4 +15,5 @@ LICENSE
 /packages/token-cli/build/
 /packages/token-cli/tokens/
 /packages/token-cli/out/
-/packages/theme/src/css/
+/packages/theme/src/unstable-css/
+.storybook/src/v4.0.0.mdx

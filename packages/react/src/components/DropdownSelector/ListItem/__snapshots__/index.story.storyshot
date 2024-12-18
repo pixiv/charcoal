@@ -1,244 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/internals/ListItem > Basic 1`] = `
-.c0 {
-  list-style: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 40px;
-  cursor: pointer;
-  outline: none;
-  padding-right: 16px;
-  padding-left: 16px;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-}
-
-.c1:disabled,
-.c1[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c1:hover:not(disabled):not([aria-disabled='true']),
-.c1:focus:not(disabled):not([aria-disabled='true']),
-.c1:focus-within:not(disabled):not([aria-disabled='true']) {
-  background-color: var(--charcoal-surface3);
-}
-
-.c3 {
-  display: inline-grid;
-  grid-template-columns: auto 1fr;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  outline: 0;
-}
-
-.c3:disabled,
-.c3[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-
-.c4 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  position: relative;
-  box-sizing: border-box;
-  width: 28px;
-  border: 2px solid transparent;
-  -webkit-transition-property: background-color,box-shadow;
-  transition-property: background-color,box-shadow;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  cursor: inherit;
-  outline: none;
-  border-radius: 16px;
-  height: 16px;
-  margin: 0;
-  background-color: var(--charcoal-text4);
-}
-
-.c4:hover {
-  background-color: var(--charcoal-text4-hover);
-}
-
-.c4:active {
-  background-color: var(--charcoal-text4-press);
-}
-
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.c4:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c4::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transition: -webkit-transform 0.2s;
-  -webkit-transition: transform 0.2s;
-  transition: transform 0.2s;
-  border-radius: 1024px;
-  background-color: var(--charcoal-text5);
-}
-
-.c4::after:hover {
-  background-color: var(--charcoal-text5-hover);
-}
-
-.c4::after:active {
-  background-color: var(--charcoal-text5-press);
-}
-
-.c4:checked {
-  background-color: var(--charcoal-brand);
-}
-
-.c4:checked:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-
-.c4:checked:active {
-  background-color: var(--charcoal-brand-press);
-}
-
-.c4:checked::after {
-  -webkit-transform: translateX(12px);
-  -ms-transform: translateX(12px);
-  transform: translateX(12px);
-  -webkit-transition: -webkit-transform 0.2s;
-  -webkit-transition: transform 0.2s;
-  transition: transform 0.2s;
-}
-
-.c2 {
-  color: red;
-}
-
 <div
   data-dark={false}
 >
   <li
-    className="c0"
-    role="option"
+    className="charcoal-list-item"
   >
+    Item
+  </li>
+  <li
+    className="charcoal-list-item"
+  >
+    <pixiv-icon
+      name="16/Add"
+    />
+     Add
+  </li>
+  <a
+    className="charcoal-list-item"
+    href="#"
+  >
+    Normal Link
+  </a>
+  <a
+    className="charcoal-list-item"
+    href="#"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Custom Link
+  </a>
+  <li
+    className="charcoal-list-item"
+    onClick={[Function]}
+  >
+    Switch
     <div
-      className="c1"
-    >
-      Item
-    </div>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <div
-      className="c1"
-    >
-      <pixiv-icon
-        name="16/Add"
-      />
-       Add
-    </div>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <a
-      className="c1"
-      href="#"
-    >
-      Normal Link
-    </a>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <a
-      className="c2 c1"
-      href="#"
-    >
-      Custom Link
-    </a>
-  </li>
-  <li
-    className="c0"
-    role="option"
-  >
-    <div
-      className="c1"
-      onClick={[Function]}
-    >
-      Switch
-      <div
-        style={
-          Object {
-            "marginLeft": "auto",
-          }
+      style={
+        Object {
+          "marginLeft": "auto",
         }
-      >
-        <label
-          className="c3"
-        >
-          <input
-            aria-label="hello"
-            checked={false}
-            className="c4"
-            disabled={false}
-            name="hello"
-            onChange={[Function]}
-            onClick={[Function]}
-            onDragStart={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            role="switch"
-            type="checkbox"
-          />
-        </label>
-      </div>
+      }
+    >
+      <input
+        checked={false}
+        className="charcoal-switch-input"
+        id="test-id"
+        label="hello"
+        name="hello"
+        onChange={[Function]}
+        role="switch"
+        type="checkbox"
+      />
     </div>
   </li>
 </div>

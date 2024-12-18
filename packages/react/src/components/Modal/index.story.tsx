@@ -8,8 +8,6 @@ import {
   ModalButtons,
   ModalHeader,
 } from './ModalPlumbing'
-import styled from 'styled-components'
-import { theme } from '../../styled'
 import TextField from '../TextField'
 import DropdownSelector from '../DropdownSelector'
 import Checkbox from '../Checkbox'
@@ -54,11 +52,6 @@ export default {
         />
       </OverlayProvider>
     )
-  },
-  parameters: {
-    storyshots: {
-      skip: true,
-    },
   },
 } as Meta<typeof Modal>
 
@@ -112,14 +105,31 @@ const M = (props: ModalProps) => {
   )
 }
 
-const ModalVStack = styled.div`
-  display: grid;
-  gap: 24px;
-`
+const ModalVStack = (props: Omit<React.ComponentProps<'div'>, 'style'>) => {
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gap: 24,
+      }}
+      {...props}
+    />
+  )
+}
 
-const StyledModalText = styled(ModalAlign)`
-  ${theme((o) => [o.font.text2, o.typography(14)])}
-`
+const StyledModalText = (props: Omit<React.ComponentProps<'div'>, 'style'>) => {
+  return (
+    <div
+      style={{
+        fontSize: 14,
+        lineHeight: '22px',
+        padding: '0 16px',
+        color: 'var(--charcoal-text2)',
+      }}
+      {...props}
+    />
+  )
+}
 
 export const Default: StoryObj<typeof Modal> = {}
 
@@ -272,5 +282,3 @@ export const BackgroundScroll: StoryObj<typeof Modal> = {
     )
   },
 }
-
-export { InternalScrollStory as InternalScroll } from './__stories__/InternalScrollStory'

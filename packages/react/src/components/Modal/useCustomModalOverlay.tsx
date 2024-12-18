@@ -46,3 +46,23 @@ export function useCharcoalModalOverlay(
     underlayProps,
   }
 }
+
+function isWindowDefined() {
+  return typeof window !== 'undefined'
+}
+
+export function useWindowWidth() {
+  const [width, setWidth] = React.useState(
+    isWindowDefined() ? window.innerWidth : null
+  )
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
+  return width
+}

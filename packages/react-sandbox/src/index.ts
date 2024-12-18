@@ -31,9 +31,10 @@ export { default as SwitchCheckbox } from './components/SwitchCheckbox'
 export { TextEllipsis } from './components/TextEllipsis'
 export { default as WithIcon } from './components/WithIcon'
 export {
-  ComponentAbstraction,
+  default as ComponentAbstraction,
   useComponentAbstraction,
-} from '@charcoal-ui/react'
+  type LinkProps,
+} from './_lib/ComponentAbstraction'
 export {
   MAIN_COLUMN_HORIZONTAL_MIN_MARGIN,
   RESPONSIVE_LEFT_WIDTH,

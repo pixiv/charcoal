@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Icon from '../../Icon'
 import Switch from '../../Switch'
 import ListItem from '.'
-import styled from 'styled-components'
 import { Meta, StoryObj } from '@storybook/react'
 
 export default {
@@ -10,9 +9,16 @@ export default {
   component: ListItem,
 } as Meta<typeof ListItem>
 
-const CustomLink = styled.a`
-  color: red;
-`
+const CustomLink = (props: Omit<React.ComponentProps<'a'>, 'style'>) => {
+  return (
+    <a
+      style={{
+        color: 'red',
+      }}
+      {...props}
+    />
+  )
+}
 
 const BasicRender = () => {
   const [checked, setChecked] = useState(false)

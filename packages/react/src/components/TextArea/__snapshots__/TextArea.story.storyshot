@@ -1,181 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c8 {
-  font-size: 14px;
-  line-height: 22px;
-  margin-top: 4px;
-  margin-bottom: -4px;
-  color: var(--charcoal-text2);
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -192,211 +26,59 @@ exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
+        aria-describedby="test-id"
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
-    <p
-      className="c8"
+    <div
+      className="charcoal-text-field-assistive-text"
+      data-invalid={false}
+      id="test-id"
     >
       説明が入ります
-    </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -413,32 +95,35 @@ exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -446,211 +131,15 @@ exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > Default 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c7:not([aria-disabled]):hover,
-.c7 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c7:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c8::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -667,18 +156,18 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span>
           <button
-            className="c6"
+            className="charcoal-clickable"
             onClick={[Function]}
           >
             Text Link
@@ -687,20 +176,25 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
       </div>
     </div>
     <div
-      className="c7"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
+        aria-invalid={false}
         aria-labelledby="test-id"
-        className="c8"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
         placeholder="Text Area"
         readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -708,174 +202,15 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  opacity: 0.32;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={true}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -892,33 +227,36 @@ exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
       aria-disabled="true"
-      className="c6"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={true}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -926,182 +264,15 @@ exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c8 {
-  font-size: 14px;
-  line-height: 22px;
-  margin-top: 4px;
-  margin-bottom: -4px;
-  color: var(--charcoal-assertive);
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(255,43,0,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -1118,240 +289,91 @@ exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={4}
+      aria-invalid={true}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
+        aria-describedby="test-id"
         aria-invalid={true}
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
-    <p
-      className="c8"
+    <div
+      className="charcoal-text-field-assistive-text"
+      data-invalid={true}
+      id="test-id"
     >
       エラーメッセージ
-    </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Label 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -1359,173 +381,15 @@ exports[`Storybook Tests > react/TextArea > Label 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -1542,33 +406,36 @@ exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
         placeholder="Placeholder"
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -1576,173 +443,15 @@ exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -1759,30 +468,35 @@ exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
         readOnly={true}
-        required={false}
         rows={4}
         value="読み取り専用"
       />
@@ -1792,200 +506,15 @@ exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > Required 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text2);
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c7::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c7::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c7:not(:disabled):not([aria-disabled]):hover,
-.c7[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c7:not(:disabled):not([aria-disabled]):active,
-.c7[aria-disabled='false']:active,
-.c7:not(:disabled):not([aria-disabled]):focus,
-.c7[aria-disabled='false']:focus,
-.c7:not(:disabled):not([aria-disabled]):focus-visible,
-.c7[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: 4px;
-}
-
-.c1 > .c6 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c8 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c8:not([aria-disabled]):hover,
-.c8 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c8:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c9 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c9::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c9::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -2002,38 +531,40 @@ exports[`Storybook Tests > react/TextArea > Required 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
-      <span
-        className="c4 c5"
+      <div
+        className="charcoal-field-label-required-text"
       >
         *必須
-      </span>
+      </div>
       <div
-        className="c6 c7"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c8"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        aria-required={true}
-        className="c9"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
@@ -2041,182 +572,15 @@ exports[`Storybook Tests > react/TextArea > Required 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 5 + 18px);
-}
-
-.c6:not([aria-disabled]):hover,
-.c6 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c6:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c7 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875) 0;
-  height: calc(22px / 0.875 * 4 + 9px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c7::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c7::placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8 {
-  position: absolute;
-  bottom: 9px;
-  right: 8px;
-  line-height: 22px;
-  font-size: 14px;
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
       style={
         Object {
           "border": 0,
@@ -2233,36 +597,39 @@ exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
       }
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span />
       </div>
     </div>
     <div
-      className="c6"
-      rows={5}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "5",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c7"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={true}
         disabled={false}
         id="test-id"
         maxLength={100}
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
       <span
-        className="c8"
+        className="charcoal-text-area-counter"
       >
         0/100
       </span>
@@ -2272,225 +639,29 @@ exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
-.c6 {
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
-  padding: 0;
-  border-style: none;
-  outline: none;
-  color: inherit;
-  text-rendering: inherit;
-  -webkit-letter-spacing: inherit;
-  -moz-letter-spacing: inherit;
-  -ms-letter-spacing: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-}
-
-.c6:disabled,
-.c6[aria-disabled]:not([aria-disabled=false]) {
-  cursor: default;
-}
-
-.c6:focus {
-  outline: none;
-}
-
-.c6::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-.c3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: bold;
-  display: flow-root;
-  color: var(--charcoal-text1);
-}
-
-.c3::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c3::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5 {
-  font-size: 14px;
-  line-height: 22px;
-  display: flow-root;
-  color: var(--charcoal-text3);
-  -webkit-transition: 0.2s color,0.2s box-shadow;
-  transition: 0.2s color,0.2s box-shadow;
-}
-
-.c5::before {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-top: -4px;
-}
-
-.c5::after {
-  display: block;
-  width: 0;
-  height: 0;
-  content: '';
-  margin-bottom: -4px;
-}
-
-.c5:not(:disabled):not([aria-disabled]):hover,
-.c5[aria-disabled='false']:hover {
-  color: var(--charcoal-text3-hover);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active {
-  color: var(--charcoal-text3-press);
-}
-
-.c5:not(:disabled):not([aria-disabled]):active,
-.c5[aria-disabled='false']:active,
-.c5:not(:disabled):not([aria-disabled]):focus,
-.c5[aria-disabled='false']:focus,
-.c5:not(:disabled):not([aria-disabled]):focus-visible,
-.c5[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c1 > .c4 {
-  margin-left: auto;
-}
-
-.c2 {
-  margin-bottom: 8px;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  position: relative;
-  overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
-  border-radius: 4px;
-  -webkit-transition: 0.2s background-color,0.2s box-shadow;
-  transition: 0.2s background-color,0.2s box-shadow;
-  height: calc(22px * 4 + 18px);
-}
-
-.c7:not([aria-disabled]):hover,
-.c7 [aria-disabled='false']:hover {
-  background-color: var(--charcoal-surface3-hover);
-}
-
-.c7:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0,150,250,0.32);
-}
-
-.c8 {
-  border: none;
-  outline: none;
-  resize: none;
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-transform: scale(0.875);
-  -ms-transform: scale(0.875);
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * 4 + 20px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-.c8::-webkit-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8::-moz-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8:-ms-input-placeholder {
-  color: var(--charcoal-text3);
-}
-
-.c8::placeholder {
-  color: var(--charcoal-text3);
-}
-
 <div
   data-dark={false}
 >
   <div
-    className="c0"
+    aria-disabled={false}
+    className="charcoal-text-area-root"
   >
     <div
-      className="c1 c2"
+      className="charcoal-field-label-root"
     >
       <label
-        className="c3"
+        className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
       >
         Label
       </label>
       <div
-        className="c4 c5"
+        className="charcoal-field-label-sub-label"
       >
         <span>
           <button
-            className="c6"
+            className="charcoal-clickable"
           >
             Text Link
           </button>
@@ -2498,19 +669,22 @@ exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
       </div>
     </div>
     <div
-      className="c7"
-      rows={4}
+      aria-invalid={false}
+      className="charcoal-text-area-container"
+      style={
+        Object {
+          "--charcoal-text-area-rows": "4",
+        }
+      }
     >
       <textarea
         aria-labelledby="test-id"
-        className="c8"
+        className="charcoal-text-area-textarea"
+        data-no-bottom-padding={false}
         disabled={false}
         id="test-id"
         onChange={[Function]}
-        readOnly={false}
-        required={false}
         rows={4}
-        value=""
       />
     </div>
   </div>
