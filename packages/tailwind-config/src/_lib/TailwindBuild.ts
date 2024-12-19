@@ -89,9 +89,9 @@ export class TailwindBuild {
     const cssVariables = new Set<string>()
 
     /**
-     * 独自に生成する CSS 変数は必ず --tailwind で始まるはず
+     * 独自に生成する CSS 変数は必ず --(tailwind|charcoal) で始まるはず
      */
-    this.result.root.walkDecls(/^--tailwind/u, (decl) => {
+    this.result.root.walkDecls(/^--(tailwind|charcoal)/u, (decl) => {
       cssVariables.add(decl.prop)
     })
 
@@ -101,7 +101,7 @@ export class TailwindBuild {
   getCssVariable(varName: `--${string}`) {
     const values: string[] = []
 
-    this.result.root.walkDecls(/^--tailwind/u, (decl) => {
+    this.result.root.walkDecls(/^--(tailwind|charcoal)/u, (decl) => {
       if (decl.prop === varName) {
         values.push(decl.value)
       }

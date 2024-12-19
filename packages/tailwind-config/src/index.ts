@@ -27,12 +27,14 @@ export { unstable_createTailwindConfigTokenV2 }
 interface Options {
   version?: TailwindVersion
   theme?: ThemeMap
+  cssVariablesV1?: boolean
   unstableTokenV2?: boolean
 }
 
 export function createTailwindConfig({
   theme = { ':root': light },
   version = 'v3',
+  cssVariablesV1 = true,
   unstableTokenV2 = false,
 }: Options): TailwindConfig {
   assertAllThemeHaveSameKeys(theme)
@@ -151,7 +153,7 @@ export function createTailwindConfig({
     },
     plugins: [
       typographyPlugin,
-      cssVariableColorPlugin(theme),
+      cssVariableColorPlugin(theme, Boolean(cssVariablesV1)),
 
       ...Object.entries(theme).map(([selectorOrMediaQuery, theme]) =>
         cssVariableGradientPlugin(
