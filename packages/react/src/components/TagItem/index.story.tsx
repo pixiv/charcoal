@@ -26,7 +26,12 @@ export const TranslatedLabel: StoryObj<typeof TagItem> = {
 
 export const BGColor: StoryObj<typeof TagItem> = {
   render: function Render() {
-    return <TagItem label="女の子" bgColor="var(--charcoal-brand)" />
+    return (
+      <TagItem
+        label="女の子"
+        bgColor="var(--charcoal-color-container-primary-default)"
+      />
+    )
   },
 }
 

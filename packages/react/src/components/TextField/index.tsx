@@ -114,6 +114,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             aria-describedby={showAssistiveText ? describedbyId : undefined}
             aria-invalid={invalid}
             aria-labelledby={labelledbyId}
+            aria-disabled={props['aria-disabled'] ?? disabled}
             id={inputId}
             data-invalid={invalid === true}
             maxLength={maxLength}
