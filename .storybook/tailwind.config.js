@@ -14,6 +14,8 @@ module.exports = {
         ':root': light,
         '[data-dark="true"]': dark,
       },
+      cssVariablesV1: false,
+      unstableTokenV2: true,
     }),
   ],
   corePlugins: {

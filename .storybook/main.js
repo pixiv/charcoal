@@ -4,6 +4,7 @@ const { promisify } = require('util')
 const glob = promisify(require('glob'))
 const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
+/** @type {import('@storybook/react-vite').StorybookConfig}*/
 module.exports = {
   stories: [
     '../packages/**/*.mdx',
@@ -55,8 +56,6 @@ module.exports = {
     if (configType === 'PRODUCTION') {
       return config
     }
-    // 事前ビルドが不要になるようにマッピング
-    config.resolve.alias = { ...config.resolve.alias, ...(await alias()) }
     return config
   },
 
@@ -64,8 +63,6 @@ module.exports = {
     if (configType === 'PRODUCTION') {
       return config
     }
-    // 事前ビルドが不要になるようにマッピング
-    config.resolve.alias = { ...config.resolve.alias, ...(await alias()) }
     // proxyが噛んでいる場合にクライアント側のwssポート番号を変更する
     if (typeof process.env.CLIENT_PORT !== 'undefined') {
       config.server.hmr.port = process.env.CLIENT_PORT
@@ -108,18 +105,24 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  staticDirs: ['./static'],
+  managerHead: (head) => `${head}
+    <title>Charcoal ドキュメント</title>
+    <meta
+      property="description"
+      content="ピクシブ株式会社のデザインシステム charcoal のドキュメントサイト"
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="charcoal"} />
+    <meta property="og:site_name" content="Charcoal ドキュメント" />
+    <meta
+      property="og:description"
+      content="ピクシブ株式会社のデザインシステム charcoal のドキュメントサイト"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/charcoal-ogp.jpg" />
+  `,
 }
-
-const packagesDir = path.resolve(__dirname, '../packages')
-const alias = async () =>
-  Object.fromEntries(
-    (await glob(path.resolve(packagesDir, '*'))).map((absolute) => {
-      const relative = path.relative(packagesDir, absolute)
-      const from = path.join('@charcoal-ui', relative)
-      const to = path.resolve(absolute, 'src')
-      return [from, to]
-    })
-  )
 
 function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, 'package.json')))

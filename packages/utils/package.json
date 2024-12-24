@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/utils",
-  "version": "4.0.0-beta.16",
+  "version": "4.0.0-rc.2",
   "license": "Apache-2.0",
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -30,7 +30,7 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.0.0-beta.16",
+    "@charcoal-ui/foundation": "^4.0.0-rc.2",
     "polished": "^4.1.4"
   },
   "files": [
