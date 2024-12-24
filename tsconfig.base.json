@@ -13,6 +13,7 @@
     "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,
+    "resolveJsonModule": true,
     "paths": {
       "@charcoal-ui/*": ["./packages/*/src"]
     }

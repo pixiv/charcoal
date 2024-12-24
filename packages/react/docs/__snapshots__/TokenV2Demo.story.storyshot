@@ -1,0 +1,504 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
+.c0 {
+  -webkit-transition: 0.3s color ease-in-out;
+  transition: 0.3s color ease-in-out;
+  display: grid;
+  gap: 24px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.c2 {
+  margin: 0;
+  color: var(--charcoal-color-text-secondary-default);
+  font-size: var(--charcoal-text-font-size-heading-xs);
+  line-height: var(--charcoal-text-line-height-heading-xs);
+}
+
+.c1 {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: var(--charcoal-text-font-size-body);
+  line-height: var(--charcoal-text-line-height-body);
+  padding: 13px var(--charcoal-space-layout-30);
+  border-top: 2px transparent;
+  color: var(--charcoal-color-text-tertiary-default);
+}
+
+.c1:hover {
+  color: var(--charcoal-color-text-tertiary-hover);
+}
+
+.c1:active {
+  color: var(--charcoal-color-text-tertiary-press);
+}
+
+.c1[aria-selected='true'] {
+  color: var(--charcoal-color-text-default);
+  border-top: 2px solid var(--charcoal-color-border-selected);
+}
+
+.c1[aria-selected='true']:hover {
+  color: var(--charcoal-color-text-hover);
+}
+
+.c1[aria-selected='true']:active {
+  color: var(--charcoal-color-text-press);
+}
+
+.c3 {
+  display: grid;
+  grid-template-areas: 'UserInfo     .           ShowAll' 'ArtworkList  ArtworkList ArtworkList';
+}
+
+.c4 {
+  grid-area: UserInfo;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--charcoal-space-layout-20);
+}
+
+.c5 {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--charcoal-radius-oval);
+  cursor: pointer;
+  color: var(--charcoal-color-icon-default);
+  background-color: var(--charcoal-color-container-secondary-default);
+}
+
+.c5:hover {
+  color: var(--charcoal-color-icon-hover);
+  background-color: var(--charcoal-color-container-secondary-hover);
+}
+
+.c5:active {
+  color: var(--charcoal-color-icon-press);
+  background-color: var(--charcoal-color-container-secondary-press);
+}
+
+.c6 {
+  color: var(--charcoal-color-text-default);
+  font-size: var(--charcoal-text-font-size-caption-m);
+  line-height: var(--charcoal-text-line-height-caption-m);
+  font-weight: bold;
+}
+
+.c7 {
+  grid-area: ShowAll;
+  cursor: pointer;
+  color: var(--charcoal-color-text-tertiary-default);
+  text-align: right;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  font-size: var(--charcoal-text-font-size-caption-m);
+  line-height: var(--charcoal-text-line-height-caption-m);
+}
+
+.c7:hover {
+  color: var(--charcoal-color-text-tertiary-hover);
+}
+
+.c7:active {
+  color: var(--charcoal-color-text-tertiary-press);
+}
+
+.c8 {
+  grid-area: ArtworkList;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: var(--charcoal-space-layout-20);
+  list-style: none;
+  padding: 0;
+  max-width: 424px;
+}
+
+.c9 {
+  display: grid;
+  gap: var(--charcoal-space-layout-10);
+}
+
+.c10 {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--charcoal-radius-m);
+}
+
+.c11 {
+  color: var(--charcoal-color-text-default);
+  font-size: var(--charcoal-text-font-size-caption-m);
+  line-height: var(--charcoal-text-line-height-caption-m);
+  margin: 0;
+}
+
+.c12 {
+  margin: 0;
+  color: var(--charcoal-color-text-tertiary-default);
+  font-size: var(--charcoal-text-font-size-caption-s);
+  line-height: var(--charcoal-text-line-height-caption-s);
+}
+
+<div
+  data-dark={false}
+>
+  <section
+    className="c0"
+  >
+    <nav>
+      <div
+        aria-label="Categories"
+        role="tablist"
+      >
+        <a
+          aria-controls="panel-Illustration"
+          aria-selected={true}
+          className="c1"
+          id="category-Illustration"
+          onClick={[Function]}
+          role="tab"
+        >
+          Illustration
+        </a>
+        <a
+          aria-controls="panel-Comic"
+          aria-selected={false}
+          className="c1"
+          id="category-Comic"
+          onClick={[Function]}
+          role="tab"
+        >
+          Comic
+        </a>
+        <a
+          aria-controls="panel-Novel"
+          aria-selected={false}
+          className="c1"
+          id="category-Novel"
+          onClick={[Function]}
+          role="tab"
+        >
+          Novel
+        </a>
+        <a
+          aria-controls="panel-3D"
+          aria-selected={false}
+          className="c1"
+          id="category-3D"
+          onClick={[Function]}
+          role="tab"
+        >
+          3D
+        </a>
+        <a
+          aria-controls="panel-Shopping"
+          aria-selected={false}
+          className="c1"
+          id="category-Shopping"
+          onClick={[Function]}
+          role="tab"
+        >
+          Shopping
+        </a>
+      </div>
+    </nav>
+    <h2
+      className="c2"
+    >
+      Works from users you follow
+    </h2>
+    <div
+      aria-labelledby="category-Illustration"
+      className="c3"
+      id="panel-Illustration"
+      role="tabpanel"
+    >
+      <div
+        className="c4"
+      >
+        <a
+          aria-label="UserIcon"
+          className="c5"
+        >
+          <pixiv-icon
+            name="24/FaceEdit"
+          />
+        </a>
+        <span
+          className="c6"
+        >
+          UserName
+        </span>
+        <button
+          className="charcoal-button"
+          data-size="S"
+          data-variant="Primary"
+        >
+          Follow
+        </button>
+      </div>
+      <a
+        className="c7"
+      >
+        Show all
+      </a>
+      <ul
+        className="c8"
+      >
+        <li>
+          <article
+            className="c9"
+          >
+            <img
+              alt="Title"
+              className="c10"
+              src="https://loremflickr.com/150/100/animals?random=0"
+            />
+            <h3
+              className="c11"
+            >
+              Title
+            </h3>
+            <p
+              className="c12"
+            >
+              Description
+            </p>
+          </article>
+        </li>
+        <li>
+          <article
+            className="c9"
+          >
+            <img
+              alt="Title"
+              className="c10"
+              src="https://loremflickr.com/150/100/animals?random=1"
+            />
+            <h3
+              className="c11"
+            >
+              Title
+            </h3>
+            <p
+              className="c12"
+            >
+              Description
+            </p>
+          </article>
+        </li>
+        <li>
+          <article
+            className="c9"
+          >
+            <img
+              alt="Title"
+              className="c10"
+              src="https://loremflickr.com/150/100/animals?random=2"
+            />
+            <h3
+              className="c11"
+            >
+              Title
+            </h3>
+            <p
+              className="c12"
+            >
+              Description
+            </p>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
+<div
+  data-dark={false}
+>
+  <section
+    className="grid max-w-fit gap-[24px]"
+  >
+    <nav>
+      <div
+        aria-label="Categories"
+        role="tablist"
+      >
+        <a
+          aria-controls="panel-Illustration"
+          aria-selected={true}
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
+          id="category-Illustration"
+          onClick={[Function]}
+          role="tab"
+        >
+          Illustration
+        </a>
+        <a
+          aria-controls="panel-Comic"
+          aria-selected={false}
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          id="category-Comic"
+          onClick={[Function]}
+          role="tab"
+        >
+          Comic
+        </a>
+        <a
+          aria-controls="panel-Novel"
+          aria-selected={false}
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          id="category-Novel"
+          onClick={[Function]}
+          role="tab"
+        >
+          Novel
+        </a>
+        <a
+          aria-controls="panel-3D"
+          aria-selected={false}
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          id="category-3D"
+          onClick={[Function]}
+          role="tab"
+        >
+          3D
+        </a>
+        <a
+          aria-controls="panel-Shopping"
+          aria-selected={false}
+          className="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+          id="category-Shopping"
+          onClick={[Function]}
+          role="tab"
+        >
+          Shopping
+        </a>
+      </div>
+    </nav>
+    <h2
+      className="text-text-secondary text-heading-xs m-0"
+    >
+      Works from users you follow
+    </h2>
+    <div
+      aria-labelledby="category-Illustration"
+      className="grid [grid-template-areas:'UserInfo_._ShowAll''ArtworkList_ArtworkList_ArtworkList']"
+      id="panel-Illustration"
+      role="tabpanel"
+    >
+      <div
+        className="grid grid-flow-col items-center justify-start gap-layout-20 [grid-area:UserInfo]"
+      >
+        <a
+          aria-label="UserIcon"
+          className="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
+        >
+          <pixiv-icon
+            name="24/FaceEdit"
+          />
+        </a>
+        <span
+          className="text-text text-caption-m font-bold"
+        >
+          UserName
+        </span>
+        <button
+          className="charcoal-button"
+          data-size="S"
+          data-variant="Primary"
+        >
+          Follow
+        </button>
+      </div>
+      <a
+        className="text-text-tertiary hover:text-text-hover active:text-text-press text-caption-m cursor-pointer content-center text-right [grid-area:ShowAll]"
+      >
+        Show all
+      </a>
+      <ul
+        className="grid max-w-[424px] list-none grid-cols-3 gap-layout-20 p-0 [grid-area:ArtworkList]"
+      >
+        <li>
+          <article
+            className="grid gap-layout-10"
+          >
+            <img
+              alt="Title"
+              className="rounded-m aspect-[3/2] w-[100%]"
+              src="https://loremflickr.com/150/100/animals?random=0"
+            />
+            <h3
+              className="text-text text-caption-m m-0"
+            >
+              Title
+            </h3>
+            <p
+              className="text-text-tertiary text-caption-s m-0"
+            >
+              Description
+            </p>
+          </article>
+        </li>
+        <li>
+          <article
+            className="grid gap-layout-10"
+          >
+            <img
+              alt="Title"
+              className="rounded-m aspect-[3/2] w-[100%]"
+              src="https://loremflickr.com/150/100/animals?random=1"
+            />
+            <h3
+              className="text-text text-caption-m m-0"
+            >
+              Title
+            </h3>
+            <p
+              className="text-text-tertiary text-caption-s m-0"
+            >
+              Description
+            </p>
+          </article>
+        </li>
+        <li>
+          <article
+            className="grid gap-layout-10"
+          >
+            <img
+              alt="Title"
+              className="rounded-m aspect-[3/2] w-[100%]"
+              src="https://loremflickr.com/150/100/animals?random=2"
+            />
+            <h3
+              className="text-text text-caption-m m-0"
+            >
+              Title
+            </h3>
+            <p
+              className="text-text-tertiary text-caption-s m-0"
+            >
+              Description
+            </p>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;

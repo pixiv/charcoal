@@ -1,6 +1,6 @@
 import { GRID_COUNT, mergeEffect } from './foundation'
 
-import type { TailwindConfig } from 'tailwindcss/tailwind-config'
+import type { TailwindConfig, TailwindTheme } from 'tailwindcss/tailwind-config'
 import { TailwindVersion, ThemeMap } from './types'
 
 import {
@@ -21,21 +21,41 @@ import { colorsToTailwindConfig } from './colors/toTailwindConfig'
 import cssVariableColorPlugin from './colors/plugin'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
+import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
+export { unstable_createTailwindConfigTokenV2 }
 
 interface Options {
   version?: TailwindVersion
   theme?: ThemeMap
+  cssVariablesV1?: boolean
+  unstableTokenV2?: boolean
 }
 
 export function createTailwindConfig({
   theme = { ':root': light },
   version = 'v3',
+  cssVariablesV1 = true,
+  unstableTokenV2 = false,
 }: Options): TailwindConfig {
   assertAllThemeHaveSameKeys(theme)
 
   const defaultTheme = theme[':root']
   const effects = mergeEffect(defaultTheme)
   const DEFAULT = getDefaultKeyName(version)
+
+  const {
+    borderWidth: borderWidthV2,
+    borderRadius: borderRadiusV2,
+    borderColor: borderColorV2,
+    colors: colorsV2,
+    fontSize: fontSizeV2,
+    fontWeight: fontWeightV2,
+    spacing: spacingV2,
+    gap: gapV2,
+    width: widthV2,
+  }: Partial<TailwindTheme> = unstableTokenV2
+    ? unstable_createTailwindConfigTokenV2().theme
+    : {}
 
   return {
     theme: {
@@ -56,6 +76,7 @@ export function createTailwindConfig({
         transparent: 'transparent',
         current: 'currentColor',
         ...colorsToTailwindConfig(version, defaultTheme.color, effects),
+        ...colorsV2,
       },
       borderColor: {
         ...colorsToTailwindConfig(
@@ -63,8 +84,15 @@ export function createTailwindConfig({
           mapObject(defaultTheme.border, (k, v) => [k, v.color]),
           effects
         ),
+        ...borderColorV2,
       },
-      spacing: mapObject(SPACING, (name, pixel) => [name, px(pixel)]),
+      spacing: {
+        ...mapObject(
+          SPACING,
+          (name, pixel) => [name, px(pixel)] as [string, string]
+        ),
+        ...spacingV2,
+      },
       width: {
         full: '100%',
         screen: '100vw',
@@ -92,17 +120,29 @@ export function createTailwindConfig({
           }),
           {}
         ),
+        ...widthV2,
       },
       gap: {
         fixed: px(GUTTER_UNIT),
+        ...gapV2,
       },
-      borderRadius: mapObject(BORDER_RADIUS, (name, value) => [
-        name,
-        px(value),
-      ]),
+      borderRadius: {
+        ...mapObject(
+          BORDER_RADIUS,
+          (name, value) => [name, px(value)] as [string, string]
+        ),
+        ...borderRadiusV2,
+      },
       transitionDuration: {
         [DEFAULT]: '0.2s',
       },
+      ...(unstableTokenV2
+        ? {
+            borderWidth: borderWidthV2,
+            fontSize: fontSizeV2,
+            fontWeight: fontWeightV2,
+          }
+        : {}),
     },
 
     ...getVariantOption(version),
@@ -113,7 +153,7 @@ export function createTailwindConfig({
     },
     plugins: [
       typographyPlugin,
-      cssVariableColorPlugin(theme),
+      cssVariableColorPlugin(theme, Boolean(cssVariablesV1)),
 
       ...Object.entries(theme).map(([selectorOrMediaQuery, theme]) =>
         cssVariableGradientPlugin(

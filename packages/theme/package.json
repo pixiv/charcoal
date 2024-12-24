@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "4.0.0-beta.16",
+  "version": "4.0.0-rc.2",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -12,25 +12,25 @@
       "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
     },
-    "./token-object": {
-      "types": "./dist/token-object/index.d.ts",
-      "require": "./dist/token-object/index.cjs.js",
-      "import": "./dist/token-object/index.esm.js",
-      "default": "./dist/token-object/index.esm.js"
+    "./unstable-token-object": {
+      "types": "./dist/unstable-token-object/index.d.ts",
+      "require": "./dist/unstable-token-object/index.cjs.js",
+      "import": "./dist/unstable-token-object/index.esm.js",
+      "default": "./dist/unstable-token-object/index.esm.js"
     },
-    "./css/*": "./dist/css/*",
-    "./tokens/*": "./dist/tokens/*"
+    "./unstable-css/*": "./dist/unstable-css/*",
+    "./unstable-tokens/*": "./dist/unstable-tokens/*"
   },
   "typesVersions": {
     "*": {
-      "token-object": [
+      "unstable-token-object": [
         "./dist/token-object/index.d.ts"
       ],
-      "tokens/*": [
-        "./dist/tokens/*"
+      "unstable-tokens/*": [
+        "./dist/unstable-tokens/*"
       ],
-      "css/*": [
-        "./dist/css/*"
+      "unstable-css/*": [
+        "./dist/unstable-css/*"
       ]
     }
   },
@@ -41,7 +41,7 @@
     "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "build:copy-css": "cpx --clean 'src/css/**/*.{css,d.ts}' dist/css",
+    "build:copy-css": "cpx --clean 'src/unstable-css/**/*.{css,d.ts}' dist/unstable-css",
     "build:token-object": "tsx cli/token-object.ts",
     "serialize": "node cli/index.js",
     "typecheck": "run-p --print-label 'typecheck:*'",
@@ -63,8 +63,8 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.0.0-beta.16",
-    "@charcoal-ui/utils": "^4.0.0-beta.16",
+    "@charcoal-ui/foundation": "^4.0.0-rc.2",
+    "@charcoal-ui/utils": "^4.0.0-rc.2",
     "change-case-all": "^2.1.0",
     "deepmerge": "^4.3.1",
     "polished": "^4.1.4"

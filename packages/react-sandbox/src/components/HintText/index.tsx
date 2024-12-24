@@ -62,6 +62,8 @@ const IconWrap = styled.div`
 const Text = styled.p`
   ${theme((o) => [o.font.text2, o.typography(14)])}
   margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
 `
 
 function styledProps(props: Props) {

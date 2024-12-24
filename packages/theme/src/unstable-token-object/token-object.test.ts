@@ -53,8 +53,8 @@ describe.each([
 })
 
 describe.each([
-  ['light theme', lightToken, '../css/_variables_light.css'],
-  ['dark theme', darkToken, '../css/_variables_dark.css'],
+  ['light theme', lightToken, '../unstable-css/_variables_light.css'],
+  ['dark theme', darkToken, '../unstable-css/_variables_dark.css'],
 ] as const)(
   'createCSSTokenObject test: %s',
   async (description, token, cssFilePath) => {

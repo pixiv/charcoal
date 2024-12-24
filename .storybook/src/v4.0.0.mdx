@@ -1,0 +1,242 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import { Unstyled } from '@storybook/blocks'
+
+<Meta title="v4.0.0" />
+
+# @charcoal-ui/react@v4.0.0
+
+- `v4.0.0`では多くの破壊的な変更があります。
+- `styled-components`への依存を無くし、css ファイルを読み込む方式に変更しました。
+
+```tsx
+import { CharcoalProvider, Button } from '@charcoal-ui/react'
+
+import '@charcoal-ui/react/dist/index.css'
+
+function App() {
+  return (
+    <CharcoalProvider>
+      <Button>Charcoal</Button>
+    </CharcoalProvider>
+  )
+}
+```
+
+※ styled 廃止した影響で classname の優先度が変わるケースがあります。
+
+```tsx
+import { Button } from '@charcoal-ui/react'
+import styled from 'styled-components'
+
+// 今ままでと違う見た目になる可能性がある
+const NewButton = styled(Button)`
+  color: red;
+`
+```
+
+この場合 @layer 版の利用をおすすめしますが、サポート対象が iOS 15.4+ になります。
+
+```diff
+- import '@charcoal-ui/react/dist/index.css'
++ import '@charcoal-ui/react/dist/layered.css'
+```
+
+## ComponentAbstraction
+
+- `ComponentAbstraction`が削除されました。
+- `useComponentAbstraction`が削除されました。
+- `type LinkProps`が削除されました。
+
+## CharcoalProvider
+
+- テーマに関する属性が削除されました。
+  - `themeMap`, `defaultTheme`, `injectTokens`, `components`, `background`
+
+Before
+
+```tsx
+// ...
+
+<CharcoalProvider themeMap={themeMap}>
+  <YourApp />
+</CharcoalProvider>
+```
+
+After
+
+styled を継続して利用する場合
+
+```tsx
+// ...
+import { TokenInjector } from '@charcoal-ui/styled'
+import { ThemeProvider } from 'styled-components'
+<CharcoalProvider>
+  <TokenInjector theme={themeMap} />
+  <ThemeProvider theme={themeMap[':root']}>
+    <YourApp />
+  </ThemeProvider>
+</CharcoalProvider>
+```
+
+
+tailwind単体で利用可能にするためにデフォルトでcss変数v1を提供するようになりました。
+TokenInjectorと併用する場合falseに指定してください。
+
+```diff
+module.exports = {
+  ...
+  presets: [
+    createTailwindConfig({
+      version: 'v3',
+      theme: {
+        ':root': light,
+        '[data-dark="true"]': dark,
+      },
++     cssVariablesV1: false,
+      unstableTokenV2: true,
+    }),
+  ],
+  ...
+}
+
+```
+
+## Button
+
+- `ComponentAbstraction`と`to`を用いたカスタム要素の設定を、`component`に`React.ElementType`を指定することによって行えるように変更しました。
+
+Before
+
+```tsx
+<ComponentAbstraction components={{ Link: RouterLink }}>
+  <Button to="...">Link</Button>
+</ComponentAbstraction>
+```
+
+After
+
+```tsx
+<Button component="a" href="...">Link</Button>
+<Button component={RouterLink} to="...">Link</Button>
+<Button component={NextLink} href="...">Link</Button>
+```
+
+## Checkbox
+
+- `Checkbox`の`input`要素を`children`がない場合に label で囲わないようにしました。
+- `React.HTMLProps<HTMLInputElement>`を継承するように変更しました。
+- アイコンを CSS を用いて表示するように変更しました。
+
+## Clickable
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+- `type ClickableElement`が削除されました。
+
+## DropdownSelector
+
+- `aria-labelledby`,`aria-describedby`を適用するように変更しました。
+
+## IconButton
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## MultiSelect
+
+- `overlay`の代替として`Checkbox`の`rounded`が追加されました。
+
+## RadioGroup
+
+- `aria-labelledby`, `aria-orientation`をプロパティに追加しました。
+- `label`をオプショナルに変更しました。
+
+## Switch
+
+- `Checkbox`の`input`要素を常に`label`で囲わないようにしました。
+- `React.HTMLProps<HTMLInputElement>`を継承するように変更しました。
+
+## TagItem
+
+- `Button`と同様に`to`による指定を削除し、`component`によってカスタムできるように変更しました。
+
+## TextArea
+
+- `textarea`要素の`props`を継承するように変更しました。
+- 文字数の計算ロジックを`getCount`プロパティで上書きできるように変更しました。
+
+## TextField
+
+- `input`要素の`props`を継承するように変更しました。
+- 文字数の計算ロジックを`getCount`プロパティで上書きできるように変更しました。
+
+## その他
+
+- `PixivIcon.extend` に渡す内容が sanitize されなくなります。必要な場合事前に sanitize するか、dompurify などを挟んでください [fix!(@charcoal-ui/icons): remove dompurify from v4. #643](https://github.com/pixiv/charcoal/pull/643)
+
+# Design Token 2.0 の実験的サポート
+
+## styled-components
+
+実装例: [feat: token v2 demo styled #655](https://github.com/pixiv/charcoal/pull/655)
+
+```ts
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import tokens from '@charcoal-ui/theme/unstable-tokens/css-variables.json'
+
+const User = styled.a`
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: calc(${tokens.radius.oval} * 1px);
+  cursor: pointer;
+  color: ${tokens.color.icon.default};
+  background-color: ${tokens.color.container.secondary.default};
+  &:hover {
+    color: ${tokens.color.icon.hover};
+    background-color: ${tokens.color.container.secondary.hover};
+  }
+  &:active {
+    color: ${tokens.color.icon.press};
+    background-color: ${tokens.color.container.secondary.press};
+  }
+`
+```
+
+## tailwindcss
+
+実装例: [feat: allow design token v2 in tailwind config #650](https://github.com/pixiv/charcoal/pull/650)
+
+```diff
+const { light, dark } = require('@charcoal-ui/theme')
+const {
+  createTailwindConfig,
+} = require('@charcoal-ui/tailwind-config')
+
+/**
+ * @type {import('tailwindcss/tailwind-config').TailwindConfig}
+ */
+module.exports = {
+  darkMode: false,
+  content: ['**/*.tsx'],
+  presets: [
+    createTailwindConfig({
+      version: 'v3',
+      theme: {
+        ':root': light,
+        '[data-dark="true"]': dark,
+      },
++     unstableTokenV2: true,
+    }),
+  ],
+  corePlugins: {
+```
+
+```html
+<a
+  className="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
+  aria-label="UserIcon"
+>
+  <Icon name="24/FaceEdit" />
+</a>
+```
