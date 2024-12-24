@@ -22,10 +22,10 @@
   line-height: 22px;
 }
 
-.charcoal-segmented-control-radio__label:hover {
+.charcoal-segmented-control-radio__label:not([aria-disabled='true']):hover {
   background-color: var(--charcoal-color-container-hover-a);
 }
-.charcoal-segmented-control-radio__label:active {
+.charcoal-segmented-control-radio__label:not([aria-disabled='true']):active {
   background-color: var(--charcoal-color-container-press-a);
 }
 
@@ -34,10 +34,14 @@
   color: var(--charcoal-color-text-on-primary-default);
 }
 
-.charcoal-segmented-control-radio__label[data-checked='true']:hover {
+.charcoal-segmented-control-radio__label:not(
+    [aria-disabled='true']
+  )[data-checked='true']:hover {
   background-color: var(--charcoal-color-container-primary-hover);
 }
-.charcoal-segmented-control-radio__label[data-checked='true']:active {
+.charcoal-segmented-control-radio__label:not(
+    [aria-disabled='true']
+  )[data-checked='true']:active {
   background-color: var(--charcoal-color-container-primary-press);
 }
 
