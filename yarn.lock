@@ -1940,7 +1940,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@charcoal-ui/esbuild-plugin-styled-components@^4.0.0-rc.1, @charcoal-ui/esbuild-plugin-styled-components@workspace:packages/esbuild-plugin-styled-components":
+"@charcoal-ui/esbuild-plugin-styled-components@^4.0.0-rc.2, @charcoal-ui/esbuild-plugin-styled-components@workspace:packages/esbuild-plugin-styled-components":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/esbuild-plugin-styled-components@workspace:packages/esbuild-plugin-styled-components"
   dependencies:
@@ -1952,7 +1952,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/foundation@^4.0.0-rc.1, @charcoal-ui/foundation@workspace:packages/foundation":
+"@charcoal-ui/foundation@^4.0.0-rc.2, @charcoal-ui/foundation@workspace:packages/foundation":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/foundation@workspace:packages/foundation"
   dependencies:
@@ -1964,7 +1964,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/icon-files@^4.0.0-rc.1, @charcoal-ui/icon-files@workspace:packages/icon-files":
+"@charcoal-ui/icon-files@^4.0.0-rc.2, @charcoal-ui/icon-files@workspace:packages/icon-files":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icon-files@workspace:packages/icon-files"
   languageName: unknown
@@ -2001,11 +2001,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/icons@^4.0.0-rc.1, @charcoal-ui/icons@workspace:packages/icons":
+"@charcoal-ui/icons@^4.0.0-rc.2, @charcoal-ui/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/icons@workspace:packages/icons"
   dependencies:
-    "@charcoal-ui/icon-files": ^4.0.0-rc.1
+    "@charcoal-ui/icon-files": ^4.0.0-rc.2
     "@storybook/react": ^8.0.5
     "@types/jest": ^27.4.0
     "@types/react": ^17.0.38
@@ -2046,12 +2046,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react-sandbox@workspace:packages/react-sandbox"
   dependencies:
-    "@charcoal-ui/esbuild-plugin-styled-components": ^4.0.0-rc.1
-    "@charcoal-ui/foundation": ^4.0.0-rc.1
-    "@charcoal-ui/react": ^4.0.0-rc.1
-    "@charcoal-ui/styled": ^4.0.0-rc.1
-    "@charcoal-ui/theme": ^4.0.0-rc.1
-    "@charcoal-ui/utils": ^4.0.0-rc.1
+    "@charcoal-ui/esbuild-plugin-styled-components": ^4.0.0-rc.2
+    "@charcoal-ui/foundation": ^4.0.0-rc.2
+    "@charcoal-ui/react": ^4.0.0-rc.2
+    "@charcoal-ui/styled": ^4.0.0-rc.2
+    "@charcoal-ui/theme": ^4.0.0-rc.2
+    "@charcoal-ui/utils": ^4.0.0-rc.2
     "@storybook/addon-actions": ^7.4.1
     "@storybook/addon-knobs": ^7.0.2
     "@storybook/addons": ^7.4.1
@@ -2092,15 +2092,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/react@^4.0.0-rc.1, @charcoal-ui/react@workspace:packages/react":
+"@charcoal-ui/react@^4.0.0-rc.2, @charcoal-ui/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/react@workspace:packages/react"
   dependencies:
-    "@charcoal-ui/esbuild-plugin-styled-components": ^4.0.0-rc.1
-    "@charcoal-ui/foundation": ^4.0.0-rc.1
-    "@charcoal-ui/icons": ^4.0.0-rc.1
-    "@charcoal-ui/theme": ^4.0.0-rc.1
-    "@charcoal-ui/utils": ^4.0.0-rc.1
+    "@charcoal-ui/esbuild-plugin-styled-components": ^4.0.0-rc.2
+    "@charcoal-ui/foundation": ^4.0.0-rc.2
+    "@charcoal-ui/icons": ^4.0.0-rc.2
+    "@charcoal-ui/theme": ^4.0.0-rc.2
+    "@charcoal-ui/utils": ^4.0.0-rc.2
     "@react-aria/button": ^3.9.1
     "@react-aria/checkbox": ^3.13.0
     "@react-aria/dialog": ^3.5.10
@@ -2148,13 +2148,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/styled@^4.0.0-rc.1, @charcoal-ui/styled@workspace:packages/styled":
+"@charcoal-ui/styled@^4.0.0-rc.2, @charcoal-ui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/styled@workspace:packages/styled"
   dependencies:
-    "@charcoal-ui/foundation": ^4.0.0-rc.1
-    "@charcoal-ui/theme": ^4.0.0-rc.1
-    "@charcoal-ui/utils": ^4.0.0-rc.1
+    "@charcoal-ui/foundation": ^4.0.0-rc.2
+    "@charcoal-ui/theme": ^4.0.0-rc.2
+    "@charcoal-ui/utils": ^4.0.0-rc.2
     "@types/react": ^17.0.38
     "@types/react-test-renderer": ^17.0.2
     "@types/styled-components": ^5.1.21
@@ -2181,9 +2181,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/tailwind-config@workspace:packages/tailwind-config"
   dependencies:
-    "@charcoal-ui/foundation": ^4.0.0-rc.1
-    "@charcoal-ui/theme": ^4.0.0-rc.1
-    "@charcoal-ui/utils": ^4.0.0-rc.1
+    "@charcoal-ui/foundation": ^4.0.0-rc.2
+    "@charcoal-ui/theme": ^4.0.0-rc.2
+    "@charcoal-ui/utils": ^4.0.0-rc.2
     jsdom: ^24.1.0
     postcss: ^8.4.5
     postcss-selector-parser: ^6.0.9
@@ -2216,12 +2216,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/theme@^4.0.0-rc.1, @charcoal-ui/theme@workspace:packages/theme":
+"@charcoal-ui/theme@^4.0.0-rc.2, @charcoal-ui/theme@workspace:packages/theme":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/theme@workspace:packages/theme"
   dependencies:
-    "@charcoal-ui/foundation": ^4.0.0-rc.1
-    "@charcoal-ui/utils": ^4.0.0-rc.1
+    "@charcoal-ui/foundation": ^4.0.0-rc.2
+    "@charcoal-ui/utils": ^4.0.0-rc.2
     "@types/css": ^0.0.38
     change-case-all: ^2.1.0
     cpx: ^1.5.0
@@ -2256,11 +2256,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@charcoal-ui/utils@^4.0.0-rc.1, @charcoal-ui/utils@workspace:packages/utils":
+"@charcoal-ui/utils@^4.0.0-rc.2, @charcoal-ui/utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@charcoal-ui/utils@workspace:packages/utils"
   dependencies:
-    "@charcoal-ui/foundation": ^4.0.0-rc.1
+    "@charcoal-ui/foundation": ^4.0.0-rc.2
     npm-run-all: ^4.1.5
     polished: ^4.1.4
     rimraf: ^3.0.2
