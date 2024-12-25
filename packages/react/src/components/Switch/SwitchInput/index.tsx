@@ -23,7 +23,6 @@ const SwitchInput = forwardRef<
     },
     [onChange]
   )
-  props.children
 
   const classNames = useClassNames('charcoal-switch-input', className)
   return (
