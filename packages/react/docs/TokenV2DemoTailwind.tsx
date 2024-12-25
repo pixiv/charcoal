@@ -5,7 +5,7 @@ const categories = ['Illustration', 'Comic', 'Novel', '3D', 'Shopping']
 const artworks = Array.from({ length: 3 }, (_, id) => ({
   id,
   title: 'Title',
-  thumbnail: `https://loremflickr.com/150/100/animals?random=${id}`,
+  thumbnail: `https://loremflickr.com/150/100/animals?random=${id}&lock=${id}`,
   description: 'Description',
 }))
 

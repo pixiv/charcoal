@@ -30,7 +30,10 @@ const vrtTestConfig: TestRunnerConfig = {
     await waitForPageReady(page)
     await page.waitForTimeout(200)
 
-    const image = await page.screenshot()
+    const image = await page.screenshot({
+      animations: 'disabled',
+      mask: [page.locator('img')],
+    })
     expect(image).toMatchImageSnapshot({
       customSnapshotIdentifier: context.id,
       customDiffDir: `${process.cwd()}/__diff_output__`,
