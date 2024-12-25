@@ -30,5 +30,6 @@
     "type": "git",
     "url": "https://github.com/pixiv/charcoal.git",
     "directory": "packages/icons-cli"
-  }
+  },
+  "version": "4.0.0"
 }
