@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
+exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
 .c0 {
   -webkit-transition: 0.3s color ease-in-out;
   transition: 0.3s color ease-in-out;
@@ -327,7 +327,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
+exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
 <div
   data-dark={false}
 >
