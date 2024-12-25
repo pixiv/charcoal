@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
+exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
 .c0 {
   -webkit-transition: 0.3s color ease-in-out;
   transition: 0.3s color ease-in-out;
@@ -265,7 +265,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
             <img
               alt="Title"
               className="c10"
-              src="https://loremflickr.com/150/100/animals?random=0"
+              src="https://loremflickr.com/150/100/animals?random=0&lock=0"
             />
             <h3
               className="c11"
@@ -286,7 +286,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
             <img
               alt="Title"
               className="c10"
-              src="https://loremflickr.com/150/100/animals?random=1"
+              src="https://loremflickr.com/150/100/animals?random=1&lock=1"
             />
             <h3
               className="c11"
@@ -307,7 +307,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
             <img
               alt="Title"
               className="c10"
-              src="https://loremflickr.com/150/100/animals?random=2"
+              src="https://loremflickr.com/150/100/animals?random=2&lock=2"
             />
             <h3
               className="c11"
@@ -327,7 +327,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Styled 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
+exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
 <div
   data-dark={false}
 >
@@ -441,7 +441,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
             <img
               alt="Title"
               className="rounded-m aspect-[3/2] w-[100%]"
-              src="https://loremflickr.com/150/100/animals?random=0"
+              src="https://loremflickr.com/150/100/animals?random=0&lock=0"
             />
             <h3
               className="text-text text-caption-m m-0"
@@ -462,7 +462,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
             <img
               alt="Title"
               className="rounded-m aspect-[3/2] w-[100%]"
-              src="https://loremflickr.com/150/100/animals?random=1"
+              src="https://loremflickr.com/150/100/animals?random=1&lock=1"
             />
             <h3
               className="text-text text-caption-m m-0"
@@ -483,7 +483,7 @@ exports[`Storybook Tests > theme/Toke v2 Demo > Tailwind 1`] = `
             <img
               alt="Title"
               className="rounded-m aspect-[3/2] w-[100%]"
-              src="https://loremflickr.com/150/100/animals?random=2"
+              src="https://loremflickr.com/150/100/animals?random=2&lock=2"
             />
             <h3
               className="text-text text-caption-m m-0"
