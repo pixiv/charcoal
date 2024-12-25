@@ -24,3 +24,9 @@ const Clickable = forwardRef(function Clickable<T extends React.ElementType>(
   p: ClickableProps<T>
 ) => JSX.Element
 export default Clickable
+
+/**
+ * @deprecated
+ * remained for v3 compatibility and will be removed in the future
+ */
+export type ClickableElement = HTMLButtonElement & HTMLAnchorElement

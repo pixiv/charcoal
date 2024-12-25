@@ -5,7 +5,7 @@ import TokenV2Styled from './TokenV2DemoStyled'
 import TokenV2Tailwind from './TokenV2DemoTailwind'
 
 export default {
-  title: 'theme/Toke v2 Demo',
+  title: 'theme/Token v2 Demo',
   component: TokenV2Styled,
 } as Meta<typeof TokenV2Styled>
 
