@@ -34,17 +34,6 @@
   color: var(--charcoal-text5);
 }
 
-.charcoal-segmented-control-radio__label:not(
-    [aria-disabled='true']
-  )[data-checked='true']:hover {
-  background-color: var(--charcoal-brand-hover);
-}
-.charcoal-segmented-control-radio__label:not(
-    [aria-disabled='true']
-  )[data-checked='true']:active {
-  background-color: var(--charcoal-brand-press);
-}
-
 .charcoal-segmented-control-radio__label[aria-disabled]:not(
     [aria-disabled='false']
   ) {
