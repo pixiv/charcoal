@@ -99,3 +99,4 @@ export { disabledCss } from './styles/disabledCss'
 export { assertiveRingCss } from './styles/assertiveRingCss'
 export type { CharcoalThemeUtils } from './utils/CharcoalStyledTheme'
 export { addThemeUtils } from './utils/addThemeUtils'
+export type { Internal }
