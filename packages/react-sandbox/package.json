@@ -20,7 +20,6 @@
   "scripts": {
     "build": "run-p --print-label 'build:*'",
     "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"

@@ -8,6 +8,6 @@ export default defineConfig({
   sourcemap: true,
   esbuildPlugins: [styledComponentsPlugin],
   clean: true,
-  dts: false,
+  dts: true,
   tsconfig: './tsconfig.build.json',
 })
