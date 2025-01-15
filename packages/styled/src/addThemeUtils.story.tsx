@@ -1,4 +1,3 @@
-import { light } from '@charcoal-ui/theme'
 import styled, { ThemeProvider } from 'styled-components'
 import { MyTheme, myTheme } from './storyHelper'
 
@@ -11,7 +10,7 @@ declare module 'styled-components' {
 }
 
 export const Example = () => (
-  <ThemeProvider theme={(theme) => myTheme(theme ?? light)}>
+  <ThemeProvider theme={(theme) => myTheme(theme)}>
     <RootDiv>
       <Bg1Div>
         <TypographyDiv>
