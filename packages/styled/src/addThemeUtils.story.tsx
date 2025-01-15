@@ -10,7 +10,7 @@ declare module 'styled-components' {
 }
 
 export const Example = () => (
-  <ThemeProvider theme={(theme) => myTheme(theme)}>
+  <ThemeProvider theme={myTheme}>
     <RootDiv>
       <Bg1Div>
         <TypographyDiv>
