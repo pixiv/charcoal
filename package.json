@@ -46,7 +46,7 @@
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.5.0",
     "@originjs/vite-plugin-commonjs": "^1.0.3",
-    "@playwright/test": "^1.40.1",
+    "@playwright/test": "^1.49.1",
     "@storybook/addon-a11y": "^8.0.5",
     "@storybook/addon-docs": "^8.0.5",
     "@storybook/addon-essentials": "^8.0.5",
