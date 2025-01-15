@@ -11,4 +11,6 @@ type SpecFn = (o: Builder) => ArrayOrSingle<any>
 
 type Theme = (specFn: SpecFn) => ThemeProp<CharcoalTheme>
 
-export const theme: Theme = createTheme<CharcoalTheme>()
+// 型再帰が深すぎてコンパイルに失敗するので any にして型計算を省略
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const theme = createTheme<CharcoalTheme>() as any as Theme

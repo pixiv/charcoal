@@ -11,7 +11,7 @@ jobs:
   prepare-base-branch:
     name: Prepare base branch image snapshots
     timeout-minutes: 20
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout base branch
         uses: actions/checkout@v4
@@ -62,7 +62,7 @@ jobs:
   test-storybook:
     name: Build Storybook
     timeout-minutes: 20
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: prepare-base-branch
     steps:
       - name: Checkout branch

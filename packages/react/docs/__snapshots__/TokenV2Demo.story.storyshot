@@ -2,9 +2,12 @@
 
 exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
 .c0 {
+  -webkit-transition: 0.3s color ease-in-out;
   transition: 0.3s color ease-in-out;
   display: grid;
   gap: 24px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
@@ -55,7 +58,13 @@ exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
   grid-area: UserInfo;
   display: grid;
   grid-auto-flow: column;
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+  -ms-flex-pack: left;
   justify-content: left;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: var(--charcoal-space-layout-20);
 }
@@ -93,6 +102,8 @@ exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
   cursor: pointer;
   color: var(--charcoal-color-text-tertiary-default);
   text-align: right;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   font-size: var(--charcoal-text-font-size-caption-m);
   line-height: var(--charcoal-text-line-height-caption-m);
@@ -109,7 +120,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
 .c8 {
   grid-area: ArtworkList;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: var(--charcoal-space-layout-20);
   list-style: none;
   padding: 0;
@@ -123,7 +134,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
 
 .c10 {
   width: 100%;
-  aspect-ratio: 3/2;
+  aspect-ratio: 3 / 2;
   border-radius: var(--charcoal-radius-m);
 }
 
