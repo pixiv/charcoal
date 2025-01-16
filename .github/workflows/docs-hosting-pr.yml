@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-      - v3.0.0
       - v3
 
 env:
