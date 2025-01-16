@@ -130,6 +130,7 @@ declare var _default: {
   '24/Microphone': () => Promise<string>;
   '24/MobilePhone': () => Promise<string>;
   '24/Move1': () => Promise<string>;
+  '24/MultiSelect': () => Promise<string>;
   '24/Next': () => Promise<string>;
   '24/NoImage': () => Promise<string>;
   '24/Notification': () => Promise<string>;
@@ -262,6 +263,7 @@ declare var _default: {
   'Inline/Location': () => Promise<string>;
   'Inline/Lock': () => Promise<string>;
   'Inline/More': () => Promise<string>;
+  'Inline/MultiSelect': () => Promise<string>;
   'Inline/Nextworks': () => Promise<string>;
   'Inline/OpenInNew': () => Promise<string>;
   'Inline/Pencil': () => Promise<string>;
