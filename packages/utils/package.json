@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/utils",
-  "version": "3.16.1",
+  "version": "3.16.2",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -24,7 +24,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.16.1",
+    "@charcoal-ui/foundation": "^3.16.2",
     "polished": "^4.1.4"
   },
   "files": [
