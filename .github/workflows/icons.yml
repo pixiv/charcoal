@@ -49,5 +49,5 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
-          GITHUB_DEFAULT_BRANCH: main
+          GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
         run: yarn icons-cli github:pr
