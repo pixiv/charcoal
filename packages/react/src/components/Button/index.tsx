@@ -46,5 +46,7 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
       ref={ref}
     />
   )
-}) as <T extends React.ElementType = 'button'>(p: ButtonProps<T>) => JSX.Element
+}) as <T extends React.ElementType = 'button'>(
+  p: ButtonProps<'button' extends T ? 'button' : T>
+) => JSX.Element
 export default Button
