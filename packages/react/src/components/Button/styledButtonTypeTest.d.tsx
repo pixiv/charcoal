@@ -1,8 +1,11 @@
+// This file is for type testing only
+
 // only use the type
-import type { default as ButtonType } from '../../react/src/components/Button/index'
-import styled from 'styled-components'
+import type { default as ButtonType } from './index'
+import type styledType from 'styled-components'
 
 declare const Button: typeof ButtonType
+declare const styled: typeof styledType
 
 const Custom = ({ custom }: { custom: string }) => <>{custom}</>
 const CustomGeneric = <C extends string>({ custom }: { custom: C }) => (
