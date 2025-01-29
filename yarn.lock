@@ -2102,7 +2102,6 @@ __metadata:
   dependencies:
     "@charcoal-ui/icon-files": ^4.1.0
     "@storybook/react": ^8.0.5
-    "@types/dompurify": ^2.3.3
     "@types/react": ^18.3.3
     "@types/styled-components": ^5.1.21
     "@types/warning": ^3.0.0
@@ -2261,7 +2260,7 @@ __metadata:
     warning: ^4.0.3
   peerDependencies:
     react: ">=18.0.0"
-    styled-components: ">=5.0.0"
+    styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
 
@@ -8942,15 +8941,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/dompurify@npm:^2.3.3":
-  version: 2.4.0
-  resolution: "@types/dompurify@npm:2.4.0"
-  dependencies:
-    "@types/trusted-types": "*"
-  checksum: b48cd81e997794ebc390c7c5bef1a67ec14a6f2f0521973e07e06af186c7583abe114d94d24868c0632b9573f5bd77131a4b76f3fffdf089ba99a4e53dd46c39
-  languageName: node
-  linkType: hard
-
 "@types/ejs@npm:^3.1.1":
   version: 3.1.2
   resolution: "@types/ejs@npm:3.1.2"
@@ -9609,13 +9599,6 @@ __metadata:
   version: 4.0.1
   resolution: "@types/tough-cookie@npm:4.0.1"
   checksum: 7570c1c2d74201f4ead3512cf8e4c99e97d92ab8a02ae2fb987fd720ced0ca1a2baf250c98a861a170b86762606c9bf6d32207675f13dffc5ab75c08c96578d2
-  languageName: node
-  linkType: hard
-
-"@types/trusted-types@npm:*":
-  version: 2.0.7
-  resolution: "@types/trusted-types@npm:2.0.7"
-  checksum: 8e4202766a65877efcf5d5a41b7dd458480b36195e580a3b1085ad21e948bc417d55d6f8af1fd2a7ad008015d4117d5fdfe432731157da3c68678487174e4ba3
   languageName: node
   linkType: hard
 
