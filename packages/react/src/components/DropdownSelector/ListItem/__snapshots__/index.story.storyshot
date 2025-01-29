@@ -1,62 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/internals/ListItem > Basic 1`] = `
-<div
-  data-dark={false}
->
-  <li
-    className="charcoal-list-item"
+<div>
+  <div
+    data-dark="false"
   >
-    Item
-  </li>
-  <li
-    className="charcoal-list-item"
-  >
-    <pixiv-icon
-      name="16/Add"
-    />
-     Add
-  </li>
-  <a
-    className="charcoal-list-item"
-    href="#"
-  >
-    Normal Link
-  </a>
-  <a
-    className="charcoal-list-item"
-    href="#"
-    style={
-      Object {
-        "color": "red",
-      }
-    }
-  >
-    Custom Link
-  </a>
-  <li
-    className="charcoal-list-item"
-    onClick={[Function]}
-  >
-    Switch
-    <div
-      style={
-        Object {
-          "marginLeft": "auto",
-        }
-      }
+    <li
+      class="charcoal-list-item"
     >
-      <input
-        checked={false}
-        className="charcoal-switch-input"
-        id="test-id"
-        label="hello"
-        name="hello"
-        onChange={[Function]}
-        role="switch"
-        type="checkbox"
+      Item
+    </li>
+    <li
+      class="charcoal-list-item"
+    >
+      <pixiv-icon
+        name="16/Add"
       />
-    </div>
-  </li>
+       Add
+    </li>
+    <a
+      class="charcoal-list-item"
+      href="#"
+    >
+      Normal Link
+    </a>
+    <a
+      class="charcoal-list-item"
+      href="#"
+      style="color: red;"
+    >
+      Custom Link
+    </a>
+    <li
+      class="charcoal-list-item"
+    >
+      Switch
+      <div
+        style="margin-left: auto;"
+      >
+        <input
+          class="charcoal-switch-input"
+          id="test-id"
+          label="hello"
+          name="hello"
+          role="switch"
+          type="checkbox"
+        />
+      </div>
+    </li>
+  </div>
 </div>
 `;

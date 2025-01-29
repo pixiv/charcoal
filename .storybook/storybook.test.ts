@@ -2,7 +2,7 @@ import path from 'node:path'
 import * as glob from 'glob'
 
 import { composeStories } from '@storybook/react'
-import renderer from 'react-test-renderer'
+import { render, cleanup } from '@testing-library/react'
 import { addSerializer } from 'jest-specific-snapshot'
 import { styleSheetSerializer } from 'jest-styled-components'
 
@@ -57,6 +57,11 @@ const options = {
 
 describe(options.suite, async () => {
   const files = await getAllStoryFiles()
+
+  afterEach(() => {
+    cleanup()
+  })
+
   files.forEach(({ storyFile, filePath }) => {
     const meta = storyFile.default
     const title = meta.title || filePath
@@ -94,8 +99,8 @@ describe(options.suite, async () => {
         const testFn = story.parameters.storyshots?.skip ? test.skip : test
 
         testFn(name, async () => {
-          const mounted = renderer.create(story()).toJSON()
-          expect(mounted).toMatchSpecificSnapshot(snapshotPath)
+          const mounted = render(story())
+          expect(mounted.container).toMatchSpecificSnapshot(snapshotPath)
         })
       }
     })

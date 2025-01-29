@@ -1,16 +1,18 @@
 import { light } from '@charcoal-ui/theme'
 import 'jest-styled-components'
 
-import renderer from 'react-test-renderer'
+import { render as testRender, cleanup } from '@testing-library/react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Example } from './addThemeUtils.story'
 import { MyTheme, myTheme } from './storyHelper'
 
 function render(children: JSX.Element) {
-  return renderer
-    .create(<ThemeProvider theme={myTheme(light)}>{children}</ThemeProvider>)
-    .toJSON()
+  return testRender(
+    <ThemeProvider theme={myTheme(light)}>{children}</ThemeProvider>
+  ).container
 }
+
+afterEach(() => cleanup())
 
 // TODO: もう少し theme() 関数に対する丁寧なユニットテストが欲しい
 describe('Story', () => {

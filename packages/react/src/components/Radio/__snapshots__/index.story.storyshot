@@ -1,437 +1,383 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Radio > Default 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "gap": 24,
-      }
-    }
+    data-dark="false"
   >
     <div
-      aria-label="default story"
-      aria-orientation="vertical"
-      className="charcoal-radio-group"
-      role="radiogroup"
+      style="display: flex; flex-direction: column; gap: 24px;"
     >
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
+      <div
+        aria-label="default story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
       >
-        <input
-          aria-invalid={false}
-          checked={true}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="default_story"
-          onChange={[Function]}
-          type="radio"
-          value="1"
-        />
-        <div
-          className="charcoal-radio__label_div"
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          1
-        </div>
-      </label>
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="default_story"
-          onChange={[Function]}
-          type="radio"
-          value="2"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="default_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          2
-        </div>
-      </label>
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="default_story"
-          onChange={[Function]}
-          type="radio"
-          value="3"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="default_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          3
-        </div>
-      </label>
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="default_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Radio > Disabled 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "gap": 24,
-      }
-    }
+    data-dark="false"
   >
     <div
-      aria-disabled={true}
-      aria-label="disabled_stroy"
-      aria-orientation="vertical"
-      className="charcoal-radio-group"
-      role="radiogroup"
+      style="display: flex; flex-direction: column; gap: 24px;"
     >
-      <label
-        aria-disabled={true}
-        className="charcoal-radio__label"
+      <div
+        aria-disabled="true"
+        aria-label="disabled_stroy"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
       >
-        <input
-          aria-invalid={false}
-          checked={true}
-          className="charcoal-radio-input"
-          disabled={true}
-          name="disabled story"
-          onChange={[Function]}
-          type="radio"
-          value="1"
-        />
-        <div
-          className="charcoal-radio__label_div"
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
         >
-          Value 
-          1
-        </div>
-      </label>
-      <label
-        aria-disabled={true}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={true}
-          name="disabled story"
-          onChange={[Function]}
-          type="radio"
-          value="2"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            disabled=""
+            name="disabled story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
         >
-          Value 
-          2
-        </div>
-      </label>
-      <label
-        aria-disabled={true}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={true}
-          name="disabled story"
-          onChange={[Function]}
-          type="radio"
-          value="3"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="disabled story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
         >
-          Value 
-          3
-        </div>
-      </label>
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="disabled story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Radio > Invalid 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "gap": 24,
-      }
-    }
+    data-dark="false"
   >
     <div
-      aria-invalid={true}
-      aria-label="invalid story"
-      aria-orientation="vertical"
-      className="charcoal-radio-group"
-      role="radiogroup"
+      style="display: flex; flex-direction: column; gap: 24px;"
     >
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
+      <div
+        aria-invalid="true"
+        aria-label="invalid story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
       >
-        <input
-          aria-invalid={true}
-          checked={true}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="invalid_story"
-          onChange={[Function]}
-          type="radio"
-          value="1"
-        />
-        <div
-          className="charcoal-radio__label_div"
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          1
-        </div>
-      </label>
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={true}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="invalid_story"
-          onChange={[Function]}
-          type="radio"
-          value="2"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="true"
+            checked=""
+            class="charcoal-radio-input"
+            name="invalid_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          2
-        </div>
-      </label>
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={true}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="invalid_story"
-          onChange={[Function]}
-          type="radio"
-          value="3"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="true"
+            class="charcoal-radio-input"
+            name="invalid_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          3
-        </div>
-      </label>
+          <input
+            aria-invalid="true"
+            class="charcoal-radio-input"
+            name="invalid_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Radio > PartialDisabled 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "gap": 24,
-      }
-    }
+    data-dark="false"
   >
     <div
-      aria-label="partial disabled story"
-      aria-orientation="vertical"
-      className="charcoal-radio-group"
-      role="radiogroup"
+      style="display: flex; flex-direction: column; gap: 24px;"
     >
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
+      <div
+        aria-label="partial disabled story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
       >
-        <input
-          aria-invalid={false}
-          checked={true}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="partial_disabled_story"
-          onChange={[Function]}
-          type="radio"
-          value="1"
-        />
-        <div
-          className="charcoal-radio__label_div"
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          1
-        </div>
-      </label>
-      <label
-        aria-disabled={true}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={true}
-          name="partial_disabled_story"
-          onChange={[Function]}
-          type="radio"
-          value="2"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="partial_disabled_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
         >
-          Value 
-          2
-        </div>
-      </label>
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="partial_disabled_story"
-          onChange={[Function]}
-          type="radio"
-          value="3"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="partial_disabled_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          3
-        </div>
-      </label>
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="partial_disabled_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Radio > Readonly 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "column",
-        "gap": 24,
-      }
-    }
+    data-dark="false"
   >
     <div
-      aria-label="readonly story"
-      aria-orientation="vertical"
-      className="charcoal-radio-group"
-      role="radiogroup"
+      style="display: flex; flex-direction: column; gap: 24px;"
     >
-      <label
-        aria-disabled={false}
-        className="charcoal-radio__label"
+      <div
+        aria-label="readonly story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
       >
-        <input
-          aria-invalid={false}
-          checked={true}
-          className="charcoal-radio-input"
-          disabled={false}
-          name="readonly_story"
-          onChange={[Function]}
-          type="radio"
-          value="1"
-        />
-        <div
-          className="charcoal-radio__label_div"
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
         >
-          Value 
-          1
-        </div>
-      </label>
-      <label
-        aria-disabled={true}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={true}
-          name="readonly_story"
-          onChange={[Function]}
-          type="radio"
-          value="2"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="readonly_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
         >
-          Value 
-          2
-        </div>
-      </label>
-      <label
-        aria-disabled={true}
-        className="charcoal-radio__label"
-      >
-        <input
-          aria-invalid={false}
-          checked={false}
-          className="charcoal-radio-input"
-          disabled={true}
-          name="readonly_story"
-          onChange={[Function]}
-          type="radio"
-          value="3"
-        />
-        <div
-          className="charcoal-radio__label_div"
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="readonly_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
         >
-          Value 
-          3
-        </div>
-      </label>
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="readonly_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </div>

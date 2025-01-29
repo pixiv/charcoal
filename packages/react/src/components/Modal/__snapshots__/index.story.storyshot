@@ -1,275 +1,230 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-hidden={null}
-    data-overlay-container={true}
+    data-dark="false"
   >
     <div
-      style={
-        Object {
-          "height": 1024,
-        }
-      }
-    >
-      <button
-        className="charcoal-button"
-        onClick={[Function]}
-      >
-        Open Modal
-      </button>
-    </div>
-    <div
-      className="charcoal-modal-background"
-      data-bottom-sheet={false}
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "zIndex": 10,
-        }
-      }
+      data-overlay-container="true"
     >
       <div
-        className="charcoal-modal-dialog"
-        data-bottom-sheet={false}
-        data-size="M"
-        onKeyDown={[Function]}
-        role="dialog"
-        style={Object {}}
-        tabIndex={-1}
+        aria-hidden="true"
+        style="height: 1024px;"
+      >
+        <button
+          class="charcoal-button"
+        >
+          Open Modal
+        </button>
+      </div>
+      <div
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
       >
         <div
-          className="charcoal-modal-header-root"
-          data-bottom-sheet={false}
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            className="charcoal-modal-header-title"
-          >
-            react/Title
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 24,
-              }
-            }
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
           >
             <div
-              style={
-                Object {
-                  "color": "var(--charcoal-text2)",
-                  "fontSize": 14,
-                  "lineHeight": "22px",
-                  "padding": "0 16px",
-                }
-              }
+              class="charcoal-modal-header-title"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              react/Title
             </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
             <div
-              className="charcoal-modal-align"
+              style="display: grid; gap: 24px;"
             >
               <div
-                aria-disabled={false}
-                className="charcoal-text-field-root"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
               >
                 <div
-                  className="charcoal-field-label-root"
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
                 >
-                  <label
-                    className="charcoal-field-label"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Name
-                  </label>
                   <div
-                    className="charcoal-field-label-sub-label"
+                    class="charcoal-field-label-root"
                   >
-                    <span />
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <input
+                      aria-labelledby="test-id"
+                      class="charcoal-text-field-input"
+                      data-invalid="false"
+                      id="test-id"
+                      placeholder="Nagisa"
+                      type="text"
+                      value=""
+                    />
                   </div>
                 </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
                 <div
-                  className="charcoal-text-field-container"
-                  data-invalid={false}
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
                 >
-                  <input
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <input
+                      aria-labelledby="test-id"
+                      class="charcoal-text-field-input"
+                      data-invalid="false"
+                      id="test-id"
+                      placeholder="Tokyo"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  class="charcoal-dropdown-selector-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      id="test-id"
+                    >
+                      Fruits
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                  >
+                    <select
+                      tabindex="-1"
+                    >
+                      <option
+                        value="10"
+                      >
+                        10
+                      </option>
+                      <option
+                        value="20"
+                      >
+                        20
+                      </option>
+                      <option
+                        value="30"
+                      >
+                        30
+                      </option>
+                    </select>
+                  </div>
+                  <button
                     aria-labelledby="test-id"
-                    className="charcoal-text-field-input"
-                    data-invalid={false}
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Nagisa"
-                    type="text"
-                  />
+                    class="charcoal-dropdown-selector-button"
+                    data-active="false"
+                    type="button"
+                  >
+                    <span
+                      class="charcoal-ui-dropdown-selector-text"
+                      data-placeholder="false"
+                    >
+                      Apple
+                    </span>
+                    <pixiv-icon
+                      class="charcoal-ui-dropdown-selector-icon"
+                      name="16/Menu"
+                    />
+                  </button>
                 </div>
               </div>
             </div>
             <div
-              className="charcoal-modal-align"
+              class="charcoal-modal-buttons"
             >
-              <div
-                aria-disabled={false}
-                className="charcoal-text-field-root"
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
               >
-                <div
-                  className="charcoal-field-label-root"
-                >
-                  <label
-                    className="charcoal-field-label"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Country
-                  </label>
-                  <div
-                    className="charcoal-field-label-sub-label"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  className="charcoal-text-field-container"
-                  data-invalid={false}
-                >
-                  <input
-                    aria-labelledby="test-id"
-                    autoFocus={true}
-                    className="charcoal-text-field-input"
-                    data-invalid={false}
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Tokyo"
-                    type="text"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="charcoal-modal-align"
-            >
-              <div
-                className="charcoal-dropdown-selector-root"
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
               >
-                <div
-                  className="charcoal-field-label-root"
-                >
-                  <label
-                    className="charcoal-field-label"
-                    id="test-id"
-                  >
-                    Fruits
-                  </label>
-                  <div
-                    className="charcoal-field-label-sub-label"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  aria-hidden="true"
-                  style={
-                    Object {
-                      "border": 0,
-                      "clip": "rect(0 0 0 0)",
-                      "clipPath": "inset(50%)",
-                      "height": "1px",
-                      "margin": "-1px",
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "position": "absolute",
-                      "whiteSpace": "nowrap",
-                      "width": "1px",
-                    }
-                  }
-                >
-                  <select
-                    onChange={[Function]}
-                    tabIndex={-1}
-                    value="10"
-                  >
-                    <option
-                      value="10"
-                    >
-                      10
-                    </option>
-                    <option
-                      value="20"
-                    >
-                      20
-                    </option>
-                    <option
-                      value="30"
-                    >
-                      30
-                    </option>
-                  </select>
-                </div>
-                <button
-                  aria-labelledby="test-id"
-                  className="charcoal-dropdown-selector-button"
-                  data-active={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="charcoal-ui-dropdown-selector-text"
-                    data-placeholder={false}
-                  >
-                    Apple
-                  </span>
-                  <pixiv-icon
-                    class="charcoal-ui-dropdown-selector-icon"
-                    name="16/Menu"
-                  />
-                </button>
-              </div>
+                Cancel
+              </button>
             </div>
           </div>
-          <div
-            className="charcoal-modal-buttons"
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
           >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Primary"
-              onClick={[Function]}
-            >
-              Apply
-            </button>
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              onClick={[Function]}
-            >
-              Cancel
-            </button>
-          </div>
+            <pixiv-icon
+              name="24/Close"
+            />
+          </button>
         </div>
-        <button
-          aria-label="Close"
-          className="charcoal-icon-button charcoal-modal-close-button"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
-          onClick={[Function]}
-          type="button"
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
       </div>
     </div>
   </div>
@@ -277,123 +232,100 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
 `;
 
 exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-hidden={null}
-    data-overlay-container={true}
+    data-dark="false"
   >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
     <div
-      className="charcoal-modal-background"
-      data-bottom-sheet={true}
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "zIndex": 10,
-        }
-      }
+      data-overlay-container="true"
     >
+      <button
+        aria-hidden="true"
+        class="charcoal-button"
+      >
+        Open Modal
+      </button>
       <div
-        className="charcoal-modal-dialog"
-        data-bottom-sheet={true}
-        data-size="M"
-        onKeyDown={[Function]}
-        role="dialog"
-        style={Object {}}
-        tabIndex={-1}
+        class="charcoal-modal-background"
+        data-bottom-sheet="true"
+        style="z-index: 10;"
       >
         <div
-          className="charcoal-modal-header-root"
-          data-bottom-sheet={true}
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="true"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            className="charcoal-modal-header-title"
-          >
-            react/Title
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 24,
-              }
-            }
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="true"
           >
             <div
-              style={
-                Object {
-                  "color": "var(--charcoal-text2)",
-                  "fontSize": 14,
-                  "lineHeight": "22px",
-                  "padding": "0 16px",
-                }
-              }
+              class="charcoal-modal-header-title"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              react/Title
             </div>
           </div>
           <div
-            className="charcoal-modal-buttons"
+            class="charcoal-modal-body"
           >
-            <label
-              className="charcoal-checkbox__label"
-              htmlFor="test-id"
+            <div
+              style="display: grid; gap: 24px;"
             >
-              <input
-                checked={true}
-                className="charcoal-checkbox-input"
-                id="test-id"
-                onChange={[Function]}
-                type="checkbox"
-              />
               <div
-                className="charcoal-checkbox__label_div"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
               >
-                test checkbox
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
               </div>
-            </label>
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Danger"
-              onClick={[Function]}
+            </div>
+            <div
+              class="charcoal-modal-buttons"
             >
-              削除する
-            </button>
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              onClick={[Function]}
-            >
-              キャンセル
-            </button>
+              <label
+                class="charcoal-checkbox__label"
+                for="test-id"
+              >
+                <input
+                  checked=""
+                  class="charcoal-checkbox-input"
+                  id="test-id"
+                  type="checkbox"
+                />
+                <div
+                  class="charcoal-checkbox__label_div"
+                >
+                  test checkbox
+                </div>
+              </label>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Danger"
+              >
+                削除する
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                キャンセル
+              </button>
+            </div>
           </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+            />
+          </button>
         </div>
-        <button
-          aria-label="Close"
-          className="charcoal-icon-button charcoal-modal-close-button"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
-          onClick={[Function]}
-          type="button"
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
       </div>
     </div>
   </div>
@@ -401,267 +333,226 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests > react/Modal > Default 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-hidden={null}
-    data-overlay-container={true}
+    data-dark="false"
   >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
     <div
-      className="charcoal-modal-background"
-      data-bottom-sheet={false}
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "zIndex": 10,
-        }
-      }
+      data-overlay-container="true"
     >
+      <button
+        aria-hidden="true"
+        class="charcoal-button"
+      >
+        Open Modal
+      </button>
       <div
-        className="charcoal-modal-dialog"
-        data-bottom-sheet={false}
-        data-size="M"
-        onKeyDown={[Function]}
-        role="dialog"
-        style={Object {}}
-        tabIndex={-1}
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
       >
         <div
-          className="charcoal-modal-header-root"
-          data-bottom-sheet={false}
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            className="charcoal-modal-header-title"
-          >
-            react/Title
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 24,
-              }
-            }
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
           >
             <div
-              style={
-                Object {
-                  "color": "var(--charcoal-text2)",
-                  "fontSize": 14,
-                  "lineHeight": "22px",
-                  "padding": "0 16px",
-                }
-              }
+              class="charcoal-modal-header-title"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              react/Title
             </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
             <div
-              className="charcoal-modal-align"
+              style="display: grid; gap: 24px;"
             >
               <div
-                aria-disabled={false}
-                className="charcoal-text-field-root"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
               >
                 <div
-                  className="charcoal-field-label-root"
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
                 >
-                  <label
-                    className="charcoal-field-label"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Name
-                  </label>
                   <div
-                    className="charcoal-field-label-sub-label"
+                    class="charcoal-field-label-root"
                   >
-                    <span />
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <input
+                      aria-labelledby="test-id"
+                      class="charcoal-text-field-input"
+                      data-invalid="false"
+                      id="test-id"
+                      placeholder="Nagisa"
+                      type="text"
+                      value=""
+                    />
                   </div>
                 </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
                 <div
-                  className="charcoal-text-field-container"
-                  data-invalid={false}
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
                 >
-                  <input
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <input
+                      aria-labelledby="test-id"
+                      class="charcoal-text-field-input"
+                      data-invalid="false"
+                      id="test-id"
+                      placeholder="Tokyo"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  class="charcoal-dropdown-selector-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      id="test-id"
+                    >
+                      Fruits
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                  >
+                    <select
+                      tabindex="-1"
+                    >
+                      <option
+                        value="10"
+                      >
+                        10
+                      </option>
+                      <option
+                        value="20"
+                      >
+                        20
+                      </option>
+                      <option
+                        value="30"
+                      >
+                        30
+                      </option>
+                    </select>
+                  </div>
+                  <button
                     aria-labelledby="test-id"
-                    className="charcoal-text-field-input"
-                    data-invalid={false}
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Nagisa"
-                    type="text"
-                  />
+                    class="charcoal-dropdown-selector-button"
+                    data-active="false"
+                    type="button"
+                  >
+                    <span
+                      class="charcoal-ui-dropdown-selector-text"
+                      data-placeholder="false"
+                    >
+                      Apple
+                    </span>
+                    <pixiv-icon
+                      class="charcoal-ui-dropdown-selector-icon"
+                      name="16/Menu"
+                    />
+                  </button>
                 </div>
               </div>
             </div>
             <div
-              className="charcoal-modal-align"
+              class="charcoal-modal-buttons"
             >
-              <div
-                aria-disabled={false}
-                className="charcoal-text-field-root"
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
               >
-                <div
-                  className="charcoal-field-label-root"
-                >
-                  <label
-                    className="charcoal-field-label"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Country
-                  </label>
-                  <div
-                    className="charcoal-field-label-sub-label"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  className="charcoal-text-field-container"
-                  data-invalid={false}
-                >
-                  <input
-                    aria-labelledby="test-id"
-                    autoFocus={true}
-                    className="charcoal-text-field-input"
-                    data-invalid={false}
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Tokyo"
-                    type="text"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className="charcoal-modal-align"
-            >
-              <div
-                className="charcoal-dropdown-selector-root"
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
               >
-                <div
-                  className="charcoal-field-label-root"
-                >
-                  <label
-                    className="charcoal-field-label"
-                    id="test-id"
-                  >
-                    Fruits
-                  </label>
-                  <div
-                    className="charcoal-field-label-sub-label"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  aria-hidden="true"
-                  style={
-                    Object {
-                      "border": 0,
-                      "clip": "rect(0 0 0 0)",
-                      "clipPath": "inset(50%)",
-                      "height": "1px",
-                      "margin": "-1px",
-                      "overflow": "hidden",
-                      "padding": 0,
-                      "position": "absolute",
-                      "whiteSpace": "nowrap",
-                      "width": "1px",
-                    }
-                  }
-                >
-                  <select
-                    onChange={[Function]}
-                    tabIndex={-1}
-                    value="10"
-                  >
-                    <option
-                      value="10"
-                    >
-                      10
-                    </option>
-                    <option
-                      value="20"
-                    >
-                      20
-                    </option>
-                    <option
-                      value="30"
-                    >
-                      30
-                    </option>
-                  </select>
-                </div>
-                <button
-                  aria-labelledby="test-id"
-                  className="charcoal-dropdown-selector-button"
-                  data-active={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="charcoal-ui-dropdown-selector-text"
-                    data-placeholder={false}
-                  >
-                    Apple
-                  </span>
-                  <pixiv-icon
-                    class="charcoal-ui-dropdown-selector-icon"
-                    name="16/Menu"
-                  />
-                </button>
-              </div>
+                Cancel
+              </button>
             </div>
           </div>
-          <div
-            className="charcoal-modal-buttons"
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
           >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Primary"
-              onClick={[Function]}
-            >
-              Apply
-            </button>
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              onClick={[Function]}
-            >
-              Cancel
-            </button>
-          </div>
+            <pixiv-icon
+              name="24/Close"
+            />
+          </button>
         </div>
-        <button
-          aria-label="Close"
-          className="charcoal-icon-button charcoal-modal-close-button"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
-          onClick={[Function]}
-          type="button"
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
       </div>
     </div>
   </div>
@@ -669,186 +560,162 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
 `;
 
 exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-hidden={null}
-    data-overlay-container={true}
+    data-dark="false"
   >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
     <div
-      className="charcoal-modal-background"
-      data-bottom-sheet="full"
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "zIndex": 10,
-        }
-      }
+      data-overlay-container="true"
     >
+      <button
+        aria-hidden="true"
+        class="charcoal-button"
+      >
+        Open Modal
+      </button>
       <div
-        className="charcoal-modal-dialog"
+        class="charcoal-modal-background"
         data-bottom-sheet="full"
-        data-size="M"
-        onKeyDown={[Function]}
-        role="dialog"
-        style={Object {}}
-        tabIndex={-1}
+        style="z-index: 10;"
       >
         <div
-          className="charcoal-modal-header-root"
+          class="charcoal-modal-dialog"
           data-bottom-sheet="full"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            className="charcoal-modal-header-title"
-          >
-            react/Title
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 24,
-              }
-            }
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="full"
           >
             <div
-              style={
-                Object {
-                  "color": "var(--charcoal-text2)",
-                  "fontSize": 14,
-                  "lineHeight": "22px",
-                  "padding": "0 16px",
-                }
-              }
+              class="charcoal-modal-header-title"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              react/Title
             </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
             <div
-              className="charcoal-modal-align"
+              style="display: grid; gap: 24px;"
             >
               <div
-                aria-disabled={false}
-                className="charcoal-text-field-root"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
               >
                 <div
-                  className="charcoal-field-label-root"
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
                 >
-                  <label
-                    className="charcoal-field-label"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Name
-                  </label>
                   <div
-                    className="charcoal-field-label-sub-label"
+                    class="charcoal-field-label-root"
                   >
-                    <span />
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <input
+                      aria-labelledby="test-id"
+                      class="charcoal-text-field-input"
+                      data-invalid="false"
+                      id="test-id"
+                      placeholder="Nagisa"
+                      type="text"
+                      value=""
+                    />
                   </div>
                 </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
                 <div
-                  className="charcoal-text-field-container"
-                  data-invalid={false}
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
                 >
-                  <input
-                    aria-labelledby="test-id"
-                    className="charcoal-text-field-input"
-                    data-invalid={false}
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Nagisa"
-                    type="text"
-                  />
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <input
+                      aria-labelledby="test-id"
+                      class="charcoal-text-field-input"
+                      data-invalid="false"
+                      id="test-id"
+                      placeholder="Tokyo"
+                      type="text"
+                      value=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>
             <div
-              className="charcoal-modal-align"
+              class="charcoal-modal-buttons"
             >
-              <div
-                aria-disabled={false}
-                className="charcoal-text-field-root"
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
               >
-                <div
-                  className="charcoal-field-label-root"
-                >
-                  <label
-                    className="charcoal-field-label"
-                    htmlFor="test-id"
-                    id="test-id"
-                  >
-                    Country
-                  </label>
-                  <div
-                    className="charcoal-field-label-sub-label"
-                  >
-                    <span />
-                  </div>
-                </div>
-                <div
-                  className="charcoal-text-field-container"
-                  data-invalid={false}
-                >
-                  <input
-                    aria-labelledby="test-id"
-                    className="charcoal-text-field-input"
-                    data-invalid={false}
-                    disabled={false}
-                    id="test-id"
-                    onChange={[Function]}
-                    placeholder="Tokyo"
-                    type="text"
-                  />
-                </div>
-              </div>
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                Cancel
+              </button>
             </div>
           </div>
-          <div
-            className="charcoal-modal-buttons"
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
           >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Primary"
-              onClick={[Function]}
-            >
-              Apply
-            </button>
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              onClick={[Function]}
-            >
-              Cancel
-            </button>
-          </div>
+            <pixiv-icon
+              name="24/Close"
+            />
+          </button>
         </div>
-        <button
-          aria-label="Close"
-          className="charcoal-icon-button charcoal-modal-close-button"
-          data-active={false}
-          data-size="S"
-          data-variant="Default"
-          onClick={[Function]}
-          type="button"
-        >
-          <pixiv-icon
-            name="24/Close"
-          />
-        </button>
       </div>
     </div>
   </div>
@@ -856,84 +723,64 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
 `;
 
 exports[`Storybook Tests > react/Modal > NotDismmissableStory 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-hidden={null}
-    data-overlay-container={true}
+    data-dark="false"
   >
-    <button
-      className="charcoal-button"
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
     <div
-      className="charcoal-modal-background"
-      data-bottom-sheet={false}
-      onClick={[Function]}
-      onPointerDown={[Function]}
-      style={
-        Object {
-          "zIndex": 10,
-        }
-      }
+      data-overlay-container="true"
     >
+      <button
+        aria-hidden="true"
+        class="charcoal-button"
+      >
+        Open Modal
+      </button>
       <div
-        className="charcoal-modal-dialog"
-        data-bottom-sheet={false}
-        data-size="M"
-        onKeyDown={[Function]}
-        role="dialog"
-        style={Object {}}
-        tabIndex={-1}
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
       >
         <div
-          className="charcoal-modal-header-root"
-          data-bottom-sheet={false}
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
           <div
-            className="charcoal-modal-header-title"
-          >
-            react/Title
-          </div>
-        </div>
-        <div
-          className="charcoal-modal-body"
-        >
-          <div
-            style={
-              Object {
-                "display": "grid",
-                "gap": 24,
-              }
-            }
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
           >
             <div
-              style={
-                Object {
-                  "color": "var(--charcoal-text2)",
-                  "fontSize": 14,
-                  "lineHeight": "22px",
-                  "padding": "0 16px",
-                }
-              }
+              class="charcoal-modal-header-title"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              react/Title
             </div>
           </div>
           <div
-            className="charcoal-modal-buttons"
+            class="charcoal-modal-body"
           >
-            <button
-              className="charcoal-button"
-              data-full-width={true}
-              data-variant="Primary"
-              onClick={[Function]}
+            <div
+              style="display: grid; gap: 24px;"
             >
-              OK
-            </button>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
+              >
+                OK
+              </button>
+            </div>
           </div>
         </div>
       </div>

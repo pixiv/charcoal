@@ -1,97 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/LoadingSpinner > Default 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    className="charcoal-loading-spinner"
-    data-transparent={false}
-    role="progressbar"
-    style={
-      Object {
-        "--charcoal-loading-spinner-padding": "16px",
-        "--charcoal-loading-spinner-size": "48px",
-      }
-    }
+    data-dark="false"
   >
     <div
-      className="charcoal-loading-spinner-icon"
-      data-once={false}
-      role="presentation"
-    />
+      class="charcoal-loading-spinner"
+      data-transparent="false"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/LoadingSpinner > Padding 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    className="charcoal-loading-spinner"
-    data-transparent={false}
-    role="progressbar"
-    style={
-      Object {
-        "--charcoal-loading-spinner-padding": "24px",
-        "--charcoal-loading-spinner-size": "48px",
-      }
-    }
+    data-dark="false"
   >
     <div
-      className="charcoal-loading-spinner-icon"
-      data-once={false}
-      role="presentation"
-    />
+      class="charcoal-loading-spinner"
+      data-transparent="false"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 24px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/LoadingSpinner > Size 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    className="charcoal-loading-spinner"
-    data-transparent={false}
-    role="progressbar"
-    style={
-      Object {
-        "--charcoal-loading-spinner-padding": "16px",
-        "--charcoal-loading-spinner-size": "128px",
-      }
-    }
+    data-dark="false"
   >
     <div
-      className="charcoal-loading-spinner-icon"
-      data-once={false}
-      role="presentation"
-    />
+      class="charcoal-loading-spinner"
+      data-transparent="false"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 128px; --charcoal-loading-spinner-padding: 16px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/LoadingSpinner > Transparent 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    className="charcoal-loading-spinner"
-    data-transparent={true}
-    role="progressbar"
-    style={
-      Object {
-        "--charcoal-loading-spinner-padding": "16px",
-        "--charcoal-loading-spinner-size": "48px",
-      }
-    }
+    data-dark="false"
   >
     <div
-      className="charcoal-loading-spinner-icon"
-      data-once={false}
-      role="presentation"
-    />
+      class="charcoal-loading-spinner"
+      data-transparent="true"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
   </div>
 </div>
 `;

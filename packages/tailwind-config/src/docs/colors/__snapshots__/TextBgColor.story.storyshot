@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > tailwind-config/Colors/Text bg color > Playground 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    className="bg-background1 p-64 max-w-2xl"
+    data-dark="false"
   >
-    <p
-      className="typography-20 text-text1"
+    <div
+      class="bg-background1 p-64 max-w-2xl"
     >
-      charcoal はピクシブ株式会社のデザインシステムです。ここでは特に、Web フロントエンドの実装に用いる npm パッケージ集のことを言います。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at odio bibendum nisl mollis eleifend et quis turpis. Quisque dignissim porta justo ut convallis.dipiscing elit.
-    </p>
+      <p
+        class="typography-20 text-text1"
+      >
+        charcoal はピクシブ株式会社のデザインシステムです。ここでは特に、Web フロントエンドの実装に用いる npm パッケージ集のことを言います。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at odio bibendum nisl mollis eleifend et quis turpis. Quisque dignissim porta justo ut convallis.dipiscing elit.
+      </p>
+    </div>
   </div>
 </div>
 `;
