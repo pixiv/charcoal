@@ -2177,9 +2177,9 @@ __metadata:
     vitest: ^2.0.2
     warning: ^4.0.3
   peerDependencies:
-    react: ">=18.0.0"
-    react-dom: ">=18.0.0"
-    styled-components: ">=5.0.0"
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+    styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
 
@@ -2231,7 +2231,7 @@ __metadata:
     vitest: ^2.0.1
     warning: ^4.0.3
   peerDependencies:
-    react: ">=18.0.0"
+    react: ">=17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2259,7 +2259,7 @@ __metadata:
     vitest: ^2.0.2
     warning: ^4.0.3
   peerDependencies:
-    react: ">=18.0.0"
+    react: ">=17.0.0"
     styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
