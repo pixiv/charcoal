@@ -121,6 +121,25 @@ After
 <Button component={NextLink} href="...">Link</Button>
 ```
 
+### ButtonのGeneric propsについて
+
+[Styled Componentの制限](https://github.com/styled-components/styled-components/issues/1803)により`styled(Button)`で拡張する場合propsがうまく推論されない場合があります。
+Charcoal v4.1.0から過剰なpropsを検出する処理を追加したが、`component` propと合わせて使う時の型を配慮する必要があります。
+
+サンプル
+
+```tsx
+// allow component
+const StyledButton = styled(Button)`` as typeof Button
+<StyledButton component={Link} to="#" />
+
+// preserve component type
+const StyledButtonA = styled(Button<'a'>)``
+<StyledButtonA component="a" href="#" />
+```
+
+その他のケースは [styledButtonTypeTest.d.tsx](https://github.com/pixiv/charcoal/blob/main/packages/react/src/components/Button/styledButtonTypeTest.d.tsx) を参考してください。
+
 ## Checkbox
 
 - `Checkbox`の`input`要素を`children`がない場合に label で囲わないようにしました。
