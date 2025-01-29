@@ -54,3 +54,5 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
       }
 ) => JSX.Element
 export default Button
+
+export const TEST = 1
