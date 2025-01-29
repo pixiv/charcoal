@@ -2177,9 +2177,9 @@ __metadata:
     vitest: ^2.0.2
     warning: ^4.0.3
   peerDependencies:
-    react: ">=18.0.0"
-    react-dom: ">=18.0.0"
-    styled-components: ">=5.0.0"
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+    styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
 
@@ -2213,7 +2213,6 @@ __metadata:
     "@types/react": ^18.3.3
     "@types/react-dom": ^18.3.0
     "@types/react-router-dom": ^5.3.3
-    "@types/react-test-renderer": ^18.3.0
     "@types/warning": ^3.0.0
     "@vitejs/plugin-react": ^4.3.1
     autoprefixer: ^10.4.19
@@ -2231,7 +2230,7 @@ __metadata:
     vitest: ^2.0.1
     warning: ^4.0.3
   peerDependencies:
-    react: ">=18.0.0"
+    react: ">=17.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2243,7 +2242,6 @@ __metadata:
     "@charcoal-ui/theme": ^4.1.0
     "@charcoal-ui/utils": ^4.1.0
     "@types/react": ^18.3.3
-    "@types/react-test-renderer": ^18.3.0
     "@types/styled-components": ^5.1.21
     "@types/warning": ^3.0.0
     "@vitejs/plugin-react": ^4.3.1
@@ -2251,7 +2249,6 @@ __metadata:
     jsdom: ^24.1.0
     npm-run-all: ^4.1.5
     react: ^18.3.1
-    react-test-renderer: ^18.3.1
     rimraf: ^3.0.2
     styled-components: ^5.3.3
     tsup: ^6.5.0
@@ -2259,7 +2256,7 @@ __metadata:
     vitest: ^2.0.2
     warning: ^4.0.3
   peerDependencies:
-    react: ">=18.0.0"
+    react: ">=17.0.0"
     styled-components: ">=5.1.1"
   languageName: unknown
   linkType: soft
@@ -8708,6 +8705,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/react@npm:^16.2.0":
+  version: 16.2.0
+  resolution: "@testing-library/react@npm:16.2.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  peerDependencies:
+    "@testing-library/dom": ^10.0.0
+    "@types/react": ^18.0.0 || ^19.0.0
+    "@types/react-dom": ^18.0.0 || ^19.0.0
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 4a687200e4d5dc7c7bd83c01f847a26e2c78f08acf54e5dbde8132969221401c6c595f624f5bd47e758346edc5f516d0bb07bffaae8a2e149910343eed4ae39f
+  languageName: node
+  linkType: hard
+
 "@testing-library/user-event@npm:^13.5.0":
   version: 13.5.0
   resolution: "@testing-library/user-event@npm:13.5.0"
@@ -9472,15 +9489,6 @@ __metadata:
     "@types/history": "*"
     "@types/react": "*"
   checksum: 9204d43701ae96a61a97b869fa8d6ec6ff65ede7f7f729e0b9b8e8c31eeb27c12ac0584a78acf697bf7038b534cbdff9adc35869caab80bebca00ceb0ab09ce1
-  languageName: node
-  linkType: hard
-
-"@types/react-test-renderer@npm:^18.3.0":
-  version: 18.3.0
-  resolution: "@types/react-test-renderer@npm:18.3.0"
-  dependencies:
-    "@types/react": "*"
-  checksum: c53683990bd194cb68e3987bda79c78eff41517f7a747e92f3e54217c2ce3addd031b8a45bf631982c909cc2caeeb905372f322758e05bb76c03754a3f24426e
   languageName: node
   linkType: hard
 
@@ -12448,6 +12456,7 @@ __metadata:
     "@storybook/test-runner": ^0.17.0
     "@storybook/web-components": ^8.0.5
     "@stylelint/postcss-css-in-js": ^0.37.2
+    "@testing-library/react": ^16.2.0
     "@types/eslint__eslintrc": ^2.1.1
     "@types/eslint__js": ^8.42.3
     "@types/jest-image-snapshot": ^6.4.0
@@ -12488,7 +12497,6 @@ __metadata:
     prettier: ^2.8.4
     react: ^18.3.1
     react-dom: ^18.3.1
-    react-test-renderer: ^18.3.1
     storybook: ^8.0.5
     storybook-dark-mode: ^4.0.1
     style-loader: ^3.3.4
@@ -25028,13 +25036,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0":
-  version: 18.2.0
-  resolution: "react-is@npm:18.2.0"
-  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
-  languageName: node
-  linkType: hard
-
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -25049,10 +25050,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react-is@npm:18.3.1"
-  checksum: e20fe84c86ff172fc8d898251b7cc2c43645d108bf96d0b8edf39b98f9a2cae97b40520ee7ed8ee0085ccc94736c4886294456033304151c3f94978cec03df21
+"react-is@npm:^18.0.0":
+  version: 18.2.0
+  resolution: "react-is@npm:18.2.0"
+  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
   languageName: node
   linkType: hard
 
@@ -25156,18 +25157,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-shallow-renderer@npm:^16.15.0":
-  version: 16.15.0
-  resolution: "react-shallow-renderer@npm:16.15.0"
-  dependencies:
-    object-assign: ^4.1.1
-    react-is: ^16.12.0 || ^17.0.0 || ^18.0.0
-  peerDependencies:
-    react: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 6052c7e3e9627485120ebd8257f128aad8f56386fe8d42374b7743eac1be457c33506d153c7886b4e32923c0c352d402ab805ef9ca02dbcd8393b2bdeb6e5af8
-  languageName: node
-  linkType: hard
-
 "react-spring@npm:^9.0.0":
   version: 9.6.1
   resolution: "react-spring@npm:9.6.1"
@@ -25232,19 +25221,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 7ee8ef3aab74c7ae1d70ff34a27643d11ba1a8d62d072c767827d9ff9a520905223e567002e0bf6c772929d8ea1c781a3ba0cc4a563e92b1e3dc2eaa817ecbe8
-  languageName: node
-  linkType: hard
-
-"react-test-renderer@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react-test-renderer@npm:18.3.1"
-  dependencies:
-    react-is: ^18.3.1
-    react-shallow-renderer: ^16.15.0
-    scheduler: ^0.23.2
-  peerDependencies:
-    react: ^18.3.1
-  checksum: e8e58e738835fab3801afb63f6bfe0fcf6e68ea39619fae5bdf47feefc36b1e4acb48c9dd139c7533611466eff1dfce6ffdda4b317e06aee663dda7d91438f26
   languageName: node
   linkType: hard
 
