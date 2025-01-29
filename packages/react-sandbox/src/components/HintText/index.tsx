@@ -13,7 +13,10 @@ interface Props {
 
 export default function HintText({ children, context, className }: Props) {
   return (
-    <Container className={className} context={context}>
+    <Container
+      className={className}
+      {...styledProps({ children, context, className })}
+    >
       <IconWrap>
         <InfoIcon />
       </IconWrap>
@@ -22,9 +25,7 @@ export default function HintText({ children, context, className }: Props) {
   )
 }
 
-const Container = styled.div.attrs<Props, ReturnType<typeof styledProps>>(
-  styledProps
-)`
+const Container = styled.div<ReturnType<typeof styledProps>>`
   ${(p) =>
     theme((o) => [
       o.bg.surface3,

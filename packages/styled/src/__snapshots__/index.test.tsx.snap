@@ -100,7 +100,7 @@ exports[`Story > <Example /> 1`] = `
 }
 
 .c7:disabled,
-.c7 [aria-disabled]:not([aria-disabled='false']) {
+.c7[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
 }
@@ -208,7 +208,7 @@ exports[`ThemeUtilsTest > <ThemeUtilsTest /> 1`] = `
 }
 
 .c0:disabled,
-.c0 [aria-disabled]:not([aria-disabled='false']) {
+.c0[aria-disabled]:not([aria-disabled='false']) {
   opacity: 0.32;
   cursor: default;
 }
