@@ -9,8 +9,8 @@ export type PopoverProps = {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
-  triggerRef: RefObject<Element>
-  popoverRef?: RefObject<HTMLDivElement>
+  triggerRef: RefObject<Element | null>
+  popoverRef?: RefObject<HTMLDivElement | null>
 }
 
 const _empty = () => null
