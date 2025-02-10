@@ -72,7 +72,6 @@
     "@types/jest-specific-snapshot": "^0.5.9",
     "@types/node": "^18.19.59",
     "@types/prettier": "^2.4.3",
-    "@types/styled-components": "^5.1.21",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
@@ -110,7 +109,7 @@
     "storybook": "^8.0.5",
     "storybook-dark-mode": "^4.0.1",
     "style-loader": "^3.3.4",
-    "styled-components": "^5.3.3",
+    "styled-components": "^6.1.12",
     "stylelint": "^14.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^6.0.0",
@@ -126,8 +125,7 @@
   "packageManager": "yarn@3.1.0",
   "resolutions": {
     "node-gyp": "^9.0.0",
-    "postcss": "^8.4.16",
-    "@types/react": "^18.3.3"
+    "postcss": "^8.4.16"
   },
   "lint-staged": {
     "*": [

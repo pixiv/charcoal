@@ -1,4 +1,4 @@
-import { CSSObject, ThemedStyledInterface } from 'styled-components'
+import { CSSObject } from 'styled-components'
 import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { ArrayOrSingle, isPresent, noThemeProvider, wrapArray } from './util'
 import { Internal, toCSSObjects } from './internals'
@@ -46,7 +46,7 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  * const theme = createTheme<DefaultTheme>()
  */
 export function createTheme<T extends CharcoalAbstractTheme>(
-  _styled?: ThemedStyledInterface<T>
+  _styled?: unknown
 ) {
   type Builder = ReturnType<typeof createO<T>>
 
