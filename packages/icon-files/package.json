@@ -6,6 +6,7 @@
   "main": "./src/index.cjs",
   "module": " ./src/index.js",
   "exports": {
+    "types": "./src/index.d.ts",
     "require": "./src/index.cjs",
     "default": "./src/index.js"
   },
