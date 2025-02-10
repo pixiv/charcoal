@@ -46,7 +46,6 @@ export class TailwindBuild {
   }
 
   static async run(config: Config, css: string) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const plugin = tailwindcss({
       ...config,
 

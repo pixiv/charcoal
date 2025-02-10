@@ -30,20 +30,17 @@ export default function cssVariableColorPlugin(
   return plugin(({ addBase, addUtilities }) => {
     const css = mapKeys(utilities, (name) => `${VAR_PREFIX}${name}`)
     if (selectorOrMediaQuery.startsWith('@media')) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       addBase({
         [selectorOrMediaQuery]: {
           ':root': css,
         },
       })
     } else {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       addBase({
         [selectorOrMediaQuery]: css,
       })
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     addUtilities(classRules, {
       // @ts-expect-error FIXME
       variants: ['responsive'],

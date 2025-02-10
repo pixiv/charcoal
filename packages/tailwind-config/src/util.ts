@@ -75,7 +75,6 @@ export const mapDefaultKey = <O extends object>(o: O) => {
   return JSON.parse(JSON.stringify(o), function reviver(k: string, v: string) {
     if (k === 'default') {
       const DefaultKey = getDefaultKeyName('v3')
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this[DefaultKey] = v
       return undefined
     }

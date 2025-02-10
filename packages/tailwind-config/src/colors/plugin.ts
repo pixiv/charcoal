@@ -25,14 +25,12 @@ export default function cssVariableColorPlugin(
   const definitions = defineCssVariables(otherThemes)
 
   return plugin(({ addBase }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     addBase(definitions)
 
     // styledのTokenInjector移植(background処理除く)
     if (cssVariablesV1) {
       const cssVariablesV1 = defineCssVariablesV1(themeMap)
       // @ts-expect-error FIXME
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       addBase(cssVariablesV1)
     }
   })

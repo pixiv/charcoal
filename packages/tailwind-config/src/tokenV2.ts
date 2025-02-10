@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import light from '@charcoal-ui/theme/unstable-tokens/css-variables.json'
 import { Config } from 'tailwindcss'
 import {

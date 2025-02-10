@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { GRID_COUNT, mergeEffect } from './foundation'
 
 import { Config } from 'tailwindcss'
@@ -58,7 +57,6 @@ export function createTailwindConfig({
     ? unstable_createTailwindConfigTokenV2().theme
     : {}
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     theme: {
       screens: {
