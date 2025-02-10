@@ -388,9 +388,7 @@ exports[`Storybook Tests > react/TextField > Number 1`] = `
         className="charcoal-field-label"
         htmlFor="test-id"
         id="test-id"
-      >
-        
-      </label>
+      />
       <div
         className="charcoal-field-label-sub-label"
       >

@@ -108,7 +108,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           data-invalid={invalid === true}
           ref={containerRef}
         >
-          {prefix && <div className="charcoal-text-field-prefix">{prefix}</div>}
+          {prefix !== null && (
+            <div className="charcoal-text-field-prefix">{prefix}</div>
+          )}
           <input
             className="charcoal-text-field-input"
             aria-describedby={showAssistiveText ? describedbyId : undefined}
@@ -124,7 +126,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             value={value}
             {...props}
           />
-          {(suffix || showCount) && (
+          {(suffix !== null || showCount) && (
             <div className="charcoal-text-field-suffix">
               {suffix}
               {showCount && (

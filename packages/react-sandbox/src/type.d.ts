@@ -1,6 +1,6 @@
 import { ThemeProp } from '@charcoal-ui/styled'
 import { CharcoalTheme } from '@charcoal-ui/theme'
-import { CSSProp, DefaultTheme } from 'styled-components'
+import type { CSSProp, DefaultTheme } from 'styled-components'
 
 declare module 'react' {
   interface Attributes {

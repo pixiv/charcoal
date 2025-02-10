@@ -3,14 +3,11 @@ import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
 import { defineThemeVariables, withPrefixes } from './util'
 import { mapObject } from '@charcoal-ui/utils'
 
-const GlobalStyle = createGlobalStyle`
-  ${<T extends Theme>({
-    themeMap,
-    background,
-  }: {
-    themeMap: ThemeMap<T>
-    background?: keyof ThemeMap<T>[string]['color']
-  }) =>
+const GlobalStyle = createGlobalStyle<{
+  themeMap: ThemeMap<Theme>
+  background?: keyof ThemeMap<Theme>[string]['color']
+}>`
+  ${({ themeMap, background }) =>
     Object.entries(themeMap).map(([key, theme]) =>
       key.startsWith('@media')
         ? css`
