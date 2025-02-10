@@ -167,3 +167,5 @@ export function createTailwindConfig({
 }
 
 export const config: TailwindConfig = createTailwindConfig({})
+
+export default config
