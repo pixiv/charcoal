@@ -1,6 +1,6 @@
 import { GRID_COUNT, mergeEffect } from './foundation'
 
-import { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 import { TailwindVersion, ThemeMap } from './types'
 
 import {

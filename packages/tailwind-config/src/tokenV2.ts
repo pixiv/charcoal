@@ -1,5 +1,5 @@
 import light from '@charcoal-ui/theme/unstable-tokens/css-variables.json'
-import { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 import {
   flattenKey as flattenKeys,
   mapDefaultKey as mapDefaultKeys,
