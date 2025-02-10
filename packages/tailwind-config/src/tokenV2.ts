@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import light from '@charcoal-ui/theme/unstable-tokens/css-variables.json'
-import {
-  TailwindConfig,
-  TailwindThemeFontSizes,
-} from 'tailwindcss/tailwind-config'
+import { Config } from 'tailwindcss'
 import {
   flattenKey as flattenKeys,
   mapDefaultKey as mapDefaultKeys,
@@ -39,7 +36,7 @@ export function unstable_createTailwindConfigTokenV2() {
         ]
       })
     })
-  ) as TailwindThemeFontSizes
+  ) as NonNullable<Config['theme']>['fontSize']
 
   // space.target.s -> p-target-s
   // space.gap.gapButtons -> p-gap-buttons
@@ -48,7 +45,7 @@ export function unstable_createTailwindConfigTokenV2() {
   // color.container.hover -> bg-container-hover
   const colors = mapDefaultKeys(light.color)
 
-  const config: TailwindConfig = {
+  const config: Omit<Config, 'content'> = {
     darkMode: 'media',
     theme: {
       // borderWidth.m -> border-m

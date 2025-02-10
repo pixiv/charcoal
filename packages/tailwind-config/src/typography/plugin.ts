@@ -52,6 +52,7 @@ const typographyPlugin = plugin(({ addUtilities }) => {
       },
     },
     {
+      // @ts-expect-error FIXME
       variants: ['responsive'],
     }
   )

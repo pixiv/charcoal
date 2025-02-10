@@ -6,7 +6,7 @@ import {
   flatMapObject,
   mapObject,
 } from '@charcoal-ui/utils'
-import plugin, { TailwindPlugin } from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin'
 import { mergeEffect } from '../foundation'
 import { CSSVariableName, CSSVariables, Definition, ThemeMap } from '../types'
 import { COLOR_PREFIX, isSingleColor } from './utils'
@@ -19,7 +19,7 @@ import { defineCssVariablesV1 } from './pluginTokenV1'
 export default function cssVariableColorPlugin(
   themeMap: ThemeMap,
   cssVariablesV1: boolean
-): TailwindPlugin {
+): ReturnType<typeof plugin> {
   // `:root` 以外のケースで各 CSS Variable がどういう値を取るかを定義する
   const { ':root': _defaultTheme, ...otherThemes } = themeMap
   const definitions = defineCssVariables(otherThemes)
@@ -31,6 +31,7 @@ export default function cssVariableColorPlugin(
     // styledのTokenInjector移植(background処理除く)
     if (cssVariablesV1) {
       const cssVariablesV1 = defineCssVariablesV1(themeMap)
+      // @ts-expect-error FIXME
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       addBase(cssVariablesV1)
     }

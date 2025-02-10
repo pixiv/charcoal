@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import * as React from 'react'
 import { EffectType } from '@charcoal-ui/theme'
 import { colors } from '.'
@@ -55,6 +56,7 @@ export const Colors: React.FC = () => {
     <div className="space-y-24">
       {Object.entries(colors).map(([colorName, values]) => (
         <div className="flex" key={colorName}>
+          {/* @ts-expect-error FIXME */}
           {typeof values === 'object' && 'DEFAULT' in values ? (
             <>
               <ColorBox

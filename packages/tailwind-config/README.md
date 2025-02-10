@@ -43,7 +43,7 @@ tailwind.config.js の中で `require` して使います。
 const { config } = require('@charcoal-ui/tailwind-config')
 
 /**
- * @type {import('tailwindcss/tailwind-config').TailwindConfig}
+ * @type {import('tailwindcss').Config}
  */
 module.exports = {
   darkMode: false,
@@ -59,7 +59,7 @@ const { light, dark } = require('@charcoal-ui/theme')
 const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
 
 /**
- * @type {import('tailwindcss/tailwind-config').TailwindConfig}
+ * @type {import('tailwindcss').Config}
  */
 module.exports = {
   darkMode: false,
