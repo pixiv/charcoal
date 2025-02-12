@@ -5,10 +5,6 @@
   "type": "module",
   "main": "./src/index.cjs",
   "module": " ./src/index.js",
-  "exports": {
-    "require": "./src/index.cjs",
-    "default": "./src/index.js"
-  },
   "types": "./src/index.d.ts",
   "files": [
     "src",
