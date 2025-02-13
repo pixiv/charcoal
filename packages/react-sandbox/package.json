@@ -21,6 +21,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
     "@charcoal-ui/esbuild-plugin-styled-components": "workspace:*",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-knobs": "^7.0.2",

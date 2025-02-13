@@ -15,7 +15,7 @@ export type IconButtonProps<T extends React.ElementType = 'button'> = {
   component?: T
 } & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
 
-const IconButton = forwardRef(function IconButtonInner<
+const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButtonInner<
   T extends React.ElementType
 >(
   {

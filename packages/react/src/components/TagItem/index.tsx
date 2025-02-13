@@ -24,7 +24,7 @@ export type TagItemProps<T extends React.ElementType = 'button'> = {
   component?: T
 } & Omit<React.ComponentPropsWithRef<T>, 'children'>
 
-const TagItem = forwardRef(function TagItemInner<T extends React.ElementType>(
+const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(function TagItemInner<T extends React.ElementType>(
   {
     component,
     label,
@@ -86,4 +86,4 @@ const TagItem = forwardRef(function TagItemInner<T extends React.ElementType>(
   p: TagItemProps<T>
 ) => JSX.Element
 
-export default memo(TagItem)
+export default TagItem
