@@ -40,9 +40,11 @@ pixiv-icon {
   --scale: 3;
 }
 
-/* NOTICE: 現状と attr(... number) ほぼ変とのブラウザも少ない */
-&[unsafe-non-guideline-scale] {
-  --scale: attr(unsafe-non-guideline-scale number);
+/* NOTICE: 現状とサポートブラウザが少ない */
+@supports (--scale: attr(unsafe-non-guideline-scale)) {
+  &[unsafe-non-guideline-scale] {
+    --scale: attr(unsafe-non-guideline-scale);
+  }
 }
 ```
 
