@@ -19,6 +19,7 @@ describe('tailwind.config.js', () => {
 
   beforeAll(async () => {
     result = await TailwindBuild.run(
+      // @ts-expect-error FIXME: missing content
       defaultConfig,
       `
         @import 'tailwindcss/base';

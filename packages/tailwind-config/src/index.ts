@@ -1,6 +1,6 @@
 import { GRID_COUNT, mergeEffect } from './foundation'
 
-import type { TailwindConfig, TailwindTheme } from 'tailwindcss/tailwind-config'
+import type { Config } from 'tailwindcss'
 import { TailwindVersion, ThemeMap } from './types'
 
 import {
@@ -36,7 +36,7 @@ export function createTailwindConfig({
   version = 'v3',
   cssVariablesV1 = true,
   unstableTokenV2 = false,
-}: Options): TailwindConfig {
+}: Options): Omit<Config, 'content'> {
   assertAllThemeHaveSameKeys(theme)
 
   const defaultTheme = theme[':root']
@@ -53,7 +53,7 @@ export function createTailwindConfig({
     spacing: spacingV2,
     gap: gapV2,
     width: widthV2,
-  }: Partial<TailwindTheme> = unstableTokenV2
+  }: Partial<NonNullable<Config['theme']>> = unstableTokenV2
     ? unstable_createTailwindConfigTokenV2().theme
     : {}
 
@@ -148,7 +148,6 @@ export function createTailwindConfig({
     ...getVariantOption(version),
 
     corePlugins: {
-      // @ts-expect-error 配列にしろと言ってくるが、たぶん @types が間違っている
       lineHeight: false,
     },
     plugins: [
@@ -166,4 +165,6 @@ export function createTailwindConfig({
   }
 }
 
-export const config: TailwindConfig = createTailwindConfig({})
+export const config: Omit<Config, 'content'> = createTailwindConfig({})
+
+export default config

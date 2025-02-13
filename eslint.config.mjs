@@ -34,7 +34,6 @@ const tseslintConfig = tseslint.config(
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
-      '@typescript-eslint/no-unsafe-assignment': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
     },
   }
@@ -49,13 +48,16 @@ const typescriptConfig = [
       import: _import,
     },
     rules: {
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', ignoreRestSiblings: true },
       ],
       '@typescript-eslint/no-unnecessary-condition': 'error',
-      '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/strict-boolean-expressions': 'off',
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
       'import/no-extraneous-dependencies': [

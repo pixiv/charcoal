@@ -17,10 +17,10 @@ export default function TokenV2Tailwind() {
         <div aria-label="Categories" role="tablist">
           {categories.map((category) => (
             <a
-              className={`text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold ${
+              className={`text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold ${
                 category === selected
                   ? 'border-selected text-text'
-                  : 'border-[transparent]'
+                  : 'border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press'
               }`}
               id={`category-${category}`}
               role="tab"
