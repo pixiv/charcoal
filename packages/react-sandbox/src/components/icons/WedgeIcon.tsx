@@ -14,7 +14,7 @@ interface Props {
   direction: WedgeDirection
 }
 
-export default function WedgeIcon({ size, direction }: Props) {
+export default function WedgeIcon({ size = 16, direction }: Props) {
   return (
     // NOTE: directionToTransform depends on the value of viewBox
     <svg viewBox="0 0 10 8" width={size} height={size}>
@@ -25,11 +25,6 @@ export default function WedgeIcon({ size, direction }: Props) {
       />
     </svg>
   )
-}
-WedgeIcon.defaultProps = {
-  size: 16,
-  white: false,
-  lightGray: false,
 }
 
 function directionToTransform(direction: WedgeDirection) {
