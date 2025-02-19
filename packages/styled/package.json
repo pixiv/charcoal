@@ -21,6 +21,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
+    "@charcoal-ui/react": "^4.2.1",
     "@types/react": "^18.3.3",
     "@types/react-test-renderer": "^18.3.0",
     "@types/styled-components": "^5.1.21",

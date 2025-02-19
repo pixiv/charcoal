@@ -12,7 +12,7 @@
     "storybook:experimental-vite": "USE_VITE=1 storybook dev -p 6006",
     "storybook:build": "storybook build",
     "storybook:build-vite": "USE_VITE=1 storybook build",
-    "build": "yarn workspaces foreach -vpt -j unlimited run build",
+    "build": "yarn workspaces foreach -vp --topological-dev -j unlimited run build",
     "clean": "yarn workspaces foreach -vp run clean",
     "test": "vitest",
     "test:image-snapshot": "TEST_RUNNER=vrt concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:127.0.0.1:6006 && test-storybook ${*}\"",
