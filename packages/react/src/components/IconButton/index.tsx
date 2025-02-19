@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useMemo } from 'react'
+import React, { ForwardedRef, forwardRef, useMemo, type JSX } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 import type { KnownIconType } from '@charcoal-ui/icons'
 

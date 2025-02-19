@@ -1,6 +1,12 @@
 import './index.css'
 
-import React, { ForwardedRef, ReactNode, forwardRef, useMemo } from 'react'
+import React, {
+  ForwardedRef,
+  ReactNode,
+  forwardRef,
+  useMemo,
+  type JSX,
+} from 'react'
 
 import { useClassNames } from '../../_lib/useClassNames'
 

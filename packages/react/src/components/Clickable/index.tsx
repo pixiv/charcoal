@@ -1,4 +1,4 @@
-import React, { useMemo, forwardRef, ReactNode } from 'react'
+import React, { useMemo, forwardRef, ReactNode, type JSX } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 import './index.css'
 

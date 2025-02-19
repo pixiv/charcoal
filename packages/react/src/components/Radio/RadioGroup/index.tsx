@@ -1,6 +1,6 @@
 import './index.css'
 
-import { forwardRef, useCallback, useMemo } from 'react'
+import { forwardRef, useCallback, useMemo, type JSX } from 'react'
 import * as React from 'react'
 import { useClassNames } from '../../../_lib/useClassNames'
 import { RadioGroupContext } from '../RadioGroupContext'
