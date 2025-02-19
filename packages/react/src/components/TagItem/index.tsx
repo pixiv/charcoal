@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo, ForwardedRef } from 'react'
+import React, { forwardRef, memo, useMemo, ForwardedRef, type JSX } from 'react'
 import { useObjectRef } from '@react-aria/utils'
 import Icon from '../Icon'
 import { useClassNames } from '../../_lib/useClassNames'
