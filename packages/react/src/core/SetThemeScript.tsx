@@ -2,7 +2,7 @@ import {
   assertKeyString,
   DEFAULT_ROOT_ATTRIBUTE,
   LOCAL_STORAGE_KEY,
-} from './helper'
+} from './themeHelper'
 
 interface Props {
   localStorageKey: string

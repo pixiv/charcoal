@@ -44,6 +44,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
+    "@charcoal-ui/react": "^4.2.1",
     "react": ">=17.0.0",
     "styled-components": ">=5.1.1"
   },
