@@ -96,7 +96,7 @@ function measure(ref: Element | null): ElementSize | undefined {
 }
 
 export function useElementSize(
-  ref: React.RefObject<Element>,
+  ref: React.RefObject<Element | null>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   deps: any[] = []
 ) {
@@ -174,7 +174,9 @@ export function useElementSize(
  */
 export function useDebounceAnimationState<T>(defaultValue: T) {
   const [state, setState] = useState(defaultValue)
-  const timer = useRef<ReturnType<typeof requestAnimationFrame>>()
+  const timer = useRef<ReturnType<typeof requestAnimationFrame> | undefined>(
+    undefined
+  )
   // typescript bug? (any when omitting type annotation)
   // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   const setDebounceState = useCallback((value: T, force: boolean = false) => {

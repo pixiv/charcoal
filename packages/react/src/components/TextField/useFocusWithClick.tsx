@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import * as React from 'react'
 
 export function useFocusWithClick(
-  containerRef: React.RefObject<HTMLDivElement>,
-  inputRef: React.RefObject<HTMLInputElement | HTMLTextAreaElement>
+  containerRef: React.RefObject<HTMLDivElement | null>,
+  inputRef: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>
 ) {
   useEffect(() => {
     const el = containerRef.current
