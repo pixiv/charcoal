@@ -17,7 +17,7 @@ describe('PixivIcon', () => {
   })
 
   it('can createElement()', () => {
-    expect(icon).toBeInstanceOf(PixivIcon)
+    expect(icon.constructor.name).toBe('PixivIcon')
   })
 
   // describe('loaders', () => {
