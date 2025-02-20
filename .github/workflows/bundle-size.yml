@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: preactjs/compressed-size-action@v2
         with:
-          install-script: 'yarn install'
+          install-script: 'pnpm install --frozen-lockfile'
           build-script: 'build'
           clean-script: 'clean'
 

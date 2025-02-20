@@ -18,28 +18,32 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ env.TARGET_BRANCH }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
 
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - name: Prepare deps
-        run: |
-          yarn install --immutable --inline-builds
-          yarn workspaces foreach -vptR --from @charcoal-ui/icons-cli run build
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Export
+      - name: Build icons
+        run: pnpm --filter @charcoal-ui/icons-cli run build
+
+      - name: Export icons
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: yarn icons-cli figma:export
+        run: pnpm icons-cli figma:export
 
-      - name: Optimize
-        run: yarn icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
+      - name: Optimize icons
+        run: pnpm icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
 
-      - name: Generate source
-        run: yarn icons-cli files:generate
+      - name: Generate icon files
+        run: pnpm icons-cli files:generate
 
       - name: Generate github token
         id: generate_token
@@ -48,10 +52,10 @@ jobs:
           app_id: ${{ secrets.CHARCOAL_BOT_APP_ID }}
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
 
-      - name: Create a Pull Request
+      - name: Create Pull Request for updated icons
         env:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ env.TARGET_BRANCH }}
-        run: yarn icons-cli github:pr
+        run: pnpm icons-cli github:pr
