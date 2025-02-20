@@ -6,8 +6,10 @@ const DARK_MODE_EVENT_NAME = 'DARK_MODE'
 // https://github.com/storybookjs/storybook/issues/28758
 export const useDarkMode = () => {
   const [isDark, setIsDark] = useState(
-    addons.getChannel().last(DARK_MODE_EVENT_NAME).at(0) ?? false
+    // vitest 用に optional chaining を追加
+    addons.getChannel().last(DARK_MODE_EVENT_NAME)?.at(0) ?? false
   )
+  console.log(isDark)
 
   useEffect(() => {
     const chan = addons.getChannel()
