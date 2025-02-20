@@ -27,14 +27,15 @@ jobs:
         with:
           path: __image_snapshots__
           key: image-snapshots-${{ steps.commit-hash.outputs.hash }}
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v4
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         with:
           node-version-file: '.node-version'
           cache: pnpm
-      - uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0'
       - name: Install dependencies
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: pnpm install --frozen-lockfile
@@ -68,13 +69,17 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
           cache: pnpm
-      - uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0'
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
