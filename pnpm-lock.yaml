@@ -91,6 +91,9 @@ importers:
       '@storybook/blocks':
         specifier: ^8.0.5
         version: 8.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.5.5(prettier@2.8.8))
+      '@storybook/preview-api':
+        specifier: ^8.5.8
+        version: 8.5.8(storybook@8.5.5(prettier@2.8.8))
       '@storybook/react':
         specifier: ^8.0.5
         version: 8.5.5(@storybook/test@8.5.5(storybook@8.5.5(prettier@2.8.8)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.5.5(prettier@2.8.8))(typescript@4.9.5)
@@ -107,8 +110,8 @@ importers:
         specifier: ^0.17.0
         version: 0.17.0(@swc/helpers@0.5.15)(@types/node@18.19.75)(babel-plugin-macros@3.1.0)(storybook@8.5.5(prettier@2.8.8))(ts-node@10.9.2(@swc/core@1.10.16(@swc/helpers@0.5.15))(@types/node@18.19.75)(typescript@4.9.5))
       '@storybook/theming':
-        specifier: ^7.6.20
-        version: 7.6.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^8.5.5
+        version: 8.5.5(storybook@8.5.5(prettier@2.8.8))
       '@storybook/web-components':
         specifier: ^8.0.5
         version: 8.5.5(lit@3.2.1)(storybook@8.5.5(prettier@2.8.8))
@@ -4278,6 +4281,11 @@ packages:
 
   '@storybook/preview-api@8.5.5':
     resolution: {integrity: sha512-TUJFeswIp2sYstrxLr97pWN+0qqkfN2iihe+cVfjsUEbW1pn0/SpqJVty3WKq44vCoUylulybzbSKkkN8+RYhA==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
+  '@storybook/preview-api@8.5.8':
+    resolution: {integrity: sha512-HJoz2o28VVprnU5OG6JO6CHrD3ah6qVPWixbnmyUKd0hOYF5dayK5ptmeLyUpYX56Eb2KoYcuVaeQqAby4RkNw==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -16181,6 +16189,10 @@ snapshots:
     dependencies:
       storybook: 8.5.5(prettier@3.5.0)
 
+  '@storybook/preview-api@8.5.8(storybook@8.5.5(prettier@2.8.8))':
+    dependencies:
+      storybook: 8.5.5(prettier@2.8.8)
+
   '@storybook/react-docgen-typescript-plugin@1.0.6--canary.9.0c3f3b7.0(typescript@4.9.5)(webpack@5.97.1(@swc/core@1.10.16(@swc/helpers@0.5.15))(esbuild@0.24.2))':
     dependencies:
       debug: 4.4.0(supports-color@5.5.0)
@@ -16302,7 +16314,7 @@ snapshots:
       '@storybook/core-common': 8.5.5(storybook@8.5.5(prettier@2.8.8))
       '@storybook/csf': 0.1.13
       '@storybook/csf-tools': 8.5.5(storybook@8.5.5(prettier@2.8.8))
-      '@storybook/preview-api': 8.5.5(storybook@8.5.5(prettier@2.8.8))
+      '@storybook/preview-api': 8.5.8(storybook@8.5.5(prettier@2.8.8))
       '@swc/core': 1.10.16(@swc/helpers@0.5.15)
       '@swc/jest': 0.2.37(@swc/core@1.10.16(@swc/helpers@0.5.15))
       expect-playwright: 0.8.0

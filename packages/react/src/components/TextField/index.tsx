@@ -9,7 +9,6 @@ import { useFocusWithClick } from './useFocusWithClick'
 import { mergeRefs, useId } from '@react-aria/utils'
 import { AssistiveText } from './AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
-console.log(useId)
 
 export type TextFieldProps = {
   prefix?: ReactNode
