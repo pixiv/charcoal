@@ -338,6 +338,15 @@ importers:
 
   packages/icon-files: {}
 
+  packages/icon-types:
+    devDependencies:
+      npm-run-all:
+        specifier: ^4.1.5
+        version: 4.1.5
+      typescript:
+        specifier: ^5.7.3
+        version: 5.8.2
+
   packages/icons:
     dependencies:
       '@charcoal-ui/icon-files':
