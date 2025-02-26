@@ -145,5 +145,14 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "core-js",
+      "esbuild",
+      "nx"
+    ]
   }
 }
