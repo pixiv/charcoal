@@ -4,6 +4,17 @@ export {
   CharcoalProvider,
   type CharcoalProviderProps,
 } from './core/CharcoalProvider'
+export { makeSetThemeScriptCode, SetThemeScript } from './core/SetThemeScript'
+export {
+  getThemeSync,
+  themeSetter,
+  themeSelector,
+  prefersColorScheme,
+  useTheme,
+  useThemeSetter,
+  useLocalStorage,
+  useMedia,
+} from './core/themeHelper'
 export { default as Button, type ButtonProps } from './components/Button'
 export {
   default as Clickable,
