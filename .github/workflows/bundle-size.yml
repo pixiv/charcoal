@@ -9,12 +9,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0'
       - uses: preactjs/compressed-size-action@v2
         with:
-          install-script: 'pnpm install --frozen-lockfile'
+          install-script: 'yarn install'
           build-script: 'build'
           clean-script: 'clean'
 

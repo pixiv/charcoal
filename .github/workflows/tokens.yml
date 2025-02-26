@@ -14,46 +14,42 @@ jobs:
         with:
           ref: ${{ github.base_ref }}
 
-      - name: setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: pnpm
+          cache: yarn
 
       - name: Prepare deps
         working-directory: ./
         run: |
-          pnpm install --frozen-lockfile
-          pnpm --filter @charcoal-ui/token-cli run build
-          pnpm --filter @charcoal-ui/pullrequest-cli run build
+          yarn install --immutable --inline-builds
+          yarn workspaces foreach -vptR --from @charcoal-ui/token-cli run build
+          yarn workspaces foreach -vptR --from @charcoal-ui/pullrequest-cli run build
 
       - name: Fetch primitive variables
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_PAT_FOR_VARIABLES}}
           FIGMA_FILE_ID: ${{ secrets.FIGMA_NODE_ID_PRIMITIVES }}
-        run: pnpm token-cli fetch -o out/raw_primitives.json
+        run: yarn token-cli fetch -o out/raw_primitives.json
 
       - name: Fetch Applied variables
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_PAT_FOR_VARIABLES }}
           FIGMA_FILE_ID: ${{ secrets.FIGMA_NODE_ID_APPLIEDS }}
-        run: pnpm token-cli fetch -o out/raw_applieds.json
+        run: yarn token-cli fetch -o out/raw_applieds.json
 
       - name: Transform primitive token
-        run: pnpm token-cli transform --source ./out/raw_primitives.json --output ./tokens/base.json
+        run: yarn token-cli transform --source ./out/raw_primitives.json --output ./tokens/base.json
 
       - name: Transform applied token
         run: |
-          pnpm token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-light.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/light"
-          pnpm token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-dark.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/dark"
+          yarn token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-light.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/light"
+          yarn token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-dark.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/dark"
 
       - name: Generate CSS variables
         run: |
-          pnpm style-dictionary build -c pixiv-light.config.js
-          pnpm style-dictionary build -c pixiv-dark.config.js
+          yarn style-dictionary build -c pixiv-light.config.js
+          yarn style-dictionary build -c pixiv-dark.config.js
 
       - name: Copy to theme package
         run: |
@@ -65,7 +61,7 @@ jobs:
 
       - name: Run prettier
         working-directory: ./
-        run: pnpm fmt:prettier
+        run: yarn fmt:prettier
 
       - name: Generate github token
         id: generate_token
@@ -82,7 +78,7 @@ jobs:
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
           TARGET_DIR: packages/theme
-        run: pnpm pullrequest-cli github:pr -c theme -t 'Update theme'
+        run: yarn pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

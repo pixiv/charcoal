@@ -5,6 +5,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
   data-dark={false}
 >
   <div
+    aria-hidden={null}
     data-overlay-container={true}
   >
     <div
@@ -280,6 +281,7 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
   data-dark={false}
 >
   <div
+    aria-hidden={null}
     data-overlay-container={true}
   >
     <button
@@ -403,6 +405,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
   data-dark={false}
 >
   <div
+    aria-hidden={null}
     data-overlay-container={true}
   >
     <button
@@ -670,6 +673,7 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
   data-dark={false}
 >
   <div
+    aria-hidden={null}
     data-overlay-container={true}
   >
     <button
@@ -856,6 +860,7 @@ exports[`Storybook Tests > react/Modal > NotDismmissableStory 1`] = `
   data-dark={false}
 >
   <div
+    aria-hidden={null}
     data-overlay-container={true}
   >
     <button

@@ -29,6 +29,7 @@ export async function dump({ output, config }: DumpConfig) {
     targetDir,
     config != null ? config : 'tailwind.config.js'
   ) as TailwindConfig
+  // @ts-expect-error FIXME: update tailwind-diff to use native types?
   const result = await postcss([tailwindcss(tailwindConfig)]).process(
     sourceCSS,
     {

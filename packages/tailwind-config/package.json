@@ -21,7 +21,6 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@types/react": "18",
     "jsdom": "^24.1.0",
     "postcss": "^8.4.5",
     "postcss-selector-parser": "^6.0.9",
