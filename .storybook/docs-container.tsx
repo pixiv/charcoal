@@ -1,15 +1,15 @@
 import React, { ComponentPropsWithoutRef, FC } from 'react'
 import { DocsContainer as BaseContainer } from '@storybook/addon-docs'
-import { useDarkMode } from 'storybook-dark-mode'
 import { themes } from '@storybook/theming'
+import { useDarkMode } from './use-dark-mode'
 
 export const DocsContainer: FC<
   ComponentPropsWithoutRef<typeof BaseContainer>
 > = ({ children, ...rest }) => {
-  const dark = useDarkMode()
+  const isDarkMode = useDarkMode()
 
   return (
-    <BaseContainer {...rest} theme={dark ? themes.dark : themes.light}>
+    <BaseContainer {...rest} theme={isDarkMode ? themes.dark : themes.light}>
       {children}
     </BaseContainer>
   )

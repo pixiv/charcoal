@@ -8,6 +8,7 @@ yarn.lock
 /coverage/
 .next/
 lerna.json
+pnpm-lock.yaml
 
 LICENSE
 /packages/theme/theme.json

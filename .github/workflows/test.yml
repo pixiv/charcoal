@@ -11,27 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable --inline-builds
-      - run: yarn build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable --inline-builds
-      - run: yarn build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
       - name: Test
-        run: yarn test
+        run: pnpm test
         env:
           CI: 'true'
 
@@ -39,51 +45,63 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable --inline-builds
-      - run: yarn build
-      - run: yarn lint
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm lint
 
   typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable --inline-builds
-      - run: yarn build
-      - run: yarn typecheck
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm typecheck
 
   typecheck-config:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable --inline-builds
-      - run: yarn typecheck:config
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck:config
 
   a11y:
     if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install --immutable --inline-builds
+      - run: pnpm install --frozen-lockfile
 
       - name: Cache Playwright runners
         uses: actions/cache@v4
@@ -92,13 +110,13 @@ jobs:
             /home/runner/.cache/ms-playwright/
           key: ${{ runner.os }}-playwright-runner
       - name: Install Playwright
-        run: yarn playwright install --with-deps
+        run: pnpm playwright install --with-deps
 
       - name: Build Storybook
         run: |
-          yarn build
-          yarn storybook:build --quiet
+          pnpm build
+          pnpm storybook:build --quiet
 
       - name: a11y test by Run TestRunner
         run: |
-          yarn test:a11y
+          pnpm test:a11y

@@ -8,7 +8,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['../../vitest.setup.ts'],
+    setupFiles: ['../../vitest.setup.ts', './vitest.setup.ts'],
     alias: [
       {
         find: /@charcoal-ui\/(.*)/,
