@@ -23,20 +23,23 @@ jobs:
       # url: TODO: Edit after
 
     steps:
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - name: Get pnpm store path
+        id: pnpm-store-path
+        run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
       # charcoal packages
-      - run: yarn install --immutable
-      - run: yarn build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
       # docs
-      - run: yarn storybook:build
+      - run: pnpm storybook:build
 
       - id: auth
         uses: google-github-actions/auth@v1
