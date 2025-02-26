@@ -1,5 +1,5 @@
 {
-  "npmClient": "pnpm",
+  "npmClient": "yarn",
   "useWorkspaces": true,
   "changelogPreset": {
     "name": "conventionalcommits",

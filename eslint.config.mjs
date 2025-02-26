@@ -28,8 +28,7 @@ const tseslintConfig = tseslint.config(
       },
     },
     rules: {
-      'no-empty-function': 'off',
-      '@typescript-eslint/no-empty-function': ['error', { allow: [] }],
+      '@typescript-eslint/no-empty-function': 'error',
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/no-empty-interface': 'error',
       '@typescript-eslint/no-inferrable-types': 'error',
@@ -74,7 +73,6 @@ const typescriptConfig = [
           ],
         },
       ],
-      '@typescript-eslint/unbound-method': 'off',
     },
   },
   {
@@ -124,7 +122,6 @@ const config = [
       'eslint.config.mjs',
       'vitest.*',
       '.storybook',
-      'pnpm-lock.yaml',
     ],
   },
   {
@@ -144,7 +141,6 @@ const config = [
       '**/*.story.*',
       '.storybook/**',
       '**/*.bench.{ts,tsx}',
-      '**/*.setup.{ts,tsx}',
     ],
     languageOptions: {
       globals: {

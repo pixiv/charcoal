@@ -33,14 +33,12 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
-    "@charcoal-ui/esbuild-plugin-styled-components": "workspace:*",
-    "@react-types/dialog": "^3.5.15",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^4.2.1",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^8.0.5",
     "@storybook/react": "^8.0.5",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/glob": "^8.1.0",
     "@types/react": "^18.3.3",

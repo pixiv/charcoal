@@ -16,19 +16,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
-          cache: pnpm
-      - uses: pnpm/action-setup@v4
-        with:
-          version: '10.4.0'
+          cache: yarn
 
       - name: Prepare deps
         run: |
-          pnpm install --frozen-lockfile
-          pnpm build
+          yarn install --immutable --inline-builds
+          yarn build
 
       - name: Output files
         run: |
-          pnpm storybook:build -o public-pages --quiet
+          yarn storybook:build -o public-pages --quiet
           cp .storybook/badge.svg public-pages/storybook-badge.svg
           mv pages public-pages/docs
 
