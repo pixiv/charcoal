@@ -9,8 +9,8 @@ export type PopoverProps = {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
-  triggerRef: RefObject<Element>
-  popoverRef?: RefObject<HTMLDivElement>
+  triggerRef: RefObject<Element | null>
+  popoverRef?: RefObject<HTMLDivElement | null>
 }
 
 const _empty = () => null
@@ -59,6 +59,7 @@ export default function Popover(props: PopoverProps) {
           inset: 0,
         }}
       />
+      {/* @ts-expect-error react types we use does not support react 19 types yet */}
       <div {...popoverProps} ref={finalPopoverRef} className="charcoal-popover">
         <DismissButton onDismiss={() => props.onClose()} />
         <div tabIndex={0} onFocus={props.onClose} />

@@ -16,7 +16,7 @@ import { usePreventScroll } from '../DropdownSelector/Popover/usePreventScroll'
 export function useCharcoalModalOverlay(
   props: AriaModalOverlayProps,
   state: { isOpen: boolean; onClose: () => void },
-  ref: React.RefObject<HTMLElement>
+  ref: React.RefObject<HTMLElement | null>
 ): ModalOverlayAria {
   const { overlayProps, underlayProps } = useOverlay(
     {
