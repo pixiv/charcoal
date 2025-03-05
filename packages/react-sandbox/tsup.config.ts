@@ -9,6 +9,9 @@ export default defineConfig({
       js: `.${format}.js`,
     }
   },
+  banner: {
+    js: `"use client";`,
+  },
   target: 'esnext',
   sourcemap: true,
   esbuildPlugins: [styledComponentsPlugin],
