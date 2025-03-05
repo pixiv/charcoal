@@ -131,13 +131,9 @@ jobs:
       - name: Serve Storybook and run tests
         if: steps.label-checking.outputs.result != 'true'
         run: pnpm test:image-snapshot:ci
-        env:
-          DEBUG_PRINT_LIMIT: 10000
       - name: Serve Storybook and take new image snapshots
         if: steps.label-checking.outputs.result == 'true'
         run: pnpm test:image-snapshot:ci --updateSnapshot
-        env:
-          DEBUG_PRINT_LIMIT: 10000
       - name: Archive image snapshot diffs
         uses: actions/upload-artifact@v4
         if: failure() && steps.label-checking.outputs.result != 'true'
