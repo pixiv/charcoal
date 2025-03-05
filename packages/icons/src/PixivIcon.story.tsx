@@ -11,7 +11,7 @@ PixivIcon.extend({
   '16/TestIconThatNeverExists': TestIconThatNeverExists,
 })
 
-export default {
+const meta: Meta<Props> = {
   title: 'Icons/PixivIcon (<pixiv-icon>)',
   argTypes: {
     color: {
@@ -57,7 +57,9 @@ export default {
       <Global />
     </>
   ),
-} as Meta<Props>
+}
+
+export default meta
 
 const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
   (map, icon) => {
