@@ -16,7 +16,7 @@ jobs:
       - name: Checkout base branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.ref }}
+          ref: fix/github-actions-storybook-build
           fetch-depth: 0
       - name: Check commit hash
         id: commit-hash
