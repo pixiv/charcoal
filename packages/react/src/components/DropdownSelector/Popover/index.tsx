@@ -27,9 +27,7 @@ export default function Popover(props: PopoverProps) {
     props.popoverRef === undefined ? defaultPopoverRef : props.popoverRef
   const { popoverProps, underlayProps } = usePopover(
     {
-      // @ts-expect-error @react-aria/overlays we use does not support react 19 types yet
       triggerRef: props.triggerRef,
-      // @ts-expect-error @react-aria/overlays we use does not support react 19 types yet
       popoverRef: finalPopoverRef,
       containerPadding: 16,
     },

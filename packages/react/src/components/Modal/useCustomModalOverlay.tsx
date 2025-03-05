@@ -25,7 +25,6 @@ export function useCharcoalModalOverlay(
       onClose: state.onClose,
       shouldCloseOnInteractOutside: () => false,
     },
-    // @ts-expect-error @react-aria/overlays we use does not support react 19 types yet
     ref
   )
 
