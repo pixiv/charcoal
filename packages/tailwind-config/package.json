@@ -33,9 +33,9 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.2.1",
-    "@charcoal-ui/theme": "^4.2.1",
-    "@charcoal-ui/utils": "^4.2.1"
+    "@charcoal-ui/foundation": "workspace:*",
+    "@charcoal-ui/theme": "workspace:*",
+    "@charcoal-ui/utils": "workspace:*"
   },
   "peerDependencies": {
     "csstype": ">=3.0.0",

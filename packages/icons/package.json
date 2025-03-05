@@ -37,7 +37,7 @@
     "vitest": "^2.0.1"
   },
   "dependencies": {
-    "@charcoal-ui/icon-files": "^4.2.1",
+    "@charcoal-ui/icon-files": "workspace:*",
     "warning": "^4.0.3"
   },
   "files": [

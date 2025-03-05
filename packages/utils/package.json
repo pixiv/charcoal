@@ -27,7 +27,7 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.2.1",
+    "@charcoal-ui/foundation": "workspace:*",
     "polished": "^4.1.4"
   },
   "files": [

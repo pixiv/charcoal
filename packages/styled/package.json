@@ -39,13 +39,13 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.2.1",
-    "@charcoal-ui/theme": "^4.2.1",
-    "@charcoal-ui/utils": "^4.2.1",
+    "@charcoal-ui/foundation": "workspace:*",
+    "@charcoal-ui/theme": "workspace:*",
+    "@charcoal-ui/utils": "workspace:*",
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "@charcoal-ui/react": "^4.2.1",
+    "@charcoal-ui/react": "workspace:*",
     "react": ">=17.0.0",
     "styled-components": ">=5.1.1"
   },
