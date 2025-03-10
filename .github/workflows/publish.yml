@@ -58,7 +58,7 @@ jobs:
           git push origin ${{ github.ref_name }}
 
       - name: Build & Publish to npmjs
-        run: pnpm release
+        run: pnpm release --tag ${{ github.event.inputs.release_tag }}
         env:
           NPM_CONFIG_PROVENANCE: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
