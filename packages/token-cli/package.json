@@ -3,7 +3,7 @@
   "private": true,
   "bin": "./dist/index.js",
   "type": "commonjs",
-  "version": "4.3.0-beta.3",
+  "version": "4.3.0-beta.4",
   "license": "Apache-2.0",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
