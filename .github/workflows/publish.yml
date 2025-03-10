@@ -53,12 +53,14 @@ jobs:
       - name: Set package version
         run: pnpm lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
 
-      - name: git push version up commits
-        run: |
-          git push origin ${{ github.ref_name }}
-
       - name: Build & Publish to npmjs
         run: pnpm release --tag ${{ github.event.inputs.release_tag }}
         env:
           NPM_CONFIG_PROVENANCE: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # push tag only when publish success
+      - name: git push version up commits
+        run: |
+          git tag ${{ github.event.inputs.release_tag }}
+          git push origin ${{ github.ref_name }} --tags
