@@ -1,691 +1,530 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-describedby="test-id"
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-describedby="test-id"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="false"
         id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
-    </div>
-    <div
-      className="charcoal-text-field-assistive-text"
-      data-invalid={false}
-      id="test-id"
-    >
-      説明が入ります
+      >
+        説明が入ります
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Default 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span>
-          <button
-            className="charcoal-clickable"
-            onClick={[Function]}
-          >
-            Text Link
-          </button>
-        </span>
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-invalid={false}
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="Text Area"
-        readOnly={false}
-        rows={4}
-      />
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-invalid="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          placeholder="Text Area"
+          rows="4"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={true}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
-    >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
-      <div
-        className="charcoal-field-label-sub-label"
-      >
-        <span />
-      </div>
-    </div>
-    <div
       aria-disabled="true"
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
+      class="charcoal-text-area-root"
     >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={true}
-        id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          disabled=""
+          id="test-id"
+          rows="4"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={true}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-describedby="test-id"
-        aria-invalid={true}
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
+      <div
+        aria-invalid="true"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-describedby="test-id"
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="true"
         id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
-    </div>
-    <div
-      className="charcoal-text-field-assistive-text"
-      data-invalid={true}
-      id="test-id"
-    >
-      エラーメッセージ
+      >
+        エラーメッセージ
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Label 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="Placeholder"
-        rows={4}
-      />
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          placeholder="Placeholder"
+          rows="4"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        readOnly={true}
-        rows={4}
-        value="読み取り専用"
-      />
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          readonly=""
+          rows="4"
+        >
+          読み取り専用
+        </textarea>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > Required 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-required-text"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        *必須
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-required-text"
+        >
+          *必須
+        </div>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
       <div
-        className="charcoal-field-label-sub-label"
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
       >
-        <span />
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "5",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={true}
-        disabled={false}
-        id="test-id"
-        maxLength={100}
-        onChange={[Function]}
-        rows={4}
-      />
-      <span
-        className="charcoal-text-area-counter"
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 5;"
       >
-        0/100
-      </span>
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          maxlength="100"
+          rows="4"
+        />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0/100
+        </span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextArea > SubLabel 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-area-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
+      aria-disabled="false"
+      class="charcoal-text-area-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
       >
-        <span>
-          <button
-            className="charcoal-clickable"
-          >
-            Text Link
-          </button>
-        </span>
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      aria-invalid={false}
-      className="charcoal-text-area-container"
-      style={
-        Object {
-          "--charcoal-text-area-rows": "4",
-        }
-      }
-    >
-      <textarea
-        aria-labelledby="test-id"
-        className="charcoal-text-area-textarea"
-        data-no-bottom-padding={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        rows={4}
-      />
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
     </div>
   </div>
 </div>

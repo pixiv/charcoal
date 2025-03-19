@@ -1,65 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/TextField > Affix 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
-    >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
-      <div
-        className="charcoal-field-label-sub-label"
-      >
-        <span />
-      </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
       <div
-        className="charcoal-text-field-prefix"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        /home/john/
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
       <div
-        className="charcoal-text-field-suffix"
+        class="charcoal-text-field-container"
+        data-invalid="false"
       >
-        .png
+        <div
+          class="charcoal-text-field-prefix"
+        >
+          /home/john/
+        </div>
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+        <div
+          class="charcoal-text-field-suffix"
+        >
+          .png
+        </div>
       </div>
     </div>
   </div>
@@ -67,649 +55,534 @@ exports[`Storybook Tests > react/TextField > Affix 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextField > AssistiveText 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-describedby="test-id"
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-describedby="test-id"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="false"
         id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
-    </div>
-    <div
-      className="charcoal-text-field-assistive-text"
-      data-invalid={false}
-      id="test-id"
-    >
-      説明が入ります
+      >
+        説明が入ります
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Default 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span>
-          <button
-            className="charcoal-clickable"
-          >
-            Text Link
-          </button>
-        </span>
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-invalid={false}
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="TextField"
-        readOnly={false}
-        type="text"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-invalid="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          placeholder="TextField"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Disabled 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={true}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="true"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      aria-disabled={true}
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={true}
-        id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
+      <div
+        aria-disabled="true"
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          disabled=""
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Invalid 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={true}
-    >
-      <input
-        aria-describedby="test-id"
-        aria-invalid={true}
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={true}
-        disabled={false}
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="true"
+      >
+        <input
+          aria-describedby="test-id"
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="true"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="true"
         id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
-    </div>
-    <div
-      className="charcoal-text-field-assistive-text"
-      data-invalid={true}
-      id="test-id"
-    >
-      エラーメッセージ
+      >
+        エラーメッセージ
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Label 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Number 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      />
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        />
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        onWheel={[Function]}
-        type="number"
-        value="0"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="number"
+          value="0"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Placeholder 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        placeholder="Placeholder"
-        type="text"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          placeholder="Placeholder"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > Prefix 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
-    >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
-      <div
-        className="charcoal-field-label-sub-label"
-      >
-        <span />
-      </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
       <div
-        className="charcoal-text-field-prefix"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <div
-          style={
-            Object {
-              "alignItems": "center",
-              "color": "var(--charcoal-text3)",
-              "display": "flex",
-            }
-          }
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
         >
-          <pixiv-icon
-            name="16/Search"
-          />
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
         </div>
       </div>
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <div
+          class="charcoal-text-field-prefix"
+        >
+          <div
+            style="display: flex; align-items: center;"
+          >
+            <pixiv-icon
+              name="16/Search"
+            />
+          </div>
+        </div>
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > ReadOnly 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        readOnly={true}
-        type="text"
-        value="読み取り専用"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          readonly=""
+          type="text"
+          value="読み取り専用"
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > RequiredText 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-required-text"
+        class="charcoal-field-label-root"
       >
-        *必須
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-required-text"
+        >
+          *必須
+        </div>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
       </div>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-text-field-container"
+        data-invalid="false"
       >
-        <span />
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/TextField > ShowCount 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span />
-      </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        maxLength={100}
-        onChange={[Function]}
-        type="text"
-      />
-      <div
-        className="charcoal-text-field-suffix"
-      >
-        <span
-          className="charcoal-text-field-line-counter"
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
         >
-          0/100
-        </span>
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          maxlength="100"
+          type="text"
+          value=""
+        />
+        <div
+          class="charcoal-text-field-suffix"
+        >
+          <span
+            class="charcoal-text-field-line-counter"
+          >
+            0/100
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -717,62 +590,50 @@ exports[`Storybook Tests > react/TextField > ShowCount 1`] = `
 `;
 
 exports[`Storybook Tests > react/TextField > SubLabel 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    aria-disabled={false}
-    className="charcoal-text-field-root"
+    data-dark="false"
   >
     <div
-      className="charcoal-field-label-root"
-      style={
-        Object {
-          "border": 0,
-          "clip": "rect(0 0 0 0)",
-          "clipPath": "inset(50%)",
-          "height": "1px",
-          "margin": "-1px",
-          "overflow": "hidden",
-          "padding": 0,
-          "position": "absolute",
-          "whiteSpace": "nowrap",
-          "width": "1px",
-        }
-      }
+      aria-disabled="false"
+      class="charcoal-text-field-root"
     >
-      <label
-        className="charcoal-field-label"
-        htmlFor="test-id"
-        id="test-id"
-      >
-        Label
-      </label>
       <div
-        className="charcoal-field-label-sub-label"
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
-        <span>
-          <button
-            className="charcoal-clickable"
-          >
-            Text Link
-          </button>
-        </span>
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      className="charcoal-text-field-container"
-      data-invalid={false}
-    >
-      <input
-        aria-labelledby="test-id"
-        className="charcoal-text-field-input"
-        data-invalid={false}
-        disabled={false}
-        id="test-id"
-        onChange={[Function]}
-        type="text"
-      />
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </div>

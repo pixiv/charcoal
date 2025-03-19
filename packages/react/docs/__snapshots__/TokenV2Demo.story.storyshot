@@ -152,353 +152,347 @@ exports[`Storybook Tests > theme/Token v2 Demo > Styled 1`] = `
   line-height: var(--charcoal-text-line-height-caption-s);
 }
 
-<div
-  data-dark={false}
->
-  <section
-    className="c0"
+<div>
+  <div
+    data-dark="false"
   >
-    <nav>
-      <div
-        aria-label="Categories"
-        role="tablist"
-      >
-        <a
-          aria-controls="panel-Illustration"
-          aria-selected={true}
-          className="c1"
-          id="category-Illustration"
-          onClick={[Function]}
-          role="tab"
-        >
-          Illustration
-        </a>
-        <a
-          aria-controls="panel-Comic"
-          aria-selected={false}
-          className="c1"
-          id="category-Comic"
-          onClick={[Function]}
-          role="tab"
-        >
-          Comic
-        </a>
-        <a
-          aria-controls="panel-Novel"
-          aria-selected={false}
-          className="c1"
-          id="category-Novel"
-          onClick={[Function]}
-          role="tab"
-        >
-          Novel
-        </a>
-        <a
-          aria-controls="panel-3D"
-          aria-selected={false}
-          className="c1"
-          id="category-3D"
-          onClick={[Function]}
-          role="tab"
-        >
-          3D
-        </a>
-        <a
-          aria-controls="panel-Shopping"
-          aria-selected={false}
-          className="c1"
-          id="category-Shopping"
-          onClick={[Function]}
-          role="tab"
-        >
-          Shopping
-        </a>
-      </div>
-    </nav>
-    <h2
-      className="c2"
+    <section
+      class="c0"
     >
-      Works from users you follow
-    </h2>
-    <div
-      aria-labelledby="category-Illustration"
-      className="c3"
-      id="panel-Illustration"
-      role="tabpanel"
-    >
+      <nav>
+        <div
+          aria-label="Categories"
+          role="tablist"
+        >
+          <a
+            aria-controls="panel-Illustration"
+            aria-selected="true"
+            class="c1"
+            id="category-Illustration"
+            role="tab"
+          >
+            Illustration
+          </a>
+          <a
+            aria-controls="panel-Comic"
+            aria-selected="false"
+            class="c1"
+            id="category-Comic"
+            role="tab"
+          >
+            Comic
+          </a>
+          <a
+            aria-controls="panel-Novel"
+            aria-selected="false"
+            class="c1"
+            id="category-Novel"
+            role="tab"
+          >
+            Novel
+          </a>
+          <a
+            aria-controls="panel-3D"
+            aria-selected="false"
+            class="c1"
+            id="category-3D"
+            role="tab"
+          >
+            3D
+          </a>
+          <a
+            aria-controls="panel-Shopping"
+            aria-selected="false"
+            class="c1"
+            id="category-Shopping"
+            role="tab"
+          >
+            Shopping
+          </a>
+        </div>
+      </nav>
+      <h2
+        class="c2"
+      >
+        Works from users you follow
+      </h2>
       <div
-        className="c4"
+        aria-labelledby="category-Illustration"
+        class="c3"
+        id="panel-Illustration"
+        role="tabpanel"
       >
+        <div
+          class="c4"
+        >
+          <a
+            aria-label="UserIcon"
+            class="c5"
+          >
+            <pixiv-icon
+              name="24/FaceEdit"
+            />
+          </a>
+          <span
+            class="c6"
+          >
+            UserName
+          </span>
+          <button
+            class="charcoal-button"
+            data-size="S"
+            data-variant="Primary"
+          >
+            Follow
+          </button>
+        </div>
         <a
-          aria-label="UserIcon"
-          className="c5"
+          class="c7"
         >
-          <pixiv-icon
-            name="24/FaceEdit"
-          />
+          Show all
         </a>
-        <span
-          className="c6"
+        <ul
+          class="c8"
         >
-          UserName
-        </span>
-        <button
-          className="charcoal-button"
-          data-size="S"
-          data-variant="Primary"
-        >
-          Follow
-        </button>
+          <li>
+            <article
+              class="c9"
+            >
+              <img
+                alt="Title"
+                class="c10"
+                src="https://loremflickr.com/150/100/animals?random=0&lock=0"
+              />
+              <h3
+                class="c11"
+              >
+                Title
+              </h3>
+              <p
+                class="c12"
+              >
+                Description
+              </p>
+            </article>
+          </li>
+          <li>
+            <article
+              class="c9"
+            >
+              <img
+                alt="Title"
+                class="c10"
+                src="https://loremflickr.com/150/100/animals?random=1&lock=1"
+              />
+              <h3
+                class="c11"
+              >
+                Title
+              </h3>
+              <p
+                class="c12"
+              >
+                Description
+              </p>
+            </article>
+          </li>
+          <li>
+            <article
+              class="c9"
+            >
+              <img
+                alt="Title"
+                class="c10"
+                src="https://loremflickr.com/150/100/animals?random=2&lock=2"
+              />
+              <h3
+                class="c11"
+              >
+                Title
+              </h3>
+              <p
+                class="c12"
+              >
+                Description
+              </p>
+            </article>
+          </li>
+        </ul>
       </div>
-      <a
-        className="c7"
-      >
-        Show all
-      </a>
-      <ul
-        className="c8"
-      >
-        <li>
-          <article
-            className="c9"
-          >
-            <img
-              alt="Title"
-              className="c10"
-              src="https://loremflickr.com/150/100/animals?random=0&lock=0"
-            />
-            <h3
-              className="c11"
-            >
-              Title
-            </h3>
-            <p
-              className="c12"
-            >
-              Description
-            </p>
-          </article>
-        </li>
-        <li>
-          <article
-            className="c9"
-          >
-            <img
-              alt="Title"
-              className="c10"
-              src="https://loremflickr.com/150/100/animals?random=1&lock=1"
-            />
-            <h3
-              className="c11"
-            >
-              Title
-            </h3>
-            <p
-              className="c12"
-            >
-              Description
-            </p>
-          </article>
-        </li>
-        <li>
-          <article
-            className="c9"
-          >
-            <img
-              alt="Title"
-              className="c10"
-              src="https://loremflickr.com/150/100/animals?random=2&lock=2"
-            />
-            <h3
-              className="c11"
-            >
-              Title
-            </h3>
-            <p
-              className="c12"
-            >
-              Description
-            </p>
-          </article>
-        </li>
-      </ul>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
-<div
-  data-dark={false}
->
-  <section
-    className="grid max-w-fit gap-[24px]"
+<div>
+  <div
+    data-dark="false"
   >
-    <nav>
-      <div
-        aria-label="Categories"
-        role="tablist"
-      >
-        <a
-          aria-controls="panel-Illustration"
-          aria-selected={true}
-          className="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
-          id="category-Illustration"
-          onClick={[Function]}
-          role="tab"
-        >
-          Illustration
-        </a>
-        <a
-          aria-controls="panel-Comic"
-          aria-selected={false}
-          className="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
-          id="category-Comic"
-          onClick={[Function]}
-          role="tab"
-        >
-          Comic
-        </a>
-        <a
-          aria-controls="panel-Novel"
-          aria-selected={false}
-          className="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
-          id="category-Novel"
-          onClick={[Function]}
-          role="tab"
-        >
-          Novel
-        </a>
-        <a
-          aria-controls="panel-3D"
-          aria-selected={false}
-          className="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
-          id="category-3D"
-          onClick={[Function]}
-          role="tab"
-        >
-          3D
-        </a>
-        <a
-          aria-controls="panel-Shopping"
-          aria-selected={false}
-          className="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
-          id="category-Shopping"
-          onClick={[Function]}
-          role="tab"
-        >
-          Shopping
-        </a>
-      </div>
-    </nav>
-    <h2
-      className="text-text-secondary text-heading-xs m-0"
+    <section
+      class="grid max-w-fit gap-[24px]"
     >
-      Works from users you follow
-    </h2>
-    <div
-      aria-labelledby="category-Illustration"
-      className="grid [grid-template-areas:'UserInfo_._ShowAll''ArtworkList_ArtworkList_ArtworkList']"
-      id="panel-Illustration"
-      role="tabpanel"
-    >
+      <nav>
+        <div
+          aria-label="Categories"
+          role="tablist"
+        >
+          <a
+            aria-controls="panel-Illustration"
+            aria-selected="true"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
+            id="category-Illustration"
+            role="tab"
+          >
+            Illustration
+          </a>
+          <a
+            aria-controls="panel-Comic"
+            aria-selected="false"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
+            id="category-Comic"
+            role="tab"
+          >
+            Comic
+          </a>
+          <a
+            aria-controls="panel-Novel"
+            aria-selected="false"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
+            id="category-Novel"
+            role="tab"
+          >
+            Novel
+          </a>
+          <a
+            aria-controls="panel-3D"
+            aria-selected="false"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
+            id="category-3D"
+            role="tab"
+          >
+            3D
+          </a>
+          <a
+            aria-controls="panel-Shopping"
+            aria-selected="false"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
+            id="category-Shopping"
+            role="tab"
+          >
+            Shopping
+          </a>
+        </div>
+      </nav>
+      <h2
+        class="text-text-secondary text-heading-xs m-0"
+      >
+        Works from users you follow
+      </h2>
       <div
-        className="grid grid-flow-col items-center justify-start gap-layout-20 [grid-area:UserInfo]"
+        aria-labelledby="category-Illustration"
+        class="grid [grid-template-areas:'UserInfo_._ShowAll''ArtworkList_ArtworkList_ArtworkList']"
+        id="panel-Illustration"
+        role="tabpanel"
       >
+        <div
+          class="grid grid-flow-col items-center justify-start gap-layout-20 [grid-area:UserInfo]"
+        >
+          <a
+            aria-label="UserIcon"
+            class="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
+          >
+            <pixiv-icon
+              name="24/FaceEdit"
+            />
+          </a>
+          <span
+            class="text-text text-caption-m font-bold"
+          >
+            UserName
+          </span>
+          <button
+            class="charcoal-button"
+            data-size="S"
+            data-variant="Primary"
+          >
+            Follow
+          </button>
+        </div>
         <a
-          aria-label="UserIcon"
-          className="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
+          class="text-text-tertiary hover:text-text-hover active:text-text-press text-caption-m cursor-pointer content-center text-right [grid-area:ShowAll]"
         >
-          <pixiv-icon
-            name="24/FaceEdit"
-          />
+          Show all
         </a>
-        <span
-          className="text-text text-caption-m font-bold"
+        <ul
+          class="grid max-w-[424px] list-none grid-cols-3 gap-layout-20 p-0 [grid-area:ArtworkList]"
         >
-          UserName
-        </span>
-        <button
-          className="charcoal-button"
-          data-size="S"
-          data-variant="Primary"
-        >
-          Follow
-        </button>
+          <li>
+            <article
+              class="grid gap-layout-10"
+            >
+              <img
+                alt="Title"
+                class="rounded-m aspect-[3/2] w-[100%]"
+                src="https://loremflickr.com/150/100/animals?random=0&lock=0"
+              />
+              <h3
+                class="text-text text-caption-m m-0"
+              >
+                Title
+              </h3>
+              <p
+                class="text-text-tertiary text-caption-s m-0"
+              >
+                Description
+              </p>
+            </article>
+          </li>
+          <li>
+            <article
+              class="grid gap-layout-10"
+            >
+              <img
+                alt="Title"
+                class="rounded-m aspect-[3/2] w-[100%]"
+                src="https://loremflickr.com/150/100/animals?random=1&lock=1"
+              />
+              <h3
+                class="text-text text-caption-m m-0"
+              >
+                Title
+              </h3>
+              <p
+                class="text-text-tertiary text-caption-s m-0"
+              >
+                Description
+              </p>
+            </article>
+          </li>
+          <li>
+            <article
+              class="grid gap-layout-10"
+            >
+              <img
+                alt="Title"
+                class="rounded-m aspect-[3/2] w-[100%]"
+                src="https://loremflickr.com/150/100/animals?random=2&lock=2"
+              />
+              <h3
+                class="text-text text-caption-m m-0"
+              >
+                Title
+              </h3>
+              <p
+                class="text-text-tertiary text-caption-s m-0"
+              >
+                Description
+              </p>
+            </article>
+          </li>
+        </ul>
       </div>
-      <a
-        className="text-text-tertiary hover:text-text-hover active:text-text-press text-caption-m cursor-pointer content-center text-right [grid-area:ShowAll]"
-      >
-        Show all
-      </a>
-      <ul
-        className="grid max-w-[424px] list-none grid-cols-3 gap-layout-20 p-0 [grid-area:ArtworkList]"
-      >
-        <li>
-          <article
-            className="grid gap-layout-10"
-          >
-            <img
-              alt="Title"
-              className="rounded-m aspect-[3/2] w-[100%]"
-              src="https://loremflickr.com/150/100/animals?random=0&lock=0"
-            />
-            <h3
-              className="text-text text-caption-m m-0"
-            >
-              Title
-            </h3>
-            <p
-              className="text-text-tertiary text-caption-s m-0"
-            >
-              Description
-            </p>
-          </article>
-        </li>
-        <li>
-          <article
-            className="grid gap-layout-10"
-          >
-            <img
-              alt="Title"
-              className="rounded-m aspect-[3/2] w-[100%]"
-              src="https://loremflickr.com/150/100/animals?random=1&lock=1"
-            />
-            <h3
-              className="text-text text-caption-m m-0"
-            >
-              Title
-            </h3>
-            <p
-              className="text-text-tertiary text-caption-s m-0"
-            >
-              Description
-            </p>
-          </article>
-        </li>
-        <li>
-          <article
-            className="grid gap-layout-10"
-          >
-            <img
-              alt="Title"
-              className="rounded-m aspect-[3/2] w-[100%]"
-              src="https://loremflickr.com/150/100/animals?random=2&lock=2"
-            />
-            <h3
-              className="text-text text-caption-m m-0"
-            >
-              Title
-            </h3>
-            <p
-              className="text-text-tertiary text-caption-s m-0"
-            >
-              Description
-            </p>
-          </article>
-        </li>
-      </ul>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
 `;

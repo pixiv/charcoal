@@ -1,53 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/IconButton > Default 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-icon-button"
-    data-active={false}
-    data-size="M"
-    data-variant="Default"
-    title="add"
+<div>
+  <div
+    data-dark="false"
   >
-    <pixiv-icon
-      name="16/Add"
-    />
-  </button>
+    <button
+      class="charcoal-icon-button"
+      data-active="false"
+      data-size="M"
+      data-variant="Default"
+      title="add"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/IconButton > IsActive 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-icon-button"
-    data-active={true}
-    data-size="M"
-    data-variant="Default"
+<div>
+  <div
+    data-dark="false"
   >
-    <pixiv-icon
-      name="16/Add"
-    />
-  </button>
+    <button
+      class="charcoal-icon-button"
+      data-active="true"
+      data-size="M"
+      data-variant="Default"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/IconButton > Overlay 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-icon-button"
-    data-active={false}
-    data-size="M"
-    data-variant="Overlay"
+<div>
+  <div
+    data-dark="false"
   >
-    <pixiv-icon
-      name="16/Add"
-    />
-  </button>
+    <button
+      class="charcoal-icon-button"
+      data-active="false"
+      data-size="M"
+      data-variant="Overlay"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
 </div>
 `;

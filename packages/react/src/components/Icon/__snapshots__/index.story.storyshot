@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Icon > Default 1`] = `
-<div
-  data-dark={false}
->
-  <pixiv-icon
-    name="16/Add"
-    scale={1}
-  />
+<div>
+  <div
+    data-dark="false"
+  >
+    <pixiv-icon
+      name="16/Add"
+      scale="1"
+    />
+  </div>
 </div>
 `;

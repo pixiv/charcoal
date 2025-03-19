@@ -1,96 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Switch > Checked 1`] = `
-<div
-  data-dark={false}
->
-  <div>
-    <input
-      checked={true}
-      className="charcoal-switch-input"
-      id="test-id"
-      label="checked"
-      name="name"
-      onChange={[Function]}
-      role="switch"
-      type="checkbox"
-    />
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <input
+        checked=""
+        class="charcoal-switch-input"
+        id="test-id"
+        label="checked"
+        name="name"
+        role="switch"
+        type="checkbox"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Switch > Default 1`] = `
-<div
-  data-dark={false}
->
-  <div>
-    <input
-      checked={false}
-      className="charcoal-switch-input"
-      id="test-id"
-      name="name"
-      onChange={[Function]}
-      role="switch"
-      type="checkbox"
-    />
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <input
+        class="charcoal-switch-input"
+        id="test-id"
+        name="name"
+        role="switch"
+        type="checkbox"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Switch > Disabled 1`] = `
-<div
-  data-dark={false}
->
-  <div>
-    <label
-      aria-disabled={true}
-      className="charcoal-switch__label"
-      htmlFor="test-id"
-    >
-      <input
-        checked={false}
-        className="charcoal-switch-input"
-        disabled={true}
-        id="test-id"
-        name="disabled"
-        onChange={[Function]}
-        role="switch"
-        type="checkbox"
-      />
-      <div
-        className="charcoal-switch__label_div"
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <label
+        aria-disabled="true"
+        class="charcoal-switch__label"
+        for="test-id"
       >
-        Label
-      </div>
-    </label>
+        <input
+          class="charcoal-switch-input"
+          disabled=""
+          id="test-id"
+          name="disabled"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-switch__label_div"
+        >
+          Label
+        </div>
+      </label>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Switch > Label 1`] = `
-<div
-  data-dark={false}
->
-  <div>
-    <label
-      className="charcoal-switch__label"
-      htmlFor="test-id"
-    >
-      <input
-        checked={false}
-        className="charcoal-switch-input"
-        id="test-id"
-        name="label"
-        onChange={[Function]}
-        role="switch"
-        type="checkbox"
-      />
-      <div
-        className="charcoal-switch__label_div"
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <label
+        class="charcoal-switch__label"
+        for="test-id"
       >
-        Label
-      </div>
-    </label>
+        <input
+          class="charcoal-switch-input"
+          id="test-id"
+          name="label"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-switch__label_div"
+        >
+          Label
+        </div>
+      </label>
+    </div>
   </div>
 </div>
 `;
