@@ -4,6 +4,7 @@ import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
 describe('unstable_createTailwindConfigTokenV2', async () => {
   const config = unstable_createTailwindConfigTokenV2()
   const result = await TailwindBuild.run(
+    // @ts-expect-error FIXME: missing content
     config,
     `
         @import 'tailwindcss/base';

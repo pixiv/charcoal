@@ -1,6 +1,6 @@
 import './index.css'
 
-import { ForwardedRef, forwardRef, ReactNode, useMemo } from 'react'
+import { ForwardedRef, forwardRef, ReactNode, useMemo, type JSX } from 'react'
 import { useClassNames } from '../../../_lib/useClassNames'
 
 export type CustomJSXElement =

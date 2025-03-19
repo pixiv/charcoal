@@ -6,6 +6,8 @@ import styled, { ThemeProvider } from 'styled-components'
 import { Example } from './addThemeUtils.story'
 import { MyTheme, myTheme } from './storyHelper'
 
+import type { JSX } from 'react'
+
 function render(children: JSX.Element) {
   return testRender(
     <ThemeProvider theme={myTheme(light)}>{children}</ThemeProvider>

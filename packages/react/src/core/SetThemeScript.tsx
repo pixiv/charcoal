@@ -2,7 +2,7 @@ import {
   assertKeyString,
   DEFAULT_ROOT_ATTRIBUTE,
   LOCAL_STORAGE_KEY,
-} from './helper'
+} from './themeHelper'
 
 interface Props {
   localStorageKey: string
@@ -37,8 +37,11 @@ export function makeSetThemeScriptCode({
  * @param props localStorageのキー、htmlのdataになる属性のキーを含むオブジェクト
  * @returns
  */
-export function SetThemeScript(props: Props) {
-  const src = makeSetThemeScriptCode(props)
+export function SetThemeScript({
+  localStorageKey = defaultProps.localStorageKey,
+  rootAttribute = defaultProps.rootAttribute,
+}: Props) {
+  const src = makeSetThemeScriptCode({ localStorageKey, rootAttribute })
   return (
     <script
       dangerouslySetInnerHTML={{
@@ -52,5 +55,3 @@ const defaultProps: Props = {
   localStorageKey: LOCAL_STORAGE_KEY,
   rootAttribute: DEFAULT_ROOT_ATTRIBUTE,
 }
-
-SetThemeScript.defaultProps = defaultProps

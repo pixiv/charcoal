@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useMemo } from 'react'
+import React, { ForwardedRef, forwardRef, useMemo, type JSX } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 import type { KnownIconType } from '@charcoal-ui/icons'
 
@@ -15,36 +15,36 @@ export type IconButtonProps<T extends React.ElementType = 'button'> = {
   component?: T
 } & Omit<React.ComponentPropsWithRef<T>, 'children' | 'as'>
 
-const IconButton = forwardRef(function IconButtonInner<
-  T extends React.ElementType
->(
-  {
-    variant = 'Default',
-    size = 'M',
-    icon,
-    isActive = false,
-    component,
-    ...rest
-  }: IconButtonProps<T>,
-  ref: ForwardedRef<HTMLButtonElement>
-) {
-  validateIconSize(size, icon)
-  const Component = useMemo(() => component ?? 'button', [component])
-  const classNames = useClassNames('charcoal-icon-button', rest.className)
+const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  function IconButtonInner<T extends React.ElementType>(
+    {
+      variant = 'Default',
+      size = 'M',
+      icon,
+      isActive = false,
+      component,
+      ...rest
+    }: IconButtonProps<T>,
+    ref: ForwardedRef<HTMLButtonElement>
+  ) {
+    validateIconSize(size, icon)
+    const Component = useMemo(() => component ?? 'button', [component])
+    const classNames = useClassNames('charcoal-icon-button', rest.className)
 
-  return (
-    <Component
-      {...rest}
-      ref={ref}
-      className={classNames}
-      data-size={size}
-      data-active={isActive}
-      data-variant={variant}
-    >
-      <pixiv-icon name={icon} />
-    </Component>
-  )
-}) as <T extends React.ElementType = 'button'>(
+    return (
+      <Component
+        {...rest}
+        ref={ref}
+        className={classNames}
+        data-size={size}
+        data-active={isActive}
+        data-variant={variant}
+      >
+        <pixiv-icon name={icon} />
+      </Component>
+    )
+  }
+) as <T extends React.ElementType = 'button'>(
   p: IconButtonProps<T>
 ) => JSX.Element
 

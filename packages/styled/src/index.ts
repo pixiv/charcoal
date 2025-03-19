@@ -14,10 +14,11 @@ export {
   useThemeSetter,
   useLocalStorage,
   useMedia,
-} from './helper'
+  makeSetThemeScriptCode,
+  SetThemeScript,
+} from '@charcoal-ui/react'
 export { defineThemeVariables } from './util'
 export { removeHalfLeadingCss } from './utils/typographyCss'
-export * from './SetThemeScript'
 
 type Blank = null | undefined | false
 

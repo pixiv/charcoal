@@ -1,5 +1,9 @@
 #!/usr/bin/env zx
-import { cd, glob, fs } from 'zx'
+import { $, cd, glob, fs } from 'zx'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 cd(`${__dirname}/..`)
 

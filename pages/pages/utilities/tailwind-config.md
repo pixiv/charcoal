@@ -16,7 +16,24 @@ yarn
 yarn add -D @charcoal-ui/tailwind-config
 ```
 
-## 使い方
+## 使い方 tailwind v4 (WIP)
+
+Tailwind v4 の[@config](https://tailwindcss.com/docs/functions-and-directives#config-directive)経由で引き続既存の設定を利用できます。
+
+公式の[マイグレーションガイド](https://tailwindcss.com/docs/upgrade-guide)を参考した上以下の対応を行なってください。
+
+```diff
+- @import 'tailwindcss';
+/* 現時点@layer 未対応 */
++ @import 'tailwindcss/theme.css';
++ @import 'tailwindcss/utilities.css';
+
++ @config '@charcoal-ui/tailwind-config' /** デフォルトのconfig使う場合 */
+/* また */
++ @config '../tailwind.config.ts' /** v3 configへのpath */
+```
+
+## 使い方 tailwind v2,v3
 
 tailwind.config.js の中で `require` して使います。
 

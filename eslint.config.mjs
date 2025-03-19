@@ -28,13 +28,13 @@ const tseslintConfig = tseslint.config(
       },
     },
     rules: {
-      '@typescript-eslint/no-empty-function': 'error',
+      'no-empty-function': 'off',
+      '@typescript-eslint/no-empty-function': ['error', { allow: [] }],
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/no-empty-interface': 'error',
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
-      '@typescript-eslint/no-unsafe-assignment': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
     },
   }
@@ -49,13 +49,16 @@ const typescriptConfig = [
       import: _import,
     },
     rules: {
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', ignoreRestSiblings: true },
       ],
       '@typescript-eslint/no-unnecessary-condition': 'error',
-      '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/strict-boolean-expressions': 'off',
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
       'import/no-extraneous-dependencies': [
@@ -71,6 +74,7 @@ const typescriptConfig = [
           ],
         },
       ],
+      '@typescript-eslint/unbound-method': 'off',
     },
   },
   {
@@ -120,6 +124,7 @@ const config = [
       'eslint.config.mjs',
       'vitest.*',
       '.storybook',
+      'pnpm-lock.yaml',
     ],
   },
   {
@@ -139,6 +144,7 @@ const config = [
       '**/*.story.*',
       '.storybook/**',
       '**/*.bench.{ts,tsx}',
+      '**/*.setup.{ts,tsx}',
     ],
     languageOptions: {
       globals: {

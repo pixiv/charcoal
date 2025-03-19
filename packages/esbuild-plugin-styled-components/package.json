@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/esbuild-plugin-styled-components",
-  "version": "4.1.0",
+  "version": "4.3.0",
   "private": true,
   "license": "Apache-2.0",
   "main": "src/index.ts",
@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "@babel/parser": "^7.23.9",
-    "esbuild": "^0.15.1",
+    "@types/babel__core": "^7.20.5",
+    "esbuild": "^0.17.19",
     "typescript": "^4.9.5"
   },
   "repository": {

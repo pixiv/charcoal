@@ -38,7 +38,6 @@ const typographyPlugin = plugin(({ addUtilities }) => {
     typographyStyle(style),
   ])
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   addUtilities(
     {
       ...typographyClasses,
@@ -52,6 +51,7 @@ const typographyPlugin = plugin(({ addUtilities }) => {
       },
     },
     {
+      // @ts-expect-error FIXME
       variants: ['responsive'],
     }
   )

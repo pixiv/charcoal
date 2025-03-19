@@ -340,7 +340,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
           <a
             aria-controls="panel-Illustration"
             aria-selected="true"
-            class="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-selected text-text"
             id="category-Illustration"
             role="tab"
           >
@@ -349,7 +349,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
           <a
             aria-controls="panel-Comic"
             aria-selected="false"
-            class="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
             id="category-Comic"
             role="tab"
           >
@@ -358,7 +358,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
           <a
             aria-controls="panel-Novel"
             aria-selected="false"
-            class="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
             id="category-Novel"
             role="tab"
           >
@@ -367,7 +367,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
           <a
             aria-controls="panel-3D"
             aria-selected="false"
-            class="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
             id="category-3D"
             role="tab"
           >
@@ -376,7 +376,7 @@ exports[`Storybook Tests > theme/Token v2 Demo > Tailwind 1`] = `
           <a
             aria-controls="panel-Shopping"
             aria-selected="false"
-            class="text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent]"
+            class="text-body px-component-30 border-t-l cursor-pointer border-[0px] border-solid py-[13px] font-bold border-[transparent] text-text-tertiary hover:text-text-tertiary-hover active:text-text-tertiary-press"
             id="category-Shopping"
             role="tab"
           >
