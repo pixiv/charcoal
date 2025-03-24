@@ -32,6 +32,7 @@
     "release:alpha": "pnpm run release --conventional-prerelease --dist-tag alpha",
     "_postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
     "website": "vite docs --base=charcoal/docs --port 5000",
+    "cli:icons": "pnpm exec ./packages/icons-cli/dist/index.js",
     "prepare": "husky"
   },
   "publishConfig": {
