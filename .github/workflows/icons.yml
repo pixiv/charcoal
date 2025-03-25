@@ -40,7 +40,7 @@ jobs:
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export
 
       - name: Optimize icons
-        run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ./misc/icons-cli-denylist
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ../../misc/icons-cli-denylist
 
       - name: Generate icon files
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons files:generate
