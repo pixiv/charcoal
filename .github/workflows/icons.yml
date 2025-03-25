@@ -37,13 +37,13 @@ jobs:
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: pnpm icons-cli figma:export
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export
 
       - name: Optimize icons
-        run: pnpm icons-cli svg:optimize --ignoreFile ./misc/icons-cli-denylist
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ./misc/icons-cli-denylist
 
       - name: Generate icon files
-        run: pnpm icons-cli files:generate
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons files:generate
 
       - name: Generate github token
         id: generate_token
@@ -58,4 +58,4 @@ jobs:
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ env.TARGET_BRANCH }}
-        run: pnpm icons-cli github:pr
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons github:pr

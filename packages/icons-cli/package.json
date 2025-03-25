@@ -6,7 +6,8 @@
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
-    "clean": "rimraf dist .tsbuildinfo"
+    "clean": "rimraf dist .tsbuildinfo",
+    "cli:icons": "./dist/index.js"
   },
   "devDependencies": {
     "@gitbeaker/core": "^25.6.0",
