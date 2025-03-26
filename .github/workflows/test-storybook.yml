@@ -59,11 +59,7 @@ jobs:
           pnpm storybook:build
       - name: Serve Storybook and run tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: |
-          pnpm http-server storybook-static --port 6006 &
-          sleep 10
-          pnpm wait-on -t 60000 tcp:127.0.0.1:6006
-          pnpm test-storybook --url http://127.0.0.1:6006 --updateSnapshot
+        run: pnpm test:image-snapshot --updateSnapshot
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
         with:
@@ -135,18 +131,10 @@ jobs:
           path: __image_snapshots__/
       - name: Serve Storybook and run tests
         if: steps.label-checking.outputs.result != 'true'
-        run: |
-          pnpm http-server storybook-static --port 6006 &
-          sleep 10
-          pnpm wait-on -t 60000 tcp:127.0.0.1:6006
-          pnpm test-storybook --url http://127.0.0.1:6006
+        run: pnpm test:image-snapshot
       - name: Serve Storybook and take new image snapshots
         if: steps.label-checking.outputs.result == 'true'
-        run: |
-          pnpm http-server storybook-static --port 6006 &
-          sleep 10
-          pnpm wait-on -t 60000 tcp:127.0.0.1:6006
-          pnpm test-storybook --url http://127.0.0.1:6006 --updateSnapshot
+        run: pnpm test:image-snapshot --updateSnapshot
       - name: Archive image snapshot diffs
         uses: actions/upload-artifact@v4
         if: failure() && steps.label-checking.outputs.result != 'true'
