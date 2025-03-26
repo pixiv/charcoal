@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons",
-  "version": "4.1.0",
+  "version": "4.4.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -21,12 +21,13 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@storybook/react": "^8.0.5",
+    "@storybook/react": "^8.5.5",
     "@types/react": "^18.3.3",
     "@types/warning": "^3.0.0",
-    "@types/webpack-env": "^1.18.1",
+    "@types/webpack-env": "^1.18.8",
     "@vitejs/plugin-react": "^4.3.1",
     "jsdom": "^24.1.0",
+    "npm-run-all": "^4.1.5",
     "react": "^18.3.1",
     "rimraf": "^3.0.2",
     "styled-components": "^6.1.12",
@@ -35,7 +36,7 @@
     "vitest": "^2.0.1"
   },
   "dependencies": {
-    "@charcoal-ui/icon-files": "^4.1.0",
+    "@charcoal-ui/icon-files": "workspace:*",
     "warning": "^4.0.3"
   },
   "files": [

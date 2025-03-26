@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "4.1.0",
+  "version": "4.4.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -33,18 +33,19 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^4.1.0",
+    "@babel/core": "^7.23.9",
+    "@charcoal-ui/esbuild-plugin-styled-components": "workspace:*",
+    "@react-types/dialog": "^3.5.15",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^8.0.5",
     "@storybook/react": "^8.0.5",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/glob": "^8.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
-    "@types/react-test-renderer": "^18.3.0",
     "@types/warning": "^3.0.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
@@ -59,10 +60,10 @@
     "vitest": "^2.0.1"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^4.1.0",
-    "@charcoal-ui/icons": "^4.1.0",
-    "@charcoal-ui/theme": "^4.1.0",
-    "@charcoal-ui/utils": "^4.1.0",
+    "@charcoal-ui/foundation": "workspace:*",
+    "@charcoal-ui/icons": "workspace:*",
+    "@charcoal-ui/theme": "workspace:*",
+    "@charcoal-ui/utils": "workspace:*",
     "@react-aria/button": "^3.9.1",
     "@react-aria/checkbox": "^3.13.0",
     "@react-aria/dialog": "^3.5.10",
@@ -80,7 +81,8 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "react": ">=17.0.0"
+    "react": ">=17.0.0",
+    "styled-components": ">=5.1.1"
   },
   "files": [
     "src",

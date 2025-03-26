@@ -7,7 +7,7 @@ interface Props {
 
 export { DotsIcon as default }
 
-function DotsIcon({ size }: Props) {
+function DotsIcon({ size = 16 }: Props) {
   return (
     <StyledSVG viewBox="0 0 20 6" width={size} height={size}>
       <path
@@ -22,9 +22,6 @@ function DotsIcon({ size }: Props) {
       />
     </StyledSVG>
   )
-}
-DotsIcon.defaultProps = {
-  size: 16,
 }
 
 const StyledSVG = styled.svg`

@@ -1,11 +1,12 @@
 {
   "name": "@charcoal-ui/icon-files",
-  "version": "4.1.0",
+  "version": "4.4.0",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/index.cjs",
   "module": " ./src/index.js",
   "exports": {
+    "types": "./src/index.d.ts",
     "require": "./src/index.cjs",
     "default": "./src/index.js"
   },

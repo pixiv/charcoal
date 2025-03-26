@@ -99,64 +99,66 @@ exports[`Storybook Tests > styled/addThemeUtils > Example 1`] = `
   background-color: var(--charcoal-brand-press);
 }
 
-<div
-  data-dark={false}
->
+<div>
   <div
-    className="c0"
+    data-dark="false"
   >
     <div
-      className="c1"
+      class="c0"
     >
       <div
-        className="c2"
+        class="c1"
       >
-        \${({ theme }) =&gt; theme.utils.typography(14, true)}
-      </div>
-    </div>
-    <div
-      className="c1"
-    >
-      <div
-        className="c3"
-      >
-        <pre
-          className="c4"
+        <div
+          class="c2"
         >
-          <code
-            className="c5"
+          \${({ theme }) =&gt; theme.utils.typography(14, true)}
+        </div>
+      </div>
+      <div
+        class="c1"
+      >
+        <div
+          class="c3"
+        >
+          <pre
+            class="c4"
           >
-            \${({ theme }) =&gt; [
+            <code
+              class="c5"
+            >
+              \${({ theme }) =&gt; [
     theme.utils.margin(16, 'auto'),
     theme.utils.padding(4, 8, 16, 24),
   ]}
-          </code>
-        </pre>
+            </code>
+          </pre>
+        </div>
       </div>
-    </div>
-    <div
-      className="c1"
-    >
       <div
-        className="c6"
+        class="c1"
       >
-        theme.utils.assertiveRingCss
+        <div
+          class="c6"
+        >
+          theme.utils.assertiveRingCss
+        </div>
       </div>
-    </div>
-    <div
-      className="c1"
-    >
-      <button
-        className="c7"
+      <div
+        class="c1"
       >
-        theme.utils.focusVisibleFocusRingCss
-      </button>
-      <button
-        className="c7"
-        disabled={true}
-      >
-        theme.utils.disabledCss
-      </button>
+        <button
+          class="c7"
+        >
+          theme.utils.focusVisibleFocusRingCss
+        </button>
+        <button
+          class="c7"
+          disabled=""
+        >
+          theme.utils.disabledCss
+        </button>
+      </div>
     </div>
   </div>
 </div>

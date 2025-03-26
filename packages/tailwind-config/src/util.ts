@@ -1,4 +1,4 @@
-import type { TailwindConfig } from 'tailwindcss/tailwind-config'
+import type { Config } from 'tailwindcss'
 import { TailwindVersion, ThemeMap } from './types'
 
 /**
@@ -19,9 +19,7 @@ export function getDefaultKeyName(version: TailwindVersion) {
   }
 }
 
-export function getVariantOption(
-  version: TailwindVersion
-): Partial<TailwindConfig> {
+export function getVariantOption(version: TailwindVersion): Partial<Config> {
   switch (version) {
     case 'v3': {
       // v3 以上では variants は variantOrders に改名された
@@ -77,7 +75,6 @@ export const mapDefaultKey = <O extends object>(o: O) => {
   return JSON.parse(JSON.stringify(o), function reviver(k: string, v: string) {
     if (k === 'default') {
       const DefaultKey = getDefaultKeyName('v3')
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this[DefaultKey] = v
       return undefined
     }

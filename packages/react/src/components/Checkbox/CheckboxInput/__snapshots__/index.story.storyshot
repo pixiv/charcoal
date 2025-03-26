@@ -1,77 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/internals/CheckboxInput > Checked 1`] = `
-<div
-  data-dark={false}
->
-  <input
-    checked={true}
-    className="charcoal-checkbox-input"
-    onChange={[Function]}
-    type="checkbox"
-  />
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      checked=""
+      class="charcoal-checkbox-input"
+      type="checkbox"
+    />
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/internals/CheckboxInput > Default 1`] = `
-<div
-  data-dark={false}
->
-  <input
-    className="charcoal-checkbox-input"
-    onChange={[Function]}
-    type="checkbox"
-  />
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      class="charcoal-checkbox-input"
+      type="checkbox"
+    />
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/internals/CheckboxInput > Disabled 1`] = `
-<div
-  data-dark={false}
->
-  <input
-    checked={false}
-    className="charcoal-checkbox-input"
-    disabled={true}
-    onChange={[Function]}
-    type="checkbox"
-  />
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      class="charcoal-checkbox-input"
+      disabled=""
+      type="checkbox"
+    />
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/internals/CheckboxInput > Invalid 1`] = `
-<div
-  data-dark={false}
->
-  <input
-    aria-invalid={true}
-    checked={false}
-    className="charcoal-checkbox-input"
-    onChange={[Function]}
-    type="checkbox"
-  />
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      aria-invalid="true"
+      class="charcoal-checkbox-input"
+      type="checkbox"
+    />
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/internals/CheckboxInput > Rounded 1`] = `
-<div
-  data-dark={false}
->
+<div>
   <div
-    style={
-      Object {
-        "backgroundColor": "var(--charcoal-background2)",
-        "padding": 8,
-      }
-    }
+    data-dark="false"
   >
-    <input
-      checked={false}
-      className="charcoal-checkbox-input"
-      data-rounded={true}
-      onChange={[Function]}
-      type="checkbox"
-    />
+    <div
+      style="padding: 8px;"
+    >
+      <input
+        class="charcoal-checkbox-input"
+        data-rounded="true"
+        type="checkbox"
+      />
+    </div>
   </div>
 </div>
 `;

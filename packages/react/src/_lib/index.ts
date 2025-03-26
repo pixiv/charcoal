@@ -45,6 +45,8 @@ export function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
       if (typeof ref === 'function') {
         ref(value)
       } else if (ref !== null) {
+        // TODO: use RefObject
+        // https://react.dev/blog/2024/04/25/react-19-upgrade-guide#:~:text=%3D%201%3B-,MutableRef,-is%20now%20deprecated
         ;(ref as React.MutableRefObject<T | null>).current = value
       }
     }

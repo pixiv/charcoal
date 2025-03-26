@@ -1,6 +1,6 @@
 import { Material } from '@charcoal-ui/foundation'
 import { applyEffect, filterObject, mapObject } from '@charcoal-ui/utils'
-import type { TailwindConfig } from 'tailwindcss/tailwind-config'
+import type { Config } from 'tailwindcss'
 import { MergedEffect } from '../foundation'
 
 import { TailwindVersion } from '../types'
@@ -12,7 +12,7 @@ export function colorsToTailwindConfig(
   version: TailwindVersion,
   colors: AnyColorTheme,
   effects: MergedEffect
-): TailwindConfig['theme']['colors'] {
+): NonNullable<Config['theme']>['colors'] {
   const targetColors = filterObject(colors, isSingleColor)
   const DEFAULT = getDefaultKeyName(version)
 

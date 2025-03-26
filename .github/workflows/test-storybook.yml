@@ -27,14 +27,18 @@ jobs:
         with:
           path: __image_snapshots__
           key: image-snapshots-${{ steps.commit-hash.outputs.hash }}
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
       - uses: actions/setup-node@v4
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
       - name: Install dependencies
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: yarn install --immutable --inline-builds
+        run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         uses: actions/cache@v4
@@ -44,15 +48,15 @@ jobs:
           key: ${{ runner.os }}-playwright-runner
       - name: Install Playwright
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: yarn playwright install --with-deps
+        run: pnpm playwright install --with-deps
       - name: Build Storybook
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: |
-          yarn build
-          yarn storybook:build --quiet
+          pnpm build
+          pnpm storybook:build
       - name: Serve Storybook and run tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: yarn test:image-snapshot --updateSnapshot
+        run: pnpm test:image-snapshot --updateSnapshot
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
         with:
@@ -67,12 +71,19 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10.4.0'
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
-          cache: yarn
+          cache: pnpm
+
       - name: Install dependencies
-        run: yarn install --immutable --inline-builds
+        run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
         uses: actions/cache@v4
         with:
@@ -80,11 +91,11 @@ jobs:
             /home/runner/.cache/ms-playwright/
           key: ${{ runner.os }}-playwright-runner
       - name: Install Playwright
-        run: yarn playwright install --with-deps
+        run: pnpm playwright install --with-deps
       - name: Build Storybook
         run: |
-          yarn build
-          yarn storybook:build --quiet
+          pnpm build
+          pnpm storybook:build
       - name: Check label
         uses: actions/github-script@v7
         id: label-checking
@@ -117,10 +128,10 @@ jobs:
           path: __image_snapshots__/
       - name: Serve Storybook and run tests
         if: steps.label-checking.outputs.result != 'true'
-        run: yarn test:image-snapshot
+        run: pnpm test:image-snapshot
       - name: Serve Storybook and take new image snapshots
         if: steps.label-checking.outputs.result == 'true'
-        run: yarn test:image-snapshot --updateSnapshot
+        run: pnpm test:image-snapshot --updateSnapshot
       - name: Archive image snapshot diffs
         uses: actions/upload-artifact@v4
         if: failure() && steps.label-checking.outputs.result != 'true'

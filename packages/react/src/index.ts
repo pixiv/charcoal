@@ -4,6 +4,17 @@ export {
   CharcoalProvider,
   type CharcoalProviderProps,
 } from './core/CharcoalProvider'
+export { makeSetThemeScriptCode, SetThemeScript } from './core/SetThemeScript'
+export {
+  getThemeSync,
+  themeSetter,
+  themeSelector,
+  prefersColorScheme,
+  useTheme,
+  useThemeSetter,
+  useLocalStorage,
+  useMedia,
+} from './core/themeHelper'
 export { default as Button, type ButtonProps } from './components/Button'
 export {
   default as Clickable,
@@ -16,6 +27,12 @@ export {
 } from './components/IconButton'
 export { default as Radio, type RadioProps } from './components/Radio'
 export { RadioGroup, type RadioGroupProps } from './components/Radio/RadioGroup'
+export {
+  default as MultiSelect,
+  type MultiSelectProps,
+  MultiSelectGroup,
+  type MultiSelectGroupProps,
+} from './components/MultiSelect'
 export { default as Switch, type SwitchProps } from './components/Switch'
 export {
   default as TextField,

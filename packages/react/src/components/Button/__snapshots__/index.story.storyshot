@@ -1,117 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storybook Tests > react/Button > Danger 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-variant="Danger"
+<div>
+  <div
+    data-dark="false"
   >
-    Danger
-  </button>
+    <button
+      class="charcoal-button"
+      data-variant="Danger"
+    >
+      Danger
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > Default 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
+<div>
+  <div
+    data-dark="false"
   >
-    Button
-  </button>
+    <button
+      class="charcoal-button"
+    >
+      Button
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > Disabled 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    disabled={true}
+<div>
+  <div
+    data-dark="false"
   >
-    Disabled
-  </button>
+    <button
+      class="charcoal-button"
+      disabled=""
+    >
+      Disabled
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > FullWidth 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-full-width={true}
+<div>
+  <div
+    data-dark="false"
   >
-    Full width
-  </button>
+    <button
+      class="charcoal-button"
+      data-full-width="true"
+    >
+      Full width
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > IsActive 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-active={true}
+<div>
+  <div
+    data-dark="false"
   >
-    Active
-  </button>
+    <button
+      class="charcoal-button"
+      data-active="true"
+    >
+      Active
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > Navigation 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-variant="Navigation"
+<div>
+  <div
+    data-dark="false"
   >
-    Navigation
-  </button>
+    <button
+      class="charcoal-button"
+      data-variant="Navigation"
+    >
+      Navigation
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > Overlay 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-variant="Overlay"
+<div>
+  <div
+    data-dark="false"
   >
-    Overlay
-  </button>
+    <button
+      class="charcoal-button"
+      data-variant="Overlay"
+    >
+      Overlay
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > Primary 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-variant="Primary"
+<div>
+  <div
+    data-dark="false"
   >
-    Primary
-  </button>
+    <button
+      class="charcoal-button"
+      data-variant="Primary"
+    >
+      Primary
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Storybook Tests > react/Button > Small 1`] = `
-<div
-  data-dark={false}
->
-  <button
-    className="charcoal-button"
-    data-size="S"
+<div>
+  <div
+    data-dark="false"
   >
-    Small
-  </button>
+    <button
+      class="charcoal-button"
+      data-size="S"
+    >
+      Small
+    </button>
+  </div>
 </div>
 `;

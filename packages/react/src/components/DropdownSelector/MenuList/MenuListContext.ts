@@ -2,7 +2,7 @@ import { RefObject, createContext } from 'react'
 import { DropdownMenuItemProps } from '../DropdownMenuItem'
 
 type MenuListContextType = {
-  root?: RefObject<HTMLUListElement>
+  root?: RefObject<HTMLUListElement | null>
   value?: string
   propsArray?: DropdownMenuItemProps[]
   setValue: (v: string) => void
