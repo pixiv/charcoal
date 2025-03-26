@@ -51,7 +51,9 @@ jobs:
         run: pnpm playwright install --with-deps
       - name: Build Storybook
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: pnpm build
+        run: |
+          pnpm build
+          pnpm storybook:build
       - name: Serve Storybook and run tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: pnpm test:image-snapshot --updateSnapshot
@@ -91,7 +93,9 @@ jobs:
       - name: Install Playwright
         run: pnpm playwright install --with-deps
       - name: Build Storybook
-        run: pnpm build
+        run: |
+          pnpm build
+          pnpm storybook:build
       - name: Check label
         uses: actions/github-script@v7
         id: label-checking
@@ -122,18 +126,12 @@ jobs:
         with:
           name: base__image-snapshots__
           path: __image_snapshots__/
-      - name: Verify Storybook server can start
-        run: |
-          pnpm http-server storybook-static --port 6006 --silent &
-          PID=$!
-          pnpm wait-on -t 60000 tcp:127.0.0.1:6006
-          kill $PID
       - name: Serve Storybook and run tests
         if: steps.label-checking.outputs.result != 'true'
-        run: pnpm test:image-snapshot:ci
+        run: pnpm test:image-snapshot
       - name: Serve Storybook and take new image snapshots
         if: steps.label-checking.outputs.result == 'true'
-        run: pnpm test:image-snapshot:ci --updateSnapshot
+        run: pnpm test:image-snapshot --updateSnapshot
       - name: Archive image snapshot diffs
         uses: actions/upload-artifact@v4
         if: failure() && steps.label-checking.outputs.result != 'true'
