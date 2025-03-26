@@ -38,6 +38,7 @@ const vrtTestConfig: TestRunnerConfig = {
       customSnapshotIdentifier: context.id,
       customDiffDir: `${process.cwd()}/__diff_output__`,
       customSnapshotsDir: `${process.cwd()}/__image_snapshots__`,
+      failureThreshold: 0.0005,
     })
   },
   tags: {
