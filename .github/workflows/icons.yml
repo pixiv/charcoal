@@ -52,6 +52,8 @@ jobs:
           app_id: ${{ secrets.CHARCOAL_BOT_APP_ID }}
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
 
+      - run: git status --porcelain
+
       - name: Create Pull Request for updated icons
         env:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}

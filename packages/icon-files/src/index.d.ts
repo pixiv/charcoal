@@ -232,6 +232,7 @@ declare var _default: {
   '32/ReadHorizontalLeft': () => Promise<string>;
   '32/ReadHorizontalRight': () => Promise<string>;
   '32/ReadVertical': () => Promise<string>;
+  '32/Redo': () => Promise<string>;
   '32/RollHorizontal': () => Promise<string>;
   '32/RollVertical': () => Promise<string>;
   '32/SansSerif': () => Promise<string>;
@@ -239,6 +240,7 @@ declare var _default: {
   '32/ShareAndroid': () => Promise<string>;
   '32/ShareIos': () => Promise<string>;
   '32/Shopping': () => Promise<string>;
+  '32/Undo': () => Promise<string>;
   '32/Upload': () => Promise<string>;
   '32/User': () => Promise<string>;
   '32/VerticalWriting': () => Promise<string>;
