@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  OUTPUT_ROOT_DIR: packages/icon-files/
+  OUTPUT_ROOT_DIR: ../icon-files/
   TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'main' }}
 
 jobs:
@@ -51,6 +51,8 @@ jobs:
         with:
           app_id: ${{ secrets.CHARCOAL_BOT_APP_ID }}
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
+
+      - run: git status --porcelain
 
       - name: Create Pull Request for updated icons
         env:

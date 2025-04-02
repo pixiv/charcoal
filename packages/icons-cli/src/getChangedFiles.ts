@@ -9,8 +9,10 @@ export async function* getChangedFiles(dir: string) {
   if (!existsSync(dir))
     throw new Error(`icons-cli: target directory not found (${dir})`)
   const gitStatus = await collectGitStatus()
+  // eslint-disable-next-line no-console
+  console.dir(gitStatus)
   for (const [relativePath, status] of gitStatus) {
-    const fullpath = path.resolve(process.cwd(), relativePath)
+    const fullpath = path.resolve(process.cwd(), '../../', relativePath)
     if (!fullpath.startsWith(`${dir}/`)) {
       continue
     }
