@@ -1,5 +1,5 @@
 import { light, dark, ThemeColor } from '..'
-import { useDarkMode } from 'storybook-dark-mode'
+import { useDarkMode } from '../../../../.storybook/use-dark-mode'
 
 type ColorProps = keyof ThemeColor
 
