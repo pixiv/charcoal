@@ -8,7 +8,9 @@ export function usePreventScroll(element: HTMLElement | null, isOpen: boolean) {
       element.style.paddingRight = `${
         window.innerWidth - element.clientWidth
       }px`
-      element.style.overflow = 'hidden'
+      element.style.overflow = window.CSS.supports('overflow', 'clip')
+        ? 'clip'
+        : 'hidden'
       return () => {
         element.style.paddingRight = defaultPaddingRight
         element.style.overflow = defaultOverflow
