@@ -126,6 +126,7 @@ export class FigmaFileClient {
       format: this.exportFormat,
       ids: Object.keys(this.components),
       scale: 1,
+      ...(this.exportFormat == 'pdf' ? { use_absolute_bounds: true } : {}),
     })
 
     for (const [id, image] of Object.entries(data.images)) {
@@ -145,6 +146,7 @@ export class FigmaFileClient {
             'Content-Type': getContentType(this.exportFormat),
           },
           encoding: 'utf8',
+          ...(this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {}),
         })
 
         const filename = `${filenamify(component.name)}.${this.exportFormat}`
