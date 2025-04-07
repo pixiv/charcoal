@@ -117,6 +117,7 @@ export class FigmaFileClient {
       format: this.exportFormat,
       ids: Object.keys(this.components),
       scale: 1,
+      ...(this.exportFormat == 'pdf' ? { use_absolute_bounds: true } : {}),
     })
 
     for (const [id, image] of Object.entries(data.images)) {
@@ -131,7 +132,10 @@ export class FigmaFileClient {
           return
         }
 
-        const svg = await got(component.image).text()
+        const response = await got.get(
+          component.image,
+          this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {}
+        )
 
         const filename = `${filenamify(component.name)}.${this.exportFormat}`
         const fullname = path.join(outputDir, filename)
@@ -141,7 +145,7 @@ export class FigmaFileClient {
 
         // eslint-disable-next-line no-console
         console.log(`found: ${filename} => ✅ writing...`)
-        await writeFile(fullname, svg, 'utf8')
+        await writeFile(fullname, response.body, 'utf8')
       })
     )
   }
