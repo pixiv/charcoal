@@ -13,8 +13,11 @@ import { usePreventScroll } from '../DropdownSelector/Popover/usePreventScroll'
  * but `useModalOverlay` (specifically, `useOverlay` within it) detects pointer events on the scrollbar.
  * Therefore, to prevent this issue, we need to override `shouldCloseOnInteractOutside` in `useModalOverlay`.
  */
+export type CharcoalModalOverlayProps = AriaModalOverlayProps & {
+  overflowClip?: boolean
+}
 export function useCharcoalModalOverlay(
-  props: AriaModalOverlayProps,
+  props: CharcoalModalOverlayProps,
   state: { isOpen: boolean; onClose: () => void },
   ref: React.RefObject<HTMLElement | null>
 ): ModalOverlayAria {
@@ -30,7 +33,8 @@ export function useCharcoalModalOverlay(
 
   usePreventScroll(
     typeof document !== 'undefined' ? document.body : null,
-    state.isOpen
+    state.isOpen,
+    props.overflowClip
   )
 
   useOverlayFocusContain()

@@ -1,6 +1,10 @@
 import { useEffect } from 'react'
 
-export function usePreventScroll(element: HTMLElement | null, isOpen: boolean) {
+export function usePreventScroll(
+  element: HTMLElement | null,
+  isOpen: boolean,
+  useClip = false
+) {
   useEffect(() => {
     if (isOpen && element) {
       const defaultPaddingRight = element.style.paddingRight
@@ -8,11 +12,11 @@ export function usePreventScroll(element: HTMLElement | null, isOpen: boolean) {
       element.style.paddingRight = `${
         window.innerWidth - element.clientWidth
       }px`
-      element.style.overflow = 'hidden'
+      element.style.overflow = useClip ? 'clip' : 'hidden'
       return () => {
         element.style.paddingRight = defaultPaddingRight
         element.style.overflow = defaultOverflow
       }
     }
-  }, [element, isOpen])
+  }, [element, isOpen, useClip])
 }
