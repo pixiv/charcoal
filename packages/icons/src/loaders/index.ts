@@ -38,6 +38,8 @@ function resolveIconLoader(name: string) {
     return registeredLoader
   }
 
+  
+
   // `@charcoal-ui/icon-files` に収録されているアイコンにはこれを返す
   if (isKnownIconFile(name)) {
     const charcoalIconFilesLoader = new CharcoalIconFilesLoader(name)

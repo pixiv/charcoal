@@ -356,6 +356,9 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
     devDependencies:
+      '@charcoal-ui/icon-types':
+        specifier: workspace:^
+        version: link:../icon-types
       '@storybook/react':
         specifier: ^8.5.5
         version: 8.6.9(@storybook/test@8.6.9(storybook@8.6.9(prettier@3.5.3)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.9(prettier@3.5.3))(typescript@4.9.5)

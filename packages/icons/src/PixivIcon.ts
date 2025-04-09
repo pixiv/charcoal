@@ -1,7 +1,9 @@
+import type { IconFiles } from '@charcoal-ui/icon-types'
 import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
+import { addIconFilePackage } from './loaders/CustomFilePackageLoader'
 import { __SERVER__ } from './ssr'
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
@@ -54,6 +56,10 @@ export class PixivIcon extends HTMLElement {
 
       addCustomIcon(name, filePathOrUrl)
     })
+  }
+
+  static addFilePackage(prefix: string, files: IconFiles) {
+    addIconFilePackage(prefix, files)
   }
 
   static get observedAttributes() {
