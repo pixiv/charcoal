@@ -11,7 +11,6 @@ export type PopoverProps = {
   children: ReactNode
   triggerRef: RefObject<Element | null>
   popoverRef?: RefObject<HTMLDivElement | null>
-  overflowClip?: boolean
 }
 
 const _empty = () => null
@@ -43,7 +42,7 @@ export default function Popover(props: PopoverProps) {
   )
 
   const modalBackground = useContext(ModalBackgroundContext)
-  usePreventScroll(modalBackground, props.isOpen, props.overflowClip)
+  usePreventScroll(modalBackground, props.isOpen)
 
   if (!props.isOpen) return null
 

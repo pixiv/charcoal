@@ -44,7 +44,6 @@ export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
       onClose={props.onClose}
       popoverRef={ref}
       triggerRef={props.triggerRef}
-      overflowClip={props.overflowClip}
     >
       {children}
     </Popover>
