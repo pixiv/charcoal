@@ -30,7 +30,7 @@ jobs:
         id: pnpm-store-path
         run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
           version: '10.4.0'
