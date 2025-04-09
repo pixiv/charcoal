@@ -1,6 +1,6 @@
 import { useContext, forwardRef, memo } from 'react'
 import * as React from 'react'
-import { AriaModalOverlayProps, Overlay } from '@react-aria/overlays'
+import { Overlay } from '@react-aria/overlays'
 import type { AriaDialogProps } from '@react-types/dialog'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
@@ -9,6 +9,7 @@ import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
 import {
+  CharcoalModalOverlayProps,
   useCharcoalModalOverlay,
   useWindowWidth,
 } from './useCustomModalOverlay'
@@ -18,7 +19,7 @@ import './index.css'
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'
 
-export type ModalProps = AriaModalOverlayProps &
+export type ModalProps = CharcoalModalOverlayProps &
   AriaDialogProps & {
     children: React.ReactNode
     zIndex?: number
