@@ -58,17 +58,9 @@ jobs:
           pnpm build
           pnpm storybook:build
 
-      - name: Check if CI is true
-        run: |
-          echo "CI: ${{ env.CI }}"
-
       - name: Serve Storybook and run tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: pnpm test:image-snapshot --updateSnapshot
-
-      - name: Show Snapshot files
-        run: |
-          ls -la __image_snapshots__
 
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v4
@@ -139,10 +131,6 @@ jobs:
         with:
           name: base__image-snapshots__
           path: __image_snapshots__/
-      - name: Show Snapshot files
-        run: |
-          echo ${{ steps.label-checking.outputs.result }}
-          ls -la __image_snapshots__
       - name: Serve Storybook and run tests
         if: steps.label-checking.outputs.result != 'true'
         run: pnpm test:image-snapshot
