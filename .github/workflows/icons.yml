@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  OUTPUT_ROOT_DIR: packages/icon-files/
+  OUTPUT_ROOT_DIR: ../icon-files/
   TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'main' }}
 
 jobs:
