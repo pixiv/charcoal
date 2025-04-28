@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef } from 'react'
+import { ElementType, ForwardedRef, forwardRef, ForwardRefExoticComponent, JSX, RefAttributes } from 'react'
 import ListItem, { ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
@@ -11,7 +11,7 @@ export type MenuItemProps<T extends React.ElementType = 'li'> = {
  * 上下キーでフォーカス移動でき、エンターキーで選択できるリストの項目
  * 基本的に`<MenuList>`, `<MenuGroup>`と合わせて使用する
  */
-const MenuItem = forwardRef(function MenuItem<
+const MenuItem: ForwardRefExoticComponent<Omit<MenuItemProps<ElementType<any, keyof JSX.IntrinsicElements>>, "ref"> & RefAttributes<HTMLLIElement>> = forwardRef(function MenuItem<
   T extends React.ElementType = 'li'
 >(
   { className, value, disabled, ...props }: MenuItemProps<T>,

@@ -25,9 +25,7 @@
     "*.css"
   ],
   "scripts": {
-    "build": "run-p --print-label 'build:*'",
-    "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build": "FORCE_COLOR=1 tsdown",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
@@ -55,7 +53,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.2.1",
     "rimraf": "^3.0.2",
-    "tsup": "^6.5.0",
+    "tsdown": "latest",
     "typescript": "^4.9.5",
     "vitest": "^2.0.1"
   },

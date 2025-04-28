@@ -4,13 +4,14 @@ import MenuItem, { MenuItemProps } from '../MenuItem'
 import { MenuListContext } from '../MenuList/MenuListContext'
 import { useContext } from 'react'
 import Icon from '../../Icon'
+import { JSX } from 'react/jsx-runtime'
 
 export type DropdownMenuItemProps = Omit<MenuItemProps, 'as'>
 
 /**
  * DropdownSelectorの選択肢として使うMenuItem
  */
-export default function DropdownMenuItem(props: DropdownMenuItemProps) {
+export default function DropdownMenuItem(props: DropdownMenuItemProps): JSX.Element {
   const { value: ctxValue } = useContext(MenuListContext)
   const isSelected = props.value === ctxValue
   const { children, ...rest } = props

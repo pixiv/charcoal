@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export function useForwardedRef<T>(ref: React.ForwardedRef<T>) {
+export function useForwardedRef<T>(ref: React.ForwardedRef<T>): React.RefObject<T> {
   const innerRef = React.useRef<T>(null)
 
   React.useEffect(() => {

@@ -7,7 +7,10 @@ import { Size, BottomSheet } from '..'
 import './index.css'
 import { useClassNames } from '../../../_lib/useClassNames'
 
-export const Dialog = forwardRef<
+export const Dialog: React.ForwardRefExoticComponent<Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
+  size: Size
+  bottomSheet: BottomSheet
+} & React.RefAttributes<HTMLDivElement>> = forwardRef<
   HTMLDivElement,
   React.ComponentPropsWithoutRef<'div'> & {
     size: Size

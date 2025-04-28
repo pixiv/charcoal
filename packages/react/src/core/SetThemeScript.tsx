@@ -40,7 +40,7 @@ export function makeSetThemeScriptCode({
 export function SetThemeScript({
   localStorageKey = defaultProps.localStorageKey,
   rootAttribute = defaultProps.rootAttribute,
-}: Props) {
+}: Props): JSX.Element {
   const src = makeSetThemeScriptCode({ localStorageKey, rootAttribute })
   return (
     <script

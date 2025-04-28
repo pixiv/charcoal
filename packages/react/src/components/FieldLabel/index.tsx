@@ -13,7 +13,7 @@ export interface FieldLabelProps
   readonly requiredText?: string
 }
 
-const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
+const FieldLabel: React.ForwardRefExoticComponent<FieldLabelProps & React.RefAttributes<HTMLLabelElement>> = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
   function FieldLabel(
     {
       style,

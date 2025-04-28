@@ -55,7 +55,7 @@ function isWindowDefined() {
   return typeof window !== 'undefined'
 }
 
-export function useWindowWidth() {
+export function useWindowWidth(): number | null {
   const [width, setWidth] = React.useState(
     isWindowDefined() ? window.innerWidth : null
   )

@@ -1,5 +1,6 @@
 import { Key, useEffect, useRef } from 'react'
 import Popover, { PopoverProps } from './Popover'
+import { JSX } from 'react/jsx-runtime'
 
 type DropdownPopoverProps = PopoverProps & {
   value?: Key
@@ -10,7 +11,7 @@ type DropdownPopoverProps = PopoverProps & {
  * triggerRefの要素と同じ幅になる
  * 表示の際にvalueが等しいDropdownMenuItemを中央に表示する
  */
-export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
+export function DropdownPopover({ children, ...props }: DropdownPopoverProps): JSX.Element {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (props.isOpen && ref.current && props.triggerRef.current) {

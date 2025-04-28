@@ -57,4 +57,4 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   )
 })
 
-export default memo(Radio)
+export default memo(Radio) as React.ForwardRefExoticComponent<React.PropsWithoutRef<RadioProps> & React.RefAttributes<HTMLInputElement>>

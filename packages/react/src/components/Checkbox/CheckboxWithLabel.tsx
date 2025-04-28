@@ -1,7 +1,13 @@
 import React from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 
-export const CheckboxWithLabel = React.memo(function CheckboxWithLabel({
+export const CheckboxWithLabel: React.NamedExoticComponent<{
+  children: React.ReactNode
+  input: React.ReactNode
+  disabled?: boolean
+  className?: string
+  id?: string
+}> = React.memo(function CheckboxWithLabel({
   className,
   children,
   input,

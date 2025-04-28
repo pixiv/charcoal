@@ -2,6 +2,7 @@ import Clickable from '../Clickable'
 import TextField from '.'
 import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
+import { JSX } from 'react/jsx-runtime'
 
 export default {
   title: 'react/TextField',
@@ -62,7 +63,7 @@ export const SubLabel: StoryObj<typeof TextField> = {
 }
 
 export const ShowCount = {
-  render() {
+  render(): JSX.Element {
     return <TextField label="Label" showCount maxLength={100} />
   },
 }

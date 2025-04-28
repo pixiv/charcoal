@@ -53,7 +53,7 @@ export function mergeRefs<T>(...refs: React.Ref<T>[]): React.RefCallback<T> {
   }
 }
 
-export function countCodePointsInString(string: string) {
+export function countCodePointsInString(string: string): number {
   // [...string] とするとproduction buildで動かなくなる
   // cf. https://twitter.com/f_subal/status/1497214727511891972
   return Array.from(string).length

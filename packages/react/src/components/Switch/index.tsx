@@ -42,4 +42,4 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   )
 })
 
-export default memo(Switch)
+export default memo(Switch) as React.ForwardRefExoticComponent<React.PropsWithoutRef<SwitchProps> & React.RefAttributes<HTMLInputElement>>

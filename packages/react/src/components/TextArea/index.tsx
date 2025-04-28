@@ -1,7 +1,7 @@
 import './index.css'
 
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
+import { DetailedHTMLProps, forwardRef, ForwardRefExoticComponent, RefAttributes, TextareaHTMLAttributes, useCallback, useEffect, useRef, useState } from 'react'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
@@ -27,7 +27,20 @@ export type TextAreaProps = {
   getCount?: (value: string) => number
 } & Omit<React.ComponentPropsWithoutRef<'textarea'>, 'onChange'>
 
-const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+const TextArea: ForwardRefExoticComponent<{
+  value?: string
+  onChange?: (value: string) => void
+  showCount?: boolean
+  showLabel?: boolean
+  assistiveText?: string
+  invalid?: boolean
+  label?: string
+  requiredText?: string
+  disabled?: boolean
+  subLabel?: React.ReactNode
+  autoHeight?: boolean
+  getCount?: (value: string) => number
+} & Omit<Omit<DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, "ref">, "onChange"> & RefAttributes<HTMLTextAreaElement>> = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   function TextAreaInner(
     {
       onChange,

@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { Context, createContext } from 'react'
 
 type MultiSelectGroupContext = {
   name: string
@@ -9,7 +9,7 @@ type MultiSelectGroupContext = {
   onChange: ({ value, selected }: { value: string; selected: boolean }) => void
 }
 
-export const MultiSelectGroupContext = createContext<MultiSelectGroupContext>({
+export const MultiSelectGroupContext: Context<MultiSelectGroupContext> = createContext<MultiSelectGroupContext>({
   name: undefined as never,
   selected: [],
   disabled: false,

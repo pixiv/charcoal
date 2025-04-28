@@ -9,7 +9,7 @@ export interface RadioGroupContext {
   onChange: (next: string) => void
 }
 
-export const RadioGroupContext = React.createContext<RadioGroupContext>({
+export const RadioGroupContext: React.Context<RadioGroupContext> = React.createContext<RadioGroupContext>({
   name: undefined as never,
   selected: undefined,
   disabled: false,

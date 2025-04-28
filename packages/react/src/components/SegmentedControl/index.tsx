@@ -77,7 +77,8 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
   }
 )
 
-export default memo(SegmentedControl)
+const _default_1: React.MemoExoticComponent<React.ForwardRefExoticComponent<SegmentedControlProps & React.RefAttributes<HTMLDivElement>>> = memo(SegmentedControl)
+export default _default_1
 
 type RadioProps = {
   value: string

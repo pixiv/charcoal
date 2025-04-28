@@ -5,7 +5,7 @@
  * @param element
  * @param parent
  */
-export function handleFocusByKeyBoard(element: Element, parent: HTMLElement) {
+export function handleFocusByKeyBoard(element: Element, parent: HTMLElement): void {
   const isScrollable = parent.scrollHeight > parent.clientHeight
   if (isScrollable) {
     const rect = element.getBoundingClientRect()

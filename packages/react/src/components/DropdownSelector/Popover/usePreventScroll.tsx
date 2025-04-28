@@ -4,7 +4,7 @@ export function usePreventScroll(
   element: HTMLElement | null,
   isOpen: boolean,
   useClip = false
-) {
+): void {
   useEffect(() => {
     if (isOpen && element) {
       const defaultPaddingRight = element.style.paddingRight
