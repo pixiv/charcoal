@@ -1,6 +1,6 @@
 import './index.css'
 
-import { forwardRef, useCallback } from 'react'
+import { forwardRef, ForwardRefExoticComponent, RefAttributes, useCallback } from 'react'
 import { useClassNames } from '../../../_lib/useClassNames'
 
 export type CharcoalSwitchProps = {
@@ -12,7 +12,7 @@ type InputProps = React.HTMLProps<HTMLInputElement>
 export type SwitchInputProps = CharcoalSwitchProps &
   Omit<InputProps, keyof CharcoalSwitchProps | 'ref'>
 
-const SwitchInput = forwardRef<
+const SwitchInput: ForwardRefExoticComponent<Omit<SwitchInputProps, "children"> & RefAttributes<HTMLInputElement>> = forwardRef<
   HTMLInputElement,
   Omit<SwitchInputProps, 'children'>
 >(function SwitchInput({ onChange, className, ...props }, ref) {

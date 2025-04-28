@@ -6,7 +6,7 @@ export type CharcoalProviderProps = {
   children: React.ReactNode
 }
 
-export function CharcoalProvider({ children }: CharcoalProviderProps) {
+export function CharcoalProvider({ children }: CharcoalProviderProps): JSX.Element {
   return (
     <SSRProvider>
       <OverlayProvider>{children}</OverlayProvider>

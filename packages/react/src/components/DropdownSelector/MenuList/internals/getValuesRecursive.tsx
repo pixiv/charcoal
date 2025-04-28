@@ -12,7 +12,7 @@ import { DropdownMenuItemProps } from '../../DropdownMenuItem'
  * @param values
  * @returns
  */
-export function getValuesRecursive(children: MenuListChildren) {
+export function getValuesRecursive(children: MenuListChildren): DropdownMenuItemProps[] {
   const childArray = React.Children.toArray(children)
   const propsArray: DropdownMenuItemProps[] = []
   for (let i = 0; i < childArray.length; i++) {

@@ -86,4 +86,4 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
   }
 ) as <T extends React.ElementType = 'button'>(p: TagItemProps<T>) => JSX.Element
 
-export default memo(TagItem)
+export default memo(TagItem) as React.ForwardRefExoticComponent<React.PropsWithoutRef<TagItemProps> & React.RefAttributes<HTMLButtonElement>>

@@ -1,5 +1,5 @@
 import { SSRProvider as OriginSSRProvider } from '@react-aria/ssr'
-import { version, Fragment } from 'react'
+import { version, Fragment, ExoticComponent, ReactNode } from 'react'
 
 export function isReactVersionOver(minVersion: number): boolean {
   // version history on the react side: https://github.com/facebook/react/commits/main/packages/shared/ReactVersion.js
@@ -9,4 +9,6 @@ export function isReactVersionOver(minVersion: number): boolean {
     : false
 }
 
-export const SSRProvider = isReactVersionOver(18) ? Fragment : OriginSSRProvider
+export const SSRProvider: ExoticComponent<{
+  children?: ReactNode | undefined
+}> | typeof OriginSSRProvider = isReactVersionOver(18) ? Fragment : OriginSSRProvider

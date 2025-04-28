@@ -1,6 +1,6 @@
 import './index.css'
 
-import { forwardRef, memo, useCallback } from 'react'
+import { forwardRef, ForwardRefExoticComponent, memo, MemoExoticComponent, RefAttributes, useCallback } from 'react'
 import { useClassNames } from '../../../_lib/useClassNames'
 
 type CharcoalCheckboxInputProps = {
@@ -44,4 +44,5 @@ const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   }
 )
 
-export default memo(CheckboxInput)
+const _default_1: MemoExoticComponent<ForwardRefExoticComponent<CharcoalCheckboxInputProps & Omit<InputProps, "ref" | keyof CharcoalCheckboxInputProps> & RefAttributes<HTMLInputElement>>> = memo(CheckboxInput)
+export default _default_1

@@ -1,6 +1,6 @@
 import './index.css'
 
-import { forwardRef, memo, useCallback } from 'react'
+import { forwardRef, ForwardRefExoticComponent, memo, MemoExoticComponent, RefAttributes, useCallback } from 'react'
 import { useClassNames } from '../../../_lib/useClassNames'
 
 type CharcoalRadioInputProps = {
@@ -38,4 +38,5 @@ const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
   }
 )
 
-export default memo(RadioInput)
+const _default_1: MemoExoticComponent<ForwardRefExoticComponent<CharcoalRadioInputProps & Omit<InputProps, "ref" | keyof CharcoalRadioInputProps> & RefAttributes<HTMLInputElement>>> = memo(RadioInput)
+export default _default_1

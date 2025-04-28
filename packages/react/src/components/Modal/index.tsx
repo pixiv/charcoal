@@ -15,6 +15,7 @@ import {
 } from './useCustomModalOverlay'
 
 import './index.css'
+import { JSX } from 'react/jsx-runtime'
 
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'
@@ -192,9 +193,19 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
 
 const AnimatedDialog = animated(Dialog)
 
-export default memo(Modal)
+const _default_1: React.MemoExoticComponent<React.ForwardRefExoticComponent<any>> = memo(Modal)
+export default _default_1
 
-export const ModalContext = React.createContext<{
+export const ModalContext: React.Context<{
+  /**
+   * @deprecated
+   */
+  titleProps: React.HTMLAttributes<HTMLElement>
+  title: string
+  close?: () => void
+  showDismiss: boolean
+  bottomSheet: BottomSheet
+}> = React.createContext<{
   /**
    * @deprecated
    */
@@ -211,7 +222,7 @@ export const ModalContext = React.createContext<{
   bottomSheet: false,
 })
 
-export function ModalCloseButton(props: Omit<IconButtonProps, 'icon'>) {
+export function ModalCloseButton(props: Omit<IconButtonProps, 'icon'>): JSX.Element {
   return (
     <IconButton
       className="charcoal-modal-close-button"
@@ -223,7 +234,7 @@ export function ModalCloseButton(props: Omit<IconButtonProps, 'icon'>) {
   )
 }
 
-export function ModalDismissButton({ children, ...props }: ButtonProps) {
+export function ModalDismissButton({ children, ...props }: ButtonProps): JSX.Element | null {
   const { close, showDismiss } = useContext(ModalContext)
 
   if (!showDismiss) {

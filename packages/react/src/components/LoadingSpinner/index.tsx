@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useRef, memo } from 'react'
+import { forwardRef, useImperativeHandle, useRef, memo, ForwardRefExoticComponent, RefAttributes } from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 
 import './index.css'
@@ -37,7 +37,7 @@ const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
   }
 )
 
-export default memo(LoadingSpinner)
+export default memo(LoadingSpinner) as React.MemoExoticComponent<React.ForwardRefExoticComponent<LoadingSpinnerProps & React.RefAttributes<HTMLDivElement>>>
 
 type Props = {
   once?: boolean
@@ -47,7 +47,7 @@ export interface LoadingSpinnerIconHandler {
   restart(): void
 }
 
-export const LoadingSpinnerIcon = forwardRef<LoadingSpinnerIconHandler, Props>(
+export const LoadingSpinnerIcon: ForwardRefExoticComponent<Props & RefAttributes<LoadingSpinnerIconHandler>> = forwardRef<LoadingSpinnerIconHandler, Props>(
   function LoadingSpinnerIcon({ once = false }, ref) {
     const iconRef = useRef<HTMLDivElement>(null)
 

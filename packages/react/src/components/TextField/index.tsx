@@ -31,7 +31,22 @@ export type TextFieldProps = {
   getCount?: (value: string) => number
 } & Omit<React.ComponentPropsWithoutRef<'input'>, 'prefix' | 'onChange'>
 
-const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
+const TextField: React.ForwardRefExoticComponent<{
+  prefix?: ReactNode
+  suffix?: ReactNode
+  value?: string
+  onChange?: (value: string) => void
+  showCount?: boolean
+  showLabel?: boolean
+  assistiveText?: string
+  invalid?: boolean
+  label?: string
+  requiredText?: string
+  disabled?: boolean
+  subLabel?: React.ReactNode
+  rdfaPrefix?: string
+  getCount?: (value: string) => number
+} & Omit<Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref">, "onChange" | "prefix"> & React.RefAttributes<HTMLInputElement>> = React.forwardRef<HTMLInputElement, TextFieldProps>(
   function SingleLineTextFieldInner(
     {
       assistiveText,

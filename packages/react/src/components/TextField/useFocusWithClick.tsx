@@ -4,7 +4,7 @@ import * as React from 'react'
 export function useFocusWithClick(
   containerRef: React.RefObject<HTMLDivElement | null>,
   inputRef: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>
-) {
+): void {
   useEffect(() => {
     const el = containerRef.current
     if (el) {

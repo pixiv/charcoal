@@ -1,6 +1,6 @@
 import './index.css'
 
-import { forwardRef, memo } from 'react'
+import { forwardRef, ForwardRefExoticComponent, HTMLProps, memo, MemoExoticComponent, RefAttributes } from 'react'
 import { useId } from '@react-aria/utils'
 import CheckboxInput, { CheckboxInputProps } from './CheckboxInput'
 import { CheckboxWithLabel } from './CheckboxWithLabel'
@@ -36,4 +36,12 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxInputProps>(
   }
 )
 
-export default memo(Checkbox)
+export default memo(Checkbox) as MemoExoticComponent<ForwardRefExoticComponent<{
+  invalid?: boolean
+  onChange?: (checked: boolean) => void
+  rounded?: boolean
+} & Omit<HTMLProps<HTMLInputElement>, keyof {
+  invalid?: boolean
+  onChange?: (checked: boolean) => void
+  rounded?: boolean
+} | "ref"> & RefAttributes<HTMLInputElement>>>

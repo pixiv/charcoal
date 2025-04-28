@@ -6,6 +6,7 @@ import { getValuesRecursive } from './internals/getValuesRecursive'
 import MenuItem from '../MenuItem'
 import { Divider } from '../Divider'
 import MenuItemGroup from '../MenuItemGroup'
+import { JSX } from 'react/jsx-runtime'
 
 type MenuListChild = React.ReactElement<
   typeof MenuItem | typeof MenuItemGroup | typeof Divider
@@ -19,7 +20,7 @@ export type MenuListProps = {
   onChange?: (v: string) => void
 }
 
-export default function MenuList(props: MenuListProps) {
+export default function MenuList(props: MenuListProps): JSX.Element {
   const root = useRef(null)
   const propsArray = useMemo(
     () => getValuesRecursive(props.children),

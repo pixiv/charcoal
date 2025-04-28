@@ -11,6 +11,7 @@ import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 import { useId } from '@react-aria/utils'
+import { JSX } from 'react/jsx-runtime'
 
 export type DropdownSelectorProps = {
   label: string
@@ -36,7 +37,7 @@ export default function DropdownSelector({
   onChange,
   showLabel = false,
   ...props
-}: DropdownSelectorProps) {
+}: DropdownSelectorProps): JSX.Element {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)

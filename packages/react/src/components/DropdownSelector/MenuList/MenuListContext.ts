@@ -1,4 +1,4 @@
-import { RefObject, createContext } from 'react'
+import { Context, RefObject, createContext } from 'react'
 import { DropdownMenuItemProps } from '../DropdownMenuItem'
 
 type MenuListContextType = {
@@ -8,7 +8,7 @@ type MenuListContextType = {
   setValue: (v: string) => void
 }
 
-export const MenuListContext = createContext<MenuListContextType>({
+export const MenuListContext: Context<MenuListContextType> = createContext<MenuListContextType>({
   root: undefined,
   value: '',
   propsArray: [],

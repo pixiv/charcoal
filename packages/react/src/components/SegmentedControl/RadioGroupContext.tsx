@@ -13,7 +13,7 @@ export const RadioProvider: React.FC<RadioProviderProps> = ({
 }) => {
   return <RadioContext.Provider value={value}>{children}</RadioContext.Provider>
 }
-export const useRadioContext = () => {
+export const useRadioContext = (): RadioGroupState|null => {
   const state = useContext(RadioContext)
 
   if (state === null)

@@ -14,7 +14,7 @@ export interface IconProps
       Omit<Props, 'class' | 'unsafe-non-guideline-scale' | 'css'>
     > {}
 
-const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
+const Icon: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<PixivIcon>> = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   { name, scale, unsafeNonGuidelineScale, className, ...rest },
   ref
 ) {

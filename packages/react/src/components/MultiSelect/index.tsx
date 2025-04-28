@@ -86,7 +86,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
   }
 )
 
-export default memo(MultiSelect)
+export default memo(MultiSelect) as React.ForwardRefExoticComponent<React.PropsWithoutRef<MultiSelectProps> & React.RefAttributes<HTMLInputElement>>
 
 export type MultiSelectGroupProps = React.PropsWithChildren<{
   className?: string
@@ -111,7 +111,7 @@ export function MultiSelectGroup({
   readonly = false,
   invalid = false,
   children,
-}: MultiSelectGroupProps) {
+}: MultiSelectGroupProps): JSX.Element {
   const handleChange = useCallback(
     (payload: { value: string; selected: boolean }) => {
       const index = selected.indexOf(payload.value)

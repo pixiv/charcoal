@@ -1,7 +1,13 @@
 import * as React from 'react'
 import { useClassNames } from '../../_lib/useClassNames'
 
-export const SwitchWithLabel = React.memo(function SwitchWithLabel({
+export const SwitchWithLabel: React.NamedExoticComponent<{
+  children: React.ReactNode
+  className?: string
+  disabled?: boolean
+  id?: string
+  input: React.ReactNode
+}> = React.memo(function SwitchWithLabel({
   children,
   className,
   disabled,

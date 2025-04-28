@@ -4,6 +4,7 @@ import { RefObject, useContext, useRef, ReactNode } from 'react'
 import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
 import { usePreventScroll } from './usePreventScroll'
+import { JSX } from 'react/jsx-runtime'
 
 export type PopoverProps = {
   isOpen: boolean
@@ -21,7 +22,7 @@ const _empty = () => null
  *
  * triggerRefの付近に画面内に収まるように表示される
  */
-export default function Popover(props: PopoverProps) {
+export default function Popover(props: PopoverProps): JSX.Element | null {
   const defaultPopoverRef = useRef<HTMLDivElement>(null)
   const finalPopoverRef =
     props.popoverRef === undefined ? defaultPopoverRef : props.popoverRef
