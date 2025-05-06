@@ -1,9 +1,14 @@
 import { PixivIconLoadError } from './PixivIconLoadError'
 import { Loadable } from './Loadable'
-import charcoalIconFiles, { KnownIconFile } from '../charcoalIconFiles'
+import { KnownIconFile } from '../charcoalIconFiles'
 import { IconFiles } from '@charcoal-ui/icon-types'
 
 export class CustomFilePackageLoader implements Loadable {
+  /**
+   * icons-filesと同じ型のパッケージをしまっとくところ
+   */
+  static filePackages = new Map<string, () => Promise<string>>()
+
   private _name: KnownIconFile
   private _resultSvg: string | undefined = undefined
   private _promise: Promise<string> | undefined = undefined
@@ -13,7 +18,10 @@ export class CustomFilePackageLoader implements Loadable {
   }
 
   get importIconFile() {
-    return charcoalIconFiles[this._name]
+    const icon = CustomFilePackageLoader.filePackages.get(this._name)
+    if (icon !== undefined) return icon
+
+    throw new Error('Custom icon file was not found')
   }
 
   async fetch(): Promise<string> {
@@ -41,30 +49,18 @@ export class CustomFilePackageLoader implements Loadable {
   }
 }
 
-/**
- * icons-filesと同じ型のパッケージをしまっとくところ
- */
-const filePackages = new Map<string, IconFiles>()
-
-export function addIconFilePackage(prefix: string, files: IconFiles) {
-  filePackages.set(prefix, files)
-}
-
-/**
- * prefixの一致するfile packageが登録されているか
- */
-export function isKnownIconFilePackage(prefix: string) {
-  return filePackages.has(prefix)
+export function addIconFilePackage(files: IconFiles) {
+  Object.entries(files).forEach(([key, value]) =>
+    CustomFilePackageLoader.filePackages.set(key, value)
+  )
 }
 
 /**
  * 登録されているfile packagesにiconがあればtrue
  */
 export function isKnownIconFileInCustomFilePackage(
-  prefix: string,
   name: string
 ): name is KnownIconFile {
-  const files = filePackages.get(prefix)
-  if (files == undefined) return false
-  return name in files
+  console.dir(CustomFilePackageLoader.filePackages)
+  return CustomFilePackageLoader.filePackages.has(name)
 }

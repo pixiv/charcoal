@@ -1,5 +1,9 @@
 import { isKnownIconFile } from '../charcoalIconFiles'
 import { CharcoalIconFilesLoader } from './CharcoalIconFilesLoader'
+import {
+  CustomFilePackageLoader,
+  isKnownIconFileInCustomFilePackage,
+} from './CustomFilePackageLoader'
 import { CustomIconLoader } from './CustomIconLoader'
 import { Loadable } from './Loadable'
 import { PixivIconLoadError } from './PixivIconLoadError'
@@ -38,10 +42,15 @@ function resolveIconLoader(name: string) {
     return registeredLoader
   }
 
-  
+  // addFilePackage で登録されたもの
+  if (isKnownIconFileInCustomFilePackage(name)) {
+    const customFilePackageLoader = new CustomFilePackageLoader(name)
+    loaders.set(name, customFilePackageLoader)
+    return customFilePackageLoader
+  }
 
-  // `@charcoal-ui/icon-files` に収録されているアイコンにはこれを返す
   if (isKnownIconFile(name)) {
+    // `@charcoal-ui/icon-files` に収録されているアイコンにはこれを返す
     const charcoalIconFilesLoader = new CharcoalIconFilesLoader(name)
 
     loaders.set(name, charcoalIconFilesLoader)

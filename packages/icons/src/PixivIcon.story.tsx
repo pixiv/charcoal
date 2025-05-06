@@ -5,6 +5,7 @@ import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { PixivIcon, Props } from '.'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
 import type { Meta, StoryObj } from '@storybook/react'
+import IconFiles from './16/iconfiles'
 
 PixivIcon.extend({
   // かぶらなそうな名前をつける
@@ -165,6 +166,27 @@ export const WithUnsafe: StoryObj<Props> = {
   args: {
     name: '16/Add',
     'unsafe-non-guideline-scale': '3.75',
+    color: '#000000',
+  },
+}
+
+export const IconFileApi: StoryObj<Props> = {
+  render: ({ color, name, scale }) => {
+    PixivIcon.addFilePackage(IconFiles)
+    return (
+      <>
+        <IconDef color={color}>
+          <pixiv-icon name={name} scale={scale} />
+          アイコンと文字
+        </IconDef>
+        <Global />
+      </>
+    )
+  },
+  args: {
+    // @ts-expect-error 型をまだ作ってない
+    name: '16/TestIconFileThatNeverExists',
+    scale: 1,
     color: '#000000',
   },
 }

@@ -58,8 +58,8 @@ export class PixivIcon extends HTMLElement {
     })
   }
 
-  static addFilePackage(prefix: string, files: IconFiles) {
-    addIconFilePackage(prefix, files)
+  static addFilePackage(files: IconFiles) {
+    addIconFilePackage(files)
   }
 
   static get observedAttributes() {
