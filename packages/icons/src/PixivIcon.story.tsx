@@ -7,10 +7,20 @@ import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
 import type { Meta, StoryObj } from '@storybook/react'
 import IconFiles from './16/iconfiles'
 
+declare module '.' {
+  export interface KnownIconType {
+    '16/TestIconThatNeverExists': string
+    '16/TestIconFileThatNeverExists': () => Promise<string>
+  }
+}
+
+// @ts-expect-error keyof KnownIconTypeが型に含まれてて一部だけextendsするとエラー
 PixivIcon.extend({
   // かぶらなそうな名前をつける
   '16/TestIconThatNeverExists': TestIconThatNeverExists,
 })
+
+PixivIcon.addFilePackage(IconFiles)
 
 const meta: Meta<Props> = {
   title: 'Icons/PixivIcon (<pixiv-icon>)',
@@ -172,7 +182,6 @@ export const WithUnsafe: StoryObj<Props> = {
 
 export const IconFileApi: StoryObj<Props> = {
   render: ({ color, name, scale }) => {
-    PixivIcon.addFilePackage(IconFiles)
     return (
       <>
         <IconDef color={color}>
@@ -184,7 +193,6 @@ export const IconFileApi: StoryObj<Props> = {
     )
   },
   args: {
-    // @ts-expect-error 型をまだ作ってない
     name: '16/TestIconFileThatNeverExists',
     scale: 1,
     color: '#000000',

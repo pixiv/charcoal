@@ -3,12 +3,18 @@ import { Loadable } from './Loadable'
 import { KnownIconFile } from '../charcoalIconFiles'
 import { IconFiles } from '@charcoal-ui/icon-types'
 
-export class CustomFilePackageLoader implements Loadable {
-  /**
-   * icons-filesと同じ型のパッケージをしまっとくところ
-   */
-  static filePackages = new Map<string, () => Promise<string>>()
+declare global {
+  interface Window {
+    filePackages: Map<string, () => Promise<string>>
+  }
+}
 
+/**
+ * icons-filesと同じ型のパッケージをしまっとくところ
+ */
+window.filePackages = new Map<string, () => Promise<string>>()
+
+export class CustomFilePackageLoader implements Loadable {
   private _name: KnownIconFile
   private _resultSvg: string | undefined = undefined
   private _promise: Promise<string> | undefined = undefined
@@ -18,7 +24,7 @@ export class CustomFilePackageLoader implements Loadable {
   }
 
   get importIconFile() {
-    const icon = CustomFilePackageLoader.filePackages.get(this._name)
+    const icon = window.filePackages.get(this._name)
     if (icon !== undefined) return icon
 
     throw new Error('Custom icon file was not found')
@@ -50,9 +56,15 @@ export class CustomFilePackageLoader implements Loadable {
 }
 
 export function addIconFilePackage(files: IconFiles) {
-  Object.entries(files).forEach(([key, value]) =>
-    CustomFilePackageLoader.filePackages.set(key, value)
-  )
+  Object.entries(files).forEach(([key, value]) => {
+    if (!key.includes('/')) {
+      throw new TypeError(
+        `${key} is not a valid icon name. "name" must be named like [size]/[Name].`
+      )
+    }
+
+    window.filePackages.set(key, value)
+  })
 }
 
 /**
@@ -61,6 +73,5 @@ export function addIconFilePackage(files: IconFiles) {
 export function isKnownIconFileInCustomFilePackage(
   name: string
 ): name is KnownIconFile {
-  console.dir(CustomFilePackageLoader.filePackages)
-  return CustomFilePackageLoader.filePackages.has(name)
+  return window.filePackages.has(name)
 }
