@@ -3,18 +3,12 @@ import { Loadable } from './Loadable'
 import { KnownIconFile } from '../charcoalIconFiles'
 import { IconFiles } from '@charcoal-ui/icon-types'
 
-declare global {
-  interface Window {
-    filePackages: Map<string, () => Promise<string>>
-  }
-}
-
-/**
- * icons-filesと同じ型のパッケージをしまっとくところ
- */
-window.filePackages = new Map<string, () => Promise<string>>()
-
 export class CustomFilePackageLoader implements Loadable {
+  /**
+   * icons-filesと同じ型のパッケージをしまっとくところ
+   */
+  static filePackages = new Map<string, () => Promise<string>>()
+
   private _name: KnownIconFile
   private _resultSvg: string | undefined = undefined
   private _promise: Promise<string> | undefined = undefined
@@ -24,7 +18,7 @@ export class CustomFilePackageLoader implements Loadable {
   }
 
   get importIconFile() {
-    const icon = window.filePackages.get(this._name)
+    const icon = CustomFilePackageLoader.filePackages.get(this._name)
     if (icon !== undefined) return icon
 
     throw new Error('Custom icon file was not found')
@@ -63,7 +57,7 @@ export function addIconFilePackage(files: IconFiles) {
       )
     }
 
-    window.filePackages.set(key, value)
+    CustomFilePackageLoader.filePackages.set(key, value)
   })
 }
 
@@ -73,5 +67,5 @@ export function addIconFilePackage(files: IconFiles) {
 export function isKnownIconFileInCustomFilePackage(
   name: string
 ): name is KnownIconFile {
-  return window.filePackages.has(name)
+  return CustomFilePackageLoader.filePackages.has(name)
 }

@@ -2,7 +2,7 @@
 
 import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
-import { PixivIcon, Props } from '.'
+import { PixivIcon, Props } from '@charcoal-ui/icons'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
 import type { Meta, StoryObj } from '@storybook/react'
 import IconFiles from './16/iconfiles'
