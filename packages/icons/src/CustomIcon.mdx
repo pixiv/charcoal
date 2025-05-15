@@ -27,9 +27,9 @@ declare const _default: string
 export default _default
 ```
 
-### 2. `PixivIcon.addFilePackage()` で登録する
+### 2. `PixivIcon.extend()` で登録する
 
-作成した object を `PixivIcon.extend()` の引数へ与え、登録します。  
+作成した object を `PixivIcon.extend()` の引数へ与えて登録します。  
 名前の形式は `{size}/{name}` である必要があります。  
 TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
@@ -75,7 +75,7 @@ declare module '@charcoal-ui/icons' {
 }
 ```
 
-その場合も名前の形式は `{size}/{name}` である必要があります。
+その場合も名前の形式は `{size}/{name}` である必要があります。  
 TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
 ### SVG ファイルアイコンのためのバンドラ設定
