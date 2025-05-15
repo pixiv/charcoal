@@ -27,7 +27,7 @@
     "fmt:eslint": "DEBUG=eslint:cli-engine eslint . --fix --max-warnings=0",
     "fmt:prettier": "prettier . --write",
     "fmt:stylelint": "stylelint '**/*.{css,jsx,tsx}' --fix -f verbose",
-    "release": "pnpm install && pnpm run clean && pnpm run build && pnpm -r publish",
+    "release": "pnpm install && pnpm run clean && pnpm run build && pnpm -r publish --no-git-checks",
     "release:alpha": "pnpm run release --conventional-prerelease --dist-tag alpha",
     "_postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
     "website": "vite docs --base=charcoal/docs --port 5000",
