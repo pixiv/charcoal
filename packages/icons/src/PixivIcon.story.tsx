@@ -178,7 +178,7 @@ export const WithUnsafe: StoryObj<Props> = {
   },
 }
 
-export const IconFileApi: StoryObj<Props> = {
+export const RawIconFile: StoryObj<Props> = {
   render: ({ color, name, scale }) => {
     return (
       <>

@@ -29,8 +29,8 @@ export default _default
 
 ### 2. `PixivIcon.addFilePackage()` で登録する
 
-作成した object を `PixivIcon.extend()` の引数へ与え、登録します。
-名前の形式は `{size}/{name}` である必要があります。
+作成した object を `PixivIcon.extend()` の引数へ与え、登録します。  
+名前の形式は `{size}/{name}` である必要があります。  
 TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
 ```typescript
@@ -43,7 +43,7 @@ PixivIcon.extend({
 
 declare module '@charcoal-ui/icons' {
   export interface KnownIconType {
-    '16/ExampleCustomIcon': () => Promise<string>
+    '16/ExampleCustomIcon': unknown
   }
 }
 ```
