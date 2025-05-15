@@ -22,13 +22,22 @@ export async function getIcon(name: string) {
     throw new PixivIconLoadError(name, 'Loader was not found')
   }
 
-  return loader.fetch().catch((e) => {
+  try {
+    const svg = await loader.fetch()
+    if (typeof svg !== 'string') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `${name}: Expected load result to be a string, but received an unexpected type.`
+      )
+    }
+
+    return svg
+  } catch (e) {
     if (e instanceof PixivIconLoadError) {
       throw e
     }
-
     throw new PixivIconLoadError(name, e)
-  })
+  }
 }
 
 function resolveIconLoader(name: string) {
