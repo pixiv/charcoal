@@ -22,8 +22,6 @@ export function addRawFile(name: string, importFn: () => Promise<string>) {
 /**
  * 登録されているfile packagesにiconがあればtrue
  */
-export function isKnownRawIconFile(
-  name: string
-): name is KnownIconFile {
+export function isKnownRawIconFile(name: string): name is KnownIconFile {
   return CustomRawFileLoader.filePackages.has(name)
 }
