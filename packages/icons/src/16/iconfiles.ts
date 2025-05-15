@@ -1,4 +1,4 @@
-import { IconFiles } from '@charcoal-ui/icon-types'
+import { IconFiles } from '../types.js'
 
 const files: IconFiles = {
   '16/TestIconFileThatNeverExists': () =>

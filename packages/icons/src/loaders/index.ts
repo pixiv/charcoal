@@ -1,9 +1,6 @@
 import { isKnownIconFile } from '../charcoalIconFiles'
 import { CharcoalIconFilesLoader } from './CharcoalIconFilesLoader'
-import {
-  CustomFilePackageLoader,
-  isKnownIconFileInCustomFilePackage,
-} from './CustomFilePackageLoader'
+import { CustomRawFileLoader, isKnownRawIconFile } from './CustomRawFileLoader'
 import { CustomIconLoader } from './CustomIconLoader'
 import { Loadable } from './Loadable'
 import { PixivIconLoadError } from './PixivIconLoadError'
@@ -42,9 +39,9 @@ function resolveIconLoader(name: string) {
     return registeredLoader
   }
 
-  // addFilePackage で登録されたもの
-  if (isKnownIconFileInCustomFilePackage(name)) {
-    const customFilePackageLoader = new CustomFilePackageLoader(name)
+  // addRawFile で登録されたもの
+  if (isKnownRawIconFile(name)) {
+    const customFilePackageLoader = new CustomRawFileLoader(name)
     loaders.set(name, customFilePackageLoader)
     return customFilePackageLoader
   }

@@ -5,7 +5,6 @@ import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { PixivIcon, Props } from '@charcoal-ui/icons'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
 import type { Meta, StoryObj } from '@storybook/react'
-import IconFiles from './16/iconfiles'
 
 declare module '.' {
   export interface KnownIconType {
@@ -14,13 +13,12 @@ declare module '.' {
   }
 }
 
-// @ts-expect-error keyof KnownIconTypeが型に含まれてて一部だけextendsするとエラー
 PixivIcon.extend({
   // かぶらなそうな名前をつける
   '16/TestIconThatNeverExists': TestIconThatNeverExists,
+  '16/TestIconFileThatNeverExists': () =>
+    import('./16/TestIconThatNeverExists.js').then((m) => m.default),
 })
-
-PixivIcon.addFilePackage(IconFiles)
 
 const meta: Meta<Props> = {
   title: 'Icons/PixivIcon (<pixiv-icon>)',

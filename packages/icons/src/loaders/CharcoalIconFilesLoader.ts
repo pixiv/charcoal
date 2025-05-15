@@ -6,7 +6,7 @@ import charcoalIconFiles, { KnownIconFile } from '../charcoalIconFiles'
  * `@charcoal-ui/icon-files` に収録されているアイコンを取ってくる
  */
 export class CharcoalIconFilesLoader implements Loadable {
-  private _name: KnownIconFile
+  protected _name: KnownIconFile
   private _resultSvg: string | undefined = undefined
   private _promise: Promise<string> | undefined = undefined
 

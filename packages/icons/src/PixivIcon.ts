@@ -1,9 +1,8 @@
-import type { IconFiles } from '@charcoal-ui/icon-types'
 import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
-import { addIconFilePackage } from './loaders/CustomFilePackageLoader'
+import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
@@ -39,27 +38,29 @@ export class PixivIcon extends HTMLElement {
    */
   static extend(
     map: Extended extends true
-      ? Record<ExtendedIconFile, string>
-      : Record<string, string>
+      ? Record<ExtendedIconFile, string | (() => Promise<string>)>
+      : Record<string, string | (() => Promise<string>)>
   ) {
     warning(!__SERVER__, 'Using `PixivIcon.extend()` on server has no effect')
     if (__SERVER__) {
       return
     }
 
-    Object.entries(map).forEach(([name, filePathOrUrl]) => {
+    Object.entries(map).forEach(([name, filePathOrUrlOrImportFn]) => {
       if (!name.includes('/')) {
         throw new TypeError(
           `${name} is not a valid icon name. "name" must be named like [size]/[Name].`
         )
       }
 
-      addCustomIcon(name, filePathOrUrl)
-    })
-  }
+      if (typeof filePathOrUrlOrImportFn === 'string') {
+        addCustomIcon(name, filePathOrUrlOrImportFn)
+      }
 
-  static addFilePackage(files: IconFiles) {
-    addIconFilePackage(files)
+      if (typeof filePathOrUrlOrImportFn === 'function') {
+        addRawFile(name, filePathOrUrlOrImportFn)
+      }
+    })
   }
 
   static get observedAttributes() {
