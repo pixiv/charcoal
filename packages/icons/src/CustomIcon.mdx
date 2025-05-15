@@ -19,29 +19,25 @@ import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
 export default '<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect width="16" height="16" x="0" y="0" fill="currentColor"></rect></svg>'
 ```
 
-### 2. 作成した .js ファイルが dynamic import される object を作成する
+### 2. `PixivIcon.addFilePackage()` で登録する
 
-アイコンの名前を key として、先ほど作成した .js ファイルを dynamic import する関数を返す object を作成してください。  
-アイコンの名前は `<pixiv-icon>` の命名規則の `<size>/<name>` に沿う必要があります。
-
-```typescript
-// customiconfiles.ts
-export default {
-  '16/ExampleCustomIcon': () =>
-    // @ts-expect-error jsをdynamic importしてるので型エラーが出る
-    import('./ExampleCustomIcon.js').then((m) => m.default),
-}
-```
-
-### 3. `PixivIcon.addFilePackage()` で登録する
-
-作成した object を `PixivIcon.addFilePackage()` の引数へ与え、登録します。
+作成した object を `PixivIcon.extend()` の引数へ与え、登録します。
+名前の形式は `{size}/{name}` である必要があります。
+TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
 ```typescript
 import { PixivIcon } from '@charcoal-ui/icons'
-import CustomIconFiles from './path/to/customiconfiles'
 
-PixivIcon.addFilePackage(CustomIconFiles)
+PixivIcon.extend({
+  '16/ExampleCustomIcon': () =>
+    import('./path/to/ExampleCustomIcon.js').then((m) => m.default),
+})
+
+declare module '@charcoal-ui/icons' {
+  export interface KnownIconType {
+    '16/ExampleCustomIcon': () => Promise<string>
+  }
+}
 ```
 
 ```html
