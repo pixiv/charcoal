@@ -35,6 +35,10 @@ export class PixivIcon extends HTMLElement {
 
   /**
    * NOTE: icon content should be sanitized before pass to extend()
+   *
+   * XSSに注意すること。
+   * 登録したファイルの中身が直接domに反映されるため、XSSに繋がる可能性があります。
+   * 信用していないソースからアイコンを追加する場合dom-purifyなどを経由してください。
    */
   static extend(
     map: Extended extends true
