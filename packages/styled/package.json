@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/styled",
-  "version": "4.6.0-beta.1",
+  "version": "4.6.0",
   "license": "Apache-2.0",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs.js",
