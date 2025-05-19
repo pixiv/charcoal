@@ -4,6 +4,56 @@ import { Meta, Story, Canvas, Props } from '@storybook/addon-docs'
 
 # 独自のアイコンを登録する
 
+`<pixiv-icon>` に収録されていないアイコンを登録する方法が 2 つ用意されています。
+
+## .js ファイルを登録する
+
+`<pixiv-icon>` に収録されているアイコン同様の処理系を利用してアイコンをレンダリングします。
+
+### 1. SVG タグ文字列を返す .js ファイルを作成する
+
+表示したい SVG が文字列として返される `.js` のファイルを作成してください。
+
+```javascript
+// ExampleCustomIcon.js
+export default '<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect width="16" height="16" x="0" y="0" fill="currentColor"></rect></svg>'
+```
+
+`d.ts` も作成するならば以下のようになります。
+
+```typescript
+// ExampleCustomIcon.d.ts
+declare const _default: string
+export default _default
+```
+
+### 2. `PixivIcon.extend()` で登録する
+
+作成した object を `PixivIcon.extend()` の引数へ与えて登録します。  
+名前の形式は `{size}/{name}` である必要があります。  
+TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
+
+```typescript
+import { PixivIcon } from '@charcoal-ui/icons'
+
+PixivIcon.extend({
+  '16/ExampleCustomIcon': () =>
+    import('./path/to/ExampleCustomIcon.js').then((m) => m.default),
+})
+
+declare module '@charcoal-ui/icons' {
+  export interface KnownIconType {
+    '16/ExampleCustomIcon': unknown
+  }
+}
+```
+
+```html
+<pixiv-icon name="16/ExampleCustomIcon" />
+```
+
+## SVG ファイルを登録する
+
 `<pixiv-icon>` の `name` に存在しない SVG をアイコンとして登録することができます。
 
 ```typescript
@@ -25,10 +75,10 @@ declare module '@charcoal-ui/icons' {
 }
 ```
 
-その場合も名前の形式は `{size}/{name}` である必要があります。
+その場合も名前の形式は `{size}/{name}` である必要があります。  
 TypeScript 環境では、`KnownIconType` という型を拡張することで、カスタムアイコンに対しても補完が効くようになります。
 
-## 独自アイコンのためのバンドラ設定
+### SVG ファイルアイコンのためのバンドラ設定
 
 `PixivIcon.extend()` に渡すオブジェクトはキーがアイコン名、値が SVG ファイルに対するパス名または URL である必要があります（内部的には、ここで渡した文字列に対して `fetch()` が走ります）。
 

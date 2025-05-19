@@ -2,13 +2,22 @@
 
 import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
-import { PixivIcon, Props } from '.'
+import { PixivIcon, Props } from '@charcoal-ui/icons'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
 import type { Meta, StoryObj } from '@storybook/react'
+
+declare module '.' {
+  export interface KnownIconType {
+    '16/TestIconThatNeverExists': string
+    '16/TestIconFileThatNeverExists': () => Promise<string>
+  }
+}
 
 PixivIcon.extend({
   // かぶらなそうな名前をつける
   '16/TestIconThatNeverExists': TestIconThatNeverExists,
+  '16/TestIconFileThatNeverExists': () =>
+    import('./16/TestIconThatNeverExists.js').then((m) => m.default),
 })
 
 const meta: Meta<Props> = {
@@ -165,6 +174,25 @@ export const WithUnsafe: StoryObj<Props> = {
   args: {
     name: '16/Add',
     'unsafe-non-guideline-scale': '3.75',
+    color: '#000000',
+  },
+}
+
+export const RawIconFile: StoryObj<Props> = {
+  render: ({ color, name, scale }) => {
+    return (
+      <>
+        <IconDef color={color}>
+          <pixiv-icon name={name} scale={scale} />
+          アイコンと文字
+        </IconDef>
+        <Global />
+      </>
+    )
+  },
+  args: {
+    name: '16/TestIconFileThatNeverExists',
+    scale: 1,
     color: '#000000',
   },
 }

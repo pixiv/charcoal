@@ -1,5 +1,6 @@
 import { isKnownIconFile } from '../charcoalIconFiles'
 import { CharcoalIconFilesLoader } from './CharcoalIconFilesLoader'
+import { CustomRawFileLoader, isKnownRawIconFile } from './CustomRawFileLoader'
 import { CustomIconLoader } from './CustomIconLoader'
 import { Loadable } from './Loadable'
 import { PixivIconLoadError } from './PixivIconLoadError'
@@ -21,13 +22,22 @@ export async function getIcon(name: string) {
     throw new PixivIconLoadError(name, 'Loader was not found')
   }
 
-  return loader.fetch().catch((e) => {
+  try {
+    const svg = await loader.fetch()
+    if (typeof svg !== 'string') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `${name}: Expected load result to be a string, but received an unexpected type.`
+      )
+    }
+
+    return svg
+  } catch (e) {
     if (e instanceof PixivIconLoadError) {
       throw e
     }
-
     throw new PixivIconLoadError(name, e)
-  })
+  }
 }
 
 function resolveIconLoader(name: string) {
@@ -38,10 +48,16 @@ function resolveIconLoader(name: string) {
     return registeredLoader
   }
 
-  // `@charcoal-ui/icon-files` に収録されているアイコンにはこれを返す
-  if (isKnownIconFile(name)) {
-    const charcoalIconFilesLoader = new CharcoalIconFilesLoader(name)
+  // addRawFile で登録されたもの
+  if (isKnownRawIconFile(name)) {
+    const customFilePackageLoader = new CustomRawFileLoader(name)
+    loaders.set(name, customFilePackageLoader)
+    return customFilePackageLoader
+  }
 
+  if (isKnownIconFile(name)) {
+    // `@charcoal-ui/icon-files` に収録されているアイコンにはこれを返す
+    const charcoalIconFilesLoader = new CharcoalIconFilesLoader(name)
     loaders.set(name, charcoalIconFilesLoader)
     return charcoalIconFilesLoader
   }
