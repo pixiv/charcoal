@@ -61,6 +61,4 @@ jobs:
 
       # push tag only when publish success
       - name: git push version up commits
-        run: |
-          git tag ${{ github.event.inputs.release_tag }}
-          git push origin ${{ github.ref_name }} --tags
+        run: git push origin ${{ github.ref_name }} --tags
