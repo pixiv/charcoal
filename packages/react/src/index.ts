@@ -54,6 +54,7 @@ export {
 export {
   default as LoadingSpinner,
   LoadingSpinnerIcon,
+  type LoadingSpinnerIconHandler,
 } from './components/LoadingSpinner'
 export {
   default as DropdownSelector,
