@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgImagecover = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M6.504 2.002a3.75 3.75 0 00-3.75 3.75v12.5a3.75 3.75 0 003.75 3.75h7.5a3.75 3.75 0 003.75-3.75v-12.5a3.75 3.75 0 00-3.75-3.75h-7.5zm-2.25 3.75a2.25 2.25 0 012.25-2.25h7.5a2.25 2.25 0 012.25 2.25v12.5a2.25 2.25 0 01-2.25 2.25h-7.5a2.25 2.25 0 01-2.25-2.25v-12.5zM19.5 19h-.299c.035-.244.053-.494.053-.748V17.5h.246a.25.25 0 00.25-.25V6.75a.25.25 0 00-.25-.25h-.246v-.748A5.29 5.29 0 0019.2 5h.3c.966 0 1.75.783 1.75 1.75v10.5A1.75 1.75 0 0119.5 19zM7.25 6.5h7.504v-.748a.75.75 0 00-.75-.75H7.157A1.75 1.75 0 005.5 6.75v8.193l-.03.03.03.03v2.247c0 .966.784 1.75 1.75 1.75h6.815a.75.75 0 00.689-.748V17.5H7.25a.25.25 0 01-.25-.25v-1.686l2.62-2.62a1.25 1.25 0 011.768 0l3.366 3.367V14.19l-2.306-2.306a2.75 2.75 0 00-3.889 0L7 13.443V6.75a.25.25 0 01.25-.25z" fill="currentColor"/>
+  </svg>);
+export const IconImageCover = forwardRef(SvgImagecover);
+export default IconImageCover;

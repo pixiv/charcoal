@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgLayersetReference = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M13.453 2.67a2.714 2.714 0 00-2.906 0L4.9 6.25H9A2.75 2.75 0 0111.75 9v6.82a2.713 2.713 0 001.703-.41l7.745-4.912a1.727 1.727 0 000-2.917L13.453 2.67zm-10.65 7.828a1.728 1.728 0 01-.226-2.748H9c.69 0 1.25.56 1.25 1.25v6.221l-7.448-4.723zm-.001 3.005l1.217-.772 5.867 3.72a3.948 3.948 0 004.228 0l5.867-3.72 1.217.772a1.727 1.727 0 010 2.917l-7.745 4.91a2.714 2.714 0 01-2.907 0l-7.744-4.91a1.727 1.727 0 010-2.917zm13.36-5.62a1.533 1.533 0 00-.85-.245c-.27 0-.58.068-.847.247-.273.184-.51.5-.51.913.001.413.24.728.514.91.267.179.576.246.848.245.271 0 .58-.068.847-.247.273-.184.51-.5.51-.913 0-.413-.24-.728-.513-.91z" fill="currentColor"/>
+  </svg>);
+export const IconLayerSetReferenceSolid = forwardRef(SvgLayersetReference);
+export default IconLayerSetReferenceSolid;

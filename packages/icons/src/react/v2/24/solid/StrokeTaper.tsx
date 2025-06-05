@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgStrokeTaper = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M22.668 11.641c-.6-1.17-1.79-2.854-3.383-4.048-1.606-1.202-3.724-1.97-6.044-1.02-1.806.739-3.135 1.955-4.42 3.13-.241.222-.481.441-.723.656-1.63 1.45-3.786 1.59-5.865.911a.75.75 0 00-.906 1.043c.696 1.421 1.89 3.12 3.475 4.258 1.61 1.156 3.67 1.758 5.958.822 1.793-.734 3.156-1.979 4.447-3.157.233-.213.464-.424.695-.629 1.652-1.47 3.628-1.732 5.84-.92a.75.75 0 00.926-1.046z" fill="currentColor"/>
+  </svg>);
+export const IconStrokeTaperSolid = forwardRef(SvgStrokeTaper);
+export default IconStrokeTaperSolid;

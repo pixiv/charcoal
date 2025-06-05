@@ -5,9 +5,12 @@
   "bin": "./dist/index.js",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
+    "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 pnpm tsx src/v2/transformReact.ts",
+    "build:css": "OUTPUT_ROOT_DIR=../icons/css/v2 p tsx src/v2/transformCSS.ts",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "cli:icons": "./dist/index.js"
+    "cli:icons": "./dist/index.js",
+    "icons": "tsx src/index.ts"
   },
   "devDependencies": {
     "@gitbeaker/core": "^25.6.0",
@@ -18,6 +21,7 @@
     "@types/yargs": "^17.0.8",
     "rimraf": "^3.0.2",
     "tsup": "^6.5.0",
+    "tsx": "^4.19.1",
     "typescript": "^4.9.5"
   },
   "dependencies": {
