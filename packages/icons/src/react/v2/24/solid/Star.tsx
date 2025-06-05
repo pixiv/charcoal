@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgStar = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path d="M10.576 3.88a1.677 1.677 0 012.848 0l1.979 3.184c.077.123.199.212.34.247l3.64.899a1.677 1.677 0 01.879 2.708l-2.416 2.866a.558.558 0 00-.13.4l.27 3.738a1.677 1.677 0 01-2.304 1.674l-3.472-1.412a.559.559 0 00-.42 0l-3.472 1.412a1.677 1.677 0 01-2.304-1.674l.27-3.738a.559.559 0 00-.13-.4l-2.416-2.866c-.8-.95-.326-2.41.88-2.708l3.639-.899a.559.559 0 00.34-.247l1.98-3.183z" fill="currentColor"/>
+  </svg>);
+export const IconStarSolid = forwardRef(SvgStar);
+export default IconStarSolid;

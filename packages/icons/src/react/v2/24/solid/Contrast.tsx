@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgContrast = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M12.58 3.52l7.9 7.9a8.501 8.501 0 00-7.9-7.9zm-1.44.68l9.239 9.24a8.437 8.437 0 01-.69 2.188l-8.55-8.55V4.2zm7.762 12.762L11.139 9.2v2.879l6.384 6.383c.517-.443.98-.946 1.379-1.5zm-7.763.117V14.2l5.144 5.144a8.449 8.449 0 01-2.025.853l-3.119-3.118zm0 2.121v1.257a8.617 8.617 0 001.29.032l-1.29-1.289zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="currentColor"/>
+  </svg>);
+export const IconContrastSolid = forwardRef(SvgContrast);
+export default IconContrastSolid;
