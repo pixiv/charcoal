@@ -77,13 +77,19 @@ export async function withPackages<T>(
         fs.unlinkSync(packageLock.path)
         fs.copyFileSync(packageLock.backup, packageLock.path)
       }
-      const recoverResult = child_process.spawnSync(packageManagerInfo.type, recoverArgs, { stdio: 'inherit' })
+      const recoverResult = child_process.spawnSync(
+        packageManagerInfo.type,
+        recoverArgs,
+        { stdio: 'inherit' }
+      )
       if (recoverResult.error) {
         throw recoverResult.error
       }
     })
-    
-    const result = child_process.spawnSync(packageManagerInfo.type, cmdArgs, { stdio: 'inherit' })
+
+    const result = child_process.spawnSync(packageManagerInfo.type, cmdArgs, {
+      stdio: 'inherit',
+    })
     if (result.error) {
       throw result.error
     }
