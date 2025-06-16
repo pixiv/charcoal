@@ -53,19 +53,19 @@ export async function withPackages<T>(
       fs.copyFileSync(packageLock.path, packageLock.backup)
     }
 
-    let cmd: string, recoverCmd: string
+    let cmdArgs: string[], recoverArgs: string[]
     switch (packageManagerInfo.type) {
       case 'npm':
-        cmd = `npm install ${packageDescriptors.join(' ')}`
-        recoverCmd = 'npm install'
+        cmdArgs = ['install', ...packageDescriptors]
+        recoverArgs = ['install']
         break
       case 'yarn':
-        cmd = `yarn add ${packageDescriptors.join(' ')}`
-        recoverCmd = 'yarn install'
+        cmdArgs = ['add', ...packageDescriptors]
+        recoverArgs = ['install']
         break
       case 'pnpm':
-        cmd = `pnpm add ${packageDescriptors.join(' ')}`
-        recoverCmd = 'pnpm install'
+        cmdArgs = ['add', ...packageDescriptors]
+        recoverArgs = ['install']
         break
     }
 
@@ -77,9 +77,19 @@ export async function withPackages<T>(
         fs.unlinkSync(packageLock.path)
         fs.copyFileSync(packageLock.backup, packageLock.path)
       }
-      child_process.execSync(recoverCmd)
+      const recoverResult = child_process.spawnSync(packageManagerInfo.type, recoverArgs, { stdio: 'inherit' })
+      if (recoverResult.error) {
+        throw recoverResult.error
+      }
     })
-    child_process.execSync(cmd)
+    
+    const result = child_process.spawnSync(packageManagerInfo.type, cmdArgs, { stdio: 'inherit' })
+    if (result.error) {
+      throw result.error
+    }
+    if (result.status !== 0) {
+      throw new Error(`Command failed with exit code ${result.status}`)
+    }
 
     return callback()
   } finally {
