@@ -1,12 +1,12 @@
 import './index.css'
 
-import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useRef, useState, useId } from 'react'
 import * as React from 'react'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString } from '../../_lib'
 import { useFocusWithClick } from './useFocusWithClick'
-import { mergeRefs, useId } from '@react-aria/utils'
+import { mergeRefs } from '../../utils/mergeRefs'
+import { useVisuallyHidden } from '../../utils/useVisuallyHidden'
 import { AssistiveText } from './AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 
