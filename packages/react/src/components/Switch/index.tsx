@@ -1,7 +1,6 @@
 import './index.css'
 
-import { memo, forwardRef } from 'react'
-import { useId } from '@react-aria/utils'
+import { memo, forwardRef, useId } from 'react'
 import SwitchInput, { type SwitchInputProps } from './SwitchInput'
 import { SwitchWithLabel } from './SwitchWithLabel'
 
