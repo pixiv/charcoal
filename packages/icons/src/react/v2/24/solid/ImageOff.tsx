@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgImageoff = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M3.53 2.47a.749.749 0 00-1.06 1.06l1.152 1.15A3.733 3.733 0 003 6.75v7.19l2.486-2.487a2.75 2.75 0 013.98.095l3.03 3.333a.25.25 0 00.316.044l.651-.402 1.09 1.09-.952.588a1.75 1.75 0 01-2.215-.311l-3.03-3.334a1.25 1.25 0 00-1.809-.042L3 16.06v1.189A3.75 3.75 0 006.75 21h10.5c.765 0 1.476-.229 2.069-.622l1.183 1.183a.749.749 0 001.058-1.059L3.53 2.471zm13.569 11.57l3.847 3.847A3.78 3.78 0 0021 17.25v-.677l-2.405-2.345a1.25 1.25 0 00-1.496-.188zM6.113 3.054l9.895 9.895.268-.165a2.75 2.75 0 013.366.37L21 14.477V6.75A3.75 3.75 0 0017.25 3H6.75c-.217 0-.43.018-.637.054zM14 8.75a1.75 1.75 0 113.5 0 1.75 1.75 0 01-3.5 0z" fill="currentColor"/>
+  </svg>);
+export const IconImageOffSolid = forwardRef(SvgImageoff);
+export default IconImageOffSolid;

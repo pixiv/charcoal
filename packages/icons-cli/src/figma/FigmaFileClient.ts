@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import path from 'path'
 import camelCase from 'camelcase'
 import * as Figma from 'figma-js'
@@ -5,6 +6,8 @@ import { ensureDir, remove, writeFile } from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'
 import { concurrently } from '../concurrently'
+
+const DRY_RUN = Boolean(process.env.DRY_RUN)
 
 const matchPath = match<{ fileId: string; name: string }>('/file/:fileId/:name')
 
@@ -32,19 +35,30 @@ function isIconNode(node: Figma.Node) {
   return iconName.test(node.name)
 }
 
+function parseV2IconName(name: string) {
+  return name
+    .split(',')
+    .map((f) => f.split('=').map((s) => s.trim())[1])
+    .join('/').toLowerCase()
+}
+
 type ExportFormat = 'svg' | 'pdf'
 
 interface Component {
   id: string
   name: string
   image?: string
+  variant?: string
 }
+
+type FigmaIconFileLayoutVersion = 'v1' | 'v2'
 
 export class FigmaFileClient {
   private readonly fileId: string
   private readonly nodeId?: string
   private readonly exportFormat: ExportFormat
   private readonly client: Figma.ClientInterface
+  private readonly layoutVersion: FigmaIconFileLayoutVersion
 
   private components: Record<string, Component> = {}
 
@@ -52,24 +66,26 @@ export class FigmaFileClient {
     url: string,
     token: string,
     outputRootDir: string,
-    exportFormat: ExportFormat
+    exportFormat: ExportFormat,
+    layoutVersion: FigmaIconFileLayoutVersion = 'v1'
   ) {
-    const client = new this(url, token, exportFormat)
+    const client = new this(url, token, exportFormat, layoutVersion)
 
     const outputDir = path.join(process.cwd(), outputRootDir, exportFormat)
 
-    // eslint-disable-next-line no-console
-    console.log(`Exporting components from ${url}`)
+    console.log(
+      `Exporting components from ${url} using layout ${layoutVersion}`
+    )
     await client.loadSvg(outputDir)
 
-    // eslint-disable-next-line no-console
     console.log('success!')
   }
 
   constructor(
     url: string,
     personalAccessToken: string,
-    exportFormat: ExportFormat
+    exportFormat: ExportFormat,
+    layoutVersion: FigmaIconFileLayoutVersion
   ) {
     this.client = Figma.Client({
       personalAccessToken,
@@ -80,6 +96,7 @@ export class FigmaFileClient {
     this.nodeId = nodeId
 
     this.exportFormat = exportFormat
+    this.layoutVersion = layoutVersion
   }
 
   async loadSvg(outputDir: string) {
@@ -93,24 +110,33 @@ export class FigmaFileClient {
 
   private async loadComponents() {
     const { document } = await this.getFile()
+    // const { document } = (
+      // await import('../../../../blob-report/scripts/doc.json')
+    // ).default as Figma.FileResponse
 
-    // nodeIdが指定されている場合は、IDが一致するノードのみを探索対象にする
-    // 指定されていない場合はドキュメント全体が探索対象
-    const targets =
-      this.nodeId !== undefined
-        ? document.children.filter((node) => node.id === this.nodeId)
-        : document.children
+    if (this.layoutVersion === 'v2') {
+      this.findComponentsV2(document)
+    } else {
+      // nodeIdが指定されている場合は、IDが一致するノードのみを探索対象にする
+      // 指定されていない場合はドキュメント全体が探索対象
+      const targets =
+        this.nodeId !== undefined
+          ? document.children.filter((node) => node.id === this.nodeId)
+          : document.children
 
-    // 対象ノードの子孫を探索してアイコンのコンポーネントを見つける
-    targets.forEach((child) => this.findComponentsRecursively(child))
+      // 対象ノードの子孫を探索してアイコンのコンポーネントを見つける
+      targets.forEach((child) => this.findComponentsRecursively(child))
+    }
 
-    if (Object.keys(this.components).length === 0) {
+    const len = Object.keys(this.components).length
+    if (len === 0) {
       throw new Error('No components found!')
+    } else {
+      console.log(`found ${len} icons`)
     }
   }
 
   private async loadImageUrls() {
-    // eslint-disable-next-line no-console
     console.log('Getting export urls')
 
     const { data } = await this.client.fileImages(this.fileId, {
@@ -132,18 +158,26 @@ export class FigmaFileClient {
           return
         }
 
+        const filename = component.variant
+          ? `${parseV2IconName(component.variant)}/${component.name}.${
+              this.exportFormat
+            }`
+          : `${filenamify(component.name)}.${this.exportFormat}`
+        const fullname = path.join(outputDir, filename)
+        const dirname = path.dirname(fullname)
+
+        if (DRY_RUN) {
+          console.log(`[DRY_RUN] skip: ${filename} => ✅ writing...`)
+          return
+        }
+
         const response = await got.get(
           component.image,
           this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {}
         )
 
-        const filename = `${filenamify(component.name)}.${this.exportFormat}`
-        const fullname = path.join(outputDir, filename)
-        const dirname = path.dirname(fullname)
-
         await ensureDir(dirname)
 
-        // eslint-disable-next-line no-console
         console.log(`found: ${filename} => ✅ writing...`)
         await writeFile(fullname, response.body, 'utf8')
       })
@@ -151,7 +185,6 @@ export class FigmaFileClient {
   }
 
   private async getFile() {
-    // eslint-disable-next-line no-console
     console.log('Processing response')
 
     const { data } = await this.client.file(this.fileId.toString())
@@ -174,5 +207,28 @@ export class FigmaFileClient {
         this.findComponentsRecursively(grandChild)
       )
     }
+  }
+
+  private findComponentsV2(document: Figma.Document) {
+    const iconsPage = document.children.find(
+      (child): child is Figma.Canvas =>
+        child.name === 'Icons 一覧' && child.type === 'CANVAS'
+    )
+    const iconComponentSets = iconsPage?.children.flatMap((c) => {
+      if (c.type !== 'FRAME') return []
+      return c.children.filter(
+        (c): c is Figma.ComponentSet => c.type === 'COMPONENT_SET'
+      )
+    })
+    iconComponentSets?.forEach((set) => {
+      set.children.forEach((i) => {
+        if (i.type !== 'COMPONENT') return null
+        this.components[i.id] = {
+          name: set.name,
+          variant: i.name,
+          id: i.id,
+        }
+      })
+    })
   }
 }

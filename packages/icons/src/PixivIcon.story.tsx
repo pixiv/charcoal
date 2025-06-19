@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { PixivIcon, Props } from '@charcoal-ui/icons'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
+import iconsV2 from '@charcoal-ui/icon-files/v2'
 import type { Meta, StoryObj } from '@storybook/react'
 
 declare module '.' {
@@ -18,6 +19,7 @@ PixivIcon.extend({
   '16/TestIconThatNeverExists': TestIconThatNeverExists,
   '16/TestIconFileThatNeverExists': () =>
     import('./16/TestIconThatNeverExists.js').then((m) => m.default),
+  ...iconsV2,
 })
 
 const meta: Meta<Props> = {
@@ -46,9 +48,26 @@ const meta: Meta<Props> = {
       disable: true,
     },
   },
-  render: ({ scale, color }) => (
+  render(props) {
+    return (
+      <>
+        <IconGroup {...props} />
+        <hr />
+        <h2>Icons V2</h2>
+        <IconGroup {...props} group={groupedIconsV2} />
+      </>
+    )
+  },
+}
+
+function IconGroup({
+  scale,
+  color,
+  group = groupedIcons,
+}: Props & { group?: Record<string, KnownIconFile[]> }) {
+  return (
     <>
-      {Object.entries(groupedIcons).map(([groupName, icons]) => (
+      {Object.entries(group).map(([groupName, icons]) => (
         <Group key={groupName}>
           <Heading>
             {groupName} (scale: {scale})
@@ -65,13 +84,13 @@ const meta: Meta<Props> = {
       ))}
       <Global />
     </>
-  ),
+  )
 }
 
 export default meta
 
-const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
-  (map, icon) => {
+const groupIcons = (icons: KnownIconFile[]) =>
+  icons.reduce<Record<string, KnownIconFile[]>>((map, icon) => {
     const [prefix] = icon.split('/')
 
     if (prefix in map) {
@@ -81,9 +100,9 @@ const groupedIcons = KNOWN_ICON_FILES.reduce<Record<string, KnownIconFile[]>>(
     }
 
     return map
-  },
-  {}
-)
+  }, {})
+const groupedIcons = groupIcons(KNOWN_ICON_FILES)
+const groupedIconsV2 = groupIcons(Object.keys(iconsV2) as KnownIconFile[])
 
 const Global = createGlobalStyle`
   :root {

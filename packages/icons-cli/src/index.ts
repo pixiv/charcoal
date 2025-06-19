@@ -43,8 +43,12 @@ void yargs
         choices: ['svg', 'pdf'],
         describe: 'Output format',
       },
+      layout: {
+        default: 'v1',
+        describe: 'Figma icon file layout version',
+      },
     },
-    async ({ format }) => {
+    async ({ format, layout }) => {
       mustBeDefined(FIGMA_FILE_URL, 'FIGMA_FILE_URL')
       mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
@@ -53,7 +57,8 @@ void yargs
         FIGMA_FILE_URL,
         FIGMA_TOKEN,
         OUTPUT_ROOT_DIR,
-        format as 'svg' | 'pdf'
+        format as 'svg' | 'pdf',
+        layout as  'v1' | 'v2'
       )
     }
   )

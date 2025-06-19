@@ -6,9 +6,16 @@
   "main": "./src/index.cjs",
   "module": " ./src/index.js",
   "exports": {
-    "types": "./src/index.d.ts",
-    "require": "./src/index.cjs",
-    "default": "./src/index.js"
+    ".": {
+      "types": "./src/index.d.ts",
+      "require": "./src/index.cjs",
+      "default": "./src/index.js"
+    },
+    "./v2": {
+      "types": "./v2/src/index.d.ts",
+      "require": "./v2/src/index.cjs",
+      "default": "./v2/src/index.js"
+    }
   },
   "types": "./src/index.d.ts",
   "files": [

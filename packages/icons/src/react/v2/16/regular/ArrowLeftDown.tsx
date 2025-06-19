@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgArrowleftDown = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M9.333 1.75a2.75 2.75 0 00-2.75 2.75v7.19L4.197 9.302a.75.75 0 10-1.06 1.06l3.666 3.667a.75.75 0 001.06 0l3.667-3.666a.75.75 0 00-1.06-1.061l-2.387 2.386V4.5c0-.69.56-1.25 1.25-1.25H11a.75.75 0 000-1.5H9.333z" fill="currentColor"/>
+  </svg>);
+export const IconArrowLeftDown16 = forwardRef(SvgArrowleftDown);
+export default IconArrowLeftDown16;

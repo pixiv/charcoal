@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgDropper = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M16.385 3.526a3.001 3.001 0 014.245 4.245l-2.43 2.43 1.33 1.33a.75.75 0 01-1.06 1.06l-1.194-1.193-8.85 8.85a3.75 3.75 0 01-2.059 1.05l-1.864.3a1.75 1.75 0 01-2.006-1.993l.286-1.876c.12-.79.49-1.52 1.056-2.086l8.841-8.841-1.21-1.21a.75.75 0 011.06-1.061l1.425 1.425 2.43-2.43zM13.74 7.863l-8.842 8.84a2.25 2.25 0 00-.633 1.252l-.287 1.877a.25.25 0 00.287.284l1.864-.298a2.25 2.25 0 001.235-.63l8.85-8.85-2.474-2.475z" fill="currentColor"/>
+  </svg>);
+export const IconDropper = forwardRef(SvgDropper);
+export default IconDropper;

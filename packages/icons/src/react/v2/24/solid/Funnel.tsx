@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgFunnel = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M5.75 3c-2.481 0-3.694 3.025-1.9 4.738l5.323 5.086a.25.25 0 01.077.18v6.378a1.75 1.75 0 002.533 1.565l1.447-.723a2.75 2.75 0 001.52-2.46v-4.76a.25.25 0 01.077-.18l5.323-5.086C21.944 6.025 20.731 3 18.25 3H5.75z" fill="currentColor"/>
+  </svg>);
+export const IconFunnelSolid = forwardRef(SvgFunnel);
+export default IconFunnelSolid;
