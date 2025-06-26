@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import HintText from '.'
 
 export default {
-  title: 'react-sandbox/HintText',
+  title: 'react/HintText',
   component: HintText,
   parameters: {
     layout: 'centered',
