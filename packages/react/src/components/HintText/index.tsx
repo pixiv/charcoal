@@ -11,15 +11,19 @@ export interface HintTextProps {
   className?: string
 }
 
-export default function HintText({ children, context, className }: HintTextProps) {
+export default function HintText({
+  children,
+  context,
+  className,
+}: HintTextProps) {
   const classNames = useClassNames('charcoal-hint-text', className)
 
   return (
     <div className={classNames} data-context={context}>
-      <div className='charcoal-hint-text-icon'>
+      <div className="charcoal-hint-text-icon">
         <Icon name="16/Info" />
       </div>
-      <p className='charcoal-hint-text-text'>{children}</p>
+      <p className="charcoal-hint-text-text">{children}</p>
     </div>
   )
 }
