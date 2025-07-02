@@ -1,12 +1,13 @@
 import './index.css'
 
-import { forwardRef, useCallback, useEffect, useRef, useState, useId } from 'react'
+import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
 import { useVisuallyHidden } from '../../utils/useVisuallyHidden'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
+import { useId } from '../../utils/useId'
 
 export type TextAreaProps = {
   value?: string

@@ -10,8 +10,7 @@ exports[`Storybook Tests > react/TextArea > AssistiveText 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -62,8 +61,7 @@ exports[`Storybook Tests > react/TextArea > AutoHeight 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -106,8 +104,7 @@ exports[`Storybook Tests > react/TextArea > Default 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -158,8 +155,7 @@ exports[`Storybook Tests > react/TextArea > Disabled 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -204,8 +200,7 @@ exports[`Storybook Tests > react/TextArea > Invalid 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -300,8 +295,7 @@ exports[`Storybook Tests > react/TextArea > Placeholder 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -345,8 +339,7 @@ exports[`Storybook Tests > react/TextArea > ReadOnly 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -392,8 +385,7 @@ exports[`Storybook Tests > react/TextArea > Required 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
@@ -441,8 +433,7 @@ exports[`Storybook Tests > react/TextArea > ShowCount 1`] = `
       class="charcoal-text-area-root"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        class="charcoal-field-label-root visually-hidden"
       >
         <label
           class="charcoal-field-label"
