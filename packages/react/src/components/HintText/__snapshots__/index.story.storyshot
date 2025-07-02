@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/HintText > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-hint-text"
+      data-context="section"
+    >
+      <div
+        class="charcoal-hint-text-icon"
+      >
+        <pixiv-icon
+          name="16/Info"
+        />
+      </div>
+      <p
+        class="charcoal-hint-text-message"
+      >
+        HintText
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/HintText > NarrowWidth 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-hint-text"
+        data-context="section"
+      >
+        <div
+          class="charcoal-hint-text-icon"
+        >
+          <pixiv-icon
+            name="16/Info"
+          />
+        </div>
+        <p
+          class="charcoal-hint-text-message"
+        >
+          LongLongLongLongLongLongLongLongLongText
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
