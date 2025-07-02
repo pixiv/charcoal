@@ -2,6 +2,7 @@ import type React from 'react'
 import warning from 'warning'
 import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
+import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
 
 const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
@@ -34,25 +35,35 @@ export class PixivIcon extends HTMLElement {
 
   /**
    * NOTE: icon content should be sanitized before pass to extend()
+   *
+   * XSSに注意すること。
+   * 登録したファイルの中身が直接domに反映されるため、XSSに繋がる可能性があります。
+   * 信用していないソースからアイコンを追加する場合dom-purifyなどを経由してください。
    */
   static extend(
     map: Extended extends true
-      ? Record<ExtendedIconFile, string>
-      : Record<string, string>
+      ? Record<ExtendedIconFile, string | (() => Promise<string>)>
+      : Record<string, string | (() => Promise<string>)>
   ) {
     warning(!__SERVER__, 'Using `PixivIcon.extend()` on server has no effect')
     if (__SERVER__) {
       return
     }
 
-    Object.entries(map).forEach(([name, filePathOrUrl]) => {
+    Object.entries(map).forEach(([name, filePathOrUrlOrImportFn]) => {
       if (!name.includes('/')) {
         throw new TypeError(
           `${name} is not a valid icon name. "name" must be named like [size]/[Name].`
         )
       }
 
-      addCustomIcon(name, filePathOrUrl)
+      if (typeof filePathOrUrlOrImportFn === 'string') {
+        addCustomIcon(name, filePathOrUrlOrImportFn)
+      }
+
+      if (typeof filePathOrUrlOrImportFn === 'function') {
+        addRawFile(name, filePathOrUrlOrImportFn)
+      }
     })
   }
 

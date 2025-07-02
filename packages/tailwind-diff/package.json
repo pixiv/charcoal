@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/tailwind-diff",
-  "version": "4.4.0",
+  "version": "4.7.1",
   "bin": "bin/tailwind-diff.js",
   "scripts": {
     "build": "tsc",

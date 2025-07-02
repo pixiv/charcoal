@@ -11,6 +11,9 @@ interface Props {
   className?: string
 }
 
+/**
+ * @deprecated use HintText from @charcoal-ui/react
+ */
 export default function HintText({ children, context, className }: Props) {
   return (
     <Container
