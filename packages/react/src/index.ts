@@ -74,3 +74,4 @@ export {
 } from './components/SegmentedControl'
 export { default as Checkbox, type CheckboxProps } from './components/Checkbox'
 export { default as TagItem, type TagItemProps } from './components/TagItem'
+export { default as HintText, type HintTextProps, type HintTextContext } from './components/HintText'
