@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgCrown = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M9.5 5.75a2.5 2.5 0 113.563 2.263c.099.086.19.186.269.3l1.965 2.81a1.75 1.75 0 002.216.561l1.258-.628a2.5 2.5 0 111.592.69l-1.15 5.845a3.875 3.875 0 01-3.802 3.128H8.59a3.875 3.875 0 01-3.803-3.128l-1.149-5.845a2.5 2.5 0 111.592-.69l1.258.628a1.75 1.75 0 002.216-.562l1.965-2.81c.08-.113.17-.213.27-.299A2.5 2.5 0 019.5 5.75z" fill="currentColor"/>
+  </svg>);
+export const IconCrownSolid = forwardRef(SvgCrown);
+export default IconCrownSolid;

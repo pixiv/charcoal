@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgBlendMode = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M6.932 8.46a5.105 5.105 0 0110.136 0A6.633 6.633 0 0012 9.472 6.633 6.633 0 006.932 8.46zm-1.536.521a6.604 6.604 0 0113.208 0A6.604 6.604 0 1112 20.381a6.604 6.604 0 11-6.604-11.4zM17.022 9.99a5.113 5.113 0 00-3.844.514 6.588 6.588 0 011.524 2.9 5.108 5.108 0 002.32-3.414zm-2.144 5.03a6.618 6.618 0 003.55-4.423 5.104 5.104 0 01-5.25 8.755 6.58 6.58 0 001.7-4.332zm-1.581-1.008A5.09 5.09 0 0012 11.438a5.09 5.09 0 00-1.297 2.573 5.115 5.115 0 002.594 0zm-2.64 1.53a6.633 6.633 0 002.685 0A5.087 5.087 0 0112 18.416a5.086 5.086 0 01-1.342-2.876zm-1.535-.522a6.58 6.58 0 001.7 4.332 5.104 5.104 0 01-5.25-8.755 6.618 6.618 0 003.55 4.423zm.176-1.615a5.108 5.108 0 01-2.32-3.415 5.113 5.113 0 013.844.514 6.588 6.588 0 00-1.524 2.9z" fill="currentColor"/>
+  </svg>);
+export const IconBlendMode = forwardRef(SvgBlendMode);
+export default IconBlendMode;

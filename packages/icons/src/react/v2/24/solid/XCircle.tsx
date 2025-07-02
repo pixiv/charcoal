@@ -1,0 +1,8 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgXcircle = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.949 6.051a.75.75 0 010 1.06l-2.888 2.89 2.888 2.887a.75.75 0 11-1.06 1.061L12 13.061l-2.888 2.888a.75.75 0 01-1.06-1.06L10.938 12 8.051 9.112a.75.75 0 011.06-1.06L12 10.94l2.888-2.889a.75.75 0 011.06 0z" fill="currentColor"/>
+  </svg>);
+export const IconXCircleSolid = forwardRef(SvgXcircle);
+export default IconXCircleSolid;
