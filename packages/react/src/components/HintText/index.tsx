@@ -7,13 +7,13 @@ import { useClassNames } from '../../_lib/useClassNames'
 export type HintTextContext = 'page' | 'section'
 export interface HintTextProps {
   children: ReactNode
-  context: HintTextContext
+  context?: HintTextContext
   className?: string
 }
 
 export default function HintText({
   children,
-  context,
+  context = 'section',
   className,
 }: HintTextProps) {
   const classNames = useClassNames('charcoal-hint-text', className)
