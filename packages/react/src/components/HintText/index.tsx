@@ -23,7 +23,7 @@ export default function HintText({
       <div className="charcoal-hint-text-icon">
         <Icon name="16/Info" />
       </div>
-      <p className="charcoal-hint-text-text">{children}</p>
+      <p className="charcoal-hint-text-message">{children}</p>
     </div>
   )
 }

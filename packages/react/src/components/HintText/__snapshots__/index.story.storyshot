@@ -17,7 +17,7 @@ exports[`Storybook Tests > react/HintText > Default 1`] = `
         />
       </div>
       <p
-        class="charcoal-hint-text-text"
+        class="charcoal-hint-text-message"
       >
         HintText
       </p>
@@ -46,7 +46,7 @@ exports[`Storybook Tests > react/HintText > NarrowWidth 1`] = `
           />
         </div>
         <p
-          class="charcoal-hint-text-text"
+          class="charcoal-hint-text-message"
         >
           LongLongLongLongLongLongLongLongLongText
         </p>
