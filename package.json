@@ -152,6 +152,9 @@
       "core-js",
       "esbuild",
       "nx"
-    ]
+    ],
+    "overrides": {
+      "@types/react": "18.3.3"
+    }
   }
 }
