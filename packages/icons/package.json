@@ -21,7 +21,7 @@
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "build:react": "tsc --project tsconfig.react.json --pretty",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
-    "clean": "rimraf dist .tsbuildinfo",
+    "clean": "rimraf dist .tsbuildinfo .tsbuildinfo.react",
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
