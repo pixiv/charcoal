@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgSend = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M18.208 3.545c1.4-.516 2.763.846 2.247 2.247L15.003 20.59c-.53 1.439-2.522 1.55-3.207.178l-2.501-5.002 3.235-3.236a.75.75 0 10-1.06-1.06l-3.236 3.236-5.002-2.502c-1.371-.685-1.26-2.677.178-3.207l14.798-5.452z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconSendSolid = forwardRef(SvgSend)
+export default IconSendSolid

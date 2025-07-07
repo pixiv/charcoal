@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgColor = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.876 2.498A9.991 9.991 0 0112 2a9.99 9.99 0 013.124.498l-2.022 4.88a4.764 4.764 0 00-2.204 0l-2.022-4.88zm-1.386.574A10.043 10.043 0 003.072 7.49l4.881 2.022a4.775 4.775 0 011.559-1.559L7.49 3.073zm-.111 7.826L2.498 8.876A9.991 9.991 0 002 12a9.99 9.99 0 00.498 3.124l4.88-2.022a4.763 4.763 0 010-2.204zm.574 3.59l-4.88 2.022a10.043 10.043 0 004.417 4.418l2.022-4.881a4.776 4.776 0 01-1.559-1.559zm2.945 2.133l-2.022 4.881-.083-.027A9.988 9.988 0 0012 22c5.523 0 10-4.477 10-10a9.991 9.991 0 00-.498-3.124l-4.88 2.022a4.763 4.763 0 010 2.204l4.88 2.022c-.157.479-.35.942-.574 1.386l-4.881-2.022a4.774 4.774 0 01-1.559 1.559l2.022 4.88a9.943 9.943 0 01-1.386.575l-2.022-4.88a4.763 4.763 0 01-2.204 0zm5.149-7.11l4.88-2.02.034.065a10.043 10.043 0 00-4.451-4.484l-2.022 4.881c.634.39 1.169.925 1.559 1.559zM12 8.75a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconColorSolid = forwardRef(SvgColor)
+export default IconColorSolid

@@ -1,0 +1,26 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgTextAlignright = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.504 4.753c0-.69.56-1.25 1.25-1.25h16.492a1.25 1.25 0 110 2.5H3.754c-.69 0-1.25-.56-1.25-1.25zm17.742 6.082H12a1.25 1.25 0 010-2.5h8.246a1.25 1.25 0 110 2.5zm-17.742 3.58c0-.69.56-1.25 1.25-1.25h16.492a1.25 1.25 0 010 2.5H3.754c-.69 0-1.25-.56-1.25-1.25zm8.778 4.832c0-.69.56-1.25 1.25-1.25h7.714a1.25 1.25 0 110 2.5h-7.714c-.69 0-1.25-.56-1.25-1.25z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconTextAlignRightSolid = forwardRef(SvgTextAlignright)
+export default IconTextAlignRightSolid

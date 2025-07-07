@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgRedo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M14.772 5.592a1.19 1.19 0 011.684-1.684l4 4a1.19 1.19 0 010 1.684l-4 4a1.19 1.19 0 11-1.684-1.684L16.68 10H9.364a4 4 0 000 8h4a1.25 1.25 0 010 2.5h-4a6.5 6.5 0 110-13h7.316l-1.908-1.908z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconRedoSolid = forwardRef(SvgRedo)
+export default IconRedoSolid

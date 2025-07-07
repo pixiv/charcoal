@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgPaste = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M10.796 3a.752.752 0 01.709-.5h.997c.325 0 .605.208.708.5.106.3.39.5.707.5h1.086a.25.25 0 01.25.25v1.5a.25.25 0 01-.25.25h-6a.25.25 0 01-.25-.25v-1.5a.25.25 0 01.25-.25h1.086c.318 0 .6-.2.707-.5zm.709-2c-.781 0-1.468.397-1.872 1h-.63c-.8 0-1.476.537-1.684 1.272A3.75 3.75 0 004 6.997V18.25A3.75 3.75 0 007.75 22h1.536a4.753 4.753 0 01-.953-1.5H7.75a2.25 2.25 0 01-2.25-2.25V6.997a2.25 2.25 0 011.753-2.195v.448c0 .966.784 1.75 1.75 1.75h6a1.75 1.75 0 001.75-1.75v-.267A2.25 2.25 0 0118 6.997v2.01c.527.027 1.032.14 1.5.326V6.997c0-1.738-1.183-3.2-2.788-3.625A1.75 1.75 0 0015.003 2h-.63c-.403-.603-1.09-1-1.871-1h-.998zM9.5 13.75a3.25 3.25 0 013.25-3.25h5A3.25 3.25 0 0121 13.75v5A3.25 3.25 0 0117.75 22h-5a3.25 3.25 0 01-3.25-3.25v-5zM12.75 12A1.75 1.75 0 0011 13.75v5c0 .966.784 1.75 1.75 1.75h5a1.75 1.75 0 001.75-1.75v-5A1.75 1.75 0 0017.75 12h-5z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconPaste = forwardRef(SvgPaste)
+export default IconPaste

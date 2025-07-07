@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgBold = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4.938 4.25c0-.69.56-1.25 1.25-1.25h7.153c2.758 0 4.827 2.39 4.827 5.125 0 1.31-.475 2.541-1.273 3.468 1.326.934 2.168 2.538 2.168 4.282 0 2.734-2.07 5.125-4.827 5.125H6.187c-.69 0-1.25-.56-1.25-1.25V4.25zm8.403 9H7.438v5.25h6.798c1.192 0 2.326-1.08 2.326-2.625 0-1.546-1.134-2.625-2.326-2.625h-.895zm-5.903-2.5h5.903c1.193 0 2.327-1.08 2.327-2.625 0-1.546-1.134-2.625-2.327-2.625H7.438v5.25z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconBoldSolid = forwardRef(SvgBold)
+export default IconBoldSolid

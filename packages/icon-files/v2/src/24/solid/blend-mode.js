@@ -1,0 +1,2 @@
+/** This file is auto generated. DO NOT EDIT BY HAND. */
+export default '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.274 8.323a6.604 6.604 0 100 13.208 6.604 6.604 0 000-13.208zm7.451 0a6.604 6.604 0 100 13.208 6.604 6.604 0 000-13.208zM12 2.468a6.604 6.604 0 100 13.209 6.604 6.604 0 000-13.209z" fill="currentColor"/></svg>'

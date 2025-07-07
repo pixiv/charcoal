@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgHome = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M14.549 3.524a3.92 3.92 0 00-5.039-.012l-8.279 6.912a.75.75 0 00.962 1.152l1.642-1.372v7.95a2.863 2.863 0 002.863 2.862h2.36a.75.75 0 00.75-.75v-4.328c0-1.062.849-2.173 2.173-2.173s2.173 1.11 2.173 2.173v4.328c0 .414.336.75.75.75h2.36a2.863 2.863 0 002.862-2.863V10.19l1.643 1.384a.75.75 0 00.967-1.146l-8.187-6.903z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconHomeSolid = forwardRef(SvgHome)
+export default IconHomeSolid

@@ -1,0 +1,26 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgCloudcheck = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.993 6.444a5.399 5.399 0 00-5.319 4.48.75.75 0 01-.622.614 3.028 3.028 0 00.558 6.015.74.74 0 01.084.003h4.82a6.6 6.6 0 00.071 1.5H6.63c-.018 0-.035 0-.053-.002h-.045A4.527 4.527 0 015.3 10.17a6.9 6.9 0 0112.678-1.758 5.418 5.418 0 013.956 4.414 6.482 6.482 0 00-1.883-.995 3.918 3.918 0 00-2.715-2.028.75.75 0 01-.526-.397 5.397 5.397 0 00-4.818-2.962zM18 23a5 5 0 100-10 5 5 0 000 10zm2.604-6.7a.5.5 0 010 .707l-3.247 3.246a.5.5 0 01-.707 0l-1.304-1.303a.5.5 0 11.707-.707l.95.95 2.893-2.893a.5.5 0 01.707 0z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconCloudCheck = forwardRef(SvgCloudcheck)
+export default IconCloudCheck

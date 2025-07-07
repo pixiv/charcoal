@@ -1,0 +1,23 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgVideo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6.45 4A4.45 4.45 0 002 8.45v7.1A4.45 4.45 0 006.45 20h11.1A4.45 4.45 0 0022 15.55v-7.1A4.45 4.45 0 0017.55 4H6.45zM3.5 8.45A2.95 2.95 0 016.45 5.5h11.1a2.95 2.95 0 012.95 2.95v7.1a2.95 2.95 0 01-2.95 2.95H6.45a2.95 2.95 0 01-2.95-2.95v-7.1zm12.195 5.325c1.367-.789 1.367-2.761 0-3.55L11.69 7.912c-1.367-.789-3.075.198-3.075 1.776v4.624c0 1.578 1.708 2.565 3.075 1.776l4.005-2.313zm-.75-2.251a.55.55 0 010 .952L10.94 14.79a.55.55 0 01-.825-.477V9.688a.55.55 0 01.825-.477l4.005 2.313z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconVideo = forwardRef(SvgVideo)
+export default IconVideo

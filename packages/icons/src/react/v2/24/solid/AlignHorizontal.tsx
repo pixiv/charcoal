@@ -1,0 +1,26 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgAlignhorizontal = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 2a.75.75 0 01.75.75v2.5h5.5c.966 0 1.75.784 1.75 1.75v2a1.75 1.75 0 01-1.75 1.75h-5.5v2.5H16c.966 0 1.75.784 1.75 1.75v2A1.75 1.75 0 0116 18.75h-3.25v2.5a.75.75 0 01-1.5 0v-2.5H8A1.75 1.75 0 016.25 17v-2c0-.966.784-1.75 1.75-1.75h3.25v-2.5h-5.5A1.75 1.75 0 014 9V7c0-.966.784-1.75 1.75-1.75h5.5v-2.5A.75.75 0 0112 2z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconAlignHorizontalSolid = forwardRef(SvgAlignhorizontal)
+export default IconAlignHorizontalSolid

@@ -1,0 +1,26 @@
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgAirbrush = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.5 4a1 1 0 100-2 1 1 0 000 2zm3 1a1 1 0 11-2 0 1 1 0 012 0zm1 3a1 1 0 100-2 1 1 0 000 2zm2 2a1 1 0 100-2 1 1 0 000 2zm-4 0a1 1 0 100-2 1 1 0 000 2zm1 3a1 1 0 11-2 0 1 1 0 012 0zm-2-6a1 1 0 11-2 0 1 1 0 012 0zm-1 5a1 1 0 100-2 1 1 0 000 2zm1 3a1 1 0 11-2 0 1 1 0 012 0zm3-3a1 1 0 100-2 1 1 0 000 2zm6.25-6.5A1.75 1.75 0 0012 7.25v3c0 .966.784 1.75 1.75 1.75h3a1.75 1.75 0 001.75-1.75v-3a1.75 1.75 0 00-1.75-1.75h-3zM9.5 17.25a3.75 3.75 0 013.75-3.75h4A3.75 3.75 0 0121 17.25v3A1.75 1.75 0 0119.25 22h-8a1.75 1.75 0 01-1.75-1.75v-3z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconAirbrushSolid = forwardRef(SvgAirbrush)
+export default IconAirbrushSolid
