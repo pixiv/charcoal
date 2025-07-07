@@ -1,8 +1,23 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgLink = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M20.292 3.782a5.222 5.222 0 00-7.385 0l-2.8 2.801a1 1 0 001.413 1.414l2.801-2.8a3.222 3.222 0 014.557 4.556l-2.322 2.322a3.69 3.69 0 01-5.22 0 1 1 0 00-1.414 1.414 5.691 5.691 0 008.048 0l2.322-2.322a5.222 5.222 0 000-7.385zM3.785 20.29a5.222 5.222 0 007.385 0l2.801-2.8a1 1 0 00-1.414-1.415l-2.801 2.8a3.222 3.222 0 11-4.557-4.556l2.322-2.322a3.691 3.691 0 015.22 0 1 1 0 101.415-1.414 5.691 5.691 0 00-8.049 0l-2.322 2.322a5.222 5.222 0 000 7.385z" fill="currentColor"/>
-  </svg>);
-export const IconLinkSolid = forwardRef(SvgLink);
-export default IconLinkSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgLink = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M20.292 3.782a5.222 5.222 0 00-7.385 0l-2.8 2.801a1 1 0 001.413 1.414l2.801-2.8a3.222 3.222 0 014.557 4.556l-2.322 2.322a3.69 3.69 0 01-5.22 0 1 1 0 00-1.414 1.414 5.691 5.691 0 008.048 0l2.322-2.322a5.222 5.222 0 000-7.385zM3.785 20.29a5.222 5.222 0 007.385 0l2.801-2.8a1 1 0 00-1.414-1.415l-2.801 2.8a3.222 3.222 0 11-4.557-4.556l2.322-2.322a3.691 3.691 0 015.22 0 1 1 0 101.415-1.414 5.691 5.691 0 00-8.049 0l-2.322 2.322a5.222 5.222 0 000 7.385z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconLinkSolid = forwardRef(SvgLink)
+export default IconLinkSolid

@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgProjects = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M6.501 4.75c0-.69.56-1.25 1.25-1.25h8.478c.69 0 1.25.56 1.25 1.25v7.75H15.5a1.75 1.75 0 00-1.75 1.75v.5a.25.25 0 01-.25.25h-3a.25.25 0 01-.25-.25v-.5A1.75 1.75 0 008.5 12.5H6.501V4.75zm-1.5 7.75V4.75A2.75 2.75 0 017.751 2h8.478a2.75 2.75 0 012.75 2.75v7.75h.271c.966 0 1.75.784 1.75 1.75v5A2.75 2.75 0 0118.25 22H5.75A2.75 2.75 0 013 19.25v-5c0-.966.784-1.75 1.75-1.75h.251zm3.907-6.496a.75.75 0 100 1.5h4.994a.75.75 0 100-1.5H8.908zm0 2.988a.75.75 0 100 1.5h3.075a.75.75 0 100-1.5H8.909z" fill="currentColor"/>
-  </svg>);
-export const IconProjectsSolid = forwardRef(SvgProjects);
-export default IconProjectsSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgProjects = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6.501 4.75c0-.69.56-1.25 1.25-1.25h8.478c.69 0 1.25.56 1.25 1.25v7.75H15.5a1.75 1.75 0 00-1.75 1.75v.5a.25.25 0 01-.25.25h-3a.25.25 0 01-.25-.25v-.5A1.75 1.75 0 008.5 12.5H6.501V4.75zm-1.5 7.75V4.75A2.75 2.75 0 017.751 2h8.478a2.75 2.75 0 012.75 2.75v7.75h.271c.966 0 1.75.784 1.75 1.75v5A2.75 2.75 0 0118.25 22H5.75A2.75 2.75 0 013 19.25v-5c0-.966.784-1.75 1.75-1.75h.251zm3.907-6.496a.75.75 0 100 1.5h4.994a.75.75 0 100-1.5H8.908zm0 2.988a.75.75 0 100 1.5h3.075a.75.75 0 100-1.5H8.909z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconProjectsSolid = forwardRef(SvgProjects)
+export default IconProjectsSolid

@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgLocation = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M12 2.061c-7.037 0-11.016 8.072-6.731 13.654l3.68 4.793c1.54 2.006 4.563 2.006 6.103 0l3.68-4.793C23.015 10.133 19.036 2.06 12 2.06zm-5.542 12.74C2.931 10.206 6.207 3.561 12 3.561s9.07 6.645 5.541 11.24l-3.68 4.794a2.347 2.347 0 01-3.723 0L6.458 14.8zM9.5 10.294a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0zm2.5-4a4 4 0 100 8 4 4 0 000-8z" fill="currentColor"/>
-  </svg>);
-export const IconLocation = forwardRef(SvgLocation);
-export default IconLocation;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgLocation = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 2.061c-7.037 0-11.016 8.072-6.731 13.654l3.68 4.793c1.54 2.006 4.563 2.006 6.103 0l3.68-4.793C23.015 10.133 19.036 2.06 12 2.06zm-5.542 12.74C2.931 10.206 6.207 3.561 12 3.561s9.07 6.645 5.541 11.24l-3.68 4.794a2.347 2.347 0 01-3.723 0L6.458 14.8zM9.5 10.294a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0zm2.5-4a4 4 0 100 8 4 4 0 000-8z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconLocation = forwardRef(SvgLocation)
+export default IconLocation

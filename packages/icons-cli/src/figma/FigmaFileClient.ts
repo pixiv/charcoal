@@ -39,7 +39,8 @@ function parseV2IconName(name: string) {
   return name
     .split(',')
     .map((f) => f.split('=').map((s) => s.trim())[1])
-    .join('/').toLowerCase()
+    .join('/')
+    .toLowerCase()
 }
 
 type ExportFormat = 'svg' | 'pdf'
@@ -111,7 +112,7 @@ export class FigmaFileClient {
   private async loadComponents() {
     const { document } = await this.getFile()
     // const { document } = (
-      // await import('../../../../blob-report/scripts/doc.json')
+    // await import('../../../../blob-report/scripts/doc.json')
     // ).default as Figma.FileResponse
 
     if (this.layoutVersion === 'v2') {

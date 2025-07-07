@@ -50,7 +50,7 @@ export default {
       <>
         <div className="icons-grid">
 ${icons
-  .sort((a,b) => a[0].localeCompare(b[0]))
+  .sort((a, b) => a[0].localeCompare(b[0]))
   .map(
     ([iconName]) => `
           <div>

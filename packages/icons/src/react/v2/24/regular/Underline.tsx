@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgUnderline = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M7.75 3.75a.75.75 0 00-1.5 0v7.75a5.75 5.75 0 0011.5 0V3.75a.75.75 0 00-1.5 0v7.75a4.25 4.25 0 01-8.5 0V3.75zM3.754 21h16.492a.75.75 0 100-1.5H3.754a.75.75 0 100 1.5z" fill="currentColor"/>
-  </svg>);
-export const IconUnderline = forwardRef(SvgUnderline);
-export default IconUnderline;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgUnderline = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M7.75 3.75a.75.75 0 00-1.5 0v7.75a5.75 5.75 0 0011.5 0V3.75a.75.75 0 00-1.5 0v7.75a4.25 4.25 0 01-8.5 0V3.75zM3.754 21h16.492a.75.75 0 100-1.5H3.754a.75.75 0 100 1.5z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconUnderline = forwardRef(SvgUnderline)
+export default IconUnderline

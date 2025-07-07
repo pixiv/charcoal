@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgPalette = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M12.235 2.004A10.001 10.001 0 0011.753 22h.024a2.48 2.48 0 001.938-4.017l-.006-.007-.006-.007a.788.788 0 01.265-1.212c.274-.132.636-.148 1.242-.115l.174.01c.512.03 1.195.072 1.832-.102A6.491 6.491 0 0022 10.288c0-2.102-1.126-4.197-2.864-5.735a10.206 10.206 0 00-6.902-2.55zm1.096 5.606a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zm4.136 2.696a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zm-7.64-2.769a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM6.28 13.175a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z" fill="currentColor"/>
-  </svg>);
-export const IconPaletteSolid = forwardRef(SvgPalette);
-export default IconPaletteSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgPalette = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.235 2.004A10.001 10.001 0 0011.753 22h.024a2.48 2.48 0 001.938-4.017l-.006-.007-.006-.007a.788.788 0 01.265-1.212c.274-.132.636-.148 1.242-.115l.174.01c.512.03 1.195.072 1.832-.102A6.491 6.491 0 0022 10.288c0-2.102-1.126-4.197-2.864-5.735a10.206 10.206 0 00-6.902-2.55zm1.096 5.606a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zm4.136 2.696a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zm-7.64-2.769a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM6.28 13.175a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconPaletteSolid = forwardRef(SvgPalette)
+export default IconPaletteSolid

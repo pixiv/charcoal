@@ -11,7 +11,7 @@
       "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
     },
-    "./*": "./dist/*" 
+    "./*": "./dist/*"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": true,

@@ -54,12 +54,15 @@ async function main() {
       return {
         filePath,
         css,
-        cssName
+        cssName,
       }
     })
   )
 
-  const cssContent = filesWithContent.sort((a,b)=>a.cssName.localeCompare(b.cssName)).map((icon) => icon.css).join('\n')
+  const cssContent = filesWithContent
+    .sort((a, b) => a.cssName.localeCompare(b.cssName))
+    .map((icon) => icon.css)
+    .join('\n')
   await writeFile(path.join(outDir, 'index.css'), cssContent)
   classNames = classNames.sort()
   const html = `

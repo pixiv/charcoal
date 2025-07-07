@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgDownload = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M4 20.25c0 .414.336.75.75.75h14.5a.75.75 0 000-1.5H4.75a.75.75 0 00-.75.75zm7.25-5.81V3.75a.75.75 0 011.5 0v10.69l4.22-4.22a.75.75 0 111.06 1.06l-5.5 5.5a.75.75 0 01-1.06 0l-5.5-5.5a.75.75 0 111.06-1.06l4.22 4.22z" fill="currentColor"/>
-  </svg>);
-export const IconDownload = forwardRef(SvgDownload);
-export default IconDownload;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgDownload = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4 20.25c0 .414.336.75.75.75h14.5a.75.75 0 000-1.5H4.75a.75.75 0 00-.75.75zm7.25-5.81V3.75a.75.75 0 011.5 0v10.69l4.22-4.22a.75.75 0 111.06 1.06l-5.5 5.5a.75.75 0 01-1.06 0l-5.5-5.5a.75.75 0 111.06-1.06l4.22 4.22z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconDownload = forwardRef(SvgDownload)
+export default IconDownload

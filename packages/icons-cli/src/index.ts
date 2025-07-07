@@ -58,7 +58,7 @@ void yargs
         FIGMA_TOKEN,
         OUTPUT_ROOT_DIR,
         format as 'svg' | 'pdf',
-        layout as  'v1' | 'v2'
+        layout as 'v1' | 'v2'
       )
     }
   )
