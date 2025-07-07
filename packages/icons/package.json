@@ -11,6 +11,8 @@
       "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
     },
+    "./css/*": "./css/*",
+    "./react/*": "./react/*",
     "./*": "./dist/*"
   },
   "types": "./dist/index.d.ts",
@@ -51,7 +53,8 @@
     "src",
     "dist",
     "svg",
-    "css"
+    "css",
+    "react"
   ],
   "publishConfig": {
     "access": "public"

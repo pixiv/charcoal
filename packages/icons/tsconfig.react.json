@@ -3,7 +3,8 @@
   "compilerOptions": {
     "incremental": true,
     "outDir": "./dist/react/v2",
-    "tsBuildInfoFile": "./.tsbuildinfo.react"
+    "declarationDir": "./react/v2",
+    "tsBuildInfoFile": "./.tsbuildinfo.react",
   },
   "include": ["./src/react"],
   "exclude": ["**/*.story.tsx"]
