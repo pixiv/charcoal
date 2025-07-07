@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "incremental": true,
+    "outDir": "./dist/react",
+    "tsBuildInfoFile": "./.tsbuildinfo.react"
+  },
+  "include": ["./src/react"],
+  "exclude": ["**/*.story.tsx"]
+}

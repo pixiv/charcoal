@@ -19,6 +19,7 @@
     "build": "run-p --print-label 'build:*'",
     "build:bundle": "FORCE_COLOR=1 tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build:react": "tsc --project tsconfig.react.json --pretty",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
@@ -49,7 +50,8 @@
   "files": [
     "src",
     "dist",
-    "svg"
+    "svg",
+    "css"
   ],
   "publishConfig": {
     "access": "public"

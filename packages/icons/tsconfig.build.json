@@ -6,5 +6,5 @@
     "tsBuildInfoFile": "./.tsbuildinfo"
   },
   "include": ["./src"],
-  "exclude": ["**/*.story.tsx"]
+  "exclude": ["**/*.story.tsx", "./src/react"]
 }
