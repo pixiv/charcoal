@@ -1,15 +1,16 @@
 /** This file is auto generated. DO NOT EDIT BY HAND. */
   
-declare var _default: {'16/solid/arrow.left-down': { uri: string, isSetCurrentcolor: boolean };
-'16/solid/chevron.down': { uri: string, isSetCurrentcolor: boolean };
-'16/solid/chevron.left': { uri: string, isSetCurrentcolor: boolean };
-'16/solid/chevron.right': { uri: string, isSetCurrentcolor: boolean };
-'16/solid/chevron.up': { uri: string, isSetCurrentcolor: boolean };
+declare var _default: {
 '16/regular/arrow.left-down': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.down': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.left': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.right': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.up': { uri: string, isSetCurrentcolor: boolean };
+'16/solid/arrow.left-down': { uri: string, isSetCurrentcolor: boolean };
+'16/solid/chevron.down': { uri: string, isSetCurrentcolor: boolean };
+'16/solid/chevron.left': { uri: string, isSetCurrentcolor: boolean };
+'16/solid/chevron.right': { uri: string, isSetCurrentcolor: boolean };
+'16/solid/chevron.up': { uri: string, isSetCurrentcolor: boolean };
 '20/regular/x': { uri: string, isSetCurrentcolor: boolean };
 '20/solid/x': { uri: string, isSetCurrentcolor: boolean };
 '24/color/color-mixture': { uri: string, isSetCurrentcolor: boolean };
@@ -527,3 +528,4 @@ declare var _default: {'16/solid/arrow.left-down': { uri: string, isSetCurrentco
 '24/solid/x': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/zoom-in': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/zoom-out': { uri: string, isSetCurrentcolor: boolean }}
+export default _default;
