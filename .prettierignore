@@ -13,6 +13,7 @@ pnpm-lock.yaml
 LICENSE
 /packages/theme/theme.json
 /packages/icon-files/src/
+/packages/icons/react/
 /packages/token-cli/build/
 /packages/token-cli/tokens/
 /packages/token-cli/out/

@@ -122,6 +122,7 @@ const config = [
       'packages/tailwind-diff/bin/tailwind-diff.js',
       'packages/icon-files/src/',
       'packages/icon-files/v2',
+      'packages/icons/react',
       'eslint.config.mjs',
       'vitest.*',
       '.storybook',
