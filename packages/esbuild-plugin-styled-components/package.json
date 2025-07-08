@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/esbuild-plugin-styled-components",
-  "version": "4.8.1-beta.3",
+  "version": "4.8.1",
   "private": true,
   "license": "Apache-2.0",
   "main": "src/index.ts",
