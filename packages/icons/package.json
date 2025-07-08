@@ -46,8 +46,8 @@
     "@charcoal-ui/icon-files": "workspace:*",
     "warning": "^4.0.3"
   },
-  "optionalDependencies": {
-    "react": "^18.3.1"
+  "peerDependencies": {
+    "react": ">=17.0.0"
   },
   "files": [
     "src",
