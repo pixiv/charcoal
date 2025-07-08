@@ -15,6 +15,11 @@
       "types": "./v2/src/index.d.ts",
       "require": "./v2/src/index.cjs",
       "default": "./v2/src/index.js"
+    },
+    "./datauri": {
+      "types": "./v2/datauri/index.d.ts",
+      "require": "./v2/datauri/index.cjs",
+      "default": "./v2/datauri/index.js"
     }
   },
   "types": "./src/index.d.ts",
