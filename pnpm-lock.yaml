@@ -814,6 +814,9 @@ importers:
       '@charcoal-ui/foundation':
         specifier: workspace:*
         version: link:../foundation
+      '@charcoal-ui/icon-files':
+        specifier: workspace:*
+        version: link:../icon-files
       '@charcoal-ui/theme':
         specifier: workspace:*
         version: link:../theme

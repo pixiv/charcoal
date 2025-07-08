@@ -53,11 +53,12 @@ ${dataUris
 
   const dts = `/** This file is auto generated. DO NOT EDIT BY HAND. */
   
-declare var _default: {${dataUris
-    .map(
-      (it) => `'${it.iconName}': { uri: string, isSetCurrentcolor: boolean }`
-    )
-    .join(';\n')}}`
+declare var _default: {
+${dataUris
+  .map((it) => `'${it.iconName}': { uri: string, isSetCurrentcolor: boolean }`)
+  .join(';\n')}}
+export default _default;
+`
 
   await writeFile(path.join(outDir, 'index.d.ts'), dts)
 }
