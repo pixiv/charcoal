@@ -49,6 +49,11 @@
   "peerDependencies": {
     "react": ">=17.0.0"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
   "files": [
     "src",
     "dist",
