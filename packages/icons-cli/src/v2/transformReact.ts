@@ -28,13 +28,23 @@ async function main() {
     })
   )
   const icons = Object.entries(catalog)
+
+  const iconsPair = icons.map(([iconName, iconPath]) => [
+    iconName,
+    './' + iconPath.replace('.tsx', ''),
+  ])
+
+  await writeFile(
+    path.join(workDir, 'index.tsx'),
+    `${iconsPair
+      .map(([iconName, iconPath]) => `export {${iconName}} from '${iconPath}'`)
+      .join('\n')}`
+  )
+
   await writeFile(
     path.join(workDir, 'index.story.tsx'),
-    `${icons
-      .map(
-        ([iconName, iconPath]) =>
-          `import {${iconName}} from './${iconPath.replace('.tsx', '')}'`
-      )
+    `${iconsPair
+      .map(([iconName, iconPath]) => `import {${iconName}} from '${iconPath}'`)
       .join('\n')}
 import { createGlobalStyle } from 'styled-components'
 
