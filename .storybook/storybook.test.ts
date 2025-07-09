@@ -9,14 +9,8 @@ import { styleSheetSerializer } from 'jest-styled-components'
 
 import type { Meta, StoryFn } from '@storybook/react'
 
-// Mock React useId to return consistent ID for snapshots
-vi.mock('react', async (importOriginal) => ({
-  useId: vi.fn(() => 'test-id'),
-  ...(await importOriginal()),
-}))
-
 // Mock the custom useId utility
-vi.mock('../packages/react/src/utils/useId', () => ({
+vi.mock('../packages/react/src/_lib/useId', () => ({
   useId: vi.fn((id?: string) => id ?? 'test-id'),
 }))
 
