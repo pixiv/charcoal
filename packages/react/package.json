@@ -68,8 +68,6 @@
     "@react-aria/overlays": "^3.20.0",
     "@react-aria/radio": "^3.10.0",
     "@react-aria/ssr": "^3.9.2",
-    "@react-aria/utils": "^3.23.0",
-    "@react-aria/visually-hidden": "^3.8.8",
     "@react-stately/radio": "^3.10.2",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
