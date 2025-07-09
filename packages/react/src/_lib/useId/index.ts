@@ -5,6 +5,6 @@ import { useId as useReactId } from 'react'
  * Returns the provided id if given, otherwise generates a unique id using React's useId
  */
 export function useId(id?: string): string {
-  const generatedId = useReactId()
-  return id ?? generatedId
+  const _id = useReactId()
+  return id ?? _id
 }

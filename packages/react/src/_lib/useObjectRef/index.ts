@@ -1,26 +1,23 @@
-import { useCallback, useRef } from 'react'
+import {
+  useCallback,
+  useMemo,
+  useRef,
+  type MutableRefObject,
+  type Ref,
+} from 'react'
+import { mergeRefs } from '../mergeRefs'
 
 /**
  * Custom implementation of useObjectRef to replace @react-aria/utils
  * Converts any ref to a mutable ref object
  */
 export function useObjectRef<T>(
-  forwardedRef?: React.Ref<T>
-): React.MutableRefObject<T | null> {
+  forwardedRef?: Ref<T>
+): MutableRefObject<T | null> {
   const objRef = useRef<T | null>(null)
+  const _ref = useMemo(() => mergeRefs(objRef, forwardedRef), [forwardedRef])
 
-  const ref = useCallback(
-    (value: T | null) => {
-      objRef.current = value
-
-      if (typeof forwardedRef === 'function') {
-        forwardedRef(value)
-      } else if (forwardedRef && typeof forwardedRef === 'object') {
-        ;(forwardedRef as React.MutableRefObject<T | null>).current = value
-      }
-    },
-    [forwardedRef]
-  )
+  const ref = useCallback((value: T | null) => _ref(value), [_ref])
 
   // Return an object that can be used as both a callback ref and a mutable ref
   return {
