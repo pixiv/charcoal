@@ -9,7 +9,7 @@ export function useVisuallyHidden(): {
 } {
   return {
     visuallyHiddenProps: {
-      className: 'visually-hidden',
+      className: 'charcoal-visually-hidden',
     },
   }
 }

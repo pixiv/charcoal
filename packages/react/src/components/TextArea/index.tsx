@@ -4,10 +4,10 @@ import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
-import { useVisuallyHidden } from '../../utils/useVisuallyHidden'
+import { useVisuallyHidden } from '../../_lib/useVisuallyHidden'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
-import { useId } from '../../utils/useId'
+import { useId } from '../../_lib/useId'
 
 export type TextAreaProps = {
   value?: string

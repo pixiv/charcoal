@@ -3,7 +3,7 @@ import './index.css'
 import { memo, forwardRef } from 'react'
 import SwitchInput, { type SwitchInputProps } from './SwitchInput'
 import { SwitchWithLabel } from './SwitchWithLabel'
-import { useId } from '../../utils/useId'
+import { useId } from '../../_lib/useId'
 
 export type SwitchProps = SwitchInputProps
 

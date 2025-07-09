@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react'
-import { useVisuallyHidden } from './useVisuallyHidden'
+import { useVisuallyHidden } from './index'
 
 describe('useVisuallyHidden', () => {
   it('should return visuallyHiddenProps with correct className', () => {
@@ -7,7 +7,7 @@ describe('useVisuallyHidden', () => {
 
     expect(result.current).toEqual({
       visuallyHiddenProps: {
-        className: 'visually-hidden',
+        className: 'charcoal-visually-hidden',
       },
     })
   })
@@ -18,7 +18,9 @@ describe('useVisuallyHidden', () => {
 
     rerender()
     expect(result.current).toEqual(firstResult)
-    expect(result.current.visuallyHiddenProps.className).toBe('visually-hidden')
+    expect(result.current.visuallyHiddenProps.className).toBe(
+      'charcoal-visually-hidden'
+    )
   })
 
   it('should always return an object with visuallyHiddenProps property', () => {

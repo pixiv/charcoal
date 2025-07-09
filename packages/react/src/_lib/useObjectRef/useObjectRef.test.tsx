@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { useRef } from 'react'
-import { useObjectRef } from './useObjectRef'
+import { useObjectRef } from './index'
 
 describe('useObjectRef', () => {
   it('should return a mutable ref object', () => {

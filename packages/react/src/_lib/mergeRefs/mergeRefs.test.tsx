@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { useRef } from 'react'
-import { mergeRefs } from './mergeRefs'
+import { mergeRefs } from './index'
 
 describe('mergeRefs', () => {
   it('should merge function refs', () => {

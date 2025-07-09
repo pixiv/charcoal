@@ -3,7 +3,7 @@ import './index.css'
 import { forwardRef, memo } from 'react'
 import CheckboxInput, { CheckboxInputProps } from './CheckboxInput'
 import { CheckboxWithLabel } from './CheckboxWithLabel'
-import { useId } from '../../utils/useId'
+import { useId } from '../../_lib/useId'
 
 export type CheckboxProps = CheckboxInputProps
 

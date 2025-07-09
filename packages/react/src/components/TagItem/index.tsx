@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo, ForwardedRef, type JSX } from 'react'
-import { useObjectRef } from '../../utils/useObjectRef'
+import { useObjectRef } from '../../_lib/useObjectRef'
 import Icon from '../Icon'
 import { useClassNames } from '../../_lib/useClassNames'
 

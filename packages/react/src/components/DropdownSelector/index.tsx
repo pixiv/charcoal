@@ -10,7 +10,7 @@ import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
-import { useId } from '../../utils/useId'
+import { useId } from '../../_lib/useId'
 
 export type DropdownSelectorProps = {
   label: string
