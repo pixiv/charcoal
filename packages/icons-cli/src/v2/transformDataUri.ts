@@ -35,7 +35,7 @@ ${dataUris
   )
   .join(',\n')}
 }`
-  await writeFile(path.join(outDir, 'index.js'), js)
+  await writeFile(path.join(outDir, 'index.mjs'), js)
 
   const cjs = `/** This file is auto generated. DO NOT EDIT BY HAND. */
   
