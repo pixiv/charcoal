@@ -50,6 +50,7 @@ declare var _default: {
   '24/Calendar': () => Promise<string>;
   '24/Camera': () => Promise<string>;
   '24/CameraVideo': () => Promise<string>;
+  '24/Cart': () => Promise<string>;
   '24/ChangeCharactor': () => Promise<string>;
   '24/ChatBot': () => Promise<string>;
   '24/Check': () => Promise<string>;
@@ -58,6 +59,7 @@ declare var _default: {
   '24/Close': () => Promise<string>;
   '24/Codes': () => Promise<string>;
   '24/Collapse': () => Promise<string>;
+  '24/Collection': () => Promise<string>;
   '24/CommentFill': () => Promise<string>;
   '24/CommentOutline': () => Promise<string>;
   '24/Contest': () => Promise<string>;
@@ -165,6 +167,7 @@ declare var _default: {
   '24/Reload': () => Promise<string>;
   '24/ReloadLoop': () => Promise<string>;
   '24/Reorder': () => Promise<string>;
+  '24/Reply': () => Promise<string>;
   '24/Roll': () => Promise<string>;
   '24/Rotate90DegreesC': () => Promise<string>;
   '24/Rotate90DegreesCc': () => Promise<string>;
@@ -187,6 +190,7 @@ declare var _default: {
   '24/Sun': () => Promise<string>;
   '24/Temperature': () => Promise<string>;
   '24/Text': () => Promise<string>;
+  '24/Thread': () => Promise<string>;
   '24/Trash': () => Promise<string>;
   '24/TrashAlt': () => Promise<string>;
   '24/Undo': () => Promise<string>;
@@ -232,6 +236,7 @@ declare var _default: {
   '32/ReadHorizontalLeft': () => Promise<string>;
   '32/ReadHorizontalRight': () => Promise<string>;
   '32/ReadVertical': () => Promise<string>;
+  '32/Redo': () => Promise<string>;
   '32/RollHorizontal': () => Promise<string>;
   '32/RollVertical': () => Promise<string>;
   '32/SansSerif': () => Promise<string>;
@@ -239,6 +244,7 @@ declare var _default: {
   '32/ShareAndroid': () => Promise<string>;
   '32/ShareIos': () => Promise<string>;
   '32/Shopping': () => Promise<string>;
+  '32/Undo': () => Promise<string>;
   '32/Upload': () => Promise<string>;
   '32/User': () => Promise<string>;
   '32/VerticalWriting': () => Promise<string>;
