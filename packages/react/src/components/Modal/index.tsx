@@ -5,7 +5,7 @@ import type { AriaDialogProps } from '@react-types/dialog'
 import { animated, useTransition, easings } from 'react-spring'
 import Button, { ButtonProps } from '../Button'
 import IconButton, { IconButtonProps } from '../IconButton'
-import { useObjectRef } from '@react-aria/utils'
+import { useObjectRef } from '../../_lib/useObjectRef'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
 import {
