@@ -59,6 +59,7 @@ export default {
   '24/Close': () => import('./24/Close.js').then(m => m.default),
   '24/Codes': () => import('./24/Codes.js').then(m => m.default),
   '24/Collapse': () => import('./24/Collapse.js').then(m => m.default),
+  '24/Collection': () => import('./24/Collection.js').then(m => m.default),
   '24/CommentFill': () => import('./24/CommentFill.js').then(m => m.default),
   '24/CommentOutline': () => import('./24/CommentOutline.js').then(m => m.default),
   '24/Contest': () => import('./24/Contest.js').then(m => m.default),

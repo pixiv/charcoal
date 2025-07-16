@@ -59,6 +59,7 @@ declare var _default: {
   '24/Close': () => Promise<string>;
   '24/Codes': () => Promise<string>;
   '24/Collapse': () => Promise<string>;
+  '24/Collection': () => Promise<string>;
   '24/CommentFill': () => Promise<string>;
   '24/CommentOutline': () => Promise<string>;
   '24/Contest': () => Promise<string>;
