@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "3.16.2",
+  "version": "3.17.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -20,7 +20,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^3.16.2",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^3.17.0",
     "@react-types/dialog": "^3.5.8",
     "@react-types/switch": "^3.1.2",
     "@storybook/addon-actions": "^8.0.5",
@@ -48,11 +48,11 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.16.2",
-    "@charcoal-ui/icons": "^3.16.2",
-    "@charcoal-ui/styled": "^3.16.2",
-    "@charcoal-ui/theme": "^3.16.2",
-    "@charcoal-ui/utils": "^3.16.2",
+    "@charcoal-ui/foundation": "^3.17.0",
+    "@charcoal-ui/icons": "^3.17.0",
+    "@charcoal-ui/styled": "^3.17.0",
+    "@charcoal-ui/theme": "^3.17.0",
+    "@charcoal-ui/utils": "^3.17.0",
     "@react-aria/button": "^3.9.1",
     "@react-aria/checkbox": "^3.13.0",
     "@react-aria/dialog": "^3.5.10",

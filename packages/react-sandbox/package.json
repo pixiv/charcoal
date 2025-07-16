@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "3.16.2",
+  "version": "3.17.0",
   "license": "Apache-2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -20,7 +20,7 @@
     "clean": "rimraf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@charcoal-ui/esbuild-plugin-styled-components": "^3.16.2",
+    "@charcoal-ui/esbuild-plugin-styled-components": "^3.17.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -41,11 +41,11 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "^3.16.2",
-    "@charcoal-ui/react": "^3.16.2",
-    "@charcoal-ui/styled": "^3.16.2",
-    "@charcoal-ui/theme": "^3.16.2",
-    "@charcoal-ui/utils": "^3.16.2",
+    "@charcoal-ui/foundation": "^3.17.0",
+    "@charcoal-ui/react": "^3.17.0",
+    "@charcoal-ui/styled": "^3.17.0",
+    "@charcoal-ui/theme": "^3.17.0",
+    "@charcoal-ui/utils": "^3.17.0",
     "polished": "^4.1.4",
     "react-spring": "^9.0.0",
     "warning": "^4.0.3"
