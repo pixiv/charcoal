@@ -40,7 +40,6 @@
   "scripts": {
     "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
     "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "build:copy-css": "cpx --clean 'src/unstable-css/**/*.{css,d.ts}' dist/unstable-css",
     "build:token-object": "tsx cli/token-object.ts",
     "serialize": "node cli/index.js",
