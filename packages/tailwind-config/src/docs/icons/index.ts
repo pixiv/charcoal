@@ -1,1 +1,1 @@
-export { IconClasses } from './IconClasses' 
+export { IconClasses } from './IconClasses'
