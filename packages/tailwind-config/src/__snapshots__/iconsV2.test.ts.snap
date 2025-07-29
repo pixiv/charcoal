@@ -2,7 +2,7 @@
 
 exports[`createIconUtilities > createIconUtilities 1`] = `
 {
-  "icon-add": {
+  ".icon-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -11,7 +11,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-add-circle": {
+  ".icon-add-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -20,7 +20,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-add-circle-solid": {
+  ".icon-add-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -29,7 +29,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-add-solid": {
+  ".icon-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -38,7 +38,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-airbrush": {
+  ".icon-airbrush": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -47,7 +47,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-airbrush-solid": {
+  ".icon-airbrush-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -56,7 +56,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-album": {
+  ".icon-album": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -65,7 +65,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-album-add": {
+  ".icon-album-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -74,7 +74,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-album-add-solid": {
+  ".icon-album-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -83,7 +83,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-album-solid": {
+  ".icon-album-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -92,7 +92,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-alert": {
+  ".icon-alert": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -101,7 +101,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-alert-solid": {
+  ".icon-alert-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -110,7 +110,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-align-horizontal": {
+  ".icon-align-horizontal": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -119,7 +119,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-align-horizontal-solid": {
+  ".icon-align-horizontal-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -128,7 +128,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-align-vertical": {
+  ".icon-align-vertical": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -137,7 +137,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-align-vertical-solid": {
+  ".icon-align-vertical-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -146,7 +146,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-angle": {
+  ".icon-angle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -155,7 +155,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-angle-solid": {
+  ".icon-angle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -164,7 +164,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-announce": {
+  ".icon-announce": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -173,7 +173,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-announce-solid": {
+  ".icon-announce-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -182,7 +182,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-apple-pencil": {
+  ".icon-apple-pencil": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -191,7 +191,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-apple-pencil-solid": {
+  ".icon-apple-pencil-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -200,7 +200,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-ar": {
+  ".icon-ar": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -209,7 +209,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-ar-solid": {
+  ".icon-ar-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -218,7 +218,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-archive": {
+  ".icon-archive": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -227,7 +227,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-archive-solid": {
+  ".icon-archive-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -236,7 +236,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-ccw": {
+  ".icon-arrow-ccw": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -245,7 +245,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-ccw-solid": {
+  ".icon-arrow-ccw-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -254,7 +254,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-down": {
+  ".icon-arrow-down": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -263,7 +263,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-down-solid": {
+  ".icon-arrow-down-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -272,7 +272,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-down-square": {
+  ".icon-arrow-down-square": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -281,7 +281,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-down-square-solid": {
+  ".icon-arrow-down-square-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -290,7 +290,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left": {
+  ".icon-arrow-left": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -299,7 +299,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-down": {
+  ".icon-arrow-left-down": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -308,7 +308,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-down-16": {
+  ".icon-arrow-left-down-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -317,7 +317,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-down-solid": {
+  ".icon-arrow-left-down-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -326,7 +326,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-down-solid-16": {
+  ".icon-arrow-left-down-solid-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -335,7 +335,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-solid": {
+  ".icon-arrow-left-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -344,7 +344,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-square": {
+  ".icon-arrow-left-square": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -353,7 +353,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-left-square-solid": {
+  ".icon-arrow-left-square-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -362,7 +362,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-right": {
+  ".icon-arrow-right": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -371,7 +371,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-right-solid": {
+  ".icon-arrow-right-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -380,7 +380,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-up": {
+  ".icon-arrow-up": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -389,7 +389,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-arrow-up-solid": {
+  ".icon-arrow-up-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -398,7 +398,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-auto-select": {
+  ".icon-auto-select": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -407,7 +407,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-auto-select-solid": {
+  ".icon-auto-select-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -416,7 +416,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bell": {
+  ".icon-bell": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -425,7 +425,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bell-solid": {
+  ".icon-bell-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -434,7 +434,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bezier-curve": {
+  ".icon-bezier-curve": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -443,7 +443,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bezier-curve-solid": {
+  ".icon-bezier-curve-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -452,7 +452,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-blend-mode": {
+  ".icon-blend-mode": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -461,7 +461,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-blend-mode-solid": {
+  ".icon-blend-mode-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -470,7 +470,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-body": {
+  ".icon-body": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -479,7 +479,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-body-add": {
+  ".icon-body-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -488,7 +488,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-body-add-solid": {
+  ".icon-body-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -497,7 +497,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-body-edit": {
+  ".icon-body-edit": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -506,7 +506,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-body-edit-solid": {
+  ".icon-body-edit-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -515,7 +515,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-body-solid": {
+  ".icon-body-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -524,7 +524,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bold": {
+  ".icon-bold": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -533,7 +533,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bold-solid": {
+  ".icon-bold-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -542,7 +542,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-book": {
+  ".icon-book": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -551,7 +551,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-book-solid": {
+  ".icon-book-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -560,7 +560,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bookmark": {
+  ".icon-bookmark": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -569,7 +569,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bookmark-solid": {
+  ".icon-bookmark-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -578,7 +578,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bring-backward": {
+  ".icon-bring-backward": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -587,7 +587,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bring-backward-solid": {
+  ".icon-bring-backward-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -596,7 +596,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bring-forward": {
+  ".icon-bring-forward": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -605,7 +605,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bring-forward-solid": {
+  ".icon-bring-forward-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -614,7 +614,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush": {
+  ".icon-brush": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -623,7 +623,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-decoration": {
+  ".icon-brush-decoration": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -632,7 +632,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-decoration-solid": {
+  ".icon-brush-decoration-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -641,7 +641,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-opacity": {
+  ".icon-brush-opacity": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -650,7 +650,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-opacity-solid": {
+  ".icon-brush-opacity-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -659,7 +659,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-press": {
+  ".icon-brush-press": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -668,7 +668,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-press-solid": {
+  ".icon-brush-press-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -677,7 +677,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-size": {
+  ".icon-brush-size": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -686,7 +686,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-size-solid": {
+  ".icon-brush-size-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -695,7 +695,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-solid": {
+  ".icon-brush-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -704,7 +704,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-stablize": {
+  ".icon-brush-stablize": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -713,7 +713,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-brush-stablize-solid": {
+  ".icon-brush-stablize-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -722,7 +722,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bubble": {
+  ".icon-bubble": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -731,7 +731,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bubble-solid": {
+  ".icon-bubble-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -740,7 +740,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bulb-shine": {
+  ".icon-bulb-shine": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -749,7 +749,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-bulb-shine-solid": {
+  ".icon-bulb-shine-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -758,7 +758,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-calendar": {
+  ".icon-calendar": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -767,7 +767,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-calendar-solid": {
+  ".icon-calendar-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -776,7 +776,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-camera": {
+  ".icon-camera": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -785,7 +785,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-camera-solid": {
+  ".icon-camera-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -794,7 +794,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-character-replace": {
+  ".icon-character-replace": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -803,7 +803,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-character-replace-solid": {
+  ".icon-character-replace-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -812,7 +812,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-check": {
+  ".icon-check": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -821,7 +821,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-check-circle": {
+  ".icon-check-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -830,7 +830,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-check-circle-solid": {
+  ".icon-check-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -839,7 +839,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-check-solid": {
+  ".icon-check-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -848,7 +848,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-down": {
+  ".icon-chevron-down": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -857,7 +857,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-down-16": {
+  ".icon-chevron-down-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -866,7 +866,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-down-solid": {
+  ".icon-chevron-down-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -875,7 +875,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-down-solid-16": {
+  ".icon-chevron-down-solid-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -884,7 +884,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-left": {
+  ".icon-chevron-left": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -893,7 +893,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-left-16": {
+  ".icon-chevron-left-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -902,7 +902,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-left-solid": {
+  ".icon-chevron-left-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -911,7 +911,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-left-solid-16": {
+  ".icon-chevron-left-solid-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -920,7 +920,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-right": {
+  ".icon-chevron-right": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -929,7 +929,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-right-16": {
+  ".icon-chevron-right-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -938,7 +938,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-right-solid": {
+  ".icon-chevron-right-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -947,7 +947,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-right-solid-16": {
+  ".icon-chevron-right-solid-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -956,7 +956,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-up": {
+  ".icon-chevron-up": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -965,7 +965,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-up-16": {
+  ".icon-chevron-up-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -974,7 +974,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-up-solid": {
+  ".icon-chevron-up-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -983,7 +983,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-chevron-up-solid-16": {
+  ".icon-chevron-up-solid-16": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -992,7 +992,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-circle": {
+  ".icon-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1001,7 +1001,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-circle-solid": {
+  ".icon-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1010,7 +1010,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-click": {
+  ".icon-click": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1019,7 +1019,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-click-solid": {
+  ".icon-click-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1028,7 +1028,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-clipping": {
+  ".icon-clipping": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1037,7 +1037,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-clipping-solid": {
+  ".icon-clipping-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1046,7 +1046,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud": {
+  ".icon-cloud": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1055,7 +1055,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-check": {
+  ".icon-cloud-check": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1064,7 +1064,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-check-solid": {
+  ".icon-cloud-check-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1073,7 +1073,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-exclamation": {
+  ".icon-cloud-exclamation": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1082,7 +1082,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-exclamation-solid": {
+  ".icon-cloud-exclamation-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1091,7 +1091,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-solid": {
+  ".icon-cloud-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1100,7 +1100,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-sync": {
+  ".icon-cloud-sync": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1109,7 +1109,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-cloud-sync-solid": {
+  ".icon-cloud-sync-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1118,7 +1118,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-code": {
+  ".icon-code": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1127,7 +1127,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-code-solid": {
+  ".icon-code-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1136,7 +1136,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color": {
+  ".icon-color": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1145,7 +1145,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-mixture-color": {
+  ".icon-color-mixture-color": {
     "aspectRatio": "1/1",
     "background": null,
     "display": "inline-block",
@@ -1154,7 +1154,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-sets": {
+  ".icon-color-sets": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1163,7 +1163,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-sets-solid": {
+  ".icon-color-sets-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1172,7 +1172,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-solid": {
+  ".icon-color-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1181,7 +1181,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-wheel-rectangle": {
+  ".icon-color-wheel-rectangle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1190,7 +1190,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-wheel-rectangle-solid": {
+  ".icon-color-wheel-rectangle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1199,7 +1199,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-wheel-triangle": {
+  ".icon-color-wheel-triangle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1208,7 +1208,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-color-wheel-triangle-solid": {
+  ".icon-color-wheel-triangle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1217,7 +1217,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-commands-circle": {
+  ".icon-commands-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1226,7 +1226,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-commands-circle-solid": {
+  ".icon-commands-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1235,7 +1235,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-compass": {
+  ".icon-compass": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1244,7 +1244,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-compass-solid": {
+  ".icon-compass-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1253,7 +1253,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-contest": {
+  ".icon-contest": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1262,7 +1262,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-contest-solid": {
+  ".icon-contest-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1271,7 +1271,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-contrast": {
+  ".icon-contrast": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1280,7 +1280,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-contrast-solid": {
+  ".icon-contrast-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1289,7 +1289,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-copy": {
+  ".icon-copy": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1298,7 +1298,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-copy-solid": {
+  ".icon-copy-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1307,7 +1307,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-crown": {
+  ".icon-crown": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1316,7 +1316,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-crown-solid": {
+  ".icon-crown-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1325,7 +1325,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-curve": {
+  ".icon-curve": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1334,7 +1334,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-curve-nodes": {
+  ".icon-curve-nodes": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1343,7 +1343,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-curve-nodes-solid": {
+  ".icon-curve-nodes-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1352,7 +1352,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-curve-solid": {
+  ".icon-curve-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1361,7 +1361,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-delete": {
+  ".icon-delete": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1370,7 +1370,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-delete-solid": {
+  ".icon-delete-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1379,7 +1379,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-device": {
+  ".icon-device": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1388,7 +1388,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-device-rotate": {
+  ".icon-device-rotate": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1397,7 +1397,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-device-rotate-solid": {
+  ".icon-device-rotate-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1406,7 +1406,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-device-solid": {
+  ".icon-device-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1415,7 +1415,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dial": {
+  ".icon-dial": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1424,7 +1424,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dial-solid": {
+  ".icon-dial-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1433,7 +1433,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-distortion": {
+  ".icon-distortion": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1442,7 +1442,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-distortion-solid": {
+  ".icon-distortion-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1451,7 +1451,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-horizontal": {
+  ".icon-dots-horizontal": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1460,7 +1460,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-horizontal-circle": {
+  ".icon-dots-horizontal-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1469,7 +1469,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-horizontal-circle-solid": {
+  ".icon-dots-horizontal-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1478,7 +1478,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-horizontal-solid": {
+  ".icon-dots-horizontal-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1487,7 +1487,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-vertical": {
+  ".icon-dots-vertical": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1496,7 +1496,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-vertical-circle": {
+  ".icon-dots-vertical-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1505,7 +1505,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-vertical-circle-solid": {
+  ".icon-dots-vertical-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1514,7 +1514,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dots-vertical-solid": {
+  ".icon-dots-vertical-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1523,7 +1523,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-download": {
+  ".icon-download": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1532,7 +1532,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-download-ios": {
+  ".icon-download-ios": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1541,7 +1541,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-download-ios-solid": {
+  ".icon-download-ios-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1550,7 +1550,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-download-solid": {
+  ".icon-download-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1559,7 +1559,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dropper": {
+  ".icon-dropper": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1568,7 +1568,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-dropper-solid": {
+  ".icon-dropper-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1577,7 +1577,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-duplicate": {
+  ".icon-duplicate": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1586,7 +1586,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-duplicate-solid": {
+  ".icon-duplicate-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1595,7 +1595,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-emoji": {
+  ".icon-emoji": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1604,7 +1604,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-emoji-solid": {
+  ".icon-emoji-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1613,7 +1613,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eraser": {
+  ".icon-eraser": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1622,7 +1622,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eraser-solid": {
+  ".icon-eraser-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1631,7 +1631,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-expand": {
+  ".icon-expand": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1640,7 +1640,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-expand-solid": {
+  ".icon-expand-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1649,7 +1649,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eye": {
+  ".icon-eye": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1658,7 +1658,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eye-closed": {
+  ".icon-eye-closed": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1667,7 +1667,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eye-closed-solid": {
+  ".icon-eye-closed-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1676,7 +1676,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eye-off": {
+  ".icon-eye-off": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1685,7 +1685,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eye-off-solid": {
+  ".icon-eye-off-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1694,7 +1694,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-eye-solid": {
+  ".icon-eye-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1703,7 +1703,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-face": {
+  ".icon-face": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1712,7 +1712,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-face-solid": {
+  ".icon-face-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1721,7 +1721,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-feed": {
+  ".icon-feed": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1730,7 +1730,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-feed-solid": {
+  ".icon-feed-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1739,7 +1739,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file": {
+  ".icon-file": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1748,7 +1748,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-add": {
+  ".icon-file-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1757,7 +1757,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-add-solid": {
+  ".icon-file-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1766,7 +1766,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-export": {
+  ".icon-file-export": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1775,7 +1775,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-export-solid": {
+  ".icon-file-export-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1784,7 +1784,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-png": {
+  ".icon-file-png": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1793,7 +1793,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-png-solid": {
+  ".icon-file-png-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1802,7 +1802,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-psd": {
+  ".icon-file-psd": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1811,7 +1811,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-psd-solid": {
+  ".icon-file-psd-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1820,7 +1820,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-restore": {
+  ".icon-file-restore": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1829,7 +1829,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-restore-solid": {
+  ".icon-file-restore-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1838,7 +1838,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-file-solid": {
+  ".icon-file-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1847,7 +1847,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-fill": {
+  ".icon-fill": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1856,7 +1856,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-fill-solid": {
+  ".icon-fill-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1865,7 +1865,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-fill-square": {
+  ".icon-fill-square": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1874,7 +1874,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-fill-square-solid": {
+  ".icon-fill-square-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1883,7 +1883,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-flame": {
+  ".icon-flame": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1892,7 +1892,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-flame-solid": {
+  ".icon-flame-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1901,7 +1901,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-flip-horizontal": {
+  ".icon-flip-horizontal": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1910,7 +1910,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-flip-horizontal-solid": {
+  ".icon-flip-horizontal-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1919,7 +1919,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-flip-vertical": {
+  ".icon-flip-vertical": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1928,7 +1928,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-flip-vertical-solid": {
+  ".icon-flip-vertical-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1937,7 +1937,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-folder": {
+  ".icon-folder": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1946,7 +1946,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-folder-add": {
+  ".icon-folder-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1955,7 +1955,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-folder-add-solid": {
+  ".icon-folder-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1964,7 +1964,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-folder-open": {
+  ".icon-folder-open": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1973,7 +1973,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-folder-open-solid": {
+  ".icon-folder-open-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1982,7 +1982,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-folder-solid": {
+  ".icon-folder-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -1991,7 +1991,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-font-size": {
+  ".icon-font-size": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2000,7 +2000,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-font-size-solid": {
+  ".icon-font-size-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2009,7 +2009,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-fov": {
+  ".icon-fov": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2018,7 +2018,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-fov-solid": {
+  ".icon-fov-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2027,7 +2027,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-frame": {
+  ".icon-frame": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2036,7 +2036,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-frame-solid": {
+  ".icon-frame-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2045,7 +2045,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-funnel": {
+  ".icon-funnel": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2054,7 +2054,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-funnel-solid": {
+  ".icon-funnel-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2063,7 +2063,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-gift": {
+  ".icon-gift": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2072,7 +2072,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-gift-solid": {
+  ".icon-gift-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2081,7 +2081,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-glow": {
+  ".icon-glow": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2090,7 +2090,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-glow-solid": {
+  ".icon-glow-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2099,7 +2099,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-gradient": {
+  ".icon-gradient": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2108,7 +2108,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-gradient-solid": {
+  ".icon-gradient-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2117,7 +2117,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-gridview": {
+  ".icon-gridview": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2126,7 +2126,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-gridview-solid": {
+  ".icon-gridview-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2135,7 +2135,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-group": {
+  ".icon-group": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2144,7 +2144,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-group-solid": {
+  ".icon-group-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2153,7 +2153,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-hair": {
+  ".icon-hair": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2162,7 +2162,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-hair-solid": {
+  ".icon-hair-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2171,7 +2171,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-hash-tag": {
+  ".icon-hash-tag": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2180,7 +2180,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-hash-tag-solid": {
+  ".icon-hash-tag-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2189,7 +2189,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-heart": {
+  ".icon-heart": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2198,7 +2198,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-heart-solid": {
+  ".icon-heart-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2207,7 +2207,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-history": {
+  ".icon-history": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2216,7 +2216,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-history-solid": {
+  ".icon-history-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2225,7 +2225,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-home": {
+  ".icon-home": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2234,7 +2234,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-home-solid": {
+  ".icon-home-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2243,7 +2243,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image": {
+  ".icon-image": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2252,7 +2252,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-add": {
+  ".icon-image-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2261,7 +2261,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-add-solid": {
+  ".icon-image-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2270,7 +2270,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-contain": {
+  ".icon-image-contain": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2279,7 +2279,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-contain-solid": {
+  ".icon-image-contain-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2288,7 +2288,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-cover": {
+  ".icon-image-cover": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2297,7 +2297,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-cover-solid": {
+  ".icon-image-cover-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2306,7 +2306,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-effect": {
+  ".icon-image-effect": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2315,7 +2315,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-effect-solid": {
+  ".icon-image-effect-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2324,7 +2324,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-off": {
+  ".icon-image-off": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2333,7 +2333,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-off-solid": {
+  ".icon-image-off-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2342,7 +2342,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-replace": {
+  ".icon-image-replace": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2351,7 +2351,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-replace-solid": {
+  ".icon-image-replace-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2360,7 +2360,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-image-solid": {
+  ".icon-image-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2369,7 +2369,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-images": {
+  ".icon-images": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2378,7 +2378,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-images-solid": {
+  ".icon-images-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2387,7 +2387,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-info-circle": {
+  ".icon-info-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2396,7 +2396,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-info-circle-solid": {
+  ".icon-info-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2405,7 +2405,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-invert-selection": {
+  ".icon-invert-selection": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2414,7 +2414,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-invert-selection-solid": {
+  ".icon-invert-selection-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2423,7 +2423,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-invoice": {
+  ".icon-invoice": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2432,7 +2432,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-invoice-solid": {
+  ".icon-invoice-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2441,7 +2441,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-italic": {
+  ".icon-italic": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2450,7 +2450,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-italic-solid": {
+  ".icon-italic-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2459,7 +2459,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-keyboard": {
+  ".icon-keyboard": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2468,7 +2468,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-keyboard-solid": {
+  ".icon-keyboard-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2477,7 +2477,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-lasso": {
+  ".icon-lasso": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2486,7 +2486,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-lasso-fill": {
+  ".icon-lasso-fill": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2495,7 +2495,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-lasso-fill-solid": {
+  ".icon-lasso-fill-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2504,7 +2504,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-lasso-solid": {
+  ".icon-lasso-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2513,7 +2513,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer": {
+  ".icon-layer": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2522,7 +2522,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-add": {
+  ".icon-layer-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2531,7 +2531,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-add-solid": {
+  ".icon-layer-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2540,7 +2540,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-image-material": {
+  ".icon-layer-image-material": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2549,7 +2549,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-image-material-solid": {
+  ".icon-layer-image-material-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2558,7 +2558,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-mask": {
+  ".icon-layer-mask": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2567,7 +2567,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-mask-solid": {
+  ".icon-layer-mask-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2576,7 +2576,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-merge": {
+  ".icon-layer-merge": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2585,7 +2585,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-merge-solid": {
+  ".icon-layer-merge-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2594,7 +2594,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-opacity": {
+  ".icon-layer-opacity": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2603,7 +2603,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-opacity-solid": {
+  ".icon-layer-opacity-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2612,7 +2612,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-set-reference": {
+  ".icon-layer-set-reference": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2621,7 +2621,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-set-reference-solid": {
+  ".icon-layer-set-reference-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2630,7 +2630,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-setting": {
+  ".icon-layer-setting": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2639,7 +2639,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-setting-solid": {
+  ".icon-layer-setting-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2648,7 +2648,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-solid": {
+  ".icon-layer-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2657,7 +2657,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-text": {
+  ".icon-layer-text": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2666,7 +2666,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-text-solid": {
+  ".icon-layer-text-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2675,7 +2675,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-vector": {
+  ".icon-layer-vector": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2684,7 +2684,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layer-vector-solid": {
+  ".icon-layer-vector-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2693,7 +2693,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layout": {
+  ".icon-layout": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2702,7 +2702,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-layout-solid": {
+  ".icon-layout-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2711,7 +2711,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-letter-spacing": {
+  ".icon-letter-spacing": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2720,7 +2720,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-letter-spacing-solid": {
+  ".icon-letter-spacing-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2729,7 +2729,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-line": {
+  ".icon-line": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2738,7 +2738,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-line-nodes": {
+  ".icon-line-nodes": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2747,7 +2747,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-line-nodes-solid": {
+  ".icon-line-nodes-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2756,7 +2756,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-line-solid": {
+  ".icon-line-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2765,7 +2765,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-line-spacing": {
+  ".icon-line-spacing": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2774,7 +2774,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-line-spacing-solid": {
+  ".icon-line-spacing-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2783,7 +2783,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-link": {
+  ".icon-link": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2792,7 +2792,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-link-clear": {
+  ".icon-link-clear": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2801,7 +2801,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-link-clear-solid": {
+  ".icon-link-clear-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2810,7 +2810,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-link-solid": {
+  ".icon-link-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2819,7 +2819,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-list": {
+  ".icon-list": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2828,7 +2828,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-list-solid": {
+  ".icon-list-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2837,7 +2837,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-location": {
+  ".icon-location": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2846,7 +2846,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-location-solid": {
+  ".icon-location-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2855,7 +2855,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-lock": {
+  ".icon-lock": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2864,7 +2864,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-lock-solid": {
+  ".icon-lock-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2873,7 +2873,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-logout": {
+  ".icon-logout": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2882,7 +2882,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-logout-solid": {
+  ".icon-logout-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2891,7 +2891,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-manga": {
+  ".icon-manga": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2900,7 +2900,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-manga-solid": {
+  ".icon-manga-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2909,7 +2909,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-mesh": {
+  ".icon-mesh": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2918,7 +2918,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-mesh-solid": {
+  ".icon-mesh-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2927,7 +2927,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-message": {
+  ".icon-message": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2936,7 +2936,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-message-solid": {
+  ".icon-message-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2945,7 +2945,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-microphone": {
+  ".icon-microphone": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2954,7 +2954,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-microphone-solid": {
+  ".icon-microphone-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2963,7 +2963,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-move": {
+  ".icon-move": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2972,7 +2972,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-move-solid": {
+  ".icon-move-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2981,7 +2981,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-navigator": {
+  ".icon-navigator": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2990,7 +2990,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-navigator-solid": {
+  ".icon-navigator-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -2999,7 +2999,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-new-post": {
+  ".icon-new-post": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3008,7 +3008,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-new-post-solid": {
+  ".icon-new-post-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3017,7 +3017,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-novel": {
+  ".icon-novel": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3026,7 +3026,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-novel-solid": {
+  ".icon-novel-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3035,7 +3035,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-opacity": {
+  ".icon-opacity": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3044,7 +3044,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-opacity-lock": {
+  ".icon-opacity-lock": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3053,7 +3053,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-opacity-lock-solid": {
+  ".icon-opacity-lock-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3062,7 +3062,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-opacity-solid": {
+  ".icon-opacity-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3071,7 +3071,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-open-in-new": {
+  ".icon-open-in-new": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3080,7 +3080,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-open-in-new-solid": {
+  ".icon-open-in-new-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3089,7 +3089,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-outline": {
+  ".icon-outline": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3098,7 +3098,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-outline-solid": {
+  ".icon-outline-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3107,7 +3107,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-palette": {
+  ".icon-palette": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3116,7 +3116,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-palette-solid": {
+  ".icon-palette-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3125,7 +3125,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-paste": {
+  ".icon-paste": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3134,7 +3134,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-paste-solid": {
+  ".icon-paste-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3143,7 +3143,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pause": {
+  ".icon-pause": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3152,7 +3152,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pause-solid": {
+  ".icon-pause-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3161,7 +3161,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pen": {
+  ".icon-pen": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3170,7 +3170,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pen-add": {
+  ".icon-pen-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3179,7 +3179,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pen-add-solid": {
+  ".icon-pen-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3188,7 +3188,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pen-solid": {
+  ".icon-pen-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3197,7 +3197,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pencil-text": {
+  ".icon-pencil-text": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3206,7 +3206,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pencil-text-solid": {
+  ".icon-pencil-text-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3215,7 +3215,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-person-add": {
+  ".icon-person-add": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3224,7 +3224,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-person-add-solid": {
+  ".icon-person-add-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3233,7 +3233,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-person-circle": {
+  ".icon-person-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3242,7 +3242,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-person-circle-solid": {
+  ".icon-person-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3251,7 +3251,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-persons": {
+  ".icon-persons": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3260,7 +3260,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-persons-solid": {
+  ".icon-persons-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3269,7 +3269,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-play": {
+  ".icon-play": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3278,7 +3278,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-play-solid": {
+  ".icon-play-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3287,7 +3287,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-polygon": {
+  ".icon-polygon": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3296,7 +3296,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-polygon-solid": {
+  ".icon-polygon-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3305,7 +3305,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-polyline": {
+  ".icon-polyline": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3314,7 +3314,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-polyline-nodes": {
+  ".icon-polyline-nodes": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3323,7 +3323,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-polyline-nodes-solid": {
+  ".icon-polyline-nodes-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3332,7 +3332,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-polyline-solid": {
+  ".icon-polyline-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3341,7 +3341,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pose": {
+  ".icon-pose": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3350,7 +3350,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-pose-solid": {
+  ".icon-pose-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3359,7 +3359,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-projects": {
+  ".icon-projects": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3368,7 +3368,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-projects-solid": {
+  ".icon-projects-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3377,7 +3377,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-question-bubble": {
+  ".icon-question-bubble": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3386,7 +3386,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-question-bubble-solid": {
+  ".icon-question-bubble-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3395,7 +3395,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-question-circle": {
+  ".icon-question-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3404,7 +3404,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-question-circle-solid": {
+  ".icon-question-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3413,7 +3413,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rabbit": {
+  ".icon-rabbit": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3422,7 +3422,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rabbit-ear-bent": {
+  ".icon-rabbit-ear-bent": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3431,7 +3431,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rabbit-ear-bent-solid": {
+  ".icon-rabbit-ear-bent-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3440,7 +3440,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rabbit-solid": {
+  ".icon-rabbit-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3449,7 +3449,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-redo": {
+  ".icon-redo": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3458,7 +3458,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-redo-solid": {
+  ".icon-redo-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3467,7 +3467,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rename": {
+  ".icon-rename": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3476,7 +3476,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rename-solid": {
+  ".icon-rename-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3485,7 +3485,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-resolution": {
+  ".icon-resolution": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3494,7 +3494,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-resolution-solid": {
+  ".icon-resolution-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3503,7 +3503,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rotate": {
+  ".icon-rotate": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3512,7 +3512,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rotate-ccw": {
+  ".icon-rotate-ccw": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3521,7 +3521,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rotate-ccw-solid": {
+  ".icon-rotate-ccw-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3530,7 +3530,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rotate-cw": {
+  ".icon-rotate-cw": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3539,7 +3539,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rotate-cw-solid": {
+  ".icon-rotate-cw-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3548,7 +3548,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-rotate-solid": {
+  ".icon-rotate-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3557,7 +3557,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-ruler": {
+  ".icon-ruler": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3566,7 +3566,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-ruler-solid": {
+  ".icon-ruler-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3575,7 +3575,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sans-serif": {
+  ".icon-sans-serif": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3584,7 +3584,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sans-serif-solid": {
+  ".icon-sans-serif-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3593,7 +3593,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-saturation": {
+  ".icon-saturation": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3602,7 +3602,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-saturation-solid": {
+  ".icon-saturation-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3611,7 +3611,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-save": {
+  ".icon-save": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3620,7 +3620,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-save-solid": {
+  ".icon-save-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3629,7 +3629,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-scatter": {
+  ".icon-scatter": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3638,7 +3638,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-scatter-solid": {
+  ".icon-scatter-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3647,7 +3647,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-scissors": {
+  ".icon-scissors": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3656,7 +3656,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-scissors-solid": {
+  ".icon-scissors-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3665,7 +3665,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-search": {
+  ".icon-search": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3674,7 +3674,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-search-solid": {
+  ".icon-search-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3683,7 +3683,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-select-clear": {
+  ".icon-select-clear": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3692,7 +3692,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-select-clear-solid": {
+  ".icon-select-clear-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3701,7 +3701,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-select-image": {
+  ".icon-select-image": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3710,7 +3710,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-select-image-solid": {
+  ".icon-select-image-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3719,7 +3719,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-select-off": {
+  ".icon-select-off": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3728,7 +3728,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-select-off-solid": {
+  ".icon-select-off-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3737,7 +3737,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-selections": {
+  ".icon-selections": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3746,7 +3746,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-selections-solid": {
+  ".icon-selections-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3755,7 +3755,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-send": {
+  ".icon-send": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3764,7 +3764,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-send-solid": {
+  ".icon-send-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3773,7 +3773,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-setting": {
+  ".icon-setting": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3782,7 +3782,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-setting-solid": {
+  ".icon-setting-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3791,7 +3791,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shape": {
+  ".icon-shape": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3800,7 +3800,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shape-solid": {
+  ".icon-shape-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3809,7 +3809,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-share-android": {
+  ".icon-share-android": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3818,7 +3818,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-share-android-solid": {
+  ".icon-share-android-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3827,7 +3827,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-share-ios": {
+  ".icon-share-ios": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3836,7 +3836,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-share-ios-solid": {
+  ".icon-share-ios-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3845,7 +3845,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shopping": {
+  ".icon-shopping": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3854,7 +3854,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shopping-solid": {
+  ".icon-shopping-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3863,7 +3863,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shrink": {
+  ".icon-shrink": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3872,7 +3872,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shrink-solid": {
+  ".icon-shrink-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3881,7 +3881,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shutter": {
+  ".icon-shutter": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3890,7 +3890,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-shutter-solid": {
+  ".icon-shutter-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3899,7 +3899,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sliders": {
+  ".icon-sliders": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3908,7 +3908,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sliders-solid": {
+  ".icon-sliders-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3917,7 +3917,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-soft-edge": {
+  ".icon-soft-edge": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3926,7 +3926,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-soft-edge-solid": {
+  ".icon-soft-edge-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3935,7 +3935,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-square": {
+  ".icon-square": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3944,7 +3944,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-square-dash": {
+  ".icon-square-dash": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3953,7 +3953,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-square-dash-resize": {
+  ".icon-square-dash-resize": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3962,7 +3962,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-square-dash-resize-solid": {
+  ".icon-square-dash-resize-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3971,7 +3971,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-square-dash-solid": {
+  ".icon-square-dash-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3980,7 +3980,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-square-solid": {
+  ".icon-square-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3989,7 +3989,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-squares-2x2": {
+  ".icon-squares-2x2": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -3998,7 +3998,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-squares-2x2-solid": {
+  ".icon-squares-2x2-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4007,7 +4007,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-squares-3x3": {
+  ".icon-squares-3x3": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4016,7 +4016,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-squares-3x3-solid": {
+  ".icon-squares-3x3-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4025,7 +4025,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-star": {
+  ".icon-star": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4034,7 +4034,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-star-solid": {
+  ".icon-star-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4043,7 +4043,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-strike-through": {
+  ".icon-strike-through": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4052,7 +4052,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-strike-through-solid": {
+  ".icon-strike-through-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4061,7 +4061,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-stroke-taper": {
+  ".icon-stroke-taper": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4070,7 +4070,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-stroke-taper-solid": {
+  ".icon-stroke-taper-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4079,7 +4079,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-stroke-width": {
+  ".icon-stroke-width": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4088,7 +4088,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-stroke-width-solid": {
+  ".icon-stroke-width-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4097,7 +4097,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-subtract": {
+  ".icon-subtract": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4106,7 +4106,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-subtract-solid": {
+  ".icon-subtract-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4115,7 +4115,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sun": {
+  ".icon-sun": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4124,7 +4124,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sun-solid": {
+  ".icon-sun-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4133,7 +4133,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sync": {
+  ".icon-sync": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4142,7 +4142,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sync-circle": {
+  ".icon-sync-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4151,7 +4151,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sync-circle-solid": {
+  ".icon-sync-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4160,7 +4160,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-sync-solid": {
+  ".icon-sync-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4169,7 +4169,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-t-shirt": {
+  ".icon-t-shirt": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4178,7 +4178,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-t-shirt-solid": {
+  ".icon-t-shirt-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4187,7 +4187,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tap-1-finger": {
+  ".icon-tap-1-finger": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4196,7 +4196,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tap-1-finger-solid": {
+  ".icon-tap-1-finger-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4205,7 +4205,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tap-2-fingers": {
+  ".icon-tap-2-fingers": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4214,7 +4214,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tap-2-fingers-solid": {
+  ".icon-tap-2-fingers-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4223,7 +4223,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tap-3-fingers": {
+  ".icon-tap-3-fingers": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4232,7 +4232,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tap-3-fingers-solid": {
+  ".icon-tap-3-fingers-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4241,7 +4241,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-temperature": {
+  ".icon-temperature": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4250,7 +4250,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-temperature-solid": {
+  ".icon-temperature-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4259,7 +4259,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text": {
+  ".icon-text": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4268,7 +4268,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-center": {
+  ".icon-text-align-center": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4277,7 +4277,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-center-solid": {
+  ".icon-text-align-center-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4286,7 +4286,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-justify": {
+  ".icon-text-align-justify": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4295,7 +4295,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-justify-solid": {
+  ".icon-text-align-justify-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4304,7 +4304,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-left": {
+  ".icon-text-align-left": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4313,7 +4313,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-left-solid": {
+  ".icon-text-align-left-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4322,7 +4322,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-right": {
+  ".icon-text-align-right": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4331,7 +4331,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-align-right-solid": {
+  ".icon-text-align-right-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4340,7 +4340,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-ruby": {
+  ".icon-text-ruby": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4349,7 +4349,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-ruby-solid": {
+  ".icon-text-ruby-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4358,7 +4358,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-text-solid": {
+  ".icon-text-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4367,7 +4367,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-texture": {
+  ".icon-texture": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4376,7 +4376,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-texture-solid": {
+  ".icon-texture-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4385,7 +4385,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tools": {
+  ".icon-tools": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4394,7 +4394,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-tools-solid": {
+  ".icon-tools-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4403,7 +4403,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-touch": {
+  ".icon-touch": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4412,7 +4412,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-touch-solid": {
+  ".icon-touch-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4421,7 +4421,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-transform": {
+  ".icon-transform": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4430,7 +4430,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-transform-rotation-handle": {
+  ".icon-transform-rotation-handle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4439,7 +4439,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-transform-rotation-handle-solid": {
+  ".icon-transform-rotation-handle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4448,7 +4448,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-transform-solid": {
+  ".icon-transform-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4457,7 +4457,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-underline": {
+  ".icon-underline": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4466,7 +4466,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-underline-solid": {
+  ".icon-underline-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4475,7 +4475,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-undo": {
+  ".icon-undo": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4484,7 +4484,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-undo-solid": {
+  ".icon-undo-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4493,7 +4493,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-upload": {
+  ".icon-upload": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4502,7 +4502,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-upload-solid": {
+  ".icon-upload-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4511,7 +4511,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-user-campaign": {
+  ".icon-user-campaign": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4520,7 +4520,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-user-campaign-solid": {
+  ".icon-user-campaign-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4529,7 +4529,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-video": {
+  ".icon-video": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4538,7 +4538,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-video-camera": {
+  ".icon-video-camera": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4547,7 +4547,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-video-camera-solid": {
+  ".icon-video-camera-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4556,7 +4556,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-video-solid": {
+  ".icon-video-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4565,7 +4565,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-view-fit": {
+  ".icon-view-fit": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4574,7 +4574,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-view-fit-solid": {
+  ".icon-view-fit-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4583,7 +4583,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-view-full": {
+  ".icon-view-full": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4592,7 +4592,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-view-full-solid": {
+  ".icon-view-full-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4601,7 +4601,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-warn": {
+  ".icon-warn": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4610,7 +4610,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-warn-solid": {
+  ".icon-warn-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4619,7 +4619,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-warn-triangle": {
+  ".icon-warn-triangle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4628,7 +4628,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-warn-triangle-solid": {
+  ".icon-warn-triangle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4637,7 +4637,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x": {
+  ".icon-x": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4646,7 +4646,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-20": {
+  ".icon-x-20": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4655,7 +4655,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-circle": {
+  ".icon-x-circle": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4664,7 +4664,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-circle-solid": {
+  ".icon-x-circle-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4673,7 +4673,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-octagon": {
+  ".icon-x-octagon": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4682,7 +4682,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-octagon-solid": {
+  ".icon-x-octagon-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4691,7 +4691,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-solid": {
+  ".icon-x-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4700,7 +4700,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-x-solid-20": {
+  ".icon-x-solid-20": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4709,7 +4709,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-zoom-in": {
+  ".icon-zoom-in": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4718,7 +4718,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-zoom-in-solid": {
+  ".icon-zoom-in-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4727,7 +4727,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-zoom-out": {
+  ".icon-zoom-out": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -4736,7 +4736,7 @@ exports[`createIconUtilities > createIconUtilities 1`] = `
     "maskSize": "100% 100%",
     "width": "1em",
   },
-  "icon-zoom-out-solid": {
+  ".icon-zoom-out-solid": {
     "aspectRatio": "1/1",
     "background": "currentColor",
     "display": "inline-block",
@@ -144729,6 +144729,533 @@ exports[`createTailwindConfigIconsV2 > list of classes 1`] = `
   "content-none",
   "forced-color-adjust-auto",
   "forced-color-adjust-none",
+  "icon-arrow-left-down-16",
+  "icon-chevron-down-16",
+  "icon-chevron-left-16",
+  "icon-chevron-right-16",
+  "icon-chevron-up-16",
+  "icon-arrow-left-down-solid-16",
+  "icon-chevron-down-solid-16",
+  "icon-chevron-left-solid-16",
+  "icon-chevron-right-solid-16",
+  "icon-chevron-up-solid-16",
+  "icon-x-20",
+  "icon-x-solid-20",
+  "icon-color-mixture-color",
+  "icon-add-circle",
+  "icon-add",
+  "icon-airbrush",
+  "icon-album-add",
+  "icon-album",
+  "icon-alert",
+  "icon-align-horizontal",
+  "icon-align-vertical",
+  "icon-angle",
+  "icon-announce",
+  "icon-apple-pencil",
+  "icon-ar",
+  "icon-archive",
+  "icon-arrow-ccw",
+  "icon-arrow-down-square",
+  "icon-arrow-down",
+  "icon-arrow-left-down",
+  "icon-arrow-left-square",
+  "icon-arrow-left",
+  "icon-arrow-right",
+  "icon-arrow-up",
+  "icon-auto-select",
+  "icon-bell",
+  "icon-bezier-curve",
+  "icon-blend-mode",
+  "icon-body-add",
+  "icon-body-edit",
+  "icon-body",
+  "icon-bold",
+  "icon-book",
+  "icon-bookmark",
+  "icon-bring-backward",
+  "icon-bring-forward",
+  "icon-brush-decoration",
+  "icon-brush-opacity",
+  "icon-brush-press",
+  "icon-brush-size",
+  "icon-brush-stablize",
+  "icon-brush",
+  "icon-bubble",
+  "icon-bulb-shine",
+  "icon-calendar",
+  "icon-camera",
+  "icon-character-replace",
+  "icon-check-circle",
+  "icon-check",
+  "icon-chevron-down",
+  "icon-chevron-left",
+  "icon-chevron-right",
+  "icon-chevron-up",
+  "icon-circle",
+  "icon-click",
+  "icon-clipping",
+  "icon-cloud-check",
+  "icon-cloud-exclamation",
+  "icon-cloud",
+  "icon-cloud-sync",
+  "icon-code",
+  "icon-color-sets",
+  "icon-color-wheel-rectangle",
+  "icon-color-wheel-triangle",
+  "icon-color",
+  "icon-commands-circle",
+  "icon-compass",
+  "icon-contest",
+  "icon-contrast",
+  "icon-copy",
+  "icon-crown",
+  "icon-curve-nodes",
+  "icon-curve",
+  "icon-delete",
+  "icon-device-rotate",
+  "icon-device",
+  "icon-dial",
+  "icon-distortion",
+  "icon-dots-horizontal-circle",
+  "icon-dots-horizontal",
+  "icon-dots-vertical-circle",
+  "icon-dots-vertical",
+  "icon-download-ios",
+  "icon-download",
+  "icon-dropper",
+  "icon-duplicate",
+  "icon-emoji",
+  "icon-eraser",
+  "icon-expand",
+  "icon-eye-closed",
+  "icon-eye-off",
+  "icon-eye",
+  "icon-face",
+  "icon-feed",
+  "icon-file-add",
+  "icon-file-export",
+  "icon-file-png",
+  "icon-file-psd",
+  "icon-file-restore",
+  "icon-file",
+  "icon-fill-square",
+  "icon-fill",
+  "icon-flame",
+  "icon-flip-horizontal",
+  "icon-flip-vertical",
+  "icon-folder-add",
+  "icon-folder-open",
+  "icon-folder",
+  "icon-font-size",
+  "icon-fov",
+  "icon-frame",
+  "icon-funnel",
+  "icon-gift",
+  "icon-glow",
+  "icon-gradient",
+  "icon-gridview",
+  "icon-group",
+  "icon-hair",
+  "icon-hash-tag",
+  "icon-heart",
+  "icon-history",
+  "icon-home",
+  "icon-image-add",
+  "icon-image-contain",
+  "icon-image-cover",
+  "icon-image-effect",
+  "icon-image-off",
+  "icon-image-replace",
+  "icon-image",
+  "icon-images",
+  "icon-info-circle",
+  "icon-invert-selection",
+  "icon-invoice",
+  "icon-italic",
+  "icon-keyboard",
+  "icon-lasso-fill",
+  "icon-lasso",
+  "icon-layer-mask",
+  "icon-layer-add",
+  "icon-layer-image-material",
+  "icon-layer-merge",
+  "icon-layer-opacity",
+  "icon-layer-set-reference",
+  "icon-layer-setting",
+  "icon-layer",
+  "icon-layer-text",
+  "icon-layer-vector",
+  "icon-layout",
+  "icon-letter-spacing",
+  "icon-line-spacing",
+  "icon-line-nodes",
+  "icon-line",
+  "icon-link-clear",
+  "icon-link",
+  "icon-list",
+  "icon-location",
+  "icon-lock",
+  "icon-logout",
+  "icon-manga",
+  "icon-mesh",
+  "icon-message",
+  "icon-microphone",
+  "icon-move",
+  "icon-navigator",
+  "icon-new-post",
+  "icon-novel",
+  "icon-opacity-lock",
+  "icon-opacity",
+  "icon-open-in-new",
+  "icon-outline",
+  "icon-palette",
+  "icon-paste",
+  "icon-pause",
+  "icon-pen-add",
+  "icon-pen",
+  "icon-pencil-text",
+  "icon-person-add",
+  "icon-person-circle",
+  "icon-persons",
+  "icon-play",
+  "icon-polygon",
+  "icon-polyline-nodes",
+  "icon-polyline",
+  "icon-pose",
+  "icon-projects",
+  "icon-question-bubble",
+  "icon-question-circle",
+  "icon-rabbit-ear-bent",
+  "icon-rabbit",
+  "icon-redo",
+  "icon-rename",
+  "icon-resolution",
+  "icon-rotate-ccw",
+  "icon-rotate-cw",
+  "icon-rotate",
+  "icon-ruler",
+  "icon-sans-serif",
+  "icon-saturation",
+  "icon-save",
+  "icon-scatter",
+  "icon-scissors",
+  "icon-search",
+  "icon-select-clear",
+  "icon-select-image",
+  "icon-select-off",
+  "icon-selections",
+  "icon-send",
+  "icon-setting",
+  "icon-shape",
+  "icon-share-android",
+  "icon-share-ios",
+  "icon-shopping",
+  "icon-shrink",
+  "icon-shutter",
+  "icon-sliders",
+  "icon-soft-edge",
+  "icon-square-dash-resize",
+  "icon-square-dash",
+  "icon-square",
+  "icon-squares-2x2",
+  "icon-squares-3x3",
+  "icon-star",
+  "icon-strike-through",
+  "icon-stroke-taper",
+  "icon-stroke-width",
+  "icon-subtract",
+  "icon-sun",
+  "icon-sync-circle",
+  "icon-sync",
+  "icon-t-shirt",
+  "icon-tap-1-finger",
+  "icon-tap-2-fingers",
+  "icon-tap-3-fingers",
+  "icon-temperature",
+  "icon-text-align-center",
+  "icon-text-align-justify",
+  "icon-text-align-left",
+  "icon-text-align-right",
+  "icon-text-ruby",
+  "icon-text",
+  "icon-texture",
+  "icon-tools",
+  "icon-touch",
+  "icon-transform-rotation-handle",
+  "icon-transform",
+  "icon-underline",
+  "icon-undo",
+  "icon-upload",
+  "icon-user-campaign",
+  "icon-video-camera",
+  "icon-video",
+  "icon-view-fit",
+  "icon-view-full",
+  "icon-warn",
+  "icon-warn-triangle",
+  "icon-x-circle",
+  "icon-x-octagon",
+  "icon-x",
+  "icon-zoom-in",
+  "icon-zoom-out",
+  "icon-add-circle-solid",
+  "icon-add-solid",
+  "icon-airbrush-solid",
+  "icon-album-add-solid",
+  "icon-album-solid",
+  "icon-alert-solid",
+  "icon-align-horizontal-solid",
+  "icon-align-vertical-solid",
+  "icon-angle-solid",
+  "icon-announce-solid",
+  "icon-apple-pencil-solid",
+  "icon-ar-solid",
+  "icon-archive-solid",
+  "icon-arrow-ccw-solid",
+  "icon-arrow-down-square-solid",
+  "icon-arrow-down-solid",
+  "icon-arrow-left-down-solid",
+  "icon-arrow-left-square-solid",
+  "icon-arrow-left-solid",
+  "icon-arrow-right-solid",
+  "icon-arrow-up-solid",
+  "icon-auto-select-solid",
+  "icon-bell-solid",
+  "icon-bezier-curve-solid",
+  "icon-blend-mode-solid",
+  "icon-body-add-solid",
+  "icon-body-edit-solid",
+  "icon-body-solid",
+  "icon-bold-solid",
+  "icon-book-solid",
+  "icon-bookmark-solid",
+  "icon-bring-backward-solid",
+  "icon-bring-forward-solid",
+  "icon-brush-decoration-solid",
+  "icon-brush-opacity-solid",
+  "icon-brush-press-solid",
+  "icon-brush-size-solid",
+  "icon-brush-stablize-solid",
+  "icon-brush-solid",
+  "icon-bubble-solid",
+  "icon-bulb-shine-solid",
+  "icon-calendar-solid",
+  "icon-camera-solid",
+  "icon-character-replace-solid",
+  "icon-check-circle-solid",
+  "icon-check-solid",
+  "icon-chevron-down-solid",
+  "icon-chevron-left-solid",
+  "icon-chevron-right-solid",
+  "icon-chevron-up-solid",
+  "icon-circle-solid",
+  "icon-click-solid",
+  "icon-clipping-solid",
+  "icon-cloud-check-solid",
+  "icon-cloud-exclamation-solid",
+  "icon-cloud-solid",
+  "icon-cloud-sync-solid",
+  "icon-code-solid",
+  "icon-color-sets-solid",
+  "icon-color-wheel-rectangle-solid",
+  "icon-color-wheel-triangle-solid",
+  "icon-color-solid",
+  "icon-commands-circle-solid",
+  "icon-compass-solid",
+  "icon-contest-solid",
+  "icon-contrast-solid",
+  "icon-copy-solid",
+  "icon-crown-solid",
+  "icon-curve-nodes-solid",
+  "icon-curve-solid",
+  "icon-delete-solid",
+  "icon-device-rotate-solid",
+  "icon-device-solid",
+  "icon-dial-solid",
+  "icon-distortion-solid",
+  "icon-dots-horizontal-circle-solid",
+  "icon-dots-horizontal-solid",
+  "icon-dots-vertical-circle-solid",
+  "icon-dots-vertical-solid",
+  "icon-download-ios-solid",
+  "icon-download-solid",
+  "icon-dropper-solid",
+  "icon-duplicate-solid",
+  "icon-emoji-solid",
+  "icon-eraser-solid",
+  "icon-expand-solid",
+  "icon-eye-closed-solid",
+  "icon-eye-off-solid",
+  "icon-eye-solid",
+  "icon-face-solid",
+  "icon-feed-solid",
+  "icon-file-add-solid",
+  "icon-file-export-solid",
+  "icon-file-png-solid",
+  "icon-file-psd-solid",
+  "icon-file-restore-solid",
+  "icon-file-solid",
+  "icon-fill-square-solid",
+  "icon-fill-solid",
+  "icon-flame-solid",
+  "icon-flip-horizontal-solid",
+  "icon-flip-vertical-solid",
+  "icon-folder-add-solid",
+  "icon-folder-open-solid",
+  "icon-folder-solid",
+  "icon-font-size-solid",
+  "icon-fov-solid",
+  "icon-frame-solid",
+  "icon-funnel-solid",
+  "icon-gift-solid",
+  "icon-glow-solid",
+  "icon-gradient-solid",
+  "icon-gridview-solid",
+  "icon-group-solid",
+  "icon-hair-solid",
+  "icon-hash-tag-solid",
+  "icon-heart-solid",
+  "icon-history-solid",
+  "icon-home-solid",
+  "icon-image-add-solid",
+  "icon-image-contain-solid",
+  "icon-image-cover-solid",
+  "icon-image-effect-solid",
+  "icon-image-off-solid",
+  "icon-image-replace-solid",
+  "icon-image-solid",
+  "icon-images-solid",
+  "icon-info-circle-solid",
+  "icon-invert-selection-solid",
+  "icon-invoice-solid",
+  "icon-italic-solid",
+  "icon-keyboard-solid",
+  "icon-lasso-fill-solid",
+  "icon-lasso-solid",
+  "icon-layer-mask-solid",
+  "icon-layer-add-solid",
+  "icon-layer-image-material-solid",
+  "icon-layer-merge-solid",
+  "icon-layer-opacity-solid",
+  "icon-layer-set-reference-solid",
+  "icon-layer-setting-solid",
+  "icon-layer-solid",
+  "icon-layer-text-solid",
+  "icon-layer-vector-solid",
+  "icon-layout-solid",
+  "icon-letter-spacing-solid",
+  "icon-line-spacing-solid",
+  "icon-line-nodes-solid",
+  "icon-line-solid",
+  "icon-link-clear-solid",
+  "icon-link-solid",
+  "icon-list-solid",
+  "icon-location-solid",
+  "icon-lock-solid",
+  "icon-logout-solid",
+  "icon-manga-solid",
+  "icon-mesh-solid",
+  "icon-message-solid",
+  "icon-microphone-solid",
+  "icon-move-solid",
+  "icon-navigator-solid",
+  "icon-new-post-solid",
+  "icon-novel-solid",
+  "icon-opacity-lock-solid",
+  "icon-opacity-solid",
+  "icon-open-in-new-solid",
+  "icon-outline-solid",
+  "icon-palette-solid",
+  "icon-paste-solid",
+  "icon-pause-solid",
+  "icon-pen-add-solid",
+  "icon-pen-solid",
+  "icon-pencil-text-solid",
+  "icon-person-add-solid",
+  "icon-person-circle-solid",
+  "icon-persons-solid",
+  "icon-play-solid",
+  "icon-polygon-solid",
+  "icon-polyline-nodes-solid",
+  "icon-polyline-solid",
+  "icon-pose-solid",
+  "icon-projects-solid",
+  "icon-question-bubble-solid",
+  "icon-question-circle-solid",
+  "icon-rabbit-ear-bent-solid",
+  "icon-rabbit-solid",
+  "icon-redo-solid",
+  "icon-rename-solid",
+  "icon-resolution-solid",
+  "icon-rotate-ccw-solid",
+  "icon-rotate-cw-solid",
+  "icon-rotate-solid",
+  "icon-ruler-solid",
+  "icon-sans-serif-solid",
+  "icon-saturation-solid",
+  "icon-save-solid",
+  "icon-scatter-solid",
+  "icon-scissors-solid",
+  "icon-search-solid",
+  "icon-select-clear-solid",
+  "icon-select-image-solid",
+  "icon-select-off-solid",
+  "icon-selections-solid",
+  "icon-send-solid",
+  "icon-setting-solid",
+  "icon-shape-solid",
+  "icon-share-android-solid",
+  "icon-share-ios-solid",
+  "icon-shopping-solid",
+  "icon-shrink-solid",
+  "icon-shutter-solid",
+  "icon-sliders-solid",
+  "icon-soft-edge-solid",
+  "icon-square-dash-resize-solid",
+  "icon-square-dash-solid",
+  "icon-square-solid",
+  "icon-squares-2x2-solid",
+  "icon-squares-3x3-solid",
+  "icon-star-solid",
+  "icon-strike-through-solid",
+  "icon-stroke-taper-solid",
+  "icon-stroke-width-solid",
+  "icon-subtract-solid",
+  "icon-sun-solid",
+  "icon-sync-circle-solid",
+  "icon-sync-solid",
+  "icon-t-shirt-solid",
+  "icon-tap-1-finger-solid",
+  "icon-tap-2-fingers-solid",
+  "icon-tap-3-fingers-solid",
+  "icon-temperature-solid",
+  "icon-text-align-center-solid",
+  "icon-text-align-justify-solid",
+  "icon-text-align-left-solid",
+  "icon-text-align-right-solid",
+  "icon-text-ruby-solid",
+  "icon-text-solid",
+  "icon-texture-solid",
+  "icon-tools-solid",
+  "icon-touch-solid",
+  "icon-transform-rotation-handle-solid",
+  "icon-transform-solid",
+  "icon-underline-solid",
+  "icon-undo-solid",
+  "icon-upload-solid",
+  "icon-user-campaign-solid",
+  "icon-video-camera-solid",
+  "icon-video-solid",
+  "icon-view-fit-solid",
+  "icon-view-full-solid",
+  "icon-warn-solid",
+  "icon-warn-triangle-solid",
+  "icon-x-circle-solid",
+  "icon-x-octagon-solid",
+  "icon-x-solid",
+  "icon-zoom-in-solid",
+  "icon-zoom-out-solid",
   "container",
 ]
 `;

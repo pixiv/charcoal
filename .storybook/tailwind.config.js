@@ -6,7 +6,11 @@ const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
  */
 module.exports = {
   darkMode: false,
-  content: ['**/*.tsx'],
+  content: [
+    '**/*.tsx',
+    /* pluginで生成されるクラス名をチェックしたい */
+    'packages/tailwind-config/src/__snapshots__/iconsV2.test.ts.snap',
+  ],
   presets: [
     createTailwindConfig({
       version: 'v3',

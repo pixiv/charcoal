@@ -7,7 +7,7 @@ export const createIconUtilities = () => {
   for (const [fileName, { uri, isSetCurrentcolor }] of Object.entries(icons)) {
     const [size, variant, name] = fileName.split('/')
     const className = [
-      'icon',
+      '.icon',
       name.replaceAll('.', '-'),
       ...(variant === 'regular' ? [] : [variant]),
       ...(size === '24' ? [] : [size]),
