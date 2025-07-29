@@ -22,7 +22,7 @@ import cssVariableColorPlugin from './colors/plugin'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
 import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
-import { createTailwindConfigIconsV2 } from './iconsV2'
+import { charcoalIconsV2 } from './iconsV2'
 export { unstable_createTailwindConfigTokenV2 }
 
 interface Options {
@@ -164,7 +164,7 @@ export function createTailwindConfig({
           selectorOrMediaQuery
         )
       ),
-      ...(iconsV2 ? [createTailwindConfigIconsV2()] : []),
+      ...(iconsV2 ? [charcoalIconsV2] : []),
     ],
   }
 }

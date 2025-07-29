@@ -1,11 +1,9 @@
 import plugin from 'tailwindcss/plugin'
 import icons from '@charcoal-ui/icon-files/v2-datauri'
 import { CSSRuleObject } from 'tailwindcss/types/config'
-import { Config } from 'tailwindcss'
 
-const charcoalIconsV2 = plugin(({ addUtilities }) => {
+export const createIconUtilities = () => {
   const newUtilities: { [key: string]: CSSRuleObject } = {}
-
   for (const [fileName, { uri, isSetCurrentcolor }] of Object.entries(icons)) {
     const [size, variant, name] = fileName.split('/')
     const className = [
@@ -24,12 +22,9 @@ const charcoalIconsV2 = plugin(({ addUtilities }) => {
       aspectRatio: '1/1',
     }
   }
-  addUtilities(newUtilities)
-})
-
-export function createTailwindConfigIconsV2() {
-  const config: Omit<Config, 'content'> = {
-    plugin: [charcoalIconsV2],
-  }
-  return config
+  return newUtilities
 }
+
+export const charcoalIconsV2 = plugin(({ addUtilities }) => {
+  addUtilities(createIconUtilities())
+})

@@ -1,8 +1,17 @@
-import { createTailwindConfigIconsV2 } from './iconsV2'
+import { charcoalIconsV2, createIconUtilities } from './iconsV2'
 import { TailwindBuild } from './_lib/TailwindBuild'
 
+describe('createIconUtilities', () => {
+  test('createIconUtilities', () => {
+    const utilities = createIconUtilities()
+    expect(utilities).toMatchSnapshot()
+  })
+})
+
 describe('createTailwindConfigIconsV2', async () => {
-  const config = createTailwindConfigIconsV2()
+  const config = {
+    plugins: [charcoalIconsV2],
+  }
   const result = await TailwindBuild.run(
     // @ts-expect-error FIXME: missing content
     config,
