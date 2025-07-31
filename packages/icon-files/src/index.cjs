@@ -51,7 +51,7 @@ module.exports = {
   '24/Camera': () => import('./24/Camera.js').then(m => m.default),
   '24/CameraVideo': () => import('./24/CameraVideo.js').then(m => m.default),
   '24/Cart': () => import('./24/Cart.js').then(m => m.default),
-  '24/ChangeCharactor': () => import('./24/ChangeCharactor.js').then(m => m.default),
+  '24/ChangeCharacter': () => import('./24/ChangeCharacter.js').then(m => m.default),
   '24/ChatBot': () => import('./24/ChatBot.js').then(m => m.default),
   '24/Check': () => import('./24/Check.js').then(m => m.default),
   '24/ChromaticAberration': () => import('./24/ChromaticAberration.js').then(m => m.default),
