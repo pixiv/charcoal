@@ -51,7 +51,7 @@ declare var _default: {
   '24/Camera': () => Promise<string>;
   '24/CameraVideo': () => Promise<string>;
   '24/Cart': () => Promise<string>;
-  '24/ChangeCharactor': () => Promise<string>;
+  '24/ChangeCharacter': () => Promise<string>;
   '24/ChatBot': () => Promise<string>;
   '24/Check': () => Promise<string>;
   '24/ChromaticAberration': () => Promise<string>;
