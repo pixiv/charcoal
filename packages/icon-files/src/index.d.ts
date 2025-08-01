@@ -103,6 +103,7 @@ declare var _default: {
   '24/HairEdit': () => Promise<string>;
   '24/Hashtag': () => Promise<string>;
   '24/Hide': () => Promise<string>;
+  '24/HightlightText': () => Promise<string>;
   '24/Home': () => Promise<string>;
   '24/Hue': () => Promise<string>;
   '24/Idea': () => Promise<string>;
