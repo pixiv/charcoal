@@ -25,7 +25,8 @@
   "types": "./src/index.d.ts",
   "files": [
     "src",
-    "svg"
+    "svg",
+    "v2-datauri"
   ],
   "publishConfig": {
     "access": "public"
