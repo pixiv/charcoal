@@ -103,6 +103,7 @@ module.exports = {
   '24/HairEdit': () => import('./24/HairEdit.js').then(m => m.default),
   '24/Hashtag': () => import('./24/Hashtag.js').then(m => m.default),
   '24/Hide': () => import('./24/Hide.js').then(m => m.default),
+  '24/HightlightText': () => import('./24/HightlightText.js').then(m => m.default),
   '24/Home': () => import('./24/Home.js').then(m => m.default),
   '24/Hue': () => import('./24/Hue.js').then(m => m.default),
   '24/Idea': () => import('./24/Idea.js').then(m => m.default),
