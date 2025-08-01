@@ -22,6 +22,7 @@ import cssVariableColorPlugin from './colors/plugin'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
 import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
+import { charcoalIconsV2 } from './iconsV2'
 export { unstable_createTailwindConfigTokenV2 }
 
 interface Options {
@@ -29,6 +30,7 @@ interface Options {
   theme?: ThemeMap
   cssVariablesV1?: boolean
   unstableTokenV2?: boolean
+  iconsV2?: boolean
 }
 
 export function createTailwindConfig({
@@ -36,6 +38,7 @@ export function createTailwindConfig({
   version = 'v3',
   cssVariablesV1 = true,
   unstableTokenV2 = false,
+  iconsV2 = false,
 }: Options): Omit<Config, 'content'> {
   assertAllThemeHaveSameKeys(theme)
 
@@ -161,6 +164,7 @@ export function createTailwindConfig({
           selectorOrMediaQuery
         )
       ),
+      ...(iconsV2 ? [charcoalIconsV2] : []),
     ],
   }
 }
