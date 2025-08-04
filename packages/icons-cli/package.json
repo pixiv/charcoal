@@ -1,12 +1,13 @@
 {
   "name": "@charcoal-ui/icons-cli",
-  "version": "4.11.0",
+  "version": "4.12.0-beta.1",
   "license": "Apache-2.0",
   "bin": "./dist/index.js",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
     "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 pnpm tsx src/v2/transformReact.ts",
     "build:css": "OUTPUT_ROOT_DIR=../icons/css/v2 pnpm tsx src/v2/transformCSS.ts",
+    "build:uri": "OUTPUT_ROOT_DIR=../icon-files/v2-datauri pnpm tsx src/v2/transformDataUri.ts",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "cli:icons": "./dist/index.js",

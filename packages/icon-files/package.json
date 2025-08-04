@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icon-files",
-  "version": "4.11.0",
+  "version": "4.12.0-beta.1",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/index.cjs",
@@ -15,12 +15,18 @@
       "types": "./v2/src/index.d.ts",
       "require": "./v2/src/index.cjs",
       "default": "./v2/src/index.js"
+    },
+    "./v2-datauri": {
+      "types": "./v2-datauri/index.d.ts",
+      "require": "./v2-datauri/index.cjs",
+      "default": "./v2-datauri/index.mjs"
     }
   },
   "types": "./src/index.d.ts",
   "files": [
     "src",
-    "svg"
+    "svg",
+    "v2-datauri"
   ],
   "publishConfig": {
     "access": "public"
