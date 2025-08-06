@@ -152,7 +152,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                   </div>
                   <div
                     aria-hidden="true"
-                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                    class="charcoal-visually-hidden"
                   >
                     <select
                       tabindex="-1"
@@ -480,7 +480,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                   </div>
                   <div
                     aria-hidden="true"
-                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                    class="charcoal-visually-hidden"
                   >
                     <select
                       tabindex="-1"
