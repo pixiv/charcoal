@@ -1,0 +1,9 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgCamera = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path d="M8.5 13.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z" fill="currentColor"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M9.295 3.557A2 2 0 0110.68 3h2.742a2 2 0 011.414.586L17.25 6H20a2 2 0 012 2v11a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h2.75l2.545-2.443zM12 8a5.5 5.5 0 100 11 5.5 5.5 0 000-11z" fill="currentColor"/>
+  </svg>);
+export const IconCamera24 = forwardRef(SvgCamera);
+export default IconCamera24;
