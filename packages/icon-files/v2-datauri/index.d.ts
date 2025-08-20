@@ -1,8 +1,6 @@
 /** This file is auto generated. DO NOT EDIT BY HAND. */
   
 declare var _default: {
-'20/regular/x': { uri: string, isSetCurrentcolor: boolean };
-'20/solid/x': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/arrow.left-down': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.down': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.left': { uri: string, isSetCurrentcolor: boolean };
@@ -13,6 +11,8 @@ declare var _default: {
 '16/solid/chevron.left': { uri: string, isSetCurrentcolor: boolean };
 '16/solid/chevron.right': { uri: string, isSetCurrentcolor: boolean };
 '16/solid/chevron.up': { uri: string, isSetCurrentcolor: boolean };
+'20/regular/x': { uri: string, isSetCurrentcolor: boolean };
+'20/solid/x': { uri: string, isSetCurrentcolor: boolean };
 '24/color/color-mixture': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/add.circle': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/add': { uri: string, isSetCurrentcolor: boolean };

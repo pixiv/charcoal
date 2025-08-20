@@ -6,10 +6,12 @@ import { escape } from 'querystring'
 
 async function main() {
   mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')
-  mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
   const sourceDir = process.env.SOURCE_ROOT_DIR
-  const outDir = process.env.OUTPUT_ROOT_DIR
   const inputDir = path.join(__dirname, sourceDir)
+
+  mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
+  const outDir = process.env.OUTPUT_ROOT_DIR
+
   await ensureDir(outDir)
   const fileNames = await glob('**/*.svg', { cwd: inputDir })
   const dataUris = await Promise.all(

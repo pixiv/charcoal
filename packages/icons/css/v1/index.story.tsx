@@ -8,7 +8,7 @@ export default {
   render() {
     return (
       <>
-       <style>{`
+        <style>{`
 .charcoal-icon-v1-Add {
   display: inline-block;
   width: 1em;
@@ -3077,8 +3077,8 @@ export default {
   aspect-ratio: 1/1;
 }
 `}</style>
-       <style>
-  {`:root {
+        <style>
+          {`:root {
     font-size: 24px;
   }
   .icons {
@@ -3094,1687 +3094,2238 @@ export default {
   code {
     font-size: 14px;
   }`}
-</style>
-       
-<div className="icons">
-
-  <div>
-    <i className="charcoal-icon-v1-Add" title=".charcoal-icon-v1-Add"></i>
-    <code>.charcoal-icon-v1-Add</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Add-16" title=".charcoal-icon-v1-Add-16"></i>
-    <code>.charcoal-icon-v1-Add-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Add-Inline" title=".charcoal-icon-v1-Add-Inline"></i>
-    <code>.charcoal-icon-v1-Add-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-AddImage" title=".charcoal-icon-v1-AddImage"></i>
-    <code>.charcoal-icon-v1-AddImage</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-AddModel" title=".charcoal-icon-v1-AddModel"></i>
-    <code>.charcoal-icon-v1-AddModel</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-AddPeople" title=".charcoal-icon-v1-AddPeople"></i>
-    <code>.charcoal-icon-v1-AddPeople</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-AddRubi" title=".charcoal-icon-v1-AddRubi"></i>
-    <code>.charcoal-icon-v1-AddRubi</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-AddText" title=".charcoal-icon-v1-AddText"></i>
-    <code>.charcoal-icon-v1-AddText</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Alart" title=".charcoal-icon-v1-Alart"></i>
-    <code>.charcoal-icon-v1-Alart</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Announcement" title=".charcoal-icon-v1-Announcement"></i>
-    <code>.charcoal-icon-v1-Announcement</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Ar" title=".charcoal-icon-v1-Ar"></i>
-    <code>.charcoal-icon-v1-Ar</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Archive" title=".charcoal-icon-v1-Archive"></i>
-    <code>.charcoal-icon-v1-Archive</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Archive-16" title=".charcoal-icon-v1-Archive-16"></i>
-    <code>.charcoal-icon-v1-Archive-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ArrowDown" title=".charcoal-icon-v1-ArrowDown"></i>
-    <code>.charcoal-icon-v1-ArrowDown</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ArrowDown-16" title=".charcoal-icon-v1-ArrowDown-16"></i>
-    <code>.charcoal-icon-v1-ArrowDown-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ArrowUp" title=".charcoal-icon-v1-ArrowUp"></i>
-    <code>.charcoal-icon-v1-ArrowUp</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Artwork-16" title=".charcoal-icon-v1-Artwork-16"></i>
-    <code>.charcoal-icon-v1-Artwork-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Back-16" title=".charcoal-icon-v1-Back-16"></i>
-    <code>.charcoal-icon-v1-Back-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Back-Inline" title=".charcoal-icon-v1-Back-Inline"></i>
-    <code>.charcoal-icon-v1-Back-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Binet" title=".charcoal-icon-v1-Binet"></i>
-    <code>.charcoal-icon-v1-Binet</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Body" title=".charcoal-icon-v1-Body"></i>
-    <code>.charcoal-icon-v1-Body</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BodyEdit" title=".charcoal-icon-v1-BodyEdit"></i>
-    <code>.charcoal-icon-v1-BodyEdit</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Book" title=".charcoal-icon-v1-Book"></i>
-    <code>.charcoal-icon-v1-Book</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Book-16" title=".charcoal-icon-v1-Book-16"></i>
-    <code>.charcoal-icon-v1-Book-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BookmarkOff-16" title=".charcoal-icon-v1-BookmarkOff-16"></i>
-    <code>.charcoal-icon-v1-BookmarkOff-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BookmarkOff-32" title=".charcoal-icon-v1-BookmarkOff-32"></i>
-    <code>.charcoal-icon-v1-BookmarkOff-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BookmarkOff-Inline" title=".charcoal-icon-v1-BookmarkOff-Inline"></i>
-    <code>.charcoal-icon-v1-BookmarkOff-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BookmarkOn-16" title=".charcoal-icon-v1-BookmarkOn-16"></i>
-    <code>.charcoal-icon-v1-BookmarkOn-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BookmarkOn-32" title=".charcoal-icon-v1-BookmarkOn-32"></i>
-    <code>.charcoal-icon-v1-BookmarkOn-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BookmarkOn-Inline" title=".charcoal-icon-v1-BookmarkOn-Inline"></i>
-    <code>.charcoal-icon-v1-BookmarkOn-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Breadcrumbs-Inline" title=".charcoal-icon-v1-Breadcrumbs-Inline"></i>
-    <code>.charcoal-icon-v1-Breadcrumbs-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BringBackward" title=".charcoal-icon-v1-BringBackward"></i>
-    <code>.charcoal-icon-v1-BringBackward</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-BringForward" title=".charcoal-icon-v1-BringForward"></i>
-    <code>.charcoal-icon-v1-BringForward</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Calendar" title=".charcoal-icon-v1-Calendar"></i>
-    <code>.charcoal-icon-v1-Calendar</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Camera" title=".charcoal-icon-v1-Camera"></i>
-    <code>.charcoal-icon-v1-Camera</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Camera-32" title=".charcoal-icon-v1-Camera-32"></i>
-    <code>.charcoal-icon-v1-Camera-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-CameraVideo" title=".charcoal-icon-v1-CameraVideo"></i>
-    <code>.charcoal-icon-v1-CameraVideo</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Cart" title=".charcoal-icon-v1-Cart"></i>
-    <code>.charcoal-icon-v1-Cart</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ChangeCharacter" title=".charcoal-icon-v1-ChangeCharacter"></i>
-    <code>.charcoal-icon-v1-ChangeCharacter</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ChatBot" title=".charcoal-icon-v1-ChatBot"></i>
-    <code>.charcoal-icon-v1-ChatBot</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Check" title=".charcoal-icon-v1-Check"></i>
-    <code>.charcoal-icon-v1-Check</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Check-16" title=".charcoal-icon-v1-Check-16"></i>
-    <code>.charcoal-icon-v1-Check-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Check-Inline" title=".charcoal-icon-v1-Check-Inline"></i>
-    <code>.charcoal-icon-v1-Check-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ChromaticAberration" title=".charcoal-icon-v1-ChromaticAberration"></i>
-    <code>.charcoal-icon-v1-ChromaticAberration</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Click" title=".charcoal-icon-v1-Click"></i>
-    <code>.charcoal-icon-v1-Click</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Close" title=".charcoal-icon-v1-Close"></i>
-    <code>.charcoal-icon-v1-Close</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Close-32" title=".charcoal-icon-v1-Close-32"></i>
-    <code>.charcoal-icon-v1-Close-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Codes" title=".charcoal-icon-v1-Codes"></i>
-    <code>.charcoal-icon-v1-Codes</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Collapse" title=".charcoal-icon-v1-Collapse"></i>
-    <code>.charcoal-icon-v1-Collapse</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Collapse-32" title=".charcoal-icon-v1-Collapse-32"></i>
-    <code>.charcoal-icon-v1-Collapse-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Collection" title=".charcoal-icon-v1-Collection"></i>
-    <code>.charcoal-icon-v1-Collection</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Comment-16" title=".charcoal-icon-v1-Comment-16"></i>
-    <code>.charcoal-icon-v1-Comment-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Comment-Inline" title=".charcoal-icon-v1-Comment-Inline"></i>
-    <code>.charcoal-icon-v1-Comment-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-CommentFill" title=".charcoal-icon-v1-CommentFill"></i>
-    <code>.charcoal-icon-v1-CommentFill</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-CommentOff-32" title=".charcoal-icon-v1-CommentOff-32"></i>
-    <code>.charcoal-icon-v1-CommentOff-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-CommentOn-32" title=".charcoal-icon-v1-CommentOn-32"></i>
-    <code>.charcoal-icon-v1-CommentOn-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-CommentOutline" title=".charcoal-icon-v1-CommentOutline"></i>
-    <code>.charcoal-icon-v1-CommentOutline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Contest" title=".charcoal-icon-v1-Contest"></i>
-    <code>.charcoal-icon-v1-Contest</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ContextMenu-Inline" title=".charcoal-icon-v1-ContextMenu-Inline"></i>
-    <code>.charcoal-icon-v1-ContextMenu-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Contrast" title=".charcoal-icon-v1-Contrast"></i>
-    <code>.charcoal-icon-v1-Contrast</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Delete-32" title=".charcoal-icon-v1-Delete-32"></i>
-    <code>.charcoal-icon-v1-Delete-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Description" title=".charcoal-icon-v1-Description"></i>
-    <code>.charcoal-icon-v1-Description</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-DeviceRotation" title=".charcoal-icon-v1-DeviceRotation"></i>
-    <code>.charcoal-icon-v1-DeviceRotation</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Discovery" title=".charcoal-icon-v1-Discovery"></i>
-    <code>.charcoal-icon-v1-Discovery</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Dot" title=".charcoal-icon-v1-Dot"></i>
-    <code>.charcoal-icon-v1-Dot</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Dot-16" title=".charcoal-icon-v1-Dot-16"></i>
-    <code>.charcoal-icon-v1-Dot-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Dot-32" title=".charcoal-icon-v1-Dot-32"></i>
-    <code>.charcoal-icon-v1-Dot-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-DotAlt" title=".charcoal-icon-v1-DotAlt"></i>
-    <code>.charcoal-icon-v1-DotAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Down" title=".charcoal-icon-v1-Down"></i>
-    <code>.charcoal-icon-v1-Down</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-DownloadAlt" title=".charcoal-icon-v1-DownloadAlt"></i>
-    <code>.charcoal-icon-v1-DownloadAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Duplicate" title=".charcoal-icon-v1-Duplicate"></i>
-    <code>.charcoal-icon-v1-Duplicate</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Dust" title=".charcoal-icon-v1-Dust"></i>
-    <code>.charcoal-icon-v1-Dust</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Edit-32" title=".charcoal-icon-v1-Edit-32"></i>
-    <code>.charcoal-icon-v1-Edit-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Emoji" title=".charcoal-icon-v1-Emoji"></i>
-    <code>.charcoal-icon-v1-Emoji</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Error" title=".charcoal-icon-v1-Error"></i>
-    <code>.charcoal-icon-v1-Error</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Error-16" title=".charcoal-icon-v1-Error-16"></i>
-    <code>.charcoal-icon-v1-Error-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ErrorOctagon" title=".charcoal-icon-v1-ErrorOctagon"></i>
-    <code>.charcoal-icon-v1-ErrorOctagon</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Events" title=".charcoal-icon-v1-Events"></i>
-    <code>.charcoal-icon-v1-Events</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Expand" title=".charcoal-icon-v1-Expand"></i>
-    <code>.charcoal-icon-v1-Expand</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Expand-32" title=".charcoal-icon-v1-Expand-32"></i>
-    <code>.charcoal-icon-v1-Expand-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-External-Inline" title=".charcoal-icon-v1-External-Inline"></i>
-    <code>.charcoal-icon-v1-External-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FaceEdit" title=".charcoal-icon-v1-FaceEdit"></i>
-    <code>.charcoal-icon-v1-FaceEdit</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Fashion" title=".charcoal-icon-v1-Fashion"></i>
-    <code>.charcoal-icon-v1-Fashion</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Feed" title=".charcoal-icon-v1-Feed"></i>
-    <code>.charcoal-icon-v1-Feed</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-File" title=".charcoal-icon-v1-File"></i>
-    <code>.charcoal-icon-v1-File</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Filter" title=".charcoal-icon-v1-Filter"></i>
-    <code>.charcoal-icon-v1-Filter</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Filter-16" title=".charcoal-icon-v1-Filter-16"></i>
-    <code>.charcoal-icon-v1-Filter-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Filter-Inline" title=".charcoal-icon-v1-Filter-Inline"></i>
-    <code>.charcoal-icon-v1-Filter-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Flare" title=".charcoal-icon-v1-Flare"></i>
-    <code>.charcoal-icon-v1-Flare</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Folder-Inline" title=".charcoal-icon-v1-Folder-Inline"></i>
-    <code>.charcoal-icon-v1-Folder-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatAlignCenter" title=".charcoal-icon-v1-FormatAlignCenter"></i>
-    <code>.charcoal-icon-v1-FormatAlignCenter</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatAlignJustified" title=".charcoal-icon-v1-FormatAlignJustified"></i>
-    <code>.charcoal-icon-v1-FormatAlignJustified</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatAlignLeft" title=".charcoal-icon-v1-FormatAlignLeft"></i>
-    <code>.charcoal-icon-v1-FormatAlignLeft</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatAlignRight" title=".charcoal-icon-v1-FormatAlignRight"></i>
-    <code>.charcoal-icon-v1-FormatAlignRight</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatColorFill" title=".charcoal-icon-v1-FormatColorFill"></i>
-    <code>.charcoal-icon-v1-FormatColorFill</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatColorFillNoColor" title=".charcoal-icon-v1-FormatColorFillNoColor"></i>
-    <code>.charcoal-icon-v1-FormatColorFillNoColor</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatFontFamily" title=".charcoal-icon-v1-FormatFontFamily"></i>
-    <code>.charcoal-icon-v1-FormatFontFamily</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatFontSize" title=".charcoal-icon-v1-FormatFontSize"></i>
-    <code>.charcoal-icon-v1-FormatFontSize</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatLetterSpacing" title=".charcoal-icon-v1-FormatLetterSpacing"></i>
-    <code>.charcoal-icon-v1-FormatLetterSpacing</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FormatLineSpacing" title=".charcoal-icon-v1-FormatLineSpacing"></i>
-    <code>.charcoal-icon-v1-FormatLineSpacing</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Fov" title=".charcoal-icon-v1-Fov"></i>
-    <code>.charcoal-icon-v1-Fov</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FrameEffect" title=".charcoal-icon-v1-FrameEffect"></i>
-    <code>.charcoal-icon-v1-FrameEffect</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-FrameSize" title=".charcoal-icon-v1-FrameSize"></i>
-    <code>.charcoal-icon-v1-FrameSize</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Gift" title=".charcoal-icon-v1-Gift"></i>
-    <code>.charcoal-icon-v1-Gift</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Gift-32" title=".charcoal-icon-v1-Gift-32"></i>
-    <code>.charcoal-icon-v1-Gift-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Glow" title=".charcoal-icon-v1-Glow"></i>
-    <code>.charcoal-icon-v1-Glow</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Groups" title=".charcoal-icon-v1-Groups"></i>
-    <code>.charcoal-icon-v1-Groups</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-HairEdit" title=".charcoal-icon-v1-HairEdit"></i>
-    <code>.charcoal-icon-v1-HairEdit</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Hashtag" title=".charcoal-icon-v1-Hashtag"></i>
-    <code>.charcoal-icon-v1-Hashtag</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Hide" title=".charcoal-icon-v1-Hide"></i>
-    <code>.charcoal-icon-v1-Hide</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-HightlightText" title=".charcoal-icon-v1-HightlightText"></i>
-    <code>.charcoal-icon-v1-HightlightText</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Home" title=".charcoal-icon-v1-Home"></i>
-    <code>.charcoal-icon-v1-Home</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Home-32" title=".charcoal-icon-v1-Home-32"></i>
-    <code>.charcoal-icon-v1-Home-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-HorizontalWriting-32" title=".charcoal-icon-v1-HorizontalWriting-32"></i>
-    <code>.charcoal-icon-v1-HorizontalWriting-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Hue" title=".charcoal-icon-v1-Hue"></i>
-    <code>.charcoal-icon-v1-Hue</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Idea" title=".charcoal-icon-v1-Idea"></i>
-    <code>.charcoal-icon-v1-Idea</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Image" title=".charcoal-icon-v1-Image"></i>
-    <code>.charcoal-icon-v1-Image</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImageAlt" title=".charcoal-icon-v1-ImageAlt"></i>
-    <code>.charcoal-icon-v1-ImageAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImageHidden" title=".charcoal-icon-v1-ImageHidden"></i>
-    <code>.charcoal-icon-v1-ImageHidden</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImageHidden-32" title=".charcoal-icon-v1-ImageHidden-32"></i>
-    <code>.charcoal-icon-v1-ImageHidden-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImageReplace" title=".charcoal-icon-v1-ImageReplace"></i>
-    <code>.charcoal-icon-v1-ImageReplace</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImageResponse-16" title=".charcoal-icon-v1-ImageResponse-16"></i>
-    <code>.charcoal-icon-v1-ImageResponse-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImageResponse-Inline" title=".charcoal-icon-v1-ImageResponse-Inline"></i>
-    <code>.charcoal-icon-v1-ImageResponse-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Images" title=".charcoal-icon-v1-Images"></i>
-    <code>.charcoal-icon-v1-Images</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Images-Inline" title=".charcoal-icon-v1-Images-Inline"></i>
-    <code>.charcoal-icon-v1-Images-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImgContain" title=".charcoal-icon-v1-ImgContain"></i>
-    <code>.charcoal-icon-v1-ImgContain</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ImgCover" title=".charcoal-icon-v1-ImgCover"></i>
-    <code>.charcoal-icon-v1-ImgCover</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Index" title=".charcoal-icon-v1-Index"></i>
-    <code>.charcoal-icon-v1-Index</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Index-32" title=".charcoal-icon-v1-Index-32"></i>
-    <code>.charcoal-icon-v1-Index-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Info" title=".charcoal-icon-v1-Info"></i>
-    <code>.charcoal-icon-v1-Info</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Info-16" title=".charcoal-icon-v1-Info-16"></i>
-    <code>.charcoal-icon-v1-Info-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Invalid" title=".charcoal-icon-v1-Invalid"></i>
-    <code>.charcoal-icon-v1-Invalid</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Invoice" title=".charcoal-icon-v1-Invoice"></i>
-    <code>.charcoal-icon-v1-Invoice</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ItemRemove" title=".charcoal-icon-v1-ItemRemove"></i>
-    <code>.charcoal-icon-v1-ItemRemove</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Latest-Inline" title=".charcoal-icon-v1-Latest-Inline"></i>
-    <code>.charcoal-icon-v1-Latest-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LatestWorks" title=".charcoal-icon-v1-LatestWorks"></i>
-    <code>.charcoal-icon-v1-LatestWorks</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Like-16" title=".charcoal-icon-v1-Like-16"></i>
-    <code>.charcoal-icon-v1-Like-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Like-Inline" title=".charcoal-icon-v1-Like-Inline"></i>
-    <code>.charcoal-icon-v1-Like-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LikeOff" title=".charcoal-icon-v1-LikeOff"></i>
-    <code>.charcoal-icon-v1-LikeOff</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LikeOff-32" title=".charcoal-icon-v1-LikeOff-32"></i>
-    <code>.charcoal-icon-v1-LikeOff-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LikeOff-Inline" title=".charcoal-icon-v1-LikeOff-Inline"></i>
-    <code>.charcoal-icon-v1-LikeOff-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LikeOn" title=".charcoal-icon-v1-LikeOn"></i>
-    <code>.charcoal-icon-v1-LikeOn</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LikeOn-32" title=".charcoal-icon-v1-LikeOn-32"></i>
-    <code>.charcoal-icon-v1-LikeOn-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LikeOnPrivate-32" title=".charcoal-icon-v1-LikeOnPrivate-32"></i>
-    <code>.charcoal-icon-v1-LikeOnPrivate-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Link" title=".charcoal-icon-v1-Link"></i>
-    <code>.charcoal-icon-v1-Link</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-List" title=".charcoal-icon-v1-List"></i>
-    <code>.charcoal-icon-v1-List</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-List-Inline" title=".charcoal-icon-v1-List-Inline"></i>
-    <code>.charcoal-icon-v1-List-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Location-Inline" title=".charcoal-icon-v1-Location-Inline"></i>
-    <code>.charcoal-icon-v1-Location-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Lock-Inline" title=".charcoal-icon-v1-Lock-Inline"></i>
-    <code>.charcoal-icon-v1-Lock-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LockLock" title=".charcoal-icon-v1-LockLock"></i>
-    <code>.charcoal-icon-v1-LockLock</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-LockUnlock" title=".charcoal-icon-v1-LockUnlock"></i>
-    <code>.charcoal-icon-v1-LockUnlock</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Logout" title=".charcoal-icon-v1-Logout"></i>
-    <code>.charcoal-icon-v1-Logout</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Manga" title=".charcoal-icon-v1-Manga"></i>
-    <code>.charcoal-icon-v1-Manga</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Menu" title=".charcoal-icon-v1-Menu"></i>
-    <code>.charcoal-icon-v1-Menu</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Menu-16" title=".charcoal-icon-v1-Menu-16"></i>
-    <code>.charcoal-icon-v1-Menu-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Message" title=".charcoal-icon-v1-Message"></i>
-    <code>.charcoal-icon-v1-Message</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Message-32" title=".charcoal-icon-v1-Message-32"></i>
-    <code>.charcoal-icon-v1-Message-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Microphone" title=".charcoal-icon-v1-Microphone"></i>
-    <code>.charcoal-icon-v1-Microphone</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-MobilePhone" title=".charcoal-icon-v1-MobilePhone"></i>
-    <code>.charcoal-icon-v1-MobilePhone</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-More-16" title=".charcoal-icon-v1-More-16"></i>
-    <code>.charcoal-icon-v1-More-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-More-Inline" title=".charcoal-icon-v1-More-Inline"></i>
-    <code>.charcoal-icon-v1-More-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Move1" title=".charcoal-icon-v1-Move1"></i>
-    <code>.charcoal-icon-v1-Move1</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-MultiSelect" title=".charcoal-icon-v1-MultiSelect"></i>
-    <code>.charcoal-icon-v1-MultiSelect</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-MultiSelect-Inline" title=".charcoal-icon-v1-MultiSelect-Inline"></i>
-    <code>.charcoal-icon-v1-MultiSelect-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Next" title=".charcoal-icon-v1-Next"></i>
-    <code>.charcoal-icon-v1-Next</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Next-32" title=".charcoal-icon-v1-Next-32"></i>
-    <code>.charcoal-icon-v1-Next-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Nextworks-16" title=".charcoal-icon-v1-Nextworks-16"></i>
-    <code>.charcoal-icon-v1-Nextworks-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Nextworks-Inline" title=".charcoal-icon-v1-Nextworks-Inline"></i>
-    <code>.charcoal-icon-v1-Nextworks-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-NoImage" title=".charcoal-icon-v1-NoImage"></i>
-    <code>.charcoal-icon-v1-NoImage</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Notification" title=".charcoal-icon-v1-Notification"></i>
-    <code>.charcoal-icon-v1-Notification</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Notification-32" title=".charcoal-icon-v1-Notification-32"></i>
-    <code>.charcoal-icon-v1-Notification-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-NotificationOff" title=".charcoal-icon-v1-NotificationOff"></i>
-    <code>.charcoal-icon-v1-NotificationOff</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-NotificationOff-32" title=".charcoal-icon-v1-NotificationOff-32"></i>
-    <code>.charcoal-icon-v1-NotificationOff-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-NovelViewerSettings-32" title=".charcoal-icon-v1-NovelViewerSettings-32"></i>
-    <code>.charcoal-icon-v1-NovelViewerSettings-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Novels" title=".charcoal-icon-v1-Novels"></i>
-    <code>.charcoal-icon-v1-Novels</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-OpenInNew" title=".charcoal-icon-v1-OpenInNew"></i>
-    <code>.charcoal-icon-v1-OpenInNew</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-OpenInNew-Inline" title=".charcoal-icon-v1-OpenInNew-Inline"></i>
-    <code>.charcoal-icon-v1-OpenInNew-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Options" title=".charcoal-icon-v1-Options"></i>
-    <code>.charcoal-icon-v1-Options</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-OptionsAlt" title=".charcoal-icon-v1-OptionsAlt"></i>
-    <code>.charcoal-icon-v1-OptionsAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Overlay" title=".charcoal-icon-v1-Overlay"></i>
-    <code>.charcoal-icon-v1-Overlay</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Palette" title=".charcoal-icon-v1-Palette"></i>
-    <code>.charcoal-icon-v1-Palette</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Pan-32" title=".charcoal-icon-v1-Pan-32"></i>
-    <code>.charcoal-icon-v1-Pan-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Pause" title=".charcoal-icon-v1-Pause"></i>
-    <code>.charcoal-icon-v1-Pause</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PauseAlt" title=".charcoal-icon-v1-PauseAlt"></i>
-    <code>.charcoal-icon-v1-PauseAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Pencil" title=".charcoal-icon-v1-Pencil"></i>
-    <code>.charcoal-icon-v1-Pencil</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Pencil-16" title=".charcoal-icon-v1-Pencil-16"></i>
-    <code>.charcoal-icon-v1-Pencil-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Pencil-Inline" title=".charcoal-icon-v1-Pencil-Inline"></i>
-    <code>.charcoal-icon-v1-Pencil-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PencilAdd" title=".charcoal-icon-v1-PencilAdd"></i>
-    <code>.charcoal-icon-v1-PencilAdd</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PencilDraw" title=".charcoal-icon-v1-PencilDraw"></i>
-    <code>.charcoal-icon-v1-PencilDraw</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PencilLive" title=".charcoal-icon-v1-PencilLive"></i>
-    <code>.charcoal-icon-v1-PencilLive</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PencilText" title=".charcoal-icon-v1-PencilText"></i>
-    <code>.charcoal-icon-v1-PencilText</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Person" title=".charcoal-icon-v1-Person"></i>
-    <code>.charcoal-icon-v1-Person</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Play" title=".charcoal-icon-v1-Play"></i>
-    <code>.charcoal-icon-v1-Play</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Pose" title=".charcoal-icon-v1-Pose"></i>
-    <code>.charcoal-icon-v1-Pose</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Prev" title=".charcoal-icon-v1-Prev"></i>
-    <code>.charcoal-icon-v1-Prev</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Prev-32" title=".charcoal-icon-v1-Prev-32"></i>
-    <code>.charcoal-icon-v1-Prev-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Projects" title=".charcoal-icon-v1-Projects"></i>
-    <code>.charcoal-icon-v1-Projects</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PullDown" title=".charcoal-icon-v1-PullDown"></i>
-    <code>.charcoal-icon-v1-PullDown</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PullDown-32" title=".charcoal-icon-v1-PullDown-32"></i>
-    <code>.charcoal-icon-v1-PullDown-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PullUp" title=".charcoal-icon-v1-PullUp"></i>
-    <code>.charcoal-icon-v1-PullUp</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-PullUp-32" title=".charcoal-icon-v1-PullUp-32"></i>
-    <code>.charcoal-icon-v1-PullUp-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Question" title=".charcoal-icon-v1-Question"></i>
-    <code>.charcoal-icon-v1-Question</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Question-16" title=".charcoal-icon-v1-Question-16"></i>
-    <code>.charcoal-icon-v1-Question-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-QuestionOutline" title=".charcoal-icon-v1-QuestionOutline"></i>
-    <code>.charcoal-icon-v1-QuestionOutline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Ranking" title=".charcoal-icon-v1-Ranking"></i>
-    <code>.charcoal-icon-v1-Ranking</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Ranking-16" title=".charcoal-icon-v1-Ranking-16"></i>
-    <code>.charcoal-icon-v1-Ranking-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReadHorizontalLeft" title=".charcoal-icon-v1-ReadHorizontalLeft"></i>
-    <code>.charcoal-icon-v1-ReadHorizontalLeft</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReadHorizontalLeft-32" title=".charcoal-icon-v1-ReadHorizontalLeft-32"></i>
-    <code>.charcoal-icon-v1-ReadHorizontalLeft-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReadHorizontalRight" title=".charcoal-icon-v1-ReadHorizontalRight"></i>
-    <code>.charcoal-icon-v1-ReadHorizontalRight</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReadHorizontalRight-32" title=".charcoal-icon-v1-ReadHorizontalRight-32"></i>
-    <code>.charcoal-icon-v1-ReadHorizontalRight-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReadVertical" title=".charcoal-icon-v1-ReadVertical"></i>
-    <code>.charcoal-icon-v1-ReadVertical</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReadVertical-32" title=".charcoal-icon-v1-ReadVertical-32"></i>
-    <code>.charcoal-icon-v1-ReadVertical-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Redo" title=".charcoal-icon-v1-Redo"></i>
-    <code>.charcoal-icon-v1-Redo</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Redo-32" title=".charcoal-icon-v1-Redo-32"></i>
-    <code>.charcoal-icon-v1-Redo-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Reload" title=".charcoal-icon-v1-Reload"></i>
-    <code>.charcoal-icon-v1-Reload</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ReloadLoop" title=".charcoal-icon-v1-ReloadLoop"></i>
-    <code>.charcoal-icon-v1-ReloadLoop</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Remove-16" title=".charcoal-icon-v1-Remove-16"></i>
-    <code>.charcoal-icon-v1-Remove-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Remove-Inline" title=".charcoal-icon-v1-Remove-Inline"></i>
-    <code>.charcoal-icon-v1-Remove-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Reorder" title=".charcoal-icon-v1-Reorder"></i>
-    <code>.charcoal-icon-v1-Reorder</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Reply" title=".charcoal-icon-v1-Reply"></i>
-    <code>.charcoal-icon-v1-Reply</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Roll" title=".charcoal-icon-v1-Roll"></i>
-    <code>.charcoal-icon-v1-Roll</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-RollHorizontal-32" title=".charcoal-icon-v1-RollHorizontal-32"></i>
-    <code>.charcoal-icon-v1-RollHorizontal-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-RollVertical-32" title=".charcoal-icon-v1-RollVertical-32"></i>
-    <code>.charcoal-icon-v1-RollVertical-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Rotate90DegreesC" title=".charcoal-icon-v1-Rotate90DegreesC"></i>
-    <code>.charcoal-icon-v1-Rotate90DegreesC</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Rotate90DegreesCc" title=".charcoal-icon-v1-Rotate90DegreesCc"></i>
-    <code>.charcoal-icon-v1-Rotate90DegreesCc</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-RotateRight" title=".charcoal-icon-v1-RotateRight"></i>
-    <code>.charcoal-icon-v1-RotateRight</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-SansSerif-32" title=".charcoal-icon-v1-SansSerif-32"></i>
-    <code>.charcoal-icon-v1-SansSerif-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Saturation" title=".charcoal-icon-v1-Saturation"></i>
-    <code>.charcoal-icon-v1-Saturation</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Save" title=".charcoal-icon-v1-Save"></i>
-    <code>.charcoal-icon-v1-Save</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Search" title=".charcoal-icon-v1-Search"></i>
-    <code>.charcoal-icon-v1-Search</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Search-16" title=".charcoal-icon-v1-Search-16"></i>
-    <code>.charcoal-icon-v1-Search-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Send" title=".charcoal-icon-v1-Send"></i>
-    <code>.charcoal-icon-v1-Send</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Serif-32" title=".charcoal-icon-v1-Serif-32"></i>
-    <code>.charcoal-icon-v1-Serif-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Services" title=".charcoal-icon-v1-Services"></i>
-    <code>.charcoal-icon-v1-Services</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Set" title=".charcoal-icon-v1-Set"></i>
-    <code>.charcoal-icon-v1-Set</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Settings" title=".charcoal-icon-v1-Settings"></i>
-    <code>.charcoal-icon-v1-Settings</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ShareAndroid" title=".charcoal-icon-v1-ShareAndroid"></i>
-    <code>.charcoal-icon-v1-ShareAndroid</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ShareAndroid-32" title=".charcoal-icon-v1-ShareAndroid-32"></i>
-    <code>.charcoal-icon-v1-ShareAndroid-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ShareIos" title=".charcoal-icon-v1-ShareIos"></i>
-    <code>.charcoal-icon-v1-ShareIos</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ShareIos-32" title=".charcoal-icon-v1-ShareIos-32"></i>
-    <code>.charcoal-icon-v1-ShareIos-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Shopping" title=".charcoal-icon-v1-Shopping"></i>
-    <code>.charcoal-icon-v1-Shopping</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Shopping-32" title=".charcoal-icon-v1-Shopping-32"></i>
-    <code>.charcoal-icon-v1-Shopping-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Show" title=".charcoal-icon-v1-Show"></i>
-    <code>.charcoal-icon-v1-Show</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ShowOutline" title=".charcoal-icon-v1-ShowOutline"></i>
-    <code>.charcoal-icon-v1-ShowOutline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Shutter" title=".charcoal-icon-v1-Shutter"></i>
-    <code>.charcoal-icon-v1-Shutter</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Smile-16" title=".charcoal-icon-v1-Smile-16"></i>
-    <code>.charcoal-icon-v1-Smile-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Smile-Inline" title=".charcoal-icon-v1-Smile-Inline"></i>
-    <code>.charcoal-icon-v1-Smile-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-SmileOn-Inline" title=".charcoal-icon-v1-SmileOn-Inline"></i>
-    <code>.charcoal-icon-v1-SmileOn-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Speaker-16" title=".charcoal-icon-v1-Speaker-16"></i>
-    <code>.charcoal-icon-v1-Speaker-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Star" title=".charcoal-icon-v1-Star"></i>
-    <code>.charcoal-icon-v1-Star</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Subtract" title=".charcoal-icon-v1-Subtract"></i>
-    <code>.charcoal-icon-v1-Subtract</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Sun" title=".charcoal-icon-v1-Sun"></i>
-    <code>.charcoal-icon-v1-Sun</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Temperature" title=".charcoal-icon-v1-Temperature"></i>
-    <code>.charcoal-icon-v1-Temperature</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Text" title=".charcoal-icon-v1-Text"></i>
-    <code>.charcoal-icon-v1-Text</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Thread" title=".charcoal-icon-v1-Thread"></i>
-    <code>.charcoal-icon-v1-Thread</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Trash" title=".charcoal-icon-v1-Trash"></i>
-    <code>.charcoal-icon-v1-Trash</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-TrashAlt" title=".charcoal-icon-v1-TrashAlt"></i>
-    <code>.charcoal-icon-v1-TrashAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Undo" title=".charcoal-icon-v1-Undo"></i>
-    <code>.charcoal-icon-v1-Undo</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Undo-32" title=".charcoal-icon-v1-Undo-32"></i>
-    <code>.charcoal-icon-v1-Undo-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Up" title=".charcoal-icon-v1-Up"></i>
-    <code>.charcoal-icon-v1-Up</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Upload" title=".charcoal-icon-v1-Upload"></i>
-    <code>.charcoal-icon-v1-Upload</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Upload-32" title=".charcoal-icon-v1-Upload-32"></i>
-    <code>.charcoal-icon-v1-Upload-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-UploadAlt" title=".charcoal-icon-v1-UploadAlt"></i>
-    <code>.charcoal-icon-v1-UploadAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Usagi" title=".charcoal-icon-v1-Usagi"></i>
-    <code>.charcoal-icon-v1-Usagi</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-UsagiAlt" title=".charcoal-icon-v1-UsagiAlt"></i>
-    <code>.charcoal-icon-v1-UsagiAlt</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-User-32" title=".charcoal-icon-v1-User-32"></i>
-    <code>.charcoal-icon-v1-User-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Users" title=".charcoal-icon-v1-Users"></i>
-    <code>.charcoal-icon-v1-Users</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Users-Inline" title=".charcoal-icon-v1-Users-Inline"></i>
-    <code>.charcoal-icon-v1-Users-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-VerticalWriting-32" title=".charcoal-icon-v1-VerticalWriting-32"></i>
-    <code>.charcoal-icon-v1-VerticalWriting-32</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Video" title=".charcoal-icon-v1-Video"></i>
-    <code>.charcoal-icon-v1-Video</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-View-16" title=".charcoal-icon-v1-View-16"></i>
-    <code>.charcoal-icon-v1-View-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-View-Inline" title=".charcoal-icon-v1-View-Inline"></i>
-    <code>.charcoal-icon-v1-View-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ViewGrid2Columns" title=".charcoal-icon-v1-ViewGrid2Columns"></i>
-    <code>.charcoal-icon-v1-ViewGrid2Columns</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ViewGrid3Columns" title=".charcoal-icon-v1-ViewGrid3Columns"></i>
-    <code>.charcoal-icon-v1-ViewGrid3Columns</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ViewList" title=".charcoal-icon-v1-ViewList"></i>
-    <code>.charcoal-icon-v1-ViewList</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ViewOutline-Inline" title=".charcoal-icon-v1-ViewOutline-Inline"></i>
-    <code>.charcoal-icon-v1-ViewOutline-Inline</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Warning" title=".charcoal-icon-v1-Warning"></i>
-    <code>.charcoal-icon-v1-Warning</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-Warning-16" title=".charcoal-icon-v1-Warning-16"></i>
-    <code>.charcoal-icon-v1-Warning-16</code>
-  </div>
-
-
-  <div>
-    <i className="charcoal-icon-v1-ZoomIn-32" title=".charcoal-icon-v1-ZoomIn-32"></i>
-    <code>.charcoal-icon-v1-ZoomIn-32</code>
-  </div>
-
-</div>
+        </style>
+
+        <div className="icons">
+          <div>
+            <i
+              className="charcoal-icon-v1-Add"
+              title=".charcoal-icon-v1-Add"
+            ></i>
+            <code>.charcoal-icon-v1-Add</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Add-16"
+              title=".charcoal-icon-v1-Add-16"
+            ></i>
+            <code>.charcoal-icon-v1-Add-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Add-Inline"
+              title=".charcoal-icon-v1-Add-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Add-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-AddImage"
+              title=".charcoal-icon-v1-AddImage"
+            ></i>
+            <code>.charcoal-icon-v1-AddImage</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-AddModel"
+              title=".charcoal-icon-v1-AddModel"
+            ></i>
+            <code>.charcoal-icon-v1-AddModel</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-AddPeople"
+              title=".charcoal-icon-v1-AddPeople"
+            ></i>
+            <code>.charcoal-icon-v1-AddPeople</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-AddRubi"
+              title=".charcoal-icon-v1-AddRubi"
+            ></i>
+            <code>.charcoal-icon-v1-AddRubi</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-AddText"
+              title=".charcoal-icon-v1-AddText"
+            ></i>
+            <code>.charcoal-icon-v1-AddText</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Alart"
+              title=".charcoal-icon-v1-Alart"
+            ></i>
+            <code>.charcoal-icon-v1-Alart</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Announcement"
+              title=".charcoal-icon-v1-Announcement"
+            ></i>
+            <code>.charcoal-icon-v1-Announcement</code>
+          </div>
+
+          <div>
+            <i className="charcoal-icon-v1-Ar" title=".charcoal-icon-v1-Ar"></i>
+            <code>.charcoal-icon-v1-Ar</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Archive"
+              title=".charcoal-icon-v1-Archive"
+            ></i>
+            <code>.charcoal-icon-v1-Archive</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Archive-16"
+              title=".charcoal-icon-v1-Archive-16"
+            ></i>
+            <code>.charcoal-icon-v1-Archive-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ArrowDown"
+              title=".charcoal-icon-v1-ArrowDown"
+            ></i>
+            <code>.charcoal-icon-v1-ArrowDown</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ArrowDown-16"
+              title=".charcoal-icon-v1-ArrowDown-16"
+            ></i>
+            <code>.charcoal-icon-v1-ArrowDown-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ArrowUp"
+              title=".charcoal-icon-v1-ArrowUp"
+            ></i>
+            <code>.charcoal-icon-v1-ArrowUp</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Artwork-16"
+              title=".charcoal-icon-v1-Artwork-16"
+            ></i>
+            <code>.charcoal-icon-v1-Artwork-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Back-16"
+              title=".charcoal-icon-v1-Back-16"
+            ></i>
+            <code>.charcoal-icon-v1-Back-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Back-Inline"
+              title=".charcoal-icon-v1-Back-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Back-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Binet"
+              title=".charcoal-icon-v1-Binet"
+            ></i>
+            <code>.charcoal-icon-v1-Binet</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Body"
+              title=".charcoal-icon-v1-Body"
+            ></i>
+            <code>.charcoal-icon-v1-Body</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BodyEdit"
+              title=".charcoal-icon-v1-BodyEdit"
+            ></i>
+            <code>.charcoal-icon-v1-BodyEdit</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Book"
+              title=".charcoal-icon-v1-Book"
+            ></i>
+            <code>.charcoal-icon-v1-Book</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Book-16"
+              title=".charcoal-icon-v1-Book-16"
+            ></i>
+            <code>.charcoal-icon-v1-Book-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BookmarkOff-16"
+              title=".charcoal-icon-v1-BookmarkOff-16"
+            ></i>
+            <code>.charcoal-icon-v1-BookmarkOff-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BookmarkOff-32"
+              title=".charcoal-icon-v1-BookmarkOff-32"
+            ></i>
+            <code>.charcoal-icon-v1-BookmarkOff-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BookmarkOff-Inline"
+              title=".charcoal-icon-v1-BookmarkOff-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-BookmarkOff-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BookmarkOn-16"
+              title=".charcoal-icon-v1-BookmarkOn-16"
+            ></i>
+            <code>.charcoal-icon-v1-BookmarkOn-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BookmarkOn-32"
+              title=".charcoal-icon-v1-BookmarkOn-32"
+            ></i>
+            <code>.charcoal-icon-v1-BookmarkOn-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BookmarkOn-Inline"
+              title=".charcoal-icon-v1-BookmarkOn-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-BookmarkOn-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Breadcrumbs-Inline"
+              title=".charcoal-icon-v1-Breadcrumbs-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Breadcrumbs-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BringBackward"
+              title=".charcoal-icon-v1-BringBackward"
+            ></i>
+            <code>.charcoal-icon-v1-BringBackward</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-BringForward"
+              title=".charcoal-icon-v1-BringForward"
+            ></i>
+            <code>.charcoal-icon-v1-BringForward</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Calendar"
+              title=".charcoal-icon-v1-Calendar"
+            ></i>
+            <code>.charcoal-icon-v1-Calendar</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Camera"
+              title=".charcoal-icon-v1-Camera"
+            ></i>
+            <code>.charcoal-icon-v1-Camera</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Camera-32"
+              title=".charcoal-icon-v1-Camera-32"
+            ></i>
+            <code>.charcoal-icon-v1-Camera-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-CameraVideo"
+              title=".charcoal-icon-v1-CameraVideo"
+            ></i>
+            <code>.charcoal-icon-v1-CameraVideo</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Cart"
+              title=".charcoal-icon-v1-Cart"
+            ></i>
+            <code>.charcoal-icon-v1-Cart</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ChangeCharacter"
+              title=".charcoal-icon-v1-ChangeCharacter"
+            ></i>
+            <code>.charcoal-icon-v1-ChangeCharacter</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ChatBot"
+              title=".charcoal-icon-v1-ChatBot"
+            ></i>
+            <code>.charcoal-icon-v1-ChatBot</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Check"
+              title=".charcoal-icon-v1-Check"
+            ></i>
+            <code>.charcoal-icon-v1-Check</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Check-16"
+              title=".charcoal-icon-v1-Check-16"
+            ></i>
+            <code>.charcoal-icon-v1-Check-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Check-Inline"
+              title=".charcoal-icon-v1-Check-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Check-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ChromaticAberration"
+              title=".charcoal-icon-v1-ChromaticAberration"
+            ></i>
+            <code>.charcoal-icon-v1-ChromaticAberration</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Click"
+              title=".charcoal-icon-v1-Click"
+            ></i>
+            <code>.charcoal-icon-v1-Click</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Close"
+              title=".charcoal-icon-v1-Close"
+            ></i>
+            <code>.charcoal-icon-v1-Close</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Close-32"
+              title=".charcoal-icon-v1-Close-32"
+            ></i>
+            <code>.charcoal-icon-v1-Close-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Codes"
+              title=".charcoal-icon-v1-Codes"
+            ></i>
+            <code>.charcoal-icon-v1-Codes</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Collapse"
+              title=".charcoal-icon-v1-Collapse"
+            ></i>
+            <code>.charcoal-icon-v1-Collapse</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Collapse-32"
+              title=".charcoal-icon-v1-Collapse-32"
+            ></i>
+            <code>.charcoal-icon-v1-Collapse-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Collection"
+              title=".charcoal-icon-v1-Collection"
+            ></i>
+            <code>.charcoal-icon-v1-Collection</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Comment-16"
+              title=".charcoal-icon-v1-Comment-16"
+            ></i>
+            <code>.charcoal-icon-v1-Comment-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Comment-Inline"
+              title=".charcoal-icon-v1-Comment-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Comment-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-CommentFill"
+              title=".charcoal-icon-v1-CommentFill"
+            ></i>
+            <code>.charcoal-icon-v1-CommentFill</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-CommentOff-32"
+              title=".charcoal-icon-v1-CommentOff-32"
+            ></i>
+            <code>.charcoal-icon-v1-CommentOff-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-CommentOn-32"
+              title=".charcoal-icon-v1-CommentOn-32"
+            ></i>
+            <code>.charcoal-icon-v1-CommentOn-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-CommentOutline"
+              title=".charcoal-icon-v1-CommentOutline"
+            ></i>
+            <code>.charcoal-icon-v1-CommentOutline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Contest"
+              title=".charcoal-icon-v1-Contest"
+            ></i>
+            <code>.charcoal-icon-v1-Contest</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ContextMenu-Inline"
+              title=".charcoal-icon-v1-ContextMenu-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-ContextMenu-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Contrast"
+              title=".charcoal-icon-v1-Contrast"
+            ></i>
+            <code>.charcoal-icon-v1-Contrast</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Delete-32"
+              title=".charcoal-icon-v1-Delete-32"
+            ></i>
+            <code>.charcoal-icon-v1-Delete-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Description"
+              title=".charcoal-icon-v1-Description"
+            ></i>
+            <code>.charcoal-icon-v1-Description</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-DeviceRotation"
+              title=".charcoal-icon-v1-DeviceRotation"
+            ></i>
+            <code>.charcoal-icon-v1-DeviceRotation</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Discovery"
+              title=".charcoal-icon-v1-Discovery"
+            ></i>
+            <code>.charcoal-icon-v1-Discovery</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Dot"
+              title=".charcoal-icon-v1-Dot"
+            ></i>
+            <code>.charcoal-icon-v1-Dot</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Dot-16"
+              title=".charcoal-icon-v1-Dot-16"
+            ></i>
+            <code>.charcoal-icon-v1-Dot-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Dot-32"
+              title=".charcoal-icon-v1-Dot-32"
+            ></i>
+            <code>.charcoal-icon-v1-Dot-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-DotAlt"
+              title=".charcoal-icon-v1-DotAlt"
+            ></i>
+            <code>.charcoal-icon-v1-DotAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Down"
+              title=".charcoal-icon-v1-Down"
+            ></i>
+            <code>.charcoal-icon-v1-Down</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-DownloadAlt"
+              title=".charcoal-icon-v1-DownloadAlt"
+            ></i>
+            <code>.charcoal-icon-v1-DownloadAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Duplicate"
+              title=".charcoal-icon-v1-Duplicate"
+            ></i>
+            <code>.charcoal-icon-v1-Duplicate</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Dust"
+              title=".charcoal-icon-v1-Dust"
+            ></i>
+            <code>.charcoal-icon-v1-Dust</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Edit-32"
+              title=".charcoal-icon-v1-Edit-32"
+            ></i>
+            <code>.charcoal-icon-v1-Edit-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Emoji"
+              title=".charcoal-icon-v1-Emoji"
+            ></i>
+            <code>.charcoal-icon-v1-Emoji</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Error"
+              title=".charcoal-icon-v1-Error"
+            ></i>
+            <code>.charcoal-icon-v1-Error</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Error-16"
+              title=".charcoal-icon-v1-Error-16"
+            ></i>
+            <code>.charcoal-icon-v1-Error-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ErrorOctagon"
+              title=".charcoal-icon-v1-ErrorOctagon"
+            ></i>
+            <code>.charcoal-icon-v1-ErrorOctagon</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Events"
+              title=".charcoal-icon-v1-Events"
+            ></i>
+            <code>.charcoal-icon-v1-Events</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Expand"
+              title=".charcoal-icon-v1-Expand"
+            ></i>
+            <code>.charcoal-icon-v1-Expand</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Expand-32"
+              title=".charcoal-icon-v1-Expand-32"
+            ></i>
+            <code>.charcoal-icon-v1-Expand-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-External-Inline"
+              title=".charcoal-icon-v1-External-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-External-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FaceEdit"
+              title=".charcoal-icon-v1-FaceEdit"
+            ></i>
+            <code>.charcoal-icon-v1-FaceEdit</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Fashion"
+              title=".charcoal-icon-v1-Fashion"
+            ></i>
+            <code>.charcoal-icon-v1-Fashion</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Feed"
+              title=".charcoal-icon-v1-Feed"
+            ></i>
+            <code>.charcoal-icon-v1-Feed</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-File"
+              title=".charcoal-icon-v1-File"
+            ></i>
+            <code>.charcoal-icon-v1-File</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Filter"
+              title=".charcoal-icon-v1-Filter"
+            ></i>
+            <code>.charcoal-icon-v1-Filter</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Filter-16"
+              title=".charcoal-icon-v1-Filter-16"
+            ></i>
+            <code>.charcoal-icon-v1-Filter-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Filter-Inline"
+              title=".charcoal-icon-v1-Filter-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Filter-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Flare"
+              title=".charcoal-icon-v1-Flare"
+            ></i>
+            <code>.charcoal-icon-v1-Flare</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Folder-Inline"
+              title=".charcoal-icon-v1-Folder-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Folder-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatAlignCenter"
+              title=".charcoal-icon-v1-FormatAlignCenter"
+            ></i>
+            <code>.charcoal-icon-v1-FormatAlignCenter</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatAlignJustified"
+              title=".charcoal-icon-v1-FormatAlignJustified"
+            ></i>
+            <code>.charcoal-icon-v1-FormatAlignJustified</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatAlignLeft"
+              title=".charcoal-icon-v1-FormatAlignLeft"
+            ></i>
+            <code>.charcoal-icon-v1-FormatAlignLeft</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatAlignRight"
+              title=".charcoal-icon-v1-FormatAlignRight"
+            ></i>
+            <code>.charcoal-icon-v1-FormatAlignRight</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatColorFill"
+              title=".charcoal-icon-v1-FormatColorFill"
+            ></i>
+            <code>.charcoal-icon-v1-FormatColorFill</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatColorFillNoColor"
+              title=".charcoal-icon-v1-FormatColorFillNoColor"
+            ></i>
+            <code>.charcoal-icon-v1-FormatColorFillNoColor</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatFontFamily"
+              title=".charcoal-icon-v1-FormatFontFamily"
+            ></i>
+            <code>.charcoal-icon-v1-FormatFontFamily</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatFontSize"
+              title=".charcoal-icon-v1-FormatFontSize"
+            ></i>
+            <code>.charcoal-icon-v1-FormatFontSize</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatLetterSpacing"
+              title=".charcoal-icon-v1-FormatLetterSpacing"
+            ></i>
+            <code>.charcoal-icon-v1-FormatLetterSpacing</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FormatLineSpacing"
+              title=".charcoal-icon-v1-FormatLineSpacing"
+            ></i>
+            <code>.charcoal-icon-v1-FormatLineSpacing</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Fov"
+              title=".charcoal-icon-v1-Fov"
+            ></i>
+            <code>.charcoal-icon-v1-Fov</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FrameEffect"
+              title=".charcoal-icon-v1-FrameEffect"
+            ></i>
+            <code>.charcoal-icon-v1-FrameEffect</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-FrameSize"
+              title=".charcoal-icon-v1-FrameSize"
+            ></i>
+            <code>.charcoal-icon-v1-FrameSize</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Gift"
+              title=".charcoal-icon-v1-Gift"
+            ></i>
+            <code>.charcoal-icon-v1-Gift</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Gift-32"
+              title=".charcoal-icon-v1-Gift-32"
+            ></i>
+            <code>.charcoal-icon-v1-Gift-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Glow"
+              title=".charcoal-icon-v1-Glow"
+            ></i>
+            <code>.charcoal-icon-v1-Glow</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Groups"
+              title=".charcoal-icon-v1-Groups"
+            ></i>
+            <code>.charcoal-icon-v1-Groups</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-HairEdit"
+              title=".charcoal-icon-v1-HairEdit"
+            ></i>
+            <code>.charcoal-icon-v1-HairEdit</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Hashtag"
+              title=".charcoal-icon-v1-Hashtag"
+            ></i>
+            <code>.charcoal-icon-v1-Hashtag</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Hide"
+              title=".charcoal-icon-v1-Hide"
+            ></i>
+            <code>.charcoal-icon-v1-Hide</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-HightlightText"
+              title=".charcoal-icon-v1-HightlightText"
+            ></i>
+            <code>.charcoal-icon-v1-HightlightText</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Home"
+              title=".charcoal-icon-v1-Home"
+            ></i>
+            <code>.charcoal-icon-v1-Home</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Home-32"
+              title=".charcoal-icon-v1-Home-32"
+            ></i>
+            <code>.charcoal-icon-v1-Home-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-HorizontalWriting-32"
+              title=".charcoal-icon-v1-HorizontalWriting-32"
+            ></i>
+            <code>.charcoal-icon-v1-HorizontalWriting-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Hue"
+              title=".charcoal-icon-v1-Hue"
+            ></i>
+            <code>.charcoal-icon-v1-Hue</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Idea"
+              title=".charcoal-icon-v1-Idea"
+            ></i>
+            <code>.charcoal-icon-v1-Idea</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Image"
+              title=".charcoal-icon-v1-Image"
+            ></i>
+            <code>.charcoal-icon-v1-Image</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImageAlt"
+              title=".charcoal-icon-v1-ImageAlt"
+            ></i>
+            <code>.charcoal-icon-v1-ImageAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImageHidden"
+              title=".charcoal-icon-v1-ImageHidden"
+            ></i>
+            <code>.charcoal-icon-v1-ImageHidden</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImageHidden-32"
+              title=".charcoal-icon-v1-ImageHidden-32"
+            ></i>
+            <code>.charcoal-icon-v1-ImageHidden-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImageReplace"
+              title=".charcoal-icon-v1-ImageReplace"
+            ></i>
+            <code>.charcoal-icon-v1-ImageReplace</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImageResponse-16"
+              title=".charcoal-icon-v1-ImageResponse-16"
+            ></i>
+            <code>.charcoal-icon-v1-ImageResponse-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImageResponse-Inline"
+              title=".charcoal-icon-v1-ImageResponse-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-ImageResponse-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Images"
+              title=".charcoal-icon-v1-Images"
+            ></i>
+            <code>.charcoal-icon-v1-Images</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Images-Inline"
+              title=".charcoal-icon-v1-Images-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Images-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImgContain"
+              title=".charcoal-icon-v1-ImgContain"
+            ></i>
+            <code>.charcoal-icon-v1-ImgContain</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ImgCover"
+              title=".charcoal-icon-v1-ImgCover"
+            ></i>
+            <code>.charcoal-icon-v1-ImgCover</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Index"
+              title=".charcoal-icon-v1-Index"
+            ></i>
+            <code>.charcoal-icon-v1-Index</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Index-32"
+              title=".charcoal-icon-v1-Index-32"
+            ></i>
+            <code>.charcoal-icon-v1-Index-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Info"
+              title=".charcoal-icon-v1-Info"
+            ></i>
+            <code>.charcoal-icon-v1-Info</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Info-16"
+              title=".charcoal-icon-v1-Info-16"
+            ></i>
+            <code>.charcoal-icon-v1-Info-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Invalid"
+              title=".charcoal-icon-v1-Invalid"
+            ></i>
+            <code>.charcoal-icon-v1-Invalid</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Invoice"
+              title=".charcoal-icon-v1-Invoice"
+            ></i>
+            <code>.charcoal-icon-v1-Invoice</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ItemRemove"
+              title=".charcoal-icon-v1-ItemRemove"
+            ></i>
+            <code>.charcoal-icon-v1-ItemRemove</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Latest-Inline"
+              title=".charcoal-icon-v1-Latest-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Latest-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LatestWorks"
+              title=".charcoal-icon-v1-LatestWorks"
+            ></i>
+            <code>.charcoal-icon-v1-LatestWorks</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Like-16"
+              title=".charcoal-icon-v1-Like-16"
+            ></i>
+            <code>.charcoal-icon-v1-Like-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Like-Inline"
+              title=".charcoal-icon-v1-Like-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Like-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LikeOff"
+              title=".charcoal-icon-v1-LikeOff"
+            ></i>
+            <code>.charcoal-icon-v1-LikeOff</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LikeOff-32"
+              title=".charcoal-icon-v1-LikeOff-32"
+            ></i>
+            <code>.charcoal-icon-v1-LikeOff-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LikeOff-Inline"
+              title=".charcoal-icon-v1-LikeOff-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-LikeOff-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LikeOn"
+              title=".charcoal-icon-v1-LikeOn"
+            ></i>
+            <code>.charcoal-icon-v1-LikeOn</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LikeOn-32"
+              title=".charcoal-icon-v1-LikeOn-32"
+            ></i>
+            <code>.charcoal-icon-v1-LikeOn-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LikeOnPrivate-32"
+              title=".charcoal-icon-v1-LikeOnPrivate-32"
+            ></i>
+            <code>.charcoal-icon-v1-LikeOnPrivate-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Link"
+              title=".charcoal-icon-v1-Link"
+            ></i>
+            <code>.charcoal-icon-v1-Link</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-List"
+              title=".charcoal-icon-v1-List"
+            ></i>
+            <code>.charcoal-icon-v1-List</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-List-Inline"
+              title=".charcoal-icon-v1-List-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-List-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Location-Inline"
+              title=".charcoal-icon-v1-Location-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Location-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Lock-Inline"
+              title=".charcoal-icon-v1-Lock-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Lock-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LockLock"
+              title=".charcoal-icon-v1-LockLock"
+            ></i>
+            <code>.charcoal-icon-v1-LockLock</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-LockUnlock"
+              title=".charcoal-icon-v1-LockUnlock"
+            ></i>
+            <code>.charcoal-icon-v1-LockUnlock</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Logout"
+              title=".charcoal-icon-v1-Logout"
+            ></i>
+            <code>.charcoal-icon-v1-Logout</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Manga"
+              title=".charcoal-icon-v1-Manga"
+            ></i>
+            <code>.charcoal-icon-v1-Manga</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Menu"
+              title=".charcoal-icon-v1-Menu"
+            ></i>
+            <code>.charcoal-icon-v1-Menu</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Menu-16"
+              title=".charcoal-icon-v1-Menu-16"
+            ></i>
+            <code>.charcoal-icon-v1-Menu-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Message"
+              title=".charcoal-icon-v1-Message"
+            ></i>
+            <code>.charcoal-icon-v1-Message</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Message-32"
+              title=".charcoal-icon-v1-Message-32"
+            ></i>
+            <code>.charcoal-icon-v1-Message-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Microphone"
+              title=".charcoal-icon-v1-Microphone"
+            ></i>
+            <code>.charcoal-icon-v1-Microphone</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-MobilePhone"
+              title=".charcoal-icon-v1-MobilePhone"
+            ></i>
+            <code>.charcoal-icon-v1-MobilePhone</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-More-16"
+              title=".charcoal-icon-v1-More-16"
+            ></i>
+            <code>.charcoal-icon-v1-More-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-More-Inline"
+              title=".charcoal-icon-v1-More-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-More-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Move1"
+              title=".charcoal-icon-v1-Move1"
+            ></i>
+            <code>.charcoal-icon-v1-Move1</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-MultiSelect"
+              title=".charcoal-icon-v1-MultiSelect"
+            ></i>
+            <code>.charcoal-icon-v1-MultiSelect</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-MultiSelect-Inline"
+              title=".charcoal-icon-v1-MultiSelect-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-MultiSelect-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Next"
+              title=".charcoal-icon-v1-Next"
+            ></i>
+            <code>.charcoal-icon-v1-Next</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Next-32"
+              title=".charcoal-icon-v1-Next-32"
+            ></i>
+            <code>.charcoal-icon-v1-Next-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Nextworks-16"
+              title=".charcoal-icon-v1-Nextworks-16"
+            ></i>
+            <code>.charcoal-icon-v1-Nextworks-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Nextworks-Inline"
+              title=".charcoal-icon-v1-Nextworks-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Nextworks-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-NoImage"
+              title=".charcoal-icon-v1-NoImage"
+            ></i>
+            <code>.charcoal-icon-v1-NoImage</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Notification"
+              title=".charcoal-icon-v1-Notification"
+            ></i>
+            <code>.charcoal-icon-v1-Notification</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Notification-32"
+              title=".charcoal-icon-v1-Notification-32"
+            ></i>
+            <code>.charcoal-icon-v1-Notification-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-NotificationOff"
+              title=".charcoal-icon-v1-NotificationOff"
+            ></i>
+            <code>.charcoal-icon-v1-NotificationOff</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-NotificationOff-32"
+              title=".charcoal-icon-v1-NotificationOff-32"
+            ></i>
+            <code>.charcoal-icon-v1-NotificationOff-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-NovelViewerSettings-32"
+              title=".charcoal-icon-v1-NovelViewerSettings-32"
+            ></i>
+            <code>.charcoal-icon-v1-NovelViewerSettings-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Novels"
+              title=".charcoal-icon-v1-Novels"
+            ></i>
+            <code>.charcoal-icon-v1-Novels</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-OpenInNew"
+              title=".charcoal-icon-v1-OpenInNew"
+            ></i>
+            <code>.charcoal-icon-v1-OpenInNew</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-OpenInNew-Inline"
+              title=".charcoal-icon-v1-OpenInNew-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-OpenInNew-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Options"
+              title=".charcoal-icon-v1-Options"
+            ></i>
+            <code>.charcoal-icon-v1-Options</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-OptionsAlt"
+              title=".charcoal-icon-v1-OptionsAlt"
+            ></i>
+            <code>.charcoal-icon-v1-OptionsAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Overlay"
+              title=".charcoal-icon-v1-Overlay"
+            ></i>
+            <code>.charcoal-icon-v1-Overlay</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Palette"
+              title=".charcoal-icon-v1-Palette"
+            ></i>
+            <code>.charcoal-icon-v1-Palette</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Pan-32"
+              title=".charcoal-icon-v1-Pan-32"
+            ></i>
+            <code>.charcoal-icon-v1-Pan-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Pause"
+              title=".charcoal-icon-v1-Pause"
+            ></i>
+            <code>.charcoal-icon-v1-Pause</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PauseAlt"
+              title=".charcoal-icon-v1-PauseAlt"
+            ></i>
+            <code>.charcoal-icon-v1-PauseAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Pencil"
+              title=".charcoal-icon-v1-Pencil"
+            ></i>
+            <code>.charcoal-icon-v1-Pencil</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Pencil-16"
+              title=".charcoal-icon-v1-Pencil-16"
+            ></i>
+            <code>.charcoal-icon-v1-Pencil-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Pencil-Inline"
+              title=".charcoal-icon-v1-Pencil-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Pencil-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PencilAdd"
+              title=".charcoal-icon-v1-PencilAdd"
+            ></i>
+            <code>.charcoal-icon-v1-PencilAdd</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PencilDraw"
+              title=".charcoal-icon-v1-PencilDraw"
+            ></i>
+            <code>.charcoal-icon-v1-PencilDraw</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PencilLive"
+              title=".charcoal-icon-v1-PencilLive"
+            ></i>
+            <code>.charcoal-icon-v1-PencilLive</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PencilText"
+              title=".charcoal-icon-v1-PencilText"
+            ></i>
+            <code>.charcoal-icon-v1-PencilText</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Person"
+              title=".charcoal-icon-v1-Person"
+            ></i>
+            <code>.charcoal-icon-v1-Person</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Play"
+              title=".charcoal-icon-v1-Play"
+            ></i>
+            <code>.charcoal-icon-v1-Play</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Pose"
+              title=".charcoal-icon-v1-Pose"
+            ></i>
+            <code>.charcoal-icon-v1-Pose</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Prev"
+              title=".charcoal-icon-v1-Prev"
+            ></i>
+            <code>.charcoal-icon-v1-Prev</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Prev-32"
+              title=".charcoal-icon-v1-Prev-32"
+            ></i>
+            <code>.charcoal-icon-v1-Prev-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Projects"
+              title=".charcoal-icon-v1-Projects"
+            ></i>
+            <code>.charcoal-icon-v1-Projects</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PullDown"
+              title=".charcoal-icon-v1-PullDown"
+            ></i>
+            <code>.charcoal-icon-v1-PullDown</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PullDown-32"
+              title=".charcoal-icon-v1-PullDown-32"
+            ></i>
+            <code>.charcoal-icon-v1-PullDown-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PullUp"
+              title=".charcoal-icon-v1-PullUp"
+            ></i>
+            <code>.charcoal-icon-v1-PullUp</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-PullUp-32"
+              title=".charcoal-icon-v1-PullUp-32"
+            ></i>
+            <code>.charcoal-icon-v1-PullUp-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Question"
+              title=".charcoal-icon-v1-Question"
+            ></i>
+            <code>.charcoal-icon-v1-Question</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Question-16"
+              title=".charcoal-icon-v1-Question-16"
+            ></i>
+            <code>.charcoal-icon-v1-Question-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-QuestionOutline"
+              title=".charcoal-icon-v1-QuestionOutline"
+            ></i>
+            <code>.charcoal-icon-v1-QuestionOutline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Ranking"
+              title=".charcoal-icon-v1-Ranking"
+            ></i>
+            <code>.charcoal-icon-v1-Ranking</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Ranking-16"
+              title=".charcoal-icon-v1-Ranking-16"
+            ></i>
+            <code>.charcoal-icon-v1-Ranking-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReadHorizontalLeft"
+              title=".charcoal-icon-v1-ReadHorizontalLeft"
+            ></i>
+            <code>.charcoal-icon-v1-ReadHorizontalLeft</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReadHorizontalLeft-32"
+              title=".charcoal-icon-v1-ReadHorizontalLeft-32"
+            ></i>
+            <code>.charcoal-icon-v1-ReadHorizontalLeft-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReadHorizontalRight"
+              title=".charcoal-icon-v1-ReadHorizontalRight"
+            ></i>
+            <code>.charcoal-icon-v1-ReadHorizontalRight</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReadHorizontalRight-32"
+              title=".charcoal-icon-v1-ReadHorizontalRight-32"
+            ></i>
+            <code>.charcoal-icon-v1-ReadHorizontalRight-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReadVertical"
+              title=".charcoal-icon-v1-ReadVertical"
+            ></i>
+            <code>.charcoal-icon-v1-ReadVertical</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReadVertical-32"
+              title=".charcoal-icon-v1-ReadVertical-32"
+            ></i>
+            <code>.charcoal-icon-v1-ReadVertical-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Redo"
+              title=".charcoal-icon-v1-Redo"
+            ></i>
+            <code>.charcoal-icon-v1-Redo</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Redo-32"
+              title=".charcoal-icon-v1-Redo-32"
+            ></i>
+            <code>.charcoal-icon-v1-Redo-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Reload"
+              title=".charcoal-icon-v1-Reload"
+            ></i>
+            <code>.charcoal-icon-v1-Reload</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ReloadLoop"
+              title=".charcoal-icon-v1-ReloadLoop"
+            ></i>
+            <code>.charcoal-icon-v1-ReloadLoop</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Remove-16"
+              title=".charcoal-icon-v1-Remove-16"
+            ></i>
+            <code>.charcoal-icon-v1-Remove-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Remove-Inline"
+              title=".charcoal-icon-v1-Remove-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Remove-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Reorder"
+              title=".charcoal-icon-v1-Reorder"
+            ></i>
+            <code>.charcoal-icon-v1-Reorder</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Reply"
+              title=".charcoal-icon-v1-Reply"
+            ></i>
+            <code>.charcoal-icon-v1-Reply</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Roll"
+              title=".charcoal-icon-v1-Roll"
+            ></i>
+            <code>.charcoal-icon-v1-Roll</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-RollHorizontal-32"
+              title=".charcoal-icon-v1-RollHorizontal-32"
+            ></i>
+            <code>.charcoal-icon-v1-RollHorizontal-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-RollVertical-32"
+              title=".charcoal-icon-v1-RollVertical-32"
+            ></i>
+            <code>.charcoal-icon-v1-RollVertical-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Rotate90DegreesC"
+              title=".charcoal-icon-v1-Rotate90DegreesC"
+            ></i>
+            <code>.charcoal-icon-v1-Rotate90DegreesC</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Rotate90DegreesCc"
+              title=".charcoal-icon-v1-Rotate90DegreesCc"
+            ></i>
+            <code>.charcoal-icon-v1-Rotate90DegreesCc</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-RotateRight"
+              title=".charcoal-icon-v1-RotateRight"
+            ></i>
+            <code>.charcoal-icon-v1-RotateRight</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-SansSerif-32"
+              title=".charcoal-icon-v1-SansSerif-32"
+            ></i>
+            <code>.charcoal-icon-v1-SansSerif-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Saturation"
+              title=".charcoal-icon-v1-Saturation"
+            ></i>
+            <code>.charcoal-icon-v1-Saturation</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Save"
+              title=".charcoal-icon-v1-Save"
+            ></i>
+            <code>.charcoal-icon-v1-Save</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Search"
+              title=".charcoal-icon-v1-Search"
+            ></i>
+            <code>.charcoal-icon-v1-Search</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Search-16"
+              title=".charcoal-icon-v1-Search-16"
+            ></i>
+            <code>.charcoal-icon-v1-Search-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Send"
+              title=".charcoal-icon-v1-Send"
+            ></i>
+            <code>.charcoal-icon-v1-Send</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Serif-32"
+              title=".charcoal-icon-v1-Serif-32"
+            ></i>
+            <code>.charcoal-icon-v1-Serif-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Services"
+              title=".charcoal-icon-v1-Services"
+            ></i>
+            <code>.charcoal-icon-v1-Services</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Set"
+              title=".charcoal-icon-v1-Set"
+            ></i>
+            <code>.charcoal-icon-v1-Set</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Settings"
+              title=".charcoal-icon-v1-Settings"
+            ></i>
+            <code>.charcoal-icon-v1-Settings</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ShareAndroid"
+              title=".charcoal-icon-v1-ShareAndroid"
+            ></i>
+            <code>.charcoal-icon-v1-ShareAndroid</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ShareAndroid-32"
+              title=".charcoal-icon-v1-ShareAndroid-32"
+            ></i>
+            <code>.charcoal-icon-v1-ShareAndroid-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ShareIos"
+              title=".charcoal-icon-v1-ShareIos"
+            ></i>
+            <code>.charcoal-icon-v1-ShareIos</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ShareIos-32"
+              title=".charcoal-icon-v1-ShareIos-32"
+            ></i>
+            <code>.charcoal-icon-v1-ShareIos-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Shopping"
+              title=".charcoal-icon-v1-Shopping"
+            ></i>
+            <code>.charcoal-icon-v1-Shopping</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Shopping-32"
+              title=".charcoal-icon-v1-Shopping-32"
+            ></i>
+            <code>.charcoal-icon-v1-Shopping-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Show"
+              title=".charcoal-icon-v1-Show"
+            ></i>
+            <code>.charcoal-icon-v1-Show</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ShowOutline"
+              title=".charcoal-icon-v1-ShowOutline"
+            ></i>
+            <code>.charcoal-icon-v1-ShowOutline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Shutter"
+              title=".charcoal-icon-v1-Shutter"
+            ></i>
+            <code>.charcoal-icon-v1-Shutter</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Smile-16"
+              title=".charcoal-icon-v1-Smile-16"
+            ></i>
+            <code>.charcoal-icon-v1-Smile-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Smile-Inline"
+              title=".charcoal-icon-v1-Smile-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Smile-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-SmileOn-Inline"
+              title=".charcoal-icon-v1-SmileOn-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-SmileOn-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Speaker-16"
+              title=".charcoal-icon-v1-Speaker-16"
+            ></i>
+            <code>.charcoal-icon-v1-Speaker-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Star"
+              title=".charcoal-icon-v1-Star"
+            ></i>
+            <code>.charcoal-icon-v1-Star</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Subtract"
+              title=".charcoal-icon-v1-Subtract"
+            ></i>
+            <code>.charcoal-icon-v1-Subtract</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Sun"
+              title=".charcoal-icon-v1-Sun"
+            ></i>
+            <code>.charcoal-icon-v1-Sun</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Temperature"
+              title=".charcoal-icon-v1-Temperature"
+            ></i>
+            <code>.charcoal-icon-v1-Temperature</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Text"
+              title=".charcoal-icon-v1-Text"
+            ></i>
+            <code>.charcoal-icon-v1-Text</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Thread"
+              title=".charcoal-icon-v1-Thread"
+            ></i>
+            <code>.charcoal-icon-v1-Thread</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Trash"
+              title=".charcoal-icon-v1-Trash"
+            ></i>
+            <code>.charcoal-icon-v1-Trash</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-TrashAlt"
+              title=".charcoal-icon-v1-TrashAlt"
+            ></i>
+            <code>.charcoal-icon-v1-TrashAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Undo"
+              title=".charcoal-icon-v1-Undo"
+            ></i>
+            <code>.charcoal-icon-v1-Undo</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Undo-32"
+              title=".charcoal-icon-v1-Undo-32"
+            ></i>
+            <code>.charcoal-icon-v1-Undo-32</code>
+          </div>
+
+          <div>
+            <i className="charcoal-icon-v1-Up" title=".charcoal-icon-v1-Up"></i>
+            <code>.charcoal-icon-v1-Up</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Upload"
+              title=".charcoal-icon-v1-Upload"
+            ></i>
+            <code>.charcoal-icon-v1-Upload</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Upload-32"
+              title=".charcoal-icon-v1-Upload-32"
+            ></i>
+            <code>.charcoal-icon-v1-Upload-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-UploadAlt"
+              title=".charcoal-icon-v1-UploadAlt"
+            ></i>
+            <code>.charcoal-icon-v1-UploadAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Usagi"
+              title=".charcoal-icon-v1-Usagi"
+            ></i>
+            <code>.charcoal-icon-v1-Usagi</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-UsagiAlt"
+              title=".charcoal-icon-v1-UsagiAlt"
+            ></i>
+            <code>.charcoal-icon-v1-UsagiAlt</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-User-32"
+              title=".charcoal-icon-v1-User-32"
+            ></i>
+            <code>.charcoal-icon-v1-User-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Users"
+              title=".charcoal-icon-v1-Users"
+            ></i>
+            <code>.charcoal-icon-v1-Users</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Users-Inline"
+              title=".charcoal-icon-v1-Users-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-Users-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-VerticalWriting-32"
+              title=".charcoal-icon-v1-VerticalWriting-32"
+            ></i>
+            <code>.charcoal-icon-v1-VerticalWriting-32</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Video"
+              title=".charcoal-icon-v1-Video"
+            ></i>
+            <code>.charcoal-icon-v1-Video</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-View-16"
+              title=".charcoal-icon-v1-View-16"
+            ></i>
+            <code>.charcoal-icon-v1-View-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-View-Inline"
+              title=".charcoal-icon-v1-View-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-View-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ViewGrid2Columns"
+              title=".charcoal-icon-v1-ViewGrid2Columns"
+            ></i>
+            <code>.charcoal-icon-v1-ViewGrid2Columns</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ViewGrid3Columns"
+              title=".charcoal-icon-v1-ViewGrid3Columns"
+            ></i>
+            <code>.charcoal-icon-v1-ViewGrid3Columns</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ViewList"
+              title=".charcoal-icon-v1-ViewList"
+            ></i>
+            <code>.charcoal-icon-v1-ViewList</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ViewOutline-Inline"
+              title=".charcoal-icon-v1-ViewOutline-Inline"
+            ></i>
+            <code>.charcoal-icon-v1-ViewOutline-Inline</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Warning"
+              title=".charcoal-icon-v1-Warning"
+            ></i>
+            <code>.charcoal-icon-v1-Warning</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-Warning-16"
+              title=".charcoal-icon-v1-Warning-16"
+            ></i>
+            <code>.charcoal-icon-v1-Warning-16</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-ZoomIn-32"
+              title=".charcoal-icon-v1-ZoomIn-32"
+            ></i>
+            <code>.charcoal-icon-v1-ZoomIn-32</code>
+          </div>
+        </div>
       </>
     )
   },
 }
-  
+
 export const Default = {}
