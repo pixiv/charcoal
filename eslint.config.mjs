@@ -123,6 +123,7 @@ const config = [
       'packages/icon-files/src/',
       'packages/icon-files/v2',
       'packages/icon-files/v2-datauri',
+      'packages/icon-files/v1-datauri',
       'packages/icons/react',
       'eslint.config.mjs',
       'vitest.*',
