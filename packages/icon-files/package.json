@@ -20,6 +20,11 @@
       "types": "./v2-datauri/index.d.ts",
       "require": "./v2-datauri/index.cjs",
       "default": "./v2-datauri/index.mjs"
+    },
+    "./v1-datauri": {
+      "types": "./v1-datauri/index.d.ts",
+      "require": "./v1-datauri/index.cjs",
+      "default": "./v1-datauri/index.mjs"
     }
   },
   "types": "./src/index.d.ts",
