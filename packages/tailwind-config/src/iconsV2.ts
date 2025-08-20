@@ -1,17 +1,35 @@
 import plugin from 'tailwindcss/plugin'
-import icons from '@charcoal-ui/icon-files/v2-datauri'
+import iconsV2 from '@charcoal-ui/icon-files/v2-datauri'
+import iconsV1 from '@charcoal-ui/icon-files/v1-datauri'
 import { CSSRuleObject } from 'tailwindcss/types/config'
 
-export const createIconUtilities = () => {
+const transformClassNameV2 = (fileName: string) => {
+  const [size, variant, name] = fileName.split('/')
+  return [
+    '.icon',
+    name.replaceAll('.', '-'),
+    ...(variant === 'regular' ? [] : [variant]),
+    ...(size === '24' ? [] : [size]),
+  ].join('-')
+}
+
+const transformClassNameV1 = (fileName: string) => {
+  const [size, name] = fileName.split('/')
+  return [
+    '.icon-v1',
+    name.replaceAll('.', '-'),
+    ...(size === '24' ? [] : [size]),
+  ].join('-')
+}
+
+export const createIconUtilities = ({ v2 = false }: { v2?: boolean }) => {
   const newUtilities: { [key: string]: CSSRuleObject } = {}
+  const icons = v2 ? iconsV2 : iconsV1
   for (const [fileName, { uri, isSetCurrentcolor }] of Object.entries(icons)) {
-    const [size, variant, name] = fileName.split('/')
-    const className = [
-      '.icon',
-      name.replaceAll('.', '-'),
-      ...(variant === 'regular' ? [] : [variant]),
-      ...(size === '24' ? [] : [size]),
-    ].join('-')
+    const className = v2
+      ? transformClassNameV2(fileName)
+      : transformClassNameV1(fileName)
+
     newUtilities[className] = {
       display: 'inline-block',
       width: '1em',
@@ -26,5 +44,9 @@ export const createIconUtilities = () => {
 }
 
 export const charcoalIconsV2 = plugin(({ addUtilities }) => {
-  addUtilities(createIconUtilities())
+  addUtilities(createIconUtilities({ v2: true }))
+})
+
+export const charcoalIconsV1 = plugin(({ addUtilities }) => {
+  addUtilities(createIconUtilities({ v2: false }))
 })

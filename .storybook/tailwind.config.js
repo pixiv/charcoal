@@ -21,6 +21,7 @@ module.exports = {
       cssVariablesV1: false,
       unstableTokenV2: true,
       iconsV2: true,
+      iconsV1: true,
     }),
   ],
   corePlugins: {
