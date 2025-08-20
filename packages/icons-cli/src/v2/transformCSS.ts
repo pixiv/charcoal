@@ -4,28 +4,17 @@ import { readFile, writeFile, ensureDir } from 'fs-extra'
 import path from 'path'
 import { escape } from 'querystring'
 
-async function main() {
-  mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
-  const outDir = process.env.OUTPUT_ROOT_DIR
-  const inputDir = path.join(__dirname, '../../../icon-files/v2/svg')
-  await ensureDir(outDir)
-  const fileNames = await glob('**/*.svg', { cwd: inputDir })
-
-  let classNames: string[] = []
-  const filesWithContent = await Promise.all(
-    fileNames.map(async (fileName) => {
-      const filePath = path.join(inputDir, fileName)
-      const content = await readFile(filePath, 'utf-8')
-      const [size, variant, name] = fileName.split('/')
-      const cssName = [
-        'charcoal-icon',
-        name.replace('.svg', '').replaceAll('.', '-'),
-        ...(variant === 'regular' ? [] : [variant]),
-        ...(size === '24' ? [] : [size]),
-      ].join('-')
-      classNames.push(cssName)
-      const css = content.includes('<def')
-        ? `
+async function transformV2(filePath: string, fileName: string) {
+  const content = await readFile(filePath, 'utf-8')
+  const [size, variant, name] = fileName.split('/')
+  const cssName = [
+    'charcoal-icon',
+    name.replace('.svg', '').replaceAll('.', '-'),
+    ...(variant === 'regular' ? [] : [variant]),
+    ...(size === '24' ? [] : [size]),
+  ].join('-')
+  const css = content.includes('<def')
+    ? `
 .${cssName} {
   display: inline-block;
   width: 1em;
@@ -36,7 +25,7 @@ async function main() {
   )}');
   aspect-ratio: 1/1;
 }`
-        : `
+    : `
 .${cssName} {
   display: inline-block;
   width: 1em;
@@ -50,12 +39,85 @@ async function main() {
   aspect-ratio: 1/1;
 }
 `
+  return {
+    filePath,
+    css,
+    cssName,
+  }
+}
 
-      return {
-        filePath,
-        css,
-        cssName,
+async function transformV1(filePath: string, fileName: string) {
+  const content = await readFile(filePath, 'utf-8')
+  const [size, name] = fileName.split('/')
+  const cssName = [
+    'charcoal-icon-v1',
+    name.replace('.svg', '').replaceAll('.', '-'),
+    ...(size === '24' ? [] : [size]),
+  ].join('-')
+  const css = content.includes('<def')
+    ? `
+.${cssName} {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url('data:image/svg+xml;utf8,${escape(content).replace(
+    "'",
+    "\\'"
+  )}');
+  aspect-ratio: 1/1;
+}`
+    : `
+.${cssName} {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
+    "'",
+    "\\'"
+  )}');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+`
+  return {
+    filePath,
+    css,
+    cssName,
+  }
+}
+
+async function main() {
+  mustBeDefined(process.env.VERSION, 'VERSION')
+  const version = process.env.VERSION
+
+  mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')
+  const sourceDir = process.env.SOURCE_ROOT_DIR
+  const inputDir = path.join(__dirname, sourceDir)
+
+  mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
+  const outDir = process.env.OUTPUT_ROOT_DIR
+
+  await ensureDir(outDir)
+  const fileNames = await glob('**/*.svg', { cwd: inputDir })
+
+  let classNames: string[] = []
+  const filesWithContent = await Promise.all(
+    fileNames.map(async (fileName) => {
+      const filePath = path.join(inputDir, fileName)
+      if (version == 'v2') {
+        const value = await transformV2(filePath, fileName)
+        classNames.push(value.cssName)
+        return value
       }
+
+      if (version == 'v1') {
+        const value = await transformV1(filePath, fileName)
+        classNames.push(value.cssName)
+        return value
+      }
+
+      throw new Error('VERSION received an unexpected value')
     })
   )
 
@@ -103,7 +165,7 @@ ${classNames
   await writeFile(
     path.join(outDir, 'index.story.tsx'),
     `export default {
-  title: 'Icons/v2/css',
+  title: 'Icons/${version}/css',
   parameters: {
     storyshots: {
       disable: true,
