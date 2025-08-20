@@ -1,8 +1,24 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgNextworks = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path d="M2 3a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zM6.25 3a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1V3zM10.5 3a1 1 0 011-1H13a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1V3zM10.5 7.25a1 1 0 011-1H13a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5zM6.25 7.25a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5zM2 7.25a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1H3a1 1 0 01-1-1v-1.5zM2 11.5a1 1 0 011-1h1.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1v-1.5zM6.25 11.5a1 1 0 011-1h1.5a1 1 0 011 1V13a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5zM10.5 11.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5z" fill="currentColor"/>
-  </svg>);
-export const IconNextworks16 = forwardRef(SvgNextworks);
-export default IconNextworks16;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgNextworks = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      d="M2 3a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zM6.25 3a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1V3zM10.5 3a1 1 0 011-1H13a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1V3zM10.5 7.25a1 1 0 011-1H13a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5zM6.25 7.25a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5zM2 7.25a1 1 0 011-1h1.5a1 1 0 011 1v1.5a1 1 0 01-1 1H3a1 1 0 01-1-1v-1.5zM2 11.5a1 1 0 011-1h1.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1v-1.5zM6.25 11.5a1 1 0 011-1h1.5a1 1 0 011 1V13a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5zM10.5 11.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1h-1.5a1 1 0 01-1-1v-1.5z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconNextworks16 = forwardRef(SvgNextworks)
+export default IconNextworks16

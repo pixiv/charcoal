@@ -5,8 +5,8 @@
   "bin": "./dist/index.js",
   "scripts": {
     "build": "FORCE_COLOR=1 tsup-node",
-    "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 pnpm tsx src/v2/transformReact.ts",
-    "build:react-v1": "pnpm svgr ../icon-files/svg/ --out-dir ../icons/src/react/v1 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v1 pnpm tsx src/v2/transformReact.ts",
+    "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 VERSION=v2 pnpm tsx src/v2/transformReact.ts",
+    "build:react-v1": "pnpm svgr ../icon-files/svg/ --out-dir ../icons/src/react/v1 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v1 VERSION=v1 pnpm tsx src/v2/transformReact.ts",
     "build:css": "OUTPUT_ROOT_DIR=../icons/css/v2 pnpm tsx src/v2/transformCSS.ts",
     "build:uri": "OUTPUT_ROOT_DIR=../icon-files/v2-datauri pnpm tsx src/v2/transformDataUri.ts",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
