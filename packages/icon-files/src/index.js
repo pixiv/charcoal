@@ -64,6 +64,7 @@ export default {
   '24/CommentOutline': () => import('./24/CommentOutline.js').then(m => m.default),
   '24/Contest': () => import('./24/Contest.js').then(m => m.default),
   '24/Contrast': () => import('./24/Contrast.js').then(m => m.default),
+  '24/Copy': () => import('./24/Copy.js').then(m => m.default),
   '24/Description': () => import('./24/Description.js').then(m => m.default),
   '24/DeviceRotation': () => import('./24/DeviceRotation.js').then(m => m.default),
   '24/Discovery': () => import('./24/Discovery.js').then(m => m.default),

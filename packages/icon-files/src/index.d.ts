@@ -64,6 +64,7 @@ declare var _default: {
   '24/CommentOutline': () => Promise<string>;
   '24/Contest': () => Promise<string>;
   '24/Contrast': () => Promise<string>;
+  '24/Copy': () => Promise<string>;
   '24/Description': () => Promise<string>;
   '24/DeviceRotation': () => Promise<string>;
   '24/Discovery': () => Promise<string>;
