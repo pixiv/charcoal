@@ -1,6 +1,6 @@
 /** This file is auto generated. DO NOT EDIT BY HAND. */
   
-declare let _default: {
+declare var _default: {
 '16/regular/arrow.left-down': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.down': { uri: string, isSetCurrentcolor: boolean };
 '16/regular/chevron.left': { uri: string, isSetCurrentcolor: boolean };
