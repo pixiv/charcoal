@@ -41,3 +41,59 @@ export const Disabled: StoryObj<typeof Button> = {
 export const IsActive: StoryObj<typeof Button> = {
   render: () => <Button isActive>Active</Button>,
 }
+
+export const ComponentA: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#">
+      Button
+    </Button>
+  ),
+}
+
+export const ComponentADisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#" aria-disabled>
+      Button
+    </Button>
+  ),
+}
+
+export const ComponentAPrimaryDisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#" variant="Primary" aria-disabled>
+      Button
+    </Button>
+  ),
+}
+
+export const ComponentAOverlayDisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#" variant="Overlay" aria-disabled>
+      Button
+    </Button>
+  ),
+}
+
+export const ComponentADangerDisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#" variant="Danger" aria-disabled>
+      Button
+    </Button>
+  ),
+}
+
+export const ComponentANavigationDisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#" variant="Navigation" aria-disabled>
+      Button
+    </Button>
+  ),
+}
+
+export const ComponentASmallDisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <Button component="a" href="#" size="S" aria-disabled>
+      Button
+    </Button>
+  ),
+}
