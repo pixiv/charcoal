@@ -97,3 +97,72 @@ export const ComponentASmallDisabled: StoryObj<typeof Button> = {
     </Button>
   ),
 }
+export const AriaDisabled: StoryObj<typeof Button> = {
+  render: () => (
+    <>
+      <h2>disabled指定なし</h2>
+      <div style={{ display: 'flex', gap: '8px' }}>
+        <div>
+          <Button>属性なし</Button>
+        </div>
+        <div>
+          <Button aria-disabled>aria-disabled</Button>
+        </div>
+        <div>
+          <Button aria-disabled="true">{`aria-disabled="true"`}</Button>
+        </div>
+        <div>
+          <Button aria-disabled="false">{`aria-disabled="false"`}</Button>
+        </div>
+      </div>
+
+      <h2>{`disabled={false}`}</h2>
+      <div style={{ display: 'flex', gap: '8px' }}>
+        <div>
+          <Button disabled={false}>属性なし</Button>
+        </div>
+        <div>
+          <Button aria-disabled disabled={false}>
+            aria-disabled
+          </Button>
+        </div>
+        <div>
+          <Button
+            aria-disabled="true"
+            disabled={false}
+          >{`aria-disabled="true"`}</Button>
+        </div>
+        <div>
+          <Button
+            aria-disabled="false"
+            disabled={false}
+          >{`aria-disabled="false"`}</Button>
+        </div>
+      </div>
+
+      <h2>{`disabled={true}`}</h2>
+      <div style={{ display: 'flex', gap: '8px' }}>
+        <div>
+          <Button disabled={true}>属性なし</Button>
+        </div>
+        <div>
+          <Button aria-disabled disabled={true}>
+            aria-disabled
+          </Button>
+        </div>
+        <div>
+          <Button
+            aria-disabled="true"
+            disabled={true}
+          >{`aria-disabled="true"`}</Button>
+        </div>
+        <div>
+          <Button
+            aria-disabled="false"
+            disabled={true}
+          >{`aria-disabled="false"`}</Button>
+        </div>
+      </div>
+    </>
+  ),
+}
