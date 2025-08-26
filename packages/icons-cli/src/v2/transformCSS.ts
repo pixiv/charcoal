@@ -9,7 +9,7 @@ async function transformV2(filePath: string, fileName: string) {
   const [size, variant, name] = fileName.split('/')
   const cssName = [
     'charcoal-icon',
-    name.toLocaleLowerCase().replace('.svg', '').replaceAll('.', '-'),
+    name.toLowerCase().replace('.svg', '').replaceAll('.', '-'),
     ...(variant === 'regular' ? [] : [variant]),
     ...(size === '24' ? [] : [size]),
   ].join('-')
@@ -51,7 +51,7 @@ async function transformV1(filePath: string, fileName: string) {
   const [size, name] = fileName.split('/')
   const cssName = [
     'charcoal-icon-v1',
-    name.toLocaleLowerCase().replace('.svg', '').replaceAll('.', '-'),
+    name.toLowerCase().replace('.svg', '').replaceAll('.', '-'),
     ...(size === '24' ? [] : [size]),
   ].join('-')
   const css = content.includes('<def')

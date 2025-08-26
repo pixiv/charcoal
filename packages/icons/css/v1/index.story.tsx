@@ -669,6 +669,17 @@ export default {
 }
 
 
+.charcoal-icon-v1-copy {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M3%207a1%201%200%20011%201v10a2%202%200%20002%202h11a1%201%200%20110%202H6a4%204%200%2001-4-4V8a1%201%200%20011-1z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M19%202a3%203%200%20013%203v10a3%203%200%2001-3%203H9a3%203%200%2001-3-3V5a3%203%200%20013-3h10zM9%204a1%201%200%2000-1%201v10a1%201%200%20001%201h10a1%201%200%20001-1V5a1%201%200%2000-1-1H9z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-delete-32 {
   display: inline-block;
   width: 1em;
@@ -3572,6 +3583,14 @@ export default {
               title=".charcoal-icon-v1-contrast"
             ></i>
             <code>.charcoal-icon-v1-contrast</code>
+          </div>
+
+          <div>
+            <i
+              className="charcoal-icon-v1-copy"
+              title=".charcoal-icon-v1-copy"
+            ></i>
+            <code>.charcoal-icon-v1-copy</code>
           </div>
 
           <div>

@@ -61,6 +61,7 @@ import { IconCommentFill24 } from './24/CommentFill'
 import { IconCommentOutline24 } from './24/CommentOutline'
 import { IconContest24 } from './24/Contest'
 import { IconContrast24 } from './24/Contrast'
+import { IconCopy24 } from './24/Copy'
 import { IconDescription24 } from './24/Description'
 import { IconDeviceRotation24 } from './24/DeviceRotation'
 import { IconDiscovery24 } from './24/Discovery'
@@ -588,6 +589,11 @@ export default {
           <div>
             <IconContrast24 />
             <code>&lt;IconContrast24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconCopy24 />
+            <code>&lt;IconCopy24 /&gt;</code>
           </div>
 
           <div>
