@@ -1,5 +1,248 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Tests > react/Button > AriaDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <h2>
+      disabled指定なし
+    </h2>
+    <div
+      style="display: flex; gap: 8px;"
+    >
+      <div>
+        <button
+          class="charcoal-button"
+        >
+          属性なし
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="true"
+          class="charcoal-button"
+        >
+          aria-disabled
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="true"
+          class="charcoal-button"
+        >
+          aria-disabled="true"
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="false"
+          class="charcoal-button"
+        >
+          aria-disabled="false"
+        </button>
+      </div>
+    </div>
+    <h2>
+      disabled={false}
+    </h2>
+    <div
+      style="display: flex; gap: 8px;"
+    >
+      <div>
+        <button
+          class="charcoal-button"
+        >
+          属性なし
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="true"
+          class="charcoal-button"
+        >
+          aria-disabled
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="true"
+          class="charcoal-button"
+        >
+          aria-disabled="true"
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="false"
+          class="charcoal-button"
+        >
+          aria-disabled="false"
+        </button>
+      </div>
+    </div>
+    <h2>
+      disabled={true}
+    </h2>
+    <div
+      style="display: flex; gap: 8px;"
+    >
+      <div>
+        <button
+          class="charcoal-button"
+          disabled=""
+        >
+          属性なし
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="true"
+          class="charcoal-button"
+          disabled=""
+        >
+          aria-disabled
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="true"
+          class="charcoal-button"
+          disabled=""
+        >
+          aria-disabled="true"
+        </button>
+      </div>
+      <div>
+        <button
+          aria-disabled="false"
+          class="charcoal-button"
+          disabled=""
+        >
+          aria-disabled="false"
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentA 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      class="charcoal-button"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentADangerDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      aria-disabled="true"
+      class="charcoal-button"
+      data-variant="Danger"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentADisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      aria-disabled="true"
+      class="charcoal-button"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentANavigationDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      aria-disabled="true"
+      class="charcoal-button"
+      data-variant="Navigation"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentAOverlayDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      aria-disabled="true"
+      class="charcoal-button"
+      data-variant="Overlay"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentAPrimaryDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      aria-disabled="true"
+      class="charcoal-button"
+      data-variant="Primary"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Button > ComponentASmallDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <a
+      aria-disabled="true"
+      class="charcoal-button"
+      data-size="S"
+      href="#"
+    >
+      Button
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Button > Danger 1`] = `
 <div>
   <div
