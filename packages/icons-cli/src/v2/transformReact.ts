@@ -31,10 +31,12 @@ async function main() {
   )
   const icons = Object.entries(catalog)
 
-  const iconsPair = icons.map(([iconName, iconPath]) => [
-    iconName,
-    './' + iconPath.replace('.tsx', ''),
-  ])
+  const iconsPair = icons
+    .map(([iconName, iconPath]) => [
+      iconName,
+      './' + iconPath.replace('.tsx', ''),
+    ])
+    .sort((a, b) => a[1].localeCompare(b[1]))
 
   await writeFile(
     path.join(workDir, 'index.tsx'),

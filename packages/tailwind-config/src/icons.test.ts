@@ -1,8 +1,4 @@
-import {
-  charcoalIconsV1,
-  charcoalIconsV2,
-  createIconUtilities,
-} from './icons'
+import { charcoalIconsV1, charcoalIconsV2, createIconUtilities } from './icons'
 import { TailwindBuild } from './_lib/TailwindBuild'
 
 describe('createIconUtilities for icons v2', () => {
