@@ -36,7 +36,7 @@ async function main() {
       iconName,
       './' + iconPath.replace('.tsx', ''),
     ])
-    .sort((a, b) => a[1].localeCompare(b[1]))
+    .sort((a, b) => (a[1] > b[1] ? 1 : a[1] < b[1] ? -1 : 0))
 
   await writeFile(
     path.join(workDir, 'index.tsx'),
