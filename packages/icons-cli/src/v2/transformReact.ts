@@ -7,7 +7,9 @@ import path from 'path'
 
 async function main() {
   mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
+  mustBeDefined(process.env.VERSION, 'VERSION')
   const workDir = process.env.OUTPUT_ROOT_DIR
+  const version = process.env.VERSION
 
   const fileNames = await glob('*/**/*.tsx', { cwd: workDir })
   const filesWithContent = await Promise.all(
@@ -29,10 +31,12 @@ async function main() {
   )
   const icons = Object.entries(catalog)
 
-  const iconsPair = icons.map(([iconName, iconPath]) => [
-    iconName,
-    './' + iconPath.replace('.tsx', ''),
-  ])
+  const iconsPair = icons
+    .map(([iconName, iconPath]) => [
+      iconName,
+      './' + iconPath.replace('.tsx', ''),
+    ])
+    .sort((a, b) => (a[1] > b[1] ? 1 : a[1] < b[1] ? -1 : 0))
 
   await writeFile(
     path.join(workDir, 'index.tsx'),
@@ -49,7 +53,7 @@ async function main() {
 import { createGlobalStyle } from 'styled-components'
 
 export default {
-  title: 'Icons/v2/react',
+  title: 'Icons/${version}/react',
   parameters: {
     storyshots: {
       disable: true,
