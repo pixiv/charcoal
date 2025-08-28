@@ -26,15 +26,12 @@ void yargs
     async (args) => {
       mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
       mustBeDefined(FIGMA_FILE_ID, 'FIGMA_FILE_ID')
+      const outputPath = path.join(process.cwd(), args.output)
 
       const res = await getDesignToken(FIGMA_TOKEN, FIGMA_FILE_ID)
 
-      await ensureFile(path.join(__dirname, '..', args.output))
-      await writeFile(
-        path.join(__dirname, '..', args.output),
-        JSON.stringify(res.data),
-        'utf8'
-      )
+      await ensureFile(outputPath)
+      await writeFile(path.join(outputPath), JSON.stringify(res.data), 'utf8')
     }
   )
   .command(
@@ -60,13 +57,14 @@ void yargs
       },
     },
     async (args) => {
-      if (!existsSync(path.join(__dirname, '..', args.source))) {
-        throw new Error(
-          `${path.join(__dirname, '..', args.source)} not exists.`
-        )
+      const sourcePath = path.join(process.cwd(), args.source)
+      const outputPath = path.join(process.cwd(), args.output)
+
+      if (!existsSync(sourcePath)) {
+        throw new Error(`${sourcePath} not exists.`)
       }
 
-      const buffer = readFileSync(path.join(__dirname, '..', args.source))
+      const buffer = readFileSync(sourcePath)
       const raw = JSON.parse(buffer.toString()) as FigmaResponse
 
       const tokens = createToken(
@@ -75,12 +73,8 @@ void yargs
         args['mode-name']
       )
 
-      await ensureFile(path.join(__dirname, '..', args.output))
-      await writeFile(
-        path.join(__dirname, '..', args.output),
-        JSON.stringify(tokens),
-        'utf8'
-      )
+      await ensureFile(outputPath)
+      await writeFile(outputPath, JSON.stringify(tokens), 'utf8')
     }
   )
   .demandCommand()
