@@ -12,6 +12,7 @@ declare var _default: {
   '16/Check': () => Promise<string>;
   '16/Comment': () => Promise<string>;
   '16/Dot': () => Promise<string>;
+  '16/Down': () => Promise<string>;
   '16/Error': () => Promise<string>;
   '16/Filter': () => Promise<string>;
   '16/ImageResponse': () => Promise<string>;
@@ -27,6 +28,7 @@ declare var _default: {
   '16/Search': () => Promise<string>;
   '16/Smile': () => Promise<string>;
   '16/Speaker': () => Promise<string>;
+  '16/Up': () => Promise<string>;
   '16/View': () => Promise<string>;
   '16/Warning': () => Promise<string>;
   '24/Add': () => Promise<string>;
