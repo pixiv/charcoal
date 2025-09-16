@@ -28,7 +28,8 @@ jobs:
         run: |
           pnpm --filter @charcoal-ui/token-cli run build
           pnpm --filter @charcoal-ui/pullrequest-cli run build
-          ls -al packages/token-cli/dist
+          # sync built .bin
+          pnpm install --frozen-lockfile
 
       - name: Fetch primitive variables
         env:
