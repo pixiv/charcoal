@@ -81,7 +81,10 @@ jobs:
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
           TARGET_DIR: packages/theme
-        run: pnpm exec pullrequest-cli github:pr -c theme -t 'Update theme'
+        run: | 
+          ls node_modules/.bin
+          ls packages/pullrequest-cli/dist
+          pnpm exec pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
