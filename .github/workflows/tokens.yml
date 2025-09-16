@@ -28,7 +28,8 @@ jobs:
         run: |
           pnpm --filter @charcoal-ui/token-cli run build
           pnpm --filter @charcoal-ui/pullrequest-cli run build
-          ls -al packages/token-cli/dist
+          # sync built .bin
+          pnpm install --frozen-lockfile
 
       - name: Fetch primitive variables
         env:
@@ -84,7 +85,7 @@ jobs:
         run: | 
           ls node_modules/.bin
           ls packages/pullrequest-cli/dist
-          pnpm exec pullrequest-cli github:pr -c theme -t 'Update theme'
+          pnpm pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
