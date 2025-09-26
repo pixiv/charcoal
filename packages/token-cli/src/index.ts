@@ -78,7 +78,7 @@ void yargs
       await ensureFile(path.join(__dirname, '..', args.output))
       await writeFile(
         path.join(__dirname, '..', args.output),
-        JSON.stringify(tokens),
+        JSON.stringify(tokens, sortReplacer, 2),
         'utf8'
       )
     }
@@ -87,3 +87,24 @@ void yargs
   .strict()
   .help()
   .parse()
+
+// The MIT License (MIT)
+// Copyright (c) 2023-present Fabio Spampinato
+// https://github.com/fabiospampinato/json-sorted-stringify/blob/b4b87427d471ec4e5972489638dbba100d47ef18/src/index.ts
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const sortReplacer = (_: string, value: any): any => {
+  if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+    const keys = Object.keys(value).sort().reverse()
+    const clone: Record<string, unknown> = {}
+
+    for (let i = 0, l = keys.length; i < l; i++) {
+      const key = keys[i]
+
+      clone[key] = value[key]
+    }
+
+    return clone
+  }
+
+  return value
+}
