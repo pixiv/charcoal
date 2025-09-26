@@ -19,6 +19,7 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
     },
     "border": {
       "default": "var(--charcoal-color-border-default)",
+      "default-text3": "var(--charcoal-color-border-default-text3)",
       "disable": "var(--charcoal-color-border-disable)",
       "focus": {
         "1": "var(--charcoal-color-border-focus-1)",
@@ -26,9 +27,11 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
         "legacy": "var(--charcoal-color-border-focus-legacy)",
       },
       "hover": "var(--charcoal-color-border-hover)",
+      "hover-text3": "var(--charcoal-color-border-hover-text3)",
       "hud": "var(--charcoal-color-border-hud)",
       "negative": "var(--charcoal-color-border-negative)",
       "press": "var(--charcoal-color-border-press)",
+      "press-text3": "var(--charcoal-color-border-press-text3)",
       "secondary": "var(--charcoal-color-border-secondary)",
       "selected": "var(--charcoal-color-border-selected)",
     },
@@ -96,7 +99,7 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
         "hover": "var(--charcoal-color-container-tertiary-hover)",
         "hover-a": "var(--charcoal-color-container-tertiary-hover-a)",
         "press": "var(--charcoal-color-container-tertiary-press)",
-        "pressA": "var(--charcoal-color-container-tertiary-press-a)",
+        "press-a": "var(--charcoal-color-container-tertiary-press-a)",
       },
     },
     "icon": {
@@ -162,8 +165,10 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
     },
     "text": {
       "default": "var(--charcoal-color-text-default)",
+      "default-text1": "var(--charcoal-color-text-default-text1)",
       "disable": "var(--charcoal-color-text-disable)",
       "hover": "var(--charcoal-color-text-hover)",
+      "hover-text1": "var(--charcoal-color-text-hover-text1)",
       "info": {
         "default": "var(--charcoal-color-text-info-default)",
         "hover": "var(--charcoal-color-text-info-hover)",
@@ -225,6 +230,7 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
         "press": "var(--charcoal-color-text-positive-press)",
       },
       "press": "var(--charcoal-color-text-press)",
+      "press-text1": "var(--charcoal-color-text-press-text1)",
       "secondary": {
         "default": "var(--charcoal-color-text-secondary-default)",
         "hover": "var(--charcoal-color-text-secondary-hover)",
@@ -264,10 +270,6 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
     "xxl": "var(--charcoal-radius-xxl)",
   },
   "space": {
-    "between-checkboxes": {
-      "horizontal": "var(--charcoal-space-between-checkboxes-horizontal)",
-      "vertical": "var(--charcoal-space-between-checkboxes-vertical)",
-    },
     "component": {
       "0": "var(--charcoal-space-component-0)",
       "10": "var(--charcoal-space-component-10)",
@@ -276,10 +278,6 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
       "30": "var(--charcoal-space-component-30)",
       "40": "var(--charcoal-space-component-40)",
       "50": "var(--charcoal-space-component-50)",
-    },
-    "gap": {
-      "gap-buttons": "var(--charcoal-space-gap-gap-buttons)",
-      "gap-form-items": "var(--charcoal-space-gap-gap-form-items)",
     },
     "layout": {
       "0": "var(--charcoal-space-layout-0)",
@@ -371,6 +369,7 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
     },
     "border": {
       "default": "var(--charcoal-color-border-default)",
+      "default-text3": "var(--charcoal-color-border-default-text3)",
       "disable": "var(--charcoal-color-border-disable)",
       "focus": {
         "1": "var(--charcoal-color-border-focus-1)",
@@ -378,9 +377,11 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
         "legacy": "var(--charcoal-color-border-focus-legacy)",
       },
       "hover": "var(--charcoal-color-border-hover)",
+      "hover-text3": "var(--charcoal-color-border-hover-text3)",
       "hud": "var(--charcoal-color-border-hud)",
       "negative": "var(--charcoal-color-border-negative)",
       "press": "var(--charcoal-color-border-press)",
+      "press-text3": "var(--charcoal-color-border-press-text3)",
       "secondary": "var(--charcoal-color-border-secondary)",
       "selected": "var(--charcoal-color-border-selected)",
     },
@@ -448,7 +449,7 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
         "hover": "var(--charcoal-color-container-tertiary-hover)",
         "hover-a": "var(--charcoal-color-container-tertiary-hover-a)",
         "press": "var(--charcoal-color-container-tertiary-press)",
-        "pressA": "var(--charcoal-color-container-tertiary-press-a)",
+        "press-a": "var(--charcoal-color-container-tertiary-press-a)",
       },
     },
     "icon": {
@@ -514,8 +515,10 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
     },
     "text": {
       "default": "var(--charcoal-color-text-default)",
+      "default-text1": "var(--charcoal-color-text-default-text1)",
       "disable": "var(--charcoal-color-text-disable)",
       "hover": "var(--charcoal-color-text-hover)",
+      "hover-text1": "var(--charcoal-color-text-hover-text1)",
       "info": {
         "default": "var(--charcoal-color-text-info-default)",
         "hover": "var(--charcoal-color-text-info-hover)",
@@ -577,6 +580,7 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
         "press": "var(--charcoal-color-text-positive-press)",
       },
       "press": "var(--charcoal-color-text-press)",
+      "press-text1": "var(--charcoal-color-text-press-text1)",
       "secondary": {
         "default": "var(--charcoal-color-text-secondary-default)",
         "hover": "var(--charcoal-color-text-secondary-hover)",
@@ -616,10 +620,6 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
     "xxl": "var(--charcoal-radius-xxl)",
   },
   "space": {
-    "between-checkboxes": {
-      "horizontal": "var(--charcoal-space-between-checkboxes-horizontal)",
-      "vertical": "var(--charcoal-space-between-checkboxes-vertical)",
-    },
     "component": {
       "0": "var(--charcoal-space-component-0)",
       "10": "var(--charcoal-space-component-10)",
@@ -628,10 +628,6 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
       "30": "var(--charcoal-space-component-30)",
       "40": "var(--charcoal-space-component-40)",
       "50": "var(--charcoal-space-component-50)",
-    },
-    "gap": {
-      "gap-buttons": "var(--charcoal-space-gap-gap-buttons)",
-      "gap-form-items": "var(--charcoal-space-gap-gap-form-items)",
     },
     "layout": {
       "0": "var(--charcoal-space-layout-0)",
@@ -723,6 +719,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
     },
     "border": {
       "default": "rgba(255, 255, 255, 0.36)",
+      "default-text3": "rgba(255, 255, 255, 0.36)",
       "disable": "rgba(255, 255, 255, 0.045)",
       "focus": {
         "1": "rgba(114, 181, 245, 1)",
@@ -730,9 +727,11 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "legacy": "rgba(0, 150, 250, 0.32)",
       },
       "hover": "rgba(255, 255, 255, 0.44)",
+      "hover-text3": "rgba(255, 255, 255, 0.44)",
       "hud": "rgba(31, 31, 31, 1)",
       "negative": "rgba(136, 54, 46, 1)",
       "press": "rgba(255, 255, 255, 0.535)",
+      "press-text3": "rgba(255, 255, 255, 0.535)",
       "secondary": "rgba(255, 255, 255, 0.09)",
       "selected": "rgba(8, 114, 190, 1)",
     },
@@ -800,7 +799,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "hover": "rgba(81, 81, 81, 1)",
         "hover-a": "rgba(255, 255, 255, 0.225)",
         "press": "rgba(112, 112, 112, 1)",
-        "pressA": "rgba(255, 255, 255, 0.36)",
+        "press-a": "rgba(255, 255, 255, 0.36)",
       },
     },
     "icon": {
@@ -866,8 +865,10 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
     },
     "text": {
       "default": "rgba(228, 228, 228, 1)",
+      "default-text1": "rgba(228, 228, 228, 1)",
       "disable": "rgba(130, 130, 130, 1)",
       "hover": "rgba(202, 202, 202, 1)",
+      "hover-text1": "rgba(228, 228, 228, 1)",
       "info": {
         "default": "rgba(114, 181, 245, 1)",
         "hover": "rgba(166, 205, 245, 1)",
@@ -929,6 +930,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
         "press": "rgba(191, 241, 186, 1)",
       },
       "press": "rgba(188, 188, 188, 1)",
+      "press-text1": "rgba(228, 228, 228, 1)",
       "secondary": {
         "default": "rgba(175, 175, 175, 1)",
         "hover": "rgba(188, 188, 188, 1)",
@@ -968,10 +970,6 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
     "xxl": "24px",
   },
   "space": {
-    "between-checkboxes": {
-      "horizontal": "12px",
-      "vertical": "0px",
-    },
     "component": {
       "0": "0px",
       "10": "4px",
@@ -980,10 +978,6 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       "30": "16px",
       "40": "24px",
       "50": "40px",
-    },
-    "gap": {
-      "gap-buttons": "8px",
-      "gap-form-items": "24px",
     },
     "layout": {
       "0": "0px",
@@ -1075,6 +1069,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
     },
     "border": {
       "default": "rgba(0, 0, 0, 0.42)",
+      "default-text3": "rgba(0, 0, 0, 0.42)",
       "disable": "rgba(0, 0, 0, 0.09)",
       "focus": {
         "1": "rgba(31, 117, 188, 1)",
@@ -1082,9 +1077,11 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "legacy": "rgba(0, 150, 250, 0.32)",
       },
       "hover": "rgba(0, 0, 0, 0.555)",
+      "hover-text3": "rgba(0, 0, 0, 0.555)",
       "hud": "rgba(255, 255, 255, 1)",
       "negative": "rgba(253, 206, 199, 1)",
       "press": "rgba(0, 0, 0, 0.683)",
+      "press-text3": "rgba(0, 0, 0, 0.683)",
       "secondary": "rgba(0, 0, 0, 0.09)",
       "selected": "rgba(0, 150, 250, 1)",
     },
@@ -1152,7 +1149,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "hover": "rgba(217, 217, 217, 1)",
         "hover-a": "rgba(0, 0, 0, 0.15)",
         "press": "rgba(194, 194, 194, 1)",
-        "pressA": "rgba(0, 0, 0, 0.24)",
+        "press-a": "rgba(0, 0, 0, 0.24)",
       },
     },
     "icon": {
@@ -1218,8 +1215,10 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
     },
     "text": {
       "default": "rgba(31, 31, 31, 1)",
+      "default-text1": "rgba(31, 31, 31, 1)",
       "disable": "rgba(194, 194, 194, 1)",
       "hover": "rgba(56, 56, 56, 1)",
+      "hover-text1": "rgba(31, 31, 31, 1)",
       "info": {
         "default": "rgba(31, 117, 188, 1)",
         "hover": "rgba(24, 81, 130, 1)",
@@ -1281,6 +1280,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
         "press": "rgba(7, 64, 4, 1)",
       },
       "press": "rgba(81, 81, 81, 1)",
+      "press-text1": "rgba(31, 31, 31, 1)",
       "secondary": {
         "default": "rgba(81, 81, 81, 1)",
         "hover": "rgba(56, 56, 56, 1)",
@@ -1320,10 +1320,6 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
     "xxl": "24px",
   },
   "space": {
-    "between-checkboxes": {
-      "horizontal": "12px",
-      "vertical": "0px",
-    },
     "component": {
       "0": "0px",
       "10": "4px",
@@ -1332,10 +1328,6 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       "30": "16px",
       "40": "24px",
       "50": "40px",
-    },
-    "gap": {
-      "gap-buttons": "8px",
-      "gap-form-items": "24px",
     },
     "layout": {
       "0": "0px",
