@@ -29,6 +29,9 @@
     "border/default": {
       "value": "{color.dark/neutral-a/30}"
     },
+    "border/default-text3": {
+      "value": "{color.dark/neutral-a/30}"
+    },
     "border/disable": {
       "value": "{color.dark/neutral-a/5}"
     },
@@ -44,6 +47,9 @@
     "border/hover": {
       "value": "{color.dark/neutral-a/40}"
     },
+    "border/hover-text3": {
+      "value": "{color.dark/neutral-a/40}"
+    },
     "border/hud": {
       "value": "{color.background/default}"
     },
@@ -51,6 +57,9 @@
       "value": "{color.dark/red/20}"
     },
     "border/press": {
+      "value": "{color.dark/neutral-a/50}"
+    },
+    "border/press-text3": {
       "value": "{color.dark/neutral-a/50}"
     },
     "border/secondary": {
@@ -191,7 +200,7 @@
     "container/tertiary/press": {
       "value": "{color.dark/neutral/30}"
     },
-    "container/tertiary/pressA": {
+    "container/tertiary/press-a": {
       "value": "{color.dark/neutral-a/30}"
     },
     "icon/default": {
@@ -308,11 +317,17 @@
     "text/default": {
       "value": "{color.dark/neutral/90}"
     },
+    "text/default-text1": {
+      "value": "{color.dark/neutral/90}"
+    },
     "text/disable": {
       "value": "{color.dark/neutral/40}"
     },
     "text/hover": {
       "value": "{color.dark/neutral/80}"
+    },
+    "text/hover-text1": {
+      "value": "{color.dark/neutral/90}"
     },
     "text/info/default": {
       "value": "{color.dark/blue/60}"
@@ -425,6 +440,9 @@
     "text/press": {
       "value": "{color.dark/neutral/70}"
     },
+    "text/press-text1": {
+      "value": "{color.dark/neutral/90}"
+    },
     "text/secondary/default": {
       "value": "{color.dark/neutral/60}"
     },
@@ -509,12 +527,6 @@
     }
   },
   "space": {
-    "between-checkboxes/horizontal": {
-      "value": "{space.layout/25}"
-    },
-    "between-checkboxes/vertical": {
-      "value": "{space.layout/0}"
-    },
     "component/0": {
       "value": "{space.0}"
     },
@@ -535,12 +547,6 @@
     },
     "component/50": {
       "value": "{space.50}"
-    },
-    "gap/gap-buttons": {
-      "value": "{space.layout/20}"
-    },
-    "gap/gap-form-items": {
-      "value": "{space.layout/40}"
     },
     "layout/0": {
       "value": "{space.0}"

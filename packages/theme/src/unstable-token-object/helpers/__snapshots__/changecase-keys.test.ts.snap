@@ -19,6 +19,7 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
     },
     "border": {
       "default": "rgba(255, 255, 255, 0.36)",
+      "defaultText3": "rgba(255, 255, 255, 0.36)",
       "disable": "rgba(255, 255, 255, 0.045)",
       "focus": {
         "1": "rgba(114, 181, 245, 1)",
@@ -26,9 +27,11 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
         "legacy": "rgba(0, 150, 250, 0.32)",
       },
       "hover": "rgba(255, 255, 255, 0.44)",
+      "hoverText3": "rgba(255, 255, 255, 0.44)",
       "hud": "rgba(31, 31, 31, 1)",
       "negative": "rgba(136, 54, 46, 1)",
       "press": "rgba(255, 255, 255, 0.535)",
+      "pressText3": "rgba(255, 255, 255, 0.535)",
       "secondary": "rgba(255, 255, 255, 0.09)",
       "selected": "rgba(8, 114, 190, 1)",
     },
@@ -162,8 +165,10 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
     },
     "text": {
       "default": "rgba(228, 228, 228, 1)",
+      "defaultText1": "rgba(228, 228, 228, 1)",
       "disable": "rgba(130, 130, 130, 1)",
       "hover": "rgba(202, 202, 202, 1)",
+      "hoverText1": "rgba(228, 228, 228, 1)",
       "info": {
         "default": "rgba(114, 181, 245, 1)",
         "hover": "rgba(166, 205, 245, 1)",
@@ -225,6 +230,7 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
         "press": "rgba(191, 241, 186, 1)",
       },
       "press": "rgba(188, 188, 188, 1)",
+      "pressText1": "rgba(228, 228, 228, 1)",
       "secondary": {
         "default": "rgba(175, 175, 175, 1)",
         "hover": "rgba(188, 188, 188, 1)",
@@ -264,10 +270,6 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
     "xxl": "24px",
   },
   "space": {
-    "betweenCheckboxes": {
-      "horizontal": "12px",
-      "vertical": "0px",
-    },
     "component": {
       "0": "0px",
       "10": "4px",
@@ -276,10 +278,6 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
       "30": "16px",
       "40": "24px",
       "50": "40px",
-    },
-    "gap": {
-      "gapButtons": "8px",
-      "gapFormItems": "24px",
     },
     "layout": {
       "0": "0px",
@@ -371,6 +369,7 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
     },
     "border": {
       "default": "rgba(0, 0, 0, 0.42)",
+      "defaultText3": "rgba(0, 0, 0, 0.42)",
       "disable": "rgba(0, 0, 0, 0.09)",
       "focus": {
         "1": "rgba(31, 117, 188, 1)",
@@ -378,9 +377,11 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
         "legacy": "rgba(0, 150, 250, 0.32)",
       },
       "hover": "rgba(0, 0, 0, 0.555)",
+      "hoverText3": "rgba(0, 0, 0, 0.555)",
       "hud": "rgba(255, 255, 255, 1)",
       "negative": "rgba(253, 206, 199, 1)",
       "press": "rgba(0, 0, 0, 0.683)",
+      "pressText3": "rgba(0, 0, 0, 0.683)",
       "secondary": "rgba(0, 0, 0, 0.09)",
       "selected": "rgba(0, 150, 250, 1)",
     },
@@ -514,8 +515,10 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
     },
     "text": {
       "default": "rgba(31, 31, 31, 1)",
+      "defaultText1": "rgba(31, 31, 31, 1)",
       "disable": "rgba(194, 194, 194, 1)",
       "hover": "rgba(56, 56, 56, 1)",
+      "hoverText1": "rgba(31, 31, 31, 1)",
       "info": {
         "default": "rgba(31, 117, 188, 1)",
         "hover": "rgba(24, 81, 130, 1)",
@@ -577,6 +580,7 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
         "press": "rgba(7, 64, 4, 1)",
       },
       "press": "rgba(81, 81, 81, 1)",
+      "pressText1": "rgba(31, 31, 31, 1)",
       "secondary": {
         "default": "rgba(81, 81, 81, 1)",
         "hover": "rgba(56, 56, 56, 1)",
@@ -616,10 +620,6 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
     "xxl": "24px",
   },
   "space": {
-    "betweenCheckboxes": {
-      "horizontal": "12px",
-      "vertical": "0px",
-    },
     "component": {
       "0": "0px",
       "10": "4px",
@@ -628,10 +628,6 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
       "30": "16px",
       "40": "24px",
       "50": "40px",
-    },
-    "gap": {
-      "gapButtons": "8px",
-      "gapFormItems": "24px",
     },
     "layout": {
       "0": "0px",
