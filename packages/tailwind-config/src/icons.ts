@@ -10,7 +10,9 @@ const transformClassNameV2 = (fileName: string) => {
     name.replaceAll('.', '-'),
     ...(variant === 'regular' ? [] : [variant]),
     ...(size === '24' ? [] : [size]),
-  ].join('-')
+  ]
+    .join('-')
+    .toLowerCase()
 }
 
 const transformClassNameV1 = (fileName: string) => {
@@ -19,7 +21,9 @@ const transformClassNameV1 = (fileName: string) => {
     '.icon-v1',
     name.replaceAll('.', '-'),
     ...(size === '24' ? [] : [size]),
-  ].join('-')
+  ]
+    .join('-')
+    .toLowerCase()
 }
 
 export const createIconUtilities = ({ v2 = false }: { v2?: boolean }) => {
