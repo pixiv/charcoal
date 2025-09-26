@@ -6,9 +6,6 @@ on:
 jobs:
   token:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/token-cli
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,53 +15,57 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: '10.4.0'
+
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.node-version'
           cache: pnpm
 
       - name: Prepare deps
-        working-directory: ./
+        run: pnpm install --frozen-lockfile
+
+      - name: Build token-cli
         run: |
-          pnpm install --frozen-lockfile
           pnpm --filter @charcoal-ui/token-cli run build
           pnpm --filter @charcoal-ui/pullrequest-cli run build
+          # sync built .bin
+          pnpm install --frozen-lockfile
 
       - name: Fetch primitive variables
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_PAT_FOR_VARIABLES}}
           FIGMA_FILE_ID: ${{ secrets.FIGMA_NODE_ID_PRIMITIVES }}
-        run: pnpm token-cli fetch -o out/raw_primitives.json
+        run: pnpm --filter @charcoal-ui/token-cli cli:tokens fetch -o ./out/raw_primitives.json
 
       - name: Fetch Applied variables
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_PAT_FOR_VARIABLES }}
           FIGMA_FILE_ID: ${{ secrets.FIGMA_NODE_ID_APPLIEDS }}
-        run: pnpm token-cli fetch -o out/raw_applieds.json
+        run: pnpm --filter @charcoal-ui/token-cli cli:tokens fetch -o ./out/raw_applieds.json
 
       - name: Transform primitive token
-        run: pnpm token-cli transform --source ./out/raw_primitives.json --output ./tokens/base.json
+        run: pnpm --filter @charcoal-ui/token-cli cli:tokens transform --source ./out/raw_primitives.json --output ./tokens/base.json
 
       - name: Transform applied token
         run: |
-          pnpm token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-light.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/light"
-          pnpm token-cli transform --source ./out/raw_applieds.json --output ./tokens/pixiv-dark.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/dark"
+          pnpm --filter @charcoal-ui/token-cli cli:tokens transform --source ./out/raw_applieds.json --output ./tokens/pixiv-light.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/light"
+          pnpm --filter @charcoal-ui/token-cli cli:tokens transform --source ./out/raw_applieds.json --output ./tokens/pixiv-dark.json --variable-collection-names color space radius text border-width paragraph-width --mode-name "pixiv/dark"
 
       - name: Generate CSS variables
         run: |
-          pnpm style-dictionary build -c pixiv-light.config.js
-          pnpm style-dictionary build -c pixiv-dark.config.js
+          pnpm --filter @charcoal-ui/token-cli exec style-dictionary build -c pixiv-light.config.js
+          pnpm --filter @charcoal-ui/token-cli exec style-dictionary build -c pixiv-dark.config.js
 
       - name: Copy to theme package
+        working-directory: packages/token-cli
         run: |
           rm -rf ../theme/src/json/*.json
-          rm -rf ../theme/src/css/*.css
+          rm -rf ../theme/src/unstable-css/*.css
           cp -r ./tokens/*.json ../theme/src/json/
-          cp -r ./build/css/*.css ../theme/src/css/
+          cp -r ./build/css/*.css ../theme/src/unstable-css/
           find ../theme/src
 
       - name: Run prettier
-        working-directory: ./
         run: pnpm fmt:prettier
 
       - name: Generate github token
@@ -75,14 +76,13 @@ jobs:
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
 
       - name: Create Pull Request
-        working-directory: ./
         env:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
           TARGET_DIR: packages/theme
-        run: pnpm pullrequest-cli github:pr -c theme -t 'Update theme'
+        run: pnpm exec pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
