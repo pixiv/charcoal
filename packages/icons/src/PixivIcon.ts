@@ -1,5 +1,4 @@
 import type React from 'react'
-import warning from 'warning'
 import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
@@ -45,7 +44,6 @@ export class PixivIcon extends HTMLElement {
       ? Record<ExtendedIconFile, string | (() => Promise<string>)>
       : Record<string, string | (() => Promise<string>)>
   ) {
-    warning(!__SERVER__, 'Using `PixivIcon.extend()` on server has no effect')
     if (__SERVER__) {
       return
     }
