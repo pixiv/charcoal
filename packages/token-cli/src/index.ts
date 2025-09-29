@@ -32,7 +32,7 @@ void yargs
       await ensureFile(path.join(__dirname, '..', args.output))
       await writeFile(
         path.join(__dirname, '..', args.output),
-        JSON.stringify(res.data),
+        JSON.stringify(await res.json()),
         'utf8'
       )
     }
