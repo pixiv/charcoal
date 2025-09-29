@@ -26,7 +26,6 @@
     "vitest": "^2.0.2"
   },
   "dependencies": {
-    "axios": "^1.6.7",
     "fs-extra": "^11.2.0",
     "yargs": "^17.7.2"
   }

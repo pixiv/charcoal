@@ -1,12 +1,9 @@
-import axios from 'axios'
-
-const api = (pat: string) =>
-  axios.create({
+const api = (pat: string, path: string) =>
+  fetch(new URL(path, 'https://api.figma.com'), {
     headers: {
       'Content-Type': 'application/json',
       'X-Figma-Token': pat,
     },
-    baseURL: 'https://api.figma.com',
   })
 
 // https://www.figma.com/developers/api#variables-types
@@ -92,7 +89,7 @@ const colorToRgba = ({ r, g, b, a }: Color) =>
   )}, ${Math.round(a * 1000) / 1000})`
 
 export const getDesignToken = (pat: string, nodeId: string) =>
-  api(pat).get(`/v1/files/${nodeId}/variables/local`)
+  api(pat, `/v1/files/${nodeId}/variables/local`)
 
 export const resolveValue = (
   variableCollectionMap: Map<string, VariableCollection>,
