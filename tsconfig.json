@@ -27,5 +27,5 @@
     "vite.config.ts",
     "vitest.setup.ts"
   ],
-  "exclude": ["docs", ".storybook"]
+  "exclude": [".storybook"]
 }
