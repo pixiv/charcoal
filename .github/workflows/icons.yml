@@ -20,7 +20,7 @@ jobs:
           ref: ${{ env.TARGET_BRANCH }}
       - uses: pnpm/action-setup@v4
         with:
-          version: '10.4.0'
+          version: '10.17.1'
 
       - uses: actions/setup-node@v3
         with:
