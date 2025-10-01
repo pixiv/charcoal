@@ -2,14 +2,15 @@
   "name": "@charcoal-ui/react",
   "version": "5.0.0-beta.1",
   "license": "Apache-2.0",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.js",
-      "default": "./dist/index.esm.js"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./dist/index.css": {
       "import": "./dist/index.css",
@@ -26,7 +27,8 @@
   ],
   "scripts": {
     "build": "run-p --print-label 'build:*'",
-    "build:bundle": "FORCE_COLOR=1 tsup",
+    "build:tsdown": "tsdown",
+    "build-old:tsup": "tsup",
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
