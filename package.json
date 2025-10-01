@@ -76,7 +76,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/jest-image-snapshot": "^6.4.0",
     "@types/jest-specific-snapshot": "^0.5.9",
-    "@types/node": "^18.19.59",
+    "@types/node": "22.14.1",
     "@types/prettier": "^2.4.3",
     "@types/react": "^18.3.3",
     "@types/styled-components": "^5.1.21",
