@@ -30,7 +30,6 @@
     "release": "pnpm install && pnpm run clean && pnpm run build && pnpm -r publish --no-git-checks",
     "release:alpha": "pnpm run release --conventional-prerelease --dist-tag alpha",
     "_postpublish": "zx ./misc/fix-versioning.mjs && ./misc/postpublish.sh",
-    "website": "vite docs --base=charcoal/docs --port 5000",
     "prepare": "husky"
   },
   "publishConfig": {
@@ -132,7 +131,7 @@
     "wait-on": "^7.2.0",
     "zx": "^7.0.3"
   },
-  "packageManager": "pnpm@10.4.0",
+  "packageManager": "pnpm@10.17.1",
   "resolutions": {
     "node-gyp": "^9.0.0",
     "postcss": "^8.4.16",
