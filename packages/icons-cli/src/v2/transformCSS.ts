@@ -133,7 +133,7 @@ ${classNames
   .map(
     (icon) => `
   <div>
-    <i class="${icon}" title=".${icon}"></i>
+    <div class="${icon}" aria-label=".${icon}" role="img"></div>
     <code>.${icon}</code>
   </div>
 `
