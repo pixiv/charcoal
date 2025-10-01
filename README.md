@@ -42,9 +42,12 @@ pnpm install
 
 Start the development server on http://localhost:6006
 
-```
+```sh
 pnpm build
 pnpm storybook
+
+# clean up artifacts for rebuilding
+pnpm clean
 ```
 
 ### Commit
