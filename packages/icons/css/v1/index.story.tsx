@@ -779,6 +779,17 @@ export default {
 }
 
 
+.charcoal-icon-v1-down-16 {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5.496%203a1%201%200%20011-1h3.002a1%201%200%20011%201v4.5H13.5a.5.5%200%2001.347.86L7.999%2014%202.154%208.36A.5.5%200%20012.5%207.5h2.995V3z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-downloadalt {
   display: inline-block;
   width: 1em;
@@ -2880,6 +2891,17 @@ export default {
 }
 
 
+.charcoal-icon-v1-up-16 {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.504%2013a1%201%200%2001-1%201H6.502a1%201%200%2001-1-1V8.5H2.5a.5.5%200%2001-.347-.86L8%202l5.845%205.64a.5.5%200%2001-.347.86h-2.995V13z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-upload {
   display: inline-block;
   width: 1em;
@@ -3109,2236 +3131,2540 @@ export default {
 
         <div className="icons">
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-add"
-              title=".charcoal-icon-v1-add"
-            ></i>
+              aria-label=".charcoal-icon-v1-add"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-add</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-add-16"
-              title=".charcoal-icon-v1-add-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-add-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-add-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-add-Inline"
-              title=".charcoal-icon-v1-add-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-add-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-add-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-addimage"
-              title=".charcoal-icon-v1-addimage"
-            ></i>
+              aria-label=".charcoal-icon-v1-addimage"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-addimage</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-addmodel"
-              title=".charcoal-icon-v1-addmodel"
-            ></i>
+              aria-label=".charcoal-icon-v1-addmodel"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-addmodel</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-addpeople"
-              title=".charcoal-icon-v1-addpeople"
-            ></i>
+              aria-label=".charcoal-icon-v1-addpeople"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-addpeople</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-addrubi"
-              title=".charcoal-icon-v1-addrubi"
-            ></i>
+              aria-label=".charcoal-icon-v1-addrubi"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-addrubi</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-addtext"
-              title=".charcoal-icon-v1-addtext"
-            ></i>
+              aria-label=".charcoal-icon-v1-addtext"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-addtext</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-alart"
-              title=".charcoal-icon-v1-alart"
-            ></i>
+              aria-label=".charcoal-icon-v1-alart"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-alart</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-announcement"
-              title=".charcoal-icon-v1-announcement"
-            ></i>
+              aria-label=".charcoal-icon-v1-announcement"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-announcement</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-v1-ar" title=".charcoal-icon-v1-ar"></i>
+            <div
+              className="charcoal-icon-v1-ar"
+              aria-label=".charcoal-icon-v1-ar"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-ar</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-archive"
-              title=".charcoal-icon-v1-archive"
-            ></i>
+              aria-label=".charcoal-icon-v1-archive"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-archive</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-archive-16"
-              title=".charcoal-icon-v1-archive-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-archive-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-archive-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-arrowdown"
-              title=".charcoal-icon-v1-arrowdown"
-            ></i>
+              aria-label=".charcoal-icon-v1-arrowdown"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-arrowdown</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-arrowdown-16"
-              title=".charcoal-icon-v1-arrowdown-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-arrowdown-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-arrowdown-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-arrowup"
-              title=".charcoal-icon-v1-arrowup"
-            ></i>
+              aria-label=".charcoal-icon-v1-arrowup"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-arrowup</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-artwork-16"
-              title=".charcoal-icon-v1-artwork-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-artwork-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-artwork-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-back-16"
-              title=".charcoal-icon-v1-back-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-back-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-back-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-back-Inline"
-              title=".charcoal-icon-v1-back-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-back-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-back-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-binet"
-              title=".charcoal-icon-v1-binet"
-            ></i>
+              aria-label=".charcoal-icon-v1-binet"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-binet</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-body"
-              title=".charcoal-icon-v1-body"
-            ></i>
+              aria-label=".charcoal-icon-v1-body"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-body</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bodyedit"
-              title=".charcoal-icon-v1-bodyedit"
-            ></i>
+              aria-label=".charcoal-icon-v1-bodyedit"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bodyedit</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-book"
-              title=".charcoal-icon-v1-book"
-            ></i>
+              aria-label=".charcoal-icon-v1-book"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-book</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-book-16"
-              title=".charcoal-icon-v1-book-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-book-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-book-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bookmarkoff-16"
-              title=".charcoal-icon-v1-bookmarkoff-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-bookmarkoff-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bookmarkoff-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bookmarkoff-32"
-              title=".charcoal-icon-v1-bookmarkoff-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-bookmarkoff-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bookmarkoff-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bookmarkoff-Inline"
-              title=".charcoal-icon-v1-bookmarkoff-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-bookmarkoff-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bookmarkoff-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bookmarkon-16"
-              title=".charcoal-icon-v1-bookmarkon-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-bookmarkon-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bookmarkon-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bookmarkon-32"
-              title=".charcoal-icon-v1-bookmarkon-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-bookmarkon-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bookmarkon-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bookmarkon-Inline"
-              title=".charcoal-icon-v1-bookmarkon-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-bookmarkon-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bookmarkon-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-breadcrumbs-Inline"
-              title=".charcoal-icon-v1-breadcrumbs-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-breadcrumbs-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-breadcrumbs-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bringbackward"
-              title=".charcoal-icon-v1-bringbackward"
-            ></i>
+              aria-label=".charcoal-icon-v1-bringbackward"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bringbackward</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-bringforward"
-              title=".charcoal-icon-v1-bringforward"
-            ></i>
+              aria-label=".charcoal-icon-v1-bringforward"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-bringforward</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-calendar"
-              title=".charcoal-icon-v1-calendar"
-            ></i>
+              aria-label=".charcoal-icon-v1-calendar"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-calendar</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-camera"
-              title=".charcoal-icon-v1-camera"
-            ></i>
+              aria-label=".charcoal-icon-v1-camera"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-camera</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-camera-32"
-              title=".charcoal-icon-v1-camera-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-camera-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-camera-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-cameravideo"
-              title=".charcoal-icon-v1-cameravideo"
-            ></i>
+              aria-label=".charcoal-icon-v1-cameravideo"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-cameravideo</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-cart"
-              title=".charcoal-icon-v1-cart"
-            ></i>
+              aria-label=".charcoal-icon-v1-cart"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-cart</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-changecharacter"
-              title=".charcoal-icon-v1-changecharacter"
-            ></i>
+              aria-label=".charcoal-icon-v1-changecharacter"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-changecharacter</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-chatbot"
-              title=".charcoal-icon-v1-chatbot"
-            ></i>
+              aria-label=".charcoal-icon-v1-chatbot"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-chatbot</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-check"
-              title=".charcoal-icon-v1-check"
-            ></i>
+              aria-label=".charcoal-icon-v1-check"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-check</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-check-16"
-              title=".charcoal-icon-v1-check-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-check-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-check-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-check-Inline"
-              title=".charcoal-icon-v1-check-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-check-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-check-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-chromaticaberration"
-              title=".charcoal-icon-v1-chromaticaberration"
-            ></i>
+              aria-label=".charcoal-icon-v1-chromaticaberration"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-chromaticaberration</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-click"
-              title=".charcoal-icon-v1-click"
-            ></i>
+              aria-label=".charcoal-icon-v1-click"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-click</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-close"
-              title=".charcoal-icon-v1-close"
-            ></i>
+              aria-label=".charcoal-icon-v1-close"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-close</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-close-32"
-              title=".charcoal-icon-v1-close-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-close-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-close-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-codes"
-              title=".charcoal-icon-v1-codes"
-            ></i>
+              aria-label=".charcoal-icon-v1-codes"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-codes</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-collapse"
-              title=".charcoal-icon-v1-collapse"
-            ></i>
+              aria-label=".charcoal-icon-v1-collapse"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-collapse</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-collapse-32"
-              title=".charcoal-icon-v1-collapse-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-collapse-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-collapse-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-collection"
-              title=".charcoal-icon-v1-collection"
-            ></i>
+              aria-label=".charcoal-icon-v1-collection"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-collection</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-comment-16"
-              title=".charcoal-icon-v1-comment-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-comment-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-comment-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-comment-Inline"
-              title=".charcoal-icon-v1-comment-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-comment-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-comment-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-commentfill"
-              title=".charcoal-icon-v1-commentfill"
-            ></i>
+              aria-label=".charcoal-icon-v1-commentfill"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-commentfill</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-commentoff-32"
-              title=".charcoal-icon-v1-commentoff-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-commentoff-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-commentoff-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-commenton-32"
-              title=".charcoal-icon-v1-commenton-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-commenton-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-commenton-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-commentoutline"
-              title=".charcoal-icon-v1-commentoutline"
-            ></i>
+              aria-label=".charcoal-icon-v1-commentoutline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-commentoutline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-contest"
-              title=".charcoal-icon-v1-contest"
-            ></i>
+              aria-label=".charcoal-icon-v1-contest"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-contest</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-contextmenu-Inline"
-              title=".charcoal-icon-v1-contextmenu-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-contextmenu-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-contextmenu-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-contrast"
-              title=".charcoal-icon-v1-contrast"
-            ></i>
+              aria-label=".charcoal-icon-v1-contrast"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-contrast</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-copy"
-              title=".charcoal-icon-v1-copy"
-            ></i>
+              aria-label=".charcoal-icon-v1-copy"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-copy</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-delete-32"
-              title=".charcoal-icon-v1-delete-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-delete-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-delete-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-description"
-              title=".charcoal-icon-v1-description"
-            ></i>
+              aria-label=".charcoal-icon-v1-description"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-description</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-devicerotation"
-              title=".charcoal-icon-v1-devicerotation"
-            ></i>
+              aria-label=".charcoal-icon-v1-devicerotation"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-devicerotation</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-discovery"
-              title=".charcoal-icon-v1-discovery"
-            ></i>
+              aria-label=".charcoal-icon-v1-discovery"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-discovery</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-dot"
-              title=".charcoal-icon-v1-dot"
-            ></i>
+              aria-label=".charcoal-icon-v1-dot"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-dot</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-dot-16"
-              title=".charcoal-icon-v1-dot-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-dot-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-dot-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-dot-32"
-              title=".charcoal-icon-v1-dot-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-dot-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-dot-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-dotalt"
-              title=".charcoal-icon-v1-dotalt"
-            ></i>
+              aria-label=".charcoal-icon-v1-dotalt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-dotalt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-down"
-              title=".charcoal-icon-v1-down"
-            ></i>
+              aria-label=".charcoal-icon-v1-down"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-down</code>
           </div>
 
           <div>
-            <i
+            <div
+              className="charcoal-icon-v1-down-16"
+              aria-label=".charcoal-icon-v1-down-16"
+              role="img"
+            ></div>
+            <code>.charcoal-icon-v1-down-16</code>
+          </div>
+
+          <div>
+            <div
               className="charcoal-icon-v1-downloadalt"
-              title=".charcoal-icon-v1-downloadalt"
-            ></i>
+              aria-label=".charcoal-icon-v1-downloadalt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-downloadalt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-duplicate"
-              title=".charcoal-icon-v1-duplicate"
-            ></i>
+              aria-label=".charcoal-icon-v1-duplicate"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-duplicate</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-dust"
-              title=".charcoal-icon-v1-dust"
-            ></i>
+              aria-label=".charcoal-icon-v1-dust"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-dust</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-edit-32"
-              title=".charcoal-icon-v1-edit-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-edit-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-edit-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-emoji"
-              title=".charcoal-icon-v1-emoji"
-            ></i>
+              aria-label=".charcoal-icon-v1-emoji"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-emoji</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-error"
-              title=".charcoal-icon-v1-error"
-            ></i>
+              aria-label=".charcoal-icon-v1-error"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-error</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-error-16"
-              title=".charcoal-icon-v1-error-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-error-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-error-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-erroroctagon"
-              title=".charcoal-icon-v1-erroroctagon"
-            ></i>
+              aria-label=".charcoal-icon-v1-erroroctagon"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-erroroctagon</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-events"
-              title=".charcoal-icon-v1-events"
-            ></i>
+              aria-label=".charcoal-icon-v1-events"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-events</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-expand"
-              title=".charcoal-icon-v1-expand"
-            ></i>
+              aria-label=".charcoal-icon-v1-expand"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-expand</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-expand-32"
-              title=".charcoal-icon-v1-expand-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-expand-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-expand-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-external-Inline"
-              title=".charcoal-icon-v1-external-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-external-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-external-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-faceedit"
-              title=".charcoal-icon-v1-faceedit"
-            ></i>
+              aria-label=".charcoal-icon-v1-faceedit"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-faceedit</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-fashion"
-              title=".charcoal-icon-v1-fashion"
-            ></i>
+              aria-label=".charcoal-icon-v1-fashion"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-fashion</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-feed"
-              title=".charcoal-icon-v1-feed"
-            ></i>
+              aria-label=".charcoal-icon-v1-feed"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-feed</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-file"
-              title=".charcoal-icon-v1-file"
-            ></i>
+              aria-label=".charcoal-icon-v1-file"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-file</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-filter"
-              title=".charcoal-icon-v1-filter"
-            ></i>
+              aria-label=".charcoal-icon-v1-filter"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-filter</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-filter-16"
-              title=".charcoal-icon-v1-filter-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-filter-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-filter-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-filter-Inline"
-              title=".charcoal-icon-v1-filter-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-filter-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-filter-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-flare"
-              title=".charcoal-icon-v1-flare"
-            ></i>
+              aria-label=".charcoal-icon-v1-flare"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-flare</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-folder-Inline"
-              title=".charcoal-icon-v1-folder-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-folder-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-folder-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formataligncenter"
-              title=".charcoal-icon-v1-formataligncenter"
-            ></i>
+              aria-label=".charcoal-icon-v1-formataligncenter"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formataligncenter</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatalignjustified"
-              title=".charcoal-icon-v1-formatalignjustified"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatalignjustified"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatalignjustified</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatalignleft"
-              title=".charcoal-icon-v1-formatalignleft"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatalignleft"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatalignleft</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatalignright"
-              title=".charcoal-icon-v1-formatalignright"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatalignright"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatalignright</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatcolorfill"
-              title=".charcoal-icon-v1-formatcolorfill"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatcolorfill"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatcolorfill</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatcolorfillnocolor"
-              title=".charcoal-icon-v1-formatcolorfillnocolor"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatcolorfillnocolor"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatcolorfillnocolor</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatfontfamily"
-              title=".charcoal-icon-v1-formatfontfamily"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatfontfamily"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatfontfamily</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatfontsize"
-              title=".charcoal-icon-v1-formatfontsize"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatfontsize"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatfontsize</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatletterspacing"
-              title=".charcoal-icon-v1-formatletterspacing"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatletterspacing"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatletterspacing</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-formatlinespacing"
-              title=".charcoal-icon-v1-formatlinespacing"
-            ></i>
+              aria-label=".charcoal-icon-v1-formatlinespacing"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-formatlinespacing</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-fov"
-              title=".charcoal-icon-v1-fov"
-            ></i>
+              aria-label=".charcoal-icon-v1-fov"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-fov</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-frameeffect"
-              title=".charcoal-icon-v1-frameeffect"
-            ></i>
+              aria-label=".charcoal-icon-v1-frameeffect"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-frameeffect</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-framesize"
-              title=".charcoal-icon-v1-framesize"
-            ></i>
+              aria-label=".charcoal-icon-v1-framesize"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-framesize</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-gift"
-              title=".charcoal-icon-v1-gift"
-            ></i>
+              aria-label=".charcoal-icon-v1-gift"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-gift</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-gift-32"
-              title=".charcoal-icon-v1-gift-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-gift-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-gift-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-glow"
-              title=".charcoal-icon-v1-glow"
-            ></i>
+              aria-label=".charcoal-icon-v1-glow"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-glow</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-groups"
-              title=".charcoal-icon-v1-groups"
-            ></i>
+              aria-label=".charcoal-icon-v1-groups"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-groups</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-hairedit"
-              title=".charcoal-icon-v1-hairedit"
-            ></i>
+              aria-label=".charcoal-icon-v1-hairedit"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-hairedit</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-hashtag"
-              title=".charcoal-icon-v1-hashtag"
-            ></i>
+              aria-label=".charcoal-icon-v1-hashtag"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-hashtag</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-hide"
-              title=".charcoal-icon-v1-hide"
-            ></i>
+              aria-label=".charcoal-icon-v1-hide"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-hide</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-hightlighttext"
-              title=".charcoal-icon-v1-hightlighttext"
-            ></i>
+              aria-label=".charcoal-icon-v1-hightlighttext"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-hightlighttext</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-home"
-              title=".charcoal-icon-v1-home"
-            ></i>
+              aria-label=".charcoal-icon-v1-home"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-home</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-home-32"
-              title=".charcoal-icon-v1-home-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-home-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-home-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-horizontalwriting-32"
-              title=".charcoal-icon-v1-horizontalwriting-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-horizontalwriting-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-horizontalwriting-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-hue"
-              title=".charcoal-icon-v1-hue"
-            ></i>
+              aria-label=".charcoal-icon-v1-hue"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-hue</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-idea"
-              title=".charcoal-icon-v1-idea"
-            ></i>
+              aria-label=".charcoal-icon-v1-idea"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-idea</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-image"
-              title=".charcoal-icon-v1-image"
-            ></i>
+              aria-label=".charcoal-icon-v1-image"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-image</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imagealt"
-              title=".charcoal-icon-v1-imagealt"
-            ></i>
+              aria-label=".charcoal-icon-v1-imagealt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imagealt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imagehidden"
-              title=".charcoal-icon-v1-imagehidden"
-            ></i>
+              aria-label=".charcoal-icon-v1-imagehidden"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imagehidden</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imagehidden-32"
-              title=".charcoal-icon-v1-imagehidden-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-imagehidden-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imagehidden-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imagereplace"
-              title=".charcoal-icon-v1-imagereplace"
-            ></i>
+              aria-label=".charcoal-icon-v1-imagereplace"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imagereplace</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imageresponse-16"
-              title=".charcoal-icon-v1-imageresponse-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-imageresponse-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imageresponse-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imageresponse-Inline"
-              title=".charcoal-icon-v1-imageresponse-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-imageresponse-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imageresponse-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-images"
-              title=".charcoal-icon-v1-images"
-            ></i>
+              aria-label=".charcoal-icon-v1-images"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-images</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-images-Inline"
-              title=".charcoal-icon-v1-images-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-images-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-images-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imgcontain"
-              title=".charcoal-icon-v1-imgcontain"
-            ></i>
+              aria-label=".charcoal-icon-v1-imgcontain"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imgcontain</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-imgcover"
-              title=".charcoal-icon-v1-imgcover"
-            ></i>
+              aria-label=".charcoal-icon-v1-imgcover"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-imgcover</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-index"
-              title=".charcoal-icon-v1-index"
-            ></i>
+              aria-label=".charcoal-icon-v1-index"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-index</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-index-32"
-              title=".charcoal-icon-v1-index-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-index-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-index-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-info"
-              title=".charcoal-icon-v1-info"
-            ></i>
+              aria-label=".charcoal-icon-v1-info"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-info</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-info-16"
-              title=".charcoal-icon-v1-info-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-info-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-info-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-invalid"
-              title=".charcoal-icon-v1-invalid"
-            ></i>
+              aria-label=".charcoal-icon-v1-invalid"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-invalid</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-invoice"
-              title=".charcoal-icon-v1-invoice"
-            ></i>
+              aria-label=".charcoal-icon-v1-invoice"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-invoice</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-itemremove"
-              title=".charcoal-icon-v1-itemremove"
-            ></i>
+              aria-label=".charcoal-icon-v1-itemremove"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-itemremove</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-latest-Inline"
-              title=".charcoal-icon-v1-latest-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-latest-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-latest-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-latestworks"
-              title=".charcoal-icon-v1-latestworks"
-            ></i>
+              aria-label=".charcoal-icon-v1-latestworks"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-latestworks</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-like-16"
-              title=".charcoal-icon-v1-like-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-like-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-like-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-like-Inline"
-              title=".charcoal-icon-v1-like-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-like-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-like-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-likeoff"
-              title=".charcoal-icon-v1-likeoff"
-            ></i>
+              aria-label=".charcoal-icon-v1-likeoff"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-likeoff</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-likeoff-32"
-              title=".charcoal-icon-v1-likeoff-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-likeoff-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-likeoff-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-likeoff-Inline"
-              title=".charcoal-icon-v1-likeoff-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-likeoff-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-likeoff-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-likeon"
-              title=".charcoal-icon-v1-likeon"
-            ></i>
+              aria-label=".charcoal-icon-v1-likeon"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-likeon</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-likeon-32"
-              title=".charcoal-icon-v1-likeon-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-likeon-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-likeon-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-likeonprivate-32"
-              title=".charcoal-icon-v1-likeonprivate-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-likeonprivate-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-likeonprivate-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-link"
-              title=".charcoal-icon-v1-link"
-            ></i>
+              aria-label=".charcoal-icon-v1-link"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-link</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-list"
-              title=".charcoal-icon-v1-list"
-            ></i>
+              aria-label=".charcoal-icon-v1-list"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-list</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-list-Inline"
-              title=".charcoal-icon-v1-list-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-list-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-list-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-location-Inline"
-              title=".charcoal-icon-v1-location-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-location-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-location-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-lock-Inline"
-              title=".charcoal-icon-v1-lock-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-lock-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-lock-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-locklock"
-              title=".charcoal-icon-v1-locklock"
-            ></i>
+              aria-label=".charcoal-icon-v1-locklock"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-locklock</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-lockunlock"
-              title=".charcoal-icon-v1-lockunlock"
-            ></i>
+              aria-label=".charcoal-icon-v1-lockunlock"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-lockunlock</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-logout"
-              title=".charcoal-icon-v1-logout"
-            ></i>
+              aria-label=".charcoal-icon-v1-logout"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-logout</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-manga"
-              title=".charcoal-icon-v1-manga"
-            ></i>
+              aria-label=".charcoal-icon-v1-manga"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-manga</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-menu"
-              title=".charcoal-icon-v1-menu"
-            ></i>
+              aria-label=".charcoal-icon-v1-menu"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-menu</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-menu-16"
-              title=".charcoal-icon-v1-menu-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-menu-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-menu-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-message"
-              title=".charcoal-icon-v1-message"
-            ></i>
+              aria-label=".charcoal-icon-v1-message"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-message</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-message-32"
-              title=".charcoal-icon-v1-message-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-message-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-message-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-microphone"
-              title=".charcoal-icon-v1-microphone"
-            ></i>
+              aria-label=".charcoal-icon-v1-microphone"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-microphone</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-mobilephone"
-              title=".charcoal-icon-v1-mobilephone"
-            ></i>
+              aria-label=".charcoal-icon-v1-mobilephone"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-mobilephone</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-more-16"
-              title=".charcoal-icon-v1-more-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-more-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-more-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-more-Inline"
-              title=".charcoal-icon-v1-more-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-more-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-more-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-move1"
-              title=".charcoal-icon-v1-move1"
-            ></i>
+              aria-label=".charcoal-icon-v1-move1"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-move1</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-multiselect"
-              title=".charcoal-icon-v1-multiselect"
-            ></i>
+              aria-label=".charcoal-icon-v1-multiselect"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-multiselect</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-multiselect-Inline"
-              title=".charcoal-icon-v1-multiselect-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-multiselect-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-multiselect-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-next"
-              title=".charcoal-icon-v1-next"
-            ></i>
+              aria-label=".charcoal-icon-v1-next"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-next</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-next-32"
-              title=".charcoal-icon-v1-next-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-next-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-next-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-nextworks-16"
-              title=".charcoal-icon-v1-nextworks-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-nextworks-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-nextworks-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-nextworks-Inline"
-              title=".charcoal-icon-v1-nextworks-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-nextworks-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-nextworks-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-noimage"
-              title=".charcoal-icon-v1-noimage"
-            ></i>
+              aria-label=".charcoal-icon-v1-noimage"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-noimage</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-notification"
-              title=".charcoal-icon-v1-notification"
-            ></i>
+              aria-label=".charcoal-icon-v1-notification"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-notification</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-notification-32"
-              title=".charcoal-icon-v1-notification-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-notification-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-notification-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-notificationoff"
-              title=".charcoal-icon-v1-notificationoff"
-            ></i>
+              aria-label=".charcoal-icon-v1-notificationoff"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-notificationoff</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-notificationoff-32"
-              title=".charcoal-icon-v1-notificationoff-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-notificationoff-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-notificationoff-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-novels"
-              title=".charcoal-icon-v1-novels"
-            ></i>
+              aria-label=".charcoal-icon-v1-novels"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-novels</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-novelviewersettings-32"
-              title=".charcoal-icon-v1-novelviewersettings-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-novelviewersettings-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-novelviewersettings-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-openinnew"
-              title=".charcoal-icon-v1-openinnew"
-            ></i>
+              aria-label=".charcoal-icon-v1-openinnew"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-openinnew</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-openinnew-Inline"
-              title=".charcoal-icon-v1-openinnew-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-openinnew-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-openinnew-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-options"
-              title=".charcoal-icon-v1-options"
-            ></i>
+              aria-label=".charcoal-icon-v1-options"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-options</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-optionsalt"
-              title=".charcoal-icon-v1-optionsalt"
-            ></i>
+              aria-label=".charcoal-icon-v1-optionsalt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-optionsalt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-overlay"
-              title=".charcoal-icon-v1-overlay"
-            ></i>
+              aria-label=".charcoal-icon-v1-overlay"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-overlay</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-palette"
-              title=".charcoal-icon-v1-palette"
-            ></i>
+              aria-label=".charcoal-icon-v1-palette"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-palette</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pan-32"
-              title=".charcoal-icon-v1-pan-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-pan-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pan-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pause"
-              title=".charcoal-icon-v1-pause"
-            ></i>
+              aria-label=".charcoal-icon-v1-pause"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pause</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pausealt"
-              title=".charcoal-icon-v1-pausealt"
-            ></i>
+              aria-label=".charcoal-icon-v1-pausealt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pausealt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pencil"
-              title=".charcoal-icon-v1-pencil"
-            ></i>
+              aria-label=".charcoal-icon-v1-pencil"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pencil</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pencil-16"
-              title=".charcoal-icon-v1-pencil-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-pencil-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pencil-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pencil-Inline"
-              title=".charcoal-icon-v1-pencil-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-pencil-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pencil-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-penciladd"
-              title=".charcoal-icon-v1-penciladd"
-            ></i>
+              aria-label=".charcoal-icon-v1-penciladd"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-penciladd</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pencildraw"
-              title=".charcoal-icon-v1-pencildraw"
-            ></i>
+              aria-label=".charcoal-icon-v1-pencildraw"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pencildraw</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pencillive"
-              title=".charcoal-icon-v1-pencillive"
-            ></i>
+              aria-label=".charcoal-icon-v1-pencillive"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pencillive</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-penciltext"
-              title=".charcoal-icon-v1-penciltext"
-            ></i>
+              aria-label=".charcoal-icon-v1-penciltext"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-penciltext</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-person"
-              title=".charcoal-icon-v1-person"
-            ></i>
+              aria-label=".charcoal-icon-v1-person"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-person</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-play"
-              title=".charcoal-icon-v1-play"
-            ></i>
+              aria-label=".charcoal-icon-v1-play"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-play</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pose"
-              title=".charcoal-icon-v1-pose"
-            ></i>
+              aria-label=".charcoal-icon-v1-pose"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pose</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-prev"
-              title=".charcoal-icon-v1-prev"
-            ></i>
+              aria-label=".charcoal-icon-v1-prev"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-prev</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-prev-32"
-              title=".charcoal-icon-v1-prev-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-prev-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-prev-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-projects"
-              title=".charcoal-icon-v1-projects"
-            ></i>
+              aria-label=".charcoal-icon-v1-projects"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-projects</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pulldown"
-              title=".charcoal-icon-v1-pulldown"
-            ></i>
+              aria-label=".charcoal-icon-v1-pulldown"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pulldown</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pulldown-32"
-              title=".charcoal-icon-v1-pulldown-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-pulldown-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pulldown-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pullup"
-              title=".charcoal-icon-v1-pullup"
-            ></i>
+              aria-label=".charcoal-icon-v1-pullup"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pullup</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-pullup-32"
-              title=".charcoal-icon-v1-pullup-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-pullup-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-pullup-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-question"
-              title=".charcoal-icon-v1-question"
-            ></i>
+              aria-label=".charcoal-icon-v1-question"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-question</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-question-16"
-              title=".charcoal-icon-v1-question-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-question-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-question-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-questionoutline"
-              title=".charcoal-icon-v1-questionoutline"
-            ></i>
+              aria-label=".charcoal-icon-v1-questionoutline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-questionoutline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-ranking"
-              title=".charcoal-icon-v1-ranking"
-            ></i>
+              aria-label=".charcoal-icon-v1-ranking"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-ranking</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-ranking-16"
-              title=".charcoal-icon-v1-ranking-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-ranking-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-ranking-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-readhorizontalleft"
-              title=".charcoal-icon-v1-readhorizontalleft"
-            ></i>
+              aria-label=".charcoal-icon-v1-readhorizontalleft"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-readhorizontalleft</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-readhorizontalleft-32"
-              title=".charcoal-icon-v1-readhorizontalleft-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-readhorizontalleft-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-readhorizontalleft-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-readhorizontalright"
-              title=".charcoal-icon-v1-readhorizontalright"
-            ></i>
+              aria-label=".charcoal-icon-v1-readhorizontalright"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-readhorizontalright</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-readhorizontalright-32"
-              title=".charcoal-icon-v1-readhorizontalright-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-readhorizontalright-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-readhorizontalright-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-readvertical"
-              title=".charcoal-icon-v1-readvertical"
-            ></i>
+              aria-label=".charcoal-icon-v1-readvertical"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-readvertical</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-readvertical-32"
-              title=".charcoal-icon-v1-readvertical-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-readvertical-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-readvertical-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-redo"
-              title=".charcoal-icon-v1-redo"
-            ></i>
+              aria-label=".charcoal-icon-v1-redo"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-redo</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-redo-32"
-              title=".charcoal-icon-v1-redo-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-redo-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-redo-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-reload"
-              title=".charcoal-icon-v1-reload"
-            ></i>
+              aria-label=".charcoal-icon-v1-reload"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-reload</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-reloadloop"
-              title=".charcoal-icon-v1-reloadloop"
-            ></i>
+              aria-label=".charcoal-icon-v1-reloadloop"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-reloadloop</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-remove-16"
-              title=".charcoal-icon-v1-remove-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-remove-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-remove-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-remove-Inline"
-              title=".charcoal-icon-v1-remove-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-remove-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-remove-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-reorder"
-              title=".charcoal-icon-v1-reorder"
-            ></i>
+              aria-label=".charcoal-icon-v1-reorder"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-reorder</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-reply"
-              title=".charcoal-icon-v1-reply"
-            ></i>
+              aria-label=".charcoal-icon-v1-reply"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-reply</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-roll"
-              title=".charcoal-icon-v1-roll"
-            ></i>
+              aria-label=".charcoal-icon-v1-roll"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-roll</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-rollhorizontal-32"
-              title=".charcoal-icon-v1-rollhorizontal-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-rollhorizontal-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-rollhorizontal-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-rollvertical-32"
-              title=".charcoal-icon-v1-rollvertical-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-rollvertical-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-rollvertical-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-rotate90degreesc"
-              title=".charcoal-icon-v1-rotate90degreesc"
-            ></i>
+              aria-label=".charcoal-icon-v1-rotate90degreesc"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-rotate90degreesc</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-rotate90degreescc"
-              title=".charcoal-icon-v1-rotate90degreescc"
-            ></i>
+              aria-label=".charcoal-icon-v1-rotate90degreescc"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-rotate90degreescc</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-rotateright"
-              title=".charcoal-icon-v1-rotateright"
-            ></i>
+              aria-label=".charcoal-icon-v1-rotateright"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-rotateright</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-sansserif-32"
-              title=".charcoal-icon-v1-sansserif-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-sansserif-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-sansserif-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-saturation"
-              title=".charcoal-icon-v1-saturation"
-            ></i>
+              aria-label=".charcoal-icon-v1-saturation"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-saturation</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-save"
-              title=".charcoal-icon-v1-save"
-            ></i>
+              aria-label=".charcoal-icon-v1-save"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-save</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-search"
-              title=".charcoal-icon-v1-search"
-            ></i>
+              aria-label=".charcoal-icon-v1-search"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-search</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-search-16"
-              title=".charcoal-icon-v1-search-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-search-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-search-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-send"
-              title=".charcoal-icon-v1-send"
-            ></i>
+              aria-label=".charcoal-icon-v1-send"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-send</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-serif-32"
-              title=".charcoal-icon-v1-serif-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-serif-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-serif-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-services"
-              title=".charcoal-icon-v1-services"
-            ></i>
+              aria-label=".charcoal-icon-v1-services"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-services</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-set"
-              title=".charcoal-icon-v1-set"
-            ></i>
+              aria-label=".charcoal-icon-v1-set"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-set</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-settings"
-              title=".charcoal-icon-v1-settings"
-            ></i>
+              aria-label=".charcoal-icon-v1-settings"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-settings</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shareandroid"
-              title=".charcoal-icon-v1-shareandroid"
-            ></i>
+              aria-label=".charcoal-icon-v1-shareandroid"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shareandroid</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shareandroid-32"
-              title=".charcoal-icon-v1-shareandroid-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-shareandroid-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shareandroid-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shareios"
-              title=".charcoal-icon-v1-shareios"
-            ></i>
+              aria-label=".charcoal-icon-v1-shareios"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shareios</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shareios-32"
-              title=".charcoal-icon-v1-shareios-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-shareios-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shareios-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shopping"
-              title=".charcoal-icon-v1-shopping"
-            ></i>
+              aria-label=".charcoal-icon-v1-shopping"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shopping</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shopping-32"
-              title=".charcoal-icon-v1-shopping-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-shopping-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shopping-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-show"
-              title=".charcoal-icon-v1-show"
-            ></i>
+              aria-label=".charcoal-icon-v1-show"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-show</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-showoutline"
-              title=".charcoal-icon-v1-showoutline"
-            ></i>
+              aria-label=".charcoal-icon-v1-showoutline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-showoutline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-shutter"
-              title=".charcoal-icon-v1-shutter"
-            ></i>
+              aria-label=".charcoal-icon-v1-shutter"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-shutter</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-smile-16"
-              title=".charcoal-icon-v1-smile-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-smile-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-smile-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-smile-Inline"
-              title=".charcoal-icon-v1-smile-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-smile-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-smile-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-smileon-Inline"
-              title=".charcoal-icon-v1-smileon-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-smileon-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-smileon-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-speaker-16"
-              title=".charcoal-icon-v1-speaker-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-speaker-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-speaker-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-star"
-              title=".charcoal-icon-v1-star"
-            ></i>
+              aria-label=".charcoal-icon-v1-star"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-star</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-subtract"
-              title=".charcoal-icon-v1-subtract"
-            ></i>
+              aria-label=".charcoal-icon-v1-subtract"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-subtract</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-sun"
-              title=".charcoal-icon-v1-sun"
-            ></i>
+              aria-label=".charcoal-icon-v1-sun"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-sun</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-temperature"
-              title=".charcoal-icon-v1-temperature"
-            ></i>
+              aria-label=".charcoal-icon-v1-temperature"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-temperature</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-text"
-              title=".charcoal-icon-v1-text"
-            ></i>
+              aria-label=".charcoal-icon-v1-text"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-text</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-thread"
-              title=".charcoal-icon-v1-thread"
-            ></i>
+              aria-label=".charcoal-icon-v1-thread"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-thread</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-trash"
-              title=".charcoal-icon-v1-trash"
-            ></i>
+              aria-label=".charcoal-icon-v1-trash"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-trash</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-trashalt"
-              title=".charcoal-icon-v1-trashalt"
-            ></i>
+              aria-label=".charcoal-icon-v1-trashalt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-trashalt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-undo"
-              title=".charcoal-icon-v1-undo"
-            ></i>
+              aria-label=".charcoal-icon-v1-undo"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-undo</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-undo-32"
-              title=".charcoal-icon-v1-undo-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-undo-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-undo-32</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-v1-up" title=".charcoal-icon-v1-up"></i>
+            <div
+              className="charcoal-icon-v1-up"
+              aria-label=".charcoal-icon-v1-up"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-up</code>
           </div>
 
           <div>
-            <i
+            <div
+              className="charcoal-icon-v1-up-16"
+              aria-label=".charcoal-icon-v1-up-16"
+              role="img"
+            ></div>
+            <code>.charcoal-icon-v1-up-16</code>
+          </div>
+
+          <div>
+            <div
               className="charcoal-icon-v1-upload"
-              title=".charcoal-icon-v1-upload"
-            ></i>
+              aria-label=".charcoal-icon-v1-upload"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-upload</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-upload-32"
-              title=".charcoal-icon-v1-upload-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-upload-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-upload-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-uploadalt"
-              title=".charcoal-icon-v1-uploadalt"
-            ></i>
+              aria-label=".charcoal-icon-v1-uploadalt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-uploadalt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-usagi"
-              title=".charcoal-icon-v1-usagi"
-            ></i>
+              aria-label=".charcoal-icon-v1-usagi"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-usagi</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-usagialt"
-              title=".charcoal-icon-v1-usagialt"
-            ></i>
+              aria-label=".charcoal-icon-v1-usagialt"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-usagialt</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-user-32"
-              title=".charcoal-icon-v1-user-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-user-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-user-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-users"
-              title=".charcoal-icon-v1-users"
-            ></i>
+              aria-label=".charcoal-icon-v1-users"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-users</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-users-Inline"
-              title=".charcoal-icon-v1-users-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-users-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-users-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-verticalwriting-32"
-              title=".charcoal-icon-v1-verticalwriting-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-verticalwriting-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-verticalwriting-32</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-video"
-              title=".charcoal-icon-v1-video"
-            ></i>
+              aria-label=".charcoal-icon-v1-video"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-video</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-view-16"
-              title=".charcoal-icon-v1-view-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-view-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-view-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-view-Inline"
-              title=".charcoal-icon-v1-view-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-view-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-view-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-viewgrid2columns"
-              title=".charcoal-icon-v1-viewgrid2columns"
-            ></i>
+              aria-label=".charcoal-icon-v1-viewgrid2columns"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-viewgrid2columns</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-viewgrid3columns"
-              title=".charcoal-icon-v1-viewgrid3columns"
-            ></i>
+              aria-label=".charcoal-icon-v1-viewgrid3columns"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-viewgrid3columns</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-viewlist"
-              title=".charcoal-icon-v1-viewlist"
-            ></i>
+              aria-label=".charcoal-icon-v1-viewlist"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-viewlist</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-viewoutline-Inline"
-              title=".charcoal-icon-v1-viewoutline-Inline"
-            ></i>
+              aria-label=".charcoal-icon-v1-viewoutline-Inline"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-viewoutline-Inline</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-warning"
-              title=".charcoal-icon-v1-warning"
-            ></i>
+              aria-label=".charcoal-icon-v1-warning"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-warning</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-warning-16"
-              title=".charcoal-icon-v1-warning-16"
-            ></i>
+              aria-label=".charcoal-icon-v1-warning-16"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-warning-16</code>
           </div>
 
           <div>
-            <i
+            <div
               className="charcoal-icon-v1-zoomin-32"
-              title=".charcoal-icon-v1-zoomin-32"
-            ></i>
+              aria-label=".charcoal-icon-v1-zoomin-32"
+              role="img"
+            ></div>
             <code>.charcoal-icon-v1-zoomin-32</code>
           </div>
         </div>
