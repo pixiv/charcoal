@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/Button > Danger 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-variant="Danger"
+    >
+      Danger
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      disabled=""
+    >
+      Disabled
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > FullWidth 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-full-width="true"
+    >
+      Full width
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > IsActive 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-active="true"
+    >
+      Active
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > Navigation 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-variant="Navigation"
+    >
+      Navigation
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > Overlay 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-variant="Overlay"
+    >
+      Overlay
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > Primary 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-variant="Primary"
+    >
+      Primary
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Button > Small 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      data-size="S"
+    >
+      Small
+    </button>
+  </div>
+</div>
+`;

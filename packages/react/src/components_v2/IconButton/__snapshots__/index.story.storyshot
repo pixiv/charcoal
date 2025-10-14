@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/IconButton > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-icon-button"
+      data-active="false"
+      data-size="M"
+      data-variant="Default"
+      title="add"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/IconButton > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-icon-button"
+      data-active="false"
+      data-size="M"
+      data-variant="Default"
+      disabled=""
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/IconButton > IsActive 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-icon-button"
+      data-active="true"
+      data-size="M"
+      data-variant="Default"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/IconButton > Overlay 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-icon-button"
+      data-active="false"
+      data-size="M"
+      data-variant="Overlay"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+    </button>
+  </div>
+</div>
+`;
