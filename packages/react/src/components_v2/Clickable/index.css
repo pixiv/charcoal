@@ -1,0 +1,41 @@
+.charcoal-clickable {
+  cursor: pointer;
+
+  /* Reset button appearance */
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+  color: inherit;
+  text-rendering: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  text-decoration: none;
+
+  /* Change the font styles in all browsers. */
+  font: inherit;
+
+  /* Remove the margin in Firefox and Safari. */
+  margin: 0;
+
+  /* Show the overflow in Edge. */
+  overflow: visible;
+
+  /* Remove the inheritance of text transform in Firefox. */
+  text-transform: none;
+}
+
+.charcoal-clickable:disabled,
+.charcoal-clickable[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
+}
+
+.charcoal-clickable:focus {
+  outline: none;
+}
+
+.charcoal-clickable::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
