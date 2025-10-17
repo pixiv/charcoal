@@ -12,8 +12,7 @@ exports[`Storybook Tests > react/DropdownSelector > AssistiveText 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -29,7 +28,7 @@ exports[`Storybook Tests > react/DropdownSelector > AssistiveText 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -94,8 +93,7 @@ exports[`Storybook Tests > react/DropdownSelector > CustomChildren 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -111,7 +109,7 @@ exports[`Storybook Tests > react/DropdownSelector > CustomChildren 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -172,8 +170,7 @@ exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -187,7 +184,7 @@ exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -243,8 +240,7 @@ exports[`Storybook Tests > react/DropdownSelector > Disabled 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -260,7 +256,7 @@ exports[`Storybook Tests > react/DropdownSelector > Disabled 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -318,8 +314,7 @@ exports[`Storybook Tests > react/DropdownSelector > DisabledItem 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -335,7 +330,7 @@ exports[`Storybook Tests > react/DropdownSelector > DisabledItem 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -403,8 +398,7 @@ exports[`Storybook Tests > react/DropdownSelector > InFormTag 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -420,7 +414,7 @@ exports[`Storybook Tests > react/DropdownSelector > InFormTag 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             name="exampleOption"
@@ -502,8 +496,7 @@ exports[`Storybook Tests > react/DropdownSelector > Invalid 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -519,7 +512,7 @@ exports[`Storybook Tests > react/DropdownSelector > Invalid 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -577,8 +570,7 @@ exports[`Storybook Tests > react/DropdownSelector > InvalidAssistiveText 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -594,7 +586,7 @@ exports[`Storybook Tests > react/DropdownSelector > InvalidAssistiveText 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -676,7 +668,7 @@ exports[`Storybook Tests > react/DropdownSelector > Label 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -733,8 +725,7 @@ exports[`Storybook Tests > react/DropdownSelector > LongNames 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -750,7 +741,7 @@ exports[`Storybook Tests > react/DropdownSelector > LongNames 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -828,7 +819,7 @@ exports[`Storybook Tests > react/DropdownSelector > RequiredText 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -885,8 +876,7 @@ exports[`Storybook Tests > react/DropdownSelector > Section 1`] = `
         class="charcoal-dropdown-selector-root"
       >
         <div
-          class="charcoal-field-label-root"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-field-label-root charcoal-visually-hidden"
         >
           <label
             class="charcoal-field-label"
@@ -902,7 +892,7 @@ exports[`Storybook Tests > react/DropdownSelector > Section 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"
@@ -992,7 +982,7 @@ exports[`Storybook Tests > react/DropdownSelector > SubLabel 1`] = `
         </div>
         <div
           aria-hidden="true"
-          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          class="charcoal-visually-hidden"
         >
           <select
             tabindex="-1"

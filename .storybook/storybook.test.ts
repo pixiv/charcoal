@@ -1,5 +1,6 @@
 import path from 'node:path'
 import * as glob from 'glob'
+import { vi } from 'vitest'
 
 import { composeStories } from '@storybook/react'
 import { render, cleanup } from '@testing-library/react'
@@ -7,6 +8,11 @@ import { addSerializer } from 'jest-specific-snapshot'
 import { styleSheetSerializer } from 'jest-styled-components'
 
 import type { Meta, StoryFn } from '@storybook/react'
+
+// Mock the custom useId utility
+vi.mock('../packages/react/src/_lib/useId', () => ({
+  useId: vi.fn((id?: string) => id ?? 'test-id'),
+}))
 
 addSerializer(styleSheetSerializer)
 

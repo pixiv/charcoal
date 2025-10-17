@@ -1,9 +1,9 @@
 import './index.css'
 
 import { forwardRef, memo } from 'react'
-import { useId } from '@react-aria/utils'
 import CheckboxInput, { CheckboxInputProps } from './CheckboxInput'
 import { CheckboxWithLabel } from './CheckboxWithLabel'
+import { useId } from '../../_lib/useId'
 
 export type CheckboxProps = CheckboxInputProps
 
