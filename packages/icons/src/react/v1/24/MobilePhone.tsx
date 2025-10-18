@@ -22,5 +22,7 @@ const SvgMobilePhone = (
     />
   </svg>
 )
-export const IconMobilePhone24 = forwardRef(SvgMobilePhone)
+export const IconMobilePhone24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMobilePhone)
 export default IconMobilePhone24

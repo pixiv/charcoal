@@ -22,5 +22,7 @@ const SvgSansSerif = (
     />
   </svg>
 )
-export const IconSansSerif = forwardRef(SvgSansSerif)
+export const IconSansSerif: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSansSerif)
 export default IconSansSerif

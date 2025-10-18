@@ -19,5 +19,7 @@ const SvgUndo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconUndoSolid = forwardRef(SvgUndo)
+export const IconUndoSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgUndo)
 export default IconUndoSolid

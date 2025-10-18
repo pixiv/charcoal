@@ -20,5 +20,7 @@ const SvgNotification = (
     />
   </svg>
 )
-export const IconNotification24 = forwardRef(SvgNotification)
+export const IconNotification24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNotification)
 export default IconNotification24

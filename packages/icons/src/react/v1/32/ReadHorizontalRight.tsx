@@ -28,5 +28,7 @@ const SvgReadHorizontalRight = (
     />
   </svg>
 )
-export const IconReadHorizontalRight32 = forwardRef(SvgReadHorizontalRight)
+export const IconReadHorizontalRight32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgReadHorizontalRight)
 export default IconReadHorizontalRight32

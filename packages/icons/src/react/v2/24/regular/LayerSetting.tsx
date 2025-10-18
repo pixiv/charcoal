@@ -22,5 +22,7 @@ const SvgLayersetting = (
     />
   </svg>
 )
-export const IconLayerSetting = forwardRef(SvgLayersetting)
+export const IconLayerSetting: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayersetting)
 export default IconLayerSetting

@@ -22,5 +22,7 @@ const SvgAlignvertical = (
     />
   </svg>
 )
-export const IconAlignVertical = forwardRef(SvgAlignvertical)
+export const IconAlignVertical: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAlignvertical)
 export default IconAlignVertical

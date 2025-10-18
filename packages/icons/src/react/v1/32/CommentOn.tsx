@@ -20,5 +20,7 @@ const SvgCommentOn = (
     />
   </svg>
 )
-export const IconCommentOn32 = forwardRef(SvgCommentOn)
+export const IconCommentOn32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCommentOn)
 export default IconCommentOn32

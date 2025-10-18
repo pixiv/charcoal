@@ -22,5 +22,7 @@ const SvgBrushstablize = (
     />
   </svg>
 )
-export const IconBrushStablize = forwardRef(SvgBrushstablize)
+export const IconBrushStablize: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBrushstablize)
 export default IconBrushStablize

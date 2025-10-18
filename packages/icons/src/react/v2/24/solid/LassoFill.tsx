@@ -22,5 +22,7 @@ const SvgLassofill = (
     />
   </svg>
 )
-export const IconLassoFillSolid = forwardRef(SvgLassofill)
+export const IconLassoFillSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLassofill)
 export default IconLassoFillSolid

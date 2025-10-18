@@ -22,5 +22,7 @@ const SvgDotsvertical = (
     />
   </svg>
 )
-export const IconDotsVerticalSolid = forwardRef(SvgDotsvertical)
+export const IconDotsVerticalSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDotsvertical)
 export default IconDotsVerticalSolid

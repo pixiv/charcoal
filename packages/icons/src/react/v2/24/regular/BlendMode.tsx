@@ -22,5 +22,7 @@ const SvgBlendMode = (
     />
   </svg>
 )
-export const IconBlendMode = forwardRef(SvgBlendMode)
+export const IconBlendMode: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBlendMode)
 export default IconBlendMode

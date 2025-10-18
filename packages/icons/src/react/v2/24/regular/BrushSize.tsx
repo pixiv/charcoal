@@ -22,5 +22,7 @@ const SvgBrushsize = (
     />
   </svg>
 )
-export const IconBrushSize = forwardRef(SvgBrushsize)
+export const IconBrushSize: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBrushsize)
 export default IconBrushSize

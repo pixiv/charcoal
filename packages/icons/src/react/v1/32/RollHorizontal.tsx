@@ -20,5 +20,7 @@ const SvgRollHorizontal = (
     />
   </svg>
 )
-export const IconRollHorizontal32 = forwardRef(SvgRollHorizontal)
+export const IconRollHorizontal32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRollHorizontal)
 export default IconRollHorizontal32

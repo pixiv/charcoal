@@ -22,5 +22,7 @@ const SvgOpacitylock = (
     />
   </svg>
 )
-export const IconOpacityLock = forwardRef(SvgOpacitylock)
+export const IconOpacityLock: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgOpacitylock)
 export default IconOpacityLock

@@ -22,5 +22,7 @@ const SvgFillsquare = (
     />
   </svg>
 )
-export const IconFillSquareSolid = forwardRef(SvgFillsquare)
+export const IconFillSquareSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFillsquare)
 export default IconFillSquareSolid

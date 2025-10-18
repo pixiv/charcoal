@@ -22,7 +22,7 @@ const SvgTransformrotationHandle = (
     />
   </svg>
 )
-export const IconTransformRotationHandle = forwardRef(
-  SvgTransformrotationHandle
-)
+export const IconTransformRotationHandle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTransformrotationHandle)
 export default IconTransformRotationHandle

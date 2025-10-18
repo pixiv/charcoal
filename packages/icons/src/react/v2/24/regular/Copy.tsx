@@ -19,5 +19,7 @@ const SvgCopy = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconCopy = forwardRef(SvgCopy)
+export const IconCopy: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCopy)
 export default IconCopy

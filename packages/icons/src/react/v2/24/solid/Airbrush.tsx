@@ -22,5 +22,7 @@ const SvgAirbrush = (
     />
   </svg>
 )
-export const IconAirbrushSolid = forwardRef(SvgAirbrush)
+export const IconAirbrushSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAirbrush)
 export default IconAirbrushSolid

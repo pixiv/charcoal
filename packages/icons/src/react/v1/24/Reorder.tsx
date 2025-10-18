@@ -20,5 +20,7 @@ const SvgReorder = (
     />
   </svg>
 )
-export const IconReorder24 = forwardRef(SvgReorder)
+export const IconReorder24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgReorder)
 export default IconReorder24

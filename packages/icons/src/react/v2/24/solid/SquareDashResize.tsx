@@ -22,5 +22,7 @@ const SvgSquaredashresize = (
     />
   </svg>
 )
-export const IconSquareDashResizeSolid = forwardRef(SvgSquaredashresize)
+export const IconSquareDashResizeSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSquaredashresize)
 export default IconSquareDashResizeSolid

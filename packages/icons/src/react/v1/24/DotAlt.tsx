@@ -17,5 +17,7 @@ const SvgDotAlt = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconDotAlt24 = forwardRef(SvgDotAlt)
+export const IconDotAlt24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDotAlt)
 export default IconDotAlt24

@@ -19,5 +19,7 @@ const SvgRuler = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconRuler = forwardRef(SvgRuler)
+export const IconRuler: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRuler)
 export default IconRuler

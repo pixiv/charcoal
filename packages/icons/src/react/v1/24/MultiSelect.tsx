@@ -22,5 +22,7 @@ const SvgMultiSelect = (
     />
   </svg>
 )
-export const IconMultiSelect24 = forwardRef(SvgMultiSelect)
+export const IconMultiSelect24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMultiSelect)
 export default IconMultiSelect24

@@ -22,5 +22,7 @@ const SvgOverlay = (
     />
   </svg>
 )
-export const IconOverlay24 = forwardRef(SvgOverlay)
+export const IconOverlay24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgOverlay)
 export default IconOverlay24

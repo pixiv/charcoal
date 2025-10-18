@@ -19,5 +19,7 @@ const SvgUpload = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconUpload32 = forwardRef(SvgUpload)
+export const IconUpload32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgUpload)
 export default IconUpload32

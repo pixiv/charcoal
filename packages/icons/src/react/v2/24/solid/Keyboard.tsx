@@ -22,5 +22,7 @@ const SvgKeyboard = (
     />
   </svg>
 )
-export const IconKeyboardSolid = forwardRef(SvgKeyboard)
+export const IconKeyboardSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgKeyboard)
 export default IconKeyboardSolid

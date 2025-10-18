@@ -22,5 +22,7 @@ const SvgXoctagon = (
     />
   </svg>
 )
-export const IconXOctagonSolid = forwardRef(SvgXoctagon)
+export const IconXOctagonSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgXoctagon)
 export default IconXOctagonSolid

@@ -22,5 +22,7 @@ const SvgQuestionbubble = (
     />
   </svg>
 )
-export const IconQuestionBubble = forwardRef(SvgQuestionbubble)
+export const IconQuestionBubble: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgQuestionbubble)
 export default IconQuestionBubble

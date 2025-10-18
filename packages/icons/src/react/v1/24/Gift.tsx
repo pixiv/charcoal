@@ -19,5 +19,7 @@ const SvgGift = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconGift24 = forwardRef(SvgGift)
+export const IconGift24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgGift)
 export default IconGift24

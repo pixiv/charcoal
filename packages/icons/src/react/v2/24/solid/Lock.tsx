@@ -19,5 +19,7 @@ const SvgLock = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconLockSolid = forwardRef(SvgLock)
+export const IconLockSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLock)
 export default IconLockSolid

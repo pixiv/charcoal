@@ -22,5 +22,7 @@ const SvgHashtag = (
     />
   </svg>
 )
-export const IconHashtag24 = forwardRef(SvgHashtag)
+export const IconHashtag24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHashtag)
 export default IconHashtag24

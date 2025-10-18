@@ -22,5 +22,7 @@ const SvgFlipvertical = (
     />
   </svg>
 )
-export const IconFlipVerticalSolid = forwardRef(SvgFlipvertical)
+export const IconFlipVerticalSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFlipvertical)
 export default IconFlipVerticalSolid

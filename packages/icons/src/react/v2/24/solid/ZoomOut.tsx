@@ -22,5 +22,7 @@ const SvgZoomOut = (
     />
   </svg>
 )
-export const IconZoomOutSolid = forwardRef(SvgZoomOut)
+export const IconZoomOutSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgZoomOut)
 export default IconZoomOutSolid

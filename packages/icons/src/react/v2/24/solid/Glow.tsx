@@ -19,5 +19,7 @@ const SvgGlow = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconGlowSolid = forwardRef(SvgGlow)
+export const IconGlowSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgGlow)
 export default IconGlowSolid

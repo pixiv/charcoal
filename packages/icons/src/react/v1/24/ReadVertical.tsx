@@ -30,5 +30,7 @@ const SvgReadVertical = (
     />
   </svg>
 )
-export const IconReadVertical24 = forwardRef(SvgReadVertical)
+export const IconReadVertical24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgReadVertical)
 export default IconReadVertical24

@@ -19,5 +19,7 @@ const SvgShrink = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconShrink = forwardRef(SvgShrink)
+export const IconShrink: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShrink)
 export default IconShrink

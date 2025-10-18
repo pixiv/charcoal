@@ -22,5 +22,7 @@ const SvgPenciltext = (
     />
   </svg>
 )
-export const IconPencilTextSolid = forwardRef(SvgPenciltext)
+export const IconPencilTextSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPenciltext)
 export default IconPencilTextSolid

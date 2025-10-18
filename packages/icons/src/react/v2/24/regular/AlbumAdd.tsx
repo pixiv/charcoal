@@ -22,5 +22,7 @@ const SvgAlbumadd = (
     />
   </svg>
 )
-export const IconAlbumAdd = forwardRef(SvgAlbumadd)
+export const IconAlbumAdd: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAlbumadd)
 export default IconAlbumAdd

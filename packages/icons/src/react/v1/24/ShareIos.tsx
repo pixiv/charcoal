@@ -24,5 +24,7 @@ const SvgShareIos = (
     />
   </svg>
 )
-export const IconShareIos24 = forwardRef(SvgShareIos)
+export const IconShareIos24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShareIos)
 export default IconShareIos24

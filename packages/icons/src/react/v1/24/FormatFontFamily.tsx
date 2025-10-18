@@ -24,5 +24,7 @@ const SvgFormatFontFamily = (
     />
   </svg>
 )
-export const IconFormatFontFamily24 = forwardRef(SvgFormatFontFamily)
+export const IconFormatFontFamily24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatFontFamily)
 export default IconFormatFontFamily24

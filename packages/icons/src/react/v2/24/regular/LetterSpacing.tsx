@@ -22,5 +22,7 @@ const SvgLetterSpacing = (
     />
   </svg>
 )
-export const IconLetterSpacing = forwardRef(SvgLetterSpacing)
+export const IconLetterSpacing: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLetterSpacing)
 export default IconLetterSpacing

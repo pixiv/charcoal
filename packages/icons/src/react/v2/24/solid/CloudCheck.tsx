@@ -22,5 +22,7 @@ const SvgCloudcheck = (
     />
   </svg>
 )
-export const IconCloudCheckSolid = forwardRef(SvgCloudcheck)
+export const IconCloudCheckSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCloudcheck)
 export default IconCloudCheckSolid

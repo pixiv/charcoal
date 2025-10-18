@@ -22,5 +22,7 @@ const SvgOpenInNew = (
     />
   </svg>
 )
-export const IconOpenInNew = forwardRef(SvgOpenInNew)
+export const IconOpenInNew: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgOpenInNew)
 export default IconOpenInNew

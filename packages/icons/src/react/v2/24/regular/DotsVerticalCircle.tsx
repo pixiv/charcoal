@@ -22,5 +22,7 @@ const SvgDotsverticalcircle = (
     />
   </svg>
 )
-export const IconDotsVerticalCircle = forwardRef(SvgDotsverticalcircle)
+export const IconDotsVerticalCircle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDotsverticalcircle)
 export default IconDotsVerticalCircle

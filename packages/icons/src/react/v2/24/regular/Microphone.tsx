@@ -22,5 +22,7 @@ const SvgMicrophone = (
     />
   </svg>
 )
-export const IconMicrophone = forwardRef(SvgMicrophone)
+export const IconMicrophone: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMicrophone)
 export default IconMicrophone

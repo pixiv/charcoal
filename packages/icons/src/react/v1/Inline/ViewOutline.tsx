@@ -28,5 +28,7 @@ const SvgViewOutline = (
     />
   </svg>
 )
-export const IconViewOutlineInline = forwardRef(SvgViewOutline)
+export const IconViewOutlineInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewOutline)
 export default IconViewOutlineInline

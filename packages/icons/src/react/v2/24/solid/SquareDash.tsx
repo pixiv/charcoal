@@ -22,5 +22,7 @@ const SvgSquaredash = (
     />
   </svg>
 )
-export const IconSquareDashSolid = forwardRef(SvgSquaredash)
+export const IconSquareDashSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSquaredash)
 export default IconSquareDashSolid

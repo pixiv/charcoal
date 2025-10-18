@@ -28,5 +28,7 @@ const SvgRotate90DegreesCc = (
     />
   </svg>
 )
-export const IconRotate90DegreesCc24 = forwardRef(SvgRotate90DegreesCc)
+export const IconRotate90DegreesCc24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRotate90DegreesCc)
 export default IconRotate90DegreesCc24

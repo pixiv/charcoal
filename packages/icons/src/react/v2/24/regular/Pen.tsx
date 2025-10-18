@@ -19,5 +19,7 @@ const SvgPen = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPen = forwardRef(SvgPen)
+export const IconPen: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPen)
 export default IconPen

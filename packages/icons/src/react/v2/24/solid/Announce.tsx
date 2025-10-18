@@ -22,5 +22,7 @@ const SvgAnnounce = (
     />
   </svg>
 )
-export const IconAnnounceSolid = forwardRef(SvgAnnounce)
+export const IconAnnounceSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAnnounce)
 export default IconAnnounceSolid

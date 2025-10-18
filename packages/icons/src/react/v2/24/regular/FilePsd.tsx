@@ -22,5 +22,7 @@ const SvgFilepsd = (
     />
   </svg>
 )
-export const IconFilePsd = forwardRef(SvgFilepsd)
+export const IconFilePsd: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFilepsd)
 export default IconFilePsd

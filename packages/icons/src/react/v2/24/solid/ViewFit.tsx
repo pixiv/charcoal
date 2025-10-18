@@ -28,5 +28,7 @@ const SvgViewfit = (
     />
   </svg>
 )
-export const IconViewFitSolid = forwardRef(SvgViewfit)
+export const IconViewFitSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewfit)
 export default IconViewFitSolid

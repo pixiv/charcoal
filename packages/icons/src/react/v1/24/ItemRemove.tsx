@@ -22,5 +22,7 @@ const SvgItemRemove = (
     />
   </svg>
 )
-export const IconItemRemove24 = forwardRef(SvgItemRemove)
+export const IconItemRemove24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgItemRemove)
 export default IconItemRemove24

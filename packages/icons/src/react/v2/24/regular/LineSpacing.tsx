@@ -22,5 +22,7 @@ const SvgLineSpacing = (
     />
   </svg>
 )
-export const IconLineSpacing = forwardRef(SvgLineSpacing)
+export const IconLineSpacing: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLineSpacing)
 export default IconLineSpacing

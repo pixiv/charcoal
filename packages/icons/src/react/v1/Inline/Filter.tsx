@@ -17,5 +17,7 @@ const SvgFilter = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconFilterInline = forwardRef(SvgFilter)
+export const IconFilterInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFilter)
 export default IconFilterInline

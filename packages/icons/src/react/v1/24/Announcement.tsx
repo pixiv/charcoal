@@ -26,5 +26,7 @@ const SvgAnnouncement = (
     />
   </svg>
 )
-export const IconAnnouncement24 = forwardRef(SvgAnnouncement)
+export const IconAnnouncement24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAnnouncement)
 export default IconAnnouncement24

@@ -22,5 +22,7 @@ const SvgRabbitearBent = (
     />
   </svg>
 )
-export const IconRabbitEarBent = forwardRef(SvgRabbitearBent)
+export const IconRabbitEarBent: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRabbitearBent)
 export default IconRabbitEarBent

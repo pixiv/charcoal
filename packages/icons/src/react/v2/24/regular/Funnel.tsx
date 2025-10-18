@@ -19,5 +19,7 @@ const SvgFunnel = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconFunnel = forwardRef(SvgFunnel)
+export const IconFunnel: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFunnel)
 export default IconFunnel

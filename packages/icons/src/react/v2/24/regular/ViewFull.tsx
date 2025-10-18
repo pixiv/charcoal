@@ -22,5 +22,7 @@ const SvgViewfull = (
     />
   </svg>
 )
-export const IconViewFull = forwardRef(SvgViewfull)
+export const IconViewFull: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewfull)
 export default IconViewFull

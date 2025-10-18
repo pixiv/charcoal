@@ -22,5 +22,7 @@ const SvgLayeropacity = (
     />
   </svg>
 )
-export const IconLayerOpacity = forwardRef(SvgLayeropacity)
+export const IconLayerOpacity: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayeropacity)
 export default IconLayerOpacity

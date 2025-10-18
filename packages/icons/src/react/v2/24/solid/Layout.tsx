@@ -19,5 +19,7 @@ const SvgLayout = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconLayoutSolid = forwardRef(SvgLayout)
+export const IconLayoutSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayout)
 export default IconLayoutSolid

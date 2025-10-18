@@ -19,5 +19,7 @@ const SvgCloud = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconCloud = forwardRef(SvgCloud)
+export const IconCloud: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCloud)
 export default IconCloud

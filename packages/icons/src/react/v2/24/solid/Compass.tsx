@@ -22,5 +22,7 @@ const SvgCompass = (
     />
   </svg>
 )
-export const IconCompassSolid = forwardRef(SvgCompass)
+export const IconCompassSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCompass)
 export default IconCompassSolid

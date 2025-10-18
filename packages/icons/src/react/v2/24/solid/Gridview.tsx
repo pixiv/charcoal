@@ -22,5 +22,7 @@ const SvgGridview = (
     />
   </svg>
 )
-export const IconGridviewSolid = forwardRef(SvgGridview)
+export const IconGridviewSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgGridview)
 export default IconGridviewSolid

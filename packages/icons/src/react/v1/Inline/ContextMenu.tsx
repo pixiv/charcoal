@@ -20,5 +20,7 @@ const SvgContextMenu = (
     />
   </svg>
 )
-export const IconContextMenuInline = forwardRef(SvgContextMenu)
+export const IconContextMenuInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgContextMenu)
 export default IconContextMenuInline

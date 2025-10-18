@@ -36,5 +36,7 @@ const SvgLikeOnPrivate = (
     />
   </svg>
 )
-export const IconLikeOnPrivate32 = forwardRef(SvgLikeOnPrivate)
+export const IconLikeOnPrivate32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLikeOnPrivate)
 export default IconLikeOnPrivate32

@@ -33,5 +33,7 @@ const SvgCharacterreplace = (
     />
   </svg>
 )
-export const IconCharacterReplaceSolid = forwardRef(SvgCharacterreplace)
+export const IconCharacterReplaceSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCharacterreplace)
 export default IconCharacterReplaceSolid

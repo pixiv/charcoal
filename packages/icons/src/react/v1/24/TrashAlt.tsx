@@ -23,5 +23,7 @@ const SvgTrashAlt = (
     />
   </svg>
 )
-export const IconTrashAlt24 = forwardRef(SvgTrashAlt)
+export const IconTrashAlt24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTrashAlt)
 export default IconTrashAlt24

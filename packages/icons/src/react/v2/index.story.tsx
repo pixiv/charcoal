@@ -1,3 +1,6 @@
+/* eslint-disable */
+// disable eslint for large genareted file
+
 import { IconArrowLeftDown16 } from './16/regular/ArrowLeftDown'
 import { IconChevronDown16 } from './16/regular/ChevronDown'
 import { IconChevronLeft16 } from './16/regular/ChevronLeft'
@@ -525,6 +528,7 @@ import { IconXCircleSolid } from './24/solid/XCircle'
 import { IconXOctagonSolid } from './24/solid/XOctagon'
 import { IconZoomInSolid } from './24/solid/ZoomIn'
 import { IconZoomOutSolid } from './24/solid/ZoomOut'
+import { JSX } from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 export default {
@@ -534,7 +538,7 @@ export default {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
         <div className="icons-grid">

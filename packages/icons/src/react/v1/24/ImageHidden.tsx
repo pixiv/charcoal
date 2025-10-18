@@ -30,5 +30,7 @@ const SvgImageHidden = (
     />
   </svg>
 )
-export const IconImageHidden24 = forwardRef(SvgImageHidden)
+export const IconImageHidden24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgImageHidden)
 export default IconImageHidden24

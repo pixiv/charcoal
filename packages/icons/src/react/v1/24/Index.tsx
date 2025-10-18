@@ -20,5 +20,7 @@ const SvgIndex = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     <rect x={4} y={15.5} width={3} height={3} rx={1.5} fill="currentColor" />
   </svg>
 )
-export const IconIndex24 = forwardRef(SvgIndex)
+export const IconIndex24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgIndex)
 export default IconIndex24

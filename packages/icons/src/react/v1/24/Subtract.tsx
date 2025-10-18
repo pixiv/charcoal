@@ -17,5 +17,7 @@ const SvgSubtract = (
     <path d="M18 10a2 2 0 110 4H6a2 2 0 110-4h12z" fill="currentColor" />
   </svg>
 )
-export const IconSubtract24 = forwardRef(SvgSubtract)
+export const IconSubtract24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSubtract)
 export default IconSubtract24

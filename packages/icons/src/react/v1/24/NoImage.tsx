@@ -22,5 +22,7 @@ const SvgNoImage = (
     />
   </svg>
 )
-export const IconNoImage24 = forwardRef(SvgNoImage)
+export const IconNoImage24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNoImage)
 export default IconNoImage24

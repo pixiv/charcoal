@@ -22,5 +22,7 @@ const SvgInvoice = (
     />
   </svg>
 )
-export const IconInvoiceSolid = forwardRef(SvgInvoice)
+export const IconInvoiceSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgInvoice)
 export default IconInvoiceSolid

@@ -22,5 +22,7 @@ const SvgColorSets = (
     />
   </svg>
 )
-export const IconColorSets = forwardRef(SvgColorSets)
+export const IconColorSets: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgColorSets)
 export default IconColorSets

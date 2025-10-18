@@ -22,5 +22,7 @@ const SvgLinkclear = (
     />
   </svg>
 )
-export const IconLinkClear = forwardRef(SvgLinkclear)
+export const IconLinkClear: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLinkclear)
 export default IconLinkClear

@@ -30,5 +30,7 @@ const SvgCollection = (
     />
   </svg>
 )
-export const IconCollection24 = forwardRef(SvgCollection)
+export const IconCollection24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCollection)
 export default IconCollection24

@@ -22,5 +22,7 @@ const SvgBodyedit = (
     />
   </svg>
 )
-export const IconBodyEdit = forwardRef(SvgBodyedit)
+export const IconBodyEdit: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBodyedit)
 export default IconBodyEdit

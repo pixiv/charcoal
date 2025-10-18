@@ -22,5 +22,7 @@ const SvgDescription = (
     />
   </svg>
 )
-export const IconDescription24 = forwardRef(SvgDescription)
+export const IconDescription24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDescription)
 export default IconDescription24

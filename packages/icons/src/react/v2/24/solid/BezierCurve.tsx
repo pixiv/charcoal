@@ -22,5 +22,7 @@ const SvgBezierCurve = (
     />
   </svg>
 )
-export const IconBezierCurveSolid = forwardRef(SvgBezierCurve)
+export const IconBezierCurveSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBezierCurve)
 export default IconBezierCurveSolid

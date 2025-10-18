@@ -133,7 +133,7 @@ ${classNames
   .map(
     (icon) => `
   <div>
-    <div class="${icon}" aria-label=".${icon}" role="img"></div>
+    <div class="${icon}" aria-label=".${icon}" role="img" />
     <code>.${icon}</code>
   </div>
 `
@@ -164,14 +164,19 @@ ${classNames
   )
   await writeFile(
     path.join(outDir, 'index.story.tsx'),
-    `export default {
+    `/* eslint-disable */
+// disable eslint for large genareted file
+
+import { JSX } from "react"
+
+export default {
   title: 'Icons/${version}/css',
   parameters: {
     storyshots: {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
        <style>{\`${cssContent}\`}</style>

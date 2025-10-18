@@ -22,5 +22,7 @@ const SvgCheckcircle = (
     />
   </svg>
 )
-export const IconCheckCircle = forwardRef(SvgCheckcircle)
+export const IconCheckCircle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCheckcircle)
 export default IconCheckCircle

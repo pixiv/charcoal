@@ -22,5 +22,7 @@ const SvgImagereplace = (
     />
   </svg>
 )
-export const IconImageReplace = forwardRef(SvgImagereplace)
+export const IconImageReplace: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgImagereplace)
 export default IconImageReplace

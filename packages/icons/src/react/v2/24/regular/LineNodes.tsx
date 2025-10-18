@@ -22,5 +22,7 @@ const SvgLinenodes = (
     />
   </svg>
 )
-export const IconLineNodes = forwardRef(SvgLinenodes)
+export const IconLineNodes: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLinenodes)
 export default IconLineNodes

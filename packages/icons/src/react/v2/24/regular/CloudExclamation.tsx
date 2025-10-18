@@ -22,5 +22,7 @@ const SvgCloudexclamation = (
     />
   </svg>
 )
-export const IconCloudExclamation = forwardRef(SvgCloudexclamation)
+export const IconCloudExclamation: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCloudexclamation)
 export default IconCloudExclamation

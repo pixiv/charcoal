@@ -22,5 +22,7 @@ const SvgImageResponse = (
     />
   </svg>
 )
-export const IconImageResponseInline = forwardRef(SvgImageResponse)
+export const IconImageResponseInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgImageResponse)
 export default IconImageResponseInline

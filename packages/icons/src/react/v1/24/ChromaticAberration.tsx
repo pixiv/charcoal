@@ -22,5 +22,7 @@ const SvgChromaticAberration = (
     />
   </svg>
 )
-export const IconChromaticAberration24 = forwardRef(SvgChromaticAberration)
+export const IconChromaticAberration24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgChromaticAberration)
 export default IconChromaticAberration24

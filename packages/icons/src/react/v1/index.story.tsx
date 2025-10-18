@@ -1,3 +1,6 @@
+/* eslint-disable */
+// disable eslint for large genareted file
+
 import { IconAdd16 } from './16/Add'
 import { IconArchive16 } from './16/Archive'
 import { IconArrowDown16 } from './16/ArrowDown'
@@ -9,6 +12,7 @@ import { IconBookmarkOn16 } from './16/BookmarkOn'
 import { IconCheck16 } from './16/Check'
 import { IconComment16 } from './16/Comment'
 import { IconDot16 } from './16/Dot'
+import { IconDown16 } from './16/Down'
 import { IconError16 } from './16/Error'
 import { IconFilter16 } from './16/Filter'
 import { IconImageResponse16 } from './16/ImageResponse'
@@ -24,6 +28,7 @@ import { IconRemove16 } from './16/Remove'
 import { IconSearch16 } from './16/Search'
 import { IconSmile16 } from './16/Smile'
 import { IconSpeaker16 } from './16/Speaker'
+import { IconUp16 } from './16/Up'
 import { IconView16 } from './16/View'
 import { IconWarning16 } from './16/Warning'
 import { IconAdd24 } from './24/Add'
@@ -278,6 +283,7 @@ import { IconSmileOnInline } from './Inline/SmileOn'
 import { IconUsersInline } from './Inline/Users'
 import { IconViewInline } from './Inline/View'
 import { IconViewOutlineInline } from './Inline/ViewOutline'
+import { JSX } from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 export default {
@@ -287,7 +293,7 @@ export default {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
         <div className="icons-grid">
@@ -634,6 +640,11 @@ export default {
           <div>
             <IconDotAlt24 />
             <code>&lt;IconDotAlt24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconDown16 />
+            <code>&lt;IconDown16 /&gt;</code>
           </div>
 
           <div>
@@ -1589,6 +1600,11 @@ export default {
           <div>
             <IconUndo32 />
             <code>&lt;IconUndo32 /&gt;</code>
+          </div>
+
+          <div>
+            <IconUp16 />
+            <code>&lt;IconUp16 /&gt;</code>
           </div>
 
           <div>

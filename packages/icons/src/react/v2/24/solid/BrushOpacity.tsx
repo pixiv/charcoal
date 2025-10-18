@@ -22,5 +22,7 @@ const SvgBrushopacity = (
     />
   </svg>
 )
-export const IconBrushOpacitySolid = forwardRef(SvgBrushopacity)
+export const IconBrushOpacitySolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBrushopacity)
 export default IconBrushOpacitySolid

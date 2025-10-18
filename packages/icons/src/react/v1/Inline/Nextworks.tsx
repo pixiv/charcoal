@@ -20,5 +20,7 @@ const SvgNextworks = (
     />
   </svg>
 )
-export const IconNextworksInline = forwardRef(SvgNextworks)
+export const IconNextworksInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNextworks)
 export default IconNextworksInline

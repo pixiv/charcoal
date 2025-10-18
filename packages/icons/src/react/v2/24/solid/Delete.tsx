@@ -19,5 +19,7 @@ const SvgDelete = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconDeleteSolid = forwardRef(SvgDelete)
+export const IconDeleteSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDelete)
 export default IconDeleteSolid

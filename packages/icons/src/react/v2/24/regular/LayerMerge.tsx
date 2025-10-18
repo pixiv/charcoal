@@ -22,5 +22,7 @@ const SvgLayermerge = (
     />
   </svg>
 )
-export const IconLayerMerge = forwardRef(SvgLayermerge)
+export const IconLayerMerge: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayermerge)
 export default IconLayerMerge

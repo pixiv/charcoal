@@ -19,5 +19,7 @@ const SvgSync = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconSyncSolid = forwardRef(SvgSync)
+export const IconSyncSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSync)
 export default IconSyncSolid

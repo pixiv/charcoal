@@ -22,5 +22,7 @@ const SvgChatBot = (
     />
   </svg>
 )
-export const IconChatBot24 = forwardRef(SvgChatBot)
+export const IconChatBot24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgChatBot)
 export default IconChatBot24

@@ -22,5 +22,7 @@ const SvgImageoff = (
     />
   </svg>
 )
-export const IconImageOff = forwardRef(SvgImageoff)
+export const IconImageOff: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgImageoff)
 export default IconImageOff

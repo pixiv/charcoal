@@ -22,5 +22,7 @@ const SvgImagecontain = (
     />
   </svg>
 )
-export const IconImageContainSolid = forwardRef(SvgImagecontain)
+export const IconImageContainSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgImagecontain)
 export default IconImageContainSolid

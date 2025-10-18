@@ -19,5 +19,7 @@ const SvgRename = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconRename = forwardRef(SvgRename)
+export const IconRename: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRename)
 export default IconRename

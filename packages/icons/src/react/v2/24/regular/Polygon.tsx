@@ -22,5 +22,7 @@ const SvgPolygon = (
     />
   </svg>
 )
-export const IconPolygon = forwardRef(SvgPolygon)
+export const IconPolygon: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPolygon)
 export default IconPolygon

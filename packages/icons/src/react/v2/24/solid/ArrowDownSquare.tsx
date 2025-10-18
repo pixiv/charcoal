@@ -22,5 +22,7 @@ const SvgArrowdownsquare = (
     />
   </svg>
 )
-export const IconArrowDownSquareSolid = forwardRef(SvgArrowdownsquare)
+export const IconArrowDownSquareSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArrowdownsquare)
 export default IconArrowDownSquareSolid

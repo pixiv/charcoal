@@ -17,5 +17,7 @@ const SvgPan = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPan32 = forwardRef(SvgPan)
+export const IconPan32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPan)
 export default IconPan32

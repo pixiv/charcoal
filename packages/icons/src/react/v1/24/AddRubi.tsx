@@ -20,5 +20,7 @@ const SvgAddRubi = (
     />
   </svg>
 )
-export const IconAddRubi24 = forwardRef(SvgAddRubi)
+export const IconAddRubi24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAddRubi)
 export default IconAddRubi24

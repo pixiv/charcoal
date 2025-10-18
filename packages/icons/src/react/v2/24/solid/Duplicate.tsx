@@ -22,5 +22,7 @@ const SvgDuplicate = (
     />
   </svg>
 )
-export const IconDuplicateSolid = forwardRef(SvgDuplicate)
+export const IconDuplicateSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDuplicate)
 export default IconDuplicateSolid

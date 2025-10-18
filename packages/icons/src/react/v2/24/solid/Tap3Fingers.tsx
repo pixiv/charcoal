@@ -22,5 +22,7 @@ const SvgTap3Fingers = (
     />
   </svg>
 )
-export const IconTap3FingersSolid = forwardRef(SvgTap3Fingers)
+export const IconTap3FingersSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTap3Fingers)
 export default IconTap3FingersSolid

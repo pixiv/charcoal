@@ -22,5 +22,7 @@ const SvgDistortion = (
     />
   </svg>
 )
-export const IconDistortion = forwardRef(SvgDistortion)
+export const IconDistortion: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDistortion)
 export default IconDistortion

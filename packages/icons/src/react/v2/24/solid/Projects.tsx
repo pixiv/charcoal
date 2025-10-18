@@ -22,5 +22,7 @@ const SvgProjects = (
     />
   </svg>
 )
-export const IconProjectsSolid = forwardRef(SvgProjects)
+export const IconProjectsSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgProjects)
 export default IconProjectsSolid

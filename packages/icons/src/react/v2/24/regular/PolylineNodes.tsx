@@ -22,5 +22,7 @@ const SvgPolylinenodes = (
     />
   </svg>
 )
-export const IconPolylineNodes = forwardRef(SvgPolylinenodes)
+export const IconPolylineNodes: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPolylinenodes)
 export default IconPolylineNodes

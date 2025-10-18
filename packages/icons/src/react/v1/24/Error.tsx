@@ -19,5 +19,7 @@ const SvgError = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconError24 = forwardRef(SvgError)
+export const IconError24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgError)
 export default IconError24

@@ -22,5 +22,7 @@ const SvgSoftEdge = (
     />
   </svg>
 )
-export const IconSoftEdge = forwardRef(SvgSoftEdge)
+export const IconSoftEdge: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSoftEdge)
 export default IconSoftEdge

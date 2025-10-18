@@ -22,5 +22,7 @@ const SvgScatter = (
     />
   </svg>
 )
-export const IconScatterSolid = forwardRef(SvgScatter)
+export const IconScatterSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgScatter)
 export default IconScatterSolid

@@ -22,5 +22,7 @@ const SvgLayervector = (
     />
   </svg>
 )
-export const IconLayerVector = forwardRef(SvgLayervector)
+export const IconLayerVector: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayervector)
 export default IconLayerVector

@@ -22,5 +22,7 @@ const SvgImagecover = (
     />
   </svg>
 )
-export const IconImageCoverSolid = forwardRef(SvgImagecover)
+export const IconImageCoverSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgImagecover)
 export default IconImageCoverSolid

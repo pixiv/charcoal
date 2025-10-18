@@ -22,5 +22,7 @@ const SvgTransform = (
     />
   </svg>
 )
-export const IconTransformSolid = forwardRef(SvgTransform)
+export const IconTransformSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTransform)
 export default IconTransformSolid

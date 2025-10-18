@@ -19,5 +19,7 @@ const SvgFill = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconFillSolid = forwardRef(SvgFill)
+export const IconFillSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFill)
 export default IconFillSolid

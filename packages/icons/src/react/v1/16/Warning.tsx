@@ -22,5 +22,7 @@ const SvgWarning = (
     />
   </svg>
 )
-export const IconWarning16 = forwardRef(SvgWarning)
+export const IconWarning16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgWarning)
 export default IconWarning16

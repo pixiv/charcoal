@@ -22,5 +22,7 @@ const SvgFileadd = (
     />
   </svg>
 )
-export const IconFileAdd = forwardRef(SvgFileadd)
+export const IconFileAdd: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFileadd)
 export default IconFileAdd

@@ -22,5 +22,7 @@ const SvgDust = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconDust24 = forwardRef(SvgDust)
+export const IconDust24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDust)
 export default IconDust24

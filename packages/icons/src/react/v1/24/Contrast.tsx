@@ -22,5 +22,7 @@ const SvgContrast = (
     />
   </svg>
 )
-export const IconContrast24 = forwardRef(SvgContrast)
+export const IconContrast24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgContrast)
 export default IconContrast24

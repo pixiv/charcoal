@@ -22,5 +22,7 @@ const SvgLayerMask = (
     />
   </svg>
 )
-export const IconLayerMask = forwardRef(SvgLayerMask)
+export const IconLayerMask: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayerMask)
 export default IconLayerMask

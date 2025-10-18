@@ -22,5 +22,7 @@ const SvgShutter = (
     />
   </svg>
 )
-export const IconShutter = forwardRef(SvgShutter)
+export const IconShutter: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShutter)
 export default IconShutter
