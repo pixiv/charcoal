@@ -7,4 +7,4 @@ export const BREAKPOINT = {
   [8]: columnSystem(8, COLUMN_UNIT, GUTTER_UNIT) + HORIZONTAL_MIN_MARGIN * 2,
   [10]: columnSystem(10, COLUMN_UNIT, GUTTER_UNIT) + HORIZONTAL_MIN_MARGIN * 2,
   [12]: columnSystem(12, COLUMN_UNIT, GUTTER_UNIT) + HORIZONTAL_MIN_MARGIN * 2,
-} as const
+} as { 10: 1160; 12: 1368; 6: 744; 8: 952 }
