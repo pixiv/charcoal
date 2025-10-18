@@ -263,25 +263,6 @@ importers:
         specifier: ^7.0.3
         version: 7.2.3
 
-  packages/esbuild-plugin-styled-components:
-    dependencies:
-      '@babel/core':
-        specifier: ^7.23.9
-        version: 7.26.10
-      babel-plugin-styled-components:
-        specifier: ^2.1.4
-        version: 2.1.4(@babel/core@7.26.10)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))(supports-color@5.5.0)
-    devDependencies:
-      '@babel/parser':
-        specifier: ^7.23.9
-        version: 7.27.0
-      '@types/babel__core':
-        specifier: ^7.20.5
-        version: 7.20.5
-      esbuild:
-        specifier: ^0.17.19
-        version: 0.17.19
-
   packages/foundation:
     devDependencies:
       npm-run-all:
@@ -609,9 +590,9 @@ importers:
       '@babel/core':
         specifier: ^7.23.9
         version: 7.26.10
-      '@charcoal-ui/esbuild-plugin-styled-components':
-        specifier: workspace:*
-        version: link:../esbuild-plugin-styled-components
+      '@babel/parser':
+        specifier: ^7.23.9
+        version: 7.28.4
       '@storybook/addon-actions':
         specifier: ^7.4.1
         version: 7.6.20
@@ -657,6 +638,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.3.1
         version: 4.3.4(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))
+      babel-plugin-styled-components:
+        specifier: ^2.1.4
+        version: 2.1.4(@babel/core@7.26.10)(styled-components@5.3.11(@babel/core@7.26.10)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))(supports-color@5.5.0)
       jsdom:
         specifier: ^24.1.0
         version: 24.1.3
@@ -1033,11 +1017,6 @@ packages:
   '@babel/helpers@7.27.0':
     resolution: {integrity: sha512-U5eyP/CTFPuNE3qk+WZMxFkp/4zUzdceQlfzf7DdGdhp+Fezd7HD+i8Y24ZuTMKX3wQBld449jijbGq6OdGNQg==}
     engines: {node: '>=6.9.0'}
-
-  '@babel/parser@7.27.0':
-    resolution: {integrity: sha512-iaepho73/2Pz7w2eMS0Q5f83+0RKI7i4xmiYeBmDzfRVbQtTOG7Ts0S4HzJVsTMGI9keU8rNfuZr8DKfSt7Yyg==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
 
   '@babel/parser@7.28.4':
     resolution: {integrity: sha512-yZbBqeM6TkpP9du/I2pUZnJsRMGGvOuIrhjzC1AwHwW+6he4mni6Bp/m8ijn0iOuZuPI2BfkCoSRunpyjnrQKg==}
@@ -12367,7 +12346,7 @@ snapshots:
       '@babel/helper-compilation-targets': 7.27.0
       '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.10)
       '@babel/helpers': 7.27.0
-      '@babel/parser': 7.27.0
+      '@babel/parser': 7.28.4
       '@babel/template': 7.27.0
       '@babel/traverse': 7.27.0(supports-color@5.5.0)
       '@babel/types': 7.27.0
@@ -12381,7 +12360,7 @@ snapshots:
 
   '@babel/generator@7.27.0':
     dependencies:
-      '@babel/parser': 7.27.0
+      '@babel/parser': 7.28.4
       '@babel/types': 7.27.0
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
@@ -12397,7 +12376,7 @@ snapshots:
 
   '@babel/helper-annotate-as-pure@7.25.9':
     dependencies:
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
 
   '@babel/helper-compilation-targets@7.27.0':
     dependencies:
@@ -12513,11 +12492,7 @@ snapshots:
   '@babel/helpers@7.27.0':
     dependencies:
       '@babel/template': 7.27.0
-      '@babel/types': 7.27.0
-
-  '@babel/parser@7.27.0':
-    dependencies:
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
 
   '@babel/parser@7.28.4':
     dependencies:
@@ -13176,14 +13151,14 @@ snapshots:
   '@babel/template@7.27.0':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/parser': 7.27.0
+      '@babel/parser': 7.28.4
       '@babel/types': 7.27.0
 
   '@babel/traverse@7.27.0(supports-color@5.5.0)':
     dependencies:
       '@babel/code-frame': 7.26.2
       '@babel/generator': 7.27.0
-      '@babel/parser': 7.27.0
+      '@babel/parser': 7.28.4
       '@babel/template': 7.27.0
       '@babel/types': 7.27.0
       debug: 4.4.0(supports-color@5.5.0)
@@ -16650,7 +16625,7 @@ snapshots:
 
   '@svgr/hast-util-to-babel-ast@8.0.0':
     dependencies:
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
       entities: 4.5.0
 
   '@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(typescript@5.9.3))':
@@ -16857,7 +16832,7 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.27.0
+      '@babel/parser': 7.28.4
       '@babel/types': 7.27.0
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
@@ -16865,16 +16840,16 @@ snapshots:
 
   '@types/babel__generator@7.6.8':
     dependencies:
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.27.0
-      '@babel/types': 7.27.0
+      '@babel/parser': 7.28.4
+      '@babel/types': 7.28.4
 
   '@types/babel__traverse@7.20.6':
     dependencies:
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
 
   '@types/body-parser@1.19.5':
     dependencies:
