@@ -42,7 +42,6 @@ export default defineConfig([
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
-      'react/self-closing-comp': 'off',
       curly: 'off',
     },
     linterOptions: {

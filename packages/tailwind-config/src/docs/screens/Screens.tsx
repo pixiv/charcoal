@@ -9,7 +9,7 @@ export const Screens: React.FC = () => {
           typeof value === 'string' && (
             <div key={screenName}>
               <p className="typography-14 text-text2">{screenName}</p>
-              <div className="bg-surface4 h-64" style={{ width: value }}></div>
+              <div className="bg-surface4 h-64" style={{ width: value }} />
               <p className="typography-12 text-text3">
                 @media (<span className="text-text2">min-width: {value}</span>)
               </p>

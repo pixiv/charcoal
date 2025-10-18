@@ -8,7 +8,7 @@ export const Spacing: React.FC = () => {
         <div key={space}>
           <p className="typography-14 text-text2">p-{space}</p>
           <div className={`bg-surface3 p-${space} w-[min-content]`}>
-            <div className="bg-brand h-40" style={{ width: '40px' }}></div>
+            <div className="bg-brand h-40" style={{ width: '40px' }} />
           </div>
         </div>
       ))}
