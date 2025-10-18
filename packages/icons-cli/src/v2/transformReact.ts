@@ -156,7 +156,7 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
       return node
     }
 
-    return ts.visitNode(source, visitor)
+    return ts.visitNode(source, visitor) as ts.SourceFile
   }
 
   const printer = ts.createPrinter()

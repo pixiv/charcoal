@@ -19,6 +19,7 @@ const MenuItem = forwardRef(function MenuItem<
 ) {
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
   return (
+    // @ts-expect-error TODO: fix mismatch between MenuItemProps and ListItemProps
     <ListItem
       {...props}
       ref={ref}

@@ -1,6 +1,7 @@
 import { Octokit } from '@octokit/rest'
 import path from 'path'
 import { getChangedFiles } from './getChangedFiles'
+/// <reference types="@octokit/types" />
 
 type RefResponse = ReturnType<GithubClient['createBranch']> extends Promise<
   infer R
