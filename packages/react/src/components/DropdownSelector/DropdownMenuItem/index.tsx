@@ -27,7 +27,7 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
         className="charcoal-dropdown-selector-menu-item"
         data-selected={isSelected}
       >
-        {props.children}
+        {children}
       </span>
     </MenuItem>
   )

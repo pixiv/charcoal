@@ -26,6 +26,7 @@ const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
     const classNames = useClassNames('charcoal-radio-input', className)
 
     return (
+      // eslint-disable-next-line jsx-a11y/role-supports-aria-props
       <input
         className={classNames}
         ref={ref}

@@ -143,23 +143,23 @@ export const AriaDisabled: StoryObj<typeof Button> = {
       <h2>{`disabled={true}`}</h2>
       <div style={{ display: 'flex', gap: '8px' }}>
         <div>
-          <Button disabled={true}>属性なし</Button>
+          <Button disabled>属性なし</Button>
         </div>
         <div>
-          <Button aria-disabled disabled={true}>
+          <Button aria-disabled disabled>
             aria-disabled
           </Button>
         </div>
         <div>
           <Button
             aria-disabled="true"
-            disabled={true}
+            disabled
           >{`aria-disabled="true"`}</Button>
         </div>
         <div>
           <Button
             aria-disabled="false"
-            disabled={true}
+            disabled
           >{`aria-disabled="false"`}</Button>
         </div>
       </div>

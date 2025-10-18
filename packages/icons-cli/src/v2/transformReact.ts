@@ -1,5 +1,4 @@
 import { mustBeDefined } from '../utils'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import ts from 'typescript'
 import glob from 'fast-glob'
 import { readFile, writeFile } from 'fs-extra'

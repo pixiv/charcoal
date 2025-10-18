@@ -137,7 +137,7 @@ describe('MultiSelect', () => {
     let allOptions: HTMLInputElement[]
 
     beforeEach(() => {
-      render(<TestComponent selected={['option1']} parentDisabled={true} />)
+      render(<TestComponent selected={['option1']} parentDisabled />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -157,7 +157,7 @@ describe('MultiSelect', () => {
     let allOptions: HTMLInputElement[]
 
     beforeEach(() => {
-      render(<TestComponent selected={['option1']} readonly={true} />)
+      render(<TestComponent selected={['option1']} readonly />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -177,7 +177,7 @@ describe('MultiSelect', () => {
     let allOptions: HTMLInputElement[]
 
     beforeEach(() => {
-      render(<TestComponent selected={['option1']} invalid={true} />)
+      render(<TestComponent selected={['option1']} invalid />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')
@@ -197,7 +197,7 @@ describe('MultiSelect', () => {
     let option2: HTMLInputElement
 
     beforeEach(() => {
-      render(<TestComponent selected={[]} firstOptionDisabled={true} />)
+      render(<TestComponent selected={[]} firstOptionDisabled />)
 
       option1 = screen.getByDisplayValue('option1')
       option2 = screen.getByDisplayValue('option2')

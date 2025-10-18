@@ -5,9 +5,9 @@ import { useClassNames } from '../../_lib/useClassNames'
 
 import './index.css'
 
-const sizeMap = {
-  S: 32,
-  M: 40,
+type SizeMap = {
+  S: 32
+  M: 40
 }
 
 export type TagItemProps<T extends React.ElementType = 'button'> = {
@@ -16,7 +16,7 @@ export type TagItemProps<T extends React.ElementType = 'button'> = {
   bgColor?: string
   bgImage?: string
   status?: 'default' | 'active' | 'inactive'
-  size?: keyof typeof sizeMap
+  size?: keyof SizeMap
   /**
    * The component used for root element.
    * @type T extends React.ElementType = 'button'
