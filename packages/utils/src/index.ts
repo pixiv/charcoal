@@ -13,6 +13,7 @@ import type {
   ReplaceEffect,
   TypographyDescriptor,
 } from '@charcoal-ui/foundation'
+import type { Styles } from 'polished/lib/types/style'
 
 export const GRADIENT_DIRECTIONS = [
   'to top',
@@ -29,7 +30,7 @@ export function transparentGradient(
 ) {
   return function transparentGradient(
     direction: GradientDirection | object = defaultDirection
-  ) {
+  ): Styles {
     const transparent = rgba(color, 0)
     return linearGradient({
       colorStops: [color, transparent],
@@ -40,7 +41,7 @@ export function transparentGradient(
 }
 
 export function gradient(toDirection: GradientDirection = 'to bottom') {
-  return function toLinearGradient(value: GradientMaterial) {
+  return function toLinearGradient(value: GradientMaterial): Styles {
     return linearGradient({
       colorStops: value.map(({ color, ratio }) => `${color} ${ratio}%`),
       fallback: value[0]?.color,

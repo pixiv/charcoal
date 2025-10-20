@@ -2,20 +2,23 @@
   "name": "@charcoal-ui/utils",
   "version": "5.0.0-beta.2",
   "license": "Apache-2.0",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
-    "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs.js",
-    "default": "./dist/index.esm.js"
+    "types": {
+      "import": "./dist/index.d.ts",
+      "require": "./dist/index.d.cts",
+      "default": "./dist/index.d.ts"
+    },
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "run-p --print-label 'build:*'",
-    "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "build": "tsdown",
+    "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest --passWithNoTests"
   },
