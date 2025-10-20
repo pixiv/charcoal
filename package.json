@@ -18,7 +18,6 @@
     "test:image-snapshot": "TEST_RUNNER=vrt concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"http-server storybook-static --port 6006 --silent\" \"wait-on -t 30000 tcp:127.0.0.1:6006 && test-storybook --maxWorkers=2 ${*}\"",
     "test:a11y": "TEST_RUNNER=a11y concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"http-server storybook-static --port 6006 --silent\" \"wait-on -t 30000 tcp:127.0.0.1:6006 && test-storybook ${*}\"",
     "typecheck": "pnpm recursive run typecheck",
-    "typecheck:config": "tsc",
     "lint": "run-p 'lint:*'",
     "lint:eslint": "eslint . --max-warnings=0",
     "lint:prettier": "prettier . --check",
