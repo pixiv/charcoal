@@ -14,7 +14,7 @@ const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER
 const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME
 const GITHUB_DEFAULT_BRANCH = process.env.GITHUB_DEFAULT_BRANCH
 
-void yargs()
+void yargs(process.argv.slice(2))
   .scriptName('pullrequest-cli')
   .command(
     'github:pr',
