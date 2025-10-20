@@ -114,6 +114,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "tsdown": "0.15.6",
     "typescript": "5.9.3",
+    "rimraf": "^3.0.2",
     "vite": "^5.3.3",
     "vitest": "^2.0.1",
     "wait-on": "^7.2.0",

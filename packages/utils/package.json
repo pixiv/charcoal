@@ -22,12 +22,7 @@
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest --passWithNoTests"
   },
-  "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "tsup": "^6.5.0",
-    "vitest": "^2.0.2"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",
     "polished": "^4.1.4"
