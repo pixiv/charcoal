@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { light, dark, ThemeColor } from '..'
 import { useDarkMode } from '../../../../.storybook/use-dark-mode'
 
@@ -28,7 +29,7 @@ const textList: ColorProps[] = [
   'link2',
 ]
 
-export const ThemeColors = () => {
+export const ThemeColors = (): JSX.Element => {
   const isDark = useDarkMode()
   const theme = isDark ? dark : light
   theme.color.background1

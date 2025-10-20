@@ -16,7 +16,7 @@ const parseReferenceToken = (
 export const createReferenceTokenResolver = <T extends TokenDictionary>(
   tokenDictionary: T,
   baseTokenDictionary: TokenDictionary
-) => {
+): ((value: string) => string) => {
   const resolver = (value: string): string => {
     if (!isReferenceToken(value)) return value
 

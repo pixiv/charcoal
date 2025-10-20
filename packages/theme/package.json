@@ -2,21 +2,22 @@
   "name": "@charcoal-ui/theme",
   "version": "5.0.0-beta.2",
   "license": "Apache-2.0",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.js",
-      "default": "./dist/index.esm.js"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./unstable-token-object": {
       "types": "./dist/unstable-token-object/index.d.ts",
-      "require": "./dist/unstable-token-object/index.cjs.js",
-      "import": "./dist/unstable-token-object/index.esm.js",
-      "default": "./dist/unstable-token-object/index.esm.js"
+      "require": "./dist/unstable-token-object/index.cjs",
+      "import": "./dist/unstable-token-object/index.js",
+      "default": "./dist/unstable-token-object/index.js"
     },
     "./unstable-css/*": "./dist/unstable-css/*",
     "./unstable-tokens/*": "./dist/unstable-tokens/*"
@@ -38,25 +39,15 @@
     "*.css"
   ],
   "scripts": {
-    "build": "npm-run-all --print-label -s 'build:*' --sequential serialize",
-    "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "build:copy-css": "cpx --clean 'src/unstable-css/**/*.{css,d.ts}' dist/unstable-css",
-    "build:token-object": "tsx cli/token-object.ts",
-    "serialize": "node cli/index.js",
-    "typecheck": "run-p --print-label 'typecheck:*'",
-    "typecheck:main": "tsc --project tsconfig.build.json --pretty --noEmit",
-    "typecheck:cli": "tsc --project cli/tsconfig.build.json --noEmit",
-    "clean": "rimraf dist .tsbuildinfo",
+    "build": "tsdown --config-loader unconfig",
+    "typecheck": "tsc --pretty --noEmit",
+    "clean": "rimraf dist",
     "test": "vitest run --passWithNoTests",
     "bench": "vitest bench --passWithNoTests"
   },
   "devDependencies": {
     "@types/css": "^0.0.38",
-    "cpx": "^1.5.0",
-    "css": "^3.0.0",
-    "tsup": "^6.5.0",
-    "tsx": "^4.19.1"
+    "css": "^3.0.0"
   },
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",

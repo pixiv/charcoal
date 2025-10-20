@@ -19,7 +19,7 @@
   "scripts": {
     "build": "tsdown",
     "typecheck": "tsc --pretty --noEmit",
-    "clean": "rimraf dist .tsbuildinfo",
+    "clean": "rimraf dist",
     "test": "vitest --passWithNoTests"
   },
   "devDependencies": {},

@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "resolveJsonModule": true
+    "paths": {},
+    "resolveJsonModule": true,
+    "isolatedDeclarations": true
   },
   "include": ["./src"]
 }

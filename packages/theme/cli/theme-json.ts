@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const { light, dark } = require('@charcoal-ui/theme')
-const fs = require('fs')
-const { parseToRgb } = require('polished')
+import { light, dark } from '../src/index'
+import { writeFileSync } from 'fs'
+import { parseToRgb } from 'polished'
+import type { Material } from '@charcoal-ui/foundation'
 
 /**
  * transform color string to [0, 1] clamped value of color object
  *
- * @param { import('@charcoal-ui/foundation').Material } material
  */
-function parseMaterial(material) {
+function parseMaterial(material: Material) {
   const { red, green, blue, ...rest } = parseToRgb(material)
   const alpha = 'alpha' in rest ? rest.alpha : 1
   return { red: red / 255, green: green / 255, blue: blue / 255, alpha }
@@ -36,7 +36,8 @@ const monolith = Object.fromEntries(
         Object.entries(original.effect).map(([key, def]) => [
           key,
           def.type !== 'opacity'
-            ? { ...def, color: parseMaterial(def.color) }
+            ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              { ...def, color: parseMaterial(def.color!) }
             : def,
         ])
       ),
@@ -57,4 +58,8 @@ const monolith = Object.fromEntries(
   })
 )
 
-fs.writeFileSync('theme.json', JSON.stringify(monolith, null, 2))
+export function writeThemeJson() {
+  writeFileSync('theme.json', JSON.stringify(monolith, null, 2))
+  // eslint-disable-next-line no-console
+  console.log(`Generated theme.json`)
+}
