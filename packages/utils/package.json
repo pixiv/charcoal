@@ -22,7 +22,6 @@
     "clean": "rimraf dist",
     "test": "vitest --passWithNoTests"
   },
-  "devDependencies": {},
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",
     "polished": "^4.1.4"
