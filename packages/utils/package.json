@@ -18,7 +18,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsdown",
-    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest --passWithNoTests"
   },
