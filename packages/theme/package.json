@@ -55,11 +55,8 @@
     "@types/css": "^0.0.38",
     "cpx": "^1.5.0",
     "css": "^3.0.0",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
     "tsup": "^6.5.0",
-    "tsx": "^4.19.1",
-    "vitest": "^2.0.2"
+    "tsx": "^4.19.1"
   },
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",
