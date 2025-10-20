@@ -1,3 +1,6 @@
+/* eslint-disable */
+// disable eslint for large genareted file
+
 export default {
   title: 'Icons/v1/css',
   parameters: {

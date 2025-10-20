@@ -25,7 +25,9 @@
     "**/.*.js",
     "__mocks__/*.ts",
     "vite.config.ts",
-    "vitest.setup.ts"
+    "vitest.setup.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [".storybook"]
 }

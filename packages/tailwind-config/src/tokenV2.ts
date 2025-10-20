@@ -5,7 +5,10 @@ import {
   mapDefaultKey as mapDefaultKeys,
 } from './util'
 
-export function unstable_createTailwindConfigTokenV2() {
+export function unstable_createTailwindConfigTokenV2(): Omit<
+  Config,
+  'content'
+> {
   const fontSize = Object.fromEntries(
     Object.entries(light.text['font-size']).flatMap(([k, v]) => {
       // text.fontSize.paragraph + text.lineHeight.paragraph -> text-paragraph
@@ -57,7 +60,7 @@ export function unstable_createTailwindConfigTokenV2() {
       fontSize,
       fontWeight: light.text['font-weight'],
 
-      spacing: spacing,
+      spacing,
       gap: spacing,
       width: light['paragraph-width'],
     },

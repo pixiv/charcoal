@@ -95,6 +95,7 @@ export default function DropdownSelector({
           })}
         </select>
       </div>
+      {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
       <button
         className="charcoal-dropdown-selector-button"
         aria-labelledby={labelId}

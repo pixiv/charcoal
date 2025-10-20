@@ -10,7 +10,7 @@ export const TextColors: React.FC = () => (
           <div
             className="absolute top-0 right-0 h-full w-6/12 bg-surface8 z-[-1]"
             aria-hidden="true"
-          ></div>
+          />
           <p className={`typography-20 text-${colorName}`}>
             charcoal はピクシブ株式会社のデザインシステムです。ここでは特に、Web
             フロントエンドの実装に用いる npm パッケージ集のことを言います。

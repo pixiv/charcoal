@@ -14,7 +14,7 @@ export type MenuItemProps<T extends React.ElementType = 'li'> = {
 const MenuItem = forwardRef(function MenuItem<
   T extends React.ElementType = 'li'
 >(
-  { className, value, disabled, ...props }: MenuItemProps<T>,
+  { className: _, value, disabled, ...props }: MenuItemProps<T>,
   ref: ForwardedRef<HTMLLIElement>
 ) {
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)

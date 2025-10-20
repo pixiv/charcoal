@@ -68,7 +68,7 @@ const M = (props: ModalProps) => {
             possimus fugiat aspernatur, numquam, commodi repellat.
           </StyledModalText>
           <ModalAlign>
-            <TextField showLabel label="Name" placeholder="Nagisa"></TextField>
+            <TextField showLabel label="Name" placeholder="Nagisa" />
           </ModalAlign>
           <ModalAlign>
             <TextField
@@ -76,7 +76,7 @@ const M = (props: ModalProps) => {
               showLabel
               label="Country"
               placeholder="Tokyo"
-            ></TextField>
+            />
           </ModalAlign>
           <ModalAlign>
             <DropdownSelector
@@ -161,18 +161,10 @@ export const FullBottomSheet: StoryObj<typeof Modal> = {
                 possimus fugiat aspernatur, numquam, commodi repellat.
               </StyledModalText>
               <ModalAlign>
-                <TextField
-                  showLabel
-                  label="Name"
-                  placeholder="Nagisa"
-                ></TextField>
+                <TextField showLabel label="Name" placeholder="Nagisa" />
               </ModalAlign>
               <ModalAlign>
-                <TextField
-                  showLabel
-                  label="Country"
-                  placeholder="Tokyo"
-                ></TextField>
+                <TextField showLabel label="Country" placeholder="Tokyo" />
               </ModalAlign>
             </ModalVStack>
             <ModalButtons>

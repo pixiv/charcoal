@@ -11,11 +11,11 @@ export const BorderRadius: React.FC = () => {
             <div
               className={`bg-surface4 rounded-${key} h-64`}
               style={{ width: '64px' }}
-            ></div>
+            />
             <div
               className={`bg-surface4 rounded-${key} h-64`}
               style={{ width: '272px' }}
-            ></div>
+            />
           </div>
           <p className="typography-12 text-text3">
             border-radius: <span className="text-text2">{value}</span>

@@ -2,16 +2,16 @@ import rgba from 'polished/lib/color/rgba'
 import rgbToColorString from 'polished/lib/color/rgbToColorString'
 import parseToRgb from 'polished/lib/color/parseToRgb'
 import linearGradient from 'polished/lib/mixins/linearGradient'
-import { type RgbColor } from 'polished/lib/types/color'
+import type { RgbColor } from 'polished/lib/types/color'
 
-import {
-  type AlphaEffect,
-  type Effect,
-  type Effects,
-  type GradientMaterial,
-  type OpacityEffect,
-  type ReplaceEffect,
-  type TypographyDescriptor,
+import type {
+  AlphaEffect,
+  Effect,
+  Effects,
+  GradientMaterial,
+  OpacityEffect,
+  ReplaceEffect,
+  TypographyDescriptor,
 } from '@charcoal-ui/foundation'
 
 export const GRADIENT_DIRECTIONS = [
@@ -188,8 +188,10 @@ export function maxWidth(breakpoint: number) {
 /**
  * Derive half-leading from typography size
  */
-export const halfLeading = ({ fontSize, lineHeight }: TypographyDescriptor) =>
-  (lineHeight - fontSize) / 2
+export const halfLeading = ({
+  fontSize,
+  lineHeight,
+}: TypographyDescriptor): number => (lineHeight - fontSize) / 2
 
 /**
  * Namespaced custom property

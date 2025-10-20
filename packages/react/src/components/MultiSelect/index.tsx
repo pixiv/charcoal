@@ -74,7 +74,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
           className="charcoal-multi-select-overlay"
           data-overlay={variant === 'overlay'}
           aria-invalid={invalid}
-          aria-hidden={true}
+          aria-hidden
         >
           <Icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
         </div>

@@ -147,6 +147,7 @@ export function useElementSize(
     }
   }, [watch])
 
+  // eslint-disable-next-line react-compiler/react-compiler
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(() => {
     if (ref.current !== watch) {
@@ -159,6 +160,7 @@ export function useElementSize(
       // Sync measuring
       setSize(measure(ref.current))
     }
+    // eslint-disable-next-line react-compiler/react-compiler
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
 

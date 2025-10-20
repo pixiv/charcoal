@@ -9,7 +9,6 @@ const hasChildren = (
   Boolean(element.props.children)
 
 export const childToString = (
-  // eslint-disable-next-line @typescript-eslint/ban-types
   child?: number | string | boolean | {} | null
 ): string => {
   if (
