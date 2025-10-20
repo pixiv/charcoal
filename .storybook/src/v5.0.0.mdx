@@ -1,0 +1,51 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import { Unstyled } from '@storybook/blocks'
+
+<Meta title="v5.0.0 (WIP)" />
+
+# tsdown & esm移行 
+
+以下のpackageがtsupからtsdownに移行しesm化されました。合わせてexports関連が調整されました
+
+- `@charcoal-ui/foundation@v5.0.0`
+- `@charcoal-ui/icon-files@v5.0.0`
+- `@charcoal-ui/icons@v5.0.0`
+- `@charcoal-ui/react@v5.0.0`
+- `@charcoal-ui/react-sandbox@v5.0.0`
+- `@charcoal-ui/styled@v5.0.0`
+- `@charcoal-ui/tailwind-config@v5.0.0`
+- `@charcoal-ui/theme@v5.0.0`
+- `@charcoal-ui/utils@v5.0.0`
+
+以下のcli packageはcommonjsのままを維持
+
+- `@charcoal-ui/token-cli@v5.0.0`
+- `@charcoal-ui/icons-cli@v5.0.0`
+
+以下のpackageが削除されました
+
+- `@charcoal-ui/pullrequest-cli`
+  - packagesからmiscに降格
+- `@charcoal-ui/esbuild-plugin-styled-components`
+  - react-sandboxの内部に移動しました
+
+# @charcoal-ui/icon-files
+
+- v2系のiconが追加されました (v4より安定化)
+- datauri形式を提供するようになりました
+
+# @charcoal-ui/icons
+
+- `<pixiv-icon />` 以外cssとreactコンポーネント経由でiconを提供するようになりました
+
+# @charcoal-ui/tailwind-config
+
+- `iconsV1`, `iconsV2` のoptionによりcssベースのアイコンが使えるようになりました (v4より安定化)
+
+# 内部変更
+
+- 開発環境のnodeバージョンを22 ltsに更新しました
+- `@pixiv/eslint-config`に移行しました
+- `typescript` v5にアップデートしました
+- 一部packageでisolatedDeclarationsで有効化しました
+- 殆どのtsconfig.build.jsonが削除されてtsconfig.jsonに統合しました
