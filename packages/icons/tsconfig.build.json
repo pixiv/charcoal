@@ -3,7 +3,8 @@
   "compilerOptions": {
     "incremental": true,
     "outDir": "./dist",
-    "tsBuildInfoFile": "./.tsbuildinfo"
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "moduleResolution": "bundler"
   },
   "include": ["./src"],
   "exclude": ["**/*.story.tsx", "./src/react"]

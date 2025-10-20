@@ -1,4 +1,4 @@
-import { Octokit } from '@octokit/rest'
+import { Octokit, RestEndpointMethodTypes } from '@octokit/rest'
 import path from 'path'
 import { getChangedFiles } from './getChangedFiles'
 
@@ -26,7 +26,7 @@ export class GithubClient {
     token: string,
     defaultBranch: string,
     outputDir: string
-  ) {
+  ): Promise<ReturnType<GithubClient['createPullRequest']> | void> {
     const client = new this(repoOwner, repoName, token, defaultBranch)
     const outputDirFullPath = path.resolve(process.cwd(), outputDir)
     const diff = await client.createTreeFromDiff(outputDirFullPath)
@@ -95,7 +95,10 @@ export class GithubClient {
     return tree
   }
 
-  async createCommit(tree: TreeItem[], targetBranch: RefResponse) {
+  async createCommit(
+    tree: TreeItem[],
+    targetBranch: RefResponse
+  ): Promise<RestEndpointMethodTypes['git']['createCommit']['response']> {
     const parentCommit = await this.api.git.getCommit({
       owner: this.repoOwner,
       repo: this.repoName,
@@ -131,7 +134,9 @@ export class GithubClient {
     return commit
   }
 
-  async createPullRequest(targetBranch: RefResponse) {
+  async createPullRequest(
+    targetBranch: RefResponse
+  ): Promise<ReturnType<GithubClient['api']['pulls']['create']>> {
     const defaultBranch = await this.getDefaultBranchRef()
 
     return this.api.pulls.create({
@@ -152,7 +157,7 @@ export class GithubClient {
     })
   }
 
-  async createBranch() {
+  async createBranch(): ReturnType<GithubClient['api']['git']['createRef']> {
     const defaultBranch = await this.getDefaultBranchRef()
 
     return this.api.git.createRef({
