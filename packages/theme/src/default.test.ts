@@ -191,7 +191,7 @@ it('writes default.ts', () => {
 /** This file is auto generated. DO NOT EDIT BY HAND. */
 import { CharcoalTheme } from './theme'
 
-const common = ${(JSON.stringify(common, sortReplacer, 2))} as const;
+const common = ${JSON.stringify(common, sortReplacer, 2)} as const;
 
 export const light: CharcoalTheme = {
   ...common,
