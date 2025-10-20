@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "run-p --print-label -s 'build:*'",
+    "build": "run-s --print-label 'build:*'",
     "build:bundle": "tsdown",
     "build:dts": "tsc --pretty --emitDeclarationOnly",
     "typecheck": "tsc --pretty --noEmit",

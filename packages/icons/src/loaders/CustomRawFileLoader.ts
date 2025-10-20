@@ -5,9 +5,9 @@ export class CustomRawFileLoader extends CharcoalIconFilesLoader {
   /**
    * icons-filesと同じ型のアイコンをしまっとくところ
    */
-  static filePackages = new Map<string, () => Promise<string>>()
+  static filePackages: Map<string, () => Promise<string>> = new Map()
 
-  get importIconFile() {
+  get importIconFile(): ()=> Promise<string>  {
     const icon = CustomRawFileLoader.filePackages.get(this._name)
     if (icon !== undefined) return icon
 
@@ -15,7 +15,7 @@ export class CustomRawFileLoader extends CharcoalIconFilesLoader {
   }
 }
 
-export function addRawFile(name: string, importFn: () => Promise<string>) {
+export function addRawFile(name: string, importFn: () => Promise<string>): void {
   CustomRawFileLoader.filePackages.set(name, importFn)
 }
 

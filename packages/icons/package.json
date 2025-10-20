@@ -26,7 +26,7 @@
     "build": "run-p --print-label 'build:*'",
     "build:bundle": "tsdown",
     "build:react": "tsc --project tsconfig.react.json --pretty",
-    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo .tsbuildinfo.react",
     "test": "vitest run --passWithNoTests"
   },
