@@ -1,0 +1,622 @@
+{
+  "dark": {
+    "typography": {
+      "size": {
+        "12": {
+          "fontSize": 12,
+          "lineHeight": 20
+        },
+        "14": {
+          "fontSize": 14,
+          "lineHeight": 22
+        },
+        "16": {
+          "fontSize": 16,
+          "lineHeight": 24
+        },
+        "20": {
+          "fontSize": 20,
+          "lineHeight": 28
+        },
+        "32": {
+          "fontSize": 32,
+          "lineHeight": 40
+        }
+      }
+    },
+    "spacing": {
+      "0": 0,
+      "4": 4,
+      "8": 8,
+      "16": 16,
+      "24": 24,
+      "40": 40,
+      "64": 64,
+      "104": 104,
+      "168": 168,
+      "272": 272,
+      "440": 440
+    },
+    "grid": {
+      "unit": {
+        "column": 80,
+        "gutter": 24
+      }
+    },
+    "borderRadius": {
+      "4": 4,
+      "8": 8,
+      "16": 16,
+      "24": 24,
+      "none": 0,
+      "oval": 999999
+    },
+    "transition": {
+      "default": {
+        "duration": 0.2
+      }
+    },
+    "breakpoint": {
+      "screen1": 744,
+      "screen2": 952,
+      "screen3": 1160,
+      "screen4": 1368
+    },
+    "gradientColor": {
+      "surface5": [
+        {
+          "color": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "alpha": 0.32
+          },
+          "ratio": 0
+        },
+        {
+          "color": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "alpha": 0
+          },
+          "ratio": 100
+        }
+      ],
+      "callToAction": [
+        {
+          "color": {
+            "red": 0.8196078431372549,
+            "green": 1,
+            "blue": 0.10196078431372549,
+            "alpha": 1
+          },
+          "ratio": 0
+        },
+        {
+          "color": {
+            "red": 0.10196078431372549,
+            "green": 0.8196078431372549,
+            "blue": 1,
+            "alpha": 1
+          },
+          "ratio": 100
+        }
+      ]
+    },
+    "outline": {
+      "default": {
+        "color": {
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "alpha": 0.12
+        }
+      }
+    },
+    "elementEffect": {
+      "disabled": {
+        "type": "opacity",
+        "opacity": 0.32
+      }
+    },
+    "effect": {
+      "hover": {
+        "type": "alpha",
+        "color": {
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "alpha": 0.12
+        }
+      },
+      "press": {
+        "type": "alpha",
+        "color": {
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "alpha": 0.2
+        }
+      }
+    },
+    "color": {
+      "transparent": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0
+      },
+      "background1": {
+        "red": 0.12156862745098039,
+        "green": 0.12156862745098039,
+        "blue": 0.12156862745098039,
+        "alpha": 1
+      },
+      "background2": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 1
+      },
+      "icon6": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.28
+      },
+      "link1": {
+        "red": 0.4,
+        "green": 0.6235294117647059,
+        "blue": 0.7607843137254902,
+        "alpha": 1
+      },
+      "link2": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.36
+      },
+      "surface1": {
+        "red": 0.12156862745098039,
+        "green": 0.12156862745098039,
+        "blue": 0.12156862745098039,
+        "alpha": 1
+      },
+      "surface2": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.16
+      },
+      "surface3": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.12
+      },
+      "surface4": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.32
+      },
+      "surface6": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.12
+      },
+      "surface7": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0
+      },
+      "surface8": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.88
+      },
+      "surface9": {
+        "red": 0.2,
+        "green": 0.2,
+        "blue": 0.2,
+        "alpha": 1
+      },
+      "surface10": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.2
+      },
+      "text1": {
+        "red": 0.9607843137254902,
+        "green": 0.9607843137254902,
+        "blue": 0.9607843137254902,
+        "alpha": 1
+      },
+      "text2": {
+        "red": 0.8392156862745098,
+        "green": 0.8392156862745098,
+        "blue": 0.8392156862745098,
+        "alpha": 1
+      },
+      "text3": {
+        "red": 0.5215686274509804,
+        "green": 0.5215686274509804,
+        "blue": 0.5215686274509804,
+        "alpha": 1
+      },
+      "text4": {
+        "red": 0.3607843137254902,
+        "green": 0.3607843137254902,
+        "blue": 0.3607843137254902,
+        "alpha": 1
+      },
+      "text5": {
+        "red": 0.9607843137254902,
+        "green": 0.9607843137254902,
+        "blue": 0.9607843137254902,
+        "alpha": 1
+      },
+      "brand": {
+        "red": 0,
+        "green": 0.5882352941176471,
+        "blue": 0.9803921568627451,
+        "alpha": 1
+      },
+      "assertive": {
+        "red": 1,
+        "green": 0.16862745098039217,
+        "blue": 0,
+        "alpha": 1
+      },
+      "warning": {
+        "red": 1,
+        "green": 0.6862745098039216,
+        "blue": 0.058823529411764705,
+        "alpha": 1
+      },
+      "success": {
+        "red": 0.6941176470588235,
+        "green": 0.8,
+        "blue": 0.1607843137254902,
+        "alpha": 1
+      },
+      "updatedItem": {
+        "red": 0,
+        "green": 0.5882352941176471,
+        "blue": 0.9803921568627451,
+        "alpha": 0.12
+      },
+      "border": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.12
+      }
+    },
+    "border": {
+      "default": {
+        "color": {
+          "red": 1,
+          "green": 1,
+          "blue": 1,
+          "alpha": 0.12
+        }
+      }
+    }
+  },
+  "light": {
+    "typography": {
+      "size": {
+        "12": {
+          "fontSize": 12,
+          "lineHeight": 20
+        },
+        "14": {
+          "fontSize": 14,
+          "lineHeight": 22
+        },
+        "16": {
+          "fontSize": 16,
+          "lineHeight": 24
+        },
+        "20": {
+          "fontSize": 20,
+          "lineHeight": 28
+        },
+        "32": {
+          "fontSize": 32,
+          "lineHeight": 40
+        }
+      }
+    },
+    "spacing": {
+      "0": 0,
+      "4": 4,
+      "8": 8,
+      "16": 16,
+      "24": 24,
+      "40": 40,
+      "64": 64,
+      "104": 104,
+      "168": 168,
+      "272": 272,
+      "440": 440
+    },
+    "grid": {
+      "unit": {
+        "column": 80,
+        "gutter": 24
+      }
+    },
+    "borderRadius": {
+      "4": 4,
+      "8": 8,
+      "16": 16,
+      "24": 24,
+      "none": 0,
+      "oval": 999999
+    },
+    "transition": {
+      "default": {
+        "duration": 0.2
+      }
+    },
+    "breakpoint": {
+      "screen1": 744,
+      "screen2": 952,
+      "screen3": 1160,
+      "screen4": 1368
+    },
+    "gradientColor": {
+      "surface5": [
+        {
+          "color": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "alpha": 0.32
+          },
+          "ratio": 0
+        },
+        {
+          "color": {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+            "alpha": 0
+          },
+          "ratio": 100
+        }
+      ],
+      "callToAction": [
+        {
+          "color": {
+            "red": 0.8196078431372549,
+            "green": 1,
+            "blue": 0.10196078431372549,
+            "alpha": 1
+          },
+          "ratio": 0
+        },
+        {
+          "color": {
+            "red": 0.10196078431372549,
+            "green": 0.8196078431372549,
+            "blue": 1,
+            "alpha": 1
+          },
+          "ratio": 100
+        }
+      ]
+    },
+    "outline": {
+      "default": {
+        "color": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 0.08
+        }
+      }
+    },
+    "elementEffect": {
+      "disabled": {
+        "type": "opacity",
+        "opacity": 0.32
+      }
+    },
+    "effect": {
+      "hover": {
+        "type": "alpha",
+        "color": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 0.04
+        }
+      },
+      "press": {
+        "type": "alpha",
+        "color": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 0.16
+        }
+      }
+    },
+    "color": {
+      "transparent": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0
+      },
+      "background1": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 1
+      },
+      "background2": {
+        "red": 0.9607843137254902,
+        "green": 0.9607843137254902,
+        "blue": 0.9607843137254902,
+        "alpha": 1
+      },
+      "icon6": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.28
+      },
+      "link1": {
+        "red": 0.23921568627450981,
+        "green": 0.4627450980392157,
+        "blue": 0.6,
+        "alpha": 1
+      },
+      "link2": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.36
+      },
+      "surface1": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 1
+      },
+      "surface2": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.02
+      },
+      "surface3": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.04
+      },
+      "surface4": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.32
+      },
+      "surface6": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.88
+      },
+      "surface7": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.02
+      },
+      "surface8": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.88
+      },
+      "surface9": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 1
+      },
+      "surface10": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.16
+      },
+      "text1": {
+        "red": 0.12156862745098039,
+        "green": 0.12156862745098039,
+        "blue": 0.12156862745098039,
+        "alpha": 1
+      },
+      "text2": {
+        "red": 0.2784313725490196,
+        "green": 0.2784313725490196,
+        "blue": 0.2784313725490196,
+        "alpha": 1
+      },
+      "text3": {
+        "red": 0.5215686274509804,
+        "green": 0.5215686274509804,
+        "blue": 0.5215686274509804,
+        "alpha": 1
+      },
+      "text4": {
+        "red": 0.6784313725490196,
+        "green": 0.6784313725490196,
+        "blue": 0.6784313725490196,
+        "alpha": 1
+      },
+      "text5": {
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 1
+      },
+      "brand": {
+        "red": 0,
+        "green": 0.5882352941176471,
+        "blue": 0.9803921568627451,
+        "alpha": 1
+      },
+      "assertive": {
+        "red": 1,
+        "green": 0.16862745098039217,
+        "blue": 0,
+        "alpha": 1
+      },
+      "warning": {
+        "red": 1,
+        "green": 0.6862745098039216,
+        "blue": 0.058823529411764705,
+        "alpha": 1
+      },
+      "success": {
+        "red": 0.6941176470588235,
+        "green": 0.8,
+        "blue": 0.1607843137254902,
+        "alpha": 1
+      },
+      "updatedItem": {
+        "red": 0,
+        "green": 0.5882352941176471,
+        "blue": 0.9803921568627451,
+        "alpha": 0.04
+      },
+      "border": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "alpha": 0.08
+      }
+    },
+    "border": {
+      "default": {
+        "color": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 0.08
+        }
+      }
+    }
+  }
+}
