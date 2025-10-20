@@ -1,25 +1,11 @@
-# `@charcoal-ui/pullrequest-cli`
+# pullrequest-cli
 
 CLI for creating pull request in CI.
-
-## Install
-
-### npm
-
-```
-npm i --save-dev @charcoal-ui/pullrequest-cli
-```
-
-### yarn
-
-```
-yarn add -D @charcoal-ui/pullrequest-cli
-```
 
 ## Usage
 
 ```
-GITHUB_ACCESS_TOKEN=xxxx GITHUB_REPO_OWNER=pixiv GITHUB_REPO_NAME=charcoal GITHUB_DEFAULT_BRANCH=main TARGET_DIR=path/to/target/dir yarn pullrequest-cli -c category_name -t "Pull request created by pullrequest-cli"
+GITHUB_ACCESS_TOKEN=xxxx GITHUB_REPO_OWNER=pixiv GITHUB_REPO_NAME=charcoal GITHUB_DEFAULT_BRANCH=main TARGET_DIR=path/to/target/dir pnpm pullrequest-cli -c category_name -t "Pull request created by pullrequest-cli"
 ```
 
 ### Environment values

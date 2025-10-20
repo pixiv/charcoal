@@ -25,9 +25,6 @@
 			"path": "packages/icons-cli"
 		},
 		{
-			"path": "packages/pullrequest-cli"
-		},
-		{
 			"path": "packages/react-sandbox"
 		},
 		{

@@ -1,6 +1,6 @@
 import { promises as fs, existsSync } from 'fs'
 import path from 'path'
-import { execp } from './utils'
+import { execp } from './utils.ts'
 
 /**
  * dir 内で変更があったファイル情報を for await で回せるようにするやつ

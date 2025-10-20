@@ -16,9 +16,6 @@ importers:
       '@charcoal-ui/icons-cli':
         specifier: workspace:^
         version: link:packages/icons-cli
-      '@charcoal-ui/pullrequest-cli':
-        specifier: workspace:^
-        version: link:packages/pullrequest-cli
       '@charcoal-ui/styled':
         specifier: workspace:^
         version: link:packages/styled
@@ -34,6 +31,15 @@ importers:
       '@commitlint/config-lerna-scopes':
         specifier: ^16.0.0
         version: 16.2.4(lerna@6.6.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(encoding@0.1.13))
+      '@gitbeaker/core':
+        specifier: ^25.6.0
+        version: 25.6.0
+      '@gitbeaker/node':
+        specifier: ^25.6.0
+        version: 25.6.0
+      '@octokit/rest':
+        specifier: ^18.12.0
+        version: 18.12.0(encoding@0.1.13)
       '@originjs/vite-plugin-commonjs':
         specifier: ^1.0.3
         version: 1.0.3
@@ -124,6 +130,9 @@ importers:
       '@types/node':
         specifier: 22.14.1
         version: 22.14.1
+      '@types/parse5':
+        specifier: ^6.0.3
+        version: 6.0.3
       '@types/prettier':
         specifier: ^2.4.3
         version: 2.7.3
@@ -136,6 +145,9 @@ importers:
       '@types/webpack':
         specifier: ^5.28.0
         version: 5.28.5(@swc/core@1.11.13(@swc/helpers@0.5.15))(esbuild@0.25.1)
+      '@types/yargs':
+        specifier: ^17.0.8
+        version: 17.0.33
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20250930.1
         version: 7.0.0-dev.20250930.1
@@ -148,6 +160,9 @@ importers:
       axe-playwright:
         specifier: ^2.0.1
         version: 2.1.0(playwright@1.51.1)
+      camelcase:
+        specifier: ^6.3.0
+        version: 6.3.0
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -250,6 +265,9 @@ importers:
       tsdown:
         specifier: 0.15.6
         version: 0.15.6(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3)
+      tsup:
+        specifier: ^6.5.0
+        version: 6.7.0(@swc/core@1.11.13(@swc/helpers@0.5.15))(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@22.14.1)(typescript@5.9.3))(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -262,6 +280,9 @@ importers:
       wait-on:
         specifier: ^7.2.0
         version: 7.2.0
+      yargs:
+        specifier: ^17.3.1
+        version: 17.7.2
       zx:
         specifier: ^7.0.3
         version: 7.2.3
@@ -376,34 +397,6 @@ importers:
       tsx:
         specifier: ^4.19.1
         version: 4.19.3
-
-  packages/pullrequest-cli:
-    dependencies:
-      '@gitbeaker/node':
-        specifier: ^25.6.0
-        version: 25.6.0
-      '@octokit/rest':
-        specifier: ^18.12.0
-        version: 18.12.0(encoding@0.1.13)
-      camelcase:
-        specifier: ^6.3.0
-        version: 6.3.0
-      yargs:
-        specifier: ^17.3.1
-        version: 17.7.2
-    devDependencies:
-      '@gitbeaker/core':
-        specifier: ^25.6.0
-        version: 25.6.0
-      '@types/parse5':
-        specifier: ^6.0.3
-        version: 6.0.3
-      '@types/yargs':
-        specifier: ^17.0.8
-        version: 17.0.33
-      tsup:
-        specifier: ^6.5.0
-        version: 6.7.0(@swc/core@1.11.13(@swc/helpers@0.5.15))(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@24.6.1)(typescript@5.9.3))(typescript@5.9.3)
 
   packages/react:
     dependencies:
@@ -22722,6 +22715,14 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.5.3
 
+  postcss-load-config@3.1.4(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@22.14.1)(typescript@5.9.3)):
+    dependencies:
+      lilconfig: 2.1.0
+      yaml: 1.10.2
+    optionalDependencies:
+      postcss: 8.5.3
+      ts-node: 10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@22.14.1)(typescript@5.9.3)
+
   postcss-load-config@3.1.4(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@24.6.1)(typescript@5.9.3)):
     dependencies:
       lilconfig: 2.1.0
@@ -24565,6 +24566,30 @@ snapshots:
       - vue-tsc
 
   tslib@2.8.1: {}
+
+  tsup@6.7.0(@swc/core@1.11.13(@swc/helpers@0.5.15))(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@22.14.1)(typescript@5.9.3))(typescript@5.9.3):
+    dependencies:
+      bundle-require: 4.2.1(esbuild@0.17.19)
+      cac: 6.7.14
+      chokidar: 3.6.0
+      debug: 4.4.0(supports-color@5.5.0)
+      esbuild: 0.17.19
+      execa: 5.1.1
+      globby: 11.1.0
+      joycon: 3.1.1
+      postcss-load-config: 3.1.4(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@22.14.1)(typescript@5.9.3))
+      resolve-from: 5.0.0
+      rollup: 3.29.5
+      source-map: 0.8.0-beta.0
+      sucrase: 3.35.0
+      tree-kill: 1.2.2
+    optionalDependencies:
+      '@swc/core': 1.11.13(@swc/helpers@0.5.15)
+      postcss: 8.5.3
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
 
   tsup@6.7.0(@swc/core@1.11.13(@swc/helpers@0.5.15))(postcss@8.5.3)(ts-node@10.9.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@types/node@24.6.1)(typescript@5.9.3))(typescript@5.9.3):
     dependencies:

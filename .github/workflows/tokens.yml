@@ -27,7 +27,6 @@ jobs:
       - name: Build token-cli
         run: |
           pnpm --filter @charcoal-ui/token-cli run build
-          pnpm --filter @charcoal-ui/pullrequest-cli run build
           # sync built .bin
           pnpm install --frozen-lockfile
 
@@ -82,7 +81,7 @@ jobs:
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
           TARGET_DIR: packages/theme
-        run: pnpm exec pullrequest-cli github:pr -c theme -t 'Update theme'
+        run: pnpm pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
