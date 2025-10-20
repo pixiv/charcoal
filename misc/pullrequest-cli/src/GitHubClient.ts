@@ -53,11 +53,11 @@ export class GithubClient {
     return client.createPullRequest(newBranch)
   }
 
-    private readonly repoOwner: string;
-    private readonly repoName: string;
-    private readonly defaultBranch: string;
-    private readonly category: string;
-    private readonly message: string;
+  private readonly repoOwner: string
+  private readonly repoName: string
+  private readonly defaultBranch: string
+  private readonly category: string
+  private readonly message: string
 
   constructor(
     repoOwner: string,
@@ -68,11 +68,11 @@ export class GithubClient {
     message: string,
     now = new Date()
   ) {
-    this.repoOwner = repoOwner;
-    this.repoName = repoName;
-    this.defaultBranch = defaultBranch;
-    this.category = category;
-    this.message = message;
+    this.repoOwner = repoOwner
+    this.repoName = repoName
+    this.defaultBranch = defaultBranch
+    this.category = category
+    this.message = message
 
     this.api = new Octokit({
       auth: token,
