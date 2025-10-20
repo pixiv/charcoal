@@ -22,5 +22,7 @@ const SvgStrokeWidth = (
     />
   </svg>
 )
-export const IconStrokeWidthSolid = forwardRef(SvgStrokeWidth)
+export const IconStrokeWidthSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgStrokeWidth)
 export default IconStrokeWidthSolid

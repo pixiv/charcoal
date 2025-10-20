@@ -26,5 +26,7 @@ const SvgAddText = (
     />
   </svg>
 )
-export const IconAddText24 = forwardRef(SvgAddText)
+export const IconAddText24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAddText)
 export default IconAddText24

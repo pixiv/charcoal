@@ -30,5 +30,7 @@ const SvgHightlightText = (
     />
   </svg>
 )
-export const IconHightlightText24 = forwardRef(SvgHightlightText)
+export const IconHightlightText24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHightlightText)
 export default IconHightlightText24

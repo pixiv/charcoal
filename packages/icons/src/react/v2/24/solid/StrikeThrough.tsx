@@ -22,5 +22,7 @@ const SvgStrikeThrough = (
     />
   </svg>
 )
-export const IconStrikeThroughSolid = forwardRef(SvgStrikeThrough)
+export const IconStrikeThroughSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgStrikeThrough)
 export default IconStrikeThroughSolid

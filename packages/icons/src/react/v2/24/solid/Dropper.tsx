@@ -22,5 +22,7 @@ const SvgDropper = (
     />
   </svg>
 )
-export const IconDropperSolid = forwardRef(SvgDropper)
+export const IconDropperSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDropper)
 export default IconDropperSolid

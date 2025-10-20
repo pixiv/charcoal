@@ -22,5 +22,7 @@ const SvgSaturation = (
     />
   </svg>
 )
-export const IconSaturation = forwardRef(SvgSaturation)
+export const IconSaturation: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSaturation)
 export default IconSaturation

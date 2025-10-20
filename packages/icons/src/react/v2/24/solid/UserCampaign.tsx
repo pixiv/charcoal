@@ -22,5 +22,7 @@ const SvgUserCampaign = (
     />
   </svg>
 )
-export const IconUserCampaignSolid = forwardRef(SvgUserCampaign)
+export const IconUserCampaignSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgUserCampaign)
 export default IconUserCampaignSolid

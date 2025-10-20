@@ -26,5 +26,7 @@ const SvgArchive = (
     />
   </svg>
 )
-export const IconArchive24 = forwardRef(SvgArchive)
+export const IconArchive24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArchive)
 export default IconArchive24

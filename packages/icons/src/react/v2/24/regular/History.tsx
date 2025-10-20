@@ -22,5 +22,7 @@ const SvgHistory = (
     />
   </svg>
 )
-export const IconHistory = forwardRef(SvgHistory)
+export const IconHistory: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHistory)
 export default IconHistory

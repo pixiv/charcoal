@@ -26,5 +26,7 @@ const SvgAddImage = (
     />
   </svg>
 )
-export const IconAddImage24 = forwardRef(SvgAddImage)
+export const IconAddImage24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAddImage)
 export default IconAddImage24

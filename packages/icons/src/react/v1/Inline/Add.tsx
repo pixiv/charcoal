@@ -17,5 +17,7 @@ const SvgAdd = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconAddInline = forwardRef(SvgAdd)
+export const IconAddInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAdd)
 export default IconAddInline

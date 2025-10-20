@@ -22,5 +22,7 @@ const SvgTextRuby = (
     />
   </svg>
 )
-export const IconTextRubySolid = forwardRef(SvgTextRuby)
+export const IconTextRubySolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTextRuby)
 export default IconTextRubySolid

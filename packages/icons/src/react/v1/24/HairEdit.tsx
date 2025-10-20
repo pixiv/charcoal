@@ -26,5 +26,7 @@ const SvgHairEdit = (
     />
   </svg>
 )
-export const IconHairEdit24 = forwardRef(SvgHairEdit)
+export const IconHairEdit24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHairEdit)
 export default IconHairEdit24

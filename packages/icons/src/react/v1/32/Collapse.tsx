@@ -20,5 +20,7 @@ const SvgCollapse = (
     />
   </svg>
 )
-export const IconCollapse32 = forwardRef(SvgCollapse)
+export const IconCollapse32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCollapse)
 export default IconCollapse32

@@ -26,5 +26,7 @@ const SvgNotificationOff = (
     />
   </svg>
 )
-export const IconNotificationOff32 = forwardRef(SvgNotificationOff)
+export const IconNotificationOff32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNotificationOff)
 export default IconNotificationOff32

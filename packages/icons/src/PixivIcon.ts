@@ -43,7 +43,7 @@ export class PixivIcon extends HTMLElement {
     map: Extended extends true
       ? Record<ExtendedIconFile, string | (() => Promise<string>)>
       : Record<string, string | (() => Promise<string>)>
-  ) {
+  ): void {
     if (__SERVER__) {
       return
     }
@@ -65,7 +65,7 @@ export class PixivIcon extends HTMLElement {
     })
   }
 
-  static get observedAttributes() {
+  static get observedAttributes(): typeof attributes {
     return attributes
   }
 
@@ -73,7 +73,11 @@ export class PixivIcon extends HTMLElement {
   private observer?: IntersectionObserver
   private isVisible = false
 
-  get props() {
+  get props(): {
+    name: string
+    scale: string | null
+    'unsafe-non-guideline-scale': string | null
+  } {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)])
     ) as Record<(typeof attributes)[number], string | null>
@@ -96,7 +100,7 @@ export class PixivIcon extends HTMLElement {
     }
   }
 
-  get forceResizedSize() {
+  get forceResizedSize(): number | null {
     if (this.props['unsafe-non-guideline-scale'] === null) {
       return null
     }
@@ -115,7 +119,7 @@ export class PixivIcon extends HTMLElement {
     }
   }
 
-  get scaledSize() {
+  get scaledSize(): number {
     const [size] = this.props.name.split('/')
 
     const scale = Number(this.props.scale ?? '1')
@@ -148,14 +152,14 @@ export class PixivIcon extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
-  async connectedCallback() {
+  async connectedCallback(): Promise<void> {
     this.render()
     await this.waitUntilVisible()
     this.isVisible = true
     await this.loadSvg(this.props.name)
   }
 
-  disconnectedCallback() {
+  disconnectedCallback(): void {
     this.observer?.disconnect()
     this.observer = undefined
     this.isVisible = false
@@ -165,7 +169,7 @@ export class PixivIcon extends HTMLElement {
     attr: string,
     _oldValue: string | null,
     newValue: string
-  ) {
+  ): void {
     // 非表示の場合はロードしない
     if (!this.isVisible) {
       return
@@ -187,7 +191,7 @@ export class PixivIcon extends HTMLElement {
     void this.loadSvg(this.props.name)
   }
 
-  render() {
+  render(): void {
     const size = this.forceResizedSize ?? this.scaledSize
 
     if (!Number.isFinite(size)) {

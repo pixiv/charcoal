@@ -22,5 +22,7 @@ const SvgBringforward = (
     />
   </svg>
 )
-export const IconBringForward = forwardRef(SvgBringforward)
+export const IconBringForward: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBringforward)
 export default IconBringForward

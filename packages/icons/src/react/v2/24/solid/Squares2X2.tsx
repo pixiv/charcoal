@@ -22,5 +22,7 @@ const SvgSquares2X2 = (
     />
   </svg>
 )
-export const IconSquares2X2Solid = forwardRef(SvgSquares2X2)
+export const IconSquares2X2Solid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSquares2X2)
 export default IconSquares2X2Solid

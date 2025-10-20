@@ -26,5 +26,7 @@ const SvgChangeCharacter = (
     />
   </svg>
 )
-export const IconChangeCharacter24 = forwardRef(SvgChangeCharacter)
+export const IconChangeCharacter24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgChangeCharacter)
 export default IconChangeCharacter24

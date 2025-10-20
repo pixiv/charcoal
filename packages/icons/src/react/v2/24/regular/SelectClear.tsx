@@ -22,5 +22,7 @@ const SvgSelectclear = (
     />
   </svg>
 )
-export const IconSelectClear = forwardRef(SvgSelectclear)
+export const IconSelectClear: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSelectclear)
 export default IconSelectClear

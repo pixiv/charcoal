@@ -22,5 +22,7 @@ const SvgLayeradd = (
     />
   </svg>
 )
-export const IconLayerAdd = forwardRef(SvgLayeradd)
+export const IconLayerAdd: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayeradd)
 export default IconLayerAdd

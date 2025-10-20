@@ -25,5 +25,7 @@ const SvgHide = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconHide24 = forwardRef(SvgHide)
+export const IconHide24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHide)
 export default IconHide24

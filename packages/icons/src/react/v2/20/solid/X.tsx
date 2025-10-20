@@ -19,5 +19,7 @@ const SvgX = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconXSolid20 = forwardRef(SvgX)
+export const IconXSolid20: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgX)
 export default IconXSolid20

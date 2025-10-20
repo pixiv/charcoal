@@ -19,5 +19,7 @@ const SvgMesh = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconMeshSolid = forwardRef(SvgMesh)
+export const IconMeshSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMesh)
 export default IconMeshSolid

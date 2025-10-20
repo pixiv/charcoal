@@ -22,5 +22,7 @@ const SvgBodyadd = (
     />
   </svg>
 )
-export const IconBodyAddSolid = forwardRef(SvgBodyadd)
+export const IconBodyAddSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBodyadd)
 export default IconBodyAddSolid

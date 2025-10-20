@@ -22,5 +22,7 @@ const SvgColorWheelrectangle = (
     />
   </svg>
 )
-export const IconColorWheelRectangle = forwardRef(SvgColorWheelrectangle)
+export const IconColorWheelRectangle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgColorWheelrectangle)
 export default IconColorWheelRectangle

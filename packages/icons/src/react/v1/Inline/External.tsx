@@ -20,5 +20,7 @@ const SvgExternal = (
     />
   </svg>
 )
-export const IconExternalInline = forwardRef(SvgExternal)
+export const IconExternalInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgExternal)
 export default IconExternalInline

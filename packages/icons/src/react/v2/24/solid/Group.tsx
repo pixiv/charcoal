@@ -19,5 +19,7 @@ const SvgGroup = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconGroupSolid = forwardRef(SvgGroup)
+export const IconGroupSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgGroup)
 export default IconGroupSolid

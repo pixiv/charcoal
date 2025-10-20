@@ -22,5 +22,7 @@ const SvgCloudsync = (
     />
   </svg>
 )
-export const IconCloudSyncSolid = forwardRef(SvgCloudsync)
+export const IconCloudSyncSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCloudsync)
 export default IconCloudSyncSolid

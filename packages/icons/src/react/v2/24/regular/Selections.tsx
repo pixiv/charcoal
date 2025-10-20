@@ -22,5 +22,7 @@ const SvgSelections = (
     />
   </svg>
 )
-export const IconSelections = forwardRef(SvgSelections)
+export const IconSelections: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSelections)
 export default IconSelections

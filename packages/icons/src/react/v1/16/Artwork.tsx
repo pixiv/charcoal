@@ -22,5 +22,7 @@ const SvgArtwork = (
     />
   </svg>
 )
-export const IconArtwork16 = forwardRef(SvgArtwork)
+export const IconArtwork16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArtwork)
 export default IconArtwork16

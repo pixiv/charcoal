@@ -22,5 +22,7 @@ const SvgLayersetReference = (
     />
   </svg>
 )
-export const IconLayerSetReferenceSolid = forwardRef(SvgLayersetReference)
+export const IconLayerSetReferenceSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayersetReference)
 export default IconLayerSetReferenceSolid

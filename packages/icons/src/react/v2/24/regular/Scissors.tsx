@@ -22,5 +22,7 @@ const SvgScissors = (
     />
   </svg>
 )
-export const IconScissors = forwardRef(SvgScissors)
+export const IconScissors: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgScissors)
 export default IconScissors

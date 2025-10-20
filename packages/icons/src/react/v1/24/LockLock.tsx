@@ -22,5 +22,7 @@ const SvgLockLock = (
     />
   </svg>
 )
-export const IconLockLock24 = forwardRef(SvgLockLock)
+export const IconLockLock24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLockLock)
 export default IconLockLock24

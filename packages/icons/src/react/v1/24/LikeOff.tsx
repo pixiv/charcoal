@@ -26,5 +26,7 @@ const SvgLikeOff = (
     />
   </svg>
 )
-export const IconLikeOff24 = forwardRef(SvgLikeOff)
+export const IconLikeOff24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLikeOff)
 export default IconLikeOff24

@@ -22,5 +22,7 @@ const SvgCalendar = (
     />
   </svg>
 )
-export const IconCalendarSolid = forwardRef(SvgCalendar)
+export const IconCalendarSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCalendar)
 export default IconCalendarSolid

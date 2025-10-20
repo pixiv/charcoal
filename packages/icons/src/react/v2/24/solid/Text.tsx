@@ -19,5 +19,7 @@ const SvgText = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconTextSolid = forwardRef(SvgText)
+export const IconTextSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgText)
 export default IconTextSolid

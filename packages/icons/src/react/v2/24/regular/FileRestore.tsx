@@ -22,5 +22,7 @@ const SvgFilerestore = (
     />
   </svg>
 )
-export const IconFileRestore = forwardRef(SvgFilerestore)
+export const IconFileRestore: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFilerestore)
 export default IconFileRestore

@@ -19,5 +19,7 @@ const SvgRedo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconRedo32 = forwardRef(SvgRedo)
+export const IconRedo32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRedo)
 export default IconRedo32

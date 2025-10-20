@@ -28,5 +28,7 @@ const SvgShowOutline = (
     />
   </svg>
 )
-export const IconShowOutline24 = forwardRef(SvgShowOutline)
+export const IconShowOutline24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShowOutline)
 export default IconShowOutline24

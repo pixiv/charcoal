@@ -22,5 +22,7 @@ const SvgStrokeTaper = (
     />
   </svg>
 )
-export const IconStrokeTaperSolid = forwardRef(SvgStrokeTaper)
+export const IconStrokeTaperSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgStrokeTaper)
 export default IconStrokeTaperSolid

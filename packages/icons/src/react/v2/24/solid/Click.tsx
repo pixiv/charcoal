@@ -19,5 +19,7 @@ const SvgClick = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconClickSolid = forwardRef(SvgClick)
+export const IconClickSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgClick)
 export default IconClickSolid

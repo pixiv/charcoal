@@ -22,5 +22,7 @@ const SvgErrorOctagon = (
     />
   </svg>
 )
-export const IconErrorOctagon24 = forwardRef(SvgErrorOctagon)
+export const IconErrorOctagon24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgErrorOctagon)
 export default IconErrorOctagon24

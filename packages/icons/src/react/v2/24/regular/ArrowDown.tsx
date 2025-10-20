@@ -22,5 +22,7 @@ const SvgArrowdown = (
     />
   </svg>
 )
-export const IconArrowDown = forwardRef(SvgArrowdown)
+export const IconArrowDown: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArrowdown)
 export default IconArrowDown

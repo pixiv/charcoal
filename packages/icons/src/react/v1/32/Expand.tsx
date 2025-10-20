@@ -17,5 +17,7 @@ const SvgExpand = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconExpand32 = forwardRef(SvgExpand)
+export const IconExpand32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgExpand)
 export default IconExpand32

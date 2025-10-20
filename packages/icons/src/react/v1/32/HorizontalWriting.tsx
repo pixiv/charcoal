@@ -20,5 +20,7 @@ const SvgHorizontalWriting = (
     />
   </svg>
 )
-export const IconHorizontalWriting32 = forwardRef(SvgHorizontalWriting)
+export const IconHorizontalWriting32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHorizontalWriting)
 export default IconHorizontalWriting32

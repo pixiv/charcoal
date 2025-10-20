@@ -20,5 +20,7 @@ const SvgViewList = (
     />
   </svg>
 )
-export const IconViewList24 = forwardRef(SvgViewList)
+export const IconViewList24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewList)
 export default IconViewList24

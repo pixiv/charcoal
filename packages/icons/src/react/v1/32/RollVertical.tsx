@@ -20,5 +20,7 @@ const SvgRollVertical = (
     />
   </svg>
 )
-export const IconRollVertical32 = forwardRef(SvgRollVertical)
+export const IconRollVertical32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRollVertical)
 export default IconRollVertical32

@@ -22,5 +22,7 @@ const SvgArrowright = (
     />
   </svg>
 )
-export const IconArrowRight = forwardRef(SvgArrowright)
+export const IconArrowRight: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArrowright)
 export default IconArrowRight

@@ -22,5 +22,7 @@ const SvgDownload = (
     />
   </svg>
 )
-export const IconDownload = forwardRef(SvgDownload)
+export const IconDownload: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDownload)
 export default IconDownload

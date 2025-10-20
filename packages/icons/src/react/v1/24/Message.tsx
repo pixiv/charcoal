@@ -22,5 +22,7 @@ const SvgMessage = (
     />
   </svg>
 )
-export const IconMessage24 = forwardRef(SvgMessage)
+export const IconMessage24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMessage)
 export default IconMessage24

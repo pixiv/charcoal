@@ -22,5 +22,7 @@ const SvgWarntriangle = (
     />
   </svg>
 )
-export const IconWarnTriangle = forwardRef(SvgWarntriangle)
+export const IconWarnTriangle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgWarntriangle)
 export default IconWarnTriangle

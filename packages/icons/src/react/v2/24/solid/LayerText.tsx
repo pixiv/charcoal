@@ -22,5 +22,7 @@ const SvgLayertext = (
     />
   </svg>
 )
-export const IconLayerTextSolid = forwardRef(SvgLayertext)
+export const IconLayerTextSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayertext)
 export default IconLayerTextSolid

@@ -22,5 +22,7 @@ const SvgFolderadd = (
     />
   </svg>
 )
-export const IconFolderAdd = forwardRef(SvgFolderadd)
+export const IconFolderAdd: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFolderadd)
 export default IconFolderAdd

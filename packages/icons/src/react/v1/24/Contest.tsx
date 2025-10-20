@@ -23,5 +23,7 @@ const SvgContest = (
     />
   </svg>
 )
-export const IconContest24 = forwardRef(SvgContest)
+export const IconContest24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgContest)
 export default IconContest24

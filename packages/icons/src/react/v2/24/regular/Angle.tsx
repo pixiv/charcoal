@@ -19,5 +19,7 @@ const SvgAngle = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconAngle = forwardRef(SvgAngle)
+export const IconAngle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAngle)
 export default IconAngle

@@ -22,5 +22,7 @@ const SvgNewPost = (
     />
   </svg>
 )
-export const IconNewPostSolid = forwardRef(SvgNewPost)
+export const IconNewPostSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNewPost)
 export default IconNewPostSolid

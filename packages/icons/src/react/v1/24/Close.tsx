@@ -17,5 +17,7 @@ const SvgClose = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconClose24 = forwardRef(SvgClose)
+export const IconClose24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgClose)
 export default IconClose24

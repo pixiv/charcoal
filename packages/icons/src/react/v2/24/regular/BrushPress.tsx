@@ -22,5 +22,7 @@ const SvgBrushpress = (
     />
   </svg>
 )
-export const IconBrushPress = forwardRef(SvgBrushpress)
+export const IconBrushPress: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBrushpress)
 export default IconBrushPress

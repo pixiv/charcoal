@@ -22,5 +22,7 @@ const SvgSelectoff = (
     />
   </svg>
 )
-export const IconSelectOff = forwardRef(SvgSelectoff)
+export const IconSelectOff: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSelectoff)
 export default IconSelectOff

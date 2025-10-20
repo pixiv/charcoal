@@ -22,5 +22,7 @@ const SvgAutoSelect = (
     />
   </svg>
 )
-export const IconAutoSelectSolid = forwardRef(SvgAutoSelect)
+export const IconAutoSelectSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAutoSelect)
 export default IconAutoSelectSolid

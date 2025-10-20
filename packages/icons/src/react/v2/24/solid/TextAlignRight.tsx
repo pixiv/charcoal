@@ -22,5 +22,7 @@ const SvgTextAlignright = (
     />
   </svg>
 )
-export const IconTextAlignRightSolid = forwardRef(SvgTextAlignright)
+export const IconTextAlignRightSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTextAlignright)
 export default IconTextAlignRightSolid

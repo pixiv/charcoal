@@ -20,5 +20,7 @@ const SvgQuestioncircle = (
     />
   </svg>
 )
-export const IconQuestionCircle = forwardRef(SvgQuestioncircle)
+export const IconQuestionCircle: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgQuestioncircle)
 export default IconQuestionCircle

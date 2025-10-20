@@ -20,5 +20,7 @@ const SvgView = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconViewInline = forwardRef(SvgView)
+export const IconViewInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgView)
 export default IconViewInline

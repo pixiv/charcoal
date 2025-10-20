@@ -26,5 +26,7 @@ const SvgQuestionOutline = (
     />
   </svg>
 )
-export const IconQuestionOutline24 = forwardRef(SvgQuestionOutline)
+export const IconQuestionOutline24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgQuestionOutline)
 export default IconQuestionOutline24

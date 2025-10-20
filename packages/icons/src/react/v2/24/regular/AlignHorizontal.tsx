@@ -22,5 +22,7 @@ const SvgAlignhorizontal = (
     />
   </svg>
 )
-export const IconAlignHorizontal = forwardRef(SvgAlignhorizontal)
+export const IconAlignHorizontal: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAlignhorizontal)
 export default IconAlignHorizontal

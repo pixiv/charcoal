@@ -22,5 +22,7 @@ const SvgBrushdecoration = (
     />
   </svg>
 )
-export const IconBrushDecorationSolid = forwardRef(SvgBrushdecoration)
+export const IconBrushDecorationSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBrushdecoration)
 export default IconBrushDecorationSolid

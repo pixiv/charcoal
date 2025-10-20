@@ -22,5 +22,7 @@ const SvgFrameEffect = (
     />
   </svg>
 )
-export const IconFrameEffect24 = forwardRef(SvgFrameEffect)
+export const IconFrameEffect24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFrameEffect)
 export default IconFrameEffect24

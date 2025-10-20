@@ -20,5 +20,7 @@ const SvgServices = (
     />
   </svg>
 )
-export const IconServices24 = forwardRef(SvgServices)
+export const IconServices24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgServices)
 export default IconServices24

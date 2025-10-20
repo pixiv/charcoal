@@ -1,4 +1,4 @@
-export const __SERVER__ = typeof window === 'undefined'
+export const __SERVER__: boolean = typeof window === 'undefined'
 
 const CAN_USE_DOM = typeof HTMLElement !== 'undefined'
 

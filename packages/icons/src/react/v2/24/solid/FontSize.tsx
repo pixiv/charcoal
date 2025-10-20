@@ -22,5 +22,7 @@ const SvgFontSize = (
     />
   </svg>
 )
-export const IconFontSizeSolid = forwardRef(SvgFontSize)
+export const IconFontSizeSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFontSize)
 export default IconFontSizeSolid

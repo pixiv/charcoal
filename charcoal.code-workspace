@@ -13,9 +13,6 @@
 			"path": "packages/tailwind-config"
 		},
 		{
-			"path": "packages/esbuild-plugin-styled-components"
-		},
-		{
 			"path": "packages/foundation"
 		},
 		{

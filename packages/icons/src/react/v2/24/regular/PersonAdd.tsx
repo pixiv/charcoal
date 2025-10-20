@@ -22,5 +22,7 @@ const SvgPersonadd = (
     />
   </svg>
 )
-export const IconPersonAdd = forwardRef(SvgPersonadd)
+export const IconPersonAdd: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPersonadd)
 export default IconPersonAdd

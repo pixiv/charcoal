@@ -20,5 +20,7 @@ const SvgViewGrid2Columns = (
     />
   </svg>
 )
-export const IconViewGrid2Columns24 = forwardRef(SvgViewGrid2Columns)
+export const IconViewGrid2Columns24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewGrid2Columns)
 export default IconViewGrid2Columns24

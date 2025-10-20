@@ -22,5 +22,7 @@ const SvgRotateccw = (
     />
   </svg>
 )
-export const IconRotateCcwSolid = forwardRef(SvgRotateccw)
+export const IconRotateCcwSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRotateccw)
 export default IconRotateCcwSolid

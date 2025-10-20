@@ -22,5 +22,7 @@ const SvgSelectimage = (
     />
   </svg>
 )
-export const IconSelectImageSolid = forwardRef(SvgSelectimage)
+export const IconSelectImageSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSelectimage)
 export default IconSelectImageSolid

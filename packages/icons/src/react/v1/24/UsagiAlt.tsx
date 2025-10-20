@@ -22,5 +22,7 @@ const SvgUsagiAlt = (
     />
   </svg>
 )
-export const IconUsagiAlt24 = forwardRef(SvgUsagiAlt)
+export const IconUsagiAlt24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgUsagiAlt)
 export default IconUsagiAlt24

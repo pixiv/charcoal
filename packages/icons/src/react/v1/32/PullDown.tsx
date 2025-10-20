@@ -20,5 +20,7 @@ const SvgPullDown = (
     />
   </svg>
 )
-export const IconPullDown32 = forwardRef(SvgPullDown)
+export const IconPullDown32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPullDown)
 export default IconPullDown32

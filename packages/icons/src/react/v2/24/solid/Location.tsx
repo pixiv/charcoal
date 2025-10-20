@@ -22,5 +22,7 @@ const SvgLocation = (
     />
   </svg>
 )
-export const IconLocationSolid = forwardRef(SvgLocation)
+export const IconLocationSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLocation)
 export default IconLocationSolid

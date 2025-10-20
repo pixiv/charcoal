@@ -22,5 +22,7 @@ const SvgResolution = (
     />
   </svg>
 )
-export const IconResolutionSolid = forwardRef(SvgResolution)
+export const IconResolutionSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgResolution)
 export default IconResolutionSolid

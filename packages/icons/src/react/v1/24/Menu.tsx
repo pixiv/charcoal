@@ -17,5 +17,7 @@ const SvgMenu = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconMenu24 = forwardRef(SvgMenu)
+export const IconMenu24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMenu)
 export default IconMenu24

@@ -19,5 +19,7 @@ const SvgCurve = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconCurve = forwardRef(SvgCurve)
+export const IconCurve: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCurve)
 export default IconCurve

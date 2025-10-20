@@ -22,5 +22,7 @@ const SvgMessage = (
     />
   </svg>
 )
-export const IconMessageSolid = forwardRef(SvgMessage)
+export const IconMessageSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMessage)
 export default IconMessageSolid

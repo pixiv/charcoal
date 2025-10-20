@@ -19,5 +19,7 @@ const SvgCircle = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconCircleSolid = forwardRef(SvgCircle)
+export const IconCircleSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCircle)
 export default IconCircleSolid

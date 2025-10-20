@@ -22,5 +22,7 @@ const SvgPalette = (
     />
   </svg>
 )
-export const IconPaletteSolid = forwardRef(SvgPalette)
+export const IconPaletteSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPalette)
 export default IconPaletteSolid

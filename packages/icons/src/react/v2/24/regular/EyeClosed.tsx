@@ -22,5 +22,7 @@ const SvgEyeclosed = (
     />
   </svg>
 )
-export const IconEyeClosed = forwardRef(SvgEyeclosed)
+export const IconEyeClosed: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgEyeclosed)
 export default IconEyeClosed

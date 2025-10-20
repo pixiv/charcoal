@@ -20,5 +20,7 @@ const SvgReloadLoop = (
     />
   </svg>
 )
-export const IconReloadLoop24 = forwardRef(SvgReloadLoop)
+export const IconReloadLoop24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgReloadLoop)
 export default IconReloadLoop24

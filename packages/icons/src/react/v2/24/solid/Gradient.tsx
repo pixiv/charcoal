@@ -22,5 +22,7 @@ const SvgGradient = (
     />
   </svg>
 )
-export const IconGradientSolid = forwardRef(SvgGradient)
+export const IconGradientSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgGradient)
 export default IconGradientSolid

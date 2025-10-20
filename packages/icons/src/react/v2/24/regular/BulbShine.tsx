@@ -22,5 +22,7 @@ const SvgBulbshine = (
     />
   </svg>
 )
-export const IconBulbShine = forwardRef(SvgBulbshine)
+export const IconBulbShine: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBulbshine)
 export default IconBulbShine

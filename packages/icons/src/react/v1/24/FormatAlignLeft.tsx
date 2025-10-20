@@ -22,5 +22,7 @@ const SvgFormatAlignLeft = (
     />
   </svg>
 )
-export const IconFormatAlignLeft24 = forwardRef(SvgFormatAlignLeft)
+export const IconFormatAlignLeft24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatAlignLeft)
 export default IconFormatAlignLeft24

@@ -20,5 +20,7 @@ const SvgRanking = (
     />
   </svg>
 )
-export const IconRanking16 = forwardRef(SvgRanking)
+export const IconRanking16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRanking)
 export default IconRanking16

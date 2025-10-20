@@ -22,5 +22,7 @@ const SvgSubtract = (
     />
   </svg>
 )
-export const IconSubtract = forwardRef(SvgSubtract)
+export const IconSubtract: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSubtract)
 export default IconSubtract

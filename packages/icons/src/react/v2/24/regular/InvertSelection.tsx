@@ -22,5 +22,7 @@ const SvgInvertSelection = (
     />
   </svg>
 )
-export const IconInvertSelection = forwardRef(SvgInvertSelection)
+export const IconInvertSelection: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgInvertSelection)
 export default IconInvertSelection

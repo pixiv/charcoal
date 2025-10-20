@@ -22,5 +22,7 @@ const SvgUnderline = (
     />
   </svg>
 )
-export const IconUnderline = forwardRef(SvgUnderline)
+export const IconUnderline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgUnderline)
 export default IconUnderline

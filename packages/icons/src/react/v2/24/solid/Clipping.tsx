@@ -26,5 +26,7 @@ const SvgClipping = (
     />
   </svg>
 )
-export const IconClippingSolid = forwardRef(SvgClipping)
+export const IconClippingSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgClipping)
 export default IconClippingSolid

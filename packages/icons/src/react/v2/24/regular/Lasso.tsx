@@ -19,5 +19,7 @@ const SvgLasso = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconLasso = forwardRef(SvgLasso)
+export const IconLasso: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLasso)
 export default IconLasso

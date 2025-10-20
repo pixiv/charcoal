@@ -19,5 +19,7 @@ const SvgLogout = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconLogoutSolid = forwardRef(SvgLogout)
+export const IconLogoutSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLogout)
 export default IconLogoutSolid

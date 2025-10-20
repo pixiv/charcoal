@@ -22,5 +22,7 @@ const SvgShareandroid = (
     />
   </svg>
 )
-export const IconShareAndroid = forwardRef(SvgShareandroid)
+export const IconShareAndroid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShareandroid)
 export default IconShareAndroid

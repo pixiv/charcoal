@@ -19,5 +19,7 @@ const SvgBubble = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconBubbleSolid = forwardRef(SvgBubble)
+export const IconBubbleSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBubble)
 export default IconBubbleSolid

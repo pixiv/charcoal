@@ -20,5 +20,7 @@ const SvgCameraVideo = (
     />
   </svg>
 )
-export const IconCameraVideo24 = forwardRef(SvgCameraVideo)
+export const IconCameraVideo24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCameraVideo)
 export default IconCameraVideo24

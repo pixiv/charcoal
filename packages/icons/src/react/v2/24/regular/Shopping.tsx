@@ -22,5 +22,7 @@ const SvgShopping = (
     />
   </svg>
 )
-export const IconShopping = forwardRef(SvgShopping)
+export const IconShopping: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShopping)
 export default IconShopping

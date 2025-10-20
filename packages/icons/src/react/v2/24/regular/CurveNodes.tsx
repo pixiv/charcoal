@@ -22,5 +22,7 @@ const SvgCurvenodes = (
     />
   </svg>
 )
-export const IconCurveNodes = forwardRef(SvgCurvenodes)
+export const IconCurveNodes: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCurvenodes)
 export default IconCurveNodes

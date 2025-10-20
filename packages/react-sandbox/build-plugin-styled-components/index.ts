@@ -1,27 +1,28 @@
-import type { Loader, OnLoadResult, Plugin } from 'esbuild'
 import * as babel from '@babel/core'
 import type { ParserPlugin } from '@babel/parser'
+import type { Options } from 'tsdown'
 
-export const styledComponentsPlugin: Plugin = {
+const cache = new Map<string, Promise<string>>()
+
+export const styledComponentsPlugin: Options['plugins'] = {
   name: 'styled-components',
-  setup(build) {
-    const cache = new Map<string, Promise<OnLoadResult>>()
+  async transform(code, id) {
+    if (!/\.(?:[mc]?[jt]s|[jt]sx)$/.test(id)) {
+      return code
+    }
+    const cachedResult = cache.get(id)
 
-    build.onLoad({ filter: /\.(?:[mc]?[jt]s|[jt]sx)$/ }, async (args) => {
-      const cachedResult = cache.get(args.path)
+    if (cachedResult === undefined) {
+      const result = transformStyledComponents(id)
+      cache.set(id, result)
+      return await result
+    }
 
-      if (cachedResult === undefined) {
-        const result = transform(args.path)
-        cache.set(args.path, result)
-        return await result
-      }
-
-      return await cachedResult
-    })
+    return await cachedResult
   },
 }
 
-async function transform(sourcePath: string): Promise<OnLoadResult> {
+async function transformStyledComponents(sourcePath: string): Promise<string> {
   const plugins: ParserPlugin[] = []
   if (sourcePath.endsWith('x')) {
     plugins.push('jsx')
@@ -56,22 +57,5 @@ async function transform(sourcePath: string): Promise<OnLoadResult> {
     parserOpts: { plugins },
   })
 
-  return {
-    contents: result?.code ?? undefined,
-    loader: selectEsbuildLoader(sourcePath),
-  }
-}
-
-function selectEsbuildLoader(sourcePath: string): Loader {
-  if (sourcePath.endsWith('js')) {
-    return 'js'
-  } else if (sourcePath.endsWith('jsx')) {
-    return 'jsx'
-  } else if (sourcePath.endsWith('ts')) {
-    return 'ts'
-  } else if (sourcePath.endsWith('tsx')) {
-    return 'tsx'
-  } else {
-    throw new Error(`unexpected file type: ${sourcePath}`)
-  }
+  return result?.code ?? undefined
 }

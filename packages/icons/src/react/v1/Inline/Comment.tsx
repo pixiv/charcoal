@@ -20,5 +20,7 @@ const SvgComment = (
     />
   </svg>
 )
-export const IconCommentInline = forwardRef(SvgComment)
+export const IconCommentInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgComment)
 export default IconCommentInline

@@ -20,5 +20,7 @@ const SvgSmileOn = (
     />
   </svg>
 )
-export const IconSmileOnInline = forwardRef(SvgSmileOn)
+export const IconSmileOnInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSmileOn)
 export default IconSmileOnInline

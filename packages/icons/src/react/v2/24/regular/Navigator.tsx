@@ -22,5 +22,7 @@ const SvgNavigator = (
     />
   </svg>
 )
-export const IconNavigator = forwardRef(SvgNavigator)
+export const IconNavigator: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNavigator)
 export default IconNavigator

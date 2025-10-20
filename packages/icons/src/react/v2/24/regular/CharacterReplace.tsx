@@ -22,5 +22,7 @@ const SvgCharacterreplace = (
     />
   </svg>
 )
-export const IconCharacterReplace = forwardRef(SvgCharacterreplace)
+export const IconCharacterReplace: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCharacterreplace)
 export default IconCharacterReplace

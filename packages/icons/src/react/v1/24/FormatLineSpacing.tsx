@@ -22,5 +22,7 @@ const SvgFormatLineSpacing = (
     />
   </svg>
 )
-export const IconFormatLineSpacing24 = forwardRef(SvgFormatLineSpacing)
+export const IconFormatLineSpacing24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatLineSpacing)
 export default IconFormatLineSpacing24

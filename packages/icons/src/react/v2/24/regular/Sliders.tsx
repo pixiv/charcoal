@@ -22,5 +22,7 @@ const SvgSliders = (
     />
   </svg>
 )
-export const IconSliders = forwardRef(SvgSliders)
+export const IconSliders: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSliders)
 export default IconSliders

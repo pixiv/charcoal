@@ -22,7 +22,7 @@ const SvgFormatColorFillNoColor = (
     />
   </svg>
 )
-export const IconFormatColorFillNoColor24 = forwardRef(
-  SvgFormatColorFillNoColor
-)
+export const IconFormatColorFillNoColor24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatColorFillNoColor)
 export default IconFormatColorFillNoColor24

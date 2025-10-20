@@ -20,5 +20,7 @@ const SvgBookmarkOn = (
     />
   </svg>
 )
-export const IconBookmarkOn32 = forwardRef(SvgBookmarkOn)
+export const IconBookmarkOn32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBookmarkOn)
 export default IconBookmarkOn32

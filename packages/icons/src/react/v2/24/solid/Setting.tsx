@@ -22,5 +22,7 @@ const SvgSetting = (
     />
   </svg>
 )
-export const IconSettingSolid = forwardRef(SvgSetting)
+export const IconSettingSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSetting)
 export default IconSettingSolid

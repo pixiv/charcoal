@@ -20,5 +20,7 @@ const SvgSpeaker = (
     />
   </svg>
 )
-export const IconSpeaker16 = forwardRef(SvgSpeaker)
+export const IconSpeaker16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSpeaker)
 export default IconSpeaker16

@@ -22,5 +22,7 @@ const SvgCommandscircle = (
     />
   </svg>
 )
-export const IconCommandsCircleSolid = forwardRef(SvgCommandscircle)
+export const IconCommandsCircleSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCommandscircle)
 export default IconCommandsCircleSolid

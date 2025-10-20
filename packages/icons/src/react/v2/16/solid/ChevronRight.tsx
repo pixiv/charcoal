@@ -22,5 +22,7 @@ const SvgChevronright = (
     />
   </svg>
 )
-export const IconChevronRightSolid16 = forwardRef(SvgChevronright)
+export const IconChevronRightSolid16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgChevronright)
 export default IconChevronRightSolid16

@@ -22,5 +22,7 @@ const SvgTemperature = (
     />
   </svg>
 )
-export const IconTemperature = forwardRef(SvgTemperature)
+export const IconTemperature: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTemperature)
 export default IconTemperature

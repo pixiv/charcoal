@@ -22,5 +22,7 @@ const SvgMultiSelect = (
     />
   </svg>
 )
-export const IconMultiSelectInline = forwardRef(SvgMultiSelect)
+export const IconMultiSelectInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgMultiSelect)
 export default IconMultiSelectInline

@@ -22,5 +22,7 @@ const SvgLayerimageMaterial = (
     />
   </svg>
 )
-export const IconLayerImageMaterialSolid = forwardRef(SvgLayerimageMaterial)
+export const IconLayerImageMaterialSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayerimageMaterial)
 export default IconLayerImageMaterialSolid

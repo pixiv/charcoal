@@ -22,5 +22,7 @@ const SvgInvalid = (
     />
   </svg>
 )
-export const IconInvalid24 = forwardRef(SvgInvalid)
+export const IconInvalid24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgInvalid)
 export default IconInvalid24

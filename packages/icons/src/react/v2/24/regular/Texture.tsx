@@ -22,5 +22,7 @@ const SvgTexture = (
     />
   </svg>
 )
-export const IconTexture = forwardRef(SvgTexture)
+export const IconTexture: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTexture)
 export default IconTexture

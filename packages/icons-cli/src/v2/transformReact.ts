@@ -46,9 +46,13 @@ async function main() {
 
   await writeFile(
     path.join(workDir, 'index.story.tsx'),
-    `${iconsPair
-      .map(([iconName, iconPath]) => `import {${iconName}} from '${iconPath}'`)
-      .join('\n')}
+    `/* eslint-disable */
+// disable eslint for large genareted file
+
+${iconsPair
+  .map(([iconName, iconPath]) => `import {${iconName}} from '${iconPath}'`)
+  .join('\n')}
+import { JSX } from "react"
 import { createGlobalStyle } from 'styled-components'
 
 export default {
@@ -58,7 +62,7 @@ export default {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
         <div className="icons-grid">
@@ -139,7 +143,15 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
             ctx.factory.updateVariableStatement(
               node,
               [ctx.factory.createToken(ts.SyntaxKind.ExportKeyword)],
-              node.declarationList
+              ctx.factory.updateVariableDeclarationList(node.declarationList, [
+                ctx.factory.updateVariableDeclaration(
+                  node.declarationList.declarations[0],
+                  node.declarationList.declarations[0].name,
+                  node.declarationList.declarations[0].exclamationToken,
+                  CreateSvgReturnType(ctx.factory),
+                  node.declarationList.declarations[0].initializer
+                ),
+              ])
             ),
             visitor,
             ctx
@@ -180,4 +192,36 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
   }
 }
 
+// ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>>
+function CreateSvgReturnType(factory: typeof ts.factory) {
+  return factory.createTypeReferenceNode(
+    factory.createIdentifier('ReturnType'),
+    [
+      factory.createTypeQueryNode(
+        factory.createQualifiedName(
+          factory.createIdentifier('React'),
+          factory.createIdentifier('forwardRef')
+        ),
+        [
+          factory.createTypeReferenceNode(
+            factory.createIdentifier('SVGSVGElement'),
+            undefined
+          ),
+          factory.createTypeReferenceNode(
+            factory.createQualifiedName(
+              factory.createIdentifier('React'),
+              factory.createIdentifier('SVGProps')
+            ),
+            [
+              factory.createTypeReferenceNode(
+                factory.createIdentifier('SVGSVGElement'),
+                undefined
+              ),
+            ]
+          ),
+        ]
+      ),
+    ]
+  )
+}
 void main()
