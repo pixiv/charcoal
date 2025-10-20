@@ -10,5 +10,4 @@ export default defineConfig({
   },
   target: 'esnext',
   sourcemap: true,
-  dts: true,
 })
