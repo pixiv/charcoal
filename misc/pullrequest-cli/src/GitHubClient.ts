@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest'
 import path from 'path'
-import { getChangedFiles } from './getChangedFiles'
+import { getChangedFiles } from './getChangedFiles.ts'
 
 type RefResponse = ReturnType<GithubClient['createBranch']> extends Promise<
   infer R
@@ -53,15 +53,27 @@ export class GithubClient {
     return client.createPullRequest(newBranch)
   }
 
+  private readonly repoOwner: string
+  private readonly repoName: string
+  private readonly defaultBranch: string
+  private readonly category: string
+  private readonly message: string
+
   constructor(
-    private readonly repoOwner: string,
-    private readonly repoName: string,
+    repoOwner: string,
+    repoName: string,
     token: string,
-    private readonly defaultBranch: string,
-    private readonly category: string,
-    private readonly message: string,
+    defaultBranch: string,
+    category: string,
+    message: string,
     now = new Date()
   ) {
+    this.repoOwner = repoOwner
+    this.repoName = repoName
+    this.defaultBranch = defaultBranch
+    this.category = category
+    this.message = message
+
     this.api = new Octokit({
       auth: token,
     })
