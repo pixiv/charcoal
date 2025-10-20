@@ -6,6 +6,6 @@
     "incremental": true,
     "outDir": "./dist",
     "tsBuildInfoFile": "./.tsbuildinfo",
-    "skipLibCheck": true,
-  },
+    "skipLibCheck": true
+  }
 }

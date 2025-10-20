@@ -3,6 +3,6 @@
   "include": ["./src"],
   "compilerOptions": {
     "emitDeclarationOnly": true,
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true
   }
 }

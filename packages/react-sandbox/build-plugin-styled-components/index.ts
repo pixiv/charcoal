@@ -1,6 +1,6 @@
 import * as babel from '@babel/core'
 import type { ParserPlugin } from '@babel/parser'
-import type {Options} from 'tsdown'
+import type { Options } from 'tsdown'
 
 const cache = new Map<string, Promise<string>>()
 
@@ -22,9 +22,7 @@ export const styledComponentsPlugin: Options['plugins'] = {
   },
 }
 
-async function transformStyledComponents(
-  sourcePath: string
-): Promise<string> {
+async function transformStyledComponents(sourcePath: string): Promise<string> {
   const plugins: ParserPlugin[] = []
   if (sourcePath.endsWith('x')) {
     plugins.push('jsx')

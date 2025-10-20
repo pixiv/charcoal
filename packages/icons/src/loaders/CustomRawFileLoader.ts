@@ -7,7 +7,7 @@ export class CustomRawFileLoader extends CharcoalIconFilesLoader {
    */
   static filePackages: Map<string, () => Promise<string>> = new Map()
 
-  get importIconFile(): ()=> Promise<string>  {
+  get importIconFile(): () => Promise<string> {
     const icon = CustomRawFileLoader.filePackages.get(this._name)
     if (icon !== undefined) return icon
 
@@ -15,7 +15,10 @@ export class CustomRawFileLoader extends CharcoalIconFilesLoader {
   }
 }
 
-export function addRawFile(name: string, importFn: () => Promise<string>): void {
+export function addRawFile(
+  name: string,
+  importFn: () => Promise<string>
+): void {
   CustomRawFileLoader.filePackages.set(name, importFn)
 }
 

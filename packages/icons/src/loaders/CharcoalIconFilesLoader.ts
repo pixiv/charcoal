@@ -14,7 +14,7 @@ export class CharcoalIconFilesLoader implements Loadable {
     this._name = name
   }
 
-  get importIconFile(): ()=> Promise<string> {
+  get importIconFile(): () => Promise<string> {
     return charcoalIconFiles[this._name]
   }
 

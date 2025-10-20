@@ -64,7 +64,6 @@
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",
     "@charcoal-ui/utils": "workspace:*",
-    "@charcoal-ui/theme": "workspace:*",
     "change-case-all": "^2.1.0",
     "deepmerge": "^4.3.1",
     "polished": "^4.1.4"
