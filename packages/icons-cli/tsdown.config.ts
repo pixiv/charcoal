@@ -1,7 +1,8 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   entry: ['src/index.ts'],
-  target: 'node16',
+  format: 'cjs',
+  target: 'node22',
   sourcemap: true,
 })

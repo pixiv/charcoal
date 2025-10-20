@@ -2,9 +2,10 @@
   "name": "@charcoal-ui/icons-cli",
   "version": "5.0.0-beta.2",
   "license": "Apache-2.0",
+  "type": "commonjs",
   "bin": "./dist/index.js",
   "scripts": {
-    "build": "FORCE_COLOR=1 tsup-node",
+    "build": "tsdown --config-loader unconfig",
     "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 VERSION=v2 pnpm tsx src/v2/transformReact.ts",
     "build:react-v1": "pnpm svgr ../icon-files/svg/ --out-dir ../icons/src/react/v1 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v1 VERSION=v1 pnpm tsx src/v2/transformReact.ts",
     "build:css": "VERSION=v2 SOURCE_ROOT_DIR=../../../icon-files/v2/svg/ OUTPUT_ROOT_DIR=../icons/css/v2 pnpm tsx src/v2/transformCSS.ts",
@@ -24,7 +25,6 @@
     "@types/parse5": "^6.0.3",
     "@types/svgo": "^1.3.3",
     "@types/yargs": "^17.0.8",
-    "tsup": "^6.5.0",
     "tsx": "^4.19.1"
   },
   "dependencies": {
