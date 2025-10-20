@@ -72,8 +72,7 @@ const common = {
   },
 } as const
 
-export const light: CharcoalTheme = {
-  ...common,
+const light: Omit<CharcoalTheme, keyof typeof common> = {
   effect: {
     hover: {
       type: 'alpha',
@@ -120,8 +119,7 @@ export const light: CharcoalTheme = {
   },
 }
 
-export const dark: CharcoalTheme = {
-  ...common,
+const dark: Omit<CharcoalTheme, keyof typeof common> = {
   effect: {
     hover: {
       type: 'alpha',
@@ -193,10 +191,21 @@ it('writes default.ts', () => {
 /** This file is auto generated. DO NOT EDIT BY HAND. */
 import { CharcoalTheme } from './theme'
 
-export const light: CharcoalTheme = ${JSON.stringify(light, sortReplacer, 2)};
+const common = ${(JSON.stringify(common, sortReplacer, 2))} as const;
 
-export const dark: CharcoalTheme = ${JSON.stringify(dark, sortReplacer, 2)};
-`
-  const fmt = prettier.format(code)
+export const light: CharcoalTheme = {
+  ...common,
+  ...${JSON.stringify(light, sortReplacer, 2)}
+};
+
+export const dark: CharcoalTheme = {
+  ...common,
+  ...${JSON.stringify(dark, sortReplacer, 2)}
+}`
+  const fmt = prettier.format(code, {
+    parser: 'typescript',
+    singleQuote: true,
+    semi: false,
+  })
   expect(fmt).toMatchFileSnapshot('./default.ts')
 })
