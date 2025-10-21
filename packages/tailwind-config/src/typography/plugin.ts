@@ -1,4 +1,4 @@
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 import { TypographyDescriptor, TYPOGRAPHY_SIZE } from '@charcoal-ui/foundation'
 import { halfLeading, mapObject, px } from '@charcoal-ui/utils'
 
