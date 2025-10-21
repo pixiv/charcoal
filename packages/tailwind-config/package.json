@@ -18,7 +18,7 @@
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "tsdown",
+    "build": "tsdown --config-loader unconfig",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
