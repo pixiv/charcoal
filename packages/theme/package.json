@@ -47,14 +47,14 @@
   },
   "devDependencies": {
     "@types/css": "^0.0.38",
-    "css": "^3.0.0"
+    "css": "^3.0.0",
+    "polished": "^4.1.4"
   },
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",
     "@charcoal-ui/utils": "workspace:*",
     "change-case-all": "^2.1.0",
-    "deepmerge": "^4.3.1",
-    "polished": "^4.1.4"
+    "deepmerge": "^4.3.1"
   },
   "files": [
     "src",
