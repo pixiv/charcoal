@@ -2,18 +2,18 @@
   "name": "@charcoal-ui/tailwind-config",
   "version": "5.0.0-beta.4",
   "license": "Apache-2.0",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "exports": {
     "types": {
-      "import": "./dist/index.d.ts",
-      "require": "./dist/index.d.cts",
+      "import": "./dist/index.d.mts",
+      "require": "./dist/index.d.ts",
       "default": "./dist/index.d.ts"
     },
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js",
-    "default": "./dist/index.js"
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs",
+    "default": "./dist/index.mjs"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": false,
