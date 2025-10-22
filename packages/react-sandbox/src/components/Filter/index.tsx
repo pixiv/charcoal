@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { css } from '../../styledExportFix'
+import styled, { css } from 'styled-components'
 import { maxWidth } from '@charcoal-ui/utils'
 import {
   LinkProps,

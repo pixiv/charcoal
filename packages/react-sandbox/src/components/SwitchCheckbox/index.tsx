@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import styled, { css } from '../../styledExportFix'
+import styled, { css } from 'styled-components'
 import { applyEffect } from '@charcoal-ui/utils'
 
 export interface Props extends React.ComponentPropsWithoutRef<'input'> {

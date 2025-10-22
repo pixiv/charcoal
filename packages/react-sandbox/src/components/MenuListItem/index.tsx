@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import * as React from 'react'
-import styled, { css } from '../../styledExportFix'
+import styled, { css } from 'styled-components'
 import { theme } from '../../styled'
 import { TextEllipsis } from '../TextEllipsis'
 import {
