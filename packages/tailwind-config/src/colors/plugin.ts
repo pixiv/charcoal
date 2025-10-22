@@ -18,7 +18,7 @@ import { defineCssVariablesV1 } from './pluginTokenV1'
  */
 export default function cssVariableColorPlugin(
   themeMap: ThemeMap,
-  cssVariablesV1: boolean
+  cssVariablesV1: boolean,
 ): ReturnType<typeof plugin> {
   // `:root` 以外のケースで各 CSS Variable がどういう値を取るかを定義する
   const { ':root': _defaultTheme, ...otherThemes } = themeMap

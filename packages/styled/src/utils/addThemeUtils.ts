@@ -25,7 +25,7 @@ import { assertiveRingCss } from '../styles/assertiveRingCss'
  * They can be used as an alternative `createTheme`(`theme(o=>)`) for styling.
  */
 export function addThemeUtils(
-  theme: CharcoalTheme
+  theme: CharcoalTheme,
 ): CharcoalTheme & CharcoalThemeUtils {
   return {
     ...theme,

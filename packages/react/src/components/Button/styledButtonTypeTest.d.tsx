@@ -17,11 +17,11 @@ const StyledButtonAsButton = styled(Button<'button'>)``
 const StyledButtonA = styled(Button<'a'>)``
 const StyledButtonCustom = styled(Button<typeof Custom>)``
 const StyledButtonCustomAsButton = styled(
-  Button<typeof Custom>
+  Button<typeof Custom>,
 )`` as typeof Button
 const StyledButtonCustomGeneric = styled(Button<typeof CustomGeneric>)``
 const StyledButtonCustomGenericFoo = styled(
-  Button<typeof CustomGeneric<'foo'>>
+  Button<typeof CustomGeneric<'foo'>>,
 )``
 
 // for type test only

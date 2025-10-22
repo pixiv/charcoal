@@ -14,7 +14,7 @@ export class GitlabClient {
     projectId: number,
     privateToken: string,
     defaultBranch: string,
-    outputDir: string
+    outputDir: string,
   ) {
     const client = new this(host, projectId, privateToken, defaultBranch)
     const outputDirFullPath = path.resolve(process.cwd(), outputDir)
@@ -36,7 +36,7 @@ export class GitlabClient {
     private readonly projectId: number,
     privateToken: string,
     private readonly defaultBranch: string,
-    now = new Date()
+    now = new Date(),
   ) {
     this.api = new Gitlab({
       host: this.host,
@@ -65,8 +65,8 @@ export class GitlabClient {
           file.status === 'untracked'
             ? 'create'
             : file.status === 'deleted'
-            ? 'delete'
-            : 'update',
+              ? 'delete'
+              : 'update',
         filePath: file.relativePath,
         content: file.content,
       })
@@ -83,7 +83,7 @@ export class GitlabClient {
       diff,
       {
         start_branch: this.defaultBranch,
-      }
+      },
     )
   }
 
@@ -92,7 +92,7 @@ export class GitlabClient {
       this.projectId,
       this.branch,
       this.defaultBranch,
-      this.message
+      this.message,
     )
   }
 }

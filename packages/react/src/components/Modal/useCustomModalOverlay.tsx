@@ -19,7 +19,7 @@ export type CharcoalModalOverlayProps = AriaModalOverlayProps & {
 export function useCharcoalModalOverlay(
   props: CharcoalModalOverlayProps,
   state: { isOpen: boolean; onClose: () => void },
-  ref: React.RefObject<HTMLElement | null>
+  ref: React.RefObject<HTMLElement | null>,
 ): ModalOverlayAria {
   const { overlayProps, underlayProps } = useOverlay(
     {
@@ -28,13 +28,13 @@ export function useCharcoalModalOverlay(
       onClose: state.onClose,
       shouldCloseOnInteractOutside: () => false,
     },
-    ref
+    ref,
   )
 
   usePreventScroll(
     typeof document !== 'undefined' ? document.body : null,
     state.isOpen,
-    props.overflowClip
+    props.overflowClip,
   )
 
   useOverlayFocusContain()
@@ -57,7 +57,7 @@ function isWindowDefined() {
 
 export function useWindowWidth() {
   const [width, setWidth] = React.useState(
-    isWindowDefined() ? window.innerWidth : null
+    isWindowDefined() ? window.innerWidth : null,
   )
   React.useEffect(() => {
     const handleResize = () => {

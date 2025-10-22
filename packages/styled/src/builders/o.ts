@@ -21,7 +21,7 @@ export default function createO<T extends CharcoalAbstractTheme>(
     gradientColor: T['gradientColor']
     border: T['border']
     outline: T['outline']
-  } & Omit<T, 'color' | 'gradientColor' | 'border' | 'outline'>
+  } & Omit<T, 'color' | 'gradientColor' | 'border' | 'outline'>,
 ) {
   return objectAssign(
     colors(theme),
@@ -31,6 +31,6 @@ export default function createO<T extends CharcoalAbstractTheme>(
     elementEffect(theme),
     border(theme),
     borderRadius(theme),
-    outline(theme)
+    outline(theme),
   )
 }

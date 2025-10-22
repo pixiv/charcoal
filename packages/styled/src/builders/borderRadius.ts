@@ -16,7 +16,7 @@ export const createBorderRadiusCss =
   }
 
 export default function borderRadius<T extends CharcoalAbstractTheme>(
-  theme: T
+  theme: T,
 ) {
   // 角丸
   const borderRadiusCss = createBorderRadiusCss(theme)
@@ -25,7 +25,7 @@ export default function borderRadius<T extends CharcoalAbstractTheme>(
     {
       borderRadius: (radius: keyof T['borderRadius']) =>
         borderRadiusCss(radius),
-    }
+    },
   )
 
   return borderRadiusObject

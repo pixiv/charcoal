@@ -324,7 +324,7 @@ export const InFormTag: StoryObj<typeof DropdownSelector> = {
         onSubmit={(e) => {
           const target = e.target as HTMLFormElement
           const select = target.elements.namedItem(
-            'exampleOption'
+            'exampleOption',
           ) as HTMLSelectElement
           alert(`selected value: Option ${select.value}`)
           e.preventDefault()

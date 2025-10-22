@@ -42,9 +42,9 @@ void yargs(process.argv.slice(2))
         GITHUB_DEFAULT_BRANCH ?? 'main',
         TARGET_DIR,
         category,
-        title
+        title,
       )
-    }
+    },
   )
   .demandCommand()
   .strict()

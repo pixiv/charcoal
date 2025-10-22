@@ -9,7 +9,7 @@ import { optimizeSvg } from './optimizeSvg'
 export const optimizeSvgInDirectory = async (
   outputDir: string,
   replaceColor: string,
-  ignoreFile?: string
+  ignoreFile?: string,
 ) => {
   const rootDir = path.join(outputDir, 'svg')
 
@@ -33,6 +33,6 @@ export const optimizeSvgInDirectory = async (
         withoutOptimizeBySVGO: ignorePatterns.includes(file),
       })
       await fs.writeFile(fullPath, optimizedSvg)
-    })
+    }),
   )
 }

@@ -13,11 +13,11 @@ export type LoadingSpinnerProps = {
 const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
   function LoadingSpinnerInner(
     { size = 48, padding = 16, transparent = false, ...props },
-    ref
+    ref,
   ) {
     const classNames = useClassNames(
       'charcoal-loading-spinner',
-      props.className
+      props.className,
     )
 
     return (
@@ -34,7 +34,7 @@ const LoadingSpinner = forwardRef<HTMLDivElement, LoadingSpinnerProps>(
         <LoadingSpinnerIcon />
       </div>
     )
-  }
+  },
 )
 
 export default memo(LoadingSpinner)
@@ -71,5 +71,5 @@ export const LoadingSpinnerIcon = forwardRef<LoadingSpinnerIconHandler, Props>(
         className="charcoal-loading-spinner-icon"
       />
     )
-  }
+  },
 )

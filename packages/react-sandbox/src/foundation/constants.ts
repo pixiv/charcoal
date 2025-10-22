@@ -7,5 +7,5 @@ export const RESPONSIVE_LEFT_WIDTH =
 export const RESPONSIVE_MAIN_MAX_WIDTH = columnSystem(
   12,
   COLUMN_UNIT,
-  GUTTER_UNIT
+  GUTTER_UNIT,
 )

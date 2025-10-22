@@ -24,7 +24,7 @@ async function main() {
         uri: `data:image/svg+xml;utf8,${escape(content).replace("'", "\\'")}`,
         isSetCurrentcolor: !content.includes('<def'),
       }
-    })
+    }),
   )
 
   const js = `/** This file is auto generated. DO NOT EDIT BY HAND. */
@@ -35,7 +35,7 @@ ${dataUris
     (it) =>
       `'${it.iconName}': {uri: '${it.uri}', isSetCurrentcolor: ${
         it.isSetCurrentcolor ? 'true' : 'false'
-      }}`
+      }}`,
   )
   .join(',\n')}
 }`
@@ -49,7 +49,7 @@ ${dataUris
     (it) =>
       `'${it.iconName}': {uri: '${it.uri}', isSetCurrentcolor: ${
         it.isSetCurrentcolor ? 'true' : 'false'
-      }}`
+      }}`,
   )
   .join(',\n')}
 }`

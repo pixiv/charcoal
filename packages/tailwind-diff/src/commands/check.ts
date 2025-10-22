@@ -23,7 +23,9 @@ function processDone(child: ChildProcess) {
           resolve()
         } else if (signal != null) {
           reject(
-            new Error(`Subprocess failed with code: ${code}, signal: ${signal}`)
+            new Error(
+              `Subprocess failed with code: ${code}, signal: ${signal}`,
+            ),
           )
         } else {
           reject(new Error(`Subprocess failed with code: ${code}`))
@@ -54,7 +56,7 @@ export async function check({
   process.on('SIGINT', dispose)
   try {
     const tmpdir = fs.mkdtempSync(
-      path.resolve(os.tmpdir(), 'tailwind-diff-css')
+      path.resolve(os.tmpdir(), 'tailwind-diff-css'),
     )
     defer(() => {
       const files = fs.readdirSync(tmpdir)
@@ -77,7 +79,7 @@ export async function check({
         '--output',
         beforeCSSPath,
         ...(beforeConfig != null ? ['--config', beforeConfig] : []),
-      ])
+      ]),
     )
 
     const afterCSSPath = path.resolve(tmpdir, 'after.css')
@@ -94,19 +96,19 @@ export async function check({
           '--output',
           afterCSSPath,
           ...(afterConfig != null ? ['--config', afterConfig] : []),
-        ])
+        ]),
       )
     })
 
     const beforeStyles = collectClassNamesAndStyles(
       postcss
         .parse(fs.readFileSync(beforeCSSPath, { encoding: 'utf8' }))
-        .toResult()
+        .toResult(),
     )
     const afterStyles = collectClassNamesAndStyles(
       postcss
         .parse(fs.readFileSync(afterCSSPath, { encoding: 'utf8' }))
-        .toResult()
+        .toResult(),
     )
 
     const diffs = diffsBetweenStyles(beforeStyles, afterStyles)

@@ -21,7 +21,7 @@ async function transformV2(filePath: string, fileName: string) {
   height: 1em;
   background: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   aspect-ratio: 1/1;
 }`
@@ -32,7 +32,7 @@ async function transformV2(filePath: string, fileName: string) {
   height: 1em;
   mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   mask-size: 100% 100%;
   background: currentColor;
@@ -62,7 +62,7 @@ async function transformV1(filePath: string, fileName: string) {
   height: 1em;
   background: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   aspect-ratio: 1/1;
 }`
@@ -73,7 +73,7 @@ async function transformV1(filePath: string, fileName: string) {
   height: 1em;
   mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   mask-size: 100% 100%;
   background: currentColor;
@@ -118,7 +118,7 @@ async function main() {
       }
 
       throw new Error('VERSION received an unexpected value')
-    })
+    }),
   )
 
   const cssContent = filesWithContent
@@ -136,7 +136,7 @@ ${classNames
     <div class="${icon}" aria-label=".${icon}" role="img" />
     <code>.${icon}</code>
   </div>
-`
+`,
   )
   .join('\n')}
 </div>`
@@ -160,7 +160,7 @@ ${classNames
   code {
     font-size: 14px;
   }
-</style>${html}`
+</style>${html}`,
   )
   await writeFile(
     path.join(outDir, 'index.story.tsx'),
@@ -205,7 +205,7 @@ export default {
 }
   
 export const Default = {}
-`
+`,
   )
 }
 

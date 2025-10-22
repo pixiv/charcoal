@@ -33,9 +33,9 @@ void yargs
       await writeFile(
         path.join(__dirname, '..', args.output),
         JSON.stringify(await res.json()),
-        'utf8'
+        'utf8',
       )
-    }
+    },
   )
   .command(
     'transform',
@@ -62,7 +62,7 @@ void yargs
     async (args) => {
       if (!existsSync(path.join(__dirname, '..', args.source))) {
         throw new Error(
-          `${path.join(__dirname, '..', args.source)} not exists.`
+          `${path.join(__dirname, '..', args.source)} not exists.`,
         )
       }
 
@@ -72,16 +72,16 @@ void yargs
       const tokens = createToken(
         raw,
         args['variable-collection-names'],
-        args['mode-name']
+        args['mode-name'],
       )
 
       await ensureFile(path.join(__dirname, '..', args.output))
       await writeFile(
         path.join(__dirname, '..', args.output),
         JSON.stringify(tokens, sortReplacer, 2),
-        'utf8'
+        'utf8',
       )
-    }
+    },
   )
   .demandCommand()
   .strict()

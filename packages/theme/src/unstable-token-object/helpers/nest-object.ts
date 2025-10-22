@@ -2,7 +2,7 @@ import { isNonEmptyArray } from './is-empty-array'
 
 type MakeNestObject<P extends readonly string[], T> = P extends [
   infer Head,
-  ...infer Tail
+  ...infer Tail,
 ]
   ? Head extends string
     ? Tail extends string[]
@@ -15,7 +15,7 @@ type MakeNestObject<P extends readonly string[], T> = P extends [
 
 export const nestObject = <P extends [string, ...string[]], T>(
   path: P,
-  value: T
+  value: T,
 ): MakeNestObject<P, T> => {
   if (!isNonEmptyArray(path)) throw new Error('Path must be a non-empty array')
 

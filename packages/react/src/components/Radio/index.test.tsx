@@ -20,7 +20,9 @@ describe('Radio', () => {
       it('console.error()', () => {
         // eslint-disable-next-line no-console
         expect(console.error).toHaveBeenCalledWith(
-          expect.stringMatching(/Perhaps you forgot to wrap with <RadioGroup>/u)
+          expect.stringMatching(
+            /Perhaps you forgot to wrap with <RadioGroup>/u,
+          ),
         )
       })
     })

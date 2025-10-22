@@ -20,7 +20,7 @@ const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
         const el = e.currentTarget
         onChange?.(el.value)
       },
-      [onChange]
+      [onChange],
     )
 
     const classNames = useClassNames('charcoal-radio-input', className)
@@ -36,7 +36,7 @@ const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
         {...props}
       />
     )
-  }
+  },
 )
 
 export default memo(RadioInput)

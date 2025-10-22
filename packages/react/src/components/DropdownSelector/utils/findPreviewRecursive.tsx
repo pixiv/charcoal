@@ -12,7 +12,7 @@ import * as React from 'react'
  */
 export function findPreviewRecursive(
   children: ReactNode,
-  value: string
+  value: string,
 ): ReactNode | undefined {
   const childArray = React.Children.toArray(children)
   for (let i = 0; i < childArray.length; i++) {
@@ -28,7 +28,7 @@ export function findPreviewRecursive(
       if ('children' in child.props) {
         const children = findPreviewRecursive(
           (child.props as { children: ReactNode }).children,
-          value
+          value,
         )
         if (children !== undefined) {
           return children

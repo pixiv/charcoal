@@ -93,7 +93,7 @@ export default function Carousel({
     // アニメーション中にアニメーションが開始されたときに、アニメーション終了予定の位置から再度計算するようにする
     const scroll = Math.min(
       scrollLeft + clientWidth * scrollAmountCoef,
-      maxScrollLeft
+      maxScrollLeft,
     )
     setScrollLeft(scroll, true)
     void set({
@@ -176,7 +176,7 @@ export default function Carousel({
     elm.addEventListener(
       'wheel',
       handleScroll,
-      passiveEvents() && { passive: true }
+      passiveEvents() && { passive: true },
     )
 
     const resizeObserver = new ResizeObserver(handleResize)
@@ -203,12 +203,12 @@ export default function Carousel({
             align === 'left' && scrollOffset > 0
               ? scrollOffset
               : align === 'center'
-              ? maxScrollLeft / 2 + scrollOffset
-              : align === 'right' && scrollOffset <= maxScrollLeft
-              ? maxScrollLeft - scrollOffset / 2
-              : 0,
-            maxScrollLeft
-          )
+                ? maxScrollLeft / 2 + scrollOffset
+                : align === 'right' && scrollOffset <= maxScrollLeft
+                  ? maxScrollLeft - scrollOffset / 2
+                  : 0,
+            maxScrollLeft,
+          ),
         )
         scroll.scrollLeft = scrollLength
         setScrollLeft(scrollLength, true)

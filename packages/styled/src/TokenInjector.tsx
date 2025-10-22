@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle<{
               `}
               ${defineColorVariableCSS(theme)}
             }
-          `
+          `,
     )}
 `
 

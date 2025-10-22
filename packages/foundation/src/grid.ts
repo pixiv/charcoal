@@ -18,7 +18,7 @@ export const GUTTER_UNIT = 24
 export function columnSystem(
   span: number,
   column: number,
-  gutter: number
+  gutter: number,
 ): number {
   return span * column + (span - 1) * gutter
 }

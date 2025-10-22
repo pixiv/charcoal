@@ -14,7 +14,7 @@ describe('colors/colorsToTailwindConfig', () => {
         { color: '#0000ff', ratio: 67 },
       ],
     },
-    effects
+    effects,
   )
 
   it('generates colors for tailwind.config.js', () => {

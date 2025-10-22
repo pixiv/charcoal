@@ -84,7 +84,7 @@ export const mapDefaultKey = <O extends object>(o: O) => {
 
 export const flattenKey = <O extends object>(
   o: O,
-  join?: (key: string) => boolean
+  join?: (key: string) => boolean,
 ) => {
   return Object.fromEntries(
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -92,8 +92,8 @@ export const flattenKey = <O extends object>(
     Object.entries(o).flatMap(([key, v]) => {
       if (typeof v === 'string') return [[key, v]]
       return Object.entries(v as object).map(([kk, vv]) => {
-        return [join?.(key) ?? true ? [key, kk].join('-') : kk, vv]
+        return [(join?.(key) ?? true) ? [key, kk].join('-') : kk, vv]
       })
-    })
+    }),
   )
 }

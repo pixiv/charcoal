@@ -11,7 +11,9 @@
 .charcoal-text-field-container {
   display: flex;
   height: 40px;
-  transition: 0.2s background-color, 0.2s box-shadow;
+  transition:
+    0.2s background-color,
+    0.2s box-shadow;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   border-radius: 4px;

@@ -17,7 +17,7 @@ export class CustomRawFileLoader extends CharcoalIconFilesLoader {
 
 export function addRawFile(
   name: string,
-  importFn: () => Promise<string>
+  importFn: () => Promise<string>,
 ): void {
   CustomRawFileLoader.filePackages.set(name, importFn)
 }

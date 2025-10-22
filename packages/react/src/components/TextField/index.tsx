@@ -53,7 +53,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       getCount = countCodePointsInString,
       ...props
     },
-    forwardRef
+    forwardRef,
   ) {
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -71,7 +71,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         setCount(count)
         onChange?.(value)
       },
-      [getCount, maxLength, onChange]
+      [getCount, maxLength, onChange],
     )
 
     useEffect(() => {
@@ -142,7 +142,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         )}
       </div>
     )
-  }
+  },
 )
 
 export default TextField

@@ -23,7 +23,7 @@ export default function MenuList(props: MenuListProps) {
   const root = useRef(null)
   const propsArray = useMemo(
     () => getValuesRecursive(props.children),
-    [props.children]
+    [props.children],
   )
 
   return (

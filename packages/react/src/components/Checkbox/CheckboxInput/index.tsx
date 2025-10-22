@@ -17,14 +17,14 @@ export type CheckboxInputProps = CharcoalCheckboxInputProps &
 const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
   function CheckboxInput(
     { onChange, checked, invalid, className, rounded, ...props },
-    ref
+    ref,
   ) {
     const handleChange = useCallback(
       (e: React.ChangeEvent<HTMLInputElement>) => {
         const el = e.currentTarget
         onChange?.(el.checked)
       },
-      [onChange]
+      [onChange],
     )
 
     const classNames = useClassNames('charcoal-checkbox-input', className)
@@ -41,7 +41,7 @@ const CheckboxInput = forwardRef<HTMLInputElement, CheckboxInputProps>(
         {...props}
       />
     )
-  }
+  },
 )
 
 export default memo(CheckboxInput)

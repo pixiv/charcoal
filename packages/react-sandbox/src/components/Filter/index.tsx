@@ -27,7 +27,7 @@ export const FilterButton = React.forwardRef(function FilterButton(
     hover,
     reactive = false,
   }: Props<HTMLButtonElement>,
-  ref: React.Ref<HTMLButtonElement>
+  ref: React.Ref<HTMLButtonElement>,
 ) {
   return (
     <ButtonLike
@@ -52,7 +52,7 @@ export const FilterIconButton = React.forwardRef(function FilterIconButton(
     width,
     height,
   }: FilterIconButtonProps,
-  ref: React.Ref<HTMLButtonElement>
+  ref: React.Ref<HTMLButtonElement>,
 ) {
   return (
     <StyledButtonLike
@@ -78,7 +78,7 @@ export const FilterLink = React.forwardRef(function FilterLink(
     reactive = false,
     ...props
   }: Props<HTMLAnchorElement> & LinkProps,
-  ref: React.Ref<HTMLAnchorElement>
+  ref: React.Ref<HTMLAnchorElement>,
 ) {
   const { Link } = useComponentAbstraction()
   if (active && !reactive) {

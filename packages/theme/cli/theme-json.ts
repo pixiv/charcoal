@@ -24,13 +24,13 @@ const monolith = Object.fromEntries(
       color: Object.fromEntries(
         Object.entries(original.color)
           .filter(([key]) => !deprecatedColor.includes(key))
-          .map(([key, material]) => [key, parseMaterial(material)])
+          .map(([key, material]) => [key, parseMaterial(material)]),
       ),
       gradientColor: Object.fromEntries(
         Object.entries(original.gradientColor).map(([key, def]) => [
           key,
           def.map((v) => ({ ...v, color: parseMaterial(v.color) })),
-        ])
+        ]),
       ),
       effect: Object.fromEntries(
         Object.entries(original.effect).map(([key, def]) => [
@@ -39,23 +39,23 @@ const monolith = Object.fromEntries(
             ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
               { ...def, color: parseMaterial(def.color!) }
             : def,
-        ])
+        ]),
       ),
       border: Object.fromEntries(
         Object.entries(original.border).map(([key, def]) => [
           key,
           { ...def, color: parseMaterial(def.color) },
-        ])
+        ]),
       ),
       outline: Object.fromEntries(
         Object.entries(original.border).map(([key, def]) => [
           key,
           { ...def, color: parseMaterial(def.color) },
-        ])
+        ]),
       ),
     }
     return [id, transformed]
-  })
+  }),
 )
 
 export function writeThemeJson() {

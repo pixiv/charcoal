@@ -7,12 +7,12 @@ export { camelCaseKeys } from './helpers/changecase-keys'
 
 export const createTokenObject = <T extends TokenDictionary>(
   tokenDictionary: T,
-  baseTokenDictionary: TokenDictionary
+  baseTokenDictionary: TokenDictionary,
 ): { [K in keyof T]: TokenObject<T[K]> } => {
   const result = {} as { [K in keyof T]: TokenObject<T[K]> }
   const referenceTokenResolver = createReferenceTokenResolver(
     tokenDictionary,
-    baseTokenDictionary
+    baseTokenDictionary,
   )
 
   for (const category in tokenDictionary) {
@@ -23,7 +23,7 @@ export const createTokenObject = <T extends TokenDictionary>(
       Object.entries(value).map(([key, value]) => [
         key,
         { value: referenceTokenResolver(value.value) } satisfies TokenValue,
-      ])
+      ]),
     ) as typeof value
 
     result[category] = toTokenObject(resolvedTokens)
@@ -34,7 +34,7 @@ export const createTokenObject = <T extends TokenDictionary>(
 
 export const createCSSTokenObject = <T extends TokenDictionary>(
   tokenDictionary: T,
-  format: (value: string) => string = (value) => value
+  format: (value: string) => string = (value) => value,
 ): { [K in keyof T]: TokenObject<T[K]> } => {
   const result = {} as { [K in keyof T]: TokenObject<T[K]> }
 
@@ -47,10 +47,10 @@ export const createCSSTokenObject = <T extends TokenDictionary>(
         key,
         {
           value: `var(--${format(
-            [category, ...key.split('/')].map((x) => kebabCase(x)).join('-')
+            [category, ...key.split('/')].map((x) => kebabCase(x)).join('-'),
           )})`,
         } satisfies TokenValue,
-      ])
+      ]),
     ) as typeof value
 
     result[category] = toTokenObject(resolvedTokens)

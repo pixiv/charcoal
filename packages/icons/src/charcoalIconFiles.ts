@@ -5,7 +5,7 @@ export default charcoalIconFiles
 export type KnownIconFile = keyof typeof charcoalIconFiles
 export type KnownIconFileV2 = keyof typeof charcoalIconFilesV2
 export const KNOWN_ICON_FILES = Object.keys(
-  charcoalIconFiles
+  charcoalIconFiles,
 ) as KnownIconFile[]
 
 export function isKnownIconFile(name: string): name is KnownIconFile {

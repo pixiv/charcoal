@@ -25,7 +25,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
       className,
       children,
     },
-    ref
+    ref,
   ) {
     const {
       name,
@@ -39,7 +39,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
     warning(
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       name !== undefined,
-      `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`
+      `"name" is not Provided for <MultiSelect>. Perhaps you forgot to wrap with <MultiSelectGroup> ?`,
     )
 
     const isSelected = selected.includes(value)
@@ -53,7 +53,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
         if (onChange) onChange({ value, selected: event.currentTarget.checked })
         parentOnChange({ value, selected: event.currentTarget.checked })
       },
-      [onChange, parentOnChange, value]
+      [onChange, parentOnChange, value],
     )
     const classNames = useClassNames('charcoal-multi-select', className)
     return (
@@ -83,7 +83,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
         )}
       </label>
     )
-  }
+  },
 )
 
 export default memo(MultiSelect)
@@ -126,7 +126,7 @@ export function MultiSelectGroup({
         }
       }
     },
-    [onChange, selected]
+    [onChange, selected],
   )
 
   return (

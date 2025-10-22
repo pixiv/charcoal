@@ -20,7 +20,7 @@ export const createOutlineColorCss =
   <T extends CharcoalAbstractTheme>(theme: T) =>
   (
     variant: keyof T['outline'],
-    modifiers: readonly OutlineType[]
+    modifiers: readonly OutlineType[],
   ): Internal => {
     const weight = theme.outline[variant].weight
     const color = theme.outline[variant].color
@@ -69,10 +69,10 @@ export default function outline<T extends CharcoalAbstractTheme>(theme: T) {
         keyof<T['outline']>(theme.outline),
         (variant) =>
           definePropertyChains(outlineType, (modifiers) =>
-            outlineCss(variant, modifiers)
-          )
+            outlineCss(variant, modifiers),
+          ),
       ),
-    }
+    },
   )
 
   return outlineObject

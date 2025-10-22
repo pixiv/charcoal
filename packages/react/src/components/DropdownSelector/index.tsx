@@ -43,7 +43,7 @@ export default function DropdownSelector({
 
   const isPlaceholder = useMemo(
     () => props.placeholder !== undefined && preview === undefined,
-    [preview, props.placeholder]
+    [preview, props.placeholder],
   )
 
   const propsArray = getValuesRecursive(props.children)
@@ -54,7 +54,7 @@ export default function DropdownSelector({
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       onChange(e.target.value)
     },
-    [onChange]
+    [onChange],
   )
 
   const labelId = useId()
@@ -62,7 +62,7 @@ export default function DropdownSelector({
 
   const classNames = useClassNames(
     'charcoal-dropdown-selector-root',
-    props.className
+    props.className,
   )
 
   return (

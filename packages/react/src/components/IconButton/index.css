@@ -20,7 +20,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 999999px;
-  transition: 0.2s background-color, 0.2s box-shadow;
+  transition:
+    0.2s background-color,
+    0.2s box-shadow;
 }
 
 .charcoal-icon-button:disabled,

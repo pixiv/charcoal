@@ -85,7 +85,7 @@ export type FigmaResponse = {
 
 const colorToRgba = ({ r, g, b, a }: Color) =>
   `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(
-    b * 255
+    b * 255,
   )}, ${Math.round(a * 1000) / 1000})`
 
 export const getDesignToken = (pat: string, nodeId: string) =>
@@ -96,7 +96,7 @@ export const resolveValue = (
   variableMap: Map<string, Variable>,
   resolvedType: ResolveType,
   variable: Variable,
-  modeId: string
+  modeId: string,
 ): string => {
   const value = variable.valuesByMode[modeId]
 
@@ -105,14 +105,14 @@ export const resolveValue = (
     const v = variableMap.get(value.id)
     if (!v)
       throw new Error(
-        `can't find variable alias "${variable.name}:${value.id}"`
+        `can't find variable alias "${variable.name}:${value.id}"`,
       )
 
     const variableCollection = variableCollectionMap.get(v.variableCollectionId)
 
     if (!variableCollection)
       throw new Error(
-        `can't find variable collection "${variable.name}:${v.variableCollectionId}"`
+        `can't find variable collection "${variable.name}:${v.variableCollectionId}"`,
       )
 
     return `{${variableCollection.name}.${v.name}}`

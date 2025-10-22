@@ -3,13 +3,13 @@
 import { Children, isValidElement, ReactElement, ReactNode } from 'react'
 
 const hasChildren = (
-  element: ReactNode
+  element: ReactNode,
 ): element is ReactElement<{ children: ReactNode[] }> =>
   isValidElement<{ children?: ReactNode[] }>(element) &&
   Boolean(element.props.children)
 
 export const childToString = (
-  child?: number | string | boolean | {} | null
+  child?: number | string | boolean | {} | null,
 ): string => {
   if (
     typeof child === 'undefined' ||
@@ -45,6 +45,6 @@ export const onlyText = (children: ReactNode): string => {
 
       return text.concat(newText)
     },
-    ''
+    '',
   )
 }

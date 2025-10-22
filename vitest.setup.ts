@@ -13,7 +13,7 @@ beforeAll(() => {
       observe: vi.fn(),
       unobserve: vi.fn(),
       disconnect: vi.fn(),
-    }))
+    })),
   )
   vi.stubGlobal(
     'IntersectionObserver',
@@ -24,7 +24,7 @@ beforeAll(() => {
       disconnect() {
         return null
       },
-    }))
+    })),
   )
   vi.stubGlobal(
     'matchMedia',
@@ -37,7 +37,7 @@ beforeAll(() => {
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
       dispatchEvent: vi.fn(),
-    }))
+    })),
   )
 
   vi.mock('@react-aria/utils', async () => {
@@ -59,9 +59,8 @@ beforeAll(() => {
   })
 
   vi.mock('react-stately', async () => {
-    const stately = await vi.importActual<typeof import('react-stately')>(
-      'react-stately'
-    )
+    const stately =
+      await vi.importActual<typeof import('react-stately')>('react-stately')
 
     return {
       ...stately,

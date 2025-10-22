@@ -2,11 +2,8 @@ import { Octokit } from '@octokit/rest'
 import path from 'path'
 import { getChangedFiles } from './getChangedFiles.ts'
 
-type RefResponse = ReturnType<GithubClient['createBranch']> extends Promise<
-  infer R
->
-  ? R
-  : never
+type RefResponse =
+  ReturnType<GithubClient['createBranch']> extends Promise<infer R> ? R : never
 
 interface TreeItem {
   path?: string
@@ -27,7 +24,7 @@ export class GithubClient {
     defaultBranch: string,
     outputDir: string,
     category: string,
-    pullrequestTitle: string
+    pullrequestTitle: string,
   ) {
     const client = new this(
       repoOwner,
@@ -35,7 +32,7 @@ export class GithubClient {
       token,
       defaultBranch,
       category,
-      pullrequestTitle
+      pullrequestTitle,
     )
     const outputDirFullPath = path.resolve(process.cwd(), outputDir)
     const diff = await client.createTreeFromDiff(outputDirFullPath)
@@ -66,7 +63,7 @@ export class GithubClient {
     defaultBranch: string,
     category: string,
     message: string,
-    now = new Date()
+    now = new Date(),
   ) {
     this.repoOwner = repoOwner
     this.repoName = repoName

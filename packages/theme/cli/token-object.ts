@@ -76,11 +76,11 @@ export function writeTokenObjects() {
     valueStyle,
   } of configurations) {
     const baseJson = JSON.parse(
-      readFileSync(path.resolve(baseFile), 'utf8')
+      readFileSync(path.resolve(baseFile), 'utf8'),
     ) as TokenDictionary
 
     const createToken = <T extends TokenDictionary>(
-      value: T
+      value: T,
     ): Record<string, unknown> => {
       switch (valueStyle) {
         case 'cssVariable': {
@@ -92,7 +92,7 @@ export function writeTokenObjects() {
       }
     }
     const transformKey = <T extends Record<string, unknown>>(
-      value: T
+      value: T,
     ): Record<string, unknown> => {
       switch (keyStyle) {
         case 'camelCase': {
@@ -105,18 +105,18 @@ export function writeTokenObjects() {
     }
 
     const tokenJson = JSON.parse(
-      readFileSync(path.resolve(tokenFile), 'utf8')
+      readFileSync(path.resolve(tokenFile), 'utf8'),
     ) as TokenDictionary
     const tokenObject = transformKey(createToken(tokenJson))
 
     mkdirSync(path.dirname(outputFile), { recursive: true })
     writeFileSync(
       path.resolve(outputFile),
-      JSON.stringify(tokenObject, null, 2)
+      JSON.stringify(tokenObject, null, 2),
     )
 
     console.log(
-      `Generated ${outputFile} with keyStyle ${keyStyle} and valueStyle ${valueStyle}.`
+      `Generated ${outputFile} with keyStyle ${keyStyle} and valueStyle ${valueStyle}.`,
     )
   }
 }
