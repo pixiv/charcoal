@@ -2,7 +2,9 @@
   "npmClient": "pnpm",
   "changelogPreset": {
     "name": "conventionalcommits",
-    "issuePrefixes": ["#"],
+    "issuePrefixes": [
+      "#"
+    ],
     "types": [
       {
         "type": "feat",
@@ -80,7 +82,9 @@
       "loglevel": "success"
     }
   },
-  "packages": ["packages/*"],
-  "version": "5.0.0-beta.5",
+  "packages": [
+    "packages/*"
+  ],
+  "version": "5.0.0-beta.6",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
