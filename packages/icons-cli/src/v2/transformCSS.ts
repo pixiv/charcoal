@@ -8,7 +8,7 @@ async function transformV2(filePath: string, fileName: string) {
   const content = await readFile(filePath, 'utf-8')
   const [size, variant, name] = fileName.split('/')
   const cssName = [
-    'charcoal-icon',
+    'charcoal-icon-v2',
     name.toLowerCase().replace('.svg', '').replaceAll('.', '-'),
     ...(variant === 'regular' ? [] : [variant]),
     ...(size === '24' ? [] : [size]),

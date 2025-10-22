@@ -6,7 +6,7 @@ import { CSSRuleObject } from 'tailwindcss/types/config'
 const transformClassNameV2 = (fileName: string) => {
   const [size, variant, name] = fileName.split('/')
   return [
-    '.icon',
+    '.icon-v2',
     name.replaceAll('.', '-'),
     ...(variant === 'regular' ? [] : [variant]),
     ...(size === '24' ? [] : [size]),
@@ -26,7 +26,13 @@ const transformClassNameV1 = (fileName: string) => {
     .toLowerCase()
 }
 
-export const createIconUtilities = ({ v2 = false }: { v2?: boolean }) => {
+export const createIconUtilities = ({
+  v2 = false,
+}: {
+  v2?: boolean
+}): {
+  [key: string]: CSSRuleObject
+} => {
   const newUtilities: { [key: string]: CSSRuleObject } = {}
   const icons = v2 ? iconsV2 : iconsV1
   for (const [fileName, { uri, isSetCurrentcolor }] of Object.entries(icons)) {
@@ -47,10 +53,14 @@ export const createIconUtilities = ({ v2 = false }: { v2?: boolean }) => {
   return newUtilities
 }
 
-export const charcoalIconsV2 = plugin(({ addUtilities }) => {
-  addUtilities(createIconUtilities({ v2: true }))
-})
+export const charcoalIconsV2: ReturnType<typeof plugin> = plugin(
+  ({ addUtilities }) => {
+    addUtilities(createIconUtilities({ v2: true }))
+  },
+)
 
-export const charcoalIconsV1 = plugin(({ addUtilities }) => {
-  addUtilities(createIconUtilities({ v2: false }))
-})
+export const charcoalIconsV1: ReturnType<typeof plugin> = plugin(
+  ({ addUtilities }) => {
+    addUtilities(createIconUtilities({ v2: false }))
+  },
+)

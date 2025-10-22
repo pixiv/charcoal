@@ -6,5 +6,6 @@ export default defineConfig({
   target: 'esnext',
   sourcemap: true,
   dts: true,
-  minify: true,
+  // class PixivIcon must be kept as-is
+  minify: false,
 })

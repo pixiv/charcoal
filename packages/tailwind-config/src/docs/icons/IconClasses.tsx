@@ -16,11 +16,13 @@ export const IconV2Classes: React.FC = () => {
     .map(([fileName, { uri, isSetCurrentcolor }]) => {
       const [size, variant, name] = fileName.split('/')
       const className = [
-        'icon',
+        'icon-v2',
         name.replaceAll('.', '-'),
         ...(variant === 'regular' ? [] : [variant]),
         ...(size === '24' ? [] : [size]),
-      ].join('-')
+      ]
+        .join('-')
+        .toLowerCase()
 
       return {
         className,
@@ -50,7 +52,9 @@ export const IconV1Classes: React.FC = () => {
         'icon-v1',
         name.replaceAll('.', '-'),
         ...(size === '24' ? [] : [size]),
-      ].join('-')
+      ]
+        .join('-')
+        .toLowerCase()
 
       return {
         className,
