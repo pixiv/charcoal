@@ -6,7 +6,7 @@ import {
   flatMapObject,
   mapObject,
 } from '@charcoal-ui/utils'
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 import { mergeEffect } from '../foundation'
 import { CSSVariableName, CSSVariables, Definition, ThemeMap } from '../types'
 import { COLOR_PREFIX, isSingleColor } from './utils'

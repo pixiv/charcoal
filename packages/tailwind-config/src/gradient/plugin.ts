@@ -1,4 +1,4 @@
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 import { camelToKebab } from '../util'
 import { GradientMaterial } from '@charcoal-ui/foundation'
 import { ThemeColorGradient } from '@charcoal-ui/theme'

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../styledExportFix'
 import { onlyText } from './helper'
 
 export interface Props {

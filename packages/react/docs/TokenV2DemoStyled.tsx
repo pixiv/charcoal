@@ -1,6 +1,7 @@
 /* lint runs before build so json does not exist */
 
 import { useState } from 'react'
+// eslint-disable-next-line no-restricted-imports
 import styled from 'styled-components'
 // This does not work :(
 // import tokens from '@charcoal-ui/theme/tokens/camel/css-variables.json'

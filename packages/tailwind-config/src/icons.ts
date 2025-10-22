@@ -1,4 +1,4 @@
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 import iconsV2 from '@charcoal-ui/icon-files/v2-datauri'
 import iconsV1 from '@charcoal-ui/icon-files/v1-datauri'
 import { CSSRuleObject } from 'tailwindcss/types/config'

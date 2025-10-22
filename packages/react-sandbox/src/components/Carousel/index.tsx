@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
 import * as React from 'react'
 import { animated, AnimatedComponent, useSpring } from 'react-spring'
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../styledExportFix'
 import { useDebounceAnimationState } from '../../foundation/hooks'
 import { passiveEvents, isEdge } from '../../foundation/support'
 import { useIsomorphicLayoutEffect } from '../../hooks'
