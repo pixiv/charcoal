@@ -1,6 +1,6 @@
 import * as React from 'react'
-import iconsV2 from '@charcoal-ui/icon-files/v2-datauri'
-import iconsV1 from '@charcoal-ui/icon-files/v1-datauri'
+import iconsV2 from '@charcoal-ui/icon-files/v2/datauri'
+import iconsV1 from '@charcoal-ui/icon-files/v1/datauri'
 
 const IconClassBox: React.FC<{
   className: string
