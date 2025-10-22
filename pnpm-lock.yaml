@@ -333,9 +333,6 @@ importers:
       camelcase:
         specifier: ^6.3.0
         version: 6.3.0
-      fast-glob:
-        specifier: ^3.2.12
-        version: 3.3.3
       figma-js:
         specifier: ^1.14.0
         version: 1.16.0
@@ -564,6 +561,9 @@ importers:
       '@testing-library/user-event':
         specifier: ^13.5.0
         version: 13.5.0(@testing-library/dom@10.4.0)
+      '@types/babel__core':
+        specifier: 7.20.5
+        version: 7.20.5
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.20
@@ -11305,7 +11305,7 @@ snapshots:
 
   '@babel/code-frame@7.26.2':
     dependencies:
-      '@babel/helper-validator-identifier': 7.25.9
+      '@babel/helper-validator-identifier': 7.27.1
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
@@ -11321,10 +11321,10 @@ snapshots:
       '@babel/helpers': 7.27.0
       '@babel/parser': 7.28.4
       '@babel/template': 7.27.0
-      '@babel/traverse': 7.27.0(supports-color@5.5.0)
+      '@babel/traverse': 7.27.0
       '@babel/types': 7.27.0
       convert-source-map: 2.0.0
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -11397,19 +11397,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@babel/helper-module-imports@7.25.9':
+    dependencies:
+      '@babel/traverse': 7.27.0
+      '@babel/types': 7.28.4
+    transitivePeerDependencies:
+      - supports-color
+
   '@babel/helper-module-imports@7.25.9(supports-color@5.5.0)':
     dependencies:
       '@babel/traverse': 7.27.0(supports-color@5.5.0)
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
-      '@babel/helper-validator-identifier': 7.25.9
-      '@babel/traverse': 7.27.0(supports-color@5.5.0)
+      '@babel/helper-module-imports': 7.25.9
+      '@babel/helper-validator-identifier': 7.27.1
+      '@babel/traverse': 7.27.0
     transitivePeerDependencies:
       - supports-color
 
@@ -12127,13 +12134,25 @@ snapshots:
       '@babel/parser': 7.28.4
       '@babel/types': 7.27.0
 
+  '@babel/traverse@7.27.0':
+    dependencies:
+      '@babel/code-frame': 7.26.2
+      '@babel/generator': 7.27.0
+      '@babel/parser': 7.28.4
+      '@babel/template': 7.27.0
+      '@babel/types': 7.28.4
+      debug: 4.4.0
+      globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@babel/traverse@7.27.0(supports-color@5.5.0)':
     dependencies:
       '@babel/code-frame': 7.26.2
       '@babel/generator': 7.27.0
       '@babel/parser': 7.28.4
       '@babel/template': 7.27.0
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
       debug: 4.4.0(supports-color@5.5.0)
       globals: 11.12.0
     transitivePeerDependencies:
@@ -15553,7 +15572,7 @@ snapshots:
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.28.4
-      '@babel/types': 7.27.0
+      '@babel/types': 7.28.4
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.6
@@ -17443,6 +17462,10 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
+  debug@4.4.0:
+    dependencies:
+      ms: 2.1.3
+
   debug@4.4.0(supports-color@5.5.0):
     dependencies:
       ms: 2.1.3
@@ -19043,7 +19066,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -19089,7 +19112,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 

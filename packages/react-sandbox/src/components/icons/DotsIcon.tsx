@@ -1,4 +1,4 @@
-import styled from '../../styledExportFix'
+import styled from 'styled-components'
 
 interface Props {
   size?: number | string

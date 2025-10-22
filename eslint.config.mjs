@@ -16,9 +16,10 @@ export default defineConfig([
       'packages/tailwind-diff/bin/tailwind-diff.js',
       'packages/icon-files/src/',
       'packages/icon-files/v2',
-      'packages/icon-files/v2-datauri',
-      'packages/icon-files/v1-datauri',
+      'packages/icon-files/v2/datauri',
+      'packages/icon-files/v1/datauri',
       'packages/icons/react',
+      'packages/icons/css/v2/index.story.tsx',
       'eslint.config.mjs',
       'vitest.*',
       '.storybook',
@@ -42,33 +43,10 @@ export default defineConfig([
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['styled-components'],
-              importNames: ['default'],
-              message: `import styled via styledExportFix.ts instead`,
-            },
-          ],
-        },
-      ],
       curly: 'off',
     },
     linterOptions: {
       reportUnusedDisableDirectives: 'off',
     },
-  },
-  {
-    files: [
-      '**/*.story.ts',
-      '**/*.story.tsx',
-      '**/*.d.ts',
-      '**/*.d.tsx',
-      '**/*.test.ts',
-      '**/*.test.tsx',
-    ],
-    rules: { 'no-restricted-imports': 'off' },
   },
 ])

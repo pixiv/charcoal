@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from '../../styledExportFix'
+import styled from 'styled-components'
 
 export type IconSizes = 16 | 24 | 32
 

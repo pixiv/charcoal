@@ -1,4 +1,4 @@
-import styled from '../../styledExportFix'
+import styled from 'styled-components'
 import { MenuListLinkItem } from '../MenuListItem'
 import { useComponentAbstraction } from '../../_lib/ComponentAbstraction'
 

@@ -1,7 +1,6 @@
 import { mustBeDefined } from '../utils'
 import ts from 'typescript'
-import glob from 'fast-glob'
-import { readFile, writeFile } from 'fs-extra'
+import { glob, readFile, writeFile } from 'fs/promises'
 import path from 'path'
 
 async function main() {
@@ -10,7 +9,7 @@ async function main() {
   const workDir = process.env.OUTPUT_ROOT_DIR
   const version = process.env.VERSION
 
-  const fileNames = await glob('*/**/*.tsx', { cwd: workDir })
+  const fileNames = await Array.fromAsync(glob('*/**/*.tsx', { cwd: workDir }))
   const filesWithContent = await Promise.all(
     fileNames.map(async (fileName) => {
       const filePath = path.join(workDir, fileName)

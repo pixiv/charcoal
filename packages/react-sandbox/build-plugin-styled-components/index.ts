@@ -1,6 +1,8 @@
 import * as babel from '@babel/core'
 import type { ParserPlugin } from '@babel/parser'
 import type { Options } from 'tsdown'
+import path from 'path'
+import fs from 'fs/promises'
 
 const cache = new Map<string, Promise<string>>()
 
@@ -23,6 +25,9 @@ export const styledComponentsPlugin: Options['plugins'] = {
 }
 
 async function transformStyledComponents(sourcePath: string): Promise<string> {
+  if (sourcePath.includes('styledExportFix')) {
+    return fs.readFile(sourcePath, 'utf8')
+  }
   const plugins: ParserPlugin[] = []
   if (sourcePath.endsWith('x')) {
     plugins.push('jsx')
@@ -51,11 +56,28 @@ async function transformStyledComponents(sourcePath: string): Promise<string> {
           namespace: 'ccl', // componentIdが重複しないよう適当なprefixを付与する
         },
       ],
+      // https://github.com/styled-components/styled-components/issues/3437
+      function styledImportFix({ types: t }: typeof babel) {
+        const importFix = path.join(import.meta.dirname, './styledExportFix.ts')
+        return {
+          visitor: {
+            ImportDeclaration(path) {
+              if (path.node.source.value === 'styled-components') {
+                path.node.source = t.stringLiteral(importFix)
+              }
+            },
+          },
+        } satisfies babel.PluginObj
+      },
     ],
     browserslistConfigFile: false,
     sourceMaps: 'inline',
     parserOpts: { plugins },
   })
 
-  return result?.code ?? undefined
+  if (!result?.code) {
+    throw new Error('expect code to be generated')
+  }
+
+  return result.code
 }

@@ -10,5 +10,6 @@ export default defineConfig({
   target: 'esnext',
   sourcemap: true,
   dts: false,
+  minify: true,
   plugins: [styledComponentsPlugin],
 })

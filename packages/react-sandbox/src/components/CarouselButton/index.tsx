@@ -1,4 +1,4 @@
-import styled, { css } from '../../styledExportFix'
+import styled, { css } from 'styled-components'
 import { unreachable } from '../../foundation/utils'
 import NextIcon, { WedgeDirection } from '../icons/NextIcon'
 import { applyEffect } from '@charcoal-ui/utils'

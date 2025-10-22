@@ -1,6 +1,6 @@
 import { memo, useCallback, useDebugValue, useMemo } from 'react'
 
-import styled, { css } from '../../styledExportFix'
+import styled, { css } from 'styled-components'
 import warning from 'warning'
 import DotsIcon from '../icons/DotsIcon'
 import WedgeIcon, { WedgeDirection } from '../icons/WedgeIcon'
@@ -255,6 +255,7 @@ const CircleButton = styled.button<{ noBackground?: boolean }>`
   ${({ noBackground = false }) =>
     noBackground &&
     css`
+      /* stylelint-disable-next-line no-duplicate-selectors */
       &:hover {
         background: transparent;
       }

@@ -1,4 +1,4 @@
-import styled, { css } from '../styledExportFix'
+import styled, { css } from 'styled-components'
 
 export const dummyText = css`
   color: ${({ theme }) => theme.color.text4};
