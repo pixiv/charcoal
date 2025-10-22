@@ -46,7 +46,7 @@ yarn icons-cli svg:optimize --color "#000" --ignoreFile ./misc/icons-cli-denylis
 ```
 
 SVG ファイルに SVGO による最適化をかけつつ、指定した色を `currentColor` に置換します。
-`ignoreFile`では、処理から除外する SVG ファイルの一覧を記したファイルを指定することができます。[fast-glob](https://github.com/mrmlnc/fast-glob#pattern-syntax)のパターンを使用できます。
+`ignoreFile`では、処理から除外する SVG ファイルの一覧を記したファイルを指定することができます。[glob](https://nodejs.org/api/fs.html#fspromisesglobpattern-options)のパターンを使用できます。
 
 必要な環境変数は以下です。
 

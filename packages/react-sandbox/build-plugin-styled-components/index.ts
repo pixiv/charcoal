@@ -25,7 +25,7 @@ export const styledComponentsPlugin: Options['plugins'] = {
 }
 
 async function transformStyledComponents(sourcePath: string): Promise<string> {
-  if (sourcePath.includes('styledExportFix')){
+  if (sourcePath.includes('styledExportFix')) {
     return fs.readFile(sourcePath, 'utf8')
   }
   const plugins: ParserPlugin[] = []

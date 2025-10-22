@@ -60,7 +60,7 @@ describe.each([
   async (description, token, cssFilePath) => {
     const theme = createCSSTokenObject(token, (value) => `charcoal-${value}`)
     const keys = Object.keys(token)
-    const css = await readFile(join(__dirname, cssFilePath), 'utf-8')
+    const css = await readFile(join(import.meta.dirname, cssFilePath), 'utf-8')
 
     // スナップショット
     it('should match snapshot', () => {

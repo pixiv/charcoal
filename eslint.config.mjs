@@ -19,6 +19,7 @@ export default defineConfig([
       'packages/icon-files/v2/datauri',
       'packages/icon-files/v1/datauri',
       'packages/icons/react',
+      'packages/icons/css/v2/index.story.tsx',
       'eslint.config.mjs',
       'vitest.*',
       '.storybook',

@@ -1,5 +1,5 @@
 import path from 'path'
-import glob from 'fast-glob'
+import { glob } from 'node:fs/promises'
 import fs from 'fs-extra'
 
 const generateIconSvgEmbeddedSource = (svgString: string) => {
@@ -63,7 +63,7 @@ export const generateEntrypoint = async (
 export const generateIconSource = async (outputDir: string) => {
   const svgRoot = path.join(outputDir, 'svg')
   const srcRoot = path.join(outputDir, 'src')
-  const icons = (await glob('**/*.svg', { cwd: svgRoot }))
+  const icons = (await Array.fromAsync(glob('**/*.svg', { cwd: svgRoot })))
     .map(
       (path) => path.slice(0, -4), // e.g. '16/Add.svg' -> '16/Add'
     )
