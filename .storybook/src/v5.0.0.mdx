@@ -3,9 +3,9 @@ import { Unstyled } from '@storybook/blocks'
 
 <Meta title="v5.0.0 (WIP)" />
 
-# tsdown & esm 移行
+# tsdown & ESM 移行
 
-以下の package が tsup から tsdown に移行し esm 化されました。合わせて exports 関連が調整されました
+以下のパッケージを tsup から tsdown に移行し、ESM 化しました。併せて exports の設定を調整しました。
 
 - `@charcoal-ui/foundation@v5.0.0`
 - `@charcoal-ui/icon-files@v5.0.0`
@@ -16,13 +16,13 @@ import { Unstyled } from '@storybook/blocks'
 - `@charcoal-ui/theme@v5.0.0`
 - `@charcoal-ui/utils@v5.0.0`
 
-以下の cli package は commonjs のままを維持
+以下の CLI パッケージは引き続き CommonJS を維持しています。
 
 - `@charcoal-ui/token-cli@v5.0.0`
 - `@charcoal-ui/icons-cli@v5.0.0`
 - `@charcoal-ui/tailwind-config@v5.0.0`
 
-以下の package に minifyされるようになりました
+以下のパッケージで minify を有効化しました。
 
 - `@charcoal-ui/foundation@v5.0.0`
 - `@charcoal-ui/react@v5.0.0`
@@ -30,24 +30,24 @@ import { Unstyled } from '@storybook/blocks'
 - `@charcoal-ui/styled@v5.0.0`
 - `@charcoal-ui/utils@v5.0.0`
 
-以下の package が削除されました
+以下のパッケージを削除しました。
 
 - `@charcoal-ui/pullrequest-cli`
-  - packages から misc に降格
+  - packages 配下から misc 配下へ移動しました。
 - `@charcoal-ui/esbuild-plugin-styled-components`
-  - react-sandbox の内部に移動しました
+  - react-sandbox 内部に移行しました。
 
-以下の package が将来的に大幅に調整される可能性があるため、依存する際に注意してください
+以下のパッケージは今後大幅な調整が入る可能性があるため、依存する際はご注意ください。
 
-- `@charcoal-ui/tailwind-diff` (廃止見込み)
-- `@charcoal-ui/icons-cli` (API調整)
-- `@charcoal-ui/token-cli` (API調整)
+- `@charcoal-ui/tailwind-diff`（廃止予定）
+- `@charcoal-ui/icons-cli`（API 調整予定）
+- `@charcoal-ui/token-cli`（API 調整予定）
 
 # @charcoal-ui/icon-files
 
-- v2 系の icon が追加されました (charcoal v4 より安定化)
+- v2 系のアイコンを追加しました（Charcoal v4 より安定化）。
   - [Charcoal Icons 2.0](https://www.figma.com/community/file/1415608153880597802/charcoal-icons-2-0)
-- datauri 形式を提供するようになりました
+- data URI 形式の提供を開始しました。
 
 ```ts
 import iconsV2 from '@charcoal-ui/icon-files/v2/datauri'
@@ -56,8 +56,8 @@ import iconsV1 from '@charcoal-ui/icon-files/v1/datauri'
 
 # @charcoal-ui/icons
 
-- v2 系の icon が追加されました
-- `<pixiv-icon />` 以外 css と react コンポーネント経由で icon を提供するようになりました
+- v2 系のアイコンを追加しました。
+- 従来の `<pixiv-icon />` に加え、CSS および React コンポーネント経由でもアイコンを利用できるようにしました。
 
 ## react
 
@@ -89,7 +89,7 @@ function AddButton() {
 
 # @charcoal-ui/tailwind-config
 
-- `iconsV1`, `iconsV2` の option により css ベースのアイコンが使えるようになりました (v4 より安定化)
+- `iconsV1`, `iconsV2` オプションにより、CSS ベースのアイコンを安定版として利用できるようになりました（v4 から提供）。
 
 ```diff
 const charcoal = createTailwindConfig({
@@ -102,23 +102,27 @@ const charcoal = createTailwindConfig({
 ```
 
 ```html
-<!-- iconの大きさはfontSize依存 -->
+<!-- アイコンのサイズは font-size に依存します -->
 <button className="text-24">
   <div className="icon-v1-add" role="presentation" />
   Add
 </button>
 ```
 
+注意：`Safari >= 15.4` のみをサポートする場合は、browserslist に追加することで `-webkit-mask-image` の autoprefix を避け、CSS のサイズを軽減できます。
+
+# @charcoal-ui/tailwind-diff
+
 - [v1 Storybook](https://charcoal-web.pixiv.design/?path=/docs/tailwind-config-icons-1-0--docs)
 - [v2 Storybook](https://charcoal-web.pixiv.design/?path=/docs/tailwind-config-icons-2-0--docs)
 
 # 内部変更
 
-- 開発環境の依存更新
-  - `node` バージョンを 22 lts に更新しました
-  - `typescript` v5 にアップデートしました
-  - `lerna` v7 にアップデートしました
-  - `prettier` v3 にアップデートしました
-  - `@pixiv/eslint-config`に移行しました
-- 一部 package で isolatedDeclarations を有効化しました
-- 殆どの tsconfig.build.json が削除されて tsconfig.json に統合しました
+- 開発環境の依存関係を更新しました。
+  - `node` 22 lts に更新しました。
+  - `typescript` v5 にアップデートしました。
+  - `lerna` v7 にアップデートしました。
+  - `prettier` v3 にアップデートしました。
+  - `@pixiv/eslint-config` に移行しました。
+- 一部のパッケージで `isolatedDeclarations` を有効化しました。
+- ほとんどの `tsconfig.build.json` を削除し、`tsconfig.json` に統合しました。
