@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../styledExportFix'
 import { useElementSize } from '../../foundation/hooks'
 
 export interface Props {

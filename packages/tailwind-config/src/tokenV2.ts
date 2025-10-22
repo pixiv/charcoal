@@ -1,4 +1,4 @@
-import light from '@charcoal-ui/theme/unstable-tokens/css-variables.json' with {type: 'json'}
+import light from '@charcoal-ui/theme/unstable-tokens/css-variables.json' with { type: 'json' }
 import type { Config } from 'tailwindcss'
 import {
   flattenKey as flattenKeys,

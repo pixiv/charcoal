@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../styledExportFix'
 import { unreachable } from '../../foundation/utils'
 import NextIcon, { WedgeDirection } from '../icons/NextIcon'
 import { applyEffect } from '@charcoal-ui/utils'
@@ -17,6 +17,12 @@ interface Props {
   gradient?: boolean
   onClick(): void
 }
+
+const onlyNonTouchDevice = css`
+  @media (hover: none) and (pointer: coarse) {
+    display: none;
+  }
+`
 
 export default function CarouselButton({
   direction,
@@ -119,49 +125,4 @@ const Button = styled.button<{ hide: boolean }>`
       opacity: 0;
       pointer-events: none;
     `}
-`
-
-export function ScrollHintButton({
-  direction,
-  onClick,
-}: {
-  direction: Direction
-  onClick(): void
-}) {
-  return (
-    <ScrollHintIcon onClick={onClick}>
-      <NextIcon
-        direction={
-          direction === Direction.Right
-            ? WedgeDirection.Right
-            : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-              direction === Direction.Left
-              ? WedgeDirection.Left
-              : unreachable()
-        }
-      />
-    </ScrollHintIcon>
-  )
-}
-
-const ScrollHintIcon = styled(CarouselButtonIcon)`
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) =>
-      applyEffect(theme.color.surface4, theme.effect.hover)};
-    color: ${({ theme }) => applyEffect(theme.color.text5, theme.effect.hover)};
-  }
-
-  &:active {
-    background-color: ${({ theme }) =>
-      applyEffect(theme.color.surface4, theme.effect.press)};
-    color: ${({ theme }) => applyEffect(theme.color.text5, theme.effect.press)};
-  }
-`
-
-const onlyNonTouchDevice = css`
-  @media (hover: none) and (pointer: coarse) {
-    display: none;
-  }
 `

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '../../styledExportFix'
 import IconBase from './Base'
 
 const size = 16

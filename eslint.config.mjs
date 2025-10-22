@@ -42,10 +42,33 @@ export default defineConfig([
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['styled-components'],
+              importNames: ['default'],
+              message: `import styled via styledExportFix.ts instead`,
+            },
+          ],
+        },
+      ],
       curly: 'off',
     },
     linterOptions: {
       reportUnusedDisableDirectives: 'off',
     },
+  },
+  {
+    files: [
+      '**/*.story.ts',
+      '**/*.story.tsx',
+      '**/*.d.ts',
+      '**/*.d.tsx',
+      '**/*.test.ts',
+      '**/*.test.tsx',
+    ],
+    rules: { 'no-restricted-imports': 'off' },
   },
 ])
