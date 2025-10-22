@@ -186,7 +186,7 @@ const sortReplacer = (_: string, value: any): any => {
   return value
 }
 
-it('writes default.ts', () => {
+it('writes default.ts', async () => {
   const code = `
 /** This file is auto generated. DO NOT EDIT BY HAND. */
 import { CharcoalTheme } from './theme'
@@ -202,10 +202,10 @@ export const dark: CharcoalTheme = {
   ...common,
   ...${JSON.stringify(dark, sortReplacer, 2)}
 }`
-  const fmt = prettier.format(code, {
+  const fmt = await prettier.format(code, {
     parser: 'typescript',
     singleQuote: true,
     semi: false,
   })
-  expect(fmt).toMatchFileSnapshot('./default.ts')
+  await expect(fmt).toMatchFileSnapshot('./default.ts')
 })
