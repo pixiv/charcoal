@@ -43,7 +43,7 @@ void yargs
         afterConfig: afterConfig != null ? afterConfig : config,
         packages: packages != null ? packages.map((v) => `${v}`) : undefined,
       })
-    }
+    },
   )
   .command(
     'dump',
@@ -62,7 +62,7 @@ void yargs
         output,
         config,
       })
-    }
+    },
   )
   .demandCommand()
   .help()

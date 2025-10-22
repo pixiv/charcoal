@@ -17,7 +17,7 @@ export const createTypographyCss =
       preserveHalfLeading?: boolean
       monospace?: boolean
       bold?: boolean
-    } = {}
+    } = {},
   ): Internal => {
     const {
       preserveHalfLeading = false,
@@ -89,8 +89,8 @@ export default function typography<T extends CharcoalAbstractTheme>(theme: T) {
           preserveHalfLeading: modifiers.includes('preserveHalfLeading'),
           monospace: modifiers.includes('monospace'),
           bold: modifiers.includes('bold'),
-        })
-      )
+        }),
+      ),
   )
 
   return typographyObject

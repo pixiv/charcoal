@@ -50,7 +50,7 @@ export default defineConfig({
       fs.writeFile(layeredCssFilePath, layeredCssOutput.content),
       fs.writeFile(
         `${layeredCssFilePath}.map`,
-        layeredCssOutput.map.toString()
+        layeredCssOutput.map.toString(),
       ),
     ])
 

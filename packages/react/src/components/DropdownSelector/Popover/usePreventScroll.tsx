@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 export function usePreventScroll(
   element: HTMLElement | null,
   isOpen: boolean,
-  useClip = false
+  useClip = false,
 ) {
   useEffect(() => {
     if (isOpen && element) {

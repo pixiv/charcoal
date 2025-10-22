@@ -70,7 +70,7 @@ export const Colors: React.FC = () => {
                     bgColorClass={`bg-${colorName}-${modifier}`}
                     label={`-${modifier}`}
                   />
-                ) : null
+                ) : null,
               )}
             </>
           ) : (

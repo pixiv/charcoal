@@ -18,7 +18,9 @@
   line-height: 22px;
   display: flow-root;
   color: var(--charcoal-text3);
-  transition: 0.2s color, 0.2s box-shadow;
+  transition:
+    0.2s color,
+    0.2s box-shadow;
 }
 
 .charcoal-field-label-root {

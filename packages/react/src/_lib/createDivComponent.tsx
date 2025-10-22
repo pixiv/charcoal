@@ -6,6 +6,6 @@ export function createDivComponent(mainClassName: string) {
     function DivComponent({ className, ...props }, ref) {
       const classNames = useClassNames(mainClassName, className)
       return <div className={classNames} ref={ref} {...props} />
-    }
+    },
   )
 }

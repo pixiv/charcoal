@@ -49,14 +49,14 @@ export const Gradients: React.FC = () => {
               {Object.keys(effectTypes).map(
                 (effectType) =>
                   utilityClassNames.includes(
-                    `${gradientName}-${direction}-${effectType}`
+                    `${gradientName}-${direction}-${effectType}`,
                   ) && (
                     <GradientBox
                       gradientClassName={`${gradientName}-${direction}-${effectType}`}
                       label={`-${effectType}`}
                       key={effectType}
                     />
-                  )
+                  ),
               )}
             </div>
           ))}

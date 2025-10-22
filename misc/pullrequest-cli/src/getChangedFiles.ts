@@ -32,11 +32,11 @@ async function collectGitStatus() {
         s.startsWith(' M')
           ? 'modified'
           : s.startsWith('??')
-          ? 'untracked'
-          : s.startsWith(' D')
-          ? 'deleted'
-          : null,
+            ? 'untracked'
+            : s.startsWith(' D')
+              ? 'deleted'
+              : null,
       ] as const
-    })
+    }),
   )
 }

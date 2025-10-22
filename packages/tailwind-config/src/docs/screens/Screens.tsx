@@ -14,7 +14,7 @@ export const Screens: React.FC = () => {
                 @media (<span className="text-text2">min-width: {value}</span>)
               </p>
             </div>
-          )
+          ),
       )}
     </div>
   )

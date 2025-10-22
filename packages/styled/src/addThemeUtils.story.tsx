@@ -50,8 +50,9 @@ const RootDiv = styled.div`
   display: flex;
   flex-direction: column;
   white-space: nowrap;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 `
 
 const Pre = styled.pre`
@@ -59,8 +60,9 @@ const Pre = styled.pre`
 `
 
 const Code = styled.code`
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 `
 
 const TypographyDiv = styled.div`

@@ -18,7 +18,7 @@ export default React.forwardRef(function SwitchCheckbox(
     disabled,
     ...props
   }: Props,
-  ref: React.Ref<HTMLInputElement>
+  ref: React.Ref<HTMLInputElement>,
 ) {
   return (
     <Label
@@ -60,10 +60,9 @@ const Label = styled.label<{ flex: boolean; rowReverse: boolean }>`
       display: flex;
       justify-content: space-between;
     `}
-  ${({ rowReverse }) =>
-    css`
-      flex-direction: ${rowReverse ? 'row-reverse' : 'row'};
-    `}
+  ${({ rowReverse }) => css`
+    flex-direction: ${rowReverse ? 'row-reverse' : 'row'};
+  `}
   cursor: pointer;
   outline: 0;
 
@@ -86,7 +85,9 @@ const SwitchInner = styled.div`
   border-radius: 16px;
   border: 2px solid transparent;
   background: ${({ theme }) => theme.color.text4};
-  transition: box-shadow 0.2s, background-color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    background-color 0.2s;
 `
 
 const SwitchInnerKnob = styled.div`

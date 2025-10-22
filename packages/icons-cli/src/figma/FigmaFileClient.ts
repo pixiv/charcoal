@@ -68,14 +68,14 @@ export class FigmaFileClient {
     token: string,
     outputRootDir: string,
     exportFormat: ExportFormat,
-    layoutVersion: FigmaIconFileLayoutVersion = 'v1'
+    layoutVersion: FigmaIconFileLayoutVersion = 'v1',
   ) {
     const client = new this(url, token, exportFormat, layoutVersion)
 
     const outputDir = path.join(process.cwd(), outputRootDir, exportFormat)
 
     console.log(
-      `Exporting components from ${url} using layout ${layoutVersion}`
+      `Exporting components from ${url} using layout ${layoutVersion}`,
     )
     await client.loadSvg(outputDir)
 
@@ -86,7 +86,7 @@ export class FigmaFileClient {
     url: string,
     personalAccessToken: string,
     exportFormat: ExportFormat,
-    layoutVersion: FigmaIconFileLayoutVersion
+    layoutVersion: FigmaIconFileLayoutVersion,
   ) {
     this.client = Figma.Client({
       personalAccessToken,
@@ -174,14 +174,14 @@ export class FigmaFileClient {
 
         const response = await got.get(
           component.image,
-          this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {}
+          this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {},
         )
 
         await ensureDir(dirname)
 
         console.log(`found: ${filename} => ✅ writing...`)
         await writeFile(fullname, response.body, 'utf8')
-      })
+      }),
     )
   }
 
@@ -205,7 +205,7 @@ export class FigmaFileClient {
       }
     } else if ('children' in child) {
       child.children.forEach((grandChild) =>
-        this.findComponentsRecursively(grandChild)
+        this.findComponentsRecursively(grandChild),
       )
     }
   }
@@ -213,12 +213,12 @@ export class FigmaFileClient {
   private findComponentsV2(document: Figma.Document) {
     const iconsPage = document.children.find(
       (child): child is Figma.Canvas =>
-        child.name === 'Icons 一覧' && child.type === 'CANVAS'
+        child.name === 'Icons 一覧' && child.type === 'CANVAS',
     )
     const iconComponentSets = iconsPage?.children.flatMap((c) => {
       if (c.type !== 'FRAME') return []
       return c.children.filter(
-        (c): c is Figma.ComponentSet => c.type === 'COMPONENT_SET'
+        (c): c is Figma.ComponentSet => c.type === 'COMPONENT_SET',
       )
     })
     iconComponentSets?.forEach((set) => {

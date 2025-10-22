@@ -37,7 +37,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
       'aria-orientation': ariaOrientation = 'vertical',
       ...props
     },
-    ref
+    ref,
   ) {
     const classNames = useClassNames('charcoal-radio-group', props.className)
 
@@ -45,7 +45,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
       (next: string) => {
         onChange(next)
       },
-      [onChange]
+      [onChange],
     )
 
     const contextValue = useMemo(
@@ -57,7 +57,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
         invalid: invalid ?? false,
         onChange: handleChange,
       }),
-      [disabled, handleChange, invalid, name, readonly, value]
+      [disabled, handleChange, invalid, name, readonly, value],
     )
 
     return (
@@ -76,5 +76,5 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps<string>>(
         </div>
       </RadioGroupContext.Provider>
     )
-  }
+  },
 ) as <Value extends string>(props: RadioGroupProps<Value>) => JSX.Element

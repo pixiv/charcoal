@@ -64,7 +64,7 @@ export const isPresent = <T>(value: T): value is NonNullable<T> => value != null
  */
 export function defineThemeVariables(
   colorParams: Partial<CharcoalAbstractTheme['color']>,
-  effectParams?: Partial<CharcoalAbstractTheme['effect']>
+  effectParams?: Partial<CharcoalAbstractTheme['effect']>,
 ) {
   return function toCssObject(props: {
     theme: Pick<CharcoalAbstractTheme, 'effect'>

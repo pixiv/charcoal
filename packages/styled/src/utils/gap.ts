@@ -6,7 +6,7 @@ export function gap(v1: keyof Spacing): FlattenSimpleInterpolation
 
 export function gap(
   v1: keyof Spacing,
-  v2: keyof Spacing
+  v2: keyof Spacing,
 ): FlattenSimpleInterpolation
 
 export function gap(v1: keyof Spacing, v2?: keyof Spacing) {

@@ -19,7 +19,7 @@ export const Dialog = forwardRef<
     {
       role: 'dialog',
     },
-    ref
+    ref,
   )
 
   const classNames = useClassNames('charcoal-modal-dialog', className)

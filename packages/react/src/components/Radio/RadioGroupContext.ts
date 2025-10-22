@@ -17,7 +17,7 @@ export const RadioGroupContext = React.createContext<RadioGroupContext>({
   invalid: false,
   onChange() {
     throw new Error(
-      'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?'
+      'Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?',
     )
   },
 })

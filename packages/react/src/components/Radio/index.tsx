@@ -16,7 +16,7 @@ export type RadioProps = React.PropsWithChildren<{
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   { value, disabled = false, children, ...props },
-  ref
+  ref,
 ) {
   const {
     name,
@@ -32,7 +32,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(function RadioInner(
   warning(
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     name !== undefined,
-    `"name" is not Provided for <Radio>. Perhaps you forgot to wrap with <RadioGroup> ?`
+    `"name" is not Provided for <Radio>. Perhaps you forgot to wrap with <RadioGroup> ?`,
   )
 
   const isSelected = value === selected

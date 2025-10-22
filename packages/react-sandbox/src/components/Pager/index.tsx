@@ -9,7 +9,7 @@ import { useComponentAbstraction } from '../../_lib/ComponentAbstraction'
 function usePagerWindow(
   page: number,
   pageCount: number,
-  pageRangeDisplayed = 7
+  pageRangeDisplayed = 7,
 ) {
   // ページャーのリンク生成例:
   //
@@ -31,11 +31,11 @@ function usePagerWindow(
     warning((page | 0) === page, `\`page\` must be integer (${page})`)
     warning(
       (pageCount | 0) === pageCount,
-      `\`pageCount\` must be integer (${pageCount})`
+      `\`pageCount\` must be integer (${pageCount})`,
     )
     warning(
       (pageRangeDisplayed | 0) === pageRangeDisplayed,
-      `\`pageRangeDisplayed\` must be integer (${pageRangeDisplayed})`
+      `\`pageRangeDisplayed\` must be integer (${pageRangeDisplayed})`,
     )
     warning(pageRangeDisplayed > 2, `\`windowSize\` must be greater than 2`)
   }
@@ -44,14 +44,14 @@ function usePagerWindow(
     const visibleFirstPage = 1
     const visibleLastPage = Math.min(
       pageCount,
-      Math.max(page + Math.floor(pageRangeDisplayed / 2), pageRangeDisplayed)
+      Math.max(page + Math.floor(pageRangeDisplayed / 2), pageRangeDisplayed),
     )
 
     if (visibleLastPage <= pageRangeDisplayed) {
       // 表示範囲が1-7ページなら省略は無い。
       return Array.from(
         { length: 1 + visibleLastPage - visibleFirstPage },
-        (_, i) => visibleFirstPage + i
+        (_, i) => visibleFirstPage + i,
       )
     } else {
       const start = visibleLastPage - (pageRangeDisplayed - 1) + 2
@@ -63,7 +63,7 @@ function usePagerWindow(
         '...' as const,
         ...Array.from(
           { length: 1 + visibleLastPage - start },
-          (_, i) => start + i
+          (_, i) => start + i,
         ),
       ]
     }
@@ -97,7 +97,7 @@ export default memo(function Pager({
     (value: number) => () => {
       onChange(value)
     },
-    [onChange]
+    [onChange],
   )
 
   const hasNext = page < pageCount
@@ -128,7 +128,7 @@ export default memo(function Pager({
           <CircleButton key={p} type="button" onClick={makeClickHandler(p)}>
             <Text>{p}</Text>
           </CircleButton>
-        )
+        ),
       )}
       <CircleButton
         type="button"
@@ -180,7 +180,7 @@ export function LinkPager({
               <Text>{p}</Text>
             </CircleButton>
           </Link>
-        )
+        ),
       )}
       <Link to={makeUrl(Math.min(pageCount, page + 1))}>
         <CircleButton hidden={!hasNext} aria-disabled={!hasNext} noBackground>
@@ -205,8 +205,11 @@ const CircleButton = styled.button<{ noBackground?: boolean }>`
   outline: none;
   touch-action: manipulation;
   user-select: none;
-  transition: box-shadow 0.2s ease 0s, color 0.2s ease 0s,
-    background 0.2s ease 0s, opacity 0.2s ease 0s;
+  transition:
+    box-shadow 0.2s ease 0s,
+    color 0.2s ease 0s,
+    background 0.2s ease 0s,
+    opacity 0.2s ease 0s;
 
   display: flex;
   justify-content: center;

@@ -25,7 +25,7 @@ describe('tailwind.config.js', () => {
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
         @import 'tailwindcss/components';
-      `
+      `,
     )
   })
 
@@ -41,7 +41,7 @@ describe('tailwind.config.js', () => {
     const varName = '--tailwind-color-background1'
 
     expect(result.getStylesByClassName('bg-background1')).toContainEqual(
-      expect.stringContaining(`background-color: var(${varName}, #ffffff);`)
+      expect.stringContaining(`background-color: var(${varName}, #ffffff);`),
     )
 
     expect(result.getCssVariable(varName)).toHaveLength(1)
@@ -59,7 +59,7 @@ describe('tailwind.config.js', () => {
     const varName = '--tailwind-gradient-surface5-left-hover'
 
     expect(
-      result.getStylesByClassName('bg-surface5-left-hover')?.[0]
+      result.getStylesByClassName('bg-surface5-left-hover')?.[0],
     ).toContain(`background-image: var(${varName});`)
 
     expect(result.getCssVariable(varName)).toHaveLength(2)

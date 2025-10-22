@@ -27,7 +27,7 @@ describe('TextField component', () => {
       const { container } = render(<TextField prefix={prefixValue} />)
       const prefixElement = container.querySelector('.charcoal-text-prefix')
       expect(prefixElement).toBeNull()
-    }
+    },
   )
 
   test.each([
@@ -40,13 +40,13 @@ describe('TextField component', () => {
     'should not render suffix when value is falsy (%s: %s) and showCount is false',
     (suffixValue, _desc) => {
       const { container } = render(
-        <TextField suffix={suffixValue} showCount={false} />
+        <TextField suffix={suffixValue} showCount={false} />,
       )
       const suffixElement = container.querySelector(
-        '.charcoal-text-field-suffix'
+        '.charcoal-text-field-suffix',
       )
       expect(suffixElement).toBeNull()
-    }
+    },
   )
 
   it('should render prefix and suffix when provided as truthy values', () => {
@@ -56,7 +56,7 @@ describe('TextField component', () => {
       <TextField
         prefix={<span>{prefixContent}</span>}
         suffix={<span>{suffixContent}</span>}
-      />
+      />,
     )
 
     const prefixElement = container.querySelector('.charcoal-text-field-prefix')

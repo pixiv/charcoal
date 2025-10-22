@@ -27,7 +27,7 @@ export async function getIcon(name: string): Promise<string> {
     if (typeof svg !== 'string') {
       // eslint-disable-next-line no-console
       console.warn(
-        `${name}: Expected load result to be a string, but received an unexpected type.`
+        `${name}: Expected load result to be a string, but received an unexpected type.`,
       )
     }
 

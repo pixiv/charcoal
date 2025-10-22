@@ -58,9 +58,9 @@ void yargs
         FIGMA_TOKEN,
         OUTPUT_ROOT_DIR,
         format as 'svg' | 'pdf',
-        layout as 'v1' | 'v2'
+        layout as 'v1' | 'v2',
       )
-    }
+    },
   )
   .command(
     'svg:optimize',
@@ -81,7 +81,7 @@ void yargs
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
 
       await optimizeSvgInDirectory(OUTPUT_ROOT_DIR, color, ignoreFile)
-    }
+    },
   )
   .command(
     'files:generate',
@@ -95,7 +95,7 @@ void yargs
         console.error(e)
         process.exit(1)
       })
-    }
+    },
   )
   .command(
     'gitlab:mr',
@@ -111,9 +111,9 @@ void yargs
         Number(GITLAB_PROJECT_ID),
         GITLAB_ACCESS_TOKEN,
         GITLAB_DEFAULT_BRANCH ?? 'main',
-        OUTPUT_ROOT_DIR
+        OUTPUT_ROOT_DIR,
       )
-    }
+    },
   )
   .command(
     'github:pr',
@@ -128,9 +128,9 @@ void yargs
         GITHUB_REPO_NAME ?? 'charcoal',
         GITHUB_ACCESS_TOKEN,
         GITHUB_DEFAULT_BRANCH ?? 'main',
-        OUTPUT_ROOT_DIR
+        OUTPUT_ROOT_DIR,
       )
-    }
+    },
   )
   .demandCommand()
   .strict()

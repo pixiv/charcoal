@@ -19,7 +19,7 @@ type SpacingDirection = (typeof spacingDirections)[number]
 
 function spacingProperty(
   property: SpacingProperty,
-  direction: 'top' | 'right' | 'bottom' | 'left'
+  direction: 'top' | 'right' | 'bottom' | 'left',
 ) {
   return `${property}-${direction}`
 }
@@ -28,7 +28,7 @@ export const createSpacingCss =
   <T extends CharcoalAbstractTheme>(theme: { spacing: T['spacing'] }) =>
   (
     property: SpacingProperty,
-    modifiers: readonly [SpacingDirection, keyof T['spacing'] | 'auto'][]
+    modifiers: readonly [SpacingDirection, keyof T['spacing'] | 'auto'][],
   ): Internal => {
     const { top, right, bottom, left } = modifiers.reduce(
       (acc, [direction, size]) => {
@@ -50,7 +50,7 @@ export const createSpacingCss =
       },
       {} as Partial<
         Record<'top' | 'right' | 'bottom' | 'left', keyof T['spacing'] | 'auto'>
-      >
+      >,
     )
 
     const hasVerticalPadding =
@@ -68,7 +68,7 @@ export const createSpacingCss =
               ? 'auto'
               : px(
                   theme.spacing[top] +
-                    (hasVerticalPadding ? cancelHalfLeadingPx : 0)
+                    (hasVerticalPadding ? cancelHalfLeadingPx : 0),
                 ),
         }),
         ...(bottom !== undefined && {
@@ -77,7 +77,7 @@ export const createSpacingCss =
               ? 'auto'
               : px(
                   theme.spacing[bottom] +
-                    (hasVerticalPadding ? cancelHalfLeadingPx : 0)
+                    (hasVerticalPadding ? cancelHalfLeadingPx : 0),
                 ),
         }),
         ...(right !== undefined && {
@@ -106,8 +106,8 @@ export default function spacing<T extends CharcoalAbstractTheme>(theme: T) {
       defineMethodChains(
         spacingDirections,
         (modifiers) => spacingCss(spacingProperty, modifiers),
-        {} as keyof T['spacing'] | 'auto' // 推論のためのメタタイプ
-      )
+        {} as keyof T['spacing'] | 'auto', // 推論のためのメタタイプ
+      ),
   )
   return spacingObject
 }

@@ -42,7 +42,7 @@ export class PixivIcon extends HTMLElement {
   static extend(
     map: Extended extends true
       ? Record<ExtendedIconFile, string | (() => Promise<string>)>
-      : Record<string, string | (() => Promise<string>)>
+      : Record<string, string | (() => Promise<string>)>,
   ): void {
     if (__SERVER__) {
       return
@@ -51,7 +51,7 @@ export class PixivIcon extends HTMLElement {
     Object.entries(map).forEach(([name, filePathOrUrlOrImportFn]) => {
       if (!name.includes('/')) {
         throw new TypeError(
-          `${name} is not a valid icon name. "name" must be named like [size]/[Name].`
+          `${name} is not a valid icon name. "name" must be named like [size]/[Name].`,
         )
       }
 
@@ -79,7 +79,7 @@ export class PixivIcon extends HTMLElement {
     'unsafe-non-guideline-scale': string | null
   } {
     const partial = Object.fromEntries(
-      attributes.map((attribute) => [attribute, this.getAttribute(attribute)])
+      attributes.map((attribute) => [attribute, this.getAttribute(attribute)]),
     ) as Record<(typeof attributes)[number], string | null>
 
     const name = partial.name
@@ -90,7 +90,7 @@ export class PixivIcon extends HTMLElement {
 
     if (!name.includes('/')) {
       throw new TypeError(
-        `${name} is not a valid icon name. "name" must be named like [size]/[Name].`
+        `${name} is not a valid icon name. "name" must be named like [size]/[Name].`,
       )
     }
 
@@ -168,7 +168,7 @@ export class PixivIcon extends HTMLElement {
   attributeChangedCallback(
     attr: string,
     _oldValue: string | null,
-    newValue: string
+    newValue: string,
   ): void {
     // 非表示の場合はロードしない
     if (!this.isVisible) {
@@ -238,7 +238,7 @@ export class PixivIcon extends HTMLElement {
             resolve()
           }
         },
-        { rootMargin: `${ROOT_MARGIN}px` }
+        { rootMargin: `${ROOT_MARGIN}px` },
       )
 
       this.observer.observe(this)

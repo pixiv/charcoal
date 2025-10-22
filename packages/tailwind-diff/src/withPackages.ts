@@ -14,7 +14,7 @@ import { PackageManagerInfo } from './packageManager'
 export async function withPackages<T>(
   packageManagerInfo: PackageManagerInfo,
   packageDescriptors: readonly string[],
-  callback: () => T | Promise<T>
+  callback: () => T | Promise<T>,
 ): Promise<T> {
   if (packageDescriptors.length === 0) {
     return callback()
@@ -26,7 +26,7 @@ export async function withPackages<T>(
 
   try {
     const tmpdir = fs.mkdtempSync(
-      path.join(os.tmpdir(), 'tailwind-diff-packages-')
+      path.join(os.tmpdir(), 'tailwind-diff-packages-'),
     )
     defer(() => {
       const files = fs.readdirSync(tmpdir)
@@ -45,7 +45,7 @@ export async function withPackages<T>(
             path: packageManagerInfo.lockfilePath,
             backup: path.join(
               tmpdir,
-              path.basename(packageManagerInfo.lockfilePath)
+              path.basename(packageManagerInfo.lockfilePath),
             ),
           }
         : undefined

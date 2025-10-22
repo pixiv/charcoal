@@ -7,7 +7,7 @@ const DARK_MODE_EVENT_NAME = 'DARK_MODE'
 export const useDarkMode = (): boolean => {
   const [isDark, setIsDark] = useState(
     // vitest 用に optional chaining を追加
-    addons.getChannel().last(DARK_MODE_EVENT_NAME)?.at(0) ?? false
+    addons.getChannel().last(DARK_MODE_EVENT_NAME)?.at(0) ?? false,
   )
   console.log(isDark)
 

@@ -6,27 +6,27 @@ export function margin(arg1: SpacingType): FlattenSimpleInterpolation
 
 export function margin(
   arg1: SpacingType,
-  arg2: SpacingType
-): FlattenSimpleInterpolation
-
-export function margin(
-  arg1: SpacingType,
   arg2: SpacingType,
-  arg3: SpacingType
 ): FlattenSimpleInterpolation
 
 export function margin(
   arg1: SpacingType,
   arg2: SpacingType,
   arg3: SpacingType,
-  arg4: SpacingType
+): FlattenSimpleInterpolation
+
+export function margin(
+  arg1: SpacingType,
+  arg2: SpacingType,
+  arg3: SpacingType,
+  arg4: SpacingType,
 ): FlattenSimpleInterpolation
 
 export function margin(
   arg1: SpacingType,
   arg2?: SpacingType,
   arg3?: SpacingType,
-  arg4?: SpacingType
+  arg4?: SpacingType,
 ) {
   return css`
     margin: ${pxIfNum(arg1)} ${pxIfNum(arg2)} ${pxIfNum(arg3)} ${pxIfNum(arg4)};

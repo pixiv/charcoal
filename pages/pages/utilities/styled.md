@@ -130,11 +130,9 @@ const StyledText = styled.h1`
 ## API
 
 - `bg`
-
   - `bg.[色名]`
 
     背景色をつける
-
     - `bg.[色名].[...エフェクト]`
 
       背景色をつけて、+ホバーなどのエフェクトをつける。エフェクトは複数指定可能
@@ -148,23 +146,19 @@ const StyledText = styled.h1`
   - `bg.[グラデーション色名](方向)`
 
     グラデーション背景色をつける
-
     - `bg.[グラデーション色名](方向).[...エフェクト]`
 
       グラデーション背景色をつけて、+ホバーなどのエフェクトをつける。
 
       **⚠ 以下の条件のときのみ適用されます**
-
       - typography を指定しない
       - typography を指定する & preserveHalfLading を指定する
       - typography を指定する & padding を指定する
 
 - `font`
-
   - `font.[色名]`
 
     テキスト色をつける
-
     - `font.[色名].[...エフェクト]`
 
       テキスト色をつけて、+ホバーなどのエフェクトをつける
@@ -184,11 +178,9 @@ const StyledText = styled.h1`
   本来の処理 (preserveHalfLeading 指定時)
 
   ![本来の処理 (preserveHalfLeading 指定時)](images/styled-with-halfleading.png)
-
   - `typography(number).[...(bold|monospace|preserveHalfLeading)]`
 
     太字・等幅など(複数指定可能)
-
     - `typography(number).preserveHalfLeading`
 
       デフォルトのハーフリーディングを削る処理を無効化する
@@ -196,7 +188,6 @@ const StyledText = styled.h1`
 - `margin(number)`
 
   マージンを設定(デフォルトで全方向)
-
   - `margin(number).[...(top|right|bottom|left|vertical|horizontal|)]`
 
     マージンを特定の方向のみに設定する(複数指定可能)
@@ -209,19 +200,16 @@ const StyledText = styled.h1`
 - `padding(number)`
 
   パディングを設定(デフォルトで全方向)
-
   - `padding(number).[...(top|right|bottom|left|vertical|horizontal|)]`
 
     パディングを特定の方向のみに設定する(複数指定可能)
 
 - `width`
-
   - `width.px(number|auto|full)`
 
     固定幅を設定
 
     ガイドラインに定数のみ設定可能
-
     - auto: `auto`が付与
 
     - full: `100%`が付与
@@ -235,7 +223,6 @@ const StyledText = styled.h1`
     `px = column * 80 + (column - 1) * 24`
 
 - `height`
-
   - `height.px(number)`
 
   - `height.column(number)`
@@ -245,11 +232,9 @@ const StyledText = styled.h1`
   ボーダーをつける
 
   デフォルトで全方向につく
-
   - `border.[名前].[...(top|right|bottom|left)]`
 
     ボーダーをつける方向を指定(複数指定可能)
-
     - 名前: いまは`default`しかない
 
 - `borderRadius(number|'oval')`
@@ -257,27 +242,20 @@ const StyledText = styled.h1`
   角丸をつける
 
   全方向につく(他は選べない)
-
   - ❓`oval`とは
 
     トラック状を作る場合に使う。角丸半径が短辺の 1/2 になる。
 
 - `outline.[名前].[...(focus)]`
-
   - 名前:
-
     - `default`
-
       - フォーカス時などで使われる青色のアウトライン
 
     - `assertive`
-
       - エラー用の赤色のアウトライン
 
   - `focus`
-
     - **フォーカスした時だけ**、当該のフォーカスリングが出るようにする
 
 - `disabled`
-
   - :disabled, [aria-disabled] のときに利用不可能な状態を表すスタイルを適用する

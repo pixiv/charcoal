@@ -45,7 +45,9 @@
   margin: 0;
   background-color: var(--charcoal-text3);
   border-radius: 999999px;
-  transition: 0.2s background-color, 0.2s box-shadow;
+  transition:
+    0.2s background-color,
+    0.2s box-shadow;
 }
 
 .charcoal-multi-select-input[type='checkbox']:checked {

@@ -11,7 +11,7 @@ import { AnyColorTheme, COLOR_PREFIX, isSingleColor } from './utils'
 export function colorsToTailwindConfig(
   version: TailwindVersion,
   colors: AnyColorTheme,
-  effects: MergedEffect
+  effects: MergedEffect,
 ): NonNullable<Config['theme']>['colors'] {
   const targetColors = filterObject(colors, isSingleColor)
   const DEFAULT = getDefaultKeyName(version)

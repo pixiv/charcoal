@@ -64,7 +64,7 @@ export function getContext(internals: Internal[]) {
       ...context,
       ...__DO_NOT_USE_ACCESS_PRIVATE_PROPERTY__(internal).context,
     }),
-    {}
+    {},
   )
 }
 
@@ -79,6 +79,6 @@ export function toCSSObjects(internals: Internal[]): CSSObject[] {
   // 2パス目
   // コンテキストを見ながら最適化されたCSSを構築
   return internals.map((v) =>
-    __DO_NOT_USE_ACCESS_PRIVATE_PROPERTY__(v).toCSS(context)
+    __DO_NOT_USE_ACCESS_PRIVATE_PROPERTY__(v).toCSS(context),
   )
 }

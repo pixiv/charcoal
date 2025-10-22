@@ -33,7 +33,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxInputProps>(
         {children}
       </CheckboxWithLabel>
     )
-  }
+  },
 )
 
 export default memo(Checkbox)

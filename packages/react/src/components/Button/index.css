@@ -26,7 +26,10 @@
   font-weight: bold;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
-  transition: 0.2s color, 0.2s background-color, 0.2s box-shadow;
+  transition:
+    0.2s color,
+    0.2s background-color,
+    0.2s box-shadow;
   height: 40px;
 }
 

@@ -20,13 +20,13 @@ async function main() {
         fileName,
         content,
       }
-    })
+    }),
   )
   const { transformed, catalog } = rewrite(filesWithContent)
   await Promise.all(
     transformed.map(async (file) => {
       return writeFile(file.filePath, file.content)
-    })
+    }),
   )
   const icons = Object.entries(catalog)
 
@@ -41,7 +41,7 @@ async function main() {
     path.join(workDir, 'index.tsx'),
     `${iconsPair
       .map(([iconName, iconPath]) => `export {${iconName}} from '${iconPath}'`)
-      .join('\n')}`
+      .join('\n')}`,
   )
 
   await writeFile(
@@ -73,7 +73,7 @@ ${icons
           <div>
             <${iconName} />
             <code>${`&lt;${iconName} /&gt;`}</code>
-          </div>`
+          </div>`,
   )
   .join('\n')}
         </div>
@@ -99,7 +99,7 @@ const Global = createGlobalStyle\`
     gap: 8px;
   }
 \`
-`
+`,
   )
 }
 interface FileWithContent {
@@ -149,12 +149,12 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
                   node.declarationList.declarations[0].name,
                   node.declarationList.declarations[0].exclamationToken,
                   CreateSvgReturnType(ctx.factory),
-                  node.declarationList.declarations[0].initializer
+                  node.declarationList.declarations[0].initializer,
                 ),
-              ])
+              ]),
             ),
             visitor,
-            ctx
+            ctx,
           )
         }
       }
@@ -179,7 +179,7 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
       sourceText.content,
       ts.ScriptTarget.ESNext,
       undefined,
-      ts.ScriptKind.TSX
+      ts.ScriptKind.TSX,
     )
   })
   const { transformed } = ts.transform(sources, [updateJSX])
@@ -200,28 +200,28 @@ function CreateSvgReturnType(factory: typeof ts.factory) {
       factory.createTypeQueryNode(
         factory.createQualifiedName(
           factory.createIdentifier('React'),
-          factory.createIdentifier('forwardRef')
+          factory.createIdentifier('forwardRef'),
         ),
         [
           factory.createTypeReferenceNode(
             factory.createIdentifier('SVGSVGElement'),
-            undefined
+            undefined,
           ),
           factory.createTypeReferenceNode(
             factory.createQualifiedName(
               factory.createIdentifier('React'),
-              factory.createIdentifier('SVGProps')
+              factory.createIdentifier('SVGProps'),
             ),
             [
               factory.createTypeReferenceNode(
                 factory.createIdentifier('SVGSVGElement'),
-                undefined
+                undefined,
               ),
-            ]
+            ],
           ),
-        ]
+        ],
       ),
-    ]
+    ],
   )
 }
 void main()

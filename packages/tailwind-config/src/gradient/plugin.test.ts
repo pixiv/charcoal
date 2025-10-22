@@ -14,7 +14,7 @@ describe('gradient/plugin/getUtilities', () => {
         type: 'opacity',
         opacity: 0.5,
       },
-    }
+    },
   )
 
   it('generates mapping for utility name => linear-gradient', () => {

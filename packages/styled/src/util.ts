@@ -37,7 +37,7 @@ export function unreachable(value?: never): never {
   throw new Error(
     arguments.length === 0
       ? 'unreachable'
-      : `unreachable (${JSON.stringify(value)})`
+      : `unreachable (${JSON.stringify(value)})`,
   )
 }
 
@@ -92,7 +92,7 @@ export function keyof<
   // このジェネリクスは必須（書かないと返り値が `never[]` になる ）
   T extends Record<never, unknown>,
   // このジェネリクスは書かなくて良い、obj の内容から推論される（ T と矛盾してはいけない ）
-  _ extends T = T
+  _ extends T = T,
 >(obj: _) {
   return Object.keys(obj) as unknown as (keyof T & string)[]
 }
@@ -120,7 +120,7 @@ export function wrapArray<T>(value: ArrayOrSingle<T>): T[] {
 export type ArrayOrSingle<T> = T | T[]
 
 export const noThemeProvider = new Error(
-  '`theme` is invalid. `<ThemeProvider>` is not likely mounted.'
+  '`theme` is invalid. `<ThemeProvider>` is not likely mounted.',
 )
 
 type NonNullableCSSObject = Record<keyof CSSObject, string | number>
@@ -142,7 +142,7 @@ type NonNullableCSSObject = Record<keyof CSSObject, string | number>
  */
 export function defineThemeVariables(
   colorParams: Partial<CharcoalAbstractTheme['color']>,
-  effectParams?: Partial<CharcoalAbstractTheme['effect']>
+  effectParams?: Partial<CharcoalAbstractTheme['effect']>,
 ) {
   return function toCssObject(props: {
     theme?: Pick<CharcoalAbstractTheme, 'effect'>
@@ -180,11 +180,11 @@ export function onEffectPseudo(effect: EffectType, css: CSSObject) {
   return effect === 'hover'
     ? { '&:hover': { [notDisabledSelector]: css } }
     : effect === 'press'
-    ? { '&:active': { [notDisabledSelector]: css } }
-    : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    effect === 'disabled'
-    ? { [disabledSelector]: css }
-    : unreachable(effect)
+      ? { '&:active': { [notDisabledSelector]: css } }
+      : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        effect === 'disabled'
+        ? { [disabledSelector]: css }
+        : unreachable(effect)
 }
 
 export function withPrefixes(...parts: string[]) {

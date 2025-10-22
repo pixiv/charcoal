@@ -13,7 +13,7 @@ import { definePropertyChains } from '../factories/lib'
 export const createElementEffectCss =
   <
     T extends CharcoalAbstractTheme,
-    TElementEffect extends T['elementEffect']
+    TElementEffect extends T['elementEffect'],
   >(theme: {
     elementEffect: TElementEffect
   }) =>
@@ -26,28 +26,28 @@ export const createElementEffectCss =
             ...onEffectPseudo(effect, {
               opacity:
                 !(Array as ReadonlyArrayConstructor).isArray(
-                  theme.elementEffect[effect]
+                  theme.elementEffect[effect],
                 ) && theme.elementEffect[effect]?.type === 'opacity'
                   ? theme.elementEffect[effect]?.opacity
                   : unreachable(),
             }),
           }),
-          {}
+          {},
         )
       },
     })
 
 export default function elementEffect<T extends CharcoalAbstractTheme>(
-  theme: T
+  theme: T,
 ) {
   const effectTypes = keyof<T['elementEffect']>(
-    theme.elementEffect
+    theme.elementEffect,
   ) as EffectType[]
 
   // 要素へのエフェクト (etc: 透過)
   const elementEffectCss = createElementEffectCss(theme)
   const elementEffectObject = definePropertyChains(effectTypes, (modifiers) =>
-    elementEffectCss(modifiers)
+    elementEffectCss(modifiers),
   )
 
   return elementEffectObject

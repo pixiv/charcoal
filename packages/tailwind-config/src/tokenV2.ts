@@ -36,7 +36,7 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
           ],
         ]
       })
-    })
+    }),
   ) as NonNullable<Config['theme']>['fontSize']
 
   // space.target.s -> p-target-s

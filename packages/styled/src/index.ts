@@ -47,13 +47,13 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  * const theme = createTheme<DefaultTheme>()
  */
 export function createTheme<T extends CharcoalAbstractTheme>(
-  _styled?: ThemedStyledInterface<T>
+  _styled?: ThemedStyledInterface<T>,
 ) {
   type Builder = ReturnType<typeof createO<T>>
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
   return function theme(
-    specFn: (o: Builder) => ArrayOrSingle<Internal | Blank>
+    specFn: (o: Builder) => ArrayOrSingle<Internal | Blank>,
   ): ThemeProp<T> {
     // styled-components のテンプレートに埋め込める関数
     return function interpolate({ theme }) {
@@ -76,7 +76,7 @@ export function createTheme<T extends CharcoalAbstractTheme>(
            *
            * `o` を一時変数に入れてしまうと型 `T` の具象化が行われるので関数内に書く
            */
-          specFn(/** o = */ createO(theme))
+          specFn(/** o = */ createO(theme)),
         ),
 
         // 必ず挿入される共通のルール

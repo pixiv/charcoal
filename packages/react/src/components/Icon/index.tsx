@@ -16,7 +16,7 @@ export interface IconProps
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   { name, scale, unsafeNonGuidelineScale, className, ...rest },
-  ref
+  ref,
 ) {
   return (
     <pixiv-icon

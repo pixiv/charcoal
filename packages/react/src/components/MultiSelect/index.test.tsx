@@ -19,8 +19,8 @@ describe('MultiSelect', () => {
         // eslint-disable-next-line no-console
         expect(console.error).toHaveBeenCalledWith(
           expect.stringMatching(
-            /Perhaps you forgot to wrap with <MultiSelectGroup>/u
-          )
+            /Perhaps you forgot to wrap with <MultiSelectGroup>/u,
+          ),
         )
       })
     })
@@ -41,7 +41,7 @@ describe('MultiSelect', () => {
           selected={[]}
           childOnChange={childOnChange}
           parentOnChange={parentOnChange}
-        />
+        />,
       )
 
       option1 = screen.getByDisplayValue('option1')
@@ -92,7 +92,7 @@ describe('MultiSelect', () => {
           selected={['option2']}
           childOnChange={childOnChange}
           parentOnChange={parentOnChange}
-        />
+        />,
       )
 
       option1 = screen.getByDisplayValue('option1')
@@ -103,7 +103,7 @@ describe('MultiSelect', () => {
     it('only option2 is selected', () => {
       expect(option2.checked).toBeTruthy()
       ;[option1, option3].forEach((element) =>
-        expect(element.checked).toBeFalsy()
+        expect(element.checked).toBeFalsy(),
       )
     })
 
@@ -187,7 +187,7 @@ describe('MultiSelect', () => {
 
     it('all the options have `aria-invalid="true"`', () => {
       allOptions.forEach((element) =>
-        expect(element.getAttribute('aria-invalid')).toBeTruthy()
+        expect(element.getAttribute('aria-invalid')).toBeTruthy(),
       )
     })
   })

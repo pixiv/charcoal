@@ -59,7 +59,7 @@ const mappedSorter =
   }
 export function diffsBetweenStyles(
   before: ClassToStyles,
-  after: ClassToStyles
+  after: ClassToStyles,
 ) {
   const diffs: TailwindDiffItem[] = []
 

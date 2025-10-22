@@ -47,7 +47,7 @@ export function useMedia(query: string) {
             },
           }
         : matchMedia(query),
-    [query]
+    [query],
   )
   const [matches, setMatches] = useState<boolean>(matcher.matches)
 
@@ -98,7 +98,7 @@ function measure(ref: Element | null): ElementSize | undefined {
 export function useElementSize(
   ref: React.RefObject<Element | null>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  deps: any[] = []
+  deps: any[] = [],
 ) {
   // _don't_ call measure synchronously here even if you somehow can
   // measurement has to be done outside the render phase, either
@@ -107,7 +107,7 @@ export function useElementSize(
   const [size, setSize] = useReducer(
     (
       state: ElementSize | undefined,
-      next: ElementSize | undefined
+      next: ElementSize | undefined,
     ): ElementSize | undefined => {
       // width, height, etc are not own properties but getters in the prototype
       // can't use shallowEqual or other iterative checks
@@ -119,7 +119,7 @@ export function useElementSize(
       }
       return next
     },
-    undefined
+    undefined,
   )
   const [watch, setWatch] = useState<Element | null>(null)
   useLayoutEffect(() => {
@@ -177,7 +177,7 @@ export function useElementSize(
 export function useDebounceAnimationState<T>(defaultValue: T) {
   const [state, setState] = useState(defaultValue)
   const timer = useRef<ReturnType<typeof requestAnimationFrame> | undefined>(
-    undefined
+    undefined,
   )
   // typescript bug? (any when omitting type annotation)
   // eslint-disable-next-line @typescript-eslint/no-inferrable-types

@@ -11,7 +11,9 @@
   cursor: pointer;
   border-radius: 999999px;
   background-color: var(--charcoal-surface1);
-  transition: 0.2s background-color, 0.2s box-shadow;
+  transition:
+    0.2s background-color,
+    0.2s box-shadow;
 }
 
 .charcoal-radio-input:checked {
@@ -26,7 +28,9 @@
   pointer-events: none;
   background-color: var(--charcoal-text5);
   border-radius: 999999px;
-  transition: 0.2s background-color, 0.2s box-shadow;
+  transition:
+    0.2s background-color,
+    0.2s box-shadow;
 }
 
 .charcoal-radio-input:not(:checked) {

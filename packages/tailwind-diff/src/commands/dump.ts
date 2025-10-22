@@ -19,15 +19,15 @@ export async function dump({ output, config }: DumpConfig) {
   const targetDir = process.cwd()
   const postcss = importFrom(
     targetDir,
-    'postcss'
+    'postcss',
   ) as typeof import('postcss').default
   const tailwindcss = importFrom(
     targetDir,
-    'tailwindcss'
+    'tailwindcss',
   ) as typeof import('tailwindcss')
   const tailwindConfig = importFrom.silent(
     targetDir,
-    config != null ? config : 'tailwind.config.js'
+    config != null ? config : 'tailwind.config.js',
   ) as TailwindConfig
   const result = await postcss([tailwindcss(tailwindConfig)]).process(
     sourceCSS,
@@ -35,7 +35,7 @@ export async function dump({ output, config }: DumpConfig) {
       from: undefined,
       to: undefined,
       map: false,
-    }
+    },
   )
   const sink =
     output != null

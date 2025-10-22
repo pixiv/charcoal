@@ -36,7 +36,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
       status = 'default',
       ...props
     }: TagItemProps<T>,
-    _ref: ForwardedRef<HTMLButtonElement>
+    _ref: ForwardedRef<HTMLButtonElement>,
   ) {
     const ref = useObjectRef(_ref)
 
@@ -45,7 +45,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
     const className = useClassNames(
       'charcoal-tag-item',
       'charcoal-tag-item__bg',
-      props.className
+      props.className,
     )
 
     const bgVariant =
@@ -83,7 +83,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
         {status === 'active' && <Icon name="16/Remove" />}
       </Component>
     )
-  }
+  },
 ) as <T extends React.ElementType = 'button'>(p: TagItemProps<T>) => JSX.Element
 
 export default memo(TagItem)

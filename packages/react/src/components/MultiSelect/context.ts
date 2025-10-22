@@ -17,7 +17,7 @@ export const MultiSelectGroupContext = createContext<MultiSelectGroupContext>({
   invalid: false,
   onChange() {
     throw new Error(
-      'Cannot find `onChange()` handler. Perhaps you forgot to wrap it with `<MultiSelectGroup />` ?'
+      'Cannot find `onChange()` handler. Perhaps you forgot to wrap it with `<MultiSelectGroup />` ?',
     )
   },
 })

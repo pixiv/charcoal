@@ -37,7 +37,7 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
     isActive,
     ...props
   }: ButtonProps<T>,
-  ref: ForwardedRef<HTMLButtonElement>
+  ref: ForwardedRef<HTMLButtonElement>,
 ) {
   const Component = useMemo(() => component ?? 'button', [component])
   const classNames = useClassNames('charcoal-button', className)
@@ -57,6 +57,6 @@ const Button = forwardRef(function Button<T extends React.ElementType>(
     ? ButtonProps<'button'>
     : ButtonProps<T> & {
         component: T // required
-      }
+      },
 ) => JSX.Element
 export default Button

@@ -21,6 +21,6 @@ type SizeClassValue = Readonly<{
 }>
 export const sizeClasses: Record<string, SizeClassValue> = Object.fromEntries(
   Object.entries(utilityClasses).filter(
-    ([className]) => className !== 'preserve-half-leading'
-  )
+    ([className]) => className !== 'preserve-half-leading',
+  ),
 ) as Record<string, SizeClassValue>

@@ -68,7 +68,7 @@ const DEFAULT_Z_INDEX = 10
  */
 const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   { children, zIndex = DEFAULT_Z_INDEX, portalContainer, ...props },
-  external
+  external,
 ) {
   const {
     title,
@@ -93,7 +93,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
       onClose,
       isOpen,
     },
-    ref
+    ref,
   )
 
   const isMobile = (useWindowWidth() ?? Infinity) < 744
@@ -131,7 +131,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
         onClose()
       }
     },
-    [onClose]
+    [onClose],
   )
 
   return transition(
@@ -186,7 +186,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             </ModalBackgroundContext.Provider>
           </animated.div>
         </Overlay>
-      )
+      ),
   )
 })
 

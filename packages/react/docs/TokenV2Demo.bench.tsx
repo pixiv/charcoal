@@ -14,7 +14,7 @@ describe.each([
         {new Array<null>(200).fill(null).map((_, i) => (
           <Demo key={i} />
         ))}
-      </>
+      </>,
     )
   })
 })

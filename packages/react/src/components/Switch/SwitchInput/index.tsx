@@ -21,7 +21,7 @@ const SwitchInput = forwardRef<
       const el = e.currentTarget
       onChange?.(el.checked)
     },
-    [onChange]
+    [onChange],
   )
 
   const classNames = useClassNames('charcoal-switch-input', className)

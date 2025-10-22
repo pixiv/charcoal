@@ -36,7 +36,7 @@ export const createFixedColumnCss =
       toCSS() {
         return {
           [property]: px(
-            columnSystem(span, theme.grid.unit.column, theme.grid.unit.gutter)
+            columnSystem(span, theme.grid.unit.column, theme.grid.unit.gutter),
           ),
         }
       },
@@ -54,8 +54,8 @@ export default function size<T extends CharcoalAbstractTheme>(theme: T) {
         column: (span: number) => fixedColumnCss(property, span),
         auto: fixedRelativeCss(property, 'auto'),
         full: fixedRelativeCss(property, '100%'),
-      }
-    )
+      },
+    ),
   )
   return fixedObject
 }

@@ -34,7 +34,7 @@ export const themeSetter =
  */
 export function themeSelector<
   T extends string,
-  S extends string = typeof DEFAULT_ROOT_ATTRIBUTE
+  S extends string = typeof DEFAULT_ROOT_ATTRIBUTE,
 >(theme: T, attr?: S) {
   return `:root[data-${attr ?? DEFAULT_ROOT_ATTRIBUTE}='${theme}']` as const
 }
@@ -83,7 +83,7 @@ export const useTheme = (localStorageKey: string = LOCAL_STORAGE_KEY) => {
   const media = isDark !== undefined ? (isDark ? 'dark' : 'light') : undefined
   const [local, setTheme, ready] =
     useLocalStorage<typeof media>(localStorageKey)
-  const theme = !ready || media === undefined ? undefined : local ?? media
+  const theme = !ready || media === undefined ? undefined : (local ?? media)
   const system = local === undefined
   return [theme, setTheme, system] as const
 }

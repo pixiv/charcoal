@@ -24,7 +24,7 @@ export default function transition(_theme: unknown): Internal {
         colorTransition ? 'color' : null,
         backgroundColorTransition ? 'background-color' : null,
         boxShadowTransition ? 'box-shadow' : null,
-      ].filter(isPresent)
+      ].filter(isPresent),
     )
   }
 

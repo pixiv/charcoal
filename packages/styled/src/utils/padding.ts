@@ -6,27 +6,27 @@ export function padding(arg1: keyof Spacing): FlattenSimpleInterpolation
 
 export function padding(
   arg1: keyof Spacing,
-  arg2: keyof Spacing
-): FlattenSimpleInterpolation
-
-export function padding(
-  arg1: keyof Spacing,
   arg2: keyof Spacing,
-  arg3: keyof Spacing
 ): FlattenSimpleInterpolation
 
 export function padding(
   arg1: keyof Spacing,
   arg2: keyof Spacing,
   arg3: keyof Spacing,
-  arg4: keyof Spacing
+): FlattenSimpleInterpolation
+
+export function padding(
+  arg1: keyof Spacing,
+  arg2: keyof Spacing,
+  arg3: keyof Spacing,
+  arg4: keyof Spacing,
 ): FlattenSimpleInterpolation
 
 export function padding(
   arg1: keyof Spacing,
   arg2?: keyof Spacing,
   arg3?: keyof Spacing,
-  arg4?: keyof Spacing
+  arg4?: keyof Spacing,
 ) {
   return css`
     padding: ${arg1}px ${pxIfNum(arg2)} ${pxIfNum(arg3)} ${pxIfNum(arg4)};

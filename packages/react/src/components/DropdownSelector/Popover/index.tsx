@@ -38,7 +38,7 @@ export default function Popover(props: PopoverProps) {
       open: _empty,
       setOpen: _empty,
       toggle: _empty,
-    }
+    },
   )
 
   const modalBackground = useContext(ModalBackgroundContext)
