@@ -22,6 +22,15 @@ import { Unstyled } from '@storybook/blocks'
 - `@charcoal-ui/icons-cli@v5.0.0`
 - `@charcoal-ui/tailwind-config@v5.0.0`
 
+以下の package に minifyされるようになりました
+
+- `@charcoal-ui/foundation@v5.0.0`
+- `@charcoal-ui/icons@v5.0.0`
+- `@charcoal-ui/react@v5.0.0`
+- `@charcoal-ui/react-sandbox@v5.0.0`
+- `@charcoal-ui/styled@v5.0.0`
+- `@charcoal-ui/utils@v5.0.0`
+
 以下の package が削除されました
 
 - `@charcoal-ui/pullrequest-cli`
@@ -29,23 +38,87 @@ import { Unstyled } from '@storybook/blocks'
 - `@charcoal-ui/esbuild-plugin-styled-components`
   - react-sandbox の内部に移動しました
 
+以下の package が将来的に大幅に調整される可能性があるため、依存する際に注意してください
+
+- `@charcoal-ui/tailwind-diff` (廃止見込み)
+- `@charcoal-ui/token-cli` (API調整)
+
 # @charcoal-ui/icon-files
 
-- v2 系の icon が追加されました (v4 より安定化)
+- v2 系の icon が追加されました (charcoal v4 より安定化)
+  - [Charcoal Icons 2.0](https://www.figma.com/community/file/1415608153880597802/charcoal-icons-2-0)
 - datauri 形式を提供するようになりました
+
+```ts
+import iconsV2 from '@charcoal-ui/icon-files/v2/datauri'
+import iconsV1 from '@charcoal-ui/icon-files/v1/datauri'
+```
 
 # @charcoal-ui/icons
 
+- v2 系の icon が追加されました
 - `<pixiv-icon />` 以外 css と react コンポーネント経由で icon を提供するようになりました
+
+## react
+
+```tsx
+import { IconAdd24 } from '@charcoal-ui/icons/react/v1/24/Add'
+
+function AddButton() {
+  return (
+    <button>
+      <IconAdd24 /> Add
+    </button>
+  )
+}
+```
+
+## css
+
+- [v1 Storybook](https://charcoal-web.pixiv.design/?path=/docs/icons-v1-css--docs)
+- [v2 Storybook](https://charcoal-web.pixiv.design/?path=/docs/icons-v2-css--docs)
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@charcoal-ui/icons@5.0.0/css/v1/index.css" />
+<div
+  class="charcoal-icon-v1-add"
+  aria-label="add icon"
+  role="img"
+/></div>
+```
 
 # @charcoal-ui/tailwind-config
 
 - `iconsV1`, `iconsV2` の option により css ベースのアイコンが使えるようになりました (v4 より安定化)
 
+```diff
+const charcoal = createTailwindConfig({
+  // for .icons-v1-<icon-name>
++ iconsV1: true,
+  // for .icons-v2-<icon-name>
++ iconsV2: true,
+  // ...
+}) as Config
+```
+
+```html
+<!-- iconの大きさはfontSize依存 -->
+<button className="text-24">
+  <div className="icon-v1-add" role="presentation" />
+  Add
+</button>
+```
+
+- [v1 Storybook](https://charcoal-web.pixiv.design/?path=/docs/tailwind-config-icons-1-0--docs)
+- [v2 Storybook](https://charcoal-web.pixiv.design/?path=/docs/tailwind-config-icons-2-0--docs)
+
 # 内部変更
 
-- 開発環境の node バージョンを 22 lts に更新しました
-- `@pixiv/eslint-config`に移行しました
-- `typescript` v5 にアップデートしました
-- 一部 package で isolatedDeclarations で有効化しました
+- 開発環境の依存更新
+  - `node` バージョンを 22 lts に更新しました
+  - `typescript` v5 にアップデートしました
+  - `lerna` v7 にアップデートしました
+  - `prettier` v3 にアップデートしました
+  - `@pixiv/eslint-config`に移行しました
+- 一部 package で isolatedDeclarations を有効化しました
 - 殆どの tsconfig.build.json が削除されて tsconfig.json に統合しました
