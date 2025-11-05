@@ -17,5 +17,7 @@ const SvgPencil = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPencilInline = forwardRef(SvgPencil)
+export const IconPencilInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPencil)
 export default IconPencilInline

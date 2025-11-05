@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgLayersetting = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgLayersetting = (
     />
   </svg>
 )
-export const IconLayerSettingSolid = forwardRef(SvgLayersetting)
+export const IconLayerSettingSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayersetting)
 export default IconLayerSettingSolid

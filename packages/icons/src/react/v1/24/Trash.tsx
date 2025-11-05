@@ -17,5 +17,7 @@ const SvgTrash = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconTrash24 = forwardRef(SvgTrash)
+export const IconTrash24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTrash)
 export default IconTrash24

@@ -17,5 +17,7 @@ const SvgCheck = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconCheckInline = forwardRef(SvgCheck)
+export const IconCheckInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCheck)
 export default IconCheckInline

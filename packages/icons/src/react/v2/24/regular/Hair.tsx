@@ -19,5 +19,7 @@ const SvgHair = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconHair = forwardRef(SvgHair)
+export const IconHair: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgHair)
 export default IconHair

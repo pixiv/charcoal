@@ -1,8 +1,6 @@
 import { mustBeDefined } from '../utils'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import ts from 'typescript'
-import glob from 'fast-glob'
-import { readFile, writeFile } from 'fs-extra'
+import { glob, readFile, writeFile } from 'fs/promises'
 import path from 'path'
 
 async function main() {
@@ -11,7 +9,7 @@ async function main() {
   const workDir = process.env.OUTPUT_ROOT_DIR
   const version = process.env.VERSION
 
-  const fileNames = await glob('*/**/*.tsx', { cwd: workDir })
+  const fileNames = await Array.fromAsync(glob('*/**/*.tsx', { cwd: workDir }))
   const filesWithContent = await Promise.all(
     fileNames.map(async (fileName) => {
       const filePath = path.join(workDir, fileName)
@@ -21,13 +19,13 @@ async function main() {
         fileName,
         content,
       }
-    })
+    }),
   )
   const { transformed, catalog } = rewrite(filesWithContent)
   await Promise.all(
     transformed.map(async (file) => {
       return writeFile(file.filePath, file.content)
-    })
+    }),
   )
   const icons = Object.entries(catalog)
 
@@ -42,14 +40,18 @@ async function main() {
     path.join(workDir, 'index.tsx'),
     `${iconsPair
       .map(([iconName, iconPath]) => `export {${iconName}} from '${iconPath}'`)
-      .join('\n')}`
+      .join('\n')}`,
   )
 
   await writeFile(
     path.join(workDir, 'index.story.tsx'),
-    `${iconsPair
-      .map(([iconName, iconPath]) => `import {${iconName}} from '${iconPath}'`)
-      .join('\n')}
+    `/* eslint-disable */
+// disable eslint for large genareted file
+
+${iconsPair
+  .map(([iconName, iconPath]) => `import {${iconName}} from '${iconPath}'`)
+  .join('\n')}
+import { JSX } from "react"
 import { createGlobalStyle } from 'styled-components'
 
 export default {
@@ -59,7 +61,7 @@ export default {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
         <div className="icons-grid">
@@ -70,7 +72,7 @@ ${icons
           <div>
             <${iconName} />
             <code>${`&lt;${iconName} /&gt;`}</code>
-          </div>`
+          </div>`,
   )
   .join('\n')}
         </div>
@@ -96,7 +98,7 @@ const Global = createGlobalStyle\`
     gap: 8px;
   }
 \`
-`
+`,
   )
 }
 interface FileWithContent {
@@ -140,10 +142,18 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
             ctx.factory.updateVariableStatement(
               node,
               [ctx.factory.createToken(ts.SyntaxKind.ExportKeyword)],
-              node.declarationList
+              ctx.factory.updateVariableDeclarationList(node.declarationList, [
+                ctx.factory.updateVariableDeclaration(
+                  node.declarationList.declarations[0],
+                  node.declarationList.declarations[0].name,
+                  node.declarationList.declarations[0].exclamationToken,
+                  CreateSvgReturnType(ctx.factory),
+                  node.declarationList.declarations[0].initializer,
+                ),
+              ]),
             ),
             visitor,
-            ctx
+            ctx,
           )
         }
       }
@@ -157,7 +167,7 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
       return node
     }
 
-    return ts.visitNode(source, visitor)
+    return ts.visitNode(source, visitor) as ts.SourceFile
   }
 
   const printer = ts.createPrinter()
@@ -168,7 +178,7 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
       sourceText.content,
       ts.ScriptTarget.ESNext,
       undefined,
-      ts.ScriptKind.TSX
+      ts.ScriptKind.TSX,
     )
   })
   const { transformed } = ts.transform(sources, [updateJSX])
@@ -181,4 +191,36 @@ function rewrite(tsxSourceTexts: FileWithContent[]): {
   }
 }
 
+// ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>>
+function CreateSvgReturnType(factory: typeof ts.factory) {
+  return factory.createTypeReferenceNode(
+    factory.createIdentifier('ReturnType'),
+    [
+      factory.createTypeQueryNode(
+        factory.createQualifiedName(
+          factory.createIdentifier('React'),
+          factory.createIdentifier('forwardRef'),
+        ),
+        [
+          factory.createTypeReferenceNode(
+            factory.createIdentifier('SVGSVGElement'),
+            undefined,
+          ),
+          factory.createTypeReferenceNode(
+            factory.createQualifiedName(
+              factory.createIdentifier('React'),
+              factory.createIdentifier('SVGProps'),
+            ),
+            [
+              factory.createTypeReferenceNode(
+                factory.createIdentifier('SVGSVGElement'),
+                undefined,
+              ),
+            ],
+          ),
+        ],
+      ),
+    ],
+  )
+}
 void main()

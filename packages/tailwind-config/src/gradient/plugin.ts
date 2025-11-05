@@ -1,4 +1,4 @@
-import plugin from 'tailwindcss/plugin'
+import plugin from 'tailwindcss/plugin.js'
 import { camelToKebab } from '../util'
 import { GradientMaterial } from '@charcoal-ui/foundation'
 import { ThemeColorGradient } from '@charcoal-ui/theme'
@@ -18,7 +18,7 @@ const VAR_PREFIX = '--tailwind-gradient-'
 export default function cssVariableColorPlugin(
   gradients: ThemeColorGradient,
   effects: MergedEffect,
-  selectorOrMediaQuery: string
+  selectorOrMediaQuery: string,
 ) {
   const utilities = getUtilities(gradients, effects)
 
@@ -71,12 +71,12 @@ type LinearGradient = `linear-gradient(${string})`
 
 export function getUtilities(
   gradients: Record<string, GradientMaterial>,
-  effect: MergedEffect
+  effect: MergedEffect,
 ): Utilities {
   const effects = Object.entries(effect)
   const directions = Object.entries(DIRECTIONS) as [
     GradientDirection,
-    Values<typeof DIRECTIONS>
+    Values<typeof DIRECTIONS>,
   ][]
 
   return flatMapObject(gradients, (name, colors) =>
@@ -86,7 +86,7 @@ export function getUtilities(
 
         if (!('backgroundImage' in style)) {
           throw new Error(
-            `Could not generate linear-gradient() from ${name} ${direction} ${className}`
+            `Could not generate linear-gradient() from ${name} ${direction} ${className}`,
           )
         }
 
@@ -107,14 +107,14 @@ export function getUtilities(
           toLinearGradient(applyEffectToGradient(effect)(colors)),
         ]),
       ]
-    })
+    }),
   )
 }
 
 function createUtilityName(
   gradientName: string,
   direction: Values<typeof DIRECTIONS>,
-  suffix = ''
+  suffix = '',
 ) {
   return [camelToKebab(gradientName), direction, suffix]
     .filter(Boolean)

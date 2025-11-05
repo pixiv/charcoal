@@ -1,5 +1,5 @@
-import { glob } from 'fast-glob'
-import { ensureDir, readFile, writeFile } from 'fs-extra'
+import { glob, readFile, writeFile } from 'fs/promises'
+import { ensureDir } from 'fs-extra'
 import path from 'path'
 import { mustBeDefined } from '../utils'
 import { escape } from 'querystring'
@@ -7,13 +7,13 @@ import { escape } from 'querystring'
 async function main() {
   mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')
   const sourceDir = process.env.SOURCE_ROOT_DIR
-  const inputDir = path.join(__dirname, sourceDir)
+  const inputDir = path.join(import.meta.dirname, sourceDir)
 
   mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
   const outDir = process.env.OUTPUT_ROOT_DIR
 
   await ensureDir(outDir)
-  const fileNames = await glob('**/*.svg', { cwd: inputDir })
+  const fileNames = await Array.fromAsync(glob('**/*.svg', { cwd: inputDir }))
   const dataUris = await Promise.all(
     fileNames.map(async (fileName) => {
       const filePath = path.join(inputDir, fileName)
@@ -24,7 +24,7 @@ async function main() {
         uri: `data:image/svg+xml;utf8,${escape(content).replace("'", "\\'")}`,
         isSetCurrentcolor: !content.includes('<def'),
       }
-    })
+    }),
   )
 
   const js = `/** This file is auto generated. DO NOT EDIT BY HAND. */
@@ -35,7 +35,7 @@ ${dataUris
     (it) =>
       `'${it.iconName}': {uri: '${it.uri}', isSetCurrentcolor: ${
         it.isSetCurrentcolor ? 'true' : 'false'
-      }}`
+      }}`,
   )
   .join(',\n')}
 }`
@@ -49,7 +49,7 @@ ${dataUris
     (it) =>
       `'${it.iconName}': {uri: '${it.uri}', isSetCurrentcolor: ${
         it.isSetCurrentcolor ? 'true' : 'false'
-      }}`
+      }}`,
   )
   .join(',\n')}
 }`

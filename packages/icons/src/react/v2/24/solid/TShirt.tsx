@@ -19,5 +19,7 @@ const SvgTShirt = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconTShirtSolid = forwardRef(SvgTShirt)
+export const IconTShirtSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTShirt)
 export default IconTShirtSolid

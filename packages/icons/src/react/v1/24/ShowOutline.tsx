@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgShowOutline = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -28,5 +28,7 @@ const SvgShowOutline = (
     />
   </svg>
 )
-export const IconShowOutline24 = forwardRef(SvgShowOutline)
+export const IconShowOutline24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgShowOutline)
 export default IconShowOutline24

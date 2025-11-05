@@ -23,5 +23,7 @@ const SvgPause = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPause24 = forwardRef(SvgPause)
+export const IconPause24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPause)
 export default IconPause24

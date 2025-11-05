@@ -1,6 +1,6 @@
 import { mustBeDefined } from '../utils'
-import glob from 'fast-glob'
-import { readFile, writeFile, ensureDir } from 'fs-extra'
+import { glob, readFile, writeFile } from 'fs/promises'
+import { ensureDir } from 'fs-extra'
 import path from 'path'
 import { escape } from 'querystring'
 
@@ -8,7 +8,7 @@ async function transformV2(filePath: string, fileName: string) {
   const content = await readFile(filePath, 'utf-8')
   const [size, variant, name] = fileName.split('/')
   const cssName = [
-    'charcoal-icon',
+    'charcoal-icon-v2',
     name.toLowerCase().replace('.svg', '').replaceAll('.', '-'),
     ...(variant === 'regular' ? [] : [variant]),
     ...(size === '24' ? [] : [size]),
@@ -21,7 +21,7 @@ async function transformV2(filePath: string, fileName: string) {
   height: 1em;
   background: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   aspect-ratio: 1/1;
 }`
@@ -32,7 +32,7 @@ async function transformV2(filePath: string, fileName: string) {
   height: 1em;
   mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   mask-size: 100% 100%;
   background: currentColor;
@@ -62,7 +62,7 @@ async function transformV1(filePath: string, fileName: string) {
   height: 1em;
   background: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   aspect-ratio: 1/1;
 }`
@@ -73,7 +73,7 @@ async function transformV1(filePath: string, fileName: string) {
   height: 1em;
   mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
     "'",
-    "\\'"
+    "\\'",
   )}');
   mask-size: 100% 100%;
   background: currentColor;
@@ -93,13 +93,13 @@ async function main() {
 
   mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')
   const sourceDir = process.env.SOURCE_ROOT_DIR
-  const inputDir = path.join(__dirname, sourceDir)
+  const inputDir = path.join(import.meta.dirname, sourceDir)
 
   mustBeDefined(process.env.OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
   const outDir = process.env.OUTPUT_ROOT_DIR
 
   await ensureDir(outDir)
-  const fileNames = await glob('**/*.svg', { cwd: inputDir })
+  const fileNames = await Array.fromAsync(glob('**/*.svg', { cwd: inputDir }))
 
   let classNames: string[] = []
   const filesWithContent = await Promise.all(
@@ -118,7 +118,7 @@ async function main() {
       }
 
       throw new Error('VERSION received an unexpected value')
-    })
+    }),
   )
 
   const cssContent = filesWithContent
@@ -133,10 +133,10 @@ ${classNames
   .map(
     (icon) => `
   <div>
-    <div class="${icon}" aria-label=".${icon}" role="img"></div>
+    <div class="${icon}" aria-label=".${icon}" role="img" />
     <code>.${icon}</code>
   </div>
-`
+`,
   )
   .join('\n')}
 </div>`
@@ -160,18 +160,23 @@ ${classNames
   code {
     font-size: 14px;
   }
-</style>${html}`
+</style>${html}`,
   )
   await writeFile(
     path.join(outDir, 'index.story.tsx'),
-    `export default {
+    `/* eslint-disable */
+// disable eslint for large genareted file
+
+import { JSX } from "react"
+
+export default {
   title: 'Icons/${version}/css',
   parameters: {
     storyshots: {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
        <style>{\`${cssContent}\`}</style>
@@ -200,7 +205,7 @@ ${classNames
 }
   
 export const Default = {}
-`
+`,
   )
 }
 

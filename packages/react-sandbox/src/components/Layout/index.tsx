@@ -35,7 +35,7 @@ export default function Layout({
 }: Props) {
   const config = {
     center,
-    wide: center ? true : wide ?? false,
+    wide: center ? true : (wide ?? false),
     withLeft: menu != null && !isHeaderTopMenu,
   }
   return (
@@ -161,7 +161,7 @@ export const LayoutItem = React.forwardRef<HTMLDivElement, LayoutItemProps>(
         {children}
       </StyledLayoutItem>
     )
-  }
+  },
 )
 
 interface StyledLayoutItemProps {
@@ -302,12 +302,12 @@ export const StyledLayoutItemBody = styled.div<StyledLayoutItemBodyProps>`
           p.horizontal ? 0 : LAYOUT_ITEM_BODY_PADDING.narrow.x
         }px ${LAYOUT_ITEM_BODY_PADDING.narrow.yBottom}px`
       : p.wide
-      ? `${p.horizontal ? 0 : LAYOUT_ITEM_BODY_PADDING.wide.y}px ${
-          LAYOUT_ITEM_BODY_PADDING.wide.x
-        }px`
-      : `${p.horizontal ? 0 : LAYOUT_ITEM_BODY_PADDING.default.y}px ${
-          LAYOUT_ITEM_BODY_PADDING.default.x
-        }px`};
+        ? `${p.horizontal ? 0 : LAYOUT_ITEM_BODY_PADDING.wide.y}px ${
+            LAYOUT_ITEM_BODY_PADDING.wide.x
+          }px`
+        : `${p.horizontal ? 0 : LAYOUT_ITEM_BODY_PADDING.default.y}px ${
+            LAYOUT_ITEM_BODY_PADDING.default.x
+          }px`};
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
     padding: ${(p) =>
@@ -329,8 +329,8 @@ export function useLayoutItemBodyPadding() {
   return useMediaScreen1()
     ? LAYOUT_ITEM_BODY_PADDING.column1
     : wide
-    ? LAYOUT_ITEM_BODY_PADDING.wide
-    : LAYOUT_ITEM_BODY_PADDING.default
+      ? LAYOUT_ITEM_BODY_PADDING.wide
+      : LAYOUT_ITEM_BODY_PADDING.default
 }
 
 export function CancelLayoutItemBodyPadding({
@@ -355,11 +355,20 @@ interface StyledCancelLayoutItemBodyPaddingProps {
 }
 
 export const StyledCancelLayoutItemBodyPadding = styled.div<StyledCancelLayoutItemBodyPaddingProps>`
-  margin: 0 -${(p) => (p.wide ? LAYOUT_ITEM_BODY_PADDING.wide.x : LAYOUT_ITEM_BODY_PADDING.default.x)}px;
-  margin-top: -${({ cancelTop = false, wide }) => (!cancelTop ? 0 : wide ? LAYOUT_ITEM_BODY_PADDING.wide.y : LAYOUT_ITEM_BODY_PADDING.default.y)}px;
+  margin: 0 -${(p) =>
+      p.wide
+        ? LAYOUT_ITEM_BODY_PADDING.wide.x
+        : LAYOUT_ITEM_BODY_PADDING.default.x}px;
+  margin-top: -${({ cancelTop = false, wide }) =>
+      !cancelTop
+        ? 0
+        : wide
+          ? LAYOUT_ITEM_BODY_PADDING.wide.y
+          : LAYOUT_ITEM_BODY_PADDING.default.y}px;
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
     margin: 0 -${LAYOUT_ITEM_BODY_PADDING.column1.x}px;
-    margin-top: -${({ cancelTop = false }) => (!cancelTop ? 0 : LAYOUT_ITEM_BODY_PADDING.column1.x)}px;
+    margin-top: -${({ cancelTop = false }) =>
+        !cancelTop ? 0 : LAYOUT_ITEM_BODY_PADDING.column1.x}px;
   }
 `

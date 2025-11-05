@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgDeviceRotation = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -32,5 +32,7 @@ const SvgDeviceRotation = (
     />
   </svg>
 )
-export const IconDeviceRotation24 = forwardRef(SvgDeviceRotation)
+export const IconDeviceRotation24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgDeviceRotation)
 export default IconDeviceRotation24

@@ -1,18 +1,16 @@
-import rgba from 'polished/lib/color/rgba'
-import rgbToColorString from 'polished/lib/color/rgbToColorString'
-import parseToRgb from 'polished/lib/color/parseToRgb'
-import linearGradient from 'polished/lib/mixins/linearGradient'
-import { type RgbColor } from 'polished/lib/types/color'
+import { rgba, rgbToColorString, parseToRgb, linearGradient } from 'polished'
+import type { RgbColor } from 'polished/lib/types/color'
 
-import {
-  type AlphaEffect,
-  type Effect,
-  type Effects,
-  type GradientMaterial,
-  type OpacityEffect,
-  type ReplaceEffect,
-  type TypographyDescriptor,
+import type {
+  AlphaEffect,
+  Effect,
+  Effects,
+  GradientMaterial,
+  OpacityEffect,
+  ReplaceEffect,
+  TypographyDescriptor,
 } from '@charcoal-ui/foundation'
+import type { Styles } from 'polished/lib/types/style'
 
 export const GRADIENT_DIRECTIONS = [
   'to top',
@@ -25,11 +23,11 @@ export type GradientDirection = (typeof GRADIENT_DIRECTIONS)[number]
 
 export function transparentGradient(
   color: string,
-  defaultDirection: GradientDirection = 'to bottom'
+  defaultDirection: GradientDirection = 'to bottom',
 ) {
   return function transparentGradient(
-    direction: GradientDirection | object = defaultDirection
-  ) {
+    direction: GradientDirection | object = defaultDirection,
+  ): Styles {
     const transparent = rgba(color, 0)
     return linearGradient({
       colorStops: [color, transparent],
@@ -40,7 +38,7 @@ export function transparentGradient(
 }
 
 export function gradient(toDirection: GradientDirection = 'to bottom') {
-  return function toLinearGradient(value: GradientMaterial) {
+  return function toLinearGradient(value: GradientMaterial): Styles {
     return linearGradient({
       colorStops: value.map(({ color, ratio }) => `${color} ${ratio}%`),
       fallback: value[0]?.color,
@@ -69,7 +67,7 @@ interface ReadonlyArrayConstructor {
 
 export function applyEffect(
   baseColor: string | null,
-  effects: Effects
+  effects: Effects,
 ): string {
   const color = baseColor ?? '#00000000'
   if ((Array as ReadonlyArrayConstructor).isArray(effects)) {
@@ -90,7 +88,7 @@ function applySingleEffect(baseColor: string, effect: Effect): string {
       throw new RangeError(
         `Unknown effect type ${
           (effect as Effect).type
-        }, upgrade @charcoal-ui/utils`
+        }, upgrade @charcoal-ui/utils`,
       )
   }
 }
@@ -116,7 +114,7 @@ function applyOpacity(baseColor: string, { opacity }: OpacityEffect) {
 
 function applyReplace(
   baseColor: string,
-  { color = baseColor, opacity }: ReplaceEffect
+  { color = baseColor, opacity }: ReplaceEffect,
 ) {
   if (opacity === undefined) {
     return color
@@ -188,15 +186,17 @@ export function maxWidth(breakpoint: number) {
 /**
  * Derive half-leading from typography size
  */
-export const halfLeading = ({ fontSize, lineHeight }: TypographyDescriptor) =>
-  (lineHeight - fontSize) / 2
+export const halfLeading = ({
+  fontSize,
+  lineHeight,
+}: TypographyDescriptor): number => (lineHeight - fontSize) / 2
 
 /**
  * Namespaced custom property
  */
 export const customPropertyToken = (
   id: string,
-  modifiers: readonly string[] = []
+  modifiers: readonly string[] = [],
 ): `--charcoal-${string}` =>
   `--charcoal-${id}${modifiers.length === 0 ? '' : ['', modifiers].join('-')}`
 
@@ -208,10 +208,10 @@ export const customPropertyToken = (
  */
 export function mapKeys<V, K extends string>(
   object: Record<string, V>,
-  callback: (key: string) => K
+  callback: (key: string) => K,
 ) {
   return Object.fromEntries(
-    Object.entries(object).map(([key, value]) => [callback(key), value])
+    Object.entries(object).map(([key, value]) => [callback(key), value]),
   ) as Record<K, V>
 }
 
@@ -227,13 +227,13 @@ export function mapObject<
   SourceKey extends string,
   SourceValue,
   DestKey extends string,
-  DestValue
+  DestValue,
 >(
   source: Record<SourceKey, SourceValue>,
   callback: (
     key: SourceKey,
-    value: SourceValue
-  ) => [DestKey, DestValue] | null | undefined
+    value: SourceValue,
+  ) => [DestKey, DestValue] | null | undefined,
 ) {
   return Object.fromEntries(
     Object.entries(source).flatMap(([key, value]) => {
@@ -243,7 +243,7 @@ export function mapObject<
       } else {
         return []
       }
-    })
+    }),
   ) as Record<DestKey, DestValue>
 }
 
@@ -260,15 +260,15 @@ export function flatMapObject<
   SourceKey extends string,
   SourceValue,
   DestKey extends string,
-  DestValue
+  DestValue,
 >(
   source: Record<SourceKey, SourceValue>,
-  callback: (key: SourceKey, value: SourceValue) => [DestKey, DestValue][]
+  callback: (key: SourceKey, value: SourceValue) => [DestKey, DestValue][],
 ) {
   return Object.fromEntries(
     Object.entries(source).flatMap(([key, value]) => {
       return callback(key as SourceKey, value as SourceValue)
-    })
+    }),
   ) as Record<DestKey, DestValue>
 }
 
@@ -283,7 +283,7 @@ export function flatMapObject<
  */
 export function filterObject<Source, Dest extends Source>(
   source: Record<string, Source>,
-  fn: (value: Source) => value is Dest
+  fn: (value: Source) => value is Dest,
 ) {
   return mapObject(source, (key, value) => {
     if (fn(value) === true) {

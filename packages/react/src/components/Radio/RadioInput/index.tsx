@@ -20,12 +20,13 @@ const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
         const el = e.currentTarget
         onChange?.(el.value)
       },
-      [onChange]
+      [onChange],
     )
 
     const classNames = useClassNames('charcoal-radio-input', className)
 
     return (
+      // eslint-disable-next-line jsx-a11y/role-supports-aria-props
       <input
         className={classNames}
         ref={ref}
@@ -35,7 +36,7 @@ const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
         {...props}
       />
     )
-  }
+  },
 )
 
 export default memo(RadioInput)

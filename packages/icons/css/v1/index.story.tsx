@@ -1,3 +1,8 @@
+/* eslint-disable */
+// disable eslint for large genareted file
+
+import { JSX } from 'react'
+
 export default {
   title: 'Icons/v1/css',
   parameters: {
@@ -5,7 +10,7 @@ export default {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
         <style>{`
@@ -3135,7 +3140,7 @@ export default {
               className="charcoal-icon-v1-add"
               aria-label=".charcoal-icon-v1-add"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-add</code>
           </div>
 
@@ -3144,7 +3149,7 @@ export default {
               className="charcoal-icon-v1-add-16"
               aria-label=".charcoal-icon-v1-add-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-add-16</code>
           </div>
 
@@ -3153,7 +3158,7 @@ export default {
               className="charcoal-icon-v1-add-Inline"
               aria-label=".charcoal-icon-v1-add-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-add-Inline</code>
           </div>
 
@@ -3162,7 +3167,7 @@ export default {
               className="charcoal-icon-v1-addimage"
               aria-label=".charcoal-icon-v1-addimage"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-addimage</code>
           </div>
 
@@ -3171,7 +3176,7 @@ export default {
               className="charcoal-icon-v1-addmodel"
               aria-label=".charcoal-icon-v1-addmodel"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-addmodel</code>
           </div>
 
@@ -3180,7 +3185,7 @@ export default {
               className="charcoal-icon-v1-addpeople"
               aria-label=".charcoal-icon-v1-addpeople"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-addpeople</code>
           </div>
 
@@ -3189,7 +3194,7 @@ export default {
               className="charcoal-icon-v1-addrubi"
               aria-label=".charcoal-icon-v1-addrubi"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-addrubi</code>
           </div>
 
@@ -3198,7 +3203,7 @@ export default {
               className="charcoal-icon-v1-addtext"
               aria-label=".charcoal-icon-v1-addtext"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-addtext</code>
           </div>
 
@@ -3207,7 +3212,7 @@ export default {
               className="charcoal-icon-v1-alart"
               aria-label=".charcoal-icon-v1-alart"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-alart</code>
           </div>
 
@@ -3216,7 +3221,7 @@ export default {
               className="charcoal-icon-v1-announcement"
               aria-label=".charcoal-icon-v1-announcement"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-announcement</code>
           </div>
 
@@ -3225,7 +3230,7 @@ export default {
               className="charcoal-icon-v1-ar"
               aria-label=".charcoal-icon-v1-ar"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-ar</code>
           </div>
 
@@ -3234,7 +3239,7 @@ export default {
               className="charcoal-icon-v1-archive"
               aria-label=".charcoal-icon-v1-archive"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-archive</code>
           </div>
 
@@ -3243,7 +3248,7 @@ export default {
               className="charcoal-icon-v1-archive-16"
               aria-label=".charcoal-icon-v1-archive-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-archive-16</code>
           </div>
 
@@ -3252,7 +3257,7 @@ export default {
               className="charcoal-icon-v1-arrowdown"
               aria-label=".charcoal-icon-v1-arrowdown"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-arrowdown</code>
           </div>
 
@@ -3261,7 +3266,7 @@ export default {
               className="charcoal-icon-v1-arrowdown-16"
               aria-label=".charcoal-icon-v1-arrowdown-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-arrowdown-16</code>
           </div>
 
@@ -3270,7 +3275,7 @@ export default {
               className="charcoal-icon-v1-arrowup"
               aria-label=".charcoal-icon-v1-arrowup"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-arrowup</code>
           </div>
 
@@ -3279,7 +3284,7 @@ export default {
               className="charcoal-icon-v1-artwork-16"
               aria-label=".charcoal-icon-v1-artwork-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-artwork-16</code>
           </div>
 
@@ -3288,7 +3293,7 @@ export default {
               className="charcoal-icon-v1-back-16"
               aria-label=".charcoal-icon-v1-back-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-back-16</code>
           </div>
 
@@ -3297,7 +3302,7 @@ export default {
               className="charcoal-icon-v1-back-Inline"
               aria-label=".charcoal-icon-v1-back-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-back-Inline</code>
           </div>
 
@@ -3306,7 +3311,7 @@ export default {
               className="charcoal-icon-v1-binet"
               aria-label=".charcoal-icon-v1-binet"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-binet</code>
           </div>
 
@@ -3315,7 +3320,7 @@ export default {
               className="charcoal-icon-v1-body"
               aria-label=".charcoal-icon-v1-body"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-body</code>
           </div>
 
@@ -3324,7 +3329,7 @@ export default {
               className="charcoal-icon-v1-bodyedit"
               aria-label=".charcoal-icon-v1-bodyedit"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bodyedit</code>
           </div>
 
@@ -3333,7 +3338,7 @@ export default {
               className="charcoal-icon-v1-book"
               aria-label=".charcoal-icon-v1-book"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-book</code>
           </div>
 
@@ -3342,7 +3347,7 @@ export default {
               className="charcoal-icon-v1-book-16"
               aria-label=".charcoal-icon-v1-book-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-book-16</code>
           </div>
 
@@ -3351,7 +3356,7 @@ export default {
               className="charcoal-icon-v1-bookmarkoff-16"
               aria-label=".charcoal-icon-v1-bookmarkoff-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bookmarkoff-16</code>
           </div>
 
@@ -3360,7 +3365,7 @@ export default {
               className="charcoal-icon-v1-bookmarkoff-32"
               aria-label=".charcoal-icon-v1-bookmarkoff-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bookmarkoff-32</code>
           </div>
 
@@ -3369,7 +3374,7 @@ export default {
               className="charcoal-icon-v1-bookmarkoff-Inline"
               aria-label=".charcoal-icon-v1-bookmarkoff-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bookmarkoff-Inline</code>
           </div>
 
@@ -3378,7 +3383,7 @@ export default {
               className="charcoal-icon-v1-bookmarkon-16"
               aria-label=".charcoal-icon-v1-bookmarkon-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bookmarkon-16</code>
           </div>
 
@@ -3387,7 +3392,7 @@ export default {
               className="charcoal-icon-v1-bookmarkon-32"
               aria-label=".charcoal-icon-v1-bookmarkon-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bookmarkon-32</code>
           </div>
 
@@ -3396,7 +3401,7 @@ export default {
               className="charcoal-icon-v1-bookmarkon-Inline"
               aria-label=".charcoal-icon-v1-bookmarkon-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bookmarkon-Inline</code>
           </div>
 
@@ -3405,7 +3410,7 @@ export default {
               className="charcoal-icon-v1-breadcrumbs-Inline"
               aria-label=".charcoal-icon-v1-breadcrumbs-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-breadcrumbs-Inline</code>
           </div>
 
@@ -3414,7 +3419,7 @@ export default {
               className="charcoal-icon-v1-bringbackward"
               aria-label=".charcoal-icon-v1-bringbackward"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bringbackward</code>
           </div>
 
@@ -3423,7 +3428,7 @@ export default {
               className="charcoal-icon-v1-bringforward"
               aria-label=".charcoal-icon-v1-bringforward"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-bringforward</code>
           </div>
 
@@ -3432,7 +3437,7 @@ export default {
               className="charcoal-icon-v1-calendar"
               aria-label=".charcoal-icon-v1-calendar"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-calendar</code>
           </div>
 
@@ -3441,7 +3446,7 @@ export default {
               className="charcoal-icon-v1-camera"
               aria-label=".charcoal-icon-v1-camera"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-camera</code>
           </div>
 
@@ -3450,7 +3455,7 @@ export default {
               className="charcoal-icon-v1-camera-32"
               aria-label=".charcoal-icon-v1-camera-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-camera-32</code>
           </div>
 
@@ -3459,7 +3464,7 @@ export default {
               className="charcoal-icon-v1-cameravideo"
               aria-label=".charcoal-icon-v1-cameravideo"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-cameravideo</code>
           </div>
 
@@ -3468,7 +3473,7 @@ export default {
               className="charcoal-icon-v1-cart"
               aria-label=".charcoal-icon-v1-cart"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-cart</code>
           </div>
 
@@ -3477,7 +3482,7 @@ export default {
               className="charcoal-icon-v1-changecharacter"
               aria-label=".charcoal-icon-v1-changecharacter"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-changecharacter</code>
           </div>
 
@@ -3486,7 +3491,7 @@ export default {
               className="charcoal-icon-v1-chatbot"
               aria-label=".charcoal-icon-v1-chatbot"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-chatbot</code>
           </div>
 
@@ -3495,7 +3500,7 @@ export default {
               className="charcoal-icon-v1-check"
               aria-label=".charcoal-icon-v1-check"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-check</code>
           </div>
 
@@ -3504,7 +3509,7 @@ export default {
               className="charcoal-icon-v1-check-16"
               aria-label=".charcoal-icon-v1-check-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-check-16</code>
           </div>
 
@@ -3513,7 +3518,7 @@ export default {
               className="charcoal-icon-v1-check-Inline"
               aria-label=".charcoal-icon-v1-check-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-check-Inline</code>
           </div>
 
@@ -3522,7 +3527,7 @@ export default {
               className="charcoal-icon-v1-chromaticaberration"
               aria-label=".charcoal-icon-v1-chromaticaberration"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-chromaticaberration</code>
           </div>
 
@@ -3531,7 +3536,7 @@ export default {
               className="charcoal-icon-v1-click"
               aria-label=".charcoal-icon-v1-click"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-click</code>
           </div>
 
@@ -3540,7 +3545,7 @@ export default {
               className="charcoal-icon-v1-close"
               aria-label=".charcoal-icon-v1-close"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-close</code>
           </div>
 
@@ -3549,7 +3554,7 @@ export default {
               className="charcoal-icon-v1-close-32"
               aria-label=".charcoal-icon-v1-close-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-close-32</code>
           </div>
 
@@ -3558,7 +3563,7 @@ export default {
               className="charcoal-icon-v1-codes"
               aria-label=".charcoal-icon-v1-codes"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-codes</code>
           </div>
 
@@ -3567,7 +3572,7 @@ export default {
               className="charcoal-icon-v1-collapse"
               aria-label=".charcoal-icon-v1-collapse"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-collapse</code>
           </div>
 
@@ -3576,7 +3581,7 @@ export default {
               className="charcoal-icon-v1-collapse-32"
               aria-label=".charcoal-icon-v1-collapse-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-collapse-32</code>
           </div>
 
@@ -3585,7 +3590,7 @@ export default {
               className="charcoal-icon-v1-collection"
               aria-label=".charcoal-icon-v1-collection"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-collection</code>
           </div>
 
@@ -3594,7 +3599,7 @@ export default {
               className="charcoal-icon-v1-comment-16"
               aria-label=".charcoal-icon-v1-comment-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-comment-16</code>
           </div>
 
@@ -3603,7 +3608,7 @@ export default {
               className="charcoal-icon-v1-comment-Inline"
               aria-label=".charcoal-icon-v1-comment-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-comment-Inline</code>
           </div>
 
@@ -3612,7 +3617,7 @@ export default {
               className="charcoal-icon-v1-commentfill"
               aria-label=".charcoal-icon-v1-commentfill"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-commentfill</code>
           </div>
 
@@ -3621,7 +3626,7 @@ export default {
               className="charcoal-icon-v1-commentoff-32"
               aria-label=".charcoal-icon-v1-commentoff-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-commentoff-32</code>
           </div>
 
@@ -3630,7 +3635,7 @@ export default {
               className="charcoal-icon-v1-commenton-32"
               aria-label=".charcoal-icon-v1-commenton-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-commenton-32</code>
           </div>
 
@@ -3639,7 +3644,7 @@ export default {
               className="charcoal-icon-v1-commentoutline"
               aria-label=".charcoal-icon-v1-commentoutline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-commentoutline</code>
           </div>
 
@@ -3648,7 +3653,7 @@ export default {
               className="charcoal-icon-v1-contest"
               aria-label=".charcoal-icon-v1-contest"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-contest</code>
           </div>
 
@@ -3657,7 +3662,7 @@ export default {
               className="charcoal-icon-v1-contextmenu-Inline"
               aria-label=".charcoal-icon-v1-contextmenu-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-contextmenu-Inline</code>
           </div>
 
@@ -3666,7 +3671,7 @@ export default {
               className="charcoal-icon-v1-contrast"
               aria-label=".charcoal-icon-v1-contrast"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-contrast</code>
           </div>
 
@@ -3675,7 +3680,7 @@ export default {
               className="charcoal-icon-v1-copy"
               aria-label=".charcoal-icon-v1-copy"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-copy</code>
           </div>
 
@@ -3684,7 +3689,7 @@ export default {
               className="charcoal-icon-v1-delete-32"
               aria-label=".charcoal-icon-v1-delete-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-delete-32</code>
           </div>
 
@@ -3693,7 +3698,7 @@ export default {
               className="charcoal-icon-v1-description"
               aria-label=".charcoal-icon-v1-description"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-description</code>
           </div>
 
@@ -3702,7 +3707,7 @@ export default {
               className="charcoal-icon-v1-devicerotation"
               aria-label=".charcoal-icon-v1-devicerotation"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-devicerotation</code>
           </div>
 
@@ -3711,7 +3716,7 @@ export default {
               className="charcoal-icon-v1-discovery"
               aria-label=".charcoal-icon-v1-discovery"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-discovery</code>
           </div>
 
@@ -3720,7 +3725,7 @@ export default {
               className="charcoal-icon-v1-dot"
               aria-label=".charcoal-icon-v1-dot"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-dot</code>
           </div>
 
@@ -3729,7 +3734,7 @@ export default {
               className="charcoal-icon-v1-dot-16"
               aria-label=".charcoal-icon-v1-dot-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-dot-16</code>
           </div>
 
@@ -3738,7 +3743,7 @@ export default {
               className="charcoal-icon-v1-dot-32"
               aria-label=".charcoal-icon-v1-dot-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-dot-32</code>
           </div>
 
@@ -3747,7 +3752,7 @@ export default {
               className="charcoal-icon-v1-dotalt"
               aria-label=".charcoal-icon-v1-dotalt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-dotalt</code>
           </div>
 
@@ -3756,7 +3761,7 @@ export default {
               className="charcoal-icon-v1-down"
               aria-label=".charcoal-icon-v1-down"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-down</code>
           </div>
 
@@ -3765,7 +3770,7 @@ export default {
               className="charcoal-icon-v1-down-16"
               aria-label=".charcoal-icon-v1-down-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-down-16</code>
           </div>
 
@@ -3774,7 +3779,7 @@ export default {
               className="charcoal-icon-v1-downloadalt"
               aria-label=".charcoal-icon-v1-downloadalt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-downloadalt</code>
           </div>
 
@@ -3783,7 +3788,7 @@ export default {
               className="charcoal-icon-v1-duplicate"
               aria-label=".charcoal-icon-v1-duplicate"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-duplicate</code>
           </div>
 
@@ -3792,7 +3797,7 @@ export default {
               className="charcoal-icon-v1-dust"
               aria-label=".charcoal-icon-v1-dust"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-dust</code>
           </div>
 
@@ -3801,7 +3806,7 @@ export default {
               className="charcoal-icon-v1-edit-32"
               aria-label=".charcoal-icon-v1-edit-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-edit-32</code>
           </div>
 
@@ -3810,7 +3815,7 @@ export default {
               className="charcoal-icon-v1-emoji"
               aria-label=".charcoal-icon-v1-emoji"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-emoji</code>
           </div>
 
@@ -3819,7 +3824,7 @@ export default {
               className="charcoal-icon-v1-error"
               aria-label=".charcoal-icon-v1-error"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-error</code>
           </div>
 
@@ -3828,7 +3833,7 @@ export default {
               className="charcoal-icon-v1-error-16"
               aria-label=".charcoal-icon-v1-error-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-error-16</code>
           </div>
 
@@ -3837,7 +3842,7 @@ export default {
               className="charcoal-icon-v1-erroroctagon"
               aria-label=".charcoal-icon-v1-erroroctagon"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-erroroctagon</code>
           </div>
 
@@ -3846,7 +3851,7 @@ export default {
               className="charcoal-icon-v1-events"
               aria-label=".charcoal-icon-v1-events"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-events</code>
           </div>
 
@@ -3855,7 +3860,7 @@ export default {
               className="charcoal-icon-v1-expand"
               aria-label=".charcoal-icon-v1-expand"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-expand</code>
           </div>
 
@@ -3864,7 +3869,7 @@ export default {
               className="charcoal-icon-v1-expand-32"
               aria-label=".charcoal-icon-v1-expand-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-expand-32</code>
           </div>
 
@@ -3873,7 +3878,7 @@ export default {
               className="charcoal-icon-v1-external-Inline"
               aria-label=".charcoal-icon-v1-external-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-external-Inline</code>
           </div>
 
@@ -3882,7 +3887,7 @@ export default {
               className="charcoal-icon-v1-faceedit"
               aria-label=".charcoal-icon-v1-faceedit"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-faceedit</code>
           </div>
 
@@ -3891,7 +3896,7 @@ export default {
               className="charcoal-icon-v1-fashion"
               aria-label=".charcoal-icon-v1-fashion"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-fashion</code>
           </div>
 
@@ -3900,7 +3905,7 @@ export default {
               className="charcoal-icon-v1-feed"
               aria-label=".charcoal-icon-v1-feed"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-feed</code>
           </div>
 
@@ -3909,7 +3914,7 @@ export default {
               className="charcoal-icon-v1-file"
               aria-label=".charcoal-icon-v1-file"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-file</code>
           </div>
 
@@ -3918,7 +3923,7 @@ export default {
               className="charcoal-icon-v1-filter"
               aria-label=".charcoal-icon-v1-filter"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-filter</code>
           </div>
 
@@ -3927,7 +3932,7 @@ export default {
               className="charcoal-icon-v1-filter-16"
               aria-label=".charcoal-icon-v1-filter-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-filter-16</code>
           </div>
 
@@ -3936,7 +3941,7 @@ export default {
               className="charcoal-icon-v1-filter-Inline"
               aria-label=".charcoal-icon-v1-filter-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-filter-Inline</code>
           </div>
 
@@ -3945,7 +3950,7 @@ export default {
               className="charcoal-icon-v1-flare"
               aria-label=".charcoal-icon-v1-flare"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-flare</code>
           </div>
 
@@ -3954,7 +3959,7 @@ export default {
               className="charcoal-icon-v1-folder-Inline"
               aria-label=".charcoal-icon-v1-folder-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-folder-Inline</code>
           </div>
 
@@ -3963,7 +3968,7 @@ export default {
               className="charcoal-icon-v1-formataligncenter"
               aria-label=".charcoal-icon-v1-formataligncenter"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formataligncenter</code>
           </div>
 
@@ -3972,7 +3977,7 @@ export default {
               className="charcoal-icon-v1-formatalignjustified"
               aria-label=".charcoal-icon-v1-formatalignjustified"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatalignjustified</code>
           </div>
 
@@ -3981,7 +3986,7 @@ export default {
               className="charcoal-icon-v1-formatalignleft"
               aria-label=".charcoal-icon-v1-formatalignleft"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatalignleft</code>
           </div>
 
@@ -3990,7 +3995,7 @@ export default {
               className="charcoal-icon-v1-formatalignright"
               aria-label=".charcoal-icon-v1-formatalignright"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatalignright</code>
           </div>
 
@@ -3999,7 +4004,7 @@ export default {
               className="charcoal-icon-v1-formatcolorfill"
               aria-label=".charcoal-icon-v1-formatcolorfill"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatcolorfill</code>
           </div>
 
@@ -4008,7 +4013,7 @@ export default {
               className="charcoal-icon-v1-formatcolorfillnocolor"
               aria-label=".charcoal-icon-v1-formatcolorfillnocolor"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatcolorfillnocolor</code>
           </div>
 
@@ -4017,7 +4022,7 @@ export default {
               className="charcoal-icon-v1-formatfontfamily"
               aria-label=".charcoal-icon-v1-formatfontfamily"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatfontfamily</code>
           </div>
 
@@ -4026,7 +4031,7 @@ export default {
               className="charcoal-icon-v1-formatfontsize"
               aria-label=".charcoal-icon-v1-formatfontsize"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatfontsize</code>
           </div>
 
@@ -4035,7 +4040,7 @@ export default {
               className="charcoal-icon-v1-formatletterspacing"
               aria-label=".charcoal-icon-v1-formatletterspacing"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatletterspacing</code>
           </div>
 
@@ -4044,7 +4049,7 @@ export default {
               className="charcoal-icon-v1-formatlinespacing"
               aria-label=".charcoal-icon-v1-formatlinespacing"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-formatlinespacing</code>
           </div>
 
@@ -4053,7 +4058,7 @@ export default {
               className="charcoal-icon-v1-fov"
               aria-label=".charcoal-icon-v1-fov"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-fov</code>
           </div>
 
@@ -4062,7 +4067,7 @@ export default {
               className="charcoal-icon-v1-frameeffect"
               aria-label=".charcoal-icon-v1-frameeffect"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-frameeffect</code>
           </div>
 
@@ -4071,7 +4076,7 @@ export default {
               className="charcoal-icon-v1-framesize"
               aria-label=".charcoal-icon-v1-framesize"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-framesize</code>
           </div>
 
@@ -4080,7 +4085,7 @@ export default {
               className="charcoal-icon-v1-gift"
               aria-label=".charcoal-icon-v1-gift"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-gift</code>
           </div>
 
@@ -4089,7 +4094,7 @@ export default {
               className="charcoal-icon-v1-gift-32"
               aria-label=".charcoal-icon-v1-gift-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-gift-32</code>
           </div>
 
@@ -4098,7 +4103,7 @@ export default {
               className="charcoal-icon-v1-glow"
               aria-label=".charcoal-icon-v1-glow"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-glow</code>
           </div>
 
@@ -4107,7 +4112,7 @@ export default {
               className="charcoal-icon-v1-groups"
               aria-label=".charcoal-icon-v1-groups"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-groups</code>
           </div>
 
@@ -4116,7 +4121,7 @@ export default {
               className="charcoal-icon-v1-hairedit"
               aria-label=".charcoal-icon-v1-hairedit"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-hairedit</code>
           </div>
 
@@ -4125,7 +4130,7 @@ export default {
               className="charcoal-icon-v1-hashtag"
               aria-label=".charcoal-icon-v1-hashtag"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-hashtag</code>
           </div>
 
@@ -4134,7 +4139,7 @@ export default {
               className="charcoal-icon-v1-hide"
               aria-label=".charcoal-icon-v1-hide"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-hide</code>
           </div>
 
@@ -4143,7 +4148,7 @@ export default {
               className="charcoal-icon-v1-hightlighttext"
               aria-label=".charcoal-icon-v1-hightlighttext"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-hightlighttext</code>
           </div>
 
@@ -4152,7 +4157,7 @@ export default {
               className="charcoal-icon-v1-home"
               aria-label=".charcoal-icon-v1-home"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-home</code>
           </div>
 
@@ -4161,7 +4166,7 @@ export default {
               className="charcoal-icon-v1-home-32"
               aria-label=".charcoal-icon-v1-home-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-home-32</code>
           </div>
 
@@ -4170,7 +4175,7 @@ export default {
               className="charcoal-icon-v1-horizontalwriting-32"
               aria-label=".charcoal-icon-v1-horizontalwriting-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-horizontalwriting-32</code>
           </div>
 
@@ -4179,7 +4184,7 @@ export default {
               className="charcoal-icon-v1-hue"
               aria-label=".charcoal-icon-v1-hue"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-hue</code>
           </div>
 
@@ -4188,7 +4193,7 @@ export default {
               className="charcoal-icon-v1-idea"
               aria-label=".charcoal-icon-v1-idea"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-idea</code>
           </div>
 
@@ -4197,7 +4202,7 @@ export default {
               className="charcoal-icon-v1-image"
               aria-label=".charcoal-icon-v1-image"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-image</code>
           </div>
 
@@ -4206,7 +4211,7 @@ export default {
               className="charcoal-icon-v1-imagealt"
               aria-label=".charcoal-icon-v1-imagealt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imagealt</code>
           </div>
 
@@ -4215,7 +4220,7 @@ export default {
               className="charcoal-icon-v1-imagehidden"
               aria-label=".charcoal-icon-v1-imagehidden"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imagehidden</code>
           </div>
 
@@ -4224,7 +4229,7 @@ export default {
               className="charcoal-icon-v1-imagehidden-32"
               aria-label=".charcoal-icon-v1-imagehidden-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imagehidden-32</code>
           </div>
 
@@ -4233,7 +4238,7 @@ export default {
               className="charcoal-icon-v1-imagereplace"
               aria-label=".charcoal-icon-v1-imagereplace"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imagereplace</code>
           </div>
 
@@ -4242,7 +4247,7 @@ export default {
               className="charcoal-icon-v1-imageresponse-16"
               aria-label=".charcoal-icon-v1-imageresponse-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imageresponse-16</code>
           </div>
 
@@ -4251,7 +4256,7 @@ export default {
               className="charcoal-icon-v1-imageresponse-Inline"
               aria-label=".charcoal-icon-v1-imageresponse-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imageresponse-Inline</code>
           </div>
 
@@ -4260,7 +4265,7 @@ export default {
               className="charcoal-icon-v1-images"
               aria-label=".charcoal-icon-v1-images"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-images</code>
           </div>
 
@@ -4269,7 +4274,7 @@ export default {
               className="charcoal-icon-v1-images-Inline"
               aria-label=".charcoal-icon-v1-images-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-images-Inline</code>
           </div>
 
@@ -4278,7 +4283,7 @@ export default {
               className="charcoal-icon-v1-imgcontain"
               aria-label=".charcoal-icon-v1-imgcontain"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imgcontain</code>
           </div>
 
@@ -4287,7 +4292,7 @@ export default {
               className="charcoal-icon-v1-imgcover"
               aria-label=".charcoal-icon-v1-imgcover"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-imgcover</code>
           </div>
 
@@ -4296,7 +4301,7 @@ export default {
               className="charcoal-icon-v1-index"
               aria-label=".charcoal-icon-v1-index"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-index</code>
           </div>
 
@@ -4305,7 +4310,7 @@ export default {
               className="charcoal-icon-v1-index-32"
               aria-label=".charcoal-icon-v1-index-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-index-32</code>
           </div>
 
@@ -4314,7 +4319,7 @@ export default {
               className="charcoal-icon-v1-info"
               aria-label=".charcoal-icon-v1-info"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-info</code>
           </div>
 
@@ -4323,7 +4328,7 @@ export default {
               className="charcoal-icon-v1-info-16"
               aria-label=".charcoal-icon-v1-info-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-info-16</code>
           </div>
 
@@ -4332,7 +4337,7 @@ export default {
               className="charcoal-icon-v1-invalid"
               aria-label=".charcoal-icon-v1-invalid"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-invalid</code>
           </div>
 
@@ -4341,7 +4346,7 @@ export default {
               className="charcoal-icon-v1-invoice"
               aria-label=".charcoal-icon-v1-invoice"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-invoice</code>
           </div>
 
@@ -4350,7 +4355,7 @@ export default {
               className="charcoal-icon-v1-itemremove"
               aria-label=".charcoal-icon-v1-itemremove"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-itemremove</code>
           </div>
 
@@ -4359,7 +4364,7 @@ export default {
               className="charcoal-icon-v1-latest-Inline"
               aria-label=".charcoal-icon-v1-latest-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-latest-Inline</code>
           </div>
 
@@ -4368,7 +4373,7 @@ export default {
               className="charcoal-icon-v1-latestworks"
               aria-label=".charcoal-icon-v1-latestworks"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-latestworks</code>
           </div>
 
@@ -4377,7 +4382,7 @@ export default {
               className="charcoal-icon-v1-like-16"
               aria-label=".charcoal-icon-v1-like-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-like-16</code>
           </div>
 
@@ -4386,7 +4391,7 @@ export default {
               className="charcoal-icon-v1-like-Inline"
               aria-label=".charcoal-icon-v1-like-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-like-Inline</code>
           </div>
 
@@ -4395,7 +4400,7 @@ export default {
               className="charcoal-icon-v1-likeoff"
               aria-label=".charcoal-icon-v1-likeoff"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-likeoff</code>
           </div>
 
@@ -4404,7 +4409,7 @@ export default {
               className="charcoal-icon-v1-likeoff-32"
               aria-label=".charcoal-icon-v1-likeoff-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-likeoff-32</code>
           </div>
 
@@ -4413,7 +4418,7 @@ export default {
               className="charcoal-icon-v1-likeoff-Inline"
               aria-label=".charcoal-icon-v1-likeoff-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-likeoff-Inline</code>
           </div>
 
@@ -4422,7 +4427,7 @@ export default {
               className="charcoal-icon-v1-likeon"
               aria-label=".charcoal-icon-v1-likeon"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-likeon</code>
           </div>
 
@@ -4431,7 +4436,7 @@ export default {
               className="charcoal-icon-v1-likeon-32"
               aria-label=".charcoal-icon-v1-likeon-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-likeon-32</code>
           </div>
 
@@ -4440,7 +4445,7 @@ export default {
               className="charcoal-icon-v1-likeonprivate-32"
               aria-label=".charcoal-icon-v1-likeonprivate-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-likeonprivate-32</code>
           </div>
 
@@ -4449,7 +4454,7 @@ export default {
               className="charcoal-icon-v1-link"
               aria-label=".charcoal-icon-v1-link"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-link</code>
           </div>
 
@@ -4458,7 +4463,7 @@ export default {
               className="charcoal-icon-v1-list"
               aria-label=".charcoal-icon-v1-list"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-list</code>
           </div>
 
@@ -4467,7 +4472,7 @@ export default {
               className="charcoal-icon-v1-list-Inline"
               aria-label=".charcoal-icon-v1-list-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-list-Inline</code>
           </div>
 
@@ -4476,7 +4481,7 @@ export default {
               className="charcoal-icon-v1-location-Inline"
               aria-label=".charcoal-icon-v1-location-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-location-Inline</code>
           </div>
 
@@ -4485,7 +4490,7 @@ export default {
               className="charcoal-icon-v1-lock-Inline"
               aria-label=".charcoal-icon-v1-lock-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-lock-Inline</code>
           </div>
 
@@ -4494,7 +4499,7 @@ export default {
               className="charcoal-icon-v1-locklock"
               aria-label=".charcoal-icon-v1-locklock"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-locklock</code>
           </div>
 
@@ -4503,7 +4508,7 @@ export default {
               className="charcoal-icon-v1-lockunlock"
               aria-label=".charcoal-icon-v1-lockunlock"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-lockunlock</code>
           </div>
 
@@ -4512,7 +4517,7 @@ export default {
               className="charcoal-icon-v1-logout"
               aria-label=".charcoal-icon-v1-logout"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-logout</code>
           </div>
 
@@ -4521,7 +4526,7 @@ export default {
               className="charcoal-icon-v1-manga"
               aria-label=".charcoal-icon-v1-manga"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-manga</code>
           </div>
 
@@ -4530,7 +4535,7 @@ export default {
               className="charcoal-icon-v1-menu"
               aria-label=".charcoal-icon-v1-menu"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-menu</code>
           </div>
 
@@ -4539,7 +4544,7 @@ export default {
               className="charcoal-icon-v1-menu-16"
               aria-label=".charcoal-icon-v1-menu-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-menu-16</code>
           </div>
 
@@ -4548,7 +4553,7 @@ export default {
               className="charcoal-icon-v1-message"
               aria-label=".charcoal-icon-v1-message"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-message</code>
           </div>
 
@@ -4557,7 +4562,7 @@ export default {
               className="charcoal-icon-v1-message-32"
               aria-label=".charcoal-icon-v1-message-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-message-32</code>
           </div>
 
@@ -4566,7 +4571,7 @@ export default {
               className="charcoal-icon-v1-microphone"
               aria-label=".charcoal-icon-v1-microphone"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-microphone</code>
           </div>
 
@@ -4575,7 +4580,7 @@ export default {
               className="charcoal-icon-v1-mobilephone"
               aria-label=".charcoal-icon-v1-mobilephone"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-mobilephone</code>
           </div>
 
@@ -4584,7 +4589,7 @@ export default {
               className="charcoal-icon-v1-more-16"
               aria-label=".charcoal-icon-v1-more-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-more-16</code>
           </div>
 
@@ -4593,7 +4598,7 @@ export default {
               className="charcoal-icon-v1-more-Inline"
               aria-label=".charcoal-icon-v1-more-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-more-Inline</code>
           </div>
 
@@ -4602,7 +4607,7 @@ export default {
               className="charcoal-icon-v1-move1"
               aria-label=".charcoal-icon-v1-move1"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-move1</code>
           </div>
 
@@ -4611,7 +4616,7 @@ export default {
               className="charcoal-icon-v1-multiselect"
               aria-label=".charcoal-icon-v1-multiselect"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-multiselect</code>
           </div>
 
@@ -4620,7 +4625,7 @@ export default {
               className="charcoal-icon-v1-multiselect-Inline"
               aria-label=".charcoal-icon-v1-multiselect-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-multiselect-Inline</code>
           </div>
 
@@ -4629,7 +4634,7 @@ export default {
               className="charcoal-icon-v1-next"
               aria-label=".charcoal-icon-v1-next"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-next</code>
           </div>
 
@@ -4638,7 +4643,7 @@ export default {
               className="charcoal-icon-v1-next-32"
               aria-label=".charcoal-icon-v1-next-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-next-32</code>
           </div>
 
@@ -4647,7 +4652,7 @@ export default {
               className="charcoal-icon-v1-nextworks-16"
               aria-label=".charcoal-icon-v1-nextworks-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-nextworks-16</code>
           </div>
 
@@ -4656,7 +4661,7 @@ export default {
               className="charcoal-icon-v1-nextworks-Inline"
               aria-label=".charcoal-icon-v1-nextworks-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-nextworks-Inline</code>
           </div>
 
@@ -4665,7 +4670,7 @@ export default {
               className="charcoal-icon-v1-noimage"
               aria-label=".charcoal-icon-v1-noimage"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-noimage</code>
           </div>
 
@@ -4674,7 +4679,7 @@ export default {
               className="charcoal-icon-v1-notification"
               aria-label=".charcoal-icon-v1-notification"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-notification</code>
           </div>
 
@@ -4683,7 +4688,7 @@ export default {
               className="charcoal-icon-v1-notification-32"
               aria-label=".charcoal-icon-v1-notification-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-notification-32</code>
           </div>
 
@@ -4692,7 +4697,7 @@ export default {
               className="charcoal-icon-v1-notificationoff"
               aria-label=".charcoal-icon-v1-notificationoff"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-notificationoff</code>
           </div>
 
@@ -4701,7 +4706,7 @@ export default {
               className="charcoal-icon-v1-notificationoff-32"
               aria-label=".charcoal-icon-v1-notificationoff-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-notificationoff-32</code>
           </div>
 
@@ -4710,7 +4715,7 @@ export default {
               className="charcoal-icon-v1-novels"
               aria-label=".charcoal-icon-v1-novels"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-novels</code>
           </div>
 
@@ -4719,7 +4724,7 @@ export default {
               className="charcoal-icon-v1-novelviewersettings-32"
               aria-label=".charcoal-icon-v1-novelviewersettings-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-novelviewersettings-32</code>
           </div>
 
@@ -4728,7 +4733,7 @@ export default {
               className="charcoal-icon-v1-openinnew"
               aria-label=".charcoal-icon-v1-openinnew"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-openinnew</code>
           </div>
 
@@ -4737,7 +4742,7 @@ export default {
               className="charcoal-icon-v1-openinnew-Inline"
               aria-label=".charcoal-icon-v1-openinnew-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-openinnew-Inline</code>
           </div>
 
@@ -4746,7 +4751,7 @@ export default {
               className="charcoal-icon-v1-options"
               aria-label=".charcoal-icon-v1-options"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-options</code>
           </div>
 
@@ -4755,7 +4760,7 @@ export default {
               className="charcoal-icon-v1-optionsalt"
               aria-label=".charcoal-icon-v1-optionsalt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-optionsalt</code>
           </div>
 
@@ -4764,7 +4769,7 @@ export default {
               className="charcoal-icon-v1-overlay"
               aria-label=".charcoal-icon-v1-overlay"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-overlay</code>
           </div>
 
@@ -4773,7 +4778,7 @@ export default {
               className="charcoal-icon-v1-palette"
               aria-label=".charcoal-icon-v1-palette"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-palette</code>
           </div>
 
@@ -4782,7 +4787,7 @@ export default {
               className="charcoal-icon-v1-pan-32"
               aria-label=".charcoal-icon-v1-pan-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pan-32</code>
           </div>
 
@@ -4791,7 +4796,7 @@ export default {
               className="charcoal-icon-v1-pause"
               aria-label=".charcoal-icon-v1-pause"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pause</code>
           </div>
 
@@ -4800,7 +4805,7 @@ export default {
               className="charcoal-icon-v1-pausealt"
               aria-label=".charcoal-icon-v1-pausealt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pausealt</code>
           </div>
 
@@ -4809,7 +4814,7 @@ export default {
               className="charcoal-icon-v1-pencil"
               aria-label=".charcoal-icon-v1-pencil"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pencil</code>
           </div>
 
@@ -4818,7 +4823,7 @@ export default {
               className="charcoal-icon-v1-pencil-16"
               aria-label=".charcoal-icon-v1-pencil-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pencil-16</code>
           </div>
 
@@ -4827,7 +4832,7 @@ export default {
               className="charcoal-icon-v1-pencil-Inline"
               aria-label=".charcoal-icon-v1-pencil-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pencil-Inline</code>
           </div>
 
@@ -4836,7 +4841,7 @@ export default {
               className="charcoal-icon-v1-penciladd"
               aria-label=".charcoal-icon-v1-penciladd"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-penciladd</code>
           </div>
 
@@ -4845,7 +4850,7 @@ export default {
               className="charcoal-icon-v1-pencildraw"
               aria-label=".charcoal-icon-v1-pencildraw"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pencildraw</code>
           </div>
 
@@ -4854,7 +4859,7 @@ export default {
               className="charcoal-icon-v1-pencillive"
               aria-label=".charcoal-icon-v1-pencillive"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pencillive</code>
           </div>
 
@@ -4863,7 +4868,7 @@ export default {
               className="charcoal-icon-v1-penciltext"
               aria-label=".charcoal-icon-v1-penciltext"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-penciltext</code>
           </div>
 
@@ -4872,7 +4877,7 @@ export default {
               className="charcoal-icon-v1-person"
               aria-label=".charcoal-icon-v1-person"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-person</code>
           </div>
 
@@ -4881,7 +4886,7 @@ export default {
               className="charcoal-icon-v1-play"
               aria-label=".charcoal-icon-v1-play"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-play</code>
           </div>
 
@@ -4890,7 +4895,7 @@ export default {
               className="charcoal-icon-v1-pose"
               aria-label=".charcoal-icon-v1-pose"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pose</code>
           </div>
 
@@ -4899,7 +4904,7 @@ export default {
               className="charcoal-icon-v1-prev"
               aria-label=".charcoal-icon-v1-prev"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-prev</code>
           </div>
 
@@ -4908,7 +4913,7 @@ export default {
               className="charcoal-icon-v1-prev-32"
               aria-label=".charcoal-icon-v1-prev-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-prev-32</code>
           </div>
 
@@ -4917,7 +4922,7 @@ export default {
               className="charcoal-icon-v1-projects"
               aria-label=".charcoal-icon-v1-projects"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-projects</code>
           </div>
 
@@ -4926,7 +4931,7 @@ export default {
               className="charcoal-icon-v1-pulldown"
               aria-label=".charcoal-icon-v1-pulldown"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pulldown</code>
           </div>
 
@@ -4935,7 +4940,7 @@ export default {
               className="charcoal-icon-v1-pulldown-32"
               aria-label=".charcoal-icon-v1-pulldown-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pulldown-32</code>
           </div>
 
@@ -4944,7 +4949,7 @@ export default {
               className="charcoal-icon-v1-pullup"
               aria-label=".charcoal-icon-v1-pullup"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pullup</code>
           </div>
 
@@ -4953,7 +4958,7 @@ export default {
               className="charcoal-icon-v1-pullup-32"
               aria-label=".charcoal-icon-v1-pullup-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-pullup-32</code>
           </div>
 
@@ -4962,7 +4967,7 @@ export default {
               className="charcoal-icon-v1-question"
               aria-label=".charcoal-icon-v1-question"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-question</code>
           </div>
 
@@ -4971,7 +4976,7 @@ export default {
               className="charcoal-icon-v1-question-16"
               aria-label=".charcoal-icon-v1-question-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-question-16</code>
           </div>
 
@@ -4980,7 +4985,7 @@ export default {
               className="charcoal-icon-v1-questionoutline"
               aria-label=".charcoal-icon-v1-questionoutline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-questionoutline</code>
           </div>
 
@@ -4989,7 +4994,7 @@ export default {
               className="charcoal-icon-v1-ranking"
               aria-label=".charcoal-icon-v1-ranking"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-ranking</code>
           </div>
 
@@ -4998,7 +5003,7 @@ export default {
               className="charcoal-icon-v1-ranking-16"
               aria-label=".charcoal-icon-v1-ranking-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-ranking-16</code>
           </div>
 
@@ -5007,7 +5012,7 @@ export default {
               className="charcoal-icon-v1-readhorizontalleft"
               aria-label=".charcoal-icon-v1-readhorizontalleft"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-readhorizontalleft</code>
           </div>
 
@@ -5016,7 +5021,7 @@ export default {
               className="charcoal-icon-v1-readhorizontalleft-32"
               aria-label=".charcoal-icon-v1-readhorizontalleft-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-readhorizontalleft-32</code>
           </div>
 
@@ -5025,7 +5030,7 @@ export default {
               className="charcoal-icon-v1-readhorizontalright"
               aria-label=".charcoal-icon-v1-readhorizontalright"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-readhorizontalright</code>
           </div>
 
@@ -5034,7 +5039,7 @@ export default {
               className="charcoal-icon-v1-readhorizontalright-32"
               aria-label=".charcoal-icon-v1-readhorizontalright-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-readhorizontalright-32</code>
           </div>
 
@@ -5043,7 +5048,7 @@ export default {
               className="charcoal-icon-v1-readvertical"
               aria-label=".charcoal-icon-v1-readvertical"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-readvertical</code>
           </div>
 
@@ -5052,7 +5057,7 @@ export default {
               className="charcoal-icon-v1-readvertical-32"
               aria-label=".charcoal-icon-v1-readvertical-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-readvertical-32</code>
           </div>
 
@@ -5061,7 +5066,7 @@ export default {
               className="charcoal-icon-v1-redo"
               aria-label=".charcoal-icon-v1-redo"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-redo</code>
           </div>
 
@@ -5070,7 +5075,7 @@ export default {
               className="charcoal-icon-v1-redo-32"
               aria-label=".charcoal-icon-v1-redo-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-redo-32</code>
           </div>
 
@@ -5079,7 +5084,7 @@ export default {
               className="charcoal-icon-v1-reload"
               aria-label=".charcoal-icon-v1-reload"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-reload</code>
           </div>
 
@@ -5088,7 +5093,7 @@ export default {
               className="charcoal-icon-v1-reloadloop"
               aria-label=".charcoal-icon-v1-reloadloop"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-reloadloop</code>
           </div>
 
@@ -5097,7 +5102,7 @@ export default {
               className="charcoal-icon-v1-remove-16"
               aria-label=".charcoal-icon-v1-remove-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-remove-16</code>
           </div>
 
@@ -5106,7 +5111,7 @@ export default {
               className="charcoal-icon-v1-remove-Inline"
               aria-label=".charcoal-icon-v1-remove-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-remove-Inline</code>
           </div>
 
@@ -5115,7 +5120,7 @@ export default {
               className="charcoal-icon-v1-reorder"
               aria-label=".charcoal-icon-v1-reorder"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-reorder</code>
           </div>
 
@@ -5124,7 +5129,7 @@ export default {
               className="charcoal-icon-v1-reply"
               aria-label=".charcoal-icon-v1-reply"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-reply</code>
           </div>
 
@@ -5133,7 +5138,7 @@ export default {
               className="charcoal-icon-v1-roll"
               aria-label=".charcoal-icon-v1-roll"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-roll</code>
           </div>
 
@@ -5142,7 +5147,7 @@ export default {
               className="charcoal-icon-v1-rollhorizontal-32"
               aria-label=".charcoal-icon-v1-rollhorizontal-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-rollhorizontal-32</code>
           </div>
 
@@ -5151,7 +5156,7 @@ export default {
               className="charcoal-icon-v1-rollvertical-32"
               aria-label=".charcoal-icon-v1-rollvertical-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-rollvertical-32</code>
           </div>
 
@@ -5160,7 +5165,7 @@ export default {
               className="charcoal-icon-v1-rotate90degreesc"
               aria-label=".charcoal-icon-v1-rotate90degreesc"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-rotate90degreesc</code>
           </div>
 
@@ -5169,7 +5174,7 @@ export default {
               className="charcoal-icon-v1-rotate90degreescc"
               aria-label=".charcoal-icon-v1-rotate90degreescc"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-rotate90degreescc</code>
           </div>
 
@@ -5178,7 +5183,7 @@ export default {
               className="charcoal-icon-v1-rotateright"
               aria-label=".charcoal-icon-v1-rotateright"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-rotateright</code>
           </div>
 
@@ -5187,7 +5192,7 @@ export default {
               className="charcoal-icon-v1-sansserif-32"
               aria-label=".charcoal-icon-v1-sansserif-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-sansserif-32</code>
           </div>
 
@@ -5196,7 +5201,7 @@ export default {
               className="charcoal-icon-v1-saturation"
               aria-label=".charcoal-icon-v1-saturation"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-saturation</code>
           </div>
 
@@ -5205,7 +5210,7 @@ export default {
               className="charcoal-icon-v1-save"
               aria-label=".charcoal-icon-v1-save"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-save</code>
           </div>
 
@@ -5214,7 +5219,7 @@ export default {
               className="charcoal-icon-v1-search"
               aria-label=".charcoal-icon-v1-search"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-search</code>
           </div>
 
@@ -5223,7 +5228,7 @@ export default {
               className="charcoal-icon-v1-search-16"
               aria-label=".charcoal-icon-v1-search-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-search-16</code>
           </div>
 
@@ -5232,7 +5237,7 @@ export default {
               className="charcoal-icon-v1-send"
               aria-label=".charcoal-icon-v1-send"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-send</code>
           </div>
 
@@ -5241,7 +5246,7 @@ export default {
               className="charcoal-icon-v1-serif-32"
               aria-label=".charcoal-icon-v1-serif-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-serif-32</code>
           </div>
 
@@ -5250,7 +5255,7 @@ export default {
               className="charcoal-icon-v1-services"
               aria-label=".charcoal-icon-v1-services"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-services</code>
           </div>
 
@@ -5259,7 +5264,7 @@ export default {
               className="charcoal-icon-v1-set"
               aria-label=".charcoal-icon-v1-set"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-set</code>
           </div>
 
@@ -5268,7 +5273,7 @@ export default {
               className="charcoal-icon-v1-settings"
               aria-label=".charcoal-icon-v1-settings"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-settings</code>
           </div>
 
@@ -5277,7 +5282,7 @@ export default {
               className="charcoal-icon-v1-shareandroid"
               aria-label=".charcoal-icon-v1-shareandroid"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shareandroid</code>
           </div>
 
@@ -5286,7 +5291,7 @@ export default {
               className="charcoal-icon-v1-shareandroid-32"
               aria-label=".charcoal-icon-v1-shareandroid-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shareandroid-32</code>
           </div>
 
@@ -5295,7 +5300,7 @@ export default {
               className="charcoal-icon-v1-shareios"
               aria-label=".charcoal-icon-v1-shareios"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shareios</code>
           </div>
 
@@ -5304,7 +5309,7 @@ export default {
               className="charcoal-icon-v1-shareios-32"
               aria-label=".charcoal-icon-v1-shareios-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shareios-32</code>
           </div>
 
@@ -5313,7 +5318,7 @@ export default {
               className="charcoal-icon-v1-shopping"
               aria-label=".charcoal-icon-v1-shopping"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shopping</code>
           </div>
 
@@ -5322,7 +5327,7 @@ export default {
               className="charcoal-icon-v1-shopping-32"
               aria-label=".charcoal-icon-v1-shopping-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shopping-32</code>
           </div>
 
@@ -5331,7 +5336,7 @@ export default {
               className="charcoal-icon-v1-show"
               aria-label=".charcoal-icon-v1-show"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-show</code>
           </div>
 
@@ -5340,7 +5345,7 @@ export default {
               className="charcoal-icon-v1-showoutline"
               aria-label=".charcoal-icon-v1-showoutline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-showoutline</code>
           </div>
 
@@ -5349,7 +5354,7 @@ export default {
               className="charcoal-icon-v1-shutter"
               aria-label=".charcoal-icon-v1-shutter"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-shutter</code>
           </div>
 
@@ -5358,7 +5363,7 @@ export default {
               className="charcoal-icon-v1-smile-16"
               aria-label=".charcoal-icon-v1-smile-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-smile-16</code>
           </div>
 
@@ -5367,7 +5372,7 @@ export default {
               className="charcoal-icon-v1-smile-Inline"
               aria-label=".charcoal-icon-v1-smile-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-smile-Inline</code>
           </div>
 
@@ -5376,7 +5381,7 @@ export default {
               className="charcoal-icon-v1-smileon-Inline"
               aria-label=".charcoal-icon-v1-smileon-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-smileon-Inline</code>
           </div>
 
@@ -5385,7 +5390,7 @@ export default {
               className="charcoal-icon-v1-speaker-16"
               aria-label=".charcoal-icon-v1-speaker-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-speaker-16</code>
           </div>
 
@@ -5394,7 +5399,7 @@ export default {
               className="charcoal-icon-v1-star"
               aria-label=".charcoal-icon-v1-star"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-star</code>
           </div>
 
@@ -5403,7 +5408,7 @@ export default {
               className="charcoal-icon-v1-subtract"
               aria-label=".charcoal-icon-v1-subtract"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-subtract</code>
           </div>
 
@@ -5412,7 +5417,7 @@ export default {
               className="charcoal-icon-v1-sun"
               aria-label=".charcoal-icon-v1-sun"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-sun</code>
           </div>
 
@@ -5421,7 +5426,7 @@ export default {
               className="charcoal-icon-v1-temperature"
               aria-label=".charcoal-icon-v1-temperature"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-temperature</code>
           </div>
 
@@ -5430,7 +5435,7 @@ export default {
               className="charcoal-icon-v1-text"
               aria-label=".charcoal-icon-v1-text"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-text</code>
           </div>
 
@@ -5439,7 +5444,7 @@ export default {
               className="charcoal-icon-v1-thread"
               aria-label=".charcoal-icon-v1-thread"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-thread</code>
           </div>
 
@@ -5448,7 +5453,7 @@ export default {
               className="charcoal-icon-v1-trash"
               aria-label=".charcoal-icon-v1-trash"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-trash</code>
           </div>
 
@@ -5457,7 +5462,7 @@ export default {
               className="charcoal-icon-v1-trashalt"
               aria-label=".charcoal-icon-v1-trashalt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-trashalt</code>
           </div>
 
@@ -5466,7 +5471,7 @@ export default {
               className="charcoal-icon-v1-undo"
               aria-label=".charcoal-icon-v1-undo"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-undo</code>
           </div>
 
@@ -5475,7 +5480,7 @@ export default {
               className="charcoal-icon-v1-undo-32"
               aria-label=".charcoal-icon-v1-undo-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-undo-32</code>
           </div>
 
@@ -5484,7 +5489,7 @@ export default {
               className="charcoal-icon-v1-up"
               aria-label=".charcoal-icon-v1-up"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-up</code>
           </div>
 
@@ -5493,7 +5498,7 @@ export default {
               className="charcoal-icon-v1-up-16"
               aria-label=".charcoal-icon-v1-up-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-up-16</code>
           </div>
 
@@ -5502,7 +5507,7 @@ export default {
               className="charcoal-icon-v1-upload"
               aria-label=".charcoal-icon-v1-upload"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-upload</code>
           </div>
 
@@ -5511,7 +5516,7 @@ export default {
               className="charcoal-icon-v1-upload-32"
               aria-label=".charcoal-icon-v1-upload-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-upload-32</code>
           </div>
 
@@ -5520,7 +5525,7 @@ export default {
               className="charcoal-icon-v1-uploadalt"
               aria-label=".charcoal-icon-v1-uploadalt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-uploadalt</code>
           </div>
 
@@ -5529,7 +5534,7 @@ export default {
               className="charcoal-icon-v1-usagi"
               aria-label=".charcoal-icon-v1-usagi"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-usagi</code>
           </div>
 
@@ -5538,7 +5543,7 @@ export default {
               className="charcoal-icon-v1-usagialt"
               aria-label=".charcoal-icon-v1-usagialt"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-usagialt</code>
           </div>
 
@@ -5547,7 +5552,7 @@ export default {
               className="charcoal-icon-v1-user-32"
               aria-label=".charcoal-icon-v1-user-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-user-32</code>
           </div>
 
@@ -5556,7 +5561,7 @@ export default {
               className="charcoal-icon-v1-users"
               aria-label=".charcoal-icon-v1-users"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-users</code>
           </div>
 
@@ -5565,7 +5570,7 @@ export default {
               className="charcoal-icon-v1-users-Inline"
               aria-label=".charcoal-icon-v1-users-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-users-Inline</code>
           </div>
 
@@ -5574,7 +5579,7 @@ export default {
               className="charcoal-icon-v1-verticalwriting-32"
               aria-label=".charcoal-icon-v1-verticalwriting-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-verticalwriting-32</code>
           </div>
 
@@ -5583,7 +5588,7 @@ export default {
               className="charcoal-icon-v1-video"
               aria-label=".charcoal-icon-v1-video"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-video</code>
           </div>
 
@@ -5592,7 +5597,7 @@ export default {
               className="charcoal-icon-v1-view-16"
               aria-label=".charcoal-icon-v1-view-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-view-16</code>
           </div>
 
@@ -5601,7 +5606,7 @@ export default {
               className="charcoal-icon-v1-view-Inline"
               aria-label=".charcoal-icon-v1-view-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-view-Inline</code>
           </div>
 
@@ -5610,7 +5615,7 @@ export default {
               className="charcoal-icon-v1-viewgrid2columns"
               aria-label=".charcoal-icon-v1-viewgrid2columns"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-viewgrid2columns</code>
           </div>
 
@@ -5619,7 +5624,7 @@ export default {
               className="charcoal-icon-v1-viewgrid3columns"
               aria-label=".charcoal-icon-v1-viewgrid3columns"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-viewgrid3columns</code>
           </div>
 
@@ -5628,7 +5633,7 @@ export default {
               className="charcoal-icon-v1-viewlist"
               aria-label=".charcoal-icon-v1-viewlist"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-viewlist</code>
           </div>
 
@@ -5637,7 +5642,7 @@ export default {
               className="charcoal-icon-v1-viewoutline-Inline"
               aria-label=".charcoal-icon-v1-viewoutline-Inline"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-viewoutline-Inline</code>
           </div>
 
@@ -5646,7 +5651,7 @@ export default {
               className="charcoal-icon-v1-warning"
               aria-label=".charcoal-icon-v1-warning"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-warning</code>
           </div>
 
@@ -5655,7 +5660,7 @@ export default {
               className="charcoal-icon-v1-warning-16"
               aria-label=".charcoal-icon-v1-warning-16"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-warning-16</code>
           </div>
 
@@ -5664,7 +5669,7 @@ export default {
               className="charcoal-icon-v1-zoomin-32"
               aria-label=".charcoal-icon-v1-zoomin-32"
               role="img"
-            ></div>
+            />
             <code>.charcoal-icon-v1-zoomin-32</code>
           </div>
         </div>

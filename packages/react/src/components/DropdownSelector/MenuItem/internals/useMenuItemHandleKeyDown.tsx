@@ -10,7 +10,7 @@ import { MenuListContext } from '../../MenuList/MenuListContext'
  * @returns
  */
 export function useMenuItemHandleKeyDown(
-  value?: string
+  value?: string,
 ): [(e: React.KeyboardEvent<HTMLElement>) => void, () => void] {
   const { setValue, root, propsArray } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
@@ -39,11 +39,11 @@ export function useMenuItemHandleKeyDown(
               ? values[0]
               : values[index + 1]
             : // next or first
-            index - 1 < 0
-            ? values[values.length - 1]
-            : values[index - 1]
+              index - 1 < 0
+              ? values[values.length - 1]
+              : values[index - 1]
           const next = root?.current?.querySelector(
-            `[data-key='${focusValue}']`
+            `[data-key='${focusValue}']`,
           )
 
           if (next instanceof HTMLElement) {
@@ -60,7 +60,7 @@ export function useMenuItemHandleKeyDown(
         }
       }
     },
-    [setContextValue, propsArray, value, root]
+    [setContextValue, propsArray, value, root],
   )
   return [handleKeyDown, setContextValue]
 }

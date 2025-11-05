@@ -17,5 +17,7 @@ const SvgRoll = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconRoll24 = forwardRef(SvgRoll)
+export const IconRoll24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRoll)
 export default IconRoll24

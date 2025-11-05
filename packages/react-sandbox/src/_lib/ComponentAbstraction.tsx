@@ -15,7 +15,7 @@ export const DefaultLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
         {children}
       </a>
     )
-  }
+  },
 )
 
 type DefaultLinkProps = LinkProps & React.RefAttributes<HTMLAnchorElement>

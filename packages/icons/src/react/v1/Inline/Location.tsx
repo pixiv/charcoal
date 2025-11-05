@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgLocation = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={10}
@@ -22,5 +22,7 @@ const SvgLocation = (
     />
   </svg>
 )
-export const IconLocationInline = forwardRef(SvgLocation)
+export const IconLocationInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLocation)
 export default IconLocationInline

@@ -19,5 +19,7 @@ const SvgFov = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconFov24 = forwardRef(SvgFov)
+export const IconFov24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFov)
 export default IconFov24

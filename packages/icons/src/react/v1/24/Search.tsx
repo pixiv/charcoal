@@ -19,5 +19,7 @@ const SvgSearch = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconSearch24 = forwardRef(SvgSearch)
+export const IconSearch24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSearch)
 export default IconSearch24

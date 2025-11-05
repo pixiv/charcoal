@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgUsagiAlt = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgUsagiAlt = (
     />
   </svg>
 )
-export const IconUsagiAlt24 = forwardRef(SvgUsagiAlt)
+export const IconUsagiAlt24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgUsagiAlt)
 export default IconUsagiAlt24

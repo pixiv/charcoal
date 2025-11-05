@@ -19,5 +19,7 @@ const SvgBinet = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconBinet24 = forwardRef(SvgBinet)
+export const IconBinet24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBinet)
 export default IconBinet24

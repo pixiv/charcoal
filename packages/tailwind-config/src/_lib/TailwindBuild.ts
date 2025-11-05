@@ -29,7 +29,7 @@ export class TailwindBuild {
           } else {
             return []
           }
-        })
+        }),
       )
 
       // 1 個のクラスは複数のルールを持つ場合がある（ ::before など ）ので配列で突っ込む

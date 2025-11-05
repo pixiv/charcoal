@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgSaturation = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -23,5 +23,7 @@ const SvgSaturation = (
     />
   </svg>
 )
-export const IconSaturation24 = forwardRef(SvgSaturation)
+export const IconSaturation24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSaturation)
 export default IconSaturation24

@@ -19,5 +19,7 @@ const SvgPaste = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPaste = forwardRef(SvgPaste)
+export const IconPaste: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPaste)
 export default IconPaste

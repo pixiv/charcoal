@@ -29,8 +29,8 @@ import {
 } from '../factories/lib'
 import { TRANSITION_DURATION } from './transition'
 
-const colorProperties = ['bg', 'font'] as const
-export type ColorProperty = (typeof colorProperties)[number]
+type ColorProperties = ['bg', 'font']
+export type ColorProperty = ColorProperties[number]
 
 function targetProperty(target: ColorProperty) {
   return target === 'bg' ? 'background-color' : 'color'
@@ -41,23 +41,23 @@ export const createColorCss =
   (
     target: ColorProperty,
     color: keyof T['color'],
-    effects: readonly (keyof T['effect'])[] = []
+    effects: readonly (keyof T['effect'])[] = [],
   ): Internal => {
     function toCSS() {
       return {
         [targetProperty(target)]: variable(
-          customPropertyToken(color.toString())
+          customPropertyToken(color.toString()),
         ),
         ...effects.filter(isSupportedEffect).reduce<CSSObject>(
           (acc, effect) => ({
             ...acc,
             ...onEffectPseudo(effect, {
               [targetProperty(target)]: variable(
-                customPropertyToken(color.toString(), [effect])
+                customPropertyToken(color.toString(), [effect]),
               ),
             }),
           }),
-          {}
+          {},
         ),
       }
     }
@@ -82,7 +82,7 @@ export const createGradientColorCss =
   (
     color: keyof T['gradientColor'],
     effects: readonly (keyof T['effect'])[] = [],
-    direction: GradientDirection
+    direction: GradientDirection,
   ): Internal => {
     const toLinearGradient = gradient(direction)
 
@@ -112,12 +112,12 @@ export const createGradientColorCss =
                 '&::before': {
                   backgroundColor: applyEffect(
                     null,
-                    theme.effect[effect] ?? []
+                    theme.effect[effect] ?? [],
                   ),
                 },
               }),
             }),
-            {}
+            {},
           ),
         }
       }
@@ -125,7 +125,7 @@ export const createGradientColorCss =
       warning(
         effects.length === 0,
 
-        `'Transition' will not be applied. You can get around this by specifying 'preserveHalfLeading' or both 'padding' and 'typography'.`
+        `'Transition' will not be applied. You can get around this by specifying 'preserveHalfLeading' or both 'padding' and 'typography'.`,
       )
 
       return {
@@ -136,12 +136,12 @@ export const createGradientColorCss =
             ...onEffectPseudo(effect, {
               ...toLinearGradient(
                 applyEffectToGradient(theme.effect[effect] ?? [])(
-                  theme.gradientColor[color]
-                )
+                  theme.gradientColor[color],
+                ),
               ),
             }),
           }),
-          {}
+          {},
         ),
       }
     }
@@ -174,24 +174,24 @@ export default function colors<T extends CharcoalAbstractTheme>(theme: T) {
       bg: objectAssign(
         defineProperties({}, colors, (color) =>
           definePropertyChains(effects, (modifiers) =>
-            colorCss('bg', color, modifiers)
-          )
+            colorCss('bg', color, modifiers),
+          ),
         ),
         defineProperties(
           {},
           gradientColors,
           (color) => (direction: GradientDirection) =>
             definePropertyChains(effects, (modifiers) =>
-              gradientColorCss(color, modifiers, direction)
-            )
-        )
+              gradientColorCss(color, modifiers, direction),
+            ),
+        ),
       ),
       font: defineProperties({}, colors, (color) =>
         definePropertyChains(effects, (modifiers) =>
-          colorCss('font', color, modifiers)
-        )
+          colorCss('font', color, modifiers),
+        ),
       ),
-    }
+    },
   )
 
   return colorObject

@@ -26,7 +26,7 @@ describe('createTailwindConfigIconsV2', async () => {
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
         @import 'tailwindcss/components';
-      `
+      `,
   )
   test('config object', () => {
     expect(config).toMatchSnapshot()
@@ -48,7 +48,7 @@ describe('createTailwindConfigIconsV1', async () => {
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
         @import 'tailwindcss/components';
-      `
+      `,
   )
   test('config object', () => {
     expect(config).toMatchSnapshot()

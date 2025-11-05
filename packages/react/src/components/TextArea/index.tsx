@@ -48,7 +48,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       getCount = countCodePointsInString,
       ...props
     },
-    forwardRef
+    forwardRef,
   ) {
     const { visuallyHiddenProps } = useVisuallyHidden()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -60,7 +60,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         const rows = (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
         setRows(initialRows <= rows ? rows : initialRows)
       },
-      [initialRows]
+      [initialRows],
     )
 
     const nonControlled = value === undefined
@@ -79,7 +79,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         }
         onChange?.(value)
       },
-      [autoHeight, getCount, maxLength, nonControlled, onChange, syncHeight]
+      [autoHeight, getCount, maxLength, nonControlled, onChange, syncHeight],
     )
 
     useEffect(() => {
@@ -153,7 +153,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         )}
       </div>
     )
-  }
+  },
 )
 
 export default TextArea

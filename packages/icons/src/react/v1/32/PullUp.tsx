@@ -19,5 +19,7 @@ const SvgPullUp = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPullUp32 = forwardRef(SvgPullUp)
+export const IconPullUp32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPullUp)
 export default IconPullUp32

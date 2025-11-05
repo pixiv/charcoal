@@ -21,5 +21,7 @@ const SvgBook = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconBook16 = forwardRef(SvgBook)
+export const IconBook16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBook)
 export default IconBook16

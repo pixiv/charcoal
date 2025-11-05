@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icon-files",
-  "version": "4.18.0",
+  "version": "5.0.0-rc.0",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/index.cjs",
@@ -8,31 +8,35 @@
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
+      "import": "./src/index.js",
       "require": "./src/index.cjs",
       "default": "./src/index.js"
     },
     "./v2": {
       "types": "./v2/src/index.d.ts",
+      "import": "./v2/src/index.js",
       "require": "./v2/src/index.cjs",
       "default": "./v2/src/index.js"
     },
-    "./v2-datauri": {
-      "types": "./v2-datauri/index.d.ts",
-      "require": "./v2-datauri/index.cjs",
-      "default": "./v2-datauri/index.mjs"
+    "./v2/datauri": {
+      "types": "./v2/datauri/index.d.ts",
+      "import": "./v2/datauri/index.mjs",
+      "require": "./v2/datauri/index.cjs",
+      "default": "./v2/datauri/index.mjs"
     },
-    "./v1-datauri": {
-      "types": "./v1-datauri/index.d.ts",
-      "require": "./v1-datauri/index.cjs",
-      "default": "./v1-datauri/index.mjs"
+    "./v1/datauri": {
+      "types": "./v1/datauri/index.d.ts",
+      "import": "./v1/datauri/index.mjs",
+      "require": "./v1/datauri/index.cjs",
+      "default": "./v1/datauri/index.mjs"
     }
   },
   "types": "./src/index.d.ts",
   "files": [
     "src",
     "svg",
-    "v1-datauri",
-    "v2-datauri"
+    "v1",
+    "v2"
   ],
   "publishConfig": {
     "access": "public"

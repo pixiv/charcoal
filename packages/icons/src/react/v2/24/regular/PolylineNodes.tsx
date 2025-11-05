@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgPolylinenodes = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgPolylinenodes = (
     />
   </svg>
 )
-export const IconPolylineNodes = forwardRef(SvgPolylinenodes)
+export const IconPolylineNodes: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPolylinenodes)
 export default IconPolylineNodes

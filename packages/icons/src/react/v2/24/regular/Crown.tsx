@@ -19,5 +19,7 @@ const SvgCrown = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconCrown = forwardRef(SvgCrown)
+export const IconCrown: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCrown)
 export default IconCrown

@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgCloudexclamation = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgCloudexclamation = (
     />
   </svg>
 )
-export const IconCloudExclamation = forwardRef(SvgCloudexclamation)
+export const IconCloudExclamation: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCloudexclamation)
 export default IconCloudExclamation

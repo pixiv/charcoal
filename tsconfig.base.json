@@ -9,7 +9,6 @@
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    // "noUncheckedIndexedAccess": true
     "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,

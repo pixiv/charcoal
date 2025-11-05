@@ -5,9 +5,9 @@ import { useClassNames } from '../../_lib/useClassNames'
 
 import './index.css'
 
-const sizeMap = {
-  S: 32,
-  M: 40,
+type SizeMap = {
+  S: 32
+  M: 40
 }
 
 export type TagItemProps<T extends React.ElementType = 'button'> = {
@@ -16,7 +16,7 @@ export type TagItemProps<T extends React.ElementType = 'button'> = {
   bgColor?: string
   bgImage?: string
   status?: 'default' | 'active' | 'inactive'
-  size?: keyof typeof sizeMap
+  size?: keyof SizeMap
   /**
    * The component used for root element.
    * @type T extends React.ElementType = 'button'
@@ -36,7 +36,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
       status = 'default',
       ...props
     }: TagItemProps<T>,
-    _ref: ForwardedRef<HTMLButtonElement>
+    _ref: ForwardedRef<HTMLButtonElement>,
   ) {
     const ref = useObjectRef(_ref)
 
@@ -45,7 +45,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
     const className = useClassNames(
       'charcoal-tag-item',
       'charcoal-tag-item__bg',
-      props.className
+      props.className,
     )
 
     const bgVariant =
@@ -83,7 +83,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
         {status === 'active' && <Icon name="16/Remove" />}
       </Component>
     )
-  }
+  },
 ) as <T extends React.ElementType = 'button'>(p: TagItemProps<T>) => JSX.Element
 
 export default memo(TagItem)

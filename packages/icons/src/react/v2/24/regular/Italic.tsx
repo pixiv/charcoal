@@ -19,5 +19,7 @@ const SvgItalic = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconItalic = forwardRef(SvgItalic)
+export const IconItalic: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgItalic)
 export default IconItalic

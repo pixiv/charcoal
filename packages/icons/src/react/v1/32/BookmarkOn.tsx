@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgBookmarkOn = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={32}
@@ -20,5 +20,7 @@ const SvgBookmarkOn = (
     />
   </svg>
 )
-export const IconBookmarkOn32 = forwardRef(SvgBookmarkOn)
+export const IconBookmarkOn32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgBookmarkOn)
 export default IconBookmarkOn32

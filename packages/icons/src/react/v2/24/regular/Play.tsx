@@ -19,5 +19,7 @@ const SvgPlay = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPlay = forwardRef(SvgPlay)
+export const IconPlay: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPlay)
 export default IconPlay

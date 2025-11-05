@@ -1,3 +1,8 @@
+/* eslint-disable */
+// disable eslint for large genareted file
+
+import { JSX } from 'react'
+
 export default {
   title: 'Icons/v2/css',
   parameters: {
@@ -5,11 +10,11 @@ export default {
       disable: true,
     },
   },
-  render() {
+  render(): JSX.Element {
     return (
       <>
         <style>{`
-.charcoal-icon-add {
+.charcoal-icon-v2-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -20,7 +25,7 @@ export default {
 }
 
 
-.charcoal-icon-add-circle {
+.charcoal-icon-v2-add-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -31,7 +36,7 @@ export default {
 }
 
 
-.charcoal-icon-add-circle-solid {
+.charcoal-icon-v2-add-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -42,7 +47,7 @@ export default {
 }
 
 
-.charcoal-icon-add-solid {
+.charcoal-icon-v2-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -53,7 +58,7 @@ export default {
 }
 
 
-.charcoal-icon-airbrush {
+.charcoal-icon-v2-airbrush {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -64,7 +69,7 @@ export default {
 }
 
 
-.charcoal-icon-airbrush-solid {
+.charcoal-icon-v2-airbrush-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -75,7 +80,7 @@ export default {
 }
 
 
-.charcoal-icon-album {
+.charcoal-icon-v2-album {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -86,7 +91,7 @@ export default {
 }
 
 
-.charcoal-icon-album-add {
+.charcoal-icon-v2-album-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -97,7 +102,7 @@ export default {
 }
 
 
-.charcoal-icon-album-add-solid {
+.charcoal-icon-v2-album-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -108,7 +113,7 @@ export default {
 }
 
 
-.charcoal-icon-album-solid {
+.charcoal-icon-v2-album-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -119,7 +124,7 @@ export default {
 }
 
 
-.charcoal-icon-alert {
+.charcoal-icon-v2-alert {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -130,7 +135,7 @@ export default {
 }
 
 
-.charcoal-icon-alert-solid {
+.charcoal-icon-v2-alert-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -141,7 +146,7 @@ export default {
 }
 
 
-.charcoal-icon-align-horizontal {
+.charcoal-icon-v2-align-horizontal {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -152,7 +157,7 @@ export default {
 }
 
 
-.charcoal-icon-align-horizontal-solid {
+.charcoal-icon-v2-align-horizontal-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -163,7 +168,7 @@ export default {
 }
 
 
-.charcoal-icon-align-vertical {
+.charcoal-icon-v2-align-vertical {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -174,7 +179,7 @@ export default {
 }
 
 
-.charcoal-icon-align-vertical-solid {
+.charcoal-icon-v2-align-vertical-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -185,7 +190,7 @@ export default {
 }
 
 
-.charcoal-icon-angle {
+.charcoal-icon-v2-angle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -196,7 +201,7 @@ export default {
 }
 
 
-.charcoal-icon-angle-solid {
+.charcoal-icon-v2-angle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -207,7 +212,7 @@ export default {
 }
 
 
-.charcoal-icon-announce {
+.charcoal-icon-v2-announce {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -218,7 +223,7 @@ export default {
 }
 
 
-.charcoal-icon-announce-solid {
+.charcoal-icon-v2-announce-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -229,7 +234,7 @@ export default {
 }
 
 
-.charcoal-icon-apple-pencil {
+.charcoal-icon-v2-apple-pencil {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -240,7 +245,7 @@ export default {
 }
 
 
-.charcoal-icon-apple-pencil-solid {
+.charcoal-icon-v2-apple-pencil-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -251,7 +256,7 @@ export default {
 }
 
 
-.charcoal-icon-ar {
+.charcoal-icon-v2-ar {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -262,7 +267,7 @@ export default {
 }
 
 
-.charcoal-icon-ar-solid {
+.charcoal-icon-v2-ar-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -273,7 +278,7 @@ export default {
 }
 
 
-.charcoal-icon-archive {
+.charcoal-icon-v2-archive {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -284,7 +289,7 @@ export default {
 }
 
 
-.charcoal-icon-archive-solid {
+.charcoal-icon-v2-archive-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -295,7 +300,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-ccw {
+.charcoal-icon-v2-arrow-ccw {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -306,7 +311,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-ccw-solid {
+.charcoal-icon-v2-arrow-ccw-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -317,7 +322,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-down {
+.charcoal-icon-v2-arrow-down {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -328,7 +333,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-down-solid {
+.charcoal-icon-v2-arrow-down-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -339,7 +344,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-down-square {
+.charcoal-icon-v2-arrow-down-square {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -350,7 +355,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-down-square-solid {
+.charcoal-icon-v2-arrow-down-square-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -361,7 +366,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left {
+.charcoal-icon-v2-arrow-left {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -372,7 +377,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-down {
+.charcoal-icon-v2-arrow-left-down {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -383,7 +388,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-down-16 {
+.charcoal-icon-v2-arrow-left-down-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -394,7 +399,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-down-solid {
+.charcoal-icon-v2-arrow-left-down-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -405,7 +410,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-down-solid-16 {
+.charcoal-icon-v2-arrow-left-down-solid-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -416,7 +421,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-solid {
+.charcoal-icon-v2-arrow-left-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -427,7 +432,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-square {
+.charcoal-icon-v2-arrow-left-square {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -438,7 +443,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-left-square-solid {
+.charcoal-icon-v2-arrow-left-square-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -449,7 +454,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-right {
+.charcoal-icon-v2-arrow-right {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -460,7 +465,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-right-solid {
+.charcoal-icon-v2-arrow-right-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -471,7 +476,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-up {
+.charcoal-icon-v2-arrow-up {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -482,7 +487,7 @@ export default {
 }
 
 
-.charcoal-icon-arrow-up-solid {
+.charcoal-icon-v2-arrow-up-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -493,7 +498,7 @@ export default {
 }
 
 
-.charcoal-icon-auto-select {
+.charcoal-icon-v2-auto-select {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -504,7 +509,7 @@ export default {
 }
 
 
-.charcoal-icon-auto-select-solid {
+.charcoal-icon-v2-auto-select-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -515,7 +520,7 @@ export default {
 }
 
 
-.charcoal-icon-bell {
+.charcoal-icon-v2-bell {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -526,7 +531,7 @@ export default {
 }
 
 
-.charcoal-icon-bell-solid {
+.charcoal-icon-v2-bell-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -537,7 +542,7 @@ export default {
 }
 
 
-.charcoal-icon-bezier-curve {
+.charcoal-icon-v2-bezier-curve {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -548,7 +553,7 @@ export default {
 }
 
 
-.charcoal-icon-bezier-curve-solid {
+.charcoal-icon-v2-bezier-curve-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -559,7 +564,7 @@ export default {
 }
 
 
-.charcoal-icon-blend-mode {
+.charcoal-icon-v2-blend-mode {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -570,7 +575,7 @@ export default {
 }
 
 
-.charcoal-icon-blend-mode-solid {
+.charcoal-icon-v2-blend-mode-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -581,7 +586,7 @@ export default {
 }
 
 
-.charcoal-icon-body {
+.charcoal-icon-v2-body {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -592,7 +597,7 @@ export default {
 }
 
 
-.charcoal-icon-body-add {
+.charcoal-icon-v2-body-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -603,7 +608,7 @@ export default {
 }
 
 
-.charcoal-icon-body-add-solid {
+.charcoal-icon-v2-body-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -614,7 +619,7 @@ export default {
 }
 
 
-.charcoal-icon-body-edit {
+.charcoal-icon-v2-body-edit {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -625,7 +630,7 @@ export default {
 }
 
 
-.charcoal-icon-body-edit-solid {
+.charcoal-icon-v2-body-edit-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -636,7 +641,7 @@ export default {
 }
 
 
-.charcoal-icon-body-solid {
+.charcoal-icon-v2-body-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -647,7 +652,7 @@ export default {
 }
 
 
-.charcoal-icon-bold {
+.charcoal-icon-v2-bold {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -658,7 +663,7 @@ export default {
 }
 
 
-.charcoal-icon-bold-solid {
+.charcoal-icon-v2-bold-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -669,7 +674,7 @@ export default {
 }
 
 
-.charcoal-icon-book {
+.charcoal-icon-v2-book {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -680,7 +685,7 @@ export default {
 }
 
 
-.charcoal-icon-book-solid {
+.charcoal-icon-v2-book-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -691,7 +696,7 @@ export default {
 }
 
 
-.charcoal-icon-bookmark {
+.charcoal-icon-v2-bookmark {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -702,7 +707,7 @@ export default {
 }
 
 
-.charcoal-icon-bookmark-solid {
+.charcoal-icon-v2-bookmark-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -713,7 +718,7 @@ export default {
 }
 
 
-.charcoal-icon-bring-backward {
+.charcoal-icon-v2-bring-backward {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -724,7 +729,7 @@ export default {
 }
 
 
-.charcoal-icon-bring-backward-solid {
+.charcoal-icon-v2-bring-backward-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -735,7 +740,7 @@ export default {
 }
 
 
-.charcoal-icon-bring-forward {
+.charcoal-icon-v2-bring-forward {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -746,7 +751,7 @@ export default {
 }
 
 
-.charcoal-icon-bring-forward-solid {
+.charcoal-icon-v2-bring-forward-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -757,7 +762,7 @@ export default {
 }
 
 
-.charcoal-icon-brush {
+.charcoal-icon-v2-brush {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -768,7 +773,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-decoration {
+.charcoal-icon-v2-brush-decoration {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -779,7 +784,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-decoration-solid {
+.charcoal-icon-v2-brush-decoration-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -790,7 +795,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-opacity {
+.charcoal-icon-v2-brush-opacity {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -801,7 +806,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-opacity-solid {
+.charcoal-icon-v2-brush-opacity-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -812,7 +817,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-press {
+.charcoal-icon-v2-brush-press {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -823,7 +828,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-press-solid {
+.charcoal-icon-v2-brush-press-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -834,7 +839,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-size {
+.charcoal-icon-v2-brush-size {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -845,7 +850,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-size-solid {
+.charcoal-icon-v2-brush-size-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -856,7 +861,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-solid {
+.charcoal-icon-v2-brush-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -867,7 +872,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-stablize {
+.charcoal-icon-v2-brush-stablize {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -878,7 +883,7 @@ export default {
 }
 
 
-.charcoal-icon-brush-stablize-solid {
+.charcoal-icon-v2-brush-stablize-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -889,7 +894,7 @@ export default {
 }
 
 
-.charcoal-icon-bubble {
+.charcoal-icon-v2-bubble {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -900,7 +905,7 @@ export default {
 }
 
 
-.charcoal-icon-bubble-solid {
+.charcoal-icon-v2-bubble-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -911,7 +916,7 @@ export default {
 }
 
 
-.charcoal-icon-bulb-shine {
+.charcoal-icon-v2-bulb-shine {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -922,7 +927,7 @@ export default {
 }
 
 
-.charcoal-icon-bulb-shine-solid {
+.charcoal-icon-v2-bulb-shine-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -933,7 +938,7 @@ export default {
 }
 
 
-.charcoal-icon-calendar {
+.charcoal-icon-v2-calendar {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -944,7 +949,7 @@ export default {
 }
 
 
-.charcoal-icon-calendar-solid {
+.charcoal-icon-v2-calendar-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -955,7 +960,7 @@ export default {
 }
 
 
-.charcoal-icon-camera {
+.charcoal-icon-v2-camera {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -966,7 +971,7 @@ export default {
 }
 
 
-.charcoal-icon-camera-solid {
+.charcoal-icon-v2-camera-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -977,7 +982,7 @@ export default {
 }
 
 
-.charcoal-icon-character-replace {
+.charcoal-icon-v2-character-replace {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -988,7 +993,7 @@ export default {
 }
 
 
-.charcoal-icon-character-replace-solid {
+.charcoal-icon-v2-character-replace-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -999,7 +1004,7 @@ export default {
 }
 
 
-.charcoal-icon-check {
+.charcoal-icon-v2-check {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1010,7 +1015,7 @@ export default {
 }
 
 
-.charcoal-icon-check-circle {
+.charcoal-icon-v2-check-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1021,7 +1026,7 @@ export default {
 }
 
 
-.charcoal-icon-check-circle-solid {
+.charcoal-icon-v2-check-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1032,7 +1037,7 @@ export default {
 }
 
 
-.charcoal-icon-check-solid {
+.charcoal-icon-v2-check-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1043,7 +1048,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-down {
+.charcoal-icon-v2-chevron-down {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1054,7 +1059,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-down-16 {
+.charcoal-icon-v2-chevron-down-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1065,7 +1070,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-down-solid {
+.charcoal-icon-v2-chevron-down-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1076,7 +1081,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-down-solid-16 {
+.charcoal-icon-v2-chevron-down-solid-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1087,7 +1092,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-left {
+.charcoal-icon-v2-chevron-left {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1098,7 +1103,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-left-16 {
+.charcoal-icon-v2-chevron-left-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1109,7 +1114,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-left-solid {
+.charcoal-icon-v2-chevron-left-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1120,7 +1125,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-left-solid-16 {
+.charcoal-icon-v2-chevron-left-solid-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1131,7 +1136,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-right {
+.charcoal-icon-v2-chevron-right {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1142,7 +1147,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-right-16 {
+.charcoal-icon-v2-chevron-right-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1153,7 +1158,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-right-solid {
+.charcoal-icon-v2-chevron-right-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1164,7 +1169,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-right-solid-16 {
+.charcoal-icon-v2-chevron-right-solid-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1175,7 +1180,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-up {
+.charcoal-icon-v2-chevron-up {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1186,7 +1191,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-up-16 {
+.charcoal-icon-v2-chevron-up-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1197,7 +1202,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-up-solid {
+.charcoal-icon-v2-chevron-up-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1208,7 +1213,7 @@ export default {
 }
 
 
-.charcoal-icon-chevron-up-solid-16 {
+.charcoal-icon-v2-chevron-up-solid-16 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1219,7 +1224,7 @@ export default {
 }
 
 
-.charcoal-icon-circle {
+.charcoal-icon-v2-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1230,7 +1235,7 @@ export default {
 }
 
 
-.charcoal-icon-circle-solid {
+.charcoal-icon-v2-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1241,7 +1246,7 @@ export default {
 }
 
 
-.charcoal-icon-click {
+.charcoal-icon-v2-click {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1252,7 +1257,7 @@ export default {
 }
 
 
-.charcoal-icon-click-solid {
+.charcoal-icon-v2-click-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1263,7 +1268,7 @@ export default {
 }
 
 
-.charcoal-icon-clipping {
+.charcoal-icon-v2-clipping {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1274,7 +1279,7 @@ export default {
 }
 
 
-.charcoal-icon-clipping-solid {
+.charcoal-icon-v2-clipping-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1285,7 +1290,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud {
+.charcoal-icon-v2-cloud {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1296,7 +1301,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-check {
+.charcoal-icon-v2-cloud-check {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1307,7 +1312,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-check-solid {
+.charcoal-icon-v2-cloud-check-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1318,7 +1323,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-exclamation {
+.charcoal-icon-v2-cloud-exclamation {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1329,7 +1334,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-exclamation-solid {
+.charcoal-icon-v2-cloud-exclamation-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1340,7 +1345,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-solid {
+.charcoal-icon-v2-cloud-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1351,7 +1356,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-sync {
+.charcoal-icon-v2-cloud-sync {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1362,7 +1367,7 @@ export default {
 }
 
 
-.charcoal-icon-cloud-sync-solid {
+.charcoal-icon-v2-cloud-sync-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1373,7 +1378,7 @@ export default {
 }
 
 
-.charcoal-icon-code {
+.charcoal-icon-v2-code {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1384,7 +1389,7 @@ export default {
 }
 
 
-.charcoal-icon-code-solid {
+.charcoal-icon-v2-code-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1395,7 +1400,7 @@ export default {
 }
 
 
-.charcoal-icon-color {
+.charcoal-icon-v2-color {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1406,7 +1411,7 @@ export default {
 }
 
 
-.charcoal-icon-color-mixture-color {
+.charcoal-icon-v2-color-mixture-color {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1414,7 +1419,7 @@ export default {
   aspect-ratio: 1/1;
 }
 
-.charcoal-icon-color-sets {
+.charcoal-icon-v2-color-sets {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1425,7 +1430,7 @@ export default {
 }
 
 
-.charcoal-icon-color-sets-solid {
+.charcoal-icon-v2-color-sets-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1436,7 +1441,7 @@ export default {
 }
 
 
-.charcoal-icon-color-solid {
+.charcoal-icon-v2-color-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1447,7 +1452,7 @@ export default {
 }
 
 
-.charcoal-icon-color-wheel-rectangle {
+.charcoal-icon-v2-color-wheel-rectangle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1458,7 +1463,7 @@ export default {
 }
 
 
-.charcoal-icon-color-wheel-rectangle-solid {
+.charcoal-icon-v2-color-wheel-rectangle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1469,7 +1474,7 @@ export default {
 }
 
 
-.charcoal-icon-color-wheel-triangle {
+.charcoal-icon-v2-color-wheel-triangle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1480,7 +1485,7 @@ export default {
 }
 
 
-.charcoal-icon-color-wheel-triangle-solid {
+.charcoal-icon-v2-color-wheel-triangle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1491,7 +1496,7 @@ export default {
 }
 
 
-.charcoal-icon-commands-circle {
+.charcoal-icon-v2-commands-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1502,7 +1507,7 @@ export default {
 }
 
 
-.charcoal-icon-commands-circle-solid {
+.charcoal-icon-v2-commands-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1513,7 +1518,7 @@ export default {
 }
 
 
-.charcoal-icon-compass {
+.charcoal-icon-v2-compass {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1524,7 +1529,7 @@ export default {
 }
 
 
-.charcoal-icon-compass-solid {
+.charcoal-icon-v2-compass-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1535,7 +1540,7 @@ export default {
 }
 
 
-.charcoal-icon-contest {
+.charcoal-icon-v2-contest {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1546,7 +1551,7 @@ export default {
 }
 
 
-.charcoal-icon-contest-solid {
+.charcoal-icon-v2-contest-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1557,7 +1562,7 @@ export default {
 }
 
 
-.charcoal-icon-contrast {
+.charcoal-icon-v2-contrast {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1568,7 +1573,7 @@ export default {
 }
 
 
-.charcoal-icon-contrast-solid {
+.charcoal-icon-v2-contrast-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1579,7 +1584,7 @@ export default {
 }
 
 
-.charcoal-icon-copy {
+.charcoal-icon-v2-copy {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1590,7 +1595,7 @@ export default {
 }
 
 
-.charcoal-icon-copy-solid {
+.charcoal-icon-v2-copy-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1601,7 +1606,7 @@ export default {
 }
 
 
-.charcoal-icon-crown {
+.charcoal-icon-v2-crown {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1612,7 +1617,7 @@ export default {
 }
 
 
-.charcoal-icon-crown-solid {
+.charcoal-icon-v2-crown-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1623,7 +1628,7 @@ export default {
 }
 
 
-.charcoal-icon-curve {
+.charcoal-icon-v2-curve {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1634,7 +1639,7 @@ export default {
 }
 
 
-.charcoal-icon-curve-nodes {
+.charcoal-icon-v2-curve-nodes {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1645,7 +1650,7 @@ export default {
 }
 
 
-.charcoal-icon-curve-nodes-solid {
+.charcoal-icon-v2-curve-nodes-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1656,7 +1661,7 @@ export default {
 }
 
 
-.charcoal-icon-curve-solid {
+.charcoal-icon-v2-curve-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1667,7 +1672,7 @@ export default {
 }
 
 
-.charcoal-icon-delete {
+.charcoal-icon-v2-delete {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1678,7 +1683,7 @@ export default {
 }
 
 
-.charcoal-icon-delete-solid {
+.charcoal-icon-v2-delete-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1689,7 +1694,7 @@ export default {
 }
 
 
-.charcoal-icon-device {
+.charcoal-icon-v2-device {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1700,7 +1705,7 @@ export default {
 }
 
 
-.charcoal-icon-device-rotate {
+.charcoal-icon-v2-device-rotate {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1711,7 +1716,7 @@ export default {
 }
 
 
-.charcoal-icon-device-rotate-solid {
+.charcoal-icon-v2-device-rotate-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1722,7 +1727,7 @@ export default {
 }
 
 
-.charcoal-icon-device-solid {
+.charcoal-icon-v2-device-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1733,7 +1738,7 @@ export default {
 }
 
 
-.charcoal-icon-dial {
+.charcoal-icon-v2-dial {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1744,7 +1749,7 @@ export default {
 }
 
 
-.charcoal-icon-dial-solid {
+.charcoal-icon-v2-dial-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1755,7 +1760,7 @@ export default {
 }
 
 
-.charcoal-icon-distortion {
+.charcoal-icon-v2-distortion {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1766,7 +1771,7 @@ export default {
 }
 
 
-.charcoal-icon-distortion-solid {
+.charcoal-icon-v2-distortion-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1777,7 +1782,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-horizontal {
+.charcoal-icon-v2-dots-horizontal {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1788,7 +1793,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-horizontal-circle {
+.charcoal-icon-v2-dots-horizontal-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1799,7 +1804,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-horizontal-circle-solid {
+.charcoal-icon-v2-dots-horizontal-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1810,7 +1815,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-horizontal-solid {
+.charcoal-icon-v2-dots-horizontal-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1821,7 +1826,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-vertical {
+.charcoal-icon-v2-dots-vertical {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1832,7 +1837,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-vertical-circle {
+.charcoal-icon-v2-dots-vertical-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1843,7 +1848,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-vertical-circle-solid {
+.charcoal-icon-v2-dots-vertical-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1854,7 +1859,7 @@ export default {
 }
 
 
-.charcoal-icon-dots-vertical-solid {
+.charcoal-icon-v2-dots-vertical-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1865,7 +1870,7 @@ export default {
 }
 
 
-.charcoal-icon-download {
+.charcoal-icon-v2-download {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1876,7 +1881,7 @@ export default {
 }
 
 
-.charcoal-icon-download-ios {
+.charcoal-icon-v2-download-ios {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1887,7 +1892,7 @@ export default {
 }
 
 
-.charcoal-icon-download-ios-solid {
+.charcoal-icon-v2-download-ios-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1898,7 +1903,7 @@ export default {
 }
 
 
-.charcoal-icon-download-solid {
+.charcoal-icon-v2-download-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1909,7 +1914,7 @@ export default {
 }
 
 
-.charcoal-icon-dropper {
+.charcoal-icon-v2-dropper {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1920,7 +1925,7 @@ export default {
 }
 
 
-.charcoal-icon-dropper-solid {
+.charcoal-icon-v2-dropper-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1931,7 +1936,7 @@ export default {
 }
 
 
-.charcoal-icon-duplicate {
+.charcoal-icon-v2-duplicate {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1942,7 +1947,7 @@ export default {
 }
 
 
-.charcoal-icon-duplicate-solid {
+.charcoal-icon-v2-duplicate-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1953,7 +1958,7 @@ export default {
 }
 
 
-.charcoal-icon-emoji {
+.charcoal-icon-v2-emoji {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1964,7 +1969,7 @@ export default {
 }
 
 
-.charcoal-icon-emoji-solid {
+.charcoal-icon-v2-emoji-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1975,7 +1980,7 @@ export default {
 }
 
 
-.charcoal-icon-eraser {
+.charcoal-icon-v2-eraser {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1986,7 +1991,7 @@ export default {
 }
 
 
-.charcoal-icon-eraser-solid {
+.charcoal-icon-v2-eraser-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1997,7 +2002,7 @@ export default {
 }
 
 
-.charcoal-icon-expand {
+.charcoal-icon-v2-expand {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2008,7 +2013,7 @@ export default {
 }
 
 
-.charcoal-icon-expand-solid {
+.charcoal-icon-v2-expand-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2019,7 +2024,7 @@ export default {
 }
 
 
-.charcoal-icon-eye {
+.charcoal-icon-v2-eye {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2030,7 +2035,7 @@ export default {
 }
 
 
-.charcoal-icon-eye-closed {
+.charcoal-icon-v2-eye-closed {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2041,7 +2046,7 @@ export default {
 }
 
 
-.charcoal-icon-eye-closed-solid {
+.charcoal-icon-v2-eye-closed-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2052,7 +2057,7 @@ export default {
 }
 
 
-.charcoal-icon-eye-off {
+.charcoal-icon-v2-eye-off {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2063,7 +2068,7 @@ export default {
 }
 
 
-.charcoal-icon-eye-off-solid {
+.charcoal-icon-v2-eye-off-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2074,7 +2079,7 @@ export default {
 }
 
 
-.charcoal-icon-eye-solid {
+.charcoal-icon-v2-eye-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2085,7 +2090,7 @@ export default {
 }
 
 
-.charcoal-icon-face {
+.charcoal-icon-v2-face {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2096,7 +2101,7 @@ export default {
 }
 
 
-.charcoal-icon-face-solid {
+.charcoal-icon-v2-face-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2107,7 +2112,7 @@ export default {
 }
 
 
-.charcoal-icon-feed {
+.charcoal-icon-v2-feed {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2118,7 +2123,7 @@ export default {
 }
 
 
-.charcoal-icon-feed-solid {
+.charcoal-icon-v2-feed-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2129,7 +2134,7 @@ export default {
 }
 
 
-.charcoal-icon-file {
+.charcoal-icon-v2-file {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2140,7 +2145,7 @@ export default {
 }
 
 
-.charcoal-icon-file-add {
+.charcoal-icon-v2-file-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2151,7 +2156,7 @@ export default {
 }
 
 
-.charcoal-icon-file-add-solid {
+.charcoal-icon-v2-file-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2162,7 +2167,7 @@ export default {
 }
 
 
-.charcoal-icon-file-export {
+.charcoal-icon-v2-file-export {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2173,7 +2178,7 @@ export default {
 }
 
 
-.charcoal-icon-file-export-solid {
+.charcoal-icon-v2-file-export-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2184,7 +2189,7 @@ export default {
 }
 
 
-.charcoal-icon-file-png {
+.charcoal-icon-v2-file-png {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2195,7 +2200,7 @@ export default {
 }
 
 
-.charcoal-icon-file-png-solid {
+.charcoal-icon-v2-file-png-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2206,7 +2211,7 @@ export default {
 }
 
 
-.charcoal-icon-file-psd {
+.charcoal-icon-v2-file-psd {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2217,7 +2222,7 @@ export default {
 }
 
 
-.charcoal-icon-file-psd-solid {
+.charcoal-icon-v2-file-psd-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2228,7 +2233,7 @@ export default {
 }
 
 
-.charcoal-icon-file-restore {
+.charcoal-icon-v2-file-restore {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2239,7 +2244,7 @@ export default {
 }
 
 
-.charcoal-icon-file-restore-solid {
+.charcoal-icon-v2-file-restore-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2250,7 +2255,7 @@ export default {
 }
 
 
-.charcoal-icon-file-solid {
+.charcoal-icon-v2-file-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2261,7 +2266,7 @@ export default {
 }
 
 
-.charcoal-icon-fill {
+.charcoal-icon-v2-fill {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2272,7 +2277,7 @@ export default {
 }
 
 
-.charcoal-icon-fill-solid {
+.charcoal-icon-v2-fill-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2283,7 +2288,7 @@ export default {
 }
 
 
-.charcoal-icon-fill-square {
+.charcoal-icon-v2-fill-square {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2294,7 +2299,7 @@ export default {
 }
 
 
-.charcoal-icon-fill-square-solid {
+.charcoal-icon-v2-fill-square-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2305,7 +2310,7 @@ export default {
 }
 
 
-.charcoal-icon-flame {
+.charcoal-icon-v2-flame {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2316,7 +2321,7 @@ export default {
 }
 
 
-.charcoal-icon-flame-solid {
+.charcoal-icon-v2-flame-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2327,7 +2332,7 @@ export default {
 }
 
 
-.charcoal-icon-flip-horizontal {
+.charcoal-icon-v2-flip-horizontal {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2338,7 +2343,7 @@ export default {
 }
 
 
-.charcoal-icon-flip-horizontal-solid {
+.charcoal-icon-v2-flip-horizontal-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2349,7 +2354,7 @@ export default {
 }
 
 
-.charcoal-icon-flip-vertical {
+.charcoal-icon-v2-flip-vertical {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2360,7 +2365,7 @@ export default {
 }
 
 
-.charcoal-icon-flip-vertical-solid {
+.charcoal-icon-v2-flip-vertical-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2371,7 +2376,7 @@ export default {
 }
 
 
-.charcoal-icon-folder {
+.charcoal-icon-v2-folder {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2382,7 +2387,7 @@ export default {
 }
 
 
-.charcoal-icon-folder-add {
+.charcoal-icon-v2-folder-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2393,7 +2398,7 @@ export default {
 }
 
 
-.charcoal-icon-folder-add-solid {
+.charcoal-icon-v2-folder-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2404,7 +2409,7 @@ export default {
 }
 
 
-.charcoal-icon-folder-open {
+.charcoal-icon-v2-folder-open {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2415,7 +2420,7 @@ export default {
 }
 
 
-.charcoal-icon-folder-open-solid {
+.charcoal-icon-v2-folder-open-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2426,7 +2431,7 @@ export default {
 }
 
 
-.charcoal-icon-folder-solid {
+.charcoal-icon-v2-folder-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2437,7 +2442,7 @@ export default {
 }
 
 
-.charcoal-icon-font-size {
+.charcoal-icon-v2-font-size {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2448,7 +2453,7 @@ export default {
 }
 
 
-.charcoal-icon-font-size-solid {
+.charcoal-icon-v2-font-size-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2459,7 +2464,7 @@ export default {
 }
 
 
-.charcoal-icon-fov {
+.charcoal-icon-v2-fov {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2470,7 +2475,7 @@ export default {
 }
 
 
-.charcoal-icon-fov-solid {
+.charcoal-icon-v2-fov-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2481,7 +2486,7 @@ export default {
 }
 
 
-.charcoal-icon-frame {
+.charcoal-icon-v2-frame {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2492,7 +2497,7 @@ export default {
 }
 
 
-.charcoal-icon-frame-solid {
+.charcoal-icon-v2-frame-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2503,7 +2508,7 @@ export default {
 }
 
 
-.charcoal-icon-funnel {
+.charcoal-icon-v2-funnel {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2514,7 +2519,7 @@ export default {
 }
 
 
-.charcoal-icon-funnel-solid {
+.charcoal-icon-v2-funnel-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2525,7 +2530,7 @@ export default {
 }
 
 
-.charcoal-icon-gift {
+.charcoal-icon-v2-gift {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2536,7 +2541,7 @@ export default {
 }
 
 
-.charcoal-icon-gift-solid {
+.charcoal-icon-v2-gift-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2547,7 +2552,7 @@ export default {
 }
 
 
-.charcoal-icon-glow {
+.charcoal-icon-v2-glow {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2558,7 +2563,7 @@ export default {
 }
 
 
-.charcoal-icon-glow-solid {
+.charcoal-icon-v2-glow-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2569,7 +2574,7 @@ export default {
 }
 
 
-.charcoal-icon-gradient {
+.charcoal-icon-v2-gradient {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2580,7 +2585,7 @@ export default {
 }
 
 
-.charcoal-icon-gradient-solid {
+.charcoal-icon-v2-gradient-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2591,7 +2596,7 @@ export default {
 }
 
 
-.charcoal-icon-gridview {
+.charcoal-icon-v2-gridview {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2602,7 +2607,7 @@ export default {
 }
 
 
-.charcoal-icon-gridview-solid {
+.charcoal-icon-v2-gridview-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2613,7 +2618,7 @@ export default {
 }
 
 
-.charcoal-icon-group {
+.charcoal-icon-v2-group {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2624,7 +2629,7 @@ export default {
 }
 
 
-.charcoal-icon-group-solid {
+.charcoal-icon-v2-group-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2635,7 +2640,7 @@ export default {
 }
 
 
-.charcoal-icon-hair {
+.charcoal-icon-v2-hair {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2646,7 +2651,7 @@ export default {
 }
 
 
-.charcoal-icon-hair-solid {
+.charcoal-icon-v2-hair-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2657,7 +2662,7 @@ export default {
 }
 
 
-.charcoal-icon-hash-tag {
+.charcoal-icon-v2-hash-tag {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2668,7 +2673,7 @@ export default {
 }
 
 
-.charcoal-icon-hash-tag-solid {
+.charcoal-icon-v2-hash-tag-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2679,7 +2684,7 @@ export default {
 }
 
 
-.charcoal-icon-heart {
+.charcoal-icon-v2-heart {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2690,7 +2695,7 @@ export default {
 }
 
 
-.charcoal-icon-heart-solid {
+.charcoal-icon-v2-heart-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2701,7 +2706,7 @@ export default {
 }
 
 
-.charcoal-icon-history {
+.charcoal-icon-v2-history {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2712,7 +2717,7 @@ export default {
 }
 
 
-.charcoal-icon-history-solid {
+.charcoal-icon-v2-history-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2723,7 +2728,7 @@ export default {
 }
 
 
-.charcoal-icon-home {
+.charcoal-icon-v2-home {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2734,7 +2739,7 @@ export default {
 }
 
 
-.charcoal-icon-home-solid {
+.charcoal-icon-v2-home-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2745,7 +2750,7 @@ export default {
 }
 
 
-.charcoal-icon-image {
+.charcoal-icon-v2-image {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2756,7 +2761,7 @@ export default {
 }
 
 
-.charcoal-icon-image-add {
+.charcoal-icon-v2-image-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2767,7 +2772,7 @@ export default {
 }
 
 
-.charcoal-icon-image-add-solid {
+.charcoal-icon-v2-image-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2778,7 +2783,7 @@ export default {
 }
 
 
-.charcoal-icon-image-contain {
+.charcoal-icon-v2-image-contain {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2789,7 +2794,7 @@ export default {
 }
 
 
-.charcoal-icon-image-contain-solid {
+.charcoal-icon-v2-image-contain-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2800,7 +2805,7 @@ export default {
 }
 
 
-.charcoal-icon-image-cover {
+.charcoal-icon-v2-image-cover {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2811,7 +2816,7 @@ export default {
 }
 
 
-.charcoal-icon-image-cover-solid {
+.charcoal-icon-v2-image-cover-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2822,7 +2827,7 @@ export default {
 }
 
 
-.charcoal-icon-image-effect {
+.charcoal-icon-v2-image-effect {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2833,7 +2838,7 @@ export default {
 }
 
 
-.charcoal-icon-image-effect-solid {
+.charcoal-icon-v2-image-effect-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2844,7 +2849,7 @@ export default {
 }
 
 
-.charcoal-icon-image-off {
+.charcoal-icon-v2-image-off {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2855,7 +2860,7 @@ export default {
 }
 
 
-.charcoal-icon-image-off-solid {
+.charcoal-icon-v2-image-off-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2866,7 +2871,7 @@ export default {
 }
 
 
-.charcoal-icon-image-replace {
+.charcoal-icon-v2-image-replace {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2877,7 +2882,7 @@ export default {
 }
 
 
-.charcoal-icon-image-replace-solid {
+.charcoal-icon-v2-image-replace-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2888,7 +2893,7 @@ export default {
 }
 
 
-.charcoal-icon-image-solid {
+.charcoal-icon-v2-image-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2899,7 +2904,7 @@ export default {
 }
 
 
-.charcoal-icon-images {
+.charcoal-icon-v2-images {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2910,7 +2915,7 @@ export default {
 }
 
 
-.charcoal-icon-images-solid {
+.charcoal-icon-v2-images-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2921,7 +2926,7 @@ export default {
 }
 
 
-.charcoal-icon-info-circle {
+.charcoal-icon-v2-info-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2932,7 +2937,7 @@ export default {
 }
 
 
-.charcoal-icon-info-circle-solid {
+.charcoal-icon-v2-info-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2943,7 +2948,7 @@ export default {
 }
 
 
-.charcoal-icon-invert-selection {
+.charcoal-icon-v2-invert-selection {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2954,7 +2959,7 @@ export default {
 }
 
 
-.charcoal-icon-invert-selection-solid {
+.charcoal-icon-v2-invert-selection-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2965,7 +2970,7 @@ export default {
 }
 
 
-.charcoal-icon-invoice {
+.charcoal-icon-v2-invoice {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2976,7 +2981,7 @@ export default {
 }
 
 
-.charcoal-icon-invoice-solid {
+.charcoal-icon-v2-invoice-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2987,7 +2992,7 @@ export default {
 }
 
 
-.charcoal-icon-italic {
+.charcoal-icon-v2-italic {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2998,7 +3003,7 @@ export default {
 }
 
 
-.charcoal-icon-italic-solid {
+.charcoal-icon-v2-italic-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3009,7 +3014,7 @@ export default {
 }
 
 
-.charcoal-icon-keyboard {
+.charcoal-icon-v2-keyboard {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3020,7 +3025,7 @@ export default {
 }
 
 
-.charcoal-icon-keyboard-solid {
+.charcoal-icon-v2-keyboard-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3031,7 +3036,7 @@ export default {
 }
 
 
-.charcoal-icon-lasso {
+.charcoal-icon-v2-lasso {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3042,7 +3047,7 @@ export default {
 }
 
 
-.charcoal-icon-lasso-fill {
+.charcoal-icon-v2-lasso-fill {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3053,7 +3058,7 @@ export default {
 }
 
 
-.charcoal-icon-lasso-fill-solid {
+.charcoal-icon-v2-lasso-fill-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3064,7 +3069,7 @@ export default {
 }
 
 
-.charcoal-icon-lasso-solid {
+.charcoal-icon-v2-lasso-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3075,7 +3080,7 @@ export default {
 }
 
 
-.charcoal-icon-layer {
+.charcoal-icon-v2-layer {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3086,7 +3091,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-add {
+.charcoal-icon-v2-layer-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3097,7 +3102,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-add-solid {
+.charcoal-icon-v2-layer-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3108,7 +3113,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-image-material {
+.charcoal-icon-v2-layer-image-material {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3119,7 +3124,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-image-material-solid {
+.charcoal-icon-v2-layer-image-material-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3130,7 +3135,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-mask {
+.charcoal-icon-v2-layer-mask {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3141,7 +3146,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-mask-solid {
+.charcoal-icon-v2-layer-mask-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3152,7 +3157,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-merge {
+.charcoal-icon-v2-layer-merge {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3163,7 +3168,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-merge-solid {
+.charcoal-icon-v2-layer-merge-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3174,7 +3179,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-opacity {
+.charcoal-icon-v2-layer-opacity {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3185,7 +3190,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-opacity-solid {
+.charcoal-icon-v2-layer-opacity-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3196,7 +3201,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-set-reference {
+.charcoal-icon-v2-layer-set-reference {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3207,7 +3212,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-set-reference-solid {
+.charcoal-icon-v2-layer-set-reference-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3218,7 +3223,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-setting {
+.charcoal-icon-v2-layer-setting {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3229,7 +3234,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-setting-solid {
+.charcoal-icon-v2-layer-setting-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3240,7 +3245,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-solid {
+.charcoal-icon-v2-layer-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3251,7 +3256,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-text {
+.charcoal-icon-v2-layer-text {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3262,7 +3267,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-text-solid {
+.charcoal-icon-v2-layer-text-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3273,7 +3278,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-vector {
+.charcoal-icon-v2-layer-vector {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3284,7 +3289,7 @@ export default {
 }
 
 
-.charcoal-icon-layer-vector-solid {
+.charcoal-icon-v2-layer-vector-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3295,7 +3300,7 @@ export default {
 }
 
 
-.charcoal-icon-layout {
+.charcoal-icon-v2-layout {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3306,7 +3311,7 @@ export default {
 }
 
 
-.charcoal-icon-layout-solid {
+.charcoal-icon-v2-layout-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3317,7 +3322,7 @@ export default {
 }
 
 
-.charcoal-icon-letter-spacing {
+.charcoal-icon-v2-letter-spacing {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3328,7 +3333,7 @@ export default {
 }
 
 
-.charcoal-icon-letter-spacing-solid {
+.charcoal-icon-v2-letter-spacing-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3339,7 +3344,7 @@ export default {
 }
 
 
-.charcoal-icon-line {
+.charcoal-icon-v2-line {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3350,7 +3355,7 @@ export default {
 }
 
 
-.charcoal-icon-line-nodes {
+.charcoal-icon-v2-line-nodes {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3361,7 +3366,7 @@ export default {
 }
 
 
-.charcoal-icon-line-nodes-solid {
+.charcoal-icon-v2-line-nodes-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3372,7 +3377,7 @@ export default {
 }
 
 
-.charcoal-icon-line-solid {
+.charcoal-icon-v2-line-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3383,7 +3388,7 @@ export default {
 }
 
 
-.charcoal-icon-line-spacing {
+.charcoal-icon-v2-line-spacing {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3394,7 +3399,7 @@ export default {
 }
 
 
-.charcoal-icon-line-spacing-solid {
+.charcoal-icon-v2-line-spacing-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3405,7 +3410,7 @@ export default {
 }
 
 
-.charcoal-icon-link {
+.charcoal-icon-v2-link {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3416,7 +3421,7 @@ export default {
 }
 
 
-.charcoal-icon-link-clear {
+.charcoal-icon-v2-link-clear {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3427,7 +3432,7 @@ export default {
 }
 
 
-.charcoal-icon-link-clear-solid {
+.charcoal-icon-v2-link-clear-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3438,7 +3443,7 @@ export default {
 }
 
 
-.charcoal-icon-link-solid {
+.charcoal-icon-v2-link-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3449,7 +3454,7 @@ export default {
 }
 
 
-.charcoal-icon-list {
+.charcoal-icon-v2-list {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3460,7 +3465,7 @@ export default {
 }
 
 
-.charcoal-icon-list-solid {
+.charcoal-icon-v2-list-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3471,7 +3476,7 @@ export default {
 }
 
 
-.charcoal-icon-location {
+.charcoal-icon-v2-location {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3482,7 +3487,7 @@ export default {
 }
 
 
-.charcoal-icon-location-solid {
+.charcoal-icon-v2-location-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3493,7 +3498,7 @@ export default {
 }
 
 
-.charcoal-icon-lock {
+.charcoal-icon-v2-lock {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3504,7 +3509,7 @@ export default {
 }
 
 
-.charcoal-icon-lock-solid {
+.charcoal-icon-v2-lock-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3515,7 +3520,7 @@ export default {
 }
 
 
-.charcoal-icon-logout {
+.charcoal-icon-v2-logout {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3526,7 +3531,7 @@ export default {
 }
 
 
-.charcoal-icon-logout-solid {
+.charcoal-icon-v2-logout-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3537,7 +3542,7 @@ export default {
 }
 
 
-.charcoal-icon-manga {
+.charcoal-icon-v2-manga {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3548,7 +3553,7 @@ export default {
 }
 
 
-.charcoal-icon-manga-solid {
+.charcoal-icon-v2-manga-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3559,7 +3564,7 @@ export default {
 }
 
 
-.charcoal-icon-mesh {
+.charcoal-icon-v2-mesh {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3570,7 +3575,7 @@ export default {
 }
 
 
-.charcoal-icon-mesh-solid {
+.charcoal-icon-v2-mesh-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3581,7 +3586,7 @@ export default {
 }
 
 
-.charcoal-icon-message {
+.charcoal-icon-v2-message {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3592,7 +3597,7 @@ export default {
 }
 
 
-.charcoal-icon-message-solid {
+.charcoal-icon-v2-message-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3603,7 +3608,7 @@ export default {
 }
 
 
-.charcoal-icon-microphone {
+.charcoal-icon-v2-microphone {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3614,7 +3619,7 @@ export default {
 }
 
 
-.charcoal-icon-microphone-solid {
+.charcoal-icon-v2-microphone-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3625,7 +3630,7 @@ export default {
 }
 
 
-.charcoal-icon-move {
+.charcoal-icon-v2-move {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3636,7 +3641,7 @@ export default {
 }
 
 
-.charcoal-icon-move-solid {
+.charcoal-icon-v2-move-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3647,7 +3652,7 @@ export default {
 }
 
 
-.charcoal-icon-navigator {
+.charcoal-icon-v2-navigator {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3658,7 +3663,7 @@ export default {
 }
 
 
-.charcoal-icon-navigator-solid {
+.charcoal-icon-v2-navigator-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3669,7 +3674,7 @@ export default {
 }
 
 
-.charcoal-icon-new-post {
+.charcoal-icon-v2-new-post {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3680,7 +3685,7 @@ export default {
 }
 
 
-.charcoal-icon-new-post-solid {
+.charcoal-icon-v2-new-post-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3691,7 +3696,7 @@ export default {
 }
 
 
-.charcoal-icon-novel {
+.charcoal-icon-v2-novel {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3702,7 +3707,7 @@ export default {
 }
 
 
-.charcoal-icon-novel-solid {
+.charcoal-icon-v2-novel-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3713,7 +3718,7 @@ export default {
 }
 
 
-.charcoal-icon-opacity {
+.charcoal-icon-v2-opacity {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3724,7 +3729,7 @@ export default {
 }
 
 
-.charcoal-icon-opacity-lock {
+.charcoal-icon-v2-opacity-lock {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3735,7 +3740,7 @@ export default {
 }
 
 
-.charcoal-icon-opacity-lock-solid {
+.charcoal-icon-v2-opacity-lock-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3746,7 +3751,7 @@ export default {
 }
 
 
-.charcoal-icon-opacity-solid {
+.charcoal-icon-v2-opacity-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3757,7 +3762,7 @@ export default {
 }
 
 
-.charcoal-icon-open-in-new {
+.charcoal-icon-v2-open-in-new {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3768,7 +3773,7 @@ export default {
 }
 
 
-.charcoal-icon-open-in-new-solid {
+.charcoal-icon-v2-open-in-new-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3779,7 +3784,7 @@ export default {
 }
 
 
-.charcoal-icon-outline {
+.charcoal-icon-v2-outline {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3790,7 +3795,7 @@ export default {
 }
 
 
-.charcoal-icon-outline-solid {
+.charcoal-icon-v2-outline-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3801,7 +3806,7 @@ export default {
 }
 
 
-.charcoal-icon-palette {
+.charcoal-icon-v2-palette {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3812,7 +3817,7 @@ export default {
 }
 
 
-.charcoal-icon-palette-solid {
+.charcoal-icon-v2-palette-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3823,7 +3828,7 @@ export default {
 }
 
 
-.charcoal-icon-paste {
+.charcoal-icon-v2-paste {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3834,7 +3839,7 @@ export default {
 }
 
 
-.charcoal-icon-paste-solid {
+.charcoal-icon-v2-paste-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3845,7 +3850,7 @@ export default {
 }
 
 
-.charcoal-icon-pause {
+.charcoal-icon-v2-pause {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3856,7 +3861,7 @@ export default {
 }
 
 
-.charcoal-icon-pause-solid {
+.charcoal-icon-v2-pause-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3867,7 +3872,7 @@ export default {
 }
 
 
-.charcoal-icon-pen {
+.charcoal-icon-v2-pen {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3878,7 +3883,7 @@ export default {
 }
 
 
-.charcoal-icon-pen-add {
+.charcoal-icon-v2-pen-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3889,7 +3894,7 @@ export default {
 }
 
 
-.charcoal-icon-pen-add-solid {
+.charcoal-icon-v2-pen-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3900,7 +3905,7 @@ export default {
 }
 
 
-.charcoal-icon-pen-solid {
+.charcoal-icon-v2-pen-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3911,7 +3916,7 @@ export default {
 }
 
 
-.charcoal-icon-pencil-text {
+.charcoal-icon-v2-pencil-text {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3922,7 +3927,7 @@ export default {
 }
 
 
-.charcoal-icon-pencil-text-solid {
+.charcoal-icon-v2-pencil-text-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3933,7 +3938,7 @@ export default {
 }
 
 
-.charcoal-icon-person-add {
+.charcoal-icon-v2-person-add {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3944,7 +3949,7 @@ export default {
 }
 
 
-.charcoal-icon-person-add-solid {
+.charcoal-icon-v2-person-add-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3955,7 +3960,7 @@ export default {
 }
 
 
-.charcoal-icon-person-circle {
+.charcoal-icon-v2-person-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3966,7 +3971,7 @@ export default {
 }
 
 
-.charcoal-icon-person-circle-solid {
+.charcoal-icon-v2-person-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3977,7 +3982,7 @@ export default {
 }
 
 
-.charcoal-icon-persons {
+.charcoal-icon-v2-persons {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3988,7 +3993,7 @@ export default {
 }
 
 
-.charcoal-icon-persons-solid {
+.charcoal-icon-v2-persons-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -3999,7 +4004,7 @@ export default {
 }
 
 
-.charcoal-icon-play {
+.charcoal-icon-v2-play {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4010,7 +4015,7 @@ export default {
 }
 
 
-.charcoal-icon-play-solid {
+.charcoal-icon-v2-play-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4021,7 +4026,7 @@ export default {
 }
 
 
-.charcoal-icon-polygon {
+.charcoal-icon-v2-polygon {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4032,7 +4037,7 @@ export default {
 }
 
 
-.charcoal-icon-polygon-solid {
+.charcoal-icon-v2-polygon-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4043,7 +4048,7 @@ export default {
 }
 
 
-.charcoal-icon-polyline {
+.charcoal-icon-v2-polyline {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4054,7 +4059,7 @@ export default {
 }
 
 
-.charcoal-icon-polyline-nodes {
+.charcoal-icon-v2-polyline-nodes {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4065,7 +4070,7 @@ export default {
 }
 
 
-.charcoal-icon-polyline-nodes-solid {
+.charcoal-icon-v2-polyline-nodes-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4076,7 +4081,7 @@ export default {
 }
 
 
-.charcoal-icon-polyline-solid {
+.charcoal-icon-v2-polyline-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4087,7 +4092,7 @@ export default {
 }
 
 
-.charcoal-icon-pose {
+.charcoal-icon-v2-pose {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4098,7 +4103,7 @@ export default {
 }
 
 
-.charcoal-icon-pose-solid {
+.charcoal-icon-v2-pose-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4109,7 +4114,7 @@ export default {
 }
 
 
-.charcoal-icon-projects {
+.charcoal-icon-v2-projects {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4120,7 +4125,7 @@ export default {
 }
 
 
-.charcoal-icon-projects-solid {
+.charcoal-icon-v2-projects-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4131,7 +4136,7 @@ export default {
 }
 
 
-.charcoal-icon-question-bubble {
+.charcoal-icon-v2-question-bubble {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4142,7 +4147,7 @@ export default {
 }
 
 
-.charcoal-icon-question-bubble-solid {
+.charcoal-icon-v2-question-bubble-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4153,7 +4158,7 @@ export default {
 }
 
 
-.charcoal-icon-question-circle {
+.charcoal-icon-v2-question-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4164,7 +4169,7 @@ export default {
 }
 
 
-.charcoal-icon-question-circle-solid {
+.charcoal-icon-v2-question-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4175,7 +4180,7 @@ export default {
 }
 
 
-.charcoal-icon-rabbit {
+.charcoal-icon-v2-rabbit {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4186,7 +4191,7 @@ export default {
 }
 
 
-.charcoal-icon-rabbit-ear-bent {
+.charcoal-icon-v2-rabbit-ear-bent {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4197,7 +4202,7 @@ export default {
 }
 
 
-.charcoal-icon-rabbit-ear-bent-solid {
+.charcoal-icon-v2-rabbit-ear-bent-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4208,7 +4213,7 @@ export default {
 }
 
 
-.charcoal-icon-rabbit-solid {
+.charcoal-icon-v2-rabbit-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4219,7 +4224,7 @@ export default {
 }
 
 
-.charcoal-icon-redo {
+.charcoal-icon-v2-redo {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4230,7 +4235,7 @@ export default {
 }
 
 
-.charcoal-icon-redo-solid {
+.charcoal-icon-v2-redo-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4241,7 +4246,7 @@ export default {
 }
 
 
-.charcoal-icon-rename {
+.charcoal-icon-v2-rename {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4252,7 +4257,7 @@ export default {
 }
 
 
-.charcoal-icon-rename-solid {
+.charcoal-icon-v2-rename-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4263,7 +4268,7 @@ export default {
 }
 
 
-.charcoal-icon-resolution {
+.charcoal-icon-v2-resolution {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4274,7 +4279,7 @@ export default {
 }
 
 
-.charcoal-icon-resolution-solid {
+.charcoal-icon-v2-resolution-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4285,7 +4290,7 @@ export default {
 }
 
 
-.charcoal-icon-rotate {
+.charcoal-icon-v2-rotate {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4296,7 +4301,7 @@ export default {
 }
 
 
-.charcoal-icon-rotate-ccw {
+.charcoal-icon-v2-rotate-ccw {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4307,7 +4312,7 @@ export default {
 }
 
 
-.charcoal-icon-rotate-ccw-solid {
+.charcoal-icon-v2-rotate-ccw-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4318,7 +4323,7 @@ export default {
 }
 
 
-.charcoal-icon-rotate-cw {
+.charcoal-icon-v2-rotate-cw {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4329,7 +4334,7 @@ export default {
 }
 
 
-.charcoal-icon-rotate-cw-solid {
+.charcoal-icon-v2-rotate-cw-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4340,7 +4345,7 @@ export default {
 }
 
 
-.charcoal-icon-rotate-solid {
+.charcoal-icon-v2-rotate-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4351,7 +4356,7 @@ export default {
 }
 
 
-.charcoal-icon-ruler {
+.charcoal-icon-v2-ruler {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4362,7 +4367,7 @@ export default {
 }
 
 
-.charcoal-icon-ruler-solid {
+.charcoal-icon-v2-ruler-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4373,7 +4378,7 @@ export default {
 }
 
 
-.charcoal-icon-sans-serif {
+.charcoal-icon-v2-sans-serif {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4384,7 +4389,7 @@ export default {
 }
 
 
-.charcoal-icon-sans-serif-solid {
+.charcoal-icon-v2-sans-serif-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4395,7 +4400,7 @@ export default {
 }
 
 
-.charcoal-icon-saturation {
+.charcoal-icon-v2-saturation {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4406,7 +4411,7 @@ export default {
 }
 
 
-.charcoal-icon-saturation-solid {
+.charcoal-icon-v2-saturation-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4417,7 +4422,7 @@ export default {
 }
 
 
-.charcoal-icon-save {
+.charcoal-icon-v2-save {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4428,7 +4433,7 @@ export default {
 }
 
 
-.charcoal-icon-save-solid {
+.charcoal-icon-v2-save-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4439,7 +4444,7 @@ export default {
 }
 
 
-.charcoal-icon-scatter {
+.charcoal-icon-v2-scatter {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4450,7 +4455,7 @@ export default {
 }
 
 
-.charcoal-icon-scatter-solid {
+.charcoal-icon-v2-scatter-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4461,7 +4466,7 @@ export default {
 }
 
 
-.charcoal-icon-scissors {
+.charcoal-icon-v2-scissors {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4472,7 +4477,7 @@ export default {
 }
 
 
-.charcoal-icon-scissors-solid {
+.charcoal-icon-v2-scissors-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4483,7 +4488,7 @@ export default {
 }
 
 
-.charcoal-icon-search {
+.charcoal-icon-v2-search {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4494,7 +4499,7 @@ export default {
 }
 
 
-.charcoal-icon-search-solid {
+.charcoal-icon-v2-search-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4505,7 +4510,7 @@ export default {
 }
 
 
-.charcoal-icon-select-clear {
+.charcoal-icon-v2-select-clear {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4516,7 +4521,7 @@ export default {
 }
 
 
-.charcoal-icon-select-clear-solid {
+.charcoal-icon-v2-select-clear-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4527,7 +4532,7 @@ export default {
 }
 
 
-.charcoal-icon-select-image {
+.charcoal-icon-v2-select-image {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4538,7 +4543,7 @@ export default {
 }
 
 
-.charcoal-icon-select-image-solid {
+.charcoal-icon-v2-select-image-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4549,7 +4554,7 @@ export default {
 }
 
 
-.charcoal-icon-select-off {
+.charcoal-icon-v2-select-off {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4560,7 +4565,7 @@ export default {
 }
 
 
-.charcoal-icon-select-off-solid {
+.charcoal-icon-v2-select-off-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4571,7 +4576,7 @@ export default {
 }
 
 
-.charcoal-icon-selections {
+.charcoal-icon-v2-selections {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4582,7 +4587,7 @@ export default {
 }
 
 
-.charcoal-icon-selections-solid {
+.charcoal-icon-v2-selections-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4593,7 +4598,7 @@ export default {
 }
 
 
-.charcoal-icon-send {
+.charcoal-icon-v2-send {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4604,7 +4609,7 @@ export default {
 }
 
 
-.charcoal-icon-send-solid {
+.charcoal-icon-v2-send-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4615,7 +4620,7 @@ export default {
 }
 
 
-.charcoal-icon-setting {
+.charcoal-icon-v2-setting {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4626,7 +4631,7 @@ export default {
 }
 
 
-.charcoal-icon-setting-solid {
+.charcoal-icon-v2-setting-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4637,7 +4642,7 @@ export default {
 }
 
 
-.charcoal-icon-shape {
+.charcoal-icon-v2-shape {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4648,7 +4653,7 @@ export default {
 }
 
 
-.charcoal-icon-shape-solid {
+.charcoal-icon-v2-shape-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4659,7 +4664,7 @@ export default {
 }
 
 
-.charcoal-icon-share-android {
+.charcoal-icon-v2-share-android {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4670,7 +4675,7 @@ export default {
 }
 
 
-.charcoal-icon-share-android-solid {
+.charcoal-icon-v2-share-android-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4681,7 +4686,7 @@ export default {
 }
 
 
-.charcoal-icon-share-ios {
+.charcoal-icon-v2-share-ios {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4692,7 +4697,7 @@ export default {
 }
 
 
-.charcoal-icon-share-ios-solid {
+.charcoal-icon-v2-share-ios-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4703,7 +4708,7 @@ export default {
 }
 
 
-.charcoal-icon-shopping {
+.charcoal-icon-v2-shopping {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4714,7 +4719,7 @@ export default {
 }
 
 
-.charcoal-icon-shopping-solid {
+.charcoal-icon-v2-shopping-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4725,7 +4730,7 @@ export default {
 }
 
 
-.charcoal-icon-shrink {
+.charcoal-icon-v2-shrink {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4736,7 +4741,7 @@ export default {
 }
 
 
-.charcoal-icon-shrink-solid {
+.charcoal-icon-v2-shrink-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4747,7 +4752,7 @@ export default {
 }
 
 
-.charcoal-icon-shutter {
+.charcoal-icon-v2-shutter {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4758,7 +4763,7 @@ export default {
 }
 
 
-.charcoal-icon-shutter-solid {
+.charcoal-icon-v2-shutter-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4769,7 +4774,7 @@ export default {
 }
 
 
-.charcoal-icon-sliders {
+.charcoal-icon-v2-sliders {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4780,7 +4785,7 @@ export default {
 }
 
 
-.charcoal-icon-sliders-solid {
+.charcoal-icon-v2-sliders-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4791,7 +4796,7 @@ export default {
 }
 
 
-.charcoal-icon-soft-edge {
+.charcoal-icon-v2-soft-edge {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4802,7 +4807,7 @@ export default {
 }
 
 
-.charcoal-icon-soft-edge-solid {
+.charcoal-icon-v2-soft-edge-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4813,7 +4818,7 @@ export default {
 }
 
 
-.charcoal-icon-square {
+.charcoal-icon-v2-square {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4824,7 +4829,7 @@ export default {
 }
 
 
-.charcoal-icon-square-dash {
+.charcoal-icon-v2-square-dash {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4835,7 +4840,7 @@ export default {
 }
 
 
-.charcoal-icon-square-dash-resize {
+.charcoal-icon-v2-square-dash-resize {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4846,7 +4851,7 @@ export default {
 }
 
 
-.charcoal-icon-square-dash-resize-solid {
+.charcoal-icon-v2-square-dash-resize-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4857,7 +4862,7 @@ export default {
 }
 
 
-.charcoal-icon-square-dash-solid {
+.charcoal-icon-v2-square-dash-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4868,7 +4873,7 @@ export default {
 }
 
 
-.charcoal-icon-square-solid {
+.charcoal-icon-v2-square-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4879,7 +4884,7 @@ export default {
 }
 
 
-.charcoal-icon-squares-2x2 {
+.charcoal-icon-v2-squares-2x2 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4890,7 +4895,7 @@ export default {
 }
 
 
-.charcoal-icon-squares-2x2-solid {
+.charcoal-icon-v2-squares-2x2-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4901,7 +4906,7 @@ export default {
 }
 
 
-.charcoal-icon-squares-3x3 {
+.charcoal-icon-v2-squares-3x3 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4912,7 +4917,7 @@ export default {
 }
 
 
-.charcoal-icon-squares-3x3-solid {
+.charcoal-icon-v2-squares-3x3-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4923,7 +4928,7 @@ export default {
 }
 
 
-.charcoal-icon-star {
+.charcoal-icon-v2-star {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4934,7 +4939,7 @@ export default {
 }
 
 
-.charcoal-icon-star-solid {
+.charcoal-icon-v2-star-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4945,7 +4950,7 @@ export default {
 }
 
 
-.charcoal-icon-strike-through {
+.charcoal-icon-v2-strike-through {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4956,7 +4961,7 @@ export default {
 }
 
 
-.charcoal-icon-strike-through-solid {
+.charcoal-icon-v2-strike-through-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4967,7 +4972,7 @@ export default {
 }
 
 
-.charcoal-icon-stroke-taper {
+.charcoal-icon-v2-stroke-taper {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4978,7 +4983,7 @@ export default {
 }
 
 
-.charcoal-icon-stroke-taper-solid {
+.charcoal-icon-v2-stroke-taper-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -4989,7 +4994,7 @@ export default {
 }
 
 
-.charcoal-icon-stroke-width {
+.charcoal-icon-v2-stroke-width {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5000,7 +5005,7 @@ export default {
 }
 
 
-.charcoal-icon-stroke-width-solid {
+.charcoal-icon-v2-stroke-width-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5011,7 +5016,7 @@ export default {
 }
 
 
-.charcoal-icon-subtract {
+.charcoal-icon-v2-subtract {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5022,7 +5027,7 @@ export default {
 }
 
 
-.charcoal-icon-subtract-solid {
+.charcoal-icon-v2-subtract-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5033,7 +5038,7 @@ export default {
 }
 
 
-.charcoal-icon-sun {
+.charcoal-icon-v2-sun {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5044,7 +5049,7 @@ export default {
 }
 
 
-.charcoal-icon-sun-solid {
+.charcoal-icon-v2-sun-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5055,7 +5060,7 @@ export default {
 }
 
 
-.charcoal-icon-sync {
+.charcoal-icon-v2-sync {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5066,7 +5071,7 @@ export default {
 }
 
 
-.charcoal-icon-sync-circle {
+.charcoal-icon-v2-sync-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5077,7 +5082,7 @@ export default {
 }
 
 
-.charcoal-icon-sync-circle-solid {
+.charcoal-icon-v2-sync-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5088,7 +5093,7 @@ export default {
 }
 
 
-.charcoal-icon-sync-solid {
+.charcoal-icon-v2-sync-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5099,7 +5104,7 @@ export default {
 }
 
 
-.charcoal-icon-t-shirt {
+.charcoal-icon-v2-t-shirt {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5110,7 +5115,7 @@ export default {
 }
 
 
-.charcoal-icon-t-shirt-solid {
+.charcoal-icon-v2-t-shirt-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5121,7 +5126,7 @@ export default {
 }
 
 
-.charcoal-icon-tap-1-finger {
+.charcoal-icon-v2-tap-1-finger {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5132,7 +5137,7 @@ export default {
 }
 
 
-.charcoal-icon-tap-1-finger-solid {
+.charcoal-icon-v2-tap-1-finger-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5143,7 +5148,7 @@ export default {
 }
 
 
-.charcoal-icon-tap-2-fingers {
+.charcoal-icon-v2-tap-2-fingers {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5154,7 +5159,7 @@ export default {
 }
 
 
-.charcoal-icon-tap-2-fingers-solid {
+.charcoal-icon-v2-tap-2-fingers-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5165,7 +5170,7 @@ export default {
 }
 
 
-.charcoal-icon-tap-3-fingers {
+.charcoal-icon-v2-tap-3-fingers {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5176,7 +5181,7 @@ export default {
 }
 
 
-.charcoal-icon-tap-3-fingers-solid {
+.charcoal-icon-v2-tap-3-fingers-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5187,7 +5192,7 @@ export default {
 }
 
 
-.charcoal-icon-temperature {
+.charcoal-icon-v2-temperature {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5198,7 +5203,7 @@ export default {
 }
 
 
-.charcoal-icon-temperature-solid {
+.charcoal-icon-v2-temperature-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5209,7 +5214,7 @@ export default {
 }
 
 
-.charcoal-icon-text {
+.charcoal-icon-v2-text {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5220,7 +5225,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-center {
+.charcoal-icon-v2-text-align-center {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5231,7 +5236,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-center-solid {
+.charcoal-icon-v2-text-align-center-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5242,7 +5247,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-justify {
+.charcoal-icon-v2-text-align-justify {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5253,7 +5258,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-justify-solid {
+.charcoal-icon-v2-text-align-justify-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5264,7 +5269,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-left {
+.charcoal-icon-v2-text-align-left {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5275,7 +5280,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-left-solid {
+.charcoal-icon-v2-text-align-left-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5286,7 +5291,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-right {
+.charcoal-icon-v2-text-align-right {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5297,7 +5302,7 @@ export default {
 }
 
 
-.charcoal-icon-text-align-right-solid {
+.charcoal-icon-v2-text-align-right-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5308,7 +5313,7 @@ export default {
 }
 
 
-.charcoal-icon-text-ruby {
+.charcoal-icon-v2-text-ruby {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5319,7 +5324,7 @@ export default {
 }
 
 
-.charcoal-icon-text-ruby-solid {
+.charcoal-icon-v2-text-ruby-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5330,7 +5335,7 @@ export default {
 }
 
 
-.charcoal-icon-text-solid {
+.charcoal-icon-v2-text-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5341,7 +5346,7 @@ export default {
 }
 
 
-.charcoal-icon-texture {
+.charcoal-icon-v2-texture {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5352,7 +5357,7 @@ export default {
 }
 
 
-.charcoal-icon-texture-solid {
+.charcoal-icon-v2-texture-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5363,7 +5368,7 @@ export default {
 }
 
 
-.charcoal-icon-tools {
+.charcoal-icon-v2-tools {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5374,7 +5379,7 @@ export default {
 }
 
 
-.charcoal-icon-tools-solid {
+.charcoal-icon-v2-tools-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5385,7 +5390,7 @@ export default {
 }
 
 
-.charcoal-icon-touch {
+.charcoal-icon-v2-touch {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5396,7 +5401,7 @@ export default {
 }
 
 
-.charcoal-icon-touch-solid {
+.charcoal-icon-v2-touch-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5407,7 +5412,7 @@ export default {
 }
 
 
-.charcoal-icon-transform {
+.charcoal-icon-v2-transform {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5418,7 +5423,7 @@ export default {
 }
 
 
-.charcoal-icon-transform-rotation-handle {
+.charcoal-icon-v2-transform-rotation-handle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5429,7 +5434,7 @@ export default {
 }
 
 
-.charcoal-icon-transform-rotation-handle-solid {
+.charcoal-icon-v2-transform-rotation-handle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5440,7 +5445,7 @@ export default {
 }
 
 
-.charcoal-icon-transform-solid {
+.charcoal-icon-v2-transform-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5451,7 +5456,7 @@ export default {
 }
 
 
-.charcoal-icon-underline {
+.charcoal-icon-v2-underline {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5462,7 +5467,7 @@ export default {
 }
 
 
-.charcoal-icon-underline-solid {
+.charcoal-icon-v2-underline-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5473,7 +5478,7 @@ export default {
 }
 
 
-.charcoal-icon-undo {
+.charcoal-icon-v2-undo {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5484,7 +5489,7 @@ export default {
 }
 
 
-.charcoal-icon-undo-solid {
+.charcoal-icon-v2-undo-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5495,7 +5500,7 @@ export default {
 }
 
 
-.charcoal-icon-upload {
+.charcoal-icon-v2-upload {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5506,7 +5511,7 @@ export default {
 }
 
 
-.charcoal-icon-upload-solid {
+.charcoal-icon-v2-upload-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5517,7 +5522,7 @@ export default {
 }
 
 
-.charcoal-icon-user-campaign {
+.charcoal-icon-v2-user-campaign {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5528,7 +5533,7 @@ export default {
 }
 
 
-.charcoal-icon-user-campaign-solid {
+.charcoal-icon-v2-user-campaign-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5539,7 +5544,7 @@ export default {
 }
 
 
-.charcoal-icon-video {
+.charcoal-icon-v2-video {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5550,7 +5555,7 @@ export default {
 }
 
 
-.charcoal-icon-video-camera {
+.charcoal-icon-v2-video-camera {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5561,7 +5566,7 @@ export default {
 }
 
 
-.charcoal-icon-video-camera-solid {
+.charcoal-icon-v2-video-camera-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5572,7 +5577,7 @@ export default {
 }
 
 
-.charcoal-icon-video-solid {
+.charcoal-icon-v2-video-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5583,7 +5588,7 @@ export default {
 }
 
 
-.charcoal-icon-view-fit {
+.charcoal-icon-v2-view-fit {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5594,7 +5599,7 @@ export default {
 }
 
 
-.charcoal-icon-view-fit-solid {
+.charcoal-icon-v2-view-fit-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5605,7 +5610,7 @@ export default {
 }
 
 
-.charcoal-icon-view-full {
+.charcoal-icon-v2-view-full {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5616,7 +5621,7 @@ export default {
 }
 
 
-.charcoal-icon-view-full-solid {
+.charcoal-icon-v2-view-full-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5627,7 +5632,7 @@ export default {
 }
 
 
-.charcoal-icon-warn {
+.charcoal-icon-v2-warn {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5638,7 +5643,7 @@ export default {
 }
 
 
-.charcoal-icon-warn-solid {
+.charcoal-icon-v2-warn-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5649,7 +5654,7 @@ export default {
 }
 
 
-.charcoal-icon-warn-triangle {
+.charcoal-icon-v2-warn-triangle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5660,7 +5665,7 @@ export default {
 }
 
 
-.charcoal-icon-warn-triangle-solid {
+.charcoal-icon-v2-warn-triangle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5671,7 +5676,7 @@ export default {
 }
 
 
-.charcoal-icon-x {
+.charcoal-icon-v2-x {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5682,7 +5687,7 @@ export default {
 }
 
 
-.charcoal-icon-x-20 {
+.charcoal-icon-v2-x-20 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5693,7 +5698,7 @@ export default {
 }
 
 
-.charcoal-icon-x-circle {
+.charcoal-icon-v2-x-circle {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5704,7 +5709,7 @@ export default {
 }
 
 
-.charcoal-icon-x-circle-solid {
+.charcoal-icon-v2-x-circle-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5715,7 +5720,7 @@ export default {
 }
 
 
-.charcoal-icon-x-octagon {
+.charcoal-icon-v2-x-octagon {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5726,7 +5731,7 @@ export default {
 }
 
 
-.charcoal-icon-x-octagon-solid {
+.charcoal-icon-v2-x-octagon-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5737,7 +5742,7 @@ export default {
 }
 
 
-.charcoal-icon-x-solid {
+.charcoal-icon-v2-x-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5748,7 +5753,7 @@ export default {
 }
 
 
-.charcoal-icon-x-solid-20 {
+.charcoal-icon-v2-x-solid-20 {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5759,7 +5764,7 @@ export default {
 }
 
 
-.charcoal-icon-zoom-in {
+.charcoal-icon-v2-zoom-in {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5770,7 +5775,7 @@ export default {
 }
 
 
-.charcoal-icon-zoom-in-solid {
+.charcoal-icon-v2-zoom-in-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5781,7 +5786,7 @@ export default {
 }
 
 
-.charcoal-icon-zoom-out {
+.charcoal-icon-v2-zoom-out {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5792,7 +5797,7 @@ export default {
 }
 
 
-.charcoal-icon-zoom-out-solid {
+.charcoal-icon-v2-zoom-out-solid {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -5823,4021 +5828,4746 @@ export default {
 
         <div className="icons">
           <div>
-            <i className="charcoal-icon-add" title=".charcoal-icon-add"></i>
-            <code>.charcoal-icon-add</code>
+            <div
+              className="charcoal-icon-v2-add"
+              aria-label=".charcoal-icon-v2-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-add-circle"
-              title=".charcoal-icon-add-circle"
-            ></i>
-            <code>.charcoal-icon-add-circle</code>
+            <div
+              className="charcoal-icon-v2-add-circle"
+              aria-label=".charcoal-icon-v2-add-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-add-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-add-circle-solid"
-              title=".charcoal-icon-add-circle-solid"
-            ></i>
-            <code>.charcoal-icon-add-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-add-circle-solid"
+              aria-label=".charcoal-icon-v2-add-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-add-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-add-solid"
-              title=".charcoal-icon-add-solid"
-            ></i>
-            <code>.charcoal-icon-add-solid</code>
+            <div
+              className="charcoal-icon-v2-add-solid"
+              aria-label=".charcoal-icon-v2-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-airbrush"
-              title=".charcoal-icon-airbrush"
-            ></i>
-            <code>.charcoal-icon-airbrush</code>
+            <div
+              className="charcoal-icon-v2-airbrush"
+              aria-label=".charcoal-icon-v2-airbrush"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-airbrush</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-airbrush-solid"
-              title=".charcoal-icon-airbrush-solid"
-            ></i>
-            <code>.charcoal-icon-airbrush-solid</code>
+            <div
+              className="charcoal-icon-v2-airbrush-solid"
+              aria-label=".charcoal-icon-v2-airbrush-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-airbrush-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-album" title=".charcoal-icon-album"></i>
-            <code>.charcoal-icon-album</code>
+            <div
+              className="charcoal-icon-v2-album"
+              aria-label=".charcoal-icon-v2-album"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-album</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-album-add"
-              title=".charcoal-icon-album-add"
-            ></i>
-            <code>.charcoal-icon-album-add</code>
+            <div
+              className="charcoal-icon-v2-album-add"
+              aria-label=".charcoal-icon-v2-album-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-album-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-album-add-solid"
-              title=".charcoal-icon-album-add-solid"
-            ></i>
-            <code>.charcoal-icon-album-add-solid</code>
+            <div
+              className="charcoal-icon-v2-album-add-solid"
+              aria-label=".charcoal-icon-v2-album-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-album-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-album-solid"
-              title=".charcoal-icon-album-solid"
-            ></i>
-            <code>.charcoal-icon-album-solid</code>
+            <div
+              className="charcoal-icon-v2-album-solid"
+              aria-label=".charcoal-icon-v2-album-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-album-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-alert" title=".charcoal-icon-alert"></i>
-            <code>.charcoal-icon-alert</code>
+            <div
+              className="charcoal-icon-v2-alert"
+              aria-label=".charcoal-icon-v2-alert"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-alert</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-alert-solid"
-              title=".charcoal-icon-alert-solid"
-            ></i>
-            <code>.charcoal-icon-alert-solid</code>
+            <div
+              className="charcoal-icon-v2-alert-solid"
+              aria-label=".charcoal-icon-v2-alert-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-alert-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-align-horizontal"
-              title=".charcoal-icon-align-horizontal"
-            ></i>
-            <code>.charcoal-icon-align-horizontal</code>
+            <div
+              className="charcoal-icon-v2-align-horizontal"
+              aria-label=".charcoal-icon-v2-align-horizontal"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-align-horizontal</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-align-horizontal-solid"
-              title=".charcoal-icon-align-horizontal-solid"
-            ></i>
-            <code>.charcoal-icon-align-horizontal-solid</code>
+            <div
+              className="charcoal-icon-v2-align-horizontal-solid"
+              aria-label=".charcoal-icon-v2-align-horizontal-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-align-horizontal-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-align-vertical"
-              title=".charcoal-icon-align-vertical"
-            ></i>
-            <code>.charcoal-icon-align-vertical</code>
+            <div
+              className="charcoal-icon-v2-align-vertical"
+              aria-label=".charcoal-icon-v2-align-vertical"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-align-vertical</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-align-vertical-solid"
-              title=".charcoal-icon-align-vertical-solid"
-            ></i>
-            <code>.charcoal-icon-align-vertical-solid</code>
+            <div
+              className="charcoal-icon-v2-align-vertical-solid"
+              aria-label=".charcoal-icon-v2-align-vertical-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-align-vertical-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-angle" title=".charcoal-icon-angle"></i>
-            <code>.charcoal-icon-angle</code>
+            <div
+              className="charcoal-icon-v2-angle"
+              aria-label=".charcoal-icon-v2-angle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-angle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-angle-solid"
-              title=".charcoal-icon-angle-solid"
-            ></i>
-            <code>.charcoal-icon-angle-solid</code>
+            <div
+              className="charcoal-icon-v2-angle-solid"
+              aria-label=".charcoal-icon-v2-angle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-angle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-announce"
-              title=".charcoal-icon-announce"
-            ></i>
-            <code>.charcoal-icon-announce</code>
+            <div
+              className="charcoal-icon-v2-announce"
+              aria-label=".charcoal-icon-v2-announce"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-announce</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-announce-solid"
-              title=".charcoal-icon-announce-solid"
-            ></i>
-            <code>.charcoal-icon-announce-solid</code>
+            <div
+              className="charcoal-icon-v2-announce-solid"
+              aria-label=".charcoal-icon-v2-announce-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-announce-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-apple-pencil"
-              title=".charcoal-icon-apple-pencil"
-            ></i>
-            <code>.charcoal-icon-apple-pencil</code>
+            <div
+              className="charcoal-icon-v2-apple-pencil"
+              aria-label=".charcoal-icon-v2-apple-pencil"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-apple-pencil</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-apple-pencil-solid"
-              title=".charcoal-icon-apple-pencil-solid"
-            ></i>
-            <code>.charcoal-icon-apple-pencil-solid</code>
+            <div
+              className="charcoal-icon-v2-apple-pencil-solid"
+              aria-label=".charcoal-icon-v2-apple-pencil-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-apple-pencil-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-ar" title=".charcoal-icon-ar"></i>
-            <code>.charcoal-icon-ar</code>
+            <div
+              className="charcoal-icon-v2-ar"
+              aria-label=".charcoal-icon-v2-ar"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-ar</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-ar-solid"
-              title=".charcoal-icon-ar-solid"
-            ></i>
-            <code>.charcoal-icon-ar-solid</code>
+            <div
+              className="charcoal-icon-v2-ar-solid"
+              aria-label=".charcoal-icon-v2-ar-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-ar-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-archive"
-              title=".charcoal-icon-archive"
-            ></i>
-            <code>.charcoal-icon-archive</code>
+            <div
+              className="charcoal-icon-v2-archive"
+              aria-label=".charcoal-icon-v2-archive"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-archive</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-archive-solid"
-              title=".charcoal-icon-archive-solid"
-            ></i>
-            <code>.charcoal-icon-archive-solid</code>
+            <div
+              className="charcoal-icon-v2-archive-solid"
+              aria-label=".charcoal-icon-v2-archive-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-archive-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-ccw"
-              title=".charcoal-icon-arrow-ccw"
-            ></i>
-            <code>.charcoal-icon-arrow-ccw</code>
+            <div
+              className="charcoal-icon-v2-arrow-ccw"
+              aria-label=".charcoal-icon-v2-arrow-ccw"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-ccw</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-ccw-solid"
-              title=".charcoal-icon-arrow-ccw-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-ccw-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-ccw-solid"
+              aria-label=".charcoal-icon-v2-arrow-ccw-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-ccw-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-down"
-              title=".charcoal-icon-arrow-down"
-            ></i>
-            <code>.charcoal-icon-arrow-down</code>
+            <div
+              className="charcoal-icon-v2-arrow-down"
+              aria-label=".charcoal-icon-v2-arrow-down"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-down</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-down-solid"
-              title=".charcoal-icon-arrow-down-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-down-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-down-solid"
+              aria-label=".charcoal-icon-v2-arrow-down-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-down-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-down-square"
-              title=".charcoal-icon-arrow-down-square"
-            ></i>
-            <code>.charcoal-icon-arrow-down-square</code>
+            <div
+              className="charcoal-icon-v2-arrow-down-square"
+              aria-label=".charcoal-icon-v2-arrow-down-square"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-down-square</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-down-square-solid"
-              title=".charcoal-icon-arrow-down-square-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-down-square-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-down-square-solid"
+              aria-label=".charcoal-icon-v2-arrow-down-square-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-down-square-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left"
-              title=".charcoal-icon-arrow-left"
-            ></i>
-            <code>.charcoal-icon-arrow-left</code>
+            <div
+              className="charcoal-icon-v2-arrow-left"
+              aria-label=".charcoal-icon-v2-arrow-left"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-down"
-              title=".charcoal-icon-arrow-left-down"
-            ></i>
-            <code>.charcoal-icon-arrow-left-down</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-down"
+              aria-label=".charcoal-icon-v2-arrow-left-down"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-down</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-down-16"
-              title=".charcoal-icon-arrow-left-down-16"
-            ></i>
-            <code>.charcoal-icon-arrow-left-down-16</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-down-16"
+              aria-label=".charcoal-icon-v2-arrow-left-down-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-down-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-down-solid"
-              title=".charcoal-icon-arrow-left-down-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-left-down-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-down-solid"
+              aria-label=".charcoal-icon-v2-arrow-left-down-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-down-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-down-solid-16"
-              title=".charcoal-icon-arrow-left-down-solid-16"
-            ></i>
-            <code>.charcoal-icon-arrow-left-down-solid-16</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-down-solid-16"
+              aria-label=".charcoal-icon-v2-arrow-left-down-solid-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-down-solid-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-solid"
-              title=".charcoal-icon-arrow-left-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-left-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-solid"
+              aria-label=".charcoal-icon-v2-arrow-left-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-square"
-              title=".charcoal-icon-arrow-left-square"
-            ></i>
-            <code>.charcoal-icon-arrow-left-square</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-square"
+              aria-label=".charcoal-icon-v2-arrow-left-square"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-square</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-left-square-solid"
-              title=".charcoal-icon-arrow-left-square-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-left-square-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-left-square-solid"
+              aria-label=".charcoal-icon-v2-arrow-left-square-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-left-square-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-right"
-              title=".charcoal-icon-arrow-right"
-            ></i>
-            <code>.charcoal-icon-arrow-right</code>
+            <div
+              className="charcoal-icon-v2-arrow-right"
+              aria-label=".charcoal-icon-v2-arrow-right"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-right</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-right-solid"
-              title=".charcoal-icon-arrow-right-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-right-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-right-solid"
+              aria-label=".charcoal-icon-v2-arrow-right-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-right-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-up"
-              title=".charcoal-icon-arrow-up"
-            ></i>
-            <code>.charcoal-icon-arrow-up</code>
+            <div
+              className="charcoal-icon-v2-arrow-up"
+              aria-label=".charcoal-icon-v2-arrow-up"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-up</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-arrow-up-solid"
-              title=".charcoal-icon-arrow-up-solid"
-            ></i>
-            <code>.charcoal-icon-arrow-up-solid</code>
+            <div
+              className="charcoal-icon-v2-arrow-up-solid"
+              aria-label=".charcoal-icon-v2-arrow-up-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-arrow-up-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-auto-select"
-              title=".charcoal-icon-auto-select"
-            ></i>
-            <code>.charcoal-icon-auto-select</code>
+            <div
+              className="charcoal-icon-v2-auto-select"
+              aria-label=".charcoal-icon-v2-auto-select"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-auto-select</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-auto-select-solid"
-              title=".charcoal-icon-auto-select-solid"
-            ></i>
-            <code>.charcoal-icon-auto-select-solid</code>
+            <div
+              className="charcoal-icon-v2-auto-select-solid"
+              aria-label=".charcoal-icon-v2-auto-select-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-auto-select-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-bell" title=".charcoal-icon-bell"></i>
-            <code>.charcoal-icon-bell</code>
+            <div
+              className="charcoal-icon-v2-bell"
+              aria-label=".charcoal-icon-v2-bell"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bell</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bell-solid"
-              title=".charcoal-icon-bell-solid"
-            ></i>
-            <code>.charcoal-icon-bell-solid</code>
+            <div
+              className="charcoal-icon-v2-bell-solid"
+              aria-label=".charcoal-icon-v2-bell-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bell-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bezier-curve"
-              title=".charcoal-icon-bezier-curve"
-            ></i>
-            <code>.charcoal-icon-bezier-curve</code>
+            <div
+              className="charcoal-icon-v2-bezier-curve"
+              aria-label=".charcoal-icon-v2-bezier-curve"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bezier-curve</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bezier-curve-solid"
-              title=".charcoal-icon-bezier-curve-solid"
-            ></i>
-            <code>.charcoal-icon-bezier-curve-solid</code>
+            <div
+              className="charcoal-icon-v2-bezier-curve-solid"
+              aria-label=".charcoal-icon-v2-bezier-curve-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bezier-curve-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-blend-mode"
-              title=".charcoal-icon-blend-mode"
-            ></i>
-            <code>.charcoal-icon-blend-mode</code>
+            <div
+              className="charcoal-icon-v2-blend-mode"
+              aria-label=".charcoal-icon-v2-blend-mode"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-blend-mode</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-blend-mode-solid"
-              title=".charcoal-icon-blend-mode-solid"
-            ></i>
-            <code>.charcoal-icon-blend-mode-solid</code>
+            <div
+              className="charcoal-icon-v2-blend-mode-solid"
+              aria-label=".charcoal-icon-v2-blend-mode-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-blend-mode-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-body" title=".charcoal-icon-body"></i>
-            <code>.charcoal-icon-body</code>
+            <div
+              className="charcoal-icon-v2-body"
+              aria-label=".charcoal-icon-v2-body"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-body</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-body-add"
-              title=".charcoal-icon-body-add"
-            ></i>
-            <code>.charcoal-icon-body-add</code>
+            <div
+              className="charcoal-icon-v2-body-add"
+              aria-label=".charcoal-icon-v2-body-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-body-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-body-add-solid"
-              title=".charcoal-icon-body-add-solid"
-            ></i>
-            <code>.charcoal-icon-body-add-solid</code>
+            <div
+              className="charcoal-icon-v2-body-add-solid"
+              aria-label=".charcoal-icon-v2-body-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-body-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-body-edit"
-              title=".charcoal-icon-body-edit"
-            ></i>
-            <code>.charcoal-icon-body-edit</code>
+            <div
+              className="charcoal-icon-v2-body-edit"
+              aria-label=".charcoal-icon-v2-body-edit"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-body-edit</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-body-edit-solid"
-              title=".charcoal-icon-body-edit-solid"
-            ></i>
-            <code>.charcoal-icon-body-edit-solid</code>
+            <div
+              className="charcoal-icon-v2-body-edit-solid"
+              aria-label=".charcoal-icon-v2-body-edit-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-body-edit-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-body-solid"
-              title=".charcoal-icon-body-solid"
-            ></i>
-            <code>.charcoal-icon-body-solid</code>
+            <div
+              className="charcoal-icon-v2-body-solid"
+              aria-label=".charcoal-icon-v2-body-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-body-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-bold" title=".charcoal-icon-bold"></i>
-            <code>.charcoal-icon-bold</code>
+            <div
+              className="charcoal-icon-v2-bold"
+              aria-label=".charcoal-icon-v2-bold"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bold</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bold-solid"
-              title=".charcoal-icon-bold-solid"
-            ></i>
-            <code>.charcoal-icon-bold-solid</code>
+            <div
+              className="charcoal-icon-v2-bold-solid"
+              aria-label=".charcoal-icon-v2-bold-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bold-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-book" title=".charcoal-icon-book"></i>
-            <code>.charcoal-icon-book</code>
+            <div
+              className="charcoal-icon-v2-book"
+              aria-label=".charcoal-icon-v2-book"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-book</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-book-solid"
-              title=".charcoal-icon-book-solid"
-            ></i>
-            <code>.charcoal-icon-book-solid</code>
+            <div
+              className="charcoal-icon-v2-book-solid"
+              aria-label=".charcoal-icon-v2-book-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-book-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bookmark"
-              title=".charcoal-icon-bookmark"
-            ></i>
-            <code>.charcoal-icon-bookmark</code>
+            <div
+              className="charcoal-icon-v2-bookmark"
+              aria-label=".charcoal-icon-v2-bookmark"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bookmark</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bookmark-solid"
-              title=".charcoal-icon-bookmark-solid"
-            ></i>
-            <code>.charcoal-icon-bookmark-solid</code>
+            <div
+              className="charcoal-icon-v2-bookmark-solid"
+              aria-label=".charcoal-icon-v2-bookmark-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bookmark-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bring-backward"
-              title=".charcoal-icon-bring-backward"
-            ></i>
-            <code>.charcoal-icon-bring-backward</code>
+            <div
+              className="charcoal-icon-v2-bring-backward"
+              aria-label=".charcoal-icon-v2-bring-backward"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bring-backward</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bring-backward-solid"
-              title=".charcoal-icon-bring-backward-solid"
-            ></i>
-            <code>.charcoal-icon-bring-backward-solid</code>
+            <div
+              className="charcoal-icon-v2-bring-backward-solid"
+              aria-label=".charcoal-icon-v2-bring-backward-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bring-backward-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bring-forward"
-              title=".charcoal-icon-bring-forward"
-            ></i>
-            <code>.charcoal-icon-bring-forward</code>
+            <div
+              className="charcoal-icon-v2-bring-forward"
+              aria-label=".charcoal-icon-v2-bring-forward"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bring-forward</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bring-forward-solid"
-              title=".charcoal-icon-bring-forward-solid"
-            ></i>
-            <code>.charcoal-icon-bring-forward-solid</code>
+            <div
+              className="charcoal-icon-v2-bring-forward-solid"
+              aria-label=".charcoal-icon-v2-bring-forward-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bring-forward-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-brush" title=".charcoal-icon-brush"></i>
-            <code>.charcoal-icon-brush</code>
+            <div
+              className="charcoal-icon-v2-brush"
+              aria-label=".charcoal-icon-v2-brush"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-decoration"
-              title=".charcoal-icon-brush-decoration"
-            ></i>
-            <code>.charcoal-icon-brush-decoration</code>
+            <div
+              className="charcoal-icon-v2-brush-decoration"
+              aria-label=".charcoal-icon-v2-brush-decoration"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-decoration</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-decoration-solid"
-              title=".charcoal-icon-brush-decoration-solid"
-            ></i>
-            <code>.charcoal-icon-brush-decoration-solid</code>
+            <div
+              className="charcoal-icon-v2-brush-decoration-solid"
+              aria-label=".charcoal-icon-v2-brush-decoration-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-decoration-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-opacity"
-              title=".charcoal-icon-brush-opacity"
-            ></i>
-            <code>.charcoal-icon-brush-opacity</code>
+            <div
+              className="charcoal-icon-v2-brush-opacity"
+              aria-label=".charcoal-icon-v2-brush-opacity"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-opacity</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-opacity-solid"
-              title=".charcoal-icon-brush-opacity-solid"
-            ></i>
-            <code>.charcoal-icon-brush-opacity-solid</code>
+            <div
+              className="charcoal-icon-v2-brush-opacity-solid"
+              aria-label=".charcoal-icon-v2-brush-opacity-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-opacity-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-press"
-              title=".charcoal-icon-brush-press"
-            ></i>
-            <code>.charcoal-icon-brush-press</code>
+            <div
+              className="charcoal-icon-v2-brush-press"
+              aria-label=".charcoal-icon-v2-brush-press"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-press</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-press-solid"
-              title=".charcoal-icon-brush-press-solid"
-            ></i>
-            <code>.charcoal-icon-brush-press-solid</code>
+            <div
+              className="charcoal-icon-v2-brush-press-solid"
+              aria-label=".charcoal-icon-v2-brush-press-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-press-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-size"
-              title=".charcoal-icon-brush-size"
-            ></i>
-            <code>.charcoal-icon-brush-size</code>
+            <div
+              className="charcoal-icon-v2-brush-size"
+              aria-label=".charcoal-icon-v2-brush-size"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-size</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-size-solid"
-              title=".charcoal-icon-brush-size-solid"
-            ></i>
-            <code>.charcoal-icon-brush-size-solid</code>
+            <div
+              className="charcoal-icon-v2-brush-size-solid"
+              aria-label=".charcoal-icon-v2-brush-size-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-size-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-solid"
-              title=".charcoal-icon-brush-solid"
-            ></i>
-            <code>.charcoal-icon-brush-solid</code>
+            <div
+              className="charcoal-icon-v2-brush-solid"
+              aria-label=".charcoal-icon-v2-brush-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-stablize"
-              title=".charcoal-icon-brush-stablize"
-            ></i>
-            <code>.charcoal-icon-brush-stablize</code>
+            <div
+              className="charcoal-icon-v2-brush-stablize"
+              aria-label=".charcoal-icon-v2-brush-stablize"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-stablize</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-brush-stablize-solid"
-              title=".charcoal-icon-brush-stablize-solid"
-            ></i>
-            <code>.charcoal-icon-brush-stablize-solid</code>
+            <div
+              className="charcoal-icon-v2-brush-stablize-solid"
+              aria-label=".charcoal-icon-v2-brush-stablize-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-brush-stablize-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bubble"
-              title=".charcoal-icon-bubble"
-            ></i>
-            <code>.charcoal-icon-bubble</code>
+            <div
+              className="charcoal-icon-v2-bubble"
+              aria-label=".charcoal-icon-v2-bubble"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bubble</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bubble-solid"
-              title=".charcoal-icon-bubble-solid"
-            ></i>
-            <code>.charcoal-icon-bubble-solid</code>
+            <div
+              className="charcoal-icon-v2-bubble-solid"
+              aria-label=".charcoal-icon-v2-bubble-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bubble-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bulb-shine"
-              title=".charcoal-icon-bulb-shine"
-            ></i>
-            <code>.charcoal-icon-bulb-shine</code>
+            <div
+              className="charcoal-icon-v2-bulb-shine"
+              aria-label=".charcoal-icon-v2-bulb-shine"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bulb-shine</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-bulb-shine-solid"
-              title=".charcoal-icon-bulb-shine-solid"
-            ></i>
-            <code>.charcoal-icon-bulb-shine-solid</code>
+            <div
+              className="charcoal-icon-v2-bulb-shine-solid"
+              aria-label=".charcoal-icon-v2-bulb-shine-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-bulb-shine-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-calendar"
-              title=".charcoal-icon-calendar"
-            ></i>
-            <code>.charcoal-icon-calendar</code>
+            <div
+              className="charcoal-icon-v2-calendar"
+              aria-label=".charcoal-icon-v2-calendar"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-calendar</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-calendar-solid"
-              title=".charcoal-icon-calendar-solid"
-            ></i>
-            <code>.charcoal-icon-calendar-solid</code>
+            <div
+              className="charcoal-icon-v2-calendar-solid"
+              aria-label=".charcoal-icon-v2-calendar-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-calendar-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-camera"
-              title=".charcoal-icon-camera"
-            ></i>
-            <code>.charcoal-icon-camera</code>
+            <div
+              className="charcoal-icon-v2-camera"
+              aria-label=".charcoal-icon-v2-camera"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-camera</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-camera-solid"
-              title=".charcoal-icon-camera-solid"
-            ></i>
-            <code>.charcoal-icon-camera-solid</code>
+            <div
+              className="charcoal-icon-v2-camera-solid"
+              aria-label=".charcoal-icon-v2-camera-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-camera-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-character-replace"
-              title=".charcoal-icon-character-replace"
-            ></i>
-            <code>.charcoal-icon-character-replace</code>
+            <div
+              className="charcoal-icon-v2-character-replace"
+              aria-label=".charcoal-icon-v2-character-replace"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-character-replace</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-character-replace-solid"
-              title=".charcoal-icon-character-replace-solid"
-            ></i>
-            <code>.charcoal-icon-character-replace-solid</code>
+            <div
+              className="charcoal-icon-v2-character-replace-solid"
+              aria-label=".charcoal-icon-v2-character-replace-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-character-replace-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-check" title=".charcoal-icon-check"></i>
-            <code>.charcoal-icon-check</code>
+            <div
+              className="charcoal-icon-v2-check"
+              aria-label=".charcoal-icon-v2-check"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-check</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-check-circle"
-              title=".charcoal-icon-check-circle"
-            ></i>
-            <code>.charcoal-icon-check-circle</code>
+            <div
+              className="charcoal-icon-v2-check-circle"
+              aria-label=".charcoal-icon-v2-check-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-check-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-check-circle-solid"
-              title=".charcoal-icon-check-circle-solid"
-            ></i>
-            <code>.charcoal-icon-check-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-check-circle-solid"
+              aria-label=".charcoal-icon-v2-check-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-check-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-check-solid"
-              title=".charcoal-icon-check-solid"
-            ></i>
-            <code>.charcoal-icon-check-solid</code>
+            <div
+              className="charcoal-icon-v2-check-solid"
+              aria-label=".charcoal-icon-v2-check-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-check-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-down"
-              title=".charcoal-icon-chevron-down"
-            ></i>
-            <code>.charcoal-icon-chevron-down</code>
+            <div
+              className="charcoal-icon-v2-chevron-down"
+              aria-label=".charcoal-icon-v2-chevron-down"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-down</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-down-16"
-              title=".charcoal-icon-chevron-down-16"
-            ></i>
-            <code>.charcoal-icon-chevron-down-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-down-16"
+              aria-label=".charcoal-icon-v2-chevron-down-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-down-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-down-solid"
-              title=".charcoal-icon-chevron-down-solid"
-            ></i>
-            <code>.charcoal-icon-chevron-down-solid</code>
+            <div
+              className="charcoal-icon-v2-chevron-down-solid"
+              aria-label=".charcoal-icon-v2-chevron-down-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-down-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-down-solid-16"
-              title=".charcoal-icon-chevron-down-solid-16"
-            ></i>
-            <code>.charcoal-icon-chevron-down-solid-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-down-solid-16"
+              aria-label=".charcoal-icon-v2-chevron-down-solid-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-down-solid-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-left"
-              title=".charcoal-icon-chevron-left"
-            ></i>
-            <code>.charcoal-icon-chevron-left</code>
+            <div
+              className="charcoal-icon-v2-chevron-left"
+              aria-label=".charcoal-icon-v2-chevron-left"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-left</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-left-16"
-              title=".charcoal-icon-chevron-left-16"
-            ></i>
-            <code>.charcoal-icon-chevron-left-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-left-16"
+              aria-label=".charcoal-icon-v2-chevron-left-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-left-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-left-solid"
-              title=".charcoal-icon-chevron-left-solid"
-            ></i>
-            <code>.charcoal-icon-chevron-left-solid</code>
+            <div
+              className="charcoal-icon-v2-chevron-left-solid"
+              aria-label=".charcoal-icon-v2-chevron-left-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-left-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-left-solid-16"
-              title=".charcoal-icon-chevron-left-solid-16"
-            ></i>
-            <code>.charcoal-icon-chevron-left-solid-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-left-solid-16"
+              aria-label=".charcoal-icon-v2-chevron-left-solid-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-left-solid-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-right"
-              title=".charcoal-icon-chevron-right"
-            ></i>
-            <code>.charcoal-icon-chevron-right</code>
+            <div
+              className="charcoal-icon-v2-chevron-right"
+              aria-label=".charcoal-icon-v2-chevron-right"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-right</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-right-16"
-              title=".charcoal-icon-chevron-right-16"
-            ></i>
-            <code>.charcoal-icon-chevron-right-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-right-16"
+              aria-label=".charcoal-icon-v2-chevron-right-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-right-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-right-solid"
-              title=".charcoal-icon-chevron-right-solid"
-            ></i>
-            <code>.charcoal-icon-chevron-right-solid</code>
+            <div
+              className="charcoal-icon-v2-chevron-right-solid"
+              aria-label=".charcoal-icon-v2-chevron-right-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-right-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-right-solid-16"
-              title=".charcoal-icon-chevron-right-solid-16"
-            ></i>
-            <code>.charcoal-icon-chevron-right-solid-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-right-solid-16"
+              aria-label=".charcoal-icon-v2-chevron-right-solid-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-right-solid-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-up"
-              title=".charcoal-icon-chevron-up"
-            ></i>
-            <code>.charcoal-icon-chevron-up</code>
+            <div
+              className="charcoal-icon-v2-chevron-up"
+              aria-label=".charcoal-icon-v2-chevron-up"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-up</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-up-16"
-              title=".charcoal-icon-chevron-up-16"
-            ></i>
-            <code>.charcoal-icon-chevron-up-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-up-16"
+              aria-label=".charcoal-icon-v2-chevron-up-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-up-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-up-solid"
-              title=".charcoal-icon-chevron-up-solid"
-            ></i>
-            <code>.charcoal-icon-chevron-up-solid</code>
+            <div
+              className="charcoal-icon-v2-chevron-up-solid"
+              aria-label=".charcoal-icon-v2-chevron-up-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-up-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-chevron-up-solid-16"
-              title=".charcoal-icon-chevron-up-solid-16"
-            ></i>
-            <code>.charcoal-icon-chevron-up-solid-16</code>
+            <div
+              className="charcoal-icon-v2-chevron-up-solid-16"
+              aria-label=".charcoal-icon-v2-chevron-up-solid-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-chevron-up-solid-16</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-circle"
-              title=".charcoal-icon-circle"
-            ></i>
-            <code>.charcoal-icon-circle</code>
+            <div
+              className="charcoal-icon-v2-circle"
+              aria-label=".charcoal-icon-v2-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-circle-solid"
-              title=".charcoal-icon-circle-solid"
-            ></i>
-            <code>.charcoal-icon-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-circle-solid"
+              aria-label=".charcoal-icon-v2-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-circle-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-click" title=".charcoal-icon-click"></i>
-            <code>.charcoal-icon-click</code>
+            <div
+              className="charcoal-icon-v2-click"
+              aria-label=".charcoal-icon-v2-click"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-click</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-click-solid"
-              title=".charcoal-icon-click-solid"
-            ></i>
-            <code>.charcoal-icon-click-solid</code>
+            <div
+              className="charcoal-icon-v2-click-solid"
+              aria-label=".charcoal-icon-v2-click-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-click-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-clipping"
-              title=".charcoal-icon-clipping"
-            ></i>
-            <code>.charcoal-icon-clipping</code>
+            <div
+              className="charcoal-icon-v2-clipping"
+              aria-label=".charcoal-icon-v2-clipping"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-clipping</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-clipping-solid"
-              title=".charcoal-icon-clipping-solid"
-            ></i>
-            <code>.charcoal-icon-clipping-solid</code>
+            <div
+              className="charcoal-icon-v2-clipping-solid"
+              aria-label=".charcoal-icon-v2-clipping-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-clipping-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-cloud" title=".charcoal-icon-cloud"></i>
-            <code>.charcoal-icon-cloud</code>
+            <div
+              className="charcoal-icon-v2-cloud"
+              aria-label=".charcoal-icon-v2-cloud"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-check"
-              title=".charcoal-icon-cloud-check"
-            ></i>
-            <code>.charcoal-icon-cloud-check</code>
+            <div
+              className="charcoal-icon-v2-cloud-check"
+              aria-label=".charcoal-icon-v2-cloud-check"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-check</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-check-solid"
-              title=".charcoal-icon-cloud-check-solid"
-            ></i>
-            <code>.charcoal-icon-cloud-check-solid</code>
+            <div
+              className="charcoal-icon-v2-cloud-check-solid"
+              aria-label=".charcoal-icon-v2-cloud-check-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-check-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-exclamation"
-              title=".charcoal-icon-cloud-exclamation"
-            ></i>
-            <code>.charcoal-icon-cloud-exclamation</code>
+            <div
+              className="charcoal-icon-v2-cloud-exclamation"
+              aria-label=".charcoal-icon-v2-cloud-exclamation"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-exclamation</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-exclamation-solid"
-              title=".charcoal-icon-cloud-exclamation-solid"
-            ></i>
-            <code>.charcoal-icon-cloud-exclamation-solid</code>
+            <div
+              className="charcoal-icon-v2-cloud-exclamation-solid"
+              aria-label=".charcoal-icon-v2-cloud-exclamation-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-exclamation-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-solid"
-              title=".charcoal-icon-cloud-solid"
-            ></i>
-            <code>.charcoal-icon-cloud-solid</code>
+            <div
+              className="charcoal-icon-v2-cloud-solid"
+              aria-label=".charcoal-icon-v2-cloud-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-sync"
-              title=".charcoal-icon-cloud-sync"
-            ></i>
-            <code>.charcoal-icon-cloud-sync</code>
+            <div
+              className="charcoal-icon-v2-cloud-sync"
+              aria-label=".charcoal-icon-v2-cloud-sync"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-sync</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-cloud-sync-solid"
-              title=".charcoal-icon-cloud-sync-solid"
-            ></i>
-            <code>.charcoal-icon-cloud-sync-solid</code>
+            <div
+              className="charcoal-icon-v2-cloud-sync-solid"
+              aria-label=".charcoal-icon-v2-cloud-sync-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-cloud-sync-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-code" title=".charcoal-icon-code"></i>
-            <code>.charcoal-icon-code</code>
+            <div
+              className="charcoal-icon-v2-code"
+              aria-label=".charcoal-icon-v2-code"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-code</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-code-solid"
-              title=".charcoal-icon-code-solid"
-            ></i>
-            <code>.charcoal-icon-code-solid</code>
+            <div
+              className="charcoal-icon-v2-code-solid"
+              aria-label=".charcoal-icon-v2-code-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-code-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-color" title=".charcoal-icon-color"></i>
-            <code>.charcoal-icon-color</code>
+            <div
+              className="charcoal-icon-v2-color"
+              aria-label=".charcoal-icon-v2-color"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-mixture-color"
-              title=".charcoal-icon-color-mixture-color"
-            ></i>
-            <code>.charcoal-icon-color-mixture-color</code>
+            <div
+              className="charcoal-icon-v2-color-mixture-color"
+              aria-label=".charcoal-icon-v2-color-mixture-color"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-mixture-color</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-sets"
-              title=".charcoal-icon-color-sets"
-            ></i>
-            <code>.charcoal-icon-color-sets</code>
+            <div
+              className="charcoal-icon-v2-color-sets"
+              aria-label=".charcoal-icon-v2-color-sets"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-sets</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-sets-solid"
-              title=".charcoal-icon-color-sets-solid"
-            ></i>
-            <code>.charcoal-icon-color-sets-solid</code>
+            <div
+              className="charcoal-icon-v2-color-sets-solid"
+              aria-label=".charcoal-icon-v2-color-sets-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-sets-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-solid"
-              title=".charcoal-icon-color-solid"
-            ></i>
-            <code>.charcoal-icon-color-solid</code>
+            <div
+              className="charcoal-icon-v2-color-solid"
+              aria-label=".charcoal-icon-v2-color-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-wheel-rectangle"
-              title=".charcoal-icon-color-wheel-rectangle"
-            ></i>
-            <code>.charcoal-icon-color-wheel-rectangle</code>
+            <div
+              className="charcoal-icon-v2-color-wheel-rectangle"
+              aria-label=".charcoal-icon-v2-color-wheel-rectangle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-wheel-rectangle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-wheel-rectangle-solid"
-              title=".charcoal-icon-color-wheel-rectangle-solid"
-            ></i>
-            <code>.charcoal-icon-color-wheel-rectangle-solid</code>
+            <div
+              className="charcoal-icon-v2-color-wheel-rectangle-solid"
+              aria-label=".charcoal-icon-v2-color-wheel-rectangle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-wheel-rectangle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-wheel-triangle"
-              title=".charcoal-icon-color-wheel-triangle"
-            ></i>
-            <code>.charcoal-icon-color-wheel-triangle</code>
+            <div
+              className="charcoal-icon-v2-color-wheel-triangle"
+              aria-label=".charcoal-icon-v2-color-wheel-triangle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-wheel-triangle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-color-wheel-triangle-solid"
-              title=".charcoal-icon-color-wheel-triangle-solid"
-            ></i>
-            <code>.charcoal-icon-color-wheel-triangle-solid</code>
+            <div
+              className="charcoal-icon-v2-color-wheel-triangle-solid"
+              aria-label=".charcoal-icon-v2-color-wheel-triangle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-color-wheel-triangle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-commands-circle"
-              title=".charcoal-icon-commands-circle"
-            ></i>
-            <code>.charcoal-icon-commands-circle</code>
+            <div
+              className="charcoal-icon-v2-commands-circle"
+              aria-label=".charcoal-icon-v2-commands-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-commands-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-commands-circle-solid"
-              title=".charcoal-icon-commands-circle-solid"
-            ></i>
-            <code>.charcoal-icon-commands-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-commands-circle-solid"
+              aria-label=".charcoal-icon-v2-commands-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-commands-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-compass"
-              title=".charcoal-icon-compass"
-            ></i>
-            <code>.charcoal-icon-compass</code>
+            <div
+              className="charcoal-icon-v2-compass"
+              aria-label=".charcoal-icon-v2-compass"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-compass</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-compass-solid"
-              title=".charcoal-icon-compass-solid"
-            ></i>
-            <code>.charcoal-icon-compass-solid</code>
+            <div
+              className="charcoal-icon-v2-compass-solid"
+              aria-label=".charcoal-icon-v2-compass-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-compass-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-contest"
-              title=".charcoal-icon-contest"
-            ></i>
-            <code>.charcoal-icon-contest</code>
+            <div
+              className="charcoal-icon-v2-contest"
+              aria-label=".charcoal-icon-v2-contest"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-contest</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-contest-solid"
-              title=".charcoal-icon-contest-solid"
-            ></i>
-            <code>.charcoal-icon-contest-solid</code>
+            <div
+              className="charcoal-icon-v2-contest-solid"
+              aria-label=".charcoal-icon-v2-contest-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-contest-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-contrast"
-              title=".charcoal-icon-contrast"
-            ></i>
-            <code>.charcoal-icon-contrast</code>
+            <div
+              className="charcoal-icon-v2-contrast"
+              aria-label=".charcoal-icon-v2-contrast"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-contrast</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-contrast-solid"
-              title=".charcoal-icon-contrast-solid"
-            ></i>
-            <code>.charcoal-icon-contrast-solid</code>
+            <div
+              className="charcoal-icon-v2-contrast-solid"
+              aria-label=".charcoal-icon-v2-contrast-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-contrast-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-copy" title=".charcoal-icon-copy"></i>
-            <code>.charcoal-icon-copy</code>
+            <div
+              className="charcoal-icon-v2-copy"
+              aria-label=".charcoal-icon-v2-copy"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-copy</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-copy-solid"
-              title=".charcoal-icon-copy-solid"
-            ></i>
-            <code>.charcoal-icon-copy-solid</code>
+            <div
+              className="charcoal-icon-v2-copy-solid"
+              aria-label=".charcoal-icon-v2-copy-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-copy-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-crown" title=".charcoal-icon-crown"></i>
-            <code>.charcoal-icon-crown</code>
+            <div
+              className="charcoal-icon-v2-crown"
+              aria-label=".charcoal-icon-v2-crown"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-crown</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-crown-solid"
-              title=".charcoal-icon-crown-solid"
-            ></i>
-            <code>.charcoal-icon-crown-solid</code>
+            <div
+              className="charcoal-icon-v2-crown-solid"
+              aria-label=".charcoal-icon-v2-crown-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-crown-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-curve" title=".charcoal-icon-curve"></i>
-            <code>.charcoal-icon-curve</code>
+            <div
+              className="charcoal-icon-v2-curve"
+              aria-label=".charcoal-icon-v2-curve"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-curve</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-curve-nodes"
-              title=".charcoal-icon-curve-nodes"
-            ></i>
-            <code>.charcoal-icon-curve-nodes</code>
+            <div
+              className="charcoal-icon-v2-curve-nodes"
+              aria-label=".charcoal-icon-v2-curve-nodes"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-curve-nodes</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-curve-nodes-solid"
-              title=".charcoal-icon-curve-nodes-solid"
-            ></i>
-            <code>.charcoal-icon-curve-nodes-solid</code>
+            <div
+              className="charcoal-icon-v2-curve-nodes-solid"
+              aria-label=".charcoal-icon-v2-curve-nodes-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-curve-nodes-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-curve-solid"
-              title=".charcoal-icon-curve-solid"
-            ></i>
-            <code>.charcoal-icon-curve-solid</code>
+            <div
+              className="charcoal-icon-v2-curve-solid"
+              aria-label=".charcoal-icon-v2-curve-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-curve-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-delete"
-              title=".charcoal-icon-delete"
-            ></i>
-            <code>.charcoal-icon-delete</code>
+            <div
+              className="charcoal-icon-v2-delete"
+              aria-label=".charcoal-icon-v2-delete"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-delete</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-delete-solid"
-              title=".charcoal-icon-delete-solid"
-            ></i>
-            <code>.charcoal-icon-delete-solid</code>
+            <div
+              className="charcoal-icon-v2-delete-solid"
+              aria-label=".charcoal-icon-v2-delete-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-delete-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-device"
-              title=".charcoal-icon-device"
-            ></i>
-            <code>.charcoal-icon-device</code>
+            <div
+              className="charcoal-icon-v2-device"
+              aria-label=".charcoal-icon-v2-device"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-device</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-device-rotate"
-              title=".charcoal-icon-device-rotate"
-            ></i>
-            <code>.charcoal-icon-device-rotate</code>
+            <div
+              className="charcoal-icon-v2-device-rotate"
+              aria-label=".charcoal-icon-v2-device-rotate"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-device-rotate</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-device-rotate-solid"
-              title=".charcoal-icon-device-rotate-solid"
-            ></i>
-            <code>.charcoal-icon-device-rotate-solid</code>
+            <div
+              className="charcoal-icon-v2-device-rotate-solid"
+              aria-label=".charcoal-icon-v2-device-rotate-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-device-rotate-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-device-solid"
-              title=".charcoal-icon-device-solid"
-            ></i>
-            <code>.charcoal-icon-device-solid</code>
+            <div
+              className="charcoal-icon-v2-device-solid"
+              aria-label=".charcoal-icon-v2-device-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-device-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-dial" title=".charcoal-icon-dial"></i>
-            <code>.charcoal-icon-dial</code>
+            <div
+              className="charcoal-icon-v2-dial"
+              aria-label=".charcoal-icon-v2-dial"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dial</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dial-solid"
-              title=".charcoal-icon-dial-solid"
-            ></i>
-            <code>.charcoal-icon-dial-solid</code>
+            <div
+              className="charcoal-icon-v2-dial-solid"
+              aria-label=".charcoal-icon-v2-dial-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dial-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-distortion"
-              title=".charcoal-icon-distortion"
-            ></i>
-            <code>.charcoal-icon-distortion</code>
+            <div
+              className="charcoal-icon-v2-distortion"
+              aria-label=".charcoal-icon-v2-distortion"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-distortion</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-distortion-solid"
-              title=".charcoal-icon-distortion-solid"
-            ></i>
-            <code>.charcoal-icon-distortion-solid</code>
+            <div
+              className="charcoal-icon-v2-distortion-solid"
+              aria-label=".charcoal-icon-v2-distortion-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-distortion-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-horizontal"
-              title=".charcoal-icon-dots-horizontal"
-            ></i>
-            <code>.charcoal-icon-dots-horizontal</code>
+            <div
+              className="charcoal-icon-v2-dots-horizontal"
+              aria-label=".charcoal-icon-v2-dots-horizontal"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-horizontal</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-horizontal-circle"
-              title=".charcoal-icon-dots-horizontal-circle"
-            ></i>
-            <code>.charcoal-icon-dots-horizontal-circle</code>
+            <div
+              className="charcoal-icon-v2-dots-horizontal-circle"
+              aria-label=".charcoal-icon-v2-dots-horizontal-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-horizontal-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-horizontal-circle-solid"
-              title=".charcoal-icon-dots-horizontal-circle-solid"
-            ></i>
-            <code>.charcoal-icon-dots-horizontal-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-dots-horizontal-circle-solid"
+              aria-label=".charcoal-icon-v2-dots-horizontal-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-horizontal-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-horizontal-solid"
-              title=".charcoal-icon-dots-horizontal-solid"
-            ></i>
-            <code>.charcoal-icon-dots-horizontal-solid</code>
+            <div
+              className="charcoal-icon-v2-dots-horizontal-solid"
+              aria-label=".charcoal-icon-v2-dots-horizontal-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-horizontal-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-vertical"
-              title=".charcoal-icon-dots-vertical"
-            ></i>
-            <code>.charcoal-icon-dots-vertical</code>
+            <div
+              className="charcoal-icon-v2-dots-vertical"
+              aria-label=".charcoal-icon-v2-dots-vertical"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-vertical</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-vertical-circle"
-              title=".charcoal-icon-dots-vertical-circle"
-            ></i>
-            <code>.charcoal-icon-dots-vertical-circle</code>
+            <div
+              className="charcoal-icon-v2-dots-vertical-circle"
+              aria-label=".charcoal-icon-v2-dots-vertical-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-vertical-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-vertical-circle-solid"
-              title=".charcoal-icon-dots-vertical-circle-solid"
-            ></i>
-            <code>.charcoal-icon-dots-vertical-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-dots-vertical-circle-solid"
+              aria-label=".charcoal-icon-v2-dots-vertical-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-vertical-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dots-vertical-solid"
-              title=".charcoal-icon-dots-vertical-solid"
-            ></i>
-            <code>.charcoal-icon-dots-vertical-solid</code>
+            <div
+              className="charcoal-icon-v2-dots-vertical-solid"
+              aria-label=".charcoal-icon-v2-dots-vertical-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dots-vertical-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-download"
-              title=".charcoal-icon-download"
-            ></i>
-            <code>.charcoal-icon-download</code>
+            <div
+              className="charcoal-icon-v2-download"
+              aria-label=".charcoal-icon-v2-download"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-download</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-download-ios"
-              title=".charcoal-icon-download-ios"
-            ></i>
-            <code>.charcoal-icon-download-ios</code>
+            <div
+              className="charcoal-icon-v2-download-ios"
+              aria-label=".charcoal-icon-v2-download-ios"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-download-ios</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-download-ios-solid"
-              title=".charcoal-icon-download-ios-solid"
-            ></i>
-            <code>.charcoal-icon-download-ios-solid</code>
+            <div
+              className="charcoal-icon-v2-download-ios-solid"
+              aria-label=".charcoal-icon-v2-download-ios-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-download-ios-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-download-solid"
-              title=".charcoal-icon-download-solid"
-            ></i>
-            <code>.charcoal-icon-download-solid</code>
+            <div
+              className="charcoal-icon-v2-download-solid"
+              aria-label=".charcoal-icon-v2-download-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-download-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dropper"
-              title=".charcoal-icon-dropper"
-            ></i>
-            <code>.charcoal-icon-dropper</code>
+            <div
+              className="charcoal-icon-v2-dropper"
+              aria-label=".charcoal-icon-v2-dropper"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dropper</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-dropper-solid"
-              title=".charcoal-icon-dropper-solid"
-            ></i>
-            <code>.charcoal-icon-dropper-solid</code>
+            <div
+              className="charcoal-icon-v2-dropper-solid"
+              aria-label=".charcoal-icon-v2-dropper-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-dropper-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-duplicate"
-              title=".charcoal-icon-duplicate"
-            ></i>
-            <code>.charcoal-icon-duplicate</code>
+            <div
+              className="charcoal-icon-v2-duplicate"
+              aria-label=".charcoal-icon-v2-duplicate"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-duplicate</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-duplicate-solid"
-              title=".charcoal-icon-duplicate-solid"
-            ></i>
-            <code>.charcoal-icon-duplicate-solid</code>
+            <div
+              className="charcoal-icon-v2-duplicate-solid"
+              aria-label=".charcoal-icon-v2-duplicate-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-duplicate-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-emoji" title=".charcoal-icon-emoji"></i>
-            <code>.charcoal-icon-emoji</code>
+            <div
+              className="charcoal-icon-v2-emoji"
+              aria-label=".charcoal-icon-v2-emoji"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-emoji</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-emoji-solid"
-              title=".charcoal-icon-emoji-solid"
-            ></i>
-            <code>.charcoal-icon-emoji-solid</code>
+            <div
+              className="charcoal-icon-v2-emoji-solid"
+              aria-label=".charcoal-icon-v2-emoji-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-emoji-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eraser"
-              title=".charcoal-icon-eraser"
-            ></i>
-            <code>.charcoal-icon-eraser</code>
+            <div
+              className="charcoal-icon-v2-eraser"
+              aria-label=".charcoal-icon-v2-eraser"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eraser</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eraser-solid"
-              title=".charcoal-icon-eraser-solid"
-            ></i>
-            <code>.charcoal-icon-eraser-solid</code>
+            <div
+              className="charcoal-icon-v2-eraser-solid"
+              aria-label=".charcoal-icon-v2-eraser-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eraser-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-expand"
-              title=".charcoal-icon-expand"
-            ></i>
-            <code>.charcoal-icon-expand</code>
+            <div
+              className="charcoal-icon-v2-expand"
+              aria-label=".charcoal-icon-v2-expand"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-expand</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-expand-solid"
-              title=".charcoal-icon-expand-solid"
-            ></i>
-            <code>.charcoal-icon-expand-solid</code>
+            <div
+              className="charcoal-icon-v2-expand-solid"
+              aria-label=".charcoal-icon-v2-expand-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-expand-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-eye" title=".charcoal-icon-eye"></i>
-            <code>.charcoal-icon-eye</code>
+            <div
+              className="charcoal-icon-v2-eye"
+              aria-label=".charcoal-icon-v2-eye"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eye</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eye-closed"
-              title=".charcoal-icon-eye-closed"
-            ></i>
-            <code>.charcoal-icon-eye-closed</code>
+            <div
+              className="charcoal-icon-v2-eye-closed"
+              aria-label=".charcoal-icon-v2-eye-closed"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eye-closed</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eye-closed-solid"
-              title=".charcoal-icon-eye-closed-solid"
-            ></i>
-            <code>.charcoal-icon-eye-closed-solid</code>
+            <div
+              className="charcoal-icon-v2-eye-closed-solid"
+              aria-label=".charcoal-icon-v2-eye-closed-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eye-closed-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eye-off"
-              title=".charcoal-icon-eye-off"
-            ></i>
-            <code>.charcoal-icon-eye-off</code>
+            <div
+              className="charcoal-icon-v2-eye-off"
+              aria-label=".charcoal-icon-v2-eye-off"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eye-off</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eye-off-solid"
-              title=".charcoal-icon-eye-off-solid"
-            ></i>
-            <code>.charcoal-icon-eye-off-solid</code>
+            <div
+              className="charcoal-icon-v2-eye-off-solid"
+              aria-label=".charcoal-icon-v2-eye-off-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eye-off-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-eye-solid"
-              title=".charcoal-icon-eye-solid"
-            ></i>
-            <code>.charcoal-icon-eye-solid</code>
+            <div
+              className="charcoal-icon-v2-eye-solid"
+              aria-label=".charcoal-icon-v2-eye-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-eye-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-face" title=".charcoal-icon-face"></i>
-            <code>.charcoal-icon-face</code>
+            <div
+              className="charcoal-icon-v2-face"
+              aria-label=".charcoal-icon-v2-face"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-face</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-face-solid"
-              title=".charcoal-icon-face-solid"
-            ></i>
-            <code>.charcoal-icon-face-solid</code>
+            <div
+              className="charcoal-icon-v2-face-solid"
+              aria-label=".charcoal-icon-v2-face-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-face-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-feed" title=".charcoal-icon-feed"></i>
-            <code>.charcoal-icon-feed</code>
+            <div
+              className="charcoal-icon-v2-feed"
+              aria-label=".charcoal-icon-v2-feed"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-feed</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-feed-solid"
-              title=".charcoal-icon-feed-solid"
-            ></i>
-            <code>.charcoal-icon-feed-solid</code>
+            <div
+              className="charcoal-icon-v2-feed-solid"
+              aria-label=".charcoal-icon-v2-feed-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-feed-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-file" title=".charcoal-icon-file"></i>
-            <code>.charcoal-icon-file</code>
+            <div
+              className="charcoal-icon-v2-file"
+              aria-label=".charcoal-icon-v2-file"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-add"
-              title=".charcoal-icon-file-add"
-            ></i>
-            <code>.charcoal-icon-file-add</code>
+            <div
+              className="charcoal-icon-v2-file-add"
+              aria-label=".charcoal-icon-v2-file-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-add-solid"
-              title=".charcoal-icon-file-add-solid"
-            ></i>
-            <code>.charcoal-icon-file-add-solid</code>
+            <div
+              className="charcoal-icon-v2-file-add-solid"
+              aria-label=".charcoal-icon-v2-file-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-export"
-              title=".charcoal-icon-file-export"
-            ></i>
-            <code>.charcoal-icon-file-export</code>
+            <div
+              className="charcoal-icon-v2-file-export"
+              aria-label=".charcoal-icon-v2-file-export"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-export</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-export-solid"
-              title=".charcoal-icon-file-export-solid"
-            ></i>
-            <code>.charcoal-icon-file-export-solid</code>
+            <div
+              className="charcoal-icon-v2-file-export-solid"
+              aria-label=".charcoal-icon-v2-file-export-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-export-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-png"
-              title=".charcoal-icon-file-png"
-            ></i>
-            <code>.charcoal-icon-file-png</code>
+            <div
+              className="charcoal-icon-v2-file-png"
+              aria-label=".charcoal-icon-v2-file-png"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-png</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-png-solid"
-              title=".charcoal-icon-file-png-solid"
-            ></i>
-            <code>.charcoal-icon-file-png-solid</code>
+            <div
+              className="charcoal-icon-v2-file-png-solid"
+              aria-label=".charcoal-icon-v2-file-png-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-png-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-psd"
-              title=".charcoal-icon-file-psd"
-            ></i>
-            <code>.charcoal-icon-file-psd</code>
+            <div
+              className="charcoal-icon-v2-file-psd"
+              aria-label=".charcoal-icon-v2-file-psd"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-psd</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-psd-solid"
-              title=".charcoal-icon-file-psd-solid"
-            ></i>
-            <code>.charcoal-icon-file-psd-solid</code>
+            <div
+              className="charcoal-icon-v2-file-psd-solid"
+              aria-label=".charcoal-icon-v2-file-psd-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-psd-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-restore"
-              title=".charcoal-icon-file-restore"
-            ></i>
-            <code>.charcoal-icon-file-restore</code>
+            <div
+              className="charcoal-icon-v2-file-restore"
+              aria-label=".charcoal-icon-v2-file-restore"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-restore</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-restore-solid"
-              title=".charcoal-icon-file-restore-solid"
-            ></i>
-            <code>.charcoal-icon-file-restore-solid</code>
+            <div
+              className="charcoal-icon-v2-file-restore-solid"
+              aria-label=".charcoal-icon-v2-file-restore-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-restore-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-file-solid"
-              title=".charcoal-icon-file-solid"
-            ></i>
-            <code>.charcoal-icon-file-solid</code>
+            <div
+              className="charcoal-icon-v2-file-solid"
+              aria-label=".charcoal-icon-v2-file-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-file-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-fill" title=".charcoal-icon-fill"></i>
-            <code>.charcoal-icon-fill</code>
+            <div
+              className="charcoal-icon-v2-fill"
+              aria-label=".charcoal-icon-v2-fill"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-fill</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-fill-solid"
-              title=".charcoal-icon-fill-solid"
-            ></i>
-            <code>.charcoal-icon-fill-solid</code>
+            <div
+              className="charcoal-icon-v2-fill-solid"
+              aria-label=".charcoal-icon-v2-fill-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-fill-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-fill-square"
-              title=".charcoal-icon-fill-square"
-            ></i>
-            <code>.charcoal-icon-fill-square</code>
+            <div
+              className="charcoal-icon-v2-fill-square"
+              aria-label=".charcoal-icon-v2-fill-square"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-fill-square</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-fill-square-solid"
-              title=".charcoal-icon-fill-square-solid"
-            ></i>
-            <code>.charcoal-icon-fill-square-solid</code>
+            <div
+              className="charcoal-icon-v2-fill-square-solid"
+              aria-label=".charcoal-icon-v2-fill-square-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-fill-square-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-flame" title=".charcoal-icon-flame"></i>
-            <code>.charcoal-icon-flame</code>
+            <div
+              className="charcoal-icon-v2-flame"
+              aria-label=".charcoal-icon-v2-flame"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-flame</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-flame-solid"
-              title=".charcoal-icon-flame-solid"
-            ></i>
-            <code>.charcoal-icon-flame-solid</code>
+            <div
+              className="charcoal-icon-v2-flame-solid"
+              aria-label=".charcoal-icon-v2-flame-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-flame-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-flip-horizontal"
-              title=".charcoal-icon-flip-horizontal"
-            ></i>
-            <code>.charcoal-icon-flip-horizontal</code>
+            <div
+              className="charcoal-icon-v2-flip-horizontal"
+              aria-label=".charcoal-icon-v2-flip-horizontal"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-flip-horizontal</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-flip-horizontal-solid"
-              title=".charcoal-icon-flip-horizontal-solid"
-            ></i>
-            <code>.charcoal-icon-flip-horizontal-solid</code>
+            <div
+              className="charcoal-icon-v2-flip-horizontal-solid"
+              aria-label=".charcoal-icon-v2-flip-horizontal-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-flip-horizontal-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-flip-vertical"
-              title=".charcoal-icon-flip-vertical"
-            ></i>
-            <code>.charcoal-icon-flip-vertical</code>
+            <div
+              className="charcoal-icon-v2-flip-vertical"
+              aria-label=".charcoal-icon-v2-flip-vertical"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-flip-vertical</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-flip-vertical-solid"
-              title=".charcoal-icon-flip-vertical-solid"
-            ></i>
-            <code>.charcoal-icon-flip-vertical-solid</code>
+            <div
+              className="charcoal-icon-v2-flip-vertical-solid"
+              aria-label=".charcoal-icon-v2-flip-vertical-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-flip-vertical-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-folder"
-              title=".charcoal-icon-folder"
-            ></i>
-            <code>.charcoal-icon-folder</code>
+            <div
+              className="charcoal-icon-v2-folder"
+              aria-label=".charcoal-icon-v2-folder"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-folder</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-folder-add"
-              title=".charcoal-icon-folder-add"
-            ></i>
-            <code>.charcoal-icon-folder-add</code>
+            <div
+              className="charcoal-icon-v2-folder-add"
+              aria-label=".charcoal-icon-v2-folder-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-folder-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-folder-add-solid"
-              title=".charcoal-icon-folder-add-solid"
-            ></i>
-            <code>.charcoal-icon-folder-add-solid</code>
+            <div
+              className="charcoal-icon-v2-folder-add-solid"
+              aria-label=".charcoal-icon-v2-folder-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-folder-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-folder-open"
-              title=".charcoal-icon-folder-open"
-            ></i>
-            <code>.charcoal-icon-folder-open</code>
+            <div
+              className="charcoal-icon-v2-folder-open"
+              aria-label=".charcoal-icon-v2-folder-open"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-folder-open</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-folder-open-solid"
-              title=".charcoal-icon-folder-open-solid"
-            ></i>
-            <code>.charcoal-icon-folder-open-solid</code>
+            <div
+              className="charcoal-icon-v2-folder-open-solid"
+              aria-label=".charcoal-icon-v2-folder-open-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-folder-open-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-folder-solid"
-              title=".charcoal-icon-folder-solid"
-            ></i>
-            <code>.charcoal-icon-folder-solid</code>
+            <div
+              className="charcoal-icon-v2-folder-solid"
+              aria-label=".charcoal-icon-v2-folder-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-folder-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-font-size"
-              title=".charcoal-icon-font-size"
-            ></i>
-            <code>.charcoal-icon-font-size</code>
+            <div
+              className="charcoal-icon-v2-font-size"
+              aria-label=".charcoal-icon-v2-font-size"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-font-size</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-font-size-solid"
-              title=".charcoal-icon-font-size-solid"
-            ></i>
-            <code>.charcoal-icon-font-size-solid</code>
+            <div
+              className="charcoal-icon-v2-font-size-solid"
+              aria-label=".charcoal-icon-v2-font-size-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-font-size-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-fov" title=".charcoal-icon-fov"></i>
-            <code>.charcoal-icon-fov</code>
+            <div
+              className="charcoal-icon-v2-fov"
+              aria-label=".charcoal-icon-v2-fov"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-fov</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-fov-solid"
-              title=".charcoal-icon-fov-solid"
-            ></i>
-            <code>.charcoal-icon-fov-solid</code>
+            <div
+              className="charcoal-icon-v2-fov-solid"
+              aria-label=".charcoal-icon-v2-fov-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-fov-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-frame" title=".charcoal-icon-frame"></i>
-            <code>.charcoal-icon-frame</code>
+            <div
+              className="charcoal-icon-v2-frame"
+              aria-label=".charcoal-icon-v2-frame"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-frame</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-frame-solid"
-              title=".charcoal-icon-frame-solid"
-            ></i>
-            <code>.charcoal-icon-frame-solid</code>
+            <div
+              className="charcoal-icon-v2-frame-solid"
+              aria-label=".charcoal-icon-v2-frame-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-frame-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-funnel"
-              title=".charcoal-icon-funnel"
-            ></i>
-            <code>.charcoal-icon-funnel</code>
+            <div
+              className="charcoal-icon-v2-funnel"
+              aria-label=".charcoal-icon-v2-funnel"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-funnel</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-funnel-solid"
-              title=".charcoal-icon-funnel-solid"
-            ></i>
-            <code>.charcoal-icon-funnel-solid</code>
+            <div
+              className="charcoal-icon-v2-funnel-solid"
+              aria-label=".charcoal-icon-v2-funnel-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-funnel-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-gift" title=".charcoal-icon-gift"></i>
-            <code>.charcoal-icon-gift</code>
+            <div
+              className="charcoal-icon-v2-gift"
+              aria-label=".charcoal-icon-v2-gift"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-gift</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-gift-solid"
-              title=".charcoal-icon-gift-solid"
-            ></i>
-            <code>.charcoal-icon-gift-solid</code>
+            <div
+              className="charcoal-icon-v2-gift-solid"
+              aria-label=".charcoal-icon-v2-gift-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-gift-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-glow" title=".charcoal-icon-glow"></i>
-            <code>.charcoal-icon-glow</code>
+            <div
+              className="charcoal-icon-v2-glow"
+              aria-label=".charcoal-icon-v2-glow"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-glow</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-glow-solid"
-              title=".charcoal-icon-glow-solid"
-            ></i>
-            <code>.charcoal-icon-glow-solid</code>
+            <div
+              className="charcoal-icon-v2-glow-solid"
+              aria-label=".charcoal-icon-v2-glow-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-glow-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-gradient"
-              title=".charcoal-icon-gradient"
-            ></i>
-            <code>.charcoal-icon-gradient</code>
+            <div
+              className="charcoal-icon-v2-gradient"
+              aria-label=".charcoal-icon-v2-gradient"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-gradient</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-gradient-solid"
-              title=".charcoal-icon-gradient-solid"
-            ></i>
-            <code>.charcoal-icon-gradient-solid</code>
+            <div
+              className="charcoal-icon-v2-gradient-solid"
+              aria-label=".charcoal-icon-v2-gradient-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-gradient-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-gridview"
-              title=".charcoal-icon-gridview"
-            ></i>
-            <code>.charcoal-icon-gridview</code>
+            <div
+              className="charcoal-icon-v2-gridview"
+              aria-label=".charcoal-icon-v2-gridview"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-gridview</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-gridview-solid"
-              title=".charcoal-icon-gridview-solid"
-            ></i>
-            <code>.charcoal-icon-gridview-solid</code>
+            <div
+              className="charcoal-icon-v2-gridview-solid"
+              aria-label=".charcoal-icon-v2-gridview-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-gridview-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-group" title=".charcoal-icon-group"></i>
-            <code>.charcoal-icon-group</code>
+            <div
+              className="charcoal-icon-v2-group"
+              aria-label=".charcoal-icon-v2-group"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-group</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-group-solid"
-              title=".charcoal-icon-group-solid"
-            ></i>
-            <code>.charcoal-icon-group-solid</code>
+            <div
+              className="charcoal-icon-v2-group-solid"
+              aria-label=".charcoal-icon-v2-group-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-group-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-hair" title=".charcoal-icon-hair"></i>
-            <code>.charcoal-icon-hair</code>
+            <div
+              className="charcoal-icon-v2-hair"
+              aria-label=".charcoal-icon-v2-hair"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-hair</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-hair-solid"
-              title=".charcoal-icon-hair-solid"
-            ></i>
-            <code>.charcoal-icon-hair-solid</code>
+            <div
+              className="charcoal-icon-v2-hair-solid"
+              aria-label=".charcoal-icon-v2-hair-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-hair-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-hash-tag"
-              title=".charcoal-icon-hash-tag"
-            ></i>
-            <code>.charcoal-icon-hash-tag</code>
+            <div
+              className="charcoal-icon-v2-hash-tag"
+              aria-label=".charcoal-icon-v2-hash-tag"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-hash-tag</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-hash-tag-solid"
-              title=".charcoal-icon-hash-tag-solid"
-            ></i>
-            <code>.charcoal-icon-hash-tag-solid</code>
+            <div
+              className="charcoal-icon-v2-hash-tag-solid"
+              aria-label=".charcoal-icon-v2-hash-tag-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-hash-tag-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-heart" title=".charcoal-icon-heart"></i>
-            <code>.charcoal-icon-heart</code>
+            <div
+              className="charcoal-icon-v2-heart"
+              aria-label=".charcoal-icon-v2-heart"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-heart</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-heart-solid"
-              title=".charcoal-icon-heart-solid"
-            ></i>
-            <code>.charcoal-icon-heart-solid</code>
+            <div
+              className="charcoal-icon-v2-heart-solid"
+              aria-label=".charcoal-icon-v2-heart-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-heart-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-history"
-              title=".charcoal-icon-history"
-            ></i>
-            <code>.charcoal-icon-history</code>
+            <div
+              className="charcoal-icon-v2-history"
+              aria-label=".charcoal-icon-v2-history"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-history</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-history-solid"
-              title=".charcoal-icon-history-solid"
-            ></i>
-            <code>.charcoal-icon-history-solid</code>
+            <div
+              className="charcoal-icon-v2-history-solid"
+              aria-label=".charcoal-icon-v2-history-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-history-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-home" title=".charcoal-icon-home"></i>
-            <code>.charcoal-icon-home</code>
+            <div
+              className="charcoal-icon-v2-home"
+              aria-label=".charcoal-icon-v2-home"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-home</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-home-solid"
-              title=".charcoal-icon-home-solid"
-            ></i>
-            <code>.charcoal-icon-home-solid</code>
+            <div
+              className="charcoal-icon-v2-home-solid"
+              aria-label=".charcoal-icon-v2-home-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-home-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-image" title=".charcoal-icon-image"></i>
-            <code>.charcoal-icon-image</code>
+            <div
+              className="charcoal-icon-v2-image"
+              aria-label=".charcoal-icon-v2-image"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-add"
-              title=".charcoal-icon-image-add"
-            ></i>
-            <code>.charcoal-icon-image-add</code>
+            <div
+              className="charcoal-icon-v2-image-add"
+              aria-label=".charcoal-icon-v2-image-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-add-solid"
-              title=".charcoal-icon-image-add-solid"
-            ></i>
-            <code>.charcoal-icon-image-add-solid</code>
+            <div
+              className="charcoal-icon-v2-image-add-solid"
+              aria-label=".charcoal-icon-v2-image-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-contain"
-              title=".charcoal-icon-image-contain"
-            ></i>
-            <code>.charcoal-icon-image-contain</code>
+            <div
+              className="charcoal-icon-v2-image-contain"
+              aria-label=".charcoal-icon-v2-image-contain"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-contain</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-contain-solid"
-              title=".charcoal-icon-image-contain-solid"
-            ></i>
-            <code>.charcoal-icon-image-contain-solid</code>
+            <div
+              className="charcoal-icon-v2-image-contain-solid"
+              aria-label=".charcoal-icon-v2-image-contain-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-contain-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-cover"
-              title=".charcoal-icon-image-cover"
-            ></i>
-            <code>.charcoal-icon-image-cover</code>
+            <div
+              className="charcoal-icon-v2-image-cover"
+              aria-label=".charcoal-icon-v2-image-cover"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-cover</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-cover-solid"
-              title=".charcoal-icon-image-cover-solid"
-            ></i>
-            <code>.charcoal-icon-image-cover-solid</code>
+            <div
+              className="charcoal-icon-v2-image-cover-solid"
+              aria-label=".charcoal-icon-v2-image-cover-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-cover-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-effect"
-              title=".charcoal-icon-image-effect"
-            ></i>
-            <code>.charcoal-icon-image-effect</code>
+            <div
+              className="charcoal-icon-v2-image-effect"
+              aria-label=".charcoal-icon-v2-image-effect"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-effect</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-effect-solid"
-              title=".charcoal-icon-image-effect-solid"
-            ></i>
-            <code>.charcoal-icon-image-effect-solid</code>
+            <div
+              className="charcoal-icon-v2-image-effect-solid"
+              aria-label=".charcoal-icon-v2-image-effect-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-effect-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-off"
-              title=".charcoal-icon-image-off"
-            ></i>
-            <code>.charcoal-icon-image-off</code>
+            <div
+              className="charcoal-icon-v2-image-off"
+              aria-label=".charcoal-icon-v2-image-off"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-off</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-off-solid"
-              title=".charcoal-icon-image-off-solid"
-            ></i>
-            <code>.charcoal-icon-image-off-solid</code>
+            <div
+              className="charcoal-icon-v2-image-off-solid"
+              aria-label=".charcoal-icon-v2-image-off-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-off-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-replace"
-              title=".charcoal-icon-image-replace"
-            ></i>
-            <code>.charcoal-icon-image-replace</code>
+            <div
+              className="charcoal-icon-v2-image-replace"
+              aria-label=".charcoal-icon-v2-image-replace"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-replace</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-replace-solid"
-              title=".charcoal-icon-image-replace-solid"
-            ></i>
-            <code>.charcoal-icon-image-replace-solid</code>
+            <div
+              className="charcoal-icon-v2-image-replace-solid"
+              aria-label=".charcoal-icon-v2-image-replace-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-replace-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-image-solid"
-              title=".charcoal-icon-image-solid"
-            ></i>
-            <code>.charcoal-icon-image-solid</code>
+            <div
+              className="charcoal-icon-v2-image-solid"
+              aria-label=".charcoal-icon-v2-image-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-image-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-images"
-              title=".charcoal-icon-images"
-            ></i>
-            <code>.charcoal-icon-images</code>
+            <div
+              className="charcoal-icon-v2-images"
+              aria-label=".charcoal-icon-v2-images"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-images</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-images-solid"
-              title=".charcoal-icon-images-solid"
-            ></i>
-            <code>.charcoal-icon-images-solid</code>
+            <div
+              className="charcoal-icon-v2-images-solid"
+              aria-label=".charcoal-icon-v2-images-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-images-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-info-circle"
-              title=".charcoal-icon-info-circle"
-            ></i>
-            <code>.charcoal-icon-info-circle</code>
+            <div
+              className="charcoal-icon-v2-info-circle"
+              aria-label=".charcoal-icon-v2-info-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-info-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-info-circle-solid"
-              title=".charcoal-icon-info-circle-solid"
-            ></i>
-            <code>.charcoal-icon-info-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-info-circle-solid"
+              aria-label=".charcoal-icon-v2-info-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-info-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-invert-selection"
-              title=".charcoal-icon-invert-selection"
-            ></i>
-            <code>.charcoal-icon-invert-selection</code>
+            <div
+              className="charcoal-icon-v2-invert-selection"
+              aria-label=".charcoal-icon-v2-invert-selection"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-invert-selection</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-invert-selection-solid"
-              title=".charcoal-icon-invert-selection-solid"
-            ></i>
-            <code>.charcoal-icon-invert-selection-solid</code>
+            <div
+              className="charcoal-icon-v2-invert-selection-solid"
+              aria-label=".charcoal-icon-v2-invert-selection-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-invert-selection-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-invoice"
-              title=".charcoal-icon-invoice"
-            ></i>
-            <code>.charcoal-icon-invoice</code>
+            <div
+              className="charcoal-icon-v2-invoice"
+              aria-label=".charcoal-icon-v2-invoice"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-invoice</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-invoice-solid"
-              title=".charcoal-icon-invoice-solid"
-            ></i>
-            <code>.charcoal-icon-invoice-solid</code>
+            <div
+              className="charcoal-icon-v2-invoice-solid"
+              aria-label=".charcoal-icon-v2-invoice-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-invoice-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-italic"
-              title=".charcoal-icon-italic"
-            ></i>
-            <code>.charcoal-icon-italic</code>
+            <div
+              className="charcoal-icon-v2-italic"
+              aria-label=".charcoal-icon-v2-italic"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-italic</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-italic-solid"
-              title=".charcoal-icon-italic-solid"
-            ></i>
-            <code>.charcoal-icon-italic-solid</code>
+            <div
+              className="charcoal-icon-v2-italic-solid"
+              aria-label=".charcoal-icon-v2-italic-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-italic-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-keyboard"
-              title=".charcoal-icon-keyboard"
-            ></i>
-            <code>.charcoal-icon-keyboard</code>
+            <div
+              className="charcoal-icon-v2-keyboard"
+              aria-label=".charcoal-icon-v2-keyboard"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-keyboard</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-keyboard-solid"
-              title=".charcoal-icon-keyboard-solid"
-            ></i>
-            <code>.charcoal-icon-keyboard-solid</code>
+            <div
+              className="charcoal-icon-v2-keyboard-solid"
+              aria-label=".charcoal-icon-v2-keyboard-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-keyboard-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-lasso" title=".charcoal-icon-lasso"></i>
-            <code>.charcoal-icon-lasso</code>
+            <div
+              className="charcoal-icon-v2-lasso"
+              aria-label=".charcoal-icon-v2-lasso"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-lasso</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-lasso-fill"
-              title=".charcoal-icon-lasso-fill"
-            ></i>
-            <code>.charcoal-icon-lasso-fill</code>
+            <div
+              className="charcoal-icon-v2-lasso-fill"
+              aria-label=".charcoal-icon-v2-lasso-fill"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-lasso-fill</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-lasso-fill-solid"
-              title=".charcoal-icon-lasso-fill-solid"
-            ></i>
-            <code>.charcoal-icon-lasso-fill-solid</code>
+            <div
+              className="charcoal-icon-v2-lasso-fill-solid"
+              aria-label=".charcoal-icon-v2-lasso-fill-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-lasso-fill-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-lasso-solid"
-              title=".charcoal-icon-lasso-solid"
-            ></i>
-            <code>.charcoal-icon-lasso-solid</code>
+            <div
+              className="charcoal-icon-v2-lasso-solid"
+              aria-label=".charcoal-icon-v2-lasso-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-lasso-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-layer" title=".charcoal-icon-layer"></i>
-            <code>.charcoal-icon-layer</code>
+            <div
+              className="charcoal-icon-v2-layer"
+              aria-label=".charcoal-icon-v2-layer"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-add"
-              title=".charcoal-icon-layer-add"
-            ></i>
-            <code>.charcoal-icon-layer-add</code>
+            <div
+              className="charcoal-icon-v2-layer-add"
+              aria-label=".charcoal-icon-v2-layer-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-add-solid"
-              title=".charcoal-icon-layer-add-solid"
-            ></i>
-            <code>.charcoal-icon-layer-add-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-add-solid"
+              aria-label=".charcoal-icon-v2-layer-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-image-material"
-              title=".charcoal-icon-layer-image-material"
-            ></i>
-            <code>.charcoal-icon-layer-image-material</code>
+            <div
+              className="charcoal-icon-v2-layer-image-material"
+              aria-label=".charcoal-icon-v2-layer-image-material"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-image-material</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-image-material-solid"
-              title=".charcoal-icon-layer-image-material-solid"
-            ></i>
-            <code>.charcoal-icon-layer-image-material-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-image-material-solid"
+              aria-label=".charcoal-icon-v2-layer-image-material-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-image-material-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-mask"
-              title=".charcoal-icon-layer-mask"
-            ></i>
-            <code>.charcoal-icon-layer-mask</code>
+            <div
+              className="charcoal-icon-v2-layer-mask"
+              aria-label=".charcoal-icon-v2-layer-mask"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-mask</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-mask-solid"
-              title=".charcoal-icon-layer-mask-solid"
-            ></i>
-            <code>.charcoal-icon-layer-mask-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-mask-solid"
+              aria-label=".charcoal-icon-v2-layer-mask-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-mask-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-merge"
-              title=".charcoal-icon-layer-merge"
-            ></i>
-            <code>.charcoal-icon-layer-merge</code>
+            <div
+              className="charcoal-icon-v2-layer-merge"
+              aria-label=".charcoal-icon-v2-layer-merge"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-merge</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-merge-solid"
-              title=".charcoal-icon-layer-merge-solid"
-            ></i>
-            <code>.charcoal-icon-layer-merge-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-merge-solid"
+              aria-label=".charcoal-icon-v2-layer-merge-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-merge-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-opacity"
-              title=".charcoal-icon-layer-opacity"
-            ></i>
-            <code>.charcoal-icon-layer-opacity</code>
+            <div
+              className="charcoal-icon-v2-layer-opacity"
+              aria-label=".charcoal-icon-v2-layer-opacity"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-opacity</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-opacity-solid"
-              title=".charcoal-icon-layer-opacity-solid"
-            ></i>
-            <code>.charcoal-icon-layer-opacity-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-opacity-solid"
+              aria-label=".charcoal-icon-v2-layer-opacity-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-opacity-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-set-reference"
-              title=".charcoal-icon-layer-set-reference"
-            ></i>
-            <code>.charcoal-icon-layer-set-reference</code>
+            <div
+              className="charcoal-icon-v2-layer-set-reference"
+              aria-label=".charcoal-icon-v2-layer-set-reference"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-set-reference</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-set-reference-solid"
-              title=".charcoal-icon-layer-set-reference-solid"
-            ></i>
-            <code>.charcoal-icon-layer-set-reference-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-set-reference-solid"
+              aria-label=".charcoal-icon-v2-layer-set-reference-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-set-reference-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-setting"
-              title=".charcoal-icon-layer-setting"
-            ></i>
-            <code>.charcoal-icon-layer-setting</code>
+            <div
+              className="charcoal-icon-v2-layer-setting"
+              aria-label=".charcoal-icon-v2-layer-setting"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-setting</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-setting-solid"
-              title=".charcoal-icon-layer-setting-solid"
-            ></i>
-            <code>.charcoal-icon-layer-setting-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-setting-solid"
+              aria-label=".charcoal-icon-v2-layer-setting-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-setting-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-solid"
-              title=".charcoal-icon-layer-solid"
-            ></i>
-            <code>.charcoal-icon-layer-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-solid"
+              aria-label=".charcoal-icon-v2-layer-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-text"
-              title=".charcoal-icon-layer-text"
-            ></i>
-            <code>.charcoal-icon-layer-text</code>
+            <div
+              className="charcoal-icon-v2-layer-text"
+              aria-label=".charcoal-icon-v2-layer-text"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-text</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-text-solid"
-              title=".charcoal-icon-layer-text-solid"
-            ></i>
-            <code>.charcoal-icon-layer-text-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-text-solid"
+              aria-label=".charcoal-icon-v2-layer-text-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-text-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-vector"
-              title=".charcoal-icon-layer-vector"
-            ></i>
-            <code>.charcoal-icon-layer-vector</code>
+            <div
+              className="charcoal-icon-v2-layer-vector"
+              aria-label=".charcoal-icon-v2-layer-vector"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-vector</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layer-vector-solid"
-              title=".charcoal-icon-layer-vector-solid"
-            ></i>
-            <code>.charcoal-icon-layer-vector-solid</code>
+            <div
+              className="charcoal-icon-v2-layer-vector-solid"
+              aria-label=".charcoal-icon-v2-layer-vector-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layer-vector-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layout"
-              title=".charcoal-icon-layout"
-            ></i>
-            <code>.charcoal-icon-layout</code>
+            <div
+              className="charcoal-icon-v2-layout"
+              aria-label=".charcoal-icon-v2-layout"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layout</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-layout-solid"
-              title=".charcoal-icon-layout-solid"
-            ></i>
-            <code>.charcoal-icon-layout-solid</code>
+            <div
+              className="charcoal-icon-v2-layout-solid"
+              aria-label=".charcoal-icon-v2-layout-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-layout-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-letter-spacing"
-              title=".charcoal-icon-letter-spacing"
-            ></i>
-            <code>.charcoal-icon-letter-spacing</code>
+            <div
+              className="charcoal-icon-v2-letter-spacing"
+              aria-label=".charcoal-icon-v2-letter-spacing"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-letter-spacing</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-letter-spacing-solid"
-              title=".charcoal-icon-letter-spacing-solid"
-            ></i>
-            <code>.charcoal-icon-letter-spacing-solid</code>
+            <div
+              className="charcoal-icon-v2-letter-spacing-solid"
+              aria-label=".charcoal-icon-v2-letter-spacing-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-letter-spacing-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-line" title=".charcoal-icon-line"></i>
-            <code>.charcoal-icon-line</code>
+            <div
+              className="charcoal-icon-v2-line"
+              aria-label=".charcoal-icon-v2-line"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-line</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-line-nodes"
-              title=".charcoal-icon-line-nodes"
-            ></i>
-            <code>.charcoal-icon-line-nodes</code>
+            <div
+              className="charcoal-icon-v2-line-nodes"
+              aria-label=".charcoal-icon-v2-line-nodes"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-line-nodes</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-line-nodes-solid"
-              title=".charcoal-icon-line-nodes-solid"
-            ></i>
-            <code>.charcoal-icon-line-nodes-solid</code>
+            <div
+              className="charcoal-icon-v2-line-nodes-solid"
+              aria-label=".charcoal-icon-v2-line-nodes-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-line-nodes-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-line-solid"
-              title=".charcoal-icon-line-solid"
-            ></i>
-            <code>.charcoal-icon-line-solid</code>
+            <div
+              className="charcoal-icon-v2-line-solid"
+              aria-label=".charcoal-icon-v2-line-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-line-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-line-spacing"
-              title=".charcoal-icon-line-spacing"
-            ></i>
-            <code>.charcoal-icon-line-spacing</code>
+            <div
+              className="charcoal-icon-v2-line-spacing"
+              aria-label=".charcoal-icon-v2-line-spacing"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-line-spacing</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-line-spacing-solid"
-              title=".charcoal-icon-line-spacing-solid"
-            ></i>
-            <code>.charcoal-icon-line-spacing-solid</code>
+            <div
+              className="charcoal-icon-v2-line-spacing-solid"
+              aria-label=".charcoal-icon-v2-line-spacing-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-line-spacing-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-link" title=".charcoal-icon-link"></i>
-            <code>.charcoal-icon-link</code>
+            <div
+              className="charcoal-icon-v2-link"
+              aria-label=".charcoal-icon-v2-link"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-link</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-link-clear"
-              title=".charcoal-icon-link-clear"
-            ></i>
-            <code>.charcoal-icon-link-clear</code>
+            <div
+              className="charcoal-icon-v2-link-clear"
+              aria-label=".charcoal-icon-v2-link-clear"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-link-clear</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-link-clear-solid"
-              title=".charcoal-icon-link-clear-solid"
-            ></i>
-            <code>.charcoal-icon-link-clear-solid</code>
+            <div
+              className="charcoal-icon-v2-link-clear-solid"
+              aria-label=".charcoal-icon-v2-link-clear-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-link-clear-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-link-solid"
-              title=".charcoal-icon-link-solid"
-            ></i>
-            <code>.charcoal-icon-link-solid</code>
+            <div
+              className="charcoal-icon-v2-link-solid"
+              aria-label=".charcoal-icon-v2-link-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-link-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-list" title=".charcoal-icon-list"></i>
-            <code>.charcoal-icon-list</code>
+            <div
+              className="charcoal-icon-v2-list"
+              aria-label=".charcoal-icon-v2-list"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-list</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-list-solid"
-              title=".charcoal-icon-list-solid"
-            ></i>
-            <code>.charcoal-icon-list-solid</code>
+            <div
+              className="charcoal-icon-v2-list-solid"
+              aria-label=".charcoal-icon-v2-list-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-list-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-location"
-              title=".charcoal-icon-location"
-            ></i>
-            <code>.charcoal-icon-location</code>
+            <div
+              className="charcoal-icon-v2-location"
+              aria-label=".charcoal-icon-v2-location"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-location</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-location-solid"
-              title=".charcoal-icon-location-solid"
-            ></i>
-            <code>.charcoal-icon-location-solid</code>
+            <div
+              className="charcoal-icon-v2-location-solid"
+              aria-label=".charcoal-icon-v2-location-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-location-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-lock" title=".charcoal-icon-lock"></i>
-            <code>.charcoal-icon-lock</code>
+            <div
+              className="charcoal-icon-v2-lock"
+              aria-label=".charcoal-icon-v2-lock"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-lock</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-lock-solid"
-              title=".charcoal-icon-lock-solid"
-            ></i>
-            <code>.charcoal-icon-lock-solid</code>
+            <div
+              className="charcoal-icon-v2-lock-solid"
+              aria-label=".charcoal-icon-v2-lock-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-lock-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-logout"
-              title=".charcoal-icon-logout"
-            ></i>
-            <code>.charcoal-icon-logout</code>
+            <div
+              className="charcoal-icon-v2-logout"
+              aria-label=".charcoal-icon-v2-logout"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-logout</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-logout-solid"
-              title=".charcoal-icon-logout-solid"
-            ></i>
-            <code>.charcoal-icon-logout-solid</code>
+            <div
+              className="charcoal-icon-v2-logout-solid"
+              aria-label=".charcoal-icon-v2-logout-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-logout-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-manga" title=".charcoal-icon-manga"></i>
-            <code>.charcoal-icon-manga</code>
+            <div
+              className="charcoal-icon-v2-manga"
+              aria-label=".charcoal-icon-v2-manga"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-manga</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-manga-solid"
-              title=".charcoal-icon-manga-solid"
-            ></i>
-            <code>.charcoal-icon-manga-solid</code>
+            <div
+              className="charcoal-icon-v2-manga-solid"
+              aria-label=".charcoal-icon-v2-manga-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-manga-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-mesh" title=".charcoal-icon-mesh"></i>
-            <code>.charcoal-icon-mesh</code>
+            <div
+              className="charcoal-icon-v2-mesh"
+              aria-label=".charcoal-icon-v2-mesh"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-mesh</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-mesh-solid"
-              title=".charcoal-icon-mesh-solid"
-            ></i>
-            <code>.charcoal-icon-mesh-solid</code>
+            <div
+              className="charcoal-icon-v2-mesh-solid"
+              aria-label=".charcoal-icon-v2-mesh-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-mesh-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-message"
-              title=".charcoal-icon-message"
-            ></i>
-            <code>.charcoal-icon-message</code>
+            <div
+              className="charcoal-icon-v2-message"
+              aria-label=".charcoal-icon-v2-message"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-message</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-message-solid"
-              title=".charcoal-icon-message-solid"
-            ></i>
-            <code>.charcoal-icon-message-solid</code>
+            <div
+              className="charcoal-icon-v2-message-solid"
+              aria-label=".charcoal-icon-v2-message-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-message-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-microphone"
-              title=".charcoal-icon-microphone"
-            ></i>
-            <code>.charcoal-icon-microphone</code>
+            <div
+              className="charcoal-icon-v2-microphone"
+              aria-label=".charcoal-icon-v2-microphone"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-microphone</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-microphone-solid"
-              title=".charcoal-icon-microphone-solid"
-            ></i>
-            <code>.charcoal-icon-microphone-solid</code>
+            <div
+              className="charcoal-icon-v2-microphone-solid"
+              aria-label=".charcoal-icon-v2-microphone-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-microphone-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-move" title=".charcoal-icon-move"></i>
-            <code>.charcoal-icon-move</code>
+            <div
+              className="charcoal-icon-v2-move"
+              aria-label=".charcoal-icon-v2-move"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-move</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-move-solid"
-              title=".charcoal-icon-move-solid"
-            ></i>
-            <code>.charcoal-icon-move-solid</code>
+            <div
+              className="charcoal-icon-v2-move-solid"
+              aria-label=".charcoal-icon-v2-move-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-move-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-navigator"
-              title=".charcoal-icon-navigator"
-            ></i>
-            <code>.charcoal-icon-navigator</code>
+            <div
+              className="charcoal-icon-v2-navigator"
+              aria-label=".charcoal-icon-v2-navigator"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-navigator</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-navigator-solid"
-              title=".charcoal-icon-navigator-solid"
-            ></i>
-            <code>.charcoal-icon-navigator-solid</code>
+            <div
+              className="charcoal-icon-v2-navigator-solid"
+              aria-label=".charcoal-icon-v2-navigator-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-navigator-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-new-post"
-              title=".charcoal-icon-new-post"
-            ></i>
-            <code>.charcoal-icon-new-post</code>
+            <div
+              className="charcoal-icon-v2-new-post"
+              aria-label=".charcoal-icon-v2-new-post"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-new-post</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-new-post-solid"
-              title=".charcoal-icon-new-post-solid"
-            ></i>
-            <code>.charcoal-icon-new-post-solid</code>
+            <div
+              className="charcoal-icon-v2-new-post-solid"
+              aria-label=".charcoal-icon-v2-new-post-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-new-post-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-novel" title=".charcoal-icon-novel"></i>
-            <code>.charcoal-icon-novel</code>
+            <div
+              className="charcoal-icon-v2-novel"
+              aria-label=".charcoal-icon-v2-novel"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-novel</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-novel-solid"
-              title=".charcoal-icon-novel-solid"
-            ></i>
-            <code>.charcoal-icon-novel-solid</code>
+            <div
+              className="charcoal-icon-v2-novel-solid"
+              aria-label=".charcoal-icon-v2-novel-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-novel-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-opacity"
-              title=".charcoal-icon-opacity"
-            ></i>
-            <code>.charcoal-icon-opacity</code>
+            <div
+              className="charcoal-icon-v2-opacity"
+              aria-label=".charcoal-icon-v2-opacity"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-opacity</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-opacity-lock"
-              title=".charcoal-icon-opacity-lock"
-            ></i>
-            <code>.charcoal-icon-opacity-lock</code>
+            <div
+              className="charcoal-icon-v2-opacity-lock"
+              aria-label=".charcoal-icon-v2-opacity-lock"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-opacity-lock</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-opacity-lock-solid"
-              title=".charcoal-icon-opacity-lock-solid"
-            ></i>
-            <code>.charcoal-icon-opacity-lock-solid</code>
+            <div
+              className="charcoal-icon-v2-opacity-lock-solid"
+              aria-label=".charcoal-icon-v2-opacity-lock-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-opacity-lock-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-opacity-solid"
-              title=".charcoal-icon-opacity-solid"
-            ></i>
-            <code>.charcoal-icon-opacity-solid</code>
+            <div
+              className="charcoal-icon-v2-opacity-solid"
+              aria-label=".charcoal-icon-v2-opacity-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-opacity-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-open-in-new"
-              title=".charcoal-icon-open-in-new"
-            ></i>
-            <code>.charcoal-icon-open-in-new</code>
+            <div
+              className="charcoal-icon-v2-open-in-new"
+              aria-label=".charcoal-icon-v2-open-in-new"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-open-in-new</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-open-in-new-solid"
-              title=".charcoal-icon-open-in-new-solid"
-            ></i>
-            <code>.charcoal-icon-open-in-new-solid</code>
+            <div
+              className="charcoal-icon-v2-open-in-new-solid"
+              aria-label=".charcoal-icon-v2-open-in-new-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-open-in-new-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-outline"
-              title=".charcoal-icon-outline"
-            ></i>
-            <code>.charcoal-icon-outline</code>
+            <div
+              className="charcoal-icon-v2-outline"
+              aria-label=".charcoal-icon-v2-outline"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-outline</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-outline-solid"
-              title=".charcoal-icon-outline-solid"
-            ></i>
-            <code>.charcoal-icon-outline-solid</code>
+            <div
+              className="charcoal-icon-v2-outline-solid"
+              aria-label=".charcoal-icon-v2-outline-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-outline-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-palette"
-              title=".charcoal-icon-palette"
-            ></i>
-            <code>.charcoal-icon-palette</code>
+            <div
+              className="charcoal-icon-v2-palette"
+              aria-label=".charcoal-icon-v2-palette"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-palette</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-palette-solid"
-              title=".charcoal-icon-palette-solid"
-            ></i>
-            <code>.charcoal-icon-palette-solid</code>
+            <div
+              className="charcoal-icon-v2-palette-solid"
+              aria-label=".charcoal-icon-v2-palette-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-palette-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-paste" title=".charcoal-icon-paste"></i>
-            <code>.charcoal-icon-paste</code>
+            <div
+              className="charcoal-icon-v2-paste"
+              aria-label=".charcoal-icon-v2-paste"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-paste</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-paste-solid"
-              title=".charcoal-icon-paste-solid"
-            ></i>
-            <code>.charcoal-icon-paste-solid</code>
+            <div
+              className="charcoal-icon-v2-paste-solid"
+              aria-label=".charcoal-icon-v2-paste-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-paste-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-pause" title=".charcoal-icon-pause"></i>
-            <code>.charcoal-icon-pause</code>
+            <div
+              className="charcoal-icon-v2-pause"
+              aria-label=".charcoal-icon-v2-pause"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pause</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pause-solid"
-              title=".charcoal-icon-pause-solid"
-            ></i>
-            <code>.charcoal-icon-pause-solid</code>
+            <div
+              className="charcoal-icon-v2-pause-solid"
+              aria-label=".charcoal-icon-v2-pause-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pause-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-pen" title=".charcoal-icon-pen"></i>
-            <code>.charcoal-icon-pen</code>
+            <div
+              className="charcoal-icon-v2-pen"
+              aria-label=".charcoal-icon-v2-pen"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pen</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pen-add"
-              title=".charcoal-icon-pen-add"
-            ></i>
-            <code>.charcoal-icon-pen-add</code>
+            <div
+              className="charcoal-icon-v2-pen-add"
+              aria-label=".charcoal-icon-v2-pen-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pen-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pen-add-solid"
-              title=".charcoal-icon-pen-add-solid"
-            ></i>
-            <code>.charcoal-icon-pen-add-solid</code>
+            <div
+              className="charcoal-icon-v2-pen-add-solid"
+              aria-label=".charcoal-icon-v2-pen-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pen-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pen-solid"
-              title=".charcoal-icon-pen-solid"
-            ></i>
-            <code>.charcoal-icon-pen-solid</code>
+            <div
+              className="charcoal-icon-v2-pen-solid"
+              aria-label=".charcoal-icon-v2-pen-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pen-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pencil-text"
-              title=".charcoal-icon-pencil-text"
-            ></i>
-            <code>.charcoal-icon-pencil-text</code>
+            <div
+              className="charcoal-icon-v2-pencil-text"
+              aria-label=".charcoal-icon-v2-pencil-text"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pencil-text</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pencil-text-solid"
-              title=".charcoal-icon-pencil-text-solid"
-            ></i>
-            <code>.charcoal-icon-pencil-text-solid</code>
+            <div
+              className="charcoal-icon-v2-pencil-text-solid"
+              aria-label=".charcoal-icon-v2-pencil-text-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pencil-text-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-person-add"
-              title=".charcoal-icon-person-add"
-            ></i>
-            <code>.charcoal-icon-person-add</code>
+            <div
+              className="charcoal-icon-v2-person-add"
+              aria-label=".charcoal-icon-v2-person-add"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-person-add</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-person-add-solid"
-              title=".charcoal-icon-person-add-solid"
-            ></i>
-            <code>.charcoal-icon-person-add-solid</code>
+            <div
+              className="charcoal-icon-v2-person-add-solid"
+              aria-label=".charcoal-icon-v2-person-add-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-person-add-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-person-circle"
-              title=".charcoal-icon-person-circle"
-            ></i>
-            <code>.charcoal-icon-person-circle</code>
+            <div
+              className="charcoal-icon-v2-person-circle"
+              aria-label=".charcoal-icon-v2-person-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-person-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-person-circle-solid"
-              title=".charcoal-icon-person-circle-solid"
-            ></i>
-            <code>.charcoal-icon-person-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-person-circle-solid"
+              aria-label=".charcoal-icon-v2-person-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-person-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-persons"
-              title=".charcoal-icon-persons"
-            ></i>
-            <code>.charcoal-icon-persons</code>
+            <div
+              className="charcoal-icon-v2-persons"
+              aria-label=".charcoal-icon-v2-persons"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-persons</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-persons-solid"
-              title=".charcoal-icon-persons-solid"
-            ></i>
-            <code>.charcoal-icon-persons-solid</code>
+            <div
+              className="charcoal-icon-v2-persons-solid"
+              aria-label=".charcoal-icon-v2-persons-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-persons-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-play" title=".charcoal-icon-play"></i>
-            <code>.charcoal-icon-play</code>
+            <div
+              className="charcoal-icon-v2-play"
+              aria-label=".charcoal-icon-v2-play"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-play</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-play-solid"
-              title=".charcoal-icon-play-solid"
-            ></i>
-            <code>.charcoal-icon-play-solid</code>
+            <div
+              className="charcoal-icon-v2-play-solid"
+              aria-label=".charcoal-icon-v2-play-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-play-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-polygon"
-              title=".charcoal-icon-polygon"
-            ></i>
-            <code>.charcoal-icon-polygon</code>
+            <div
+              className="charcoal-icon-v2-polygon"
+              aria-label=".charcoal-icon-v2-polygon"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-polygon</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-polygon-solid"
-              title=".charcoal-icon-polygon-solid"
-            ></i>
-            <code>.charcoal-icon-polygon-solid</code>
+            <div
+              className="charcoal-icon-v2-polygon-solid"
+              aria-label=".charcoal-icon-v2-polygon-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-polygon-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-polyline"
-              title=".charcoal-icon-polyline"
-            ></i>
-            <code>.charcoal-icon-polyline</code>
+            <div
+              className="charcoal-icon-v2-polyline"
+              aria-label=".charcoal-icon-v2-polyline"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-polyline</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-polyline-nodes"
-              title=".charcoal-icon-polyline-nodes"
-            ></i>
-            <code>.charcoal-icon-polyline-nodes</code>
+            <div
+              className="charcoal-icon-v2-polyline-nodes"
+              aria-label=".charcoal-icon-v2-polyline-nodes"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-polyline-nodes</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-polyline-nodes-solid"
-              title=".charcoal-icon-polyline-nodes-solid"
-            ></i>
-            <code>.charcoal-icon-polyline-nodes-solid</code>
+            <div
+              className="charcoal-icon-v2-polyline-nodes-solid"
+              aria-label=".charcoal-icon-v2-polyline-nodes-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-polyline-nodes-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-polyline-solid"
-              title=".charcoal-icon-polyline-solid"
-            ></i>
-            <code>.charcoal-icon-polyline-solid</code>
+            <div
+              className="charcoal-icon-v2-polyline-solid"
+              aria-label=".charcoal-icon-v2-polyline-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-polyline-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-pose" title=".charcoal-icon-pose"></i>
-            <code>.charcoal-icon-pose</code>
+            <div
+              className="charcoal-icon-v2-pose"
+              aria-label=".charcoal-icon-v2-pose"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pose</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-pose-solid"
-              title=".charcoal-icon-pose-solid"
-            ></i>
-            <code>.charcoal-icon-pose-solid</code>
+            <div
+              className="charcoal-icon-v2-pose-solid"
+              aria-label=".charcoal-icon-v2-pose-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-pose-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-projects"
-              title=".charcoal-icon-projects"
-            ></i>
-            <code>.charcoal-icon-projects</code>
+            <div
+              className="charcoal-icon-v2-projects"
+              aria-label=".charcoal-icon-v2-projects"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-projects</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-projects-solid"
-              title=".charcoal-icon-projects-solid"
-            ></i>
-            <code>.charcoal-icon-projects-solid</code>
+            <div
+              className="charcoal-icon-v2-projects-solid"
+              aria-label=".charcoal-icon-v2-projects-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-projects-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-question-bubble"
-              title=".charcoal-icon-question-bubble"
-            ></i>
-            <code>.charcoal-icon-question-bubble</code>
+            <div
+              className="charcoal-icon-v2-question-bubble"
+              aria-label=".charcoal-icon-v2-question-bubble"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-question-bubble</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-question-bubble-solid"
-              title=".charcoal-icon-question-bubble-solid"
-            ></i>
-            <code>.charcoal-icon-question-bubble-solid</code>
+            <div
+              className="charcoal-icon-v2-question-bubble-solid"
+              aria-label=".charcoal-icon-v2-question-bubble-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-question-bubble-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-question-circle"
-              title=".charcoal-icon-question-circle"
-            ></i>
-            <code>.charcoal-icon-question-circle</code>
+            <div
+              className="charcoal-icon-v2-question-circle"
+              aria-label=".charcoal-icon-v2-question-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-question-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-question-circle-solid"
-              title=".charcoal-icon-question-circle-solid"
-            ></i>
-            <code>.charcoal-icon-question-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-question-circle-solid"
+              aria-label=".charcoal-icon-v2-question-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-question-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rabbit"
-              title=".charcoal-icon-rabbit"
-            ></i>
-            <code>.charcoal-icon-rabbit</code>
+            <div
+              className="charcoal-icon-v2-rabbit"
+              aria-label=".charcoal-icon-v2-rabbit"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rabbit</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rabbit-ear-bent"
-              title=".charcoal-icon-rabbit-ear-bent"
-            ></i>
-            <code>.charcoal-icon-rabbit-ear-bent</code>
+            <div
+              className="charcoal-icon-v2-rabbit-ear-bent"
+              aria-label=".charcoal-icon-v2-rabbit-ear-bent"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rabbit-ear-bent</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rabbit-ear-bent-solid"
-              title=".charcoal-icon-rabbit-ear-bent-solid"
-            ></i>
-            <code>.charcoal-icon-rabbit-ear-bent-solid</code>
+            <div
+              className="charcoal-icon-v2-rabbit-ear-bent-solid"
+              aria-label=".charcoal-icon-v2-rabbit-ear-bent-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rabbit-ear-bent-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rabbit-solid"
-              title=".charcoal-icon-rabbit-solid"
-            ></i>
-            <code>.charcoal-icon-rabbit-solid</code>
+            <div
+              className="charcoal-icon-v2-rabbit-solid"
+              aria-label=".charcoal-icon-v2-rabbit-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rabbit-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-redo" title=".charcoal-icon-redo"></i>
-            <code>.charcoal-icon-redo</code>
+            <div
+              className="charcoal-icon-v2-redo"
+              aria-label=".charcoal-icon-v2-redo"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-redo</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-redo-solid"
-              title=".charcoal-icon-redo-solid"
-            ></i>
-            <code>.charcoal-icon-redo-solid</code>
+            <div
+              className="charcoal-icon-v2-redo-solid"
+              aria-label=".charcoal-icon-v2-redo-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-redo-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rename"
-              title=".charcoal-icon-rename"
-            ></i>
-            <code>.charcoal-icon-rename</code>
+            <div
+              className="charcoal-icon-v2-rename"
+              aria-label=".charcoal-icon-v2-rename"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rename</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rename-solid"
-              title=".charcoal-icon-rename-solid"
-            ></i>
-            <code>.charcoal-icon-rename-solid</code>
+            <div
+              className="charcoal-icon-v2-rename-solid"
+              aria-label=".charcoal-icon-v2-rename-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rename-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-resolution"
-              title=".charcoal-icon-resolution"
-            ></i>
-            <code>.charcoal-icon-resolution</code>
+            <div
+              className="charcoal-icon-v2-resolution"
+              aria-label=".charcoal-icon-v2-resolution"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-resolution</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-resolution-solid"
-              title=".charcoal-icon-resolution-solid"
-            ></i>
-            <code>.charcoal-icon-resolution-solid</code>
+            <div
+              className="charcoal-icon-v2-resolution-solid"
+              aria-label=".charcoal-icon-v2-resolution-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-resolution-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rotate"
-              title=".charcoal-icon-rotate"
-            ></i>
-            <code>.charcoal-icon-rotate</code>
+            <div
+              className="charcoal-icon-v2-rotate"
+              aria-label=".charcoal-icon-v2-rotate"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rotate</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rotate-ccw"
-              title=".charcoal-icon-rotate-ccw"
-            ></i>
-            <code>.charcoal-icon-rotate-ccw</code>
+            <div
+              className="charcoal-icon-v2-rotate-ccw"
+              aria-label=".charcoal-icon-v2-rotate-ccw"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rotate-ccw</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rotate-ccw-solid"
-              title=".charcoal-icon-rotate-ccw-solid"
-            ></i>
-            <code>.charcoal-icon-rotate-ccw-solid</code>
+            <div
+              className="charcoal-icon-v2-rotate-ccw-solid"
+              aria-label=".charcoal-icon-v2-rotate-ccw-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rotate-ccw-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rotate-cw"
-              title=".charcoal-icon-rotate-cw"
-            ></i>
-            <code>.charcoal-icon-rotate-cw</code>
+            <div
+              className="charcoal-icon-v2-rotate-cw"
+              aria-label=".charcoal-icon-v2-rotate-cw"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rotate-cw</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rotate-cw-solid"
-              title=".charcoal-icon-rotate-cw-solid"
-            ></i>
-            <code>.charcoal-icon-rotate-cw-solid</code>
+            <div
+              className="charcoal-icon-v2-rotate-cw-solid"
+              aria-label=".charcoal-icon-v2-rotate-cw-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rotate-cw-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-rotate-solid"
-              title=".charcoal-icon-rotate-solid"
-            ></i>
-            <code>.charcoal-icon-rotate-solid</code>
+            <div
+              className="charcoal-icon-v2-rotate-solid"
+              aria-label=".charcoal-icon-v2-rotate-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-rotate-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-ruler" title=".charcoal-icon-ruler"></i>
-            <code>.charcoal-icon-ruler</code>
+            <div
+              className="charcoal-icon-v2-ruler"
+              aria-label=".charcoal-icon-v2-ruler"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-ruler</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-ruler-solid"
-              title=".charcoal-icon-ruler-solid"
-            ></i>
-            <code>.charcoal-icon-ruler-solid</code>
+            <div
+              className="charcoal-icon-v2-ruler-solid"
+              aria-label=".charcoal-icon-v2-ruler-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-ruler-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sans-serif"
-              title=".charcoal-icon-sans-serif"
-            ></i>
-            <code>.charcoal-icon-sans-serif</code>
+            <div
+              className="charcoal-icon-v2-sans-serif"
+              aria-label=".charcoal-icon-v2-sans-serif"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sans-serif</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sans-serif-solid"
-              title=".charcoal-icon-sans-serif-solid"
-            ></i>
-            <code>.charcoal-icon-sans-serif-solid</code>
+            <div
+              className="charcoal-icon-v2-sans-serif-solid"
+              aria-label=".charcoal-icon-v2-sans-serif-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sans-serif-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-saturation"
-              title=".charcoal-icon-saturation"
-            ></i>
-            <code>.charcoal-icon-saturation</code>
+            <div
+              className="charcoal-icon-v2-saturation"
+              aria-label=".charcoal-icon-v2-saturation"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-saturation</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-saturation-solid"
-              title=".charcoal-icon-saturation-solid"
-            ></i>
-            <code>.charcoal-icon-saturation-solid</code>
+            <div
+              className="charcoal-icon-v2-saturation-solid"
+              aria-label=".charcoal-icon-v2-saturation-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-saturation-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-save" title=".charcoal-icon-save"></i>
-            <code>.charcoal-icon-save</code>
+            <div
+              className="charcoal-icon-v2-save"
+              aria-label=".charcoal-icon-v2-save"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-save</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-save-solid"
-              title=".charcoal-icon-save-solid"
-            ></i>
-            <code>.charcoal-icon-save-solid</code>
+            <div
+              className="charcoal-icon-v2-save-solid"
+              aria-label=".charcoal-icon-v2-save-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-save-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-scatter"
-              title=".charcoal-icon-scatter"
-            ></i>
-            <code>.charcoal-icon-scatter</code>
+            <div
+              className="charcoal-icon-v2-scatter"
+              aria-label=".charcoal-icon-v2-scatter"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-scatter</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-scatter-solid"
-              title=".charcoal-icon-scatter-solid"
-            ></i>
-            <code>.charcoal-icon-scatter-solid</code>
+            <div
+              className="charcoal-icon-v2-scatter-solid"
+              aria-label=".charcoal-icon-v2-scatter-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-scatter-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-scissors"
-              title=".charcoal-icon-scissors"
-            ></i>
-            <code>.charcoal-icon-scissors</code>
+            <div
+              className="charcoal-icon-v2-scissors"
+              aria-label=".charcoal-icon-v2-scissors"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-scissors</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-scissors-solid"
-              title=".charcoal-icon-scissors-solid"
-            ></i>
-            <code>.charcoal-icon-scissors-solid</code>
+            <div
+              className="charcoal-icon-v2-scissors-solid"
+              aria-label=".charcoal-icon-v2-scissors-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-scissors-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-search"
-              title=".charcoal-icon-search"
-            ></i>
-            <code>.charcoal-icon-search</code>
+            <div
+              className="charcoal-icon-v2-search"
+              aria-label=".charcoal-icon-v2-search"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-search</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-search-solid"
-              title=".charcoal-icon-search-solid"
-            ></i>
-            <code>.charcoal-icon-search-solid</code>
+            <div
+              className="charcoal-icon-v2-search-solid"
+              aria-label=".charcoal-icon-v2-search-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-search-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-select-clear"
-              title=".charcoal-icon-select-clear"
-            ></i>
-            <code>.charcoal-icon-select-clear</code>
+            <div
+              className="charcoal-icon-v2-select-clear"
+              aria-label=".charcoal-icon-v2-select-clear"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-select-clear</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-select-clear-solid"
-              title=".charcoal-icon-select-clear-solid"
-            ></i>
-            <code>.charcoal-icon-select-clear-solid</code>
+            <div
+              className="charcoal-icon-v2-select-clear-solid"
+              aria-label=".charcoal-icon-v2-select-clear-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-select-clear-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-select-image"
-              title=".charcoal-icon-select-image"
-            ></i>
-            <code>.charcoal-icon-select-image</code>
+            <div
+              className="charcoal-icon-v2-select-image"
+              aria-label=".charcoal-icon-v2-select-image"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-select-image</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-select-image-solid"
-              title=".charcoal-icon-select-image-solid"
-            ></i>
-            <code>.charcoal-icon-select-image-solid</code>
+            <div
+              className="charcoal-icon-v2-select-image-solid"
+              aria-label=".charcoal-icon-v2-select-image-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-select-image-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-select-off"
-              title=".charcoal-icon-select-off"
-            ></i>
-            <code>.charcoal-icon-select-off</code>
+            <div
+              className="charcoal-icon-v2-select-off"
+              aria-label=".charcoal-icon-v2-select-off"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-select-off</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-select-off-solid"
-              title=".charcoal-icon-select-off-solid"
-            ></i>
-            <code>.charcoal-icon-select-off-solid</code>
+            <div
+              className="charcoal-icon-v2-select-off-solid"
+              aria-label=".charcoal-icon-v2-select-off-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-select-off-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-selections"
-              title=".charcoal-icon-selections"
-            ></i>
-            <code>.charcoal-icon-selections</code>
+            <div
+              className="charcoal-icon-v2-selections"
+              aria-label=".charcoal-icon-v2-selections"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-selections</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-selections-solid"
-              title=".charcoal-icon-selections-solid"
-            ></i>
-            <code>.charcoal-icon-selections-solid</code>
+            <div
+              className="charcoal-icon-v2-selections-solid"
+              aria-label=".charcoal-icon-v2-selections-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-selections-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-send" title=".charcoal-icon-send"></i>
-            <code>.charcoal-icon-send</code>
+            <div
+              className="charcoal-icon-v2-send"
+              aria-label=".charcoal-icon-v2-send"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-send</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-send-solid"
-              title=".charcoal-icon-send-solid"
-            ></i>
-            <code>.charcoal-icon-send-solid</code>
+            <div
+              className="charcoal-icon-v2-send-solid"
+              aria-label=".charcoal-icon-v2-send-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-send-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-setting"
-              title=".charcoal-icon-setting"
-            ></i>
-            <code>.charcoal-icon-setting</code>
+            <div
+              className="charcoal-icon-v2-setting"
+              aria-label=".charcoal-icon-v2-setting"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-setting</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-setting-solid"
-              title=".charcoal-icon-setting-solid"
-            ></i>
-            <code>.charcoal-icon-setting-solid</code>
+            <div
+              className="charcoal-icon-v2-setting-solid"
+              aria-label=".charcoal-icon-v2-setting-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-setting-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-shape" title=".charcoal-icon-shape"></i>
-            <code>.charcoal-icon-shape</code>
+            <div
+              className="charcoal-icon-v2-shape"
+              aria-label=".charcoal-icon-v2-shape"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shape</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shape-solid"
-              title=".charcoal-icon-shape-solid"
-            ></i>
-            <code>.charcoal-icon-shape-solid</code>
+            <div
+              className="charcoal-icon-v2-shape-solid"
+              aria-label=".charcoal-icon-v2-shape-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shape-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-share-android"
-              title=".charcoal-icon-share-android"
-            ></i>
-            <code>.charcoal-icon-share-android</code>
+            <div
+              className="charcoal-icon-v2-share-android"
+              aria-label=".charcoal-icon-v2-share-android"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-share-android</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-share-android-solid"
-              title=".charcoal-icon-share-android-solid"
-            ></i>
-            <code>.charcoal-icon-share-android-solid</code>
+            <div
+              className="charcoal-icon-v2-share-android-solid"
+              aria-label=".charcoal-icon-v2-share-android-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-share-android-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-share-ios"
-              title=".charcoal-icon-share-ios"
-            ></i>
-            <code>.charcoal-icon-share-ios</code>
+            <div
+              className="charcoal-icon-v2-share-ios"
+              aria-label=".charcoal-icon-v2-share-ios"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-share-ios</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-share-ios-solid"
-              title=".charcoal-icon-share-ios-solid"
-            ></i>
-            <code>.charcoal-icon-share-ios-solid</code>
+            <div
+              className="charcoal-icon-v2-share-ios-solid"
+              aria-label=".charcoal-icon-v2-share-ios-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-share-ios-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shopping"
-              title=".charcoal-icon-shopping"
-            ></i>
-            <code>.charcoal-icon-shopping</code>
+            <div
+              className="charcoal-icon-v2-shopping"
+              aria-label=".charcoal-icon-v2-shopping"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shopping</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shopping-solid"
-              title=".charcoal-icon-shopping-solid"
-            ></i>
-            <code>.charcoal-icon-shopping-solid</code>
+            <div
+              className="charcoal-icon-v2-shopping-solid"
+              aria-label=".charcoal-icon-v2-shopping-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shopping-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shrink"
-              title=".charcoal-icon-shrink"
-            ></i>
-            <code>.charcoal-icon-shrink</code>
+            <div
+              className="charcoal-icon-v2-shrink"
+              aria-label=".charcoal-icon-v2-shrink"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shrink</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shrink-solid"
-              title=".charcoal-icon-shrink-solid"
-            ></i>
-            <code>.charcoal-icon-shrink-solid</code>
+            <div
+              className="charcoal-icon-v2-shrink-solid"
+              aria-label=".charcoal-icon-v2-shrink-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shrink-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shutter"
-              title=".charcoal-icon-shutter"
-            ></i>
-            <code>.charcoal-icon-shutter</code>
+            <div
+              className="charcoal-icon-v2-shutter"
+              aria-label=".charcoal-icon-v2-shutter"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shutter</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-shutter-solid"
-              title=".charcoal-icon-shutter-solid"
-            ></i>
-            <code>.charcoal-icon-shutter-solid</code>
+            <div
+              className="charcoal-icon-v2-shutter-solid"
+              aria-label=".charcoal-icon-v2-shutter-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-shutter-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sliders"
-              title=".charcoal-icon-sliders"
-            ></i>
-            <code>.charcoal-icon-sliders</code>
+            <div
+              className="charcoal-icon-v2-sliders"
+              aria-label=".charcoal-icon-v2-sliders"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sliders</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sliders-solid"
-              title=".charcoal-icon-sliders-solid"
-            ></i>
-            <code>.charcoal-icon-sliders-solid</code>
+            <div
+              className="charcoal-icon-v2-sliders-solid"
+              aria-label=".charcoal-icon-v2-sliders-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sliders-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-soft-edge"
-              title=".charcoal-icon-soft-edge"
-            ></i>
-            <code>.charcoal-icon-soft-edge</code>
+            <div
+              className="charcoal-icon-v2-soft-edge"
+              aria-label=".charcoal-icon-v2-soft-edge"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-soft-edge</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-soft-edge-solid"
-              title=".charcoal-icon-soft-edge-solid"
-            ></i>
-            <code>.charcoal-icon-soft-edge-solid</code>
+            <div
+              className="charcoal-icon-v2-soft-edge-solid"
+              aria-label=".charcoal-icon-v2-soft-edge-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-soft-edge-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-square"
-              title=".charcoal-icon-square"
-            ></i>
-            <code>.charcoal-icon-square</code>
+            <div
+              className="charcoal-icon-v2-square"
+              aria-label=".charcoal-icon-v2-square"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-square</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-square-dash"
-              title=".charcoal-icon-square-dash"
-            ></i>
-            <code>.charcoal-icon-square-dash</code>
+            <div
+              className="charcoal-icon-v2-square-dash"
+              aria-label=".charcoal-icon-v2-square-dash"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-square-dash</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-square-dash-resize"
-              title=".charcoal-icon-square-dash-resize"
-            ></i>
-            <code>.charcoal-icon-square-dash-resize</code>
+            <div
+              className="charcoal-icon-v2-square-dash-resize"
+              aria-label=".charcoal-icon-v2-square-dash-resize"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-square-dash-resize</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-square-dash-resize-solid"
-              title=".charcoal-icon-square-dash-resize-solid"
-            ></i>
-            <code>.charcoal-icon-square-dash-resize-solid</code>
+            <div
+              className="charcoal-icon-v2-square-dash-resize-solid"
+              aria-label=".charcoal-icon-v2-square-dash-resize-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-square-dash-resize-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-square-dash-solid"
-              title=".charcoal-icon-square-dash-solid"
-            ></i>
-            <code>.charcoal-icon-square-dash-solid</code>
+            <div
+              className="charcoal-icon-v2-square-dash-solid"
+              aria-label=".charcoal-icon-v2-square-dash-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-square-dash-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-square-solid"
-              title=".charcoal-icon-square-solid"
-            ></i>
-            <code>.charcoal-icon-square-solid</code>
+            <div
+              className="charcoal-icon-v2-square-solid"
+              aria-label=".charcoal-icon-v2-square-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-square-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-squares-2x2"
-              title=".charcoal-icon-squares-2x2"
-            ></i>
-            <code>.charcoal-icon-squares-2x2</code>
+            <div
+              className="charcoal-icon-v2-squares-2x2"
+              aria-label=".charcoal-icon-v2-squares-2x2"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-squares-2x2</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-squares-2x2-solid"
-              title=".charcoal-icon-squares-2x2-solid"
-            ></i>
-            <code>.charcoal-icon-squares-2x2-solid</code>
+            <div
+              className="charcoal-icon-v2-squares-2x2-solid"
+              aria-label=".charcoal-icon-v2-squares-2x2-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-squares-2x2-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-squares-3x3"
-              title=".charcoal-icon-squares-3x3"
-            ></i>
-            <code>.charcoal-icon-squares-3x3</code>
+            <div
+              className="charcoal-icon-v2-squares-3x3"
+              aria-label=".charcoal-icon-v2-squares-3x3"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-squares-3x3</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-squares-3x3-solid"
-              title=".charcoal-icon-squares-3x3-solid"
-            ></i>
-            <code>.charcoal-icon-squares-3x3-solid</code>
+            <div
+              className="charcoal-icon-v2-squares-3x3-solid"
+              aria-label=".charcoal-icon-v2-squares-3x3-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-squares-3x3-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-star" title=".charcoal-icon-star"></i>
-            <code>.charcoal-icon-star</code>
+            <div
+              className="charcoal-icon-v2-star"
+              aria-label=".charcoal-icon-v2-star"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-star</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-star-solid"
-              title=".charcoal-icon-star-solid"
-            ></i>
-            <code>.charcoal-icon-star-solid</code>
+            <div
+              className="charcoal-icon-v2-star-solid"
+              aria-label=".charcoal-icon-v2-star-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-star-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-strike-through"
-              title=".charcoal-icon-strike-through"
-            ></i>
-            <code>.charcoal-icon-strike-through</code>
+            <div
+              className="charcoal-icon-v2-strike-through"
+              aria-label=".charcoal-icon-v2-strike-through"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-strike-through</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-strike-through-solid"
-              title=".charcoal-icon-strike-through-solid"
-            ></i>
-            <code>.charcoal-icon-strike-through-solid</code>
+            <div
+              className="charcoal-icon-v2-strike-through-solid"
+              aria-label=".charcoal-icon-v2-strike-through-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-strike-through-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-stroke-taper"
-              title=".charcoal-icon-stroke-taper"
-            ></i>
-            <code>.charcoal-icon-stroke-taper</code>
+            <div
+              className="charcoal-icon-v2-stroke-taper"
+              aria-label=".charcoal-icon-v2-stroke-taper"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-stroke-taper</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-stroke-taper-solid"
-              title=".charcoal-icon-stroke-taper-solid"
-            ></i>
-            <code>.charcoal-icon-stroke-taper-solid</code>
+            <div
+              className="charcoal-icon-v2-stroke-taper-solid"
+              aria-label=".charcoal-icon-v2-stroke-taper-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-stroke-taper-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-stroke-width"
-              title=".charcoal-icon-stroke-width"
-            ></i>
-            <code>.charcoal-icon-stroke-width</code>
+            <div
+              className="charcoal-icon-v2-stroke-width"
+              aria-label=".charcoal-icon-v2-stroke-width"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-stroke-width</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-stroke-width-solid"
-              title=".charcoal-icon-stroke-width-solid"
-            ></i>
-            <code>.charcoal-icon-stroke-width-solid</code>
+            <div
+              className="charcoal-icon-v2-stroke-width-solid"
+              aria-label=".charcoal-icon-v2-stroke-width-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-stroke-width-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-subtract"
-              title=".charcoal-icon-subtract"
-            ></i>
-            <code>.charcoal-icon-subtract</code>
+            <div
+              className="charcoal-icon-v2-subtract"
+              aria-label=".charcoal-icon-v2-subtract"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-subtract</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-subtract-solid"
-              title=".charcoal-icon-subtract-solid"
-            ></i>
-            <code>.charcoal-icon-subtract-solid</code>
+            <div
+              className="charcoal-icon-v2-subtract-solid"
+              aria-label=".charcoal-icon-v2-subtract-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-subtract-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-sun" title=".charcoal-icon-sun"></i>
-            <code>.charcoal-icon-sun</code>
+            <div
+              className="charcoal-icon-v2-sun"
+              aria-label=".charcoal-icon-v2-sun"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sun</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sun-solid"
-              title=".charcoal-icon-sun-solid"
-            ></i>
-            <code>.charcoal-icon-sun-solid</code>
+            <div
+              className="charcoal-icon-v2-sun-solid"
+              aria-label=".charcoal-icon-v2-sun-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sun-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-sync" title=".charcoal-icon-sync"></i>
-            <code>.charcoal-icon-sync</code>
+            <div
+              className="charcoal-icon-v2-sync"
+              aria-label=".charcoal-icon-v2-sync"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sync</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sync-circle"
-              title=".charcoal-icon-sync-circle"
-            ></i>
-            <code>.charcoal-icon-sync-circle</code>
+            <div
+              className="charcoal-icon-v2-sync-circle"
+              aria-label=".charcoal-icon-v2-sync-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sync-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sync-circle-solid"
-              title=".charcoal-icon-sync-circle-solid"
-            ></i>
-            <code>.charcoal-icon-sync-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-sync-circle-solid"
+              aria-label=".charcoal-icon-v2-sync-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sync-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-sync-solid"
-              title=".charcoal-icon-sync-solid"
-            ></i>
-            <code>.charcoal-icon-sync-solid</code>
+            <div
+              className="charcoal-icon-v2-sync-solid"
+              aria-label=".charcoal-icon-v2-sync-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-sync-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-t-shirt"
-              title=".charcoal-icon-t-shirt"
-            ></i>
-            <code>.charcoal-icon-t-shirt</code>
+            <div
+              className="charcoal-icon-v2-t-shirt"
+              aria-label=".charcoal-icon-v2-t-shirt"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-t-shirt</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-t-shirt-solid"
-              title=".charcoal-icon-t-shirt-solid"
-            ></i>
-            <code>.charcoal-icon-t-shirt-solid</code>
+            <div
+              className="charcoal-icon-v2-t-shirt-solid"
+              aria-label=".charcoal-icon-v2-t-shirt-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-t-shirt-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tap-1-finger"
-              title=".charcoal-icon-tap-1-finger"
-            ></i>
-            <code>.charcoal-icon-tap-1-finger</code>
+            <div
+              className="charcoal-icon-v2-tap-1-finger"
+              aria-label=".charcoal-icon-v2-tap-1-finger"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tap-1-finger</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tap-1-finger-solid"
-              title=".charcoal-icon-tap-1-finger-solid"
-            ></i>
-            <code>.charcoal-icon-tap-1-finger-solid</code>
+            <div
+              className="charcoal-icon-v2-tap-1-finger-solid"
+              aria-label=".charcoal-icon-v2-tap-1-finger-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tap-1-finger-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tap-2-fingers"
-              title=".charcoal-icon-tap-2-fingers"
-            ></i>
-            <code>.charcoal-icon-tap-2-fingers</code>
+            <div
+              className="charcoal-icon-v2-tap-2-fingers"
+              aria-label=".charcoal-icon-v2-tap-2-fingers"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tap-2-fingers</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tap-2-fingers-solid"
-              title=".charcoal-icon-tap-2-fingers-solid"
-            ></i>
-            <code>.charcoal-icon-tap-2-fingers-solid</code>
+            <div
+              className="charcoal-icon-v2-tap-2-fingers-solid"
+              aria-label=".charcoal-icon-v2-tap-2-fingers-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tap-2-fingers-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tap-3-fingers"
-              title=".charcoal-icon-tap-3-fingers"
-            ></i>
-            <code>.charcoal-icon-tap-3-fingers</code>
+            <div
+              className="charcoal-icon-v2-tap-3-fingers"
+              aria-label=".charcoal-icon-v2-tap-3-fingers"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tap-3-fingers</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tap-3-fingers-solid"
-              title=".charcoal-icon-tap-3-fingers-solid"
-            ></i>
-            <code>.charcoal-icon-tap-3-fingers-solid</code>
+            <div
+              className="charcoal-icon-v2-tap-3-fingers-solid"
+              aria-label=".charcoal-icon-v2-tap-3-fingers-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tap-3-fingers-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-temperature"
-              title=".charcoal-icon-temperature"
-            ></i>
-            <code>.charcoal-icon-temperature</code>
+            <div
+              className="charcoal-icon-v2-temperature"
+              aria-label=".charcoal-icon-v2-temperature"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-temperature</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-temperature-solid"
-              title=".charcoal-icon-temperature-solid"
-            ></i>
-            <code>.charcoal-icon-temperature-solid</code>
+            <div
+              className="charcoal-icon-v2-temperature-solid"
+              aria-label=".charcoal-icon-v2-temperature-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-temperature-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-text" title=".charcoal-icon-text"></i>
-            <code>.charcoal-icon-text</code>
+            <div
+              className="charcoal-icon-v2-text"
+              aria-label=".charcoal-icon-v2-text"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-center"
-              title=".charcoal-icon-text-align-center"
-            ></i>
-            <code>.charcoal-icon-text-align-center</code>
+            <div
+              className="charcoal-icon-v2-text-align-center"
+              aria-label=".charcoal-icon-v2-text-align-center"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-center</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-center-solid"
-              title=".charcoal-icon-text-align-center-solid"
-            ></i>
-            <code>.charcoal-icon-text-align-center-solid</code>
+            <div
+              className="charcoal-icon-v2-text-align-center-solid"
+              aria-label=".charcoal-icon-v2-text-align-center-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-center-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-justify"
-              title=".charcoal-icon-text-align-justify"
-            ></i>
-            <code>.charcoal-icon-text-align-justify</code>
+            <div
+              className="charcoal-icon-v2-text-align-justify"
+              aria-label=".charcoal-icon-v2-text-align-justify"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-justify</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-justify-solid"
-              title=".charcoal-icon-text-align-justify-solid"
-            ></i>
-            <code>.charcoal-icon-text-align-justify-solid</code>
+            <div
+              className="charcoal-icon-v2-text-align-justify-solid"
+              aria-label=".charcoal-icon-v2-text-align-justify-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-justify-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-left"
-              title=".charcoal-icon-text-align-left"
-            ></i>
-            <code>.charcoal-icon-text-align-left</code>
+            <div
+              className="charcoal-icon-v2-text-align-left"
+              aria-label=".charcoal-icon-v2-text-align-left"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-left</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-left-solid"
-              title=".charcoal-icon-text-align-left-solid"
-            ></i>
-            <code>.charcoal-icon-text-align-left-solid</code>
+            <div
+              className="charcoal-icon-v2-text-align-left-solid"
+              aria-label=".charcoal-icon-v2-text-align-left-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-left-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-right"
-              title=".charcoal-icon-text-align-right"
-            ></i>
-            <code>.charcoal-icon-text-align-right</code>
+            <div
+              className="charcoal-icon-v2-text-align-right"
+              aria-label=".charcoal-icon-v2-text-align-right"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-right</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-align-right-solid"
-              title=".charcoal-icon-text-align-right-solid"
-            ></i>
-            <code>.charcoal-icon-text-align-right-solid</code>
+            <div
+              className="charcoal-icon-v2-text-align-right-solid"
+              aria-label=".charcoal-icon-v2-text-align-right-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-align-right-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-ruby"
-              title=".charcoal-icon-text-ruby"
-            ></i>
-            <code>.charcoal-icon-text-ruby</code>
+            <div
+              className="charcoal-icon-v2-text-ruby"
+              aria-label=".charcoal-icon-v2-text-ruby"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-ruby</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-ruby-solid"
-              title=".charcoal-icon-text-ruby-solid"
-            ></i>
-            <code>.charcoal-icon-text-ruby-solid</code>
+            <div
+              className="charcoal-icon-v2-text-ruby-solid"
+              aria-label=".charcoal-icon-v2-text-ruby-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-ruby-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-text-solid"
-              title=".charcoal-icon-text-solid"
-            ></i>
-            <code>.charcoal-icon-text-solid</code>
+            <div
+              className="charcoal-icon-v2-text-solid"
+              aria-label=".charcoal-icon-v2-text-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-text-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-texture"
-              title=".charcoal-icon-texture"
-            ></i>
-            <code>.charcoal-icon-texture</code>
+            <div
+              className="charcoal-icon-v2-texture"
+              aria-label=".charcoal-icon-v2-texture"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-texture</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-texture-solid"
-              title=".charcoal-icon-texture-solid"
-            ></i>
-            <code>.charcoal-icon-texture-solid</code>
+            <div
+              className="charcoal-icon-v2-texture-solid"
+              aria-label=".charcoal-icon-v2-texture-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-texture-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-tools" title=".charcoal-icon-tools"></i>
-            <code>.charcoal-icon-tools</code>
+            <div
+              className="charcoal-icon-v2-tools"
+              aria-label=".charcoal-icon-v2-tools"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tools</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-tools-solid"
-              title=".charcoal-icon-tools-solid"
-            ></i>
-            <code>.charcoal-icon-tools-solid</code>
+            <div
+              className="charcoal-icon-v2-tools-solid"
+              aria-label=".charcoal-icon-v2-tools-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-tools-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-touch" title=".charcoal-icon-touch"></i>
-            <code>.charcoal-icon-touch</code>
+            <div
+              className="charcoal-icon-v2-touch"
+              aria-label=".charcoal-icon-v2-touch"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-touch</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-touch-solid"
-              title=".charcoal-icon-touch-solid"
-            ></i>
-            <code>.charcoal-icon-touch-solid</code>
+            <div
+              className="charcoal-icon-v2-touch-solid"
+              aria-label=".charcoal-icon-v2-touch-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-touch-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-transform"
-              title=".charcoal-icon-transform"
-            ></i>
-            <code>.charcoal-icon-transform</code>
+            <div
+              className="charcoal-icon-v2-transform"
+              aria-label=".charcoal-icon-v2-transform"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-transform</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-transform-rotation-handle"
-              title=".charcoal-icon-transform-rotation-handle"
-            ></i>
-            <code>.charcoal-icon-transform-rotation-handle</code>
+            <div
+              className="charcoal-icon-v2-transform-rotation-handle"
+              aria-label=".charcoal-icon-v2-transform-rotation-handle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-transform-rotation-handle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-transform-rotation-handle-solid"
-              title=".charcoal-icon-transform-rotation-handle-solid"
-            ></i>
-            <code>.charcoal-icon-transform-rotation-handle-solid</code>
+            <div
+              className="charcoal-icon-v2-transform-rotation-handle-solid"
+              aria-label=".charcoal-icon-v2-transform-rotation-handle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-transform-rotation-handle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-transform-solid"
-              title=".charcoal-icon-transform-solid"
-            ></i>
-            <code>.charcoal-icon-transform-solid</code>
+            <div
+              className="charcoal-icon-v2-transform-solid"
+              aria-label=".charcoal-icon-v2-transform-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-transform-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-underline"
-              title=".charcoal-icon-underline"
-            ></i>
-            <code>.charcoal-icon-underline</code>
+            <div
+              className="charcoal-icon-v2-underline"
+              aria-label=".charcoal-icon-v2-underline"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-underline</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-underline-solid"
-              title=".charcoal-icon-underline-solid"
-            ></i>
-            <code>.charcoal-icon-underline-solid</code>
+            <div
+              className="charcoal-icon-v2-underline-solid"
+              aria-label=".charcoal-icon-v2-underline-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-underline-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-undo" title=".charcoal-icon-undo"></i>
-            <code>.charcoal-icon-undo</code>
+            <div
+              className="charcoal-icon-v2-undo"
+              aria-label=".charcoal-icon-v2-undo"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-undo</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-undo-solid"
-              title=".charcoal-icon-undo-solid"
-            ></i>
-            <code>.charcoal-icon-undo-solid</code>
+            <div
+              className="charcoal-icon-v2-undo-solid"
+              aria-label=".charcoal-icon-v2-undo-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-undo-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-upload"
-              title=".charcoal-icon-upload"
-            ></i>
-            <code>.charcoal-icon-upload</code>
+            <div
+              className="charcoal-icon-v2-upload"
+              aria-label=".charcoal-icon-v2-upload"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-upload</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-upload-solid"
-              title=".charcoal-icon-upload-solid"
-            ></i>
-            <code>.charcoal-icon-upload-solid</code>
+            <div
+              className="charcoal-icon-v2-upload-solid"
+              aria-label=".charcoal-icon-v2-upload-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-upload-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-user-campaign"
-              title=".charcoal-icon-user-campaign"
-            ></i>
-            <code>.charcoal-icon-user-campaign</code>
+            <div
+              className="charcoal-icon-v2-user-campaign"
+              aria-label=".charcoal-icon-v2-user-campaign"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-user-campaign</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-user-campaign-solid"
-              title=".charcoal-icon-user-campaign-solid"
-            ></i>
-            <code>.charcoal-icon-user-campaign-solid</code>
+            <div
+              className="charcoal-icon-v2-user-campaign-solid"
+              aria-label=".charcoal-icon-v2-user-campaign-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-user-campaign-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-video" title=".charcoal-icon-video"></i>
-            <code>.charcoal-icon-video</code>
+            <div
+              className="charcoal-icon-v2-video"
+              aria-label=".charcoal-icon-v2-video"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-video</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-video-camera"
-              title=".charcoal-icon-video-camera"
-            ></i>
-            <code>.charcoal-icon-video-camera</code>
+            <div
+              className="charcoal-icon-v2-video-camera"
+              aria-label=".charcoal-icon-v2-video-camera"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-video-camera</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-video-camera-solid"
-              title=".charcoal-icon-video-camera-solid"
-            ></i>
-            <code>.charcoal-icon-video-camera-solid</code>
+            <div
+              className="charcoal-icon-v2-video-camera-solid"
+              aria-label=".charcoal-icon-v2-video-camera-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-video-camera-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-video-solid"
-              title=".charcoal-icon-video-solid"
-            ></i>
-            <code>.charcoal-icon-video-solid</code>
+            <div
+              className="charcoal-icon-v2-video-solid"
+              aria-label=".charcoal-icon-v2-video-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-video-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-view-fit"
-              title=".charcoal-icon-view-fit"
-            ></i>
-            <code>.charcoal-icon-view-fit</code>
+            <div
+              className="charcoal-icon-v2-view-fit"
+              aria-label=".charcoal-icon-v2-view-fit"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-view-fit</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-view-fit-solid"
-              title=".charcoal-icon-view-fit-solid"
-            ></i>
-            <code>.charcoal-icon-view-fit-solid</code>
+            <div
+              className="charcoal-icon-v2-view-fit-solid"
+              aria-label=".charcoal-icon-v2-view-fit-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-view-fit-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-view-full"
-              title=".charcoal-icon-view-full"
-            ></i>
-            <code>.charcoal-icon-view-full</code>
+            <div
+              className="charcoal-icon-v2-view-full"
+              aria-label=".charcoal-icon-v2-view-full"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-view-full</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-view-full-solid"
-              title=".charcoal-icon-view-full-solid"
-            ></i>
-            <code>.charcoal-icon-view-full-solid</code>
+            <div
+              className="charcoal-icon-v2-view-full-solid"
+              aria-label=".charcoal-icon-v2-view-full-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-view-full-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-warn" title=".charcoal-icon-warn"></i>
-            <code>.charcoal-icon-warn</code>
+            <div
+              className="charcoal-icon-v2-warn"
+              aria-label=".charcoal-icon-v2-warn"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-warn</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-warn-solid"
-              title=".charcoal-icon-warn-solid"
-            ></i>
-            <code>.charcoal-icon-warn-solid</code>
+            <div
+              className="charcoal-icon-v2-warn-solid"
+              aria-label=".charcoal-icon-v2-warn-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-warn-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-warn-triangle"
-              title=".charcoal-icon-warn-triangle"
-            ></i>
-            <code>.charcoal-icon-warn-triangle</code>
+            <div
+              className="charcoal-icon-v2-warn-triangle"
+              aria-label=".charcoal-icon-v2-warn-triangle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-warn-triangle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-warn-triangle-solid"
-              title=".charcoal-icon-warn-triangle-solid"
-            ></i>
-            <code>.charcoal-icon-warn-triangle-solid</code>
+            <div
+              className="charcoal-icon-v2-warn-triangle-solid"
+              aria-label=".charcoal-icon-v2-warn-triangle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-warn-triangle-solid</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-x" title=".charcoal-icon-x"></i>
-            <code>.charcoal-icon-x</code>
+            <div
+              className="charcoal-icon-v2-x"
+              aria-label=".charcoal-icon-v2-x"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x</code>
           </div>
 
           <div>
-            <i className="charcoal-icon-x-20" title=".charcoal-icon-x-20"></i>
-            <code>.charcoal-icon-x-20</code>
+            <div
+              className="charcoal-icon-v2-x-20"
+              aria-label=".charcoal-icon-v2-x-20"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-20</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-x-circle"
-              title=".charcoal-icon-x-circle"
-            ></i>
-            <code>.charcoal-icon-x-circle</code>
+            <div
+              className="charcoal-icon-v2-x-circle"
+              aria-label=".charcoal-icon-v2-x-circle"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-circle</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-x-circle-solid"
-              title=".charcoal-icon-x-circle-solid"
-            ></i>
-            <code>.charcoal-icon-x-circle-solid</code>
+            <div
+              className="charcoal-icon-v2-x-circle-solid"
+              aria-label=".charcoal-icon-v2-x-circle-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-circle-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-x-octagon"
-              title=".charcoal-icon-x-octagon"
-            ></i>
-            <code>.charcoal-icon-x-octagon</code>
+            <div
+              className="charcoal-icon-v2-x-octagon"
+              aria-label=".charcoal-icon-v2-x-octagon"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-octagon</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-x-octagon-solid"
-              title=".charcoal-icon-x-octagon-solid"
-            ></i>
-            <code>.charcoal-icon-x-octagon-solid</code>
+            <div
+              className="charcoal-icon-v2-x-octagon-solid"
+              aria-label=".charcoal-icon-v2-x-octagon-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-octagon-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-x-solid"
-              title=".charcoal-icon-x-solid"
-            ></i>
-            <code>.charcoal-icon-x-solid</code>
+            <div
+              className="charcoal-icon-v2-x-solid"
+              aria-label=".charcoal-icon-v2-x-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-x-solid-20"
-              title=".charcoal-icon-x-solid-20"
-            ></i>
-            <code>.charcoal-icon-x-solid-20</code>
+            <div
+              className="charcoal-icon-v2-x-solid-20"
+              aria-label=".charcoal-icon-v2-x-solid-20"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-x-solid-20</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-zoom-in"
-              title=".charcoal-icon-zoom-in"
-            ></i>
-            <code>.charcoal-icon-zoom-in</code>
+            <div
+              className="charcoal-icon-v2-zoom-in"
+              aria-label=".charcoal-icon-v2-zoom-in"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-zoom-in</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-zoom-in-solid"
-              title=".charcoal-icon-zoom-in-solid"
-            ></i>
-            <code>.charcoal-icon-zoom-in-solid</code>
+            <div
+              className="charcoal-icon-v2-zoom-in-solid"
+              aria-label=".charcoal-icon-v2-zoom-in-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-zoom-in-solid</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-zoom-out"
-              title=".charcoal-icon-zoom-out"
-            ></i>
-            <code>.charcoal-icon-zoom-out</code>
+            <div
+              className="charcoal-icon-v2-zoom-out"
+              aria-label=".charcoal-icon-v2-zoom-out"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-zoom-out</code>
           </div>
 
           <div>
-            <i
-              className="charcoal-icon-zoom-out-solid"
-              title=".charcoal-icon-zoom-out-solid"
-            ></i>
-            <code>.charcoal-icon-zoom-out-solid</code>
+            <div
+              className="charcoal-icon-v2-zoom-out-solid"
+              aria-label=".charcoal-icon-v2-zoom-out-solid"
+              role="img"
+            />
+            <code>.charcoal-icon-v2-zoom-out-solid</code>
           </div>
         </div>
       </>

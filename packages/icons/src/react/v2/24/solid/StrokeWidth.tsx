@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgStrokeWidth = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgStrokeWidth = (
     />
   </svg>
 )
-export const IconStrokeWidthSolid = forwardRef(SvgStrokeWidth)
+export const IconStrokeWidthSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgStrokeWidth)
 export default IconStrokeWidthSolid

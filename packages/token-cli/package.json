@@ -3,11 +3,11 @@
   "private": true,
   "bin": "./dist/index.js",
   "type": "commonjs",
-  "version": "4.18.0",
+  "version": "5.0.0-rc.0",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "FORCE_COLOR=1 tsup-node",
-    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "build": "tsdown --config-loader unconfig",
+    "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest --passWithNoTests",
     "cli:tokens": "node ./dist/index.js"
@@ -19,11 +19,8 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/yargs": "^17.0.32",
-    "rimraf": "^3.0.2",
     "style-dictionary": "^3.9.2",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.2",
-    "vitest": "^2.0.2"
+    "typescript": "^5.4.2"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",

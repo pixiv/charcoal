@@ -26,6 +26,6 @@ export function unreachable(value?: never): never {
   throw new Error(
     arguments.length === 0
       ? 'unreachable'
-      : `unreachable (${JSON.stringify(value)})`
+      : `unreachable (${JSON.stringify(value)})`,
   )
 }

@@ -1,5 +1,5 @@
 import path from 'path'
-import glob from 'fast-glob'
+import { glob } from 'node:fs/promises'
 import fs from 'fs-extra'
 
 const generateIconSvgEmbeddedSource = (svgString: string) => {
@@ -11,7 +11,7 @@ export default '${str}'
 }
 
 const generateMjsEntrypoint = (
-  icons: string[]
+  icons: string[],
 ) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
 export default {
@@ -22,7 +22,7 @@ ${icons
 `
 
 const generateCjsEntrypoint = (
-  icons: string[]
+  icons: string[],
 ) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
 module.exports = {
@@ -33,7 +33,7 @@ ${icons
 `
 
 const generateTypeDefinitionEntrypoint = (
-  icons: string[]
+  icons: string[],
 ) => `/** This file is auto generated. DO NOt EDIT BY HAND. */
 
 declare var _default: {
@@ -44,7 +44,7 @@ export default _default;
 
 export const generateEntrypoint = async (
   outputDir: string,
-  icons: string[]
+  icons: string[],
 ) => {
   const srcRoot = path.join(outputDir, 'src')
   const mjsPath = path.join(srcRoot, 'index.js')
@@ -63,9 +63,9 @@ export const generateEntrypoint = async (
 export const generateIconSource = async (outputDir: string) => {
   const svgRoot = path.join(outputDir, 'svg')
   const srcRoot = path.join(outputDir, 'src')
-  const icons = (await glob('**/*.svg', { cwd: svgRoot }))
+  const icons = (await Array.fromAsync(glob('**/*.svg', { cwd: svgRoot })))
     .map(
-      (path) => path.slice(0, -4) // e.g. '16/Add.svg' -> '16/Add'
+      (path) => path.slice(0, -4), // e.g. '16/Add.svg' -> '16/Add'
     )
     .sort()
 
@@ -75,7 +75,7 @@ export const generateIconSource = async (outputDir: string) => {
     await fs.ensureFile(outputPath)
     await fs.writeFile(
       outputPath,
-      generateIconSvgEmbeddedSource(data.toString())
+      generateIconSvgEmbeddedSource(data.toString()),
     )
   }
 

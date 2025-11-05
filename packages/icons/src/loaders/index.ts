@@ -12,11 +12,11 @@ import { PixivIconLoadError } from './PixivIconLoadError'
  */
 const loaders = new Map<string, Loadable>()
 
-export function addCustomIcon(name: string, filePathOrUrl: string) {
+export function addCustomIcon(name: string, filePathOrUrl: string): void {
   loaders.set(name, new CustomIconLoader(name, filePathOrUrl))
 }
 
-export async function getIcon(name: string) {
+export async function getIcon(name: string): Promise<string> {
   const loader = resolveIconLoader(name)
   if (loader == null) {
     throw new PixivIconLoadError(name, 'Loader was not found')
@@ -27,7 +27,7 @@ export async function getIcon(name: string) {
     if (typeof svg !== 'string') {
       // eslint-disable-next-line no-console
       console.warn(
-        `${name}: Expected load result to be a string, but received an unexpected type.`
+        `${name}: Expected load result to be a string, but received an unexpected type.`,
       )
     }
 

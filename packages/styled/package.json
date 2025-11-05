@@ -1,22 +1,23 @@
 {
   "name": "@charcoal-ui/styled",
-  "version": "4.18.0",
+  "version": "5.0.0-rc.0",
   "license": "Apache-2.0",
+  "type": "module",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     "types": "./dist/index.d.ts",
-    "require": "./dist/index.cjs.js",
-    "import": "./dist/index.esm.js",
-    "default": "./dist/index.esm.js"
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
   },
   "sideEffects": false,
   "scripts": {
-    "build": "run-p --print-label 'build:*'",
-    "build:bundle": "FORCE_COLOR=1 tsup",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
-    "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
+    "build": "run-s --print-label 'build:*'",
+    "build:bundle": "tsdown",
+    "build:dts": "tsc --pretty --emitDeclarationOnly",
+    "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
   },
@@ -28,13 +29,8 @@
     "@vitejs/plugin-react": "^4.3.1",
     "jest-styled-components": "^7.1.1",
     "jsdom": "^24.1.0",
-    "npm-run-all": "^4.1.5",
     "react": "^18.3.1",
-    "rimraf": "^3.0.2",
-    "styled-components": "^5.3.3",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.5",
-    "vitest": "^2.0.2"
+    "styled-components": "^5.3.3"
   },
   "dependencies": {
     "@charcoal-ui/foundation": "workspace:*",

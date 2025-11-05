@@ -19,5 +19,7 @@ const SvgEraser = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconEraser = forwardRef(SvgEraser)
+export const IconEraser: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgEraser)
 export default IconEraser

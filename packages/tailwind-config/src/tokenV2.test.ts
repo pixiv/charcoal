@@ -10,7 +10,7 @@ describe('unstable_createTailwindConfigTokenV2', async () => {
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
         @import 'tailwindcss/components';
-      `
+      `,
   )
   test('config object', () => {
     expect(config).toMatchSnapshot()

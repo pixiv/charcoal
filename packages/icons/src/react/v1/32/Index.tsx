@@ -19,5 +19,7 @@ const SvgIndex = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconIndex32 = forwardRef(SvgIndex)
+export const IconIndex32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgIndex)
 export default IconIndex32

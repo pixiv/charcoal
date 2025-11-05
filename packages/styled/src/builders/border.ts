@@ -14,12 +14,12 @@ type BorderDirection = (typeof borderDirections)[number]
 
 export const createBorderCss = <T extends CharcoalAbstractTheme>(
   variant: keyof T['border'],
-  directions: readonly BorderDirection[]
+  directions: readonly BorderDirection[],
 ): Internal => {
   const all = directions.length === 0
 
   const value = `solid 1px ${variable(
-    customPropertyToken(withPrefixes('border', variant.toString()))
+    customPropertyToken(withPrefixes('border', variant.toString())),
   )}`
 
   return createInternal({
@@ -32,7 +32,7 @@ export const createBorderCss = <T extends CharcoalAbstractTheme>(
                 ...acc,
                 [`border-${direction}`]: value,
               }),
-              {}
+              {},
             )),
       }
     },
@@ -47,10 +47,10 @@ export default function border<T extends CharcoalAbstractTheme>(theme: T) {
     {
       border: defineProperties({}, borderTypes, (variant) =>
         definePropertyChains(borderDirections, (modifiers) =>
-          createBorderCss(variant, modifiers)
-        )
+          createBorderCss(variant, modifiers),
+        ),
       ),
-    }
+    },
   )
   return borderObject
 }

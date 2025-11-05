@@ -67,51 +67,56 @@ const configurations: Config[] = [
   },
 ]
 
-for (const {
-  tokenFile,
-  baseFile,
-  outputFile,
-  keyStyle,
-  valueStyle,
-} of configurations) {
-  const baseJson = JSON.parse(
-    readFileSync(path.resolve(baseFile), 'utf8')
-  ) as TokenDictionary
+export function writeTokenObjects() {
+  for (const {
+    tokenFile,
+    baseFile,
+    outputFile,
+    keyStyle,
+    valueStyle,
+  } of configurations) {
+    const baseJson = JSON.parse(
+      readFileSync(path.resolve(baseFile), 'utf8'),
+    ) as TokenDictionary
 
-  const createToken = <T extends TokenDictionary>(
-    value: T
-  ): Record<string, unknown> => {
-    switch (valueStyle) {
-      case 'cssVariable': {
-        return createCSSTokenObject(value, (x) => `charcoal-${x}`)
-      }
-      default: {
-        return createTokenObject(value, baseJson)
-      }
-    }
-  }
-  const transformKey = <T extends Record<string, unknown>>(
-    value: T
-  ): Record<string, unknown> => {
-    switch (keyStyle) {
-      case 'camelCase': {
-        return camelCaseKeys(value)
-      }
-      default: {
-        return value
+    const createToken = <T extends TokenDictionary>(
+      value: T,
+    ): Record<string, unknown> => {
+      switch (valueStyle) {
+        case 'cssVariable': {
+          return createCSSTokenObject(value, (x) => `charcoal-${x}`)
+        }
+        default: {
+          return createTokenObject(value, baseJson)
+        }
       }
     }
+    const transformKey = <T extends Record<string, unknown>>(
+      value: T,
+    ): Record<string, unknown> => {
+      switch (keyStyle) {
+        case 'camelCase': {
+          return camelCaseKeys(value)
+        }
+        default: {
+          return value
+        }
+      }
+    }
+
+    const tokenJson = JSON.parse(
+      readFileSync(path.resolve(tokenFile), 'utf8'),
+    ) as TokenDictionary
+    const tokenObject = transformKey(createToken(tokenJson))
+
+    mkdirSync(path.dirname(outputFile), { recursive: true })
+    writeFileSync(
+      path.resolve(outputFile),
+      JSON.stringify(tokenObject, null, 2),
+    )
+
+    console.log(
+      `Generated ${outputFile} with keyStyle ${keyStyle} and valueStyle ${valueStyle}.`,
+    )
   }
-
-  const tokenJson = JSON.parse(
-    readFileSync(path.resolve(tokenFile), 'utf8')
-  ) as TokenDictionary
-  const tokenObject = transformKey(createToken(tokenJson))
-
-  mkdirSync(path.dirname(outputFile), { recursive: true })
-  writeFileSync(path.resolve(outputFile), JSON.stringify(tokenObject, null, 2))
-
-  console.log(
-    `Generated ${outputFile} with keyStyle ${keyStyle} and valueStyle ${valueStyle}.`
-  )
 }

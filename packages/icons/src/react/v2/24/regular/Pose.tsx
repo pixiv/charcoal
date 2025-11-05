@@ -19,5 +19,7 @@ const SvgPose = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconPose = forwardRef(SvgPose)
+export const IconPose: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgPose)
 export default IconPose

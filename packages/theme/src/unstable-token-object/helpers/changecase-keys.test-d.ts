@@ -2,6 +2,7 @@ import { camelCaseKeys } from './changecase-keys'
 
 describe('camelcaseKeys test', () => {
   it('should convert snake_case keys to camelCase', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const obj = {
       snake_case: 'value',
       nested: {
@@ -16,6 +17,7 @@ describe('camelcaseKeys test', () => {
   })
 
   it('should convert kebab-case keys to camelCase', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const obj = {
       'kebab-case': 'value',
       nested: {

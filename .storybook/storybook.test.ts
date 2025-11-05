@@ -16,15 +16,15 @@ type StoryFile = {
 }
 
 const compose = (
-  entry: StoryFile
+  entry: StoryFile,
 ): ReturnType<typeof composeStories<StoryFile>> => {
   try {
     return composeStories(entry)
   } catch (e) {
     throw new Error(
       `There was an issue composing stories for the module: ${JSON.stringify(
-        entry
-      )}, ${e}`
+        entry,
+      )}, ${e}`,
     )
   }
 }
@@ -42,7 +42,7 @@ function getAllStoryFiles() {
       const storyFile = await import(filePath)
 
       return { filePath, storyFile }
-    })
+    }),
   )
 }
 
@@ -91,7 +91,7 @@ describe(options.suite, async () => {
 
       if (stories.length <= 0) {
         throw new Error(
-          `No stories found for this module: ${title}. Make sure there is at least one valid story for this module, without a disable parameter, or add parameters.storyshots.disable in the default export of this file.`
+          `No stories found for this module: ${title}. Make sure there is at least one valid story for this module, without a disable parameter, or add parameters.storyshots.disable in the default export of this file.`,
         )
       }
 

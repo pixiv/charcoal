@@ -45,9 +45,9 @@ describe.each([
 
         expect(theme).toHaveProperty(
           [_category, ...splitted],
-          templateResolver(tokenValue.value)
+          templateResolver(tokenValue.value),
         )
-      }
+      },
     )
   })
 })
@@ -60,7 +60,7 @@ describe.each([
   async (description, token, cssFilePath) => {
     const theme = createCSSTokenObject(token, (value) => `charcoal-${value}`)
     const keys = Object.keys(token)
-    const css = await readFile(join(__dirname, cssFilePath), 'utf-8')
+    const css = await readFile(join(import.meta.dirname, cssFilePath), 'utf-8')
 
     // スナップショット
     it('should match snapshot', () => {
@@ -92,24 +92,27 @@ describe.each([
 
           expect(theme).toHaveProperty(
             [_category, ...splitted],
-            expect.any(String)
+            expect.any(String),
           )
-          const variable = splitted.reduce((acc, key) => {
-            if (typeof acc === 'string') return acc
+          const variable = splitted.reduce(
+            (acc, key) => {
+              if (typeof acc === 'string') return acc
 
-            const next = acc[key]
-            if (typeof next === 'string') return next
+              const next = acc[key]
+              if (typeof next === 'string') return next
 
-            return isObject(next) ? next : acc
-          }, theme[_category] as Record<string, unknown> | string)
+              return isObject(next) ? next : acc
+            },
+            theme[_category] as Record<string, unknown> | string,
+          )
 
           expect(
-            Array.from(cssVariables.keys()).map((x) => `var(${x})`)
+            Array.from(cssVariables.keys()).map((x) => `var(${x})`),
           ).toContain(variable)
-        }
+        },
       )
     })
-  }
+  },
 )
 
 describe('toTokenObject test', () => {
@@ -147,7 +150,7 @@ describe('toTokenObject test', () => {
 
     const mergedResult = deepmerge(
       toTokenObject(tokens),
-      toTokenObject(additionalTokens)
+      toTokenObject(additionalTokens),
     )
 
     expect(mergedResult).toEqual({

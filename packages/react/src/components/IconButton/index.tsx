@@ -25,7 +25,7 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       component,
       ...rest
     }: IconButtonProps<T>,
-    ref: ForwardedRef<HTMLButtonElement>
+    ref: ForwardedRef<HTMLButtonElement>,
   ) {
     validateIconSize(size, icon)
     const Component = useMemo(() => component ?? 'button', [component])
@@ -43,9 +43,9 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         <pixiv-icon name={icon} />
       </Component>
     )
-  }
+  },
 ) as <T extends React.ElementType = 'button'>(
-  p: IconButtonProps<T>
+  p: IconButtonProps<T>,
 ) => JSX.Element
 
 export default IconButton
@@ -73,7 +73,7 @@ function validateIconSize(size: Size, icon: keyof KnownIconType) {
   if (iconSize !== requiredIconSize) {
     // eslint-disable-next-line no-console
     console.warn(
-      `IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`
+      `IconButton with size "${size}" expect icon size "${requiredIconSize}, but got "${iconSize}"`,
     )
   }
 }

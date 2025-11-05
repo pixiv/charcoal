@@ -25,7 +25,7 @@ export const removeHalfLeadingCss = css`
 export function typography(
   size: 12 | 14 | 16 | 20,
   bold = false,
-  preserveHalfLeading = false
+  preserveHalfLeading = false,
 ) {
   const cssObj = css`
     font-size: ${size}px;

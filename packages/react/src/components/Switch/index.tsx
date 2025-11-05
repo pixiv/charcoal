@@ -9,7 +9,7 @@ export type SwitchProps = SwitchInputProps
 
 const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   { children, onChange, disabled, className, id, ...props },
-  ref
+  ref,
 ) {
   const htmlId = useId(id)
   const noChildren = children === undefined

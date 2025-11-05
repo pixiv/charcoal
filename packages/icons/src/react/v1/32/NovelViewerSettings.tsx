@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgNovelViewerSettings = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={32}
@@ -22,5 +22,7 @@ const SvgNovelViewerSettings = (
     />
   </svg>
 )
-export const IconNovelViewerSettings32 = forwardRef(SvgNovelViewerSettings)
+export const IconNovelViewerSettings32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNovelViewerSettings)
 export default IconNovelViewerSettings32

@@ -12,7 +12,7 @@ export interface Props {
 export const TextEllipsis = styled.div.attrs(
   ({ children, title = onlyText(children) }) => ({
     title: title !== '' ? title : undefined,
-  })
+  }),
 )<Props>`
   overflow: hidden;
   line-height: ${(props) => props.lineHeight}px;

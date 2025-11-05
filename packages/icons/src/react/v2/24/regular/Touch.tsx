@@ -19,5 +19,7 @@ const SvgTouch = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconTouch = forwardRef(SvgTouch)
+export const IconTouch: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTouch)
 export default IconTouch

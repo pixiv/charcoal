@@ -1,52 +1,46 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "packages/react"
-		},
-		{
-			"path": "packages/theme"
-		},
-		{
-			"path": "packages/tailwind-config"
-		},
-		{
-			"path": "packages/esbuild-plugin-styled-components"
-		},
-		{
-			"path": "packages/foundation"
-		},
-		{
-			"path": "packages/icon-files"
-		},
-		{
-			"path": "packages/icons"
-		},
-		{
-			"path": "packages/icons-cli"
-		},
-		{
-			"path": "packages/pullrequest-cli"
-		},
-		{
-			"path": "packages/react-sandbox"
-		},
-		{
-			"path": "packages/styled"
-		},
-		{
-			"path": "packages/tailwind-diff"
-		},
-		{
-			"path": "packages/token-cli"
-		},
-		{
-			"path": "packages/utils"
-		}
-	],
-	"settings": {
-		"typescript.tsdk": "node_modules/typescript/lib"
-	}
+  "folders": [
+    {
+      "path": ".",
+    },
+    {
+      "path": "packages/react",
+    },
+    {
+      "path": "packages/theme",
+    },
+    {
+      "path": "packages/tailwind-config",
+    },
+    {
+      "path": "packages/foundation",
+    },
+    {
+      "path": "packages/icon-files",
+    },
+    {
+      "path": "packages/icons",
+    },
+    {
+      "path": "packages/icons-cli",
+    },
+    {
+      "path": "packages/react-sandbox",
+    },
+    {
+      "path": "packages/styled",
+    },
+    {
+      "path": "packages/tailwind-diff",
+    },
+    {
+      "path": "packages/token-cli",
+    },
+    {
+      "path": "packages/utils",
+    },
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib",
+  },
 }

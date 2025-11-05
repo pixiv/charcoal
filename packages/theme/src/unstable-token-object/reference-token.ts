@@ -6,7 +6,7 @@ const isReferenceToken = (value: string): value is ReferenceToken =>
   value.startsWith('{') && value.endsWith('}')
 
 const parseReferenceToken = (
-  value: ReferenceToken
+  value: ReferenceToken,
 ): [category: string, key: string] => {
   const [category, key] = value.slice(1, -1).split('.')
 
@@ -15,8 +15,8 @@ const parseReferenceToken = (
 
 export const createReferenceTokenResolver = <T extends TokenDictionary>(
   tokenDictionary: T,
-  baseTokenDictionary: TokenDictionary
-) => {
+  baseTokenDictionary: TokenDictionary,
+): ((value: string) => string) => {
   const resolver = (value: string): string => {
     if (!isReferenceToken(value)) return value
 
@@ -24,7 +24,7 @@ export const createReferenceTokenResolver = <T extends TokenDictionary>(
     const baseTokens = baseTokenDictionary[category] as Tokens | undefined
 
     return resolver(
-      (baseTokens?.[tokenKey] ?? tokenDictionary[category][tokenKey]).value
+      (baseTokens?.[tokenKey] ?? tokenDictionary[category][tokenKey]).value,
     )
   }
 

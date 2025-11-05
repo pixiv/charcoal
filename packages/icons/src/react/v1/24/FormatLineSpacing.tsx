@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgFormatLineSpacing = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgFormatLineSpacing = (
     />
   </svg>
 )
-export const IconFormatLineSpacing24 = forwardRef(SvgFormatLineSpacing)
+export const IconFormatLineSpacing24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatLineSpacing)
 export default IconFormatLineSpacing24

@@ -19,5 +19,7 @@ const SvgExpand = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconExpandSolid = forwardRef(SvgExpand)
+export const IconExpandSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgExpand)
 export default IconExpandSolid

@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgViewfit = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -28,5 +28,7 @@ const SvgViewfit = (
     />
   </svg>
 )
-export const IconViewFitSolid = forwardRef(SvgViewfit)
+export const IconViewFitSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewfit)
 export default IconViewFitSolid

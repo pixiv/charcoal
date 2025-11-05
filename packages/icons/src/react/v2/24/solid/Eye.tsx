@@ -19,5 +19,7 @@ const SvgEye = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconEyeSolid = forwardRef(SvgEye)
+export const IconEyeSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgEye)
 export default IconEyeSolid

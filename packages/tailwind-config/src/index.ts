@@ -87,14 +87,14 @@ export function createTailwindConfig({
         ...colorsToTailwindConfig(
           version,
           mapObject(defaultTheme.border, (k, v) => [k, v.color]),
-          effects
+          effects,
         ),
         ...borderColorV2,
       },
       spacing: {
         ...mapObject(
           SPACING,
-          (name, pixel) => [name, px(pixel)] as [string, string]
+          (name, pixel) => [name, px(pixel)] as [string, string],
         ),
         ...spacingV2,
       },
@@ -112,7 +112,7 @@ export function createTailwindConfig({
             ...styles,
             [`col-span-${i}`]: px(COLUMN_UNIT * i + GUTTER_UNIT * (i - 1)),
           }),
-          {}
+          {},
         ),
 
         /**
@@ -123,7 +123,7 @@ export function createTailwindConfig({
             ...styles,
             [`${i}/${GRID_COUNT}`]: `${(i / GRID_COUNT) * 100}%`,
           }),
-          {}
+          {},
         ),
         ...widthV2,
       },
@@ -134,7 +134,7 @@ export function createTailwindConfig({
       borderRadius: {
         ...mapObject(
           BORDER_RADIUS,
-          (name, value) => [name, px(value)] as [string, string]
+          (name, value) => [name, px(value)] as [string, string],
         ),
         ...borderRadiusV2,
       },
@@ -163,8 +163,8 @@ export function createTailwindConfig({
         cssVariableGradientPlugin(
           theme.gradientColor,
           mergeEffect(theme),
-          selectorOrMediaQuery
-        )
+          selectorOrMediaQuery,
+        ),
       ),
       ...(iconsV2 ? [charcoalIconsV2] : []),
       ...(iconsV1 ? [charcoalIconsV1] : []),

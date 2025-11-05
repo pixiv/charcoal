@@ -18,6 +18,12 @@ interface Props {
   onClick(): void
 }
 
+const onlyNonTouchDevice = css`
+  @media (hover: none) and (pointer: coarse) {
+    display: none;
+  }
+`
+
 export default function CarouselButton({
   direction,
   show,
@@ -53,9 +59,9 @@ export default function CarouselButton({
             direction === Direction.Right
               ? WedgeDirection.Right
               : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-              direction === Direction.Left
-              ? WedgeDirection.Left
-              : unreachable()
+                direction === Direction.Left
+                ? WedgeDirection.Left
+                : unreachable()
           }
         />
       </CarouselButtonIcon>
@@ -73,7 +79,11 @@ const CarouselButtonIcon = styled.div`
   height: ${CAROUSEL_BUTTON_SIZE}px;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.color.surface4};
-  transition: 0.4s visibility, 0.4s opacity, 0.2s background-color, 0.2s color;
+  transition:
+    0.4s visibility,
+    0.4s opacity,
+    0.2s background-color,
+    0.2s color;
   color: ${({ theme }) => theme.color.text5};
 `
 
@@ -89,7 +99,9 @@ const Button = styled.button<{ hide: boolean }>`
   outline: 0;
   background: transparent;
   cursor: pointer;
-  transition: 0.4s visibility, 0.4s opacity;
+  transition:
+    0.4s visibility,
+    0.4s opacity;
   /* つらい */
   /* このコンポーネントはCarouselでしか使われてないのでそっちでコンテキストで切る */
   z-index: 1;
@@ -113,49 +125,4 @@ const Button = styled.button<{ hide: boolean }>`
       opacity: 0;
       pointer-events: none;
     `}
-`
-
-export function ScrollHintButton({
-  direction,
-  onClick,
-}: {
-  direction: Direction
-  onClick(): void
-}) {
-  return (
-    <ScrollHintIcon onClick={onClick}>
-      <NextIcon
-        direction={
-          direction === Direction.Right
-            ? WedgeDirection.Right
-            : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-            direction === Direction.Left
-            ? WedgeDirection.Left
-            : unreachable()
-        }
-      />
-    </ScrollHintIcon>
-  )
-}
-
-const ScrollHintIcon = styled(CarouselButtonIcon)`
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) =>
-      applyEffect(theme.color.surface4, theme.effect.hover)};
-    color: ${({ theme }) => applyEffect(theme.color.text5, theme.effect.hover)};
-  }
-
-  &:active {
-    background-color: ${({ theme }) =>
-      applyEffect(theme.color.surface4, theme.effect.press)};
-    color: ${({ theme }) => applyEffect(theme.color.text5, theme.effect.press)};
-  }
-`
-
-const onlyNonTouchDevice = css`
-  @media (hover: none) and (pointer: coarse) {
-    display: none;
-  }
 `

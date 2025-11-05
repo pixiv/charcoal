@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgFormatAlignJustified = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgFormatAlignJustified = (
     />
   </svg>
 )
-export const IconFormatAlignJustified24 = forwardRef(SvgFormatAlignJustified)
+export const IconFormatAlignJustified24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatAlignJustified)
 export default IconFormatAlignJustified24

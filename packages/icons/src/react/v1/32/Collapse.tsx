@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgCollapse = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={32}
@@ -20,5 +20,7 @@ const SvgCollapse = (
     />
   </svg>
 )
-export const IconCollapse32 = forwardRef(SvgCollapse)
+export const IconCollapse32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgCollapse)
 export default IconCollapse32

@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgLikeOnPrivate = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={32}
@@ -36,5 +36,7 @@ const SvgLikeOnPrivate = (
     />
   </svg>
 )
-export const IconLikeOnPrivate32 = forwardRef(SvgLikeOnPrivate)
+export const IconLikeOnPrivate32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLikeOnPrivate)
 export default IconLikeOnPrivate32

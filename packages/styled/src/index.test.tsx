@@ -10,7 +10,7 @@ import type { JSX } from 'react'
 
 function render(children: JSX.Element) {
   return testRender(
-    <ThemeProvider theme={myTheme(light)}>{children}</ThemeProvider>
+    <ThemeProvider theme={myTheme(light)}>{children}</ThemeProvider>,
   ).container
 }
 
@@ -31,8 +31,8 @@ describe('ThemeUtilsTest', () => {
           <Typography12 />
           <Typography14True />
           <Typography16TrueTrue />
-        </ThemeUtilsTest>
-      )
+        </ThemeUtilsTest>,
+      ),
     ).toMatchSnapshot()
   })
 })

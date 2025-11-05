@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgStrikeThrough = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgStrikeThrough = (
     />
   </svg>
 )
-export const IconStrikeThrough = forwardRef(SvgStrikeThrough)
+export const IconStrikeThrough: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgStrikeThrough)
 export default IconStrikeThrough

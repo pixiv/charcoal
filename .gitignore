@@ -37,3 +37,4 @@ lerna-debug.log*
 /__image_snapshots__
 
 *.log
+tsconfig.vitest-temp.json

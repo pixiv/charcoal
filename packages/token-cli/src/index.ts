@@ -29,13 +29,13 @@ void yargs
 
       const res = await getDesignToken(FIGMA_TOKEN, FIGMA_FILE_ID)
 
-      await ensureFile(path.join(__dirname, '..', args.output))
+      await ensureFile(path.join(import.meta.dirname, '..', args.output))
       await writeFile(
-        path.join(__dirname, '..', args.output),
+        path.join(import.meta.dirname, '..', args.output),
         JSON.stringify(await res.json()),
-        'utf8'
+        'utf8',
       )
-    }
+    },
   )
   .command(
     'transform',
@@ -60,28 +60,30 @@ void yargs
       },
     },
     async (args) => {
-      if (!existsSync(path.join(__dirname, '..', args.source))) {
+      if (!existsSync(path.join(import.meta.dirname, '..', args.source))) {
         throw new Error(
-          `${path.join(__dirname, '..', args.source)} not exists.`
+          `${path.join(import.meta.dirname, '..', args.source)} not exists.`,
         )
       }
 
-      const buffer = readFileSync(path.join(__dirname, '..', args.source))
+      const buffer = readFileSync(
+        path.join(import.meta.dirname, '..', args.source),
+      )
       const raw = JSON.parse(buffer.toString()) as FigmaResponse
 
       const tokens = createToken(
         raw,
         args['variable-collection-names'],
-        args['mode-name']
+        args['mode-name'],
       )
 
-      await ensureFile(path.join(__dirname, '..', args.output))
+      await ensureFile(path.join(import.meta.dirname, '..', args.output))
       await writeFile(
-        path.join(__dirname, '..', args.output),
+        path.join(import.meta.dirname, '..', args.output),
         JSON.stringify(tokens, sortReplacer, 2),
-        'utf8'
+        'utf8',
       )
-    }
+    },
   )
   .demandCommand()
   .strict()

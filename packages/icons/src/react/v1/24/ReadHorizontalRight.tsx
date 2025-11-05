@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgReadHorizontalRight = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -26,5 +26,7 @@ const SvgReadHorizontalRight = (
     />
   </svg>
 )
-export const IconReadHorizontalRight24 = forwardRef(SvgReadHorizontalRight)
+export const IconReadHorizontalRight24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgReadHorizontalRight)
 export default IconReadHorizontalRight24

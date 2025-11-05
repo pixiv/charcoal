@@ -13,7 +13,7 @@ export type ClickableProps<T extends React.ElementType = 'button'> = {
 
 const Clickable = forwardRef(function Clickable<T extends React.ElementType>(
   { component, ...props }: ClickableProps<T>,
-  ref: React.ForwardedRef<HTMLButtonElement>
+  ref: React.ForwardedRef<HTMLButtonElement>,
 ) {
   const className = useClassNames('charcoal-clickable', props.className)
 
@@ -21,7 +21,7 @@ const Clickable = forwardRef(function Clickable<T extends React.ElementType>(
 
   return <Component {...props} ref={ref} className={className} />
 }) as <T extends React.ElementType = 'button'>(
-  p: ClickableProps<T>
+  p: ClickableProps<T>,
 ) => JSX.Element
 export default Clickable
 

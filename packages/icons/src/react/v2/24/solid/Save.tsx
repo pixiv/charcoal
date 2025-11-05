@@ -19,5 +19,7 @@ const SvgSave = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconSaveSolid = forwardRef(SvgSave)
+export const IconSaveSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSave)
 export default IconSaveSolid

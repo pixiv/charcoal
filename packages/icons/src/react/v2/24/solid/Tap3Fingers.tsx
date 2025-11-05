@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgTap3Fingers = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgTap3Fingers = (
     />
   </svg>
 )
-export const IconTap3FingersSolid = forwardRef(SvgTap3Fingers)
+export const IconTap3FingersSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTap3Fingers)
 export default IconTap3FingersSolid

@@ -33,7 +33,7 @@ describe('nestObject test', () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     expect(() => nestObject([], 'value')).toThrowError(
-      'Path must be a non-empty array'
+      'Path must be a non-empty array',
     )
   })
 })

@@ -24,7 +24,7 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
       subLabel,
       ...labelProps
     },
-    ref
+    ref,
   ) {
     const classNames = useClassNames('charcoal-field-label-root', className)
     return (
@@ -42,7 +42,7 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
         </div>
       </div>
     )
-  }
+  },
 )
 
 export default FieldLabel

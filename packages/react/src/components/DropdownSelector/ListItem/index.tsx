@@ -15,11 +15,11 @@ export type ListItemProps<T extends React.ElementType = 'li'> = {
 
 const ListItem = forwardRef(function ListItem<T extends React.ElementType>(
   { as, className, ...props }: ListItemProps<T>,
-  ref: ForwardedRef<HTMLLIElement>
+  ref: ForwardedRef<HTMLLIElement>,
 ) {
   const Component = useMemo(() => as ?? 'li', [as])
   const classNames = useClassNames('charcoal-list-item', className)
-  return <Component className={classNames} ref={ref} {...props}></Component>
+  return <Component className={classNames} ref={ref} {...props} />
 }) as <T extends React.ElementType = 'li'>(p: ListItemProps<T>) => JSX.Element
 
 export default ListItem

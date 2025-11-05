@@ -28,7 +28,9 @@
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
 
-  transition: 0.2s box-shadow, 0.2s background-color;
+  transition:
+    0.2s box-shadow,
+    0.2s background-color;
 }
 
 .charcoal-dropdown-selector-button:disabled {

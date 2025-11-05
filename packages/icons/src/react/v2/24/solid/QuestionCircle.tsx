@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgQuestioncircle = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgQuestioncircle = (
     />
   </svg>
 )
-export const IconQuestionCircleSolid = forwardRef(SvgQuestioncircle)
+export const IconQuestionCircleSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgQuestioncircle)
 export default IconQuestionCircleSolid

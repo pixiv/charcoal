@@ -6,7 +6,9 @@
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  transition: 0.2s box-shadow, 0.2s background-color;
+  transition:
+    0.2s box-shadow,
+    0.2s background-color;
   position: relative;
   box-sizing: border-box;
 }

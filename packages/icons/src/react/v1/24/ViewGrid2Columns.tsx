@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgViewGrid2Columns = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -20,5 +20,7 @@ const SvgViewGrid2Columns = (
     />
   </svg>
 )
-export const IconViewGrid2Columns24 = forwardRef(SvgViewGrid2Columns)
+export const IconViewGrid2Columns24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgViewGrid2Columns)
 export default IconViewGrid2Columns24

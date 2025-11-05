@@ -1,5 +1,5 @@
 import path from 'path'
-import glob from 'fast-glob'
+import { glob } from 'fs/promises'
 import fs from 'fs-extra'
 import { concurrently } from '../concurrently'
 import { optimizeSvg } from './optimizeSvg'
@@ -9,7 +9,7 @@ import { optimizeSvg } from './optimizeSvg'
 export const optimizeSvgInDirectory = async (
   outputDir: string,
   replaceColor: string,
-  ignoreFile?: string
+  ignoreFile?: string,
 ) => {
   const rootDir = path.join(outputDir, 'svg')
 
@@ -18,9 +18,11 @@ export const optimizeSvgInDirectory = async (
       ? (await fs.readFile(ignoreFile, 'utf8')).trim().split(/\r?\n/u)
       : []
 
-  const files = await glob('**/*.svg', {
-    cwd: rootDir,
-  })
+  const files = await Array.fromAsync(
+    glob('**/*.svg', {
+      cwd: rootDir,
+    }),
+  )
 
   await concurrently(
     files.map((file) => async () => {
@@ -33,6 +35,6 @@ export const optimizeSvgInDirectory = async (
         withoutOptimizeBySVGO: ignorePatterns.includes(file),
       })
       await fs.writeFile(fullPath, optimizedSvg)
-    })
+    }),
   )
 }

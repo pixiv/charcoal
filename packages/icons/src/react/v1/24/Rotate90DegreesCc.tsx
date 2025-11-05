@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgRotate90DegreesCc = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -28,5 +28,7 @@ const SvgRotate90DegreesCc = (
     />
   </svg>
 )
-export const IconRotate90DegreesCc24 = forwardRef(SvgRotate90DegreesCc)
+export const IconRotate90DegreesCc24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgRotate90DegreesCc)
 export default IconRotate90DegreesCc24

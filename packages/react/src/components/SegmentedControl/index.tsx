@@ -38,7 +38,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
   function SegmentedControlInner(props, ref) {
     const className = useClassNames(
       'charcoal-segmented-control',
-      props.className
+      props.className,
     )
 
     const ariaRadioGroupProps = useMemo<AriaRadioGroupProps>(
@@ -49,13 +49,13 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
         isRequired: props.required,
         'aria-label': props.name,
       }),
-      [props]
+      [props],
     )
     const state = useRadioGroupState(ariaRadioGroupProps)
     const { radioGroupProps } = useRadioGroup(ariaRadioGroupProps, state)
     const segmentedControlItems = useMemo<SegmentedControlItem[]>(() => {
       return props.data.map((d) =>
-        typeof d === 'string' ? { value: d, label: d } : d
+        typeof d === 'string' ? { value: d, label: d } : d,
       )
     }, [props.data])
 
@@ -74,7 +74,7 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
         </RadioProvider>
       </div>
     )
-  }
+  },
 )
 
 export default memo(SegmentedControl)
@@ -94,13 +94,13 @@ const Segmented = (props: RadioProps) => {
       isDisabled: props.disabled,
       children: props.children,
     }),
-    [props]
+    [props],
   )
 
   const { inputProps, isDisabled, isSelected } = useRadio(
     ariaRadioProps,
     state,
-    ref
+    ref,
   )
 
   return (

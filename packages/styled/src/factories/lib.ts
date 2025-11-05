@@ -19,11 +19,11 @@ import { unreachable } from '../util'
 export const defineProperties = <
   TSource,
   TMember extends readonly Key[],
-  TValue
+  TValue,
 >(
   source: TSource,
   member: TMember,
-  chain: (key: TMember[number]) => TValue
+  chain: (key: TMember[number]) => TValue,
 ) =>
   Object.defineProperties(
     source,
@@ -31,8 +31,8 @@ export const defineProperties = <
       member.map((key) => [
         key,
         { get: () => chain(key), enumerable: true, configurable: true },
-      ])
-    )
+      ]),
+    ),
   ) as TSource & { readonly [key in TMember[number]]: TValue }
 
 /**
@@ -54,11 +54,11 @@ export const defineMethods = <
   TSource,
   TMember extends readonly string[],
   TValue,
-  TArguments extends unknown[]
+  TArguments extends unknown[],
 >(
   source: TSource,
   member: TMember,
-  chain: (key: TMember[number], ...args: TArguments) => TValue
+  chain: (key: TMember[number], ...args: TArguments) => TValue,
 ) =>
   Object.defineProperties(
     source,
@@ -70,8 +70,8 @@ export const defineMethods = <
           enumerable: true,
           configurable: true,
         },
-      ])
-    )
+      ]),
+    ),
   ) as TSource & {
     readonly [key in TMember[number]]: (...args: TArguments) => TValue
   }
@@ -93,10 +93,10 @@ export const defineMethods = <
  */
 export const defineConstantProperties = <
   TSource,
-  TDef extends { [key: string]: unknown }
+  TDef extends { [key: string]: unknown },
 >(
   source: TSource,
-  def: TDef
+  def: TDef,
 ) =>
   defineProperties(source, Object.keys(def), (key) => def[key]) as TSource &
     Readonly<TDef>
@@ -117,16 +117,16 @@ export const defineConstantProperties = <
  */
 export const definePropertyChains = <TSource, T extends Key>(
   modifiers: readonly T[],
-  source: (applied: readonly T[]) => TSource
+  source: (applied: readonly T[]) => TSource,
 ) =>
   (function definePropertiesRecursively(
-    applied: readonly T[]
+    applied: readonly T[],
   ): PropertyChain<TSource, T> {
     const notApplied = modifiers.filter((v) => !applied.includes(v))
     return defineProperties(source(applied), notApplied, (modifier) =>
       notApplied.length === 0
         ? unreachable()
-        : definePropertiesRecursively([...applied, modifier])
+        : definePropertiesRecursively([...applied, modifier]),
     )
   })([])
 
@@ -152,17 +152,17 @@ export type PropertyChain<TSource, TModifiers extends Key> = TSource & {
 export const defineMethodChains = <
   TSource,
   T extends string,
-  TArguments extends unknown[]
+  TArguments extends unknown[],
 >(
   modifiers: readonly T[],
   source: (applied: readonly [T, ...TArguments][]) => TSource,
   ..._inferPhantom: TArguments
 ) =>
   (function defineMethodsRecursively(
-    applied: readonly [T, ...TArguments][]
+    applied: readonly [T, ...TArguments][],
   ): MethodChain<TSource, T, TArguments> {
     const notApplied = modifiers.filter(
-      (v) => !applied.map(([w]) => w).includes(v)
+      (v) => !applied.map(([w]) => w).includes(v),
     )
     return defineMethods(
       source(applied),
@@ -170,14 +170,14 @@ export const defineMethodChains = <
       (modifier, ...args: TArguments) =>
         notApplied.length === 0
           ? unreachable()
-          : defineMethodsRecursively([...applied, [modifier, ...args]])
+          : defineMethodsRecursively([...applied, [modifier, ...args]]),
     )
   })([])
 
 export type MethodChain<
   TSource,
   TModifiers extends string,
-  TArguments extends unknown[]
+  TArguments extends unknown[],
 > = TSource & {
   readonly [key in TModifiers]: (
     ...args: TArguments

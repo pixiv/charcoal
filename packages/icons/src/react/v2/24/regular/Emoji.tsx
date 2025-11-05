@@ -19,5 +19,7 @@ const SvgEmoji = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconEmoji = forwardRef(SvgEmoji)
+export const IconEmoji: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgEmoji)
 export default IconEmoji

@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgLayerimageMaterial = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgLayerimageMaterial = (
     />
   </svg>
 )
-export const IconLayerImageMaterial = forwardRef(SvgLayerimageMaterial)
+export const IconLayerImageMaterial: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLayerimageMaterial)
 export default IconLayerImageMaterial

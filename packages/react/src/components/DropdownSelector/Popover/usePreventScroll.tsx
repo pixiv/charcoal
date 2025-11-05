@@ -3,12 +3,13 @@ import { useEffect } from 'react'
 export function usePreventScroll(
   element: HTMLElement | null,
   isOpen: boolean,
-  useClip = false
+  useClip = false,
 ) {
   useEffect(() => {
     if (isOpen && element) {
       const defaultPaddingRight = element.style.paddingRight
       const defaultOverflow = element.style.overflow
+      // eslint-disable-next-line react-compiler/react-compiler
       element.style.paddingRight = `${
         window.innerWidth - element.clientWidth
       }px`

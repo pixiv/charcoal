@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgStrokeTaper = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgStrokeTaper = (
     />
   </svg>
 )
-export const IconStrokeTaperSolid = forwardRef(SvgStrokeTaper)
+export const IconStrokeTaperSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgStrokeTaper)
 export default IconStrokeTaperSolid

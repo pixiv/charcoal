@@ -17,5 +17,7 @@ const SvgSerif = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconSerif32 = forwardRef(SvgSerif)
+export const IconSerif32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgSerif)
 export default IconSerif32

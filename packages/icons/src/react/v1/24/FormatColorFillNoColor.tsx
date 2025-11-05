@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgFormatColorFillNoColor = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,7 +22,7 @@ const SvgFormatColorFillNoColor = (
     />
   </svg>
 )
-export const IconFormatColorFillNoColor24 = forwardRef(
-  SvgFormatColorFillNoColor
-)
+export const IconFormatColorFillNoColor24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgFormatColorFillNoColor)
 export default IconFormatColorFillNoColor24

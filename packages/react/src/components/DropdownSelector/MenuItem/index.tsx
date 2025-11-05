@@ -12,13 +12,14 @@ export type MenuItemProps<T extends React.ElementType = 'li'> = {
  * 基本的に`<MenuList>`, `<MenuGroup>`と合わせて使用する
  */
 const MenuItem = forwardRef(function MenuItem<
-  T extends React.ElementType = 'li'
+  T extends React.ElementType = 'li',
 >(
-  { className, value, disabled, ...props }: MenuItemProps<T>,
-  ref: ForwardedRef<HTMLLIElement>
+  { className: _, value, disabled, ...props }: MenuItemProps<T>,
+  ref: ForwardedRef<HTMLLIElement>,
 ) {
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
   return (
+    // @ts-expect-error TODO: fix mismatch between MenuItemProps and ListItemProps
     <ListItem
       {...props}
       ref={ref}

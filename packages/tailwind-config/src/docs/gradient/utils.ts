@@ -14,7 +14,7 @@ export const getUniqueGradientNames = (utilityClasses: string[]): string[] => {
            * like `bottom`
            */
           const directionInClassName = directions.find((direction) =>
-            classNameParts.includes(direction)
+            classNameParts.includes(direction),
           )
           if (!directionInClassName) return null
 
@@ -23,7 +23,7 @@ export const getUniqueGradientNames = (utilityClasses: string[]): string[] => {
            */
           const classNameWithoutModifiers = classNameParts.slice(
             0,
-            classNameParts.indexOf(directionInClassName)
+            classNameParts.indexOf(directionInClassName),
           )
 
           /**
@@ -31,7 +31,7 @@ export const getUniqueGradientNames = (utilityClasses: string[]): string[] => {
            */
           return classNameWithoutModifiers.join('-')
         })
-        .filter((value): value is string => typeof value === 'string')
-    ).values()
+        .filter((value): value is string => typeof value === 'string'),
+    ).values(),
   )
 }

@@ -15,6 +15,10 @@ export const GUTTER_UNIT = 24
  *
  * @param span column span count
  */
-export function columnSystem(span: number, column: number, gutter: number) {
+export function columnSystem(
+  span: number,
+  column: number,
+  gutter: number,
+): number {
   return span * column + (span - 1) * gutter
 }

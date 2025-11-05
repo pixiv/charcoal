@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgNotificationOff = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -23,5 +23,7 @@ const SvgNotificationOff = (
     <path d="M9.17 19a3.001 3.001 0 005.66 0H9.17z" fill="currentColor" />
   </svg>
 )
-export const IconNotificationOff24 = forwardRef(SvgNotificationOff)
+export const IconNotificationOff24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgNotificationOff)
 export default IconNotificationOff24

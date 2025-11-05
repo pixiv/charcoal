@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgArtwork = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={16}
@@ -22,5 +22,7 @@ const SvgArtwork = (
     />
   </svg>
 )
-export const IconArtwork16 = forwardRef(SvgArtwork)
+export const IconArtwork16: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArtwork)
 export default IconArtwork16

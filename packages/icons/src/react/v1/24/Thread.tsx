@@ -21,5 +21,7 @@ const SvgThread = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconThread24 = forwardRef(SvgThread)
+export const IconThread24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgThread)
 export default IconThread24

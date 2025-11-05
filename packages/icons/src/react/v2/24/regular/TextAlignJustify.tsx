@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgTextAlignjustify = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={24}
@@ -22,5 +22,7 @@ const SvgTextAlignjustify = (
     />
   </svg>
 )
-export const IconTextAlignJustify = forwardRef(SvgTextAlignjustify)
+export const IconTextAlignJustify: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTextAlignjustify)
 export default IconTextAlignJustify

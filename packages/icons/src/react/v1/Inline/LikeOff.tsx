@@ -3,7 +3,7 @@ import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
 const SvgLikeOff = (
   props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
+  ref: Ref<SVGSVGElement>,
 ) => (
   <svg
     width={14}
@@ -26,5 +26,7 @@ const SvgLikeOff = (
     />
   </svg>
 )
-export const IconLikeOffInline = forwardRef(SvgLikeOff)
+export const IconLikeOffInline: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLikeOff)
 export default IconLikeOffInline

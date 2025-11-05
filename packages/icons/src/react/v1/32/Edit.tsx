@@ -19,5 +19,7 @@ const SvgEdit = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     />
   </svg>
 )
-export const IconEdit32 = forwardRef(SvgEdit)
+export const IconEdit32: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgEdit)
 export default IconEdit32

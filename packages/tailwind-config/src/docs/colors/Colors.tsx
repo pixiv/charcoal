@@ -34,7 +34,7 @@ const ColorBox: React.FC<{
           backgroundSize: '12px 12px',
           backgroundPosition: '0 0, 6px 0, 6px -6px, 0 6px',
         }}
-      ></div>
+      />
       <button
         type="button"
         className={`absolute top-0 left-0 h-full w-full border border-r-0 group-last:border-r border-default cursor-pointer ${bgColorClass}`}
@@ -70,7 +70,7 @@ export const Colors: React.FC = () => {
                     bgColorClass={`bg-${colorName}-${modifier}`}
                     label={`-${modifier}`}
                   />
-                ) : null
+                ) : null,
               )}
             </>
           ) : (
