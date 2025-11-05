@@ -12,14 +12,8 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./dist/index.css": {
-      "import": "./dist/index.css",
-      "require": "./dist/index.css"
-    },
-    "./dist/layered.css": {
-      "import": "./dist/layered.css",
-      "require": "./dist/layered.css"
-    }
+    "./dist/index.css": "./dist/index.css",
+    "./dist/layered.css": "./dist/layered.css"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": [
