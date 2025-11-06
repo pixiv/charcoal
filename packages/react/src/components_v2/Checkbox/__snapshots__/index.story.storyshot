@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/Checkbox > Checked 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <label
+      class="charcoal-checkbox__label"
+      for="test-id"
+    >
+      <input
+        checked=""
+        class="charcoal-checkbox-input"
+        id="test-id"
+        type="checkbox"
+      />
+      <div
+        class="charcoal-checkbox__label_div"
+      >
+        Checked
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Checkbox > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      class="charcoal-checkbox-input"
+      id="test-id"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Checkbox > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <label
+      aria-disabled="true"
+      class="charcoal-checkbox__label"
+      for="test-id"
+    >
+      <input
+        class="charcoal-checkbox-input"
+        disabled=""
+        id="test-id"
+        type="checkbox"
+      />
+      <div
+        class="charcoal-checkbox__label_div"
+      >
+        Disabled
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Checkbox > Invalid 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <label
+      class="charcoal-checkbox__label"
+      for="test-id"
+    >
+      <input
+        aria-invalid="true"
+        class="charcoal-checkbox-input"
+        id="test-id"
+        name="labelled"
+        type="checkbox"
+      />
+      <div
+        class="charcoal-checkbox__label_div"
+      >
+        Invalid
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Checkbox > Label 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <label
+      class="charcoal-checkbox__label"
+      for="test-id"
+    >
+      <input
+        class="charcoal-checkbox-input"
+        id="test-id"
+        type="checkbox"
+      />
+      <div
+        class="charcoal-checkbox__label_div"
+      >
+        Checkbox
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Checkbox > ReadOnly 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <label
+      class="charcoal-checkbox__label"
+      for="test-id"
+    >
+      <input
+        checked=""
+        class="charcoal-checkbox-input"
+        id="test-id"
+        name="labelled"
+        readonly=""
+        type="checkbox"
+      />
+      <div
+        class="charcoal-checkbox__label_div"
+      >
+        ReadOnly
+      </div>
+    </label>
+  </div>
+</div>
+`;

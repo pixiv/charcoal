@@ -1,0 +1,11 @@
+.charcoal-menu-group-divider {
+  display: flex;
+}
+
+.charcoal-menu-group-divider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #00000014;
+}
