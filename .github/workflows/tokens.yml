@@ -16,7 +16,7 @@ jobs:
         with:
           version: '10.17.1'
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
           node-version-file: '.node-version'
           cache: pnpm
