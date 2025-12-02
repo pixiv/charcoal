@@ -1,7 +1,4 @@
 import { dirname, join } from 'path'
-const path = require('path')
-const { promisify } = require('util')
-const glob = promisify(require('glob'))
 const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 
 /** @type {import('@storybook/react-vite').StorybookConfig}*/
