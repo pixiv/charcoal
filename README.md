@@ -31,7 +31,7 @@ See our [documentation](https://charcoal-web.pixiv.design/), or README of each p
 Requires `pnpm`.
 
 ```sh
-pnpm env use --global `cat .node-version`
+pnpm env use --global `cat .node-version` 
 # or prefer nodenv if you don't want modify global node version
 # nodenv install `cat .node-version`
 
