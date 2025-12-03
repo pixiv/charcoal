@@ -1,5 +1,5 @@
 import path from 'node:path'
-import * as glob from 'glob'
+import { globSync } from 'node:fs'
 
 import { composeStories } from '@storybook/react'
 import { render, cleanup } from '@testing-library/react'
@@ -33,9 +33,9 @@ function getAllStoryFiles() {
   // Place the glob you want to match your stories files
   const globPatterns = '../packages/**/*.{stories,story}.{js,jsx,mjs,ts,tsx}'
   const ignorePatterns = /node_modules|react-sandbox/
-  const storyFiles = glob
-    .sync(path.join(__dirname, globPatterns))
-    .filter((filePath) => !ignorePatterns.test(filePath))
+  const storyFiles = globSync(path.join(__dirname, globPatterns)).filter(
+    (filePath) => !ignorePatterns.test(filePath),
+  )
 
   return Promise.all(
     storyFiles.map(async (filePath) => {
