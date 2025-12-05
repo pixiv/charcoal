@@ -1,0 +1,45 @@
+.charcoal-loading-spinner {
+  --charcoal-loading-spinner-size: 48px;
+  --charcoal-loading-spinner-padding: 16px;
+
+  box-sizing: content-box;
+  margin: auto;
+  padding: var(--charcoal-loading-spinner-padding);
+  border-radius: 8px;
+  font-size: var(--charcoal-loading-spinner-size);
+  width: var(--charcoal-loading-spinner-size);
+  height: var(--charcoal-loading-spinner-size);
+  opacity: 0.84;
+  color: var(--charcoal-color-icon-tertiary-default);
+  background-color: var(--charcoal-color-background-default);
+}
+.charcoal-loading-spinner[data-transparent='true'] {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes charcoal-loading-spinner-icon-scale-out {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.charcoal-loading-spinner-icon {
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background-color: currentColor;
+  animation: charcoal-loading-spinner-icon-scale-out 1s both ease-out;
+  animation-iteration-count: infinite;
+}
+
+.charcoal-loading-spinner-icon[data-reset-animation] {
+  animation: none;
+}
+.charcoal-loading-spinner-icon[data-once='true'] {
+  animation-iteration-count: 1;
+}

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/Switch > Checked 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <input
+        checked=""
+        class="charcoal-switch-input"
+        id="test-id"
+        label="checked"
+        name="name"
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Switch > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <input
+        class="charcoal-switch-input"
+        id="test-id"
+        name="name"
+        role="switch"
+        type="checkbox"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Switch > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <label
+        aria-disabled="true"
+        class="charcoal-switch__label"
+        for="test-id"
+      >
+        <input
+          class="charcoal-switch-input"
+          disabled=""
+          id="test-id"
+          name="disabled"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-switch__label_div"
+        >
+          Label
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Switch > Label 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <label
+        class="charcoal-switch__label"
+        for="test-id"
+      >
+        <input
+          class="charcoal-switch-input"
+          id="test-id"
+          name="label"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-switch__label_div"
+        >
+          Label
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
