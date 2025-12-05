@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { addons } from '@storybook/preview-api'
+import { addons } from 'storybook/preview-api'
 
 const DARK_MODE_EVENT_NAME = 'DARK_MODE'
 

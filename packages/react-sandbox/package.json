@@ -24,12 +24,9 @@
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/parser": "^7.23.9",
-    "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-knobs": "^7.0.2",
     "@storybook/addons": "^7.4.1",
     "@storybook/api": "^7.4.1",
-    "@storybook/components": "^7.4.1",
-    "@storybook/core-events": "^7.4.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

@@ -10,16 +10,13 @@ module.exports = {
   ],
 
   addons: [
-    getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-storysource'),
-    getAbsolutePath('storybook-dark-mode'),
-    getAbsolutePath('@storybook/addon-mdx-gfm'),
+    // getAbsolutePath('storybook-dark-mode'),
     getAbsolutePath('@storybook/addon-webpack5-compiler-swc'),
     getAbsolutePath('@storybook/addon-themes'),
     {
-      name: '@storybook/addon-styling-webpack',
+      name: getAbsolutePath("@storybook/addon-styling-webpack"),
       options: {
         rules: [
           {
@@ -47,6 +44,7 @@ module.exports = {
         ],
       },
     },
+    getAbsolutePath("@storybook/addon-docs")
   ],
 
   async webpackFinal(config, { configType }) {
@@ -99,10 +97,9 @@ module.exports = {
       },
     }
   },
-  docs: {
-    autodocs: true,
-  },
+
   staticDirs: ['./static'],
+
   managerHead: (head) => `${head}
     <title>Charcoal ドキュメント</title>
     <meta
@@ -118,7 +115,7 @@ module.exports = {
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/charcoal-ogp.jpg" />
-  `,
+  `
 }
 
 function getAbsolutePath(value) {

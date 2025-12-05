@@ -1,5 +1,5 @@
 import Checkbox from '.'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { useCallback, useState } from 'react'
 
 export default {
