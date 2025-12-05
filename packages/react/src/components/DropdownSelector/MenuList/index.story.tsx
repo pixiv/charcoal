@@ -1,8 +1,8 @@
-import { action } from '@storybook/addon-actions'
+import { action } from 'storybook/actions'
 import MenuList from '.'
 import MenuItem from '../MenuItem'
 import MenuItemGroup from '../MenuItemGroup'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'react/internals/MenuList',
