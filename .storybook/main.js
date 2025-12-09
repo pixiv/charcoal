@@ -12,7 +12,7 @@ module.exports = {
   addons: [
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-links'),
-    // getAbsolutePath('storybook-dark-mode'),
+    getAbsolutePath('storybook-dark-mode'),
     getAbsolutePath('@storybook/addon-webpack5-compiler-swc'),
     getAbsolutePath('@storybook/addon-themes'),
     {
@@ -70,21 +70,21 @@ module.exports = {
   // CLIENT_PORT=443 yarn storybook:experimental-vite -p 6007 --no-manager-cache
   ...(process.env.USE_VITE === '1'
     ? {
-        framework: {
-          name: '@storybook/react-vite',
-          options: {},
-        },
-      }
+      framework: {
+        name: '@storybook/react-vite',
+        options: {},
+      },
+    }
     : {
-        framework: {
-          name: '@storybook/react-webpack5',
-          options: {
-            builder: {
-              useSWC: true,
-            },
+      framework: {
+        name: '@storybook/react-webpack5',
+        options: {
+          builder: {
+            useSWC: true,
           },
         },
-      }),
+      },
+    }),
 
   swc() {
     return {
