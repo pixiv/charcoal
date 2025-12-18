@@ -129,6 +129,7 @@ declare var _default: {
   '24/List': () => Promise<string>;
   '24/LockLock': () => Promise<string>;
   '24/LockUnlock': () => Promise<string>;
+  '24/Login': () => Promise<string>;
   '24/Logout': () => Promise<string>;
   '24/Manga': () => Promise<string>;
   '24/Menu': () => Promise<string>;
