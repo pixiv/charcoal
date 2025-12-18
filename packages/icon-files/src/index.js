@@ -129,6 +129,7 @@ export default {
   '24/List': () => import('./24/List.js').then(m => m.default),
   '24/LockLock': () => import('./24/LockLock.js').then(m => m.default),
   '24/LockUnlock': () => import('./24/LockUnlock.js').then(m => m.default),
+  '24/Login': () => import('./24/Login.js').then(m => m.default),
   '24/Logout': () => import('./24/Logout.js').then(m => m.default),
   '24/Manga': () => import('./24/Manga.js').then(m => m.default),
   '24/Menu': () => import('./24/Menu.js').then(m => m.default),
