@@ -16,6 +16,10 @@ on:
           - beta
           - rc
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,7 +61,6 @@ jobs:
         run: pnpm release --tag ${{ github.event.inputs.release_tag }}
         env:
           NPM_CONFIG_PROVENANCE: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # push tag only when publish success
       - name: git push version up commits
