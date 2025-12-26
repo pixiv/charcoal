@@ -1,10 +1,3 @@
-// This file has been automatically migrated to valid ESM format by Storybook.
-import path from "node:path";
-
-function getAbsolutePath(value: string): any {
-    return path.dirname(import.meta.resolve(path.join(value, 'package.json')));
-}
-
 export default {
     stories: ['../packages/**/*.mdx', '../packages/**/*.story.@(tsx)', './src/**/*.mdx'],
     addons: [
