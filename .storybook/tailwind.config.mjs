@@ -1,10 +1,10 @@
-const { light, dark } = require('@charcoal-ui/theme')
-const { createTailwindConfig } = require('@charcoal-ui/tailwind-config')
+import { light, dark } from '@charcoal-ui/theme'
+import { createTailwindConfig } from '@charcoal-ui/tailwind-config'
 
 /**
  * @type {import('tailwindcss').Config}
  */
-module.exports = {
+export default {
   darkMode: false,
   content: [
     '**/*.tsx',
@@ -29,3 +29,4 @@ module.exports = {
   },
   safelist: [{ pattern: /.*/ }],
 }
+

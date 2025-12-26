@@ -1,11 +1,19 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import path from "node:path";
+
+function getAbsolutePath(value: string): any {
+    return path.dirname(import.meta.resolve(path.join(value, 'package.json')));
+}
+
 export default {
     stories: ['../packages/**/*.mdx', '../packages/**/*.story.@(tsx)', './src/**/*.mdx'],
     addons: [
-        '@storybook/addon-a11y',
-        '@storybook/addon-links',
-        'storybook-dark-mode',
-        '@storybook/addon-webpack5-compiler-swc',
-        '@storybook/addon-themes', {
+        "@storybook/addon-a11y",
+        "@storybook/addon-links",
+        "storybook-dark-mode",
+        "@storybook/addon-webpack5-compiler-swc",
+        "@storybook/addon-themes",
+        {
             name: "@storybook/addon-styling-webpack",
             options: {
                 rules: [
@@ -27,14 +35,14 @@ export default {
                             {
                                 // Gets options from `postcss.config.js` in your project root
                                 loader: 'postcss-loader',
-                                options: { implementation: require.resolve('postcss') },
+                                options: { implementation: 'postcss' }
                             },
                         ],
                     },
                 ],
             },
         },
-        '@storybook/addon-docs',
+        "@storybook/addon-docs",
     ],
 
     async webpackFinal(config, { configType }) {
