@@ -1,0 +1,1042 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/DropdownSelector > AssistiveText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-describedby="test-id"
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          assistiveText
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > CustomChildren 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="normal"
+            >
+              normal
+            </option>
+            <option
+              value="bold"
+            >
+              bold
+            </option>
+            <option
+              value="italic"
+            >
+              italic
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            <div
+              style="font-weight: bold;"
+            >
+              Bold
+            </div>
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="true"
+          >
+            Placeholder
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        aria-disabled="true"
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          disabled=""
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > DisabledItem 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              disabled=""
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+            <option
+              value="4"
+            >
+              4
+            </option>
+            <option
+              value="5"
+            >
+              5
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 2 (disabled)
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > InFormTag 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <form
+      style="width: 288px; display: flex;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            name="exampleOption"
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+      <button
+        class="charcoal-button"
+        data-variant="Primary"
+        style="margin-left: 16px;"
+        type="submit"
+      >
+        submit
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > InModal 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="height: 10px;"
+    >
+      <button>
+        open
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > Invalid 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > InvalidAssistiveText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-describedby="test-id"
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="true"
+          id="test-id"
+        >
+          assistiveText
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > Label 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > LongNames 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > RequiredText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-required-text"
+          >
+            required
+          </div>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > Section 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="apple"
+            >
+              apple
+            </option>
+            <option
+              value="banana"
+            >
+              banana
+            </option>
+            <option
+              value="orange"
+            >
+              orange
+            </option>
+            <option
+              value="bicycle"
+            >
+              bicycle
+            </option>
+            <option
+              value="car"
+            >
+              car
+            </option>
+            <option
+              value="train"
+            >
+              train
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Banana
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/DropdownSelector > SubLabel 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span>
+              SubLabel
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

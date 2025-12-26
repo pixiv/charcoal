@@ -1,0 +1,18 @@
+.charcoal-radio__label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 4px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.charcoal-radio__label[aria-disabled]:not([aria-disabled='false']) {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.charcoal-radio__label_div {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--charcoal-color-text-default);
+}
