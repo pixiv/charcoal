@@ -1,4 +1,4 @@
-import type { StoryObj, Meta } from '@storybook/react'
+import type { StoryObj, Meta } from '@storybook/react-vite'
 import { colors } from '.'
 import { TextBgColor } from './TextBgColor'
 
