@@ -4,7 +4,7 @@ import {
   default as MultiSelect,
   MultiSelectGroupProps,
 } from '.'
-import { Meta, StoryObj } from '@storybook/react-vite'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 import { action } from 'storybook/actions'
 
 const StyledMultiSelectGroup = (props: MultiSelectGroupProps) => {

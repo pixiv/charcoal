@@ -1,5 +1,5 @@
 import CheckboxInput from '.'
-import { Meta, StoryObj } from '@storybook/react-vite'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 import { useState } from 'react'
 
 export default {

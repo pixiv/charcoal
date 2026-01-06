@@ -1,5 +1,5 @@
 import TagItem from '.'
-import { Meta, StoryObj } from '@storybook/react-vite'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 
 export default {
   title: 'react/TagItem',

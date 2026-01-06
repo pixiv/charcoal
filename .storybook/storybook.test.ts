@@ -1,12 +1,12 @@
 import path from 'node:path'
 import { globSync } from 'node:fs'
 
-import { composeStories } from '@storybook/react-vite'
+import { composeStories } from '@storybook/react-webpack5'
 import { render, cleanup } from '@testing-library/react'
 import { addSerializer } from 'jest-specific-snapshot'
 import { styleSheetSerializer } from 'jest-styled-components'
 
-import type { Meta, StoryFn } from '@storybook/react-vite'
+import type { Meta, StoryFn } from '@storybook/react-webpack5'
 
 addSerializer(styleSheetSerializer)
 

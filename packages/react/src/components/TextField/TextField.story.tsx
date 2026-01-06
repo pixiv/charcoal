@@ -1,7 +1,7 @@
 import Clickable from '../Clickable'
 import TextField from '.'
 import { useState } from 'react'
-import { Meta, StoryObj } from '@storybook/react-vite'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 
 export default {
   title: 'react/TextField',

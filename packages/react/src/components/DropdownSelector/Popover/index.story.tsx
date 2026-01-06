@@ -1,7 +1,7 @@
 import { useRef, CSSProperties, useState } from 'react'
 import Popover from '.'
 import Button from '../../Button'
-import { Meta, StoryObj } from '@storybook/react-vite'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 
 export default {
   title: 'react/internals/Popover',
