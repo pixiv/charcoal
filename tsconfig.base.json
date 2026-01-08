@@ -5,7 +5,7 @@
     "module": "esnext",
     "types": ["node", "vitest/globals"],
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

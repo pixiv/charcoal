@@ -121,7 +121,7 @@
   "packageManager": "pnpm@10.17.1",
   "resolutions": {
     "node-gyp": "^9.0.0",
-    "postcss": "^8.4.16",
+    "postcss": "^8.5.6",
     "@types/react": "^18.3.3"
   },
   "lint-staged": {

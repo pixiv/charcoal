@@ -5,6 +5,7 @@
     "types": ["node"],
     "incremental": true,
     "outDir": "./dist",
-    "tsBuildInfoFile": "./.tsbuildinfo"
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "moduleResolution": "node"
   }
 }
