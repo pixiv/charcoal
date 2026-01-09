@@ -1,6 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from 'eslint-plugin-storybook'
-
 import pixiv from '@pixiv/eslint-config'
 import { defineConfig } from 'eslint/config'
 
