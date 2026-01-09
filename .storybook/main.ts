@@ -66,6 +66,9 @@ export default {
           name: '@storybook/react-vite',
           options: {},
         },
+        core: {
+          builder: '@storybook/builder-vite',
+        },
       }
     : {
         framework: {
