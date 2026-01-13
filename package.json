@@ -125,7 +125,7 @@
     "yargs": "^17.3.1",
     "zx": "^7.0.3"
   },
-  "packageManager": "pnpm@10.17.1",
+  "packageManager": "pnpm@10.27.0",
   "resolutions": {
     "node-gyp": "^9.0.0",
     "postcss": "^8.4.16",
