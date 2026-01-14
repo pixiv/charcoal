@@ -1,7 +1,7 @@
-import { action } from '@storybook/addon-actions'
+import { action } from 'storybook/actions'
 import Clickable from '../Clickable'
 import TextArea from '.'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 
 export default {
   title: 'react/TextArea',

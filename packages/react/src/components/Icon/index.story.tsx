@@ -1,6 +1,6 @@
 import Icon from '.'
 import { KNOWN_ICON_FILES } from '@charcoal-ui/icons'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 
 export default {
   title: 'react/Icon',

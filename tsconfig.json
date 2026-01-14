@@ -9,7 +9,7 @@
     "types": ["node", "vitest/globals"],
     "noEmit": true,
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

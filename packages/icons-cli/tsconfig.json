@@ -3,6 +3,7 @@
   "include": ["./src"],
   "compilerOptions": {
     "noEmit": true,
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "node"
   }
 }

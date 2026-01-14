@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef, FC } from 'react'
-import { DocsContainer as BaseContainer } from '@storybook/addon-docs'
-import { themes } from '@storybook/theming'
+import { DocsContainer as BaseContainer } from '@storybook/addon-docs/blocks'
+import { themes } from 'storybook/theming'
 import { useDarkMode } from './use-dark-mode'
 
 export const DocsContainer: FC<

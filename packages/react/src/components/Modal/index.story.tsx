@@ -12,7 +12,7 @@ import TextField from '../TextField'
 import DropdownSelector from '../DropdownSelector'
 import Checkbox from '../Checkbox'
 import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-webpack5'
 
 export default {
   title: 'react/Modal',

@@ -27,7 +27,9 @@ export const parameters = {
   viewMode: 'docs',
   docs: {
     container: DocsContainer,
+    codePanel: true,
   },
 }
 
 export const decorators = [themeDecorator]
+export const tags = ['autodocs']

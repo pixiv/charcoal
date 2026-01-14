@@ -1,14 +1,11 @@
 import path from 'node:path'
 import { globSync } from 'node:fs'
 
-import { composeStories } from '@storybook/react'
+import { composeStories } from '@storybook/react-webpack5'
 import { render, cleanup } from '@testing-library/react'
-import { addSerializer } from 'jest-specific-snapshot'
-import { styleSheetSerializer } from 'jest-styled-components'
+import 'jest-styled-components'
 
-import type { Meta, StoryFn } from '@storybook/react'
-
-addSerializer(styleSheetSerializer)
+import type { Meta, StoryFn } from '@storybook/react-webpack5'
 
 type StoryFile = {
   default: Meta
@@ -51,8 +48,6 @@ const options = {
   suite: 'Storybook Tests',
   storyKindRegex: /^.*?DontTest$/,
   storyNameRegex: /UNSET/,
-  snapshotsDirName: '__snapshots__',
-  snapshotExtension: 'storyshot',
 }
 
 describe(options.suite, async () => {
@@ -65,12 +60,6 @@ describe(options.suite, async () => {
   files.forEach(({ storyFile, filePath }) => {
     const meta = storyFile.default
     const title = meta.title || filePath
-    const dir = path.join(path.dirname(filePath), options.snapshotsDirName)
-    const filename = [
-      path.basename(filePath, '.tsx'),
-      options.snapshotExtension,
-    ].join('.')
-    const snapshotPath = path.join(dir, filename)
 
     if (
       options.storyKindRegex.test(title) ||
@@ -98,9 +87,9 @@ describe(options.suite, async () => {
       for (const { name, story } of stories) {
         const testFn = story.parameters.storyshots?.skip ? test.skip : test
 
-        testFn(name, async () => {
+        testFn(`${title} > ${name}`, async () => {
           const mounted = render(story())
-          expect(mounted.container).toMatchSpecificSnapshot(snapshotPath)
+          expect(mounted.container).toMatchSnapshot()
         })
       }
     })
