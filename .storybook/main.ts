@@ -7,7 +7,7 @@ export default {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-links',
-    'storybook-dark-mode',
+    '@vueless/storybook-dark-mode',
     '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-themes',
     {
