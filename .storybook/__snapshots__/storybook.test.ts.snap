@@ -3498,7 +3498,7 @@ exports[`Storybook Tests > react/Radio > react/Radio > Readonly 1`] = `
 </div>
 `;
 
-exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > ObjectSegments 1`] = `
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > FullWidthSegments 1`] = `
 <div>
   <div
     data-dark="false"
@@ -3507,6 +3507,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       aria-label="test"
       aria-orientation="vertical"
       class="charcoal-segmented-control"
+      data-full-width="true"
+      data-width-uniform="false"
       id="test-id"
       role="radiogroup"
     >
@@ -3514,6 +3516,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
         aria-disabled="false"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3528,6 +3531,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
         aria-disabled="false"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3542,6 +3546,71 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
         aria-disabled="false"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option3"
+        />
+        選択肢3
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > ObjectSegments 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="test"
+      aria-orientation="vertical"
+      class="charcoal-segmented-control"
+      data-full-width="false"
+      data-width-uniform="false"
+      id="test-id"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="false"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option1"
+        />
+        選択肢1
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="false"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option2"
+        />
+        選択肢2
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3556,6 +3625,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
         aria-disabled="true"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3571,6 +3641,70 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
 </div>
 `;
 
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > RandomLengthSegments 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="test"
+      aria-orientation="vertical"
+      class="charcoal-segmented-control"
+      data-full-width="false"
+      data-width-uniform="false"
+      id="test-id"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="false"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option1"
+        />
+        なが〜〜い選択肢
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="false"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option2"
+        />
+        選
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="false"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option3"
+        />
+        選択肢
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > StringSegments 1`] = `
 <div>
   <div
@@ -3580,6 +3714,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       aria-label="test"
       aria-orientation="vertical"
       class="charcoal-segmented-control"
+      data-full-width="false"
+      data-width-uniform="false"
       id="test-id"
       role="radiogroup"
     >
@@ -3587,6 +3723,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
         aria-disabled="false"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3601,6 +3738,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
         aria-disabled="false"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3615,6 +3753,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
         aria-disabled="false"
         class="charcoal-segmented-control-radio__label"
         data-checked="false"
+        data-width-uniform="false"
       >
         <input
           class="charcoal-segmented-control-radio__input"
@@ -3624,6 +3763,198 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
           value="option3"
         />
         option3
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > UniformWidthAndFullWidthSegments 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="test"
+      aria-orientation="vertical"
+      class="charcoal-segmented-control"
+      data-full-width="true"
+      data-width-uniform="true"
+      id="test-id"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option1"
+        />
+        なが〜〜い選択肢
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option2"
+        />
+        選
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option3"
+        />
+        選択肢
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > UniformWidthSegments 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="test"
+      aria-orientation="vertical"
+      class="charcoal-segmented-control"
+      data-full-width="false"
+      data-width-uniform="true"
+      id="test-id"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option1"
+        />
+        なが〜〜い選択肢
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option2"
+        />
+        選
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option3"
+        />
+        選択肢
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > UniformWidthSegmentsWhenShortLabel 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="test"
+      aria-orientation="vertical"
+      class="charcoal-segmented-control"
+      data-full-width="false"
+      data-width-uniform="true"
+      id="test-id"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option1"
+        />
+        選
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option2"
+        />
+        択
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-width-uniform="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          name="test-id"
+          tabindex="0"
+          type="radio"
+          value="option3"
+        />
+        肢
       </label>
     </div>
   </div>
