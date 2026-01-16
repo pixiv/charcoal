@@ -25,6 +25,7 @@ export type SegmentedControlProps = {
   readonly readonly?: boolean
   readonly required?: boolean
   readonly className?: string
+  readonly widthUniform?: boolean
 
   readonly value?: string
   readonly defaultValue?: string
@@ -60,13 +61,19 @@ const SegmentedControl = forwardRef<HTMLDivElement, SegmentedControlProps>(
     }, [props.data])
 
     return (
-      <div ref={ref} {...radioGroupProps} className={className}>
+      <div
+        ref={ref}
+        {...radioGroupProps}
+        className={className}
+        data-width-uniform={props.widthUniform}
+      >
         <RadioProvider value={state}>
           {segmentedControlItems.map((item) => (
             <Segmented
               key={item.value}
               value={item.value}
               disabled={item.disabled}
+              widthUniform={props.widthUniform}
             >
               {item.label}
             </Segmented>
@@ -83,6 +90,7 @@ type RadioProps = {
   value: string
   disabled?: boolean
   children?: ReactNode
+  widthUniform?: boolean
 }
 
 const Segmented = (props: RadioProps) => {
@@ -108,6 +116,7 @@ const Segmented = (props: RadioProps) => {
       className="charcoal-segmented-control-radio__label"
       aria-disabled={isDisabled || state.isReadOnly}
       data-checked={isSelected}
+      data-width-uniform={props.widthUniform}
     >
       <input
         className="charcoal-segmented-control-radio__input"

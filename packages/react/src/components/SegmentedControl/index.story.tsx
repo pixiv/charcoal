@@ -30,3 +30,29 @@ export const ObjectSegments: StoryObj<typeof SegmentedControl> = {
     required: false,
   },
 }
+
+export const UniformWidthSegments: StoryObj<typeof SegmentedControl> = {
+  args: {
+    name: 'test',
+    data: [
+      { label: 'なが〜〜い選択肢', value: 'option1' },
+      { label: '選', value: 'option2' },
+      { label: '選択肢', value: 'option3' },
+    ],
+    widthUniform: true,
+  },
+}
+
+export const UniformWidthSegmentsWhenShortLabel: StoryObj<
+  typeof SegmentedControl
+> = {
+  args: {
+    name: 'test',
+    data: [
+      { label: '選', value: 'option1' },
+      { label: '択', value: 'option2' },
+      { label: '肢', value: 'option3' },
+    ],
+    widthUniform: true,
+  },
+}
