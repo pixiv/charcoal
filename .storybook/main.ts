@@ -125,7 +125,7 @@ const viteConfig: ViteStorybookConfig = {
         // file://./node_modules/.../mdx-react-shim.js となるのを相対パスに修正する
         if (source.startsWith('file://') && source.includes('mdx-react-shim')) {
           const withoutProtocol = source.replace(/^file:\/\//, '')
-          return path.resolve(process.cwd(), withoutProtocol) 
+          return path.resolve(process.cwd(), withoutProtocol)
         }
         return null
       },
@@ -136,9 +136,8 @@ const viteConfig: ViteStorybookConfig = {
     }
     // proxyが噛んでいる場合にクライアント側のwssポート番号を変更する
     if (typeof process.env.CLIENT_PORT !== 'undefined') {
-      // config.server.hmr.port = process.env.CLIENT_PORT
+      ;(config.server as any).hmr!.port = process.env.CLIENT_PORT
     }
-    // config.plugins.push(viteCommonjs({ include: 'packages/icons' }))
     return config
   },
 }
