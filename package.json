@@ -99,6 +99,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-stately": "^3.26.0",
+    "remark-gfm": "^4.0.1",
     "rimraf": "^3.0.2",
     "storybook": "10.1.7",
     "storybook-dark-mode": "^4.0.2",

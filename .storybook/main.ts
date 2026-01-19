@@ -1,3 +1,5 @@
+import remarkGfm from 'remark-gfm'
+
 export default {
   stories: [
     '../packages/**/*.mdx',
@@ -39,7 +41,16 @@ export default {
         ],
       },
     },
-    '@storybook/addon-docs',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
   ],
 
   async webpackFinal(config, { configType }) {
