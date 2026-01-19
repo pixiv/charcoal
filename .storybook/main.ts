@@ -122,10 +122,10 @@ const viteConfig: ViteStorybookConfig = {
       name: 'fix-storybook-mdx-react-shim-file-url',
       enforce: 'pre',
       resolveId(source) {
-        // 例: file://./node_modules/.../mdx-react-shim.js
+        // file://./node_modules/.../mdx-react-shim.js となるのを相対パスに修正する
         if (source.startsWith('file://') && source.includes('mdx-react-shim')) {
-          const withoutProtocol = source.replace(/^file:\/\//, '') // -> ./node_modules/...
-          return path.resolve(process.cwd(), withoutProtocol) // -> /abs/path/to/project/node_modules/...
+          const withoutProtocol = source.replace(/^file:\/\//, '')
+          return path.resolve(process.cwd(), withoutProtocol) 
         }
         return null
       },
