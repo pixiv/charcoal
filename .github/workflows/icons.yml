@@ -45,6 +45,16 @@ jobs:
       - name: Generate icon files
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons files:generate
 
+      - name: Generate icon 1.0 data URIs
+        run: pnpm --filter @charcoal-ui/icons-cli run build:uri-v1
+
+      - name: Generate icon 1.0 svgos
+        run: pnpm --filter @charcoal-ui/icons-cli run build:react-v1
+
+      
+      - name: Generate icon 1.0 CSS
+        run: pnpm --filter @charcoal-ui/icons-cli run build:css-v1
+
       - name: Generate github token
         id: generate_token
         uses: tibdex/github-app-token@v1
