@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/tailwind-config",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "license": "Apache-2.0",
   "type": "commonjs",
   "main": "./dist/index.js",
