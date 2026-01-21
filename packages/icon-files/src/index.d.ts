@@ -28,6 +28,7 @@ declare var _default: {
   '16/Search': () => Promise<string>;
   '16/Smile': () => Promise<string>;
   '16/Speaker': () => Promise<string>;
+  '16/Trash': () => Promise<string>;
   '16/Up': () => Promise<string>;
   '16/View': () => Promise<string>;
   '16/Warning': () => Promise<string>;
@@ -281,6 +282,7 @@ declare var _default: {
   'Inline/Remove': () => Promise<string>;
   'Inline/Smile': () => Promise<string>;
   'Inline/SmileOn': () => Promise<string>;
+  'Inline/Trash': () => Promise<string>;
   'Inline/Users': () => Promise<string>;
   'Inline/View': () => Promise<string>;
   'Inline/ViewOutline': () => Promise<string>

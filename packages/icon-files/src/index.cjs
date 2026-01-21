@@ -28,6 +28,7 @@ module.exports = {
   '16/Search': () => import('./16/Search.js').then(m => m.default),
   '16/Smile': () => import('./16/Smile.js').then(m => m.default),
   '16/Speaker': () => import('./16/Speaker.js').then(m => m.default),
+  '16/Trash': () => import('./16/Trash.js').then(m => m.default),
   '16/Up': () => import('./16/Up.js').then(m => m.default),
   '16/View': () => import('./16/View.js').then(m => m.default),
   '16/Warning': () => import('./16/Warning.js').then(m => m.default),
@@ -281,6 +282,7 @@ module.exports = {
   'Inline/Remove': () => import('./Inline/Remove.js').then(m => m.default),
   'Inline/Smile': () => import('./Inline/Smile.js').then(m => m.default),
   'Inline/SmileOn': () => import('./Inline/SmileOn.js').then(m => m.default),
+  'Inline/Trash': () => import('./Inline/Trash.js').then(m => m.default),
   'Inline/Users': () => import('./Inline/Users.js').then(m => m.default),
   'Inline/View': () => import('./Inline/View.js').then(m => m.default),
   'Inline/ViewOutline': () => import('./Inline/ViewOutline.js').then(m => m.default)
