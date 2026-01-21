@@ -1,0 +1,41 @@
+.charcoal-modal-header-root {
+  height: 64px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 743px) {
+  .charcoal-modal-header-root[data-bottom-sheet='true'],
+  .charcoal-modal-header-root[data-bottom-sheet='full'] {
+    height: 48px;
+  }
+}
+
+.charcoal-modal-header-title {
+  color: var(--charcoal-color-text-default);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  display: flow-root;
+}
+
+.charcoal-modal-align {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.charcoal-modal-body {
+  padding-bottom: 40px;
+  color: var(--charcoal-color-text-default);
+}
+
+.charcoal-modal-buttons {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 8px;
+
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}

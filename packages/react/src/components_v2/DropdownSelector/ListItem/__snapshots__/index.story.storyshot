@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/internals/ListItem > Basic 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <li
+      class="charcoal-list-item"
+    >
+      Item
+    </li>
+    <li
+      class="charcoal-list-item"
+    >
+      <pixiv-icon
+        name="16/Add"
+      />
+       Add
+    </li>
+    <a
+      class="charcoal-list-item"
+      href="#"
+    >
+      Normal Link
+    </a>
+    <a
+      class="charcoal-list-item"
+      href="#"
+      style="color: red;"
+    >
+      Custom Link
+    </a>
+    <li
+      class="charcoal-list-item"
+    >
+      Switch
+      <div
+        style="margin-left: auto;"
+      >
+        <input
+          class="charcoal-switch-input"
+          id="test-id"
+          label="hello"
+          name="hello"
+          role="switch"
+          type="checkbox"
+        />
+      </div>
+    </li>
+  </div>
+</div>
+`;
