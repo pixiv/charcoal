@@ -11,6 +11,7 @@ import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 import { useId } from '@react-aria/utils'
+import { PopoverProps } from './Popover'
 
 export type DropdownSelectorProps = {
   label: string
@@ -30,7 +31,7 @@ export type DropdownSelectorProps = {
   children: MenuListChildren
   onChange: (value: string) => void
   className?: string
-}
+} & Pick<PopoverProps, 'inertWorkaround'>
 
 export default function DropdownSelector({
   onChange,
@@ -126,6 +127,7 @@ export default function DropdownSelector({
           onClose={() => setIsOpen(false)}
           triggerRef={triggerRef}
           value={props.value}
+          inertWorkaround={props.inertWorkaround}
         >
           <MenuList
             value={props.value}

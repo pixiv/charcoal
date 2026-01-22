@@ -11,6 +11,15 @@ export type PopoverProps = {
   children: ReactNode
   triggerRef: RefObject<Element | null>
   popoverRef?: RefObject<HTMLDivElement | null>
+  /**
+   * A tmp workaround for react-aria above 3.27.3 setting overlay element to inert and causing background to be clickable.
+   * This may become default at next major.
+   * https://github.com/adobe/react-spectrum/pull/8796
+   * https://github.com/adobe/react-spectrum/issues/8784
+   *
+   * @default false
+   */
+  inertWorkaround?: boolean
 }
 
 const _empty = () => null
@@ -50,6 +59,10 @@ export default function Popover(props: PopoverProps) {
     <Overlay portalContainer={document.body}>
       <div
         {...underlayProps}
+        // https://github.com/adobe/react-spectrum/issues/8784#issuecomment-3234771154
+        {...(props.inertWorkaround
+          ? { 'data-react-aria-top-layer': true, onClick: props.onClose }
+          : {})}
         style={{
           position: 'fixed',
           zIndex:
