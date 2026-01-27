@@ -13,7 +13,7 @@ export const StringSegments: StoryObj<typeof SegmentedControl> = {
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: false,
+    uniformSegmentWidth: false,
     fullWidth: false,
   },
 }
@@ -30,7 +30,7 @@ export const ObjectSegments: StoryObj<typeof SegmentedControl> = {
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: false,
+    uniformSegmentWidth: false,
     fullWidth: false,
   },
 }
@@ -46,7 +46,7 @@ export const RandomLengthSegments: StoryObj<typeof SegmentedControl> = {
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: false,
+    uniformSegmentWidth: false,
     fullWidth: false,
   },
 }
@@ -62,7 +62,7 @@ export const UniformWidthSegments: StoryObj<typeof SegmentedControl> = {
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: true,
+    uniformSegmentWidth: true,
     fullWidth: false,
   },
 }
@@ -80,7 +80,7 @@ export const UniformWidthSegmentsWhenShortLabel: StoryObj<
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: true,
+    uniformSegmentWidth: true,
     fullWidth: false,
   },
 }
@@ -96,7 +96,7 @@ export const FullWidthSegments: StoryObj<typeof SegmentedControl> = {
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: false,
+    uniformSegmentWidth: false,
     fullWidth: true,
   },
 }
@@ -114,7 +114,7 @@ export const UniformWidthAndFullWidthSegments: StoryObj<
     disabled: false,
     readonly: false,
     required: false,
-    widthUniform: true,
+    uniformSegmentWidth: true,
     fullWidth: true,
   },
 }
