@@ -130,7 +130,7 @@ const viteConfig: ViteStorybookConfig = {
     }
     // proxyが噛んでいる場合にクライアント側のwssポート番号を変更する
     if (typeof process.env.CLIENT_PORT !== 'undefined') {
-      ; (config.server as any).hmr!.port = process.env.CLIENT_PORT
+      ;(config.server as any).hmr!.port = process.env.CLIENT_PORT
     }
     return config
   },
