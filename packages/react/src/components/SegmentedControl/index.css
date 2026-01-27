@@ -6,7 +6,7 @@
   border-radius: 16px;
 }
 
-.charcoal-segmented-control[data-width-uniform='true'],
+.charcoal-segmented-control[data-uniform-segmented-width='true'],
 .charcoal-segmented-control[data-full-width='true'] {
   display: inline-grid;
   grid-auto-columns: minmax(80px, 1fr);
@@ -47,7 +47,7 @@
   color: var(--charcoal-text5);
 }
 
-.charcoal-segmented-control-radio__label[data-width-uniform='true'],
+.charcoal-segmented-control-radio__label[data-uniform-segmented-width='true'],
 .charcoal-segmented-control-radio__label[data-full-width='true'] {
   justify-content: center;
   white-space: nowrap;
