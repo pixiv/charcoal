@@ -98,12 +98,6 @@ const webpack5Config: Webpack5StorybookConfig = {
       },
     }
   },
-  async webpackFinal(config, { configType }) {
-    if (configType === 'PRODUCTION') {
-      return config
-    }
-    return config
-  },
 }
 
 const viteConfig: ViteStorybookConfig = {
@@ -136,7 +130,7 @@ const viteConfig: ViteStorybookConfig = {
     }
     // proxyが噛んでいる場合にクライアント側のwssポート番号を変更する
     if (typeof process.env.CLIENT_PORT !== 'undefined') {
-      ;(config.server as any).hmr!.port = process.env.CLIENT_PORT
+      ; (config.server as any).hmr!.port = process.env.CLIENT_PORT
     }
     return config
   },
