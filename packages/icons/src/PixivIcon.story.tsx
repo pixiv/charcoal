@@ -215,3 +215,20 @@ export const RawIconFile: StoryObj<Props> = {
     color: '#000000',
   },
 }
+
+export const FixedSize: StoryObj<Props> = {
+  render: ({ color, name, 'fixed-size': fixedSize }) => {
+    return (
+      <>
+        <IconDef color={color}>
+          <pixiv-icon name={name} fixed-size={fixedSize} />
+        </IconDef>
+      </>
+    )
+  },
+  args: {
+    name: '16/Add',
+    color: '#000000',
+    'fixed-size': '16' as 16 | 24 | 32 | 'Inline',
+  },
+}
