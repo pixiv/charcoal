@@ -49,12 +49,11 @@ export function createTailwindConfig({
   const DEFAULT = getDefaultKeyName(version)
 
   const {
-    borderWidth: borderWidthV2,
     borderRadius: borderRadiusV2,
     borderColor: borderColorV2,
     colors: colorsV2,
-    fontSize: fontSizeV2,
     fontWeight: fontWeightV2,
+    fontSize: fontSizeV2,
     spacing: spacingV2,
     gap: gapV2,
     width: widthV2,
@@ -143,9 +142,10 @@ export function createTailwindConfig({
       },
       ...(unstableTokenV2
         ? {
-            borderWidth: borderWidthV2,
-            fontSize: fontSizeV2,
-            fontWeight: fontWeightV2,
+            extend: {
+              fontWeight: fontWeightV2,
+              fontSize: fontSizeV2,
+            },
           }
         : {}),
     },
