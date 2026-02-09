@@ -1,6 +1,12 @@
 import remarkGfm from 'remark-gfm'
+import type { StorybookConfig as Webpack5StorybookConfig } from '@storybook/react-webpack5'
+import type { StorybookConfig as ViteStorybookConfig } from '@storybook/react-vite'
+import path from 'node:path'
 
-export default {
+const generalConfig: Omit<
+  Webpack5StorybookConfig | ViteStorybookConfig,
+  'framework'
+> = {
   stories: [
     '../packages/**/*.mdx',
     '../packages/**/*.story.@(tsx)',
@@ -52,57 +58,6 @@ export default {
       },
     },
   ],
-
-  async webpackFinal(config, { configType }) {
-    if (configType === 'PRODUCTION') {
-      return config
-    }
-    return config
-  },
-
-  async viteFinal(config, { configType }) {
-    if (configType === 'PRODUCTION') {
-      return config
-    }
-    // proxyが噛んでいる場合にクライアント側のwssポート番号を変更する
-    if (typeof process.env.CLIENT_PORT !== 'undefined') {
-      config.server.hmr.port = process.env.CLIENT_PORT
-    }
-    // config.plugins.push(viteCommonjs({ include: 'packages/icons' }))
-    return config
-  },
-  ...(process.env.USE_VITE === '1'
-    ? {
-        framework: {
-          name: '@storybook/react-vite',
-          options: {},
-        },
-        core: {
-          builder: '@storybook/builder-vite',
-        },
-      }
-    : {
-        framework: {
-          name: '@storybook/react-webpack5',
-          options: {
-            builder: {
-              useSWC: true,
-            },
-          },
-        },
-      }),
-
-  swc() {
-    return {
-      jsc: {
-        transform: {
-          react: {
-            runtime: 'automatic',
-          },
-        },
-      },
-    }
-  },
   staticDirs: ['./static'],
   managerHead: (head) => `${head}
       <title>Charcoal ドキュメント</title>
@@ -121,3 +76,64 @@ export default {
       <meta property="og:image" content="/charcoal-ogp.jpg" />
     `,
 }
+
+const webpack5Config: Webpack5StorybookConfig = {
+  ...generalConfig,
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {
+      builder: {
+        useSWC: true,
+      },
+    },
+  },
+  swc() {
+    return {
+      jsc: {
+        transform: {
+          react: {
+            runtime: 'automatic',
+          },
+        },
+      },
+    }
+  },
+}
+
+const viteConfig: ViteStorybookConfig = {
+  ...generalConfig,
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+  core: {
+    builder: '@storybook/builder-vite',
+  },
+  async viteFinal(config, { configType }) {
+    config.plugins ??= []
+
+    config.plugins.unshift({
+      name: 'fix-storybook-mdx-react-shim-file-url',
+      enforce: 'pre',
+      resolveId(source) {
+        // file://./node_modules/.../mdx-react-shim.js となるのを相対パスに修正する
+        if (source.startsWith('file://') && source.includes('mdx-react-shim')) {
+          const withoutProtocol = source.replace(/^file:\/\//, '')
+          return path.resolve(process.cwd(), withoutProtocol)
+        }
+        return null
+      },
+    })
+
+    if (configType === 'PRODUCTION') {
+      return config
+    }
+    // proxyが噛んでいる場合にクライアント側のwssポート番号を変更する
+    if (typeof process.env.CLIENT_PORT !== 'undefined') {
+      ;(config.server as any).hmr!.port = process.env.CLIENT_PORT
+    }
+    return config
+  },
+}
+
+export default process.env.USE_VITE === '1' ? viteConfig : webpack5Config
