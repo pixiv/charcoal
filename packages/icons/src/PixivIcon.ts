@@ -4,7 +4,7 @@ import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
 
-const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
+const attributes = ['name', 'scale', 'unsafe-non-guideline-scale', 'fixed-size'] as const
 
 const ROOT_MARGIN = 50
 
@@ -18,6 +18,7 @@ export interface Props
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
   'unsafe-non-guideline-scale'?: number | string
+  'fixed-size'?: 16 | 24 | 32 | 'Inline'
 
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
@@ -77,6 +78,7 @@ export class PixivIcon extends HTMLElement {
     name: string
     scale: string | null
     'unsafe-non-guideline-scale': string | null
+    'fixed-size': string | null
   } {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)]),
@@ -115,6 +117,29 @@ export class PixivIcon extends HTMLElement {
 
       default: {
         return Number(size) * scale
+      }
+    }
+  }
+
+  get fixedSize(): number | null {
+    const fixedSize = this.props['fixed-size']
+    if (fixedSize === null) {
+      return null
+    }
+
+    switch (fixedSize) {
+      case 'Inline': {
+        return 16
+      }
+
+      case '16':
+      case '24':
+      case '32': {
+        return Number(fixedSize)
+      }
+
+      default: {
+        return Number(fixedSize)
       }
     }
   }
@@ -192,7 +217,7 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const size = this.forceResizedSize ?? this.scaledSize
+    const size = this.fixedSize ?? this.forceResizedSize ?? this.scaledSize
 
     if (!Number.isFinite(size)) {
       throw new TypeError(`icon size must not be NaN`)
