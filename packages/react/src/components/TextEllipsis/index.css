@@ -14,6 +14,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--charcoal-text-ellipsis-line-limit);
   max-height: calc(
-    var(--charcoal-text-ellipsis-line-height) * var(--charcoal-text-ellipsis-line-limit)
+    var(--charcoal-text-ellipsis-line-height) *
+      var(--charcoal-text-ellipsis-line-limit)
   );
 }
