@@ -113,6 +113,8 @@ const viteConfig: ViteStorybookConfig = {
     builder: '@storybook/builder-vite',
   },
   async viteFinal(config, { configType }) {
+    config.css ??= {}
+    config.css.postcss = path.resolve(process.cwd(), '.storybook')
     config.plugins ??= []
 
     config.plugins.unshift({
