@@ -33,7 +33,7 @@ export default function TextEllipsis({
           '--charcoal-text-ellipsis-line-height': `${lineHeight}px`,
           '--charcoal-text-ellipsis-line-limit': lineLimit,
           ...props.style,
-        } as React.CSSProperties
+        } satisfies React.CSSProperties
       }
       title={finalTitle}
     >

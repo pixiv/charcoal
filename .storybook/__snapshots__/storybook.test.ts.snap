@@ -4909,7 +4909,7 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > SingleLine 
     data-dark="false"
   >
     <div
-      style="width: 240px;"
+      style="width: 200px;"
     >
       <div
         class="charcoal-text-ellipsis"
