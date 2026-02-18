@@ -4,7 +4,20 @@ import react from '@vitejs/plugin-react'
 import * as path from 'node:path'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          [
+            'babel-plugin-react-compiler',
+            {
+              compilationMode: 'annotation',
+            },
+          ],
+        ],
+      },
+    }),
+  ],
   test: {
     globals: true,
     environment: 'jsdom',

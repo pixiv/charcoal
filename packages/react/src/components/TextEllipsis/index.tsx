@@ -18,6 +18,7 @@ export default function TextEllipsis({
   title,
   ...props
 }: TextEllipsisProps) {
+  'use memo'
   const resolvedTitle = title === undefined ? onlyText(children) : title
   const finalTitle = resolvedTitle !== '' ? resolvedTitle : undefined
 
