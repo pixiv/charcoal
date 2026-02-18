@@ -1,5 +1,8 @@
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { globSync } from 'node:fs'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import { composeStories } from '@storybook/react-vite'
 import { render, cleanup } from '@testing-library/react'
