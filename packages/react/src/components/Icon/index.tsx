@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './index.css'
 
 import '@charcoal-ui/icons'
 import type { PixivIcon, Props } from '@charcoal-ui/icons'

@@ -25,4 +25,12 @@ export default {
   },
 } as Meta<typeof Icon>
 
-export const Default: StoryObj<typeof Icon> = {}
+export const Default: StoryObj<typeof Icon> = {
+  render: () => <Icon name={KNOWN_ICON_FILES[0]} scale={1} />,
+}
+
+export const FixedSize: StoryObj<typeof Icon> = {
+  render: () => (
+    <Icon name={KNOWN_ICON_FILES[0]} unsafeNonGuidelineFixedSize={8} />
+  ),
+}
