@@ -1,5 +1,5 @@
 import { beforeAll, vi } from 'vitest'
-import { setProjectAnnotations } from '@storybook/react-webpack5'
+import { setProjectAnnotations } from '@storybook/react-vite'
 import * as projectAnnotations from './.storybook/preview'
 
 import type { ReactPortal } from 'react'
