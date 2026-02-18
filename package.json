@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "storybook:experimental-vite": "USE_VITE=1 storybook dev -p 6006",
+    "storybook:webpack": "USE_WEBPACK=1 storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:build-vite": "USE_VITE=1 storybook build",
+    "storybook:build-webpack": "USE_WEBPACK=1 storybook build",
     "build": "pnpm -r --sort --workspace-concurrency=Infinite --stream run build",
     "clean": "pnpm -r --workspace-concurrency=Infinity --stream run clean",
     "pullrequest-cli": "node misc/pullrequest-cli/src/index.mts",
