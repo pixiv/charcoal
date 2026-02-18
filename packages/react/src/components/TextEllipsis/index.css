@@ -1,0 +1,20 @@
+.charcoal-text-ellipsis {
+  overflow: hidden;
+  line-height: var(--charcoal-text-ellipsis-line-height);
+  overflow-wrap: break-word;
+}
+
+.charcoal-text-ellipsis[data-line-limit='1'] {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.charcoal-text-ellipsis[data-line-limit]:not([data-line-limit='1']) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--charcoal-text-ellipsis-line-limit);
+  max-height: calc(
+    var(--charcoal-text-ellipsis-line-height) *
+      var(--charcoal-text-ellipsis-line-limit)
+  );
+}

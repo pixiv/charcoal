@@ -4820,6 +4820,110 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > SubLabel 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > CustomTitle 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-line-limit="1"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        title="カスタムのツールチップ文言"
+      >
+        title を渡すとツールチップはその文言になります。
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-line-limit="1"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        title="これは非常に長いテキストです。1行で収まらない場合に省略記号（...）で表示が切り詰められます。ホバーすると全文がツールチップで表示されます。"
+      >
+        これは非常に長いテキストです。1行で収まらない場合に省略記号（...）で表示が切り詰められます。ホバーすると全文がツールチップで表示されます。
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > EmptyTitle 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-line-limit="1"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+      >
+        title="" を渡すとツールチップは表示されません。ホバーしても何も出ません。
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > MultiLine 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-line-limit="2"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 2;"
+        title="複数行の省略表示です。lineLimit で指定した行数まで表示し、それ以降は...で省略されます。"
+      >
+        複数行の省略表示です。lineLimit で指定した行数まで表示し、それ以降は...で省略されます。
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > SingleLine 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-line-limit="1"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        title="Single line ellipsis. This long text will be truncated with an ellipsis at the end."
+      >
+        Single line ellipsis. This long text will be truncated with an ellipsis at the end.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TextField > react/TextField > Affix 1`] = `
 <div>
   <div
