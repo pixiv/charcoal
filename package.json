@@ -3,6 +3,7 @@
   "description": "@charcoal-ui monorepo",
   "author": "pixiv",
   "license": "Apache-2.0",
+  "type": "module",
   "private": true,
   "workspaces": [
     "packages/*"
