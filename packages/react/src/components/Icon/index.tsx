@@ -5,6 +5,7 @@ import type { PixivIcon, Props } from '@charcoal-ui/icons'
 
 export interface OwnProps {
   unsafeNonGuidelineScale?: number
+  unsafeNonGuidelineFixedSize?: number
   className?: string
 }
 
@@ -15,16 +16,66 @@ export interface IconProps
     > {}
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
-  { name, scale, unsafeNonGuidelineScale, className, ...rest },
+  {
+    name,
+    scale,
+    unsafeNonGuidelineScale,
+    unsafeNonGuidelineFixedSize,
+    className,
+    ...rest
+  },
   ref,
 ) {
+  // <pixiv-icon> の forceResizedSize の実装を模倣したもの
+  const forceResizedSize = React.useMemo(() => {
+    if (!unsafeNonGuidelineScale) {
+      return
+    }
+
+    const [size] = (name as string).split('/')
+    switch (size) {
+      case 'Inline': {
+        return 16 * unsafeNonGuidelineScale
+      }
+
+      default: {
+        return Number(size) * unsafeNonGuidelineScale
+      }
+    }
+  }, [name, unsafeNonGuidelineScale])
+
+  // <pixiv-icon> の scaledSize の実装を模倣したもの
+  const scaledSize = React.useMemo(() => {
+    const [size] = (name as string).split('/')
+    const numericScale = Number(scale ?? '1')
+    switch (size) {
+      case 'Inline': {
+        return numericScale === 2 ? 32 : 16
+      }
+      case '24': {
+        return 24 * numericScale
+      }
+      default: {
+        return Number(size)
+      }
+    }
+  }, [name, scale])
+
+  const style: React.CSSProperties = React.useMemo(
+    () => ({
+      '--charcoal-icon-container-size': `${unsafeNonGuidelineFixedSize ?? forceResizedSize ?? scaledSize}px`,
+    }),
+    [forceResizedSize, scaledSize, unsafeNonGuidelineFixedSize],
+  )
+
   return (
     <pixiv-icon
       ref={ref}
       name={name}
       scale={scale}
       unsafe-non-guideline-scale={unsafeNonGuidelineScale}
-      class={className}
+      style={style}
+      class={`.charcoal-icon-ssr ${className}`}
       {...rest}
     />
   )
