@@ -64,7 +64,7 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
 
   const style: React.CSSProperties = React.useMemo(
     () => ({
-      '--charcoal-icon-container-size': `${unsafeNonGuidelineFixedSize ?? forceResizedSize ?? scaledSize}px`,
+      '--size': `${unsafeNonGuidelineFixedSize ?? forceResizedSize ?? scaledSize}px`,
     }),
     [forceResizedSize, scaledSize, unsafeNonGuidelineFixedSize],
   )
@@ -76,7 +76,7 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       scale={scale}
       unsafe-non-guideline-scale={unsafeNonGuidelineScale}
       style={style}
-      class={`.charcoal-icon-ssr ${className}`}
+      class={`charcoal-icon ${className || ''}`.trim()}
       {...rest}
     />
   )
