@@ -79,3 +79,7 @@ export {
   type HintTextProps,
   type HintTextContext,
 } from './components/HintText'
+export {
+  default as UnstableTextEllipsis,
+  type TextEllipsisProps,
+} from './components/TextEllipsis'
