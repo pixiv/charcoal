@@ -59,6 +59,9 @@ const generalConfig: Omit<
     },
   ],
   staticDirs: ['./static'],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
   managerHead: (head) => `${head}
       <title>Charcoal ドキュメント</title>
       <meta
