@@ -8,7 +8,7 @@ const attributes = ['name', 'scale', 'unsafe-non-guideline-scale', 'fixed-size']
 
 const ROOT_MARGIN = 50
 
-export interface KnownIconType extends Record<KnownIconFile, unknown> {}
+export interface KnownIconType extends Record<KnownIconFile, unknown> { }
 
 export interface Props
   extends Omit<
@@ -18,7 +18,7 @@ export interface Props
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
   'unsafe-non-guideline-scale'?: number | string
-  'fixed-size'?: 16 | 24 | 32 | 'Inline'
+  'fixed-size'?: number | string
 
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
@@ -126,22 +126,7 @@ export class PixivIcon extends HTMLElement {
     if (fixedSize === null) {
       return null
     }
-
-    switch (fixedSize) {
-      case 'Inline': {
-        return 16
-      }
-
-      case '16':
-      case '24':
-      case '32': {
-        return Number(fixedSize)
-      }
-
-      default: {
-        return Number(fixedSize)
-      }
-    }
+    return Number(fixedSize)
   }
 
   get scaledSize(): number {
