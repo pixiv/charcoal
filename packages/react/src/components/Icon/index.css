@@ -1,6 +1,6 @@
 .charcoal-icon {
+  /* <pixiv-icon> と同じスタイルを当てて、SSR 直後も領域を確保する */
   display: inline-flex;
-  flex-shrink: 0;
-  width: var(--charcoal-icon-container-size);
-  height: var(--charcoal-icon-container-size);
+  width: var(--size);
+  height: var(--size);
 }
