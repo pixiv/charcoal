@@ -1,6 +1,9 @@
 .charcoal-text-ellipsis {
   overflow: hidden;
   overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--charcoal-text-ellipsis-line-limit);
 }
 
 .charcoal-text-ellipsis[data-has-line-height='true'] {
@@ -11,13 +14,7 @@
   line-height: inherit;
 }
 
-.charcoal-text-ellipsis[data-line-limit='1'] {
+.charcoal-text-ellipsis[data-line-limit='1'][data-use-nowrap='true'] {
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.charcoal-text-ellipsis[data-line-limit]:not([data-line-limit='1']) {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--charcoal-text-ellipsis-line-limit);
 }

@@ -7,9 +7,22 @@ import { CSSProperties } from 'react'
 export type TextEllipsisProps = {
   lineHeight?: number
   lineLimit?: number
+  /**
+   * @default 'auto'
+   */
   hyphens?: CSSProperties['hyphens']
-  /** html title属性を付与。false のときは付与せず、空文字のときは表示しない */
+  /**
+   * html title属性を付与。false のときは付与せず、空文字のときは表示しない
+   * @default true
+   */
   showTooltip?: boolean
+  /**
+   *
+   * @default false
+   * true: use white-space: nowrap if lineLimit is 1
+   * false: use -webkit-line-clamp if lineLimit is 1
+   */
+  useNowrap?: boolean
 } & React.ComponentPropsWithoutRef<'div'>
 
 /**
@@ -22,6 +35,7 @@ export default function TextEllipsis({
   title,
   hyphens = 'auto',
   showTooltip = true,
+  useNowrap = false,
   ...props
 }: TextEllipsisProps) {
   'use memo'
@@ -36,6 +50,7 @@ export default function TextEllipsis({
       className={classNames}
       data-line-limit={lineLimit}
       data-has-line-height={hasLineHeight}
+      {...(useNowrap ? { 'data-use-nowrap': useNowrap } : {})}
       style={
         {
           ...(hasLineHeight && {

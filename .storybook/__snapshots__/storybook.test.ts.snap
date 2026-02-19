@@ -5115,6 +5115,56 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > SingleLine 
 </div>
 `;
 
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > useLineClamp 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 240px; border-inline: 2px solid var(--charcoal-border);"
+    >
+      <div
+        style="width: 100%; display: flex; gap: 8px;"
+      >
+        <div>
+          <div
+            class="charcoal-text-ellipsis"
+            data-has-line-height="false"
+            data-line-limit="1"
+            style="--charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
+            title="これは非常に長いテキストです。"
+          >
+            これは非常に長いテキストです。
+          </div>
+        </div>
+        <div>
+          useNowrap={false}
+        </div>
+      </div>
+      <div
+        style="width: 100%; display: flex; gap: 8px;"
+      >
+        <div>
+          <div
+            class="charcoal-text-ellipsis"
+            data-has-line-height="false"
+            data-line-limit="1"
+            data-use-nowrap="true"
+            style="--charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
+            title="これは非常に長いテキストです。"
+          >
+            これは非常に長いテキストです。
+          </div>
+        </div>
+        <div>
+          useNowrap={true}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TextField > react/TextField > Affix 1`] = `
 <div>
   <div
