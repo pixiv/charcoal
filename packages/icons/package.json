@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons",
-  "version": "5.4.1",
+  "version": "5.4.2",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
