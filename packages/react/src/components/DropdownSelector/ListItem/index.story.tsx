@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Icon from '../../Icon'
 import Switch from '../../Switch'
 import ListItem from '.'
-import { Meta, StoryObj } from '@storybook/react-webpack5'
+import { Meta, StoryObj } from '@storybook/react-vite'
 
 export default {
   title: 'react/internals/ListItem',

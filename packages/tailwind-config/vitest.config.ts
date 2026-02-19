@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitest/config'
-
-import * as path from 'node:path'
+import path from 'node:path'
 
 export default defineConfig({
   test: {
@@ -10,7 +9,11 @@ export default defineConfig({
     alias: [
       {
         find: /@charcoal-ui\/(.*)/,
-        replacement: path.join(path.resolve(__dirname, '..'), '$1', 'src'),
+        replacement: path.join(
+          path.resolve(import.meta.dirname, '..'),
+          '$1',
+          'src',
+        ),
       },
     ],
   },

@@ -59,6 +59,9 @@ const generalConfig: Omit<
     },
   ],
   staticDirs: ['./static'],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
   managerHead: (head) => `${head}
       <title>Charcoal ドキュメント</title>
       <meta
@@ -110,6 +113,8 @@ const viteConfig: ViteStorybookConfig = {
     builder: '@storybook/builder-vite',
   },
   async viteFinal(config, { configType }) {
+    config.css ??= {}
+    config.css.postcss = path.resolve(process.cwd(), '.storybook')
     config.plugins ??= []
 
     config.plugins.unshift({
@@ -136,4 +141,4 @@ const viteConfig: ViteStorybookConfig = {
   },
 }
 
-export default process.env.USE_VITE === '1' ? viteConfig : webpack5Config
+export default process.env.USE_WEBPACK === '1' ? webpack5Config : viteConfig
