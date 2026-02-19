@@ -424,3 +424,32 @@ export const Section: StoryObj<typeof DropdownSelector> = {
     )
   },
 }
+
+export const WithSeconday: StoryObj<typeof DropdownSelector> = {
+  render: function Render(props) {
+    const [selected, setSelected] = useState('option-3')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          {...props}
+          onChange={(value) => {
+            setSelected(value)
+          }}
+          value={selected}
+          label="label"
+        >
+          <MenuItemGroup text="fruits">
+            <DropdownMenuItem value={'option-1'}>Option 1</DropdownMenuItem>
+            <DropdownMenuItem value={'option-2'}>Option 2</DropdownMenuItem>
+            <DropdownMenuItem
+              value={'option-3'}
+              secondary={<span>Option 3 Secondary</span>}
+            >
+              Option 3
+            </DropdownMenuItem>
+          </MenuItemGroup>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
