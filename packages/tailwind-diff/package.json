@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/tailwind-diff",
-  "version": "5.4.2",
+  "version": "5.4.3",
   "type": "commonjs",
   "bin": "bin/tailwind-diff.js",
   "scripts": {
