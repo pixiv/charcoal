@@ -3,8 +3,14 @@ import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
+import { calcActualIconSize } from './utils'
 
-const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
+const attributes = [
+  'name',
+  'scale',
+  'unsafe-non-guideline-scale',
+  'unsafe-non-guideline-fixed-size',
+] as const
 
 const ROOT_MARGIN = 50
 
@@ -18,6 +24,7 @@ export interface Props
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
   'unsafe-non-guideline-scale'?: number | string
+  'unsafe-non-guideline-fixed-size'?: number | string
 
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
@@ -77,6 +84,7 @@ export class PixivIcon extends HTMLElement {
     name: string
     scale: string | null
     'unsafe-non-guideline-scale': string | null
+    'unsafe-non-guideline-fixed-size': string | null
   } {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)]),
@@ -97,53 +105,6 @@ export class PixivIcon extends HTMLElement {
     return {
       ...partial,
       name,
-    }
-  }
-
-  get forceResizedSize(): number | null {
-    if (this.props['unsafe-non-guideline-scale'] === null) {
-      return null
-    }
-
-    const [size] = this.props.name.split('/')
-    const scale = Number(this.props['unsafe-non-guideline-scale'])
-
-    switch (size) {
-      case 'Inline': {
-        return 16 * scale
-      }
-
-      default: {
-        return Number(size) * scale
-      }
-    }
-  }
-
-  get scaledSize(): number {
-    const [size] = this.props.name.split('/')
-
-    const scale = Number(this.props.scale ?? '1')
-
-    switch (size) {
-      case 'Inline': {
-        switch (scale) {
-          case 2: {
-            return 32
-          }
-
-          default: {
-            return 16
-          }
-        }
-      }
-
-      case '24': {
-        return Number(size) * scale
-      }
-
-      default: {
-        return Number(size)
-      }
     }
   }
 
@@ -192,7 +153,12 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const size = this.forceResizedSize ?? this.scaledSize
+    const size = calcActualIconSize(
+      this.props.name,
+      this.props.scale,
+      this.props['unsafe-non-guideline-scale'],
+      this.props['unsafe-non-guideline-fixed-size'],
+    )
 
     if (!Number.isFinite(size)) {
       throw new TypeError(`icon size must not be NaN`)
