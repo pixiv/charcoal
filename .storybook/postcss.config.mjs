@@ -1,13 +1,9 @@
-import { resolve, dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
 
 export default {
   plugins: {
     tailwindcss: {
-      config: resolve(
-        dirname(fileURLToPath(import.meta.url)),
-        './tailwind.config.mjs',
-      ),
+      config: resolve(import.meta.dirname, './tailwind.config.mjs'),
     },
     autoprefixer: {},
   },

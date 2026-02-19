@@ -1,8 +1,5 @@
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { globSync } from 'node:fs'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 import { composeStories } from '@storybook/react-vite'
 import { render, cleanup } from '@testing-library/react'
@@ -33,9 +30,9 @@ function getAllStoryFiles() {
   // Place the glob you want to match your stories files
   const globPatterns = '../packages/**/*.{stories,story}.{js,jsx,mjs,ts,tsx}'
   const ignorePatterns = /node_modules|react-sandbox/
-  const storyFiles = globSync(path.join(__dirname, globPatterns)).filter(
-    (filePath) => !ignorePatterns.test(filePath),
-  )
+  const storyFiles = globSync(
+    path.join(import.meta.dirname, globPatterns),
+  ).filter((filePath) => !ignorePatterns.test(filePath))
 
   return Promise.all(
     storyFiles.map(async (filePath) => {
