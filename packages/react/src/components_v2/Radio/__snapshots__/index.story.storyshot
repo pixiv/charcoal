@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/Radio > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-direction: column; gap: 24px;"
+    >
+      <div
+        aria-label="default story test-id"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="default_story_test-id"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="default_story_test-id"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="default_story_test-id"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Radio > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-direction: column; gap: 24px;"
+    >
+      <div
+        aria-disabled="true"
+        aria-label="disabled_stroy"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            disabled=""
+            name="disabled story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="disabled story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="disabled story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Radio > Invalid 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-direction: column; gap: 24px;"
+    >
+      <div
+        aria-invalid="true"
+        aria-label="invalid story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="true"
+            checked=""
+            class="charcoal-radio-input"
+            name="invalid_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-radio-input"
+            name="invalid_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-radio-input"
+            name="invalid_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Radio > PartialDisabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-direction: column; gap: 24px;"
+    >
+      <div
+        aria-label="partial disabled story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="partial_disabled_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="partial_disabled_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="partial_disabled_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/Radio > Readonly 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-direction: column; gap: 24px;"
+    >
+      <div
+        aria-label="readonly story"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="readonly_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="readonly_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="readonly_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;

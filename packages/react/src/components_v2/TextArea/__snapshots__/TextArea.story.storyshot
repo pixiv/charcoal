@@ -1,0 +1,542 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/TextArea > AssistiveText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-describedby="test-id"
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="false"
+        id="test-id"
+      >
+        説明が入ります
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > AutoHeight 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-invalid="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          placeholder="Text Area"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="true"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="true"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          disabled=""
+          id="test-id"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > Invalid 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="true"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-describedby="test-id"
+          aria-disabled="false"
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="true"
+        id="test-id"
+      >
+        エラーメッセージ
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > Label 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > Placeholder 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          placeholder="Placeholder"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > ReadOnly 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          readonly=""
+          rows="4"
+        >
+          読み取り専用
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > Required 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-required-text"
+        >
+          *必須
+        </div>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > ShowCount 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 5;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          maxlength="100"
+          rows="4"
+        />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0/100
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextArea > SubLabel 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="4"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

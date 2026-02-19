@@ -1,0 +1,35 @@
+.charcoal-field-label {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  display: flow-root;
+  color: var(--charcoal-color-text-default);
+}
+
+.charcoal-field-label-required-text {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-color-text-secondary-default);
+}
+
+.charcoal-field-label-sub-label {
+  font-size: 14px;
+  line-height: 22px;
+  display: flow-root;
+  color: var(--charcoal-color-text-tertiary-default);
+  transition: 0.2s color, 0.2s box-shadow;
+}
+
+.charcoal-field-label-root {
+  display: inline-flex;
+  align-items: center;
+}
+
+.charcoal-field-label-root > .charcoal-field-label-required-text {
+  margin-left: 4px;
+}
+
+.charcoal-field-label-root > .charcoal-field-label-sub-label {
+  margin-left: auto;
+}

@@ -1,0 +1,653 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/TextField > Affix 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <div
+          class="charcoal-text-field-prefix"
+        >
+          /home/john/
+        </div>
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+        <div
+          class="charcoal-text-field-suffix"
+        >
+          .png
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > AssistiveText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-describedby="test-id"
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="false"
+        id="test-id"
+      >
+        説明が入ります
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-invalid="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          placeholder="TextField"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="true"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="true"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          disabled=""
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Invalid 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="true"
+      >
+        <input
+          aria-describedby="test-id"
+          aria-disabled="false"
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="true"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="charcoal-text-field-assistive-text"
+        data-invalid="true"
+        id="test-id"
+      >
+        エラーメッセージ
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Label 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Number 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        />
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="number"
+          value="0"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Placeholder 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          placeholder="Placeholder"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > Prefix 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <div
+          class="charcoal-text-field-prefix"
+        >
+          <div
+            style="display: flex; align-items: center;"
+          >
+            <pixiv-icon
+              name="16/Search"
+            />
+          </div>
+        </div>
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > ReadOnly 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          readonly=""
+          type="text"
+          value="読み取り専用"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > RequiredText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-required-text"
+        >
+          *必須
+        </div>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > ShowCount 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          maxlength="100"
+          type="text"
+          value=""
+        />
+        <div
+          class="charcoal-text-field-suffix"
+        >
+          <span
+            class="charcoal-text-field-line-counter"
+          >
+            0/100
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/TextField > SubLabel 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span>
+            <button
+              class="charcoal-clickable"
+            >
+              Text Link
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <input
+          aria-disabled="false"
+          aria-labelledby="test-id"
+          class="charcoal-text-field-input"
+          data-invalid="false"
+          id="test-id"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

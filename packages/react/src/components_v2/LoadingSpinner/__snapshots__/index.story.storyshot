@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/LoadingSpinner > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-loading-spinner"
+      data-transparent="false"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/LoadingSpinner > Padding 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-loading-spinner"
+      data-transparent="false"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 24px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/LoadingSpinner > Size 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-loading-spinner"
+      data-transparent="false"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 128px; --charcoal-loading-spinner-padding: 16px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/LoadingSpinner > Transparent 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-loading-spinner"
+      data-transparent="true"
+      role="progressbar"
+      style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+    >
+      <div
+        class="charcoal-loading-spinner-icon"
+        data-once="false"
+        role="presentation"
+      />
+    </div>
+  </div>
+</div>
+`;

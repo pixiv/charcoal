@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/internals/Popover > Basic 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+      style="position: absolute;"
+    >
+      button
+    </button>
+    <button
+      class="charcoal-button"
+      style="position: absolute; right: 8px;"
+    >
+      button
+    </button>
+    <button
+      class="charcoal-button"
+      style="position: absolute; bottom: 8px;"
+    >
+      button
+    </button>
+    <button
+      class="charcoal-button"
+      style="position: absolute; right: 8px; bottom: 8px;"
+    >
+      button
+    </button>
+  </div>
+</div>
+`;

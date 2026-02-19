@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Tests > react/v2/internals/CheckboxInput > Checked 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      checked=""
+      class="charcoal-checkbox-input"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/internals/CheckboxInput > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      class="charcoal-checkbox-input"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/internals/CheckboxInput > Disabled 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      class="charcoal-checkbox-input"
+      disabled=""
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/internals/CheckboxInput > Invalid 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <input
+      aria-invalid="true"
+      class="charcoal-checkbox-input"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/v2/internals/CheckboxInput > Rounded 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="padding: 8px;"
+    >
+      <input
+        class="charcoal-checkbox-input"
+        data-rounded="true"
+        type="checkbox"
+      />
+    </div>
+  </div>
+</div>
+`;
