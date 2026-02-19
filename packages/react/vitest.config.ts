@@ -12,6 +12,7 @@ export default defineConfig({
             'babel-plugin-react-compiler',
             {
               compilationMode: 'annotation',
+              target: '18',
             },
           ],
         ],
