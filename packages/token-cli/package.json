@@ -3,7 +3,7 @@
   "private": true,
   "bin": "./dist/index.js",
   "type": "commonjs",
-  "version": "5.4.0",
+  "version": "5.4.1",
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsdown --config-loader unconfig",

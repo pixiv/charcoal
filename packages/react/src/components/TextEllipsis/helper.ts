@@ -2,6 +2,28 @@
 
 import { Children, isValidElement, ReactElement, ReactNode } from 'react'
 
+export const getFinalTitle = (
+  showTooltip: boolean,
+  title?: string,
+  children?: ReactNode,
+): string | undefined => {
+  // 1. 表示フラグが false なら即終了
+  if (!showTooltip) {
+    return undefined
+  }
+
+  // 2. タイトルの候補を取得
+  const resolvedTitle = title ?? onlyText(children)
+
+  // 3. resolvedTitle が falsy (undefined, null, "") なら終了
+  if (!resolvedTitle) {
+    return undefined
+  }
+
+  // 4. 有効な文字列のみを返す
+  return resolvedTitle
+}
+
 const hasChildren = (
   element: ReactNode,
 ): element is ReactElement<{ children: ReactNode[] }> =>

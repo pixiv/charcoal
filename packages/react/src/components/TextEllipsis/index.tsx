@@ -1,11 +1,15 @@
 import './index.css'
 
-import { onlyText } from './helper'
+import { getFinalTitle } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
+import { CSSProperties } from 'react'
 
 export type TextEllipsisProps = {
-  lineHeight: number
+  lineHeight?: number
   lineLimit?: number
+  hyphens?: CSSProperties['hyphens']
+  /** html title属性を付与。false のときは付与せず、空文字のときは表示しない */
+  showTooltip?: boolean
 } & React.ComponentPropsWithoutRef<'div'>
 
 /**
@@ -16,23 +20,29 @@ export default function TextEllipsis({
   lineLimit = 1,
   children,
   title,
+  hyphens = 'auto',
+  showTooltip = true,
   ...props
 }: TextEllipsisProps) {
   'use memo'
-  const resolvedTitle = title === undefined ? onlyText(children) : title
-  const finalTitle = resolvedTitle !== '' ? resolvedTitle : undefined
+  const finalTitle = getFinalTitle(showTooltip, title, children)
 
   const classNames = useClassNames('charcoal-text-ellipsis', props.className)
+  const hasLineHeight = lineHeight !== undefined
 
   return (
     <div
       {...props}
       className={classNames}
       data-line-limit={lineLimit}
+      data-has-line-height={hasLineHeight}
       style={
         {
-          '--charcoal-text-ellipsis-line-height': `${lineHeight}px`,
+          ...(hasLineHeight && {
+            '--charcoal-text-ellipsis-line-height': `${lineHeight}px`,
+          }),
           '--charcoal-text-ellipsis-line-limit': lineLimit,
+          hyphens,
           ...props.style,
         } satisfies React.CSSProperties
       }
