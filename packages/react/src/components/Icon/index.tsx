@@ -44,7 +44,7 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       ref={ref}
       name={name}
       unsafe-non-guideline-fixed-size={actualSize}
-      class={`charcoal-icon ${className || ''}`.trim()}
+      class={`charcoal-icon-component ${className || ''}`.trim()}
       style={{ '--size': `${actualSize}px` }}
       {...rest}
     />

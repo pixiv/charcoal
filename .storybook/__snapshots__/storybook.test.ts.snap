@@ -613,7 +613,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Ass
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -700,7 +700,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Cus
             </div>
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -772,7 +772,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Def
             data-placeholder="false"
           />
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -850,7 +850,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Dis
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -937,7 +937,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Dis
             Option 2 (disabled)
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1014,7 +1014,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > InF
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1115,7 +1115,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Inv
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1193,7 +1193,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Inv
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1275,7 +1275,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Lab
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1351,7 +1351,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Lon
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1431,7 +1431,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Req
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1522,7 +1522,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sec
             Banana
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1599,7 +1599,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sub
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1675,8 +1675,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
             Option 3
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--size: 16px;"
+            unsafe-non-guideline-fixed-size="16"
           />
         </button>
       </div>
@@ -1698,7 +1700,7 @@ exports[`Storybook Tests > react/HintText > react/HintText > Default 1`] = `
         class="charcoal-hint-text-icon"
       >
         <pixiv-icon
-          class="charcoal-icon"
+          class="charcoal-icon-component"
           name="16/Info"
           style="--size: 16px;"
           unsafe-non-guideline-fixed-size="16"
@@ -1730,7 +1732,7 @@ exports[`Storybook Tests > react/HintText > react/HintText > NarrowWidth 1`] = `
           class="charcoal-hint-text-icon"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="16/Info"
             style="--size: 16px;"
             unsafe-non-guideline-fixed-size="16"
@@ -1753,10 +1755,25 @@ exports[`Storybook Tests > react/Icon > react/Icon > Default 1`] = `
     data-dark="false"
   >
     <pixiv-icon
-      class="charcoal-icon"
+      class="charcoal-icon-component"
       name="16/Add"
       style="--size: 16px;"
       unsafe-non-guideline-fixed-size="16"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Icon > react/Icon > FixedSize 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <pixiv-icon
+      class="charcoal-icon-component"
+      name="16/Add"
+      style="--size: 8px;"
+      unsafe-non-guideline-fixed-size="8"
     />
   </div>
 </div>
@@ -2091,7 +2108,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
                       name="16/Menu"
                       style="--size: 16px;"
                       unsafe-non-guideline-fixed-size="16"
@@ -2421,7 +2438,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon-component charcoal-ui-dropdown-selector-icon"
                       name="16/Menu"
                       style="--size: 16px;"
                       unsafe-non-guideline-fixed-size="16"
@@ -2727,7 +2744,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2759,7 +2776,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2792,7 +2809,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2824,7 +2841,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2871,7 +2888,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2903,7 +2920,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2935,7 +2952,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -2967,7 +2984,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3014,7 +3031,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3046,7 +3063,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3078,7 +3095,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3110,7 +3127,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3157,7 +3174,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3190,7 +3207,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3223,7 +3240,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -3256,7 +3273,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
-            class="charcoal-icon"
+            class="charcoal-icon-component"
             name="24/Check"
             style="--size: 24px;"
             unsafe-non-guideline-fixed-size="24"
@@ -4241,7 +4258,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Active 1`] = `
         </span>
       </div>
       <pixiv-icon
-        class="charcoal-icon"
+        class="charcoal-icon-component"
         name="16/Remove"
         style="--size: 16px;"
         unsafe-non-guideline-fixed-size="16"
@@ -5980,7 +5997,7 @@ exports[`Storybook Tests > react/internals/ListItem > react/internals/ListItem >
       class="charcoal-list-item"
     >
       <pixiv-icon
-        class="charcoal-icon"
+        class="charcoal-icon-component"
         name="16/Add"
         style="--size: 16px;"
         unsafe-non-guideline-fixed-size="16"
@@ -6736,7 +6753,10 @@ exports[`Storybook Tests > theme/Token v2 Demo > theme/Token v2 Demo > Styled 1`
             class="c5"
           >
             <pixiv-icon
+              class="charcoal-icon-component"
               name="24/FaceEdit"
+              style="--size: 24px;"
+              unsafe-non-guideline-fixed-size="24"
             />
           </a>
           <span
@@ -6909,7 +6929,10 @@ exports[`Storybook Tests > theme/Token v2 Demo > theme/Token v2 Demo > Tailwind 
             class="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
           >
             <pixiv-icon
+              class="charcoal-icon-component"
               name="24/FaceEdit"
+              style="--size: 24px;"
+              unsafe-non-guideline-fixed-size="24"
             />
           </a>
           <span

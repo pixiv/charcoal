@@ -1,4 +1,4 @@
-.charcoal-icon {
+.charcoal-icon-component {
   /* <pixiv-icon> と同じスタイルを当てて、SSR 直後も領域を確保する */
   display: inline-flex;
   width: var(--size);
