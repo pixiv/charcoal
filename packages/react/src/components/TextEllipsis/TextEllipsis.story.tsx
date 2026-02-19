@@ -119,3 +119,32 @@ export const ShowTooltipFalse: StoryObj<typeof TextEllipsis> = {
       'showTooltip=false の場合、ホバーしてもツールチップは表示されません。',
   },
 }
+
+export const useLineClamp: StoryObj<typeof TextEllipsis> = {
+  render() {
+    return (
+      <div
+        style={{
+          width: 240,
+          borderInline: '2px solid var(--charcoal-border)',
+        }}
+      >
+        <div style={{ width: '100%', display: 'flex', gap: 8 }}>
+          <div>
+            <TextEllipsis>これは非常に長いテキストです。</TextEllipsis>
+          </div>
+          <div>{'useNowrap={false}'}</div>
+        </div>
+
+        <div style={{ width: '100%', display: 'flex', gap: 8 }}>
+          <div>
+            <TextEllipsis useNowrap>
+              これは非常に長いテキストです。
+            </TextEllipsis>
+          </div>
+          <div>{'useNowrap={true}'}</div>
+        </div>
+      </div>
+    )
+  },
+}
