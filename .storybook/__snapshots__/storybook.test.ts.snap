@@ -4830,8 +4830,9 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > CustomTitle
     >
       <div
         class="charcoal-text-ellipsis"
+        data-has-line-height="true"
         data-line-limit="1"
-        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
         title="カスタムのツールチップ文言"
       >
         title を渡すとツールチップはその文言になります。
@@ -4851,8 +4852,9 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > Default 1`]
     >
       <div
         class="charcoal-text-ellipsis"
+        data-has-line-height="true"
         data-line-limit="1"
-        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
         title="これは非常に長いテキストです。1行で収まらない場合に省略記号（...）で表示が切り詰められます。ホバーすると全文がツールチップで表示されます。"
       >
         これは非常に長いテキストです。1行で収まらない場合に省略記号（...）で表示が切り詰められます。ホバーすると全文がツールチップで表示されます。
@@ -4872,10 +4874,102 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > EmptyTitle 
     >
       <div
         class="charcoal-text-ellipsis"
+        data-has-line-height="true"
         data-line-limit="1"
-        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
       >
         title="" を渡すとツールチップは表示されません。ホバーしても何も出ません。
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > HyphensAuto 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      lang="en"
+      style="width: 80px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-has-line-height="true"
+        data-line-limit="2"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 2; hyphens: auto;"
+        title="internationalization"
+      >
+        internationalization
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > HyphensManual 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      lang="en"
+      style="width: 80px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-has-line-height="true"
+        data-line-limit="2"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 2; hyphens: manual;"
+        title="inter­national­ization"
+      >
+        inter­national­ization
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > HyphensNone 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      lang="en"
+      style="width: 80px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-has-line-height="true"
+        data-line-limit="2"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 2; hyphens: none;"
+        title="internationalization"
+      >
+        internationalization
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > LineHeightInherit 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="line-height: 1.8; width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-has-line-height="false"
+        data-line-limit="2"
+        style="--charcoal-text-ellipsis-line-limit: 2; hyphens: auto;"
+        title="lineHeight を指定しない場合、親の line-height を継承します。"
+      >
+        lineHeight を指定しない場合、親の line-height を継承します。
       </div>
     </div>
   </div>
@@ -4892,11 +4986,33 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > MultiLine 1
     >
       <div
         class="charcoal-text-ellipsis"
+        data-has-line-height="true"
         data-line-limit="2"
-        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 2;"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 2; hyphens: auto;"
         title="複数行の省略表示です。lineLimit で指定した行数まで表示し、それ以降は...で省略されます。"
       >
         複数行の省略表示です。lineLimit で指定した行数まで表示し、それ以降は...で省略されます。
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > ShowTooltipFalse 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 200px;"
+    >
+      <div
+        class="charcoal-text-ellipsis"
+        data-has-line-height="true"
+        data-line-limit="1"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
+      >
+        showTooltip=false の場合、ホバーしてもツールチップは表示されません。
       </div>
     </div>
   </div>
@@ -4913,8 +5029,9 @@ exports[`Storybook Tests > react/TextEllipsis > react/TextEllipsis > SingleLine 
     >
       <div
         class="charcoal-text-ellipsis"
+        data-has-line-height="true"
         data-line-limit="1"
-        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1;"
+        style="--charcoal-text-ellipsis-line-height: 24px; --charcoal-text-ellipsis-line-limit: 1; hyphens: auto;"
         title="Single line ellipsis. This long text will be truncated with an ellipsis at the end."
       >
         Single line ellipsis. This long text will be truncated with an ellipsis at the end.

@@ -61,3 +61,61 @@ export const EmptyTitle: StoryObj<typeof TextEllipsis> = {
       'title="" を渡すとツールチップは表示されません。ホバーしても何も出ません。',
   },
 }
+
+const narrowRender = (args: React.ComponentProps<typeof TextEllipsis>) => (
+  <div style={{ width: 80 }} lang="en">
+    <TextEllipsis {...args} />
+  </div>
+)
+
+export const HyphensAuto: StoryObj<typeof TextEllipsis> = {
+  args: {
+    lineHeight: 24,
+    lineLimit: 2,
+    hyphens: 'auto',
+    children: 'internationalization',
+  },
+  render: narrowRender,
+}
+
+export const HyphensManual: StoryObj<typeof TextEllipsis> = {
+  args: {
+    lineHeight: 24,
+    lineLimit: 2,
+    hyphens: 'manual',
+    children: 'inter\u00ADnational\u00ADization',
+  },
+  render: narrowRender,
+}
+
+export const HyphensNone: StoryObj<typeof TextEllipsis> = {
+  args: {
+    lineHeight: 24,
+    lineLimit: 2,
+    hyphens: 'none',
+    children: 'internationalization',
+  },
+  render: narrowRender,
+}
+
+export const LineHeightInherit: StoryObj<typeof TextEllipsis> = {
+  args: {
+    lineLimit: 2,
+    children: 'lineHeight を指定しない場合、親の line-height を継承します。',
+  },
+  render: (args) => (
+    <div style={{ lineHeight: 1.8, width: 200 }}>
+      <TextEllipsis {...args} />
+    </div>
+  ),
+}
+
+export const ShowTooltipFalse: StoryObj<typeof TextEllipsis> = {
+  args: {
+    lineHeight: 24,
+    lineLimit: 1,
+    showTooltip: false,
+    children:
+      'showTooltip=false の場合、ホバーしてもツールチップは表示されません。',
+  },
+}
