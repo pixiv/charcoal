@@ -3,6 +3,7 @@ import { __SERVER__ } from './ssr'
 export { PixivIcon, type KnownIconType, type Props } from './PixivIcon'
 export { KNOWN_ICON_FILES } from './charcoalIconFiles'
 export { PixivIconLoadError } from './loaders/PixivIconLoadError'
+export { calcActualIconSize } from './utils'
 
 declare global {
   interface Window {

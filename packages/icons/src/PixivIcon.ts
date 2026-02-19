@@ -3,12 +3,18 @@ import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
+import { calcActualIconSize } from './utils'
 
-const attributes = ['name', 'scale', 'unsafe-non-guideline-scale', 'unsafe-non-guideline-fixed-size'] as const
+const attributes = [
+  'name',
+  'scale',
+  'unsafe-non-guideline-scale',
+  'unsafe-non-guideline-fixed-size',
+] as const
 
 const ROOT_MARGIN = 50
 
-export interface KnownIconType extends Record<KnownIconFile, unknown> { }
+export interface KnownIconType extends Record<KnownIconFile, unknown> {}
 
 export interface Props
   extends Omit<
@@ -102,61 +108,6 @@ export class PixivIcon extends HTMLElement {
     }
   }
 
-  get forceResizedSize(): number | null {
-    if (this.props['unsafe-non-guideline-scale'] === null) {
-      return null
-    }
-
-    const [size] = this.props.name.split('/')
-    const scale = Number(this.props['unsafe-non-guideline-scale'])
-
-    switch (size) {
-      case 'Inline': {
-        return 16 * scale
-      }
-
-      default: {
-        return Number(size) * scale
-      }
-    }
-  }
-
-  get fixedSize(): number | null {
-    const fixedSize = this.props['unsafe-non-guideline-fixed-size']
-    if (fixedSize === null) {
-      return null
-    }
-    return Number(fixedSize)
-  }
-
-  get scaledSize(): number {
-    const [size] = this.props.name.split('/')
-
-    const scale = Number(this.props.scale ?? '1')
-
-    switch (size) {
-      case 'Inline': {
-        switch (scale) {
-          case 2: {
-            return 32
-          }
-
-          default: {
-            return 16
-          }
-        }
-      }
-
-      case '24': {
-        return Number(size) * scale
-      }
-
-      default: {
-        return Number(size)
-      }
-    }
-  }
-
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
@@ -202,7 +153,12 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const size = this.fixedSize ?? this.forceResizedSize ?? this.scaledSize
+    const size = calcActualIconSize(
+      this.props.name,
+      this.props.scale,
+      this.props['unsafe-non-guideline-scale'],
+      this.props['unsafe-non-guideline-fixed-size'],
+    )
 
     if (!Number.isFinite(size)) {
       throw new TypeError(`icon size must not be NaN`)
