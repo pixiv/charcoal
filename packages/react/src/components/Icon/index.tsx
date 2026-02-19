@@ -1,8 +1,11 @@
 import * as React from 'react'
 import './index.css'
-
 import '@charcoal-ui/icons'
-import type { PixivIcon, Props } from '@charcoal-ui/icons'
+import {
+  calcActualIconSize,
+  type PixivIcon,
+  type Props,
+} from '@charcoal-ui/icons'
 
 export interface OwnProps {
   unsafeNonGuidelineScale?: number
@@ -27,56 +30,22 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   },
   ref,
 ) {
-  // <pixiv-icon> の forceResizedSize の実装を模倣したもの
-  const forceResizedSize = React.useMemo(() => {
-    if (!unsafeNonGuidelineScale) {
-      return
-    }
-
-    const [size] = (name as string).split('/')
-    switch (size) {
-      case 'Inline': {
-        return 16 * unsafeNonGuidelineScale
-      }
-
-      default: {
-        return Number(size) * unsafeNonGuidelineScale
-      }
-    }
-  }, [name, unsafeNonGuidelineScale])
-
-  // <pixiv-icon> の scaledSize の実装を模倣したもの
-  const scaledSize = React.useMemo(() => {
-    const [size] = (name as string).split('/')
-    const numericScale = Number(scale ?? '1')
-    switch (size) {
-      case 'Inline': {
-        return numericScale === 2 ? 32 : 16
-      }
-      case '24': {
-        return 24 * numericScale
-      }
-      default: {
-        return Number(size)
-      }
-    }
-  }, [name, scale])
-
-  const style: React.CSSProperties = React.useMemo(
-    () => ({
-      '--size': `${unsafeNonGuidelineFixedSize ?? forceResizedSize ?? scaledSize}px`,
-    }),
-    [forceResizedSize, scaledSize, unsafeNonGuidelineFixedSize],
-  )
+  const actualSize = React.useMemo(() => {
+    return calcActualIconSize(
+      name,
+      scale,
+      unsafeNonGuidelineScale,
+      unsafeNonGuidelineFixedSize,
+    )
+  }, [name, scale, unsafeNonGuidelineScale, unsafeNonGuidelineFixedSize])
 
   return (
     <pixiv-icon
       ref={ref}
       name={name}
-      scale={scale}
-      unsafe-non-guideline-scale={unsafeNonGuidelineScale}
-      style={style}
+      unsafe-non-guideline-fixed-size={actualSize}
       class={`charcoal-icon ${className || ''}`.trim()}
+      style={{ '--size': `${actualSize}px` }}
       {...rest}
     />
   )
