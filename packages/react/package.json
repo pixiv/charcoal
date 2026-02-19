@@ -46,6 +46,7 @@
     "react-router-dom": "^6.2.1"
   },
   "dependencies": {
+    "react-compiler-runtime": "catalog:",
     "@charcoal-ui/foundation": "workspace:*",
     "@charcoal-ui/icons": "workspace:*",
     "@charcoal-ui/theme": "workspace:*",
