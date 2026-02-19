@@ -217,7 +217,7 @@ export const RawIconFile: StoryObj<Props> = {
 }
 
 export const FixedSize: StoryObj<Props> = {
-  render: ({ color, name, 'fixed-size': fixedSize }) => {
+  render: ({ color, name, 'unsafe-non-guideline-fixed-size': fixedSize }) => {
     return (
       <>
         <IconDef color={color}>
@@ -229,6 +229,6 @@ export const FixedSize: StoryObj<Props> = {
   args: {
     name: '16/Add',
     color: '#000000',
-    'fixed-size': '16' as 16 | 24 | 32 | 'Inline',
+    'unsafe-non-guideline-fixed-size': '16',
   },
 }
