@@ -1,2 +1,5 @@
 packages:
   - 'packages/*'
+
+catalog:
+  'react-compiler-runtime': '1.0.0'
