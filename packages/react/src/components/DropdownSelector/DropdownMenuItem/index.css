@@ -18,3 +18,19 @@
   color: var(--charcoal-text2);
   padding-right: 4px;
 }
+
+.charcoal-dropdown-selector-menu-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.charcoal-dropdown-selector-menu-secondary {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--charcoal-text3);
+  padding-bottom: 9px;
+
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}

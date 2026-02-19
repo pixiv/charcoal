@@ -1585,6 +1585,80 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sub
 </div>
 `;
 
+exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > WithSeconday 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="option-1"
+            >
+              option-1
+            </option>
+            <option
+              value="option-2"
+            >
+              option-2
+            </option>
+            <option
+              value="option-3"
+            >
+              option-3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 3
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/HintText > react/HintText > Default 1`] = `
 <div>
   <div

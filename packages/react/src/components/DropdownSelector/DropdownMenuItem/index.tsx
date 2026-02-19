@@ -2,10 +2,12 @@ import './index.css'
 
 import MenuItem, { MenuItemProps } from '../MenuItem'
 import { MenuListContext } from '../MenuList/MenuListContext'
-import { useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 import Icon from '../../Icon'
 
-export type DropdownMenuItemProps = Omit<MenuItemProps, 'as'>
+export type DropdownMenuItemProps = Omit<MenuItemProps, 'as'> & {
+  secondary?: ReactNode
+}
 
 /**
  * DropdownSelectorの選択肢として使うMenuItem
@@ -13,22 +15,31 @@ export type DropdownMenuItemProps = Omit<MenuItemProps, 'as'>
 export default function DropdownMenuItem(props: DropdownMenuItemProps) {
   const { value: ctxValue } = useContext(MenuListContext)
   const isSelected = props.value === ctxValue
-  const { children, ...rest } = props
+  const { children, secondary, ...rest } = props
 
   return (
     <MenuItem {...rest} aria-selected={isSelected}>
-      {isSelected && (
-        <Icon
-          className="charcoal-dropdown-selector-menu-item-icon"
-          name="16/Check"
-        />
-      )}
-      <span
-        className="charcoal-dropdown-selector-menu-item"
-        data-selected={isSelected}
-      >
-        {children}
-      </span>
+      <div>
+        <div className="charcoal-dropdown-selector-menu-item-container">
+          {isSelected && (
+            <Icon
+              className="charcoal-dropdown-selector-menu-item-icon"
+              name="16/Check"
+            />
+          )}
+          <span
+            className="charcoal-dropdown-selector-menu-item"
+            data-selected={isSelected}
+          >
+            {children}
+          </span>
+        </div>
+        {secondary && (
+          <span className="charcoal-dropdown-selector-menu-secondary">
+            {secondary}
+          </span>
+        )}
+      </div>
     </MenuItem>
   )
 }
