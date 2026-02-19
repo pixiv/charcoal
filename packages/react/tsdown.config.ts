@@ -2,6 +2,7 @@ import { defineConfig } from 'tsdown'
 import postcss from 'postcss'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import pluginBabel from '@rollup/plugin-babel'
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -16,10 +17,30 @@ export default defineConfig({
   banner: {
     js: `"use client";`,
   },
+  plugins: [
+    pluginBabel({
+      babelHelpers: 'bundled',
+      parserOpts: {
+        sourceType: 'module',
+        plugins: ['jsx', 'typescript'],
+      },
+      plugins: [
+        [
+          'babel-plugin-react-compiler',
+          {
+            compilationMode: 'annotation',
+            target: '18',
+          },
+        ],
+      ],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }),
+  ],
   clean: false,
   target: 'esnext',
   sourcemap: true,
   minify: true,
+  external: ['react-compiler-runtime'],
   async onSuccess() {
     const indexCssPath = path.resolve(import.meta.dirname, './dist/index.css')
     const originalCssOutput = await fs.readFile(indexCssPath, 'utf-8')

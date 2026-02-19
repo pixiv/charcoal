@@ -24,6 +24,7 @@ export default function TextEllipsis({
   showTooltip = true,
   ...props
 }: TextEllipsisProps) {
+  'use memo'
   const finalTitle = getFinalTitle(showTooltip, title, children)
 
   const classNames = useClassNames('charcoal-text-ellipsis', props.className)
