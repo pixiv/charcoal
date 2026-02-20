@@ -5,6 +5,7 @@ import { TailwindVersion, ThemeMap } from './types'
 
 import {
   assertAllThemeHaveSameKeys,
+  flattenKey,
   getDefaultKeyName,
   getVariantOption,
 } from './util'
@@ -89,7 +90,7 @@ export function createTailwindConfig({
           mapObject(defaultTheme.border, (k, v) => [k, v.color]),
           effects,
         ),
-        ...borderColorV2,
+        ...{ ch: borderColorV2 },
       },
       spacing: {
         ...mapObject(
@@ -143,9 +144,11 @@ export function createTailwindConfig({
       },
       ...(unstableTokenV2
         ? {
-            borderWidth: borderWidthV2,
-            fontSize: fontSizeV2,
+            extend: {
+              borderWidth: flattenKey({ 'width-ch': borderWidthV2 }), // unstable border width token
+            },
             fontWeight: fontWeightV2,
+            fontSize: fontSizeV2,
           }
         : {}),
     },
