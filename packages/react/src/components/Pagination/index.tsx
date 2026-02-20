@@ -5,8 +5,6 @@ import { usePaginationWindow } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
 
-const Text = 'span'
-
 interface CommonProps {
   page: number
   pageCount: number
@@ -43,7 +41,6 @@ export default memo(function Pagination({
         icon="24/Prev"
         size="M"
         className="charcoal-pagination-button"
-        data-no-background
         hidden={!hasPrev}
         disabled={!hasPrev}
         onClick={makeClickHandler(Math.max(1, page - 1))}
@@ -67,7 +64,7 @@ export default memo(function Pagination({
             className="charcoal-pagination-button"
             aria-current
           >
-            <Text>{p}</Text>
+            {p}
           </button>
         ) : (
           <button
@@ -76,7 +73,7 @@ export default memo(function Pagination({
             className="charcoal-pagination-button"
             onClick={makeClickHandler(p)}
           >
-            <Text>{p}</Text>
+            {p}
           </button>
         ),
       )}
@@ -84,7 +81,6 @@ export default memo(function Pagination({
         icon="24/Next"
         size="M"
         className="charcoal-pagination-button"
-        data-no-background
         hidden={!hasNext}
         disabled={!hasNext}
         onClick={makeClickHandler(Math.min(pageCount, page + 1))}
@@ -131,7 +127,6 @@ export function LinkPagination({
         component={LinkComponent as 'a'}
         href={makeUrl(Math.max(1, page - 1))}
         className="charcoal-pagination-button"
-        data-no-background
         hidden={!hasPrev}
         aria-disabled={!hasPrev}
       />
@@ -147,7 +142,7 @@ export function LinkPagination({
           />
         ) : p === page ? (
           <span key={p} className="charcoal-pagination-button" aria-current>
-            <Text>{p}</Text>
+            {p}
           </span>
         ) : (
           <LinkComponent
@@ -155,7 +150,7 @@ export function LinkPagination({
             href={makeUrl(p)}
             className="charcoal-pagination-button"
           >
-            <Text>{p}</Text>
+            {p}
           </LinkComponent>
         ),
       )}
@@ -165,7 +160,6 @@ export function LinkPagination({
         component={LinkComponent as 'a'}
         href={makeUrl(Math.min(pageCount, page + 1))}
         className="charcoal-pagination-button"
-        data-no-background
         hidden={!hasNext}
         aria-disabled={!hasNext}
       />
