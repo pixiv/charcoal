@@ -2,6 +2,7 @@ import light from '@charcoal-ui/theme/unstable-tokens/css-variables.json' with {
 import type { Config } from 'tailwindcss'
 import {
   flattenKey as flattenKeys,
+  flattenKeyWithoutDefault,
   mapDefaultKey as mapDefaultKeys,
 } from './util'
 
@@ -51,9 +52,11 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
     theme: {
       // borderWidth.m -> border-m
       // borderWidth.focus.1 -> border-focus-1
-      borderWidth: flattenKeys(light['border-width']),
+      borderWidth: flattenKeyWithoutDefault({
+        'width-ch': flattenKeys(light['border-width']), // unstable border width token
+      }),
       borderRadius: light.radius,
-      borderColor: flattenKeys(colors.border),
+      borderColor: flattenKeyWithoutDefault({ ch: flattenKeys(colors.border) }),
 
       colors,
 
