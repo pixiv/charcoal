@@ -36,7 +36,7 @@ export default memo(function Pagination({
   const classNames = useClassNames('charcoal-pagination', className)
 
   return (
-    <nav {...props} className={classNames}>
+    <nav {...props} className={classNames} aria-label="Pagination">
       <IconButton
         icon="24/Prev"
         size="M"
@@ -62,7 +62,7 @@ export default memo(function Pagination({
             key={p}
             type="button"
             className="charcoal-pagination-button"
-            aria-current
+            aria-current="page"
           >
             {p}
           </button>
@@ -120,7 +120,7 @@ export function LinkPagination({
   const classNames = useClassNames('charcoal-pagination', className)
 
   return (
-    <nav {...props} className={classNames}>
+    <nav {...props} className={classNames} aria-label="Pagination">
       <IconButton
         icon="24/Prev"
         size="M"
@@ -141,7 +141,11 @@ export function LinkPagination({
             aria-hidden
           />
         ) : p === page ? (
-          <span key={p} className="charcoal-pagination-button" aria-current>
+          <span
+            key={p}
+            className="charcoal-pagination-button"
+            aria-current="page"
+          >
             {p}
           </span>
         ) : (
