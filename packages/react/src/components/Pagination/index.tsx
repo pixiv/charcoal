@@ -1,6 +1,5 @@
 import './index.css'
 
-import { useCallback } from 'react'
 import { usePaginationWindow } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
@@ -63,10 +62,8 @@ export default function Pagination({
   const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
   const isLinkMode = makeUrl !== undefined
 
-  const makeClickHandler = useCallback(
-    (value: number) => () => onChange?.(value),
-    [onChange],
-  )
+  // 'use memo' により React Compiler が自動でメモ化するため useCallback は不要
+  const makeClickHandler = (value: number) => () => onChange?.(value)
 
   const classNames = useClassNames('charcoal-pagination', className)
 
@@ -97,12 +94,11 @@ export default function Pagination({
     )
   }
 
-  const renderPageItem = (p: number | string) => {
+  const PageItem = ({ value }: { value: number | string }) => {
     // 省略記号
-    if (p === '...') {
+    if (value === '...') {
       return (
         <IconButton
-          key={p}
           icon="24/Dot"
           size="M"
           disabled
@@ -112,38 +108,35 @@ export default function Pagination({
       )
     }
     // 現在ページ（クリック不可）
-    if (p === page) {
+    if (value === page) {
       return (
-        <span
-          key={p}
-          className="charcoal-pagination-button"
-          aria-current="page"
-        >
-          {p}
+        <span className="charcoal-pagination-button" aria-current="page">
+          {value}
         </span>
       )
     }
+
+    if (typeof value !== 'number') return null
+
     // リンクモード: ページへのリンク
     if (isLinkMode && makeUrl) {
       return (
         <LinkComponent
-          key={p}
-          href={makeUrl(p as number)}
+          href={makeUrl(value)}
           className="charcoal-pagination-button"
         >
-          {p}
+          {value}
         </LinkComponent>
       )
     }
     // ボタンモード: クリックでページ遷移
     return (
       <button
-        key={p}
         type="button"
         className="charcoal-pagination-button"
-        onClick={makeClickHandler(p as number)}
+        onClick={makeClickHandler(value)}
       >
-        {p}
+        {value}
       </button>
     )
   }
@@ -151,7 +144,9 @@ export default function Pagination({
   return (
     <nav {...navProps} className={classNames} aria-label="Pagination">
       <NavButton direction="prev" />
-      {window.map(renderPageItem)}
+      {window.map((p) => (
+        <PageItem key={p} value={p} />
+      ))}
       <NavButton direction="next" />
     </nav>
   )
