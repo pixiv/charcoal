@@ -3232,13 +3232,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         4
       </button>
-      <button
+      <span
         aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
         5
-      </button>
+      </span>
       <button
         class="charcoal-pagination-button"
         type="button"
@@ -3293,13 +3292,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
           name="24/Prev"
         />
       </button>
-      <button
+      <span
         aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
         1
-      </button>
+      </span>
       <button
         class="charcoal-pagination-button"
         type="button"
@@ -3412,13 +3410,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         9
       </button>
-      <button
+      <span
         aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
         10
-      </button>
+      </span>
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
@@ -3573,13 +3570,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         49
       </button>
-      <button
+      <span
         aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
         50
-      </button>
+      </span>
       <button
         class="charcoal-pagination-button"
         type="button"
