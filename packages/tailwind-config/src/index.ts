@@ -146,9 +146,9 @@ export function createTailwindConfig({
         ? {
             extend: {
               borderWidth: flattenKey({ 'width-ch': borderWidthV2 }), // unstable border width token
+              fontWeight: fontWeightV2,
+              fontSize: fontSizeV2,
             },
-            fontWeight: fontWeightV2,
-            fontSize: fontSizeV2,
           }
         : {}),
     },
