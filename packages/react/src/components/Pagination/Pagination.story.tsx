@@ -1,10 +1,36 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react-webpack5'
 import Pagination, { LinkPagination } from '.'
 
 function PaginationWithState(args: React.ComponentProps<typeof Pagination>) {
   const [page, setPage] = useState(args.page)
   return <Pagination {...args} page={page} onChange={setPage} />
+}
+
+function parsePageFromHash(fallback: number): number {
+  const match = window.location.hash.match(/^#page-(\d+)$/)
+  return match ? parseInt(match[1], 10) : fallback
+}
+
+function LinkPaginationWithState(
+  args: React.ComponentProps<typeof LinkPagination>,
+) {
+  const [page, setPage] = useState(() => parsePageFromHash(args.page))
+
+  useEffect(() => {
+    const handleHashChange = () => setPage(parsePageFromHash(args.page))
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [args.page])
+
+  return (
+    <div>
+      <p style={{ marginBottom: 8, fontSize: 14, color: '#666' }}>
+        Current page: {page}
+      </p>
+      <LinkPagination {...args} page={page} makeUrl={(p) => `#page-${p}`} />
+    </div>
+  )
 }
 
 export default {
@@ -53,5 +79,5 @@ export const LinkPaginationStory: StoryObj<typeof LinkPagination> = {
     pageCount: 10,
     makeUrl: (p) => `#page-${p}`,
   },
-  render: (args) => <LinkPagination {...args} />,
+  render: (args) => <LinkPaginationWithState {...args} />,
 }

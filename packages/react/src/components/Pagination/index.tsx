@@ -93,8 +93,19 @@ export default memo(function Pagination({
   )
 })
 
+type LinkComponentProps = {
+  href: string
+  className?: string
+  children?: React.ReactNode
+}
+
 export interface LinkPaginationProps extends CommonProps {
   makeUrl(page: number): string
+  /**
+   * The component used for link elements. Receives `href`, `className`, and `children`.
+   * @default 'a'
+   */
+  component?: React.ElementType<LinkComponentProps>
 }
 
 export function LinkPagination({
@@ -102,6 +113,7 @@ export function LinkPagination({
   pageCount,
   pageRangeDisplayed,
   makeUrl,
+  component: LinkComponent = 'a',
   className,
   ...props
 }: LinkPaginationProps & React.ComponentPropsWithoutRef<'nav'>) {
@@ -116,7 +128,7 @@ export function LinkPagination({
       <IconButton
         icon="24/Prev"
         size="M"
-        component="a"
+        component={LinkComponent as 'a'}
         href={makeUrl(Math.max(1, page - 1))}
         className="charcoal-pagination-button"
         data-no-background
@@ -138,15 +150,19 @@ export function LinkPagination({
             <Text>{p}</Text>
           </span>
         ) : (
-          <a key={p} href={makeUrl(p)} className="charcoal-pagination-button">
+          <LinkComponent
+            key={p}
+            href={makeUrl(p)}
+            className="charcoal-pagination-button"
+          >
             <Text>{p}</Text>
-          </a>
+          </LinkComponent>
         ),
       )}
       <IconButton
         icon="24/Next"
         size="M"
-        component="a"
+        component={LinkComponent as 'a'}
         href={makeUrl(Math.min(pageCount, page + 1))}
         className="charcoal-pagination-button"
         data-no-background
