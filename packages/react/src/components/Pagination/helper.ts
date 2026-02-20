@@ -1,7 +1,7 @@
 import { useDebugValue, useMemo } from 'react'
 import warning from 'warning'
 
-export function usePagerWindow(
+export function usePaginationWindow(
   page: number,
   pageCount: number,
   pageRangeDisplayed = 7,

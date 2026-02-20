@@ -1,7 +1,7 @@
 import './index.css'
 
 import { memo, useCallback } from 'react'
-import { usePagerWindow } from './helper'
+import { usePaginationWindow } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
 
@@ -25,7 +25,7 @@ export default memo(function Pagination({
   className,
   ...props
 }: PaginationProps & Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>) {
-  const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
+  const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
   const makeClickHandler = useCallback(
     (value: number) => () => {
       onChange(value)
@@ -105,7 +105,7 @@ export function LinkPagination({
   className,
   ...props
 }: LinkPaginationProps & React.ComponentPropsWithoutRef<'nav'>) {
-  const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
+  const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
 
   const hasNext = page < pageCount
   const hasPrev = page > 1
