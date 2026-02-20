@@ -143,9 +143,11 @@ export function createTailwindConfig({
       },
       ...(unstableTokenV2
         ? {
-            borderWidth: borderWidthV2,
-            fontSize: fontSizeV2,
-            fontWeight: fontWeightV2,
+            extend: {
+              borderWidth: borderWidthV2,
+              fontWeight: fontWeightV2,
+              fontSize: fontSizeV2,
+            },
           }
         : {}),
     },
