@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "5.4.4",
+  "version": "5.5.0-beta.1",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -60,10 +60,10 @@
     "@react-aria/switch": "^3.6.0",
     "@react-aria/utils": "^3.23.0",
     "@react-aria/visually-hidden": "^3.8.8",
+    "@react-spring/web": "catalog:",
     "@react-stately/radio": "^3.10.2",
     "polished": "^4.1.4",
     "react-compiler-runtime": "catalog:",
-    "react-spring": "^9.0.0",
     "react-stately": "^3.26.0",
     "warning": "^4.0.3"
   },

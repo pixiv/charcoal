@@ -1,0 +1,67 @@
+.charcoal-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.charcoal-pagination-button {
+  font-size: 1rem;
+  line-height: calc(1em + 8px);
+  text-decoration: none;
+  border: none;
+  outline: none;
+  touch-action: manipulation;
+  user-select: none;
+  transition:
+    box-shadow 0.2s ease 0s,
+    color 0.2s ease 0s,
+    background 0.2s ease 0s,
+    opacity 0.2s ease 0s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  /* HACK: Safari repaint fix */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-transform: translateZ(0);
+
+  background: transparent;
+  color: var(--charcoal-text3);
+  border-radius: 48px;
+}
+
+.charcoal-pagination-button[hidden] {
+  visibility: hidden;
+  display: block;
+}
+
+.charcoal-pagination-button:hover {
+  background: var(--charcoal-surface3);
+  color: var(--charcoal-text2);
+}
+
+.charcoal-pagination-button[aria-current] {
+  background-color: var(--charcoal-surface6);
+  color: var(--charcoal-text5);
+}
+
+.charcoal-pagination-button[aria-current]:hover {
+  background-color: var(--charcoal-surface6);
+  color: var(--charcoal-text5);
+}
+
+.charcoal-pagination-spacer {
+  cursor: default;
+  color: var(--charcoal-text3);
+  background: none;
+}
+
+.charcoal-pagination-spacer.charcoal-icon-button:disabled {
+  opacity: 1;
+}
