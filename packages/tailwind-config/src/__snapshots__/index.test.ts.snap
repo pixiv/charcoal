@@ -25,6 +25,7 @@ exports[`tailwind.config.js > defaultConfig 1`] = `
   ],
   "theme": {
     "borderColor": {
+      "ch": undefined,
       "default": {
         "DEFAULT": "var(--tailwind-color-default, rgba(0,0,0,0.08))",
         "disabled": "var(--tailwind-color-default--disabled, rgba(0,0,0,0.0256))",
