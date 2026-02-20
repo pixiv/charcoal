@@ -52,7 +52,7 @@
     "@charcoal-ui/theme": "workspace:*",
     "@charcoal-ui/utils": "workspace:*",
     "polished": "^4.1.4",
-    "react-spring": "^9.0.0",
+    "@react-spring/web": "catalog:",
     "warning": "^4.0.3"
   },
   "peerDependencies": {

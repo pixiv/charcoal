@@ -63,7 +63,7 @@
     "@react-stately/radio": "^3.10.2",
     "polished": "^4.1.4",
     "react-compiler-runtime": "catalog:",
-    "react-spring": "^9.0.0",
+    "@react-spring/web": "catalog:",
     "react-stately": "^3.26.0",
     "warning": "^4.0.3"
   },
