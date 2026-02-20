@@ -1,11 +1,12 @@
-import { useDebugValue, useMemo } from 'react'
+import { useDebugValue } from 'react'
 import warning from 'warning'
 
-export function usePagerWindow(
+export function usePaginationWindow(
   page: number,
   pageCount: number,
   pageRangeDisplayed = 7,
 ) {
+  'use memo'
   // ページャーのリンク生成例:
   //
   //     < [ 1 ] [*2*] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] >
@@ -35,13 +36,13 @@ export function usePagerWindow(
     warning(pageRangeDisplayed > 2, `\`windowSize\` must be greater than 2`)
   }
 
-  const window = useMemo(() => {
-    const visibleFirstPage = 1
-    const visibleLastPage = Math.min(
-      pageCount,
-      Math.max(page + Math.floor(pageRangeDisplayed / 2), pageRangeDisplayed),
-    )
+  const visibleFirstPage = 1
+  const visibleLastPage = Math.min(
+    pageCount,
+    Math.max(page + Math.floor(pageRangeDisplayed / 2), pageRangeDisplayed),
+  )
 
+  const window = (() => {
     if (visibleLastPage <= pageRangeDisplayed) {
       // 表示範囲が1-7ページなら省略は無い。
       return Array.from(
@@ -50,11 +51,11 @@ export function usePagerWindow(
       )
     } else {
       const start = visibleLastPage - (pageRangeDisplayed - 1) + 2
+      // 表示範囲が1-7ページを超えるなら、
+      // - 1ページ目は固定で表示する
+      // - 2ページ目から現在のページの直前までは省略する
       return [
-        // 表示範囲が1-7ページを超えるなら、
-        // - 1ページ目は固定で表示する
         visibleFirstPage,
-        // - 2ページ目から現在のページの直前までは省略する
         '...' as const,
         ...Array.from(
           { length: 1 + visibleLastPage - start },
@@ -62,7 +63,7 @@ export function usePagerWindow(
         ),
       ]
     }
-  }, [page, pageCount, pageRangeDisplayed])
+  })()
 
   useDebugValue(window)
 

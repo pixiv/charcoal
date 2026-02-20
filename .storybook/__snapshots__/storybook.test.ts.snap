@@ -3195,12 +3195,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
     data-dark="false"
   >
     <nav
+      aria-label="Pagination"
       class="charcoal-pagination"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
       >
@@ -3212,9 +3212,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          1
-        </span>
+        1
       </button>
       <button
         aria-hidden="true"
@@ -3232,47 +3230,35 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          4
-        </span>
+        4
       </button>
-      <button
-        aria-current="true"
+      <span
+        aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
-        <span>
-          5
-        </span>
-      </button>
+        5
+      </span>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          6
-        </span>
+        6
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          7
-        </span>
+        7
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          8
-        </span>
+        8
       </button>
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
       >
@@ -3291,12 +3277,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
     data-dark="false"
   >
     <nav
+      aria-label="Pagination"
       class="charcoal-pagination"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
         disabled=""
@@ -3306,67 +3292,51 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
           name="24/Prev"
         />
       </button>
+      <span
+        aria-current="page"
+        class="charcoal-pagination-button"
+      >
+        1
+      </span>
       <button
-        aria-current="true"
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          1
-        </span>
+        2
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          2
-        </span>
+        3
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          3
-        </span>
+        4
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          4
-        </span>
+        5
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          5
-        </span>
+        6
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          6
-        </span>
-      </button>
-      <button
-        class="charcoal-pagination-button"
-        type="button"
-      >
-        <span>
-          7
-        </span>
+        7
       </button>
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
       >
@@ -3385,12 +3355,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
     data-dark="false"
   >
     <nav
+      aria-label="Pagination"
       class="charcoal-pagination"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
       >
@@ -3402,9 +3372,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          1
-        </span>
+        1
       </button>
       <button
         aria-hidden="true"
@@ -3422,47 +3390,35 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          6
-        </span>
+        6
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          7
-        </span>
+        7
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          8
-        </span>
+        8
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          9
-        </span>
+        9
       </button>
-      <button
-        aria-current="true"
+      <span
+        aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
-        <span>
-          10
-        </span>
-      </button>
+        10
+      </span>
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
         disabled=""
@@ -3482,96 +3438,91 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
   <div
     data-dark="false"
   >
-    <nav
-      class="charcoal-pagination"
-    >
-      <a
-        aria-disabled="false"
-        class="charcoal-icon-button charcoal-pagination-button"
-        data-active="false"
-        data-no-background="true"
-        data-size="M"
-        data-variant="Default"
-        href="#page-4"
+    <div>
+      <p
+        style="margin-bottom: 8px; font-size: 14px; color: rgb(102, 102, 102);"
       >
-        <pixiv-icon
-          name="24/Prev"
-        />
-      </a>
-      <a
-        class="charcoal-pagination-button"
-        href="#page-1"
+        Current page: 
+        5
+      </p>
+      <nav
+        aria-label="Pagination"
+        class="charcoal-pagination"
       >
-        <span>
+        <a
+          aria-disabled="false"
+          class="charcoal-icon-button charcoal-pagination-button"
+          data-active="false"
+          data-size="M"
+          data-variant="Default"
+          href="#page-4"
+        >
+          <pixiv-icon
+            name="24/Prev"
+          />
+        </a>
+        <a
+          class="charcoal-pagination-button"
+          href="#page-1"
+        >
           1
-        </span>
-      </a>
-      <button
-        aria-hidden="true"
-        class="charcoal-icon-button charcoal-pagination-button charcoal-pagination-spacer"
-        data-active="false"
-        data-size="M"
-        data-variant="Default"
-        disabled=""
-      >
-        <pixiv-icon
-          name="24/Dot"
-        />
-      </button>
-      <a
-        class="charcoal-pagination-button"
-        href="#page-4"
-      >
-        <span>
+        </a>
+        <button
+          aria-hidden="true"
+          class="charcoal-icon-button charcoal-pagination-button charcoal-pagination-spacer"
+          data-active="false"
+          data-size="M"
+          data-variant="Default"
+          disabled=""
+        >
+          <pixiv-icon
+            name="24/Dot"
+          />
+        </button>
+        <a
+          class="charcoal-pagination-button"
+          href="#page-4"
+        >
           4
-        </span>
-      </a>
-      <span
-        aria-current="true"
-        class="charcoal-pagination-button"
-      >
-        <span>
+        </a>
+        <span
+          aria-current="page"
+          class="charcoal-pagination-button"
+        >
           5
         </span>
-      </span>
-      <a
-        class="charcoal-pagination-button"
-        href="#page-6"
-      >
-        <span>
+        <a
+          class="charcoal-pagination-button"
+          href="#page-6"
+        >
           6
-        </span>
-      </a>
-      <a
-        class="charcoal-pagination-button"
-        href="#page-7"
-      >
-        <span>
+        </a>
+        <a
+          class="charcoal-pagination-button"
+          href="#page-7"
+        >
           7
-        </span>
-      </a>
-      <a
-        class="charcoal-pagination-button"
-        href="#page-8"
-      >
-        <span>
+        </a>
+        <a
+          class="charcoal-pagination-button"
+          href="#page-8"
+        >
           8
-        </span>
-      </a>
-      <a
-        aria-disabled="false"
-        class="charcoal-icon-button charcoal-pagination-button"
-        data-active="false"
-        data-no-background="true"
-        data-size="M"
-        data-variant="Default"
-        href="#page-6"
-      >
-        <pixiv-icon
-          name="24/Next"
-        />
-      </a>
-    </nav>
+        </a>
+        <a
+          aria-disabled="false"
+          class="charcoal-icon-button charcoal-pagination-button"
+          data-active="false"
+          data-size="M"
+          data-variant="Default"
+          href="#page-6"
+        >
+          <pixiv-icon
+            name="24/Next"
+          />
+        </a>
+      </nav>
+    </div>
   </div>
 </div>
 `;
@@ -3582,12 +3533,12 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
     data-dark="false"
   >
     <nav
+      aria-label="Pagination"
       class="charcoal-pagination"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
       >
@@ -3599,9 +3550,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          1
-        </span>
+        1
       </button>
       <button
         aria-hidden="true"
@@ -3619,47 +3568,35 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          49
-        </span>
+        49
       </button>
-      <button
-        aria-current="true"
+      <span
+        aria-current="page"
         class="charcoal-pagination-button"
-        type="button"
       >
-        <span>
-          50
-        </span>
-      </button>
+        50
+      </span>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          51
-        </span>
+        51
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          52
-        </span>
+        52
       </button>
       <button
         class="charcoal-pagination-button"
         type="button"
       >
-        <span>
-          53
-        </span>
+        53
       </button>
       <button
         class="charcoal-icon-button charcoal-pagination-button"
         data-active="false"
-        data-no-background="true"
         data-size="M"
         data-variant="Default"
       >

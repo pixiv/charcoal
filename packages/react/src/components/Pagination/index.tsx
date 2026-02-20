@@ -1,11 +1,8 @@
 import './index.css'
 
-import { memo, useCallback } from 'react'
-import { usePagerWindow } from './helper'
+import { usePaginationWindow } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
-
-const Text = 'span'
 
 interface CommonProps {
   page: number
@@ -13,146 +10,144 @@ interface CommonProps {
   pageRangeDisplayed?: number
 }
 
-export interface PaginationProps extends CommonProps {
-  onChange(newPage: number): void
+type LinkComponentProps = {
+  href: string
+  className?: string
+  children?: React.ReactNode
 }
 
-export default memo(function Pagination({
+type NavProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>
+
+/**
+ * Pagination component. Use either `onChange` (button mode) or `makeUrl` (link mode).
+ *
+ * @example
+ * // Button mode - for client-side state
+ * <Pagination page={1} pageCount={10} onChange={setPage} />
+ *
+ * @example
+ * // Link mode - for server routing / static pages
+ * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} />
+ *
+ * @example
+ * // Link mode with custom component (e.g. Next.js Link)
+ * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} />
+ */
+export type PaginationProps = CommonProps &
+  NavProps &
+  (
+    | { onChange(newPage: number): void; makeUrl?: never; component?: never }
+    | {
+        makeUrl(page: number): string
+        onChange?: never
+        /**
+         * The component used for link elements. Receives `href`, `className`, and `children`.
+         * @default 'a'
+         */
+        component?: React.ElementType<LinkComponentProps>
+      }
+  )
+
+export default function Pagination({
   page,
   pageCount,
   pageRangeDisplayed,
   onChange,
-  className,
-  ...props
-}: PaginationProps & Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>) {
-  const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
-  const makeClickHandler = useCallback(
-    (value: number) => () => {
-      onChange(value)
-    },
-    [onChange],
-  )
-
-  const hasNext = page < pageCount
-  const hasPrev = page > 1
-  const classNames = useClassNames('charcoal-pagination', className)
-
-  return (
-    <nav {...props} className={classNames}>
-      <IconButton
-        icon="24/Prev"
-        size="M"
-        className="charcoal-pagination-button"
-        data-no-background
-        hidden={!hasPrev}
-        disabled={!hasPrev}
-        onClick={makeClickHandler(Math.max(1, page - 1))}
-      />
-      {window.map((p) =>
-        p === '...' ? (
-          <IconButton
-            key={p}
-            icon="24/Dot"
-            size="M"
-            disabled
-            className="charcoal-pagination-button charcoal-pagination-spacer"
-            aria-hidden
-          />
-        ) : p === page ? (
-          // we remove the onClick but don't mark it as disabled to preserve keyboard focus
-          // not doing so causes the focus ring to flicker in and out of existence
-          <button
-            key={p}
-            type="button"
-            className="charcoal-pagination-button"
-            aria-current
-          >
-            <Text>{p}</Text>
-          </button>
-        ) : (
-          <button
-            key={p}
-            type="button"
-            className="charcoal-pagination-button"
-            onClick={makeClickHandler(p)}
-          >
-            <Text>{p}</Text>
-          </button>
-        ),
-      )}
-      <IconButton
-        icon="24/Next"
-        size="M"
-        className="charcoal-pagination-button"
-        data-no-background
-        hidden={!hasNext}
-        disabled={!hasNext}
-        onClick={makeClickHandler(Math.min(pageCount, page + 1))}
-      />
-    </nav>
-  )
-})
-
-export interface LinkPaginationProps extends CommonProps {
-  makeUrl(page: number): string
-}
-
-export function LinkPagination({
-  page,
-  pageCount,
-  pageRangeDisplayed,
   makeUrl,
+  component: LinkComponent = 'a',
   className,
-  ...props
-}: LinkPaginationProps & React.ComponentPropsWithoutRef<'nav'>) {
-  const window = usePagerWindow(page, pageCount, pageRangeDisplayed)
+  ...navProps
+}: PaginationProps) {
+  'use memo'
+  const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
+  const isLinkMode = makeUrl !== undefined
 
-  const hasNext = page < pageCount
-  const hasPrev = page > 1
+  // 'use memo' により React Compiler が自動でメモ化するため useCallback は不要
+  const makeClickHandler = (value: number) => () => onChange?.(value)
+
   const classNames = useClassNames('charcoal-pagination', className)
 
+  const NavButton = ({ direction }: { direction: 'prev' | 'next' }) => {
+    const isPrev = direction === 'prev'
+    const targetPage = isPrev
+      ? Math.max(1, page - 1)
+      : Math.min(pageCount, page + 1)
+    const disabled = isPrev ? page <= 1 : page >= pageCount
+
+    return (
+      <IconButton
+        icon={isPrev ? '24/Prev' : '24/Next'}
+        size="M"
+        className="charcoal-pagination-button"
+        hidden={disabled}
+        {...(isLinkMode && makeUrl
+          ? {
+              component: LinkComponent as 'a',
+              href: makeUrl(targetPage),
+              'aria-disabled': disabled,
+            }
+          : {
+              disabled,
+              onClick: makeClickHandler(targetPage),
+            })}
+      />
+    )
+  }
+
+  const PageItem = ({ value }: { value: number | string }) => {
+    // 省略記号
+    if (value === '...') {
+      return (
+        <IconButton
+          icon="24/Dot"
+          size="M"
+          disabled
+          className="charcoal-pagination-button charcoal-pagination-spacer"
+          aria-hidden
+        />
+      )
+    }
+    // 現在ページ（クリック不可）
+    if (value === page) {
+      return (
+        <span className="charcoal-pagination-button" aria-current="page">
+          {value}
+        </span>
+      )
+    }
+
+    if (typeof value !== 'number') return null
+
+    // リンクモード: ページへのリンク
+    if (isLinkMode && makeUrl) {
+      return (
+        <LinkComponent
+          href={makeUrl(value)}
+          className="charcoal-pagination-button"
+        >
+          {value}
+        </LinkComponent>
+      )
+    }
+    // ボタンモード: クリックでページ遷移
+    return (
+      <button
+        type="button"
+        className="charcoal-pagination-button"
+        onClick={makeClickHandler(value)}
+      >
+        {value}
+      </button>
+    )
+  }
+
   return (
-    <nav {...props} className={classNames}>
-      <IconButton
-        icon="24/Prev"
-        size="M"
-        component="a"
-        href={makeUrl(Math.max(1, page - 1))}
-        className="charcoal-pagination-button"
-        data-no-background
-        hidden={!hasPrev}
-        aria-disabled={!hasPrev}
-      />
-      {window.map((p) =>
-        p === '...' ? (
-          <IconButton
-            key={p}
-            icon="24/Dot"
-            size="M"
-            disabled
-            className="charcoal-pagination-button charcoal-pagination-spacer"
-            aria-hidden
-          />
-        ) : p === page ? (
-          <span key={p} className="charcoal-pagination-button" aria-current>
-            <Text>{p}</Text>
-          </span>
-        ) : (
-          <a key={p} href={makeUrl(p)} className="charcoal-pagination-button">
-            <Text>{p}</Text>
-          </a>
-        ),
-      )}
-      <IconButton
-        icon="24/Next"
-        size="M"
-        component="a"
-        href={makeUrl(Math.min(pageCount, page + 1))}
-        className="charcoal-pagination-button"
-        data-no-background
-        hidden={!hasNext}
-        aria-disabled={!hasNext}
-      />
+    <nav {...navProps} className={classNames} aria-label="Pagination">
+      <NavButton direction="prev" />
+      {window.map((p) => (
+        <PageItem key={p} value={p} />
+      ))}
+      <NavButton direction="next" />
     </nav>
   )
 }
