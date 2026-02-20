@@ -355,8 +355,8 @@ exports[`unstable_createTailwindConfigTokenV2 > config object 1`] = `
       ],
     },
     "fontWeight": {
-      "bold": "var(--charcoal-text-font-weight-bold)",
-      "regular": "var(--charcoal-text-font-weight-regular)",
+      "ch-bold": "var(--charcoal-text-font-weight-bold)",
+      "ch-regular": "var(--charcoal-text-font-weight-regular)",
     },
     "gap": {
       "component-0": "var(--charcoal-space-component-0)",
@@ -5106,8 +5106,8 @@ exports[`unstable_createTailwindConfigTokenV2 > list of classes 1`] = `
   "text-heading-xxxl",
   "text-heading-xxxs",
   "text-paragraph",
-  "font-bold",
-  "font-regular",
+  "font-ch-bold",
+  "font-ch-regular",
   "uppercase",
   "lowercase",
   "capitalize",

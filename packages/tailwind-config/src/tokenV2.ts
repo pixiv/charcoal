@@ -61,7 +61,7 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
       colors,
 
       fontSize,
-      fontWeight: light.text['font-weight'],
+      fontWeight: flattenKeys({ ch: light.text['font-weight'] }),
 
       spacing,
       gap: spacing,
