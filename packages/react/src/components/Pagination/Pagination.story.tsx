@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import Pagination from '.'
+import Pagination, { type PaginationProps } from '.'
 
-type PaginationStoryArgs = {
-  page: number
-  pageCount: number
-  pageRangeDisplayed?: 5 | 7
-  size?: 'S' | 'M'
-}
+type PaginationStoryArgs = Pick<
+  PaginationProps,
+  'page' | 'pageCount' | 'pageRangeDisplayed' | 'size'
+>
 
 function PaginationWithState(args: PaginationStoryArgs) {
   const [page, setPage] = useState(args.page)
@@ -58,6 +56,7 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  render: (args) => <PaginationWithState {...args} />,
 } satisfies Meta<typeof Pagination>
 
 export const Default: StoryObj<typeof Pagination> = {
@@ -65,7 +64,6 @@ export const Default: StoryObj<typeof Pagination> = {
     page: 5,
     pageCount: 10,
   },
-  render: (args) => <PaginationWithState {...args} />,
 }
 
 export const FirstPage: StoryObj<typeof Pagination> = {
@@ -73,7 +71,6 @@ export const FirstPage: StoryObj<typeof Pagination> = {
     page: 1,
     pageCount: 10,
   },
-  render: (args) => <PaginationWithState {...args} />,
 }
 
 export const LastPage: StoryObj<typeof Pagination> = {
@@ -81,7 +78,6 @@ export const LastPage: StoryObj<typeof Pagination> = {
     page: 10,
     pageCount: 10,
   },
-  render: (args) => <PaginationWithState {...args} />,
 }
 
 export const ManyPages: StoryObj<typeof Pagination> = {
@@ -89,7 +85,6 @@ export const ManyPages: StoryObj<typeof Pagination> = {
     page: 50,
     pageCount: 103,
   },
-  render: (args) => <PaginationWithState {...args} />,
 }
 
 export const SizeS: StoryObj<typeof Pagination> = {
@@ -98,7 +93,6 @@ export const SizeS: StoryObj<typeof Pagination> = {
     pageCount: 10,
     size: 'S',
   },
-  render: (args) => <PaginationWithState {...args} />,
 }
 
 export const PageRange5: StoryObj<typeof Pagination> = {
@@ -108,7 +102,6 @@ export const PageRange5: StoryObj<typeof Pagination> = {
     pageRangeDisplayed: 5,
     size: 'S',
   },
-  render: (args) => <PaginationWithState {...args} />,
 }
 
 export const LinkPaginationStory: StoryObj<typeof Pagination> = {

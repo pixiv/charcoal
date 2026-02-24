@@ -2,6 +2,8 @@ import { createContext, useContext } from 'react'
 
 export type Size = 'S' | 'M'
 
+export type PageRangeDisplayed = 5 | 7
+
 export type LinkComponentProps = {
   href: string
   className?: string

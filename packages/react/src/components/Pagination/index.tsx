@@ -7,10 +7,16 @@ import {
   PaginationContext,
   usePaginationContext,
   type LinkComponentProps,
+  type PageRangeDisplayed,
   type Size,
 } from './PaginationContext'
 
-function NavButton({ direction }: { direction: 'prev' | 'next' }) {
+type NavButtonProps = {
+  direction: 'prev' | 'next'
+}
+
+function NavButton({ direction }: NavButtonProps) {
+  'use memo'
   const {
     page,
     pageCount,
@@ -48,6 +54,7 @@ function NavButton({ direction }: { direction: 'prev' | 'next' }) {
 }
 
 function PageItem({ value }: { value: number | string }) {
+  'use memo'
   const { page, size, isLinkMode, makeUrl, LinkComponent, makeClickHandler } =
     usePaginationContext()
   // 省略記号
@@ -97,7 +104,7 @@ function PageItem({ value }: { value: number | string }) {
 interface CommonProps {
   page: number
   pageCount: number
-  pageRangeDisplayed?: 5 | 7
+  pageRangeDisplayed?: PageRangeDisplayed
   size?: Size
 }
 
@@ -163,10 +170,10 @@ export default function Pagination({
   return (
     <PaginationContext.Provider value={contextValue}>
       <nav
-        {...navProps}
         className={classNames}
         data-size={size}
         aria-label="Pagination"
+        {...navProps}
       >
         <NavButton direction="prev" />
         {window.map((p) => (

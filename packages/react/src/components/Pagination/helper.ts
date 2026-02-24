@@ -1,10 +1,11 @@
 import { useDebugValue } from 'react'
 import warning from 'warning'
+import type { PageRangeDisplayed } from './PaginationContext'
 
 export function usePaginationWindow(
   page: number,
   pageCount: number,
-  pageRangeDisplayed: 5 | 7 = 7,
+  pageRangeDisplayed: PageRangeDisplayed = 7,
 ) {
   'use memo'
   // ページャーのリンク生成例:
