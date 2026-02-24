@@ -3199,7 +3199,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       class="charcoal-pagination"
     >
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3216,7 +3216,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       </button>
       <button
         aria-hidden="true"
-        class="charcoal-icon-button charcoal-pagination-button charcoal-pagination-spacer"
+        class="charcoal-icon-button charcoal-pagination-spacer"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3257,7 +3257,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
         8
       </button>
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3281,7 +3281,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
       class="charcoal-pagination"
     >
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3335,7 +3335,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
         7
       </button>
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3359,7 +3359,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       class="charcoal-pagination"
     >
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3376,7 +3376,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       </button>
       <button
         aria-hidden="true"
-        class="charcoal-icon-button charcoal-pagination-button charcoal-pagination-spacer"
+        class="charcoal-icon-button charcoal-pagination-spacer"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3417,7 +3417,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
         10
       </span>
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3451,7 +3451,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
       >
         <a
           aria-disabled="false"
-          class="charcoal-icon-button charcoal-pagination-button"
+          class="charcoal-icon-button charcoal-pagination-nav-button"
           data-active="false"
           data-size="M"
           data-variant="Default"
@@ -3469,7 +3469,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         </a>
         <button
           aria-hidden="true"
-          class="charcoal-icon-button charcoal-pagination-button charcoal-pagination-spacer"
+          class="charcoal-icon-button charcoal-pagination-spacer"
           data-active="false"
           data-size="M"
           data-variant="Default"
@@ -3511,7 +3511,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         </a>
         <a
           aria-disabled="false"
-          class="charcoal-icon-button charcoal-pagination-button"
+          class="charcoal-icon-button charcoal-pagination-nav-button"
           data-active="false"
           data-size="M"
           data-variant="Default"
@@ -3537,7 +3537,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       class="charcoal-pagination"
     >
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3554,7 +3554,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       </button>
       <button
         aria-hidden="true"
-        class="charcoal-icon-button charcoal-pagination-button charcoal-pagination-spacer"
+        class="charcoal-icon-button charcoal-pagination-spacer"
         data-active="false"
         data-size="M"
         data-variant="Default"
@@ -3595,7 +3595,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
         53
       </button>
       <button
-        class="charcoal-icon-button charcoal-pagination-button"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
         data-variant="Default"

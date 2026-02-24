@@ -78,8 +78,8 @@ export default function Pagination({
       <IconButton
         icon={isPrev ? '24/Prev' : '24/Next'}
         size="M"
-        className="charcoal-pagination-button"
         hidden={disabled}
+        className="charcoal-pagination-nav-button"
         {...(isLinkMode && makeUrl
           ? {
               component: LinkComponent as 'a',
@@ -102,7 +102,7 @@ export default function Pagination({
           icon="24/Dot"
           size="M"
           disabled
-          className="charcoal-pagination-button charcoal-pagination-spacer"
+          className="charcoal-pagination-spacer"
           aria-hidden
         />
       )
