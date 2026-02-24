@@ -83,3 +83,7 @@ export {
   default as UnstableTextEllipsis,
   type TextEllipsisProps,
 } from './components/TextEllipsis'
+export {
+  default as UnstablePagination,
+  type PaginationProps,
+} from './components/Pagination'
