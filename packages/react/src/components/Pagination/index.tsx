@@ -4,10 +4,13 @@ import { usePaginationWindow } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
 
+type Size = 'S' | 'M'
+
 interface CommonProps {
   page: number
   pageCount: number
-  pageRangeDisplayed?: number
+  pageRangeDisplayed?: 5 | 7
+  size?: Size
 }
 
 type LinkComponentProps = {
@@ -52,6 +55,7 @@ export default function Pagination({
   page,
   pageCount,
   pageRangeDisplayed,
+  size = 'M',
   onChange,
   makeUrl,
   component: LinkComponent = 'a',
@@ -62,7 +66,6 @@ export default function Pagination({
   const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
   const isLinkMode = makeUrl !== undefined
 
-  // 'use memo' により React Compiler が自動でメモ化するため useCallback は不要
   const makeClickHandler = (value: number) => () => onChange?.(value)
 
   const classNames = useClassNames('charcoal-pagination', className)
@@ -77,7 +80,7 @@ export default function Pagination({
     return (
       <IconButton
         icon={isPrev ? '24/Prev' : '24/Next'}
-        size="M"
+        size={size}
         hidden={disabled}
         className="charcoal-pagination-nav-button"
         {...(isLinkMode && makeUrl
@@ -100,7 +103,7 @@ export default function Pagination({
       return (
         <IconButton
           icon="24/Dot"
-          size="M"
+          size={size}
           disabled
           className="charcoal-pagination-spacer"
           aria-hidden
@@ -142,7 +145,12 @@ export default function Pagination({
   }
 
   return (
-    <nav {...navProps} className={classNames} aria-label="Pagination">
+    <nav
+      {...navProps}
+      className={classNames}
+      data-size={size}
+      aria-label="Pagination"
+    >
       <NavButton direction="prev" />
       {window.map((p) => (
         <PageItem key={p} value={p} />

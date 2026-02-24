@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Meta, StoryObj } from '@storybook/react-webpack5'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import Pagination from '.'
 
 type PaginationStoryArgs = {
   page: number
   pageCount: number
-  pageRangeDisplayed?: number
+  pageRangeDisplayed?: 5 | 7
+  size?: 'S' | 'M'
 }
 
 function PaginationWithState(args: PaginationStoryArgs) {
@@ -15,6 +16,7 @@ function PaginationWithState(args: PaginationStoryArgs) {
       page={page}
       pageCount={args.pageCount}
       pageRangeDisplayed={args.pageRangeDisplayed}
+      size={args.size}
       onChange={setPage}
     />
   )
@@ -43,6 +45,7 @@ function LinkPaginationWithState(args: PaginationStoryArgs) {
         page={page}
         pageCount={args.pageCount}
         pageRangeDisplayed={args.pageRangeDisplayed}
+        size={args.size}
         makeUrl={(p) => `#page-${p}`}
       />
     </div>
@@ -85,6 +88,25 @@ export const ManyPages: StoryObj<typeof Pagination> = {
   args: {
     page: 50,
     pageCount: 103,
+  },
+  render: (args) => <PaginationWithState {...args} />,
+}
+
+export const SizeS: StoryObj<typeof Pagination> = {
+  args: {
+    page: 5,
+    pageCount: 10,
+    size: 'S',
+  },
+  render: (args) => <PaginationWithState {...args} />,
+}
+
+export const PageRange5: StoryObj<typeof Pagination> = {
+  args: {
+    page: 5,
+    pageCount: 10,
+    pageRangeDisplayed: 5,
+    size: 'S',
   },
   render: (args) => <PaginationWithState {...args} />,
 }

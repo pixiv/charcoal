@@ -4,7 +4,7 @@ import warning from 'warning'
 export function usePaginationWindow(
   page: number,
   pageCount: number,
-  pageRangeDisplayed = 7,
+  pageRangeDisplayed: 5 | 7 = 7,
 ) {
   'use memo'
   // ページャーのリンク生成例:
@@ -30,10 +30,9 @@ export function usePaginationWindow(
       `\`pageCount\` must be integer (${pageCount})`,
     )
     warning(
-      (pageRangeDisplayed | 0) === pageRangeDisplayed,
-      `\`pageRangeDisplayed\` must be integer (${pageRangeDisplayed})`,
+      pageRangeDisplayed === 5 || pageRangeDisplayed === 7,
+      `\`pageRangeDisplayed\` must be 5 or 7 (${pageRangeDisplayed})`,
     )
-    warning(pageRangeDisplayed > 2, `\`windowSize\` must be greater than 2`)
   }
 
   const visibleFirstPage = 1

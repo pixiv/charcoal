@@ -3197,6 +3197,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
     <nav
       aria-label="Pagination"
       class="charcoal-pagination"
+      data-size="M"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-nav-button"
@@ -3279,6 +3280,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
     <nav
       aria-label="Pagination"
       class="charcoal-pagination"
+      data-size="M"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-nav-button"
@@ -3357,6 +3359,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
     <nav
       aria-label="Pagination"
       class="charcoal-pagination"
+      data-size="M"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-nav-button"
@@ -3448,6 +3451,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
       <nav
         aria-label="Pagination"
         class="charcoal-pagination"
+        data-size="M"
       >
         <a
           aria-disabled="false"
@@ -3535,6 +3539,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
     <nav
       aria-label="Pagination"
       class="charcoal-pagination"
+      data-size="M"
     >
       <button
         class="charcoal-icon-button charcoal-pagination-nav-button"
@@ -3598,6 +3603,160 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
         class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
         data-size="M"
+        data-variant="Default"
+      >
+        <pixiv-icon
+          name="24/Next"
+        />
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <nav
+      aria-label="Pagination"
+      class="charcoal-pagination"
+      data-size="S"
+    >
+      <button
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="S"
+        data-variant="Default"
+      >
+        <pixiv-icon
+          name="24/Prev"
+        />
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        aria-hidden="true"
+        class="charcoal-icon-button charcoal-pagination-spacer"
+        data-active="false"
+        data-size="S"
+        data-variant="Default"
+        disabled=""
+      >
+        <pixiv-icon
+          name="24/Dot"
+        />
+      </button>
+      <span
+        aria-current="page"
+        class="charcoal-pagination-button"
+      >
+        5
+      </span>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        6
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        7
+      </button>
+      <button
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="S"
+        data-variant="Default"
+      >
+        <pixiv-icon
+          name="24/Next"
+        />
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <nav
+      aria-label="Pagination"
+      class="charcoal-pagination"
+      data-size="S"
+    >
+      <button
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="S"
+        data-variant="Default"
+      >
+        <pixiv-icon
+          name="24/Prev"
+        />
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        aria-hidden="true"
+        class="charcoal-icon-button charcoal-pagination-spacer"
+        data-active="false"
+        data-size="S"
+        data-variant="Default"
+        disabled=""
+      >
+        <pixiv-icon
+          name="24/Dot"
+        />
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        4
+      </button>
+      <span
+        aria-current="page"
+        class="charcoal-pagination-button"
+      >
+        5
+      </span>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        6
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        7
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        8
+      </button>
+      <button
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="S"
         data-variant="Default"
       >
         <pixiv-icon
