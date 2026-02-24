@@ -7,6 +7,9 @@ type PaginationStoryArgs = Pick<
   'page' | 'pageCount' | 'pageRangeDisplayed' | 'size'
 >
 
+type LinkPaginationStoryArgs = PaginationStoryArgs &
+  Pick<PaginationProps, 'linkProps'>
+
 function PaginationWithState(args: PaginationStoryArgs) {
   const [page, setPage] = useState(args.page)
   return (
@@ -25,7 +28,7 @@ function parsePageFromHash(fallback: number): number {
   return match ? parseInt(match[1], 10) : fallback
 }
 
-function LinkPaginationWithState(args: PaginationStoryArgs) {
+function LinkPaginationWithState(args: LinkPaginationStoryArgs) {
   const [page, setPage] = useState(() => parsePageFromHash(args.page))
 
   useEffect(() => {
@@ -45,6 +48,7 @@ function LinkPaginationWithState(args: PaginationStoryArgs) {
         pageRangeDisplayed={args.pageRangeDisplayed}
         size={args.size}
         makeUrl={(p) => `#page-${p}`}
+        linkProps={args.linkProps}
       />
     </div>
   )
@@ -110,4 +114,20 @@ export const LinkPaginationStory: StoryObj<typeof Pagination> = {
     pageCount: 10,
   },
   render: (args) => <LinkPaginationWithState {...args} />,
+}
+
+export const LinkPaginationWithLinkProps: StoryObj<typeof Pagination> = {
+  args: {
+    page: 5,
+    pageCount: 10,
+    linkProps: { scroll: 'marker' },
+  },
+  render: (args) => (
+    <div>
+      <p style={{ marginBottom: 8, fontSize: 14, color: '#666' }}>
+        linkProps を渡した例（scroll: &apos;marker&apos; は Next.js Link 用）
+      </p>
+      <LinkPaginationWithState {...args} />
+    </div>
+  ),
 }

@@ -25,6 +25,7 @@ function NavButton({ direction }: NavButtonProps) {
     makeUrl,
     LinkComponent,
     makeClickHandler,
+    linkProps,
   } = usePaginationContext()
 
   const isPrev = direction === 'prev'
@@ -44,6 +45,7 @@ function NavButton({ direction }: NavButtonProps) {
             component: LinkComponent as 'a',
             href: makeUrl(targetPage),
             'aria-disabled': disabled,
+            ...linkProps,
           }
         : {
             disabled,
@@ -55,8 +57,15 @@ function NavButton({ direction }: NavButtonProps) {
 
 function PageItem({ value }: { value: number | string }) {
   'use memo'
-  const { page, size, isLinkMode, makeUrl, LinkComponent, makeClickHandler } =
-    usePaginationContext()
+  const {
+    page,
+    size,
+    isLinkMode,
+    makeUrl,
+    LinkComponent,
+    makeClickHandler,
+    linkProps,
+  } = usePaginationContext()
   // 省略記号
   if (value === '...') {
     return (
@@ -84,6 +93,7 @@ function PageItem({ value }: { value: number | string }) {
       <LinkComponent
         href={makeUrl(value)}
         className="charcoal-pagination-button"
+        {...linkProps}
       >
         {value}
       </LinkComponent>
@@ -124,11 +134,20 @@ type NavProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>
  * @example
  * // Link mode with custom component (e.g. Next.js Link)
  * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} />
+ *
+ * @example
+ * // Link mode with linkProps (e.g. Next.js scroll)
+ * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} linkProps={{ scroll: 'marker' }} />
  */
 export type PaginationProps = CommonProps &
   NavProps &
   (
-    | { onChange(newPage: number): void; makeUrl?: never; component?: never }
+    | {
+        onChange(newPage: number): void
+        makeUrl?: never
+        component?: never
+        linkProps?: undefined
+      }
     | {
         makeUrl(page: number): string
         onChange?: never
@@ -137,6 +156,10 @@ export type PaginationProps = CommonProps &
          * @default 'a'
          */
         component?: React.ElementType<LinkComponentProps>
+        /**
+         * Additional props passed to all link elements (e.g. Next.js Link's scroll, prefetch).
+         */
+        linkProps?: Record<string, unknown>
       }
   )
 
@@ -148,6 +171,7 @@ export default function Pagination({
   onChange,
   makeUrl,
   component: LinkComponent = 'a',
+  linkProps,
   className,
   ...navProps
 }: PaginationProps) {
@@ -165,6 +189,7 @@ export default function Pagination({
     makeUrl,
     LinkComponent,
     makeClickHandler,
+    linkProps,
   }
 
   return (

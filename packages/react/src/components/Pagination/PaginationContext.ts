@@ -10,6 +10,8 @@ export type LinkComponentProps = {
   children?: React.ReactNode
 }
 
+export type LinkProps = Record<string, unknown>
+
 type PaginationContextValue = {
   page: number
   pageCount: number
@@ -18,6 +20,7 @@ type PaginationContextValue = {
   makeUrl?: (page: number) => string
   LinkComponent: React.ElementType<LinkComponentProps>
   makeClickHandler: (value: number) => () => void
+  linkProps?: LinkProps
 }
 
 export const PaginationContext = createContext<PaginationContextValue | null>(
