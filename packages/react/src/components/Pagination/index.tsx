@@ -33,23 +33,28 @@ function NavButton({ direction }: NavButtonProps) {
     ? Math.max(1, page - 1)
     : Math.min(pageCount, page + 1)
   const disabled = isPrev ? page <= 1 : page >= pageCount
+  const navButtonClassName = useClassNames(
+    'charcoal-pagination-nav-button',
+    linkProps?.className,
+  )
 
   return (
     <IconButton
       icon={isPrev ? '24/Prev' : '24/Next'}
       size={size}
       hidden={disabled}
-      className="charcoal-pagination-nav-button"
       {...(isLinkMode && makeUrl
         ? {
             component: LinkComponent as 'a',
             href: makeUrl(targetPage),
             'aria-disabled': disabled,
             ...linkProps,
+            className: navButtonClassName,
           }
         : {
             disabled,
             onClick: makeClickHandler(targetPage),
+            className: navButtonClassName,
           })}
     />
   )
@@ -66,6 +71,11 @@ function PageItem({ value }: { value: number | string }) {
     makeClickHandler,
     linkProps,
   } = usePaginationContext()
+  const pageItemClassName = useClassNames(
+    'charcoal-pagination-button',
+    linkProps?.className,
+  )
+
   // 省略記号
   if (value === '...') {
     return (
@@ -92,8 +102,8 @@ function PageItem({ value }: { value: number | string }) {
     return (
       <LinkComponent
         href={makeUrl(value)}
-        className="charcoal-pagination-button"
         {...linkProps}
+        className={pageItemClassName}
       >
         {value}
       </LinkComponent>
@@ -195,10 +205,10 @@ export default function Pagination({
   return (
     <PaginationContext.Provider value={contextValue}>
       <nav
-        className={classNames}
         data-size={size}
         aria-label="Pagination"
         {...navProps}
+        className={classNames}
       >
         <NavButton direction="prev" />
         {window.map((p) => (

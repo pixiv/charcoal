@@ -10,7 +10,9 @@ export type LinkComponentProps = {
   children?: React.ReactNode
 }
 
-export type LinkProps = Record<string, unknown>
+export type LinkProps = {
+  className?: string
+} & Record<string, unknown>
 
 type PaginationContextValue = {
   page: number
