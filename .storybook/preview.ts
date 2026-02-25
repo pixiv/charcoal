@@ -17,6 +17,7 @@ export const parameters = {
     storySort: {
       order: [
         'README',
+        ['v5.5.0', 'v5.0.0', 'v4.0.0'],
         'react',
         ['*', 'internals'],
         '*',
