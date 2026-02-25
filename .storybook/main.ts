@@ -115,6 +115,13 @@ const viteConfig: ViteStorybookConfig = {
   async viteFinal(config, { configType }) {
     config.css ??= {}
     config.css.postcss = path.resolve(process.cwd(), '.storybook')
+    config.resolve ??= {}
+    config.resolve.dedupe = [
+      ...(config.resolve.dedupe ?? []),
+      'react',
+      'react-dom',
+      'styled-components',
+    ]
     config.plugins ??= []
 
     config.plugins.unshift({

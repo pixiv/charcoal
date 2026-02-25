@@ -10,8 +10,14 @@ import '../packages/react/dist/index.css'
 
 const setter = themeSetter()
 
-const Theme = ({ children }) => {
-  const isDarkMode = useDarkMode()
+const Theme = ({
+  children,
+  globals,
+}: {
+  children: React.ReactNode
+  globals?: Record<string, unknown>
+}) => {
+  const isDarkMode = useDarkMode(globals)
 
   useLayoutEffect(() => {
     if (isDarkMode) {
@@ -36,8 +42,11 @@ const Theme = ({ children }) => {
   )
 }
 
-export default (Story) => (
-  <Theme>
+export default (
+  Story: React.ComponentType,
+  context: { globals: Record<string, unknown> },
+) => (
+  <Theme globals={context.globals}>
     <Story />
   </Theme>
 )
