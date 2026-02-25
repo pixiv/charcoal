@@ -10,31 +10,29 @@ export type LinkComponentProps = {
   children?: React.ReactNode
 }
 
-export type LinkProps = {
-  className?: string
-} & Record<string, unknown>
-
-type PaginationContextValue = {
+export type PaginationContextValue<T extends React.ElementType = 'a'> = {
   page: number
   pageCount: number
   size: Size
   isLinkMode: boolean
   makeUrl?: (page: number) => string
-  LinkComponent: React.ElementType<LinkComponentProps>
+  LinkComponent: T
   makeClickHandler: (value: number) => () => void
-  linkProps?: LinkProps
+  linkProps?: Omit<React.ComponentPropsWithoutRef<T>, 'href' | 'children'>
 }
 
-export const PaginationContext = createContext<PaginationContextValue | null>(
-  null,
-)
+export const PaginationContext = createContext<PaginationContextValue<
+  React.ElementType<LinkComponentProps>
+> | null>(null)
 
-export function usePaginationContext(): PaginationContextValue {
+export function usePaginationContext<
+  T extends React.ElementType = 'a',
+>(): PaginationContextValue<T> {
   const context = useContext(PaginationContext)
   if (context == null) {
     throw new Error(
       'Pagination components must be used within a Pagination component',
     )
   }
-  return context
+  return context as PaginationContextValue<T>
 }

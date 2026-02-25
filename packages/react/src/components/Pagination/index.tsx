@@ -7,6 +7,7 @@ import {
   PaginationContext,
   usePaginationContext,
   type LinkComponentProps,
+  type PaginationContextValue,
   type PageRangeDisplayed,
   type Size,
 } from './PaginationContext'
@@ -149,7 +150,7 @@ type NavProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>
  * // Link mode with linkProps (e.g. Next.js scroll)
  * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} linkProps={{ scroll: 'marker' }} />
  */
-export type PaginationProps = CommonProps &
+export type PaginationProps<T extends React.ElementType = 'a'> = CommonProps &
   NavProps &
   (
     | {
@@ -165,26 +166,26 @@ export type PaginationProps = CommonProps &
          * The component used for link elements. Receives `href`, `className`, and `children`.
          * @default 'a'
          */
-        component?: React.ElementType<LinkComponentProps>
+        component?: T
         /**
          * Additional props passed to all link elements (e.g. Next.js Link's scroll, prefetch).
          */
-        linkProps?: Record<string, unknown>
+        linkProps?: Omit<React.ComponentPropsWithoutRef<T>, 'href' | 'children'>
       }
   )
 
-export default function Pagination({
+export default function Pagination<T extends React.ElementType = 'a'>({
   page,
   pageCount,
   pageRangeDisplayed,
   size = 'M',
   onChange,
   makeUrl,
-  component: LinkComponent = 'a',
+  component: LinkComponent = 'a' as T,
   linkProps,
   className,
   ...navProps
-}: PaginationProps) {
+}: PaginationProps<T>) {
   'use memo'
   const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
   const isLinkMode = makeUrl !== undefined
@@ -203,7 +204,13 @@ export default function Pagination({
   }
 
   return (
-    <PaginationContext.Provider value={contextValue}>
+    <PaginationContext.Provider
+      value={
+        contextValue as PaginationContextValue<
+          React.ElementType<LinkComponentProps>
+        >
+      }
+    >
       <nav
         data-size={size}
         aria-label="Pagination"
