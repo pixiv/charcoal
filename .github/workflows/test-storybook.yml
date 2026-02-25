@@ -126,7 +126,7 @@ jobs:
             console.log(`Not fount "${process.env.SNAPSHOT_UPDATE_LABEL}" label. Compare with image snapshots of main branch.`)
             return 'false'
       - name: Load base branch image snapshots
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         if: steps.label-checking.outputs.result != 'true'
         with:
           name: base__image-snapshots__
