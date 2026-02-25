@@ -1,8 +1,7 @@
 import { glob, readFile, writeFile } from 'fs/promises'
 import { ensureDir } from 'fs-extra'
 import path from 'path'
-import { mustBeDefined } from '../utils'
-import { escape } from 'querystring'
+import { encodeSvgAsDataUri, mustBeDefined } from '../utils'
 
 async function main() {
   mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')
@@ -21,7 +20,10 @@ async function main() {
 
       return {
         iconName: fileName.replace('.svg', ''),
-        uri: `data:image/svg+xml;utf8,${escape(content).replace("'", "\\'")}`,
+        uri: `data:image/svg+xml;utf8,${encodeSvgAsDataUri(content).replace(
+          "'",
+          "\\'",
+        )}`,
         isSetCurrentcolor: !content.includes('<def'),
       }
     }),

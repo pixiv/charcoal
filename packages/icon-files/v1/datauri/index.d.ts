@@ -28,6 +28,7 @@ declare var _default: {
 'Inline/Remove': { uri: string, isSetCurrentcolor: boolean };
 'Inline/Smile': { uri: string, isSetCurrentcolor: boolean };
 'Inline/SmileOn': { uri: string, isSetCurrentcolor: boolean };
+'Inline/Trash': { uri: string, isSetCurrentcolor: boolean };
 'Inline/Users': { uri: string, isSetCurrentcolor: boolean };
 'Inline/View': { uri: string, isSetCurrentcolor: boolean };
 'Inline/ViewOutline': { uri: string, isSetCurrentcolor: boolean };
@@ -173,6 +174,7 @@ declare var _default: {
 '24/List': { uri: string, isSetCurrentcolor: boolean };
 '24/LockLock': { uri: string, isSetCurrentcolor: boolean };
 '24/LockUnlock': { uri: string, isSetCurrentcolor: boolean };
+'24/Login': { uri: string, isSetCurrentcolor: boolean };
 '24/Logout': { uri: string, isSetCurrentcolor: boolean };
 '24/Manga': { uri: string, isSetCurrentcolor: boolean };
 '24/Menu': { uri: string, isSetCurrentcolor: boolean };
@@ -280,6 +282,7 @@ declare var _default: {
 '16/Search': { uri: string, isSetCurrentcolor: boolean };
 '16/Smile': { uri: string, isSetCurrentcolor: boolean };
 '16/Speaker': { uri: string, isSetCurrentcolor: boolean };
+'16/Trash': { uri: string, isSetCurrentcolor: boolean };
 '16/Up': { uri: string, isSetCurrentcolor: boolean };
 '16/View': { uri: string, isSetCurrentcolor: boolean };
 '16/Warning': { uri: string, isSetCurrentcolor: boolean }}
