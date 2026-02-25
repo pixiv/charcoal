@@ -131,3 +131,16 @@ export const LinkPaginationWithLinkProps: StoryObj<typeof Pagination> = {
     </div>
   ),
 }
+
+export const ComponentAStory: StoryObj<typeof Pagination> = {
+  render: () => {
+    return (
+      <Pagination
+        page={5}
+        pageCount={100}
+        component="a"
+        makeUrl={(p) => `https://example.com?page=${p}`}
+      />
+    )
+  },
+}
