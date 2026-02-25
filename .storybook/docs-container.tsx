@@ -6,7 +6,10 @@ import { useDarkMode } from './use-dark-mode'
 export const DocsContainer: FC<
   ComponentPropsWithoutRef<typeof BaseContainer>
 > = ({ children, ...rest }) => {
-  const isDarkMode = useDarkMode()
+  const isDarkMode = useDarkMode(
+    (rest as { context?: { globals?: Record<string, unknown> } }).context
+      ?.globals,
+  )
 
   return (
     <BaseContainer {...rest} theme={isDarkMode ? themes.dark : themes.light}>
