@@ -3189,6 +3189,93 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
 </div>
 `;
 
+exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <nav
+      aria-label="Pagination"
+      class="charcoal-pagination"
+      data-size="M"
+    >
+      <a
+        aria-disabled="false"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+        href="https://example.com?page=4"
+      >
+        <pixiv-icon
+          name="24/Prev"
+        />
+      </a>
+      <a
+        class="charcoal-pagination-button"
+        href="https://example.com?page=1"
+      >
+        1
+      </a>
+      <button
+        aria-hidden="true"
+        class="charcoal-icon-button charcoal-pagination-spacer"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+        disabled=""
+      >
+        <pixiv-icon
+          name="24/Dot"
+        />
+      </button>
+      <a
+        class="charcoal-pagination-button"
+        href="https://example.com?page=4"
+      >
+        4
+      </a>
+      <span
+        aria-current="page"
+        class="charcoal-pagination-button"
+      >
+        5
+      </span>
+      <a
+        class="charcoal-pagination-button"
+        href="https://example.com?page=6"
+      >
+        6
+      </a>
+      <a
+        class="charcoal-pagination-button"
+        href="https://example.com?page=7"
+      >
+        7
+      </a>
+      <a
+        class="charcoal-pagination-button"
+        href="https://example.com?page=8"
+      >
+        8
+      </a>
+      <a
+        aria-disabled="false"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+        href="https://example.com?page=6"
+      >
+        <pixiv-icon
+          name="24/Next"
+        />
+      </a>
+    </nav>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
 <div>
   <div
