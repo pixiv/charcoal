@@ -3531,6 +3531,115 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
 </div>
 `;
 
+exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationWithLinkProps 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div>
+      <p
+        style="margin-bottom: 8px; font-size: 14px; color: rgb(102, 102, 102);"
+      >
+        linkProps を渡した例（scroll: 'marker' は Next.js Link 用）
+      </p>
+      <div>
+        <p
+          style="margin-bottom: 8px; font-size: 14px; color: rgb(102, 102, 102);"
+        >
+          Current page: 
+          5
+        </p>
+        <nav
+          aria-label="Pagination"
+          class="charcoal-pagination"
+          data-size="M"
+        >
+          <a
+            aria-disabled="false"
+            class="charcoal-icon-button charcoal-pagination-nav-button"
+            data-active="false"
+            data-size="M"
+            data-variant="Default"
+            href="#page-4"
+            scroll="marker"
+          >
+            <pixiv-icon
+              name="24/Prev"
+            />
+          </a>
+          <a
+            class="charcoal-pagination-button"
+            href="#page-1"
+            scroll="marker"
+          >
+            1
+          </a>
+          <button
+            aria-hidden="true"
+            class="charcoal-icon-button charcoal-pagination-spacer"
+            data-active="false"
+            data-size="M"
+            data-variant="Default"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Dot"
+            />
+          </button>
+          <a
+            class="charcoal-pagination-button"
+            href="#page-4"
+            scroll="marker"
+          >
+            4
+          </a>
+          <span
+            aria-current="page"
+            class="charcoal-pagination-button"
+          >
+            5
+          </span>
+          <a
+            class="charcoal-pagination-button"
+            href="#page-6"
+            scroll="marker"
+          >
+            6
+          </a>
+          <a
+            class="charcoal-pagination-button"
+            href="#page-7"
+            scroll="marker"
+          >
+            7
+          </a>
+          <a
+            class="charcoal-pagination-button"
+            href="#page-8"
+            scroll="marker"
+          >
+            8
+          </a>
+          <a
+            aria-disabled="false"
+            class="charcoal-icon-button charcoal-pagination-nav-button"
+            data-active="false"
+            data-size="M"
+            data-variant="Default"
+            href="#page-6"
+            scroll="marker"
+          >
+            <pixiv-icon
+              name="24/Next"
+            />
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] = `
 <div>
   <div

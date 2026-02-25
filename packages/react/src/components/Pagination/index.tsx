@@ -7,6 +7,7 @@ import {
   PaginationContext,
   usePaginationContext,
   type LinkComponentProps,
+  type PaginationContextValue,
   type PageRangeDisplayed,
   type Size,
 } from './PaginationContext'
@@ -25,6 +26,7 @@ function NavButton({ direction }: NavButtonProps) {
     makeUrl,
     LinkComponent,
     makeClickHandler,
+    linkProps,
   } = usePaginationContext()
 
   const isPrev = direction === 'prev'
@@ -32,22 +34,28 @@ function NavButton({ direction }: NavButtonProps) {
     ? Math.max(1, page - 1)
     : Math.min(pageCount, page + 1)
   const disabled = isPrev ? page <= 1 : page >= pageCount
+  const navButtonClassName = useClassNames(
+    'charcoal-pagination-nav-button',
+    linkProps?.className,
+  )
 
   return (
     <IconButton
       icon={isPrev ? '24/Prev' : '24/Next'}
       size={size}
       hidden={disabled}
-      className="charcoal-pagination-nav-button"
       {...(isLinkMode && makeUrl
         ? {
             component: LinkComponent as 'a',
             href: makeUrl(targetPage),
             'aria-disabled': disabled,
+            ...linkProps,
+            className: navButtonClassName,
           }
         : {
             disabled,
             onClick: makeClickHandler(targetPage),
+            className: navButtonClassName,
           })}
     />
   )
@@ -55,8 +63,20 @@ function NavButton({ direction }: NavButtonProps) {
 
 function PageItem({ value }: { value: number | string }) {
   'use memo'
-  const { page, size, isLinkMode, makeUrl, LinkComponent, makeClickHandler } =
-    usePaginationContext()
+  const {
+    page,
+    size,
+    isLinkMode,
+    makeUrl,
+    LinkComponent,
+    makeClickHandler,
+    linkProps,
+  } = usePaginationContext()
+  const pageItemClassName = useClassNames(
+    'charcoal-pagination-button',
+    linkProps?.className,
+  )
+
   // 省略記号
   if (value === '...') {
     return (
@@ -83,7 +103,8 @@ function PageItem({ value }: { value: number | string }) {
     return (
       <LinkComponent
         href={makeUrl(value)}
-        className="charcoal-pagination-button"
+        {...linkProps}
+        className={pageItemClassName}
       >
         {value}
       </LinkComponent>
@@ -124,11 +145,20 @@ type NavProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>
  * @example
  * // Link mode with custom component (e.g. Next.js Link)
  * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} />
+ *
+ * @example
+ * // Link mode with linkProps (e.g. Next.js scroll)
+ * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} linkProps={{ scroll: 'marker' }} />
  */
-export type PaginationProps = CommonProps &
+export type PaginationProps<T extends React.ElementType = 'a'> = CommonProps &
   NavProps &
   (
-    | { onChange(newPage: number): void; makeUrl?: never; component?: never }
+    | {
+        onChange(newPage: number): void
+        makeUrl?: never
+        component?: never
+        linkProps?: undefined
+      }
     | {
         makeUrl(page: number): string
         onChange?: never
@@ -136,21 +166,26 @@ export type PaginationProps = CommonProps &
          * The component used for link elements. Receives `href`, `className`, and `children`.
          * @default 'a'
          */
-        component?: React.ElementType<LinkComponentProps>
+        component?: T
+        /**
+         * Additional props passed to all link elements (e.g. Next.js Link's scroll, prefetch).
+         */
+        linkProps?: Omit<React.ComponentPropsWithoutRef<T>, 'href' | 'children'>
       }
   )
 
-export default function Pagination({
+export default function Pagination<T extends React.ElementType = 'a'>({
   page,
   pageCount,
   pageRangeDisplayed,
   size = 'M',
   onChange,
   makeUrl,
-  component: LinkComponent = 'a',
+  component: LinkComponent = 'a' as T,
+  linkProps,
   className,
   ...navProps
-}: PaginationProps) {
+}: PaginationProps<T>) {
   'use memo'
   const window = usePaginationWindow(page, pageCount, pageRangeDisplayed)
   const isLinkMode = makeUrl !== undefined
@@ -165,15 +200,22 @@ export default function Pagination({
     makeUrl,
     LinkComponent,
     makeClickHandler,
+    linkProps,
   }
 
   return (
-    <PaginationContext.Provider value={contextValue}>
+    <PaginationContext.Provider
+      value={
+        contextValue as PaginationContextValue<
+          React.ElementType<LinkComponentProps>
+        >
+      }
+    >
       <nav
-        className={classNames}
         data-size={size}
         aria-label="Pagination"
         {...navProps}
+        className={classNames}
       >
         <NavButton direction="prev" />
         {window.map((p) => (
