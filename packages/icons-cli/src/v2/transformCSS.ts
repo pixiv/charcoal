@@ -2,7 +2,7 @@ import { mustBeDefined } from '../utils'
 import { glob, readFile, writeFile } from 'fs/promises'
 import { ensureDir } from 'fs-extra'
 import path from 'path'
-import { escape } from 'querystring'
+import { encodeSvgAsDataUri } from '../utils'
 
 async function transformV2(filePath: string, fileName: string) {
   const content = await readFile(filePath, 'utf-8')
@@ -19,10 +19,9 @@ async function transformV2(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  background: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  background: url('data:image/svg+xml;utf8,${encodeSvgAsDataUri(
+    content,
+  ).replace("'", "\\'")}');
   aspect-ratio: 1/1;
 }`
     : `
@@ -30,10 +29,9 @@ async function transformV2(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  mask-image: url('data:image/svg+xml;utf8,${encodeSvgAsDataUri(
+    content,
+  ).replace("'", "\\'")}');
   mask-size: 100% 100%;
   background: currentColor;
   aspect-ratio: 1/1;
@@ -60,10 +58,9 @@ async function transformV1(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  background: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  background: url('data:image/svg+xml;utf8,${encodeSvgAsDataUri(
+    content,
+  ).replace("'", "\\'")}');
   aspect-ratio: 1/1;
 }`
     : `
@@ -71,10 +68,9 @@ async function transformV1(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  mask-image: url('data:image/svg+xml;utf8,${encodeSvgAsDataUri(
+    content,
+  ).replace("'", "\\'")}');
   mask-size: 100% 100%;
   background: currentColor;
   aspect-ratio: 1/1;
