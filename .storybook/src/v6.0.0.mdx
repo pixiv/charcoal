@@ -1,8 +1,8 @@
 import { Meta } from '@storybook/addon-docs/blocks'
 
-<Meta title="v5.5.0" />
+<Meta title="v6.0.0" />
 
-# @charcoal-ui/react@v5.5.0
+# @charcoal-ui/react@v6.0.0(予定)
 
 - `@charcoal-ui/react@v5.5.0` に **UnstableTextEllipsis** と **UnstablePagination** を追加しました。
 - react-sandbox にあった TextEllipsis および Pager・LinkPager を、styled-components に依存しない形で @charcoal-ui/react に取り込んだものです。
@@ -15,9 +15,13 @@ import { Meta } from '@storybook/addon-docs/blocks'
 複数行のテキストに表示行数制限を設け、はみ出した部分を `...` で省略するコンポーネントです。
 
 ```tsx
-import { UnstableTextEllipsis } from '@charcoal-ui/react'
-import '@charcoal-ui/react/dist/index.css'
-;<UnstableTextEllipsis lineHeight={24} lineLimit={2}>
+-import { TextEllipsis } from '@charcoal-ui/react-sandbox'
+// 現時点はUnstableのprefixがある
++import { UnstableTextEllipsis } from '@charcoal-ui/react'
+// v6リリース以降(予定)
++import { TextEllipsis } from '@charcoal-ui/react'
+
+<UnstableTextEllipsis lineHeight={24} lineLimit={2}>
   長いテキスト...
 </UnstableTextEllipsis>
 ```
@@ -40,6 +44,12 @@ import '@charcoal-ui/react/dist/index.css'
 | 中身  | `<button>` + onClick  | `<a>` または `component`  |
 
 ```tsx
+-import { Pager, LinkPager } from '@charcoal-ui/react-sandbox'
+// 現時点はUnstableのprefixがある
++import { UnstablePagination } from '@charcoal-ui/react'
+// v6リリース以降(予定)
++import { Pagination } from '@charcoal-ui/react'
+
 // ボタンモード
 <UnstablePagination page={page} pageCount={10} onChange={setPage} />
 
