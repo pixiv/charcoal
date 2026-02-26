@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="v6.0.0(予定)" />
+
+# @charcoal-ui/react@v6.0.0(予定)
+
+- `@charcoal-ui/react@v5.5.0` に **UnstableTextEllipsis** と **UnstablePagination** を追加しました。
+- react-sandbox にあった TextEllipsis および Pager・LinkPager を、styled-components に依存しない形で @charcoal-ui/react に取り込んだものです。
+- props の詳細は各コンポーネントの Storybook を参照してください。
+
+---
+
+# TextEllipsis
+
+複数行のテキストに表示行数制限を設け、はみ出した部分を `...` で省略するコンポーネントです。
+
+```tsx
+-import { TextEllipsis } from '@charcoal-ui/react-sandbox'
+// 現時点はUnstableのprefixがある
++import { UnstableTextEllipsis } from '@charcoal-ui/react'
+// v6リリース以降(予定)
++import { TextEllipsis } from '@charcoal-ui/react'
+
+<UnstableTextEllipsis lineHeight={24} lineLimit={2}>
+  長いテキスト...
+</UnstableTextEllipsis>
+```
+
+## react-sandbox との主な違い
+
+- styled-components を廃止し、CSS ファイルでスタイルを当てています。
+- `lineHeight` は省略可能で、未指定時は親の line-height を継承します。
+- ツールチップの on/off（`showTooltip`）や 1 行時の挙動（`useNowrap`）などの props を追加しています。
+
+---
+
+# Pagination
+
+ページ番号の一覧と「前へ・次へ」を表示し、ページ遷移を提供するコンポーネントです。**ボタンモード**（react-sandbox の Pager 相当）と**リンクモード**（LinkPager 相当）の 2 通りで使います。
+
+|       | ボタンモード（Pager） | リンクモード（LinkPager） |
+| ----- | --------------------- | ------------------------- |
+| props | `onChange(newPage)`   | `makeUrl(page) => string` |
+| 中身  | `<button>` + onClick  | `<a>` または `component`  |
+
+```tsx
+-import { Pager, LinkPager } from '@charcoal-ui/react-sandbox'
+// 現時点はUnstableのprefixがある
++import { UnstablePagination } from '@charcoal-ui/react'
+// v6リリース以降(予定)
++import { Pagination } from '@charcoal-ui/react'
+
+// ボタンモード
+<UnstablePagination page={page} pageCount={10} onChange={setPage} />
+
+// リンクモード
+<UnstablePagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} />
+
+// Next.js の Link は href を受け取るためそのまま利用可能。React Router など to を使う場合はラッパーが必要
+<UnstablePagination
+  page={1}
+  pageCount={10}
+  makeUrl={(p) => `?page=${p}`}
+  component={Link}
+  linkProps={{ scroll: false }}
+/>
+```
+
+## react-sandbox との主な違い
+
+- Pager と LinkPager が 1 つのコンポーネントに統合され、`onChange` を渡すか `makeUrl` を渡すかでモードが切り替わります。
+- sandbox の LinkPager は `useComponentAbstraction()` の `Link`（`to`）に依存していました。@charcoal-ui/react では `makeUrl` で URL を返し、`component` で `<a>` や Next.js の `Link` を指定する形で、フレームワークに依存しません。
+- styled-components を廃止し、CSS でスタイルを当てています。前後ボタンやページ番号には IconButton を利用しています。
+- `size`（S/M）と `pageRangeDisplayed`（5 または 7）を追加しています。
+
+---
+
+# 注意
+
+- Unstable のため、マイナーバージョン内でも props や export 名が変わる可能性があります。
+- 安定化後は `Unstable` プレフィックスを外し、通常のコンポーネント名で提供する予定です。

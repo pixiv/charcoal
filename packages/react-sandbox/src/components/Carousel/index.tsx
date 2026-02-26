@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
 import * as React from 'react'
-import { animated, AnimatedComponent, useSpring } from 'react-spring'
+import { animated, AnimatedComponent, useSpring } from '@react-spring/web'
 import styled, { css } from 'styled-components'
 import { useDebounceAnimationState } from '../../foundation/hooks'
 import { passiveEvents, isEdge } from '../../foundation/support'
@@ -78,7 +78,7 @@ export default function Carousel({
   // const [props, set, stop] = useSpring(() => ({
   //   scroll: 0
   // }))
-  const [styles, set] = useSpring(() => ({ scroll: 0 }))
+  const [styles, set] = useSpring(() => ({ from: { scroll: 0 } }))
 
   const ref = useRef<HTMLDivElement>(null)
   const visibleAreaRef = useRef<HTMLDivElement>(null)
