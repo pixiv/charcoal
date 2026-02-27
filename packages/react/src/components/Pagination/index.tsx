@@ -2,7 +2,7 @@ import './index.css'
 
 import { usePaginationWindow } from './helper'
 import { useClassNames } from '../../_lib/useClassNames'
-import IconButton from '../IconButton'
+import IconButton, { IconButtonProps } from '../IconButton'
 import {
   PaginationContext,
   usePaginationContext,
@@ -14,9 +14,10 @@ import {
 
 type NavButtonProps = {
   direction: 'prev' | 'next'
+  ariaLabel: IconButtonProps['aria-label']
 }
 
-function NavButton({ direction }: NavButtonProps) {
+function NavButton({ direction, ariaLabel }: NavButtonProps) {
   'use memo'
   const {
     page,
@@ -44,6 +45,7 @@ function NavButton({ direction }: NavButtonProps) {
       icon={isPrev ? '24/Prev' : '24/Next'}
       size={size}
       hidden={disabled}
+      aria-label={ariaLabel}
       {...(isLinkMode && makeUrl
         ? {
             component: LinkComponent as 'a',
@@ -122,11 +124,13 @@ function PageItem({ value }: { value: number | string }) {
   )
 }
 
-interface CommonProps {
+interface PaginationCommonProps {
   page: number
   pageCount: number
   pageRangeDisplayed?: PageRangeDisplayed
   size?: Size
+  ariaLabelPrev?: string
+  ariaLabelNext?: string
 }
 
 type NavProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>
@@ -150,29 +154,33 @@ type NavProps = Omit<React.ComponentPropsWithoutRef<'nav'>, 'onChange'>
  * // Link mode with linkProps (e.g. Next.js scroll)
  * <Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} component={Link} linkProps={{ scroll: 'marker' }} />
  */
-export type PaginationProps<T extends React.ElementType = 'a'> = CommonProps &
-  NavProps &
-  (
-    | {
-        onChange(newPage: number): void
-        makeUrl?: never
-        component?: never
-        linkProps?: undefined
-      }
-    | {
-        makeUrl(page: number): string
-        onChange?: never
-        /**
-         * The component used for link elements. Receives `href`, `className`, and `children`.
-         * @default 'a'
-         */
-        component?: T
-        /**
-         * Additional props passed to all link elements (e.g. Next.js Link's scroll, prefetch).
-         */
-        linkProps?: Omit<React.ComponentPropsWithoutRef<T>, 'href' | 'children'>
-      }
-  )
+export type PaginationProps<T extends React.ElementType = 'a'> =
+  PaginationCommonProps &
+    NavProps &
+    (
+      | {
+          onChange(newPage: number): void
+          makeUrl?: never
+          component?: never
+          linkProps?: undefined
+        }
+      | {
+          makeUrl(page: number): string
+          onChange?: never
+          /**
+           * The component used for link elements. Receives `href`, `className`, and `children`.
+           * @default 'a'
+           */
+          component?: T
+          /**
+           * Additional props passed to all link elements (e.g. Next.js Link's scroll, prefetch).
+           */
+          linkProps?: Omit<
+            React.ComponentPropsWithoutRef<T>,
+            'href' | 'children'
+          >
+        }
+    )
 
 export default function Pagination<T extends React.ElementType = 'a'>({
   page,
@@ -184,6 +192,8 @@ export default function Pagination<T extends React.ElementType = 'a'>({
   component: LinkComponent = 'a' as T,
   linkProps,
   className,
+  ariaLabelNext = 'Next',
+  ariaLabelPrev = 'Previous',
   ...navProps
 }: PaginationProps<T>) {
   'use memo'
@@ -217,11 +227,11 @@ export default function Pagination<T extends React.ElementType = 'a'>({
         {...navProps}
         className={classNames}
       >
-        <NavButton direction="prev" />
+        <NavButton direction="prev" ariaLabel={ariaLabelPrev} />
         {window.map((p) => (
           <PageItem key={p} value={p} />
         ))}
-        <NavButton direction="next" />
+        <NavButton direction="next" ariaLabel={ariaLabelNext} />
       </nav>
     </PaginationContext.Provider>
   )
