@@ -31,8 +31,12 @@ void yargs
       const res = await getDesignToken(FIGMA_TOKEN, FIGMA_FILE_ID)
 
       await ensureFile(outputPath)
-      await writeFile(path.join(outputPath), JSON.stringify(res.data), 'utf8')
-    }
+      await writeFile(
+        path.join(outputPath),
+        JSON.stringify(await res.json()),
+        'utf8',
+      )
+    },
   )
   .command(
     'transform',
@@ -75,7 +79,7 @@ void yargs
 
       await ensureFile(outputPath)
       await writeFile(outputPath, JSON.stringify(tokens), 'utf8')
-    }
+    },
   )
   .demandCommand()
   .strict()
