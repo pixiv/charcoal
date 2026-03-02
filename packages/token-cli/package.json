@@ -25,6 +25,9 @@
     "fs-extra": "^11.2.0",
     "yargs": "^17.7.2"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pixiv/charcoal.git",
