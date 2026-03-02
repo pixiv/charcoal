@@ -1585,6 +1585,88 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sub
 </div>
 `;
 
+exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > WithRef 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px; display: flex; flex-direction: column; gap: 16px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+          />
+        </button>
+      </div>
+      <button
+        class="charcoal-button"
+      >
+        check ref current value
+      </button>
+      <div>
+        ref current value: 
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > WithSeconday 1`] = `
 <div>
   <div
