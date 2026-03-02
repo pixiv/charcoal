@@ -78,7 +78,11 @@ void yargs
       )
 
       await ensureFile(outputPath)
-      await writeFile(outputPath, JSON.stringify(tokens), 'utf8')
+      await writeFile(
+        outputPath,
+        JSON.stringify(tokens, sortReplacer, 2),
+        'utf8',
+      )
     },
   )
   .demandCommand()
