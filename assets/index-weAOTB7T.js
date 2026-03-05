@@ -1,1 +1,0 @@
-import{r as e,j as c}from"./iframe-CsfpM6tb.js";import{u as l}from"./useClassNames-Bwhf9x4D.js";const u=e.forwardRef(function({component:s,...a},o){const t=l("charcoal-clickable",a.className),r=e.useMemo(()=>s??"button",[s]);return c.jsx(r,{...a,ref:o,className:t})});export{u as C};
