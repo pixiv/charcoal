@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import DropdownSelector from '.'
 import { Divider } from './Divider'
 import MenuItemGroup from './MenuItemGroup'
@@ -449,6 +449,47 @@ export const WithSeconday: StoryObj<typeof DropdownSelector> = {
             </DropdownMenuItem>
           </MenuItemGroup>
         </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+export const WithRef: StoryObj<typeof DropdownSelector> = {
+  render: function Render(props) {
+    const [selected, setSelected] = useState('1')
+    const [currentValue, setCurrentValue] = useState('')
+    const selectRef = useRef<HTMLSelectElement>(null)
+
+    return (
+      <div
+        style={{
+          width: 288,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 16,
+        }}
+      >
+        <DropdownSelector
+          {...props}
+          onChange={(value) => {
+            setSelected(value)
+          }}
+          value={selected}
+          label="label"
+          selectRef={selectRef}
+        >
+          <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+        <Button
+          onClick={() => {
+            setCurrentValue(selectRef.current?.value ?? 'ref is null')
+          }}
+        >
+          check ref current value
+        </Button>
+        <div>ref current value: {currentValue}</div>
       </div>
     )
   },

@@ -31,11 +31,13 @@ export type DropdownSelectorProps = {
   children: MenuListChildren
   onChange: (value: string) => void
   className?: string
+  selectRef?: React.Ref<HTMLSelectElement>
 } & Pick<PopoverProps, 'inertWorkaround'>
 
 export default function DropdownSelector({
   onChange,
   showLabel = false,
+  selectRef,
   ...props
 }: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
@@ -82,6 +84,7 @@ export default function DropdownSelector({
           value={props.value}
           onChange={handleChange}
           tabIndex={-1}
+          ref={selectRef}
         >
           {propsArray.map((itemProps) => {
             return (
