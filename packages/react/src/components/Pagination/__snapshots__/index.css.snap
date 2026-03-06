@@ -43,6 +43,8 @@
   padding: 0;
 }
 
+/* Kept flat: descendant selector across different root classes (.charcoal-pagination → .charcoal-pagination-button) */
+
 .charcoal-pagination[data-size='S'] .charcoal-pagination-button {
   min-width: 32px;
   min-height: 32px;
@@ -91,6 +93,8 @@
   background-color: var(--charcoal-surface6);
   color: var(--charcoal-text5);
 }
+
+/* Kept flat: different root class from .charcoal-pagination-button */
 
 .charcoal-pagination-nav-button[hidden] {
   visibility: hidden;

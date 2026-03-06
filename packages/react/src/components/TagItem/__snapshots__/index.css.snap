@@ -131,6 +131,8 @@
   font-weight: normal;
 }
 
+/* Kept flat: different class name from .charcoal-tag-item__label__text (note: "labe" typo in original) */
+
 .charcoal-tag-item__labe__text[data-has-translate='true']::after {
   display: none;
 }

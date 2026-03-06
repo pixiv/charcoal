@@ -24,18 +24,18 @@
 
   /* Remove the inheritance of text transform in Firefox. */
   text-transform: none;
-}
 
-.charcoal-clickable:disabled,
-.charcoal-clickable[aria-disabled]:not([aria-disabled='false']) {
-  cursor: default;
-}
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    cursor: default;
+  }
 
-.charcoal-clickable:focus {
-  outline: none;
-}
+  &:focus {
+    outline: none;
+  }
 
-.charcoal-clickable::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
 }

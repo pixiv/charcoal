@@ -35,17 +35,18 @@
   transition:
     0.2s background-color,
     0.2s box-shadow;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
 }
 
-.charcoal-pagination-button:focus {
-  outline: none;
-}
-
-.charcoal-pagination-button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
+/* Kept flat: descendant selector across different root classes (.charcoal-pagination → .charcoal-pagination-button) */
 .charcoal-pagination[data-size='S'] .charcoal-pagination-button {
   min-width: 32px;
   min-height: 32px;
@@ -56,70 +57,69 @@
   min-height: 40px;
 }
 
-.charcoal-pagination-button[hidden] {
-  visibility: hidden;
-  display: block;
+.charcoal-pagination-button {
+  &[hidden] {
+    visibility: hidden;
+    display: block;
+  }
+
+  &:not(:disabled):not([aria-disabled]):hover,
+  &[aria-disabled='false']:hover {
+    color: var(--charcoal-text3);
+    background-color: var(--charcoal-surface3);
+  }
+
+  &:not(:disabled):not([aria-disabled]):active,
+  &[aria-disabled='false']:active {
+    color: var(--charcoal-text3);
+    background-color: var(--charcoal-surface10);
+  }
+
+  &:not(:disabled):not([aria-disabled]):focus,
+  &[aria-disabled='false']:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
+  &:not(:disabled):not([aria-disabled]):focus-visible,
+  &[aria-disabled='false']:focus-visible {
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
+  &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+  &[aria-disabled='false']:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+
+  &[aria-current] {
+    cursor: default;
+    background-color: var(--charcoal-surface6);
+    color: var(--charcoal-text5);
+
+    &:not(:disabled):not([aria-disabled]):hover,
+    &:not(:disabled):not([aria-disabled]):active {
+      background-color: var(--charcoal-surface6);
+      color: var(--charcoal-text5);
+    }
+  }
 }
 
-.charcoal-pagination-button:not(:disabled):not([aria-disabled]):hover,
-.charcoal-pagination-button[aria-disabled='false']:hover {
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-surface3);
-}
-
-.charcoal-pagination-button:not(:disabled):not([aria-disabled]):active,
-.charcoal-pagination-button[aria-disabled='false']:active {
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-surface10);
-}
-
-.charcoal-pagination-button:not(:disabled):not([aria-disabled]):focus,
-.charcoal-pagination-button[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-}
-
-.charcoal-pagination-button:not(:disabled):not([aria-disabled]):focus-visible,
-.charcoal-pagination-button[aria-disabled='false']:focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-}
-
-.charcoal-pagination-button:not(:disabled):not([aria-disabled]):focus:not(
-    :focus-visible
-  ),
-.charcoal-pagination-button[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
-}
-
-.charcoal-pagination-button[aria-current] {
-  cursor: default;
-  background-color: var(--charcoal-surface6);
-  color: var(--charcoal-text5);
-}
-
-.charcoal-pagination-button[aria-current]:not(:disabled):not(
-    [aria-disabled]
-  ):hover,
-.charcoal-pagination-button[aria-current]:not(:disabled):not(
-    [aria-disabled]
-  ):active {
-  background-color: var(--charcoal-surface6);
-  color: var(--charcoal-text5);
-}
-
+/* Kept flat: different root class from .charcoal-pagination-button */
 .charcoal-pagination-nav-button[hidden] {
   visibility: hidden;
   display: block;
 }
 
-.charcoal-pagination-spacer,
-.charcoal-pagination-spacer:hover,
-.charcoal-pagination-spacer:active {
-  cursor: default;
-  color: var(--charcoal-text3);
-  background: none;
-}
+.charcoal-pagination-spacer {
+  &,
+  &:hover,
+  &:active {
+    cursor: default;
+    color: var(--charcoal-text3);
+    background: none;
+  }
 
-.charcoal-pagination-spacer.charcoal-icon-button:disabled {
-  opacity: 1;
+  &.charcoal-icon-button:disabled {
+    opacity: 1;
+  }
 }
