@@ -43,18 +43,6 @@
   padding: 0;
 }
 
-/* Kept flat: descendant selector across different root classes (.charcoal-pagination → .charcoal-pagination-button) */
-
-.charcoal-pagination[data-size='S'] .charcoal-pagination-button {
-  min-width: 32px;
-  min-height: 32px;
-}
-
-.charcoal-pagination[data-size='M'] .charcoal-pagination-button {
-  min-width: 40px;
-  min-height: 40px;
-}
-
 .charcoal-pagination-button[hidden] {
   visibility: hidden;
   display: block;
@@ -93,6 +81,20 @@
   background-color: var(--charcoal-surface6);
   color: var(--charcoal-text5);
 }
+
+/* Kept flat: descendant selectors across .charcoal-pagination and .charcoal-pagination-button */
+/* stylelint-disable no-descending-specificity */
+
+.charcoal-pagination[data-size='S'] .charcoal-pagination-button {
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.charcoal-pagination[data-size='M'] .charcoal-pagination-button {
+  min-width: 40px;
+  min-height: 40px;
+}
+/* stylelint-enable no-descending-specificity */
 
 /* Kept flat: different root class from .charcoal-pagination-button */
 
