@@ -8,4 +8,5 @@ export default defineConfig({
   dts: true,
   // class PixivIcon must be kept as-is
   minify: false,
+  fixedExtension: false,
 })

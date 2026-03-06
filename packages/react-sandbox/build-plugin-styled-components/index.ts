@@ -1,15 +1,15 @@
 import * as babel from '@babel/core'
 import type { ParserPlugin } from '@babel/parser'
-import type { Options } from 'tsdown'
+import type { UserConfig } from 'tsdown'
 import path from 'path'
 import fs from 'fs/promises'
 
 const cache = new Map<string, Promise<string>>()
 
-export const styledComponentsPlugin: Options['plugins'] = {
+export const styledComponentsPlugin: UserConfig['plugins'] = {
   name: 'styled-components',
   async transform(code, id) {
-    if (!/\.(?:[mc]?[jt]s|[jt]sx)$/.test(id)) {
+    if (id.includes('\0') || !/\.(?:[mc]?[jt]s|[jt]sx)$/.test(id)) {
       return code
     }
     const cachedResult = cache.get(id)

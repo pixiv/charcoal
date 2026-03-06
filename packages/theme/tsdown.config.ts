@@ -12,7 +12,8 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   dts: true,
-  copy: [{ from: 'src/unstable-css', to: 'dist/unstable-css' }],
+  fixedExtension: false,
+  copy: [{ from: 'src/unstable-css', to: 'dist' }],
   onSuccess() {
     writeThemeJson()
     writeTokenObjects()

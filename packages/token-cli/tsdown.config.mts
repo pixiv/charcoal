@@ -5,4 +5,5 @@ export default defineConfig({
   format: 'cjs',
   target: 'node22',
   sourcemap: true,
+  fixedExtension: false,
 })
