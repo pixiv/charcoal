@@ -2,8 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &[data-size='S'] .charcoal-pagination-button {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  &[data-size='M'] .charcoal-pagination-button {
+    min-width: 40px;
+    min-height: 40px;
+  }
 }
 
+/* stylelint-disable no-descending-specificity */
 .charcoal-pagination-button {
   cursor: pointer;
   appearance: none;
@@ -89,18 +100,6 @@
       color: var(--charcoal-text5);
     }
   }
-}
-
-/* Kept flat: descendant selectors across .charcoal-pagination and .charcoal-pagination-button */
-/* stylelint-disable no-descending-specificity */
-.charcoal-pagination[data-size='S'] .charcoal-pagination-button {
-  min-width: 32px;
-  min-height: 32px;
-}
-
-.charcoal-pagination[data-size='M'] .charcoal-pagination-button {
-  min-width: 40px;
-  min-height: 40px;
 }
 /* stylelint-enable no-descending-specificity */
 
