@@ -15,21 +15,17 @@
   grid-template-columns: 1fr auto;
   justify-content: space-between;
   align-items: center;
-
   height: 40px;
   width: 100%;
   box-sizing: border-box;
   border: none;
   cursor: pointer;
   gap: 4px;
-
   padding-right: 8px;
   padding-left: 8px;
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-
-  transition:
-    0.2s box-shadow,
+  transition: 0.2s box-shadow,
     0.2s background-color;
 }
 
@@ -46,8 +42,7 @@
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-.charcoal-dropdown-selector-button:not(:disabled)[data-active='true'],
-.charcoal-dropdown-selector-button:not(:disabled):active {
+.charcoal-dropdown-selector-button:not(:disabled)[data-active='true'], .charcoal-dropdown-selector-button:not(:disabled):active {
   background-color: var(--charcoal-surface3-press);
 }
 
@@ -59,10 +54,7 @@
   box-shadow: none;
 }
 
-.charcoal-dropdown-selector-button[aria-invalid='true'],
-.charcoal-dropdown-selector-button:not(
-    :disabled
-  )[aria-invalid='true']:focus:not(:focus-visible) {
+.charcoal-dropdown-selector-button[aria-invalid='true'], .charcoal-dropdown-selector-button:not(:disabled)[aria-invalid='true']:focus:not(:focus-visible) {
   box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
 }
 
@@ -84,3 +76,4 @@
 .charcoal-ui-dropdown-selector-icon {
   color: var(--charcoal-text2);
 }
+

@@ -11,8 +11,7 @@
 .charcoal-text-field-container {
   display: flex;
   height: 40px;
-  transition:
-    0.2s background-color,
+  transition: 0.2s background-color,
     0.2s box-shadow;
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
@@ -35,9 +34,7 @@
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-.charcoal-text-field-container:not(
-    [aria-disabled='true']
-  )[data-invalid='true']:focus-within {
+.charcoal-text-field-container:not([aria-disabled='true'])[data-invalid='true']:focus-within {
   box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
 }
 
@@ -74,7 +71,6 @@
   /* Display box-shadow for iOS Safari */
   appearance: none;
   background: transparent;
-
   color: var(--charcoal-text2);
 }
 
@@ -87,3 +83,4 @@
   font-size: 14px;
   color: var(--charcoal-text3);
 }
+

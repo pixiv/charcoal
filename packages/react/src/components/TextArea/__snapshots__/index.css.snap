@@ -11,12 +11,10 @@
 .charcoal-text-area-container {
   position: relative;
   overflow: hidden;
-
   color: var(--charcoal-text2);
   background-color: var(--charcoal-surface3);
   border-radius: 4px;
-  transition:
-    0.2s background-color,
+  transition: 0.2s background-color,
     0.2s box-shadow;
   height: calc(22px * var(--charcoal-text-area-rows) + 18px);
 }
@@ -57,9 +55,9 @@
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
-
   background: none;
 }
+
 .charcoal-text-area-textarea[data-no-bottom-padding='true'] {
   padding: calc(9px / 0.875) calc(8px / 0.875) 0;
   height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 9px);
@@ -73,8 +71,8 @@
   position: absolute;
   bottom: 9px;
   right: 8px;
-
   line-height: 22px;
   font-size: 14px;
   color: var(--charcoal-text3);
 }
+

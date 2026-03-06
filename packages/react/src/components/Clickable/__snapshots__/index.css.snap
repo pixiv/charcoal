@@ -26,8 +26,7 @@
   text-transform: none;
 }
 
-.charcoal-clickable:disabled,
-.charcoal-clickable[aria-disabled]:not([aria-disabled='false']) {
+.charcoal-clickable:disabled, .charcoal-clickable[aria-disabled]:not([aria-disabled='false']) {
   cursor: default;
 }
 
@@ -39,3 +38,4 @@
   border-style: none;
   padding: 0;
 }
+

@@ -10,19 +10,22 @@
   color: var(--charcoal-text4);
   background-color: var(--charcoal-background1);
 }
+
 .charcoal-loading-spinner[data-transparent='true'] {
   background-color: var(--charcoal-transparent);
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {
-  from {
-    transform: scale(0);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1);
-    opacity: 0;
-  }
+
+from {
+  transform: scale(0);
+  opacity: 1;
+}
+
+to {
+  transform: scale(1);
+  opacity: 0;
+}
 }
 
 .charcoal-loading-spinner-icon {
@@ -37,6 +40,8 @@
 .charcoal-loading-spinner-icon[data-reset-animation] {
   animation: none;
 }
+
 .charcoal-loading-spinner-icon[data-once='true'] {
   animation-iteration-count: 1;
 }
+

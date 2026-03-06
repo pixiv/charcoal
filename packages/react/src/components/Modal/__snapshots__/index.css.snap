@@ -9,22 +9,20 @@
   justify-content: center;
   padding: 40px 0;
   box-sizing: border-box;
-
   background-color: var(--charcoal-surface4);
 }
 
 @media (max-width: 743px) {
-  .charcoal-modal-background[data-bottom-sheet='true'],
-  .charcoal-modal-background[data-bottom-sheet='full'] {
-    padding: 0;
-  }
+
+.charcoal-modal-background[data-bottom-sheet='true'], .charcoal-modal-background[data-bottom-sheet='full'] {
+  padding: 0;
+}
 }
 
 .charcoal-modal-close-button {
   position: absolute;
   top: 8px;
   right: 8px;
-
   color: var(--charcoal-text3);
   transition: 0.2s color;
 }
@@ -34,3 +32,4 @@
   font-weight: inherit;
   font-size: inherit;
 }
+
