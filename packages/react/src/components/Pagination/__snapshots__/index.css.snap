@@ -4,6 +4,18 @@
   align-items: center;
 }
 
+.charcoal-pagination[data-size='S'] .charcoal-pagination-button {
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.charcoal-pagination[data-size='M'] .charcoal-pagination-button {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* stylelint-disable no-descending-specificity */
+
 .charcoal-pagination-button {
   cursor: pointer;
   appearance: none;
@@ -41,16 +53,6 @@
 .charcoal-pagination-button::-moz-focus-inner {
   border-style: none;
   padding: 0;
-}
-
-.charcoal-pagination[data-size='S'] .charcoal-pagination-button {
-  min-width: 32px;
-  min-height: 32px;
-}
-
-.charcoal-pagination[data-size='M'] .charcoal-pagination-button {
-  min-width: 40px;
-  min-height: 40px;
 }
 
 .charcoal-pagination-button[hidden] {
@@ -91,6 +93,9 @@
   background-color: var(--charcoal-surface6);
   color: var(--charcoal-text5);
 }
+/* stylelint-enable no-descending-specificity */
+
+/* Kept flat: different root class from .charcoal-pagination-button */
 
 .charcoal-pagination-nav-button[hidden] {
   visibility: hidden;
