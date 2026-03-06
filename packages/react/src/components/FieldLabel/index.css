@@ -26,12 +26,12 @@
 .charcoal-field-label-root {
   display: inline-flex;
   align-items: center;
-}
 
-.charcoal-field-label-root > .charcoal-field-label-required-text {
-  margin-left: 4px;
-}
+  & > .charcoal-field-label-required-text {
+    margin-left: 4px;
+  }
 
-.charcoal-field-label-root > .charcoal-field-label-sub-label {
-  margin-left: auto;
+  & > .charcoal-field-label-sub-label {
+    margin-left: auto;
+  }
 }
