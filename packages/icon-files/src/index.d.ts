@@ -47,6 +47,7 @@ declare var _default: {
   '24/Binet': () => Promise<string>;
   '24/Body': () => Promise<string>;
   '24/BodyEdit': () => Promise<string>;
+  '24/Bold': () => Promise<string>;
   '24/Book': () => Promise<string>;
   '24/BringBackward': () => Promise<string>;
   '24/BringForward': () => Promise<string>;
@@ -78,6 +79,8 @@ declare var _default: {
   '24/Duplicate': () => Promise<string>;
   '24/Dust': () => Promise<string>;
   '24/Emoji': () => Promise<string>;
+  '24/EmphasisMark': () => Promise<string>;
+  '24/EmphasisMarkJp': () => Promise<string>;
   '24/Error': () => Promise<string>;
   '24/ErrorOctagon': () => Promise<string>;
   '24/Events': () => Promise<string>;
@@ -122,6 +125,7 @@ declare var _default: {
   '24/Info': () => Promise<string>;
   '24/Invalid': () => Promise<string>;
   '24/Invoice': () => Promise<string>;
+  '24/Italic': () => Promise<string>;
   '24/ItemRemove': () => Promise<string>;
   '24/LatestWorks': () => Promise<string>;
   '24/LikeOff': () => Promise<string>;
