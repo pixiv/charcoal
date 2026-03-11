@@ -1,10 +1,15 @@
 import * as React from 'react'
-
+import './index.css'
 import '@charcoal-ui/icons'
-import type { PixivIcon, Props } from '@charcoal-ui/icons'
+import {
+  calcActualIconSize,
+  type PixivIcon,
+  type Props,
+} from '@charcoal-ui/icons'
 
 export interface OwnProps {
   unsafeNonGuidelineScale?: number
+  unsafeNonGuidelineFixedSize?: number
   className?: string
 }
 
@@ -15,16 +20,32 @@ export interface IconProps
     > {}
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
-  { name, scale, unsafeNonGuidelineScale, className, ...rest },
+  {
+    name,
+    scale,
+    unsafeNonGuidelineScale,
+    unsafeNonGuidelineFixedSize,
+    className,
+    ...rest
+  },
   ref,
 ) {
+  const actualSize = React.useMemo(() => {
+    return calcActualIconSize(
+      name,
+      scale,
+      unsafeNonGuidelineScale,
+      unsafeNonGuidelineFixedSize,
+    )
+  }, [name, scale, unsafeNonGuidelineScale, unsafeNonGuidelineFixedSize])
+
   return (
     <pixiv-icon
       ref={ref}
       name={name}
-      scale={scale}
-      unsafe-non-guideline-scale={unsafeNonGuidelineScale}
-      class={className}
+      unsafe-non-guideline-fixed-size={actualSize}
+      class={`charcoal-icon-component ${className || ''}`.trim()}
+      style={{ '--size': `${actualSize}px` }}
       {...rest}
     />
   )
