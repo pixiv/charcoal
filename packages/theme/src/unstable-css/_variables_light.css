@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 26 Sep 2025 09:59:16 GMT
+ * Generated on Thu, 12 Mar 2026 07:01:09 GMT
  */
 
 :root[data-theme='light'], :root:not([data-theme]) {
@@ -369,6 +369,7 @@
   --charcoal-text-line-height-heading-s: var(--charcoal-text-line-height-20);
   --charcoal-text-line-height-heading-m: var(--charcoal-text-line-height-30);
   --charcoal-text-line-height-heading-l: var(--charcoal-text-line-height-40);
+  --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-1);
   --charcoal-text-line-height-caption-s: var(--charcoal-text-line-height-1);
   --charcoal-text-line-height-caption-m: var(--charcoal-text-line-height-5);
   --charcoal-text-line-height-body: var(--charcoal-text-line-height-10);
@@ -384,6 +385,7 @@
   --charcoal-text-font-size-heading-s: var(--charcoal-text-font-size-40);
   --charcoal-text-font-size-heading-m: var(--charcoal-text-font-size-50);
   --charcoal-text-font-size-heading-l: var(--charcoal-text-font-size-60);
+  --charcoal-text-font-size-caption-s-10: var(--charcoal-text-font-size-1);
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-1);
   --charcoal-text-font-size-caption-m: var(--charcoal-text-font-size-5);
   --charcoal-text-font-size-body: var(--charcoal-text-font-size-10);

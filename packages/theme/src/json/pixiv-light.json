@@ -610,6 +610,9 @@
     "font-size/caption/s": {
       "value": "{text.font-size/1}"
     },
+    "font-size/caption/s-10": {
+      "value": "{text.font-size/1}"
+    },
     "font-size/heading/l": {
       "value": "{text.font-size/60}"
     },
@@ -653,6 +656,9 @@
       "value": "{text.line-height/5}"
     },
     "line-height/caption/s": {
+      "value": "{text.line-height/1}"
+    },
+    "line-height/caption/s-10": {
       "value": "{text.line-height/1}"
     },
     "line-height/heading/l": {
