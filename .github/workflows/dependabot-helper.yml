@@ -1,0 +1,107 @@
+name: Dependabot Helper
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  metadata:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    outputs:
+      dependency-names: ${{ steps.metadata.outputs.dependency-names }}
+      update-type: ${{ steps.metadata.outputs.update-type }}
+      dependency-type: ${{ steps.metadata.outputs.dependency-type }}
+      package-ecosystem: ${{ steps.metadata.outputs.package-ecosystem }}
+    steps:
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  label:
+    needs: metadata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add semver label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const updateType = '${{ needs.metadata.outputs.update-type }}';
+            const depType = '${{ needs.metadata.outputs.dependency-type }}';
+
+            // major update on production dependency → minor (conservative)
+            // everything else → patch
+            let semverLabel = 'patch';
+            if (updateType === 'version-update:semver-major' && depType === 'direct:production') {
+              semverLabel = 'minor';
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: [semverLabel],
+            });
+
+            console.log(`Added "${semverLabel}" label (update-type: ${updateType}, dep-type: ${depType})`);
+
+  comment:
+    needs: metadata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post release notes comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const depNames = '${{ needs.metadata.outputs.dependency-names }}';
+            const updateType = '${{ needs.metadata.outputs.update-type }}';
+            const depType = '${{ needs.metadata.outputs.dependency-type }}';
+            const ecosystem = '${{ needs.metadata.outputs.package-ecosystem }}';
+
+            const deps = depNames.split(', ');
+            const npmLinks = deps
+              .map(dep => `- [${dep}](https://www.npmjs.com/package/${dep})`)
+              .join('\n');
+
+            const body = [
+              '## Dependency Update Info',
+              '',
+              `**Update type:** ${updateType}`,
+              `**Dependency type:** ${depType}`,
+              `**Ecosystem:** ${ecosystem}`,
+              '',
+              '### npm packages',
+              npmLinks,
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
+
+  auto-approve:
+    needs: metadata
+    if: |
+      needs.metadata.outputs.dependency-type == 'direct:development' &&
+      needs.metadata.outputs.update-type != 'version-update:semver-major'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-approve dev dependency updates
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              event: 'APPROVE',
+              body: 'Auto-approved: non-major dev dependency update',
+            });
