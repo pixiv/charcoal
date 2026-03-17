@@ -30,72 +30,76 @@
   border-radius: 4px;
 
   transition: 0.2s box-shadow;
-}
 
-.charcoal-tag-item[data-size='M'] {
-  --charcoal-tag-item-size: 40px;
-  --charcoal-tag-item-padding-left: 24px;
-  --charcoal-tag-item-padding-right: 24px;
-}
-.charcoal-tag-item[data-size='S'] {
-  --charcoal-tag-item-size: 32px;
-  --charcoal-tag-item-padding-left: 16px;
-  --charcoal-tag-item-padding-right: 16px;
-}
-.charcoal-tag-item[data-state='inactive'] {
-  --charcoal-tag-item-color: var(--charcoal-text2);
-}
-.charcoal-tag-item[data-state='active'] {
-  --charcoal-tag-item-padding-left: 16px;
-  --charcoal-tag-item-padding-right: 8px;
-}
+  &[data-size='M'] {
+    --charcoal-tag-item-size: 40px;
+    --charcoal-tag-item-padding-left: 24px;
+    --charcoal-tag-item-padding-right: 24px;
+  }
 
-.charcoal-tag-item:disabled,
-.charcoal-tag-item[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
-}
-.charcoal-tag-item:not(:disabled):not([aria-disabled]):focus-visible,
-.charcoal-tag-item[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-}
-.charcoal-tag-item:not(:disabled):not([aria-disabled]):focus,
-.charcoal-tag-item[aria-disabled='false']:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-}
-.charcoal-tag-item:not(:disabled):not([aria-disabled]):focus:not(
-    :focus-visible
-  ),
-.charcoal-tag-item[aria-disabled='false']:focus:not(:focus-visible) {
-  box-shadow: none;
+  &[data-size='S'] {
+    --charcoal-tag-item-size: 32px;
+    --charcoal-tag-item-padding-left: 16px;
+    --charcoal-tag-item-padding-right: 16px;
+  }
+
+  &[data-state='inactive'] {
+    --charcoal-tag-item-color: var(--charcoal-text2);
+  }
+
+  &[data-state='active'] {
+    --charcoal-tag-item-padding-left: 16px;
+    --charcoal-tag-item-padding-right: 8px;
+  }
+
+  &:disabled,
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+    cursor: default;
+  }
+
+  &:not(:disabled):not([aria-disabled]):focus-visible,
+  &[aria-disabled='false']:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
+  &:not(:disabled):not([aria-disabled]):focus,
+  &[aria-disabled='false']:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
+  &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
+  &[aria-disabled='false']:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
 }
 
 .charcoal-tag-item__bg {
   background-color: var(--charcoal-tag-item-bg);
-}
 
-.charcoal-tag-item__bg[data-bg-variant='image'] {
-  background-color: var(--charcoal-surface4);
-}
+  &[data-bg-variant='image'] {
+    background-color: var(--charcoal-surface4);
 
-.charcoal-tag-item__bg[data-bg-variant='image']::before {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: var(--charcoal-tag-item-bg);
-  mix-blend-mode: overlay;
-}
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-image: var(--charcoal-tag-item-bg);
+      mix-blend-mode: overlay;
+    }
+  }
 
-.charcoal-tag-item__bg[data-state='inactive'] {
-  background-color: var(--charcoal-surface3);
+  &[data-state='inactive'] {
+    background-color: var(--charcoal-surface3);
+  }
 }
 
 .charcoal-tag-item__label {
@@ -104,18 +108,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.charcoal-tag-item__label[data-has-translate='true'] {
-  justify-content: space-between;
+
+  &[data-has-translate='true'] {
+    justify-content: space-between;
+  }
 }
 
 .charcoal-tag-item__label__translated {
   --charcoal-tag-item-text-font-size: 12px;
   --charcoal-tag-item-text-line-height: 20px;
   font-weight: bold;
-}
-.charcoal-tag-item__label__translated::before {
-  display: none;
+
+  &::before {
+    display: none;
+  }
 }
 
 .charcoal-tag-item__label__text {
@@ -129,12 +135,15 @@
   color: inherit;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  &[data-has-translate='true'] {
+    --charcoal-tag-item-text-font-size: 10px;
+    --charcoal-tag-item-text-line-height: 14px;
+    font-weight: normal;
+  }
 }
-.charcoal-tag-item__label__text[data-has-translate='true'] {
-  --charcoal-tag-item-text-font-size: 10px;
-  --charcoal-tag-item-text-line-height: 14px;
-  font-weight: normal;
-}
+
+/* Kept flat: different class name from .charcoal-tag-item__label__text (note: "labe" typo in original) */
 .charcoal-tag-item__labe__text[data-has-translate='true']::after {
   display: none;
 }

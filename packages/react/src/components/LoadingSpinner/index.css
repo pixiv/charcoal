@@ -9,9 +9,10 @@
   opacity: 0.84;
   color: var(--charcoal-text4);
   background-color: var(--charcoal-background1);
-}
-.charcoal-loading-spinner[data-transparent='true'] {
-  background-color: var(--charcoal-transparent);
+
+  &[data-transparent='true'] {
+    background-color: var(--charcoal-transparent);
+  }
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {
@@ -32,11 +33,12 @@
   background-color: currentColor;
   animation: charcoal-loading-spinner-icon-scale-out 1s both ease-out;
   animation-iteration-count: infinite;
-}
 
-.charcoal-loading-spinner-icon[data-reset-animation] {
-  animation: none;
-}
-.charcoal-loading-spinner-icon[data-once='true'] {
-  animation-iteration-count: 1;
+  &[data-reset-animation] {
+    animation: none;
+  }
+
+  &[data-once='true'] {
+    animation-iteration-count: 1;
+  }
 }
