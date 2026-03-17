@@ -25,7 +25,7 @@ jobs:
         id: commit-hash
         run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Restore image snapshot from cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache-image-snapshots
         with:
           path: __image_snapshots__
@@ -44,7 +44,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             /home/runner/.cache/ms-playwright/
@@ -90,7 +90,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             /home/runner/.cache/ms-playwright/
