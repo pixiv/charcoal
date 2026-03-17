@@ -63,7 +63,7 @@ jobs:
         run: pnpm test:image-snapshot --updateSnapshot
 
       - name: Upload base branch snapshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: base__image-snapshots__
           path: __image_snapshots__/
@@ -138,13 +138,13 @@ jobs:
         if: steps.label-checking.outputs.result == 'true'
         run: pnpm test:image-snapshot --updateSnapshot
       - name: Archive image snapshot diffs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: failure() && steps.label-checking.outputs.result != 'true'
         with:
           path: __diff_output__/
       - name: Archive new image snapshots
         if: steps.label-checking.outputs.result == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: new__image_snapshots__
           path: __image_snapshots__/
