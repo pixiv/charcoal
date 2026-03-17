@@ -1,0 +1,1 @@
+import{r as t,j as c}from"./iframe-BwcVscyN.js";import{u as i}from"./useClassNames-DbmXg-V5.js";const u=t.forwardRef(function({as:s,className:o,...e},r){const a=t.useMemo(()=>s??"li",[s]),m=i("charcoal-list-item",o);return c.jsx(a,{className:m,ref:r,...e})});export{u as L};
