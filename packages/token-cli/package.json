@@ -2,7 +2,11 @@
   "name": "@charcoal-ui/token-cli",
   "bin": "./dist/index.js",
   "type": "commonjs",
+<<<<<<< HEAD
   "version": "5.8.1",
+=======
+  "version": "5.8.0-beta.0",
+>>>>>>> c1971a7f (chore: publish [skip ci])
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsdown",
