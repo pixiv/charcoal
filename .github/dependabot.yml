@@ -1,6 +1,85 @@
 version: 2
 updates:
+  # GitHub Actions
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
       interval: 'weekly'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+
+  # npm (pnpm workspaces)
+  - package-ecosystem: 'npm'
+    directories:
+      - '/'
+      - 'packages/*'
+    schedule:
+      interval: 'monthly'
+      day: 'monday'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 15
+    ignore:
+      - dependency-name: '@charcoal-ui/*'
+    groups:
+      types:
+        patterns:
+          - '@types/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      react-ecosystem:
+        patterns:
+          - '@react-aria/*'
+          - '@react-stately/*'
+          - '@react-types/*'
+          - 'react-stately'
+          - '@react-spring/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      storybook:
+        patterns:
+          - 'storybook'
+          - '@storybook/*'
+          - '@vueless/storybook-dark-mode'
+      build-tools:
+        patterns:
+          - 'tsdown'
+          - 'vite'
+          - '@vitejs/*'
+          - 'vitest'
+          - 'esbuild'
+          - '@rollup/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      linting:
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+          - '@pixiv/eslint-config'
+          - 'prettier'
+          - 'stylelint'
+          - 'stylelint-*'
+          - '@stylelint/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      testing:
+        patterns:
+          - '@testing-library/*'
+          - '@playwright/*'
+          - 'axe-playwright'
+          - 'jest-*'
+          - 'jsdom'
+        update-types:
+          - 'minor'
+          - 'patch'
+      all-minor-patch:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
