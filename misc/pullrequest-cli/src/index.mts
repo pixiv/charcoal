@@ -5,6 +5,7 @@ import { GithubClient } from './GitHubClient.ts'
 import { mustBeDefined } from './utils.ts'
 
 const TARGET_DIR = process.env.TARGET_DIR
+const TARGET_DIRS = process.env.TARGET_DIRS
 
 /**
  * GitHub
@@ -33,14 +34,17 @@ void yargs(process.argv.slice(2))
     },
     async ({ title, category }) => {
       mustBeDefined(GITHUB_ACCESS_TOKEN, 'GITHUB_ACCESS_TOKEN')
-      mustBeDefined(TARGET_DIR, 'TARGET_DIR')
+      const targetDirs = TARGET_DIRS?.split(',')
+        .map((dir) => dir.trim())
+        .filter(Boolean) ?? (TARGET_DIR ? [TARGET_DIR] : undefined)
+      mustBeDefined(targetDirs, 'TARGET_DIR or TARGET_DIRS')
 
       await GithubClient.runFromCli(
         GITHUB_REPO_OWNER ?? 'pixiv',
         GITHUB_REPO_NAME ?? 'charcoal',
         GITHUB_ACCESS_TOKEN,
         GITHUB_DEFAULT_BRANCH ?? 'main',
-        TARGET_DIR,
+        targetDirs,
         category,
         title,
       )
