@@ -7,6 +7,7 @@ import Icon from '../../Icon'
 
 export type DropdownMenuItemProps = Omit<MenuItemProps, 'as'> & {
   secondary?: ReactNode
+  contentFullWidth?: boolean
 }
 
 /**
@@ -19,8 +20,20 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
 
   return (
     <MenuItem {...rest} aria-selected={isSelected}>
-      <div>
-        <div className="charcoal-dropdown-selector-menu-item-container">
+      <div
+        className={
+          props.contentFullWidth
+            ? 'charcoal-dropdown-selector-menu-fullwidth'
+            : undefined
+        }
+      >
+        <div
+          className={`charcoal-dropdown-selector-menu-item-container${
+            props.contentFullWidth
+              ? ' charcoal-dropdown-selector-menu-fullwidth'
+              : ''
+          }`}
+        >
           {isSelected && (
             <Icon
               className="charcoal-dropdown-selector-menu-item-icon"
@@ -28,7 +41,7 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
             />
           )}
           <span
-            className="charcoal-dropdown-selector-menu-item"
+            className={`charcoal-dropdown-selector-menu-item ${props.contentFullWidth ? 'charcoal-dropdown-selector-menu-fullwidth' : undefined}`}
             data-selected={isSelected}
           >
             {children}
