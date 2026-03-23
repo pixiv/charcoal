@@ -90,12 +90,16 @@ describe('Icon has correct size WITHOUT Web Component upgrade (CSS only)', () =>
     'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize) has $expected x $expected',
     ({ name, scale, unsafeNonGuidelineSize, expected }) => {
       const { container } = render(
-        <Icon name={name} scale={scale} unsafeNonGuidelineSize={unsafeNonGuidelineSize} />
+        <Icon
+          name={name}
+          scale={scale}
+          unsafeNonGuidelineSize={unsafeNonGuidelineSize}
+        />,
       )
       const { width, height } = getIconSize(container)
       expect(width).toBe(expected)
       expect(height).toBe(expected)
-    }
+    },
   )
 
   it('HintText icon has 16x16', () => {
@@ -133,12 +137,16 @@ describe('Icon has correct size WITH Web Component upgrade', () => {
     'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize) has $expected x $expected',
     ({ name, scale, unsafeNonGuidelineSize, expected }) => {
       const { container } = render(
-        <Icon name={name} scale={scale} unsafeNonGuidelineSize={unsafeNonGuidelineSize} />
+        <Icon
+          name={name}
+          scale={scale}
+          unsafeNonGuidelineSize={unsafeNonGuidelineSize}
+        />,
       )
       const { width, height } = getIconSize(container)
       expect(width).toBe(expected)
       expect(height).toBe(expected)
-    }
+    },
   )
 
   it('HintText icon has 16x16', () => {

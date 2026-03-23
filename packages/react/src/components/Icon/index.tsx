@@ -10,22 +10,30 @@ export type OwnProps = IconSizing & {
 
 export type IconProps = OwnProps &
   React.PropsWithoutRef<
-    Omit<
-      Props,
-      | 'class'
-      | 'scale'
-      | 'unsafe-non-guideline-scale'
-      | 'css'
-    >
+    Omit<Props, 'class' | 'scale' | 'unsafe-non-guideline-scale' | 'css'>
   >
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
-  { name, scale, unsafeNonGuidelineScale, unsafeNonGuidelineSize, className, style: userStyle, ...rest },
+  {
+    name,
+    scale,
+    unsafeNonGuidelineScale,
+    unsafeNonGuidelineSize,
+    className,
+    style: userStyle,
+    ...rest
+  },
   ref,
 ) {
   const actualSize = React.useMemo(
     // IconSizing の排他制約は IconProps の型レベルで保証されるため、内部では緩和する
-    () => calcActualSize({ name, scale, unsafeNonGuidelineScale, unsafeNonGuidelineSize } as { name: string } & IconSizing),
+    () =>
+      calcActualSize({
+        name,
+        scale,
+        unsafeNonGuidelineScale,
+        unsafeNonGuidelineSize,
+      } as { name: string } & IconSizing),
     [name, scale, unsafeNonGuidelineScale, unsafeNonGuidelineSize],
   )
 

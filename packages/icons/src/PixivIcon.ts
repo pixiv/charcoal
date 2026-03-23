@@ -4,11 +4,7 @@ import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
 
-const attributes = [
-  'name',
-  'scale',
-  'unsafe-non-guideline-scale',
-] as const
+const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
 
 const ROOT_MARGIN = 50
 
@@ -35,12 +31,10 @@ type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがn
 const isPositiveFinite = (value: unknown): value is number =>
   typeof value === 'number' && Number.isFinite(value) && value > 0
 
-const parseIconName = (
-  name: string,
-): { size: string; baseSize: number } => {
+const parseIconName = (name: string): { size: string; baseSize: number } => {
   if (!name.includes('/')) {
     throw new TypeError(
-      `"${name}" is not a valid icon name. "name" must be named like [size]/[Name].`
+      `"${name}" is not a valid icon name. "name" must be named like [size]/[Name].`,
     )
   }
 
@@ -53,7 +47,7 @@ const parseIconName = (
   const baseSize = parseInt(size, 10)
   if (Number.isNaN(baseSize) || baseSize <= 0) {
     throw new TypeError(
-      `"${name}" has invalid size prefix "${size}". Must be "Inline" or a positive number.`
+      `"${name}" has invalid size prefix "${size}". Must be "Inline" or a positive number.`,
     )
   }
 
@@ -89,7 +83,7 @@ export const calcActualSize = ({
   }
   if (overrideSize !== undefined) {
     throw new TypeError(
-      `size must be a positive finite number, got ${overrideSize}`
+      `size must be a positive finite number, got ${overrideSize}`,
     )
   }
 
@@ -101,7 +95,7 @@ export const calcActualSize = ({
   }
   if (unsafeNonGuidelineScale !== undefined) {
     throw new TypeError(
-      `unsafeNonGuidelineScale must be a positive finite number, got ${unsafeNonGuidelineScale}`
+      `unsafeNonGuidelineScale must be a positive finite number, got ${unsafeNonGuidelineScale}`,
     )
   }
 
@@ -289,7 +283,7 @@ export class PixivIcon extends HTMLElement {
     const scaleAttr = this.props.scale ?? undefined
     const nonGuidelineScale =
       this.props['unsafe-non-guideline-scale'] !== null
-        ? parseInt(this.props['unsafe-non-guideline-scale'], 10)
+        ? parseFloat(this.props['unsafe-non-guideline-scale'])
         : undefined
     const charcoalIconSize =
       this.dataset.charcoalIconSize !== undefined
@@ -306,7 +300,7 @@ export class PixivIcon extends HTMLElement {
 
     if (!Number.isFinite(size) || size <= 0) {
       throw new TypeError(
-        `icon size must be a positive finite number, got ${size}`
+        `icon size must be a positive finite number, got ${size}`,
       )
     }
 

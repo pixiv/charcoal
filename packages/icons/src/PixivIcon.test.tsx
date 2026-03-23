@@ -1,6 +1,14 @@
 // import { loaders } from './loaders'
 import { PixivIcon, calcActualSize } from '.'
-import { vi, describe, it, expect, beforeEach, afterEach, expectTypeOf } from 'vitest'
+import {
+  vi,
+  describe,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  expectTypeOf,
+} from 'vitest'
 
 describe('PixivIcon', () => {
   afterEach(() => {
@@ -24,25 +32,35 @@ describe('PixivIcon', () => {
 describe('calcActualSize', () => {
   describe('unsafeNonGuidelineSize', () => {
     it('returns the given size directly', () => {
-      expect(calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: 100 })).toBe(100)
+      expect(
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: 100 }),
+      ).toBe(100)
     })
 
     it('returns the given size for Inline icons', () => {
-      expect(calcActualSize({ name: 'Inline/Add', unsafeNonGuidelineSize: 48 })).toBe(48)
+      expect(
+        calcActualSize({ name: 'Inline/Add', unsafeNonGuidelineSize: 48 }),
+      ).toBe(48)
     })
   })
 
   describe('unsafeNonGuidelineScale', () => {
     it('scales 24/ icons', () => {
-      expect(calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: 1.5 })).toBe(36)
+      expect(
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: 1.5 }),
+      ).toBe(36)
     })
 
     it('scales Inline/ icons from base 16', () => {
-      expect(calcActualSize({ name: 'Inline/Add', unsafeNonGuidelineScale: 2 })).toBe(32)
+      expect(
+        calcActualSize({ name: 'Inline/Add', unsafeNonGuidelineScale: 2 }),
+      ).toBe(32)
     })
 
     it('scales other size icons', () => {
-      expect(calcActualSize({ name: '32/Add', unsafeNonGuidelineScale: 0.5 })).toBe(16)
+      expect(
+        calcActualSize({ name: '32/Add', unsafeNonGuidelineScale: 0.5 }),
+      ).toBe(16)
     })
   })
 
@@ -120,41 +138,62 @@ describe('calcActualSize', () => {
 
   describe('edge cases: zero, negative, and Infinity values', () => {
     it('throws for unsafeNonGuidelineSize = 0', () => {
-      expect(() => calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: 0 })).toThrow(TypeError)
+      expect(() =>
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: 0 }),
+      ).toThrow(TypeError)
     })
 
     it('throws for negative unsafeNonGuidelineSize', () => {
-      expect(() => calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: -10 })).toThrow(TypeError)
+      expect(() =>
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: -10 }),
+      ).toThrow(TypeError)
     })
 
     it('throws for Infinity unsafeNonGuidelineSize', () => {
-      expect(() => calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: Infinity })).toThrow(TypeError)
+      expect(() =>
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineSize: Infinity }),
+      ).toThrow(TypeError)
     })
 
     it('throws for unsafeNonGuidelineScale = 0', () => {
-      expect(() => calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: 0 })).toThrow(TypeError)
+      expect(() =>
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: 0 }),
+      ).toThrow(TypeError)
     })
 
     it('throws for negative unsafeNonGuidelineScale', () => {
-      expect(() => calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: -1 })).toThrow(TypeError)
+      expect(() =>
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: -1 }),
+      ).toThrow(TypeError)
     })
 
     it('throws for Infinity unsafeNonGuidelineScale', () => {
-      expect(() => calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: Infinity })).toThrow(TypeError)
+      expect(() =>
+        calcActualSize({ name: '24/Add', unsafeNonGuidelineScale: Infinity }),
+      ).toThrow(TypeError)
     })
   })
 
   describe('IconSizing union type', () => {
     it('accepts scale only', () => {
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', scale: 2 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        scale: 2,
+      })
     })
 
     it('accepts unsafeNonGuidelineScale only', () => {
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', unsafeNonGuidelineScale: 1.5 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        unsafeNonGuidelineScale: 1.5,
+      })
     })
 
     it('accepts unsafeNonGuidelineSize only', () => {
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', unsafeNonGuidelineSize: 64 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        unsafeNonGuidelineSize: 64,
+      })
     })
 
     it('accepts no sizing (defaults)', () => {
@@ -163,22 +202,39 @@ describe('calcActualSize', () => {
 
     it('rejects scale + unsafeNonGuidelineScale', () => {
       // @ts-expect-error scale and unsafeNonGuidelineScale are mutually exclusive
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', scale: 2, unsafeNonGuidelineScale: 1.5 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        scale: 2,
+        unsafeNonGuidelineScale: 1.5,
+      })
     })
 
     it('rejects scale + unsafeNonGuidelineSize', () => {
       // @ts-expect-error scale and unsafeNonGuidelineSize are mutually exclusive
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', scale: 2, unsafeNonGuidelineSize: 64 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        scale: 2,
+        unsafeNonGuidelineSize: 64,
+      })
     })
 
     it('rejects unsafeNonGuidelineScale + unsafeNonGuidelineSize', () => {
       // @ts-expect-error unsafeNonGuidelineScale and unsafeNonGuidelineSize are mutually exclusive
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', unsafeNonGuidelineScale: 1.5, unsafeNonGuidelineSize: 64 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        unsafeNonGuidelineScale: 1.5,
+        unsafeNonGuidelineSize: 64,
+      })
     })
 
     it('rejects all three', () => {
       // @ts-expect-error all three sizing options are mutually exclusive
-      expectTypeOf(calcActualSize).toBeCallableWith({ name: '24/Add', scale: 2, unsafeNonGuidelineScale: 1.5, unsafeNonGuidelineSize: 64 })
+      expectTypeOf(calcActualSize).toBeCallableWith({
+        name: '24/Add',
+        scale: 2,
+        unsafeNonGuidelineScale: 1.5,
+        unsafeNonGuidelineSize: 64,
+      })
     })
   })
 })
