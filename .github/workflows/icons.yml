@@ -68,7 +68,7 @@ jobs:
       - name: Optimize icons 2.0
         env:
           OUTPUT_ROOT_DIR: ../icon-files/v2
-        run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ../../misc/icons-cli-denylist
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ../../misc/icons-cli-denylist --color "#1F1F1F"
 
       - name: Generate icon 2.0 files
         env:

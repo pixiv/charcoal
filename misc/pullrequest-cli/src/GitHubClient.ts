@@ -92,22 +92,23 @@ export class GithubClient {
     const tree: TreeItem[] = []
 
     for await (const file of getChangedFiles(outputDirs)) {
-      const item = {
-        path: file.relativePath,
-        // 100 はファイル 644 は実行不可なファイルであるという意味
-        // @see https://octokit.github.io/rest.js/v18#git-create-tree
-        mode: '100644' as const,
-        content: file.content,
-      }
-
       if (file.status === 'deleted') {
         // https://stackoverflow.com/questions/23637961/how-do-i-mark-a-file-as-deleted-in-a-tree-using-the-github-api
         tree.push({
-          ...item,
+          path: file.relativePath,
+          // 100 はファイル 644 は実行不可なファイルであるという意味
+          // @see https://octokit.github.io/rest.js/v18#git-create-tree
+          mode: '100644',
           sha: null,
         })
       } else {
-        tree.push(item)
+        tree.push({
+          path: file.relativePath,
+          // 100 はファイル 644 は実行不可なファイルであるという意味
+          // @see https://octokit.github.io/rest.js/v18#git-create-tree
+          mode: '100644',
+          content: file.content,
+        })
       }
     }
 
