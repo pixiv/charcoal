@@ -25,7 +25,8 @@
     "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "test:browser": "vitest run --config vitest.browser.config.ts"
   },
   "devDependencies": {
     "@react-types/dialog": "^3.5.15",
@@ -39,8 +40,10 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/warning": "^3.0.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/browser": "^2.1.9",
     "autoprefixer": "^10.4.19",
     "jsdom": "^24.1.0",
+    "playwright": "^1.58.2",
     "postcss-nested": "^7.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
