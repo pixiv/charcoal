@@ -34,9 +34,10 @@ void yargs(process.argv.slice(2))
     },
     async ({ title, category }) => {
       mustBeDefined(GITHUB_ACCESS_TOKEN, 'GITHUB_ACCESS_TOKEN')
-      const targetDirs = TARGET_DIRS?.split(',')
-        .map((dir) => dir.trim())
-        .filter(Boolean) ?? (TARGET_DIR ? [TARGET_DIR] : undefined)
+      const targetDirs =
+        TARGET_DIRS?.split(',')
+          .map((dir) => dir.trim())
+          .filter(Boolean) ?? (TARGET_DIR ? [TARGET_DIR] : undefined)
       mustBeDefined(targetDirs, 'TARGET_DIR or TARGET_DIRS')
 
       await GithubClient.runFromCli(
