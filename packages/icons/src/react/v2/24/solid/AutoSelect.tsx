@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgAutoSelect = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path d="M15.268 1.79a.75.75 0 00-1.5 0v2.2a.75.75 0 001.5 0v-2.2zM9.473 3.452A.75.75 0 008.43 4.53l1.705 1.65a.75.75 0 101.043-1.078l-1.705-1.65zM20.546 4.523a.75.75 0 00-1.057-1.064l-1.661 1.65a.75.75 0 001.057 1.064l1.661-1.65zM20.006 8.74a.75.75 0 000 1.5h2.212a.75.75 0 000-1.5h-2.212zM18.895 12.82a.75.75 0 00-1.078 1.043l1.662 1.716a.75.75 0 001.078-1.043l-1.662-1.717zM16.226 7.89a3 3 0 00-4.243 0l-1.505 1.505 4.242 4.243 1.506-1.506a3 3 0 000-4.242zM2.967 16.905l6.344-6.343 4.243 4.243-6.344 6.343a3 3 0 11-4.243-4.243z" fill="currentColor"/>
-  </svg>);
-export const IconAutoSelectSolid: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgAutoSelect);
-export default IconAutoSelectSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgAutoSelect = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>,
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      d="M15.268 1.79a.75.75 0 00-1.5 0v2.2a.75.75 0 001.5 0v-2.2zM9.473 3.452A.75.75 0 008.43 4.53l1.705 1.65a.75.75 0 101.043-1.078l-1.705-1.65zM20.546 4.523a.75.75 0 00-1.057-1.064l-1.661 1.65a.75.75 0 001.057 1.064l1.661-1.65zM20.006 8.74a.75.75 0 000 1.5h2.212a.75.75 0 000-1.5h-2.212zM18.895 12.82a.75.75 0 00-1.078 1.043l1.662 1.716a.75.75 0 001.078-1.043l-1.662-1.717zM16.226 7.89a3 3 0 00-4.243 0l-1.505 1.505 4.242 4.243 1.506-1.506a3 3 0 000-4.242zM2.967 16.905l6.344-6.343 4.243 4.243-6.344 6.343a3 3 0 11-4.243-4.243z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconAutoSelectSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgAutoSelect)
+export default IconAutoSelectSolid

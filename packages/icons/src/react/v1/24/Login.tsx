@@ -1,9 +1,29 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgLogin = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path fillRule="evenodd" clipRule="evenodd" d="M9 3a1 1 0 00-1 1v1a1 1 0 102 0h6.764l-2.211 1.105A1 1 0 0014 7v10h-4a1 1 0 10-2 0v1a1 1 0 001 1h5v2a1 1 0 001.447.894l6-3A1 1 0 0022 18V4a1 1 0 00-1-1H9zm11 14.382l-4 2V7.618l4-2v11.764z" fill="currentColor"/>
-    <path d="M7.707 7.293a1 1 0 10-1.414 1.414L7.586 10H3a1 1 0 000 2h4.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3z" fill="currentColor"/>
-  </svg>);
-export const IconLogin24: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgLogin);
-export default IconLogin24;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgLogin = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M9 3a1 1 0 00-1 1v1a1 1 0 102 0h6.764l-2.211 1.105A1 1 0 0014 7v10h-4a1 1 0 10-2 0v1a1 1 0 001 1h5v2a1 1 0 001.447.894l6-3A1 1 0 0022 18V4a1 1 0 00-1-1H9zm11 14.382l-4 2V7.618l4-2v11.764z"
+      fill="currentColor"
+    />
+    <path
+      d="M7.707 7.293a1 1 0 10-1.414 1.414L7.586 10H3a1 1 0 000 2h4.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconLogin24: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgLogin)
+export default IconLogin24

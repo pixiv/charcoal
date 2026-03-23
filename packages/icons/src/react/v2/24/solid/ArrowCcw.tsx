@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgArrowccw = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path d="M12.445 5.217a6.758 6.758 0 00-4.797 1.988A31.063 31.063 0 006.136 8.86h2.083a1.25 1.25 0 010 2.5H3.494c-.69 0-1.25-.56-1.25-1.25V5.385a1.25 1.25 0 012.5 0v1.268a28.78 28.78 0 011.135-1.215 9.283 9.283 0 116.566 15.845c-4.233 0-7.802-2.834-8.92-6.705a1.25 1.25 0 112.402-.693 6.783 6.783 0 106.518-8.668z" fill="currentColor"/>
-  </svg>);
-export const IconArrowCcwSolid: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgArrowccw);
-export default IconArrowCcwSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgArrowccw = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>,
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      d="M12.445 5.217a6.758 6.758 0 00-4.797 1.988A31.063 31.063 0 006.136 8.86h2.083a1.25 1.25 0 010 2.5H3.494c-.69 0-1.25-.56-1.25-1.25V5.385a1.25 1.25 0 012.5 0v1.268a28.78 28.78 0 011.135-1.215 9.283 9.283 0 116.566 15.845c-4.233 0-7.802-2.834-8.92-6.705a1.25 1.25 0 112.402-.693 6.783 6.783 0 106.518-8.668z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconArrowCcwSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgArrowccw)
+export default IconArrowCcwSolid

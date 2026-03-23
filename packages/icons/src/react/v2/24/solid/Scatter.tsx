@@ -1,8 +1,26 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgScatter = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path d="M17.442 5.284a1.238 1.238 0 10.024-2.476 1.238 1.238 0 00-.024 2.476zM6.146 8.022a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM10.96 10.906a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM12.167 17.753a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM19.517 11.628a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM8.078 16.1a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM5.471 11.99a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12.726 6.218a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM11.333 13.796a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM20.023 15.606a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM15.664 13.285a1.221 1.221 0 11-2.442 0 1.221 1.221 0 012.442 0zM5.371 7.103a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM18.25 16.027a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM7.53 18.354a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM19.937 19.604a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM15.778 9.594a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM16.024 18.878a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM10.485 6.945A1.221 1.221 0 118.43 5.627a1.221 1.221 0 012.056 1.318z" fill="currentColor"/>
-  </svg>);
-export const IconScatterSolid: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgScatter);
-export default IconScatterSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgScatter = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>,
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      d="M17.442 5.284a1.238 1.238 0 10.024-2.476 1.238 1.238 0 00-.024 2.476zM6.146 8.022a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM10.96 10.906a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM12.167 17.753a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM19.517 11.628a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM8.078 16.1a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM5.471 11.99a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12.726 6.218a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM11.333 13.796a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM20.023 15.606a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM15.664 13.285a1.221 1.221 0 11-2.442 0 1.221 1.221 0 012.442 0zM5.371 7.103a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM18.25 16.027a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM7.53 18.354a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM19.937 19.604a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM15.778 9.594a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5zM16.024 18.878a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM10.485 6.945A1.221 1.221 0 118.43 5.627a1.221 1.221 0 012.056 1.318z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconScatterSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgScatter)
+export default IconScatterSolid

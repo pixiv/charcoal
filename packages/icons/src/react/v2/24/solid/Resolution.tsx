@@ -1,10 +1,34 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgResolution = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path d="M3 6.75A3.75 3.75 0 016.75 3h10.5A3.75 3.75 0 0121 6.75v10.5A3.75 3.75 0 0117.25 21H17V9.75A2.75 2.75 0 0014.25 7H3v-.25z" fill="currentColor"/>
-    <path d="M3 8.5v3.25h7.5c.966 0 1.75.784 1.75 1.75V21h3.25V9.75c0-.69-.56-1.25-1.25-1.25H3z" fill="currentColor"/>
-    <path d="M10.5 13.25a.25.25 0 01.25.25V21h-4A3.75 3.75 0 013 17.25v-4h7.5z" fill="currentColor"/>
-  </svg>);
-export const IconResolutionSolid: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgResolution);
-export default IconResolutionSolid;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgResolution = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>,
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      d="M3 6.75A3.75 3.75 0 016.75 3h10.5A3.75 3.75 0 0121 6.75v10.5A3.75 3.75 0 0117.25 21H17V9.75A2.75 2.75 0 0014.25 7H3v-.25z"
+      fill="currentColor"
+    />
+    <path
+      d="M3 8.5v3.25h7.5c.966 0 1.75.784 1.75 1.75V21h3.25V9.75c0-.69-.56-1.25-1.25-1.25H3z"
+      fill="currentColor"
+    />
+    <path
+      d="M10.5 13.25a.25.25 0 01.25.25V21h-4A3.75 3.75 0 013 17.25v-4h7.5z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconResolutionSolid: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgResolution)
+export default IconResolutionSolid

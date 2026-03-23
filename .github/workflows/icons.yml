@@ -91,6 +91,9 @@ jobs:
           app_id: ${{ secrets.CHARCOAL_BOT_APP_ID }}
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
 
+      - name: Run prettier
+        run: pnpm fmt
+
       - name: Create Pull Request
         env:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}

@@ -1,9 +1,32 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { Ref, forwardRef } from "react";
-const SvgTemperature = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
-    <path d="M11.406 6.594a.594.594 0 111.188 0v9.467c0 .433.289.806.555 1.148a1.454 1.454 0 11-2.297 0c.265-.342.554-.715.554-1.148V6.594z" fill="currentColor"/>
-    <path fillRule="evenodd" clipRule="evenodd" d="M12 1a3.636 3.636 0 00-3.636 3.636v9.992c0 .062-.028.165-.132.288a4.92 4.92 0 107.536 0c-.103-.122-.131-.226-.131-.287V4.636A3.636 3.636 0 0012 1zm-1.986 3.636a1.986 1.986 0 113.972 0v9.993c0 .543.233 1.009.519 1.35a3.27 3.27 0 11-5.01 0c.286-.341.52-.807.52-1.35V4.635z" fill="currentColor"/>
-  </svg>);
-export const IconTemperature: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgTemperature);
-export default IconTemperature;
+import * as React from 'react'
+import type { SVGProps } from 'react'
+import { Ref, forwardRef } from 'react'
+const SvgTemperature = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>,
+) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ref={ref}
+    {...props}
+  >
+    <path
+      d="M11.406 6.594a.594.594 0 111.188 0v9.467c0 .433.289.806.555 1.148a1.454 1.454 0 11-2.297 0c.265-.342.554-.715.554-1.148V6.594z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 1a3.636 3.636 0 00-3.636 3.636v9.992c0 .062-.028.165-.132.288a4.92 4.92 0 107.536 0c-.103-.122-.131-.226-.131-.287V4.636A3.636 3.636 0 0012 1zm-1.986 3.636a1.986 1.986 0 113.972 0v9.993c0 .543.233 1.009.519 1.35a3.27 3.27 0 11-5.01 0c.286-.341.52-.807.52-1.35V4.635z"
+      fill="currentColor"
+    />
+  </svg>
+)
+export const IconTemperature: ReturnType<
+  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
+> = forwardRef(SvgTemperature)
+export default IconTemperature
