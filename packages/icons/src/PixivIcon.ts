@@ -4,7 +4,11 @@ import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
 
-const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
+const attributes = [
+  'name',
+  'scale',
+  'unsafe-non-guideline-scale',
+] as const
 
 const ROOT_MARGIN = 50
 
@@ -18,7 +22,6 @@ export interface Props
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
   'unsafe-non-guideline-scale'?: number | string
-
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
   class?: string
@@ -28,6 +31,91 @@ type ExtendedIconFile = Exclude<keyof KnownIconType, KnownIconFile>
 type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがneverならKnownIconTypeは拡張されていない
   ? false
   : true
+
+const isPositiveFinite = (value: unknown): value is number =>
+  typeof value === 'number' && Number.isFinite(value) && value > 0
+
+const parseIconName = (
+  name: string,
+): { size: string; baseSize: number } => {
+  if (!name.includes('/')) {
+    throw new TypeError(
+      `"${name}" is not a valid icon name. "name" must be named like [size]/[Name].`
+    )
+  }
+
+  const [size] = name.split('/')
+
+  if (size === 'Inline') {
+    return { size, baseSize: 16 }
+  }
+
+  const baseSize = parseInt(size, 10)
+  if (Number.isNaN(baseSize) || baseSize <= 0) {
+    throw new TypeError(
+      `"${name}" has invalid size prefix "${size}". Must be "Inline" or a positive number.`
+    )
+  }
+
+  return { size, baseSize }
+}
+
+export type IconSizing =
+  | {
+      scale?: 1 | 2 | 3 | '1' | '2' | '3'
+      unsafeNonGuidelineScale?: never
+      unsafeNonGuidelineSize?: never
+    }
+  | {
+      scale?: never
+      unsafeNonGuidelineScale: number
+      unsafeNonGuidelineSize?: never
+    }
+  | {
+      scale?: never
+      unsafeNonGuidelineScale?: never
+      unsafeNonGuidelineSize: number
+    }
+
+export const calcActualSize = ({
+  name,
+  scale,
+  unsafeNonGuidelineScale,
+  unsafeNonGuidelineSize: overrideSize,
+}: { name: string } & IconSizing): number => {
+  // size (事前計算済みサイズ) が最優先
+  if (isPositiveFinite(overrideSize)) {
+    return overrideSize
+  }
+  if (overrideSize !== undefined) {
+    throw new TypeError(
+      `size must be a positive finite number, got ${overrideSize}`
+    )
+  }
+
+  const { size, baseSize } = parseIconName(name)
+
+  // unsafeNonGuidelineScale が次に優先
+  if (isPositiveFinite(unsafeNonGuidelineScale)) {
+    return baseSize * unsafeNonGuidelineScale
+  }
+  if (unsafeNonGuidelineScale !== undefined) {
+    throw new TypeError(
+      `unsafeNonGuidelineScale must be a positive finite number, got ${unsafeNonGuidelineScale}`
+    )
+  }
+
+  // ガイドライン scale
+  const numericScale = parseInt(`${scale ?? '1'}`, 10)
+  switch (size) {
+    case 'Inline':
+      return numericScale === 2 ? 32 : 16
+    case '24':
+      return 24 * numericScale
+    default:
+      return baseSize
+  }
+}
 
 export class PixivIcon extends HTMLElement {
   static readonly tagName = 'pixiv-icon'
@@ -100,6 +188,9 @@ export class PixivIcon extends HTMLElement {
     }
   }
 
+  /**
+   * @deprecated Use `calcActualSize()` instead. This getter is kept for backward compatibility.
+   */
   get forceResizedSize(): number | null {
     if (this.props['unsafe-non-guideline-scale'] === null) {
       return null
@@ -119,6 +210,9 @@ export class PixivIcon extends HTMLElement {
     }
   }
 
+  /**
+   * @deprecated Use `calcActualSize()` instead. This getter is kept for backward compatibility.
+   */
   get scaledSize(): number {
     const [size] = this.props.name.split('/')
 
@@ -192,10 +286,28 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const size = this.forceResizedSize ?? this.scaledSize
+    const scaleAttr = this.props.scale ?? undefined
+    const nonGuidelineScale =
+      this.props['unsafe-non-guideline-scale'] !== null
+        ? parseInt(this.props['unsafe-non-guideline-scale'], 10)
+        : undefined
+    const charcoalIconSize =
+      this.dataset.charcoalIconSize !== undefined
+        ? parseInt(this.dataset.charcoalIconSize, 10)
+        : undefined
 
-    if (!Number.isFinite(size)) {
-      throw new TypeError(`icon size must not be NaN`)
+    // Web Component 内部では属性から全て読み取るため union の排他制約を緩和する
+    const size = calcActualSize({
+      name: this.props.name,
+      scale: scaleAttr,
+      unsafeNonGuidelineScale: nonGuidelineScale,
+      unsafeNonGuidelineSize: charcoalIconSize,
+    } as { name: string } & IconSizing)
+
+    if (!Number.isFinite(size) || size <= 0) {
+      throw new TypeError(
+        `icon size must be a positive finite number, got ${size}`
+      )
     }
 
     const style = `<style>
