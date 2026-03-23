@@ -18,20 +18,16 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
   const isSelected = props.value === ctxValue
   const { children, secondary, ...rest } = props
 
+  const fullWidthClassName = props.contentFullWidth
+    ? 'charcoal-dropdown-selector-menu-fullwidth'
+    : ''
+
   return (
     <MenuItem {...rest} aria-selected={isSelected}>
-      <div
-        className={
-          props.contentFullWidth
-            ? 'charcoal-dropdown-selector-menu-fullwidth'
-            : undefined
-        }
-      >
+      <div className={fullWidthClassName}>
         <div
-          className={`charcoal-dropdown-selector-menu-item-container${
-            props.contentFullWidth
-              ? ' charcoal-dropdown-selector-menu-fullwidth'
-              : ''
+          className={`charcoal-dropdown-selector-menu-item-container ${
+            fullWidthClassName
           }`}
         >
           {isSelected && (
@@ -41,7 +37,7 @@ export default function DropdownMenuItem(props: DropdownMenuItemProps) {
             />
           )}
           <span
-            className={`charcoal-dropdown-selector-menu-item ${props.contentFullWidth ? 'charcoal-dropdown-selector-menu-fullwidth' : undefined}`}
+            className={`charcoal-dropdown-selector-menu-item ${fullWidthClassName}`}
             data-selected={isSelected}
           >
             {children}
