@@ -61,6 +61,10 @@ export {
   type DropdownSelectorProps,
 } from './components/DropdownSelector'
 export {
+  default as MenuItem,
+  type MenuItemProps,
+} from './components/DropdownSelector/MenuItem'
+export {
   default as DropdownMenuItem,
   type DropdownMenuItemProps,
 } from './components/DropdownSelector/DropdownMenuItem'
