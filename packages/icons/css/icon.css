@@ -1,0 +1,5 @@
+.charcoal-icon {
+  display: inline-flex;
+  width: var(--charcoal-icon-ssr-size);
+  height: var(--charcoal-icon-ssr-size);
+}
