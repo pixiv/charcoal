@@ -135,7 +135,6 @@ declare var _default: {
 '24/solid/keyboard': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/lasso.fill': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/lasso': { uri: string, isSetCurrentcolor: boolean };
-'24/solid/layer-mask': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/layer.add': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/layer.image-material': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/layer.merge': { uri: string, isSetCurrentcolor: boolean };
@@ -157,6 +156,7 @@ declare var _default: {
 '24/solid/lock': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/logout': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/manga': { uri: string, isSetCurrentcolor: boolean };
+'24/solid/mask': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/mesh': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/message': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/microphone': { uri: string, isSetCurrentcolor: boolean };
@@ -172,8 +172,9 @@ declare var _default: {
 '24/solid/paste': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/pause': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/pen.add': { uri: string, isSetCurrentcolor: boolean };
+'24/solid/pen.draw': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/pen': { uri: string, isSetCurrentcolor: boolean };
-'24/solid/pencil.text': { uri: string, isSetCurrentcolor: boolean };
+'24/solid/pen.text': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/person.add': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/person.circle': { uri: string, isSetCurrentcolor: boolean };
 '24/solid/persons': { uri: string, isSetCurrentcolor: boolean };
@@ -392,7 +393,6 @@ declare var _default: {
 '24/regular/keyboard': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/lasso.fill': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/lasso': { uri: string, isSetCurrentcolor: boolean };
-'24/regular/layer-mask': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/layer.add': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/layer.image-material': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/layer.merge': { uri: string, isSetCurrentcolor: boolean };
@@ -414,6 +414,7 @@ declare var _default: {
 '24/regular/lock': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/logout': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/manga': { uri: string, isSetCurrentcolor: boolean };
+'24/regular/mask': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/mesh': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/message': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/microphone': { uri: string, isSetCurrentcolor: boolean };
@@ -429,8 +430,9 @@ declare var _default: {
 '24/regular/paste': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/pause': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/pen.add': { uri: string, isSetCurrentcolor: boolean };
+'24/regular/pen.draw': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/pen': { uri: string, isSetCurrentcolor: boolean };
-'24/regular/pencil.text': { uri: string, isSetCurrentcolor: boolean };
+'24/regular/pen.text': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/person.add': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/person.circle': { uri: string, isSetCurrentcolor: boolean };
 '24/regular/persons': { uri: string, isSetCurrentcolor: boolean };

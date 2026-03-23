@@ -1,47 +1,15 @@
-import * as React from 'react'
-import type { SVGProps } from 'react'
-import { Ref, forwardRef } from 'react'
-const SvgColorMixture = (
-  props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>,
-) => (
-  <svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    ref={ref}
-    {...props}
-  >
-    <path
-      d="M4.89 18.41c-2.446-2.377-2.82-6.166-.974-9.034 1.29-2.003 2.85-3.795 4.374-5.626 1.226 1.517 2.633 2.954 3.712 4.577 1.079-1.623 2.462-3.08 3.708-4.577 1.497 1.854 3.083 3.622 4.374 5.627 1.846 2.867 1.472 6.656-.975 9.033-2.027 1.969-5.253 1.724-7.109-.321-1.855 2.045-5.082 2.29-7.11.32z"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      strokeLinejoin="round"
-    />
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M15.685 6.386c-.84.973-1.613 1.885-2.273 2.879a1.693 1.693 0 01-2.821 0c-.653-.983-1.406-1.855-2.234-2.812l-.06-.07C7.22 7.68 6.213 8.938 5.34 10.294c-1.424 2.212-1.119 5.105.73 6.902 1.29 1.251 3.415 1.146 4.676-.244a1.694 1.694 0 012.508 0c1.261 1.39 3.387 1.495 4.675.244 1.85-1.797 2.155-4.69.73-6.902-.875-1.36-1.887-2.595-2.974-3.907z"
-      fill="url(#paint0_linear_23698_16556)"
-    />
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgColorMixture = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path d="M15.715 3a.75.75 0 01.578.278c1.465 1.814 3.101 3.643 4.42 5.693 2.034 3.158 1.63 7.343-1.081 9.976-2.161 2.1-5.466 2.012-7.632.179-2.166 1.833-5.47 1.92-7.632-.179-2.71-2.633-3.115-6.818-1.082-9.976 1.322-2.052 2.92-3.889 4.428-5.7l.057-.062a.75.75 0 011.103.07C9.826 4.456 11 5.708 12 7.035c.995-1.331 2.145-2.577 3.134-3.765A.751.751 0 0115.715 3zm-.017 1.919c-1.097 1.28-2.18 2.483-3.072 3.823a.75.75 0 01-1.249 0c-.9-1.353-1.99-2.518-3.09-3.82-1.339 1.6-2.64 3.151-3.74 4.86-1.66 2.578-1.316 5.97.866 8.09 1.7 1.65 4.438 1.469 6.031-.287l.057-.056a.75.75 0 011.055.056c1.593 1.756 4.332 1.938 6.03.287 2.183-2.12 2.527-5.512.867-8.09-1.105-1.715-2.418-3.239-3.755-4.863z" fill="#1F1F1F"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M15.685 6.386c-.84.973-1.613 1.885-2.273 2.879a1.693 1.693 0 01-2.821 0c-.653-.983-1.406-1.855-2.234-2.812l-.06-.07C7.22 7.68 6.213 8.938 5.34 10.294c-1.424 2.212-1.119 5.105.73 6.902 1.29 1.251 3.415 1.146 4.676-.244a1.694 1.694 0 012.508 0c1.261 1.39 3.387 1.495 4.675.244 1.85-1.797 2.155-4.69.73-6.902-.875-1.36-1.887-2.595-2.974-3.907z" fill="url(#paint0_linear_23698_16556)"/>
     <defs>
-      <linearGradient
-        id="paint0_linear_23698_16556"
-        x1={19.105}
-        y1={8.488}
-        x2={6.604}
-        y2={16.235}
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#fff" />
-        <stop offset={1} />
+      <linearGradient id="paint0_linear_23698_16556" x1={19.105} y1={8.488} x2={6.604} y2={16.235} gradientUnits="userSpaceOnUse">
+        <stop stopColor="#fff"/>
+        <stop offset={1}/>
       </linearGradient>
     </defs>
-  </svg>
-)
-export const IconColorMixtureColor: ReturnType<
-  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
-> = forwardRef(SvgColorMixture)
-export default IconColorMixtureColor
+  </svg>);
+export const IconColorMixtureColor: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgColorMixture);
+export default IconColorMixtureColor;

@@ -1,32 +1,9 @@
-import * as React from 'react'
-import type { SVGProps } from 'react'
-import { Ref, forwardRef } from 'react'
-const SvgClipping = (
-  props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>,
-) => (
-  <svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    ref={ref}
-    {...props}
-  >
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M7.926 4h-1.75a.35.35 0 00-.35.35v3.617a.75.75 0 11-1.5 0V4.35A1.85 1.85 0 016.176 2.5h1.75a.75.75 0 010 1.5zm4.911-1A2.837 2.837 0 0010 5.837v.538a.75.75 0 001.5 0v-.538c0-.738.599-1.337 1.337-1.337h.538a.75.75 0 000-1.5h-.538zm1.85.75a.75.75 0 01.75-.75h1.126a.75.75 0 010 1.5h-1.125a.75.75 0 01-.75-.75zM18.625 3a.75.75 0 000 1.5h.538c.738 0 1.337.599 1.337 1.337v.538a.75.75 0 001.5 0v-.538A2.837 2.837 0 0019.163 3h-.538zm2.625 4.688a.75.75 0 01.75.75v1.124a.75.75 0 01-1.5 0V8.438a.75.75 0 01.75-.75zm0 3.187a.75.75 0 01.75.75v.538A2.837 2.837 0 0119.163 15h-.538a.75.75 0 010-1.5h.538c.738 0 1.337-.599 1.337-1.337v-.538a.75.75 0 01.75-.75zM6.742 9A2.742 2.742 0 004 11.742v6.516A2.742 2.742 0 006.742 21h6.516A2.742 2.742 0 0016 18.258v-6.516A2.742 2.742 0 0013.258 9H6.742zm7.758 5.5v-2.167c0-1.012-.82-1.833-1.833-1.833H10.5v2.167c0 1.012.82 1.833 1.833 1.833H14.5z"
-      fill="currentColor"
-    />
-    <path
-      d="M4.731 8.83L2.676 6.708a.565.565 0 01.406-.957h4.11c.499 0 .753.599.406.957L5.543 8.831a.565.565 0 01-.812 0z"
-      fill="currentColor"
-    />
-  </svg>
-)
-export const IconClippingSolid: ReturnType<
-  typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
-> = forwardRef(SvgClipping)
-export default IconClippingSolid
+import * as React from "react";
+import type { SVGProps } from "react";
+import { Ref, forwardRef } from "react";
+const SvgClipping = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (<svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ref={ref} {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M13.257 9A2.742 2.742 0 0116 11.742v6.516A2.742 2.742 0 0113.258 21H6.742A2.743 2.743 0 014 18.258v-6.516A2.743 2.743 0 016.742 9h6.515zM10.5 12.667c0 1.012.821 1.833 1.833 1.833H14.5v-2.167c0-1.012-.82-1.833-1.833-1.833H10.5v2.167z" fill="#1F1F1F"/>
+    <path d="M21.25 10.875a.75.75 0 01.75.75v.538A2.837 2.837 0 0119.163 15h-.538a.75.75 0 010-1.5h.538c.738 0 1.337-.599 1.337-1.337v-.538a.75.75 0 01.75-.75zM21.25 7.688a.75.75 0 01.75.75v1.124a.75.75 0 01-1.5 0V8.438a.75.75 0 01.75-.75zM7.925 2.5a.75.75 0 010 1.5h-1.75a.35.35 0 00-.35.35v1.4h1.367c.498 0 .753.599.406.957L5.543 8.831a.565.565 0 01-.812 0L2.676 6.707a.564.564 0 01.406-.957h1.244v-1.4a1.85 1.85 0 011.85-1.85h1.75zM13.374 3a.75.75 0 010 1.5h-.538c-.738 0-1.336.599-1.337 1.337v.538a.75.75 0 01-1.5 0v-.538A2.837 2.837 0 0112.837 3h.538zM19.163 3A2.837 2.837 0 0122 5.837v.538a.75.75 0 01-1.5 0v-.538c0-.738-.599-1.337-1.337-1.337h-.538a.75.75 0 010-1.5h.538zM16.562 3a.75.75 0 010 1.5h-1.125a.75.75 0 010-1.5h1.125z" fill="#1F1F1F"/>
+  </svg>);
+export const IconClippingSolid: ReturnType<typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>> = forwardRef(SvgClipping);
+export default IconClippingSolid;
