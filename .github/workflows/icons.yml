@@ -97,5 +97,5 @@ jobs:
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
           GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
-          TARGET_DIR: packages
+          TARGET_DIRS: packages/icons,packages/icon-files
         run: pnpm pullrequest-cli github:pr -c icons -t 'Update icons'

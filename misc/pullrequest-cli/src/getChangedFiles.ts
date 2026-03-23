@@ -3,20 +3,25 @@ import path from 'path'
 import { execp } from './utils.ts'
 
 /**
- * dir 内で変更があったファイル情報を for await で回せるようにするやつ
+ * dirs 内で変更があったファイル情報を for await で回せるようにするやつ
  */
-export async function* getChangedFiles(dir: string) {
-  if (!existsSync(dir))
-    throw new Error(`pullrequest-cli: target directory not found (${dir})`)
+export async function* getChangedFiles(dirs: string[]) {
+  for (const dir of dirs) {
+    if (!existsSync(dir))
+      throw new Error(`pullrequest-cli: target directory not found (${dir})`)
+  }
   const gitStatus = await collectGitStatus()
   for (const [relativePath, status] of gitStatus) {
     const fullpath = path.resolve(process.cwd(), relativePath)
-    if (!fullpath.startsWith(`${dir}/`)) {
+    if (!dirs.some((dir) => fullpath.startsWith(`${dir}/`))) {
       continue
     }
-    if (!existsSync(fullpath))
+    if (status !== 'deleted' && !existsSync(fullpath))
       throw new Error(`pullrequest-cli: could not find file (${fullpath})`)
-    const content = await fs.readFile(fullpath, { encoding: 'utf-8' })
+    const content =
+      status === 'deleted'
+        ? ''
+        : await fs.readFile(fullpath, { encoding: 'utf-8' })
     yield { relativePath, content, status }
   }
 }
