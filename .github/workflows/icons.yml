@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
 
 env:
-  OUTPUT_ROOT_DIR: ../icon-files/
   TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'main' }}
 
 jobs:
@@ -33,17 +32,57 @@ jobs:
       - name: Build icons
         run: pnpm --filter @charcoal-ui/icons-cli run build
 
-      - name: Export icons
+      - name: Export icons 1.0
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          OUTPUT_ROOT_DIR: ../icon-files/
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export
 
-      - name: Optimize icons
+      - name: Optimize icons 1.0
+        env:
+          OUTPUT_ROOT_DIR: ../icon-files/
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ../../misc/icons-cli-denylist
 
-      - name: Generate icon files
+      - name: Generate icon 1.0 files
+        env:
+          OUTPUT_ROOT_DIR: ../icon-files/
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons files:generate
+
+      - name: build icons 1.0 data uri
+        run: pnpm --filter @charcoal-ui/icons-cli build:uri-v1
+
+      - name: build icons 1.0 svgo
+        run: pnpm --filter @charcoal-ui/icons-cli build:react-v1
+
+      - name: build icons 1.0 css
+        run: pnpm --filter @charcoal-ui/icons-cli build:css-v1
+
+      - name: Export icons 2.0
+        env:
+          FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL_V2 }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          OUTPUT_ROOT_DIR: ../icon-files/v2
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export --layout v2
+
+      - name: Optimize icons 2.0
+        env:
+          OUTPUT_ROOT_DIR: ../icon-files/v2
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons svg:optimize --ignoreFile ../../misc/icons-cli-denylist
+
+      - name: Generate icon 2.0 files
+        env:
+          OUTPUT_ROOT_DIR: ../icon-files/v2
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons files:generate
+
+      - name: build icons 2.0 data uri
+        run: pnpm --filter @charcoal-ui/icons-cli build:uri
+
+      - name: build icons 2.0 svgo
+        run: pnpm --filter @charcoal-ui/icons-cli build:react
+
+      - name: build icons 2.0 css
+        run: pnpm --filter @charcoal-ui/icons-cli build:css
 
       - name: Generate github token
         id: generate_token
@@ -52,10 +91,11 @@ jobs:
           app_id: ${{ secrets.CHARCOAL_BOT_APP_ID }}
           private_key: ${{ secrets.CHARCOAL_BOT_PRIVATE_KEY }}
 
-      - name: Create Pull Request for updated icons
+      - name: Create Pull Request
         env:
           GITHUB_ACCESS_TOKEN: ${{ steps.generate_token.outputs.token }}
           GITHUB_REPO_OWNER: pixiv
           GITHUB_REPO_NAME: charcoal
-          GITHUB_DEFAULT_BRANCH: ${{ env.TARGET_BRANCH }}
-        run: pnpm --filter @charcoal-ui/icons-cli cli:icons github:pr
+          GITHUB_DEFAULT_BRANCH: ${{ github.ref_name }}
+          TARGET_DIR: packages
+        run: pnpm pullrequest-cli github:pr -c icons -t 'Update icons'
