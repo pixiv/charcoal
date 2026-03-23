@@ -63,7 +63,7 @@ export {
 export {
   default as MenuItem,
   type MenuItemProps,
-} from "./components/DropdownSelector/MenuItem"
+} from './components/DropdownSelector/MenuItem'
 export {
   default as DropdownMenuItem,
   type DropdownMenuItemProps,
