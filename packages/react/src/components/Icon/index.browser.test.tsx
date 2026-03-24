@@ -16,7 +16,8 @@
  *
  * 両方で同じ期待値が PASS = upgrade 前後でサイズが変わらない = layout shift なし
  */
-import iconCss from '@charcoal-ui/icons-css/icon.css?raw'
+// virtual module: vitest.browser.config.ts の iconCssPlugin で icon.css の中身を返す
+import iconCss from 'virtual:icon-css'
 
 // ---- Custom Elements の upgrade を阻止する ----
 //
