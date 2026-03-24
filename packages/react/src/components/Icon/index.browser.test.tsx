@@ -16,8 +16,13 @@
  *
  * 両方で同じ期待値が PASS = upgrade 前後でサイズが変わらない = layout shift なし
  */
-// virtual module: vitest.browser.config.ts の iconCssPlugin で icon.css の中身を返す
-import iconCss from 'virtual:icon-css'
+// packages/icons/css/icon.css と同じ内容
+// ブラウザ環境のため fs は使えず、virtual module は過剰なので直接定義する
+const iconCss = `.charcoal-icon {
+  display: inline-flex;
+  width: var(--charcoal-icon-ssr-size);
+  height: var(--charcoal-icon-ssr-size);
+}`
 
 // ---- Custom Elements の upgrade を阻止する ----
 //
