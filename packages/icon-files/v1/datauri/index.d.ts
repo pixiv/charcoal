@@ -28,6 +28,7 @@ declare var _default: {
 'Inline/Remove': { uri: string, isSetCurrentcolor: boolean };
 'Inline/Smile': { uri: string, isSetCurrentcolor: boolean };
 'Inline/SmileOn': { uri: string, isSetCurrentcolor: boolean };
+'Inline/Trash': { uri: string, isSetCurrentcolor: boolean };
 'Inline/Users': { uri: string, isSetCurrentcolor: boolean };
 'Inline/View': { uri: string, isSetCurrentcolor: boolean };
 'Inline/ViewOutline': { uri: string, isSetCurrentcolor: boolean };
@@ -90,6 +91,7 @@ declare var _default: {
 '24/Binet': { uri: string, isSetCurrentcolor: boolean };
 '24/Body': { uri: string, isSetCurrentcolor: boolean };
 '24/BodyEdit': { uri: string, isSetCurrentcolor: boolean };
+'24/Bold': { uri: string, isSetCurrentcolor: boolean };
 '24/Book': { uri: string, isSetCurrentcolor: boolean };
 '24/BringBackward': { uri: string, isSetCurrentcolor: boolean };
 '24/BringForward': { uri: string, isSetCurrentcolor: boolean };
@@ -121,6 +123,8 @@ declare var _default: {
 '24/Duplicate': { uri: string, isSetCurrentcolor: boolean };
 '24/Dust': { uri: string, isSetCurrentcolor: boolean };
 '24/Emoji': { uri: string, isSetCurrentcolor: boolean };
+'24/EmphasisMark': { uri: string, isSetCurrentcolor: boolean };
+'24/EmphasisMarkJp': { uri: string, isSetCurrentcolor: boolean };
 '24/Error': { uri: string, isSetCurrentcolor: boolean };
 '24/ErrorOctagon': { uri: string, isSetCurrentcolor: boolean };
 '24/Events': { uri: string, isSetCurrentcolor: boolean };
@@ -165,6 +169,7 @@ declare var _default: {
 '24/Info': { uri: string, isSetCurrentcolor: boolean };
 '24/Invalid': { uri: string, isSetCurrentcolor: boolean };
 '24/Invoice': { uri: string, isSetCurrentcolor: boolean };
+'24/Italic': { uri: string, isSetCurrentcolor: boolean };
 '24/ItemRemove': { uri: string, isSetCurrentcolor: boolean };
 '24/LatestWorks': { uri: string, isSetCurrentcolor: boolean };
 '24/LikeOff': { uri: string, isSetCurrentcolor: boolean };
@@ -173,6 +178,7 @@ declare var _default: {
 '24/List': { uri: string, isSetCurrentcolor: boolean };
 '24/LockLock': { uri: string, isSetCurrentcolor: boolean };
 '24/LockUnlock': { uri: string, isSetCurrentcolor: boolean };
+'24/Login': { uri: string, isSetCurrentcolor: boolean };
 '24/Logout': { uri: string, isSetCurrentcolor: boolean };
 '24/Manga': { uri: string, isSetCurrentcolor: boolean };
 '24/Menu': { uri: string, isSetCurrentcolor: boolean };
@@ -280,6 +286,7 @@ declare var _default: {
 '16/Search': { uri: string, isSetCurrentcolor: boolean };
 '16/Smile': { uri: string, isSetCurrentcolor: boolean };
 '16/Speaker': { uri: string, isSetCurrentcolor: boolean };
+'16/Trash': { uri: string, isSetCurrentcolor: boolean };
 '16/Up': { uri: string, isSetCurrentcolor: boolean };
 '16/View': { uri: string, isSetCurrentcolor: boolean };
 '16/Warning': { uri: string, isSetCurrentcolor: boolean }}
