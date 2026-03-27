@@ -22,6 +22,10 @@ exports[`tailwind.config.js > defaultConfig 1`] = `
       "config": undefined,
       "handler": [Function],
     },
+    {
+      "config": undefined,
+      "handler": [Function],
+    },
   ],
   "theme": {
     "borderColor": {
@@ -5717,6 +5721,7 @@ exports[`tailwind.config.js > list of classes 1`] = `
   "typography-20",
   "typography-32",
   "preserve-half-leading",
+  "charcoal-focus-ring",
   "bg-call-to-action-top",
   "bg-call-to-action-top-disabled",
   "bg-call-to-action-top-hover",

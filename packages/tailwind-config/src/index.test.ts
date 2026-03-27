@@ -55,6 +55,19 @@ describe('tailwind.config.js', () => {
     expect(styles).toContainEqual(expect.stringContaining('::after'))
   })
 
+  test('focus ring plugin', () => {
+    const styles = result.getStylesByClassName('charcoal-focus-ring')
+    const css = styles?.join('\n') ?? ''
+
+    expect(styles).toBeDefined()
+    expect(css).toContain(':focus-visible')
+    expect(css).toContain('outline: none')
+    expect(css).toContain(
+      'box-shadow: 0 0 0 4px var(--charcoal-color-border-focus-legacy, rgba(0, 150, 250, 0.32))',
+    )
+    expect(css).toContain('transition: 0.2s box-shadow')
+  })
+
   test('gradient plugin', () => {
     const varName = '--tailwind-gradient-surface5-left-hover'
 
