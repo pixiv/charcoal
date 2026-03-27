@@ -45,6 +45,12 @@ function parseV2IconName(name: string) {
 
 type ExportFormat = 'svg' | 'pdf'
 
+function sleep(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
 interface Component {
   id: string
   name: string
@@ -60,8 +66,10 @@ export class FigmaFileClient {
   private readonly exportFormat: ExportFormat
   private readonly client: Figma.ClientInterface
   private readonly layoutVersion: FigmaIconFileLayoutVersion
+  private readonly requestSleepMs?: number
 
   private components: Record<string, Component> = {}
+  private hasRequested = false
 
   static async runFromCli(
     url: string,
@@ -69,8 +77,15 @@ export class FigmaFileClient {
     outputRootDir: string,
     exportFormat: ExportFormat,
     layoutVersion: FigmaIconFileLayoutVersion = 'v1',
+    requestSleepMs?: number,
   ) {
-    const client = new this(url, token, exportFormat, layoutVersion)
+    const client = new this(
+      url,
+      token,
+      exportFormat,
+      layoutVersion,
+      requestSleepMs,
+    )
 
     const outputDir = path.join(process.cwd(), outputRootDir, exportFormat)
 
@@ -87,6 +102,7 @@ export class FigmaFileClient {
     personalAccessToken: string,
     exportFormat: ExportFormat,
     layoutVersion: FigmaIconFileLayoutVersion,
+    requestSleepMs?: number,
   ) {
     this.client = Figma.Client({
       personalAccessToken,
@@ -98,6 +114,7 @@ export class FigmaFileClient {
 
     this.exportFormat = exportFormat
     this.layoutVersion = layoutVersion
+    this.requestSleepMs = requestSleepMs
   }
 
   async loadSvg(outputDir: string) {
@@ -140,6 +157,7 @@ export class FigmaFileClient {
   private async loadImageUrls() {
     console.log('Getting export urls')
 
+    await this.sleepBeforeRequest()
     const { data } = await this.client.fileImages(this.fileId, {
       format: this.exportFormat,
       ids: Object.keys(this.components),
@@ -153,44 +171,74 @@ export class FigmaFileClient {
   }
 
   private async downloadImages(outputDir: string) {
+    const components = Object.values(this.components)
+    const shouldSleepBetweenRequests = (this.requestSleepMs ?? 0) > 0
+
+    const downloadImage = async (component: Component) => {
+      if (component.image === undefined) {
+        return
+      }
+
+      const filename = component.variant
+        ? `${parseV2IconName(component.variant)}/${component.name}.${this.exportFormat}`
+        : `${filenamify(component.name)}.${this.exportFormat}`
+      const fullname = path.join(outputDir, filename)
+      const dirname = path.dirname(fullname)
+
+      if (DRY_RUN) {
+        console.log(`[DRY_RUN] skip: ${filename} => ✅ writing...`)
+        return
+      }
+
+      await this.sleepBeforeRequest()
+      const response = await got.get(
+        component.image,
+        this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {},
+      )
+
+      await ensureDir(dirname)
+
+      console.log(`found: ${filename} => ✅ writing...`)
+      await writeFile(fullname, response.body, 'utf8')
+    }
+
+    // sleep指定時は直列実行
+    if (shouldSleepBetweenRequests) {
+      for (const component of components) {
+        await downloadImage(component)
+      }
+
+      return
+    }
+
+    // sleep未指定時は並列実行
     return concurrently(
-      Object.values(this.components).map((component) => async () => {
-        if (component.image === undefined) {
-          return
-        }
-
-        const filename = component.variant
-          ? `${parseV2IconName(component.variant)}/${component.name}.${
-              this.exportFormat
-            }`
-          : `${filenamify(component.name)}.${this.exportFormat}`
-        const fullname = path.join(outputDir, filename)
-        const dirname = path.dirname(fullname)
-
-        if (DRY_RUN) {
-          console.log(`[DRY_RUN] skip: ${filename} => ✅ writing...`)
-          return
-        }
-
-        const response = await got.get(
-          component.image,
-          this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {},
-        )
-
-        await ensureDir(dirname)
-
-        console.log(`found: ${filename} => ✅ writing...`)
-        await writeFile(fullname, response.body, 'utf8')
-      }),
+      components.map((component) => async () => downloadImage(component)),
     )
   }
 
   private async getFile() {
     console.log('Processing response')
 
+    await this.sleepBeforeRequest()
     const { data } = await this.client.file(this.fileId.toString())
 
     return data
+  }
+
+  private async sleepBeforeRequest() {
+    const requestSleepMs = this.requestSleepMs ?? 0
+
+    if (requestSleepMs <= 0) {
+      return
+    }
+
+    if (this.hasRequested) {
+      console.log(`Sleeping ${requestSleepMs}ms before next export request`)
+      await sleep(requestSleepMs)
+    }
+
+    this.hasRequested = true
   }
 
   private findComponentsRecursively(child: Figma.Node) {
