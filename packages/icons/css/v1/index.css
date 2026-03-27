@@ -1,3 +1,4 @@
+
 .charcoal-icon-v1-add {
   display: inline-block;
   width: 1em;
@@ -7,6 +8,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-add-16 {
   display: inline-block;
@@ -18,6 +20,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-add-Inline {
   display: inline-block;
   width: 1em;
@@ -27,6 +30,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-addimage {
   display: inline-block;
@@ -38,6 +42,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-addmodel {
   display: inline-block;
   width: 1em;
@@ -47,6 +52,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-addpeople {
   display: inline-block;
@@ -58,6 +64,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-addrubi {
   display: inline-block;
   width: 1em;
@@ -67,6 +74,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-addtext {
   display: inline-block;
@@ -78,6 +86,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-alart {
   display: inline-block;
   width: 1em;
@@ -87,6 +96,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-announcement {
   display: inline-block;
@@ -98,6 +108,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-ar {
   display: inline-block;
   width: 1em;
@@ -107,6 +118,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-archive {
   display: inline-block;
@@ -118,6 +130,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-archive-16 {
   display: inline-block;
   width: 1em;
@@ -127,6 +140,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-arrowdown {
   display: inline-block;
@@ -138,6 +152,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-arrowdown-16 {
   display: inline-block;
   width: 1em;
@@ -147,6 +162,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-arrowup {
   display: inline-block;
@@ -158,6 +174,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-artwork-16 {
   display: inline-block;
   width: 1em;
@@ -167,6 +184,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-back-16 {
   display: inline-block;
@@ -178,6 +196,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-back-Inline {
   display: inline-block;
   width: 1em;
@@ -187,6 +206,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-binet {
   display: inline-block;
@@ -198,6 +218,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-body {
   display: inline-block;
   width: 1em;
@@ -207,6 +228,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-bodyedit {
   display: inline-block;
@@ -218,6 +240,18 @@
   aspect-ratio: 1/1;
 }
 
+
+.charcoal-icon-v1-bold {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M13%203.75a4.75%204.75%200%20013.639%207.8A4.75%204.75%200%200114%2020.25H8c-.69%200-1.25-.56-1.25-1.25V5c0-.69.56-1.25%201.25-1.25h5zm-3.75%2014H14a2.25%202.25%200%20000-4.5H9.25v4.5zm0-7H13a2.25%202.25%200%20000-4.5H9.25v4.5z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-book {
   display: inline-block;
   width: 1em;
@@ -227,6 +261,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-book-16 {
   display: inline-block;
@@ -238,6 +273,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-bookmarkoff-16 {
   display: inline-block;
   width: 1em;
@@ -247,6 +283,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-bookmarkoff-32 {
   display: inline-block;
@@ -258,6 +295,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-bookmarkoff-Inline {
   display: inline-block;
   width: 1em;
@@ -267,6 +305,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-bookmarkon-16 {
   display: inline-block;
@@ -278,6 +317,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-bookmarkon-32 {
   display: inline-block;
   width: 1em;
@@ -287,6 +327,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-bookmarkon-Inline {
   display: inline-block;
@@ -298,6 +339,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-breadcrumbs-Inline {
   display: inline-block;
   width: 1em;
@@ -307,6 +349,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-bringbackward {
   display: inline-block;
@@ -318,6 +361,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-bringforward {
   display: inline-block;
   width: 1em;
@@ -327,6 +371,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-calendar {
   display: inline-block;
@@ -338,6 +383,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-camera {
   display: inline-block;
   width: 1em;
@@ -347,6 +393,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-camera-32 {
   display: inline-block;
@@ -358,6 +405,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-cameravideo {
   display: inline-block;
   width: 1em;
@@ -367,6 +415,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-cart {
   display: inline-block;
@@ -378,6 +427,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-changecharacter {
   display: inline-block;
   width: 1em;
@@ -387,6 +437,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-chatbot {
   display: inline-block;
@@ -398,6 +449,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-check {
   display: inline-block;
   width: 1em;
@@ -407,6 +459,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-check-16 {
   display: inline-block;
@@ -418,6 +471,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-check-Inline {
   display: inline-block;
   width: 1em;
@@ -427,6 +481,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-chromaticaberration {
   display: inline-block;
@@ -438,6 +493,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-click {
   display: inline-block;
   width: 1em;
@@ -447,6 +503,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-close {
   display: inline-block;
@@ -458,6 +515,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-close-32 {
   display: inline-block;
   width: 1em;
@@ -467,6 +525,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-codes {
   display: inline-block;
@@ -478,6 +537,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-collapse {
   display: inline-block;
   width: 1em;
@@ -487,6 +547,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-collapse-32 {
   display: inline-block;
@@ -498,6 +559,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-collection {
   display: inline-block;
   width: 1em;
@@ -507,6 +569,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-comment-16 {
   display: inline-block;
@@ -518,6 +581,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-comment-Inline {
   display: inline-block;
   width: 1em;
@@ -527,6 +591,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-commentfill {
   display: inline-block;
@@ -538,6 +603,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-commentoff-32 {
   display: inline-block;
   width: 1em;
@@ -547,6 +613,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-commenton-32 {
   display: inline-block;
@@ -558,6 +625,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-commentoutline {
   display: inline-block;
   width: 1em;
@@ -567,6 +635,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-contest {
   display: inline-block;
@@ -578,6 +647,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-contextmenu-Inline {
   display: inline-block;
   width: 1em;
@@ -587,6 +657,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-contrast {
   display: inline-block;
@@ -598,6 +669,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-copy {
   display: inline-block;
   width: 1em;
@@ -607,6 +679,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-delete-32 {
   display: inline-block;
@@ -618,6 +691,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-description {
   display: inline-block;
   width: 1em;
@@ -627,6 +701,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-devicerotation {
   display: inline-block;
@@ -638,6 +713,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-discovery {
   display: inline-block;
   width: 1em;
@@ -647,6 +723,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-dot {
   display: inline-block;
@@ -658,6 +735,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-dot-16 {
   display: inline-block;
   width: 1em;
@@ -667,6 +745,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-dot-32 {
   display: inline-block;
@@ -678,6 +757,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-dotalt {
   display: inline-block;
   width: 1em;
@@ -687,6 +767,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-down {
   display: inline-block;
@@ -698,6 +779,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-down-16 {
   display: inline-block;
   width: 1em;
@@ -707,6 +789,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-downloadalt {
   display: inline-block;
@@ -718,6 +801,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-duplicate {
   display: inline-block;
   width: 1em;
@@ -727,6 +811,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-dust {
   display: inline-block;
@@ -738,6 +823,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-edit-32 {
   display: inline-block;
   width: 1em;
@@ -747,6 +833,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-emoji {
   display: inline-block;
@@ -758,6 +845,29 @@
   aspect-ratio: 1/1;
 }
 
+
+.charcoal-icon-v1-emphasismark {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12%206a1%201%200%2001.934.64l5%2013a1%201%200%2001-1.867.72L14.775%2017H9.226l-1.292%203.36a1%201%200%2001-1.867-.72l5-13%20.066-.137A1%201%200%200112.001%206zm-2.004%209h4.01L12%209.786%209.995%2015z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20d%3D%22M12%201a2%202%200%20110%204%202%202%200%20010-4z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
+.charcoal-icon-v1-emphasismarkjp {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9.858%206.481c.553%200%201%20.45%201%201.006%200%20.25.002.493.003.729h6.782c.552%200%201%20.45%201%201.006%200%20.555-.448%201.005-1%201.005h-6.764c.006.353.013.686.021%201.001.46-.059.952-.091%201.478-.091%202.85%200%204.584.87%205.572%202.095.958%201.186%201.055%202.513%201.055%203.11%200%202.646-2.456%204.658-5.629%204.658-.552%200-1-.45-1-1.006%200-.555.448-1.006%201-1.006%202.436%200%203.629-1.447%203.629-2.645%200-.409-.073-1.182-.607-1.844-.313-.387-.848-.813-1.792-1.082-.288.97-.84%202.406-1.696%203.694-.996%201.502-2.569%203.044-4.799%203.044-1.038%200-1.859-.401-2.4-1.061-.516-.63-.71-1.409-.711-2.09%200-.68.237-2.138%201.307-3.447.61-.745%201.458-1.4%202.607-1.842-.014-.457-.025-.952-.034-1.488H6.229c-.553%200-1-.45-1-1.005%200-.556.447-1.006%201-1.006H8.86c0-.237-.003-.48-.003-.729%200-.555.448-1.005%201-1.006zm-.84%207.395a3.96%203.96%200%2000-1.167.959c-.712.87-.851%201.843-.851%202.17%200%20.324.097.617.254.809.132.16.368.33.857.33.582%200%201.123-.194%201.625-.535a5.109%205.109%200%2001-.212-.527c-.146-.433-.266-.965-.362-1.696-.055-.421-.103-.917-.144-1.51zm3.36-.728c-.515%200-.98.037-1.398.1.045.782.102%201.39.165%201.874.044.331.09.597.138.814.616-.943%201.052-1.995%201.312-2.784-.071-.001-.144-.004-.217-.004z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20d%3D%22M9.906%201.042a.593.593%200%2001.388-.017l.237.09c1.423.52%202.784%201.743%203.668%202.993l.148.192c.25.32.343.703.216%201.083-.124.379-.459.725-.887.94-.429.216-.904.278-1.28.15-.38-.125-.627-.43-.732-.825l-.06-.225c-.302-1.28-.757-2.326-1.722-3.27A6.756%206.756%200%20009.722%202a.602.602%200%2001-.173-.35.566.566%200%2001.062-.373.56.56%200%2001.295-.235z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-error {
   display: inline-block;
   width: 1em;
@@ -767,6 +877,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-error-16 {
   display: inline-block;
@@ -778,6 +889,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-erroroctagon {
   display: inline-block;
   width: 1em;
@@ -787,6 +899,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-events {
   display: inline-block;
@@ -798,6 +911,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-expand {
   display: inline-block;
   width: 1em;
@@ -807,6 +921,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-expand-32 {
   display: inline-block;
@@ -818,6 +933,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-external-Inline {
   display: inline-block;
   width: 1em;
@@ -827,6 +943,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-faceedit {
   display: inline-block;
@@ -838,6 +955,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-fashion {
   display: inline-block;
   width: 1em;
@@ -847,6 +965,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-feed {
   display: inline-block;
@@ -858,6 +977,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-file {
   display: inline-block;
   width: 1em;
@@ -867,6 +987,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-filter {
   display: inline-block;
@@ -878,6 +999,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-filter-16 {
   display: inline-block;
   width: 1em;
@@ -887,6 +1009,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-filter-Inline {
   display: inline-block;
@@ -898,6 +1021,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-flare {
   display: inline-block;
   width: 1em;
@@ -907,6 +1031,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-folder-Inline {
   display: inline-block;
@@ -918,6 +1043,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-formataligncenter {
   display: inline-block;
   width: 1em;
@@ -927,6 +1053,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-formatalignjustified {
   display: inline-block;
@@ -938,6 +1065,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-formatalignleft {
   display: inline-block;
   width: 1em;
@@ -947,6 +1075,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-formatalignright {
   display: inline-block;
@@ -958,6 +1087,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-formatcolorfill {
   display: inline-block;
   width: 1em;
@@ -967,6 +1097,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-formatcolorfillnocolor {
   display: inline-block;
@@ -978,6 +1109,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-formatfontfamily {
   display: inline-block;
   width: 1em;
@@ -987,6 +1119,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-formatfontsize {
   display: inline-block;
@@ -998,6 +1131,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-formatletterspacing {
   display: inline-block;
   width: 1em;
@@ -1007,6 +1141,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-formatlinespacing {
   display: inline-block;
@@ -1018,6 +1153,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-fov {
   display: inline-block;
   width: 1em;
@@ -1027,6 +1163,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-frameeffect {
   display: inline-block;
@@ -1038,6 +1175,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-framesize {
   display: inline-block;
   width: 1em;
@@ -1047,6 +1185,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-gift {
   display: inline-block;
@@ -1058,6 +1197,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-gift-32 {
   display: inline-block;
   width: 1em;
@@ -1067,6 +1207,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-glow {
   display: inline-block;
@@ -1078,6 +1219,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-groups {
   display: inline-block;
   width: 1em;
@@ -1087,6 +1229,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-hairedit {
   display: inline-block;
@@ -1098,6 +1241,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-hashtag {
   display: inline-block;
   width: 1em;
@@ -1107,6 +1251,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-hide {
   display: inline-block;
@@ -1118,6 +1263,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-hightlighttext {
   display: inline-block;
   width: 1em;
@@ -1127,6 +1273,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-home {
   display: inline-block;
@@ -1138,6 +1285,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-home-32 {
   display: inline-block;
   width: 1em;
@@ -1147,6 +1295,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-horizontalwriting-32 {
   display: inline-block;
@@ -1158,6 +1307,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-hue {
   display: inline-block;
   width: 1em;
@@ -1167,6 +1317,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-idea {
   display: inline-block;
@@ -1178,6 +1329,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-image {
   display: inline-block;
   width: 1em;
@@ -1187,6 +1339,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-imagealt {
   display: inline-block;
@@ -1198,6 +1351,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-imagehidden {
   display: inline-block;
   width: 1em;
@@ -1207,6 +1361,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-imagehidden-32 {
   display: inline-block;
@@ -1218,6 +1373,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-imagereplace {
   display: inline-block;
   width: 1em;
@@ -1227,6 +1383,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-imageresponse-16 {
   display: inline-block;
@@ -1238,6 +1395,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-imageresponse-Inline {
   display: inline-block;
   width: 1em;
@@ -1247,6 +1405,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-images {
   display: inline-block;
@@ -1258,6 +1417,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-images-Inline {
   display: inline-block;
   width: 1em;
@@ -1267,6 +1427,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-imgcontain {
   display: inline-block;
@@ -1278,6 +1439,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-imgcover {
   display: inline-block;
   width: 1em;
@@ -1287,6 +1449,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-index {
   display: inline-block;
@@ -1298,6 +1461,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-index-32 {
   display: inline-block;
   width: 1em;
@@ -1307,6 +1471,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-info {
   display: inline-block;
@@ -1318,6 +1483,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-info-16 {
   display: inline-block;
   width: 1em;
@@ -1327,6 +1493,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-invalid {
   display: inline-block;
@@ -1338,6 +1505,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-invoice {
   display: inline-block;
   width: 1em;
@@ -1347,6 +1515,18 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
+
+.charcoal-icon-v1-italic {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16.5%204a1%201%200%20110%202h-1.745l-3.429%2012H12.5a1%201%200%20110%202h-5a1%201%200%20110-2h1.745l3.429-12H11.5a1%201%200%20110-2h5z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
 
 .charcoal-icon-v1-itemremove {
   display: inline-block;
@@ -1358,6 +1538,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-latest-Inline {
   display: inline-block;
   width: 1em;
@@ -1367,6 +1548,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-latestworks {
   display: inline-block;
@@ -1378,6 +1560,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-like-16 {
   display: inline-block;
   width: 1em;
@@ -1387,6 +1570,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-like-Inline {
   display: inline-block;
@@ -1398,6 +1582,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-likeoff {
   display: inline-block;
   width: 1em;
@@ -1407,6 +1592,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-likeoff-32 {
   display: inline-block;
@@ -1418,6 +1604,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-likeoff-Inline {
   display: inline-block;
   width: 1em;
@@ -1427,6 +1614,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-likeon {
   display: inline-block;
@@ -1438,6 +1626,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-likeon-32 {
   display: inline-block;
   width: 1em;
@@ -1447,6 +1636,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-likeonprivate-32 {
   display: inline-block;
@@ -1458,6 +1648,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-link {
   display: inline-block;
   width: 1em;
@@ -1467,6 +1658,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-list {
   display: inline-block;
@@ -1478,6 +1670,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-list-Inline {
   display: inline-block;
   width: 1em;
@@ -1487,6 +1680,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-location-Inline {
   display: inline-block;
@@ -1498,6 +1692,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-lock-Inline {
   display: inline-block;
   width: 1em;
@@ -1507,6 +1702,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-locklock {
   display: inline-block;
@@ -1518,6 +1714,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-lockunlock {
   display: inline-block;
   width: 1em;
@@ -1527,6 +1724,18 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
+
+.charcoal-icon-v1-login {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9%203a1%201%200%2000-1%201v1a1%201%200%20102%200h6.764l-2.211%201.105A1%201%200%200014%207v10h-4a1%201%200%2010-2%200v1a1%201%200%20001%201h5v2a1%201%200%20001.447.894l6-3A1%201%200%200022%2018V4a1%201%200%2000-1-1H9zm11%2014.382l-4%202V7.618l4-2v11.764z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20d%3D%22M7.707%207.293a1%201%200%2010-1.414%201.414L7.586%2010H3a1%201%200%20000%202h4.586l-1.293%201.293a1%201%200%20001.414%201.414l3-3a1%201%200%20000-1.414l-3-3z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
 
 .charcoal-icon-v1-logout {
   display: inline-block;
@@ -1538,6 +1747,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-manga {
   display: inline-block;
   width: 1em;
@@ -1547,6 +1757,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-menu {
   display: inline-block;
@@ -1558,6 +1769,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-menu-16 {
   display: inline-block;
   width: 1em;
@@ -1567,6 +1779,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-message {
   display: inline-block;
@@ -1578,6 +1791,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-message-32 {
   display: inline-block;
   width: 1em;
@@ -1587,6 +1801,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-microphone {
   display: inline-block;
@@ -1598,6 +1813,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-mobilephone {
   display: inline-block;
   width: 1em;
@@ -1607,6 +1823,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-more-16 {
   display: inline-block;
@@ -1618,6 +1835,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-more-Inline {
   display: inline-block;
   width: 1em;
@@ -1627,6 +1845,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-move1 {
   display: inline-block;
@@ -1638,6 +1857,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-multiselect {
   display: inline-block;
   width: 1em;
@@ -1647,6 +1867,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-multiselect-Inline {
   display: inline-block;
@@ -1658,6 +1879,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-next {
   display: inline-block;
   width: 1em;
@@ -1667,6 +1889,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-next-32 {
   display: inline-block;
@@ -1678,6 +1901,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-nextworks-16 {
   display: inline-block;
   width: 1em;
@@ -1687,6 +1911,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-nextworks-Inline {
   display: inline-block;
@@ -1698,6 +1923,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-noimage {
   display: inline-block;
   width: 1em;
@@ -1707,6 +1933,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-notification {
   display: inline-block;
@@ -1718,6 +1945,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-notification-32 {
   display: inline-block;
   width: 1em;
@@ -1727,6 +1955,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-notificationoff {
   display: inline-block;
@@ -1738,6 +1967,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-notificationoff-32 {
   display: inline-block;
   width: 1em;
@@ -1747,6 +1977,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-novels {
   display: inline-block;
@@ -1758,6 +1989,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-novelviewersettings-32 {
   display: inline-block;
   width: 1em;
@@ -1767,6 +1999,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-openinnew {
   display: inline-block;
@@ -1778,6 +2011,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-openinnew-Inline {
   display: inline-block;
   width: 1em;
@@ -1787,6 +2021,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-options {
   display: inline-block;
@@ -1798,6 +2033,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-optionsalt {
   display: inline-block;
   width: 1em;
@@ -1807,6 +2043,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-overlay {
   display: inline-block;
@@ -1818,6 +2055,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-palette {
   display: inline-block;
   width: 1em;
@@ -1827,6 +2065,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pan-32 {
   display: inline-block;
@@ -1838,6 +2077,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-pause {
   display: inline-block;
   width: 1em;
@@ -1847,6 +2087,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pausealt {
   display: inline-block;
@@ -1858,6 +2099,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-pencil {
   display: inline-block;
   width: 1em;
@@ -1867,6 +2109,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pencil-16 {
   display: inline-block;
@@ -1878,6 +2121,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-pencil-Inline {
   display: inline-block;
   width: 1em;
@@ -1887,6 +2131,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-penciladd {
   display: inline-block;
@@ -1898,6 +2143,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-pencildraw {
   display: inline-block;
   width: 1em;
@@ -1907,6 +2153,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pencillive {
   display: inline-block;
@@ -1918,6 +2165,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-penciltext {
   display: inline-block;
   width: 1em;
@@ -1927,6 +2175,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-person {
   display: inline-block;
@@ -1938,6 +2187,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-play {
   display: inline-block;
   width: 1em;
@@ -1947,6 +2197,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pose {
   display: inline-block;
@@ -1958,6 +2209,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-prev {
   display: inline-block;
   width: 1em;
@@ -1967,6 +2219,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-prev-32 {
   display: inline-block;
@@ -1978,6 +2231,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-projects {
   display: inline-block;
   width: 1em;
@@ -1987,6 +2241,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pulldown {
   display: inline-block;
@@ -1998,6 +2253,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-pulldown-32 {
   display: inline-block;
   width: 1em;
@@ -2007,6 +2263,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-pullup {
   display: inline-block;
@@ -2018,6 +2275,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-pullup-32 {
   display: inline-block;
   width: 1em;
@@ -2027,6 +2285,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-question {
   display: inline-block;
@@ -2038,6 +2297,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-question-16 {
   display: inline-block;
   width: 1em;
@@ -2047,6 +2307,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-questionoutline {
   display: inline-block;
@@ -2058,6 +2319,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-ranking {
   display: inline-block;
   width: 1em;
@@ -2067,6 +2329,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-ranking-16 {
   display: inline-block;
@@ -2078,6 +2341,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-readhorizontalleft {
   display: inline-block;
   width: 1em;
@@ -2087,6 +2351,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-readhorizontalleft-32 {
   display: inline-block;
@@ -2098,6 +2363,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-readhorizontalright {
   display: inline-block;
   width: 1em;
@@ -2107,6 +2373,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-readhorizontalright-32 {
   display: inline-block;
@@ -2118,6 +2385,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-readvertical {
   display: inline-block;
   width: 1em;
@@ -2127,6 +2395,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-readvertical-32 {
   display: inline-block;
@@ -2138,6 +2407,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-redo {
   display: inline-block;
   width: 1em;
@@ -2147,6 +2417,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-redo-32 {
   display: inline-block;
@@ -2158,6 +2429,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-reload {
   display: inline-block;
   width: 1em;
@@ -2167,6 +2439,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-reloadloop {
   display: inline-block;
@@ -2178,6 +2451,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-remove-16 {
   display: inline-block;
   width: 1em;
@@ -2187,6 +2461,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-remove-Inline {
   display: inline-block;
@@ -2198,6 +2473,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-reorder {
   display: inline-block;
   width: 1em;
@@ -2207,6 +2483,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-reply {
   display: inline-block;
@@ -2218,6 +2495,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-roll {
   display: inline-block;
   width: 1em;
@@ -2227,6 +2505,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-rollhorizontal-32 {
   display: inline-block;
@@ -2238,6 +2517,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-rollvertical-32 {
   display: inline-block;
   width: 1em;
@@ -2247,6 +2527,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-rotate90degreesc {
   display: inline-block;
@@ -2258,6 +2539,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-rotate90degreescc {
   display: inline-block;
   width: 1em;
@@ -2267,6 +2549,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-rotateright {
   display: inline-block;
@@ -2278,6 +2561,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-sansserif-32 {
   display: inline-block;
   width: 1em;
@@ -2287,6 +2571,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-saturation {
   display: inline-block;
@@ -2298,6 +2583,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-save {
   display: inline-block;
   width: 1em;
@@ -2307,6 +2593,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-search {
   display: inline-block;
@@ -2318,6 +2605,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-search-16 {
   display: inline-block;
   width: 1em;
@@ -2327,6 +2615,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-send {
   display: inline-block;
@@ -2338,6 +2627,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-serif-32 {
   display: inline-block;
   width: 1em;
@@ -2347,6 +2637,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-services {
   display: inline-block;
@@ -2358,6 +2649,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-set {
   display: inline-block;
   width: 1em;
@@ -2367,6 +2659,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-settings {
   display: inline-block;
@@ -2378,6 +2671,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-shareandroid {
   display: inline-block;
   width: 1em;
@@ -2387,6 +2681,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-shareandroid-32 {
   display: inline-block;
@@ -2398,6 +2693,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-shareios {
   display: inline-block;
   width: 1em;
@@ -2407,6 +2703,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-shareios-32 {
   display: inline-block;
@@ -2418,6 +2715,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-shopping {
   display: inline-block;
   width: 1em;
@@ -2427,6 +2725,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-shopping-32 {
   display: inline-block;
@@ -2438,6 +2737,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-show {
   display: inline-block;
   width: 1em;
@@ -2447,6 +2747,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-showoutline {
   display: inline-block;
@@ -2458,6 +2759,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-shutter {
   display: inline-block;
   width: 1em;
@@ -2467,6 +2769,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-smile-16 {
   display: inline-block;
@@ -2478,6 +2781,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-smile-Inline {
   display: inline-block;
   width: 1em;
@@ -2487,6 +2791,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-smileon-Inline {
   display: inline-block;
@@ -2498,6 +2803,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-speaker-16 {
   display: inline-block;
   width: 1em;
@@ -2507,6 +2813,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-star {
   display: inline-block;
@@ -2518,6 +2825,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-subtract {
   display: inline-block;
   width: 1em;
@@ -2527,6 +2835,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-sun {
   display: inline-block;
@@ -2538,6 +2847,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-temperature {
   display: inline-block;
   width: 1em;
@@ -2547,6 +2857,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-text {
   display: inline-block;
@@ -2558,6 +2869,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-thread {
   display: inline-block;
   width: 1em;
@@ -2567,6 +2879,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-trash {
   display: inline-block;
@@ -2578,6 +2891,29 @@
   aspect-ratio: 1/1;
 }
 
+
+.charcoal-icon-v1-trash-16 {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4%207a1%201%200%20011-1h6a1%201%200%20011%201v6a1%201%200%2001-1%201H5a1%201%200%2001-1-1V7zM10%203h1.5a1%201%200%20110%202h-7a1%201%200%20010-2H6V2h4v1z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
+.charcoal-icon-v1-trash-Inline {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2210%22%20height%3D%2212%22%20viewBox%3D%220%200%2010%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8%204a1%201%200%20011%201v6a1%201%200%2001-1%201H2a1%201%200%2001-1-1V5a1%201%200%20011-1h6zM7%201h1.5a1%201%200%20110%202h-7a1%201%200%20010-2H3V0h4v1z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-trashalt {
   display: inline-block;
   width: 1em;
@@ -2587,6 +2923,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-undo {
   display: inline-block;
@@ -2598,6 +2935,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-undo-32 {
   display: inline-block;
   width: 1em;
@@ -2607,6 +2945,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-up {
   display: inline-block;
@@ -2618,6 +2957,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-up-16 {
   display: inline-block;
   width: 1em;
@@ -2627,6 +2967,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-upload {
   display: inline-block;
@@ -2638,6 +2979,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-upload-32 {
   display: inline-block;
   width: 1em;
@@ -2647,6 +2989,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-uploadalt {
   display: inline-block;
@@ -2658,6 +3001,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-usagi {
   display: inline-block;
   width: 1em;
@@ -2667,6 +3011,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-usagialt {
   display: inline-block;
@@ -2678,6 +3023,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-user-32 {
   display: inline-block;
   width: 1em;
@@ -2687,6 +3033,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-users {
   display: inline-block;
@@ -2698,6 +3045,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-users-Inline {
   display: inline-block;
   width: 1em;
@@ -2707,6 +3055,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-verticalwriting-32 {
   display: inline-block;
@@ -2718,6 +3067,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-video {
   display: inline-block;
   width: 1em;
@@ -2727,6 +3077,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-view-16 {
   display: inline-block;
@@ -2738,6 +3089,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-view-Inline {
   display: inline-block;
   width: 1em;
@@ -2747,6 +3099,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-viewgrid2columns {
   display: inline-block;
@@ -2758,6 +3111,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-viewgrid3columns {
   display: inline-block;
   width: 1em;
@@ -2767,6 +3121,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-viewlist {
   display: inline-block;
@@ -2778,6 +3133,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-viewoutline-Inline {
   display: inline-block;
   width: 1em;
@@ -2787,6 +3143,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-warning {
   display: inline-block;
@@ -2798,6 +3155,7 @@
   aspect-ratio: 1/1;
 }
 
+
 .charcoal-icon-v1-warning-16 {
   display: inline-block;
   width: 1em;
@@ -2807,6 +3165,7 @@
   background: currentColor;
   aspect-ratio: 1/1;
 }
+
 
 .charcoal-icon-v1-zoomin-32 {
   display: inline-block;
