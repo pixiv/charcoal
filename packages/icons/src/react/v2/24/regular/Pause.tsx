@@ -12,9 +12,13 @@ const SvgPause = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M9.5 8.25a.75.75 0 01.75.75v6a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zM15.25 9a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0V9z"
+      fill="currentColor"
+    />
+    <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 3.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm7.5-3.75a.75.75 0 01.75.75v6a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm5.75.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0V9z"
+      d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm10-8.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17z"
       fill="currentColor"
     />
   </svg>

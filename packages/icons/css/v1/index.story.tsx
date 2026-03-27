@@ -256,6 +256,17 @@ export default {
 }
 
 
+.charcoal-icon-v1-bold {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M13%203.75a4.75%204.75%200%20013.639%207.8A4.75%204.75%200%200114%2020.25H8c-.69%200-1.25-.56-1.25-1.25V5c0-.69.56-1.25%201.25-1.25h5zm-3.75%2014H14a2.25%202.25%200%20000-4.5H9.25v4.5zm0-7H13a2.25%202.25%200%20000-4.5H9.25v4.5z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-book {
   display: inline-block;
   width: 1em;
@@ -844,6 +855,28 @@ export default {
   width: 1em;
   height: 1em;
   mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%202H8a6%206%200%2000-6%206v8a6%206%200%20006%206h8a6%206%200%20006-6V8a6%206%200%2000-6-6zM8%204a4%204%200%2000-4%204v8a4%204%200%20004%204h8a4%204%200%20004-4V8a4%204%200%2000-4-4H8zm.5%208a1.5%201.5%200%20100-3%201.5%201.5%200%20000%203zm8.5-1.5a1.5%201.5%200%2011-3%200%201.5%201.5%200%20013%200zm-8.89%205.39a5.5%205.5%200%20007.78%200%201%201%200%2000-1.415-1.415%203.5%203.5%200%2001-4.95%200%201%201%200%2010-1.414%201.414z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
+.charcoal-icon-v1-emphasismark {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12%206a1%201%200%2001.934.64l5%2013a1%201%200%2001-1.867.72L14.775%2017H9.226l-1.292%203.36a1%201%200%2001-1.867-.72l5-13%20.066-.137A1%201%200%200112.001%206zm-2.004%209h4.01L12%209.786%209.995%2015z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20d%3D%22M12%201a2%202%200%20110%204%202%202%200%20010-4z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
+.charcoal-icon-v1-emphasismarkjp {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9.858%206.481c.553%200%201%20.45%201%201.006%200%20.25.002.493.003.729h6.782c.552%200%201%20.45%201%201.006%200%20.555-.448%201.005-1%201.005h-6.764c.006.353.013.686.021%201.001.46-.059.952-.091%201.478-.091%202.85%200%204.584.87%205.572%202.095.958%201.186%201.055%202.513%201.055%203.11%200%202.646-2.456%204.658-5.629%204.658-.552%200-1-.45-1-1.006%200-.555.448-1.006%201-1.006%202.436%200%203.629-1.447%203.629-2.645%200-.409-.073-1.182-.607-1.844-.313-.387-.848-.813-1.792-1.082-.288.97-.84%202.406-1.696%203.694-.996%201.502-2.569%203.044-4.799%203.044-1.038%200-1.859-.401-2.4-1.061-.516-.63-.71-1.409-.711-2.09%200-.68.237-2.138%201.307-3.447.61-.745%201.458-1.4%202.607-1.842-.014-.457-.025-.952-.034-1.488H6.229c-.553%200-1-.45-1-1.005%200-.556.447-1.006%201-1.006H8.86c0-.237-.003-.48-.003-.729%200-.555.448-1.005%201-1.006zm-.84%207.395a3.96%203.96%200%2000-1.167.959c-.712.87-.851%201.843-.851%202.17%200%20.324.097.617.254.809.132.16.368.33.857.33.582%200%201.123-.194%201.625-.535a5.109%205.109%200%2001-.212-.527c-.146-.433-.266-.965-.362-1.696-.055-.421-.103-.917-.144-1.51zm3.36-.728c-.515%200-.98.037-1.398.1.045.782.102%201.39.165%201.874.044.331.09.597.138.814.616-.943%201.052-1.995%201.312-2.784-.071-.001-.144-.004-.217-.004z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20d%3D%22M9.906%201.042a.593.593%200%2001.388-.017l.237.09c1.423.52%202.784%201.743%203.668%202.993l.148.192c.25.32.343.703.216%201.083-.124.379-.459.725-.887.94-.429.216-.904.278-1.28.15-.38-.125-.627-.43-.732-.825l-.06-.225c-.302-1.28-.757-2.326-1.722-3.27A6.756%206.756%200%20009.722%202a.602.602%200%2001-.173-.35.566.566%200%2001.062-.373.56.56%200%2001.295-.235z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
   mask-size: 100% 100%;
   background: currentColor;
   aspect-ratio: 1/1;
@@ -1499,6 +1532,17 @@ export default {
 }
 
 
+.charcoal-icon-v1-italic {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16.5%204a1%201%200%20110%202h-1.745l-3.429%2012H12.5a1%201%200%20110%202h-5a1%201%200%20110-2h1.745l3.429-12H11.5a1%201%200%20110-2h5z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-itemremove {
   display: inline-block;
   width: 1em;
@@ -1691,6 +1735,17 @@ export default {
   width: 1em;
   height: 1em;
   mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M15%2011V6a3%203%200%2010-6%200v2H6V6a6%206%200%201112%200v5a2%202%200%20012%202v6a2%202%200%2001-2%202H6a2%202%200%2001-2-2v-6a2%202%200%20012-2h9z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
+.charcoal-icon-v1-login {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M9%203a1%201%200%2000-1%201v1a1%201%200%20102%200h6.764l-2.211%201.105A1%201%200%200014%207v10h-4a1%201%200%2010-2%200v1a1%201%200%20001%201h5v2a1%201%200%20001.447.894l6-3A1%201%200%200022%2018V4a1%201%200%2000-1-1H9zm11%2014.382l-4%202V7.618l4-2v11.764z%22%20fill%3D%22currentColor%22%2F%3E%3Cpath%20d%3D%22M7.707%207.293a1%201%200%2010-1.414%201.414L7.586%2010H3a1%201%200%20000%202h4.586l-1.293%201.293a1%201%200%20001.414%201.414l3-3a1%201%200%20000-1.414l-3-3z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
   mask-size: 100% 100%;
   background: currentColor;
   aspect-ratio: 1/1;
@@ -2852,6 +2907,28 @@ export default {
 }
 
 
+.charcoal-icon-v1-trash-16 {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4%207a1%201%200%20011-1h6a1%201%200%20011%201v6a1%201%200%2001-1%201H5a1%201%200%2001-1-1V7zM10%203h1.5a1%201%200%20110%202h-7a1%201%200%20010-2H6V2h4v1z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
+.charcoal-icon-v1-trash-Inline {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2210%22%20height%3D%2212%22%20viewBox%3D%220%200%2010%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8%204a1%201%200%20011%201v6a1%201%200%2001-1%201H2a1%201%200%2001-1-1V5a1%201%200%20011-1h6zM7%201h1.5a1%201%200%20110%202h-7a1%201%200%20010-2H3V0h4v1z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
+
 .charcoal-icon-v1-trashalt {
   display: inline-block;
   width: 1em;
@@ -3331,6 +3408,15 @@ export default {
               role="img"
             />
             <code>.charcoal-icon-v1-bodyedit</code>
+          </div>
+
+          <div>
+            <div
+              className="charcoal-icon-v1-bold"
+              aria-label=".charcoal-icon-v1-bold"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-bold</code>
           </div>
 
           <div>
@@ -3817,6 +3903,24 @@ export default {
               role="img"
             />
             <code>.charcoal-icon-v1-emoji</code>
+          </div>
+
+          <div>
+            <div
+              className="charcoal-icon-v1-emphasismark"
+              aria-label=".charcoal-icon-v1-emphasismark"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-emphasismark</code>
+          </div>
+
+          <div>
+            <div
+              className="charcoal-icon-v1-emphasismarkjp"
+              aria-label=".charcoal-icon-v1-emphasismarkjp"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-emphasismarkjp</code>
           </div>
 
           <div>
@@ -4352,6 +4456,15 @@ export default {
 
           <div>
             <div
+              className="charcoal-icon-v1-italic"
+              aria-label=".charcoal-icon-v1-italic"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-italic</code>
+          </div>
+
+          <div>
+            <div
               className="charcoal-icon-v1-itemremove"
               aria-label=".charcoal-icon-v1-itemremove"
               role="img"
@@ -4510,6 +4623,15 @@ export default {
               role="img"
             />
             <code>.charcoal-icon-v1-lockunlock</code>
+          </div>
+
+          <div>
+            <div
+              className="charcoal-icon-v1-login"
+              aria-label=".charcoal-icon-v1-login"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-login</code>
           </div>
 
           <div>
@@ -5455,6 +5577,24 @@ export default {
               role="img"
             />
             <code>.charcoal-icon-v1-trash</code>
+          </div>
+
+          <div>
+            <div
+              className="charcoal-icon-v1-trash-16"
+              aria-label=".charcoal-icon-v1-trash-16"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-trash-16</code>
+          </div>
+
+          <div>
+            <div
+              className="charcoal-icon-v1-trash-Inline"
+              aria-label=".charcoal-icon-v1-trash-Inline"
+              role="img"
+            />
+            <code>.charcoal-icon-v1-trash-Inline</code>
           </div>
 
           <div>
