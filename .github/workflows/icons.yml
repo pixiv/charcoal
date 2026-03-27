@@ -29,13 +29,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # あとでsnapshot updateを行うため全部ビルド
       - name: Build icons
-        run: pnpm --filter @charcoal-ui/icons-cli run build
+        run: pnpm run build
 
       - name: Export icons 1.0
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN_LIMITED }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           OUTPUT_ROOT_DIR: ../icon-files/
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export --sleepMs 1000
 
@@ -61,7 +62,7 @@ jobs:
       - name: Export icons 2.0
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL_V2 }}
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN_LIMITED }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           OUTPUT_ROOT_DIR: ../icon-files/v2
         run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export --layout v2 --sleepMs 1000
 
@@ -83,6 +84,12 @@ jobs:
 
       - name: build icons 2.0 css
         run: pnpm --filter @charcoal-ui/icons-cli build:css
+
+      - name: format icons
+        run: pnpm fmt
+
+      - name: Update icon snapshots
+        run: pnpm exec vitest packages/tailwind-config/src/icons.test.ts -u --run
 
       - name: Generate github token
         id: generate_token
