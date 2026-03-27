@@ -29,8 +29,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # あとでsnapshot updateを行うため全部ビルド
       - name: Build icons
-        run: pnpm --filter @charcoal-ui/icons-cli run build
+        run: pnpm run build
 
       - name: Export icons 1.0
         env:
@@ -83,6 +84,12 @@ jobs:
 
       - name: build icons 2.0 css
         run: pnpm --filter @charcoal-ui/icons-cli build:css
+
+      - name: format icons
+        run: pnpm fmt
+
+      - name: Update icon snapshots
+        run: pnpm exec vitest packages/tailwind-config/src/icons.test.ts -u --run
 
       - name: Generate github token
         id: generate_token
