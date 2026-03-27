@@ -47,11 +47,19 @@ void yargs
         default: 'v1',
         describe: 'Figma icon file layout version',
       },
+      sleepMs: {
+        type: 'number',
+        describe: 'Sleep duration between export requests in milliseconds',
+      },
     },
-    async ({ format, layout }) => {
+    async ({ format, layout, sleepMs }) => {
       mustBeDefined(FIGMA_FILE_URL, 'FIGMA_FILE_URL')
       mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
       mustBeDefined(OUTPUT_ROOT_DIR, 'OUTPUT_ROOT_DIR')
+
+      if (sleepMs !== undefined && sleepMs < 0) {
+        throw new TypeError('sleepMs must be 0 or greater.')
+      }
 
       await FigmaFileClient.runFromCli(
         FIGMA_FILE_URL,
@@ -59,6 +67,7 @@ void yargs
         OUTPUT_ROOT_DIR,
         format as 'svg' | 'pdf',
         layout as 'v1' | 'v2',
+        sleepMs,
       )
     },
   )
