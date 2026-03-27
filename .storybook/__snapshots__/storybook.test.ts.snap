@@ -1741,6 +1741,22 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
 </div>
 `;
 
+exports[`Storybook Tests > react/FocusRing > react/FocusRing > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-focus-ring"
+      style="border-radius: 8px; padding: 16px 24px;"
+      tabindex="0"
+    >
+      FocusRing
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/HintText > react/HintText > Default 1`] = `
 <div>
   <div
