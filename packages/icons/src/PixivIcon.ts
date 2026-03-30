@@ -200,22 +200,25 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const scaleAttr = this.props.scale ?? undefined
-    const nonGuidelineScale =
-      this.props['unsafe-non-guideline-scale'] !== null
-        ? parseFloat(this.props['unsafe-non-guideline-scale'])
-        : undefined
-    const charcoalIconSize =
-      this.dataset.charcoalIconSize !== undefined
-        ? parseInt(this.dataset.charcoalIconSize, 10)
-        : undefined
+    const props = this.props
+    const dataset = this.dataset
 
     // Web Component 内部では属性から全て読み取るため union の排他制約を緩和する
     const size = calcActualSize({
-      name: this.props.name,
-      scale: scaleAttr,
-      unsafeNonGuidelineScale: nonGuidelineScale,
-      unsafeNonGuidelineSize: charcoalIconSize,
+      name: props.name,
+      get scale() {
+        return props.scale ?? undefined
+      },
+      get unsafeNonGuidelineScale() {
+        return props['unsafe-non-guideline-scale'] !== null
+          ? parseFloat(props['unsafe-non-guideline-scale'])
+          : undefined
+      },
+      get unsafeNonGuidelineSize() {
+        return dataset.charcoalIconSize !== undefined
+          ? parseInt(dataset.charcoalIconSize, 10)
+          : undefined
+      },
     } as { name: string } & IconSizing)
 
     if (!Number.isFinite(size) || size <= 0) {
