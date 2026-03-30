@@ -17,6 +17,7 @@ overrides:
   node-gyp: ^9.0.0
   postcss: ^8.5.6
   '@types/react': ^18.3.3
+  playwright: ^1.58.2
 
 importers:
 
@@ -56,8 +57,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(eslint@9.38.0(jiti@2.6.0))(typescript@5.9.3)
       '@playwright/test':
-        specifier: ^1.40.1
-        version: 1.51.1
+        specifier: ^1.58.2
+        version: 1.58.2
       '@react-aria/overlays':
         specifier: ^3.20.0
         version: 3.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -478,7 +479,7 @@ importers:
         version: 4.3.4(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))
       '@vitest/browser':
         specifier: ^2.1.9
-        version: 2.1.9(@types/node@24.6.1)(playwright@1.51.1)(typescript@5.9.3)(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))(vitest@2.1.9)
+        version: 2.1.9(@types/node@24.6.1)(playwright@1.58.2)(typescript@5.9.3)(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))(vitest@2.1.9)
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.21(postcss@8.5.6)
@@ -486,8 +487,8 @@ importers:
         specifier: ^24.1.0
         version: 24.1.3
       playwright:
-        specifier: ^1.51.1
-        version: 1.51.1
+        specifier: ^1.58.2
+        version: 1.58.2
       postcss-nested:
         specifier: ^7.0.2
         version: 7.0.2(postcss@8.5.6)
@@ -673,7 +674,7 @@ importers:
         version: 18.3.1
       tailwindcss:
         specifier: ^3.4.17
-        version: 3.4.17(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@22.14.1)(typescript@5.9.3))
+        version: 3.4.17(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@24.6.1)(typescript@5.9.3))
 
   packages/tailwind-diff:
     dependencies:
@@ -2078,8 +2079,8 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.51.1':
-    resolution: {integrity: sha512-nM+kEaTSAoVlXmMPH10017vn3FSiFqr/bh4fKg9vmAdMfd9SDqRZNvPSiAHADc/itWak+qPvMPZQOPwCBW7k7Q==}
+  '@playwright/test@1.58.2':
+    resolution: {integrity: sha512-akea+6bHYBBfA9uQqSYmlJXn61cTa+jbO87xVLCWbTqbWadRVmhxlXATaOjOgcBaWU4ePo0wB41KMFv3o35IXA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3777,7 +3778,7 @@ packages:
   '@vitest/browser@2.1.9':
     resolution: {integrity: sha512-AHDanTP4Ed6J5R6wRBcWRQ+AxgMnNJxsbaa229nFQz5KOMFZqlW11QkIDoLgCjBOpQ1+c78lTN5jVxO8ME+S4w==}
     peerDependencies:
-      playwright: '*'
+      playwright: ^1.58.2
       safaridriver: '*'
       vitest: 2.1.9
       webdriverio: '*'
@@ -4191,7 +4192,7 @@ packages:
   axe-playwright@2.1.0:
     resolution: {integrity: sha512-tY48SX56XaAp16oHPyD4DXpybz8Jxdz9P7exTjF/4AV70EGUavk+1fUPWirM0OYBR+YyDx6hUeDvuHVA6fB9YA==}
     peerDependencies:
-      playwright: '>1.0.0'
+      playwright: ^1.58.2
 
   axios@0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
@@ -8021,11 +8022,6 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.51.1:
-    resolution: {integrity: sha512-kkx+MB2KQRkyxjYPc3a0wLZZoDczmppyGJIvQ43l+aZihkaVvmu/21kiyaHeHjiFxjxNNFnUncKmcGIyOojsaw==}
-    engines: {node: '>=18'}
-    hasBin: true
-
   playwright@1.58.2:
     resolution: {integrity: sha512-vA30H8Nvkq/cPBnNw4Q8TWz1EJyqgpuinBcHET0YVJVFldr8JDNiU9LaWAE1KqSkRYazuaBhTpB5ZzShOezQ6A==}
     engines: {node: '>=18'}
@@ -11683,9 +11679,9 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@playwright/test@1.51.1':
+  '@playwright/test@1.58.2':
     dependencies:
-      playwright: 1.51.1
+      playwright: 1.58.2
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -13714,7 +13710,7 @@ snapshots:
       - vite
     optional: true
 
-  '@vitest/browser@2.1.9(@types/node@24.6.1)(playwright@1.51.1)(typescript@5.9.3)(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))(vitest@2.1.9)':
+  '@vitest/browser@2.1.9(@types/node@24.6.1)(playwright@1.58.2)(typescript@5.9.3)(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))(vitest@2.1.9)':
     dependencies:
       '@testing-library/dom': 10.4.0
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
@@ -13727,7 +13723,7 @@ snapshots:
       vitest: 2.1.9(@types/node@24.6.1)(@vitest/browser@2.1.9)(jsdom@24.1.3)(msw@2.12.14(@types/node@24.6.1)(typescript@5.9.3))(terser@5.39.0)
       ws: 8.20.0
     optionalDependencies:
-      playwright: 1.51.1
+      playwright: 1.58.2
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -19124,12 +19120,6 @@ snapshots:
 
   playwright-core@1.58.2: {}
 
-  playwright@1.51.1:
-    dependencies:
-      playwright-core: 1.51.1
-    optionalDependencies:
-      fsevents: 2.3.2
-
   playwright@1.58.2:
     dependencies:
       playwright-core: 1.58.2
@@ -19172,6 +19162,14 @@ snapshots:
     optionalDependencies:
       postcss: 8.5.6
       ts-node: 10.9.2(@swc/core@1.15.3)(@types/node@22.14.1)(typescript@5.9.3)
+
+  postcss-load-config@4.0.2(postcss@8.5.6)(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@24.6.1)(typescript@5.9.3)):
+    dependencies:
+      lilconfig: 3.1.3
+      yaml: 2.7.0
+    optionalDependencies:
+      postcss: 8.5.6
+      ts-node: 10.9.2(@swc/core@1.15.3)(@types/node@24.6.1)(typescript@5.9.3)
 
   postcss-loader@8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.98.0(@swc/core@1.15.3)(esbuild@0.25.1)):
     dependencies:
@@ -20506,6 +20504,33 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
+  tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@24.6.1)(typescript@5.9.3)):
+    dependencies:
+      '@alloc/quick-lru': 5.2.0
+      arg: 5.0.2
+      chokidar: 3.6.0
+      didyoumean: 1.2.2
+      dlv: 1.1.3
+      fast-glob: 3.3.3
+      glob-parent: 6.0.2
+      is-glob: 4.0.3
+      jiti: 1.21.7
+      lilconfig: 3.1.3
+      micromatch: 4.0.8
+      normalize-path: 3.0.0
+      object-hash: 3.0.0
+      picocolors: 1.1.1
+      postcss: 8.5.6
+      postcss-import: 15.1.0(postcss@8.5.6)
+      postcss-js: 4.0.1(postcss@8.5.6)
+      postcss-load-config: 4.0.2(postcss@8.5.6)(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@24.6.1)(typescript@5.9.3))
+      postcss-nested: 6.2.0(postcss@8.5.6)
+      postcss-selector-parser: 6.1.2
+      resolve: 1.22.10
+      sucrase: 3.35.0
+    transitivePeerDependencies:
+      - ts-node
+
   tapable@2.2.1: {}
 
   tar-stream@2.2.0:
@@ -20691,6 +20716,27 @@ snapshots:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 22.14.1
+      acorn: 8.15.0
+      acorn-walk: 8.3.4
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 5.9.3
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    optionalDependencies:
+      '@swc/core': 1.15.3
+    optional: true
+
+  ts-node@10.9.2(@swc/core@1.15.3)(@types/node@24.6.1)(typescript@5.9.3):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.11
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 24.6.1
       acorn: 8.15.0
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -21167,7 +21213,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.6.1
-      '@vitest/browser': 2.1.9(@types/node@24.6.1)(playwright@1.51.1)(typescript@5.9.3)(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))(vitest@2.1.9)
+      '@vitest/browser': 2.1.9(@types/node@24.6.1)(playwright@1.58.2)(typescript@5.9.3)(vite@5.4.15(@types/node@24.6.1)(terser@5.39.0))(vitest@2.1.9)
       jsdom: 24.1.3
     transitivePeerDependencies:
       - less

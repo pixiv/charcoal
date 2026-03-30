@@ -48,9 +48,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-playwright-
       - name: Install Playwright browsers
-        run: |
-          pnpm exec playwright install --with-deps chromium
-          npx playwright@1.58.2 install --with-deps chromium-headless-shell
+        run: pnpm exec playwright install --with-deps chromium chromium-headless-shell
 
       - name: Test
         run: pnpm test

@@ -49,7 +49,7 @@
     "@octokit/rest": "^18.12.0",
     "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@pixiv/eslint-config": "^1.1.0",
-    "@playwright/test": "^1.40.1",
+    "@playwright/test": "^1.58.2",
     "@react-aria/overlays": "^3.20.0",
     "@react-aria/utils": "^3.23.0",
     "@rollup/plugin-babel": "6.1.0",
@@ -145,6 +145,9 @@
       "core-js",
       "esbuild",
       "nx"
-    ]
+    ],
+    "overrides": {
+      "playwright": "^1.58.2"
+    }
   }
 }
