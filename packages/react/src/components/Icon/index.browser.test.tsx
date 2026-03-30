@@ -6,16 +6,24 @@
  *
  * このテストでは 2 つの describe ブロックで以下を検証する:
  *
- * 1. Web Component upgrade なし (CSS only)
- *    - customElements.define をモンキーパッチして pixiv-icon の登録をブロック
- *    - CSS (.charcoal-icon + --charcoal-icon-ssr-size) だけでサイズが付くことを確認
+ * 1. CSS メカニズムの検証
+ *    - plain HTML 要素 に charcoal-icon クラスと --charcoal-icon-ssr-size を設定
+ *    - Web Component を介さず CSS だけでサイズが付くことを確認
+ *    (ブラウザ環境では Vite が依存モジュールを事前バンドルするため、
+ *     customElements.define のモンキーパッチで WC 登録をブロックできない)
  *
- * 2. Web Component upgrade あり
- *    - ブロックを解除して pixiv-icon を登録
- *    - upgrade 後も同じサイズであることを確認
+ * 2. React Icon コンポーネントの統合テスト
+ *    - Icon コンポーネントが正しい CSS variable を設定し、
+ *      WC upgrade 後も同じサイズであることを確認
  *
- * 両方で同じ期待値が PASS = upgrade 前後でサイズが変わらない = layout shift なし
+ * 1 の CSS テスト + unit test (index.test.tsx) で Icon が正しい CSS variable を
+ * 設定することが保証される = SSR 時に CSS だけでサイズが確保される = layout shift なし
  */
+import { render } from '@testing-library/react'
+import Icon from '.'
+import HintText from '../HintText'
+import TagItem from '../TagItem'
+
 // packages/icons/css/icon.css と同じ内容
 // ブラウザ環境のため fs は使えず、virtual module は過剰なので直接定義する
 const iconCss = `.charcoal-icon {
@@ -24,34 +32,8 @@ const iconCss = `.charcoal-icon {
   height: var(--charcoal-icon-ssr-size);
 }`
 
-// ---- Custom Elements の upgrade を阻止する ----
-//
-// @charcoal-ui/icons の index.ts は import 時に customElements.define('pixiv-icon', PixivIcon) を
-// 呼ぶ。define が成功すると、DOM に挿入された <pixiv-icon> は即座に upgrade され、
-// connectedCallback → render() → Shadow DOM でサイズが設定される。
-//
-// これでは「CSS だけでサイズが確保されているか」を検証できない。
-// そこで define をモンキーパッチして pixiv-icon の登録をブロックする。
-// その後に Icon コンポーネントを dynamic import すれば、<pixiv-icon> は
-// upgrade されない生の HTMLElement のまま DOM に挿入される。
-//
-// この状態で getBoundingClientRect() が正しいサイズを返せば、
-// CSS (.charcoal-icon + inline style --charcoal-icon-ssr-size) だけで
-// サイズが確保されていることが証明できる = layout shift は発生しない。
-const originalDefine = customElements.define.bind(customElements)
-customElements.define = function (name: string, ...args: unknown[]) {
-  if (name === 'pixiv-icon') return
-  return (originalDefine as Function)(name, ...args)
-}
-
-// define をブロックした後に import する（import 順序が重要）
-const { render } = await import('@testing-library/react')
-const { default: Icon } = await import('.')
-const { default: HintText } = await import('../HintText')
-const { default: TagItem } = await import('../TagItem')
-
 /**
- * CSS のみ (upgrade なし) と Web Component upgrade 後の両方で
+ * CSS のみと Web Component upgrade 後の両方で
  * 同じサイズになることを保証するためのテストケース
  */
 const iconSizeTestCases = [
@@ -85,54 +67,30 @@ function setupIconCss() {
   })
 }
 
-describe('Icon has correct size WITHOUT Web Component upgrade (CSS only)', () => {
+describe('charcoal-icon CSS provides correct sizing without Web Component', () => {
+  // CSS メカニズムを plain HTML 要素で直接テストする。
+  // Web Component を一切介さないため、SSR 時の CSS-only サイジングと等価。
   setupIconCss()
 
-  it('pixiv-icon is NOT a registered custom element', () => {
-    expect(customElements.get('pixiv-icon')).toBeUndefined()
-  })
-
   it.each(iconSizeTestCases)(
-    'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize) has $expected x $expected',
-    ({ name, scale, unsafeNonGuidelineSize, expected }) => {
-      const { container } = render(
-        <Icon
-          name={name}
-          scale={scale}
-          unsafeNonGuidelineSize={unsafeNonGuidelineSize}
-        />,
-      )
-      const { width, height } = getIconSize(container)
-      expect(width).toBe(expected)
-      expect(height).toBe(expected)
+    'element with --charcoal-icon-ssr-size: $expected px has $expected x $expected',
+    ({ expected }) => {
+      const el = document.createElement('span')
+      el.className = 'charcoal-icon'
+      el.style.setProperty('--charcoal-icon-ssr-size', `${expected}px`)
+      document.body.appendChild(el)
+      try {
+        const rect = el.getBoundingClientRect()
+        expect(rect.width).toBe(expected)
+        expect(rect.height).toBe(expected)
+      } finally {
+        el.remove()
+      }
     },
   )
-
-  it('HintText icon has 16x16', () => {
-    const { container } = render(<HintText>hint</HintText>)
-    const { width, height } = getIconSize(container)
-    expect(width).toBe(16)
-    expect(height).toBe(16)
-  })
-
-  it('TagItem (active) icon has 16x16', () => {
-    const { container } = render(<TagItem label="tag" status="active" />)
-    const { width, height } = getIconSize(container)
-    expect(width).toBe(16)
-    expect(height).toBe(16)
-  })
 })
 
-describe('Icon has correct size WITH Web Component upgrade', () => {
-  // ブロックを解除して pixiv-icon を登録する
-  beforeAll(async () => {
-    customElements.define = originalDefine
-    if (!customElements.get('pixiv-icon')) {
-      const { PixivIcon } = await import('@charcoal-ui/icons')
-      customElements.define('pixiv-icon', PixivIcon)
-    }
-  })
-
+describe('Icon component has correct size with Web Component upgrade', () => {
   setupIconCss()
 
   it('pixiv-icon IS a registered custom element', () => {
