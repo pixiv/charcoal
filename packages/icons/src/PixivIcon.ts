@@ -71,6 +71,19 @@ export type IconSizing =
       unsafeNonGuidelineSize: number
     }
 
+function inlineSize(scale: number): number {
+  switch (scale) {
+    case 2:
+      return 32
+    default:
+      return 16
+  }
+}
+
+function guidelineSize24(scale: number): number {
+  return 24 * scale
+}
+
 export const calcActualSize = ({
   name,
   scale,
@@ -103,9 +116,9 @@ export const calcActualSize = ({
   const numericScale = parseInt(`${scale ?? '1'}`, 10)
   switch (size) {
     case 'Inline':
-      return numericScale === 2 ? 32 : 16
+      return inlineSize(numericScale)
     case '24':
-      return 24 * numericScale
+      return guidelineSize24(numericScale)
     default:
       return baseSize
   }
