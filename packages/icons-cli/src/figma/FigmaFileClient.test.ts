@@ -184,4 +184,35 @@ describe('FigmaFileClient path traversal regression', () => {
       '<svg><path /></svg>',
     )
   })
+
+  it('/design から始まる URL でも fileId を取得できる', async () => {
+    mockFile.mockResolvedValue(
+      createV2FileResponse({
+        setName: 'alert',
+        componentName: 'size=16,color=default',
+      }),
+    )
+    mockFileImages.mockResolvedValue({
+      data: {
+        images: {
+          'component-1': 'https://example.com/icon.svg',
+        },
+      },
+    })
+
+    const outputRootDir = path.join(workDir, 'out')
+    const outputFile = path.join(outputRootDir, '16', 'default', 'alert.svg')
+
+    const client = new FigmaFileClient(
+      'https://www.figma.com/design/FILE_ID/Test?node-id=1-2',
+      'token',
+      'svg',
+      'v2',
+    )
+
+    await client.loadSvg(outputRootDir)
+
+    expect(mockFile).toHaveBeenCalledWith('FILE_ID')
+    await expect(fs.pathExists(outputFile)).resolves.toBe(true)
+  })
 })
