@@ -26,7 +26,7 @@ async function runTransformDataUri(sourceDir: string, outputDir: string) {
 
   try {
     vi.resetModules()
-    await import(new URL('./transformDataUri.ts', import.meta.url).href)
+    await import('./transformDataUri')
     await waitForFile(path.join(outputDir, 'index.d.ts'))
   } finally {
     if (previousSourceRootDir === undefined) {

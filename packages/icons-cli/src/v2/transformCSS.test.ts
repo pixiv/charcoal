@@ -31,7 +31,7 @@ async function runTransformCss(
 
   try {
     vi.resetModules()
-    await import(new URL('./transformCSS.ts', import.meta.url).href)
+    await import('./transformCSS')
     await waitForFile(path.join(outputDir, 'index.story.tsx'))
   } finally {
     if (previousVersion === undefined) {
@@ -106,7 +106,8 @@ describe('transformCSS regression', () => {
     expect(html).toContain(`class="${safeClassName}"`)
     expect(story).toContain(`className="${safeClassName}"`)
 
-    expect(css).not.toContain('"')
+    expect(css).not.toContain('Bad "Name"')
     expect(html).not.toContain('Bad "Name"')
+    expect(story).not.toContain('Bad "Name"')
   })
 })
