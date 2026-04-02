@@ -48,10 +48,7 @@ function resolveOutputPath(outputDir: string, filename: string) {
   const fullname = path.resolve(normalizedOutputDir, filename)
   const relativePath = path.relative(normalizedOutputDir, fullname)
 
-  if (
-    relativePath.startsWith('..') ||
-    path.isAbsolute(relativePath)
-  ) {
+  if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
     return null
   }
 
