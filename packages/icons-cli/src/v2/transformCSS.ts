@@ -2,14 +2,51 @@ import { mustBeDefined } from '../utils'
 import { glob, readFile, writeFile } from 'fs/promises'
 import { ensureDir } from 'fs-extra'
 import path from 'path'
-import { escape } from 'querystring'
+import {
+  createCssClassNameSegment,
+  createSvgDataUri,
+  serializeJavaScriptValue,
+} from '../codegen'
+
+const previewStyles = `:root {
+  font-size: 24px;
+}
+.icons {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, 300px);
+}
+.icons div {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+code {
+  font-size: 14px;
+}`
+
+function createPreviewItems(
+  classNames: string[],
+  classAttributeName: 'class' | 'className',
+) {
+  return classNames
+    .map(
+      (icon) => `
+  <div>
+    <div ${classAttributeName}="${icon}" aria-label=".${icon}" role="img"></div>
+    <code>.${icon}</code>
+  </div>`,
+    )
+    .join('\n')
+}
 
 async function transformV2(filePath: string, fileName: string) {
   const content = await readFile(filePath, 'utf-8')
   const [size, variant, name] = fileName.split('/')
+  const dataUri = createSvgDataUri(content)
   const cssName = [
     'charcoal-icon-v2',
-    name.toLowerCase().replace('.svg', '').replaceAll('.', '-'),
+    createCssClassNameSegment(name),
     ...(variant === 'regular' ? [] : [variant]),
     ...(size === '24' ? [] : [size]),
   ].join('-')
@@ -19,10 +56,7 @@ async function transformV2(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  background: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  background: url("${dataUri}");
   aspect-ratio: 1/1;
 }`
     : `
@@ -30,10 +64,7 @@ async function transformV2(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  mask-image: url("${dataUri}");
   mask-size: 100% 100%;
   background: currentColor;
   aspect-ratio: 1/1;
@@ -49,9 +80,10 @@ async function transformV2(filePath: string, fileName: string) {
 async function transformV1(filePath: string, fileName: string) {
   const content = await readFile(filePath, 'utf-8')
   const [size, name] = fileName.split('/')
+  const dataUri = createSvgDataUri(content)
   const cssName = [
     'charcoal-icon-v1',
-    name.toLowerCase().replace('.svg', '').replaceAll('.', '-'),
+    createCssClassNameSegment(name),
     ...(size === '24' ? [] : [size]),
   ].join('-')
   const css = content.includes('<def')
@@ -60,10 +92,7 @@ async function transformV1(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  background: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  background: url("${dataUri}");
   aspect-ratio: 1/1;
 }`
     : `
@@ -71,10 +100,7 @@ async function transformV1(filePath: string, fileName: string) {
   display: inline-block;
   width: 1em;
   height: 1em;
-  mask-image: url('data:image/svg+xml;utf8,${escape(content).replace(
-    "'",
-    "\\'",
-  )}');
+  mask-image: url("${dataUri}");
   mask-size: 100% 100%;
   background: currentColor;
   aspect-ratio: 1/1;
@@ -129,38 +155,12 @@ async function main() {
   classNames = classNames.sort()
   const html = `
 <div class="icons">
-${classNames
-  .map(
-    (icon) => `
-  <div>
-    <div class="${icon}" aria-label=".${icon}" role="img" />
-    <code>.${icon}</code>
-  </div>
-`,
-  )
-  .join('\n')}
+${createPreviewItems(classNames, 'class')}
 </div>`
 
   await writeFile(
     path.join(outDir, 'index.html'),
-    `<link rel="stylesheet" href="./index.css"><style>
-  :root {
-    font-size: 24px;
-  }
-  .icons {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: repeat(auto-fill, 300px);
-  }
-  .icons div {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-  }
-  code {
-    font-size: 14px;
-  }
-</style>${html}`,
+    `<link rel="stylesheet" href="./index.css"><style>${previewStyles}</style>${html}`,
   )
   await writeFile(
     path.join(outDir, 'index.story.tsx'),
@@ -179,26 +179,11 @@ export default {
   render(): JSX.Element {
     return (
       <>
-       <style>{\`${cssContent}\`}</style>
-       <style>
-  {\`:root {
-    font-size: 24px;
-  }
-  .icons {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: repeat(auto-fill, 300px);
-  }
-  .icons div {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-  }
-  code {
-    font-size: 14px;
-  }\`}
-</style>
-       ${html.replaceAll('class', 'className')}
+       <style>{${serializeJavaScriptValue(cssContent)}}</style>
+       <style>{${serializeJavaScriptValue(previewStyles)}}</style>
+       <div className="icons">
+${createPreviewItems(classNames, 'className')}
+       </div>
       </>
     )
   },
