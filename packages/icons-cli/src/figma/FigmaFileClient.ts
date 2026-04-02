@@ -9,7 +9,10 @@ import { concurrently } from '../concurrently'
 
 const DRY_RUN = Boolean(process.env.DRY_RUN)
 
-const matchPath = match<{ fileId: string; name: string }>('/file/:fileId/:name')
+const matchPath = match<{ fileId: string; name: string }>([
+  '/file/:fileId/:name',
+  '/design/:fileId/:name',
+])
 
 function extractParams(url: string): { fileId: string; nodeId?: string } {
   const { pathname, searchParams } = new URL(url)
