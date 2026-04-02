@@ -14,6 +14,7 @@
     "build:uri-v1": "SOURCE_ROOT_DIR=../../../icon-files/svg/ OUTPUT_ROOT_DIR=../icon-files/v1/datauri pnpm tsx src/v2/transformDataUri.ts",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
+    "test": "vitest run",
     "cli:icons": "./dist/index.js",
     "icons": "tsx src/index.ts"
   },
