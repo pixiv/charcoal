@@ -7,7 +7,9 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { generateIconSource } from './generateSource'
 
 async function importEsmFromSource(source: string) {
-  return import(`data:text/javascript;charset=utf-8,${encodeURIComponent(source)}`)
+  return import(
+    `data:text/javascript;charset=utf-8,${encodeURIComponent(source)}`
+  )
 }
 
 describe('generateSource regression', () => {

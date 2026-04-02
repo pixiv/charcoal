@@ -47,7 +47,9 @@ describe('transformDataUri regression', () => {
   let workDir: string
 
   beforeEach(async () => {
-    workDir = await mkdtemp(path.join(tmpdir(), 'icons-cli-transform-data-uri-'))
+    workDir = await mkdtemp(
+      path.join(tmpdir(), 'icons-cli-transform-data-uri-'),
+    )
   })
 
   afterEach(async () => {

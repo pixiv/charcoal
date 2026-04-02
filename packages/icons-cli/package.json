@@ -15,7 +15,6 @@
     "test": "vitest run --config vitest.config.ts",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "vitest run",
     "cli:icons": "./dist/index.js",
     "icons": "tsx src/index.ts"
   },

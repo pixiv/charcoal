@@ -97,7 +97,10 @@ describe('transformCSS regression', () => {
 
     const css = await readFile(path.join(outputDir, 'index.css'), 'utf8')
     const html = await readFile(path.join(outputDir, 'index.html'), 'utf8')
-    const story = await readFile(path.join(outputDir, 'index.story.tsx'), 'utf8')
+    const story = await readFile(
+      path.join(outputDir, 'index.story.tsx'),
+      'utf8',
+    )
 
     expect(css).toContain(`.${safeClassName}`)
     expect(html).toContain(`class="${safeClassName}"`)

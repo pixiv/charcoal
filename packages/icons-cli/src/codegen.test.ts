@@ -47,7 +47,9 @@ describe('createSvgDataUri', () => {
     expect(dataUri).toContain('%22')
     expect(dataUri).toContain('%5C')
 
-    const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>')
+    const dom = new JSDOM(
+      '<!doctype html><html><head></head><body></body></html>',
+    )
     const style = dom.window.document.createElement('style')
     style.textContent = `.icon { background-image: url("${dataUri}"); }`
     dom.window.document.head.append(style)
