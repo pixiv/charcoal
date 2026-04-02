@@ -43,6 +43,21 @@ function parseV2IconName(name: string) {
     .toLowerCase()
 }
 
+function resolveOutputPath(outputDir: string, filename: string) {
+  const normalizedOutputDir = path.resolve(outputDir)
+  const fullname = path.resolve(normalizedOutputDir, filename)
+  const relativePath = path.relative(normalizedOutputDir, fullname)
+
+  if (
+    relativePath.startsWith('..') ||
+    path.isAbsolute(relativePath)
+  ) {
+    return null
+  }
+
+  return fullname
+}
+
 type ExportFormat = 'svg' | 'pdf'
 
 function sleep(ms: number) {
@@ -182,7 +197,13 @@ export class FigmaFileClient {
       const filename = component.variant
         ? `${parseV2IconName(component.variant)}/${component.name}.${this.exportFormat}`
         : `${filenamify(component.name)}.${this.exportFormat}`
-      const fullname = path.join(outputDir, filename)
+      const fullname = resolveOutputPath(outputDir, filename)
+
+      if (fullname === null) {
+        console.log(`skip invalid output path: ${filename}`)
+        return
+      }
+
       const dirname = path.dirname(fullname)
 
       if (DRY_RUN) {
