@@ -31,7 +31,7 @@ async function collectGitStatus() {
     /**
      * @see https://git-scm.com/docs/git-status#_porcelain_format_version_1
      */
-    (await execp(`git status --porcelain -u`)).split('\n').map((s) => {
+    (await execp(`git status --porcelain -uall`)).split('\n').map((s) => {
       return [
         s.slice(3),
         s.startsWith(' M')
