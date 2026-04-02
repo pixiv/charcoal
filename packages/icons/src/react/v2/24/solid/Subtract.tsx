@@ -15,8 +15,6 @@ const SvgSubtract = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M3.25 12c0-.69.56-1.25 1.25-1.25h15a1.25 1.25 0 110 2.5h-15c-.69 0-1.25-.56-1.25-1.25z"
       fill="currentColor"
     />
