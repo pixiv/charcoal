@@ -1,6 +1,10 @@
-.charcoal-focus-ring:not(:disabled):not([aria-disabled]):focus-visible,
-.charcoal-focus-ring[aria-disabled='false']:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-  transition: 0.2s box-shadow;
+.charcoal-focus-ring {
+  &:is(
+      :not(:disabled):not([aria-disabled]),
+      [aria-disabled='false']
+    ):focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    transition: 0.2s box-shadow;
+  }
 }
