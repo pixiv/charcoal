@@ -38,7 +38,7 @@ jobs:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN_LIMITED }}
           OUTPUT_ROOT_DIR: ../icon-files/
-        run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export --sleepMs 1000
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export
 
       - name: Optimize icons 1.0
         env:
@@ -64,7 +64,7 @@ jobs:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL_V2 }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN_LIMITED }}
           OUTPUT_ROOT_DIR: ../icon-files/v2
-        run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export --layout v2 --sleepMs 1000
+        run: pnpm --filter @charcoal-ui/icons-cli cli:icons figma:export --layout v2
 
       - name: Optimize icons 2.0
         env:
