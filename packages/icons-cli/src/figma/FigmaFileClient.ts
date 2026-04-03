@@ -9,7 +9,10 @@ import { concurrently } from '../concurrently'
 
 const DRY_RUN = Boolean(process.env.DRY_RUN)
 
-const matchPath = match<{ fileId: string; name: string }>('/file/:fileId/:name')
+const matchPath = match<{ fileId: string; name: string }>([
+  '/file/:fileId/:name',
+  '/design/:fileId/:name',
+])
 
 function extractParams(url: string): { fileId: string; nodeId?: string } {
   const { pathname, searchParams } = new URL(url)
@@ -41,6 +44,18 @@ function parseV2IconName(name: string) {
     .map((f) => f.split('=').map((s) => s.trim())[1])
     .join('/')
     .toLowerCase()
+}
+
+function resolveOutputPath(outputDir: string, filename: string) {
+  const normalizedOutputDir = path.resolve(outputDir)
+  const fullname = path.resolve(normalizedOutputDir, filename)
+  const relativePath = path.relative(normalizedOutputDir, fullname)
+
+  if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
+    return null
+  }
+
+  return fullname
 }
 
 type ExportFormat = 'svg' | 'pdf'
@@ -182,7 +197,13 @@ export class FigmaFileClient {
       const filename = component.variant
         ? `${parseV2IconName(component.variant)}/${component.name}.${this.exportFormat}`
         : `${filenamify(component.name)}.${this.exportFormat}`
-      const fullname = path.join(outputDir, filename)
+      const fullname = resolveOutputPath(outputDir, filename)
+
+      if (fullname === null) {
+        console.log(`skip invalid output path: ${filename}`)
+        return
+      }
+
       const dirname = path.dirname(fullname)
 
       if (DRY_RUN) {
