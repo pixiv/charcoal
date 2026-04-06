@@ -175,14 +175,14 @@ export const WithAttributes: StoryObj<Props> = {
 }
 
 export const WithUnsafe: StoryObj<Props> = {
-  render: ({ color, name, scale, ...args }) => {
+  render: ({ color, name, scale }) => {
     return (
       <>
         <IconDef color={color}>
           <pixiv-icon
-            unsafe-non-guideline-scale={args['unsafe-non-guideline-scale']}
             name={name}
             scale={scale}
+            style={{ '--charcoal-icon-unsafe-scale': 3.75 } as Record<string, unknown>}
           />
           アイコンと文字
         </IconDef>
@@ -192,7 +192,6 @@ export const WithUnsafe: StoryObj<Props> = {
   },
   args: {
     name: '16/Add',
-    'unsafe-non-guideline-scale': '3.75',
     color: '#000000',
   },
 }
