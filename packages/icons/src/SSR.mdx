@@ -10,56 +10,47 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 一方、Custom Element であるということは、**SVG アイコンの読み込みはクライアントサイドで行われます**。  
 したがって、大きさが確定せずにレイアウトシフトが起こりうるのは、SSR における注意点の一つと言えます。
 
-以下のようなコードをリセット CSS に含めることで、`<pixiv-icon>` によるレイアウトシフトの発生を防ぐことができます。  
-（簡単のため、ネスト記法が利用できるケースを意図しています）
+## レイアウトシフト防止 CSS
 
-```css
-pixiv-icon {
-  display: inline-flex;
-  width: calc(var(--icon-size, 1em) * var(--scale, 1));
-  height: calc(var(--icon-size, 1em) * var(--scale, 1));
-}
+`@charcoal-ui/icons/css/icon.css` をインポートすることで、`<pixiv-icon>` のレイアウトシフトを防止できます。
 
-&[name~='16/'] {
-  --icon-size: 16px;
-}
-
-&[name~='24/'] {
-  --icon-size: 24px;
-}
-
-&[name~='32/'] {
-  --icon-size: 32px;
-}
-
-&[scale='2'] {
-  --scale: 2;
-}
-
-&[scale='3'] {
-  --scale: 3;
-}
-
-/* NOTICE: 現状とサポートブラウザが少ない */
-@supports (--scale: attr(unsafe-non-guideline-scale)) {
-  &[unsafe-non-guideline-scale] {
-    --scale: attr(unsafe-non-guideline-scale);
-  }
-}
+```ts
+import '@charcoal-ui/icons/css/icon.css'
 ```
 
-ただしコメントにもある通り、**現状 `unsafe-non-guideline-scale` をつけた要素は、リセット CSS だけではレイアウトシフトが防げません。**
-CSS の `attr()` が数値の解釈をサポートするまで、個別にインラインスタイルを用いて大きさを確定させるなどのワークアラウンドが必要です。
+この CSS は 2 つのメカニズムを提供します:
+
+### 1. `.charcoal-icon` クラス（React 向け）
+
+`@charcoal-ui/react` の `<Icon>` コンポーネントは自動的に `.charcoal-icon` クラスと `--charcoal-icon-ssr-size` CSS 変数を設定します。
+CSS が読み込まれていれば、Custom Element の定義前でも正しいサイズが確保されます。
+
+### 2. `pixiv-icon:not(:defined)` セレクター（vanilla HTML 向け）
+
+React を使わない場合でも、`name` 属性のプレフィックス（`16/`, `24/`, `32/`, `Inline/`）と `scale` 属性に基づいてサイズが確保されます。
+
+### `unsafe-non-guideline-scale` について
+
+`unsafe-non-guideline-scale` を使用する場合、CSS だけではサイズを事前計算できません。
+React の `<Icon>` コンポーネントを使用すれば、`data-charcoal-icon-size` と `--charcoal-icon-ssr-size` が自動設定されるため問題ありません。
+
+vanilla HTML で使用する場合は、インラインスタイルで明示的にサイズを指定してください:
 
 ```html
 <pixiv-icon
   name="24/Add"
   unsafe-non-guideline-scale="0.5"
-  style="--scale: 0.5;"
+  style="width: 12px; height: 12px;"
 ></pixiv-icon>
+```
+
+または `data-charcoal-icon-size` と `--charcoal-icon-ssr-size` を手動で設定してください:
+
+```html
 <pixiv-icon
   name="24/Add"
   unsafe-non-guideline-scale="0.5"
-  style="width: 12px; height: 12px;"
+  data-charcoal-icon-size="12"
+  style="--charcoal-icon-ssr-size: 12px"
 ></pixiv-icon>
 ```
