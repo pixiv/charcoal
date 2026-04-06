@@ -21,6 +21,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    pool: 'forks',
     exclude: ['**/*.browser.test.*', '**/node_modules/**'],
     setupFiles: ['../../vitest.setup.ts', './vitest.setup.ts'],
     alias: [

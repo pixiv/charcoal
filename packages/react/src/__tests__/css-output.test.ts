@@ -72,6 +72,7 @@ describe('CSS nesting output equivalence', () => {
       '__snapshots__',
       'index.css.snap',
     )
-    await expect(canonicalize(result.root)).toMatchFileSnapshot(snapshotPath)
+    const expected = await fs.readFile(snapshotPath, 'utf-8')
+    expect(canonicalize(result.root)).toBe(expected)
   })
 })

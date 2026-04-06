@@ -3,3 +3,47 @@
   width: var(--charcoal-icon-ssr-size);
   height: var(--charcoal-icon-ssr-size);
 }
+
+pixiv-icon:not(:defined) {
+  display: inline-flex;
+
+  &[name^="16/"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  &[name^="24/"] {
+    width: 24px;
+    height: 24px;
+
+    &[scale="2"] { width: 48px; height: 48px; }
+    &[scale="3"] { width: 72px; height: 72px; }
+  }
+
+  &[name^="32/"] {
+    width: 32px;
+    height: 32px;
+  }
+
+  &[name^="Inline/"] {
+    width: 16px;
+    height: 16px;
+
+    &[scale="2"] { width: 32px; height: 32px; }
+  }
+
+  &[unsafe-non-guideline-scale] {
+    &[name^="16/"]     { --charcoal-icon-base: 16; }
+    &[name^="24/"]     { --charcoal-icon-base: 24; }
+    &[name^="32/"]     { --charcoal-icon-base: 32; }
+    &[name^="Inline/"] { --charcoal-icon-base: 16; }
+
+    width: calc(var(--charcoal-icon-base) * var(--charcoal-icon-unsafe-scale) * 1px);
+    height: calc(var(--charcoal-icon-base) * var(--charcoal-icon-unsafe-scale) * 1px);
+  }
+
+  &[data-charcoal-icon-size] {
+    width: var(--charcoal-icon-ssr-size);
+    height: var(--charcoal-icon-ssr-size);
+  }
+}
