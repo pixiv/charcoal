@@ -24,6 +24,7 @@ export default defineConfig({
     }),
   ],
   test: {
+    name: 'browser',
     globals: true,
     include: ['src/**/*.browser.test.{ts,tsx}'],
     browser: {
