@@ -100,7 +100,13 @@ describe('Icon component has correct size with Web Component upgrade', () => {
 
   it.each(iconSizeTestCases)(
     'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize, unsafeNonGuidelineScale=$unsafeNonGuidelineScale) has $expected x $expected',
-    ({ name, scale, unsafeNonGuidelineSize, unsafeNonGuidelineScale, expected }) => {
+    ({
+      name,
+      scale,
+      unsafeNonGuidelineSize,
+      unsafeNonGuidelineScale,
+      expected,
+    }) => {
       const { container } = render(
         <Icon
           name={name}

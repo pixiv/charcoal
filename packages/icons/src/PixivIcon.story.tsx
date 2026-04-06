@@ -182,7 +182,12 @@ export const WithUnsafe: StoryObj<Props> = {
           <pixiv-icon
             name={name}
             scale={scale}
-            style={{ '--charcoal-icon-unsafe-scale': 3.75 } as Record<string, unknown>}
+            style={
+              { '--charcoal-icon-unsafe-scale': 3.75 } as Record<
+                string,
+                unknown
+              >
+            }
           />
           アイコンと文字
         </IconDef>
