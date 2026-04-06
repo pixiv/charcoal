@@ -9,9 +9,7 @@ export type OwnProps = IconSizing & {
 }
 
 export type IconProps = OwnProps &
-  React.PropsWithoutRef<
-    Omit<Props, 'class' | 'scale' | 'unsafe-non-guideline-scale' | 'css'>
-  >
+  React.PropsWithoutRef<Omit<Props, 'class' | 'scale' | 'css'>>
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   {
@@ -54,7 +52,6 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       ref={ref}
       name={name}
       scale={scale}
-      unsafe-non-guideline-scale={unsafeNonGuidelineScale}
       data-charcoal-icon-size={actualSize}
       style={style}
       class={`charcoal-icon ${className || ''}`.trim()}

@@ -8,21 +8,21 @@ function queryIcon(container: HTMLElement) {
 }
 
 describe('Icon', () => {
-  it('sets data-charcoal-icon-size from calcActualSize result', () => {
+  it('always sets data-charcoal-icon-size with calculated size', () => {
     const { container } = render(<Icon name="24/Add" />)
     expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
       '24',
     )
   })
 
-  it('calculates unsafeNonGuidelineSize with scale=2 for 24/ icons', () => {
+  it('sets data-charcoal-icon-size with scale', () => {
     const { container } = render(<Icon name="24/Add" scale={2} />)
     expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
       '48',
     )
   })
 
-  it('calculates unsafeNonGuidelineSize with unsafeNonGuidelineScale', () => {
+  it('sets data-charcoal-icon-size with unsafeNonGuidelineScale', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
     )
@@ -31,7 +31,7 @@ describe('Icon', () => {
     )
   })
 
-  it('uses unsafeNonGuidelineSize prop when provided', () => {
+  it('sets data-charcoal-icon-size with unsafeNonGuidelineSize', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
     )
@@ -45,13 +45,13 @@ describe('Icon', () => {
     expect(queryIcon(container).getAttribute('scale')).toBe('2')
   })
 
-  it('passes unsafe-non-guideline-scale attribute through to pixiv-icon', () => {
+  it('does not pass unsafe-non-guideline-scale attribute to pixiv-icon', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
     )
     expect(
       queryIcon(container).getAttribute('unsafe-non-guideline-scale'),
-    ).toBe('1.5')
+    ).toBeNull()
   })
 
   it('sets --charcoal-icon-ssr-size CSS variable', () => {
@@ -59,6 +59,26 @@ describe('Icon', () => {
     expect(
       queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
     ).toBe('24px')
+  })
+
+  it('sets --charcoal-icon-unsafe-scale CSS variable for unsafeNonGuidelineScale', () => {
+    const { container } = render(
+      <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
+    )
+    expect(
+      queryIcon(container).style.getPropertyValue(
+        '--charcoal-icon-unsafe-scale',
+      ),
+    ).toBe('1.5')
+  })
+
+  it('does not set --charcoal-icon-unsafe-scale for normal icons', () => {
+    const { container } = render(<Icon name="24/Add" />)
+    expect(
+      queryIcon(container).style.getPropertyValue(
+        '--charcoal-icon-unsafe-scale',
+      ),
+    ).toBe('')
   })
 
   it('adds charcoal-icon class', () => {
@@ -84,15 +104,15 @@ describe('Icon', () => {
 
   it('handles Inline icons', () => {
     const { container } = render(<Icon name="Inline/Add" />)
-    expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
-      '16',
-    )
+    expect(
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+    ).toBe('16px')
   })
 
   it('handles Inline icons with scale=2', () => {
     const { container } = render(<Icon name="Inline/Add" scale={2} />)
-    expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
-      '32',
-    )
+    expect(
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+    ).toBe('32px')
   })
 })
