@@ -41,6 +41,7 @@ const iconSizeTestCases = [
   { name: '24/Add', scale: 2, expected: 48 },
   { name: '24/Add', scale: 3, expected: 72 },
   { name: '24/Add', unsafeNonGuidelineSize: 64, expected: 64 },
+  { name: '24/Add', unsafeNonGuidelineScale: 1.5, expected: 36 },
   { name: 'Inline/Add', expected: 16 },
   { name: 'Inline/Add', scale: 2, expected: 32 },
   { name: '16/Add', expected: 16 },
@@ -98,13 +99,14 @@ describe('Icon component has correct size with Web Component upgrade', () => {
   })
 
   it.each(iconSizeTestCases)(
-    'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize) has $expected x $expected',
-    ({ name, scale, unsafeNonGuidelineSize, expected }) => {
+    'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize, unsafeNonGuidelineScale=$unsafeNonGuidelineScale) has $expected x $expected',
+    ({ name, scale, unsafeNonGuidelineSize, unsafeNonGuidelineScale, expected }) => {
       const { container } = render(
         <Icon
           name={name}
           scale={scale}
           unsafeNonGuidelineSize={unsafeNonGuidelineSize}
+          unsafeNonGuidelineScale={unsafeNonGuidelineScale}
         />,
       )
       const { width, height } = getIconSize(container)

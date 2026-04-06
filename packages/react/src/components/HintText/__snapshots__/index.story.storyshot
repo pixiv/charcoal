@@ -13,7 +13,10 @@ exports[`Storybook Tests > react/HintText > Default 1`] = `
         class="charcoal-hint-text-icon"
       >
         <pixiv-icon
+          class="charcoal-icon"
+          data-charcoal-icon-size="16"
           name="16/Info"
+          style="--charcoal-icon-ssr-size: 16px;"
         />
       </div>
       <p
@@ -42,7 +45,10 @@ exports[`Storybook Tests > react/HintText > NarrowWidth 1`] = `
           class="charcoal-hint-text-icon"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="16"
             name="16/Info"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </div>
         <p

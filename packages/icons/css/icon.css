@@ -55,6 +55,7 @@ pixiv-icon:not(:defined) {
       --charcoal-icon-base: 16;
     }
 
+    /* --charcoal-icon-unsafe-scale はインラインスタイルで注入される */
     width: calc(
       var(--charcoal-icon-base) * var(--charcoal-icon-unsafe-scale) * 1px
     );

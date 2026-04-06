@@ -187,8 +187,10 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      data-charcoal-icon-size="16"
                       name="16/Menu"
+                      style="--charcoal-icon-ssr-size: 16px;"
                     />
                   </button>
                 </div>
@@ -221,7 +223,10 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
             type="button"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="24"
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -322,7 +327,10 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
             type="button"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="24"
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -515,8 +523,10 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      data-charcoal-icon-size="16"
                       name="16/Menu"
+                      style="--charcoal-icon-ssr-size: 16px;"
                     />
                   </button>
                 </div>
@@ -549,7 +559,10 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
             type="button"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="24"
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -712,7 +725,10 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
             type="button"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="24"
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>

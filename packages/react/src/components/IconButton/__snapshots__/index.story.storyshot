@@ -13,7 +13,10 @@ exports[`Storybook Tests > react/IconButton > Default 1`] = `
       title="add"
     >
       <pixiv-icon
+        class="charcoal-icon"
+        data-charcoal-icon-size="16"
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>
@@ -32,7 +35,10 @@ exports[`Storybook Tests > react/IconButton > IsActive 1`] = `
       data-variant="Default"
     >
       <pixiv-icon
+        class="charcoal-icon"
+        data-charcoal-icon-size="16"
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>
@@ -51,7 +57,10 @@ exports[`Storybook Tests > react/IconButton > Overlay 1`] = `
       data-variant="Overlay"
     >
       <pixiv-icon
+        class="charcoal-icon"
+        data-charcoal-icon-size="16"
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>

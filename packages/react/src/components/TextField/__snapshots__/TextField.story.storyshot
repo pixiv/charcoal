@@ -424,7 +424,10 @@ exports[`Storybook Tests > react/TextField > Prefix 1`] = `
             style="display: flex; align-items: center;"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="16"
               name="16/Search"
+              style="--charcoal-icon-ssr-size: 16px;"
             />
           </div>
         </div>

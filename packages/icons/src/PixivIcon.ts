@@ -227,6 +227,12 @@ export class PixivIcon extends HTMLElement {
       )
     }
 
+    // :not(:defined) CSS 用に CSS 変数をホスト要素に注入する
+    const unsafeScale = props['unsafe-non-guideline-scale']
+    if (unsafeScale !== null) {
+      this.style.setProperty('--charcoal-icon-unsafe-scale', unsafeScale)
+    }
+
     const style = `<style>
   :host {
     display: inline-flex;

@@ -42,8 +42,11 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       ({
         ...userStyle,
         '--charcoal-icon-ssr-size': `${actualSize}px`,
+        ...(unsafeNonGuidelineScale !== undefined && {
+          '--charcoal-icon-unsafe-scale': unsafeNonGuidelineScale,
+        }),
       }) as React.CSSProperties,
-    [actualSize, userStyle],
+    [actualSize, unsafeNonGuidelineScale, userStyle],
   )
 
   return (
