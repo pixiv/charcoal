@@ -8,6 +8,12 @@ CLI for creating pull request in CI.
 GITHUB_ACCESS_TOKEN=xxxx GITHUB_REPO_OWNER=pixiv GITHUB_REPO_NAME=charcoal GITHUB_DEFAULT_BRANCH=main TARGET_DIR=path/to/target/dir pnpm pullrequest-cli -c category_name -t "Pull request created by pullrequest-cli"
 ```
 
+or
+
+```
+GITHUB_ACCESS_TOKEN=xxxx GITHUB_REPO_OWNER=pixiv GITHUB_REPO_NAME=charcoal GITHUB_DEFAULT_BRANCH=main TARGET_DIRS=path/to/target/dir1,path/to/target/dir2 pnpm pullrequest-cli -c category_name -t "Pull request created by pullrequest-cli"
+```
+
 ### Environment values
 
 | param name   | required | description                                       |

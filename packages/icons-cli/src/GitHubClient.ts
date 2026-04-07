@@ -69,7 +69,7 @@ export class GithubClient {
   async createTreeFromDiff(outputDir: string): Promise<TreeItem[]> {
     const tree: TreeItem[] = []
 
-    for await (const file of getChangedFiles(outputDir)) {
+    for await (const file of getChangedFiles([outputDir])) {
       const item = {
         path: file.relativePath,
         // 100 はファイル 644 は実行不可なファイルであるという意味

@@ -59,7 +59,7 @@ export class GitlabClient {
   async createActionsFromDiff(outputDir: string): Promise<CommitAction[]> {
     const actions: CommitAction[] = []
 
-    for await (const file of getChangedFiles(outputDir)) {
+    for await (const file of getChangedFiles([outputDir])) {
       actions.push({
         action:
           file.status === 'untracked'

@@ -22,7 +22,7 @@ export class GithubClient {
     repoName: string,
     token: string,
     defaultBranch: string,
-    outputDir: string,
+    outputDirs: string[],
     category: string,
     pullrequestTitle: string,
   ) {
@@ -34,8 +34,10 @@ export class GithubClient {
       category,
       pullrequestTitle,
     )
-    const outputDirFullPath = path.resolve(process.cwd(), outputDir)
-    const diff = await client.createTreeFromDiff(outputDirFullPath)
+    const outputDirFullPaths = outputDirs.map((outputDir) =>
+      path.resolve(process.cwd(), outputDir),
+    )
+    const diff = await client.createTreeFromDiff(outputDirFullPaths)
     // eslint-disable-next-line no-console
     console.log(`${diff.length} files are changed`)
     if (diff.length === 0) {
@@ -86,26 +88,27 @@ export class GithubClient {
     return `[${this.category}]${this.message} ${this.now.toDateString()}`
   }
 
-  async createTreeFromDiff(outputDir: string): Promise<TreeItem[]> {
+  async createTreeFromDiff(outputDirs: string[]): Promise<TreeItem[]> {
     const tree: TreeItem[] = []
 
-    for await (const file of getChangedFiles(outputDir)) {
-      const item = {
-        path: file.relativePath,
-        // 100 はファイル 644 は実行不可なファイルであるという意味
-        // @see https://octokit.github.io/rest.js/v18#git-create-tree
-        mode: '100644' as const,
-        content: file.content,
-      }
-
+    for await (const file of getChangedFiles(outputDirs)) {
       if (file.status === 'deleted') {
         // https://stackoverflow.com/questions/23637961/how-do-i-mark-a-file-as-deleted-in-a-tree-using-the-github-api
         tree.push({
-          ...item,
+          path: file.relativePath,
+          // 100 はファイル 644 は実行不可なファイルであるという意味
+          // @see https://octokit.github.io/rest.js/v18#git-create-tree
+          mode: '100644',
           sha: null,
         })
       } else {
-        tree.push(item)
+        tree.push({
+          path: file.relativePath,
+          // 100 はファイル 644 は実行不可なファイルであるという意味
+          // @see https://octokit.github.io/rest.js/v18#git-create-tree
+          mode: '100644',
+          content: file.content,
+        })
       }
     }
 
