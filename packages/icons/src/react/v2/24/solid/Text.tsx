@@ -12,8 +12,6 @@ const SvgText = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M3.75 6.25A2.25 2.25 0 016 4h12a2.25 2.25 0 012.25 2.25V7.5a1.25 1.25 0 11-2.5 0v-1h-4.5v13H15a1.25 1.25 0 110 2.5H9a1.25 1.25 0 110-2.5h1.75v-13h-4.5v1a1.25 1.25 0 11-2.5 0V6.25z"
       fill="currentColor"
     />
