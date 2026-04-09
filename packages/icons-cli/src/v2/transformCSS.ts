@@ -189,7 +189,16 @@ ${createPreviewItems(classNames, 'className')}
   },
 }
   
-export const Default = {}
+export const Default = {
+parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
+}
 `,
   )
 }

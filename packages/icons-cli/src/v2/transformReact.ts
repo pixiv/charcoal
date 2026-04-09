@@ -82,7 +82,16 @@ ${icons
   },
 }
 
-export const Default = {}
+export const Default = {
+parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
+}
 
 const Global = createGlobalStyle\`
   .icons-grid {

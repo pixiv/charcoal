@@ -155,6 +155,14 @@ const Heading = styled.h2`
 
 export const Default: StoryObj<Props> = {
   args: { scale: 1, color: '#000000' },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
 }
 
 export const WithAttributes: StoryObj<Props> = {
@@ -171,6 +179,14 @@ export const WithAttributes: StoryObj<Props> = {
     name: '16/Add',
     scale: 1,
     color: '#000000',
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
   },
 }
 
@@ -195,6 +211,14 @@ export const WithUnsafe: StoryObj<Props> = {
     'unsafe-non-guideline-scale': '3.75',
     color: '#000000',
   },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
 }
 
 export const RawIconFile: StoryObj<Props> = {
@@ -213,5 +237,13 @@ export const RawIconFile: StoryObj<Props> = {
     name: '16/TestIconFileThatNeverExists',
     scale: 1,
     color: '#000000',
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
   },
 }
