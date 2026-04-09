@@ -12,8 +12,6 @@ const SvgCurve = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M20.25 5.25c-8.284 0-15 6.716-15 15a1.25 1.25 0 11-2.5 0c0-9.665 7.835-17.5 17.5-17.5a1.25 1.25 0 110 2.5z"
       fill="currentColor"
     />
