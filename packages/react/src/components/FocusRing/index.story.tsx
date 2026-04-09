@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
 
-import { useClassNames } from '../../_lib/useClassNames'
-
 const meta = {
   title: 'react/FocusRing',
   parameters: {
@@ -14,11 +12,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 function FocusRingExample() {
-  const classNames = useClassNames('charcoal-focus-ring')
-
   return (
     <div
-      className={classNames}
+      className="charcoal-focus-ring"
       style={{
         backgroundColor: 'var(--charcoal-surface3)',
         borderRadius: 8,
