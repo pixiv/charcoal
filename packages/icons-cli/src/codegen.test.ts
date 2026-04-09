@@ -36,8 +36,8 @@ describe('createSvgDataUri', () => {
     )
   })
 
-  it('複数クォートやバックスラッシュを含むSVGでもCSSに安全に埋め込める', () => {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg"><text>"\\" '' ''' </style><script>alert(1)</script></text></svg>`
+  it('複数クォートや括弧やバックスラッシュを含むSVGでもCSSに安全に埋め込める', () => {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg"><text>"\\" '' ''' () </style><script>alert(1)</script></text></svg>`
     const dataUri = createSvgDataUri(svg)
 
     expect(dataUri.startsWith('data:image/svg+xml;utf8,')).toBe(true)
@@ -45,6 +45,9 @@ describe('createSvgDataUri', () => {
     expect(dataUri).not.toContain('</style>')
     expect(dataUri).not.toContain('<script>')
     expect(dataUri).toContain('%22')
+    expect(dataUri).toContain('%27')
+    expect(dataUri).toContain('%28')
+    expect(dataUri).toContain('%29')
     expect(dataUri).toContain('%5C')
 
     const dom = new JSDOM(
@@ -55,6 +58,12 @@ describe('createSvgDataUri', () => {
     dom.window.document.head.append(style)
 
     expect(style.sheet?.cssRules).toHaveLength(1)
+
+    const singleQuotedStyle = dom.window.document.createElement('style')
+    singleQuotedStyle.textContent = `.icon { background-image: url('${dataUri}'); }`
+    dom.window.document.head.append(singleQuotedStyle)
+
+    expect(singleQuotedStyle.sheet?.cssRules).toHaveLength(1)
   })
 })
 
