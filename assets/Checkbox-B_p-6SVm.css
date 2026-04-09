@@ -1,0 +1,1 @@
+.charcoal-checkbox__label{cursor:pointer;gap:4px;display:flex;position:relative}.charcoal-checkbox__label[aria-disabled=true]{cursor:default;opacity:.32}.charcoal-checkbox__label[aria-disabled=true]>input{opacity:1}.charcoal-checkbox__label_div{color:var(--charcoal-text2);flex:1;font-size:14px;line-height:20px}
