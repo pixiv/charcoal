@@ -4,11 +4,11 @@
   grid-gap: 4px;
   align-items: center;
   cursor: pointer;
-}
 
-.charcoal-radio__label[aria-disabled]:not([aria-disabled='false']) {
-  opacity: 0.32;
-  cursor: default;
+  &[aria-disabled]:not([aria-disabled='false']) {
+    opacity: 0.32;
+    cursor: default;
+  }
 }
 
 .charcoal-radio__label_div {

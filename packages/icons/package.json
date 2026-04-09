@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons",
-  "version": "5.8.1",
+  "version": "5.9.0-beta.1",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -35,7 +35,6 @@
     "@types/styled-components": "^5.1.21",
     "@types/warning": "^3.0.0",
     "@types/webpack-env": "^1.18.8",
-    "@vitejs/plugin-react": "^4.3.1",
     "jsdom": "^24.1.0",
     "react": "^18.3.1",
     "styled-components": "^5.3.11"

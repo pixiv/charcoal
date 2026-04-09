@@ -1,43 +1,52 @@
 import path from 'path'
 import { glob } from 'node:fs/promises'
 import fs from 'fs-extra'
+import { serializeJavaScriptValue } from './codegen'
 
-const generateIconSvgEmbeddedSource = (svgString: string) => {
+export const generateIconSvgEmbeddedSource = (svgString: string) => {
   const str = svgString.replace(/\r?\n/g, '')
 
   return `/** This file is auto generated. DO NOT EDIT BY HAND. */
-export default '${str}'
+export default ${serializeJavaScriptValue(str)}
 `
 }
 
-const generateMjsEntrypoint = (
+export const generateMjsEntrypoint = (
   icons: string[],
 ) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
 export default {
 ${icons
-  .map((it) => `  '${it}': () => import('./${it}.js').then(m => m.default)`)
+  .map(
+    (it) =>
+      `  ${serializeJavaScriptValue(it)}: () => import(${serializeJavaScriptValue(`./${it}.js`)}).then(m => m.default)`,
+  )
   .join(',\n')}
 }
 `
 
-const generateCjsEntrypoint = (
+export const generateCjsEntrypoint = (
   icons: string[],
 ) => `/** This file is auto generated. DO NOT EDIT BY HAND. */
 
 module.exports = {
 ${icons
-  .map((it) => `  '${it}': () => import('./${it}.js').then(m => m.default)`)
+  .map(
+    (it) =>
+      `  ${serializeJavaScriptValue(it)}: () => import(${serializeJavaScriptValue(`./${it}.js`)}).then(m => m.default)`,
+  )
   .join(',\n')}
 }
 `
 
-const generateTypeDefinitionEntrypoint = (
+export const generateTypeDefinitionEntrypoint = (
   icons: string[],
 ) => `/** This file is auto generated. DO NOt EDIT BY HAND. */
 
 declare var _default: {
-${icons.map((it) => `  '${it}': () => Promise<string>`).join(';\n')}
+${icons
+  .map((it) => `  ${serializeJavaScriptValue(it)}: () => Promise<string>`)
+  .join(';\n')}
 };
 export default _default;
 `

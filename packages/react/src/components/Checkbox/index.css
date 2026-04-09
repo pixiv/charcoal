@@ -3,15 +3,15 @@
   cursor: pointer;
   display: flex;
   gap: 4px;
-}
 
-.charcoal-checkbox__label[aria-disabled='true'] {
-  cursor: default;
-  opacity: 0.32;
-}
+  &[aria-disabled='true'] {
+    cursor: default;
+    opacity: 0.32;
 
-.charcoal-checkbox__label[aria-disabled='true'] > input {
-  opacity: 1;
+    & > input {
+      opacity: 1;
+    }
+  }
 }
 
 .charcoal-checkbox__label_div {
