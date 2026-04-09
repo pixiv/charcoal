@@ -15,8 +15,6 @@ const SvgArrowright = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M12.366 17.616a1.25 1.25 0 001.768 1.768l6.5-6.5a1.25 1.25 0 000-1.768l-6.5-6.5a1.25 1.25 0 00-1.768 1.768l4.366 4.366H4.5a1.25 1.25 0 100 2.5h12.232l-4.366 4.366z"
       fill="currentColor"
     />
