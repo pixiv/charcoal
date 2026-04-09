@@ -4,7 +4,7 @@ import { CSSRuleObject } from 'tailwindcss/types/config'
 export const createFocusRingUtilities = (): {
   [key: string]: CSSRuleObject
 } => ({
-  '.charcoal-focus-ring': {
+  '.ch-focus-ring': {
     "&:not(:disabled):not([aria-disabled]):focus-visible, &[aria-disabled='false']:focus-visible":
       {
         outline: 'none',
