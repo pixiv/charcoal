@@ -741,6 +741,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Def
             tabindex="-1"
           >
             <option
+              value=""
+            />
+            <option
               value="1"
             >
               1
