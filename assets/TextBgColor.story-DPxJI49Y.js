@@ -1,0 +1,10 @@
+import{n as e}from"./chunk-BneVvdWh.js";import{nt as t}from"./iframe-A6E4gP06.js";import{n,t as r}from"./colors-Dklcac3E.js";var i,a,o=e((()=>{i=t(),a=({textColorClass:e,bgColorClass:t})=>(0,i.jsx)(`div`,{className:`${t} p-64 max-w-2xl`,children:(0,i.jsx)(`p`,{className:`typography-20 ${e}`,children:`charcoal はピクシブ株式会社のデザインシステムです。ここでは特に、Web フロントエンドの実装に用いる npm パッケージ集のことを言います。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at odio bibendum nisl mollis eleifend et quis turpis. Quisque dignissim porta justo ut convallis.dipiscing elit.`})});try{a.displayName=`TextBgColor`,a.__docgenInfo={description:``,displayName:`TextBgColor`,filePath:`/home/runner/work/charcoal/charcoal/packages/tailwind-config/src/docs/colors/TextBgColor.tsx`,methods:[],props:{textColorClass:{defaultValue:null,declarations:[{fileName:`charcoal/packages/tailwind-config/src/docs/colors/TextBgColor.tsx`,name:`TypeLiteral`}],description:``,name:`textColorClass`,required:!0,tags:{},type:{name:`string`}},bgColorClass:{defaultValue:null,declarations:[{fileName:`charcoal/packages/tailwind-config/src/docs/colors/TextBgColor.tsx`,name:`TypeLiteral`}],description:``,name:`bgColorClass`,required:!0,tags:{},type:{name:`string`}}},tags:{}}}catch{}})),s,c,l;e((()=>{n(),o(),s=t(),c={title:`tailwind-config/Colors/Text bg color`,component:a,argTypes:{textColorClass:{options:Object.keys(r).map(e=>`text-${e}`),control:{type:`select`}},bgColorClass:{options:Object.keys(r).map(e=>`bg-${e}`),control:{type:`select`}}}},l={args:{textColorClass:`text-text1`,bgColorClass:`bg-background1`},render:({bgColorClass:e,textColorClass:t})=>(0,s.jsx)(a,{bgColorClass:e,textColorClass:t})},l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  args: {
+    textColorClass: 'text-text1',
+    bgColorClass: 'bg-background1'
+  },
+  render: ({
+    bgColorClass,
+    textColorClass
+  }) => <TextBgColor bgColorClass={bgColorClass} textColorClass={textColorClass} />
+}`,...l.parameters?.docs?.source}}}}))();export{l as Playground,c as default};
