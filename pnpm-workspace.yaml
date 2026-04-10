@@ -4,3 +4,4 @@ packages:
 catalog:
   'react-compiler-runtime': '1.0.0'
   '@react-spring/web': '^10'
+minimumReleaseAge: 10080 # 7 days

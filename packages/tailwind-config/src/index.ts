@@ -19,6 +19,7 @@ import { mapObject, px } from '@charcoal-ui/utils'
 import { colorsToTailwindConfig } from './colors/toTailwindConfig'
 
 import cssVariableColorPlugin from './colors/plugin'
+import { charcoalFocusRing } from './focusring'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
 import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
@@ -159,6 +160,7 @@ export function createTailwindConfig({
     },
     plugins: [
       typographyPlugin,
+      charcoalFocusRing,
       cssVariableColorPlugin(theme, Boolean(cssVariablesV1)),
 
       ...Object.entries(theme).map(([selectorOrMediaQuery, theme]) =>

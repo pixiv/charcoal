@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout base branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.event.pull_request.base.ref }}
           fetch-depth: 0
@@ -25,7 +25,7 @@ jobs:
         id: commit-hash
         run: echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Restore image snapshot from cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: cache-image-snapshots
         with:
           path: __image_snapshots__
@@ -44,7 +44,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             /home/runner/.cache/ms-playwright/
@@ -63,19 +63,19 @@ jobs:
         run: pnpm test:image-snapshot --updateSnapshot
 
       - name: Upload base branch snapshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: base__image-snapshots__
           path: __image_snapshots__/
 
   test-storybook:
-    name: Build Storybook
+    name: Run image snapshot test
     timeout-minutes: 20
     runs-on: ubuntu-22.04
     needs: prepare-base-branch
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: setup pnpm
         uses: pnpm/action-setup@v4
@@ -90,7 +90,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright runners
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             /home/runner/.cache/ms-playwright/
@@ -138,13 +138,13 @@ jobs:
         if: steps.label-checking.outputs.result == 'true'
         run: pnpm test:image-snapshot --updateSnapshot
       - name: Archive image snapshot diffs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: failure() && steps.label-checking.outputs.result != 'true'
         with:
           path: __diff_output__/
       - name: Archive new image snapshots
         if: steps.label-checking.outputs.result == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: new__image_snapshots__
           path: __image_snapshots__/

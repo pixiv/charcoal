@@ -1,3 +1,5 @@
+import { encodeSvgAsDataUri } from './utils'
+
 const SVG_EXTENSION = /\.svg$/iu
 const NON_CSS_CLASS_NAME_CHARACTERS = /[^a-z0-9-]+/gu
 const DUPLICATE_DASHES = /-+/gu
@@ -12,7 +14,9 @@ export function serializeJavaScriptValue(value: unknown): string {
 }
 
 export function createSvgDataUri(svg: string): string {
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
+  return `data:image/svg+xml;utf8,${encodeSvgAsDataUri(svg)
+    .replaceAll("'", '%27')
+    .replaceAll('"', '%22')}`
 }
 
 export function createCssClassNameSegment(fileName: string): string {

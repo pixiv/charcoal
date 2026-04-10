@@ -91,3 +91,4 @@ export {
   default as UnstablePagination,
   type PaginationProps,
 } from './components/Pagination'
+import './components/FocusRing/index.css'

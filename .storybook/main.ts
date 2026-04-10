@@ -57,6 +57,7 @@ const generalConfig: Omit<
         },
       },
     },
+    '@storybook/addon-mcp',
   ],
   staticDirs: ['./static'],
   typescript: {
