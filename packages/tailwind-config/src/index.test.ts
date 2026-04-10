@@ -56,7 +56,7 @@ describe('tailwind.config.js', () => {
   })
 
   test('focus ring plugin', () => {
-    const styles = result.getStylesByClassName('charcoal-focus-ring')
+    const styles = result.getStylesByClassName('ch-focus-ring')
     const css = styles?.join('\n') ?? ''
 
     expect(styles).toBeDefined()

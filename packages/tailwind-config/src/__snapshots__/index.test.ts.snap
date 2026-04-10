@@ -5721,7 +5721,7 @@ exports[`tailwind.config.js > list of classes 1`] = `
   "typography-20",
   "typography-32",
   "preserve-half-leading",
-  "charcoal-focus-ring",
+  "ch-focus-ring",
   "bg-call-to-action-top",
   "bg-call-to-action-top-disabled",
   "bg-call-to-action-top-hover",
