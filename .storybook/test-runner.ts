@@ -1,6 +1,19 @@
-import { waitForPageReady, type TestRunnerConfig } from '@storybook/test-runner'
+import {
+  getStoryContext,
+  waitForPageReady,
+  type TestRunnerConfig,
+} from '@storybook/test-runner'
 import { toMatchImageSnapshot } from 'jest-image-snapshot'
 import { injectAxe, checkA11y } from 'axe-playwright'
+
+type VrtParameters = {
+  vrt?: {
+    viewport?: {
+      width: number
+      height: number
+    }
+  }
+}
 
 const a11yTestConfig: TestRunnerConfig = {
   async preVisit(page) {
@@ -25,6 +38,18 @@ const a11yTestConfig: TestRunnerConfig = {
 const vrtTestConfig: TestRunnerConfig = {
   setup() {
     expect.extend({ toMatchImageSnapshot })
+  },
+  async preVisit(page, context) {
+    const storyContext = await getStoryContext(page, context)
+    const viewport = (storyContext.parameters as VrtParameters | undefined)?.vrt
+      ?.viewport
+
+    if (viewport) {
+      await page.setViewportSize({
+        width: viewport.width,
+        height: viewport.height,
+      })
+    }
   },
   async postVisit(page, context) {
     await waitForPageReady(page)

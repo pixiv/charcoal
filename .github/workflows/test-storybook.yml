@@ -69,7 +69,7 @@ jobs:
           path: __image_snapshots__/
 
   test-storybook:
-    name: Build Storybook
+    name: Run image snapshot test
     timeout-minutes: 20
     runs-on: ubuntu-22.04
     needs: prepare-base-branch
