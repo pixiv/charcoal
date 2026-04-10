@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>38.3s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>42.8s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -21057,6 +21057,14 @@ const Heading = styled.h2`
 
 export const Default: StoryObj&lt;Props&gt; = {
   args: { scale: 1, color: &#39;#000000&#39; },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
 }
 
 export const WithAttributes: StoryObj&lt;Props&gt; = {
@@ -21073,6 +21081,14 @@ export const WithAttributes: StoryObj&lt;Props&gt; = {
     name: &#39;16/Add&#39;,
     scale: 1,
     color: &#39;#000000&#39;,
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
   },
 }
 
@@ -21097,6 +21113,14 @@ export const WithUnsafe: StoryObj&lt;Props&gt; = {
     &#39;unsafe-non-guideline-scale&#39;: &#39;3.75&#39;,
     color: &#39;#000000&#39;,
   },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
 }
 
 export const RawIconFile: StoryObj&lt;Props&gt; = {
@@ -21115,6 +21139,14 @@ export const RawIconFile: StoryObj&lt;Props&gt; = {
     name: &#39;16/TestIconFileThatNeverExists&#39;,
     scale: 1,
     color: &#39;#000000&#39;,
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
   },
 }
 </code></pre></div>
@@ -46103,6 +46135,14 @@ const Heading = styled.h2`
 
 export const Default: StoryObj&lt;Props&gt; = {
   args: { scale: 1, color: &#39;#000000&#39; },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
 }
 
 export const WithAttributes: StoryObj&lt;Props&gt; = {
@@ -46119,6 +46159,14 @@ export const WithAttributes: StoryObj&lt;Props&gt; = {
     name: &#39;16/Add&#39;,
     scale: 1,
     color: &#39;#000000&#39;,
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
   },
 }
 
@@ -46143,6 +46191,14 @@ export const WithUnsafe: StoryObj&lt;Props&gt; = {
     &#39;unsafe-non-guideline-scale&#39;: &#39;3.75&#39;,
     color: &#39;#000000&#39;,
   },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
 }
 
 export const RawIconFile: StoryObj&lt;Props&gt; = {
@@ -46161,6 +46217,14 @@ export const RawIconFile: StoryObj&lt;Props&gt; = {
     name: &#39;16/TestIconFileThatNeverExists&#39;,
     scale: 1,
     color: &#39;#000000&#39;,
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
   },
 }
 </code></pre></div>
