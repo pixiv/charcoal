@@ -301,8 +301,8 @@ importers:
         specifier: ^5.1.21
         version: 5.1.34
       '@types/warning':
-        specifier: ^3.0.0
-        version: 3.0.3
+        specifier: ^3.0.4
+        version: 3.0.4
       '@types/webpack-env':
         specifier: ^1.18.8
         version: 1.18.8
@@ -471,8 +471,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
       '@types/warning':
-        specifier: ^3.0.0
-        version: 3.0.3
+        specifier: ^3.0.4
+        version: 3.0.4
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.21(postcss@8.5.9)
@@ -559,8 +559,8 @@ importers:
         specifier: ^5.1.21
         version: 5.1.34
       '@types/warning':
-        specifier: ^3.0.0
-        version: 3.0.3
+        specifier: ^3.0.4
+        version: 3.0.4
       '@vitejs/plugin-react':
         specifier: ^4.3.1
         version: 4.3.4(vite@8.0.5(@emnapi/core@1.8.1)(@emnapi/runtime@1.8.1)(@types/node@24.6.1)(esbuild@0.25.1)(jiti@2.6.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
@@ -611,8 +611,8 @@ importers:
         specifier: ^5.1.21
         version: 5.1.34
       '@types/warning':
-        specifier: ^3.0.0
-        version: 3.0.3
+        specifier: ^3.0.4
+        version: 3.0.4
       '@vitejs/plugin-react':
         specifier: ^4.3.1
         version: 4.3.4(vite@8.0.5(@emnapi/core@1.8.1)(@emnapi/runtime@1.8.1)(@types/node@24.6.1)(esbuild@0.25.1)(jiti@2.6.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
@@ -3603,8 +3603,8 @@ packages:
   '@types/wait-on@5.3.4':
     resolution: {integrity: sha512-EBsPjFMrFlMbbUFf9D1Fp+PAB2TwmUn7a3YtHyD9RLuTIk1jDd8SxXVAoez2Ciy+8Jsceo2MYEYZzJ/DvorOKw==}
 
-  '@types/warning@3.0.3':
-    resolution: {integrity: sha512-D1XC7WK8K+zZEveUPY+cf4+kgauk8N4eHr/XIHXGlGYkHLud6hK9lYfZk1ry1TNh798cZUCgb6MqGEG8DkJt6Q==}
+  '@types/warning@3.0.4':
+    resolution: {integrity: sha512-CqN8MnISMwQbLJXO3doBAV4Yw9hx9/Pyr2rZ78+NfaCnhyRA/nKrpyk6E7mKw17ZOaQdLpK9GiUjrqLzBlN3sg==}
 
   '@types/webpack-env@1.18.8':
     resolution: {integrity: sha512-G9eAoJRMLjcvN4I08wB5I7YofOb/kaJNd5uoCMX+LbKXTPCF+ZIHuqTnFaK9Jz1rgs035f9JUPUhNFtqgucy/A==}
@@ -13571,7 +13571,7 @@ snapshots:
     dependencies:
       '@types/node': 22.14.1
 
-  '@types/warning@3.0.3': {}
+  '@types/warning@3.0.4': {}
 
   '@types/webpack-env@1.18.8': {}
 
