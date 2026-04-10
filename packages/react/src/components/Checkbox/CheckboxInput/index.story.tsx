@@ -1,6 +1,6 @@
 import CheckboxInput from '.'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { useState } from 'react'
+import { type CSSProperties, useState } from 'react'
 
 export default {
   title: 'react/internals/CheckboxInput',
@@ -46,6 +46,31 @@ export const Rounded: StoryObj<typeof CheckboxInput> = {
       >
         <CheckboxInput checked={checked} onChange={setChecked} rounded />
       </div>
+    )
+  },
+}
+
+export const TokenOverride: StoryObj<typeof CheckboxInput> = {
+  render: function Render() {
+    const [checked, setChecked] = useState(false)
+    return (
+      <CheckboxInput
+        checked={checked}
+        onChange={setChecked}
+        style={
+          {
+            '--charcoal-checkbox-control-border-color': 'var(--charcoal-link1)',
+            '--charcoal-checkbox-control-background-checked':
+              'var(--charcoal-warning)',
+            '--charcoal-checkbox-control-background-checked-hover':
+              'var(--charcoal-warning)',
+            '--charcoal-checkbox-control-background-checked-press':
+              'var(--charcoal-warning)',
+            '--charcoal-checkbox-control-focus-ring-color':
+              'rgba(255, 175, 15, 0.32)',
+          } as CSSProperties
+        }
+      />
     )
   },
 }
