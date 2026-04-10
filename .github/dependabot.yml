@@ -8,6 +8,8 @@ updates:
     labels:
       - 'dependencies'
       - 'github-actions'
+    cooldown:
+      default-days: 7
 
   # npm (pnpm workspaces)
   - package-ecosystem: 'npm'
@@ -22,6 +24,8 @@ updates:
     open-pull-requests-limit: 15
     ignore:
       - dependency-name: '@charcoal-ui/*'
+    cooldown:
+      default-days: 7
     groups:
       types:
         patterns:
