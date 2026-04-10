@@ -84,13 +84,13 @@ jobs:
         run: pnpm pullrequest-cli github:pr -c theme -t 'Update theme'
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: generated css
           path: packages/token-cli/build/css
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: generated tokens json
           path: packages/token-cli/tokens
