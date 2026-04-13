@@ -96,17 +96,21 @@ export class PixivIcon extends HTMLElement {
       )
     }
 
-    // CSS variable / data attribute からサイズ情報を読み取る
-    const cssScale = this.style.getPropertyValue('--charcoal-icon-unsafe-scale')
-    const dataSize = this.dataset.charcoalIconSize
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const el = this
 
     return {
       ...partial,
       name,
-      unsafeNonGuidelineScale:
-        cssScale !== '' ? parseFloat(cssScale) : undefined,
-      unsafeNonGuidelineSize:
-        dataSize !== undefined ? parseInt(dataSize, 10) : undefined,
+      // CSS variable / data attribute からサイズ情報を読み取る
+      get unsafeNonGuidelineScale() {
+        const v = el.style.getPropertyValue('--charcoal-icon-unsafe-scale')
+        return v !== '' ? parseFloat(v) : undefined
+      },
+      get unsafeNonGuidelineSize() {
+        const v = el.dataset.charcoalIconSize
+        return v !== undefined ? parseInt(v, 10) : undefined
+      },
     }
   }
 

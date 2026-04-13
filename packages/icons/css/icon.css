@@ -17,6 +17,7 @@ pixiv-icon:not(:defined) {
 
   &[name^='16/'] {
     --_charcoal-icon-base: 16px;
+    --_charcoal-icon-size: 16px;
   }
 
   &[name^='24/'] {
@@ -30,6 +31,7 @@ pixiv-icon:not(:defined) {
 
   &[name^='32/'] {
     --_charcoal-icon-base: 32px;
+    --_charcoal-icon-size: 32px;
   }
 
   &[name^='Inline/'] {
