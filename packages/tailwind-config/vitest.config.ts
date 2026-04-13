@@ -8,7 +8,7 @@ export default defineConfig({
     setupFiles: ['../../vitest.setup.ts'],
     alias: [
       {
-        find: /@charcoal-ui\/(.*)/,
+        find: /^@charcoal-ui\/(?!icon-files|theme\/unstable-tokens)(.*)/,
         replacement: path.join(
           path.resolve(import.meta.dirname, '..'),
           '$1',
