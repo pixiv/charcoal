@@ -28,6 +28,7 @@ import { IconRemove16 } from './16/Remove'
 import { IconSearch16 } from './16/Search'
 import { IconSmile16 } from './16/Smile'
 import { IconSpeaker16 } from './16/Speaker'
+import { IconTrash16 } from './16/Trash'
 import { IconUp16 } from './16/Up'
 import { IconView16 } from './16/View'
 import { IconWarning16 } from './16/Warning'
@@ -46,6 +47,7 @@ import { IconArrowUp24 } from './24/ArrowUp'
 import { IconBinet24 } from './24/Binet'
 import { IconBody24 } from './24/Body'
 import { IconBodyEdit24 } from './24/BodyEdit'
+import { IconBold24 } from './24/Bold'
 import { IconBook24 } from './24/Book'
 import { IconBringBackward24 } from './24/BringBackward'
 import { IconBringForward24 } from './24/BringForward'
@@ -77,6 +79,8 @@ import { IconDownloadAlt24 } from './24/DownloadAlt'
 import { IconDuplicate24 } from './24/Duplicate'
 import { IconDust24 } from './24/Dust'
 import { IconEmoji24 } from './24/Emoji'
+import { IconEmphasisMark24 } from './24/EmphasisMark'
+import { IconEmphasisMarkJp24 } from './24/EmphasisMarkJp'
 import { IconError24 } from './24/Error'
 import { IconErrorOctagon24 } from './24/ErrorOctagon'
 import { IconEvents24 } from './24/Events'
@@ -121,6 +125,7 @@ import { IconIndex24 } from './24/Index'
 import { IconInfo24 } from './24/Info'
 import { IconInvalid24 } from './24/Invalid'
 import { IconInvoice24 } from './24/Invoice'
+import { IconItalic24 } from './24/Italic'
 import { IconItemRemove24 } from './24/ItemRemove'
 import { IconLatestWorks24 } from './24/LatestWorks'
 import { IconLikeOff24 } from './24/LikeOff'
@@ -129,6 +134,7 @@ import { IconLink24 } from './24/Link'
 import { IconList24 } from './24/List'
 import { IconLockLock24 } from './24/LockLock'
 import { IconLockUnlock24 } from './24/LockUnlock'
+import { IconLogin24 } from './24/Login'
 import { IconLogout24 } from './24/Logout'
 import { IconManga24 } from './24/Manga'
 import { IconMenu24 } from './24/Menu'
@@ -280,6 +286,7 @@ import { IconPencilInline } from './Inline/Pencil'
 import { IconRemoveInline } from './Inline/Remove'
 import { IconSmileInline } from './Inline/Smile'
 import { IconSmileOnInline } from './Inline/SmileOn'
+import { IconTrashInline } from './Inline/Trash'
 import { IconUsersInline } from './Inline/Users'
 import { IconViewInline } from './Inline/View'
 import { IconViewOutlineInline } from './Inline/ViewOutline'
@@ -405,6 +412,11 @@ export default {
           <div>
             <IconBodyEdit24 />
             <code>&lt;IconBodyEdit24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconBold24 />
+            <code>&lt;IconBold24 /&gt;</code>
           </div>
 
           <div>
@@ -675,6 +687,16 @@ export default {
           <div>
             <IconEmoji24 />
             <code>&lt;IconEmoji24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconEmphasisMark24 />
+            <code>&lt;IconEmphasisMark24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconEmphasisMarkJp24 />
+            <code>&lt;IconEmphasisMarkJp24 /&gt;</code>
           </div>
 
           <div>
@@ -973,6 +995,11 @@ export default {
           </div>
 
           <div>
+            <IconItalic24 />
+            <code>&lt;IconItalic24 /&gt;</code>
+          </div>
+
+          <div>
             <IconItemRemove24 />
             <code>&lt;IconItemRemove24 /&gt;</code>
           </div>
@@ -1060,6 +1087,11 @@ export default {
           <div>
             <IconLockUnlock24 />
             <code>&lt;IconLockUnlock24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconLogin24 />
+            <code>&lt;IconLogin24 /&gt;</code>
           </div>
 
           <div>
@@ -1583,6 +1615,11 @@ export default {
           </div>
 
           <div>
+            <IconTrash16 />
+            <code>&lt;IconTrash16 /&gt;</code>
+          </div>
+
+          <div>
             <IconTrash24 />
             <code>&lt;IconTrash24 /&gt;</code>
           </div>
@@ -1590,6 +1627,11 @@ export default {
           <div>
             <IconTrashAlt24 />
             <code>&lt;IconTrashAlt24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconTrashInline />
+            <code>&lt;IconTrashInline /&gt;</code>
           </div>
 
           <div>
@@ -1713,7 +1755,16 @@ export default {
   },
 }
 
-export const Default = {}
+export const Default = {
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
+}
 
 const Global = createGlobalStyle`
   .icons-grid {

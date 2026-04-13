@@ -12,8 +12,6 @@ const SvgLine = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M20.311 3.75a.75.75 0 010 1.061l-15.5 15.5a.75.75 0 11-1.06-1.06l15.5-15.5a.75.75 0 011.06 0z"
       fill="currentColor"
     />
