@@ -1,8 +1,8 @@
 import { glob, readFile, writeFile } from 'fs/promises'
 import { ensureDir } from 'fs-extra'
 import path from 'path'
+import { createSvgDataUri, serializeJavaScriptValue } from '../codegen'
 import { mustBeDefined } from '../utils'
-import { escape } from 'querystring'
 
 async function main() {
   mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')
@@ -21,45 +21,39 @@ async function main() {
 
       return {
         iconName: fileName.replace('.svg', ''),
-        uri: `data:image/svg+xml;utf8,${escape(content).replace("'", "\\'")}`,
+        uri: createSvgDataUri(content),
         isSetCurrentcolor: !content.includes('<def'),
       }
     }),
   )
 
-  const js = `/** This file is auto generated. DO NOT EDIT BY HAND. */
-  
-export default {
-${dataUris
-  .map(
-    (it) =>
-      `'${it.iconName}': {uri: '${it.uri}', isSetCurrentcolor: ${
-        it.isSetCurrentcolor ? 'true' : 'false'
-      }}`,
+  const dataUriMap = Object.fromEntries(
+    dataUris.map(({ iconName, uri, isSetCurrentcolor }) => [
+      iconName,
+      { uri, isSetCurrentcolor },
+    ]),
   )
-  .join(',\n')}
-}`
+
+  const js = `/** This file is auto generated. DO NOT EDIT BY HAND. */
+
+export default ${serializeJavaScriptValue(dataUriMap)}
+`
   await writeFile(path.join(outDir, 'index.mjs'), js)
 
   const cjs = `/** This file is auto generated. DO NOT EDIT BY HAND. */
-  
-module.exports = {
-${dataUris
-  .map(
-    (it) =>
-      `'${it.iconName}': {uri: '${it.uri}', isSetCurrentcolor: ${
-        it.isSetCurrentcolor ? 'true' : 'false'
-      }}`,
-  )
-  .join(',\n')}
-}`
+
+module.exports = ${serializeJavaScriptValue(dataUriMap)}
+`
   await writeFile(path.join(outDir, 'index.cjs'), cjs)
 
   const dts = `/** This file is auto generated. DO NOT EDIT BY HAND. */
   
 declare var _default: {
 ${dataUris
-  .map((it) => `'${it.iconName}': { uri: string, isSetCurrentcolor: boolean }`)
+  .map(
+    (it) =>
+      `${serializeJavaScriptValue(it.iconName)}: { uri: string, isSetCurrentcolor: boolean }`,
+  )
   .join(';\n')}}
 export default _default;
 `

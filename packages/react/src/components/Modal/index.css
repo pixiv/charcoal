@@ -11,12 +11,12 @@
   box-sizing: border-box;
 
   background-color: var(--charcoal-surface4);
-}
 
-@media (max-width: 743px) {
-  .charcoal-modal-background[data-bottom-sheet='true'],
-  .charcoal-modal-background[data-bottom-sheet='full'] {
-    padding: 0;
+  @media (max-width: 743px) {
+    &[data-bottom-sheet='true'],
+    &[data-bottom-sheet='full'] {
+      padding: 0;
+    }
   }
 }
 

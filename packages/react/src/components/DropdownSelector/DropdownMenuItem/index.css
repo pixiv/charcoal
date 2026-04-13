@@ -34,3 +34,7 @@
   align-items: center;
   margin-left: 20px;
 }
+
+.charcoal-dropdown-selector-menu-fullwidth {
+  width: 100%;
+}

@@ -5,15 +5,15 @@
   cursor: pointer;
   outline: 0;
   gap: 4px;
-}
 
-.charcoal-switch__label[aria-disabled='true'] {
-  opacity: 0.32;
-  cursor: default;
-}
+  &[aria-disabled='true'] {
+    opacity: 0.32;
+    cursor: default;
 
-.charcoal-switch__label[aria-disabled='true'] > input {
-  opacity: 1;
+    & > input {
+      opacity: 1;
+    }
+  }
 }
 
 .charcoal-switch__label_div {

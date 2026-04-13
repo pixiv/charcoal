@@ -4,15 +4,13 @@
   padding: 12px 16px;
   display: flex;
   align-items: flex-start;
-}
 
-.charcoal-hint-text[data-context='page'] {
-  justify-content: center;
-}
+  &[data-context='page'] {
+    justify-content: center;
 
-@media (min-width: 744px) {
-  .charcoal-hint-text[data-context='page'] {
-    padding: 20px 40px;
+    @media (min-width: 744px) {
+      padding: 20px 40px;
+    }
   }
 }
 
