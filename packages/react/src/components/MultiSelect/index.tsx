@@ -76,7 +76,7 @@ const MultiSelect = forwardRef<HTMLInputElement, MultiSelectProps>(
           aria-invalid={invalid}
           aria-hidden
         >
-          <Icon name="24/Check" unsafe-non-guideline-scale={16 / 24} />
+          <Icon name="24/Check" unsafeNonGuidelineScale={16 / 24} />
         </div>
         {Boolean(children) && (
           <div className="charcoal-multi-select-label">{children}</div>

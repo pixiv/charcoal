@@ -24,7 +24,10 @@ exports[`Storybook Tests > react/TagItem > Active 1`] = `
         </span>
       </div>
       <pixiv-icon
+        class="charcoal-icon"
+        data-charcoal-icon-size="16"
         name="16/Remove"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>

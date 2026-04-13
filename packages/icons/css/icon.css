@@ -1,0 +1,48 @@
+.charcoal-icon {
+  display: inline-flex;
+  width: var(--charcoal-icon-ssr-size);
+  height: var(--charcoal-icon-ssr-size);
+}
+
+pixiv-icon:not(:defined) {
+  --_charcoal-icon-base: 24px;
+  --_charcoal-icon-scale: 1;
+  --_charcoal-icon-size: calc(
+    var(--_charcoal-icon-base) * var(--_charcoal-icon-scale)
+  );
+
+  display: inline-flex;
+  width: var(--_charcoal-icon-size);
+  height: var(--_charcoal-icon-size);
+
+  &[name^='16/'] {
+    --_charcoal-icon-base: 16px;
+    --_charcoal-icon-size: 16px;
+  }
+
+  &[name^='24/'] {
+    &[scale='2'] {
+      --_charcoal-icon-scale: 2;
+    }
+    &[scale='3'] {
+      --_charcoal-icon-scale: 3;
+    }
+  }
+
+  &[name^='32/'] {
+    --_charcoal-icon-base: 32px;
+    --_charcoal-icon-size: 32px;
+  }
+
+  &[name^='Inline/'] {
+    --_charcoal-icon-base: 16px;
+
+    &[scale='2'] {
+      --_charcoal-icon-scale: 2;
+    }
+  }
+
+  &[data-charcoal-icon-size] {
+    --_charcoal-icon-size: var(--charcoal-icon-ssr-size);
+  }
+}

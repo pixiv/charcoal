@@ -613,8 +613,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Ass
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
         <div
@@ -698,8 +700,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Cus
             </div>
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -768,8 +772,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Def
             data-placeholder="false"
           />
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -844,8 +850,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Dis
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -929,8 +937,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Dis
             Option 2 (disabled)
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1004,8 +1014,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > InF
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1103,8 +1115,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Inv
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1179,8 +1193,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Inv
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
         <div
@@ -1259,8 +1275,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Lab
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1333,8 +1351,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Lon
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1411,8 +1431,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Req
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1500,8 +1522,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sec
             Banana
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1575,8 +1599,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sub
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1649,8 +1675,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1731,8 +1759,10 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
             Option 3
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            data-charcoal-icon-size="16"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1754,7 +1784,10 @@ exports[`Storybook Tests > react/HintText > react/HintText > Default 1`] = `
         class="charcoal-hint-text-icon"
       >
         <pixiv-icon
+          class="charcoal-icon"
+          data-charcoal-icon-size="16"
           name="16/Info"
+          style="--charcoal-icon-ssr-size: 16px;"
         />
       </div>
       <p
@@ -1783,7 +1816,10 @@ exports[`Storybook Tests > react/HintText > react/HintText > NarrowWidth 1`] = `
           class="charcoal-hint-text-icon"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="16"
             name="16/Info"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </div>
         <p
@@ -1803,8 +1839,11 @@ exports[`Storybook Tests > react/Icon > react/Icon > Default 1`] = `
     data-dark="false"
   >
     <pixiv-icon
+      class="charcoal-icon"
+      data-charcoal-icon-size="16"
       name="16/Add"
       scale="1"
+      style="--charcoal-icon-ssr-size: 16px;"
     />
   </div>
 </div>
@@ -2139,8 +2178,10 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      data-charcoal-icon-size="16"
                       name="16/Menu"
+                      style="--charcoal-icon-ssr-size: 16px;"
                     />
                   </button>
                 </div>
@@ -2467,8 +2508,10 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      data-charcoal-icon-size="16"
                       name="16/Menu"
+                      style="--charcoal-icon-ssr-size: 16px;"
                     />
                   </button>
                 </div>
@@ -2771,7 +2814,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2800,7 +2846,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2830,7 +2879,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2859,7 +2911,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2903,7 +2958,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2932,7 +2990,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2961,7 +3022,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2990,7 +3054,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3034,7 +3101,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3063,7 +3133,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3092,7 +3165,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3121,7 +3197,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3165,7 +3244,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3195,7 +3277,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3225,7 +3310,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3255,7 +3343,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            data-charcoal-icon-size="24"
             name="24/Check"
+            style="--charcoal-icon-ssr-size: 24px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -5030,7 +5121,10 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Active 1`] = `
         </span>
       </div>
       <pixiv-icon
+        class="charcoal-icon"
+        data-charcoal-icon-size="16"
         name="16/Remove"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>
@@ -6766,7 +6860,10 @@ exports[`Storybook Tests > react/internals/ListItem > react/internals/ListItem >
       class="charcoal-list-item"
     >
       <pixiv-icon
+        class="charcoal-icon"
+        data-charcoal-icon-size="16"
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
        Add
     </li>
@@ -7519,7 +7616,10 @@ exports[`Storybook Tests > theme/Token v2 Demo > theme/Token v2 Demo > Styled 1`
             class="c5"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="24"
               name="24/FaceEdit"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </a>
           <span
@@ -7692,7 +7792,10 @@ exports[`Storybook Tests > theme/Token v2 Demo > theme/Token v2 Demo > Tailwind 
             class="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
           >
             <pixiv-icon
+              class="charcoal-icon"
+              data-charcoal-icon-size="24"
               name="24/FaceEdit"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </a>
           <span

@@ -3,6 +3,11 @@ import react from '@vitejs/plugin-react'
 import path from 'node:path'
 
 export default defineConfig({
+  server: {
+    fs: {
+      allow: [path.resolve(import.meta.dirname, '../..')],
+    },
+  },
   plugins: [
     react({
       babel: {
@@ -19,11 +24,15 @@ export default defineConfig({
     }),
   ],
   test: {
+    name: 'browser',
     globals: true,
-    environment: 'jsdom',
-    pool: 'forks',
-    exclude: ['**/*.browser.test.*', '**/node_modules/**'],
-    setupFiles: ['../../vitest.setup.ts', './vitest.setup.ts'],
+    include: ['src/**/*.browser.test.{ts,tsx}'],
+    browser: {
+      enabled: true,
+      provider: 'playwright',
+      name: 'chromium',
+      headless: true,
+    },
     alias: [
       {
         find: /@charcoal-ui\/(.*)/,
