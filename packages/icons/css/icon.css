@@ -5,44 +5,40 @@
 }
 
 pixiv-icon:not(:defined) {
+  --_base: 24px;
+  --_scale: 1;
+  --_size: calc(var(--_base) * var(--_scale));
+
   display: inline-flex;
+  width: var(--_size);
+  height: var(--_size);
 
   &[name^='16/'] {
-    width: 16px;
-    height: 16px;
+    --_base: 16px;
   }
 
   &[name^='24/'] {
-    width: 24px;
-    height: 24px;
-
     &[scale='2'] {
-      width: 48px;
-      height: 48px;
+      --_scale: 2;
     }
     &[scale='3'] {
-      width: 72px;
-      height: 72px;
+      --_scale: 3;
     }
   }
 
   &[name^='32/'] {
-    width: 32px;
-    height: 32px;
+    --_base: 32px;
   }
 
   &[name^='Inline/'] {
-    width: 16px;
-    height: 16px;
+    --_base: 16px;
 
     &[scale='2'] {
-      width: 32px;
-      height: 32px;
+      --_scale: 2;
     }
   }
 
   &[data-charcoal-icon-size] {
-    width: var(--charcoal-icon-ssr-size);
-    height: var(--charcoal-icon-ssr-size);
+    --_size: var(--charcoal-icon-ssr-size);
   }
 }
