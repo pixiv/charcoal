@@ -5,40 +5,42 @@
 }
 
 pixiv-icon:not(:defined) {
-  --_base: 24px;
-  --_scale: 1;
-  --_size: calc(var(--_base) * var(--_scale));
+  --_charcoal-icon-base: 24px;
+  --_charcoal-icon-scale: 1;
+  --_charcoal-icon-size: calc(
+    var(--_charcoal-icon-base) * var(--_charcoal-icon-scale)
+  );
 
   display: inline-flex;
-  width: var(--_size);
-  height: var(--_size);
+  width: var(--_charcoal-icon-size);
+  height: var(--_charcoal-icon-size);
 
   &[name^='16/'] {
-    --_base: 16px;
+    --_charcoal-icon-base: 16px;
   }
 
   &[name^='24/'] {
     &[scale='2'] {
-      --_scale: 2;
+      --_charcoal-icon-scale: 2;
     }
     &[scale='3'] {
-      --_scale: 3;
+      --_charcoal-icon-scale: 3;
     }
   }
 
   &[name^='32/'] {
-    --_base: 32px;
+    --_charcoal-icon-base: 32px;
   }
 
   &[name^='Inline/'] {
-    --_base: 16px;
+    --_charcoal-icon-base: 16px;
 
     &[scale='2'] {
-      --_scale: 2;
+      --_charcoal-icon-scale: 2;
     }
   }
 
   &[data-charcoal-icon-size] {
-    --_size: var(--charcoal-icon-ssr-size);
+    --_charcoal-icon-size: var(--charcoal-icon-ssr-size);
   }
 }
