@@ -12,7 +12,7 @@ jobs:
           ref: ${{ github.base_ref }}
 
       - name: setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: '10.27.0'
 
