@@ -1,0 +1,56 @@
+import{a as e,n as t}from"./chunk-BneVvdWh.js";import{Ht as n,ct as r,nt as i}from"./iframe-CKoxdw4A.js";import{n as a,t as o}from"./useClassNames-yOcqPuiB.js";var s=t((()=>{})),c,l,u=t((()=>{c=e(n(),1),l=c.createContext({name:void 0,selected:void 0,disabled:!1,readonly:!1,invalid:!1,onChange(){throw Error(`Cannot find onChange() handler. Perhaps you forgot to wrap with <RadioGroup> ?`)}})})),d=t((()=>{})),f,p,m,h,g=t((()=>{d(),f=e(n(),1),o(),p=i(),m=(0,f.forwardRef)(function({onChange:e,invalid:t,className:n,...r},i){let o=(0,f.useCallback)(t=>{let n=t.currentTarget;e?.(n.value)},[e]);return(0,p.jsx)(`input`,{className:a(`charcoal-radio-input`,n),ref:i,type:`radio`,onChange:o,"aria-invalid":t,...r})}),h=(0,f.memo)(m);try{m.displayName=`RadioInput`,m.__docgenInfo={description:``,displayName:`RadioInput`,filePath:`/home/runner/work/charcoal/charcoal/packages/react/src/components/Radio/RadioInput/index.tsx`,methods:[],props:{invalid:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioInput/index.tsx`,name:`TypeLiteral`}],description:``,name:`invalid`,required:!1,tags:{},type:{name:`boolean`}},onChange:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioInput/index.tsx`,name:`TypeLiteral`}],description:``,name:`onChange`,required:!1,tags:{},type:{name:`((value: string) => void)`}},css:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react-sandbox/src/type.d.ts`,name:`Attributes`},{fileName:`charcoal/packages/react-sandbox/src/type.d.ts`,name:`Attributes`}],description:``,name:`css`,parent:{fileName:`charcoal/packages/react-sandbox/src/type.d.ts`,name:`Attributes`},required:!1,tags:{},type:{name:`CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>`}}},tags:{}}}catch{}})),_,v,y,b,x,S=t((()=>{s(),_=e(n(),1),n(),v=e(r(),1),o(),u(),g(),y=i(),b=(0,_.forwardRef)(function({value:e,disabled:t=!1,children:n,...r},i){let{name:o,selected:s,disabled:c,readonly:u,invalid:d,onChange:f}=(0,_.useContext)(l),p=a(`charcoal-radio__label`,r.className);(0,v.default)(o!==void 0,`"name" is not Provided for <Radio>. Perhaps you forgot to wrap with <RadioGroup> ?`);let m=e===s,g=t||c,b=u&&!m;return(0,y.jsxs)(`label`,{"aria-disabled":g||b,className:p,children:[(0,y.jsx)(h,{name:o,value:e,checked:m,"aria-invalid":d,onChange:f,disabled:g||b,ref:i}),n!=null&&(0,y.jsx)(`div`,{className:`charcoal-radio__label_div`,children:n})]})}),x=(0,_.memo)(b);try{b.displayName=`Radio`,b.__docgenInfo={description:``,displayName:`Radio`,filePath:`/home/runner/work/charcoal/charcoal/packages/react/src/components/Radio/index.tsx`,methods:[],props:{value:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/index.tsx`,name:`TypeLiteral`}],description:``,name:`value`,required:!0,tags:{},type:{name:`string`}},disabled:{defaultValue:{value:`false`},declarations:[{fileName:`charcoal/packages/react/src/components/Radio/index.tsx`,name:`TypeLiteral`}],description:``,name:`disabled`,required:!1,tags:{},type:{name:`boolean`}},className:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/index.tsx`,name:`TypeLiteral`}],description:``,name:`className`,required:!1,tags:{},type:{name:`string`}},css:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react-sandbox/src/type.d.ts`,name:`Attributes`}],description:``,name:`css`,parent:{fileName:`charcoal/packages/react-sandbox/src/type.d.ts`,name:`Attributes`},required:!1,tags:{},type:{name:`CSSProp<DefaultTheme> | ThemeProp<DefaultTheme>`}}},tags:{}}}catch{}})),C=t((()=>{})),w,T,E,D=t((()=>{C(),w=e(n(),1),n(),o(),u(),T=i(),E=(0,w.forwardRef)(function({value:e,label:t,name:n,onChange:r,disabled:i,readonly:o,invalid:s,children:c,"aria-orientation":u=`vertical`,...d},f){let p=a(`charcoal-radio-group`,d.className),m=(0,w.useCallback)(e=>{r(e)},[r]),h=(0,w.useMemo)(()=>({name:n,selected:e,disabled:i??!1,readonly:o??!1,invalid:s??!1,onChange:m}),[i,m,s,n,o,e]);return(0,T.jsx)(l.Provider,{value:h,children:(0,T.jsx)(`div`,{role:`radiogroup`,"aria-disabled":i,"aria-invalid":s,"aria-label":t,"aria-labelledby":d[`aria-labelledby`],"aria-orientation":u,className:p,ref:f,children:c})})});try{E.displayName=`RadioGroup`,E.__docgenInfo={description:``,displayName:`RadioGroup`,filePath:`/home/runner/work/charcoal/charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,methods:[],props:{className:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`className`,required:!1,tags:{},type:{name:`string`}},value:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`value`,required:!1,tags:{},type:{name:`string`}},label:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:`aria-label of RadioGroup`,name:`label`,required:!1,tags:{},type:{name:`string`}},name:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`name`,required:!0,tags:{},type:{name:`string`}},onChange:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`onChange`,required:!0,tags:{},type:{name:`(next: Value) => void`}},disabled:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`disabled`,required:!1,tags:{},type:{name:`boolean`}},readonly:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`readonly`,required:!1,tags:{},type:{name:`boolean`}},invalid:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`invalid`,required:!1,tags:{},type:{name:`boolean`}},ref:{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`ref`,required:!1,tags:{},type:{name:`Ref<HTMLDivElement>`}},"aria-labelledby":{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`aria-labelledby`,required:!1,tags:{},type:{name:`string`}},"aria-orientation":{defaultValue:null,declarations:[{fileName:`charcoal/packages/react/src/components/Radio/RadioGroup/index.tsx`,name:`TypeLiteral`}],description:``,name:`aria-orientation`,required:!1,tags:{},type:{name:`enum`,raw:`"horizontal" | "vertical"`,value:[{value:`"horizontal"`},{value:`"vertical"`}]}}},tags:{}}}catch{}})),O,k,A,j,M,N,P,F,I,L;t((()=>{S(),D(),O=e(n(),1),k=i(),A={title:`react/Radio`,component:x,parameters:{layout:`centered`}},j=[`1`,`2`,`3`],M=e=>(0,k.jsx)(`div`,{style:{display:`flex`,flexDirection:`column`,gap:24},children:e.children}),N={render:function(e){let[t,n]=(0,O.useState)(j[0]);return(0,k.jsx)(M,{children:(0,k.jsx)(E,{name:`default_story`,label:`default story`,...e,value:t,onChange:n,children:j.map(e=>(0,k.jsxs)(x,{value:e,children:[`Value `,e]},e))})})}},P={render:function(){let[e,t]=(0,O.useState)(j[0]);return(0,k.jsx)(M,{children:(0,k.jsx)(E,{label:`disabled_stroy`,name:`disabled story`,value:e,onChange:t,disabled:!0,children:j.map(e=>(0,k.jsxs)(x,{value:e,disabled:!0,children:[`Value `,e]},e))})})}},F={render:function(){let[e,t]=(0,O.useState)(j[0]);return(0,k.jsx)(M,{children:(0,k.jsx)(E,{name:`partial_disabled_story`,label:`partial disabled story`,value:e,onChange:t,children:j.map(e=>(0,k.jsxs)(x,{value:e,disabled:e===`2`,children:[`Value `,e]},e))})})}},I={render:function(){let[e,t]=(0,O.useState)(j[0]);return(0,k.jsx)(M,{children:(0,k.jsx)(E,{name:`readonly_story`,label:`readonly story`,value:e,onChange:t,readonly:!0,children:j.map(e=>(0,k.jsxs)(x,{value:e,children:[`Value `,e]},e))})})}},L={render:function(){let[e,t]=(0,O.useState)(j[0]);return(0,k.jsx)(M,{children:(0,k.jsx)(E,{name:`invalid_story`,label:`invalid story`,value:e,onChange:t,invalid:!0,children:j.map(e=>(0,k.jsxs)(x,{value:e,children:[`Value `,e]},e))})})}},N.parameters={...N.parameters,docs:{...N.parameters?.docs,source:{originalSource:`{
+  render: function Render(args) {
+    const [value, setValue] = useState<Option>(options[0]);
+    return <LayoutDiv>
+        <RadioGroup<Option> name="default_story" label="default story" {...args} value={value} onChange={setValue}>
+          {options.map(option => <Radio key={option} value={option}>
+              Value {option}
+            </Radio>)}
+        </RadioGroup>
+      </LayoutDiv>;
+  }
+}`,...N.parameters?.docs?.source}}},P.parameters={...P.parameters,docs:{...P.parameters?.docs,source:{originalSource:`{
+  render: function Render() {
+    const [value, setValue] = useState<Option>(options[0]);
+    return <LayoutDiv>
+        <RadioGroup<Option> label="disabled_stroy" name="disabled story" value={value} onChange={setValue} disabled>
+          {options.map(option => <Radio key={option} value={option} disabled>
+              Value {option}
+            </Radio>)}
+        </RadioGroup>
+      </LayoutDiv>;
+  }
+}`,...P.parameters?.docs?.source}}},F.parameters={...F.parameters,docs:{...F.parameters?.docs,source:{originalSource:`{
+  render: function Render() {
+    const [value, setValue] = useState<Option>(options[0]);
+    return <LayoutDiv>
+        <RadioGroup<Option> name={'partial_disabled_story'} label={'partial disabled story'} value={value} onChange={setValue}>
+          {options.map(option => <Radio key={option} value={option} disabled={option === '2'}>
+              Value {option}
+            </Radio>)}
+        </RadioGroup>
+      </LayoutDiv>;
+  }
+}`,...F.parameters?.docs?.source}}},I.parameters={...I.parameters,docs:{...I.parameters?.docs,source:{originalSource:`{
+  render: function Render() {
+    const [value, setValue] = useState<Option>(options[0]);
+    return <LayoutDiv>
+        <RadioGroup<Option> name="readonly_story" label="readonly story" value={value} onChange={setValue} readonly>
+          {options.map(option => <Radio key={option} value={option}>
+              Value {option}
+            </Radio>)}
+        </RadioGroup>
+      </LayoutDiv>;
+  }
+}`,...I.parameters?.docs?.source}}},L.parameters={...L.parameters,docs:{...L.parameters?.docs,source:{originalSource:`{
+  render: function Render() {
+    const [value, setValue] = useState<Option>(options[0]);
+    return <LayoutDiv>
+        <RadioGroup<Option> name="invalid_story" label="invalid story" value={value} onChange={setValue} invalid>
+          {options.map(option => <Radio key={option} value={option}>
+              Value {option}
+            </Radio>)}
+        </RadioGroup>
+      </LayoutDiv>;
+  }
+}`,...L.parameters?.docs?.source}}}}))();export{N as Default,P as Disabled,L as Invalid,F as PartialDisabled,I as Readonly,A as default};
