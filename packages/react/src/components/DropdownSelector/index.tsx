@@ -50,6 +50,10 @@ export default function DropdownSelector({
   )
 
   const propsArray = getValuesRecursive(props.children)
+  const hasMatchedValue = useMemo(
+    () => propsArray.some((itemProps) => itemProps.value === props.value),
+    [propsArray, props.value],
+  )
 
   const { visuallyHiddenProps } = useVisuallyHidden()
 
@@ -86,6 +90,9 @@ export default function DropdownSelector({
           tabIndex={-1}
           ref={selectRef}
         >
+          {!hasMatchedValue && (
+            <option value={props.value}>{props.value}</option>
+          )}
           {propsArray.map((itemProps) => {
             return (
               <option
