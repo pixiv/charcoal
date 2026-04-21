@@ -1999,7 +1999,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
               style="display: grid; gap: 24px;"
             >
               <div
-                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
               </div>
@@ -2226,7 +2226,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
               style="display: grid; gap: 24px;"
             >
               <div
-                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
               </div>
@@ -2327,7 +2327,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
               style="display: grid; gap: 24px;"
             >
               <div
-                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
               </div>
@@ -2554,7 +2554,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
               style="display: grid; gap: 24px;"
             >
               <div
-                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
               </div>
@@ -2717,7 +2717,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
               style="display: grid; gap: 24px;"
             >
               <div
-                style="font-size: 14px; line-height: 22px; padding: 0px 16px;"
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
               </div>
@@ -6461,7 +6461,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > Prefix 1`] = `
           class="charcoal-text-field-prefix"
         >
           <div
-            style="display: flex; align-items: center;"
+            style="display: flex; align-items: center; color: var(--charcoal-text3);"
           >
             <pixiv-icon
               name="16/Search"
@@ -6740,7 +6740,7 @@ exports[`Storybook Tests > react/internals/CheckboxInput > react/internals/Check
     data-dark="false"
   >
     <div
-      style="padding: 8px;"
+      style="padding: 8px; background-color: var(--charcoal-background2);"
     >
       <input
         class="charcoal-checkbox-input"
