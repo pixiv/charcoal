@@ -94,3 +94,21 @@ export const AutoHeight: StoryObj<typeof TextArea> = {
     return <TextArea autoHeight label="Label" />
   },
 }
+
+export const AutoHeightAndRows: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return <TextArea rows={3} autoHeight label="label" />
+  },
+}
+
+export const MaxRows: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return <TextArea maxRows={6} label="label" showCount />
+  },
+}
+
+export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return <TextArea rows={3} maxRows={6} label="label" showCount />
+  },
+}
