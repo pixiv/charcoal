@@ -37,7 +37,7 @@ jobs:
           version: '10.27.0'
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6.3.0
         with:
           node-version-file: '.node-version'
           cache: pnpm
