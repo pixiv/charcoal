@@ -89,6 +89,14 @@ export const ReadOnly: StoryObj<typeof TextArea> = {
   },
 }
 
+export const DefaultValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea label="Label" defaultValue={'テスト用テキスト'} showCount />
+    )
+  },
+}
+
 export const AutoHeight: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea autoHeight label="Label" />
