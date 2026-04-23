@@ -1,7 +1,14 @@
 import './index.css'
 
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
@@ -24,6 +31,8 @@ export type TextAreaProps = {
   subLabel?: React.ReactNode
   autoHeight?: boolean
 
+  maxRows?: number
+
   getCount?: (value: string) => number
 } & Omit<React.ComponentPropsWithoutRef<'textarea'>, 'onChange'>
 
@@ -44,6 +53,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       maxLength,
       autoHeight = false,
       rows: initialRows = 4,
+      maxRows,
       invalid,
       getCount = countCodePointsInString,
       ...props
@@ -54,13 +64,26 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const [count, setCount] = useState(getCount(value ?? ''))
     const [rows, setRows] = useState(initialRows)
+    const isEnableAutoHeight = useMemo(
+      () => autoHeight || (maxRows && maxRows >= 0),
+      [autoHeight, maxRows],
+    )
 
     const syncHeight = useCallback(
       (textarea: HTMLTextAreaElement) => {
-        const rows = (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
-        setRows(initialRows <= rows ? rows : initialRows)
+        const currentRows =
+          (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
+        const hasValidMaxRows = maxRows !== undefined && maxRows >= 1
+        const nextRows = initialRows <= currentRows ? currentRows : initialRows
+
+        if (!hasValidMaxRows || maxRows <= initialRows) {
+          setRows(nextRows)
+          return
+        }
+
+        setRows(nextRows <= maxRows ? nextRows : maxRows)
       },
-      [initialRows],
+      [initialRows, maxRows],
     )
 
     const nonControlled = value === undefined
@@ -74,12 +97,19 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         if (nonControlled) {
           setCount(count)
         }
-        if (autoHeight && textareaRef.current !== null) {
+        if (isEnableAutoHeight && textareaRef.current !== null) {
           syncHeight(textareaRef.current)
         }
         onChange?.(value)
       },
-      [autoHeight, getCount, maxLength, nonControlled, onChange, syncHeight],
+      [
+        isEnableAutoHeight,
+        getCount,
+        maxLength,
+        nonControlled,
+        onChange,
+        syncHeight,
+      ],
     )
 
     useEffect(() => {
@@ -87,10 +117,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     }, [getCount, value])
 
     useEffect(() => {
-      if (autoHeight && textareaRef.current !== null) {
+      if (isEnableAutoHeight && textareaRef.current !== null) {
         syncHeight(textareaRef.current)
       }
-    }, [autoHeight, syncHeight])
+    }, [isEnableAutoHeight, syncHeight])
 
     const containerRef = useRef(null)
 
