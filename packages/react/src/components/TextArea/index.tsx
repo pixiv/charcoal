@@ -56,13 +56,16 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       maxRows,
       invalid,
       getCount = countCodePointsInString,
+      defaultValue,
       ...props
     },
     forwardRef,
   ) {
     const { visuallyHiddenProps } = useVisuallyHidden()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
-    const [count, setCount] = useState(getCount(value ?? ''))
+    const [count, setCount] = useState(
+      getCount(value ?? defaultValue?.toString() ?? ''),
+    )
     const [rows, setRows] = useState(initialRows)
     const isEnableAutoHeight = useMemo(
       () => autoHeight || (maxRows && maxRows >= 0),
@@ -113,8 +116,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     )
 
     useEffect(() => {
-      setCount(getCount(value ?? ''))
-    }, [getCount, value])
+      setCount(getCount(value ?? defaultValue?.toString() ?? ''))
+    }, [getCount, value, defaultValue])
 
     useEffect(() => {
       if (isEnableAutoHeight && textareaRef.current !== null) {
@@ -168,6 +171,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             rows={rows}
             value={value}
             disabled={disabled}
+            defaultValue={defaultValue}
             {...props}
           />
           {showCount && (

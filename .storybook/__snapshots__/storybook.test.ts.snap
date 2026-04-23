@@ -5434,6 +5434,57 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/TextArea > react/TextArea > DefaultValue 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 5;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="4"
+        >
+          テスト用テキスト
+        </textarea>
+        <span
+          class="charcoal-text-area-counter"
+        >
+          8
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TextArea > react/TextArea > Disabled 1`] = `
 <div>
   <div
