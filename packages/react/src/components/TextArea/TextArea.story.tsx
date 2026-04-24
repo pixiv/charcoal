@@ -112,3 +112,11 @@ export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
     return <TextArea rows={3} maxRows={6} label="label" showCount />
   },
 }
+
+export const DefaultValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea label="Label" defaultValue={'テスト用テキスト'} showCount />
+    )
+  },
+}
