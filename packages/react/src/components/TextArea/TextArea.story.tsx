@@ -2,6 +2,7 @@ import { action } from 'storybook/actions'
 import Clickable from '../Clickable'
 import TextArea from '.'
 import { Meta, StoryObj } from '@storybook/react-vite'
+import { useCallback, useRef, useState } from 'react'
 
 export default {
   title: 'react/TextArea',
@@ -118,5 +119,53 @@ export const MaxRows: StoryObj<typeof TextArea> = {
 export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea rows={3} maxRows={6} label="label" showCount />
+  },
+}
+
+export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    const [value, setValue] = useState('')
+    const handleClick = useCallback(() => {
+      setValue(
+        'test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest',
+      )
+    }, [])
+    return (
+      <>
+        <button
+          onClick={() => {
+            handleClick()
+          }}
+        >
+          insert value
+        </button>
+        <TextArea rows={1} maxRows={3} label="label" value={value} showCount />
+      </>
+    )
+  },
+}
+
+export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    const ref = useRef<HTMLTextAreaElement>(null)
+    const handleClick = useCallback(() => {
+      ref.current?.value
+      if (ref.current) {
+        ref.current.value =
+          'test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest'
+      }
+    }, [ref])
+    return (
+      <>
+        <button
+          onClick={() => {
+            handleClick()
+          }}
+        >
+          insert value
+        </button>
+        <TextArea rows={1} maxRows={3} label="label" showCount ref={ref} />
+      </>
+    )
   },
 }
