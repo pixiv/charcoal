@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add semver label
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const updateType = '${{ needs.metadata.outputs.update-type }}';
@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Post release notes comment
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const depNames = '${{ needs.metadata.outputs.dependency-names }}';
@@ -95,7 +95,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Auto-approve dev dependency updates
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             await github.rest.pulls.createReview({
