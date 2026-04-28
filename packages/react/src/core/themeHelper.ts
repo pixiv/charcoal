@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 export const LOCAL_STORAGE_KEY = 'charcoal-theme'
 export const DEFAULT_ROOT_ATTRIBUTE = 'theme'
@@ -29,6 +29,9 @@ export const themeSetter =
     }
   }
 
+// デフォルト引数で生成すると毎レンダー新しい関数になり、effect が再実行される
+const defaultThemeSetter = themeSetter()
+
 /**
  * `<html data-theme="dark">` にマッチするセレクタを生成する
  */
@@ -51,7 +54,7 @@ export function prefersColorScheme<T extends 'light' | 'dark'>(theme: T) {
  */
 export function useThemeSetter({
   key = LOCAL_STORAGE_KEY,
-  setter = themeSetter(),
+  setter = defaultThemeSetter,
 }: { key?: string; setter?: (theme: string | undefined) => void } = {}) {
   const [theme, , system] = useTheme(key)
 
@@ -93,29 +96,33 @@ export function useLocalStorage<T>(key: string, defaultValue?: () => T) {
   const [state, setState] = useState<T>()
   const defaultValueMemo = useMemo(() => defaultValue?.(), [defaultValue])
 
+  const fetch = useCallback(() => {
+    const raw = localStorage.getItem(key)
+    setState((raw !== null ? deserialize(raw) : null) ?? defaultValueMemo)
+    setReady(true)
+  }, [defaultValueMemo, key])
+
+  const handleStorage = useCallback(
+    (e: StorageEvent) => {
+      if (e.storageArea !== localStorage) {
+        return
+      }
+      if (e.key !== key) {
+        return
+      }
+      fetch()
+    },
+    [fetch, key],
+  )
+
+  // JSON は deserialize のたびに新しい object になるため、入力変更時だけ再取得する
   useEffect(() => {
     fetch()
     window.addEventListener('storage', handleStorage)
     return () => {
       window.removeEventListener('storage', handleStorage)
     }
-  })
-
-  const handleStorage = (e: StorageEvent) => {
-    if (e.storageArea !== localStorage) {
-      return
-    }
-    if (e.key !== key) {
-      return
-    }
-    fetch()
-  }
-
-  const fetch = () => {
-    const raw = localStorage.getItem(key)
-    setState((raw !== null ? deserialize(raw) : null) ?? defaultValueMemo)
-    setReady(true)
-  }
+  }, [fetch, handleStorage])
 
   const set = (value: T | undefined) => {
     if (value === undefined) {
