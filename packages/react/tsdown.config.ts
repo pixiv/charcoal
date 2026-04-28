@@ -45,6 +45,8 @@ export default defineConfig({
   },
   css: {
     fileName: 'index.css',
+    transformer: 'postcss',
+    postcss: path.join(import.meta.dirname, 'postcss.config.mjs'),
   },
   async onSuccess() {
     const indexCssPath = path.resolve(import.meta.dirname, './dist/index.css')
