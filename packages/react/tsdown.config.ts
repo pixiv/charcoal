@@ -41,6 +41,11 @@ export default defineConfig({
   sourcemap: true,
   minify: true,
   external: ['react-compiler-runtime'],
+  css: {
+    fileName: 'index.css',
+    transformer: 'postcss',
+    postcss: path.join(import.meta.dirname, 'postcss.config.mjs'),
+  },
   async onSuccess() {
     const indexCssPath = path.resolve(import.meta.dirname, './dist/index.css')
     const originalCssOutput = await fs.readFile(indexCssPath, 'utf-8')
