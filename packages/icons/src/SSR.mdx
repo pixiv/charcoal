@@ -31,15 +31,13 @@ React を使わない場合でも、`name` 属性のプレフィックス（`16/
 
 ### ガイドライン外のサイズ指定
 
-ガイドライン外のサイズを使用する場合、`data-charcoal-icon-size` と `--charcoal-icon-ssr-size` を設定してください。
+ガイドライン外のサイズを使用する場合、`--charcoal-icon-ssr-size` CSS 変数を設定してください。
+この変数がセットされていれば、`name` / `scale` から導出されるガイドラインデフォルトを上書きしてその値を採用します。
+
 React の `<Icon>` コンポーネントを使用すれば自動設定されます。
 
-vanilla HTML では `data-charcoal-icon-size` 属性と `--charcoal-icon-ssr-size` CSS 変数を手動で設定します:
+vanilla HTML では style 属性で `--charcoal-icon-ssr-size` を指定します:
 
 ```html
-<pixiv-icon
-  name="24/Add"
-  data-charcoal-icon-size="12"
-  style="--charcoal-icon-ssr-size: 12px"
-></pixiv-icon>
+<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 12px"></pixiv-icon>
 ```

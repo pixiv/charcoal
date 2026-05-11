@@ -53,7 +53,6 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       ref={ref}
       name={name}
       scale={scale}
-      data-charcoal-icon-size={actualSize}
       style={style}
       class={`charcoal-icon ${className || ''}`.trim()}
       {...rest}

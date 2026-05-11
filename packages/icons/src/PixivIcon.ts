@@ -96,52 +96,26 @@ export class PixivIcon extends HTMLElement {
       )
     }
 
+    // object literal 内の getter から外側の this を参照するためエイリアスする
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const el = this
 
     return {
       ...partial,
       name,
-      // CSS variable / data attribute からサイズ情報を読み取る
+      // CSS variable からサイズ情報を読み取る
       get unsafeNonGuidelineScale() {
         const v = el.style.getPropertyValue('--charcoal-icon-unsafe-scale')
         return v !== '' ? parseFloat(v) : undefined
       },
+      // --charcoal-icon-ssr-size はライブラリ全体で size のソース・オブ・トゥルース。
+      // 値が直接指定されている場合は name / scale を無視してそれを採用する。
       get unsafeNonGuidelineSize() {
-        const v = el.dataset.charcoalIconSize
-        return v !== undefined ? parseInt(v, 10) : undefined
+        const v = el.style.getPropertyValue('--charcoal-icon-ssr-size')
+        if (v === '') return undefined
+        const n = parseFloat(v)
+        return Number.isFinite(n) ? n : undefined
       },
-    }
-  }
-
-  /**
-   * @deprecated Use `calcActualSize()` instead. This getter is kept for backward compatibility.
-   */
-  get scaledSize(): number {
-    const [size] = this.props.name.split('/')
-
-    const scale = Number(this.props.scale ?? '1')
-
-    switch (size) {
-      case 'Inline': {
-        switch (scale) {
-          case 2: {
-            return 32
-          }
-
-          default: {
-            return 16
-          }
-        }
-      }
-
-      case '24': {
-        return Number(size) * scale
-      }
-
-      default: {
-        return Number(size)
-      }
     }
   }
 

@@ -175,13 +175,13 @@ describe('pixiv-icon:not(:defined) reserves correct size with CSS only (vanilla 
       expected: 24,
     },
     {
-      title: 'non-guideline size via data-charcoal-icon-size + CSS var → 20px',
-      markup: `<pixiv-icon name="24/Add" data-charcoal-icon-size="20" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
+      title: 'non-guideline size via --charcoal-icon-ssr-size override → 20px',
+      markup: `<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
       expected: 20,
     },
     {
-      title: 'non-guideline size for a 20/ prefix (not enumerated in CSS) requires opt-in → 20px',
-      markup: `<pixiv-icon name="20/Custom" data-charcoal-icon-size="20" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
+      title: 'non-guideline size for a 20/ prefix (not enumerated in CSS) via --charcoal-icon-ssr-size → 20px',
+      markup: `<pixiv-icon name="20/Custom" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
       expected: 20,
     },
   ]

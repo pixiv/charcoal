@@ -12,8 +12,10 @@ pixiv-icon:not(:defined) {
   );
 
   display: inline-flex;
-  width: var(--_charcoal-icon-size);
-  height: var(--_charcoal-icon-size);
+  /* --charcoal-icon-ssr-size がセットされていればそれを優先、
+     なければ name / scale から導出した --_charcoal-icon-size をフォールバック */
+  width: var(--charcoal-icon-ssr-size, var(--_charcoal-icon-size));
+  height: var(--charcoal-icon-ssr-size, var(--_charcoal-icon-size));
 
   &[name^='16/'] {
     --_charcoal-icon-base: 16px;
@@ -40,9 +42,5 @@ pixiv-icon:not(:defined) {
     &[scale='2'] {
       --_charcoal-icon-scale: 2;
     }
-  }
-
-  &[data-charcoal-icon-size] {
-    --_charcoal-icon-size: var(--charcoal-icon-ssr-size);
   }
 }

@@ -8,35 +8,42 @@ function queryIcon(container: HTMLElement) {
 }
 
 describe('Icon', () => {
-  it('always sets data-charcoal-icon-size with calculated size', () => {
+  it('always sets --charcoal-icon-ssr-size with calculated size', () => {
     const { container } = render(<Icon name="24/Add" />)
-    expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
-      '24',
-    )
+    expect(
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+    ).toBe('24px')
   })
 
-  it('sets data-charcoal-icon-size with scale', () => {
+  it('sets --charcoal-icon-ssr-size with scale', () => {
     const { container } = render(<Icon name="24/Add" scale={2} />)
-    expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
-      '48',
-    )
+    expect(
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+    ).toBe('48px')
   })
 
-  it('sets data-charcoal-icon-size with unsafeNonGuidelineScale', () => {
+  it('sets --charcoal-icon-ssr-size with unsafeNonGuidelineScale', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
     )
-    expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
-      '36',
-    )
+    expect(
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+    ).toBe('36px')
   })
 
-  it('sets data-charcoal-icon-size with unsafeNonGuidelineSize', () => {
+  it('sets --charcoal-icon-ssr-size with unsafeNonGuidelineSize', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
     )
-    expect(queryIcon(container).getAttribute('data-charcoal-icon-size')).toBe(
-      '100',
+    expect(
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+    ).toBe('100px')
+  })
+
+  it('does not emit data-charcoal-icon-size attribute', () => {
+    const { container } = render(<Icon name="24/Add" unsafeNonGuidelineSize={100} />)
+    expect(queryIcon(container).hasAttribute('data-charcoal-icon-size')).toBe(
+      false,
     )
   })
 
@@ -52,13 +59,6 @@ describe('Icon', () => {
     expect(
       queryIcon(container).getAttribute('unsafe-non-guideline-scale'),
     ).toBeNull()
-  })
-
-  it('sets --charcoal-icon-ssr-size CSS variable', () => {
-    const { container } = render(<Icon name="24/Add" />)
-    expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
-    ).toBe('24px')
   })
 
   it('sets --charcoal-icon-unsafe-scale CSS variable for unsafeNonGuidelineScale', () => {
