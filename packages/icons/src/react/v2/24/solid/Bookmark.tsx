@@ -15,8 +15,6 @@ const SvgBookmark = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M7.75 2.75A3.75 3.75 0 004 6.5v13.16c0 1.387 1.538 2.223 2.702 1.468l5.162-3.346a.25.25 0 01.272 0l5.162 3.346c1.164.755 2.702-.08 2.702-1.468V6.5a3.75 3.75 0 00-3.75-3.75h-8.5z"
       fill="currentColor"
     />

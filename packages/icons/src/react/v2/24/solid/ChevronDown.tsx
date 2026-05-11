@@ -15,8 +15,6 @@ const SvgChevrondown = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M4.68 8.43a1.16 1.16 0 011.64 0L12 14.107l5.68-5.679a1.16 1.16 0 111.64 1.642l-6.5 6.5a1.16 1.16 0 01-1.64 0l-6.5-6.5a1.16 1.16 0 010-1.642z"
       fill="currentColor"
     />

@@ -14,7 +14,7 @@ const SvgSearch = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M4.25 11a6.75 6.75 0 1113.5 0 6.75 6.75 0 01-13.5 0zM11 2.75a8.25 8.25 0 105.28 14.59l3.69 3.69a.75.75 0 101.06-1.06l-3.69-3.69A8.25 8.25 0 0011 2.75z"
+      d="M11 2.75a8.25 8.25 0 105.28 14.59l3.69 3.69a.75.75 0 101.06-1.06l-3.69-3.69A8.25 8.25 0 0011 2.75zM4.25 11a6.75 6.75 0 1113.5 0 6.75 6.75 0 01-13.5 0z"
       fill="currentColor"
     />
   </svg>

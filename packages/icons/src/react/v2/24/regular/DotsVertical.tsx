@@ -15,9 +15,7 @@ const SvgDotsvertical = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M12 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm0 6.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm-1.5 5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z"
+      d="M12 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 13.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM10.5 18.5a1.5 1.5 0 103 0 1.5 1.5 0 00-3 0z"
       fill="currentColor"
     />
   </svg>

@@ -17,7 +17,7 @@ const SvgContrast = (
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M11.14 3.543a8.5 8.5 0 110 16.914V3.543zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"
+      d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-.86 1.543a8.5 8.5 0 110 16.914V3.543z"
       fill="currentColor"
     />
   </svg>

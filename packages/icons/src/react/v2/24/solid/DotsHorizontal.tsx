@@ -15,9 +15,7 @@ const SvgDotshorizontal = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M5.5 14a2 2 0 100-4 2 2 0 000 4zm6.5 0a2 2 0 100-4 2 2 0 000 4zm6.5 0a2 2 0 100-4 2 2 0 000 4z"
+      d="M5.5 14a2 2 0 100-4 2 2 0 000 4zM12 14a2 2 0 100-4 2 2 0 000 4zM18.5 14a2 2 0 100-4 2 2 0 000 4z"
       fill="currentColor"
     />
   </svg>

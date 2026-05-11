@@ -15,8 +15,6 @@ const SvgUnderline = (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M7.75 3.75a.75.75 0 00-1.5 0v7.75a5.75 5.75 0 0011.5 0V3.75a.75.75 0 00-1.5 0v7.75a4.25 4.25 0 01-8.5 0V3.75zM3.754 21h16.492a.75.75 0 100-1.5H3.754a.75.75 0 100 1.5z"
       fill="currentColor"
     />

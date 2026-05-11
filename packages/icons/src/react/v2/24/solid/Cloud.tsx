@@ -12,8 +12,6 @@ const SvgCloud = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M6.628 19.056A4.527 4.527 0 015.3 10.17 6.9 6.9 0 0117.98 8.412a5.415 5.415 0 01-1.263 10.644H6.628z"
       fill="currentColor"
     />

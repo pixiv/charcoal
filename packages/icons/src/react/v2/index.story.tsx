@@ -170,6 +170,7 @@ import { IconLocation } from './24/regular/Location'
 import { IconLock } from './24/regular/Lock'
 import { IconLogout } from './24/regular/Logout'
 import { IconManga } from './24/regular/Manga'
+import { IconMask } from './24/regular/Mask'
 import { IconMesh } from './24/regular/Mesh'
 import { IconMessage } from './24/regular/Message'
 import { IconMicrophone } from './24/regular/Microphone'
@@ -186,6 +187,8 @@ import { IconPaste } from './24/regular/Paste'
 import { IconPause } from './24/regular/Pause'
 import { IconPen } from './24/regular/Pen'
 import { IconPenAdd } from './24/regular/PenAdd'
+import { IconPenDraw } from './24/regular/PenDraw'
+import { IconPenText } from './24/regular/PenText'
 import { IconPencilText } from './24/regular/PencilText'
 import { IconPersonAdd } from './24/regular/PersonAdd'
 import { IconPersonCircle } from './24/regular/PersonCircle'
@@ -427,6 +430,7 @@ import { IconLocationSolid } from './24/solid/Location'
 import { IconLockSolid } from './24/solid/Lock'
 import { IconLogoutSolid } from './24/solid/Logout'
 import { IconMangaSolid } from './24/solid/Manga'
+import { IconMaskSolid } from './24/solid/Mask'
 import { IconMeshSolid } from './24/solid/Mesh'
 import { IconMessageSolid } from './24/solid/Message'
 import { IconMicrophoneSolid } from './24/solid/Microphone'
@@ -443,6 +447,8 @@ import { IconPasteSolid } from './24/solid/Paste'
 import { IconPauseSolid } from './24/solid/Pause'
 import { IconPenSolid } from './24/solid/Pen'
 import { IconPenAddSolid } from './24/solid/PenAdd'
+import { IconPenDrawSolid } from './24/solid/PenDraw'
+import { IconPenTextSolid } from './24/solid/PenText'
 import { IconPencilTextSolid } from './24/solid/PencilText'
 import { IconPersonAddSolid } from './24/solid/PersonAdd'
 import { IconPersonCircleSolid } from './24/solid/PersonCircle'
@@ -2158,6 +2164,16 @@ export default {
           </div>
 
           <div>
+            <IconMask />
+            <code>&lt;IconMask /&gt;</code>
+          </div>
+
+          <div>
+            <IconMaskSolid />
+            <code>&lt;IconMaskSolid /&gt;</code>
+          </div>
+
+          <div>
             <IconMesh />
             <code>&lt;IconMesh /&gt;</code>
           </div>
@@ -2323,8 +2339,28 @@ export default {
           </div>
 
           <div>
+            <IconPenDraw />
+            <code>&lt;IconPenDraw /&gt;</code>
+          </div>
+
+          <div>
+            <IconPenDrawSolid />
+            <code>&lt;IconPenDrawSolid /&gt;</code>
+          </div>
+
+          <div>
             <IconPenSolid />
             <code>&lt;IconPenSolid /&gt;</code>
+          </div>
+
+          <div>
+            <IconPenText />
+            <code>&lt;IconPenText /&gt;</code>
+          </div>
+
+          <div>
+            <IconPenTextSolid />
+            <code>&lt;IconPenTextSolid /&gt;</code>
           </div>
 
           <div>
@@ -3183,7 +3219,16 @@ export default {
   },
 }
 
-export const Default = {}
+export const Default = {
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 12000,
+      },
+    },
+  },
+}
 
 const Global = createGlobalStyle`
   .icons-grid {

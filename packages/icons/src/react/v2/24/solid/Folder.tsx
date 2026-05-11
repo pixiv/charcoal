@@ -12,8 +12,6 @@ const SvgFolder = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M2.015 16.25A3.75 3.75 0 005.765 20h12.47a3.75 3.75 0 003.75-3.75V9.994a3.75 3.75 0 00-3.75-3.75h-5.339a1.25 1.25 0 01-.92-.404l-.873-.95a2.75 2.75 0 00-2.025-.889H5.765a3.75 3.75 0 00-3.75 3.75v8.5z"
       fill="currentColor"
     />

@@ -12,8 +12,6 @@ const SvgItalic = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
       d="M8.75 3.752c0-.69.56-1.25 1.25-1.25h7a1.25 1.25 0 110 2.5h-2.457l-2.545 13.996H14a1.25 1.25 0 010 2.5H7a1.25 1.25 0 110-2.5h2.457l2.545-13.996H10c-.69 0-1.25-.56-1.25-1.25z"
       fill="currentColor"
     />
