@@ -114,7 +114,7 @@ export class PixivIcon extends HTMLElement {
     }
 
     const [size] = this.props.name.split('/')
-    const scale = parseFloat(this.props['unsafe-non-guideline-scale'])
+    const scale = Number(this.props['unsafe-non-guideline-scale'])
 
     switch (size) {
       case 'Inline': {
@@ -122,7 +122,7 @@ export class PixivIcon extends HTMLElement {
       }
 
       default: {
-        return parseInt(size, 10) * scale
+        return Number(size) * scale
       }
     }
   }
@@ -130,7 +130,7 @@ export class PixivIcon extends HTMLElement {
   get scaledSize(): number {
     const [size] = this.props.name.split('/')
 
-    const scale = parseInt(this.props.scale ?? '1', 10)
+    const scale = Number(this.props.scale ?? '1')
 
     switch (size) {
       case 'Inline': {
@@ -146,11 +146,11 @@ export class PixivIcon extends HTMLElement {
       }
 
       case '24': {
-        return parseInt(size, 10) * scale
+        return Number(size) * scale
       }
 
       default: {
-        return parseInt(size, 10)
+        return Number(size)
       }
     }
   }
