@@ -23,6 +23,9 @@ importers:
 
   .:
     devDependencies:
+      '@charcoal-ui/icons':
+        specifier: workspace:^
+        version: link:packages/icons
       '@charcoal-ui/icons-cli':
         specifier: workspace:^
         version: link:packages/icons-cli
