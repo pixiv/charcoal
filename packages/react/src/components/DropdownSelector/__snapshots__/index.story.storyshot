@@ -65,8 +65,9 @@ exports[`Storybook Tests > react/DropdownSelector > AssistiveText 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
         <div
@@ -150,8 +151,9 @@ exports[`Storybook Tests > react/DropdownSelector > CustomChildren 1`] = `
             </div>
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -220,8 +222,9 @@ exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
             data-placeholder="false"
           />
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -296,8 +299,9 @@ exports[`Storybook Tests > react/DropdownSelector > Disabled 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -381,8 +385,9 @@ exports[`Storybook Tests > react/DropdownSelector > DisabledItem 1`] = `
             Option 2 (disabled)
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -456,8 +461,9 @@ exports[`Storybook Tests > react/DropdownSelector > InFormTag 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -555,8 +561,9 @@ exports[`Storybook Tests > react/DropdownSelector > Invalid 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -631,8 +638,9 @@ exports[`Storybook Tests > react/DropdownSelector > InvalidAssistiveText 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
         <div
@@ -711,8 +719,9 @@ exports[`Storybook Tests > react/DropdownSelector > Label 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -785,8 +794,9 @@ exports[`Storybook Tests > react/DropdownSelector > LongNames 1`] = `
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -863,8 +873,9 @@ exports[`Storybook Tests > react/DropdownSelector > RequiredText 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -952,8 +963,9 @@ exports[`Storybook Tests > react/DropdownSelector > Section 1`] = `
             Banana
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
@@ -1027,8 +1039,9 @@ exports[`Storybook Tests > react/DropdownSelector > SubLabel 1`] = `
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-ssr-size: 16px;"
           />
         </button>
       </div>
