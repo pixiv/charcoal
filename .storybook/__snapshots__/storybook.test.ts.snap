@@ -1864,6 +1864,7 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > Default 1`] = `
     >
       <pixiv-icon
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>
@@ -1883,6 +1884,7 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > IsActive 1`] = 
     >
       <pixiv-icon
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>
@@ -1902,6 +1904,7 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > Overlay 1`] = `
     >
       <pixiv-icon
         name="16/Add"
+        style="--charcoal-icon-ssr-size: 16px;"
       />
     </button>
   </div>
@@ -2223,6 +2226,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -2324,6 +2328,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -2560,6 +2565,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -2731,6 +2737,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
         </div>
@@ -2839,7 +2846,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2870,7 +2877,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2902,7 +2909,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2933,7 +2940,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -2979,7 +2986,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3010,7 +3017,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3041,7 +3048,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3072,7 +3079,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3118,7 +3125,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3149,7 +3156,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3180,7 +3187,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3211,7 +3218,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3257,7 +3264,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3289,7 +3296,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3321,7 +3328,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3353,7 +3360,7 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           <pixiv-icon
             class="charcoal-icon"
             name="24/Check"
-            style="--charcoal-icon-ssr-size: 24px;"
+            style="--charcoal-icon-ssr-size: 16px;"
             unsafe-non-guideline-scale="0.6666666666666666"
           />
         </div>
@@ -3390,6 +3397,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </a>
       <a
@@ -3408,6 +3416,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <a
@@ -3451,6 +3460,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </a>
     </nav>
@@ -3477,6 +3487,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -3495,6 +3506,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -3536,6 +3548,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
     </nav>
@@ -3564,6 +3577,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <span
@@ -3617,6 +3631,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
     </nav>
@@ -3643,6 +3658,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -3661,6 +3677,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -3704,6 +3721,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
     </nav>
@@ -3739,6 +3757,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         >
           <pixiv-icon
             name="24/Prev"
+            style="--charcoal-icon-ssr-size: 24px;"
           />
         </a>
         <a
@@ -3757,6 +3776,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         >
           <pixiv-icon
             name="24/Dot"
+            style="--charcoal-icon-ssr-size: 24px;"
           />
         </button>
         <a
@@ -3800,6 +3820,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         >
           <pixiv-icon
             name="24/Next"
+            style="--charcoal-icon-ssr-size: 24px;"
           />
         </a>
       </nav>
@@ -3843,6 +3864,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationW
           >
             <pixiv-icon
               name="24/Prev"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </a>
           <a
@@ -3862,6 +3884,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationW
           >
             <pixiv-icon
               name="24/Dot"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </button>
           <a
@@ -3910,6 +3933,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationW
           >
             <pixiv-icon
               name="24/Next"
+              style="--charcoal-icon-ssr-size: 24px;"
             />
           </a>
         </nav>
@@ -3938,6 +3962,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -3956,6 +3981,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -3997,6 +4023,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
     </nav>
@@ -4023,6 +4050,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] 
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -4041,6 +4069,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] 
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <span
@@ -4070,6 +4099,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] 
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
     </nav>
@@ -4096,6 +4126,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -4114,6 +4145,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
       <button
@@ -4155,6 +4187,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-ssr-size: 24px;"
         />
       </button>
     </nav>
@@ -7032,6 +7065,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > Prefix 1`] = `
           >
             <pixiv-icon
               name="16/Search"
+              style="--charcoal-icon-ssr-size: 16px;"
             />
           </div>
         </div>

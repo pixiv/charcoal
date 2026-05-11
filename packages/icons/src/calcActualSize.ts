@@ -66,7 +66,7 @@ export const calcActualSize = ({
   }
   if (overrideSize !== undefined) {
     throw new TypeError(
-      `size must be a positive finite number, got ${overrideSize}`,
+      `unsafeNonGuidelineSize must be a positive finite number, got ${overrideSize}`,
     )
   }
 
