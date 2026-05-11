@@ -3,9 +3,14 @@ import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
-import { calcActualSize, type IconSizing } from './calcActualSize'
+import { calcActualSize } from './calcActualSize'
 
-const attributes = ['name', 'scale'] as const
+const attributes = [
+  'name',
+  'scale',
+  'unsafe-non-guideline-scale',
+  'unsafe-non-guideline-size',
+] as const
 
 const ROOT_MARGIN = 50
 
@@ -18,6 +23,9 @@ export interface Props
   > {
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
+  'unsafe-non-guideline-scale'?: number | string
+  'unsafe-non-guideline-size'?: number | string
+
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
   class?: string
@@ -27,8 +35,6 @@ type ExtendedIconFile = Exclude<keyof KnownIconType, KnownIconFile>
 type Extended = [ExtendedIconFile] extends [never] // NOTE: ExtendedIconFileがneverならKnownIconTypeは拡張されていない
   ? false
   : true
-
-export { calcActualSize, type IconSizing }
 
 export class PixivIcon extends HTMLElement {
   static readonly tagName = 'pixiv-icon'
@@ -77,8 +83,8 @@ export class PixivIcon extends HTMLElement {
   get props(): {
     name: string
     scale: string | null
-    unsafeNonGuidelineScale: number | undefined
-    unsafeNonGuidelineSize: number | undefined
+    'unsafe-non-guideline-scale': string | null
+    'unsafe-non-guideline-size': string | null
   } {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)]),
@@ -96,26 +102,56 @@ export class PixivIcon extends HTMLElement {
       )
     }
 
-    // object literal 内の getter から外側の this を参照するためエイリアスする
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const el = this
-
     return {
       ...partial,
       name,
-      // CSS variable からサイズ情報を読み取る
-      get unsafeNonGuidelineScale() {
-        const v = el.style.getPropertyValue('--charcoal-icon-unsafe-scale')
-        return v !== '' ? parseFloat(v) : undefined
-      },
-      // --charcoal-icon-ssr-size はライブラリ全体で size のソース・オブ・トゥルース。
-      // 値が直接指定されている場合は name / scale を無視してそれを採用する。
-      get unsafeNonGuidelineSize() {
-        const v = el.style.getPropertyValue('--charcoal-icon-ssr-size')
-        if (v === '') return undefined
-        const n = parseFloat(v)
-        return Number.isFinite(n) ? n : undefined
-      },
+    }
+  }
+
+  get forceResizedSize(): number | null {
+    if (this.props['unsafe-non-guideline-scale'] === null) {
+      return null
+    }
+
+    const [size] = this.props.name.split('/')
+    const scale = parseFloat(this.props['unsafe-non-guideline-scale'])
+
+    switch (size) {
+      case 'Inline': {
+        return 16 * scale
+      }
+
+      default: {
+        return parseInt(size, 10) * scale
+      }
+    }
+  }
+
+  get scaledSize(): number {
+    const [size] = this.props.name.split('/')
+
+    const scale = parseInt(this.props.scale ?? '1', 10)
+
+    switch (size) {
+      case 'Inline': {
+        switch (scale) {
+          case 2: {
+            return 32
+          }
+
+          default: {
+            return 16
+          }
+        }
+      }
+
+      case '24': {
+        return parseInt(size, 10) * scale
+      }
+
+      default: {
+        return parseInt(size, 10)
+      }
     }
   }
 
@@ -164,14 +200,18 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const props = this.props
+    const { name, scale, ...unsafe } = this.props
+    const unsafeNonGuidelineScale = unsafe['unsafe-non-guideline-scale']
+    const unsafeNonGuidelineSize = unsafe['unsafe-non-guideline-size']
 
     const size = calcActualSize({
-      name: props.name,
-      scale: props.scale ?? undefined,
-      unsafeNonGuidelineScale: props.unsafeNonGuidelineScale,
-      unsafeNonGuidelineSize: props.unsafeNonGuidelineSize,
-    } as { name: string } & IconSizing)
+      name,
+      ...(unsafeNonGuidelineSize !== null
+        ? { unsafeNonGuidelineSize: parseFloat(unsafeNonGuidelineSize) }
+        : unsafeNonGuidelineScale !== null
+          ? { unsafeNonGuidelineScale: parseFloat(unsafeNonGuidelineScale) }
+          : { scale: scale ?? undefined }),
+    } as Parameters<typeof calcActualSize>[0])
 
     if (!Number.isFinite(size) || size <= 0) {
       throw new TypeError(
@@ -179,8 +219,8 @@ export class PixivIcon extends HTMLElement {
       )
     }
 
-    // 最終サイズを CSS variable としてホスト要素に注入する
-    // shadow DOM と .charcoal-icon が var(--charcoal-icon-ssr-size) で参照する
+    // icon.css の pixiv-icon:not(:defined) ルールと同じ CSS variable に
+    // 計算結果を流し込むことで、hydrate 前後で width / height が揺れないようにする
     this.style.setProperty('--charcoal-icon-ssr-size', `${size}px`)
 
     const style = `<style>

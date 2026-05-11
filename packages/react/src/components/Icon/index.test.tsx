@@ -40,47 +40,27 @@ describe('Icon', () => {
     ).toBe('100px')
   })
 
-  it('does not emit data-charcoal-icon-size attribute', () => {
-    const { container } = render(
-      <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
-    )
-    expect(queryIcon(container).hasAttribute('data-charcoal-icon-size')).toBe(
-      false,
-    )
-  })
-
   it('passes scale attribute through to pixiv-icon', () => {
     const { container } = render(<Icon name="24/Add" scale={2} />)
     expect(queryIcon(container).getAttribute('scale')).toBe('2')
   })
 
-  it('does not pass unsafe-non-guideline-scale attribute to pixiv-icon', () => {
+  it('passes unsafe-non-guideline-scale attribute to pixiv-icon for hydration', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
     )
     expect(
       queryIcon(container).getAttribute('unsafe-non-guideline-scale'),
-    ).toBeNull()
-  })
-
-  it('sets --charcoal-icon-unsafe-scale CSS variable for unsafeNonGuidelineScale', () => {
-    const { container } = render(
-      <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
-    )
-    expect(
-      queryIcon(container).style.getPropertyValue(
-        '--charcoal-icon-unsafe-scale',
-      ),
     ).toBe('1.5')
   })
 
-  it('does not set --charcoal-icon-unsafe-scale for normal icons', () => {
-    const { container } = render(<Icon name="24/Add" />)
-    expect(
-      queryIcon(container).style.getPropertyValue(
-        '--charcoal-icon-unsafe-scale',
-      ),
-    ).toBe('')
+  it('passes unsafe-non-guideline-size attribute to pixiv-icon for hydration', () => {
+    const { container } = render(
+      <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
+    )
+    expect(queryIcon(container).getAttribute('unsafe-non-guideline-size')).toBe(
+      '100',
+    )
   })
 
   it('adds charcoal-icon class', () => {

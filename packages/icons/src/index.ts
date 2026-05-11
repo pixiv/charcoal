@@ -1,12 +1,7 @@
 import { PixivIcon } from './PixivIcon'
 import { __SERVER__ } from './ssr'
-export {
-  PixivIcon,
-  calcActualSize,
-  type IconSizing,
-  type KnownIconType,
-  type Props,
-} from './PixivIcon'
+export { PixivIcon, type KnownIconType, type Props } from './PixivIcon'
+export { calcActualSize, type IconSizing } from './calcActualSize'
 export { KNOWN_ICON_FILES } from './charcoalIconFiles'
 export { PixivIconLoadError } from './loaders/PixivIconLoadError'
 

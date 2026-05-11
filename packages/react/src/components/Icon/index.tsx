@@ -5,12 +5,23 @@ import '@charcoal-ui/icons/css/icon.css'
 import { calcActualSize } from '@charcoal-ui/icons'
 import type { IconSizing, PixivIcon, Props } from '@charcoal-ui/icons'
 
-export type OwnProps = IconSizing & {
+export interface OwnProps {
+  unsafeNonGuidelineScale?: number
+  unsafeNonGuidelineSize?: number
   className?: string
 }
 
-export type IconProps = OwnProps &
-  React.PropsWithoutRef<Omit<Props, 'class' | 'scale' | 'css'>>
+export interface IconProps
+  extends OwnProps,
+    React.PropsWithoutRef<
+      Omit<
+        Props,
+        | 'class'
+        | 'unsafe-non-guideline-scale'
+        | 'unsafe-non-guideline-size'
+        | 'css'
+      >
+    > {}
 
 const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
   {
@@ -41,11 +52,8 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       ({
         ...userStyle,
         '--charcoal-icon-ssr-size': `${actualSize}px`,
-        ...(unsafeNonGuidelineScale !== undefined && {
-          '--charcoal-icon-unsafe-scale': unsafeNonGuidelineScale,
-        }),
       }) as React.CSSProperties,
-    [actualSize, unsafeNonGuidelineScale, userStyle],
+    [actualSize, userStyle],
   )
 
   return (
@@ -53,6 +61,8 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
       ref={ref}
       name={name}
       scale={scale}
+      unsafe-non-guideline-scale={unsafeNonGuidelineScale}
+      unsafe-non-guideline-size={unsafeNonGuidelineSize}
       style={style}
       class={`charcoal-icon ${className || ''}`.trim()}
       {...rest}
