@@ -188,7 +188,6 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                     </span>
                     <pixiv-icon
                       class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-                      data-charcoal-icon-size="16"
                       name="16/Menu"
                       style="--charcoal-icon-ssr-size: 16px;"
                     />
@@ -224,7 +223,6 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
           >
             <pixiv-icon
               class="charcoal-icon"
-              data-charcoal-icon-size="24"
               name="24/Close"
               style="--charcoal-icon-ssr-size: 24px;"
             />
@@ -328,7 +326,6 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
           >
             <pixiv-icon
               class="charcoal-icon"
-              data-charcoal-icon-size="24"
               name="24/Close"
               style="--charcoal-icon-ssr-size: 24px;"
             />
@@ -524,7 +521,6 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                     </span>
                     <pixiv-icon
                       class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-                      data-charcoal-icon-size="16"
                       name="16/Menu"
                       style="--charcoal-icon-ssr-size: 16px;"
                     />
@@ -560,7 +556,6 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
           >
             <pixiv-icon
               class="charcoal-icon"
-              data-charcoal-icon-size="24"
               name="24/Close"
               style="--charcoal-icon-ssr-size: 24px;"
             />
@@ -726,7 +721,6 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
           >
             <pixiv-icon
               class="charcoal-icon"
-              data-charcoal-icon-size="24"
               name="24/Close"
               style="--charcoal-icon-ssr-size: 24px;"
             />

@@ -14,7 +14,6 @@ exports[`Storybook Tests > react/IconButton > Default 1`] = `
     >
       <pixiv-icon
         class="charcoal-icon"
-        data-charcoal-icon-size="16"
         name="16/Add"
         style="--charcoal-icon-ssr-size: 16px;"
       />
@@ -36,7 +35,6 @@ exports[`Storybook Tests > react/IconButton > IsActive 1`] = `
     >
       <pixiv-icon
         class="charcoal-icon"
-        data-charcoal-icon-size="16"
         name="16/Add"
         style="--charcoal-icon-ssr-size: 16px;"
       />
@@ -58,7 +56,6 @@ exports[`Storybook Tests > react/IconButton > Overlay 1`] = `
     >
       <pixiv-icon
         class="charcoal-icon"
-        data-charcoal-icon-size="16"
         name="16/Add"
         style="--charcoal-icon-ssr-size: 16px;"
       />

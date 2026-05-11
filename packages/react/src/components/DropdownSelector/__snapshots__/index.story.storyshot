@@ -66,7 +66,6 @@ exports[`Storybook Tests > react/DropdownSelector > AssistiveText 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -153,7 +152,6 @@ exports[`Storybook Tests > react/DropdownSelector > CustomChildren 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -225,7 +223,6 @@ exports[`Storybook Tests > react/DropdownSelector > Default 1`] = `
           />
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -303,7 +300,6 @@ exports[`Storybook Tests > react/DropdownSelector > Disabled 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -390,7 +386,6 @@ exports[`Storybook Tests > react/DropdownSelector > DisabledItem 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -467,7 +462,6 @@ exports[`Storybook Tests > react/DropdownSelector > InFormTag 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -568,7 +562,6 @@ exports[`Storybook Tests > react/DropdownSelector > Invalid 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -646,7 +639,6 @@ exports[`Storybook Tests > react/DropdownSelector > InvalidAssistiveText 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -728,7 +720,6 @@ exports[`Storybook Tests > react/DropdownSelector > Label 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -804,7 +795,6 @@ exports[`Storybook Tests > react/DropdownSelector > LongNames 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -884,7 +874,6 @@ exports[`Storybook Tests > react/DropdownSelector > RequiredText 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -975,7 +964,6 @@ exports[`Storybook Tests > react/DropdownSelector > Section 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />
@@ -1052,7 +1040,6 @@ exports[`Storybook Tests > react/DropdownSelector > SubLabel 1`] = `
           </span>
           <pixiv-icon
             class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-            data-charcoal-icon-size="16"
             name="16/Menu"
             style="--charcoal-icon-ssr-size: 16px;"
           />

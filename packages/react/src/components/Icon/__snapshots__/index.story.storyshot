@@ -7,7 +7,6 @@ exports[`Storybook Tests > react/Icon > Default 1`] = `
   >
     <pixiv-icon
       class="charcoal-icon"
-      data-charcoal-icon-size="16"
       name="16/Add"
       scale="1"
       style="--charcoal-icon-ssr-size: 16px;"

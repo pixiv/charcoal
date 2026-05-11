@@ -31,7 +31,6 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -62,7 +61,6 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -94,7 +92,6 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -125,7 +122,6 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -171,7 +167,6 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -202,7 +197,6 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -233,7 +227,6 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -264,7 +257,6 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -310,7 +302,6 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -341,7 +332,6 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -372,7 +362,6 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -403,7 +392,6 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -449,7 +437,6 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -481,7 +468,6 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -513,7 +499,6 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
@@ -545,7 +530,6 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
         >
           <pixiv-icon
             class="charcoal-icon"
-            data-charcoal-icon-size="16"
             name="24/Check"
             style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
