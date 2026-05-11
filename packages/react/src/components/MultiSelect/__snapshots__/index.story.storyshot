@@ -30,8 +30,9 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -59,8 +60,9 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -89,8 +91,9 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -118,8 +121,9 @@ exports[`Storybook Tests > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -162,8 +166,9 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -191,8 +196,9 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -220,8 +226,9 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -249,8 +256,9 @@ exports[`Storybook Tests > react/MultiSelect > Invalid 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -293,8 +301,9 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -322,8 +331,9 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -351,8 +361,9 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -380,8 +391,9 @@ exports[`Storybook Tests > react/MultiSelect > Overlay 1`] = `
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -424,8 +436,9 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -454,8 +467,9 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -484,8 +498,9 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
@@ -514,8 +529,9 @@ exports[`Storybook Tests > react/MultiSelect > Playground 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-ssr-size: 16px; --charcoal-icon-unsafe-scale: 0.6666666666666666;"
           />
         </div>
         <div
