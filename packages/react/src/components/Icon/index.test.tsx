@@ -41,7 +41,9 @@ describe('Icon', () => {
   })
 
   it('does not emit data-charcoal-icon-size attribute', () => {
-    const { container } = render(<Icon name="24/Add" unsafeNonGuidelineSize={100} />)
+    const { container } = render(
+      <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
+    )
     expect(queryIcon(container).hasAttribute('data-charcoal-icon-size')).toBe(
       false,
     )

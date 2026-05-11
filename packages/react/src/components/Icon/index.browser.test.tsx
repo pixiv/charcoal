@@ -180,7 +180,8 @@ describe('pixiv-icon:not(:defined) reserves correct size with CSS only (vanilla 
       expected: 20,
     },
     {
-      title: 'non-guideline size for a 20/ prefix (not enumerated in CSS) via --charcoal-icon-ssr-size → 20px',
+      title:
+        'non-guideline size for a 20/ prefix (not enumerated in CSS) via --charcoal-icon-ssr-size → 20px',
       markup: `<pixiv-icon name="20/Custom" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
       expected: 20,
     },
