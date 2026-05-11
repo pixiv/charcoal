@@ -41,12 +41,26 @@ React を使わない場合でも、`name` 属性のプレフィックス（`16/
 
 ## サイズ決定ルール
 
-`pixiv-icon:not(:defined)` セレクターでは、サイズは以下の優先順位で決まります。
+サイズの決定タイミングは hydrate の前後で異なります。
+
+### hydrate 前 (`pixiv-icon:not(:defined)` の段階)
 
 1. **`style="--charcoal-icon-ssr-size: Npx"` が指定されていれば、その値を使う**（最優先）
 2. それ以外は `name` プレフィックスと `scale` 属性から導出されたガイドラインデフォルトを使う
 
-`<pixiv-icon>` が JS によって `:defined` 状態になった後は、 `unsafe-non-guideline-size` / `unsafe-non-guideline-scale` 属性も解釈され、計算結果が `--charcoal-icon-ssr-size` に反映されます。
+`unsafe-non-guideline-scale` / `unsafe-non-guideline-size` 属性は CSS の `attr()` での
+数値解釈に制約があるためこの段階では参照できず、暫定値が表示されます。
+
+### hydrate 後 (`:defined` 状態)
+
+JS が読み込まれて web component が定義されると、`render()` が以下の優先順で size を計算し、
+**結果を `--charcoal-icon-ssr-size` の inline style に上書きします**。
+
+1. `unsafe-non-guideline-size` 属性（最優先 / ピクセル値）
+2. `unsafe-non-guideline-scale` 属性 × `name` のベースサイズ
+3. `name` プレフィックスと `scale` 属性から導出されたガイドラインデフォルト
+
+つまりユーザーが書いた `style="--charcoal-icon-ssr-size: ..."` は **hydrate 後には属性ベースの計算結果で上書きされる** 点に注意してください。永続的に上書きしたい場合は属性で指定します。
 
 ```html
 <!-- ガイドライン通り 24px -->
@@ -55,8 +69,8 @@ React を使わない場合でも、`name` 属性のプレフィックス（`16/
 <!-- ガイドライン通り 48px (24 × scale=2) -->
 <pixiv-icon name="24/Add" scale="2"></pixiv-icon>
 
-<!-- name="24/Add" でも CSS 変数で上書きして 40px に -->
-<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 40px"></pixiv-icon>
+<!-- 12px に固定 (hydrate 後も 12px のまま) -->
+<pixiv-icon name="24/Add" unsafe-non-guideline-size="12"></pixiv-icon>
 ```
 
 ### `scale` 属性のプレフィックスごとの挙動
@@ -75,11 +89,10 @@ React を使わない場合でも、`name` 属性のプレフィックス（`16/
 
 ### ガイドライン外のサイズ指定
 
-ガイドライン外のサイズを使う場合は次のいずれかが使えます。
+ガイドライン外のサイズを使う場合は次のいずれかを使います。
 
 - React: `<Icon>` の `unsafeNonGuidelineScale` / `unsafeNonGuidelineSize` props
 - vanilla HTML: `<pixiv-icon>` の `unsafe-non-guideline-scale` / `unsafe-non-guideline-size` 属性
-- どちらも使えない場合: `--charcoal-icon-ssr-size` CSS 変数を直接設定
 
 ```jsx
 <Icon name="24/Add" unsafeNonGuidelineScale={1.5} /> {/* 24 × 1.5 = 36px */}
@@ -87,12 +100,21 @@ React を使わない場合でも、`name` 属性のプレフィックス（`16/
 ```
 
 ```html
-<!-- 属性で指定: hydrate 後に web component が --charcoal-icon-ssr-size を更新する -->
 <pixiv-icon name="24/Add" unsafe-non-guideline-scale="1.5"></pixiv-icon>
 <pixiv-icon name="24/Add" unsafe-non-guideline-size="40"></pixiv-icon>
-
-<!-- SSR 段階から CLS を完全に防ぎたい場合は CSS 変数を直接セット -->
-<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 12px"></pixiv-icon>
 ```
 
-属性指定では、JS が読み込まれるまでは `pixiv-icon:not(:defined)` ルールの `name` + `scale` ベースのサイズが暫定的に使われ、`:defined` になった瞬間に正しいサイズに切り替わります。SSR 段階で正確なサイズを確保したい場合は `--charcoal-icon-ssr-size` CSS 変数を直接セットしてください。
+React `<Icon>` は SSR 段階で `calcActualSize` の結果を `--charcoal-icon-ssr-size` の inline style に出力するので、hydrate 前後ともに正しいサイズで CLS が起きません。
+
+vanilla HTML の場合、JS が読み込まれるまで `unsafe-non-guideline-*` 属性は CSS から参照できないため、hydrate 前は `pixiv-icon:not(:defined)` の `name` + `scale` ベースのガイドラインサイズが暫定的に表示されます。CLS を SSR 段階から完全に避けたい場合は、SSR 側で size を事前計算し inline style に直接書き出してください。
+
+```html
+<!-- name="24/Add" unsafe-non-guideline-size="12" と同等。hydrate 前から 12px で表示 -->
+<pixiv-icon
+  name="24/Add"
+  unsafe-non-guideline-size="12"
+  style="--charcoal-icon-ssr-size: 12px"
+></pixiv-icon>
+```
+
+`style` だけ書いて属性を省くと **hydrate 後に属性ベースのガイドラインサイズで上書きされる** 点に注意してください。
