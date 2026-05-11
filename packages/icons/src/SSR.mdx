@@ -8,58 +8,91 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 `@charcoal-ui/icons` は、Node.js の環境下で import されたり、API を呼び出されても問題が起きないように設計されています。
 
 一方、Custom Element であるということは、**SVG アイコンの読み込みはクライアントサイドで行われます**。  
-したがって、大きさが確定せずにレイアウトシフトが起こりうるのは、SSR における注意点の一つと言えます。
+したがって、大きさが確定せずにレイアウトシフト (CLS) が起こりうるのは、SSR における注意点の一つと言えます。
 
-以下のようなコードをリセット CSS に含めることで、`<pixiv-icon>` によるレイアウトシフトの発生を防ぐことができます。  
-（簡単のため、ネスト記法が利用できるケースを意図しています）
+## なぜ CSS が必要なのか
 
-```css
-pixiv-icon {
-  display: inline-flex;
-  width: calc(var(--icon-size, 1em) * var(--scale, 1));
-  height: calc(var(--icon-size, 1em) * var(--scale, 1));
-}
+`@charcoal-ui/icons` の JS が読み込まれて `customElements.define('pixiv-icon', ...)` が実行されるまで、`<pixiv-icon>` は Shadow DOM を持たない単なる未登録 Custom Element です。CSS がない場合、ブラウザはこの要素のサイズを 0x0 として扱うため:
 
-&[name~='16/'] {
-  --icon-size: 16px;
-}
+- SSR で送出された HTML が画面に描画された直後: アイコンは **0x0** で何も見えない
+- JS がロードされて `pixiv-icon` が `:defined` になった瞬間: 突然 16x16 / 24x24 などの実サイズになり、**周囲のコンテンツが押し出される**
 
-&[name~='24/'] {
-  --icon-size: 24px;
-}
+この瞬間に発生する CLS を、`icon.css` が事前に寸法を確保することで防ぎます。
 
-&[name~='32/'] {
-  --icon-size: 32px;
-}
+## レイアウトシフト防止 CSS
 
-&[scale='2'] {
-  --scale: 2;
-}
+`@charcoal-ui/icons/css/icon.css` をインポートすると、`<pixiv-icon>` のレイアウトシフトを防止できます。
+アプリケーションのエントリポイント、または Storybook の `preview.(js|ts)` で 1 度だけ読み込んでください。
 
-&[scale='3'] {
-  --scale: 3;
-}
-
-/* NOTICE: 現状とサポートブラウザが少ない */
-@supports (--scale: attr(unsafe-non-guideline-scale)) {
-  &[unsafe-non-guideline-scale] {
-    --scale: attr(unsafe-non-guideline-scale);
-  }
-}
+```ts
+import '@charcoal-ui/icons/css/icon.css'
 ```
 
-ただしコメントにもある通り、**現状 `unsafe-non-guideline-scale` をつけた要素は、リセット CSS だけではレイアウトシフトが防げません。**
-CSS の `attr()` が数値の解釈をサポートするまで、個別にインラインスタイルを用いて大きさを確定させるなどのワークアラウンドが必要です。
+この CSS は 2 つのメカニズムを提供します。
+
+### 1. `.charcoal-icon` クラス（React 向け）
+
+`@charcoal-ui/react` の `<Icon>` コンポーネントは自動的に `.charcoal-icon` クラスと `--charcoal-icon-ssr-size` CSS 変数を設定します。
+CSS が読み込まれていれば、Custom Element の定義前でも正しいサイズが確保されます。
+
+### 2. `pixiv-icon:not(:defined)` セレクター（vanilla HTML 向け）
+
+React を使わない場合でも、`name` 属性のプレフィックス（`16/`, `24/`, `32/`, `Inline/`）と `scale` 属性に基づいてサイズが確保されます。
+
+## サイズ決定ルール
+
+`pixiv-icon:not(:defined)` セレクターでは、サイズは以下の優先順位で決まります。
+
+1. **`style="--charcoal-icon-ssr-size: Npx"` が指定されていれば、その値を使う**（最優先）
+2. それ以外は `name` プレフィックスと `scale` 属性から導出されたガイドラインデフォルトを使う
+
+`<pixiv-icon>` が JS によって `:defined` 状態になった後は、 `unsafe-non-guideline-size` / `unsafe-non-guideline-scale` 属性も解釈され、計算結果が `--charcoal-icon-ssr-size` に反映されます。
 
 ```html
-<pixiv-icon
-  name="24/Add"
-  unsafe-non-guideline-scale="0.5"
-  style="--scale: 0.5;"
-></pixiv-icon>
-<pixiv-icon
-  name="24/Add"
-  unsafe-non-guideline-scale="0.5"
-  style="width: 12px; height: 12px;"
-></pixiv-icon>
+<!-- ガイドライン通り 24px -->
+<pixiv-icon name="24/Add"></pixiv-icon>
+
+<!-- ガイドライン通り 48px (24 × scale=2) -->
+<pixiv-icon name="24/Add" scale="2"></pixiv-icon>
+
+<!-- name="24/Add" でも CSS 変数で上書きして 40px に -->
+<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 40px"></pixiv-icon>
 ```
+
+### `scale` 属性のプレフィックスごとの挙動
+
+`name` プレフィックスごとに `scale` のサポート範囲が異なります。表に整理すると以下の通りです。
+
+| プレフィックス | `scale=1` | `scale=2` | `scale=3` | 備考                              |
+| -------------- | --------- | --------- | --------- | --------------------------------- |
+| `16/`          | 16        | **16**    | **16**    | `scale` を無視（意図的な仕様）    |
+| `24/`          | 24        | 48        | 72        | すべて対応                        |
+| `32/`          | 32        | **32**    | **32**    | `scale` を無視（意図的な仕様）    |
+| `Inline/`      | 16        | 32        | **16**    | `scale=3` は `scale=1` と同じ扱い |
+
+`scale` に対応していない組み合わせを書いても **CLS は発生しません**（CSS と JS 双方で同じ結果を返すように揃えてあります）が、期待通りに大きくならないことに注意してください。
+大きく表示したい場合は次節の「ガイドライン外のサイズ指定」を使ってください。
+
+### ガイドライン外のサイズ指定
+
+ガイドライン外のサイズを使う場合は次のいずれかが使えます。
+
+- React: `<Icon>` の `unsafeNonGuidelineScale` / `unsafeNonGuidelineSize` props
+- vanilla HTML: `<pixiv-icon>` の `unsafe-non-guideline-scale` / `unsafe-non-guideline-size` 属性
+- どちらも使えない場合: `--charcoal-icon-ssr-size` CSS 変数を直接設定
+
+```jsx
+<Icon name="24/Add" unsafeNonGuidelineScale={1.5} /> {/* 24 × 1.5 = 36px */}
+<Icon name="24/Add" unsafeNonGuidelineSize={40} />   {/* 直接 40px */}
+```
+
+```html
+<!-- 属性で指定: hydrate 後に web component が --charcoal-icon-ssr-size を更新する -->
+<pixiv-icon name="24/Add" unsafe-non-guideline-scale="1.5"></pixiv-icon>
+<pixiv-icon name="24/Add" unsafe-non-guideline-size="40"></pixiv-icon>
+
+<!-- SSR 段階から CLS を完全に防ぎたい場合は CSS 変数を直接セット -->
+<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 12px"></pixiv-icon>
+```
+
+属性指定では、JS が読み込まれるまでは `pixiv-icon:not(:defined)` ルールの `name` + `scale` ベースのサイズが暫定的に使われ、`:defined` になった瞬間に正しいサイズに切り替わります。SSR 段階で正確なサイズを確保したい場合は `--charcoal-icon-ssr-size` CSS 変数を直接セットしてください。
