@@ -190,7 +190,38 @@ export const WithAttributes: StoryObj<Props> = {
   },
 }
 
-export const WithUnsafe: StoryObj<Props> = {
+export const WithFixedSize: StoryObj<Props> = {
+  render: ({ color, name, scale, ...args }) => {
+    return (
+      <>
+        <IconDef color={color}>
+          <pixiv-icon
+            fixed-size={args['fixed-size']}
+            name={name}
+            scale={scale}
+          />
+          アイコンと文字
+        </IconDef>
+        <Global />
+      </>
+    )
+  },
+  args: {
+    name: '16/Add',
+    'fixed-size': '60',
+    color: '#000000',
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
+}
+
+export const WithUnsafeNonGuidelineScale: StoryObj<Props> = {
   render: ({ color, name, scale, ...args }) => {
     return (
       <>
@@ -200,7 +231,7 @@ export const WithUnsafe: StoryObj<Props> = {
             name={name}
             scale={scale}
           />
-          アイコンと文字
+          アイコンと文字 (deprecated)
         </IconDef>
         <Global />
       </>
