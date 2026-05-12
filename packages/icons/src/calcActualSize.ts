@@ -1,18 +1,21 @@
 export type IconSizing =
   | {
       scale?: 1 | 2 | 3 | '1' | '2' | '3'
+      /** @deprecated `fixedSize` を利用してください。 */
       unsafeNonGuidelineScale?: never
-      unsafeNonGuidelineSize?: never
+      fixedSize?: never
     }
   | {
       scale?: never
+      /** @deprecated `fixedSize` を利用してください。 */
       unsafeNonGuidelineScale: number
-      unsafeNonGuidelineSize?: never
+      fixedSize?: never
     }
   | {
       scale?: never
+      /** @deprecated `fixedSize` を利用してください。 */
       unsafeNonGuidelineScale?: never
-      unsafeNonGuidelineSize: number
+      fixedSize: number
     }
 
 const isPositiveFinite = (value: unknown): value is number =>
@@ -58,21 +61,21 @@ export const calcActualSize = ({
   name,
   scale,
   unsafeNonGuidelineScale,
-  unsafeNonGuidelineSize: overrideSize,
+  fixedSize,
 }: { name: string } & IconSizing): number => {
-  // size (事前計算済みサイズ) が最優先
-  if (isPositiveFinite(overrideSize)) {
-    return overrideSize
+  // fixedSize (px 直接指定) が最優先
+  if (isPositiveFinite(fixedSize)) {
+    return fixedSize
   }
-  if (overrideSize !== undefined) {
+  if (fixedSize !== undefined) {
     throw new TypeError(
-      `unsafeNonGuidelineSize must be a positive finite number, got ${overrideSize}`,
+      `fixedSize must be a positive finite number, got ${fixedSize}`,
     )
   }
 
   const { size, baseSize } = parseIconName(name)
 
-  // unsafeNonGuidelineScale が次に優先
+  // unsafeNonGuidelineScale (deprecated) が次に優先
   if (isPositiveFinite(unsafeNonGuidelineScale)) {
     return baseSize * unsafeNonGuidelineScale
   }

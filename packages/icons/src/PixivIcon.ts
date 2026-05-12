@@ -9,7 +9,7 @@ const attributes = [
   'name',
   'scale',
   'unsafe-non-guideline-scale',
-  'unsafe-non-guideline-size',
+  'fixed-size',
 ] as const
 
 const ROOT_MARGIN = 50
@@ -23,8 +23,20 @@ export interface Props
   > {
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
+  /**
+   * @deprecated `fixed-size` を利用してください。
+   * `attr()` の数値解釈サポートが限定的なため、リセット CSS だけではレイアウトシフトが防げません。
+   */
   'unsafe-non-guideline-scale'?: number | string
-  'unsafe-non-guideline-size'?: number | string
+  /**
+   * 固定 px サイズで描画します。ガイドライン外のサイズを利用する場合に推奨される指定方法で、
+   * 他のサイズ指定 (`scale` / `unsafe-non-guideline-scale`) よりも常に優先されます。
+   *
+   * Web Component の upgrade 前 (= SSR 直後の CSS-only 状態) でも CLS を防ぐには、
+   * 同じ値を `style="--charcoal-icon-ssr-size: Npx"` としてインラインに指定してください。
+   * React の `<Icon fixedSize>` 経由で利用する場合はインラインスタイルが自動的に付与されます。
+   */
+  'fixed-size'?: number | string
 
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
@@ -84,7 +96,7 @@ export class PixivIcon extends HTMLElement {
     name: string
     scale: string | null
     'unsafe-non-guideline-scale': string | null
-    'unsafe-non-guideline-size': string | null
+    'fixed-size': string | null
   } {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)]),
@@ -153,14 +165,14 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const { name, scale, ...unsafe } = this.props
-    const unsafeNonGuidelineScale = unsafe['unsafe-non-guideline-scale']
-    const unsafeNonGuidelineSize = unsafe['unsafe-non-guideline-size']
+    const { name, scale, ...rest } = this.props
+    const unsafeNonGuidelineScale = rest['unsafe-non-guideline-scale']
+    const fixedSize = rest['fixed-size']
 
     const size = calcActualSize({
       name,
-      ...(unsafeNonGuidelineSize !== null
-        ? { unsafeNonGuidelineSize: parseFloat(unsafeNonGuidelineSize) }
+      ...(fixedSize !== null
+        ? { fixedSize: parseFloat(fixedSize) }
         : unsafeNonGuidelineScale !== null
           ? { unsafeNonGuidelineScale: parseFloat(unsafeNonGuidelineScale) }
           : { scale: scale ?? undefined }),

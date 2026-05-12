@@ -22,7 +22,7 @@ describe('Icon', () => {
     ).toBe('48px')
   })
 
-  it('sets --charcoal-icon-ssr-size with unsafeNonGuidelineScale', () => {
+  it('sets --charcoal-icon-ssr-size with unsafeNonGuidelineScale (deprecated)', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
     )
@@ -31,10 +31,8 @@ describe('Icon', () => {
     ).toBe('36px')
   })
 
-  it('sets --charcoal-icon-ssr-size with unsafeNonGuidelineSize', () => {
-    const { container } = render(
-      <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
-    )
+  it('sets --charcoal-icon-ssr-size with fixedSize', () => {
+    const { container } = render(<Icon name="24/Add" fixedSize={100} />)
     expect(
       queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
     ).toBe('100px')
@@ -54,13 +52,9 @@ describe('Icon', () => {
     ).toBe('1.5')
   })
 
-  it('passes unsafe-non-guideline-size attribute to pixiv-icon for hydration', () => {
-    const { container } = render(
-      <Icon name="24/Add" unsafeNonGuidelineSize={100} />,
-    )
-    expect(queryIcon(container).getAttribute('unsafe-non-guideline-size')).toBe(
-      '100',
-    )
+  it('passes fixed-size attribute to pixiv-icon for hydration', () => {
+    const { container } = render(<Icon name="24/Add" fixedSize={100} />)
+    expect(queryIcon(container).getAttribute('fixed-size')).toBe('100')
   })
 
   it('adds charcoal-icon class', () => {
