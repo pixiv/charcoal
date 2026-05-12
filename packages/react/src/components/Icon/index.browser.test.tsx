@@ -42,7 +42,7 @@ const iconSizeTestCases = [
   { name: '24/Add', expected: 24 },
   { name: '24/Add', scale: 2, expected: 48 },
   { name: '24/Add', scale: 3, expected: 72 },
-  { name: '24/Add', unsafeNonGuidelineSize: 64, expected: 64 },
+  { name: '24/Add', fixedSize: 64, expected: 64 },
   { name: '24/Add', unsafeNonGuidelineScale: 1.5, expected: 36 },
   { name: 'Inline/Add', expected: 16 },
   { name: 'Inline/Add', scale: 2, expected: 32 },
@@ -85,19 +85,13 @@ describe('Icon component has correct size with Web Component upgrade', () => {
   })
 
   it.each(iconSizeTestCases)(
-    'Icon $name (scale=$scale, unsafeNonGuidelineSize=$unsafeNonGuidelineSize, unsafeNonGuidelineScale=$unsafeNonGuidelineScale) has $expected x $expected',
-    ({
-      name,
-      scale,
-      unsafeNonGuidelineSize,
-      unsafeNonGuidelineScale,
-      expected,
-    }) => {
+    'Icon $name (scale=$scale, fixedSize=$fixedSize, unsafeNonGuidelineScale=$unsafeNonGuidelineScale) has $expected x $expected',
+    ({ name, scale, fixedSize, unsafeNonGuidelineScale, expected }) => {
       const { container } = render(
         <Icon
           name={name}
           scale={scale}
-          unsafeNonGuidelineSize={unsafeNonGuidelineSize}
+          fixedSize={fixedSize}
           unsafeNonGuidelineScale={unsafeNonGuidelineScale}
         />,
       )
@@ -235,14 +229,14 @@ describe('Icon reflects dynamic prop changes (no observed-attribute regression)'
     return { width: rect.width, height: rect.height }
   }
 
-  it('updates host + shadow SVG size when only unsafeNonGuidelineSize changes', async () => {
+  it('updates host + shadow SVG size when only fixedSize changes', async () => {
     const { container, rerender } = render(
-      <Icon name="24/Add" unsafeNonGuidelineSize={20} />,
+      <Icon name="24/Add" fixedSize={20} />,
     )
 
     expect(getIconSize(container)).toEqual({ width: 20, height: 20 })
 
-    rerender(<Icon name="24/Add" unsafeNonGuidelineSize={40} />)
+    rerender(<Icon name="24/Add" fixedSize={40} />)
 
     expect(getIconSize(container)).toEqual({ width: 40, height: 40 })
 
