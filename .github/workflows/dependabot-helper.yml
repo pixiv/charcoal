@@ -1,16 +1,17 @@
 name: Dependabot Helper
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
+  issues: write
   pull-requests: write
 
 jobs:
   metadata:
-    if: github.actor == 'dependabot[bot]'
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'pixiv/charcoal'
     runs-on: ubuntu-latest
     outputs:
       dependency-names: ${{ steps.metadata.outputs.dependency-names }}
@@ -20,7 +21,7 @@ jobs:
     steps:
       - name: Fetch Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
