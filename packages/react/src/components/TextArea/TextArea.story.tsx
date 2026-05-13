@@ -122,14 +122,6 @@ export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
   },
 }
 
-export const DefaultValue: StoryObj<typeof TextArea> = {
-  render: function Render() {
-    return (
-      <TextArea label="Label" defaultValue={'テスト用テキスト'} showCount />
-    )
-  },
-}
-
 export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
   render: function Render() {
     const [value, setValue] = useState('')
