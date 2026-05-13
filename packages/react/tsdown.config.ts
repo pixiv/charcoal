@@ -40,7 +40,12 @@ export default defineConfig({
   target: 'esnext',
   sourcemap: true,
   minify: true,
-  external: ['react-compiler-runtime'],
+  deps: {
+    neverBundle: ['react-compiler-runtime'],
+  },
+  css: {
+    fileName: 'index.css',
+  },
   async onSuccess() {
     const indexCssPath = path.resolve(import.meta.dirname, './dist/index.css')
     const originalCssOutput = await fs.readFile(indexCssPath, 'utf-8')
