@@ -1,0 +1,184 @@
+.charcoal-carousel {
+  position: relative;
+  display: block;
+
+  /* Full-Width: 画面の端まで Slot を広げる（標準的な full-bleed 手法） */
+  &[data-full-width='true'] {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+  }
+}
+
+.charcoal-carousel__viewport {
+  position: relative;
+}
+
+.charcoal-carousel__scroller {
+  position: relative; /* 子の offsetLeft を scroller 相対にするため */
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  outline: none; /* useFocusRing で代替 */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* useFocusRing が出す data-focus-visible のみで focus 表示。
+     Safari など :focus-visible の挙動が揺れる環境でも一貫させる。 */
+  &[data-focus-visible] {
+    box-shadow: inset 0 0 0 2px rgba(0, 150, 250, 0.56);
+  }
+}
+
+/* Size S: 1アイテムずつ確実にスナップさせる */
+.charcoal-carousel[data-size='S'] .charcoal-carousel__scroller {
+  gap: 0;
+  scroll-snap-type: x mandatory;
+}
+
+/* Gradient: 端のアイテムが徐々にフェードイン（透過）する視覚効果（doc1） */
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__scroller {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.charcoal-carousel__item {
+  flex: 0 0 auto;
+  min-width: 0;
+  /* 中央に最も近いアイテムをコンポーネント中央に揃える (doc3 Full-Width 系の見え方) */
+  scroll-snap-align: center;
+}
+
+.charcoal-carousel__item[data-size='S'] {
+  flex: 0 0 100%;
+}
+
+.charcoal-carousel__navigation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 8px;
+
+  &[data-visible='false'] {
+    display: none;
+  }
+}
+
+.charcoal-carousel__navigation__item {
+  pointer-events: auto;
+  appearance: none;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: var(--charcoal-text2, #292929);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  transition:
+    0.2s opacity,
+    0.2s background-color,
+    0.2s box-shadow;
+
+  &:hover:not(:disabled) {
+    background-color: rgb(255, 255, 255);
+  }
+
+  &[data-focus-visible] {
+    outline: none;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.16),
+      0 0 0 4px rgba(0, 150, 250, 0.32);
+  }
+
+  /* スクロール不能方向のボタンは非表示にして無効な操作を防ぐ（doc2 DO） */
+  &[data-hidden='true'] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* chevron（CSS 境界線で描画） */
+  &::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-color: currentColor;
+  }
+
+  &[data-direction='prev']::before {
+    border-width: 0 0 2px 2px;
+    transform: translateX(2px) rotate(45deg);
+  }
+
+  &[data-direction='next']::before {
+    border-width: 2px 2px 0 0;
+    transform: translateX(-2px) rotate(45deg);
+  }
+}
+
+.charcoal-carousel__indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-block: 12px 4px;
+
+  &[data-visible='false'] {
+    display: none;
+  }
+}
+
+.charcoal-carousel__indicator__item {
+  appearance: none;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--charcoal-text4, rgba(0, 0, 0, 0.32));
+  cursor: pointer;
+  transition: 0.2s background-color;
+
+  &:hover {
+    background-color: var(--charcoal-text3, rgba(0, 0, 0, 0.56));
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid rgba(0, 150, 250, 0.56);
+    outline-offset: 2px;
+  }
+
+  &[data-active='true'] {
+    background-color: var(--charcoal-text2, #292929);
+  }
+}
