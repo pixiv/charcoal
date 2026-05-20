@@ -177,4 +177,4 @@ https://tailwindcss.com/
 
 https://pixiv.github.io/charcoal/?path=/docs/tailwind-config-colors-doc--docs
 
-たとえば、標準 plugin には `.charcoal-focus-ring` も含まれており、フォーカス可能な要素に付けると React 版と同等の focus ring を適用できます。
+たとえば、標準 plugin には `.ch-focus-ring` も含まれており、フォーカス可能な要素に付けると React 版と同等の focus ring を適用できます。

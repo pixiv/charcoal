@@ -12,7 +12,7 @@ export const FocusRing: React.FC = () => {
     <div className="flex flex-col gap-24 p-24 bg-background1">
       <div>
         <p className="typography-14 text-text2 mb-8">通常のフォーカス要素</p>
-        <div className="charcoal-focus-ring" style={itemStyle} tabIndex={0}>
+        <div className="ch-focus-ring" style={itemStyle} tabIndex={0}>
           Focus me
         </div>
       </div>
@@ -21,7 +21,7 @@ export const FocusRing: React.FC = () => {
         <p className="typography-14 text-text2 mb-8">{`aria-disabled="false"`}</p>
         <div
           aria-disabled="false"
-          className="charcoal-focus-ring"
+          className="ch-focus-ring"
           style={itemStyle}
           tabIndex={0}
         >
@@ -33,7 +33,7 @@ export const FocusRing: React.FC = () => {
         <p className="typography-14 text-text2 mb-8">{`aria-disabled="true"`}</p>
         <div
           aria-disabled="true"
-          className="charcoal-focus-ring"
+          className="ch-focus-ring"
           style={itemStyle}
           tabIndex={0}
         >
