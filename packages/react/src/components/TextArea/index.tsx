@@ -61,16 +61,24 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     },
     forwardRef,
   ) {
-    const { visuallyHiddenProps } = useVisuallyHidden()
-    const textareaRef = useRef<HTMLTextAreaElement>(null)
+    const [rows, setRows] = useState(initialRows)
     const [count, setCount] = useState(
       getCount(value ?? defaultValue?.toString() ?? ''),
     )
-    const [rows, setRows] = useState(initialRows)
+
+    const textareaRef = useRef<HTMLTextAreaElement>(null)
+    const containerRef = useRef(null)
+    useFocusWithClick(containerRef, textareaRef)
+    const { visuallyHiddenProps } = useVisuallyHidden()
+
+    const isUncontrolled = value === undefined
     const isEnableAutoHeight = useMemo(
       () => autoHeight || (maxRows && maxRows >= 0),
       [autoHeight, maxRows],
     )
+    const classNames = useClassNames('charcoal-text-area-root', className)
+    const showAssistiveText =
+      assistiveText != null && assistiveText.length !== 0
 
     const syncHeight = useCallback(
       (textarea: HTMLTextAreaElement) => {
@@ -89,7 +97,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       [initialRows, maxRows],
     )
 
-    const nonControlled = value === undefined
     const handleChange = useCallback(
       (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const value = e.target.value
@@ -97,46 +104,56 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         if (maxLength !== undefined && count > maxLength) {
           return
         }
-        if (nonControlled) {
+
+        if (isUncontrolled) {
           setCount(count)
+
+          if (isEnableAutoHeight && textareaRef.current !== null) {
+            syncHeight(textareaRef.current)
+          }
         }
-        if (isEnableAutoHeight && textareaRef.current !== null) {
-          syncHeight(textareaRef.current)
-        }
+
         onChange?.(value)
       },
       [
         isEnableAutoHeight,
         getCount,
         maxLength,
-        nonControlled,
+        isUncontrolled,
         onChange,
         syncHeight,
       ],
     )
 
-    useEffect(() => {
-      setCount(getCount(value ?? defaultValue?.toString() ?? ''))
-    }, [getCount, value, defaultValue])
-
-    useEffect(() => {
-      if (isEnableAutoHeight && textareaRef.current !== null) {
-        syncHeight(textareaRef.current)
-      }
-    }, [isEnableAutoHeight, syncHeight])
-
-    const containerRef = useRef(null)
-
-    useFocusWithClick(containerRef, textareaRef)
-
     const textAreaId = useId(props.id)
     const describedbyId = useId()
     const labelledbyId = useId()
 
-    const classNames = useClassNames('charcoal-text-area-root', className)
+    useEffect(() => {
+      if (!isUncontrolled) {
+        setCount(getCount(value))
+        if (isEnableAutoHeight && textareaRef.current !== null) {
+          syncHeight(textareaRef.current)
+        }
+      }
+    }, [
+      isUncontrolled,
+      value,
+      getCount,
+      isEnableAutoHeight,
+      textareaRef,
+      syncHeight,
+    ])
 
-    const showAssistiveText =
-      assistiveText != null && assistiveText.length !== 0
+    useEffect(() => {
+      if (
+        isUncontrolled &&
+        isEnableAutoHeight &&
+        textareaRef.current !== null
+      ) {
+        syncHeight(textareaRef.current)
+      }
+    }, [isUncontrolled, isEnableAutoHeight, textareaRef, syncHeight])
 
     return (
       <div className={classNames} aria-disabled={disabled}>

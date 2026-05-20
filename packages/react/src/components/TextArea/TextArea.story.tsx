@@ -110,6 +110,22 @@ export const AutoHeightAndRows: StoryObj<typeof TextArea> = {
   },
 }
 
+export const AutoHeightAndDefaultValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea
+        rows={3}
+        autoHeight
+        label="label"
+        showCount
+        defaultValue={
+          'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
+        }
+      />
+    )
+  },
+}
+
 export const MaxRows: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea maxRows={6} label="label" showCount />
