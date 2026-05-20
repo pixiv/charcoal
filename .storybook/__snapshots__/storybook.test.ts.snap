@@ -4472,7 +4472,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4487,7 +4488,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4502,7 +4504,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4536,7 +4539,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4551,7 +4555,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4566,7 +4571,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4581,8 +4587,9 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
+          data-react-aria-pressable="true"
           disabled=""
-          name="test-id"
+          name="test"
           type="radio"
           value="option4"
         />
@@ -4615,7 +4622,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4630,7 +4638,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4645,7 +4654,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4679,7 +4689,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4694,7 +4705,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4709,7 +4721,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4743,7 +4756,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4758,7 +4772,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4773,7 +4788,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4807,7 +4823,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4822,7 +4839,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4837,7 +4855,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4871,7 +4890,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4886,7 +4906,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4901,7 +4922,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"

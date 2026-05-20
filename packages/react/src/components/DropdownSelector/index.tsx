@@ -7,11 +7,12 @@ import { DropdownPopover } from './DropdownPopover'
 import { findPreviewRecursive } from './utils/findPreviewRecursive'
 import MenuList, { MenuListChildren } from './MenuList'
 import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
-import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
-import { useId } from '@react-aria/utils'
 import { PopoverProps } from './Popover'
+
+import { useVisuallyHidden } from 'react-aria/VisuallyHidden'
+import { useId } from 'react-aria/useId'
 
 export type DropdownSelectorProps = {
   label: string

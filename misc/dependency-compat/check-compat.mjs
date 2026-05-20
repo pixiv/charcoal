@@ -23,8 +23,7 @@ const isCI = process.argv.includes('--ci')
 const KEY_DEPS = [
   'react',
   'react-dom',
-  '@react-aria/overlays',
-  '@react-aria/utils',
+  'react-aria',
   'react-stately',
   'storybook',
   'tailwindcss',
