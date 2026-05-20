@@ -1,6 +1,5 @@
 import Modal, { ModalDismissButton, ModalProps } from '.'
-import { OverlayProvider } from '@react-aria/overlays'
-import { useOverlayTriggerState } from 'react-stately'
+import { useOverlayTriggerState } from 'react-stately/useOverlayTriggerState'
 import Button from '../Button'
 import {
   ModalAlign,
@@ -13,6 +12,9 @@ import DropdownSelector from '../DropdownSelector'
 import Checkbox from '../Checkbox'
 import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 import { Meta, StoryObj } from '@storybook/react-vite'
+import { OverlayProvider } from 'react-aria'
+
+const defaultOpen = !!process.env.TEST
 
 export default {
   title: 'react/Modal',
@@ -38,7 +40,7 @@ export default {
     },
   },
   render: function Render(args) {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
     return (
       // Application must be wrapped in an OverlayProvider so that it can be
       // hidden from screen readers when a modal opens.
@@ -138,13 +140,12 @@ export const FullBottomSheet: StoryObj<typeof Modal> = {
     bottomSheet: 'full',
   },
   render: function Render(args) {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
     return (
       // Application must be wrapped in an OverlayProvider so that it can be
       // hidden from screen readers when a modal opens.
       <OverlayProvider>
         <Button onClick={() => state.open()}>Open Modal</Button>
-
         <Modal
           {...args}
           isDismissable
@@ -184,13 +185,12 @@ export const FullBottomSheet: StoryObj<typeof Modal> = {
 
 export const BottomSheet: StoryObj<typeof Modal> = {
   render: function Render(args) {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
     return (
       // Application must be wrapped in an OverlayProvider so that it can be
       // hidden from screen readers when a modal opens.
       <OverlayProvider>
         <Button onClick={() => state.open()}>Open Modal</Button>
-
         <Modal
           {...args}
           isOpen={state.isOpen}
@@ -224,7 +224,7 @@ export const BottomSheet: StoryObj<typeof Modal> = {
 
 export const NotDismmissableStory: StoryObj<typeof Modal> = {
   render: function Render(args) {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
     return (
       <OverlayProvider>
         <Button onClick={() => state.open()}>Open Modal</Button>
@@ -254,7 +254,7 @@ export const NotDismmissableStory: StoryObj<typeof Modal> = {
 
 export const BackgroundScroll: StoryObj<typeof Modal> = {
   render: function Render(args) {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
     return (
       <OverlayProvider>
         <div

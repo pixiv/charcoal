@@ -1,9 +1,10 @@
 import './index.css'
 
 import { RefObject, useContext, useRef, ReactNode } from 'react'
-import { DismissButton, Overlay, usePopover } from '@react-aria/overlays'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
 import { usePreventScroll } from './usePreventScroll'
+import { DismissButton, Overlay } from 'react-aria/Overlay'
+import { usePopover } from 'react-aria/usePopover'
 
 export type PopoverProps = {
   isOpen: boolean
