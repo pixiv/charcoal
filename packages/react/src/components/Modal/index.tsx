@@ -1,7 +1,14 @@
-import { useContext, forwardRef, memo } from 'react'
+import {
+  useContext,
+  forwardRef,
+  memo,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from 'react'
 import * as React from 'react'
 import type { AriaDialogProps } from 'react-aria/useDialog'
-import { animated, useTransition, easings } from '@react-spring/web'
 import Button, { ButtonProps } from '../Button'
 import IconButton, { IconButtonProps } from '../IconButton'
 import { Dialog } from './Dialog'
@@ -40,6 +47,7 @@ export type ModalProps = CharcoalModalOverlayProps &
   }
 
 const DEFAULT_Z_INDEX = 10
+type AnimationState = 'entering' | 'entered' | 'exiting' | 'exited'
 
 /**
  * モーダルコンポーネント。
@@ -101,32 +109,30 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   const transitionEnabled = isMobile && bottomSheet !== false
   const showDismiss = !isMobile || bottomSheet !== true
 
-  const transition = useTransition(isOpen, {
-    from: {
-      transform: 'translateY(100%)',
-      backgroundColor: 'rgba(0, 0, 0, 0)',
-      overflow: 'hidden',
-    },
-    enter: {
-      transform: 'translateY(0%)',
-      backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    },
-    update: {
-      overflow: 'auto',
-    },
-    leave: {
-      transform: 'translateY(100%)',
-      backgroundColor: 'rgba(0, 0, 0, 0)',
-      overflow: 'hidden',
-    },
-    config: transitionEnabled
-      ? { duration: 400, easing: easings.easeOutQuart }
-      : { duration: 0 },
-  })
+  const [animationState, setAnimationState] = useState<AnimationState>(
+    isOpen ? 'entering' : 'exited',
+  )
+  const isPresent = isOpen || animationState !== 'exited'
+  const currentAnimationState =
+    isOpen && animationState === 'exited'
+      ? transitionEnabled
+        ? 'entering'
+        : 'entered'
+      : animationState
 
-  const bgRef = React.useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (isOpen) {
+      setAnimationState(transitionEnabled ? 'entering' : 'entered')
+    } else if (transitionEnabled) {
+      setAnimationState('exiting')
+    } else {
+      setAnimationState('exited')
+    }
+  }, [isOpen, transitionEnabled])
 
-  const handleClick = React.useCallback(
+  const bgRef = useRef<HTMLDivElement>(null)
+
+  const handleClick = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       if (e.currentTarget === e.target) {
         onClose()
@@ -135,63 +141,71 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     [onClose],
   )
 
-  return transition(
-    ({ backgroundColor, overflow, transform }, item) =>
-      item && (
-        <Overlay portalContainer={portalContainer}>
-          {/* https://github.com/pmndrs/react-spring/issues/1515 */}
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore */}
-          <animated.div
-            className="charcoal-modal-background"
-            ref={bgRef}
-            {...underlayProps}
-            style={
-              transitionEnabled
-                ? { backgroundColor, overflow, zIndex }
-                : { zIndex }
+  const handleAnimationEnd = useCallback(
+    (e: React.AnimationEvent<HTMLDivElement>) => {
+      if (e.currentTarget !== e.target || !transitionEnabled) {
+        return
+      }
+
+      if (isOpen) {
+        setAnimationState('entered')
+      } else {
+        setAnimationState('exited')
+      }
+    },
+    [isOpen, transitionEnabled],
+  )
+
+  if (!isPresent) {
+    return null
+  }
+
+  return (
+    <Overlay portalContainer={portalContainer}>
+      <div
+        className="charcoal-modal-background"
+        ref={bgRef}
+        {...underlayProps}
+        style={{ zIndex }}
+        data-bottom-sheet={bottomSheet}
+        data-animation={transitionEnabled ? currentAnimationState : undefined}
+        onClick={handleClick}
+        onAnimationEnd={handleAnimationEnd}
+      >
+        <ModalBackgroundContext.Provider value={bgRef.current}>
+          <Dialog
+            ref={ref}
+            {...modalProps}
+            size={size}
+            bottomSheet={bottomSheet}
+            className={className}
+            data-animation={
+              transitionEnabled ? currentAnimationState : undefined
             }
-            data-bottom-sheet={bottomSheet}
-            onClick={handleClick}
           >
-            <ModalBackgroundContext.Provider value={bgRef.current}>
-              {/* https://github.com/pmndrs/react-spring/issues/1515 */}
-              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-              {/* @ts-ignore */}
-              <AnimatedDialog
-                ref={ref}
-                {...modalProps}
-                style={transitionEnabled ? { transform } : {}}
-                size={size}
-                bottomSheet={bottomSheet}
-                className={className}
-              >
-                <ModalContext.Provider
-                  value={{
-                    titleProps: {},
-                    title,
-                    close: onClose,
-                    showDismiss,
-                    bottomSheet,
-                  }}
-                >
-                  {children}
-                  {isDismissable === true && (
-                    <ModalCloseButton
-                      aria-label={closeButtonAriaLabel}
-                      onClick={onClose}
-                    />
-                  )}
-                </ModalContext.Provider>
-              </AnimatedDialog>
-            </ModalBackgroundContext.Provider>
-          </animated.div>
-        </Overlay>
-      ),
+            <ModalContext.Provider
+              value={{
+                titleProps: {},
+                title,
+                close: onClose,
+                showDismiss,
+                bottomSheet,
+              }}
+            >
+              {children}
+              {isDismissable === true && (
+                <ModalCloseButton
+                  aria-label={closeButtonAriaLabel}
+                  onClick={onClose}
+                />
+              )}
+            </ModalContext.Provider>
+          </Dialog>
+        </ModalBackgroundContext.Provider>
+      </div>
+    </Overlay>
   )
 })
-
-const AnimatedDialog = animated(Dialog)
 
 export default memo(Modal)
 
