@@ -38,7 +38,11 @@ export {
   default as TextField,
   type TextFieldProps,
 } from './components/TextField'
-export { default as TextArea, type TextAreaProps } from './components/TextArea'
+export {
+  default as TextArea,
+  type TextAreaImperativeHandle,
+  type TextAreaProps,
+} from './components/TextArea'
 export { default as Icon, type IconProps } from './components/Icon'
 export {
   default as Modal,

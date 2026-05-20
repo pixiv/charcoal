@@ -1,6 +1,6 @@
 import { action } from 'storybook/actions'
 import Clickable from '../Clickable'
-import TextArea from '.'
+import TextArea, { type TextAreaImperativeHandle } from '.'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import { useCallback, useRef, useState } from 'react'
 
@@ -155,7 +155,7 @@ export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
         >
           insert value
         </button>
-        <TextArea rows={1} maxRows={3} label="label" value={value} showCount />
+        <TextArea rows={1} autoHeight label="label" value={value} showCount />
       </>
     )
   },
@@ -163,14 +163,12 @@ export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
 
 export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
   render: function Render() {
-    const ref = useRef<HTMLTextAreaElement>(null)
+    const imperativeRef = useRef<TextAreaImperativeHandle>(null)
     const handleClick = useCallback(() => {
-      ref.current?.value
-      if (ref.current) {
-        ref.current.value =
-          'test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest'
-      }
-    }, [ref])
+      imperativeRef.current?.setValue(
+        'test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest',
+      )
+    }, [])
     return (
       <>
         <button
@@ -180,7 +178,13 @@ export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
         >
           insert value
         </button>
-        <TextArea rows={1} maxRows={3} label="label" showCount ref={ref} />
+        <TextArea
+          rows={1}
+          label="label"
+          showCount
+          autoHeight
+          imperativeRef={imperativeRef}
+        />
       </>
     )
   },

@@ -5,6 +5,7 @@ import {
   forwardRef,
   useCallback,
   useEffect,
+  useImperativeHandle,
   useMemo,
   useRef,
   useState,
@@ -16,9 +17,15 @@ import { useId } from '@react-aria/utils'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 
+export type TextAreaImperativeHandle = {
+  setValue: (value: string) => void
+  sync: () => void
+}
+
 export type TextAreaProps = {
   value?: string
   onChange?: (value: string) => void
+  imperativeRef?: React.Ref<TextAreaImperativeHandle>
 
   showCount?: boolean
   showLabel?: boolean
@@ -57,6 +64,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       invalid,
       getCount = countCodePointsInString,
       defaultValue,
+      imperativeRef,
       ...props
     },
     forwardRef,
@@ -97,32 +105,55 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       [initialRows, maxRows],
     )
 
+    const syncTextAreaState = useCallback(
+      (textarea: HTMLTextAreaElement) => {
+        const count = getCount(textarea.value)
+
+        if (isUncontrolled) {
+          setCount(count)
+        }
+
+        if (isEnableAutoHeight) {
+          syncHeight(textarea)
+        }
+
+        return count
+      },
+      [getCount, isEnableAutoHeight, isUncontrolled, syncHeight],
+    )
+
     const handleChange = useCallback(
       (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const value = e.target.value
+        const value = e.currentTarget.value
         const count = getCount(value)
         if (maxLength !== undefined && count > maxLength) {
           return
         }
 
-        if (isUncontrolled) {
-          setCount(count)
-
-          if (isEnableAutoHeight && textareaRef.current !== null) {
-            syncHeight(textareaRef.current)
-          }
-        }
-
+        syncTextAreaState(e.currentTarget)
         onChange?.(value)
       },
-      [
-        isEnableAutoHeight,
-        getCount,
-        maxLength,
-        isUncontrolled,
-        onChange,
-        syncHeight,
-      ],
+      [getCount, maxLength, onChange, syncTextAreaState],
+    )
+
+    useImperativeHandle(
+      imperativeRef,
+      () => ({
+        setValue: (value: string) => {
+          if (textareaRef.current === null) {
+            return
+          }
+
+          textareaRef.current.value = value
+          syncTextAreaState(textareaRef.current)
+        },
+        sync: () => {
+          if (textareaRef.current !== null) {
+            syncTextAreaState(textareaRef.current)
+          }
+        },
+      }),
+      [syncTextAreaState],
     )
 
     const textAreaId = useId(props.id)
