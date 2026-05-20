@@ -87,6 +87,8 @@ declare var _default: {
 "24/Ar": { uri: string, isSetCurrentcolor: boolean };
 "24/Archive": { uri: string, isSetCurrentcolor: boolean };
 "24/ArrowDown": { uri: string, isSetCurrentcolor: boolean };
+"24/ArrowLeft": { uri: string, isSetCurrentcolor: boolean };
+"24/ArrowRight": { uri: string, isSetCurrentcolor: boolean };
 "24/ArrowUp": { uri: string, isSetCurrentcolor: boolean };
 "24/Binet": { uri: string, isSetCurrentcolor: boolean };
 "24/Body": { uri: string, isSetCurrentcolor: boolean };
@@ -145,6 +147,7 @@ declare var _default: {
 "24/FormatFontSize": { uri: string, isSetCurrentcolor: boolean };
 "24/FormatLetterSpacing": { uri: string, isSetCurrentcolor: boolean };
 "24/FormatLineSpacing": { uri: string, isSetCurrentcolor: boolean };
+"24/FormatText": { uri: string, isSetCurrentcolor: boolean };
 "24/Fov": { uri: string, isSetCurrentcolor: boolean };
 "24/FrameEffect": { uri: string, isSetCurrentcolor: boolean };
 "24/FrameSize": { uri: string, isSetCurrentcolor: boolean };
