@@ -11,7 +11,7 @@ export default defineConfig({
     snapshotSerializers: ['./misc/test/vitest.snapshot-serializer.ts'],
     server: {
       deps: {
-        inline: [/@charcoal-ui\/(.*)/, /react-stately/, /react-aria/],
+        inline: [/@charcoal-ui\/(.*)/],
       },
     },
   },
