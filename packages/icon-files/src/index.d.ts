@@ -43,6 +43,8 @@ declare var _default: {
   "24/Ar": () => Promise<string>;
   "24/Archive": () => Promise<string>;
   "24/ArrowDown": () => Promise<string>;
+  "24/ArrowLeft": () => Promise<string>;
+  "24/ArrowRight": () => Promise<string>;
   "24/ArrowUp": () => Promise<string>;
   "24/Binet": () => Promise<string>;
   "24/Body": () => Promise<string>;
@@ -101,6 +103,7 @@ declare var _default: {
   "24/FormatFontSize": () => Promise<string>;
   "24/FormatLetterSpacing": () => Promise<string>;
   "24/FormatLineSpacing": () => Promise<string>;
+  "24/FormatText": () => Promise<string>;
   "24/Fov": () => Promise<string>;
   "24/FrameEffect": () => Promise<string>;
   "24/FrameSize": () => Promise<string>;
