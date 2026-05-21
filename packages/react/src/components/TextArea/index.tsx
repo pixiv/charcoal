@@ -5,6 +5,7 @@ import {
   forwardRef,
   useCallback,
   useEffect,
+  useImperativeHandle,
   useMemo,
   useRef,
   useState,
@@ -16,9 +17,24 @@ import { useId } from '@react-aria/utils'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 
+/**
+ * `TextArea` を `imperativeRef` から操作するためのハンドル
+ */
+export type TextAreaImperativeHandle = {
+  /**
+   * textarea の値を更新し、文字数や高さなどの内部状態を同期する
+   */
+  setValue: (value: string) => void
+  /**
+   * textarea の現在の値をもとに、文字数や高さなどの内部状態を同期する
+   */
+  sync: () => void
+}
+
 export type TextAreaProps = {
   value?: string
   onChange?: (value: string) => void
+  imperativeRef?: React.Ref<TextAreaImperativeHandle>
 
   showCount?: boolean
   showLabel?: boolean
@@ -57,20 +73,29 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       invalid,
       getCount = countCodePointsInString,
       defaultValue,
+      imperativeRef,
       ...props
     },
     forwardRef,
   ) {
-    const { visuallyHiddenProps } = useVisuallyHidden()
-    const textareaRef = useRef<HTMLTextAreaElement>(null)
+    const [rows, setRows] = useState(initialRows)
     const [count, setCount] = useState(
       getCount(value ?? defaultValue?.toString() ?? ''),
     )
-    const [rows, setRows] = useState(initialRows)
+
+    const textareaRef = useRef<HTMLTextAreaElement>(null)
+    const containerRef = useRef(null)
+    useFocusWithClick(containerRef, textareaRef)
+    const { visuallyHiddenProps } = useVisuallyHidden()
+
+    const isUncontrolled = value === undefined
     const isEnableAutoHeight = useMemo(
       () => autoHeight || (maxRows && maxRows >= 0),
       [autoHeight, maxRows],
     )
+    const classNames = useClassNames('charcoal-text-area-root', className)
+    const showAssistiveText =
+      assistiveText != null && assistiveText.length !== 0
 
     const syncHeight = useCallback(
       (textarea: HTMLTextAreaElement) => {
@@ -79,64 +104,89 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         const hasValidMaxRows = maxRows !== undefined && maxRows >= 1
         const nextRows = initialRows <= currentRows ? currentRows : initialRows
 
-        if (!hasValidMaxRows || maxRows <= initialRows) {
+        if (!hasValidMaxRows) {
           setRows(nextRows)
           return
         }
 
-        setRows(nextRows <= maxRows ? nextRows : maxRows)
+        setRows(Math.min(nextRows, maxRows))
       },
       [initialRows, maxRows],
     )
 
-    const nonControlled = value === undefined
+    const syncTextAreaState = useCallback(
+      (textarea: HTMLTextAreaElement) => {
+        const count = getCount(textarea.value)
+
+        if (isUncontrolled) {
+          setCount(count)
+        }
+
+        if (isEnableAutoHeight) {
+          syncHeight(textarea)
+        }
+
+        return count
+      },
+      [getCount, isEnableAutoHeight, isUncontrolled, syncHeight],
+    )
+
     const handleChange = useCallback(
       (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const value = e.target.value
+        const value = e.currentTarget.value
         const count = getCount(value)
         if (maxLength !== undefined && count > maxLength) {
           return
         }
-        if (nonControlled) {
-          setCount(count)
-        }
-        if (isEnableAutoHeight && textareaRef.current !== null) {
-          syncHeight(textareaRef.current)
-        }
+
+        syncTextAreaState(e.currentTarget)
         onChange?.(value)
       },
-      [
-        isEnableAutoHeight,
-        getCount,
-        maxLength,
-        nonControlled,
-        onChange,
-        syncHeight,
-      ],
+      [getCount, maxLength, onChange, syncTextAreaState],
     )
 
-    useEffect(() => {
-      setCount(getCount(value ?? defaultValue?.toString() ?? ''))
-    }, [getCount, value, defaultValue])
+    useImperativeHandle(
+      imperativeRef,
+      () => ({
+        setValue: (value: string) => {
+          if (textareaRef.current === null) {
+            return
+          }
 
-    useEffect(() => {
-      if (isEnableAutoHeight && textareaRef.current !== null) {
-        syncHeight(textareaRef.current)
-      }
-    }, [isEnableAutoHeight, syncHeight])
-
-    const containerRef = useRef(null)
-
-    useFocusWithClick(containerRef, textareaRef)
+          textareaRef.current.value = value
+          syncTextAreaState(textareaRef.current)
+        },
+        sync: () => {
+          if (textareaRef.current !== null) {
+            syncTextAreaState(textareaRef.current)
+          }
+        },
+      }),
+      [syncTextAreaState],
+    )
 
     const textAreaId = useId(props.id)
     const describedbyId = useId()
     const labelledbyId = useId()
 
-    const classNames = useClassNames('charcoal-text-area-root', className)
+    useEffect(() => {
+      // 制御コンポーネントの時の挙動
+      if (!isUncontrolled) {
+        setCount(getCount(value))
+      }
 
-    const showAssistiveText =
-      assistiveText != null && assistiveText.length !== 0
+      //　autoHeight同期(valueが変更された時にsyncHeightしたい)
+      if (isEnableAutoHeight && textareaRef.current !== null) {
+        syncHeight(textareaRef.current)
+      }
+    }, [
+      isUncontrolled,
+      value,
+      getCount,
+      isEnableAutoHeight,
+      textareaRef,
+      syncHeight,
+    ])
 
     return (
       <div className={classNames} aria-disabled={disabled}>

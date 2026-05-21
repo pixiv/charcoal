@@ -1,7 +1,8 @@
 import { action } from 'storybook/actions'
 import Clickable from '../Clickable'
-import TextArea from '.'
+import TextArea, { type TextAreaImperativeHandle } from '.'
 import { Meta, StoryObj } from '@storybook/react-vite'
+import { useCallback, useRef, useState } from 'react'
 
 export default {
   title: 'react/TextArea',
@@ -89,6 +90,14 @@ export const ReadOnly: StoryObj<typeof TextArea> = {
   },
 }
 
+export const DefaultValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea label="Label" defaultValue={'テスト用テキスト'} showCount />
+    )
+  },
+}
+
 export const AutoHeight: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea autoHeight label="Label" />
@@ -98,6 +107,22 @@ export const AutoHeight: StoryObj<typeof TextArea> = {
 export const AutoHeightAndRows: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea rows={3} autoHeight label="label" />
+  },
+}
+
+export const AutoHeightAndDefaultValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea
+        rows={3}
+        autoHeight
+        label="label"
+        showCount
+        defaultValue={
+          'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
+        }
+      />
+    )
   },
 }
 
@@ -113,10 +138,70 @@ export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
   },
 }
 
-export const DefaultValue: StoryObj<typeof TextArea> = {
+export const MaxRowsOverInitialRow: StoryObj<typeof TextArea> = {
   render: function Render() {
     return (
-      <TextArea label="Label" defaultValue={'テスト用テキスト'} showCount />
+      <TextArea
+        rows={3}
+        maxRows={6}
+        label="label"
+        showCount
+        defaultValue={
+          'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
+        }
+      />
+    )
+  },
+}
+
+export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    const [value, setValue] = useState('')
+    const handleClick = useCallback(() => {
+      setValue(
+        'test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest',
+      )
+    }, [])
+    return (
+      <>
+        <button
+          onClick={() => {
+            handleClick()
+          }}
+        >
+          insert value
+        </button>
+        <TextArea rows={1} autoHeight label="label" value={value} showCount />
+      </>
+    )
+  },
+}
+
+export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    const imperativeRef = useRef<TextAreaImperativeHandle>(null)
+    const handleClick = useCallback(() => {
+      imperativeRef.current?.setValue(
+        'test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest',
+      )
+    }, [])
+    return (
+      <>
+        <button
+          onClick={() => {
+            handleClick()
+          }}
+        >
+          insert value
+        </button>
+        <TextArea
+          rows={1}
+          label="label"
+          showCount
+          autoHeight
+          imperativeRef={imperativeRef}
+        />
+      </>
     )
   },
 }
