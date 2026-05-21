@@ -17,8 +17,17 @@ import { useId } from '@react-aria/utils'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 
+/**
+ * `TextArea` を `imperativeRef` から操作するためのハンドル
+ */
 export type TextAreaImperativeHandle = {
+  /**
+   * textarea の値を更新し、文字数や高さなどの内部状態を同期する
+   */
   setValue: (value: string) => void
+  /**
+   * textarea の現在の値をもとに、文字数や高さなどの内部状態を同期する
+   */
   sync: () => void
 }
 
