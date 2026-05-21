@@ -6,4 +6,6 @@ export default defineConfig({
   target: 'node22',
   sourcemap: true,
   fixedExtension: false,
+  dts: false,
+  exports: false,
 })
