@@ -161,11 +161,21 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const labelledbyId = useId()
 
     useEffect(() => {
+      // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
         setCount(getCount(value))
         if (isEnableAutoHeight && textareaRef.current !== null) {
           syncHeight(textareaRef.current)
         }
+      }
+
+      //　非制御コンポーネント時のautoHeight同期
+      if (
+        isUncontrolled &&
+        isEnableAutoHeight &&
+        textareaRef.current !== null
+      ) {
+        syncHeight(textareaRef.current)
       }
     }, [
       isUncontrolled,
@@ -175,16 +185,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       textareaRef,
       syncHeight,
     ])
-
-    useEffect(() => {
-      if (
-        isUncontrolled &&
-        isEnableAutoHeight &&
-        textareaRef.current !== null
-      ) {
-        syncHeight(textareaRef.current)
-      }
-    }, [isUncontrolled, isEnableAutoHeight, textareaRef, syncHeight])
 
     return (
       <div className={classNames} aria-disabled={disabled}>
