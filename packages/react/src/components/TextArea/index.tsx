@@ -173,17 +173,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
         setCount(getCount(value))
-        if (isEnableAutoHeight && textareaRef.current !== null) {
-          syncHeight(textareaRef.current)
-        }
       }
 
-      //　非制御コンポーネント時のautoHeight同期
-      if (
-        isUncontrolled &&
-        isEnableAutoHeight &&
-        textareaRef.current !== null
-      ) {
+      //　autoHeight同期(valueが変更された時にsyncHeightしたい)
+      if (isEnableAutoHeight && textareaRef.current !== null) {
         syncHeight(textareaRef.current)
       }
     }, [
