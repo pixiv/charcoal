@@ -1,6 +1,14 @@
 packages:
   - 'packages/*'
 
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  core-js: true
+  esbuild: true
+  nx: true
+  unrs-resolver: true
+
 catalog:
   'react-compiler-runtime': '1.0.0'
   '@react-spring/web': '^10'
