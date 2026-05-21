@@ -52,6 +52,12 @@
   margin-left: 4px;
 }
 
+.charcoal-text-field-input-root {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
 .charcoal-text-field-input {
   border: none;
   box-sizing: border-box;

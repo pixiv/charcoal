@@ -109,21 +109,23 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           ref={containerRef}
         >
           {prefix && <div className="charcoal-text-field-prefix">{prefix}</div>}
-          <input
-            className="charcoal-text-field-input"
-            aria-describedby={showAssistiveText ? describedbyId : undefined}
-            aria-invalid={invalid}
-            aria-labelledby={labelledbyId}
-            id={inputId}
-            data-invalid={invalid === true}
-            maxLength={maxLength}
-            onChange={handleChange}
-            disabled={disabled}
-            ref={mergeRefs(forwardRef, inputRef)}
-            type={type}
-            value={value}
-            {...props}
-          />
+          <div className="charcoal-text-field-input-root">
+            <input
+              className="charcoal-text-field-input"
+              aria-describedby={showAssistiveText ? describedbyId : undefined}
+              aria-invalid={invalid}
+              aria-labelledby={labelledbyId}
+              id={inputId}
+              data-invalid={invalid === true}
+              maxLength={maxLength}
+              onChange={handleChange}
+              disabled={disabled}
+              ref={mergeRefs(forwardRef, inputRef)}
+              type={type}
+              value={value}
+              {...props}
+            />
+          </div>
           {(suffix || showCount) && (
             <div className="charcoal-text-field-suffix">
               {suffix}
