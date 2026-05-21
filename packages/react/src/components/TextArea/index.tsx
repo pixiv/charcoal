@@ -95,12 +95,12 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         const hasValidMaxRows = maxRows !== undefined && maxRows >= 1
         const nextRows = initialRows <= currentRows ? currentRows : initialRows
 
-        if (!hasValidMaxRows || maxRows <= initialRows) {
+        if (!hasValidMaxRows) {
           setRows(nextRows)
           return
         }
 
-        setRows(nextRows <= maxRows ? nextRows : maxRows)
+        setRows(Math.min(nextRows, maxRows))
       },
       [initialRows, maxRows],
     )

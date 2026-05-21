@@ -138,6 +138,22 @@ export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
   },
 }
 
+export const MaxRowsOverInitialRow: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <TextArea
+        rows={3}
+        maxRows={6}
+        label="label"
+        showCount
+        defaultValue={
+          'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
+        }
+      />
+    )
+  },
+}
+
 export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
   render: function Render() {
     const [value, setValue] = useState('')
