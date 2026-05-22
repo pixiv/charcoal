@@ -7,7 +7,7 @@ allowBuilds:
   core-js: true
   esbuild: true
   nx: true
-  unrs-resolver: true
+  unrs-resolver: false
 
 catalog:
   'react-compiler-runtime': '1.0.0'
