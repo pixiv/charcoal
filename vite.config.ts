@@ -8,14 +8,10 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
+    snapshotSerializers: ['./misc/test/vitest.snapshot-serializer.ts'],
     server: {
       deps: {
-        inline: [
-          /@react-aria\/(.*)/,
-          /@react-stately\/(.*)/,
-          /react-stately/,
-          /@charcoal-ui\/(.*)/,
-        ],
+        inline: [/@charcoal-ui\/(.*)/],
       },
     },
   },

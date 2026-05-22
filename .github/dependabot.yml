@@ -35,11 +35,8 @@ updates:
           - 'patch'
       react-ecosystem:
         patterns:
-          - '@react-aria/*'
-          - '@react-stately/*'
-          - '@react-types/*'
+          - 'react-aria'
           - 'react-stately'
-          - '@react-spring/*'
         update-types:
           - 'minor'
           - 'patch'

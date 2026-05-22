@@ -1,11 +1,9 @@
 import { useContext, forwardRef, memo } from 'react'
 import * as React from 'react'
-import { Overlay } from '@react-aria/overlays'
-import type { AriaDialogProps } from '@react-types/dialog'
+import type { AriaDialogProps } from 'react-aria/useDialog'
 import { animated, useTransition, easings } from '@react-spring/web'
 import Button, { ButtonProps } from '../Button'
 import IconButton, { IconButtonProps } from '../IconButton'
-import { useObjectRef } from '@react-aria/utils'
 import { Dialog } from './Dialog'
 import { ModalBackgroundContext } from './ModalBackgroundContext'
 import {
@@ -15,6 +13,9 @@ import {
 } from './useCustomModalOverlay'
 
 import './index.css'
+
+import { Overlay } from 'react-aria/Overlay'
+import { useObjectRef } from 'react-aria/useObjectRef'
 
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'

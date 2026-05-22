@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import * as React from 'react'
-import { useDialog } from '@react-aria/dialog'
+import { useDialog } from 'react-aria/useDialog'
 import { useForwardedRef } from '../../../_lib/useForwardedRef'
 import { Size, BottomSheet } from '..'
 

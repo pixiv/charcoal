@@ -1,12 +1,13 @@
 import * as React from 'react'
+import { ariaHideOutside } from 'react-aria/private/overlays/ariaHideOutside'
+import { useOverlayFocusContain } from 'react-aria/private/overlays/Overlay'
+import { usePreventScroll } from '../DropdownSelector/Popover/usePreventScroll'
+
 import {
   AriaModalOverlayProps,
   ModalOverlayAria,
-  ariaHideOutside,
-  useOverlay,
-  useOverlayFocusContain,
-} from '@react-aria/overlays'
-import { usePreventScroll } from '../DropdownSelector/Popover/usePreventScroll'
+} from 'react-aria/useModalOverlay'
+import { useOverlay } from 'react-aria/useOverlay'
 
 /**
  * We want to enable scrolling on the modal background,

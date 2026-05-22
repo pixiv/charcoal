@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useMemo, ForwardedRef, type JSX } from 'react'
-import { useObjectRef } from '@react-aria/utils'
 import Icon from '../Icon'
 import { useClassNames } from '../../_lib/useClassNames'
-
 import './index.css'
+
+import { useObjectRef } from 'react-aria/useObjectRef'
 
 type SizeMap = {
   S: 32
