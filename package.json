@@ -140,17 +140,5 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@swc/core",
-      "core-js",
-      "esbuild",
-      "nx"
-    ],
-    "overrides": {
-      "playwright": "^1.58.2"
-    }
   }
 }
