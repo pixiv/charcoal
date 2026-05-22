@@ -1,6 +1,14 @@
 import './index.css'
 
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
