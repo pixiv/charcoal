@@ -13,6 +13,9 @@ catalogs:
       specifier: 1.0.0
       version: 1.0.0
 
+overrides:
+  playwright: ^1.58.2
+
 importers:
 
   .:
@@ -3945,7 +3948,7 @@ packages:
   '@vitest/browser@2.1.9':
     resolution: {integrity: sha512-AHDanTP4Ed6J5R6wRBcWRQ+AxgMnNJxsbaa229nFQz5KOMFZqlW11QkIDoLgCjBOpQ1+c78lTN5jVxO8ME+S4w==}
     peerDependencies:
-      playwright: '*'
+      playwright: ^1.58.2
       safaridriver: '*'
       vitest: 2.1.9
       webdriverio: '*'
@@ -4339,7 +4342,7 @@ packages:
   axe-playwright@2.1.0:
     resolution: {integrity: sha512-tY48SX56XaAp16oHPyD4DXpybz8Jxdz9P7exTjF/4AV70EGUavk+1fUPWirM0OYBR+YyDx6hUeDvuHVA6fB9YA==}
     peerDependencies:
-      playwright: '>1.0.0'
+      playwright: ^1.58.2
 
   axios@0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
