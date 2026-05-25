@@ -79,11 +79,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     forwardRef,
   ) {
     const isUncontrolled = value === undefined
+    // `null` is invalid for TextAreaProps, but may arrive at runtime. Treat it
+    // as a controlled empty value so it never falls back to defaultValue.
     const controlledValue = value ?? ''
     const [rows, setRows] = useState(initialRows)
     const [count, setCount] = useState(
       getCount(
-        isUncontrolled ? defaultValue?.toString() ?? '' : controlledValue,
+        isUncontrolled ? (defaultValue?.toString() ?? '') : controlledValue,
       ),
     )
 
