@@ -78,9 +78,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     },
     forwardRef,
   ) {
+    const isUncontrolled = value === undefined
+    const controlledValue = value ?? ''
     const [rows, setRows] = useState(initialRows)
     const [count, setCount] = useState(
-      getCount(value ?? defaultValue?.toString() ?? ''),
+      getCount(
+        isUncontrolled ? defaultValue?.toString() ?? '' : controlledValue,
+      ),
     )
 
     const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -88,7 +92,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     useFocusWithClick(containerRef, textareaRef)
     const { visuallyHiddenProps } = useVisuallyHidden()
 
-    const isUncontrolled = value === undefined
     const isEnableAutoHeight = useMemo(
       () => autoHeight || (maxRows && maxRows >= 0),
       [autoHeight, maxRows],
@@ -172,7 +175,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     useEffect(() => {
       // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
-        setCount(getCount(value))
+        setCount(getCount(controlledValue))
       }
 
       //　autoHeight同期(valueが変更された時にsyncHeightしたい)
@@ -181,7 +184,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       }
     }, [
       isUncontrolled,
-      value,
+      controlledValue,
       getCount,
       isEnableAutoHeight,
       textareaRef,
@@ -219,9 +222,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             onChange={handleChange}
             ref={mergeRefs(forwardRef, textareaRef)}
             rows={rows}
-            value={value}
+            value={isUncontrolled ? undefined : controlledValue}
             disabled={disabled}
-            defaultValue={defaultValue}
+            defaultValue={isUncontrolled ? defaultValue : undefined}
             {...props}
           />
           {showCount && (
