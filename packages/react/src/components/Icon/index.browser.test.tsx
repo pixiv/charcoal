@@ -7,7 +7,7 @@
  * このテストでは以下を検証する:
  *
  * 1. CSS メカニズムの検証 (.charcoal-icon クラス)
- *    - plain HTML 要素 に charcoal-icon クラスと --charcoal-icon-ssr-size を設定
+ *    - plain HTML 要素 に charcoal-icon クラスと --charcoal-icon-size を設定
  *    - Web Component を介さず CSS だけでサイズが付くことを確認
  *
  * 2. pixiv-icon:not(:defined) の SSR fallback CSS の検証
@@ -62,11 +62,11 @@ describe('charcoal-icon CSS provides correct sizing without Web Component', () =
   // Icon を import した時点で side-effect の icon.css が document に注入される。
 
   it.each(iconSizeTestCases)(
-    'element with --charcoal-icon-ssr-size: $expected px has $expected x $expected',
+    'element with --charcoal-icon-size: $expected px has $expected x $expected',
     ({ expected }) => {
       const el = document.createElement('span')
       el.className = 'charcoal-icon'
-      el.style.setProperty('--charcoal-icon-ssr-size', `${expected}px`)
+      el.style.setProperty('--charcoal-icon-size', `${expected}px`)
       document.body.appendChild(el)
       try {
         const rect = el.getBoundingClientRect()
@@ -169,14 +169,14 @@ describe('pixiv-icon:not(:defined) reserves correct size with CSS only (vanilla 
       expected: 24,
     },
     {
-      title: 'non-guideline size via --charcoal-icon-ssr-size override → 20px',
-      markup: `<pixiv-icon name="24/Add" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
+      title: 'non-guideline size via --charcoal-icon-size override → 20px',
+      markup: `<pixiv-icon name="24/Add" style="--charcoal-icon-size: 20px"></pixiv-icon>`,
       expected: 20,
     },
     {
       title:
-        'non-guideline size for a 20/ prefix (not enumerated in CSS) via --charcoal-icon-ssr-size → 20px',
-      markup: `<pixiv-icon name="20/Custom" style="--charcoal-icon-ssr-size: 20px"></pixiv-icon>`,
+        'non-guideline size for a 20/ prefix (not enumerated in CSS) via --charcoal-icon-size → 20px',
+      markup: `<pixiv-icon name="20/Custom" style="--charcoal-icon-size: 20px"></pixiv-icon>`,
       expected: 20,
     },
   ]

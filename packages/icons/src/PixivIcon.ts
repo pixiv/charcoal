@@ -33,7 +33,7 @@ export interface Props
    * 他のサイズ指定 (`scale` / `unsafe-non-guideline-scale`) よりも常に優先されます。
    *
    * Web Component の upgrade 前 (= SSR 直後の CSS-only 状態) でも CLS を防ぐには、
-   * 同じ値を `style="--charcoal-icon-ssr-size: Npx"` としてインラインに指定してください。
+   * 同じ値を `style="--charcoal-icon-size: Npx"` としてインラインに指定してください。
    * React の `<Icon fixedSize>` 経由で利用する場合はインラインスタイルが自動的に付与されます。
    */
   'fixed-size'?: number | string
@@ -178,15 +178,9 @@ export class PixivIcon extends HTMLElement {
           : { scale: scale ?? undefined }),
     } as Parameters<typeof calcActualSize>[0])
 
-    if (!Number.isFinite(size) || size <= 0) {
-      throw new TypeError(
-        `icon size must be a positive finite number, got ${size}`,
-      )
-    }
-
     // icon.css の pixiv-icon:not(:defined) ルールと同じ CSS variable に
     // 計算結果を流し込むことで、hydrate 前後で width / height が揺れないようにする
-    this.style.setProperty('--charcoal-icon-ssr-size', `${size}px`)
+    this.style.setProperty('--charcoal-icon-size', `${size}px`)
 
     const style = `<style>
   :host {
@@ -194,8 +188,8 @@ export class PixivIcon extends HTMLElement {
   }
 
   svg {
-    width: var(--charcoal-icon-ssr-size);
-    height: var(--charcoal-icon-ssr-size);
+    width: var(--charcoal-icon-size);
+    height: var(--charcoal-icon-size);
   }
 </style>`
 

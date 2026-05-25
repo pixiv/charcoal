@@ -57,7 +57,9 @@ function guidelineSize24(scale: number): number {
   return 24 * scale
 }
 
-export const calcActualSize = ({
+// fixedSize > unsafeNonGuidelineScale > scale の優先順位で生のサイズを算出する。
+// 戻り値の最終 validation は呼び出し元 (calcActualSize) で行う。
+const resolveSize = ({
   name,
   scale,
   unsafeNonGuidelineScale,
@@ -95,4 +97,19 @@ export const calcActualSize = ({
     default:
       return baseSize
   }
+}
+
+export const calcActualSize = (
+  params: { name: string } & IconSizing,
+): number => {
+  const actualSize = resolveSize(params)
+
+  // 全 return パスの結果が正の有限数であることを Single Source of Truth として保証する
+  if (!isPositiveFinite(actualSize)) {
+    throw new TypeError(
+      `icon size must be a positive finite number, got ${actualSize}`,
+    )
+  }
+
+  return actualSize
 }

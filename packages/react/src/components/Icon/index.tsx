@@ -15,7 +15,7 @@ export interface OwnProps {
    * 固定 px サイズで描画します。ガイドライン外のサイズを利用する場合に推奨される指定方法で、
    * 他のサイズ指定 (`scale` / `unsafeNonGuidelineScale`) よりも常に優先されます。
    *
-   * `<Icon>` は同じ値を `--charcoal-icon-ssr-size` インライン CSS 変数として自動付与するため、
+   * `<Icon>` は同じ値を `--charcoal-icon-size` インライン CSS 変数として自動付与するため、
    * Web Component の hydrate 前後でレイアウトシフトは発生しません。
    */
   fixedSize?: number
@@ -56,7 +56,7 @@ const Icon = React.forwardRef<PixivIcon, IconProps>(function IconInner(
     () =>
       ({
         ...userStyle,
-        '--charcoal-icon-ssr-size': `${actualSize}px`,
+        '--charcoal-icon-size': `${actualSize}px`,
       }) as React.CSSProperties,
     [actualSize, userStyle],
   )

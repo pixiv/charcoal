@@ -426,7 +426,7 @@ exports[`Storybook Tests > react/TextField > Prefix 1`] = `
             <pixiv-icon
               class="charcoal-icon"
               name="16/Search"
-              style="--charcoal-icon-ssr-size: 16px;"
+              style="--charcoal-icon-size: 16px;"
             />
           </div>
         </div>

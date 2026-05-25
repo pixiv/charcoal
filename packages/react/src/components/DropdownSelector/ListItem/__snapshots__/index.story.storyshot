@@ -16,7 +16,7 @@ exports[`Storybook Tests > react/internals/ListItem > Basic 1`] = `
       <pixiv-icon
         class="charcoal-icon"
         name="16/Add"
-        style="--charcoal-icon-ssr-size: 16px;"
+        style="--charcoal-icon-size: 16px;"
       />
        Add
     </li>

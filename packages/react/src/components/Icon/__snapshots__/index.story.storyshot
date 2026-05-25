@@ -9,7 +9,7 @@ exports[`Storybook Tests > react/Icon > Default 1`] = `
       class="charcoal-icon"
       name="16/Add"
       scale="1"
-      style="--charcoal-icon-ssr-size: 16px;"
+      style="--charcoal-icon-size: 16px;"
     />
   </div>
 </div>

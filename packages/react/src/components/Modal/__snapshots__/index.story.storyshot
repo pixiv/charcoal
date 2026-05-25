@@ -189,7 +189,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
                     <pixiv-icon
                       class="charcoal-icon charcoal-ui-dropdown-selector-icon"
                       name="16/Menu"
-                      style="--charcoal-icon-ssr-size: 16px;"
+                      style="--charcoal-icon-size: 16px;"
                     />
                   </button>
                 </div>
@@ -224,7 +224,7 @@ exports[`Storybook Tests > react/Modal > BackgroundScroll 1`] = `
             <pixiv-icon
               class="charcoal-icon"
               name="24/Close"
-              style="--charcoal-icon-ssr-size: 24px;"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -327,7 +327,7 @@ exports[`Storybook Tests > react/Modal > BottomSheet 1`] = `
             <pixiv-icon
               class="charcoal-icon"
               name="24/Close"
-              style="--charcoal-icon-ssr-size: 24px;"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -522,7 +522,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
                     <pixiv-icon
                       class="charcoal-icon charcoal-ui-dropdown-selector-icon"
                       name="16/Menu"
-                      style="--charcoal-icon-ssr-size: 16px;"
+                      style="--charcoal-icon-size: 16px;"
                     />
                   </button>
                 </div>
@@ -557,7 +557,7 @@ exports[`Storybook Tests > react/Modal > Default 1`] = `
             <pixiv-icon
               class="charcoal-icon"
               name="24/Close"
-              style="--charcoal-icon-ssr-size: 24px;"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -722,7 +722,7 @@ exports[`Storybook Tests > react/Modal > FullBottomSheet 1`] = `
             <pixiv-icon
               class="charcoal-icon"
               name="24/Close"
-              style="--charcoal-icon-ssr-size: 24px;"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>

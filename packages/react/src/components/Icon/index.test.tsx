@@ -8,33 +8,33 @@ function queryIcon(container: HTMLElement) {
 }
 
 describe('Icon', () => {
-  it('always sets --charcoal-icon-ssr-size with calculated size', () => {
+  it('always sets --charcoal-icon-size with calculated size', () => {
     const { container } = render(<Icon name="24/Add" />)
     expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-size'),
     ).toBe('24px')
   })
 
-  it('sets --charcoal-icon-ssr-size with scale', () => {
+  it('sets --charcoal-icon-size with scale', () => {
     const { container } = render(<Icon name="24/Add" scale={2} />)
     expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-size'),
     ).toBe('48px')
   })
 
-  it('sets --charcoal-icon-ssr-size with unsafeNonGuidelineScale (deprecated)', () => {
+  it('sets --charcoal-icon-size with unsafeNonGuidelineScale (deprecated)', () => {
     const { container } = render(
       <Icon name="24/Add" unsafeNonGuidelineScale={1.5} />,
     )
     expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-size'),
     ).toBe('36px')
   })
 
-  it('sets --charcoal-icon-ssr-size with fixedSize', () => {
+  it('sets --charcoal-icon-size with fixedSize', () => {
     const { container } = render(<Icon name="24/Add" fixedSize={100} />)
     expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-size'),
     ).toBe('100px')
   })
 
@@ -74,21 +74,21 @@ describe('Icon', () => {
       <Icon name="24/Add" style={{ color: 'red' }} />,
     )
     const el = queryIcon(container)
-    expect(el.style.getPropertyValue('--charcoal-icon-ssr-size')).toBe('24px')
+    expect(el.style.getPropertyValue('--charcoal-icon-size')).toBe('24px')
     expect(el.style.color).toBe('red')
   })
 
   it('handles Inline icons', () => {
     const { container } = render(<Icon name="Inline/Add" />)
     expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-size'),
     ).toBe('16px')
   })
 
   it('handles Inline icons with scale=2', () => {
     const { container } = render(<Icon name="Inline/Add" scale={2} />)
     expect(
-      queryIcon(container).style.getPropertyValue('--charcoal-icon-ssr-size'),
+      queryIcon(container).style.getPropertyValue('--charcoal-icon-size'),
     ).toBe('32px')
   })
 })
