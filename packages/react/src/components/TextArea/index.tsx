@@ -79,15 +79,11 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     forwardRef,
   ) {
     const isUncontrolled = value === undefined
-    // `null` is invalid for TextAreaProps, but may arrive at runtime. Treat it
-    // as a controlled empty value so it never falls back to defaultValue.
-    const controlledValue = value ?? ''
+    // `null` is invalid for TextAreaProps, but may arrive at runtime. Keep the
+    // pre-f710d512 nullish fallback so getCount is never called with null.
+    const countValue = value ?? defaultValue?.toString() ?? ''
     const [rows, setRows] = useState(initialRows)
-    const [count, setCount] = useState(
-      getCount(
-        isUncontrolled ? (defaultValue?.toString() ?? '') : controlledValue,
-      ),
-    )
+    const [count, setCount] = useState(getCount(countValue))
 
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const containerRef = useRef(null)
@@ -177,7 +173,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     useEffect(() => {
       // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
-        setCount(getCount(controlledValue))
+        setCount(getCount(countValue))
       }
 
       //　autoHeight同期(valueが変更された時にsyncHeightしたい)
@@ -186,7 +182,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       }
     }, [
       isUncontrolled,
-      controlledValue,
+      countValue,
       getCount,
       isEnableAutoHeight,
       textareaRef,
@@ -224,9 +220,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             onChange={handleChange}
             ref={mergeRefs(forwardRef, textareaRef)}
             rows={rows}
-            value={isUncontrolled ? undefined : controlledValue}
+            value={value}
             disabled={disabled}
-            defaultValue={isUncontrolled ? defaultValue : undefined}
+            defaultValue={defaultValue}
             {...props}
           />
           {showCount && (
