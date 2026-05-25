@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import TextArea from '.'
 
-import '@testing-library/jest-dom'
-
 describe('TextArea component', () => {
   it.each`
     name                                    | value                        | defaultValue | expectedValue | expectedCount
