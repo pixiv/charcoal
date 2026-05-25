@@ -78,17 +78,18 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     },
     forwardRef,
   ) {
+    const isUncontrolled = value === undefined
+    // `null` is invalid for TextAreaProps, but may arrive at runtime. Keep the
+    // pre-f710d512 nullish fallback so getCount is never called with null.
+    const countValue = value ?? defaultValue?.toString() ?? ''
     const [rows, setRows] = useState(initialRows)
-    const [count, setCount] = useState(
-      getCount(value ?? defaultValue?.toString() ?? ''),
-    )
+    const [count, setCount] = useState(getCount(countValue))
 
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const containerRef = useRef(null)
     useFocusWithClick(containerRef, textareaRef)
     const { visuallyHiddenProps } = useVisuallyHidden()
 
-    const isUncontrolled = value === undefined
     const isEnableAutoHeight = useMemo(
       () => autoHeight || (maxRows && maxRows >= 0),
       [autoHeight, maxRows],
@@ -172,7 +173,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     useEffect(() => {
       // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
-        setCount(getCount(value))
+        setCount(getCount(countValue))
       }
 
       //　autoHeight同期(valueが変更された時にsyncHeightしたい)
@@ -181,7 +182,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       }
     }, [
       isUncontrolled,
-      value,
+      countValue,
       getCount,
       isEnableAutoHeight,
       textareaRef,
