@@ -42,3 +42,37 @@ pixiv-icon:not(:defined) {
     }
   }
 }
+
+/*
+ * typed attr() 対応ブラウザ (Chrome 133+ など) では、
+ * fixed-size / unsafe-non-guideline-scale 属性の値を CSS だけで読み取れるため、
+ * vanilla HTML 側で style="--charcoal-icon-size: Npx" を併記しなくても
+ * CLS なく正しいサイズを確保できる。
+ *
+ * - 非対応ブラウザ (Safari/Firefox 安定版) では @supports ブロック自体が
+ *   無効化されるので、上の :not(:defined) フォールバックがそのまま使われる。
+ * - React `<Icon>` 経由などで inline style が付いているケースでは
+ *   typed attr() の fallback (var(--charcoal-icon-size, ...)) が変数値を拾うので、
+ *   従来の挙動と両立する。
+ */
+@supports (width: attr(fixed-size px)) {
+  pixiv-icon:not(:defined) {
+    width: attr(
+      fixed-size px,
+      var(--charcoal-icon-size, var(--pixiv-icon-size))
+    );
+    height: attr(
+      fixed-size px,
+      var(--charcoal-icon-size, var(--pixiv-icon-size))
+    );
+  }
+
+  /* deprecated な unsafe-non-guideline-scale も
+     base * scale で導出できるようにする (fixed-size 指定時は不要なので除外)。
+     fallback は数値リテラル 1 にする — `var(--pixiv-icon-scale)` を書くと
+     attr() 評価時に自己参照となり値が空になるため。
+     specificity (0,2,1) のため、scale="2" など (0,3,1) のルールは上書きされない。 */
+  pixiv-icon:not(:defined):not([fixed-size]) {
+    --pixiv-icon-scale: attr(unsafe-non-guideline-scale type(<number>), 1);
+  }
+}

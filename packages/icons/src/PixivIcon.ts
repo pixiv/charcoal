@@ -35,6 +35,10 @@ export interface Props
    * Web Component の upgrade 前 (= SSR 直後の CSS-only 状態) でも CLS を防ぐには、
    * 同じ値を `style="--charcoal-icon-size: Npx"` としてインラインに指定してください。
    * React の `<Icon fixedSize>` 経由で利用する場合はインラインスタイルが自動的に付与されます。
+   *
+   * なお typed `attr()` 対応ブラウザ (Chrome 133+) では `icon.css` の
+   * `@supports` ブロックが効くため、inline style を省略しても CLS は発生しません。
+   * Safari / Firefox の安定版は未対応なので、配信先が混在する場合は引き続き併記を推奨します。
    */
   'fixed-size'?: number | string
 

@@ -218,6 +218,60 @@ describe('pixiv-icon:not(:defined) reserves correct size with CSS only (vanilla 
       expect(rect.height).toBe(expected)
     })
   })
+
+  /*
+   * typed attr() (Chrome 133+) が使える環境では、icon.css の @supports ブロックにより
+   * inline style 無しでも fixed-size / unsafe-non-guideline-scale 属性だけで
+   * 正しいサイズが確保される (= CLS 防止)。
+   *
+   * 古い Chromium で実行された場合は CSS.supports が false を返すので skip する。
+   */
+  describe('typed attr() inline-style-less sizing (Chrome 133+)', () => {
+    const typedAttrSupported = CSS.supports('width', 'attr(fixed-size px)')
+
+    // skipIf が silent skip するのを防ぐ smoke test。
+    // test runner の Chromium が typed attr() を失った瞬間に fail させ、
+    // 4 件のケースが暗黙に skip されたまま CI が緑になるのを防ぐ。
+    it('the test runner Chromium must support typed attr()', () => {
+      expect(typedAttrSupported).toBe(true)
+    })
+
+    const typedAttrCases: VanillaCase[] = [
+      {
+        title: 'fixed-size=40 (no inline style) → 40px',
+        markup: `<pixiv-icon name="24/Add" fixed-size="40"></pixiv-icon>`,
+        expected: 40,
+      },
+      {
+        title: 'fixed-size=12 (no inline style) → 12px',
+        markup: `<pixiv-icon name="24/Add" fixed-size="12"></pixiv-icon>`,
+        expected: 12,
+      },
+      {
+        title: 'unsafe-non-guideline-scale=2 (no inline style) → 48px',
+        markup: `<pixiv-icon name="24/Add" unsafe-non-guideline-scale="2"></pixiv-icon>`,
+        expected: 48,
+      },
+      {
+        title: 'unsafe-non-guideline-scale=1.5 (no inline style) → 36px',
+        markup: `<pixiv-icon name="24/Add" unsafe-non-guideline-scale="1.5"></pixiv-icon>`,
+        expected: 36,
+      },
+    ]
+
+    it.skipIf(!typedAttrSupported).each(typedAttrCases)(
+      '$title',
+      async ({ markup, expected }) => {
+        await withIframe(markup, (doc, host) => {
+          const iframeWindow = doc.defaultView as Window & typeof globalThis
+          expect(iframeWindow.customElements.get('pixiv-icon')).toBeUndefined()
+          const rect = host.getBoundingClientRect()
+          expect(rect.width).toBe(expected)
+          expect(rect.height).toBe(expected)
+        })
+      },
+    )
+  })
 })
 
 describe('Icon reflects dynamic prop changes (no observed-attribute regression)', () => {

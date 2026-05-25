@@ -252,6 +252,94 @@ export const WithUnsafeNonGuidelineScale: StoryObj<Props> = {
   },
 }
 
+/**
+ * typed `attr()` (Chrome 133+) 専用ストーリー。
+ * `<pixiv-icon fixed-size="N">` / `unsafe-non-guideline-scale` に
+ * inline style (`style="--charcoal-icon-size: Npx"`) を付けない生 HTML 状態で、
+ * icon.css の `@supports (width: attr(fixed-size px))` ブロックが
+ * `pixiv-icon:not(:defined)` の段階から寸法を確保することを示す。
+ */
+export const WithTypedAttr: StoryObj<Props> = {
+  name: 'typed attr() — inline style 不要 (Chrome 133+)',
+  render: () => <TypedAttrStory />,
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
+}
+
+function TypedAttrStory() {
+  const supported =
+    typeof CSS !== 'undefined' && CSS.supports('width', 'attr(fixed-size px)')
+  return (
+    <>
+      <Description>
+        <p>
+          Chrome 133+ など typed <code>attr()</code> 対応ブラウザでは、生 HTML
+          の <code>{'<pixiv-icon fixed-size="N">'}</code> に{' '}
+          <code>{'style="--charcoal-icon-size: Npx"'}</code> を併記しなくても、{' '}
+          <code>pixiv-icon:not(:defined)</code>{' '}
+          の段階から正しい寸法が確保されます。 非対応ブラウザでも web component
+          upgrade 後に寸法が反映されるため、見た目は同じ。
+        </p>
+        <p>
+          このブラウザでの判定:{' '}
+          <strong>
+            {supported
+              ? '✅ typed attr() 対応 (CSS だけで寸法確定)'
+              : '❌ 未対応 (upgrade 後に寸法確定)'}
+          </strong>
+        </p>
+      </Description>
+      <Row>
+        <pixiv-icon name="24/Add" fixed-size="40" />
+        <code>{'fixed-size="40"'}</code>
+      </Row>
+      <Row>
+        <pixiv-icon name="24/Add" fixed-size="12" />
+        <code>{'fixed-size="12"'}</code>
+      </Row>
+      <Row>
+        <pixiv-icon name="24/Add" unsafe-non-guideline-scale="2" />
+        <code>{'unsafe-non-guideline-scale="2"'}</code> (deprecated)
+      </Row>
+      <Row>
+        <pixiv-icon name="24/Add" unsafe-non-guideline-scale="1.5" />
+        <code>{'unsafe-non-guideline-scale="1.5"'}</code> (deprecated)
+      </Row>
+      <Global />
+    </>
+  )
+}
+
+const Description = styled.div`
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+
+  p {
+    margin: 8px 0;
+  }
+
+  code {
+    background: rgba(0, 0, 0, 0.06);
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+`
+
+const Row = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+`
+
 export const RawIconFile: StoryObj<Props> = {
   render: ({ color, name, scale }) => {
     return (
