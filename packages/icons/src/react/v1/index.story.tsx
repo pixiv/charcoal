@@ -43,6 +43,8 @@ import { IconAnnouncement24 } from './24/Announcement'
 import { IconAr24 } from './24/Ar'
 import { IconArchive24 } from './24/Archive'
 import { IconArrowDown24 } from './24/ArrowDown'
+import { IconArrowLeft24 } from './24/ArrowLeft'
+import { IconArrowRight24 } from './24/ArrowRight'
 import { IconArrowUp24 } from './24/ArrowUp'
 import { IconBinet24 } from './24/Binet'
 import { IconBody24 } from './24/Body'
@@ -101,6 +103,7 @@ import { IconFormatFontFamily24 } from './24/FormatFontFamily'
 import { IconFormatFontSize24 } from './24/FormatFontSize'
 import { IconFormatLetterSpacing24 } from './24/FormatLetterSpacing'
 import { IconFormatLineSpacing24 } from './24/FormatLineSpacing'
+import { IconFormatText24 } from './24/FormatText'
 import { IconFov24 } from './24/Fov'
 import { IconFrameEffect24 } from './24/FrameEffect'
 import { IconFrameSize24 } from './24/FrameSize'
@@ -377,6 +380,16 @@ export default {
           <div>
             <IconArrowDown24 />
             <code>&lt;IconArrowDown24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconArrowLeft24 />
+            <code>&lt;IconArrowLeft24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconArrowRight24 />
+            <code>&lt;IconArrowRight24 /&gt;</code>
           </div>
 
           <div>
@@ -827,6 +840,11 @@ export default {
           <div>
             <IconFormatLineSpacing24 />
             <code>&lt;IconFormatLineSpacing24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconFormatText24 />
+            <code>&lt;IconFormatText24 /&gt;</code>
           </div>
 
           <div>

@@ -1744,6 +1744,22 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
 </div>
 `;
 
+exports[`Storybook Tests > react/FocusRing > react/FocusRing > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="charcoal-focus-ring"
+      style="background-color: var(--charcoal-surface3); border-radius: 8px; color: var(--charcoal-text2); padding: 16px 24px;"
+      tabindex="0"
+    >
+      FocusRing
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/HintText > react/HintText > Default 1`] = `
 <div>
   <div
@@ -2033,15 +2049,19 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
                     class="charcoal-text-field-container"
                     data-invalid="false"
                   >
-                    <input
-                      aria-labelledby="test-id"
-                      class="charcoal-text-field-input"
-                      data-invalid="false"
-                      id="test-id"
-                      placeholder="Nagisa"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2072,15 +2092,19 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
                     class="charcoal-text-field-container"
                     data-invalid="false"
                   >
-                    <input
-                      aria-labelledby="test-id"
-                      class="charcoal-text-field-input"
-                      data-invalid="false"
-                      id="test-id"
-                      placeholder="Tokyo"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2361,15 +2385,19 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
                     class="charcoal-text-field-container"
                     data-invalid="false"
                   >
-                    <input
-                      aria-labelledby="test-id"
-                      class="charcoal-text-field-input"
-                      data-invalid="false"
-                      id="test-id"
-                      placeholder="Nagisa"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2400,15 +2428,19 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
                     class="charcoal-text-field-container"
                     data-invalid="false"
                   >
-                    <input
-                      aria-labelledby="test-id"
-                      class="charcoal-text-field-input"
-                      data-invalid="false"
-                      id="test-id"
-                      placeholder="Tokyo"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2588,15 +2620,19 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
                     class="charcoal-text-field-container"
                     data-invalid="false"
                   >
-                    <input
-                      aria-labelledby="test-id"
-                      class="charcoal-text-field-input"
-                      data-invalid="false"
-                      id="test-id"
-                      placeholder="Nagisa"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2627,15 +2663,19 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
                     class="charcoal-text-field-container"
                     data-invalid="false"
                   >
-                    <input
-                      aria-labelledby="test-id"
-                      class="charcoal-text-field-input"
-                      data-invalid="false"
-                      id="test-id"
-                      placeholder="Tokyo"
-                      type="text"
-                      value=""
-                    />
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -5338,6 +5378,108 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeight 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaultValue 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 9;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="8"
+        >
+          デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+        </textarea>
+        <span
+          class="charcoal-text-area-counter"
+        >
+          87
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 3;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="false"
+          id="test-id"
+          rows="3"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
 <div>
   <div
@@ -5384,6 +5526,57 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
           placeholder="Text Area"
           rows="4"
         />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > DefaultValue 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 5;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="4"
+        >
+          テスト用テキスト
+        </textarea>
+        <span
+          class="charcoal-text-area-counter"
+        >
+          8
+        </span>
       </div>
     </div>
   </div>
@@ -5526,6 +5719,266 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Label 1`] = `
           id="test-id"
           rows="4"
         />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangingValue 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button>
+      insert value
+    </button>
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 2;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="1"
+        />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangingValueInRef 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button>
+      insert value
+    </button>
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 2;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="1"
+        />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 5;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="4"
+        />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 4;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="3"
+        />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialRow 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-area-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          label
+        </label>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        aria-invalid="false"
+        class="charcoal-text-area-container"
+        style="--charcoal-text-area-rows: 7;"
+      >
+        <textarea
+          aria-labelledby="test-id"
+          class="charcoal-text-area-textarea"
+          data-no-bottom-padding="true"
+          id="test-id"
+          rows="6"
+        >
+          デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+        </textarea>
+        <span
+          class="charcoal-text-area-counter"
+        >
+          87
+        </span>
       </div>
     </div>
   </div>
@@ -6078,14 +6531,18 @@ exports[`Storybook Tests > react/TextField > react/TextField > Affix 1`] = `
         >
           /home/john/
         </div>
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
         <div
           class="charcoal-text-field-suffix"
         >
@@ -6127,15 +6584,19 @@ exports[`Storybook Tests > react/TextField > react/TextField > AssistiveText 1`]
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-describedby="test-id"
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-describedby="test-id"
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <div
         class="charcoal-text-field-assistive-text"
@@ -6185,16 +6646,20 @@ exports[`Storybook Tests > react/TextField > react/TextField > Default 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-invalid="false"
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          placeholder="TextField"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-invalid="false"
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            placeholder="TextField"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6232,15 +6697,19 @@ exports[`Storybook Tests > react/TextField > react/TextField > Disabled 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          disabled=""
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            disabled=""
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6277,16 +6746,20 @@ exports[`Storybook Tests > react/TextField > react/TextField > Invalid 1`] = `
         class="charcoal-text-field-container"
         data-invalid="true"
       >
-        <input
-          aria-describedby="test-id"
-          aria-invalid="true"
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="true"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-describedby="test-id"
+            aria-invalid="true"
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="true"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <div
         class="charcoal-text-field-assistive-text"
@@ -6329,14 +6802,18 @@ exports[`Storybook Tests > react/TextField > react/TextField > Label 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6371,14 +6848,18 @@ exports[`Storybook Tests > react/TextField > react/TextField > Number 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="number"
-          value="0"
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="number"
+            value="0"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6415,15 +6896,19 @@ exports[`Storybook Tests > react/TextField > react/TextField > Placeholder 1`] =
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          placeholder="Placeholder"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            placeholder="Placeholder"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6471,14 +6956,18 @@ exports[`Storybook Tests > react/TextField > react/TextField > Prefix 1`] = `
             />
           </div>
         </div>
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6515,15 +7004,19 @@ exports[`Storybook Tests > react/TextField > react/TextField > ReadOnly 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          readonly=""
-          type="text"
-          value="読み取り専用"
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            readonly=""
+            type="text"
+            value="読み取り専用"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6564,14 +7057,18 @@ exports[`Storybook Tests > react/TextField > react/TextField > RequiredText 1`] 
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -6608,15 +7105,19 @@ exports[`Storybook Tests > react/TextField > react/TextField > ShowCount 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          maxlength="100"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            maxlength="100"
+            type="text"
+            value=""
+          />
+        </div>
         <div
           class="charcoal-text-field-suffix"
         >
@@ -6668,14 +7169,18 @@ exports[`Storybook Tests > react/TextField > react/TextField > SubLabel 1`] = `
         class="charcoal-text-field-container"
         data-invalid="false"
       >
-        <input
-          aria-labelledby="test-id"
-          class="charcoal-text-field-input"
-          data-invalid="false"
-          id="test-id"
-          type="text"
-          value=""
-        />
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
   </div>
