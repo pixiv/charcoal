@@ -38,6 +38,7 @@
     "provenance": true
   },
   "devDependencies": {
+    "@charcoal-ui/icons": "workspace:^",
     "@charcoal-ui/icons-cli": "workspace:^",
     "@charcoal-ui/styled": "workspace:^",
     "@charcoal-ui/theme": "workspace:^",
@@ -50,8 +51,6 @@
     "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@pixiv/eslint-config": "^1.1.0",
     "@playwright/test": "^1.58.2",
-    "@react-aria/overlays": "^3.20.0",
-    "@react-aria/utils": "^3.23.0",
     "@rollup/plugin-babel": "6.1.0",
     "@storybook/addon-a11y": "10.3.5",
     "@storybook/addon-docs": "10.3.5",

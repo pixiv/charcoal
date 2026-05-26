@@ -3,6 +3,8 @@ import themeDecorator from './theme-decorator'
 import { DocsContainer } from './docs-container'
 
 import './global.css'
+// vanilla HTML で <pixiv-icon> を使う docs / stories でも layout shift を防ぐ
+import '@charcoal-ui/icons/css/icon.css'
 
 /** @type  */
 export const parameters = {

@@ -1,6 +1,5 @@
 import './index.css'
 
-import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import {
   forwardRef,
   useCallback,
@@ -13,9 +12,10 @@ import {
 import FieldLabel from '../FieldLabel'
 import { countCodePointsInString, mergeRefs } from '../../_lib'
 import { useFocusWithClick } from '../TextField/useFocusWithClick'
-import { useId } from '@react-aria/utils'
 import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
+import { useVisuallyHidden } from 'react-aria/VisuallyHidden'
+import { useId } from 'react-aria/useId'
 
 /**
  * `TextArea` を `imperativeRef` から操作するためのハンドル

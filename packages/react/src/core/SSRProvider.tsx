@@ -1,5 +1,5 @@
-import { SSRProvider as OriginSSRProvider } from '@react-aria/ssr'
 import { version, Fragment } from 'react'
+import { SSRProvider as OriginSSRProvider } from 'react-aria/SSRProvider'
 
 export function isReactVersionOver(minVersion: number): boolean {
   // version history on the react side: https://github.com/facebook/react/commits/main/packages/shared/ReactVersion.js

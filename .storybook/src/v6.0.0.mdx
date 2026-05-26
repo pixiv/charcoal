@@ -79,3 +79,23 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 - Unstable のため、マイナーバージョン内でも props や export 名が変わる可能性があります。
 - 安定化後は `Unstable` プレフィックスを外し、通常のコンポーネント名で提供する予定です。
+
+---
+
+## React Aria モノパッケージへの移行
+
+React Aria v1.17.0 ([リリースノート](https://react-aria.adobe.com/releases/v1-17-0)) に合わせ、`@charcoal-ui/react` の React Aria 依存を個別パッケージ（`@react-aria/*`, `@react-stately/*`）からモノパッケージ（`react-aria`, `react-stately`）に移行しました。
+
+- `react-aria` / `react-stately` は **dependencies から peerDependencies に変更**されました（`react-aria >= 3.48.0`, `react-stately >= 3.46.0`）。npm 7+・pnpm・yarn では自動インストールされるため通常は追加対応不要です。
+- 目的：アプリ側でも React Aria を使う場合の重複インストールを防ぎ、バンドルサイズとランタイムの不整合を解消します。
+- 既存の `@react-aria/*` 個別パッケージとも共存可能ですが、バージョン不整合に注意してください。
+
+### 必要な対応（任意）
+
+`@react-aria/*` / `@react-stately/*` を直接 import している場合、React Aria 公式 codemod でモノパッケージ import に移行できます。
+
+```bash
+npx @react-spectrum/codemods use-monopackages --path /path/to/src
+# サブパス import（より細かいバンドル制御）
+npx @react-spectrum/codemods use-subpaths --path /path/to/src
+```
