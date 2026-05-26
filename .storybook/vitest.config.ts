@@ -13,7 +13,7 @@ export default defineConfig({
     include: [path.join(import.meta.dirname, '**/*.test.ts')],
     setupFiles: [path.join(root, 'vitest.setup.ts')],
     snapshotSerializers: [
-      path.join(import.meta.dirname, 'snapshot-serializer.ts'),
+      path.join(root, 'misc', 'test', 'vitest.snapshot-serializer.ts'),
     ],
     alias: [
       {

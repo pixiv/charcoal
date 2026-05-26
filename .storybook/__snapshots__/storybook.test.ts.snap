@@ -1996,9 +1996,7 @@ exports[`Storybook Tests > react/LoadingSpinner > react/LoadingSpinner > Transpa
 `;
 
 exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
-<div
-  aria-hidden="true"
->
+<div>
   <div
     data-dark="false"
   >
@@ -2006,6 +2004,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
       data-overlay-container="true"
     >
       <div
+        aria-hidden="true"
         style="height: 1024px;"
       >
         <button
@@ -2014,252 +2013,231 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
           Open Modal
         </button>
       </div>
+      <div
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
+      >
+        <div
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
+          >
+            <div
+              class="charcoal-modal-header-title"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  class="charcoal-dropdown-selector-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      id="test-id"
+                    >
+                      Fruits
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                  >
+                    <select
+                      tabindex="-1"
+                    >
+                      <option
+                        value="10"
+                      >
+                        10
+                      </option>
+                      <option
+                        value="20"
+                      >
+                        20
+                      </option>
+                      <option
+                        value="30"
+                      >
+                        30
+                      </option>
+                    </select>
+                  </div>
+                  <button
+                    aria-labelledby="test-id"
+                    class="charcoal-dropdown-selector-button"
+                    data-active="false"
+                    type="button"
+                  >
+                    <span
+                      class="charcoal-ui-dropdown-selector-text"
+                      data-placeholder="false"
+                    >
+                      Apple
+                    </span>
+                    <pixiv-icon
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      name="16/Menu"
+                      style="--charcoal-icon-size: 16px;"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
+              >
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 2`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-start="true"
-  hidden=""
-/>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 3`] = `
-<div
-  class="charcoal-modal-background"
-  data-bottom-sheet="false"
-  style="z-index: 10;"
->
-  <div
-    class="charcoal-modal-dialog"
-    data-bottom-sheet="false"
-    data-size="M"
-    role="dialog"
-    tabindex="-1"
-  >
-    <div
-      class="charcoal-modal-header-root"
-      data-bottom-sheet="false"
-    >
-      <div
-        class="charcoal-modal-header-title"
-      >
-        react/Title
-      </div>
-    </div>
-    <div
-      class="charcoal-modal-body"
-    >
-      <div
-        style="display: grid; gap: 24px;"
-      >
-        <div
-          style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            aria-disabled="false"
-            class="charcoal-text-field-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                for="test-id"
-                id="test-id"
-              >
-                Name
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              class="charcoal-text-field-container"
-              data-invalid="false"
-            >
-              <div
-                class="charcoal-text-field-input-root"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  class="charcoal-text-field-input"
-                  data-invalid="false"
-                  id="test-id"
-                  placeholder="Nagisa"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            aria-disabled="false"
-            class="charcoal-text-field-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                for="test-id"
-                id="test-id"
-              >
-                Country
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              class="charcoal-text-field-container"
-              data-invalid="false"
-            >
-              <div
-                class="charcoal-text-field-input-root"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  class="charcoal-text-field-input"
-                  data-invalid="false"
-                  id="test-id"
-                  placeholder="Tokyo"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            class="charcoal-dropdown-selector-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                id="test-id"
-              >
-                Fruits
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              aria-hidden="true"
-              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
-            >
-              <select
-                tabindex="-1"
-              >
-                <option
-                  value="10"
-                >
-                  10
-                </option>
-                <option
-                  value="20"
-                >
-                  20
-                </option>
-                <option
-                  value="30"
-                >
-                  30
-                </option>
-              </select>
-            </div>
-            <button
-              aria-labelledby="test-id"
-              class="charcoal-dropdown-selector-button"
-              data-active="false"
-              type="button"
-            >
-              <span
-                class="charcoal-ui-dropdown-selector-text"
-                data-placeholder="false"
-              >
-                Apple
-              </span>
-              <pixiv-icon
-                class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-                name="16/Menu"
-                style="--charcoal-icon-size: 16px;"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="charcoal-modal-buttons"
-      >
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-          data-variant="Primary"
-        >
-          Apply
-        </button>
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
-    <button
-      aria-label="Close"
-      class="charcoal-icon-button charcoal-modal-close-button"
-      data-active="false"
-      data-size="S"
-      data-variant="Default"
-      type="button"
-    >
-      <pixiv-icon
-        name="24/Close"
-        style="--charcoal-icon-size: 24px;"
-      />
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 4`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-end="true"
-  hidden=""
-/>
 `;
 
 exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
-<div
-  aria-hidden="true"
->
+<div>
   <div
     data-dark="false"
   >
@@ -2267,121 +2245,101 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
       data-overlay-container="true"
     >
       <button
+        aria-hidden="true"
         class="charcoal-button"
       >
         Open Modal
       </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 2`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-start="true"
-  hidden=""
-/>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 3`] = `
-<div
-  class="charcoal-modal-background"
-  data-bottom-sheet="true"
-  style="z-index: 10;"
->
-  <div
-    class="charcoal-modal-dialog"
-    data-bottom-sheet="true"
-    data-size="M"
-    role="dialog"
-    tabindex="-1"
-  >
-    <div
-      class="charcoal-modal-header-root"
-      data-bottom-sheet="true"
-    >
       <div
-        class="charcoal-modal-header-title"
-      >
-        react/Title
-      </div>
-    </div>
-    <div
-      class="charcoal-modal-body"
-    >
-      <div
-        style="display: grid; gap: 24px;"
+        class="charcoal-modal-background"
+        data-bottom-sheet="true"
+        style="z-index: 10;"
       >
         <div
-          style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="true"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="true"
+          >
+            <div
+              class="charcoal-modal-header-title"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <label
+                class="charcoal-checkbox__label"
+                for="test-id"
+              >
+                <input
+                  checked=""
+                  class="charcoal-checkbox-input"
+                  id="test-id"
+                  type="checkbox"
+                />
+                <div
+                  class="charcoal-checkbox__label_div"
+                >
+                  test checkbox
+                </div>
+              </label>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Danger"
+              >
+                削除する
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                キャンセル
+              </button>
+            </div>
+          </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
         </div>
       </div>
-      <div
-        class="charcoal-modal-buttons"
-      >
-        <label
-          class="charcoal-checkbox__label"
-          for="test-id"
-        >
-          <input
-            checked=""
-            class="charcoal-checkbox-input"
-            id="test-id"
-            type="checkbox"
-          />
-          <div
-            class="charcoal-checkbox__label_div"
-          >
-            test checkbox
-          </div>
-        </label>
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-          data-variant="Danger"
-        >
-          削除する
-        </button>
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-        >
-          キャンセル
-        </button>
-      </div>
     </div>
-    <button
-      aria-label="Close"
-      class="charcoal-icon-button charcoal-modal-close-button"
-      data-active="false"
-      data-size="S"
-      data-variant="Default"
-      type="button"
-    >
-      <pixiv-icon
-        name="24/Close"
-        style="--charcoal-icon-size: 24px;"
-      />
-    </button>
   </div>
 </div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 4`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-end="true"
-  hidden=""
-/>
 `;
 
 exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
-<div
-  aria-hidden="true"
->
+<div>
   <div
     data-dark="false"
   >
@@ -2389,256 +2347,236 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
       data-overlay-container="true"
     >
       <button
+        aria-hidden="true"
         class="charcoal-button"
       >
         Open Modal
       </button>
+      <div
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
+      >
+        <div
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
+          >
+            <div
+              class="charcoal-modal-header-title"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  class="charcoal-dropdown-selector-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      id="test-id"
+                    >
+                      Fruits
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                  >
+                    <select
+                      tabindex="-1"
+                    >
+                      <option
+                        value="10"
+                      >
+                        10
+                      </option>
+                      <option
+                        value="20"
+                      >
+                        20
+                      </option>
+                      <option
+                        value="30"
+                      >
+                        30
+                      </option>
+                    </select>
+                  </div>
+                  <button
+                    aria-labelledby="test-id"
+                    class="charcoal-dropdown-selector-button"
+                    data-active="false"
+                    type="button"
+                  >
+                    <span
+                      class="charcoal-ui-dropdown-selector-text"
+                      data-placeholder="false"
+                    >
+                      Apple
+                    </span>
+                    <pixiv-icon
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      name="16/Menu"
+                      style="--charcoal-icon-size: 16px;"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
+              >
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > Default 2`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-start="true"
-  hidden=""
-/>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > Default 3`] = `
-<div
-  class="charcoal-modal-background"
-  data-bottom-sheet="false"
-  style="z-index: 10;"
->
-  <div
-    class="charcoal-modal-dialog"
-    data-bottom-sheet="false"
-    data-size="M"
-    role="dialog"
-    tabindex="-1"
-  >
-    <div
-      class="charcoal-modal-header-root"
-      data-bottom-sheet="false"
-    >
-      <div
-        class="charcoal-modal-header-title"
-      >
-        react/Title
-      </div>
-    </div>
-    <div
-      class="charcoal-modal-body"
-    >
-      <div
-        style="display: grid; gap: 24px;"
-      >
-        <div
-          style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            aria-disabled="false"
-            class="charcoal-text-field-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                for="test-id"
-                id="test-id"
-              >
-                Name
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              class="charcoal-text-field-container"
-              data-invalid="false"
-            >
-              <div
-                class="charcoal-text-field-input-root"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  class="charcoal-text-field-input"
-                  data-invalid="false"
-                  id="test-id"
-                  placeholder="Nagisa"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            aria-disabled="false"
-            class="charcoal-text-field-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                for="test-id"
-                id="test-id"
-              >
-                Country
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              class="charcoal-text-field-container"
-              data-invalid="false"
-            >
-              <div
-                class="charcoal-text-field-input-root"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  class="charcoal-text-field-input"
-                  data-invalid="false"
-                  id="test-id"
-                  placeholder="Tokyo"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            class="charcoal-dropdown-selector-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                id="test-id"
-              >
-                Fruits
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              aria-hidden="true"
-              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
-            >
-              <select
-                tabindex="-1"
-              >
-                <option
-                  value="10"
-                >
-                  10
-                </option>
-                <option
-                  value="20"
-                >
-                  20
-                </option>
-                <option
-                  value="30"
-                >
-                  30
-                </option>
-              </select>
-            </div>
-            <button
-              aria-labelledby="test-id"
-              class="charcoal-dropdown-selector-button"
-              data-active="false"
-              type="button"
-            >
-              <span
-                class="charcoal-ui-dropdown-selector-text"
-                data-placeholder="false"
-              >
-                Apple
-              </span>
-              <pixiv-icon
-                class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-                name="16/Menu"
-                style="--charcoal-icon-size: 16px;"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="charcoal-modal-buttons"
-      >
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-          data-variant="Primary"
-        >
-          Apply
-        </button>
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
-    <button
-      aria-label="Close"
-      class="charcoal-icon-button charcoal-modal-close-button"
-      data-active="false"
-      data-size="S"
-      data-variant="Default"
-      type="button"
-    >
-      <pixiv-icon
-        name="24/Close"
-        style="--charcoal-icon-size: 24px;"
-      />
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > Default 4`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-end="true"
-  hidden=""
-/>
 `;
 
 exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
-<div
-  aria-hidden="true"
->
+<div>
   <div
     data-dark="false"
   >
@@ -2646,191 +2584,171 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
       data-overlay-container="true"
     >
       <button
+        aria-hidden="true"
         class="charcoal-button"
       >
         Open Modal
       </button>
+      <div
+        class="charcoal-modal-background"
+        data-bottom-sheet="full"
+        style="z-index: 10;"
+      >
+        <div
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="full"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="full"
+          >
+            <div
+              class="charcoal-modal-header-title"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
+              >
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 2`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-start="true"
-  hidden=""
-/>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 3`] = `
-<div
-  class="charcoal-modal-background"
-  data-bottom-sheet="full"
-  style="z-index: 10;"
->
-  <div
-    class="charcoal-modal-dialog"
-    data-bottom-sheet="full"
-    data-size="M"
-    role="dialog"
-    tabindex="-1"
-  >
-    <div
-      class="charcoal-modal-header-root"
-      data-bottom-sheet="full"
-    >
-      <div
-        class="charcoal-modal-header-title"
-      >
-        react/Title
-      </div>
-    </div>
-    <div
-      class="charcoal-modal-body"
-    >
-      <div
-        style="display: grid; gap: 24px;"
-      >
-        <div
-          style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            aria-disabled="false"
-            class="charcoal-text-field-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                for="test-id"
-                id="test-id"
-              >
-                Name
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              class="charcoal-text-field-container"
-              data-invalid="false"
-            >
-              <div
-                class="charcoal-text-field-input-root"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  class="charcoal-text-field-input"
-                  data-invalid="false"
-                  id="test-id"
-                  placeholder="Nagisa"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="charcoal-modal-align"
-        >
-          <div
-            aria-disabled="false"
-            class="charcoal-text-field-root"
-          >
-            <div
-              class="charcoal-field-label-root"
-            >
-              <label
-                class="charcoal-field-label"
-                for="test-id"
-                id="test-id"
-              >
-                Country
-              </label>
-              <div
-                class="charcoal-field-label-sub-label"
-              >
-                <span />
-              </div>
-            </div>
-            <div
-              class="charcoal-text-field-container"
-              data-invalid="false"
-            >
-              <div
-                class="charcoal-text-field-input-root"
-              >
-                <input
-                  aria-labelledby="test-id"
-                  class="charcoal-text-field-input"
-                  data-invalid="false"
-                  id="test-id"
-                  placeholder="Tokyo"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="charcoal-modal-buttons"
-      >
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-          data-variant="Primary"
-        >
-          Apply
-        </button>
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
-    <button
-      aria-label="Close"
-      class="charcoal-icon-button charcoal-modal-close-button"
-      data-active="false"
-      data-size="S"
-      data-variant="Default"
-      type="button"
-    >
-      <pixiv-icon
-        name="24/Close"
-        style="--charcoal-icon-size: 24px;"
-      />
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 4`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-end="true"
-  hidden=""
-/>
 `;
 
 exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] = `
-<div
-  aria-hidden="true"
->
+<div>
   <div
     data-dark="false"
   >
@@ -2838,80 +2756,62 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
       data-overlay-container="true"
     >
       <button
+        aria-hidden="true"
         class="charcoal-button"
       >
         Open Modal
       </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 2`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-start="true"
-  hidden=""
-/>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 3`] = `
-<div
-  class="charcoal-modal-background"
-  data-bottom-sheet="false"
-  style="z-index: 10;"
->
-  <div
-    class="charcoal-modal-dialog"
-    data-bottom-sheet="false"
-    data-size="M"
-    role="dialog"
-    tabindex="-1"
-  >
-    <div
-      class="charcoal-modal-header-root"
-      data-bottom-sheet="false"
-    >
       <div
-        class="charcoal-modal-header-title"
-      >
-        react/Title
-      </div>
-    </div>
-    <div
-      class="charcoal-modal-body"
-    >
-      <div
-        style="display: grid; gap: 24px;"
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
       >
         <div
-          style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
+          >
+            <div
+              class="charcoal-modal-header-title"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
+              >
+                OK
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div
-        class="charcoal-modal-buttons"
-      >
-        <button
-          class="charcoal-button"
-          data-full-width="true"
-          data-variant="Primary"
-        >
-          OK
-        </button>
       </div>
     </div>
   </div>
 </div>
-`;
-
-exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 4`] = `
-<span
-  aria-hidden="true"
-  data-focus-scope-end="true"
-  hidden=""
-/>
 `;
 
 exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
