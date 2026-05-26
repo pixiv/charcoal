@@ -22,7 +22,12 @@ export default defineConfig({
       },
       {
         find: '@charcoal-ui/theme/unstable-tokens/css-variables.json',
-        replacement: pkg('theme', 'dist', 'unstable-tokens', 'css-variables.json'),
+        replacement: pkg(
+          'theme',
+          'dist',
+          'unstable-tokens',
+          'css-variables.json',
+        ),
       },
       {
         find: '@charcoal-ui/icon-files/v2/datauri',
