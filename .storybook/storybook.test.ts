@@ -89,7 +89,14 @@ describe(options.suite, async () => {
 
         testFn(`${title} > ${name}`, async () => {
           const mounted = render(story())
-          expect(mounted.baseElement).toMatchSnapshot()
+          expect(mounted.container).toMatchSnapshot()
+
+          const portalNodes = [...mounted.baseElement.children].filter(
+            (el) => el !== mounted.container,
+          )
+          for (const portal of portalNodes) {
+            expect(portal).toMatchSnapshot()
+          }
         })
       }
     })
