@@ -2,6 +2,8 @@ import { beforeAll, vi } from 'vitest'
 import { setProjectAnnotations } from '@storybook/react-vite'
 import * as projectAnnotations from './.storybook/preview'
 
+import type { ReactPortal } from 'react'
+
 setProjectAnnotations(projectAnnotations)
 
 beforeAll(() => {
@@ -41,4 +43,38 @@ beforeAll(() => {
       dispatchEvent: vi.fn(),
     })),
   )
+
+  vi.mock('react-aria/useId', async () => {
+    const mod = await vi.importActual('react-aria/useId')
+
+    return {
+      ...mod,
+      useId: () => 'test-id',
+    }
+  })
+
+  vi.mock('react-aria/Overlay', async () => {
+    const mod = await vi.importActual('react-aria/Overlay')
+
+    return {
+      ...mod,
+      Overlay: vi.fn(({ children }) => children as ReactPortal),
+    }
+  })
+
+  vi.mock('react-stately', async () => {
+    const stately =
+      await vi.importActual<typeof import('react-stately')>('react-stately')
+
+    return {
+      ...stately,
+      useOverlayTriggerState: (
+        ...args: Parameters<typeof stately.useOverlayTriggerState>
+      ) => {
+        const state = stately.useOverlayTriggerState(...args)
+
+        return { ...state, isOpen: true }
+      },
+    }
+  })
 })
