@@ -24,6 +24,10 @@ beforeAll(() => {
       },
     })),
   )
+  if (typeof CSS !== 'undefined' && typeof CSS.supports !== 'function') {
+    CSS.supports = () => false
+  }
+
   vi.stubGlobal(
     'matchMedia',
     vi.fn().mockImplementation((query: string) => ({
@@ -37,4 +41,29 @@ beforeAll(() => {
       dispatchEvent: vi.fn(),
     })),
   )
+
+  vi.mock('react-aria/useId', async () => {
+    const mod = await vi.importActual('react-aria/useId')
+
+    return {
+      ...mod,
+      useId: () => 'test-id',
+    }
+  })
+
+  vi.mock('react-stately', async () => {
+    const stately =
+      await vi.importActual<typeof import('react-stately')>('react-stately')
+
+    return {
+      ...stately,
+      useOverlayTriggerState: (
+        ...args: Parameters<typeof stately.useOverlayTriggerState>
+      ) => {
+        const state = stately.useOverlayTriggerState(...args)
+
+        return { ...state, isOpen: true }
+      },
+    }
+  })
 })
