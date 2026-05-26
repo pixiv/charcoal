@@ -1,0 +1,23 @@
+.typed-attr-description {
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.typed-attr-description p {
+  margin: 8px 0;
+}
+
+.typed-attr-description code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.typed-attr-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+}

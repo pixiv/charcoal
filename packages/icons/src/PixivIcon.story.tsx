@@ -1,6 +1,7 @@
 /// <reference types='@types/webpack-env' />
 
 import styled, { createGlobalStyle } from 'styled-components'
+import './PixivIcon.story.css'
 import TestIconThatNeverExists from './16/TestIconThatNeverExists.svg'
 import { PixivIcon, Props } from '@charcoal-ui/icons'
 import { KnownIconFile, KNOWN_ICON_FILES } from './charcoalIconFiles'
@@ -45,7 +46,7 @@ const meta: Meta<Props> = {
   },
   parameters: {
     storyshots: {
-      disable: true,
+      disable: false,
     },
   },
   render(props) {
@@ -277,7 +278,7 @@ function TypedAttrStory() {
     typeof CSS !== 'undefined' && CSS.supports('width', 'attr(fixed-size px)')
   return (
     <>
-      <Description>
+      <div className="typed-attr-description">
         <p>
           Chrome 133+ など typed <code>attr()</code> 対応ブラウザでは、生 HTML
           の <code>{'<pixiv-icon fixed-size="N">'}</code> に{' '}
@@ -294,51 +295,27 @@ function TypedAttrStory() {
               : '❌ 未対応 (upgrade 後に寸法確定)'}
           </strong>
         </p>
-      </Description>
-      <Row>
+      </div>
+      <div className="typed-attr-row">
         <pixiv-icon name="24/Add" fixed-size="40" />
         <code>{'fixed-size="40"'}</code>
-      </Row>
-      <Row>
+      </div>
+      <div className="typed-attr-row">
         <pixiv-icon name="24/Add" fixed-size="12" />
         <code>{'fixed-size="12"'}</code>
-      </Row>
-      <Row>
+      </div>
+      <div className="typed-attr-row">
         <pixiv-icon name="24/Add" unsafe-non-guideline-scale="2" />
         <code>{'unsafe-non-guideline-scale="2"'}</code> (deprecated)
-      </Row>
-      <Row>
+      </div>
+      <div className="typed-attr-row">
         <pixiv-icon name="24/Add" unsafe-non-guideline-scale="1.5" />
         <code>{'unsafe-non-guideline-scale="1.5"'}</code> (deprecated)
-      </Row>
+      </div>
       <Global />
     </>
   )
 }
-
-const Description = styled.div`
-  margin-bottom: 16px;
-  font-size: 14px;
-  line-height: 1.6;
-
-  p {
-    margin: 8px 0;
-  }
-
-  code {
-    background: rgba(0, 0, 0, 0.06);
-    padding: 1px 4px;
-    border-radius: 2px;
-  }
-`
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 0;
-  font-size: 14px;
-`
 
 export const RawIconFile: StoryObj<Props> = {
   render: ({ color, name, scale }) => {
