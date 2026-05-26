@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/40 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">36/40 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/173 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">29 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/40 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">36/40 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/174 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">29 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>37.8s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>43.3s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -10580,7 +10580,7 @@ context: Context</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Icon</h2>
       <div class="badges">
-        <label for="c-13-react-icon-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-13-react-icon-props" class="badge ok as-toggle">6 prop types</label>
         <label for="c-13-react-icon-info" class="badge info as-toggle">1 info</label>
         <label for="c-13-react-icon-stories" class="badge ok as-toggle">1 story</label>
         
@@ -10614,7 +10614,7 @@ context: Context</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">5 prop types</span>
+              <span class="badge ok">6 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Icon/index.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
@@ -10622,10 +10622,23 @@ context: Context</code></pre>
 
 css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
+/**
+ * 固定 px サイズで描画します。ガイドライン外のサイズを利用する場合に推奨される指定方法で、
+ * 他のサイズ指定 (`scale` / `unsafeNonGuidelineScale`) よりも常に優先されます。
+ * 
+ * `&lt;Icon&gt;` は同じ値を `--charcoal-icon-size` インライン CSS 変数として自動付与するため、
+ * Web Component の hydrate 前後でレイアウトシフトは発生しません。
+ */
+fixedSize?: number
+
 name: keyof KnownIconType
 
 scale?: 2 | 1 | 3 | &quot;1&quot; | &quot;2&quot; | &quot;3&quot;
 
+/**
+ * @deprecated `fixedSize` を利用してください。
+ * `attr()` の数値解釈サポートが限定的なため、リセット CSS だけではレイアウトシフトが防げません。
+ */
 unsafeNonGuidelineScale?: number</code></pre>
           </div>
         </div>
@@ -11489,7 +11502,7 @@ zIndex?: number = 10</code></pre>
     ModalHeader,
     TextField,
 } from "@charcoal-ui/react";
-import { OverlayProvider } from "@react-aria/overlays";</code></pre>
+import { OverlayProvider } from "react-aria";</code></pre>
               </div>
           
           
@@ -11501,7 +11514,7 @@ import { OverlayProvider } from "@react-aria/overlays";</code></pre>
               
               
               <pre><code>const Default = () =&gt; {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
 
     return (
         &lt;OverlayProvider&gt;
@@ -11523,7 +11536,7 @@ import { OverlayProvider } from "@react-aria/overlays";</code></pre>
               
               
               <pre><code>const FullBottomSheet = () =&gt; {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
 
     return (
         &lt;OverlayProvider&gt;
@@ -11569,7 +11582,7 @@ import { OverlayProvider } from "@react-aria/overlays";</code></pre>
               
               
               <pre><code>const BottomSheet = () =&gt; {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
 
     return (
         &lt;OverlayProvider&gt;
@@ -11609,7 +11622,7 @@ import { OverlayProvider } from "@react-aria/overlays";</code></pre>
               
               
               <pre><code>const NotDismmissableStory = () =&gt; {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
 
     return (
         &lt;OverlayProvider&gt;
@@ -11642,7 +11655,7 @@ import { OverlayProvider } from "@react-aria/overlays";</code></pre>
               
               
               <pre><code>const BackgroundScroll = () =&gt; {
-    const state = useOverlayTriggerState({})
+    const state = useOverlayTriggerState({ defaultOpen })
 
     return (
         &lt;OverlayProvider&gt;
@@ -12136,7 +12149,7 @@ size?: Size = M</code></pre>
       <div class="badges">
         <label for="c-24-icons-pixivicon-pixiv-icon-err" class="badge err as-toggle">prop type error</label>
         <label for="c-24-icons-pixivicon-pixiv-icon-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-24-icons-pixivicon-pixiv-icon-stories" class="badge err as-toggle">1/4 story errors</label>
+        <label for="c-24-icons-pixivicon-pixiv-icon-stories" class="badge err as-toggle">1/5 story errors</label>
         
       </div>
     </div>
@@ -12361,7 +12374,38 @@ export const WithAttributes: StoryObj&lt;Props&gt; = {
   },
 }
 
-export const WithUnsafe: StoryObj&lt;Props&gt; = {
+export const WithFixedSize: StoryObj&lt;Props&gt; = {
+  render: ({ color, name, scale, ...args }) =&gt; {
+    return (
+      &lt;&gt;
+        &lt;IconDef color={color}&gt;
+          &lt;pixiv-icon
+            fixed-size={args[&#39;fixed-size&#39;]}
+            name={name}
+            scale={scale}
+          /&gt;
+          アイコンと文字
+        &lt;/IconDef&gt;
+        &lt;Global /&gt;
+      &lt;/&gt;
+    )
+  },
+  args: {
+    name: &#39;16/Add&#39;,
+    &#39;fixed-size&#39;: &#39;60&#39;,
+    color: &#39;#000000&#39;,
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
+}
+
+export const WithUnsafeNonGuidelineScale: StoryObj&lt;Props&gt; = {
   render: ({ color, name, scale, ...args }) =&gt; {
     return (
       &lt;&gt;
@@ -12371,7 +12415,7 @@ export const WithUnsafe: StoryObj&lt;Props&gt; = {
             name={name}
             scale={scale}
           /&gt;
-          アイコンと文字
+          アイコンと文字 (deprecated)
         &lt;/IconDef&gt;
         &lt;Global /&gt;
       &lt;/&gt;
@@ -12471,16 +12515,34 @@ export const RawIconFile: StoryObj&lt;Props&gt; = {
             </div>
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">With Unsafe</span>
+                <span class="ex-name">With Fixed Size</span>
                 <span class="badge ok">story ok</span>
               </div>
               
               
-              <pre><code>const WithUnsafe = () =&gt; {
+              <pre><code>const WithFixedSize = () =&gt; {
     return (
         &lt;&gt;
             &lt;IconDef color={color}&gt;
-                &lt;pixiv-icon unsafe-non-guideline-scale=&quot;3.75&quot; name={name} scale={scale} /&gt;アイコンと文字
+                &lt;pixiv-icon fixed-size=&quot;60&quot; name={name} scale={scale} /&gt;アイコンと文字
+                        &lt;/IconDef&gt;
+            &lt;Global /&gt;
+        &lt;/&gt;
+    );
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Unsafe Non Guideline Scale</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithUnsafeNonGuidelineScale = () =&gt; {
+    return (
+        &lt;&gt;
+            &lt;IconDef color={color}&gt;
+                &lt;pixiv-icon unsafe-non-guideline-scale=&quot;3.75&quot; name={name} scale={scale} /&gt;アイコンと文字 (deprecated)
                         &lt;/IconDef&gt;
             &lt;Global /&gt;
         &lt;/&gt;
@@ -28767,7 +28829,7 @@ export const Default: Story = {
       <div class="badges">
         <label for="c-error-4-icons-pixivicon-pixiv-icon-err" class="badge err as-toggle">prop type error</label>
         <label for="c-error-4-icons-pixivicon-pixiv-icon-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-error-4-icons-pixivicon-pixiv-icon-stories" class="badge err as-toggle">1/4 story errors</label>
+        <label for="c-error-4-icons-pixivicon-pixiv-icon-stories" class="badge err as-toggle">1/5 story errors</label>
         
       </div>
     </div>
@@ -28992,7 +29054,38 @@ export const WithAttributes: StoryObj&lt;Props&gt; = {
   },
 }
 
-export const WithUnsafe: StoryObj&lt;Props&gt; = {
+export const WithFixedSize: StoryObj&lt;Props&gt; = {
+  render: ({ color, name, scale, ...args }) =&gt; {
+    return (
+      &lt;&gt;
+        &lt;IconDef color={color}&gt;
+          &lt;pixiv-icon
+            fixed-size={args[&#39;fixed-size&#39;]}
+            name={name}
+            scale={scale}
+          /&gt;
+          アイコンと文字
+        &lt;/IconDef&gt;
+        &lt;Global /&gt;
+      &lt;/&gt;
+    )
+  },
+  args: {
+    name: &#39;16/Add&#39;,
+    &#39;fixed-size&#39;: &#39;60&#39;,
+    color: &#39;#000000&#39;,
+  },
+  parameters: {
+    vrt: {
+      viewport: {
+        width: 1280,
+        height: 720,
+      },
+    },
+  },
+}
+
+export const WithUnsafeNonGuidelineScale: StoryObj&lt;Props&gt; = {
   render: ({ color, name, scale, ...args }) =&gt; {
     return (
       &lt;&gt;
@@ -29002,7 +29095,7 @@ export const WithUnsafe: StoryObj&lt;Props&gt; = {
             name={name}
             scale={scale}
           /&gt;
-          アイコンと文字
+          アイコンと文字 (deprecated)
         &lt;/IconDef&gt;
         &lt;Global /&gt;
       &lt;/&gt;
@@ -29102,16 +29195,34 @@ export const RawIconFile: StoryObj&lt;Props&gt; = {
             </div>
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">With Unsafe</span>
+                <span class="ex-name">With Fixed Size</span>
                 <span class="badge ok">story ok</span>
               </div>
               
               
-              <pre><code>const WithUnsafe = () =&gt; {
+              <pre><code>const WithFixedSize = () =&gt; {
     return (
         &lt;&gt;
             &lt;IconDef color={color}&gt;
-                &lt;pixiv-icon unsafe-non-guideline-scale=&quot;3.75&quot; name={name} scale={scale} /&gt;アイコンと文字
+                &lt;pixiv-icon fixed-size=&quot;60&quot; name={name} scale={scale} /&gt;アイコンと文字
+                        &lt;/IconDef&gt;
+            &lt;Global /&gt;
+        &lt;/&gt;
+    );
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Unsafe Non Guideline Scale</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithUnsafeNonGuidelineScale = () =&gt; {
+    return (
+        &lt;&gt;
+            &lt;IconDef color={color}&gt;
+                &lt;pixiv-icon unsafe-non-guideline-scale=&quot;3.75&quot; name={name} scale={scale} /&gt;アイコンと文字 (deprecated)
                         &lt;/IconDef&gt;
             &lt;Global /&gt;
         &lt;/&gt;
@@ -36628,17 +36739,22 @@ bun add @charcoal-ui/icons
 
 ## 使い方
 
-アプリケーションのエントリポイントで `import` します。
+アプリケーションのエントリポイントで以下の 2 つを `import` します。
 Storybook の場合は `preview.(js|ts)` に書くと良いでしょう。
 
-**`@charcoal-ui/react` の [`&lt;Icon&gt;`](/docs/react-icon--docs) コンポーネントを利用している場合、この `import` は内部で自動的に行われます。**
+**`@charcoal-ui/react` の [`&lt;Icon&gt;`](/docs/react-icon--docs) コンポーネントを利用している場合、両方の `import` は内部で自動的に行われます。**
 
 ```typescript
+// Custom Element 本体の登録と型定義
 import &#39;@charcoal-ui/icons&#39;
+// レイアウトシフト防止 CSS (SSR / 初期描画時にアイコンの寸法を確保する)
+import &#39;@charcoal-ui/icons/css/icon.css&#39;
 ```
 
 これだけで、`&lt;pixiv-icon&gt;` という HTML タグが利用可能になります。
 TypeScript の型定義がグローバルにインストールされるので、JSX で `&lt;pixiv-icon&gt;` を書く際にも型チェックが効きます。
+
+`icon.css` の役割と、レイアウトシフト対策の詳細は [SSR Guide](/docs/icons-ssr-guide--docs) を参照してください。
 
 ## 収録アイコン
 
@@ -36836,59 +36952,143 @@ SVG ファイルを `import` して渡す場合、プロジェクトのバンド
 `@charcoal-ui/icons` は、Node.js の環境下で import されたり、API を呼び出されても問題が起きないように設計されています。
 
 一方、Custom Element であるということは、**SVG アイコンの読み込みはクライアントサイドで行われます**。  
-したがって、大きさが確定せずにレイアウトシフトが起こりうるのは、SSR における注意点の一つと言えます。
+したがって、大きさが確定せずにレイアウトシフト (CLS) が起こりうるのは、SSR における注意点の一つと言えます。
 
-以下のようなコードをリセット CSS に含めることで、`&lt;pixiv-icon&gt;` によるレイアウトシフトの発生を防ぐことができます。  
-（簡単のため、ネスト記法が利用できるケースを意図しています）
+## なぜ CSS が必要なのか
 
-```css
-pixiv-icon {
-  display: inline-flex;
-  width: calc(var(--icon-size, 1em) * var(--scale, 1));
-  height: calc(var(--icon-size, 1em) * var(--scale, 1));
-}
+`@charcoal-ui/icons` の JS が読み込まれて `customElements.define(&#39;pixiv-icon&#39;, ...)` が実行されるまで、`&lt;pixiv-icon&gt;` は Shadow DOM を持たない単なる未登録 Custom Element です。CSS がない場合、ブラウザはこの要素のサイズを 0x0 として扱うため:
 
-&amp;[name~=&#39;16/&#39;] {
-  --icon-size: 16px;
-}
+- SSR で送出された HTML が画面に描画された直後: アイコンは **0x0** で何も見えない
+- JS がロードされて `pixiv-icon` が `:defined` になった瞬間: 突然 16x16 / 24x24 などの実サイズになり、**周囲のコンテンツが押し出される**
 
-&amp;[name~=&#39;24/&#39;] {
-  --icon-size: 24px;
-}
+この瞬間に発生する CLS を、`icon.css` が事前に寸法を確保することで防ぎます。
 
-&amp;[name~=&#39;32/&#39;] {
-  --icon-size: 32px;
-}
+## レイアウトシフト防止 CSS
 
-&amp;[scale=&#39;2&#39;] {
-  --scale: 2;
-}
+`@charcoal-ui/icons/css/icon.css` をインポートすると、`&lt;pixiv-icon&gt;` のレイアウトシフトを防止できます。
+アプリケーションのエントリポイント、または Storybook の `preview.(js|ts)` で 1 度だけ読み込んでください。
 
-&amp;[scale=&#39;3&#39;] {
-  --scale: 3;
-}
-
-/* NOTICE: 現状とサポートブラウザが少ない */
-@supports (--scale: attr(unsafe-non-guideline-scale)) {
-  &amp;[unsafe-non-guideline-scale] {
-    --scale: attr(unsafe-non-guideline-scale);
-  }
-}
+```ts
+import &#39;@charcoal-ui/icons/css/icon.css&#39;
 ```
 
-ただしコメントにもある通り、**現状 `unsafe-non-guideline-scale` をつけた要素は、リセット CSS だけではレイアウトシフトが防げません。**
-CSS の `attr()` が数値の解釈をサポートするまで、個別にインラインスタイルを用いて大きさを確定させるなどのワークアラウンドが必要です。
+この CSS は 2 つのメカニズムを提供します。
+
+### 1. `.charcoal-icon` クラス（React 向け）
+
+`@charcoal-ui/react` の `&lt;Icon&gt;` コンポーネントは自動的に `.charcoal-icon` クラスと `--charcoal-icon-size` CSS 変数を設定します。
+CSS が読み込まれていれば、Custom Element の定義前でも正しいサイズが確保されます。
+
+### 2. `pixiv-icon:not(:defined)` セレクター（vanilla HTML 向け）
+
+React を使わない場合でも、`name` 属性のプレフィックス（`16/`, `24/`, `32/`, `Inline/`）と `scale` 属性に基づいてサイズが確保されます。
+
+## サイズ決定ルール
+
+サイズの決定タイミングは hydrate の前後で異なります。
+
+### hydrate 前 (`pixiv-icon:not(:defined)` の段階)
+
+1. **`style=&quot;--charcoal-icon-size: Npx&quot;` が指定されていれば、その値を使う**（最優先）
+2. それ以外は `name` プレフィックスと `scale` 属性から導出されたガイドラインデフォルトを使う
+
+`fixed-size` / `unsafe-non-guideline-scale` 属性は CSS の `attr()` での
+数値解釈に制約があるためこの段階では参照できず、暫定値が表示されます。
+**ガイドライン外のサイズで CLS を完全に防ぐには、必ず `style=&quot;--charcoal-icon-size: Npx&quot;` をインラインで併記してください** (React の `&lt;Icon fixedSize&gt;` 経由なら自動で付与されます)。
+
+### hydrate 後 (`:defined` 状態)
+
+JS が読み込まれて web component が定義されると、`render()` が以下の優先順で size を計算し、
+**結果を `--charcoal-icon-size` の inline style に上書きします**。
+
+1. `fixed-size` 属性（最優先 / ピクセル値）
+2. `unsafe-non-guideline-scale` 属性 × `name` のベースサイズ（**deprecated**）
+3. `name` プレフィックスと `scale` 属性から導出されたガイドラインデフォルト
+
+つまりユーザーが書いた `style=&quot;--charcoal-icon-size: ...&quot;` は **hydrate 後には属性ベースの計算結果で上書きされる** 点に注意してください。永続的に上書きしたい場合は属性で指定します。
+
+```html
+&lt;!-- ガイドライン通り 24px --&gt;
+&lt;pixiv-icon name=&quot;24/Add&quot;&gt;&lt;/pixiv-icon&gt;
+
+&lt;!-- ガイドライン通り 48px (24 × scale=2) --&gt;
+&lt;pixiv-icon name=&quot;24/Add&quot; scale=&quot;2&quot;&gt;&lt;/pixiv-icon&gt;
+
+&lt;!-- 12px に固定 (hydrate 後も 12px のまま)。SSR の CLS を避けるため style も併記 --&gt;
+&lt;pixiv-icon
+  name=&quot;24/Add&quot;
+  fixed-size=&quot;12&quot;
+  style=&quot;--charcoal-icon-size: 12px&quot;
+&gt;&lt;/pixiv-icon&gt;
+```
+
+### `scale` 属性のプレフィックスごとの挙動
+
+`name` プレフィックスごとに `scale` のサポート範囲が異なります。表に整理すると以下の通りです。
+
+| プレフィックス | `scale=1` | `scale=2` | `scale=3` | 備考                              |
+| -------------- | --------- | --------- | --------- | --------------------------------- |
+| `16/`          | 16        | **16**    | **16**    | `scale` を無視（意図的な仕様）    |
+| `24/`          | 24        | 48        | 72        | すべて対応                        |
+| `32/`          | 32        | **32**    | **32**    | `scale` を無視（意図的な仕様）    |
+| `Inline/`      | 16        | 32        | **16**    | `scale=3` は `scale=1` と同じ扱い |
+
+`scale` に対応していない組み合わせを書いても **CLS は発生しません**（CSS と JS 双方で同じ結果を返すように揃えてあります）が、期待通りに大きくならないことに注意してください。
+大きく表示したい場合は次節の「ガイドライン外のサイズ指定」を使ってください。
+
+### ガイドライン外のサイズ指定
+
+ガイドライン外のサイズを使う場合は **`fixed-size` (vanilla HTML) / `fixedSize` (React)** を使います。
+`fixed-size` は他のサイズ指定 (`scale` / `unsafe-non-guideline-scale`) よりも常に優先されます。
+
+#### React (`&lt;Icon fixedSize={N}&gt;`)
+
+```jsx
+&lt;Icon name=&quot;24/Add&quot; fixedSize={12} /&gt;  {/* 12px 固定 */}
+&lt;Icon name=&quot;24/Add&quot; fixedSize={40} /&gt;  {/* 40px 固定 */}
+```
+
+`&lt;Icon&gt;` は同じ値を `--charcoal-icon-size` インライン CSS 変数として自動付与するため、
+**hydrate 前後とも正しいサイズで CLS は起きません**。利用者側で追加の対応は不要です。
+
+#### vanilla HTML (`&lt;pixiv-icon fixed-size=&quot;N&quot;&gt;`)
+
+CSS の `attr()` 関数は数値や `&lt;length&gt;` 型としての解釈をまだ十分にサポートしていないため、
+**`fixed-size` 属性だけではブラウザは hydrate 前にサイズを決定できません**。
+SSR 段階から CLS を防ぐには **必ずインラインスタイルで `--charcoal-icon-size` も同じ値を指定してください**。
+
+```html
+&lt;!-- ✅ OK: fixed-size と --charcoal-icon-size の両方を指定 --&gt;
+&lt;pixiv-icon
+  name=&quot;24/Add&quot;
+  fixed-size=&quot;12&quot;
+  style=&quot;--charcoal-icon-size: 12px;&quot;
+&gt;&lt;/pixiv-icon&gt;
+
+&lt;!-- ❌ NG: fixed-size だけだと CSS-only 段階で name 由来の 24px が表示され、
+     JS upgrade 後に 12px へジャンプする (= CLS) --&gt;
+&lt;pixiv-icon name=&quot;24/Add&quot; fixed-size=&quot;12&quot;&gt;&lt;/pixiv-icon&gt;
+```
+
+`fixed-size` 属性は Web Component の upgrade 後に **必ず** 反映され、
+`--charcoal-icon-size` インラインスタイルは upgrade 前の CSS-only 状態でサイズを確定させる役割を果たします。
+両者の値が一致していれば、SSR から hydrate 完了までを通じて同じサイズで表示されます。
+
+サーバーサイドのテンプレートで両方を出し分けるユーティリティを用意するか、React の `&lt;Icon fixedSize&gt;` を経由するのが安全です。
+
+#### 非推奨: `unsafe-non-guideline-scale`
+
+過去には `unsafe-non-guideline-scale` 属性でガイドライン外の倍率を指定できましたが、
+これも `fixed-size` と同じ理由で CSS-only 段階ではサイズを決定できません。
+**新規利用は `fixed-size` への移行を推奨します**。
+
+既存利用箇所では、以下のように個別にインラインスタイルでサイズを確定させる必要があります。
 
 ```html
 &lt;pixiv-icon
   name=&quot;24/Add&quot;
   unsafe-non-guideline-scale=&quot;0.5&quot;
-  style=&quot;--scale: 0.5;&quot;
-&gt;&lt;/pixiv-icon&gt;
-&lt;pixiv-icon
-  name=&quot;24/Add&quot;
-  unsafe-non-guideline-scale=&quot;0.5&quot;
-  style=&quot;width: 12px; height: 12px;&quot;
+  style=&quot;--charcoal-icon-size: 12px;&quot;
 &gt;&lt;/pixiv-icon&gt;
 ```
 </code></pre>
@@ -38836,6 +39036,26 @@ const charcoal = createTailwindConfig({
 
 - Unstable のため、マイナーバージョン内でも props や export 名が変わる可能性があります。
 - 安定化後は `Unstable` プレフィックスを外し、通常のコンポーネント名で提供する予定です。
+
+---
+
+## React Aria モノパッケージへの移行
+
+React Aria v1.17.0 ([リリースノート](https://react-aria.adobe.com/releases/v1-17-0)) に合わせ、`@charcoal-ui/react` の React Aria 依存を個別パッケージ（`@react-aria/*`, `@react-stately/*`）からモノパッケージ（`react-aria`, `react-stately`）に移行しました。
+
+- `react-aria` / `react-stately` は **dependencies から peerDependencies に変更**されました（`react-aria &gt;= 3.48.0`, `react-stately &gt;= 3.46.0`）。npm 7+・pnpm・yarn では自動インストールされるため通常は追加対応不要です。
+- 目的：アプリ側でも React Aria を使う場合の重複インストールを防ぎ、バンドルサイズとランタイムの不整合を解消します。
+- 既存の `@react-aria/*` 個別パッケージとも共存可能ですが、バージョン不整合に注意してください。
+
+### 必要な対応（任意）
+
+`@react-aria/*` / `@react-stately/*` を直接 import している場合、React Aria 公式 codemod でモノパッケージ import に移行できます。
+
+```bash
+npx @react-spectrum/codemods use-monopackages --path /path/to/src
+# サブパス import（より細かいバンドル制御）
+npx @react-spectrum/codemods use-subpaths --path /path/to/src
+```
 </code></pre>
           </div>
         </div>
