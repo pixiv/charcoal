@@ -24,6 +24,10 @@ beforeAll(() => {
       },
     })),
   )
+  if (typeof CSS !== 'undefined' && typeof CSS.supports !== 'function') {
+    CSS.supports = () => false
+  }
+
   vi.stubGlobal(
     'matchMedia',
     vi.fn().mockImplementation((query: string) => ({
