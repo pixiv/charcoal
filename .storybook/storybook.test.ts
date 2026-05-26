@@ -89,7 +89,7 @@ describe(options.suite, async () => {
 
         testFn(`${title} > ${name}`, async () => {
           const mounted = render(story())
-          expect(mounted.container).toMatchSnapshot()
+          expect(mounted.baseElement).toMatchSnapshot()
         })
       }
     })

@@ -33,6 +33,10 @@ export default defineConfig({
         replacement: pkg('icon-files', 'v1', 'datauri', 'index.mjs'),
       },
       {
+        find: /^react-stately\/.*/,
+        replacement: 'react-stately',
+      },
+      {
         find: /@charcoal-ui\/(.*)/,
         replacement: pkg('$1', 'src'),
       },

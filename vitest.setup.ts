@@ -2,8 +2,6 @@ import { beforeAll, vi } from 'vitest'
 import { setProjectAnnotations } from '@storybook/react-vite'
 import * as projectAnnotations from './.storybook/preview'
 
-import type { ReactPortal } from 'react'
-
 setProjectAnnotations(projectAnnotations)
 
 beforeAll(() => {
@@ -50,15 +48,6 @@ beforeAll(() => {
     return {
       ...mod,
       useId: () => 'test-id',
-    }
-  })
-
-  vi.mock('react-aria/Overlay', async () => {
-    const mod = await vi.importActual('react-aria/Overlay')
-
-    return {
-      ...mod,
-      Overlay: vi.fn(({ children }) => children as ReactPortal),
     }
   })
 
