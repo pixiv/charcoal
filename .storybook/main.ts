@@ -124,7 +124,10 @@ const viteConfig: ViteStorybookConfig = {
       'styled-components',
     ]
     config.plugins ??= []
-
+    config.define = {
+      ...config.define,
+      'process.env.TEST': process.env.TEST,
+    }
     config.plugins.unshift({
       name: 'fix-storybook-mdx-react-shim-file-url',
       enforce: 'pre',

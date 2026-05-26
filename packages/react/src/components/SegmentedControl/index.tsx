@@ -1,16 +1,16 @@
 import { ReactNode, forwardRef, memo, useMemo, useRef } from 'react'
 import * as React from 'react'
-import { useRadioGroupState } from '@react-stately/radio'
+import { RadioProvider, useRadioContext } from './RadioGroupContext'
+import { useClassNames } from '../../_lib/useClassNames'
+import './index.css'
 import {
   AriaRadioGroupProps,
   AriaRadioProps,
   useRadio,
   useRadioGroup,
-} from '@react-aria/radio'
-import { RadioProvider, useRadioContext } from './RadioGroupContext'
-import { useClassNames } from '../../_lib/useClassNames'
+} from 'react-aria/useRadioGroup'
 
-import './index.css'
+import { useRadioGroupState } from 'react-stately/useRadioGroupState'
 
 type SegmentedControlItem = {
   label: React.ReactNode

@@ -613,8 +613,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Ass
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
         <div
@@ -698,8 +699,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Cus
             </div>
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -771,8 +773,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Def
             data-placeholder="false"
           />
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -847,8 +850,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Dis
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -932,8 +936,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Dis
             Option 2 (disabled)
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1007,8 +1012,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > InF
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1106,8 +1112,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Inv
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1182,8 +1189,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Inv
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
         <div
@@ -1262,8 +1270,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Lab
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1336,8 +1345,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Lon
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1414,8 +1424,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Req
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1503,8 +1514,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sec
             Banana
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1578,8 +1590,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sub
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1652,8 +1665,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
             Option 1
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1734,8 +1748,9 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
             Option 3
           </span>
           <pixiv-icon
-            class="charcoal-ui-dropdown-selector-icon"
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
             name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
           />
         </button>
       </div>
@@ -1773,7 +1788,9 @@ exports[`Storybook Tests > react/HintText > react/HintText > Default 1`] = `
         class="charcoal-hint-text-icon"
       >
         <pixiv-icon
+          class="charcoal-icon"
           name="16/Info"
+          style="--charcoal-icon-size: 16px;"
         />
       </div>
       <p
@@ -1802,7 +1819,9 @@ exports[`Storybook Tests > react/HintText > react/HintText > NarrowWidth 1`] = `
           class="charcoal-hint-text-icon"
         >
           <pixiv-icon
+            class="charcoal-icon"
             name="16/Info"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <p
@@ -1822,8 +1841,10 @@ exports[`Storybook Tests > react/Icon > react/Icon > Default 1`] = `
     data-dark="false"
   >
     <pixiv-icon
+      class="charcoal-icon"
       name="16/Add"
       scale="1"
+      style="--charcoal-icon-size: 16px;"
     />
   </div>
 </div>
@@ -1843,6 +1864,7 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > Default 1`] = `
     >
       <pixiv-icon
         name="16/Add"
+        style="--charcoal-icon-size: 16px;"
       />
     </button>
   </div>
@@ -1862,6 +1884,7 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > IsActive 1`] = 
     >
       <pixiv-icon
         name="16/Add"
+        style="--charcoal-icon-size: 16px;"
       />
     </button>
   </div>
@@ -1881,6 +1904,7 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > Overlay 1`] = `
     >
       <pixiv-icon
         name="16/Add"
+        style="--charcoal-icon-size: 16px;"
       />
     </button>
   </div>
@@ -2166,8 +2190,9 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
                       name="16/Menu"
+                      style="--charcoal-icon-size: 16px;"
                     />
                   </button>
                 </div>
@@ -2201,6 +2226,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -2302,6 +2328,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -2502,8 +2529,9 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
                       Apple
                     </span>
                     <pixiv-icon
-                      class="charcoal-ui-dropdown-selector-icon"
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
                       name="16/Menu"
+                      style="--charcoal-icon-size: 16px;"
                     />
                   </button>
                 </div>
@@ -2537,6 +2565,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -2708,6 +2737,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
           >
             <pixiv-icon
               name="24/Close"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
         </div>
@@ -2814,8 +2844,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -2843,8 +2875,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -2873,8 +2907,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -2902,8 +2938,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -2946,8 +2984,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -2975,8 +3015,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3004,8 +3046,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3033,8 +3077,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Invalid 1`] =
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3077,8 +3123,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3106,8 +3154,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3135,8 +3185,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3164,8 +3216,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Overlay 1`] =
           data-overlay="true"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3208,8 +3262,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3238,8 +3294,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3268,8 +3326,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3298,8 +3358,10 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           data-overlay="false"
         >
           <pixiv-icon
+            class="charcoal-icon"
+            fixed-size="16"
             name="24/Check"
-            unsafe-non-guideline-scale="0.6666666666666666"
+            style="--charcoal-icon-size: 16px;"
           />
         </div>
         <div
@@ -3335,6 +3397,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </a>
       <a
@@ -3353,6 +3416,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <a
@@ -3396,6 +3460,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ComponentAStory
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </a>
     </nav>
@@ -3422,6 +3487,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3440,6 +3506,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3481,6 +3548,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > Default 1`] = `
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
     </nav>
@@ -3509,6 +3577,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <span
@@ -3562,6 +3631,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
     </nav>
@@ -3588,6 +3658,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3606,6 +3677,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3649,6 +3721,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
     </nav>
@@ -3684,6 +3757,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         >
           <pixiv-icon
             name="24/Prev"
+            style="--charcoal-icon-size: 24px;"
           />
         </a>
         <a
@@ -3702,6 +3776,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         >
           <pixiv-icon
             name="24/Dot"
+            style="--charcoal-icon-size: 24px;"
           />
         </button>
         <a
@@ -3745,6 +3820,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationS
         >
           <pixiv-icon
             name="24/Next"
+            style="--charcoal-icon-size: 24px;"
           />
         </a>
       </nav>
@@ -3788,6 +3864,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationW
           >
             <pixiv-icon
               name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
             />
           </a>
           <a
@@ -3807,6 +3884,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationW
           >
             <pixiv-icon
               name="24/Dot"
+              style="--charcoal-icon-size: 24px;"
             />
           </button>
           <a
@@ -3855,6 +3933,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LinkPaginationW
           >
             <pixiv-icon
               name="24/Next"
+              style="--charcoal-icon-size: 24px;"
             />
           </a>
         </nav>
@@ -3883,6 +3962,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3901,6 +3981,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3942,6 +4023,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > ManyPages 1`] =
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
     </nav>
@@ -3968,6 +4050,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] 
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -3986,6 +4069,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] 
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <span
@@ -4015,6 +4099,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > PageRange5 1`] 
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
     </nav>
@@ -4041,6 +4126,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
       >
         <pixiv-icon
           name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -4059,6 +4145,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
       >
         <pixiv-icon
           name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
       <button
@@ -4100,6 +4187,7 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
       >
         <pixiv-icon
           name="24/Next"
+          style="--charcoal-icon-size: 24px;"
         />
       </button>
     </nav>
@@ -4501,7 +4589,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       class="charcoal-segmented-control"
       data-full-width="true"
       data-uniform-segment-width="false"
-      id="test-id"
+      id="react-aria-:ru:"
       role="radiogroup"
     >
       <label
@@ -4512,7 +4600,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4527,7 +4616,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4542,7 +4632,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4565,7 +4656,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="false"
-      id="test-id"
+      id="react-aria-:r6:"
       role="radiogroup"
     >
       <label
@@ -4576,7 +4667,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4591,7 +4683,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4606,7 +4699,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4621,8 +4715,9 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       >
         <input
           class="charcoal-segmented-control-radio__input"
+          data-react-aria-pressable="true"
           disabled=""
-          name="test-id"
+          name="test"
           type="radio"
           value="option4"
         />
@@ -4644,7 +4739,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="false"
-      id="test-id"
+      id="react-aria-:rc:"
       role="radiogroup"
     >
       <label
@@ -4655,7 +4750,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4670,7 +4766,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4685,7 +4782,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4708,7 +4806,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="false"
-      id="test-id"
+      id="react-aria-:r0:"
       role="radiogroup"
     >
       <label
@@ -4719,7 +4817,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4734,7 +4833,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4749,7 +4849,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4772,7 +4873,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       class="charcoal-segmented-control"
       data-full-width="true"
       data-uniform-segment-width="true"
-      id="test-id"
+      id="react-aria-:r14:"
       role="radiogroup"
     >
       <label
@@ -4783,7 +4884,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4798,7 +4900,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4813,7 +4916,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4836,7 +4940,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="true"
-      id="test-id"
+      id="react-aria-:ri:"
       role="radiogroup"
     >
       <label
@@ -4847,7 +4951,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4862,7 +4967,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4877,7 +4983,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -4900,7 +5007,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="true"
-      id="test-id"
+      id="react-aria-:ro:"
       role="radiogroup"
     >
       <label
@@ -4911,7 +5018,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option1"
@@ -4926,7 +5034,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option2"
@@ -4941,7 +5050,8 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       >
         <input
           class="charcoal-segmented-control-radio__input"
-          name="test-id"
+          data-react-aria-pressable="true"
+          name="test"
           tabindex="0"
           type="radio"
           value="option3"
@@ -5073,7 +5183,9 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Active 1`] = `
         </span>
       </div>
       <pixiv-icon
+        class="charcoal-icon"
         name="16/Remove"
+        style="--charcoal-icon-size: 16px;"
       />
     </button>
   </div>
@@ -6953,6 +7065,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > Prefix 1`] = `
           >
             <pixiv-icon
               name="16/Search"
+              style="--charcoal-icon-size: 16px;"
             />
           </div>
         </div>
@@ -7274,7 +7387,9 @@ exports[`Storybook Tests > react/internals/ListItem > react/internals/ListItem >
       class="charcoal-list-item"
     >
       <pixiv-icon
+        class="charcoal-icon"
         name="16/Add"
+        style="--charcoal-icon-size: 16px;"
       />
        Add
     </li>
@@ -8027,7 +8142,9 @@ exports[`Storybook Tests > theme/Token v2 Demo > theme/Token v2 Demo > Styled 1`
             class="c5"
           >
             <pixiv-icon
+              class="charcoal-icon"
               name="24/FaceEdit"
+              style="--charcoal-icon-size: 24px;"
             />
           </a>
           <span
@@ -8200,7 +8317,9 @@ exports[`Storybook Tests > theme/Token v2 Demo > theme/Token v2 Demo > Tailwind 
             class="rounded-oval text-icon hover:text-icon-hover active:text-icon-press bg-container-secondary hover:bg-container-hover active:bg-container-press grid h-[40px] w-[40px] cursor-pointer place-items-center"
           >
             <pixiv-icon
+              class="charcoal-icon"
               name="24/FaceEdit"
+              style="--charcoal-icon-size: 24px;"
             />
           </a>
           <span

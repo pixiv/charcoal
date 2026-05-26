@@ -1,1 +1,1 @@
-export { OverlayProvider } from '@react-aria/overlays'
+export { OverlayProvider } from 'react-aria/private/overlays/useModal'

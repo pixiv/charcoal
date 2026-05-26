@@ -1,0 +1,44 @@
+.charcoal-icon {
+  display: inline-flex;
+  width: var(--charcoal-icon-size);
+  height: var(--charcoal-icon-size);
+}
+
+pixiv-icon:not(:defined) {
+  --pixiv-icon-base: 24px;
+  --pixiv-icon-scale: 1;
+  --pixiv-icon-size: calc(var(--pixiv-icon-base) * var(--pixiv-icon-scale));
+
+  display: inline-flex;
+  /* --charcoal-icon-size がセットされていればそれを優先、
+     なければ name / scale から導出した --pixiv-icon-size をフォールバック */
+  width: var(--charcoal-icon-size, var(--pixiv-icon-size));
+  height: var(--charcoal-icon-size, var(--pixiv-icon-size));
+
+  &[name^='16/'] {
+    --pixiv-icon-base: 16px;
+    --pixiv-icon-size: 16px;
+  }
+
+  &[name^='24/'] {
+    &[scale='2'] {
+      --pixiv-icon-scale: 2;
+    }
+    &[scale='3'] {
+      --pixiv-icon-scale: 3;
+    }
+  }
+
+  &[name^='32/'] {
+    --pixiv-icon-base: 32px;
+    --pixiv-icon-size: 32px;
+  }
+
+  &[name^='Inline/'] {
+    --pixiv-icon-base: 16px;
+
+    &[scale='2'] {
+      --pixiv-icon-scale: 2;
+    }
+  }
+}
