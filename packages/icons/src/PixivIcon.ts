@@ -3,8 +3,14 @@ import { KnownIconFile } from './charcoalIconFiles'
 import { getIcon, addCustomIcon } from './loaders'
 import { addRawFile } from './loaders/CustomRawFileLoader'
 import { __SERVER__ } from './ssr'
+import { calcActualSize } from './calcActualSize'
 
-const attributes = ['name', 'scale', 'unsafe-non-guideline-scale'] as const
+const attributes = [
+  'name',
+  'scale',
+  'unsafe-non-guideline-scale',
+  'fixed-size',
+] as const
 
 const ROOT_MARGIN = 50
 
@@ -17,7 +23,20 @@ export interface Props
   > {
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
+  /**
+   * @deprecated `fixed-size` を利用してください。
+   * `attr()` の数値解釈サポートが限定的なため、リセット CSS だけではレイアウトシフトが防げません。
+   */
   'unsafe-non-guideline-scale'?: number | string
+  /**
+   * 固定 px サイズで描画します。ガイドライン外のサイズを利用する場合に推奨される指定方法で、
+   * 他のサイズ指定 (`scale` / `unsafe-non-guideline-scale`) よりも常に優先されます。
+   *
+   * Web Component の upgrade 前 (= SSR 直後の CSS-only 状態) でも CLS を防ぐには、
+   * 同じ値を `style="--charcoal-icon-size: Npx"` としてインラインに指定してください。
+   * React の `<Icon fixedSize>` 経由で利用する場合はインラインスタイルが自動的に付与されます。
+   */
+  'fixed-size'?: number | string
 
   // CustomElements は className が使えない。class と書く必要がある
   // https://ja.reactjs.org/docs/web-components.html#using-web-components-in-react
@@ -77,6 +96,7 @@ export class PixivIcon extends HTMLElement {
     name: string
     scale: string | null
     'unsafe-non-guideline-scale': string | null
+    'fixed-size': string | null
   } {
     const partial = Object.fromEntries(
       attributes.map((attribute) => [attribute, this.getAttribute(attribute)]),
@@ -97,53 +117,6 @@ export class PixivIcon extends HTMLElement {
     return {
       ...partial,
       name,
-    }
-  }
-
-  get forceResizedSize(): number | null {
-    if (this.props['unsafe-non-guideline-scale'] === null) {
-      return null
-    }
-
-    const [size] = this.props.name.split('/')
-    const scale = Number(this.props['unsafe-non-guideline-scale'])
-
-    switch (size) {
-      case 'Inline': {
-        return 16 * scale
-      }
-
-      default: {
-        return Number(size) * scale
-      }
-    }
-  }
-
-  get scaledSize(): number {
-    const [size] = this.props.name.split('/')
-
-    const scale = Number(this.props.scale ?? '1')
-
-    switch (size) {
-      case 'Inline': {
-        switch (scale) {
-          case 2: {
-            return 32
-          }
-
-          default: {
-            return 16
-          }
-        }
-      }
-
-      case '24': {
-        return Number(size) * scale
-      }
-
-      default: {
-        return Number(size)
-      }
     }
   }
 
@@ -192,21 +165,31 @@ export class PixivIcon extends HTMLElement {
   }
 
   render(): void {
-    const size = this.forceResizedSize ?? this.scaledSize
+    const { name, scale, ...rest } = this.props
+    const unsafeNonGuidelineScale = rest['unsafe-non-guideline-scale']
+    const fixedSize = rest['fixed-size']
 
-    if (!Number.isFinite(size)) {
-      throw new TypeError(`icon size must not be NaN`)
-    }
+    const size = calcActualSize({
+      name,
+      ...(fixedSize !== null
+        ? { fixedSize: parseFloat(fixedSize) }
+        : unsafeNonGuidelineScale !== null
+          ? { unsafeNonGuidelineScale: parseFloat(unsafeNonGuidelineScale) }
+          : { scale: scale ?? undefined }),
+    } as Parameters<typeof calcActualSize>[0])
+
+    // icon.css の pixiv-icon:not(:defined) ルールと同じ CSS variable に
+    // 計算結果を流し込むことで、hydrate 前後で width / height が揺れないようにする
+    this.style.setProperty('--charcoal-icon-size', `${size}px`)
 
     const style = `<style>
   :host {
     display: inline-flex;
-    --size: ${size}px;
   }
 
   svg {
-    width: var(--size);
-    height: var(--size);
+    width: var(--charcoal-icon-size);
+    height: var(--charcoal-icon-size);
   }
 </style>`
 

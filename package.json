@@ -38,6 +38,7 @@
     "provenance": true
   },
   "devDependencies": {
+    "@charcoal-ui/icons": "workspace:^",
     "@charcoal-ui/icons-cli": "workspace:^",
     "@charcoal-ui/styled": "workspace:^",
     "@charcoal-ui/theme": "workspace:^",

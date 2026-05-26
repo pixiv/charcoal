@@ -40,17 +40,22 @@ bun add @charcoal-ui/icons
 
 ## 使い方
 
-アプリケーションのエントリポイントで `import` します。
+アプリケーションのエントリポイントで以下の 2 つを `import` します。
 Storybook の場合は `preview.(js|ts)` に書くと良いでしょう。
 
-**`@charcoal-ui/react` の [`<Icon>`](/docs/react-icon--docs) コンポーネントを利用している場合、この `import` は内部で自動的に行われます。**
+**`@charcoal-ui/react` の [`<Icon>`](/docs/react-icon--docs) コンポーネントを利用している場合、両方の `import` は内部で自動的に行われます。**
 
 ```typescript
+// Custom Element 本体の登録と型定義
 import '@charcoal-ui/icons'
+// レイアウトシフト防止 CSS (SSR / 初期描画時にアイコンの寸法を確保する)
+import '@charcoal-ui/icons/css/icon.css'
 ```
 
 これだけで、`<pixiv-icon>` という HTML タグが利用可能になります。
 TypeScript の型定義がグローバルにインストールされるので、JSX で `<pixiv-icon>` を書く際にも型チェックが効きます。
+
+`icon.css` の役割と、レイアウトシフト対策の詳細は [SSR Guide](/docs/icons-ssr-guide--docs) を参照してください。
 
 ## 収録アイコン
 
