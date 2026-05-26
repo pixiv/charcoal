@@ -12,6 +12,9 @@ export default defineConfig({
     environment: 'jsdom',
     include: [path.join(import.meta.dirname, '**/*.test.ts')],
     setupFiles: [path.join(root, 'vitest.setup.ts')],
+    snapshotSerializers: [
+      path.join(import.meta.dirname, 'snapshot-serializer.ts'),
+    ],
     alias: [
       {
         find: /^@charcoal-ui\/icons\/css\/(.+)$/,
