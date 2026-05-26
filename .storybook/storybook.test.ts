@@ -91,6 +91,8 @@ describe(options.suite, async () => {
           const mounted = render(story())
           expect(mounted.container).toMatchSnapshot()
 
+          // react-aria Overlay は React portal で body 直下に render するため
+          // container には含まれない。Modal 等の portal コンテンツもキャプチャする。
           const portalNodes = [...mounted.baseElement.children].filter(
             (el) => el !== mounted.container,
           )
