@@ -132,6 +132,19 @@ SSR 段階から CLS を防ぐには **必ずインラインスタイルで `--c
 
 サーバーサイドのテンプレートで両方を出し分けるユーティリティを用意するか、React の `<Icon fixedSize>` を経由するのが安全です。
 
+##### typed `attr()` 対応ブラウザでの最適化
+
+`icon.css` には `@supports (width: attr(fixed-size px)) { ... }` ブロックがあり、
+typed `attr()` をサポートするブラウザでは `fixed-size` / `unsafe-non-guideline-scale` の値を
+CSS だけで読み取ってサイズを確定します。
+
+- 対応: Chrome 133+ / Edge など
+- 未対応 (安定版): Safari, Firefox
+
+対応ブラウザ向けには `style="--charcoal-icon-size: Npx"` の併記を省略しても CLS は起きません。
+未対応ブラウザでは併記しないと前述の通り CLS が発生するため、**配信先が混在する場合は引き続き併記を推奨**します
+(React の `<Icon fixedSize>` 経由ならインラインスタイルが自動付与されるので、対応・未対応どちらでも安全)。
+
 #### 非推奨: `unsafe-non-guideline-scale`
 
 過去には `unsafe-non-guideline-scale` 属性でガイドライン外の倍率を指定できましたが、
