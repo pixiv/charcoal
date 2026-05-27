@@ -11,6 +11,7 @@ export default {
   "16/BookmarkOn": () => import("./16/BookmarkOn.js").then(m => m.default),
   "16/Check": () => import("./16/Check.js").then(m => m.default),
   "16/Comment": () => import("./16/Comment.js").then(m => m.default),
+  "16/Description": () => import("./16/Description.js").then(m => m.default),
   "16/Dot": () => import("./16/Dot.js").then(m => m.default),
   "16/Down": () => import("./16/Down.js").then(m => m.default),
   "16/Error": () => import("./16/Error.js").then(m => m.default),

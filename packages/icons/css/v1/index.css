@@ -658,6 +658,16 @@
   aspect-ratio: 1/1;
 }
 
+.charcoal-icon-v1-description-16 {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12.707%205.207a1%201%200%2001.293.707V12a2%202%200%2001-2%202H5a2%202%200%2001-2-2V4a2%202%200%20012-2h4.086a1%201%200%2001.707.293l2.914%202.914zM6%2010a.5.5%200%20000%201h4a.5.5%200%20000-1H6zm0-2a.5.5%200%20000%201h4a.5.5%200%20000-1H6zm2.5-2.5a1%201%200%20001%201H12L8.5%203v2.5z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E');
+  mask-size: 100% 100%;
+  background: currentColor;
+  aspect-ratio: 1/1;
+}
+
 .charcoal-icon-v1-devicerotation {
   display: inline-block;
   width: 1em;
