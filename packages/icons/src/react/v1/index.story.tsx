@@ -11,6 +11,7 @@ import { IconBookmarkOff16 } from './16/BookmarkOff'
 import { IconBookmarkOn16 } from './16/BookmarkOn'
 import { IconCheck16 } from './16/Check'
 import { IconComment16 } from './16/Comment'
+import { IconDescription16 } from './16/Description'
 import { IconDot16 } from './16/Dot'
 import { IconDown16 } from './16/Down'
 import { IconError16 } from './16/Error'
@@ -630,6 +631,11 @@ export default {
           <div>
             <IconDelete32 />
             <code>&lt;IconDelete32 /&gt;</code>
+          </div>
+
+          <div>
+            <IconDescription16 />
+            <code>&lt;IconDescription16 /&gt;</code>
           </div>
 
           <div>
