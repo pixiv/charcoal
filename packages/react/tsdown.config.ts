@@ -48,6 +48,13 @@ export default defineConfig({
     transformer: 'postcss',
     postcss: path.join(import.meta.dirname, 'postcss.config.mjs'),
   },
+  copy: [
+    {
+      from: 'src/tokens/components/*.css',
+      to: 'dist/css',
+      flatten: true,
+    },
+  ],
   async onSuccess() {
     const indexCssPath = path.resolve(import.meta.dirname, './dist/index.css')
     const originalCssOutput = await fs.readFile(indexCssPath, 'utf-8')

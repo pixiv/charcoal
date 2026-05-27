@@ -1,0 +1,65 @@
+:root {
+  /* Switch */
+  --charcoal-switch-label-color: var(--charcoal-text2);
+
+  /* SwitchInput */
+  --charcoal-switch-control-bg-color-active: var(--charcoal-brand);
+  --charcoal-switch-control-bg-color-active-hover: var(--charcoal-brand-hover);
+  --charcoal-switch-control-bg-color-active-press: var(--charcoal-brand-press);
+  --charcoal-switch-control-bg-color-inactive: var(--charcoal-text4);
+  --charcoal-switch-control-bg-color-inactive-hover: var(
+    --charcoal-text4-hover
+  );
+  --charcoal-switch-control-bg-color-inactive-press: var(
+    --charcoal-text4-press
+  );
+  --charcoal-switch-control-disable-opacity: 0.32;
+  --charcoal-switch-handle-color: var(--charcoal-text5);
+  --charcoal-switch-handle-color-hover: var(--charcoal-text5-hover);
+  --charcoal-switch-handle-color-press: var(--charcoal-text5-press);
+
+  /* Checkbox */
+  --charcoal-checkbox-label-color: var(--charcoal-text2);
+
+  /* CheckboxInput */
+  --charcoal-checkbox-border-color: var(--charcoal-text4);
+  --charcoal-checkbox-fg-color: #fff;
+  --charcoal-checkbox-bg-color-active: var(--charcoal-brand);
+  --charcoal-checkbox-bg-color-active-hover: var(--charcoal-brand-hover);
+  --charcoal-checkbox-bg-color-active-press: var(--charcoal-brand-press);
+  --charcoal-checkbox-bg-color-inactive: var(--charcoal-surface3);
+  --charcoal-checkbox-bg-color-inactive-hover: var(--charcoal-surface3-hover);
+  --charcoal-checkbox-bg-color-inactive-press: var(--charcoal-surface3-press);
+
+  /* CheckboxInput (rounded: true) */
+  --charcoal-checkbox-rounded-border-color-focus: #fff;
+  --charcoal-checkbox-rounded-bg-color-active: var(--charcoal-brand);
+  --charcoal-checkbox-rounded-bg-color-active-hover: var(
+    --charcoal-brand-hover
+  );
+  --charcoal-checkbox-rounded-bg-color-active-press: var(
+    --charcoal-brand-press
+  );
+  --charcoal-checkbox-rounded-bg-color-inactive: var(--charcoal-surface3);
+  --charcoal-checkbox-rounded-bg-color-inactive-hover: var(
+    --charcoal-surface3-hover
+  );
+  --charcoal-checkbox-rounded-bg-color-inactive-press: var(
+    --charcoal-surface3-press
+  );
+
+  /* Radio */
+  --charcoal-radio-label-color: var(--charcoal-text2);
+
+  /* RadioInput */
+  --charcoal-radio-fg-color: var(--charcoal-text5);
+  --charcoal-radio-fg-color-hover: var(--charcoal-text5-hover);
+  --charcoal-radio-fg-color-press: var(--charcoal-text5-press);
+  --charcoal-radio-border-color: var(--charcoal-text3);
+  --charcoal-radio-bg-color-active: var(--charcoal-brand);
+  --charcoal-radio-bg-color-active-hover: var(--charcoal-brand-hover);
+  --charcoal-radio-bg-color-active-press: var(--charcoal-brand-press);
+  --charcoal-radio-bg-color-inactive: var(--charcoal-surface1);
+  --charcoal-radio-bg-color-inactive-hover: var(--charcoal-surface1-hover);
+  --charcoal-radio-bg-color-inactive-press: var(--charcoal-surface1-press);
+}

@@ -13,7 +13,8 @@
       "default": "./dist/index.js"
     },
     "./dist/index.css": "./dist/index.css",
-    "./dist/layered.css": "./dist/layered.css"
+    "./dist/layered.css": "./dist/layered.css",
+    "./css/tokenV1.css": "./dist/css/tokenV1.css"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": [

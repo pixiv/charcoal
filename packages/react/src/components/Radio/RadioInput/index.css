@@ -10,14 +10,14 @@
   height: 20px;
   cursor: pointer;
   border-radius: 999999px;
-  background-color: var(--charcoal-surface1);
+  background-color: var(--charcoal-radio-bg-color-inactive);
   transition:
     0.2s background-color,
     0.2s box-shadow;
 }
 
 .charcoal-radio-input:checked {
-  background-color: var(--charcoal-brand);
+  background-color: var(--charcoal-radio-bg-color-active);
 }
 
 .charcoal-radio-input:checked::after {
@@ -26,7 +26,7 @@
   width: 8px;
   height: 8px;
   pointer-events: none;
-  background-color: var(--charcoal-text5);
+  background-color: var(--charcoal-radio-fg-color);
   border-radius: 999999px;
   transition:
     0.2s background-color,
@@ -36,7 +36,7 @@
 .charcoal-radio-input:not(:checked) {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--charcoal-text3);
+  border-color: var(--charcoal-radio-border-color);
 }
 
 .charcoal-radio-input:disabled {
@@ -44,11 +44,11 @@
 }
 
 .charcoal-radio-input:not(:disabled):hover {
-  background-color: var(--charcoal-surface1-hover);
+  background-color: var(--charcoal-radio-bg-color-inactive-hover);
 }
 
 .charcoal-radio-input:not(:disabled):active {
-  background-color: var(--charcoal-surface1-press);
+  background-color: var(--charcoal-radio-bg-color-inactive-press);
 }
 
 .charcoal-radio-input:not(:disabled):focus {
@@ -70,17 +70,17 @@
 }
 
 .charcoal-radio-input:checked:not(:disabled):hover {
-  background-color: var(--charcoal-brand-hover);
+  background-color: var(--charcoal-radio-bg-color-active-hover);
 }
 
 .charcoal-radio-input:checked:not(:disabled):hover::after {
-  background-color: var(--charcoal-text5-hover);
+  background-color: var(--charcoal-radio-fg-color-hover);
 }
 
 .charcoal-radio-input:checked:not(:disabled):active {
-  background-color: var(--charcoal-brand-press);
+  background-color: var(--charcoal-radio-bg-color-active-press);
 }
 
 .charcoal-radio-input:checked:not(:disabled):active::after {
-  background-color: var(--charcoal-text5-press);
+  background-color: var(--charcoal-radio-fg-color-press);
 }
