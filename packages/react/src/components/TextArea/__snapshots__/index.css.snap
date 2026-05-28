@@ -11,8 +11,8 @@
 .charcoal-text-area-container {
   position: relative;
   overflow: hidden;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text-area-fg-color);
+  background-color: var(--charcoal-text-area-bg-color);
   border-radius: 4px;
   transition: 0.2s background-color,
     0.2s box-shadow;
@@ -20,20 +20,20 @@
 }
 
 .charcoal-text-area-container[aria-invalid='true'] {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-text-area-ring-color-invalid);
 }
 
 .charcoal-text-area-container:focus-within {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-text-area-ring-color-focus);
 }
 
 .charcoal-text-area-container:not([aria-disabled='true']):hover {
-  background-color: var(--charcoal-surface3-hover);
+  background-color: var(--charcoal-text-area-bg-color-hover);
 }
 
 .charcoal-text-area-container[aria-invalid='true']:focus-within {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-text-area-ring-color-invalid);
 }
 
 .charcoal-text-area-textarea {
@@ -64,7 +64,7 @@
 }
 
 .charcoal-text-area-textarea::placeholder {
-  color: var(--charcoal-text3);
+  color: var(--charcoal-text-area-placeholder-color);
 }
 
 .charcoal-text-area-counter {
@@ -73,6 +73,6 @@
   right: 8px;
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-text-area-counter-color);
 }
 

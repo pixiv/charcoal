@@ -221,4 +221,13 @@
   --charcoal-tag-item-bg-color-inactive: var(--charcoal-surface3);
   --charcoal-tag-item-ring-color-focus: rgba(0, 150, 250, 0.32);
 
+  /* TextArea */
+  --charcoal-text-area-fg-color: var(--charcoal-text2);
+  --charcoal-text-area-bg-color: var(--charcoal-surface3);
+  --charcoal-text-area-bg-color-hover: var(--charcoal-surface3-hover);
+  --charcoal-text-area-placeholder-color: var(--charcoal-text3);
+  --charcoal-text-area-counter-color: var(--charcoal-text3);
+  --charcoal-text-area-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-text-area-ring-color-invalid: rgba(255, 43, 0, 0.32);
+
 }
