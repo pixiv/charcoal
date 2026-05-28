@@ -143,4 +143,23 @@
   --charcoal-hint-text-icon-color: var(--charcoal-text3);
   --charcoal-hint-text-message-color: var(--charcoal-text2);
 
+  /* IconButton */
+  --charcoal-icon-button-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-icon-button-default-fg-color: var(--charcoal-text3);
+  --charcoal-icon-button-default-fg-color-hover: var(--charcoal-text3-hover);
+  --charcoal-icon-button-default-fg-color-press: var(--charcoal-text3-press);
+  --charcoal-icon-button-default-bg-color: var(--charcoal-transparent);
+  --charcoal-icon-button-default-bg-color-hover: var(
+    --charcoal-transparent-hover
+  );
+  --charcoal-icon-button-default-bg-color-press: var(
+    --charcoal-transparent-press
+  );
+  --charcoal-icon-button-overlay-fg-color: var(--charcoal-text5);
+  --charcoal-icon-button-overlay-fg-color-hover: var(--charcoal-text5-hover);
+  --charcoal-icon-button-overlay-fg-color-press: var(--charcoal-text5-press);
+  --charcoal-icon-button-overlay-bg-color: var(--charcoal-surface4);
+  --charcoal-icon-button-overlay-bg-color-hover: var(--charcoal-surface4-hover);
+  --charcoal-icon-button-overlay-bg-color-press: var(--charcoal-surface4-press);
+
 }
