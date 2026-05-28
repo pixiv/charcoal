@@ -11,6 +11,7 @@ declare var _default: {
   "16/BookmarkOn": () => Promise<string>;
   "16/Check": () => Promise<string>;
   "16/Comment": () => Promise<string>;
+  "16/Description": () => Promise<string>;
   "16/Dot": () => Promise<string>;
   "16/Down": () => Promise<string>;
   "16/Error": () => Promise<string>;

@@ -1085,6 +1085,10 @@ module.exports = {
     "uri": "data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5.4%2013.409l-2.64.377.333-2.332a6%206%200%20112.306%201.955z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E",
     "isSetCurrentcolor": true
   },
+  "16/Description": {
+    "uri": "data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12.707%205.207a1%201%200%2001.293.707V12a2%202%200%2001-2%202H5a2%202%200%2001-2-2V4a2%202%200%20012-2h4.086a1%201%200%2001.707.293l2.914%202.914zM6%2010a.5.5%200%20000%201h4a.5.5%200%20000-1H6zm0-2a.5.5%200%20000%201h4a.5.5%200%20000-1H6zm2.5-2.5a1%201%200%20001%201H12L8.5%203v2.5z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E",
+    "isSetCurrentcolor": true
+  },
   "16/Dot": {
     "uri": "data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M3.5%209.5a1.5%201.5%200%20100-3%201.5%201.5%200%20000%203zM8%209.5a1.5%201.5%200%20100-3%201.5%201.5%200%20000%203zM14%208a1.5%201.5%200%2011-3%200%201.5%201.5%200%20013%200z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E",
     "isSetCurrentcolor": true
