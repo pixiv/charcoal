@@ -3,21 +3,21 @@
   line-height: 22px;
   font-weight: bold;
   display: flow-root;
-  color: var(--charcoal-text1);
+  color: var(--charcoal-field-label-color);
 }
 
 .charcoal-field-label-required-text {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-field-label-required-text-color);
 }
 
 .charcoal-field-label-sub-label {
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-field-label-sub-label-color);
   transition: 0.2s color,
     0.2s box-shadow;
 }

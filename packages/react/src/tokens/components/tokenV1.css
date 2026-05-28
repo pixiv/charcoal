@@ -130,4 +130,9 @@
     --charcoal-border-default
   );
 
+  /* FieldLabel */
+  --charcoal-field-label-color: var(--charcoal-text1);
+  --charcoal-field-label-required-text-color: var(--charcoal-text2);
+  --charcoal-field-label-sub-label-color: var(--charcoal-text3);
+
 }
