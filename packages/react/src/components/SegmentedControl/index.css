@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
 
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-segmented-control-bg-color);
   border-radius: 16px;
 
   &[data-uniform-segment-width='true'],
@@ -29,7 +29,7 @@
   padding-right: 16px;
   padding-left: 16px;
   border-radius: 16px;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-segmented-control-segment-fg-color);
 
   font-size: 14px;
   line-height: 22px;
@@ -40,8 +40,10 @@
   }
 
   &[data-checked='true'] {
-    background-color: var(--charcoal-brand);
-    color: var(--charcoal-text5);
+    background-color: var(
+      --charcoal-segmented-control-segment-bg-color-checked
+    );
+    color: var(--charcoal-segmented-control-segment-fg-color-checked);
   }
 
   &[data-uniform-segment-width='true'],

@@ -207,4 +207,10 @@
   --charcoal-pagination-button-ring-color-focus: rgba(0, 150, 250, 0.32);
   --charcoal-pagination-spacer-fg-color: var(--charcoal-text3);
 
+  /* SegmentedControl */
+  --charcoal-segmented-control-bg-color: var(--charcoal-surface3);
+  --charcoal-segmented-control-segment-fg-color: var(--charcoal-text2);
+  --charcoal-segmented-control-segment-fg-color-checked: var(--charcoal-text5);
+  --charcoal-segmented-control-segment-bg-color-checked: var(--charcoal-brand);
+
 }
