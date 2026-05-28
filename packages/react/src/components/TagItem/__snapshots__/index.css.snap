@@ -1,5 +1,5 @@
 .charcoal-tag-item {
-  --charcoal-tag-item-color: var(--charcoal-text5);
+  --charcoal-tag-item-color: var(--charcoal-tag-item-fg-color-active);
   --charcoal-tag-item-size: 40px;
   --charcoal-tag-item-padding-left: 24px;
   --charcoal-tag-item-padding-right: 24px;
@@ -39,7 +39,7 @@
 }
 
 .charcoal-tag-item[data-state='inactive'] {
-  --charcoal-tag-item-color: var(--charcoal-text2);
+  --charcoal-tag-item-color: var(--charcoal-tag-item-fg-color-inactive);
 }
 
 .charcoal-tag-item[data-state='active'] {
@@ -54,12 +54,12 @@
 
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus-visible, .charcoal-tag-item[aria-disabled='false']:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-tag-item-ring-color-focus);
 }
 
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus, .charcoal-tag-item[aria-disabled='false']:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-tag-item-ring-color-focus);
 }
 
 .charcoal-tag-item:not(:disabled):not([aria-disabled]):focus:not(:focus-visible), .charcoal-tag-item[aria-disabled='false']:focus:not(:focus-visible) {
@@ -71,7 +71,7 @@
 }
 
 .charcoal-tag-item__bg[data-bg-variant='image'] {
-  background-color: var(--charcoal-surface4);
+  background-color: var(--charcoal-tag-item-bg-color-image);
 }
 
 .charcoal-tag-item__bg[data-bg-variant='image']::before {
@@ -89,7 +89,7 @@
 }
 
 .charcoal-tag-item__bg[data-state='inactive'] {
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-tag-item-bg-color-inactive);
 }
 
 .charcoal-tag-item__label {

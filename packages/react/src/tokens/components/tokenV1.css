@@ -213,4 +213,12 @@
   --charcoal-segmented-control-segment-fg-color-checked: var(--charcoal-text5);
   --charcoal-segmented-control-segment-bg-color-checked: var(--charcoal-brand);
 
+  /* TagItem */
+  --charcoal-tag-item-fg-color-active: var(--charcoal-text5);
+  --charcoal-tag-item-fg-color-inactive: var(--charcoal-text2);
+  --charcoal-tag-item-bg-color-active: #7accb1;
+  --charcoal-tag-item-bg-color-image: var(--charcoal-surface4);
+  --charcoal-tag-item-bg-color-inactive: var(--charcoal-surface3);
+  --charcoal-tag-item-ring-color-focus: rgba(0, 150, 250, 0.32);
+
 }

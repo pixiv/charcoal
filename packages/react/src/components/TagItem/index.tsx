@@ -30,7 +30,7 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
       component,
       label,
       translatedLabel,
-      bgColor = '#7ACCB1',
+      bgColor = 'var(--charcoal-tag-item-bg-color-active)',
       bgImage,
       size = 'M',
       status = 'default',
