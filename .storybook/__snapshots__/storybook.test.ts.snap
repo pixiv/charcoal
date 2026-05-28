@@ -5169,7 +5169,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Active 1`] = `
       data-bg-variant="color"
       data-size="M"
       data-state="active"
-      style="--charcoal-tag-item-bg: #7ACCB1;"
+      style="--charcoal-tag-item-bg: var(--charcoal-tag-item-bg-color-active);"
     >
       <div
         class="charcoal-tag-item__label"
@@ -5258,7 +5258,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Default 1`] = `
       data-bg-variant="color"
       data-size="M"
       data-state="default"
-      style="--charcoal-tag-item-bg: #7ACCB1;"
+      style="--charcoal-tag-item-bg: var(--charcoal-tag-item-bg-color-active);"
     >
       <div
         class="charcoal-tag-item__label"
@@ -5287,7 +5287,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Disabled 1`] = `
       data-size="M"
       data-state="default"
       disabled=""
-      style="--charcoal-tag-item-bg: #7ACCB1;"
+      style="--charcoal-tag-item-bg: var(--charcoal-tag-item-bg-color-active);"
     >
       <div
         class="charcoal-tag-item__label"
@@ -5315,7 +5315,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > InActive 1`] = `
       data-bg-variant="color"
       data-size="M"
       data-state="inactive"
-      style="--charcoal-tag-item-bg: #7ACCB1;"
+      style="--charcoal-tag-item-bg: var(--charcoal-tag-item-bg-color-active);"
     >
       <div
         class="charcoal-tag-item__label"
@@ -5343,7 +5343,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Small 1`] = `
       data-bg-variant="color"
       data-size="S"
       data-state="default"
-      style="--charcoal-tag-item-bg: #7ACCB1;"
+      style="--charcoal-tag-item-bg: var(--charcoal-tag-item-bg-color-active);"
     >
       <div
         class="charcoal-tag-item__label"
@@ -5371,7 +5371,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > TranslatedLabel 1`] =
       data-bg-variant="color"
       data-size="M"
       data-state="default"
-      style="--charcoal-tag-item-bg: #7ACCB1;"
+      style="--charcoal-tag-item-bg: var(--charcoal-tag-item-bg-color-active);"
     >
       <div
         class="charcoal-tag-item__label"
