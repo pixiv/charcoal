@@ -195,4 +195,16 @@
   --charcoal-multi-select-ring-color-focus: rgba(0, 150, 250, 0.32);
   --charcoal-multi-select-ring-color-invalid: rgba(255, 43, 0, 0.32);
 
+  /* Pagination */
+  --charcoal-pagination-button-fg-color: var(--charcoal-text3);
+  --charcoal-pagination-button-bg-color: var(--charcoal-transparent);
+  --charcoal-pagination-button-fg-color-hover: var(--charcoal-text3);
+  --charcoal-pagination-button-bg-color-hover: var(--charcoal-surface3);
+  --charcoal-pagination-button-fg-color-press: var(--charcoal-text3);
+  --charcoal-pagination-button-bg-color-press: var(--charcoal-surface10);
+  --charcoal-pagination-button-fg-color-current: var(--charcoal-text5);
+  --charcoal-pagination-button-bg-color-current: var(--charcoal-surface6);
+  --charcoal-pagination-button-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-pagination-spacer-fg-color: var(--charcoal-text3);
+
 }

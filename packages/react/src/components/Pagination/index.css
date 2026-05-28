@@ -40,8 +40,8 @@
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-transform: translateZ(0);
 
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
+  color: var(--charcoal-pagination-button-fg-color);
+  background-color: var(--charcoal-pagination-button-bg-color);
   border-radius: 20px;
   transition:
     0.2s background-color,
@@ -63,25 +63,25 @@
 
   &:not(:disabled):not([aria-disabled]):hover,
   &[aria-disabled='false']:hover {
-    color: var(--charcoal-text3);
-    background-color: var(--charcoal-surface3);
+    color: var(--charcoal-pagination-button-fg-color-hover);
+    background-color: var(--charcoal-pagination-button-bg-color-hover);
   }
 
   &:not(:disabled):not([aria-disabled]):active,
   &[aria-disabled='false']:active {
-    color: var(--charcoal-text3);
-    background-color: var(--charcoal-surface10);
+    color: var(--charcoal-pagination-button-fg-color-press);
+    background-color: var(--charcoal-pagination-button-bg-color-press);
   }
 
   &:not(:disabled):not([aria-disabled]):focus,
   &[aria-disabled='false']:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-pagination-button-ring-color-focus);
   }
 
   &:not(:disabled):not([aria-disabled]):focus-visible,
   &[aria-disabled='false']:focus-visible {
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-pagination-button-ring-color-focus);
   }
 
   &:not(:disabled):not([aria-disabled]):focus:not(:focus-visible),
@@ -91,13 +91,13 @@
 
   &[aria-current] {
     cursor: default;
-    background-color: var(--charcoal-surface6);
-    color: var(--charcoal-text5);
+    background-color: var(--charcoal-pagination-button-bg-color-current);
+    color: var(--charcoal-pagination-button-fg-color-current);
 
     &:not(:disabled):not([aria-disabled]):hover,
     &:not(:disabled):not([aria-disabled]):active {
-      background-color: var(--charcoal-surface6);
-      color: var(--charcoal-text5);
+      background-color: var(--charcoal-pagination-button-bg-color-current);
+      color: var(--charcoal-pagination-button-fg-color-current);
     }
   }
 }
@@ -114,7 +114,7 @@
   &:hover,
   &:active {
     cursor: default;
-    color: var(--charcoal-text3);
+    color: var(--charcoal-pagination-spacer-fg-color);
     background: none;
   }
 
