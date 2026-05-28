@@ -67,4 +67,6 @@
   --charcoal-radio-bg-color-inactive: var(--charcoal-surface1);
   --charcoal-radio-bg-color-inactive-hover: var(--charcoal-surface1-hover);
   --charcoal-radio-bg-color-inactive-press: var(--charcoal-surface1-press);
+  --charcoal-radio-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-radio-ring-color-invalid: rgba(255, 43, 0, 0.32);
 }
