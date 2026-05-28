@@ -24,8 +24,8 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-button-fg-color);
+  background-color: var(--charcoal-button-bg-color);
   transition:
     0.2s color,
     0.2s background-color,
@@ -41,91 +41,91 @@
   &:not(:disabled):not([aria-disabled]):focus-visible,
   &[aria-disabled='false']:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-button-ring-color-focus);
   }
 
   &:not(:disabled):not([aria-disabled]):hover,
   &[aria-disabled='false']:hover {
-    color: var(--charcoal-text2-hover);
-    background-color: var(--charcoal-surface3-hover);
+    color: var(--charcoal-button-fg-color-hover);
+    background-color: var(--charcoal-button-bg-color-hover);
   }
 
   &:not(:disabled):not([aria-disabled]):active,
   &[aria-disabled='false']:active,
   &[data-active='true'] {
-    color: var(--charcoal-text2-press);
-    background-color: var(--charcoal-surface3-press);
+    color: var(--charcoal-button-fg-color-press);
+    background-color: var(--charcoal-button-bg-color-press);
   }
 
   &[data-variant='Primary'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-brand);
+    color: var(--charcoal-button-primary-fg-color);
+    background-color: var(--charcoal-button-primary-bg-color);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-brand-hover);
+      color: var(--charcoal-button-primary-fg-color-hover);
+      background-color: var(--charcoal-button-primary-bg-color-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-brand-press);
+      color: var(--charcoal-button-primary-fg-color-press);
+      background-color: var(--charcoal-button-primary-bg-color-press);
     }
   }
 
   &[data-variant='Overlay'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-surface4);
+    color: var(--charcoal-button-overlay-fg-color);
+    background-color: var(--charcoal-button-overlay-bg-color);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-surface4-hover);
+      color: var(--charcoal-button-overlay-fg-color-hover);
+      background-color: var(--charcoal-button-overlay-bg-color-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-surface4-press);
+      color: var(--charcoal-button-overlay-fg-color-press);
+      background-color: var(--charcoal-button-overlay-bg-color-press);
     }
   }
 
   &[data-variant='Navigation'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-surface6);
+    color: var(--charcoal-button-navigation-fg-color);
+    background-color: var(--charcoal-button-navigation-bg-color);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-surface6-hover);
+      color: var(--charcoal-button-navigation-fg-color-hover);
+      background-color: var(--charcoal-button-navigation-bg-color-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-surface6-press);
+      color: var(--charcoal-button-navigation-fg-color-press);
+      background-color: var(--charcoal-button-navigation-bg-color-press);
     }
   }
 
   &[data-variant='Danger'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-assertive);
+    color: var(--charcoal-button-danger-fg-color);
+    background-color: var(--charcoal-button-danger-bg-color);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-assertive-hover);
+      color: var(--charcoal-button-danger-fg-color-hover);
+      background-color: var(--charcoal-button-danger-bg-color-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-assertive-press);
+      color: var(--charcoal-button-danger-fg-color-press);
+      background-color: var(--charcoal-button-danger-bg-color-press);
     }
   }
 

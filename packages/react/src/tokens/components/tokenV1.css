@@ -69,4 +69,37 @@
   --charcoal-radio-bg-color-inactive-press: var(--charcoal-surface1-press);
   --charcoal-radio-ring-color-focus: rgba(0, 150, 250, 0.32);
   --charcoal-radio-ring-color-invalid: rgba(255, 43, 0, 0.32);
+  /* Button */
+  --charcoal-button-fg-color: var(--charcoal-text2);
+  --charcoal-button-fg-color-hover: var(--charcoal-text2-hover);
+  --charcoal-button-fg-color-press: var(--charcoal-text2-press);
+  --charcoal-button-bg-color: var(--charcoal-surface3);
+  --charcoal-button-bg-color-hover: var(--charcoal-surface3-hover);
+  --charcoal-button-bg-color-press: var(--charcoal-surface3-press);
+  --charcoal-button-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-button-primary-fg-color: var(--charcoal-text5);
+  --charcoal-button-primary-fg-color-hover: var(--charcoal-text5-hover);
+  --charcoal-button-primary-fg-color-press: var(--charcoal-text5-press);
+  --charcoal-button-primary-bg-color: var(--charcoal-brand);
+  --charcoal-button-primary-bg-color-hover: var(--charcoal-brand-hover);
+  --charcoal-button-primary-bg-color-press: var(--charcoal-brand-press);
+  --charcoal-button-overlay-fg-color: var(--charcoal-text5);
+  --charcoal-button-overlay-fg-color-hover: var(--charcoal-text5-hover);
+  --charcoal-button-overlay-fg-color-press: var(--charcoal-text5-press);
+  --charcoal-button-overlay-bg-color: var(--charcoal-surface4);
+  --charcoal-button-overlay-bg-color-hover: var(--charcoal-surface4-hover);
+  --charcoal-button-overlay-bg-color-press: var(--charcoal-surface4-press);
+  --charcoal-button-navigation-fg-color: var(--charcoal-text5);
+  --charcoal-button-navigation-fg-color-hover: var(--charcoal-text5-hover);
+  --charcoal-button-navigation-fg-color-press: var(--charcoal-text5-press);
+  --charcoal-button-navigation-bg-color: var(--charcoal-surface6);
+  --charcoal-button-navigation-bg-color-hover: var(--charcoal-surface6-hover);
+  --charcoal-button-navigation-bg-color-press: var(--charcoal-surface6-press);
+  --charcoal-button-danger-fg-color: var(--charcoal-text5);
+  --charcoal-button-danger-fg-color-hover: var(--charcoal-text5-hover);
+  --charcoal-button-danger-fg-color-press: var(--charcoal-text5-press);
+  --charcoal-button-danger-bg-color: var(--charcoal-assertive);
+  --charcoal-button-danger-bg-color-hover: var(--charcoal-assertive-hover);
+  --charcoal-button-danger-bg-color-press: var(--charcoal-assertive-press);
+
 }
