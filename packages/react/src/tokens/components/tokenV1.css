@@ -162,4 +162,9 @@
   --charcoal-icon-button-overlay-bg-color-hover: var(--charcoal-surface4-hover);
   --charcoal-icon-button-overlay-bg-color-press: var(--charcoal-surface4-press);
 
+  /* LoadingSpinner */
+  --charcoal-loading-spinner-fg-color: var(--charcoal-text4);
+  --charcoal-loading-spinner-bg-color: var(--charcoal-background1);
+  --charcoal-loading-spinner-bg-color-transparent: var(--charcoal-transparent);
+
 }
