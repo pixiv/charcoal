@@ -17,6 +17,7 @@
   --charcoal-switch-handle-color: var(--charcoal-text5);
   --charcoal-switch-handle-color-hover: var(--charcoal-text5-hover);
   --charcoal-switch-handle-color-press: var(--charcoal-text5-press);
+  --charcoal-switch-ring-color-focus: rgba(0, 150, 250, 0.32);
 
   /* Checkbox */
   --charcoal-checkbox-label-color: var(--charcoal-text2);
