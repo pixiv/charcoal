@@ -31,6 +31,8 @@
   --charcoal-checkbox-bg-color-inactive: var(--charcoal-surface3);
   --charcoal-checkbox-bg-color-inactive-hover: var(--charcoal-surface3-hover);
   --charcoal-checkbox-bg-color-inactive-press: var(--charcoal-surface3-press);
+  --charcoal-checkbox-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-checkbox-ring-color-invalid: rgba(255, 43, 0, 0.32);
 
   /* CheckboxInput (rounded: true) */
   --charcoal-checkbox-rounded-border-color-focus: #fff;
@@ -48,6 +50,8 @@
   --charcoal-checkbox-rounded-bg-color-inactive-press: var(
     --charcoal-surface3-press
   );
+  --charcoal-checkbox-rounded-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-checkbox-rounded-ring-color-invalid: rgba(255, 43, 0, 0.32);
 
   /* Radio */
   --charcoal-radio-label-color: var(--charcoal-text2);
