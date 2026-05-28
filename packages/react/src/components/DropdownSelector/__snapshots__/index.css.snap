@@ -23,7 +23,7 @@
   gap: 4px;
   padding-right: 8px;
   padding-left: 8px;
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-dropdown-selector-button-bg-color);
   border-radius: 4px;
   transition: 0.2s box-shadow,
     0.2s background-color;
@@ -35,19 +35,19 @@
 
 .charcoal-dropdown-selector-button:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-dropdown-selector-ring-color-focus);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-dropdown-selector-ring-color-focus);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled)[data-active='true'], .charcoal-dropdown-selector-button:not(:disabled):active {
-  background-color: var(--charcoal-surface3-press);
+  background-color: var(--charcoal-dropdown-selector-button-bg-color-press);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):hover {
-  background-color: var(--charcoal-surface3-hover);
+  background-color: var(--charcoal-dropdown-selector-button-bg-color-hover);
 }
 
 .charcoal-dropdown-selector-button:not(:disabled):focus:not(:focus-visible) {
@@ -55,7 +55,7 @@
 }
 
 .charcoal-dropdown-selector-button[aria-invalid='true'], .charcoal-dropdown-selector-button:not(:disabled)[aria-invalid='true']:focus:not(:focus-visible) {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-dropdown-selector-ring-color-invalid);
 }
 
 .charcoal-ui-dropdown-selector-text {
@@ -63,17 +63,17 @@
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-dropdown-selector-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .charcoal-ui-dropdown-selector-text[data-placeholder='true'] {
-  color: var(--charcoal-text3);
+  color: var(--charcoal-dropdown-selector-placeholder-color);
 }
 
 .charcoal-ui-dropdown-selector-icon {
-  color: var(--charcoal-text2);
+  color: var(--charcoal-dropdown-selector-icon-color);
 }
 

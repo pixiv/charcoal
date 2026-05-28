@@ -1,7 +1,7 @@
 .charcoal-dropdown-selector-menu-item {
   font-size: 14px;
   line-height: 22px;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-dropdown-selector-menu-item-color);
   padding: 9px 0;
 
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .charcoal-dropdown-selector-menu-item-icon {
-  color: var(--charcoal-text2);
+  color: var(--charcoal-dropdown-selector-menu-item-icon-color);
   padding-right: 4px;
 }
 
@@ -27,7 +27,7 @@
 .charcoal-dropdown-selector-menu-secondary {
   font-size: 12px;
   line-height: 20px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-dropdown-selector-menu-item-secondary-color);
   padding-bottom: 9px;
 
   display: flex;

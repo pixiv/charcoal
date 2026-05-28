@@ -7,5 +7,5 @@
   display: block;
   width: 100%;
   height: 1px;
-  background: #00000014;
+  background: var(--charcoal-dropdown-selector-divider-bg-color);
 }

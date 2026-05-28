@@ -102,4 +102,32 @@
   --charcoal-button-danger-bg-color-hover: var(--charcoal-assertive-hover);
   --charcoal-button-danger-bg-color-press: var(--charcoal-assertive-press);
 
+  /* DropdownSelector */
+  --charcoal-dropdown-selector-button-bg-color: var(--charcoal-surface3);
+  --charcoal-dropdown-selector-button-bg-color-hover: var(
+    --charcoal-surface3-hover
+  );
+  --charcoal-dropdown-selector-button-bg-color-press: var(
+    --charcoal-surface3-press
+  );
+  --charcoal-dropdown-selector-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-dropdown-selector-ring-color-invalid: rgba(255, 43, 0, 0.32);
+  --charcoal-dropdown-selector-text-color: var(--charcoal-text2);
+  --charcoal-dropdown-selector-placeholder-color: var(--charcoal-text3);
+  --charcoal-dropdown-selector-icon-color: var(--charcoal-text2);
+  --charcoal-dropdown-selector-divider-bg-color: #00000014;
+  --charcoal-dropdown-selector-menu-item-color: var(--charcoal-text2);
+  --charcoal-dropdown-selector-menu-item-icon-color: var(--charcoal-text2);
+  --charcoal-dropdown-selector-menu-item-secondary-color: var(--charcoal-text3);
+  --charcoal-dropdown-selector-menu-item-group-label-color: var(
+    --charcoal-text3
+  );
+  --charcoal-dropdown-selector-list-item-bg-color-hover: var(
+    --charcoal-surface3
+  );
+  --charcoal-dropdown-selector-popover-bg-color: var(--charcoal-background1);
+  --charcoal-dropdown-selector-popover-border-color: var(
+    --charcoal-border-default
+  );
+
 }
