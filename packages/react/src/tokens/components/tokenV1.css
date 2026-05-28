@@ -173,4 +173,26 @@
   --charcoal-modal-dialog-bg-color: var(--charcoal-surface1);
   --charcoal-modal-title-color: var(--charcoal-text1);
 
+  /* MultiSelect */
+  --charcoal-multi-select-label-color: var(--charcoal-text2);
+  --charcoal-multi-select-control-bg-color-inactive: var(--charcoal-text3);
+  --charcoal-multi-select-control-bg-color-inactive-hover: var(
+    --charcoal-text3-hover
+  );
+  --charcoal-multi-select-control-bg-color-inactive-press: var(
+    --charcoal-text3-press
+  );
+  --charcoal-multi-select-control-bg-color-active: var(--charcoal-brand);
+  --charcoal-multi-select-control-bg-color-active-hover: var(
+    --charcoal-brand-hover
+  );
+  --charcoal-multi-select-control-bg-color-active-press: var(
+    --charcoal-brand-press
+  );
+  --charcoal-multi-select-control-bg-color-overlay: var(--charcoal-surface4);
+  --charcoal-multi-select-overlay-fg-color: var(--charcoal-text5);
+  --charcoal-multi-select-overlay-border-color: var(--charcoal-text5);
+  --charcoal-multi-select-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-multi-select-ring-color-invalid: rgba(255, 43, 0, 0.32);
+
 }
