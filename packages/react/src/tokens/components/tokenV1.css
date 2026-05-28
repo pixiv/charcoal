@@ -167,4 +167,10 @@
   --charcoal-loading-spinner-bg-color: var(--charcoal-background1);
   --charcoal-loading-spinner-bg-color-transparent: var(--charcoal-transparent);
 
+  /* Modal */
+  --charcoal-modal-backdrop-bg-color: var(--charcoal-surface4);
+  --charcoal-modal-close-button-color: var(--charcoal-text3);
+  --charcoal-modal-dialog-bg-color: var(--charcoal-surface1);
+  --charcoal-modal-title-color: var(--charcoal-text1);
+
 }
