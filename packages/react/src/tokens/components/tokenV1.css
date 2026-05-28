@@ -135,4 +135,7 @@
   --charcoal-field-label-required-text-color: var(--charcoal-text2);
   --charcoal-field-label-sub-label-color: var(--charcoal-text3);
 
+  /* FocusRing */
+  --charcoal-focus-ring-color: rgba(0, 150, 250, 0.32);
+
 }

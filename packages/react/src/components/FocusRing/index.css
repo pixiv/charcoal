@@ -4,7 +4,7 @@
       [aria-disabled='false']
     ):focus-visible {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-focus-ring-color);
     transition: 0.2s box-shadow;
   }
 }
