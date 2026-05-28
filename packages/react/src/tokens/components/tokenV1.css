@@ -138,4 +138,9 @@
   /* FocusRing */
   --charcoal-focus-ring-color: rgba(0, 150, 250, 0.32);
 
+  /* HintText */
+  --charcoal-hint-text-bg-color: var(--charcoal-surface3);
+  --charcoal-hint-text-icon-color: var(--charcoal-text3);
+  --charcoal-hint-text-message-color: var(--charcoal-text2);
+
 }
