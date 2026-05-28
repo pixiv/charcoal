@@ -14,28 +14,28 @@
   transition:
     0.2s background-color,
     0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-text-field-fg-color);
+  background-color: var(--charcoal-text-field-bg-color);
   border-radius: 4px;
   padding: 0 8px;
   line-height: 22px;
   font-size: 14px;
 
   &[data-invalid='true'] {
-    box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-text-field-ring-color-invalid);
   }
 
   &:not([aria-disabled='true']):hover {
-    background-color: var(--charcoal-surface3-hover);
+    background-color: var(--charcoal-text-field-bg-color-hover);
   }
 
   &:not([aria-disabled='true']):focus-within {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-text-field-ring-color-focus);
   }
 
   &:not([aria-disabled='true'])[data-invalid='true']:focus-within {
-    box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+    box-shadow: 0 0 0 4px var(--charcoal-text-field-ring-color-invalid);
   }
 }
 
@@ -79,15 +79,15 @@
   appearance: none;
   background: transparent;
 
-  color: var(--charcoal-text2);
+  color: var(--charcoal-text-field-fg-color);
 
   &::placeholder {
-    color: var(--charcoal-text3);
+    color: var(--charcoal-text-field-placeholder-color);
   }
 }
 
 .charcoal-text-field-line-counter {
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-text-field-counter-color);
 }

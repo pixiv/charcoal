@@ -69,6 +69,7 @@
   --charcoal-radio-bg-color-inactive-press: var(--charcoal-surface1-press);
   --charcoal-radio-ring-color-focus: rgba(0, 150, 250, 0.32);
   --charcoal-radio-ring-color-invalid: rgba(255, 43, 0, 0.32);
+
   /* Button */
   --charcoal-button-fg-color: var(--charcoal-text2);
   --charcoal-button-fg-color-hover: var(--charcoal-text2-hover);
@@ -230,4 +231,14 @@
   --charcoal-text-area-ring-color-focus: rgba(0, 150, 250, 0.32);
   --charcoal-text-area-ring-color-invalid: rgba(255, 43, 0, 0.32);
 
+  /* TextField */
+  --charcoal-text-field-fg-color: var(--charcoal-text2);
+  --charcoal-text-field-bg-color: var(--charcoal-surface3);
+  --charcoal-text-field-bg-color-hover: var(--charcoal-surface3-hover);
+  --charcoal-text-field-placeholder-color: var(--charcoal-text3);
+  --charcoal-text-field-counter-color: var(--charcoal-text3);
+  --charcoal-text-field-ring-color-focus: rgba(0, 150, 250, 0.32);
+  --charcoal-text-field-ring-color-invalid: rgba(255, 43, 0, 0.32);
+  --charcoal-text-field-assistive-text-color: var(--charcoal-text2);
+  --charcoal-text-field-assistive-text-color-invalid: var(--charcoal-assertive);
 }
