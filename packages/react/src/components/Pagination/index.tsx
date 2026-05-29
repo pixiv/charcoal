@@ -44,7 +44,7 @@ function NavButton({ direction, ariaLabel }: NavButtonProps) {
     <IconButton
       icon={isPrev ? '24/Prev' : '24/Next'}
       size={size}
-      hidden={disabled}
+      data-hidden={disabled || undefined}
       aria-label={ariaLabel}
       {...(isLinkMode && makeUrl
         ? {
