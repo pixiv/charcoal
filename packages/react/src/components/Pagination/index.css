@@ -103,8 +103,6 @@
 }
 /* stylelint-enable no-descending-specificity */
 
-/* Kept flat: different root class from .charcoal-pagination-button */
-/* Use data-hidden, not [hidden]: Tailwind preflight's `[hidden] { display: none !important }` would clobber `visibility: hidden` and collapse the layout space. */
 .charcoal-pagination-nav-button[data-hidden] {
   visibility: hidden;
 }
