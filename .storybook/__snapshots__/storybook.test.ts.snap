@@ -3570,10 +3570,10 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
         aria-label="Previous"
         class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
+        data-hidden="true"
         data-size="M"
         data-variant="Default"
         disabled=""
-        hidden=""
       >
         <pixiv-icon
           name="24/Prev"
@@ -3714,10 +3714,10 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
         aria-label="Next"
         class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
+        data-hidden="true"
         data-size="M"
         data-variant="Default"
         disabled=""
-        hidden=""
       >
         <pixiv-icon
           name="24/Next"

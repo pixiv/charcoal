@@ -44,7 +44,8 @@ function NavButton({ direction, ariaLabel }: NavButtonProps) {
     <IconButton
       icon={isPrev ? '24/Prev' : '24/Next'}
       size={size}
-      hidden={disabled}
+      /* Use data-hidden, not [hidden]: Tailwind preflight's `[hidden] { display: none !important }` would clobber `visibility: hidden` and collapse the layout space. */
+      data-hidden={disabled || undefined}
       aria-label={ariaLabel}
       {...(isLinkMode && makeUrl
         ? {
