@@ -14,8 +14,8 @@
   transition:
     0.2s background-color,
     0.2s box-shadow;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-color-text-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
   padding: 0 8px;
   line-height: 22px;
@@ -26,7 +26,7 @@
   }
 
   &:not([aria-disabled='true']):hover {
-    background-color: var(--charcoal-surface3-hover);
+    background-color: var(--charcoal-color-container-secondary-hover-a);
   }
 
   &:not([aria-disabled='true']):focus-within {
@@ -79,15 +79,15 @@
   appearance: none;
   background: transparent;
 
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-secondary-default);
 
   &::placeholder {
-    color: var(--charcoal-text3);
+    color: var(--charcoal-color-text-placeholder-default);
   }
 }
 
 .charcoal-text-field-line-counter {
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text-tertiary-default);
 }

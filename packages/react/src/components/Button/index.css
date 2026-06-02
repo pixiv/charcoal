@@ -24,8 +24,8 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-color-text-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   transition:
     0.2s color,
     0.2s background-color,
@@ -46,86 +46,86 @@
 
   &:not(:disabled):not([aria-disabled]):hover,
   &[aria-disabled='false']:hover {
-    color: var(--charcoal-text2-hover);
-    background-color: var(--charcoal-surface3-hover);
+    color: var(--charcoal-color-text-hover);
+    background-color: var(--charcoal-color-container-secondary-hover-a);
   }
 
   &:not(:disabled):not([aria-disabled]):active,
   &[aria-disabled='false']:active,
   &[data-active='true'] {
-    color: var(--charcoal-text2-press);
-    background-color: var(--charcoal-surface3-press);
+    color: var(--charcoal-color-text-press);
+    background-color: var(--charcoal-color-container-secondary-press-a);
   }
 
   &[data-variant='Primary'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-brand);
+    color: var(--charcoal-color-text-on-primary-default);
+    background-color: var(--charcoal-color-container-primary-default);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-brand-hover);
+      color: var(--charcoal-color-text-on-primary-hover);
+      background-color: var(--charcoal-color-container-primary-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-brand-press);
+      color: var(--charcoal-color-text-on-primary-press);
+      background-color: var(--charcoal-color-container-primary-press);
     }
   }
 
   &[data-variant='Overlay'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-surface4);
+    color: var(--charcoal-color-text-on-on-img-default);
+    background-color: var(--charcoal-color-container-on-img-default);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-surface4-hover);
+      color: var(--charcoal-color-text-on-on-img-hover);
+      background-color: var(--charcoal-color-container-on-img-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-surface4-press);
+      color: var(--charcoal-color-text-on-on-img-press);
+      background-color: var(--charcoal-color-container-on-img-press);
     }
   }
 
   &[data-variant='Navigation'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-surface6);
+    color: var(--charcoal-color-text-on-hud-default);
+    background-color: var(--charcoal-color-container-hud-default);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-surface6-hover);
+      color: var(--charcoal-color-text-on-hud-hover);
+      background-color: var(--charcoal-color-container-hud-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-surface6-press);
+      color: var(--charcoal-color-text-on-hud-press);
+      background-color: var(--charcoal-color-container-hud-press);
     }
   }
 
   &[data-variant='Danger'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-assertive);
+    color: var(--charcoal-color-text-on-negative-default);
+    background-color: var(--charcoal-color-container-negative-default);
 
     &:hover:not(:disabled):not([aria-disabled]),
     &:hover[aria-disabled='false'] {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-assertive-hover);
+      color: var(--charcoal-color-text-on-negative-hover);
+      background-color: var(--charcoal-color-container-negative-hover);
     }
 
     &:active:not(:disabled):not([aria-disabled]),
     &:active[aria-disabled='false'],
     &[data-active='true'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-assertive-press);
+      color: var(--charcoal-color-text-on-negative-press);
+      background-color: var(--charcoal-color-container-negative-press);
     }
   }
 

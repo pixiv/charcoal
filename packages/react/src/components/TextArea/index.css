@@ -1,4 +1,6 @@
 .charcoal-text-area-root {
+  --charcoal-text-area-rows: ;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
@@ -12,8 +14,8 @@
   position: relative;
   overflow: hidden;
 
-  color: var(--charcoal-text2);
-  background-color: var(--charcoal-surface3);
+  color: var(--charcoal-color-text-secondary-default);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
   transition:
     0.2s background-color,
@@ -30,7 +32,7 @@
   }
 
   &:not([aria-disabled='true']):hover {
-    background-color: var(--charcoal-surface3-hover);
+    background-color: var(--charcoal-color-container-secondary-hover-a);
   }
 
   &[aria-invalid='true']:focus-within {
@@ -66,7 +68,7 @@
   }
 
   &::placeholder {
-    color: var(--charcoal-text3);
+    color: var(--charcoal-color-text-placeholder-default);
   }
 }
 
@@ -77,5 +79,5 @@
 
   line-height: 22px;
   font-size: 14px;
-  color: var(--charcoal-text3);
+  color: var(--charcoal-color-text-tertiary-default);
 }

@@ -2,9 +2,9 @@
   font-size: 14px;
   line-height: 22px;
   margin: 0;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-secondary-default);
 }
 
 .charcoal-text-field-assistive-text[data-invalid='true'] {
-  color: var(--charcoal-assertive);
+  color: var(--charcoal-color-text-negative-default);
 }

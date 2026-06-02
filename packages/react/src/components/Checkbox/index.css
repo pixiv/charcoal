@@ -16,7 +16,7 @@
 
 .charcoal-checkbox__label_div {
   flex: 1;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-default);
   font-size: 14px;
   line-height: 20px;
 }
