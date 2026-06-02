@@ -47,16 +47,20 @@ for (const cssFile of await getCssFiles(unstableCssDir)) {
 const componentCssFiles = await getCssFiles(componentsDir)
 
 describe('CSS variables', () => {
-  it.each(componentCssFiles)('%s uses only defined CSS variables', async (file) => {
-    const content = await fs.readFile(file, 'utf-8')
-    const definedVariables = new Set(extractDefinedVariables(content))
-    const usedVariables = new Set(extractUsedVariables(content))
+  it.each(componentCssFiles)(
+    '%s uses only defined CSS variables',
+    async (file) => {
+      const content = await fs.readFile(file, 'utf-8')
+      const definedVariables = new Set(extractDefinedVariables(content))
+      const usedVariables = new Set(extractUsedVariables(content))
 
-    const undefinedVariables = [...usedVariables].filter(
-      (variable) =>
-        !unstableCssVariables.has(variable) && !definedVariables.has(variable),
-    )
+      const undefinedVariables = [...usedVariables].filter(
+        (variable) =>
+          !unstableCssVariables.has(variable) &&
+          !definedVariables.has(variable),
+      )
 
-    expect(undefinedVariables).toEqual([])
-  })
+      expect(undefinedVariables).toEqual([])
+    },
+  )
 })
