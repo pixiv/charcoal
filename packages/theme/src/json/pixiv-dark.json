@@ -29,9 +29,6 @@
     "border/default": {
       "value": "{color.dark/neutral-a/30}"
     },
-    "border/default-text3": {
-      "value": "{color.dark/neutral-a/30}"
-    },
     "border/disable": {
       "value": "{color.dark/neutral-a/5}"
     },
@@ -47,9 +44,6 @@
     "border/hover": {
       "value": "{color.dark/neutral-a/40}"
     },
-    "border/hover-text3": {
-      "value": "{color.dark/neutral-a/40}"
-    },
     "border/hud": {
       "value": "{color.background/default}"
     },
@@ -57,9 +51,6 @@
       "value": "{color.dark/red/20}"
     },
     "border/press": {
-      "value": "{color.dark/neutral-a/50}"
-    },
-    "border/press-text3": {
       "value": "{color.dark/neutral-a/50}"
     },
     "border/secondary": {
@@ -610,6 +601,9 @@
     "font-size/caption/s": {
       "value": "{text.font-size/1}"
     },
+    "font-size/caption/s-10": {
+      "value": "{text.font-size/1}"
+    },
     "font-size/heading/l": {
       "value": "{text.font-size/60}"
     },
@@ -653,6 +647,9 @@
       "value": "{text.line-height/5}"
     },
     "line-height/caption/s": {
+      "value": "{text.line-height/1}"
+    },
+    "line-height/caption/s-10": {
       "value": "{text.line-height/1}"
     },
     "line-height/heading/l": {
