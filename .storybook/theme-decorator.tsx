@@ -14,11 +14,14 @@ const setter = themeSetter()
 const Theme = ({
   children,
   globals,
+  parameters,
 }: {
   children: React.ReactNode
   globals?: Record<string, unknown>
+  parameters?: Record<string, unknown>
 }) => {
   const isDarkMode = useDarkMode(globals)
+  const isTokenV2 = parameters?.tokenVersion === 'v2'
 
   useLayoutEffect(() => {
     if (isDarkMode) {
@@ -27,6 +30,14 @@ const Theme = ({
       setter('light')
     }
   }, [isDarkMode])
+
+  useLayoutEffect(() => {
+    document.documentElement.classList.toggle('ch-token-v2', isTokenV2)
+
+    return () => {
+      document.documentElement.classList.remove('ch-token-v2')
+    }
+  }, [isTokenV2])
 
   return (
     <ThemeProvider theme={isDarkMode ? dark : light}>
@@ -45,9 +56,12 @@ const Theme = ({
 
 export default (
   Story: React.ComponentType,
-  context: { globals: Record<string, unknown> },
+  context: {
+    globals: Record<string, unknown>
+    parameters: Record<string, unknown>
+  },
 ) => (
-  <Theme globals={context.globals}>
+  <Theme globals={context.globals} parameters={context.parameters}>
     <Story />
   </Theme>
 )
