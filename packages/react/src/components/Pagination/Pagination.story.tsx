@@ -108,6 +108,17 @@ export const PageRange5: StoryObj<typeof Pagination> = {
   },
 }
 
+export const TokenV2: StoryObj<typeof Pagination> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  args: {
+    page: 50,
+    pageCount: 103,
+    pageRangeDisplayed: 5,
+  },
+}
+
 export const LinkPaginationStory: StoryObj<typeof Pagination> = {
   args: {
     page: 5,

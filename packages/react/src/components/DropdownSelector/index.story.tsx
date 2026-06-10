@@ -454,6 +454,55 @@ export const WithSeconday: StoryObj<typeof DropdownSelector> = {
   },
 }
 
+export const TokenV2: StoryObj<typeof DropdownSelector> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: function Render(props) {
+    const [selected, setSelected] = useState('option-3')
+    const [invalidSelected, setInvalidSelected] = useState('option-1')
+
+    return (
+      <div style={{ display: 'grid', gap: 24, width: 288 }}>
+        <DropdownSelector
+          {...props}
+          value={selected}
+          onChange={setSelected}
+          label="Label"
+          showLabel
+          required
+          requiredText="required"
+          subLabel="SubLabel"
+          assistiveText="assistiveText"
+        >
+          <DropdownMenuItem value="option-1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="option-2" disabled>
+            Option 2 (disabled)
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            value="option-3"
+            secondary={<span>Option 3 Secondary</span>}
+          >
+            Option 3
+          </DropdownMenuItem>
+        </DropdownSelector>
+        <DropdownSelector
+          {...props}
+          value={invalidSelected}
+          onChange={setInvalidSelected}
+          label="Invalid"
+          invalid
+          assistiveText="エラーメッセージ"
+        >
+          <DropdownMenuItem value="option-1">Option 1</DropdownMenuItem>
+          <DropdownMenuItem value="option-2">Option 2</DropdownMenuItem>
+          <DropdownMenuItem value="option-3">Option 3</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
 export const WithRef: StoryObj<typeof DropdownSelector> = {
   render: function Render(props) {
     const [selected, setSelected] = useState('1')

@@ -32,3 +32,18 @@ export const Overlay: StoryObj<typeof IconButton> = {
     return <IconButton icon="16/Add" variant="Overlay" />
   },
 }
+
+export const TokenV2: StoryObj<typeof IconButton> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: () => {
+    return (
+      <div style={{ display: 'flex', gap: 8 }}>
+        <IconButton icon="16/Add" title="add" />
+        <IconButton icon="16/Add" title="active" isActive />
+        <IconButton icon="16/Add" title="overlay" variant="Overlay" />
+      </div>
+    )
+  },
+}

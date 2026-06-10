@@ -96,6 +96,56 @@ export const Overlay: StoryObj<typeof MultiSelect> = {
   },
 }
 
+export const TokenV2: StoryObj<typeof MultiSelect> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: function Render() {
+    const options = ['選択肢1', '選択肢2', '選択肢3', '選択肢4']
+    return (
+      <div style={{ display: 'grid', gap: 24 }}>
+        <StyledMultiSelectGroup
+          name="token-v2-default"
+          label="default"
+          onChange={action('click')}
+          selected={['選択肢1', '選択肢3']}
+        >
+          {options.map((option) => (
+            <MultiSelect value={option} key={option}>
+              {option}
+            </MultiSelect>
+          ))}
+        </StyledMultiSelectGroup>
+        <StyledMultiSelectGroup
+          name="token-v2-invalid"
+          label="invalid"
+          onChange={action('click')}
+          selected={[]}
+          invalid
+        >
+          {options.map((option) => (
+            <MultiSelect value={option} key={option}>
+              {option}
+            </MultiSelect>
+          ))}
+        </StyledMultiSelectGroup>
+        <StyledMultiSelectGroup
+          name="token-v2-overlay"
+          label="overlay"
+          onChange={action('click')}
+          selected={['選択肢2']}
+        >
+          {options.map((option) => (
+            <MultiSelect variant="overlay" value={option} key={option}>
+              {option}
+            </MultiSelect>
+          ))}
+        </StyledMultiSelectGroup>
+      </div>
+    )
+  },
+}
+
 export const Playground: StoryObj<typeof MultiSelect> = {
   render: function Render(args) {
     const [selected, setSelected] = useState<string[]>([])
