@@ -10,8 +10,14 @@ export default {
 } as Meta<typeof TokenV2Styled>
 
 export const Styled: StoryObj<typeof TokenV2Styled> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
   render: TokenV2Styled,
 }
 export const Tailwind: StoryObj<typeof TokenV2Tailwind> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
   render: TokenV2Tailwind,
 }
