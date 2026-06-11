@@ -3,11 +3,11 @@
   --charcoal-border-width-focus-2: 4px;
   --charcoal-border-width-focus-1: 0px;
   /* 互換レイヤー: typography aliasから参照するv1 textプリミティブ */
-  --charcoal-text-v1-line-height-40\(for32\): 40px;
-  --charcoal-text-v1-line-height-28\(for20\): 28px;
-  --charcoal-text-v1-line-height-24\(for16\): 24px;
-  --charcoal-text-v1-line-height-22\(for14\): 22px;
-  --charcoal-text-v1-line-height-20\(for12\): 20px;
+  --charcoal-text-v1-line-height-40: 40px;
+  --charcoal-text-v1-line-height-28: 28px;
+  --charcoal-text-v1-line-height-24: 24px;
+  --charcoal-text-v1-line-height-22: 22px;
+  --charcoal-text-v1-line-height-20: 20px;
   --charcoal-text-v1-font-weight-default: 400;
   --charcoal-text-v1-font-weight-bold: 700;
   --charcoal-text-v1-font-size-32: 32px;
@@ -64,12 +64,6 @@
   --charcoal-color-surface-6-press: rgba(0, 0, 0, 0.899);
   --charcoal-color-surface-6-hover: rgba(0, 0, 0, 0.885);
   --charcoal-color-surface-6-default: rgba(0, 0, 0, 0.88);
-  --charcoal-color-surface-5\(100\%\)-press: rgba(0, 0, 0, 0);
-  --charcoal-color-surface-5\(100\%\)-hover: rgba(0, 0, 0, 0);
-  --charcoal-color-surface-5\(100\%\)-default: rgba(0, 0, 0, 0);
-  --charcoal-color-surface-5\(0\%\)-press: rgba(0, 0, 0, 0.32);
-  --charcoal-color-surface-5\(0\%\)-hover: rgba(0, 0, 0, 0.32);
-  --charcoal-color-surface-5\(0\%\)-default: rgba(0, 0, 0, 0.32);
   --charcoal-color-surface-4-press: rgba(0, 0, 0, 0.429);
   --charcoal-color-surface-4-hover: rgba(0, 0, 0, 0.347);
   --charcoal-color-surface-4-default: rgba(0, 0, 0, 0.32);
@@ -131,25 +125,17 @@
   --charcoal-color-background-1-hover: rgba(245, 245, 245, 1);
   --charcoal-color-background-1-default: rgba(255, 255, 255, 1);
   /* 互換レイヤー: v1相当のtypography値に解決 */
-  --charcoal-text-line-height-paragraph: var(
-    --charcoal-text-v1-line-height-22\(for14\)
-  );
+  --charcoal-text-line-height-paragraph: var(--charcoal-text-v1-line-height-22);
   --charcoal-text-line-height-heading-xxxs: var(
-    --charcoal-text-v1-line-height-22\(for14\)
+    --charcoal-text-v1-line-height-22
   );
   --charcoal-text-line-height-heading-xxs: var(
-    --charcoal-text-v1-line-height-24\(for16\)
+    --charcoal-text-v1-line-height-24
   );
   --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-0);
-  --charcoal-text-line-height-caption-s: var(
-    --charcoal-text-v1-line-height-20\(for12\)
-  );
-  --charcoal-text-line-height-caption-m: var(
-    --charcoal-text-v1-line-height-22\(for14\)
-  );
-  --charcoal-text-line-height-body: var(
-    --charcoal-text-v1-line-height-22\(for14\)
-  );
+  --charcoal-text-line-height-caption-s: var(--charcoal-text-v1-line-height-20);
+  --charcoal-text-line-height-caption-m: var(--charcoal-text-v1-line-height-22);
+  --charcoal-text-line-height-body: var(--charcoal-text-v1-line-height-22);
   --charcoal-text-font-weight-regular: var(
     --charcoal-text-v1-font-weight-default
   );
