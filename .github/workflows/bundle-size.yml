@@ -19,8 +19,8 @@ jobs:
       - uses: preactjs/compressed-size-action@v3
         with:
           install-script: 'pnpm install --frozen-lockfile'
-          build-script: 'build'
-          clean-script: 'clean'
+          build-script: 'pnpm run build'
+          clean-script: 'pnpm run clean'
 
           # パフォーマンス面の計測よりも、誤って変なものを bundle したことを検知したいので圧縮前で比較する
           compression: 'none'
