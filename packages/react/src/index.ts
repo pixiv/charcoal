@@ -96,7 +96,7 @@ export {
   type PaginationProps,
 } from './components/Pagination'
 export {
-  default as UnstableCarousel,
+  default as Carousel,
   type CarouselProps,
   type CarouselItem,
 } from './components/Carousel'
