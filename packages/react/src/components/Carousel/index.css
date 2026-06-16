@@ -2,7 +2,6 @@
   position: relative;
   display: block;
 
-  /* Full-Width: 画面の端まで Slot を広げる（標準的な full-bleed 手法） */
   &[data-full-width='true'] {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
@@ -14,7 +13,7 @@
 }
 
 .charcoal-carousel__scroller {
-  position: relative; /* 子の offsetLeft を scroller 相対にするため */
+  position: relative;
   display: flex;
   gap: 16px;
   overflow-x: auto;
@@ -22,64 +21,85 @@
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  outline: none; /* useFocusRing で代替 */
+  outline: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  /* useFocusRing が出す data-focus-visible のみで focus 表示。
-     Safari など :focus-visible の挙動が揺れる環境でも一貫させる。 */
   &[data-focus-visible] {
     box-shadow: inset 0 0 0 2px rgba(0, 150, 250, 0.56);
   }
 }
 
-/* Size S: 1アイテムずつ確実にスナップさせる */
 .charcoal-carousel[data-size='S'] .charcoal-carousel__scroller {
   gap: 0;
   scroll-snap-type: x mandatory;
 }
 
-/* Gradient: 端のアイテムが徐々にフェードイン（透過）する視覚効果（doc1） */
-.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__scroller {
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 6%,
-    black 94%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 6%,
-    black 94%,
-    transparent 100%
-  );
+/* グラデーション: はみ出してスクロール可能な側のみ、端のアイテムを背景色（白）へ
+   フェードさせる。mask による透過ではなく、72px の「背景色→透明」オーバーレイを
+   ビューポートに重ねて白で覆う。スクロール可能な側だけ data-can-prev/next で出し分ける。 */
+.charcoal-carousel[data-has-gradient='true']
+  .charcoal-carousel__viewport::before,
+.charcoal-carousel[data-has-gradient='true']
+  .charcoal-carousel__viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.2s opacity;
+  z-index: 1;
+}
+
+.charcoal-carousel[data-has-gradient='true']
+  .charcoal-carousel__viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.charcoal-carousel[data-has-gradient='true']
+  .charcoal-carousel__viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.charcoal-carousel[data-has-gradient='true'][data-can-prev='true']
+  .charcoal-carousel__viewport::before {
+  opacity: 1;
+}
+
+.charcoal-carousel[data-has-gradient='true'][data-can-next='true']
+  .charcoal-carousel__viewport::after {
+  opacity: 1;
 }
 
 .charcoal-carousel__item {
   flex: 0 0 auto;
   min-width: 0;
-  /* 中央に最も近いアイテムをコンポーネント中央に揃える (doc3 Full-Width 系の見え方) */
   scroll-snap-align: center;
 }
 
-.charcoal-carousel__item[data-size='S'] {
+.charcoal-carousel[data-size='S'] .charcoal-carousel__item {
   flex: 0 0 100%;
 }
 
+/* ── Navigation Buttons (charcoal IconButton, variant=Overlay size=S) ── */
+
+/* マスクと同じ 72px 1fr 72px グリッド。各ボタンは 72px ゾーンの中央に置く。 */
 .charcoal-carousel__navigation {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
   align-items: center;
-  justify-content: space-between;
-  padding-inline: 8px;
+  /* 白フェード（z-index: 1）より上にボタンを表示する */
+  z-index: 2;
 
   &[data-visible='false'] {
     display: none;
@@ -88,62 +108,33 @@
 
 .charcoal-carousel__navigation__item {
   pointer-events: auto;
-  appearance: none;
-  box-sizing: border-box;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.88);
-  color: var(--charcoal-text2, #292929);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
-  transition:
-    0.2s opacity,
-    0.2s background-color,
-    0.2s box-shadow;
 
-  &:hover:not(:disabled) {
-    background-color: rgb(255, 255, 255);
+  &[data-direction='prev'] {
+    grid-column: 1;
+    justify-self: center;
   }
 
-  &[data-focus-visible] {
-    outline: none;
-    box-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.16),
-      0 0 0 4px rgba(0, 150, 250, 0.32);
-  }
-
-  /* スクロール不能方向のボタンは非表示にして無効な操作を防ぐ（doc2 DO） */
-  &[data-hidden='true'] {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  /* chevron（CSS 境界線で描画） */
-  &::before {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-style: solid;
-    border-color: currentColor;
-  }
-
-  &[data-direction='prev']::before {
-    border-width: 0 0 2px 2px;
-    transform: translateX(2px) rotate(45deg);
-  }
-
-  &[data-direction='next']::before {
-    border-width: 2px 2px 0 0;
-    transform: translateX(-2px) rotate(45deg);
+  &[data-direction='next'] {
+    grid-column: 3;
+    justify-self: center;
   }
 }
+
+/* スクロール端では非表示。IconButton の disabled スタイル(opacity:0.32)より
+   高い詳細度で打ち消すため、ルートを前置する。 */
+.charcoal-carousel .charcoal-carousel__navigation__item[data-hidden='true'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* タッチデバイスではナビゲーションボタンを出さず、スワイプ操作に委ねる。 */
+@media (hover: none) and (pointer: coarse) {
+  .charcoal-carousel__navigation {
+    display: none;
+  }
+}
+
+/* ── Indicator: JS Fallback ── */
 
 .charcoal-carousel__indicator {
   display: flex;
@@ -173,12 +164,74 @@
     background-color: var(--charcoal-text3, rgba(0, 0, 0, 0.56));
   }
 
-  &[data-focus-visible] {
+  &:focus-visible {
     outline: 2px solid rgba(0, 150, 250, 0.56);
     outline-offset: 2px;
   }
 
   &[data-active='true'] {
     background-color: var(--charcoal-text2, #292929);
+  }
+}
+
+/* ── CSS Scroll Markers (progressive enhancement) ── */
+
+@supports (scroll-marker-group: after) {
+  .charcoal-carousel[data-indicator='true'] {
+    padding-bottom: 28px;
+  }
+
+  .charcoal-carousel__scroller {
+    anchor-name: --charcoal-carousel;
+    scroll-marker-group: after;
+
+    &::scroll-button(*) {
+      content: none;
+    }
+
+    &::scroll-marker-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding-block: 12px 4px;
+
+      position: absolute;
+      position-anchor: --charcoal-carousel;
+      top: anchor(bottom);
+      justify-self: anchor-center;
+    }
+  }
+
+  .charcoal-carousel[data-indicator='false'] .charcoal-carousel__scroller {
+    scroll-marker-group: none;
+  }
+
+  .charcoal-carousel__item::scroll-marker {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--charcoal-text4, rgba(0, 0, 0, 0.32));
+    cursor: pointer;
+    transition: 0.2s background-color;
+
+    &:hover {
+      background-color: var(--charcoal-text3, rgba(0, 0, 0, 0.56));
+    }
+
+    &:focus {
+      outline: 2px solid rgba(0, 150, 250, 0.56);
+      outline-offset: 2px;
+    }
+
+    &:target-current {
+      background-color: var(--charcoal-text2, #292929);
+    }
+  }
+
+  .charcoal-carousel__indicator {
+    display: none;
   }
 }

@@ -5,13 +5,40 @@ const sampleImage = (
   <img
     src="/carousel-sample.png"
     alt="サンプル画像"
-    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      display: 'block',
+    }}
   />
 )
 
 const items: CarouselItem[] = Array.from({ length: 6 }, (_, i) => ({
   id: `item-${i + 1}`,
   children: sampleImage,
+}))
+
+// 横幅が確定したスロット（defaultScroll の初期位置計算を確認するため）
+const numberedItems: CarouselItem[] = Array.from({ length: 10 }, (_, i) => ({
+  id: `num-${i + 1}`,
+  children: (
+    <div
+      style={{
+        width: 200,
+        height: 120,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: i % 2 === 0 ? '#cfe3ff' : '#ffe3cf',
+        borderRadius: 8,
+        font: 'bold 32px sans-serif',
+        color: '#333',
+      }}
+    >
+      {i + 1}
+    </div>
+  ),
 }))
 
 export default {
@@ -60,6 +87,46 @@ export const NavigationButtonsOnSizeS: StoryObj<typeof Carousel> = {
 
 export const IndicatorOnSizeM: StoryObj<typeof Carousel> = {
   args: { size: 'M', indicator: true },
+}
+
+// 横幅が確定したスロット（番号付き）
+export const DefaultScrollCenter: StoryObj<typeof Carousel> = {
+  args: { size: 'M', items: numberedItems, defaultScroll: { align: 'center' } },
+}
+
+export const DefaultScrollRight: StoryObj<typeof Carousel> = {
+  args: { size: 'M', items: numberedItems, defaultScroll: { align: 'right' } },
+}
+
+// 遅延読み込み画像（マウント時に幅が未確定）でも初期位置が効くことの確認
+export const DefaultScrollCenterAsyncImages: StoryObj<typeof Carousel> = {
+  args: { size: 'M', items, defaultScroll: { align: 'center' } },
+}
+
+// 白フェードが見えることの確認用（暗色コンテンツなら白フェードが明確に出る）
+const darkTiles: CarouselItem[] = Array.from({ length: 10 }, (_, i) => ({
+  id: `dark-${i + 1}`,
+  children: (
+    <div
+      style={{
+        width: 220,
+        height: 140,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#2a3b8f',
+        color: '#fff',
+        borderRadius: 4,
+        font: 'bold 28px sans-serif',
+      }}
+    >
+      {i + 1}
+    </div>
+  ),
+}))
+
+export const GradientOnDarkContent: StoryObj<typeof Carousel> = {
+  args: { size: 'M', hasGradient: true, items: darkTiles },
 }
 
 export const AllControls: StoryObj<typeof Carousel> = {
