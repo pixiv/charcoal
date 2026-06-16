@@ -19,8 +19,8 @@ const items: CarouselItem[] = Array.from({ length: 6 }, (_, i) => ({
   children: sampleImage,
 }))
 
-// 横幅が確定したスロット（defaultScroll の初期位置計算を確認するため）
-const numberedItems: CarouselItem[] = Array.from({ length: 10 }, (_, i) => ({
+// 横幅が確定したスロット（defaultScroll の初期位置計算と 0.75 ページ送りを確認するため）
+const numberedItems: CarouselItem[] = Array.from({ length: 20 }, (_, i) => ({
   id: `num-${i + 1}`,
   children: (
     <div
