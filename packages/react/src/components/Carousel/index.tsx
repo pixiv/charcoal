@@ -1,10 +1,25 @@
 import './index.css'
 
-import { memo, useCallback, useRef, type ReactNode } from 'react'
+import {
+  memo,
+  useCallback,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from 'react'
 import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
-import { useCarousel } from './useCarousel'
+import { CarouselItem as CarouselSlide } from './CarouselItem'
+import {
+  createCarouselStore,
+  INITIAL_CAROUSEL_STATE,
+  type CarouselState,
+} from './carouselStore'
+import { useCarouselScroller } from './useCarouselScroller'
+
+const getServerSnapshot = (): CarouselState => INITIAL_CAROUSEL_STATE
 
 export type CarouselItem = {
   id: string
@@ -102,16 +117,27 @@ const Carousel = ({
   const showIndicator = indicator ?? size === 'S'
 
   const scrollerRef = useRef<HTMLDivElement>(null)
+  const [store] = useState(createCarouselStore)
 
-  const { activeIndex, canPrev, canNext, scrollToItem, scrollByStep } =
-    useCarousel(scrollerRef, props.items.length, {
-      align,
-      offset,
-      scrollStepRatio,
-    })
+  const { scrollByStep, onItemResize } = useCarouselScroller(
+    scrollerRef,
+    store,
+    props.items.length,
+    { align, offset, scrollStepRatio },
+  )
 
-  // ←/→ でスクロール。コンテナにフォーカスがある時のみ。react-aria の useKeyboard で
-  // イベントを正規化する（既定で propagation 停止。未処理キーは継続させる）。
+  const { activeIndex, canPrev, canNext } = useSyncExternalStore(
+    store.subscribe,
+    store.getSnapshot,
+    getServerSnapshot,
+  )
+
+  const scrollToItem = useCallback(
+    (index: number) => store.dispatch({ type: 'requestScroll', index }),
+    [store],
+  )
+
+  // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
     onKeyDown: (e) => {
       if (e.key === 'ArrowRight') {
@@ -152,10 +178,15 @@ const Carousel = ({
           tabIndex={0}
           data-focus-visible={scrollerFocusVisible || undefined}
         >
-          {props.items.map((item) => (
-            <div key={item.id} className="charcoal-carousel__item">
+          {props.items.map((item, i) => (
+            <CarouselSlide
+              key={item.id}
+              index={i}
+              store={store}
+              onResize={onItemResize}
+            >
               {item.children}
-            </div>
+            </CarouselSlide>
           ))}
         </div>
 
@@ -177,8 +208,6 @@ const Carousel = ({
         </div>
       </div>
 
-      {/* CSS Scroll Markers 非対応ブラウザ向けの JS インジケーター（fallback）。
-          対応ブラウザでは CSS の @supports が display:none で隠す。 */}
       <div
         className="charcoal-carousel__indicator"
         data-visible={showIndicator}

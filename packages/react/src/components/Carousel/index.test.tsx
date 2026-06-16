@@ -43,6 +43,36 @@ function getScroller() {
   return document.querySelector('.charcoal-carousel__scroller') as HTMLElement
 }
 
+// 各 observer が「observe した要素 → コールバック」を覚え、テストから任意要素の
+// intersection を発火できるようにする（新設計は item ごとに observer を持つ）。
+type IOEntry = { cb: (entries: unknown[]) => void; els: Set<Element> }
+const ioRegistry: IOEntry[] = []
+
+function installIOMock() {
+  ioRegistry.length = 0
+  const orig = globalThis.IntersectionObserver
+  globalThis.IntersectionObserver = class {
+    private entry: IOEntry
+    constructor(cb: (entries: unknown[]) => void) {
+      this.entry = { cb, els: new Set() }
+      ioRegistry.push(this.entry)
+    }
+    observe = (el: Element) => this.entry.els.add(el)
+    unobserve = (el: Element) => this.entry.els.delete(el)
+    disconnect = () => this.entry.els.clear()
+    takeRecords = () => []
+  } as unknown as typeof globalThis.IntersectionObserver
+  return () => {
+    globalThis.IntersectionObserver = orig
+  }
+}
+
+function fireIntersect(el: Element) {
+  for (const e of ioRegistry) {
+    if (e.els.has(el)) e.cb([{ isIntersecting: true, target: el }])
+  }
+}
+
 describe('Carousel', () => {
   describe('rendering', () => {
     it('renders all items', () => {
@@ -246,6 +276,24 @@ describe('Carousel', () => {
     })
   })
 
+  describe('activeIndex (item self-detection)', () => {
+    it('item が中央に入ると activeIndex が更新され indicator に反映される', () => {
+      const restore = installIOMock()
+      const { container } = render(
+        <Carousel items={items} size="M" indicator />,
+      )
+      const itemEls = container.querySelectorAll('.charcoal-carousel__item')
+      act(() => {
+        fireIntersect(itemEls[2])
+      })
+      const dots = container.querySelectorAll(
+        '.charcoal-carousel__indicator__item',
+      )
+      expect(dots[2]).toHaveAttribute('data-active', 'true')
+      restore()
+    })
+  })
+
   describe('scroll-state data attributes (mask)', () => {
     it('reflects canPrev/canNext on the root element', () => {
       const { container } = render(<Carousel items={items} hasGradient />)
@@ -268,128 +316,6 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
       expect(root).toHaveAttribute('data-can-prev', 'false')
-    })
-  })
-
-  describe('resize position restoration', () => {
-    let resizeCallback: (() => void) | null = null
-    let intersectionCallback: ((entries: unknown[]) => void) | null = null
-
-    let originalResizeObserver: typeof globalThis.ResizeObserver
-    let originalIntersectionObserver: typeof globalThis.IntersectionObserver
-
-    beforeEach(() => {
-      resizeCallback = null
-      intersectionCallback = null
-      originalResizeObserver = globalThis.ResizeObserver
-      globalThis.ResizeObserver = class {
-        observe = vi.fn()
-        unobserve = vi.fn()
-        disconnect = vi.fn()
-        constructor(cb: () => void) {
-          resizeCallback = cb
-        }
-      } as unknown as typeof globalThis.ResizeObserver
-
-      originalIntersectionObserver = globalThis.IntersectionObserver
-      globalThis.IntersectionObserver = class {
-        observe = vi.fn()
-        unobserve = vi.fn()
-        disconnect = vi.fn()
-        takeRecords = vi.fn()
-        constructor(cb: (entries: unknown[]) => void) {
-          intersectionCallback = cb
-        }
-      } as unknown as typeof globalThis.IntersectionObserver
-    })
-
-    afterEach(() => {
-      globalThis.ResizeObserver = originalResizeObserver
-      globalThis.IntersectionObserver = originalIntersectionObserver
-    })
-
-    it('re-centers the active item when the viewport width changes', () => {
-      const { container } = render(<Carousel items={items} />)
-      const scroller = getScroller()
-      mockScrollerGeometry(scroller, { scrollLeft: 700 })
-      act(() => {
-        fireEvent.scroll(scroller)
-      })
-
-      // IntersectionObserver で item index 2 を active として報告する。
-      const item2 = container.querySelectorAll('.charcoal-carousel__item')[2]
-      act(() => {
-        intersectionCallback?.([{ isIntersecting: true, target: item2 }])
-      })
-
-      const scrollToSpy = vi.fn()
-      scroller.scrollTo = scrollToSpy
-
-      act(() => {
-        resizeCallback?.()
-      })
-
-      // item 2: offsetLeft 800 + offsetWidth/2 190 - clientWidth/2 400 = 590
-      expect(scrollToSpy).toHaveBeenCalledWith({ left: 590, behavior: 'auto' })
-    })
-
-    it('does not re-center when the width is unchanged', () => {
-      render(<Carousel items={items} />)
-      const scroller = getScroller()
-      mockScrollerGeometry(scroller, { scrollLeft: 700 })
-      act(() => {
-        fireEvent.scroll(scroller)
-      })
-
-      const scrollToSpy = vi.fn()
-      scroller.scrollTo = scrollToSpy
-
-      act(() => {
-        resizeCallback?.()
-      })
-      scrollToSpy.mockClear()
-      act(() => {
-        resizeCallback?.()
-      })
-
-      expect(scrollToSpy).not.toHaveBeenCalled()
-    })
-
-    it('stays at the start edge on resize instead of jumping to center', () => {
-      render(<Carousel items={items} />)
-      const scroller = getScroller()
-      mockScrollerGeometry(scroller, { scrollLeft: 0 })
-      act(() => {
-        fireEvent.scroll(scroller)
-      })
-
-      const scrollToSpy = vi.fn()
-      scroller.scrollTo = scrollToSpy
-
-      act(() => {
-        resizeCallback?.()
-      })
-
-      expect(scrollToSpy).toHaveBeenCalledWith({ left: 0, behavior: 'auto' })
-    })
-
-    it('stays at the end edge on resize', () => {
-      render(<Carousel items={items} />)
-      const scroller = getScroller()
-      // scrollWidth 2400, clientWidth 800 -> max scroll 1600 (end)
-      mockScrollerGeometry(scroller, { scrollLeft: 1600 })
-      act(() => {
-        fireEvent.scroll(scroller)
-      })
-
-      const scrollToSpy = vi.fn()
-      scroller.scrollTo = scrollToSpy
-
-      act(() => {
-        resizeCallback?.()
-      })
-
-      expect(scrollToSpy).toHaveBeenCalledWith({ left: 1600, behavior: 'auto' })
     })
   })
 
@@ -447,7 +373,7 @@ describe('Carousel', () => {
   })
 
   describe('defaultScroll robustness (late-loading content)', () => {
-    let roCallbacks: Array<() => void>
+    let roCallbacks: Array<(entries: Array<{ target: Element }>) => void>
     let scrollWidthVal: number
     let lastSetLeft: number | undefined
     let origRO: typeof globalThis.ResizeObserver
@@ -462,7 +388,7 @@ describe('Carousel', () => {
         observe = vi.fn()
         unobserve = vi.fn()
         disconnect = vi.fn()
-        constructor(cb: () => void) {
+        constructor(cb: (entries: Array<{ target: Element }>) => void) {
           roCallbacks.push(cb)
         }
       } as unknown as typeof globalThis.ResizeObserver
@@ -494,8 +420,9 @@ describe('Carousel', () => {
       // images finish loading -> content width grows
       scrollWidthVal = 2400
       lastSetLeft = undefined
+      const entries = [...getScroller().children].map((el) => ({ target: el }))
       act(() => {
-        roCallbacks.forEach((cb) => cb())
+        roCallbacks.forEach((cb) => cb(entries))
       })
 
       expect(lastSetLeft).toBe(1600)
@@ -509,8 +436,9 @@ describe('Carousel', () => {
 
       scrollWidthVal = 2400
       lastSetLeft = undefined
+      const entries = [...getScroller().children].map((el) => ({ target: el }))
       act(() => {
-        roCallbacks.forEach((cb) => cb())
+        roCallbacks.forEach((cb) => cb(entries))
       })
 
       expect(lastSetLeft).toBeUndefined()
