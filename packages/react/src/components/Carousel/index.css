@@ -176,6 +176,9 @@
 
 /* ── CSS Scroll Markers (progressive enhancement) ── */
 
+/* CSS Scroll Markers / Anchor Positioning は新しい仕様で、stylelint がプロパティ・
+   擬似要素・擬似クラスを未知と判定するため、この @supports ブロックでは該当ルールを無効化する。 */
+/* stylelint-disable property-no-unknown, selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
 @supports (scroll-marker-group: after) {
   .charcoal-carousel[data-indicator='true'] {
     padding-bottom: 28px;
@@ -235,3 +238,4 @@
     display: none;
   }
 }
+/* stylelint-enable property-no-unknown, selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
