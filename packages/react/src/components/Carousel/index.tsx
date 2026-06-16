@@ -1,19 +1,10 @@
 import './index.css'
 
-import {
-  memo,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from 'react'
-import { useFocusRing } from 'react-aria'
+import { memo, useCallback, useRef, type ReactNode } from 'react'
+import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
-import { createCarouselStore, type CarouselStore } from './carouselStore'
-import { InitialScrollProvider } from './InitialScroll'
-import { useSnapObserver } from './useSnapObserver'
+import { useCarousel } from './useCarousel'
 
 export type CarouselItem = {
   id: string
@@ -96,35 +87,6 @@ const CarouselIndicatorItem = ({
   )
 }
 
-type CarouselItemProps = Readonly<{
-  index: number
-  store: CarouselStore
-  children: ReactNode
-}>
-
-const CarouselItem = ({ index, store, children }: CarouselItemProps) => {
-  const ref = useRef<HTMLDivElement>(null)
-  // store を購読し、自分が対象になった dispatch の時だけ自分自身の要素に
-  // scrollIntoView を発行する。副作用なので render には反映せず、再レンダーは起きない。
-  useEffect(
-    () =>
-      store.subscribe(() => {
-        if (store.getSnapshot() !== index) return
-        ref.current?.scrollIntoView({
-          behavior: 'smooth',
-          inline: 'center',
-          block: 'nearest',
-        })
-      }),
-    [store, index],
-  )
-  return (
-    <div ref={ref} className="charcoal-carousel__item">
-      {children}
-    </div>
-  )
-}
-
 const Carousel = ({
   size = 'M',
   navigationButtons,
@@ -139,49 +101,30 @@ const Carousel = ({
   const showNavigationButtons = navigationButtons ?? size === 'M'
   const showIndicator = indicator ?? size === 'S'
 
-  const rootRef = useRef<HTMLDivElement>(null)
   const scrollerRef = useRef<HTMLDivElement>(null)
-  // スクロールコマンド用ストア。indicator は index を dispatch するだけで、
-  // 実際の scrollIntoView は対象 item が自分自身に対して発行する。
-  const [store] = useState(createCarouselStore)
 
-  const { activeIndex, canPrev, canNext } = useSnapObserver(
-    scrollerRef,
-    props.items.length,
-  )
+  const { activeIndex, canPrev, canNext, scrollToItem, scrollByStep } =
+    useCarousel(scrollerRef, props.items.length, {
+      align,
+      offset,
+      scrollStepRatio,
+    })
 
-  const scrollToItem = useCallback(
-    (index: number) => {
-      store.dispatch({ type: 'scrollTo', index })
-    },
-    [store],
-  )
-
-  const scrollByStep = useCallback(
-    (direction: Direction) => {
-      const el = scrollerRef.current
-      if (!el) return
-      const delta = el.clientWidth * scrollStepRatio
-      el.scrollBy({
-        left: direction === 'next' ? delta : -delta,
-        behavior: 'smooth',
-      })
-    },
-    [scrollStepRatio],
-  )
-
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLDivElement>) => {
+  // ←/→ でスクロール。コンテナにフォーカスがある時のみ。react-aria の useKeyboard で
+  // イベントを正規化する（既定で propagation 停止。未処理キーは継続させる）。
+  const { keyboardProps } = useKeyboard({
+    onKeyDown: (e) => {
       if (e.key === 'ArrowRight') {
         e.preventDefault()
         scrollByStep('next')
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault()
         scrollByStep('prev')
+      } else {
+        e.continuePropagation()
       }
     },
-    [scrollByStep],
-  )
+  })
 
   const {
     focusProps: scrollerFocusProps,
@@ -189,75 +132,68 @@ const Carousel = ({
   } = useFocusRing()
 
   return (
-    <InitialScrollProvider
-      scrollerRef={scrollerRef}
-      rootRef={rootRef}
-      align={align}
-      offset={offset}
+    <div
+      className={className}
+      data-size={size}
+      data-has-gradient={hasGradient}
+      data-full-width={fullWidth}
+      data-indicator={showIndicator}
+      data-can-prev={canPrev}
+      data-can-next={canNext}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Carousel"
     >
-      <div
-        ref={rootRef}
-        className={className}
-        data-size={size}
-        data-has-gradient={hasGradient}
-        data-full-width={fullWidth}
-        data-indicator={showIndicator}
-        data-can-prev={canPrev}
-        data-can-next={canNext}
-        role="region"
-        aria-roledescription="carousel"
-        aria-label="Carousel"
-      >
-        <div className="charcoal-carousel__viewport">
-          <div
-            {...scrollerFocusProps}
-            ref={scrollerRef}
-            className="charcoal-carousel__scroller"
-            tabIndex={0}
-            onKeyDown={handleKeyDown}
-            data-focus-visible={scrollerFocusVisible || undefined}
-          >
-            {props.items.map((item, i) => (
-              <CarouselItem key={item.id} index={i} store={store}>
-                {item.children}
-              </CarouselItem>
-            ))}
-          </div>
-
-          <div
-            className="charcoal-carousel__navigation"
-            data-visible={showNavigationButtons}
-            aria-hidden={!showNavigationButtons}
-          >
-            <CarouselNavigationButton
-              direction="prev"
-              canScroll={canPrev}
-              onScroll={scrollByStep}
-            />
-            <CarouselNavigationButton
-              direction="next"
-              canScroll={canNext}
-              onScroll={scrollByStep}
-            />
-          </div>
+      <div className="charcoal-carousel__viewport">
+        <div
+          {...mergeProps(scrollerFocusProps, keyboardProps)}
+          ref={scrollerRef}
+          className="charcoal-carousel__scroller"
+          tabIndex={0}
+          data-focus-visible={scrollerFocusVisible || undefined}
+        >
+          {props.items.map((item) => (
+            <div key={item.id} className="charcoal-carousel__item">
+              {item.children}
+            </div>
+          ))}
         </div>
 
         <div
-          className="charcoal-carousel__indicator"
-          data-visible={showIndicator}
-          aria-hidden={!showIndicator}
+          className="charcoal-carousel__navigation"
+          data-visible={showNavigationButtons}
+          aria-hidden={!showNavigationButtons}
         >
-          {props.items.map((item, i) => (
-            <CarouselIndicatorItem
-              key={item.id}
-              index={i}
-              isActive={i === activeIndex}
-              onSelect={scrollToItem}
-            />
-          ))}
+          <CarouselNavigationButton
+            direction="prev"
+            canScroll={canPrev}
+            onScroll={scrollByStep}
+          />
+          <CarouselNavigationButton
+            direction="next"
+            canScroll={canNext}
+            onScroll={scrollByStep}
+          />
         </div>
       </div>
-    </InitialScrollProvider>
+
+      {/* CSS Scroll Markers 非対応ブラウザ向けの JS インジケーター（fallback）。
+          対応ブラウザでは CSS の @supports が display:none で隠す。 */}
+      <div
+        className="charcoal-carousel__indicator"
+        data-visible={showIndicator}
+        aria-hidden={!showIndicator}
+      >
+        {props.items.map((item, i) => (
+          <CarouselIndicatorItem
+            key={item.id}
+            index={i}
+            isActive={i === activeIndex}
+            onSelect={scrollToItem}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
 

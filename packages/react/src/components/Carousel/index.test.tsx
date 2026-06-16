@@ -1,4 +1,5 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
+import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
 import Carousel, { type CarouselItem } from '.'
 
@@ -501,13 +502,10 @@ describe('Carousel', () => {
     })
 
     it('stops re-applying once the user interacts', () => {
-      const { container } = render(
-        <Carousel items={items} defaultScroll={{ align: 'right' }} />,
-      )
-      const root = container.querySelector('.charcoal-carousel') as HTMLElement
+      render(<Carousel items={items} defaultScroll={{ align: 'right' }} />)
 
-      // user interacts before the content settles
-      fireEvent.pointerDown(root)
+      // user interacts (pointerdown on the scroller) before the content settles
+      fireEvent.pointerDown(getScroller())
 
       scrollWidthVal = 2400
       lastSetLeft = undefined
@@ -543,6 +541,57 @@ describe('Carousel', () => {
     it('sets full-width data attribute', () => {
       const { container } = render(<Carousel items={items} fullWidth />)
       expect(container.querySelector("[data-full-width='true']")).toBeTruthy()
+    })
+  })
+
+  describe('SSR (server rendering)', () => {
+    // jsdom では window が定義されているため renderToString 時に
+    // 「useLayoutEffect does nothing on the server」警告が出る（実 SSR=window 無しでは
+    // useEffect に切り替わり出ない）。テスト出力を汚さないよう、この警告だけ抑制する。
+    let errorSpy: ReturnType<typeof vi.spyOn>
+    beforeEach(() => {
+      // eslint-disable-next-line no-console
+      const original = console.error
+      errorSpy = vi.spyOn(console, 'error').mockImplementation((...args) => {
+        if (
+          typeof args[0] === 'string' &&
+          args[0].includes('useLayoutEffect does nothing on the server')
+        ) {
+          return
+        }
+        // eslint-disable-next-line no-console
+        original(...args)
+      })
+    })
+    afterEach(() => {
+      errorSpy.mockRestore()
+    })
+
+    it('renders to static HTML without throwing', () => {
+      // engine は effect 内でのみ生成され、useSyncExternalStore は
+      // getServerSnapshot を使うため、サーバー描画でブラウザ API に触れない。
+      expect(() =>
+        renderToString(
+          <Carousel items={items} defaultScroll={{ align: 'center' }} />,
+        ),
+      ).not.toThrow()
+    })
+
+    it('uses the server snapshot (canPrev/canNext = false) and renders items + indicator', () => {
+      const html = renderToString(<Carousel items={items} size="M" />)
+
+      // サーバースナップショットでは canPrev/canNext は false。
+      expect(html).toContain('data-can-prev="false"')
+      expect(html).toContain('data-can-next="false"')
+      // 全アイテムが描画される。
+      for (let i = 0; i < 6; i++) {
+        expect(html).toContain(`data-testid="slide-${i}"`)
+      }
+      // インジケーターは常に描画される（表示制御は CSS @supports が担当）。
+      expect(html).toContain('charcoal-carousel__indicator')
+      // ナビゲーションボタンは存在する（サーバースナップショットでは無効状態）。
+      expect(html).toContain('aria-label="Previous"')
+      expect(html).toContain('aria-label="Next"')
     })
   })
 })
