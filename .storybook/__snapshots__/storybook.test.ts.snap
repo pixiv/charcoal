@@ -3570,10 +3570,10 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > FirstPage 1`] =
         aria-label="Previous"
         class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
+        data-hidden="true"
         data-size="M"
         data-variant="Default"
         disabled=""
-        hidden=""
       >
         <pixiv-icon
           name="24/Prev"
@@ -3714,10 +3714,10 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > LastPage 1`] = 
         aria-label="Next"
         class="charcoal-icon-button charcoal-pagination-nav-button"
         data-active="false"
+        data-hidden="true"
         data-size="M"
         data-variant="Default"
         disabled=""
-        hidden=""
       >
         <pixiv-icon
           name="24/Next"
@@ -4589,7 +4589,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ful
       class="charcoal-segmented-control"
       data-full-width="true"
       data-uniform-segment-width="false"
-      id="react-aria-:ru:"
+      id="test-id"
       role="radiogroup"
     >
       <label
@@ -4656,7 +4656,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Obj
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="false"
-      id="react-aria-:r6:"
+      id="test-id"
       role="radiogroup"
     >
       <label
@@ -4739,7 +4739,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Ran
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="false"
-      id="react-aria-:rc:"
+      id="test-id"
       role="radiogroup"
     >
       <label
@@ -4806,7 +4806,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="false"
-      id="react-aria-:r0:"
+      id="test-id"
       role="radiogroup"
     >
       <label
@@ -4873,7 +4873,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       class="charcoal-segmented-control"
       data-full-width="true"
       data-uniform-segment-width="true"
-      id="react-aria-:r14:"
+      id="test-id"
       role="radiogroup"
     >
       <label
@@ -4940,7 +4940,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="true"
-      id="react-aria-:ri:"
+      id="test-id"
       role="radiogroup"
     >
       <label
@@ -5007,7 +5007,7 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
       class="charcoal-segmented-control"
       data-full-width="false"
       data-uniform-segment-width="true"
-      id="react-aria-:ro:"
+      id="test-id"
       role="radiogroup"
     >
       <label

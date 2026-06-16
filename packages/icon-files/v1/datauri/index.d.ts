@@ -272,6 +272,7 @@ declare var _default: {
 "16/BookmarkOn": { uri: string, isSetCurrentcolor: boolean };
 "16/Check": { uri: string, isSetCurrentcolor: boolean };
 "16/Comment": { uri: string, isSetCurrentcolor: boolean };
+"16/Description": { uri: string, isSetCurrentcolor: boolean };
 "16/Dot": { uri: string, isSetCurrentcolor: boolean };
 "16/Down": { uri: string, isSetCurrentcolor: boolean };
 "16/Error": { uri: string, isSetCurrentcolor: boolean };

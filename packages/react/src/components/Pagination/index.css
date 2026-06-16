@@ -103,10 +103,8 @@
 }
 /* stylelint-enable no-descending-specificity */
 
-/* Kept flat: different root class from .charcoal-pagination-button */
-.charcoal-pagination-nav-button[hidden] {
+.charcoal-pagination-nav-button[data-hidden] {
   visibility: hidden;
-  display: block;
 }
 
 .charcoal-pagination-spacer {
