@@ -1,7 +1,4 @@
 .charcoal-text-ellipsis {
-  --charcoal-text-ellipsis-line-limit: ;
-  --charcoal-text-ellipsis-line-height: ;
-
   overflow: hidden;
   overflow-wrap: break-word;
   display: -webkit-box;
