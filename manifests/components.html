@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/40 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">36/40 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/174 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">29 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/40 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">36/40 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/190 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">29 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>41.8s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>39.1s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -838,7 +838,7 @@ const StyledButton = styled.button`
       <div class="badges">
         <label for="c-1-react-button-err" class="badge err as-toggle">prop type error</label>
         <label for="c-1-react-button-info" class="badge info as-toggle">1 info</label>
-        <label for="c-1-react-button-stories" class="badge ok as-toggle">17 stories</label>
+        <label for="c-1-react-button-stories" class="badge ok as-toggle">18 stories</label>
         
       </div>
     </div>
@@ -897,6 +897,24 @@ export const Overlay: StoryObj&lt;typeof Button&gt; = {
 
 export const Danger: StoryObj&lt;typeof Button&gt; = {
   render: () =&gt; &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;,
+}
+
+export const TokenV2: StoryObj&lt;typeof Button&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
+  render: () =&gt; (
+    &lt;div style={{ display: &#39;flex&#39;, flexWrap: &#39;wrap&#39;, gap: 8 }}&gt;
+      &lt;Button&gt;Default&lt;/Button&gt;
+      &lt;Button variant=&quot;Primary&quot;&gt;Primary&lt;/Button&gt;
+      &lt;Button variant=&quot;Navigation&quot;&gt;Navigation&lt;/Button&gt;
+      &lt;Button variant=&quot;Overlay&quot;&gt;Overlay&lt;/Button&gt;
+      &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;
+      &lt;Button isActive&gt;Active&lt;/Button&gt;
+      &lt;Button disabled&gt;Disabled&lt;/Button&gt;
+      &lt;Button size=&quot;S&quot;&gt;Small&lt;/Button&gt;
+    &lt;/div&gt;
+  ),
 }
 
 export const Small: StoryObj&lt;typeof Button&gt; = {
@@ -1108,6 +1126,26 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
               
               
               <pre><code>const Danger = () =&gt; &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, flexWrap: &#39;wrap&#39;, gap: 8 }}&gt;
+    &lt;Button&gt;Default&lt;/Button&gt;
+    &lt;Button variant=&quot;Primary&quot;&gt;Primary&lt;/Button&gt;
+    &lt;Button variant=&quot;Navigation&quot;&gt;Navigation&lt;/Button&gt;
+    &lt;Button variant=&quot;Overlay&quot;&gt;Overlay&lt;/Button&gt;
+    &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;
+    &lt;Button isActive&gt;Active&lt;/Button&gt;
+    &lt;Button disabled&gt;Disabled&lt;/Button&gt;
+    &lt;Button size=&quot;S&quot;&gt;Small&lt;/Button&gt;
+  &lt;/div&gt;
+);</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1449,7 +1487,7 @@ scrollAmountCoef?: number = 0.75</code></pre>
       <div class="badges">
         <label for="c-3-react-checkbox-props" class="badge ok as-toggle">4 prop types</label>
         <label for="c-3-react-checkbox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-3-react-checkbox-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-3-react-checkbox-stories" class="badge ok as-toggle">7 stories</label>
         
       </div>
     </div>
@@ -1589,6 +1627,26 @@ rounded?: boolean</code></pre>
     &lt;Checkbox name=&quot;labelled&quot; invalid&gt;
       Invalid
     &lt;/Checkbox&gt;
+  )
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; {
+  return (
+    &lt;div style={{ display: &#39;grid&#39;, gap: 16 }}&gt;
+      &lt;Checkbox&gt;Default&lt;/Checkbox&gt;
+      &lt;Checkbox checked&gt;Checked&lt;/Checkbox&gt;
+      &lt;Checkbox invalid&gt;Invalid&lt;/Checkbox&gt;
+      &lt;Checkbox checked disabled&gt;
+        Disabled
+      &lt;/Checkbox&gt;
+    &lt;/div&gt;
   )
 };</code></pre>
             </div>
@@ -1751,7 +1809,7 @@ rounded?: boolean</code></pre>
       <div class="badges">
         <label for="c-5-react-clickable-err" class="badge err as-toggle">prop type error</label>
         <label for="c-5-react-clickable-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-react-clickable-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-5-react-clickable-stories" class="badge ok as-toggle">3 stories</label>
         
       </div>
     </div>
@@ -1804,6 +1862,20 @@ export const Link: StoryObj = {
     &lt;/Clickable&gt;
   ),
 }
+
+export const TokenV2: StoryObj = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
+  render: () =&gt; (
+    &lt;div style={{ display: &#39;flex&#39;, gap: 16 }}&gt;
+      &lt;Clickable onClick={action(&#39;click&#39;)}&gt;button&lt;/Clickable&gt;
+      &lt;Clickable component=&quot;a&quot; href=&quot;#&quot; onClick={action(&#39;click&#39;)}&gt;
+        link
+      &lt;/Clickable&gt;
+    &lt;/div&gt;
+  ),
+}
 </code></pre></div>
     </div>
         </div>
@@ -1849,6 +1921,22 @@ export const Link: StoryObj = {
   &lt;Clickable component=&quot;a&quot; href=&quot;#&quot; onClick={action(&#39;click&#39;)}&gt;
     link
   &lt;/Clickable&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, gap: 16 }}&gt;
+    &lt;Clickable onClick={action(&#39;click&#39;)}&gt;button&lt;/Clickable&gt;
+    &lt;Clickable component=&quot;a&quot; href=&quot;#&quot; onClick={action(&#39;click&#39;)}&gt;
+      link
+    &lt;/Clickable&gt;
+  &lt;/div&gt;
 );</code></pre>
             </div>
         </div>
@@ -9519,7 +9607,7 @@ export const Default = {
       <div class="badges">
         <label for="c-8-react-dropdownselector-props" class="badge ok as-toggle">15 prop types</label>
         <label for="c-8-react-dropdownselector-info" class="badge info as-toggle">1 info</label>
-        <label for="c-8-react-dropdownselector-stories" class="badge ok as-toggle">16 stories</label>
+        <label for="c-8-react-dropdownselector-stories" class="badge ok as-toggle">17 stories</label>
         
       </div>
     </div>
@@ -10126,6 +10214,57 @@ value: string</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = function Render(props) {
+  const [selected, setSelected] = useState(&#39;option-3&#39;)
+  const [invalidSelected, setInvalidSelected] = useState(&#39;option-1&#39;)
+
+  return (
+    &lt;div style={{ display: &#39;grid&#39;, gap: 24, width: 288 }}&gt;
+      &lt;DropdownSelector
+        {...props}
+        value={selected}
+        onChange={setSelected}
+        label=&quot;Label&quot;
+        showLabel
+        required
+        requiredText=&quot;required&quot;
+        subLabel=&quot;SubLabel&quot;
+        assistiveText=&quot;assistiveText&quot;
+      &gt;
+        &lt;DropdownMenuItem value=&quot;option-1&quot;&gt;Option 1&lt;/DropdownMenuItem&gt;
+        &lt;DropdownMenuItem value=&quot;option-2&quot; disabled&gt;
+          Option 2 (disabled)
+        &lt;/DropdownMenuItem&gt;
+        &lt;DropdownMenuItem
+          value=&quot;option-3&quot;
+          secondary={&lt;span&gt;Option 3 Secondary&lt;/span&gt;}
+        &gt;
+          Option 3
+        &lt;/DropdownMenuItem&gt;
+      &lt;/DropdownSelector&gt;
+      &lt;DropdownSelector
+        {...props}
+        value={invalidSelected}
+        onChange={setInvalidSelected}
+        label=&quot;Invalid&quot;
+        invalid
+        assistiveText=&quot;エラーメッセージ&quot;
+      &gt;
+        &lt;DropdownMenuItem value=&quot;option-1&quot;&gt;Option 1&lt;/DropdownMenuItem&gt;
+        &lt;DropdownMenuItem value=&quot;option-2&quot;&gt;Option 2&lt;/DropdownMenuItem&gt;
+        &lt;DropdownMenuItem value=&quot;option-3&quot;&gt;Option 3&lt;/DropdownMenuItem&gt;
+      &lt;/DropdownSelector&gt;
+    &lt;/div&gt;
+  )
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
                 <span class="ex-name">With Ref</span>
                 <span class="badge ok">story ok</span>
               </div>
@@ -10403,7 +10542,7 @@ export const Default: Story = {
       <div class="badges">
         <label for="c-11-react-hinttext-props" class="badge ok as-toggle">2 prop types</label>
         <label for="c-11-react-hinttext-info" class="badge info as-toggle">1 info</label>
-        <label for="c-11-react-hinttext-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-11-react-hinttext-stories" class="badge ok as-toggle">3 stories</label>
         
       </div>
     </div>
@@ -10476,6 +10615,20 @@ context?: HintTextContext = section</code></pre>
               <pre><code>const NarrowWidth = (props) =&gt; (
   &lt;div style={{ width: 200 }}&gt;
     &lt;HintText {...props} /&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; (
+  &lt;div style={{ display: &#39;grid&#39;, gap: 16, width: 320 }}&gt;
+    &lt;HintText context=&quot;section&quot;&gt;Section hint text&lt;/HintText&gt;
+    &lt;HintText context=&quot;page&quot;&gt;Page hint text&lt;/HintText&gt;
   &lt;/div&gt;
 );</code></pre>
             </div>
@@ -10691,7 +10844,7 @@ unsafeNonGuidelineScale?: number</code></pre>
       <div class="badges">
         <label for="c-14-react-iconbutton-err" class="badge err as-toggle">prop type error</label>
         <label for="c-14-react-iconbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-14-react-iconbutton-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-14-react-iconbutton-stories" class="badge ok as-toggle">4 stories</label>
         
       </div>
     </div>
@@ -10758,6 +10911,21 @@ export const Overlay: StoryObj&lt;typeof IconButton&gt; = {
     return &lt;IconButton icon=&quot;16/Add&quot; variant=&quot;Overlay&quot; /&gt;
   },
 }
+
+export const TokenV2: StoryObj&lt;typeof IconButton&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
+  render: () =&gt; {
+    return (
+      &lt;div style={{ display: &#39;flex&#39;, gap: 8 }}&gt;
+        &lt;IconButton icon=&quot;16/Add&quot; title=&quot;add&quot; /&gt;
+        &lt;IconButton icon=&quot;16/Add&quot; title=&quot;active&quot; isActive /&gt;
+        &lt;IconButton icon=&quot;16/Add&quot; title=&quot;overlay&quot; variant=&quot;Overlay&quot; /&gt;
+      &lt;/div&gt;
+    )
+  },
+}
 </code></pre></div>
     </div>
         </div>
@@ -10816,6 +10984,23 @@ export const Overlay: StoryObj&lt;typeof IconButton&gt; = {
               
               <pre><code>const Overlay = () =&gt; {
   return &lt;IconButton icon=&quot;16/Add&quot; variant=&quot;Overlay&quot; /&gt;
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; {
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, gap: 8 }}&gt;
+      &lt;IconButton icon=&quot;16/Add&quot; title=&quot;add&quot; /&gt;
+      &lt;IconButton icon=&quot;16/Add&quot; title=&quot;active&quot; isActive /&gt;
+      &lt;IconButton icon=&quot;16/Add&quot; title=&quot;overlay&quot; variant=&quot;Overlay&quot; /&gt;
+    &lt;/div&gt;
+  )
 };</code></pre>
             </div>
         </div>
@@ -11196,7 +11381,7 @@ export const Basic: StoryObj&lt;typeof ListItem&gt; = {
       <div class="badges">
         <label for="c-18-react-loadingspinner-props" class="badge ok as-toggle">5 prop types</label>
         <label for="c-18-react-loadingspinner-info" class="badge info as-toggle">1 info</label>
-        <label for="c-18-react-loadingspinner-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-18-react-loadingspinner-stories" class="badge ok as-toggle">5 stories</label>
         
       </div>
     </div>
@@ -11291,6 +11476,21 @@ transparent?: boolean = false</code></pre>
               
               
               <pre><code>const Padding = () =&gt; &lt;LoadingSpinner padding={24} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 24 }}&gt;
+    &lt;LoadingSpinner /&gt;
+    &lt;LoadingSpinner transparent /&gt;
+    &lt;LoadingSpinner size={48} /&gt;
+  &lt;/div&gt;
+);</code></pre>
             </div>
         </div>
     
@@ -11433,7 +11633,7 @@ value?: string</code></pre>
       <div class="badges">
         <label for="c-20-react-modal-props" class="badge ok as-toggle">11 prop types</label>
         
-        <label for="c-20-react-modal-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-20-react-modal-stories" class="badge ok as-toggle">6 stories</label>
         
       </div>
     </div>
@@ -11524,6 +11724,28 @@ import { OverlayProvider } from "react-aria";</code></pre>
               
               <pre><code>const Default = () =&gt; {
     const state = useOverlayTriggerState({ defaultOpen })
+
+    return (
+        &lt;OverlayProvider&gt;
+            &lt;Button onClick={() =&gt; state.open()}&gt;Open Modal&lt;/Button&gt;
+            &lt;M
+                title=&quot;react/Title&quot;
+                isDismissable
+                isOpen={state.isOpen}
+                onClose={() =&gt; state.close()} /&gt;
+        &lt;/OverlayProvider&gt;
+    );
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; {
+    const state = useOverlayTriggerState({ defaultOpen: true })
 
     return (
         &lt;OverlayProvider&gt;
@@ -11701,7 +11923,7 @@ import { OverlayProvider } from "react-aria";</code></pre>
       <div class="badges">
         <label for="c-21-react-multiselect-props" class="badge ok as-toggle">6 prop types</label>
         <label for="c-21-react-multiselect-info" class="badge info as-toggle">1 info</label>
-        <label for="c-21-react-multiselect-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-21-react-multiselect-stories" class="badge ok as-toggle">5 stories</label>
         
       </div>
     </div>
@@ -11841,6 +12063,58 @@ variant?: &quot;default&quot; | &quot;overlay&quot; = default</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = function Render() {
+  const options = [&#39;選択肢1&#39;, &#39;選択肢2&#39;, &#39;選択肢3&#39;, &#39;選択肢4&#39;]
+  return (
+    &lt;div style={{ display: &#39;grid&#39;, gap: 24 }}&gt;
+      &lt;StyledMultiSelectGroup
+        name=&quot;token-v2-default&quot;
+        label=&quot;default&quot;
+        onChange={action(&#39;click&#39;)}
+        selected={[&#39;選択肢1&#39;, &#39;選択肢3&#39;]}
+      &gt;
+        {options.map((option) =&gt; (
+          &lt;MultiSelect value={option} key={option}&gt;
+            {option}
+          &lt;/MultiSelect&gt;
+        ))}
+      &lt;/StyledMultiSelectGroup&gt;
+      &lt;StyledMultiSelectGroup
+        name=&quot;token-v2-invalid&quot;
+        label=&quot;invalid&quot;
+        onChange={action(&#39;click&#39;)}
+        selected={[]}
+        invalid
+      &gt;
+        {options.map((option) =&gt; (
+          &lt;MultiSelect value={option} key={option}&gt;
+            {option}
+          &lt;/MultiSelect&gt;
+        ))}
+      &lt;/StyledMultiSelectGroup&gt;
+      &lt;StyledMultiSelectGroup
+        name=&quot;token-v2-overlay&quot;
+        label=&quot;overlay&quot;
+        onChange={action(&#39;click&#39;)}
+        selected={[&#39;選択肢2&#39;]}
+      &gt;
+        {options.map((option) =&gt; (
+          &lt;MultiSelect variant=&quot;overlay&quot; value={option} key={option}&gt;
+            {option}
+          &lt;/MultiSelect&gt;
+        ))}
+      &lt;/StyledMultiSelectGroup&gt;
+    &lt;/div&gt;
+  )
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
                 <span class="ex-name">Playground</span>
                 <span class="badge ok">story ok</span>
               </div>
@@ -11968,7 +12242,7 @@ pageRangeDisplayed?: number</code></pre>
       <div class="badges">
         <label for="c-23-react-pagination-props" class="badge ok as-toggle">11 prop types</label>
         <label for="c-23-react-pagination-info" class="badge info as-toggle">1 info</label>
-        <label for="c-23-react-pagination-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-23-react-pagination-stories" class="badge ok as-toggle">10 stories</label>
         
       </div>
     </div>
@@ -12099,6 +12373,15 @@ size?: Size = M</code></pre>
               
               
               <pre><code>const PageRange5 = () =&gt; &lt;PaginationWithState page={5} pageCount={10} pageRangeDisplayed={5} size=&quot;S&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; &lt;PaginationWithState page={50} pageCount={103} pageRangeDisplayed={5} /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -12708,7 +12991,7 @@ triggerRef: RefObject&lt;Element | null&gt;</code></pre>
       <div class="badges">
         <label for="c-26-react-radio-props" class="badge ok as-toggle">4 prop types</label>
         <label for="c-26-react-radio-info" class="badge info as-toggle">1 info</label>
-        <label for="c-26-react-radio-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-26-react-radio-stories" class="badge ok as-toggle">6 stories</label>
         
       </div>
     </div>
@@ -12896,6 +13179,48 @@ value: string</code></pre>
         label=&quot;invalid story&quot;
         value={value}
         onChange={setValue}
+        invalid
+      &gt;
+        {options.map((option) =&gt; (
+          &lt;Radio key={option} value={option}&gt;
+            Value {option}
+          &lt;/Radio&gt;
+        ))}
+      &lt;/RadioGroup&gt;
+    &lt;/LayoutDiv&gt;
+  )
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = function Render() {
+  const [defaultValue, setDefaultValue] = useState&lt;Option&gt;(options[0])
+  const [invalidValue, setInvalidValue] = useState&lt;Option&gt;(options[1])
+
+  return (
+    &lt;LayoutDiv&gt;
+      &lt;RadioGroup&lt;Option&gt;
+        name=&quot;token_v2_default_story&quot;
+        label=&quot;default&quot;
+        value={defaultValue}
+        onChange={setDefaultValue}
+      &gt;
+        {options.map((option) =&gt; (
+          &lt;Radio key={option} value={option} disabled={option === &#39;3&#39;}&gt;
+            Value {option}
+          &lt;/Radio&gt;
+        ))}
+      &lt;/RadioGroup&gt;
+      &lt;RadioGroup&lt;Option&gt;
+        name=&quot;token_v2_invalid_story&quot;
+        label=&quot;invalid&quot;
+        value={invalidValue}
+        onChange={setInvalidValue}
         invalid
       &gt;
         {options.map((option) =&gt; (
@@ -18978,7 +19303,7 @@ const Global = createGlobalStyle`
       <div class="badges">
         <label for="c-29-react-segmentedcontrol-props" class="badge ok as-toggle">13 prop types</label>
         <label for="c-29-react-segmentedcontrol-info" class="badge info as-toggle">1 info</label>
-        <label for="c-29-react-segmentedcontrol-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-29-react-segmentedcontrol-stories" class="badge ok as-toggle">8 stories</label>
         
       </div>
     </div>
@@ -19191,6 +19516,27 @@ value?: string</code></pre>
     uniformSegmentWidth
     fullWidth /&gt;;</code></pre>
             </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; &lt;SegmentedControl
+    name=&quot;token-v2&quot;
+    data={[
+      { label: &#39;選択肢1&#39;, value: &#39;option1&#39; },
+      { label: &#39;選択肢2&#39;, value: &#39;option2&#39; },
+      { label: &#39;選択肢3&#39;, value: &#39;option3&#39; },
+      { label: &#39;Disabled&#39;, value: &#39;option4&#39;, disabled: true },
+    ]}
+    disabled={false}
+    readonly={false}
+    required={false}
+    uniformSegmentWidth
+    fullWidth={false} /&gt;;</code></pre>
+            </div>
         </div>
     
   </div>
@@ -19209,7 +19555,7 @@ value?: string</code></pre>
       <div class="badges">
         <label for="c-30-react-switch-props" class="badge ok as-toggle">2 prop types</label>
         <label for="c-30-react-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-30-react-switch-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-30-react-switch-stories" class="badge ok as-toggle">5 stories</label>
         
       </div>
     </div>
@@ -19349,6 +19695,27 @@ onChange?: ((checked: boolean) =&gt; void)</code></pre>
   )
 };</code></pre>
             </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = function Render() {
+  const [checked, setChecked] = useState(true)
+  return (
+    &lt;div style={{ display: &#39;grid&#39;, gap: 16 }}&gt;
+      &lt;Switch name=&quot;token-v2-default&quot; checked={checked} onChange={setChecked}&gt;
+        Label
+      &lt;/Switch&gt;
+      &lt;Switch name=&quot;token-v2-disabled&quot; checked disabled&gt;
+        Disabled
+      &lt;/Switch&gt;
+    &lt;/div&gt;
+  )
+};</code></pre>
+            </div>
         </div>
     
   </div>
@@ -19454,7 +19821,7 @@ rowReverse?: boolean</code></pre>
       <div class="badges">
         <label for="c-32-react-tagitem-props" class="badge ok as-toggle">7 prop types</label>
         <label for="c-32-react-tagitem-info" class="badge info as-toggle">1 info</label>
-        <label for="c-32-react-tagitem-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-32-react-tagitem-stories" class="badge ok as-toggle">9 stories</label>
         
       </div>
     </div>
@@ -19614,6 +19981,25 @@ translatedLabel?: string</code></pre>
   return &lt;TagItem label=&quot;#女の子&quot; disabled /&gt;
 };</code></pre>
             </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = function Render() {
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexWrap: &#39;wrap&#39;, gap: 8 }}&gt;
+      &lt;TagItem label=&quot;#女の子&quot; translatedLabel=&quot;girl&quot; /&gt;
+      &lt;TagItem label=&quot;#女の子&quot; status=&quot;active&quot; /&gt;
+      &lt;TagItem label=&quot;#女の子&quot; status=&quot;inactive&quot; /&gt;
+      &lt;TagItem label=&quot;#女の子&quot; disabled /&gt;
+      &lt;TagItem label=&quot;女の子&quot; bgColor=&quot;var(--charcoal-brand)&quot; /&gt;
+    &lt;/div&gt;
+  )
+};</code></pre>
+            </div>
         </div>
     
   </div>
@@ -19632,7 +20018,7 @@ translatedLabel?: string</code></pre>
       <div class="badges">
         <label for="c-33-react-textarea-props" class="badge ok as-toggle">15 prop types</label>
         <label for="c-33-react-textarea-info" class="badge info as-toggle">1 info</label>
-        <label for="c-33-react-textarea-stories" class="badge ok as-toggle">19 stories</label>
+        <label for="c-33-react-textarea-stories" class="badge ok as-toggle">20 stories</label>
         
       </div>
     </div>
@@ -19810,6 +20196,15 @@ value?: string | (string &amp; readonly string[])</code></pre>
               
               
               <pre><code>const Invalid = () =&gt; &lt;TextArea /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; &lt;TextArea /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -20385,7 +20780,7 @@ theme?: DefaultTheme</code></pre>
       <div class="badges">
         <label for="c-37-react-textfield-props" class="badge ok as-toggle">15 prop types</label>
         <label for="c-37-react-textfield-info" class="badge info as-toggle">1 info</label>
-        <label for="c-37-react-textfield-stories" class="badge ok as-toggle">13 stories</label>
+        <label for="c-37-react-textfield-stories" class="badge ok as-toggle">14 stories</label>
         
       </div>
     </div>
@@ -20558,6 +20953,15 @@ value?: string | (string &amp; readonly string[])</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; &lt;TextField /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
                 <span class="ex-name">Read Only</span>
                 <span class="badge ok">story ok</span>
               </div>
@@ -20668,9 +21072,15 @@ export default {
 } as Meta&lt;typeof TokenV2Styled&gt;
 
 export const Styled: StoryObj&lt;typeof TokenV2Styled&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
   render: TokenV2Styled,
 }
 export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
   render: TokenV2Tailwind,
 }
 </code></pre></div>
@@ -35353,7 +35763,7 @@ const Global = createGlobalStyle`
       <div class="badges">
         <label for="c-error-0-react-button-err" class="badge err as-toggle">prop type error</label>
         <label for="c-error-0-react-button-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-0-react-button-stories" class="badge ok as-toggle">17 stories</label>
+        <label for="c-error-0-react-button-stories" class="badge ok as-toggle">18 stories</label>
         
       </div>
     </div>
@@ -35412,6 +35822,24 @@ export const Overlay: StoryObj&lt;typeof Button&gt; = {
 
 export const Danger: StoryObj&lt;typeof Button&gt; = {
   render: () =&gt; &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;,
+}
+
+export const TokenV2: StoryObj&lt;typeof Button&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
+  render: () =&gt; (
+    &lt;div style={{ display: &#39;flex&#39;, flexWrap: &#39;wrap&#39;, gap: 8 }}&gt;
+      &lt;Button&gt;Default&lt;/Button&gt;
+      &lt;Button variant=&quot;Primary&quot;&gt;Primary&lt;/Button&gt;
+      &lt;Button variant=&quot;Navigation&quot;&gt;Navigation&lt;/Button&gt;
+      &lt;Button variant=&quot;Overlay&quot;&gt;Overlay&lt;/Button&gt;
+      &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;
+      &lt;Button isActive&gt;Active&lt;/Button&gt;
+      &lt;Button disabled&gt;Disabled&lt;/Button&gt;
+      &lt;Button size=&quot;S&quot;&gt;Small&lt;/Button&gt;
+    &lt;/div&gt;
+  ),
 }
 
 export const Small: StoryObj&lt;typeof Button&gt; = {
@@ -35623,6 +36051,26 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
               
               
               <pre><code>const Danger = () =&gt; &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, flexWrap: &#39;wrap&#39;, gap: 8 }}&gt;
+    &lt;Button&gt;Default&lt;/Button&gt;
+    &lt;Button variant=&quot;Primary&quot;&gt;Primary&lt;/Button&gt;
+    &lt;Button variant=&quot;Navigation&quot;&gt;Navigation&lt;/Button&gt;
+    &lt;Button variant=&quot;Overlay&quot;&gt;Overlay&lt;/Button&gt;
+    &lt;Button variant=&quot;Danger&quot;&gt;Danger&lt;/Button&gt;
+    &lt;Button isActive&gt;Active&lt;/Button&gt;
+    &lt;Button disabled&gt;Disabled&lt;/Button&gt;
+    &lt;Button size=&quot;S&quot;&gt;Small&lt;/Button&gt;
+  &lt;/div&gt;
+);</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -35844,7 +36292,7 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
       <div class="badges">
         <label for="c-error-1-react-clickable-err" class="badge err as-toggle">prop type error</label>
         <label for="c-error-1-react-clickable-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-1-react-clickable-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-error-1-react-clickable-stories" class="badge ok as-toggle">3 stories</label>
         
       </div>
     </div>
@@ -35897,6 +36345,20 @@ export const Link: StoryObj = {
     &lt;/Clickable&gt;
   ),
 }
+
+export const TokenV2: StoryObj = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
+  render: () =&gt; (
+    &lt;div style={{ display: &#39;flex&#39;, gap: 16 }}&gt;
+      &lt;Clickable onClick={action(&#39;click&#39;)}&gt;button&lt;/Clickable&gt;
+      &lt;Clickable component=&quot;a&quot; href=&quot;#&quot; onClick={action(&#39;click&#39;)}&gt;
+        link
+      &lt;/Clickable&gt;
+    &lt;/div&gt;
+  ),
+}
 </code></pre></div>
     </div>
         </div>
@@ -35944,6 +36406,22 @@ export const Link: StoryObj = {
   &lt;/Clickable&gt;
 );</code></pre>
             </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, gap: 16 }}&gt;
+    &lt;Clickable onClick={action(&#39;click&#39;)}&gt;button&lt;/Clickable&gt;
+    &lt;Clickable component=&quot;a&quot; href=&quot;#&quot; onClick={action(&#39;click&#39;)}&gt;
+      link
+    &lt;/Clickable&gt;
+  &lt;/div&gt;
+);</code></pre>
+            </div>
         </div>
     
   </div>
@@ -35962,7 +36440,7 @@ export const Link: StoryObj = {
       <div class="badges">
         <label for="c-error-2-react-iconbutton-err" class="badge err as-toggle">prop type error</label>
         <label for="c-error-2-react-iconbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-2-react-iconbutton-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-error-2-react-iconbutton-stories" class="badge ok as-toggle">4 stories</label>
         
       </div>
     </div>
@@ -36029,6 +36507,21 @@ export const Overlay: StoryObj&lt;typeof IconButton&gt; = {
     return &lt;IconButton icon=&quot;16/Add&quot; variant=&quot;Overlay&quot; /&gt;
   },
 }
+
+export const TokenV2: StoryObj&lt;typeof IconButton&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
+  render: () =&gt; {
+    return (
+      &lt;div style={{ display: &#39;flex&#39;, gap: 8 }}&gt;
+        &lt;IconButton icon=&quot;16/Add&quot; title=&quot;add&quot; /&gt;
+        &lt;IconButton icon=&quot;16/Add&quot; title=&quot;active&quot; isActive /&gt;
+        &lt;IconButton icon=&quot;16/Add&quot; title=&quot;overlay&quot; variant=&quot;Overlay&quot; /&gt;
+      &lt;/div&gt;
+    )
+  },
+}
 </code></pre></div>
     </div>
         </div>
@@ -36087,6 +36580,23 @@ export const Overlay: StoryObj&lt;typeof IconButton&gt; = {
               
               <pre><code>const Overlay = () =&gt; {
   return &lt;IconButton icon=&quot;16/Add&quot; variant=&quot;Overlay&quot; /&gt;
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Token V 2</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const TokenV2 = () =&gt; {
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, gap: 8 }}&gt;
+      &lt;IconButton icon=&quot;16/Add&quot; title=&quot;add&quot; /&gt;
+      &lt;IconButton icon=&quot;16/Add&quot; title=&quot;active&quot; isActive /&gt;
+      &lt;IconButton icon=&quot;16/Add&quot; title=&quot;overlay&quot; variant=&quot;Overlay&quot; /&gt;
+    &lt;/div&gt;
+  )
 };</code></pre>
             </div>
         </div>
@@ -36332,9 +36842,15 @@ export default {
 } as Meta&lt;typeof TokenV2Styled&gt;
 
 export const Styled: StoryObj&lt;typeof TokenV2Styled&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
   render: TokenV2Styled,
 }
 export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
+  parameters: {
+    tokenVersion: &#39;v2&#39;,
+  },
   render: TokenV2Tailwind,
 }
 </code></pre></div>
