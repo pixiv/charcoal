@@ -17,7 +17,7 @@
   align-items: center;
   font-size: 14px;
   line-height: 22px;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-default);
 }
 
 .charcoal-multi-select-label::before {
@@ -42,14 +42,14 @@
   width: 20px;
   height: 20px;
   margin: 0;
-  background-color: var(--charcoal-text3);
+  background-color: var(--charcoal-color-container-neutral-default);
   border-radius: 999999px;
   transition: 0.2s background-color,
     0.2s box-shadow;
 }
 
 .charcoal-multi-select-input[type='checkbox']:checked {
-  background-color: var(--charcoal-brand);
+  background-color: var(--charcoal-color-container-primary-default);
 }
 
 .charcoal-multi-select-input[type='checkbox']:focus {
@@ -66,19 +66,19 @@
 }
 
 .charcoal-multi-select-input[type='checkbox']:hover:not(:disabled):not([aria-disabled]), .charcoal-multi-select-input[type='checkbox']:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-hover);
+  background-color: var(--charcoal-color-container-neutral-hover);
 }
 
 .charcoal-multi-select-input[type='checkbox']:active:not(:disabled):not([aria-disabled]), .charcoal-multi-select-input[type='checkbox']:active[aria-disabled='false'] {
-  background-color: var(--charcoal-text3-press);
+  background-color: var(--charcoal-color-container-neutral-press);
 }
 
 .charcoal-multi-select-input[type='checkbox']:checked:hover:not(:disabled):not([aria-disabled]), .charcoal-multi-select-input[type='checkbox']:checked:hover[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-hover);
+  background-color: var(--charcoal-color-container-primary-hover);
 }
 
 .charcoal-multi-select-input[type='checkbox']:checked:active:not(:disabled):not([aria-disabled]), .charcoal-multi-select-input[type='checkbox']:checked:active[aria-disabled='false'] {
-  background-color: var(--charcoal-brand-press);
+  background-color: var(--charcoal-color-container-primary-press);
 }
 
 .charcoal-multi-select-input[type='checkbox'][aria-invalid='true'][data-overlay='false']:not(:disabled):not([aria-disabled]) {
@@ -90,7 +90,7 @@
 }
 
 .charcoal-multi-select-input[type='checkbox'][data-overlay='true'] {
-  background-color: var(--charcoal-surface4);
+  background-color: var(--charcoal-color-container-on-img-default);
 }
 
 .charcoal-multi-select-overlay {
@@ -104,7 +104,7 @@
   width: 24px;
   height: 24px;
   border-radius: 999999px;
-  color: var(--charcoal-text5);
+  color: var(--charcoal-color-icon-on-primary-default);
   transition: 0.2s box-shadow;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .charcoal-multi-select-overlay[data-overlay='true'] {
-  border-color: var(--charcoal-text5);
+  border-color: var(--charcoal-color-border-hud);
   border-width: 2px;
   border-style: solid;
 }

@@ -19,6 +19,7 @@
       "import": "./dist/unstable-token-object/index.js",
       "default": "./dist/unstable-token-object/index.js"
     },
+    "./css/*": "./dist/css/*",
     "./unstable-css/*": "./dist/unstable-css/*",
     "./unstable-tokens/*": "./dist/unstable-tokens/*"
   },
@@ -26,6 +27,9 @@
     "*": {
       "unstable-token-object": [
         "./dist/token-object/index.d.ts"
+      ],
+      "css/*": [
+        "./dist/css/*"
       ],
       "unstable-tokens/*": [
         "./dist/unstable-tokens/*"

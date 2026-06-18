@@ -146,3 +146,43 @@ export const Invalid: StoryObj<typeof Radio> = {
     )
   },
 }
+
+export const TokenV2: StoryObj<typeof Radio> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: function Render() {
+    const [defaultValue, setDefaultValue] = useState<Option>(options[0])
+    const [invalidValue, setInvalidValue] = useState<Option>(options[1])
+
+    return (
+      <LayoutDiv>
+        <RadioGroup<Option>
+          name="token_v2_default_story"
+          label="default"
+          value={defaultValue}
+          onChange={setDefaultValue}
+        >
+          {options.map((option) => (
+            <Radio key={option} value={option} disabled={option === '3'}>
+              Value {option}
+            </Radio>
+          ))}
+        </RadioGroup>
+        <RadioGroup<Option>
+          name="token_v2_invalid_story"
+          label="invalid"
+          value={invalidValue}
+          onChange={setInvalidValue}
+          invalid
+        >
+          {options.map((option) => (
+            <Radio key={option} value={option}>
+              Value {option}
+            </Radio>
+          ))}
+        </RadioGroup>
+      </LayoutDiv>
+    )
+  },
+}

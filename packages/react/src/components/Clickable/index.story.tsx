@@ -18,3 +18,17 @@ export const Link: StoryObj = {
     </Clickable>
   ),
 }
+
+export const TokenV2: StoryObj = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: () => (
+    <div style={{ display: 'flex', gap: 16 }}>
+      <Clickable onClick={action('click')}>button</Clickable>
+      <Clickable component="a" href="#" onClick={action('click')}>
+        link
+      </Clickable>
+    </div>
+  ),
+}

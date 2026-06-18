@@ -1,18 +1,18 @@
 .charcoal-loading-spinner {
   box-sizing: content-box;
   margin: auto;
-  padding: var(--charcoal-loading-spinner-padding);
+  padding: 16px;
   border-radius: 8px;
-  font-size: var(--charcoal-loading-spinner-size);
-  width: var(--charcoal-loading-spinner-size);
-  height: var(--charcoal-loading-spinner-size);
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
   opacity: 0.84;
-  color: var(--charcoal-text4);
-  background-color: var(--charcoal-background1);
+  color: var(--charcoal-color-icon-tertiary-default);
+  background-color: var(--charcoal-color-background-default);
 }
 
 .charcoal-loading-spinner[data-transparent='true'] {
-  background-color: var(--charcoal-transparent);
+  background-color: var(--charcoal-color-container-default-a);
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {

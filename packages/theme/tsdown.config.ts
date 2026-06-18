@@ -13,7 +13,10 @@ export default defineConfig({
   clean: true,
   dts: true,
   fixedExtension: false,
-  copy: [{ from: 'src/unstable-css', to: 'dist' }],
+  copy: [
+    { from: 'src/css', to: 'dist' },
+    { from: 'src/unstable-css', to: 'dist' },
+  ],
   onSuccess() {
     writeThemeJson()
     writeTokenObjects()

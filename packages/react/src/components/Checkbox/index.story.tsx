@@ -71,3 +71,21 @@ export const Invalid: StoryObj<typeof Checkbox> = {
     )
   },
 }
+
+export const TokenV2: StoryObj<typeof Checkbox> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: () => {
+    return (
+      <div style={{ display: 'grid', gap: 16 }}>
+        <Checkbox>Default</Checkbox>
+        <Checkbox checked>Checked</Checkbox>
+        <Checkbox invalid>Invalid</Checkbox>
+        <Checkbox checked disabled>
+          Disabled
+        </Checkbox>
+      </div>
+    )
+  },
+}

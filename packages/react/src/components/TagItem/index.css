@@ -1,8 +1,9 @@
 .charcoal-tag-item {
-  --charcoal-tag-item-color: var(--charcoal-text5);
+  --charcoal-tag-item-color: var(--charcoal-color-text-on-primary-default);
   --charcoal-tag-item-size: 40px;
   --charcoal-tag-item-padding-left: 24px;
   --charcoal-tag-item-padding-right: 24px;
+  --charcoal-tag-item-bg: ;
 
   isolation: isolate;
   position: relative;
@@ -44,7 +45,7 @@
   }
 
   &[data-state='inactive'] {
-    --charcoal-tag-item-color: var(--charcoal-text2);
+    --charcoal-tag-item-color: var(--charcoal-color-text-secondary-default);
   }
 
   &[data-state='active'] {
@@ -80,7 +81,7 @@
   background-color: var(--charcoal-tag-item-bg);
 
   &[data-bg-variant='image'] {
-    background-color: var(--charcoal-surface4);
+    background-color: var(--charcoal-color-container-on-img-default);
 
     &::before {
       content: '';
@@ -98,7 +99,7 @@
   }
 
   &[data-state='inactive'] {
-    background-color: var(--charcoal-surface3);
+    background-color: var(--charcoal-color-container-secondary-default);
   }
 }
 

@@ -25,7 +25,7 @@
 
   padding-right: 8px;
   padding-left: 8px;
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 4px;
 
   transition:
@@ -48,11 +48,11 @@
 
     &[data-active='true'],
     &:active {
-      background-color: var(--charcoal-surface3-press);
+      background-color: var(--charcoal-color-container-secondary-press-a);
     }
 
     &:hover {
-      background-color: var(--charcoal-surface3-hover);
+      background-color: var(--charcoal-color-container-secondary-hover-a);
     }
 
     &:focus:not(:focus-visible) {
@@ -71,16 +71,16 @@
   font-size: 14px;
   line-height: 22px;
   display: flow-root;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-default);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 
   &[data-placeholder='true'] {
-    color: var(--charcoal-text3);
+    color: var(--charcoal-color-text-placeholder-default);
   }
 }
 
 .charcoal-ui-dropdown-selector-icon {
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-icon-secondary-default);
 }

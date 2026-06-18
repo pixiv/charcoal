@@ -40,8 +40,8 @@
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-transform: translateZ(0);
 
-  color: var(--charcoal-text3);
-  background-color: var(--charcoal-transparent);
+  color: var(--charcoal-color-text-tertiary-default);
+  background-color: var(--charcoal-color-container-default-a);
   border-radius: 20px;
   transition:
     0.2s background-color,
@@ -63,14 +63,14 @@
 
   &:not(:disabled):not([aria-disabled]):hover,
   &[aria-disabled='false']:hover {
-    color: var(--charcoal-text3);
-    background-color: var(--charcoal-surface3);
+    color: var(--charcoal-color-text-tertiary-default);
+    background-color: var(--charcoal-color-container-secondary-default);
   }
 
   &:not(:disabled):not([aria-disabled]):active,
   &[aria-disabled='false']:active {
-    color: var(--charcoal-text3);
-    background-color: var(--charcoal-surface10);
+    color: var(--charcoal-color-text-tertiary-press);
+    background-color: var(--charcoal-color-container-tertiary-press);
   }
 
   &:not(:disabled):not([aria-disabled]):focus,
@@ -91,13 +91,13 @@
 
   &[aria-current] {
     cursor: default;
-    background-color: var(--charcoal-surface6);
-    color: var(--charcoal-text5);
+    background-color: var(--charcoal-color-container-hud-default);
+    color: var(--charcoal-color-text-on-hud-default);
 
     &:not(:disabled):not([aria-disabled]):hover,
     &:not(:disabled):not([aria-disabled]):active {
-      background-color: var(--charcoal-surface6);
-      color: var(--charcoal-text5);
+      background-color: var(--charcoal-color-container-hud-default);
+      color: var(--charcoal-color-text-on-hud-default);
     }
   }
 }
@@ -112,7 +112,7 @@
   &:hover,
   &:active {
     cursor: default;
-    color: var(--charcoal-text3);
+    color: var(--charcoal-color-text-tertiary-default);
     background: none;
   }
 

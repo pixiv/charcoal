@@ -25,3 +25,16 @@ export const Size: StoryObj<typeof LoadingSpinner> = {
 export const Padding: StoryObj<typeof LoadingSpinner> = {
   render: () => <LoadingSpinner padding={24} />,
 }
+
+export const TokenV2: StoryObj<typeof LoadingSpinner> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+      <LoadingSpinner />
+      <LoadingSpinner transparent />
+      <LoadingSpinner size={48} />
+    </div>
+  ),
+}

@@ -79,6 +79,36 @@ export const Invalid: StoryObj<typeof TextField> = {
   },
 }
 
+export const TokenV2: StoryObj<typeof TextField> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render() {
+    return (
+      <div style={{ display: 'grid', gap: 24, width: 320 }}>
+        <TextField
+          label="Label"
+          showLabel
+          required
+          requiredText="*必須"
+          subLabel={<Clickable>Text Link</Clickable>}
+          placeholder="Placeholder"
+          assistiveText="説明が入ります"
+          showCount
+          maxLength={100}
+        />
+        <TextField
+          label="Invalid"
+          invalid
+          placeholder="Placeholder"
+          assistiveText="エラーメッセージ"
+        />
+        <TextField label="Disabled" disabled value="Disabled value" />
+      </div>
+    )
+  },
+}
+
 export const ReadOnly: StoryObj<typeof TextField> = {
   render() {
     return <TextField label="Label" readOnly value="読み取り専用" />

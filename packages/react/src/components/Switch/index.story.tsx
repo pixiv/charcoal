@@ -81,3 +81,22 @@ export const Disabled: StoryObj<typeof Switch> = {
     )
   },
 }
+
+export const TokenV2: StoryObj<typeof Switch> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: function Render() {
+    const [checked, setChecked] = useState(true)
+    return (
+      <div style={{ display: 'grid', gap: 16 }}>
+        <Switch name="token-v2-default" checked={checked} onChange={setChecked}>
+          Label
+        </Switch>
+        <Switch name="token-v2-disabled" checked disabled>
+          Disabled
+        </Switch>
+      </div>
+    )
+  },
+}
