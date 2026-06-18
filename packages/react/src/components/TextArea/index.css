@@ -9,6 +9,9 @@
 }
 
 .charcoal-text-area-container {
+  /* Runtime variable overridden by the React component. */
+  --charcoal-text-area-rows: 4;
+
   position: relative;
   overflow: hidden;
 

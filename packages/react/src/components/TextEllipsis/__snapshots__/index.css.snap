@@ -1,6 +1,7 @@
 .charcoal-text-ellipsis {
-  --charcoal-text-ellipsis-line-limit:  ;
-  --charcoal-text-ellipsis-line-height:  ;
+  /* Runtime variables overridden by the React component. */
+  --charcoal-text-ellipsis-line-limit: 1;
+  --charcoal-text-ellipsis-line-height: inherit;
   overflow: hidden;
   overflow-wrap: break-word;
   display: -webkit-box;

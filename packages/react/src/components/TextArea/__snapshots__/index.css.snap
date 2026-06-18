@@ -1,5 +1,4 @@
 .charcoal-text-area-root {
-  --charcoal-text-area-rows:  ;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
@@ -10,6 +9,8 @@
 }
 
 .charcoal-text-area-container {
+  /* Runtime variable overridden by the React component. */
+  --charcoal-text-area-rows: 4;
   position: relative;
   overflow: hidden;
   color: var(--charcoal-color-text-secondary-default);
