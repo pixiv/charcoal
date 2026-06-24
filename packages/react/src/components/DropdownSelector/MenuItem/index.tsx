@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef } from 'react'
+import { ForwardedRef, forwardRef, useRef } from 'react'
 import ListItem, { ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
@@ -18,6 +18,8 @@ const MenuItem = forwardRef(function MenuItem<
   ref: ForwardedRef<HTMLLIElement>,
 ) {
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
+  const penHandledRef = useRef(false)
+  const pointerStartRef = useRef<{ x: number; y: number } | null>(null)
   return (
     // @ts-expect-error TODO: fix mismatch between MenuItemProps and ListItemProps
     <ListItem
@@ -25,7 +27,29 @@ const MenuItem = forwardRef(function MenuItem<
       ref={ref}
       data-key={value}
       onKeyDown={handleKeyDown}
-      onClick={disabled === true ? undefined : setContextValue}
+      onPointerDown={(e: React.PointerEvent<HTMLLIElement>) => {
+        if (e.pointerType === 'pen') {
+          pointerStartRef.current = { x: e.clientX, y: e.clientY }
+        }
+      }}
+      onPointerUp={(e: React.PointerEvent<HTMLLIElement>) => {
+        if (e.pointerType !== 'pen' || disabled === true) return
+        const start = pointerStartRef.current
+        if (!start) return
+        const dx = Math.abs(e.clientX - start.x)
+        const dy = Math.abs(e.clientY - start.y)
+        if (dx > 8 || dy > 8) return
+        penHandledRef.current = true
+        setContextValue()
+      }}
+      onClick={() => {
+        if (penHandledRef.current) {
+          penHandledRef.current = false
+          return
+        }
+        if (disabled === true) return
+        setContextValue()
+      }}
       tabIndex={-1}
       aria-disabled={disabled}
       role="option"
