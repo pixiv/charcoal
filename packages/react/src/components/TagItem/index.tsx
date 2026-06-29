@@ -4,6 +4,7 @@ import { useClassNames } from '../../_lib/useClassNames'
 import './index.css'
 
 import { useObjectRef } from 'react-aria/useObjectRef'
+import { useLink } from 'react-aria'
 
 type SizeMap = {
   S: 32
@@ -56,10 +57,19 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
     const bg = bgVariant === 'color' ? bgColor : `url(${bgImage ?? ''})`
 
     const Component = useMemo(() => component ?? 'a', [component])
-    const disabledProps =
-      Component === 'button'
-        ? { disabled, 'aria-disabled': ariaDisabled }
-        : { 'aria-disabled': disabled === true ? true : ariaDisabled }
+    const isButton = Component === 'button'
+
+    const { linkProps } = useLink(
+      {
+        isDisabled: disabled,
+        elementType: typeof Component === 'string' ? Component : 'a',
+      },
+      ref,
+    )
+
+    const disabledProps = isButton
+      ? { disabled, 'aria-disabled': ariaDisabled }
+      : linkProps
 
     return (
       <Component
