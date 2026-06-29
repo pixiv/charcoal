@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>41.5s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>42.7s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -19819,7 +19819,7 @@ rowReverse?: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TagItem</h2>
       <div class="badges">
-        <label for="c-32-react-tagitem-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-32-react-tagitem-props" class="badge ok as-toggle">8 prop types</label>
         <label for="c-32-react-tagitem-info" class="badge info as-toggle">1 info</label>
         <label for="c-32-react-tagitem-stories" class="badge ok as-toggle">9 stories</label>
         
@@ -19853,7 +19853,7 @@ rowReverse?: boolean</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">7 prop types</span>
+              <span class="badge ok">8 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/TagItem/index.tsx::TagItem</code></pre>
             <pre><code>Props:</code></pre>
@@ -19864,7 +19864,9 @@ bgImage?: string
 /**
  * The component used for root element.
  */
-component?: T extends React.ElementType = &#39;button&#39;
+component?: T extends React.ElementType = &#39;a&#39;
+
+disabled?: boolean
 
 label: string
 
