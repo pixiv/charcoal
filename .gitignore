@@ -12,6 +12,9 @@ node_modules/
 !.yarn/versions
 .pnp.*
 
+# pnpm
+.pnpm-store/*
+
 # artifacts
 .DS_Store
 npm-debug.log*

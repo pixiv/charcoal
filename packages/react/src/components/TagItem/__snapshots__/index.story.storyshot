@@ -5,7 +5,7 @@ exports[`Storybook Tests > react/TagItem > Active 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="M"
@@ -28,7 +28,7 @@ exports[`Storybook Tests > react/TagItem > Active 1`] = `
         name="16/Remove"
         style="--charcoal-icon-size: 16px;"
       />
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -38,7 +38,7 @@ exports[`Storybook Tests > react/TagItem > BGColor 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="M"
@@ -56,7 +56,7 @@ exports[`Storybook Tests > react/TagItem > BGColor 1`] = `
           女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -66,7 +66,7 @@ exports[`Storybook Tests > react/TagItem > BGImage 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="image"
       data-size="M"
@@ -84,7 +84,7 @@ exports[`Storybook Tests > react/TagItem > BGImage 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -94,7 +94,7 @@ exports[`Storybook Tests > react/TagItem > Default 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="M"
@@ -112,7 +112,7 @@ exports[`Storybook Tests > react/TagItem > Default 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -122,12 +122,12 @@ exports[`Storybook Tests > react/TagItem > Disabled 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
+      aria-disabled="true"
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="M"
       data-state="default"
-      disabled=""
       style="--charcoal-tag-item-bg: #7ACCB1;"
     >
       <div
@@ -141,7 +141,7 @@ exports[`Storybook Tests > react/TagItem > Disabled 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -151,7 +151,7 @@ exports[`Storybook Tests > react/TagItem > InActive 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="M"
@@ -169,7 +169,7 @@ exports[`Storybook Tests > react/TagItem > InActive 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -179,7 +179,7 @@ exports[`Storybook Tests > react/TagItem > Small 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="S"
@@ -197,7 +197,7 @@ exports[`Storybook Tests > react/TagItem > Small 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -207,7 +207,7 @@ exports[`Storybook Tests > react/TagItem > TranslatedLabel 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
       data-size="M"
@@ -230,7 +230,7 @@ exports[`Storybook Tests > react/TagItem > TranslatedLabel 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;

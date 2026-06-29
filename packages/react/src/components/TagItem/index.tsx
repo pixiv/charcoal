@@ -10,21 +10,22 @@ type SizeMap = {
   M: 40
 }
 
-export type TagItemProps<T extends React.ElementType = 'button'> = {
+export type TagItemProps<T extends React.ElementType = 'a'> = {
   label: string
   translatedLabel?: string
   bgColor?: string
   bgImage?: string
   status?: 'default' | 'active' | 'inactive'
   size?: keyof SizeMap
+  disabled?: boolean
   /**
    * The component used for root element.
-   * @type T extends React.ElementType = 'button'
+   * @type T extends React.ElementType = 'a'
    */
   component?: T
-} & Omit<React.ComponentPropsWithRef<T>, 'children'>
+} & Omit<React.ComponentPropsWithRef<T>, 'children' | 'disabled'>
 
-const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
+const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
   function TagItemInner<T extends React.ElementType>(
     {
       component,
@@ -34,9 +35,11 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
       bgImage,
       size = 'M',
       status = 'default',
+      disabled,
+      'aria-disabled': ariaDisabled,
       ...props
     }: TagItemProps<T>,
-    _ref: ForwardedRef<HTMLButtonElement>,
+    _ref: ForwardedRef<HTMLAnchorElement>,
   ) {
     const ref = useObjectRef(_ref)
 
@@ -52,11 +55,16 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
       bgImage !== undefined && bgImage.length > 0 ? 'image' : 'color'
     const bg = bgVariant === 'color' ? bgColor : `url(${bgImage ?? ''})`
 
-    const Component = useMemo(() => component ?? 'button', [component])
+    const Component = useMemo(() => component ?? 'a', [component])
+    const disabledProps =
+      Component === 'button'
+        ? { disabled, 'aria-disabled': ariaDisabled }
+        : { 'aria-disabled': disabled === true ? true : ariaDisabled }
 
     return (
       <Component
         {...props}
+        {...disabledProps}
         ref={ref}
         className={className}
         data-state={status}
@@ -84,6 +92,6 @@ const TagItem = forwardRef<HTMLButtonElement, TagItemProps>(
       </Component>
     )
   },
-) as <T extends React.ElementType = 'button'>(p: TagItemProps<T>) => JSX.Element
+) as <T extends React.ElementType = 'a'>(p: TagItemProps<T>) => JSX.Element
 
 export default memo(TagItem)
