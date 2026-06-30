@@ -36,7 +36,8 @@
   gap: 0;
 }
 
-/* スクロールスナップは prop（scrollSnap）で選択。type は scroller、align は item に出し分ける。
+/* スクロールスナップ type は prop（scrollSnap.type）で scroller に出し分ける。
+   align は基底 .charcoal-carousel__item の後（後述）に置く（no-descending-specificity 回避）。
    未指定時の既定（M=none / S=mandatory / align=center）は JS 側で data 属性に解決する。 */
 .charcoal-carousel[data-scroll-snap-type='none'] .charcoal-carousel__scroller {
   scroll-snap-type: none;
@@ -50,14 +51,6 @@
 .charcoal-carousel[data-scroll-snap-type='mandatory']
   .charcoal-carousel__scroller {
   scroll-snap-type: x mandatory;
-}
-
-.charcoal-carousel[data-scroll-snap-align='center'] .charcoal-carousel__item {
-  scroll-snap-align: center;
-}
-
-.charcoal-carousel[data-scroll-snap-align='start'] .charcoal-carousel__item {
-  scroll-snap-align: start;
 }
 
 /* グラデーション: はみ出してスクロール可能な側のみ、端のアイテムを背景色（白）へ
@@ -109,6 +102,16 @@
   flex: 0 0 100%;
 }
 
+/* scroll-snap-align は prop（scrollSnap.align）で出し分ける。基底 .charcoal-carousel__item
+   より後に置くことで no-descending-specificity を回避する。 */
+.charcoal-carousel[data-scroll-snap-align='center'] .charcoal-carousel__item {
+  scroll-snap-align: center;
+}
+
+.charcoal-carousel[data-scroll-snap-align='start'] .charcoal-carousel__item {
+  scroll-snap-align: start;
+}
+
 /* ── Navigation Buttons (charcoal IconButton, variant=Overlay size=S) ── */
 
 /* マスクと同じ 72px 1fr 72px グリッド。各ボタンは 72px ゾーンの中央に置く。 */
@@ -121,10 +124,19 @@
   align-items: center;
   /* 白フェード（z-index: 1）より上にボタンを表示する */
   z-index: 2;
+  /* sandbox 同様、通常は隠してカルーセル hover 時にフェードイン表示する。 */
+  opacity: 0;
+  transition: 0.4s opacity;
 
   &[data-visible='false'] {
     display: none;
   }
+}
+
+/* hover で表示。キーボード操作でも到達できるよう focus-within でも表示する。 */
+.charcoal-carousel:hover .charcoal-carousel__navigation,
+.charcoal-carousel:focus-within .charcoal-carousel__navigation {
+  opacity: 1;
 }
 
 .charcoal-carousel__navigation__item {
@@ -177,12 +189,12 @@
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background-color: var(--charcoal-text4, rgba(0, 0, 0, 0.32));
+  background-color: var(--charcoal-color-text-tertiary-default);
   cursor: pointer;
   transition: 0.2s background-color;
 
   &:hover {
-    background-color: var(--charcoal-text3, rgba(0, 0, 0, 0.56));
+    background-color: var(--charcoal-color-text-secondary-default);
   }
 
   &:focus-visible {
@@ -191,7 +203,7 @@
   }
 
   &[data-active='true'] {
-    background-color: var(--charcoal-text2, #292929);
+    background-color: var(--charcoal-color-text-default);
   }
 }
 
@@ -237,12 +249,12 @@
     height: 8px;
     border: 0;
     border-radius: 50%;
-    background-color: var(--charcoal-text4, rgba(0, 0, 0, 0.32));
+    background-color: var(--charcoal-color-text-tertiary-default);
     cursor: pointer;
     transition: 0.2s background-color;
 
     &:hover {
-      background-color: var(--charcoal-text3, rgba(0, 0, 0, 0.56));
+      background-color: var(--charcoal-color-text-secondary-default);
     }
 
     &:focus {
@@ -251,7 +263,7 @@
     }
 
     &:target-current {
-      background-color: var(--charcoal-text2, #292929);
+      background-color: var(--charcoal-color-text-default);
     }
   }
 
