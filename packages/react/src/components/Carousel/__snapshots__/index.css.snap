@@ -1,0 +1,274 @@
+.charcoal-carousel {
+  position: relative;
+  display: block;
+}
+
+.charcoal-carousel[data-full-width='true'] {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.charcoal-carousel__viewport {
+  position: relative;
+}
+
+.charcoal-carousel__scroller {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  outline: none;
+}
+
+.charcoal-carousel__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.charcoal-carousel__scroller[data-focus-visible] {
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+}
+
+.charcoal-carousel[data-size='S'] .charcoal-carousel__scroller {
+  gap: 0;
+}
+
+/* スクロールスナップ type は prop（scrollSnap.type）で scroller に出し分ける。
+   align は基底 .charcoal-carousel__item の後（後述）に置く（no-descending-specificity 回避）。
+   未指定時の既定（M=none / S=mandatory / align=center）は JS 側で data 属性に解決する。 */
+
+.charcoal-carousel[data-scroll-snap-type='none'] .charcoal-carousel__scroller {
+  scroll-snap-type: none;
+}
+
+.charcoal-carousel[data-scroll-snap-type='proximity'] .charcoal-carousel__scroller {
+  scroll-snap-type: x proximity;
+}
+
+.charcoal-carousel[data-scroll-snap-type='mandatory'] .charcoal-carousel__scroller {
+  scroll-snap-type: x mandatory;
+}
+
+/* グラデーション: はみ出してスクロール可能な側のみ、端のアイテムを背景色（白）へ
+   フェードさせる。mask による透過ではなく、72px の「背景色→透明」オーバーレイを
+   ビューポートに重ねて白で覆う。スクロール可能な側だけ data-can-prev/next で出し分ける。 */
+
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::before, .charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.2s opacity;
+  z-index: 1;
+}
+
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.charcoal-carousel[data-has-gradient='true'][data-can-prev='true'] .charcoal-carousel__viewport::before {
+  opacity: 1;
+}
+
+.charcoal-carousel[data-has-gradient='true'][data-can-next='true'] .charcoal-carousel__viewport::after {
+  opacity: 1;
+}
+
+.charcoal-carousel__item {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.charcoal-carousel[data-size='S'] .charcoal-carousel__item {
+  flex: 0 0 100%;
+}
+
+/* scroll-snap-align は prop（scrollSnap.align）で出し分ける。基底 .charcoal-carousel__item
+   より後に置くことで no-descending-specificity を回避する。 */
+
+.charcoal-carousel[data-scroll-snap-align='center'] .charcoal-carousel__item {
+  scroll-snap-align: center;
+}
+
+.charcoal-carousel[data-scroll-snap-align='start'] .charcoal-carousel__item {
+  scroll-snap-align: start;
+}
+
+/* ── Navigation Buttons (charcoal IconButton, variant=Overlay size=S) ── */
+
+/* マスクと同じ 72px 1fr 72px グリッド。各ボタンは 72px ゾーンの中央に置く。 */
+
+.charcoal-carousel__navigation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+  /* 白フェード（z-index: 1）より上にボタンを表示する */
+  z-index: 2;
+  /* sandbox 同様、通常は隠してカルーセル hover 時にフェードイン表示する。 */
+  opacity: 0;
+  transition: 0.4s opacity;
+}
+
+.charcoal-carousel__navigation[data-visible='false'] {
+  display: none;
+}
+
+/* hover で表示。キーボード操作でも到達できるよう focus-within でも表示する。 */
+
+.charcoal-carousel:hover .charcoal-carousel__navigation, .charcoal-carousel:focus-within .charcoal-carousel__navigation {
+  opacity: 1;
+}
+
+.charcoal-carousel__navigation__item {
+  pointer-events: auto;
+}
+
+.charcoal-carousel__navigation__item[data-direction='prev'] {
+  grid-column: 1;
+  justify-self: center;
+}
+
+.charcoal-carousel__navigation__item[data-direction='next'] {
+  grid-column: 3;
+  justify-self: center;
+}
+
+/* スクロール端では非表示。IconButton の disabled スタイル(opacity:0.32)より
+   高い詳細度で打ち消すため、ルートを前置する。 */
+
+.charcoal-carousel .charcoal-carousel__navigation__item[data-hidden='true'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* タッチデバイスではナビゲーションボタンを出さず、スワイプ操作に委ねる。 */
+
+@media (hover: none) and (pointer: coarse) {
+
+.charcoal-carousel__navigation {
+  display: none;
+}
+}
+
+/* ── Indicator: JS Fallback ── */
+
+.charcoal-carousel__indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 8px;
+}
+
+.charcoal-carousel__indicator[data-visible='false'] {
+  display: none;
+}
+
+.charcoal-carousel__indicator__item {
+  appearance: none;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--charcoal-color-text-tertiary-default);
+  cursor: pointer;
+  transition: 0.2s background-color;
+}
+
+.charcoal-carousel__indicator__item:hover {
+  background-color: var(--charcoal-color-text-secondary-default);
+}
+
+.charcoal-carousel__indicator__item:focus-visible {
+  outline: 2px solid rgba(0, 150, 250, 0.56);
+  outline-offset: 2px;
+}
+
+.charcoal-carousel__indicator__item[data-active='true'] {
+  background-color: var(--charcoal-color-text-default);
+}
+
+/* ── CSS Scroll Markers (progressive enhancement) ── */
+
+/* CSS Scroll Markers / Anchor Positioning は新しい仕様で、stylelint がプロパティ・
+   擬似要素・擬似クラスを未知と判定するため、この @supports ブロックでは該当ルールを無効化する。 */
+/* stylelint-disable property-no-unknown, selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
+
+@supports (scroll-marker-group: after) {
+
+.charcoal-carousel[data-indicator='true'] {
+  padding-bottom: 40px;
+}
+
+.charcoal-carousel__scroller {
+  anchor-name: --charcoal-carousel;
+  scroll-marker-group: after;
+}
+
+.charcoal-carousel__scroller::scroll-button(*) {
+  content: none;
+}
+
+.charcoal-carousel__scroller::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  gap: 8px;
+  position: absolute;
+  position-anchor: --charcoal-carousel;
+  top: anchor(bottom);
+  justify-self: anchor-center;
+}
+
+.charcoal-carousel[data-indicator='false'] .charcoal-carousel__scroller {
+  scroll-marker-group: none;
+}
+
+.charcoal-carousel__item::scroll-marker {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--charcoal-color-text-tertiary-default);
+  cursor: pointer;
+  transition: 0.2s background-color;
+}
+
+.charcoal-carousel__item::scroll-marker:hover {
+  background-color: var(--charcoal-color-text-secondary-default);
+}
+
+.charcoal-carousel__item::scroll-marker:focus {
+  outline: 2px solid rgba(0, 150, 250, 0.56);
+  outline-offset: 2px;
+}
+
+.charcoal-carousel__item::scroll-marker:target-current {
+  background-color: var(--charcoal-color-text-default);
+}
+
+.charcoal-carousel__indicator {
+  display: none;
+}
+}
+/* stylelint-enable property-no-unknown, selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
+

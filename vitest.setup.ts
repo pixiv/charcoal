@@ -19,6 +19,9 @@ beforeAll(() => {
       observe() {
         return null
       },
+      unobserve() {
+        return null
+      },
       disconnect() {
         return null
       },

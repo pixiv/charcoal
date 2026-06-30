@@ -1,0 +1,278 @@
+import './index.css'
+
+import {
+  forwardRef,
+  memo,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from 'react'
+import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
+import { useClassNames } from '../../_lib/useClassNames'
+import IconButton from '../IconButton'
+import { CarouselItem as CarouselSlide } from './CarouselItem'
+import {
+  createCarouselStore,
+  INITIAL_CAROUSEL_STATE,
+  type CarouselState,
+} from './carouselStore'
+import { useCarouselScroller } from './useCarouselScroller'
+
+const getServerSnapshot = (): CarouselState => INITIAL_CAROUSEL_STATE
+
+export type CarouselItem = {
+  id: string
+  children: ReactNode
+}
+
+export type ScrollAlign = 'left' | 'center' | 'right'
+
+export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
+
+export type ScrollSnapAlign = 'center' | 'start'
+
+export type ScrollSnap = Readonly<{
+  type?: ScrollSnapType
+  align?: ScrollSnapAlign
+}>
+
+export type ScrollStepContext = Readonly<{
+  clientWidth: number
+  scrollWidth: number
+  scrollLeft: number
+  direction: 'prev' | 'next'
+}>
+
+export type ScrollStep = number | ((ctx: ScrollStepContext) => number)
+
+// 命令的 API。ref 経由で初期位置へのリセットを公開する（react-sandbox 互換）。
+export type CarouselHandlerRef = {
+  resetScroll: () => void
+}
+
+export type CarouselProps = Readonly<{
+  className?: string
+  hasGradient?: boolean
+  fullWidth?: boolean
+  navigationButtons?: boolean
+  indicator?: boolean
+  size?: 'S' | 'M'
+  // 進む量。number は clientWidth に対する比率、function は進む px を直接返す。
+  scrollStep?: ScrollStep
+  // スクロールスナップ。未指定時は size 基準（M=none / S=mandatory）、align=center。
+  // M の none は sandbox 同等に 0.75×表示幅ちょうど進む（スナップで着地を吸着しない）。
+  scrollSnap?: ScrollSnap
+  // react-sandbox 互換のコールバック。
+  onScroll?: (left: number) => void
+  onResize?: (width: number) => void
+  onScrollStateChange?: (canScroll: boolean) => void
+  defaultScroll?: { align?: ScrollAlign; offset?: number }
+  items: CarouselItem[]
+}>
+
+type Direction = 'prev' | 'next'
+
+const DEFAULT_SCROLL_STEP = 0.75
+
+const NAV_ICON = {
+  prev: '24/Prev',
+  next: '24/Next',
+} as const
+
+type NavigationButtonProps = Readonly<{
+  direction: Direction
+  canScroll: boolean
+  onScroll: (direction: Direction) => void
+}>
+
+const CarouselNavigationButton = ({
+  direction,
+  canScroll,
+  onScroll,
+}: NavigationButtonProps) => {
+  const handleClick = useCallback(() => {
+    onScroll(direction)
+  }, [onScroll, direction])
+  return (
+    <IconButton
+      variant="Overlay"
+      size="S"
+      icon={NAV_ICON[direction]}
+      aria-label={direction === 'prev' ? 'Previous' : 'Next'}
+      disabled={!canScroll}
+      onClick={handleClick}
+      className="charcoal-carousel__navigation__item"
+      data-direction={direction}
+      data-hidden={!canScroll}
+    />
+  )
+}
+
+type IndicatorItemProps = Readonly<{
+  index: number
+  isActive: boolean
+  onSelect: (index: number) => void
+}>
+
+const CarouselIndicatorItem = ({
+  index,
+  isActive,
+  onSelect,
+}: IndicatorItemProps) => {
+  const handleClick = useCallback(() => {
+    onSelect(index)
+  }, [onSelect, index])
+  return (
+    <button
+      className="charcoal-carousel__indicator__item"
+      data-active={isActive}
+      aria-current={isActive || undefined}
+      aria-label={`Go to slide ${index + 1}`}
+      onClick={handleClick}
+    />
+  )
+}
+
+const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
+  {
+    size = 'M',
+    navigationButtons,
+    indicator,
+    hasGradient = false,
+    fullWidth = false,
+    scrollStep = DEFAULT_SCROLL_STEP,
+    scrollSnap,
+    onScroll,
+    onResize,
+    onScrollStateChange,
+    defaultScroll: { align = 'left', offset = 0 } = {},
+    ...props
+  }: CarouselProps,
+  ref,
+) {
+  const className = useClassNames('charcoal-carousel', props.className)
+  const showNavigationButtons = navigationButtons ?? size === 'M'
+  const showIndicator = indicator ?? size === 'S'
+  const snapType = scrollSnap?.type ?? (size === 'S' ? 'mandatory' : 'none')
+  const snapAlign = scrollSnap?.align ?? 'center'
+
+  const scrollerRef = useRef<HTMLDivElement>(null)
+  const [store] = useState(createCarouselStore)
+
+  const { scrollByStep, onItemResize, resetScroll } = useCarouselScroller(
+    scrollerRef,
+    store,
+    props.items.length,
+    { align, offset, scrollStep, onScroll, onResize, onScrollStateChange },
+  )
+
+  useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
+
+  const { activeIndex, canPrev, canNext } = useSyncExternalStore(
+    store.subscribe,
+    store.getSnapshot,
+    getServerSnapshot,
+  )
+
+  const scrollToItem = useCallback(
+    (index: number) => store.dispatch({ type: 'requestScroll', index }),
+    [store],
+  )
+
+  // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
+  const { keyboardProps } = useKeyboard({
+    onKeyDown: (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        scrollByStep('next')
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        scrollByStep('prev')
+      } else {
+        e.continuePropagation()
+      }
+    },
+  })
+
+  const {
+    focusProps: scrollerFocusProps,
+    isFocusVisible: scrollerFocusVisible,
+  } = useFocusRing()
+
+  return (
+    <div
+      className={className}
+      data-size={size}
+      data-has-gradient={hasGradient}
+      data-full-width={fullWidth}
+      data-indicator={showIndicator}
+      data-scroll-snap-type={snapType}
+      data-scroll-snap-align={snapAlign}
+      data-can-prev={canPrev}
+      data-can-next={canNext}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Carousel"
+    >
+      <div className="charcoal-carousel__viewport">
+        <div
+          {...mergeProps(scrollerFocusProps, keyboardProps)}
+          ref={scrollerRef}
+          className="charcoal-carousel__scroller"
+          tabIndex={0}
+          data-focus-visible={scrollerFocusVisible || undefined}
+        >
+          {props.items.map((item, i) => (
+            <CarouselSlide
+              key={item.id}
+              index={i}
+              store={store}
+              onResize={onItemResize}
+            >
+              {item.children}
+            </CarouselSlide>
+          ))}
+        </div>
+
+        <div
+          className="charcoal-carousel__navigation"
+          data-visible={showNavigationButtons}
+          aria-hidden={!showNavigationButtons}
+        >
+          <CarouselNavigationButton
+            direction="prev"
+            canScroll={canPrev}
+            onScroll={scrollByStep}
+          />
+          <CarouselNavigationButton
+            direction="next"
+            canScroll={canNext}
+            onScroll={scrollByStep}
+          />
+        </div>
+      </div>
+
+      <div
+        className="charcoal-carousel__indicator"
+        data-visible={showIndicator}
+        aria-hidden={!showIndicator}
+      >
+        {props.items.map((item, i) => (
+          <CarouselIndicatorItem
+            key={item.id}
+            index={i}
+            isActive={i === activeIndex}
+            onSelect={scrollToItem}
+          />
+        ))}
+      </div>
+    </div>
+  )
+})
+
+Carousel.displayName = 'Carousel'
+
+export default memo(Carousel)

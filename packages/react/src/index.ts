@@ -95,4 +95,16 @@ export {
   default as Pagination,
   type PaginationProps,
 } from './components/Pagination'
+export {
+  default as Carousel,
+  type CarouselProps,
+  type CarouselItem,
+  type CarouselHandlerRef,
+  type ScrollAlign,
+  type ScrollSnap,
+  type ScrollSnapType,
+  type ScrollSnapAlign,
+  type ScrollStep,
+  type ScrollStepContext,
+} from './components/Carousel'
 import './components/FocusRing/index.css'
