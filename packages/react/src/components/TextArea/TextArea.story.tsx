@@ -84,6 +84,36 @@ export const Invalid: StoryObj<typeof TextArea> = {
   },
 }
 
+export const TokenV2: StoryObj<typeof TextArea> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render() {
+    return (
+      <div style={{ display: 'grid', gap: 24, width: 320 }}>
+        <TextArea
+          label="Label"
+          showLabel
+          required
+          requiredText="*必須"
+          subLabel={<Clickable>Text Link</Clickable>}
+          placeholder="Placeholder"
+          assistiveText="説明が入ります"
+          showCount
+          maxLength={100}
+        />
+        <TextArea
+          label="Invalid"
+          invalid
+          placeholder="Placeholder"
+          assistiveText="エラーメッセージ"
+        />
+        <TextArea label="Disabled" disabled value="Disabled value" />
+      </div>
+    )
+  },
+}
+
 export const ReadOnly: StoryObj<typeof TextArea> = {
   render() {
     return <TextArea label="Label" readOnly value="読み取り専用" />

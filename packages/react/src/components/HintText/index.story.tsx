@@ -37,3 +37,15 @@ export const NarrowWidth: StoryObj<typeof HintText> = {
     </div>
   ),
 }
+
+export const TokenV2: StoryObj<typeof HintText> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: () => (
+    <div style={{ display: 'grid', gap: 16, width: 320 }}>
+      <HintText context="section">Section hint text</HintText>
+      <HintText context="page">Page hint text</HintText>
+    </div>
+  ),
+}

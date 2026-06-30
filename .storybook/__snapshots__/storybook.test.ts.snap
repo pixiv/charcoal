@@ -377,6 +377,66 @@ exports[`Storybook Tests > react/Button > react/Button > Small 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/Button > react/Button > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-wrap: wrap; gap: 8px;"
+    >
+      <button
+        class="charcoal-button"
+      >
+        Default
+      </button>
+      <button
+        class="charcoal-button"
+        data-variant="Primary"
+      >
+        Primary
+      </button>
+      <button
+        class="charcoal-button"
+        data-variant="Navigation"
+      >
+        Navigation
+      </button>
+      <button
+        class="charcoal-button"
+        data-variant="Overlay"
+      >
+        Overlay
+      </button>
+      <button
+        class="charcoal-button"
+        data-variant="Danger"
+      >
+        Danger
+      </button>
+      <button
+        class="charcoal-button"
+        data-active="true"
+      >
+        Active
+      </button>
+      <button
+        class="charcoal-button"
+        disabled=""
+      >
+        Disabled
+      </button>
+      <button
+        class="charcoal-button"
+        data-size="S"
+      >
+        Small
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
 <div>
   <div
@@ -3439,6 +3499,84 @@ exports[`Storybook Tests > react/Checkbox > react/Checkbox > ReadOnly 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/Checkbox > react/Checkbox > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 16px;"
+    >
+      <label
+        class="charcoal-checkbox__label"
+        for="test-id"
+      >
+        <input
+          class="charcoal-checkbox-input"
+          id="test-id"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-checkbox__label_div"
+        >
+          Default
+        </div>
+      </label>
+      <label
+        class="charcoal-checkbox__label"
+        for="test-id"
+      >
+        <input
+          checked=""
+          class="charcoal-checkbox-input"
+          id="test-id"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-checkbox__label_div"
+        >
+          Checked
+        </div>
+      </label>
+      <label
+        class="charcoal-checkbox__label"
+        for="test-id"
+      >
+        <input
+          aria-invalid="true"
+          class="charcoal-checkbox-input"
+          id="test-id"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-checkbox__label_div"
+        >
+          Invalid
+        </div>
+      </label>
+      <label
+        aria-disabled="true"
+        class="charcoal-checkbox__label"
+        for="test-id"
+      >
+        <input
+          checked=""
+          class="charcoal-checkbox-input"
+          disabled=""
+          id="test-id"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-checkbox__label_div"
+        >
+          Disabled
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Clickable > react/Clickable > Button 1`] = `
 <div>
   <div
@@ -3464,6 +3602,30 @@ exports[`Storybook Tests > react/Clickable > react/Clickable > Link 1`] = `
     >
       link
     </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Clickable > react/Clickable > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; gap: 16px;"
+    >
+      <button
+        class="charcoal-clickable"
+      >
+        button
+      </button>
+      <a
+        class="charcoal-clickable"
+        href="#"
+      >
+        link
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -4521,6 +4683,167 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Sub
 </div>
 `;
 
+exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 24px; width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-required-text"
+          >
+            required
+          </div>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span>
+              SubLabel
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="option-1"
+            >
+              option-1
+            </option>
+            <option
+              disabled=""
+              value="option-2"
+            >
+              option-2
+            </option>
+            <option
+              value="option-3"
+            >
+              option-3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-describedby="test-id"
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 3
+          </span>
+          <pixiv-icon
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
+          />
+        </button>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          assistiveText
+        </div>
+      </div>
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Invalid
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="option-1"
+            >
+              option-1
+            </option>
+            <option
+              value="option-2"
+            >
+              option-2
+            </option>
+            <option
+              value="option-3"
+            >
+              option-3
+            </option>
+          </select>
+        </div>
+        <button
+          aria-describedby="test-id"
+          aria-invalid="true"
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Option 1
+          </span>
+          <pixiv-icon
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
+          />
+        </button>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="true"
+          id="test-id"
+        >
+          エラーメッセージ
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > WithRef 1`] = `
 <div>
   <div
@@ -4755,6 +5078,57 @@ exports[`Storybook Tests > react/HintText > react/HintText > NarrowWidth 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/HintText > react/HintText > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 16px; width: 320px;"
+    >
+      <div
+        class="charcoal-hint-text"
+        data-context="section"
+      >
+        <div
+          class="charcoal-hint-text-icon"
+        >
+          <pixiv-icon
+            class="charcoal-icon"
+            name="16/Info"
+            style="--charcoal-icon-size: 16px;"
+          />
+        </div>
+        <p
+          class="charcoal-hint-text-message"
+        >
+          Section hint text
+        </p>
+      </div>
+      <div
+        class="charcoal-hint-text"
+        data-context="page"
+      >
+        <div
+          class="charcoal-hint-text-icon"
+        >
+          <pixiv-icon
+            class="charcoal-icon"
+            name="16/Info"
+            style="--charcoal-icon-size: 16px;"
+          />
+        </div>
+        <p
+          class="charcoal-hint-text-message"
+        >
+          Page hint text
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Icon > react/Icon > Default 1`] = `
 <div>
   <div
@@ -4831,6 +5205,55 @@ exports[`Storybook Tests > react/IconButton > react/IconButton > Overlay 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/IconButton > react/IconButton > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; gap: 8px;"
+    >
+      <button
+        class="charcoal-icon-button"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+        title="add"
+      >
+        <pixiv-icon
+          name="16/Add"
+          style="--charcoal-icon-size: 16px;"
+        />
+      </button>
+      <button
+        class="charcoal-icon-button"
+        data-active="true"
+        data-size="M"
+        data-variant="Default"
+        title="active"
+      >
+        <pixiv-icon
+          name="16/Add"
+          style="--charcoal-icon-size: 16px;"
+        />
+      </button>
+      <button
+        class="charcoal-icon-button"
+        data-active="false"
+        data-size="M"
+        data-variant="Overlay"
+        title="overlay"
+      >
+        <pixiv-icon
+          name="16/Add"
+          style="--charcoal-icon-size: 16px;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/LoadingSpinner > react/LoadingSpinner > Default 1`] = `
 <div>
   <div
@@ -4889,6 +5312,55 @@ exports[`Storybook Tests > react/LoadingSpinner > react/LoadingSpinner > Size 1`
         data-once="false"
         role="presentation"
       />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/LoadingSpinner > react/LoadingSpinner > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; align-items: center; gap: 24px;"
+    >
+      <div
+        class="charcoal-loading-spinner"
+        data-transparent="false"
+        role="progressbar"
+        style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+      >
+        <div
+          class="charcoal-loading-spinner-icon"
+          data-once="false"
+          role="presentation"
+        />
+      </div>
+      <div
+        class="charcoal-loading-spinner"
+        data-transparent="true"
+        role="progressbar"
+        style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+      >
+        <div
+          class="charcoal-loading-spinner-icon"
+          data-once="false"
+          role="presentation"
+        />
+      </div>
+      <div
+        class="charcoal-loading-spinner"
+        data-transparent="false"
+        role="progressbar"
+        style="--charcoal-loading-spinner-size: 48px; --charcoal-loading-spinner-padding: 16px;"
+      >
+        <div
+          class="charcoal-loading-spinner-icon"
+          data-once="false"
+          role="presentation"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -5734,6 +6206,243 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
 </div>
 `;
 
+exports[`Storybook Tests > react/Modal > react/Modal > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      data-overlay-container="true"
+    >
+      <button
+        aria-hidden="true"
+        class="charcoal-button"
+      >
+        Open Modal
+      </button>
+      <div
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
+      >
+        <div
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
+          >
+            <div
+              class="charcoal-modal-header-title"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Name
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Nagisa"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  aria-disabled="false"
+                  class="charcoal-text-field-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      for="test-id"
+                      id="test-id"
+                    >
+                      Country
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    class="charcoal-text-field-container"
+                    data-invalid="false"
+                  >
+                    <div
+                      class="charcoal-text-field-input-root"
+                    >
+                      <input
+                        aria-labelledby="test-id"
+                        class="charcoal-text-field-input"
+                        data-invalid="false"
+                        id="test-id"
+                        placeholder="Tokyo"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="charcoal-modal-align"
+              >
+                <div
+                  class="charcoal-dropdown-selector-root"
+                >
+                  <div
+                    class="charcoal-field-label-root"
+                  >
+                    <label
+                      class="charcoal-field-label"
+                      id="test-id"
+                    >
+                      Fruits
+                    </label>
+                    <div
+                      class="charcoal-field-label-sub-label"
+                    >
+                      <span />
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+                  >
+                    <select
+                      tabindex="-1"
+                    >
+                      <option
+                        value="10"
+                      >
+                        10
+                      </option>
+                      <option
+                        value="20"
+                      >
+                        20
+                      </option>
+                      <option
+                        value="30"
+                      >
+                        30
+                      </option>
+                    </select>
+                  </div>
+                  <button
+                    aria-labelledby="test-id"
+                    class="charcoal-dropdown-selector-button"
+                    data-active="false"
+                    type="button"
+                  >
+                    <span
+                      class="charcoal-ui-dropdown-selector-text"
+                      data-placeholder="false"
+                    >
+                      Apple
+                    </span>
+                    <pixiv-icon
+                      class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                      name="16/Menu"
+                      style="--charcoal-icon-size: 16px;"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="charcoal-modal-buttons"
+            >
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+                data-variant="Primary"
+              >
+                Apply
+              </button>
+              <button
+                class="charcoal-button"
+                data-full-width="true"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Basic 1`] = `
 <div>
   <div
@@ -6291,6 +7000,412 @@ exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > Playground 1`
           4
         </div>
       </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/MultiSelect > react/MultiSelect > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 24px;"
+    >
+      <div
+        aria-label="default"
+        data-testid="SelectGroup"
+        style="display: grid; grid-template-columns: 1fr; gap: 8px;"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-default"
+            type="checkbox"
+            value="選択肢1"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-default"
+            type="checkbox"
+            value="選択肢2"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-default"
+            type="checkbox"
+            value="選択肢3"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢3
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-default"
+            type="checkbox"
+            value="選択肢4"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢4
+          </div>
+        </label>
+      </div>
+      <div
+        aria-label="invalid"
+        data-testid="SelectGroup"
+        style="display: grid; grid-template-columns: 1fr; gap: 8px;"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-invalid"
+            type="checkbox"
+            value="選択肢1"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="true"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-invalid"
+            type="checkbox"
+            value="選択肢2"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="true"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-invalid"
+            type="checkbox"
+            value="選択肢3"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="true"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢3
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-multi-select-input"
+            data-overlay="false"
+            name="token-v2-invalid"
+            type="checkbox"
+            value="選択肢4"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="true"
+            class="charcoal-multi-select-overlay"
+            data-overlay="false"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢4
+          </div>
+        </label>
+      </div>
+      <div
+        aria-label="overlay"
+        data-testid="SelectGroup"
+        style="display: grid; grid-template-columns: 1fr; gap: 8px;"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-multi-select-input"
+            data-overlay="true"
+            name="token-v2-overlay"
+            type="checkbox"
+            value="選択肢1"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="true"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-multi-select-input"
+            data-overlay="true"
+            name="token-v2-overlay"
+            type="checkbox"
+            value="選択肢2"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="true"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-multi-select-input"
+            data-overlay="true"
+            name="token-v2-overlay"
+            type="checkbox"
+            value="選択肢3"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="true"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢3
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-multi-select"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-multi-select-input"
+            data-overlay="true"
+            name="token-v2-overlay"
+            type="checkbox"
+            value="選択肢4"
+          />
+          <div
+            aria-hidden="true"
+            aria-invalid="false"
+            class="charcoal-multi-select-overlay"
+            data-overlay="true"
+          >
+            <pixiv-icon
+              class="charcoal-icon"
+              fixed-size="16"
+              name="24/Check"
+              style="--charcoal-icon-size: 16px;"
+            />
+          </div>
+          <div
+            class="charcoal-multi-select-label"
+          >
+            選択肢4
+          </div>
+        </label>
+      </div>
     </div>
   </div>
 </div>
@@ -7115,6 +8230,82 @@ exports[`Storybook Tests > react/Pagination > react/Pagination > SizeS 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/Pagination > react/Pagination > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <nav
+      aria-label="Pagination"
+      class="charcoal-pagination"
+      data-size="M"
+    >
+      <button
+        aria-label="Previous"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+      >
+        <pixiv-icon
+          name="24/Prev"
+          style="--charcoal-icon-size: 24px;"
+        />
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        aria-hidden="true"
+        class="charcoal-icon-button charcoal-pagination-spacer"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+        disabled=""
+      >
+        <pixiv-icon
+          name="24/Dot"
+          style="--charcoal-icon-size: 24px;"
+        />
+      </button>
+      <span
+        aria-current="page"
+        class="charcoal-pagination-button"
+      >
+        50
+      </span>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        51
+      </button>
+      <button
+        class="charcoal-pagination-button"
+        type="button"
+      >
+        52
+      </button>
+      <button
+        aria-label="Next"
+        class="charcoal-icon-button charcoal-pagination-nav-button"
+        data-active="false"
+        data-size="M"
+        data-variant="Default"
+      >
+        <pixiv-icon
+          name="24/Next"
+          style="--charcoal-icon-size: 24px;"
+        />
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Radio > react/Radio > Default 1`] = `
 <div>
   <div
@@ -7498,6 +8689,145 @@ exports[`Storybook Tests > react/Radio > react/Radio > Readonly 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/Radio > react/Radio > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-direction: column; gap: 24px;"
+    >
+      <div
+        aria-label="default"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            checked=""
+            class="charcoal-radio-input"
+            name="token_v2_default_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            name="token_v2_default_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="true"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="false"
+            class="charcoal-radio-input"
+            disabled=""
+            name="token_v2_default_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+      <div
+        aria-invalid="true"
+        aria-label="invalid"
+        aria-orientation="vertical"
+        class="charcoal-radio-group"
+        role="radiogroup"
+      >
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-radio-input"
+            name="token_v2_invalid_story"
+            type="radio"
+            value="1"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            1
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="true"
+            checked=""
+            class="charcoal-radio-input"
+            name="token_v2_invalid_story"
+            type="radio"
+            value="2"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            2
+          </div>
+        </label>
+        <label
+          aria-disabled="false"
+          class="charcoal-radio__label"
+        >
+          <input
+            aria-invalid="true"
+            class="charcoal-radio-input"
+            name="token_v2_invalid_story"
+            type="radio"
+            value="3"
+          />
+          <div
+            class="charcoal-radio__label_div"
+          >
+            Value 
+            3
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > FullWidthSegments 1`] = `
 <div>
   <div
@@ -7776,6 +9106,89 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Str
           value="option3"
         />
         option3
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="token-v2"
+      aria-orientation="vertical"
+      class="charcoal-segmented-control"
+      data-full-width="false"
+      data-uniform-segment-width="true"
+      id="test-id"
+      role="radiogroup"
+    >
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-uniform-segment-width="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          data-react-aria-pressable="true"
+          name="token-v2"
+          tabindex="0"
+          type="radio"
+          value="option1"
+        />
+        選択肢1
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-uniform-segment-width="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          data-react-aria-pressable="true"
+          name="token-v2"
+          tabindex="0"
+          type="radio"
+          value="option2"
+        />
+        選択肢2
+      </label>
+      <label
+        aria-disabled="false"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-uniform-segment-width="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          data-react-aria-pressable="true"
+          name="token-v2"
+          tabindex="0"
+          type="radio"
+          value="option3"
+        />
+        選択肢3
+      </label>
+      <label
+        aria-disabled="true"
+        class="charcoal-segmented-control-radio__label"
+        data-checked="false"
+        data-uniform-segment-width="true"
+      >
+        <input
+          class="charcoal-segmented-control-radio__input"
+          data-react-aria-pressable="true"
+          disabled=""
+          name="token-v2"
+          type="radio"
+          value="option4"
+        />
+        Disabled
       </label>
     </div>
   </div>
@@ -8079,17 +9492,70 @@ exports[`Storybook Tests > react/Switch > react/Switch > Label 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/Switch > react/Switch > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 16px;"
+    >
+      <label
+        class="charcoal-switch__label"
+        for="test-id"
+      >
+        <input
+          checked=""
+          class="charcoal-switch-input"
+          id="test-id"
+          name="token-v2-default"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-switch__label_div"
+        >
+          Label
+        </div>
+      </label>
+      <label
+        aria-disabled="true"
+        class="charcoal-switch__label"
+        for="test-id"
+      >
+        <input
+          checked=""
+          class="charcoal-switch-input"
+          disabled=""
+          id="test-id"
+          name="token-v2-disabled"
+          role="switch"
+          type="checkbox"
+        />
+        <div
+          class="charcoal-switch__label_div"
+        >
+          Disabled
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TagItem > react/TagItem > Active 1`] = `
 <div>
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="active"
       style="--charcoal-tag-item-bg: #7ACCB1;"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8107,7 +9573,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Active 1`] = `
         name="16/Remove"
         style="--charcoal-icon-size: 16px;"
       />
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -8117,12 +9583,14 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > BGColor 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="default"
       style="--charcoal-tag-item-bg: var(--charcoal-brand);"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8135,7 +9603,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > BGColor 1`] = `
           女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -8145,12 +9613,14 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > BGImage 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="image"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="default"
       style="--charcoal-tag-item-bg: url(data:image/png;base64,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);"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8163,7 +9633,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > BGImage 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -8173,12 +9643,14 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Default 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="default"
       style="--charcoal-tag-item-bg: #7ACCB1;"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8191,7 +9663,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Default 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -8201,12 +9673,13 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Disabled 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
+      aria-disabled="true"
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="default"
-      disabled=""
       style="--charcoal-tag-item-bg: #7ACCB1;"
     >
       <div
@@ -8220,7 +9693,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Disabled 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -8230,12 +9703,14 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > InActive 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="inactive"
       style="--charcoal-tag-item-bg: #7ACCB1;"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8248,7 +9723,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > InActive 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -8258,12 +9733,14 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Small 1`] = `
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="S"
       data-state="default"
       style="--charcoal-tag-item-bg: #7ACCB1;"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8276,7 +9753,135 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > Small 1`] = `
           #女の子
         </span>
       </div>
-    </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TagItem > react/TagItem > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; flex-wrap: wrap; gap: 8px;"
+    >
+      <a
+        class="charcoal-tag-item charcoal-tag-item__bg"
+        data-bg-variant="color"
+        data-react-aria-pressable="true"
+        data-size="M"
+        data-state="default"
+        style="--charcoal-tag-item-bg: #7ACCB1;"
+        tabindex="0"
+      >
+        <div
+          class="charcoal-tag-item__label"
+          data-has-translate="true"
+        >
+          <span
+            class="charcoal-tag-item__label__translated"
+          >
+            girl
+          </span>
+          <span
+            class="charcoal-tag-item__label__text"
+            data-has-translate="true"
+          >
+            #女の子
+          </span>
+        </div>
+      </a>
+      <a
+        class="charcoal-tag-item charcoal-tag-item__bg"
+        data-bg-variant="color"
+        data-react-aria-pressable="true"
+        data-size="M"
+        data-state="active"
+        style="--charcoal-tag-item-bg: #7ACCB1;"
+        tabindex="0"
+      >
+        <div
+          class="charcoal-tag-item__label"
+          data-has-translate="false"
+        >
+          <span
+            class="charcoal-tag-item__label__text"
+            data-has-translate="false"
+          >
+            #女の子
+          </span>
+        </div>
+        <pixiv-icon
+          class="charcoal-icon"
+          name="16/Remove"
+          style="--charcoal-icon-size: 16px;"
+        />
+      </a>
+      <a
+        class="charcoal-tag-item charcoal-tag-item__bg"
+        data-bg-variant="color"
+        data-react-aria-pressable="true"
+        data-size="M"
+        data-state="inactive"
+        style="--charcoal-tag-item-bg: #7ACCB1;"
+        tabindex="0"
+      >
+        <div
+          class="charcoal-tag-item__label"
+          data-has-translate="false"
+        >
+          <span
+            class="charcoal-tag-item__label__text"
+            data-has-translate="false"
+          >
+            #女の子
+          </span>
+        </div>
+      </a>
+      <a
+        aria-disabled="true"
+        class="charcoal-tag-item charcoal-tag-item__bg"
+        data-bg-variant="color"
+        data-react-aria-pressable="true"
+        data-size="M"
+        data-state="default"
+        style="--charcoal-tag-item-bg: #7ACCB1;"
+      >
+        <div
+          class="charcoal-tag-item__label"
+          data-has-translate="false"
+        >
+          <span
+            class="charcoal-tag-item__label__text"
+            data-has-translate="false"
+          >
+            #女の子
+          </span>
+        </div>
+      </a>
+      <a
+        class="charcoal-tag-item charcoal-tag-item__bg"
+        data-bg-variant="color"
+        data-react-aria-pressable="true"
+        data-size="M"
+        data-state="default"
+        style="--charcoal-tag-item-bg: var(--charcoal-brand);"
+        tabindex="0"
+      >
+        <div
+          class="charcoal-tag-item__label"
+          data-has-translate="false"
+        >
+          <span
+            class="charcoal-tag-item__label__text"
+            data-has-translate="false"
+          >
+            女の子
+          </span>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -8286,12 +9891,14 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > TranslatedLabel 1`] =
   <div
     data-dark="false"
   >
-    <button
+    <a
       class="charcoal-tag-item charcoal-tag-item__bg"
       data-bg-variant="color"
+      data-react-aria-pressable="true"
       data-size="M"
       data-state="default"
       style="--charcoal-tag-item-bg: #7ACCB1;"
+      tabindex="0"
     >
       <div
         class="charcoal-tag-item__label"
@@ -8309,7 +9916,7 @@ exports[`Storybook Tests > react/TagItem > react/TagItem > TranslatedLabel 1`] =
           #女の子
         </span>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `;
@@ -9251,6 +10858,163 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > SubLabel 1`] = `
           id="test-id"
           rows="4"
         />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 24px; width: 320px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-required-text"
+          >
+            *必須
+          </div>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span>
+              <button
+                class="charcoal-clickable"
+              >
+                Text Link
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 5;"
+        >
+          <textarea
+            aria-describedby="test-id"
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="true"
+            id="test-id"
+            maxlength="100"
+            placeholder="Placeholder"
+            rows="4"
+          />
+          <span
+            class="charcoal-text-area-counter"
+          >
+            0/100
+          </span>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          説明が入ります
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Invalid
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="true"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 4;"
+        >
+          <textarea
+            aria-describedby="test-id"
+            aria-invalid="true"
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="false"
+            id="test-id"
+            placeholder="Placeholder"
+            rows="4"
+          />
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="true"
+          id="test-id"
+        >
+          エラーメッセージ
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Disabled
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-disabled="true"
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 4;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="false"
+            disabled=""
+            id="test-id"
+            rows="4"
+          >
+            Disabled value
+          </textarea>
+        </div>
       </div>
     </div>
   </div>
@@ -10213,6 +11977,177 @@ exports[`Storybook Tests > react/TextField > react/TextField > SubLabel 1`] = `
             type="text"
             value=""
           />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextField > react/TextField > TokenV2 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 24px; width: 320px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-required-text"
+          >
+            *必須
+          </div>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span>
+              <button
+                class="charcoal-clickable"
+              >
+                Text Link
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-container"
+          data-invalid="false"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-describedby="test-id"
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="false"
+              id="test-id"
+              maxlength="100"
+              placeholder="Placeholder"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="charcoal-text-field-suffix"
+          >
+            <span
+              class="charcoal-text-field-line-counter"
+            >
+              0/100
+            </span>
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          説明が入ります
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Invalid
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-container"
+          data-invalid="true"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-describedby="test-id"
+              aria-invalid="true"
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="true"
+              id="test-id"
+              placeholder="Placeholder"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="true"
+          id="test-id"
+        >
+          エラーメッセージ
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Disabled
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-disabled="true"
+          class="charcoal-text-field-container"
+          data-invalid="false"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="false"
+              disabled=""
+              id="test-id"
+              type="text"
+              value="Disabled value"
+            />
+          </div>
         </div>
       </div>
     </div>

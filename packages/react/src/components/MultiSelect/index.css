@@ -18,7 +18,7 @@
   align-items: center;
   font-size: 14px;
   line-height: 22px;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-default);
 
   &::before {
     display: block;
@@ -43,14 +43,14 @@
   width: 20px;
   height: 20px;
   margin: 0;
-  background-color: var(--charcoal-text3);
+  background-color: var(--charcoal-color-container-neutral-default);
   border-radius: 999999px;
   transition:
     0.2s background-color,
     0.2s box-shadow;
 
   &:checked {
-    background-color: var(--charcoal-brand);
+    background-color: var(--charcoal-color-container-primary-default);
   }
 
   &:focus {
@@ -68,22 +68,22 @@
 
   &:hover:not(:disabled):not([aria-disabled]),
   &:hover[aria-disabled='false'] {
-    background-color: var(--charcoal-text3-hover);
+    background-color: var(--charcoal-color-container-neutral-hover);
   }
 
   &:active:not(:disabled):not([aria-disabled]),
   &:active[aria-disabled='false'] {
-    background-color: var(--charcoal-text3-press);
+    background-color: var(--charcoal-color-container-neutral-press);
   }
 
   &:checked:hover:not(:disabled):not([aria-disabled]),
   &:checked:hover[aria-disabled='false'] {
-    background-color: var(--charcoal-brand-hover);
+    background-color: var(--charcoal-color-container-primary-hover);
   }
 
   &:checked:active:not(:disabled):not([aria-disabled]),
   &:checked:active[aria-disabled='false'] {
-    background-color: var(--charcoal-brand-press);
+    background-color: var(--charcoal-color-container-primary-press);
   }
 
   &[aria-invalid='true'][data-overlay='false']:not(:disabled):not(
@@ -97,7 +97,7 @@
   }
 
   &[data-overlay='true'] {
-    background-color: var(--charcoal-surface4);
+    background-color: var(--charcoal-color-container-on-img-default);
   }
 }
 
@@ -112,7 +112,7 @@
   width: 24px;
   height: 24px;
   border-radius: 999999px;
-  color: var(--charcoal-text5);
+  color: var(--charcoal-color-icon-on-primary-default);
   transition: 0.2s box-shadow;
 
   &[aria-invalid='true'][data-overlay='true']:not(:disabled):not(
@@ -126,7 +126,7 @@
   }
 
   &[data-overlay='true'] {
-    border-color: var(--charcoal-text5);
+    border-color: var(--charcoal-color-border-hud);
     border-width: 2px;
     border-style: solid;
   }

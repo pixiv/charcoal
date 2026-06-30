@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "6.0.0-beta.2",
+  "version": "6.0.0-rc.1",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -19,6 +19,7 @@
       "import": "./dist/unstable-token-object/index.js",
       "default": "./dist/unstable-token-object/index.js"
     },
+    "./css/*": "./dist/css/*",
     "./unstable-css/*": "./dist/unstable-css/*",
     "./unstable-tokens/*": "./dist/unstable-tokens/*"
   },
@@ -26,6 +27,9 @@
     "*": {
       "unstable-token-object": [
         "./dist/token-object/index.d.ts"
+      ],
+      "css/*": [
+        "./dist/css/*"
       ],
       "unstable-tokens/*": [
         "./dist/unstable-tokens/*"

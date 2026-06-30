@@ -64,3 +64,20 @@ export const Disabled: StoryObj<typeof TagItem> = {
     return <TagItem label="#女の子" disabled />
   },
 }
+
+export const TokenV2: StoryObj<typeof TagItem> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: function Render() {
+    return (
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <TagItem label="#女の子" translatedLabel="girl" />
+        <TagItem label="#女の子" status="active" />
+        <TagItem label="#女の子" status="inactive" />
+        <TagItem label="#女の子" disabled />
+        <TagItem label="女の子" bgColor="var(--charcoal-brand)" />
+      </div>
+    )
+  },
+}

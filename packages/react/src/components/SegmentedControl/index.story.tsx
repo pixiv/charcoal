@@ -118,3 +118,23 @@ export const UniformWidthAndFullWidthSegments: StoryObj<
     fullWidth: true,
   },
 }
+
+export const TokenV2: StoryObj<typeof SegmentedControl> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  args: {
+    name: 'token-v2',
+    data: [
+      { label: '選択肢1', value: 'option1' },
+      { label: '選択肢2', value: 'option2' },
+      { label: '選択肢3', value: 'option3' },
+      { label: 'Disabled', value: 'option4', disabled: true },
+    ],
+    disabled: false,
+    readonly: false,
+    required: false,
+    uniformSegmentWidth: true,
+    fullWidth: false,
+  },
+}

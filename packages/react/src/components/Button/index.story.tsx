@@ -26,6 +26,24 @@ export const Danger: StoryObj<typeof Button> = {
   render: () => <Button variant="Danger">Danger</Button>,
 }
 
+export const TokenV2: StoryObj<typeof Button> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: () => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+      <Button>Default</Button>
+      <Button variant="Primary">Primary</Button>
+      <Button variant="Navigation">Navigation</Button>
+      <Button variant="Overlay">Overlay</Button>
+      <Button variant="Danger">Danger</Button>
+      <Button isActive>Active</Button>
+      <Button disabled>Disabled</Button>
+      <Button size="S">Small</Button>
+    </div>
+  ),
+}
+
 export const Small: StoryObj<typeof Button> = {
   render: () => <Button size="S">Small</Button>,
 }

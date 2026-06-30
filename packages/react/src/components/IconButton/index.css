@@ -55,48 +55,48 @@
   }
 
   &[data-variant='Default'] {
-    color: var(--charcoal-text3);
-    background-color: var(--charcoal-transparent);
+    color: var(--charcoal-color-icon-tertiary-default);
+    background-color: var(--charcoal-color-container-default-a);
 
     &[data-active='true']:not(:disabled):not([aria-disabled]),
     &[data-active='true'][aria-disabled='false'] {
-      color: var(--charcoal-text3-press);
-      background-color: var(--charcoal-transparent-press);
+      color: var(--charcoal-color-icon-tertiary-press);
+      background-color: var(--charcoal-color-container-press-a);
     }
 
     &[data-active='false']:not(:disabled):not([aria-disabled]):hover,
     &[data-active='false'][aria-disabled='false']:hover {
-      color: var(--charcoal-text3-hover);
-      background-color: var(--charcoal-transparent-hover);
+      color: var(--charcoal-color-icon-tertiary-hover);
+      background-color: var(--charcoal-color-container-hover-a);
     }
 
     &[data-active='false']:not(:disabled):not([aria-disabled]):active,
     &[data-active='false'][aria-disabled='false']:active {
-      color: var(--charcoal-text3-press);
-      background-color: var(--charcoal-transparent-press);
+      color: var(--charcoal-color-icon-tertiary-press);
+      background-color: var(--charcoal-color-container-press-a);
     }
   }
 
   &[data-variant='Overlay'] {
-    color: var(--charcoal-text5);
-    background-color: var(--charcoal-surface4);
+    color: var(--charcoal-color-icon-on-on-img-default);
+    background-color: var(--charcoal-color-container-on-img-default);
 
     &[data-active='true']:not(:disabled):not([aria-disabled]),
     &[data-active='true'][aria-disabled='false'] {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-surface4-press);
+      color: var(--charcoal-color-icon-on-on-img-press);
+      background-color: var(--charcoal-color-container-on-img-press);
     }
 
     &[data-active='false']:not(:disabled):not([aria-disabled]):hover,
     &[data-active='false'][aria-disabled='false']:hover {
-      color: var(--charcoal-text5-hover);
-      background-color: var(--charcoal-surface4-hover);
+      color: var(--charcoal-color-icon-on-on-img-hover);
+      background-color: var(--charcoal-color-container-on-img-hover);
     }
 
     &[data-active='false']:not(:disabled):not([aria-disabled]):active,
     &[data-active='false'][aria-disabled='false']:active {
-      color: var(--charcoal-text5-press);
-      background-color: var(--charcoal-surface4-press);
+      color: var(--charcoal-color-icon-on-on-img-press);
+      background-color: var(--charcoal-color-container-on-img-press);
     }
   }
 

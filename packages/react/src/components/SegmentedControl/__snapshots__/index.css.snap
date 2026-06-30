@@ -1,7 +1,7 @@
 .charcoal-segmented-control {
   display: inline-flex;
   align-items: center;
-  background-color: var(--charcoal-surface3);
+  background-color: var(--charcoal-color-container-secondary-default-a);
   border-radius: 16px;
 }
 
@@ -26,7 +26,7 @@
   padding-right: 16px;
   padding-left: 16px;
   border-radius: 16px;
-  color: var(--charcoal-text2);
+  color: var(--charcoal-color-text-secondary-default);
   font-size: 14px;
   line-height: 22px;
 }
@@ -37,8 +37,8 @@
 }
 
 .charcoal-segmented-control-radio__label[data-checked='true'] {
-  background-color: var(--charcoal-brand);
-  color: var(--charcoal-text5);
+  background-color: var(--charcoal-color-container-primary-default);
+  color: var(--charcoal-color-text-on-primary-default);
 }
 
 .charcoal-segmented-control-radio__label[data-uniform-segment-width='true'], .charcoal-segmented-control-radio__label[data-full-width='true'] {

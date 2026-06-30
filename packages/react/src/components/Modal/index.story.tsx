@@ -135,6 +135,26 @@ const StyledModalText = (props: Omit<React.ComponentProps<'div'>, 'style'>) => {
 
 export const Default: StoryObj<typeof Modal> = {}
 
+export const TokenV2: StoryObj<typeof Modal> = {
+  parameters: {
+    tokenVersion: 'v2',
+  },
+  render: function Render(args) {
+    const state = useOverlayTriggerState({ defaultOpen: true })
+    return (
+      <OverlayProvider>
+        <Button onClick={() => state.open()}>Open Modal</Button>
+        <M
+          {...args}
+          isDismissable
+          isOpen={state.isOpen}
+          onClose={() => state.close()}
+        />
+      </OverlayProvider>
+    )
+  },
+}
+
 export const FullBottomSheet: StoryObj<typeof Modal> = {
   args: {
     bottomSheet: 'full',

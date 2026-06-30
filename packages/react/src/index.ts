@@ -88,11 +88,11 @@ export {
   type HintTextContext,
 } from './components/HintText'
 export {
-  default as UnstableTextEllipsis,
+  default as TextEllipsis,
   type TextEllipsisProps,
 } from './components/TextEllipsis'
 export {
-  default as UnstablePagination,
+  default as Pagination,
   type PaginationProps,
 } from './components/Pagination'
 export {
