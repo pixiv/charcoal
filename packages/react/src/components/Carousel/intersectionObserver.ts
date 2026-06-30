@@ -18,7 +18,13 @@ export function observeCenter(
   el: HTMLElement,
   onEnter: () => void,
 ): () => void {
-  if (typeof IntersectionObserver === 'undefined') return () => undefined
+  // window で SSR を弾く。polyfill が global に IntersectionObserver を生やしていても
+  // サーバー上では observe しない。
+  if (
+    typeof window === 'undefined' ||
+    typeof IntersectionObserver === 'undefined'
+  )
+    return () => undefined
   const root = el.parentElement
   if (!root) return () => undefined
 

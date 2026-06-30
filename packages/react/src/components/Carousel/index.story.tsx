@@ -52,6 +52,7 @@ export default {
     size: 'M',
     hasGradient: false,
     fullWidth: false,
+    scrollStep: 0.75,
   },
   argTypes: {
     size: {
@@ -62,6 +63,15 @@ export default {
     fullWidth: { control: 'boolean' },
     navigationButtons: { control: 'boolean' },
     indicator: { control: 'boolean' },
+    // react-sandbox 互換コールバックを Actions パネルで確認できるようにする。
+    onScroll: { action: 'onScroll' },
+    onResize: { action: 'onResize' },
+    onScrollStateChange: { action: 'onScrollStateChange' },
+    scrollStep: {
+      // number は clientWidth に対する比率。関数 (ctx) => px も渡せるが、
+      // Controls では数値（比率）のみ操作可能。関数形式は ScrollStepFunction story を参照。
+      control: { type: 'range', min: 0.1, max: 1.5, step: 0.05 },
+    },
   },
 } satisfies Meta<typeof Carousel>
 
@@ -127,6 +137,25 @@ const darkTiles: CarouselItem[] = Array.from({ length: 10 }, (_, i) => ({
 
 export const GradientOnDarkContent: StoryObj<typeof Carousel> = {
   args: { size: 'M', hasGradient: true, items: darkTiles },
+}
+
+// scrollStep に関数を渡してフル制御する例（送り量を clientWidth - 48px に固定）。
+// Controls の数値スライダーでは表現できない使い方の確認用。
+export const ScrollStepFunction: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'M',
+    items: numberedItems,
+    scrollStep: ({ clientWidth }) => clientWidth - 48,
+  },
+}
+
+// scroll-snap を item ごと（mandatory）に。align: start で各アイテムが左端にスナップする。
+export const ScrollSnapPerItem: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'M',
+    items: numberedItems,
+    scrollSnap: { type: 'mandatory', align: 'start' },
+  },
 }
 
 export const AllControls: StoryObj<typeof Carousel> = {

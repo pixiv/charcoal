@@ -19,7 +19,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
   scroll-behavior: smooth;
   scrollbar-width: none;
   outline: none;
@@ -29,13 +28,36 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: inset 0 0 0 2px rgba(0, 150, 250, 0.56);
+    box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
 }
 
 .charcoal-carousel[data-size='S'] .charcoal-carousel__scroller {
   gap: 0;
+}
+
+/* スクロールスナップは prop（scrollSnap）で選択。type は scroller、align は item に出し分ける。
+   未指定時の既定（M=none / S=mandatory / align=center）は JS 側で data 属性に解決する。 */
+.charcoal-carousel[data-scroll-snap-type='none'] .charcoal-carousel__scroller {
+  scroll-snap-type: none;
+}
+
+.charcoal-carousel[data-scroll-snap-type='proximity']
+  .charcoal-carousel__scroller {
+  scroll-snap-type: x proximity;
+}
+
+.charcoal-carousel[data-scroll-snap-type='mandatory']
+  .charcoal-carousel__scroller {
   scroll-snap-type: x mandatory;
+}
+
+.charcoal-carousel[data-scroll-snap-align='center'] .charcoal-carousel__item {
+  scroll-snap-align: center;
+}
+
+.charcoal-carousel[data-scroll-snap-align='start'] .charcoal-carousel__item {
+  scroll-snap-align: start;
 }
 
 /* グラデーション: はみ出してスクロール可能な側のみ、端のアイテムを背景色（白）へ
@@ -81,7 +103,6 @@
 .charcoal-carousel__item {
   flex: 0 0 auto;
   min-width: 0;
-  scroll-snap-align: center;
 }
 
 .charcoal-carousel[data-size='S'] .charcoal-carousel__item {

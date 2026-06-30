@@ -1,7 +1,8 @@
+import { createRef } from 'react'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
-import Carousel, { type CarouselItem } from '.'
+import Carousel, { type CarouselItem, type CarouselHandlerRef } from '.'
 
 const items: CarouselItem[] = Array.from({ length: 6 }, (_, i) => ({
   id: `item-${i}`,
@@ -174,8 +175,8 @@ describe('Carousel', () => {
       })
     })
 
-    it('respects custom scrollStepRatio', () => {
-      render(<Carousel items={items} scrollStepRatio={0.5} />)
+    it('respects custom scrollStep ratio (number)', () => {
+      render(<Carousel items={items} scrollStep={0.5} />)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
       act(() => {
@@ -190,6 +191,36 @@ describe('Carousel', () => {
 
       expect(scrollBySpy).toHaveBeenCalledWith({
         left: 400,
+        behavior: 'smooth',
+      })
+    })
+
+    it('respects custom scrollStep function (returns px)', () => {
+      const scrollStep = vi.fn(
+        ({ clientWidth }: { clientWidth: number }) => clientWidth - 48,
+      )
+      render(<Carousel items={items} scrollStep={scrollStep} />)
+      const scroller = getScroller()
+      mockScrollerGeometry(scroller, { scrollLeft: 100 })
+      act(() => {
+        fireEvent.scroll(scroller)
+      })
+
+      const scrollBySpy = vi.fn()
+      scroller.scrollBy = scrollBySpy
+
+      const next = screen.getByRole('button', { name: 'Next' })
+      fireEvent.click(next)
+
+      expect(scrollStep).toHaveBeenCalledWith(
+        expect.objectContaining({
+          clientWidth: 800,
+          direction: 'next',
+        }),
+      )
+      // clientWidth(800) - 48 = 752
+      expect(scrollBySpy).toHaveBeenCalledWith({
+        left: 752,
         behavior: 'smooth',
       })
     })
@@ -469,6 +500,116 @@ describe('Carousel', () => {
     it('sets full-width data attribute', () => {
       const { container } = render(<Carousel items={items} fullWidth />)
       expect(container.querySelector("[data-full-width='true']")).toBeTruthy()
+    })
+  })
+
+  describe('scrollSnap', () => {
+    const getRegion = () => screen.getByRole('region')
+
+    it('defaults to none / center on Size M (sandbox 同等の 0.75)', () => {
+      render(<Carousel items={items} size="M" />)
+      expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'none')
+      expect(getRegion()).toHaveAttribute('data-scroll-snap-align', 'center')
+    })
+
+    it('defaults to mandatory on Size S', () => {
+      render(<Carousel items={items} size="S" />)
+      expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'mandatory')
+    })
+
+    it('overrides type per prop (item-ごと mandatory)', () => {
+      render(
+        <Carousel items={items} size="M" scrollSnap={{ type: 'mandatory' }} />,
+      )
+      expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'mandatory')
+    })
+
+    it('overrides align per prop', () => {
+      render(<Carousel items={items} scrollSnap={{ align: 'start' }} />)
+      expect(getRegion()).toHaveAttribute('data-scroll-snap-align', 'start')
+    })
+
+    it('supports disabling snap (none)', () => {
+      render(<Carousel items={items} scrollSnap={{ type: 'none' }} />)
+      expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'none')
+    })
+  })
+
+  describe('react-sandbox compat (callbacks / ref)', () => {
+    it('calls onScroll with scrollLeft on scroll', () => {
+      const onScroll = vi.fn()
+      render(<Carousel items={items} onScroll={onScroll} />)
+      const scroller = getScroller()
+      mockScrollerGeometry(scroller, { scrollLeft: 240 })
+      act(() => {
+        fireEvent.scroll(scroller)
+      })
+      expect(onScroll).toHaveBeenCalledWith(240)
+    })
+
+    it('calls onScrollStateChange when scrollability changes', () => {
+      const onScrollStateChange = vi.fn()
+      render(
+        <Carousel items={items} onScrollStateChange={onScrollStateChange} />,
+      )
+      const scroller = getScroller()
+      mockScrollerGeometry(scroller, { scrollLeft: 100 })
+      act(() => {
+        fireEvent.scroll(scroller)
+      })
+      expect(onScrollStateChange).toHaveBeenCalledWith(true)
+    })
+
+    it('exposes resetScroll() via ref to restore the initial position', () => {
+      let lastSetLeft: number | undefined
+      const spies = [
+        vi
+          .spyOn(HTMLElement.prototype, 'scrollWidth', 'get')
+          .mockReturnValue(2400),
+        vi
+          .spyOn(HTMLElement.prototype, 'clientWidth', 'get')
+          .mockReturnValue(800),
+        vi
+          .spyOn(HTMLElement.prototype, 'scrollLeft', 'set')
+          .mockImplementation((v: number) => {
+            lastSetLeft = v
+          }),
+      ]
+      const ref = createRef<CarouselHandlerRef>()
+      render(
+        <Carousel ref={ref} items={items} defaultScroll={{ align: 'right' }} />,
+      )
+      lastSetLeft = undefined
+      act(() => {
+        ref.current?.resetScroll()
+      })
+      // align right -> maxScroll = 2400 - 800 = 1600
+      expect(lastSetLeft).toBe(1600)
+      spies.forEach((s) => s.mockRestore())
+    })
+
+    it('calls onResize with clientWidth when the scroller resizes', () => {
+      const roCallbacks: Array<(e: Array<{ target: Element }>) => void> = []
+      const origRO = globalThis.ResizeObserver
+      globalThis.ResizeObserver = class {
+        observe = vi.fn()
+        unobserve = vi.fn()
+        disconnect = vi.fn()
+        constructor(cb: (e: Array<{ target: Element }>) => void) {
+          roCallbacks.push(cb)
+        }
+      } as unknown as typeof globalThis.ResizeObserver
+      const cwSpy = vi
+        .spyOn(HTMLElement.prototype, 'clientWidth', 'get')
+        .mockReturnValue(640)
+      const onResize = vi.fn()
+      render(<Carousel items={items} onResize={onResize} />)
+      act(() => {
+        roCallbacks.forEach((cb) => cb([]))
+      })
+      expect(onResize).toHaveBeenCalledWith(640)
+      cwSpy.mockRestore()
+      globalThis.ResizeObserver = origRO
     })
   })
 

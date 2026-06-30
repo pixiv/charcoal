@@ -1,0 +1,8 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks'
+import migration from './MIGRATION.md?raw'
+
+{/* 本文は MIGRATION.md を単一ソースとして ?raw で読み込み、ここで描画する */}
+
+<Meta title="react/Carousel/Migration Guide" />
+
+<Markdown>{migration}</Markdown>

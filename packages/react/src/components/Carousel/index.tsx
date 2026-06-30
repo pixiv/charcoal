@@ -1,8 +1,10 @@
 import './index.css'
 
 import {
+  forwardRef,
   memo,
   useCallback,
+  useImperativeHandle,
   useRef,
   useState,
   useSyncExternalStore,
@@ -28,6 +30,29 @@ export type CarouselItem = {
 
 export type ScrollAlign = 'left' | 'center' | 'right'
 
+export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
+
+export type ScrollSnapAlign = 'center' | 'start'
+
+export type ScrollSnap = Readonly<{
+  type?: ScrollSnapType
+  align?: ScrollSnapAlign
+}>
+
+export type ScrollStepContext = Readonly<{
+  clientWidth: number
+  scrollWidth: number
+  scrollLeft: number
+  direction: 'prev' | 'next'
+}>
+
+export type ScrollStep = number | ((ctx: ScrollStepContext) => number)
+
+// 命令的 API。ref 経由で初期位置へのリセットを公開する（react-sandbox 互換）。
+export type CarouselHandlerRef = {
+  resetScroll: () => void
+}
+
 export type CarouselProps = Readonly<{
   className?: string
   hasGradient?: boolean
@@ -35,14 +60,22 @@ export type CarouselProps = Readonly<{
   navigationButtons?: boolean
   indicator?: boolean
   size?: 'S' | 'M'
-  scrollStepRatio?: number
+  // 進む量。number は clientWidth に対する比率、function は進む px を直接返す。
+  scrollStep?: ScrollStep
+  // スクロールスナップ。未指定時は size 基準（M=none / S=mandatory）、align=center。
+  // M の none は sandbox 同等に 0.75×表示幅ちょうど進む（スナップで着地を吸着しない）。
+  scrollSnap?: ScrollSnap
+  // react-sandbox 互換のコールバック。
+  onScroll?: (left: number) => void
+  onResize?: (width: number) => void
+  onScrollStateChange?: (canScroll: boolean) => void
   defaultScroll?: { align?: ScrollAlign; offset?: number }
   items: CarouselItem[]
 }>
 
 type Direction = 'prev' | 'next'
 
-const DEFAULT_SCROLL_STEP_RATIO = 0.75
+const DEFAULT_SCROLL_STEP = 0.75
 
 const NAV_ICON = {
   prev: '24/Prev',
@@ -96,35 +129,47 @@ const CarouselIndicatorItem = ({
     <button
       className="charcoal-carousel__indicator__item"
       data-active={isActive}
+      aria-current={isActive || undefined}
       aria-label={`Go to slide ${index + 1}`}
       onClick={handleClick}
     />
   )
 }
 
-const Carousel = ({
-  size = 'M',
-  navigationButtons,
-  indicator,
-  hasGradient = false,
-  fullWidth = false,
-  scrollStepRatio = DEFAULT_SCROLL_STEP_RATIO,
-  defaultScroll: { align = 'left', offset = 0 } = {},
-  ...props
-}: CarouselProps) => {
+const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
+  {
+    size = 'M',
+    navigationButtons,
+    indicator,
+    hasGradient = false,
+    fullWidth = false,
+    scrollStep = DEFAULT_SCROLL_STEP,
+    scrollSnap,
+    onScroll,
+    onResize,
+    onScrollStateChange,
+    defaultScroll: { align = 'left', offset = 0 } = {},
+    ...props
+  }: CarouselProps,
+  ref,
+) {
   const className = useClassNames('charcoal-carousel', props.className)
   const showNavigationButtons = navigationButtons ?? size === 'M'
   const showIndicator = indicator ?? size === 'S'
+  const snapType = scrollSnap?.type ?? (size === 'S' ? 'mandatory' : 'none')
+  const snapAlign = scrollSnap?.align ?? 'center'
 
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
-  const { scrollByStep, onItemResize } = useCarouselScroller(
+  const { scrollByStep, onItemResize, resetScroll } = useCarouselScroller(
     scrollerRef,
     store,
     props.items.length,
-    { align, offset, scrollStepRatio },
+    { align, offset, scrollStep, onScroll, onResize, onScrollStateChange },
   )
+
+  useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
   const { activeIndex, canPrev, canNext } = useSyncExternalStore(
     store.subscribe,
@@ -164,6 +209,8 @@ const Carousel = ({
       data-has-gradient={hasGradient}
       data-full-width={fullWidth}
       data-indicator={showIndicator}
+      data-scroll-snap-type={snapType}
+      data-scroll-snap-align={snapAlign}
       data-can-prev={canPrev}
       data-can-next={canNext}
       role="region"
@@ -224,6 +271,8 @@ const Carousel = ({
       </div>
     </div>
   )
-}
+})
+
+Carousel.displayName = 'Carousel'
 
 export default memo(Carousel)

@@ -391,6 +391,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
       data-full-width="false"
       data-has-gradient="true"
       data-indicator="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -499,6 +501,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
         data-visible="true"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -548,6 +551,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -782,6 +787,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -901,6 +907,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -1009,6 +1017,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -1058,6 +1067,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -1292,6 +1303,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -1411,6 +1423,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
       data-full-width="true"
       data-has-gradient="false"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -1519,6 +1533,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -1568,6 +1583,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
       data-full-width="false"
       data-has-gradient="true"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -1712,6 +1729,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -1781,6 +1799,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -1889,6 +1909,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
         data-visible="true"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -1938,6 +1959,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="mandatory"
       data-size="S"
       role="region"
     >
@@ -2046,6 +2069,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
         data-visible="true"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -2081,6 +2105,718 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
 </div>
 `;
 
+exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="false"
+      data-scroll-snap-align="start"
+      data-scroll-snap-type="mandatory"
+      data-size="M"
+      role="region"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              1
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              2
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              9
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              16
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              20
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="charcoal-carousel__indicator"
+        data-visible="false"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 6"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 7"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 8"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 9"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 10"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 11"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 12"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 13"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 14"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 15"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 16"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 17"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 18"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 19"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 20"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
+      data-size="M"
+      role="region"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              1
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              2
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              9
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              16
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              20
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="charcoal-carousel__indicator"
+        data-visible="false"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 6"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 7"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 8"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 9"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 10"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 11"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 12"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 13"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 14"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 15"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 16"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 17"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 18"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 19"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 20"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
 <div>
   <div
@@ -2095,6 +2831,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -2203,6 +2941,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -2252,6 +2991,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="mandatory"
       data-size="S"
       role="region"
     >
@@ -2360,6 +3101,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
         data-visible="true"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"
@@ -2409,6 +3151,8 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
       data-full-width="false"
       data-has-gradient="true"
       data-indicator="false"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
       data-size="M"
       role="region"
     >
@@ -2517,6 +3261,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
         data-visible="false"
       >
         <button
+          aria-current="true"
           aria-label="Go to slide 1"
           class="charcoal-carousel__indicator__item"
           data-active="true"

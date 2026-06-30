@@ -3,7 +3,10 @@ let observer: ResizeObserver | null = null
 const callbacks = new Map<Element, () => void>()
 
 function getObserver(): ResizeObserver | null {
-  if (typeof ResizeObserver === 'undefined') return null
+  // window で SSR を弾く。polyfill が global に ResizeObserver を生やしていても
+  // サーバー上では observe しない。
+  if (typeof window === 'undefined' || typeof ResizeObserver === 'undefined')
+    return null
   if (!observer) {
     observer = new ResizeObserver((entries) => {
       for (const e of entries) callbacks.get(e.target)?.()

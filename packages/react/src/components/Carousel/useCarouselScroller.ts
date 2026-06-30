@@ -6,7 +6,7 @@ import {
   type RefObject,
 } from 'react'
 import type { CarouselStore } from './carouselStore'
-import type { ScrollAlign } from './index'
+import type { ScrollAlign, ScrollStep } from './index'
 
 const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect
@@ -16,12 +16,16 @@ const INTERACTION_EVENTS = ['pointerdown', 'wheel', 'touchstart'] as const
 export type CarouselScrollerOptions = Readonly<{
   align: ScrollAlign
   offset: number
-  scrollStepRatio: number
+  scrollStep: ScrollStep
+  onScroll?: (left: number) => void
+  onResize?: (width: number) => void
+  onScrollStateChange?: (canScroll: boolean) => void
 }>
 
 export type CarouselScrollerResult = Readonly<{
   scrollByStep: (direction: 'prev' | 'next') => void
   onItemResize: () => void
+  resetScroll: () => void
 }>
 
 export function useCarouselScroller(
@@ -30,18 +34,31 @@ export function useCarouselScroller(
   itemCount: number,
   options: CarouselScrollerOptions,
 ): CarouselScrollerResult {
-  const { align, offset, scrollStepRatio } = options
+  const { align, offset, scrollStep, onScroll, onResize, onScrollStateChange } =
+    options
   const initialScrollActive = useRef(true)
+
+  // コールバックは最新参照を ref に保持し、リスナーの貼り直しを避ける。
+  const callbacksRef = useRef({ onScroll, onResize, onScrollStateChange })
+  useEffect(() => {
+    callbacksRef.current = { onScroll, onResize, onScrollStateChange }
+  })
+
+  // onScrollStateChange は canScroll(=canPrev||canNext) が変化した時だけ発火する。
+  const prevCanScroll = useRef<boolean | null>(null)
 
   const updateScrollState = useCallback(() => {
     const el = scrollerRef.current
     if (!el) return
     const { scrollLeft, scrollWidth, clientWidth } = el
-    store.dispatch({
-      type: 'setScrollState',
-      canPrev: scrollLeft > 1,
-      canNext: scrollLeft < scrollWidth - clientWidth - 1,
-    })
+    const canPrev = scrollLeft > 1
+    const canNext = scrollLeft < scrollWidth - clientWidth - 1
+    store.dispatch({ type: 'setScrollState', canPrev, canNext })
+    const canScroll = canPrev || canNext
+    if (prevCanScroll.current !== canScroll) {
+      prevCanScroll.current = canScroll
+      callbacksRef.current.onScrollStateChange?.(canScroll)
+    }
   }, [scrollerRef, store])
 
   const applyInitialScroll = useCallback(() => {
@@ -61,14 +78,31 @@ export function useCarouselScroller(
     el.scrollLeft = Math.max(0, Math.min(left, maxScroll))
   }, [scrollerRef, align, offset])
 
-  // canPrev/canNext: scroll で更新。itemCount 変化で貼り直し。
+  // canPrev/canNext: scroll で更新。onScroll もここから発火。itemCount 変化で貼り直し。
   useIsomorphicLayoutEffect(() => {
     const el = scrollerRef.current
     if (!el) return
     updateScrollState()
-    el.addEventListener('scroll', updateScrollState, { passive: true })
-    return () => el.removeEventListener('scroll', updateScrollState)
+    const handleScroll = () => {
+      updateScrollState()
+      callbacksRef.current.onScroll?.(el.scrollLeft)
+    }
+    el.addEventListener('scroll', handleScroll, { passive: true })
+    return () => el.removeEventListener('scroll', handleScroll)
   }, [scrollerRef, updateScrollState, itemCount])
+
+  // scroller 幅の変化で onResize(clientWidth) を通知し、状態と初期位置を再計算する。
+  useIsomorphicLayoutEffect(() => {
+    const el = scrollerRef.current
+    if (!el || typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => {
+      applyInitialScroll()
+      updateScrollState()
+      callbacksRef.current.onResize?.(el.clientWidth)
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [scrollerRef, applyInitialScroll, updateScrollState])
 
   // 初期スクロール適用 + ユーザー操作で打ち切り。
   useIsomorphicLayoutEffect(() => {
@@ -94,19 +128,31 @@ export function useCarouselScroller(
     updateScrollState()
   }, [applyInitialScroll, updateScrollState])
 
+  // defaultScroll の初期位置へ戻す（命令的 API: CarouselHandlerRef.resetScroll）。
+  const resetScroll = useCallback(() => {
+    initialScrollActive.current = true
+    applyInitialScroll()
+    updateScrollState()
+  }, [applyInitialScroll, updateScrollState])
+
   const scrollByStep = useCallback(
     (direction: 'prev' | 'next') => {
       const el = scrollerRef.current
       if (!el) return
       initialScrollActive.current = false
-      const delta = el.clientWidth * scrollStepRatio
+      const { clientWidth, scrollWidth, scrollLeft } = el
+      // 進む量(px)の絶対値。符号は direction で付ける。
+      const delta =
+        typeof scrollStep === 'function'
+          ? scrollStep({ clientWidth, scrollWidth, scrollLeft, direction })
+          : clientWidth * scrollStep
       el.scrollBy({
         left: direction === 'next' ? delta : -delta,
         behavior: 'smooth',
       })
     },
-    [scrollerRef, scrollStepRatio],
+    [scrollerRef, scrollStep],
   )
 
-  return { scrollByStep, onItemResize }
+  return { scrollByStep, onItemResize, resetScroll }
 }
