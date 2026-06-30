@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/icons-cli",
-  "version": "6.0.0-rc.0",
+  "version": "6.0.0-rc.1",
   "license": "Apache-2.0",
   "type": "commonjs",
   "bin": "./dist/index.js",
