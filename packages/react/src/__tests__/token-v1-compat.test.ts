@@ -17,7 +17,10 @@ import postcss, { type Rule } from 'postcss'
 //
 // 旧 index.css は charcoal の直前リリース (published v1) を fixtures に取り込んだもの。
 
-const legacyPath = path.resolve(import.meta.dirname, 'fixtures/legacy-v1-index.css')
+const legacyPath = path.resolve(
+  import.meta.dirname,
+  'fixtures/legacy-v1-index.css',
+)
 const componentsDir = path.resolve(import.meta.dirname, '../components')
 
 async function getCssFiles(dir: string): Promise<string[]> {
@@ -59,7 +62,9 @@ function declarationTokens(css: string): Map<string, string> {
 const legacy = declarationTokens(await fs.readFile(legacyPath, 'utf-8'))
 const modern = new Map<string, string>()
 for (const file of await getCssFiles(componentsDir)) {
-  for (const [key, token] of declarationTokens(await fs.readFile(file, 'utf-8'))) {
+  for (const [key, token] of declarationTokens(
+    await fs.readFile(file, 'utf-8'),
+  )) {
     modern.set(key, token)
   }
 }
@@ -70,6 +75,7 @@ for (const [key, newToken] of modern) {
   if (!legacy.has(key)) continue
   if (!newToken.startsWith('--charcoal-color-')) continue
   if (!correspondence.has(newToken)) correspondence.set(newToken, new Map())
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   correspondence.get(newToken)!.set(key, legacy.get(key)!)
 }
 
@@ -85,7 +91,8 @@ describe('Design Token 1.0互換: 旧 index.css の見た目を壊さない', ()
       .map(
         ({ newToken, oldTokens, usages }, index) =>
           `${index + 1}) ${newToken} は旧の {${oldTokens.join(', ')}} を破壊的に統合:\n    - ${usages.join('\n    - ')}`,
-      ).join('\n')
+      )
+      .join('\n')
 
     expect(breaking).toMatchInlineSnapshot(`
       "1) --charcoal-color-text-default は旧の {--charcoal-text1, --charcoal-text2} を破壊的に統合:

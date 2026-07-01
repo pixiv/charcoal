@@ -56,13 +56,19 @@
   --charcoal-color-semantic-assertive-default-a: rgba(255, 43, 0, 0.32);
   /* 互換レイヤー: v1相当のtypography値に解決 */
   --charcoal-text-line-height-paragraph: var(--charcoal-text-v1-line-height-22);
-  --charcoal-text-line-height-heading-xxxs: var(--charcoal-text-v1-line-height-22);
-  --charcoal-text-line-height-heading-xxs: var(--charcoal-text-v1-line-height-24);
+  --charcoal-text-line-height-heading-xxxs: var(
+    --charcoal-text-v1-line-height-22
+  );
+  --charcoal-text-line-height-heading-xxs: var(
+    --charcoal-text-v1-line-height-24
+  );
   --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-0);
   --charcoal-text-line-height-caption-s: var(--charcoal-text-v1-line-height-20);
   --charcoal-text-line-height-caption-m: var(--charcoal-text-v1-line-height-22);
   --charcoal-text-line-height-body: var(--charcoal-text-v1-line-height-22);
-  --charcoal-text-font-weight-regular: var(--charcoal-text-v1-font-weight-default);
+  --charcoal-text-font-weight-regular: var(
+    --charcoal-text-v1-font-weight-default
+  );
   --charcoal-text-font-weight-bold: var(--charcoal-text-v1-font-weight-bold);
   --charcoal-text-font-size-paragraph: var(--charcoal-text-v1-font-size-14);
   --charcoal-text-font-size-heading-xxxs: var(--charcoal-text-v1-font-size-14);
@@ -134,30 +140,74 @@
   --charcoal-color-icon-secondary-hover: var(--charcoal-text2-hover);
   --charcoal-color-icon-secondary-default: var(--charcoal-text2);
   --charcoal-color-icon-press: var(--charcoal-color-text-press);
-  --charcoal-color-icon-positive-press: var(--charcoal-color-text-positive-press);
-  --charcoal-color-icon-positive-hover: var(--charcoal-color-text-positive-hover);
-  --charcoal-color-icon-positive-default: var(--charcoal-color-text-positive-default);
-  --charcoal-color-icon-on-primary-press: var(--charcoal-color-text-on-primary-press);
-  --charcoal-color-icon-on-primary-hover: var(--charcoal-color-text-on-primary-hover);
-  --charcoal-color-icon-on-primary-default: var(--charcoal-color-text-on-primary-default);
-  --charcoal-color-icon-on-positive-press: var(--charcoal-color-text-on-positive-press);
-  --charcoal-color-icon-on-positive-hover: var(--charcoal-color-text-on-positive-hover);
-  --charcoal-color-icon-on-positive-default: var(--charcoal-color-text-on-positive-default);
-  --charcoal-color-icon-on-on-img-press: var(--charcoal-color-text-on-on-img-press);
-  --charcoal-color-icon-on-on-img-hover: var(--charcoal-color-text-on-on-img-hover);
-  --charcoal-color-icon-on-on-img-default: var(--charcoal-color-text-on-on-img-default);
-  --charcoal-color-icon-on-notice-press: var(--charcoal-color-text-on-notice-press);
-  --charcoal-color-icon-on-notice-hover: var(--charcoal-color-text-on-notice-hover);
-  --charcoal-color-icon-on-notice-default: var(--charcoal-color-text-on-notice-default);
-  --charcoal-color-icon-on-negative-press: var(--charcoal-color-text-on-negative-press);
-  --charcoal-color-icon-on-negative-hover: var(--charcoal-color-text-on-negative-hover);
-  --charcoal-color-icon-on-negative-default: var(--charcoal-color-text-on-negative-default);
+  --charcoal-color-icon-positive-press: var(
+    --charcoal-color-text-positive-press
+  );
+  --charcoal-color-icon-positive-hover: var(
+    --charcoal-color-text-positive-hover
+  );
+  --charcoal-color-icon-positive-default: var(
+    --charcoal-color-text-positive-default
+  );
+  --charcoal-color-icon-on-primary-press: var(
+    --charcoal-color-text-on-primary-press
+  );
+  --charcoal-color-icon-on-primary-hover: var(
+    --charcoal-color-text-on-primary-hover
+  );
+  --charcoal-color-icon-on-primary-default: var(
+    --charcoal-color-text-on-primary-default
+  );
+  --charcoal-color-icon-on-positive-press: var(
+    --charcoal-color-text-on-positive-press
+  );
+  --charcoal-color-icon-on-positive-hover: var(
+    --charcoal-color-text-on-positive-hover
+  );
+  --charcoal-color-icon-on-positive-default: var(
+    --charcoal-color-text-on-positive-default
+  );
+  --charcoal-color-icon-on-on-img-press: var(
+    --charcoal-color-text-on-on-img-press
+  );
+  --charcoal-color-icon-on-on-img-hover: var(
+    --charcoal-color-text-on-on-img-hover
+  );
+  --charcoal-color-icon-on-on-img-default: var(
+    --charcoal-color-text-on-on-img-default
+  );
+  --charcoal-color-icon-on-notice-press: var(
+    --charcoal-color-text-on-notice-press
+  );
+  --charcoal-color-icon-on-notice-hover: var(
+    --charcoal-color-text-on-notice-hover
+  );
+  --charcoal-color-icon-on-notice-default: var(
+    --charcoal-color-text-on-notice-default
+  );
+  --charcoal-color-icon-on-negative-press: var(
+    --charcoal-color-text-on-negative-press
+  );
+  --charcoal-color-icon-on-negative-hover: var(
+    --charcoal-color-text-on-negative-hover
+  );
+  --charcoal-color-icon-on-negative-default: var(
+    --charcoal-color-text-on-negative-default
+  );
   --charcoal-color-icon-notice-press: var(--charcoal-color-text-notice-press);
   --charcoal-color-icon-notice-hover: var(--charcoal-color-text-notice-hover);
-  --charcoal-color-icon-notice-default: var(--charcoal-color-text-notice-default);
-  --charcoal-color-icon-negative-press: var(--charcoal-color-text-negative-press);
-  --charcoal-color-icon-negative-hover: var(--charcoal-color-text-negative-hover);
-  --charcoal-color-icon-negative-default: var(--charcoal-color-text-negative-default);
+  --charcoal-color-icon-notice-default: var(
+    --charcoal-color-text-notice-default
+  );
+  --charcoal-color-icon-negative-press: var(
+    --charcoal-color-text-negative-press
+  );
+  --charcoal-color-icon-negative-hover: var(
+    --charcoal-color-text-negative-hover
+  );
+  --charcoal-color-icon-negative-default: var(
+    --charcoal-color-text-negative-default
+  );
   --charcoal-color-icon-hover: var(--charcoal-color-text-hover);
   --charcoal-color-icon-disable: var(--charcoal-color-text-disable);
   --charcoal-color-icon-default: var(--charcoal-color-text-default);
@@ -205,11 +255,17 @@
   --charcoal-color-border-selected: var(--charcoal-brand);
   --charcoal-color-border-secondary: var(--charcoal-border);
   --charcoal-color-border-press: var(--charcoal-text3-press);
-  --charcoal-color-border-negative: var(--charcoal-color-semantic-assertive-default-a);
+  --charcoal-color-border-negative: var(
+    --charcoal-color-semantic-assertive-default-a
+  );
   --charcoal-color-border-hover: var(--charcoal-text3-hover);
   --charcoal-color-border-hud: var(--charcoal-color-background-default);
-  --charcoal-color-border-focus-legacy: var(--charcoal-color-semantic-primary-default-a);
-  --charcoal-color-border-focus-2: var(--charcoal-color-semantic-primary-default-a);
+  --charcoal-color-border-focus-legacy: var(
+    --charcoal-color-semantic-primary-default-a
+  );
+  --charcoal-color-border-focus-2: var(
+    --charcoal-color-semantic-primary-default-a
+  );
   --charcoal-color-border-disable: var(--charcoal-border);
   --charcoal-color-border-default: var(--charcoal-text3);
   --charcoal-color-background-tertiary: var(--charcoal-surface3);

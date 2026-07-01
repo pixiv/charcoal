@@ -67,6 +67,7 @@ function resolve(
   if (!defs.has(token)) return { ok: false, reason: `undefined ${token}` }
   if (seen.has(token)) return { ok: false, reason: `cycle at ${token}` }
   seen.add(token)
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   for (const ref of colorVarsIn(defs.get(token)!)) {
     const r = resolve(ref, defs, seen)
     if (!r.ok) return r
@@ -84,7 +85,8 @@ const variables2Defs = parseColorDefinitions(
 const componentCssFiles = await getCssFiles(componentsDir)
 const componentUsed = new Set<string>()
 for (const file of componentCssFiles) {
-  for (const v of usedColorVars(await fs.readFile(file, 'utf-8'))) componentUsed.add(v)
+  for (const v of usedColorVars(await fs.readFile(file, 'utf-8')))
+    componentUsed.add(v)
 }
 
 describe('Design Token 1.0互換 (_token_v1.css) remap', () => {
