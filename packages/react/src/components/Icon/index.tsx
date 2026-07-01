@@ -1,7 +1,8 @@
 import * as React from 'react'
 
 import '@charcoal-ui/icons'
-import '@charcoal-ui/icons/css/icon.css'
+// tmp fix for https://github.com/rolldown/tsdown/pull/981
+import '../../../../icons/css/icon.css'
 import { calcActualSize } from '@charcoal-ui/icons'
 import type { IconSizing, PixivIcon, Props } from '@charcoal-ui/icons'
 
