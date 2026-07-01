@@ -6,7 +6,7 @@ import postcss, { type Rule } from 'postcss'
 // Design Token 1.0互換モードの「見た目の非破壊」を検証する。
 //
 // 移行: 旧 `@charcoal-ui/react/dist/index.css` (v1, --charcoal-* を直接使用)
-//   →  新 コンポーネントCSS (v2, --charcoal-color-* を使用) + `_token_v1.css` remap
+//   →  新 コンポーネントCSS (v2, --charcoal-color-* を使用) + `v1/remap.css` remap
 //
 // 非破壊であるためには、各 (セレクタ, プロパティ) で新CSSが使う 1つの --charcoal-color-*
 // が、旧CSSで使われていた「単一の」--charcoal-* に対応していなければならない。同じ新トークンが

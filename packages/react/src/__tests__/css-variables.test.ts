@@ -5,7 +5,7 @@ import path from 'node:path'
 const componentsDir = path.resolve(import.meta.dirname, '../components')
 const unstableCssDir = path.resolve(
   import.meta.dirname,
-  '../../../theme/src/unstable-css',
+  '../../../theme/src/css/v2',
 )
 
 async function getCssFiles(dir: string): Promise<string[]> {
