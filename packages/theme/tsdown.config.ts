@@ -5,7 +5,7 @@ import { writeTokenObjects } from './cli/token-object'
 export default defineConfig({
   entry: {
     index: 'src/index.ts',
-    'unstable-token-object/index': 'src/unstable-token-object/index.ts',
+    'token-object/index': 'src/token-object/index.ts',
   },
   format: ['esm', 'cjs'],
   target: 'esnext',
@@ -13,10 +13,7 @@ export default defineConfig({
   clean: true,
   dts: true,
   fixedExtension: false,
-  copy: [
-    { from: 'src/css', to: 'dist' },
-    { from: 'src/unstable-css', to: 'dist' },
-  ],
+  copy: [{ from: 'src/css', to: 'dist' }],
   onSuccess() {
     writeThemeJson()
     writeTokenObjects()

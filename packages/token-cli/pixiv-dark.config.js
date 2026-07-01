@@ -17,7 +17,7 @@ module.exports = {
       buildPath: 'build/css/',
       files: [
         {
-          destination: '_variables_dark.css',
+          destination: 'v2/dark.css',
           format: 'css/variables',
           options: {
             selector: ":root[data-theme='dark']",
