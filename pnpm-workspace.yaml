@@ -13,8 +13,8 @@ allowBuilds:
 catalog:
   'react-compiler-runtime': '1.0.0'
   '@react-spring/web': '^10'
-  react-aria: '3.48.0'
-  react-stately: '3.46.0'
+  react-aria: '3.50.0'
+  react-stately: '3.48.0'
 
 minimumReleaseAge: 10080 # 7 days
 overrides:
