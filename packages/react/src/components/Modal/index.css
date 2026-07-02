@@ -10,7 +10,7 @@
   padding: 40px 0;
   box-sizing: border-box;
 
-  background-color: var(--charcoal-color-container-neutral-default);
+  background-color: var(--charcoal-color-background-overlay);
 
   @media (max-width: 743px) {
     &[data-bottom-sheet='true'],

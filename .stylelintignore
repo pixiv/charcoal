@@ -5,3 +5,4 @@ __snapshots__/
 /public/
 /storybook-static/
 /coverage/
+packages/react/src/__tests__/fixtures/legacy-v1-index.css
