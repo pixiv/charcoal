@@ -3,9 +3,9 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import postcss from 'postcss'
 
-// Design Token 1.0互換モード (`@charcoal-ui/theme/css/_token_v1.css`) の remap を検証する。
+// Design Token 1.0互換モード (`@charcoal-ui/theme/css/v1/remap.css`) の remap を検証する。
 //
-// アプリは 1.0互換 (`_token_v1.css`) か 2.0 (`_variables_*.css`) のいずれかで --charcoal-color-*
+// アプリは 1.0互換 (`v1/remap.css`) か 2.0 (`v2/{light,dark}.css`) のいずれかで --charcoal-color-*
 // を供給し、コンポーネント実装CSS (`@charcoal-ui/react`) がそれを消費する。remap が
 // 「壊さない・冗長でない・正しい」ことを次で担保する:
 //   1. 非破壊: コンポーネントが使う --charcoal-color-* は全て remap 経由で解決できる。
@@ -13,8 +13,8 @@ import postcss from 'postcss'
 //   3. 冗長でない: 2.0 API にも無く・内部参照も無く・コンポーネントも使わないトークンを持たない。
 
 const cssDir = path.resolve(import.meta.dirname, '../../../theme/src/css')
-const tokenV1Path = path.join(cssDir, '_token_v1.css')
-const variables2Path = path.join(cssDir, '_variables_light.css')
+const tokenV1Path = path.join(cssDir, 'v1/remap.css')
+const variables2Path = path.join(cssDir, 'v2/light.css')
 const componentsDir = path.resolve(import.meta.dirname, '../components')
 
 const COLOR_PREFIX = '--charcoal-color-'
@@ -89,7 +89,7 @@ for (const file of componentCssFiles) {
     componentUsed.add(v)
 }
 
-describe('Design Token 1.0互換 (_token_v1.css) remap', () => {
+describe('Design Token 1.0互換 (v1/remap.css) remap', () => {
   it('重複定義がない', () => {
     expect(duplicates).toEqual([])
   })
@@ -119,7 +119,7 @@ describe('Design Token 1.0互換 (_token_v1.css) remap', () => {
   })
 
   it.each(componentCssFiles)(
-    '%s: 使用する --charcoal-color-* は全て _token_v1.css 経由で解決する (非破壊)',
+    '%s: 使用する --charcoal-color-* は全て v1/remap.css 経由で解決する (非破壊)',
     async (file) => {
       const css = await fs.readFile(file, 'utf-8')
       const unresolved = [...usedColorVars(css)]

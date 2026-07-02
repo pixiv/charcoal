@@ -17,7 +17,7 @@ module.exports = {
       buildPath: 'build/css/',
       files: [
         {
-          destination: '_variables_light.css',
+          destination: 'v2/light.css',
           format: 'css/variables',
           options: {
             selector: ":root[data-theme='light'], :root:not([data-theme])",

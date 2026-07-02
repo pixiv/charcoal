@@ -13,29 +13,25 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./unstable-token-object": {
-      "types": "./dist/unstable-token-object/index.d.ts",
-      "require": "./dist/unstable-token-object/index.cjs",
-      "import": "./dist/unstable-token-object/index.js",
-      "default": "./dist/unstable-token-object/index.js"
+    "./token-object": {
+      "types": "./dist/token-object/index.d.ts",
+      "require": "./dist/token-object/index.cjs",
+      "import": "./dist/token-object/index.js",
+      "default": "./dist/token-object/index.js"
     },
     "./css/*": "./dist/css/*",
-    "./unstable-css/*": "./dist/unstable-css/*",
-    "./unstable-tokens/*": "./dist/unstable-tokens/*"
+    "./tokens/*": "./dist/tokens/*"
   },
   "typesVersions": {
     "*": {
-      "unstable-token-object": [
+      "token-object": [
         "./dist/token-object/index.d.ts"
       ],
       "css/*": [
         "./dist/css/*"
       ],
-      "unstable-tokens/*": [
-        "./dist/unstable-tokens/*"
-      ],
-      "unstable-css/*": [
-        "./dist/unstable-css/*"
+      "tokens/*": [
+        "./dist/tokens/*"
       ]
     }
   },
