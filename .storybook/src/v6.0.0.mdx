@@ -4,6 +4,137 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 # @charcoal-ui/react@v6.0.0(予定)
 
+---
+
+# Design Token 2.0
+
+`@charcoal-ui/react` のコンポーネントで使われる CSS Variables を、新しい Design Token 2.0 で提供します。あわせて `@charcoal-ui/theme` の CSS・トークン出力を再編し、`unstable-` プレフィックスを外しました。
+
+Token V2 の変数は `.ch-token-v2` が付いた要素の内側で有効になります。既存の Design Token 1.0 と同じ画面で共存できるように、まず CSS を読み込み、Token V2 を使いたい範囲だけに `.ch-token-v2` を付けます。
+
+## インストール
+
+```bash
+npm install --save-dev @charcoal-ui/theme @charcoal-ui/tailwind-config
+npm install @charcoal-ui/react
+```
+
+## CSS を読み込む
+
+アプリケーションのエントリポイントで、用途に応じて CSS を読み込みます（コンポーネント実装 CSS は共通）。
+
+```tsx
+// Design Token 2.0
+import '@charcoal-ui/theme/css/v2/light.css'
+import '@charcoal-ui/theme/css/v2/dark.css'
+
+// Design Token 1.0 互換モード（2.0 のトークン名を v1 相当の値で供給）
+import '@charcoal-ui/theme/css/v1/remap.css'
+
+// コンポーネント実装の CSS
+import '@charcoal-ui/react/dist/index.css'
+```
+
+- **2.0**（`css/v2/light.css` / `css/v2/dark.css`）: `.ch-token-v2` の内側で有効になるデザイントークン。
+- **1.0 互換**（`css/v1/remap.css`）: 2.0 のトークン名（`--charcoal-color-*`）を v1 相当の値へ解決する互換レイヤー。既存の見た目を保ったまま 2.0 のコンポーネントへ移行するために使います。値は canonical な `--charcoal-*`（v1 トークン）を参照するため、テーマ（light/dark）に追従します。
+
+CSS を読み込むだけでは、ライトテーマの Token V2 は有効になりません。Token V2 を使いたい範囲に `.ch-token-v2` を付けます。
+
+## コンポーネントで Token V2 を有効にする
+
+もっとも小さく導入する場合は、Token V2 で表示したいコンポーネントを `.ch-token-v2` で囲みます。
+
+```tsx
+import { Button, TextField } from '@charcoal-ui/react'
+
+export const FormActions = () => (
+  <div className="ch-token-v2">
+    <TextField label="タイトル" />
+    <Button variant="Primary">保存</Button>
+  </div>
+)
+```
+
+`.ch-token-v2` の内側では、`@charcoal-ui/react` のコンポーネント CSS が参照する `--charcoal-color-*` や `--charcoal-space-*` などが Token V2 の値になります。外側のコンポーネントは従来どおり Token V1 互換の値を参照します。
+
+### 画面全体で有効にする
+
+画面全体を Token V2 に切り替える場合は、アプリケーションのルート要素（HTML ルートでも可）に `.ch-token-v2` を付けます。
+
+```html
+<html class="ch-token-v2" data-theme="light">
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+### 一部のコンポーネントだけで試す
+
+既存画面へ段階的に導入する場合は、検証したいコンポーネント単位で `.ch-token-v2` を付けます。Token V2 は CSS Variables を継承して効くため、`.ch-token-v2` は対象コンポーネント自身かその親要素に付けてください（兄弟要素や離れた要素には影響しません）。
+
+```tsx
+import { Button } from '@charcoal-ui/react'
+
+export const CompareButtons = () => (
+  <>
+    <Button>Token V1</Button>
+    <span className="ch-token-v2">
+      <Button>Token V2</Button>
+    </span>
+  </>
+)
+```
+
+## テーマの切り替え
+
+テーマは `document.documentElement` の `data-theme` 属性で切り替えます。`data-theme` を省略した場合は light として扱われます。dark theme は `:root[data-theme='dark']` に定義されるため、HTML ルートで切り替えます。
+
+```tsx
+document.documentElement.dataset.theme = 'light'
+document.documentElement.dataset.theme = 'dark'
+```
+
+## Storybook で確認する
+
+story の `parameters.tokenVersion` に `v2` を指定すると、decorator が `document.documentElement` に `.ch-token-v2` を付けます。story 側で wrapper を追加しなくても Token V2 の見た目を確認できます。
+
+```tsx
+export const TokenV2: StoryObj<typeof Button> = {
+  parameters: { tokenVersion: 'v2' },
+  render: () => <Button variant="Primary">Button</Button>,
+}
+```
+
+## export の変更（破壊的変更）
+
+CSS・トークン出力の再編と `unstable-` プレフィックス削除により、`@charcoal-ui/theme` の subpath export が変わります。
+
+| 旧                                                     | 新                                    |
+| ------------------------------------------------------ | ------------------------------------- |
+| `@charcoal-ui/theme/unstable-css/_variables_light.css` | `@charcoal-ui/theme/css/v2/light.css` |
+| `@charcoal-ui/theme/unstable-css/_variables_dark.css`  | `@charcoal-ui/theme/css/v2/dark.css`  |
+| （新規）1.0 互換レイヤー                               | `@charcoal-ui/theme/css/v1/remap.css` |
+| `@charcoal-ui/theme/unstable-token-object`             | `@charcoal-ui/theme/token-object`     |
+| `@charcoal-ui/theme/unstable-tokens/*`                 | `@charcoal-ui/theme/tokens/*`         |
+
+- グローバル定義用途だった `unstable-css` は、`.ch-token-v2` でスコープできる `css/v2` に統合しました。
+- import パスの置換が必要です（例: `unstable-tokens/css-variables.json` → `tokens/css-variables.json`）
+
+  。
+
+## 1.0 互換モードの制限
+
+2.0 では複数の v1 トークンを 1 つに統合したトークンがあり、1.0 互換モードではそれらの箇所で旧実装と完全に同じ配色を再現できません（単一の remap 値では複数の旧値を同時に満たせないため）。該当箇所は remap のパリティテスト（`packages/react/src/__tests__/token-v1-compat.test.ts`）が検出します。
+
+## 導入時の注意
+
+`.ch-token-v2` を付け忘れると、React コンポーネントの CSS は Token V2 の値を参照できません。見た目が想定と違う場合は、まず対象コンポーネント自身か親要素に `.ch-token-v2` が付いているかを確認してください。
+
+---
+
+# コンポーネント（react-sandbox からの移行）
+
 - `@charcoal-ui/react@v5.5.0` に **UnstableTextEllipsis** と **UnstablePagination** を追加しました。
 - react-sandbox にあった TextEllipsis および Pager・LinkPager を、styled-components に依存しない形で @charcoal-ui/react に取り込んだものです。
 - props の詳細は各コンポーネントの Storybook を参照してください。

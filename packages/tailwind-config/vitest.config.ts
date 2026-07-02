@@ -17,7 +17,7 @@ export default defineConfig({
         ),
       },
       {
-        find: /^@charcoal-ui\/(?!icon-files|theme\/unstable-tokens)(.*)/,
+        find: /^@charcoal-ui\/(?!icon-files|theme\/tokens)(.*)/,
         replacement: path.join(
           path.resolve(import.meta.dirname, '..'),
           '$1',

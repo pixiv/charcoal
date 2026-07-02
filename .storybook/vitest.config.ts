@@ -21,13 +21,8 @@ export default defineConfig({
         replacement: pkg('icons', 'css', '$1'),
       },
       {
-        find: '@charcoal-ui/theme/unstable-tokens/css-variables.json',
-        replacement: pkg(
-          'theme',
-          'dist',
-          'unstable-tokens',
-          'css-variables.json',
-        ),
+        find: '@charcoal-ui/theme/tokens/css-variables.json',
+        replacement: pkg('theme', 'dist', 'tokens', 'css-variables.json'),
       },
       {
         find: '@charcoal-ui/icon-files/v2/datauri',

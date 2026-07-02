@@ -1,12 +1,9 @@
 /* eslint-disable no-console */
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import {
-  createCSSTokenObject,
-  createTokenObject,
-} from '../src/unstable-token-object'
-import type { TokenDictionary } from '../src/unstable-token-object/types'
-import { camelCaseKeys } from '../src/unstable-token-object'
+import { createCSSTokenObject, createTokenObject } from '../src/token-object'
+import type { TokenDictionary } from '../src/token-object/types'
+import { camelCaseKeys } from '../src/token-object'
 
 type ValueStyle = 'cssVariable'
 type KeyStyle = 'camelCase'
@@ -23,14 +20,14 @@ const configurations: Config[] = [
   {
     tokenFile: './src/json/pixiv-light.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/unstable-tokens/pixiv-light.json',
+    outputFile: './dist/tokens/pixiv-light.json',
     keyStyle: undefined,
     valueStyle: undefined,
   },
   {
     tokenFile: './src/json/pixiv-dark.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/unstable-tokens/pixiv-dark.json',
+    outputFile: './dist/tokens/pixiv-dark.json',
     keyStyle: undefined,
     valueStyle: undefined,
   },
@@ -38,14 +35,14 @@ const configurations: Config[] = [
   {
     tokenFile: './src/json/pixiv-light.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/unstable-tokens/camel/pixiv-light.json',
+    outputFile: './dist/tokens/camel/pixiv-light.json',
     keyStyle: 'camelCase',
     valueStyle: undefined,
   },
   {
     tokenFile: './src/json/pixiv-dark.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/unstable-tokens/camel/pixiv-dark.json',
+    outputFile: './dist/tokens/camel/pixiv-dark.json',
     keyStyle: 'camelCase',
     valueStyle: undefined,
   },
@@ -53,7 +50,7 @@ const configurations: Config[] = [
   {
     tokenFile: './src/json/pixiv-light.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/unstable-tokens/css-variables.json',
+    outputFile: './dist/tokens/css-variables.json',
     keyStyle: undefined,
     valueStyle: 'cssVariable',
   },
@@ -61,7 +58,7 @@ const configurations: Config[] = [
   {
     tokenFile: './src/json/pixiv-light.json',
     baseFile: './src/json/base.json',
-    outputFile: './dist/unstable-tokens/camel/css-variables.json',
+    outputFile: './dist/tokens/camel/css-variables.json',
     keyStyle: 'camelCase',
     valueStyle: 'cssVariable',
   },
