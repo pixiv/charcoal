@@ -51,7 +51,6 @@
     "@charcoal-ui/icons": "workspace:*",
     "@charcoal-ui/theme": "workspace:*",
     "@charcoal-ui/utils": "workspace:*",
-    "@react-spring/web": "catalog:",
     "polished": "^4.1.4",
     "react-compiler-runtime": "catalog:",
     "warning": "^4.0.3"

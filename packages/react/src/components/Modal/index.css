@@ -20,6 +20,40 @@
   }
 }
 
+/* easeOutQuart。duration は useTransitionPresence の MODAL_TRANSITION_DURATION_MS と一致させること。
+   transition は entering / exiting に限定し、開いたままテーマ切り替え等で
+   色や transform が変わってもアニメーションしないようにする */
+.charcoal-modal-background[data-animation] {
+  overflow: hidden;
+}
+
+.charcoal-modal-background[data-animation='entering'],
+.charcoal-modal-background[data-animation='exiting'] {
+  transition: background-color 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 閉じアニメーション中はクリックを下のページへ通す（transitionend が来ない環境で
+   透明なオーバーレイがタップを奪い続けるのも防ぐ） */
+.charcoal-modal-background[data-animation='exited'],
+.charcoal-modal-background[data-animation='exiting'] {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.charcoal-modal-background[data-animation='entered'] {
+  overflow: auto;
+}
+
+.charcoal-modal-background[data-animation='entering'] > .charcoal-modal-dialog,
+.charcoal-modal-background[data-animation='exiting'] > .charcoal-modal-dialog {
+  transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.charcoal-modal-background[data-animation='exited'] > .charcoal-modal-dialog,
+.charcoal-modal-background[data-animation='exiting'] > .charcoal-modal-dialog {
+  transform: translateY(100%);
+}
+
 .charcoal-modal-close-button {
   position: absolute;
   top: 8px;
