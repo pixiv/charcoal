@@ -55,52 +55,46 @@
   scroll-snap-type: x mandatory;
 }
 
-/* mask の端色を transition できるよう <color> として型登録する
-   （@property 未対応ブラウザではフェードなしの即時切替になる）。 */
-@property --charcoal-carousel-mask-start {
-  syntax: '<color>';
-  inherits: false;
-  initial-value: #000;
-}
-
-@property --charcoal-carousel-mask-end {
-  syntax: '<color>';
-  inherits: false;
-  initial-value: #000;
-}
-
 /* グラデーション: mask で端のアイテム自体を透明へフェードさせる（下の背景色を
    問わない）。mask の色はアルファとしてだけ効く（#000=表示 / transparent=透過）。
-   はみ出してスクロール可能な側のみ、data-can-prev/next で端の色を transparent に
-   切り替えて 72px の透過域を有効にする。 */
+   左フェード・右フェードの 2 レイヤーを intersect で合成し、はみ出して
+   スクロール可能な側のみ data-can-prev/next で 72px のフェード帯を枠内に置く。
+   無効な側はフェード帯ごと枠外へスライドして隠す（mask-image と違い
+   mask-position は補間可能なので、切替が 0.2s のフェードになる）。 */
 .charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__scroller {
-  /* var() の第2引数は @property 非対応ブラウザ用。無いと未定義プロパティ参照で
-     mask-image 宣言ごと無効になり、mask 自体が消える。 */
-  mask-image: linear-gradient(
-    to right,
-    var(--charcoal-carousel-mask-start, #000),
-    #000 72px,
-    #000 calc(100% - 72px),
-    var(--charcoal-carousel-mask-end, #000)
-  );
-  /* transition-property としてのカスタムプロパティ名指定（var() 不要）を
-     stylelint が誤検知するため無効化する。 */
-  /* stylelint-disable custom-property-no-missing-var-function */
+  mask-image:
+    linear-gradient(to right, transparent, #000 72px),
+    linear-gradient(to left, transparent, #000 72px);
+  /* 枠外へ 72px スライドしても反対側の端が欠けないよう、レイヤー幅に 72px 足す */
+  mask-size: calc(100% + 72px) 100%;
+  mask-repeat: no-repeat;
+  mask-composite: intersect;
+  mask-position:
+    -72px 0,
+    0 0;
   /* 0.2s ease-in は react-sandbox の LeftGradient と同じ値 */
-  transition:
-    0.2s ease-in --charcoal-carousel-mask-start,
-    0.2s ease-in --charcoal-carousel-mask-end;
-  /* stylelint-enable custom-property-no-missing-var-function */
+  transition: 0.2s ease-in mask-position;
 }
 
 .charcoal-carousel[data-has-gradient='true'][data-can-prev='true']
   .charcoal-carousel__scroller {
-  --charcoal-carousel-mask-start: transparent;
+  mask-position:
+    0 0,
+    0 0;
 }
 
 .charcoal-carousel[data-has-gradient='true'][data-can-next='true']
   .charcoal-carousel__scroller {
-  --charcoal-carousel-mask-end: transparent;
+  mask-position:
+    -72px 0,
+    -72px 0;
+}
+
+.charcoal-carousel[data-has-gradient='true'][data-can-prev='true'][data-can-next='true']
+  .charcoal-carousel__scroller {
+  mask-position:
+    0 0,
+    -72px 0;
 }
 
 .charcoal-carousel__item {
