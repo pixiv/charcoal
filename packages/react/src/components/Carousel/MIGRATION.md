@@ -63,8 +63,8 @@ sandbox では自前で `flex` ラッパーや `gap` を組んでいたが、新
 | `children`                                        | `items: { id: string; children: ReactNode }[]` | 上記参照                                                                                                  |
 | `scrollAmountCoef`（既定 `0.75`）                 | `scrollStep`（既定 `0.75`）                    | `number`（表示幅比）に加え `(ctx) => px` の関数も渡せる                                                   |
 | `defaultScroll: { align, offset }`                | `defaultScroll: { align, offset }`             | `align` は `'left' \| 'center' \| 'right'`。ほぼ同等                                                      |
-| `hasGradient`                                     | `hasGradient`（既定 `false`）                  | 実装が mask → 背景色オーバーレイに変更                                                                    |
-| `fadeInGradient`                                  | （廃止）                                       | 常にオーバーレイ式フェード                                                                                |
+| `hasGradient`                                     | `hasGradient`（既定 `false`）                  | sandbox と同じ mask 方式（wrapper なしの単一 mask に整理）                                                |
+| `fadeInGradient`                                  | （廃止）                                       | 常にスクロール可能な側のみフェード（`fadeInGradient` 相当の挙動に固定）                                   |
 | `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                       | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
 | `centerItems`                                     | （廃止）                                       | レイアウトは `flex` + `gap` 固定                                                                          |
 | `onScroll(left)`                                  | `onScroll(left)`                               | ✅ そのまま対応（scroll で発火）                                                                          |
@@ -92,8 +92,8 @@ sandbox では自前で `flex` ラッパーや `gap` を組んでいたが、新
   非対応環境では JS フォールバック）。
 - **キーボード操作**: スクローラーが `tabIndex={0}` でフォーカス可能になり、`←` / `→` で 1 ステップスクロール。
   フォーカスリングは charcoal 標準（`box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32)`）。
-- **グラデーション**: `mask` による透過から、背景色（`#fff`）オーバーレイ方式に変更。
-  ダークモードは現状未対応（背景色固定）。
+- **グラデーション**: sandbox と同じく `mask` による透過フェード。背景色に依存しないため
+  ダーク背景の上でもそのまま成立する。
 
 ## スクロール量を細かく制御したい場合
 
