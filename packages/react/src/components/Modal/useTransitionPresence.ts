@@ -60,6 +60,7 @@ export function useTransitionPresence(
   const isAnimating = state === 'entering' || state === 'exiting'
   useEffect(() => {
     if (!isAnimating) return
+    // transitionend と同時刻に発火して競合しないよう少し遅らせる
     const timer = setTimeout(
       () => setState(settle),
       MODAL_TRANSITION_DURATION_MS + 100,
