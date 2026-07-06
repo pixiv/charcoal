@@ -1,15 +1,7 @@
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  type RefObject,
-} from 'react'
+import { useCallback, useEffect, useRef, type RefObject } from 'react'
+import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
 import type { CarouselStore } from './carouselStore'
 import type { ScrollAlign, ScrollStep } from './index'
-
-const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 const INTERACTION_EVENTS = ['pointerdown', 'wheel', 'touchstart'] as const
 
