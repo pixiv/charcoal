@@ -88,8 +88,9 @@
   /* transition-property としてのカスタムプロパティ名指定（var() 不要）を
      stylelint が誤検知するため無効化する。 */
   /* stylelint-disable custom-property-no-missing-var-function */
-  transition: 0.2s --charcoal-carousel-mask-start,
-    0.2s --charcoal-carousel-mask-end;
+  /* 0.2s ease-in は react-sandbox の LeftGradient と同じ値 */
+  transition: 0.2s ease-in --charcoal-carousel-mask-start,
+    0.2s ease-in --charcoal-carousel-mask-end;
   /* stylelint-enable custom-property-no-missing-var-function */
 }
 
