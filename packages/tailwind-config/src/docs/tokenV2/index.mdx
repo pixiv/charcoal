@@ -1,0 +1,204 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="tailwind-config/Token V2" />
+
+# Token V2 classes
+
+`unstableTokenV2: true` を利用しているプロジェクト向けの、Token V2 由来の Tailwind class 名の案内です。
+
+Token V2 由来の `s` / `m` / `l` というサイズ key は、Tailwind の theme key と class 名では `sm` / `md` / `lg` として扱います。CSS variable 名と token の値は変わりません。
+
+| Token V2 key | Tailwind theme key |
+| ------------ | ------------------ |
+| `s`          | `sm`               |
+| `m`          | `md`               |
+| `l`          | `lg`               |
+
+この正規化は、`text.font-size` / `text.line-height` / `space` / `border-width` / `radius` / `paragraph-width` に適用されます。`color` と `text.font-weight` は対象外です。
+
+## よく使う class
+
+| 用途            | class                                                                     |
+| --------------- | ------------------------------------------------------------------------- |
+| container color | `bg-container`, `bg-container-primary`, `bg-container-primary-hover`      |
+| text color      | `text-text`, `text-text-secondary`, `text-text-on-primary`                |
+| border color    | `border-cl`, `border-cl-hover`, `border-cl-focus-1`, `border-cl-negative` |
+| spacing         | `p-target-sm`, `px-component-20`, `mt-layout-40`                          |
+| gap             | `gap-target-sm`, `gap-x-component-20`, `gap-y-layout-40`                  |
+| text size       | `text-body`, `text-caption-sm`, `text-heading-md`                         |
+| font weight     | `font-ch-regular`, `font-ch-bold`                                         |
+| radius          | `rounded-ch-sm`, `rounded-ch-md`, `rounded-ch-oval`                       |
+| border width    | `border-wd-md`, `border-wd-lg`, `border-wd-focus-1`                       |
+| paragraph width | `w-sm`, `w-md-cozy`, `w-lg-compact`                                       |
+
+## 命名ルール
+
+基本的には Token V2 の階層 key を `-` で連結します。
+
+| Token                             | theme key                          | 代表的な class                   |
+| --------------------------------- | ---------------------------------- | -------------------------------- |
+| `color.container.default`         | `colors.container.DEFAULT`         | `bg-container`, `text-container` |
+| `color.container.hover`           | `colors.container.hover`           | `bg-container-hover`             |
+| `color.container.primary.default` | `colors.container.primary.DEFAULT` | `bg-container-primary`           |
+| `color.container.primary.hover`   | `colors.container.primary.hover`   | `bg-container-primary-hover`     |
+| `space.target.s`                  | `spacing.target-sm`                | `p-target-sm`, `gap-target-sm`   |
+| `space.padding.padding-card`      | `spacing.padding-card`             | `p-padding-card`                 |
+| `text.font-size.heading.s`        | `fontSize.heading-sm`              | `text-heading-sm`                |
+| `text.font-weight.bold`           | `fontWeight.ch-bold`               | `font-ch-bold`                   |
+| `border-width.m`                  | `borderWidth.wd-md`                | `border-wd-md`                   |
+| `border-width.focus.1`            | `borderWidth.wd-focus-1`           | `border-wd-focus-1`              |
+| `radius.s`                        | `borderRadius.ch-sm`               | `rounded-ch-sm`                  |
+
+`default` key は Tailwind の `DEFAULT` として扱われるため、class 名からは省略されます。たとえば `color.container.default` は `bg-container-default` ではなく `bg-container` です。
+
+## 色
+
+`colors` には Token V2 の `color` が入ります。
+
+主なカテゴリ:
+
+- `background`
+- `border`
+- `container`
+- `icon`
+- `text`
+
+色 token は Tailwind の色 theme として扱われるため、同じ key から `bg-*` / `text-*` / `border-*` / `fill-*` / `stroke-*` などが生成されます。
+
+```html
+<div class="bg-background text-text"></div>
+<button class="bg-container-primary text-text-on-primary"></button>
+<button class="bg-container-primary-hover text-text-on-primary-hover"></button>
+<svg class="fill-icon-secondary stroke-icon-secondary-press"></svg>
+```
+
+border 用の色は `borderColor` にも入り、`cl` prefix 付きの class として使えます。
+
+```html
+<div class="border border-cl"></div>
+<div class="border border-cl-hover"></div>
+<div class="border border-cl-focus-1"></div>
+<div class="border border-cl-negative"></div>
+```
+
+## spacing / gap
+
+`spacing` と `gap` には同じ Token V2 の `space` が入ります。
+
+生成される主な key:
+
+- `component-0`, `component-10`, `component-20`, `component-25`, `component-30`, `component-40`, `component-50`
+- `layout-0`, `layout-10`, `layout-20`, `layout-25`, `layout-30`, `layout-40`, `layout-50`, `layout-60`, `layout-70`, `layout-80`, `layout-90`, `layout-100`
+- `target-xs`, `target-sm`, `target-md`, `target-lg`
+- `padding-card`
+
+```html
+<div class="p-target-sm"></div>
+<div class="px-component-20 py-component-10"></div>
+<div class="mt-layout-40"></div>
+<div class="w-layout-100 h-target-md"></div>
+<div class="gap-component-20"></div>
+<div class="-inset-target-sm"></div>
+```
+
+## typography
+
+`fontSize` は `text.font-size` と `text.line-height` を組み合わせます。`text-*` class は `font-size` と `line-height` を同時に指定します。
+
+生成される key:
+
+- `body`
+- `paragraph`
+- `caption-md`, `caption-sm`, `caption-sm-10`
+- `heading-xxxs`, `heading-xxs`, `heading-xs`, `heading-sm`, `heading-md`, `heading-lg`, `heading-xl`, `heading-xxl`, `heading-xxxl`
+
+```html
+<p class="text-body"></p>
+<p class="text-paragraph"></p>
+<p class="text-caption-sm"></p>
+<h2 class="text-heading-md"></h2>
+```
+
+`fontWeight` は `ch` prefix 付きです。`fontWeight` はサイズ key 正規化の対象外です。
+
+```html
+<p class="font-ch-regular"></p>
+<p class="font-ch-bold"></p>
+```
+
+## radius / border width
+
+`borderRadius` は `radius` token を `ch` prefix 付きで使います。Token V2 の radius と Tailwind 標準の radius を見分けやすくするため、`rounded-sm` ではなく `rounded-ch-sm` のような class になります。
+
+生成される key:
+
+- `ch-0`
+- `ch-xs`
+- `ch-sm`
+- `ch-md`
+- `ch-lg`
+- `ch-xl`
+- `ch-xxl`
+- `ch-oval`
+
+```html
+<div class="rounded-ch-sm"></div>
+<div class="rounded-ch-md"></div>
+<div class="rounded-ch-oval"></div>
+```
+
+`borderWidth` は `wd` prefix 付きです。
+
+生成される key:
+
+- `wd-md`
+- `wd-lg`
+- `wd-focus-1`
+- `wd-focus-2`
+
+```html
+<div class="border-wd-md"></div>
+<div class="border-wd-lg"></div>
+<div class="border-wd-focus-1"></div>
+```
+
+## paragraph width
+
+`paragraph-width` token は `width` theme に入り、`w-*` class として使えます。
+
+生成される key:
+
+- `sm`, `sm-compact`, `sm-cozy`
+- `md`, `md-compact`, `md-cozy`
+- `lg`, `lg-compact`, `lg-cozy`
+
+```html
+<p class="w-sm"></p>
+<p class="w-md-cozy"></p>
+<p class="w-lg-compact"></p>
+```
+
+## 旧 class 名からの変更
+
+`s` / `m` / `l` を含むサイズ系 class は、`sm` / `md` / `lg` に置き換えてください。
+
+| 旧 class         | 新 class          |
+| ---------------- | ----------------- |
+| `rounded-s`      | `rounded-ch-sm`   |
+| `rounded-m`      | `rounded-ch-md`   |
+| `rounded-l`      | `rounded-ch-lg`   |
+| `border-wd-m`    | `border-wd-md`    |
+| `border-wd-l`    | `border-wd-lg`    |
+| `text-caption-s` | `text-caption-sm` |
+| `text-caption-m` | `text-caption-md` |
+| `text-heading-s` | `text-heading-sm` |
+| `text-heading-m` | `text-heading-md` |
+| `text-heading-l` | `text-heading-lg` |
+| `p-target-s`     | `p-target-sm`     |
+| `p-target-m`     | `p-target-md`     |
+| `p-target-l`     | `p-target-lg`     |
+| `w-s`            | `w-sm`            |
+| `w-m-cozy`       | `w-md-cozy`       |
+| `w-l-compact`    | `w-lg-compact`    |
+
+`xs` / `xl` / `xxl` / `xxs` のように、すでに識別できる key はそのままです。`layout-10` や `selected`、`secondary` のような色・状態・レイアウト系の key もサイズ key としては扱われません。
