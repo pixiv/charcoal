@@ -2,7 +2,10 @@ import { createRef } from 'react'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
-import Carousel, { type CarouselHandlerRef } from '.'
+import Carousel, {
+  type CarouselHandlerRef,
+  type CarouselDefaultScroll,
+} from '.'
 
 const slides = Array.from({ length: 6 }, (_, i) => (
   <div key={`item-${i}`} data-testid={`slide-${i}`}>
@@ -713,9 +716,9 @@ describe('Carousel', () => {
       const clones = container.querySelectorAll(
         '.charcoal-carousel__item[data-clone]',
       )
-      for (const clone of clones) {
+      clones.forEach((clone) => {
         expect(clone).toHaveAttribute('aria-hidden', 'true')
-      }
+      })
       expect((clones[0] as HTMLElement & { inert?: boolean }).inert).toBe(true)
     })
 
@@ -763,9 +766,10 @@ describe('Carousel', () => {
     })
 
     it('型: loop と defaultScroll は併用できない', () => {
-      // @ts-expect-error loop=true では defaultScroll を渡せない（初期位置は centerItem が決める）
+      const defaultScroll: CarouselDefaultScroll = { align: 'center' }
       const invalid = (
-        <Carousel loop defaultScroll={{ align: 'center' }}>
+        // @ts-expect-error loop=true では defaultScroll を渡せない（初期位置は centerItem が決める）
+        <Carousel loop defaultScroll={defaultScroll}>
           {slides}
         </Carousel>
       )
