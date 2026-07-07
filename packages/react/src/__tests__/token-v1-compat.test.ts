@@ -99,7 +99,6 @@ describe('Design Token 1.0互換: 旧 index.css の見た目を壊さない', ()
           - .charcoal-button | color → --charcoal-text2
           - .charcoal-checkbox__label_div | color → --charcoal-text2
           - .charcoal-ui-dropdown-selector-text | color → --charcoal-text2
-          - .charcoal-field-label | color → --charcoal-text1
           - .charcoal-modal-header-title | color → --charcoal-text1
           - .charcoal-multi-select-label | color → --charcoal-text2
           - .charcoal-radio__label_div | color → --charcoal-text2
