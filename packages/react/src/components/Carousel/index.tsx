@@ -160,6 +160,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onResize,
     onScrollStateChange,
     loop = false,
+    centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
     children,
     ...props
@@ -186,7 +187,16 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     scrollerRef,
     store,
     slides.length,
-    { align, offset, scrollStep, onScroll, onResize, onScrollStateChange },
+    {
+      align,
+      offset,
+      scrollStep,
+      loop,
+      centerItem,
+      onScroll,
+      onResize,
+      onScrollStateChange,
+    },
   )
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
