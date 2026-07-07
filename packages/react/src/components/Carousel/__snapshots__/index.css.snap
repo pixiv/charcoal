@@ -290,6 +290,12 @@
   background-color: var(--charcoal-color-text-default);
 }
 
+  /* loop の複製スライドには marker を生成しない（content が none なら marker 自体が作られない） */
+
+.charcoal-carousel__item[data-clone]::scroll-marker {
+  content: none;
+}
+
 .charcoal-carousel__indicator {
   display: none;
 }
