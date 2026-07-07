@@ -1,8 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import Carousel, { type CarouselItem } from '.'
+import Carousel from '.'
 
-const sampleImage = (
+const sampleImages = Array.from({ length: 6 }, (_, i) => (
   <img
+    key={`item-${i + 1}`}
     src="/carousel-sample.png"
     alt="サンプル画像"
     style={{
@@ -12,34 +13,27 @@ const sampleImage = (
       display: 'block',
     }}
   />
-)
-
-const items: CarouselItem[] = Array.from({ length: 6 }, (_, i) => ({
-  id: `item-${i + 1}`,
-  children: sampleImage,
-}))
+))
 
 // 横幅が確定したスロット（defaultScroll の初期位置計算と 0.75 ページ送りを確認するため）
-const numberedItems: CarouselItem[] = Array.from({ length: 20 }, (_, i) => ({
-  id: `num-${i + 1}`,
-  children: (
-    <div
-      style={{
-        width: 200,
-        height: 120,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: i % 2 === 0 ? '#cfe3ff' : '#ffe3cf',
-        borderRadius: 8,
-        font: 'bold 32px sans-serif',
-        color: '#333',
-      }}
-    >
-      {i + 1}
-    </div>
-  ),
-}))
+const numberedSlides = Array.from({ length: 20 }, (_, i) => (
+  <div
+    key={`num-${i + 1}`}
+    style={{
+      width: 200,
+      height: 120,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: i % 2 === 0 ? '#cfe3ff' : '#ffe3cf',
+      borderRadius: 8,
+      font: 'bold 32px sans-serif',
+      color: '#333',
+    }}
+  >
+    {i + 1}
+  </div>
+))
 
 export default {
   title: 'react/Carousel',
@@ -48,13 +42,14 @@ export default {
     layout: 'padded',
   },
   args: {
-    items,
+    children: sampleImages,
     size: 'M',
     hasGradient: false,
     fullWidth: false,
     scrollStep: 0.75,
   },
   argTypes: {
+    children: { control: false },
     size: {
       control: { type: 'radio' },
       options: ['S', 'M'],
@@ -101,42 +96,52 @@ export const IndicatorOnSizeM: StoryObj<typeof Carousel> = {
 
 // 横幅が確定したスロット（番号付き）
 export const DefaultScrollCenter: StoryObj<typeof Carousel> = {
-  args: { size: 'M', items: numberedItems, defaultScroll: { align: 'center' } },
+  args: {
+    size: 'M',
+    children: numberedSlides,
+    defaultScroll: { align: 'center' },
+  },
 }
 
 export const DefaultScrollRight: StoryObj<typeof Carousel> = {
-  args: { size: 'M', items: numberedItems, defaultScroll: { align: 'right' } },
+  args: {
+    size: 'M',
+    children: numberedSlides,
+    defaultScroll: { align: 'right' },
+  },
 }
 
 // 遅延読み込み画像（マウント時に幅が未確定）でも初期位置が効くことの確認
 export const DefaultScrollCenterAsyncImages: StoryObj<typeof Carousel> = {
-  args: { size: 'M', items, defaultScroll: { align: 'center' } },
+  args: {
+    size: 'M',
+    children: sampleImages,
+    defaultScroll: { align: 'center' },
+  },
 }
 
 // 白フェードが見えることの確認用（暗色コンテンツなら白フェードが明確に出る）
-const darkTiles: CarouselItem[] = Array.from({ length: 10 }, (_, i) => ({
-  id: `dark-${i + 1}`,
-  children: (
-    <div
-      style={{
-        width: 220,
-        height: 140,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: '#2a3b8f',
-        color: '#fff',
-        borderRadius: 4,
-        font: 'bold 28px sans-serif',
-      }}
-    >
-      {i + 1}
-    </div>
-  ),
-}))
+const darkTiles = Array.from({ length: 10 }, (_, i) => (
+  <div
+    key={`dark-${i + 1}`}
+    style={{
+      width: 220,
+      height: 140,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#2a3b8f',
+      color: '#fff',
+      borderRadius: 4,
+      font: 'bold 28px sans-serif',
+    }}
+  >
+    {i + 1}
+  </div>
+))
 
 export const GradientOnDarkContent: StoryObj<typeof Carousel> = {
-  args: { size: 'M', hasGradient: true, items: darkTiles },
+  args: { size: 'M', hasGradient: true, children: darkTiles },
 }
 
 // scrollStep に関数を渡してフル制御する例（送り量を clientWidth - 48px に固定）。
@@ -144,7 +149,7 @@ export const GradientOnDarkContent: StoryObj<typeof Carousel> = {
 export const ScrollStepFunction: StoryObj<typeof Carousel> = {
   args: {
     size: 'M',
-    items: numberedItems,
+    children: numberedSlides,
     scrollStep: ({ clientWidth }) => clientWidth - 48,
   },
 }
@@ -153,7 +158,7 @@ export const ScrollStepFunction: StoryObj<typeof Carousel> = {
 export const ScrollSnapPerItem: StoryObj<typeof Carousel> = {
   args: {
     size: 'M',
-    items: numberedItems,
+    children: numberedSlides,
     scrollSnap: { type: 'mandatory', align: 'start' },
   },
 }

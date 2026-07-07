@@ -2,12 +2,13 @@ import { createRef } from 'react'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
-import Carousel, { type CarouselItem, type CarouselHandlerRef } from '.'
+import Carousel, { type CarouselHandlerRef } from '.'
 
-const items: CarouselItem[] = Array.from({ length: 6 }, (_, i) => ({
-  id: `item-${i}`,
-  children: <div data-testid={`slide-${i}`}>Slide {i}</div>,
-}))
+const slides = Array.from({ length: 6 }, (_, i) => (
+  <div key={`item-${i}`} data-testid={`slide-${i}`}>
+    Slide {i}
+  </div>
+))
 
 function mockScrollerGeometry(
   el: HTMLElement,
@@ -77,14 +78,14 @@ function fireIntersect(el: Element) {
 describe('Carousel', () => {
   describe('rendering', () => {
     it('renders all items', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       for (let i = 0; i < 6; i++) {
         expect(screen.getByTestId(`slide-${i}`)).toBeInTheDocument()
       }
     })
 
     it('has carousel ARIA attributes', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const region = screen.getByRole('region')
       expect(region).toHaveAttribute('aria-roledescription', 'carousel')
       expect(region).toHaveAttribute('aria-label', 'Carousel')
@@ -93,7 +94,7 @@ describe('Carousel', () => {
 
   describe('Size M (default)', () => {
     it('shows navigation buttons', () => {
-      render(<Carousel items={items} size="M" />)
+      render(<Carousel size="M">{slides}</Carousel>)
       expect(
         screen.getByRole('button', { name: 'Previous' }),
       ).toBeInTheDocument()
@@ -101,7 +102,7 @@ describe('Carousel', () => {
     })
 
     it('hides indicator by default', () => {
-      const { container } = render(<Carousel items={items} size="M" />)
+      const { container } = render(<Carousel size="M">{slides}</Carousel>)
       const indicator = container.querySelector('.charcoal-carousel__indicator')
       expect(indicator).toHaveAttribute('data-visible', 'false')
     })
@@ -109,7 +110,7 @@ describe('Carousel', () => {
 
   describe('Size S', () => {
     it('hides navigation buttons by default', () => {
-      const { container } = render(<Carousel items={items} size="S" />)
+      const { container } = render(<Carousel size="S">{slides}</Carousel>)
       const nav = container.querySelector('.charcoal-carousel__navigation')
       expect(nav).toHaveAttribute('data-visible', 'false')
     })
@@ -117,13 +118,13 @@ describe('Carousel', () => {
 
   describe('navigation button state', () => {
     it('disables prev button at scroll start', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const prev = screen.getByRole('button', { name: 'Previous' })
       expect(prev).toBeDisabled()
     })
 
     it('enables next button when scrollable content exists', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 0 })
       act(() => {
@@ -136,7 +137,7 @@ describe('Carousel', () => {
 
   describe('scrollByStep (0.75x viewport)', () => {
     it('calls scrollBy with 0.75x viewport width on next button click', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
       act(() => {
@@ -156,7 +157,7 @@ describe('Carousel', () => {
     })
 
     it('calls scrollBy with negative 0.75x on prev button click', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 400 })
       act(() => {
@@ -176,7 +177,7 @@ describe('Carousel', () => {
     })
 
     it('respects custom scrollStep ratio (number)', () => {
-      render(<Carousel items={items} scrollStep={0.5} />)
+      render(<Carousel scrollStep={0.5}>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
       act(() => {
@@ -199,7 +200,7 @@ describe('Carousel', () => {
       const scrollStep = vi.fn(
         ({ clientWidth }: { clientWidth: number }) => clientWidth - 48,
       )
-      render(<Carousel items={items} scrollStep={scrollStep} />)
+      render(<Carousel scrollStep={scrollStep}>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
       act(() => {
@@ -228,7 +229,7 @@ describe('Carousel', () => {
 
   describe('keyboard navigation', () => {
     it('scrolls next by 0.75x viewport on ArrowRight', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
       act(() => {
@@ -247,7 +248,7 @@ describe('Carousel', () => {
     })
 
     it('scrolls prev by negative 0.75x viewport on ArrowLeft', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 400 })
       act(() => {
@@ -266,7 +267,7 @@ describe('Carousel', () => {
     })
 
     it('ignores unrelated keys', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
 
@@ -284,7 +285,7 @@ describe('Carousel', () => {
       // jsdom には scrollIntoView が無いのでモックを定義する。
       const scrollIntoView = vi.fn()
       Element.prototype.scrollIntoView = scrollIntoView
-      const { container } = render(<Carousel items={items} size="S" />)
+      const { container } = render(<Carousel size="S">{slides}</Carousel>)
 
       const dots = container.querySelectorAll(
         '.charcoal-carousel__indicator__item',
@@ -311,7 +312,9 @@ describe('Carousel', () => {
     it('item が中央に入ると activeIndex が更新され indicator に反映される', () => {
       const restore = installIOMock()
       const { container } = render(
-        <Carousel items={items} size="M" indicator />,
+        <Carousel size="M" indicator>
+          {slides}
+        </Carousel>,
       )
       const itemEls = container.querySelectorAll('.charcoal-carousel__item')
       act(() => {
@@ -327,7 +330,7 @@ describe('Carousel', () => {
 
   describe('scroll-state data attributes (mask)', () => {
     it('reflects canPrev/canNext on the root element', () => {
-      const { container } = render(<Carousel items={items} hasGradient />)
+      const { container } = render(<Carousel hasGradient>{slides}</Carousel>)
       const root = container.querySelector('.charcoal-carousel')
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
@@ -339,7 +342,7 @@ describe('Carousel', () => {
     })
 
     it('marks data-can-prev false at the start edge', () => {
-      const { container } = render(<Carousel items={items} hasGradient />)
+      const { container } = render(<Carousel hasGradient>{slides}</Carousel>)
       const root = container.querySelector('.charcoal-carousel')
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 0 })
@@ -378,26 +381,25 @@ describe('Carousel', () => {
     })
 
     it('defaults to the left edge (0)', () => {
-      render(<Carousel items={items} />)
+      render(<Carousel>{slides}</Carousel>)
       expect(lastSetLeft).toBe(0)
     })
 
     it('centers the content when align=center (maxScroll / 2)', () => {
-      render(<Carousel items={items} defaultScroll={{ align: 'center' }} />)
+      render(<Carousel defaultScroll={{ align: 'center' }}>{slides}</Carousel>)
       expect(lastSetLeft).toBe(800)
     })
 
     it('aligns to the right edge when align=right (maxScroll)', () => {
-      render(<Carousel items={items} defaultScroll={{ align: 'right' }} />)
+      render(<Carousel defaultScroll={{ align: 'right' }}>{slides}</Carousel>)
       expect(lastSetLeft).toBe(1600)
     })
 
     it('applies offset from the base position', () => {
       render(
-        <Carousel
-          items={items}
-          defaultScroll={{ align: 'left', offset: 100 }}
-        />,
+        <Carousel defaultScroll={{ align: 'left', offset: 100 }}>
+          {slides}
+        </Carousel>,
       )
       expect(lastSetLeft).toBe(100)
     })
@@ -444,7 +446,7 @@ describe('Carousel', () => {
     })
 
     it('re-applies the initial position when content width settles later', () => {
-      render(<Carousel items={items} defaultScroll={{ align: 'right' }} />)
+      render(<Carousel defaultScroll={{ align: 'right' }}>{slides}</Carousel>)
       // at mount the content is not laid out yet (maxScroll 0) -> right -> 0
       expect(lastSetLeft).toBe(0)
 
@@ -460,7 +462,7 @@ describe('Carousel', () => {
     })
 
     it('stops re-applying once the user interacts', () => {
-      render(<Carousel items={items} defaultScroll={{ align: 'right' }} />)
+      render(<Carousel defaultScroll={{ align: 'right' }}>{slides}</Carousel>)
 
       // user interacts (pointerdown on the scroller) before the content settles
       fireEvent.pointerDown(getScroller())
@@ -476,16 +478,31 @@ describe('Carousel', () => {
     })
   })
 
+  describe('children (sandbox-compatible API)', () => {
+    it('renders each direct child as one slide', () => {
+      const { container } = render(<Carousel>{slides}</Carousel>)
+      expect(
+        container.querySelectorAll('.charcoal-carousel__item'),
+      ).toHaveLength(6)
+    })
+  })
+
   describe('props override defaults', () => {
     it('shows indicator on Size M when prop is true', () => {
       const { container } = render(
-        <Carousel items={items} size="M" indicator />,
+        <Carousel size="M" indicator>
+          {slides}
+        </Carousel>,
       )
       expect(container.querySelector("[data-indicator='true']")).toBeTruthy()
     })
 
     it('shows navigation on Size S when prop is true', () => {
-      render(<Carousel items={items} size="S" navigationButtons />)
+      render(
+        <Carousel size="S" navigationButtons>
+          {slides}
+        </Carousel>,
+      )
       const nav = document.querySelector('.charcoal-carousel__navigation')
       expect(nav).toHaveAttribute('data-visible', 'true')
     })
@@ -493,12 +510,12 @@ describe('Carousel', () => {
 
   describe('variant data attributes', () => {
     it('sets gradient data attribute', () => {
-      const { container } = render(<Carousel items={items} hasGradient />)
+      const { container } = render(<Carousel hasGradient>{slides}</Carousel>)
       expect(container.querySelector("[data-has-gradient='true']")).toBeTruthy()
     })
 
     it('sets full-width data attribute', () => {
-      const { container } = render(<Carousel items={items} fullWidth />)
+      const { container } = render(<Carousel fullWidth>{slides}</Carousel>)
       expect(container.querySelector("[data-full-width='true']")).toBeTruthy()
     })
   })
@@ -507,30 +524,32 @@ describe('Carousel', () => {
     const getRegion = () => screen.getByRole('region')
 
     it('defaults to none / center on Size M (sandbox 同等の 0.75)', () => {
-      render(<Carousel items={items} size="M" />)
+      render(<Carousel size="M">{slides}</Carousel>)
       expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'none')
       expect(getRegion()).toHaveAttribute('data-scroll-snap-align', 'center')
     })
 
     it('defaults to mandatory on Size S', () => {
-      render(<Carousel items={items} size="S" />)
+      render(<Carousel size="S">{slides}</Carousel>)
       expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'mandatory')
     })
 
     it('overrides type per prop (item-ごと mandatory)', () => {
       render(
-        <Carousel items={items} size="M" scrollSnap={{ type: 'mandatory' }} />,
+        <Carousel size="M" scrollSnap={{ type: 'mandatory' }}>
+          {slides}
+        </Carousel>,
       )
       expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'mandatory')
     })
 
     it('overrides align per prop', () => {
-      render(<Carousel items={items} scrollSnap={{ align: 'start' }} />)
+      render(<Carousel scrollSnap={{ align: 'start' }}>{slides}</Carousel>)
       expect(getRegion()).toHaveAttribute('data-scroll-snap-align', 'start')
     })
 
     it('supports disabling snap (none)', () => {
-      render(<Carousel items={items} scrollSnap={{ type: 'none' }} />)
+      render(<Carousel scrollSnap={{ type: 'none' }}>{slides}</Carousel>)
       expect(getRegion()).toHaveAttribute('data-scroll-snap-type', 'none')
     })
   })
@@ -538,7 +557,7 @@ describe('Carousel', () => {
   describe('react-sandbox compat (callbacks / ref)', () => {
     it('calls onScroll with scrollLeft on scroll', () => {
       const onScroll = vi.fn()
-      render(<Carousel items={items} onScroll={onScroll} />)
+      render(<Carousel onScroll={onScroll}>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 240 })
       act(() => {
@@ -550,7 +569,7 @@ describe('Carousel', () => {
     it('calls onScrollStateChange when scrollability changes', () => {
       const onScrollStateChange = vi.fn()
       render(
-        <Carousel items={items} onScrollStateChange={onScrollStateChange} />,
+        <Carousel onScrollStateChange={onScrollStateChange}>{slides}</Carousel>,
       )
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
@@ -577,7 +596,9 @@ describe('Carousel', () => {
       ]
       const ref = createRef<CarouselHandlerRef>()
       render(
-        <Carousel ref={ref} items={items} defaultScroll={{ align: 'right' }} />,
+        <Carousel ref={ref} defaultScroll={{ align: 'right' }}>
+          {slides}
+        </Carousel>,
       )
       lastSetLeft = undefined
       act(() => {
@@ -603,7 +624,7 @@ describe('Carousel', () => {
         .spyOn(HTMLElement.prototype, 'clientWidth', 'get')
         .mockReturnValue(640)
       const onResize = vi.fn()
-      render(<Carousel items={items} onResize={onResize} />)
+      render(<Carousel onResize={onResize}>{slides}</Carousel>)
       act(() => {
         roCallbacks.forEach((cb) => cb([]))
       })
@@ -641,13 +662,13 @@ describe('Carousel', () => {
       // getServerSnapshot を使うため、サーバー描画でブラウザ API に触れない。
       expect(() =>
         renderToString(
-          <Carousel items={items} defaultScroll={{ align: 'center' }} />,
+          <Carousel defaultScroll={{ align: 'center' }}>{slides}</Carousel>,
         ),
       ).not.toThrow()
     })
 
     it('uses the server snapshot (canPrev/canNext = false) and renders items + indicator', () => {
-      const html = renderToString(<Carousel items={items} size="M" />)
+      const html = renderToString(<Carousel size="M">{slides}</Carousel>)
 
       // サーバースナップショットでは canPrev/canNext は false。
       expect(html).toContain('data-can-prev="false"')
