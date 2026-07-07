@@ -18,7 +18,7 @@ Token V2 由来の `s` / `m` / `l` というサイズ key は、Tailwind の the
 
 `ch` prefix は、Tailwind が生成する class や Design Token 1.0 由来の class と衝突する可能性がある Token V2 の theme key に付与されます。現在は `fontWeight` と `borderRadius` が対象です。
 
-`cl` と `wd` prefix は、Tailwind の `border-*` utility 内で border color と border width の class 名が衝突しないように付与されます。`borderColor` は `cl`、`borderWidth` は `wd` を使います。
+`cl` と `wd` prefix は、Tailwind の `border-*` utility 内で border color と border width の class 名が衝突しないように付与されます。`borderColor` は `cl`、`borderWidth` は `wd` を使います。`main` ブランチの `unstableTokenV2` 出力では border color に `ch`、border width に `width-ch` が使われていましたが、現在は用途が分かる prefix に変更されています。
 
 ## よく使う class
 
@@ -80,7 +80,7 @@ Token V2 由来の `s` / `m` / `l` というサイズ key は、Tailwind の the
 <svg class="fill-icon-secondary stroke-icon-secondary-press"></svg>
 ```
 
-border 用の色は `borderColor` にも入り、`cl` prefix 付きの class として使えます。`cl` は border color と border width の class 名衝突を避けるための prefix です。
+border 用の色は `borderColor` にも入り、`cl` prefix 付きの class として使えます。`cl` は border color と border width の class 名衝突を避けるための prefix です。`main` ブランチの `unstableTokenV2` 出力で使われていた `border-ch` / `divide-ch` 系は、現在は `border-cl` / `divide-cl` 系になります。
 
 ```html
 <div class="border border-cl"></div>
@@ -155,7 +155,7 @@ border 用の色は `borderColor` にも入り、`cl` prefix 付きの class と
 <div class="rounded-ch-oval"></div>
 ```
 
-`borderWidth` は `wd` prefix 付きです。`wd` は border width と border color の class 名衝突を避けるための prefix です。
+`borderWidth` は `wd` prefix 付きです。`wd` は border width と border color の class 名衝突を避けるための prefix です。`main` ブランチの `unstableTokenV2` 出力で使われていた `border-width-ch-*` 系は、現在は `border-wd-*` 系になります。
 
 生成される key:
 
@@ -186,27 +186,33 @@ border 用の色は `borderColor` にも入り、`cl` prefix 付きの class と
 <p class="w-lg-compact"></p>
 ```
 
-## 以前の unstableTokenV2 出力との比較
+## main ブランチの unstableTokenV2 出力との比較
 
-以前の `unstableTokenV2: true` で出力されていた `s` / `m` / `l` を含むサイズ系 class は、現在の出力では `sm` / `md` / `lg` を使います。
+`main` ブランチの `unstableTokenV2: true` で出力されていた class と比べると、サイズ key の正規化に加えて、border color / border width の prefix も変わります。
 
-| 以前の `unstableTokenV2` 出力 | 現在の出力        |
-| ----------------------------- | ----------------- |
-| `rounded-s`                   | `rounded-ch-sm`   |
-| `rounded-m`                   | `rounded-ch-md`   |
-| `rounded-l`                   | `rounded-ch-lg`   |
-| `border-wd-m`                 | `border-wd-md`    |
-| `border-wd-l`                 | `border-wd-lg`    |
-| `text-caption-s`              | `text-caption-sm` |
-| `text-caption-m`              | `text-caption-md` |
-| `text-heading-s`              | `text-heading-sm` |
-| `text-heading-m`              | `text-heading-md` |
-| `text-heading-l`              | `text-heading-lg` |
-| `p-target-s`                  | `p-target-sm`     |
-| `p-target-m`                  | `p-target-md`     |
-| `p-target-l`                  | `p-target-lg`     |
-| `w-s`                         | `w-sm`            |
-| `w-m-cozy`                    | `w-md-cozy`       |
-| `w-l-compact`                 | `w-lg-compact`    |
+| `main` ブランチの `unstableTokenV2` 出力 | 現在の出力          |
+| ---------------------------------------- | ------------------- |
+| `border-ch`                              | `border-cl`         |
+| `border-ch-hover`                        | `border-cl-hover`   |
+| `border-ch-focus-1`                      | `border-cl-focus-1` |
+| `divide-ch`                              | `divide-cl`         |
+| `border-width-ch-m`                      | `border-wd-md`      |
+| `border-width-ch-l`                      | `border-wd-lg`      |
+| `border-width-ch-focus-1`                | `border-wd-focus-1` |
+| `border-width-ch-focus-2`                | `border-wd-focus-2` |
+| `rounded-s`                              | `rounded-ch-sm`     |
+| `rounded-m`                              | `rounded-ch-md`     |
+| `rounded-l`                              | `rounded-ch-lg`     |
+| `text-caption-s`                         | `text-caption-sm`   |
+| `text-caption-m`                         | `text-caption-md`   |
+| `text-heading-s`                         | `text-heading-sm`   |
+| `text-heading-m`                         | `text-heading-md`   |
+| `text-heading-l`                         | `text-heading-lg`   |
+| `p-target-s`                             | `p-target-sm`       |
+| `p-target-m`                             | `p-target-md`       |
+| `p-target-l`                             | `p-target-lg`       |
+| `w-s`                                    | `w-sm`              |
+| `w-m-cozy`                               | `w-md-cozy`         |
+| `w-l-compact`                            | `w-lg-compact`      |
 
 `xs` / `xl` / `xxl` / `xxs` のように、すでに識別できる key はそのままです。`layout-10` や `selected`、`secondary` のような色・状態・レイアウト系の key もサイズ key としては扱われません。

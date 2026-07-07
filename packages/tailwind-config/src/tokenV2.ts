@@ -7,10 +7,7 @@ import {
 } from './util'
 import { normalizeTokenV2SizeKeys } from './tokenV2SizeKeys'
 
-export function createTailwindConfigTokenV2(): Omit<
-  Config,
-  'content'
-> {
+export function createTailwindConfigTokenV2(): Omit<Config, 'content'> {
   const textFontSize = normalizeTokenV2SizeKeys(light.text['font-size'])
   const textLineHeight = normalizeTokenV2SizeKeys(light.text['line-height'])
   const space = normalizeTokenV2SizeKeys(light.space)
