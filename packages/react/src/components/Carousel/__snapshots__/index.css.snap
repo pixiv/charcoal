@@ -12,13 +12,6 @@
   position: relative;
 }
 
-/* フォーカスリングは scroller ではなく viewport に描く。scroller に置くと
-     hasGradient の mask（mask-clip: border-box）で外側の box-shadow ごと消えるため。 */
-
-.charcoal-carousel__viewport[data-focus-visible] {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
-}
-
 .charcoal-carousel__scroller {
   position: relative;
   display: flex;
@@ -33,6 +26,10 @@
 
 .charcoal-carousel__scroller::-webkit-scrollbar {
   display: none;
+}
+
+.charcoal-carousel__scroller[data-focus-visible] {
+  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
 .charcoal-carousel[data-size='S'] .charcoal-carousel__scroller {
@@ -55,51 +52,38 @@
   scroll-snap-type: x mandatory;
 }
 
-/* mask の端色を transition できるよう <color> として型登録する
-   （@property 未対応ブラウザではフェードなしの即時切替になる）。 */
+/* グラデーション: はみ出してスクロール可能な側のみ、端のアイテムを背景色（白）へ
+   フェードさせる。mask による透過ではなく、72px の「背景色→透明」オーバーレイを
+   ビューポートに重ねて白で覆う。スクロール可能な側だけ data-can-prev/next で出し分ける。 */
 
-@property --charcoal-carousel-mask-start {
-  syntax: '<color>';
-  inherits: false;
-  initial-value: #000;
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::before, .charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.2s opacity;
+  z-index: 1;
 }
 
-@property --charcoal-carousel-mask-end {
-  syntax: '<color>';
-  inherits: false;
-  initial-value: #000;
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
 }
 
-/* グラデーション: mask で端のアイテム自体を透明へフェードさせる（下の背景色を
-   問わない）。mask の色はアルファとしてだけ効く（#000=表示 / transparent=透過）。
-   はみ出してスクロール可能な側のみ、data-can-prev/next で端の色を transparent に
-   切り替えて 72px の透過域を有効にする。 */
-
-.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__scroller {
-  /* var() の第2引数は @property 非対応ブラウザ用。無いと未定義プロパティ参照で
-     mask-image 宣言ごと無効になり、mask 自体が消える。 */
-  mask-image: linear-gradient(
-    to right,
-    var(--charcoal-carousel-mask-start, #000),
-    #000 72px,
-    #000 calc(100% - 72px),
-    var(--charcoal-carousel-mask-end, #000)
-  );
-  /* transition-property としてのカスタムプロパティ名指定（var() 不要）を
-     stylelint が誤検知するため無効化する。 */
-  /* stylelint-disable custom-property-no-missing-var-function */
-  /* 0.2s ease-in は react-sandbox の LeftGradient と同じ値 */
-  transition: 0.2s ease-in --charcoal-carousel-mask-start,
-    0.2s ease-in --charcoal-carousel-mask-end;
-  /* stylelint-enable custom-property-no-missing-var-function */
+.charcoal-carousel[data-has-gradient='true'] .charcoal-carousel__viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
 }
 
-.charcoal-carousel[data-has-gradient='true'][data-can-prev='true'] .charcoal-carousel__scroller {
-  --charcoal-carousel-mask-start: transparent;
+.charcoal-carousel[data-has-gradient='true'][data-can-prev='true'] .charcoal-carousel__viewport::before {
+  opacity: 1;
 }
 
-.charcoal-carousel[data-has-gradient='true'][data-can-next='true'] .charcoal-carousel__scroller {
-  --charcoal-carousel-mask-end: transparent;
+.charcoal-carousel[data-has-gradient='true'][data-can-next='true'] .charcoal-carousel__viewport::after {
+  opacity: 1;
 }
 
 .charcoal-carousel__item {
@@ -124,7 +108,7 @@
 
 /* ── Navigation Buttons (charcoal IconButton, variant=Overlay size=S) ── */
 
-/* マスクの透過域と同じ 72px 1fr 72px グリッド。各ボタンは 72px ゾーンの中央に置く。 */
+/* マスクと同じ 72px 1fr 72px グリッド。各ボタンは 72px ゾーンの中央に置く。 */
 
 .charcoal-carousel__navigation {
   position: absolute;
@@ -133,8 +117,8 @@
   display: grid;
   grid-template-columns: 72px 1fr 72px;
   align-items: center;
-  /* アイテム内のコンテンツより上にボタンを表示する */
-  z-index: 1;
+  /* 白フェード（z-index: 1）より上にボタンを表示する */
+  z-index: 2;
   /* sandbox 同様、通常は隠してカルーセル hover 時にフェードイン表示する。 */
   opacity: 0;
   transition: 0.4s opacity;

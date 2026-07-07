@@ -217,16 +217,13 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       aria-roledescription="carousel"
       aria-label="Carousel"
     >
-      {/* フォーカスリングは viewport に描く（理由は index.css の同セレクタ参照） */}
-      <div
-        className="charcoal-carousel__viewport"
-        data-focus-visible={scrollerFocusVisible || undefined}
-      >
+      <div className="charcoal-carousel__viewport">
         <div
           {...mergeProps(scrollerFocusProps, keyboardProps)}
           ref={scrollerRef}
           className="charcoal-carousel__scroller"
           tabIndex={0}
+          data-focus-visible={scrollerFocusVisible || undefined}
         >
           {props.items.map((item, i) => (
             <CarouselSlide
