@@ -66,12 +66,8 @@ export function useCarouselScroller(
         left = maxScroll + offset
         break
     }
-    // scrollLeft 代入は CSS の scroll-behavior: smooth の対象になり
-    // 初期位置決めがアニメーションしてしまうため、instant で確定させる。
-    el.scrollTo({
-      left: Math.max(0, Math.min(left, maxScroll)),
-      behavior: 'instant',
-    })
+    // eslint-disable-next-line react-compiler/react-compiler
+    el.scrollLeft = Math.max(0, Math.min(left, maxScroll))
   }, [scrollerRef, align, offset])
 
   // canPrev/canNext: scroll で更新。onScroll もここから発火。itemCount 変化で貼り直し。

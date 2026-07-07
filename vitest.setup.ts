@@ -31,24 +31,6 @@ beforeAll(() => {
     CSS.supports = () => false
   }
 
-  // jsdom は Element.prototype.scrollTo を実装していない。
-  // scrollLeft/scrollTop への反映は残す（テストが setter spy で位置を検証するため）。
-  if (typeof Element.prototype.scrollTo !== 'function') {
-    Element.prototype.scrollTo = vi.fn(function (
-      this: Element,
-      optionsOrX?: ScrollToOptions | number,
-      y?: number,
-    ) {
-      if (typeof optionsOrX === 'object' && optionsOrX !== null) {
-        if (optionsOrX.left !== undefined) this.scrollLeft = optionsOrX.left
-        if (optionsOrX.top !== undefined) this.scrollTop = optionsOrX.top
-      } else {
-        if (optionsOrX !== undefined) this.scrollLeft = optionsOrX
-        if (y !== undefined) this.scrollTop = y
-      }
-    }) as unknown as typeof Element.prototype.scrollTo
-  }
-
   vi.stubGlobal(
     'matchMedia',
     vi.fn().mockImplementation((query: string) => ({
