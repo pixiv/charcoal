@@ -309,6 +309,7 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
       "caption": {
         "m": "var(--charcoal-text-font-size-caption-m)",
         "s": "var(--charcoal-text-font-size-caption-s)",
+        "s-10": "var(--charcoal-text-font-size-caption-s-10)",
       },
       "heading": {
         "l": "var(--charcoal-text-font-size-heading-l)",
@@ -332,6 +333,7 @@ exports[`createCSSTokenObject test: dark theme > should match snapshot 1`] = `
       "caption": {
         "m": "var(--charcoal-text-line-height-caption-m)",
         "s": "var(--charcoal-text-line-height-caption-s)",
+        "s-10": "var(--charcoal-text-line-height-caption-s-10)",
       },
       "heading": {
         "l": "var(--charcoal-text-line-height-heading-l)",
@@ -659,6 +661,7 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
       "caption": {
         "m": "var(--charcoal-text-font-size-caption-m)",
         "s": "var(--charcoal-text-font-size-caption-s)",
+        "s-10": "var(--charcoal-text-font-size-caption-s-10)",
       },
       "heading": {
         "l": "var(--charcoal-text-font-size-heading-l)",
@@ -682,6 +685,7 @@ exports[`createCSSTokenObject test: light theme > should match snapshot 1`] = `
       "caption": {
         "m": "var(--charcoal-text-line-height-caption-m)",
         "s": "var(--charcoal-text-line-height-caption-s)",
+        "s-10": "var(--charcoal-text-line-height-caption-s-10)",
       },
       "heading": {
         "l": "var(--charcoal-text-line-height-heading-l)",
@@ -1009,6 +1013,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       "caption": {
         "m": "14px",
         "s": "12px",
+        "s-10": "12px",
       },
       "heading": {
         "l": "28px",
@@ -1032,6 +1037,7 @@ exports[`createTokenObject test: dark theme > should match snapshot 1`] = `
       "caption": {
         "m": "20px",
         "s": "18px",
+        "s-10": "18px",
       },
       "heading": {
         "l": "36px",
@@ -1359,6 +1365,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       "caption": {
         "m": "14px",
         "s": "12px",
+        "s-10": "12px",
       },
       "heading": {
         "l": "28px",
@@ -1382,6 +1389,7 @@ exports[`createTokenObject test: light theme > should match snapshot 1`] = `
       "caption": {
         "m": "20px",
         "s": "18px",
+        "s-10": "18px",
       },
       "heading": {
         "l": "36px",

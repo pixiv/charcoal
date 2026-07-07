@@ -293,6 +293,12 @@ exports[`unstable_createTailwindConfigTokenV2 > config object 1`] = `
           "lineHeight": "var(--charcoal-text-line-height-caption-s)",
         },
       ],
+      "caption-s-10": [
+        "var(--charcoal-text-font-size-caption-s-10)",
+        {
+          "lineHeight": "var(--charcoal-text-line-height-caption-s-10)",
+        },
+      ],
       "heading-l": [
         "var(--charcoal-text-font-size-heading-l)",
         {
@@ -5096,6 +5102,7 @@ exports[`unstable_createTailwindConfigTokenV2 > list of classes 1`] = `
   "text-body",
   "text-caption-m",
   "text-caption-s",
+  "text-caption-s-10",
   "text-heading-l",
   "text-heading-m",
   "text-heading-s",
