@@ -1,19 +1,30 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
+import type { CSSProperties } from 'react'
 import Carousel from '.'
 
-const sampleImages = Array.from({ length: 6 }, (_, i) => (
-  <img
-    key={`item-${i + 1}`}
-    src="/carousel-sample.png"
-    alt="サンプル画像"
-    style={{
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      display: 'block',
-    }}
-  />
-))
+const makeSampleImages = (style: CSSProperties) =>
+  Array.from({ length: 6 }, (_, i) => (
+    <img
+      key={`item-${i + 1}`}
+      src="/carousel-sample.png"
+      alt="サンプル画像"
+      style={{
+        objectFit: 'cover',
+        display: 'block',
+        ...style,
+      }}
+    />
+  ))
+
+// M 用: スライド間隔はコンポーネントが所有しないので、利用者側の margin で注入する。
+// width: 100% と margin の併用はラッパーとの循環サイズ解決で間隔が潰れるため、明示サイズにする。
+const spacedImages = makeSampleImages({
+  width: 280,
+  height: 210,
+  marginInlineEnd: 24,
+})
+// S 用: 1 枚全幅ページングのため間隔なし
+const fullWidthImages = makeSampleImages({ width: '100%', height: '100%' })
 
 // 横幅が確定したスロット（defaultScroll の初期位置計算と 0.75 ページ送りを確認するため）。
 // スライド間隔はコンポーネントが所有しないので、利用者側の margin で注入する。
@@ -44,7 +55,7 @@ export default {
     layout: 'padded',
   },
   args: {
-    children: sampleImages,
+    children: spacedImages,
     size: 'M',
     hasGradient: false,
     fullWidth: false,
@@ -77,7 +88,7 @@ export const SizeM: StoryObj<typeof Carousel> = {
 }
 
 export const SizeS: StoryObj<typeof Carousel> = {
-  args: { size: 'S' },
+  args: { size: 'S', children: fullWidthImages },
 }
 
 export const WithGradient: StoryObj<typeof Carousel> = {
@@ -89,7 +100,7 @@ export const FullWidth: StoryObj<typeof Carousel> = {
 }
 
 export const NavigationButtonsOnSizeS: StoryObj<typeof Carousel> = {
-  args: { size: 'S', navigationButtons: true },
+  args: { size: 'S', navigationButtons: true, children: fullWidthImages },
 }
 
 export const IndicatorOnSizeM: StoryObj<typeof Carousel> = {
@@ -117,7 +128,7 @@ export const DefaultScrollRight: StoryObj<typeof Carousel> = {
 export const DefaultScrollCenterAsyncImages: StoryObj<typeof Carousel> = {
   args: {
     size: 'M',
-    children: sampleImages,
+    children: spacedImages,
     defaultScroll: { align: 'center' },
   },
 }
