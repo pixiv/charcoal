@@ -923,6 +923,36 @@ describe('Carousel', () => {
       vi.useRealTimers()
     })
 
+    it('scrollend 非対応環境では debounce でテレポートする', () => {
+      // jsdom は onscrollend を window の own property (accessor) として持つため、
+      // 一時的に削除して 'onscrollend' in window === false を再現する。
+      const descriptor = Object.getOwnPropertyDescriptor(window, 'onscrollend')
+      delete (window as { onscrollend?: unknown }).onscrollend
+      expect('onscrollend' in window).toBe(false)
+      try {
+        vi.useFakeTimers()
+        const { scroller, scrollTo } = setupLoop(
+          <Carousel loop>{slides}</Carousel>,
+          {
+            scrollLeft: 1000,
+          },
+        )
+        scrollTo.mockClear()
+        fireEvent.scroll(scroller)
+        act(() => {
+          vi.advanceTimersByTime(150)
+        })
+        // 1000 は帯域 [1200, 3600) の外 → +2400 で 3400
+        expect(scrollTo).toHaveBeenCalledWith({
+          left: 3400,
+          behavior: 'instant',
+        })
+      } finally {
+        if (descriptor) Object.defineProperty(window, 'onscrollend', descriptor)
+        vi.useRealTimers()
+      }
+    })
+
     it('物理端まで残り 1 viewport を切ったら静止を待たず即テレポートする', () => {
       const { scroller, scrollTo } = setupLoop(
         <Carousel loop>{slides}</Carousel>,
