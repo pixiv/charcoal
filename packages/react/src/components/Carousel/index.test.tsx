@@ -686,6 +686,100 @@ describe('Carousel', () => {
     })
   })
 
+  describe('loop (clone slides)', () => {
+    it('loop で前後に clone セットを加えた 3n 枚を描画する', () => {
+      const { container } = render(<Carousel loop>{slides}</Carousel>)
+      expect(container.querySelectorAll('.charcoal-carousel__item')).toHaveLength(
+        18,
+      )
+      expect(
+        container.querySelectorAll('.charcoal-carousel__item[data-clone]'),
+      ).toHaveLength(12)
+    })
+
+    it('indicator の dot は実スライド数のまま', () => {
+      const { container } = render(
+        <Carousel loop indicator>
+          {slides}
+        </Carousel>,
+      )
+      expect(
+        container.querySelectorAll('.charcoal-carousel__indicator__item'),
+      ).toHaveLength(6)
+    })
+
+    it('clone は aria-hidden かつ inert', () => {
+      const { container } = render(<Carousel loop>{slides}</Carousel>)
+      const clones = container.querySelectorAll(
+        '.charcoal-carousel__item[data-clone]',
+      )
+      for (const clone of clones) {
+        expect(clone).toHaveAttribute('aria-hidden', 'true')
+      }
+      expect((clones[0] as HTMLElement & { inert?: boolean }).inert).toBe(true)
+    })
+
+    it('scroll 命令では実セットの要素だけが scrollIntoView する', () => {
+      const scrollIntoView = vi.fn()
+      Element.prototype.scrollIntoView = scrollIntoView
+      const { container } = render(
+        <Carousel size="S" loop>
+          {slides}
+        </Carousel>,
+      )
+      const dots = container.querySelectorAll(
+        '.charcoal-carousel__indicator__item',
+      )
+      act(() => {
+        fireEvent.click(dots[2])
+      })
+      expect(scrollIntoView).toHaveBeenCalledTimes(1)
+      const realItems = container.querySelectorAll(
+        '.charcoal-carousel__item:not([data-clone])',
+      )
+      expect(scrollIntoView.mock.contexts[0]).toBe(realItems[2])
+      delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView
+    })
+
+    it('clone の中央到達でも実セットと同じ index を activeIndex にする', () => {
+      const restore = installIOMock()
+      const { container } = render(
+        <Carousel size="M" indicator loop>
+          {slides}
+        </Carousel>,
+      )
+      // clone-before セットの 3 枚目（論理 index 2）
+      const cloneEls = container.querySelectorAll(
+        '.charcoal-carousel__item[data-clone]',
+      )
+      act(() => {
+        fireIntersect(cloneEls[2])
+      })
+      const dots = container.querySelectorAll(
+        '.charcoal-carousel__indicator__item',
+      )
+      expect(dots[2]).toHaveAttribute('data-active', 'true')
+      restore()
+    })
+
+    it('型: loop と defaultScroll は併用できない', () => {
+      // @ts-expect-error loop=true では defaultScroll を渡せない（初期位置は centerItem が決める）
+      const invalid = (
+        <Carousel loop defaultScroll={{ align: 'center' }}>
+          {slides}
+        </Carousel>
+      )
+      const valid = (
+        <Carousel loop centerItem={0}>
+          {slides}
+        </Carousel>
+      )
+      // 型検査のための式（描画はしない）
+      expect(invalid).toBeTruthy()
+      expect(valid).toBeTruthy()
+    })
+  })
+
   describe('SSR (server rendering)', () => {
     // jsdom では window が定義されているため renderToString 時に
     // 「useLayoutEffect does nothing on the server」警告が出る（実 SSR=window 無しでは
@@ -734,6 +828,11 @@ describe('Carousel', () => {
       // ナビゲーションボタンは存在する（サーバースナップショットでは無効状態）。
       expect(html).toContain('aria-label="Previous"')
       expect(html).toContain('aria-label="Next"')
+    })
+
+    it('loop でも clone 込みで例外なく静的描画される', () => {
+      const html = renderToString(<Carousel loop>{slides}</Carousel>)
+      expect(html).toContain('data-clone')
     })
   })
 })

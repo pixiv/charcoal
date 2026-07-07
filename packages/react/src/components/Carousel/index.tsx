@@ -50,6 +50,17 @@ export type CarouselHandlerRef = {
   resetScroll: () => void
 }
 
+export type CarouselDefaultScroll = Readonly<{
+  align?: ScrollAlign
+  offset?: number
+}>
+
+// loop 時は初期位置が centerItem（未指定なら実セット先頭）に固定されるため
+// defaultScroll と両立しない（型で排他する）。
+export type CarouselLoopProps =
+  | Readonly<{ loop?: false; defaultScroll?: CarouselDefaultScroll }>
+  | Readonly<{ loop: true; defaultScroll?: never }>
+
 export type CarouselProps = Readonly<{
   className?: string
   hasGradient?: boolean
@@ -66,10 +77,12 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
-  defaultScroll?: { align?: ScrollAlign; offset?: number }
+  // loop 時に初期表示で viewport 中央に置く実スライドの論理 index。非 loop では無効。
+  centerItem?: number
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
   children: ReactNode
-}>
+}> &
+  CarouselLoopProps
 
 type Direction = 'prev' | 'next'
 
@@ -146,6 +159,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScroll,
     onResize,
     onScrollStateChange,
+    loop = false,
     defaultScroll: { align = 'left', offset = 0 } = {},
     children,
     ...props
@@ -187,6 +201,20 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     (index: number) => store.dispatch({ type: 'requestScroll', index }),
     [store],
   )
+
+  // loop 時は実セットの前後に clone セットを描画する（clone + 端テレポート方式）。
+  const renderSlides = (clone?: 'before' | 'after') =>
+    slides.map((slide, i) => (
+      <CarouselSlide
+        key={clone == null ? slideKeys[i] : `~${clone}~${slideKeys[i]}`}
+        index={i}
+        store={store}
+        clone={clone != null}
+        onResize={onItemResize}
+      >
+        {slide}
+      </CarouselSlide>
+    ))
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
@@ -241,16 +269,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           className="charcoal-carousel__scroller"
           tabIndex={0}
         >
-          {slides.map((slide, i) => (
-            <CarouselSlide
-              key={slideKeys[i]}
-              index={i}
-              store={store}
-              onResize={onItemResize}
-            >
-              {slide}
-            </CarouselSlide>
-          ))}
+          {loop && renderSlides('before')}
+          {renderSlides()}
+          {loop && renderSlides('after')}
         </div>
 
         <div
