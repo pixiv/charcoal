@@ -15,13 +15,15 @@ const sampleImages = Array.from({ length: 6 }, (_, i) => (
   />
 ))
 
-// 横幅が確定したスロット（defaultScroll の初期位置計算と 0.75 ページ送りを確認するため）
+// 横幅が確定したスロット（defaultScroll の初期位置計算と 0.75 ページ送りを確認するため）。
+// スライド間隔はコンポーネントが所有しないので、利用者側の margin で注入する。
 const numberedSlides = Array.from({ length: 20 }, (_, i) => (
   <div
     key={`num-${i + 1}`}
     style={{
       width: 200,
       height: 120,
+      marginInlineEnd: 24,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -127,6 +129,7 @@ const darkTiles = Array.from({ length: 10 }, (_, i) => (
     style={{
       width: 220,
       height: 140,
+      marginInlineEnd: 24,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
