@@ -7,7 +7,7 @@ import {
 } from './util'
 import { normalizeTokenV2SizeKeys } from './tokenV2SizeKeys'
 
-export function unstable_createTailwindConfigTokenV2(): Omit<
+export function createTailwindConfigTokenV2(): Omit<
   Config,
   'content'
 > {
