@@ -53,10 +53,10 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
       // borderWidth.m -> border-m
       // borderWidth.focus.1 -> border-focus-1
       borderWidth: flattenKeyWithoutDefault({
-        'width-ch': flattenKeys(light['border-width']), // unstable border width token
+        wd: flattenKeys(light['border-width']), // unstable border width token
       }),
       borderRadius: light.radius,
-      borderColor: flattenKeyWithoutDefault({ ch: flattenKeys(colors.border) }),
+      borderColor: flattenKeyWithoutDefault({ cl: flattenKeys(colors.border) }),
 
       colors,
 
