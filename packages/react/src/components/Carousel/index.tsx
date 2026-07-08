@@ -7,6 +7,7 @@ import {
   memo,
   useCallback,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
   useSyncExternalStore,
@@ -102,11 +103,11 @@ type NavigationButtonProps = Readonly<{
   onScroll: (direction: Direction) => void
 }>
 
-const CarouselNavigationButton = ({
+const CarouselNavigationButton = memo(function CarouselNavigationButton({
   direction,
   canScroll,
   onScroll,
-}: NavigationButtonProps) => {
+}: NavigationButtonProps) {
   const handleClick = useCallback(() => {
     onScroll(direction)
   }, [onScroll, direction])
@@ -123,7 +124,7 @@ const CarouselNavigationButton = ({
       data-hidden={!canScroll}
     />
   )
-}
+})
 
 type IndicatorItemProps = Readonly<{
   index: number
@@ -131,11 +132,11 @@ type IndicatorItemProps = Readonly<{
   onSelect: (index: number) => void
 }>
 
-const CarouselIndicatorItem = ({
+const CarouselIndicatorItem = memo(function CarouselIndicatorItem({
   index,
   isActive,
   onSelect,
-}: IndicatorItemProps) => {
+}: IndicatorItemProps) {
   const handleClick = useCallback(() => {
     onSelect(index)
   }, [onSelect, index])
@@ -148,7 +149,7 @@ const CarouselIndicatorItem = ({
       onClick={handleClick}
     />
   )
-}
+})
 
 const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   {
@@ -178,9 +179,14 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
 
   // 直接子要素 1 つを 1 スライドとして数える。key は子要素の key を引き継ぐ
   // （toArray が付与する接頭辞付き key。無ければ index）。
-  const slides = Children.toArray(children)
-  const slideKeys = slides.map((slide, i) =>
-    isValidElement(slide) && slide.key != null ? slide.key : i,
+  // toArray は毎回新しい要素を作るため memo 化し、item 側の React.memo を効かせる。
+  const slides = useMemo(() => Children.toArray(children), [children])
+  const slideKeys = useMemo(
+    () =>
+      slides.map((slide, i) =>
+        isValidElement(slide) && slide.key != null ? slide.key : i,
+      ),
+    [slides],
   )
 
   const scrollerRef = useRef<HTMLDivElement>(null)
