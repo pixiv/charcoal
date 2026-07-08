@@ -15,7 +15,10 @@ import {
 import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
-import { CarouselItem as CarouselSlide } from './CarouselItem'
+import {
+  CarouselCloneItem,
+  CarouselItem as CarouselSlide,
+} from './CarouselItem'
 import {
   createCarouselStore,
   INITIAL_CAROUSEL_STATE,
@@ -212,18 +215,28 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     [store],
   )
 
-  // loop 時は実セットの前後に clone セットを描画する（clone + 端テレポート方式）。
-  const renderSlides = (clone?: 'before' | 'after') =>
+  const renderSlides = () =>
     slides.map((slide, i) => (
       <CarouselSlide
-        key={clone == null ? slideKeys[i] : `~${clone}~${slideKeys[i]}`}
+        key={slideKeys[i]}
         index={i}
         store={store}
-        clone={clone != null}
         onResize={onItemResize}
       >
         {slide}
       </CarouselSlide>
+    ))
+
+  // loop 時は実セットの前後に clone セットを描画する（clone + 端テレポート方式）。
+  const renderClones = (which: 'before' | 'after') =>
+    slides.map((slide, i) => (
+      <CarouselCloneItem
+        key={`~${which}~${slideKeys[i]}`}
+        index={i}
+        store={store}
+      >
+        {slide}
+      </CarouselCloneItem>
     ))
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
@@ -279,9 +292,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           className="charcoal-carousel__scroller"
           tabIndex={0}
         >
-          {loop && renderSlides('before')}
+          {loop && renderClones('before')}
           {renderSlides()}
-          {loop && renderSlides('after')}
+          {loop && renderClones('after')}
         </div>
 
         <div
