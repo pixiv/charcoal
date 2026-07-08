@@ -199,6 +199,41 @@ export const LoopSizeS: StoryObj<typeof Carousel> = {
   args: { size: 'S', children: fullWidthImages, loop: true },
 }
 
+// banner 用途のワイドスライド。スロット幅 = 640 + 間隔 16 = 656px。
+const bannerSlides = Array.from({ length: 5 }, (_, i) => (
+  <div
+    key={`banner-${i + 1}`}
+    style={{
+      width: 640,
+      height: 160,
+      marginInlineEnd: 16,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: ['#2a3b8f', '#8f2a6b', '#2a8f5f', '#8f6b2a', '#5f2a8f'][i],
+      color: '#fff',
+      borderRadius: 8,
+      font: 'bold 32px sans-serif',
+    }}
+  >
+    Banner {i + 1}
+  </div>
+))
+
+// banner: loop + 先頭中央 + mandatory snap で常に 1 枚が中央に止まる。
+// 矢印・キーボードも 1 スロット（656px）ぶんだけ送る。
+export const LoopBanner: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'M',
+    children: bannerSlides,
+    loop: true,
+    centerItem: 0,
+    indicator: true,
+    scrollSnap: { type: 'mandatory', align: 'center' },
+    scrollStep: () => 656,
+  },
+}
+
 export const AllControls: StoryObj<typeof Carousel> = {
   args: {
     size: 'M',
