@@ -54,7 +54,7 @@
 
 .charcoal-icon-button[data-variant='Default'] {
   color: var(--charcoal-color-icon-tertiary-default);
-  background-color: var(--charcoal-color-container-default-a);
+  background-color: transparent;
 }
 
 .charcoal-icon-button[data-variant='Default'][data-active='true']:not(:disabled):not([aria-disabled]), .charcoal-icon-button[data-variant='Default'][data-active='true'][aria-disabled='false'] {
