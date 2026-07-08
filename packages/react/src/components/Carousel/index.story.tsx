@@ -80,6 +80,8 @@ export default {
       // Controls では数値（比率）のみ操作可能。関数形式は ScrollStepFunction story を参照。
       control: { type: 'range', min: 0.1, max: 1.5, step: 0.05 },
     },
+    loop: { control: 'boolean' },
+    centerItem: { control: { type: 'number' } },
   },
 } satisfies Meta<typeof Carousel>
 
@@ -175,6 +177,26 @@ export const ScrollSnapPerItem: StoryObj<typeof Carousel> = {
     children: numberedSlides,
     scrollSnap: { type: 'mandatory', align: 'start' },
   },
+}
+
+// loop: 前後 1 セットずつの clone による無限ループ。centerItem={0} で先頭スライドを初期中央に置く。
+export const LoopCenterFirstItem: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'M',
+    children: numberedSlides,
+    loop: true,
+    centerItem: 0,
+    indicator: true,
+  },
+}
+
+// loop のみ（centerItem なし）は実セット先頭の左寄せで開始する。
+export const LoopWithoutCenterItem: StoryObj<typeof Carousel> = {
+  args: { size: 'M', children: numberedSlides, loop: true },
+}
+
+export const LoopSizeS: StoryObj<typeof Carousel> = {
+  args: { size: 'S', children: fullWidthImages, loop: true },
 }
 
 export const AllControls: StoryObj<typeof Carousel> = {

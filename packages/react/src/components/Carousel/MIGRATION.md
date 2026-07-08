@@ -67,7 +67,7 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
 | `hasGradient`                                     | `hasGradient`（既定 `false`）               | ✅ そのまま対応（mask による透過フェード）                                                                |
 | `fadeInGradient`                                  | （廃止）                                    | スクロール可能な側のみ常にフェード                                                                        |
 | `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                    | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
-| `centerItems`                                     | （廃止）                                    | スライドの寸法・間隔は children 側で注入する（sandbox 同様）                                              |
+| `centerItems`                                     | （廃止）                                    | スライドの寸法・間隔は children 側で注入する（sandbox 同様）。単数形の `centerItem` は別機能（上記）      |
 | `onScroll(left)`                                  | `onScroll(left)`                            | ✅ そのまま対応（scroll で発火）                                                                          |
 | `onResize(width)`                                 | `onResize(width)`                           | ✅ scroller 幅の変化で発火                                                                                |
 | `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`            | ✅ `canPrev \|\| canNext` の変化で発火                                                                    |
@@ -78,6 +78,8 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
 | —                                                 | `fullWidth?: boolean`（既定 `false`）       | `100vw` 表示                                                                                              |
 | —                                                 | `className?: string`                        | ルートに付与                                                                                              |
 | —                                                 | `scrollSnap?: { type?; align? }`            | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center |
+| —                                                 | `loop?: boolean`（既定 `false`）            | 新規（charcoal 独自）。clone + 端テレポートによる無限ループ。`defaultScroll` とは型レベルで排他           |
+| —                                                 | `centerItem?: number`                       | 新規（charcoal 独自）。`loop` 時のみ有効で、初期表示で指定 index のスライドを viewport 中央に置く         |
 
 ## 挙動の変更（移行時に確認すること）
 
