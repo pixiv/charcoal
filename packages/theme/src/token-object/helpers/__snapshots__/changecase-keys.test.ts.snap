@@ -309,7 +309,6 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
       "caption": {
         "m": "14px",
         "s": "12px",
-        "s_10": "12px",
       },
       "heading": {
         "l": "28px",
@@ -333,7 +332,6 @@ exports[`changeCaseKeys snapshot test: dark theme > camelcaseKeys snapshot test 
       "caption": {
         "m": "20px",
         "s": "18px",
-        "s_10": "18px",
       },
       "heading": {
         "l": "36px",
@@ -661,7 +659,6 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
       "caption": {
         "m": "14px",
         "s": "12px",
-        "s_10": "12px",
       },
       "heading": {
         "l": "28px",
@@ -685,7 +682,6 @@ exports[`changeCaseKeys snapshot test: light theme > camelcaseKeys snapshot test
       "caption": {
         "m": "20px",
         "s": "18px",
-        "s_10": "18px",
       },
       "heading": {
         "l": "36px",

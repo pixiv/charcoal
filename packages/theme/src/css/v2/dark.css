@@ -365,7 +365,6 @@
   --charcoal-text-line-height-heading-m: var(--charcoal-text-line-height-30);
   --charcoal-text-line-height-heading-l: var(--charcoal-text-line-height-40);
   --charcoal-text-line-height-caption-s: var(--charcoal-text-line-height-1);
-  --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-1);
   --charcoal-text-line-height-caption-m: var(--charcoal-text-line-height-5);
   --charcoal-text-line-height-body: var(--charcoal-text-line-height-10);
   --charcoal-text-font-weight-regular: var(--charcoal-text-font-weight-40);
@@ -381,7 +380,6 @@
   --charcoal-text-font-size-heading-m: var(--charcoal-text-font-size-50);
   --charcoal-text-font-size-heading-l: var(--charcoal-text-font-size-60);
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-1);
-  --charcoal-text-font-size-caption-s-10: var(--charcoal-text-font-size-1);
   --charcoal-text-font-size-caption-m: var(--charcoal-text-font-size-5);
   --charcoal-text-font-size-body: var(--charcoal-text-font-size-10);
   --charcoal-space-layout-90: var(--charcoal-space-90);
@@ -699,7 +697,6 @@
 }
 :root.ch-text-dn-default,
 :root .ch-text-dn-default {
-  --charcoal-text-font-size-caption-s-10: var(--charcoal-text-font-size-1);
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-1);
   --charcoal-text-font-size-caption-m: var(--charcoal-text-font-size-5);
   --charcoal-text-font-size-body: var(--charcoal-text-font-size-10);
@@ -713,7 +710,6 @@
   --charcoal-text-font-size-heading-xl: var(--charcoal-text-font-size-70);
   --charcoal-text-font-size-heading-xxl: var(--charcoal-text-font-size-80);
   --charcoal-text-font-size-heading-xxxl: var(--charcoal-text-font-size-90);
-  --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-1);
   --charcoal-text-line-height-caption-s: var(--charcoal-text-line-height-1);
   --charcoal-text-line-height-caption-m: var(--charcoal-text-line-height-5);
   --charcoal-text-line-height-body: var(--charcoal-text-line-height-10);
@@ -733,7 +729,6 @@
 
 :root.ch-text-dn-compact,
 :root .ch-text-dn-compact {
-  --charcoal-text-font-size-caption-s-10: var(--charcoal-text-font-size-0);
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-0);
   --charcoal-text-font-size-caption-m: var(--charcoal-text-font-size-1);
   --charcoal-text-font-size-body: var(--charcoal-text-font-size-5);
@@ -747,7 +742,6 @@
   --charcoal-text-font-size-heading-xl: var(--charcoal-text-font-size-50);
   --charcoal-text-font-size-heading-xxl: var(--charcoal-text-font-size-60);
   --charcoal-text-font-size-heading-xxxl: var(--charcoal-text-font-size-70);
-  --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-0);
   --charcoal-text-line-height-caption-s: var(--charcoal-text-line-height-0);
   --charcoal-text-line-height-caption-m: var(--charcoal-text-line-height-1);
   --charcoal-text-line-height-body: var(--charcoal-text-line-height-5);
@@ -767,7 +761,6 @@
 
 :root.ch-text-dn-cozy,
 :root .ch-text-dn-cozy {
-  --charcoal-text-font-size-caption-s-10: var(--charcoal-text-font-size-10);
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-10);
   --charcoal-text-font-size-caption-m: var(--charcoal-text-font-size-20);
   --charcoal-text-font-size-body: var(--charcoal-text-font-size-40);
@@ -781,7 +774,6 @@
   --charcoal-text-font-size-heading-xl: var(--charcoal-text-font-size-100);
   --charcoal-text-font-size-heading-xxl: var(--charcoal-text-font-size-110);
   --charcoal-text-font-size-heading-xxxl: var(--charcoal-text-font-size-120);
-  --charcoal-text-line-height-caption-s-10: var(--charcoal-text-line-height-10);
   --charcoal-text-line-height-caption-s: var(--charcoal-text-line-height-10);
   --charcoal-text-line-height-caption-m: var(--charcoal-text-line-height-10);
   --charcoal-text-line-height-body: var(--charcoal-text-line-height-20);

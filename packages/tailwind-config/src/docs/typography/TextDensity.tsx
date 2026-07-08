@@ -17,11 +17,6 @@ const textDensities = [
 
 const textSamples = [
   {
-    label: 'text-caption-s-10',
-    className: 'text-caption-s-10',
-    text: 'キャプション S-10 Caption 123',
-  },
-  {
     label: 'text-caption-s',
     className: 'text-caption-s',
     text: 'キャプション S Caption 123',
