@@ -1,7 +1,9 @@
 import './index.css'
 
 import {
+  Children,
   forwardRef,
+  isValidElement,
   memo,
   useCallback,
   useImperativeHandle,
@@ -22,11 +24,6 @@ import {
 import { useCarouselScroller } from './useCarouselScroller'
 
 const getServerSnapshot = (): CarouselState => INITIAL_CAROUSEL_STATE
-
-export type CarouselItem = {
-  id: string
-  children: ReactNode
-}
 
 export type ScrollAlign = 'left' | 'center' | 'right'
 
@@ -70,7 +67,8 @@ export type CarouselProps = Readonly<{
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
   defaultScroll?: { align?: ScrollAlign; offset?: number }
-  items: CarouselItem[]
+  // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
+  children: ReactNode
 }>
 
 type Direction = 'prev' | 'next'
@@ -149,6 +147,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onResize,
     onScrollStateChange,
     defaultScroll: { align = 'left', offset = 0 } = {},
+    children,
     ...props
   }: CarouselProps,
   ref,
@@ -159,13 +158,20 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const snapType = scrollSnap?.type ?? (size === 'S' ? 'mandatory' : 'none')
   const snapAlign = scrollSnap?.align ?? 'center'
 
+  // 直接子要素 1 つを 1 スライドとして数える。key は子要素の key を引き継ぐ
+  // （toArray が付与する接頭辞付き key。無ければ index）。
+  const slides = Children.toArray(children)
+  const slideKeys = slides.map((slide, i) =>
+    isValidElement(slide) && slide.key != null ? slide.key : i,
+  )
+
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
   const { scrollByStep, onItemResize, resetScroll } = useCarouselScroller(
     scrollerRef,
     store,
-    props.items.length,
+    slides.length,
     { align, offset, scrollStep, onScroll, onResize, onScrollStateChange },
   )
 
@@ -228,14 +234,14 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           className="charcoal-carousel__scroller"
           tabIndex={0}
         >
-          {props.items.map((item, i) => (
+          {slides.map((slide, i) => (
             <CarouselSlide
-              key={item.id}
+              key={slideKeys[i]}
               index={i}
               store={store}
               onResize={onItemResize}
             >
-              {item.children}
+              {slide}
             </CarouselSlide>
           ))}
         </div>
@@ -263,9 +269,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
         data-visible={showIndicator}
         aria-hidden={!showIndicator}
       >
-        {props.items.map((item, i) => (
+        {slides.map((_, i) => (
           <CarouselIndicatorItem
-            key={item.id}
+            key={slideKeys[i]}
             index={i}
             isActive={i === activeIndex}
             onSelect={scrollToItem}

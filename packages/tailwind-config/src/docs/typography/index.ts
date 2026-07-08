@@ -3,6 +3,7 @@ import { TailwindPlugin, getUtilities } from '../'
 
 export { Sizes } from './Sizes'
 export { HalfLeading } from './HalfLeading'
+export { TextDensity } from './TextDensity'
 
 /**
  * TODO:
