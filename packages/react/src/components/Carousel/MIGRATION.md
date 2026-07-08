@@ -5,7 +5,9 @@
 
 ## 移行の要点
 
-- **import 差し替え + `children` → `items` がほぼ唯一の必須変更**。
+- **import 差し替えがほぼ唯一の必須変更**。`children` はそのまま渡せる（ただし自前の
+  `flex` ラッパーは外して **1 スライド 1 直接子要素**にし、ラッパーの `gap` は
+  各スライドの `margin` に置き換える）。
 - `onScroll` / `onResize` / `onScrollStateChange` / `ref`（`resetScroll()`）/ `defaultScroll` /
   `hasGradient` は **sandbox と同じシグネチャ**で利用できる（drop-in 互換）。
 - `scrollAmountCoef` は `scrollStep`（関数も可）に名称変更。`fadeInGradient` / `buttonOffset` 系 /
@@ -17,7 +19,7 @@
 |                | sandbox (`@charcoal-ui/react-sandbox`) | react (`@charcoal-ui/react`)                    |
 | -------------- | -------------------------------------- | ----------------------------------------------- |
 | スクロール     | react-spring による JS アニメーション  | ネイティブ overflow + CSS `scroll-snap`         |
-| 子要素         | `children`（任意のノード）             | `items: { id; children }[]`                     |
+| 子要素         | `children`（任意のノード）             | `children`（1 直接子要素 = 1 スライド）         |
 | インジケーター | なし                                   | CSS `::scroll-marker` / JS フォールバックの dot |
 | スタイル       | styled-components                      | プレーン CSS（`index.css`）                     |
 
@@ -28,14 +30,15 @@
 + import { Carousel } from '@charcoal-ui/react'
 ```
 
-公開型: `CarouselProps` / `CarouselItem` / `CarouselHandlerRef` / `ScrollAlign` / `ScrollStep` /
+公開型: `CarouselProps` / `CarouselHandlerRef` / `ScrollAlign` / `ScrollStep` /
 `ScrollStepContext` / `ScrollSnap` / `ScrollSnapType` / `ScrollSnapAlign`。
 
-## 子要素: `children` → `items`
+## 子要素: `children`（そのまま渡せる）
 
-最大の変更点。子ノードを直接渡す形から、`id` 付きの配列に変える。
-sandbox では自前で `flex` ラッパーや `gap` を組んでいたが、新版はレイアウト（`gap: 24px`、S は `0`）を
-コンポーネント側 CSS が持つので、**ラッパーで囲まず 1 スライド 1 要素**で渡す。
+sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔も sandbox 同様に利用者が持つ
+（コンポーネントの責務はスクロールと indicator / arrow によるページ送りのみ）。
+ただし**直接子要素 1 つを 1 スライド**として数えるので、`flex` ラッパーは外し、
+`gap` の代わりに各スライドの `margin` などで間隔を注入する。
 
 ```diff
 - <Carousel hasGradient defaultScroll={{ align: 'center' }} scrollAmountCoef={0.75}>
@@ -45,38 +48,36 @@ sandbox では自前で `flex` ラッパーや `gap` を組んでいたが、新
 -     ))}
 -   </div>
 - </Carousel>
-+ <Carousel
-+   size="M"
-+   hasGradient
-+   defaultScroll={{ align: 'center' }}
-+   scrollStep={0.75}
-+   items={items.map((i) => ({ id: String(i), children: <Slide /> }))}
-+ />
++ <Carousel hasGradient defaultScroll={{ align: 'center' }} scrollStep={0.75}>
++   {items.map((i) => (
++     <Slide key={i} style={{ marginInlineEnd: 8 }} />
++   ))}
++ </Carousel>
 ```
 
-`id` はキー安定化（再レンダー・スクロール命令の宛先識別）に使うので、配列内で一意かつ安定した値にする。
+`key` は再レンダー時のスライド識別に使うので、一意かつ安定した値にする。
 
 ## props 対応表
 
-| sandbox                                           | react                                          | 備考                                                                                                      |
-| ------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `children`                                        | `items: { id: string; children: ReactNode }[]` | 上記参照                                                                                                  |
-| `scrollAmountCoef`（既定 `0.75`）                 | `scrollStep`（既定 `0.75`）                    | `number`（表示幅比）に加え `(ctx) => px` の関数も渡せる                                                   |
-| `defaultScroll: { align, offset }`                | `defaultScroll: { align, offset }`             | `align` は `'left' \| 'center' \| 'right'`。ほぼ同等                                                      |
-| `hasGradient`                                     | `hasGradient`（既定 `false`）                  | 実装が mask → 背景色オーバーレイに変更                                                                    |
-| `fadeInGradient`                                  | （廃止）                                       | 常にオーバーレイ式フェード                                                                                |
-| `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                       | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
-| `centerItems`                                     | （廃止）                                       | レイアウトは `flex` + `gap` 固定                                                                          |
-| `onScroll(left)`                                  | `onScroll(left)`                               | ✅ そのまま対応（scroll で発火）                                                                          |
-| `onResize(width)`                                 | `onResize(width)`                              | ✅ scroller 幅の変化で発火                                                                                |
-| `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`               | ✅ `canPrev \|\| canNext` の変化で発火                                                                    |
-| `ref`（`CarouselHandlerRef.resetScroll()`）       | `ref`（`CarouselHandlerRef.resetScroll()`）    | ✅ `forwardRef` で対応。`defaultScroll` の初期位置へ戻す                                                  |
-| —                                                 | `size: 'S' \| 'M'`（既定 `'M'`）               | 新規。`S` は 1 枚全幅 + `mandatory` スナップ                                                              |
-| —                                                 | `navigationButtons?: boolean`                  | 既定は `size === 'M'`                                                                                     |
-| —                                                 | `indicator?: boolean`                          | 既定は `size === 'S'`                                                                                     |
-| —                                                 | `fullWidth?: boolean`（既定 `false`）          | `100vw` 表示                                                                                              |
-| —                                                 | `className?: string`                           | ルートに付与                                                                                              |
-| —                                                 | `scrollSnap?: { type?; align? }`               | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center |
+| sandbox                                           | react                                       | 備考                                                                                                      |
+| ------------------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `children`                                        | `children`                                  | ✅ そのまま対応（1 直接子要素 = 1 スライド。ラッパーは外す。上記参照）                                    |
+| `scrollAmountCoef`（既定 `0.75`）                 | `scrollStep`（既定 `0.75`）                 | `number`（表示幅比）に加え `(ctx) => px` の関数も渡せる                                                   |
+| `defaultScroll: { align, offset }`                | `defaultScroll: { align, offset }`          | `align` は `'left' \| 'center' \| 'right'`。ほぼ同等                                                      |
+| `hasGradient`                                     | `hasGradient`（既定 `false`）               | 実装が mask → 背景色オーバーレイに変更                                                                    |
+| `fadeInGradient`                                  | （廃止）                                    | 常にオーバーレイ式フェード                                                                                |
+| `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                    | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
+| `centerItems`                                     | （廃止）                                    | スライドの寸法・間隔は children 側で注入する（sandbox 同様）                                              |
+| `onScroll(left)`                                  | `onScroll(left)`                            | ✅ そのまま対応（scroll で発火）                                                                          |
+| `onResize(width)`                                 | `onResize(width)`                           | ✅ scroller 幅の変化で発火                                                                                |
+| `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`            | ✅ `canPrev \|\| canNext` の変化で発火                                                                    |
+| `ref`（`CarouselHandlerRef.resetScroll()`）       | `ref`（`CarouselHandlerRef.resetScroll()`） | ✅ `forwardRef` で対応。`defaultScroll` の初期位置へ戻す                                                  |
+| —                                                 | `size: 'S' \| 'M'`（既定 `'M'`）            | 新規。`S` は 1 枚全幅 + `mandatory` スナップ                                                              |
+| —                                                 | `navigationButtons?: boolean`               | 既定は `size === 'M'`                                                                                     |
+| —                                                 | `indicator?: boolean`                       | 既定は `size === 'S'`                                                                                     |
+| —                                                 | `fullWidth?: boolean`（既定 `false`）       | `100vw` 表示                                                                                              |
+| —                                                 | `className?: string`                        | ルートに付与                                                                                              |
+| —                                                 | `scrollSnap?: { type?; align? }`            | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center |
 
 ## 挙動の変更（移行時に確認すること）
 
@@ -101,17 +102,18 @@ sandbox では自前で `flex` ラッパーや `gap` を組んでいたが、新
 
 ```tsx
 // 表示幅の比率（sandbox の scrollAmountCoef 相当）
-<Carousel items={items} scrollStep={0.5} />
+<Carousel scrollStep={0.5}>{slides}</Carousel>
 
 // 進む px を直接返す（端は残り全部、など）
 <Carousel
-  items={items}
   scrollStep={({ clientWidth, scrollWidth, scrollLeft, direction }) =>
     direction === 'next'
       ? Math.min(clientWidth * 0.8, scrollWidth - clientWidth - scrollLeft)
       : Math.min(clientWidth * 0.8, scrollLeft)
   }
-/>
+>
+  {slides}
+</Carousel>
 ```
 
 戻り値は「進む量の絶対値（px）」。符号（prev / next）はコンポーネント側で付与する。
