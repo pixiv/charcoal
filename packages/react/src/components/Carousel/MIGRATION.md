@@ -64,8 +64,8 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
 | `children`                                        | `children`                                  | ✅ そのまま対応（1 直接子要素 = 1 スライド。ラッパーは外す。上記参照）                                    |
 | `scrollAmountCoef`（既定 `0.75`）                 | `scrollStep`（既定 `0.75`）                 | `number`（表示幅比）に加え `(ctx) => px` の関数も渡せる                                                   |
 | `defaultScroll: { align, offset }`                | `defaultScroll: { align, offset }`          | `align` は `'left' \| 'center' \| 'right'`。ほぼ同等                                                      |
-| `hasGradient`                                     | `hasGradient`（既定 `false`）               | 実装が mask → 背景色オーバーレイに変更                                                                    |
-| `fadeInGradient`                                  | （廃止）                                    | 常にオーバーレイ式フェード                                                                                |
+| `hasGradient`                                     | `hasGradient`（既定 `false`）               | ✅ そのまま対応（mask による透過フェード）                                                                |
+| `fadeInGradient`                                  | （廃止）                                    | スクロール可能な側のみ常にフェード                                                                        |
 | `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                    | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
 | `centerItems`                                     | （廃止）                                    | スライドの寸法・間隔は children 側で注入する（sandbox 同様）                                              |
 | `onScroll(left)`                                  | `onScroll(left)`                            | ✅ そのまま対応（scroll で発火）                                                                          |
@@ -93,8 +93,6 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
   非対応環境では JS フォールバック）。
 - **キーボード操作**: スクローラーが `tabIndex={0}` でフォーカス可能になり、`←` / `→` で 1 ステップスクロール。
   フォーカスリングは charcoal 標準（`box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32)`）。
-- **グラデーション**: `mask` による透過から、背景色（`#fff`）オーバーレイ方式に変更。
-  ダークモードは現状未対応（背景色固定）。
 
 ## スクロール量を細かく制御したい場合
 
