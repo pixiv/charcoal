@@ -56,7 +56,7 @@
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
   padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20px);
+  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20.25px);
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
@@ -65,7 +65,7 @@
 
   &[data-no-bottom-padding='true'] {
     padding: calc(9px / 0.875) calc(8px / 0.875) 0;
-    height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 9px);
+    height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 10.25px);
   }
 
   &::placeholder {
