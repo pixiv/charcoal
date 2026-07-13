@@ -634,6 +634,58 @@ describe('Carousel', () => {
     })
   })
 
+  describe('navigation button visibility (focus modality)', () => {
+    // jsdom はジオメトリが全て 0 で Next ボタンが disabled（=フォーカス不可）の
+    // ままになるため、スクロール余地をモックして有効化してからフォーカスする。
+    function renderWithFocusableNext() {
+      render(<Carousel size="M">{slides}</Carousel>)
+      const scroller = getScroller()
+      mockScrollerGeometry(scroller, { scrollLeft: 0 })
+      scroller.scrollBy = vi.fn()
+      act(() => {
+        fireEvent.scroll(scroller)
+      })
+      const next = screen.getByRole('button', { name: 'Next' })
+      expect(next).not.toBeDisabled()
+      return next
+    }
+
+    // react-aria は document 上の keydown / pointerdown でフォーカスの由来
+    // （keyboard / pointer）を判定するため、focus() の前にイベントを発火して
+    // モダリティを切り替える。
+    it('does not mark focus-visible when a button is focused by pointer', () => {
+      const next = renderWithFocusableNext()
+      fireEvent.pointerDown(next)
+      fireEvent.mouseDown(next)
+      act(() => next.focus())
+      fireEvent.click(next)
+      expect(document.activeElement).toBe(next)
+      expect(screen.getByRole('region')).not.toHaveAttribute(
+        'data-focus-visible-within',
+      )
+    })
+
+    it('marks focus-visible when a button is focused by keyboard', () => {
+      const next = renderWithFocusableNext()
+      fireEvent.keyDown(document.body, { key: 'Tab' })
+      act(() => next.focus())
+      expect(screen.getByRole('region')).toHaveAttribute(
+        'data-focus-visible-within',
+        'true',
+      )
+    })
+
+    it('clears focus-visible when focus leaves the carousel', () => {
+      const next = renderWithFocusableNext()
+      fireEvent.keyDown(document.body, { key: 'Tab' })
+      act(() => next.focus())
+      act(() => next.blur())
+      expect(screen.getByRole('region')).not.toHaveAttribute(
+        'data-focus-visible-within',
+      )
+    })
+  })
+
   describe('SSR (server rendering)', () => {
     // jsdom では window が定義されているため renderToString 時に
     // 「useLayoutEffect does nothing on the server」警告が出る（実 SSR=window 無しでは

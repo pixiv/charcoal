@@ -134,9 +134,11 @@
   }
 }
 
-/* hover で表示。キーボード操作でも到達できるよう focus-within でも表示する。 */
+/* hover で表示。キーボード操作でも到達できるよう、キーボード由来のフォーカスが
+   カルーセル内にある間も表示する（:focus-within だとクリックで残ったフォーカスでも
+   表示され続けるため、react-aria が付与する data 属性で判定する）。 */
 .charcoal-carousel:hover .charcoal-carousel__navigation,
-.charcoal-carousel:focus-within .charcoal-carousel__navigation {
+.charcoal-carousel[data-focus-visible-within] .charcoal-carousel__navigation {
   opacity: 1;
 }
 
