@@ -9,6 +9,6 @@ charcoal-token-v2-classes --format table --utility backgroundColor
 charcoal-token-v2-classes --token color.container.primary.default --include-css-variable
 ```
 
-`--category`、`--utility`、`--token` は複数回指定できます。値を含む出力が必要な場合は `--include-theme-value`、CSS variable 名が必要な場合は `--include-css-variable` を指定します。
+`--category`、`--utility`、`--token` は複数回指定できます。`--token` にはドット区切りとスラッシュ区切りのどちらも指定でき、CLI内でドット区切りに正規化します。値を含む出力が必要な場合は `--include-theme-value`、CSS variable 名が必要な場合は `--include-css-variable` を指定します。
 
 JSON出力のschemaは [`schema.json`](./schema.json) です。初期段階では独立した長期安定仕様ではなく、このパッケージのversionとsnapshot testで変更を管理します。
