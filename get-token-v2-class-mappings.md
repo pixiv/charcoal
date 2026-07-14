@@ -549,7 +549,6 @@ type TokenV2ThemeEntry = {
 
 - `space.*`
 - `radius.*`
-- `text.font-size.*` + `text.line-height.*`
 - `text.font-weight.*`
 - `paragraph-width.*`
 - `border-width.*`
@@ -601,18 +600,22 @@ type TokenV2ThemeEntry = {
 - JSON、Markdown、table形式の出力とCLI helpを実装した
 - CLIパッケージに `schema.json` を同梱した
 - APIとCLIのsnapshot testを追加した
+- mappingの元tokenを統一して表現する `sourceTokens` を追加した
+- `text.font-size.*` と対応する `text.line-height.*` を1つの `fontSize` mappingとして追加した
+- typography mappingでは `text-heading-s` などのclass candidateに `font-size` と `line-height` の両方を記録した
+- CLIの `--token` が `sourceTokens` も検索対象とするようにしたため、line-height tokenからも対応するtypography classを検索できる
 
 検証結果:
 
-- `@charcoal-ui/tailwind-config`: 7 test files、27 tests passed
-- `@charcoal-ui/token-v2-tailwind-classes`: 1 test file、5 tests passed
+- `@charcoal-ui/tailwind-config`: 7 test files、28 tests passed
+- `@charcoal-ui/token-v2-tailwind-classes`: 1 test file、6 tests passed
 - 両パッケージのtypecheckとbuildを実行済み
 - 変更対象に対するESLintとPrettierを実行済み
 - build後のCLIでhelp、table出力、JSON出力、utility filterを確認済み
 
 未実装の後続スコープ:
 
-- PR 4以降として記載した `space.*`、`radius.*`、typography、paragraph width、border widthのmapping
+- PR 4以降として記載した `space.*`、`radius.*`、`text.font-weight.*`、paragraph width、border widthのmapping
 - Figma MCP向け外部ツール本体との接続
 
 ## 作成したブランチ
@@ -663,5 +666,21 @@ Base: `mimo/token-v2-color-mappings`
 Commit:
 
 - `ed3a3d087 feat: add token v2 Tailwind classes CLI`
+
+### 4. `mimo/token-v2-typography-mappings`
+
+Base: `mimo/token-v2-tailwind-classes-cli`
+
+責務:
+
+- 全mappingに元tokenを列挙する `sourceTokens` を追加
+- `text.font-size.*` と `text.line-height.*` を1つの `fontSize` mappingとして対応
+- `text-heading-s` などのtypography classを推奨class candidateとして追加
+- `--token text.line-height.*` で対応するtypography classを検索可能に変更
+- JSON schemaとAPI/CLI snapshotを更新
+
+Commit:
+
+- `dc66713e3 feat: map token v2 typography classes`
 
 PRは作成していない。PRを作成する場合は、各ブランチのBaseに記載したブランチをbase branchとして指定する。
