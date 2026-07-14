@@ -10046,7 +10046,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 9;"
+        style="--charcoal-text-area-rows: 8;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10200,7 +10200,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > DefaultValue 1`] = 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 5;"
+        style="--charcoal-text-area-rows: 4;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10396,7 +10396,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 2;"
+        style="--charcoal-text-area-rows: 1;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10448,7 +10448,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 2;"
+        style="--charcoal-text-area-rows: 1;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10497,7 +10497,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 5;"
+        style="--charcoal-text-area-rows: 4;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10546,7 +10546,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
+        style="--charcoal-text-area-rows: 3;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10978,7 +10978,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 2;"
+                style="--charcoal-text-area-rows: 1;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11020,7 +11020,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 3;"
+                style="--charcoal-text-area-rows: 2;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11063,7 +11063,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 4;"
+                style="--charcoal-text-area-rows: 3;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11107,7 +11107,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 5;"
+                style="--charcoal-text-area-rows: 4;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11152,7 +11152,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 6;"
+                style="--charcoal-text-area-rows: 5;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11198,7 +11198,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 7;"
+                style="--charcoal-text-area-rows: 6;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11245,7 +11245,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 8;"
+                style="--charcoal-text-area-rows: 7;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11293,7 +11293,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 9;"
+                style="--charcoal-text-area-rows: 8;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11342,7 +11342,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScroll
               <div
                 aria-invalid="false"
                 class="charcoal-text-area-container"
-                style="--charcoal-text-area-rows: 10;"
+                style="--charcoal-text-area-rows: 9;"
               >
                 <textarea
                   aria-labelledby="test-id"
@@ -11926,7 +11926,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 7;"
+        style="--charcoal-text-area-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -12125,7 +12125,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > ShowCount 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 5;"
+        style="--charcoal-text-area-rows: 4;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -12237,7 +12237,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > TokenV2 1`] = `
         <div
           aria-invalid="false"
           class="charcoal-text-area-container"
-          style="--charcoal-text-area-rows: 5;"
+          style="--charcoal-text-area-rows: 4;"
         >
           <textarea
             aria-describedby="test-id"

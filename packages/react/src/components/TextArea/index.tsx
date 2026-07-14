@@ -206,7 +206,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           aria-invalid={invalid === true}
           ref={containerRef}
           style={{
-            '--charcoal-text-area-rows': `${showCount ? rows + 1 : rows}`,
+            '--charcoal-text-area-rows': rows,
           }}
         >
           <textarea
