@@ -145,14 +145,33 @@
 .charcoal-carousel__navigation__item {
   pointer-events: auto;
 
+  /* ヒットエリアをグリッド端列（= mask のフェード帯と同じ 72px）全体へ広げる。
+     擬似要素上のクリックは元の button に届くため、帯のどこを押してもページ送りになる。
+     position: absolute の基準は positioned な .charcoal-carousel__navigation（inset: 0）。 */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 72px;
+  }
+
   &[data-direction='prev'] {
     grid-column: 1;
     justify-self: center;
+
+    &::after {
+      left: 0;
+    }
   }
 
   &[data-direction='next'] {
     grid-column: 3;
     justify-self: center;
+
+    &::after {
+      right: 0;
+    }
   }
 }
 
