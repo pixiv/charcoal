@@ -183,8 +183,8 @@ export function getTokenV2TailwindClassMappings(
         includeAmbiguousUtilities,
       ),
       category,
-      source: 'token-v2',
-      mappingKind: 'recommended',
+      source: 'token-v2' as const,
+      mappingKind: 'recommended' as const,
     }
   }).filter(
     ({ tokenPath, category }) =>
