@@ -1,0 +1,3 @@
+import{n as e}from"./chunk-BneVvdWh.js";import{lt as t}from"./iframe--lwxb2D3.js";function n(){return(0,r.jsx)(`div`,{className:`charcoal-focus-ring`,style:{backgroundColor:`var(--charcoal-surface3)`,borderRadius:8,color:`var(--charcoal-text2)`,padding:`16px 24px`},tabIndex:0,children:`FocusRing`})}var r,i,a;e((()=>{r=t(),i={title:`react/FocusRing`,parameters:{layout:`centered`}},a={render:()=>(0,r.jsx)(n,{})},a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: () => <FocusRingExample />
+}`,...a.parameters?.docs?.source}}}}))();export{a as Default,i as default};
