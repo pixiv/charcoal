@@ -690,19 +690,6 @@ describe('Carousel', () => {
   })
 
   describe('loop (clone slides)', () => {
-    // jsdom に Element.scrollTo が無い環境でも、loop の初期スクロール適用（scrollTo 呼び出し）で落ちないようにする
-    beforeEach(() => {
-      Object.defineProperty(Element.prototype, 'scrollTo', {
-        value: vi.fn(),
-        writable: true,
-        configurable: true,
-      })
-    })
-
-    afterEach(() => {
-      delete (Element.prototype as { scrollTo?: unknown }).scrollTo
-    })
-
     it('loop で前後に clone セットを加えた 3n 枚を描画する', () => {
       const { container } = render(<Carousel loop>{slides}</Carousel>)
       expect(
@@ -848,17 +835,10 @@ describe('Carousel', () => {
           roCallbacks.push(cb)
         }
       } as unknown as typeof globalThis.ResizeObserver
-      // jsdom に Element.scrollTo が無い環境でもマウント時に落ちないようにする
-      Object.defineProperty(Element.prototype, 'scrollTo', {
-        value: vi.fn(),
-        writable: true,
-        configurable: true,
-      })
     })
 
     afterEach(() => {
       globalThis.ResizeObserver = origRO
-      delete (Element.prototype as { scrollTo?: unknown }).scrollTo
     })
 
     // 幾何モック → RO 発火で実測キャッシュ + 初期位置適用、までを共通化
