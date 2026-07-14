@@ -16,25 +16,18 @@ const makeSampleImages = (style: CSSProperties) =>
     />
   ))
 
-// M 用: スライド間隔はコンポーネントが所有しないので、利用者側の margin で注入する。
-// width: 100% と margin の併用はラッパーとの循環サイズ解決で間隔が潰れるため、明示サイズにする。
-const spacedImages = makeSampleImages({
-  width: 280,
-  height: 210,
-  marginInlineEnd: 24,
-})
+// M 用: スライド間隔は gap prop で注入する（既定 args の gap: 24）。
+const spacedImages = makeSampleImages({ width: 280, height: 210 })
 // S 用: 1 枚全幅ページングのため間隔なし
 const fullWidthImages = makeSampleImages({ width: '100%', height: '100%' })
 
 // 横幅が確定したスロット（defaultScroll の初期位置計算と 0.75 ページ送りを確認するため）。
-// スライド間隔はコンポーネントが所有しないので、利用者側の margin で注入する。
 const numberedSlides = Array.from({ length: 20 }, (_, i) => (
   <div
     key={`num-${i + 1}`}
     style={{
       width: 200,
       height: 120,
-      marginInlineEnd: 24,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -60,6 +53,7 @@ export default {
     hasGradient: false,
     fullWidth: false,
     scrollStep: 0.75,
+    gap: 24,
   },
   argTypes: {
     children: { control: false },
@@ -80,6 +74,10 @@ export default {
       // Controls では数値（比率）のみ操作可能。関数形式は ScrollStepFunction story を参照。
       control: { type: 'range', min: 0.1, max: 1.5, step: 0.05 },
     },
+    gap: {
+      // number は px。'1rem' などの CSS 値文字列も渡せる。
+      control: { type: 'number' },
+    },
   },
 } satisfies Meta<typeof Carousel>
 
@@ -88,7 +86,7 @@ export const SizeM: StoryObj<typeof Carousel> = {
 }
 
 export const SizeS: StoryObj<typeof Carousel> = {
-  args: { size: 'S', children: fullWidthImages },
+  args: { size: 'S', children: fullWidthImages, gap: 0 },
 }
 
 export const WithGradient: StoryObj<typeof Carousel> = {
@@ -100,7 +98,12 @@ export const FullWidth: StoryObj<typeof Carousel> = {
 }
 
 export const NavigationButtonsOnSizeS: StoryObj<typeof Carousel> = {
-  args: { size: 'S', navigationButtons: true, children: fullWidthImages },
+  args: {
+    size: 'S',
+    navigationButtons: true,
+    children: fullWidthImages,
+    gap: 0,
+  },
 }
 
 export const IndicatorOnSizeM: StoryObj<typeof Carousel> = {
@@ -140,7 +143,6 @@ const darkTiles = Array.from({ length: 10 }, (_, i) => (
     style={{
       width: 220,
       height: 140,
-      marginInlineEnd: 24,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
