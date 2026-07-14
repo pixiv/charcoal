@@ -208,8 +208,14 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     isFocusVisible: scrollerFocusVisible,
   } = useFocusRing()
 
+  // ナビゲーションボタン表示用。クリックで残留したフォーカス（pointer 由来）では
+  // 表示し続けないよう、キーボード由来のフォーカスのみを検知する。
+  const { focusProps: rootFocusProps, isFocusVisible: rootFocusVisible } =
+    useFocusRing({ within: true })
+
   return (
     <div
+      {...rootFocusProps}
       className={className}
       data-size={size}
       data-has-gradient={hasGradient}
@@ -219,6 +225,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       data-scroll-snap-align={snapAlign}
       data-can-prev={canPrev}
       data-can-next={canNext}
+      data-focus-visible-within={rootFocusVisible || undefined}
       role="region"
       aria-roledescription="carousel"
       aria-label="Carousel"
