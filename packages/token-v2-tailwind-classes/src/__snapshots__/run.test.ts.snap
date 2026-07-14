@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`charcoal-token-v2-classes > formats filtered JSON output 1`] = `
+"[
+  {
+    "tokenPath": "color.container.primary.default",
+    "cssVariable": "--charcoal-color-container-primary-default",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.primary.DEFAULT",
+        "themeValue": "var(--charcoal-color-container-primary-default)"
+      }
+    ],
+    "classCandidates": [
+      {
+        "className": "bg-container-primary",
+        "utility": "backgroundColor",
+        "cssProperties": [
+          "background-color"
+        ]
+      }
+    ],
+    "category": "color",
+    "source": "token-v2",
+    "mappingKind": "recommended"
+  }
+]"
+`;
+
+exports[`charcoal-token-v2-classes > formats filtered Markdown output 1`] = `
+"| Token | Category | Recommended classes | Theme paths | CSS variable |
+| --- | --- | --- | --- | --- |
+| color.icon.default | color | fill-icon (fill), stroke-icon (stroke) | colors.icon.DEFAULT | --charcoal-color-icon-default |"
+`;
