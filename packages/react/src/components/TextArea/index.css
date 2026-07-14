@@ -56,7 +56,7 @@
   font-size: calc(14px / 0.875);
   line-height: calc(22px / 0.875);
   padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20.25px);
+  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20.75px);
 
   /* Display box-shadow for iOS Safari */
   appearance: none;

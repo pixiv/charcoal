@@ -158,7 +158,80 @@ export const AutoHeightAndDefaultValue: StoryObj<typeof TextArea> = {
 
 export const MaxRows: StoryObj<typeof TextArea> = {
   render: function Render() {
-    return <TextArea maxRows={6} label="label" showCount />
+    return <TextArea rows={1} maxRows={5} label="label" showCount />
+  },
+}
+
+export const MaxRowsHiddenScrollbar: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    return (
+      <>
+        <div className="flex gap-fixed">
+          <div className="flex flex-col gap-[8px]">
+            <TextArea rows={1} maxRows={1} label="label" value={'1'} />
+            <TextArea rows={1} maxRows={2} label="label" value={'1\n2'} />
+            <TextArea rows={1} maxRows={3} label="label" value={'1\n2\n3'} />
+            <TextArea rows={1} maxRows={4} label="label" value={'1\n2\n3\n4'} />
+            <TextArea
+              rows={1}
+              maxRows={5}
+              label="label"
+              value={'1\n2\n3\n4\n5'}
+            />
+            <TextArea
+              rows={1}
+              maxRows={6}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6'}
+            />
+          </div>
+          <div className="flex flex-col gap-[8px]">
+            <TextArea
+              rows={1}
+              maxRows={1}
+              label="label"
+              value={'1'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={2}
+              label="label"
+              value={'1\n2'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={3}
+              label="label"
+              value={'1\n2\n3'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={4}
+              label="label"
+              value={'1\n2\n3\n4'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={5}
+              label="label"
+              value={'1\n2\n3\n4\n5'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={6}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6'}
+              showCount
+            />
+          </div>
+        </div>
+      </>
+    )
   },
 }
 
