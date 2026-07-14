@@ -37,7 +37,7 @@ Options:
   --format <json|markdown|table>     Output format (default: json)
   --category <category>              Filter by token category (repeatable)
   --utility <utility>                Filter class candidates (repeatable)
-  --token <token-path>               Filter by exact token path (repeatable)
+  --token <token-path>               Filter by exact token path; / is normalized to . (repeatable)
   --include-theme-value              Include values in theme entries
   --include-css-variable             Include CSS variable names
   --include-ambiguous-utilities      Include all recommended utility candidates
@@ -54,6 +54,10 @@ function assertChoices<T extends string>(
       `Invalid --${option} value: ${invalid}. Expected one of: ${choices.join(', ')}`,
     )
   }
+}
+
+function normalizeTokenPath(tokenPath: string) {
+  return tokenPath.replaceAll('/', '.')
 }
 
 export function run(args: string[]) {
@@ -81,7 +85,7 @@ export function run(args: string[]) {
   const mappings = getTokenV2TailwindClassMappings({
     categories: values.category,
     utilities: values.utility,
-    tokens: values.token,
+    tokens: values.token?.map(normalizeTokenPath),
     includeThemeValue: values['include-theme-value'],
     includeCssVariable: values['include-css-variable'],
     includeAmbiguousUtilities: values['include-ambiguous-utilities'],

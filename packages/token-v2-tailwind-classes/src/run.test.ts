@@ -37,6 +37,29 @@ describe('charcoal-token-v2-classes', () => {
     ])
   })
 
+  test('normalizes slash-delimited token paths', () => {
+    expect(
+      JSON.parse(
+        run([
+          '--token',
+          'color/container/primary/default',
+          '--utility',
+          'backgroundColor',
+        ]),
+      ),
+    ).toMatchObject([
+      {
+        tokenPath: 'color.container.primary.default',
+        classCandidates: [
+          {
+            className: 'bg-container-primary',
+            utility: 'backgroundColor',
+          },
+        ],
+      },
+    ])
+  })
+
   test('rejects invalid option values', () => {
     expect(() => run(['--format', 'yaml'])).toThrow(
       'Invalid --format value: yaml',

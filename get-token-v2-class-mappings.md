@@ -286,6 +286,8 @@ charcoal-token-v2-classes --token color.container.primary.default
 --include-ambiguous-utilities
 ```
 
+`--token` はドット区切りとスラッシュ区切りの両方を受け付ける。CLIはスラッシュをドットに正規化してからmapping APIへ渡す。
+
 ### CLIの役割
 
 - 現在の `@charcoal-ui/tailwind-config` が推奨するtoken v2 class mappingを確認する
