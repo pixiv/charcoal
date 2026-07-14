@@ -7,12 +7,12 @@
 
 - **import 差し替えがほぼ唯一の必須変更**。`children` はそのまま渡せる（ただし自前の
   `flex` ラッパーは外して **1 スライド 1 直接子要素**にし、ラッパーの `gap` は
-  各スライドの `margin` に置き換える）。
+  Carousel の `gap` prop に置き換える）。
 - `onScroll` / `onResize` / `onScrollStateChange` / `ref`（`resetScroll()`）/ `defaultScroll` /
   `hasGradient` は **sandbox と同じシグネチャ**で利用できる（drop-in 互換）。
 - `scrollAmountCoef` は `scrollStep`（関数も可）に名称変更。`fadeInGradient` / `buttonOffset` 系 /
   `centerItems` は廃止。
-- `size` / `indicator` / `scrollSnap` / `fullWidth` は新規（任意・後方互換）。
+- `size` / `indicator` / `scrollSnap` / `fullWidth` / `gap` は新規（任意・後方互換）。
 
 ## 概要
 
@@ -35,10 +35,9 @@
 
 ## 子要素: `children`（そのまま渡せる）
 
-sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔も sandbox 同様に利用者が持つ
-（コンポーネントの責務はスクロールと indicator / arrow によるページ送りのみ）。
+sandbox と同じく子ノードを直接渡し、スライドの寸法は sandbox 同様に利用者が持つ。
 ただし**直接子要素 1 つを 1 スライド**として数えるので、`flex` ラッパーは外し、
-`gap` の代わりに各スライドの `margin` などで間隔を注入する。
+ラッパーで指定していた `gap` は Carousel の `gap` prop で指定する。
 
 ```diff
 - <Carousel hasGradient defaultScroll={{ align: 'center' }} scrollAmountCoef={0.75}>
@@ -48,9 +47,9 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
 -     ))}
 -   </div>
 - </Carousel>
-+ <Carousel hasGradient defaultScroll={{ align: 'center' }} scrollStep={0.75}>
++ <Carousel hasGradient defaultScroll={{ align: 'center' }} scrollStep={0.75} gap={8}>
 +   {items.map((i) => (
-+     <Slide key={i} style={{ marginInlineEnd: 8 }} />
++     <Slide key={i} />
 +   ))}
 + </Carousel>
 ```
@@ -67,7 +66,7 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
 | `hasGradient`                                     | `hasGradient`（既定 `false`）               | ✅ そのまま対応（mask による透過フェード）                                                                |
 | `fadeInGradient`                                  | （廃止）                                    | スクロール可能な側のみ常にフェード                                                                        |
 | `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                    | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
-| `centerItems`                                     | （廃止）                                    | スライドの寸法・間隔は children 側で注入する（sandbox 同様）                                              |
+| `centerItems`                                     | （廃止）                                    | スライド寸法は children 側で注入する（sandbox 同様）。間隔は `gap` prop                                   |
 | `onScroll(left)`                                  | `onScroll(left)`                            | ✅ そのまま対応（scroll で発火）                                                                          |
 | `onResize(width)`                                 | `onResize(width)`                           | ✅ scroller 幅の変化で発火                                                                                |
 | `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`            | ✅ `canPrev \|\| canNext` の変化で発火                                                                    |
@@ -78,6 +77,7 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法・間隔
 | —                                                 | `fullWidth?: boolean`（既定 `false`）       | `100vw` 表示                                                                                              |
 | —                                                 | `className?: string`                        | ルートに付与                                                                                              |
 | —                                                 | `scrollSnap?: { type?; align? }`            | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center |
+| —                                                 | `gap?: number \| string`                    | 新規。スライド間隔。number は px、string は CSS 値をそのまま使う                                          |
 
 ## 挙動の変更（移行時に確認すること）
 
