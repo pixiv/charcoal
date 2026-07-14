@@ -60,6 +60,35 @@ describe('charcoal-token-v2-classes', () => {
     ])
   })
 
+  test('finds a typography class from its line-height token', () => {
+    expect(
+      JSON.parse(
+        run([
+          '--token',
+          'text.line-height.heading.s',
+          '--utility',
+          'fontSize',
+          '--include-css-variable',
+        ]),
+      ),
+    ).toMatchObject([
+      {
+        tokenPath: 'text.font-size.heading.s',
+        sourceTokens: [
+          { tokenPath: 'text.font-size.heading.s' },
+          { tokenPath: 'text.line-height.heading.s' },
+        ],
+        classCandidates: [
+          {
+            className: 'text-heading-s',
+            utility: 'fontSize',
+            cssProperties: ['font-size', 'line-height'],
+          },
+        ],
+      },
+    ])
+  })
+
   test('rejects invalid option values', () => {
     expect(() => run(['--format', 'yaml'])).toThrow(
       'Invalid --format value: yaml',

@@ -8,6 +8,7 @@
     "additionalProperties": false,
     "required": [
       "tokenPath",
+      "sourceTokens",
       "themeEntries",
       "classCandidates",
       "category",
@@ -17,6 +18,22 @@
     "properties": {
       "tokenPath": { "type": "string" },
       "cssVariable": { "type": "string", "pattern": "^--charcoal-" },
+      "sourceTokens": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tokenPath"],
+          "properties": {
+            "tokenPath": { "type": "string" },
+            "cssVariable": {
+              "type": "string",
+              "pattern": "^--charcoal-"
+            }
+          }
+        }
+      },
       "themeEntries": {
         "type": "array",
         "items": {

@@ -1,4 +1,7 @@
-import { buildTokenV2ThemeEntries } from './tokenV2Theme'
+import {
+  buildTokenV2ThemeEntries,
+  type TokenV2ThemeEntry,
+} from './tokenV2Theme'
 
 export type TokenV2Category =
   | 'color'
@@ -45,9 +48,15 @@ export type TokenV2TailwindClassCandidate = {
   cssProperties: TokenV2CssProperty[]
 }
 
+export type TokenV2SourceToken = {
+  tokenPath: string
+  cssVariable?: string
+}
+
 export type TokenV2TailwindClassMapping = {
   tokenPath: string
   cssVariable?: string
+  sourceTokens: TokenV2SourceToken[]
   themeEntries: {
     themePath: string
     themeValue?: string | [string, Record<string, string>]
@@ -115,7 +124,7 @@ function getClassKey(tokenPath: string, semantic: ColorSemantic) {
   return withoutDefault(tokenPath.split('.').slice(1)).join('-')
 }
 
-function getClassCandidates(
+function getColorClassCandidates(
   tokenPath: string,
   utilities: TokenV2Utility[] | undefined,
   includeAmbiguousUtilities: boolean,
@@ -134,6 +143,28 @@ function getClassCandidates(
       utility,
       cssProperties,
     }))
+}
+
+function getClassCandidates(
+  entry: TokenV2ThemeEntry,
+  utilities: TokenV2Utility[] | undefined,
+  includeAmbiguousUtilities: boolean,
+) {
+  if (entry.themePath.startsWith('fontSize.')) {
+    return [
+      {
+        className: `text-${entry.themePath.slice('fontSize.'.length)}`,
+        utility: 'fontSize' as const,
+        cssProperties: ['font-size', 'line-height'] as TokenV2CssProperty[],
+      },
+    ].filter(({ utility }) => utilities?.includes(utility) ?? true)
+  }
+
+  return getColorClassCandidates(
+    entry.tokenPath,
+    utilities,
+    includeAmbiguousUtilities,
+  )
 }
 
 /**
@@ -160,7 +191,9 @@ export function getTokenV2TailwindClassMappings(
   >()
 
   for (const entry of buildTokenV2ThemeEntries()) {
-    if (!entry.tokenPath.startsWith('color.')) continue
+    const isColor = entry.tokenPath.startsWith('color.')
+    const isTypography = entry.themePath.startsWith('fontSize.')
+    if (!isColor && !isTypography) continue
 
     const entries = groupedEntries.get(entry.tokenPath) ?? []
     entries.push(entry)
@@ -168,17 +201,22 @@ export function getTokenV2TailwindClassMappings(
   }
 
   return Array.from(groupedEntries, ([tokenPath, entries]) => {
-    const { category, cssVariable } = entries[0]
+    const [entry] = entries
+    const { category, cssVariable, sourceTokens } = entry
 
     return {
       tokenPath,
       ...(includeCssVariable ? { cssVariable } : {}),
+      sourceTokens: sourceTokens.map((sourceToken) => ({
+        tokenPath: sourceToken.tokenPath,
+        ...(includeCssVariable ? { cssVariable: sourceToken.cssVariable } : {}),
+      })),
       themeEntries: entries.map(({ themePath, themeValue }) => ({
         themePath,
         ...(includeThemeValue ? { themeValue } : {}),
       })),
       classCandidates: getClassCandidates(
-        tokenPath,
+        entry,
         utilities,
         includeAmbiguousUtilities,
       ),
@@ -187,8 +225,13 @@ export function getTokenV2TailwindClassMappings(
       mappingKind: 'recommended' as const,
     }
   }).filter(
-    ({ tokenPath, category }) =>
-      (tokens?.includes(tokenPath) ?? true) &&
+    ({ tokenPath, sourceTokens, category }) =>
+      (tokens?.some(
+        (token) =>
+          token === tokenPath ||
+          sourceTokens.some(({ tokenPath }) => tokenPath === token),
+      ) ??
+        true) &&
       (categories?.includes(category) ?? true),
   )
 }

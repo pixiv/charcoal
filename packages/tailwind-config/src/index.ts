@@ -28,6 +28,7 @@ export {
   type GetTokenV2TailwindClassMappingsOptions,
   type TokenV2Category,
   type TokenV2CssProperty,
+  type TokenV2SourceToken,
   type TokenV2TailwindClassCandidate,
   type TokenV2TailwindClassMapping,
   type TokenV2Utility,

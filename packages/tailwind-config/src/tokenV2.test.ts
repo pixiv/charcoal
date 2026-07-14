@@ -27,6 +27,12 @@ describe('unstable_createTailwindConfigTokenV2', async () => {
     expect(entries).toContainEqual({
       tokenPath: 'color.container.primary.default',
       cssVariable: '--charcoal-color-container-primary-default',
+      sourceTokens: [
+        {
+          tokenPath: 'color.container.primary.default',
+          cssVariable: '--charcoal-color-container-primary-default',
+        },
+      ],
       themePath: 'colors.container.primary.DEFAULT',
       themeValue: 'var(--charcoal-color-container-primary-default)',
       category: 'color',
@@ -34,9 +40,35 @@ describe('unstable_createTailwindConfigTokenV2', async () => {
     expect(entries).toContainEqual({
       tokenPath: 'color.border.secondary',
       cssVariable: '--charcoal-color-border-secondary',
+      sourceTokens: [
+        {
+          tokenPath: 'color.border.secondary',
+          cssVariable: '--charcoal-color-border-secondary',
+        },
+      ],
       themePath: 'borderColor.ch-secondary',
       themeValue: 'var(--charcoal-color-border-secondary)',
       category: 'borderColor',
+    })
+    expect(entries).toContainEqual({
+      tokenPath: 'text.font-size.heading.s',
+      cssVariable: '--charcoal-text-font-size-heading-s',
+      sourceTokens: [
+        {
+          tokenPath: 'text.font-size.heading.s',
+          cssVariable: '--charcoal-text-font-size-heading-s',
+        },
+        {
+          tokenPath: 'text.line-height.heading.s',
+          cssVariable: '--charcoal-text-line-height-heading-s',
+        },
+      ],
+      themePath: 'fontSize.heading-s',
+      themeValue: [
+        'var(--charcoal-text-font-size-heading-s)',
+        { lineHeight: 'var(--charcoal-text-line-height-heading-s)' },
+      ],
+      category: 'text',
     })
   })
 })
