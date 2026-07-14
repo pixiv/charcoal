@@ -2,7 +2,99 @@ import { action } from 'storybook/actions'
 import Clickable from '../Clickable'
 import TextArea, { type TextAreaImperativeHandle } from '.'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { useCallback, useRef, useState } from 'react'
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+
+type ScrollMeasurement = {
+  clientHeight: number
+  index: number
+  maxScrollTop: number
+  scrollHeight: number
+  scrollTop: number
+}
+
+const getMaxScrollTop = (textarea: HTMLTextAreaElement) => {
+  const previousScrollTop = textarea.scrollTop
+  textarea.scrollTop = Number.MAX_SAFE_INTEGER
+  const maxScrollTop = textarea.scrollTop
+  textarea.scrollTop = previousScrollTop
+  return maxScrollTop
+}
+
+const MaxScrollTopInspector = ({ children }: { children: ReactNode }) => {
+  const targetRef = useRef<HTMLDivElement>(null)
+  const [measurements, setMeasurements] = useState<ScrollMeasurement[]>([])
+
+  const measure = useCallback(() => {
+    const textareas = targetRef.current?.querySelectorAll('textarea') ?? []
+    setMeasurements(
+      Array.from(textareas, (textarea, index) => ({
+        clientHeight: textarea.clientHeight,
+        index: index + 1,
+        maxScrollTop: getMaxScrollTop(textarea),
+        scrollHeight: textarea.scrollHeight,
+        scrollTop: textarea.scrollTop,
+      })),
+    )
+  }, [])
+
+  useEffect(() => {
+    measure()
+
+    const target = targetRef.current
+    if (!target) return
+
+    const resizeObserver = new ResizeObserver(measure)
+    target.querySelectorAll('textarea').forEach((textarea) => {
+      resizeObserver.observe(textarea)
+    })
+    target.addEventListener('input', measure)
+    window.addEventListener('resize', measure)
+
+    return () => {
+      resizeObserver.disconnect()
+      target.removeEventListener('input', measure)
+      window.removeEventListener('resize', measure)
+    }
+  }, [measure])
+
+  return (
+    <div className="flex flex-col gap-[16px]">
+      <div ref={targetRef}>{children}</div>
+      <table style={{ borderCollapse: 'collapse', fontFamily: 'monospace' }}>
+        <thead>
+          <tr>
+            <th style={{ padding: 4 }}>#</th>
+            <th style={{ padding: 4 }}>maxScrollTop</th>
+            <th style={{ padding: 4 }}>scrollTop</th>
+            <th style={{ padding: 4 }}>scrollHeight</th>
+            <th style={{ padding: 4 }}>clientHeight</th>
+          </tr>
+        </thead>
+        <tbody>
+          {measurements.map((measurement) => (
+            <tr key={measurement.index}>
+              <td style={{ padding: 4, textAlign: 'right' }}>
+                {measurement.index}
+              </td>
+              <td style={{ padding: 4, textAlign: 'right' }}>
+                {measurement.maxScrollTop}
+              </td>
+              <td style={{ padding: 4, textAlign: 'right' }}>
+                {measurement.scrollTop}
+              </td>
+              <td style={{ padding: 4, textAlign: 'right' }}>
+                {measurement.scrollHeight}
+              </td>
+              <td style={{ padding: 4, textAlign: 'right' }}>
+                {measurement.clientHeight}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
 
 export default {
   title: 'react/TextArea',
@@ -158,14 +250,14 @@ export const AutoHeightAndDefaultValue: StoryObj<typeof TextArea> = {
 
 export const MaxRows: StoryObj<typeof TextArea> = {
   render: function Render() {
-    return <TextArea rows={1} maxRows={5} label="label" showCount />
+    return <TextArea maxRows={6} label="label" showCount />
   },
 }
 
 export const MaxRowsHiddenScrollbar: StoryObj<typeof TextArea> = {
   render: function Render() {
     return (
-      <>
+      <MaxScrollTopInspector>
         <div className="flex gap-fixed">
           <div className="flex flex-col gap-[8px]">
             <TextArea rows={1} maxRows={1} label="label" value={'1'} />
@@ -183,6 +275,24 @@ export const MaxRowsHiddenScrollbar: StoryObj<typeof TextArea> = {
               maxRows={6}
               label="label"
               value={'1\n2\n3\n4\n5\n6'}
+            />
+            <TextArea
+              rows={1}
+              maxRows={7}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6\n7'}
+            />
+            <TextArea
+              rows={1}
+              maxRows={8}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6\n7\n8'}
+            />
+            <TextArea
+              rows={1}
+              maxRows={9}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6\n7\n8\n9'}
             />
           </div>
           <div className="flex flex-col gap-[8px]">
@@ -228,9 +338,30 @@ export const MaxRowsHiddenScrollbar: StoryObj<typeof TextArea> = {
               value={'1\n2\n3\n4\n5\n6'}
               showCount
             />
+            <TextArea
+              rows={1}
+              maxRows={7}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6\n7'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={8}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6\n7\n8'}
+              showCount
+            />
+            <TextArea
+              rows={1}
+              maxRows={9}
+              label="label"
+              value={'1\n2\n3\n4\n5\n6\n7\n8\n9'}
+              showCount
+            />
           </div>
         </div>
-      </>
+      </MaxScrollTopInspector>
     )
   },
 }
