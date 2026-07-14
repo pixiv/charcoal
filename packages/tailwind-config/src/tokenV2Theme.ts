@@ -9,6 +9,10 @@ import {
 export type TokenV2ThemeEntry = {
   tokenPath: string
   cssVariable: string
+  sourceTokens: {
+    tokenPath: string
+    cssVariable: string
+  }[]
   themePath: string
   themeValue: string | [string, Record<string, string>]
   category:
@@ -28,10 +32,7 @@ const isRecord = (value: unknown): value is Record<string, unknown> =>
 
 const tokenPathsByValue = new Map<string, string>()
 
-function collectTokenPaths(
-  value: unknown,
-  path: string[] = [],
-): void {
+function collectTokenPaths(value: unknown, path: string[] = []): void {
   if (typeof value === 'string') {
     tokenPathsByValue.set(value, path.join('.'))
     return
@@ -46,8 +47,7 @@ function collectTokenPaths(
 
 collectTokenPaths(light)
 
-function getCssVariable(themeValue: TokenV2ThemeEntry['themeValue']) {
-  const value = Array.isArray(themeValue) ? themeValue[0] : themeValue
+function getCssVariable(value: string) {
   const match = /^var\((--[^)]+)\)$/u.exec(value)
 
   if (match === null) {
@@ -55,6 +55,23 @@ function getCssVariable(themeValue: TokenV2ThemeEntry['themeValue']) {
   }
 
   return { reference: value, name: match[1] }
+}
+
+function getSourceTokens(themeValue: TokenV2ThemeEntry['themeValue']) {
+  const values = Array.isArray(themeValue)
+    ? [themeValue[0], ...Object.values(themeValue[1])]
+    : [themeValue]
+
+  return values.map((value) => {
+    const cssVariable = getCssVariable(value)
+    const tokenPath = tokenPathsByValue.get(cssVariable.reference)
+
+    if (tokenPath === undefined) {
+      throw new Error(`Token path not found for ${cssVariable.reference}`)
+    }
+
+    return { tokenPath, cssVariable: cssVariable.name }
+  })
 }
 
 function getCategory(tokenPath: string): TokenV2ThemeEntry['category'] {
@@ -75,20 +92,17 @@ function flattenThemeEntries(
 ): TokenV2ThemeEntry[] {
   if (typeof value === 'string' || Array.isArray(value)) {
     const themeValue = value as TokenV2ThemeEntry['themeValue']
-    const cssVariable = getCssVariable(themeValue)
-    const tokenPath = tokenPathsByValue.get(cssVariable.reference)
-
-    if (tokenPath === undefined) {
-      throw new Error(`Token path not found for ${cssVariable.reference}`)
-    }
+    const sourceTokens = getSourceTokens(themeValue)
+    const [sourceToken] = sourceTokens
 
     return [
       {
-        tokenPath,
-        cssVariable: cssVariable.name,
+        tokenPath: sourceToken.tokenPath,
+        cssVariable: sourceToken.cssVariable,
+        sourceTokens,
         themePath: path.join('.'),
         themeValue,
-        category: getCategory(tokenPath),
+        category: getCategory(sourceToken.tokenPath),
       },
     ]
   }
@@ -129,9 +143,7 @@ function createTokenV2Theme(): TokenV2Theme {
     }),
   ) as TokenV2Theme['fontSize']
 
-  const spacing = flattenKeys(light.space, (key) =>
-    !/(gap|padding)/u.test(key),
-  )
+  const spacing = flattenKeys(light.space, (key) => !/(gap|padding)/u.test(key))
   const colors = mapDefaultKeys(light.color)
 
   return {

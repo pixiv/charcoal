@@ -5,6 +5,12 @@ exports[`charcoal-token-v2-classes > formats filtered JSON output 1`] = `
   {
     "tokenPath": "color.container.primary.default",
     "cssVariable": "--charcoal-color-container-primary-default",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.primary.default",
+        "cssVariable": "--charcoal-color-container-primary-default"
+      }
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.primary.DEFAULT",

@@ -15,6 +15,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.default-text3",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-default-text3",
@@ -38,6 +43,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.disable",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-disable",
@@ -61,6 +71,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.focus.1",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-focus-1",
@@ -84,6 +99,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.focus.2",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-focus-2",
@@ -107,6 +127,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.focus.legacy",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-focus-legacy",
@@ -130,6 +155,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-hover",
@@ -153,6 +183,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.hover-text3",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-hover-text3",
@@ -176,6 +211,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.hud",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-hud",
@@ -199,6 +239,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.negative",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-negative",
@@ -222,6 +267,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-press",
@@ -245,6 +295,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.press-text3",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-press-text3",
@@ -268,6 +323,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.secondary",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-secondary",
@@ -291,6 +351,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.selected",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch-selected",
@@ -314,6 +379,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.border.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "borderColor.ch",
@@ -337,6 +407,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.background.overlay",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.background.overlay",
@@ -357,6 +432,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.background.secondary",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.background.secondary",
@@ -377,6 +457,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.background.tertiary",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.background.tertiary",
@@ -397,6 +482,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.background.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.background.DEFAULT",
@@ -417,6 +507,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.default-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.default-a",
@@ -437,6 +532,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.disable",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.disable",
@@ -457,6 +557,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.discovery.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.discovery.hover",
@@ -477,6 +582,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.discovery.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.discovery.press",
@@ -497,6 +607,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.discovery.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.discovery.DEFAULT",
@@ -517,6 +632,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.hover",
@@ -537,6 +657,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.hover-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.hover-a",
@@ -557,6 +682,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.hud.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.hud.hover",
@@ -577,6 +707,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.hud.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.hud.press",
@@ -597,6 +732,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.hud.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.hud.DEFAULT",
@@ -617,6 +757,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.negative.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.negative.hover",
@@ -637,6 +782,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.negative.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.negative.press",
@@ -657,6 +807,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.negative.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.negative.DEFAULT",
@@ -677,6 +832,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.neutral.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.neutral.hover",
@@ -697,6 +857,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.neutral.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.neutral.press",
@@ -717,6 +882,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.neutral.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.neutral.DEFAULT",
@@ -737,6 +907,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.notice.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.notice.hover",
@@ -757,6 +932,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.notice.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.notice.press",
@@ -777,6 +957,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.notice.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.notice.DEFAULT",
@@ -797,6 +982,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.on-img.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.on-img.hover",
@@ -817,6 +1007,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.on-img.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.on-img.press",
@@ -837,6 +1032,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.on-img.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.on-img.DEFAULT",
@@ -857,6 +1057,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.positive.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.positive.hover",
@@ -877,6 +1082,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.positive.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.positive.press",
@@ -897,6 +1107,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.positive.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.positive.DEFAULT",
@@ -917,6 +1132,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.press",
@@ -937,6 +1157,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.press-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.press-a",
@@ -957,6 +1182,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.primary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.primary.hover",
@@ -977,6 +1207,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.primary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.primary.press",
@@ -997,6 +1232,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.primary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.primary.DEFAULT",
@@ -1017,6 +1257,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.secondary.default-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.secondary.default-a",
@@ -1037,6 +1282,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.secondary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.secondary.hover",
@@ -1057,6 +1307,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.secondary.hover-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.secondary.hover-a",
@@ -1077,6 +1332,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.secondary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.secondary.press",
@@ -1097,6 +1357,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.secondary.press-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.secondary.press-a",
@@ -1117,6 +1382,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.secondary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.secondary.DEFAULT",
@@ -1137,6 +1407,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.skeleton",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.skeleton",
@@ -1157,6 +1432,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.subtle",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.subtle",
@@ -1177,6 +1457,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.tertiary.default-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.tertiary.default-a",
@@ -1197,6 +1482,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.tertiary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.tertiary.hover",
@@ -1217,6 +1507,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.tertiary.hover-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.tertiary.hover-a",
@@ -1237,6 +1532,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.tertiary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.tertiary.press",
@@ -1257,6 +1557,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.tertiary.press-a",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.tertiary.press-a",
@@ -1277,6 +1582,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.tertiary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.tertiary.DEFAULT",
@@ -1297,6 +1607,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.container.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.container.DEFAULT",
@@ -1324,6 +1639,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.disable",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.disable",
@@ -1351,6 +1671,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.hover",
@@ -1378,6 +1703,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.negative.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.negative.hover",
@@ -1405,6 +1735,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.negative.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.negative.press",
@@ -1432,6 +1767,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.negative.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.negative.DEFAULT",
@@ -1459,6 +1799,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.notice.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.notice.hover",
@@ -1486,6 +1831,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.notice.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.notice.press",
@@ -1513,6 +1863,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.notice.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.notice.DEFAULT",
@@ -1540,6 +1895,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-negative.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-negative.hover",
@@ -1567,6 +1927,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-negative.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-negative.press",
@@ -1594,6 +1959,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-negative.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-negative.DEFAULT",
@@ -1621,6 +1991,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-neutral.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-neutral.hover",
@@ -1648,6 +2023,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-neutral.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-neutral.press",
@@ -1675,6 +2055,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-neutral.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-neutral.DEFAULT",
@@ -1702,6 +2087,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-notice.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-notice.hover",
@@ -1729,6 +2119,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-notice.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-notice.press",
@@ -1756,6 +2151,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-notice.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-notice.DEFAULT",
@@ -1783,6 +2183,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-on-img.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-on-img.hover",
@@ -1810,6 +2215,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-on-img.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-on-img.press",
@@ -1837,6 +2247,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-on-img.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-on-img.DEFAULT",
@@ -1864,6 +2279,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-positive.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-positive.hover",
@@ -1891,6 +2311,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-positive.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-positive.press",
@@ -1918,6 +2343,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-positive.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-positive.DEFAULT",
@@ -1945,6 +2375,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-primary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-primary.hover",
@@ -1972,6 +2407,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-primary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-primary.press",
@@ -1999,6 +2439,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.on-primary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.on-primary.DEFAULT",
@@ -2026,6 +2471,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.positive.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.positive.hover",
@@ -2053,6 +2503,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.positive.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.positive.press",
@@ -2080,6 +2535,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.positive.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.positive.DEFAULT",
@@ -2107,6 +2567,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.press",
@@ -2134,6 +2599,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.secondary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.secondary.hover",
@@ -2161,6 +2631,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.secondary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.secondary.press",
@@ -2188,6 +2663,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.secondary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.secondary.DEFAULT",
@@ -2215,6 +2695,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.tertiary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.tertiary.hover",
@@ -2242,6 +2727,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.tertiary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.tertiary.press",
@@ -2269,6 +2759,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.tertiary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.tertiary.DEFAULT",
@@ -2296,6 +2791,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.icon.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.icon.DEFAULT",
@@ -2316,6 +2816,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.default-text1",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.default-text1",
@@ -2336,6 +2841,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.disable",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.disable",
@@ -2356,6 +2866,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.hover",
@@ -2376,6 +2891,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.hover-text1",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.hover-text1",
@@ -2396,6 +2916,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.info.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.info.hover",
@@ -2416,6 +2941,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.info.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.info.press",
@@ -2436,6 +2966,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.info.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.info.DEFAULT",
@@ -2456,6 +2991,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.negative.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.negative.hover",
@@ -2476,6 +3016,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.negative.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.negative.press",
@@ -2496,6 +3041,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.negative.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.negative.DEFAULT",
@@ -2516,6 +3066,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.notice.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.notice.hover",
@@ -2536,6 +3091,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.notice.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.notice.press",
@@ -2556,6 +3116,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.notice.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.notice.DEFAULT",
@@ -2576,6 +3141,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-discovery.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-discovery.hover",
@@ -2596,6 +3166,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-discovery.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-discovery.press",
@@ -2616,6 +3191,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-discovery.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-discovery.DEFAULT",
@@ -2636,6 +3216,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-hud.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-hud.hover",
@@ -2656,6 +3241,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-hud.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-hud.press",
@@ -2676,6 +3266,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-hud.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-hud.DEFAULT",
@@ -2696,6 +3291,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-negative.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-negative.hover",
@@ -2716,6 +3316,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-negative.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-negative.press",
@@ -2736,6 +3341,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-negative.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-negative.DEFAULT",
@@ -2756,6 +3366,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-notice.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-notice.hover",
@@ -2776,6 +3391,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-notice.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-notice.press",
@@ -2796,6 +3416,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-notice.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-notice.DEFAULT",
@@ -2816,6 +3441,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-on-img.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-on-img.hover",
@@ -2836,6 +3466,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-on-img.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-on-img.press",
@@ -2856,6 +3491,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-on-img.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-on-img.DEFAULT",
@@ -2876,6 +3516,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-positive.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-positive.hover",
@@ -2896,6 +3541,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-positive.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-positive.press",
@@ -2916,6 +3566,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-positive.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-positive.DEFAULT",
@@ -2936,6 +3591,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-primary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-primary.hover",
@@ -2956,6 +3616,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-primary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-primary.press",
@@ -2976,6 +3641,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.on-primary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.on-primary.DEFAULT",
@@ -2996,6 +3666,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.placeholder.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.placeholder.hover",
@@ -3016,6 +3691,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.placeholder.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.placeholder.press",
@@ -3036,6 +3716,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.placeholder.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.placeholder.DEFAULT",
@@ -3056,6 +3741,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.positive.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.positive.hover",
@@ -3076,6 +3766,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.positive.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.positive.press",
@@ -3096,6 +3791,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.positive.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.positive.DEFAULT",
@@ -3116,6 +3816,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.press",
@@ -3136,6 +3841,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.press-text1",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.press-text1",
@@ -3156,6 +3866,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.secondary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.secondary.hover",
@@ -3176,6 +3891,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.secondary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.secondary.press",
@@ -3196,6 +3916,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.secondary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.secondary.DEFAULT",
@@ -3216,6 +3941,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.tertiary.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.tertiary.hover",
@@ -3236,6 +3966,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.tertiary.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.tertiary.press",
@@ -3256,6 +3991,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.tertiary.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.tertiary.DEFAULT",
@@ -3276,6 +4016,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.visited.hover",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.visited.hover",
@@ -3296,6 +4041,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.visited.press",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.visited.press",
@@ -3316,6 +4066,11 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.visited.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.visited.DEFAULT",
@@ -3336,12 +4091,394 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "color.text.default",
+      },
+    ],
     "themeEntries": [
       {
         "themePath": "colors.text.DEFAULT",
       },
     ],
     "tokenPath": "color.text.default",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-body",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.body",
+      },
+      {
+        "tokenPath": "text.line-height.body",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.body",
+      },
+    ],
+    "tokenPath": "text.font-size.body",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-caption-m",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.caption.m",
+      },
+      {
+        "tokenPath": "text.line-height.caption.m",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.caption-m",
+      },
+    ],
+    "tokenPath": "text.font-size.caption.m",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-caption-s",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.caption.s",
+      },
+      {
+        "tokenPath": "text.line-height.caption.s",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.caption-s",
+      },
+    ],
+    "tokenPath": "text.font-size.caption.s",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-l",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.l",
+      },
+      {
+        "tokenPath": "text.line-height.heading.l",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-l",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.l",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-m",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.m",
+      },
+      {
+        "tokenPath": "text.line-height.heading.m",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-m",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.m",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-s",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.s",
+      },
+      {
+        "tokenPath": "text.line-height.heading.s",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-s",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.s",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-xl",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.xl",
+      },
+      {
+        "tokenPath": "text.line-height.heading.xl",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-xl",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.xl",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-xs",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.xs",
+      },
+      {
+        "tokenPath": "text.line-height.heading.xs",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-xs",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.xs",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-xxl",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.xxl",
+      },
+      {
+        "tokenPath": "text.line-height.heading.xxl",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-xxl",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.xxl",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-xxs",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.xxs",
+      },
+      {
+        "tokenPath": "text.line-height.heading.xxs",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-xxs",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.xxs",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-xxxl",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.xxxl",
+      },
+      {
+        "tokenPath": "text.line-height.heading.xxxl",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-xxxl",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.xxxl",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-heading-xxxs",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.heading.xxxs",
+      },
+      {
+        "tokenPath": "text.line-height.heading.xxxs",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.heading-xxxs",
+      },
+    ],
+    "tokenPath": "text.font-size.heading.xxxs",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "text-paragraph",
+        "cssProperties": [
+          "font-size",
+          "line-height",
+        ],
+        "utility": "fontSize",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-size.paragraph",
+      },
+      {
+        "tokenPath": "text.line-height.paragraph",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontSize.paragraph",
+      },
+    ],
+    "tokenPath": "text.font-size.paragraph",
   },
 ]
 `;
