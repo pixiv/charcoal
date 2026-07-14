@@ -34,6 +34,18 @@
           }
         }
       },
+      "figmaVariables": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["collection", "name"],
+          "properties": {
+            "collection": { "type": "string" },
+            "name": { "type": "string" }
+          }
+        }
+      },
       "themeEntries": {
         "type": "array",
         "items": {

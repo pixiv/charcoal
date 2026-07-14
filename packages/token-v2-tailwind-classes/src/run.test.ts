@@ -60,6 +60,45 @@ describe('charcoal-token-v2-classes', () => {
     ])
   })
 
+  test('finds a color mapping from a bare Figma variable name', () => {
+    expect(JSON.parse(run(['--token', 'text/secondary/default']))).toEqual([
+      expect.objectContaining({
+        tokenPath: 'color.text.secondary.default',
+        figmaVariables: [
+          { collection: 'color', name: 'text/secondary/default' },
+        ],
+        classCandidates: [
+          expect.objectContaining({
+            className: 'text-text-secondary',
+            utility: 'textColor',
+          }),
+        ],
+      }),
+    ])
+  })
+
+  test('finds a mapping from a collection-qualified Figma path', () => {
+    expect(JSON.parse(run(['--token', 'color/text/default']))).toEqual([
+      expect.objectContaining({
+        tokenPath: 'color.text.default',
+        figmaVariables: [{ collection: 'color', name: 'text/default' }],
+      }),
+    ])
+  })
+
+  test('derives Figma variables from every source token', () => {
+    const mappings = JSON.parse(run([]))
+
+    for (const mapping of mappings) {
+      expect(mapping.figmaVariables).toEqual(
+        mapping.sourceTokens.map(({ tokenPath }: { tokenPath: string }) => {
+          const [collection, ...path] = tokenPath.split('.')
+          return { collection, name: path.join('/') }
+        }),
+      )
+    }
+  })
+
   test('finds a typography class from its line-height token', () => {
     expect(
       JSON.parse(

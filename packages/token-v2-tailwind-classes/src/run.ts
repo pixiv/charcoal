@@ -1,10 +1,16 @@
 import {
   getTokenV2TailwindClassMappings,
+  type TokenV2TailwindClassMapping,
   type TokenV2Category,
   type TokenV2Utility,
 } from '@charcoal-ui/tailwind-config'
 import { parseArgs } from 'node:util'
-import { formatMappings, type OutputFormat } from './format'
+import {
+  formatMappings,
+  type FigmaTokenV2TailwindClassMapping,
+  type FigmaVariable,
+  type OutputFormat,
+} from './format'
 
 const formats = ['json', 'markdown', 'table'] as const
 const categories: TokenV2Category[] = [
@@ -56,8 +62,77 @@ function assertChoices<T extends string>(
   }
 }
 
-function normalizeTokenPath(tokenPath: string) {
-  return tokenPath.replaceAll('/', '.')
+function getFigmaVariable(tokenPath: string): FigmaVariable {
+  const [collection, ...path] = tokenPath.split('.')
+  return { collection, name: path.join('/') }
+}
+
+function withFigmaVariables(
+  mappings: TokenV2TailwindClassMapping[],
+): FigmaTokenV2TailwindClassMapping[] {
+  return mappings.map((mapping) => ({
+    ...mapping,
+    figmaVariables: mapping.sourceTokens.map(({ tokenPath }) =>
+      getFigmaVariable(tokenPath),
+    ),
+  }))
+}
+
+type TokenQueryResolution =
+  | { kind: 'resolved'; mappings: FigmaTokenV2TailwindClassMapping[] }
+  | { kind: 'unresolved' }
+  | { kind: 'ambiguous'; mappings: FigmaTokenV2TailwindClassMapping[] }
+
+function resolveTokenQuery(
+  tokenQuery: string,
+  mappings: FigmaTokenV2TailwindClassMapping[],
+): TokenQueryResolution {
+  const canonicalTokenPath = tokenQuery.replaceAll('/', '.')
+  const canonicalMatches = mappings.filter(
+    ({ tokenPath, sourceTokens }) =>
+      tokenPath === canonicalTokenPath ||
+      sourceTokens.some(({ tokenPath }) => tokenPath === canonicalTokenPath),
+  )
+  if (canonicalMatches.length > 0) {
+    return { kind: 'resolved', mappings: canonicalMatches }
+  }
+
+  const figmaVariableName = tokenQuery.replaceAll('.', '/')
+  const figmaMatches = mappings.filter(({ figmaVariables }) =>
+    figmaVariables.some(({ name }) => name === figmaVariableName),
+  )
+  if (figmaMatches.length === 0) return { kind: 'unresolved' }
+  if (figmaMatches.length === 1) {
+    return { kind: 'resolved', mappings: figmaMatches }
+  }
+
+  return { kind: 'ambiguous', mappings: figmaMatches }
+}
+
+function resolveTokenPaths(tokenQueries: string[] | undefined) {
+  if (tokenQueries === undefined) return undefined
+
+  const mappings = withFigmaVariables(getTokenV2TailwindClassMappings())
+  const tokenPaths = new Set<string>()
+  for (const tokenQuery of tokenQueries) {
+    const resolution = resolveTokenQuery(tokenQuery, mappings)
+    if (resolution.kind === 'ambiguous') {
+      const candidates = resolution.mappings
+        .flatMap(({ figmaVariables }) => figmaVariables)
+        .filter(({ name }) => name === tokenQuery.replaceAll('.', '/'))
+        .map(({ collection, name }) => `${collection}/${name}`)
+        .join(', ')
+      throw new TypeError(
+        `Ambiguous Figma variable name: ${tokenQuery}. Specify one of: ${candidates}`,
+      )
+    }
+
+    if (resolution.kind === 'resolved') {
+      resolution.mappings.forEach(({ tokenPath }) => tokenPaths.add(tokenPath))
+    }
+  }
+
+  return [...tokenPaths]
 }
 
 export function run(args: string[]) {
@@ -82,14 +157,14 @@ export function run(args: string[]) {
   assertChoices(values.category, categories, 'category')
   assertChoices(values.utility, utilities, 'utility')
 
-  const mappings = getTokenV2TailwindClassMappings({
+  const mappings = withFigmaVariables(getTokenV2TailwindClassMappings({
     categories: values.category,
     utilities: values.utility,
-    tokens: values.token?.map(normalizeTokenPath),
+    tokens: resolveTokenPaths(values.token),
     includeThemeValue: values['include-theme-value'],
     includeCssVariable: values['include-css-variable'],
     includeAmbiguousUtilities: values['include-ambiguous-utilities'],
-  })
+  }))
 
   return formatMappings(mappings, values.format as OutputFormat)
 }
