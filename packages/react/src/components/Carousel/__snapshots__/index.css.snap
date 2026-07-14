@@ -1,4 +1,5 @@
 .charcoal-carousel {
+  --charcoal-carousel-gap: 0px;
   position: relative;
   display: block;
 }
@@ -25,7 +26,7 @@
 .charcoal-carousel__scroller {
   position: relative;
   display: flex;
-  gap: var(--charcoal-carousel-gap, 0px);
+  gap: var(--charcoal-carousel-gap);
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
