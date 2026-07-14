@@ -42,6 +42,7 @@ export default function DropdownSelector({
   ...props
 }: DropdownSelectorProps) {
   const triggerRef = useRef<HTMLButtonElement>(null)
+  const penHandledRef = useRef(false)
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
 
@@ -116,7 +117,17 @@ export default function DropdownSelector({
           props.assistiveText !== undefined ? describedbyId : undefined
         }
         disabled={props.disabled}
+        onPointerUp={(e) => {
+          if (e.pointerType !== 'pen') return
+          if (props.disabled === true) return
+          penHandledRef.current = true
+          setIsOpen(true)
+        }}
         onClick={() => {
+          if (penHandledRef.current) {
+            penHandledRef.current = false
+            return
+          }
           if (props.disabled === true) return
           setIsOpen(true)
         }}
