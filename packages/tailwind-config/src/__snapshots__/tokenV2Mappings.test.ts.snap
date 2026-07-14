@@ -1,0 +1,3347 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getTokenV2TailwindClassMappings > returns the recommended color mappings 1`] = `
+[
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-default-text3",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-default-text3",
+      },
+      {
+        "themePath": "colors.border.default-text3",
+      },
+    ],
+    "tokenPath": "color.border.default-text3",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-disable",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-disable",
+      },
+      {
+        "themePath": "colors.border.disable",
+      },
+    ],
+    "tokenPath": "color.border.disable",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-focus-1",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-focus-1",
+      },
+      {
+        "themePath": "colors.border.focus.1",
+      },
+    ],
+    "tokenPath": "color.border.focus.1",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-focus-2",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-focus-2",
+      },
+      {
+        "themePath": "colors.border.focus.2",
+      },
+    ],
+    "tokenPath": "color.border.focus.2",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-focus-legacy",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-focus-legacy",
+      },
+      {
+        "themePath": "colors.border.focus.legacy",
+      },
+    ],
+    "tokenPath": "color.border.focus.legacy",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-hover",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-hover",
+      },
+      {
+        "themePath": "colors.border.hover",
+      },
+    ],
+    "tokenPath": "color.border.hover",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-hover-text3",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-hover-text3",
+      },
+      {
+        "themePath": "colors.border.hover-text3",
+      },
+    ],
+    "tokenPath": "color.border.hover-text3",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-hud",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-hud",
+      },
+      {
+        "themePath": "colors.border.hud",
+      },
+    ],
+    "tokenPath": "color.border.hud",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-negative",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-negative",
+      },
+      {
+        "themePath": "colors.border.negative",
+      },
+    ],
+    "tokenPath": "color.border.negative",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-press",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-press",
+      },
+      {
+        "themePath": "colors.border.press",
+      },
+    ],
+    "tokenPath": "color.border.press",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-press-text3",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-press-text3",
+      },
+      {
+        "themePath": "colors.border.press-text3",
+      },
+    ],
+    "tokenPath": "color.border.press-text3",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-secondary",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-secondary",
+      },
+      {
+        "themePath": "colors.border.secondary",
+      },
+    ],
+    "tokenPath": "color.border.secondary",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch-selected",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch-selected",
+      },
+      {
+        "themePath": "colors.border.selected",
+      },
+    ],
+    "tokenPath": "color.border.selected",
+  },
+  {
+    "category": "borderColor",
+    "classCandidates": [
+      {
+        "className": "border-ch",
+        "cssProperties": [
+          "border-color",
+        ],
+        "utility": "borderColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "borderColor.ch",
+      },
+      {
+        "themePath": "colors.border.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.border.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-background-overlay",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.background.overlay",
+      },
+    ],
+    "tokenPath": "color.background.overlay",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-background-secondary",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.background.secondary",
+      },
+    ],
+    "tokenPath": "color.background.secondary",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-background-tertiary",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.background.tertiary",
+      },
+    ],
+    "tokenPath": "color.background.tertiary",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-background",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.background.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.background.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-default-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.default-a",
+      },
+    ],
+    "tokenPath": "color.container.default-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-disable",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.disable",
+      },
+    ],
+    "tokenPath": "color.container.disable",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-discovery-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.discovery.hover",
+      },
+    ],
+    "tokenPath": "color.container.discovery.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-discovery-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.discovery.press",
+      },
+    ],
+    "tokenPath": "color.container.discovery.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-discovery",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.discovery.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.discovery.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.hover",
+      },
+    ],
+    "tokenPath": "color.container.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-hover-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.hover-a",
+      },
+    ],
+    "tokenPath": "color.container.hover-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-hud-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.hud.hover",
+      },
+    ],
+    "tokenPath": "color.container.hud.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-hud-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.hud.press",
+      },
+    ],
+    "tokenPath": "color.container.hud.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-hud",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.hud.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.hud.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-negative-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.negative.hover",
+      },
+    ],
+    "tokenPath": "color.container.negative.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-negative-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.negative.press",
+      },
+    ],
+    "tokenPath": "color.container.negative.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-negative",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.negative.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.negative.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-neutral-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.neutral.hover",
+      },
+    ],
+    "tokenPath": "color.container.neutral.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-neutral-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.neutral.press",
+      },
+    ],
+    "tokenPath": "color.container.neutral.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-neutral",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.neutral.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.neutral.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-notice-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.notice.hover",
+      },
+    ],
+    "tokenPath": "color.container.notice.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-notice-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.notice.press",
+      },
+    ],
+    "tokenPath": "color.container.notice.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-notice",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.notice.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.notice.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-on-img-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.on-img.hover",
+      },
+    ],
+    "tokenPath": "color.container.on-img.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-on-img-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.on-img.press",
+      },
+    ],
+    "tokenPath": "color.container.on-img.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-on-img",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.on-img.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.on-img.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-positive-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.positive.hover",
+      },
+    ],
+    "tokenPath": "color.container.positive.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-positive-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.positive.press",
+      },
+    ],
+    "tokenPath": "color.container.positive.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-positive",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.positive.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.positive.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.press",
+      },
+    ],
+    "tokenPath": "color.container.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-press-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.press-a",
+      },
+    ],
+    "tokenPath": "color.container.press-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-primary-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.primary.hover",
+      },
+    ],
+    "tokenPath": "color.container.primary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-primary-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.primary.press",
+      },
+    ],
+    "tokenPath": "color.container.primary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-primary",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.primary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.primary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-secondary-default-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.secondary.default-a",
+      },
+    ],
+    "tokenPath": "color.container.secondary.default-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-secondary-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.secondary.hover",
+      },
+    ],
+    "tokenPath": "color.container.secondary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-secondary-hover-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.secondary.hover-a",
+      },
+    ],
+    "tokenPath": "color.container.secondary.hover-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-secondary-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.secondary.press",
+      },
+    ],
+    "tokenPath": "color.container.secondary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-secondary-press-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.secondary.press-a",
+      },
+    ],
+    "tokenPath": "color.container.secondary.press-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-secondary",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.secondary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.secondary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-skeleton",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.skeleton",
+      },
+    ],
+    "tokenPath": "color.container.skeleton",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-subtle",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.subtle",
+      },
+    ],
+    "tokenPath": "color.container.subtle",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-tertiary-default-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.tertiary.default-a",
+      },
+    ],
+    "tokenPath": "color.container.tertiary.default-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-tertiary-hover",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.tertiary.hover",
+      },
+    ],
+    "tokenPath": "color.container.tertiary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-tertiary-hover-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.tertiary.hover-a",
+      },
+    ],
+    "tokenPath": "color.container.tertiary.hover-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-tertiary-press",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.tertiary.press",
+      },
+    ],
+    "tokenPath": "color.container.tertiary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-tertiary-press-a",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.tertiary.press-a",
+      },
+    ],
+    "tokenPath": "color.container.tertiary.press-a",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container-tertiary",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.tertiary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.tertiary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "bg-container",
+        "cssProperties": [
+          "background-color",
+        ],
+        "utility": "backgroundColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.container.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.container.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-disable",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-disable",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.disable",
+      },
+    ],
+    "tokenPath": "color.icon.disable",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.hover",
+      },
+    ],
+    "tokenPath": "color.icon.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-negative-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-negative-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.negative.hover",
+      },
+    ],
+    "tokenPath": "color.icon.negative.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-negative-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-negative-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.negative.press",
+      },
+    ],
+    "tokenPath": "color.icon.negative.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-negative",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-negative",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.negative.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.negative.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-notice-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-notice-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.notice.hover",
+      },
+    ],
+    "tokenPath": "color.icon.notice.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-notice-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-notice-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.notice.press",
+      },
+    ],
+    "tokenPath": "color.icon.notice.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-notice",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-notice",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.notice.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.notice.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-negative-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-negative-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-negative.hover",
+      },
+    ],
+    "tokenPath": "color.icon.on-negative.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-negative-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-negative-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-negative.press",
+      },
+    ],
+    "tokenPath": "color.icon.on-negative.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-negative",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-negative",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-negative.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.on-negative.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-neutral-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-neutral-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-neutral.hover",
+      },
+    ],
+    "tokenPath": "color.icon.on-neutral.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-neutral-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-neutral-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-neutral.press",
+      },
+    ],
+    "tokenPath": "color.icon.on-neutral.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-neutral",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-neutral",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-neutral.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.on-neutral.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-notice-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-notice-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-notice.hover",
+      },
+    ],
+    "tokenPath": "color.icon.on-notice.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-notice-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-notice-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-notice.press",
+      },
+    ],
+    "tokenPath": "color.icon.on-notice.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-notice",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-notice",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-notice.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.on-notice.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-on-img-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-on-img-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-on-img.hover",
+      },
+    ],
+    "tokenPath": "color.icon.on-on-img.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-on-img-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-on-img-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-on-img.press",
+      },
+    ],
+    "tokenPath": "color.icon.on-on-img.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-on-img",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-on-img",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-on-img.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.on-on-img.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-positive-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-positive-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-positive.hover",
+      },
+    ],
+    "tokenPath": "color.icon.on-positive.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-positive-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-positive-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-positive.press",
+      },
+    ],
+    "tokenPath": "color.icon.on-positive.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-positive",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-positive",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-positive.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.on-positive.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-primary-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-primary-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-primary.hover",
+      },
+    ],
+    "tokenPath": "color.icon.on-primary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-primary-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-primary-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-primary.press",
+      },
+    ],
+    "tokenPath": "color.icon.on-primary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-on-primary",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-on-primary",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.on-primary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.on-primary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-positive-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-positive-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.positive.hover",
+      },
+    ],
+    "tokenPath": "color.icon.positive.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-positive-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-positive-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.positive.press",
+      },
+    ],
+    "tokenPath": "color.icon.positive.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-positive",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-positive",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.positive.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.positive.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.press",
+      },
+    ],
+    "tokenPath": "color.icon.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-secondary-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-secondary-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.secondary.hover",
+      },
+    ],
+    "tokenPath": "color.icon.secondary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-secondary-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-secondary-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.secondary.press",
+      },
+    ],
+    "tokenPath": "color.icon.secondary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-secondary",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-secondary",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.secondary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.secondary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-tertiary-hover",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-tertiary-hover",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.tertiary.hover",
+      },
+    ],
+    "tokenPath": "color.icon.tertiary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-tertiary-press",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-tertiary-press",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.tertiary.press",
+      },
+    ],
+    "tokenPath": "color.icon.tertiary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon-tertiary",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon-tertiary",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.tertiary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.tertiary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "fill-icon",
+        "cssProperties": [
+          "fill",
+        ],
+        "utility": "fill",
+      },
+      {
+        "className": "stroke-icon",
+        "cssProperties": [
+          "stroke",
+        ],
+        "utility": "stroke",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.icon.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.icon.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-default-text1",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.default-text1",
+      },
+    ],
+    "tokenPath": "color.text.default-text1",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-disable",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.disable",
+      },
+    ],
+    "tokenPath": "color.text.disable",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.hover",
+      },
+    ],
+    "tokenPath": "color.text.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-hover-text1",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.hover-text1",
+      },
+    ],
+    "tokenPath": "color.text.hover-text1",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-info-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.info.hover",
+      },
+    ],
+    "tokenPath": "color.text.info.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-info-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.info.press",
+      },
+    ],
+    "tokenPath": "color.text.info.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-info",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.info.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.info.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-negative-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.negative.hover",
+      },
+    ],
+    "tokenPath": "color.text.negative.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-negative-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.negative.press",
+      },
+    ],
+    "tokenPath": "color.text.negative.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-negative",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.negative.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.negative.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-notice-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.notice.hover",
+      },
+    ],
+    "tokenPath": "color.text.notice.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-notice-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.notice.press",
+      },
+    ],
+    "tokenPath": "color.text.notice.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-notice",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.notice.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.notice.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-discovery-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-discovery.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-discovery.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-discovery-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-discovery.press",
+      },
+    ],
+    "tokenPath": "color.text.on-discovery.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-discovery",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-discovery.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-discovery.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-hud-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-hud.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-hud.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-hud-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-hud.press",
+      },
+    ],
+    "tokenPath": "color.text.on-hud.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-hud",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-hud.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-hud.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-negative-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-negative.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-negative.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-negative-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-negative.press",
+      },
+    ],
+    "tokenPath": "color.text.on-negative.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-negative",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-negative.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-negative.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-notice-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-notice.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-notice.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-notice-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-notice.press",
+      },
+    ],
+    "tokenPath": "color.text.on-notice.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-notice",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-notice.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-notice.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-on-img-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-on-img.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-on-img.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-on-img-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-on-img.press",
+      },
+    ],
+    "tokenPath": "color.text.on-on-img.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-on-img",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-on-img.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-on-img.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-positive-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-positive.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-positive.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-positive-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-positive.press",
+      },
+    ],
+    "tokenPath": "color.text.on-positive.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-positive",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-positive.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-positive.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-primary-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-primary.hover",
+      },
+    ],
+    "tokenPath": "color.text.on-primary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-primary-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-primary.press",
+      },
+    ],
+    "tokenPath": "color.text.on-primary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-on-primary",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.on-primary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.on-primary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-placeholder-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.placeholder.hover",
+      },
+    ],
+    "tokenPath": "color.text.placeholder.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-placeholder-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.placeholder.press",
+      },
+    ],
+    "tokenPath": "color.text.placeholder.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-placeholder",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.placeholder.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.placeholder.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-positive-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.positive.hover",
+      },
+    ],
+    "tokenPath": "color.text.positive.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-positive-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.positive.press",
+      },
+    ],
+    "tokenPath": "color.text.positive.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-positive",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.positive.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.positive.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.press",
+      },
+    ],
+    "tokenPath": "color.text.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-press-text1",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.press-text1",
+      },
+    ],
+    "tokenPath": "color.text.press-text1",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-secondary-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.secondary.hover",
+      },
+    ],
+    "tokenPath": "color.text.secondary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-secondary-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.secondary.press",
+      },
+    ],
+    "tokenPath": "color.text.secondary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-secondary",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.secondary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.secondary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-tertiary-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.tertiary.hover",
+      },
+    ],
+    "tokenPath": "color.text.tertiary.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-tertiary-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.tertiary.press",
+      },
+    ],
+    "tokenPath": "color.text.tertiary.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-tertiary",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.tertiary.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.tertiary.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-visited-hover",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.visited.hover",
+      },
+    ],
+    "tokenPath": "color.text.visited.hover",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-visited-press",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.visited.press",
+      },
+    ],
+    "tokenPath": "color.text.visited.press",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text-visited",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.visited.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.visited.default",
+  },
+  {
+    "category": "color",
+    "classCandidates": [
+      {
+        "className": "text-text",
+        "cssProperties": [
+          "color",
+        ],
+        "utility": "textColor",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "themeEntries": [
+      {
+        "themePath": "colors.text.DEFAULT",
+      },
+    ],
+    "tokenPath": "color.text.default",
+  },
+]
+`;
