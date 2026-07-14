@@ -2,11 +2,21 @@ import type { TokenV2TailwindClassMapping } from '@charcoal-ui/tailwind-config'
 
 export type OutputFormat = 'json' | 'markdown' | 'table'
 
-export function formatJson(mappings: TokenV2TailwindClassMapping[]) {
+export type FigmaVariable = {
+  collection: string
+  name: string
+}
+
+export type FigmaTokenV2TailwindClassMapping =
+  TokenV2TailwindClassMapping & {
+    figmaVariables: FigmaVariable[]
+  }
+
+export function formatJson(mappings: FigmaTokenV2TailwindClassMapping[]) {
   return JSON.stringify(mappings, null, 2)
 }
 
-function formatClasses(mapping: TokenV2TailwindClassMapping) {
+function formatClasses(mapping: FigmaTokenV2TailwindClassMapping) {
   return mapping.classCandidates
     .map(
       ({ className, cssProperties }) =>
@@ -15,7 +25,7 @@ function formatClasses(mapping: TokenV2TailwindClassMapping) {
     .join(', ')
 }
 
-export function formatMarkdown(mappings: TokenV2TailwindClassMapping[]) {
+export function formatMarkdown(mappings: FigmaTokenV2TailwindClassMapping[]) {
   const header =
     '| Token | Category | Recommended classes | Theme paths | CSS variable |\n' +
     '| --- | --- | --- | --- | --- |'
@@ -34,7 +44,7 @@ export function formatMarkdown(mappings: TokenV2TailwindClassMapping[]) {
   return [header, ...rows.map((row) => `| ${row} |`)].join('\n')
 }
 
-export function formatTable(mappings: TokenV2TailwindClassMapping[]) {
+export function formatTable(mappings: FigmaTokenV2TailwindClassMapping[]) {
   const rows = mappings.map((mapping) => [
     mapping.tokenPath,
     mapping.category,
@@ -51,7 +61,7 @@ export function formatTable(mappings: TokenV2TailwindClassMapping[]) {
 }
 
 export function formatMappings(
-  mappings: TokenV2TailwindClassMapping[],
+  mappings: FigmaTokenV2TailwindClassMapping[],
   format: OutputFormat,
 ) {
   switch (format) {

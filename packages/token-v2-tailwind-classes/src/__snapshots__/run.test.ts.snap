@@ -28,7 +28,13 @@ exports[`charcoal-token-v2-classes > formats filtered JSON output 1`] = `
     ],
     "category": "color",
     "source": "token-v2",
-    "mappingKind": "recommended"
+    "mappingKind": "recommended",
+    "figmaVariables": [
+      {
+        "collection": "color",
+        "name": "container/primary/default"
+      }
+    ]
   }
 ]"
 `;
