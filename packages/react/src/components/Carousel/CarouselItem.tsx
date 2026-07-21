@@ -1,31 +1,39 @@
-import { memo, useEffect, useRef, type ReactNode, type RefObject } from 'react'
+import {
+  forwardRef,
+  memo,
+  useEffect,
+  useRef,
+  type ComponentPropsWithoutRef,
+  type ReactNode,
+} from 'react'
+import { useObjectRef } from 'react-aria/useObjectRef'
 import type { CarouselStore } from './carouselStore'
 import { observeCenter } from './intersectionObserver'
 import { observeResize } from './resizeObserver'
 
-type CenterReportProviderProps = Readonly<{
-  target: RefObject<HTMLDivElement | null>
-  store: CarouselStore
-  index: number
-  children: ReactNode
-}>
+type CenterReportProviderProps = ComponentPropsWithoutRef<'div'> &
+  Readonly<{
+    store: CarouselStore
+    index: number
+  }>
 
-// activeIndex: target が中央に来たら store に報告する（root は親=scroller から導出）。
+// activeIndex: 自身が中央に来たら store に報告する（root は親=scroller から導出）。
 // clone も同じ index を報告する（テレポート前の clone 帯域でも indicator が追従する）。
-const CenterReportProvider = ({
-  target,
-  store,
-  index,
-  children,
-}: CenterReportProviderProps) => {
+// className / data 属性などの div 属性はそのまま透過する。
+const CenterReportProvider = forwardRef<
+  HTMLDivElement,
+  CenterReportProviderProps
+>(function CenterReportProvider({ store, index, ...divProps }, forwardedRef) {
+  const ref = useObjectRef(forwardedRef)
+
   useEffect(() => {
-    const el = target.current
+    const el = ref.current
     if (!el) return
     return observeCenter(el, () => store.dispatch({ type: 'setActive', index }))
-  }, [target, index, store])
+  }, [ref, index, store])
 
-  return <>{children}</>
-}
+  return <div ref={ref} {...divProps} />
+})
 
 export type CarouselItemProps = Readonly<{
   index: number
@@ -66,11 +74,14 @@ export const CarouselItem = memo(function CarouselItem({
   }, [onResize])
 
   return (
-    <div ref={ref} className="charcoal-carousel__item">
-      <CenterReportProvider target={ref} store={store} index={index}>
-        {children}
-      </CenterReportProvider>
-    </div>
+    <CenterReportProvider
+      ref={ref}
+      store={store}
+      index={index}
+      className="charcoal-carousel__item"
+    >
+      {children}
+    </CenterReportProvider>
   )
 })
 
@@ -97,10 +108,15 @@ export const CarouselCloneItem = memo(function CarouselCloneItem({
   }, [])
 
   return (
-    <div ref={ref} className="charcoal-carousel__item" data-clone aria-hidden>
-      <CenterReportProvider target={ref} store={store} index={index}>
-        {children}
-      </CenterReportProvider>
-    </div>
+    <CenterReportProvider
+      ref={ref}
+      store={store}
+      index={index}
+      className="charcoal-carousel__item"
+      data-clone
+      aria-hidden
+    >
+      {children}
+    </CenterReportProvider>
   )
 })
