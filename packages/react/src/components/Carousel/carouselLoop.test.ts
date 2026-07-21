@@ -1,13 +1,18 @@
 import { describe, expect, it } from 'vitest'
 import {
   computeCenterScrollLeft,
+  computeLoopCloneCount,
   computeLoopTeleport,
   isLoopActive,
   measureLoopGeometry,
 } from './carouselLoop'
 
-// 維持帯域は [0.5 * setWidth, 1.5 * setWidth) = [500, 1500)
-const geometry = { setWidth: 1000, clientWidth: 600, maxScroll: 2400 }
+// 維持帯域は [bandLower, bandLower + setWidth) = [500, 1500)
+const geometry = {
+  setWidth: 1000,
+  bandLower: 500,
+  clientWidth: 600,
+}
 
 describe('computeLoopTeleport', () => {
   it('帯域内では null（テレポート不要）', () => {
@@ -16,13 +21,18 @@ describe('computeLoopTeleport', () => {
     expect(computeLoopTeleport(1499, geometry)).toBeNull()
   })
 
+  it('帯域境界から誤差スケールの逸脱は帯域内とみなす（snap 補正との往復振動を防ぐ）', () => {
+    expect(computeLoopTeleport(497, geometry)).toBeNull()
+    expect(computeLoopTeleport(1503, geometry)).toBeNull()
+  })
+
   it('帯域より左は +setWidth の合同位置へ丸める', () => {
-    expect(computeLoopTeleport(499, geometry)).toBe(1499)
+    expect(computeLoopTeleport(490, geometry)).toBe(1490)
     expect(computeLoopTeleport(0, geometry)).toBe(1000)
   })
 
   it('帯域より右は −setWidth の合同位置へ丸める', () => {
-    expect(computeLoopTeleport(1500, geometry)).toBe(500)
+    expect(computeLoopTeleport(1510, geometry)).toBe(510)
     expect(computeLoopTeleport(2400, geometry)).toBe(1400)
   })
 
@@ -71,14 +81,36 @@ describe('measureLoopGeometry', () => {
     }
     Object.defineProperty(scroller, 'clientWidth', { value: 250 })
     Object.defineProperty(scroller, 'scrollWidth', { value: 900 })
-    expect(measureLoopGeometry(scroller, 3)).toEqual({
+    expect(measureLoopGeometry(scroller, 3, 3)).toEqual({
       setWidth: 300,
+      // スクロール可能域中央: (650 − 300) / 2
+      bandLower: 175,
       clientWidth: 250,
-      maxScroll: 650,
     })
   })
 
-  it('子要素が 3n 揃っていなければ null', () => {
-    expect(measureLoopGeometry(document.createElement('div'), 3)).toBeNull()
+  it('clone 込みの子要素が揃っていなければ null', () => {
+    expect(measureLoopGeometry(document.createElement('div'), 3, 3)).toBeNull()
+  })
+})
+
+describe('computeLoopCloneCount', () => {
+  // 400px スロット（幅 380 + 間隔 20）の item 6 枚
+  const items = Array.from({ length: 6 }, (_, i) => ({
+    offsetLeft: i * 400,
+    offsetWidth: 380,
+  }))
+
+  it('各端の累積幅が 1.5 viewport を覆う最小枚数 + 1 を返す', () => {
+    // 被覆要求 = 800 × 1.5 = 1200。4 枚で 1580 ≥ 1200（3 枚では 1180）→ 4 + 1 = 5
+    expect(computeLoopCloneCount(items, 800)).toBe(5)
+  })
+
+  it('全枚数でも viewport を覆えなければ全枚数に丸める', () => {
+    expect(computeLoopCloneCount(items, 10000)).toBe(6)
+  })
+
+  it('item が無ければ 0', () => {
+    expect(computeLoopCloneCount([], 800)).toBe(0)
   })
 })

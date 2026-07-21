@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useRef, type RefObject } from 'react'
+import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
 import {
   computeCenterScrollLeft,
+  computeLoopCloneCount,
   computeLoopTeleport,
   isLoopActive,
   measureLoopGeometry,
@@ -14,6 +15,30 @@ const INTERACTION_EVENTS = ['pointerdown', 'wheel', 'touchstart'] as const
 
 // scrollend 非対応環境でスクロール静止とみなすまでの待ち時間
 const SCROLL_SETTLE_DELAY = 100
+
+// 維持帯域から外れた scrollLeft を補正する 1 回分のテレポート。
+// scrollLeft 代入は CSS scroll-behavior: smooth に従うため、必ず instant の scrollTo を使う。
+const createLoopTeleport =
+  (el: HTMLElement, getGeometry: () => LoopGeometry | null) => () => {
+    const geometry = getGeometry()
+    if (!geometry || !isLoopActive(geometry)) return
+    const corrected = computeLoopTeleport(el.scrollLeft, geometry)
+    if (corrected != null) {
+      el.scrollTo({ left: corrected, behavior: 'instant' })
+    }
+  }
+
+// 連続呼び出しの最後から delay 後に fn を 1 回だけ呼ぶ。
+const debounce = (fn: () => void, delay: number) => {
+  let timer: ReturnType<typeof setTimeout> | undefined
+  return Object.assign(
+    () => {
+      clearTimeout(timer)
+      timer = setTimeout(fn, delay)
+    },
+    { cancel: () => clearTimeout(timer) },
+  )
+}
 
 export type CarouselScrollerOptions = Readonly<{
   align: ScrollAlign
@@ -30,6 +55,8 @@ export type CarouselScrollerResult = Readonly<{
   scrollByStep: (direction: 'prev' | 'next') => void
   onItemResize: () => void
   resetScroll: () => void
+  // loop 時に各端へ描画すべき clone 枚数（実測から算出。初回 render は 0）
+  loopCloneCount: number
 }>
 
 export function useCarouselScroller(
@@ -56,14 +83,32 @@ export function useCarouselScroller(
     callbacksRef.current = { onScroll, onResize, onScrollStateChange }
   })
 
+  // clone は「各端が 1 viewport を覆う枚数」だけ描画する。初回 render は 0 枚で、
+  // layout effect の実測 → state 反映が paint 前に完了する（SSR/no-JS は実セットのみ）。
+  const [cloneCount, setCloneCount] = useState(0)
+
+  const measureCloneCount = useCallback(() => {
+    const el = scrollerRef.current
+    if (!loop || !el) {
+      setCloneCount(0)
+      return
+    }
+    const realItems = Array.from(el.children)
+      .slice(cloneCount, cloneCount + itemCount)
+      .filter((child): child is HTMLElement => child instanceof HTMLElement)
+    if (realItems.length !== itemCount) return
+    setCloneCount(computeLoopCloneCount(realItems, el.clientWidth))
+  }, [scrollerRef, loop, itemCount, cloneCount])
+
   // loop 幾何は resize / item resize 時にのみ実測してキャッシュする
   // （scroll イベント中の layout 読みを避ける）。
   const geometryRef = useRef<LoopGeometry | null>(null)
 
   const measureLoop = useCallback(() => {
     const el = scrollerRef.current
-    geometryRef.current = loop && el ? measureLoopGeometry(el, itemCount) : null
-  }, [scrollerRef, loop, itemCount])
+    geometryRef.current =
+      loop && el ? measureLoopGeometry(el, itemCount, cloneCount) : null
+  }, [scrollerRef, loop, itemCount, cloneCount])
 
   // onScrollStateChange は canScroll(=canPrev||canNext) が変化した時だけ発火する。
   const prevCanScroll = useRef<boolean | null>(null)
@@ -88,11 +133,11 @@ export function useCarouselScroller(
     const el = scrollerRef.current
     if (!el || !initialScrollActive.current) return
     if (loop) {
-      const realFirst = el.children.item(itemCount)
+      const realFirst = el.children.item(cloneCount)
       if (!(realFirst instanceof HTMLElement)) return
       const geometry = geometryRef.current
       const centerEl =
-        centerItem == null ? null : el.children.item(itemCount + centerItem)
+        centerItem == null ? null : el.children.item(cloneCount + centerItem)
       // centerItem はループ成立時のみ中央へ。それ以外は実セット先頭の左寄せ。
       const left =
         geometry != null &&
@@ -119,7 +164,7 @@ export function useCarouselScroller(
       left: Math.max(0, Math.min(left, maxScroll)),
       behavior: 'instant',
     })
-  }, [scrollerRef, loop, centerItem, itemCount, align, offset])
+  }, [scrollerRef, loop, centerItem, cloneCount, align, offset])
 
   // canPrev/canNext: scroll で更新。onScroll もここから発火。itemCount 変化で貼り直し。
   useIsomorphicLayoutEffect(() => {
@@ -139,6 +184,7 @@ export function useCarouselScroller(
     const el = scrollerRef.current
     if (!el || typeof ResizeObserver === 'undefined') return
     const ro = new ResizeObserver(() => {
+      measureCloneCount()
       measureLoop()
       applyInitialScroll()
       updateScrollState()
@@ -146,11 +192,20 @@ export function useCarouselScroller(
     })
     ro.observe(el)
     return () => ro.disconnect()
-  }, [scrollerRef, measureLoop, applyInitialScroll, updateScrollState])
+  }, [
+    scrollerRef,
+    measureCloneCount,
+    measureLoop,
+    applyInitialScroll,
+    updateScrollState,
+  ])
 
   // 初期スクロール適用 + ユーザー操作で打ち切り。
   useIsomorphicLayoutEffect(() => {
     initialScrollActive.current = true
+    // clone 枚数の実測 → state 反映で本 effect が再実行され、clone 描画後の
+    // DOM に対して幾何実測と初期位置適用がやり直される（いずれも paint 前）。
+    measureCloneCount()
     measureLoop()
     applyInitialScroll()
     // 初期位置適用後の scrollLeft で canPrev/canNext を確定させる
@@ -168,59 +223,40 @@ export function useCarouselScroller(
     }
   }, [
     scrollerRef,
+    measureCloneCount,
     measureLoop,
     applyInitialScroll,
     updateScrollState,
     itemCount,
   ])
 
-  // loop: スクロール静止後（scrollend / debounce フォールバック）に維持帯域へテレポートする。
-  // scrollLeft 代入は CSS scroll-behavior: smooth に従うため、必ず instant の scrollTo を使う。
+  // loop: スクロール静止後に維持帯域へテレポートする。走行中には行わない
+  // （scrollTo は進行中のスクロールを中断して momentum を殺すため、がくつきに見える）。
   useEffect(() => {
-    if (!loop) return
     const el = scrollerRef.current
-    if (!el) return
-    const teleport = () => {
-      const geometry = geometryRef.current
-      if (!geometry || !isLoopActive(geometry)) return
-      const corrected = computeLoopTeleport(el.scrollLeft, geometry)
-      if (corrected != null) {
-        el.scrollTo({ left: corrected, behavior: 'instant' })
-      }
-    }
-    const supportsScrollEnd =
-      typeof window !== 'undefined' && 'onscrollend' in window
-    let timer: ReturnType<typeof setTimeout> | undefined
-    const handleScroll = () => {
-      const geometry = geometryRef.current
-      if (!geometry || !isLoopActive(geometry)) return
-      // 物理端まで残り 1 viewport を切ったら静止を待たず跳ぶ（強フリック対策）。
-      if (
-        el.scrollLeft < geometry.clientWidth ||
-        el.scrollLeft > geometry.maxScroll - geometry.clientWidth
-      ) {
-        teleport()
-        return
-      }
-      if (!supportsScrollEnd) {
-        clearTimeout(timer)
-        timer = setTimeout(teleport, SCROLL_SETTLE_DELAY)
-      }
-    }
-    el.addEventListener('scroll', handleScroll, { passive: true })
-    if (supportsScrollEnd) el.addEventListener('scrollend', teleport)
+    if (!loop || !el) return
+    const teleport = createLoopTeleport(el, () => geometryRef.current)
+    // 静止検出: scrollend 対応環境はブラウザに任せ、非対応環境は scroll の途切れで代替する。
+    const supportsScrollEnd = 'onscrollend' in window
+    const debouncedTeleport = supportsScrollEnd
+      ? null
+      : debounce(teleport, SCROLL_SETTLE_DELAY)
+    const settleEvent = supportsScrollEnd ? 'scrollend' : 'scroll'
+    const settleTeleport = debouncedTeleport ?? teleport
+
+    el.addEventListener(settleEvent, settleTeleport, { passive: true })
     return () => {
-      clearTimeout(timer)
-      el.removeEventListener('scroll', handleScroll)
-      if (supportsScrollEnd) el.removeEventListener('scrollend', teleport)
+      el.removeEventListener(settleEvent, settleTeleport)
+      debouncedTeleport?.cancel()
     }
   }, [loop, scrollerRef, itemCount])
 
   const onItemResize = useCallback(() => {
+    measureCloneCount()
     measureLoop()
     applyInitialScroll()
     updateScrollState()
-  }, [measureLoop, applyInitialScroll, updateScrollState])
+  }, [measureCloneCount, measureLoop, applyInitialScroll, updateScrollState])
 
   // defaultScroll の初期位置へ戻す（命令的 API: CarouselHandlerRef.resetScroll）。
   const resetScroll = useCallback(() => {
@@ -249,5 +285,5 @@ export function useCarouselScroller(
     [scrollerRef, scrollStep],
   )
 
-  return { scrollByStep, onItemResize, resetScroll }
+  return { scrollByStep, onItemResize, resetScroll, loopCloneCount: cloneCount }
 }

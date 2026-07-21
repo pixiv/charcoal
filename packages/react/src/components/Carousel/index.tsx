@@ -192,11 +192,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
-  const { scrollByStep, onItemResize, resetScroll } = useCarouselScroller(
-    scrollerRef,
-    store,
-    slides.length,
-    {
+  const { scrollByStep, onItemResize, resetScroll, loopCloneCount } =
+    useCarouselScroller(scrollerRef, store, slides.length, {
       align,
       offset,
       scrollStep,
@@ -205,8 +202,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       onScroll,
       onResize,
       onScrollStateChange,
-    },
-  )
+    })
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
@@ -233,17 +229,25 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       </CarouselSlide>
     ))
 
-  // loop 時は実セットの前後に clone セットを描画する（clone + 端テレポート方式）。
-  const renderClones = (which: 'before' | 'after') =>
-    slides.map((slide, i) => (
+  // loop 時は実セットの前後に clone を描画する（clone + 端テレポート方式）。
+  // 枚数は「各端が 1 viewport を覆う分」だけ実測から決まる（初回 render は 0 枚）。
+  const renderClones = (which: 'before' | 'after') => {
+    if (loopCloneCount === 0) return null
+    const indices = slides.map((_, i) => i)
+    const cloneIndices =
+      which === 'before'
+        ? indices.slice(-loopCloneCount)
+        : indices.slice(0, loopCloneCount)
+    return cloneIndices.map((i) => (
       <CarouselCloneItem
         key={`~${which}~${slideKeys[i]}`}
         index={i}
         store={store}
       >
-        {slide}
+        {slides[i]}
       </CarouselCloneItem>
     ))
+  }
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
