@@ -10046,7 +10046,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 9;"
+        style="--charcoal-text-area-rows: 8;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10200,7 +10200,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > DefaultValue 1`] = 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 5;"
+        style="--charcoal-text-area-rows: 4;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10396,7 +10396,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 2;"
+        style="--charcoal-text-area-rows: 1;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10448,7 +10448,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 2;"
+        style="--charcoal-text-area-rows: 1;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10497,7 +10497,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 5;"
+        style="--charcoal-text-area-rows: 4;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10546,7 +10546,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
+        style="--charcoal-text-area-rows: 3;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10561,6 +10561,1337 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
           0
         </span>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsHiddenScrollbar 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      class="flex flex-col gap-[16px]"
+    >
+      <div>
+        <div
+          class="flex gap-fixed"
+        >
+          <div
+            class="flex flex-col gap-[8px]"
+          >
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 1;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="1"
+                >
+                  1
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 2;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="2"
+                >
+                  1
+2
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 3;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="3"
+                >
+                  1
+2
+3
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 4;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="4"
+                >
+                  1
+2
+3
+4
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 5;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="5"
+                >
+                  1
+2
+3
+4
+5
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 6;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="6"
+                >
+                  1
+2
+3
+4
+5
+6
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 7;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="7"
+                >
+                  1
+2
+3
+4
+5
+6
+7
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 8;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="8"
+                >
+                  1
+2
+3
+4
+5
+6
+7
+8
+                </textarea>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 9;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="false"
+                  id="test-id"
+                  rows="9"
+                >
+                  1
+2
+3
+4
+5
+6
+7
+8
+9
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-[8px]"
+          >
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 1;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="1"
+                >
+                  1
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  1
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 2;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="2"
+                >
+                  1
+2
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  3
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 3;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="3"
+                >
+                  1
+2
+3
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 4;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="4"
+                >
+                  1
+2
+3
+4
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  7
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 5;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="5"
+                >
+                  1
+2
+3
+4
+5
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  9
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 6;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="6"
+                >
+                  1
+2
+3
+4
+5
+6
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  11
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 7;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="7"
+                >
+                  1
+2
+3
+4
+5
+6
+7
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  13
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 8;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="8"
+                >
+                  1
+2
+3
+4
+5
+6
+7
+8
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  15
+                </span>
+              </div>
+            </div>
+            <div
+              aria-disabled="false"
+              class="charcoal-text-area-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  for="test-id"
+                  id="test-id"
+                >
+                  label
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-invalid="false"
+                class="charcoal-text-area-container"
+                style="--charcoal-text-area-rows: 9;"
+              >
+                <textarea
+                  aria-labelledby="test-id"
+                  class="charcoal-text-area-textarea"
+                  data-no-bottom-padding="true"
+                  id="test-id"
+                  rows="9"
+                >
+                  1
+2
+3
+4
+5
+6
+7
+8
+9
+                </textarea>
+                <span
+                  class="charcoal-text-area-counter"
+                >
+                  17
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table
+        style="border-collapse: collapse; font-family: monospace;"
+      >
+        <thead>
+          <tr>
+            <th
+              style="padding: 4px;"
+            >
+              #
+            </th>
+            <th
+              style="padding: 4px;"
+            >
+              maxScrollTop
+            </th>
+            <th
+              style="padding: 4px;"
+            >
+              scrollTop
+            </th>
+            <th
+              style="padding: 4px;"
+            >
+              scrollHeight
+            </th>
+            <th
+              style="padding: 4px;"
+            >
+              clientHeight
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              1
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              2
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              3
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              4
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              5
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              6
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              7
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              8
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              10
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              11
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              12
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              13
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              14
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              15
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              16
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              17
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              18
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              9007199254740991
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+            <td
+              style="padding: 4px; text-align: right;"
+            >
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -10595,7 +11926,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 7;"
+        style="--charcoal-text-area-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10794,7 +12125,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > ShowCount 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 5;"
+        style="--charcoal-text-area-rows: 4;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10906,7 +12237,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > TokenV2 1`] = `
         <div
           aria-invalid="false"
           class="charcoal-text-area-container"
-          style="--charcoal-text-area-rows: 5;"
+          style="--charcoal-text-area-rows: 4;"
         >
           <textarea
             aria-describedby="test-id"
