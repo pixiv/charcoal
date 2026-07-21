@@ -455,6 +455,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -469,7 +470,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -478,7 +479,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -487,7 +488,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -496,7 +497,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -505,7 +506,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -514,7 +515,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
         </div>
@@ -615,6 +616,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -627,7 +629,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               1
             </div>
@@ -636,7 +638,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               2
             </div>
@@ -645,7 +647,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               3
             </div>
@@ -654,7 +656,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               4
             </div>
@@ -663,7 +665,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               5
             </div>
@@ -672,7 +674,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               6
             </div>
@@ -681,7 +683,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               7
             </div>
@@ -690,7 +692,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               8
             </div>
@@ -699,7 +701,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               9
             </div>
@@ -708,7 +710,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               10
             </div>
@@ -717,7 +719,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               11
             </div>
@@ -726,7 +728,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               12
             </div>
@@ -735,7 +737,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               13
             </div>
@@ -744,7 +746,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               14
             </div>
@@ -753,7 +755,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               15
             </div>
@@ -762,7 +764,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               16
             </div>
@@ -771,7 +773,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               17
             </div>
@@ -780,7 +782,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               18
             </div>
@@ -789,7 +791,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               19
             </div>
@@ -798,7 +800,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               20
             </div>
@@ -971,6 +973,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -985,7 +988,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -994,7 +997,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1003,7 +1006,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1012,7 +1015,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1021,7 +1024,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1030,7 +1033,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
         </div>
@@ -1131,6 +1134,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -1143,7 +1147,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               1
             </div>
@@ -1152,7 +1156,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               2
             </div>
@@ -1161,7 +1165,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               3
             </div>
@@ -1170,7 +1174,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               4
             </div>
@@ -1179,7 +1183,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               5
             </div>
@@ -1188,7 +1192,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               6
             </div>
@@ -1197,7 +1201,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               7
             </div>
@@ -1206,7 +1210,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               8
             </div>
@@ -1215,7 +1219,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               9
             </div>
@@ -1224,7 +1228,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               10
             </div>
@@ -1233,7 +1237,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               11
             </div>
@@ -1242,7 +1246,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               12
             </div>
@@ -1251,7 +1255,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               13
             </div>
@@ -1260,7 +1264,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               14
             </div>
@@ -1269,7 +1273,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               15
             </div>
@@ -1278,7 +1282,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               16
             </div>
@@ -1287,7 +1291,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               17
             </div>
@@ -1296,7 +1300,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               18
             </div>
@@ -1305,7 +1309,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               19
             </div>
@@ -1314,7 +1318,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               20
             </div>
@@ -1487,6 +1491,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -1501,7 +1506,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1510,7 +1515,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1519,7 +1524,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1528,7 +1533,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1537,7 +1542,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1546,7 +1551,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
         </div>
@@ -1647,6 +1652,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -1659,7 +1665,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               1
             </div>
@@ -1668,7 +1674,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               2
             </div>
@@ -1677,7 +1683,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               3
             </div>
@@ -1686,7 +1692,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               4
             </div>
@@ -1695,7 +1701,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               5
             </div>
@@ -1704,7 +1710,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               6
             </div>
@@ -1713,7 +1719,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               7
             </div>
@@ -1722,7 +1728,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               8
             </div>
@@ -1731,7 +1737,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               9
             </div>
@@ -1740,7 +1746,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 220px; height: 140px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
+              style="width: 220px; height: 140px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 4px; font: sans-serif 28px bold 28px;"
             >
               10
             </div>
@@ -1863,6 +1869,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -1877,7 +1884,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1886,7 +1893,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1895,7 +1902,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1904,7 +1911,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1913,7 +1920,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -1922,7 +1929,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
         </div>
@@ -2023,6 +2030,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
       data-scroll-snap-type="mandatory"
       data-size="S"
       role="region"
+      style="--charcoal-carousel-gap: 0px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -2183,6 +2191,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
       data-scroll-snap-type="mandatory"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -2195,7 +2204,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               1
             </div>
@@ -2204,7 +2213,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               2
             </div>
@@ -2213,7 +2222,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               3
             </div>
@@ -2222,7 +2231,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               4
             </div>
@@ -2231,7 +2240,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               5
             </div>
@@ -2240,7 +2249,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               6
             </div>
@@ -2249,7 +2258,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               7
             </div>
@@ -2258,7 +2267,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               8
             </div>
@@ -2267,7 +2276,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               9
             </div>
@@ -2276,7 +2285,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               10
             </div>
@@ -2285,7 +2294,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               11
             </div>
@@ -2294,7 +2303,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               12
             </div>
@@ -2303,7 +2312,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               13
             </div>
@@ -2312,7 +2321,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               14
             </div>
@@ -2321,7 +2330,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               15
             </div>
@@ -2330,7 +2339,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               16
             </div>
@@ -2339,7 +2348,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               17
             </div>
@@ -2348,7 +2357,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               18
             </div>
@@ -2357,7 +2366,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               19
             </div>
@@ -2366,7 +2375,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               20
             </div>
@@ -2539,6 +2548,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -2551,7 +2561,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               1
             </div>
@@ -2560,7 +2570,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               2
             </div>
@@ -2569,7 +2579,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               3
             </div>
@@ -2578,7 +2588,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               4
             </div>
@@ -2587,7 +2597,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               5
             </div>
@@ -2596,7 +2606,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               6
             </div>
@@ -2605,7 +2615,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               7
             </div>
@@ -2614,7 +2624,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               8
             </div>
@@ -2623,7 +2633,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               9
             </div>
@@ -2632,7 +2642,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               10
             </div>
@@ -2641,7 +2651,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               11
             </div>
@@ -2650,7 +2660,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               12
             </div>
@@ -2659,7 +2669,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               13
             </div>
@@ -2668,7 +2678,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               14
             </div>
@@ -2677,7 +2687,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               15
             </div>
@@ -2686,7 +2696,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               16
             </div>
@@ -2695,7 +2705,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               17
             </div>
@@ -2704,7 +2714,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               18
             </div>
@@ -2713,7 +2723,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               19
             </div>
@@ -2722,7 +2732,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
             class="charcoal-carousel__item"
           >
             <div
-              style="width: 200px; height: 120px; margin-inline-end: 24px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
             >
               20
             </div>
@@ -2895,6 +2905,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -2909,7 +2920,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -2918,7 +2929,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -2927,7 +2938,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -2936,7 +2947,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -2945,7 +2956,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -2954,7 +2965,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
         </div>
@@ -3055,6 +3066,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
       data-scroll-snap-type="mandatory"
       data-size="S"
       role="region"
+      style="--charcoal-carousel-gap: 0px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -3215,6 +3227,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
       data-scroll-snap-type="none"
       data-size="M"
       role="region"
+      style="--charcoal-carousel-gap: 24px;"
     >
       <div
         class="charcoal-carousel__viewport"
@@ -3229,7 +3242,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -3238,7 +3251,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -3247,7 +3260,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -3256,7 +3269,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -3265,7 +3278,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
           <div
@@ -3274,7 +3287,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
             <img
               alt="サンプル画像"
               src="/carousel-sample.png"
-              style="object-fit: cover; display: block; width: 280px; height: 210px; margin-inline-end: 24px;"
+              style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
         </div>
