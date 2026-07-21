@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>41.4s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>39.9s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -1365,7 +1365,7 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Carousel</h2>
       <div class="badges">
-        <label for="c-2-react-carousel-props" class="badge ok as-toggle">13 prop types</label>
+        <label for="c-2-react-carousel-props" class="badge ok as-toggle">14 prop types</label>
         <label for="c-2-react-carousel-info" class="badge info as-toggle">1 info</label>
         <label for="c-2-react-carousel-stories" class="badge ok as-toggle">13 stories</label>
         
@@ -1399,7 +1399,7 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">13 prop types</span>
+              <span class="badge ok">14 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Carousel/index.tsx::Carousel</code></pre>
             <pre><code>Props:</code></pre>
@@ -1410,6 +1410,8 @@ css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 defaultScroll?: { align?: ScrollAlign; offset?: number; } | undefined
 
 fullWidth?: boolean = false
+
+gap?: string | number
 
 hasGradient?: boolean = false
 
@@ -1450,7 +1452,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
               </div>
               
               
-              <pre><code>const SizeM = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient={false} fullWidth={false} scrollStep={0.75}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
+              <pre><code>const SizeM = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient={false} fullWidth={false} scrollStep={0.75} gap={24}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1459,7 +1461,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
               </div>
               
               
-              <pre><code>const SizeS = () =&gt; &lt;Carousel size=&quot;S&quot; hasGradient={false} fullWidth={false} scrollStep={0.75}&gt;{fullWidthImages}&lt;/Carousel&gt;;</code></pre>
+              <pre><code>const SizeS = () =&gt; &lt;Carousel size=&quot;S&quot; hasGradient={false} fullWidth={false} scrollStep={0.75} gap={0}&gt;{fullWidthImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1468,7 +1470,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
               </div>
               
               
-              <pre><code>const WithGradient = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient fullWidth={false} scrollStep={0.75}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
+              <pre><code>const WithGradient = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient fullWidth={false} scrollStep={0.75} gap={24}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1477,7 +1479,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
               </div>
               
               
-              <pre><code>const FullWidth = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient={false} fullWidth scrollStep={0.75}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
+              <pre><code>const FullWidth = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient={false} fullWidth scrollStep={0.75} gap={24}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1491,6 +1493,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient={false}
     fullWidth={false}
     scrollStep={0.75}
+    gap={0}
     navigationButtons&gt;{fullWidthImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -1505,6 +1508,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient={false}
     fullWidth={false}
     scrollStep={0.75}
+    gap={24}
     indicator&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -1519,6 +1523,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient={false}
     fullWidth={false}
     scrollStep={0.75}
+    gap={24}
     defaultScroll={{ align: &#39;center&#39; }}&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -1533,6 +1538,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient={false}
     fullWidth={false}
     scrollStep={0.75}
+    gap={24}
     defaultScroll={{ align: &#39;right&#39; }}&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -1547,6 +1553,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient={false}
     fullWidth={false}
     scrollStep={0.75}
+    gap={24}
     defaultScroll={{ align: &#39;center&#39; }}&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -1556,7 +1563,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
               </div>
               
               
-              <pre><code>const GradientOnDarkContent = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient fullWidth={false} scrollStep={0.75}&gt;{darkTiles}&lt;/Carousel&gt;;</code></pre>
+              <pre><code>const GradientOnDarkContent = () =&gt; &lt;Carousel size=&quot;M&quot; hasGradient fullWidth={false} scrollStep={0.75} gap={24}&gt;{darkTiles}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1569,7 +1576,8 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     size=&quot;M&quot;
     hasGradient={false}
     fullWidth={false}
-    scrollStep={({ clientWidth }) =&gt; clientWidth - 48}&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
+    scrollStep={({ clientWidth }) =&gt; clientWidth - 48}
+    gap={24}&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -1583,6 +1591,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient={false}
     fullWidth={false}
     scrollStep={0.75}
+    gap={24}
     scrollSnap={{ type: &#39;mandatory&#39;, align: &#39;start&#39; }}&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
@@ -1597,6 +1606,7 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     hasGradient
     fullWidth={false}
     scrollStep={0.75}
+    gap={24}
     navigationButtons
     indicator&gt;{spacedImages}&lt;/Carousel&gt;;</code></pre>
             </div>
