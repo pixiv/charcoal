@@ -4,6 +4,7 @@ import {
   computeCenterScrollLeft,
   computeLoopCloneCount,
   computeLoopTeleport,
+  computeWallEscape,
   isLoopActive,
   measureLoopGeometry,
   type LoopGeometry,
@@ -244,8 +245,27 @@ export function useCarouselScroller(
     const settleEvent = supportsScrollEnd ? 'scrollend' : 'scroll'
     const settleTeleport = debouncedTeleport ?? teleport
 
+    // 強フリックが clone の滑走路を使い切って物理端にクランプした場合だけは
+    // 静止を待たずに補正する（壁に張り付いたまま scrollend を待つ「詰まり」対策）。
+    let prevLeft = el.scrollLeft
+    const escapeWall = () => {
+      const geometry = geometryRef.current
+      const left = el.scrollLeft
+      const corrected =
+        geometry != null && isLoopActive(geometry)
+          ? computeWallEscape(left, prevLeft, geometry)
+          : null
+      prevLeft = left
+      if (corrected != null) {
+        el.scrollTo({ left: corrected, behavior: 'instant' })
+        prevLeft = corrected
+      }
+    }
+
+    el.addEventListener('scroll', escapeWall, { passive: true })
     el.addEventListener(settleEvent, settleTeleport, { passive: true })
     return () => {
+      el.removeEventListener('scroll', escapeWall)
       el.removeEventListener(settleEvent, settleTeleport)
       debouncedTeleport?.cancel()
     }

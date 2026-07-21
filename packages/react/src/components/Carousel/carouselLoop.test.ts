@@ -3,6 +3,7 @@ import {
   computeCenterScrollLeft,
   computeLoopCloneCount,
   computeLoopTeleport,
+  computeWallEscape,
   isLoopActive,
   measureLoopGeometry,
 } from './carouselLoop'
@@ -42,6 +43,36 @@ describe('computeLoopTeleport', () => {
 
   it('setWidth が 0 以下なら null', () => {
     expect(computeLoopTeleport(0, { ...geometry, setWidth: 0 })).toBeNull()
+  })
+})
+
+// maxScroll = bandLower × 2 + setWidth = 2000
+describe('computeWallEscape', () => {
+  it('左の物理端にクランプしたら合同位置を返す', () => {
+    expect(computeWallEscape(0, 90, geometry)).toBe(1000)
+  })
+
+  it('右の物理端にクランプしたら合同位置を返す', () => {
+    expect(computeWallEscape(2000, 1900, geometry)).toBe(1000)
+  })
+
+  it('サブピクセル分だけ端の内側でクランプしても端とみなす', () => {
+    expect(computeWallEscape(1999.5, 1900, geometry)).toBe(999.5)
+  })
+
+  it('物理端以外では null（走行中の momentum を殺さない）', () => {
+    expect(computeWallEscape(100, 200, geometry)).toBeNull()
+    expect(computeWallEscape(1900, 1800, geometry)).toBeNull()
+  })
+
+  it('端の位置でも端から離れる向きの走行中は null', () => {
+    expect(computeWallEscape(0.5, 0, geometry)).toBeNull()
+    expect(computeWallEscape(1999.5, 2000, geometry)).toBeNull()
+  })
+
+  it('滑走路が無い（端が帯域内）なら null', () => {
+    const flat = { setWidth: 1000, bandLower: 2, clientWidth: 600 }
+    expect(computeWallEscape(0, 50, flat)).toBeNull()
   })
 })
 

@@ -991,6 +991,22 @@ describe('Carousel', () => {
       expect(scrollTo).toHaveBeenCalledWith({ left: 2500, behavior: 'instant' })
     })
 
+    it('走行中でも物理端にクランプしたら即時テレポートで滑走路を回復する', () => {
+      const { scroller, scrollTo } = setupLoop(
+        <Carousel loop>{slides}</Carousel>,
+        {
+          scrollLeft: 90,
+        },
+      )
+      scrollTo.mockClear()
+      // 強フリックが滑走路を使い切り scrollLeft が物理端 0 にクランプした状況。
+      // 静止(scrollend)を待つと壁に張り付いたままになるため、scroll イベントで補正する。
+      scroller.scrollLeft = 0
+      fireEvent.scroll(scroller)
+      // 0 → 帯域 [1600, 4000) の合同位置 +2400 = 2400
+      expect(scrollTo).toHaveBeenCalledWith({ left: 2400, behavior: 'instant' })
+    })
+
     it('実セット幅 ≤ viewport ではテレポートせず実セット先頭から開始する', () => {
       vi.useFakeTimers()
       // slotWidth 40 → 全 6 枚でも viewport 800 を覆えず clone は各端 6 枚（全複製）、

@@ -282,6 +282,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       data-has-gradient={hasGradient}
       data-full-width={fullWidth}
       data-indicator={showIndicator}
+      data-loop={loop}
       data-scroll-snap-type={snapType}
       data-scroll-snap-align={snapAlign}
       data-can-prev={canPrev}

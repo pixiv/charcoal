@@ -35,6 +35,12 @@
   }
 }
 
+/* loop では物理端の rubber-band を無効化する。緊急テレポートの壁クランプ検出が
+   弾性 overscroll 中の座標（範囲外の scrollLeft）と衝突しないための前提。 */
+.charcoal-carousel[data-loop='true'] .charcoal-carousel__scroller {
+  overscroll-behavior-x: none;
+}
+
 /* スクロールスナップ type は prop（scrollSnap.type）で scroller に出し分ける。
    align は基底 .charcoal-carousel__item の後（後述）に置く（no-descending-specificity 回避）。
    未指定時の既定（M=none / S=mandatory / align=center）は JS 側で data 属性に解決する。 */

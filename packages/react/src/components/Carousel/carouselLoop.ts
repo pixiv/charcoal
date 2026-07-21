@@ -93,6 +93,30 @@ export function computeLoopTeleport(
   )
 }
 
+// 物理端クランプ判定の許容誤差(px)。scrollLeft はサブピクセル値を取りうる一方、
+// maxScroll（scrollWidth − clientWidth）は整数丸めの影響で実際の端と 1px 未満ずれうる。
+const WALL_EPSILON = 1
+
+// 走行中に scrollLeft が物理端へクランプされたときの緊急テレポート先。
+// 静止後テレポートと違い scroll イベントから呼ばれるため、「端に到達済み」かつ
+// 「直前サンプルより端へ向かう向き（または張り付いたまま）」の場合だけ発火する。
+// クランプ位置では motion は既に物理的に停止しているので、合同位置への補正は
+// 描画上無変化のまま滑走路だけを回復する（momentum を殺す走行中テレポートとは別物）。
+export function computeWallEscape(
+  scrollLeft: number,
+  prevScrollLeft: number,
+  geometry: LoopGeometry,
+): number | null {
+  const { setWidth, bandLower } = geometry
+  // 帯域は中央配置なので、物理端は帯域の両外側 bandLower ぶん先にある
+  const maxScroll = bandLower * 2 + setWidth
+  const atLeftWall = scrollLeft <= WALL_EPSILON && scrollLeft <= prevScrollLeft
+  const atRightWall =
+    scrollLeft >= maxScroll - WALL_EPSILON && scrollLeft >= prevScrollLeft
+  if (!atLeftWall && !atRightWall) return null
+  return computeLoopTeleport(scrollLeft, geometry)
+}
+
 // item の中央が viewport 中央になる scrollLeft（帯域へ正規化済み）。
 export function computeCenterScrollLeft(
   item: ItemRect,
