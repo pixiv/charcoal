@@ -1,4 +1,5 @@
 .charcoal-carousel {
+  --charcoal-carousel-gap: 0px;
   position: relative;
   display: block;
 }
@@ -19,12 +20,13 @@
   box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
 }
 
-/* スライド間隔は所有しない（sandbox 同様、利用者が children 側で注入する）。
-   このコンポーネントの責務はスクロールと indicator / arrow によるページ送りのみ。 */
+/* スライド間隔は gap prop（--charcoal-carousel-gap）で注入する。
+   スライド寸法は sandbox 同様、利用者が children 側で持つ。 */
 
 .charcoal-carousel__scroller {
   position: relative;
   display: flex;
+  gap: var(--charcoal-carousel-gap);
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;

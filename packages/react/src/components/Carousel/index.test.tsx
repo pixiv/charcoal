@@ -92,6 +92,30 @@ describe('Carousel', () => {
     })
   })
 
+  describe('gap', () => {
+    it('sets --charcoal-carousel-gap in px when gap is a number', () => {
+      const { container } = render(<Carousel gap={24}>{slides}</Carousel>)
+      const root = container.querySelector('.charcoal-carousel') as HTMLElement
+      expect(root.style.getPropertyValue('--charcoal-carousel-gap')).toBe(
+        '24px',
+      )
+    })
+
+    it('passes string gap values through as-is', () => {
+      const { container } = render(<Carousel gap="1rem">{slides}</Carousel>)
+      const root = container.querySelector('.charcoal-carousel') as HTMLElement
+      expect(root.style.getPropertyValue('--charcoal-carousel-gap')).toBe(
+        '1rem',
+      )
+    })
+
+    it('does not set the custom property when gap is not specified', () => {
+      const { container } = render(<Carousel>{slides}</Carousel>)
+      const root = container.querySelector('.charcoal-carousel') as HTMLElement
+      expect(root.style.getPropertyValue('--charcoal-carousel-gap')).toBe('')
+    })
+  })
+
   describe('Size M (default)', () => {
     it('shows navigation buttons', () => {
       render(<Carousel size="M">{slides}</Carousel>)
