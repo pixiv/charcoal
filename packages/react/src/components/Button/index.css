@@ -9,7 +9,9 @@
   letter-spacing: inherit;
   word-spacing: inherit;
   text-decoration: none;
-  font: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-variant: inherit;
   margin: 0;
   overflow: visible;
   text-transform: none;

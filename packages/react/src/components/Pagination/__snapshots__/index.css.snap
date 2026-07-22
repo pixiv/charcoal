@@ -23,7 +23,9 @@
   border-style: none;
   outline: none;
   text-decoration: none;
-  font: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-variant: inherit;
   margin: 0;
   user-select: none;
   display: flex;

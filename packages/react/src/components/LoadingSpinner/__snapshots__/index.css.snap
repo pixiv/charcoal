@@ -33,8 +33,7 @@ to {
   height: 1em;
   border-radius: 1em;
   background-color: currentColor;
-  animation: charcoal-loading-spinner-icon-scale-out 1s both ease-out;
-  animation-iteration-count: infinite;
+  animation: charcoal-loading-spinner-icon-scale-out 1s infinite both ease-out;
 }
 
 .charcoal-loading-spinner-icon[data-reset-animation] {
