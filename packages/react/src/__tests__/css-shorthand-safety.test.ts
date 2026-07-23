@@ -88,7 +88,7 @@ function findConflicts(root: postcss.Root, file: string): Conflict[] {
 
   root.walkRules((rule) => {
     for (const [shorthand, longhands] of Object.entries(
-      SHORTHAND_TO_LONGHANDS
+      SHORTHAND_TO_LONGHANDS,
     )) {
       let seenShorthand = false
       const conflicting: string[] = []
@@ -135,7 +135,7 @@ describe('CSS shorthand/longhand safety', () => {
       const report = allConflicts
         .map(
           (c) =>
-            `${c.file}: "${c.selector}" has ${c.shorthand} followed by ${c.longhands.join(', ')}`
+            `${c.file}: "${c.selector}" has ${c.shorthand} followed by ${c.longhands.join(', ')}`,
         )
         .join('\n')
       expect.fail(
@@ -143,7 +143,7 @@ describe('CSS shorthand/longhand safety', () => {
           `can extract longhands into merged selectors, leaving the shorthand to ` +
           `silently reset them.\n\n` +
           `Fix: either expand the shorthand into individual properties, or fold ` +
-          `the longhand values into the shorthand.\n\n${report}`
+          `the longhand values into the shorthand.\n\n${report}`,
       )
     }
   })
