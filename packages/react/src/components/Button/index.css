@@ -1,6 +1,6 @@
 .charcoal-button {
   appearance: none;
-  background: transparent;
+  background-image: none;
   box-sizing: border-box;
   padding: 0 24px;
   border-style: none;
@@ -9,7 +9,9 @@
   letter-spacing: inherit;
   word-spacing: inherit;
   text-decoration: none;
-  font: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-variant: inherit;
   margin: 0;
   overflow: visible;
   text-transform: none;
@@ -25,7 +27,10 @@
   line-height: 22px;
   font-weight: bold;
   color: var(--charcoal-color-text-default);
-  background-color: var(--charcoal-color-container-secondary-default-a);
+  background-color: var(
+    --charcoal-color-container-secondary-default-a,
+    transparent
+  );
   transition:
     0.2s color,
     0.2s background-color,
