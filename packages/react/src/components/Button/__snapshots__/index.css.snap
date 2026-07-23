@@ -1,6 +1,5 @@
 .charcoal-button {
   appearance: none;
-  background-color: transparent;
   background-image: none;
   box-sizing: border-box;
   padding: 0 24px;
@@ -28,7 +27,7 @@
   line-height: 22px;
   font-weight: bold;
   color: var(--charcoal-color-text-default);
-  background-color: var(--charcoal-color-container-secondary-default-a);
+  background-color: var(--charcoal-color-container-secondary-default-a, transparent);
   transition: 0.2s color,
     0.2s background-color,
     0.2s box-shadow;
