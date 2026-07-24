@@ -16,7 +16,7 @@
   "scripts": {
     "build": "run-s --print-label 'build:*'",
     "build:bundle": "tsdown",
-    "build:dts": "tsc --pretty --emitDeclarationOnly",
+    "build:dts": "tsc --pretty --emitDeclarationOnly --incremental false",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"

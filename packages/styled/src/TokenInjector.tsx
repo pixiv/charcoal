@@ -13,10 +13,12 @@ const GlobalStyle = createGlobalStyle<{
         ? css`
             ${key} {
               :root {
-                ${background !== undefined &&
-                css`
-                  background-color: ${theme.color[background]};
-                `}
+                ${
+                  background !== undefined &&
+                  css`
+                    background-color: ${theme.color[background]};
+                  `
+                }
                 ${defineColorVariableCSS(theme)}
               }
             }
@@ -24,10 +26,12 @@ const GlobalStyle = createGlobalStyle<{
         : css`
             /* stylelint-disable-next-line no-duplicate-selectors */
             ${key} {
-              ${background !== undefined &&
-              css`
-                background-color: ${theme.color[background]};
-              `}
+              ${
+                background !== undefined &&
+                css`
+                  background-color: ${theme.color[background]};
+                `
+              }
               ${defineColorVariableCSS(theme)}
             }
           `,

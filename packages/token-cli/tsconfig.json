@@ -4,6 +4,7 @@
   "compilerOptions": {
     "types": ["node"],
     "incremental": true,
+    "rootDir": "./src",
     "outDir": "./dist",
     "tsBuildInfoFile": "./.tsbuildinfo"
   }
