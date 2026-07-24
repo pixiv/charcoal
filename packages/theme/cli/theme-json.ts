@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-import { light, dark } from '../src/index'
+import { light, dark } from '../src/index.ts'
 import { writeFileSync } from 'fs'
 import { parseToRgb } from 'polished'
 import type { Material } from '@charcoal-ui/foundation'

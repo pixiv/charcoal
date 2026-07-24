@@ -1,5 +1,5 @@
 /** This file is auto generated. DO NOT EDIT BY HAND. */
-import { CharcoalTheme } from './theme'
+import type { CharcoalTheme } from './theme.ts'
 
 const common = {
   borderRadius: {

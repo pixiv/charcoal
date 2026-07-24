@@ -39,7 +39,7 @@
     "*.css"
   ],
   "scripts": {
-    "build": "tsdown --config-loader unrun",
+    "build": "tsdown",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist",
     "test": "vitest run --passWithNoTests",

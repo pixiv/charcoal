@@ -1,4 +1,4 @@
-import { TokenDictionary, Tokens } from './types'
+import type { TokenDictionary, Tokens } from './types.ts'
 
 export type ReferenceToken = `{${string}}`
 

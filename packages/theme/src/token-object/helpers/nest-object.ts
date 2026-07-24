@@ -1,4 +1,4 @@
-import { isNonEmptyArray } from './is-empty-array'
+import { isNonEmptyArray } from './is-empty-array.ts'
 
 type MakeNestObject<P extends readonly string[], T> = P extends [
   infer Head,

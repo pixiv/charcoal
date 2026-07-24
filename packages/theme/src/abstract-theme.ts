@@ -1,4 +1,4 @@
-import {
+import type {
   GradientMaterial,
   Material,
   TypographyDescriptor,

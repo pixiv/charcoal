@@ -1,7 +1,7 @@
 import deepmerge from 'deepmerge'
-import { isNonEmptyArray } from './helpers/is-empty-array'
-import { nestObject } from './helpers/nest-object'
-import { Tokens, TokenObject } from './types'
+import { isNonEmptyArray } from './helpers/is-empty-array.ts'
+import { nestObject } from './helpers/nest-object.ts'
+import type { Tokens, TokenObject } from './types.ts'
 
 export const toTokenObject = <T extends Tokens>(tokens: T): TokenObject<T> => {
   let result = {}
