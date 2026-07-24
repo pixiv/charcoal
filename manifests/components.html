@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>37.7s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>40.5s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -12726,17 +12726,15 @@ size?: Size = M</code></pre>
     <div class="note err">
       <div class="note-title">Prop type error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  23 | })
-  24 |
-&gt; 25 | const meta: Meta&lt;Props&gt; = {
+  21 | })
+  22 |
+&gt; 23 | const meta: Meta&lt;Props&gt; = {
      | ^
-  26 |   title: &#39;Icons/PixivIcon (&lt;pixiv-icon&gt;)&#39;,
-  27 |   argTypes: {
-  28 |     color: {
+  24 |   title: &#39;Icons/PixivIcon (&lt;pixiv-icon&gt;)&#39;,
+  25 |   argTypes: {
+  26 |     color: {
 
 ./packages/icons/src/PixivIcon.story.tsx:
-/// &lt;reference types=&#39;@types/webpack-env&#39; /&gt;
-
 import styled, { createGlobalStyle } from &#39;styled-components&#39;
 import TestIconThatNeverExists from &#39;./16/TestIconThatNeverExists.svg&#39;
 import { PixivIcon, Props } from &#39;@charcoal-ui/icons&#39;
@@ -29551,17 +29549,15 @@ export const Default: Story = {
     <div class="note err">
       <div class="note-title">Prop type error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  23 | })
-  24 |
-&gt; 25 | const meta: Meta&lt;Props&gt; = {
+  21 | })
+  22 |
+&gt; 23 | const meta: Meta&lt;Props&gt; = {
      | ^
-  26 |   title: &#39;Icons/PixivIcon (&lt;pixiv-icon&gt;)&#39;,
-  27 |   argTypes: {
-  28 |     color: {
+  24 |   title: &#39;Icons/PixivIcon (&lt;pixiv-icon&gt;)&#39;,
+  25 |   argTypes: {
+  26 |     color: {
 
 ./packages/icons/src/PixivIcon.story.tsx:
-/// &lt;reference types=&#39;@types/webpack-env&#39; /&gt;
-
 import styled, { createGlobalStyle } from &#39;styled-components&#39;
 import TestIconThatNeverExists from &#39;./16/TestIconThatNeverExists.svg&#39;
 import { PixivIcon, Props } from &#39;@charcoal-ui/icons&#39;
