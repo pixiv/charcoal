@@ -223,7 +223,7 @@ export class FigmaFileClient {
       await ensureDir(dirname)
 
       console.log(`found: ${filename} => ✅ writing...`)
-      await writeFile(fullname, await response.arrayBuffer())
+      await writeFile(fullname, new Uint8Array(await response.arrayBuffer()))
     }
 
     // sleep指定時は直列実行

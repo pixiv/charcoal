@@ -7,6 +7,14 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    projects: [
+      'packages/*/vitest.config.ts',
+      'packages/react/vitest.browser.config.ts',
+      '.storybook/vitest.config.ts',
+    ],
+    snapshotFormat: {
+      printShadowRoot: false,
+    },
     setupFiles: ['./vitest.setup.ts'],
     snapshotSerializers: ['./misc/test/vitest.snapshot-serializer.ts'],
     server: {
