@@ -71,10 +71,10 @@ updates:
       testing:
         patterns:
           - '@testing-library/*'
-          - '@playwright/*'
-          - 'axe-playwright'
+          - '@vitest/browser-playwright'
           - 'jest-*'
           - 'jsdom'
+          - 'playwright'
         update-types:
           - 'minor'
           - 'patch'

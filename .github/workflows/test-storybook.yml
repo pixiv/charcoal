@@ -51,16 +51,14 @@ jobs:
           key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install Playwright
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: pnpm playwright install --with-deps
-      - name: Build Storybook
+        run: pnpm playwright install --with-deps chromium
+      - name: Build packages
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: |
-          pnpm build
-          pnpm storybook:build
+        run: pnpm build
 
-      - name: Serve Storybook and run tests
+      - name: Run Storybook visual regression tests
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
-        run: pnpm test:image-snapshot --updateSnapshot
+        run: pnpm test:e2e --update
 
       - name: Upload base branch snapshots
         uses: actions/upload-artifact@v7
@@ -69,7 +67,7 @@ jobs:
           path: __image_snapshots__/
 
   test-storybook:
-    name: Run image snapshot test
+    name: Run Storybook end-to-end tests
     timeout-minutes: 20
     runs-on: ubuntu-22.04
     needs: prepare-base-branch
@@ -96,11 +94,9 @@ jobs:
             /home/runner/.cache/ms-playwright/
           key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install Playwright
-        run: pnpm playwright install --with-deps
-      - name: Build Storybook
-        run: |
-          pnpm build
-          pnpm storybook:build
+        run: pnpm playwright install --with-deps chromium
+      - name: Build packages
+        run: pnpm build
       - name: Check label
         uses: actions/github-script@v9
         id: label-checking
@@ -131,12 +127,12 @@ jobs:
         with:
           name: base__image-snapshots__
           path: __image_snapshots__/
-      - name: Serve Storybook and run tests
+      - name: Run Storybook visual regression tests
         if: steps.label-checking.outputs.result != 'true'
-        run: pnpm test:image-snapshot
-      - name: Serve Storybook and take new image snapshots
+        run: pnpm test:e2e
+      - name: Run Storybook visual regression tests and update image snapshots
         if: steps.label-checking.outputs.result == 'true'
-        run: pnpm test:image-snapshot --updateSnapshot
+        run: pnpm test:e2e --update
       - name: Archive image snapshot diffs
         uses: actions/upload-artifact@v7
         if: failure() && steps.label-checking.outputs.result != 'true'
