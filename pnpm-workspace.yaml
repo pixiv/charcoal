@@ -11,6 +11,9 @@ allowBuilds:
   unrs-resolver: false
 
 catalog:
+  '@testing-library/jest-dom': '^6.6.3'
+  '@testing-library/react': '^16.2.0'
+  '@testing-library/user-event': '^13.5.0'
   'react-compiler-runtime': '1.0.0'
   '@react-spring/web': '^10'
   react-aria: '3.48.0'

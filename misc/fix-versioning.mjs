@@ -1,17 +1,20 @@
-#!/usr/bin/env zx
-import { $, cd, glob, fs } from 'zx'
+#!/usr/bin/env node
+import { glob, readFile, writeFile } from 'node:fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-cd(`${__dirname}/..`)
+process.chdir(path.join(__dirname, '..'))
 
-const packages = await glob('packages/*/package.json')
+const packages = await Array.fromAsync(glob('packages/*/package.json'))
 
 const packagesJson = Object.fromEntries(
   await Promise.all(
-    packages.map(async (path) => [path, await fs.readJson(path)]),
+    packages.map(async (packagePath) => [
+      packagePath,
+      JSON.parse(await readFile(packagePath, 'utf8')),
+    ]),
   ),
 )
 
@@ -33,5 +36,5 @@ for (const path of packages) {
       json.devDependencies[name] = `^${version}`
     }
   }
-  await fs.writeJson(path, json, { spaces: 2 })
+  await writeFile(path, `${JSON.stringify(json, null, 2)}\n`)
 }
