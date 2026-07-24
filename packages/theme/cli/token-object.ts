@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import { createCSSTokenObject, createTokenObject } from '../src/token-object/index.ts'
+import {
+  createCSSTokenObject,
+  createTokenObject,
+} from '../src/token-object/index.ts'
 import type { TokenDictionary } from '../src/token-object/types.ts'
 import { camelCaseKeys } from '../src/token-object/index.ts'
 
