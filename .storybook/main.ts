@@ -1,12 +1,8 @@
 import remarkGfm from 'remark-gfm'
-import type { StorybookConfig as Webpack5StorybookConfig } from '@storybook/react-webpack5'
 import type { StorybookConfig as ViteStorybookConfig } from '@storybook/react-vite'
 import path from 'node:path'
 
-const generalConfig: Omit<
-  Webpack5StorybookConfig | ViteStorybookConfig,
-  'framework'
-> = {
+const generalConfig: Omit<ViteStorybookConfig, 'framework'> = {
   stories: [
     '../packages/**/*.mdx',
     '../packages/**/*.story.@(tsx)',
@@ -16,37 +12,7 @@ const generalConfig: Omit<
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@vueless/storybook-dark-mode',
-    '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-themes',
-    {
-      name: '@storybook/addon-styling-webpack',
-      options: {
-        rules: [
-          {
-            test: /\.css$/,
-            sideEffects: true,
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: {
-                  importLoaders: 1,
-                  modules: {
-                    auto: true,
-                    localIdentName: '[name]__[local]--[hash:base64:5]',
-                  },
-                },
-              },
-              {
-                // Gets options from `postcss.config.js` in your project root
-                loader: 'postcss-loader',
-                options: { implementation: 'postcss' },
-              },
-            ],
-          },
-        ],
-      },
-    },
     {
       name: '@storybook/addon-docs',
       options: {
@@ -79,29 +45,6 @@ const generalConfig: Omit<
       <meta property="og:type" content="website" />
       <meta property="og:image" content="/charcoal-ogp.jpg" />
     `,
-}
-
-const webpack5Config: Webpack5StorybookConfig = {
-  ...generalConfig,
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {
-      builder: {
-        useSWC: true,
-      },
-    },
-  },
-  swc() {
-    return {
-      jsc: {
-        transform: {
-          react: {
-            runtime: 'automatic',
-          },
-        },
-      },
-    }
-  },
 }
 
 const viteConfig: ViteStorybookConfig = {
@@ -152,4 +95,4 @@ const viteConfig: ViteStorybookConfig = {
   },
 }
 
-export default process.env.USE_WEBPACK === '1' ? webpack5Config : viteConfig
+export default viteConfig
