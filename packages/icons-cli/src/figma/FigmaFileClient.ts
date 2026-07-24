@@ -3,7 +3,6 @@ import path from 'path'
 import camelCase from 'camelcase'
 import * as Figma from 'figma-js'
 import fsExtra from 'fs-extra'
-import got from 'got'
 import { match } from 'path-to-regexp'
 import { concurrently } from '../concurrently.ts'
 
@@ -214,15 +213,17 @@ export class FigmaFileClient {
       }
 
       await this.sleepBeforeRequest()
-      const response = await got.get(
-        component.image,
-        this.exportFormat == 'pdf' ? { responseType: 'buffer' } : {},
-      )
+      const response = await fetch(component.image)
+      if (!response.ok) {
+        throw new Error(
+          `Failed to download ${component.image}: ${response.status} ${response.statusText}`,
+        )
+      }
 
       await ensureDir(dirname)
 
       console.log(`found: ${filename} => ✅ writing...`)
-      await writeFile(fullname, response.body, 'utf8')
+      await writeFile(fullname, new Uint8Array(await response.arrayBuffer()))
     }
 
     // sleep指定時は直列実行

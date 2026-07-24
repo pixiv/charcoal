@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "incremental": true,
+    "rootDir": "./src/react",
     "outDir": "./react",
     "tsBuildInfoFile": "./.tsbuildinfo.react"
   },

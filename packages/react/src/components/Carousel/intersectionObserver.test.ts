@@ -23,18 +23,18 @@ describe('observeCenter', () => {
 
   it('同一 root の el は observer を共有し、中央交差で対象の onEnter だけ呼ぶ', () => {
     const instances: MockIO[] = []
-    globalThis.IntersectionObserver = vi.fn(
-      (cb: IntersectionObserverCallback) => {
-        const inst: MockIO = {
-          cb,
-          observe: vi.fn(),
-          unobserve: vi.fn(),
-          disconnect: vi.fn(),
-        }
-        instances.push(inst)
-        return inst
-      },
-    ) as unknown as typeof globalThis.IntersectionObserver
+    globalThis.IntersectionObserver = vi.fn(function (
+      cb: IntersectionObserverCallback,
+    ) {
+      const inst: MockIO = {
+        cb,
+        observe: vi.fn(),
+        unobserve: vi.fn(),
+        disconnect: vi.fn(),
+      }
+      instances.push(inst)
+      return inst
+    }) as unknown as typeof globalThis.IntersectionObserver
 
     const root = document.createElement('div')
     const a = document.createElement('div')

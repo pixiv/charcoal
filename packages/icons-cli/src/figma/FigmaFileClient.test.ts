@@ -5,11 +5,11 @@ import fs from 'fs-extra'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { FigmaFileClient } from './FigmaFileClient'
 
-const { mockFile, mockFileImages, mockGotGet } = vi.hoisted(() => {
+const { mockFetch, mockFile, mockFileImages } = vi.hoisted(() => {
   return {
+    mockFetch: vi.fn(),
     mockFile: vi.fn(),
     mockFileImages: vi.fn(),
-    mockGotGet: vi.fn(),
   }
 })
 
@@ -19,14 +19,6 @@ vi.mock('figma-js', () => {
       file: mockFile,
       fileImages: mockFileImages,
     })),
-  }
-})
-
-vi.mock('got', () => {
-  return {
-    default: {
-      get: mockGotGet,
-    },
   }
 })
 
@@ -80,13 +72,17 @@ describe('FigmaFileClient path traversal regression', () => {
     consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => undefined)
     await fs.remove(path.join(tmpdir(), 'escaped'))
 
-    mockGotGet.mockResolvedValue({
-      body: '<svg><path /></svg>',
+    vi.stubGlobal('fetch', mockFetch)
+    mockFetch.mockResolvedValue({
+      ok: true,
+      arrayBuffer: () =>
+        Promise.resolve(new TextEncoder().encode('<svg><path /></svg>').buffer),
     })
   })
 
   afterEach(async () => {
     consoleLogSpy.mockRestore()
+    vi.unstubAllGlobals()
     vi.clearAllMocks()
     await fs.remove(path.join(tmpdir(), 'escaped'))
     await fs.remove(workDir)

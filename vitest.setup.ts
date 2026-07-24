@@ -4,28 +4,53 @@ import * as projectAnnotations from './.storybook/preview'
 
 setProjectAnnotations(projectAnnotations)
 
+vi.mock('react-aria/useId', async () => {
+  const mod = await vi.importActual('react-aria/useId')
+
+  return {
+    ...mod,
+    useId: () => 'test-id',
+  }
+})
+
+vi.mock('react-stately', async () => {
+  const stately =
+    await vi.importActual<typeof import('react-stately')>('react-stately')
+
+  return {
+    ...stately,
+    useOverlayTriggerState: (
+      ...args: Parameters<typeof stately.useOverlayTriggerState>
+    ) => {
+      const state = stately.useOverlayTriggerState(...args)
+
+      return { ...state, isOpen: true }
+    },
+  }
+})
+
 beforeAll(() => {
   vi.stubGlobal(
     'ResizeObserver',
-    vi.fn().mockImplementation(() => ({
-      observe: vi.fn(),
-      unobserve: vi.fn(),
-      disconnect: vi.fn(),
-    })),
+    class {
+      observe = vi.fn()
+      unobserve = vi.fn()
+      disconnect = vi.fn()
+    },
   )
   vi.stubGlobal(
     'IntersectionObserver',
-    vi.fn().mockImplementation(() => ({
+    class {
       observe() {
         return null
-      },
+      }
       unobserve() {
         return null
-      },
+      }
       disconnect() {
         return null
-      },
-    })),
+      }
+    },
   )
   if (typeof CSS !== 'undefined' && typeof CSS.supports !== 'function') {
     CSS.supports = () => false
@@ -62,29 +87,4 @@ beforeAll(() => {
       dispatchEvent: vi.fn(),
     })),
   )
-
-  vi.mock('react-aria/useId', async () => {
-    const mod = await vi.importActual('react-aria/useId')
-
-    return {
-      ...mod,
-      useId: () => 'test-id',
-    }
-  })
-
-  vi.mock('react-stately', async () => {
-    const stately =
-      await vi.importActual<typeof import('react-stately')>('react-stately')
-
-    return {
-      ...stately,
-      useOverlayTriggerState: (
-        ...args: Parameters<typeof stately.useOverlayTriggerState>
-      ) => {
-        const state = stately.useOverlayTriggerState(...args)
-
-        return { ...state, isOpen: true }
-      },
-    }
-  })
 })

@@ -1,4 +1,4 @@
-import postcss, { Result } from 'postcss'
+import postcss, { type AcceptedPlugin, type Result } from 'postcss'
 import postcssSelectorParser from 'postcss-selector-parser'
 import tailwindcss from 'tailwindcss'
 import type { Config } from 'tailwindcss'
@@ -58,7 +58,7 @@ export class TailwindBuild {
       ],
     })
 
-    const result = await postcss([plugin]).process(css, {
+    const result = await postcss([plugin as AcceptedPlugin]).process(css, {
       // ビルド元のファイルなし
       from: undefined,
 

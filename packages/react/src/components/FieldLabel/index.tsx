@@ -3,8 +3,7 @@ import { useClassNames } from '../../_lib/useClassNames'
 
 import './index.css'
 
-export interface FieldLabelProps
-  extends React.LabelHTMLAttributes<HTMLLabelElement> {
+export interface FieldLabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   readonly className?: string
   readonly label: string
   readonly subLabel?: React.ReactNode

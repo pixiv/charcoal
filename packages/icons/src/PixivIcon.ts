@@ -16,11 +16,10 @@ const ROOT_MARGIN = 50
 
 export interface KnownIconType extends Record<KnownIconFile, unknown> {}
 
-export interface Props
-  extends Omit<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
-    'className' | 'css'
-  > {
+export interface Props extends Omit<
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
+  'className' | 'css'
+> {
   name: keyof KnownIconType
   scale?: 1 | 2 | 3 | '1' | '2' | '3'
   /**

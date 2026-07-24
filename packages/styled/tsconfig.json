@@ -4,6 +4,7 @@
   "compilerOptions": {
     "paths": {},
     "incremental": true,
+    "rootDir": "./src",
     "outDir": "./dist",
     "tsBuildInfoFile": "./.tsbuildinfo",
     "skipLibCheck": true
