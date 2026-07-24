@@ -83,24 +83,15 @@ importers:
       '@storybook/addon-onboarding':
         specifier: 10.3.5
         version: 10.3.5(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@storybook/addon-styling-webpack':
-        specifier: ^3.0.0
-        version: 3.0.0(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.98.0(@swc/core@1.15.3))
       '@storybook/addon-themes':
         specifier: 10.3.5
         version: 10.3.5(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@storybook/addon-webpack5-compiler-swc':
-        specifier: ^4.0.3
-        version: 4.0.3(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(webpack@5.98.0(@swc/core@1.15.3))
       '@storybook/builder-vite':
         specifier: 10.3.5
         version: 10.3.5(rollup@4.37.0)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@8.0.5(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@types/node@22.14.1)(jiti@2.6.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(webpack@5.98.0(@swc/core@1.15.3))
       '@storybook/react-vite':
         specifier: 10.3.5
         version: 10.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.37.0)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)(vite@8.0.5(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@types/node@22.14.1)(jiti@2.6.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(webpack@5.98.0(@swc/core@1.15.3))
-      '@storybook/react-webpack5':
-        specifier: 10.3.5
-        version: 10.3.5(@swc/core@1.15.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)
       '@storybook/test-runner':
         specifier: ^0.24.3
         version: 0.24.3(@types/node@22.14.1)(babel-plugin-macros@3.1.0)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@22.14.1)(typescript@5.9.3))
@@ -134,9 +125,6 @@ importers:
       '@types/styled-components':
         specifier: ^5.1.21
         version: 5.1.34
-      '@types/webpack':
-        specifier: ^5.28.0
-        version: 5.28.5(@swc/core@1.15.3)
       '@types/yargs':
         specifier: ^17.0.8
         version: 17.0.33
@@ -167,9 +155,6 @@ importers:
       conventional-changelog-conventionalcommits:
         specifier: ^4.6.3
         version: 4.6.3
-      css-loader:
-        specifier: ^6.10.0
-        version: 6.11.0(webpack@5.98.0(@swc/core@1.15.3))
       eslint:
         specifier: ^9.38.0
         version: 9.38.0(jiti@2.6.0)
@@ -209,9 +194,6 @@ importers:
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
-      postcss-loader:
-        specifier: ^8.2.0
-        version: 8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.98.0(@swc/core@1.15.3))
       postcss-syntax:
         specifier: ^0.36.2
         version: 0.36.2(postcss@8.5.6)
@@ -239,9 +221,6 @@ importers:
       storybook:
         specifier: 10.3.5
         version: 10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      style-loader:
-        specifier: ^3.3.4
-        version: 3.3.4(webpack@5.98.0(@swc/core@1.15.3))
       styled-components:
         specifier: ^5.3.3
         version: 5.3.11(@babel/core@7.28.5)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
@@ -310,9 +289,6 @@ importers:
       '@types/warning':
         specifier: ^3.0.4
         version: 3.0.4
-      '@types/webpack-env':
-        specifier: ^1.18.8
-        version: 1.18.8
       jsdom:
         specifier: ^24.1.0
         version: 24.1.3
