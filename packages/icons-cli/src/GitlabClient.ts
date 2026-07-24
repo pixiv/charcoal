@@ -1,13 +1,16 @@
 import type { CommitAction } from '@gitbeaker/core/dist/types/services/Commits'
 import { Gitlab } from '@gitbeaker/node'
 import path from 'path'
-import { getChangedFiles } from './getChangedFiles'
+import { getChangedFiles } from './getChangedFiles.ts'
 
 type GitlabApi = InstanceType<typeof Gitlab>
 
 export class GitlabClient {
   private readonly api: GitlabApi
   private readonly now: Date
+  private readonly host: string
+  private readonly projectId: number
+  private readonly defaultBranch: string
 
   static async runFromCli(
     host: string,
@@ -32,16 +35,19 @@ export class GitlabClient {
   }
 
   constructor(
-    private readonly host: string,
-    private readonly projectId: number,
+    host: string,
+    projectId: number,
     privateToken: string,
-    private readonly defaultBranch: string,
+    defaultBranch: string,
     now = new Date(),
   ) {
     this.api = new Gitlab({
-      host: this.host,
+      host,
       token: privateToken,
     })
+    this.host = host
+    this.projectId = projectId
+    this.defaultBranch = defaultBranch
     this.now = now
   }
 

@@ -1,8 +1,10 @@
 import { glob, readFile, writeFile } from 'fs/promises'
-import { ensureDir } from 'fs-extra'
+import fsExtra from 'fs-extra'
 import path from 'path'
-import { createSvgDataUri, serializeJavaScriptValue } from '../codegen'
-import { mustBeDefined } from '../utils'
+import { createSvgDataUri, serializeJavaScriptValue } from '../codegen.ts'
+import { mustBeDefined } from '../utils.ts'
+
+const { ensureDir } = fsExtra
 
 async function main() {
   mustBeDefined(process.env.SOURCE_ROOT_DIR, 'SOURCE_ROOT_DIR')

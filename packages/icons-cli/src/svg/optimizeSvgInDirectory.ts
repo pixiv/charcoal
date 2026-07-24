@@ -1,8 +1,8 @@
 import path from 'path'
 import { glob } from 'fs/promises'
 import fs from 'fs-extra'
-import { concurrently } from '../concurrently'
-import { optimizeSvg } from './optimizeSvg'
+import { concurrently } from '../concurrently.ts'
+import { optimizeSvg } from './optimizeSvg.ts'
 
 /* eslint-disable no-console */
 

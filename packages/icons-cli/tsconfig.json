@@ -4,6 +4,7 @@
   "compilerOptions": {
     "noEmit": true,
     "declaration": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true
   }
 }

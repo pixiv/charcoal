@@ -1,6 +1,7 @@
-import { Octokit, RestEndpointMethodTypes } from '@octokit/rest'
+import { Octokit } from '@octokit/rest'
+import type { RestEndpointMethodTypes } from '@octokit/rest'
 import path from 'path'
-import { getChangedFiles } from './getChangedFiles'
+import { getChangedFiles } from './getChangedFiles.ts'
 
 type RefResponse =
   ReturnType<GithubClient['createBranch']> extends Promise<infer R> ? R : never
@@ -16,6 +17,9 @@ interface TreeItem {
 export class GithubClient {
   private readonly api: Octokit
   private readonly now: Date
+  private readonly repoOwner: string
+  private readonly repoName: string
+  private readonly defaultBranch: string
 
   static async runFromCli(
     repoOwner: string,
@@ -42,16 +46,19 @@ export class GithubClient {
   }
 
   constructor(
-    private readonly repoOwner: string,
-    private readonly repoName: string,
+    repoOwner: string,
+    repoName: string,
     token: string,
-    private readonly defaultBranch: string,
+    defaultBranch: string,
     now = new Date(),
   ) {
     this.api = new Octokit({
       auth: token,
     })
 
+    this.repoOwner = repoOwner
+    this.repoName = repoName
+    this.defaultBranch = defaultBranch
     this.now = now
   }
 

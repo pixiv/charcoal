@@ -1,4 +1,4 @@
-import { mustBeDefined } from '../utils'
+import { mustBeDefined } from '../utils.ts'
 import ts from 'typescript'
 import { glob, readFile, writeFile } from 'fs/promises'
 import path from 'path'

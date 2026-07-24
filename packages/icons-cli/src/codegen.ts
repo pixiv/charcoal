@@ -1,4 +1,4 @@
-import { encodeSvgAsDataUri } from './utils'
+import { encodeSvgAsDataUri } from './utils.ts'
 
 const SVG_EXTENSION = /\.svg$/iu
 const NON_CSS_CLASS_NAME_CHARACTERS = /[^a-z0-9-]+/gu
