@@ -1,6 +1,6 @@
 import { rgba } from 'polished'
 import prettier from 'prettier'
-import { CharcoalTheme } from './theme'
+import type { CharcoalTheme } from './theme.ts'
 import {
   BORDER_RADIUS,
   BREAKPOINT,
@@ -189,7 +189,7 @@ const sortReplacer = (_: string, value: any): any => {
 it('writes default.ts', async () => {
   const code = `
 /** This file is auto generated. DO NOT EDIT BY HAND. */
-import { CharcoalTheme } from './theme'
+import type { CharcoalTheme } from './theme.ts'
 
 const common = ${JSON.stringify(common, sortReplacer, 2)} as const;
 

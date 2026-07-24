@@ -2,10 +2,12 @@
 import path from 'path'
 import camelCase from 'camelcase'
 import * as Figma from 'figma-js'
-import { ensureDir, remove, writeFile } from 'fs-extra'
+import fsExtra from 'fs-extra'
 import got from 'got'
 import { match } from 'path-to-regexp'
-import { concurrently } from '../concurrently'
+import { concurrently } from '../concurrently.ts'
+
+const { ensureDir, remove, writeFile } = fsExtra
 
 const DRY_RUN = Boolean(process.env.DRY_RUN)
 

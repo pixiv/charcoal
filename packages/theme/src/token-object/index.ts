@@ -1,9 +1,9 @@
-import { createReferenceTokenResolver } from './reference-token'
-import { toTokenObject } from './to-token-object'
-import type { TokenObject, TokenDictionary, TokenValue } from './types'
+import { createReferenceTokenResolver } from './reference-token.ts'
+import { toTokenObject } from './to-token-object.ts'
+import type { TokenObject, TokenDictionary, TokenValue } from './types.ts'
 
 import { kebabCase } from 'change-case-all'
-export { camelCaseKeys } from './helpers/changecase-keys'
+export { camelCaseKeys } from './helpers/changecase-keys.ts'
 
 export const createTokenObject = <T extends TokenDictionary>(
   tokenDictionary: T,

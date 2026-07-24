@@ -1,6 +1,6 @@
 import { defineConfig } from 'tsdown'
-import { writeThemeJson } from './cli/theme-json'
-import { writeTokenObjects } from './cli/token-object'
+import { writeThemeJson } from './cli/theme-json.ts'
+import { writeTokenObjects } from './cli/token-object.ts'
 
 export default defineConfig({
   entry: {
