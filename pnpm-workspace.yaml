@@ -17,5 +17,7 @@ catalog:
   react-stately: '3.46.0'
 
 minimumReleaseAge: 10080 # 7 days
+minimumReleaseAgeExclude:
+  - '@pixiv/eslint-config'
 overrides:
   playwright: ^1.58.2

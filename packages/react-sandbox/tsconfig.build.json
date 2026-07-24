@@ -3,8 +3,7 @@
   "compilerOptions": {
     "incremental": true,
     "outDir": "./dist",
-    "tsBuildInfoFile": "./.tsbuildinfo",
-    "moduleResolution": "node"
+    "tsBuildInfoFile": "./.tsbuildinfo"
   },
   "include": ["./src"],
   "exclude": [

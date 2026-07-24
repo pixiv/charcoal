@@ -11,7 +11,7 @@ import { mustBeDefined } from './utils'
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN
 const FIGMA_FILE_ID = process.env.FIGMA_FILE_ID
 
-void yargs
+void yargs()
   .scriptName('token-cli')
   .command(
     'fetch',
