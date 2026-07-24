@@ -1,0 +1,67 @@
+import{a as e,n as t}from"./chunk-BneVvdWh.js";import{_t as n,j as r}from"./iframe-DrTBVNfQ.js";import{n as i,t as a}from"./Checkbox-B60_wBPJ.js";var o,s,c,l,u,d,f,p,m,h;t((()=>{i(),o=e(n(),1),s=r(),c={title:`react/Checkbox`,component:a,parameters:{layout:`centered`}},l={argTypes:{checked:{type:`boolean`},children:{type:`string`},disabled:{type:`boolean`},invalid:{type:`boolean`},readOnly:{type:`boolean`}},render:function(e){let[t,n]=(0,o.useState)(e.checked),r=(0,o.useCallback)(e=>{n(e)},[]);return(0,s.jsx)(a,{...e,checked:e.checked??t,onChange:r})}},u={render:()=>(0,s.jsx)(a,{children:`Checkbox`})},d={render:()=>(0,s.jsx)(a,{checked:!0,children:`Checked`})},f={render:()=>(0,s.jsx)(a,{disabled:!0,children:`Disabled`})},p={render:()=>(0,s.jsx)(a,{checked:!0,name:`labelled`,readOnly:!0,children:`ReadOnly`})},m={render:()=>(0,s.jsx)(a,{name:`labelled`,invalid:!0,children:`Invalid`})},h={parameters:{tokenVersion:`v2`},render:()=>(0,s.jsxs)(`div`,{style:{display:`grid`,gap:16},children:[(0,s.jsx)(a,{children:`Default`}),(0,s.jsx)(a,{checked:!0,children:`Checked`}),(0,s.jsx)(a,{invalid:!0,children:`Invalid`}),(0,s.jsx)(a,{checked:!0,disabled:!0,children:`Disabled`})]})},l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  argTypes: {
+    checked: {
+      type: 'boolean'
+    },
+    children: {
+      type: 'string'
+    },
+    disabled: {
+      type: 'boolean'
+    },
+    invalid: {
+      type: 'boolean'
+    },
+    readOnly: {
+      type: 'boolean'
+    }
+  },
+  render: function Render(props) {
+    const [checked, setChecked] = useState(props.checked);
+    const handleChange = useCallback((isSelected: boolean) => {
+      setChecked(isSelected);
+    }, []);
+    return <Checkbox {...props} checked={props.checked ?? checked} onChange={handleChange} />;
+  }
+}`,...l.parameters?.docs?.source}}},u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    return <Checkbox>Checkbox</Checkbox>;
+  }
+}`,...u.parameters?.docs?.source}}},d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    return <Checkbox checked>Checked</Checkbox>;
+  }
+}`,...d.parameters?.docs?.source}}},f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    return <Checkbox disabled>Disabled</Checkbox>;
+  }
+}`,...f.parameters?.docs?.source}}},p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    return <Checkbox checked name="labelled" readOnly>
+        ReadOnly
+      </Checkbox>;
+  }
+}`,...p.parameters?.docs?.source}}},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{
+  render: () => {
+    return <Checkbox name="labelled" invalid>
+        Invalid
+      </Checkbox>;
+  }
+}`,...m.parameters?.docs?.source}}},h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`{
+  parameters: {
+    tokenVersion: 'v2'
+  },
+  render: () => {
+    return <div style={{
+      display: 'grid',
+      gap: 16
+    }}>
+        <Checkbox>Default</Checkbox>
+        <Checkbox checked>Checked</Checkbox>
+        <Checkbox invalid>Invalid</Checkbox>
+        <Checkbox checked disabled>
+          Disabled
+        </Checkbox>
+      </div>;
+  }
+}`,...h.parameters?.docs?.source}}}}))();export{d as Checked,l as Default,f as Disabled,m as Invalid,u as Label,p as ReadOnly,h as TokenV2,c as default};
