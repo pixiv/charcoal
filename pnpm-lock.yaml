@@ -244,13 +244,10 @@ importers:
         version: 3.4.17(ts-node@10.9.2(@swc/core@1.15.3)(@types/node@22.14.1)(typescript@5.9.3))
       tsdown:
         specifier: 0.22.0
-        version: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3)(unrun@0.3.0(synckit@0.11.11))
+        version: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
-      unrun:
-        specifier: 0.3.0
-        version: 0.3.0(synckit@0.11.11)
       vite:
         specifier: 8.0.5
         version: 8.0.5(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)
@@ -9229,16 +9226,6 @@ packages:
   unrs-resolver@1.11.1:
     resolution: {integrity: sha512-bSjt9pjaEBnNiGgc9rUiHGKv5l4/TGzDmYw3RhnkJGtLhbnnA/5qJj7x3dNDCRx/PJxu774LlH8lCOlB4hEfKg==}
 
-  unrun@0.3.0:
-    resolution: {integrity: sha512-5xw2AIVS2WR9Lqhz76qDIQLxipKRidf7Nq+Iz5SZ8shk1OmRlxnc6FyI/1Q2m99WLj6cbqaKFdESfWE99KPzlA==}
-    engines: {node: ^22.13.0 || >=24.0.0}
-    hasBin: true
-    peerDependencies:
-      synckit: ^0.11.11
-    peerDependenciesMeta:
-      synckit:
-        optional: true
-
   until-async@3.0.2:
     resolution: {integrity: sha512-IiSk4HlzAMqTUseHHe3VhIGyuFmN90zMTpD3Z3y8jeQbzLIq500MVM7Jq2vUAnTKAFPJrqwkzr6PoTcPhGcOiw==}
 
@@ -12506,7 +12493,7 @@ snapshots:
       lightningcss: 1.32.0
       postcss-load-config: 6.0.1(jiti@1.21.7)(postcss@8.5.6)(yaml@2.7.0)
       rolldown: 1.0.0
-      tsdown: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3)(unrun@0.3.0(synckit@0.11.11))
+      tsdown: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3)
     optionalDependencies:
       postcss: 8.5.6
     transitivePeerDependencies:
@@ -19732,7 +19719,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3)(unrun@0.3.0(synckit@0.11.11)):
+  tsdown@0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20250930.1)(typescript@5.9.3):
     dependencies:
       ansis: 4.2.0
       cac: 7.0.0
@@ -19752,7 +19739,6 @@ snapshots:
     optionalDependencies:
       '@tsdown/css': 0.22.0(jiti@1.21.7)(postcss@8.5.6)(tsdown@0.22.0)(yaml@2.7.0)
       typescript: 5.9.3
-      unrun: 0.3.0(synckit@0.11.11)
     transitivePeerDependencies:
       - '@ts-macro/tsc'
       - '@typescript/native-preview'
@@ -19951,12 +19937,6 @@ snapshots:
       '@unrs/resolver-binding-win32-arm64-msvc': 1.11.1
       '@unrs/resolver-binding-win32-ia32-msvc': 1.11.1
       '@unrs/resolver-binding-win32-x64-msvc': 1.11.1
-
-  unrun@0.3.0(synckit@0.11.11):
-    dependencies:
-      rolldown: 1.0.0
-    optionalDependencies:
-      synckit: 0.11.11
 
   until-async@3.0.2: {}
 
