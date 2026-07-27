@@ -1,8 +1,8 @@
 import { Meta } from '@storybook/addon-docs/blocks'
 
-<Meta title="v6.0.0(予定)" />
+<Meta title="v6.0.0" />
 
-# @charcoal-ui/react@v6.0.0(予定)
+# @charcoal-ui/react@v6.0.0
 
 ---
 
@@ -135,7 +135,7 @@ CSS・トークン出力の再編と `unstable-` プレフィックス削除に�
 
 # コンポーネント（react-sandbox からの移行）
 
-- `@charcoal-ui/react@v5.5.0` に **UnstableTextEllipsis** と **UnstablePagination** を追加しました。
+- `@charcoal-ui/react@6.0.0` に **TextEllipsis** と **Pagination** を追加しました。
 - react-sandbox にあった TextEllipsis および Pager・LinkPager を、styled-components に依存しない形で @charcoal-ui/react に取り込んだものです。
 - props の詳細は各コンポーネントの Storybook を参照してください。
 
@@ -147,14 +147,11 @@ CSS・トークン出力の再編と `unstable-` プレフィックス削除に�
 
 ```tsx
 -import { TextEllipsis } from '@charcoal-ui/react-sandbox'
-// 現時点はUnstableのprefixがある
-+import { UnstableTextEllipsis } from '@charcoal-ui/react'
-// v6リリース以降(予定)
 +import { TextEllipsis } from '@charcoal-ui/react'
 
-<UnstableTextEllipsis lineHeight={24} lineLimit={2}>
+<TextEllipsis lineHeight={24} lineLimit={2}>
   長いテキスト...
-</UnstableTextEllipsis>
+</TextEllipsis>
 ```
 
 ## react-sandbox との主な違い
@@ -176,19 +173,16 @@ CSS・トークン出力の再編と `unstable-` プレフィックス削除に�
 
 ```tsx
 -import { Pager, LinkPager } from '@charcoal-ui/react-sandbox'
-// 現時点はUnstableのprefixがある
-+import { UnstablePagination } from '@charcoal-ui/react'
-// v6リリース以降(予定)
 +import { Pagination } from '@charcoal-ui/react'
 
 // ボタンモード
-<UnstablePagination page={page} pageCount={10} onChange={setPage} />
+<Pagination page={page} pageCount={10} onChange={setPage} />
 
 // リンクモード
-<UnstablePagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} />
+<Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} />
 
 // Next.js の Link は href を受け取るためそのまま利用可能。React Router など to を使う場合はラッパーが必要
-<UnstablePagination
+<Pagination
   page={1}
   pageCount={10}
   makeUrl={(p) => `?page=${p}`}
