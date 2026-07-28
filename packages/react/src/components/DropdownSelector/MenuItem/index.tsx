@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef } from 'react'
+import { ForwardedRef, forwardRef, useCallback, useRef } from 'react'
 import ListItem, { ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
@@ -18,6 +18,42 @@ const MenuItem = forwardRef(function MenuItem<
   ref: ForwardedRef<HTMLLIElement>,
 ) {
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
+  const penHandledRef = useRef(false)
+  const pointerStartRef = useRef<{ x: number; y: number } | null>(null)
+
+  const handlePointerDown = useCallback(
+    (e: React.PointerEvent<HTMLLIElement>) => {
+      if (e.pointerType === 'pen') {
+        pointerStartRef.current = { x: e.clientX, y: e.clientY }
+      }
+    },
+    [],
+  )
+
+  const handlePointerUp = useCallback(
+    (e: React.PointerEvent<HTMLLIElement>) => {
+      if (e.pointerType !== 'pen' || disabled === true) return
+      const start = pointerStartRef.current
+      if (!start) return
+      const dx = Math.abs(e.clientX - start.x)
+      const dy = Math.abs(e.clientY - start.y)
+      // タップとドラッグを区別するための許容量
+      if (dx > 8 || dy > 8) return
+      penHandledRef.current = true
+      setContextValue()
+    },
+    [disabled, setContextValue],
+  )
+
+  const handleClick = useCallback(() => {
+    if (penHandledRef.current) {
+      penHandledRef.current = false
+      return
+    }
+    if (disabled === true) return
+    setContextValue()
+  }, [disabled, setContextValue])
+
   return (
     // @ts-expect-error TODO: fix mismatch between MenuItemProps and ListItemProps
     <ListItem
@@ -25,7 +61,9 @@ const MenuItem = forwardRef(function MenuItem<
       ref={ref}
       data-key={value}
       onKeyDown={handleKeyDown}
-      onClick={disabled === true ? undefined : setContextValue}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onClick={handleClick}
       tabIndex={-1}
       aria-disabled={disabled}
       role="option"

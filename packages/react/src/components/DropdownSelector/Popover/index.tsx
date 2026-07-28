@@ -1,6 +1,6 @@
 import './index.css'
 
-import { RefObject, useContext, useRef, ReactNode } from 'react'
+import { RefObject, useContext, useEffect, useRef, ReactNode } from 'react'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
 import { usePreventScroll } from './usePreventScroll'
 import { DismissButton, Overlay } from 'react-aria/Overlay'
@@ -53,6 +53,25 @@ export default function Popover(props: PopoverProps) {
 
   const modalBackground = useContext(ModalBackgroundContext)
   usePreventScroll(modalBackground, props.isOpen)
+
+  // iOS Safari は非インタラクティブな要素へのペン入力で click を合成しないため、
+  // click に依存する react-aria の外側判定ではペンで閉じられない。
+  // underlay 側では拾えない: react-aria が modal 時に外側を inert にするので
+  // underlay 自身がイベントを受け取らなくなる。
+  const { isOpen, onClose } = props
+  useEffect(() => {
+    if (!isOpen) return
+    const handlePointerUp = (e: PointerEvent) => {
+      if (e.pointerType !== 'pen') return
+      const popover = finalPopoverRef.current
+      if (popover !== null && e.composedPath().includes(popover)) return
+      onClose()
+    }
+    document.addEventListener('pointerup', handlePointerUp, true)
+    return () => {
+      document.removeEventListener('pointerup', handlePointerUp, true)
+    }
+  }, [isOpen, onClose, finalPopoverRef])
 
   if (!props.isOpen) return null
 
