@@ -66,6 +66,11 @@ export default function DropdownSelector({
     [onChange],
   )
 
+  // Popover が document listener の登録に使うため、識別子を安定させる
+  const handleClose = useCallback(() => {
+    setIsOpen(false)
+  }, [])
+
   const labelId = useId()
   const describedbyId = useId()
 
@@ -146,7 +151,7 @@ export default function DropdownSelector({
       {isOpen && (
         <DropdownPopover
           isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
+          onClose={handleClose}
           triggerRef={triggerRef}
           value={props.value}
           inertWorkaround={props.inertWorkaround}
