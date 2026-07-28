@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>40.5s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>38.4s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -39818,6 +39818,8 @@ const charcoal = createTailwindConfig({
 
 v6 では、`@charcoal-ui/react` のコンポーネントを Design Token 2.0 に対応させました。あわせて、react-sandbox からのコンポーネント移行、React Aria の依存関係の再編、アイコンの SSR 対応などを行っています。
 
+&gt; **非推奨:** `@charcoal-ui/react-sandbox` は v6 から非推奨です。次のメジャーバージョンでパッケージの削除を検討しています。新規に利用せず、既存の実装は `@charcoal-ui/react` へ順次移行してください。
+
 ---
 
 # v5 からの移行チェックリスト
@@ -39827,7 +39829,8 @@ v6 では、`@charcoal-ui/react` のコンポーネントを Design Token 2.0 �
    a. Design Token 2.0の見た目を使用したい範囲に `.ch-token-v2` クラスが有効になるように指定します。
 3. `TagItem` をボタンとして使っている場合は、`component=&quot;button&quot;` を明示します。
 4. `UnstableTextEllipsis` / `UnstablePagination` を stable な export 名へ置き換えます。
-5. peer dependency の解決エラーが出る場合は、`react-aria` と `react-stately` をアプリケーションへ追加します。
+5. `@charcoal-ui/react-sandbox` を利用している場合は、`@charcoal-ui/react` へ順次移行します。
+6. peer dependency の解決エラーが出る場合は、`react-aria` と `react-stately` をアプリケーションへ追加します。
 
 ```diff
 -import { UnstableTextEllipsis, UnstablePagination } from &#39;@charcoal-ui/react&#39;
@@ -40010,6 +40013,10 @@ Design Token 2.0 では、複数の Design Token 1.0 のトークンを 1 つの
 ---
 
 # コンポーネント
+
+## DropdownSelector
+
+iPadOS Safari で Apple Pencil などのペン入力を使用した場合に、DropdownSelector を開けない、選択肢を選べない、または選択肢の外側をタップしても閉じられない問題を修正しました。マウス、タッチ、キーボードでの操作方法に変更はありません。
 
 ## TextEllipsis / Pagination の stable 化（破壊的変更）
 
