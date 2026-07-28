@@ -71,6 +71,33 @@ export default function DropdownSelector({
     setIsOpen(false)
   }, [])
 
+  const handleSelect = useCallback(
+    (v: string) => {
+      onChange(v)
+      setIsOpen(false)
+    },
+    [onChange],
+  )
+
+  const handleTriggerPointerUp = useCallback(
+    (e: React.PointerEvent<HTMLButtonElement>) => {
+      if (e.pointerType !== 'pen') return
+      if (props.disabled === true) return
+      penHandledRef.current = true
+      setIsOpen(true)
+    },
+    [props.disabled],
+  )
+
+  const handleTriggerClick = useCallback(() => {
+    if (penHandledRef.current) {
+      penHandledRef.current = false
+      return
+    }
+    if (props.disabled === true) return
+    setIsOpen(true)
+  }, [props.disabled])
+
   const labelId = useId()
   const describedbyId = useId()
 
@@ -122,20 +149,8 @@ export default function DropdownSelector({
           props.assistiveText !== undefined ? describedbyId : undefined
         }
         disabled={props.disabled}
-        onPointerUp={(e) => {
-          if (e.pointerType !== 'pen') return
-          if (props.disabled === true) return
-          penHandledRef.current = true
-          setIsOpen(true)
-        }}
-        onClick={() => {
-          if (penHandledRef.current) {
-            penHandledRef.current = false
-            return
-          }
-          if (props.disabled === true) return
-          setIsOpen(true)
-        }}
+        onPointerUp={handleTriggerPointerUp}
+        onClick={handleTriggerClick}
         ref={triggerRef}
         type="button"
         data-active={isOpen}
@@ -156,13 +171,7 @@ export default function DropdownSelector({
           value={props.value}
           inertWorkaround={props.inertWorkaround}
         >
-          <MenuList
-            value={props.value}
-            onChange={(v) => {
-              onChange(v)
-              setIsOpen(false)
-            }}
-          >
+          <MenuList value={props.value} onChange={handleSelect}>
             {props.children}
           </MenuList>
         </DropdownPopover>
