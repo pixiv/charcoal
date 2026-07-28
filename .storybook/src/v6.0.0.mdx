@@ -12,10 +12,10 @@ v6 では、`@charcoal-ui/react` のコンポーネントを Design Token 2.0 �
 
 1. `@charcoal-ui/react` と、直接利用している `@charcoal-ui/*` パッケージを v6 に更新します。
 2. Design Token 1.0 の見た目を維持する場合は `@charcoal-ui/theme/css/v1/remap.css`、Design Token 2.0 を使う場合は `@charcoal-ui/theme/css/v2/light.css` と `dark.css` を読み込みます。
-3. `UnstableTextEllipsis` / `UnstablePagination` を stable な export 名へ置き換えます。
-4. `TagItem` をボタンとして使っている場合は、`component="button"` を明示します。
-5. react-sandbox の `Carousel` を使っている場合は、import と一部の props・子要素構造を移行します。
-6. peer dependency の解決エラーが出る場合は、`react-aria` と `react-stately` をアプリケーションへ追加します。
+   a. Design Token 2.0の見た目を使用したい範囲に `.ch-token-v2` クラスが有効になるように指定します。
+3. `TagItem` をボタンとして使っている場合は、`component="button"` を明示します。
+4. `UnstableTextEllipsis` / `UnstablePagination` を stable な export 名へ置き換えます。
+5. peer dependency の解決エラーが出る場合は、`react-aria` と `react-stately` をアプリケーションへ追加します。
 
 ```diff
 -import { UnstableTextEllipsis, UnstablePagination } from '@charcoal-ui/react'
@@ -278,33 +278,7 @@ react-sandbox の Carousel を、styled-components と react-spring に依存し
 +import { Carousel } from '@charcoal-ui/react'
 ```
 
-直接子要素1つを1スライドとして扱います。既存の flex ラッパーは外し、スライド間隔は `gap` prop で指定してください。
-
-```diff
--<Carousel hasGradient scrollAmountCoef={0.75}>
--  <div style={{ display: 'flex', gap: 8 }}>
--    {items.map((item) => <Slide key={item.id} item={item} />)}
--  </div>
--</Carousel>
-+<Carousel hasGradient scrollStep={0.75} gap={8}>
-+  {items.map((item) => <Slide key={item.id} item={item} />)}
-+</Carousel>
-```
-
-### 主な props の変更
-
-| react-sandbox                                     | `@charcoal-ui/react` | 備考                               |
-| ------------------------------------------------- | -------------------- | ---------------------------------- |
-| `scrollAmountCoef`                                | `scrollStep`         | 関数でスクロール量の計算も可能     |
-| `fadeInGradient`                                  | 廃止                 | スクロール可能な側だけ常にフェード |
-| `buttonOffset` / `buttonPadding` / `bottomOffset` | 廃止                 | ボタン配置は CSS で管理            |
-| `centerItems`                                     | 廃止                 | 子要素の寸法と `gap` で調整        |
-| —                                                 | `size`               | `S` / `M`                          |
-| —                                                 | `indicator`          | インジケーターの表示               |
-| —                                                 | `scrollSnap`         | snap の type / align を指定        |
-| —                                                 | `gap`                | number は px、string は CSS 値     |
-
-`onScroll`、`onResize`、`onScrollStateChange`、`defaultScroll`、`hasGradient`、ref の `resetScroll()` は同じシグネチャで利用できます。native smooth scroll へ移行したため、react-spring 版とはイージングや連続操作時の挙動が異なります。
+詳しくは [Carouselのマイグレーションガイド](/docs/react-carousel-migration-guide--docs) を参照してください。
 
 ## TagItem の既定要素変更（破壊的変更）
 
