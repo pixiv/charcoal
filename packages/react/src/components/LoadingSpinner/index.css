@@ -11,7 +11,7 @@
   background-color: var(--charcoal-color-background-default);
 
   &[data-transparent='true'] {
-    background-color: var(--charcoal-color-container-default-a);
+    background-color: transparent;
   }
 }
 

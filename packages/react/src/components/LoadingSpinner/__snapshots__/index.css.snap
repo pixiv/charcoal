@@ -12,7 +12,7 @@
 }
 
 .charcoal-loading-spinner[data-transparent='true'] {
-  background-color: var(--charcoal-color-container-default-a);
+  background-color: transparent;
 }
 
 @keyframes charcoal-loading-spinner-icon-scale-out {
