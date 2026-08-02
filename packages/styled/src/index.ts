@@ -1,5 +1,5 @@
-import { CSSObject, ThemedStyledInterface } from 'styled-components'
-import { CharcoalAbstractTheme } from '@charcoal-ui/theme'
+import type { CSSObject, DefaultTheme } from 'styled-components'
+import type { CharcoalAbstractTheme, CharcoalTheme } from '@charcoal-ui/theme'
 import { ArrayOrSingle, isPresent, noThemeProvider, wrapArray } from './util'
 import { Internal, toCSSObjects } from './internals'
 import createO from './builders/o'
@@ -35,20 +35,29 @@ const nonBlank = <T>(value: T): value is T extends Blank ? never : T =>
  *
  * `theme(o => [...])` の `theme` ユーティリティを構築する
  *
- * @param _styled - DEPRECATED: styled-components の `styled` そのものを渡すとそれを元に型推論ができる。が、型引数を渡す方が型推論が高速になりやすい
+ * @param _styled - DEPRECATED: 実行時には元々使われていない引数。以前は
+ *   styled-components の `styled` を渡すと `T` を型推論できたが、この推論は
+ *   `ThemedStyledInterface` (全 HTML タグ × ThemedStyledFunction) の変性計算と
+ *   インスタンス化を誘発し、呼び出し側リポジトリの型検査を極端に遅くするため
+ *   現在は型レベルでも無視される。`T` は既定で `DefaultTheme`
+ *   (module augmentation 済みの場合) に解決される
  *
  * @example
  *
  * import styled from 'styled-components'
- * const theme = createTheme(styled)
+ * const theme = createTheme(styled) // T = DefaultTheme (引数は無視される)
  *
  * @example
  *
  * const theme = createTheme<DefaultTheme>()
  */
-export function createTheme<T extends CharcoalAbstractTheme>(
-  _styled?: ThemedStyledInterface<T>,
-) {
+export function createTheme<
+  // DefaultTheme が CharcoalAbstractTheme を満たすように augment されていればそれを、
+  // されていなければ charcoal 標準の CharcoalTheme を既定にする
+  T extends CharcoalAbstractTheme = DefaultTheme extends CharcoalAbstractTheme
+    ? DefaultTheme
+    : CharcoalTheme,
+>(_styled?: unknown) {
   type Builder = ReturnType<typeof createO<T>>
 
   // ランタイムの `theme(o => [...])` のインターフェースを構築する
