@@ -1,11 +1,15 @@
-import PQueue from 'p-queue'
+export async function concurrently(tasks: (() => Promise<unknown>)[]) {
+  let nextTaskIndex = 0
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function concurrently(tasks: (() => Promise<any>)[]) {
-  const queue = new PQueue({ concurrency: 3 })
-  for (const task of tasks) {
-    void queue.add(task)
+  async function worker() {
+    while (nextTaskIndex < tasks.length) {
+      const task = tasks[nextTaskIndex]
+      nextTaskIndex += 1
+      await task()
+    }
   }
-  queue.start()
-  return queue.onIdle()
+
+  await Promise.all(
+    Array.from({ length: Math.min(3, tasks.length) }, () => worker()),
+  )
 }
