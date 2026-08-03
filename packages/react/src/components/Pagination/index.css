@@ -43,7 +43,7 @@
   -webkit-transform: translateZ(0);
 
   color: var(--charcoal-color-text-tertiary-default);
-  background-color: var(--charcoal-color-container-default-a);
+  background-color: transparent;
   border-radius: 20px;
   transition:
     0.2s background-color,
