@@ -10,7 +10,7 @@
  * 2. jsdom は PointerEvent を実装しておらず、react-aria の
  *    useInteractOutside が本番と同じ pointerdown + click の経路を通らない。
  */
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import { OverlayProvider } from 'react-aria'
 import { vi } from 'vitest'
 import { userEvent } from 'vitest/browser'
@@ -74,5 +74,26 @@ describe('Modal (outside interaction)', () => {
     })
 
     expect(onClose).not.toHaveBeenCalled()
+  })
+
+  // 自前判定を導入した #472 の原因だった「スクロールバー操作で閉じる」の再発防止。
+  // Chrome のスクロールバー操作は pointerdown / mousedown / mouseup を背景要素に
+  // 発火させるが click は合成しない (実 Chrome + イベント計測で確認済みの列)。
+  // headless Chromium は overlay scrollbar 固定で実スクロールバーを出せないため、
+  // このイベント列を再現して click ベースの外側判定でだけ通ることを担保する
+  it('スクロールバー操作相当のイベント列 (click なし) では閉じない', () => {
+    const onClose = vi.fn()
+    const { background } = renderModal(onClose)
+
+    fireEvent.pointerDown(background, { button: 0 })
+    fireEvent.mouseDown(background, { button: 0 })
+    fireEvent.mouseUp(background, { button: 0 })
+
+    expect(onClose).not.toHaveBeenCalled()
+
+    // 対照: 同じ列に click が続けば閉じる。上の未発火が
+    // 「イベントが判定に届いていないだけ」ではないことの保証
+    fireEvent.click(background, { button: 0 })
+    expect(onClose).toHaveBeenCalledOnce()
   })
 })
