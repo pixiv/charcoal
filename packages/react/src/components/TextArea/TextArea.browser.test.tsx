@@ -207,14 +207,16 @@ describe('TextArea autoHeight', () => {
     const containers = Array.from(
       container.querySelectorAll('.charcoal-text-area-container'),
     ) as HTMLDivElement[]
-    const disabledTextArea = containers[2].querySelector('textarea')
+    const disabledTextArea = containers[2].querySelector(
+      'textarea',
+    ) as HTMLTextAreaElement
     const disabledHeight = containers[2].getBoundingClientRect().height
 
     await vi.waitFor(() => {
       expect(getRows(containers[0])).toBeGreaterThan(1)
       expect(getRows(containers[1])).toBe(getRows(containers[0]))
     })
-    fireEvent.change(disabledTextArea!, { target: { value: longText } })
+    fireEvent.change(disabledTextArea, { target: { value: longText } })
     expect(containers[2].getBoundingClientRect().height).toBe(disabledHeight)
   })
 })
