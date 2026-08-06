@@ -59,6 +59,25 @@ describe('DropdownSelector', () => {
       expect(placeholder).toHaveAttribute('data-placeholder', 'true')
     })
 
+    it('treats an empty value as unselected even when a child uses the reserved value', () => {
+      render(
+        <DropdownSelector
+          label="Label"
+          value=""
+          placeholder="Select an option"
+          onChange={vi.fn()}
+        >
+          <DropdownMenuItem value="">Child label</DropdownMenuItem>
+        </DropdownSelector>,
+      )
+
+      const triggerText = screen
+        .getByRole('button')
+        .querySelector('.charcoal-ui-dropdown-selector-text')
+      expect(triggerText).toHaveAttribute('data-placeholder', 'true')
+      expect(triggerText).toHaveTextContent('Select an option')
+    })
+
     it('shows the placeholder as the first Popover option', () => {
       renderClearable()
 

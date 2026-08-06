@@ -20,9 +20,8 @@ const EMPTY_VALUE = ''
 export type DropdownSelectorProps = {
   label: string
   /**
-   * The selected value. An empty string represents the unselected state and
-   * is reserved for the clearable placeholder; do not use it for a child
-   * `DropdownMenuItem`.
+   * The selected value. An empty string always represents the unselected state
+   * and is reserved; do not use it for a child `DropdownMenuItem`.
    */
   value: string
   disabled?: boolean
@@ -64,8 +63,10 @@ export default function DropdownSelector({
     props.clearable === true && props.placeholder !== undefined
 
   const isPlaceholder = useMemo(
-    () => props.placeholder !== undefined && preview === undefined,
-    [preview, props.placeholder],
+    () =>
+      props.placeholder !== undefined &&
+      (props.value === EMPTY_VALUE || preview === undefined),
+    [preview, props.placeholder, props.value],
   )
 
   const propsArray = getValuesRecursive(props.children)
