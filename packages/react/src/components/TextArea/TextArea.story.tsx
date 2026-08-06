@@ -156,6 +156,34 @@ export const AutoHeightAndDefaultValue: StoryObj<typeof TextArea> = {
   },
 }
 
+export const AutoHeightWithSoftWrap: StoryObj<typeof TextArea> = {
+  render: function Render() {
+    const longText =
+      '改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。'.repeat(
+        3,
+      )
+
+    return (
+      <div style={{ display: 'grid', gridTemplateColumns: '160px 320px', gap: 16 }}>
+        <TextArea
+          autoHeight
+          rows={1}
+          label="狭い幅"
+          defaultValue={longText}
+        />
+        <TextArea
+          autoHeight
+          rows={1}
+          maxRows={4}
+          showCount
+          label="maxRows と showCount"
+          defaultValue={longText}
+        />
+      </div>
+    )
+  },
+}
+
 export const MaxRows: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea maxRows={6} label="label" showCount />
