@@ -4,6 +4,7 @@ import React, { ReactNode, useState, useRef, useMemo, useCallback } from 'react'
 import Icon from '../Icon'
 import FieldLabel from '../FieldLabel'
 import { DropdownPopover } from './DropdownPopover'
+import DropdownMenuItem from './DropdownMenuItem'
 import { findPreviewRecursive } from './utils/findPreviewRecursive'
 import MenuList, { MenuListChildren } from './MenuList'
 import { getValuesRecursive } from './MenuList/internals/getValuesRecursive'
@@ -14,11 +15,25 @@ import { PopoverProps } from './Popover'
 import { useVisuallyHidden } from 'react-aria/VisuallyHidden'
 import { useId } from 'react-aria/useId'
 
+const EMPTY_VALUE = ''
+
 export type DropdownSelectorProps = {
   label: string
+  /**
+   * The selected value. An empty string represents the unselected state and
+   * is reserved for the clearable placeholder; do not use it for a child
+   * `DropdownMenuItem`.
+   */
   value: string
   disabled?: boolean
   placeholder?: string
+  /**
+   * Whether the placeholder is shown as an option for returning to an
+   * unselected state. Only effective when `placeholder` is provided.
+   *
+   * @default false
+   */
+  clearable?: boolean
   showLabel?: boolean
   invalid?: boolean
   assistiveText?: string
@@ -45,6 +60,8 @@ export default function DropdownSelector({
   const penHandledRef = useRef(false)
   const [isOpen, setIsOpen] = useState(false)
   const preview = findPreviewRecursive(props.children, props.value)
+  const hasClearablePlaceholder =
+    props.clearable === true && props.placeholder !== undefined
 
   const isPlaceholder = useMemo(
     () => props.placeholder !== undefined && preview === undefined,
@@ -53,8 +70,10 @@ export default function DropdownSelector({
 
   const propsArray = getValuesRecursive(props.children)
   const hasMatchedValue = useMemo(
-    () => propsArray.some((itemProps) => itemProps.value === props.value),
-    [propsArray, props.value],
+    () =>
+      (hasClearablePlaceholder && props.value === EMPTY_VALUE) ||
+      propsArray.some((itemProps) => itemProps.value === props.value),
+    [hasClearablePlaceholder, propsArray, props.value],
   )
 
   const { visuallyHiddenProps } = useVisuallyHidden()
@@ -127,17 +146,27 @@ export default function DropdownSelector({
           {!hasMatchedValue && (
             <option value={props.value}>{props.value}</option>
           )}
-          {propsArray.map((itemProps) => {
-            return (
-              <option
-                key={itemProps.value}
-                value={itemProps.value}
-                disabled={itemProps.disabled}
-              >
-                {itemProps.value}
-              </option>
+          {hasClearablePlaceholder && (
+            <option value={EMPTY_VALUE}>{props.placeholder}</option>
+          )}
+          {propsArray
+            .filter(
+              (itemProps) =>
+                !(
+                  hasClearablePlaceholder && itemProps.value === EMPTY_VALUE
+                ),
             )
-          })}
+            .map((itemProps) => {
+              return (
+                <option
+                  key={itemProps.value}
+                  value={itemProps.value}
+                  disabled={itemProps.disabled}
+                >
+                  {itemProps.value}
+                </option>
+              )
+            })}
         </select>
       </div>
       {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
@@ -171,7 +200,17 @@ export default function DropdownSelector({
           value={props.value}
           inertWorkaround={props.inertWorkaround}
         >
-          <MenuList value={props.value} onChange={handleSelect}>
+          <MenuList
+            value={props.value}
+            onChange={handleSelect}
+            leadingItem={
+              hasClearablePlaceholder ? (
+                <DropdownMenuItem value={EMPTY_VALUE}>
+                  {props.placeholder}
+                </DropdownMenuItem>
+              ) : undefined
+            }
+          >
             {props.children}
           </MenuList>
         </DropdownPopover>
