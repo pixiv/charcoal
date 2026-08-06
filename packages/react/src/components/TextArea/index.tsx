@@ -33,7 +33,8 @@ const measureTextAreaRows = (textarea: HTMLTextAreaElement) => {
     const style = getComputedStyle(textarea)
     const lineHeight = Number.parseFloat(style.lineHeight)
     const paddingBlock =
-      Number.parseFloat(style.paddingTop) + Number.parseFloat(style.paddingBottom)
+      Number.parseFloat(style.paddingTop) +
+      Number.parseFloat(style.paddingBottom)
     const contentHeight = textarea.scrollHeight - paddingBlock
 
     // scrollHeight is rounded to whole pixels while line-height can be a

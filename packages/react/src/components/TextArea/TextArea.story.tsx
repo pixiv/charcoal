@@ -164,13 +164,10 @@ export const AutoHeightWithSoftWrap: StoryObj<typeof TextArea> = {
       )
 
     return (
-      <div style={{ display: 'grid', gridTemplateColumns: '160px 320px', gap: 16 }}>
-        <TextArea
-          autoHeight
-          rows={1}
-          label="狭い幅"
-          defaultValue={longText}
-        />
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '160px 320px', gap: 16 }}
+      >
+        <TextArea autoHeight rows={1} label="狭い幅" defaultValue={longText} />
         <TextArea
           autoHeight
           rows={1}

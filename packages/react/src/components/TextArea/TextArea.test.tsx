@@ -31,9 +31,11 @@ describe('TextArea component', () => {
   })
 
   it('uses the measured row count while respecting rows and maxRows', () => {
-    vi.spyOn(HTMLTextAreaElement.prototype, 'scrollHeight', 'get').mockReturnValue(
-      104,
-    )
+    vi.spyOn(
+      HTMLTextAreaElement.prototype,
+      'scrollHeight',
+      'get',
+    ).mockReturnValue(104)
 
     const { container, rerender } = render(
       <TextArea autoHeight rows={2} defaultValue="long value" />,
@@ -61,12 +63,14 @@ describe('TextArea component', () => {
 
   it('restores the textarea inline overflow after measuring its height', () => {
     let overflowYWhileMeasuring: string | undefined
-    vi.spyOn(HTMLTextAreaElement.prototype, 'scrollHeight', 'get').mockImplementation(
-      function (this: HTMLTextAreaElement) {
-        overflowYWhileMeasuring = this.style.overflowY
-        return 104
-      },
-    )
+    vi.spyOn(
+      HTMLTextAreaElement.prototype,
+      'scrollHeight',
+      'get',
+    ).mockImplementation(function (this: HTMLTextAreaElement) {
+      overflowYWhileMeasuring = this.style.overflowY
+      return 104
+    })
 
     render(
       <TextArea
@@ -83,6 +87,8 @@ describe('TextArea component', () => {
   it('does not create a ResizeObserver when it is unavailable', () => {
     vi.stubGlobal('ResizeObserver', undefined)
 
-    expect(() => render(<TextArea autoHeight defaultValue="value" />)).not.toThrow()
+    expect(() =>
+      render(<TextArea autoHeight defaultValue="value" />),
+    ).not.toThrow()
   })
 })

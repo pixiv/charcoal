@@ -5,9 +5,7 @@ import TextArea, { type TextAreaImperativeHandle } from '.'
 const longText = '折り返しを確認するための長いテキストです。'.repeat(12)
 
 function getRows(container: HTMLElement) {
-  return Number(
-    container.style.getPropertyValue('--charcoal-text-area-rows'),
-  )
+  return Number(container.style.getPropertyValue('--charcoal-text-area-rows'))
 }
 
 describe('TextArea autoHeight', () => {
@@ -73,7 +71,9 @@ describe('TextArea autoHeight', () => {
     ) as HTMLDivElement
 
     fireEvent.click(getByRole('button', { name: 'long' }))
-    await vi.waitFor(() => expect(getRows(controlledContainer)).toBeGreaterThan(1))
+    await vi.waitFor(() =>
+      expect(getRows(controlledContainer)).toBeGreaterThan(1),
+    )
     fireEvent.click(getByRole('button', { name: 'short' }))
     await vi.waitFor(() => expect(getRows(controlledContainer)).toBe(1))
 
@@ -129,11 +129,15 @@ describe('TextArea autoHeight', () => {
     ) as HTMLDivElement
 
     fireEvent.click(getByRole('button', { name: 'long' }))
-    await vi.waitFor(() => expect(getRows(textAreaContainer)).toBeGreaterThan(1))
+    await vi.waitFor(() =>
+      expect(getRows(textAreaContainer)).toBeGreaterThan(1),
+    )
     fireEvent.click(getByRole('button', { name: 'short' }))
     await vi.waitFor(() => expect(getRows(textAreaContainer)).toBe(1))
     fireEvent.click(getByRole('button', { name: 'sync' }))
-    await vi.waitFor(() => expect(getRows(textAreaContainer)).toBeGreaterThan(1))
+    await vi.waitFor(() =>
+      expect(getRows(textAreaContainer)).toBeGreaterThan(1),
+    )
   })
 
   it('recalculates soft wraps when the container width changes', async () => {
@@ -144,7 +148,12 @@ describe('TextArea autoHeight', () => {
           <button onClick={() => setWidth(120)}>narrow</button>
           <button onClick={() => setWidth(320)}>wide</button>
           <div style={{ width }}>
-            <TextArea autoHeight rows={1} label="label" defaultValue={longText} />
+            <TextArea
+              autoHeight
+              rows={1}
+              label="label"
+              defaultValue={longText}
+            />
           </div>
         </>
       )
@@ -160,7 +169,9 @@ describe('TextArea autoHeight', () => {
       fireEvent.click(getByRole('button', { name: 'narrow' }))
       await new Promise(requestAnimationFrame)
     })
-    await vi.waitFor(() => expect(getRows(textAreaContainer)).toBeGreaterThan(wideRows))
+    await vi.waitFor(() =>
+      expect(getRows(textAreaContainer)).toBeGreaterThan(wideRows),
+    )
     await act(async () => {
       fireEvent.click(getByRole('button', { name: 'wide' }))
       await new Promise(requestAnimationFrame)
@@ -172,7 +183,12 @@ describe('TextArea autoHeight', () => {
     const { container } = render(
       <>
         <div style={{ width: 160 }}>
-          <TextArea autoHeight rows={1} label="without count" defaultValue={longText} />
+          <TextArea
+            autoHeight
+            rows={1}
+            label="without count"
+            defaultValue={longText}
+          />
         </div>
         <div style={{ width: 160 }}>
           <TextArea
