@@ -81,7 +81,8 @@ describe('TextArea component', () => {
     )
 
     expect(overflowYWhileMeasuring).toBe('hidden')
-    expect(screen.getByRole('textbox')).toHaveStyle({ overflowY: 'scroll' })
+    const textArea = screen.getByRole('textbox') as HTMLTextAreaElement
+    expect(textArea.style.overflowY).toBe('scroll')
   })
 
   it('does not create a ResizeObserver when it is unavailable', () => {
