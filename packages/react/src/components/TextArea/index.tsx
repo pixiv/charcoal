@@ -19,12 +19,16 @@ import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
 
 const measureTextAreaRows = (textarea: HTMLTextAreaElement) => {
   const previousHeight = textarea.style.height
+  const previousOverflowY = textarea.style.overflowY
 
   try {
     // A fixed height prevents scrollHeight from shrinking with the content.
     // Reset it synchronously so that soft-wrapped lines are measured as laid
     // out by the browser, rather than inferred from the textarea value.
     textarea.style.height = '0px'
+    // Avoid a non-overlay scrollbar reducing the available line width only
+    // while the temporary height is applied.
+    textarea.style.overflowY = 'hidden'
 
     const style = getComputedStyle(textarea)
     const lineHeight = Number.parseFloat(style.lineHeight)
@@ -37,6 +41,7 @@ const measureTextAreaRows = (textarea: HTMLTextAreaElement) => {
     return Math.max(1, Math.round(contentHeight / lineHeight))
   } finally {
     textarea.style.height = previousHeight
+    textarea.style.overflowY = previousOverflowY
   }
 }
 
@@ -218,7 +223,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       if (
         !isEnableAutoHeight ||
         container === null ||
-        !('ResizeObserver' in window)
+        typeof ResizeObserver === 'undefined'
       ) {
         return
       }

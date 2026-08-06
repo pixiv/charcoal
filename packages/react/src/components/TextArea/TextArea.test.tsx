@@ -14,6 +14,7 @@ describe('TextArea component', () => {
 
   afterEach(() => {
     vi.restoreAllMocks()
+    vi.unstubAllGlobals()
   })
 
   it.each`
@@ -56,5 +57,32 @@ describe('TextArea component', () => {
     expect(
       textAreaContainer.style.getPropertyValue('--charcoal-text-area-rows'),
     ).toBe('3')
+  })
+
+  it('restores the textarea inline overflow after measuring its height', () => {
+    let overflowYWhileMeasuring: string | undefined
+    vi.spyOn(HTMLTextAreaElement.prototype, 'scrollHeight', 'get').mockImplementation(
+      function (this: HTMLTextAreaElement) {
+        overflowYWhileMeasuring = this.style.overflowY
+        return 104
+      },
+    )
+
+    render(
+      <TextArea
+        autoHeight
+        defaultValue="long value"
+        style={{ overflowY: 'scroll' }}
+      />,
+    )
+
+    expect(overflowYWhileMeasuring).toBe('hidden')
+    expect(screen.getByRole('textbox')).toHaveStyle({ overflowY: 'scroll' })
+  })
+
+  it('does not create a ResizeObserver when it is unavailable', () => {
+    vi.stubGlobal('ResizeObserver', undefined)
+
+    expect(() => render(<TextArea autoHeight defaultValue="value" />)).not.toThrow()
   })
 })
