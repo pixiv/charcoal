@@ -2,7 +2,25 @@ import { action } from 'storybook/actions'
 import Clickable from '../Clickable'
 import TextArea, { type TextAreaImperativeHandle } from '.'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import { useCallback, useRef, useState } from 'react'
+import { type ReactNode, useCallback, useRef, useState } from 'react'
+
+const autoHeightStoryParameters = {
+  layout: 'padded',
+} as const
+
+function AutoHeightStoryLayout({ children }: { children: ReactNode }) {
+  return (
+    <div
+      style={{
+        display: 'grid',
+        minHeight: 'calc(100vh - 32px)',
+        placeItems: 'center',
+      }}
+    >
+      <div style={{ width: '100%', maxWidth: 640 }}>{children}</div>
+    </div>
+  )
+}
 
 export default {
   title: 'react/TextArea',
@@ -130,30 +148,43 @@ export const DefaultValue: StoryObj<typeof TextArea> = {
 
 export const AutoHeight: StoryObj<typeof TextArea> = {
   render: function Render() {
-    return <TextArea autoHeight label="Label" />
+    return (
+      <AutoHeightStoryLayout>
+        <TextArea autoHeight label="Label" />
+      </AutoHeightStoryLayout>
+    )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const AutoHeightAndRows: StoryObj<typeof TextArea> = {
   render: function Render() {
-    return <TextArea rows={3} autoHeight label="label" />
+    return (
+      <AutoHeightStoryLayout>
+        <TextArea rows={3} autoHeight label="label" />
+      </AutoHeightStoryLayout>
+    )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const AutoHeightAndDefaultValue: StoryObj<typeof TextArea> = {
   render: function Render() {
     return (
-      <TextArea
-        rows={3}
-        autoHeight
-        label="label"
-        showCount
-        defaultValue={
-          'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
-        }
-      />
+      <AutoHeightStoryLayout>
+        <TextArea
+          rows={3}
+          autoHeight
+          label="label"
+          showCount
+          defaultValue={
+            'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
+          }
+        />
+      </AutoHeightStoryLayout>
     )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const AutoHeightWithSoftWrap: StoryObj<typeof TextArea> = {
@@ -164,49 +195,74 @@ export const AutoHeightWithSoftWrap: StoryObj<typeof TextArea> = {
       )
 
     return (
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '160px 320px', gap: 16 }}
-      >
-        <TextArea autoHeight rows={1} label="狭い幅" defaultValue={longText} />
-        <TextArea
-          autoHeight
-          rows={1}
-          maxRows={4}
-          showCount
-          label="maxRows と showCount"
-          defaultValue={longText}
-        />
-      </div>
+      <AutoHeightStoryLayout>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '160px 320px',
+            gap: 16,
+          }}
+        >
+          <TextArea
+            autoHeight
+            rows={1}
+            label="狭い幅"
+            defaultValue={longText}
+          />
+          <TextArea
+            autoHeight
+            rows={1}
+            maxRows={4}
+            showCount
+            label="maxRows と showCount"
+            defaultValue={longText}
+          />
+        </div>
+      </AutoHeightStoryLayout>
     )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const MaxRows: StoryObj<typeof TextArea> = {
   render: function Render() {
-    return <TextArea maxRows={6} label="label" showCount />
+    return (
+      <AutoHeightStoryLayout>
+        <TextArea maxRows={6} label="label" showCount />
+      </AutoHeightStoryLayout>
+    )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const MaxRowsAndRows: StoryObj<typeof TextArea> = {
   render: function Render() {
-    return <TextArea rows={3} maxRows={6} label="label" showCount />
+    return (
+      <AutoHeightStoryLayout>
+        <TextArea rows={3} maxRows={6} label="label" showCount />
+      </AutoHeightStoryLayout>
+    )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const MaxRowsOverInitialRow: StoryObj<typeof TextArea> = {
   render: function Render() {
     return (
-      <TextArea
-        rows={3}
-        maxRows={6}
-        label="label"
-        showCount
-        defaultValue={
-          'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
-        }
-      />
+      <AutoHeightStoryLayout>
+        <TextArea
+          rows={3}
+          maxRows={6}
+          label="label"
+          showCount
+          defaultValue={
+            'デフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容\nデフォルトの入力内容'
+          }
+        />
+      </AutoHeightStoryLayout>
     )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
@@ -218,7 +274,7 @@ export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
       )
     }, [])
     return (
-      <>
+      <AutoHeightStoryLayout>
         <button
           onClick={() => {
             handleClick()
@@ -227,9 +283,10 @@ export const MaxRowWorkingChangingValue: StoryObj<typeof TextArea> = {
           insert value
         </button>
         <TextArea rows={1} autoHeight label="label" value={value} showCount />
-      </>
+      </AutoHeightStoryLayout>
     )
   },
+  parameters: autoHeightStoryParameters,
 }
 
 export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
@@ -241,7 +298,7 @@ export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
       )
     }, [])
     return (
-      <>
+      <AutoHeightStoryLayout>
         <button
           onClick={() => {
             handleClick()
@@ -256,7 +313,8 @@ export const MaxRowWorkingChangingValueInRef: StoryObj<typeof TextArea> = {
           autoHeight
           imperativeRef={imperativeRef}
         />
-      </>
+      </AutoHeightStoryLayout>
     )
   },
+  parameters: autoHeightStoryParameters,
 }
