@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { render, fireEvent, act, cleanup } from '@testing-library/react'
 import { OverlayProvider } from 'react-aria'
 import { vi, describe, it, expect, afterEach } from 'vitest'
-import Modal from '.'
+import Modal, { BottomSheetAnimation } from '.'
 import { MODAL_TRANSITION_DURATION_MS } from './useTransitionPresence'
 
 const MOBILE_WIDTH = 500
@@ -35,7 +35,13 @@ function getDialog() {
   return document.querySelector('.charcoal-modal-dialog')
 }
 
-function TestApp({ defaultOpen = false }: { defaultOpen?: boolean }) {
+function TestApp({
+  defaultOpen = false,
+  bottomSheetAnimation,
+}: {
+  defaultOpen?: boolean
+  bottomSheetAnimation?: BottomSheetAnimation
+}) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
   return (
     <OverlayProvider>
@@ -50,6 +56,7 @@ function TestApp({ defaultOpen = false }: { defaultOpen?: boolean }) {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         bottomSheet
+        bottomSheetAnimation={bottomSheetAnimation}
       >
         <div>modal content</div>
       </Modal>
@@ -57,8 +64,19 @@ function TestApp({ defaultOpen = false }: { defaultOpen?: boolean }) {
   )
 }
 
-function renderModal({ defaultOpen = false } = {}) {
-  const result = render(<TestApp defaultOpen={defaultOpen} />)
+function renderModal({
+  defaultOpen = false,
+  bottomSheetAnimation,
+}: {
+  defaultOpen?: boolean
+  bottomSheetAnimation?: BottomSheetAnimation
+} = {}) {
+  const result = render(
+    <TestApp
+      defaultOpen={defaultOpen}
+      bottomSheetAnimation={bottomSheetAnimation}
+    />,
+  )
   const open = () =>
     fireEvent.click(result.getByTestId('open', { exact: true }))
   const close = () =>
@@ -84,6 +102,23 @@ describe('Modal (bottom sheet transition)', () => {
     expect(getBackground()).not.toHaveAttribute('data-animation')
 
     close()
+    expect(getDialog()).not.toBeInTheDocument()
+  })
+
+  it('desktop: animates when bottomSheetAnimation is all', () => {
+    setWindowWidth(DESKTOP_WIDTH)
+    const { open, close } = renderModal({ bottomSheetAnimation: 'all' })
+
+    open()
+    expect(getBackground()).toHaveAttribute('data-animation', 'entering')
+
+    fireTransitionEnd(getDialog() as Element, 'transform')
+    expect(getBackground()).toHaveAttribute('data-animation', 'entered')
+
+    close()
+    expect(getBackground()).toHaveAttribute('data-animation', 'exiting')
+
+    fireTransitionEnd(getDialog() as Element, 'transform')
     expect(getDialog()).not.toBeInTheDocument()
   })
 
