@@ -11,6 +11,7 @@ import {
   useRef,
   useState,
   useSyncExternalStore,
+  type CSSProperties,
   type ReactNode,
 } from 'react'
 import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
@@ -93,6 +94,8 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
+  // スライド間隔。number は px、string は CSS 値をそのまま使う。未指定は間隔なし。
+  gap?: number | string
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
   children: ReactNode
 }> &
@@ -176,6 +179,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     loop = false,
     centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
+    gap,
     children,
     ...props
   }: CarouselProps,
@@ -296,10 +300,22 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const { focusProps: rootFocusProps, isFocusVisible: rootFocusVisible } =
     useFocusRing({ within: true })
 
+  // gap 宣言自体は index.css 側に置き、ここでは CSS 変数の値だけを注入する。
+  const gapStyle = useMemo(
+    () =>
+      ({
+        ...(gap != null && {
+          '--charcoal-carousel-gap': typeof gap === 'number' ? `${gap}px` : gap,
+        }),
+      }) satisfies CSSProperties,
+    [gap],
+  )
+
   return (
     <div
       {...rootFocusProps}
       className={className}
+      style={gapStyle}
       data-size={size}
       data-has-gradient={hasGradient}
       data-full-width={fullWidth}

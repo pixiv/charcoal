@@ -31,10 +31,10 @@ jobs:
           path: __image_snapshots__
           key: image-snapshots-${{ steps.commit-hash.outputs.hash }}
       - name: setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: '11.1.3'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         with:
           node-version-file: '.node-version'
@@ -78,11 +78,11 @@ jobs:
         uses: actions/checkout@v6
 
       - name: setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: '11.1.3'
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version-file: '.node-version'
           cache: pnpm
@@ -102,7 +102,7 @@ jobs:
           pnpm build
           pnpm storybook:build
       - name: Check label
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         id: label-checking
         env:
           SNAPSHOT_UPDATE_LABEL: image snapshots update
@@ -126,7 +126,7 @@ jobs:
             console.log(`Not fount "${process.env.SNAPSHOT_UPDATE_LABEL}" label. Compare with image snapshots of main branch.`)
             return 'false'
       - name: Load base branch image snapshots
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         if: steps.label-checking.outputs.result != 'true'
         with:
           name: base__image-snapshots__

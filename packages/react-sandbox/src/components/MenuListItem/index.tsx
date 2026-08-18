@@ -126,8 +126,7 @@ const SecondaryText = styled.div`
 `
 
 interface MenuListLinkItemProps
-  extends MenuListItemBaseData,
-    Omit<LinkProps, 'to' | 'onClick' | 'children'> {
+  extends MenuListItemBaseData, Omit<LinkProps, 'to' | 'onClick' | 'children'> {
   link: string
   children?: React.ReactNode
 }

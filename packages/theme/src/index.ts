@@ -1,3 +1,3 @@
-export * from './theme'
-export * from './abstract-theme'
-export * from './default'
+export * from './theme.ts'
+export * from './abstract-theme.ts'
+export * from './default.ts'

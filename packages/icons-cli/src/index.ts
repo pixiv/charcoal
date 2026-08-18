@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-import yargs from 'yargs'
-import { FigmaFileClient } from './figma/FigmaFileClient'
-import { GithubClient } from './GitHubClient'
-import { GitlabClient } from './GitlabClient'
-import { DEFAULT_CURRENT_COLOR_TARGET } from './svg/optimizeSvg'
-import { optimizeSvgInDirectory } from './svg/optimizeSvgInDirectory'
-import { generateIconSource } from './generateSource'
-import { mustBeDefined } from './utils'
+import yargs from 'yargs/yargs'
+import { FigmaFileClient } from './figma/FigmaFileClient.ts'
+import { GithubClient } from './GitHubClient.ts'
+import { GitlabClient } from './GitlabClient.ts'
+import { DEFAULT_CURRENT_COLOR_TARGET } from './svg/optimizeSvg.ts'
+import { optimizeSvgInDirectory } from './svg/optimizeSvgInDirectory.ts'
+import { generateIconSource } from './generateSource.ts'
+import { mustBeDefined } from './utils.ts'
 
 /**
  * Figma
@@ -32,7 +32,7 @@ const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER
 const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME
 const GITHUB_DEFAULT_BRANCH = process.env.GITHUB_DEFAULT_BRANCH
 
-void yargs
+void yargs(process.argv.slice(2))
   .scriptName('icons-cli')
   .command(
     'figma:export',

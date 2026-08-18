@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/theme",
-  "version": "6.0.0-rc.6",
+  "version": "6.0.1",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -39,7 +39,7 @@
     "*.css"
   ],
   "scripts": {
-    "build": "tsdown --config-loader unrun",
+    "build": "tsdown",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist",
     "test": "vitest run --passWithNoTests",

@@ -23,7 +23,7 @@ describe('observeResize', () => {
 
   it('単一の observer を共有し、対象のサイズ変化で cb を呼ぶ', () => {
     const instances: MockRO[] = []
-    globalThis.ResizeObserver = vi.fn((cb: ResizeObserverCallback) => {
+    globalThis.ResizeObserver = vi.fn(function (cb: ResizeObserverCallback) {
       const inst: MockRO = {
         cb,
         observe: vi.fn(),

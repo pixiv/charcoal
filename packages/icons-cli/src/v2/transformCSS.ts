@@ -1,12 +1,14 @@
-import { mustBeDefined } from '../utils'
+import { mustBeDefined } from '../utils.ts'
 import { glob, readFile, writeFile } from 'fs/promises'
-import { ensureDir } from 'fs-extra'
+import fsExtra from 'fs-extra'
 import path from 'path'
 import {
   createCssClassNameSegment,
   createSvgDataUri,
   serializeJavaScriptValue,
-} from '../codegen'
+} from '../codegen.ts'
+
+const { ensureDir } = fsExtra
 
 const previewStyles = `:root {
   font-size: 24px;

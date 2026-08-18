@@ -1,32 +1,30 @@
 {
   "name": "@charcoal-ui/icons-cli",
-  "version": "6.0.0-rc.6",
+  "version": "6.0.1",
   "license": "Apache-2.0",
-  "type": "commonjs",
+  "type": "module",
   "bin": "./dist/index.js",
   "scripts": {
     "build": "tsdown",
-    "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 VERSION=v2 pnpm tsx src/v2/transformReact.ts",
-    "build:react-v1": "pnpm svgr ../icon-files/svg/ --out-dir ../icons/src/react/v1 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v1 VERSION=v1 pnpm tsx src/v2/transformReact.ts",
-    "build:css": "VERSION=v2 SOURCE_ROOT_DIR=../../../icon-files/v2/svg/ OUTPUT_ROOT_DIR=../icons/css/v2 pnpm tsx src/v2/transformCSS.ts",
-    "build:css-v1": "VERSION=v1 SOURCE_ROOT_DIR=../../../icon-files/svg/ OUTPUT_ROOT_DIR=../icons/css/v1 pnpm tsx src/v2/transformCSS.ts",
-    "build:uri": "SOURCE_ROOT_DIR=../../../icon-files/v2/svg/ OUTPUT_ROOT_DIR=../icon-files/v2/datauri pnpm tsx src/v2/transformDataUri.ts",
-    "build:uri-v1": "SOURCE_ROOT_DIR=../../../icon-files/svg/ OUTPUT_ROOT_DIR=../icon-files/v1/datauri pnpm tsx src/v2/transformDataUri.ts",
+    "build:react": "pnpm svgr ../icon-files/v2/svg/ --out-dir ../icons/src/react/v2 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v2 VERSION=v2 node src/v2/transformReact.ts",
+    "build:react-v1": "pnpm svgr ../icon-files/svg/ --out-dir ../icons/src/react/v1 --typescript --ref --no-index --no-svgo &&  OUTPUT_ROOT_DIR=../icons/src/react/v1 VERSION=v1 node src/v2/transformReact.ts",
+    "build:css": "VERSION=v2 SOURCE_ROOT_DIR=../../../icon-files/v2/svg/ OUTPUT_ROOT_DIR=../icons/css/v2 node src/v2/transformCSS.ts",
+    "build:css-v1": "VERSION=v1 SOURCE_ROOT_DIR=../../../icon-files/svg/ OUTPUT_ROOT_DIR=../icons/css/v1 node src/v2/transformCSS.ts",
+    "build:uri": "SOURCE_ROOT_DIR=../../../icon-files/v2/svg/ OUTPUT_ROOT_DIR=../icon-files/v2/datauri node src/v2/transformDataUri.ts",
+    "build:uri-v1": "SOURCE_ROOT_DIR=../../../icon-files/svg/ OUTPUT_ROOT_DIR=../icon-files/v1/datauri node src/v2/transformDataUri.ts",
     "test": "vitest run --config vitest.config.ts",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "cli:icons": "./dist/index.js",
-    "icons": "tsx src/index.ts"
+    "icons": "node src/index.ts"
   },
   "devDependencies": {
     "@gitbeaker/core": "^25.6.0",
     "@svgr/cli": "^8.1.0",
     "@types/fs-extra": "^9.0.13",
     "@types/jsdom": "^16.2.14",
-    "@types/parse5": "^6.0.3",
     "@types/svgo": "^1.3.3",
-    "@types/yargs": "^17.0.8",
-    "tsx": "^4.19.1"
+    "@types/yargs": "^17.0.8"
   },
   "dependencies": {
     "@gitbeaker/node": "^25.6.0",
@@ -34,7 +32,6 @@
     "camelcase": "^6.3.0",
     "figma-js": "^1.14.0",
     "fs-extra": "^10.0.0",
-    "got": "^11.8.3",
     "jsdom": "^24.1.0",
     "p-queue": "^6.6.2",
     "path-to-regexp": "^6.2.0",

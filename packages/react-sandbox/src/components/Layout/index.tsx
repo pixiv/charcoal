@@ -179,7 +179,7 @@ const StyledLayoutItem = styled.div<StyledLayoutItemProps>`
   min-width: 0;
 
   @media ${(p) =>
-      p.withLeft ? p.theme.breakpoint.screen4 : p.theme.breakpoint.screen3} {
+    p.withLeft ? p.theme.breakpoint.screen4 : p.theme.breakpoint.screen3} {
     ${(p) =>
       p.span > 2 &&
       css`
@@ -356,19 +356,19 @@ interface StyledCancelLayoutItemBodyPaddingProps {
 
 export const StyledCancelLayoutItemBodyPadding = styled.div<StyledCancelLayoutItemBodyPaddingProps>`
   margin: 0 -${(p) =>
-      p.wide
-        ? LAYOUT_ITEM_BODY_PADDING.wide.x
-        : LAYOUT_ITEM_BODY_PADDING.default.x}px;
+    p.wide
+      ? LAYOUT_ITEM_BODY_PADDING.wide.x
+      : LAYOUT_ITEM_BODY_PADDING.default.x}px;
   margin-top: -${({ cancelTop = false, wide }) =>
-      !cancelTop
-        ? 0
-        : wide
-          ? LAYOUT_ITEM_BODY_PADDING.wide.y
-          : LAYOUT_ITEM_BODY_PADDING.default.y}px;
+    !cancelTop
+      ? 0
+      : wide
+        ? LAYOUT_ITEM_BODY_PADDING.wide.y
+        : LAYOUT_ITEM_BODY_PADDING.default.y}px;
 
   @media ${({ theme }) => maxWidth(theme.breakpoint.screen1)} {
     margin: 0 -${LAYOUT_ITEM_BODY_PADDING.column1.x}px;
     margin-top: -${({ cancelTop = false }) =>
-        !cancelTop ? 0 : LAYOUT_ITEM_BODY_PADDING.column1.x}px;
+      !cancelTop ? 0 : LAYOUT_ITEM_BODY_PADDING.column1.x}px;
   }
 `

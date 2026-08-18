@@ -24,7 +24,8 @@ export interface OwnProps {
 }
 
 export interface IconProps
-  extends OwnProps,
+  extends
+    OwnProps,
     React.PropsWithoutRef<
       Omit<Props, 'class' | 'unsafe-non-guideline-scale' | 'fixed-size' | 'css'>
     > {}

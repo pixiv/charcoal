@@ -1,7 +1,7 @@
 import path from 'path'
 import { glob } from 'node:fs/promises'
 import fs from 'fs-extra'
-import { serializeJavaScriptValue } from './codegen'
+import { serializeJavaScriptValue } from './codegen.ts'
 
 export const generateIconSvgEmbeddedSource = (svgString: string) => {
   const str = svgString.replace(/\r?\n/g, '')

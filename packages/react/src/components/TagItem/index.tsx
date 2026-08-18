@@ -61,6 +61,7 @@ const TagItem = forwardRef<HTMLAnchorElement, TagItemProps>(
 
     const { linkProps } = useLink(
       {
+        ...props,
         isDisabled: disabled,
         elementType: typeof Component === 'string' ? Component : 'a',
       },

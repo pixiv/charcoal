@@ -32,6 +32,10 @@
     box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
   }
 
+  &:has([data-no-bottom-padding='true']) {
+    height: calc(22px * (var(--charcoal-text-area-rows) + 1) + 18px);
+  }
+
   &:not([aria-disabled='true']):hover {
     background-color: var(--charcoal-color-container-secondary-hover-a);
   }
@@ -50,13 +54,27 @@
   box-sizing: border-box;
 
   /* Prevent zooming for iOS Safari */
+  --charcoal-textarea-safari-prevent-zoom-scale: 0.875;
+  --charcoal-textarea-line-height: calc(
+    22px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+  --charcoal-textarea-padding-y: calc(
+    8px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+  --charcoal-textarea-padding-x: calc(
+    9px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+
   transform-origin: top left;
-  transform: scale(0.875);
-  width: calc(100% / 0.875);
-  font-size: calc(14px / 0.875);
-  line-height: calc(22px / 0.875);
-  padding: calc(9px / 0.875) calc(8px / 0.875);
-  height: calc(22px / 0.875 * var(--charcoal-text-area-rows) + 20px);
+  transform: scale(var(--charcoal-textarea-safari-prevent-zoom-scale));
+  width: calc(100% / var(--charcoal-textarea-safari-prevent-zoom-scale));
+  font-size: calc(14px / var(--charcoal-textarea-safari-prevent-zoom-scale));
+  line-height: var(--charcoal-textarea-line-height);
+  padding: var(--charcoal-textarea-padding-y) var(--charcoal-textarea-padding-x);
+  height: calc(
+    var(--charcoal-textarea-line-height) * var(--charcoal-text-area-rows) +
+      var(--charcoal-textarea-padding-y) * 2
+  );
 
   /* Display box-shadow for iOS Safari */
   appearance: none;
@@ -64,8 +82,12 @@
   background: none;
 
   &[data-no-bottom-padding='true'] {
-    padding: calc(9px / 0.875) calc(8px / 0.875) 0;
-    height: calc(22px / 0.875 * (var(--charcoal-text-area-rows) - 1) + 9px);
+    padding: var(--charcoal-textarea-padding-y)
+      var(--charcoal-textarea-padding-x) 0;
+    height: calc(
+      var(--charcoal-textarea-line-height) * var(--charcoal-text-area-rows) +
+        var(--charcoal-textarea-padding-y)
+    );
   }
 
   &::placeholder {

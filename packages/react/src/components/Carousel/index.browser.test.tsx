@@ -8,7 +8,7 @@
  * document.elementFromPoint のヒットテストで検証する。
  * （pointer-events / 擬似要素のヒットテストは jsdom では再現できない）
  */
-import { userEvent } from '@vitest/browser/context'
+import { userEvent } from 'vitest/browser'
 import { render } from '@testing-library/react'
 import Carousel from '.'
 

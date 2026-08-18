@@ -2,7 +2,7 @@
   "name": "@charcoal-ui/token-cli",
   "bin": "./dist/index.js",
   "type": "commonjs",
-  "version": "6.0.0-rc.6",
+  "version": "6.0.1",
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsdown",
@@ -18,8 +18,7 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/yargs": "^17.0.32",
-    "style-dictionary": "^3.9.2",
-    "typescript": "^5.4.2"
+    "style-dictionary": "^3.9.2"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",

@@ -7,7 +7,7 @@ import {
   SPACING,
   BORDER_RADIUS,
 } from '@charcoal-ui/foundation'
-import { CharcoalAbstractTheme } from './abstract-theme'
+import type { CharcoalAbstractTheme } from './abstract-theme.ts'
 
 export interface CharcoalTheme extends CharcoalAbstractTheme {
   readonly color: ThemeColor

@@ -9,6 +9,7 @@ export default defineConfig([
       '**/__snapshots__/',
       '**/.yarn/',
       'public/',
+      'dev/',
       'storybook-static/',
       'coverage/',
       '**/.next/',
@@ -28,6 +29,11 @@ export default defineConfig([
   },
   ...pixiv.configs.react,
   {
+    settings: {
+      react: { version: '18' },
+    },
+  },
+  {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
       'no-console': 'warn',
@@ -37,7 +43,7 @@ export default defineConfig([
       // @pixiv/eslint-config migration
       '@typescript-eslint/consistent-type-imports': 'off',
       '@typescript-eslint/no-deprecated': 'off',
-      '@typescript-eslint/no-empty-function': ['error', { allow: [] }],
+      'no-empty-function': ['error', { allow: [] }],
       '@typescript-eslint/adjacent-overload-signatures': 'error',
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/ban-ts-comment': 'error',

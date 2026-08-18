@@ -3,7 +3,8 @@
   "compilerOptions": {
     "paths": {},
     "resolveJsonModule": true,
-    "isolatedDeclarations": true
+    "isolatedDeclarations": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["./src"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/styled",
-  "version": "6.0.0-rc.6",
+  "version": "6.0.1",
   "license": "Apache-2.0",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "run-s --print-label 'build:*'",
     "build:bundle": "tsdown",
-    "build:dts": "tsc --pretty --emitDeclarationOnly",
+    "build:dts": "tsc --pretty --emitDeclarationOnly --incremental false",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"

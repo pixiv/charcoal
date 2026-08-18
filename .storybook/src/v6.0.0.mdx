@@ -1,8 +1,34 @@
 import { Meta } from '@storybook/addon-docs/blocks'
 
-<Meta title="v6.0.0(予定)" />
+<Meta title="v6.0.0" />
 
-# @charcoal-ui/react@v6.0.0(予定)
+# @charcoal-ui/react@v6.0.0
+
+v6 では、`@charcoal-ui/react` のコンポーネントを Design Token 2.0 に対応させました。あわせて、react-sandbox からのコンポーネント移行、React Aria の依存関係の再編、アイコンの SSR 対応などを行っています。
+
+> **非推奨:** `@charcoal-ui/react-sandbox` は v6 から非推奨です。次のメジャーバージョンでパッケージの削除を検討しています。新規に利用せず、既存の実装は `@charcoal-ui/react` へ順次移行してください。
+
+---
+
+# v5 からの移行チェックリスト
+
+1. `@charcoal-ui/react` と、直接利用している `@charcoal-ui/*` パッケージを v6 に更新します。
+2. Design Token 1.0 の見た目を維持する場合は `@charcoal-ui/theme/css/v1/remap.css`、Design Token 2.0 を使う場合は `@charcoal-ui/theme/css/v2/light.css` と `dark.css` を読み込みます。
+   a. Design Token 2.0の見た目を使用したい範囲に `.ch-token-v2` クラスが有効になるように指定します。
+3. `TagItem` をボタンとして使っている場合は、`component="button"` を明示します。
+4. `UnstableTextEllipsis` / `UnstablePagination` を stable な export 名へ置き換えます。
+5. `@charcoal-ui/react-sandbox` を利用している場合は、`@charcoal-ui/react` へ順次移行します。
+6. peer dependency の解決エラーが出る場合は、`react-aria` と `react-stately` をアプリケーションへ追加します。
+
+```diff
+-import { UnstableTextEllipsis, UnstablePagination } from '@charcoal-ui/react'
++import { TextEllipsis, Pagination } from '@charcoal-ui/react'
+```
+
+```tsx
+// v5 と同じく button として使う場合
+<TagItem component="button" label="タグ" />
+```
 
 ---
 
@@ -10,25 +36,28 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 `@charcoal-ui/react` のコンポーネントで使われる CSS Variables を、新しい Design Token 2.0 で提供します。あわせて `@charcoal-ui/theme` の CSS・トークン出力を再編し、`unstable-` プレフィックスを外しました。
 
-Token V2 の変数は `.ch-token-v2` が付いた要素の内側で有効になります。既存の Design Token 1.0 と同じ画面で共存できるように、まず CSS を読み込み、Token V2 を使いたい範囲だけに `.ch-token-v2` を付けます。
+v6 のコンポーネント CSS だけを読み込んでも、必要な `--charcoal-color-*` や `--charcoal-space-*` は定義されません。Design Token 1.0 互換レイヤーまたは Design Token 2.0 の CSS を必ずあわせて読み込んでください。
 
 ## インストール
 
 ```bash
 npm install --save-dev @charcoal-ui/theme @charcoal-ui/tailwind-config
 npm install @charcoal-ui/react
+
+# Tailwind CSS を利用する場合
+npm install --save-dev @charcoal-ui/tailwind-config
 ```
 
 ## CSS を読み込む
 
-アプリケーションのエントリポイントで、用途に応じて CSS を読み込みます（コンポーネント実装 CSS は共通）。
+既存画面の見た目をできるだけ維持して v6 へ更新する場合は、従来の Design Token 1.0 を供給する仕組みに加えて、互換レイヤーを読み込みます。
 
 ```tsx
 // Design Token 2.0
 import '@charcoal-ui/theme/css/v2/light.css'
 import '@charcoal-ui/theme/css/v2/dark.css'
 
-// Design Token 1.0 互換モード（2.0 のトークン名を v1 相当の値で供給）
+// Design Token 2.0 のトークン名を Design Token 1.0 相当の値へ解決する互換レイヤー
 import '@charcoal-ui/theme/css/v1/remap.css'
 
 // コンポーネント実装の CSS
@@ -55,11 +84,24 @@ export const FormActions = () => (
 )
 ```
 
-`.ch-token-v2` の内側では、`@charcoal-ui/react` のコンポーネント CSS が参照する `--charcoal-color-*` や `--charcoal-space-*` などが Token V2 の値になります。外側のコンポーネントは従来どおり Token V1 互換の値を参照します。
+`.ch-token-v2` は対象コンポーネント自身か、その親要素に付けてください。CSS Variables は継承によって適用されるため、兄弟要素や離れた要素には影響しません。
+
+```tsx
+import { Button } from '@charcoal-ui/react'
+
+export const CompareButtons = () => (
+  <>
+    <Button>Design Token 1.0</Button>
+    <span className="ch-token-v2">
+      <Button>Design Token 2.0</Button>
+    </span>
+  </>
+)
+```
 
 ### 画面全体で有効にする
 
-画面全体を Token V2 に切り替える場合は、アプリケーションのルート要素（HTML ルートでも可）に `.ch-token-v2` を付けます。
+画面全体を Design Token 2.0 に切り替える場合は、アプリケーションのルート要素に `.ch-token-v2` を付けます。
 
 ```html
 <html class="ch-token-v2" data-theme="light">
@@ -88,16 +130,38 @@ export const CompareButtons = () => (
 
 ## テーマの切り替え
 
-テーマは `document.documentElement` の `data-theme` 属性で切り替えます。`data-theme` を省略した場合は light として扱われます。dark theme は `:root[data-theme='dark']` に定義されるため、HTML ルートで切り替えます。
+テーマは `document.documentElement` の `data-theme` 属性で切り替えます。`data-theme` を省略した場合は light として扱われます。
 
 ```tsx
 document.documentElement.dataset.theme = 'light'
 document.documentElement.dataset.theme = 'dark'
 ```
 
+### dark theme のスコープに関する注意
+
+Design Token 2.0 の light theme は `.ch-token-v2` の内側にスコープされますが、dark theme は `:root[data-theme='dark']` に定義されます。そのため `data-theme="dark"` に切り替えた場合は、`.ch-token-v2` の有無にかかわらず Design Token 2.0 の dark theme がページ全体で有効になります。
+
+Design Token 1.0 と Design Token 2.0 を同じ画面で段階的に比較する場合は、light theme で確認してください。
+
+## Text density
+
+Design Token 2.0 では、タイポグラフィの密度を切り替えるクラスを提供します。クラスを付けた要素の内側で、semantic な font-size / line-height token の値が切り替わります。
+
+| クラス               | 用途                   |
+| -------------------- | ---------------------- |
+| `ch-text-dn-compact` | 情報密度の高い表示     |
+| `ch-text-dn-default` | 標準の表示             |
+| `ch-text-dn-cozy`    | 大きくゆとりのある表示 |
+
+```tsx
+<div className="ch-token-v2 ch-text-dn-compact">
+  <p className="text-body">Compact body text</p>
+</div>
+```
+
 ## Storybook で確認する
 
-story の `parameters.tokenVersion` に `v2` を指定すると、decorator が `document.documentElement` に `.ch-token-v2` を付けます。story 側で wrapper を追加しなくても Token V2 の見た目を確認できます。
+story の `parameters.tokenVersion` に `v2` を指定すると、decorator が `document.documentElement` に `.ch-token-v2` を付けます。story 側で wrapper を追加しなくても Design Token 2.0 の見た目を確認できます。
 
 ```tsx
 export const TokenV2: StoryObj<typeof Button> = {
@@ -106,68 +170,78 @@ export const TokenV2: StoryObj<typeof Button> = {
 }
 ```
 
-## export の変更（破壊的変更）
+## `@charcoal-ui/theme` の export 変更（破壊的変更）
 
-CSS・トークン出力の再編と `unstable-` プレフィックス削除により、`@charcoal-ui/theme` の subpath export が変わります。
+CSS・トークン出力の再編と `unstable-` プレフィックス削除により、subpath export が変わります。
 
 | 旧                                                     | 新                                    |
 | ------------------------------------------------------ | ------------------------------------- |
 | `@charcoal-ui/theme/unstable-css/_variables_light.css` | `@charcoal-ui/theme/css/v2/light.css` |
 | `@charcoal-ui/theme/unstable-css/_variables_dark.css`  | `@charcoal-ui/theme/css/v2/dark.css`  |
-| （新規）1.0 互換レイヤー                               | `@charcoal-ui/theme/css/v1/remap.css` |
+| （新規）Design Token 1.0 互換レイヤー                  | `@charcoal-ui/theme/css/v1/remap.css` |
 | `@charcoal-ui/theme/unstable-token-object`             | `@charcoal-ui/theme/token-object`     |
 | `@charcoal-ui/theme/unstable-tokens/*`                 | `@charcoal-ui/theme/tokens/*`         |
 
-- グローバル定義用途だった `unstable-css` は、`.ch-token-v2` でスコープできる `css/v2` に統合しました。
-- import パスの置換が必要です（例: `unstable-tokens/css-variables.json` → `tokens/css-variables.json`）
+次のように import パスを置き換えてください。
 
-  。
+```diff
+-import tokens from '@charcoal-ui/theme/unstable-tokens/css-variables.json'
++import tokens from '@charcoal-ui/theme/tokens/css-variables.json'
+```
 
-## 1.0 互換モードの制限
+## Design Token 1.0 互換モードの制限
 
-2.0 では複数の v1 トークンを 1 つに統合したトークンがあり、1.0 互換モードではそれらの箇所で旧実装と完全に同じ配色を再現できません（単一の remap 値では複数の旧値を同時に満たせないため）。該当箇所は remap のパリティテスト（`packages/react/src/__tests__/token-v1-compat.test.ts`）が検出します。
+Design Token 2.0 では、複数の Design Token 1.0 のトークンを 1 つの semantic token に統合しています。Design Token 1.0 互換モードでは単一の remap 値から複数の旧値を同時に再現できないため、以下の箇所などで v5 と完全に同じ配色にならない場合があります。
 
-## 導入時の注意
-
-`.ch-token-v2` を付け忘れると、React コンポーネントの CSS は Token V2 の値を参照できません。見た目が想定と違う場合は、まず対象コンポーネント自身か親要素に `.ch-token-v2` が付いているかを確認してください。
-
----
-
-# コンポーネント（react-sandbox からの移行）
-
-- `@charcoal-ui/react@v5.5.0` に **UnstableTextEllipsis** と **UnstablePagination** を追加しました。
-- react-sandbox にあった TextEllipsis および Pager・LinkPager を、styled-components に依存しない形で @charcoal-ui/react に取り込んだものです。
-- props の詳細は各コンポーネントの Storybook を参照してください。
+- Button、Checkbox、DropdownSelector、Modal の見出し、MultiSelect、Radio、Switch のテキスト色
+- Checkbox と Radio の未選択時のボーダー色
+- HintText のアイコンと LoadingSpinner の色
+- MultiSelect の checkbox と Switch の背景色
 
 ---
 
-# TextEllipsis
+# コンポーネント
+
+## DropdownSelector
+
+iPadOS Safari で Apple Pencil などのペン入力を使用した場合に、DropdownSelector を開けない、選択肢を選べない、または選択肢の外側をタップしても閉じられない問題を修正しました。マウス、タッチ、キーボードでの操作方法に変更はありません。
+
+## TextEllipsis / Pagination の stable 化（破壊的変更）
+
+v5 で `UnstableTextEllipsis` / `UnstablePagination` として提供していたコンポーネントを stable 化し、`Unstable` プレフィックスを外しました。旧 export 名は利用できないため、import を置き換えてください。
+
+```diff
+-import {
+-  UnstableTextEllipsis,
+-  UnstablePagination,
+-} from '@charcoal-ui/react'
++import { TextEllipsis, Pagination } from '@charcoal-ui/react'
+```
+
+react-sandbox の TextEllipsis および Pager・LinkPager から移行する場合も、styled-components に依存しない `@charcoal-ui/react` の実装を利用できます。
+
+## TextEllipsis
 
 複数行のテキストに表示行数制限を設け、はみ出した部分を `...` で省略するコンポーネントです。
 
 ```tsx
 -import { TextEllipsis } from '@charcoal-ui/react-sandbox'
-// 現時点はUnstableのprefixがある
-+import { UnstableTextEllipsis } from '@charcoal-ui/react'
-// v6リリース以降(予定)
 +import { TextEllipsis } from '@charcoal-ui/react'
 
-<UnstableTextEllipsis lineHeight={24} lineLimit={2}>
+<TextEllipsis lineHeight={24} lineLimit={2}>
   長いテキスト...
-</UnstableTextEllipsis>
+</TextEllipsis>
 ```
 
-## react-sandbox との主な違い
+### react-sandbox との主な違い
 
 - styled-components を廃止し、CSS ファイルでスタイルを当てています。
 - `lineHeight` は省略可能で、未指定時は親の line-height を継承します。
-- ツールチップの on/off（`showTooltip`）や 1 行時の挙動（`useNowrap`）などの props を追加しています。
+- ツールチップの on/off（`showTooltip`）や1行時の挙動（`useNowrap`）などの props を追加しています。
 
----
+## Pagination
 
-# Pagination
-
-ページ番号の一覧と「前へ・次へ」を表示し、ページ遷移を提供するコンポーネントです。**ボタンモード**（react-sandbox の Pager 相当）と**リンクモード**（LinkPager 相当）の 2 通りで使います。
+ページ番号の一覧と「前へ・次へ」を表示し、ページ遷移を提供するコンポーネントです。ボタンモード（react-sandbox の Pager 相当）とリンクモード（LinkPager 相当）の2通りで使います。
 
 |       | ボタンモード（Pager） | リンクモード（LinkPager） |
 | ----- | --------------------- | ------------------------- |
@@ -176,19 +250,16 @@ CSS・トークン出力の再編と `unstable-` プレフィックス削除に�
 
 ```tsx
 -import { Pager, LinkPager } from '@charcoal-ui/react-sandbox'
-// 現時点はUnstableのprefixがある
-+import { UnstablePagination } from '@charcoal-ui/react'
-// v6リリース以降(予定)
 +import { Pagination } from '@charcoal-ui/react'
 
 // ボタンモード
-<UnstablePagination page={page} pageCount={10} onChange={setPage} />
+<Pagination page={page} pageCount={10} onChange={setPage} />
 
 // リンクモード
-<UnstablePagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} />
+<Pagination page={1} pageCount={10} makeUrl={(p) => `?page=${p}`} />
 
-// Next.js の Link は href を受け取るためそのまま利用可能。React Router など to を使う場合はラッパーが必要
-<UnstablePagination
+// Next.js の Link は href を受け取るためそのまま利用可能
+<Pagination
   page={1}
   pageCount={10}
   makeUrl={(p) => `?page=${p}`}
@@ -197,36 +268,109 @@ CSS・トークン出力の再編と `unstable-` プレフィックス削除に�
 />
 ```
 
-## react-sandbox との主な違い
+### react-sandbox との主な違い
 
-- Pager と LinkPager が 1 つのコンポーネントに統合され、`onChange` を渡すか `makeUrl` を渡すかでモードが切り替わります。
-- sandbox の LinkPager は `useComponentAbstraction()` の `Link`（`to`）に依存していました。@charcoal-ui/react では `makeUrl` で URL を返し、`component` で `<a>` や Next.js の `Link` を指定する形で、フレームワークに依存しません。
-- styled-components を廃止し、CSS でスタイルを当てています。前後ボタンやページ番号には IconButton を利用しています。
-- `size`（S/M）と `pageRangeDisplayed`（5 または 7）を追加しています。
+- Pager と LinkPager を1つのコンポーネントに統合し、`onChange` または `makeUrl` でモードを切り替えます。
+- sandbox の LinkPager は `useComponentAbstraction()` の `Link`（`to`）に依存していました。v6 では `makeUrl` で URL を返し、`component` で `<a>` や Next.js の `Link` を指定します。
+- styled-components を廃止し、前後ボタンやページ番号には IconButton を利用しています。
+- `size`（S/M）と `pageRangeDisplayed`（5または7）を追加しています。
+- Tailwind Preflight が有効な環境でも前後ボタンの領域を維持するよう、無効なボタンの非表示方法を修正しました。
+
+## Carousel
+
+react-sandbox の Carousel を、styled-components と react-spring に依存しない形で `@charcoal-ui/react` に追加しました。native scroll と CSS scroll-snap を利用し、キーボード操作、インジケーター、表示サイズなどに対応しています。
+
+```diff
+-import { Carousel } from '@charcoal-ui/react-sandbox'
++import { Carousel } from '@charcoal-ui/react'
+```
+
+詳しくは [Carouselのマイグレーションガイド](/docs/react-carousel-migration-guide--docs) を参照してください。
+
+## TagItem の既定要素変更（破壊的変更）
+
+TagItem の既定のルート要素を `<button>` から `<a>` へ変更しました。既定の ref 型も `HTMLButtonElement` から `HTMLAnchorElement` へ変わります。
+
+リンクとして使う場合は `href` を渡してください。v5 と同じボタンとして使う場合は `component="button"` を明示します。
+
+```tsx
+// リンク
+<TagItem href="/tags/illustration" label="イラスト" />
+
+// ボタン
+<TagItem component="button" label="イラスト" onClick={handleClick} />
+```
+
+`disabled` prop も追加しました。リンクとして描画する場合は React Aria のリンク処理によって操作を無効化し、ボタンの場合は native の `disabled` 属性を設定します。
 
 ---
 
-# 注意
+# Icon / SSR
 
-- Unstable のため、マイナーバージョン内でも props や export 名が変わる可能性があります。
-- 安定化後は `Unstable` プレフィックスを外し、通常のコンポーネント名で提供する予定です。
+`@charcoal-ui/react` の Icon と `@charcoal-ui/icons` の `<pixiv-icon>` に、固定 px サイズを指定する API を追加しました。
+
+```tsx
+// React
+<Icon name="24/Add" fixedSize={12} />
+```
+
+```html
+<!-- vanilla HTML -->
+<pixiv-icon
+  name="24/Add"
+  fixed-size="12"
+  style="--charcoal-icon-size: 12px"
+></pixiv-icon>
+```
+
+- `fixedSize` / `fixed-size` は `scale` と `unsafeNonGuidelineScale` / `unsafe-non-guideline-scale` より優先されます。
+- `unsafeNonGuidelineScale` / `unsafe-non-guideline-scale` は非推奨になりました。新規実装では固定 px サイズを使ってください。
+- React の `<Icon>` は、Custom Element の upgrade 前後で同じサイズになるよう、必要なクラスと CSS Variable を自動で設定します。
+
+`<pixiv-icon>` を直接使う場合は、Custom Element の JavaScriptと、SSR・初期描画時のレイアウトシフトを防ぐ CSS の両方を読み込んでください。
+
+```tsx
+import '@charcoal-ui/icons'
+import '@charcoal-ui/icons/css/icon.css'
+```
+
+vanilla HTML で `fixed-size` を使う場合、upgrade 前にも同じサイズを確保するため、同じ値の `--charcoal-icon-size` をインラインで指定してください。React の `<Icon fixedSize={N}>` では自動的に指定されます。
 
 ---
 
-## React Aria モノパッケージへの移行
+# React Aria モノパッケージへの移行
 
-React Aria v1.17.0 ([リリースノート](https://react-aria.adobe.com/releases/v1-17-0)) に合わせ、`@charcoal-ui/react` の React Aria 依存を個別パッケージ（`@react-aria/*`, `@react-stately/*`）からモノパッケージ（`react-aria`, `react-stately`）に移行しました。
+React Aria v1.17.0 に合わせ、`@charcoal-ui/react` の React Aria 依存を個別パッケージ（`@react-aria/*`、`@react-stately/*`）からモノパッケージ（`react-aria`、`react-stately`）へ移行しました。
 
-- `react-aria` / `react-stately` は **dependencies から peerDependencies に変更**されました（`react-aria >= 3.48.0`, `react-stately >= 3.46.0`）。npm 7+・pnpm・yarn では自動インストールされるため通常は追加対応不要です。
-- 目的：アプリ側でも React Aria を使う場合の重複インストールを防ぎ、バンドルサイズとランタイムの不整合を解消します。
-- 既存の `@react-aria/*` 個別パッケージとも共存可能ですが、バージョン不整合に注意してください。
+`react-aria` と `react-stately` は dependencies から peerDependencies に変わります。
 
-### 必要な対応（任意）
+| package         | peer dependency |
+| --------------- | --------------- |
+| `react-aria`    | `>= 3.48.0`     |
+| `react-stately` | `>= 3.46.0`     |
 
-`@react-aria/*` / `@react-stately/*` を直接 import している場合、React Aria 公式 codemod でモノパッケージ import に移行できます。
+利用しているパッケージマネージャーで peer dependency が自動的に解決されない場合や、解決エラーが表示された場合は明示的にインストールしてください。
+
+```bash
+npm install react-aria@">=3.48.0" react-stately@">=3.46.0"
+```
+
+アプリケーションが `@react-aria/*` / `@react-stately/*` を直接 import している場合は、React Aria 公式 codemod でモノパッケージ import に移行できます。
 
 ```bash
 npx @react-spectrum/codemods use-monopackages --path /path/to/src
+
 # サブパス import（より細かいバンドル制御）
 npx @react-spectrum/codemods use-subpaths --path /path/to/src
 ```
+
+既存の個別パッケージとも共存できますが、モノパッケージとのバージョン不整合に注意してください。
+
+---
+
+# その他の変更
+
+- `@charcoal-ui/react` の配布形式をモジュール単位に変更し、利用していないコンポーネントとその依存をアプリケーション側の bundler が tree-shaking しやすくしました。対応は不要です。
+- Modal の mobile bottom sheet アニメーションを react-spring から CSS transition へ移行し、`@react-spring/web` への依存を削除しました。
+- IconButton の `Default` variant の通常時背景色を透明に変更しました。hover / press / active 時には引き続き背景色が付きます。
+- TextArea の `rows`、`maxRows`、`autoHeight` と文字数カウンターを組み合わせた場合の高さ計算を修正しました。

@@ -2,9 +2,9 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "incremental": true,
+    "rootDir": "./src",
     "outDir": "./dist",
-    "tsBuildInfoFile": "./.tsbuildinfo",
-    "moduleResolution": "node"
+    "tsBuildInfoFile": "./.tsbuildinfo"
   },
   "include": ["./src"],
   "exclude": [

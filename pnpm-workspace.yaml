@@ -11,11 +11,19 @@ allowBuilds:
   unrs-resolver: false
 
 catalog:
+  autoprefixer: 10.5.4
+  '@testing-library/jest-dom': '6.9.1'
+  '@testing-library/react': '16.3.2'
+  '@testing-library/user-event': '14.6.1'
   'react-compiler-runtime': '1.0.0'
   '@react-spring/web': '^10'
+  postcss: '8.5.19'
+  postcss-selector-parser: '7.1.4'
   react-aria: '3.48.0'
   react-stately: '3.46.0'
 
 minimumReleaseAge: 10080 # 7 days
+minimumReleaseAgeExclude:
+  - '@pixiv/eslint-config'
 overrides:
   playwright: ^1.58.2

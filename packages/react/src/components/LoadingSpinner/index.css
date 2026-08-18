@@ -11,7 +11,7 @@
   background-color: var(--charcoal-color-background-default);
 
   &[data-transparent='true'] {
-    background-color: var(--charcoal-color-container-default-a);
+    background-color: transparent;
   }
 }
 
@@ -31,8 +31,7 @@
   height: 1em;
   border-radius: 1em;
   background-color: currentColor;
-  animation: charcoal-loading-spinner-icon-scale-out 1s both ease-out;
-  animation-iteration-count: infinite;
+  animation: charcoal-loading-spinner-icon-scale-out 1s infinite both ease-out;
 
   &[data-reset-animation] {
     animation: none;
