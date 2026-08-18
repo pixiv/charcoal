@@ -1,3 +1,5 @@
+import { findMinCount } from './findMinCount'
+
 export type LoopGeometry = Readonly<{
   // 実セット 1 周ぶんの幅（margin 込み）。clone-after 先頭と実セット先頭の offsetLeft 差
   setWidth: number
@@ -65,18 +67,14 @@ export function computeLoopCloneCount(
   const coverage = clientWidth * CLONE_COVERAGE_RATIO
   const fullSets = Math.max(0, Math.ceil(coverage / setSpan) - 1)
   const rest = coverage - fullSets * setSpan
-  const counts = Array.from({ length: n }, (_, i) => i + 1)
-  const fromHead =
-    counts.find(
-      (m) =>
-        items[m - 1].offsetLeft + items[m - 1].offsetWidth - first.offsetLeft >=
-        rest,
-    ) ?? n
-  const fromTail =
-    counts.find(
-      (m) =>
-        last.offsetLeft + last.offsetWidth - items[n - m].offsetLeft >= rest,
-    ) ?? n
+  const fromHead = findMinCount(
+    items,
+    (item) => item.offsetLeft + item.offsetWidth - first.offsetLeft >= rest,
+  )
+  const fromTail = findMinCount(
+    items.toReversed(),
+    (item) => last.offsetLeft + last.offsetWidth - item.offsetLeft >= rest,
+  )
   return fullSets * n + Math.max(fromHead, fromTail) + 1
 }
 
