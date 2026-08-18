@@ -55,8 +55,9 @@ export function computeLoopCloneCount(
 ): number {
   const n = items.length
   if (n === 0) return 0
-  const first = items[0]
-  const last = items[n - 1]
+  const [first] = items
+  const reversed = items.toReversed()
+  const [last] = reversed
   // 末尾 item の後ろの間隔は実測できないため、セット幅はこの分だけ過小評価になる
   // （clone を余分に積む方向なので滑走路の保証は崩れない）。
   const setSpan = last.offsetLeft + last.offsetWidth - first.offsetLeft
@@ -72,7 +73,7 @@ export function computeLoopCloneCount(
     (item) => item.offsetLeft + item.offsetWidth - first.offsetLeft >= rest,
   )
   const fromTail = findMinCount(
-    items.toReversed(),
+    reversed,
     (item) => last.offsetLeft + last.offsetWidth - item.offsetLeft >= rest,
   )
   return fullSets * n + Math.max(fromHead, fromTail) + 1
