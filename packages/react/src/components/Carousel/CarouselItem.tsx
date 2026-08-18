@@ -1,8 +1,11 @@
 import {
+  cloneElement,
   forwardRef,
+  isValidElement,
   memo,
   useEffect,
   useRef,
+  type ClassAttributes,
   type ComponentPropsWithoutRef,
   type ReactNode,
 } from 'react'
@@ -116,7 +119,12 @@ export const CarouselCloneItem = memo(function CarouselCloneItem({
       data-clone
       aria-hidden
     >
-      {children}
+      {isValidElement(children)
+        ? // 見た目だけの複製として ref を剥がす（ユーザーの ref が clone を指さないように）
+          cloneElement(children, {
+            ref: null,
+          } satisfies ClassAttributes<unknown>)
+        : children}
     </CenterReportProvider>
   )
 })

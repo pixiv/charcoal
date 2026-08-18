@@ -884,6 +884,28 @@ describe('Carousel', () => {
         restore()
       })
 
+      it('clone は ref を複製しない（ユーザーの ref は実スライドだけを指す）', () => {
+        const refCalls: HTMLElement[] = []
+        const refSlides = Array.from({ length: 6 }, (_, i) => (
+          <div
+            key={i}
+            // index 0 は clone-after 帯にも複製される（jsdom は各端 2 枚）
+            ref={
+              i === 0
+                ? (el: HTMLElement | null) => {
+                    if (el) refCalls.push(el)
+                  }
+                : undefined
+            }
+          >
+            {i + 1}
+          </div>
+        ))
+        render(<Carousel loop>{refSlides}</Carousel>)
+        expect(refCalls).toHaveLength(1)
+        expect(refCalls[0].closest('[data-clone]')).toBeNull()
+      })
+
       it('型: loop と defaultScroll は併用できない', () => {
         const defaultScroll: CarouselDefaultScroll = { align: 'center' }
         const invalid = (
