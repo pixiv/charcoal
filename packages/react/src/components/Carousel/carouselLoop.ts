@@ -10,9 +10,12 @@ export type LoopGeometry = Readonly<{
 
 type ItemRect = Readonly<{ offsetLeft: number; offsetWidth: number }>
 
-// 片側の clone 帯に要求する被覆幅（viewport 比）。帯域を中央配置したとき、
-// 静止位置から両物理端まで 1 viewport 以上残すには 1.5 viewport の被覆が必要。
-const CLONE_COVERAGE_RATIO = 1.5
+// 片側の clone 帯に要求する被覆幅（viewport 比）。帯域を中央配置すると静止位置から
+// 物理端までの滑走路は (比 − 0.5) viewport になる。テレポートは静止後にしか行えず
+// （走行中の scrollTo はスクロールアニメーション自体を打ち切る）、滑走路を使い切ると
+// 物理端クランプで慣性が死んで「がくつき」に見えるため、1 ジェスチャの移動量として
+// 現実的な 3 viewport を滑走路として確保する。
+const CLONE_COVERAGE_RATIO = 3.5
 
 export function measureLoopGeometry(
   scroller: HTMLElement,
@@ -42,30 +45,39 @@ export function isLoopActive(geometry: LoopGeometry): boolean {
 }
 
 // 片側の clone 帯が CLONE_COVERAGE_RATIO viewport を覆うのに必要な実 item の
-// 最小枚数を、実セットの両端から数えて求める（+1 は snap 途中の部分見え対策）。
+// 枚数（+1 は snap 途中の部分見え対策）。1 セットで足りない要求はセット丸ごとの
+// 周回で埋めるため、戻り値は実 item 数を超えうる。
 export function computeLoopCloneCount(
   items: readonly ItemRect[],
   clientWidth: number,
 ): number {
   const n = items.length
   if (n === 0) return 0
-  const coverage = clientWidth * CLONE_COVERAGE_RATIO
   const first = items[0]
   const last = items[n - 1]
+  // 末尾 item の後ろの間隔は実測できないため、セット幅はこの分だけ過小評価になる
+  // （clone を余分に積む方向なので滑走路の保証は崩れない）。
+  const setSpan = last.offsetLeft + last.offsetWidth - first.offsetLeft
+  // 実セットが viewport を覆えない構成ではループ自体が成立しない（isLoopActive）。
+  // clone を何枚積んでも無駄なので描画しない。
+  if (setSpan <= clientWidth) return 0
+
+  const coverage = clientWidth * CLONE_COVERAGE_RATIO
+  const fullSets = Math.max(0, Math.ceil(coverage / setSpan) - 1)
+  const rest = coverage - fullSets * setSpan
   const counts = Array.from({ length: n }, (_, i) => i + 1)
   const fromHead =
     counts.find(
       (m) =>
         items[m - 1].offsetLeft + items[m - 1].offsetWidth - first.offsetLeft >=
-        coverage,
+        rest,
     ) ?? n
   const fromTail =
     counts.find(
       (m) =>
-        last.offsetLeft + last.offsetWidth - items[n - m].offsetLeft >=
-        coverage,
+        last.offsetLeft + last.offsetWidth - items[n - m].offsetLeft >= rest,
     ) ?? n
-  return Math.min(n, Math.max(fromHead, fromTail) + 1)
+  return fullSets * n + Math.max(fromHead, fromTail) + 1
 }
 
 // 帯域判定の許容誤差(px)。setWidth は整数 offsetLeft 差の実測値で、ブラウザ内部の

@@ -41,6 +41,21 @@ const debounce = (fn: () => void, delay: number) => {
   )
 }
 
+// スクロール静止で fn を呼ぶ。scrollend 対応環境はブラウザに任せ、
+// 非対応環境は scroll の途切れで代替する。戻り値は解除関数。
+const onScrollSettle = (el: HTMLElement, fn: () => void) => {
+  if ('onscrollend' in window) {
+    el.addEventListener('scrollend', fn, { passive: true })
+    return () => el.removeEventListener('scrollend', fn)
+  }
+  const debounced = debounce(fn, SCROLL_SETTLE_DELAY)
+  el.addEventListener('scroll', debounced, { passive: true })
+  return () => {
+    el.removeEventListener('scroll', debounced)
+    debounced.cancel()
+  }
+}
+
 export type CarouselScrollerOptions = Readonly<{
   align: ScrollAlign
   offset: number
@@ -105,6 +120,11 @@ export function useCarouselScroller(
   // （scroll イベント中の layout 読みを避ける）。
   const geometryRef = useRef<LoopGeometry | null>(null)
 
+  // 走行中の smooth スクロールの目標位置。ページ送り連打で scrollBy を重ねると
+  // 前回の残距離がブラウザに破棄されて進まなくなるため、目標を積算して scrollTo する。
+  // 静止・ユーザー操作・テレポート・初期位置適用のいずれでも無効化する。
+  const pendingScrollTarget = useRef<number | null>(null)
+
   const measureLoop = useCallback(() => {
     const el = scrollerRef.current
     geometryRef.current =
@@ -133,6 +153,7 @@ export function useCarouselScroller(
   const applyInitialScroll = useCallback(() => {
     const el = scrollerRef.current
     if (!el || !initialScrollActive.current) return
+    pendingScrollTarget.current = null
     if (loop) {
       const realFirst = el.children.item(cloneCount)
       if (!(realFirst instanceof HTMLElement)) return
@@ -231,19 +252,29 @@ export function useCarouselScroller(
     itemCount,
   ])
 
+  // ページ送りの目標位置は、静止した時点とユーザーが自分でスクロールを始めた時点で捨てる。
+  useEffect(() => {
+    const el = scrollerRef.current
+    if (!el) return
+    const clear = () => {
+      pendingScrollTarget.current = null
+    }
+    const stopSettle = onScrollSettle(el, clear)
+    for (const type of INTERACTION_EVENTS)
+      el.addEventListener(type, clear, true)
+    return () => {
+      stopSettle()
+      for (const type of INTERACTION_EVENTS)
+        el.removeEventListener(type, clear, true)
+    }
+  }, [scrollerRef])
+
   // loop: スクロール静止後に維持帯域へテレポートする。走行中には行わない
   // （scrollTo は進行中のスクロールを中断して momentum を殺すため、がくつきに見える）。
   useEffect(() => {
     const el = scrollerRef.current
     if (!loop || !el) return
     const teleport = createLoopTeleport(el, () => geometryRef.current)
-    // 静止検出: scrollend 対応環境はブラウザに任せ、非対応環境は scroll の途切れで代替する。
-    const supportsScrollEnd = 'onscrollend' in window
-    const debouncedTeleport = supportsScrollEnd
-      ? null
-      : debounce(teleport, SCROLL_SETTLE_DELAY)
-    const settleEvent = supportsScrollEnd ? 'scrollend' : 'scroll'
-    const settleTeleport = debouncedTeleport ?? teleport
 
     // 強フリックが clone の滑走路を使い切って物理端にクランプした場合だけは
     // 静止を待たずに補正する（壁に張り付いたまま scrollend を待つ「詰まり」対策）。
@@ -259,15 +290,16 @@ export function useCarouselScroller(
       if (corrected != null) {
         el.scrollTo({ left: corrected, behavior: 'instant' })
         prevLeft = corrected
+        // 目標位置は元の座標系のままなので、テレポート後は追従できない。
+        pendingScrollTarget.current = null
       }
     }
 
     el.addEventListener('scroll', escapeWall, { passive: true })
-    el.addEventListener(settleEvent, settleTeleport, { passive: true })
+    const stopSettle = onScrollSettle(el, teleport)
     return () => {
       el.removeEventListener('scroll', escapeWall)
-      el.removeEventListener(settleEvent, settleTeleport)
-      debouncedTeleport?.cancel()
+      stopSettle()
     }
   }, [loop, scrollerRef, itemCount])
 
@@ -291,16 +323,25 @@ export function useCarouselScroller(
       const el = scrollerRef.current
       if (!el) return
       initialScrollActive.current = false
-      const { clientWidth, scrollWidth, scrollLeft } = el
+      const { clientWidth, scrollWidth } = el
+      // 走行中なら「まだ到達していない目標」を起点に積む（連打で残距離を捨てないため）。
+      const scrollLeft = pendingScrollTarget.current ?? el.scrollLeft
       // 進む量(px)の絶対値。符号は direction で付ける。
       const delta =
         typeof scrollStep === 'function'
           ? scrollStep({ clientWidth, scrollWidth, scrollLeft, direction })
           : clientWidth * scrollStep
-      el.scrollBy({
-        left: direction === 'next' ? delta : -delta,
-        behavior: 'smooth',
-      })
+      // ブラウザ側でもクランプされるので、目標も同じ範囲に揃えないと
+      // 端での連打で到達不能な目標が積み上がる。
+      const target = Math.max(
+        0,
+        Math.min(
+          scrollLeft + (direction === 'next' ? delta : -delta),
+          scrollWidth - clientWidth,
+        ),
+      )
+      pendingScrollTarget.current = target
+      el.scrollTo({ left: target, behavior: 'smooth' })
     },
     [scrollerRef, scrollStep],
   )

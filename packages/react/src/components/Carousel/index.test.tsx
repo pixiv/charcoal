@@ -139,7 +139,7 @@ describe('Carousel', () => {
   })
 
   describe('scrollByStep (0.75x viewport)', () => {
-    it('calls scrollBy with 0.75x viewport width on next button click', () => {
+    it('scrolls to current + 0.75x viewport on next button click', () => {
       render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
@@ -147,19 +147,20 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       const next = screen.getByRole('button', { name: 'Next' })
       fireEvent.click(next)
 
-      expect(scrollBySpy).toHaveBeenCalledWith({
-        left: 600,
+      // 走行中の目標を積算できるよう、相対 scrollBy ではなく絶対座標で送る
+      expect(scrollToSpy).toHaveBeenCalledWith({
+        left: 700,
         behavior: 'smooth',
       })
     })
 
-    it('calls scrollBy with negative 0.75x on prev button click', () => {
+    it('scrolls to current − 0.75x viewport on prev button click', () => {
       render(<Carousel>{slides}</Carousel>)
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 400 })
@@ -167,14 +168,15 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       const prev = screen.getByRole('button', { name: 'Previous' })
       fireEvent.click(prev)
 
-      expect(scrollBySpy).toHaveBeenCalledWith({
-        left: -600,
+      // 400 − 600 は負なので 0 へクランプする
+      expect(scrollToSpy).toHaveBeenCalledWith({
+        left: 0,
         behavior: 'smooth',
       })
     })
@@ -187,14 +189,14 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       const next = screen.getByRole('button', { name: 'Next' })
       fireEvent.click(next)
 
-      expect(scrollBySpy).toHaveBeenCalledWith({
-        left: 400,
+      expect(scrollToSpy).toHaveBeenCalledWith({
+        left: 500,
         behavior: 'smooth',
       })
     })
@@ -210,8 +212,8 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       const next = screen.getByRole('button', { name: 'Next' })
       fireEvent.click(next)
@@ -222,9 +224,9 @@ describe('Carousel', () => {
           direction: 'next',
         }),
       )
-      // clientWidth(800) - 48 = 752
-      expect(scrollBySpy).toHaveBeenCalledWith({
-        left: 752,
+      // scrollLeft(100) + clientWidth(800) - 48 = 852
+      expect(scrollToSpy).toHaveBeenCalledWith({
+        left: 852,
         behavior: 'smooth',
       })
     })
@@ -239,13 +241,13 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       fireEvent.keyDown(scroller, { key: 'ArrowRight' })
 
-      expect(scrollBySpy).toHaveBeenCalledWith({
-        left: 600,
+      expect(scrollToSpy).toHaveBeenCalledWith({
+        left: 700,
         behavior: 'smooth',
       })
     })
@@ -258,13 +260,13 @@ describe('Carousel', () => {
         fireEvent.scroll(scroller)
       })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       fireEvent.keyDown(scroller, { key: 'ArrowLeft' })
 
-      expect(scrollBySpy).toHaveBeenCalledWith({
-        left: -600,
+      expect(scrollToSpy).toHaveBeenCalledWith({
+        left: 0,
         behavior: 'smooth',
       })
     })
@@ -274,12 +276,12 @@ describe('Carousel', () => {
       const scroller = getScroller()
       mockScrollerGeometry(scroller, { scrollLeft: 100 })
 
-      const scrollBySpy = vi.fn()
-      scroller.scrollBy = scrollBySpy
+      const scrollToSpy = vi.fn()
+      scroller.scrollTo = scrollToSpy
 
       fireEvent.keyDown(scroller, { key: 'Enter' })
 
-      expect(scrollBySpy).not.toHaveBeenCalled()
+      expect(scrollToSpy).not.toHaveBeenCalled()
     })
   })
 
@@ -689,113 +691,16 @@ describe('Carousel', () => {
     })
   })
 
-  describe('loop (clone slides)', () => {
-    it('loop で各端に clone を加えて描画する', () => {
-      const { container } = render(<Carousel loop>{slides}</Carousel>)
-      // clone 枚数は実測で決まる。jsdom は幾何が全て 0 のため
-      // 「viewport を覆う最小枚数 1 + 1」= 各端 2 枚になる。
-      expect(
-        container.querySelectorAll('.charcoal-carousel__item'),
-      ).toHaveLength(10)
-      expect(
-        container.querySelectorAll('.charcoal-carousel__item[data-clone]'),
-      ).toHaveLength(4)
-    })
-
-    it('indicator の dot は実スライド数のまま', () => {
-      const { container } = render(
-        <Carousel loop indicator>
-          {slides}
-        </Carousel>,
-      )
-      expect(
-        container.querySelectorAll('.charcoal-carousel__indicator__item'),
-      ).toHaveLength(6)
-    })
-
-    it('clone は aria-hidden かつ inert', () => {
-      const { container } = render(<Carousel loop>{slides}</Carousel>)
-      const clones = container.querySelectorAll(
-        '.charcoal-carousel__item[data-clone]',
-      )
-      clones.forEach((clone) => {
-        expect(clone).toHaveAttribute('aria-hidden', 'true')
-      })
-      expect((clones[0] as HTMLElement & { inert?: boolean }).inert).toBe(true)
-    })
-
-    it('scroll 命令では実セットの要素だけが scrollIntoView する', () => {
-      const scrollIntoView = vi.fn()
-      Element.prototype.scrollIntoView = scrollIntoView
-      const { container } = render(
-        <Carousel size="S" loop>
-          {slides}
-        </Carousel>,
-      )
-      const dots = container.querySelectorAll(
-        '.charcoal-carousel__indicator__item',
-      )
-      act(() => {
-        fireEvent.click(dots[2])
-      })
-      expect(scrollIntoView).toHaveBeenCalledTimes(1)
-      const realItems = container.querySelectorAll(
-        '.charcoal-carousel__item:not([data-clone])',
-      )
-      expect(scrollIntoView.mock.contexts[0]).toBe(realItems[2])
-      delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView
-    })
-
-    it('clone の中央到達でも実セットと同じ index を activeIndex にする', () => {
-      const restore = installIOMock()
-      const { container } = render(
-        <Carousel size="M" indicator loop>
-          {slides}
-        </Carousel>,
-      )
-      // clone-before 帯は実セット末尾の複製。1 枚目 = 論理 index 4（n=6, k=2）
-      const cloneEls = container.querySelectorAll(
-        '.charcoal-carousel__item[data-clone]',
-      )
-      act(() => {
-        fireIntersect(cloneEls[0])
-      })
-      const dots = container.querySelectorAll(
-        '.charcoal-carousel__indicator__item',
-      )
-      expect(dots[4]).toHaveAttribute('data-active', 'true')
-      restore()
-    })
-
-    it('型: loop と defaultScroll は併用できない', () => {
-      const defaultScroll: CarouselDefaultScroll = { align: 'center' }
-      const invalid = (
-        // @ts-expect-error loop=true では defaultScroll を渡せない（初期位置は centerItem が決める）
-        <Carousel loop defaultScroll={defaultScroll}>
-          {slides}
-        </Carousel>
-      )
-      const valid = (
-        <Carousel loop centerItem={0}>
-          {slides}
-        </Carousel>
-      )
-      // 型検査のための式（描画はしない）
-      expect(invalid).toBeTruthy()
-      expect(valid).toBeTruthy()
-    })
-  })
-
-  describe('loop (initial position / teleport)', () => {
+  describe('loop', () => {
     // item の offsetLeft/offsetWidth は「scroller 内の位置 × slotWidth」の getter で導出する。
     // clone 枚数が実測で増減して要素が作り直されるため、要素単位の固定値モックでは
     // 再生成後の clone に追従できない。
     //
-    // 既定値（slotWidth 400 / clientWidth 800）では clone は各端 5 枚
-    // （被覆要求 1.5 viewport = 1200 に 4 枚で 1580 ≥ 1200 + 部分見え対策の 1 枚）:
-    //   children = clone 5 + 実 6 + clone 5 = 16
-    //   setWidth = children[11].offsetLeft − children[5].offsetLeft = 2400
-    //   maxScroll = 6400 − 800 = 5600 / 帯域 = 中央 [(5600−2400)/2, +2400) = [1600, 4000)
+    // 既定値（slotWidth 400 / clientWidth 800）では clone は各端 9 枚
+    // （被覆要求 3.5 viewport = 2800 に 1 周 2380 + 残り 420 を 2 枚 + 部分見え対策の 1 枚）:
+    //   children = clone 9 + 実 6 + clone 9 = 24
+    //   setWidth = children[15].offsetLeft − children[9].offsetLeft = 2400
+    //   maxScroll = 9600 − 800 = 8800 / 帯域 = 中央 [(8800−2400)/2, +2400) = [3200, 5600)
     let slotWidth = 400
     const slotIndex = (el: HTMLElement) => {
       const parent = el.parentElement
@@ -815,7 +720,7 @@ describe('Carousel', () => {
     // scroller 自身の scrollLeft/scrollWidth/clientWidth は要素単位で実測モックする。
     function mockLoopGeometry(
       scroller: HTMLElement,
-      { scrollLeft = 2400, slotWidth: slot = 400, scrollWidth = 6400 } = {},
+      { scrollLeft = 4400, slotWidth: slot = 400, scrollWidth = 9600 } = {},
     ) {
       slotWidth = slot
       let sl = scrollLeft
@@ -897,62 +802,137 @@ describe('Carousel', () => {
       return { ...rendered, scroller, scrollTo }
     }
 
-    it('centerItem の実スライドが viewport 中央へ instant 配置される', () => {
-      const { scrollTo } = setupLoop(
-        <Carousel loop centerItem={0}>
-          {slides}
-        </Carousel>,
-      )
-      // children[5]: offsetLeft 2000, width 380 → 2000 + 190 − 400 = 1790（帯域内）
-      expect(scrollTo).toHaveBeenLastCalledWith({
-        left: 1790,
-        behavior: 'instant',
+    describe('loop (clone slides)', () => {
+      it('loop で各端に clone を加えて描画する', () => {
+        const { container } = render(<Carousel loop>{slides}</Carousel>)
+        // clone 枚数は実測で決まる。jsdom は幾何が全て 0 のため
+        // 「viewport を覆う最小枚数 1 + 1」= 各端 2 枚になる。
+        expect(
+          container.querySelectorAll('.charcoal-carousel__item'),
+        ).toHaveLength(10)
+        expect(
+          container.querySelectorAll('.charcoal-carousel__item[data-clone]'),
+        ).toHaveLength(4)
+      })
+
+      it('indicator の dot は実スライド数のまま', () => {
+        const { container } = render(
+          <Carousel loop indicator>
+            {slides}
+          </Carousel>,
+        )
+        expect(
+          container.querySelectorAll('.charcoal-carousel__indicator__item'),
+        ).toHaveLength(6)
+      })
+
+      it('clone は aria-hidden かつ inert', () => {
+        const { container } = render(<Carousel loop>{slides}</Carousel>)
+        const clones = container.querySelectorAll(
+          '.charcoal-carousel__item[data-clone]',
+        )
+        clones.forEach((clone) => {
+          expect(clone).toHaveAttribute('aria-hidden', 'true')
+        })
+        expect((clones[0] as HTMLElement & { inert?: boolean }).inert).toBe(
+          true,
+        )
+      })
+
+      it('scroll 命令では実セットの要素だけが scrollIntoView する', () => {
+        const scrollIntoView = vi.fn()
+        Element.prototype.scrollIntoView = scrollIntoView
+        const { container } = render(
+          <Carousel size="S" loop>
+            {slides}
+          </Carousel>,
+        )
+        const dots = container.querySelectorAll(
+          '.charcoal-carousel__indicator__item',
+        )
+        act(() => {
+          fireEvent.click(dots[2])
+        })
+        expect(scrollIntoView).toHaveBeenCalledTimes(1)
+        const realItems = container.querySelectorAll(
+          '.charcoal-carousel__item:not([data-clone])',
+        )
+        expect(scrollIntoView.mock.contexts[0]).toBe(realItems[2])
+        delete (Element.prototype as { scrollIntoView?: unknown })
+          .scrollIntoView
+      })
+
+      it('clone の中央到達でも実セットと同じ index を activeIndex にする', () => {
+        const restore = installIOMock()
+        const { container } = render(
+          <Carousel size="M" indicator loop>
+            {slides}
+          </Carousel>,
+        )
+        // clone-before 帯は実セット末尾の複製。1 枚目 = 論理 index 4（n=6, k=2）
+        const cloneEls = container.querySelectorAll(
+          '.charcoal-carousel__item[data-clone]',
+        )
+        act(() => {
+          fireIntersect(cloneEls[0])
+        })
+        const dots = container.querySelectorAll(
+          '.charcoal-carousel__indicator__item',
+        )
+        expect(dots[4]).toHaveAttribute('data-active', 'true')
+        restore()
+      })
+
+      it('型: loop と defaultScroll は併用できない', () => {
+        const defaultScroll: CarouselDefaultScroll = { align: 'center' }
+        const invalid = (
+          // @ts-expect-error loop=true では defaultScroll を渡せない（初期位置は centerItem が決める）
+          <Carousel loop defaultScroll={defaultScroll}>
+            {slides}
+          </Carousel>
+        )
+        const valid = (
+          <Carousel loop centerItem={0}>
+            {slides}
+          </Carousel>
+        )
+        // 型検査のための式（描画はしない）
+        expect(invalid).toBeTruthy()
+        expect(valid).toBeTruthy()
       })
     })
 
-    it('centerItem 未指定なら実セット先頭の左寄せで開始する', () => {
-      const { scrollTo } = setupLoop(<Carousel loop>{slides}</Carousel>)
-      expect(scrollTo).toHaveBeenLastCalledWith({
-        left: 2000,
-        behavior: 'instant',
+    describe('initial position / teleport', () => {
+      it('centerItem の実スライドが viewport 中央へ instant 配置される', () => {
+        const { scrollTo } = setupLoop(
+          <Carousel loop centerItem={0}>
+            {slides}
+          </Carousel>,
+        )
+        // children[9]: offsetLeft 3600, width 380 → 3600 + 190 − 400 = 3390（帯域内）
+        expect(scrollTo).toHaveBeenLastCalledWith({
+          left: 3390,
+          behavior: 'instant',
+        })
       })
-    })
 
-    it('loop 成立時は端でも canPrev/canNext が有効', () => {
-      setupLoop(<Carousel loop>{slides}</Carousel>, { scrollLeft: 0 })
-      expect(
-        screen.getByRole('button', { name: 'Previous' }),
-      ).not.toBeDisabled()
-      expect(screen.getByRole('button', { name: 'Next' })).not.toBeDisabled()
-    })
-
-    it('スクロール静止後、帯域外なら合同位置へ instant テレポートする', () => {
-      vi.useFakeTimers()
-      const { scroller, scrollTo } = setupLoop(
-        <Carousel loop>{slides}</Carousel>,
-        {
-          scrollLeft: 1000,
-        },
-      )
-      scrollTo.mockClear()
-      fireEvent.scroll(scroller)
-      // scrollend 対応環境と debounce フォールバックの両経路を発火させる
-      fireEvent(scroller, new Event('scrollend'))
-      act(() => {
-        vi.advanceTimersByTime(150)
+      it('centerItem 未指定なら実セット先頭の左寄せで開始する', () => {
+        const { scrollTo } = setupLoop(<Carousel loop>{slides}</Carousel>)
+        expect(scrollTo).toHaveBeenLastCalledWith({
+          left: 3600,
+          behavior: 'instant',
+        })
       })
-      // 1000 は帯域 [1600, 4000) の外 → +2400 で 3400
-      expect(scrollTo).toHaveBeenCalledWith({ left: 3400, behavior: 'instant' })
-      vi.useRealTimers()
-    })
 
-    it('scrollend 非対応環境では debounce でテレポートする', () => {
-      // jsdom は onscrollend を window の own property (accessor) として持つため、
-      // 一時的に削除して 'onscrollend' in window === false を再現する。
-      const descriptor = Object.getOwnPropertyDescriptor(window, 'onscrollend')
-      delete (window as { onscrollend?: unknown }).onscrollend
-      expect('onscrollend' in window).toBe(false)
-      try {
+      it('loop 成立時は端でも canPrev/canNext が有効', () => {
+        setupLoop(<Carousel loop>{slides}</Carousel>, { scrollLeft: 0 })
+        expect(
+          screen.getByRole('button', { name: 'Previous' }),
+        ).not.toBeDisabled()
+        expect(screen.getByRole('button', { name: 'Next' })).not.toBeDisabled()
+      })
+
+      it('スクロール静止後、帯域外なら合同位置へ instant テレポートする', () => {
         vi.useFakeTimers()
         const { scroller, scrollTo } = setupLoop(
           <Carousel loop>{slides}</Carousel>,
@@ -962,6 +942,8 @@ describe('Carousel', () => {
         )
         scrollTo.mockClear()
         fireEvent.scroll(scroller)
+        // scrollend 対応環境と debounce フォールバックの両経路を発火させる
+        fireEvent(scroller, new Event('scrollend'))
         act(() => {
           vi.advanceTimersByTime(150)
         })
@@ -970,84 +952,123 @@ describe('Carousel', () => {
           left: 3400,
           behavior: 'instant',
         })
-      } finally {
-        if (descriptor) Object.defineProperty(window, 'onscrollend', descriptor)
         vi.useRealTimers()
-      }
-    })
-
-    it('走行中（scroll イベント）にはテレポートせず、静止後にのみ補正する', () => {
-      const { scroller, scrollTo } = setupLoop(
-        <Carousel loop>{slides}</Carousel>,
-        {
-          scrollLeft: 100,
-        },
-      )
-      scrollTo.mockClear()
-      // 走行中の scrollTo は momentum を中断してがくつくため、物理端付近でも撃たない
-      fireEvent.scroll(scroller)
-      expect(scrollTo).not.toHaveBeenCalled()
-      fireEvent(scroller, new Event('scrollend'))
-      expect(scrollTo).toHaveBeenCalledWith({ left: 2500, behavior: 'instant' })
-    })
-
-    it('走行中でも物理端にクランプしたら即時テレポートで滑走路を回復する', () => {
-      const { scroller, scrollTo } = setupLoop(
-        <Carousel loop>{slides}</Carousel>,
-        {
-          scrollLeft: 90,
-        },
-      )
-      scrollTo.mockClear()
-      // 強フリックが滑走路を使い切り scrollLeft が物理端 0 にクランプした状況。
-      // 静止(scrollend)を待つと壁に張り付いたままになるため、scroll イベントで補正する。
-      scroller.scrollLeft = 0
-      fireEvent.scroll(scroller)
-      // 0 → 帯域 [1600, 4000) の合同位置 +2400 = 2400
-      expect(scrollTo).toHaveBeenCalledWith({ left: 2400, behavior: 'instant' })
-    })
-
-    it('実セット幅 ≤ viewport ではテレポートせず実セット先頭から開始する', () => {
-      vi.useFakeTimers()
-      // slotWidth 40 → 全 6 枚でも viewport 800 を覆えず clone は各端 6 枚（全複製）、
-      // setWidth 240 ≤ clientWidth 800 でループ不成立
-      const { scroller, scrollTo } = setupLoop(
-        <Carousel loop>{slides}</Carousel>,
-        {
-          scrollLeft: 0,
-          slotWidth: 40,
-          scrollWidth: 800,
-        },
-      )
-      // 初期位置は実セット先頭（children[6].offsetLeft = 240）
-      expect(scrollTo).toHaveBeenLastCalledWith({
-        left: 240,
-        behavior: 'instant',
       })
-      scrollTo.mockClear()
-      fireEvent.scroll(scroller)
-      fireEvent(scroller, new Event('scrollend'))
-      act(() => {
-        vi.advanceTimersByTime(150)
-      })
-      expect(scrollTo).not.toHaveBeenCalled()
-      vi.useRealTimers()
-    })
 
-    it('resetScroll() が loop の初期位置へ instant で戻す', () => {
-      const ref = createRef<CarouselHandlerRef>()
-      const { scrollTo } = setupLoop(
-        <Carousel ref={ref} loop centerItem={0}>
-          {slides}
-        </Carousel>,
-      )
-      scrollTo.mockClear()
-      act(() => {
-        ref.current?.resetScroll()
+      it('scrollend 非対応環境では debounce でテレポートする', () => {
+        // jsdom は onscrollend を window の own property (accessor) として持つため、
+        // 一時的に削除して 'onscrollend' in window === false を再現する。
+        const descriptor = Object.getOwnPropertyDescriptor(
+          window,
+          'onscrollend',
+        )
+        delete (window as { onscrollend?: unknown }).onscrollend
+        expect('onscrollend' in window).toBe(false)
+        try {
+          vi.useFakeTimers()
+          const { scroller, scrollTo } = setupLoop(
+            <Carousel loop>{slides}</Carousel>,
+            {
+              scrollLeft: 1000,
+            },
+          )
+          scrollTo.mockClear()
+          fireEvent.scroll(scroller)
+          act(() => {
+            vi.advanceTimersByTime(150)
+          })
+          // 1000 は帯域 [1600, 4000) の外 → +2400 で 3400
+          expect(scrollTo).toHaveBeenCalledWith({
+            left: 3400,
+            behavior: 'instant',
+          })
+        } finally {
+          if (descriptor)
+            Object.defineProperty(window, 'onscrollend', descriptor)
+          vi.useRealTimers()
+        }
       })
-      expect(scrollTo).toHaveBeenLastCalledWith({
-        left: 1790,
-        behavior: 'instant',
+
+      it('走行中（scroll イベント）にはテレポートせず、静止後にのみ補正する', () => {
+        const { scroller, scrollTo } = setupLoop(
+          <Carousel loop>{slides}</Carousel>,
+          {
+            scrollLeft: 100,
+          },
+        )
+        scrollTo.mockClear()
+        // 走行中の scrollTo は momentum を中断してがくつくため、物理端付近でも撃たない
+        fireEvent.scroll(scroller)
+        expect(scrollTo).not.toHaveBeenCalled()
+        fireEvent(scroller, new Event('scrollend'))
+        // 100 → 帯域 [3200, 5600) の合同位置 +4800 = 4900
+        expect(scrollTo).toHaveBeenCalledWith({
+          left: 4900,
+          behavior: 'instant',
+        })
+      })
+
+      it('走行中でも物理端にクランプしたら即時テレポートで滑走路を回復する', () => {
+        const { scroller, scrollTo } = setupLoop(
+          <Carousel loop>{slides}</Carousel>,
+          {
+            scrollLeft: 90,
+          },
+        )
+        scrollTo.mockClear()
+        // 強フリックが滑走路を使い切り scrollLeft が物理端 0 にクランプした状況。
+        // 静止(scrollend)を待つと壁に張り付いたままになるため、scroll イベントで補正する。
+        scroller.scrollLeft = 0
+        fireEvent.scroll(scroller)
+        // 0 → 帯域 [3200, 5600) の合同位置 +4800 = 4800
+        expect(scrollTo).toHaveBeenCalledWith({
+          left: 4800,
+          behavior: 'instant',
+        })
+      })
+
+      it('実セット幅 ≤ viewport ではテレポートせず実セット先頭から開始する', () => {
+        vi.useFakeTimers()
+        // slotWidth 40 → 実セット幅 220 ≤ clientWidth 800 でループ不成立。
+        // clone を積んでも成立しないので 0 枚になる
+        const { scroller, scrollTo } = setupLoop(
+          <Carousel loop>{slides}</Carousel>,
+          {
+            scrollLeft: 0,
+            slotWidth: 40,
+            scrollWidth: 800,
+          },
+        )
+        // ループ不成立なので clone は描画されず、実セット先頭は children[0]
+        expect(scrollTo).toHaveBeenLastCalledWith({
+          left: 0,
+          behavior: 'instant',
+        })
+        scrollTo.mockClear()
+        fireEvent.scroll(scroller)
+        fireEvent(scroller, new Event('scrollend'))
+        act(() => {
+          vi.advanceTimersByTime(150)
+        })
+        expect(scrollTo).not.toHaveBeenCalled()
+        vi.useRealTimers()
+      })
+
+      it('resetScroll() が loop の初期位置へ instant で戻す', () => {
+        const ref = createRef<CarouselHandlerRef>()
+        const { scrollTo } = setupLoop(
+          <Carousel ref={ref} loop centerItem={0}>
+            {slides}
+          </Carousel>,
+        )
+        scrollTo.mockClear()
+        act(() => {
+          ref.current?.resetScroll()
+        })
+        expect(scrollTo).toHaveBeenLastCalledWith({
+          left: 3390,
+          behavior: 'instant',
+        })
       })
     })
   })

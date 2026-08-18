@@ -132,13 +132,20 @@ describe('computeLoopCloneCount', () => {
     offsetWidth: 380,
   }))
 
-  it('各端の累積幅が 1.5 viewport を覆う最小枚数 + 1 を返す', () => {
-    // 被覆要求 = 800 × 1.5 = 1200。4 枚で 1580 ≥ 1200（3 枚では 1180）→ 4 + 1 = 5
-    expect(computeLoopCloneCount(items, 800)).toBe(5)
+  it('各端の累積幅が 3.5 viewport を覆う最小枚数 + 1 を返す', () => {
+    // 実セット span = 2380。被覆要求 = 800 × 3.5 = 2800 なので 1 周 + 残り 420。
+    // 残りは 2 枚で 780 ≥ 420（1 枚では 380）→ 6 + 2 + 1 = 9
+    expect(computeLoopCloneCount(items, 800)).toBe(9)
   })
 
-  it('全枚数でも viewport を覆えなければ全枚数に丸める', () => {
-    expect(computeLoopCloneCount(items, 10000)).toBe(6)
+  it('1 セットで覆えない要求はセット丸ごとの周回で埋める', () => {
+    // 被覆要求 = 1200 × 3.5 = 4200 → 1 周 + 残り 1820。
+    // 残りは 5 枚で 1980 ≥ 1820（4 枚では 1580）→ 6 + 5 + 1 = 12
+    expect(computeLoopCloneCount(items, 1200)).toBe(12)
+  })
+
+  it('実セットが viewport を覆えない（ループ不成立）なら 0', () => {
+    expect(computeLoopCloneCount(items, 10000)).toBe(0)
   })
 
   it('item が無ければ 0', () => {

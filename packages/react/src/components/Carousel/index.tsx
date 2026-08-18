@@ -230,23 +230,27 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     ))
 
   // loop 時は実セットの前後に clone を描画する（clone + 端テレポート方式）。
-  // 枚数は「各端が 1 viewport を覆う分」だけ実測から決まる（初回 render は 0 枚）。
+  // 枚数は滑走路の実測から決まり（初回 render は 0 枚）、実セットを超える要求は
+  // セットを周回して埋めるため、実 item 数より多い枚数になりうる。
   const renderClones = (which: 'before' | 'after') => {
     if (loopCloneCount === 0) return null
-    const indices = slides.map((_, i) => i)
-    const cloneIndices =
-      which === 'before'
-        ? indices.slice(-loopCloneCount)
-        : indices.slice(0, loopCloneCount)
-    return cloneIndices.map((i) => (
-      <CarouselCloneItem
-        key={`~${which}~${slideKeys[i]}`}
-        index={i}
-        store={store}
-      >
-        {slides[i]}
-      </CarouselCloneItem>
-    ))
+    const n = slides.length
+    return Array.from({ length: loopCloneCount }, (_, position) => {
+      // before は実セット直前から末尾へ遡り、after は先頭から続く。どちらも周回する。
+      const i =
+        which === 'before'
+          ? (((n - loopCloneCount + position) % n) + n) % n
+          : position % n
+      return (
+        <CarouselCloneItem
+          key={`~${which}~${position}`}
+          index={i}
+          store={store}
+        >
+          {slides[i]}
+        </CarouselCloneItem>
+      )
+    })
   }
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
