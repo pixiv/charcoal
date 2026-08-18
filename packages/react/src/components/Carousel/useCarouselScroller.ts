@@ -11,6 +11,7 @@ import {
 } from './carouselLoop'
 import type { CarouselStore } from './carouselStore'
 import type { ScrollAlign, ScrollStep } from './index'
+import { observeResize } from './resizeObserver'
 
 const INTERACTION_EVENTS = ['pointerdown', 'wheel', 'touchstart'] as const
 
@@ -204,16 +205,14 @@ export function useCarouselScroller(
   // scroller 幅の変化で onResize(clientWidth) を通知し、状態と初期位置を再計算する。
   useIsomorphicLayoutEffect(() => {
     const el = scrollerRef.current
-    if (!el || typeof ResizeObserver === 'undefined') return
-    const ro = new ResizeObserver(() => {
+    if (!el) return
+    return observeResize(el, () => {
       measureCloneCount()
       measureLoop()
       applyInitialScroll()
       updateScrollState()
       callbacksRef.current.onResize?.(el.clientWidth)
     })
-    ro.observe(el)
-    return () => ro.disconnect()
   }, [
     scrollerRef,
     measureCloneCount,
@@ -222,29 +221,17 @@ export function useCarouselScroller(
     updateScrollState,
   ])
 
-  // 初期スクロール適用 + ユーザー操作で打ち切り。
+  // 初期スクロール適用。clone 枚数の実測 → state 反映で本 effect が再実行され、
+  // clone 描画後の DOM に対して幾何実測と初期位置適用がやり直される（いずれも paint 前）。
   useIsomorphicLayoutEffect(() => {
     initialScrollActive.current = true
-    // clone 枚数の実測 → state 反映で本 effect が再実行され、clone 描画後の
-    // DOM に対して幾何実測と初期位置適用がやり直される（いずれも paint 前）。
     measureCloneCount()
     measureLoop()
     applyInitialScroll()
     // 初期位置適用後の scrollLeft で canPrev/canNext を確定させる
     // （center/right 初期化で scroll イベント待ちにならないように）。
     updateScrollState()
-    const el = scrollerRef.current
-    if (!el) return
-    const stop = () => {
-      initialScrollActive.current = false
-    }
-    for (const type of INTERACTION_EVENTS) el.addEventListener(type, stop, true)
-    return () => {
-      for (const type of INTERACTION_EVENTS)
-        el.removeEventListener(type, stop, true)
-    }
   }, [
-    scrollerRef,
     measureCloneCount,
     measureLoop,
     applyInitialScroll,
@@ -252,29 +239,34 @@ export function useCarouselScroller(
     itemCount,
   ])
 
-  // ページ送りの目標位置は、静止した時点とユーザーが自分でスクロールを始めた時点で捨てる。
+  // ユーザーが自分でスクロールを始めたら、プログラム由来のスクロール意図
+  // （初期位置の再適用・ページ送りの目標位置）をまとめて破棄する。
   useEffect(() => {
     const el = scrollerRef.current
     if (!el) return
-    const clear = () => {
+    const cancelIntent = () => {
+      initialScrollActive.current = false
       pendingScrollTarget.current = null
     }
-    const stopSettle = onScrollSettle(el, clear)
     for (const type of INTERACTION_EVENTS)
-      el.addEventListener(type, clear, true)
+      el.addEventListener(type, cancelIntent, true)
     return () => {
-      stopSettle()
       for (const type of INTERACTION_EVENTS)
-        el.removeEventListener(type, clear, true)
+        el.removeEventListener(type, cancelIntent, true)
     }
   }, [scrollerRef])
 
-  // loop: スクロール静止後に維持帯域へテレポートする。走行中には行わない
+  // スクロール静止で、ページ送りの目標位置を捨てて維持帯域へテレポートする
+  // （テレポートは loop 幾何が無ければ no-op）。走行中にはテレポートしない
   // （scrollTo は進行中のスクロールを中断して momentum を殺すため、がくつきに見える）。
   useEffect(() => {
     const el = scrollerRef.current
-    if (!loop || !el) return
+    if (!el) return
     const teleport = createLoopTeleport(el, () => geometryRef.current)
+    const settle = () => {
+      pendingScrollTarget.current = null
+      teleport()
+    }
 
     // 強フリックが clone の滑走路を使い切って物理端にクランプした場合だけは
     // 静止を待たずに補正する（壁に張り付いたまま scrollend を待つ「詰まり」対策）。
@@ -296,12 +288,12 @@ export function useCarouselScroller(
     }
 
     el.addEventListener('scroll', escapeWall, { passive: true })
-    const stopSettle = onScrollSettle(el, teleport)
+    const stopSettle = onScrollSettle(el, settle)
     return () => {
       el.removeEventListener('scroll', escapeWall)
       stopSettle()
     }
-  }, [loop, scrollerRef, itemCount])
+  }, [scrollerRef, itemCount])
 
   const onItemResize = useCallback(() => {
     measureCloneCount()

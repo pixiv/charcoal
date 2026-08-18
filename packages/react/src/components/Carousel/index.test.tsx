@@ -631,7 +631,7 @@ describe('Carousel', () => {
       const onResize = vi.fn()
       render(<Carousel onResize={onResize}>{slides}</Carousel>)
       act(() => {
-        roCallbacks.forEach((cb) => cb([]))
+        roCallbacks.forEach((cb) => cb([{ target: getScroller() }]))
       })
       expect(onResize).toHaveBeenCalledWith(640)
       cwSpy.mockRestore()
@@ -797,7 +797,7 @@ describe('Carousel', () => {
       scroller.scrollTo = scrollTo
       mockLoopGeometry(scroller, geometry)
       act(() => {
-        roCallbacks.forEach((cb) => cb([]))
+        roCallbacks.forEach((cb) => cb([{ target: scroller }]))
       })
       return { ...rendered, scroller, scrollTo }
     }
@@ -805,8 +805,9 @@ describe('Carousel', () => {
     describe('loop (clone slides)', () => {
       it('loop で各端に clone を加えて描画する', () => {
         const { container } = render(<Carousel loop>{slides}</Carousel>)
-        // clone 枚数は実測で決まる。jsdom は幾何が全て 0 のため
-        // 「viewport を覆う最小枚数 1 + 1」= 各端 2 枚になる。
+        // clone 枚数は実測で決まる。この describe のモックで item 幾何はスロット
+        // 実測になるが scroller の clientWidth は 0 のままなので、被覆要求 0 に対し
+        // 「覆う最小枚数 1 + 部分見え対策 1」= 各端 2 枚になる。
         expect(
           container.querySelectorAll('.charcoal-carousel__item'),
         ).toHaveLength(10)

@@ -235,12 +235,10 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const renderClones = (which: 'before' | 'after') => {
     if (loopCloneCount === 0) return null
     const n = slides.length
+    const mod = (x: number) => ((x % n) + n) % n
     return Array.from({ length: loopCloneCount }, (_, position) => {
       // before は実セット直前から末尾へ遡り、after は先頭から続く。どちらも周回する。
-      const i =
-        which === 'before'
-          ? (((n - loopCloneCount + position) % n) + n) % n
-          : position % n
+      const i = which === 'before' ? mod(position - loopCloneCount) : mod(position)
       return (
         <CarouselCloneItem
           key={`~${which}~${position}`}
