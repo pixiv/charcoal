@@ -110,12 +110,13 @@ export function useCarouselScroller(
       setCloneCount(0)
       return
     }
-    const realItems = Array.from(el.children)
-      .slice(cloneCount, cloneCount + itemCount)
-      .filter((child): child is HTMLElement => child instanceof HTMLElement)
+    const realItems = Array.from(el.children).filter(
+      (child): child is HTMLElement =>
+        child instanceof HTMLElement && !child.hasAttribute('data-clone'),
+    )
     if (realItems.length !== itemCount) return
     setCloneCount(computeLoopCloneCount(realItems, el.clientWidth))
-  }, [scrollerRef, loop, itemCount, cloneCount])
+  }, [scrollerRef, loop, itemCount])
 
   // loop 幾何は resize / item resize 時にのみ実測してキャッシュする
   // （scroll イベント中の layout 読みを避ける）。
@@ -159,8 +160,15 @@ export function useCarouselScroller(
       const realFirst = el.children.item(cloneCount)
       if (!(realFirst instanceof HTMLElement)) return
       const geometry = geometryRef.current
+      // 範囲外・非整数（NaN 含む）の centerItem は clone 帯の要素を
+      // 中央化してしまうため実セット先頭へ倒す
       const centerEl =
-        centerItem == null ? null : el.children.item(cloneCount + centerItem)
+        centerItem == null ||
+        !Number.isInteger(centerItem) ||
+        centerItem < 0 ||
+        centerItem >= itemCount
+          ? null
+          : el.children.item(cloneCount + centerItem)
       // centerItem はループ成立時のみ中央へ。それ以外は実セット先頭の左寄せ。
       const left =
         geometry != null &&
@@ -187,7 +195,7 @@ export function useCarouselScroller(
       left: Math.max(0, Math.min(left, maxScroll)),
       behavior: 'instant',
     })
-  }, [scrollerRef, loop, centerItem, cloneCount, align, offset])
+  }, [scrollerRef, loop, centerItem, itemCount, cloneCount, align, offset])
 
   // canPrev/canNext: scroll で更新。onScroll もここから発火。itemCount 変化で貼り直し。
   useIsomorphicLayoutEffect(() => {
@@ -202,42 +210,45 @@ export function useCarouselScroller(
     return () => el.removeEventListener('scroll', handleScroll)
   }, [scrollerRef, updateScrollState, itemCount])
 
+  // 実測 → 状態反映の一連。順序依存がある（measureLoop が geometryRef を書き、
+  // applyInitialScroll がそれを読む）ため、必ずこの並びで呼ぶ。
+  const remeasure = useCallback(() => {
+    measureCloneCount()
+    measureLoop()
+    applyInitialScroll()
+    // 位置確定後の scrollLeft で canPrev/canNext を確定させる
+    // （center/right 初期化で scroll イベント待ちにならないように）。
+    updateScrollState()
+  }, [measureCloneCount, measureLoop, applyInitialScroll, updateScrollState])
+
+  // measureLoop / applyInitialScroll は cloneCount 依存で identity が変わるため、
+  // 安定参照が要る購読（scroller の ResizeObserver・memo 化 item の onResize）へは
+  // ref 経由で最新を渡す。paint 前に更新しないと、コミット直後に届いた
+  // ResizeObserver 通知が前 render の閉包を呼ぶ。
+  const remeasureRef = useRef(remeasure)
+  useIsomorphicLayoutEffect(() => {
+    remeasureRef.current = remeasure
+  })
+
   // scroller 幅の変化で onResize(clientWidth) を通知し、状態と初期位置を再計算する。
+  // 購読は張りっぱなしにする（re-observe は RO 仕様上初回通知を必ず発火させるため、
+  // 貼り直すと幅が変わっていないのに onResize が漏れる）。
   useIsomorphicLayoutEffect(() => {
     const el = scrollerRef.current
     if (!el) return
     return observeResize(el, () => {
-      measureCloneCount()
-      measureLoop()
-      applyInitialScroll()
-      updateScrollState()
+      remeasureRef.current()
       callbacksRef.current.onResize?.(el.clientWidth)
     })
-  }, [
-    scrollerRef,
-    measureCloneCount,
-    measureLoop,
-    applyInitialScroll,
-    updateScrollState,
-  ])
+  }, [scrollerRef])
 
   // 初期スクロール適用。clone 枚数の実測 → state 反映で本 effect が再実行され、
   // clone 描画後の DOM に対して幾何実測と初期位置適用がやり直される（いずれも paint 前）。
+  // initialScrollActive はここでは再武装しない（マウント時は useRef(true) が担い、
+  // ユーザー操作で false になった後の再実行は実測と状態更新だけを行う）。
   useIsomorphicLayoutEffect(() => {
-    initialScrollActive.current = true
-    measureCloneCount()
-    measureLoop()
-    applyInitialScroll()
-    // 初期位置適用後の scrollLeft で canPrev/canNext を確定させる
-    // （center/right 初期化で scroll イベント待ちにならないように）。
-    updateScrollState()
-  }, [
-    measureCloneCount,
-    measureLoop,
-    applyInitialScroll,
-    updateScrollState,
-    itemCount,
-  ])
+    remeasure()
+  }, [remeasure, itemCount])
 
   // ユーザーが自分でスクロールを始めたら、プログラム由来のスクロール意図
   // （初期位置の再適用・ページ送りの目標位置）をまとめて破棄する。
@@ -255,6 +266,20 @@ export function useCarouselScroller(
         el.removeEventListener(type, cancelIntent, true)
     }
   }, [scrollerRef])
+
+  // indicator の dot などの scroll 命令もユーザー由来の操作なので、
+  // プログラム由来のスクロール意図をまとめて破棄する（dot は scroller の外に
+  // あるため上の INTERACTION_EVENTS では拾えない）。
+  useEffect(() => {
+    let lastNonce = store.getSnapshot().scroll?.nonce ?? 0
+    return store.subscribe(() => {
+      const nonce = store.getSnapshot().scroll?.nonce ?? 0
+      if (nonce === lastNonce) return
+      lastNonce = nonce
+      initialScrollActive.current = false
+      pendingScrollTarget.current = null
+    })
+  }, [store])
 
   // スクロール静止で、ページ送りの目標位置を捨てて維持帯域へテレポートする
   // （テレポートは loop 幾何が無ければ no-op）。走行中にはテレポートしない
@@ -295,20 +320,14 @@ export function useCarouselScroller(
     }
   }, [scrollerRef, itemCount])
 
-  const onItemResize = useCallback(() => {
-    measureCloneCount()
-    measureLoop()
-    applyInitialScroll()
-    updateScrollState()
-  }, [measureCloneCount, measureLoop, applyInitialScroll, updateScrollState])
+  // memo 化された CarouselItem には安定参照で渡す（identity が変わると memo が無効化される）。
+  const onItemResize = useCallback(() => remeasureRef.current(), [])
 
   // defaultScroll の初期位置へ戻す（命令的 API: CarouselHandlerRef.resetScroll）。
   const resetScroll = useCallback(() => {
     initialScrollActive.current = true
-    measureLoop()
-    applyInitialScroll()
-    updateScrollState()
-  }, [measureLoop, applyInitialScroll, updateScrollState])
+    remeasure()
+  }, [remeasure])
 
   const scrollByStep = useCallback(
     (direction: 'prev' | 'next') => {
@@ -338,5 +357,12 @@ export function useCarouselScroller(
     [scrollerRef, scrollStep],
   )
 
-  return { scrollByStep, onItemResize, resetScroll, loopCloneCount: cloneCount }
+  return {
+    scrollByStep,
+    onItemResize,
+    resetScroll,
+    // cloneCount state は effect 更新で 1 render 遅れるため、children が空に
+    // 変わった直後の render でも消費側が stale な枚数を見ないよう同期的に丸める。
+    loopCloneCount: itemCount === 0 ? 0 : cloneCount,
+  }
 }

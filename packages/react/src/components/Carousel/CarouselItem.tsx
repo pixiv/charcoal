@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from 'react'
 import { useObjectRef } from 'react-aria/useObjectRef'
+import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
 import type { CarouselStore } from './carouselStore'
 import { observeCenter } from './intersectionObserver'
 import { observeResize } from './resizeObserver'
@@ -103,8 +104,9 @@ export const CarouselCloneItem = memo(function CarouselCloneItem({
 }: CarouselCloneItemProps) {
   const ref = useRef<HTMLDivElement>(null)
 
-  // React 18 は inert prop 未対応のため property で付与する。
-  useEffect(() => {
+  // React 18 は inert prop 未対応のため property で付与する。paint 後の useEffect だと
+  // clone 内のフォーカス可能要素が 1 フレーム操作可能になるため、paint 前に付与する。
+  useIsomorphicLayoutEffect(() => {
     const el = ref.current
     if (!el) return
     el.inert = true

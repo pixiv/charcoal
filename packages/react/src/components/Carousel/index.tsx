@@ -43,6 +43,8 @@ export type ScrollSnap = Readonly<{
 export type ScrollStepContext = Readonly<{
   clientWidth: number
   scrollWidth: number
+  // ページ送りの起点。走行中の連打では実座標ではなく「前回のまだ到達していない
+  // 目標位置」が渡る（連打の積算を成立させるため）。
   scrollLeft: number
   direction: 'prev' | 'next'
 }>
@@ -60,10 +62,20 @@ export type CarouselDefaultScroll = Readonly<{
 }>
 
 // loop 時は初期位置が centerItem（未指定なら実セット先頭）に固定されるため
-// defaultScroll と両立しない（型で排他する）。
+// defaultScroll と両立しない（型で排他する）。centerItem は loop 専用。
 export type CarouselLoopProps =
-  | Readonly<{ loop?: false; defaultScroll?: CarouselDefaultScroll }>
-  | Readonly<{ loop: true; defaultScroll?: never }>
+  | Readonly<{
+      loop?: false
+      defaultScroll?: CarouselDefaultScroll
+      centerItem?: never
+    }>
+  | Readonly<{
+      loop: true
+      defaultScroll?: never
+      // 初期表示で viewport 中央に置く実スライドの論理 index。
+      // 範囲外は実セット先頭の左寄せに倒れる。
+      centerItem?: number
+    }>
 
 export type CarouselProps = Readonly<{
   className?: string
@@ -81,8 +93,6 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
-  // loop 時に初期表示で viewport 中央に置く実スライドの論理 index。非 loop では無効。
-  centerItem?: number
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
   children: ReactNode
 }> &
@@ -232,8 +242,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   // loop 時は実セットの前後に clone を描画する（clone + 端テレポート方式）。
   // 枚数は滑走路の実測から決まり（初回 render は 0 枚）、実セットを超える要求は
   // セットを周回して埋めるため、実 item 数より多い枚数になりうる。
-  const renderClones = (which: 'before' | 'after') => {
-    if (loopCloneCount === 0) return null
+  // 中央検出による activeIndex 更新のたびに再構築しないよう memo 化する。
+  const cloneBands = useMemo(() => {
+    if (loopCloneCount === 0) return { before: null, after: null }
     const pairs = slides.map((slide, index) => ({ slide, index }))
     // 帯域を覆うまで実セットを繰り返し、before は実セット直前から末尾へ遡るよう
     // 末尾から、after は先頭から続くように先頭から切り出す。
@@ -241,20 +252,24 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       { length: Math.ceil(loopCloneCount / pairs.length) },
       () => pairs,
     ).flat()
-    const band =
-      which === 'before'
-        ? repeated.slice(-loopCloneCount)
-        : repeated.slice(0, loopCloneCount)
-    return band.map(({ slide, index }, position) => (
-      <CarouselCloneItem
-        key={`~${which}~${position}`}
-        index={index}
-        store={store}
-      >
-        {slide}
-      </CarouselCloneItem>
-    ))
-  }
+    const renderBand = (
+      which: 'before' | 'after',
+      band: readonly (typeof pairs)[number][],
+    ) =>
+      band.map(({ slide, index }, position) => (
+        <CarouselCloneItem
+          key={`~${which}~${position}`}
+          index={index}
+          store={store}
+        >
+          {slide}
+        </CarouselCloneItem>
+      ))
+    return {
+      before: renderBand('before', repeated.slice(-loopCloneCount)),
+      after: renderBand('after', repeated.slice(0, loopCloneCount)),
+    }
+  }, [loopCloneCount, slides, store])
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
@@ -310,9 +325,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           className="charcoal-carousel__scroller"
           tabIndex={0}
         >
-          {loop && renderClones('before')}
+          {loop && cloneBands.before}
           {renderSlides()}
-          {loop && renderClones('after')}
+          {loop && cloneBands.after}
         </div>
 
         <div

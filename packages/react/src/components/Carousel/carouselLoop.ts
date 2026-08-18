@@ -56,7 +56,8 @@ export function computeLoopCloneCount(
   const n = items.length
   if (n === 0) return 0
   const [first] = items
-  const reversed = items.toReversed()
+  // toReversed (ES2023) は実効ブラウザ下限を上げるため使わない（repo に engines 宣言なし）
+  const reversed = [...items].reverse()
   const [last] = reversed
   // 末尾 item の後ろの間隔は実測できないため、セット幅はこの分だけ過小評価になる
   // （clone を余分に積む方向なので滑走路の保証は崩れない）。

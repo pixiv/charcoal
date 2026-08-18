@@ -787,6 +787,8 @@ describe('Carousel', () => {
         )
       }
       globalThis.ResizeObserver = origRO
+      // fake timers を使うテストが assert 失敗しても後続へ漏らさない
+      vi.useRealTimers()
     })
 
     // 幾何モック → RO 発火で実測キャッシュ + 初期位置適用、までを共通化
@@ -884,6 +886,22 @@ describe('Carousel', () => {
         restore()
       })
 
+      it('children が空になっても clone 描画でクラッシュしない', () => {
+        const { container, rerender } = render(
+          <Carousel loop>{slides}</Carousel>,
+        )
+        expect(
+          container.querySelectorAll('.charcoal-carousel__item[data-clone]')
+            .length,
+        ).toBeGreaterThan(0)
+        // 非同期フィルタ等で children が空になると、clone 枚数 state が
+        // 効果で 0 に戻るより先に空 slides で render が走る
+        rerender(<Carousel loop>{[]}</Carousel>)
+        expect(
+          container.querySelectorAll('.charcoal-carousel__item'),
+        ).toHaveLength(0)
+      })
+
       it('clone は ref を複製しない（ユーザーの ref は実スライドだけを指す）', () => {
         const refCalls: HTMLElement[] = []
         const refSlides = Array.from({ length: 6 }, (_, i) => (
@@ -914,6 +932,10 @@ describe('Carousel', () => {
             {slides}
           </Carousel>
         )
+        const invalidCenter = (
+          // @ts-expect-error centerItem は loop 専用（非 loop では渡せない）
+          <Carousel centerItem={0}>{slides}</Carousel>
+        )
         const valid = (
           <Carousel loop centerItem={0}>
             {slides}
@@ -921,6 +943,7 @@ describe('Carousel', () => {
         )
         // 型検査のための式（描画はしない）
         expect(invalid).toBeTruthy()
+        expect(invalidCenter).toBeTruthy()
         expect(valid).toBeTruthy()
       })
     })
@@ -937,6 +960,81 @@ describe('Carousel', () => {
           left: 3390,
           behavior: 'instant',
         })
+      })
+
+      it('範囲外の centerItem は実セット先頭の左寄せに倒れる', () => {
+        const { scrollTo } = setupLoop(
+          <Carousel loop centerItem={99}>
+            {slides}
+          </Carousel>,
+        )
+        expect(scrollTo).toHaveBeenLastCalledWith({
+          left: 3600,
+          behavior: 'instant',
+        })
+      })
+
+      it('NaN の centerItem も実セット先頭の左寄せに倒れる', () => {
+        // NaN は < / >= の比較が全て false になり範囲ガードをすり抜けるため、
+        // 整数判定で弾かないと item(cloneCount + NaN) → item(0) = clone を中央化する
+        const { scrollTo } = setupLoop(
+          <Carousel loop centerItem={NaN}>
+            {slides}
+          </Carousel>,
+        )
+        expect(scrollTo).toHaveBeenLastCalledWith({
+          left: 3600,
+          behavior: 'instant',
+        })
+      })
+
+      it('ユーザー操作後は clone 枚数が変わっても初期位置へ引き戻さない', () => {
+        const { scroller, scrollTo } = setupLoop(
+          <Carousel loop centerItem={0}>
+            {slides}
+          </Carousel>,
+        )
+        fireEvent.pointerDown(scroller)
+        scrollTo.mockClear()
+        // slotWidth の変化で clone 枚数の実測が変わり、state 更新で effect が再実行される
+        act(() => {
+          mockLoopGeometry(scroller, { slotWidth: 300, scrollWidth: 9600 })
+          roCallbacks.forEach((cb) => cb([{ target: scroller }]))
+        })
+        expect(scrollTo).not.toHaveBeenCalled()
+      })
+
+      it('dot ナビ後のページ送りは stale な目標から積算しない', () => {
+        const scrollIntoView = vi.fn()
+        Element.prototype.scrollIntoView = scrollIntoView
+        try {
+          const { container, scrollTo } = setupLoop(
+            <Carousel loop indicator>
+              {slides}
+            </Carousel>,
+          )
+          scrollTo.mockClear()
+          const next = screen.getByRole('button', { name: 'Next' })
+          // 走行中の目標 4400 + 600 = 5000 が積まれる
+          fireEvent.click(next)
+          // dot は scroller の外にあるため INTERACTION_EVENTS では拾えないが、
+          // scroll 命令の dispatch で目標が破棄される
+          const dots = container.querySelectorAll(
+            '.charcoal-carousel__indicator__item',
+          )
+          act(() => {
+            fireEvent.click(dots[2])
+          })
+          fireEvent.click(next)
+          // 破棄済みなので現在位置 4400 から積算し直す（5000 + 600 = 5600 にならない）
+          expect(scrollTo).toHaveBeenLastCalledWith({
+            left: 5000,
+            behavior: 'smooth',
+          })
+        } finally {
+          delete (Element.prototype as { scrollIntoView?: unknown })
+            .scrollIntoView
+        }
       })
 
       it('centerItem 未指定なら実セット先頭の左寄せで開始する', () => {
@@ -970,12 +1068,11 @@ describe('Carousel', () => {
         act(() => {
           vi.advanceTimersByTime(150)
         })
-        // 1000 は帯域 [1600, 4000) の外 → +2400 で 3400
+        // 1000 は帯域 [3200, 5600) の外 → +2400 で 3400
         expect(scrollTo).toHaveBeenCalledWith({
           left: 3400,
           behavior: 'instant',
         })
-        vi.useRealTimers()
       })
 
       it('scrollend 非対応環境では debounce でテレポートする', () => {
@@ -1000,7 +1097,7 @@ describe('Carousel', () => {
           act(() => {
             vi.advanceTimersByTime(150)
           })
-          // 1000 は帯域 [1600, 4000) の外 → +2400 で 3400
+          // 1000 は帯域 [3200, 5600) の外 → +2400 で 3400
           expect(scrollTo).toHaveBeenCalledWith({
             left: 3400,
             behavior: 'instant',
@@ -1074,7 +1171,6 @@ describe('Carousel', () => {
           vi.advanceTimersByTime(150)
         })
         expect(scrollTo).not.toHaveBeenCalled()
-        vi.useRealTimers()
       })
 
       it('resetScroll() が loop の初期位置へ instant で戻す', () => {
