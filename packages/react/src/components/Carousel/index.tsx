@@ -234,21 +234,26 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   // セットを周回して埋めるため、実 item 数より多い枚数になりうる。
   const renderClones = (which: 'before' | 'after') => {
     if (loopCloneCount === 0) return null
-    const n = slides.length
-    const mod = (x: number) => ((x % n) + n) % n
-    return Array.from({ length: loopCloneCount }, (_, position) => {
-      // before は実セット直前から末尾へ遡り、after は先頭から続く。どちらも周回する。
-      const i = which === 'before' ? mod(position - loopCloneCount) : mod(position)
-      return (
-        <CarouselCloneItem
-          key={`~${which}~${position}`}
-          index={i}
-          store={store}
-        >
-          {slides[i]}
-        </CarouselCloneItem>
-      )
-    })
+    const pairs = slides.map((slide, index) => ({ slide, index }))
+    // 帯域を覆うまで実セットを繰り返し、before は実セット直前から末尾へ遡るよう
+    // 末尾から、after は先頭から続くように先頭から切り出す。
+    const repeated = Array.from(
+      { length: Math.ceil(loopCloneCount / pairs.length) },
+      () => pairs,
+    ).flat()
+    const band =
+      which === 'before'
+        ? repeated.slice(-loopCloneCount)
+        : repeated.slice(0, loopCloneCount)
+    return band.map(({ slide, index }, position) => (
+      <CarouselCloneItem
+        key={`~${which}~${position}`}
+        index={index}
+        store={store}
+      >
+        {slide}
+      </CarouselCloneItem>
+    ))
   }
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
