@@ -5,9 +5,6 @@
   "license": "Apache-2.0",
   "type": "module",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
