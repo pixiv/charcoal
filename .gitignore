@@ -26,18 +26,18 @@ lerna-debug.log*
 
 # editor
 .vscode
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
+
+# tests
+/__diff_output__
+/__image_snapshots__
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 
-# tests
-/__diff_output__
-/__image_snapshots__
+# scratch / tooling output
+/tmp/
+/.codex-security/
 
 *.log
 tsconfig.vitest-temp.json
