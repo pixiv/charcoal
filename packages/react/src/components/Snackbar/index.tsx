@@ -55,9 +55,6 @@ export type SnackbarShowOptions<T extends ElementType = 'button'> = {
 }
 
 export type SnackbarHandler = {
-  /**
-   * メッセージを表示する
-   */
   show: <T extends ElementType = 'button'>(
     message: string,
     options?: SnackbarShowOptions<T>,
@@ -80,14 +77,7 @@ export type SnackbarProps = {
    * @default false
    */
   dim?: boolean
-  /**
-   * Snackbar の重なり順
-   * @default 10
-   */
   zIndex?: number
-  /**
-   * Snackbar の描画先となるポータルコンテナ
-   */
   portalContainer?: HTMLElement
   className?: string
 }
@@ -95,6 +85,10 @@ export type SnackbarProps = {
 type SnackbarContent = {
   message: string
   button?: SnackbarButtonContent
+}
+
+type QueuedSnackbar = SnackbarContent & {
+  duration: number
 }
 
 type SnackbarButtonContent = Omit<SnackbarButtonOption, 'component'> & {
@@ -115,7 +109,8 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
   'use memo'
 
   const regionRef = useRef<HTMLDivElement>(null)
-  const exitCompletionRef = useRef<(() => void) | null>(null)
+  const queueRef = useRef<QueuedSnackbar[]>([]) // 前の要素が消えるまで呼び出し関数を持っておく
+  const onRemovedRef = useRef<(() => void) | null>(null)
   const wrapToastUpdate = useCallback(
     (update: () => void, action: 'add' | 'remove' | 'clear') => {
       if (action !== 'remove') {
@@ -123,15 +118,21 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
         return
       }
 
+      const finish = () => {
+        update()
+        const onRemoved = onRemovedRef.current
+        onRemovedRef.current = null
+        onRemoved?.()
+      }
+
       const snackbar =
         regionRef.current?.querySelector<HTMLElement>('.charcoal-snackbar')
       if (snackbar === undefined || snackbar === null) {
-        update()
-        exitCompletionRef.current?.()
-        exitCompletionRef.current = null
+        finish()
         return
       }
 
+      // allow-discreteが Newly Available で使えないので、要素の削除をアニメーション完了まで待つ
       snackbar.dataset.exiting = 'true'
       let completed = false
       const complete = () => {
@@ -139,9 +140,7 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
         completed = true
         snackbar.removeEventListener('animationend', handleAnimationEnd)
         window.clearTimeout(fallbackTimer)
-        update()
-        exitCompletionRef.current?.()
-        exitCompletionRef.current = null
+        finish()
       }
       const handleAnimationEnd = (event: AnimationEvent) => {
         if (
@@ -164,79 +163,54 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
     },
     [],
   )
+
   const state = useToastState<SnackbarContent>({
     maxVisibleToasts: 1,
     wrapUpdate: wrapToastUpdate,
   })
 
-  const pendingRef = useRef<Promise<void> | null>(null)
-  const mountedRef = useRef(true)
-  const pendingResolversRef = useRef(new Set<() => void>())
-
   useEffect(() => {
-    const pendingResolvers = pendingResolversRef.current
-    mountedRef.current = true
-
     return () => {
-      mountedRef.current = false
-      for (const resolve of Array.from(pendingResolvers)) {
-        resolve()
-      }
-      pendingResolvers.clear()
+      queueRef.current = []
+      onRemovedRef.current = null
     }
   }, [])
 
-  useImperativeHandle(
-    ref,
-    () => ({
-      show<T extends ElementType = 'button'>(
-        message: string,
-        options: SnackbarShowOptions<T> = {},
-      ) {
-        const { duration: durationOption = DEFAULT_DURATION_MS, button } =
-          options
-        const duration =
-          typeof durationOption === 'number' && Number.isFinite(durationOption)
-            ? Math.max(0, durationOption)
-            : DEFAULT_DURATION_MS
-        const run = () =>
-          new Promise<void>((resolve) => {
-            const settle = () => {
-              pendingResolversRef.current.delete(settle)
-              resolve()
-            }
-            pendingResolversRef.current.add(settle)
+  const playNext = useCallback(() => {
+    const next = queueRef.current.shift()
+    if (next === undefined) {
+      return
+    }
 
-            if (!mountedRef.current) {
-              settle()
-              return
-            }
+    const { duration, ...content } = next
+    state.add(content, {
+      // react-stately は 0 を「タイマーなし」と扱うため、最小の正数を渡す
+      timeout: duration === 0 ? 1 : duration,
+    })
+    onRemovedRef.current = playNext
+  }, [state])
 
-            state.add(
-              {
-                message,
-                button: button as SnackbarButtonContent | undefined,
-              },
-              {
-                // react-stately は 0 を「タイマーなし」と扱うため、最小の正数を渡す
-                timeout: duration === 0 ? 1 : duration,
-                onClose: () => {
-                  exitCompletionRef.current = settle
-                },
-              },
-            )
-          })
-        if (pendingRef.current === null) {
-          // 初回の Snackbar はすぐに表示する
-          pendingRef.current = run()
-        } else {
-          // 前回の show の完了後に実行し、Snackbar を順番に表示する
-          pendingRef.current = pendingRef.current.then(run)
-        }
-      },
-    }),
-    [state],
+  const show = useCallback<SnackbarHandler['show']>(
+    (message, options = {}) => {
+      const { duration: durationOption = DEFAULT_DURATION_MS, button } = options
+      const duration =
+        typeof durationOption === 'number' && Number.isFinite(durationOption)
+          ? Math.max(0, durationOption)
+          : DEFAULT_DURATION_MS
+
+      queueRef.current.push({
+        message,
+        button: button as SnackbarButtonContent | undefined,
+        duration,
+      })
+      if (onRemovedRef.current === null) {
+        playNext()
+      }
+    },
+    [playNext],
   )
+
+  useImperativeHandle(ref, () => ({ show }), [show])
 
   return (
     <SnackbarRegion
@@ -322,13 +296,15 @@ function SnackbarRegion({
           // F6 で通知領域へ移動したとき、アクションがあれば直接フォーカスする
           if (event.target === event.currentTarget) {
             event.currentTarget
-              .querySelector<HTMLElement>('.charcoal-snackbar-button')
+              .querySelector<HTMLElement>('.charcoal-button')
               ?.focus()
           }
         }}
         style={{
           zIndex,
-          [effectivePosition]: offset,
+          ...(effectivePosition === 'top'
+            ? { top: offset }
+            : { bottom: offset }),
         }}
       >
         {state.visibleToasts.map((toast) => (
@@ -415,7 +391,6 @@ function SnackbarAction({
       {...buttonProps}
       size="S"
       variant={variant ?? (dim ? 'Overlay' : undefined)}
-      className="charcoal-snackbar-button"
       aria-keyshortcuts="F6"
       onClick={handleButtonClick}
     >

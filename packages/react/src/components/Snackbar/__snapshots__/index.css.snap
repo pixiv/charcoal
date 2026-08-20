@@ -56,22 +56,15 @@
 .charcoal-snackbar-content {
   display: flex;
   align-items: center;
-  flex: 0 1 auto;
   min-width: 0;
 }
 
 .charcoal-snackbar-label {
-  flex: 0 1 auto;
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   font-size: var(--charcoal-text-font-size-caption-m);
   font-weight: var(--charcoal-text-font-weight-bold);
   line-height: var(--charcoal-text-line-height-caption-m);
-}
-
-.charcoal-snackbar-button {
-  flex: none;
-  line-height: var(--charcoal-text-line-height-5);
 }
 
 @keyframes charcoal-snackbar-enter {
