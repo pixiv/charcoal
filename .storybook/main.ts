@@ -32,18 +32,18 @@ const generalConfig: Omit<ViteStorybookConfig, 'framework'> = {
   managerHead: (head) => `${head}
       <title>Charcoal ドキュメント</title>
       <meta
-        property="description"
+        name="description"
         content="ピクシブ株式会社のデザインシステム charcoal のドキュメントサイト"
       />
-      <meta property="og:url" content="" />
-      <meta property="og:title" content="charcoal"} />
+      <meta property="og:url" content="https://charcoal-web.pixiv.design/" />
+      <meta property="og:title" content="charcoal" />
       <meta property="og:site_name" content="Charcoal ドキュメント" />
       <meta
         property="og:description"
         content="ピクシブ株式会社のデザインシステム charcoal のドキュメントサイト"
       />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="/charcoal-ogp.jpg" />
+      <meta property="og:image" content="https://charcoal-web.pixiv.design/charcoal-ogp.jpg" />
     `,
 }
 
