@@ -50,7 +50,7 @@
 .charcoal-snackbar[data-dim='true'] {
   background-color: var(--charcoal-color-container-hud-default);
   color: var(--charcoal-color-text-on-hud-default);
-  border-color: var(--charcoal-color-container-hud-default);
+  border-color: var(--charcoal-color-border-secondary);
 }
 
 .charcoal-snackbar-content {
