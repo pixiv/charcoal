@@ -106,4 +106,11 @@ export {
   type ScrollStep,
   type ScrollStepContext,
 } from './components/Carousel'
+export {
+  default as Snackbar,
+  useSnackbar,
+  type SnackbarProps,
+  type SnackbarHandler,
+  type SnackbarShowOptions,
+} from './components/Snackbar'
 import './components/FocusRing/index.css'
