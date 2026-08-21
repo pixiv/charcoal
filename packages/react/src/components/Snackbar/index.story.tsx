@@ -11,6 +11,7 @@ const defaultOpen = !!process.env.TEST
 type SnackbarStoryArgs = unstable_SnackbarProps & {
   message: ReactNode
   buttonChildren?: string
+  duration?: number
 }
 
 export default {
@@ -19,9 +20,17 @@ export default {
   parameters: {
     layout: 'centered',
     tokenVersion: 'v2',
+    docs: {
+      description: {
+        component: `同時に表示できるスナックバーは1つのみです。表示中に別のスナックバーが発生した場合はキューに積み、前のスナックバーが消えてから表示します。
+
+別々の \`useSnackbar\` を呼び出した場合は互いに独立するため、同時表示数は1件に制限されません。`,
+      },
+    },
   },
   args: {
     message: '保存しました',
+    duration: 5000,
   },
   argTypes: {
     position: {
@@ -30,6 +39,10 @@ export default {
     },
     message: {
       control: 'text',
+    },
+    duration: {
+      control: { type: 'number', min: 0, step: 500 },
+      description: '表示時間（ミリ秒）',
     },
     buttonChildren: {
       name: 'button.children',
@@ -42,25 +55,25 @@ export default {
 function SnackbarDemo({
   message,
   buttonChildren,
+  duration,
   ...props
 }: SnackbarStoryArgs) {
   const [snackbar, showSnackbar] = unstable_useSnackbar(props)
-  const showOptions =
-    buttonChildren === undefined || buttonChildren === ''
-      ? undefined
-      : { button: { children: buttonChildren } }
+  const hasButton = buttonChildren !== undefined && buttonChildren !== ''
+  const showOptions = {
+    duration,
+    ...(hasButton ? { button: { children: buttonChildren } } : {}),
+  }
 
   useEffect(() => {
     if (!defaultOpen) {
       return
     }
-    showSnackbar(
-      message,
-      buttonChildren === undefined || buttonChildren === ''
-        ? { duration: 60_000 }
-        : { duration: 60_000, button: { children: buttonChildren } },
-    )
-  }, [buttonChildren, message, showSnackbar])
+    showSnackbar(message, {
+      duration: 60_000,
+      ...(hasButton ? { button: { children: buttonChildren } } : {}),
+    })
+  }, [buttonChildren, hasButton, message, showSnackbar])
 
   return (
     <>

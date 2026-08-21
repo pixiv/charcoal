@@ -187,12 +187,12 @@ describe('Snackbar', () => {
   it('supports a custom z-index and portal container', () => {
     const portalContainer = document.createElement('div')
     document.body.append(portalContainer)
-    const { show } = renderSnackbar({ zIndex: 20, portalContainer })
+    const { show } = renderSnackbar({ zIndex: 30, portalContainer })
 
     show('保存しました')
 
     expect(portalContainer).toContainElement(screen.getByRole('region'))
-    expect(screen.getByRole('region')).toHaveStyle({ zIndex: 20 })
+    expect(screen.getByRole('region')).toHaveStyle({ zIndex: 30 })
 
     portalContainer.remove()
   })

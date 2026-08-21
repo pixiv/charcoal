@@ -19,7 +19,7 @@ import { useClassNames } from '../../_lib/useClassNames'
 import Button, { type ButtonProps } from '../Button'
 
 const DEFAULT_DURATION_MS = 5000
-const DEFAULT_Z_INDEX = 10
+const DEFAULT_Z_INDEX = 20
 const ENTER_ANIMATION_DURATION_MS = 300
 const EXIT_ANIMATION_DURATION_MS = 300
 
