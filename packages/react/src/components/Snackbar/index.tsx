@@ -5,7 +5,6 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
-  useMemo,
   useRef,
 } from 'react'
 import type { ElementType, RefObject } from 'react'
@@ -108,43 +107,35 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
 ) {
   'use memo'
 
-  const regionRef = useRef<HTMLDivElement>(null)
-  const queueRef = useRef<QueuedSnackbar[]>([]) // 前の要素が消えるまで呼び出し関数を持っておく
-  const onRemovedRef = useRef<(() => void) | null>(null)
-  
-  // wrapUpdate の参照が変わると useToastState が ToastQueue を作り直すため固定する
-  const wrapToastUpdate = useCallback(
-    (update: () => void, action: 'add' | 'remove' | 'clear') => {
-      if (action !== 'remove') {
-        update()
-        return
-      }
+  const snackbarRef = useRef<HTMLDivElement>(null)
+  const queueRef = useRef<QueuedSnackbar[]>([])
+  const isShowingRef = useRef(false)
 
-      const finish = () => {
-        update()
-        const onRemoved = onRemovedRef.current
-        onRemovedRef.current = null
-        onRemoved?.()
-      }
+  // wrapUpdate の参照が変わると useToastState が ToastQueue を作り直すため useCallback で固定する
+  const wrapToastUpdate = useCallback(function wrapToastUpdate(
+    update: () => void,
+    action: 'add' | 'remove' | 'clear',
+  ) {
+    if (action !== 'remove') {
+      update()
+      return
+    }
 
-      const snackbar =
-        regionRef.current?.querySelector<HTMLElement>('.charcoal-snackbar')
-      if (snackbar === undefined || snackbar === null) {
-        finish()
-        return
-      }
+    function finish() {
+      update()
+      playNext()
+    }
 
-      // allow-discreteが Newly Available で使えないので、要素の削除をアニメーション完了まで待つ
-      snackbar.dataset.exiting = 'true'
-      let completed = false
-      const complete = () => {
-        if (completed) return
-        completed = true
-        snackbar.removeEventListener('animationend', handleAnimationEnd)
-        window.clearTimeout(fallbackTimer)
-        finish()
-      }
-      const handleAnimationEnd = (event: AnimationEvent) => {
+    if (snackbarRef.current === null) {
+      finish()
+      return
+    }
+    const snackbar: HTMLDivElement = snackbarRef.current
+
+    // allow-discreteが Newly Available で使えないので、要素の削除をアニメーション完了まで待つ
+    snackbar.dataset.exiting = 'true'
+    let completed = false
+    function handleAnimationEnd(event: AnimationEvent) {
         if (
           event.target === snackbar &&
           event.animationName === 'charcoal-snackbar-exit'
@@ -152,19 +143,21 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
           complete()
         }
       }
-      const fallbackTimer = window.setTimeout(
+    function complete() {
+      if (completed) return
+      completed = true
+      snackbar.removeEventListener('animationend', handleAnimationEnd)
+      window.clearTimeout(window.setTimeout(
         complete,
         EXIT_ANIMATION_DURATION_MS + 100,
-      )
-
-      snackbar.addEventListener('animationend', handleAnimationEnd)
-
-      if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-        complete()
-      }
-    },
-    [],
-  )
+      ))
+      finish()
+    }
+    snackbar.addEventListener('animationend', handleAnimationEnd)
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      complete()
+    }
+  }, [])
 
   const state = useToastState<SnackbarContent>({
     maxVisibleToasts: 1,
@@ -174,22 +167,23 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
   useEffect(() => {
     return () => {
       queueRef.current = []
-      onRemovedRef.current = null
+      isShowingRef.current = false
     }
   }, [])
 
   function playNext() {
     const next = queueRef.current.shift()
     if (next === undefined) {
+      isShowingRef.current = false
       return
     }
 
     const { duration, ...content } = next
+    isShowingRef.current = true
     state.add(content, {
       // react-stately は 0 を「タイマーなし」と扱うため、最小の正数を渡す
       timeout: duration === 0 ? 1 : duration,
     })
-    onRemovedRef.current = playNext
   }
 
   function show<T extends ElementType = 'button'>(
@@ -207,7 +201,7 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
       button: button as SnackbarButtonContent | undefined,
       duration,
     })
-    if (onRemovedRef.current === null) {
+    if (!isShowingRef.current) {
       playNext()
     }
   }
@@ -223,7 +217,7 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
       zIndex={zIndex}
       portalContainer={portalContainer}
       className={className}
-      regionRef={regionRef}
+      snackbarRef={snackbarRef}
     />
   )
 })
@@ -231,25 +225,27 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
 export default Snackbar
 
 export function useSnackbar(props: SnackbarProps = {}) {
+  'use memo'
+
   const { position, offset, dim, zIndex, portalContainer, className } = props
   const snackbarHandlerRef = useRef<SnackbarHandler>(null)
-  const element = useMemo(
-    () => (
-      <Snackbar
-        ref={snackbarHandlerRef}
-        position={position}
-        offset={offset}
-        dim={dim}
-        zIndex={zIndex}
-        portalContainer={portalContainer}
-        className={className}
-      />
-    ),
-    [position, offset, dim, zIndex, portalContainer, className],
+  const element = (
+    <Snackbar
+      ref={snackbarHandlerRef}
+      position={position}
+      offset={offset}
+      dim={dim}
+      zIndex={zIndex}
+      portalContainer={portalContainer}
+      className={className}
+    />
   )
-  const show = useCallback<SnackbarHandler['show']>((message, options) => {
+  function show<T extends ElementType = 'button'>(
+    message: string,
+    options?: SnackbarShowOptions<T>,
+  ) {
     snackbarHandlerRef.current?.show(message, options)
-  }, [])
+  }
   return [element, show] as const
 }
 
@@ -261,7 +257,7 @@ function SnackbarRegion({
   zIndex,
   portalContainer,
   className,
-  regionRef,
+  snackbarRef,
 }: {
   state: ToastState<SnackbarContent>
   position: SnackbarPosition
@@ -270,8 +266,9 @@ function SnackbarRegion({
   zIndex: number
   portalContainer?: HTMLElement
   className?: string
-  regionRef: RefObject<HTMLDivElement>
+  snackbarRef: RefObject<HTMLDivElement>
 }) {
+  const regionRef = useRef<HTMLDivElement>(null)
   const { regionProps } = useToastRegion({}, state, regionRef)
   const classNames = useClassNames('charcoal-snackbar-region', className)
 
@@ -292,16 +289,6 @@ function SnackbarRegion({
         ref={regionRef}
         className={classNames}
         data-position={effectivePosition}
-        onFocus={(event) => {
-          regionProps.onFocus?.(event)
-
-          // F6 で通知領域へ移動したとき、アクションがあれば直接フォーカスする
-          if (event.target === event.currentTarget) {
-            event.currentTarget
-              .querySelector<HTMLElement>('.charcoal-button')
-              ?.focus()
-          }
-        }}
         style={{
           zIndex,
           ...(effectivePosition === 'top'
@@ -310,7 +297,13 @@ function SnackbarRegion({
         }}
       >
         {state.visibleToasts.map((toast) => (
-          <SnackbarItem key={toast.key} toast={toast} state={state} dim={dim} />
+          <SnackbarItem
+            key={toast.key}
+            toast={toast}
+            state={state}
+            dim={dim}
+            snackbarRef={snackbarRef}
+          />
         ))}
       </div>
     </Overlay>
@@ -321,23 +314,24 @@ function SnackbarItem({
   toast,
   state,
   dim,
+  snackbarRef,
 }: {
   toast: QueuedToast<SnackbarContent>
   state: ToastState<SnackbarContent>
   dim: boolean
+  snackbarRef: RefObject<HTMLDivElement>
 }) {
-  const ref = useRef<HTMLDivElement>(null)
   const { toastProps, contentProps, titleProps } = useToast(
     { toast },
     state,
-    ref,
+    snackbarRef,
   )
   const { message, button } = toast.content
 
   return (
     <div
       {...toastProps}
-      ref={ref}
+      ref={snackbarRef}
       className="charcoal-snackbar"
       data-dim={dim}
       data-with-button={button !== undefined}
@@ -355,7 +349,9 @@ function SnackbarItem({
         <SnackbarAction
           button={button}
           dim={dim}
-          onClose={() => state.close(toast.key)}
+          onClose={() => {
+            state.close(toast.key)
+          }}
         />
       )}
     </div>
@@ -393,7 +389,6 @@ function SnackbarAction({
       {...buttonProps}
       size="S"
       variant={variant ?? (dim ? 'Navigation' : undefined)}
-      aria-keyshortcuts="F6"
       onClick={handleButtonClick}
     >
       {buttonChildren}

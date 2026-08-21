@@ -177,7 +177,7 @@ describe('Snackbar', () => {
     portalContainer.remove()
   })
 
-  it('moves focus to the action button with F6', () => {
+  it('moves focus to the toast region with F6', () => {
     const { show } = renderSnackbar()
 
     act(() => {
@@ -186,12 +186,9 @@ describe('Snackbar', () => {
       })
     })
 
-    const button = screen.getByRole('button', { name: '取り消す' })
-    expect(button).toHaveAttribute('aria-keyshortcuts', 'F6')
-
     fireEvent.keyDown(document, { key: 'F6' })
 
-    expect(button).toHaveFocus()
+    expect(screen.getByRole('region')).toHaveFocus()
   })
 
   it('restores focus after a focused snackbar closes', () => {
@@ -207,10 +204,9 @@ describe('Snackbar', () => {
     })
 
     fireEvent.keyDown(document, { key: 'F6' })
-    const closeButton = screen.getByRole('button', { name: '閉じる' })
-    expect(closeButton).toHaveFocus()
+    expect(screen.getByRole('region')).toHaveFocus()
 
-    fireEvent.click(closeButton)
+    fireEvent.click(screen.getByRole('button', { name: '閉じる' }))
     finishExitAnimation('保存しました')
 
     expect(trigger).toHaveFocus()
