@@ -19,7 +19,7 @@ export type TextFieldProps = {
 
   showCount?: boolean
   showLabel?: boolean
-  assistiveText?: string
+  assistiveText?: ReactNode
   invalid?: boolean
 
   label?: string
@@ -87,7 +87,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const labelledbyId = useId()
 
     const showAssistiveText =
-      assistiveText != null && assistiveText.length !== 0
+      assistiveText != null &&
+      assistiveText !== '' &&
+      typeof assistiveText !== 'boolean'
 
     const classNames = useClassNames('charcoal-text-field-root', className)
 
