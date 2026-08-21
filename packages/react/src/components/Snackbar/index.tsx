@@ -7,7 +7,7 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
-import type { ElementType, RefObject } from 'react'
+import type { ElementType, MutableRefObject, RefObject } from 'react'
 import { Overlay } from 'react-aria/Overlay'
 import { useToast, useToastRegion } from 'react-aria/useToast'
 import {
@@ -34,11 +34,6 @@ type SnackbarButtonOption<T extends ElementType = 'button'> = Omit<
    * @example 'Link'
    */
   component?: T
-  /**
-   * ボタンを押したときに Snackbar を閉じるか
-   * @default true
-   */
-  hideSnackbarOnClick?: boolean
 } & ('button' extends T ? unknown : { component: T })
 
 export type SnackbarShowOptions<T extends ElementType = 'button'> = {
@@ -135,25 +130,27 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
     // allow-discreteが Newly Available で使えないので、要素の削除をアニメーション完了まで待つ
     snackbar.dataset.exiting = 'true'
     let completed = false
+    let fallbackTimer = 0 // complete 内で clearTimeout(setTimeout(...)) すると新規タイマーを即キャンセルしてしまう
     function handleAnimationEnd(event: AnimationEvent) {
-        if (
-          event.target === snackbar &&
-          event.animationName === 'charcoal-snackbar-exit'
-        ) {
-          complete()
-        }
+      if (
+        event.target === snackbar &&
+        event.animationName === 'charcoal-snackbar-exit'
+      ) {
+        complete()
       }
+    }
     function complete() {
       if (completed) return
       completed = true
       snackbar.removeEventListener('animationend', handleAnimationEnd)
-      window.clearTimeout(window.setTimeout(
-        complete,
-        EXIT_ANIMATION_DURATION_MS + 100,
-      ))
+      window.clearTimeout(fallbackTimer)
       finish()
     }
     snackbar.addEventListener('animationend', handleAnimationEnd)
+    fallbackTimer = window.setTimeout(
+      complete,
+      EXIT_ANIMATION_DURATION_MS + 100,
+    )
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
       complete()
     }
@@ -269,7 +266,22 @@ function SnackbarRegion({
   snackbarRef: RefObject<HTMLDivElement>
 }) {
   const regionRef = useRef<HTMLDivElement>(null)
-  const { regionProps } = useToastRegion({}, state, regionRef)
+  const hoveredRef = useRef(false)
+  const pausedByRegionRef = useRef(false)
+  const timerState: ToastState<SnackbarContent> = {
+    ...state,
+    pauseAll() {
+      pausedByRegionRef.current = true
+      state.pauseAll()
+    },
+    resumeAll() {
+      pausedByRegionRef.current = false
+      if (!hoveredRef.current) {
+        state.resumeAll()
+      }
+    },
+  }
+  const { regionProps } = useToastRegion({}, timerState, regionRef)
   const classNames = useClassNames('charcoal-snackbar-region', className)
 
   if (state.visibleToasts.length === 0) {
@@ -303,6 +315,8 @@ function SnackbarRegion({
             state={state}
             dim={dim}
             snackbarRef={snackbarRef}
+            hoveredRef={hoveredRef}
+            pausedByRegionRef={pausedByRegionRef}
           />
         ))}
       </div>
@@ -315,11 +329,15 @@ function SnackbarItem({
   state,
   dim,
   snackbarRef,
+  hoveredRef,
+  pausedByRegionRef,
 }: {
   toast: QueuedToast<SnackbarContent>
   state: ToastState<SnackbarContent>
   dim: boolean
   snackbarRef: RefObject<HTMLDivElement>
+  hoveredRef: MutableRefObject<boolean>
+  pausedByRegionRef: MutableRefObject<boolean>
 }) {
   const { toastProps, contentProps, titleProps } = useToast(
     { toast },
@@ -328,6 +346,18 @@ function SnackbarItem({
   )
   const { message, button } = toast.content
 
+  function handleHoverStart() {
+    hoveredRef.current = true
+    state.pauseAll()
+  }
+
+  function handleHoverEnd() {
+    hoveredRef.current = false
+    if (!pausedByRegionRef.current) {
+      state.resumeAll()
+    }
+  }
+
   return (
     <div
       {...toastProps}
@@ -335,6 +365,8 @@ function SnackbarItem({
       className="charcoal-snackbar"
       data-dim={dim}
       data-with-button={button !== undefined}
+      onPointerEnter={handleHoverStart}
+      onPointerLeave={handleHoverEnd}
     >
       <div
         {...contentProps}
@@ -350,6 +382,7 @@ function SnackbarItem({
           button={button}
           dim={dim}
           onClose={() => {
+            hoveredRef.current = false
             state.close(toast.key)
           }}
         />
@@ -368,7 +401,6 @@ function SnackbarAction({
   onClose: () => void
 }) {
   const {
-    hideSnackbarOnClick = true,
     onClick,
     variant,
     children: buttonChildren,
@@ -379,9 +411,7 @@ function SnackbarAction({
     event: Parameters<NonNullable<ButtonProps<'button'>['onClick']>>[0],
   ) {
     onClick?.(event)
-    if (hideSnackbarOnClick) {
-      onClose()
-    }
+    onClose()
   }
 
   return (

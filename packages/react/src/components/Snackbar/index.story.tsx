@@ -1,44 +1,60 @@
 import { useEffect } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import Button from '../Button'
-import Snackbar, {
-  useSnackbar,
-  type SnackbarProps,
-  type SnackbarShowOptions,
+import unstable_Snackbar, {
+  useSnackbar as unstable_useSnackbar,
+  type SnackbarProps as unstable_SnackbarProps,
 } from '.'
 
 const defaultOpen = !!process.env.TEST
 
+type SnackbarStoryArgs = unstable_SnackbarProps & {
+  message: string
+  buttonChildren?: string
+}
+
 export default {
-  title: 'react/Snackbar',
-  component: Snackbar,
+  title: 'react/unstable_Snackbar',
+  component: unstable_Snackbar,
   parameters: {
     layout: 'centered',
     tokenVersion: 'v2',
+  },
+  args: {
+    message: '保存しました',
   },
   argTypes: {
     position: {
       options: ['top', 'bottom'],
       control: { type: 'inline-radio' },
     },
+    message: {
+      control: 'text',
+    },
+    buttonChildren: {
+      name: 'button.children',
+      control: 'text',
+    },
   },
-} as Meta<typeof Snackbar>
+  render: (args) => <SnackbarDemo {...args} />,
+} as Meta<SnackbarStoryArgs>
 
 function SnackbarDemo({
   message,
-  showOptions,
+  buttonChildren,
   ...props
-}: SnackbarProps & {
-  message: string
-  showOptions?: SnackbarShowOptions
-}) {
-  const [snackbar, showSnackbar] = useSnackbar(props)
+}: SnackbarStoryArgs) {
+  const [snackbar, showSnackbar] = unstable_useSnackbar(props)
+  const showOptions =
+    buttonChildren === undefined || buttonChildren === ''
+      ? undefined
+      : { button: { children: buttonChildren } }
 
   useEffect(() => {
     if (defaultOpen) {
       showSnackbar(message, { duration: 60_000, ...showOptions })
     }
-  }, [message, showOptions, showSnackbar])
+  }, [buttonChildren, message, showSnackbar])
 
   return (
     <>
@@ -54,16 +70,15 @@ function SnackbarDemo({
   )
 }
 
-export const Default: StoryObj<typeof Snackbar> = {
-  render: (args) => <SnackbarDemo {...args} message="保存しました" />,
+export const Default: StoryObj<SnackbarStoryArgs> = {
   parameters: {
     docs: {
       source: {
         language: 'tsx',
-        code: `import { Button, useSnackbar } from '@charcoal-ui/react'
+        code: `import { Button, unstable_useSnackbar } from '@charcoal-ui/react'
 
 export function Example() {
-  const [snackbar, showSnackbar] = useSnackbar()
+  const [snackbar, showSnackbar] = unstable_useSnackbar()
 
   return (
     <>
@@ -79,33 +94,26 @@ export function Example() {
   },
 }
 
-export const LongMessage: StoryObj<typeof Snackbar> = {
-  render: (args) => (
-    <SnackbarDemo
-      {...args}
-      message="保存した内容はすべての端末に同期され、あとから設定画面で変更できます"
-    />
-  ),
+export const LongMessage: StoryObj<SnackbarStoryArgs> = {
+  args: {
+    message:
+      '保存した内容はすべての端末に同期され、あとから設定画面で変更できます',
+  },
 }
 
-export const WithButton: StoryObj<typeof Snackbar> = {
-  render: (args) => (
-    <SnackbarDemo
-      {...args}
-      message="保存しました"
-      showOptions={{
-        button: { children: '取り消す' },
-      }}
-    />
-  ),
+export const WithButton: StoryObj<SnackbarStoryArgs> = {
+  args: {
+    message: '保存しました',
+    buttonChildren: '取り消す',
+  },
   parameters: {
     docs: {
       source: {
         language: 'tsx',
-        code: `import { Button, useSnackbar } from '@charcoal-ui/react'
+        code: `import { Button, unstable_useSnackbar } from '@charcoal-ui/react'
 
 export function Example() {
-  const [snackbar, showSnackbar] = useSnackbar()
+  const [snackbar, showSnackbar] = unstable_useSnackbar()
 
   return (
     <>
@@ -129,25 +137,18 @@ export function Example() {
   },
 }
 
-export const Bottom: StoryObj<typeof Snackbar> = {
+export const Bottom: StoryObj<SnackbarStoryArgs> = {
   args: {
     position: 'bottom',
     offset: 12,
+    message: '下部に表示します',
   },
-  render: (args) => <SnackbarDemo {...args} message="下部に表示します" />,
 }
 
-export const Dim: StoryObj<typeof Snackbar> = {
+export const Dim: StoryObj<SnackbarStoryArgs> = {
   args: {
     dim: true,
+    message: 'Dim の Snackbar',
+    buttonChildren: '閉じる',
   },
-  render: (args) => (
-    <SnackbarDemo
-      {...args}
-      message="Dim の Snackbar"
-      showOptions={{
-        button: { children: '閉じる' },
-      }}
-    />
-  ),
 }

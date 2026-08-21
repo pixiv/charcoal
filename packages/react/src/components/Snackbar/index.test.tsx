@@ -125,26 +125,50 @@ describe('Snackbar', () => {
     expect(screen.getByText('second')).toBeInTheDocument()
   })
 
-  it('keeps the snackbar open when hideSnackbarOnClick is false', () => {
-    const onClick = vi.fn()
+  it('keeps the snackbar open while hovered and resumes the timer on leave', () => {
     const { show } = renderSnackbar()
 
     act(() => {
-      show('保存しました', {
-        button: {
-          children: '取り消す',
-          onClick,
-          hideSnackbarOnClick: false,
-        },
-      })
+      show('保存しました')
     })
+    const snackbar = screen.getByText('保存しました').closest('.charcoal-snackbar')
+    if (snackbar === null) throw new Error('Snackbar not found')
 
-    expect(
-      screen.getByText('保存しました').closest('.charcoal-snackbar'),
-    ).toHaveAttribute('data-with-button', 'true')
-    fireEvent.click(screen.getByText('取り消す'))
-    expect(onClick).toHaveBeenCalledTimes(1)
-    expect(screen.getByText('保存しました')).toBeInTheDocument()
+    fireEvent.pointerEnter(snackbar, { pointerType: 'mouse' })
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).not.toHaveAttribute('data-exiting', 'true')
+
+    fireEvent.pointerLeave(snackbar)
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).toHaveAttribute('data-exiting', 'true')
+  })
+
+  it('keeps the snackbar open while focused', () => {
+    const { show } = renderSnackbar()
+
+    act(() => {
+      show('保存しました')
+    })
+    const snackbar = screen.getByText('保存しました').closest('.charcoal-snackbar')
+    if (snackbar === null) throw new Error('Snackbar not found')
+
+    fireEvent.keyDown(document, { key: 'F6' })
+    expect(screen.getByRole('region')).toHaveFocus()
+
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).not.toHaveAttribute('data-exiting', 'true')
+
+    fireEvent.blur(screen.getByRole('region'))
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).toHaveAttribute('data-exiting', 'true')
   })
 
   it('places a snackbar with a button at the bottom', () => {
@@ -213,6 +237,34 @@ describe('Snackbar', () => {
     trigger.remove()
   })
 
+  it('closes on button click even while hovered', () => {
+    const { show } = renderSnackbar()
+    const trigger = document.createElement('button')
+    document.body.append(trigger)
+    trigger.focus()
+
+    act(() => {
+      show('保存しました', {
+        button: { children: '閉じる' },
+      })
+    })
+
+    const snackbar = screen
+      .getByText('保存しました')
+      .closest('.charcoal-snackbar')
+    if (snackbar === null) throw new Error('Snackbar not found')
+
+    fireEvent.pointerEnter(snackbar, { pointerType: 'mouse' })
+    fireEvent.click(screen.getByRole('button', { name: '閉じる' }))
+
+    expect(snackbar).toHaveAttribute('data-exiting', 'true')
+
+    finishExitAnimation('保存しました')
+    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
+    expect(trigger).toHaveFocus()
+    trigger.remove()
+  })
+
   it('renders the button with a custom component', () => {
     function Link({ to, ...props }: ComponentProps<'a'> & { to: string }) {
       return <a {...props} href={to} />
@@ -236,7 +288,7 @@ describe('Snackbar', () => {
     )
   })
 
-  it('closes on button click by default', () => {
+  it('closes on button click', () => {
     const { show } = renderSnackbar()
 
     act(() => {
