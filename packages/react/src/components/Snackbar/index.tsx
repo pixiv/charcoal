@@ -111,6 +111,8 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
   const regionRef = useRef<HTMLDivElement>(null)
   const queueRef = useRef<QueuedSnackbar[]>([]) // 前の要素が消えるまで呼び出し関数を持っておく
   const onRemovedRef = useRef<(() => void) | null>(null)
+  
+  // wrapUpdate の参照が変わると useToastState が ToastQueue を作り直すため固定する
   const wrapToastUpdate = useCallback(
     (update: () => void, action: 'add' | 'remove' | 'clear') => {
       if (action !== 'remove') {
@@ -176,7 +178,7 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
     }
   }, [])
 
-  const playNext = useCallback(() => {
+  function playNext() {
     const next = queueRef.current.shift()
     if (next === undefined) {
       return
@@ -188,27 +190,27 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
       timeout: duration === 0 ? 1 : duration,
     })
     onRemovedRef.current = playNext
-  }, [state])
+  }
 
-  const show = useCallback<SnackbarHandler['show']>(
-    (message, options = {}) => {
-      const { duration: durationOption = DEFAULT_DURATION_MS, button } = options
-      const duration =
-        typeof durationOption === 'number' && Number.isFinite(durationOption)
-          ? Math.max(0, durationOption)
-          : DEFAULT_DURATION_MS
+  function show<T extends ElementType = 'button'>(
+    message: string,
+    options: SnackbarShowOptions<T> = {},
+  ) {
+    const { duration: durationOption = DEFAULT_DURATION_MS, button } = options
+    const duration =
+      typeof durationOption === 'number' && Number.isFinite(durationOption)
+        ? Math.max(0, durationOption)
+        : DEFAULT_DURATION_MS
 
-      queueRef.current.push({
-        message,
-        button: button as SnackbarButtonContent | undefined,
-        duration,
-      })
-      if (onRemovedRef.current === null) {
-        playNext()
-      }
-    },
-    [playNext],
-  )
+    queueRef.current.push({
+      message,
+      button: button as SnackbarButtonContent | undefined,
+      duration,
+    })
+    if (onRemovedRef.current === null) {
+      playNext()
+    }
+  }
 
   useImperativeHandle(ref, () => ({ show }), [show])
 
