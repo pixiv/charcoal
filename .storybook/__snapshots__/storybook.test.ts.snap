@@ -12588,6 +12588,297 @@ exports[`Storybook Tests > react/internals/Popover > react/internals/Popover > B
 </div>
 `;
 
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-snackbar-region"
+    data-position="bottom"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px;"
+    tabindex="-1"
+  >
+    <div
+      aria-labelledby="test-id"
+      aria-modal="false"
+      class="charcoal-snackbar"
+      data-dim="false"
+      data-with-button="false"
+      role="alertdialog"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        class="charcoal-snackbar-content"
+        role="status"
+      >
+        <div
+          class="charcoal-snackbar-label"
+          id="test-id"
+        >
+          保存しました
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > Dim 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-snackbar-region"
+    data-position="bottom"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px;"
+    tabindex="-1"
+  >
+    <div
+      aria-labelledby="test-id"
+      aria-modal="false"
+      class="charcoal-snackbar"
+      data-dim="true"
+      data-with-button="true"
+      role="alertdialog"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        class="charcoal-snackbar-content"
+        role="status"
+      >
+        <div
+          class="charcoal-snackbar-label"
+          id="test-id"
+        >
+          Dim の Snackbar
+        </div>
+      </div>
+      <button
+        class="charcoal-button"
+        data-size="S"
+        data-variant="Navigation"
+      >
+        閉じる
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > LongMessage 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-snackbar-region"
+    data-position="bottom"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px;"
+    tabindex="-1"
+  >
+    <div
+      aria-labelledby="test-id"
+      aria-modal="false"
+      class="charcoal-snackbar"
+      data-dim="false"
+      data-with-button="false"
+      role="alertdialog"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        class="charcoal-snackbar-content"
+        role="status"
+      >
+        <div
+          class="charcoal-snackbar-label"
+          id="test-id"
+        >
+          保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > Top 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-snackbar-region"
+    data-position="top"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px;"
+    tabindex="-1"
+  >
+    <div
+      aria-labelledby="test-id"
+      aria-modal="false"
+      class="charcoal-snackbar"
+      data-dim="false"
+      data-with-button="false"
+      role="alertdialog"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        class="charcoal-snackbar-content"
+        role="status"
+      >
+        <div
+          class="charcoal-snackbar-label"
+          id="test-id"
+        >
+          上部に表示します
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > WithButton 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-snackbar-region"
+    data-position="bottom"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px;"
+    tabindex="-1"
+  >
+    <div
+      aria-labelledby="test-id"
+      aria-modal="false"
+      class="charcoal-snackbar"
+      data-dim="false"
+      data-with-button="true"
+      role="alertdialog"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        class="charcoal-snackbar-content"
+        role="status"
+      >
+        <div
+          class="charcoal-snackbar-label"
+          id="test-id"
+        >
+          保存しました
+        </div>
+      </div>
+      <button
+        class="charcoal-button"
+        data-size="S"
+      >
+        取り消す
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > WithLineBreak 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-snackbar-region"
+    data-position="bottom"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px;"
+    tabindex="-1"
+  >
+    <div
+      aria-labelledby="test-id"
+      aria-modal="false"
+      class="charcoal-snackbar"
+      data-dim="false"
+      data-with-button="false"
+      role="alertdialog"
+      tabindex="0"
+    >
+      <div
+        aria-atomic="true"
+        class="charcoal-snackbar-content"
+        role="status"
+      >
+        <div
+          class="charcoal-snackbar-label"
+          id="test-id"
+        >
+          保存に失敗しました
+          <br />
+          通信環境を確認してください
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > styled/addThemeUtils > styled/addThemeUtils > Example 1`] = `
 .c0 {
   gap: 40px;

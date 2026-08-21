@@ -1,0 +1,294 @@
+import { createRef, type ComponentProps } from 'react'
+import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
+import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
+import Snackbar, { useSnackbar, type SnackbarHandler } from '.'
+
+function renderSnackbar(props: ComponentProps<typeof Snackbar> = {}) {
+  const ref = createRef<SnackbarHandler>()
+  const result = render(<Snackbar ref={ref} {...props} />)
+  const show: SnackbarHandler['show'] = (message, options) => {
+    act(() => {
+      ref.current?.show(message, options)
+    })
+    act(() => {
+      vi.advanceTimersByTime(300)
+    })
+  }
+  return { ...result, show }
+}
+
+function finishExitAnimation(message: string) {
+  const snackbar = screen.getByText(message).closest('.charcoal-snackbar')
+  if (snackbar === null) throw new Error('Snackbar not found')
+  fireEvent(
+    snackbar,
+    Object.assign(new Event('animationend', { bubbles: true }), {
+      animationName: 'charcoal-snackbar-exit',
+    }),
+  )
+}
+
+describe('Snackbar', () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.useRealTimers()
+  })
+
+  it('shows a message and hides after 5 seconds', () => {
+    const { show } = renderSnackbar()
+
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
+
+    show('保存しました')
+
+    expect(screen.getByText('保存しました')).toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+
+    expect(screen.getByText('保存しました')).toBeInTheDocument()
+    expect(
+      screen.getByText('保存しました').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+
+    finishExitAnimation('保存しました')
+
+    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
+  })
+
+  it.each([0, -1])('clamps duration to zero: %s', (duration) => {
+    const { show } = renderSnackbar()
+
+    show('保存しました', { duration })
+    expect(screen.getByText('保存しました')).toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(1)
+    })
+    expect(
+      screen.getByText('保存しました').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+
+    finishExitAnimation('保存しました')
+    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
+  })
+
+  it.each([
+    Number.NaN,
+    Number.POSITIVE_INFINITY,
+    Number.NEGATIVE_INFINITY,
+    'invalid' as unknown as number,
+  ])('falls back to the default duration: %s', (duration) => {
+    const { show } = renderSnackbar()
+
+    show('保存しました', { duration })
+    act(() => {
+      vi.advanceTimersByTime(4999)
+    })
+    expect(screen.getByText('保存しました')).toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(1)
+    })
+    expect(
+      screen.getByText('保存しました').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+  })
+
+  it('queues the next snackbar until the previous one closes', async () => {
+    const { show } = renderSnackbar()
+
+    show('first')
+    show('second')
+
+    expect(screen.getByText('first')).toBeInTheDocument()
+    expect(screen.queryByText('second')).not.toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    await act(async () => {
+      finishExitAnimation('first')
+    })
+
+    expect(screen.queryByText('first')).not.toBeInTheDocument()
+    expect(screen.getByText('second')).toBeInTheDocument()
+  })
+
+  it('keeps the snackbar open while hovered after the timer ends, then closes on leave', () => {
+    const { show } = renderSnackbar()
+
+    show('保存しました')
+    const snackbar = screen
+      .getByText('保存しました')
+      .closest('.charcoal-snackbar')
+    if (snackbar === null) throw new Error('Snackbar not found')
+
+    fireEvent.pointerEnter(snackbar, { pointerType: 'mouse' })
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).not.toHaveAttribute('data-exiting', 'true')
+
+    fireEvent.pointerLeave(snackbar)
+    expect(snackbar).toHaveAttribute('data-exiting', 'true')
+  })
+
+  it('keeps the snackbar open while focused', () => {
+    const { show } = renderSnackbar()
+
+    show('保存しました')
+    const snackbar = screen
+      .getByText('保存しました')
+      .closest('.charcoal-snackbar')
+    if (snackbar === null) throw new Error('Snackbar not found')
+
+    fireEvent.keyDown(document, { key: 'F6' })
+    expect(screen.getByRole('region')).toHaveFocus()
+
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).not.toHaveAttribute('data-exiting', 'true')
+
+    fireEvent.blur(screen.getByRole('region'))
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(snackbar).toHaveAttribute('data-exiting', 'true')
+  })
+
+  it('places a snackbar with a button at the bottom', () => {
+    const { show } = renderSnackbar({ position: 'top' })
+
+    show('保存しました', {
+      button: { children: '取り消す' },
+    })
+
+    expect(screen.getByRole('region')).toHaveAttribute(
+      'data-position',
+      'bottom',
+    )
+  })
+
+  it('places a snackbar without a button at the top when requested', () => {
+    const { show } = renderSnackbar({ position: 'top' })
+
+    show('保存しました')
+
+    expect(screen.getByRole('region')).toHaveAttribute('data-position', 'top')
+  })
+
+  it('supports a custom z-index and portal container', () => {
+    const portalContainer = document.createElement('div')
+    document.body.append(portalContainer)
+    const { show } = renderSnackbar({ zIndex: 30, portalContainer })
+
+    show('保存しました')
+
+    expect(portalContainer).toContainElement(screen.getByRole('region'))
+    expect(screen.getByRole('region')).toHaveStyle({ zIndex: 30 })
+
+    portalContainer.remove()
+  })
+
+  it('moves focus to the toast region with F6', () => {
+    const { show } = renderSnackbar()
+
+    show('保存しました', {
+      button: { children: '取り消す' },
+    })
+
+    fireEvent.keyDown(document, { key: 'F6' })
+
+    expect(screen.getByRole('region')).toHaveFocus()
+  })
+
+  it('restores focus after a focused snackbar closes', () => {
+    const { show } = renderSnackbar()
+    const trigger = document.createElement('button')
+    document.body.append(trigger)
+    trigger.focus()
+
+    show('保存しました', {
+      button: { children: '閉じる' },
+    })
+
+    fireEvent.keyDown(document, { key: 'F6' })
+    expect(screen.getByRole('region')).toHaveFocus()
+
+    fireEvent.click(screen.getByRole('button', { name: '閉じる' }))
+    finishExitAnimation('保存しました')
+
+    expect(trigger).toHaveFocus()
+    trigger.remove()
+  })
+
+  it('closes on button click even while hovered', () => {
+    const { show } = renderSnackbar()
+    const trigger = document.createElement('button')
+    document.body.append(trigger)
+    trigger.focus()
+
+    show('保存しました', {
+      button: { children: '閉じる' },
+    })
+
+    const snackbar = screen
+      .getByText('保存しました')
+      .closest('.charcoal-snackbar')
+    if (snackbar === null) throw new Error('Snackbar not found')
+
+    fireEvent.pointerEnter(snackbar, { pointerType: 'mouse' })
+    fireEvent.click(screen.getByRole('button', { name: '閉じる' }))
+
+    expect(snackbar).toHaveAttribute('data-exiting', 'true')
+
+    finishExitAnimation('保存しました')
+    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
+    expect(trigger).toHaveFocus()
+    trigger.remove()
+  })
+})
+
+describe('useSnackbar', () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+  })
+
+  afterEach(() => {
+    cleanup()
+    vi.useRealTimers()
+  })
+
+  it('shows a snackbar via the returned void function', () => {
+    let showResult: void | undefined
+
+    function HookApp() {
+      const [snackbar, show] = useSnackbar()
+      return (
+        <>
+          {snackbar}
+          <button
+            type="button"
+            onClick={() => {
+              showResult = show('hook message')
+            }}
+          >
+            open
+          </button>
+        </>
+      )
+    }
+
+    render(<HookApp />)
+    fireEvent.click(screen.getByText('open'))
+    expect(screen.getByText('hook message')).toBeInTheDocument()
+    expect(showResult).toBeUndefined()
+  })
+})

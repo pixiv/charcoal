@@ -16,12 +16,18 @@ function isTestingLibraryContainer(value: unknown): value is HTMLElement {
   )
 }
 
+function isOverlayPortalNode(child: Element) {
+  return (
+    child.classList.contains('charcoal-modal-background') ||
+    child.classList.contains('charcoal-snackbar-region') ||
+    child.querySelector('.charcoal-snackbar-region') !== null
+  )
+}
+
 function hasModalPortal(source: HTMLElement) {
   return Array.from(document.body.children).some((child) => {
     return (
-      child !== source &&
-      !source.contains(child) &&
-      child.classList.contains('charcoal-modal-background')
+      child !== source && !source.contains(child) && isOverlayPortalNode(child)
     )
   })
 }
@@ -45,9 +51,7 @@ function normalizeReactAriaIds(root: HTMLElement) {
 function appendPortalContent(source: HTMLElement, target: HTMLElement) {
   const portalNodes = Array.from(document.body.children).filter((child) => {
     return (
-      child !== source &&
-      !source.contains(child) &&
-      child.classList.contains('charcoal-modal-background')
+      child !== source && !source.contains(child) && isOverlayPortalNode(child)
     )
   })
 
@@ -60,11 +64,16 @@ function appendPortalContent(source: HTMLElement, target: HTMLElement) {
 
   target.removeAttribute('aria-hidden')
 
-  for (const child of Array.from(overlayContainer.children)) {
-    if (child.classList.contains('charcoal-modal-background')) {
-      break
+  const hasModal = portalNodes.some((node) =>
+    node.classList.contains('charcoal-modal-background'),
+  )
+  if (hasModal) {
+    for (const child of Array.from(overlayContainer.children)) {
+      if (child.classList.contains('charcoal-modal-background')) {
+        break
+      }
+      child.setAttribute('aria-hidden', 'true')
     }
-    child.setAttribute('aria-hidden', 'true')
   }
 
   for (const portalNode of portalNodes) {
