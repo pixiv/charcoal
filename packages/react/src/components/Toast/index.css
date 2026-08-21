@@ -1,0 +1,103 @@
+.charcoal-toast-region {
+  --charcoal-toast-offset: 16px;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: grid;
+  justify-content: center;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  &[data-position='top'] {
+    --charcoal-toast-enter-offset: calc(-1 * var(--charcoal-space-30));
+
+    top: calc(
+      env(safe-area-inset-top, 0px) + max(var(--charcoal-toast-offset), 16px)
+    );
+  }
+
+  &[data-position='bottom'] {
+    --charcoal-toast-enter-offset: var(--charcoal-space-30);
+
+    bottom: calc(
+      env(safe-area-inset-bottom, 0px) + max(var(--charcoal-toast-offset), 16px)
+    );
+  }
+}
+
+.charcoal-toast {
+  box-sizing: border-box;
+  border-radius: var(--charcoal-radius-oval);
+  width: fit-content;
+  max-width: calc(100vw - var(--charcoal-space-46));
+  min-height: var(--charcoal-space-target-m);
+  padding: var(--charcoal-space-25) var(--charcoal-space-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--charcoal-space-20);
+  pointer-events: auto;
+  color: var(--charcoal-color-text-on-positive-default);
+  border: var(--charcoal-border-width-m) solid var(--charcoal-color-border-hud);
+  animation: charcoal-toast-enter 0.3s ease-out both;
+
+  &[data-exiting='true'] {
+    animation: charcoal-toast-exit 0.3s ease-out both;
+  }
+
+  &[data-variant='success'] {
+    background-color: var(--charcoal-color-container-positive-default);
+  }
+
+  &[data-variant='error'] {
+    background-color: var(--charcoal-color-container-negative-default);
+  }
+}
+
+.charcoal-toast-content {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.charcoal-toast-label {
+  min-width: 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: var(--charcoal-text-font-size-caption-m);
+  font-weight: var(--charcoal-text-font-weight-bold);
+  line-height: var(--charcoal-text-line-height-caption-m);
+}
+
+@keyframes charcoal-toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--charcoal-toast-enter-offset));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes charcoal-toast-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .charcoal-toast,
+  .charcoal-toast[data-exiting='true'] {
+    animation: none;
+  }
+}
