@@ -12605,7 +12605,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > B
     data-position="bottom"
     data-react-aria-top-layer="true"
     role="region"
-    style="z-index: 10; bottom: 12px;"
+    style="z-index: 10; --charcoal-snackbar-offset: 12px;"
     tabindex="-1"
   >
     <div
@@ -12651,7 +12651,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > D
     data-position="top"
     data-react-aria-top-layer="true"
     role="region"
-    style="z-index: 10; top: 16px;"
+    style="z-index: 10; --charcoal-snackbar-offset: 16px;"
     tabindex="-1"
   >
     <div
@@ -12697,7 +12697,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > D
     data-position="bottom"
     data-react-aria-top-layer="true"
     role="region"
-    style="z-index: 10; bottom: 16px;"
+    style="z-index: 10; --charcoal-snackbar-offset: 16px;"
     tabindex="-1"
   >
     <div
@@ -12750,7 +12750,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > L
     data-position="top"
     data-react-aria-top-layer="true"
     role="region"
-    style="z-index: 10; top: 16px;"
+    style="z-index: 10; --charcoal-snackbar-offset: 16px;"
     tabindex="-1"
   >
     <div
@@ -12796,7 +12796,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > W
     data-position="bottom"
     data-react-aria-top-layer="true"
     role="region"
-    style="z-index: 10; bottom: 16px;"
+    style="z-index: 10; --charcoal-snackbar-offset: 16px;"
     tabindex="-1"
   >
     <div
