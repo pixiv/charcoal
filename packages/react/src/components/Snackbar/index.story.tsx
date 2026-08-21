@@ -51,9 +51,15 @@ function SnackbarDemo({
       : { button: { children: buttonChildren } }
 
   useEffect(() => {
-    if (defaultOpen) {
-      showSnackbar(message, { duration: 60_000, ...showOptions })
+    if (!defaultOpen) {
+      return
     }
+    showSnackbar(
+      message,
+      buttonChildren === undefined || buttonChildren === ''
+        ? { duration: 60_000 }
+        : { duration: 60_000, button: { children: buttonChildren } },
+    )
   }, [buttonChildren, message, showSnackbar])
 
   return (

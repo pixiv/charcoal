@@ -131,7 +131,9 @@ describe('Snackbar', () => {
     act(() => {
       show('保存しました')
     })
-    const snackbar = screen.getByText('保存しました').closest('.charcoal-snackbar')
+    const snackbar = screen
+      .getByText('保存しました')
+      .closest('.charcoal-snackbar')
     if (snackbar === null) throw new Error('Snackbar not found')
 
     fireEvent.pointerEnter(snackbar, { pointerType: 'mouse' })
@@ -153,7 +155,9 @@ describe('Snackbar', () => {
     act(() => {
       show('保存しました')
     })
-    const snackbar = screen.getByText('保存しました').closest('.charcoal-snackbar')
+    const snackbar = screen
+      .getByText('保存しました')
+      .closest('.charcoal-snackbar')
     if (snackbar === null) throw new Error('Snackbar not found')
 
     fireEvent.keyDown(document, { key: 'F6' })
