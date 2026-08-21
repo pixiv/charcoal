@@ -7,7 +7,7 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
-import type { ElementType, RefObject } from 'react'
+import type { ElementType, ReactNode, RefObject } from 'react'
 import { Overlay } from 'react-aria/Overlay'
 import { useToast, useToastRegion } from 'react-aria/useToast'
 import {
@@ -20,6 +20,7 @@ import Button, { type ButtonProps } from '../Button'
 
 const DEFAULT_DURATION_MS = 5000
 const DEFAULT_Z_INDEX = 10
+const ENTER_ANIMATION_DURATION_MS = 300
 const EXIT_ANIMATION_DURATION_MS = 300
 
 type SnackbarPosition = 'top' | 'bottom'
@@ -50,7 +51,7 @@ export type SnackbarShowOptions<T extends ElementType = 'button'> = {
 
 export type SnackbarHandler = {
   show: <T extends ElementType = 'button'>(
-    message: string,
+    message: ReactNode,
     options?: SnackbarShowOptions<T>,
   ) => void
 }
@@ -58,7 +59,7 @@ export type SnackbarHandler = {
 export type SnackbarProps = {
   /**
    * Snackbar の表示位置。ボタン付きの場合は `bottom` に固定される
-   * @default 'top'
+   * @default 'bottom'
    */
   position?: SnackbarPosition
   /**
@@ -77,7 +78,7 @@ export type SnackbarProps = {
 }
 
 type SnackbarContent = {
-  message: string
+  message: ReactNode
   button?: SnackbarButtonContent
 }
 
@@ -91,7 +92,7 @@ type SnackbarButtonContent = Omit<SnackbarButtonOption, 'component'> & {
 
 const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
   {
-    position = 'top',
+    position = 'bottom',
     offset = 16,
     dim = false,
     zIndex = DEFAULT_Z_INDEX,
@@ -105,6 +106,10 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
   const snackbarRef = useRef<HTMLDivElement>(null)
   const queueRef = useRef<QueuedSnackbar[]>([])
   const isShowingRef = useRef(false)
+  const hoverRef = useRef({
+    active: false,
+    pending: undefined as (() => void) | undefined,
+  })
   // wrapUpdate を固定したまま、後から定義する playNext の最新版を呼ぶ
   const playNextRef = useRef<(() => void) | undefined>(undefined)
 
@@ -121,6 +126,11 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
     function finish() {
       update()
       playNextRef.current?.()
+    }
+
+    if (hoverRef.current.active) {
+      hoverRef.current.pending = () => wrapToastUpdate(update, 'remove')
+      return
     }
 
     if (snackbarRef.current === null) {
@@ -179,15 +189,19 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
 
     const { duration, ...content } = next
     isShowingRef.current = true
+    const enterMs = window.matchMedia?.('(prefers-reduced-motion: reduce)')
+      .matches
+      ? 0
+      : ENTER_ANIMATION_DURATION_MS
     state.add(content, {
       // react-stately は 0 を「タイマーなし」と扱うため、最小の正数を渡す
-      timeout: duration === 0 ? 1 : duration,
+      timeout: Math.max(1, duration + enterMs),
     })
   }
   playNextRef.current = playNext
 
   function show<T extends ElementType = 'button'>(
-    message: string,
+    message: ReactNode,
     options: SnackbarShowOptions<T> = {},
   ) {
     const { duration: durationOption = DEFAULT_DURATION_MS, button } = options
@@ -218,6 +232,19 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
       portalContainer={portalContainer}
       className={className}
       snackbarRef={snackbarRef}
+      onHoverStart={() => {
+        hoverRef.current.active = true
+      }}
+      onHoverEnd={() => {
+        hoverRef.current.active = false
+        const pending = hoverRef.current.pending
+        hoverRef.current.pending = undefined
+        pending?.()
+      }}
+      onActionClose={() => {
+        hoverRef.current.active = false
+        hoverRef.current.pending = undefined
+      }}
     />
   )
 })
@@ -241,7 +268,7 @@ export function useSnackbar(props: SnackbarProps = {}) {
     />
   )
   function show<T extends ElementType = 'button'>(
-    message: string,
+    message: ReactNode,
     options?: SnackbarShowOptions<T>,
   ) {
     snackbarHandlerRef.current?.show(message, options)
@@ -258,6 +285,9 @@ function SnackbarRegion({
   portalContainer,
   className,
   snackbarRef,
+  onHoverStart,
+  onHoverEnd,
+  onActionClose,
 }: {
   state: ToastState<SnackbarContent>
   position: SnackbarPosition
@@ -267,19 +297,23 @@ function SnackbarRegion({
   portalContainer?: HTMLElement
   className?: string
   snackbarRef: RefObject<HTMLDivElement>
+  onHoverStart: () => void
+  onHoverEnd: () => void
+  onActionClose: () => void
 }) {
   const regionRef = useRef<HTMLDivElement>(null)
-  const hoveredRef = useRef(false)
-  const pausedByRegionRef = useRef(false)
+  const pausedByFocusRef = useRef(false)
   const timerState: ToastState<SnackbarContent> = {
     ...state,
     pauseAll() {
-      pausedByRegionRef.current = true
-      state.pauseAll()
+      if (regionRef.current?.contains(document.activeElement)) {
+        pausedByFocusRef.current = true
+        state.pauseAll()
+      }
     },
     resumeAll() {
-      pausedByRegionRef.current = false
-      if (!hoveredRef.current) {
+      if (pausedByFocusRef.current) {
+        pausedByFocusRef.current = false
         state.resumeAll()
       }
     },
@@ -316,18 +350,10 @@ function SnackbarRegion({
             state={state}
             dim={dim}
             snackbarRef={snackbarRef}
-            onHoverStart={() => {
-              hoveredRef.current = true
-              state.pauseAll()
-            }}
-            onHoverEnd={() => {
-              hoveredRef.current = false
-              if (!pausedByRegionRef.current) {
-                state.resumeAll()
-              }
-            }}
+            onHoverStart={onHoverStart}
+            onHoverEnd={onHoverEnd}
             onActionClose={() => {
-              hoveredRef.current = false
+              onActionClose()
               state.close(toast.key)
             }}
           />

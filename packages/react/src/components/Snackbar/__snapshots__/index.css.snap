@@ -56,7 +56,7 @@
 .charcoal-snackbar[data-dim='true'] {
   background-color: var(--charcoal-color-container-hud-default);
   color: var(--charcoal-color-text-on-hud-default);
-  border-color: var(--charcoal-color-container-hud-default);
+  border-color: var(--charcoal-color-border-hud);
 }
 
 .charcoal-snackbar-content {
@@ -67,7 +67,11 @@
 
 .charcoal-snackbar-label {
   min-width: 0;
+  overflow: hidden;
   overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-size: var(--charcoal-text-font-size-caption-m);
   font-weight: var(--charcoal-text-font-weight-bold);
   line-height: var(--charcoal-text-line-height-caption-m);

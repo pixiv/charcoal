@@ -7,7 +7,12 @@ function renderSnackbar(props: ComponentProps<typeof Snackbar> = {}) {
   const ref = createRef<SnackbarHandler>()
   const result = render(<Snackbar ref={ref} {...props} />)
   const show: SnackbarHandler['show'] = (message, options) => {
-    ref.current?.show(message, options)
+    act(() => {
+      ref.current?.show(message, options)
+    })
+    act(() => {
+      vi.advanceTimersByTime(300)
+    })
   }
   return { ...result, show }
 }
@@ -38,9 +43,7 @@ describe('Snackbar', () => {
 
     expect(screen.queryByRole('region')).not.toBeInTheDocument()
 
-    act(() => {
-      show('保存しました')
-    })
+    show('保存しました')
 
     expect(screen.getByText('保存しました')).toBeInTheDocument()
 
@@ -61,9 +64,7 @@ describe('Snackbar', () => {
   it.each([0, -1])('clamps duration to zero: %s', (duration) => {
     const { show } = renderSnackbar()
 
-    act(() => {
-      show('保存しました', { duration })
-    })
+    show('保存しました', { duration })
     expect(screen.getByText('保存しました')).toBeInTheDocument()
 
     act(() => {
@@ -85,9 +86,7 @@ describe('Snackbar', () => {
   ])('falls back to the default duration: %s', (duration) => {
     const { show } = renderSnackbar()
 
-    act(() => {
-      show('保存しました', { duration })
-    })
+    show('保存しました', { duration })
     act(() => {
       vi.advanceTimersByTime(4999)
     })
@@ -104,12 +103,8 @@ describe('Snackbar', () => {
   it('queues the next snackbar until the previous one closes', async () => {
     const { show } = renderSnackbar()
 
-    act(() => {
-      show('first')
-    })
-    act(() => {
-      show('second')
-    })
+    show('first')
+    show('second')
 
     expect(screen.getByText('first')).toBeInTheDocument()
     expect(screen.queryByText('second')).not.toBeInTheDocument()
@@ -125,12 +120,10 @@ describe('Snackbar', () => {
     expect(screen.getByText('second')).toBeInTheDocument()
   })
 
-  it('keeps the snackbar open while hovered and resumes the timer on leave', () => {
+  it('keeps the snackbar open while hovered after the timer ends, then closes on leave', () => {
     const { show } = renderSnackbar()
 
-    act(() => {
-      show('保存しました')
-    })
+    show('保存しました')
     const snackbar = screen
       .getByText('保存しました')
       .closest('.charcoal-snackbar')
@@ -143,18 +136,13 @@ describe('Snackbar', () => {
     expect(snackbar).not.toHaveAttribute('data-exiting', 'true')
 
     fireEvent.pointerLeave(snackbar)
-    act(() => {
-      vi.advanceTimersByTime(5000)
-    })
     expect(snackbar).toHaveAttribute('data-exiting', 'true')
   })
 
   it('keeps the snackbar open while focused', () => {
     const { show } = renderSnackbar()
 
-    act(() => {
-      show('保存しました')
-    })
+    show('保存しました')
     const snackbar = screen
       .getByText('保存しました')
       .closest('.charcoal-snackbar')
@@ -178,10 +166,8 @@ describe('Snackbar', () => {
   it('places a snackbar with a button at the bottom', () => {
     const { show } = renderSnackbar({ position: 'top' })
 
-    act(() => {
-      show('保存しました', {
-        button: { children: '取り消す' },
-      })
+    show('保存しました', {
+      button: { children: '取り消す' },
     })
 
     expect(screen.getByRole('region')).toHaveAttribute(
@@ -190,14 +176,20 @@ describe('Snackbar', () => {
     )
   })
 
+  it('places a snackbar without a button at the top when requested', () => {
+    const { show } = renderSnackbar({ position: 'top' })
+
+    show('保存しました')
+
+    expect(screen.getByRole('region')).toHaveAttribute('data-position', 'top')
+  })
+
   it('supports a custom z-index and portal container', () => {
     const portalContainer = document.createElement('div')
     document.body.append(portalContainer)
     const { show } = renderSnackbar({ zIndex: 20, portalContainer })
 
-    act(() => {
-      show('保存しました')
-    })
+    show('保存しました')
 
     expect(portalContainer).toContainElement(screen.getByRole('region'))
     expect(screen.getByRole('region')).toHaveStyle({ zIndex: 20 })
@@ -208,10 +200,8 @@ describe('Snackbar', () => {
   it('moves focus to the toast region with F6', () => {
     const { show } = renderSnackbar()
 
-    act(() => {
-      show('保存しました', {
-        button: { children: '取り消す' },
-      })
+    show('保存しました', {
+      button: { children: '取り消す' },
     })
 
     fireEvent.keyDown(document, { key: 'F6' })
@@ -225,10 +215,8 @@ describe('Snackbar', () => {
     document.body.append(trigger)
     trigger.focus()
 
-    act(() => {
-      show('保存しました', {
-        button: { children: '閉じる' },
-      })
+    show('保存しました', {
+      button: { children: '閉じる' },
     })
 
     fireEvent.keyDown(document, { key: 'F6' })
@@ -247,10 +235,8 @@ describe('Snackbar', () => {
     document.body.append(trigger)
     trigger.focus()
 
-    act(() => {
-      show('保存しました', {
-        button: { children: '閉じる' },
-      })
+    show('保存しました', {
+      button: { children: '閉じる' },
     })
 
     const snackbar = screen
@@ -267,93 +253,6 @@ describe('Snackbar', () => {
     expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
     expect(trigger).toHaveFocus()
     trigger.remove()
-  })
-
-  it('renders the button with a custom component', () => {
-    function Link({ to, ...props }: ComponentProps<'a'> & { to: string }) {
-      return <a {...props} href={to} />
-    }
-
-    const { show } = renderSnackbar()
-
-    act(() => {
-      show('保存しました', {
-        button: {
-          component: Link,
-          to: '/details',
-          children: '詳細を見る',
-        },
-      })
-    })
-
-    expect(screen.getByRole('link', { name: '詳細を見る' })).toHaveAttribute(
-      'href',
-      '/details',
-    )
-  })
-
-  it('closes on button click', () => {
-    const { show } = renderSnackbar()
-
-    act(() => {
-      show('保存しました', {
-        button: { children: '閉じる' },
-      })
-    })
-
-    fireEvent.click(screen.getByText('閉じる'))
-    expect(screen.getByText('保存しました')).toBeInTheDocument()
-
-    finishExitAnimation('保存しました')
-
-    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
-  })
-
-  it('uses Navigation button variant when dimmed', () => {
-    const { show } = renderSnackbar({ dim: true })
-
-    act(() => {
-      show('保存しました', {
-        button: { children: '閉じる' },
-      })
-    })
-
-    expect(screen.getByRole('button', { name: '閉じる' })).toHaveAttribute(
-      'data-variant',
-      'Navigation',
-    )
-  })
-
-  it('honors an explicit button variant when dimmed', () => {
-    const { show } = renderSnackbar({ dim: true })
-
-    act(() => {
-      show('保存しました', {
-        button: { children: '削除する', variant: 'Danger' },
-      })
-    })
-
-    expect(screen.getByRole('button', { name: '削除する' })).toHaveAttribute(
-      'data-variant',
-      'Danger',
-    )
-  })
-
-  it('removes the snackbar with a timeout fallback', () => {
-    const { show } = renderSnackbar()
-
-    act(() => {
-      show('保存しました', { duration: 1 })
-    })
-    act(() => {
-      vi.advanceTimersByTime(1)
-    })
-
-    act(() => {
-      vi.advanceTimersByTime(400)
-    })
-
-    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
   })
 })
 

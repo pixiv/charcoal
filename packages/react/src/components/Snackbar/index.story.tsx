@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import Button from '../Button'
 import unstable_Snackbar, {
@@ -9,7 +9,7 @@ import unstable_Snackbar, {
 const defaultOpen = !!process.env.TEST
 
 type SnackbarStoryArgs = unstable_SnackbarProps & {
-  message: string
+  message: ReactNode
   buttonChildren?: string
 }
 
@@ -103,7 +103,19 @@ export function Example() {
 export const LongMessage: StoryObj<SnackbarStoryArgs> = {
   args: {
     message:
-      '保存した内容はすべての端末に同期され、あとから設定画面で変更できます',
+      '保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます',
+  },
+}
+
+export const WithLineBreak: StoryObj<SnackbarStoryArgs> = {
+  args: {
+    message: (
+      <>
+        保存に失敗しました
+        <br />
+        通信環境を確認してください
+      </>
+    ),
   },
 }
 
@@ -143,11 +155,10 @@ export function Example() {
   },
 }
 
-export const Bottom: StoryObj<SnackbarStoryArgs> = {
+export const Top: StoryObj<SnackbarStoryArgs> = {
   args: {
-    position: 'bottom',
-    offset: 12,
-    message: '下部に表示します',
+    position: 'top',
+    message: '上部に表示します',
   },
 }
 
