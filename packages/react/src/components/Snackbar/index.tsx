@@ -352,6 +352,7 @@ function SnackbarItem({
       {button !== undefined && (
         <SnackbarAction
           button={button}
+          dim={dim}
           onClose={() => state.close(toast.key)}
         />
       )}
@@ -361,14 +362,17 @@ function SnackbarItem({
 
 function SnackbarAction({
   button,
+  dim,
   onClose,
 }: {
   button: SnackbarButtonContent
+  dim: boolean
   onClose: () => void
 }) {
   const {
     hideSnackbarOnClick = true,
     onClick,
+    variant,
     children: buttonChildren,
     ...buttonProps
   } = button
@@ -386,6 +390,7 @@ function SnackbarAction({
     <PolymorphicButton
       {...buttonProps}
       size="S"
+      variant={variant ?? (dim ? 'Navigation' : undefined)}
       aria-keyshortcuts="F6"
       onClick={handleButtonClick}
     >

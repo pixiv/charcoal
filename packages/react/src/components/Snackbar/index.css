@@ -32,8 +32,8 @@
   justify-content: center;
   gap: var(--charcoal-space-20);
   pointer-events: auto;
-  background-color: var(--charcoal-color-background-default);
-  color: var(--charcoal-color-text-default-text1);
+  background-color: var(--charcoal-color-container-default);
+  color: var(--charcoal-color-text-default);
   border: var(--charcoal-border-width-m) solid
     var(--charcoal-color-border-secondary);
   animation: charcoal-snackbar-enter 0.3s ease-out both;
@@ -51,7 +51,7 @@
   &[data-dim='true'] {
     background-color: var(--charcoal-color-container-hud-default);
     color: var(--charcoal-color-text-on-hud-default);
-    border-color: var(--charcoal-color-border-secondary);
+    border-color: var(--charcoal-color-container-hud-default);
   }
 }
 

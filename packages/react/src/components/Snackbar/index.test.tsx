@@ -257,6 +257,21 @@ describe('Snackbar', () => {
     expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
   })
 
+  it('uses Navigation button variant when dimmed', () => {
+    const { show } = renderSnackbar({ dim: true })
+
+    act(() => {
+      show('保存しました', {
+        button: { children: '閉じる' },
+      })
+    })
+
+    expect(screen.getByRole('button', { name: '閉じる' })).toHaveAttribute(
+      'data-variant',
+      'Navigation',
+    )
+  })
+
   it('honors an explicit button variant when dimmed', () => {
     const { show } = renderSnackbar({ dim: true })
 
