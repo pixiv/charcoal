@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "type": "module",
   "main": "./src/index.cjs",
-  "module": " ./src/index.js",
+  "module": "./src/index.js",
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
