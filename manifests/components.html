@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/42 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">38/42 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/209 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">30 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/214 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">30 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>47.1s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>39.6s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -21409,7 +21409,7 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
         
       </div>
     </div>
-    <div class="meta" title="./packages/react/src/components/Snackbar/index.story.tsx">react-unstable-snackbar · ./packages/react/src/components/Snackbar/index.story.tsx</div>
+    <div class="meta" title="./packages/react/src/components/Notification/Snackbar/index.story.tsx">react-unstable-snackbar · ./packages/react/src/components/Notification/Snackbar/index.story.tsx</div>
     
     
     
@@ -21439,7 +21439,7 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
               <span class="badge ok">7 prop types</span>
             </div>
-            <pre><code>Component: packages/react/src/components/Snackbar/index.tsx::default</code></pre>
+            <pre><code>Component: packages/react/src/components/Notification/Snackbar/index.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
             <pre><code>className?: string
 
@@ -21460,9 +21460,9 @@ portalContainer?: HTMLElement
 /**
  * Snackbar の表示位置。ボタン付きの場合は `bottom` に固定される
  */
-position?: SnackbarPosition = bottom
+position?: Position = bottom
 
-zIndex?: number = 20</code></pre>
+zIndex?: number</code></pre>
           </div>
         </div>
     
@@ -21549,14 +21549,153 @@ zIndex?: number = 20</code></pre>
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="unstable_Toast">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> unstable_Toast</h2>
+      <div class="badges">
+        <label for="c-41-react-unstable-toast-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-41-react-unstable-toast-info" class="badge info as-toggle">1 info</label>
+        <label for="c-41-react-unstable-toast-stories" class="badge ok as-toggle">5 stories</label>
+        
+      </div>
+    </div>
+    <div class="meta" title="./packages/react/src/components/Notification/Toast/index.story.tsx">react-unstable-toast · ./packages/react/src/components/Notification/Toast/index.story.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-41-react-unstable-toast-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-41-react-unstable-toast-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  <input id="c-41-react-unstable-toast-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
+              <span class="badge ok">6 prop types</span>
+            </div>
+            <pre><code>Component: packages/react/src/components/Notification/Toast/index.tsx::default</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string
+
+css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
+
+/**
+ * 画面端からの距離（ピクセル）
+ */
+offset?: number = 16
+
+portalContainer?: HTMLElement
+
+/**
+ * Toast の表示位置
+ */
+position?: Position = top
+
+zIndex?: number</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Button, unstable_Toast } from "@charcoal-ui/react";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;ToastDemo message=&quot;保存しました&quot; duration={5000} variant=&quot;success&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Error</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Error = () =&gt; &lt;ToastDemo message=&quot;保存に失敗しました&quot; duration={5000} variant=&quot;error&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Long Message</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LongMessage = () =&gt; &lt;ToastDemo
+    message=&quot;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&quot;
+    duration={5000}
+    variant=&quot;success&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Line Break</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithLineBreak = () =&gt; &lt;ToastDemo
+    message={(&lt;&gt;保存に失敗しました
+              &lt;br /&gt;通信環境を確認してください
+            &lt;/&gt;)}
+    duration={5000}
+    variant=&quot;success&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Bottom</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Bottom = () =&gt; &lt;ToastDemo message=&quot;下部に表示します&quot; duration={5000} variant=&quot;success&quot; position=&quot;bottom&quot; /&gt;;</code></pre>
+            </div>
+        </div>
+    
+  </div>
+</article>
+<article
+  class="card 
+  no-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="WithIcon">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> WithIcon</h2>
       <div class="badges">
-        <label for="c-41-react-sandbox-withicon-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-41-react-sandbox-withicon-info" class="badge info as-toggle">1 info</label>
-        <label for="c-41-react-sandbox-withicon-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-42-react-sandbox-withicon-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-42-react-sandbox-withicon-info" class="badge info as-toggle">1 info</label>
+        <label for="c-42-react-sandbox-withicon-stories" class="badge ok as-toggle">1 story</label>
         
       </div>
     </div>
@@ -21568,10 +21707,10 @@ zIndex?: number = 20</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-41-react-sandbox-withicon-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-41-react-sandbox-withicon-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-42-react-sandbox-withicon-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-42-react-sandbox-withicon-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-41-react-sandbox-withicon-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-42-react-sandbox-withicon-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
