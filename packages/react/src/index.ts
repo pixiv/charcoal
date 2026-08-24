@@ -107,5 +107,7 @@ export {
   type ScrollSnapAlign,
   type ScrollStep,
   type ScrollStepContext,
+  type CarouselChangeSource,
+  type CarouselChangeEvent,
 } from './components/Carousel'
 import './components/FocusRing/index.css'

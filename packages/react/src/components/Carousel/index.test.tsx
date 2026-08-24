@@ -1273,3 +1273,170 @@ describe('Carousel', () => {
     })
   })
 })
+
+describe('onChange', () => {
+  // 中央検出を手動で駆動するため IntersectionObserver を差し替える
+  let triggerCenter: (el: Element) => void
+  let origIO: typeof globalThis.IntersectionObserver
+
+  beforeEach(() => {
+    // jsdom は onscrollend を持つが実イベントは発火しないため、debounce(100ms) 経路を
+    // 強制する（scrollSettle.ts の分岐は 'onscrollend' in window で判定するため）。
+    Reflect.deleteProperty(window, 'onscrollend')
+    const callbacks = new Map<Element, IntersectionObserverCallback>()
+    origIO = globalThis.IntersectionObserver
+    globalThis.IntersectionObserver = class {
+      constructor(private cb: IntersectionObserverCallback) {}
+      observe(el: Element) {
+        callbacks.set(el, this.cb)
+      }
+      unobserve(el: Element) {
+        callbacks.delete(el)
+      }
+      disconnect() {
+        callbacks.clear()
+      }
+    } as unknown as typeof globalThis.IntersectionObserver
+    triggerCenter = (el) => {
+      const cb = callbacks.get(el)
+      cb?.(
+        [{ target: el, isIntersecting: true } as IntersectionObserverEntry],
+        {} as IntersectionObserver,
+      )
+    }
+  })
+
+  afterEach(() => {
+    globalThis.IntersectionObserver = origIO
+    vi.useRealTimers()
+  })
+
+  const renderWithOnChange = () => {
+    const onChange = vi.fn()
+    const { container } = render(
+      <Carousel navigationButtons indicator onChange={onChange}>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+      </Carousel>,
+    )
+    const scroller = container.querySelector(
+      '.charcoal-carousel__scroller',
+    ) as HTMLElement
+    // jsdom はレイアウトを持たず scrollWidth/clientWidth/scrollTo が無いため、
+    // nav ボタンの活性化とプログラム的スクロールが成立するようスタブする。
+    mockScrollerGeometry(scroller)
+    scroller.scrollTo = vi.fn()
+    fireEvent.scroll(scroller)
+    return { onChange, container, scroller }
+  }
+
+  // scrollend 非対応の jsdom では debounce(100ms) 経路になる
+  const settleScroll = (scroller: HTMLElement) => {
+    scroller.dispatchEvent(new Event('scroll'))
+    vi.advanceTimersByTime(150)
+  }
+
+  it('next ボタンの送りは source=navigation で発火する', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledTimes(1)
+      expect(onChange).toHaveBeenCalledWith({ index: 1, source: 'navigation' })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('スワイプなどのポインタ操作は source=pointer で発火する', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      scroller.dispatchEvent(new Event('pointerdown', { bubbles: true }))
+      triggerCenter(slides[2])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledWith({ index: 2, source: 'pointer' })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('indicator の dot は source=indicator で発火する', () => {
+    vi.useFakeTimers()
+    // jsdom には scrollIntoView が無いのでモックを定義する（dot クリックが item 自身の
+    // scrollIntoView を呼ぶため、無いと store の dispatch が例外で中断してしまう）。
+    Element.prototype.scrollIntoView = vi.fn()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      container
+        .querySelectorAll<HTMLButtonElement>(
+          '.charcoal-carousel__indicator__item',
+        )[1]
+        ?.click()
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledWith({ index: 1, source: 'indicator' })
+    } finally {
+      vi.useRealTimers()
+      delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView
+    }
+  })
+
+  it('activeIndex が変わらない静止では発火しない', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('初期位置の適用（どの入口も通っていない静止）では発火しない', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+})

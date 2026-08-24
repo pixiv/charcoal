@@ -36,6 +36,14 @@ export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
 
 export type ScrollSnapAlign = 'center' | 'start'
 
+export type CarouselChangeSource =
+  'auto' | 'navigation' | 'indicator' | 'keyboard' | 'pointer' | 'reset'
+
+export type CarouselChangeEvent = Readonly<{
+  index: number
+  source: CarouselChangeSource
+}>
+
 export type ScrollSnap = Readonly<{
   type?: ScrollSnapType
   align?: ScrollSnapAlign
@@ -94,6 +102,9 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
+  // スクロール静止で activeIndex が変わったときに 1 回だけ発火する。
+  // source で自動送り（'auto'）とユーザー操作を区別できる。
+  onChange?: (e: CarouselChangeEvent) => void
   // スライド間隔。number は px、string は CSS 値をそのまま使う。未指定は間隔なし。
   gap?: number | string
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
@@ -176,6 +187,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScroll,
     onResize,
     onScrollStateChange,
+    onChange,
     loop = false,
     centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
@@ -216,6 +228,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       onScroll,
       onResize,
       onScrollStateChange,
+      onChange,
     })
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
@@ -229,6 +242,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollToItem = useCallback(
     (index: number) => store.dispatch({ type: 'requestScroll', index }),
     [store],
+  )
+
+  // CarouselNavigationButton は memo 済みなので安定参照で渡す。
+  const scrollByNavigation = useCallback(
+    (direction: Direction) => scrollByStep(direction, 'navigation'),
+    [scrollByStep],
   )
 
   const renderSlides = () =>
@@ -280,10 +299,10 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onKeyDown: (e) => {
       if (e.key === 'ArrowRight') {
         e.preventDefault()
-        scrollByStep('next')
+        scrollByStep('next', 'keyboard')
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault()
-        scrollByStep('prev')
+        scrollByStep('prev', 'keyboard')
       } else {
         e.continuePropagation()
       }
@@ -354,12 +373,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           <CarouselNavigationButton
             direction="prev"
             canScroll={canPrev}
-            onScroll={scrollByStep}
+            onScroll={scrollByNavigation}
           />
           <CarouselNavigationButton
             direction="next"
             canScroll={canNext}
-            onScroll={scrollByStep}
+            onScroll={scrollByNavigation}
           />
         </div>
       </div>

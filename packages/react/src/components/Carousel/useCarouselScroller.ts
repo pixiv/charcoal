@@ -10,7 +10,12 @@ import {
   type LoopGeometry,
 } from './carouselLoop'
 import type { CarouselStore } from './carouselStore'
-import type { ScrollAlign, ScrollStep } from './index'
+import type {
+  CarouselChangeEvent,
+  CarouselChangeSource,
+  ScrollAlign,
+  ScrollStep,
+} from './index'
 import { observeResize } from './resizeObserver'
 import { onScrollSettle } from './scrollSettle'
 
@@ -37,10 +42,14 @@ export type CarouselScrollerOptions = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
+  onChange?: (e: CarouselChangeEvent) => void
 }>
 
 export type CarouselScrollerResult = Readonly<{
-  scrollByStep: (direction: 'prev' | 'next') => void
+  scrollByStep: (
+    direction: 'prev' | 'next',
+    source: CarouselChangeSource,
+  ) => void
   onItemResize: () => void
   resetScroll: () => void
   // loop 時に各端へ描画すべき clone 枚数（実測から算出。初回 render は 0）
@@ -62,13 +71,24 @@ export function useCarouselScroller(
     onScroll,
     onResize,
     onScrollStateChange,
+    onChange,
   } = options
   const initialScrollActive = useRef(true)
 
+  // 直近の送りの発生源。未設定は「どの入口も通っていない」＝初期位置の適用中を意味し、
+  // これが初期表示で onChange を発火しないことの担保になる。
+  const sourceRef = useRef<CarouselChangeSource>()
+  const lastReportedIndex = useRef<number | null>(null)
+
   // コールバックは最新参照を ref に保持し、リスナーの貼り直しを避ける。
-  const callbacksRef = useRef({ onScroll, onResize, onScrollStateChange })
+  const callbacksRef = useRef({
+    onScroll,
+    onResize,
+    onScrollStateChange,
+    onChange,
+  })
   useEffect(() => {
-    callbacksRef.current = { onScroll, onResize, onScrollStateChange }
+    callbacksRef.current = { onScroll, onResize, onScrollStateChange, onChange }
   })
 
   // clone は「各端が 1 viewport を覆う枚数」だけ描画する。初回 render は 0 枚で、
@@ -229,6 +249,7 @@ export function useCarouselScroller(
     const cancelIntent = () => {
       initialScrollActive.current = false
       pendingScrollTarget.current = null
+      sourceRef.current = 'pointer'
     }
     for (const type of INTERACTION_EVENTS)
       el.addEventListener(type, cancelIntent, true)
@@ -249,6 +270,7 @@ export function useCarouselScroller(
       lastNonce = nonce
       initialScrollActive.current = false
       pendingScrollTarget.current = null
+      sourceRef.current = 'indicator'
     })
   }, [store])
 
@@ -262,6 +284,15 @@ export function useCarouselScroller(
     const settle = () => {
       pendingScrollTarget.current = null
       teleport()
+      const { activeIndex } = store.getSnapshot()
+      // テレポートは合同位置へ移すだけで activeIndex を変えないため、
+      // index の重複排除だけでテレポート起因の二重発火を防げる。
+      if (activeIndex === lastReportedIndex.current) return
+      lastReportedIndex.current = activeIndex
+      const source = sourceRef.current
+      // 初期位置の適用（instant scrollTo）も静止を起こすが、変化ではないので発火しない。
+      if (source == null) return
+      callbacksRef.current.onChange?.({ index: activeIndex, source })
     }
 
     // 強フリックが clone の滑走路を使い切って物理端にクランプした場合だけは
@@ -289,7 +320,7 @@ export function useCarouselScroller(
       el.removeEventListener('scroll', escapeWall)
       stopSettle()
     }
-  }, [scrollerRef, itemCount])
+  }, [scrollerRef, itemCount, store])
 
   // memo 化された CarouselItem には安定参照で渡す（identity が変わると memo が無効化される）。
   const onItemResize = useCallback(() => remeasureRef.current(), [])
@@ -297,14 +328,16 @@ export function useCarouselScroller(
   // defaultScroll の初期位置へ戻す（命令的 API: CarouselHandlerRef.resetScroll）。
   const resetScroll = useCallback(() => {
     initialScrollActive.current = true
+    sourceRef.current = 'reset'
     remeasure()
   }, [remeasure])
 
   const scrollByStep = useCallback(
-    (direction: 'prev' | 'next') => {
+    (direction: 'prev' | 'next', source: CarouselChangeSource) => {
       const el = scrollerRef.current
       if (!el) return
       initialScrollActive.current = false
+      sourceRef.current = source
       const { clientWidth, scrollWidth } = el
       // 走行中なら「まだ到達していない目標」を起点に積む（連打で残距離を捨てないため）。
       const scrollLeft = pendingScrollTarget.current ?? el.scrollLeft
