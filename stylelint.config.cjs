@@ -20,12 +20,12 @@ const config = {
       files: ['**/*.{jsx,tsx}'],
       customSyntax: 'postcss-styled-syntax',
       rules: {
-        // styled-components permits JavaScript interpolation in media queries.
+        // styled-components の動的なメディアクエリ補間は静的に検証できない
         'media-query-no-invalid': null,
       },
     },
     {
-      // These files contain styled-components type tests, not style definitions.
+      // これらのファイルにはスタイル定義ではなく styled-components の型テストが含まれる
       files: ['**/*.d.tsx'],
       rules: {
         'no-empty-source': null,
