@@ -121,6 +121,18 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
   保ちたい場合は `loop` を使う。
 - **`prefers-reduced-motion: reduce` は `autoplay` のみを止める**: prev/next ボタンや
   キーボード操作の smooth scroll は従来どおり動く。
+- **タッチ端末では `autoplay` を利用者が止める手段が無い**: `pauseOnHover` は react-aria の
+  `useHover` が `pointerType === 'touch'` を無視するため効かず、キーボードフォーカスによる
+  一時停止もタッチ操作ではフォーカスが visible にならない（modality が `pointer` になる）
+  ため効かない。ドラッグ中は自動送りの tick が割り込まないが（進行中のユーザースクロール
+  を検知して 1 tick 分だけ譲る）、ドラッグが終われば何事もなく回転を再開する——恒久的な
+  停止手段ではない。`role="region"` + `aria-roledescription="carousel"` を持つ本コンポーネントに
+  `autoplay` を使う画面で WCAG 2.2.2（Pause, Stop, Hide）が要件になる場合は、利用側で
+  明示的な一時停止 UI を用意すること（本コンポーネントは CSS を変更しない前提のため
+  pause ボタン等は提供しない）。
+- **キーボードフォーカスによる一時停止は `pauseOnHover: false` でも効く**: 一時停止条件は
+  `isHovered || rootFocusVisible` の OR で、`pauseOnHover` は hover 側の判定だけを切り替える
+  （`false` にしても、フォーカスを合わせている間は止まる）。
 
 ## スクロール量を細かく制御したい場合
 

@@ -72,6 +72,33 @@ describe('AutoplayProvider', () => {
     },
   )
 
+  it('interval 未指定では matchMedia を購読しない', () => {
+    // interval なし（autoplay 未指定の Carousel）まで matchMedia を購読すると、
+    // autoplay を使わない既存の Carousel すべてに余分な購読とレンダーが付く。
+    // window.matchMedia は setup の beforeAll で vi.fn() 化済みの共有インスタンスなので、
+    // spyOn/restore で差し替えず呼び出し履歴だけをクリアして使う。
+    const matchMedia = vi.mocked(window.matchMedia)
+    matchMedia.mockClear()
+    renderProvider({ paused: false })
+    expect(matchMedia).not.toHaveBeenCalled()
+  })
+
+  it('matchMedia 非対応環境でも例外を投げず自動送りが動く', () => {
+    // matchMedia を持たない window shim（consumer 側の古い jsdom 等）でも
+    // マウント時に例外を投げてはならない。
+    const original = window.matchMedia
+    Reflect.deleteProperty(window, 'matchMedia')
+    vi.useFakeTimers()
+    try {
+      const { advance } = renderProvider({ interval: 3000, paused: false })
+      vi.advanceTimersByTime(3000)
+      expect(advance).toHaveBeenCalledExactlyOnceWith('auto')
+    } finally {
+      vi.useRealTimers()
+      window.matchMedia = original
+    }
+  })
+
   it('prefers-reduced-motion では起動しない', () => {
     // 差し替えたグローバルだけを局所的に戻す（setup の他の stub を巻き添えにしない）
     const origMatchMedia = window.matchMedia
@@ -96,6 +123,21 @@ describe('AutoplayProvider', () => {
     } finally {
       vi.useRealTimers()
       vi.stubGlobal('matchMedia', origMatchMedia)
+    }
+  })
+
+  it('prefers-reduced-motion 判定前（undefined）ではタイマーを張らない', () => {
+    // useMedia は判定確定まで undefined を返す。マウント直後のコミットで
+    // undefined を「起動してよい」側に倒すと、判定確定後の張り直しと合わせて
+    // setTimeout が 2 回積まれてしまう（先勝ちの分は判定確定時のクリーンアップで
+    // 即座に消えるため、advance の呼び出し回数だけでは見分けが付かない）。
+    const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
+    try {
+      const { unmount } = renderProvider({ interval: 3000, paused: false })
+      expect(setTimeoutSpy).toHaveBeenCalledTimes(1)
+      unmount()
+    } finally {
+      setTimeoutSpy.mockRestore()
     }
   })
 

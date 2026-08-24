@@ -239,7 +239,12 @@ export const LoopBanner: StoryObj<typeof Carousel> = {
 
 // autoplay: 5 秒ごとに 1 枚進む。hover・キーボードフォーカス中・
 // prefers-reduced-motion では停止する。
+// 常駐する JS タイマーが a11y/画像スナップショットの撮影タイミングと競合し、
+// ページ準備が 5 秒を跨ぐと 1 枚分の smooth スクロールが写り込んで
+// フレーキーになる（LoadingSpinner の常時アニメーションと同じ事情）ため、
+// Playwright ベースの test-runner（vrt/a11y）から除外する。
 export const LoopAutoplay: StoryObj<typeof Carousel> = {
+  tags: ['skip-test'],
   args: {
     size: 'S',
     children: fullWidthImages,

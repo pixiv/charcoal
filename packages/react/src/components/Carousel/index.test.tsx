@@ -1,4 +1,4 @@
-import { createRef } from 'react'
+import { createRef, Profiler } from 'react'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
@@ -14,6 +14,22 @@ const slides = Array.from({ length: 6 }, (_, i) => (
     Slide {i}
   </div>
 ))
+
+// 子要素の offsetLeft/offsetWidth だけを与える。scrollLeft を live に保つ必要がある
+// テスト（stubScrollTo 併用時など）は、これだけを rerender 後に呼び直せば済む。
+function mockItemOffsets(el: HTMLElement) {
+  for (let i = 0; i < el.children.length; i++) {
+    const child = el.children[i] as HTMLElement
+    Object.defineProperty(child, 'offsetLeft', {
+      value: i * 400,
+      configurable: true,
+    })
+    Object.defineProperty(child, 'offsetWidth', {
+      value: 380,
+      configurable: true,
+    })
+  }
+}
 
 function mockScrollerGeometry(
   el: HTMLElement,
@@ -32,18 +48,7 @@ function mockScrollerGeometry(
     value: clientWidth,
     configurable: true,
   })
-
-  for (let i = 0; i < el.children.length; i++) {
-    const child = el.children[i] as HTMLElement
-    Object.defineProperty(child, 'offsetLeft', {
-      value: i * 400,
-      configurable: true,
-    })
-    Object.defineProperty(child, 'offsetWidth', {
-      value: 380,
-      configurable: true,
-    })
-  }
+  mockItemOffsets(el)
 }
 
 function getScroller() {
@@ -1474,6 +1479,67 @@ describe('onChange', () => {
     }
   })
 
+  it('resetScroll() が起こす静止は onChange を発火しない', () => {
+    vi.useFakeTimers()
+    try {
+      const onChange = vi.fn()
+      const ref = createRef<CarouselHandlerRef>()
+      const { container } = render(
+        <Carousel ref={ref} navigationButtons onChange={onChange}>
+          <div>0</div>
+          <div>1</div>
+          <div>2</div>
+        </Carousel>,
+      )
+      const scroller = container.querySelector(
+        '.charcoal-carousel__scroller',
+      ) as HTMLElement
+      mockScrollerGeometry(scroller)
+      scroller.scrollTo = vi.fn()
+      fireEvent.scroll(scroller)
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      // まずユーザー操作で発生源を残す（resetScroll がそれを引き継がないことの対照）
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+      expect(onChange).toHaveBeenCalledWith({ index: 1, source: 'navigation' })
+      onChange.mockClear()
+
+      act(() => {
+        ref.current?.resetScroll()
+      })
+      triggerCenter(slides[0])
+      settleScroll(scroller)
+
+      expect(onChange).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('ArrowRight での送りは source=keyboard で発火する', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      fireEvent.keyDown(scroller, { key: 'ArrowRight' })
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledWith({ index: 1, source: 'keyboard' })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
   it('端で空振りしたキーボード送りは次の無関係な静止に発生源を残さない', () => {
     vi.useFakeTimers()
     try {
@@ -1617,6 +1683,27 @@ describe('autoplay', () => {
     }
   })
 
+  it('autoplay 未指定なら hover で購読も再レンダーもしない', () => {
+    // useHover(isDisabled) を切っていないと autoplay 無しでも hover の度に
+    // isHovered の state 更新で再レンダーが起きる。paused の配線先（autoplay
+    // provider）が既に無効化されているため挙動としては無害だが、無関係な
+    // Carousel すべてに hover 購読のオーバーヘッドが付く回帰であり、
+    // これを再レンダーの有無で検出する。
+    const onRender = vi.fn()
+    const { container } = render(
+      <Profiler id="carousel" onRender={onRender}>
+        <Carousel>{slides}</Carousel>
+      </Profiler>,
+    )
+    const root = container.firstElementChild as HTMLElement
+    onRender.mockClear()
+
+    fireEvent.mouseOver(root)
+    fireEvent.mouseOut(root)
+
+    expect(onRender).not.toHaveBeenCalled()
+  })
+
   // キーボードフォーカスでの停止テストは削除。react-aria の focus-visible の
   // モダリティ判定が jsdom で駆動できず、fireEvent.keyDown → focus() の経路では
   // isFocusVisible が true にならない。停止ポリシー自体は CarouselAutoplayProvider.test.tsx
@@ -1683,6 +1770,13 @@ describe('autoplay', () => {
       vi.advanceTimersByTime(3000)
       expect(scrollTo).not.toHaveBeenCalled()
 
+      // 初期位置の再適用（itemCount 変化での instant scrollTo）が静止イベントを
+      // 起こすと、それ自体がタイマーを張り直してしまい、以降の検証が「空振りした
+      // tick 自身の張り直し」ではなく「無関係な静止による張り直し」で成立してしまう。
+      // ユーザー操作扱いにして initialScrollActive を倒し、rerender 後の
+      // applyInitialScroll を no-op にする。
+      fireEvent.pointerDown(scroller)
+
       rerender(
         <Carousel autoplay={{ interval: 3000 }}>
           <div>0</div>
@@ -1690,10 +1784,21 @@ describe('autoplay', () => {
           <div>2</div>
         </Carousel>,
       )
-      mockScrollerGeometry(scroller)
+      // 新しく描画された実スライドに送り先の算出に必要な寸法を与える。scrollLeft の
+      // live なアクセサ（stubScrollTo）を壊さないよう offsetLeft/offsetWidth だけ与える。
+      mockItemOffsets(scroller)
+      expect(scrollTo).not.toHaveBeenCalled()
 
+      // 空振りした tick 自身が張り直した次回 tick（t=6000）でようやく進む。
       vi.advanceTimersByTime(3000)
-      expect(scrollTo).toHaveBeenCalledTimes(1)
+
+      // mockScrollerGeometry: clientWidth 800 / 子は offsetLeft i*400・offsetWidth 380。
+      // 既定は size M ＝ snapType 'none' なので advanceSlide は start へ寄せる:
+      // 起点 0 から前へ進む最初の位置は 400。
+      expect(scrollTo).toHaveBeenCalledExactlyOnceWith({
+        left: 400,
+        behavior: 'smooth',
+      })
     } finally {
       vi.useRealTimers()
     }

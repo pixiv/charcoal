@@ -5,7 +5,6 @@ import {
   type ComponentPropsWithoutRef,
 } from 'react'
 import { useObjectRef } from 'react-aria/useObjectRef'
-import { useMedia } from '../../core/themeHelper'
 import { onScrollSettle } from './scrollSettle'
 
 export type AutoplayProviderProps = ComponentPropsWithoutRef<'div'> &
@@ -16,6 +15,8 @@ export type AutoplayProviderProps = ComponentPropsWithoutRef<'div'> &
     paused: boolean
     advance: (source: 'auto') => void
   }>
+
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 
 // 自動送りのタイマーを持つ scroller。滞留時間はスライドの到着（静止）から数える。
 // className / data 属性などの div 属性はそのまま透過する。
@@ -32,16 +33,26 @@ export const AutoplayProvider = forwardRef<
     advanceRef.current = advance
   })
 
-  const prefersReducedMotion = useMedia('(prefers-reduced-motion: reduce)')
-
   useEffect(() => {
     const el = ref.current
     // interval が有限かつ正でなければ起動しない（setTimeout の即時発火・暴走を避ける）
     if (!el || interval == null || !Number.isFinite(interval) || interval <= 0)
       return
-    // 判定前(undefined)も動かさない
-    if (paused || prefersReducedMotion !== false) return
+    if (paused) return
+
+    // useMedia（React state 経由）だとここが autoplay 未指定の Carousel も含めて
+    // 全 Carousel を購読させ、初回判定の反映で余分な再レンダーを起こす。
+    // interval/paused で早期 return した後のここでしか呼ばないことで、
+    // 自動送りが実際に動く間だけ購読する。matchMedia 非対応環境
+    // （consumer 側のテスト window shim 等）でも落ちないようガードする。
+    const matcher =
+      typeof window.matchMedia === 'function'
+        ? window.matchMedia(REDUCED_MOTION_QUERY)
+        : null
+
     let timer: ReturnType<typeof setTimeout> | undefined
+    let stopSettle: (() => void) | undefined
+
     // 手動スクロールも静止を起こすため、ユーザー操作によるタイマーのリセットは
     // この張り直しに含まれる。
     const arm = () => {
@@ -59,13 +70,27 @@ export const AutoplayProvider = forwardRef<
         arm()
       }
     }
-    arm()
-    const stopSettle = onScrollSettle(el, arm)
-    return () => {
+    const stop = () => {
       clearTimeout(timer)
-      stopSettle()
+      stopSettle?.()
+      stopSettle = undefined
     }
-  }, [ref, interval, paused, prefersReducedMotion])
+    // prefers-reduced-motion の切り替わり（matchMedia の change イベント）に
+    // 追従して起動・停止をやり直す。
+    const syncMotion = () => {
+      stop()
+      if (matcher?.matches) return
+      arm()
+      stopSettle = onScrollSettle(el, arm)
+    }
+
+    syncMotion()
+    matcher?.addEventListener('change', syncMotion)
+    return () => {
+      stop()
+      matcher?.removeEventListener('change', syncMotion)
+    }
+  }, [ref, interval, paused])
 
   return <div ref={ref} {...divProps} />
 })
