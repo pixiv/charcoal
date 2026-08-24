@@ -3726,6 +3726,93 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Ass
 </div>
 `;
 
+exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > ClearablePlaceholder 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            公開範囲
+          </label>
+          <div
+            class="charcoal-field-label-required-text"
+          >
+            必須
+          </div>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value=""
+            >
+              未選択
+            </option>
+            <option
+              value="public"
+            >
+              public
+            </option>
+            <option
+              value="private"
+            >
+              private
+            </option>
+          </select>
+        </div>
+        <button
+          aria-describedby="test-id"
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="true"
+          >
+            未選択
+          </span>
+          <pixiv-icon
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
+          />
+        </button>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          メニューの「未選択」を選ぶと選択を解除できます。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > CustomChildren 1`] = `
 <div>
   <div

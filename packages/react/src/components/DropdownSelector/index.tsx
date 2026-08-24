@@ -153,9 +153,7 @@ export default function DropdownSelector({
           {propsArray
             .filter(
               (itemProps) =>
-                !(
-                  hasClearablePlaceholder && itemProps.value === EMPTY_VALUE
-                ),
+                !(hasClearablePlaceholder && itemProps.value === EMPTY_VALUE),
             )
             .map((itemProps) => {
               return (

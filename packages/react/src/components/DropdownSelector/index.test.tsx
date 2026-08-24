@@ -146,7 +146,9 @@ describe('DropdownSelector', () => {
 
       fireEvent.click(screen.getByRole('button'))
       expect(screen.getAllByRole('option')).toHaveLength(1)
-      expect(screen.queryByRole('option', { name: 'Select an option' })).toBeNull()
+      expect(
+        screen.queryByRole('option', { name: 'Select an option' }),
+      ).toBeNull()
 
       const underlay = getUnderlay()
       fireEvent.pointerDown(underlay, { pointerType: 'mouse', button: 0 })
@@ -169,12 +171,7 @@ describe('DropdownSelector', () => {
 
     it('does not add an empty option without a placeholder', () => {
       render(
-        <DropdownSelector
-          label="Label"
-          value=""
-          clearable
-          onChange={vi.fn()}
-        >
+        <DropdownSelector label="Label" value="" clearable onChange={vi.fn()}>
           <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
         </DropdownSelector>,
       )
@@ -190,11 +187,9 @@ describe('DropdownSelector', () => {
       const select = container.querySelector('select')
       expect(select).not.toBeNull()
       expect(select?.value).toBe('')
-      expect(Array.from(select?.options ?? []).map((option) => option.value)).toEqual([
-        '',
-        '1',
-        '2',
-      ])
+      expect(
+        Array.from(select?.options ?? []).map((option) => option.value),
+      ).toEqual(['', '1', '2'])
     })
 
     it('moves focus between the placeholder and normal options with arrow keys', () => {
