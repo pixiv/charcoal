@@ -111,13 +111,18 @@ export {
   useSnackbar as unstable_useSnackbar,
   type SnackbarProps as unstable_SnackbarProps,
   type SnackbarHandler as unstable_SnackbarHandler,
-  type SnackbarShowOptions as unstable_SnackbarShowOptions,
+  type SnackbarCloseReason as unstable_SnackbarCloseReason,
+  type ShowSnackbarOptions as unstable_ShowSnackbarOptions,
 } from './components/Notification/Snackbar'
 export {
   default as unstable_Toast,
   useToast as unstable_useToast,
   type ToastProps as unstable_ToastProps,
   type ToastHandler as unstable_ToastHandler,
-  type ToastShowOptions as unstable_ToastShowOptions,
+  type ShowToastOptions as unstable_ShowToastOptions,
 } from './components/Notification/Toast'
+export {
+  type NotificationOrder as unstable_NotificationOrder,
+  type UseNotificationOptions as unstable_UseNotificationOptions,
+} from './components/Notification/types'
 import './components/FocusRing/index.css'

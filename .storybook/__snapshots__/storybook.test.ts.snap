@@ -12613,7 +12613,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > D
       aria-modal="false"
       class="charcoal-notification charcoal-snackbar"
       data-dim="false"
-      data-with-button="false"
+      data-with-action="false"
       role="alertdialog"
       tabindex="0"
     >
@@ -12659,7 +12659,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > D
       aria-modal="false"
       class="charcoal-notification charcoal-snackbar"
       data-dim="true"
-      data-with-button="true"
+      data-with-action="true"
       role="alertdialog"
       tabindex="0"
     >
@@ -12675,13 +12675,13 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > D
           Dim の Snackbar
         </div>
       </div>
-      <button
-        class="charcoal-button"
-        data-size="S"
-        data-variant="Navigation"
-      >
-        閉じる
-      </button>
+      <div>
+        <button
+          class="charcoal-button"
+        >
+          閉じる
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -12712,7 +12712,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > L
       aria-modal="false"
       class="charcoal-notification charcoal-snackbar"
       data-dim="false"
-      data-with-button="false"
+      data-with-action="false"
       role="alertdialog"
       tabindex="0"
     >
@@ -12758,7 +12758,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > T
       aria-modal="false"
       class="charcoal-notification charcoal-snackbar"
       data-dim="false"
-      data-with-button="false"
+      data-with-action="false"
       role="alertdialog"
       tabindex="0"
     >
@@ -12779,7 +12779,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > T
 </div>
 `;
 
-exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > WithButton 1`] = `
+exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > WithAction 1`] = `
 <div>
   <div
     data-dark="false"
@@ -12804,7 +12804,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > W
       aria-modal="false"
       class="charcoal-notification charcoal-snackbar"
       data-dim="false"
-      data-with-button="true"
+      data-with-action="true"
       role="alertdialog"
       tabindex="0"
     >
@@ -12820,12 +12820,13 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > W
           保存しました
         </div>
       </div>
-      <button
-        class="charcoal-button"
-        data-size="S"
-      >
-        取り消す
-      </button>
+      <div>
+        <button
+          class="charcoal-button"
+        >
+          取り消す
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -12856,7 +12857,7 @@ exports[`Storybook Tests > react/unstable_Snackbar > react/unstable_Snackbar > W
       aria-modal="false"
       class="charcoal-notification charcoal-snackbar"
       data-dim="false"
-      data-with-button="false"
+      data-with-action="false"
       role="alertdialog"
       tabindex="0"
     >
@@ -12903,7 +12904,7 @@ exports[`Storybook Tests > react/unstable_Toast > react/unstable_Toast > Bottom 
       aria-labelledby="test-id"
       aria-modal="false"
       class="charcoal-notification charcoal-toast"
-      data-variant="success"
+      data-type="success"
       role="alertdialog"
       tabindex="0"
     >
@@ -12948,7 +12949,7 @@ exports[`Storybook Tests > react/unstable_Toast > react/unstable_Toast > Default
       aria-labelledby="test-id"
       aria-modal="false"
       class="charcoal-notification charcoal-toast"
-      data-variant="success"
+      data-type="success"
       role="alertdialog"
       tabindex="0"
     >
@@ -12993,7 +12994,7 @@ exports[`Storybook Tests > react/unstable_Toast > react/unstable_Toast > Error 1
       aria-labelledby="test-id"
       aria-modal="false"
       class="charcoal-notification charcoal-toast"
-      data-variant="error"
+      data-type="error"
       role="alertdialog"
       tabindex="0"
     >
@@ -13038,7 +13039,7 @@ exports[`Storybook Tests > react/unstable_Toast > react/unstable_Toast > LongMes
       aria-labelledby="test-id"
       aria-modal="false"
       class="charcoal-notification charcoal-toast"
-      data-variant="success"
+      data-type="success"
       role="alertdialog"
       tabindex="0"
     >
@@ -13083,7 +13084,7 @@ exports[`Storybook Tests > react/unstable_Toast > react/unstable_Toast > WithLin
       aria-labelledby="test-id"
       aria-modal="false"
       class="charcoal-notification charcoal-toast"
-      data-variant="success"
+      data-type="success"
       role="alertdialog"
       tabindex="0"
     >

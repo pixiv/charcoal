@@ -1,14 +1,44 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { useToastState } from 'react-stately/useToastState'
-import type { NotificationName } from './types'
+import type { NotificationName, NotificationOrder } from './types'
 
 const DEFAULT_DURATION_MS = 5000
 const ANIMATION_DURATION_MS = 300
 
-export function useNotificationQueue<TContent>(name: NotificationName) {
+type QueueItem<TContent, TCloseReason> = {
+  content: TContent
+  onClose?: (reason: TCloseReason) => void
+}
+
+export function useNotificationQueue<
+  TContent,
+  TCloseReason extends string = never,
+>(
+  name: NotificationName,
+  {
+    duration: durationOption,
+    order = 'queue',
+    timeoutReason,
+    unmountedReason,
+  }: {
+    duration?: number
+    order?: NotificationOrder
+    timeoutReason?: TCloseReason
+    unmountedReason?: TCloseReason
+  } = {},
+) {
   const itemRef = useRef<HTMLDivElement>(null)
-  const queueRef = useRef<Array<TContent & { duration: number }>>([])
+  const queueRef = useRef<
+    Array<QueueItem<TContent, TCloseReason> & { duration: number }>
+  >([])
   const isShowingRef = useRef(false)
+  const activeRef = useRef<{
+    key: string
+    onClose?: (reason: TCloseReason) => void
+    reason?: TCloseReason
+    notified: boolean
+  }>()
+  const replaceRef = useRef(false)
   const hoverRef = useRef({
     active: false,
     pending: undefined as (() => void) | undefined,
@@ -27,10 +57,23 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
         return
       }
 
+      function notifyActive() {
+        const active = activeRef.current
+        if (active === undefined || active.notified) return
+        active.notified = true
+        const reason = active.reason ?? timeoutReason
+        if (reason !== undefined) {
+          active.onClose?.(reason)
+        }
+      }
+
       function finish() {
+        activeRef.current = undefined
         update()
         playNextRef.current?.()
       }
+
+      notifyActive()
 
       if (hoverRef.current.active) {
         hoverRef.current.pending = () => wrapUpdate(update, 'remove')
@@ -38,6 +81,12 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
       }
 
       if (itemRef.current === null) {
+        finish()
+        return
+      }
+
+      if (replaceRef.current) {
+        replaceRef.current = false
         finish()
         return
       }
@@ -68,7 +117,7 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
         complete()
       }
     },
-    [name],
+    [name, timeoutReason],
   )
 
   const state = useToastState<TContent>({
@@ -78,10 +127,17 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
 
   useEffect(() => {
     return () => {
+      const active = activeRef.current
+      if (active !== undefined && !active.notified) {
+        if (unmountedReason !== undefined) {
+          active.onClose?.(unmountedReason)
+        }
+      }
+      activeRef.current = undefined
       queueRef.current = []
       isShowingRef.current = false
     }
-  }, [])
+  }, [unmountedReason])
 
   function playNext() {
     const next = queueRef.current.shift()
@@ -90,22 +146,23 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
       return
     }
 
-    const { duration, ...content } = next
+    const { duration, onClose, content } = next
     isShowingRef.current = true
     const enterMs = window.matchMedia?.('(prefers-reduced-motion: reduce)')
       .matches
       ? 0
       : ANIMATION_DURATION_MS
-    state.add(content as TContent, {
+    const key = state.add(content, {
       // react-stately は 0 を「タイマーなし」と扱うため、最小の正数を渡す
       timeout: Math.max(1, duration + enterMs),
     })
+    activeRef.current = { key, onClose, notified: false }
   }
   playNextRef.current = playNext
 
   function enqueue(
     content: TContent,
-    durationOption: unknown = DEFAULT_DURATION_MS,
+    onClose?: (reason: TCloseReason) => void,
   ) {
     const duration =
       typeof durationOption === 'number' && Number.isFinite(durationOption)
@@ -113,11 +170,40 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
         : DEFAULT_DURATION_MS
 
     queueRef.current.push({
-      ...content,
+      content,
+      onClose,
       duration,
     })
     if (!isShowingRef.current) {
       playNext()
+    } else if (order === 'replace') {
+      const active = activeRef.current
+      if (active === undefined) return
+
+      active.reason = 'replaced' as TCloseReason
+      replaceRef.current = true
+      hoverRef.current.active = false
+      const pending = hoverRef.current.pending
+      hoverRef.current.pending = undefined
+      if (pending !== undefined) {
+        pending()
+      } else {
+        state.close(active.key)
+      }
+    }
+  }
+
+  function close(key: string, reason: TCloseReason) {
+    const active = activeRef.current
+    if (active?.key !== key) return
+    active.reason = reason
+    hoverRef.current.active = false
+    const pending = hoverRef.current.pending
+    hoverRef.current.pending = undefined
+    if (pending !== undefined) {
+      pending()
+    } else {
+      state.close(key)
     }
   }
 
@@ -141,6 +227,7 @@ export function useNotificationQueue<TContent>(name: NotificationName) {
     state,
     itemRef,
     enqueue,
+    close,
     onHoverStart,
     onHoverEnd,
     clearHover,

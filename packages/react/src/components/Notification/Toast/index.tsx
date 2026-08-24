@@ -8,19 +8,14 @@ import { NotificationRegion } from '../NotificationRegion'
 import { useNotificationQueue } from '../useNotificationQueue'
 import type { NotificationProps, Position } from '../types'
 
-export type ToastVariant = 'success' | 'error'
+export type ToastType = 'success' | 'error'
 
-export type ToastShowOptions = {
-  variant: ToastVariant
-  /**
-   * Toast を表示する時間（ミリ秒）。負の値は 0、数値でない値は 5000 として扱う
-   * @default 5000
-   */
-  duration?: number
+export type ShowToastOptions = {
+  type: ToastType
 }
 
 export type ToastHandler = {
-  show: (message: ReactNode, options: ToastShowOptions) => void
+  show: (message: ReactNode, options: ShowToastOptions) => void
 }
 
 export type ToastProps = Omit<NotificationProps, 'position'> & {
@@ -33,26 +28,23 @@ export type ToastProps = Omit<NotificationProps, 'position'> & {
 
 type ToastContent = {
   message: ReactNode
-  variant: ToastVariant
+  type: ToastType
 }
 
 const Toast = forwardRef<ToastHandler, ToastProps>(function Toast(
-  { position = 'top', ...regionProps },
+  { position = 'top', duration, order, ...regionProps },
   ref,
 ) {
   'use memo'
 
   const { state, itemRef, enqueue, onHoverStart, onHoverEnd } =
-    useNotificationQueue<ToastContent>('toast')
+    useNotificationQueue<ToastContent>('toast', { duration, order })
 
-  function show(message: ReactNode, options: ToastShowOptions) {
-    enqueue(
-      {
-        message,
-        variant: options.variant,
-      },
-      options.duration,
-    )
+  function show(message: ReactNode, options: ShowToastOptions) {
+    enqueue({
+      message,
+      type: options.type,
+    })
   }
 
   useImperativeHandle(ref, () => ({ show }))
@@ -73,7 +65,7 @@ const Toast = forwardRef<ToastHandler, ToastProps>(function Toast(
           itemRef={itemRef}
           onHoverStart={onHoverStart}
           onHoverEnd={onHoverEnd}
-          data-variant={toast.content.variant}
+          data-type={toast.content.type}
         />
       ))}
     </NotificationRegion>
@@ -87,7 +79,7 @@ export function useToast(props: ToastProps = {}) {
 
   const toastHandlerRef = useRef<ToastHandler>(null)
   const element = <Toast ref={toastHandlerRef} {...props} />
-  function show(message: ReactNode, options: ToastShowOptions) {
+  function show(message: ReactNode, options: ShowToastOptions) {
     toastHandlerRef.current?.show(message, options)
   }
   return [element, show] as const

@@ -10,8 +10,7 @@ const defaultOpen = !!process.env.TEST
 
 type SnackbarStoryArgs = unstable_SnackbarProps & {
   message: ReactNode
-  buttonChildren?: string
-  duration?: number
+  actionChildren?: string
 }
 
 export default {
@@ -20,9 +19,12 @@ export default {
   parameters: {
     layout: 'centered',
     tokenVersion: 'v2',
+    controls: {
+      sort: 'requiredFirst',
+    },
     docs: {
       description: {
-        component: `同時に表示できるスナックバーは1つのみです。表示中に別のスナックバーが発生した場合はキューに積み、前のスナックバーが消えてから表示します。
+        component: `同時に表示できるスナックバーは1つのみです。表示中に別のスナックバーが発生した場合は、\`order\` に応じてキューに積むか、表示中のスナックバーを置き換えます。
 
 別々の \`useSnackbar\` を呼び出した場合は互いに独立するため、同時表示数は1件に制限されません。`,
       },
@@ -30,23 +32,55 @@ export default {
   },
   args: {
     message: '保存しました',
-    duration: 5000,
+    order: 'queue',
   },
   argTypes: {
     position: {
       options: ['top', 'bottom'],
       control: { type: 'inline-radio' },
+      table: { category: 'Hook' },
     },
-    message: {
-      control: 'text',
+    offset: {
+      control: { type: 'number', min: 0, step: 1 },
+      table: { category: 'Hook' },
     },
     duration: {
       control: { type: 'number', min: 0, step: 500 },
       description: '表示時間（ミリ秒）',
+      table: { category: 'Hook' },
     },
-    buttonChildren: {
-      name: 'button.children',
+    order: {
+      options: ['queue', 'replace'],
+      control: { type: 'inline-radio' },
+      table: { category: 'Hook' },
+    },
+    dim: {
+      control: 'boolean',
+      table: { category: 'Hook' },
+    },
+    zIndex: {
+      control: { type: 'number', min: 0, step: 1 },
+      table: { category: 'Hook' },
+    },
+    className: {
       control: 'text',
+      table: { category: 'Hook' },
+    },
+    portalContainer: {
+      control: false,
+      table: { category: 'Hook' },
+    },
+    css: {
+      table: { disable: true },
+    },
+    message: {
+      control: 'text',
+      table: { category: 'Show' },
+    },
+    actionChildren: {
+      name: 'action',
+      control: 'text',
+      table: { category: 'Show' },
     },
   },
   render: (args) => <SnackbarDemo {...args} />,
@@ -54,15 +88,13 @@ export default {
 
 function SnackbarDemo({
   message,
-  buttonChildren,
-  duration,
+  actionChildren,
   ...props
 }: SnackbarStoryArgs) {
   const [snackbar, showSnackbar] = unstable_useSnackbar(props)
-  const hasButton = buttonChildren !== undefined && buttonChildren !== ''
+  const hasAction = actionChildren !== undefined && actionChildren !== ''
   const showOptions = {
-    duration,
-    ...(hasButton ? { button: { children: buttonChildren } } : {}),
+    ...(hasAction ? { action: <Button>{actionChildren}</Button> } : {}),
   }
 
   useEffect(() => {
@@ -70,10 +102,9 @@ function SnackbarDemo({
       return
     }
     showSnackbar(message, {
-      duration: 60_000,
-      ...(hasButton ? { button: { children: buttonChildren } } : {}),
+      ...(hasAction ? { action: <Button>{actionChildren}</Button> } : {}),
     })
-  }, [buttonChildren, hasButton, message, showSnackbar])
+  }, [actionChildren, hasAction, message, showSnackbar])
 
   return (
     <>
@@ -132,10 +163,10 @@ export const WithLineBreak: StoryObj<SnackbarStoryArgs> = {
   },
 }
 
-export const WithButton: StoryObj<SnackbarStoryArgs> = {
+export const WithAction: StoryObj<SnackbarStoryArgs> = {
   args: {
     message: '保存しました',
-    buttonChildren: '取り消す',
+    actionChildren: '取り消す',
   },
   parameters: {
     docs: {
@@ -152,9 +183,7 @@ export function Example() {
       <Button
         onClick={() =>
           showSnackbar('保存しました', {
-            button: {
-              children: '取り消す',
-            },
+            action: <Button>取り消す</Button>,
           })
         }
       >
@@ -179,6 +208,6 @@ export const Dim: StoryObj<SnackbarStoryArgs> = {
   args: {
     dim: true,
     message: 'Dim の Snackbar',
-    buttonChildren: '閉じる',
+    actionChildren: '閉じる',
   },
 }

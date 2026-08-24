@@ -4,15 +4,14 @@ import Button from '../../Button'
 import unstable_Toast, {
   useToast as unstable_useToast,
   type ToastProps as unstable_ToastProps,
-  type ToastShowOptions as unstable_ToastShowOptions,
+  type ShowToastOptions as unstable_ShowToastOptions,
 } from '.'
 
 const defaultOpen = !!process.env.TEST
 
 type ToastStoryArgs = unstable_ToastProps & {
   message: ReactNode
-  duration?: number
-  variant: unstable_ToastShowOptions['variant']
+  type: unstable_ShowToastOptions['type']
 }
 
 export default {
@@ -21,9 +20,12 @@ export default {
   parameters: {
     layout: 'centered',
     tokenVersion: 'v2',
+    controls: {
+      sort: 'requiredFirst',
+    },
     docs: {
       description: {
-        component: `同時に表示できるトーストは1つのみです。表示中に別のトーストが発生した場合はキューに積み、前のトーストが消えてから表示します。
+        component: `同時に表示できるトーストは1つのみです。表示中に別のトーストが発生した場合は、\`order\` に応じてキューに積むか、表示中のトーストを置き換えます。
 
 別々の \`useToast\` を呼び出した場合は互いに独立するため、同時表示数は1件に制限されません。`,
       },
@@ -32,33 +34,61 @@ export default {
   args: {
     message: '保存しました',
     duration: 5000,
-    variant: 'success',
+    order: 'queue',
+    type: 'success',
   },
   argTypes: {
     position: {
       options: ['top', 'bottom'],
       control: { type: 'inline-radio' },
+      table: { category: 'Hook' },
     },
-    variant: {
-      options: ['success', 'error'],
-      control: { type: 'inline-radio' },
-    },
-    message: {
-      control: 'text',
+    offset: {
+      control: { type: 'number', min: 0, step: 1 },
+      table: { category: 'Hook' },
     },
     duration: {
       control: { type: 'number', min: 0, step: 500 },
       description: '表示時間（ミリ秒）',
+      table: { category: 'Hook' },
+    },
+    order: {
+      options: ['queue', 'replace'],
+      control: { type: 'inline-radio' },
+      table: { category: 'Hook' },
+    },
+    zIndex: {
+      control: { type: 'number', min: 0, step: 1 },
+      table: { category: 'Hook' },
+    },
+    className: {
+      control: 'text',
+      table: { category: 'Hook' },
+    },
+    portalContainer: {
+      control: false,
+      table: { category: 'Hook' },
+    },
+    css: {
+      table: { disable: true },
+    },
+    type: {
+      options: ['success', 'error'],
+      control: { type: 'inline-radio' },
+      table: { category: 'Show' },
+    },
+    message: {
+      control: 'text',
+      table: { category: 'Show' },
     },
   },
   render: (args) => <ToastDemo {...args} />,
 } as Meta<ToastStoryArgs>
 
-function ToastDemo({ message, duration, variant, ...props }: ToastStoryArgs) {
+function ToastDemo({ message, type, ...props }: ToastStoryArgs) {
   const [toast, showToast] = unstable_useToast(props)
   const showOptions = {
-    duration,
-    variant,
+    type,
   }
 
   useEffect(() => {
@@ -66,10 +96,9 @@ function ToastDemo({ message, duration, variant, ...props }: ToastStoryArgs) {
       return
     }
     showToast(message, {
-      duration: 60_000,
-      variant,
+      type,
     })
-  }, [message, showToast, variant])
+  }, [message, showToast, type])
 
   return (
     <>
@@ -99,7 +128,7 @@ export function Example() {
     <>
       {toast}
       <Button
-        onClick={() => showToast('保存しました', { variant: 'success' })}
+        onClick={() => showToast('保存しました', { type: 'success' })}
       >
         保存
       </Button>
@@ -113,7 +142,7 @@ export function Example() {
 
 export const Error: StoryObj<ToastStoryArgs> = {
   args: {
-    variant: 'error',
+    type: 'error',
     message: '保存に失敗しました',
   },
 }
