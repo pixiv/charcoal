@@ -53,8 +53,11 @@ export const AutoplayProvider = forwardRef<
     // 自動送りが止まったままになる。settle からの arm はこれを上書きして
     // 到着起点の滞留に揃える（意図した優先順位）。
     const tick = () => {
-      advanceRef.current('auto')
-      arm()
+      try {
+        advanceRef.current('auto')
+      } finally {
+        arm()
+      }
     }
     arm()
     const stopSettle = onScrollSettle(el, arm)

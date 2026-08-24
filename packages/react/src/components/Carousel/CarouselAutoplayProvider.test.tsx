@@ -115,6 +115,27 @@ describe('AutoplayProvider', () => {
     }
   })
 
+  it('advance が例外を投げても次のティックは張り直される', () => {
+    vi.useFakeTimers()
+    try {
+      const advance = vi.fn(() => {
+        throw new Error('boom')
+      })
+      render(
+        <AutoplayProvider interval={3000} paused={false} advance={advance} />,
+      )
+
+      // 1 回目の例外で張り直しが飛ぶと、以降のティックは永久に来ない
+      expect(() => vi.advanceTimersByTime(3000)).toThrow('boom')
+      expect(advance).toHaveBeenCalledTimes(1)
+
+      expect(() => vi.advanceTimersByTime(3000)).toThrow('boom')
+      expect(advance).toHaveBeenCalledTimes(2)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
   it('アンマウントでタイマーが止まる', () => {
     vi.useFakeTimers()
     try {
