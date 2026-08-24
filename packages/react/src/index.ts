@@ -112,12 +112,12 @@ export {
   type SnackbarProps as unstable_SnackbarProps,
   type SnackbarHandler as unstable_SnackbarHandler,
   type SnackbarShowOptions as unstable_SnackbarShowOptions,
-} from './components/Snackbar'
+} from './components/Notification/Snackbar'
 export {
   default as unstable_Toast,
   useToast as unstable_useToast,
   type ToastProps as unstable_ToastProps,
   type ToastHandler as unstable_ToastHandler,
   type ToastShowOptions as unstable_ToastShowOptions,
-} from './components/Toast'
+} from './components/Notification/Toast'
 import './components/FocusRing/index.css'

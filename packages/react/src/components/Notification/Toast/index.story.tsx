@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import Button from '../Button'
+import Button from '../../Button'
 import unstable_Toast, {
   useToast as unstable_useToast,
   type ToastProps as unstable_ToastProps,
