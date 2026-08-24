@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
 import Carousel, {
   type CarouselAutoplay,
+  type CarouselChangeEvent,
   type CarouselHandlerRef,
   type CarouselDefaultScroll,
 } from '.'
@@ -1455,7 +1456,32 @@ describe('autoplay', () => {
     vi.useRealTimers()
   })
 
-  const renderAutoplay = (props: { autoplay?: CarouselAutoplay } = {}) => {
+  // scrollLeft を反映し scroll イベントを発火するスタブ。空振り後の再武装（Finding 1）や
+  // 保留中の意図の保持（Finding 2）は静止（debounce settle）経路が実際に走らないと
+  // 検証できないため、bare な vi.fn() では足りない。
+  const stubScrollTo = (scroller: HTMLElement) => {
+    let currentScrollLeft = 0
+    Object.defineProperty(scroller, 'scrollLeft', {
+      get: () => currentScrollLeft,
+      set: (v: number) => {
+        currentScrollLeft = v
+      },
+      configurable: true,
+    })
+    const scrollTo = vi.fn((opts: ScrollToOptions) => {
+      if (opts.left != null) currentScrollLeft = opts.left
+      scroller.dispatchEvent(new Event('scroll'))
+    })
+    scroller.scrollTo = scrollTo as unknown as typeof scroller.scrollTo
+    return scrollTo
+  }
+
+  const renderAutoplay = (
+    props: {
+      autoplay?: CarouselAutoplay
+      onChange?: (e: CarouselChangeEvent) => void
+    } = {},
+  ) => {
     const { container } = render(
       <Carousel autoplay={{ interval: 3000 }} {...props}>
         <div>0</div>
@@ -1468,8 +1494,7 @@ describe('autoplay', () => {
     ) as HTMLElement
     // jsdom はレイアウトを持たないので、送り先の算出に必要な寸法を与える
     mockScrollerGeometry(scroller)
-    const scrollTo = vi.fn()
-    scroller.scrollTo = scrollTo as unknown as typeof scroller.scrollTo
+    const scrollTo = stubScrollTo(scroller)
     return { container, scroller, scrollTo }
   }
 
@@ -1561,6 +1586,145 @@ describe('autoplay', () => {
 
       vi.advanceTimersByTime(1000)
       expect(scrollTo).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('interval を跨いで 2 回連続で進む', () => {
+    vi.useFakeTimers()
+    try {
+      const { scrollTo } = renderAutoplay()
+
+      vi.advanceTimersByTime(3000)
+      expect(scrollTo).toHaveBeenNthCalledWith(1, {
+        left: 190,
+        behavior: 'smooth',
+      })
+
+      // 1 回目の送りが起こす scroll イベントの静止（debounce 100ms）が
+      // 到着起点で滞留を張り直すため、2 回目は 3000ms ちょうどでは進まない。
+      vi.advanceTimersByTime(3110)
+      expect(scrollTo).toHaveBeenNthCalledWith(2, {
+        left: 590,
+        behavior: 'smooth',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('進める先が無い tick で止まらず、children 到着後の tick で進む', () => {
+    vi.useFakeTimers()
+    try {
+      const { container, rerender } = render(
+        <Carousel autoplay={{ interval: 3000 }}>{[]}</Carousel>,
+      )
+      const scroller = container.querySelector(
+        '.charcoal-carousel__scroller',
+      ) as HTMLElement
+      mockScrollerGeometry(scroller)
+      const scrollTo = stubScrollTo(scroller)
+
+      // children が空なら findNextSlideScrollLeft が null を返し空振りする
+      vi.advanceTimersByTime(3000)
+      expect(scrollTo).not.toHaveBeenCalled()
+
+      rerender(
+        <Carousel autoplay={{ interval: 3000 }}>
+          <div>0</div>
+          <div>1</div>
+          <div>2</div>
+        </Carousel>,
+      )
+      mockScrollerGeometry(scroller)
+
+      vi.advanceTimersByTime(3000)
+      expect(scrollTo).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('自動送りは onChange を source=auto で発火する', () => {
+    // 中央検出を手動で駆動するため IntersectionObserver を差し替える
+    const callbacks = new Map<Element, IntersectionObserverCallback>()
+    const origIO = globalThis.IntersectionObserver
+    globalThis.IntersectionObserver = class {
+      constructor(private cb: IntersectionObserverCallback) {}
+      observe(el: Element) {
+        callbacks.set(el, this.cb)
+      }
+      unobserve(el: Element) {
+        callbacks.delete(el)
+      }
+      disconnect() {
+        callbacks.clear()
+      }
+    } as unknown as typeof globalThis.IntersectionObserver
+
+    vi.useFakeTimers()
+    try {
+      const onChange = vi.fn()
+      const { container } = renderAutoplay({ onChange })
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      vi.advanceTimersByTime(3000)
+      callbacks.get(slides[1])?.(
+        [
+          {
+            target: slides[1],
+            isIntersecting: true,
+          } as IntersectionObserverEntry,
+        ],
+        {} as IntersectionObserver,
+      )
+      vi.advanceTimersByTime(150)
+
+      expect(onChange).toHaveBeenCalledWith({ index: 1, source: 'auto' })
+    } finally {
+      vi.useRealTimers()
+      globalThis.IntersectionObserver = origIO
+    }
+  })
+
+  it('進める先が無い tick は保留中の初期スクロールを破棄しない', () => {
+    vi.useFakeTimers()
+    try {
+      const { container, rerender } = render(
+        <Carousel
+          autoplay={{ interval: 3000 }}
+          defaultScroll={{ align: 'right' }}
+        >
+          {[]}
+        </Carousel>,
+      )
+      const scroller = container.querySelector(
+        '.charcoal-carousel__scroller',
+      ) as HTMLElement
+      mockScrollerGeometry(scroller)
+      const scrollTo = stubScrollTo(scroller)
+
+      // children が空の間は空振りする（defaultScroll の適用先がまだ無い）
+      vi.advanceTimersByTime(3000)
+      expect(scrollTo).not.toHaveBeenCalled()
+
+      rerender(
+        <Carousel
+          autoplay={{ interval: 3000 }}
+          defaultScroll={{ align: 'right' }}
+        >
+          <div>0</div>
+          <div>1</div>
+          <div>2</div>
+        </Carousel>,
+      )
+
+      // itemCount 変化の remeasure で defaultScroll の初期位置が適用される。
+      // 空振りが initialScrollActive を倒していれば、ここで呼ばれないまま終わる。
+      expect(scrollTo).toHaveBeenCalledWith({ left: 1600, behavior: 'instant' })
     } finally {
       vi.useRealTimers()
     }

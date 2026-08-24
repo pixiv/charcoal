@@ -46,7 +46,15 @@ export const AutoplayProvider = forwardRef<
     // この張り直しに含まれる。
     const arm = () => {
       clearTimeout(timer)
-      timer = setTimeout(() => advanceRef.current('auto'), interval)
+      timer = setTimeout(tick, interval)
+    }
+    // 送りが空振り（要素なし・スクロール不要）でスクロールイベントが起きなくても
+    // 次のティックを張り直す。張り直しを静止イベントだけに頼ると、その回だけ
+    // 自動送りが止まったままになる。settle からの arm はこれを上書きして
+    // 到着起点の滞留に揃える（意図した優先順位）。
+    const tick = () => {
+      advanceRef.current('auto')
+      arm()
     }
     arm()
     const stopSettle = onScrollSettle(el, arm)

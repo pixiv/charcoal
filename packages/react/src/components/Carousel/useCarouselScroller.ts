@@ -332,9 +332,11 @@ export function useCarouselScroller(
   const onItemResize = useCallback(() => remeasureRef.current(), [])
 
   // defaultScroll の初期位置へ戻す（命令的 API: CarouselHandlerRef.resetScroll）。
+  // 初期位置の適用は onChange を発火しない仕様のため、resetScroll も同じ
+  // 「初期位置を適用中」を表す undefined を立てる（onChange は発火しない）。
   const resetScroll = useCallback(() => {
     initialScrollActive.current = true
-    sourceRef.current = 'reset'
+    sourceRef.current = undefined
     remeasure()
   }, [remeasure])
 
@@ -373,8 +375,6 @@ export function useCarouselScroller(
     (source: CarouselChangeSource) => {
       const el = scrollerRef.current
       if (!el) return
-      initialScrollActive.current = false
-      sourceRef.current = source
       const geometry = geometryRef.current
       const items = Array.from(el.children)
         .filter((child): child is HTMLElement => child instanceof HTMLElement)
@@ -388,7 +388,11 @@ export function useCarouselScroller(
         // clone が 0 枚のときは clone 帯のない実セットだけの列になる
         loop: geometry != null && isLoopActive(geometry),
       })
+      // 空振り（要素なし・進む先なし）はプログラム由来の意図（初期スクロール等）を
+      // 消費しない。実際にスクロールする回だけ意図を確定させる。
       if (target == null) return
+      initialScrollActive.current = false
+      sourceRef.current = source
       pendingScrollTarget.current = target
       el.scrollTo({ left: target, behavior: 'smooth' })
     },

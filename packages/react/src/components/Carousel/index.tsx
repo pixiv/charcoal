@@ -38,7 +38,7 @@ export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
 export type ScrollSnapAlign = 'center' | 'start'
 
 export type CarouselChangeSource =
-  'auto' | 'navigation' | 'indicator' | 'keyboard' | 'pointer' | 'reset'
+  'auto' | 'navigation' | 'indicator' | 'keyboard' | 'pointer'
 
 export type CarouselChangeEvent = Readonly<{
   index: number
@@ -340,7 +340,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const { focusProps: rootFocusProps, isFocusVisible: rootFocusVisible } =
     useFocusRing({ within: true })
 
-  const { hoverProps, isHovered } = useHover({ isDisabled: !pauseOnHover })
+  const { hoverProps, isHovered } = useHover({
+    isDisabled: autoplay == null || !pauseOnHover,
+  })
 
   // gap 宣言自体は index.css 側に置き、ここでは CSS 変数の値だけを注入する。
   const gapStyle = useMemo(
