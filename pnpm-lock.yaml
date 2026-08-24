@@ -362,21 +362,9 @@ importers:
 
   packages/react:
     dependencies:
-      '@charcoal-ui/foundation':
-        specifier: workspace:*
-        version: link:../foundation
       '@charcoal-ui/icons':
         specifier: workspace:*
         version: link:../icons
-      '@charcoal-ui/theme':
-        specifier: workspace:*
-        version: link:../theme
-      '@charcoal-ui/utils':
-        specifier: workspace:*
-        version: link:../utils
-      polished:
-        specifier: ^4.1.4
-        version: 4.3.1
       react-compiler-runtime:
         specifier: 'catalog:'
         version: 1.0.0(react@18.3.1)
@@ -384,6 +372,9 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
     devDependencies:
+      '@charcoal-ui/theme':
+        specifier: workspace:*
+        version: link:../theme
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
