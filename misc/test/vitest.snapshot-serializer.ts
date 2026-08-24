@@ -20,7 +20,9 @@ function isOverlayPortalNode(child: Element) {
   return (
     child.classList.contains('charcoal-modal-background') ||
     child.classList.contains('charcoal-snackbar-region') ||
-    child.querySelector('.charcoal-snackbar-region') !== null
+    child.classList.contains('charcoal-toast-region') ||
+    child.querySelector('.charcoal-snackbar-region') !== null ||
+    child.querySelector('.charcoal-toast-region') !== null
   )
 }
 

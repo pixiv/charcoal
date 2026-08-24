@@ -1,0 +1,46 @@
+.charcoal-notification-region {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: grid;
+  justify-content: center;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.charcoal-notification {
+  box-sizing: border-box;
+  border-radius: var(--charcoal-radius-oval);
+  width: fit-content;
+  max-width: calc(100vw - var(--charcoal-space-46));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--charcoal-space-20);
+  pointer-events: auto;
+}
+
+.charcoal-notification-content {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.charcoal-notification-label {
+  min-width: 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: var(--charcoal-text-font-size-caption-m);
+  font-weight: var(--charcoal-text-font-weight-bold);
+  line-height: var(--charcoal-text-line-height-caption-m);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .charcoal-notification,
+  .charcoal-notification[data-exiting='true'] {
+    animation: none;
+  }
+}

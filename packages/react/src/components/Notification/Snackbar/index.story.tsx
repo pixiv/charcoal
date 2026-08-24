@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from 'react'
 import { Meta, StoryObj } from '@storybook/react-vite'
-import Button from '../Button'
+import Button from '../../Button'
 import unstable_Snackbar, {
   useSnackbar as unstable_useSnackbar,
   type SnackbarProps as unstable_SnackbarProps,
