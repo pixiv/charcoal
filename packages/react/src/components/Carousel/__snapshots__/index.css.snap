@@ -233,9 +233,9 @@
 
 /* ── CSS Scroll Markers (progressive enhancement) ── */
 
-/* CSS Scroll Markers / Anchor Positioning は新しい仕様で、stylelint がプロパティ・
-   擬似要素・擬似クラスを未知と判定するため、この @supports ブロックでは該当ルールを無効化する。 */
-/* stylelint-disable property-no-unknown, selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
+/* CSS Scroll Markers / Anchor Positioning の擬似要素・擬似クラスは新しい仕様のため、
+   この @supports ブロックでは該当ルールを無効化する。 */
+/* stylelint-disable selector-pseudo-class-no-unknown */
 
 @supports (scroll-marker-group: after) {
 
@@ -296,5 +296,5 @@
   display: none;
 }
 }
-/* stylelint-enable property-no-unknown, selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
+/* stylelint-enable selector-pseudo-class-no-unknown */
 
