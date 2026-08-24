@@ -119,14 +119,20 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 - **`autoplay` + 非 loop + `scrollSnap.align: 'center'` では末尾数枚が中央に来ない**:
   末尾付近の静止位置がスクロール上限にクランプされて潰れるため。中央配置を末尾まで
   保ちたい場合は `loop` を使う。
+- **`loop` + `centerItem` + `scrollSnap.type` が `none` に解決される場合（既定の
+  `size='M'` はこれに該当）、`autoplay` は中央配置を保たない**: `centerItem` は初期表示の
+  一度きりの配置で、スナップ位置が無い `none` では `advanceSlide` は `snapAlign` を無視して
+  start 基準で進む（このコンポーネントの他の送り経路と同じ規約）ため、`autoplay` の
+  1 回目の tick で半端な量だけ動き、以降は中央からずれたまま進む。仕様。
 - **`prefers-reduced-motion: reduce` は `autoplay` のみを止める**: prev/next ボタンや
   キーボード操作の smooth scroll は従来どおり動く。
 - **タッチ端末では `autoplay` を利用者が止める手段が無い**: `pauseOnHover` は react-aria の
   `useHover` が `pointerType === 'touch'` を無視するため効かず、キーボードフォーカスによる
   一時停止もタッチ操作ではフォーカスが visible にならない（modality が `pointer` になる）
-  ため効かない。ドラッグ中は自動送りの tick が割り込まないが（進行中のユーザースクロール
-  を検知して 1 tick 分だけ譲る）、ドラッグが終われば何事もなく回転を再開する——恒久的な
-  停止手段ではない。`role="region"` + `aria-roledescription="carousel"` を持つ本コンポーネントに
+  ため効かない。ドラッグ中は scroll イベントが継続的に発生し続けるため、自動送りは
+  ドラッグしている間じゅう tick のたびに毎回割り込みを譲り続ける。ドラッグが終われば
+  ほどなく何事もなく回転を再開する——恒久的な停止手段ではない。
+  `role="region"` + `aria-roledescription="carousel"` を持つ本コンポーネントに
   `autoplay` を使う画面で WCAG 2.2.2（Pause, Stop, Hide）が要件になる場合は、利用側で
   明示的な一時停止 UI を用意すること（本コンポーネントは CSS を変更しない前提のため
   pause ボタン等は提供しない）。

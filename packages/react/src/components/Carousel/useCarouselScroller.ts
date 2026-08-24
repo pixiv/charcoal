@@ -24,6 +24,15 @@ import { onScrollSettle } from './scrollSettle'
 
 const INTERACTION_EVENTS = ['pointerdown', 'wheel', 'touchstart'] as const
 
+// ユーザー起点のスクロールを「飛行中」とみなす猶予。settle（scrollend、非対応環境は
+// 100ms debounce）が正常に届けばそちらが即座に解除するため、ここは settle が届かない
+// 異常系（settle 購読が itemCount 変化で張り直される最中に消える、pendingScrollTarget が
+// 実座標に既に一致していて scrollTo が scroll イベントを出さない、等）でも
+// 「飛行中」判定が恒久的に true のまま残らないための保険。native smooth scroll は
+// 概ね 1 秒以内に収まるため、settle debounce の 100ms より十分長く、かつ「動いていないのに
+// 自動送りを止め続ける」時間を最小化できる 1000ms を採る。
+const USER_SCROLL_IN_FLIGHT_WINDOW_MS = 1000
+
 // 維持帯域から外れた scrollLeft を補正する 1 回分のテレポート。
 // scrollLeft 代入は CSS scroll-behavior: smooth に従うため、必ず instant の scrollTo を使う。
 const createLoopTeleport =
@@ -92,9 +101,12 @@ export function useCarouselScroller(
   const sourceRef = useRef<CarouselChangeSource | undefined>(undefined)
   const lastReportedIndex = useRef<number | null>(null)
 
-  // ユーザー起点のスクロールが飛行中か（settle で解除）。自動送りの tick はこの間は
-  // 割り込まず、次の tick（provider のタイマーが張り直す）に譲る。
-  const userScrollInFlight = useRef(false)
+  // ユーザー起点の直近のスクロール活動時刻（settle で null に解除）。自動送りの tick は
+  // これが USER_SCROLL_IN_FLIGHT_WINDOW_MS 以内なら割り込まず、次の tick（provider の
+  // タイマーが張り直す）に譲る。ドラッグ中は scroll イベントが続けて届きこの時刻を
+  // 更新し続けるため、長いドラッグの間はこれだけで飛行中とみなせる。真偽値のラッチでは
+  // なく時刻にしているのは、settle が届かない異常系でも時間経過で自然に失効させるため。
+  const lastUserScrollActivityAt = useRef<number | null>(null)
 
   // コールバックは最新参照を ref に保持し、リスナーの貼り直しを避ける。
   const callbacksRef = useRef({
@@ -215,7 +227,7 @@ export function useCarouselScroller(
       // 飛行中とマークする（pointerdown 等の入口だけでは「動くとは限らない」ため、
       // ここでしか安全に立てられない。立てなければ settle も来ず解除できない）。
       if (sourceRef.current != null && sourceRef.current !== 'auto') {
-        userScrollInFlight.current = true
+        lastUserScrollActivityAt.current = Date.now()
       }
       callbacksRef.current.onScroll?.(el.scrollLeft)
     }
@@ -304,7 +316,7 @@ export function useCarouselScroller(
     if (!el) return
     const teleport = createLoopTeleport(el, () => geometryRef.current)
     const settle = () => {
-      userScrollInFlight.current = false
+      lastUserScrollActivityAt.current = null
       pendingScrollTarget.current = null
       teleport()
       const { activeIndex } = store.getSnapshot()
@@ -387,7 +399,7 @@ export function useCarouselScroller(
       if (Math.abs(target - scrollLeft) < 1) return
       initialScrollActive.current = false
       sourceRef.current = source
-      userScrollInFlight.current = true
+      lastUserScrollActivityAt.current = Date.now()
       pendingScrollTarget.current = target
       el.scrollTo({ left: target, behavior: 'smooth' })
     },
@@ -402,7 +414,13 @@ export function useCarouselScroller(
       if (!el) return
       // ユーザー起点のスクロールが飛行中なら自動送りは割り込まない。次の tick
       // （provider のタイマーが張り直す）に譲る。
-      if (source === 'auto' && userScrollInFlight.current) return
+      if (
+        source === 'auto' &&
+        lastUserScrollActivityAt.current != null &&
+        Date.now() - lastUserScrollActivityAt.current <
+          USER_SCROLL_IN_FLIGHT_WINDOW_MS
+      )
+        return
       const geometry = geometryRef.current
       const items = Array.from(el.children)
         .filter((child): child is HTMLElement => child instanceof HTMLElement)

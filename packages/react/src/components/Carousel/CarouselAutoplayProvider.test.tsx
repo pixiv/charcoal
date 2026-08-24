@@ -126,11 +126,59 @@ describe('AutoplayProvider', () => {
     }
   })
 
-  it('prefers-reduced-motion 判定前（undefined）ではタイマーを張らない', () => {
-    // useMedia は判定確定まで undefined を返す。マウント直後のコミットで
-    // undefined を「起動してよい」側に倒すと、判定確定後の張り直しと合わせて
-    // setTimeout が 2 回積まれてしまう（先勝ちの分は判定確定時のクリーンアップで
-    // 即座に消えるため、advance の呼び出し回数だけでは見分けが付かない）。
+  it('prefers-reduced-motion の change に追従して起動・停止をやり直す', () => {
+    // 差し替えたグローバルだけを局所的に戻す（setup の他の stub を巻き添えにしない）
+    const origMatchMedia = window.matchMedia
+    let matches = false
+    let changeListener: (() => void) | undefined
+    vi.stubGlobal(
+      'matchMedia',
+      vi.fn().mockImplementation((query: string) => ({
+        get matches() {
+          return matches
+        },
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        // change リスナーを捕まえ、テストから matches の切り替わりを模擬する。
+        addEventListener: vi.fn((type: string, cb: () => void) => {
+          if (type === 'change') changeListener = cb
+        }),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    )
+    vi.useFakeTimers()
+    try {
+      const { advance } = renderProvider({ interval: 3000, paused: false })
+      vi.advanceTimersByTime(3000)
+      expect(advance).toHaveBeenCalledTimes(1)
+
+      // OS 側で prefers-reduced-motion が有効になる（false → true）
+      matches = true
+      changeListener?.()
+      vi.advanceTimersByTime(60_000)
+      expect(advance).toHaveBeenCalledTimes(1)
+
+      // 解除される（true → false）と滞留時間を頭から数え直して再開する
+      matches = false
+      changeListener?.()
+      vi.advanceTimersByTime(2999)
+      expect(advance).toHaveBeenCalledTimes(1)
+      vi.advanceTimersByTime(1)
+      expect(advance).toHaveBeenCalledTimes(2)
+    } finally {
+      vi.useRealTimers()
+      vi.stubGlobal('matchMedia', origMatchMedia)
+    }
+  })
+
+  it('マウント時にタイマーを 2 重に張らない', () => {
+    // matchMedia の判定（matcher.matches）確定とタイマー起動を同期 1 パスで
+    // 行っている（useMedia のような非同期 state 経由の tri-state を挟まない）。
+    // 挟んだ場合、未確定値での先勝ちタイマーと確定後の張り直しで setTimeout が
+    // 2 回積まれてしまう（advance の呼び出し回数だけでは見分けが付かない）。
     const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
     try {
       const { unmount } = renderProvider({ interval: 3000, paused: false })

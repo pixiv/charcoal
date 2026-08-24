@@ -1943,6 +1943,72 @@ describe('autoplay', () => {
     }
   })
 
+  it('飛行中判定は猶予が短ければ従来どおり tick を割り込ませない', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(0)
+    try {
+      const { scroller, scrollTo } = renderAutoplay()
+
+      // t=2950: ユーザーがドラッグを始める（実スクロールが起きる）
+      vi.advanceTimersByTime(2950)
+      fireEvent.pointerDown(scroller)
+      scroller.dispatchEvent(new Event('scroll'))
+
+      // t=3000: 自動送りの tick がドラッグ飛行中（猶予窓の中）に重なる → 割り込まない
+      vi.advanceTimersByTime(50)
+      expect(scrollTo).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('settle が二度と来なくても、猶予経過後は自動送りが再開する（settle 購読が itemCount 変化で破棄される異常系）', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(0)
+    try {
+      const { container, rerender } = render(
+        <Carousel autoplay={{ interval: 3000 }}>
+          <div>0</div>
+          <div>1</div>
+          <div>2</div>
+        </Carousel>,
+      )
+      const scroller = container.querySelector(
+        '.charcoal-carousel__scroller',
+      ) as HTMLElement
+      mockScrollerGeometry(scroller)
+      const scrollTo = stubScrollTo(scroller)
+
+      // ユーザーのドラッグで実スクロールが起きる（sourceRef='pointer' で
+      // 飛行中の活動時刻が記録される）。settle（非対応環境なので 100ms debounce）は
+      // まだ発火していない。
+      fireEvent.pointerDown(scroller)
+      scroller.dispatchEvent(new Event('scroll'))
+
+      // debounce (100ms) が発火するより先に children が変わる（非同期データ到着を模す）。
+      // settle effect は itemCount キーで貼り直されるため、cleanup が保留中の debounce
+      // タイマーを破棄し、settle は二度と来ない。
+      rerender(
+        <Carousel autoplay={{ interval: 3000 }}>
+          <div>0</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </Carousel>,
+      )
+      // 新しく描画された実スライドに送り先の算出に必要な寸法を与える。
+      mockItemOffsets(scroller)
+
+      // 猶予（USER_SCROLL_IN_FLIGHT_WINDOW_MS=1000ms）が経過した後に来る tick なら、
+      // settle が来ていなくても自動送りは進む。
+      vi.advanceTimersByTime(3200)
+
+      expect(scrollTo).toHaveBeenCalledWith({ left: 400, behavior: 'smooth' })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
   it('進める先が無い tick は保留中の初期スクロールを破棄しない', () => {
     vi.useFakeTimers()
     try {
