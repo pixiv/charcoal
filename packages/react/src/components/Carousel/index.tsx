@@ -244,6 +244,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     offset,
     scrollStep,
     snapAlign,
+    snapType,
     loop,
     centerItem,
     onScroll,

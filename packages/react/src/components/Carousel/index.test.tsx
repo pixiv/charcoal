@@ -1063,6 +1063,38 @@ describe('Carousel', () => {
         }
       })
 
+      it('自動送りの目標も scrollByStep と同じくクランプして積算する', () => {
+        vi.useFakeTimers()
+        try {
+          const { scrollTo } = setupLoop(
+            // center 揃えを強制する（none だと start 揃えになり本ケースの
+            // クランプが no-op になってしまうため）
+            <Carousel
+              loop
+              autoplay={{ interval: 3000 }}
+              scrollSnap={{ type: 'mandatory' }}
+            >
+              {slides}
+            </Carousel>,
+            { scrollLeft: 8600, scrollWidth: 9600 },
+          )
+          scrollTo.mockClear()
+
+          vi.advanceTimersByTime(3000)
+
+          // 末尾 clone（slot23）の中央位置は 23*400+190-400=8990 で
+          // maxScroll(8800) を超える。ブラウザ側でもクランプされるので、
+          // 積算する目標もクランプ後の値に揃えないと、以降の tick が
+          // 「二度と届かない目標（8990）」を起点にして動けなくなる。
+          expect(scrollTo).toHaveBeenLastCalledWith({
+            left: 8800,
+            behavior: 'smooth',
+          })
+        } finally {
+          vi.useRealTimers()
+        }
+      })
+
       it('centerItem 未指定なら実セット先頭の左寄せで開始する', () => {
         const { scrollTo } = setupLoop(<Carousel loop>{slides}</Carousel>)
         expect(scrollTo).toHaveBeenLastCalledWith({
@@ -1441,6 +1473,27 @@ describe('onChange', () => {
       vi.useRealTimers()
     }
   })
+
+  it('端で空振りしたキーボード送りは次の無関係な静止に発生源を残さない', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller } = renderWithOnChange()
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      // scrollLeft 0 で ArrowLeft は空振りする（動かない）
+      fireEvent.keyDown(scroller, { key: 'ArrowLeft' })
+
+      // どの入口も通っていない静止と同じはず
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
 })
 
 describe('autoplay', () => {
@@ -1507,11 +1560,11 @@ describe('autoplay', () => {
       vi.advanceTimersByTime(3000)
 
       // mockScrollerGeometry: clientWidth 800 / 子は offsetLeft i*400・offsetWidth 380。
-      // 既定は size M ＝ snapAlign 'center'、loop なしなので maxScroll 1600 でクランプ。
-      // 中央位置は offsetLeft + 190 − 400 → −210, 190, 590 → クランプ後 0, 190, 590。
-      // 起点 0 から前へ進む最初の位置は 190。
+      // 既定は size M ＝ snapType 'none'（何もスナップしない）なので、advanceSlide は
+      // snapAlign(center) を無視して start（実座標そのもの）に寄せる: 0, 400, 800。
+      // 起点 0 から前へ進む最初の位置は 400。
       expect(scrollTo).toHaveBeenCalledExactlyOnceWith({
-        left: 190,
+        left: 400,
         behavior: 'smooth',
       })
     } finally {
@@ -1598,7 +1651,7 @@ describe('autoplay', () => {
 
       vi.advanceTimersByTime(3000)
       expect(scrollTo).toHaveBeenNthCalledWith(1, {
-        left: 190,
+        left: 400,
         behavior: 'smooth',
       })
 
@@ -1606,7 +1659,7 @@ describe('autoplay', () => {
       // 到着起点で滞留を張り直すため、2 回目は 3000ms ちょうどでは進まない。
       vi.advanceTimersByTime(3110)
       expect(scrollTo).toHaveBeenNthCalledWith(2, {
-        left: 590,
+        left: 800,
         behavior: 'smooth',
       })
     } finally {
@@ -1690,6 +1743,101 @@ describe('autoplay', () => {
     }
   })
 
+  it('自動送り後の無関係な静止は前回の source=auto を引き継がない', () => {
+    // 中央検出を手動で駆動するため IntersectionObserver を差し替える
+    const callbacks = new Map<Element, IntersectionObserverCallback>()
+    const origIO = globalThis.IntersectionObserver
+    globalThis.IntersectionObserver = class {
+      constructor(private cb: IntersectionObserverCallback) {}
+      observe(el: Element) {
+        callbacks.set(el, this.cb)
+      }
+      unobserve(el: Element) {
+        callbacks.delete(el)
+      }
+      disconnect() {
+        callbacks.clear()
+      }
+    } as unknown as typeof globalThis.IntersectionObserver
+
+    vi.useFakeTimers()
+    try {
+      const onChange = vi.fn()
+      const { container, scroller } = renderAutoplay({ onChange })
+      const slides = container.querySelectorAll(
+        '.charcoal-carousel__scroller > *',
+      )
+
+      // 自動送りが 1 回発火して source=auto を報告する
+      vi.advanceTimersByTime(3000)
+      callbacks.get(slides[1])?.(
+        [
+          {
+            target: slides[1],
+            isIntersecting: true,
+          } as IntersectionObserverEntry,
+        ],
+        {} as IntersectionObserver,
+      )
+      vi.advanceTimersByTime(150)
+      expect(onChange).toHaveBeenCalledWith({ index: 1, source: 'auto' })
+      onChange.mockClear()
+
+      // どの入口も通らない静止（Tab フォーカスや find-in-page 等のブラウザ主導の
+      // scrollIntoView 相当。ここでは中央検出の再発火と scroll イベントだけで模す）
+      callbacks.get(slides[2])?.(
+        [
+          {
+            target: slides[2],
+            isIntersecting: true,
+          } as IntersectionObserverEntry,
+        ],
+        {} as IntersectionObserver,
+      )
+      scroller.dispatchEvent(new Event('scroll'))
+      vi.advanceTimersByTime(150)
+
+      expect(onChange).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+      globalThis.IntersectionObserver = origIO
+    }
+  })
+
+  it('indicator クリックで飛行中のスクロールへ自動送りの tick が割り込まない', () => {
+    vi.useFakeTimers()
+    Element.prototype.scrollIntoView = vi.fn()
+    try {
+      const { container, scroller, scrollTo } = renderAutoplay()
+      const dots = container.querySelectorAll(
+        '.charcoal-carousel__indicator__item',
+      )
+
+      // t=2950ms: ユーザーが dot をクリックする（indicator は scroller の外なので
+      // INTERACTION_EVENTS では拾えず、store の nonce 購読だけが発生源を記録する）。
+      vi.advanceTimersByTime(2950)
+      fireEvent.click(dots[2])
+      // scrollIntoView(smooth) が実際にアニメーションを開始したことを表す
+      // （jsdom は scrollIntoView を実装しないためモック済み。素の vi.fn() は
+      // scroll イベントを起こさないので、手動で 1 フレーム分の進行を模す）。
+      scroller.dispatchEvent(new Event('scroll'))
+      scrollTo.mockClear()
+
+      // t=3000ms: 自動送りの tick がアニメーション中（飛行中）に重なる
+      vi.advanceTimersByTime(50)
+      expect(scrollTo).not.toHaveBeenCalled()
+
+      // アニメーションが静止すれば（t=3050ms, debounce 100ms 未満だが scroll から
+      // 100ms 経過）飛行中フラグは解除され、次の tick からは自動送りが再開する
+      // （割り込みを避けるための一時的な yield であり、恒久停止ではないことの確認）。
+      vi.advanceTimersByTime(3050)
+      expect(scrollTo).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+      delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView
+    }
+  })
+
   it('進める先が無い tick は保留中の初期スクロールを破棄しない', () => {
     vi.useFakeTimers()
     try {
@@ -1726,6 +1874,69 @@ describe('autoplay', () => {
       // 空振りが initialScrollActive を倒していれば、ここで呼ばれないまま終わる。
       expect(scrollTo).toHaveBeenCalledWith({ left: 1600, behavior: 'instant' })
     } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('レイアウト未確定（maxScroll 0）で動かない tick は保留中の初期スクロールを破棄しない', () => {
+    // children を空にする既存の回帰テストは items.length===0 の早期 return で
+    // findNextSlideScrollLeft の ?? 0 フォールバックへ到達しない。ここでは非空の
+    // 実スライドを使い、offsetLeft/offsetWidth 未実測（全スライドが位置 0 に潰れる）
+    // による「動かない tick」を再現する。
+    vi.useFakeTimers()
+    let roCallbacks: Array<(entries: Array<{ target: Element }>) => void> = []
+    let scrollWidthVal = 800 // mount 時はまだ画像未読込で maxScroll 0
+    let lastSetLeft: number | undefined
+    const origRO = globalThis.ResizeObserver
+    globalThis.ResizeObserver = class {
+      observe = vi.fn()
+      unobserve = vi.fn()
+      disconnect = vi.fn()
+      constructor(cb: (entries: Array<{ target: Element }>) => void) {
+        roCallbacks.push(cb)
+      }
+    } as unknown as typeof globalThis.ResizeObserver
+    const spies = [
+      vi
+        .spyOn(HTMLElement.prototype, 'scrollWidth', 'get')
+        .mockImplementation(() => scrollWidthVal),
+      vi
+        .spyOn(HTMLElement.prototype, 'clientWidth', 'get')
+        .mockReturnValue(800),
+      vi
+        .spyOn(HTMLElement.prototype, 'scrollLeft', 'set')
+        .mockImplementation((v: number) => {
+          lastSetLeft = v
+        }),
+    ]
+    try {
+      render(
+        <Carousel
+          autoplay={{ interval: 3000 }}
+          defaultScroll={{ align: 'right' }}
+        >
+          {slides}
+        </Carousel>,
+      )
+      // mount 時: maxScroll 0 なので align:right も 0 に丸まる
+      expect(lastSetLeft).toBe(0)
+
+      // 画像読み込み前に tick が発火する。全スライド位置 0 → 進む先なし（巻き戻しの 0）。
+      vi.advanceTimersByTime(3000)
+
+      // 画像読み込みが完了して幅が確定する
+      scrollWidthVal = 2400
+      lastSetLeft = undefined
+      const scroller = getScroller()
+      const entries = [...scroller.children].map((el) => ({ target: el }))
+      act(() => {
+        roCallbacks.forEach((cb) => cb(entries))
+      })
+
+      expect(lastSetLeft).toBe(1600)
+    } finally {
+      spies.forEach((s) => s.mockRestore())
+      globalThis.ResizeObserver = origRO
       vi.useRealTimers()
     }
   })

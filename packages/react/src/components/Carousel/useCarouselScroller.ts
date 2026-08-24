@@ -16,6 +16,7 @@ import type {
   CarouselChangeSource,
   ScrollAlign,
   ScrollSnapAlign,
+  ScrollSnapType,
   ScrollStep,
 } from './index'
 import { observeResize } from './resizeObserver'
@@ -41,6 +42,9 @@ export type CarouselScrollerOptions = Readonly<{
   scrollStep: ScrollStep
   // スナップの寄せ先。次スライドの静止位置の計算に使う。
   snapAlign: ScrollSnapAlign
+  // none なら advanceSlide は snapAlign を無視して start へ寄せる
+  // （スナップしない構成では静止位置＝実座標であり center を狙う根拠がないため）。
+  snapType: ScrollSnapType
   loop: boolean
   centerItem?: number
   onScroll?: (left: number) => void
@@ -72,6 +76,7 @@ export function useCarouselScroller(
     offset,
     scrollStep,
     snapAlign,
+    snapType,
     loop,
     centerItem,
     onScroll,
@@ -82,9 +87,14 @@ export function useCarouselScroller(
   const initialScrollActive = useRef(true)
 
   // 直近の送りの発生源。未設定は「どの入口も通っていない」＝初期位置の適用中を意味し、
-  // これが初期表示で onChange を発火しないことの担保になる。
-  const sourceRef = useRef<CarouselChangeSource>()
+  // これが初期表示で onChange を発火しないことの担保になる。settle 完了で必ず undefined へ
+  // 戻す（無関係な静止が前回の発生源を引き継いで誤報告しないように）。
+  const sourceRef = useRef<CarouselChangeSource | undefined>(undefined)
   const lastReportedIndex = useRef<number | null>(null)
+
+  // ユーザー起点のスクロールが飛行中か（settle で解除）。自動送りの tick はこの間は
+  // 割り込まず、次の tick（provider のタイマーが張り直す）に譲る。
+  const userScrollInFlight = useRef(false)
 
   // コールバックは最新参照を ref に保持し、リスナーの貼り直しを避ける。
   const callbacksRef = useRef({
@@ -201,6 +211,12 @@ export function useCarouselScroller(
     updateScrollState()
     const handleScroll = () => {
       updateScrollState()
+      // 直近の発生源がユーザー起点なら、実際に動いていることが確定した時点で
+      // 飛行中とマークする（pointerdown 等の入口だけでは「動くとは限らない」ため、
+      // ここでしか安全に立てられない。立てなければ settle も来ず解除できない）。
+      if (sourceRef.current != null && sourceRef.current !== 'auto') {
+        userScrollInFlight.current = true
+      }
       callbacksRef.current.onScroll?.(el.scrollLeft)
     }
     el.addEventListener('scroll', handleScroll, { passive: true })
@@ -288,14 +304,19 @@ export function useCarouselScroller(
     if (!el) return
     const teleport = createLoopTeleport(el, () => geometryRef.current)
     const settle = () => {
+      userScrollInFlight.current = false
       pendingScrollTarget.current = null
       teleport()
       const { activeIndex } = store.getSnapshot()
+      const source = sourceRef.current
+      // どの静止でも発生源は使い切りにする。次の無関係な静止（Tab フォーカスや
+      // find-in-page 起因のブラウザ主導スクロールなど、どの入口も通らない）が
+      // 前回の発生源を誤って引き継がないように。
+      sourceRef.current = undefined
       // テレポートは合同位置へ移すだけで activeIndex を変えないため、
       // index の重複排除だけでテレポート起因の二重発火を防げる。
       if (activeIndex === lastReportedIndex.current) return
       lastReportedIndex.current = activeIndex
-      const source = sourceRef.current
       // 初期位置の適用（instant scrollTo）も静止を起こすが、変化ではないので発火しない。
       if (source == null) return
       callbacksRef.current.onChange?.({ index: activeIndex, source })
@@ -344,8 +365,6 @@ export function useCarouselScroller(
     (direction: 'prev' | 'next', source: CarouselChangeSource) => {
       const el = scrollerRef.current
       if (!el) return
-      initialScrollActive.current = false
-      sourceRef.current = source
       const { clientWidth, scrollWidth } = el
       // 走行中なら「まだ到達していない目標」を起点に積む（連打で残距離を捨てないため）。
       const scrollLeft = pendingScrollTarget.current ?? el.scrollLeft
@@ -363,6 +382,12 @@ export function useCarouselScroller(
           scrollWidth - clientWidth,
         ),
       )
+      // 動かない送り（端でのキーボード連打等）は意図を消費しない。消費すると次の
+      // 無関係な静止に、実際は起きなかった送りの発生源が誤って付いてしまう。
+      if (Math.abs(target - scrollLeft) < 1) return
+      initialScrollActive.current = false
+      sourceRef.current = source
+      userScrollInFlight.current = true
       pendingScrollTarget.current = target
       el.scrollTo({ left: target, behavior: 'smooth' })
     },
@@ -375,28 +400,41 @@ export function useCarouselScroller(
     (source: CarouselChangeSource) => {
       const el = scrollerRef.current
       if (!el) return
+      // ユーザー起点のスクロールが飛行中なら自動送りは割り込まない。次の tick
+      // （provider のタイマーが張り直す）に譲る。
+      if (source === 'auto' && userScrollInFlight.current) return
       const geometry = geometryRef.current
       const items = Array.from(el.children)
         .filter((child): child is HTMLElement => child instanceof HTMLElement)
         .map(({ offsetLeft, offsetWidth }) => ({ offsetLeft, offsetWidth }))
+      // 走行中なら「まだ到達していない目標」を起点に積む（scrollByStep と同じ理由）
+      const from = pendingScrollTarget.current ?? el.scrollLeft
       const target = findNextSlideScrollLeft(items, {
-        // 走行中なら「まだ到達していない目標」を起点に積む（scrollByStep と同じ理由）
-        scrollLeft: pendingScrollTarget.current ?? el.scrollLeft,
+        scrollLeft: from,
         clientWidth: el.clientWidth,
         maxScroll: el.scrollWidth - el.clientWidth,
-        align: snapAlign,
+        // snap しない構成では寄せ先が無いため、実際の静止位置（start 寄せ）に揃える。
+        align: snapType === 'none' ? 'start' : snapAlign,
         // clone が 0 枚のときは clone 帯のない実セットだけの列になる
         loop: geometry != null && isLoopActive(geometry),
       })
-      // 空振り（要素なし・進む先なし）はプログラム由来の意図（初期スクロール等）を
-      // 消費しない。実際にスクロールする回だけ意図を確定させる。
       if (target == null) return
+      // ブラウザ側でもクランプされるので、目標も同じ範囲に揃えないと
+      // 動かない送りが意図を消費したり、到達不能な目標が積み上がって以降の
+      // tick が起点を見失ったりする（scrollByStep と同じ事情）。
+      const clamped = Math.max(
+        0,
+        Math.min(target, el.scrollWidth - el.clientWidth),
+      )
+      // 空振り（要素なし・進む先なし・動かない）はプログラム由来の意図
+      // （初期スクロール等）を消費しない。実際にスクロールする回だけ意図を確定させる。
+      if (Math.abs(clamped - from) < 1) return
       initialScrollActive.current = false
       sourceRef.current = source
-      pendingScrollTarget.current = target
-      el.scrollTo({ left: target, behavior: 'smooth' })
+      pendingScrollTarget.current = clamped
+      el.scrollTo({ left: clamped, behavior: 'smooth' })
     },
-    [scrollerRef, snapAlign],
+    [scrollerRef, snapAlign, snapType],
   )
 
   return {
