@@ -21,6 +21,7 @@
 
 .charcoal-snackbar {
   min-height: 44px;
+  padding: var(--charcoal-space-25) var(--charcoal-space-40);
   background-color: var(--charcoal-color-container-default);
   color: var(--charcoal-color-text-default);
   border: var(--charcoal-border-width-m) solid

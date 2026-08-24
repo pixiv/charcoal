@@ -32,16 +32,16 @@ export function NotificationItem<TContent extends { message: ReactNode }>({
       {...toastProps}
       {...rootProps}
       ref={itemRef}
-      className={`charcoal-${name}`}
+      className={`charcoal-notification charcoal-${name}`}
       onPointerEnter={onHoverStart}
       onPointerLeave={onHoverEnd}
     >
       <div
         {...contentProps}
         role="status"
-        className={`charcoal-${name}-content`}
+        className="charcoal-notification-content"
       >
-        <div {...titleProps} className={`charcoal-${name}-label`}>
+        <div {...titleProps} className="charcoal-notification-label">
           {toast.content.message}
         </div>
       </div>

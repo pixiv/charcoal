@@ -45,7 +45,11 @@ export function NotificationRegion<TContent>({
     },
   }
   const { regionProps } = useToastRegion({}, timerState, regionRef)
-  const classNames = useClassNames(`charcoal-${name}-region`, className)
+  const classNames = useClassNames(
+    'charcoal-notification-region',
+    `charcoal-${name}-region`,
+    className,
+  )
 
   if (state.visibleToasts.length === 0) {
     return null

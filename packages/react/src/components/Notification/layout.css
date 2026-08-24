@@ -1,5 +1,4 @@
-.charcoal-snackbar-region,
-.charcoal-toast-region {
+.charcoal-notification-region {
   position: fixed;
   left: 0;
   right: 0;
@@ -9,13 +8,11 @@
   box-sizing: border-box;
 }
 
-.charcoal-snackbar,
-.charcoal-toast {
+.charcoal-notification {
   box-sizing: border-box;
   border-radius: var(--charcoal-radius-oval);
   width: fit-content;
   max-width: calc(100vw - var(--charcoal-space-46));
-  padding: var(--charcoal-space-25) var(--charcoal-space-40);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,15 +20,13 @@
   pointer-events: auto;
 }
 
-.charcoal-snackbar-content,
-.charcoal-toast-content {
+.charcoal-notification-content {
   display: flex;
   align-items: center;
   min-width: 0;
 }
 
-.charcoal-snackbar-label,
-.charcoal-toast-label {
+.charcoal-notification-label {
   min-width: 0;
   overflow: hidden;
   overflow-wrap: break-word;
@@ -44,10 +39,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .charcoal-snackbar,
-  .charcoal-snackbar[data-exiting='true'],
-  .charcoal-toast,
-  .charcoal-toast[data-exiting='true'] {
+  .charcoal-notification,
+  .charcoal-notification[data-exiting='true'] {
     animation: none;
   }
 }

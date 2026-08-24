@@ -19,7 +19,8 @@
 }
 
 .charcoal-toast {
-  min-height: var(--charcoal-space-target-m);
+  min-height: 40px;
+  padding: var(--charcoal-space-20) var(--charcoal-space-40);
   color: var(--charcoal-color-text-on-positive-default);
   border: var(--charcoal-border-width-m) solid var(--charcoal-color-border-hud);
   animation: charcoal-toast-enter 0.3s ease-out both;
