@@ -80,6 +80,8 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 | —                                                 | `gap?: number \| string`                    | 新規。スライド間隔。number は px、string は CSS 値をそのまま使う                                          |
 | —                                                 | `loop?: boolean`（既定 `false`）            | 新規（charcoal 独自）。clone + 端テレポートによる無限ループ。`defaultScroll` とは型レベルで排他           |
 | —                                                 | `centerItem?: number`                       | 新規（charcoal 独自）。`loop` 時のみ有効で、初期表示で指定 index のスライドを viewport 中央に置く         |
+| —                                                 | `autoplay?: { interval?; pauseOnHover? }`   | 新規（charcoal 独自）。一定時間ごとに 1 スライド進む。`interval` 既定 5000ms、`pauseOnHover` 既定 `true`  |
+| —                                                 | `onChange?: (e) => void`                    | 新規（charcoal 独自）。スクロール静止で `activeIndex` が変わったとき `{ index, source }` を 1 回通知      |
 
 ## 挙動の変更（移行時に確認すること）
 
@@ -107,6 +109,18 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
   実セットのスライドへ `scrollIntoView` する。現在位置が clone 帯寄りの場合、視覚的に
   最寄りの複製ではなく実スライドまで（最大でおよそ半セットぶん）長くスクロールする
   ことがある。既知の制限。
+- **`autoplay` は画面外・タブ非表示でも回り続ける**: IntersectionObserver や `document.hidden`
+  による停止は入れていない。結果として、Carousel が見えていなくても自動送りが進み、
+  `onChange` が飛ぶ。imp 計測を正確にしたい場合は、利用側で可視判定を持つこと。
+- **`onChange` は初期表示では発火しない**: 発火はスクロール静止で `activeIndex` が
+  変わったときだけ。初期スライドの imp は利用側の責務（初期 index は `centerItem ?? 0`）。
+  また、フリックで複数枚を通過して止まった場合、発火するのは着地したスライドの 1 回だけで、
+  通過したスライドは発火しない。
+- **`autoplay` + 非 loop + `scrollSnap.align: 'center'` では末尾数枚が中央に来ない**:
+  末尾付近の静止位置がスクロール上限にクランプされて潰れるため。中央配置を末尾まで
+  保ちたい場合は `loop` を使う。
+- **`prefers-reduced-motion: reduce` は `autoplay` のみを止める**: prev/next ボタンや
+  キーボード操作の smooth scroll は従来どおり動く。
 
 ## スクロール量を細かく制御したい場合
 

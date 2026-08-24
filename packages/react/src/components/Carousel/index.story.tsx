@@ -75,6 +75,7 @@ export default {
       control: { type: 'range', min: 0.1, max: 1.5, step: 0.05 },
     },
     loop: { control: 'boolean' },
+    autoplay: { control: 'object' },
     centerItem: { control: { type: 'number' } },
     gap: {
       // number は px。'1rem' などの CSS 値文字列も渡せる。
@@ -233,6 +234,18 @@ export const LoopBanner: StoryObj<typeof Carousel> = {
     gap: 16,
     scrollSnap: { type: 'mandatory', align: 'center' },
     scrollStep: () => 656,
+  },
+}
+
+// autoplay: 5 秒ごとに 1 枚進む。hover・キーボードフォーカス中・
+// prefers-reduced-motion では停止する。
+export const LoopAutoplay: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'S',
+    children: fullWidthImages,
+    loop: true,
+    gap: 0,
+    autoplay: { interval: 5000 },
   },
 }
 
