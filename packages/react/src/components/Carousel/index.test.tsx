@@ -3,6 +3,7 @@ import { render, screen, fireEvent, act } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
 import Carousel, {
+  type CarouselAutoplay,
   type CarouselHandlerRef,
   type CarouselDefaultScroll,
 } from '.'
@@ -1435,6 +1436,131 @@ describe('onChange', () => {
       settleScroll(scroller)
 
       expect(onChange).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+})
+
+describe('autoplay', () => {
+  // vi.unstubAllGlobals() は使わない。vitest.setup.ts の beforeAll が張った
+  // ResizeObserver / IntersectionObserver / matchMedia / scrollTo の stub まで剥がれ、
+  // beforeAll はファイルごとに 1 回しか走らないので後続テスト全部が stub 無しになる。
+  beforeEach(() => {
+    // jsdom は onscrollend を持つが実イベントは発火しないため debounce(100ms) 経路を強制する
+    Reflect.deleteProperty(window, 'onscrollend')
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  const renderAutoplay = (props: { autoplay?: CarouselAutoplay } = {}) => {
+    const { container } = render(
+      <Carousel autoplay={{ interval: 3000 }} {...props}>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+      </Carousel>,
+    )
+    const scroller = container.querySelector(
+      '.charcoal-carousel__scroller',
+    ) as HTMLElement
+    // jsdom はレイアウトを持たないので、送り先の算出に必要な寸法を与える
+    mockScrollerGeometry(scroller)
+    const scrollTo = vi.fn()
+    scroller.scrollTo = scrollTo as unknown as typeof scroller.scrollTo
+    return { container, scroller, scrollTo }
+  }
+
+  it('interval 経過で次のスライドの静止位置へ smooth スクロールする', () => {
+    vi.useFakeTimers()
+    try {
+      const { scrollTo } = renderAutoplay()
+      expect(scrollTo).not.toHaveBeenCalled()
+
+      vi.advanceTimersByTime(3000)
+
+      // mockScrollerGeometry: clientWidth 800 / 子は offsetLeft i*400・offsetWidth 380。
+      // 既定は size M ＝ snapAlign 'center'、loop なしなので maxScroll 1600 でクランプ。
+      // 中央位置は offsetLeft + 190 − 400 → −210, 190, 590 → クランプ後 0, 190, 590。
+      // 起点 0 から前へ進む最初の位置は 190。
+      expect(scrollTo).toHaveBeenCalledExactlyOnceWith({
+        left: 190,
+        behavior: 'smooth',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('autoplay 未指定ならタイマーを張らない', () => {
+    vi.useFakeTimers()
+    try {
+      const { scrollTo } = renderAutoplay({ autoplay: undefined })
+      vi.advanceTimersByTime(60_000)
+      expect(scrollTo).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('hover 中は進まず、hover を外すと再開する', () => {
+    vi.useFakeTimers()
+    try {
+      const { container, scrollTo } = renderAutoplay()
+      const root = container.firstElementChild as HTMLElement
+
+      // PointerEvent が無い jsdom では useHover は mouse フォールバックに落ち、
+      // React は onMouseEnter/Leave を mouseover/mouseout から合成する。
+      fireEvent.mouseOver(root)
+      vi.advanceTimersByTime(6000)
+      expect(scrollTo).not.toHaveBeenCalled()
+
+      fireEvent.mouseOut(root)
+      vi.advanceTimersByTime(3000)
+      expect(scrollTo).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('pauseOnHover: false なら hover しても止まらない', () => {
+    vi.useFakeTimers()
+    try {
+      const { container, scrollTo } = renderAutoplay({
+        autoplay: { interval: 3000, pauseOnHover: false },
+      })
+      fireEvent.mouseOver(container.firstElementChild as HTMLElement)
+      vi.advanceTimersByTime(3000)
+      expect(scrollTo).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  // キーボードフォーカスでの停止テストは削除。react-aria の focus-visible の
+  // モダリティ判定が jsdom で駆動できず、fireEvent.keyDown → focus() の経路では
+  // isFocusVisible が true にならない。停止ポリシー自体は CarouselAutoplayProvider.test.tsx
+  // が paused prop で決定的に検証済みで、paused={isHovered || rootFocusVisible} の
+  // 配線は実機（Task 5 Step 5）で確認する。
+
+  it('手動スクロールの静止で滞留時間が頭から数え直される', () => {
+    vi.useFakeTimers()
+    try {
+      const { scroller, scrollTo } = renderAutoplay()
+
+      vi.advanceTimersByTime(2000)
+      // beforeEach で onscrollend を消してあるので debounce(100ms) 経路
+      scroller.dispatchEvent(new Event('scroll'))
+      vi.advanceTimersByTime(150)
+
+      // 張り直されていなければ、ここまでで元の 3000ms を超えて発火しているはず
+      vi.advanceTimersByTime(2000)
+      expect(scrollTo).not.toHaveBeenCalled()
+
+      vi.advanceTimersByTime(1000)
+      expect(scrollTo).toHaveBeenCalledTimes(1)
     } finally {
       vi.useRealTimers()
     }

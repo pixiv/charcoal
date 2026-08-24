@@ -9,11 +9,13 @@ import {
   measureLoopGeometry,
   type LoopGeometry,
 } from './carouselLoop'
+import { findNextSlideScrollLeft } from './carouselAutoplay'
 import type { CarouselStore } from './carouselStore'
 import type {
   CarouselChangeEvent,
   CarouselChangeSource,
   ScrollAlign,
+  ScrollSnapAlign,
   ScrollStep,
 } from './index'
 import { observeResize } from './resizeObserver'
@@ -37,6 +39,8 @@ export type CarouselScrollerOptions = Readonly<{
   align: ScrollAlign
   offset: number
   scrollStep: ScrollStep
+  // スナップの寄せ先。次スライドの静止位置の計算に使う。
+  snapAlign: ScrollSnapAlign
   loop: boolean
   centerItem?: number
   onScroll?: (left: number) => void
@@ -50,6 +54,7 @@ export type CarouselScrollerResult = Readonly<{
     direction: 'prev' | 'next',
     source: CarouselChangeSource,
   ) => void
+  advanceSlide: (source: CarouselChangeSource) => void
   onItemResize: () => void
   resetScroll: () => void
   // loop 時に各端へ描画すべき clone 枚数（実測から算出。初回 render は 0）
@@ -66,6 +71,7 @@ export function useCarouselScroller(
     align,
     offset,
     scrollStep,
+    snapAlign,
     loop,
     centerItem,
     onScroll,
@@ -361,8 +367,37 @@ export function useCarouselScroller(
     [scrollerRef, scrollStep],
   )
 
+  // 次のスライドへ 1 枚ぶん進む。scrollByStep と同じ経路に乗るため、
+  // 壁エスケープ・静止後テレポート・意図破棄がそのまま効く。
+  const advanceSlide = useCallback(
+    (source: CarouselChangeSource) => {
+      const el = scrollerRef.current
+      if (!el) return
+      initialScrollActive.current = false
+      sourceRef.current = source
+      const geometry = geometryRef.current
+      const items = Array.from(el.children)
+        .filter((child): child is HTMLElement => child instanceof HTMLElement)
+        .map(({ offsetLeft, offsetWidth }) => ({ offsetLeft, offsetWidth }))
+      const target = findNextSlideScrollLeft(items, {
+        // 走行中なら「まだ到達していない目標」を起点に積む（scrollByStep と同じ理由）
+        scrollLeft: pendingScrollTarget.current ?? el.scrollLeft,
+        clientWidth: el.clientWidth,
+        maxScroll: el.scrollWidth - el.clientWidth,
+        align: snapAlign,
+        // clone が 0 枚のときは clone 帯のない実セットだけの列になる
+        loop: geometry != null && isLoopActive(geometry),
+      })
+      if (target == null) return
+      pendingScrollTarget.current = target
+      el.scrollTo({ left: target, behavior: 'smooth' })
+    },
+    [scrollerRef, snapAlign],
+  )
+
   return {
     scrollByStep,
+    advanceSlide,
     onItemResize,
     resetScroll,
     // cloneCount state は effect 更新で 1 render 遅れるため、children が空に

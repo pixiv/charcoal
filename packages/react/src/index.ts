@@ -109,5 +109,6 @@ export {
   type ScrollStepContext,
   type CarouselChangeSource,
   type CarouselChangeEvent,
+  type CarouselAutoplay,
 } from './components/Carousel'
 import './components/FocusRing/index.css'
