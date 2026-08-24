@@ -39,7 +39,6 @@
    * Safari doesn't correctly repaint the elements when they're reordered in response to interaction.
    * This forces it to repaint them. This doesn't work if put on the parents either, has to be here.
    */
-  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-transform: translateZ(0);
 
   color: var(--charcoal-color-text-tertiary-default);

@@ -1,10 +1,6 @@
 /** @type { import('stylelint').Config } */
 const config = {
-  extends: [
-    'stylelint-config-recommended',
-    'stylelint-config-styled-components',
-    'stylelint-config-prettier',
-  ],
+  extends: ['stylelint-config-recommended'],
   rules: {
     'at-rule-no-unknown': [
       true,
@@ -22,7 +18,18 @@ const config = {
   overrides: [
     {
       files: ['**/*.{jsx,tsx}'],
-      customSyntax: '@stylelint/postcss-css-in-js',
+      customSyntax: 'postcss-styled-syntax',
+      rules: {
+        // styled-components permits JavaScript interpolation in media queries.
+        'media-query-no-invalid': null,
+      },
+    },
+    {
+      // These files contain styled-components type tests, not style definitions.
+      files: ['**/*.d.tsx'],
+      rules: {
+        'no-empty-source': null,
+      },
     },
   ],
   reportInvalidScopeDisables: true,
