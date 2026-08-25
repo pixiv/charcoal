@@ -1,14 +1,26 @@
-import { createRef, type ComponentProps } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
 import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
-import Snackbar, { useSnackbar, type SnackbarHandler } from '.'
+import Snackbar, { useSnackbar, type ShowSnackbarOptions } from '.'
 
-function renderSnackbar(props: ComponentProps<typeof Snackbar> = {}) {
-  const ref = createRef<SnackbarHandler>()
-  const result = render(<Snackbar ref={ref} {...props} />)
-  const show: SnackbarHandler['show'] = (message, options) => {
+function renderSnackbar(props: Parameters<typeof useSnackbar>[0] = {}) {
+  let showSnackbar:
+    ((message: ReactNode, options?: ShowSnackbarOptions) => void) | undefined
+
+  function SnackbarApp() {
+    const [snackbar, show] = useSnackbar(props)
+    useEffect(() => {
+      showSnackbar = show
+    }, [show])
+    return snackbar
+  }
+
+  const result = render(<SnackbarApp />)
+  function show(message: ReactNode, options?: ShowSnackbarOptions) {
+    if (showSnackbar === undefined) throw new Error('showSnackbar not found')
+    const currentShowSnackbar = showSnackbar
     act(() => {
-      ref.current?.show(message, options)
+      currentShowSnackbar(message, options)
     })
     act(() => {
       vi.advanceTimersByTime(300)
@@ -38,6 +50,25 @@ describe('Snackbar', () => {
     vi.useRealTimers()
   })
 
+  it('renders the message and required action', () => {
+    render(
+      <Snackbar
+        message="保存しました"
+        action={<button type="button">取り消す</button>}
+      />,
+    )
+
+    expect(screen.getByText('保存しました')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '取り消す' })).toBeInTheDocument()
+  })
+
+  it('requires a non-null action at the type level', () => {
+    // @ts-expect-error action must not be undefined
+    const undefinedAction = <Snackbar message="x" action={undefined} />
+
+    expect(undefinedAction).toBeDefined()
+  })
+
   it('shows a message and hides after 5 seconds', () => {
     const { show } = renderSnackbar()
 
@@ -62,9 +93,9 @@ describe('Snackbar', () => {
   })
 
   it.each([0, -1])('clamps duration to zero: %s', (duration) => {
-    const { show } = renderSnackbar()
+    const { show } = renderSnackbar({ duration })
 
-    show('保存しました', { duration })
+    show('保存しました')
     expect(screen.getByText('保存しました')).toBeInTheDocument()
 
     act(() => {
@@ -84,9 +115,9 @@ describe('Snackbar', () => {
     Number.NEGATIVE_INFINITY,
     'invalid' as unknown as number,
   ])('falls back to the default duration: %s', (duration) => {
-    const { show } = renderSnackbar()
+    const { show } = renderSnackbar({ duration })
 
-    show('保存しました', { duration })
+    show('保存しました')
     act(() => {
       vi.advanceTimersByTime(4999)
     })
@@ -118,6 +149,56 @@ describe('Snackbar', () => {
 
     expect(screen.queryByText('first')).not.toBeInTheDocument()
     expect(screen.getByText('second')).toBeInTheDocument()
+  })
+
+  it('replaces the current snackbar immediately when requested', () => {
+    const onClose = vi.fn()
+    const { show } = renderSnackbar({ order: 'replace' })
+
+    show('first', { onClose })
+    show('second')
+
+    expect(screen.queryByText('first')).not.toBeInTheDocument()
+    expect(screen.getByText('second')).toBeInTheDocument()
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('replaced')
+  })
+
+  it('reports timeout when the snackbar closes after its duration', () => {
+    const onClose = vi.fn()
+    const { show } = renderSnackbar({ duration: 0 })
+
+    show('保存しました', { onClose })
+    act(() => {
+      vi.advanceTimersByTime(1)
+    })
+
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('timeout')
+  })
+
+  it('reports action when the action is clicked', () => {
+    const onClose = vi.fn()
+    const { show } = renderSnackbar()
+
+    show('保存しました', {
+      action: <button type="button">取り消す</button>,
+      onClose,
+    })
+    fireEvent.click(screen.getByRole('button', { name: '取り消す' }))
+
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('action')
+  })
+
+  it('reports unmounted only for the currently displayed snackbar', () => {
+    const firstOnClose = vi.fn()
+    const secondOnClose = vi.fn()
+    const { show, unmount } = renderSnackbar()
+
+    show('first', { onClose: firstOnClose })
+    show('second', { onClose: secondOnClose })
+    unmount()
+
+    expect(firstOnClose).toHaveBeenCalledExactlyOnceWith('unmounted')
+    expect(secondOnClose).not.toHaveBeenCalled()
   })
 
   it('keeps the snackbar open while hovered after the timer ends, then closes on leave', () => {
@@ -163,11 +244,11 @@ describe('Snackbar', () => {
     expect(snackbar).toHaveAttribute('data-exiting', 'true')
   })
 
-  it('places a snackbar with a button at the bottom', () => {
+  it('places a snackbar with an action at the bottom', () => {
     const { show } = renderSnackbar({ position: 'top' })
 
     show('保存しました', {
-      button: { children: '取り消す' },
+      action: <button type="button">取り消す</button>,
     })
 
     expect(screen.getByRole('region')).toHaveAttribute(
@@ -176,7 +257,7 @@ describe('Snackbar', () => {
     )
   })
 
-  it('places a snackbar without a button at the top when requested', () => {
+  it('places a snackbar without an action at the top when requested', () => {
     const { show } = renderSnackbar({ position: 'top' })
 
     show('保存しました')
@@ -201,7 +282,7 @@ describe('Snackbar', () => {
     const { show } = renderSnackbar()
 
     show('保存しました', {
-      button: { children: '取り消す' },
+      action: <button type="button">取り消す</button>,
     })
 
     fireEvent.keyDown(document, { key: 'F6' })
@@ -216,7 +297,7 @@ describe('Snackbar', () => {
     trigger.focus()
 
     show('保存しました', {
-      button: { children: '閉じる' },
+      action: <button type="button">閉じる</button>,
     })
 
     fireEvent.keyDown(document, { key: 'F6' })
@@ -229,14 +310,14 @@ describe('Snackbar', () => {
     trigger.remove()
   })
 
-  it('closes on button click even while hovered', () => {
+  it('closes on action click even while hovered', () => {
     const { show } = renderSnackbar()
     const trigger = document.createElement('button')
     document.body.append(trigger)
     trigger.focus()
 
     show('保存しました', {
-      button: { children: '閉じる' },
+      action: <button type="button">閉じる</button>,
     })
 
     const snackbar = screen

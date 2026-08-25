@@ -32,7 +32,7 @@
     animation: charcoal-snackbar-exit 0.3s ease-out both;
   }
 
-  &[data-with-button='true'] {
+  &[data-with-action='true'] {
     min-height: 56px;
     padding: var(--charcoal-space-25) var(--charcoal-space-30)
       var(--charcoal-space-25) var(--charcoal-space-40);

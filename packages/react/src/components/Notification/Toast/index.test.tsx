@@ -43,7 +43,7 @@ describe('Toast', () => {
 
     expect(screen.queryByRole('region')).not.toBeInTheDocument()
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
 
     expect(screen.getByText('保存しました')).toBeInTheDocument()
 
@@ -62,9 +62,9 @@ describe('Toast', () => {
   })
 
   it.each([0, -1])('clamps duration to zero: %s', (duration) => {
-    const { show } = renderToast()
+    const { show } = renderToast({ duration })
 
-    show('保存しました', { variant: 'success', duration })
+    show('保存しました', { type: 'success' })
     expect(screen.getByText('保存しました')).toBeInTheDocument()
 
     act(() => {
@@ -84,9 +84,9 @@ describe('Toast', () => {
     Number.NEGATIVE_INFINITY,
     'invalid' as unknown as number,
   ])('falls back to the default duration: %s', (duration) => {
-    const { show } = renderToast()
+    const { show } = renderToast({ duration })
 
-    show('保存しました', { variant: 'success', duration })
+    show('保存しました', { type: 'success' })
     act(() => {
       vi.advanceTimersByTime(4999)
     })
@@ -103,8 +103,8 @@ describe('Toast', () => {
   it('queues the next toast until the previous one closes', async () => {
     const { show } = renderToast()
 
-    show('first', { variant: 'success' })
-    show('second', { variant: 'error' })
+    show('first', { type: 'success' })
+    show('second', { type: 'error' })
 
     expect(screen.getByText('first')).toBeInTheDocument()
     expect(screen.queryByText('second')).not.toBeInTheDocument()
@@ -120,13 +120,23 @@ describe('Toast', () => {
     expect(screen.getByText('second')).toBeInTheDocument()
     expect(
       screen.getByText('second').closest('.charcoal-toast'),
-    ).toHaveAttribute('data-variant', 'error')
+    ).toHaveAttribute('data-type', 'error')
+  })
+
+  it('replaces the current toast immediately when requested', () => {
+    const { show } = renderToast({ order: 'replace' })
+
+    show('first', { type: 'success' })
+    show('second', { type: 'error' })
+
+    expect(screen.queryByText('first')).not.toBeInTheDocument()
+    expect(screen.getByText('second')).toBeInTheDocument()
   })
 
   it('keeps the toast open while hovered after the timer ends, then closes on leave', () => {
     const { show } = renderToast()
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
     const toast = screen.getByText('保存しました').closest('.charcoal-toast')
     if (toast === null) throw new Error('Toast not found')
 
@@ -143,7 +153,7 @@ describe('Toast', () => {
   it('keeps the toast open while focused', () => {
     const { show } = renderToast()
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
     const toast = screen.getByText('保存しました').closest('.charcoal-toast')
     if (toast === null) throw new Error('Toast not found')
 
@@ -165,7 +175,7 @@ describe('Toast', () => {
   it('places a toast at the top by default', () => {
     const { show } = renderToast()
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
 
     expect(screen.getByRole('region')).toHaveAttribute('data-position', 'top')
   })
@@ -173,7 +183,7 @@ describe('Toast', () => {
   it('places a toast at the bottom when requested', () => {
     const { show } = renderToast({ position: 'bottom' })
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
 
     expect(screen.getByRole('region')).toHaveAttribute(
       'data-position',
@@ -181,25 +191,22 @@ describe('Toast', () => {
     )
   })
 
-  it.each(['success', 'error'] as const)(
-    'applies the %s variant',
-    (variant) => {
-      const { show } = renderToast()
+  it.each(['success', 'error'] as const)('applies the %s type', (type) => {
+    const { show } = renderToast()
 
-      show('保存しました', { variant })
+    show('保存しました', { type })
 
-      expect(
-        screen.getByText('保存しました').closest('.charcoal-toast'),
-      ).toHaveAttribute('data-variant', variant)
-    },
-  )
+    expect(
+      screen.getByText('保存しました').closest('.charcoal-toast'),
+    ).toHaveAttribute('data-type', type)
+  })
 
   it('supports a custom z-index and portal container', () => {
     const portalContainer = document.createElement('div')
     document.body.append(portalContainer)
     const { show } = renderToast({ zIndex: 30, portalContainer })
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
 
     expect(portalContainer).toContainElement(screen.getByRole('region'))
     expect(screen.getByRole('region')).toHaveStyle({ zIndex: 30 })
@@ -210,7 +217,7 @@ describe('Toast', () => {
   it('moves focus to the toast region with F6', () => {
     const { show } = renderToast()
 
-    show('保存しました', { variant: 'success' })
+    show('保存しました', { type: 'success' })
 
     fireEvent.keyDown(document, { key: 'F6' })
 
@@ -239,7 +246,7 @@ describe('useToast', () => {
           <button
             type="button"
             onClick={() => {
-              showResult = show('hook message', { variant: 'success' })
+              showResult = show('hook message', { type: 'success' })
             }}
           >
             open

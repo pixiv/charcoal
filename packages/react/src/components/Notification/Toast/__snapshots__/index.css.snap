@@ -28,11 +28,11 @@
   animation: charcoal-toast-exit 0.3s ease-out both;
 }
 
-.charcoal-toast[data-variant='success'] {
+.charcoal-toast[data-type='success'] {
   background-color: var(--charcoal-color-container-positive-default);
 }
 
-.charcoal-toast[data-variant='error'] {
+.charcoal-toast[data-type='error'] {
   background-color: var(--charcoal-color-container-negative-default);
 }
 

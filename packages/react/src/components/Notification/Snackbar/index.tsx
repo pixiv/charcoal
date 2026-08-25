@@ -1,98 +1,77 @@
 import '../layout.css'
 import './index.css'
 
-import { forwardRef, useImperativeHandle, useRef } from 'react'
-import type { ElementType, ReactNode } from 'react'
+import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
+import { useClassNames } from '../../../_lib/useClassNames'
 import { NotificationItem } from '../NotificationItem'
 import { NotificationRegion } from '../NotificationRegion'
 import { useNotificationQueue } from '../useNotificationQueue'
 import type { NotificationProps, Position } from '../types'
-import Button, { type ButtonProps } from '../../Button'
 
-type SnackbarButtonOption<T extends ElementType = 'button'> = Omit<
-  ButtonProps<T>,
-  'component' | 'className' | 'size'
-> & {
-  /**
-   * ボタンのルート要素として使用するコンポーネント。ページ遷移を伴う場合は `Link` を指定する
-   * @default 'button'
-   * @example 'Link'
-   */
-  component?: T
-} & ('button' extends T ? unknown : { component: T })
+export type SnackbarCloseReason =
+  'timeout' | 'replaced' | 'action' | 'close' | 'unmounted'
 
-export type SnackbarShowOptions<T extends ElementType = 'button'> = {
-  /**
-   * Snackbar を表示する時間（ミリ秒）。負の値は 0、数値でない値は 5000 として扱う
-   * @default 5000
-   */
-  duration?: number
-  /**
-   * Snackbar の右側に表示するボタン
-   */
-  button?: SnackbarButtonOption<T>
+export type ShowSnackbarOptions = {
+  action?: ReactNode
+  onClose?: (reason: SnackbarCloseReason) => void
 }
 
-export type SnackbarHandler = {
-  show: <T extends ElementType = 'button'>(
-    message: ReactNode,
-    options?: SnackbarShowOptions<T>,
-  ) => void
+type SnackbarBaseProps = {
+  message: ReactNode
+  action?: ReactNode
+  dim?: boolean
+} & Omit<HTMLAttributes<HTMLDivElement>, 'children'>
+
+export type SnackbarProps = Omit<SnackbarBaseProps, 'action'> & {
+  /** Snackbar の右側に表示するアクション */
+  action: NonNullable<ReactNode>
 }
 
-export type SnackbarProps = Omit<NotificationProps, 'position'> & {
-  /**
-   * Snackbar の表示位置。ボタン付きの場合は `bottom` に固定される
-   * @default 'bottom'
-   */
+export type UseSnackbarProps = Omit<NotificationProps, 'position'> & {
   position?: Position
-  /**
-   * 暗い背景色
-   * @default false
-   */
   dim?: boolean
 }
 
 type SnackbarContent = {
   message: ReactNode
-  button?: SnackbarButtonContent
+  action?: ReactNode
 }
 
-type SnackbarButtonContent = Omit<SnackbarButtonOption, 'component'> & {
-  component?: ElementType
-}
+const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
+  function Snackbar(props, ref) {
+    return <SnackbarBase {...props} ref={ref} />
+  },
+)
 
-const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
-  { position = 'bottom', dim = false, ...regionProps },
-  ref,
-) {
+export default Snackbar
+
+export function useSnackbar(props: UseSnackbarProps = {}) {
   'use memo'
 
-  const { state, itemRef, enqueue, onHoverStart, onHoverEnd, clearHover } =
-    useNotificationQueue<SnackbarContent>('snackbar')
+  const {
+    position = 'bottom',
+    dim = false,
+    duration,
+    order,
+    ...regionProps
+  } = props
+  const { state, itemRef, enqueue, close, onHoverStart, onHoverEnd } =
+    useNotificationQueue<SnackbarContent, SnackbarCloseReason>('snackbar', {
+      duration,
+      order,
+      timeoutReason: 'timeout',
+      unmountedReason: 'unmounted',
+    })
 
-  function show<T extends ElementType = 'button'>(
-    message: ReactNode,
-    options: SnackbarShowOptions<T> = {},
-  ) {
-    enqueue(
-      {
-        message,
-        button: options.button as SnackbarButtonContent | undefined,
-      },
-      options.duration,
-    )
+  function show(message: ReactNode, options: ShowSnackbarOptions = {}) {
+    enqueue({ message, action: options.action }, options.onClose)
   }
 
-  useImperativeHandle(ref, () => ({ show }))
-
-  // ボタン付きの Snackbar は常に下部に表示される
-  const hasButton = state.visibleToasts.some(
-    (toast) => toast.content.button !== undefined,
+  const hasAction = state.visibleToasts.some(
+    (toast) => toast.content.action !== undefined,
   )
-  const effectivePosition = hasButton ? 'bottom' : position
-
-  return (
+  const effectivePosition = hasAction ? 'bottom' : position
+  const element = (
     <NotificationRegion
       name="snackbar"
       state={state}
@@ -109,77 +88,49 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
           onHoverStart={onHoverStart}
           onHoverEnd={onHoverEnd}
           data-dim={dim}
-          data-with-button={toast.content.button !== undefined}
+          data-with-action={toast.content.action !== undefined}
         >
-          {toast.content.button !== undefined && (
-            <SnackbarAction
-              button={toast.content.button}
-              dim={dim}
-              onClose={() => {
-                clearHover()
-                state.close(toast.key)
-              }}
-            />
+          {toast.content.action !== undefined && (
+            <div onClick={() => close(toast.key, 'action')}>
+              <SnackbarAction action={toast.content.action} />
+            </div>
           )}
         </NotificationItem>
       ))}
     </NotificationRegion>
   )
-})
 
-export default Snackbar
-
-export function useSnackbar(props: SnackbarProps = {}) {
-  'use memo'
-
-  const snackbarHandlerRef = useRef<SnackbarHandler>(null)
-  const element = <Snackbar ref={snackbarHandlerRef} {...props} />
-  function show<T extends ElementType = 'button'>(
-    message: ReactNode,
-    options?: SnackbarShowOptions<T>,
-  ) {
-    snackbarHandlerRef.current?.show(message, options)
-  }
   return [element, show] as const
 }
 
-function SnackbarAction({
-  button,
-  dim,
-  onClose,
-}: {
-  button: SnackbarButtonContent
-  dim: boolean
-  onClose: () => void
-}) {
-  const { onClick, variant, children: buttonChildren, ...buttonProps } = button
-
-  function handleButtonClick(
-    event: Parameters<NonNullable<ButtonProps<'button'>['onClick']>>[0],
+const SnackbarBase = forwardRef<HTMLDivElement, SnackbarBaseProps>(
+  function SnackbarBase(
+    { message, action, dim = false, className, ...rootProps },
+    ref,
   ) {
-    onClick?.(event)
-    onClose()
-  }
+    const classNames = useClassNames(
+      'charcoal-notification',
+      'charcoal-snackbar',
+      className,
+    )
 
-  return (
-    <PolymorphicButton
-      {...buttonProps}
-      size="S"
-      variant={variant ?? (dim ? 'Navigation' : undefined)}
-      onClick={handleButtonClick}
-    >
-      {buttonChildren}
-    </PolymorphicButton>
-  )
-}
+    return (
+      <div
+        {...rootProps}
+        ref={ref}
+        className={classNames}
+        data-dim={dim}
+        data-with-action={action !== undefined}
+      >
+        <div role="status" className="charcoal-notification-content">
+          <div className="charcoal-notification-label">{message}</div>
+        </div>
+        {action !== undefined && <SnackbarAction action={action} />}
+      </div>
+    )
+  },
+)
 
-function PolymorphicButton({
-  component,
-  ...props
-}: Omit<ButtonProps, 'component'> & { component?: ElementType }) {
-  if (component === undefined || component === 'button') {
-    return <Button {...props} />
-  }
-
-  return <Button {...props} component={component} />
+function SnackbarAction({ action }: { action: ReactNode }) {
+  return <div>{action}</div>
 }
