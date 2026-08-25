@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">12/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/214 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">30 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/214 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">30 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>39.9s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>39.5s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -19802,6 +19802,402 @@ value?: string</code></pre>
 </article>
 <article
   class="card 
+  has-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
+  aria-label="SnackbarDemo">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> SnackbarDemo</h2>
+      <div class="badges">
+        <label for="c-31-react-snackbar-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-31-react-snackbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-31-react-snackbar-stories" class="badge ok as-toggle">6 stories</label>
+        
+      </div>
+    </div>
+    <div class="meta" title="./packages/react/src/components/Notification/Snackbar/index.story.tsx">react-snackbar · ./packages/react/src/components/Notification/Snackbar/index.story.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-31-react-snackbar-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-31-react-snackbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-31-react-snackbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">Prop type error</div>
+      <div class="note-body"><pre><code>No component file found for the &quot;SnackbarDemo&quot; component.
+  13 | }
+  14 |
+&gt; 15 | export default {
+     | ^
+  16 |   title: &#39;react/Snackbar&#39;,
+  17 |   component: SnackbarDemo,
+  18 |   parameters: {
+
+./packages/react/src/components/Notification/Snackbar/index.story.tsx:
+import { useEffect, type ReactNode } from &#39;react&#39;
+import { Meta, StoryObj } from &#39;@storybook/react-vite&#39;
+import Button from &#39;../../Button&#39;
+import { useSnackbar as unstable_useSnackbar } from &#39;.&#39;
+
+const defaultOpen = !!process.env.TEST
+
+type SnackbarStoryArgs = NonNullable&lt;
+  Parameters&lt;typeof unstable_useSnackbar&gt;[0]
+&gt; &amp; {
+  message: ReactNode
+  actionChildren?: string
+}
+
+export default {
+  title: &#39;react/Snackbar&#39;,
+  component: SnackbarDemo,
+  parameters: {
+    layout: &#39;centered&#39;,
+    tokenVersion: &#39;v2&#39;,
+    controls: {
+      sort: &#39;requiredFirst&#39;,
+    },
+    docs: {
+      description: {
+        component: `\`unstable_useSnackbar\` を使用すると、表示時間やキューを含む表示制御を利用できます。同時に表示できるスナックバーは1つのみです。表示中に別のスナックバーが発生した場合は、\`order\` に応じてキューに積むか、表示中のスナックバーを置き換えます。
+
+別々の \`unstable_useSnackbar\` を呼び出した場合は互いに独立するため、同時表示数は1件に制限されません。
+
+\`UnstableSnackbar\` は表示専用のコンポーネントです。表示状態や表示時間を制御する機構を持たず、アクションの指定を必須とします。表示の切り替えは利用側で制御してください。`,
+      },
+    },
+  },
+  args: {
+    message: &#39;保存しました&#39;,
+    position: &#39;bottom&#39;,
+    offset: 16,
+    duration: 5000,
+    order: &#39;queue&#39;,
+    dim: false,
+    zIndex: 20,
+  },
+  argTypes: {
+    position: {
+      options: [&#39;top&#39;, &#39;bottom&#39;],
+      control: { type: &#39;inline-radio&#39; },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &quot;&#39;bottom&#39;&quot; } },
+    },
+    offset: {
+      control: { type: &#39;number&#39;, min: 0, step: 1 },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;16&#39; } },
+    },
+    duration: {
+      control: { type: &#39;number&#39;, min: 0, step: 500 },
+      description: &#39;表示時間（ミリ秒）&#39;,
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;5000&#39; } },
+    },
+    order: {
+      options: [&#39;queue&#39;, &#39;replace&#39;],
+      control: { type: &#39;inline-radio&#39; },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &quot;&#39;queue&#39;&quot; } },
+    },
+    dim: {
+      control: &#39;boolean&#39;,
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;false&#39; } },
+    },
+    zIndex: {
+      control: { type: &#39;number&#39;, min: 0, step: 1 },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;20&#39; } },
+    },
+    className: {
+      control: &#39;text&#39;,
+      table: { category: &#39;Hook&#39; },
+    },
+    portalContainer: {
+      control: false,
+      table: { category: &#39;Hook&#39; },
+    },
+    css: {
+      table: { disable: true },
+    },
+    message: {
+      control: &#39;text&#39;,
+      table: { category: &#39;Show&#39; },
+    },
+    actionChildren: {
+      name: &#39;action&#39;,
+      control: &#39;text&#39;,
+      table: { category: &#39;Show&#39; },
+    },
+  },
+  render: (args) =&gt; &lt;SnackbarDemo {...args} /&gt;,
+} as Meta&lt;SnackbarStoryArgs&gt;
+
+function SnackbarDemo({
+  message,
+  actionChildren,
+  ...props
+}: SnackbarStoryArgs) {
+  const [snackbar, showSnackbar] = unstable_useSnackbar(props)
+  const hasAction = actionChildren !== undefined &amp;&amp; actionChildren !== &#39;&#39;
+  const showOptions = hasAction
+    ? { action: &lt;Button&gt;{actionChildren}&lt;/Button&gt; }
+    : undefined
+
+  useEffect(() =&gt; {
+    if (!defaultOpen) {
+      return
+    }
+    showSnackbar(
+      message,
+      hasAction ? { action: &lt;Button&gt;{actionChildren}&lt;/Button&gt; } : undefined,
+    )
+  }, [actionChildren, hasAction, message, showSnackbar])
+
+  return (
+    &lt;&gt;
+      {snackbar}
+      &lt;Button
+        onClick={() =&gt; {
+          showSnackbar(message, showOptions)
+        }}
+      &gt;
+        show
+      &lt;/Button&gt;
+    &lt;/&gt;
+  )
+}
+
+export const Default: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  parameters: {
+    docs: {
+      source: {
+        language: &#39;tsx&#39;,
+        code: `import { Button, unstable_useSnackbar } from &#39;@charcoal-ui/react&#39;
+
+export function Example() {
+  const [snackbar, showSnackbar] = unstable_useSnackbar()
+
+  return (
+    &lt;&gt;
+      {snackbar}
+      &lt;Button onClick={() =&gt; showSnackbar(&#39;保存しました&#39;)}&gt;
+        保存
+      &lt;/Button&gt;
+    &lt;/&gt;
+  )
+}`,
+      },
+    },
+  },
+}
+
+export const LongMessage: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    message:
+      &#39;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&#39;,
+  },
+}
+
+export const WithLineBreak: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    message: (
+      &lt;&gt;
+        保存に失敗しました
+        &lt;br /&gt;
+        通信環境を確認してください
+      &lt;/&gt;
+    ),
+  },
+}
+
+export const WithAction: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    message: &#39;保存しました&#39;,
+    actionChildren: &#39;取り消す&#39;,
+  },
+  parameters: {
+    docs: {
+      source: {
+        language: &#39;tsx&#39;,
+        code: `import { Button, unstable_useSnackbar } from &#39;@charcoal-ui/react&#39;
+
+export function Example() {
+  const [snackbar, showSnackbar] = unstable_useSnackbar()
+
+  return (
+    &lt;&gt;
+      {snackbar}
+      &lt;Button
+        onClick={() =&gt;
+          showSnackbar(&#39;保存しました&#39;, {
+            action: &lt;Button&gt;取り消す&lt;/Button&gt;,
+          })
+        }
+      &gt;
+        保存
+      &lt;/Button&gt;
+    &lt;/&gt;
+  )
+}`,
+      },
+    },
+  },
+}
+
+export const Top: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    position: &#39;top&#39;,
+    message: &#39;上部に表示します&#39;,
+  },
+}
+
+export const Dim: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    dim: true,
+    message: &#39;Dim の Snackbar&#39;,
+    actionChildren: &#39;閉じる&#39;,
+  },
+}
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Button } from "@charcoal-ui/react";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;SnackbarDemo
+    message=&quot;保存しました&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Long Message</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LongMessage = () =&gt; &lt;SnackbarDemo
+    message=&quot;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Line Break</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithLineBreak = () =&gt; &lt;SnackbarDemo
+    message={(&lt;&gt;保存に失敗しました
+              &lt;br /&gt;通信環境を確認してください
+            &lt;/&gt;)}
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Action</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithAction = () =&gt; &lt;SnackbarDemo
+    message=&quot;保存しました&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20}
+    actionChildren=&quot;取り消す&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Top</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Top = () =&gt; &lt;SnackbarDemo
+    message=&quot;上部に表示します&quot;
+    position=&quot;top&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Dim</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Dim = () =&gt; &lt;SnackbarDemo
+    message=&quot;Dim の Snackbar&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim
+    zIndex={20}
+    actionChildren=&quot;閉じる&quot; /&gt;;</code></pre>
+            </div>
+        </div>
+    
+  </div>
+</article>
+<article
+  class="card 
   no-error 
   has-info 
   no-story-error
@@ -19812,9 +20208,9 @@ value?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-31-react-switch-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-31-react-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-31-react-switch-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-32-react-switch-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-32-react-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-32-react-switch-stories" class="badge ok as-toggle">5 stories</label>
         
       </div>
     </div>
@@ -19826,10 +20222,10 @@ value?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-31-react-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-31-react-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-32-react-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-32-react-switch-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-31-react-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-32-react-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -19991,9 +20387,9 @@ onChange?: ((checked: boolean) =&gt; void)</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SwitchCheckbox</h2>
       <div class="badges">
-        <label for="c-32-react-sandbox-switchcheckbox-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-32-react-sandbox-switchcheckbox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-32-react-sandbox-switchcheckbox-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-33-react-sandbox-switchcheckbox-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-33-react-sandbox-switchcheckbox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-33-react-sandbox-switchcheckbox-stories" class="badge ok as-toggle">1 story</label>
         
       </div>
     </div>
@@ -20005,10 +20401,10 @@ onChange?: ((checked: boolean) =&gt; void)</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-32-react-sandbox-switchcheckbox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-32-react-sandbox-switchcheckbox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-33-react-sandbox-switchcheckbox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-33-react-sandbox-switchcheckbox-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-32-react-sandbox-switchcheckbox-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-33-react-sandbox-switchcheckbox-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -20078,9 +20474,9 @@ rowReverse?: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TagItem</h2>
       <div class="badges">
-        <label for="c-33-react-tagitem-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-33-react-tagitem-info" class="badge info as-toggle">1 info</label>
-        <label for="c-33-react-tagitem-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-34-react-tagitem-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-34-react-tagitem-info" class="badge info as-toggle">1 info</label>
+        <label for="c-34-react-tagitem-stories" class="badge ok as-toggle">9 stories</label>
         
       </div>
     </div>
@@ -20092,10 +20488,10 @@ rowReverse?: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-33-react-tagitem-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-33-react-tagitem-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-34-react-tagitem-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-34-react-tagitem-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-33-react-tagitem-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-34-react-tagitem-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -20277,9 +20673,9 @@ translatedLabel?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextArea</h2>
       <div class="badges">
-        <label for="c-34-react-textarea-props" class="badge ok as-toggle">15 prop types</label>
-        <label for="c-34-react-textarea-info" class="badge info as-toggle">1 info</label>
-        <label for="c-34-react-textarea-stories" class="badge ok as-toggle">20 stories</label>
+        <label for="c-35-react-textarea-props" class="badge ok as-toggle">15 prop types</label>
+        <label for="c-35-react-textarea-info" class="badge info as-toggle">1 info</label>
+        <label for="c-35-react-textarea-stories" class="badge ok as-toggle">20 stories</label>
         
       </div>
     </div>
@@ -20291,10 +20687,10 @@ translatedLabel?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-34-react-textarea-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-34-react-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-35-react-textarea-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-35-react-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-34-react-textarea-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-35-react-textarea-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -20653,9 +21049,9 @@ value?: string | (string &amp; readonly string[])</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextBgColor</h2>
       <div class="badges">
-        <label for="c-35-tailwind-config-colors-text-bg-color-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-35-tailwind-config-colors-text-bg-color-info" class="badge info as-toggle">1 info</label>
-        <label for="c-35-tailwind-config-colors-text-bg-color-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-36-tailwind-config-colors-text-bg-color-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-36-tailwind-config-colors-text-bg-color-info" class="badge info as-toggle">1 info</label>
+        <label for="c-36-tailwind-config-colors-text-bg-color-stories" class="badge ok as-toggle">1 story</label>
         
       </div>
     </div>
@@ -20667,10 +21063,10 @@ value?: string | (string &amp; readonly string[])</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-35-tailwind-config-colors-text-bg-color-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-35-tailwind-config-colors-text-bg-color-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-36-tailwind-config-colors-text-bg-color-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-36-tailwind-config-colors-text-bg-color-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-35-tailwind-config-colors-text-bg-color-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-36-tailwind-config-colors-text-bg-color-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -20736,9 +21132,9 @@ textColorClass: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextEllipsis</h2>
       <div class="badges">
-        <label for="c-36-react-textellipsis-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-37-react-textellipsis-props" class="badge ok as-toggle">6 prop types</label>
         
-        <label for="c-36-react-textellipsis-stories" class="badge ok as-toggle">11 stories</label>
+        <label for="c-37-react-textellipsis-stories" class="badge ok as-toggle">11 stories</label>
         
       </div>
     </div>
@@ -20751,9 +21147,9 @@ textColorClass: string</code></pre>
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
   
-  <input id="c-36-react-textellipsis-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-37-react-textellipsis-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-36-react-textellipsis-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-37-react-textellipsis-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -20919,9 +21315,9 @@ useNowrap?: boolean = false</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextEllipsis</h2>
       <div class="badges">
-        <label for="c-37-react-sandbox-textellipsis-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-38-react-sandbox-textellipsis-props" class="badge ok as-toggle">7 prop types</label>
         
-        <label for="c-37-react-sandbox-textellipsis-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-38-react-sandbox-textellipsis-stories" class="badge ok as-toggle">5 stories</label>
         
       </div>
     </div>
@@ -20934,9 +21330,9 @@ useNowrap?: boolean = false</code></pre>
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
   
-  <input id="c-37-react-sandbox-textellipsis-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-38-react-sandbox-textellipsis-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-37-react-sandbox-textellipsis-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-38-react-sandbox-textellipsis-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -21039,9 +21435,9 @@ theme?: DefaultTheme</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextField</h2>
       <div class="badges">
-        <label for="c-38-react-textfield-props" class="badge ok as-toggle">15 prop types</label>
-        <label for="c-38-react-textfield-info" class="badge info as-toggle">1 info</label>
-        <label for="c-38-react-textfield-stories" class="badge ok as-toggle">14 stories</label>
+        <label for="c-39-react-textfield-props" class="badge ok as-toggle">15 prop types</label>
+        <label for="c-39-react-textfield-info" class="badge info as-toggle">1 info</label>
+        <label for="c-39-react-textfield-stories" class="badge ok as-toggle">14 stories</label>
         
       </div>
     </div>
@@ -21053,10 +21449,10 @@ theme?: DefaultTheme</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-38-react-textfield-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-38-react-textfield-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-39-react-textfield-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-39-react-textfield-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-38-react-textfield-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-39-react-textfield-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -21286,9 +21682,9 @@ value?: string | (string &amp; readonly string[])</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> TokenV2Styled</h2>
       <div class="badges">
-        <label for="c-39-theme-token-v2-demo-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-39-theme-token-v2-demo-info" class="badge info as-toggle">1 info</label>
-        <label for="c-39-theme-token-v2-demo-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-40-theme-token-v2-demo-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-40-theme-token-v2-demo-info" class="badge info as-toggle">1 info</label>
+        <label for="c-40-theme-token-v2-demo-stories" class="badge ok as-toggle">2 stories</label>
         
       </div>
     </div>
@@ -21299,9 +21695,9 @@ value?: string | (string &amp; readonly string[])</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-39-theme-token-v2-demo-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-39-theme-token-v2-demo-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-39-theme-token-v2-demo-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-40-theme-token-v2-demo-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-40-theme-token-v2-demo-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-40-theme-token-v2-demo-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
 
@@ -21398,169 +21794,18 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
   no-story-error
   no-doc-error"
   role="listitem"
-  aria-label="unstable_Snackbar">
-  <div class="head">
-    <div class="title">
-      <h2><span class="status-dot dot-ok"></span> unstable_Snackbar</h2>
-      <div class="badges">
-        <label for="c-40-react-unstable-snackbar-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-40-react-unstable-snackbar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-40-react-unstable-snackbar-stories" class="badge ok as-toggle">6 stories</label>
-        
-      </div>
-    </div>
-    <div class="meta" title="./packages/react/src/components/Notification/Snackbar/index.story.tsx">react-unstable-snackbar · ./packages/react/src/components/Notification/Snackbar/index.story.tsx</div>
-    
-    
-    
-  </div>
-
-  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  
-  <input id="c-40-react-unstable-snackbar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-40-react-unstable-snackbar-stories" class="tg tg-stories" type="checkbox" hidden />
-  
-  <input id="c-40-react-unstable-snackbar-props" class="tg tg-props" type="checkbox" hidden />
-
-  <div class="panels">
-    
-    
-        <div class="panel panel-info">
-          
-    <div class="note info">
-      <div class="note-title">Info</div>
-      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
-    </div>
-        </div>
-    
-        <div class="panel panel-props">
-          <div class="note ok">
-            <div class="row">
-              <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">7 prop types</span>
-            </div>
-            <pre><code>Component: packages/react/src/components/Notification/Snackbar/index.tsx::default</code></pre>
-            <pre><code>Props:</code></pre>
-            <pre><code>className?: string
-
-css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
-
-/**
- * 暗い背景色
- */
-dim?: boolean = false
-
-/**
- * 画面端からの距離（ピクセル）
- */
-offset?: number = 16
-
-portalContainer?: HTMLElement
-
-/**
- * Snackbar の表示位置。ボタン付きの場合は `bottom` に固定される
- */
-position?: Position = bottom
-
-zIndex?: number</code></pre>
-          </div>
-        </div>
-    
-        <div class="panel panel-stories">
-          
-          
-          
-          <div class="note ok">
-                <div class="row">
-                  <span class="ex-name">Imports</span>
-                </div>
-                <pre><code>import { Button, unstable_Snackbar } from "@charcoal-ui/react";</code></pre>
-              </div>
-          
-          
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Default</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const Default = () =&gt; &lt;SnackbarDemo message=&quot;保存しました&quot; duration={5000} /&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Long Message</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const LongMessage = () =&gt; &lt;SnackbarDemo
-    message=&quot;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&quot;
-    duration={5000} /&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">With Line Break</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const WithLineBreak = () =&gt; &lt;SnackbarDemo
-    message={(&lt;&gt;保存に失敗しました
-              &lt;br /&gt;通信環境を確認してください
-            &lt;/&gt;)}
-    duration={5000} /&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">With Button</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const WithButton = () =&gt; &lt;SnackbarDemo message=&quot;保存しました&quot; duration={5000} buttonChildren=&quot;取り消す&quot; /&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Top</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const Top = () =&gt; &lt;SnackbarDemo message=&quot;上部に表示します&quot; duration={5000} position=&quot;top&quot; /&gt;;</code></pre>
-            </div>
-            <div class="note ok">
-              <div class="row">
-                <span class="ex-name">Dim</span>
-                <span class="badge ok">story ok</span>
-              </div>
-              
-              
-              <pre><code>const Dim = () =&gt; &lt;SnackbarDemo message=&quot;Dim の Snackbar&quot; duration={5000} dim buttonChildren=&quot;閉じる&quot; /&gt;;</code></pre>
-            </div>
-        </div>
-    
-  </div>
-</article>
-<article
-  class="card 
-  no-error 
-  has-info 
-  no-story-error
-  no-doc-error"
-  role="listitem"
   aria-label="unstable_Toast">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> unstable_Toast</h2>
       <div class="badges">
-        <label for="c-41-react-unstable-toast-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-41-react-unstable-toast-info" class="badge info as-toggle">1 info</label>
-        <label for="c-41-react-unstable-toast-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-41-react-toast-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-41-react-toast-info" class="badge info as-toggle">1 info</label>
+        <label for="c-41-react-toast-stories" class="badge ok as-toggle">5 stories</label>
         
       </div>
     </div>
-    <div class="meta" title="./packages/react/src/components/Notification/Toast/index.story.tsx">react-unstable-toast · ./packages/react/src/components/Notification/Toast/index.story.tsx</div>
+    <div class="meta" title="./packages/react/src/components/Notification/Toast/index.story.tsx">react-toast · ./packages/react/src/components/Notification/Toast/index.story.tsx</div>
     
     
     
@@ -21568,10 +21813,10 @@ zIndex?: number</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-41-react-unstable-toast-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-41-react-unstable-toast-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-41-react-toast-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-41-react-toast-stories" class="tg tg-stories" type="checkbox" hidden />
   
-  <input id="c-41-react-unstable-toast-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-41-react-toast-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -21588,7 +21833,7 @@ zIndex?: number</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">6 prop types</span>
+              <span class="badge ok">8 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Notification/Toast/index.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
@@ -21597,9 +21842,19 @@ zIndex?: number</code></pre>
 css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
 /**
+ * 通知を表示する時間（ミリ秒）。負の値は 0、数値でない値は 5000 として扱う
+ */
+duration?: number = 5000
+
+/**
  * 画面端からの距離（ピクセル）
  */
 offset?: number = 16
+
+/**
+ * 表示中の通知がある場合の次の通知の表示方法
+ */
+order?: NotificationOrder = &#39;queue&#39;
 
 portalContainer?: HTMLElement
 
@@ -21631,7 +21886,14 @@ zIndex?: number</code></pre>
               </div>
               
               
-              <pre><code>const Default = () =&gt; &lt;ToastDemo message=&quot;保存しました&quot; duration={5000} variant=&quot;success&quot; /&gt;;</code></pre>
+              <pre><code>const Default = () =&gt; &lt;ToastDemo
+    message=&quot;保存しました&quot;
+    position=&quot;top&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    zIndex={20}
+    type=&quot;success&quot; /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -21640,7 +21902,14 @@ zIndex?: number</code></pre>
               </div>
               
               
-              <pre><code>const Error = () =&gt; &lt;ToastDemo message=&quot;保存に失敗しました&quot; duration={5000} variant=&quot;error&quot; /&gt;;</code></pre>
+              <pre><code>const Error = () =&gt; &lt;ToastDemo
+    message=&quot;保存に失敗しました&quot;
+    position=&quot;top&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    zIndex={20}
+    type=&quot;error&quot; /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -21651,8 +21920,12 @@ zIndex?: number</code></pre>
               
               <pre><code>const LongMessage = () =&gt; &lt;ToastDemo
     message=&quot;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&quot;
+    position=&quot;top&quot;
+    offset={16}
     duration={5000}
-    variant=&quot;success&quot; /&gt;;</code></pre>
+    order=&quot;queue&quot;
+    zIndex={20}
+    type=&quot;success&quot; /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -21665,8 +21938,12 @@ zIndex?: number</code></pre>
     message={(&lt;&gt;保存に失敗しました
               &lt;br /&gt;通信環境を確認してください
             &lt;/&gt;)}
+    position=&quot;top&quot;
+    offset={16}
     duration={5000}
-    variant=&quot;success&quot; /&gt;;</code></pre>
+    order=&quot;queue&quot;
+    zIndex={20}
+    type=&quot;success&quot; /&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
@@ -21675,7 +21952,14 @@ zIndex?: number</code></pre>
               </div>
               
               
-              <pre><code>const Bottom = () =&gt; &lt;ToastDemo message=&quot;下部に表示します&quot; duration={5000} variant=&quot;success&quot; position=&quot;bottom&quot; /&gt;;</code></pre>
+              <pre><code>const Bottom = () =&gt; &lt;ToastDemo
+    message=&quot;下部に表示します&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    zIndex={20}
+    type=&quot;success&quot; /&gt;;</code></pre>
             </div>
         </div>
     
@@ -36295,7 +36579,7 @@ const Global = createGlobalStyle`
           <label for="no-component-import-found-toggle" class="group-header">
             <span class="caret">▸</span>
             <span class="group-title">No component import found</span>
-            <span class="group-count">5</span>
+            <span class="group-count">6</span>
           </label>
           <div class="group-cards">
 <article
@@ -37339,14 +37623,410 @@ export const Basic: StoryObj&lt;typeof ListItem&gt; = {
   no-story-error
   no-doc-error"
   role="listitem"
+  aria-label="SnackbarDemo">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> SnackbarDemo</h2>
+      <div class="badges">
+        <label for="c-error-4-react-snackbar-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-error-4-react-snackbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-4-react-snackbar-stories" class="badge ok as-toggle">6 stories</label>
+        
+      </div>
+    </div>
+    <div class="meta" title="./packages/react/src/components/Notification/Snackbar/index.story.tsx">react-snackbar · ./packages/react/src/components/Notification/Snackbar/index.story.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-error-4-react-snackbar-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-4-react-snackbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-4-react-snackbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">Prop type error</div>
+      <div class="note-body"><pre><code>No component file found for the &quot;SnackbarDemo&quot; component.
+  13 | }
+  14 |
+&gt; 15 | export default {
+     | ^
+  16 |   title: &#39;react/Snackbar&#39;,
+  17 |   component: SnackbarDemo,
+  18 |   parameters: {
+
+./packages/react/src/components/Notification/Snackbar/index.story.tsx:
+import { useEffect, type ReactNode } from &#39;react&#39;
+import { Meta, StoryObj } from &#39;@storybook/react-vite&#39;
+import Button from &#39;../../Button&#39;
+import { useSnackbar as unstable_useSnackbar } from &#39;.&#39;
+
+const defaultOpen = !!process.env.TEST
+
+type SnackbarStoryArgs = NonNullable&lt;
+  Parameters&lt;typeof unstable_useSnackbar&gt;[0]
+&gt; &amp; {
+  message: ReactNode
+  actionChildren?: string
+}
+
+export default {
+  title: &#39;react/Snackbar&#39;,
+  component: SnackbarDemo,
+  parameters: {
+    layout: &#39;centered&#39;,
+    tokenVersion: &#39;v2&#39;,
+    controls: {
+      sort: &#39;requiredFirst&#39;,
+    },
+    docs: {
+      description: {
+        component: `\`unstable_useSnackbar\` を使用すると、表示時間やキューを含む表示制御を利用できます。同時に表示できるスナックバーは1つのみです。表示中に別のスナックバーが発生した場合は、\`order\` に応じてキューに積むか、表示中のスナックバーを置き換えます。
+
+別々の \`unstable_useSnackbar\` を呼び出した場合は互いに独立するため、同時表示数は1件に制限されません。
+
+\`UnstableSnackbar\` は表示専用のコンポーネントです。表示状態や表示時間を制御する機構を持たず、アクションの指定を必須とします。表示の切り替えは利用側で制御してください。`,
+      },
+    },
+  },
+  args: {
+    message: &#39;保存しました&#39;,
+    position: &#39;bottom&#39;,
+    offset: 16,
+    duration: 5000,
+    order: &#39;queue&#39;,
+    dim: false,
+    zIndex: 20,
+  },
+  argTypes: {
+    position: {
+      options: [&#39;top&#39;, &#39;bottom&#39;],
+      control: { type: &#39;inline-radio&#39; },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &quot;&#39;bottom&#39;&quot; } },
+    },
+    offset: {
+      control: { type: &#39;number&#39;, min: 0, step: 1 },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;16&#39; } },
+    },
+    duration: {
+      control: { type: &#39;number&#39;, min: 0, step: 500 },
+      description: &#39;表示時間（ミリ秒）&#39;,
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;5000&#39; } },
+    },
+    order: {
+      options: [&#39;queue&#39;, &#39;replace&#39;],
+      control: { type: &#39;inline-radio&#39; },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &quot;&#39;queue&#39;&quot; } },
+    },
+    dim: {
+      control: &#39;boolean&#39;,
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;false&#39; } },
+    },
+    zIndex: {
+      control: { type: &#39;number&#39;, min: 0, step: 1 },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;20&#39; } },
+    },
+    className: {
+      control: &#39;text&#39;,
+      table: { category: &#39;Hook&#39; },
+    },
+    portalContainer: {
+      control: false,
+      table: { category: &#39;Hook&#39; },
+    },
+    css: {
+      table: { disable: true },
+    },
+    message: {
+      control: &#39;text&#39;,
+      table: { category: &#39;Show&#39; },
+    },
+    actionChildren: {
+      name: &#39;action&#39;,
+      control: &#39;text&#39;,
+      table: { category: &#39;Show&#39; },
+    },
+  },
+  render: (args) =&gt; &lt;SnackbarDemo {...args} /&gt;,
+} as Meta&lt;SnackbarStoryArgs&gt;
+
+function SnackbarDemo({
+  message,
+  actionChildren,
+  ...props
+}: SnackbarStoryArgs) {
+  const [snackbar, showSnackbar] = unstable_useSnackbar(props)
+  const hasAction = actionChildren !== undefined &amp;&amp; actionChildren !== &#39;&#39;
+  const showOptions = hasAction
+    ? { action: &lt;Button&gt;{actionChildren}&lt;/Button&gt; }
+    : undefined
+
+  useEffect(() =&gt; {
+    if (!defaultOpen) {
+      return
+    }
+    showSnackbar(
+      message,
+      hasAction ? { action: &lt;Button&gt;{actionChildren}&lt;/Button&gt; } : undefined,
+    )
+  }, [actionChildren, hasAction, message, showSnackbar])
+
+  return (
+    &lt;&gt;
+      {snackbar}
+      &lt;Button
+        onClick={() =&gt; {
+          showSnackbar(message, showOptions)
+        }}
+      &gt;
+        show
+      &lt;/Button&gt;
+    &lt;/&gt;
+  )
+}
+
+export const Default: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  parameters: {
+    docs: {
+      source: {
+        language: &#39;tsx&#39;,
+        code: `import { Button, unstable_useSnackbar } from &#39;@charcoal-ui/react&#39;
+
+export function Example() {
+  const [snackbar, showSnackbar] = unstable_useSnackbar()
+
+  return (
+    &lt;&gt;
+      {snackbar}
+      &lt;Button onClick={() =&gt; showSnackbar(&#39;保存しました&#39;)}&gt;
+        保存
+      &lt;/Button&gt;
+    &lt;/&gt;
+  )
+}`,
+      },
+    },
+  },
+}
+
+export const LongMessage: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    message:
+      &#39;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&#39;,
+  },
+}
+
+export const WithLineBreak: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    message: (
+      &lt;&gt;
+        保存に失敗しました
+        &lt;br /&gt;
+        通信環境を確認してください
+      &lt;/&gt;
+    ),
+  },
+}
+
+export const WithAction: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    message: &#39;保存しました&#39;,
+    actionChildren: &#39;取り消す&#39;,
+  },
+  parameters: {
+    docs: {
+      source: {
+        language: &#39;tsx&#39;,
+        code: `import { Button, unstable_useSnackbar } from &#39;@charcoal-ui/react&#39;
+
+export function Example() {
+  const [snackbar, showSnackbar] = unstable_useSnackbar()
+
+  return (
+    &lt;&gt;
+      {snackbar}
+      &lt;Button
+        onClick={() =&gt;
+          showSnackbar(&#39;保存しました&#39;, {
+            action: &lt;Button&gt;取り消す&lt;/Button&gt;,
+          })
+        }
+      &gt;
+        保存
+      &lt;/Button&gt;
+    &lt;/&gt;
+  )
+}`,
+      },
+    },
+  },
+}
+
+export const Top: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    position: &#39;top&#39;,
+    message: &#39;上部に表示します&#39;,
+  },
+}
+
+export const Dim: StoryObj&lt;SnackbarStoryArgs&gt; = {
+  args: {
+    dim: true,
+    message: &#39;Dim の Snackbar&#39;,
+    actionChildren: &#39;閉じる&#39;,
+  },
+}
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Button } from "@charcoal-ui/react";</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Default</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Default = () =&gt; &lt;SnackbarDemo
+    message=&quot;保存しました&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Long Message</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LongMessage = () =&gt; &lt;SnackbarDemo
+    message=&quot;保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Line Break</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithLineBreak = () =&gt; &lt;SnackbarDemo
+    message={(&lt;&gt;保存に失敗しました
+              &lt;br /&gt;通信環境を確認してください
+            &lt;/&gt;)}
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">With Action</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithAction = () =&gt; &lt;SnackbarDemo
+    message=&quot;保存しました&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20}
+    actionChildren=&quot;取り消す&quot; /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Top</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Top = () =&gt; &lt;SnackbarDemo
+    message=&quot;上部に表示します&quot;
+    position=&quot;top&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim={false}
+    zIndex={20} /&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Dim</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Dim = () =&gt; &lt;SnackbarDemo
+    message=&quot;Dim の Snackbar&quot;
+    position=&quot;bottom&quot;
+    offset={16}
+    duration={5000}
+    order=&quot;queue&quot;
+    dim
+    zIndex={20}
+    actionChildren=&quot;閉じる&quot; /&gt;;</code></pre>
+            </div>
+        </div>
+    
+  </div>
+</article>
+<article
+  class="card 
+  has-error 
+  has-info 
+  no-story-error
+  no-doc-error"
+  role="listitem"
   aria-label="TokenV2Styled">
   <div class="head">
     <div class="title">
       <h2><span class="status-dot dot-err"></span> TokenV2Styled</h2>
       <div class="badges">
-        <label for="c-error-4-theme-token-v2-demo-err" class="badge err as-toggle">prop type error</label>
-        <label for="c-error-4-theme-token-v2-demo-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-4-theme-token-v2-demo-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-error-5-theme-token-v2-demo-err" class="badge err as-toggle">prop type error</label>
+        <label for="c-error-5-theme-token-v2-demo-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-5-theme-token-v2-demo-stories" class="badge ok as-toggle">2 stories</label>
         
       </div>
     </div>
@@ -37357,9 +38037,9 @@ export const Basic: StoryObj&lt;typeof ListItem&gt; = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-4-theme-token-v2-demo-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-4-theme-token-v2-demo-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-4-theme-token-v2-demo-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-5-theme-token-v2-demo-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-5-theme-token-v2-demo-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-5-theme-token-v2-demo-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
 
