@@ -1,14 +1,26 @@
-import { createRef, type ComponentProps } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
 import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
-import Snackbar, { useSnackbar, type SnackbarHandler } from '.'
+import Snackbar, { useSnackbar, type ShowSnackbarOptions } from '.'
 
-function renderSnackbar(props: ComponentProps<typeof Snackbar> = {}) {
-  const ref = createRef<SnackbarHandler>()
-  const result = render(<Snackbar ref={ref} {...props} />)
-  const show: SnackbarHandler['show'] = (message, options) => {
+function renderSnackbar(props: Parameters<typeof useSnackbar>[0] = {}) {
+  let showSnackbar:
+    ((message: ReactNode, options?: ShowSnackbarOptions) => void) | undefined
+
+  function SnackbarApp() {
+    const [snackbar, show] = useSnackbar(props)
+    useEffect(() => {
+      showSnackbar = show
+    }, [show])
+    return snackbar
+  }
+
+  const result = render(<SnackbarApp />)
+  function show(message: ReactNode, options?: ShowSnackbarOptions) {
+    if (showSnackbar === undefined) throw new Error('showSnackbar not found')
+    const currentShowSnackbar = showSnackbar
     act(() => {
-      ref.current?.show(message, options)
+      currentShowSnackbar(message, options)
     })
     act(() => {
       vi.advanceTimersByTime(300)
@@ -36,6 +48,25 @@ describe('Snackbar', () => {
   afterEach(() => {
     cleanup()
     vi.useRealTimers()
+  })
+
+  it('renders the message and required action', () => {
+    render(
+      <Snackbar
+        message="保存しました"
+        action={<button type="button">取り消す</button>}
+      />,
+    )
+
+    expect(screen.getByText('保存しました')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '取り消す' })).toBeInTheDocument()
+  })
+
+  it('requires a non-null action at the type level', () => {
+    // @ts-expect-error action must not be undefined
+    const undefinedAction = <Snackbar message="x" action={undefined} />
+
+    expect(undefinedAction).toBeDefined()
   })
 
   it('shows a message and hides after 5 seconds', () => {

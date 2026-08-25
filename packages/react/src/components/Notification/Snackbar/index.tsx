@@ -1,8 +1,8 @@
 import '../layout.css'
 import './index.css'
 
-import { forwardRef, useImperativeHandle, useRef } from 'react'
-import type { ReactNode } from 'react'
+import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
+import { useClassNames } from '../../../_lib/useClassNames'
 import { NotificationItem } from '../NotificationItem'
 import { NotificationRegion } from '../NotificationRegion'
 import { useNotificationQueue } from '../useNotificationQueue'
@@ -12,30 +12,23 @@ export type SnackbarCloseReason =
   'timeout' | 'replaced' | 'action' | 'close' | 'unmounted'
 
 export type ShowSnackbarOptions = {
-  /**
-   * Snackbar の右側に表示するアクション
-   */
   action?: ReactNode
-  /**
-   * Snackbar が閉じるときに呼び出される
-   */
   onClose?: (reason: SnackbarCloseReason) => void
 }
 
-export type SnackbarHandler = {
-  show: (message: ReactNode, options?: ShowSnackbarOptions) => void
+type SnackbarBaseProps = {
+  message: ReactNode
+  action?: ReactNode
+  dim?: boolean
+} & Omit<HTMLAttributes<HTMLDivElement>, 'children'>
+
+export type SnackbarProps = Omit<SnackbarBaseProps, 'action'> & {
+  /** Snackbar の右側に表示するアクション */
+  action: NonNullable<ReactNode>
 }
 
-export type SnackbarProps = Omit<NotificationProps, 'position'> & {
-  /**
-   * Snackbar の表示位置。ボタン付きの場合は `bottom` に固定される
-   * @default 'bottom'
-   */
+export type UseSnackbarProps = Omit<NotificationProps, 'position'> & {
   position?: Position
-  /**
-   * 暗い背景色
-   * @default false
-   */
   dim?: boolean
 }
 
@@ -44,12 +37,24 @@ type SnackbarContent = {
   action?: ReactNode
 }
 
-const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
-  { position = 'bottom', dim = false, duration, order, ...regionProps },
-  ref,
-) {
+const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
+  function Snackbar(props, ref) {
+    return <SnackbarBase {...props} ref={ref} />
+  },
+)
+
+export default Snackbar
+
+export function useSnackbar(props: UseSnackbarProps = {}) {
   'use memo'
 
+  const {
+    position = 'bottom',
+    dim = false,
+    duration,
+    order,
+    ...regionProps
+  } = props
   const { state, itemRef, enqueue, close, onHoverStart, onHoverEnd } =
     useNotificationQueue<SnackbarContent, SnackbarCloseReason>('snackbar', {
       duration,
@@ -59,24 +64,14 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
     })
 
   function show(message: ReactNode, options: ShowSnackbarOptions = {}) {
-    enqueue(
-      {
-        message,
-        action: options.action,
-      },
-      options.onClose,
-    )
+    enqueue({ message, action: options.action }, options.onClose)
   }
 
-  useImperativeHandle(ref, () => ({ show }))
-
-  // アクション付きの Snackbar は常に下部に表示される
   const hasAction = state.visibleToasts.some(
     (toast) => toast.content.action !== undefined,
   )
   const effectivePosition = hasAction ? 'bottom' : position
-
-  return (
+  const element = (
     <NotificationRegion
       name="snackbar"
       state={state}
@@ -96,36 +91,46 @@ const Snackbar = forwardRef<SnackbarHandler, SnackbarProps>(function Snackbar(
           data-with-action={toast.content.action !== undefined}
         >
           {toast.content.action !== undefined && (
-            <SnackbarAction
-              action={toast.content.action}
-              onClick={() => close(toast.key, 'action')}
-            />
+            <div onClick={() => close(toast.key, 'action')}>
+              <SnackbarAction action={toast.content.action} />
+            </div>
           )}
         </NotificationItem>
       ))}
     </NotificationRegion>
   )
-})
 
-export default Snackbar
-
-export function useSnackbar(props: SnackbarProps = {}) {
-  'use memo'
-
-  const snackbarHandlerRef = useRef<SnackbarHandler>(null)
-  const element = <Snackbar ref={snackbarHandlerRef} {...props} />
-  function show(message: ReactNode, options?: ShowSnackbarOptions) {
-    snackbarHandlerRef.current?.show(message, options)
-  }
   return [element, show] as const
 }
 
-function SnackbarAction({
-  action,
-  onClick,
-}: {
-  action: ReactNode
-  onClick: () => void
-}) {
-  return <div onClick={onClick}>{action}</div>
+const SnackbarBase = forwardRef<HTMLDivElement, SnackbarBaseProps>(
+  function SnackbarBase(
+    { message, action, dim = false, className, ...rootProps },
+    ref,
+  ) {
+    const classNames = useClassNames(
+      'charcoal-notification',
+      'charcoal-snackbar',
+      className,
+    )
+
+    return (
+      <div
+        {...rootProps}
+        ref={ref}
+        className={classNames}
+        data-dim={dim}
+        data-with-action={action !== undefined}
+      >
+        <div role="status" className="charcoal-notification-content">
+          <div className="charcoal-notification-label">{message}</div>
+        </div>
+        {action !== undefined && <SnackbarAction action={action} />}
+      </div>
+    )
+  },
+)
+
+function SnackbarAction({ action }: { action: ReactNode }) {
+  return <div>{action}</div>
 }

@@ -15,7 +15,7 @@ type ToastStoryArgs = unstable_ToastProps & {
 }
 
 export default {
-  title: 'react/unstable_Toast',
+  title: 'react/Toast',
   component: unstable_Toast,
   parameters: {
     layout: 'centered',
@@ -33,33 +33,36 @@ export default {
   },
   args: {
     message: '保存しました',
+    position: 'top',
+    offset: 16,
     duration: 5000,
     order: 'queue',
+    zIndex: 20,
     type: 'success',
   },
   argTypes: {
     position: {
       options: ['top', 'bottom'],
       control: { type: 'inline-radio' },
-      table: { category: 'Hook' },
+      table: { category: 'Hook', defaultValue: { summary: "'top'" } },
     },
     offset: {
       control: { type: 'number', min: 0, step: 1 },
-      table: { category: 'Hook' },
+      table: { category: 'Hook', defaultValue: { summary: '16' } },
     },
     duration: {
       control: { type: 'number', min: 0, step: 500 },
       description: '表示時間（ミリ秒）',
-      table: { category: 'Hook' },
+      table: { category: 'Hook', defaultValue: { summary: '5000' } },
     },
     order: {
       options: ['queue', 'replace'],
       control: { type: 'inline-radio' },
-      table: { category: 'Hook' },
+      table: { category: 'Hook', defaultValue: { summary: "'queue'" } },
     },
     zIndex: {
       control: { type: 'number', min: 0, step: 1 },
-      table: { category: 'Hook' },
+      table: { category: 'Hook', defaultValue: { summary: '20' } },
     },
     className: {
       control: 'text',

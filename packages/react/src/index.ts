@@ -107,10 +107,10 @@ export {
   type ScrollStepContext,
 } from './components/Carousel'
 export {
-  default as unstable_Snackbar,
+  default as UnstableSnackbar,
   useSnackbar as unstable_useSnackbar,
-  type SnackbarProps as unstable_SnackbarProps,
-  type SnackbarHandler as unstable_SnackbarHandler,
+  type SnackbarProps as UnstableSnackbarProps,
+  type UseSnackbarProps as unstable_UseSnackbarProps,
   type SnackbarCloseReason as unstable_SnackbarCloseReason,
   type ShowSnackbarOptions as unstable_ShowSnackbarOptions,
 } from './components/Notification/Snackbar'
