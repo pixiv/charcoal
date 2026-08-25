@@ -375,7 +375,6 @@ const GradientContainer = styled.div<{ fadeInGradient: boolean }>`
     `}
 
   margin-right: ${-GRADIENT_WIDTH}px;
-  /* stylelint-disable-next-line no-duplicate-selectors */
   ${CarouselContainer} {
     padding-right: ${GRADIENT_WIDTH}px;
   }

@@ -224,7 +224,6 @@ const CircleButton = styled.button<{ noBackground?: boolean }>`
    * Safari doesn't correctly repaint the elements when they're reordered in response to interaction.
    * This forces it to repaint them. This doesn't work if put on the parents either, has to be here.
    */
-  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-transform: translateZ(0);
 
   &[hidden] {
@@ -255,7 +254,6 @@ const CircleButton = styled.button<{ noBackground?: boolean }>`
   ${({ noBackground = false }) =>
     noBackground &&
     css`
-      /* stylelint-disable-next-line no-duplicate-selectors */
       &:hover {
         background: transparent;
       }
