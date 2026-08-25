@@ -28,6 +28,9 @@ const generalConfig: Omit<ViteStorybookConfig, 'framework'> = {
   staticDirs: ['./static'],
   typescript: {
     reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      exclude: ['**/*.stories.tsx', '**/.storybook/**'],
+    },
   },
   managerHead: (head) => `${head}
       <title>Charcoal ドキュメント</title>
