@@ -1,0 +1,102 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Styling Guide" />
+
+# スタイリングの選び方
+
+charcoal は同じデザイントークンを 3 通りの方法で使えるようにしています。このページは**なぜそうなっているか**を説明します。実際の手順は各パッケージのクイックスタート、またはエージェント向けの [skills](https://github.com/pixiv/charcoal/tree/main/skills) を参照してください。
+
+## 三層構造
+
+charcoal の設計思想は「定数」「ユーティリティ」「コンポーネント」の三層です。
+
+| 層                 | 中身                                                              | パッケージ                                                          | 選択の余地           |
+| ------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------- |
+| 定数               | デザイントークン                                                  | `@charcoal-ui/foundation` `@charcoal-ui/theme`                      | なし。全員これを使う |
+| **ユーティリティ** | 定数を CSS の表現に落とし込み、マークアップに使えるようにしたもの | `@charcoal-ui/tailwind-config` `@charcoal-ui/styled` または素の CSS | **ここだけ**         |
+| コンポーネント     | 見た目と挙動が一体の UI 部品                                      | `@charcoal-ui/react` `@charcoal-ui/icons`                           | なし                 |
+
+**利用者が選ぶのは真ん中の 1 層だけ**です。ここを押さえておかないと、次の 2 つが混ざります。
+
+- **「styled から pure CSS へ」** — コンポーネント層の内部実装が変わった話です。v4 で `@charcoal-ui/react` が styled-components への依存を捨てました。利用者に選択権はありません。
+- **「styled と Tailwind のどちらか」** — ユーティリティ層で利用者が選ぶ話です。自分のアプリのマークアップをどう書くか、という別の問題です。
+
+`@charcoal-ui/react` のコンポーネントを使うことと、styled-components や Tailwind を使うことは独立しています。「Tailwind を使っているのに `@charcoal-ui/styled` も要るのか」という疑問が出たら、この 2 つが混ざっています。答えは要りません。
+
+## 3 つの経路
+
+### CSS Variables を直接使う
+
+`@charcoal-ui/theme` が配布する静的 CSS を読み込み、`var(--charcoal-color-*)` を書きます。追加の依存がなく、素の CSS でも CSS Modules でも vanilla-extract でも同じように使えます。**新規に導入するならこれが既定**です。
+
+### Tailwind
+
+`@charcoal-ui/tailwind-config` が preset を提供します。Design Token 2.0 の新機能はまずここに入るため、**現在もっとも活発に開発されている経路**です。
+
+Tailwind 標準の `dark:` バリアントはサポートしません。charcoal のトークンは light と dark で**同じ名前のまま値が変わる**設計なので、`dark:bg-background1` という書き方が成立しないためです。代わりに preset へテーマのマップを渡し、CSS Variables の値そのものを切り替えます。
+
+### styled-components
+
+`@charcoal-ui/styled` は、すでに styled-components で書かれたコードベースのために存在します。
+
+**Design Token 2.0 には対応していません。** パッケージ全体が非推奨というわけではなく（`@deprecated` が付いているのは `createTheme` だけです）、新機能が入らないまま Token 1.0 に留まっている、という状態です。新規採用は避け、既存資産がある場合の着地点として使ってください。
+
+## Design Token 2.0 はオプトイン
+
+v6 のコンポーネントは Design Token 2.0 の CSS Variables を参照します。ただし **2.0 は既定では有効になりません。**
+
+```html
+<html lang="ja" class="ch-token-v2">
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+`css/v2/light.css` のセレクタは次の形です。
+
+```css
+:root.ch-token-v2[data-theme='light'],
+:root.ch-token-v2:not([data-theme]),
+:root[data-theme='light'] .ch-token-v2,
+:root:not([data-theme]) .ch-token-v2 {
+  --charcoal-color-…: …;
+}
+```
+
+`.ch-token-v2` がどこにも無いと、light 側の規則は 1 つもマッチせず、トークンは未定義のままになります。エラーも警告も出ません。CSS Variables は継承で効くので、クラスは対象コンポーネント自身かその祖先に付けてください。
+
+dark だけは `:root[data-theme='dark']` に定義されており、`.ch-token-v2` の有無に関係なくページ全体へ効きます。段階移行のために light 側だけをスコープした結果の非対称です。
+
+Tailwind 経路も例外ではありません。preset は `var(--charcoal-color-*)` を**参照する**クラスを生成するだけで、変数自体は定義しないためです。
+
+## v1 互換レイヤー
+
+既存画面の見た目を保ったまま v6 へ上げる場合は、2.0 の代わりに互換レイヤーを読み込みます。
+
+```tsx
+import '@charcoal-ui/theme/css/v1/remap.css'
+```
+
+2.0 のトークン名を v1 相当の値へ解決します。ただし 2.0 では複数の v1 トークンが 1 つの semantic token に統合されているため、単一の remap 値から複数の旧値を同時に再現できません。Button・Checkbox・Radio・Switch のテキスト色など、いくつかの箇所では v5 と完全に同じ配色になりません。
+
+## カスケードと優先度
+
+`@charcoal-ui/react` は CSS を 2 通りの形で配布します。
+
+|          | `dist/index.css`                   | `dist/layered.css`                                   |
+| -------- | ---------------------------------- | ---------------------------------------------------- |
+| 優先度   | 通常のカスケード（詳細度勝負）     | `@layer charcoal` に入る＝レイヤー無指定より必ず弱い |
+| 上書き   | セレクタの詳細度を上げる必要がある | そのまま上書きできる                                 |
+| 対応環境 | 広い                               | iOS 15.4+                                            |
+
+v4 で styled-components をやめた副作用として、`styled(Button)` による上書きの優先度が変わる場合があります。レイヤー無指定のスタイル（styled-components の生成 CSS も Tailwind のユーティリティも）は必ずレイヤー付きより強いため、`layered.css` に切り替えると上書きが詳細度に依存せず安定します。
+
+## 次に読むもの
+
+- [`@charcoal-ui/react` クイックスタート](/docs/react-readme--docs)
+- [`@charcoal-ui/tailwind-config` クイックスタート](/docs/tailwind-config-readme--docs)
+- [`@charcoal-ui/styled` クイックスタート](/docs/styled-readme--docs)
+- [v6.0.0 移行ガイド](/docs/v6-0-0--docs)
+
+コーディングエージェントに手順を渡したい場合は、リポジトリの [`skills/`](https://github.com/pixiv/charcoal/tree/main/skills) をインストールしてください。Claude Code のプラグインとしても `npx skills` 経由でも入ります。
