@@ -5,9 +5,10 @@ import { createTailwindConfig } from '@charcoal-ui/tailwind-config'
  * @type {import('tailwindcss').Config}
  */
 export default {
-  darkMode: false,
   content: [
-    '**/*.tsx',
+    './.storybook/**/*.tsx',
+    './packages/**/*.tsx',
+    '!./packages/**/node_modules/**',
     /* pluginで生成されるクラス名をチェックしたい */
     'packages/tailwind-config/src/__snapshots__/iconsV2.test.ts.snap',
   ],
