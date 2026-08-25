@@ -1,5 +1,7 @@
 :root {
+  --charcoal-radius-oval: 999999px;
   /* 互換レイヤー: focus幅の実値 */
+  --charcoal-border-width-m: 1px;
   --charcoal-border-width-focus-2: 4px;
   --charcoal-border-width-focus-1: 0px;
   /* 互換レイヤー: typography aliasから参照するv1 textプリミティブ */
@@ -39,8 +41,12 @@
   --charcoal-space-104: 104px;
   --charcoal-space-64: 64px;
   /* 互換レイヤー: スペーシングの上書き */
+  --charcoal-space-46: 32px;
   --charcoal-space-40: 40px;
+  --charcoal-space-30: 16px;
+  --charcoal-space-25: 12px;
   --charcoal-space-24: 24px;
+  --charcoal-space-20: 8px;
   --charcoal-space-16: 16px;
   --charcoal-space-8: 8px;
   --charcoal-space-4: 4px;
