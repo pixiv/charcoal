@@ -101,7 +101,7 @@ describe('resolve golden examples', () => {
     })
   })
 
-  test.skip('resolve color/container/primary/default (Phase 2)', () => {
+  test('resolve color/container/primary/default', () => {
     const result = parseStdout(
       run(['resolve', 'color/container/primary/default']),
     )
@@ -117,7 +117,7 @@ describe('resolve golden examples', () => {
     })
   })
 
-  test.skip('resolve --charcoal-color-text-default (Phase 2)', () => {
+  test('resolve --charcoal-color-text-default', () => {
     const result = parseStdout(
       run(['resolve', '--charcoal-color-text-default']),
     )
@@ -128,7 +128,7 @@ describe('resolve golden examples', () => {
     expect(result.cssUsage).toContain('color: var(')
   })
 
-  test.skip('resolve bg-container-primary (Phase 2)', () => {
+  test('resolve bg-container-primary', () => {
     expect(parseStdout(run(['resolve', 'bg-container-primary']))).toMatchObject(
       {
         ok: true,
@@ -137,21 +137,21 @@ describe('resolve golden examples', () => {
     )
   })
 
-  test.skip('resolve border-width-ch-m (Phase 1+2)', () => {
+  test('resolve border-width-ch-m', () => {
     expect(parseStdout(run(['resolve', 'border-width-ch-m']))).toMatchObject({
       ok: true,
       css: '--charcoal-border-width-m',
     })
   })
 
-  test.skip('resolve rounded-m (Phase 1+2)', () => {
+  test('resolve rounded-m', () => {
     expect(parseStdout(run(['resolve', 'rounded-m']))).toMatchObject({
       ok: true,
       css: '--charcoal-radius-m',
     })
   })
 
-  test.skip('resolve --charcoal-color-light-blue-50 (Phase 2)', () => {
+  test('resolve --charcoal-color-light-blue-50', () => {
     const result = parseStdout(
       run(['resolve', '--charcoal-color-light-blue-50']),
     )
@@ -160,5 +160,16 @@ describe('resolve golden examples', () => {
       layer: 'primitive',
     })
     expect(result.notes.join('')).toMatch(/プロダクト UI/)
+  })
+
+  test.each([
+    ['text/secondary/default', 'color/text/secondary/default'],
+    ['color/text/default', 'color/text/default'],
+    ['text.line-height.heading.s', 'text/font-size/heading/s'],
+  ])('resolve %s', (query, figma) => {
+    expect(parseStdout(run(['resolve', query]))).toMatchObject({
+      ok: true,
+      figma,
+    })
   })
 })
