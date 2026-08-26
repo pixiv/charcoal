@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>39.5s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>33.8s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -1365,7 +1365,7 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Carousel</h2>
       <div class="badges">
-        <label for="c-2-react-carousel-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-2-react-carousel-props" class="badge ok as-toggle">16 prop types</label>
         <label for="c-2-react-carousel-info" class="badge info as-toggle">1 info</label>
         <label for="c-2-react-carousel-stories" class="badge ok as-toggle">13 stories</label>
         
@@ -1399,7 +1399,7 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">14 prop types</span>
+              <span class="badge ok">16 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Carousel/index.tsx::Carousel</code></pre>
             <pre><code>Props:</code></pre>
@@ -1417,6 +1417,8 @@ hasGradient?: boolean = false
 
 indicator?: boolean
 
+key?: Key | null
+
 navigationButtons?: boolean
 
 onResize?: ((width: number) =&gt; void)
@@ -1424,6 +1426,14 @@ onResize?: ((width: number) =&gt; void)
 onScroll?: ((left: number) =&gt; void)
 
 onScrollStateChange?: ((canScroll: boolean) =&gt; void)
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;CarouselHandlerRef&gt;
 
 scrollSnap?: Readonly&lt;{ type?: ScrollSnapType; align?: ScrollSnapAlign; }&gt; | undefined
 
@@ -10586,7 +10596,7 @@ value: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> FilterButton</h2>
       <div class="badges">
-        <label for="c-10-react-sandbox-filter-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-10-react-sandbox-filter-props" class="badge ok as-toggle">7 prop types</label>
         <label for="c-10-react-sandbox-filter-info" class="badge info as-toggle">1 info</label>
         <label for="c-10-react-sandbox-filter-stories" class="badge ok as-toggle">1 story</label>
         
@@ -10620,7 +10630,7 @@ value: string</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">5 prop types</span>
+              <span class="badge ok">7 prop types</span>
             </div>
             <pre><code>Component: packages/react-sandbox/src/components/Filter/index.tsx::FilterButton</code></pre>
             <pre><code>Props:</code></pre>
@@ -10630,9 +10640,19 @@ css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
 hover?: boolean
 
+key?: Key | null
+
 onClick?: MouseEventHandler&lt;HTMLButtonElement&gt;
 
-reactive?: boolean = false</code></pre>
+reactive?: boolean = false
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;HTMLButtonElement&gt;</code></pre>
           </div>
         </div>
     
@@ -11640,7 +11660,7 @@ export const Basic: StoryObj&lt;typeof ListItem&gt; = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> LoadingSpinner</h2>
       <div class="badges">
-        <label for="c-19-react-loadingspinner-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-19-react-loadingspinner-props" class="badge ok as-toggle">7 prop types</label>
         <label for="c-19-react-loadingspinner-info" class="badge info as-toggle">1 info</label>
         <label for="c-19-react-loadingspinner-stories" class="badge ok as-toggle">5 stories</label>
         
@@ -11674,7 +11694,7 @@ export const Basic: StoryObj&lt;typeof ListItem&gt; = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">5 prop types</span>
+              <span class="badge ok">7 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/LoadingSpinner/index.tsx::LoadingSpinner</code></pre>
             <pre><code>Props:</code></pre>
@@ -11682,7 +11702,17 @@ export const Basic: StoryObj&lt;typeof ListItem&gt; = {
 
 css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
+key?: Key | null
+
 padding?: number = 16
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;HTMLDivElement&gt;
 
 size?: number = 48
 
@@ -11892,7 +11922,7 @@ value?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Modal</h2>
       <div class="badges">
-        <label for="c-21-react-modal-props" class="badge ok as-toggle">11 prop types</label>
+        <label for="c-21-react-modal-props" class="badge ok as-toggle">22 prop types</label>
         
         <label for="c-21-react-modal-stories" class="badge ok as-toggle">6 stories</label>
         
@@ -11919,11 +11949,31 @@ value?: string</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">11 prop types</span>
+              <span class="badge ok">22 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Modal/index.tsx::Modal</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>bottomSheet?: BottomSheet
+            <pre><code>/**
+ * Identifies the element (or elements) that describes the object.
+ */
+aria-describedby?: string
+
+/**
+ * Identifies the element (or elements) that provide a detailed, extended description for the object.
+ */
+aria-details?: string
+
+/**
+ * Defines a string value that labels the current element.
+ */
+aria-label?: string
+
+/**
+ * Identifies the element (or elements) that labels the current element.
+ */
+aria-labelledby?: string
+
+bottomSheet?: BottomSheet
 
 className?: string
 
@@ -11931,7 +11981,24 @@ closeButtonAriaLabel?: string
 
 css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
+/**
+ * The element&#39;s unique identifier. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id).
+ */
+id?: string
+
+/**
+ * Whether to close the modal when the user interacts outside it.
+ */
+isDismissable?: boolean = false
+
+/**
+ * Whether pressing the escape key to close the modal should be disabled.
+ */
+isKeyboardDismissDisabled?: boolean = false
+
 isOpen: boolean
+
+key?: Key | null
 
 onClose: () =&gt; void
 
@@ -11942,6 +12009,27 @@ overflowClip?: boolean
  * Next.jsで使用する際に発生するエラーの一時的な回避策でdocument.bodyを指定する必要がある
  */
 portalContainer?: HTMLElement
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;HTMLDivElement&gt;
+
+/**
+ * The accessibility role for the dialog.
+ */
+role?: &quot;alertdialog&quot; | &quot;dialog&quot; = &#39;dialog&#39;
+
+/**
+ * When user interacts with the argument element outside of the overlay ref,
+ * return true if onClose should be called.  This gives you a chance to filter
+ * out interaction with elements that should not dismiss the overlay.
+ * By default, onClose will always be called on interaction outside the overlay ref.
+ */
+shouldCloseOnInteractOutside?: ((element: Element) =&gt; boolean)
 
 size?: Size
 
@@ -12182,7 +12270,7 @@ import { OverlayProvider } from "react-aria";</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MultiSelect</h2>
       <div class="badges">
-        <label for="c-22-react-multiselect-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-22-react-multiselect-props" class="badge ok as-toggle">8 prop types</label>
         <label for="c-22-react-multiselect-info" class="badge info as-toggle">1 info</label>
         <label for="c-22-react-multiselect-stories" class="badge ok as-toggle">5 stories</label>
         
@@ -12216,7 +12304,7 @@ import { OverlayProvider } from "react-aria";</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">6 prop types</span>
+              <span class="badge ok">8 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/MultiSelect/index.tsx::MultiSelect</code></pre>
             <pre><code>Props:</code></pre>
@@ -12226,7 +12314,17 @@ css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
 disabled?: boolean = false
 
+key?: Key | null
+
 onChange?: ((payload: { value: string; selected: boolean; }) =&gt; void)
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;HTMLInputElement&gt;
 
 value: string
 
@@ -13248,7 +13346,7 @@ triggerRef: RefObject&lt;Element | null&gt;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Radio</h2>
       <div class="badges">
-        <label for="c-27-react-radio-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-27-react-radio-props" class="badge ok as-toggle">6 prop types</label>
         <label for="c-27-react-radio-info" class="badge info as-toggle">1 info</label>
         <label for="c-27-react-radio-stories" class="badge ok as-toggle">6 stories</label>
         
@@ -13282,7 +13380,7 @@ triggerRef: RefObject&lt;Element | null&gt;</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">4 prop types</span>
+              <span class="badge ok">6 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Radio/index.tsx::Radio</code></pre>
             <pre><code>Props:</code></pre>
@@ -13291,6 +13389,16 @@ triggerRef: RefObject&lt;Element | null&gt;</code></pre>
 css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
 disabled?: boolean = false
+
+key?: Key | null
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;HTMLInputElement&gt;
 
 value: string</code></pre>
           </div>
@@ -19560,7 +19668,7 @@ const Global = createGlobalStyle`
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SegmentedControl</h2>
       <div class="badges">
-        <label for="c-30-react-segmentedcontrol-props" class="badge ok as-toggle">13 prop types</label>
+        <label for="c-30-react-segmentedcontrol-props" class="badge ok as-toggle">15 prop types</label>
         <label for="c-30-react-segmentedcontrol-info" class="badge info as-toggle">1 info</label>
         <label for="c-30-react-segmentedcontrol-stories" class="badge ok as-toggle">8 stories</label>
         
@@ -19594,7 +19702,7 @@ const Global = createGlobalStyle`
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">13 prop types</span>
+              <span class="badge ok">15 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/SegmentedControl/index.tsx::SegmentedControl</code></pre>
             <pre><code>Props:</code></pre>
@@ -19612,11 +19720,21 @@ fullWidth?: boolean
 
 id?: string
 
+key?: Key | null
+
 name?: string
 
 onChange?: ((value: string) =&gt; void)
 
 readonly?: boolean
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;HTMLDivElement&gt;
 
 required?: boolean
 
@@ -21315,7 +21433,7 @@ useNowrap?: boolean = false</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextEllipsis</h2>
       <div class="badges">
-        <label for="c-38-react-sandbox-textellipsis-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-38-react-sandbox-textellipsis-props" class="badge ok as-toggle">6 prop types</label>
         
         <label for="c-38-react-sandbox-textellipsis-stories" class="badge ok as-toggle">5 stories</label>
         
@@ -21342,7 +21460,7 @@ useNowrap?: boolean = false</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">7 prop types</span>
+              <span class="badge ok">6 prop types</span>
             </div>
             <pre><code>Component: packages/react-sandbox/src/components/TextEllipsis/index.tsx::TextEllipsis</code></pre>
             <pre><code>Props:</code></pre>
@@ -21355,8 +21473,6 @@ forwardedAs?: undefined
 lineHeight: number
 
 lineLimit?: number
-
-ref?: ((instance: HTMLDivElement | null) =&gt; void) | RefObject&lt;HTMLDivElement&gt; | null
 
 theme?: DefaultTheme</code></pre>
           </div>
@@ -21799,7 +21915,7 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> unstable_Toast</h2>
       <div class="badges">
-        <label for="c-41-react-toast-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-41-react-toast-props" class="badge ok as-toggle">10 prop types</label>
         <label for="c-41-react-toast-info" class="badge info as-toggle">1 info</label>
         <label for="c-41-react-toast-stories" class="badge ok as-toggle">5 stories</label>
         
@@ -21833,7 +21949,7 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">8 prop types</span>
+              <span class="badge ok">10 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Notification/Toast/index.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
@@ -21845,6 +21961,8 @@ css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
  * 通知を表示する時間（ミリ秒）。負の値は 0、数値でない値は 5000 として扱う
  */
 duration?: number = 5000
+
+key?: Key | null
 
 /**
  * 画面端からの距離（ピクセル）
@@ -21862,6 +21980,14 @@ portalContainer?: HTMLElement
  * Toast の表示位置
  */
 position?: Position = top
+
+/**
+ * Allows getting a ref to the component instance.
+ * Once the component unmounts, React will set `ref.current` to `null`
+ * (or call the ref with `null` if you passed a callback ref).
+ * @see {@link https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom React Docs}
+ */
+ref?: LegacyRef&lt;ToastHandler&gt;
 
 zIndex?: number</code></pre>
           </div>
