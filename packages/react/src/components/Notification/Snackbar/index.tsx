@@ -59,6 +59,7 @@ export function useSnackbar(props: UseSnackbarProps = {}) {
     useNotificationQueue<SnackbarContent, SnackbarCloseReason>('snackbar', {
       duration,
       order,
+      animateReplace: true,
       timeoutReason: 'timeout',
       unmountedReason: 'unmounted',
     })
