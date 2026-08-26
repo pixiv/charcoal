@@ -3,6 +3,306 @@
 exports[`getTokenV2TailwindClassMappings > returns the recommended color mappings 1`] = `
 [
   {
+    "category": "borderWidth",
+    "classCandidates": [
+      {
+        "className": "border-width-ch-focus-1",
+        "cssProperties": [
+          "border-width",
+        ],
+        "utility": "borderWidth",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "border-width.focus.1",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderWidth.width-ch-focus-1",
+      },
+    ],
+    "tokenPath": "border-width.focus.1",
+  },
+  {
+    "category": "borderWidth",
+    "classCandidates": [
+      {
+        "className": "border-width-ch-focus-2",
+        "cssProperties": [
+          "border-width",
+        ],
+        "utility": "borderWidth",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "border-width.focus.2",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderWidth.width-ch-focus-2",
+      },
+    ],
+    "tokenPath": "border-width.focus.2",
+  },
+  {
+    "category": "borderWidth",
+    "classCandidates": [
+      {
+        "className": "border-width-ch-l",
+        "cssProperties": [
+          "border-width",
+        ],
+        "utility": "borderWidth",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "border-width.l",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderWidth.width-ch-l",
+      },
+    ],
+    "tokenPath": "border-width.l",
+  },
+  {
+    "category": "borderWidth",
+    "classCandidates": [
+      {
+        "className": "border-width-ch-m",
+        "cssProperties": [
+          "border-width",
+        ],
+        "utility": "borderWidth",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "border-width.m",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderWidth.width-ch-m",
+      },
+    ],
+    "tokenPath": "border-width.m",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-0",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.0",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.0",
+      },
+    ],
+    "tokenPath": "radius.0",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-l",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.l",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.l",
+      },
+    ],
+    "tokenPath": "radius.l",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-m",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.m",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.m",
+      },
+    ],
+    "tokenPath": "radius.m",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-oval",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.oval",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.oval",
+      },
+    ],
+    "tokenPath": "radius.oval",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-s",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.s",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.s",
+      },
+    ],
+    "tokenPath": "radius.s",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-xl",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.xl",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.xl",
+      },
+    ],
+    "tokenPath": "radius.xl",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-xs",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.xs",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.xs",
+      },
+    ],
+    "tokenPath": "radius.xs",
+  },
+  {
+    "category": "radius",
+    "classCandidates": [
+      {
+        "className": "rounded-xxl",
+        "cssProperties": [
+          "border-radius",
+        ],
+        "utility": "borderRadius",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "radius.xxl",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "borderRadius.xxl",
+      },
+    ],
+    "tokenPath": "radius.xxl",
+  },
+  {
     "category": "borderColor",
     "classCandidates": [
       {
@@ -4479,6 +4779,953 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
       },
     ],
     "tokenPath": "text.font-size.paragraph",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "font-ch-bold",
+        "cssProperties": [
+          "font-weight",
+        ],
+        "utility": "fontWeight",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-weight.bold",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontWeight.ch-bold",
+      },
+    ],
+    "tokenPath": "text.font-weight.bold",
+  },
+  {
+    "category": "text",
+    "classCandidates": [
+      {
+        "className": "font-ch-regular",
+        "cssProperties": [
+          "font-weight",
+        ],
+        "utility": "fontWeight",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "text.font-weight.regular",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "fontWeight.ch-regular",
+      },
+    ],
+    "tokenPath": "text.font-weight.regular",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-0",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.0",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-0",
+      },
+      {
+        "themePath": "gap.component-0",
+      },
+    ],
+    "tokenPath": "space.component.0",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-10",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.10",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-10",
+      },
+      {
+        "themePath": "gap.component-10",
+      },
+    ],
+    "tokenPath": "space.component.10",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-20",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.20",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-20",
+      },
+      {
+        "themePath": "gap.component-20",
+      },
+    ],
+    "tokenPath": "space.component.20",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-25",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.25",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-25",
+      },
+      {
+        "themePath": "gap.component-25",
+      },
+    ],
+    "tokenPath": "space.component.25",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-30",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.30",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-30",
+      },
+      {
+        "themePath": "gap.component-30",
+      },
+    ],
+    "tokenPath": "space.component.30",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-40",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.40",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-40",
+      },
+      {
+        "themePath": "gap.component-40",
+      },
+    ],
+    "tokenPath": "space.component.40",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-component-50",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.component.50",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.component-50",
+      },
+      {
+        "themePath": "gap.component-50",
+      },
+    ],
+    "tokenPath": "space.component.50",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-0",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.0",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-0",
+      },
+      {
+        "themePath": "gap.layout-0",
+      },
+    ],
+    "tokenPath": "space.layout.0",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-10",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.10",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-10",
+      },
+      {
+        "themePath": "gap.layout-10",
+      },
+    ],
+    "tokenPath": "space.layout.10",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-20",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.20",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-20",
+      },
+      {
+        "themePath": "gap.layout-20",
+      },
+    ],
+    "tokenPath": "space.layout.20",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-25",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.25",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-25",
+      },
+      {
+        "themePath": "gap.layout-25",
+      },
+    ],
+    "tokenPath": "space.layout.25",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-30",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.30",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-30",
+      },
+      {
+        "themePath": "gap.layout-30",
+      },
+    ],
+    "tokenPath": "space.layout.30",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-40",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.40",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-40",
+      },
+      {
+        "themePath": "gap.layout-40",
+      },
+    ],
+    "tokenPath": "space.layout.40",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-50",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.50",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-50",
+      },
+      {
+        "themePath": "gap.layout-50",
+      },
+    ],
+    "tokenPath": "space.layout.50",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-60",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.60",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-60",
+      },
+      {
+        "themePath": "gap.layout-60",
+      },
+    ],
+    "tokenPath": "space.layout.60",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-70",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.70",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-70",
+      },
+      {
+        "themePath": "gap.layout-70",
+      },
+    ],
+    "tokenPath": "space.layout.70",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-80",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.80",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-80",
+      },
+      {
+        "themePath": "gap.layout-80",
+      },
+    ],
+    "tokenPath": "space.layout.80",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-90",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.90",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-90",
+      },
+      {
+        "themePath": "gap.layout-90",
+      },
+    ],
+    "tokenPath": "space.layout.90",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-layout-100",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.layout.100",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.layout-100",
+      },
+      {
+        "themePath": "gap.layout-100",
+      },
+    ],
+    "tokenPath": "space.layout.100",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-padding-card",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.padding.padding-card",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.padding-card",
+      },
+      {
+        "themePath": "gap.padding-card",
+      },
+    ],
+    "tokenPath": "space.padding.padding-card",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-target-l",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.target.l",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.target-l",
+      },
+      {
+        "themePath": "gap.target-l",
+      },
+    ],
+    "tokenPath": "space.target.l",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-target-m",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.target.m",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.target-m",
+      },
+      {
+        "themePath": "gap.target-m",
+      },
+    ],
+    "tokenPath": "space.target.m",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-target-s",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.target.s",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.target-s",
+      },
+      {
+        "themePath": "gap.target-s",
+      },
+    ],
+    "tokenPath": "space.target.s",
+  },
+  {
+    "category": "space",
+    "classCandidates": [
+      {
+        "className": "p-target-xs",
+        "cssProperties": [
+          "padding",
+        ],
+        "utility": "spacing",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "space.target.xs",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "spacing.target-xs",
+      },
+      {
+        "themePath": "gap.target-xs",
+      },
+    ],
+    "tokenPath": "space.target.xs",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-l",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.l",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.l",
+      },
+    ],
+    "tokenPath": "paragraph-width.l",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-l-compact",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.l-compact",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.l-compact",
+      },
+    ],
+    "tokenPath": "paragraph-width.l-compact",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-l-cozy",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.l-cozy",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.l-cozy",
+      },
+    ],
+    "tokenPath": "paragraph-width.l-cozy",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-m",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.m",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.m",
+      },
+    ],
+    "tokenPath": "paragraph-width.m",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-m-compact",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.m-compact",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.m-compact",
+      },
+    ],
+    "tokenPath": "paragraph-width.m-compact",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-m-cozy",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.m-cozy",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.m-cozy",
+      },
+    ],
+    "tokenPath": "paragraph-width.m-cozy",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-s",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.s",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.s",
+      },
+    ],
+    "tokenPath": "paragraph-width.s",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-s-compact",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.s-compact",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.s-compact",
+      },
+    ],
+    "tokenPath": "paragraph-width.s-compact",
+  },
+  {
+    "category": "paragraphWidth",
+    "classCandidates": [
+      {
+        "className": "w-s-cozy",
+        "cssProperties": [
+          "width",
+        ],
+        "utility": "width",
+      },
+    ],
+    "mappingKind": "recommended",
+    "source": "token-v2",
+    "sourceTokens": [
+      {
+        "tokenPath": "paragraph-width.s-cozy",
+      },
+    ],
+    "themeEntries": [
+      {
+        "themePath": "width.s-cozy",
+      },
+    ],
+    "tokenPath": "paragraph-width.s-cozy",
   },
 ]
 `;

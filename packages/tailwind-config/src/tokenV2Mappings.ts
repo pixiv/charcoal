@@ -102,7 +102,7 @@ const classPrefixes: Record<TokenV2Utility, string> = {
   borderColor: 'border',
   fill: 'fill',
   stroke: 'stroke',
-  spacing: '',
+  spacing: 'p',
   gap: 'gap',
   width: 'w',
   borderRadius: 'rounded',
@@ -145,20 +145,77 @@ function getColorClassCandidates(
     }))
 }
 
+const themePathCandidateDefinitions: {
+  prefix: string
+  utility: TokenV2Utility
+  cssProperties: TokenV2CssProperty[]
+}[] = [
+  {
+    prefix: 'fontSize.',
+    utility: 'fontSize',
+    cssProperties: ['font-size', 'line-height'],
+  },
+  {
+    prefix: 'spacing.',
+    utility: 'spacing',
+    cssProperties: ['padding'],
+  },
+  {
+    prefix: 'borderRadius.',
+    utility: 'borderRadius',
+    cssProperties: ['border-radius'],
+  },
+  {
+    prefix: 'fontWeight.',
+    utility: 'fontWeight',
+    cssProperties: ['font-weight'],
+  },
+  {
+    prefix: 'borderWidth.',
+    utility: 'borderWidth',
+    cssProperties: ['border-width'],
+  },
+  {
+    prefix: 'width.',
+    utility: 'width',
+    cssProperties: ['width'],
+  },
+]
+
+function getThemePathClassCandidates(
+  entry: TokenV2ThemeEntry,
+  utilities: TokenV2Utility[] | undefined,
+) {
+  const definition = themePathCandidateDefinitions.find(({ prefix }) =>
+    entry.themePath.startsWith(prefix),
+  )
+  if (definition === undefined) return undefined
+
+  return [
+    {
+      className: `${classPrefixes[definition.utility]}-${entry.themePath.slice(definition.prefix.length)}`,
+      utility: definition.utility,
+      cssProperties: definition.cssProperties,
+    },
+  ].filter(({ utility }) => utilities?.includes(utility) ?? true)
+}
+
+function pickMappingEntry(entries: TokenV2ThemeEntry[]) {
+  const entry =
+    entries.find((item) => !item.themePath.startsWith('gap.')) ?? entries[0]
+  if (entry === undefined) {
+    throw new Error('Expected at least one token v2 theme entry')
+  }
+  return entry
+}
+
 function getClassCandidates(
   entry: TokenV2ThemeEntry,
   utilities: TokenV2Utility[] | undefined,
   includeAmbiguousUtilities: boolean,
 ) {
-  if (entry.themePath.startsWith('fontSize.')) {
-    return [
-      {
-        className: `text-${entry.themePath.slice('fontSize.'.length)}`,
-        utility: 'fontSize' as const,
-        cssProperties: ['font-size', 'line-height'] as TokenV2CssProperty[],
-      },
-    ].filter(({ utility }) => utilities?.includes(utility) ?? true)
-  }
+  const themePathCandidates = getThemePathClassCandidates(entry, utilities)
+  if (themePathCandidates !== undefined) return themePathCandidates
 
   return getColorClassCandidates(
     entry.tokenPath,
@@ -192,8 +249,11 @@ export function getTokenV2TailwindClassMappings(
 
   for (const entry of buildTokenV2ThemeEntries()) {
     const isColor = entry.tokenPath.startsWith('color.')
-    const isTypography = entry.themePath.startsWith('fontSize.')
-    if (!isColor && !isTypography) continue
+    const isMappedThemePath = themePathCandidateDefinitions.some(({ prefix }) =>
+      entry.themePath.startsWith(prefix),
+    )
+    const isGapCompanion = entry.themePath.startsWith('gap.')
+    if (!isColor && !isMappedThemePath && !isGapCompanion) continue
 
     const entries = groupedEntries.get(entry.tokenPath) ?? []
     entries.push(entry)
@@ -201,7 +261,7 @@ export function getTokenV2TailwindClassMappings(
   }
 
   return Array.from(groupedEntries, ([tokenPath, entries]) => {
-    const [entry] = entries
+    const entry = pickMappingEntry(entries)
     const { category, cssVariable, sourceTokens } = entry
 
     return {

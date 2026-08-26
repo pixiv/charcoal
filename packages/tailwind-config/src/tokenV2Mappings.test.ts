@@ -103,6 +103,116 @@ describe('getTokenV2TailwindClassMappings', async () => {
     ])
   })
 
+  test('maps remaining token v2 categories to recommended classes', () => {
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['radius.m'],
+        includeCssVariable: true,
+      }),
+    ).toEqual([
+      expect.objectContaining({
+        tokenPath: 'radius.m',
+        cssVariable: '--charcoal-radius-m',
+        category: 'radius',
+        classCandidates: [
+          {
+            className: 'rounded-m',
+            utility: 'borderRadius',
+            cssProperties: ['border-radius'],
+          },
+        ],
+      }),
+    ])
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['border-width.m'],
+        includeCssVariable: true,
+      }),
+    ).toEqual([
+      expect.objectContaining({
+        tokenPath: 'border-width.m',
+        cssVariable: '--charcoal-border-width-m',
+        category: 'borderWidth',
+        classCandidates: [
+          {
+            className: 'border-width-ch-m',
+            utility: 'borderWidth',
+            cssProperties: ['border-width'],
+          },
+        ],
+      }),
+    ])
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['text.font-weight.bold'],
+        includeCssVariable: true,
+      }),
+    ).toEqual([
+      expect.objectContaining({
+        tokenPath: 'text.font-weight.bold',
+        cssVariable: '--charcoal-text-font-weight-bold',
+        category: 'text',
+        classCandidates: [
+          {
+            className: 'font-ch-bold',
+            utility: 'fontWeight',
+            cssProperties: ['font-weight'],
+          },
+        ],
+      }),
+    ])
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['space.layout.40'],
+        includeCssVariable: true,
+      }),
+    ).toEqual([
+      expect.objectContaining({
+        tokenPath: 'space.layout.40',
+        cssVariable: '--charcoal-space-layout-40',
+        category: 'space',
+        classCandidates: [
+          {
+            className: 'p-layout-40',
+            utility: 'spacing',
+            cssProperties: ['padding'],
+          },
+        ],
+      }),
+    ])
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['paragraph-width.m'],
+        includeCssVariable: true,
+      }),
+    ).toEqual([
+      expect.objectContaining({
+        tokenPath: 'paragraph-width.m',
+        cssVariable: '--charcoal-paragraph-width-m',
+        category: 'paragraphWidth',
+        classCandidates: [
+          {
+            className: 'w-m',
+            utility: 'width',
+            cssProperties: ['width'],
+          },
+        ],
+      }),
+    ])
+  })
+
+  test('does not recommend gap or margin utilities for space tokens', () => {
+    const [mapping] = getTokenV2TailwindClassMappings({
+      tokens: ['space.layout.40'],
+    })
+    expect(mapping.classCandidates.map(({ className }) => className)).toEqual([
+      'p-layout-40',
+    ])
+    expect(mapping.themeEntries.map(({ themePath }) => themePath)).toEqual(
+      expect.arrayContaining(['spacing.layout-40', 'gap.layout-40']),
+    )
+  })
+
   test('maps matching font-size and line-height tokens to one class', () => {
     const [mapping] = getTokenV2TailwindClassMappings({
       tokens: ['text.line-height.heading.s'],
