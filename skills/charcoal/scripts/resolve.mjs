@@ -2,6 +2,7 @@
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { classifyQuery } from './lookup/normalize.mjs'
+import { lookupQuery } from './lookup/query.mjs'
 import { assertResolveResult } from './lookup/validate.mjs'
 
 export const help = `Usage:
@@ -24,8 +25,6 @@ const COMMANDS = new Set(['resolve', 'search', 'family'])
 const HEX_MESSAGE = 'hex はテーマで変わる。Figma の変数名を resolve に渡せ。'
 const TOKEN_V1_MESSAGE =
   'Token 1.0 名は使わない。Token 2.0 の変数名を search または resolve し直せ。'
-const NOT_FOUND_MESSAGE =
-  '一致する Token 2.0 が見つからない。Figma の変数名か Token 2.0 の CSS / class を渡せ。'
 
 /**
  * @typedef {{ exitCode: number, stdout: string, stderr: string }} CliResult
@@ -65,13 +64,7 @@ export function resolveQuery(query) {
     }
   }
 
-  return {
-    query,
-    ok: false,
-    reason: 'not_found',
-    message: NOT_FOUND_MESSAGE,
-    candidates: [],
-  }
+  return lookupQuery(query)
 }
 
 /**

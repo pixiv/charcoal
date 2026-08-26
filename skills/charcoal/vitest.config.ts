@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
@@ -5,5 +6,17 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
+    alias: [
+      {
+        find: '@charcoal-ui/tailwind-config',
+        replacement: path.join(
+          path.resolve(import.meta.dirname, '../..'),
+          'packages',
+          'tailwind-config',
+          'src',
+          'tokenV2Mappings.ts',
+        ),
+      },
+    ],
   },
 })
