@@ -151,12 +151,21 @@ describe('Snackbar', () => {
     expect(screen.getByText('second')).toBeInTheDocument()
   })
 
-  it('replaces the current snackbar immediately when requested', () => {
+  it('replaces the current snackbar after its exit animation', () => {
     const onClose = vi.fn()
     const { show } = renderSnackbar({ order: 'replace' })
 
     show('first', { onClose })
     show('second')
+
+    expect(screen.getByText('first')).toBeInTheDocument()
+    expect(screen.queryByText('second')).not.toBeInTheDocument()
+    expect(
+      screen.getByText('first').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+    expect(onClose).not.toHaveBeenCalled()
+
+    finishExitAnimation('first')
 
     expect(screen.queryByText('first')).not.toBeInTheDocument()
     expect(screen.getByText('second')).toBeInTheDocument()
@@ -172,12 +181,16 @@ describe('Snackbar', () => {
       vi.advanceTimersByTime(1)
     })
 
+    expect(onClose).not.toHaveBeenCalled()
+
+    finishExitAnimation('保存しました')
+
     expect(onClose).toHaveBeenCalledExactlyOnceWith('timeout')
   })
 
-  it('reports action when the action is clicked', () => {
-    const onClose = vi.fn()
-    const { show } = renderSnackbar()
+  it('reports action after the exit animation finishes', () => {
+    const { show, unmount } = renderSnackbar()
+    const onClose = vi.fn(() => unmount())
 
     show('保存しました', {
       action: <button type="button">取り消す</button>,
@@ -185,7 +198,15 @@ describe('Snackbar', () => {
     })
     fireEvent.click(screen.getByRole('button', { name: '取り消す' }))
 
+    expect(
+      screen.getByText('保存しました').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+    expect(onClose).not.toHaveBeenCalled()
+
+    finishExitAnimation('保存しました')
+
     expect(onClose).toHaveBeenCalledExactlyOnceWith('action')
+    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
   })
 
   it('reports unmounted only for the currently displayed snackbar', () => {

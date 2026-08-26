@@ -18,11 +18,13 @@ export function useNotificationQueue<
   {
     duration: durationOption,
     order = 'queue',
+    animateReplace = false,
     timeoutReason,
     unmountedReason,
   }: {
     duration?: number
     order?: NotificationOrder
+    animateReplace?: boolean
     timeoutReason?: TCloseReason
     unmountedReason?: TCloseReason
   } = {},
@@ -57,23 +59,19 @@ export function useNotificationQueue<
         return
       }
 
-      function notifyActive() {
-        const active = activeRef.current
-        if (active === undefined || active.notified) return
-        active.notified = true
-        const reason = active.reason ?? timeoutReason
-        if (reason !== undefined) {
-          active.onClose?.(reason)
-        }
-      }
-
       function finish() {
+        const active = activeRef.current
         activeRef.current = undefined
         update()
+        if (active !== undefined && !active.notified) {
+          active.notified = true
+          const reason = active.reason ?? timeoutReason
+          if (reason !== undefined) {
+            active.onClose?.(reason)
+          }
+        }
         playNextRef.current?.()
       }
-
-      notifyActive()
 
       if (hoverRef.current.active) {
         hoverRef.current.pending = () => wrapUpdate(update, 'remove')
@@ -90,6 +88,7 @@ export function useNotificationQueue<
         finish()
         return
       }
+
       const item: HTMLDivElement = itemRef.current
 
       // allow-discreteが Newly Available で使えないので、要素の削除をアニメーション完了まで待つ
@@ -129,8 +128,10 @@ export function useNotificationQueue<
     return () => {
       const active = activeRef.current
       if (active !== undefined && !active.notified) {
-        if (unmountedReason !== undefined) {
-          active.onClose?.(unmountedReason)
+        active.notified = true
+        const reason = active.reason ?? unmountedReason
+        if (reason !== undefined) {
+          active.onClose?.(reason)
         }
       }
       activeRef.current = undefined
@@ -181,7 +182,7 @@ export function useNotificationQueue<
       if (active === undefined) return
 
       active.reason = 'replaced' as TCloseReason
-      replaceRef.current = true
+      replaceRef.current = !animateReplace
       hoverRef.current.active = false
       const pending = hoverRef.current.pending
       hoverRef.current.pending = undefined

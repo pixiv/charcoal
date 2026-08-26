@@ -11,9 +11,14 @@ import type { NotificationProps, Position } from '../types'
 export type SnackbarCloseReason =
   'timeout' | 'replaced' | 'action' | 'close' | 'unmounted'
 
+export type SnackbarRootAttributes = {
+  [key: `data-${string}`]: string | number | boolean | undefined
+}
+
 export type ShowSnackbarOptions = {
   action?: ReactNode
   onClose?: (reason: SnackbarCloseReason) => void
+  rootAttributes?: SnackbarRootAttributes
 }
 
 type SnackbarBaseProps = {
@@ -35,6 +40,7 @@ export type UseSnackbarProps = Omit<NotificationProps, 'position'> & {
 type SnackbarContent = {
   message: ReactNode
   action?: ReactNode
+  rootAttributes?: SnackbarRootAttributes
 }
 
 const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
@@ -59,12 +65,20 @@ export function useSnackbar(props: UseSnackbarProps = {}) {
     useNotificationQueue<SnackbarContent, SnackbarCloseReason>('snackbar', {
       duration,
       order,
+      animateReplace: true,
       timeoutReason: 'timeout',
       unmountedReason: 'unmounted',
     })
 
   function show(message: ReactNode, options: ShowSnackbarOptions = {}) {
-    enqueue({ message, action: options.action }, options.onClose)
+    enqueue(
+      {
+        message,
+        action: options.action,
+        rootAttributes: options.rootAttributes,
+      },
+      options.onClose,
+    )
   }
 
   const hasAction = state.visibleToasts.some(
@@ -80,6 +94,7 @@ export function useSnackbar(props: UseSnackbarProps = {}) {
     >
       {state.visibleToasts.map((toast) => (
         <NotificationItem
+          {...toast.content.rootAttributes}
           key={toast.key}
           name="snackbar"
           toast={toast}
