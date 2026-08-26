@@ -1,7 +1,19 @@
 import { useEffect, type ReactNode } from 'react'
 import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
-import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
-import Snackbar, { useSnackbar, type ShowSnackbarOptions } from '.'
+import {
+  vi,
+  describe,
+  it,
+  expect,
+  expectTypeOf,
+  afterEach,
+  beforeEach,
+} from 'vitest'
+import Snackbar, {
+  useSnackbar,
+  type ShowSnackbarOptions,
+  type SnackbarCloseReason,
+} from '.'
 
 function renderSnackbar(props: Parameters<typeof useSnackbar>[0] = {}) {
   let showSnackbar:
@@ -67,6 +79,10 @@ describe('Snackbar', () => {
     const undefinedAction = <Snackbar message="x" action={undefined} />
 
     expect(undefinedAction).toBeDefined()
+  })
+
+  it('exposes only action and unmounted as close reasons', () => {
+    expectTypeOf<SnackbarCloseReason>().toEqualTypeOf<'action' | 'unmounted'>()
   })
 
   it('shows a message and hides after 5 seconds', () => {
@@ -169,10 +185,10 @@ describe('Snackbar', () => {
 
     expect(screen.queryByText('first')).not.toBeInTheDocument()
     expect(screen.getByText('second')).toBeInTheDocument()
-    expect(onClose).toHaveBeenCalledExactlyOnceWith('replaced')
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('unmounted')
   })
 
-  it('reports timeout when the snackbar closes after its duration', () => {
+  it('reports unmounted when the snackbar closes after its duration', () => {
     const onClose = vi.fn()
     const { show } = renderSnackbar({ duration: 0 })
 
@@ -185,7 +201,7 @@ describe('Snackbar', () => {
 
     finishExitAnimation('保存しました')
 
-    expect(onClose).toHaveBeenCalledExactlyOnceWith('timeout')
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('unmounted')
   })
 
   it('reports action after the exit animation finishes', () => {

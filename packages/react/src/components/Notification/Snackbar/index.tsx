@@ -8,8 +8,7 @@ import { NotificationRegion } from '../NotificationRegion'
 import { useNotificationQueue } from '../useNotificationQueue'
 import type { NotificationProps, Position } from '../types'
 
-export type SnackbarCloseReason =
-  'timeout' | 'replaced' | 'action' | 'close' | 'unmounted'
+export type SnackbarCloseReason = 'action' | 'unmounted'
 
 export type SnackbarRootAttributes = {
   [key: `data-${string}`]: string | number | boolean | undefined
@@ -62,22 +61,23 @@ export function useSnackbar(props: UseSnackbarProps = {}) {
     ...regionProps
   } = props
   const { state, itemRef, enqueue, close, onHoverStart, onHoverEnd } =
-    useNotificationQueue<SnackbarContent, SnackbarCloseReason>('snackbar', {
+    useNotificationQueue<SnackbarContent, 'action'>('snackbar', {
       duration,
       order,
       animateReplace: true,
-      timeoutReason: 'timeout',
-      unmountedReason: 'unmounted',
     })
 
   function show(message: ReactNode, options: ShowSnackbarOptions = {}) {
+    const onClose = options.onClose
     enqueue(
       {
         message,
         action: options.action,
         rootAttributes: options.rootAttributes,
       },
-      options.onClose,
+      onClose === undefined
+        ? undefined
+        : (reason) => onClose(reason ?? 'unmounted'),
     )
   }
 
