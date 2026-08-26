@@ -2,6 +2,7 @@
   "name": "@charcoal-ui/token-v2-tailwind-classes",
   "version": "6.0.0-rc.5",
   "license": "Apache-2.0",
+  "private": true,
   "type": "commonjs",
   "bin": {
     "charcoal-token-v2-classes": "./dist/cli.js"
@@ -20,9 +21,6 @@
     "schema.json",
     "README.md"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pixiv/charcoal.git",
