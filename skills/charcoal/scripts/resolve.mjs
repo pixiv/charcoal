@@ -2,7 +2,8 @@
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { classifyQuery } from './lookup/normalize.mjs'
-import { lookupQuery } from './lookup/query.mjs'
+import { familyQuery, lookupQuery } from './lookup/query.mjs'
+import { searchQuery } from './lookup/search.mjs'
 import { assertResolveResult } from './lookup/validate.mjs'
 
 export const help = `Usage:
@@ -105,8 +106,13 @@ export function run(args) {
     }
   }
 
-  const result = resolveQuery(query)
-  assertResolveResult(result)
+  const result =
+    command === 'search'
+      ? searchQuery(query)
+      : command === 'family'
+        ? familyQuery(query)
+        : resolveQuery(query)
+  if (command === 'resolve') assertResolveResult(result)
   return { exitCode: 0, stdout: stringify(result, pretty), stderr: '' }
 }
 

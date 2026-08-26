@@ -87,8 +87,9 @@ function toResolveResult(record, query, index) {
 /**
  * @param {string} query
  * @param {TokenIndex} index
+ * @returns {IndexRecord[]}
  */
-export function lookupQuery(query, index = loadIndex()) {
+export function findRecords(query, index = loadIndex()) {
   const classified = classifyQuery(query)
   const needles = new Set(
     [query.trim(), classified.normalized].filter((value) => value !== ''),
@@ -104,6 +105,15 @@ export function lookupQuery(query, index = loadIndex()) {
       matches.push(record)
     }
   }
+  return matches
+}
+
+/**
+ * @param {string} query
+ * @param {TokenIndex} index
+ */
+export function lookupQuery(query, index = loadIndex()) {
+  const matches = findRecords(query, index)
 
   if (matches.length === 1) {
     return toResolveResult(matches[0], query, index)
@@ -131,6 +141,45 @@ export function lookupQuery(query, index = loadIndex()) {
     message:
       '一致する Token 2.0 が見つからない。Figma の変数名か Token 2.0 の CSS / class を渡せ。',
     candidates: [],
+  }
+}
+
+/**
+ * @param {string} query
+ * @param {TokenIndex} index
+ */
+export function familyQuery(query, index = loadIndex()) {
+  const resolved = lookupQuery(query, index)
+  if (resolved.ok !== true) return resolved
+
+  const matches = findRecords(query, index)
+  const [record] = matches
+  if (record === undefined) return resolved
+
+  if (record.layer === 'primitive') {
+    return {
+      query,
+      ok: true,
+      layer: 'primitive',
+      figma: record.figma,
+      css: record.css,
+      members: {},
+      notes: record.notes ?? [],
+    }
+  }
+
+  return {
+    query,
+    ok: true,
+    layer: 'semantic',
+    figma: record.figma,
+    members: {
+      [record.state ?? 'default']: {
+        css: record.css,
+        tailwind: record.tailwind?.recommended ?? [],
+      },
+      ...relatedFor(record, index),
+    },
   }
 }
 
