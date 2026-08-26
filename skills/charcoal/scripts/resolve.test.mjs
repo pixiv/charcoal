@@ -173,3 +173,36 @@ describe('resolve golden examples', () => {
     })
   })
 })
+
+describe('family / search', () => {
+  test('family includes hover and press for container primary', () => {
+    const result = parseStdout(
+      run(['family', 'color/container/primary/default']),
+    )
+    expect(result.ok).toBe(true)
+    expect(result.members).toMatchObject({
+      default: {
+        css: '--charcoal-color-container-primary-default',
+        tailwind: ['bg-container-primary'],
+      },
+      hover: {
+        css: '--charcoal-color-container-primary-hover',
+      },
+      press: {
+        css: '--charcoal-color-container-primary-press',
+      },
+    })
+  })
+
+  test.each([
+    ['プライマリボタンの背景', 'color/container/primary/default'],
+    ['本文色', 'color/text/default'],
+    ['フォーカスリング', 'color/border/focus/1'],
+  ])('search %s ranks a semantic token first', (intent, figma) => {
+    const result = parseStdout(run(['search', intent]))
+    expect(result.ok).toBe(true)
+    expect(result.results.length).toBeGreaterThan(0)
+    expect(result.results[0].layer).toBe('semantic')
+    expect(result.results.map(({ figma: name }) => name)).toContain(figma)
+  })
+})
