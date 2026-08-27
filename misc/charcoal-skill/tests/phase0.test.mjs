@@ -201,21 +201,18 @@ describe('CLI path portability', () => {
     expect(result.stderr).toBe('')
   })
 
-  test(
-    'English primary-button search should rank the same first result as Japanese',
-    () => {
-      const result = jsonResult(
-        invoke(
-          temporaryDirectory(),
-          script,
-          'search',
-          'primary button background',
-        ),
-      )
+  test('English primary-button search should rank the same first result as Japanese', () => {
+    const result = jsonResult(
+      invoke(
+        temporaryDirectory(),
+        script,
+        'search',
+        'primary button background',
+      ),
+    )
 
-      expect(result.results[0]).toMatchObject({
-        figma: 'color/container/primary/default',
-      })
-    },
-  )
+    expect(result.results[0]).toMatchObject({
+      figma: 'color/container/primary/default',
+    })
+  })
 })
