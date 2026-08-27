@@ -10,6 +10,7 @@ const SYNONYMS = {
   プライマリー: ['primary'],
   背景: ['container', 'background'],
   ボタン: ['primary', 'container'],
+  button: ['primary', 'container'],
   本文: ['text'],
   テキスト: ['text'],
   色: ['color', 'text'],

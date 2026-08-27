@@ -201,7 +201,7 @@ describe('CLI path portability', () => {
     expect(result.stderr).toBe('')
   })
 
-  test.fails(
+  test(
     'English primary-button search should rank the same first result as Japanese',
     () => {
       const result = jsonResult(
