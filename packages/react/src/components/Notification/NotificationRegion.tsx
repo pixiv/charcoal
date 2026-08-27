@@ -13,6 +13,7 @@ export function NotificationRegion<TContent>({
   state,
   position,
   offset = DEFAULT_OFFSET,
+  headerOffset = 0,
   zIndex = DEFAULT_Z_INDEX,
   portalContainer,
   className,
@@ -22,6 +23,7 @@ export function NotificationRegion<TContent>({
   state: ToastState<TContent>
   position: Position
   offset?: number
+  headerOffset?: number,
   zIndex?: number
   portalContainer?: HTMLElement
   className?: string
@@ -66,10 +68,19 @@ export function NotificationRegion<TContent>({
           {
             zIndex,
             [`--charcoal-${name}-offset`]: `${offset}px`,
+            position: 'absolute'
           } as CSSProperties
         }
       >
+        <div style={{
+          height: `${headerOffset}px`
+        }} />
+        <div style={{
+          position: 'sticky',
+          top: `${offset}px`
+        }}>
         {children}
+        </div>
       </div>
     </Overlay>
   )
