@@ -288,9 +288,7 @@ describe('Snackbar', () => {
       action: <button type="button">取り消す</button>,
     })
 
-    expect(
-      document.querySelector('.charcoal-snackbar-region'),
-    ).toHaveAttribute(
+    expect(document.querySelector('.charcoal-snackbar-region')).toHaveAttribute(
       'data-position',
       'bottom',
     )
@@ -301,9 +299,10 @@ describe('Snackbar', () => {
 
     show('保存しました')
 
-    expect(
-      document.querySelector('.charcoal-snackbar-region'),
-    ).toHaveAttribute('data-position', 'top')
+    expect(document.querySelector('.charcoal-snackbar-region')).toHaveAttribute(
+      'data-position',
+      'top',
+    )
   })
 
   it('supports a custom z-index and portal container', () => {
