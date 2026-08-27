@@ -1,7 +1,19 @@
 import { useEffect, type ReactNode } from 'react'
 import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
-import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
-import Snackbar, { useSnackbar, type ShowSnackbarOptions } from '.'
+import {
+  vi,
+  describe,
+  it,
+  expect,
+  expectTypeOf,
+  afterEach,
+  beforeEach,
+} from 'vitest'
+import Snackbar, {
+  useSnackbar,
+  type ShowSnackbarOptions,
+  type SnackbarCloseReason,
+} from '.'
 
 function renderSnackbar(props: Parameters<typeof useSnackbar>[0] = {}) {
   let showSnackbar:
@@ -67,6 +79,10 @@ describe('Snackbar', () => {
     const undefinedAction = <Snackbar message="x" action={undefined} />
 
     expect(undefinedAction).toBeDefined()
+  })
+
+  it('exposes only action and unmounted as close reasons', () => {
+    expectTypeOf<SnackbarCloseReason>().toEqualTypeOf<'action' | 'unmounted'>()
   })
 
   it('shows a message and hides after 5 seconds', () => {
@@ -151,19 +167,28 @@ describe('Snackbar', () => {
     expect(screen.getByText('second')).toBeInTheDocument()
   })
 
-  it('replaces the current snackbar immediately when requested', () => {
+  it('replaces the current snackbar after its exit animation', () => {
     const onClose = vi.fn()
     const { show } = renderSnackbar({ order: 'replace' })
 
     show('first', { onClose })
     show('second')
 
+    expect(screen.getByText('first')).toBeInTheDocument()
+    expect(screen.queryByText('second')).not.toBeInTheDocument()
+    expect(
+      screen.getByText('first').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+    expect(onClose).not.toHaveBeenCalled()
+
+    finishExitAnimation('first')
+
     expect(screen.queryByText('first')).not.toBeInTheDocument()
     expect(screen.getByText('second')).toBeInTheDocument()
-    expect(onClose).toHaveBeenCalledExactlyOnceWith('replaced')
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('unmounted')
   })
 
-  it('reports timeout when the snackbar closes after its duration', () => {
+  it('reports unmounted when the snackbar closes after its duration', () => {
     const onClose = vi.fn()
     const { show } = renderSnackbar({ duration: 0 })
 
@@ -172,12 +197,16 @@ describe('Snackbar', () => {
       vi.advanceTimersByTime(1)
     })
 
-    expect(onClose).toHaveBeenCalledExactlyOnceWith('timeout')
+    expect(onClose).not.toHaveBeenCalled()
+
+    finishExitAnimation('保存しました')
+
+    expect(onClose).toHaveBeenCalledExactlyOnceWith('unmounted')
   })
 
-  it('reports action when the action is clicked', () => {
-    const onClose = vi.fn()
-    const { show } = renderSnackbar()
+  it('reports action after the exit animation finishes', () => {
+    const { show, unmount } = renderSnackbar()
+    const onClose = vi.fn(() => unmount())
 
     show('保存しました', {
       action: <button type="button">取り消す</button>,
@@ -185,7 +214,15 @@ describe('Snackbar', () => {
     })
     fireEvent.click(screen.getByRole('button', { name: '取り消す' }))
 
+    expect(
+      screen.getByText('保存しました').closest('.charcoal-snackbar'),
+    ).toHaveAttribute('data-exiting', 'true')
+    expect(onClose).not.toHaveBeenCalled()
+
+    finishExitAnimation('保存しました')
+
     expect(onClose).toHaveBeenCalledExactlyOnceWith('action')
+    expect(screen.queryByText('保存しました')).not.toBeInTheDocument()
   })
 
   it('reports unmounted only for the currently displayed snackbar', () => {

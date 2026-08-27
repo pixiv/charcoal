@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "6.1.0-beta.0",
+  "version": "6.1.0-beta.4",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "run-s --print-label 'build:*'",
     "build:bundle": "tsdown",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly --incremental false",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"

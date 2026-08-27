@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react",
-  "version": "6.1.0-beta.0",
+  "version": "6.1.0-beta.4",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -29,6 +29,7 @@
     "test:browser": "vitest run --config vitest.browser.config.ts"
   },
   "devDependencies": {
+    "@charcoal-ui/theme": "workspace:*",
     "@testing-library/jest-dom": "catalog:",
     "@testing-library/react": "catalog:",
     "@testing-library/user-event": "catalog:",
@@ -47,11 +48,7 @@
     "react-stately": "catalog:"
   },
   "dependencies": {
-    "@charcoal-ui/foundation": "workspace:*",
     "@charcoal-ui/icons": "workspace:*",
-    "@charcoal-ui/theme": "workspace:*",
-    "@charcoal-ui/utils": "workspace:*",
-    "polished": "^4.1.4",
     "react-compiler-runtime": "catalog:",
     "warning": "^4.0.3"
   },

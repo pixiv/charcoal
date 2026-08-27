@@ -112,6 +112,7 @@ export {
   type SnackbarProps as UnstableSnackbarProps,
   type UseSnackbarProps as unstable_UseSnackbarProps,
   type SnackbarCloseReason as unstable_SnackbarCloseReason,
+  type SnackbarRootAttributes as unstable_SnackbarRootAttributes,
   type ShowSnackbarOptions as unstable_ShowSnackbarOptions,
 } from './components/Notification/Snackbar'
 export {

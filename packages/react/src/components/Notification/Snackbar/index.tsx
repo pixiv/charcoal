@@ -8,12 +8,16 @@ import { NotificationRegion } from '../NotificationRegion'
 import { useNotificationQueue } from '../useNotificationQueue'
 import type { NotificationProps, Position } from '../types'
 
-export type SnackbarCloseReason =
-  'timeout' | 'replaced' | 'action' | 'close' | 'unmounted'
+export type SnackbarCloseReason = 'action' | 'unmounted'
+
+export type SnackbarRootAttributes = {
+  [key: `data-${string}`]: string | number | boolean | undefined
+}
 
 export type ShowSnackbarOptions = {
   action?: ReactNode
   onClose?: (reason: SnackbarCloseReason) => void
+  rootAttributes?: SnackbarRootAttributes
 }
 
 type SnackbarBaseProps = {
@@ -35,6 +39,7 @@ export type UseSnackbarProps = Omit<NotificationProps, 'position'> & {
 type SnackbarContent = {
   message: ReactNode
   action?: ReactNode
+  rootAttributes?: SnackbarRootAttributes
 }
 
 const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
@@ -56,15 +61,24 @@ export function useSnackbar(props: UseSnackbarProps = {}) {
     ...regionProps
   } = props
   const { state, itemRef, enqueue, close, onHoverStart, onHoverEnd } =
-    useNotificationQueue<SnackbarContent, SnackbarCloseReason>('snackbar', {
+    useNotificationQueue<SnackbarContent, 'action'>('snackbar', {
       duration,
       order,
-      timeoutReason: 'timeout',
-      unmountedReason: 'unmounted',
+      animateReplace: true,
     })
 
   function show(message: ReactNode, options: ShowSnackbarOptions = {}) {
-    enqueue({ message, action: options.action }, options.onClose)
+    const onClose = options.onClose
+    enqueue(
+      {
+        message,
+        action: options.action,
+        rootAttributes: options.rootAttributes,
+      },
+      onClose === undefined
+        ? undefined
+        : (reason) => onClose(reason ?? 'unmounted'),
+    )
   }
 
   const hasAction = state.visibleToasts.some(
@@ -80,6 +94,7 @@ export function useSnackbar(props: UseSnackbarProps = {}) {
     >
       {state.visibleToasts.map((toast) => (
         <NotificationItem
+          {...toast.content.rootAttributes}
           key={toast.key}
           name="snackbar"
           toast={toast}

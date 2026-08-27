@@ -7,7 +7,7 @@ const ANIMATION_DURATION_MS = 300
 
 type QueueItem<TContent, TCloseReason> = {
   content: TContent
-  onClose?: (reason: TCloseReason) => void
+  onClose?: (reason?: TCloseReason) => void
 }
 
 export function useNotificationQueue<
@@ -18,13 +18,11 @@ export function useNotificationQueue<
   {
     duration: durationOption,
     order = 'queue',
-    timeoutReason,
-    unmountedReason,
+    animateReplace = false,
   }: {
     duration?: number
     order?: NotificationOrder
-    timeoutReason?: TCloseReason
-    unmountedReason?: TCloseReason
+    animateReplace?: boolean
   } = {},
 ) {
   const itemRef = useRef<HTMLDivElement>(null)
@@ -34,7 +32,7 @@ export function useNotificationQueue<
   const isShowingRef = useRef(false)
   const activeRef = useRef<{
     key: string
-    onClose?: (reason: TCloseReason) => void
+    onClose?: (reason?: TCloseReason) => void
     reason?: TCloseReason
     notified: boolean
   }>()
@@ -57,23 +55,16 @@ export function useNotificationQueue<
         return
       }
 
-      function notifyActive() {
-        const active = activeRef.current
-        if (active === undefined || active.notified) return
-        active.notified = true
-        const reason = active.reason ?? timeoutReason
-        if (reason !== undefined) {
-          active.onClose?.(reason)
-        }
-      }
-
       function finish() {
+        const active = activeRef.current
         activeRef.current = undefined
         update()
+        if (active !== undefined && !active.notified) {
+          active.notified = true
+          active.onClose?.(active.reason)
+        }
         playNextRef.current?.()
       }
-
-      notifyActive()
 
       if (hoverRef.current.active) {
         hoverRef.current.pending = () => wrapUpdate(update, 'remove')
@@ -90,6 +81,7 @@ export function useNotificationQueue<
         finish()
         return
       }
+
       const item: HTMLDivElement = itemRef.current
 
       // allow-discreteが Newly Available で使えないので、要素の削除をアニメーション完了まで待つ
@@ -117,7 +109,7 @@ export function useNotificationQueue<
         complete()
       }
     },
-    [name, timeoutReason],
+    [name],
   )
 
   const state = useToastState<TContent>({
@@ -129,15 +121,14 @@ export function useNotificationQueue<
     return () => {
       const active = activeRef.current
       if (active !== undefined && !active.notified) {
-        if (unmountedReason !== undefined) {
-          active.onClose?.(unmountedReason)
-        }
+        active.notified = true
+        active.onClose?.(active.reason)
       }
       activeRef.current = undefined
       queueRef.current = []
       isShowingRef.current = false
     }
-  }, [unmountedReason])
+  }, [])
 
   function playNext() {
     const next = queueRef.current.shift()
@@ -162,7 +153,7 @@ export function useNotificationQueue<
 
   function enqueue(
     content: TContent,
-    onClose?: (reason: TCloseReason) => void,
+    onClose?: (reason?: TCloseReason) => void,
   ) {
     const duration =
       typeof durationOption === 'number' && Number.isFinite(durationOption)
@@ -180,8 +171,7 @@ export function useNotificationQueue<
       const active = activeRef.current
       if (active === undefined) return
 
-      active.reason = 'replaced' as TCloseReason
-      replaceRef.current = true
+      replaceRef.current = !animateReplace
       hoverRef.current.active = false
       const pending = hoverRef.current.pending
       hoverRef.current.pending = undefined

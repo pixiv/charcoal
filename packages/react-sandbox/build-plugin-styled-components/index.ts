@@ -2,20 +2,19 @@ import * as babel from '@babel/core'
 import type { ParserPlugin } from '@babel/parser'
 import type { UserConfig } from 'tsdown'
 import path from 'path'
-import fs from 'fs/promises'
 
-const cache = new Map<string, Promise<string>>()
+const cache = new Map<string, ReturnType<typeof transformStyledComponents>>()
 
 export const styledComponentsPlugin: UserConfig['plugins'] = {
   name: 'styled-components',
   async transform(code, id) {
     if (id.includes('\0') || !/\.(?:[mc]?[jt]s|[jt]sx)$/.test(id)) {
-      return code
+      return null
     }
     const cachedResult = cache.get(id)
 
     if (cachedResult === undefined) {
-      const result = transformStyledComponents(id)
+      const result = transformStyledComponents(code, id)
       cache.set(id, result)
       return await result
     }
@@ -24,9 +23,9 @@ export const styledComponentsPlugin: UserConfig['plugins'] = {
   },
 }
 
-async function transformStyledComponents(sourcePath: string): Promise<string> {
+async function transformStyledComponents(code: string, sourcePath: string) {
   if (sourcePath.includes('styledExportFix')) {
-    return fs.readFile(sourcePath, 'utf8')
+    return { code, map: null }
   }
   const plugins: ParserPlugin[] = []
   if (sourcePath.endsWith('x')) {
@@ -36,7 +35,7 @@ async function transformStyledComponents(sourcePath: string): Promise<string> {
     plugins.push('typescript')
   }
 
-  const result = await babel.transformFileAsync(sourcePath, {
+  const result = await babel.transformAsync(code, {
     caller: {
       name: '@charcoal-ui/esbuild-plugin-styled-components',
       supportsStaticESM: true,
@@ -71,7 +70,7 @@ async function transformStyledComponents(sourcePath: string): Promise<string> {
       },
     ],
     browserslistConfigFile: false,
-    sourceMaps: 'inline',
+    sourceMaps: true,
     parserOpts: { plugins },
   })
 
@@ -79,5 +78,5 @@ async function transformStyledComponents(sourcePath: string): Promise<string> {
     throw new Error('expect code to be generated')
   }
 
-  return result.code
+  return { code: result.code, map: result.map }
 }
