@@ -177,7 +177,10 @@ describe('Toast', () => {
 
     show('保存しました', { type: 'success' })
 
-    expect(screen.getByRole('region')).toHaveAttribute('data-position', 'top')
+    expect(document.querySelector('.charcoal-toast-region')).toHaveAttribute(
+      'data-position',
+      'top',
+    )
   })
 
   it('places a toast at the bottom when requested', () => {
@@ -185,7 +188,7 @@ describe('Toast', () => {
 
     show('保存しました', { type: 'success' })
 
-    expect(screen.getByRole('region')).toHaveAttribute(
+    expect(document.querySelector('.charcoal-toast-region')).toHaveAttribute(
       'data-position',
       'bottom',
     )

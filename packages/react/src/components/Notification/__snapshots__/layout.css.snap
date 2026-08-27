@@ -1,11 +1,15 @@
 .charcoal-notification-region {
-  position: fixed;
   left: 0;
   right: 0;
-  display: grid;
-  justify-content: center;
-  pointer-events: none;
   box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  top: 0;
 }
 
 .charcoal-notification {

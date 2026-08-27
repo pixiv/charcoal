@@ -2,6 +2,7 @@
   --charcoal-toast-offset: 16px;
 
   &[data-position='top'] {
+    position: sticky;
     --charcoal-toast-enter-offset: calc(-1 * var(--charcoal-space-30));
 
     top: calc(
@@ -10,6 +11,7 @@
   }
 
   &[data-position='bottom'] {
+    position: fixed;
     --charcoal-toast-enter-offset: var(--charcoal-space-30);
 
     bottom: calc(
