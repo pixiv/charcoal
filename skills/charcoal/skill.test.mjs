@@ -15,9 +15,9 @@ describe('charcoal skill docs', () => {
 
   test('SKILL.md documents the resolve commands from help', () => {
     for (const command of [
-      'node skills/charcoal/scripts/resolve.mjs resolve <query>',
-      'node skills/charcoal/scripts/resolve.mjs search <intent>',
-      'node skills/charcoal/scripts/resolve.mjs family <token>',
+      'node scripts/resolve.mjs resolve <query>',
+      'node scripts/resolve.mjs search <intent>',
+      'node scripts/resolve.mjs family <token>',
     ]) {
       expect(skill).toContain(command)
       expect(help).toContain(command)

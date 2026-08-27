@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync, symlinkSync } from 'node:fs'
+import { cpSync, mkdtempSync, rmSync, symlinkSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { spawnSync } from 'node:child_process'
@@ -28,13 +28,20 @@ function jsonResult(result) {
   return JSON.parse(result.stdout)
 }
 
+function expectPrimaryResult(result) {
+  expect(jsonResult(result)).toMatchObject({
+    figma: 'color/container/primary/default',
+    css: '--charcoal-color-container-primary-default',
+  })
+}
+
 afterEach(() => {
   for (const directory of temporaryDirectories.splice(0)) {
     rmSync(directory, { recursive: true, force: true })
   }
 })
 
-describe('Phase 0 subprocess baseline', () => {
+describe('CLI path portability', () => {
   test('an external CWD and absolute script path work, proving data is not CWD-relative', () => {
     const externalCwd = temporaryDirectory()
 
@@ -98,43 +105,98 @@ describe('Phase 0 subprocess baseline', () => {
     })
   })
 
-  test.fails(
-    'the documented repo-relative command does not resolve from an external CWD',
-    () => {
-      const result = invoke(
-        temporaryDirectory(),
-        'skills/charcoal/scripts/resolve.mjs',
+  test('the documented skill-root-relative command works', () => {
+    expectPrimaryResult(
+      invoke(
+        skillRoot,
+        'scripts/resolve.mjs',
         'resolve',
         'color/container/primary/default',
-      )
+      ),
+    )
+  })
 
-      expect(jsonResult(result)).toMatchObject({
-        figma: 'color/container/primary/default',
-      })
-    },
-  )
+  test('a direct symlink to the CLI executes and writes JSON', () => {
+    const directory = temporaryDirectory()
+    const symlink = path.join(directory, 'resolve.mjs')
+    symlinkSync(script, symlink)
 
-  test.fails(
-    'a symlink launch should execute the CLI and write its JSON result',
-    () => {
-      const directory = temporaryDirectory()
-      const symlink = path.join(directory, 'resolve.mjs')
-      symlinkSync(script, symlink)
+    expectPrimaryResult(
+      invoke(directory, symlink, 'resolve', 'color/container/primary/default'),
+    )
+  })
 
-      expect(
-        jsonResult(
-          invoke(
-            directory,
-            symlink,
-            'resolve',
-            'color/container/primary/default',
-          ),
-        ),
-      ).toMatchObject({
-        figma: 'color/container/primary/default',
-      })
-    },
-  )
+  test('a symlinked Skill directory resolves bundled data and imports', () => {
+    const directory = temporaryDirectory()
+    const linkedSkill = path.join(directory, 'charcoal')
+    symlinkSync(skillRoot, linkedSkill)
+
+    expectPrimaryResult(
+      invoke(
+        directory,
+        path.join(linkedSkill, 'scripts', 'resolve.mjs'),
+        'resolve',
+        'color/container/primary/default',
+      ),
+    )
+  })
+
+  test('a symlinked Skill parent directory resolves bundled data and imports', () => {
+    const directory = temporaryDirectory()
+    const linkedParent = path.join(directory, 'skills')
+    symlinkSync(path.dirname(skillRoot), linkedParent)
+
+    expectPrimaryResult(
+      invoke(
+        directory,
+        path.join(linkedParent, 'charcoal', 'scripts', 'resolve.mjs'),
+        'resolve',
+        'color/container/primary/default',
+      ),
+    )
+  })
+
+  test('an independently copied Skill directory needs no repository context', () => {
+    const directory = temporaryDirectory()
+    const copiedSkill = path.join(directory, 'copied-charcoal')
+    cpSync(skillRoot, copiedSkill, { recursive: true })
+
+    expectPrimaryResult(
+      invoke(
+        temporaryDirectory(),
+        path.join(copiedSkill, 'scripts', 'resolve.mjs'),
+        'resolve',
+        'color/container/primary/default',
+      ),
+    )
+  })
+
+  test('a Skill path containing spaces executes', () => {
+    const directory = temporaryDirectory()
+    const copiedSkill = path.join(directory, 'charcoal skill with spaces')
+    cpSync(skillRoot, copiedSkill, { recursive: true })
+
+    expectPrimaryResult(
+      invoke(
+        temporaryDirectory(),
+        path.join(copiedSkill, 'scripts', 'resolve.mjs'),
+        'resolve',
+        'color/container/primary/default',
+      ),
+    )
+  })
+
+  test('importing resolve.mjs does not execute the CLI', () => {
+    const result = spawnSync(
+      process.execPath,
+      ['--input-type=module', '--eval', `import ${JSON.stringify(script)}`],
+      { cwd: temporaryDirectory(), encoding: 'utf8' },
+    )
+
+    expect(result.status).toBe(0)
+    expect(result.stdout).toBe('')
+    expect(result.stderr).toBe('')
+  })
 
   test.fails(
     'English primary-button search should rank the same first result as Japanese',

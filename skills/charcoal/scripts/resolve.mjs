@@ -1,15 +1,15 @@
 #!/usr/bin/env node
+import { realpathSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import path from 'node:path'
 import { classifyQuery } from './lookup/normalize.mjs'
 import { familyQuery, lookupQuery } from './lookup/query.mjs'
 import { searchQuery } from './lookup/search.mjs'
 import { assertResolveResult } from './lookup/validate.mjs'
 
 export const help = `Usage:
-  node skills/charcoal/scripts/resolve.mjs resolve <query>
-  node skills/charcoal/scripts/resolve.mjs search <intent>
-  node skills/charcoal/scripts/resolve.mjs family <token>
+  node scripts/resolve.mjs resolve <query>
+  node scripts/resolve.mjs search <intent>
+  node scripts/resolve.mjs family <token>
 
 Options:
   --pretty    Pretty-print JSON
@@ -118,11 +118,11 @@ export function run(args) {
 
 const isMain =
   process.argv[1] !== undefined &&
-  path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1])
+  realpathSync(fileURLToPath(import.meta.url)) === realpathSync(process.argv[1])
 
 if (isMain) {
   const result = run(process.argv.slice(2))
   if (result.stdout !== '') {process.stdout.write(result.stdout)}
   if (result.stderr !== '') {process.stderr.write(result.stderr)}
-  process.exit(result.exitCode)
+  process.exitCode = result.exitCode
 }

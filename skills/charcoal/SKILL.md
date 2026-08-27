@@ -8,7 +8,8 @@ description: Use Charcoal Design Token 2.0 when writing CSS or Tailwind for pixi
 pixiv の Design System。プロダクト UI に書いてよい名前は **Design Token 2.0 だけ**。
 
 トークン名・クラス名は推測しない。Figma MCP の hex も使わない。
-`node skills/charcoal/scripts/resolve.mjs resolve <変数名またはクラス>` を実行し、返ってきた CSS 変数または Tailwind クラスだけを書く。
+この Skill の directory を解決し、その directory を working directory にして
+`node scripts/resolve.mjs resolve <変数名またはクラス>` を実行する。返ってきた CSS 変数または Tailwind クラスだけを書く。
 `layer` が `primitive` ならプロダクト UI には使わず、`recommendedSemantic` か `search` でセマンティックを取り直す。
 
 ## When to use
@@ -29,9 +30,9 @@ pixiv の Design System。プロダクト UI に書いてよい名前は **Desig
 ## Commands
 
 ```text
-node skills/charcoal/scripts/resolve.mjs resolve <query>
-node skills/charcoal/scripts/resolve.mjs search <intent>
-node skills/charcoal/scripts/resolve.mjs family <token>
+node scripts/resolve.mjs resolve <query>
+node scripts/resolve.mjs search <intent>
+node scripts/resolve.mjs family <token>
 ```
 
 - ヒットも `{ ok: false, reason }` も exit 0。`ok` を見る

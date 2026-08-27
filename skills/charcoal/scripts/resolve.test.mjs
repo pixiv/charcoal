@@ -23,7 +23,7 @@ describe('resolve.mjs CLI contract', () => {
     const result = run(['--help'])
     expect(result.exitCode).toBe(0)
     expect(result.stdout).toContain(
-      'node skills/charcoal/scripts/resolve.mjs resolve <query>',
+      'node scripts/resolve.mjs resolve <query>',
     )
   })
 
