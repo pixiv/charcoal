@@ -1,4 +1,5 @@
-import { execFileSync, spawnSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
+import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
@@ -24,6 +25,9 @@ const runtimeFiles = new Set([
   'scripts/lookup/validate.mjs',
 ])
 
+const monorepoOnlyPattern =
+  /@charcoal-ui\/|generate\.ts|misc\/charcoal-skill|sources\.mjs/u
+
 function trackedRuntimeFiles() {
   return execFileSync('git', ['ls-files', '--', 'skills/charcoal'], {
     cwd: repoRoot,
@@ -35,22 +39,25 @@ function trackedRuntimeFiles() {
     .map((file) => file.replace(/^skills\/charcoal\//u, ''))
 }
 
+function collectFiles(dir) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const fullPath = path.join(dir, entry.name)
+    return entry.isDirectory() ? collectFiles(fullPath) : [fullPath]
+  })
+}
+
 describe('charcoal skill distribution tree', () => {
   test('contains only runtime files', () => {
     expect(new Set(trackedRuntimeFiles())).toEqual(runtimeFiles)
   })
 
   test('runtime does not reference monorepo-only code', () => {
-    const result = spawnSync(
-      'rg',
-      [
-        '-n',
-        '@charcoal-ui/|generate\\.ts|misc/charcoal-skill|sources\\.mjs',
-        'skills/charcoal/scripts',
-      ],
-      { cwd: repoRoot, encoding: 'utf8' },
+    const scriptsDir = path.join(repoRoot, 'skills/charcoal/scripts')
+    const hits = collectFiles(scriptsDir).flatMap((file) =>
+      monorepoOnlyPattern.test(readFileSync(file, 'utf8'))
+        ? [path.relative(repoRoot, file)]
+        : [],
     )
-    expect(result.status).toBe(1)
-    expect(result.stdout).toBe('')
+    expect(hits).toEqual([])
   })
 })
