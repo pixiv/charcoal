@@ -16,7 +16,7 @@
   "scripts": {
     "build": "run-s --print-label 'build:*'",
     "build:bundle": "tsdown",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly --incremental false",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
