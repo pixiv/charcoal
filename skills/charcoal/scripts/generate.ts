@@ -83,6 +83,7 @@ function familyAndState(tokenPath: string) {
 }
 
 function cssUsageFor(mapping: {
+  tokenPath: string
   cssVariable?: string
   classCandidates: { utility: string; cssProperties: string[] }[]
   sourceTokens: { tokenPath: string; cssVariable?: string }[]
@@ -104,7 +105,10 @@ function cssUsageFor(mapping: {
     return usages.join('; ')
   }
 
-  if (mapping.classCandidates.length > 1) {
+  if (
+    !mapping.tokenPath.startsWith('color.icon.') &&
+    mapping.classCandidates.length > 1
+  ) {
     return mapping.classCandidates
       .map((item) => `${item.cssProperties[0]}: var(${css})`)
       .join('; ')
@@ -115,15 +119,21 @@ function cssUsageFor(mapping: {
   return `${property}: var(${css})`
 }
 
-function tailwindFrom(mapping: { classCandidates: { className: string }[] }) {
-  const recommended = mapping.classCandidates.map(({ className }) => className)
+function tailwindFrom(mapping: {
+  tokenPath: string
+  classCandidates: { className: string }[]
+}) {
+  const classNames = mapping.classCandidates.map(({ className }) => className)
+  const isIcon = mapping.tokenPath.startsWith('color.icon.')
+  const recommended = isIcon ? classNames.slice(0, 1) : classNames
+  const alsoValid = isIcon ? classNames.slice(1) : []
   const [first] = recommended
   const key =
     first?.replace(
       /^(?:bg|text|fill|stroke|rounded|font|border|gap|p|m|w)-/u,
       '',
     ) ?? ''
-  return { key, recommended, alsoValid: [] as string[] }
+  return { key, recommended, alsoValid }
 }
 
 function recordKeys(record: Omit<IndexRecord, 'keys'>): string[] {
@@ -133,6 +143,7 @@ function recordKeys(record: Omit<IndexRecord, 'keys'>): string[] {
     record.css,
     record.css.replace(/^--/u, ''),
     ...(record.tailwind?.recommended ?? []),
+    ...(record.tailwind?.alsoValid ?? []),
     record.figma.replaceAll('/', '-'),
     record.tokenPath.split('.').slice(1).join('/'),
     record.tokenPath.split('.').slice(1).join('-'),

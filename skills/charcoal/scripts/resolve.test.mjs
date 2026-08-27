@@ -137,6 +137,31 @@ describe('resolve golden examples', () => {
     )
   })
 
+  test.each(['color/icon/default', 'color.icon.default'])(
+    'resolve %s',
+    (query) => {
+      const result = parseStdout(run(['resolve', query]))
+      expect(result).toMatchObject({
+        ok: true,
+        cssUsage: 'color: var(--charcoal-color-icon-default)',
+        tailwind: {
+          recommended: ['text-icon'],
+          alsoValid: ['fill-icon', 'stroke-icon'],
+        },
+      })
+    },
+  )
+
+  test.each(['text-icon', 'fill-icon', 'stroke-icon'])(
+    'resolve %s',
+    (query) => {
+      expect(parseStdout(run(['resolve', query]))).toMatchObject({
+        ok: true,
+        figma: 'color/icon/default',
+      })
+    },
+  )
+
   test('resolve border-width-ch-m', () => {
     expect(parseStdout(run(['resolve', 'border-width-ch-m']))).toMatchObject({
       ok: true,

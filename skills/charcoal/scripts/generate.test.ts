@@ -11,6 +11,22 @@ describe('generate index', () => {
     }
     expect(JSON.parse(readFileSync(indexPath, 'utf8'))).toEqual(buildIndex())
   })
+
+  test('icon.default recommends text-* and keeps fill/stroke as alsoValid', () => {
+    const record = buildIndex().records.find(
+      (item) => item.tokenPath === 'color.icon.default',
+    )
+    expect(record).toMatchObject({
+      cssUsage: 'color: var(--charcoal-color-icon-default)',
+      tailwind: {
+        recommended: ['text-icon'],
+        alsoValid: ['fill-icon', 'stroke-icon'],
+      },
+    })
+    expect(record?.keys).toEqual(
+      expect.arrayContaining(['text-icon', 'fill-icon', 'stroke-icon']),
+    )
+  })
 })
 
 describe('recommended class reverse lookup', () => {
