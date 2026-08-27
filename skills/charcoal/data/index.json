@@ -1,7 +1,7 @@
 {
   "source": {
     "mappingPackageVersion": "6.1.0-beta.4",
-    "mappingHash": "cfbd04c1342cd82b6f91430d54f2ab983cfe7c3d1904564a219f892b9a9ab8b3"
+    "mappingHash": "074180b6b33b9ce954423aa1a2e347919fdff964815fa0137561fc5cbf956b0d"
   },
   "records": [
     {
@@ -3049,10 +3049,11 @@
       "css": "--charcoal-color-icon-disable",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-disable); stroke: var(--charcoal-color-icon-disable)",
+      "cssUsage": "color: var(--charcoal-color-icon-disable); fill: var(--charcoal-color-icon-disable); stroke: var(--charcoal-color-icon-disable)",
       "tailwind": {
         "key": "icon-disable",
         "recommended": [
+          "text-icon-disable",
           "fill-icon-disable",
           "stroke-icon-disable"
         ],
@@ -3061,6 +3062,13 @@
       "mapping": {
         "tokenPath": "color.icon.disable",
         "classCandidates": [
+          {
+            "className": "text-icon-disable",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-disable",
             "utility": "fill",
@@ -3085,6 +3093,7 @@
         "color/icon/disable",
         "--charcoal-color-icon-disable",
         "charcoal-color-icon-disable",
+        "text-icon-disable",
         "fill-icon-disable",
         "stroke-icon-disable",
         "color-icon-disable",
@@ -3099,10 +3108,11 @@
       "css": "--charcoal-color-icon-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-hover); stroke: var(--charcoal-color-icon-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-hover); fill: var(--charcoal-color-icon-hover); stroke: var(--charcoal-color-icon-hover)",
       "tailwind": {
         "key": "icon-hover",
         "recommended": [
+          "text-icon-hover",
           "fill-icon-hover",
           "stroke-icon-hover"
         ],
@@ -3111,6 +3121,13 @@
       "mapping": {
         "tokenPath": "color.icon.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-hover",
             "utility": "fill",
@@ -3135,6 +3152,7 @@
         "color/icon/hover",
         "--charcoal-color-icon-hover",
         "charcoal-color-icon-hover",
+        "text-icon-hover",
         "fill-icon-hover",
         "stroke-icon-hover",
         "color-icon-hover",
@@ -3149,10 +3167,11 @@
       "css": "--charcoal-color-icon-negative-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-negative-hover); stroke: var(--charcoal-color-icon-negative-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-negative-hover); fill: var(--charcoal-color-icon-negative-hover); stroke: var(--charcoal-color-icon-negative-hover)",
       "tailwind": {
         "key": "icon-negative-hover",
         "recommended": [
+          "text-icon-negative-hover",
           "fill-icon-negative-hover",
           "stroke-icon-negative-hover"
         ],
@@ -3161,6 +3180,13 @@
       "mapping": {
         "tokenPath": "color.icon.negative.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-negative-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-negative-hover",
             "utility": "fill",
@@ -3185,6 +3211,7 @@
         "color/icon/negative/hover",
         "--charcoal-color-icon-negative-hover",
         "charcoal-color-icon-negative-hover",
+        "text-icon-negative-hover",
         "fill-icon-negative-hover",
         "stroke-icon-negative-hover",
         "color-icon-negative-hover",
@@ -3199,10 +3226,11 @@
       "css": "--charcoal-color-icon-negative-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-negative-press); stroke: var(--charcoal-color-icon-negative-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-negative-press); fill: var(--charcoal-color-icon-negative-press); stroke: var(--charcoal-color-icon-negative-press)",
       "tailwind": {
         "key": "icon-negative-press",
         "recommended": [
+          "text-icon-negative-press",
           "fill-icon-negative-press",
           "stroke-icon-negative-press"
         ],
@@ -3211,6 +3239,13 @@
       "mapping": {
         "tokenPath": "color.icon.negative.press",
         "classCandidates": [
+          {
+            "className": "text-icon-negative-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-negative-press",
             "utility": "fill",
@@ -3235,6 +3270,7 @@
         "color/icon/negative/press",
         "--charcoal-color-icon-negative-press",
         "charcoal-color-icon-negative-press",
+        "text-icon-negative-press",
         "fill-icon-negative-press",
         "stroke-icon-negative-press",
         "color-icon-negative-press",
@@ -3249,10 +3285,11 @@
       "css": "--charcoal-color-icon-negative-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-negative-default); stroke: var(--charcoal-color-icon-negative-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-negative-default); fill: var(--charcoal-color-icon-negative-default); stroke: var(--charcoal-color-icon-negative-default)",
       "tailwind": {
         "key": "icon-negative",
         "recommended": [
+          "text-icon-negative",
           "fill-icon-negative",
           "stroke-icon-negative"
         ],
@@ -3261,6 +3298,13 @@
       "mapping": {
         "tokenPath": "color.icon.negative.default",
         "classCandidates": [
+          {
+            "className": "text-icon-negative",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-negative",
             "utility": "fill",
@@ -3285,6 +3329,7 @@
         "color/icon/negative/default",
         "--charcoal-color-icon-negative-default",
         "charcoal-color-icon-negative-default",
+        "text-icon-negative",
         "fill-icon-negative",
         "stroke-icon-negative",
         "color-icon-negative-default",
@@ -3299,10 +3344,11 @@
       "css": "--charcoal-color-icon-notice-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-notice-hover); stroke: var(--charcoal-color-icon-notice-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-notice-hover); fill: var(--charcoal-color-icon-notice-hover); stroke: var(--charcoal-color-icon-notice-hover)",
       "tailwind": {
         "key": "icon-notice-hover",
         "recommended": [
+          "text-icon-notice-hover",
           "fill-icon-notice-hover",
           "stroke-icon-notice-hover"
         ],
@@ -3311,6 +3357,13 @@
       "mapping": {
         "tokenPath": "color.icon.notice.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-notice-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-notice-hover",
             "utility": "fill",
@@ -3335,6 +3388,7 @@
         "color/icon/notice/hover",
         "--charcoal-color-icon-notice-hover",
         "charcoal-color-icon-notice-hover",
+        "text-icon-notice-hover",
         "fill-icon-notice-hover",
         "stroke-icon-notice-hover",
         "color-icon-notice-hover",
@@ -3349,10 +3403,11 @@
       "css": "--charcoal-color-icon-notice-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-notice-press); stroke: var(--charcoal-color-icon-notice-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-notice-press); fill: var(--charcoal-color-icon-notice-press); stroke: var(--charcoal-color-icon-notice-press)",
       "tailwind": {
         "key": "icon-notice-press",
         "recommended": [
+          "text-icon-notice-press",
           "fill-icon-notice-press",
           "stroke-icon-notice-press"
         ],
@@ -3361,6 +3416,13 @@
       "mapping": {
         "tokenPath": "color.icon.notice.press",
         "classCandidates": [
+          {
+            "className": "text-icon-notice-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-notice-press",
             "utility": "fill",
@@ -3385,6 +3447,7 @@
         "color/icon/notice/press",
         "--charcoal-color-icon-notice-press",
         "charcoal-color-icon-notice-press",
+        "text-icon-notice-press",
         "fill-icon-notice-press",
         "stroke-icon-notice-press",
         "color-icon-notice-press",
@@ -3399,10 +3462,11 @@
       "css": "--charcoal-color-icon-notice-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-notice-default); stroke: var(--charcoal-color-icon-notice-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-notice-default); fill: var(--charcoal-color-icon-notice-default); stroke: var(--charcoal-color-icon-notice-default)",
       "tailwind": {
         "key": "icon-notice",
         "recommended": [
+          "text-icon-notice",
           "fill-icon-notice",
           "stroke-icon-notice"
         ],
@@ -3411,6 +3475,13 @@
       "mapping": {
         "tokenPath": "color.icon.notice.default",
         "classCandidates": [
+          {
+            "className": "text-icon-notice",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-notice",
             "utility": "fill",
@@ -3435,6 +3506,7 @@
         "color/icon/notice/default",
         "--charcoal-color-icon-notice-default",
         "charcoal-color-icon-notice-default",
+        "text-icon-notice",
         "fill-icon-notice",
         "stroke-icon-notice",
         "color-icon-notice-default",
@@ -3449,10 +3521,11 @@
       "css": "--charcoal-color-icon-on-negative-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-negative-hover); stroke: var(--charcoal-color-icon-on-negative-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-negative-hover); fill: var(--charcoal-color-icon-on-negative-hover); stroke: var(--charcoal-color-icon-on-negative-hover)",
       "tailwind": {
         "key": "icon-on-negative-hover",
         "recommended": [
+          "text-icon-on-negative-hover",
           "fill-icon-on-negative-hover",
           "stroke-icon-on-negative-hover"
         ],
@@ -3461,6 +3534,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-negative.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-on-negative-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-negative-hover",
             "utility": "fill",
@@ -3485,6 +3565,7 @@
         "color/icon/on-negative/hover",
         "--charcoal-color-icon-on-negative-hover",
         "charcoal-color-icon-on-negative-hover",
+        "text-icon-on-negative-hover",
         "fill-icon-on-negative-hover",
         "stroke-icon-on-negative-hover",
         "color-icon-on-negative-hover",
@@ -3499,10 +3580,11 @@
       "css": "--charcoal-color-icon-on-negative-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-negative-press); stroke: var(--charcoal-color-icon-on-negative-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-negative-press); fill: var(--charcoal-color-icon-on-negative-press); stroke: var(--charcoal-color-icon-on-negative-press)",
       "tailwind": {
         "key": "icon-on-negative-press",
         "recommended": [
+          "text-icon-on-negative-press",
           "fill-icon-on-negative-press",
           "stroke-icon-on-negative-press"
         ],
@@ -3511,6 +3593,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-negative.press",
         "classCandidates": [
+          {
+            "className": "text-icon-on-negative-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-negative-press",
             "utility": "fill",
@@ -3535,6 +3624,7 @@
         "color/icon/on-negative/press",
         "--charcoal-color-icon-on-negative-press",
         "charcoal-color-icon-on-negative-press",
+        "text-icon-on-negative-press",
         "fill-icon-on-negative-press",
         "stroke-icon-on-negative-press",
         "color-icon-on-negative-press",
@@ -3549,10 +3639,11 @@
       "css": "--charcoal-color-icon-on-negative-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-negative-default); stroke: var(--charcoal-color-icon-on-negative-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-negative-default); fill: var(--charcoal-color-icon-on-negative-default); stroke: var(--charcoal-color-icon-on-negative-default)",
       "tailwind": {
         "key": "icon-on-negative",
         "recommended": [
+          "text-icon-on-negative",
           "fill-icon-on-negative",
           "stroke-icon-on-negative"
         ],
@@ -3561,6 +3652,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-negative.default",
         "classCandidates": [
+          {
+            "className": "text-icon-on-negative",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-negative",
             "utility": "fill",
@@ -3585,6 +3683,7 @@
         "color/icon/on-negative/default",
         "--charcoal-color-icon-on-negative-default",
         "charcoal-color-icon-on-negative-default",
+        "text-icon-on-negative",
         "fill-icon-on-negative",
         "stroke-icon-on-negative",
         "color-icon-on-negative-default",
@@ -3599,10 +3698,11 @@
       "css": "--charcoal-color-icon-on-neutral-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-neutral-hover); stroke: var(--charcoal-color-icon-on-neutral-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-neutral-hover); fill: var(--charcoal-color-icon-on-neutral-hover); stroke: var(--charcoal-color-icon-on-neutral-hover)",
       "tailwind": {
         "key": "icon-on-neutral-hover",
         "recommended": [
+          "text-icon-on-neutral-hover",
           "fill-icon-on-neutral-hover",
           "stroke-icon-on-neutral-hover"
         ],
@@ -3611,6 +3711,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-neutral.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-on-neutral-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-neutral-hover",
             "utility": "fill",
@@ -3635,6 +3742,7 @@
         "color/icon/on-neutral/hover",
         "--charcoal-color-icon-on-neutral-hover",
         "charcoal-color-icon-on-neutral-hover",
+        "text-icon-on-neutral-hover",
         "fill-icon-on-neutral-hover",
         "stroke-icon-on-neutral-hover",
         "color-icon-on-neutral-hover",
@@ -3649,10 +3757,11 @@
       "css": "--charcoal-color-icon-on-neutral-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-neutral-press); stroke: var(--charcoal-color-icon-on-neutral-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-neutral-press); fill: var(--charcoal-color-icon-on-neutral-press); stroke: var(--charcoal-color-icon-on-neutral-press)",
       "tailwind": {
         "key": "icon-on-neutral-press",
         "recommended": [
+          "text-icon-on-neutral-press",
           "fill-icon-on-neutral-press",
           "stroke-icon-on-neutral-press"
         ],
@@ -3661,6 +3770,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-neutral.press",
         "classCandidates": [
+          {
+            "className": "text-icon-on-neutral-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-neutral-press",
             "utility": "fill",
@@ -3685,6 +3801,7 @@
         "color/icon/on-neutral/press",
         "--charcoal-color-icon-on-neutral-press",
         "charcoal-color-icon-on-neutral-press",
+        "text-icon-on-neutral-press",
         "fill-icon-on-neutral-press",
         "stroke-icon-on-neutral-press",
         "color-icon-on-neutral-press",
@@ -3699,10 +3816,11 @@
       "css": "--charcoal-color-icon-on-neutral-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-neutral-default); stroke: var(--charcoal-color-icon-on-neutral-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-neutral-default); fill: var(--charcoal-color-icon-on-neutral-default); stroke: var(--charcoal-color-icon-on-neutral-default)",
       "tailwind": {
         "key": "icon-on-neutral",
         "recommended": [
+          "text-icon-on-neutral",
           "fill-icon-on-neutral",
           "stroke-icon-on-neutral"
         ],
@@ -3711,6 +3829,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-neutral.default",
         "classCandidates": [
+          {
+            "className": "text-icon-on-neutral",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-neutral",
             "utility": "fill",
@@ -3735,6 +3860,7 @@
         "color/icon/on-neutral/default",
         "--charcoal-color-icon-on-neutral-default",
         "charcoal-color-icon-on-neutral-default",
+        "text-icon-on-neutral",
         "fill-icon-on-neutral",
         "stroke-icon-on-neutral",
         "color-icon-on-neutral-default",
@@ -3749,10 +3875,11 @@
       "css": "--charcoal-color-icon-on-notice-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-notice-hover); stroke: var(--charcoal-color-icon-on-notice-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-notice-hover); fill: var(--charcoal-color-icon-on-notice-hover); stroke: var(--charcoal-color-icon-on-notice-hover)",
       "tailwind": {
         "key": "icon-on-notice-hover",
         "recommended": [
+          "text-icon-on-notice-hover",
           "fill-icon-on-notice-hover",
           "stroke-icon-on-notice-hover"
         ],
@@ -3761,6 +3888,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-notice.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-on-notice-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-notice-hover",
             "utility": "fill",
@@ -3785,6 +3919,7 @@
         "color/icon/on-notice/hover",
         "--charcoal-color-icon-on-notice-hover",
         "charcoal-color-icon-on-notice-hover",
+        "text-icon-on-notice-hover",
         "fill-icon-on-notice-hover",
         "stroke-icon-on-notice-hover",
         "color-icon-on-notice-hover",
@@ -3799,10 +3934,11 @@
       "css": "--charcoal-color-icon-on-notice-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-notice-press); stroke: var(--charcoal-color-icon-on-notice-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-notice-press); fill: var(--charcoal-color-icon-on-notice-press); stroke: var(--charcoal-color-icon-on-notice-press)",
       "tailwind": {
         "key": "icon-on-notice-press",
         "recommended": [
+          "text-icon-on-notice-press",
           "fill-icon-on-notice-press",
           "stroke-icon-on-notice-press"
         ],
@@ -3811,6 +3947,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-notice.press",
         "classCandidates": [
+          {
+            "className": "text-icon-on-notice-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-notice-press",
             "utility": "fill",
@@ -3835,6 +3978,7 @@
         "color/icon/on-notice/press",
         "--charcoal-color-icon-on-notice-press",
         "charcoal-color-icon-on-notice-press",
+        "text-icon-on-notice-press",
         "fill-icon-on-notice-press",
         "stroke-icon-on-notice-press",
         "color-icon-on-notice-press",
@@ -3849,10 +3993,11 @@
       "css": "--charcoal-color-icon-on-notice-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-notice-default); stroke: var(--charcoal-color-icon-on-notice-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-notice-default); fill: var(--charcoal-color-icon-on-notice-default); stroke: var(--charcoal-color-icon-on-notice-default)",
       "tailwind": {
         "key": "icon-on-notice",
         "recommended": [
+          "text-icon-on-notice",
           "fill-icon-on-notice",
           "stroke-icon-on-notice"
         ],
@@ -3861,6 +4006,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-notice.default",
         "classCandidates": [
+          {
+            "className": "text-icon-on-notice",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-notice",
             "utility": "fill",
@@ -3885,6 +4037,7 @@
         "color/icon/on-notice/default",
         "--charcoal-color-icon-on-notice-default",
         "charcoal-color-icon-on-notice-default",
+        "text-icon-on-notice",
         "fill-icon-on-notice",
         "stroke-icon-on-notice",
         "color-icon-on-notice-default",
@@ -3899,10 +4052,11 @@
       "css": "--charcoal-color-icon-on-on-img-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-on-img-hover); stroke: var(--charcoal-color-icon-on-on-img-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-on-img-hover); fill: var(--charcoal-color-icon-on-on-img-hover); stroke: var(--charcoal-color-icon-on-on-img-hover)",
       "tailwind": {
         "key": "icon-on-on-img-hover",
         "recommended": [
+          "text-icon-on-on-img-hover",
           "fill-icon-on-on-img-hover",
           "stroke-icon-on-on-img-hover"
         ],
@@ -3911,6 +4065,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-on-img.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-on-on-img-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-on-img-hover",
             "utility": "fill",
@@ -3935,6 +4096,7 @@
         "color/icon/on-on-img/hover",
         "--charcoal-color-icon-on-on-img-hover",
         "charcoal-color-icon-on-on-img-hover",
+        "text-icon-on-on-img-hover",
         "fill-icon-on-on-img-hover",
         "stroke-icon-on-on-img-hover",
         "color-icon-on-on-img-hover",
@@ -3949,10 +4111,11 @@
       "css": "--charcoal-color-icon-on-on-img-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-on-img-press); stroke: var(--charcoal-color-icon-on-on-img-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-on-img-press); fill: var(--charcoal-color-icon-on-on-img-press); stroke: var(--charcoal-color-icon-on-on-img-press)",
       "tailwind": {
         "key": "icon-on-on-img-press",
         "recommended": [
+          "text-icon-on-on-img-press",
           "fill-icon-on-on-img-press",
           "stroke-icon-on-on-img-press"
         ],
@@ -3961,6 +4124,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-on-img.press",
         "classCandidates": [
+          {
+            "className": "text-icon-on-on-img-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-on-img-press",
             "utility": "fill",
@@ -3985,6 +4155,7 @@
         "color/icon/on-on-img/press",
         "--charcoal-color-icon-on-on-img-press",
         "charcoal-color-icon-on-on-img-press",
+        "text-icon-on-on-img-press",
         "fill-icon-on-on-img-press",
         "stroke-icon-on-on-img-press",
         "color-icon-on-on-img-press",
@@ -3999,10 +4170,11 @@
       "css": "--charcoal-color-icon-on-on-img-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-on-img-default); stroke: var(--charcoal-color-icon-on-on-img-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-on-img-default); fill: var(--charcoal-color-icon-on-on-img-default); stroke: var(--charcoal-color-icon-on-on-img-default)",
       "tailwind": {
         "key": "icon-on-on-img",
         "recommended": [
+          "text-icon-on-on-img",
           "fill-icon-on-on-img",
           "stroke-icon-on-on-img"
         ],
@@ -4011,6 +4183,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-on-img.default",
         "classCandidates": [
+          {
+            "className": "text-icon-on-on-img",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-on-img",
             "utility": "fill",
@@ -4035,6 +4214,7 @@
         "color/icon/on-on-img/default",
         "--charcoal-color-icon-on-on-img-default",
         "charcoal-color-icon-on-on-img-default",
+        "text-icon-on-on-img",
         "fill-icon-on-on-img",
         "stroke-icon-on-on-img",
         "color-icon-on-on-img-default",
@@ -4049,10 +4229,11 @@
       "css": "--charcoal-color-icon-on-positive-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-positive-hover); stroke: var(--charcoal-color-icon-on-positive-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-positive-hover); fill: var(--charcoal-color-icon-on-positive-hover); stroke: var(--charcoal-color-icon-on-positive-hover)",
       "tailwind": {
         "key": "icon-on-positive-hover",
         "recommended": [
+          "text-icon-on-positive-hover",
           "fill-icon-on-positive-hover",
           "stroke-icon-on-positive-hover"
         ],
@@ -4061,6 +4242,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-positive.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-on-positive-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-positive-hover",
             "utility": "fill",
@@ -4085,6 +4273,7 @@
         "color/icon/on-positive/hover",
         "--charcoal-color-icon-on-positive-hover",
         "charcoal-color-icon-on-positive-hover",
+        "text-icon-on-positive-hover",
         "fill-icon-on-positive-hover",
         "stroke-icon-on-positive-hover",
         "color-icon-on-positive-hover",
@@ -4099,10 +4288,11 @@
       "css": "--charcoal-color-icon-on-positive-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-positive-press); stroke: var(--charcoal-color-icon-on-positive-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-positive-press); fill: var(--charcoal-color-icon-on-positive-press); stroke: var(--charcoal-color-icon-on-positive-press)",
       "tailwind": {
         "key": "icon-on-positive-press",
         "recommended": [
+          "text-icon-on-positive-press",
           "fill-icon-on-positive-press",
           "stroke-icon-on-positive-press"
         ],
@@ -4111,6 +4301,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-positive.press",
         "classCandidates": [
+          {
+            "className": "text-icon-on-positive-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-positive-press",
             "utility": "fill",
@@ -4135,6 +4332,7 @@
         "color/icon/on-positive/press",
         "--charcoal-color-icon-on-positive-press",
         "charcoal-color-icon-on-positive-press",
+        "text-icon-on-positive-press",
         "fill-icon-on-positive-press",
         "stroke-icon-on-positive-press",
         "color-icon-on-positive-press",
@@ -4149,10 +4347,11 @@
       "css": "--charcoal-color-icon-on-positive-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-positive-default); stroke: var(--charcoal-color-icon-on-positive-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-positive-default); fill: var(--charcoal-color-icon-on-positive-default); stroke: var(--charcoal-color-icon-on-positive-default)",
       "tailwind": {
         "key": "icon-on-positive",
         "recommended": [
+          "text-icon-on-positive",
           "fill-icon-on-positive",
           "stroke-icon-on-positive"
         ],
@@ -4161,6 +4360,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-positive.default",
         "classCandidates": [
+          {
+            "className": "text-icon-on-positive",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-positive",
             "utility": "fill",
@@ -4185,6 +4391,7 @@
         "color/icon/on-positive/default",
         "--charcoal-color-icon-on-positive-default",
         "charcoal-color-icon-on-positive-default",
+        "text-icon-on-positive",
         "fill-icon-on-positive",
         "stroke-icon-on-positive",
         "color-icon-on-positive-default",
@@ -4199,10 +4406,11 @@
       "css": "--charcoal-color-icon-on-primary-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-primary-hover); stroke: var(--charcoal-color-icon-on-primary-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-primary-hover); fill: var(--charcoal-color-icon-on-primary-hover); stroke: var(--charcoal-color-icon-on-primary-hover)",
       "tailwind": {
         "key": "icon-on-primary-hover",
         "recommended": [
+          "text-icon-on-primary-hover",
           "fill-icon-on-primary-hover",
           "stroke-icon-on-primary-hover"
         ],
@@ -4211,6 +4419,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-primary.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-on-primary-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-primary-hover",
             "utility": "fill",
@@ -4235,6 +4450,7 @@
         "color/icon/on-primary/hover",
         "--charcoal-color-icon-on-primary-hover",
         "charcoal-color-icon-on-primary-hover",
+        "text-icon-on-primary-hover",
         "fill-icon-on-primary-hover",
         "stroke-icon-on-primary-hover",
         "color-icon-on-primary-hover",
@@ -4249,10 +4465,11 @@
       "css": "--charcoal-color-icon-on-primary-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-primary-press); stroke: var(--charcoal-color-icon-on-primary-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-primary-press); fill: var(--charcoal-color-icon-on-primary-press); stroke: var(--charcoal-color-icon-on-primary-press)",
       "tailwind": {
         "key": "icon-on-primary-press",
         "recommended": [
+          "text-icon-on-primary-press",
           "fill-icon-on-primary-press",
           "stroke-icon-on-primary-press"
         ],
@@ -4261,6 +4478,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-primary.press",
         "classCandidates": [
+          {
+            "className": "text-icon-on-primary-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-primary-press",
             "utility": "fill",
@@ -4285,6 +4509,7 @@
         "color/icon/on-primary/press",
         "--charcoal-color-icon-on-primary-press",
         "charcoal-color-icon-on-primary-press",
+        "text-icon-on-primary-press",
         "fill-icon-on-primary-press",
         "stroke-icon-on-primary-press",
         "color-icon-on-primary-press",
@@ -4299,10 +4524,11 @@
       "css": "--charcoal-color-icon-on-primary-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-on-primary-default); stroke: var(--charcoal-color-icon-on-primary-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-on-primary-default); fill: var(--charcoal-color-icon-on-primary-default); stroke: var(--charcoal-color-icon-on-primary-default)",
       "tailwind": {
         "key": "icon-on-primary",
         "recommended": [
+          "text-icon-on-primary",
           "fill-icon-on-primary",
           "stroke-icon-on-primary"
         ],
@@ -4311,6 +4537,13 @@
       "mapping": {
         "tokenPath": "color.icon.on-primary.default",
         "classCandidates": [
+          {
+            "className": "text-icon-on-primary",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-on-primary",
             "utility": "fill",
@@ -4335,6 +4568,7 @@
         "color/icon/on-primary/default",
         "--charcoal-color-icon-on-primary-default",
         "charcoal-color-icon-on-primary-default",
+        "text-icon-on-primary",
         "fill-icon-on-primary",
         "stroke-icon-on-primary",
         "color-icon-on-primary-default",
@@ -4349,10 +4583,11 @@
       "css": "--charcoal-color-icon-positive-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-positive-hover); stroke: var(--charcoal-color-icon-positive-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-positive-hover); fill: var(--charcoal-color-icon-positive-hover); stroke: var(--charcoal-color-icon-positive-hover)",
       "tailwind": {
         "key": "icon-positive-hover",
         "recommended": [
+          "text-icon-positive-hover",
           "fill-icon-positive-hover",
           "stroke-icon-positive-hover"
         ],
@@ -4361,6 +4596,13 @@
       "mapping": {
         "tokenPath": "color.icon.positive.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-positive-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-positive-hover",
             "utility": "fill",
@@ -4385,6 +4627,7 @@
         "color/icon/positive/hover",
         "--charcoal-color-icon-positive-hover",
         "charcoal-color-icon-positive-hover",
+        "text-icon-positive-hover",
         "fill-icon-positive-hover",
         "stroke-icon-positive-hover",
         "color-icon-positive-hover",
@@ -4399,10 +4642,11 @@
       "css": "--charcoal-color-icon-positive-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-positive-press); stroke: var(--charcoal-color-icon-positive-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-positive-press); fill: var(--charcoal-color-icon-positive-press); stroke: var(--charcoal-color-icon-positive-press)",
       "tailwind": {
         "key": "icon-positive-press",
         "recommended": [
+          "text-icon-positive-press",
           "fill-icon-positive-press",
           "stroke-icon-positive-press"
         ],
@@ -4411,6 +4655,13 @@
       "mapping": {
         "tokenPath": "color.icon.positive.press",
         "classCandidates": [
+          {
+            "className": "text-icon-positive-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-positive-press",
             "utility": "fill",
@@ -4435,6 +4686,7 @@
         "color/icon/positive/press",
         "--charcoal-color-icon-positive-press",
         "charcoal-color-icon-positive-press",
+        "text-icon-positive-press",
         "fill-icon-positive-press",
         "stroke-icon-positive-press",
         "color-icon-positive-press",
@@ -4449,10 +4701,11 @@
       "css": "--charcoal-color-icon-positive-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-positive-default); stroke: var(--charcoal-color-icon-positive-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-positive-default); fill: var(--charcoal-color-icon-positive-default); stroke: var(--charcoal-color-icon-positive-default)",
       "tailwind": {
         "key": "icon-positive",
         "recommended": [
+          "text-icon-positive",
           "fill-icon-positive",
           "stroke-icon-positive"
         ],
@@ -4461,6 +4714,13 @@
       "mapping": {
         "tokenPath": "color.icon.positive.default",
         "classCandidates": [
+          {
+            "className": "text-icon-positive",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-positive",
             "utility": "fill",
@@ -4485,6 +4745,7 @@
         "color/icon/positive/default",
         "--charcoal-color-icon-positive-default",
         "charcoal-color-icon-positive-default",
+        "text-icon-positive",
         "fill-icon-positive",
         "stroke-icon-positive",
         "color-icon-positive-default",
@@ -4499,10 +4760,11 @@
       "css": "--charcoal-color-icon-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-press); stroke: var(--charcoal-color-icon-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-press); fill: var(--charcoal-color-icon-press); stroke: var(--charcoal-color-icon-press)",
       "tailwind": {
         "key": "icon-press",
         "recommended": [
+          "text-icon-press",
           "fill-icon-press",
           "stroke-icon-press"
         ],
@@ -4511,6 +4773,13 @@
       "mapping": {
         "tokenPath": "color.icon.press",
         "classCandidates": [
+          {
+            "className": "text-icon-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-press",
             "utility": "fill",
@@ -4535,6 +4804,7 @@
         "color/icon/press",
         "--charcoal-color-icon-press",
         "charcoal-color-icon-press",
+        "text-icon-press",
         "fill-icon-press",
         "stroke-icon-press",
         "color-icon-press",
@@ -4549,10 +4819,11 @@
       "css": "--charcoal-color-icon-secondary-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-secondary-hover); stroke: var(--charcoal-color-icon-secondary-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-secondary-hover); fill: var(--charcoal-color-icon-secondary-hover); stroke: var(--charcoal-color-icon-secondary-hover)",
       "tailwind": {
         "key": "icon-secondary-hover",
         "recommended": [
+          "text-icon-secondary-hover",
           "fill-icon-secondary-hover",
           "stroke-icon-secondary-hover"
         ],
@@ -4561,6 +4832,13 @@
       "mapping": {
         "tokenPath": "color.icon.secondary.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-secondary-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-secondary-hover",
             "utility": "fill",
@@ -4585,6 +4863,7 @@
         "color/icon/secondary/hover",
         "--charcoal-color-icon-secondary-hover",
         "charcoal-color-icon-secondary-hover",
+        "text-icon-secondary-hover",
         "fill-icon-secondary-hover",
         "stroke-icon-secondary-hover",
         "color-icon-secondary-hover",
@@ -4599,10 +4878,11 @@
       "css": "--charcoal-color-icon-secondary-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-secondary-press); stroke: var(--charcoal-color-icon-secondary-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-secondary-press); fill: var(--charcoal-color-icon-secondary-press); stroke: var(--charcoal-color-icon-secondary-press)",
       "tailwind": {
         "key": "icon-secondary-press",
         "recommended": [
+          "text-icon-secondary-press",
           "fill-icon-secondary-press",
           "stroke-icon-secondary-press"
         ],
@@ -4611,6 +4891,13 @@
       "mapping": {
         "tokenPath": "color.icon.secondary.press",
         "classCandidates": [
+          {
+            "className": "text-icon-secondary-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-secondary-press",
             "utility": "fill",
@@ -4635,6 +4922,7 @@
         "color/icon/secondary/press",
         "--charcoal-color-icon-secondary-press",
         "charcoal-color-icon-secondary-press",
+        "text-icon-secondary-press",
         "fill-icon-secondary-press",
         "stroke-icon-secondary-press",
         "color-icon-secondary-press",
@@ -4649,10 +4937,11 @@
       "css": "--charcoal-color-icon-secondary-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-secondary-default); stroke: var(--charcoal-color-icon-secondary-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-secondary-default); fill: var(--charcoal-color-icon-secondary-default); stroke: var(--charcoal-color-icon-secondary-default)",
       "tailwind": {
         "key": "icon-secondary",
         "recommended": [
+          "text-icon-secondary",
           "fill-icon-secondary",
           "stroke-icon-secondary"
         ],
@@ -4661,6 +4950,13 @@
       "mapping": {
         "tokenPath": "color.icon.secondary.default",
         "classCandidates": [
+          {
+            "className": "text-icon-secondary",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-secondary",
             "utility": "fill",
@@ -4685,6 +4981,7 @@
         "color/icon/secondary/default",
         "--charcoal-color-icon-secondary-default",
         "charcoal-color-icon-secondary-default",
+        "text-icon-secondary",
         "fill-icon-secondary",
         "stroke-icon-secondary",
         "color-icon-secondary-default",
@@ -4699,10 +4996,11 @@
       "css": "--charcoal-color-icon-tertiary-hover",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-tertiary-hover); stroke: var(--charcoal-color-icon-tertiary-hover)",
+      "cssUsage": "color: var(--charcoal-color-icon-tertiary-hover); fill: var(--charcoal-color-icon-tertiary-hover); stroke: var(--charcoal-color-icon-tertiary-hover)",
       "tailwind": {
         "key": "icon-tertiary-hover",
         "recommended": [
+          "text-icon-tertiary-hover",
           "fill-icon-tertiary-hover",
           "stroke-icon-tertiary-hover"
         ],
@@ -4711,6 +5009,13 @@
       "mapping": {
         "tokenPath": "color.icon.tertiary.hover",
         "classCandidates": [
+          {
+            "className": "text-icon-tertiary-hover",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-tertiary-hover",
             "utility": "fill",
@@ -4735,6 +5040,7 @@
         "color/icon/tertiary/hover",
         "--charcoal-color-icon-tertiary-hover",
         "charcoal-color-icon-tertiary-hover",
+        "text-icon-tertiary-hover",
         "fill-icon-tertiary-hover",
         "stroke-icon-tertiary-hover",
         "color-icon-tertiary-hover",
@@ -4749,10 +5055,11 @@
       "css": "--charcoal-color-icon-tertiary-press",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-tertiary-press); stroke: var(--charcoal-color-icon-tertiary-press)",
+      "cssUsage": "color: var(--charcoal-color-icon-tertiary-press); fill: var(--charcoal-color-icon-tertiary-press); stroke: var(--charcoal-color-icon-tertiary-press)",
       "tailwind": {
         "key": "icon-tertiary-press",
         "recommended": [
+          "text-icon-tertiary-press",
           "fill-icon-tertiary-press",
           "stroke-icon-tertiary-press"
         ],
@@ -4761,6 +5068,13 @@
       "mapping": {
         "tokenPath": "color.icon.tertiary.press",
         "classCandidates": [
+          {
+            "className": "text-icon-tertiary-press",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-tertiary-press",
             "utility": "fill",
@@ -4785,6 +5099,7 @@
         "color/icon/tertiary/press",
         "--charcoal-color-icon-tertiary-press",
         "charcoal-color-icon-tertiary-press",
+        "text-icon-tertiary-press",
         "fill-icon-tertiary-press",
         "stroke-icon-tertiary-press",
         "color-icon-tertiary-press",
@@ -4799,10 +5114,11 @@
       "css": "--charcoal-color-icon-tertiary-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-tertiary-default); stroke: var(--charcoal-color-icon-tertiary-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-tertiary-default); fill: var(--charcoal-color-icon-tertiary-default); stroke: var(--charcoal-color-icon-tertiary-default)",
       "tailwind": {
         "key": "icon-tertiary",
         "recommended": [
+          "text-icon-tertiary",
           "fill-icon-tertiary",
           "stroke-icon-tertiary"
         ],
@@ -4811,6 +5127,13 @@
       "mapping": {
         "tokenPath": "color.icon.tertiary.default",
         "classCandidates": [
+          {
+            "className": "text-icon-tertiary",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon-tertiary",
             "utility": "fill",
@@ -4835,6 +5158,7 @@
         "color/icon/tertiary/default",
         "--charcoal-color-icon-tertiary-default",
         "charcoal-color-icon-tertiary-default",
+        "text-icon-tertiary",
         "fill-icon-tertiary",
         "stroke-icon-tertiary",
         "color-icon-tertiary-default",
@@ -4849,10 +5173,11 @@
       "css": "--charcoal-color-icon-default",
       "category": "color",
       "group": "icon",
-      "cssUsage": "fill: var(--charcoal-color-icon-default); stroke: var(--charcoal-color-icon-default)",
+      "cssUsage": "color: var(--charcoal-color-icon-default); fill: var(--charcoal-color-icon-default); stroke: var(--charcoal-color-icon-default)",
       "tailwind": {
         "key": "icon",
         "recommended": [
+          "text-icon",
           "fill-icon",
           "stroke-icon"
         ],
@@ -4861,6 +5186,13 @@
       "mapping": {
         "tokenPath": "color.icon.default",
         "classCandidates": [
+          {
+            "className": "text-icon",
+            "utility": "textColor",
+            "cssProperties": [
+              "color"
+            ]
+          },
           {
             "className": "fill-icon",
             "utility": "fill",
@@ -4885,6 +5217,7 @@
         "color/icon/default",
         "--charcoal-color-icon-default",
         "charcoal-color-icon-default",
+        "text-icon",
         "fill-icon",
         "stroke-icon",
         "color-icon-default",

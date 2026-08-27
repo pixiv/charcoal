@@ -112,7 +112,7 @@ export function run(args) {
       : command === 'family'
         ? familyQuery(query)
         : resolveQuery(query)
-  if (command === 'resolve') assertResolveResult(result)
+  if (command === 'resolve') {assertResolveResult(result)}
   return { exitCode: 0, stdout: stringify(result, pretty), stderr: '' }
 }
 
@@ -122,7 +122,7 @@ const isMain =
 
 if (isMain) {
   const result = run(process.argv.slice(2))
-  if (result.stdout !== '') process.stdout.write(result.stdout)
-  if (result.stderr !== '') process.stderr.write(result.stderr)
+  if (result.stdout !== '') {process.stdout.write(result.stdout)}
+  if (result.stderr !== '') {process.stderr.write(result.stderr)}
   process.exit(result.exitCode)
 }

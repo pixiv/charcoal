@@ -26,7 +26,7 @@ export function detectLayer(tokenPath) {
   const parts = tokenPath.trim().replaceAll('/', '.').split('.').filter(Boolean)
 
   const [category, group] = parts
-  if (category === undefined) return 'unknown'
+  if (category === undefined) {return 'unknown'}
 
   if (category === 'color') {
     const semanticGroup = group?.toLowerCase()
@@ -42,7 +42,7 @@ export function detectLayer(tokenPath) {
     return 'unknown'
   }
 
-  if (SEMANTIC_CATEGORIES.has(category)) return 'semantic'
+  if (SEMANTIC_CATEGORIES.has(category)) {return 'semantic'}
 
   return 'unknown'
 }
@@ -54,7 +54,7 @@ export function detectLayer(tokenPath) {
 export function getGroup(tokenPath) {
   const parts = tokenPath.trim().replaceAll('/', '.').split('.').filter(Boolean)
 
-  if (parts[0] === 'color') return parts[1]
+  if (parts[0] === 'color') {return parts[1]}
   return parts[0]
 }
 
