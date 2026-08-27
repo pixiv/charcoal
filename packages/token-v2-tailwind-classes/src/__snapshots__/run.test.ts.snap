@@ -42,5 +42,5 @@ exports[`charcoal-token-v2-classes > formats filtered JSON output 1`] = `
 exports[`charcoal-token-v2-classes > formats filtered Markdown output 1`] = `
 "| Token | Category | Recommended classes | Theme paths | CSS variable |
 | --- | --- | --- | --- | --- |
-| color.icon.default | color | fill-icon (fill), stroke-icon (stroke) | colors.icon.DEFAULT | --charcoal-color-icon-default |"
+| color.icon.default | color | text-icon (color), fill-icon (fill), stroke-icon (stroke) | colors.icon.DEFAULT | --charcoal-color-icon-default |"
 `;

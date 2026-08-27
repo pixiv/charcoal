@@ -91,6 +91,7 @@ const candidateDefinitions: Record<
   ],
   text: [{ utility: 'textColor', cssProperties: ['color'] }],
   icon: [
+    { utility: 'textColor', cssProperties: ['color'] },
     { utility: 'fill', cssProperties: ['fill'] },
     { utility: 'stroke', cssProperties: ['stroke'] },
   ],

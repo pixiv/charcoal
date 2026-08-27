@@ -37,6 +37,16 @@ describe('charcoal-token-v2-classes', () => {
     ])
   })
 
+  test('recommends textColor first for icon colors', () => {
+    expect(
+      JSON.parse(run(['--token', 'color.icon.default']))[0].classCandidates,
+    ).toEqual([
+      { className: 'text-icon', utility: 'textColor', cssProperties: ['color'] },
+      { className: 'fill-icon', utility: 'fill', cssProperties: ['fill'] },
+      { className: 'stroke-icon', utility: 'stroke', cssProperties: ['stroke'] },
+    ])
+  })
+
   test('normalizes slash-delimited token paths', () => {
     expect(
       JSON.parse(
