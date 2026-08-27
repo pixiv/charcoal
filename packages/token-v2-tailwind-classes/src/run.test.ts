@@ -128,6 +128,30 @@ describe('charcoal-token-v2-classes', () => {
     ])
   })
 
+  test('recommends padding, margin, and gap for space tokens', () => {
+    expect(JSON.parse(run(['--token', 'space.layout.40']))).toMatchObject([
+      {
+        tokenPath: 'space.layout.40',
+        classCandidates: [
+          { className: 'p-layout-40', utility: 'spacing' },
+          { className: 'm-layout-40', utility: 'margin' },
+          { className: 'gap-layout-40', utility: 'gap' },
+        ],
+      },
+    ])
+  })
+
+  test('filters space candidates by margin utility', () => {
+    expect(
+      JSON.parse(run(['--token', 'space.layout.40', '--utility', 'margin'])),
+    ).toMatchObject([
+      {
+        tokenPath: 'space.layout.40',
+        classCandidates: [{ className: 'm-layout-40', utility: 'margin' }],
+      },
+    ])
+  })
+
   test('rejects invalid option values', () => {
     expect(() => run(['--format', 'yaml'])).toThrow(
       'Invalid --format value: yaml',

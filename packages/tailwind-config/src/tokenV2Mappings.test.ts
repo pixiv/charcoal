@@ -177,6 +177,16 @@ describe('getTokenV2TailwindClassMappings', async () => {
             utility: 'spacing',
             cssProperties: ['padding'],
           },
+          {
+            className: 'm-layout-40',
+            utility: 'margin',
+            cssProperties: ['margin'],
+          },
+          {
+            className: 'gap-layout-40',
+            utility: 'gap',
+            cssProperties: ['gap'],
+          },
         ],
       }),
     ])
@@ -201,16 +211,60 @@ describe('getTokenV2TailwindClassMappings', async () => {
     ])
   })
 
-  test('does not recommend gap or margin utilities for space tokens', () => {
+  test('recommends padding, margin, and gap utilities for space tokens', () => {
     const [mapping] = getTokenV2TailwindClassMappings({
       tokens: ['space.layout.40'],
     })
-    expect(mapping.classCandidates.map(({ className }) => className)).toEqual([
-      'p-layout-40',
+    expect(mapping.classCandidates).toEqual([
+      {
+        className: 'p-layout-40',
+        utility: 'spacing',
+        cssProperties: ['padding'],
+      },
+      {
+        className: 'm-layout-40',
+        utility: 'margin',
+        cssProperties: ['margin'],
+      },
+      {
+        className: 'gap-layout-40',
+        utility: 'gap',
+        cssProperties: ['gap'],
+      },
     ])
     expect(mapping.themeEntries.map(({ themePath }) => themePath)).toEqual(
       expect.arrayContaining(['spacing.layout-40', 'gap.layout-40']),
     )
+  })
+
+  test('can select one candidate for space tokens', () => {
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['space.layout.40'],
+        includeAmbiguousUtilities: false,
+      })[0].classCandidates,
+    ).toEqual([
+      {
+        className: 'p-layout-40',
+        utility: 'spacing',
+        cssProperties: ['padding'],
+      },
+    ])
+  })
+
+  test('can filter space candidates by utility', () => {
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['space.layout.40'],
+        utilities: ['margin'],
+      })[0].classCandidates,
+    ).toEqual([
+      {
+        className: 'm-layout-40',
+        utility: 'margin',
+        cssProperties: ['margin'],
+      },
+    ])
   })
 
   test('maps matching font-size and line-height tokens to one class', () => {

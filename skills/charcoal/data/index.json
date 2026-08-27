@@ -1,7 +1,7 @@
 {
   "source": {
     "mappingPackageVersion": "6.1.0-beta.4",
-    "mappingHash": "2fd0531aa93ff3fb4bd670ef68086e88834e3796bd108e89842b21559279ca65"
+    "mappingHash": "cfbd04c1342cd82b6f91430d54f2ab983cfe7c3d1904564a219f892b9a9ab8b3"
   },
   "records": [
     {
@@ -7695,11 +7695,13 @@
       "css": "--charcoal-space-component-0",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-0)",
+      "cssUsage": "padding: var(--charcoal-space-component-0); margin: var(--charcoal-space-component-0); gap: var(--charcoal-space-component-0)",
       "tailwind": {
         "key": "component-0",
         "recommended": [
-          "p-component-0"
+          "p-component-0",
+          "m-component-0",
+          "gap-component-0"
         ],
         "alsoValid": []
       },
@@ -7712,6 +7714,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-0",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-0",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7723,6 +7739,8 @@
         "--charcoal-space-component-0",
         "charcoal-space-component-0",
         "p-component-0",
+        "m-component-0",
+        "gap-component-0",
         "space-component-0",
         "component/0",
         "component-0"
@@ -7735,11 +7753,13 @@
       "css": "--charcoal-space-component-10",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-10)",
+      "cssUsage": "padding: var(--charcoal-space-component-10); margin: var(--charcoal-space-component-10); gap: var(--charcoal-space-component-10)",
       "tailwind": {
         "key": "component-10",
         "recommended": [
-          "p-component-10"
+          "p-component-10",
+          "m-component-10",
+          "gap-component-10"
         ],
         "alsoValid": []
       },
@@ -7752,6 +7772,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-10",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-10",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7763,6 +7797,8 @@
         "--charcoal-space-component-10",
         "charcoal-space-component-10",
         "p-component-10",
+        "m-component-10",
+        "gap-component-10",
         "space-component-10",
         "component/10",
         "component-10"
@@ -7775,11 +7811,13 @@
       "css": "--charcoal-space-component-20",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-20)",
+      "cssUsage": "padding: var(--charcoal-space-component-20); margin: var(--charcoal-space-component-20); gap: var(--charcoal-space-component-20)",
       "tailwind": {
         "key": "component-20",
         "recommended": [
-          "p-component-20"
+          "p-component-20",
+          "m-component-20",
+          "gap-component-20"
         ],
         "alsoValid": []
       },
@@ -7792,6 +7830,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-20",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-20",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7803,6 +7855,8 @@
         "--charcoal-space-component-20",
         "charcoal-space-component-20",
         "p-component-20",
+        "m-component-20",
+        "gap-component-20",
         "space-component-20",
         "component/20",
         "component-20"
@@ -7815,11 +7869,13 @@
       "css": "--charcoal-space-component-25",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-25)",
+      "cssUsage": "padding: var(--charcoal-space-component-25); margin: var(--charcoal-space-component-25); gap: var(--charcoal-space-component-25)",
       "tailwind": {
         "key": "component-25",
         "recommended": [
-          "p-component-25"
+          "p-component-25",
+          "m-component-25",
+          "gap-component-25"
         ],
         "alsoValid": []
       },
@@ -7832,6 +7888,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-25",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-25",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7843,6 +7913,8 @@
         "--charcoal-space-component-25",
         "charcoal-space-component-25",
         "p-component-25",
+        "m-component-25",
+        "gap-component-25",
         "space-component-25",
         "component/25",
         "component-25"
@@ -7855,11 +7927,13 @@
       "css": "--charcoal-space-component-30",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-30)",
+      "cssUsage": "padding: var(--charcoal-space-component-30); margin: var(--charcoal-space-component-30); gap: var(--charcoal-space-component-30)",
       "tailwind": {
         "key": "component-30",
         "recommended": [
-          "p-component-30"
+          "p-component-30",
+          "m-component-30",
+          "gap-component-30"
         ],
         "alsoValid": []
       },
@@ -7872,6 +7946,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-30",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-30",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7883,6 +7971,8 @@
         "--charcoal-space-component-30",
         "charcoal-space-component-30",
         "p-component-30",
+        "m-component-30",
+        "gap-component-30",
         "space-component-30",
         "component/30",
         "component-30"
@@ -7895,11 +7985,13 @@
       "css": "--charcoal-space-component-40",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-40)",
+      "cssUsage": "padding: var(--charcoal-space-component-40); margin: var(--charcoal-space-component-40); gap: var(--charcoal-space-component-40)",
       "tailwind": {
         "key": "component-40",
         "recommended": [
-          "p-component-40"
+          "p-component-40",
+          "m-component-40",
+          "gap-component-40"
         ],
         "alsoValid": []
       },
@@ -7912,6 +8004,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-40",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-40",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7923,6 +8029,8 @@
         "--charcoal-space-component-40",
         "charcoal-space-component-40",
         "p-component-40",
+        "m-component-40",
+        "gap-component-40",
         "space-component-40",
         "component/40",
         "component-40"
@@ -7935,11 +8043,13 @@
       "css": "--charcoal-space-component-50",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-component-50)",
+      "cssUsage": "padding: var(--charcoal-space-component-50); margin: var(--charcoal-space-component-50); gap: var(--charcoal-space-component-50)",
       "tailwind": {
         "key": "component-50",
         "recommended": [
-          "p-component-50"
+          "p-component-50",
+          "m-component-50",
+          "gap-component-50"
         ],
         "alsoValid": []
       },
@@ -7952,6 +8062,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-component-50",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-component-50",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -7963,6 +8087,8 @@
         "--charcoal-space-component-50",
         "charcoal-space-component-50",
         "p-component-50",
+        "m-component-50",
+        "gap-component-50",
         "space-component-50",
         "component/50",
         "component-50"
@@ -7975,11 +8101,13 @@
       "css": "--charcoal-space-layout-0",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-0)",
+      "cssUsage": "padding: var(--charcoal-space-layout-0); margin: var(--charcoal-space-layout-0); gap: var(--charcoal-space-layout-0)",
       "tailwind": {
         "key": "layout-0",
         "recommended": [
-          "p-layout-0"
+          "p-layout-0",
+          "m-layout-0",
+          "gap-layout-0"
         ],
         "alsoValid": []
       },
@@ -7992,6 +8120,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-0",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-0",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8003,6 +8145,8 @@
         "--charcoal-space-layout-0",
         "charcoal-space-layout-0",
         "p-layout-0",
+        "m-layout-0",
+        "gap-layout-0",
         "space-layout-0",
         "layout/0",
         "layout-0"
@@ -8015,11 +8159,13 @@
       "css": "--charcoal-space-layout-10",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-10)",
+      "cssUsage": "padding: var(--charcoal-space-layout-10); margin: var(--charcoal-space-layout-10); gap: var(--charcoal-space-layout-10)",
       "tailwind": {
         "key": "layout-10",
         "recommended": [
-          "p-layout-10"
+          "p-layout-10",
+          "m-layout-10",
+          "gap-layout-10"
         ],
         "alsoValid": []
       },
@@ -8032,6 +8178,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-10",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-10",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8043,6 +8203,8 @@
         "--charcoal-space-layout-10",
         "charcoal-space-layout-10",
         "p-layout-10",
+        "m-layout-10",
+        "gap-layout-10",
         "space-layout-10",
         "layout/10",
         "layout-10"
@@ -8055,11 +8217,13 @@
       "css": "--charcoal-space-layout-20",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-20)",
+      "cssUsage": "padding: var(--charcoal-space-layout-20); margin: var(--charcoal-space-layout-20); gap: var(--charcoal-space-layout-20)",
       "tailwind": {
         "key": "layout-20",
         "recommended": [
-          "p-layout-20"
+          "p-layout-20",
+          "m-layout-20",
+          "gap-layout-20"
         ],
         "alsoValid": []
       },
@@ -8072,6 +8236,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-20",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-20",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8083,6 +8261,8 @@
         "--charcoal-space-layout-20",
         "charcoal-space-layout-20",
         "p-layout-20",
+        "m-layout-20",
+        "gap-layout-20",
         "space-layout-20",
         "layout/20",
         "layout-20"
@@ -8095,11 +8275,13 @@
       "css": "--charcoal-space-layout-25",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-25)",
+      "cssUsage": "padding: var(--charcoal-space-layout-25); margin: var(--charcoal-space-layout-25); gap: var(--charcoal-space-layout-25)",
       "tailwind": {
         "key": "layout-25",
         "recommended": [
-          "p-layout-25"
+          "p-layout-25",
+          "m-layout-25",
+          "gap-layout-25"
         ],
         "alsoValid": []
       },
@@ -8112,6 +8294,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-25",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-25",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8123,6 +8319,8 @@
         "--charcoal-space-layout-25",
         "charcoal-space-layout-25",
         "p-layout-25",
+        "m-layout-25",
+        "gap-layout-25",
         "space-layout-25",
         "layout/25",
         "layout-25"
@@ -8135,11 +8333,13 @@
       "css": "--charcoal-space-layout-30",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-30)",
+      "cssUsage": "padding: var(--charcoal-space-layout-30); margin: var(--charcoal-space-layout-30); gap: var(--charcoal-space-layout-30)",
       "tailwind": {
         "key": "layout-30",
         "recommended": [
-          "p-layout-30"
+          "p-layout-30",
+          "m-layout-30",
+          "gap-layout-30"
         ],
         "alsoValid": []
       },
@@ -8152,6 +8352,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-30",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-30",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8163,6 +8377,8 @@
         "--charcoal-space-layout-30",
         "charcoal-space-layout-30",
         "p-layout-30",
+        "m-layout-30",
+        "gap-layout-30",
         "space-layout-30",
         "layout/30",
         "layout-30"
@@ -8175,11 +8391,13 @@
       "css": "--charcoal-space-layout-40",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-40)",
+      "cssUsage": "padding: var(--charcoal-space-layout-40); margin: var(--charcoal-space-layout-40); gap: var(--charcoal-space-layout-40)",
       "tailwind": {
         "key": "layout-40",
         "recommended": [
-          "p-layout-40"
+          "p-layout-40",
+          "m-layout-40",
+          "gap-layout-40"
         ],
         "alsoValid": []
       },
@@ -8192,6 +8410,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-40",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-40",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8203,6 +8435,8 @@
         "--charcoal-space-layout-40",
         "charcoal-space-layout-40",
         "p-layout-40",
+        "m-layout-40",
+        "gap-layout-40",
         "space-layout-40",
         "layout/40",
         "layout-40"
@@ -8215,11 +8449,13 @@
       "css": "--charcoal-space-layout-50",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-50)",
+      "cssUsage": "padding: var(--charcoal-space-layout-50); margin: var(--charcoal-space-layout-50); gap: var(--charcoal-space-layout-50)",
       "tailwind": {
         "key": "layout-50",
         "recommended": [
-          "p-layout-50"
+          "p-layout-50",
+          "m-layout-50",
+          "gap-layout-50"
         ],
         "alsoValid": []
       },
@@ -8232,6 +8468,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-50",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-50",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8243,6 +8493,8 @@
         "--charcoal-space-layout-50",
         "charcoal-space-layout-50",
         "p-layout-50",
+        "m-layout-50",
+        "gap-layout-50",
         "space-layout-50",
         "layout/50",
         "layout-50"
@@ -8255,11 +8507,13 @@
       "css": "--charcoal-space-layout-60",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-60)",
+      "cssUsage": "padding: var(--charcoal-space-layout-60); margin: var(--charcoal-space-layout-60); gap: var(--charcoal-space-layout-60)",
       "tailwind": {
         "key": "layout-60",
         "recommended": [
-          "p-layout-60"
+          "p-layout-60",
+          "m-layout-60",
+          "gap-layout-60"
         ],
         "alsoValid": []
       },
@@ -8272,6 +8526,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-60",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-60",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8283,6 +8551,8 @@
         "--charcoal-space-layout-60",
         "charcoal-space-layout-60",
         "p-layout-60",
+        "m-layout-60",
+        "gap-layout-60",
         "space-layout-60",
         "layout/60",
         "layout-60"
@@ -8295,11 +8565,13 @@
       "css": "--charcoal-space-layout-70",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-70)",
+      "cssUsage": "padding: var(--charcoal-space-layout-70); margin: var(--charcoal-space-layout-70); gap: var(--charcoal-space-layout-70)",
       "tailwind": {
         "key": "layout-70",
         "recommended": [
-          "p-layout-70"
+          "p-layout-70",
+          "m-layout-70",
+          "gap-layout-70"
         ],
         "alsoValid": []
       },
@@ -8312,6 +8584,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-70",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-70",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8323,6 +8609,8 @@
         "--charcoal-space-layout-70",
         "charcoal-space-layout-70",
         "p-layout-70",
+        "m-layout-70",
+        "gap-layout-70",
         "space-layout-70",
         "layout/70",
         "layout-70"
@@ -8335,11 +8623,13 @@
       "css": "--charcoal-space-layout-80",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-80)",
+      "cssUsage": "padding: var(--charcoal-space-layout-80); margin: var(--charcoal-space-layout-80); gap: var(--charcoal-space-layout-80)",
       "tailwind": {
         "key": "layout-80",
         "recommended": [
-          "p-layout-80"
+          "p-layout-80",
+          "m-layout-80",
+          "gap-layout-80"
         ],
         "alsoValid": []
       },
@@ -8352,6 +8642,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-80",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-80",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8363,6 +8667,8 @@
         "--charcoal-space-layout-80",
         "charcoal-space-layout-80",
         "p-layout-80",
+        "m-layout-80",
+        "gap-layout-80",
         "space-layout-80",
         "layout/80",
         "layout-80"
@@ -8375,11 +8681,13 @@
       "css": "--charcoal-space-layout-90",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-90)",
+      "cssUsage": "padding: var(--charcoal-space-layout-90); margin: var(--charcoal-space-layout-90); gap: var(--charcoal-space-layout-90)",
       "tailwind": {
         "key": "layout-90",
         "recommended": [
-          "p-layout-90"
+          "p-layout-90",
+          "m-layout-90",
+          "gap-layout-90"
         ],
         "alsoValid": []
       },
@@ -8392,6 +8700,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-90",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-90",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8403,6 +8725,8 @@
         "--charcoal-space-layout-90",
         "charcoal-space-layout-90",
         "p-layout-90",
+        "m-layout-90",
+        "gap-layout-90",
         "space-layout-90",
         "layout/90",
         "layout-90"
@@ -8415,11 +8739,13 @@
       "css": "--charcoal-space-layout-100",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-layout-100)",
+      "cssUsage": "padding: var(--charcoal-space-layout-100); margin: var(--charcoal-space-layout-100); gap: var(--charcoal-space-layout-100)",
       "tailwind": {
         "key": "layout-100",
         "recommended": [
-          "p-layout-100"
+          "p-layout-100",
+          "m-layout-100",
+          "gap-layout-100"
         ],
         "alsoValid": []
       },
@@ -8432,6 +8758,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-layout-100",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-layout-100",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8443,6 +8783,8 @@
         "--charcoal-space-layout-100",
         "charcoal-space-layout-100",
         "p-layout-100",
+        "m-layout-100",
+        "gap-layout-100",
         "space-layout-100",
         "layout/100",
         "layout-100"
@@ -8455,11 +8797,13 @@
       "css": "--charcoal-space-padding-padding-card",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-padding-padding-card)",
+      "cssUsage": "padding: var(--charcoal-space-padding-padding-card); margin: var(--charcoal-space-padding-padding-card); gap: var(--charcoal-space-padding-padding-card)",
       "tailwind": {
         "key": "padding-card",
         "recommended": [
-          "p-padding-card"
+          "p-padding-card",
+          "m-padding-card",
+          "gap-padding-card"
         ],
         "alsoValid": []
       },
@@ -8472,6 +8816,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-padding-card",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-padding-card",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8483,6 +8841,8 @@
         "--charcoal-space-padding-padding-card",
         "charcoal-space-padding-padding-card",
         "p-padding-card",
+        "m-padding-card",
+        "gap-padding-card",
         "space-padding-padding-card",
         "padding/padding-card",
         "padding-padding-card"
@@ -8495,11 +8855,13 @@
       "css": "--charcoal-space-target-l",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-target-l)",
+      "cssUsage": "padding: var(--charcoal-space-target-l); margin: var(--charcoal-space-target-l); gap: var(--charcoal-space-target-l)",
       "tailwind": {
         "key": "target-l",
         "recommended": [
-          "p-target-l"
+          "p-target-l",
+          "m-target-l",
+          "gap-target-l"
         ],
         "alsoValid": []
       },
@@ -8512,6 +8874,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-target-l",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-target-l",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8523,6 +8899,8 @@
         "--charcoal-space-target-l",
         "charcoal-space-target-l",
         "p-target-l",
+        "m-target-l",
+        "gap-target-l",
         "space-target-l",
         "target/l",
         "target-l"
@@ -8535,11 +8913,13 @@
       "css": "--charcoal-space-target-m",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-target-m)",
+      "cssUsage": "padding: var(--charcoal-space-target-m); margin: var(--charcoal-space-target-m); gap: var(--charcoal-space-target-m)",
       "tailwind": {
         "key": "target-m",
         "recommended": [
-          "p-target-m"
+          "p-target-m",
+          "m-target-m",
+          "gap-target-m"
         ],
         "alsoValid": []
       },
@@ -8552,6 +8932,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-target-m",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-target-m",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8563,6 +8957,8 @@
         "--charcoal-space-target-m",
         "charcoal-space-target-m",
         "p-target-m",
+        "m-target-m",
+        "gap-target-m",
         "space-target-m",
         "target/m",
         "target-m"
@@ -8575,11 +8971,13 @@
       "css": "--charcoal-space-target-s",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-target-s)",
+      "cssUsage": "padding: var(--charcoal-space-target-s); margin: var(--charcoal-space-target-s); gap: var(--charcoal-space-target-s)",
       "tailwind": {
         "key": "target-s",
         "recommended": [
-          "p-target-s"
+          "p-target-s",
+          "m-target-s",
+          "gap-target-s"
         ],
         "alsoValid": []
       },
@@ -8592,6 +8990,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-target-s",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-target-s",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8603,6 +9015,8 @@
         "--charcoal-space-target-s",
         "charcoal-space-target-s",
         "p-target-s",
+        "m-target-s",
+        "gap-target-s",
         "space-target-s",
         "target/s",
         "target-s"
@@ -8615,11 +9029,13 @@
       "css": "--charcoal-space-target-xs",
       "category": "space",
       "group": "space",
-      "cssUsage": "padding: var(--charcoal-space-target-xs)",
+      "cssUsage": "padding: var(--charcoal-space-target-xs); margin: var(--charcoal-space-target-xs); gap: var(--charcoal-space-target-xs)",
       "tailwind": {
         "key": "target-xs",
         "recommended": [
-          "p-target-xs"
+          "p-target-xs",
+          "m-target-xs",
+          "gap-target-xs"
         ],
         "alsoValid": []
       },
@@ -8632,6 +9048,20 @@
             "cssProperties": [
               "padding"
             ]
+          },
+          {
+            "className": "m-target-xs",
+            "utility": "margin",
+            "cssProperties": [
+              "margin"
+            ]
+          },
+          {
+            "className": "gap-target-xs",
+            "utility": "gap",
+            "cssProperties": [
+              "gap"
+            ]
           }
         ]
       },
@@ -8643,6 +9073,8 @@
         "--charcoal-space-target-xs",
         "charcoal-space-target-xs",
         "p-target-xs",
+        "m-target-xs",
+        "gap-target-xs",
         "space-target-xs",
         "target/xs",
         "target-xs"
