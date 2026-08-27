@@ -17,6 +17,7 @@ export type SnackbarRootAttributes = {
 export type ShowSnackbarOptions = {
   action?: ReactNode
   onClose?: (reason: SnackbarCloseReason) => void
+  /** スナックバー自体にdata属性を渡せる */
   rootAttributes?: SnackbarRootAttributes
 }
 
