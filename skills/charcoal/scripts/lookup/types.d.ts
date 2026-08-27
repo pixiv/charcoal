@@ -20,7 +20,11 @@ export type IndexRecord = {
   }
   familyKey?: string
   state?: string
-  recommendedSemantic?: { figma: string; reason?: string }[]
+  recommendedSemantic?: {
+    figma: string
+    themes: ('light' | 'dark')[]
+    reason?: string
+  }[]
   notes?: string[]
   keys: string[]
 }

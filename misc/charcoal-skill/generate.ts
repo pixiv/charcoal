@@ -40,7 +40,11 @@ export type IndexRecord = {
   }
   familyKey?: string
   state?: string
-  recommendedSemantic?: { figma: string; reason?: string }[]
+  recommendedSemantic?: {
+    figma: string
+    themes: ('light' | 'dark')[]
+    reason?: string
+  }[]
   notes?: string[]
   keys: string[]
 }
@@ -177,25 +181,51 @@ function semanticRecords() {
   })
 }
 
-function aliasReverseMap(theme: ThemeJson) {
-  const aliases = new Map<string, { figma: string }[]>()
-  for (const [category, tokens] of Object.entries(theme)) {
-    for (const [key, token] of Object.entries(tokens)) {
-      const match = /^\{([^.]+)\.(.+)\}$/u.exec(token.value)
-      if (match === null) continue
-      const primitivePath = `${match[1]}.${match[2].replaceAll('/', '.')}`
-      const semanticFigma = `${category}/${key}`
-      const current = aliases.get(primitivePath) ?? []
-      current.push({ figma: semanticFigma })
-      aliases.set(primitivePath, current)
+type ThemeName = 'light' | 'dark'
+type RecommendedSemantic = {
+  figma: string
+  themes: ThemeName[]
+}
+
+export function aliasReverseMap(themes: Record<ThemeName, ThemeJson>) {
+  const aliases = new Map<string, Map<string, Set<ThemeName>>>()
+  for (const [themeName, theme] of Object.entries(themes) as [
+    ThemeName,
+    ThemeJson,
+  ][]) {
+    for (const [category, tokens] of Object.entries(theme)) {
+      for (const [key, token] of Object.entries(tokens)) {
+        const match = /^\{([^.]+)\.(.+)\}$/u.exec(token.value)
+        if (match === null) continue
+        const primitivePath = `${match[1]}.${match[2].replaceAll('/', '.')}`
+        const semanticFigma = `${category}/${key}`
+        const semantics = aliases.get(primitivePath) ?? new Map()
+        const semanticThemes = semantics.get(semanticFigma) ?? new Set()
+        semanticThemes.add(themeName)
+        semantics.set(semanticFigma, semanticThemes)
+        aliases.set(primitivePath, semantics)
+      }
     }
   }
-  return aliases
+
+  return new Map<string, RecommendedSemantic[]>(
+    [...aliases].map(([primitivePath, semantics]) => [
+      primitivePath,
+      [...semantics]
+        .map(([figma, semanticThemes]) => ({
+          figma,
+          themes: (['light', 'dark'] as const).filter((theme) =>
+            semanticThemes.has(theme),
+          ),
+        }))
+        .sort((a, b) => a.figma.localeCompare(b.figma)),
+    ]),
+  )
 }
 
 function primitiveRecords(
   base: ThemeJson,
-  aliases: Map<string, { figma: string }[]>,
+  aliases: Map<string, RecommendedSemantic[]>,
 ) {
   const colorTokens = base.color ?? {}
   return Object.keys(colorTokens).flatMap((figmaKey) => {
@@ -241,6 +271,12 @@ export function buildIndex(): TokenIndex {
       'utf8',
     ),
   ) as ThemeJson
+  const dark = JSON.parse(
+    readFileSync(
+      path.join(repoRoot, 'packages/theme/src/json/pixiv-dark.json'),
+      'utf8',
+    ),
+  ) as ThemeJson
   const base = JSON.parse(
     readFileSync(
       path.join(repoRoot, 'packages/theme/src/json/base.json'),
@@ -250,7 +286,10 @@ export function buildIndex(): TokenIndex {
 
   return {
     source: { mappingPackageVersion, mappingHash },
-    records: [...semantics, ...primitiveRecords(base, aliasReverseMap(light))],
+    records: [
+      ...semantics,
+      ...primitiveRecords(base, aliasReverseMap({ light, dark })),
+    ],
   }
 }
 

@@ -44,15 +44,16 @@
     "recommendedSemantic": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["figma"],
+      "required": ["figma", "themes"],
       "properties": {
         "figma": { "type": "string" },
         "reason": { "type": "string" },
         "themes": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": { "type": "string" }
+          "oneOf": [
+            { "const": ["light"] },
+            { "const": ["dark"] },
+            { "const": ["light", "dark"] }
+          ]
         }
       }
     },

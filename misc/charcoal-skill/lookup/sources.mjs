@@ -12,6 +12,7 @@ export const sources = {
   cssTokenObject: 'packages/theme/src/token-object/index.ts',
   cssTokenObjectFunction: 'createCSSTokenObject',
   semanticThemeJson: 'packages/theme/src/json/pixiv-light.json',
+  semanticDarkThemeJson: 'packages/theme/src/json/pixiv-dark.json',
   primitiveThemeJson: 'packages/theme/src/json/base.json',
   indexOutput: 'skills/charcoal/data/index.json',
   agentEntry: 'skills/charcoal/scripts/resolve.mjs',
@@ -20,10 +21,11 @@ export const sources = {
 /**
  * semantic: mapping API の行。primitive は mapping に足さない。
  * primitive と TW 未収録の CSS 変数は theme JSON から generate が載せる。
- * alias 逆引きは pixiv-light.json の `{color.light/...}` 参照。
+ * alias 逆引きは pixiv-light.json と pixiv-dark.json の `{color.light/...}` /
+ * `{color.dark/...}` 参照を統合する。
  */
 export const indexLayers = {
   semanticFrom: 'mappingApi',
   primitiveFrom: 'primitiveThemeJson',
-  aliasReverseFrom: 'semanticThemeJson',
+  aliasReverseFrom: ['semanticThemeJson', 'semanticDarkThemeJson'],
 }

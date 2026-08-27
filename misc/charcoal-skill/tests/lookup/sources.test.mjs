@@ -16,6 +16,7 @@ describe('lookup data sources', () => {
       sources.themeEntries,
       sources.cssTokenObject,
       sources.semanticThemeJson,
+      sources.semanticDarkThemeJson,
       sources.primitiveThemeJson,
     ]) {
       expect(existsSync(path.join(repoRoot, relative)), relative).toBe(true)

@@ -1,0 +1,18 @@
+{
+  "light": {
+    "color": {
+      "container/primary/default": { "value": "{color.light/blue/50}" }
+    }
+  },
+  "dark": {
+    "color": {}
+  },
+  "expected": {
+    "color.light.blue.50": [
+      {
+        "figma": "color/container/primary/default",
+        "themes": ["light"]
+      }
+    ]
+  }
+}
