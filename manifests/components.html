@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>40.4s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>46.2s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -20017,6 +20017,10 @@ export default {
       control: { type: &#39;number&#39;, min: 0, step: 1 },
       table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;16&#39; } },
     },
+    headerOffset: {
+      control: { type: &#39;number&#39;, min: 0, step: 1 },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;0&#39; } },
+    },
     duration: {
       control: { type: &#39;number&#39;, min: 0, step: 500 },
       description: &#39;表示時間（ミリ秒）&#39;,
@@ -37840,6 +37844,10 @@ export default {
     offset: {
       control: { type: &#39;number&#39;, min: 0, step: 1 },
       table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;16&#39; } },
+    },
+    headerOffset: {
+      control: { type: &#39;number&#39;, min: 0, step: 1 },
+      table: { category: &#39;Hook&#39;, defaultValue: { summary: &#39;0&#39; } },
     },
     duration: {
       control: { type: &#39;number&#39;, min: 0, step: 500 },
