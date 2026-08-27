@@ -4,6 +4,7 @@
   &[data-position='top'] {
     --charcoal-snackbar-enter-offset: calc(-1 * var(--charcoal-space-30));
 
+    position: sticky;
     top: calc(
       env(safe-area-inset-top, 0px) + max(var(--charcoal-snackbar-offset), 16px)
     );
@@ -12,6 +13,7 @@
   &[data-position='bottom'] {
     --charcoal-snackbar-enter-offset: var(--charcoal-space-30);
 
+    position: fixed;
     bottom: calc(
       env(safe-area-inset-bottom, 0px) +
         max(var(--charcoal-snackbar-offset), 16px)

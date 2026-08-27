@@ -13,6 +13,7 @@ export function NotificationRegion<TContent>({
   state,
   position,
   offset = DEFAULT_OFFSET,
+  headerOffset = 0,
   zIndex = DEFAULT_Z_INDEX,
   portalContainer,
   className,
@@ -22,6 +23,7 @@ export function NotificationRegion<TContent>({
   state: ToastState<TContent>
   position: Position
   offset?: number
+  headerOffset?: number
   zIndex?: number
   portalContainer?: HTMLElement
   className?: string
@@ -45,11 +47,7 @@ export function NotificationRegion<TContent>({
     },
   }
   const { regionProps } = useToastRegion({}, timerState, regionRef)
-  const classNames = useClassNames(
-    'charcoal-notification-region',
-    `charcoal-${name}-region`,
-    className,
-  )
+  const classNames = useClassNames('charcoal-notification-region', className)
 
   if (state.visibleToasts.length === 0) {
     return null
@@ -61,15 +59,22 @@ export function NotificationRegion<TContent>({
         {...regionProps}
         ref={regionRef}
         className={classNames}
-        data-position={position}
         style={
           {
             zIndex,
             [`--charcoal-${name}-offset`]: `${offset}px`,
+            justifyContent: position === 'top' ? 'flex-start' : 'flex-end',
           } as CSSProperties
         }
       >
-        {children}
+        <div
+          style={{
+            height: `${headerOffset}px`,
+          }}
+        />
+        <div data-position={position} className={`charcoal-${name}-region`}>
+          {children}
+        </div>
       </div>
     </Overlay>
   )

@@ -50,6 +50,10 @@ export default {
       control: { type: 'number', min: 0, step: 1 },
       table: { category: 'Hook', defaultValue: { summary: '16' } },
     },
+    headerOffset: {
+      control: { type: 'number', min: 0, step: 1 },
+      table: { category: 'Hook', defaultValue: { summary: '0' } },
+    },
     duration: {
       control: { type: 'number', min: 0, step: 500 },
       description: '表示時間（ミリ秒）',
