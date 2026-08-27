@@ -28,13 +28,9 @@ describe('icon CLI contract', () => {
     expect(result.stdout).toContain(
       'node skills/charcoal/scripts/resolve.mjs resolve <query>',
     )
-    expect(result.stdout).not.toContain('search-icon')
-  })
-
-  test('search-icon is still an unknown command', () => {
-    const result = run(['search-icon', '閉じる'])
-    expect(result.exitCode).toBe(1)
-    expect(result.stderr).toContain('Unknown command: search-icon')
+    expect(result.stdout).toContain(
+      'node skills/charcoal/scripts/resolve.mjs search-icon <intent>',
+    )
   })
 
   test('existing token resolve is unchanged', () => {

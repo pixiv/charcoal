@@ -22,6 +22,10 @@ const AMBIGUOUS_MESSAGE =
 const SIZE_ORDER = ['16', '20', '24', '32', 'Inline']
 const THEMES = new Set(['regular', 'solid', 'color'])
 const ICON_MISS_REASONS = new Set(['not_found', 'ambiguous', 'hex'])
+const SEARCH_LIMIT = 24
+const SCORE_EXACT = 3
+const SCORE_PREFIX = 2
+const SCORE_PARTIAL = 1
 
 const V2_NOTE =
   'Icons 2.0。`<pixiv-icon>` と `@charcoal-ui/react` の `<Icon>` では使えない。'
@@ -320,6 +324,100 @@ export function lookupIconQuery(query, index = loadIconIndex()) {
 }
 
 /**
+ * 空白・`/`・カンマで分割。1文字の `x` は残す。同義語は持たない。
+ * @param {string} query
+ */
+function searchIconTerms(query) {
+  return query
+    .trim()
+    .toLowerCase()
+    .split(/[\s/,]+/u)
+    .filter((term) => term.length >= 1)
+}
+
+/**
+ * @param {IconRecord} record
+ */
+function iconSearchFields(record) {
+  /** @type {string[]} */
+  const fields = [
+    record.name,
+    record.file,
+    record.surfaces.reactIcons.component,
+    record.surfaces.tailwind.className,
+    record.surfaces.css.className,
+  ]
+  if (record.surfaces.pixivIcon !== null) {
+    fields.push(record.surfaces.pixivIcon.name)
+  }
+  return fields.map((value) => value.toLowerCase())
+}
+
+/**
+ * @param {IconRecord} record
+ * @param {string[]} terms
+ */
+function scoreIconSearchRecord(record, terms) {
+  if (terms.length === 0) return 0
+  const name = record.name.toLowerCase()
+  const component = record.surfaces.reactIcons.component.toLowerCase()
+  const fields = iconSearchFields(record)
+  let best = 0
+  for (const term of terms) {
+    let termScore = 0
+    if (name === term || component === term) {
+      termScore = SCORE_EXACT
+    } else if (fields.some((field) => field.startsWith(term))) {
+      termScore = SCORE_PREFIX
+    } else if (fields.some((field) => field.includes(term))) {
+      termScore = SCORE_PARTIAL
+    } else {
+      return 0
+    }
+    if (termScore > best) best = termScore
+  }
+  return best
+}
+
+/**
+ * 名前ヒットの配列。1件に決めない。セマンティック同義語は持たない。
+ * @param {string} query
+ * @param {IconIndex} [index]
+ */
+export function searchIconQuery(query, index = loadIconIndex()) {
+  if (isHexQuery(query)) {
+    return toIconMiss(query, 'hex', HEX_MESSAGE)
+  }
+
+  const terms = searchIconTerms(query)
+  /** @type {(ReturnType<typeof toCandidate> & { score: number })[]} */
+  const results = []
+  const seen = new Set()
+  for (const record of index.records) {
+    if (seen.has(record.file)) continue
+    const score = scoreIconSearchRecord(record, terms)
+    if (score === 0) continue
+    seen.add(record.file)
+    results.push({ score, ...toCandidate(record) })
+  }
+
+  results.sort((left, right) => {
+    if (left.score !== right.score) return right.score - left.score
+    if (left.generation !== right.generation) {
+      return left.generation === 'v2' ? -1 : 1
+    }
+    return left.file.localeCompare(right.file)
+  })
+
+  return {
+    query,
+    ok: true,
+    kind: 'icon-search',
+    results: results.slice(0, SEARCH_LIMIT),
+  }
+}
+
+/**
  * @param {unknown} value
  * @param {string} label
  * @returns {asserts value is Record<string, unknown>}
@@ -433,6 +531,7 @@ function assertIconMiss(value) {
 /**
  * icon の stdout JSON が契約に合うことを検査する。
  * トークンの assertResolveResult は使わない。
+ * kind: 'icon' の hit 契約は search と混ぜない。
  * @param {unknown} value
  */
 export function assertIconResult(value) {
@@ -441,6 +540,46 @@ export function assertIconResult(value) {
 
   if (value.ok === true) {
     assertIconHit(value)
+    return
+  }
+
+  if (value.ok === false) {
+    assertIconMiss(value)
+    return
+  }
+
+  throw new TypeError('ok must be a boolean')
+}
+
+/**
+ * @param {unknown} value
+ */
+function assertIconSearchHit(value) {
+  assertIconCandidate(value)
+  if (typeof value.score !== 'number') {
+    throw new TypeError('score must be a number')
+  }
+}
+
+/**
+ * search-icon の stdout JSON。0件でも ok: true, kind: 'icon-search'。
+ * hex miss は icon と同じ structured miss。
+ * @param {unknown} value
+ */
+export function assertIconSearchResult(value) {
+  assertObject(value, 'icon search result')
+  assertString(value.query, 'query')
+
+  if (value.ok === true) {
+    if (value.kind !== 'icon-search') {
+      throw new TypeError('icon search kind must be "icon-search"')
+    }
+    if (!Array.isArray(value.results)) {
+      throw new TypeError('results must be an array')
+    }
+    for (const item of value.results) {
+      assertIconSearchHit(item)
+    }
     return
   }
 
