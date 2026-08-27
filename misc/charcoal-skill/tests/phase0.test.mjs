@@ -5,7 +5,10 @@ import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { afterEach, describe, expect, test } from 'vitest'
 
-const skillRoot = path.dirname(fileURLToPath(import.meta.url))
+const skillRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../../../skills/charcoal',
+)
 const script = path.join(skillRoot, 'scripts', 'resolve.mjs')
 const temporaryDirectories = []
 

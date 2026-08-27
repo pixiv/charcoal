@@ -7,7 +7,7 @@ import { detectLayer, getCategory, getGroup } from './lookup/layer.mjs'
 
 const repoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
-  '../../..',
+  '../..',
 )
 const indexPath = path.join(repoRoot, 'skills/charcoal/data/index.json')
 

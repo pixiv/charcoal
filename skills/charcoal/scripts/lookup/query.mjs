@@ -10,8 +10,8 @@ const indexPath = path.join(
 )
 
 /**
- * @typedef {import('../generate.ts').IndexRecord} IndexRecord
- * @typedef {import('../generate.ts').TokenIndex} TokenIndex
+ * @typedef {import('../types.d.ts').IndexRecord} IndexRecord
+ * @typedef {import('../types.d.ts').TokenIndex} TokenIndex
  */
 
 /** @type {TokenIndex | undefined} */

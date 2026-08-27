@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { getTokenV2TailwindClassMappings } from '@charcoal-ui/tailwind-config'
 import { describe, expect, test } from 'vitest'
-import { buildIndex, indexPath, writeIndex } from './generate.ts'
-import { run } from './resolve.mjs'
+import { buildIndex, indexPath, writeIndex } from '../generate.ts'
+import { run } from '../../../skills/charcoal/scripts/resolve.mjs'
 
 describe('generate index', () => {
   test('index.json is regenerated from mapping API and theme JSON', () => {

@@ -2,9 +2,12 @@ import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
-import { help } from './scripts/resolve.mjs'
+import { help } from '../../../skills/charcoal/scripts/resolve.mjs'
 
-const root = path.dirname(fileURLToPath(import.meta.url))
+const root = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../../../skills/charcoal',
+)
 
 function read(relative) {
   return readFileSync(path.join(root, relative), 'utf8')

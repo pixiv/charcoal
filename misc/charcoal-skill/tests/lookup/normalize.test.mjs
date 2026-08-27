@@ -4,7 +4,7 @@ import {
   isHexQuery,
   isTokenV1Query,
   stripCollectionAndMode,
-} from './normalize.mjs'
+} from '../../../../skills/charcoal/scripts/lookup/normalize.mjs'
 
 describe('classifyQuery', () => {
   test.each([

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
-import { run, resolveQuery } from './resolve.mjs'
-import { assertResolveResult } from './lookup/validate.mjs'
+import { run, resolveQuery } from '../../../skills/charcoal/scripts/resolve.mjs'
+import { assertResolveResult } from '../../../skills/charcoal/scripts/lookup/validate.mjs'
 
 function parseStdout(result) {
   expect(result.stderr).toBe('')

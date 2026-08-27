@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, test } from 'vitest'
-import { sources } from './sources.mjs'
+import { sources } from '../../lookup/sources.mjs'
 
 const repoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),

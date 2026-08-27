@@ -11,7 +11,7 @@ export default defineConfig({
       'packages/*/vitest.config.ts',
       'packages/react/vitest.browser.config.ts',
       '.storybook/vitest.config.ts',
-      'skills/*/vitest.config.ts',
+      'misc/charcoal-skill/vitest.config.ts',
     ],
     snapshotFormat: {
       printShadowRoot: false,

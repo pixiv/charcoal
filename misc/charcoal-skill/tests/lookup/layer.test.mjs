@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { detectLayer, getCategory, getGroup } from './layer.mjs'
+import { detectLayer, getCategory, getGroup } from '../../lookup/layer.mjs'
 
 describe('detectLayer', () => {
   test.each([
