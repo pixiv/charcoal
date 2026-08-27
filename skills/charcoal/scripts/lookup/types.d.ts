@@ -31,8 +31,15 @@ export type IndexRecord = {
 
 export type TokenIndex = {
   source: {
+    indexSchemaVersion: 1
     mappingPackageVersion: string
     mappingHash: string
+    themePackageVersion: string
+    semanticThemeHashes: {
+      light: string
+      dark: string
+    }
+    primitiveThemeHash: string
   }
   records: IndexRecord[]
 }

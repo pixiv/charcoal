@@ -1,7 +1,14 @@
 {
   "source": {
+    "indexSchemaVersion": 1,
     "mappingPackageVersion": "6.1.0-beta.4",
-    "mappingHash": "074180b6b33b9ce954423aa1a2e347919fdff964815fa0137561fc5cbf956b0d"
+    "mappingHash": "sha256:47d70ac3fea52ff4a625c2f0c96fe491680284f13c4d52381f55f895fa23a743",
+    "themePackageVersion": "6.1.0-beta.4",
+    "semanticThemeHashes": {
+      "light": "sha256:b5e262559b24bea652e0446ee4ef9afbcfc1f698357a9298ca42c8707dd4221f",
+      "dark": "sha256:d77df3e1dd6b4ba3fff9b7cd7f51937292605060ad58a71b255f3d11eba6de45"
+    },
+    "primitiveThemeHash": "sha256:d8ca17f99f85181cddd8eb608d878ee6d79d95ca1c1948cab083bf6b80c7f88f"
   },
   "records": [
     {

@@ -51,10 +51,83 @@ export type IndexRecord = {
 
 export type TokenIndex = {
   source: {
+    indexSchemaVersion: 1
     mappingPackageVersion: string
     mappingHash: string
+    themePackageVersion: string
+    semanticThemeHashes: {
+      light: string
+      dark: string
+    }
+    primitiveThemeHash: string
   }
   records: IndexRecord[]
+}
+
+export type JsonValue =
+  null | boolean | number | string | JsonValue[] | { [key: string]: JsonValue }
+
+type MappingPayload = ReturnType<typeof getTokenV2TailwindClassMappings>
+
+/** Sort strings by Unicode code point, independent of the host locale. */
+function compareCodePoints(left: string, right: string) {
+  const leftPoints = Array.from(left)
+  const rightPoints = Array.from(right)
+  const length = Math.min(leftPoints.length, rightPoints.length)
+  for (let index = 0; index < length; index += 1) {
+    const leftPoint = leftPoints[index]
+    const rightPoint = rightPoints[index]
+    if (leftPoint === undefined || rightPoint === undefined) break
+    const difference = leftPoint.codePointAt(0)! - rightPoint.codePointAt(0)!
+    if (difference !== 0) return difference
+  }
+  return leftPoints.length - rightPoints.length
+}
+
+function canonicalize(value: JsonValue): JsonValue {
+  if (Array.isArray(value)) return value.map(canonicalize)
+  if (value !== null && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value)
+        .sort(([left], [right]) => compareCodePoints(left, right))
+        .map(([key, entry]) => [key, canonicalize(entry)]),
+    )
+  }
+  return value
+}
+
+/**
+ * Serialize logical JSON content deterministically. Arrays retain their input
+ * order; callers sort only arrays whose members do not carry meaning.
+ */
+export function canonicalJson(value: JsonValue) {
+  return JSON.stringify(canonicalize(value))
+}
+
+export function sha256(value: JsonValue) {
+  return `sha256:${createHash('sha256')
+    .update(canonicalJson(value), 'utf8')
+    .digest('hex')}`
+}
+
+/**
+ * Mapping rows and their candidate/source-token lists are sets in the mapping
+ * contract, so normalize their order before hashing. Nested object keys are
+ * handled by canonicalJson; meaningful arrays such as cssProperties retain
+ * their source order.
+ */
+export function canonicalMappingPayload(mappings: MappingPayload) {
+  return [...mappings]
+    .map((mapping) => ({
+      ...mapping,
+      classCandidates: [...mapping.classCandidates].sort((left, right) =>
+        compareCodePoints(left.className, right.className),
+      ),
+      sourceTokens: [...mapping.sourceTokens].sort((left, right) =>
+        compareCodePoints(left.tokenPath, right.tokenPath),
+      ),
+    }))
+    .sort((left, right) => compareCodePoints(left.tokenPath, right.tokenPath))
 }
 
 function kebabCase(value: string) {
@@ -254,17 +327,10 @@ export function buildIndex(): TokenIndex {
       'utf8',
     ),
   ).version as string
+  const mappings = getTokenV2TailwindClassMappings({
+    includeCssVariable: true,
+  })
   const semantics = semanticRecords()
-  const mappingHash = createHash('sha256')
-    .update(
-      JSON.stringify(
-        semantics.map((record) => [
-          record.tokenPath,
-          record.tailwind?.recommended,
-        ]),
-      ),
-    )
-    .digest('hex')
   const light = JSON.parse(
     readFileSync(
       path.join(repoRoot, 'packages/theme/src/json/pixiv-light.json'),
@@ -283,9 +349,24 @@ export function buildIndex(): TokenIndex {
       'utf8',
     ),
   ) as ThemeJson
+  const themePackageVersion = JSON.parse(
+    readFileSync(path.join(repoRoot, 'packages/theme/package.json'), 'utf8'),
+  ).version as string
 
   return {
-    source: { mappingPackageVersion, mappingHash },
+    source: {
+      indexSchemaVersion: 1,
+      mappingPackageVersion,
+      mappingHash: sha256(
+        canonicalMappingPayload(mappings) as unknown as JsonValue,
+      ),
+      themePackageVersion,
+      semanticThemeHashes: {
+        light: sha256(light),
+        dark: sha256(dark),
+      },
+      primitiveThemeHash: sha256(base),
+    },
     records: [
       ...semantics,
       ...primitiveRecords(base, aliasReverseMap({ light, dark })),
