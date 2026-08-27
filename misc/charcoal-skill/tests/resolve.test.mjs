@@ -5,18 +5,21 @@ import { assertResolveResult } from '../../../skills/charcoal/scripts/lookup/val
 function parseStdout(result) {
   expect(result.stderr).toBe('')
   expect(result.exitCode).toBe(0)
-  return JSON.parse(result.stdout)
+  const json = JSON.parse(result.stdout)
+  expect(json).toMatchObject({ schemaVersion: 1 })
+  return json
 }
 
 describe('resolve.mjs CLI contract', () => {
   test('usage errors go to stderr and exit 1', () => {
-    expect(run([])).toMatchObject({
-      exitCode: 1,
-      stdout: '',
-    })
-    expect(run([]).stderr).toContain('Missing command.')
-    expect(run(['resolve']).exitCode).toBe(1)
-    expect(run(['dump', 'x']).exitCode).toBe(1)
+    const missingCommand = run([])
+    expect(missingCommand).toMatchObject({ exitCode: 1, stdout: '' })
+    expect(missingCommand.stderr).toContain('Missing command.')
+
+    for (const result of [run(['resolve']), run(['dump', 'x'])]) {
+      expect(result).toMatchObject({ exitCode: 1, stdout: '' })
+      expect(result.stderr).not.toBe('')
+    }
   })
 
   test('help is not JSON and exits 0', () => {
@@ -29,6 +32,8 @@ describe('resolve.mjs CLI contract', () => {
     const result = parseStdout(run(['resolve', '#0096FA']))
     assertResolveResult(result)
     expect(result).toEqual({
+      schemaVersion: 1,
+      command: 'resolve',
       query: '#0096FA',
       ok: false,
       reason: 'hex',
@@ -201,6 +206,7 @@ describe('family / search', () => {
       run(['family', 'color/container/primary/default']),
     )
     expect(result.ok).toBe(true)
+    expect(result.command).toBe('family')
     expect(result.members).toMatchObject({
       default: {
         css: '--charcoal-color-container-primary-default',
@@ -222,6 +228,7 @@ describe('family / search', () => {
   ])('search %s ranks a semantic token first', (intent, figma) => {
     const result = parseStdout(run(['search', intent]))
     expect(result.ok).toBe(true)
+    expect(result.command).toBe('search')
     expect(result.results.length).toBeGreaterThan(0)
     expect(result.results[0].layer).toBe('semantic')
     expect(result.results.map(({ figma: name }) => name)).toContain(figma)

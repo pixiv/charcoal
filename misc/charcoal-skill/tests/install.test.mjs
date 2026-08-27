@@ -27,7 +27,7 @@ const runtimeFiles = new Set([
   'references/tailwind.md',
   'rules/styling.md',
   'scripts/resolve.mjs',
-  'scripts/resolve.schema.json',
+  'scripts/cli-output.schema.json',
   'scripts/lookup/normalize.mjs',
   'scripts/lookup/query.mjs',
   'scripts/lookup/search.mjs',

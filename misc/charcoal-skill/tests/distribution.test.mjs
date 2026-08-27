@@ -16,7 +16,7 @@ const runtimeFiles = new Set([
   'references/tailwind.md',
   'rules/styling.md',
   'scripts/resolve.mjs',
-  'scripts/resolve.schema.json',
+  'scripts/cli-output.schema.json',
   'scripts/lookup/normalize.mjs',
   'scripts/lookup/query.mjs',
   'scripts/lookup/search.mjs',
@@ -45,7 +45,7 @@ describe('charcoal skill distribution tree', () => {
       'rg',
       [
         '-n',
-        "@charcoal-ui/|generate\\.ts|misc/charcoal-skill|sources\\.mjs",
+        '@charcoal-ui/|generate\\.ts|misc/charcoal-skill|sources\\.mjs',
         'skills/charcoal/scripts',
       ],
       { cwd: repoRoot, encoding: 'utf8' },

@@ -25,7 +25,9 @@ function searchTerms(query) {
   /** @type {string[]} */
   const terms = []
   for (const [source, extras] of Object.entries(SYNONYMS)) {
-    if (lower.includes(source.toLowerCase())) {terms.push(...extras)}
+    if (lower.includes(source.toLowerCase())) {
+      terms.push(...extras)
+    }
   }
   terms.push(
     ...lower.split(/[^\p{L}\p{N}-]+/u).filter((term) => term.length > 1),
@@ -57,11 +59,19 @@ function scoreRecord(record, terms) {
   const text = haystack(record)
   let score = 0
   for (const term of terms) {
-    if (text.includes(term.toLowerCase())) {score += 1}
+    if (text.includes(term.toLowerCase())) {
+      score += 1
+    }
   }
-  if (score === 0) {return 0}
-  if (record.layer === 'semantic') {score += 10}
-  if (record.state === 'default' || record.state === undefined) {score += 1}
+  if (score === 0) {
+    return 0
+  }
+  if (record.layer === 'semantic') {
+    score += 10
+  }
+  if (record.state === 'default' || record.state === undefined) {
+    score += 1
+  }
   if (
     record.group !== undefined &&
     terms.some((term) => term.toLowerCase() === record.group.toLowerCase())
@@ -93,8 +103,13 @@ export function searchQuery(query, index = loadIndex()) {
     }))
     .filter((result) => result.score > 0)
     .sort((a, b) => {
-      if (a.layer !== b.layer) {return a.layer === 'semantic' ? -1 : 1}
-      return b.score - a.score
+      if (a.layer !== b.layer) {
+        return a.layer === 'semantic' ? -1 : 1
+      }
+      if (a.score !== b.score) {
+        return b.score - a.score
+      }
+      return a.figma.localeCompare(b.figma)
     })
     .slice(0, 8)
 

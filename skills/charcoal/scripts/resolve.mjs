@@ -18,6 +18,7 @@ Options:
 Exit codes:
   0  JSON result on stdout ({ ok: true } or { ok: false, reason })
   1  Usage error on stderr
+  2  Internal error on stderr
 
 Do not guess token names. Pass a Figma variable, CSS variable, or Tailwind class.`
 
@@ -106,16 +107,29 @@ export function run(args) {
     }
   }
 
-  const result =
-    command === 'search'
-      ? searchQuery(query)
-      : command === 'family'
-        ? familyQuery(query)
-        : resolveQuery(query)
-  if (command === 'resolve') {
-    assertResolveResult(result)
+  try {
+    const result =
+      command === 'search'
+        ? searchQuery(query)
+        : command === 'family'
+          ? familyQuery(query)
+          : resolveQuery(query)
+    if (command === 'resolve') {
+      assertResolveResult(result)
+    }
+    return {
+      exitCode: 0,
+      stdout: stringify({ schemaVersion: 1, command, ...result }, pretty),
+      stderr: '',
+    }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error)
+    return {
+      exitCode: 2,
+      stdout: '',
+      stderr: `Internal error: ${message}\n`,
+    }
   }
-  return { exitCode: 0, stdout: stringify(result, pretty), stderr: '' }
 }
 
 const isMain =
