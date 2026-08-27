@@ -66,6 +66,29 @@ describe('cli-output.schema.json', () => {
     expect(result.stderr.startsWith(fixture.stderrPrefix)).toBe(true)
   })
 
+  test.each([NaN, Infinity, -Infinity])(
+    'rejects a non-finite search score (%s) in parity with Ajv',
+    (score) => {
+      const [, fixture] = jsonFixtures('valid').find(
+        ([name]) => name === path.join('valid', 'search-empty-results.json'),
+      )
+      const output = {
+        ...fixture,
+        results: [
+          {
+            score,
+            layer: 'semantic',
+            figma: 'color/container/primary/default',
+            css: '--charcoal-color-container-primary-default',
+            tailwind: [],
+          },
+        ],
+      }
+      expect(validate(output)).toBe(false)
+      expect(isCliOutput(output)).toBe(false)
+    },
+  )
+
   test.each([
     ['resolve semantic hit', ['resolve', 'color/container/primary/default']],
     ['resolve primitive hit', ['resolve', '--charcoal-color-light-blue-50']],

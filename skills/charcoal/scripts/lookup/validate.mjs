@@ -306,8 +306,8 @@ export function assertCliOutput(value) {
         ['score', 'layer', 'figma', 'css', 'tailwind'],
         `results.${index}`,
       )
-      if (typeof result.score !== 'number') {
-        throw new TypeError(`results.${index}.score must be a number`)
+      if (!Number.isFinite(result.score)) {
+        throw new TypeError(`results.${index}.score must be a finite number`)
       }
       if (!['semantic', 'primitive'].includes(result.layer)) {
         throw new TypeError(
