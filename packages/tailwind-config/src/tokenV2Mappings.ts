@@ -245,9 +245,11 @@ function getClassCandidates(
 /**
  * Returns recommended Tailwind class mappings for Charcoal token v2.
  *
- * This API name and output shape are intended to be stable, but mapping
- * contents may change while token v2 Tailwind preset support is exposed
- * through unstableTokenV2.
+ * This is for Charcoal-managed skill generation. It is not a public API,
+ * so application code should not import it.
+ *
+ * Mapping contents may change while token v2 Tailwind preset support is
+ * exposed through unstableTokenV2.
  */
 export function getTokenV2TailwindClassMappings(
   options: GetTokenV2TailwindClassMappingsOptions = {},

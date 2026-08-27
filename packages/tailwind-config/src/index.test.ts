@@ -1,4 +1,5 @@
 import { TailwindBuild } from './_lib/TailwindBuild'
+import * as tailwindConfig from '.'
 import { createTailwindConfig } from '.'
 import { dark, light } from '@charcoal-ui/theme'
 
@@ -77,4 +78,8 @@ describe('tailwind.config.js', () => {
 
     expect(result.getCssVariable(varName)).toHaveLength(2)
   })
+})
+
+test('does not export token v2 class mappings as a public API', () => {
+  expect(tailwindConfig).not.toHaveProperty('getTokenV2TailwindClassMappings')
 })

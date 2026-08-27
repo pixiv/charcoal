@@ -2,8 +2,6 @@
 
 charcoal のカラーテーマやスペーシングなどの定数を元に tailwind.config.js を生成するライブラリです。
 
-`getTokenV2TailwindClassMappings()` は token v2 の推奨 Tailwind class 対応表を返します。API 名と出力形式は安定させる方針ですが、token v2 preset が `unstableTokenV2` として提供されている間は、preset の変更に伴って mapping 内容が変わる可能性があります。
-
 ## インストール
 
 npm

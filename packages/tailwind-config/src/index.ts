@@ -23,16 +23,6 @@ import { charcoalFocusRing } from './focusring'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
 import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
-export {
-  getTokenV2TailwindClassMappings,
-  type GetTokenV2TailwindClassMappingsOptions,
-  type TokenV2Category,
-  type TokenV2CssProperty,
-  type TokenV2SourceToken,
-  type TokenV2TailwindClassCandidate,
-  type TokenV2TailwindClassMapping,
-  type TokenV2Utility,
-} from './tokenV2Mappings'
 import { charcoalIconsV1, charcoalIconsV2 } from './icons'
 export { unstable_createTailwindConfigTokenV2 }
 
