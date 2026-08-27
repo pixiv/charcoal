@@ -1,5 +1,36 @@
-import { charcoalIconsV1, charcoalIconsV2, createIconUtilities } from './icons'
+import {
+  charcoalIconsV1,
+  charcoalIconsV2,
+  createIconUtilities,
+  listIconClassNames,
+} from './icons'
 import { TailwindBuild } from './_lib/TailwindBuild'
+
+describe('listIconClassNames', () => {
+  test('v2 className set matches createIconUtilities', () => {
+    expect(
+      new Set(listIconClassNames({ v2: true }).map((item) => item.className)),
+    ).toEqual(
+      new Set(
+        Object.keys(createIconUtilities({ v2: true })).map((key) =>
+          key.slice(1),
+        ),
+      ),
+    )
+  })
+
+  test('v1 className set matches createIconUtilities', () => {
+    expect(
+      new Set(listIconClassNames({ v2: false }).map((item) => item.className)),
+    ).toEqual(
+      new Set(
+        Object.keys(createIconUtilities({ v2: false })).map((key) =>
+          key.slice(1),
+        ),
+      ),
+    )
+  })
+})
 
 describe('createIconUtilities for icons v2', () => {
   test('createIconUtilities for icons v2', () => {

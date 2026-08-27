@@ -18,6 +18,15 @@ describe('lookup data sources', () => {
       sources.semanticThemeJson,
       sources.primitiveThemeJson,
       sources.dumpPackage,
+      sources.iconFilesV1,
+      sources.iconFilesV2,
+      sources.tailwindIcons,
+      sources.iconsCssClassName,
+      sources.iconsCssV1,
+      sources.iconsCssV2,
+      sources.iconsReactV1,
+      sources.iconsReactV2,
+      sources.iconsIndexOutput,
     ]) {
       expect(existsSync(path.join(repoRoot, relative)), relative).toBe(true)
     }

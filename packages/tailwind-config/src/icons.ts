@@ -26,6 +26,20 @@ const transformClassNameV1 = (fileName: string) => {
     .toLowerCase()
 }
 
+export function listIconClassNames(options: { v2?: boolean }): Array<{
+  fileName: string
+  className: string
+}> {
+  const v2 = options.v2 ?? false
+  const icons = v2 ? iconsV2 : iconsV1
+  return Object.keys(icons).map((fileName) => {
+    const className = v2
+      ? transformClassNameV2(fileName)
+      : transformClassNameV1(fileName)
+    return { fileName, className: className.slice(1) }
+  })
+}
+
 export const createIconUtilities = ({
   v2 = false,
 }: {
