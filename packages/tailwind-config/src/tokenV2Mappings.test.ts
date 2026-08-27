@@ -96,9 +96,33 @@ describe('getTokenV2TailwindClassMappings', async () => {
       })[0].classCandidates,
     ).toEqual([
       {
+        className: 'text-icon',
+        utility: 'textColor',
+        cssProperties: ['color'],
+      },
+    ])
+  })
+
+  test('returns textColor, fill, and stroke candidates for icon colors', () => {
+    expect(
+      getTokenV2TailwindClassMappings({
+        tokens: ['color.icon.default'],
+      })[0].classCandidates,
+    ).toEqual([
+      {
+        className: 'text-icon',
+        utility: 'textColor',
+        cssProperties: ['color'],
+      },
+      {
         className: 'fill-icon',
         utility: 'fill',
         cssProperties: ['fill'],
+      },
+      {
+        className: 'stroke-icon',
+        utility: 'stroke',
+        cssProperties: ['stroke'],
       },
     ])
   })
