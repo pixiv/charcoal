@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { getTokenV2TailwindClassMappings } from '@charcoal-ui/tailwind-config'
+import { getTokenV2TailwindClassMappings } from '../../../packages/tailwind-config/src/tokenV2Mappings'
 import { describe, expect, test } from 'vitest'
 import { buildIndex, indexPath, writeIndex } from '../generate.ts'
 import { run } from '../../../skills/charcoal/scripts/resolve.mjs'

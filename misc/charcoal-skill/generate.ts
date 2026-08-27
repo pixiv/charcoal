@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { getTokenV2TailwindClassMappings } from '@charcoal-ui/tailwind-config'
+import { getTokenV2TailwindClassMappings } from '../../packages/tailwind-config/src/tokenV2Mappings'
 import { detectLayer, getCategory, getGroup } from './lookup/layer.mjs'
 
 const repoRoot = path.resolve(
