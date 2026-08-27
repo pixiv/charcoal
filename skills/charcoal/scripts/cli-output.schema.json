@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pixiv:charcoal:skill:cli-output:v1",
+  "title": "Charcoal skill CLI output",
+  "description": "Public JSON stdout contract. Help text and usage/internal errors are outside this schema.",
+  "oneOf": [
+    { "$ref": "#/$defs/resolveSemanticHit" },
+    { "$ref": "#/$defs/resolvePrimitiveHit" },
+    { "$ref": "#/$defs/resolveMiss" },
+    { "$ref": "#/$defs/searchResults" },
+    { "$ref": "#/$defs/familySemanticHit" },
+    { "$ref": "#/$defs/familyPrimitiveHit" },
+    { "$ref": "#/$defs/familyMiss" }
+  ],
+  "$defs": {
+    "tailwind": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "recommended", "alsoValid"],
+      "properties": {
+        "key": { "type": "string" },
+        "recommended": { "$ref": "#/$defs/stringArray" },
+        "alsoValid": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "stringArray": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "relatedEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["css", "tailwind"],
+      "properties": {
+        "css": { "$ref": "#/$defs/css" },
+        "tailwind": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "members": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/relatedEntry" }
+    },
+    "css": { "type": "string", "pattern": "^--charcoal-" },
+    "recommendedSemantic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["figma"],
+      "properties": {
+        "figma": { "type": "string" },
+        "reason": { "type": "string" },
+        "themes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["figma", "css", "tailwind"],
+      "properties": {
+        "figma": { "type": "string" },
+        "css": { "$ref": "#/$defs/css" },
+        "tailwind": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "classCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["className", "utility", "cssProperties"],
+      "properties": {
+        "className": { "type": "string" },
+        "utility": { "type": "string" },
+        "cssProperties": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tokenPath", "classCandidates"],
+      "properties": {
+        "tokenPath": { "type": "string" },
+        "classCandidates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/classCandidate" }
+        }
+      }
+    },
+    "resolveSemanticHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "command",
+        "query",
+        "ok",
+        "layer",
+        "category",
+        "group",
+        "figma",
+        "css",
+        "cssUsage",
+        "tailwind",
+        "related",
+        "mapping",
+        "notes"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "resolve" },
+        "query": { "type": "string" },
+        "ok": { "const": true },
+        "layer": { "const": "semantic" },
+        "category": { "type": "string" },
+        "group": { "type": "string" },
+        "kind": { "type": "string" },
+        "figma": { "type": "string" },
+        "css": { "$ref": "#/$defs/css" },
+        "cssUsage": { "type": "string" },
+        "tailwind": { "$ref": "#/$defs/tailwind" },
+        "related": { "$ref": "#/$defs/members" },
+        "mapping": { "$ref": "#/$defs/mapping" },
+        "notes": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "resolvePrimitiveHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "command",
+        "query",
+        "ok",
+        "layer",
+        "figma",
+        "css",
+        "recommendedSemantic",
+        "notes"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "resolve" },
+        "query": { "type": "string" },
+        "ok": { "const": true },
+        "layer": { "const": "primitive" },
+        "figma": { "type": "string" },
+        "css": { "$ref": "#/$defs/css" },
+        "recommendedSemantic": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/recommendedSemantic" }
+        },
+        "notes": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "resolveMiss": { "$ref": "#/$defs/missResolve" },
+    "familyMiss": { "$ref": "#/$defs/missFamily" },
+    "missResolve": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "command",
+        "query",
+        "ok",
+        "reason",
+        "message",
+        "candidates"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "resolve" },
+        "query": { "type": "string" },
+        "ok": { "const": false },
+        "reason": { "enum": ["not_found", "ambiguous", "hex", "token_v1"] },
+        "message": { "type": "string" },
+        "candidates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/candidate" }
+        }
+      }
+    },
+    "missFamily": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "command",
+        "query",
+        "ok",
+        "reason",
+        "message",
+        "candidates"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "family" },
+        "query": { "type": "string" },
+        "ok": { "const": false },
+        "reason": { "enum": ["not_found", "ambiguous", "hex", "token_v1"] },
+        "message": { "type": "string" },
+        "candidates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/candidate" }
+        }
+      }
+    },
+    "searchResults": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "command", "query", "ok", "results"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "search" },
+        "query": { "type": "string" },
+        "ok": { "const": true },
+        "results": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["score", "layer", "figma", "css", "tailwind"],
+            "properties": {
+              "score": { "type": "number" },
+              "layer": { "enum": ["semantic", "primitive"] },
+              "figma": { "type": "string" },
+              "css": { "$ref": "#/$defs/css" },
+              "tailwind": { "$ref": "#/$defs/stringArray" }
+            }
+          }
+        }
+      }
+    },
+    "familySemanticHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "command",
+        "query",
+        "ok",
+        "layer",
+        "figma",
+        "members"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "family" },
+        "query": { "type": "string" },
+        "ok": { "const": true },
+        "layer": { "const": "semantic" },
+        "figma": { "type": "string" },
+        "members": { "$ref": "#/$defs/members" }
+      }
+    },
+    "familyPrimitiveHit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "command",
+        "query",
+        "ok",
+        "layer",
+        "figma",
+        "css",
+        "members",
+        "notes"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "command": { "const": "family" },
+        "query": { "type": "string" },
+        "ok": { "const": true },
+        "layer": { "const": "primitive" },
+        "figma": { "type": "string" },
+        "css": { "$ref": "#/$defs/css" },
+        "members": { "type": "object", "maxProperties": 0 },
+        "notes": { "$ref": "#/$defs/stringArray" }
+      }
+    }
+  }
+}

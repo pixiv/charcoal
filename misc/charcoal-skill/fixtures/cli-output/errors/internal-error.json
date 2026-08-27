@@ -1,0 +1,7 @@
+{
+  "command": "search",
+  "query": "primary",
+  "exitCode": 2,
+  "stdout": "",
+  "stderrPrefix": "Internal error:"
+}

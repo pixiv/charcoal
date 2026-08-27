@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "command": "family",
+  "query": "not-a-token",
+  "ok": false,
+  "reason": "not_found",
+  "message": "No token found.",
+  "candidates": []
+}

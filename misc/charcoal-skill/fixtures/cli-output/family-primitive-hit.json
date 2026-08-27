@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "command": "family",
+  "query": "--charcoal-color-light-blue-50",
+  "ok": true,
+  "layer": "primitive",
+  "figma": "color/light/blue/50",
+  "css": "--charcoal-color-light-blue-50",
+  "members": {},
+  "notes": ["Use a semantic token."]
+}

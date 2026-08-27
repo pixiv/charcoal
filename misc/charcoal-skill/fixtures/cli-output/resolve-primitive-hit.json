@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "command": "resolve",
+  "query": "--charcoal-color-light-blue-50",
+  "ok": true,
+  "layer": "primitive",
+  "figma": "color/light/blue/50",
+  "css": "--charcoal-color-light-blue-50",
+  "recommendedSemantic": [{ "figma": "color/container/primary/default" }],
+  "notes": ["Use a semantic token."]
+}

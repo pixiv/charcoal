@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "command": "resolve",
+  "query": "#0096FA",
+  "ok": false,
+  "reason": "hex",
+  "message": "Use a Figma variable.",
+  "candidates": []
+}

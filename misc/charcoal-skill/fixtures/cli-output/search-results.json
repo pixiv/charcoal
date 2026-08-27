@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "command": "search",
+  "query": "primary button background",
+  "ok": true,
+  "results": [
+    {
+      "score": 16,
+      "layer": "semantic",
+      "figma": "color/container/primary/default",
+      "css": "--charcoal-color-container-primary-default",
+      "tailwind": ["bg-container-primary"]
+    }
+  ]
+}

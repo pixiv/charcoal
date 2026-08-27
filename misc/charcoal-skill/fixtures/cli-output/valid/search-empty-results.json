@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "command": "search",
+  "query": "unmatched-query",
+  "ok": true,
+  "results": []
+}
