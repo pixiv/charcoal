@@ -22,9 +22,13 @@ let cachedIndex
  * @returns {TokenIndex}
  */
 export function loadIndex(filePath = indexPath) {
-  if (filePath === indexPath && cachedIndex !== undefined) {return cachedIndex}
+  if (filePath === indexPath && cachedIndex !== undefined) {
+    return cachedIndex
+  }
   const index = JSON.parse(readFileSync(filePath, 'utf8'))
-  if (filePath === indexPath) {cachedIndex = index}
+  if (filePath === indexPath) {
+    cachedIndex = index
+  }
   return index
 }
 
@@ -33,14 +37,24 @@ export function loadIndex(filePath = indexPath) {
  * @param {TokenIndex} index
  */
 function relatedFor(record, index) {
-  if (record.familyKey === undefined) {return {}}
+  if (record.familyKey === undefined) {
+    return {}
+  }
   /** @type {Record<string, { css: string, tailwind: string[] }>} */
   const related = {}
   for (const other of index.records) {
-    if (other.layer !== 'semantic') {continue}
-    if (other.familyKey !== record.familyKey) {continue}
-    if (other.tokenPath === record.tokenPath) {continue}
-    if (other.state === undefined) {continue}
+    if (other.layer !== 'semantic') {
+      continue
+    }
+    if (other.familyKey !== record.familyKey) {
+      continue
+    }
+    if (other.tokenPath === record.tokenPath) {
+      continue
+    }
+    if (other.state === undefined) {
+      continue
+    }
     related[other.state] = {
       css: other.css,
       tailwind: other.tailwind?.recommended ?? [],
@@ -100,7 +114,9 @@ export function findRecords(query, index = loadIndex()) {
   const seen = new Set()
   for (const record of index.records) {
     if (record.keys.some((key) => needles.has(key))) {
-      if (seen.has(record.tokenPath)) {continue}
+      if (seen.has(record.tokenPath)) {
+        continue
+      }
       seen.add(record.tokenPath)
       matches.push(record)
     }
@@ -150,11 +166,15 @@ export function lookupQuery(query, index = loadIndex()) {
  */
 export function familyQuery(query, index = loadIndex()) {
   const resolved = lookupQuery(query, index)
-  if (resolved.ok !== true) {return resolved}
+  if (resolved.ok !== true) {
+    return resolved
+  }
 
   const matches = findRecords(query, index)
   const [record] = matches
-  if (record === undefined) {return resolved}
+  if (record === undefined) {
+    return resolved
+  }
 
   if (record.layer === 'primitive') {
     return {
