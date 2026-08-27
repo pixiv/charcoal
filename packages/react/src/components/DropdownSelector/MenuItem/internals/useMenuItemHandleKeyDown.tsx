@@ -28,7 +28,7 @@ export function useMenuItemHandleKeyDown(
         if (!propsArray || value === undefined) return
         const values = propsArray
           .map((props) => props.value)
-          .filter((v) => v) as string[]
+          .filter((v): v is string => v !== undefined)
         let index = values.indexOf(value)
         if (index === -1) return
 

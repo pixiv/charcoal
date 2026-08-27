@@ -15,6 +15,8 @@ export type MenuListChildren = MenuListChild | MenuListChild[]
 
 export type MenuListProps = {
   children: MenuListChildren
+  /** @internal */
+  leadingItem?: MenuListChild
   value?: string
   onChange?: (v: string) => void
 }
@@ -22,8 +24,14 @@ export type MenuListProps = {
 export default function MenuList(props: MenuListProps) {
   const root = useRef(null)
   const propsArray = useMemo(
-    () => getValuesRecursive(props.children),
-    [props.children],
+    () =>
+      props.leadingItem === undefined
+        ? getValuesRecursive(props.children)
+        : [
+            ...getValuesRecursive(props.leadingItem),
+            ...getValuesRecursive(props.children),
+          ],
+    [props.children, props.leadingItem],
   )
 
   return (
@@ -38,6 +46,7 @@ export default function MenuList(props: MenuListProps) {
           },
         }}
       >
+        {props.leadingItem}
         {props.children}
       </MenuListContext.Provider>
     </ul>

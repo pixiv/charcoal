@@ -177,6 +177,39 @@ export const RequiredText: StoryObj<typeof DropdownSelector> = {
   },
 }
 
+export const ClearablePlaceholder: StoryObj<typeof DropdownSelector> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          '`clearable` makes the placeholder a selectable menu item for returning to the unselected state; it does not add a clear button.',
+      },
+    },
+  },
+  render: function Render() {
+    const [selected, setSelected] = useState('')
+
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          value={selected}
+          onChange={setSelected}
+          label="公開範囲"
+          showLabel
+          required
+          requiredText="必須"
+          placeholder="未選択"
+          clearable
+          assistiveText="メニューの「未選択」を選ぶと選択を解除できます。"
+        >
+          <DropdownMenuItem value="public">公開</DropdownMenuItem>
+          <DropdownMenuItem value="private">非公開</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
 export const SubLabel: StoryObj<typeof DropdownSelector> = {
   render: function Render() {
     const [selected, setSelected] = useState('1')
