@@ -22,9 +22,7 @@ describe('resolve.mjs CLI contract', () => {
   test('help is not JSON and exits 0', () => {
     const result = run(['--help'])
     expect(result.exitCode).toBe(0)
-    expect(result.stdout).toContain(
-      'node scripts/resolve.mjs resolve <query>',
-    )
+    expect(result.stdout).toContain('node scripts/resolve.mjs resolve <query>')
   })
 
   test('hex is a structured miss, not a semantic hit', () => {
