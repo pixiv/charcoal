@@ -20,15 +20,26 @@ export type IndexRecord = {
   }
   familyKey?: string
   state?: string
-  recommendedSemantic?: { figma: string; reason?: string }[]
+  recommendedSemantic?: {
+    figma: string
+    themes: ('light' | 'dark')[]
+    reason?: string
+  }[]
   notes?: string[]
   keys: string[]
 }
 
 export type TokenIndex = {
   source: {
+    indexSchemaVersion: 1
     mappingPackageVersion: string
     mappingHash: string
+    themePackageVersion: string
+    semanticThemeHashes: {
+      light: string
+      dark: string
+    }
+    primitiveThemeHash: string
   }
   records: IndexRecord[]
 }

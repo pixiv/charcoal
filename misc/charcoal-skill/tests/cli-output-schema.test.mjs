@@ -43,7 +43,7 @@ describe('cli-output.schema.json', () => {
       ...jsonFixtures('valid'),
       ...jsonFixtures('invalid'),
     ]
-    expect(fixtures).toHaveLength(11)
+    expect(fixtures).toHaveLength(12)
 
     for (const [name, fixture] of fixtures) {
       const ajvAccepted = validate(fixture)

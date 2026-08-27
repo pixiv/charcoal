@@ -1,0 +1,20 @@
+{
+  "light": {
+    "color": {
+      "container/primary/default": { "value": "{color.shared/blue/50}" }
+    }
+  },
+  "dark": {
+    "color": {
+      "container/primary/default": { "value": "{color.shared/blue/50}" }
+    }
+  },
+  "expected": {
+    "color.shared.blue.50": [
+      {
+        "figma": "color/container/primary/default",
+        "themes": ["light", "dark"]
+      }
+    ]
+  }
+}

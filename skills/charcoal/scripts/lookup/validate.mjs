@@ -139,23 +139,23 @@ function assertRecommendedSemantic(value) {
   assertShape(
     value,
     ['figma', 'reason', 'themes'],
-    ['figma'],
+    ['figma', 'themes'],
     'recommendedSemantic entry',
   )
   assertString(value.figma, 'recommendedSemantic entry.figma')
   if ('reason' in value) {
     assertString(value.reason, 'recommendedSemantic entry.reason')
   }
-  if ('themes' in value) {
-    assertStringArray(value.themes, 'recommendedSemantic entry.themes')
-    if (
-      value.themes.length === 0 ||
-      new Set(value.themes).size !== value.themes.length
-    ) {
-      throw new TypeError(
-        'recommendedSemantic entry.themes must be a non-empty unique array',
-      )
-    }
+  assertStringArray(value.themes, 'recommendedSemantic entry.themes')
+  if (
+    value.themes.length === 0 ||
+    !value.themes.every((theme) => theme === 'light' || theme === 'dark') ||
+    value.themes.join(',') !==
+      ['light', 'dark'].filter((theme) => value.themes.includes(theme)).join(',')
+  ) {
+    throw new TypeError(
+      'recommendedSemantic entry.themes must be a non-empty sorted unique light/dark array',
+    )
   }
 }
 
@@ -193,6 +193,9 @@ function assertPrimitiveHit(value) {
   }
   if (!Array.isArray(value.recommendedSemantic)) {
     throw new TypeError('recommendedSemantic must be an array')
+  }
+  for (const entry of value.recommendedSemantic) {
+    assertRecommendedSemantic(entry)
   }
   assertStringArray(value.notes, 'notes')
   if (value.notes.length === 0) {

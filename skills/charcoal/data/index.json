@@ -1,7 +1,14 @@
 {
   "source": {
+    "indexSchemaVersion": 1,
     "mappingPackageVersion": "6.1.0-beta.4",
-    "mappingHash": "074180b6b33b9ce954423aa1a2e347919fdff964815fa0137561fc5cbf956b0d"
+    "mappingHash": "sha256:47d70ac3fea52ff4a625c2f0c96fe491680284f13c4d52381f55f895fa23a743",
+    "themePackageVersion": "6.1.0-beta.4",
+    "semanticThemeHashes": {
+      "light": "sha256:b5e262559b24bea652e0446ee4ef9afbcfc1f698357a9298ca42c8707dd4221f",
+      "dark": "sha256:d77df3e1dd6b4ba3fff9b7cd7f51937292605060ad58a71b255f3d11eba6de45"
+    },
+    "primitiveThemeHash": "sha256:d8ca17f99f85181cddd8eb608d878ee6d79d95ca1c1948cab083bf6b80c7f88f"
   },
   "records": [
     {
@@ -10086,7 +10093,14 @@
       "css": "--charcoal-color-dark-blue-20",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/focus/2",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10107,7 +10121,14 @@
       "css": "--charcoal-color-dark-blue-30",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/primary/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10128,7 +10149,14 @@
       "css": "--charcoal-color-dark-blue-40",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/primary/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10170,7 +10198,14 @@
       "css": "--charcoal-color-dark-blue-50",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/primary/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10191,7 +10226,20 @@
       "css": "--charcoal-color-dark-blue-60",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/focus/1",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/info/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10233,7 +10281,14 @@
       "css": "--charcoal-color-dark-blue-80",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/info/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10254,7 +10309,14 @@
       "css": "--charcoal-color-dark-blue-90",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/info/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10380,7 +10442,14 @@
       "css": "--charcoal-color-dark-green-30",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/positive/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10401,7 +10470,14 @@
       "css": "--charcoal-color-dark-green-40",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/positive/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10443,7 +10519,14 @@
       "css": "--charcoal-color-dark-green-50",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/positive/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10464,7 +10547,14 @@
       "css": "--charcoal-color-dark-green-60",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/positive/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10506,7 +10596,14 @@
       "css": "--charcoal-color-dark-green-80",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/positive/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -10527,7 +10624,14 @@
       "css": "--charcoal-color-dark-green-90",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/positive/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11115,7 +11219,14 @@
       "css": "--charcoal-color-dark-neutral-a--5",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/background/overlay",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11136,7 +11247,14 @@
       "css": "--charcoal-color-dark-neutral-a-0",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/default-a",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11157,7 +11275,32 @@
       "css": "--charcoal-color-dark-neutral-a-10",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/secondary",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/press-a",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/secondary/hover-a",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/tertiary/default-a",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11178,7 +11321,20 @@
       "css": "--charcoal-color-dark-neutral-a-20",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/secondary/press-a",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/tertiary/hover-a",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11199,7 +11355,26 @@
       "css": "--charcoal-color-dark-neutral-a-30",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/border/default-text3",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/tertiary/press-a",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11220,7 +11395,20 @@
       "css": "--charcoal-color-dark-neutral-a-40",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/border/hover-text3",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11241,7 +11429,32 @@
       "css": "--charcoal-color-dark-neutral-a-5",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/disable",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/hover-a",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/secondary/default-a",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/skeleton",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11262,7 +11475,20 @@
       "css": "--charcoal-color-dark-neutral-a-50",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/border/press-text3",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11367,7 +11593,14 @@
       "css": "--charcoal-color-dark-neutral--10",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/background/tertiary",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11388,7 +11621,14 @@
       "css": "--charcoal-color-dark-neutral--5",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/background/secondary",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11409,7 +11649,20 @@
       "css": "--charcoal-color-dark-neutral-0",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/background/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11430,7 +11683,32 @@
       "css": "--charcoal-color-dark-neutral-10",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/disable",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/secondary/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/tertiary/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11451,7 +11729,20 @@
       "css": "--charcoal-color-dark-neutral-20",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/secondary/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/tertiary/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11472,7 +11763,38 @@
       "css": "--charcoal-color-dark-neutral-30",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/neutral/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/tertiary/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/placeholder/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/placeholder/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/placeholder/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11493,7 +11815,26 @@
       "css": "--charcoal-color-dark-neutral-40",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/neutral/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/disable",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/tertiary/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11514,7 +11855,38 @@
       "css": "--charcoal-color-dark-neutral-5",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/secondary/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-notice/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-notice/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-notice/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11535,7 +11907,14 @@
       "css": "--charcoal-color-dark-neutral-50",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/neutral/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11556,7 +11935,20 @@
       "css": "--charcoal-color-dark-neutral-60",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/secondary/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/tertiary/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11577,7 +11969,32 @@
       "css": "--charcoal-color-dark-neutral-70",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/hud/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/secondary/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/tertiary/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11598,7 +12015,26 @@
       "css": "--charcoal-color-dark-neutral-80",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/hud/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/secondary/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -11621,13 +12057,160 @@
       "group": "dark",
       "recommendedSemantic": [
         {
-          "figma": "color/text/on-hud/default"
+          "figma": "color/container/hud/default",
+          "themes": [
+            "dark"
+          ]
         },
         {
-          "figma": "color/text/on-hud/hover"
+          "figma": "color/icon/on-neutral/default",
+          "themes": [
+            "dark"
+          ]
         },
         {
-          "figma": "color/text/on-hud/press"
+          "figma": "color/icon/on-neutral/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/icon/on-neutral/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/default-text1",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/hover-text1",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-discovery/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-discovery/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-discovery/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-hud/default",
+          "themes": [
+            "light"
+          ]
+        },
+        {
+          "figma": "color/text/on-hud/hover",
+          "themes": [
+            "light"
+          ]
+        },
+        {
+          "figma": "color/text/on-hud/press",
+          "themes": [
+            "light"
+          ]
+        },
+        {
+          "figma": "color/text/on-negative/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-negative/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-negative/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-on-img/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-on-img/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-on-img/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-positive/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-positive/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-positive/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-primary/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-primary/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/on-primary/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/press-text1",
+          "themes": [
+            "dark"
+          ]
         }
       ],
       "notes": [
@@ -12112,7 +12695,14 @@
       "css": "--charcoal-color-dark-purple-60",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/visited/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12154,7 +12744,14 @@
       "css": "--charcoal-color-dark-purple-80",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/visited/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12175,7 +12772,14 @@
       "css": "--charcoal-color-dark-purple-90",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/visited/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12280,7 +12884,14 @@
       "css": "--charcoal-color-dark-red-20",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/border/negative",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12301,7 +12912,20 @@
       "css": "--charcoal-color-dark-red-30",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/discovery/default",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/negative/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12322,7 +12946,20 @@
       "css": "--charcoal-color-dark-red-40",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/discovery/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/negative/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12364,7 +13001,20 @@
       "css": "--charcoal-color-dark-red-50",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/discovery/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/container/negative/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12385,7 +13035,14 @@
       "css": "--charcoal-color-dark-red-60",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/negative/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12427,7 +13084,14 @@
       "css": "--charcoal-color-dark-red-80",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/negative/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12448,7 +13112,14 @@
       "css": "--charcoal-color-dark-red-90",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/negative/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12931,7 +13602,14 @@
       "css": "--charcoal-color-dark-yellow-60",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/text/notice/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12952,7 +13630,14 @@
       "css": "--charcoal-color-dark-yellow-70",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/notice/default",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12973,7 +13658,20 @@
       "css": "--charcoal-color-dark-yellow-80",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/notice/hover",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/notice/hover",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -12994,7 +13692,20 @@
       "css": "--charcoal-color-dark-yellow-90",
       "category": "color",
       "group": "dark",
-      "recommendedSemantic": [],
+      "recommendedSemantic": [
+        {
+          "figma": "color/container/notice/press",
+          "themes": [
+            "dark"
+          ]
+        },
+        {
+          "figma": "color/text/notice/press",
+          "themes": [
+            "dark"
+          ]
+        }
+      ],
       "notes": [
         "Color Space プリミティブはプロダクト UI に直接使わない。セマンティックトークンを選べ。"
       ],
@@ -13059,7 +13770,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/focus/2"
+          "figma": "color/border/focus/2",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13147,7 +13861,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/primary/default"
+          "figma": "color/container/primary/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13172,13 +13889,22 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/focus/1"
+          "figma": "color/border/focus/1",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/primary/hover"
+          "figma": "color/container/primary/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/info/default"
+          "figma": "color/text/info/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13203,10 +13929,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/primary/press"
+          "figma": "color/container/primary/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/info/hover"
+          "figma": "color/text/info/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13231,7 +13963,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/info/press"
+          "figma": "color/text/info/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13403,7 +14138,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/positive/default"
+          "figma": "color/container/positive/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13428,10 +14166,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/positive/hover"
+          "figma": "color/container/positive/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/positive/default"
+          "figma": "color/text/positive/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13456,10 +14200,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/positive/press"
+          "figma": "color/container/positive/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/positive/hover"
+          "figma": "color/text/positive/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13484,7 +14234,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/positive/press"
+          "figma": "color/text/positive/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13950,7 +14703,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/default-a"
+          "figma": "color/container/default-a",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -13975,19 +14731,34 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/disable"
+          "figma": "color/border/disable",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/border/secondary"
+          "figma": "color/border/secondary",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/press-a"
+          "figma": "color/container/press-a",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/secondary/hover-a"
+          "figma": "color/container/secondary/hover-a",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/tertiary/default-a"
+          "figma": "color/container/tertiary/default-a",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14012,10 +14783,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/secondary/press-a"
+          "figma": "color/container/secondary/press-a",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/tertiary/hover-a"
+          "figma": "color/container/tertiary/hover-a",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14040,7 +14817,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/tertiary/press-a"
+          "figma": "color/container/tertiary/press-a",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14065,10 +14845,17 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/background/overlay"
+          "figma": "color/background/overlay",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/on-img/default"
+          "figma": "color/container/on-img/default",
+          "themes": [
+            "light",
+            "dark"
+          ]
         }
       ],
       "notes": [
@@ -14093,13 +14880,22 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/hover-a"
+          "figma": "color/container/hover-a",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/secondary/default-a"
+          "figma": "color/container/secondary/default-a",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/skeleton"
+          "figma": "color/container/skeleton",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14124,13 +14920,23 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/default"
+          "figma": "color/border/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/border/default-text3"
+          "figma": "color/border/default-text3",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/on-img/hover"
+          "figma": "color/container/on-img/hover",
+          "themes": [
+            "light",
+            "dark"
+          ]
         }
       ],
       "notes": [
@@ -14155,13 +14961,23 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/hover"
+          "figma": "color/border/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/border/hover-text3"
+          "figma": "color/border/hover-text3",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/on-img/press"
+          "figma": "color/container/on-img/press",
+          "themes": [
+            "light",
+            "dark"
+          ]
         }
       ],
       "notes": [
@@ -14186,10 +15002,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/press"
+          "figma": "color/border/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/border/press-text3"
+          "figma": "color/border/press-text3",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14256,58 +15078,112 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/background/default"
+          "figma": "color/background/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/default"
+          "figma": "color/container/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/icon/on-neutral/default"
+          "figma": "color/icon/on-neutral/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-discovery/default"
+          "figma": "color/text/on-discovery/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-discovery/hover"
+          "figma": "color/text/on-discovery/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-discovery/press"
+          "figma": "color/text/on-discovery/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-negative/default"
+          "figma": "color/text/on-negative/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-negative/hover"
+          "figma": "color/text/on-negative/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-negative/press"
+          "figma": "color/text/on-negative/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-on-img/default"
+          "figma": "color/text/on-on-img/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-on-img/hover"
+          "figma": "color/text/on-on-img/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-on-img/press"
+          "figma": "color/text/on-on-img/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-positive/default"
+          "figma": "color/text/on-positive/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-positive/hover"
+          "figma": "color/text/on-positive/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-positive/press"
+          "figma": "color/text/on-positive/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-primary/default"
+          "figma": "color/text/on-primary/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-primary/hover"
+          "figma": "color/text/on-primary/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-primary/press"
+          "figma": "color/text/on-primary/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14332,22 +15208,40 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/background/tertiary"
+          "figma": "color/background/tertiary",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/disable"
+          "figma": "color/container/disable",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/press"
+          "figma": "color/container/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/secondary/hover"
+          "figma": "color/container/secondary/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/tertiary/default"
+          "figma": "color/container/tertiary/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/icon/on-neutral/press"
+          "figma": "color/icon/on-neutral/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14372,10 +15266,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/secondary/press"
+          "figma": "color/container/secondary/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/tertiary/hover"
+          "figma": "color/container/tertiary/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14400,10 +15300,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/tertiary/press"
+          "figma": "color/container/tertiary/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/disable"
+          "figma": "color/text/disable",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14449,16 +15355,28 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/background/secondary"
+          "figma": "color/background/secondary",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/hover"
+          "figma": "color/container/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/secondary/default"
+          "figma": "color/container/secondary/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/icon/on-neutral/hover"
+          "figma": "color/icon/on-neutral/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14483,16 +15401,28 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/neutral/default"
+          "figma": "color/container/neutral/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/placeholder/default"
+          "figma": "color/text/placeholder/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/placeholder/hover"
+          "figma": "color/text/placeholder/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/placeholder/press"
+          "figma": "color/text/placeholder/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14517,13 +15447,22 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/hud/press"
+          "figma": "color/container/hud/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/neutral/hover"
+          "figma": "color/container/neutral/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/tertiary/default"
+          "figma": "color/text/tertiary/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14548,19 +15487,34 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/hud/hover"
+          "figma": "color/container/hud/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/neutral/press"
+          "figma": "color/container/neutral/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/press"
+          "figma": "color/text/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/secondary/default"
+          "figma": "color/text/secondary/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/tertiary/hover"
+          "figma": "color/text/tertiary/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14585,16 +15539,28 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/hud/default"
+          "figma": "color/container/hud/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/hover"
+          "figma": "color/text/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/secondary/hover"
+          "figma": "color/text/secondary/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/tertiary/press"
+          "figma": "color/text/tertiary/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -14619,28 +15585,70 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/default"
+          "figma": "color/text/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/default-text1"
+          "figma": "color/text/default-text1",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/hover-text1"
+          "figma": "color/text/hover-text1",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/on-notice/default"
+          "figma": "color/text/on-hud/default",
+          "themes": [
+            "dark"
+          ]
         },
         {
-          "figma": "color/text/on-notice/hover"
+          "figma": "color/text/on-hud/hover",
+          "themes": [
+            "dark"
+          ]
         },
         {
-          "figma": "color/text/on-notice/press"
+          "figma": "color/text/on-hud/press",
+          "themes": [
+            "dark"
+          ]
         },
         {
-          "figma": "color/text/press-text1"
+          "figma": "color/text/on-notice/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/secondary/press"
+          "figma": "color/text/on-notice/hover",
+          "themes": [
+            "light"
+          ]
+        },
+        {
+          "figma": "color/text/on-notice/press",
+          "themes": [
+            "light"
+          ]
+        },
+        {
+          "figma": "color/text/press-text1",
+          "themes": [
+            "light"
+          ]
+        },
+        {
+          "figma": "color/text/secondary/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15022,7 +16030,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/visited/default"
+          "figma": "color/text/visited/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15047,7 +16058,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/visited/hover"
+          "figma": "color/text/visited/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15072,7 +16086,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/visited/press"
+          "figma": "color/text/visited/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15139,7 +16156,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/border/negative"
+          "figma": "color/border/negative",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15227,10 +16247,16 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/discovery/default"
+          "figma": "color/container/discovery/default",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/negative/default"
+          "figma": "color/container/negative/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15255,13 +16281,22 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/discovery/hover"
+          "figma": "color/container/discovery/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/negative/hover"
+          "figma": "color/container/negative/hover",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/negative/default"
+          "figma": "color/text/negative/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15286,13 +16321,22 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/discovery/press"
+          "figma": "color/container/discovery/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/container/negative/press"
+          "figma": "color/container/negative/press",
+          "themes": [
+            "light"
+          ]
         },
         {
-          "figma": "color/text/negative/hover"
+          "figma": "color/text/negative/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15317,7 +16361,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/negative/press"
+          "figma": "color/text/negative/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15636,7 +16683,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/notice/default"
+          "figma": "color/container/notice/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15661,7 +16711,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/notice/hover"
+          "figma": "color/container/notice/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15686,7 +16739,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/container/notice/press"
+          "figma": "color/container/notice/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15753,7 +16809,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/notice/default"
+          "figma": "color/text/notice/default",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15778,7 +16837,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/notice/hover"
+          "figma": "color/text/notice/hover",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [
@@ -15803,7 +16865,10 @@
       "group": "light",
       "recommendedSemantic": [
         {
-          "figma": "color/text/notice/press"
+          "figma": "color/text/notice/press",
+          "themes": [
+            "light"
+          ]
         }
       ],
       "notes": [

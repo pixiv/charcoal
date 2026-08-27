@@ -7,7 +7,10 @@
   "figma": "color/light/blue/50",
   "css": "--charcoal-color-light-blue-50",
   "recommendedSemantic": [
-    { "figma": "color/container/primary/default", "themes": ["light"] }
+    {
+      "figma": "color/container/primary/default",
+      "themes": ["dark", "light"]
+    }
   ],
   "notes": ["Use a semantic token."]
 }
