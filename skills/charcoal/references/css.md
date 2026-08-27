@@ -26,3 +26,4 @@ Token 2.0 の値:
 - 変数名は `--charcoal-` で始まる Token 2.0
 - hex / `rgb()` / Token 1.0 名は書かない
 - `layer` が `primitive` なら使わない
+- `cssUsage` にプロパティが複数あるときは、今書いているプロパティに合う 1 つだけ使う。space は `padding` / `margin` / `gap` のどれでもよい

@@ -90,6 +90,7 @@
                 "fill",
                 "stroke",
                 "spacing",
+                "margin",
                 "gap",
                 "width",
                 "borderRadius",

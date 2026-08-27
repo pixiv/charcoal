@@ -104,13 +104,14 @@ function cssUsageFor(mapping: {
     return usages.join('; ')
   }
 
-  const [property] = candidate.cssProperties
-  if (property === undefined) return `var(${css})`
-  if (candidate.utility === 'fill' || candidate.utility === 'stroke') {
+  if (mapping.classCandidates.length > 1) {
     return mapping.classCandidates
       .map((item) => `${item.cssProperties[0]}: var(${css})`)
       .join('; ')
   }
+
+  const [property] = candidate.cssProperties
+  if (property === undefined) return `var(${css})`
   return `${property}: var(${css})`
 }
 
@@ -118,8 +119,10 @@ function tailwindFrom(mapping: { classCandidates: { className: string }[] }) {
   const recommended = mapping.classCandidates.map(({ className }) => className)
   const [first] = recommended
   const key =
-    first?.replace(/^(?:bg|text|fill|stroke|rounded|font|border|p|w)-/u, '') ??
-    ''
+    first?.replace(
+      /^(?:bg|text|fill|stroke|rounded|font|border|gap|p|m|w)-/u,
+      '',
+    ) ?? ''
   return { key, recommended, alsoValid: [] as string[] }
 }
 

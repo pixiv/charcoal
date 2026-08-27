@@ -151,6 +151,29 @@ describe('resolve golden examples', () => {
     })
   })
 
+  test('resolve space/layout/40', () => {
+    const result = parseStdout(run(['resolve', 'space/layout/40']))
+    expect(result).toMatchObject({
+      ok: true,
+      css: '--charcoal-space-layout-40',
+      cssUsage:
+        'padding: var(--charcoal-space-layout-40); margin: var(--charcoal-space-layout-40); gap: var(--charcoal-space-layout-40)',
+      tailwind: {
+        recommended: ['p-layout-40', 'm-layout-40', 'gap-layout-40'],
+      },
+    })
+  })
+
+  test.each(['p-layout-40', 'm-layout-40', 'gap-layout-40'])(
+    'resolve %s',
+    (className) => {
+      expect(parseStdout(run(['resolve', className]))).toMatchObject({
+        ok: true,
+        figma: 'space/layout/40',
+      })
+    },
+  )
+
   test('resolve --charcoal-color-light-blue-50', () => {
     const result = parseStdout(
       run(['resolve', '--charcoal-color-light-blue-50']),

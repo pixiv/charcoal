@@ -56,3 +56,4 @@ Color Space をプロダクト UI の背景に使わない。`resolve` が `laye
 - `ok: true` の CSS 変数または `tailwind.recommended` だけを書く
 - `alsoValid` は使わない
 - hover / press は `family` または `related`
+- space / icon のように候補が複数なら、今のプロパティに合う 1 つだけ書く。先頭を機械的に使わない

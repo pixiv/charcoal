@@ -29,6 +29,7 @@ const utilities: TokenV2Utility[] = [
   'fill',
   'stroke',
   'spacing',
+  'margin',
   'gap',
   'width',
   'borderRadius',
@@ -157,14 +158,16 @@ export function run(args: string[]) {
   assertChoices(values.category, categories, 'category')
   assertChoices(values.utility, utilities, 'utility')
 
-  const mappings = withFigmaVariables(getTokenV2TailwindClassMappings({
-    categories: values.category,
-    utilities: values.utility,
-    tokens: resolveTokenPaths(values.token),
-    includeThemeValue: values['include-theme-value'],
-    includeCssVariable: values['include-css-variable'],
-    includeAmbiguousUtilities: values['include-ambiguous-utilities'],
-  }))
+  const mappings = withFigmaVariables(
+    getTokenV2TailwindClassMappings({
+      categories: values.category,
+      utilities: values.utility,
+      tokens: resolveTokenPaths(values.token),
+      includeThemeValue: values['include-theme-value'],
+      includeCssVariable: values['include-css-variable'],
+      includeAmbiguousUtilities: values['include-ambiguous-utilities'],
+    }),
+  )
 
   return formatMappings(mappings, values.format as OutputFormat)
 }

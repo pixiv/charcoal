@@ -19,6 +19,7 @@ export type TokenV2Utility =
   | 'fill'
   | 'stroke'
   | 'spacing'
+  | 'margin'
   | 'gap'
   | 'width'
   | 'borderRadius'
@@ -103,6 +104,7 @@ const classPrefixes: Record<TokenV2Utility, string> = {
   fill: 'fill',
   stroke: 'stroke',
   spacing: 'p',
+  margin: 'm',
   gap: 'gap',
   width: 'w',
   borderRadius: 'rounded',
@@ -147,57 +149,68 @@ function getColorClassCandidates(
 
 const themePathCandidateDefinitions: {
   prefix: string
-  utility: TokenV2Utility
-  cssProperties: TokenV2CssProperty[]
+  candidates: {
+    utility: TokenV2Utility
+    cssProperties: TokenV2CssProperty[]
+  }[]
 }[] = [
   {
     prefix: 'fontSize.',
-    utility: 'fontSize',
-    cssProperties: ['font-size', 'line-height'],
+    candidates: [
+      {
+        utility: 'fontSize',
+        cssProperties: ['font-size', 'line-height'],
+      },
+    ],
   },
   {
     prefix: 'spacing.',
-    utility: 'spacing',
-    cssProperties: ['padding'],
+    candidates: [
+      { utility: 'spacing', cssProperties: ['padding'] },
+      { utility: 'margin', cssProperties: ['margin'] },
+      { utility: 'gap', cssProperties: ['gap'] },
+    ],
   },
   {
     prefix: 'borderRadius.',
-    utility: 'borderRadius',
-    cssProperties: ['border-radius'],
+    candidates: [{ utility: 'borderRadius', cssProperties: ['border-radius'] }],
   },
   {
     prefix: 'fontWeight.',
-    utility: 'fontWeight',
-    cssProperties: ['font-weight'],
+    candidates: [{ utility: 'fontWeight', cssProperties: ['font-weight'] }],
   },
   {
     prefix: 'borderWidth.',
-    utility: 'borderWidth',
-    cssProperties: ['border-width'],
+    candidates: [{ utility: 'borderWidth', cssProperties: ['border-width'] }],
   },
   {
     prefix: 'width.',
-    utility: 'width',
-    cssProperties: ['width'],
+    candidates: [{ utility: 'width', cssProperties: ['width'] }],
   },
 ]
 
 function getThemePathClassCandidates(
   entry: TokenV2ThemeEntry,
   utilities: TokenV2Utility[] | undefined,
+  includeAmbiguousUtilities: boolean,
 ) {
   const definition = themePathCandidateDefinitions.find(({ prefix }) =>
     entry.themePath.startsWith(prefix),
   )
   if (definition === undefined) return undefined
 
-  return [
-    {
-      className: `${classPrefixes[definition.utility]}-${entry.themePath.slice(definition.prefix.length)}`,
-      utility: definition.utility,
-      cssProperties: definition.cssProperties,
-    },
-  ].filter(({ utility }) => utilities?.includes(utility) ?? true)
+  const candidates = includeAmbiguousUtilities
+    ? definition.candidates
+    : definition.candidates.slice(0, 1)
+  const classKey = entry.themePath.slice(definition.prefix.length)
+
+  return candidates
+    .filter(({ utility }) => utilities?.includes(utility) ?? true)
+    .map(({ utility, cssProperties }) => ({
+      className: `${classPrefixes[utility]}-${classKey}`,
+      utility,
+      cssProperties,
+    }))
 }
 
 function pickMappingEntry(entries: TokenV2ThemeEntry[]) {
@@ -214,7 +227,11 @@ function getClassCandidates(
   utilities: TokenV2Utility[] | undefined,
   includeAmbiguousUtilities: boolean,
 ) {
-  const themePathCandidates = getThemePathClassCandidates(entry, utilities)
+  const themePathCandidates = getThemePathClassCandidates(
+    entry,
+    utilities,
+    includeAmbiguousUtilities,
+  )
   if (themePathCandidates !== undefined) return themePathCandidates
 
   return getColorClassCandidates(

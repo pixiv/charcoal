@@ -4840,6 +4840,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-component-0",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-0",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -4867,6 +4881,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-component-10",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-10",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -4896,6 +4924,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-component-20",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-20",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -4923,6 +4965,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-component-25",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-25",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -4952,6 +5008,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-component-30",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-30",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -4979,6 +5049,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-component-40",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-40",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5008,6 +5092,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-component-50",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-component-50",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5035,6 +5133,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-layout-0",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-0",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5064,6 +5176,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-layout-10",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-10",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5091,6 +5217,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-layout-20",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-20",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5120,6 +5260,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-layout-25",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-25",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5147,6 +5301,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-layout-30",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-30",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5176,6 +5344,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-layout-40",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-40",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5203,6 +5385,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-layout-50",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-50",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5232,6 +5428,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-layout-60",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-60",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5259,6 +5469,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-layout-70",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-70",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5288,6 +5512,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-layout-80",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-80",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5315,6 +5553,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-layout-90",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-90",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5344,6 +5596,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-layout-100",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-layout-100",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5371,6 +5637,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-padding-card",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-padding-card",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5400,6 +5680,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-target-l",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-target-l",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5427,6 +5721,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-target-m",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-target-m",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
@@ -5456,6 +5764,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
         ],
         "utility": "spacing",
       },
+      {
+        "className": "m-target-s",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-target-s",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
+      },
     ],
     "mappingKind": "recommended",
     "source": "token-v2",
@@ -5483,6 +5805,20 @@ exports[`getTokenV2TailwindClassMappings > returns the recommended color mapping
           "padding",
         ],
         "utility": "spacing",
+      },
+      {
+        "className": "m-target-xs",
+        "cssProperties": [
+          "margin",
+        ],
+        "utility": "margin",
+      },
+      {
+        "className": "gap-target-xs",
+        "cssProperties": [
+          "gap",
+        ],
+        "utility": "gap",
       },
     ],
     "mappingKind": "recommended",
