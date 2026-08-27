@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import { lookupIconQuery, assertIconResult } from './lookup/icon.mjs'
 import { classifyQuery } from './lookup/normalize.mjs'
 import { familyQuery, lookupQuery } from './lookup/query.mjs'
 import { searchQuery } from './lookup/search.mjs'
@@ -10,6 +11,7 @@ export const help = `Usage:
   node skills/charcoal/scripts/resolve.mjs resolve <query>
   node skills/charcoal/scripts/resolve.mjs search <intent>
   node skills/charcoal/scripts/resolve.mjs family <token>
+  node skills/charcoal/scripts/resolve.mjs icon <query>
 
 Options:
   --pretty    Pretty-print JSON
@@ -21,7 +23,7 @@ Exit codes:
 
 Do not guess token names. Pass a Figma variable, CSS variable, or Tailwind class.`
 
-const COMMANDS = new Set(['resolve', 'search', 'family'])
+const COMMANDS = new Set(['resolve', 'search', 'family', 'icon'])
 
 const HEX_MESSAGE = 'hex はテーマで変わる。Figma の変数名を resolve に渡せ。'
 const TOKEN_V1_MESSAGE =
@@ -111,8 +113,11 @@ export function run(args) {
       ? searchQuery(query)
       : command === 'family'
         ? familyQuery(query)
-        : resolveQuery(query)
-  if (command === 'resolve') assertResolveResult(result)
+        : command === 'icon'
+          ? lookupIconQuery(query)
+          : resolveQuery(query)
+  if (command === 'icon') assertIconResult(result)
+  else if (command === 'resolve') assertResolveResult(result)
   return { exitCode: 0, stdout: stringify(result, pretty), stderr: '' }
 }
 
