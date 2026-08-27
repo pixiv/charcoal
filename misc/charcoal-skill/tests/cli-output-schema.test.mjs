@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import Ajv2020 from 'ajv/dist/2020.js'
 import { describe, expect, test } from 'vitest'
 import { run } from '../../../skills/charcoal/scripts/resolve.mjs'
+import { isCliOutput } from '../../../skills/charcoal/scripts/lookup/validate.mjs'
 
 const root = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -18,6 +19,17 @@ const schema = JSON.parse(
 )
 const validate = new Ajv2020({ strict: true }).compile(schema)
 
+function jsonFixtures(directory = '') {
+  const directoryPath = path.join(fixtureDir, directory)
+  return readdirSync(directoryPath)
+    .filter((name) => name.endsWith('.json'))
+    .sort()
+    .map((name) => [
+      directory === '' ? name : path.join(directory, name),
+      JSON.parse(readFileSync(path.join(directoryPath, name), 'utf8')),
+    ])
+}
+
 function parseJsonStdout(args) {
   const result = run(args)
   expect(result).toMatchObject({ exitCode: 0, stderr: '' })
@@ -25,21 +37,33 @@ function parseJsonStdout(args) {
 }
 
 describe('cli-output.schema.json', () => {
-  test('validates every positive public-output fixture with Ajv 8.20.0', () => {
-    const fixtures = readdirSync(fixtureDir)
-      .filter((name) => name.endsWith('.json'))
-      .sort()
+  test('keeps Ajv and the bundled validator in parity for every fixture', () => {
+    const fixtures = [
+      ...jsonFixtures(),
+      ...jsonFixtures('valid'),
+      ...jsonFixtures('invalid'),
+    ]
+    expect(fixtures).toHaveLength(11)
 
-    expect(fixtures).toHaveLength(7)
-    for (const name of fixtures) {
-      const fixture = JSON.parse(
-        readFileSync(path.join(fixtureDir, name), 'utf8'),
+    for (const [name, fixture] of fixtures) {
+      const ajvAccepted = validate(fixture)
+      expect(ajvAccepted, `${name}: ${JSON.stringify(validate.errors)}`).toBe(
+        isCliOutput(fixture),
       )
-      expect(
-        validate(fixture),
-        `${name}: ${JSON.stringify(validate.errors)}`,
-      ).toBe(true)
+      expect(ajvAccepted, name).toBe(!name.startsWith('invalid/'))
     }
+  })
+
+  test('keeps usage errors outside the public JSON stdout contract', () => {
+    const [, fixture] = jsonFixtures('errors').find(
+      ([name]) => name === path.join('errors', 'usage-error.json'),
+    )
+    const result = run(fixture.args)
+    expect(result).toMatchObject({
+      exitCode: fixture.exitCode,
+      stdout: fixture.stdout,
+    })
+    expect(result.stderr.startsWith(fixture.stderrPrefix)).toBe(true)
   })
 
   test.each([
@@ -47,13 +71,13 @@ describe('cli-output.schema.json', () => {
     ['resolve primitive hit', ['resolve', '--charcoal-color-light-blue-50']],
     ['resolve miss', ['resolve', '#0096FA']],
     ['search results', ['search', 'プライマリボタンの背景']],
+    ['search empty results', ['search', 'unmatched-query']],
     ['family semantic hit', ['family', 'color/container/primary/default']],
     ['family primitive hit', ['family', '--charcoal-color-light-blue-50']],
     ['family miss', ['family', 'not-a-token']],
   ])('validates %s emitted by the CLI', (_, args) => {
-    expect(
-      validate(parseJsonStdout(args)),
-      JSON.stringify(validate.errors),
-    ).toBe(true)
+    const output = parseJsonStdout(args)
+    expect(validate(output), JSON.stringify(validate.errors)).toBe(true)
+    expect(isCliOutput(output)).toBe(true)
   })
 })

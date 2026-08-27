@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { classifyQuery } from './lookup/normalize.mjs'
 import { familyQuery, lookupQuery } from './lookup/query.mjs'
 import { searchQuery } from './lookup/search.mjs'
-import { assertResolveResult } from './lookup/validate.mjs'
+import { assertCliOutput, assertResolveResult } from './lookup/validate.mjs'
 
 export const help = `Usage:
   node scripts/resolve.mjs resolve <query>
@@ -117,9 +117,11 @@ export function run(args) {
     if (command === 'resolve') {
       assertResolveResult(result)
     }
+    const output = { schemaVersion: 1, command, ...result }
+    assertCliOutput(output)
     return {
       exitCode: 0,
-      stdout: stringify({ schemaVersion: 1, command, ...result }, pretty),
+      stdout: stringify(output, pretty),
       stderr: '',
     }
   } catch (error) {

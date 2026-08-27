@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "command": "family",
+  "query": "color/container/primary/default",
+  "ok": true,
+  "layer": "semantic",
+  "figma": "color/container/primary/default",
+  "members": {
+    "default": {
+      "css": "#0096FA",
+      "tailwind": []
+    }
+  }
+}

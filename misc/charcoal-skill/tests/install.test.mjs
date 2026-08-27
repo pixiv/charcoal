@@ -4,6 +4,7 @@ import {
   lstatSync,
   mkdtempSync,
   mkdirSync,
+  readFileSync,
   renameSync,
   rmSync,
   symlinkSync,
@@ -12,6 +13,7 @@ import {
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import Ajv2020 from 'ajv/dist/2020.js'
 import { afterEach, describe, expect, test } from 'vitest'
 
 const repoRoot = path.resolve(
@@ -64,14 +66,16 @@ function invoke(cwd, script, ...args) {
   })
 }
 
-function jsonResult(result) {
+function jsonResult(result, validate) {
   expect(result.status).toBe(0)
   expect(result.stderr).toBe('')
   expect(result.stdout).not.toBe('')
-  return JSON.parse(result.stdout)
+  const output = JSON.parse(result.stdout)
+  expect(validate(output), JSON.stringify(validate.errors)).toBe(true)
+  return output
 }
 
-function expectMinimumContracts(consumer, installedSkill) {
+function expectMinimumContracts(consumer, installedSkill, validate) {
   expect(
     jsonResult(
       invoke(
@@ -80,6 +84,7 @@ function expectMinimumContracts(consumer, installedSkill) {
         'resolve',
         'color/container/primary/default',
       ),
+      validate,
     ),
   ).toMatchObject({
     ok: true,
@@ -94,6 +99,7 @@ function expectMinimumContracts(consumer, installedSkill) {
       'search',
       'プライマリボタンの背景',
     ),
+    validate,
   )
   expect(search).toMatchObject({ ok: true })
   expect(search.results[0]).toMatchObject({
@@ -109,6 +115,7 @@ function expectMinimumContracts(consumer, installedSkill) {
         'family',
         'color/container/primary/default',
       ),
+      validate,
     ),
   ).toMatchObject({
     ok: true,
@@ -198,8 +205,44 @@ describe('Codex copy install', () => {
     expect(lstatSync(installedSkill).isDirectory()).toBe(true)
     expect(new Set(installedFiles(installedSkill))).toEqual(runtimeFiles)
 
+    const schema = JSON.parse(
+      readFileSync(
+        path.join(installedSkill, 'scripts', 'cli-output.schema.json'),
+        'utf8',
+      ),
+    )
+    const validate = new Ajv2020({ strict: true }).compile(schema)
+
     // The install must remain runnable after its local source disappears.
     renameSync(source, unavailableSource)
-    expectMinimumContracts(consumer, installedSkill)
+    expectMinimumContracts(consumer, installedSkill, validate)
+
+    // An unreadable installed index produces stderr-only internal errors.
+    writeFileSync(path.join(installedSkill, 'data', 'index.json'), '{')
+    const internalFixture = JSON.parse(
+      readFileSync(
+        path.join(
+          repoRoot,
+          'misc',
+          'charcoal-skill',
+          'fixtures',
+          'cli-output',
+          'errors',
+          'internal-error.json',
+        ),
+        'utf8',
+      ),
+    )
+    const internal = invoke(
+      consumer,
+      path.join(installedSkill, 'scripts', 'resolve.mjs'),
+      internalFixture.command,
+      internalFixture.query,
+    )
+    expect(internal).toMatchObject({
+      status: internalFixture.exitCode,
+      stdout: internalFixture.stdout,
+    })
+    expect(internal.stderr.startsWith(internalFixture.stderrPrefix)).toBe(true)
   })
 })

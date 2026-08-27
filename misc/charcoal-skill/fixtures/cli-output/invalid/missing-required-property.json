@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "command": "resolve",
+  "query": "color/container/primary/default",
+  "ok": true,
+  "layer": "semantic",
+  "category": "color",
+  "group": "container",
+  "figma": "color/container/primary/default",
+  "css": "--charcoal-color-container-primary-default",
+  "cssUsage": "background-color: var(--charcoal-color-container-primary-default)",
+  "tailwind": {
+    "key": "container-primary",
+    "recommended": [],
+    "alsoValid": []
+  },
+  "related": {},
+  "notes": []
+}
