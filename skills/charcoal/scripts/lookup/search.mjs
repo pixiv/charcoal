@@ -1,8 +1,8 @@
 import { loadIndex } from './query.mjs'
 
 /**
- * @typedef {import('../types.d.ts').IndexRecord} IndexRecord
- * @typedef {import('../types.d.ts').TokenIndex} TokenIndex
+ * @typedef {import('./types.d.ts').IndexRecord} IndexRecord
+ * @typedef {import('./types.d.ts').TokenIndex} TokenIndex
  */
 
 const SYNONYMS = {
