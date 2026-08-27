@@ -151,7 +151,9 @@ function assertRecommendedSemantic(value) {
     value.themes.length === 0 ||
     !value.themes.every((theme) => theme === 'light' || theme === 'dark') ||
     value.themes.join(',') !==
-      ['light', 'dark'].filter((theme) => value.themes.includes(theme)).join(',')
+      ['light', 'dark']
+        .filter((theme) => value.themes.includes(theme))
+        .join(',')
   ) {
     throw new TypeError(
       'recommendedSemantic entry.themes must be a non-empty sorted unique light/dark array',
