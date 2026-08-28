@@ -21,6 +21,7 @@ describe('createTokenV2TailwindBindings', () => {
     ['text/font-weight/bold', 'fontWeight', 'ch-bold'],
     ['radius/oval', 'borderRadius', 'oval'],
     ['paragraph-width/s-cozy', 'width', 's-cozy'],
+<<<<<<< HEAD
   ])(
     '%s creates a %s binding with modifier %s',
     (canonicalPath, themeKey, modifier) => {
@@ -29,6 +30,13 @@ describe('createTokenV2TailwindBindings', () => {
       )
     },
   )
+=======
+  ])('%s creates a %s binding with modifier %s', (canonicalPath, themeKey, modifier) => {
+    expect(bindings).toContainEqual(
+      expect.objectContaining({ canonicalPath, themeKey, modifier }),
+    )
+  })
+>>>>>>> 4a9d3401b (refactor(tailwind-config): extract token v2 bindings)
 
   test('combines font size with its line height', () => {
     expect(bindings).toContainEqual({
@@ -42,6 +50,7 @@ describe('createTokenV2TailwindBindings', () => {
     })
   })
 
+<<<<<<< HEAD
   test('only removes a trailing default segment from prefixed modifiers', () => {
     const prefixedBindings = createTokenV2TailwindBindings({
       ...light,
@@ -93,6 +102,8 @@ describe('createTokenV2TailwindBindings', () => {
     )
   })
 
+=======
+>>>>>>> 4a9d3401b (refactor(tailwind-config): extract token v2 bindings)
   test('rejects duplicate theme keys and modifiers', () => {
     expect(() =>
       createTokenV2TailwindBindings({
