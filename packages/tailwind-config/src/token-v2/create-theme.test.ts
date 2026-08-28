@@ -36,8 +36,29 @@ describe('createTokenV2TailwindTheme', () => {
         },
       ]),
     ).toMatchObject({
-      colors: { container: { primary: { DEFAULT: 'primary', hover: 'hover' } } },
+      colors: {
+        container: { primary: { DEFAULT: 'primary', hover: 'hover' } },
+      },
       spacing: { 'layout-20': '20px' },
     })
+  })
+
+  test('rejects color bindings with conflicting output paths', () => {
+    expect(() =>
+      createTokenV2TailwindTheme([
+        {
+          canonicalPath: 'color/a/default',
+          themeKey: 'colors',
+          modifier: 'a',
+          value: 'a',
+        },
+        {
+          canonicalPath: 'color/a/default/x',
+          themeKey: 'colors',
+          modifier: 'a-default-x',
+          value: 'x',
+        },
+      ]),
+    ).toThrow('Conflicting color token binding: color/a/default/x')
   })
 })

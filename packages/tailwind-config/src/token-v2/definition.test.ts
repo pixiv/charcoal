@@ -21,11 +21,14 @@ describe('createTokenV2TailwindBindings', () => {
     ['text/font-weight/bold', 'fontWeight', 'ch-bold'],
     ['radius/oval', 'borderRadius', 'oval'],
     ['paragraph-width/s-cozy', 'width', 's-cozy'],
-  ])('%s creates a %s binding with modifier %s', (canonicalPath, themeKey, modifier) => {
-    expect(bindings).toContainEqual(
-      expect.objectContaining({ canonicalPath, themeKey, modifier }),
-    )
-  })
+  ])(
+    '%s creates a %s binding with modifier %s',
+    (canonicalPath, themeKey, modifier) => {
+      expect(bindings).toContainEqual(
+        expect.objectContaining({ canonicalPath, themeKey, modifier }),
+      )
+    },
+  )
 
   test('combines font size with its line height', () => {
     expect(bindings).toContainEqual({
@@ -44,12 +47,18 @@ describe('createTokenV2TailwindBindings', () => {
       ...light,
       color: {
         ...light.color,
-        border: { default: { hover: 'nested-default' }, 'default-a': 'default-a' },
+        border: {
+          default: { hover: 'nested-default' },
+          'default-a': 'default-a',
+        },
       },
       'border-width': { default: { hover: 'nested-default' } },
       text: {
         ...light.text,
-        'font-weight': { default: 'weight-default', 'default-a': 'weight-default-a' },
+        'font-weight': {
+          default: 'weight-default',
+          'default-a': 'weight-default-a',
+        },
       },
     } as TokenV2CssVariables)
 
