@@ -107,6 +107,9 @@ export {
   type ScrollSnapAlign,
   type ScrollStep,
   type ScrollStepContext,
+  type CarouselChangeSource,
+  type CarouselChangeEvent,
+  type CarouselAutoplay,
 } from './components/Carousel'
 export {
   default as UnstableSnackbar,

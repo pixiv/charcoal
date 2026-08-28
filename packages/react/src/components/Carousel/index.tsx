@@ -14,9 +14,10 @@ import {
   type CSSProperties,
   type ReactNode,
 } from 'react'
-import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
+import { mergeProps, useFocusRing, useHover, useKeyboard } from 'react-aria'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
+import { AutoplayProvider } from './CarouselAutoplayProvider'
 import {
   CarouselCloneItem,
   CarouselItem as CarouselSlide,
@@ -35,6 +36,14 @@ export type ScrollAlign = 'left' | 'center' | 'right'
 export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
 
 export type ScrollSnapAlign = 'center' | 'start'
+
+export type CarouselChangeSource =
+  'auto' | 'navigation' | 'indicator' | 'keyboard' | 'pointer'
+
+export type CarouselChangeEvent = Readonly<{
+  index: number
+  source: CarouselChangeSource
+}>
 
 export type ScrollSnap = Readonly<{
   type?: ScrollSnapType
@@ -78,6 +87,13 @@ export type CarouselLoopProps =
       centerItem?: number
     }>
 
+export type CarouselAutoplay = Readonly<{
+  // 1 スライドあたりの滞留時間 (ms)。既定 5000。
+  interval?: number
+  // ポインタが乗っている間は停止する。既定 true。
+  pauseOnHover?: boolean
+}>
+
 export type CarouselProps = Readonly<{
   className?: string
   hasGradient?: boolean
@@ -94,6 +110,12 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
+  // スクロール静止で activeIndex が変わったときに 1 回だけ発火する。
+  // source で自動送り（'auto'）とユーザー操作を区別できる。
+  onChange?: (e: CarouselChangeEvent) => void
+  // 自動スクロール。未指定なら自動送りしない。送りの単位は 1 スライドで、
+  // scrollStep は影響しない。
+  autoplay?: CarouselAutoplay
   // スライド間隔。number は px、string は CSS 値をそのまま使う。未指定は間隔なし。
   gap?: number | string
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
@@ -104,6 +126,7 @@ export type CarouselProps = Readonly<{
 type Direction = 'prev' | 'next'
 
 const DEFAULT_SCROLL_STEP = 0.75
+const DEFAULT_AUTOPLAY_INTERVAL = 5000
 
 const NAV_ICON = {
   prev: '24/Prev',
@@ -176,6 +199,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScroll,
     onResize,
     onScrollStateChange,
+    onChange,
+    autoplay,
     loop = false,
     centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
@@ -190,6 +215,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const showIndicator = indicator ?? size === 'S'
   const snapType = scrollSnap?.type ?? (size === 'S' ? 'mandatory' : 'none')
   const snapAlign = scrollSnap?.align ?? 'center'
+  const { interval = DEFAULT_AUTOPLAY_INTERVAL, pauseOnHover = true } =
+    autoplay ?? {}
 
   // 直接子要素 1 つを 1 スライドとして数える。key は子要素の key を引き継ぐ
   // （toArray が付与する接頭辞付き key。無ければ index）。
@@ -206,17 +233,25 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
-  const { scrollByStep, onItemResize, resetScroll, loopCloneCount } =
-    useCarouselScroller(scrollerRef, store, slides.length, {
-      align,
-      offset,
-      scrollStep,
-      loop,
-      centerItem,
-      onScroll,
-      onResize,
-      onScrollStateChange,
-    })
+  const {
+    scrollByStep,
+    advanceSlide,
+    onItemResize,
+    resetScroll,
+    loopCloneCount,
+  } = useCarouselScroller(scrollerRef, store, slides.length, {
+    align,
+    offset,
+    scrollStep,
+    snapAlign,
+    snapType,
+    loop,
+    centerItem,
+    onScroll,
+    onResize,
+    onScrollStateChange,
+    onChange,
+  })
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
@@ -229,6 +264,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollToItem = useCallback(
     (index: number) => store.dispatch({ type: 'requestScroll', index }),
     [store],
+  )
+
+  // CarouselNavigationButton は memo 済みなので安定参照で渡す。
+  const scrollByNavigation = useCallback(
+    (direction: Direction) => scrollByStep(direction, 'navigation'),
+    [scrollByStep],
   )
 
   const renderSlides = () =>
@@ -280,10 +321,10 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onKeyDown: (e) => {
       if (e.key === 'ArrowRight') {
         e.preventDefault()
-        scrollByStep('next')
+        scrollByStep('next', 'keyboard')
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault()
-        scrollByStep('prev')
+        scrollByStep('prev', 'keyboard')
       } else {
         e.continuePropagation()
       }
@@ -300,6 +341,10 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const { focusProps: rootFocusProps, isFocusVisible: rootFocusVisible } =
     useFocusRing({ within: true })
 
+  const { hoverProps, isHovered } = useHover({
+    isDisabled: autoplay == null || !pauseOnHover,
+  })
+
   // gap 宣言自体は index.css 側に置き、ここでは CSS 変数の値だけを注入する。
   const gapStyle = useMemo(
     () =>
@@ -313,7 +358,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
 
   return (
     <div
-      {...rootFocusProps}
+      {...mergeProps(rootFocusProps, hoverProps)}
       className={className}
       style={gapStyle}
       data-size={size}
@@ -335,16 +380,19 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
         className="charcoal-carousel__viewport"
         data-focus-visible={scrollerFocusVisible || undefined}
       >
-        <div
+        <AutoplayProvider
           {...mergeProps(scrollerFocusProps, keyboardProps)}
           ref={scrollerRef}
           className="charcoal-carousel__scroller"
           tabIndex={0}
+          interval={autoplay == null ? undefined : interval}
+          paused={isHovered || rootFocusVisible}
+          advance={advanceSlide}
         >
           {loop && cloneBands.before}
           {renderSlides()}
           {loop && cloneBands.after}
-        </div>
+        </AutoplayProvider>
 
         <div
           className="charcoal-carousel__navigation"
@@ -354,12 +402,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           <CarouselNavigationButton
             direction="prev"
             canScroll={canPrev}
-            onScroll={scrollByStep}
+            onScroll={scrollByNavigation}
           />
           <CarouselNavigationButton
             direction="next"
             canScroll={canNext}
-            onScroll={scrollByStep}
+            onScroll={scrollByNavigation}
           />
         </div>
       </div>
