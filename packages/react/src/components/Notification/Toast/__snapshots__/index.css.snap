@@ -1,4 +1,4 @@
-.charcoal-toast-region {
+.charcoal-notification-region {
   --charcoal-toast-offset: 16px;
 }
 

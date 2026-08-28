@@ -1,4 +1,4 @@
-.charcoal-snackbar-region {
+.charcoal-notification-region {
   --charcoal-snackbar-offset: 16px;
 }
 
