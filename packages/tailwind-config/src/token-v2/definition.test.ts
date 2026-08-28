@@ -39,6 +39,51 @@ describe('createTokenV2TailwindBindings', () => {
     })
   })
 
+  test('only removes a trailing default segment from prefixed modifiers', () => {
+    const prefixedBindings = createTokenV2TailwindBindings({
+      ...light,
+      color: {
+        ...light.color,
+        border: { default: { hover: 'nested-default' }, 'default-a': 'default-a' },
+      },
+      'border-width': { default: { hover: 'nested-default' } },
+      text: {
+        ...light.text,
+        'font-weight': { default: 'weight-default', 'default-a': 'weight-default-a' },
+      },
+    } as TokenV2CssVariables)
+
+    expect(prefixedBindings).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          canonicalPath: 'color/border/default/hover',
+          themeKey: 'borderColor',
+          modifier: 'ch-default-hover',
+        }),
+        expect.objectContaining({
+          canonicalPath: 'color/border/default-a',
+          themeKey: 'borderColor',
+          modifier: 'ch-default-a',
+        }),
+        expect.objectContaining({
+          canonicalPath: 'border-width/default/hover',
+          themeKey: 'borderWidth',
+          modifier: 'width-ch-default-hover',
+        }),
+        expect.objectContaining({
+          canonicalPath: 'text/font-weight/default',
+          themeKey: 'fontWeight',
+          modifier: 'ch',
+        }),
+        expect.objectContaining({
+          canonicalPath: 'text/font-weight/default-a',
+          themeKey: 'fontWeight',
+          modifier: 'ch-default-a',
+        }),
+      ]),
+    )
+  })
+
   test('rejects duplicate theme keys and modifiers', () => {
     expect(() =>
       createTokenV2TailwindBindings({
