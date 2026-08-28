@@ -48,6 +48,7 @@ export function NotificationRegion<TContent>({
   }
   const { regionProps } = useToastRegion({}, timerState, regionRef)
   const classNames = useClassNames('charcoal-notification-region', className)
+  const effectiveOffset = Math.max(offset, DEFAULT_OFFSET)
 
   if (state.visibleToasts.length === 0) {
     return null
@@ -62,14 +63,14 @@ export function NotificationRegion<TContent>({
         style={
           {
             zIndex,
-            [`--charcoal-${name}-offset`]: `${offset}px`,
+            [`--charcoal-${name}-offset`]: `${effectiveOffset}px`,
             justifyContent: position === 'top' ? 'flex-start' : 'flex-end',
           } as CSSProperties
         }
       >
         <div
           style={{
-            height: `calc(${headerOffset}px + env(safe-area-inset-top, 0px) + max(var(--charcoal-${name}-offset), ${DEFAULT_OFFSET}px))`,
+            height: `calc(${headerOffset}px + env(safe-area-inset-top, 0px) + var(--charcoal-${name}-offset))`,
           }}
         />
         <div data-position={position} className={`charcoal-${name}-region`}>
