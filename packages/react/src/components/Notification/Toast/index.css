@@ -1,3 +1,7 @@
+.charcoal-notification-region {
+  --charcoal-toast-offset: 16px;
+}
+
 .charcoal-toast-region {
   &[data-position='top'] {
     position: sticky;
