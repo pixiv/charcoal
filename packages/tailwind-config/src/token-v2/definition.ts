@@ -56,38 +56,20 @@ export function createTokenV2TailwindBindings(
     tokens.color.border as TokenV2TokenTree,
     ['color', 'border'],
     'borderColor',
-<<<<<<< HEAD
     (path) => ['ch', modifier(path)].filter(Boolean).join('-'),
-=======
-    (path) => ['ch', ...path.filter((part) => part !== 'default')].join('-'),
->>>>>>> 4a9d3401b (refactor(tailwind-config): extract token v2 bindings)
   )
   const borderWidthBindings = bindingsFor(
     tokens['border-width'],
     ['border-width'],
     'borderWidth',
-<<<<<<< HEAD
     (path) => ['width-ch', modifier(path)].filter(Boolean).join('-'),
   )
-  const borderRadiusBindings = bindingsFor(
-    tokens.radius,
-    ['radius'],
-    'borderRadius',
-  )
-=======
-    (path) => ['width-ch', ...path.filter((part) => part !== 'default')].join('-'),
-  )
   const borderRadiusBindings = bindingsFor(tokens.radius, ['radius'], 'borderRadius')
->>>>>>> 4a9d3401b (refactor(tailwind-config): extract token v2 bindings)
   const fontWeightBindings = bindingsFor(
     tokens.text['font-weight'],
     ['text', 'font-weight'],
     'fontWeight',
-<<<<<<< HEAD
     (path) => ['ch', modifier(path)].filter(Boolean).join('-'),
-=======
-    (path) => ['ch', ...path].join('-'),
->>>>>>> 4a9d3401b (refactor(tailwind-config): extract token v2 bindings)
   )
   const spaceBindings = leafEntries(tokens.space).flatMap(({ path, value }) => {
     const spaceModifier = modifier(
@@ -113,13 +95,7 @@ export function createTokenV2TailwindBindings(
         tokens.text['line-height'],
       )
       if (typeof lineHeight !== 'string') {
-<<<<<<< HEAD
-        throw new Error(
-          `Missing line-height token for text/font-size/${path.join('/')}`,
-        )
-=======
         throw new Error(`Missing line-height token for text/font-size/${path.join('/')}`)
->>>>>>> 4a9d3401b (refactor(tailwind-config): extract token v2 bindings)
       }
       return {
         canonicalPath: ['text', 'font-size', ...path].join('/'),
