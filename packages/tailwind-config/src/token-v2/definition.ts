@@ -64,7 +64,11 @@ export function createTokenV2TailwindBindings(
     'borderWidth',
     (path) => ['width-ch', modifier(path)].filter(Boolean).join('-'),
   )
-  const borderRadiusBindings = bindingsFor(tokens.radius, ['radius'], 'borderRadius')
+  const borderRadiusBindings = bindingsFor(
+    tokens.radius,
+    ['radius'],
+    'borderRadius',
+  )
   const fontWeightBindings = bindingsFor(
     tokens.text['font-weight'],
     ['text', 'font-weight'],
@@ -95,7 +99,9 @@ export function createTokenV2TailwindBindings(
         tokens.text['line-height'],
       )
       if (typeof lineHeight !== 'string') {
-        throw new Error(`Missing line-height token for text/font-size/${path.join('/')}`)
+        throw new Error(
+          `Missing line-height token for text/font-size/${path.join('/')}`,
+        )
       }
       return {
         canonicalPath: ['text', 'font-size', ...path].join('/'),
