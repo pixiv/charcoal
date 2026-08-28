@@ -69,7 +69,7 @@ export function NotificationRegion<TContent>({
       >
         <div
           style={{
-            height: `${headerOffset}px`,
+            height: `calc(${headerOffset}px + env(safe-area-inset-top, 0px) + max(var(--charcoal-${name}-offset), ${DEFAULT_OFFSET}px))`,
           }}
         />
         <div data-position={position} className={`charcoal-${name}-region`}>

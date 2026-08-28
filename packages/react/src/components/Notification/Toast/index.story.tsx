@@ -34,7 +34,6 @@ export default {
   args: {
     message: '保存しました',
     position: 'top',
-    offset: 16,
     duration: 5000,
     order: 'queue',
     zIndex: 20,
