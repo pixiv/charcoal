@@ -582,7 +582,7 @@
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>46.2s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>46.1s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -21919,7 +21919,7 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> unstable_Toast</h2>
       <div class="badges">
-        <label for="c-41-react-toast-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-41-react-toast-props" class="badge ok as-toggle">11 prop types</label>
         <label for="c-41-react-toast-info" class="badge info as-toggle">1 info</label>
         <label for="c-41-react-toast-stories" class="badge ok as-toggle">5 stories</label>
         
@@ -21953,7 +21953,7 @@ export const Tailwind: StoryObj&lt;typeof TokenV2Tailwind&gt; = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">10 prop types</span>
+              <span class="badge ok">11 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Notification/Toast/index.tsx::default</code></pre>
             <pre><code>Props:</code></pre>
@@ -21965,6 +21965,11 @@ css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
  * 通知を表示する時間（ミリ秒）。負の値は 0、数値でない値は 5000 として扱う
  */
 duration?: number = 5000
+
+/**
+ * スクロールに追従しないヘッダーの高さを指定する
+ */
+headerOffset?: number = 0
 
 key?: Key | null
 
