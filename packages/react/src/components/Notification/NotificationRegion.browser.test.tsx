@@ -6,16 +6,20 @@ import { useToast } from './Toast'
 
 const HEADER_OFFSET = 64
 const OFFSET = 24
+const MINIMUM_OFFSET = 16
 
 const notificationOptions = {
   position: 'top',
   headerOffset: HEADER_OFFSET,
-  offset: OFFSET,
   duration: 60_000,
 } as const
 
-function ToastApp() {
-  const [toast, showToast] = useToast(notificationOptions)
+type AppProps = {
+  offset?: number
+}
+
+function ToastApp({ offset = OFFSET }: AppProps) {
+  const [toast, showToast] = useToast({ ...notificationOptions, offset })
 
   return (
     <>
@@ -30,8 +34,11 @@ function ToastApp() {
   )
 }
 
-function SnackbarApp() {
-  const [snackbar, showSnackbar] = useSnackbar(notificationOptions)
+function SnackbarApp({ offset = OFFSET }: AppProps) {
+  const [snackbar, showSnackbar] = useSnackbar({
+    ...notificationOptions,
+    offset,
+  })
 
   return (
     <>
@@ -65,7 +72,7 @@ afterEach(async () => {
 
 describe.each<{
   name: string
-  App: ComponentType
+  App: ComponentType<AppProps>
   regionSelector: string
 }>([
   {
@@ -85,16 +92,29 @@ describe.each<{
 
     const { notificationRegion, itemRegion } = getRegions(regionSelector)
 
-    expect(itemRegion.getBoundingClientRect().top).toBe(HEADER_OFFSET)
+    expect(itemRegion.getBoundingClientRect().top).toBe(HEADER_OFFSET + OFFSET)
 
     await scrollTo(20)
 
     expect(notificationRegion.getBoundingClientRect().top).toBe(-20)
-    expect(itemRegion.getBoundingClientRect().top).toBe(HEADER_OFFSET - 20)
+    expect(itemRegion.getBoundingClientRect().top).toBe(
+      HEADER_OFFSET + OFFSET - 20,
+    )
 
     await scrollTo(HEADER_OFFSET)
 
     expect(notificationRegion.getBoundingClientRect().top).toBe(-HEADER_OFFSET)
     expect(itemRegion.getBoundingClientRect().top).toBe(OFFSET)
+  })
+
+  it('offsetが16未満の場合は初期表示位置に16pxの余白を確保する', () => {
+    render(<App offset={8} />)
+    fireEvent.click(screen.getByRole('button', { name: '通知を表示' }))
+
+    const { itemRegion } = getRegions(regionSelector)
+
+    expect(itemRegion.getBoundingClientRect().top).toBe(
+      HEADER_OFFSET + MINIMUM_OFFSET,
+    )
   })
 })
