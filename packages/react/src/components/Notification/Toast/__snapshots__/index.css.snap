@@ -1,7 +1,3 @@
-.charcoal-toast-region {
-  --charcoal-toast-offset: 16px;
-}
-
 .charcoal-toast-region[data-position='top'] {
   position: sticky;
   --charcoal-toast-enter-offset: calc(-1 * var(--charcoal-space-30));

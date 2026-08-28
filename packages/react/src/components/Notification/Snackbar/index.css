@@ -1,6 +1,4 @@
 .charcoal-snackbar-region {
-  --charcoal-snackbar-offset: 16px;
-
   &[data-position='top'] {
     --charcoal-snackbar-enter-offset: calc(-1 * var(--charcoal-space-30));
 

@@ -10,6 +10,11 @@ export type UseNotificationOptions = {
    */
   offset?: number
   /**
+   * スクロールに追従しないヘッダーの高さを指定する
+   * @default 0
+   */
+  headerOffset?: number
+  /**
    * 通知を表示する時間（ミリ秒）。負の値は 0、数値でない値は 5000 として扱う
    * @default 5000
    */
