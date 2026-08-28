@@ -56,20 +56,20 @@ export function createTokenV2TailwindBindings(
     tokens.color.border as TokenV2TokenTree,
     ['color', 'border'],
     'borderColor',
-    (path) => ['ch', ...path.filter((part) => part !== 'default')].join('-'),
+    (path) => ['ch', modifier(path)].filter(Boolean).join('-'),
   )
   const borderWidthBindings = bindingsFor(
     tokens['border-width'],
     ['border-width'],
     'borderWidth',
-    (path) => ['width-ch', ...path.filter((part) => part !== 'default')].join('-'),
+    (path) => ['width-ch', modifier(path)].filter(Boolean).join('-'),
   )
   const borderRadiusBindings = bindingsFor(tokens.radius, ['radius'], 'borderRadius')
   const fontWeightBindings = bindingsFor(
     tokens.text['font-weight'],
     ['text', 'font-weight'],
     'fontWeight',
-    (path) => ['ch', ...path].join('-'),
+    (path) => ['ch', modifier(path)].filter(Boolean).join('-'),
   )
   const spaceBindings = leafEntries(tokens.space).flatMap(({ path, value }) => {
     const spaceModifier = modifier(
