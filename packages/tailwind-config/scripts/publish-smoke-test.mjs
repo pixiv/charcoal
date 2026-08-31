@@ -40,11 +40,11 @@ run('pnpm', [
   'exec',
   'tsc',
   '--project',
-  'scripts/publish-smoke/tsconfig.nodenext.json',
+  'scripts/publish-smoke-test/tsconfig.nodenext.json',
 ])
 run('pnpm', [
   'exec',
   'tsc',
   '--project',
-  'scripts/publish-smoke/tsconfig.bundler.json',
+  'scripts/publish-smoke-test/tsconfig.bundler.json',
 ])
