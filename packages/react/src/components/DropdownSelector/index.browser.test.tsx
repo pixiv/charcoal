@@ -160,6 +160,70 @@ it('ペンで外側をタップしたとき、下にあるクリック可能な�
   expect(handleBackgroundClick).not.toHaveBeenCalled()
 })
 
+it('ペンで選択肢を選んだとき、選択肢の背後にあるクリック可能な要素をクリックしない', async () => {
+  const handleBackgroundClick = vi.fn()
+  const handleChange = vi.fn()
+  render(
+    <>
+      <DropdownSelector
+        label="Label"
+        value="1"
+        onChange={handleChange}
+        inertWorkaround
+      >
+        <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+        <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+      </DropdownSelector>
+      <button type="button" onClick={handleBackgroundClick}>
+        Button behind options
+      </button>
+    </>,
+  )
+
+  penTap(screen.getByRole('button', { name: 'Label' }))
+  const option = screen.getByRole('option', { name: 'Option 2' })
+  const optionRect = option.getBoundingClientRect()
+  const point = {
+    x: Math.round(optionRect.left + optionRect.width / 2),
+    y: Math.round(optionRect.top + optionRect.height / 2),
+  }
+  const backgroundButton = screen.getByRole('button', {
+    name: 'Button behind options',
+  })
+  Object.assign(backgroundButton.style, {
+    position: 'fixed',
+    left: `${optionRect.left}px`,
+    top: `${optionRect.top}px`,
+    width: `${optionRect.width}px`,
+    height: `${optionRect.height}px`,
+  })
+
+  fireEvent.pointerDown(option, {
+    pointerType: 'pen',
+    button: 0,
+    clientX: point.x,
+    clientY: point.y,
+    composed: true,
+  })
+  // Android Chrome が後続の互換 click を生成しないよう、
+  // 選択肢上のペン由来 touchstart もキャンセルする。
+  expect(fireEvent.touchStart(option)).toBe(false)
+  fireEvent.pointerUp(option, {
+    pointerType: 'pen',
+    button: 0,
+    clientX: point.x,
+    clientY: point.y,
+    composed: true,
+  })
+
+  await waitFor(() => {
+    expect(popover()).toBeNull()
+  })
+  expect(handleChange).toHaveBeenCalledWith('2')
+  expect(document.elementFromPoint(point.x, point.y)).toBe(backgroundButton)
+  expect(handleBackgroundClick).not.toHaveBeenCalled()
+})
+
 it('underlay は inertWorkaround が無効なとき inert になる', () => {
   renderSelector(false)
   penTap(screen.getByRole('button'))

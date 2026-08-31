@@ -4151,69 +4151,98 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Ine
       style="display: flex; align-items: flex-start; gap: 64px;"
     >
       <div
-        style="width: 288px;"
+        style="display: flex; flex-direction: column; gap: 16px;"
       >
         <div
-          class="charcoal-dropdown-selector-root"
+          style="position: relative; width: 288px;"
         >
           <div
-            class="charcoal-field-label-root"
-            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            style="position: relative; z-index: 1;"
           >
-            <label
-              class="charcoal-field-label"
-              id="test-id"
-            >
-              DropdownSelector
-            </label>
             <div
-              class="charcoal-field-label-sub-label"
+              class="charcoal-dropdown-selector-root"
             >
-              <span />
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  id="test-id"
+                >
+                  DropdownSelector
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <select
+                  tabindex="-1"
+                >
+                  <option
+                    value="1"
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3
+                  </option>
+                </select>
+              </div>
+              <button
+                aria-labelledby="test-id"
+                class="charcoal-dropdown-selector-button"
+                data-active="false"
+                type="button"
+              >
+                <span
+                  class="charcoal-ui-dropdown-selector-text"
+                  data-placeholder="false"
+                >
+                  Option 1
+                </span>
+                <pixiv-icon
+                  class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                  name="16/Menu"
+                  style="--charcoal-icon-size: 16px;"
+                />
+              </button>
             </div>
           </div>
-          <div
-            aria-hidden="true"
-            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
-          >
-            <select
-              tabindex="-1"
-            >
-              <option
-                value="1"
-              >
-                1
-              </option>
-              <option
-                value="2"
-              >
-                2
-              </option>
-              <option
-                value="3"
-              >
-                3
-              </option>
-            </select>
-          </div>
+        </div>
+        <div>
           <button
-            aria-labelledby="test-id"
-            class="charcoal-dropdown-selector-button"
-            data-active="false"
-            type="button"
+            class="charcoal-button"
+            data-testid="behind-options-button"
+            style="position: relative; top: 0px; left: 0px; width: 100%; height: 120px;"
           >
-            <span
-              class="charcoal-ui-dropdown-selector-text"
-              data-placeholder="false"
-            >
-              Option 1
-            </span>
-            <pixiv-icon
-              class="charcoal-icon charcoal-ui-dropdown-selector-icon"
-              name="16/Menu"
-              style="--charcoal-icon-size: 16px;"
-            />
+            Button behind options
           </button>
+        </div>
+        <div
+          data-testid="selected-option"
+        >
+          Selected option: 
+          1
+        </div>
+        <div
+          data-testid="behind-options-click-count"
+        >
+          Behind options click count: 
+          0
         </div>
       </div>
       <div
@@ -4223,7 +4252,7 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Ine
           class="charcoal-button"
           data-testid="background-button"
         >
-          Background button
+          Outside background button
         </button>
         <div
           data-testid="background-click-count"

@@ -1,13 +1,6 @@
 import './index.css'
 
-import {
-  RefObject,
-  useContext,
-  useEffect,
-  useRef,
-  ReactNode,
-  type PointerEvent as ReactPointerEvent,
-} from 'react'
+import { RefObject, useContext, useEffect, useRef, ReactNode } from 'react'
 import { ModalBackgroundContext } from '../../Modal/ModalBackgroundContext'
 import { usePreventScroll } from './usePreventScroll'
 import { DismissButton, Overlay } from 'react-aria/Overlay'
@@ -40,9 +33,8 @@ const _empty = () => null
  */
 export default function Popover(props: PopoverProps) {
   const defaultPopoverRef = useRef<HTMLDivElement>(null)
-  const underlayRef = useRef<HTMLDivElement>(null)
   const underlayPointerDownRef = useRef(false)
-  const underlayPointerTypeRef = useRef('')
+  const penPointerDownRef = useRef(false)
   const finalPopoverRef =
     props.popoverRef === undefined ? defaultPopoverRef : props.popoverRef
   const { popoverProps, underlayProps } = usePopover(
@@ -64,22 +56,40 @@ export default function Popover(props: PopoverProps) {
   const modalBackground = useContext(ModalBackgroundContext)
   usePreventScroll(modalBackground, props.isOpen)
 
-  // React の touchstart listener は passive なので、ペン由来の互換 click を
-  // 抑止するため underlay に non-passive listener を直接登録する。
+  // React の touchstart listener は passive なので、Android Chrome が
+  // ペン入力後に生成する互換 click を抑止するため、document に
+  // non-passive listener を直接登録する。Popover 内の選択肢でも
+  // 外側の underlay でも、閉じた後の背景要素へ click を透過させない。
   useEffect(() => {
-    const underlay = underlayRef.current
-    if (!props.isOpen || !props.inertWorkaround || underlay === null) return
+    if (!props.isOpen || !props.inertWorkaround) return
+
+    const handlePointerDown = (e: PointerEvent) => {
+      penPointerDownRef.current = e.pointerType === 'pen'
+    }
+
+    const handlePointerEnd = () => {
+      penPointerDownRef.current = false
+    }
 
     const handleTouchStart = (e: TouchEvent) => {
-      if (underlayPointerTypeRef.current === 'pen') {
+      if (penPointerDownRef.current) {
         e.preventDefault()
       }
     }
-    underlay.addEventListener('touchstart', handleTouchStart, {
+
+    document.addEventListener('pointerdown', handlePointerDown, true)
+    document.addEventListener('pointerup', handlePointerEnd, true)
+    document.addEventListener('pointercancel', handlePointerEnd, true)
+    document.addEventListener('touchstart', handleTouchStart, {
+      capture: true,
       passive: false,
     })
     return () => {
-      underlay.removeEventListener('touchstart', handleTouchStart)
+      document.removeEventListener('pointerdown', handlePointerDown, true)
+      document.removeEventListener('pointerup', handlePointerEnd, true)
+      document.removeEventListener('pointercancel', handlePointerEnd, true)
+      document.removeEventListener('touchstart', handleTouchStart, true)
+      penPointerDownRef.current = false
     }
   }, [props.isOpen, props.inertWorkaround])
 
@@ -102,20 +112,17 @@ export default function Popover(props: PopoverProps) {
     }
   }, [isOpen, onClose, finalPopoverRef])
 
-  const handleUnderlayPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+  const handleUnderlayPointerDown = () => {
     underlayPointerDownRef.current = true
-    underlayPointerTypeRef.current = e.pointerType
   }
 
   const handleUnderlayPointerCancel = () => {
     underlayPointerDownRef.current = false
-    underlayPointerTypeRef.current = ''
   }
 
   const handleUnderlayClick = () => {
     const startedOnUnderlay = underlayPointerDownRef.current
     underlayPointerDownRef.current = false
-    underlayPointerTypeRef.current = ''
 
     // Android Chrome はペンの pointerup で Popover が開いた後、同じ入力の
     // 互換 click を新しく追加された underlay に送る。この click には
@@ -131,7 +138,6 @@ export default function Popover(props: PopoverProps) {
     <Overlay portalContainer={document.body}>
       <div
         {...underlayProps}
-        ref={underlayRef}
         // https://github.com/adobe/react-spectrum/issues/8784#issuecomment-3234771154
         {...(props.inertWorkaround
           ? {

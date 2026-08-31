@@ -548,20 +548,46 @@ export const InertWorkaroundPenOutside: StoryObj<typeof DropdownSelector> = {
   render: function Render() {
     const [selected, setSelected] = useState('1')
     const [backgroundClickCount, setBackgroundClickCount] = useState(0)
+    const [behindOptionsClickCount, setBehindOptionsClickCount] = useState(0)
 
     return (
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 64 }}>
-        <div style={{ width: 288 }}>
-          <DropdownSelector
-            value={selected}
-            onChange={setSelected}
-            label="DropdownSelector"
-            inertWorkaround
-          >
-            <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
-            <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
-            <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
-          </DropdownSelector>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={{ position: 'relative', width: 288 }}>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <DropdownSelector
+                value={selected}
+                onChange={setSelected}
+                label="DropdownSelector"
+                inertWorkaround
+              >
+                <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+                <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+                <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+              </DropdownSelector>
+            </div>
+          </div>
+          <div>
+            <Button
+              data-testid="behind-options-button"
+              onClick={() => {
+                setBehindOptionsClickCount((count) => count + 1)
+              }}
+              style={{
+                position: 'relative',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: 120,
+              }}
+            >
+              Button behind options
+            </Button>
+          </div>
+          <div data-testid="selected-option">Selected option: {selected}</div>
+          <div data-testid="behind-options-click-count">
+            Behind options click count: {behindOptionsClickCount}
+          </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Button
@@ -570,7 +596,7 @@ export const InertWorkaroundPenOutside: StoryObj<typeof DropdownSelector> = {
               setBackgroundClickCount((count) => count + 1)
             }}
           >
-            Background button
+            Outside background button
           </Button>
           <div data-testid="background-click-count">
             Background click count: {backgroundClickCount}
