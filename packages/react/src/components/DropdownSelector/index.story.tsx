@@ -543,3 +543,40 @@ export const WithRef: StoryObj<typeof DropdownSelector> = {
     )
   },
 }
+
+export const InertWorkaroundPenOutside: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('1')
+    const [backgroundClickCount, setBackgroundClickCount] = useState(0)
+
+    return (
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 64 }}>
+        <div style={{ width: 288 }}>
+          <DropdownSelector
+            value={selected}
+            onChange={setSelected}
+            label="DropdownSelector"
+            inertWorkaround
+          >
+            <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+            <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+            <DropdownMenuItem value="3">Option 3</DropdownMenuItem>
+          </DropdownSelector>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <Button
+            data-testid="background-button"
+            onClick={() => {
+              setBackgroundClickCount((count) => count + 1)
+            }}
+          >
+            Background button
+          </Button>
+          <div data-testid="background-click-count">
+            Background click count: {backgroundClickCount}
+          </div>
+        </div>
+      </div>
+    )
+  },
+}
