@@ -34,7 +34,7 @@
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests",
-    "test:publish-smoke": "node ./scripts/publish-smoke.mjs"
+    "test:publish-smoke": "node ./scripts/publish-smoke-test.mjs"
   },
   "devDependencies": {
     "@types/react": "18",
