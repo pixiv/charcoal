@@ -118,7 +118,8 @@ const utilityDefinitionsByThemeKey = new Map<
   readonly (typeof utilityDefinitions)[number][]
 >()
 for (const definition of utilityDefinitions) {
-  const definitions = utilityDefinitionsByThemeKey.get(definition.themeKey) ?? []
+  const definitions =
+    utilityDefinitionsByThemeKey.get(definition.themeKey) ?? []
   utilityDefinitionsByThemeKey.set(definition.themeKey, [
     ...definitions,
     definition,
