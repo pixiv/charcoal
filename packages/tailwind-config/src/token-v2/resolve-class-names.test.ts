@@ -6,16 +6,16 @@ import {
 describe('resolveTokenV2ClassCandidates', () => {
   test.each([
     ['colors', 'container-primary', 'color', 'text-container-primary'],
-    [
-      'colors',
-      'container-primary',
-      'background-color',
-      'bg-container-primary',
-    ],
+    ['colors', 'container-primary', 'background-color', 'bg-container-primary'],
     ['colors', 'icon-primary', 'fill', 'fill-icon-primary'],
     ['colors', 'icon-primary', 'stroke', 'stroke-icon-primary'],
     ['borderColor', 'ch-selected', 'border-color', 'border-ch-selected'],
-    ['borderWidth', 'width-ch-focus-1', 'border-width', 'border-width-ch-focus-1'],
+    [
+      'borderWidth',
+      'width-ch-focus-1',
+      'border-width',
+      'border-width-ch-focus-1',
+    ],
     ['fontSize', 'heading-xs', 'font-size', 'text-heading-xs'],
     ['fontWeight', 'ch-bold', 'font-weight', 'font-ch-bold'],
     ['spacing', 'layout-20', 'margin', 'm-layout-20'],
@@ -25,16 +25,29 @@ describe('resolveTokenV2ClassCandidates', () => {
     ['spacing', 'layout-20', 'height', 'h-layout-20'],
     ['gap', 'layout-20', 'gap', 'gap-layout-20'],
     ['width', 's-cozy', 'width', 'w-s-cozy'],
-  ] as const)('%s + %s + %s returns %s', (themeKey, modifier, property, className) => {
-    expect(resolveTokenV2ClassCandidates({ themeKey, modifier, property })).toEqual([
-      { property, className, themeKey },
-    ])
-  })
+  ] as const)(
+    '%s + %s + %s returns %s',
+    (themeKey, modifier, property, className) => {
+      expect(
+        resolveTokenV2ClassCandidates({ themeKey, modifier, property }),
+      ).toEqual([{ property, className, themeKey }])
+    },
+  )
 
   test.each([
     ['borderColor', 'ch-selected', 'border-top-color', 'border-t-ch-selected'],
-    ['borderColor', 'ch-selected', 'border-right-color', 'border-r-ch-selected'],
-    ['borderColor', 'ch-selected', 'border-bottom-color', 'border-b-ch-selected'],
+    [
+      'borderColor',
+      'ch-selected',
+      'border-right-color',
+      'border-r-ch-selected',
+    ],
+    [
+      'borderColor',
+      'ch-selected',
+      'border-bottom-color',
+      'border-b-ch-selected',
+    ],
     ['borderColor', 'ch-selected', 'border-left-color', 'border-l-ch-selected'],
     ['borderWidth', 'width-ch-1', 'border-top-width', 'border-t-width-ch-1'],
     ['borderWidth', 'width-ch-1', 'border-right-width', 'border-r-width-ch-1'],
@@ -62,9 +75,9 @@ describe('resolveTokenV2ClassCandidates', () => {
     ['gap', 'layout-20', 'row-gap', 'gap-y-layout-20'],
     ['gap', 'layout-20', 'column-gap', 'gap-x-layout-20'],
   ] as const)('%s maps %s to %s', (themeKey, modifier, property, className) => {
-    expect(resolveTokenV2ClassCandidates({ themeKey, modifier, property })).toEqual([
-      { property, className, themeKey },
-    ])
+    expect(
+      resolveTokenV2ClassCandidates({ themeKey, modifier, property }),
+    ).toEqual([{ property, className, themeKey }])
   })
 
   test('uses definition order when property is omitted', () => {
@@ -104,9 +117,14 @@ describe('resolveTokenV2ClassCandidates', () => {
     ['width', 's-cozy', 'max-width'],
     ['colors', 'container-primary', 'border-color'],
     ['gap', 'layout-20', 'padding'],
-  ] as const)('%s does not infer a candidate for %s', (themeKey, modifier, property) => {
-    expect(resolveTokenV2ClassCandidates({ themeKey, modifier, property })).toEqual([])
-  })
+  ] as const)(
+    '%s does not infer a candidate for %s',
+    (themeKey, modifier, property) => {
+      expect(
+        resolveTokenV2ClassCandidates({ themeKey, modifier, property }),
+      ).toEqual([])
+    },
+  )
 
   test('does not add interaction variants', () => {
     expect(
