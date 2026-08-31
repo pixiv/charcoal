@@ -6,14 +6,26 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
-    "types": {
-      "import": "./dist/index.d.mts",
-      "require": "./dist/index.d.ts",
-      "default": "./dist/index.d.ts"
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.ts",
+        "default": "./dist/index.d.ts"
+      },
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
     },
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs",
-    "default": "./dist/index.mjs"
+    "./token-v2": {
+      "types": {
+        "import": "./dist/token-v2/index.d.mts",
+        "require": "./dist/token-v2/index.d.ts",
+        "default": "./dist/token-v2/index.d.ts"
+      },
+      "require": "./dist/token-v2/index.js",
+      "import": "./dist/token-v2/index.mjs",
+      "default": "./dist/token-v2/index.mjs"
+    }
   },
   "types": "./dist/index.d.ts",
   "sideEffects": false,
@@ -21,7 +33,8 @@
     "build": "tsdown",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "test:publish-smoke": "node ./scripts/publish-smoke.mjs"
   },
   "devDependencies": {
     "@types/react": "18",
