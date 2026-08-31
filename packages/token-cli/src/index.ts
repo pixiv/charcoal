@@ -1,6 +1,6 @@
 import { ensureFile, readFileSync, writeFile, existsSync } from 'fs-extra'
 import path from 'path'
-import yargs from 'yargs'
+import { parseArgs } from 'node:util'
 import { createToken } from './createToken'
 import { FigmaResponse, getDesignToken } from './figma'
 import { mustBeDefined } from './utils'
@@ -11,84 +11,152 @@ import { mustBeDefined } from './utils'
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN
 const FIGMA_FILE_ID = process.env.FIGMA_FILE_ID
 
-void yargs()
-  .scriptName('token-cli')
-  .command(
-    'fetch',
-    'Fetch Figma variables',
-    {
-      output: {
-        type: 'string',
-        demandOption: true,
-        alias: 'o',
-      },
-    },
-    async (args) => {
-      mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
-      mustBeDefined(FIGMA_FILE_ID, 'FIGMA_FILE_ID')
-      const outputPath = path.join(process.cwd(), args.output)
+const usage = `token-cli <command>
 
-      const res = await getDesignToken(FIGMA_TOKEN, FIGMA_FILE_ID)
+Commands:
+  token-cli fetch      Fetch Figma variables
+  token-cli transform  Transform tokens from source file
 
-      await ensureFile(outputPath)
-      await writeFile(
-        path.join(outputPath),
-        JSON.stringify(await res.json()),
-        'utf8',
-      )
+Options:
+  --version  Show version number
+  --help     Show help`
+
+const commandOptions = {
+  help: { type: 'boolean' as const },
+  version: { type: 'boolean' as const },
+}
+
+const requiredOption = (value: unknown, name: string): string => {
+  if (typeof value !== 'string') {
+    throw new Error(`Missing required option: --${name}`)
+  }
+
+  return value
+}
+
+const normalizeCollectionNames = (args: string[]): string[] => {
+  const normalized: string[] = []
+
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index]
+
+    if (arg !== '--variable-collection-names') {
+      normalized.push(arg)
+      continue
+    }
+
+    while (args[index + 1] !== undefined && !args[index + 1].startsWith('-')) {
+      index += 1
+      normalized.push(`--variable-collection-names=${args[index]}`)
+    }
+  }
+
+  return normalized
+}
+
+const fetchTokens = async (args: string[]): Promise<void> => {
+  const { values } = parseArgs({
+    args,
+    options: {
+      ...commandOptions,
+      output: { type: 'string', short: 'o' },
     },
+  })
+
+  if (values.help) {
+    console.log(usage)
+    return
+  }
+
+  mustBeDefined(FIGMA_TOKEN, 'FIGMA_TOKEN')
+  mustBeDefined(FIGMA_FILE_ID, 'FIGMA_FILE_ID')
+  const outputPath = path.join(
+    process.cwd(),
+    requiredOption(values.output, 'output'),
   )
-  .command(
-    'transform',
-    'Transform tokens from source file',
-    {
-      'mode-name': {
-        type: 'string',
-        default: undefined,
-      },
-      'variable-collection-names': {
-        type: 'array',
-        default: [] as string[],
-      },
-      source: {
-        type: 'string',
-        demandOption: true,
-      },
-      output: {
-        type: 'string',
-        demandOption: true,
-        alias: 'o',
-      },
+  const res = await getDesignToken(FIGMA_TOKEN, FIGMA_FILE_ID)
+
+  await ensureFile(outputPath)
+  await writeFile(outputPath, JSON.stringify(await res.json()), 'utf8')
+}
+
+const transformTokens = async (args: string[]): Promise<void> => {
+  const { values } = parseArgs({
+    args: normalizeCollectionNames(args),
+    options: {
+      ...commandOptions,
+      'mode-name': { type: 'string' },
+      'variable-collection-names': { type: 'string', multiple: true },
+      source: { type: 'string' },
+      output: { type: 'string', short: 'o' },
     },
-    async (args) => {
-      const sourcePath = path.join(process.cwd(), args.source)
-      const outputPath = path.join(process.cwd(), args.output)
+  })
 
-      if (!existsSync(sourcePath)) {
-        throw new Error(`${sourcePath} not exists.`)
-      }
+  if (values.help) {
+    console.log(usage)
+    return
+  }
 
-      const buffer = readFileSync(sourcePath)
-      const raw = JSON.parse(buffer.toString()) as FigmaResponse
-
-      const tokens = createToken(
-        raw,
-        args['variable-collection-names'],
-        args['mode-name'],
-      )
-
-      await ensureFile(outputPath)
-      await writeFile(
-        outputPath,
-        JSON.stringify(tokens, sortReplacer, 2),
-        'utf8',
-      )
-    },
+  const sourcePath = path.join(
+    process.cwd(),
+    requiredOption(values.source, 'source'),
   )
-  .demandCommand()
-  .strict()
-  .help()
-  .parse()
+  const outputPath = path.join(
+    process.cwd(),
+    requiredOption(values.output, 'output'),
+  )
+
+  if (!existsSync(sourcePath)) {
+    throw new Error(`${sourcePath} not exists.`)
+  }
+
+  const buffer = readFileSync(sourcePath)
+  const raw = JSON.parse(buffer.toString()) as FigmaResponse
+  const collectionNames = values['variable-collection-names']
+  const tokens = createToken(
+    raw,
+    Array.isArray(collectionNames) ? collectionNames : [],
+    typeof values['mode-name'] === 'string' ? values['mode-name'] : undefined,
+  )
+
+  await ensureFile(outputPath)
+  await writeFile(outputPath, JSON.stringify(tokens, sortReplacer, 2), 'utf8')
+}
+
+const main = async (): Promise<void> => {
+  const args = process.argv.slice(2)
+
+  if (args.includes('--version')) {
+    const packageJson = JSON.parse(
+      readFileSync(path.join(__dirname, '../package.json'), 'utf8'),
+    ) as { version: string }
+    console.log(packageJson.version)
+    return
+  }
+
+  if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
+    console.log(usage)
+    return
+  }
+
+  const [command, ...commandArgs] = args
+
+  switch (command) {
+    case 'fetch':
+      await fetchTokens(commandArgs)
+      return
+    case 'transform':
+      await transformTokens(commandArgs)
+      return
+    default:
+      throw new Error(`Unknown command: ${command}`)
+  }
+}
+
+void main().catch((error: unknown) => {
+  console.error(error instanceof Error ? error.message : error)
+  process.exitCode = 1
+})
 
 // The MIT License (MIT)
 // Copyright (c) 2023-present Fabio Spampinato

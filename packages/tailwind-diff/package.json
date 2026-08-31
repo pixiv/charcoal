@@ -10,12 +10,10 @@
   "dependencies": {
     "import-from": "^4.0.0",
     "postcss": "catalog:",
-    "postcss-selector-parser": "catalog:",
-    "yargs": "^17.3.1"
+    "postcss-selector-parser": "catalog:"
   },
   "devDependencies": {
-    "@types/tailwindcss": "^2.2.4",
-    "@types/yargs": "^17.0.8"
+    "@types/tailwindcss": "^2.2.4"
   },
   "publishConfig": {
     "access": "public"
