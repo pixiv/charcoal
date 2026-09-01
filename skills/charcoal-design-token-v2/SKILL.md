@@ -38,7 +38,7 @@ If the resolver cannot run, report the blocker and stop. Never guess a token.
    `get_variable_defs` and `get_design_context`; use equivalent operations when
    those tool names are unavailable.
 5. Record every usage site as `node/layer + variable name + collection? + CSS
-   property + component state?`. Prefer applied tokens over primitive aliases.
+property + component state?`. Prefer applied tokens over primitive aliases.
    Determine the destination CSS property from the design context.
 6. Deduplicate queries by `(name, collection?, property?)`, never by variable
    name alone, and send the batch JSON to the resolver CLI.
@@ -83,15 +83,15 @@ Domain statuses are `resolved`, `ambiguous`, `not_found`,
 `case_normalized` and `tailwind_binding_not_found` codes are diagnostics on a
 uniquely `resolved` result, not status values.
 
-| Result | Action |
-| --- | --- |
-| `resolved` + 1 candidate | Use the class if notation rules pass; otherwise use `css.reference`. |
-| `resolved` + 0 or multiple candidates | Use the existing CSS notation with `css.reference`. |
-| `ambiguous` | Re-run with collection and/or property; if still unresolved, leave unapplied. |
-| `not_found` | Do not guess; report it as unapplied. |
-| `unsupported_property` | Do not remove the property to work around it; leave unapplied. |
-| `incompatible_property` | Leave unapplied and check for a token/property mix-up. |
-| Unknown schema or exit `1`/`2` | Do not use it as an implementation source; report the error. |
+| Result                                | Action                                                                        |
+| ------------------------------------- | ----------------------------------------------------------------------------- |
+| `resolved` + 1 candidate              | Use the class if notation rules pass; otherwise use `css.reference`.          |
+| `resolved` + 0 or multiple candidates | Use the existing CSS notation with `css.reference`.                           |
+| `ambiguous`                           | Re-run with collection and/or property; if still unresolved, leave unapplied. |
+| `not_found`                           | Do not guess; report it as unapplied.                                         |
+| `unsupported_property`                | Do not remove the property to work around it; leave unapplied.                |
+| `incompatible_property`               | Leave unapplied and check for a token/property mix-up.                        |
+| Unknown schema or exit `1`/`2`        | Do not use it as an implementation source; report the error.                  |
 
 For a `resolved` result with `case_normalized`, use it because it resolved
 uniquely and report the normalization if useful. For a `resolved` result with

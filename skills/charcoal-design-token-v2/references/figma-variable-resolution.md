@@ -29,6 +29,16 @@ to guess:
 - `paragraph/regular`
 - `light/blue/50` (primitive; do not treat as applied)
 
+For a short-name usage, do not auto-confirm `s` without property or
+collection context. If the usage site's CSS property is `border-radius`,
+re-run with `property: border-radius`; `s` then uniquely resolves to
+`radius/s`, with class `rounded-s` and CSS reference
+`var(--charcoal-radius-s)`. Do not assume that `s` is a space token:
+`collection: space` returns `not_found` because there is no applied
+`space/s` match. `light/blue/50` is primitive and returns `not_found`; never
+recover an applied token by matching its value. `paragraph/regular` returns
+`not_found` and must not be expanded into atomic tokens.
+
 ## Property context
 
 Keep each usage-site identity as:
