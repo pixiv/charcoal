@@ -54,7 +54,9 @@ function createLookup(
   return lookup
 }
 
-export function createAppliedTokenIndex(tree: CssVariableTree): AppliedTokenIndex {
+export function createAppliedTokenIndex(
+  tree: CssVariableTree,
+): AppliedTokenIndex {
   const entries = flattenTree(tree)
 
   return {
