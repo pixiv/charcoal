@@ -255,6 +255,12 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0
 
+  packages/design-token-resolver:
+    dependencies:
+      '@charcoal-ui/theme':
+        specifier: workspace:*
+        version: link:../theme
+
   packages/foundation: {}
 
   packages/icon-files: {}
