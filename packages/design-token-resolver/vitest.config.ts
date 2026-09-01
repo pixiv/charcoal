@@ -7,6 +7,16 @@ export default defineConfig({
     environment: 'node',
     alias: [
       {
+        find: '@charcoal-ui/tailwind-config/token-v2',
+        replacement: path.join(
+          path.resolve(import.meta.dirname, '..'),
+          'tailwind-config',
+          'src',
+          'token-v2',
+          'index.ts',
+        ),
+      },
+      {
         find: /^@charcoal-ui\/(?!theme\/tokens)(.*)/,
         replacement: path.join(
           path.resolve(import.meta.dirname, '..'),
