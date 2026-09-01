@@ -5,6 +5,9 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "charcoal-token-resolver": "./dist/cli.js"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -17,11 +20,15 @@
     "build": "tsdown",
     "typecheck": "tsc --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
-    "test": "vitest run --passWithNoTests"
+    "test": "pnpm run build && vitest run --passWithNoTests"
   },
   "dependencies": {
     "@charcoal-ui/tailwind-config": "workspace:*",
-    "@charcoal-ui/theme": "workspace:*"
+    "@charcoal-ui/theme": "workspace:*",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.32"
   },
   "files": [
     "dist",
