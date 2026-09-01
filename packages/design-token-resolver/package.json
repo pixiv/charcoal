@@ -1,0 +1,41 @@
+{
+  "name": "@charcoal-ui/design-token-resolver",
+  "version": "6.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "charcoal-token-resolver": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --pretty --noEmit",
+    "clean": "rimraf dist .tsbuildinfo",
+    "test": "pnpm run build && vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@charcoal-ui/tailwind-config": "workspace:*",
+    "@charcoal-ui/theme": "workspace:*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixiv/charcoal.git",
+    "directory": "packages/design-token-resolver"
+  }
+}
