@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises'
-import yargs from 'yargs/yargs'
+import { parseArgs } from 'node:util'
 import { normalizeQueryName } from './resolver/normalize-query'
 import { resolveBatchQueries, resolveSingleQuery } from './resolver/resolve'
 import type { TokenQuery, TokenResolutionResult } from './resolver/types'
@@ -83,72 +83,48 @@ type ParsedArguments = Readonly<{
 
 function parseArguments(args: readonly string[]): ParsedArguments {
   try {
-    const parserArgs = args.flatMap((argument, index) =>
-      argument === '--input' && args[index + 1] === '-'
-        ? ['--input=-']
-        : argument === '-' && args[index - 1] === '--input'
-          ? []
-          : [argument],
-    )
-    const parsed = yargs(parserArgs)
-      .scriptName('charcoal-token-resolver')
-      .strict()
-      .exitProcess(false)
-      .fail((message, error) => {
-        throw new CliInputError(
-          message ?? error?.message ?? 'Invalid arguments.',
-        )
-      })
-      .command(
-        'resolve [name]',
-        'Resolve a Figma applied token name.',
-        (command) =>
-          command
-            .positional('name', { type: 'string' })
-            .option('input', { type: 'string' })
-            .option('collection', { type: 'string' })
-            .option('property', { type: 'string' }),
-      )
-      .demandCommand(1)
-      .parseSync()
-
-    if (parsed._[0] !== 'resolve') {
+    const [command, ...commandArgs] = args
+    if (command !== 'resolve') {
       throw new CliInputError('The resolve command is required.')
     }
-    if (parsed.input !== undefined) {
-      if (typeof parsed.input !== 'string') {
-        throw new CliInputError('--input must be a string.')
-      }
+
+    const { values, positionals } = parseArgs({
+      args: commandArgs,
+      options: {
+        input: { type: 'string' },
+        collection: { type: 'string' },
+        property: { type: 'string' },
+      },
+      allowPositionals: true,
+      strict: true,
+    })
+    if (positionals.length > 1) {
+      throw new CliInputError('Only one token name can be provided.')
+    }
+
+    const [name] = positionals
+    if (values.input !== undefined) {
       if (
-        parsed.name !== undefined ||
-        parsed.collection !== undefined ||
-        parsed.property !== undefined
+        name !== undefined ||
+        values.collection !== undefined ||
+        values.property !== undefined
       ) {
         throw new CliInputError(
           '--input cannot be combined with name, --collection, or --property.',
         )
       }
-      return { input: parsed.input }
+      return { input: values.input }
     }
-    if (parsed.name === undefined) {
+    if (name === undefined) {
       throw new CliInputError('A token name or --input is required.')
     }
-    if (typeof parsed.name !== 'string') {
-      throw new CliInputError('Token name must be a string.')
-    }
-    if (
-      (parsed.collection !== undefined &&
-        typeof parsed.collection !== 'string') ||
-      (parsed.property !== undefined && typeof parsed.property !== 'string')
-    ) {
-      throw new CliInputError('--collection and --property must be strings.')
-    }
+
     return {
-      name: parsed.name,
-      ...(parsed.collection === undefined
+      name,
+      ...(values.collection === undefined
         ? {}
-        : { collection: parsed.collection }),
-      ...(parsed.property === undefined ? {} : { property: parsed.property }),
+        : { collection: values.collection }),
+      ...(values.property === undefined ? {} : { property: values.property }),
     }
   } catch (error) {
     if (error instanceof CliInputError) {

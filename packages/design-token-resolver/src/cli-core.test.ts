@@ -47,6 +47,12 @@ describe('CLI input and output', () => {
       results: [{ status: 'not_found' }, { status: 'ambiguous' }],
     })
     expect(batch.output().stderr).toBe('')
+
+    const equalsInput = createIo('{"queries":[{"name":"unknown"}]}')
+    expect(await runCli(['resolve', '--input=-'], equalsInput.io)).toBe(0)
+    expect(JSON.parse(equalsInput.output().stdout)).toMatchObject({
+      results: [{ status: 'not_found' }],
+    })
   })
 
   it('rejects invalid batch input without partial execution', async () => {
@@ -93,6 +99,24 @@ describe('CLI input and output', () => {
       stdout: '',
       stderr: expect.stringContaining('unexpected failure'),
     })
+  })
+
+  it.each([
+    ['unknown command', ['search']],
+    ['unknown option', ['resolve', '--format', 'json']],
+    ['extra positional', ['resolve', 'unknown', 'extra']],
+    ['missing option value', ['resolve', '--input']],
+    ['input combined with name', ['resolve', 'unknown', '--input', '-']],
+    [
+      'input combined with property',
+      ['resolve', '--input', '-', '--property', 'color'],
+    ],
+  ])('treats %s as an input error', async (_description, args) => {
+    const io = createIo()
+
+    expect(await runCli(args, io.io)).toBe(2)
+    expect(io.output().stdout).toBe('')
+    expect(io.output().stderr).not.toBe('')
   })
 
   it('runs the built binary without workspace source imports', async () => {
