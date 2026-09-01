@@ -257,6 +257,9 @@ importers:
 
   packages/design-token-resolver:
     dependencies:
+      '@charcoal-ui/tailwind-config':
+        specifier: workspace:*
+        version: link:../tailwind-config
       '@charcoal-ui/theme':
         specifier: workspace:*
         version: link:../theme
