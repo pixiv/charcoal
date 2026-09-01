@@ -24,11 +24,7 @@
   },
   "dependencies": {
     "@charcoal-ui/tailwind-config": "workspace:*",
-    "@charcoal-ui/theme": "workspace:*",
-    "yargs": "^17.7.2"
-  },
-  "devDependencies": {
-    "@types/yargs": "^17.0.32"
+    "@charcoal-ui/theme": "workspace:*"
   },
   "files": [
     "dist",
