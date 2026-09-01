@@ -263,6 +263,13 @@ importers:
       '@charcoal-ui/theme':
         specifier: workspace:*
         version: link:../theme
+      yargs:
+        specifier: ^17.7.2
+        version: 17.7.2
+    devDependencies:
+      '@types/yargs':
+        specifier: ^17.0.32
+        version: 17.0.35
 
   packages/foundation: {}
 
