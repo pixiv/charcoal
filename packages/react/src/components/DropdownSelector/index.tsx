@@ -183,7 +183,6 @@ export default function DropdownSelector({
           onClose={handleClose}
           triggerRef={triggerRef}
           value={props.value}
-          items={propsArray}
           inertWorkaround={props.inertWorkaround}
         >
           <MenuList

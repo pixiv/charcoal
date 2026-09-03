@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import DropdownSelector from '.'
 import { Divider } from './Divider'
 import MenuItemGroup from './MenuItemGroup'
+import MenuItem from './MenuItem'
 import DropdownMenuItem from './DropdownMenuItem'
 import Modal from '../Modal'
 import { ModalBody, ModalHeader } from '../Modal/ModalPlumbing'
@@ -49,6 +50,28 @@ export const WithNoSelection: StoryObj<typeof DropdownSelector> = {
           <DropdownMenuItem value="popular">Popular</DropdownMenuItem>
           <DropdownMenuItem noSelection>Unspecified</DropdownMenuItem>
           <DropdownMenuItem value="new">Newest</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
+// Opening this story focuses "Non-selectable item" instead of the selected
+// option. It reproduces the focus-index mismatch caused by a MenuItem without
+// a value preceding DropdownMenuItem options.
+export const WithValueLessMenuItem: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('selected')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          label="Focus regression"
+          value={selected}
+          onChange={setSelected}
+        >
+          <MenuItem>Non-selectable item</MenuItem>
+          <DropdownMenuItem value="selected">Selected option</DropdownMenuItem>
+          <DropdownMenuItem value="other">Other option</DropdownMenuItem>
         </DropdownSelector>
       </div>
     )

@@ -1,10 +1,8 @@
 import { Key, useEffect, useRef } from 'react'
 import Popover, { PopoverProps } from './Popover'
-import { MenuItemDescriptor } from './MenuList/internals/getValuesRecursive'
 
 type DropdownPopoverProps = PopoverProps & {
   value?: Key
-  items: MenuItemDescriptor[]
 }
 
 /**
@@ -27,14 +25,14 @@ export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
       const options = Array.from(
         popover.querySelectorAll<HTMLElement>('[role="option"]'),
       )
-      const selectedIndex = props.items.findIndex(
-        (item) =>
-          !item.disabled &&
+      const selectedElement = options.find(
+        (option) =>
+          option.ariaDisabled !== 'true' &&
           (props.value === ''
-            ? item.noSelection === true
-            : item.noSelection !== true && item.value === props.value),
+            ? option.dataset.noSelection === 'true'
+            : option.dataset.noSelection !== 'true' &&
+              option.dataset.key === props.value),
       )
-      const selectedElement = options[selectedIndex]
       const firstEnabledElement = options.find(
         (element) => element.ariaDisabled !== 'true',
       )
@@ -49,7 +47,7 @@ export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
         firstEnabledElement.focus()
       }
     }
-  }, [props.value, props.items, props.isOpen])
+  }, [props.value, props.isOpen])
 
   return (
     <Popover
