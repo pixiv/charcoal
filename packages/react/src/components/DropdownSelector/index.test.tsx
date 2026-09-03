@@ -4,6 +4,7 @@ import { beforeAll, vi } from 'vitest'
 import DropdownSelector from '.'
 import DropdownMenuItem from './DropdownMenuItem'
 import MenuItemGroup from './MenuItemGroup'
+import MenuItem from './MenuItem'
 
 // Apple Pencil (pointerType: 'pen') の解除は index.browser.test.tsx で検証する。
 // jsdom は inert を実装しておらず、react-aria が外側を inert にする本番の挙動を
@@ -174,6 +175,22 @@ describe('DropdownSelector', () => {
 
     fireEvent.click(screen.getByRole('button'))
     expect(screen.getByRole('option', { name: 'Popular' })).toHaveFocus()
+  })
+
+  it('focuses the selected item when a preceding MenuItem has no value', () => {
+    render(
+      <DropdownSelector label="Sort" value="selected" onChange={vi.fn()}>
+        <MenuItem>Non-selectable item</MenuItem>
+        <DropdownMenuItem value="selected">Selected option</DropdownMenuItem>
+        <DropdownMenuItem value="other">Other option</DropdownMenuItem>
+      </DropdownSelector>,
+    )
+
+    fireEvent.click(screen.getByRole('button'))
+
+    expect(
+      screen.getByRole('option', { name: 'Selected option' }),
+    ).toHaveFocus()
   })
 
   it('warns for invalid noSelection children', () => {

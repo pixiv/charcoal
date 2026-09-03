@@ -5088,6 +5088,76 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > Wit
 </div>
 `;
 
+exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > WithValueLessMenuItem 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 288px;"
+    >
+      <div
+        class="charcoal-dropdown-selector-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            id="test-id"
+          >
+            Focus regression
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <select
+            tabindex="-1"
+          >
+            <option
+              value="selected"
+            >
+              selected
+            </option>
+            <option
+              value="other"
+            >
+              other
+            </option>
+          </select>
+        </div>
+        <button
+          aria-labelledby="test-id"
+          class="charcoal-dropdown-selector-button"
+          data-active="false"
+          type="button"
+        >
+          <span
+            class="charcoal-ui-dropdown-selector-text"
+            data-placeholder="false"
+          >
+            Selected option
+          </span>
+          <pixiv-icon
+            class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+            name="16/Menu"
+            style="--charcoal-icon-size: 16px;"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/FocusRing > react/FocusRing > Default 1`] = `
 <div>
   <div
