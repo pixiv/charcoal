@@ -15,7 +15,7 @@ export type DropdownMenuItemProps = Omit<MenuItemProps, 'as'> & {
  */
 export default function DropdownMenuItem(props: DropdownMenuItemProps) {
   const { value: ctxValue } = useContext(MenuListContext)
-  const isSelected = props.value === ctxValue
+  const isSelected = props.noSelection !== true && props.value === ctxValue
   const { children, secondary, ...rest } = props
 
   const fullWidthClassName = props.contentFullWidth

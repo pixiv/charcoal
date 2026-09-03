@@ -35,6 +35,26 @@ export const Default: StoryObj<typeof DropdownSelector> = {
   },
 }
 
+export const WithNoSelection: StoryObj<typeof DropdownSelector> = {
+  render: function Render() {
+    const [selected, setSelected] = useState('')
+    return (
+      <div style={{ width: 288 }}>
+        <DropdownSelector
+          label="Sort"
+          value={selected}
+          placeholder="Select an option"
+          onChange={setSelected}
+        >
+          <DropdownMenuItem value="popular">Popular</DropdownMenuItem>
+          <DropdownMenuItem noSelection>Unspecified</DropdownMenuItem>
+          <DropdownMenuItem value="new">Newest</DropdownMenuItem>
+        </DropdownSelector>
+      </div>
+    )
+  },
+}
+
 export const Label: StoryObj<typeof DropdownSelector> = {
   render: function Render() {
     const [selected, setSelected] = useState('1')

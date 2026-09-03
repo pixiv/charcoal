@@ -1,11 +1,12 @@
 import { RefObject, createContext } from 'react'
-import { DropdownMenuItemProps } from '../DropdownMenuItem'
+import { MenuItemDescriptor } from './internals/getValuesRecursive'
 
 type MenuListContextType = {
   root?: RefObject<HTMLUListElement | null>
   value?: string
-  propsArray?: DropdownMenuItemProps[]
+  propsArray?: MenuItemDescriptor[]
   setValue: (v: string) => void
+  setNoSelection?: () => void
 }
 
 export const MenuListContext = createContext<MenuListContextType>({
@@ -15,4 +16,5 @@ export const MenuListContext = createContext<MenuListContextType>({
   setValue: (_v: string) => {
     // empty
   },
+  setNoSelection: undefined,
 })

@@ -4,6 +4,8 @@ import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
 export type MenuItemProps<T extends React.ElementType = 'li'> = {
   value?: string
+  /** Selects the DropdownSelector's unselected state. */
+  noSelection?: boolean
   disabled?: boolean
 } & ListItemProps<T>
 
@@ -14,10 +16,14 @@ export type MenuItemProps<T extends React.ElementType = 'li'> = {
 const MenuItem = forwardRef(function MenuItem<
   T extends React.ElementType = 'li',
 >(
-  { className: _, value, disabled, ...props }: MenuItemProps<T>,
+  { className: _, value, noSelection, disabled, ...props }: MenuItemProps<T>,
   ref: ForwardedRef<HTMLLIElement>,
 ) {
-  const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
+  const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(
+    value,
+    noSelection,
+    disabled,
+  )
   const penHandledRef = useRef(false)
   const pointerStartRef = useRef<{ x: number; y: number } | null>(null)
 
@@ -60,6 +66,7 @@ const MenuItem = forwardRef(function MenuItem<
       {...props}
       ref={ref}
       data-key={value}
+      data-no-selection={noSelection || undefined}
       onKeyDown={handleKeyDown}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
