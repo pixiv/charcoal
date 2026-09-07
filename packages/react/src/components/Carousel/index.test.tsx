@@ -1273,3 +1273,208 @@ describe('Carousel', () => {
     })
   })
 })
+
+describe('onChange', () => {
+  // 中央検出を手動で駆動するため IntersectionObserver を差し替える
+  let triggerCenter: (el: Element) => void
+  let origIO: typeof globalThis.IntersectionObserver
+
+  beforeEach(() => {
+    // jsdom は onscrollend を持つが実イベントは発火しないため、debounce(100ms) 経路を
+    // 強制する（scrollSettle.ts の分岐は 'onscrollend' in window で判定するため）。
+    Reflect.deleteProperty(window, 'onscrollend')
+    const callbacks = new Map<Element, IntersectionObserverCallback>()
+    origIO = globalThis.IntersectionObserver
+    globalThis.IntersectionObserver = class {
+      constructor(private cb: IntersectionObserverCallback) {}
+      observe(el: Element) {
+        callbacks.set(el, this.cb)
+      }
+      unobserve(el: Element) {
+        callbacks.delete(el)
+      }
+      disconnect() {
+        callbacks.clear()
+      }
+    } as unknown as typeof globalThis.IntersectionObserver
+    triggerCenter = (el) => {
+      const cb = callbacks.get(el)
+      cb?.(
+        [{ target: el, isIntersecting: true } as IntersectionObserverEntry],
+        {} as IntersectionObserver,
+      )
+    }
+  })
+
+  afterEach(() => {
+    globalThis.IntersectionObserver = origIO
+    vi.useRealTimers()
+  })
+
+  const renderWithOnChange = () => {
+    const onChange = vi.fn()
+    const ref = createRef<CarouselHandlerRef>()
+    const { container } = render(
+      <Carousel navigationButtons indicator onChange={onChange} ref={ref}>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+      </Carousel>,
+    )
+    const scroller = container.querySelector(
+      '.charcoal-carousel__scroller',
+    ) as HTMLElement
+    // jsdom はレイアウトを持たず scrollWidth/clientWidth/scrollTo が無いため、
+    // nav ボタンの活性化とプログラム的スクロールが成立するようスタブする。
+    // 本物のブラウザ同様、scrollTo は scroll イベントを起こす（これが無いと
+    // IntersectionObserver の報告が移動より先に届く非現実的な順序になる）。
+    mockScrollerGeometry(scroller)
+    scroller.scrollTo = vi.fn(() => {
+      scroller.dispatchEvent(new Event('scroll'))
+    }) as unknown as typeof scroller.scrollTo
+    fireEvent.scroll(scroller)
+    const slides = container.querySelectorAll(
+      '.charcoal-carousel__scroller > *',
+    )
+    return { onChange, container, scroller, slides, ref }
+  }
+
+  // scrollend 非対応の jsdom では debounce(100ms) 経路になる
+  const settleScroll = (scroller: HTMLElement) => {
+    scroller.dispatchEvent(new Event('scroll'))
+    vi.advanceTimersByTime(150)
+  }
+
+  it('next ボタンの送りは source=navigation で発火する', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller, slides } = renderWithOnChange()
+      // マウント直後の静止（初期位置の適用）は帰属できないので発火しない
+      settleScroll(scroller)
+      expect(onChange).not.toHaveBeenCalled()
+
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledExactlyOnceWith({
+        index: 1,
+        source: 'navigation',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('← / → は source=keyboard で発火する', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, scroller, slides } = renderWithOnChange()
+      fireEvent.keyDown(scroller, { key: 'ArrowRight' })
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledExactlyOnceWith({
+        index: 1,
+        source: 'keyboard',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('indicator の dot は source=indicator で発火する', () => {
+    vi.useFakeTimers()
+    // jsdom には scrollIntoView が無いのでモックを定義する。
+    Element.prototype.scrollIntoView = vi.fn()
+    try {
+      const { onChange, container, scroller, slides } = renderWithOnChange()
+      const dots = container.querySelectorAll(
+        '.charcoal-carousel__indicator__item',
+      )
+      act(() => {
+        fireEvent.click(dots[2])
+      })
+      // scrollIntoView のモックは scroll イベントを起こさないので明示的に起こす
+      fireEvent.scroll(scroller)
+      triggerCenter(slides[2])
+      settleScroll(scroller)
+
+      expect(onChange).toHaveBeenCalledExactlyOnceWith({
+        index: 2,
+        source: 'indicator',
+      })
+    } finally {
+      delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView
+      vi.useRealTimers()
+    }
+  })
+
+  it('スワイプなどのポインタ操作は source=pointer で発火し、指を離すまで静止処理を保留する', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, scroller, slides } = renderWithOnChange()
+      scroller.dispatchEvent(new Event('pointerdown', { bubbles: true }))
+      scroller.dispatchEvent(new Event('scroll'))
+      triggerCenter(slides[2])
+      // 指が触れたまま debounce が切れても発火しない
+      vi.advanceTimersByTime(150)
+      expect(onChange).not.toHaveBeenCalled()
+
+      window.dispatchEvent(new Event('pointerup', { bubbles: true }))
+      expect(onChange).toHaveBeenCalledExactlyOnceWith({
+        index: 2,
+        source: 'pointer',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('同じ index への着地では発火しない', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller, slides } = renderWithOnChange()
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[0])
+      settleScroll(scroller)
+
+      expect(onChange).not.toHaveBeenCalled()
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('resetScroll() による初期位置への復帰では発火せず、基準だけ進む', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, container, scroller, slides, ref } =
+        renderWithOnChange()
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[1])
+      settleScroll(scroller)
+      expect(onChange).toHaveBeenCalledTimes(1)
+
+      act(() => ref.current?.resetScroll())
+      triggerCenter(slides[0])
+      settleScroll(scroller)
+      expect(onChange).toHaveBeenCalledTimes(1)
+
+      // 基準は 0 に戻っているので、0 への再着地は発火しない
+      container
+        .querySelector<HTMLButtonElement>('[data-direction="next"]')
+        ?.click()
+      triggerCenter(slides[0])
+      settleScroll(scroller)
+      expect(onChange).toHaveBeenCalledTimes(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+})

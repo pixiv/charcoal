@@ -26,6 +26,7 @@ import {
   INITIAL_CAROUSEL_STATE,
   type CarouselState,
 } from './carouselStore'
+import { useCarouselChange } from './useCarouselChange'
 import { useCarouselScroller } from './useCarouselScroller'
 
 const getServerSnapshot = (): CarouselState => INITIAL_CAROUSEL_STATE
@@ -102,6 +103,9 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
+  // スクロールが静止して activeIndex が変わったときに 1 回だけ発火する。
+  // source で自動送り（'auto'）とユーザー操作を区別できる。
+  onChange?: (e: CarouselChangeEvent) => void
   // スライド間隔。number は px、string は CSS 値をそのまま使う。未指定は間隔なし。
   gap?: number | string
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
@@ -184,6 +188,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScroll,
     onResize,
     onScrollStateChange,
+    onChange,
     loop = false,
     centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
@@ -214,7 +219,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
-  const { scrollByStep, onItemResize, resetScroll, loopCloneCount } =
+  const { scrollByStep, onItemResize, resetScroll, loopCloneCount, intent } =
     useCarouselScroller(scrollerRef, store, slides.length, {
       align,
       offset,
@@ -227,6 +232,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       onResize,
       onScrollStateChange,
     })
+
+  useCarouselChange(store, intent, onChange)
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
