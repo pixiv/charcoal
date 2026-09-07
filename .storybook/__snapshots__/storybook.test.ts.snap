@@ -10330,38 +10330,47 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeight 1`] = `
     data-dark="false"
   >
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          Label
-        </label>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              Label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 4;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="false"
+              id="test-id"
+              rows="4"
+              style=""
+            />
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="false"
-          id="test-id"
-          rows="4"
-        />
       </div>
     </div>
   </div>
@@ -10374,52 +10383,61 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
     data-dark="false"
   >
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 3;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="true"
+              id="test-id"
+              rows="3"
+              style=""
+            >
+              デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+            </textarea>
+            <span
+              class="charcoal-text-area-counter"
+            >
+              87
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 8;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="true"
-          id="test-id"
-          rows="8"
-        >
-          デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-        </textarea>
-        <span
-          class="charcoal-text-area-counter"
-        >
-          87
-        </span>
       </div>
     </div>
   </div>
@@ -10432,38 +10450,149 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1
     data-dark="false"
   >
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 3;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="false"
+              id="test-id"
+              rows="3"
+              style=""
+            />
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightWithSoftWrap 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
+    >
       <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 3;"
+        style="width: 100%; max-width: 640px;"
       >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="false"
-          id="test-id"
-          rows="3"
-        />
+        <div
+          style="display: grid; grid-template-columns: 160px 320px; gap: 16px;"
+        >
+          <div
+            aria-disabled="false"
+            class="charcoal-text-area-root"
+          >
+            <div
+              class="charcoal-field-label-root"
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <label
+                class="charcoal-field-label"
+                for="test-id"
+                id="test-id"
+              >
+                狭い幅
+              </label>
+              <div
+                class="charcoal-field-label-sub-label"
+              >
+                <span />
+              </div>
+            </div>
+            <div
+              aria-invalid="false"
+              class="charcoal-text-area-container"
+              style="--charcoal-text-area-rows: 1;"
+            >
+              <textarea
+                aria-labelledby="test-id"
+                class="charcoal-text-area-textarea"
+                data-no-bottom-padding="false"
+                id="test-id"
+                rows="1"
+                style=""
+              >
+                改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+              </textarea>
+            </div>
+          </div>
+          <div
+            aria-disabled="false"
+            class="charcoal-text-area-root"
+          >
+            <div
+              class="charcoal-field-label-root"
+              style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+            >
+              <label
+                class="charcoal-field-label"
+                for="test-id"
+                id="test-id"
+              >
+                maxRows と showCount
+              </label>
+              <div
+                class="charcoal-field-label-sub-label"
+              >
+                <span />
+              </div>
+            </div>
+            <div
+              aria-invalid="false"
+              class="charcoal-text-area-container"
+              style="--charcoal-text-area-rows: 1;"
+            >
+              <textarea
+                aria-labelledby="test-id"
+                class="charcoal-text-area-textarea"
+                data-no-bottom-padding="true"
+                id="test-id"
+                rows="1"
+                style=""
+              >
+                改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+              </textarea>
+              <span
+                class="charcoal-text-area-counter"
+              >
+                135
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -10720,47 +10849,56 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
   <div
     data-dark="false"
   >
-    <button>
-      insert value
-    </button>
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
+        <button>
+          insert value
+        </button>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 1;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="true"
+              id="test-id"
+              rows="1"
+              style=""
+            />
+            <span
+              class="charcoal-text-area-counter"
+            >
+              0
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 1;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="true"
-          id="test-id"
-          rows="1"
-        />
-        <span
-          class="charcoal-text-area-counter"
-        >
-          0
-        </span>
       </div>
     </div>
   </div>
@@ -10772,47 +10910,56 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
   <div
     data-dark="false"
   >
-    <button>
-      insert value
-    </button>
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
+        <button>
+          insert value
+        </button>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 1;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="true"
+              id="test-id"
+              rows="1"
+              style=""
+            />
+            <span
+              class="charcoal-text-area-counter"
+            >
+              0
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 1;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="true"
-          id="test-id"
-          rows="1"
-        />
-        <span
-          class="charcoal-text-area-counter"
-        >
-          0
-        </span>
       </div>
     </div>
   </div>
@@ -10825,43 +10972,52 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
     data-dark="false"
   >
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 4;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="true"
+              id="test-id"
+              rows="4"
+              style=""
+            />
+            <span
+              class="charcoal-text-area-counter"
+            >
+              0
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="true"
-          id="test-id"
-          rows="4"
-        />
-        <span
-          class="charcoal-text-area-counter"
-        >
-          0
-        </span>
       </div>
     </div>
   </div>
@@ -10874,43 +11030,52 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
     data-dark="false"
   >
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 3;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="true"
+              id="test-id"
+              rows="3"
+              style=""
+            />
+            <span
+              class="charcoal-text-area-counter"
+            >
+              0
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 3;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="true"
-          id="test-id"
-          rows="3"
-        />
-        <span
-          class="charcoal-text-area-counter"
-        >
-          0
-        </span>
       </div>
     </div>
   </div>
@@ -10923,52 +11088,61 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
     data-dark="false"
   >
     <div
-      aria-disabled="false"
-      class="charcoal-text-area-root"
+      style="display: grid; min-height: calc(100vh - 32px); place-items: center;"
     >
       <div
-        class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        style="width: 100%; max-width: 640px;"
       >
-        <label
-          class="charcoal-field-label"
-          for="test-id"
-          id="test-id"
-        >
-          label
-        </label>
         <div
-          class="charcoal-field-label-sub-label"
+          aria-disabled="false"
+          class="charcoal-text-area-root"
         >
-          <span />
+          <div
+            class="charcoal-field-label-root"
+            style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+          >
+            <label
+              class="charcoal-field-label"
+              for="test-id"
+              id="test-id"
+            >
+              label
+            </label>
+            <div
+              class="charcoal-field-label-sub-label"
+            >
+              <span />
+            </div>
+          </div>
+          <div
+            aria-invalid="false"
+            class="charcoal-text-area-container"
+            style="--charcoal-text-area-rows: 3;"
+          >
+            <textarea
+              aria-labelledby="test-id"
+              class="charcoal-text-area-textarea"
+              data-no-bottom-padding="true"
+              id="test-id"
+              rows="3"
+              style=""
+            >
+              デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+            </textarea>
+            <span
+              class="charcoal-text-area-counter"
+            >
+              87
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        aria-invalid="false"
-        class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 6;"
-      >
-        <textarea
-          aria-labelledby="test-id"
-          class="charcoal-text-area-textarea"
-          data-no-bottom-padding="true"
-          id="test-id"
-          rows="6"
-        >
-          デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-デフォルトの入力内容
-        </textarea>
-        <span
-          class="charcoal-text-area-counter"
-        >
-          87
-        </span>
       </div>
     </div>
   </div>
