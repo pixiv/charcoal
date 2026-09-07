@@ -9,11 +9,6 @@ import {
 } from 'react-aria/useModalOverlay'
 import { useOverlay } from 'react-aria/useOverlay'
 
-/**
- * We want to enable scrolling on the modal background,
- * but `useModalOverlay` (specifically, `useOverlay` within it) detects pointer events on the scrollbar.
- * Therefore, to prevent this issue, we need to override `shouldCloseOnInteractOutside` in `useModalOverlay`.
- */
 export type CharcoalModalOverlayProps = AriaModalOverlayProps & {
   overflowClip?: boolean
 }
@@ -27,7 +22,9 @@ export function useCharcoalModalOverlay(
       ...props,
       isOpen: state.isOpen,
       onClose: state.onClose,
-      shouldCloseOnInteractOutside: () => false,
+      // charcoal では isDismissable は閉じるボタンと ESC の制御であり、
+      // 背景クリックでの dismiss は isDismissable に関係なく常に有効
+      isDismissable: true,
     },
     ref,
   )

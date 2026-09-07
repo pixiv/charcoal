@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { render, fireEvent, act, cleanup } from '@testing-library/react'
+import { render, fireEvent, act, cleanup, screen } from '@testing-library/react'
 import { OverlayProvider } from 'react-aria'
 import { vi, describe, it, expect, afterEach } from 'vitest'
 import Modal from '.'
+import DropdownSelector from '../DropdownSelector'
+import DropdownMenuItem from '../DropdownSelector/DropdownMenuItem'
 import { MODAL_TRANSITION_DURATION_MS } from './useTransitionPresence'
 
 const MOBILE_WIDTH = 500
@@ -70,6 +72,53 @@ afterEach(() => {
   cleanup()
   vi.useRealTimers()
   setWindowWidth(DESKTOP_WIDTH)
+})
+
+describe('Modal (outside interaction)', () => {
+  it('背景の上で押して離すと閉じる', () => {
+    const { open } = renderModal()
+    open()
+
+    const bg = getBackground() as Element
+    fireEvent.mouseDown(bg)
+    fireEvent.mouseUp(bg)
+    fireEvent.click(bg)
+    expect(getDialog()).not.toBeInTheDocument()
+  })
+
+  it('ダイアログ内で押し始めて背景の上で離しても閉じない', () => {
+    const { open } = renderModal()
+    open()
+
+    // テキスト選択のドラッグ: mousedown はダイアログ内、mouseup は背景上。
+    // このときブラウザは両者の共通祖先である背景で click を合成する
+    fireEvent.mouseDown(getDialog() as Element)
+    fireEvent.mouseUp(getBackground() as Element)
+    fireEvent.click(getBackground() as Element)
+    expect(getDialog()).toBeInTheDocument()
+  })
+
+  it('Modal 内の DropdownSelector の項目を選択しても Modal は閉じない', () => {
+    // Popover は document.body にポータルされるためダイアログの DOM の外にあるが、
+    // react-aria の overlay スタックにより最前面の popover だけが閉じる
+    render(
+      <OverlayProvider>
+        <Modal title="test modal" isOpen onClose={vi.fn()}>
+          <DropdownSelector label="Label" value="1" onChange={vi.fn()}>
+            <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+            <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+          </DropdownSelector>
+        </Modal>
+      </OverlayProvider>,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: /Label/ }))
+    const item = screen.getByText('Option 2')
+    fireEvent.mouseDown(item)
+    fireEvent.mouseUp(item)
+    fireEvent.click(item)
+    expect(getDialog()).toBeInTheDocument()
+  })
 })
 
 describe('Modal (bottom sheet transition)', () => {
