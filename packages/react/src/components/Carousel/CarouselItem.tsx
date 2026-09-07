@@ -1,7 +1,43 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import {
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  memo,
+  useEffect,
+  useRef,
+  type ClassAttributes,
+  type ComponentPropsWithoutRef,
+  type ReactNode,
+} from 'react'
+import { useObjectRef } from 'react-aria/useObjectRef'
+import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
 import type { CarouselStore } from './carouselStore'
 import { observeCenter } from './intersectionObserver'
 import { observeResize } from './resizeObserver'
+
+type CenterReportProviderProps = ComponentPropsWithoutRef<'div'> &
+  Readonly<{
+    store: CarouselStore
+    index: number
+  }>
+
+// activeIndex: 自身が中央に来たら store に報告する（root は親=scroller から導出）。
+// clone も同じ index を報告する（テレポート前の clone 帯域でも indicator が追従する）。
+// className / data 属性などの div 属性はそのまま透過する。
+const CenterReportProvider = forwardRef<
+  HTMLDivElement,
+  CenterReportProviderProps
+>(function CenterReportProvider({ store, index, ...divProps }, forwardedRef) {
+  const ref = useObjectRef(forwardedRef)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    return observeCenter(el, () => store.dispatch({ type: 'setActive', index }))
+  }, [ref, index, store])
+
+  return <div ref={ref} {...divProps} />
+})
 
 export type CarouselItemProps = Readonly<{
   index: number
@@ -10,20 +46,13 @@ export type CarouselItemProps = Readonly<{
   children: ReactNode
 }>
 
-export const CarouselItem = ({
+export const CarouselItem = memo(function CarouselItem({
   index,
   store,
   onResize,
   children,
-}: CarouselItemProps) => {
+}: CarouselItemProps) {
   const ref = useRef<HTMLDivElement>(null)
-
-  // activeIndex: 自分が中央に来たら store に報告する（root は親=scroller から導出）。
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    return observeCenter(el, () => store.dispatch({ type: 'setActive', index }))
-  }, [index, store])
 
   // scrollToItem: 自分宛ての命令でだけ自己スクロールする（再レンダーしない）。
   useEffect(() => {
@@ -49,8 +78,55 @@ export const CarouselItem = ({
   }, [onResize])
 
   return (
-    <div ref={ref} className="charcoal-carousel__item">
+    <CenterReportProvider
+      ref={ref}
+      store={store}
+      index={index}
+      className="charcoal-carousel__item"
+    >
       {children}
-    </div>
+    </CenterReportProvider>
   )
-}
+})
+
+export type CarouselCloneItemProps = Readonly<{
+  index: number
+  store: CarouselStore
+  children: ReactNode
+}>
+
+// loop 用の複製スライド。中央検出は実セットと同じ論理 index を報告し、
+// scroll 命令・resize 通知には参加しない。
+export const CarouselCloneItem = memo(function CarouselCloneItem({
+  index,
+  store,
+  children,
+}: CarouselCloneItemProps) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  // React 18 は inert prop 未対応のため property で付与する。paint 後の useEffect だと
+  // clone 内のフォーカス可能要素が 1 フレーム操作可能になるため、paint 前に付与する。
+  useIsomorphicLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+    el.inert = true
+  }, [])
+
+  return (
+    <CenterReportProvider
+      ref={ref}
+      store={store}
+      index={index}
+      className="charcoal-carousel__item"
+      data-clone
+      aria-hidden
+    >
+      {isValidElement(children)
+        ? // 見た目だけの複製として ref を剥がす（ユーザーの ref が clone を指さないように）
+          cloneElement(children, {
+            ref: null,
+          } satisfies ClassAttributes<unknown>)
+        : children}
+    </CenterReportProvider>
+  )
+})

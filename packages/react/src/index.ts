@@ -99,6 +99,8 @@ export {
   default as Carousel,
   type CarouselProps,
   type CarouselHandlerRef,
+  type CarouselDefaultScroll,
+  type CarouselLoopProps,
   type ScrollAlign,
   type ScrollSnap,
   type ScrollSnapType,

@@ -17,7 +17,10 @@ import {
 import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
-import { CarouselItem as CarouselSlide } from './CarouselItem'
+import {
+  CarouselCloneItem,
+  CarouselItem as CarouselSlide,
+} from './CarouselItem'
 import {
   createCarouselStore,
   INITIAL_CAROUSEL_STATE,
@@ -41,6 +44,8 @@ export type ScrollSnap = Readonly<{
 export type ScrollStepContext = Readonly<{
   clientWidth: number
   scrollWidth: number
+  // ページ送りの起点。走行中の連打では実座標ではなく「前回のまだ到達していない
+  // 目標位置」が渡る（連打の積算を成立させるため）。
   scrollLeft: number
   direction: 'prev' | 'next'
 }>
@@ -51,6 +56,27 @@ export type ScrollStep = number | ((ctx: ScrollStepContext) => number)
 export type CarouselHandlerRef = {
   resetScroll: () => void
 }
+
+export type CarouselDefaultScroll = Readonly<{
+  align?: ScrollAlign
+  offset?: number
+}>
+
+// loop 時は初期位置が centerItem（未指定なら実セット先頭）に固定されるため
+// defaultScroll と両立しない（型で排他する）。centerItem は loop 専用。
+export type CarouselLoopProps =
+  | Readonly<{
+      loop?: false
+      defaultScroll?: CarouselDefaultScroll
+      centerItem?: never
+    }>
+  | Readonly<{
+      loop: true
+      defaultScroll?: never
+      // 初期表示で viewport 中央に置く実スライドの論理 index。
+      // 範囲外は実セット先頭の左寄せに倒れる。
+      centerItem?: number
+    }>
 
 export type CarouselProps = Readonly<{
   className?: string
@@ -68,12 +94,12 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
-  defaultScroll?: { align?: ScrollAlign; offset?: number }
   // スライド間隔。number は px、string は CSS 値をそのまま使う。未指定は間隔なし。
   gap?: number | string
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
   children: ReactNode
-}>
+}> &
+  CarouselLoopProps
 
 type Direction = 'prev' | 'next'
 
@@ -90,11 +116,11 @@ type NavigationButtonProps = Readonly<{
   onScroll: (direction: Direction) => void
 }>
 
-const CarouselNavigationButton = ({
+const CarouselNavigationButton = memo(function CarouselNavigationButton({
   direction,
   canScroll,
   onScroll,
-}: NavigationButtonProps) => {
+}: NavigationButtonProps) {
   const handleClick = useCallback(() => {
     onScroll(direction)
   }, [onScroll, direction])
@@ -111,7 +137,7 @@ const CarouselNavigationButton = ({
       data-hidden={!canScroll}
     />
   )
-}
+})
 
 type IndicatorItemProps = Readonly<{
   index: number
@@ -119,11 +145,11 @@ type IndicatorItemProps = Readonly<{
   onSelect: (index: number) => void
 }>
 
-const CarouselIndicatorItem = ({
+const CarouselIndicatorItem = memo(function CarouselIndicatorItem({
   index,
   isActive,
   onSelect,
-}: IndicatorItemProps) => {
+}: IndicatorItemProps) {
   const handleClick = useCallback(() => {
     onSelect(index)
   }, [onSelect, index])
@@ -136,7 +162,7 @@ const CarouselIndicatorItem = ({
       onClick={handleClick}
     />
   )
-}
+})
 
 const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   {
@@ -150,6 +176,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScroll,
     onResize,
     onScrollStateChange,
+    loop = false,
+    centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
     gap,
     children,
@@ -165,20 +193,30 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
 
   // 直接子要素 1 つを 1 スライドとして数える。key は子要素の key を引き継ぐ
   // （toArray が付与する接頭辞付き key。無ければ index）。
-  const slides = Children.toArray(children)
-  const slideKeys = slides.map((slide, i) =>
-    isValidElement(slide) && slide.key != null ? slide.key : i,
+  // toArray は毎回新しい要素を作るため memo 化し、item 側の React.memo を効かせる。
+  const slides = useMemo(() => Children.toArray(children), [children])
+  const slideKeys = useMemo(
+    () =>
+      slides.map((slide, i) =>
+        isValidElement(slide) && slide.key != null ? slide.key : i,
+      ),
+    [slides],
   )
 
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
-  const { scrollByStep, onItemResize, resetScroll } = useCarouselScroller(
-    scrollerRef,
-    store,
-    slides.length,
-    { align, offset, scrollStep, onScroll, onResize, onScrollStateChange },
-  )
+  const { scrollByStep, onItemResize, resetScroll, loopCloneCount } =
+    useCarouselScroller(scrollerRef, store, slides.length, {
+      align,
+      offset,
+      scrollStep,
+      loop,
+      centerItem,
+      onScroll,
+      onResize,
+      onScrollStateChange,
+    })
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
@@ -192,6 +230,50 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     (index: number) => store.dispatch({ type: 'requestScroll', index }),
     [store],
   )
+
+  const renderSlides = () =>
+    slides.map((slide, i) => (
+      <CarouselSlide
+        key={slideKeys[i]}
+        index={i}
+        store={store}
+        onResize={onItemResize}
+      >
+        {slide}
+      </CarouselSlide>
+    ))
+
+  // loop 時は実セットの前後に clone を描画する（clone + 端テレポート方式）。
+  // 枚数は滑走路の実測から決まり（初回 render は 0 枚）、実セットを超える要求は
+  // セットを周回して埋めるため、実 item 数より多い枚数になりうる。
+  // 中央検出による activeIndex 更新のたびに再構築しないよう memo 化する。
+  const cloneBands = useMemo(() => {
+    if (loopCloneCount === 0) return { before: null, after: null }
+    const pairs = slides.map((slide, index) => ({ slide, index }))
+    // 帯域を覆うまで実セットを繰り返し、before は実セット直前から末尾へ遡るよう
+    // 末尾から、after は先頭から続くように先頭から切り出す。
+    const repeated = Array.from(
+      { length: Math.ceil(loopCloneCount / pairs.length) },
+      () => pairs,
+    ).flat()
+    const renderBand = (
+      which: 'before' | 'after',
+      band: readonly (typeof pairs)[number][],
+    ) =>
+      band.map(({ slide, index }, position) => (
+        <CarouselCloneItem
+          key={`~${which}~${position}`}
+          index={index}
+          store={store}
+        >
+          {slide}
+        </CarouselCloneItem>
+      ))
+    return {
+      before: renderBand('before', repeated.slice(-loopCloneCount)),
+      after: renderBand('after', repeated.slice(0, loopCloneCount)),
+    }
+  }, [loopCloneCount, slides, store])
 
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
@@ -238,6 +320,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       data-has-gradient={hasGradient}
       data-full-width={fullWidth}
       data-indicator={showIndicator}
+      data-loop={loop}
       data-scroll-snap-type={snapType}
       data-scroll-snap-align={snapAlign}
       data-can-prev={canPrev}
@@ -258,16 +341,9 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           className="charcoal-carousel__scroller"
           tabIndex={0}
         >
-          {slides.map((slide, i) => (
-            <CarouselSlide
-              key={slideKeys[i]}
-              index={i}
-              store={store}
-              onResize={onItemResize}
-            >
-              {slide}
-            </CarouselSlide>
-          ))}
+          {loop && cloneBands.before}
+          {renderSlides()}
+          {loop && cloneBands.after}
         </div>
 
         <div
