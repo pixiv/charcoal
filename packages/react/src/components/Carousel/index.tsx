@@ -357,14 +357,17 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
     onKeyDown: (e) => {
-      if (e.key === 'ArrowRight') {
-        e.preventDefault()
-        scrollByStep('next', 'keyboard')
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault()
-        scrollByStep('prev', 'keyboard')
-      } else {
-        e.continuePropagation()
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault()
+          scrollByStep('next', 'keyboard')
+          break
+        case 'ArrowLeft':
+          e.preventDefault()
+          scrollByStep('prev', 'keyboard')
+          break
+        default:
+          e.continuePropagation()
       }
     },
   })
