@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/214 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">30 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/215 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">30 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>44.1s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>44.4s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -9878,7 +9878,7 @@ export const Default = {
       <div class="badges">
         <label for="c-9-react-dropdownselector-props" class="badge ok as-toggle">15 prop types</label>
         <label for="c-9-react-dropdownselector-info" class="badge info as-toggle">1 info</label>
-        <label for="c-9-react-dropdownselector-stories" class="badge ok as-toggle">17 stories</label>
+        <label for="c-9-react-dropdownselector-stories" class="badge ok as-toggle">18 stories</label>
         
       </div>
     </div>
@@ -10576,6 +10576,74 @@ value: string</code></pre>
         check ref current value
       &lt;/Button&gt;
       &lt;div&gt;ref current value: {currentValue}&lt;/div&gt;
+    &lt;/div&gt;
+  )
+};</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Inert Workaround Pen Outside</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const InertWorkaroundPenOutside = function Render() {
+  const [selected, setSelected] = useState(&#39;1&#39;)
+  const [backgroundClickCount, setBackgroundClickCount] = useState(0)
+  const [behindOptionsClickCount, setBehindOptionsClickCount] = useState(0)
+
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, alignItems: &#39;flex-start&#39;, gap: 64 }}&gt;
+      &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 16 }}&gt;
+        &lt;div style={{ position: &#39;relative&#39;, width: 288 }}&gt;
+          &lt;div style={{ position: &#39;relative&#39;, zIndex: 1 }}&gt;
+            &lt;DropdownSelector
+              value={selected}
+              onChange={setSelected}
+              label=&quot;DropdownSelector&quot;
+              inertWorkaround
+            &gt;
+              &lt;DropdownMenuItem value=&quot;1&quot;&gt;Option 1&lt;/DropdownMenuItem&gt;
+              &lt;DropdownMenuItem value=&quot;2&quot;&gt;Option 2&lt;/DropdownMenuItem&gt;
+              &lt;DropdownMenuItem value=&quot;3&quot;&gt;Option 3&lt;/DropdownMenuItem&gt;
+            &lt;/DropdownSelector&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;Button
+            data-testid=&quot;behind-options-button&quot;
+            onClick={() =&gt; {
+              setBehindOptionsClickCount((count) =&gt; count + 1)
+            }}
+            style={{
+              position: &#39;relative&#39;,
+              top: 0,
+              left: 0,
+              width: &#39;100%&#39;,
+              height: 120,
+            }}
+          &gt;
+            Button behind options
+          &lt;/Button&gt;
+        &lt;/div&gt;
+        &lt;div data-testid=&quot;selected-option&quot;&gt;Selected option: {selected}&lt;/div&gt;
+        &lt;div data-testid=&quot;behind-options-click-count&quot;&gt;
+          Behind options click count: {behindOptionsClickCount}
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 16 }}&gt;
+        &lt;Button
+          data-testid=&quot;background-button&quot;
+          onClick={() =&gt; {
+            setBackgroundClickCount((count) =&gt; count + 1)
+          }}
+        &gt;
+          Outside background button
+        &lt;/Button&gt;
+        &lt;div data-testid=&quot;background-click-count&quot;&gt;
+          Background click count: {backgroundClickCount}
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   )
 };</code></pre>
