@@ -36,6 +36,14 @@ export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
 
 export type ScrollSnapAlign = 'center' | 'start'
 
+export type CarouselChangeSource =
+  'auto' | 'navigation' | 'indicator' | 'keyboard' | 'pointer'
+
+export type CarouselChangeEvent = Readonly<{
+  index: number
+  source: CarouselChangeSource
+}>
+
 export type ScrollSnap = Readonly<{
   type?: ScrollSnapType
   align?: ScrollSnapAlign
