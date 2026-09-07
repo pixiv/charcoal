@@ -30,7 +30,6 @@ export default function cssVariableColorPlugin(
     // styledのTokenInjector移植(background処理除く)
     if (cssVariablesV1) {
       const cssVariablesV1 = defineCssVariablesV1(themeMap)
-      // @ts-expect-error FIXME
       addBase(cssVariablesV1)
     }
   })

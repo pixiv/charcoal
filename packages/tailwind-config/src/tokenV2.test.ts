@@ -4,8 +4,9 @@ import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
 describe('unstable_createTailwindConfigTokenV2', async () => {
   const config = unstable_createTailwindConfigTokenV2()
   const result = await TailwindBuild.run(
-    // @ts-expect-error FIXME: missing content
-    config,
+    // `config` omits `content` since consumers supply their own;
+    // `content: []` is fine here because TailwindBuild disables purge via `safelist`.
+    { ...config, content: [] },
     `
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
