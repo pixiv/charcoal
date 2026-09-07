@@ -1,19 +1,23 @@
-import { renderHook } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
+import { CarouselChangeProvider } from './CarouselChangeProvider'
 import { createCarouselStore } from './carouselStore'
 import { createScrollIntent } from './scrollIntent'
-import { useCarouselChange } from './useCarouselChange'
 
 const setup = (initialActiveIndex = 0) => {
   const store = createCarouselStore()
   store.dispatch({ type: 'setActive', index: initialActiveIndex })
   const intent = createScrollIntent()
   const onChange = vi.fn()
-  renderHook(() => useCarouselChange(store, intent, onChange))
+  render(
+    <CarouselChangeProvider store={store} intent={intent} onChange={onChange}>
+      {null}
+    </CarouselChangeProvider>,
+  )
   return { store, intent, onChange }
 }
 
-describe('useCarouselChange', () => {
+describe('CarouselChangeProvider', () => {
   it('settle → activeIndex の順でも 1 回だけ発火する', () => {
     const { store, intent, onChange } = setup()
     intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })
@@ -81,7 +85,11 @@ describe('useCarouselChange', () => {
     const onChange = vi.fn(() => {
       throw new Error('boom')
     })
-    renderHook(() => useCarouselChange(store, intent, onChange))
+    render(
+      <CarouselChangeProvider store={store} intent={intent} onChange={onChange}>
+        {null}
+      </CarouselChangeProvider>,
+    )
     intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })
     intent.dispatch({ type: 'scroll' })
     intent.dispatch({ type: 'settle' })
@@ -104,7 +112,11 @@ describe('useCarouselChange', () => {
   it('onChange 未指定でも落ちず、基準は進む', () => {
     const store = createCarouselStore()
     const intent = createScrollIntent()
-    renderHook(() => useCarouselChange(store, intent, undefined))
+    render(
+      <CarouselChangeProvider store={store} intent={intent}>
+        {null}
+      </CarouselChangeProvider>,
+    )
     intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })
     intent.dispatch({ type: 'scroll' })
     intent.dispatch({ type: 'settle' })

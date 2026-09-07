@@ -18,6 +18,8 @@ import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
 import warning from 'warning'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
+import { AutoplayProvider } from './CarouselAutoplayProvider'
+import { CarouselChangeProvider } from './CarouselChangeProvider'
 import {
   CarouselCloneItem,
   CarouselItem as CarouselSlide,
@@ -27,8 +29,6 @@ import {
   INITIAL_CAROUSEL_STATE,
   type CarouselState,
 } from './carouselStore'
-import { useAutoplay } from './useAutoplay'
-import { useCarouselChange } from './useCarouselChange'
 import { useCarouselScroller } from './useCarouselScroller'
 import { useHoverPause } from './useHoverPause'
 
@@ -291,8 +291,6 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScrollStateChange,
   })
 
-  useCarouselChange(store, intent, onChange)
-
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
   const { activeIndex, canPrev, canNext } = useSyncExternalStore(
@@ -388,12 +386,6 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     () => scrollToNextSlide('auto'),
     [scrollToNextSlide],
   )
-  useAutoplay({
-    interval,
-    paused: hovered || rootFocusVisible,
-    intent,
-    advance,
-  })
 
   // gap 宣言自体は index.css 側に置き、ここでは CSS 変数の値だけを注入する。
   const gapStyle = useMemo(
@@ -407,74 +399,80 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   )
 
   return (
-    <div
-      {...rootFocusProps}
-      ref={rootRef}
-      className={className}
-      style={gapStyle}
-      data-size={size}
-      data-has-gradient={hasGradient}
-      data-full-width={fullWidth}
-      data-indicator={showIndicator}
-      data-loop={loop}
-      data-scroll-snap-type={snapType}
-      data-scroll-snap-align={snapAlign}
-      data-can-prev={canPrev}
-      data-can-next={canNext}
-      data-focus-visible-within={rootFocusVisible || undefined}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Carousel"
-    >
-      {/* フォーカスリングは viewport に描く（理由は index.css の同セレクタ参照） */}
+    <CarouselChangeProvider store={store} intent={intent} onChange={onChange}>
       <div
-        className="charcoal-carousel__viewport"
-        data-focus-visible={scrollerFocusVisible || undefined}
+        {...rootFocusProps}
+        ref={rootRef}
+        className={className}
+        style={gapStyle}
+        data-size={size}
+        data-has-gradient={hasGradient}
+        data-full-width={fullWidth}
+        data-indicator={showIndicator}
+        data-loop={loop}
+        data-scroll-snap-type={snapType}
+        data-scroll-snap-align={snapAlign}
+        data-can-prev={canPrev}
+        data-can-next={canNext}
+        data-focus-visible-within={rootFocusVisible || undefined}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Carousel"
       >
+        {/* フォーカスリングは viewport に描く（理由は index.css の同セレクタ参照） */}
         <div
-          {...mergeProps(scrollerFocusProps, keyboardProps)}
-          ref={scrollerRef}
-          className="charcoal-carousel__scroller"
-          tabIndex={0}
+          className="charcoal-carousel__viewport"
+          data-focus-visible={scrollerFocusVisible || undefined}
         >
-          {loop && cloneBands.before}
-          {renderSlides()}
-          {loop && cloneBands.after}
+          <AutoplayProvider
+            {...mergeProps(scrollerFocusProps, keyboardProps)}
+            ref={scrollerRef}
+            className="charcoal-carousel__scroller"
+            tabIndex={0}
+            interval={interval}
+            paused={hovered || rootFocusVisible}
+            intent={intent}
+            advance={advance}
+          >
+            {loop && cloneBands.before}
+            {renderSlides()}
+            {loop && cloneBands.after}
+          </AutoplayProvider>
+
+          <div
+            className="charcoal-carousel__navigation"
+            data-visible={showNavigationButtons}
+            aria-hidden={!showNavigationButtons}
+          >
+            <CarouselNavigationButton
+              direction="prev"
+              canScroll={canPrev}
+              onScroll={scrollByNavigation}
+            />
+            <CarouselNavigationButton
+              direction="next"
+              canScroll={canNext}
+              onScroll={scrollByNavigation}
+            />
+          </div>
         </div>
 
         <div
-          className="charcoal-carousel__navigation"
-          data-visible={showNavigationButtons}
-          aria-hidden={!showNavigationButtons}
+          className="charcoal-carousel__indicator"
+          data-visible={showIndicator}
+          aria-hidden={!showIndicator}
         >
-          <CarouselNavigationButton
-            direction="prev"
-            canScroll={canPrev}
-            onScroll={scrollByNavigation}
-          />
-          <CarouselNavigationButton
-            direction="next"
-            canScroll={canNext}
-            onScroll={scrollByNavigation}
-          />
+          {slides.map((_, i) => (
+            <CarouselIndicatorItem
+              key={slideKeys[i]}
+              index={i}
+              isActive={i === activeIndex}
+              onSelect={scrollToItem}
+            />
+          ))}
         </div>
       </div>
-
-      <div
-        className="charcoal-carousel__indicator"
-        data-visible={showIndicator}
-        aria-hidden={!showIndicator}
-      >
-        {slides.map((_, i) => (
-          <CarouselIndicatorItem
-            key={slideKeys[i]}
-            index={i}
-            isActive={i === activeIndex}
-            onSelect={scrollToItem}
-          />
-        ))}
-      </div>
-    </div>
+    </CarouselChangeProvider>
   )
 })
 

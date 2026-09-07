@@ -1,7 +1,7 @@
-import { renderHook } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import { AutoplayProvider } from './CarouselAutoplayProvider'
 import { createScrollIntent } from './scrollIntent'
-import { useAutoplay } from './useAutoplay'
 
 const setup = (
   overrides: Partial<{
@@ -13,16 +13,19 @@ const setup = (
   const intent = createScrollIntent()
   const advance = vi.fn()
   const initial = { interval: 1000, paused: false, advance, ...overrides }
-  const hook = renderHook(
-    (props: typeof initial) => useAutoplay({ ...props, intent }),
-    {
-      initialProps: initial,
-    },
+  const { rerender, unmount } = render(
+    <AutoplayProvider {...initial} intent={intent} />,
   )
-  return { intent, advance, ...hook }
+  return {
+    intent,
+    advance,
+    unmount,
+    rerender: (props: typeof initial) =>
+      rerender(<AutoplayProvider {...props} intent={intent} />),
+  }
 }
 
-describe('useAutoplay', () => {
+describe('AutoplayProvider', () => {
   afterEach(() => {
     vi.useRealTimers()
   })
