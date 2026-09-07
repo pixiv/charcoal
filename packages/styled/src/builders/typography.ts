@@ -72,7 +72,6 @@ const leadingCancel: CSSObject = {
 
 // タイポグラフィ
 const typographyModifiers = [
-  // TODO
   'monospace',
   'bold',
   'preserveHalfLeading',
