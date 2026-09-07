@@ -19,8 +19,16 @@ export function findPreviewRecursive(
     const child = childArray[i]
     if (React.isValidElement(child)) {
       if ('value' in child.props) {
-        const childValue = (child.props as { value: string }).value
-        if (childValue === value && 'children' in child.props) {
+        const props = child.props as {
+          value: string
+          noSelection?: boolean
+          children?: ReactNode
+        }
+        if (
+          props.noSelection !== true &&
+          props.value === value &&
+          'children' in props
+        ) {
           const children = (child.props as { children: ReactNode }).children
           return children
         }
