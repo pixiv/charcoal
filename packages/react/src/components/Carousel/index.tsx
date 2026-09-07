@@ -18,8 +18,8 @@ import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
 import warning from 'warning'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
-import { AutoplayProvider } from './CarouselAutoplayProvider'
-import { CarouselChangeProvider } from './CarouselChangeProvider'
+import { AutoplayProvider } from './autoplay/AutoplayProvider'
+import { ChangeProvider } from './intent/ChangeProvider'
 import {
   CarouselCloneItem,
   CarouselItem as CarouselSlide,
@@ -30,7 +30,7 @@ import {
   type CarouselState,
 } from './carouselStore'
 import { useCarouselScroller } from './useCarouselScroller'
-import { useHoverPause } from './useHoverPause'
+import { useHoverPause } from './autoplay/useHoverPause'
 
 const getServerSnapshot = (): CarouselState => INITIAL_CAROUSEL_STATE
 
@@ -399,7 +399,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   )
 
   return (
-    <CarouselChangeProvider store={store} intent={intent} onChange={onChange}>
+    <ChangeProvider store={store} intent={intent} onChange={onChange}>
       <div
         {...rootFocusProps}
         ref={rootRef}
@@ -472,7 +472,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           ))}
         </div>
       </div>
-    </CarouselChangeProvider>
+    </ChangeProvider>
   )
 })
 

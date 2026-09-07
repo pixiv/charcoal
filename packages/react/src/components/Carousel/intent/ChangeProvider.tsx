@@ -1,10 +1,10 @@
 import { useEffect, useRef, type ReactNode } from 'react'
-import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
-import type { CarouselStore } from './carouselStore'
-import type { CarouselChangeEvent } from './index'
+import { useIsomorphicLayoutEffect } from '../../../_lib/useIsomorphicLayoutEffect'
+import type { CarouselStore } from '../carouselStore'
+import type { CarouselChangeEvent } from '../index'
 import type { ScrollIntentStore } from './scrollIntent'
 
-export type CarouselChangeProviderProps = Readonly<{
+export type ChangeProviderProps = Readonly<{
   store: CarouselStore
   intent: ScrollIntentStore
   onChange?: (e: CarouselChangeEvent) => void
@@ -15,12 +15,12 @@ export type CarouselChangeProviderProps = Readonly<{
 // onChange を 1 回だけ呼ぶ。settle（scrollend）と activeIndex の更新
 // （IntersectionObserver）はどちらが先に来るか定まらないため、両方を購読して
 // 同じ判定を走らせる。DOM は持たず children をそのまま返す。
-export function CarouselChangeProvider({
+export function ChangeProvider({
   store,
   intent,
   onChange,
   children,
-}: CarouselChangeProviderProps) {
+}: ChangeProviderProps) {
   const onChangeRef = useRef(onChange)
   useEffect(() => {
     onChangeRef.current = onChange

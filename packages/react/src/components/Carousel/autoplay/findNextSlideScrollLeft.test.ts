@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { findNextSlideScrollLeft } from './carouselAutoplay'
+import { findNextSlideScrollLeft } from './findNextSlideScrollLeft'
 
 // viewport 600px / スライド 200px × 5 枚・間隔なし
 const items = Array.from({ length: 5 }, (_, i) => ({

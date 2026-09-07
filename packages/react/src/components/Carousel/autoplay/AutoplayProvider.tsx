@@ -5,7 +5,7 @@ import {
   type ComponentPropsWithoutRef,
 } from 'react'
 import { useObjectRef } from 'react-aria/useObjectRef'
-import { canAutoAdvance, type ScrollIntentStore } from './scrollIntent'
+import { canAutoAdvance, type ScrollIntentStore } from '../intent/scrollIntent'
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
 

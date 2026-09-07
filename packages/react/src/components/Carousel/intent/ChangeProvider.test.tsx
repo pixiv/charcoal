@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
-import { CarouselChangeProvider } from './CarouselChangeProvider'
-import { createCarouselStore } from './carouselStore'
+import { ChangeProvider } from './ChangeProvider'
+import { createCarouselStore } from '../carouselStore'
 import { createScrollIntent } from './scrollIntent'
 
 const setup = (initialActiveIndex = 0) => {
@@ -10,9 +10,9 @@ const setup = (initialActiveIndex = 0) => {
   const intent = createScrollIntent()
   const onChange = vi.fn()
   render(
-    <CarouselChangeProvider store={store} intent={intent} onChange={onChange}>
+    <ChangeProvider store={store} intent={intent} onChange={onChange}>
       {null}
-    </CarouselChangeProvider>,
+    </ChangeProvider>,
   )
   return { store, intent, onChange }
 }
@@ -86,9 +86,9 @@ describe('CarouselChangeProvider', () => {
       throw new Error('boom')
     })
     render(
-      <CarouselChangeProvider store={store} intent={intent} onChange={onChange}>
+      <ChangeProvider store={store} intent={intent} onChange={onChange}>
         {null}
-      </CarouselChangeProvider>,
+      </ChangeProvider>,
     )
     intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })
     intent.dispatch({ type: 'scroll' })
@@ -113,9 +113,9 @@ describe('CarouselChangeProvider', () => {
     const store = createCarouselStore()
     const intent = createScrollIntent()
     render(
-      <CarouselChangeProvider store={store} intent={intent}>
+      <ChangeProvider store={store} intent={intent}>
         {null}
-      </CarouselChangeProvider>,
+      </ChangeProvider>,
     )
     intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })
     intent.dispatch({ type: 'scroll' })

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
-import { findNextSlideScrollLeft } from './carouselAutoplay'
+import { findNextSlideScrollLeft } from './autoplay/findNextSlideScrollLeft'
 import {
   computeCenterScrollLeft,
   computeLoopCloneCount,
@@ -23,7 +23,7 @@ import {
   createScrollIntent,
   scrollOrigin,
   type ScrollIntentStore,
-} from './scrollIntent'
+} from './intent/scrollIntent'
 import { onScrollSettle } from './scrollSettle'
 
 // 指 / ボタンが scroller に触れた・離れたことを表すイベント。解除は要素外での

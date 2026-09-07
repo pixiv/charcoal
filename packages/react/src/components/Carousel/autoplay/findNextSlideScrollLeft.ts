@@ -1,4 +1,4 @@
-import type { ScrollSnapAlign } from './index'
+import type { ScrollSnapAlign } from '../index'
 
 type ItemRect = Readonly<{ offsetLeft: number; offsetWidth: number }>
 

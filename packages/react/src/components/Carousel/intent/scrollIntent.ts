@@ -1,5 +1,5 @@
-import type { CarouselChangeSource } from './index'
-import { createStore, type Store } from './store'
+import type { CarouselChangeSource } from '../index'
+import { createStore, type Store } from '../store'
 
 // スクロールの「意図」。DOM イベントと送りの入口はここへ action を投げるだけで、
 // 発生源の帰属はすべてこの reducer の遷移規則で決まる。時刻は一切持たない。

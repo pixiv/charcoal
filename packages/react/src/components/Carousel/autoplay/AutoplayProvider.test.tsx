@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { AutoplayProvider } from './CarouselAutoplayProvider'
-import { createScrollIntent } from './scrollIntent'
+import { AutoplayProvider } from './AutoplayProvider'
+import { createScrollIntent } from '../intent/scrollIntent'
 
 const setup = (
   overrides: Partial<{
