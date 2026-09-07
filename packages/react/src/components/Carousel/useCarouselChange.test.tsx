@@ -75,6 +75,23 @@ describe('useCarouselChange', () => {
     expect(onChange).toHaveBeenCalledTimes(1)
   })
 
+  it('onChange が例外を投げても landed は消費済みになる', () => {
+    const store = createCarouselStore()
+    const intent = createScrollIntent()
+    const onChange = vi.fn(() => {
+      throw new Error('boom')
+    })
+    renderHook(() => useCarouselChange(store, intent, onChange))
+    intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })
+    intent.dispatch({ type: 'scroll' })
+    intent.dispatch({ type: 'settle' })
+
+    expect(() => store.dispatch({ type: 'setActive', index: 1 })).toThrow(
+      'boom',
+    )
+    expect(intent.getSnapshot().landed).toBeNull()
+  })
+
   it('mount 時の activeIndex を基準にする', () => {
     const { store, intent, onChange } = setup(2)
     intent.dispatch({ type: 'drive', source: 'navigation', target: 800 })

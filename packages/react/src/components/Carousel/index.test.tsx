@@ -1847,3 +1847,192 @@ describe('autoplay', () => {
     }
   })
 })
+
+describe('loop + onChange', () => {
+  // item の offsetLeft/offsetWidth は clone の作り直しに追従させるため、
+  // scroller 内の位置から導出する（describe('loop') と同じ手口）。
+  //
+  // slot 400 / clientWidth 800 では実 3 枚に対し clone が各端 9 枚（children 21）:
+  //   setWidth = children[12].offsetLeft − children[9].offsetLeft = 1200
+  //   maxScroll = 8400 − 800 = 7600 / 帯域 = 中央 [(7600−1200)/2, +1200) = [3200, 4400)
+  const SLOT_WIDTH = 400
+  const slotIndex = (el: HTMLElement) => {
+    const parent = el.parentElement
+    return parent?.classList.contains('charcoal-carousel__scroller')
+      ? Array.prototype.indexOf.call(parent.children, el)
+      : null
+  }
+  const originalOffsetLeft = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    'offsetLeft',
+  )
+  const originalOffsetWidth = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    'offsetWidth',
+  )
+
+  let roCallbacks: Array<(entries: unknown[]) => void>
+  let origRO: typeof globalThis.ResizeObserver
+  let origIO: typeof globalThis.IntersectionObserver
+  let triggerCenter: (el: Element) => void
+
+  beforeEach(() => {
+    // jsdom は onscrollend を持つが実イベントは発火しないため debounce(100ms) 経路を強制する
+    Reflect.deleteProperty(window, 'onscrollend')
+    Object.defineProperty(HTMLElement.prototype, 'offsetLeft', {
+      configurable: true,
+      get(this: HTMLElement) {
+        const i = slotIndex(this)
+        return i == null ? 0 : i * SLOT_WIDTH
+      },
+    })
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+      configurable: true,
+      get(this: HTMLElement) {
+        return slotIndex(this) == null ? 0 : SLOT_WIDTH - 20
+      },
+    })
+
+    roCallbacks = []
+    origRO = globalThis.ResizeObserver
+    globalThis.ResizeObserver = class {
+      observe = vi.fn()
+      unobserve = vi.fn()
+      disconnect = vi.fn()
+      constructor(cb: (entries: unknown[]) => void) {
+        roCallbacks.push(cb)
+      }
+    } as unknown as typeof globalThis.ResizeObserver
+
+    const callbacks = new Map<Element, IntersectionObserverCallback>()
+    origIO = globalThis.IntersectionObserver
+    globalThis.IntersectionObserver = class {
+      constructor(private cb: IntersectionObserverCallback) {}
+      observe(el: Element) {
+        callbacks.set(el, this.cb)
+      }
+      unobserve(el: Element) {
+        callbacks.delete(el)
+      }
+      disconnect() {
+        callbacks.clear()
+      }
+    } as unknown as typeof globalThis.IntersectionObserver
+    triggerCenter = (el) => {
+      callbacks.get(el)?.(
+        [{ target: el, isIntersecting: true } as IntersectionObserverEntry],
+        {} as IntersectionObserver,
+      )
+    }
+  })
+
+  afterEach(() => {
+    if (originalOffsetLeft) {
+      Object.defineProperty(
+        HTMLElement.prototype,
+        'offsetLeft',
+        originalOffsetLeft,
+      )
+    }
+    if (originalOffsetWidth) {
+      Object.defineProperty(
+        HTMLElement.prototype,
+        'offsetWidth',
+        originalOffsetWidth,
+      )
+    }
+    globalThis.ResizeObserver = origRO
+    globalThis.IntersectionObserver = origIO
+    vi.useRealTimers()
+  })
+
+  it('clone 帯への自動送りは、静止後のテレポートを挟んでも source=auto で 1 回だけ発火する', () => {
+    vi.useFakeTimers()
+    try {
+      const onChange = vi.fn()
+      render(
+        <Carousel loop autoplay={{ interval: 3000 }} onChange={onChange}>
+          <div>0</div>
+          <div>1</div>
+          <div>2</div>
+        </Carousel>,
+      )
+      const scroller = getScroller()
+      let scrollLeft = 0
+      Object.defineProperty(scroller, 'scrollLeft', {
+        get: () => scrollLeft,
+        set: (v: number) => {
+          scrollLeft = v
+        },
+        configurable: true,
+      })
+      Object.defineProperty(scroller, 'scrollWidth', {
+        value: 8400,
+        configurable: true,
+      })
+      Object.defineProperty(scroller, 'clientWidth', {
+        value: 800,
+        configurable: true,
+      })
+      // 本物のブラウザ同様、scrollTo は scroll イベントを起こす
+      const scrollTo = vi.fn((opts: ScrollToOptions) => {
+        if (opts.left != null) scrollLeft = opts.left
+        scroller.dispatchEvent(new Event('scroll'))
+      })
+      scroller.scrollTo = scrollTo as unknown as typeof scroller.scrollTo
+
+      // 幾何の実測 → clone 枚数の確定 → 初期位置（実セット先頭 = 3600）の適用
+      act(() => {
+        roCallbacks.forEach((cb) => cb([{ target: scroller }]))
+      })
+      expect(scroller.children).toHaveLength(21)
+      act(() => {
+        vi.advanceTimersByTime(150)
+      })
+      expect(scrollLeft).toBe(3600)
+
+      // 帯域上限（4400）の直前まで手で送っておき、次の自動送りで帯域外へ出す
+      act(() => {
+        scrollLeft = 4400
+        scroller.dispatchEvent(new Event('scroll'))
+        vi.advanceTimersByTime(150)
+      })
+      expect(onChange).not.toHaveBeenCalled()
+      scrollTo.mockClear()
+
+      // t+3000: 自動送りが clone-after 帯（children[12] = 4800）へ進む
+      act(() => {
+        vi.advanceTimersByTime(3000)
+      })
+      expect(scrollTo).toHaveBeenCalledExactlyOnceWith({
+        left: 4800,
+        behavior: 'smooth',
+      })
+
+      // 静止で 4800 は帯域外と判明し、合同位置 3600 へテレポートする
+      act(() => {
+        vi.advanceTimersByTime(150)
+      })
+      expect(scrollTo).toHaveBeenLastCalledWith({
+        left: 3600,
+        behavior: 'instant',
+      })
+      expect(onChange).not.toHaveBeenCalled()
+
+      // 中央検出はテレポートの飛行中に遅れて届く（clone-after の 2 枚目＝論理 index 1）
+      act(() => {
+        triggerCenter(scroller.children[13])
+      })
+      act(() => {
+        vi.advanceTimersByTime(150)
+      })
+
+      expect(onChange).toHaveBeenCalledExactlyOnceWith({
+        index: 1,
+        source: 'auto',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+})

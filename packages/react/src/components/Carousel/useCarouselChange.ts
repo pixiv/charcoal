@@ -32,8 +32,9 @@ export function useCarouselChange(
       if (activeIndex === lastReported.current) return
       lastReported.current = activeIndex
       if (landed == null) return
-      onChangeRef.current?.({ index: activeIndex, source: landed })
+      // 消費側が投げても landed が残らないよう、呼ぶ前に報告済みを確定させる。
       intent.dispatch({ type: 'reported' })
+      onChangeRef.current?.({ index: activeIndex, source: landed })
     }
     const unsubscribeStore = store.subscribe(check)
     const unsubscribeIntent = intent.subscribe(check)
