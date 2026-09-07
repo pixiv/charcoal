@@ -179,6 +179,11 @@ describe('intentReducer', () => {
     ])
     expect(state).toMatchObject({ phase: 'idle', landed: null })
   })
+
+  it('指が触れていない release は状態を変えない（無関係な pointerup で購読者を起こさない）', () => {
+    const state = run([{ type: 'drive', source: 'navigation', target: 400 }])
+    expect(intentReducer(state, { type: 'release' })).toBe(state)
+  })
 })
 
 describe('canAutoAdvance', () => {
