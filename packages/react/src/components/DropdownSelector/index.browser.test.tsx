@@ -11,7 +11,7 @@
  * iOS Safari は非インタラクティブな要素へのペン入力で click を合成しないため、
  * click に依存する react-aria の外側判定では overlay を閉じられない。
  */
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { vi } from 'vitest'
 import DropdownSelector from '.'
 import DropdownMenuItem from './DropdownMenuItem'
@@ -60,7 +60,7 @@ describe.each([
   ['inertWorkaround が無効', false],
   ['inertWorkaround が有効', true],
 ])('%s なとき', (_, inertWorkaround) => {
-  it('Apple Pencil で overlay の外側をタップすると閉じる', () => {
+  it('Apple Pencil で overlay の外側をタップすると閉じる', async () => {
     renderSelector(inertWorkaround)
 
     penTap(screen.getByRole('button'))
@@ -68,7 +68,9 @@ describe.each([
 
     penTap(hitTestOutsidePopover())
 
-    expect(popover()).toBeNull()
+    await waitFor(() => {
+      expect(popover()).toBeNull()
+    })
   })
 
   // 選択肢のタップは onChange 経由で閉じるのが仕様なので、余白部分を叩く
@@ -83,6 +85,143 @@ describe.each([
 
     expect(popover()).not.toBeNull()
   })
+})
+
+it('inertWorkaround が有効なとき、開いた直後に underlay へ送られる互換 click では閉じない', () => {
+  renderSelector(true)
+
+  penTap(screen.getByRole('button'))
+  expect(popover()).not.toBeNull()
+
+  // Android Chrome はペンの pointerup 後、underlay 上の pointerdown を伴わない
+  // mouse / click イベントを新しく追加された underlay に送る。
+  const underlay = getUnderlay()
+  fireEvent.mouseDown(underlay)
+  fireEvent.mouseUp(underlay)
+  fireEvent.click(underlay)
+
+  expect(popover()).not.toBeNull()
+})
+
+it('ペンで外側をタップしたとき、下にあるクリック可能な要素をクリックせずに閉じる', async () => {
+  const handleBackgroundClick = vi.fn()
+  render(
+    <>
+      <DropdownSelector
+        label="Label"
+        value="1"
+        onChange={vi.fn()}
+        inertWorkaround
+      >
+        <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+        <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+      </DropdownSelector>
+      <button
+        type="button"
+        onClick={handleBackgroundClick}
+        style={{ position: 'fixed', right: 16, bottom: 16 }}
+      >
+        Background button
+      </button>
+    </>,
+  )
+
+  penTap(screen.getByRole('button', { name: 'Label' }))
+  expect(popover()).not.toBeNull()
+
+  const backgroundButton = screen.getByRole('button', {
+    name: 'Background button',
+  })
+  const rect = backgroundButton.getBoundingClientRect()
+  const point = {
+    x: Math.round(rect.left + rect.width / 2),
+    y: Math.round(rect.top + rect.height / 2),
+  }
+  const pointerTarget = document.elementFromPoint(point.x, point.y)
+  if (pointerTarget === null) throw new Error('pointer target not found')
+
+  fireEvent.pointerDown(pointerTarget, {
+    pointerType: 'pen',
+    button: 0,
+    composed: true,
+  })
+  // Android Chrome はこの touchstart がキャンセルされた場合、後続の互換
+  // mouse / click イベントを生成しない。
+  expect(fireEvent.touchStart(pointerTarget)).toBe(false)
+  fireEvent.pointerUp(pointerTarget, {
+    pointerType: 'pen',
+    button: 0,
+    composed: true,
+  })
+
+  await waitFor(() => {
+    expect(popover()).toBeNull()
+  })
+  expect(handleBackgroundClick).not.toHaveBeenCalled()
+})
+
+it('ペンで選択肢を選んだとき、選択肢の背後にあるクリック可能な要素をクリックしない', async () => {
+  const handleBackgroundClick = vi.fn()
+  const handleChange = vi.fn()
+  render(
+    <>
+      <DropdownSelector
+        label="Label"
+        value="1"
+        onChange={handleChange}
+        inertWorkaround
+      >
+        <DropdownMenuItem value="1">Option 1</DropdownMenuItem>
+        <DropdownMenuItem value="2">Option 2</DropdownMenuItem>
+      </DropdownSelector>
+      <button type="button" onClick={handleBackgroundClick}>
+        Button behind options
+      </button>
+    </>,
+  )
+
+  penTap(screen.getByRole('button', { name: 'Label' }))
+  const option = screen.getByRole('option', { name: 'Option 2' })
+  const optionRect = option.getBoundingClientRect()
+  const point = {
+    x: Math.round(optionRect.left + optionRect.width / 2),
+    y: Math.round(optionRect.top + optionRect.height / 2),
+  }
+  const backgroundButton = screen.getByRole('button', {
+    name: 'Button behind options',
+  })
+  Object.assign(backgroundButton.style, {
+    position: 'fixed',
+    left: `${optionRect.left}px`,
+    top: `${optionRect.top}px`,
+    width: `${optionRect.width}px`,
+    height: `${optionRect.height}px`,
+  })
+
+  fireEvent.pointerDown(option, {
+    pointerType: 'pen',
+    button: 0,
+    clientX: point.x,
+    clientY: point.y,
+    composed: true,
+  })
+  // Android Chrome が後続の互換 click を生成しないよう、
+  // 選択肢上のペン由来 touchstart もキャンセルする。
+  expect(fireEvent.touchStart(option)).toBe(false)
+  fireEvent.pointerUp(option, {
+    pointerType: 'pen',
+    button: 0,
+    clientX: point.x,
+    clientY: point.y,
+    composed: true,
+  })
+
+  await waitFor(() => {
+    expect(popover()).toBeNull()
+  })
+  expect(handleChange).toHaveBeenCalledWith('2')
+  expect(document.elementFromPoint(point.x, point.y)).toBe(backgroundButton)
+  expect(handleBackgroundClick).not.toHaveBeenCalled()
 })
 
 it('underlay は inertWorkaround が無効なとき inert になる', () => {
