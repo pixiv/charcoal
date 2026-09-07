@@ -17,7 +17,7 @@ const setup = (initialActiveIndex = 0) => {
   return { store, intent, onChange }
 }
 
-describe('CarouselChangeProvider', () => {
+describe('ChangeProvider', () => {
   it('settle → activeIndex の順でも 1 回だけ発火する', () => {
     const { store, intent, onChange } = setup()
     intent.dispatch({ type: 'drive', source: 'navigation', target: 400 })

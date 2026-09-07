@@ -99,7 +99,9 @@ describe('autoplay', () => {
     '無効な interval=%s では既定値 (5000ms) にフォールバックし、開発時は警告する',
     (interval) => {
       vi.useFakeTimers()
-      const error = vi.spyOn(console, 'error').mockImplementation(() => {})
+      const error = vi
+        .spyOn(console, 'error')
+        .mockImplementation(() => undefined)
       try {
         const { scrollTo } = renderAutoplay({ autoplay: { interval } })
         expect(error).toHaveBeenCalledWith(
