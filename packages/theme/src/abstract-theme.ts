@@ -22,7 +22,10 @@ export interface CharcoalAbstractTheme {
   spacing: { [key in Key]: number }
   typography: {
     size: { [key in Key]: TypographyDescriptor }
-    // TODO
+    // TODO: the theme model has no `weight`/`variant` fields, so consumers can't express
+    // font weight or variant (e.g. italic) through the theme. Adding these is a public
+    // type change and interacts with the Figma tokens pipeline (`.github/workflows/tokens.yml`),
+    // so it needs its own scoped issue rather than an ad-hoc addition here.
     // weight: { [key in Key]: string }
     // variant: { [key in Key]: string }
   }
@@ -30,7 +33,8 @@ export interface CharcoalAbstractTheme {
   border: {
     [key in Key]: {
       color: Material
-      // TODO
+      // TODO: the theme model has no `thickness` field, so consumers can't express e.g.
+      // "a 2px border" through the theme. Same caveats as the `typography` TODO above.
       // thickness: number
     }
   }
@@ -49,7 +53,8 @@ export interface CharcoalAbstractTheme {
   transition: {
     [key in Key]: {
       duration: number
-      // TODO
+      // TODO: the theme model has no `easing` field, so consumers can't express e.g.
+      // an "ease-out" transition through the theme. Same caveats as the `typography` TODO above.
       // easing: string
     }
   }
