@@ -236,6 +236,17 @@ export const LoopBanner: StoryObj<typeof Carousel> = {
   },
 }
 
+export const LoopAutoplay: StoryObj<typeof Carousel> = {
+  tags: ['skip-test'],
+  args: {
+    size: 'S',
+    children: fullWidthImages,
+    loop: true,
+    gap: 0,
+    autoplay: { interval: 5000 },
+  },
+}
+
 export const AllControls: StoryObj<typeof Carousel> = {
   args: {
     size: 'M',
