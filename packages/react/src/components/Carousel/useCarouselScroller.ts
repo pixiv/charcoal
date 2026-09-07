@@ -289,7 +289,15 @@ export function useCarouselScroller(
     }
     // 指が触れている間に来た settle は保留され、離した時点で 1 回だけ静止処理を行う
     // （scrollend 非対応環境の debounce は指が触れたまま止まっていても発火するため）。
-    const pointerUp = () => {
+    const pointerUp = (event: Event) => {
+      // ブラウザはタッチがパンに転じた時点で pointercancel を投げる（指はまだ触れている）。
+      // touch の終端は touchend / touchcancel が担うので、ここでは接触を解除しない。
+      if (
+        event.type === 'pointercancel' &&
+        (event as PointerEvent).pointerType === 'touch'
+      ) {
+        return
+      }
       const { settlePending } = intent.getSnapshot()
       intent.dispatch({ type: 'release' })
       if (settlePending) teleport()
@@ -324,6 +332,8 @@ export function useCarouselScroller(
     el.addEventListener('wheel', wheel, true)
     for (const type of POINTER_UP_EVENTS)
       window.addEventListener(type, pointerUp, true)
+    // scroll の intent 反映は layout effect で先に登録済み。この購読はその後に走る
+    // 前提で、teleport が phase === 'moving' の source を引き継ぐ。
     el.addEventListener('scroll', escapeWall, { passive: true })
     const stopSettle = onScrollSettle(el, settle)
     return () => {

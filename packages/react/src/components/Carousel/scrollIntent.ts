@@ -69,7 +69,7 @@ export const intentReducer = (
         pointerDown: state.pointerDown || action.kind === 'pointer',
       }
     case 'release': {
-      if (!state.pointerDown && !state.settlePending) return state
+      if (!state.pointerDown) return state
       const released = { ...state, pointerDown: false }
       return state.settlePending ? settled(released) : released
     }

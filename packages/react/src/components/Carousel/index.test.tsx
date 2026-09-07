@@ -1461,6 +1461,38 @@ describe('onChange', () => {
     }
   })
 
+  it('タッチのパン開始で来る pointercancel では静止処理を保留したままにする', () => {
+    vi.useFakeTimers()
+    try {
+      const { onChange, scroller, slides } = renderWithOnChange()
+      // jsdom に PointerEvent は無いので pointerType だけを載せた Event で代用する
+      scroller.dispatchEvent(
+        Object.assign(new Event('pointerdown', { bubbles: true }), {
+          pointerType: 'touch',
+        }),
+      )
+      scroller.dispatchEvent(new Event('scroll'))
+      triggerCenter(slides[2])
+
+      // パンに転じた時点で pointercancel が来るが、指はまだ触れている
+      window.dispatchEvent(
+        Object.assign(new Event('pointercancel', { bubbles: true }), {
+          pointerType: 'touch',
+        }),
+      )
+      vi.advanceTimersByTime(150)
+      expect(onChange).not.toHaveBeenCalled()
+
+      window.dispatchEvent(new Event('touchend', { bubbles: true }))
+      expect(onChange).toHaveBeenCalledExactlyOnceWith({
+        index: 2,
+        source: 'pointer',
+      })
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
   it('同じ index への着地では発火しない', () => {
     vi.useFakeTimers()
     try {
