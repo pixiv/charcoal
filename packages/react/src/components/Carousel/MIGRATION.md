@@ -119,7 +119,9 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 - **`onChange` の `source` は「その移動を起こした入口」**: 自動送りの走行中にユーザーが触れて
   スワイプした場合は `pointer` になる。逆に、自動送り中にクリックしただけで動きが変わらなかった
   場合も `pointer` になる（native scroll からは区別できないため受容している）。Tab フォーカスや
-  find-in-page 由来のブラウザ主導の移動は帰属できないので発火しない。
+  find-in-page 由来のブラウザ主導の移動は、帰属できる入力の痕跡が残っていない限り発火しない。
+  直前に動かない入力（縦ホイール・クリック）があると、その後のブラウザ主導の移動が
+  `pointer` として報告されることがある（受容している制限）。
 - **`onChange` が報告する index は「indicator が現在アクティブとみなしているスライド」**:
   viewport 水平中央を横切ったスライド（`activeIndex`）で、`size='S'`（1 枚全幅）なら曖昧さはない。
   `size='M'` は一度に複数枚見えており、`autoplay` は次スライドを viewport **左端**に揃えるため、
@@ -134,6 +136,10 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
   WCAG 2.2.2（Pause, Stop, Hide）が要件になる画面では、利用側で明示的な一時停止 UI を用意すること。
 - **`autoplay.interval` が無効な値（非有限・非正・32bit `setTimeout` 上限の 2147483647 を
   超える）の場合は既定値（5000ms）にフォールバックする**: 開発時は `console.error` に警告を出す。
+- **jsdom テストで `autoplay` は既定のままだと一度も進まない**: jsdom は
+  `Element.prototype.matches(':hover')` を常に `true` と答えるため、hover 停止が効きっぱなしになる。
+  `autoplay={{ pauseOnHover: false }}` にするか、`:hover` だけ `false` を返すよう
+  `Element.prototype.matches` をスタブすること。
 
 ## スクロール量を細かく制御したい場合
 
