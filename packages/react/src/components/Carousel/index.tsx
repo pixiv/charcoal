@@ -219,6 +219,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
       align,
       offset,
       scrollStep,
+      snapAlign,
+      snapType,
       loop,
       centerItem,
       onScroll,
@@ -237,6 +239,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollToItem = useCallback(
     (index: number) => store.dispatch({ type: 'requestScroll', index }),
     [store],
+  )
+
+  // CarouselNavigationButton は memo 済みなので安定参照で渡す。
+  const scrollByNavigation = useCallback(
+    (direction: Direction) => scrollByStep(direction, 'navigation'),
+    [scrollByStep],
   )
 
   const renderSlides = () =>
@@ -288,10 +296,10 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onKeyDown: (e) => {
       if (e.key === 'ArrowRight') {
         e.preventDefault()
-        scrollByStep('next')
+        scrollByStep('next', 'keyboard')
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault()
-        scrollByStep('prev')
+        scrollByStep('prev', 'keyboard')
       } else {
         e.continuePropagation()
       }
@@ -362,12 +370,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
           <CarouselNavigationButton
             direction="prev"
             canScroll={canPrev}
-            onScroll={scrollByStep}
+            onScroll={scrollByNavigation}
           />
           <CarouselNavigationButton
             direction="next"
             canScroll={canNext}
-            onScroll={scrollByStep}
+            onScroll={scrollByNavigation}
           />
         </div>
       </div>
