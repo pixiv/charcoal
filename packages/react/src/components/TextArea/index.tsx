@@ -5,7 +5,6 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
-  useMemo,
   useRef,
   useState,
 } from 'react'
@@ -45,6 +44,12 @@ export type TextAreaProps = {
   requiredText?: string
   disabled?: boolean
   subLabel?: React.ReactNode
+  /**
+   * 内容に合わせて高さを自動調整する。折り返しも含めて実測するため、
+   * 幅は呼び出し側で決めること。親要素が内容依存の幅（shrink-to-fit, inline-flex,
+   * fit-content, 幅未指定の絶対配置など）だと想定より狭くなり、折り返しが増えて
+   * 高さが過剰に伸びる。
+   */
   autoHeight?: boolean
 
   maxRows?: number
@@ -82,54 +87,39 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     // `null` is invalid for TextAreaProps, but may arrive at runtime. Keep the
     // pre-f710d512 nullish fallback so getCount is never called with null.
     const countValue = value ?? defaultValue?.toString() ?? ''
-    const [rows, setRows] = useState(initialRows)
     const [count, setCount] = useState(getCount(countValue))
+    // 非制御でも mirror に流し込む値が要るので、DOM の値を state にも持つ
+    const [uncontrolledValue, setUncontrolledValue] = useState(
+      defaultValue?.toString() ?? '',
+    )
+    const mirrorValue = value ?? uncontrolledValue
 
     const textareaRef = useRef<HTMLTextAreaElement>(null)
-    const containerRef = useRef(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     useFocusWithClick(containerRef, textareaRef)
     const { visuallyHiddenProps } = useVisuallyHidden()
 
-    const isEnableAutoHeight = useMemo(
-      () => autoHeight || (maxRows && maxRows >= 0),
-      [autoHeight, maxRows],
-    )
+    // maxRows は 1 以上の時だけ上限として扱う
+    const rowsLimit =
+      maxRows !== undefined && maxRows >= 1 ? maxRows : undefined
+    const isEnableAutoHeight = autoHeight || rowsLimit !== undefined
+    // autoHeight では高さは mirror の内容で決まるので、rows / maxRows は
+    // CSS の下限・上限として渡すだけ。
+    const rows =
+      rowsLimit !== undefined ? Math.min(initialRows, rowsLimit) : initialRows
     const classNames = useClassNames('charcoal-text-area-root', className)
     const showAssistiveText =
       assistiveText != null && assistiveText.length !== 0
 
-    const syncHeight = useCallback(
-      (textarea: HTMLTextAreaElement) => {
-        const currentRows =
-          (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
-        const hasValidMaxRows = maxRows !== undefined && maxRows >= 1
-        const nextRows = initialRows <= currentRows ? currentRows : initialRows
-
-        if (!hasValidMaxRows) {
-          setRows(nextRows)
-          return
-        }
-
-        setRows(Math.min(nextRows, maxRows))
-      },
-      [initialRows, maxRows],
-    )
-
     const syncTextAreaState = useCallback(
       (textarea: HTMLTextAreaElement) => {
-        const count = getCount(textarea.value)
-
         if (isUncontrolled) {
-          setCount(count)
+          setCount(getCount(textarea.value))
+          // mirror が再描画され、その後の layout effect で高さが揃う
+          setUncontrolledValue(textarea.value)
         }
-
-        if (isEnableAutoHeight) {
-          syncHeight(textarea)
-        }
-
-        return count
       },
-      [getCount, isEnableAutoHeight, isUncontrolled, syncHeight],
+      [getCount, isUncontrolled],
     )
 
     const handleChange = useCallback(
@@ -170,24 +160,12 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const describedbyId = useId()
     const labelledbyId = useId()
 
+    // 制御コンポーネントの時の挙動。高さと違い描画前に確定する必要はない。
     useEffect(() => {
-      // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
         setCount(getCount(countValue))
       }
-
-      //　autoHeight同期(valueが変更された時にsyncHeightしたい)
-      if (isEnableAutoHeight && textareaRef.current !== null) {
-        syncHeight(textareaRef.current)
-      }
-    }, [
-      isUncontrolled,
-      countValue,
-      getCount,
-      isEnableAutoHeight,
-      textareaRef,
-      syncHeight,
-    ])
+    }, [countValue, getCount, isUncontrolled])
 
     return (
       <div className={classNames} aria-disabled={disabled}>
@@ -204,9 +182,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           className="charcoal-text-area-container"
           aria-disabled={disabled === true ? 'true' : undefined}
           aria-invalid={invalid === true}
+          data-auto-height={isEnableAutoHeight}
           ref={containerRef}
           style={{
             '--charcoal-text-area-rows': rows,
+            ...(rowsLimit !== undefined && {
+              '--charcoal-text-area-max-rows': rowsLimit,
+            }),
           }}
         >
           <textarea
@@ -225,6 +207,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
             defaultValue={defaultValue}
             {...props}
           />
+          {isEnableAutoHeight && (
+            <div className="charcoal-text-area-mirror" aria-hidden="true">
+              {/* この要素の高さがそのままコンテナの高さになる。
+                  末尾の改行を 1 行として数えさせるため空白を足している。 */}
+              {mirrorValue + ' '}
+            </div>
+          )}
           {showCount && (
             <span className="charcoal-text-area-counter">
               {maxLength !== undefined ? `${count}/${maxLength}` : count}

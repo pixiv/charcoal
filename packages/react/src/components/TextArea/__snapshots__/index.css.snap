@@ -9,8 +9,21 @@
 }
 
 .charcoal-text-area-container {
-  /* Runtime variable overridden by the React component. */
+  /* Runtime variables overridden by the React component. */
   --charcoal-text-area-rows: 4;
+  --charcoal-text-area-max-rows: 9999;
+
+  /* Prevent zooming for iOS Safari */
+  --charcoal-textarea-safari-prevent-zoom-scale: 0.875;
+  --charcoal-textarea-line-height: calc(
+    22px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+  --charcoal-textarea-padding-y: calc(
+    8px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+  --charcoal-textarea-padding-x: calc(
+    9px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
   position: relative;
   overflow: hidden;
   color: var(--charcoal-color-text-secondary-default);
@@ -49,18 +62,6 @@
   font-family: inherit;
   color: inherit;
   box-sizing: border-box;
-
-  /* Prevent zooming for iOS Safari */
-  --charcoal-textarea-safari-prevent-zoom-scale: 0.875;
-  --charcoal-textarea-line-height: calc(
-    22px / var(--charcoal-textarea-safari-prevent-zoom-scale)
-  );
-  --charcoal-textarea-padding-y: calc(
-    8px / var(--charcoal-textarea-safari-prevent-zoom-scale)
-  );
-  --charcoal-textarea-padding-x: calc(
-    9px / var(--charcoal-textarea-safari-prevent-zoom-scale)
-  );
   transform-origin: top left;
   transform: scale(var(--charcoal-textarea-safari-prevent-zoom-scale));
   width: calc(100% / var(--charcoal-textarea-safari-prevent-zoom-scale));
@@ -88,6 +89,46 @@
 
 .charcoal-text-area-textarea::placeholder {
   color: var(--charcoal-color-text-placeholder-default);
+}
+
+.charcoal-text-area-mirror {
+  visibility: hidden;
+  pointer-events: none;
+
+  /* この要素の高さがコンテナの高さになるので、scale 後の見た目と同じ寸法で組む。
+     textarea 側は scale(0.875) で同じ幅・同じ行数に収まる。 */
+  box-sizing: border-box;
+  font-family: inherit;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px 9px 10px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* autoHeight: 高さは mirror の内容で決まり、rows / maxRows が下限と上限になる */
+
+.charcoal-text-area-container[data-auto-height='true'] {
+  height: auto;
+  min-height: calc(22px * var(--charcoal-text-area-rows) + 18px);
+  max-height: calc(22px * var(--charcoal-text-area-max-rows) + 18px);
+}
+
+.charcoal-text-area-container[data-auto-height='true']:has([data-no-bottom-padding='true']) {
+  height: auto;
+}
+
+.charcoal-text-area-container[data-auto-height='true'] > .charcoal-text-area-textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% / var(--charcoal-textarea-safari-prevent-zoom-scale));
+}
+/* 文字数表示のぶん 1 行ぶん余白を足す */
+
+.charcoal-text-area-container[data-auto-height='true']:has([data-no-bottom-padding='true']) > .charcoal-text-area-mirror {
+  padding-bottom: 32px;
 }
 
 .charcoal-text-area-counter {

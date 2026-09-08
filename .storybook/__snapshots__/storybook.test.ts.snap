@@ -10425,6 +10425,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AssistiveText 1`] =
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10477,6 +10478,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeight 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="true"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10486,6 +10488,12 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeight 1`] = `
           id="test-id"
           rows="4"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+           
+        </div>
       </div>
     </div>
   </div>
@@ -10521,14 +10529,15 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 8;"
+        data-auto-height="true"
+        style="--charcoal-text-area-rows: 3;"
       >
         <textarea
           aria-labelledby="test-id"
           class="charcoal-text-area-textarea"
           data-no-bottom-padding="true"
           id="test-id"
-          rows="8"
+          rows="3"
         >
           デフォルトの入力内容
 デフォルトの入力内容
@@ -10539,6 +10548,19 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
 デフォルトの入力内容
 デフォルトの入力内容
         </textarea>
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容 
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -10579,6 +10601,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="true"
         style="--charcoal-text-area-rows: 3;"
       >
         <textarea
@@ -10588,6 +10611,118 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1
           id="test-id"
           rows="3"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightWithSoftWrap 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; grid-template-columns: 160px 320px; gap: 16px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            狭い幅
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          data-auto-height="true"
+          style="--charcoal-text-area-rows: 1;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="false"
+            id="test-id"
+            rows="1"
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+          </textarea>
+          <div
+            aria-hidden="true"
+            class="charcoal-text-area-mirror"
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。 
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            maxRows と showCount
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          data-auto-height="true"
+          style="--charcoal-text-area-rows: 1; --charcoal-text-area-max-rows: 4;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="true"
+            id="test-id"
+            rows="1"
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+          </textarea>
+          <div
+            aria-hidden="true"
+            class="charcoal-text-area-mirror"
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。 
+          </div>
+          <span
+            class="charcoal-text-area-counter"
+          >
+            135
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -10629,6 +10764,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10675,6 +10811,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > DefaultValue 1`] = 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10727,6 +10864,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Disabled 1`] = `
         aria-disabled="true"
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10772,6 +10910,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Invalid 1`] = `
       <div
         aria-invalid="true"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10824,6 +10963,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Label 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -10871,6 +11011,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="true"
         style="--charcoal-text-area-rows: 1;"
       >
         <textarea
@@ -10880,6 +11021,12 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
           id="test-id"
           rows="1"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+           
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -10923,6 +11070,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="true"
         style="--charcoal-text-area-rows: 1;"
       >
         <textarea
@@ -10932,6 +11080,12 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
           id="test-id"
           rows="1"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+           
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -10972,7 +11126,8 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
+        data-auto-height="true"
+        style="--charcoal-text-area-rows: 4; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -10981,6 +11136,12 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
           id="test-id"
           rows="4"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+           
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -11021,7 +11182,8 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 3;"
+        data-auto-height="true"
+        style="--charcoal-text-area-rows: 3; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -11030,6 +11192,12 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
           id="test-id"
           rows="3"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+           
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -11070,14 +11238,15 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 6;"
+        data-auto-height="true"
+        style="--charcoal-text-area-rows: 3; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
           class="charcoal-text-area-textarea"
           data-no-bottom-padding="true"
           id="test-id"
-          rows="6"
+          rows="3"
         >
           デフォルトの入力内容
 デフォルトの入力内容
@@ -11088,6 +11257,19 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
 デフォルトの入力内容
 デフォルトの入力内容
         </textarea>
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容 
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -11128,6 +11310,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Placeholder 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -11173,6 +11356,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > ReadOnly 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -11225,6 +11409,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Required 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -11269,6 +11454,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > ShowCount 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -11324,6 +11510,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > SubLabel 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
+        data-auto-height="false"
         style="--charcoal-text-area-rows: 4;"
       >
         <textarea
@@ -11381,6 +11568,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > TokenV2 1`] = `
         <div
           aria-invalid="false"
           class="charcoal-text-area-container"
+          data-auto-height="false"
           style="--charcoal-text-area-rows: 4;"
         >
           <textarea
@@ -11431,6 +11619,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > TokenV2 1`] = `
         <div
           aria-invalid="true"
           class="charcoal-text-area-container"
+          data-auto-height="false"
           style="--charcoal-text-area-rows: 4;"
         >
           <textarea
@@ -11477,6 +11666,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > TokenV2 1`] = `
           aria-disabled="true"
           aria-invalid="false"
           class="charcoal-text-area-container"
+          data-auto-height="false"
           style="--charcoal-text-area-rows: 4;"
         >
           <textarea
