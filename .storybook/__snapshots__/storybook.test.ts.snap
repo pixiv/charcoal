@@ -10486,6 +10486,21 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeight 1`] = `
           id="test-id"
           rows="4"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+             
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -10539,6 +10554,28 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
 デフォルトの入力内容
 デフォルトの入力内容
         </textarea>
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+            デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容 
+          </div>
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -10588,6 +10625,143 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1
           id="test-id"
           rows="3"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightWithSoftWrap 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; grid-template-columns: 160px 320px; gap: 16px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            狭い幅
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 1;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="false"
+            id="test-id"
+            rows="1"
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+          </textarea>
+          <div
+            aria-hidden="true"
+            class="charcoal-text-area-mirror"
+          >
+            <div
+              class="charcoal-text-area-mirror-line"
+            >
+               
+            </div>
+            <div
+              class="charcoal-text-area-mirror-text"
+            >
+              改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            maxRows と showCount
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 1;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="true"
+            id="test-id"
+            rows="1"
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+          </textarea>
+          <div
+            aria-hidden="true"
+            class="charcoal-text-area-mirror"
+          >
+            <div
+              class="charcoal-text-area-mirror-line"
+            >
+               
+            </div>
+            <div
+              class="charcoal-text-area-mirror-text"
+            >
+              改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。 
+            </div>
+          </div>
+          <span
+            class="charcoal-text-area-counter"
+          >
+            135
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -10880,6 +11054,21 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
           id="test-id"
           rows="1"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+             
+          </div>
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -10932,6 +11121,21 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
           id="test-id"
           rows="1"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+             
+          </div>
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -10981,6 +11185,21 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
           id="test-id"
           rows="4"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+             
+          </div>
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -11030,6 +11249,21 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
           id="test-id"
           rows="3"
         />
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+             
+          </div>
+        </div>
         <span
           class="charcoal-text-area-counter"
         >
@@ -11088,6 +11322,28 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
 デフォルトの入力内容
 デフォルトの入力内容
         </textarea>
+        <div
+          aria-hidden="true"
+          class="charcoal-text-area-mirror"
+        >
+          <div
+            class="charcoal-text-area-mirror-line"
+          >
+             
+          </div>
+          <div
+            class="charcoal-text-area-mirror-text"
+          >
+            デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容
+デフォルトの入力内容 
+          </div>
+        </div>
         <span
           class="charcoal-text-area-counter"
         >

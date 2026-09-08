@@ -12,6 +12,18 @@
   /* Runtime variable overridden by the React component. */
   --charcoal-text-area-rows: 4;
 
+  /* Prevent zooming for iOS Safari */
+  --charcoal-textarea-safari-prevent-zoom-scale: 0.875;
+  --charcoal-textarea-line-height: calc(
+    22px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+  --charcoal-textarea-padding-y: calc(
+    8px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+  --charcoal-textarea-padding-x: calc(
+    9px / var(--charcoal-textarea-safari-prevent-zoom-scale)
+  );
+
   position: relative;
   overflow: hidden;
 
@@ -53,18 +65,6 @@
   color: inherit;
   box-sizing: border-box;
 
-  /* Prevent zooming for iOS Safari */
-  --charcoal-textarea-safari-prevent-zoom-scale: 0.875;
-  --charcoal-textarea-line-height: calc(
-    22px / var(--charcoal-textarea-safari-prevent-zoom-scale)
-  );
-  --charcoal-textarea-padding-y: calc(
-    8px / var(--charcoal-textarea-safari-prevent-zoom-scale)
-  );
-  --charcoal-textarea-padding-x: calc(
-    9px / var(--charcoal-textarea-safari-prevent-zoom-scale)
-  );
-
   transform-origin: top left;
   transform: scale(var(--charcoal-textarea-safari-prevent-zoom-scale));
   width: calc(100% / var(--charcoal-textarea-safari-prevent-zoom-scale));
@@ -93,6 +93,26 @@
   &::placeholder {
     color: var(--charcoal-color-text-placeholder-default);
   }
+}
+
+.charcoal-text-area-mirror {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  /* textarea と同じ組版・同じ内容幅にして、同じ位置で折り返させる */
+  box-sizing: border-box;
+  font-family: inherit;
+  transform-origin: top left;
+  transform: scale(var(--charcoal-textarea-safari-prevent-zoom-scale));
+  width: calc(100% / var(--charcoal-textarea-safari-prevent-zoom-scale));
+  font-size: calc(14px / var(--charcoal-textarea-safari-prevent-zoom-scale));
+  line-height: var(--charcoal-textarea-line-height);
+  padding: 0 var(--charcoal-textarea-padding-x);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .charcoal-text-area-counter {
