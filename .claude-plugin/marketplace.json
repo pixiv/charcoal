@@ -1,0 +1,25 @@
+{
+  "name": "charcoal",
+  "owner": {
+    "name": "pixiv",
+    "url": "https://github.com/pixiv/charcoal"
+  },
+  "metadata": {
+    "description": "Claude Code plugins and agent skills for the pixiv charcoal design system (@charcoal-ui)"
+  },
+  "plugins": [
+    {
+      "name": "charcoal",
+      "source": "./plugins/charcoal",
+      "description": "Agent skills for adopting @charcoal-ui in an application",
+      "author": {
+        "name": "pixiv"
+      },
+      "homepage": "https://github.com/pixiv/charcoal/tree/main/plugins/charcoal",
+      "repository": "https://github.com/pixiv/charcoal",
+      "license": "Apache-2.0",
+      "keywords": ["charcoal", "pixiv", "design-system", "react"],
+      "category": "web-development"
+    }
+  ]
+}
