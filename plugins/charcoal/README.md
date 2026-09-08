@@ -2,6 +2,17 @@
 
 Claude Code plugin that ships agent skills for `@charcoal-ui`. The same `skills/` directory is also readable by [`npx skills`](https://github.com/vercel-labs/skills), so Codex, Cursor, and other agents install from here too.
 
+## Skills
+
+| Skill                               | Use it for                                                      |
+| ----------------------------------- | --------------------------------------------------------------- |
+| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components |
+| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route     |
+| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                      |
+| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them    |
+
+They exist because charcoal's own documentation is not machine-readable: the docs site is a Storybook SPA that returns no content to a fetcher, npm package pages return 403, and the `pages/` docsify site has been stale since 2023. Agents that try to look charcoal up on the web reconstruct it from package internals — slowly — or invent it. Every one of the four skills spells out the Design Token 2.0 opt-in (`.ch-token-v2`), which is the step agents drop most often.
+
 ## Install
 
 ### Claude Code
@@ -75,7 +86,8 @@ Both installers read the same files. Claude Code copies `plugins/charcoal/` into
 ## Add a skill
 
 1. Create `plugins/charcoal/skills/<skill-name>/SKILL.md` with `name` and `description` in the frontmatter. `name` must match the directory name.
-2. Run the checks below.
+2. Write it against a real failure: run the scenario it covers with an agent that does _not_ have the skill, record what it gets wrong, and write only what closes that gap.
+3. Run the checks below.
 
 ## Versioning
 
@@ -104,6 +116,8 @@ To confirm `npx skills` discovery from a local checkout:
 ```bash
 cd "$(mktemp -d)" && npx skills add /path/to/charcoal -a codex -y && npx skills list
 ```
+
+Then ask the agent something the skills cover — "charcoal のボタンに色が当たらない" should get you `.ch-token-v2`, not a Tailwind setup.
 
 ## If a skill does not show up
 
