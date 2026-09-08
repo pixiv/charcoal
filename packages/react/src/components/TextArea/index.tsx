@@ -5,7 +5,6 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
-  useMemo,
   useRef,
   useState,
 } from 'react'
@@ -16,6 +15,52 @@ import { AssistiveText } from '../TextField/AssistiveText'
 import { useClassNames } from '../../_lib/useClassNames'
 import { useVisuallyHidden } from 'react-aria/VisuallyHidden'
 import { useId } from 'react-aria/useId'
+import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
+import { observeResize } from '../Carousel/resizeObserver'
+
+/**
+ * 値に含まれる改行だけから行数を数える。CSS にもレイアウトにも依存しないため、
+ * 実測できない環境ではこれを使う。
+ */
+const countValueRows = (value: string) => (value.match(/\n/gu)?.length ?? 0) + 1
+
+/**
+ * 折り返しを含めて実際に表示されている行数を DOM から測る。
+ * 測定できなかった場合は `undefined` を返す。
+ */
+const measureTextAreaRows = (
+  textarea: HTMLTextAreaElement,
+): number | undefined => {
+  // 1 行の高さだけは CSS 由来なので読むしかない。レイアウトを汚す前に読めば
+  // スタイル再計算だけで済む。padding は下で clientHeight から得るので読まない
+  // （getComputedStyle の padding / height はレイアウトまで走らせてしまう）。
+  const lineHeight = Number.parseFloat(getComputedStyle(textarea).lineHeight)
+
+  const previous = {
+    height: textarea.style.height,
+    overflowY: textarea.style.overflowY,
+  }
+
+  try {
+    // 高さが固定されていると scrollHeight が内容に追随しないので一旦潰す。
+    textarea.style.height = '0px'
+    // 測定中だけ現れるスクロールバーが行の幅を狭めるのを防ぐ。
+    textarea.style.overflowY = 'hidden'
+
+    // box-sizing: border-box なので height: 0 だと content box が潰れ、
+    // clientHeight は padding そのものになる。差分が内容の高さ。
+    // 2 つの読み取りは同じレイアウトで済むので強制リフローは 1 回だけ。
+    const contentHeight = textarea.scrollHeight - textarea.clientHeight
+    // scrollHeight は整数、line-height は iOS Safari のズーム対策で小数になりうる。
+    const rows = Math.round(contentHeight / lineHeight)
+
+    // レイアウトが無い環境（jsdom, display: none, 未挿入）や line-height が
+    // `normal` なら 0 以下か NaN、`line-height: 0` なら Infinity。すべて測定失敗。
+    return Number.isFinite(rows) && rows >= 1 ? rows : undefined
+  } finally {
+    Object.assign(textarea.style, previous)
+  }
+}
 
 /**
  * `TextArea` を `imperativeRef` から操作するためのハンドル
@@ -45,6 +90,12 @@ export type TextAreaProps = {
   requiredText?: string
   disabled?: boolean
   subLabel?: React.ReactNode
+  /**
+   * 内容に合わせて高さを自動調整する。折り返しも含めて実測するため、
+   * 幅は呼び出し側で決めること。親要素が内容依存の幅（shrink-to-fit, inline-flex,
+   * fit-content, 幅未指定の絶対配置など）だと想定より狭くなり、折り返しが増えて
+   * 高さが過剰に伸びる。
+   */
   autoHeight?: boolean
 
   maxRows?: number
@@ -82,52 +133,45 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     // `null` is invalid for TextAreaProps, but may arrive at runtime. Keep the
     // pre-f710d512 nullish fallback so getCount is never called with null.
     const countValue = value ?? defaultValue?.toString() ?? ''
-    const [rows, setRows] = useState(initialRows)
+    const [contentRows, setContentRows] = useState<number>()
     const [count, setCount] = useState(getCount(countValue))
 
     const textareaRef = useRef<HTMLTextAreaElement>(null)
-    const containerRef = useRef(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     useFocusWithClick(containerRef, textareaRef)
     const { visuallyHiddenProps } = useVisuallyHidden()
 
-    const isEnableAutoHeight = useMemo(
-      () => autoHeight || (maxRows && maxRows >= 0),
-      [autoHeight, maxRows],
+    // maxRows は 1 以上の時だけ上限として扱う
+    const rowsLimit =
+      maxRows !== undefined && maxRows >= 1 ? maxRows : undefined
+    const isEnableAutoHeight = autoHeight || rowsLimit !== undefined
+    // 表示行数は実測値を rows 以上 maxRows 以下に収めたもの。autoHeight が無効なら
+    // contentRows は undefined のままなので rows prop がそのまま出る。
+    const rows = Math.min(
+      Math.max(initialRows, contentRows ?? 0),
+      rowsLimit ?? Infinity,
     )
     const classNames = useClassNames('charcoal-text-area-root', className)
     const showAssistiveText =
       assistiveText != null && assistiveText.length !== 0
 
-    const syncHeight = useCallback(
-      (textarea: HTMLTextAreaElement) => {
-        const currentRows =
-          (`${textarea.value}\n`.match(/\n/gu)?.length ?? 0) || 1
-        const hasValidMaxRows = maxRows !== undefined && maxRows >= 1
-        const nextRows = initialRows <= currentRows ? currentRows : initialRows
-
-        if (!hasValidMaxRows) {
-          setRows(nextRows)
-          return
-        }
-
-        setRows(Math.min(nextRows, maxRows))
-      },
-      [initialRows, maxRows],
-    )
+    const syncHeight = useCallback((textarea: HTMLTextAreaElement) => {
+      // 実測できない環境では改行数にフォールバックする。折り返しは反映されないが、
+      // 少なくとも改行分は伸びる（この変更以前と同じ挙動）。
+      setContentRows(
+        measureTextAreaRows(textarea) ?? countValueRows(textarea.value),
+      )
+    }, [])
 
     const syncTextAreaState = useCallback(
       (textarea: HTMLTextAreaElement) => {
-        const count = getCount(textarea.value)
-
         if (isUncontrolled) {
-          setCount(count)
+          setCount(getCount(textarea.value))
         }
 
         if (isEnableAutoHeight) {
           syncHeight(textarea)
         }
-
-        return count
       },
       [getCount, isEnableAutoHeight, isUncontrolled, syncHeight],
     )
@@ -140,10 +184,16 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           return
         }
 
-        syncTextAreaState(e.currentTarget)
+        // 非制御では DOM が値の source of truth なので、ここで内部状態を合わせる。
+        // 制御コンポーネントでは親が value を確定させた後（下の layout effect）に
+        // 測る。ここで測ると、親が変更を弾いた時に行数だけ取り残される。
+        if (isUncontrolled) {
+          syncTextAreaState(e.currentTarget)
+        }
+
         onChange?.(value)
       },
-      [getCount, maxLength, onChange, syncTextAreaState],
+      [getCount, isUncontrolled, maxLength, onChange, syncTextAreaState],
     )
 
     useImperativeHandle(
@@ -170,24 +220,46 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const describedbyId = useId()
     const labelledbyId = useId()
 
+    // 制御コンポーネントの時の挙動。高さと違い描画前に確定する必要はない。
     useEffect(() => {
-      // 制御コンポーネントの時の挙動
       if (!isUncontrolled) {
         setCount(getCount(countValue))
       }
+    }, [countValue, getCount, isUncontrolled])
 
-      //　autoHeight同期(valueが変更された時にsyncHeightしたい)
+    // autoHeight 同期(確定した value prop が変わった時に syncHeight したい)。
+    // ちらつきを避けるため描画前に行う。
+    useIsomorphicLayoutEffect(() => {
       if (isEnableAutoHeight && textareaRef.current !== null) {
         syncHeight(textareaRef.current)
       }
-    }, [
-      isUncontrolled,
-      countValue,
-      getCount,
-      isEnableAutoHeight,
-      textareaRef,
-      syncHeight,
-    ])
+    }, [value, isEnableAutoHeight, syncHeight])
+
+    // 幅が変われば折り返し位置が変わるので測り直す。
+    useIsomorphicLayoutEffect(() => {
+      const container = containerRef.current
+      if (!isEnableAutoHeight || container === null) {
+        return
+      }
+
+      // 基準値は observe する前に取っておく。最初の通知を基準取りに使うと、
+      // その通知が届く前に幅が変わった場合に変化を取りこぼす。
+      let previousWidth = container.clientWidth
+
+      return observeResize(container, () => {
+        const width = container.clientWidth
+        if (width === previousWidth) {
+          // 高さだけが変わった通知（自分の setState の結果）では測り直さない。
+          // 幅が変わっていない限り再入しないので、ループにはならない。
+          return
+        }
+        previousWidth = width
+
+        if (textareaRef.current !== null) {
+          syncHeight(textareaRef.current)
+        }
+      })
+    }, [isEnableAutoHeight, syncHeight])
 
     return (
       <div className={classNames} aria-disabled={disabled}>
