@@ -10485,6 +10485,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeight 1`] = `
           data-no-bottom-padding="false"
           id="test-id"
           rows="4"
+          style=""
         />
       </div>
     </div>
@@ -10529,6 +10530,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndDefaul
           data-no-bottom-padding="true"
           id="test-id"
           rows="8"
+          style=""
         >
           デフォルトの入力内容
 デフォルトの入力内容
@@ -10587,7 +10589,102 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1
           data-no-bottom-padding="false"
           id="test-id"
           rows="3"
+          style=""
         />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightWithSoftWrap 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; grid-template-columns: 160px 320px; gap: 16px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            狭い幅
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 1;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="false"
+            id="test-id"
+            rows="1"
+            style=""
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+          </textarea>
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            maxRows と showCount
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 1;"
+        >
+          <textarea
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="true"
+            id="test-id"
+            rows="1"
+            style=""
+          >
+            改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。改行を含まない長い日本語テキストでも、入力欄の横幅に合わせて折り返され、高さが伸縮します。
+          </textarea>
+          <span
+            class="charcoal-text-area-counter"
+          >
+            135
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -10879,6 +10976,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
           data-no-bottom-padding="true"
           id="test-id"
           rows="1"
+          style=""
         />
         <span
           class="charcoal-text-area-counter"
@@ -10931,6 +11029,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowWorkingChangi
           data-no-bottom-padding="true"
           id="test-id"
           rows="1"
+          style=""
         />
         <span
           class="charcoal-text-area-counter"
@@ -10980,6 +11079,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
           data-no-bottom-padding="true"
           id="test-id"
           rows="4"
+          style=""
         />
         <span
           class="charcoal-text-area-counter"
@@ -11029,6 +11129,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
           data-no-bottom-padding="true"
           id="test-id"
           rows="3"
+          style=""
         />
         <span
           class="charcoal-text-area-counter"
@@ -11078,6 +11179,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
           data-no-bottom-padding="true"
           id="test-id"
           rows="6"
+          style=""
         >
           デフォルトの入力内容
 デフォルトの入力内容
