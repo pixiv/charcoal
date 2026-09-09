@@ -3,6 +3,26 @@
   line-height: 22px;
   margin: 0;
   color: var(--charcoal-color-text-secondary-default);
+
+  a[href] {
+    color: var(--charcoal-color-text-info-default);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: var(--charcoal-color-text-info-hover);
+    }
+
+    &:active {
+      color: var(--charcoal-color-text-info-press);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--charcoal-color-border-focus-1);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
 }
 
 .charcoal-text-field-assistive-text[data-invalid='true'] {
