@@ -4,6 +4,12 @@ import TextField from '.'
 import '@testing-library/jest-dom'
 
 describe('TextField component', () => {
+  it('passes required to the input element', () => {
+    const { getByRole } = render(<TextField required />)
+
+    expect(getByRole('textbox')).toBeRequired()
+  })
+
   it('should not render prefix and suffix when not provided', () => {
     const { container } = render(<TextField />)
 
