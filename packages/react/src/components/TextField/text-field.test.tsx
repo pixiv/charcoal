@@ -1,9 +1,29 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import TextField from '.'
 
 import '@testing-library/jest-dom'
 
 describe('TextField component', () => {
+  it('displays optionalText when the field is not required', () => {
+    render(<TextField label="Label" optionalText="任意" />)
+
+    expect(screen.getByText('任意')).toBeInTheDocument()
+  })
+
+  it('prioritizes requiredText over optionalText for required fields', () => {
+    render(
+      <TextField
+        label="Label"
+        required
+        requiredText="必須"
+        optionalText="任意"
+      />,
+    )
+
+    expect(screen.getByText('必須')).toBeInTheDocument()
+    expect(screen.queryByText('任意')).not.toBeInTheDocument()
+  })
+
   it('passes required to the input element', () => {
     const { getByRole } = render(<TextField required />)
 
