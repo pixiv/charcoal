@@ -47,6 +47,12 @@ export const RequiredText: StoryObj<typeof TextField> = {
   },
 }
 
+export const OptionalText: StoryObj<typeof TextField> = {
+  render() {
+    return <TextField label="Label" showLabel optionalText="任意" />
+  },
+}
+
 export const AssistiveText: StoryObj<typeof TextField> = {
   render() {
     return <TextField label="Label" assistiveText="説明が入ります" />

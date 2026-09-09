@@ -24,6 +24,7 @@ export type TextFieldProps = {
 
   label?: string
   requiredText?: string
+  optionalText?: string
   disabled?: boolean
   subLabel?: React.ReactNode
 
@@ -42,6 +43,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       prefix = null,
       required,
       requiredText,
+      optionalText,
       showCount = false,
       showLabel = false,
       subLabel,
@@ -98,6 +100,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           label={label}
           required={required}
           requiredText={requiredText}
+          optionalText={optionalText}
           subLabel={subLabel}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
