@@ -11936,7 +11936,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > AssistiveTextWith
           パスワードは8文字以上で入力してください。
           <a
             class="charcoal-clickable"
-            href="https://www.pixiv.net/terms/"
+            href="https://www.pixiv.net/"
           >
             パスワードの要件を確認する
           </a>
@@ -11990,7 +11990,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > AssistiveTextWith
           メールアドレスの形式が正しくありません。
           <a
             class="charcoal-clickable"
-            href="https://www.pixiv.net/terms/"
+            href="https://www.pixiv.net/"
           >
             メールアドレスの入力規則を確認する
           </a>
@@ -12045,7 +12045,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > AssistiveTextWith
           この項目は現在変更できません。
           <a
             class="charcoal-clickable"
-            href="https://www.pixiv.net/terms/"
+            href="https://www.pixiv.net/"
           >
             アカウント設定の変更方法を確認する
           </a>
@@ -12095,12 +12095,12 @@ exports[`Storybook Tests > react/TextField > react/TextField > AssistiveTextWith
           data-invalid="false"
           id="test-id"
         >
-          長文の折り返しと横方向のoverflowを確認できます。
+          長文の折り返しと横方向のoverflowを確認できます。 長文の折り返しと横方向のoverflowを確認できます。 長文の折り返しと横方向のoverflowを確認できます。
           <a
             class="charcoal-clickable"
-            href="https://www.pixiv.net/terms/"
+            href="https://pixiv.net"
           >
-            パスワード再設定の詳細ガイドを確認するhttps://www.pixiv.net/terms/very-long-unbroken-link-for-overflow-check
+            パスワード再設定の詳細ガイドを確認する
           </a>
         </div>
       </div>

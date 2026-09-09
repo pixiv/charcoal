@@ -68,7 +68,7 @@ export const AssistiveTextWithLink: StoryObj<typeof TextField> = {
           assistiveText={
             <>
               パスワードは8文字以上で入力してください。
-              <Clickable component="a" href="https://www.pixiv.net/terms/">
+              <Clickable component="a" href="https://www.pixiv.net/">
                 パスワードの要件を確認する
               </Clickable>
             </>
@@ -80,7 +80,7 @@ export const AssistiveTextWithLink: StoryObj<typeof TextField> = {
           assistiveText={
             <>
               メールアドレスの形式が正しくありません。
-              <Clickable component="a" href="https://www.pixiv.net/terms/">
+              <Clickable component="a" href="https://www.pixiv.net/">
                 メールアドレスの入力規則を確認する
               </Clickable>
             </>
@@ -92,7 +92,7 @@ export const AssistiveTextWithLink: StoryObj<typeof TextField> = {
           assistiveText={
             <>
               この項目は現在変更できません。
-              <Clickable component="a" href="https://www.pixiv.net/terms/">
+              <Clickable component="a" href="https://www.pixiv.net/">
                 アカウント設定の変更方法を確認する
               </Clickable>
             </>
@@ -103,8 +103,10 @@ export const AssistiveTextWithLink: StoryObj<typeof TextField> = {
           assistiveText={
             <>
               長文の折り返しと横方向のoverflowを確認できます。
-              <Clickable component="a" href="https://www.pixiv.net/terms/">
-                パスワード再設定の詳細ガイドを確認するhttps://www.pixiv.net/terms/very-long-unbroken-link-for-overflow-check
+              長文の折り返しと横方向のoverflowを確認できます。
+              長文の折り返しと横方向のoverflowを確認できます。
+              <Clickable component="a" href="https://pixiv.net">
+                パスワード再設定の詳細ガイドを確認する
               </Clickable>
             </>
           }
