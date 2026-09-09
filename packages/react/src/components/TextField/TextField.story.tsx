@@ -56,7 +56,11 @@ export const AssistiveText: StoryObj<typeof TextField> = {
 export const SubLabel: StoryObj<typeof TextField> = {
   render() {
     return (
-      <TextField label="Label" subLabel={<Clickable>Text Link</Clickable>} />
+      <TextField
+        label="Label"
+        subLabel={<Clickable>Text Link</Clickable>}
+        showLabel
+      />
     )
   },
 }
