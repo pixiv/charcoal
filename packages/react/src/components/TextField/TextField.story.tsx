@@ -53,6 +53,61 @@ export const AssistiveText: StoryObj<typeof TextField> = {
   },
 }
 
+export const AssistiveTextWithLink: StoryObj<typeof TextField> = {
+  render() {
+    return (
+      <div style={{ display: 'grid', gap: 24, width: 320 }}>
+        <TextField
+          label="通常"
+          assistiveText={
+            <>
+              パスワードは8文字以上で入力してください。
+              <Clickable component="a" href="https://www.pixiv.net/terms/">
+                パスワードの要件を確認する
+              </Clickable>
+            </>
+          }
+        />
+        <TextField
+          label="Invalid"
+          invalid
+          assistiveText={
+            <>
+              メールアドレスの形式が正しくありません。
+              <Clickable component="a" href="https://www.pixiv.net/terms/">
+                メールアドレスの入力規則を確認する
+              </Clickable>
+            </>
+          }
+        />
+        <TextField
+          label="Disabled"
+          disabled
+          assistiveText={
+            <>
+              この項目は現在変更できません。
+              <Clickable component="a" href="https://www.pixiv.net/terms/">
+                アカウント設定の変更方法を確認する
+              </Clickable>
+            </>
+          }
+        />
+        <TextField
+          label="長文と横overflow"
+          assistiveText={
+            <>
+              長文の折り返しと横方向のoverflowを確認できます。
+              <Clickable component="a" href="https://www.pixiv.net/terms/">
+                パスワード再設定の詳細ガイドを確認するhttps://www.pixiv.net/terms/very-long-unbroken-link-for-overflow-check
+              </Clickable>
+            </>
+          }
+        />
+      </div>
+    )
+  },
+}
+
 export const SubLabel: StoryObj<typeof TextField> = {
   render() {
     return (
