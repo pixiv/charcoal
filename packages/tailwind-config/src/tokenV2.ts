@@ -5,13 +5,18 @@ import {
   flattenKeyWithoutDefault,
   mapDefaultKey as mapDefaultKeys,
 } from './util'
+import { normalizeTokenV2SizeKeys } from './tokenV2SizeKeys'
 
-export function unstable_createTailwindConfigTokenV2(): Omit<
-  Config,
-  'content'
-> {
+export function createTailwindConfigTokenV2(): Omit<Config, 'content'> {
+  const textFontSize = normalizeTokenV2SizeKeys(light.text['font-size'])
+  const textLineHeight = normalizeTokenV2SizeKeys(light.text['line-height'])
+  const space = normalizeTokenV2SizeKeys(light.space)
+  const borderWidth = normalizeTokenV2SizeKeys(light['border-width'])
+  const radius = normalizeTokenV2SizeKeys(light.radius)
+  const paragraphWidth = normalizeTokenV2SizeKeys(light['paragraph-width'])
+
   const fontSize = Object.fromEntries(
-    Object.entries(light.text['font-size']).flatMap(([k, v]) => {
+    Object.entries(textFontSize).flatMap(([k, v]) => {
       // text.fontSize.paragraph + text.lineHeight.paragraph -> text-paragraph
       if (typeof v === 'string') {
         return [
@@ -20,29 +25,29 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
             [
               v,
               // @ts-expect-error k is keyof line-height
-              { lineHeight: light.text['line-height'][k] },
+              { lineHeight: textLineHeight[k] },
             ],
           ],
         ]
       }
 
-      // text.fontSize.heading.s + text.lineHeight.heading.s -> text-heading-s
+      // text.fontSize.heading.s + text.lineHeight.heading.s -> text-heading-sm
       return Object.entries(v as Record<string, string>).map(([kk, vv]) => {
         return [
           [k, kk].join('-'),
           [
             vv,
             // @ts-expect-error k is keyof line-height
-            { lineHeight: light.text['line-height'][k][kk] },
+            { lineHeight: textLineHeight[k][kk] },
           ],
         ]
       })
     }),
   ) as NonNullable<Config['theme']>['fontSize']
 
-  // space.target.s -> p-target-s
+  // space.target.s -> p-target-sm
   // space.gap.gapButtons -> p-gap-buttons
-  const spacing = flattenKeys(light.space, (key) => !/(gap|padding)/.test(key))
+  const spacing = flattenKeys(space, (key) => !/(gap|padding)/.test(key))
   // color.container.default -> bg-container
   // color.container.hover -> bg-container-hover
   const colors = mapDefaultKeys(light.color)
@@ -50,13 +55,13 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
   const config: Omit<Config, 'content'> = {
     darkMode: 'media',
     theme: {
-      // borderWidth.m -> border-m
-      // borderWidth.focus.1 -> border-focus-1
+      // borderWidth.m -> border-wd-md
+      // borderWidth.focus.1 -> border-wd-focus-1
       borderWidth: flattenKeyWithoutDefault({
-        'width-ch': flattenKeys(light['border-width']), // unstable border width token
+        wd: flattenKeys(borderWidth), // unstable border width token
       }),
-      borderRadius: light.radius,
-      borderColor: flattenKeyWithoutDefault({ ch: flattenKeys(colors.border) }),
+      borderRadius: flattenKeys({ ch: radius }),
+      borderColor: flattenKeyWithoutDefault({ cl: flattenKeys(colors.border) }),
 
       colors,
 
@@ -65,7 +70,7 @@ export function unstable_createTailwindConfigTokenV2(): Omit<
 
       spacing,
       gap: spacing,
-      width: light['paragraph-width'],
+      width: paragraphWidth,
     },
   }
 
