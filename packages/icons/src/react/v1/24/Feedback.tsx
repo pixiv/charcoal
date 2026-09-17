@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { SVGProps } from 'react'
 import { Ref, forwardRef } from 'react'
-const SvgArrowUp = (
+const SvgFeedback = (
   props: SVGProps<SVGSVGElement>,
   ref: Ref<SVGSVGElement>,
 ) => (
@@ -17,12 +17,12 @@ const SvgArrowUp = (
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 4.586l6.707 6.707a1 1 0 01-1.414 1.414L13 8.414V19a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 11-1.414-1.414L12 4.586z"
+      d="M18 3c2.21 0 4 1.79 4 4v10c0 2.21-1.79 4-4 4H8.5l-5.08 2.35c-.5.23-1.1.01-1.33-.49a.992.992 0 01-.09-.42V7c0-2.21 1.79-4 4-4h12zm-6 12a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm0-8.5a1 1 0 00-1 1v5a1 1 0 102 0v-5a1 1 0 00-1-1z"
       fill="currentColor"
     />
   </svg>
 )
-export const IconArrowUp24: ReturnType<
+export const IconFeedback24: ReturnType<
   typeof React.forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>
-> = forwardRef(SvgArrowUp)
-export default IconArrowUp24
+> = forwardRef(SvgFeedback)
+export default IconFeedback24

@@ -134,6 +134,7 @@ declare var _default: {
 "24/FaceEdit": { uri: string, isSetCurrentcolor: boolean };
 "24/Fashion": { uri: string, isSetCurrentcolor: boolean };
 "24/Feed": { uri: string, isSetCurrentcolor: boolean };
+"24/Feedback": { uri: string, isSetCurrentcolor: boolean };
 "24/File": { uri: string, isSetCurrentcolor: boolean };
 "24/Filter": { uri: string, isSetCurrentcolor: boolean };
 "24/Flare": { uri: string, isSetCurrentcolor: boolean };
@@ -248,6 +249,7 @@ declare var _default: {
 "24/Temperature": { uri: string, isSetCurrentcolor: boolean };
 "24/Text": { uri: string, isSetCurrentcolor: boolean };
 "24/Thread": { uri: string, isSetCurrentcolor: boolean };
+"24/Translation": { uri: string, isSetCurrentcolor: boolean };
 "24/Trash": { uri: string, isSetCurrentcolor: boolean };
 "24/TrashAlt": { uri: string, isSetCurrentcolor: boolean };
 "24/Undo": { uri: string, isSetCurrentcolor: boolean };
@@ -290,6 +292,7 @@ declare var _default: {
 "16/Search": { uri: string, isSetCurrentcolor: boolean };
 "16/Smile": { uri: string, isSetCurrentcolor: boolean };
 "16/Speaker": { uri: string, isSetCurrentcolor: boolean };
+"16/Translation": { uri: string, isSetCurrentcolor: boolean };
 "16/Trash": { uri: string, isSetCurrentcolor: boolean };
 "16/Up": { uri: string, isSetCurrentcolor: boolean };
 "16/View": { uri: string, isSetCurrentcolor: boolean };
