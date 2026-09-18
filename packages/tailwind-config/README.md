@@ -2,6 +2,8 @@
 
 charcoal のカラーテーマやスペーシングなどの定数を元に tailwind.config.js を生成するライブラリです。
 
+`@charcoal-ui/tailwind-config/token-v2` は Charcoal パッケージ間連携用であり、外部からの直接利用はサポートしません。token v2 の解決には `@charcoal-ui/design-token-resolver` を利用してください。
+
 ## インストール
 
 npm
