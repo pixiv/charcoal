@@ -695,6 +695,8 @@
   );
   --charcoal-color-border-hud: var(--charcoal-color-background-default);
 }
+:root.ch-token-v2.ch-text-dn-default,
+:root .ch-token-v2.ch-text-dn-default,
 :root.ch-text-dn-default,
 :root .ch-text-dn-default {
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-1);
@@ -727,6 +729,8 @@
   --charcoal-text-font-weight-bold: var(--charcoal-text-font-weight-70);
 }
 
+:root.ch-token-v2.ch-text-dn-compact,
+:root .ch-token-v2.ch-text-dn-compact,
 :root.ch-text-dn-compact,
 :root .ch-text-dn-compact {
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-0);
@@ -759,6 +763,8 @@
   --charcoal-text-font-weight-bold: var(--charcoal-text-font-weight-70);
 }
 
+:root.ch-token-v2.ch-text-dn-cozy,
+:root .ch-token-v2.ch-text-dn-cozy,
 :root.ch-text-dn-cozy,
 :root .ch-text-dn-cozy {
   --charcoal-text-font-size-caption-s: var(--charcoal-text-font-size-10);
