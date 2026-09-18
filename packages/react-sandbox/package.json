@@ -22,7 +22,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
-    "@babel/core": "7.28.5",
+    "@babel/core": "7.29.6",
     "@babel/parser": "7.28.5",
     "@storybook/addon-knobs": "^7.0.2",
     "@storybook/addons": "^7.4.1",
