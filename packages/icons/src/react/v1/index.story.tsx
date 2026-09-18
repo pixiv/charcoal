@@ -29,6 +29,7 @@ import { IconRemove16 } from './16/Remove'
 import { IconSearch16 } from './16/Search'
 import { IconSmile16 } from './16/Smile'
 import { IconSpeaker16 } from './16/Speaker'
+import { IconTranslation16 } from './16/Translation'
 import { IconTrash16 } from './16/Trash'
 import { IconUp16 } from './16/Up'
 import { IconView16 } from './16/View'
@@ -91,6 +92,7 @@ import { IconExpand24 } from './24/Expand'
 import { IconFaceEdit24 } from './24/FaceEdit'
 import { IconFashion24 } from './24/Fashion'
 import { IconFeed24 } from './24/Feed'
+import { IconFeedback24 } from './24/Feedback'
 import { IconFile24 } from './24/File'
 import { IconFilter24 } from './24/Filter'
 import { IconFlare24 } from './24/Flare'
@@ -205,6 +207,7 @@ import { IconSun24 } from './24/Sun'
 import { IconTemperature24 } from './24/Temperature'
 import { IconText24 } from './24/Text'
 import { IconThread24 } from './24/Thread'
+import { IconTranslation24 } from './24/Translation'
 import { IconTrash24 } from './24/Trash'
 import { IconTrashAlt24 } from './24/TrashAlt'
 import { IconUndo24 } from './24/Undo'
@@ -766,6 +769,11 @@ export default {
           <div>
             <IconFeed24 />
             <code>&lt;IconFeed24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconFeedback24 />
+            <code>&lt;IconFeedback24 /&gt;</code>
           </div>
 
           <div>
@@ -1636,6 +1644,16 @@ export default {
           <div>
             <IconThread24 />
             <code>&lt;IconThread24 /&gt;</code>
+          </div>
+
+          <div>
+            <IconTranslation16 />
+            <code>&lt;IconTranslation16 /&gt;</code>
+          </div>
+
+          <div>
+            <IconTranslation24 />
+            <code>&lt;IconTranslation24 /&gt;</code>
           </div>
 
           <div>
