@@ -20,20 +20,31 @@ export function DropdownPopover({ children, ...props }: DropdownPopoverProps) {
 
   useEffect(() => {
     if (props.isOpen) {
-      if (props.value !== undefined && props.value !== '') {
+      const popover = ref.current
+      if (popover === null) return
+      const options = Array.from(
+        popover.querySelectorAll<HTMLElement>('[role="option"]'),
+      )
+      const selectedElement = options.find(
+        (option) =>
+          option.ariaDisabled !== 'true' &&
+          (props.value === ''
+            ? option.dataset.noSelection === 'true'
+            : option.dataset.noSelection !== 'true' &&
+              option.dataset.key === props.value),
+      )
+      const firstEnabledElement = options.find(
+        (element) => element.ariaDisabled !== 'true',
+      )
+
+      if (selectedElement instanceof HTMLElement) {
         // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
         const windowScrollY = window.scrollY
         const windowScrollX = window.scrollX
-        const selectedElement = document.querySelector(
-          `[data-key="${props.value.toString()}"]`,
-        ) as HTMLElement | undefined
-        selectedElement?.focus()
+        selectedElement.focus()
         window.scrollTo(windowScrollX, windowScrollY)
-      } else {
-        const el = ref.current?.querySelector("[role='option']")
-        if (el instanceof HTMLElement) {
-          el.focus()
-        }
+      } else if (firstEnabledElement instanceof HTMLElement) {
+        firstEnabledElement.focus()
       }
     }
   }, [props.value, props.isOpen])
