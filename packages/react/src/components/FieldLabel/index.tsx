@@ -10,6 +10,7 @@ export interface FieldLabelProps extends React.LabelHTMLAttributes<HTMLLabelElem
   readonly required?: boolean
   // TODO: 翻訳用のContextで注入する
   readonly requiredText?: string
+  readonly optionalText?: string
 }
 
 const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
@@ -20,6 +21,7 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
       label,
       required = false,
       requiredText,
+      optionalText,
       subLabel,
       ...labelProps
     },
@@ -31,11 +33,15 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
         <label ref={ref} className="charcoal-field-label" {...labelProps}>
           {label}
         </label>
-        {required && (
+        {required ? (
           <div className="charcoal-field-label-required-text">
             {requiredText}
           </div>
-        )}
+        ) : optionalText !== undefined ? (
+          <div className="charcoal-field-label-required-text">
+            {optionalText}
+          </div>
+        ) : null}
         <div className="charcoal-field-label-sub-label">
           <span>{subLabel}</span>
         </div>

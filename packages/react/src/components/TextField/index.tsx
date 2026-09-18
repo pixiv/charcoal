@@ -19,11 +19,12 @@ export type TextFieldProps = {
 
   showCount?: boolean
   showLabel?: boolean
-  assistiveText?: string
+  assistiveText?: ReactNode
   invalid?: boolean
 
   label?: string
   requiredText?: string
+  optionalText?: string
   disabled?: boolean
   subLabel?: React.ReactNode
 
@@ -42,6 +43,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
       prefix = null,
       required,
       requiredText,
+      optionalText,
       showCount = false,
       showLabel = false,
       subLabel,
@@ -86,7 +88,9 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const labelledbyId = useId()
 
     const showAssistiveText =
-      assistiveText != null && assistiveText.length !== 0
+      assistiveText != null &&
+      assistiveText !== '' &&
+      typeof assistiveText !== 'boolean'
 
     const classNames = useClassNames('charcoal-text-field-root', className)
 
@@ -98,6 +102,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           label={label}
           required={required}
           requiredText={requiredText}
+          optionalText={optionalText}
           subLabel={subLabel}
           {...(!showLabel ? visuallyHiddenProps : {})}
         />
@@ -119,6 +124,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
               maxLength={maxLength}
               onChange={handleChange}
               disabled={disabled}
+              required={required}
               ref={mergeRefs(forwardRef, inputRef)}
               type={type}
               value={value}

@@ -11881,6 +11881,234 @@ exports[`Storybook Tests > react/TextField > react/TextField > AssistiveText 1`]
 </div>
 `;
 
+exports[`Storybook Tests > react/TextField > react/TextField > AssistiveTextWithLink 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: grid; gap: 24px; width: 320px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            通常
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-container"
+          data-invalid="false"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-describedby="test-id"
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="false"
+              id="test-id"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          パスワードは8文字以上で入力してください。
+          <a
+            class="charcoal-clickable"
+            href="https://www.pixiv.net/"
+          >
+            パスワードの要件を確認する
+          </a>
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Invalid
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-container"
+          data-invalid="true"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-describedby="test-id"
+              aria-invalid="true"
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="true"
+              id="test-id"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="true"
+          id="test-id"
+        >
+          メールアドレスの形式が正しくありません。
+          <a
+            class="charcoal-clickable"
+            href="https://www.pixiv.net/"
+          >
+            メールアドレスの入力規則を確認する
+          </a>
+        </div>
+      </div>
+      <div
+        aria-disabled="true"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Disabled
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          aria-disabled="true"
+          class="charcoal-text-field-container"
+          data-invalid="false"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-describedby="test-id"
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="false"
+              disabled=""
+              id="test-id"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          この項目は現在変更できません。
+          <a
+            class="charcoal-clickable"
+            href="https://www.pixiv.net/"
+          >
+            アカウント設定の変更方法を確認する
+          </a>
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
+        class="charcoal-text-field-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            長文と横overflow
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-container"
+          data-invalid="false"
+        >
+          <div
+            class="charcoal-text-field-input-root"
+          >
+            <input
+              aria-describedby="test-id"
+              aria-labelledby="test-id"
+              class="charcoal-text-field-input"
+              data-invalid="false"
+              id="test-id"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="charcoal-text-field-assistive-text"
+          data-invalid="false"
+          id="test-id"
+        >
+          長文の折り返しと横方向のoverflowを確認できます。 長文の折り返しと横方向のoverflowを確認できます。 長文の折り返しと横方向のoverflowを確認できます。
+          <a
+            class="charcoal-clickable"
+            href="https://pixiv.net"
+          >
+            パスワード再設定の詳細ガイドを確認する
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TextField > react/TextField > Default 1`] = `
 <div>
   <div
@@ -12137,6 +12365,58 @@ exports[`Storybook Tests > react/TextField > react/TextField > Number 1`] = `
 </div>
 `;
 
+exports[`Storybook Tests > react/TextField > react/TextField > OptionalText 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-disabled="false"
+      class="charcoal-text-field-root"
+    >
+      <div
+        class="charcoal-field-label-root"
+      >
+        <label
+          class="charcoal-field-label"
+          for="test-id"
+          id="test-id"
+        >
+          Label
+        </label>
+        <div
+          class="charcoal-field-label-required-text"
+        >
+          任意
+        </div>
+        <div
+          class="charcoal-field-label-sub-label"
+        >
+          <span />
+        </div>
+      </div>
+      <div
+        class="charcoal-text-field-container"
+        data-invalid="false"
+      >
+        <div
+          class="charcoal-text-field-input-root"
+        >
+          <input
+            aria-labelledby="test-id"
+            class="charcoal-text-field-input"
+            data-invalid="false"
+            id="test-id"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/TextField > react/TextField > Placeholder 1`] = `
 <div>
   <div
@@ -12337,6 +12617,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > RequiredText 1`] 
             class="charcoal-text-field-input"
             data-invalid="false"
             id="test-id"
+            required=""
             type="text"
             value=""
           />
@@ -12416,7 +12697,6 @@ exports[`Storybook Tests > react/TextField > react/TextField > SubLabel 1`] = `
     >
       <div
         class="charcoal-field-label-root"
-        style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
       >
         <label
           class="charcoal-field-label"
@@ -12513,6 +12793,7 @@ exports[`Storybook Tests > react/TextField > react/TextField > TokenV2 1`] = `
               id="test-id"
               maxlength="100"
               placeholder="Placeholder"
+              required=""
               type="text"
               value=""
             />
