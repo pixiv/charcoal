@@ -55,8 +55,9 @@ export const Colors: React.FC = () => {
     <div className="space-y-24">
       {Object.entries(colors).map(([colorName, values]) => (
         <div className="flex" key={colorName}>
-          {/* @ts-expect-error FIXME */}
-          {typeof values === 'object' && 'DEFAULT' in values ? (
+          {values !== null &&
+          typeof values === 'object' &&
+          'DEFAULT' in values ? (
             <>
               <ColorBox
                 bgColorClass={`bg-${colorName}`}

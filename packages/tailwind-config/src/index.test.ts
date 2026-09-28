@@ -19,8 +19,9 @@ describe('tailwind.config.js', () => {
 
   beforeAll(async () => {
     result = await TailwindBuild.run(
-      // @ts-expect-error FIXME: missing content
-      defaultConfig,
+      // `defaultConfig` omits `content` since consumers supply their own;
+      // `content: []` is fine here because TailwindBuild disables purge via `safelist`.
+      { ...defaultConfig, content: [] },
       `
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
