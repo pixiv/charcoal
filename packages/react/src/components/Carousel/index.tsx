@@ -15,8 +15,11 @@ import {
   type ReactNode,
 } from 'react'
 import { mergeProps, useFocusRing, useKeyboard } from 'react-aria'
+import warning from 'warning'
 import { useClassNames } from '../../_lib/useClassNames'
 import IconButton from '../IconButton'
+import { AutoplayProvider } from './autoplay/AutoplayProvider'
+import { ChangeProvider } from './intent/ChangeProvider'
 import {
   CarouselCloneItem,
   CarouselItem as CarouselSlide,
@@ -27,6 +30,7 @@ import {
   type CarouselState,
 } from './carouselStore'
 import { useCarouselScroller } from './useCarouselScroller'
+import { useHoverPause } from './autoplay/useHoverPause'
 
 const getServerSnapshot = (): CarouselState => INITIAL_CAROUSEL_STATE
 
@@ -35,6 +39,14 @@ export type ScrollAlign = 'left' | 'center' | 'right'
 export type ScrollSnapType = 'none' | 'proximity' | 'mandatory'
 
 export type ScrollSnapAlign = 'center' | 'start'
+
+export type CarouselChangeSource =
+  'auto' | 'navigation' | 'indicator' | 'keyboard' | 'pointer'
+
+export type CarouselChangeEvent = Readonly<{
+  index: number
+  source: CarouselChangeSource
+}>
 
 export type ScrollSnap = Readonly<{
   type?: ScrollSnapType
@@ -78,6 +90,13 @@ export type CarouselLoopProps =
       centerItem?: number
     }>
 
+export type CarouselAutoplay = Readonly<{
+  // 1 スライドあたりの滞留時間 (ms)。既定 5000。
+  interval?: number
+  // ポインタが乗っている間は停止する。既定 true。
+  pauseOnHover?: boolean
+}>
+
 export type CarouselProps = Readonly<{
   className?: string
   hasGradient?: boolean
@@ -94,6 +113,12 @@ export type CarouselProps = Readonly<{
   onScroll?: (left: number) => void
   onResize?: (width: number) => void
   onScrollStateChange?: (canScroll: boolean) => void
+  // スクロールが静止して activeIndex が変わったときに 1 回だけ発火する。
+  // source で自動送り（'auto'）とユーザー操作を区別できる。
+  onChange?: (e: CarouselChangeEvent) => void
+  // 自動スクロール。true は既定値（5000ms / hover で停止）。送りの単位は 1 スライドで、
+  // scrollStep は影響しない。キーボードフォーカス中は常に停止する。
+  autoplay?: boolean | CarouselAutoplay
   // スライド間隔。number は px、string は CSS 値をそのまま使う。未指定は間隔なし。
   gap?: number | string
   // 1 直接子要素 = 1 スライド（react-sandbox 互換）。
@@ -104,6 +129,43 @@ export type CarouselProps = Readonly<{
 type Direction = 'prev' | 'next'
 
 const DEFAULT_SCROLL_STEP = 0.75
+
+const DEFAULT_AUTOPLAY_INTERVAL = 5000
+// setTimeout の delay が正しく動く 32bit 符号付き整数の上限。超えると実装依存で
+// オーバーフローし、ほぼ即時発火し続ける。
+const MAX_AUTOPLAY_INTERVAL = 2_147_483_647
+
+const isValidAutoplayInterval = (value: number): boolean =>
+  Number.isFinite(value) && value > 0 && value <= MAX_AUTOPLAY_INTERVAL
+
+type ResolvedAutoplay = Readonly<{
+  interval: number | null
+  pauseOnHover: boolean
+}>
+
+// 無効な interval（非有限・非正・32bit setTimeout 上限超え）は既定値へフォールバックする。
+const resolveAutoplay = (
+  autoplay: boolean | CarouselAutoplay | undefined,
+): ResolvedAutoplay => {
+  if (!autoplay) return { interval: null, pauseOnHover: false }
+  const { interval, pauseOnHover = true }: CarouselAutoplay =
+    autoplay === true ? {} : autoplay
+  if (interval == null) {
+    return { interval: DEFAULT_AUTOPLAY_INTERVAL, pauseOnHover }
+  }
+  const isValid = isValidAutoplayInterval(interval)
+  warning(
+    isValid,
+    `"interval" (%s) passed to <Carousel autoplay> is invalid ` +
+      `(must be a finite positive number up to ${MAX_AUTOPLAY_INTERVAL}). ` +
+      `Falling back to the default of ${DEFAULT_AUTOPLAY_INTERVAL}ms.`,
+    interval,
+  )
+  return {
+    interval: isValid ? interval : DEFAULT_AUTOPLAY_INTERVAL,
+    pauseOnHover,
+  }
+}
 
 const NAV_ICON = {
   prev: '24/Prev',
@@ -176,6 +238,8 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
     onScroll,
     onResize,
     onScrollStateChange,
+    onChange,
+    autoplay,
     loop = false,
     centerItem,
     defaultScroll: { align = 'left', offset = 0 } = {},
@@ -190,6 +254,7 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const showIndicator = indicator ?? size === 'S'
   const snapType = scrollSnap?.type ?? (size === 'S' ? 'mandatory' : 'none')
   const snapAlign = scrollSnap?.align ?? 'center'
+  const { interval, pauseOnHover } = resolveAutoplay(autoplay)
 
   // 直接子要素 1 つを 1 スライドとして数える。key は子要素の key を引き継ぐ
   // （toArray が付与する接頭辞付き key。無ければ index）。
@@ -206,17 +271,25 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [store] = useState(createCarouselStore)
 
-  const { scrollByStep, onItemResize, resetScroll, loopCloneCount } =
-    useCarouselScroller(scrollerRef, store, slides.length, {
-      align,
-      offset,
-      scrollStep,
-      loop,
-      centerItem,
-      onScroll,
-      onResize,
-      onScrollStateChange,
-    })
+  const {
+    scrollByStep,
+    scrollToNextSlide,
+    onItemResize,
+    resetScroll,
+    loopCloneCount,
+    intent,
+  } = useCarouselScroller(scrollerRef, store, slides.length, {
+    align,
+    offset,
+    scrollStep,
+    snapAlign,
+    snapType,
+    loop,
+    centerItem,
+    onScroll,
+    onResize,
+    onScrollStateChange,
+  })
 
   useImperativeHandle(ref, () => ({ resetScroll }), [resetScroll])
 
@@ -229,6 +302,12 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const scrollToItem = useCallback(
     (index: number) => store.dispatch({ type: 'requestScroll', index }),
     [store],
+  )
+
+  // CarouselNavigationButton は memo 済みなので安定参照で渡す。
+  const scrollByNavigation = useCallback(
+    (direction: Direction) => scrollByStep(direction, 'navigation'),
+    [scrollByStep],
   )
 
   const renderSlides = () =>
@@ -278,14 +357,17 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   // ←/→ でスクロール。コンテナにフォーカスがある時のみ。
   const { keyboardProps } = useKeyboard({
     onKeyDown: (e) => {
-      if (e.key === 'ArrowRight') {
-        e.preventDefault()
-        scrollByStep('next')
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault()
-        scrollByStep('prev')
-      } else {
-        e.continuePropagation()
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault()
+          scrollByStep('next', 'keyboard')
+          break
+        case 'ArrowLeft':
+          e.preventDefault()
+          scrollByStep('prev', 'keyboard')
+          break
+        default:
+          e.continuePropagation()
       }
     },
   })
@@ -300,6 +382,14 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   const { focusProps: rootFocusProps, isFocusVisible: rootFocusVisible } =
     useFocusRing({ within: true })
 
+  const rootRef = useRef<HTMLDivElement>(null)
+  const hovered = useHoverPause(rootRef, interval != null && pauseOnHover)
+
+  const advance = useCallback(
+    () => scrollToNextSlide('auto'),
+    [scrollToNextSlide],
+  )
+
   // gap 宣言自体は index.css 側に置き、ここでは CSS 変数の値だけを注入する。
   const gapStyle = useMemo(
     () =>
@@ -312,73 +402,80 @@ const Carousel = forwardRef<CarouselHandlerRef, CarouselProps>(function Render(
   )
 
   return (
-    <div
-      {...rootFocusProps}
-      className={className}
-      style={gapStyle}
-      data-size={size}
-      data-has-gradient={hasGradient}
-      data-full-width={fullWidth}
-      data-indicator={showIndicator}
-      data-loop={loop}
-      data-scroll-snap-type={snapType}
-      data-scroll-snap-align={snapAlign}
-      data-can-prev={canPrev}
-      data-can-next={canNext}
-      data-focus-visible-within={rootFocusVisible || undefined}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Carousel"
-    >
-      {/* フォーカスリングは viewport に描く（理由は index.css の同セレクタ参照） */}
+    <ChangeProvider store={store} intent={intent} onChange={onChange}>
       <div
-        className="charcoal-carousel__viewport"
-        data-focus-visible={scrollerFocusVisible || undefined}
+        {...rootFocusProps}
+        ref={rootRef}
+        className={className}
+        style={gapStyle}
+        data-size={size}
+        data-has-gradient={hasGradient}
+        data-full-width={fullWidth}
+        data-indicator={showIndicator}
+        data-loop={loop}
+        data-scroll-snap-type={snapType}
+        data-scroll-snap-align={snapAlign}
+        data-can-prev={canPrev}
+        data-can-next={canNext}
+        data-focus-visible-within={rootFocusVisible || undefined}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Carousel"
       >
+        {/* フォーカスリングは viewport に描く（理由は index.css の同セレクタ参照） */}
         <div
-          {...mergeProps(scrollerFocusProps, keyboardProps)}
-          ref={scrollerRef}
-          className="charcoal-carousel__scroller"
-          tabIndex={0}
+          className="charcoal-carousel__viewport"
+          data-focus-visible={scrollerFocusVisible || undefined}
         >
-          {loop && cloneBands.before}
-          {renderSlides()}
-          {loop && cloneBands.after}
+          <AutoplayProvider
+            {...mergeProps(scrollerFocusProps, keyboardProps)}
+            ref={scrollerRef}
+            className="charcoal-carousel__scroller"
+            tabIndex={0}
+            interval={interval}
+            paused={hovered || rootFocusVisible}
+            intent={intent}
+            advance={advance}
+          >
+            {loop && cloneBands.before}
+            {renderSlides()}
+            {loop && cloneBands.after}
+          </AutoplayProvider>
+
+          <div
+            className="charcoal-carousel__navigation"
+            data-visible={showNavigationButtons}
+            aria-hidden={!showNavigationButtons}
+          >
+            <CarouselNavigationButton
+              direction="prev"
+              canScroll={canPrev}
+              onScroll={scrollByNavigation}
+            />
+            <CarouselNavigationButton
+              direction="next"
+              canScroll={canNext}
+              onScroll={scrollByNavigation}
+            />
+          </div>
         </div>
 
         <div
-          className="charcoal-carousel__navigation"
-          data-visible={showNavigationButtons}
-          aria-hidden={!showNavigationButtons}
+          className="charcoal-carousel__indicator"
+          data-visible={showIndicator}
+          aria-hidden={!showIndicator}
         >
-          <CarouselNavigationButton
-            direction="prev"
-            canScroll={canPrev}
-            onScroll={scrollByStep}
-          />
-          <CarouselNavigationButton
-            direction="next"
-            canScroll={canNext}
-            onScroll={scrollByStep}
-          />
+          {slides.map((_, i) => (
+            <CarouselIndicatorItem
+              key={slideKeys[i]}
+              index={i}
+              isActive={i === activeIndex}
+              onSelect={scrollToItem}
+            />
+          ))}
         </div>
       </div>
-
-      <div
-        className="charcoal-carousel__indicator"
-        data-visible={showIndicator}
-        aria-hidden={!showIndicator}
-      >
-        {slides.map((_, i) => (
-          <CarouselIndicatorItem
-            key={slideKeys[i]}
-            index={i}
-            isActive={i === activeIndex}
-            onSelect={scrollToItem}
-          />
-        ))}
-      </div>
-    </div>
+    </ChangeProvider>
   )
 })
 
