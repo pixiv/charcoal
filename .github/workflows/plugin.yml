@@ -1,0 +1,42 @@
+name: plugin
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.claude-plugin/**'
+      - 'plugins/**'
+      - '.github/workflows/plugin.yml'
+  pull_request:
+    paths:
+      - '.claude-plugin/**'
+      - 'plugins/**'
+      - '.github/workflows/plugin.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.node-version'
+
+      - name: Check plugin version follows lerna.json
+        run: node misc/sync-plugin-version.mts --check
+
+      - name: Install Claude Code CLI
+        run: npm install --global @anthropic-ai/claude-code
+
+      - name: Validate marketplace
+        run: claude plugin validate --strict .
+
+      - name: Validate plugins
+        run: |
+          for plugin in plugins/*/; do
+            claude plugin validate --strict "$plugin"
+          done

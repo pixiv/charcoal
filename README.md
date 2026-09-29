@@ -9,6 +9,10 @@ This is the monorepo for the `@charcoal-ui` packages by pixiv.
 
 See our [documentation](https://charcoal-web.pixiv.design/), or README of each package in `/packages`.
 
+## Agent skills / Claude Code plugin
+
+Skills that teach coding agents how to adopt `@charcoal-ui` live under `plugins/`. See [plugins/charcoal/README.md](./plugins/charcoal/README.md) for `/plugin install charcoal@charcoal` and `npx skills add pixiv/charcoal`.
+
 ## NPM Packages
 
 | package                      | version                                                                                                                                        |

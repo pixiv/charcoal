@@ -54,6 +54,12 @@ jobs:
       - name: Set package version
         run: pnpm lerna version ${{ github.event.inputs.version }} --no-push --force-publish --yes
 
+      - name: Sync plugin version
+        run: |
+          node misc/sync-plugin-version.mts
+          git add plugins
+          git diff --cached --quiet || git commit -m "chore: sync plugin version [skip ci]"
+
       - name: Build & Publish to npmjs
         run: pnpm release --tag ${{ github.event.inputs.release_tag }}
         env:
