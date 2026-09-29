@@ -66,7 +66,7 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 | `hasGradient`                                     | `hasGradient`（既定 `false`）               | ✅ そのまま対応（mask による透過フェード）                                                                |
 | `fadeInGradient`                                  | （廃止）                                    | スクロール可能な側のみ常にフェード                                                                        |
 | `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                    | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
-| `centerItems`                                     | （廃止）                                    | スライド寸法は children 側で注入する（sandbox 同様）。間隔は `gap` prop                                   |
+| `centerItems`                                     | （廃止）                                    | スライド寸法は children 側で注入する（sandbox 同様）。間隔は `gap` prop。単数形の `centerItem` は別機能   |
 | `onScroll(left)`                                  | `onScroll(left)`                            | ✅ そのまま対応（scroll で発火）                                                                          |
 | `onResize(width)`                                 | `onResize(width)`                           | ✅ scroller 幅の変化で発火                                                                                |
 | `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`            | ✅ `canPrev \|\| canNext` の変化で発火                                                                    |
@@ -78,6 +78,8 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 | —                                                 | `className?: string`                        | ルートに付与                                                                                              |
 | —                                                 | `scrollSnap?: { type?; align? }`            | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center |
 | —                                                 | `gap?: number \| string`                    | 新規。スライド間隔。number は px、string は CSS 値をそのまま使う                                          |
+| —                                                 | `loop?: boolean`（既定 `false`）            | 新規（charcoal 独自）。clone + 端テレポートによる無限ループ。`defaultScroll` とは型レベルで排他           |
+| —                                                 | `centerItem?: number`                       | 新規（charcoal 独自）。`loop` 時のみ有効で、初期表示で指定 index のスライドを viewport 中央に置く         |
 
 ## 挙動の変更（移行時に確認すること）
 
@@ -93,6 +95,18 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
   非対応環境では JS フォールバック）。
 - **キーボード操作**: スクローラーが `tabIndex={0}` でフォーカス可能になり、`←` / `→` で 1 ステップスクロール。
   フォーカスリングは charcoal 標準（`box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32)`）。
+- **`loop` 時のスライド内 `id` / `name` は重複する**: clone 方式の制約として、スライドの
+  DOM は clone 帯にもそのまま複製される（複製時に剥がされるのは**ルート要素の ref のみ**で、
+  ネストした要素の ref や `id` / `name` 属性は剥がせない）。clone-before 帯が DOM 上は
+  実スライドより先に来るため、スライド内に `id` があると `document.getElementById` や
+  `label[for]` / `aria-describedby` の参照が先頭の inert な clone 側に解決されてしまう。
+  `name` でグループ化するフォームコントロール（radio 等）も全 clone で同一グループに
+  なる。`loop` を使うスライドの中では、文書内一意の `id` や `name` グループに依存する
+  仕組みを使わないこと。
+- **`loop` 時の dot ナビゲーションは実スライドへ移動する**: indicator の dot は常に
+  実セットのスライドへ `scrollIntoView` する。現在位置が clone 帯寄りの場合、視覚的に
+  最寄りの複製ではなく実スライドまで（最大でおよそ半セットぶん）長くスクロールする
+  ことがある。既知の制限。
 
 ## スクロール量を細かく制御したい場合
 
@@ -115,3 +129,8 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 ```
 
 戻り値は「進む量の絶対値（px）」。符号（prev / next）はコンポーネント側で付与する。
+
+なお、走行中の連打では `scrollLeft` に実座標ではなく**前回のまだ到達していない目標位置**が
+渡る（native smooth scroll は新しい呼び出しで残距離を破棄するため、目標を積算して連打を
+成立させる）。上の例のような「残り全部」計算は目標位置基準で行われ、静止後・ユーザーの
+手動スクロール後は実座標に戻る。

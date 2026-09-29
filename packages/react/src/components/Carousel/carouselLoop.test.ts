@@ -1,0 +1,154 @@
+import { describe, expect, it } from 'vitest'
+import {
+  computeCenterScrollLeft,
+  computeLoopCloneCount,
+  computeLoopTeleport,
+  computeWallEscape,
+  isLoopActive,
+  measureLoopGeometry,
+} from './carouselLoop'
+
+// 維持帯域は [bandLower, bandLower + setWidth) = [500, 1500)
+const geometry = {
+  setWidth: 1000,
+  bandLower: 500,
+  clientWidth: 600,
+}
+
+describe('computeLoopTeleport', () => {
+  it('帯域内では null（テレポート不要）', () => {
+    expect(computeLoopTeleport(500, geometry)).toBeNull()
+    expect(computeLoopTeleport(1000, geometry)).toBeNull()
+    expect(computeLoopTeleport(1499, geometry)).toBeNull()
+  })
+
+  it('帯域境界から誤差スケールの逸脱は帯域内とみなす（snap 補正との往復振動を防ぐ）', () => {
+    expect(computeLoopTeleport(497, geometry)).toBeNull()
+    expect(computeLoopTeleport(1503, geometry)).toBeNull()
+  })
+
+  it('帯域より左は +setWidth の合同位置へ丸める', () => {
+    expect(computeLoopTeleport(490, geometry)).toBe(1490)
+    expect(computeLoopTeleport(0, geometry)).toBe(1000)
+  })
+
+  it('帯域より右は −setWidth の合同位置へ丸める', () => {
+    expect(computeLoopTeleport(1510, geometry)).toBe(510)
+    expect(computeLoopTeleport(2400, geometry)).toBe(1400)
+  })
+
+  it('1 周以上外れていても 1 回の呼び出しで帯域へ丸める', () => {
+    expect(computeLoopTeleport(2600, geometry)).toBe(600)
+  })
+
+  it('setWidth が 0 以下なら null', () => {
+    expect(computeLoopTeleport(0, { ...geometry, setWidth: 0 })).toBeNull()
+  })
+})
+
+// maxScroll = bandLower × 2 + setWidth = 2000
+describe('computeWallEscape', () => {
+  it('左の物理端にクランプしたら合同位置を返す', () => {
+    expect(computeWallEscape(0, 90, geometry)).toBe(1000)
+  })
+
+  it('右の物理端にクランプしたら合同位置を返す', () => {
+    expect(computeWallEscape(2000, 1900, geometry)).toBe(1000)
+  })
+
+  it('サブピクセル分だけ端の内側でクランプしても端とみなす', () => {
+    expect(computeWallEscape(1999.5, 1900, geometry)).toBe(999.5)
+  })
+
+  it('物理端以外では null（走行中の momentum を殺さない）', () => {
+    expect(computeWallEscape(100, 200, geometry)).toBeNull()
+    expect(computeWallEscape(1900, 1800, geometry)).toBeNull()
+  })
+
+  it('端の位置でも端から離れる向きの走行中は null', () => {
+    expect(computeWallEscape(0.5, 0, geometry)).toBeNull()
+    expect(computeWallEscape(1999.5, 2000, geometry)).toBeNull()
+  })
+
+  it('滑走路が無い（端が帯域内）なら null', () => {
+    const flat = { setWidth: 1000, bandLower: 2, clientWidth: 600 }
+    expect(computeWallEscape(0, 50, flat)).toBeNull()
+  })
+})
+
+describe('computeCenterScrollLeft', () => {
+  it('指定 item の中央が viewport 中央になる scrollLeft を返す', () => {
+    // item 中央 (1000 + 400/2) − viewport 半分 (600/2) = 900（帯域内）
+    expect(
+      computeCenterScrollLeft({ offsetLeft: 1000, offsetWidth: 400 }, geometry),
+    ).toBe(900)
+  })
+
+  it('帯域を超える位置は合同位置へ正規化する', () => {
+    // raw = 1800 + 200 − 300 = 1700 → −setWidth で 700
+    expect(
+      computeCenterScrollLeft({ offsetLeft: 1800, offsetWidth: 400 }, geometry),
+    ).toBe(700)
+  })
+})
+
+describe('isLoopActive', () => {
+  it('実セット幅が viewport より広ければ成立', () => {
+    expect(isLoopActive(geometry)).toBe(true)
+  })
+
+  it('実セット幅 ≤ viewport では不成立', () => {
+    expect(isLoopActive({ ...geometry, setWidth: 600 })).toBe(false)
+  })
+})
+
+describe('measureLoopGeometry', () => {
+  it('clone-after 先頭と実セット先頭の offsetLeft 差を setWidth とする', () => {
+    const scroller = document.createElement('div')
+    for (let i = 0; i < 9; i++) {
+      const child = document.createElement('div')
+      Object.defineProperty(child, 'offsetLeft', { value: i * 100 })
+      scroller.append(child)
+    }
+    Object.defineProperty(scroller, 'clientWidth', { value: 250 })
+    Object.defineProperty(scroller, 'scrollWidth', { value: 900 })
+    expect(measureLoopGeometry(scroller, 3, 3)).toEqual({
+      setWidth: 300,
+      // スクロール可能域中央: (650 − 300) / 2
+      bandLower: 175,
+      clientWidth: 250,
+    })
+  })
+
+  it('clone 込みの子要素が揃っていなければ null', () => {
+    expect(measureLoopGeometry(document.createElement('div'), 3, 3)).toBeNull()
+  })
+})
+
+describe('computeLoopCloneCount', () => {
+  // 400px スロット（幅 380 + 間隔 20）の item 6 枚
+  const items = Array.from({ length: 6 }, (_, i) => ({
+    offsetLeft: i * 400,
+    offsetWidth: 380,
+  }))
+
+  it('各端の累積幅が 3.5 viewport を覆う最小枚数 + 1 を返す', () => {
+    // 実セット span = 2380。被覆要求 = 800 × 3.5 = 2800 なので 1 周 + 残り 420。
+    // 残りは 2 枚で 780 ≥ 420（1 枚では 380）→ 6 + 2 + 1 = 9
+    expect(computeLoopCloneCount(items, 800)).toBe(9)
+  })
+
+  it('1 セットで覆えない要求はセット丸ごとの周回で埋める', () => {
+    // 被覆要求 = 1200 × 3.5 = 4200 → 1 周 + 残り 1820。
+    // 残りは 5 枚で 1980 ≥ 1820（4 枚では 1580）→ 6 + 5 + 1 = 12
+    expect(computeLoopCloneCount(items, 1200)).toBe(12)
+  })
+
+  it('実セットが viewport を覆えない（ループ不成立）なら 0', () => {
+    expect(computeLoopCloneCount(items, 10000)).toBe(0)
+  })
+
+  it('item が無ければ 0', () => {
+    expect(computeLoopCloneCount([], 800)).toBe(0)
+  })
+})
