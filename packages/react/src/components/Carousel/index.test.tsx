@@ -6,47 +6,13 @@ import Carousel, {
   type CarouselHandlerRef,
   type CarouselDefaultScroll,
 } from '.'
+import { getScroller, mockScrollerGeometry } from './testUtils'
 
 const slides = Array.from({ length: 6 }, (_, i) => (
   <div key={`item-${i}`} data-testid={`slide-${i}`}>
     Slide {i}
   </div>
 ))
-
-function mockScrollerGeometry(
-  el: HTMLElement,
-  { scrollLeft = 0, scrollWidth = 2400, clientWidth = 800 } = {},
-) {
-  Object.defineProperty(el, 'scrollLeft', {
-    get: () => scrollLeft,
-    set: vi.fn(),
-    configurable: true,
-  })
-  Object.defineProperty(el, 'scrollWidth', {
-    value: scrollWidth,
-    configurable: true,
-  })
-  Object.defineProperty(el, 'clientWidth', {
-    value: clientWidth,
-    configurable: true,
-  })
-
-  for (let i = 0; i < el.children.length; i++) {
-    const child = el.children[i] as HTMLElement
-    Object.defineProperty(child, 'offsetLeft', {
-      value: i * 400,
-      configurable: true,
-    })
-    Object.defineProperty(child, 'offsetWidth', {
-      value: 380,
-      configurable: true,
-    })
-  }
-}
-
-function getScroller() {
-  return document.querySelector('.charcoal-carousel__scroller') as HTMLElement
-}
 
 // 各 observer が「observe した要素 → コールバック」を覚え、テストから任意要素の
 // intersection を発火できるようにする（新設計は item ごとに observer を持つ）。
