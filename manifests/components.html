@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/215 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">31 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/219 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">31 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>24.2s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>24.9s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -1365,9 +1365,9 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Carousel</h2>
       <div class="badges">
-        <label for="c-2-react-carousel-props" class="badge ok as-toggle">16 prop types</label>
+        <label for="c-2-react-carousel-props" class="badge ok as-toggle">18 prop types</label>
         <label for="c-2-react-carousel-info" class="badge info as-toggle">1 info</label>
-        <label for="c-2-react-carousel-stories" class="badge ok as-toggle">13 stories</label>
+        <label for="c-2-react-carousel-stories" class="badge ok as-toggle">17 stories</label>
         
       </div>
     </div>
@@ -1399,15 +1399,17 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen-typescript)</small></span>
-              <span class="badge ok">16 prop types</span>
+              <span class="badge ok">18 prop types</span>
             </div>
             <pre><code>Component: packages/react/src/components/Carousel/index.tsx::Carousel</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>className?: string
+            <pre><code>centerItem?: number
+
+className?: string
 
 css?: CSSProp&lt;DefaultTheme&gt; | ThemeProp&lt;DefaultTheme&gt;
 
-defaultScroll?: { align?: ScrollAlign; offset?: number; } | undefined
+defaultScroll?: Readonly&lt;{ align?: ScrollAlign; offset?: number; }&gt; | undefined
 
 fullWidth?: boolean = false
 
@@ -1418,6 +1420,8 @@ hasGradient?: boolean = false
 indicator?: boolean
 
 key?: Key | null
+
+loop?: boolean = false
 
 navigationButtons?: boolean
 
@@ -1603,6 +1607,71 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     scrollStep={0.75}
     gap={24}
     scrollSnap={{ type: &#39;mandatory&#39;, align: &#39;start&#39; }}&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loop Center First Item</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LoopCenterFirstItem = () =&gt; &lt;Carousel
+    size=&quot;M&quot;
+    hasGradient={false}
+    fullWidth={false}
+    scrollStep={0.75}
+    gap={24}
+    loop
+    centerItem={0}
+    indicator&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loop Without Center Item</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LoopWithoutCenterItem = () =&gt; &lt;Carousel
+    size=&quot;M&quot;
+    hasGradient={false}
+    fullWidth={false}
+    scrollStep={0.75}
+    gap={24}
+    loop&gt;{numberedSlides}&lt;/Carousel&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loop Size S</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LoopSizeS = () =&gt; &lt;Carousel
+    size=&quot;S&quot;
+    hasGradient={false}
+    fullWidth={false}
+    scrollStep={0.75}
+    gap={0}
+    loop&gt;{fullWidthImages}&lt;/Carousel&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loop Banner</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LoopBanner = () =&gt; &lt;Carousel
+    size=&quot;M&quot;
+    hasGradient={false}
+    fullWidth={false}
+    scrollStep={() =&gt; 656}
+    gap={16}
+    loop
+    centerItem={0}
+    indicator
+    scrollSnap={{ type: &#39;mandatory&#39;, align: &#39;center&#39; }}&gt;{bannerSlides}&lt;/Carousel&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
