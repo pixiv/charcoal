@@ -47,8 +47,8 @@ export const WithNoSelection: StoryObj<typeof DropdownSelector> = {
           placeholder="Select an option"
           onChange={setSelected}
         >
+          <DropdownMenuItem noSelection>選択を解除</DropdownMenuItem>
           <DropdownMenuItem value="popular">Popular</DropdownMenuItem>
-          <DropdownMenuItem noSelection>Unspecified</DropdownMenuItem>
           <DropdownMenuItem value="new">Newest</DropdownMenuItem>
         </DropdownSelector>
       </div>
