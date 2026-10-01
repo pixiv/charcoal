@@ -18,7 +18,6 @@ export type MenuListProps = {
   children: MenuListChildren
   value?: string
   onChange?: (v: string) => void
-  onNoSelection?: () => void
   autoFocus?: boolean
 }
 
@@ -46,9 +45,7 @@ export default function MenuList(props: MenuListProps) {
     if (!props.autoFocus) return
     const enabledItems = getItems().filter((item) => !item.disabled)
     const selectedItem = enabledItems.find((item) =>
-      props.value === ''
-        ? item.noSelection === true
-        : item.noSelection !== true && item.value === props.value,
+      item.noSelection ? props.value === '' : item.value === props.value,
     )
     if (selectedItem) {
       // windowのスクロールを維持したまま選択肢をPopoverの中心に表示する
@@ -95,7 +92,6 @@ export default function MenuList(props: MenuListProps) {
           setValue: (v) => {
             props.onChange?.(v)
           },
-          setNoSelection: props.onNoSelection,
         }}
       >
         {props.children}

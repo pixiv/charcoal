@@ -11,7 +11,6 @@ type MenuListContextType = {
   registerItem?: (item: RegisteredMenuItem) => () => void
   getItems: () => RegisteredMenuItem[]
   setValue: (v: string) => void
-  setNoSelection?: () => void
 }
 
 export const MenuListContext = createContext<MenuListContextType>({
@@ -21,5 +20,4 @@ export const MenuListContext = createContext<MenuListContextType>({
   setValue: (_v: string) => {
     // empty
   },
-  setNoSelection: undefined,
 })

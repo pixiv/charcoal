@@ -54,12 +54,11 @@ export default function DropdownSelector({
   const propsArray = getValuesRecursive(props.children)
   const hasMatchedValue = useMemo(
     () =>
-      props.value === ''
-        ? propsArray.some((itemProps) => itemProps.noSelection)
-        : propsArray.some(
-            (itemProps) =>
-              itemProps.noSelection !== true && itemProps.value === props.value,
-          ),
+      propsArray.some((itemProps) =>
+        itemProps.noSelection
+          ? props.value === ''
+          : itemProps.value === props.value,
+      ),
     [propsArray, props.value],
   )
 
@@ -84,11 +83,6 @@ export default function DropdownSelector({
     },
     [onChange],
   )
-
-  const handleNoSelection = useCallback(() => {
-    onChange('')
-    setIsOpen(false)
-  }, [onChange])
 
   const handleTriggerPointerUp = useCallback(
     (e: React.PointerEvent<HTMLButtonElement>) => {
@@ -138,20 +132,18 @@ export default function DropdownSelector({
           {!hasMatchedValue && (
             <option value={props.value}>{props.value}</option>
           )}
-          {propsArray.some((item) => item.noSelection) && <option value="" />}
-          {propsArray
-            .filter((itemProps) => itemProps.noSelection !== true)
-            .map((itemProps) => {
-              return (
-                <option
-                  key={itemProps.value}
-                  value={itemProps.value}
-                  disabled={itemProps.disabled}
-                >
-                  {itemProps.value}
-                </option>
-              )
-            })}
+          {propsArray.map((itemProps) => {
+            if (itemProps.noSelection) return <option key="" value="" />
+            return (
+              <option
+                key={itemProps.value}
+                value={itemProps.value}
+                disabled={itemProps.disabled}
+              >
+                {itemProps.value}
+              </option>
+            )
+          })}
         </select>
       </div>
       {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
@@ -184,12 +176,7 @@ export default function DropdownSelector({
           triggerRef={triggerRef}
           inertWorkaround={props.inertWorkaround}
         >
-          <MenuList
-            autoFocus
-            value={props.value}
-            onChange={handleSelect}
-            onNoSelection={handleNoSelection}
-          >
+          <MenuList autoFocus value={props.value} onChange={handleSelect}>
             {props.children}
           </MenuList>
         </DropdownPopover>

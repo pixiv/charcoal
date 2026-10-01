@@ -14,12 +14,11 @@ export function useMenuItemHandleKeyDown(
   noSelection?: boolean,
   disabled?: boolean,
 ): [(e: React.KeyboardEvent<HTMLElement>) => void, () => void] {
-  const { setValue, setNoSelection, root, getItems } =
-    useContext(MenuListContext)
+  const { setValue, root, getItems } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
-    if (noSelection) setNoSelection?.()
+    if (noSelection) setValue('')
     else if (value !== undefined) setValue(value)
-  }, [noSelection, setNoSelection, value, setValue])
+  }, [noSelection, value, setValue])
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLElement>) => {
