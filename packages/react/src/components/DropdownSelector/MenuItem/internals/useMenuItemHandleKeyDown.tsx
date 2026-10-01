@@ -14,7 +14,7 @@ export function useMenuItemHandleKeyDown(
   noSelection?: boolean,
   disabled?: boolean,
 ): [(e: React.KeyboardEvent<HTMLElement>) => void, () => void] {
-  const { setValue, setNoSelection, root, propsArray } =
+  const { setValue, setNoSelection, root, getItems } =
     useContext(MenuListContext)
   const setContextValue = useCallback(() => {
     if (noSelection) setNoSelection?.()
@@ -29,22 +29,21 @@ export function useMenuItemHandleKeyDown(
         const isForward = e.key === 'ArrowDown'
         // prevent scroll
         e.preventDefault()
-        if (!propsArray) return
-        const options = Array.from(
-          root?.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? [],
-        )
+        const options = getItems()
         if (options.length === 0) return
-        let index = options.indexOf(e.currentTarget)
+        let index = options.findIndex(
+          (item) => item.element === e.currentTarget,
+        )
         if (index === -1) return
 
         for (let n = 0; n < options.length; n++) {
           index = isForward
             ? (index + 1) % options.length
             : (index - 1 + options.length) % options.length
-          const next = options[index]
+          const { element: next, disabled: nextDisabled } = options[index]
 
           if (next instanceof HTMLElement) {
-            if (next.ariaDisabled === 'true') {
+            if (nextDisabled) {
               continue
             }
             next.focus({ preventScroll: true })
@@ -56,7 +55,7 @@ export function useMenuItemHandleKeyDown(
         }
       }
     },
-    [disabled, setContextValue, propsArray, root],
+    [disabled, setContextValue, getItems, root],
   )
   return [handleKeyDown, setContextValue]
 }

@@ -1,4 +1,13 @@
-import { ForwardedRef, forwardRef, useCallback, useRef } from 'react'
+import {
+  ForwardedRef,
+  forwardRef,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+} from 'react'
+import { mergeRefs } from '../../../_lib'
+import { MenuListContext } from '../MenuList/MenuListContext'
 import ListItem, { ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
@@ -19,6 +28,18 @@ const MenuItem = forwardRef(function MenuItem<
   { className: _, value, noSelection, disabled, ...props }: MenuItemProps<T>,
   ref: ForwardedRef<HTMLLIElement>,
 ) {
+  const { registerItem } = useContext(MenuListContext)
+  const unregisterRef = useRef<(() => void) | undefined>(undefined)
+  const registerRef = useCallback(
+    (element: HTMLLIElement | null) => {
+      unregisterRef.current?.()
+      unregisterRef.current = element
+        ? registerItem?.({ element, value, noSelection, disabled })
+        : undefined
+    },
+    [registerItem, value, noSelection, disabled],
+  )
+  const itemRef = useMemo(() => mergeRefs(ref, registerRef), [ref, registerRef])
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(
     value,
     noSelection,
@@ -64,7 +85,7 @@ const MenuItem = forwardRef(function MenuItem<
     // @ts-expect-error TODO: fix mismatch between MenuItemProps and ListItemProps
     <ListItem
       {...props}
-      ref={ref}
+      ref={itemRef}
       data-key={value}
       data-no-selection={noSelection || undefined}
       onKeyDown={handleKeyDown}

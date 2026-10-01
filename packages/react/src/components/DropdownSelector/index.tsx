@@ -182,10 +182,10 @@ export default function DropdownSelector({
           isOpen={isOpen}
           onClose={handleClose}
           triggerRef={triggerRef}
-          value={props.value}
           inertWorkaround={props.inertWorkaround}
         >
           <MenuList
+            autoFocus
             value={props.value}
             onChange={handleSelect}
             onNoSelection={handleNoSelection}

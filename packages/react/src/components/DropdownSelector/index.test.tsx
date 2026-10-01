@@ -1,10 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { useState } from 'react'
+import { createRef, StrictMode, useState } from 'react'
 import { beforeAll, vi } from 'vitest'
 import DropdownSelector from '.'
 import DropdownMenuItem from './DropdownMenuItem'
 import MenuItemGroup from './MenuItemGroup'
 import MenuItem from './MenuItem'
+import MenuList from './MenuList'
 
 // Apple Pencil (pointerType: 'pen') の解除は index.browser.test.tsx で検証する。
 // jsdom は inert を実装しておらず、react-aria が外側を inert にする本番の挙動を
@@ -33,6 +34,52 @@ const getUnderlay = () => {
 }
 
 describe('DropdownSelector', () => {
+  it('updates registered refs when items are reordered, removed, or disabled', () => {
+    const ref = createRef<HTMLLIElement>()
+    const { rerender } = render(
+      <StrictMode>
+        <MenuList>
+          <MenuItem key="a" value="a" ref={ref}>
+            A
+          </MenuItem>
+          <MenuItem key="b" value="b">
+            B
+          </MenuItem>
+          <MenuItem key="c" value="c">
+            C
+          </MenuItem>
+        </MenuList>
+      </StrictMode>,
+    )
+    expect(ref.current).toBe(screen.getByRole('option', { name: 'A' }))
+
+    rerender(
+      <StrictMode>
+        <MenuList>
+          <MenuItem key="c" value="c" disabled>
+            C
+          </MenuItem>
+          <MenuItem key="a" value="a" ref={ref}>
+            A
+          </MenuItem>
+          <MenuItem key="d" value="d">
+            D
+          </MenuItem>
+        </MenuList>
+      </StrictMode>,
+    )
+
+    const a = screen.getByRole('option', { name: 'A' })
+    const d = screen.getByRole('option', { name: 'D' })
+    expect(ref.current).toBe(a)
+    fireEvent.keyDown(a, { key: 'ArrowDown' })
+    expect(d).toHaveFocus()
+    fireEvent.keyDown(d, { key: 'ArrowDown' })
+    expect(a).toHaveFocus()
+    fireEvent.keyDown(a, { key: 'ArrowUp' })
+    expect(d).toHaveFocus()
+  })
+
   it('clears the controlled value through a noSelection item', () => {
     const handleChange = vi.fn()
     function Example() {
@@ -62,7 +109,11 @@ describe('DropdownSelector', () => {
     expect(document.querySelector('.charcoal-popover')).toBeNull()
     expect(screen.getByRole('button')).toHaveTextContent('Select an option')
     expect(container.querySelector('select')?.value).toBe('')
-    expect(container.querySelectorAll('option[value=""]').length).toBe(1)
+    expect(
+      Array.from(container.querySelector('select')?.options ?? []).filter(
+        (option) => option.value === '',
+      ),
+    ).toHaveLength(1)
   })
 
   it('supports keyboard selection and navigation for noSelection items', () => {
@@ -191,6 +242,18 @@ describe('DropdownSelector', () => {
     expect(
       screen.getByRole('option', { name: 'Selected option' }),
     ).toHaveFocus()
+
+    const selected = screen.getByRole('option', { name: 'Selected option' })
+    const valueLess = screen.getByRole('option', {
+      name: 'Non-selectable item',
+    })
+    const other = screen.getByRole('option', { name: 'Other option' })
+    fireEvent.keyDown(selected, { key: 'ArrowUp' })
+    expect(valueLess).toHaveFocus()
+    fireEvent.keyDown(valueLess, { key: 'ArrowUp' })
+    expect(other).toHaveFocus()
+    fireEvent.keyDown(other, { key: 'ArrowDown' })
+    expect(valueLess).toHaveFocus()
   })
 
   it('warns for invalid noSelection children', () => {
