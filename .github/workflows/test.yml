@@ -41,7 +41,7 @@ jobs:
       - run: pnpm build
 
       - name: Cache Playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -107,7 +107,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - name: Cache Playwright runners
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             /home/runner/.cache/ms-playwright/
