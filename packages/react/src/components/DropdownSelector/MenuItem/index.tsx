@@ -40,9 +40,9 @@ const MenuItem = forwardRef(function MenuItem<
     [registerItem, value, noSelection, disabled],
   )
   const itemRef = useMemo(() => mergeRefs(ref, registerRef), [ref, registerRef])
+  // 未選択項目の選択値をここで空文字に変換し、フックでは通常の項目と同じように扱う。
   const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(
-    value,
-    noSelection,
+    noSelection ? '' : value,
     disabled,
   )
   const penHandledRef = useRef(false)
