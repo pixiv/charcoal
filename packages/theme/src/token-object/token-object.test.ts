@@ -81,6 +81,18 @@ describe.each([
       }
     }
 
+    it.each(['default', 'compact', 'cozy'] as const)(
+      'allows the %s text density to override token values on the same element',
+      (density) => {
+        const selectors = (parse(css).stylesheet?.rules ?? []).flatMap(
+          (rule) => (rule.type === 'rule' ? (rule.selectors ?? []) : []),
+        )
+
+        expect(selectors).toContain(`:root.ch-token-v2.ch-text-dn-${density}`)
+        expect(selectors).toContain(`:root .ch-token-v2.ch-text-dn-${density}`)
+      },
+    )
+
     describe.each(keys)(`[${description}] Category: %s`, (category) => {
       const _category = category as keyof typeof token
       const tokens = token[_category]
