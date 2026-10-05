@@ -2692,6 +2692,163 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopCenterFirstItem
 </div>
 `;
 
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopClickableSlides 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <p>
+      最後にクリックしたスライド: 
+      なし
+    </p>
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="true"
+      data-has-gradient="false"
+      data-indicator="false"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="proximity"
+      data-size="M"
+      role="region"
+      style="--charcoal-carousel-gap: 24px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-1"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              1
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-2"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(143, 42, 107); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              2
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-3"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(42, 143, 95); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              3
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-4"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(143, 107, 42); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              4
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-5"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(95, 42, 143); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              5
+            </a>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="charcoal-carousel__indicator"
+        data-visible="false"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
 <div>
   <div

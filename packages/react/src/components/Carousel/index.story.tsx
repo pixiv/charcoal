@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import Carousel from '.'
 
 const makeSampleImages = (style: CSSProperties) =>
@@ -233,6 +233,61 @@ export const LoopBanner: StoryObj<typeof Carousel> = {
     gap: 16,
     scrollSnap: { type: 'mandatory', align: 'center' },
     scrollStep: () => 656,
+  },
+}
+
+// 全体表示のスライドが同時に 2 枚以上ある幅では、ループの継ぎ目で clone も全体表示される。
+// 見えているスライドはどれをクリックしても反応すること（clone を含む）。
+function LoopClickableSlidesDemo(args: Parameters<typeof Carousel>[0]) {
+  const [clicked, setClicked] = useState<number | null>(null)
+  return (
+    <>
+      <p>最後にクリックしたスライド: {clicked ?? 'なし'}</p>
+      <Carousel {...args}>
+        {Array.from({ length: 5 }, (_, i) => (
+          <a
+            key={`link-${i + 1}`}
+            href={`#slide-${i + 1}`}
+            onClick={(e) => {
+              e.preventDefault()
+              setClicked(i + 1)
+            }}
+            style={{
+              width: 240,
+              height: 120,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: [
+                '#2a3b8f',
+                '#8f2a6b',
+                '#2a8f5f',
+                '#8f6b2a',
+                '#5f2a8f',
+              ][i],
+              color: '#fff',
+              borderRadius: 8,
+              font: 'bold 32px sans-serif',
+              textDecoration: 'none',
+            }}
+          >
+            {i + 1}
+          </a>
+        ))}
+      </Carousel>
+    </>
+  )
+}
+
+export const LoopClickableSlides: StoryObj<typeof Carousel> = {
+  render: (args) => <LoopClickableSlidesDemo {...args} />,
+  args: {
+    size: 'M',
+    fullWidth: true,
+    gap: 24,
+    loop: true,
+    centerItem: 0,
+    scrollSnap: { type: 'proximity', align: 'center' },
   },
 }
 

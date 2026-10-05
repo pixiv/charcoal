@@ -100,3 +100,58 @@ describe('navigation button hit area', () => {
     expect(hit?.closest('.charcoal-carousel__scroller')).not.toBeNull()
   })
 })
+
+describe('loop の clone スライド', () => {
+  it('viewport 内に全体表示された clone は実スライドと同じくクリックできる', async () => {
+    const onClick = vi.fn()
+    const { container } = render(
+      <div style={{ width: 400 }}>
+        <Carousel size="M" loop centerItem={0}>
+          {Array.from({ length: 6 }, (_, i) => (
+            <button
+              key={`slide-${i}`}
+              type="button"
+              onClick={() => onClick(i)}
+              style={{ display: 'block', width: 100, height: 80 }}
+            >
+              Slide {i}
+            </button>
+          ))}
+        </Carousel>
+      </div>,
+    )
+    const viewport = container.querySelector(
+      '.charcoal-carousel__viewport',
+    ) as HTMLElement
+
+    const visibleClone = await vi.waitFor(() => {
+      const vp = viewport.getBoundingClientRect()
+      const found = Array.from(
+        container.querySelectorAll<HTMLElement>(
+          '.charcoal-carousel__item[data-clone] > button',
+        ),
+      ).find((el) => {
+        const r = el.getBoundingClientRect()
+        return r.left >= vp.left && r.right <= vp.right
+      })
+      expect(found).toBeDefined()
+      return found as HTMLElement
+    })
+
+    const r = visibleClone.getBoundingClientRect()
+    const hit = document.elementFromPoint(
+      r.left + r.width / 2,
+      r.top + r.height / 2,
+    )
+    expect(hit).toBe(visibleClone)
+
+    const g = globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }
+    g.IS_REACT_ACT_ENVIRONMENT = false
+    try {
+      await userEvent.click(visibleClone)
+    } finally {
+      g.IS_REACT_ACT_ENVIRONMENT = true
+    }
+    expect(onClick).toHaveBeenCalledTimes(1)
+  })
+})
