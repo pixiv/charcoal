@@ -2,12 +2,13 @@
 
 Skills that teach coding agents how to adopt `@charcoal-ui` in an application.
 
-| Skill                               | Use it for                                                      |
-| ----------------------------------- | --------------------------------------------------------------- |
-| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components |
-| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route     |
-| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                      |
-| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them    |
+| Skill                               | Use it for                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------ |
+| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components                |
+| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route                    |
+| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                                     |
+| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them                   |
+| `avoiding-deprecated-charcoal-apis` | Keeping deprecated packages and APIs out of new code; what each package is for |
 
 They exist because charcoal's own documentation is not machine-readable: the docs site is a Storybook SPA that returns no content to a fetcher, npm package pages return 403, and the `pages/` docsify site has been stale since 2023. Agents that try to look charcoal up on the web reconstruct it from package internals — slowly — or invent it.
 
@@ -73,7 +74,10 @@ charcoal/
     ├── choosing-charcoal-styling/SKILL.md
     ├── setting-up-charcoal-css-variables/SKILL.md
     ├── setting-up-charcoal-tailwind/SKILL.md
-    └── setting-up-charcoal-styled/SKILL.md
+    ├── setting-up-charcoal-styled/SKILL.md
+    └── avoiding-deprecated-charcoal-apis/
+        ├── SKILL.md
+        └── references/packages.md
 ```
 
 Both installers read the same `skills/` directory — `npx skills` scans it directly, and also honours the `.claude-plugin/` manifest. There is one copy of every fact.
