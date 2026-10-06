@@ -5,12 +5,13 @@ choose its tokens once it is in.
 
 ### Setting it up
 
-| Skill                               | Use it for                                                      |
-| ----------------------------------- | --------------------------------------------------------------- |
-| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components |
-| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route     |
-| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                      |
-| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them    |
+| Skill                               | Use it for                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------ |
+| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components                |
+| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route                    |
+| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                                     |
+| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them                   |
+| `avoiding-deprecated-charcoal-apis` | Keeping deprecated packages and APIs out of new code; what each package is for |
 
 ### Writing the UI
 
@@ -103,6 +104,9 @@ charcoal/
     ├── setting-up-charcoal-css-variables/SKILL.md
     ├── setting-up-charcoal-tailwind/SKILL.md
     ├── setting-up-charcoal-styled/SKILL.md
+    ├── avoiding-deprecated-charcoal-apis/
+    │   ├── SKILL.md
+    │   └── references/packages.md
     ├── choosing-charcoal-tokens/
     │   ├── SKILL.md
     │   └── references/        # the design team's guidelines
