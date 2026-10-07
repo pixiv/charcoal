@@ -6,11 +6,11 @@ import {
   useEffect,
   useRef,
   type ClassAttributes,
+  type HTMLAttributes,
   type ComponentPropsWithoutRef,
   type ReactNode,
 } from 'react'
 import { useObjectRef } from 'react-aria/useObjectRef'
-import { useIsomorphicLayoutEffect } from '../../_lib/useIsomorphicLayoutEffect'
 import type { CarouselStore } from './carouselStore'
 import { observeCenter } from './intersectionObserver'
 import { observeResize } from './resizeObserver'
@@ -102,19 +102,8 @@ export const CarouselCloneItem = memo(function CarouselCloneItem({
   store,
   children,
 }: CarouselCloneItemProps) {
-  const ref = useRef<HTMLDivElement>(null)
-
-  // React 18 は inert prop 未対応のため property で付与する。paint 後の useEffect だと
-  // clone 内のフォーカス可能要素が 1 フレーム操作可能になるため、paint 前に付与する。
-  useIsomorphicLayoutEffect(() => {
-    const el = ref.current
-    if (!el) return
-    el.inert = true
-  }, [])
-
   return (
     <CenterReportProvider
-      ref={ref}
       store={store}
       index={index}
       className="charcoal-carousel__item"
@@ -122,10 +111,12 @@ export const CarouselCloneItem = memo(function CarouselCloneItem({
       aria-hidden
     >
       {isValidElement(children)
-        ? // 見た目だけの複製として ref を剥がす（ユーザーの ref が clone を指さないように）
+        ? // 見た目だけの複製として ref を剥がす（ユーザーの ref が clone を指さないように）。
+          // 見えている clone は実物と同じくクリックできるよう inert にはせず、tab 順からだけ外す。
           cloneElement(children, {
             ref: null,
-          } satisfies ClassAttributes<unknown>)
+            tabIndex: -1,
+          } satisfies ClassAttributes<unknown> & HTMLAttributes<unknown>)
         : children}
     </CenterReportProvider>
   )

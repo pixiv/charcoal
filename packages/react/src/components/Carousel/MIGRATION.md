@@ -101,10 +101,17 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
   DOM は clone 帯にもそのまま複製される（複製時に剥がされるのは**ルート要素の ref のみ**で、
   ネストした要素の ref や `id` / `name` 属性は剥がせない）。clone-before 帯が DOM 上は
   実スライドより先に来るため、スライド内に `id` があると `document.getElementById` や
-  `label[for]` / `aria-describedby` の参照が先頭の inert な clone 側に解決されてしまう。
+  `label[for]` / `aria-describedby` の参照が先頭の clone 側に解決されてしまう。
   `name` でグループ化するフォームコントロール（radio 等）も全 clone で同一グループに
   なる。`loop` を使うスライドの中では、文書内一意の `id` や `name` グループに依存する
   仕組みを使わないこと。
+- **`loop` 時の clone はクリックできるが、tab 順と支援技術からは外れる**: viewport に
+  見えている clone は実スライドと同じくクリック・ホバーでき、ルート要素の `href` /
+  `onClick` などの props もそのまま動く（計測用の `onClick` も発火する）。clone は
+  `aria-hidden` で、ルート要素には `tabindex="-1"` が付く（ネストしたリンクやボタンは
+  tab 順に残るため、`loop` ではスライドのルート要素自体をリンク等にすることを推奨）。clone は実スライドとは
+  別の React インスタンスなので、スライド内のローカル state（開閉状態など）は実スライドと
+  同期しない。
 - **`loop` 時の dot ナビゲーションは実スライドへ移動する**: indicator の dot は常に
   実セットのスライドへ `scrollIntoView` する。現在位置が clone 帯寄りの場合、視覚的に
   最寄りの複製ではなく実スライドまで（最大でおよそ半セットぶん）長くスクロールする

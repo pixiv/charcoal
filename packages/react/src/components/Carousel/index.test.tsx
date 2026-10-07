@@ -819,17 +819,38 @@ describe('Carousel', () => {
         ).toHaveLength(6)
       })
 
-      it('clone は aria-hidden かつ inert', () => {
+      it('clone は aria-hidden だが inert ではない（見えている clone をクリックできる）', () => {
         const { container } = render(<Carousel loop>{slides}</Carousel>)
         const clones = container.querySelectorAll(
           '.charcoal-carousel__item[data-clone]',
         )
         clones.forEach((clone) => {
           expect(clone).toHaveAttribute('aria-hidden', 'true')
+          expect((clone as HTMLElement & { inert?: boolean }).inert).not.toBe(
+            true,
+          )
         })
-        expect((clones[0] as HTMLElement & { inert?: boolean }).inert).toBe(
-          true,
+      })
+
+      it('clone のルート要素は tab 順から外れ、実スライドはそのまま', () => {
+        const linkSlides = Array.from({ length: 6 }, (_, i) => (
+          <a key={`item-${i}`} href={`/slide/${i}`}>
+            link {i}
+          </a>
+        ))
+        const { container } = render(<Carousel loop>{linkSlides}</Carousel>)
+        const cloneLinks = container.querySelectorAll(
+          '.charcoal-carousel__item[data-clone] > a',
         )
+        expect(cloneLinks.length).toBeGreaterThan(0)
+        cloneLinks.forEach((el) => {
+          expect(el).toHaveAttribute('tabindex', '-1')
+        })
+        container
+          .querySelectorAll('.charcoal-carousel__item:not([data-clone]) > a')
+          .forEach((el) => {
+            expect(el).not.toHaveAttribute('tabindex')
+          })
       })
 
       it('scroll 命令では実セットの要素だけが scrollIntoView する', () => {
