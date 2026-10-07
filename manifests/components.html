@@ -576,13 +576,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/220 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">31 docs ok</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">13/43 prop type errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">39/43 infos</a><a class="filter-pill err" data-k="story-errors" href="#filter-story-errors">5/221 story errors</a><a class="filter-pill ok" data-k="docs" href="#filter-docs">31 docs ok</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note err" style="margin-bottom: 16px;">
-              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>42.1s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
+              <strong>Performance warning:</strong> <code>react-docgen-typescript</code> took <strong>44.0s</strong> to generate the manifest. This delay applies every time the manifest is used by an agent. Consider switching to the faster <code>react-docgen</code> in your <code>main.ts</code>:
               <pre><code>typescript: {
   reactDocgen: 'react-docgen',
 }</code></pre>
@@ -1367,7 +1367,7 @@ export const AriaDisabled: StoryObj&lt;typeof Button&gt; = {
       <div class="badges">
         <label for="c-2-react-carousel-props" class="badge ok as-toggle">20 prop types</label>
         <label for="c-2-react-carousel-info" class="badge info as-toggle">1 info</label>
-        <label for="c-2-react-carousel-stories" class="badge ok as-toggle">18 stories</label>
+        <label for="c-2-react-carousel-stories" class="badge ok as-toggle">19 stories</label>
         
       </div>
     </div>
@@ -1676,6 +1676,23 @@ size?: &quot;S&quot; | &quot;M&quot; = M</code></pre>
     centerItem={0}
     indicator
     scrollSnap={{ type: &#39;mandatory&#39;, align: &#39;center&#39; }}&gt;{bannerSlides}&lt;/Carousel&gt;;</code></pre>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Loop Clickable Slides</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const LoopClickableSlides = () =&gt; &lt;LoopClickableSlidesDemo
+    size=&quot;M&quot;
+    hasGradient={false}
+    fullWidth
+    scrollStep={0.75}
+    gap={24}
+    loop
+    centerItem={0}
+    scrollSnap={{ type: &#39;proximity&#39;, align: &#39;center&#39; }}&gt;{spacedImages}&lt;/LoopClickableSlidesDemo&gt;;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
