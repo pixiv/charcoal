@@ -1,6 +1,6 @@
 ---
 name: setting-up-charcoal-styled
-description: Use when an app already uses styled-components and needs pixiv's charcoal (@charcoal-ui) tokens, when working with @charcoal-ui/styled, TokenInjector, createTheme, or addThemeUtils, or when deciding whether to keep styled-components with charcoal.
+description: Use before writing or editing code that uses @charcoal-ui with styled-components, TokenInjector, createTheme or addThemeUtils, and whenever such a project's charcoal setup is unverified or incomplete.
 ---
 
 # Setting up charcoal with styled-components
