@@ -255,6 +255,15 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0
 
+  packages/design-token-resolver:
+    dependencies:
+      '@charcoal-ui/tailwind-config':
+        specifier: workspace:*
+        version: link:../tailwind-config
+      '@charcoal-ui/theme':
+        specifier: workspace:*
+        version: link:../theme
+
   packages/foundation: {}
 
   packages/icon-files: {}
