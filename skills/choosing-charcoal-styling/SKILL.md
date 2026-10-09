@@ -1,6 +1,6 @@
 ---
 name: choosing-charcoal-styling
-description: Use when adding pixiv's charcoal design system (@charcoal-ui) to an app, when deciding between CSS variables, Tailwind, and styled-components with it, or when charcoal components render with no colors, transparent backgrounds, or unresolved --charcoal-* variables.
+description: Use before writing or editing any code that imports @charcoal-ui, and whenever a project's charcoal setup is unverified or incomplete. Decides between the CSS variables, Tailwind and styled-components routes, and names the setup steps that are silently missing in most projects.
 ---
 
 # Choosing a charcoal styling approach

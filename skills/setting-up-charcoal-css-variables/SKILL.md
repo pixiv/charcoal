@@ -1,6 +1,6 @@
 ---
 name: setting-up-charcoal-css-variables
-description: Use when wiring pixiv's charcoal (@charcoal-ui) into an app with plain CSS, CSS Modules, vanilla-extract, or any stack that is not Tailwind or styled-components, and when charcoal components show no colors or --charcoal-color-* resolves to nothing.
+description: Use before writing or editing any code that imports @charcoal-ui/react, and whenever a project's charcoal setup is unverified, incomplete or being finished. Charcoal components render completely unstyled unless BOTH @charcoal-ui/theme/css/v2/light.css is imported AND the .ch-token-v2 class is on <html>; importing dist/index.css alone, or adding the stylesheet without the class, silently produces correct geometry with no colors at all.
 ---
 
 # Setting up charcoal with CSS variables

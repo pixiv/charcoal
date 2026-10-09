@@ -1,6 +1,6 @@
 ---
 name: setting-up-charcoal-tailwind
-description: Use when adding pixiv's charcoal (@charcoal-ui) design tokens to a Tailwind CSS project, when charcoal Tailwind classes are missing or resolve to the wrong generation of tokens, or when Tailwind's own color and spacing utilities stop working after adding the charcoal preset.
+description: Use before writing or editing code that uses @charcoal-ui with Tailwind, and whenever such a project's charcoal setup is unverified or incomplete. The v2 token route still needs the theme CSS and the .ch-token-v2 opt-in, which the preset does not supply.
 ---
 
 # Setting up charcoal with Tailwind
