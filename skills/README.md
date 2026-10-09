@@ -1,6 +1,9 @@
 # charcoal agent skills
 
-Skills that teach coding agents how to adopt `@charcoal-ui` in an application.
+Skills that teach coding agents how to adopt `@charcoal-ui` in an application, and how to
+choose its tokens once it is in.
+
+### Setting it up
 
 | Skill                               | Use it for                                                      |
 | ----------------------------------- | --------------------------------------------------------------- |
@@ -8,6 +11,16 @@ Skills that teach coding agents how to adopt `@charcoal-ui` in an application.
 | `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route     |
 | `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                      |
 | `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them    |
+
+### Writing the UI
+
+| Skill                        | Use it for                                                       |
+| ---------------------------- | ---------------------------------------------------------------- |
+| `choosing-charcoal-tokens`   | Which color, text style, spacing, radius or border token to use  |
+
+`choosing-charcoal-tokens` is a router: a short decision guide, with the design team's
+guidelines under `references/`. Those are the source of truth for which token goes where,
+and they are authored in Japanese.
 
 They exist because charcoal's own documentation is not machine-readable: the docs site is a Storybook SPA that returns no content to a fetcher, npm package pages return 403, and the `pages/` docsify site has been stale since 2023. Agents that try to look charcoal up on the web reconstruct it from package internals — slowly — or invent it.
 
