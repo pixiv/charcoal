@@ -12,7 +12,7 @@
     {
       "name": "charcoal",
       "source": "./",
-      "description": "Set up @charcoal-ui in an app, choose the right token for a color, text style, spacing, radius or border. Covers Design Token 2.0 opt-in, theme switching, and the gotchas that silently produce an unstyled or Token 1.0 app.",
+      "description": "Set up @charcoal-ui in an app, choose the right token for a color, text style, spacing, radius or border, and turn a Figma link into one file worth implementing from. Covers Design Token 2.0 opt-in, theme switching, and the gotchas that silently produce an unstyled or Token 1.0 app.",
       "version": "0.1.0",
       "author": {
         "name": "pixiv"
@@ -26,7 +26,8 @@
         "css-variables",
         "tailwind",
         "styled-components",
-        "react"
+        "react",
+        "figma"
       ],
       "category": "web-development"
     }

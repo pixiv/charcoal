@@ -17,15 +17,20 @@ choose its tokens once it is in.
 | Skill                      | Use it for                                                      |
 | -------------------------- | --------------------------------------------------------------- |
 | `choosing-charcoal-tokens` | Which color, text style, spacing, radius or border token to use |
+| `implement-figma-design`   | Building a screen from a Figma link, and checking it matches    |
 
-`choosing-charcoal-tokens` is a short decision guide plus the design team's guidelines
-under `references/`. Those are the source of truth for which token goes where, and they
-are authored in Japanese.
+`implement-figma-design` ships two scripts and no dependencies. `bin/fetch-design.mjs`
+turns a figma.com link into the design's structure, each node's materials named as
+charcoal tokens, the text of every node and the bitmaps it uses — no Dev Mode
+seat, only a read-only personal access token. `bin/check-design.mjs` then renders what you
+built and names where it departs from that design, which is the only way to catch the
+failure the source cannot show you: every component imported, every value written as a
+token, and none of them applied.
 
-The guide alone is a table of pointers and is worth nothing without them: measured on a
-repair task, delivering it with `references/` missing scored the same as delivering
-nothing at all, while the two together took the same task from 8.0/9 to 9.0/9 and from
-1.0/3 to 3.0/3 on naming. Those pages are the cost of the only thing that moved it.
+`choosing-charcoal-tokens` is a short decision guide over the design team's guidelines
+under `references/`, which are authored in Japanese and are the source of truth for which
+token goes where. The guide only routes to them: it is a table of pointers, and is worth
+nothing shipped without the pages it points at.
 
 They exist because charcoal's own documentation is not machine-readable: the docs site is a Storybook SPA that returns no content to a fetcher, npm package pages return 403, and the `pages/` docsify site has been stale since 2023. Agents that try to look charcoal up on the web reconstruct it from package internals — slowly — or invent it.
 
@@ -92,9 +97,12 @@ charcoal/
     ├── setting-up-charcoal-css-variables/SKILL.md
     ├── setting-up-charcoal-tailwind/SKILL.md
     ├── setting-up-charcoal-styled/SKILL.md
-    └── choosing-charcoal-tokens/
+    ├── choosing-charcoal-tokens/
+    │   ├── SKILL.md
+    │   └── references/        # the design team's guidelines
+    └── implement-figma-design/
         ├── SKILL.md
-        └── references/        # the design team's guidelines
+        └── bin/                 # fetch-design.mjs, check-design.mjs
 ```
 
 Both installers read the same `skills/` directory — `npx skills` scans it directly, and also honours the `.claude-plugin/` manifest. There is one copy of every fact.
