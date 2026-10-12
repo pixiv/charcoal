@@ -18,7 +18,7 @@ catalog:
   'react-compiler-runtime': '1.0.0'
   '@react-spring/web': '^10'
   postcss: '8.5.19'
-  postcss-selector-parser: '7.1.4'
+  postcss-selector-parser: '7.1.6'
   react-aria: '3.48.0'
   react-stately: '3.46.0'
 
