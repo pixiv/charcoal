@@ -9,6 +9,7 @@ export default defineConfig({
     environment: 'jsdom',
     projects: [
       'packages/*/vitest.config.ts',
+      'skills/vitest.config.ts',
       'packages/react/vitest.browser.config.ts',
       '.storybook/vitest.config.ts',
     ],
