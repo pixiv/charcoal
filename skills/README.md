@@ -1,6 +1,9 @@
 # charcoal agent skills
 
-Skills that teach coding agents how to adopt `@charcoal-ui` in an application.
+Skills that teach coding agents how to adopt `@charcoal-ui` in an application, and how to
+choose its tokens once it is in.
+
+### Setting it up
 
 | Skill                               | Use it for                                                      |
 | ----------------------------------- | --------------------------------------------------------------- |
@@ -8,6 +11,21 @@ Skills that teach coding agents how to adopt `@charcoal-ui` in an application.
 | `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route     |
 | `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                      |
 | `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them    |
+
+### Writing the UI
+
+| Skill                      | Use it for                                                      |
+| -------------------------- | --------------------------------------------------------------- |
+| `choosing-charcoal-tokens` | Which color, text style, spacing, radius or border token to use |
+
+`choosing-charcoal-tokens` is a short decision guide plus the design team's guidelines
+under `references/`. Those are the source of truth for which token goes where, and they
+are authored in Japanese.
+
+The guide alone is a table of pointers and is worth nothing without them: measured on a
+repair task, delivering it with `references/` missing scored the same as delivering
+nothing at all, while the two together took the same task from 8.0/9 to 9.0/9 and from
+1.0/3 to 3.0/3 on naming. Those pages are the cost of the only thing that moved it.
 
 They exist because charcoal's own documentation is not machine-readable: the docs site is a Storybook SPA that returns no content to a fetcher, npm package pages return 403, and the `pages/` docsify site has been stale since 2023. Agents that try to look charcoal up on the web reconstruct it from package internals — slowly — or invent it.
 
@@ -73,7 +91,10 @@ charcoal/
     ├── choosing-charcoal-styling/SKILL.md
     ├── setting-up-charcoal-css-variables/SKILL.md
     ├── setting-up-charcoal-tailwind/SKILL.md
-    └── setting-up-charcoal-styled/SKILL.md
+    ├── setting-up-charcoal-styled/SKILL.md
+    └── choosing-charcoal-tokens/
+        ├── SKILL.md
+        └── references/        # the design team's guidelines
 ```
 
 Both installers read the same `skills/` directory — `npx skills` scans it directly, and also honours the `.claude-plugin/` manifest. There is one copy of every fact.
