@@ -21,6 +21,7 @@ import { resolve } from 'node:path'
 import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
 import { downloadAssets, fetchNode, parseUrl } from './figma.mjs'
+import { figAssets, readFig } from './fig.mjs'
 import { flatten, materialsOf } from './design.mjs'
 import { loadTokens } from './tokens.mjs'
 
@@ -36,7 +37,7 @@ const mainUrl = (() => {
   }
 })()
 const isCli = mainUrl !== undefined && import.meta.url === mainUrl
-/** @type {{ url?: string, tokens?: string, theme?: string, assets?: string, spec?: string }} */
+/** @type {{ url?: string, fig?: string, node?: string, tokens?: string, theme?: string, assets?: string, spec?: string }} */
 let args = {}
 /** @type {string | undefined} */
 let argError
@@ -45,6 +46,8 @@ if (isCli) {
     ;({ values: args } = parseArgs({
       options: {
         url: { type: 'string' },
+        fig: { type: 'string' },
+        node: { type: 'string' },
         tokens: { type: 'string' },
         theme: { type: 'string' },
         assets: { type: 'string' },
@@ -56,19 +59,37 @@ if (isCli) {
     argError = error instanceof Error ? error.message : String(error)
   }
 }
-if (isCli && (argError || !args.url || !process.env.FIGMA_TOKEN)) {
+// A .fig carries the design and its bitmaps, so that route needs no credential at all.
+const fromFig = args.fig !== undefined
+if (
+  isCli &&
+  (argError ||
+    (!args.url && !fromFig) ||
+    (args.url && fromFig) ||
+    (!fromFig && !process.env.FIGMA_TOKEN))
+) {
   if (argError) {
     console.error(argError)
   }
+  if (args.url && fromFig) {
+    console.error(
+      'Give --url or --fig, not both: they are two ways to the same design.',
+    )
+  }
   console.error(
-    'Usage: fetch-design.mjs --url <figma url>' +
-      ' [--tokens <dir>] [--theme light|dark] [--assets <dir>]',
+    'Usage: fetch-design.mjs (--url <figma url> | --fig <file.fig>)' +
+      ' [--tokens <dir>] [--theme light|dark] [--assets <dir>] [--spec <path>]',
   )
   console.error(
-    'Set FIGMA_TOKEN in the environment. Create one at' +
-      ' Figma > Settings > Security > Personal access tokens.',
+    "--url reads the design over Figma's REST API. Set FIGMA_TOKEN in the" +
+      ' environment; create one at Figma > Settings > Security > Personal access' +
+      ' tokens. Read-only scope is enough; no Dev Mode seat is required.',
   )
-  console.error('Read-only scope is enough; no Dev Mode seat is required.')
+  console.error(
+    '--fig reads a local export (File > Save local copy) and needs no token,' +
+      ' no network and no access to the original file. Name the frame with' +
+      " --node 110-8609, which is the node-id from the design's link.",
+  )
   process.exit(1)
 }
 // Always a real URL under `isCli`: the guard above exits when it is missing.
@@ -80,20 +101,31 @@ if (isCli) {
   try {
     // ---- output --------------------------------------------------------------
 
-    const { key, node: nodeId } = parseUrl(designUrl)
+    const figPath = args.fig
+    // Figma writes the id with a dash in a link and a colon everywhere else.
+    const { key, node: nodeId } = figPath
+      ? { key: '', node: args.node?.replace('-', ':') }
+      : parseUrl(designUrl)
+    if (figPath && !nodeId) {
+      throw new Error(
+        'Give --node <id> with --fig: a .fig holds the whole file, so there is no' +
+          " one frame to default to. The id is the node-id in the design's link.",
+      )
+    }
     // Read the tokens first: a mistyped --tokens or --theme should fail before the
-    // design is fetched, not after.
+    // design is read, not after.
     const tokens = loadTokens(args.tokens, args.theme ?? 'light')
-    const { document, components } = await fetchNode(key, nodeId)
+    const { document, components } = figPath
+      ? readFig(figPath, nodeId)
+      : await fetchNode(key, nodeId)
     const nodes = flatten(document, components)
     const assetDir = args.assets
-    const assets = assetDir
-      ? await downloadAssets(
-          key,
-          nodes.flatMap((node) => (node.image ? [node.image.ref] : [])),
-          assetDir,
-        )
-      : new Map()
+    const refs = nodes.flatMap((node) => (node.image ? [node.image.ref] : []))
+    const assets = !assetDir
+      ? new Map()
+      : figPath
+        ? figAssets(figPath, refs, assetDir)
+        : await downloadAssets(key, refs, assetDir)
     const round = Math.round
 
     // The frame is a box like any other: it has a ground color, a direction, a gap and

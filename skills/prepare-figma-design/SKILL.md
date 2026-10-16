@@ -1,6 +1,6 @@
 ---
 name: prepare-figma-design
-description: Use when you have a figma.com link and a Figma token, and someone needs to build that design — including when you will build it yourself. One command turns the link into the design's structure, its materials named as your own design tokens, the text of every node and the bitmaps it uses, as three files to commit. No Dev Mode seat, only a read-only personal access token. Hand those files to implement-figma-design, which needs no Figma access at all.
+description: Use when you have a figma.com link or a local .fig export, and someone needs to build that design — including when you will build it yourself. One command turns it into the design's structure, its materials named as your own design tokens, the text of every node and the bitmaps it uses, as three files to commit. No Dev Mode seat: a read-only personal access token, or no credential at all from a .fig. Hand those files to implement-figma-design, which needs no Figma access.
 ---
 
 # Getting a Figma design out of Figma, once, for everyone
@@ -15,8 +15,9 @@ screen needs neither.
 
 ```mermaid
 flowchart LR
-    subgraph prep["prepare-figma-design — needs a Figma token"]
-        link[Figma link] -->|fetch-design.mjs| pack[design.md<br>spec.json<br>assets/]
+    subgraph prep["prepare-figma-design — the only step that touches Figma"]
+        link[Figma link<br>--url, needs a token] -->|fetch-design.mjs| pack[design.md<br>spec.json<br>assets/]
+        fig[".fig export<br>--fig, needs nothing"] -->|fetch-design.mjs| pack
     end
     subgraph impl["implement-figma-design — needs no Figma access"]
         build[Build the screen] --> check{check-design.mjs}
@@ -38,8 +39,14 @@ exist for Figma's layout engine, absolute positioning where the design means a g
 
 ## Do this
 
-Everything comes from the link. A read-only personal access token is enough, created at
-Figma Settings → Security → Personal access tokens. No Dev Mode seat is needed.
+There are two ways in, and they produce the same three files. Use the link if you can
+reach the file; use a `.fig` when you have no token, when Figma is unreachable, or when
+you want a pack rebuildable from something committed.
+
+### From a link
+
+A read-only personal access token is enough, created at Figma Settings → Security →
+Personal access tokens. No Dev Mode seat is needed.
 
 The token is read from `FIGMA_TOKEN` in the environment. Ask whoever is running this to
 put it there — a shell profile, a `.env` the project already loads, whatever they use for
@@ -59,6 +66,32 @@ node <this-skill>/bin/fetch-design.mjs \
 `${CLAUDE_PLUGIN_ROOT}/skills/prepare-figma-design` under the Claude Code plugin,
 `.claude/skills/prepare-figma-design` or `.agents/skills/prepare-figma-design` under
 `npx skills`.
+
+### From a `.fig`
+
+File → Save local copy in Figma writes a `.fig`: the whole document, and every bitmap in
+it. Reading one needs no token, no network and no access to the original file — the
+bitmaps come straight out of the archive instead of being downloaded.
+
+```bash
+node <this-skill>/bin/fetch-design.mjs \
+  --fig design.fig \
+  --node 110-8609 \
+  --tokens node_modules/@charcoal-ui/theme/src/json \
+  --assets design/assets \
+  --spec design/spec.json \
+  > design/design.md
+```
+
+`--node` is required here and takes the `node-id` from the frame's link, because a
+`.fig` holds the whole file and there is no one frame to default to. Right-click the
+frame in Figma → Copy link to get it.
+
+Two things to know. It needs Node 22.15 or newer, because a recent export compresses its
+document with zstd. And it reads the design as the export froze it, so a `.fig` taken
+last month describes last month's design however current the link looks.
+
+### Either way
 
 `--tokens` points at your design system's Style Dictionary JSON. Without it values come
 out literally; with it, every value the system has a token for is named as that token. A
@@ -100,7 +133,8 @@ what the implementation was built from.
 
 | Path                        | R/W   | What                                                                                                                                                             |
 | --------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `FIGMA_TOKEN` (environment) | read  | The credential. Read only when a request is about to be made, never stored.                                                                                      |
+| `FIGMA_TOKEN` (environment) | read  | The credential, for `--url` only. Read only when a request is about to be made, never stored. Never read on the `--fig` route.                                   |
+| `--fig <file>`              | read  | A local Figma export. The only input the `--fig` route has: no network call is made at all.                                                                      |
 | `--tokens <dir>`            | read  | Your design system's Style Dictionary JSON. For charcoal: `node_modules/@charcoal-ui/theme/src/json`. Read-only; one `*.json` per theme plus the shared palette. |
 | stdout                      | write | The pack. Redirect it where you want it — the examples use `design/design.md`.                                                                                   |
 | `--spec <path>`             | write | The same design as facts `check-design.mjs` can compare a render against. Only written when the flag is given.                                                   |
