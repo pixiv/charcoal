@@ -11,44 +11,38 @@ import { MenuListContext } from '../../MenuList/MenuListContext'
  */
 export function useMenuItemHandleKeyDown(
   value?: string,
+  noSelection?: boolean,
+  disabled?: boolean,
 ): [(e: React.KeyboardEvent<HTMLElement>) => void, () => void] {
-  const { setValue, root, propsArray } = useContext(MenuListContext)
+  const { setValue, root, getItems } = useContext(MenuListContext)
   const setContextValue = useCallback(() => {
-    if (value !== undefined) setValue(value)
-  }, [value, setValue])
+    if (noSelection) setValue('')
+    else if (value !== undefined) setValue(value)
+  }, [noSelection, value, setValue])
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLElement>) => {
       if (e.key === 'Enter') {
-        setContextValue()
+        if (!disabled) setContextValue()
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
         const isForward = e.key === 'ArrowDown'
         // prevent scroll
         e.preventDefault()
-        if (!propsArray || value === undefined) return
-        const values = propsArray
-          .map((props) => props.value)
-          .filter((v) => v) as string[]
-        let index = values.indexOf(value)
+        const options = getItems()
+        if (options.length === 0) return
+        let index = options.findIndex(
+          (item) => item.element === e.currentTarget,
+        )
         if (index === -1) return
 
-        for (let n = 0; n < values.length; n++) {
-          const focusValue = isForward
-            ? // prev or last
-              index + 1 >= values.length
-              ? values[0]
-              : values[index + 1]
-            : // next or first
-              index - 1 < 0
-              ? values[values.length - 1]
-              : values[index - 1]
-          const next = root?.current?.querySelector(
-            `[data-key='${focusValue}']`,
-          )
+        for (let n = 0; n < options.length; n++) {
+          index = isForward
+            ? (index + 1) % options.length
+            : (index - 1 + options.length) % options.length
+          const { element: next, disabled: nextDisabled } = options[index]
 
           if (next instanceof HTMLElement) {
-            if (next.ariaDisabled === 'true') {
-              index += isForward ? 1 : -1
+            if (nextDisabled) {
               continue
             }
             next.focus({ preventScroll: true })
@@ -60,7 +54,7 @@ export function useMenuItemHandleKeyDown(
         }
       }
     },
-    [setContextValue, propsArray, value, root],
+    [disabled, setContextValue, getItems, root],
   )
   return [handleKeyDown, setContextValue]
 }

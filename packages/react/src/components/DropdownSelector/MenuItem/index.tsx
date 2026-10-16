@@ -1,9 +1,20 @@
-import { ForwardedRef, forwardRef, useCallback, useRef } from 'react'
+import {
+  ForwardedRef,
+  forwardRef,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+} from 'react'
+import { mergeRefs } from '../../../_lib'
+import { MenuListContext } from '../MenuList/MenuListContext'
 import ListItem, { ListItemProps } from '../ListItem'
 import { useMenuItemHandleKeyDown } from './internals/useMenuItemHandleKeyDown'
 
 export type MenuItemProps<T extends React.ElementType = 'li'> = {
   value?: string
+  /** Selects the DropdownSelector's unselected state. */
+  noSelection?: boolean
   disabled?: boolean
 } & ListItemProps<T>
 
@@ -14,10 +25,26 @@ export type MenuItemProps<T extends React.ElementType = 'li'> = {
 const MenuItem = forwardRef(function MenuItem<
   T extends React.ElementType = 'li',
 >(
-  { className: _, value, disabled, ...props }: MenuItemProps<T>,
+  { className: _, value, noSelection, disabled, ...props }: MenuItemProps<T>,
   ref: ForwardedRef<HTMLLIElement>,
 ) {
-  const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(value)
+  const { registerItem } = useContext(MenuListContext)
+  const unregisterRef = useRef<(() => void) | undefined>(undefined)
+  const registerRef = useCallback(
+    (element: HTMLLIElement | null) => {
+      unregisterRef.current?.()
+      unregisterRef.current = element
+        ? registerItem?.({ element, value, noSelection, disabled })
+        : undefined
+    },
+    [registerItem, value, noSelection, disabled],
+  )
+  const itemRef = useMemo(() => mergeRefs(ref, registerRef), [ref, registerRef])
+  const [handleKeyDown, setContextValue] = useMenuItemHandleKeyDown(
+    value,
+    noSelection,
+    disabled,
+  )
   const penHandledRef = useRef(false)
   const pointerStartRef = useRef<{ x: number; y: number } | null>(null)
 
@@ -58,8 +85,9 @@ const MenuItem = forwardRef(function MenuItem<
     // @ts-expect-error TODO: fix mismatch between MenuItemProps and ListItemProps
     <ListItem
       {...props}
-      ref={ref}
+      ref={itemRef}
       data-key={value}
+      data-no-selection={noSelection || undefined}
       onKeyDown={handleKeyDown}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
