@@ -133,7 +133,8 @@ export class PixivIcon extends HTMLElement {
     await this.waitUntilVisible(controller.signal)
     if (controller.signal.aborted) return
     this.isVisible = true
-    await this.loadSvg(this.props.name, controller.signal)
+    const name = this.getAttribute('name')
+    if (name !== null) await this.loadSvg(name, controller.signal)
   }
 
   disconnectedCallback(): void {
@@ -145,7 +146,7 @@ export class PixivIcon extends HTMLElement {
   attributeChangedCallback(
     attr: string,
     _oldValue: string | null,
-    newValue: string,
+    newValue: string | null,
   ): void {
     // 非表示の場合はロードしない
     if (!this.isVisible) {
@@ -154,7 +155,13 @@ export class PixivIcon extends HTMLElement {
 
     // name が変更された場合必ず再読み込みを試みる
     if (attr === 'name') {
-      void this.loadSvg(newValue)
+      if (newValue !== null) {
+        void this.loadSvg(newValue)
+      } else {
+        this.loadSeq++
+        this.svgContent = undefined
+        this.render()
+      }
       return
     }
 
@@ -165,10 +172,19 @@ export class PixivIcon extends HTMLElement {
     }
 
     // まだ SVG が読み込めてないなら load
-    void this.loadSvg(this.props.name)
+    const name = this.getAttribute('name')
+    if (name !== null) void this.loadSvg(name)
   }
 
   render(): void {
+    if (this.getAttribute('name') === null) {
+      this.shadowRoot?.replaceChildren()
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('<pixiv-icon> requires a "name" attribute.')
+      }
+      return
+    }
     const { name, scale, ...rest } = this.props
     const unsafeNonGuidelineScale = rest['unsafe-non-guideline-scale']
     const fixedSize = rest['fixed-size']

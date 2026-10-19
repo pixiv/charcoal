@@ -1,5 +1,6 @@
 // import { loaders } from './loaders'
 import { PixivIcon, PixivIconLoadError, calcActualSize } from '.'
+import { addRawFile } from './loaders/CustomRawFileLoader'
 import {
   vi,
   describe,
@@ -35,6 +36,7 @@ describe('PixivIcon lifecycle', () => {
   class TestIntersectionObserver implements IntersectionObserver {
     readonly root = null
     readonly rootMargin = '50px'
+    readonly scrollMargin = '0px'
     readonly thresholds = [0]
     observe = vi.fn()
     unobserve = vi.fn()
@@ -102,7 +104,7 @@ describe('PixivIcon lifecycle', () => {
   function deferredIcon() {
     const name = `16/DeferredLifecycle${nextIcon++}`
     const deferred = Promise.withResolvers<string>()
-    PixivIcon.extend({ [name]: () => deferred.promise })
+    addRawFile(name, () => deferred.promise)
     return { name, ...deferred }
   }
 
@@ -148,7 +150,7 @@ describe('PixivIcon lifecycle', () => {
     await connection
     const errors: unknown[] = []
     icon.addEventListener('error', (event) => {
-      errors.push((event as CustomEvent<unknown>).detail)
+      if (event instanceof CustomEvent) errors.push(event.detail)
     })
 
     icon.setAttribute('name', '16/MissingLifecycleIcon')
@@ -174,6 +176,35 @@ describe('PixivIcon lifecycle', () => {
       expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
     })
     expect(onError).not.toHaveBeenCalled()
+  })
+
+  it('warns without throwing when connected without a name', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+    icon.removeAttribute('name')
+    const { connection } = await showIcon()
+    await expect(connection).resolves.toBeUndefined()
+    expect(() =>
+      icon.attributeChangedCallback('scale', null, '2'),
+    ).not.toThrow()
+    expect(warn).toHaveBeenCalledWith(
+      '<pixiv-icon> requires a "name" attribute.',
+    )
+    expect(() => icon.props).toThrow('property "name" is required.')
+    warn.mockRestore()
+  })
+
+  it('loads when a name is supplied after connecting without one', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined)
+    icon.removeAttribute('name')
+    const { connection } = await showIcon()
+    await connection
+    const pending = deferredIcon()
+    icon.setAttribute('name', pending.name)
+    pending.resolve('<svg data-icon="late"></svg>')
+    await vi.waitFor(() => {
+      expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('late')
+    })
+    warn.mockRestore()
   })
 })
 
