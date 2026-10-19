@@ -29,6 +29,76 @@ describe('PixivIcon', () => {
   })
 })
 
+describe('PixivIcon lifecycle', () => {
+  const observers: TestIntersectionObserver[] = []
+  class TestIntersectionObserver implements IntersectionObserver {
+    readonly root = null
+    readonly rootMargin = '50px'
+    readonly thresholds = [0]
+    observe = vi.fn()
+    unobserve = vi.fn()
+    disconnect = vi.fn()
+    takeRecords = vi.fn(() => [])
+
+    constructor(private callback: IntersectionObserverCallback) {
+      observers.push(this)
+    }
+
+    show() {
+      this.callback(
+        [{ isIntersecting: true } as IntersectionObserverEntry],
+        this,
+      )
+    }
+  }
+
+  let icon: PixivIcon
+  beforeEach(() => {
+    observers.length = 0
+    vi.stubGlobal('IntersectionObserver', TestIntersectionObserver)
+    icon = document.createElement('pixiv-icon') as PixivIcon
+    icon.setAttribute('name', '16/TestLifecycle')
+  })
+
+  afterEach(() => {
+    icon.disconnectedCallback()
+    vi.unstubAllGlobals()
+  })
+
+  it('settles visibility waits when disconnected before becoming visible', async () => {
+    const settled = vi.fn()
+    void icon.connectedCallback().then(settled)
+    icon.disconnectedCallback()
+    await Promise.resolve()
+    await Promise.resolve()
+
+    expect(observers[0].disconnect).toHaveBeenCalledOnce()
+    expect(settled).toHaveBeenCalledOnce()
+  })
+
+  it('keeps only one observer when connected again', () => {
+    void icon.connectedCallback()
+    void icon.connectedCallback()
+
+    expect(observers).toHaveLength(2)
+    expect(observers[0].disconnect).toHaveBeenCalledOnce()
+    expect(observers[1].disconnect).not.toHaveBeenCalled()
+  })
+
+  it('ignores queued visibility callbacks from a previous connection', async () => {
+    const settled = vi.fn()
+    void icon.connectedCallback().then(settled)
+    icon.disconnectedCallback()
+    void icon.connectedCallback()
+    observers[0].show()
+    await Promise.resolve()
+    await Promise.resolve()
+
+    expect(settled).toHaveBeenCalledOnce()
+    expect(observers[1].disconnect).not.toHaveBeenCalled()
+  })
+})
+
 describe('calcActualSize', () => {
   describe('fixedSize', () => {
     it('returns the given size directly', () => {

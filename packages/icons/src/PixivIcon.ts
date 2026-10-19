@@ -88,7 +88,7 @@ export class PixivIcon extends HTMLElement {
   }
 
   private svgContent?: string
-  private observer?: IntersectionObserver
+  private connectionController?: AbortController
   private isVisible = false
 
   get props(): {
@@ -125,15 +125,19 @@ export class PixivIcon extends HTMLElement {
   }
 
   async connectedCallback(): Promise<void> {
+    this.connectionController?.abort()
+    const controller = new AbortController()
+    this.connectionController = controller
     this.render()
-    await this.waitUntilVisible()
+    await this.waitUntilVisible(controller.signal)
+    if (controller.signal.aborted) return
     this.isVisible = true
-    await this.loadSvg(this.props.name)
+    await this.loadSvg(this.props.name, controller.signal)
   }
 
   disconnectedCallback(): void {
-    this.observer?.disconnect()
-    this.observer = undefined
+    this.connectionController?.abort()
+    this.connectionController = undefined
     this.isVisible = false
   }
 
@@ -202,28 +206,40 @@ export class PixivIcon extends HTMLElement {
     this.shadowRoot!.innerHTML = style + svg
   }
 
-  private async loadSvg(name: string) {
-    this.svgContent = await getIcon(name)
+  private async loadSvg(
+    name: string,
+    signal = this.connectionController?.signal,
+  ) {
+    const content = await getIcon(name)
+    if (signal?.aborted) return
+    this.svgContent = content
     this.render()
   }
 
-  private waitUntilVisible() {
+  private waitUntilVisible(signal: AbortSignal) {
     return new Promise<void>((resolve) => {
-      this.observer = new IntersectionObserver(
+      if (signal.aborted) return resolve()
+
+      const finish = () => {
+        observer.disconnect()
+        signal.removeEventListener('abort', finish)
+        resolve()
+      }
+      const observer = new IntersectionObserver(
         (entries) => {
+          if (signal.aborted) return
           // In Chromium based browsers, multiple entries can be returned even only observe once.
           // Here, we don't care about the entry time but only if isIntersecting happened.
           const isIntersecting = entries.some((entry) => entry.isIntersecting)
           if (isIntersecting) {
-            this.observer?.disconnect()
-            this.observer = undefined
-            resolve()
+            finish()
           }
         },
         { rootMargin: `${ROOT_MARGIN}px` },
       )
 
-      this.observer.observe(this)
+      signal.addEventListener('abort', finish, { once: true })
+      observer.observe(this)
     })
   }
 }
