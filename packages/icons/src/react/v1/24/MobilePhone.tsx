@@ -15,9 +15,9 @@ const SvgMobilePhone = (
     {...props}
   >
     <path
+      d="M16 2H8a2 2 0 00-2 2v16a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 18a1 1 0 11-2 0 1 1 0 012 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M16 2H8a2 2 0 00-2 2v16a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 18a1 1 0 11-2 0 1 1 0 012 0z"
       fill="currentColor"
     />
   </svg>

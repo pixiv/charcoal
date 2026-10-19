@@ -12,9 +12,9 @@ const SvgUp = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M16 12v7a1 1 0 01-1 1H9a1 1 0 01-1-1v-7H4.414c-.89 0-1.337-1.077-.707-1.707L12 2l8.194 8.297c.623.632.176 1.703-.712 1.703H16z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M16 12v7a1 1 0 01-1 1H9a1 1 0 01-1-1v-7H4.414c-.89 0-1.337-1.077-.707-1.707L12 2l8.194 8.297c.623.632.176 1.703-.712 1.703H16z"
       fill="currentColor"
     />
   </svg>

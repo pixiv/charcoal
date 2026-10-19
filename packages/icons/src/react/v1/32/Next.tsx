@@ -12,9 +12,9 @@ const SvgNext = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M22.828 16l-7.414-7.414a2 2 0 10-2.828 2.828L17.172 16l-4.586 4.586a2 2 0 102.828 2.828L22.828 16z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M22.828 16l-7.414-7.414a2 2 0 10-2.828 2.828L17.172 16l-4.586 4.586a2 2 0 102.828 2.828L22.828 16z"
       fill="currentColor"
     />
   </svg>

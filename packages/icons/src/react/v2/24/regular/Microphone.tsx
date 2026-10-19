@@ -15,9 +15,9 @@ const SvgMicrophone = (
     {...props}
   >
     <path
+      d="M7 6.538a5 5 0 0110 0v4.5a5 5 0 01-10 0v-4.5zm5-3.5a3.5 3.5 0 00-3.5 3.5v4.5a3.5 3.5 0 007 0v-4.5a3.5 3.5 0 00-3.5-3.5z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M7 6.538a5 5 0 0110 0v4.5a5 5 0 01-10 0v-4.5zm5-3.5a3.5 3.5 0 00-3.5 3.5v4.5a3.5 3.5 0 007 0v-4.5a3.5 3.5 0 00-3.5-3.5z"
       fill="currentColor"
     />
     <path

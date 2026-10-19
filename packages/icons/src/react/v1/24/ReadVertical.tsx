@@ -19,13 +19,13 @@ const SvgReadVertical = (
       fill="currentColor"
     />
     <path
-      d="M12.383 17.924a.997.997 0 00.324-.217l3-3M12.383 17.924a.996.996 0 01-.374.076l.374-.076z"
+      d="M12.383 17.924a.997.997 0 00.324-.217l3-3M12.383 17.924a.996.996 0 01-.374.076z"
       fill="currentColor"
     />
     <path
+      d="M17 3H7a4 4 0 00-4 4v10a4 4 0 004 4h10a4 4 0 004-4V7a4 4 0 00-4-4zM5 7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M17 3H7a4 4 0 00-4 4v10a4 4 0 004 4h10a4 4 0 004-4V7a4 4 0 00-4-4zM5 7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"
       fill="currentColor"
     />
   </svg>
