@@ -1,5 +1,5 @@
 // import { loaders } from './loaders'
-import { PixivIcon, calcActualSize } from '.'
+import { PixivIcon, PixivIconLoadError, calcActualSize } from '.'
 import {
   vi,
   describe,
@@ -30,6 +30,7 @@ describe('PixivIcon', () => {
 })
 
 describe('PixivIcon lifecycle', () => {
+  let nextIcon = 0
   const observers: TestIntersectionObserver[] = []
   class TestIntersectionObserver implements IntersectionObserver {
     readonly root = null
@@ -96,6 +97,83 @@ describe('PixivIcon lifecycle', () => {
 
     expect(settled).toHaveBeenCalledOnce()
     expect(observers[1].disconnect).not.toHaveBeenCalled()
+  })
+
+  function deferredIcon() {
+    const name = `16/DeferredLifecycle${nextIcon++}`
+    const deferred = Promise.withResolvers<string>()
+    PixivIcon.extend({ [name]: () => deferred.promise })
+    return { name, ...deferred }
+  }
+
+  async function showIcon() {
+    const connection = icon.connectedCallback()
+    observers.at(-1)?.show()
+    await Promise.resolve()
+    return { connection }
+  }
+
+  it('keeps the latest icon when loads resolve out of order', async () => {
+    const first = deferredIcon()
+    const second = deferredIcon()
+    icon.setAttribute('name', first.name)
+    const { connection } = await showIcon()
+    icon.setAttribute('name', second.name)
+
+    second.resolve('<svg data-icon="second"></svg>')
+    await vi.waitFor(() => {
+      expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
+    })
+    first.resolve('<svg data-icon="first"></svg>')
+    await connection
+    expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
+  })
+
+  it('does not render a pending load after disconnecting', async () => {
+    const pending = deferredIcon()
+    icon.setAttribute('name', pending.name)
+    const { connection } = await showIcon()
+    icon.disconnectedCallback()
+    pending.resolve('<svg data-icon="detached"></svg>')
+    await connection
+
+    expect(icon.shadowRoot?.querySelector('[data-icon]')).toBeNull()
+  })
+
+  it('dispatches a load error and leaves a placeholder after a name change fails', async () => {
+    const first = deferredIcon()
+    icon.setAttribute('name', first.name)
+    const { connection } = await showIcon()
+    first.resolve('<svg data-icon="first"></svg>')
+    await connection
+    const errors: unknown[] = []
+    icon.addEventListener('error', (event) => {
+      errors.push((event as CustomEvent<unknown>).detail)
+    })
+
+    icon.setAttribute('name', '16/MissingLifecycleIcon')
+    await vi.waitFor(() => expect(errors).toHaveLength(1))
+    expect(errors[0]).toBeInstanceOf(PixivIconLoadError)
+    expect(icon.shadowRoot?.querySelector('svg')).not.toBeNull()
+    expect(icon.shadowRoot?.querySelector('[data-icon]')).toBeNull()
+  })
+
+  it('ignores failures from superseded loads', async () => {
+    const first = deferredIcon()
+    const second = deferredIcon()
+    const onError = vi.fn()
+    icon.addEventListener('error', onError)
+    icon.setAttribute('name', first.name)
+    const { connection } = await showIcon()
+    icon.setAttribute('name', second.name)
+    second.resolve('<svg data-icon="second"></svg>')
+    first.reject(new Error('superseded load'))
+    await connection
+
+    await vi.waitFor(() => {
+      expect(icon.shadowRoot?.querySelector('svg')?.dataset.icon).toBe('second')
+    })
+    expect(onError).not.toHaveBeenCalled()
   })
 })
 

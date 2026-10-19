@@ -90,6 +90,7 @@ export class PixivIcon extends HTMLElement {
   private svgContent?: string
   private connectionController?: AbortController
   private isVisible = false
+  private loadSeq = 0
 
   get props(): {
     name: string
@@ -210,10 +211,18 @@ export class PixivIcon extends HTMLElement {
     name: string,
     signal = this.connectionController?.signal,
   ) {
-    const content = await getIcon(name)
-    if (signal?.aborted) return
-    this.svgContent = content
+    const seq = ++this.loadSeq
+    this.svgContent = undefined
     this.render()
+    try {
+      const content = await getIcon(name)
+      if (seq !== this.loadSeq || signal?.aborted) return
+      this.svgContent = content
+      this.render()
+    } catch (error) {
+      if (seq !== this.loadSeq || signal?.aborted) return
+      this.dispatchEvent(new CustomEvent('error', { detail: error }))
+    }
   }
 
   private waitUntilVisible(signal: AbortSignal) {
