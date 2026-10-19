@@ -19,9 +19,9 @@ const SvgDevicerotate = (
       fill="currentColor"
     />
     <path
+      d="M3 5.75A2.75 2.75 0 015.75 3h3.504a2.75 2.75 0 012.75 2.75v7.5A2.75 2.75 0 019.255 16H5.75A2.75 2.75 0 013 13.25v-7.5zm4.5 5.5a1 1 0 100 2 1 1 0 000-2z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M3 5.75A2.75 2.75 0 015.75 3h3.504a2.75 2.75 0 012.75 2.75v7.5A2.75 2.75 0 019.255 16H5.75A2.75 2.75 0 013 13.25v-7.5zm4.5 5.5a1 1 0 100 2 1 1 0 000-2z"
       fill="currentColor"
     />
     <path

@@ -12,9 +12,9 @@ const SvgUndo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M11.155 4.27a1 1 0 010 1.413L8.838 8H18a9 9 0 010 18h-4a1 1 0 110-2h4a7 7 0 100-14H8.86l2.295 2.295a1 1 0 01-1.415 1.414l-4.72-4.72 4.72-4.72a1 1 0 011.415 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M11.155 4.27a1 1 0 010 1.413L8.838 8H18a9 9 0 010 18h-4a1 1 0 110-2h4a7 7 0 100-14H8.86l2.295 2.295a1 1 0 01-1.415 1.414l-4.72-4.72 4.72-4.72a1 1 0 011.415 0z"
       fill="currentColor"
     />
   </svg>

@@ -12,9 +12,9 @@ const SvgSend = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M3 13.5h5a1.5 1.5 0 000-3H3V3.695a1 1 0 011.466-.885l15.853 8.343a1 1 0 010 1.77L4.466 21.267A1 1 0 013 20.382V13.5z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M3 13.5h5a1.5 1.5 0 000-3H3V3.695a1 1 0 011.466-.885l15.853 8.343a1 1 0 010 1.77L4.466 21.267A1 1 0 013 20.382V13.5z"
       fill="currentColor"
     />
   </svg>

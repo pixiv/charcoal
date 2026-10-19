@@ -19,9 +19,9 @@ const SvgLayeradd = (
       fill="currentColor"
     />
     <path
+      d="M18 23a5 5 0 100-10 5 5 0 000 10zm.5-7.75a.5.5 0 00-1 0v2.25h-2.25a.5.5 0 100 1h2.25v2.25a.5.5 0 101 0V18.5h2.25a.5.5 0 100-1H18.5v-2.25z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M18 23a5 5 0 100-10 5 5 0 000 10zm.5-7.75a.5.5 0 00-1 0v2.25h-2.25a.5.5 0 100 1h2.25v2.25a.5.5 0 101 0V18.5h2.25a.5.5 0 100-1H18.5v-2.25z"
       fill="currentColor"
     />
   </svg>

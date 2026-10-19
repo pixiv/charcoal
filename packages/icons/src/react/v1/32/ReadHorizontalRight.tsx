@@ -15,15 +15,15 @@ const SvgReadHorizontalRight = (
     {...props}
   >
     <path
+      d="M5 9a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4H9a4 4 0 01-4-4V9zm4-2a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H9z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M5 9a4 4 0 014-4h14a4 4 0 014 4v14a4 4 0 01-4 4H9a4 4 0 01-4-4V9zm4-2a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H9z"
       fill="currentColor"
     />
     <path
+      d="M22.707 15.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L19.586 17H10a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 011.414-1.414l4 4z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M22.707 15.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L19.586 17H10a1 1 0 110-2h9.586l-2.293-2.293a1 1 0 011.414-1.414l4 4z"
       fill="currentColor"
     />
   </svg>
