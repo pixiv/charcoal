@@ -257,6 +257,39 @@ export function flatten(document, components) {
  * @returns {string[]}
  */
 export function surfaceRole(node, tokens) {
+  // The walk starts at the parent and never looks at `node`, so every child of one box
+  // gets the same answer — 27k nodes over 8.5k distinct parents on a real screen.
+  const cached = SURFACES.get(tokens)?.get(node.parent ?? EMPTY)
+  if (cached) {
+    return cached
+  }
+  const roles = walkSurface(node, tokens)
+  let perTokens = SURFACES.get(tokens)
+  if (!perTokens) {
+    perTokens = new WeakMap()
+    SURFACES.set(tokens, perTokens)
+  }
+  perTokens.set(node.parent ?? EMPTY, roles)
+  return roles
+}
+
+/** Stands in for "no parent", which is one answer too and cannot key a WeakMap. */
+const EMPTY = {}
+
+/**
+ * Keyed by the token set as well as the parent: `materialsOf` is exported, and two
+ * callers with two design systems must not share an answer.
+ *
+ * @type {WeakMap<object, WeakMap<object, string[]>>}
+ */
+const SURFACES = new WeakMap()
+
+/**
+ * @param {Node} node
+ * @param {Tokens} tokens
+ * @returns {string[]}
+ */
+function walkSurface(node, tokens) {
   /** @type {string[] | undefined} */
   let fallback
   for (let at = node.parent; at; at = at.parent) {
@@ -329,31 +362,30 @@ export function materialsOf(node, tokens) {
   }
 
   // What a fill means depends on what it fills: words, an icon's shape, or a surface.
-  const on = surfaceRole(node, tokens)
+  const fill = solid(raw.fills)
   const property =
     node.kind === 'text' || node.kind === 'vector' ? 'color' : 'background'
-  const painted = solid(raw.fills) === undefined && unnameable(raw.fills)
+  const painted = fill === undefined && unnameable(raw.fills)
   if (painted) {
     out.push(
       `${property}: ${painted} /* no token for this; read it from the design */`,
     )
   }
-  if (node.kind === 'text') {
-    push('color', solid(raw.fills), [
-      on.map((role) => `text/on-${role}/`),
-      'text/',
-    ])
-  } else if (node.kind === 'vector') {
-    push('color', solid(raw.fills), [
-      on.map((role) => `icon/on-${role}/`),
-      'icon/',
+  if (node.kind === 'text' || node.kind === 'vector') {
+    // Only a label or an icon is read against what it sits on, so only these two pay
+    // for the ancestor walk.
+    const family = node.kind === 'text' ? 'text' : 'icon'
+    const on = surfaceRole(node, tokens)
+    push('color', fill, [
+      on.map((role) => `${family}/on-${role}/`),
+      `${family}/`,
     ])
   } else {
     // The root frame is the screen's own ground; a box inside it is a container.
     // references/color.md reserves `container.default` for Modal and Menu.
     push(
       'background-color',
-      solid(raw.fills),
+      fill,
       node.depth === 0
         ? ['background/', 'container/']
         : ['container/', 'background/'],
@@ -431,21 +463,15 @@ export function materialsOf(node, tokens) {
       `border-radius: ${raw.rectangleCornerRadii.map((r) => `${r}px`).join(' ')}`,
     )
   }
-  if (solid(raw.strokes)) {
-    push('border-color', solid(raw.strokes), ['border/'])
+  const stroke = solid(raw.strokes)
+  if (stroke) {
+    push('border-color', stroke, ['border/'])
     // A list divider is a stroke on one side only. Stating `border-width` alone boxes
     // every row, which is the opposite of what references/border.md asks for.
     const sides = raw.individualStrokeWeights
-    /** @type {[string, number][]} */
-    const weights = [
-      ['top', sides?.top ?? 0],
-      ['right', sides?.right ?? 0],
-      ['bottom', sides?.bottom ?? 0],
-      ['left', sides?.left ?? 0],
-    ]
     const perSide =
       sides && new Set(Object.values(sides)).size > 1
-        ? weights.filter(([, weight]) => weight > 0)
+        ? Object.entries(sides).filter(([, weight]) => weight > 0)
         : []
     if (perSide.length > 0) {
       for (const [side, weight] of perSide) {

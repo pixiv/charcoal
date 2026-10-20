@@ -41,8 +41,6 @@ const zstdDecompressSync = /** @type {any} */ (zlib).zstdDecompressSync
  * @typedef {{ m00: number, m01: number, m02: number, m10: number, m11: number, m12: number }} Matrix
  */
 
-/** @type {Matrix} */
-
 // ---- the zip around it ----------------------------------------------------
 
 /**
@@ -326,6 +324,7 @@ function toPaint(paint, enums) {
 }
 
 /** Figma names a weight in the font's style; the pack wants the number. */
+/** @type {[RegExp, number][]} */
 const WEIGHTS = [
   [/thin|hairline/i, 100],
   [/extra\s*light|ultra\s*light/i, 200],
@@ -345,7 +344,7 @@ function weightOf(node) {
   }
   // `Semi Bold` matches `bold` too, so the more specific patterns are tried first.
   for (const [pattern, weight] of WEIGHTS) {
-    if (/** @type {RegExp} */ (pattern).test(style)) {
+    if (pattern.test(style)) {
       return weight
     }
   }
@@ -491,7 +490,7 @@ export function readFig(path, nodeId) {
     const walk = (node, parentAbsolute) => {
       const absolute = compose(parentAbsolute, node.transform ?? IDENTITY)
       const out = toRest(node, absolute, enums)
-      const symbolId = idOf(node.symbolData?.symbolID)
+      const symbolId = out.componentId
       if (symbolId) {
         const symbol = byId.get(symbolId)
         if (symbol) {
@@ -500,7 +499,7 @@ export function readFig(path, nodeId) {
         out.children = wordsOf(node, symbolId, out)
         return out
       }
-      out.children = (children.get(idOf(node.guid) ?? '') ?? []).map((child) =>
+      out.children = (children.get(out.id) ?? []).map((child) =>
         walk(child, absolute),
       )
       return out

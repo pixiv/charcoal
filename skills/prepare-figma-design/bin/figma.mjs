@@ -60,6 +60,19 @@ function figmaAuth() {
 }
 
 /**
+ * A node id as everything but a link spells it.
+ *
+ * Figma writes `110-8609` in a URL and `110:8609` everywhere else, so both the link
+ * parser and `--node` have to agree on the conversion.
+ *
+ * @param {string} raw
+ * @returns {string}
+ */
+export function nodeId(raw) {
+  return raw.replace('-', ':').trim()
+}
+
+/**
  * The file key and node id Figma puts in a design URL.
  *
  * @param {string} url
@@ -72,7 +85,7 @@ export function parseUrl(url) {
   const raw = /node-id=([^&]+)/.exec(url)?.[1] ?? ''
   let node
   try {
-    node = decodeURIComponent(raw).replace('-', ':').trim()
+    node = nodeId(decodeURIComponent(raw))
   } catch {
     throw new Error(`Could not read the node id in ${url}`)
   }
@@ -107,12 +120,8 @@ export async function fetchNode(key, node) {
         'token can read this file.',
     )
   }
-  return node
-    ? {
-        document: body.nodes[node].document,
-        components: body.nodes[node].components ?? {},
-      }
-    : { document: body.document, components: body.components ?? {} }
+  const found = node ? body.nodes[node] : body
+  return { document: found.document, components: found.components ?? {} }
 }
 
 /** @type {Record<string, string>} */
@@ -160,7 +169,7 @@ export async function downloadAssets(key, refs, dir) {
   // The bitmaps are independent, and each is a separate round trip to a signed URL. A
   // screen with a dozen pictures spends seconds here if they are fetched one at a time.
   const downloaded = await Promise.all(
-    [...wanted].map(async (ref) => {
+    wanted.map(async (ref) => {
       const url = urls[ref]
       if (!url) {
         console.error(

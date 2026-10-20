@@ -64,8 +64,8 @@ export function loadTokens(dir, theme = 'light') {
   if (theme === '') {
     throw new Error('--theme needs a name, such as light or dark')
   }
-  const wanted = new RegExp(theme.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i')
-  const chosen = files.filter((f) => wanted.test(f))
+  const wanted = theme.toLowerCase()
+  const chosen = files.filter((f) => f.toLowerCase().includes(wanted))
   if (chosen.length > 1) {
     // `--theme pixiv` matches pixiv-light.json and pixiv-dark.json alike, and merging
     // them is the order-dependence this whole function exists to avoid.
@@ -73,7 +73,7 @@ export function loadTokens(dir, theme = 'light') {
       `--theme ${theme} matches more than one file: ${chosen.join(', ')}`,
     )
   }
-  if (chosen.length === 0 && files.some((f) => /(light|dark)/i.test(f))) {
+  if (chosen.length === 0 && other.length !== files.length) {
     // Carrying on with the shared files alone drops every semantic token silently,
     // which looks like a design system that only has a palette.
     throw new Error(`No "${theme}" theme in ${dir}; it has ${files.join(', ')}`)

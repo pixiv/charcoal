@@ -20,7 +20,7 @@ import { writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
-import { downloadAssets, fetchNode, parseUrl } from './figma.mjs'
+import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
 import { figAssets, readFig } from './fig.mjs'
 import { flatten, materialsOf } from './design.mjs'
 import { loadTokens } from './tokens.mjs'
@@ -102,11 +102,10 @@ if (isCli) {
     // ---- output --------------------------------------------------------------
 
     const figPath = args.fig
-    // Figma writes the id with a dash in a link and a colon everywhere else.
-    const { key, node: nodeId } = figPath
-      ? { key: '', node: args.node?.replace('-', ':') }
+    const { key, node: target } = figPath
+      ? { key: '', node: args.node && nodeId(args.node) }
       : parseUrl(designUrl)
-    if (figPath && !nodeId) {
+    if (figPath && !target) {
       throw new Error(
         'Give --node <id> with --fig: a .fig holds the whole file, so there is no' +
           " one frame to default to. The id is the node-id in the design's link.",
@@ -116,8 +115,8 @@ if (isCli) {
     // design is read, not after.
     const tokens = loadTokens(args.tokens, args.theme ?? 'light')
     const { document, components } = figPath
-      ? readFig(figPath, nodeId)
-      : await fetchNode(key, nodeId)
+      ? readFig(figPath, target)
+      : await fetchNode(key, target)
     const nodes = flatten(document, components)
     const assetDir = args.assets
     const refs = nodes.flatMap((node) => (node.image ? [node.image.ref] : []))
@@ -177,43 +176,46 @@ if (isCli) {
      * Outermost, not nearest: an instance nests instances, and only the one the
      * implementation actually writes survives into the pack.
      */
-    /**
-     * @param {Node} node
-     * @returns {Node | undefined}
-     */
-    const instanceAbove = (node) => {
-      /** @type {Node | undefined} */
-      let found
-      for (let at = node.parent; at; at = at.parent) {
-        if (at.kind === 'instance') {
-          found = at
-        }
-      }
-      return found
-    }
-
     // Inside an instance the design shows how Figma composed the component, and the
     // library composes it differently: a TextField is a 22px label, a 4px gap and a
     // 40px field in the design, and one 40px element in the code. Describing those
     // parts invites an implementation that reproduces them and drifts from the design
     // with every one. The words are still wanted, so they move up onto the instance's
     // own line — collected first, because a node is written before its children walk.
-    const inside = new Set()
+    //
+    // `nodes` is in document order, so the outermost enclosing instance is whatever
+    // the parent's was, or the parent itself. Asking each node to walk its own
+    // ancestors instead costs a pass over the whole chain per node.
+    /** @type {Map<Node, Node | undefined>} */
+    const owners = new Map()
+    /** @type {Node[]} */
+    const described = []
     for (const node of nodes) {
-      const owner = instanceAbove(node)
-      if (!owner) {
+      const parent = node.parent
+      const owner = parent
+        ? (owners.get(parent) ??
+          (parent.kind === 'instance' ? parent : undefined))
+        : undefined
+      owners.set(node, owner)
+      if (owner) {
+        if (node.raw.characters) {
+          ;(owner.words ??= []).push(node.raw.characters)
+        }
         continue
       }
-      inside.add(node)
-      if (node.raw.characters) {
-        owner.words = [...(owner.words ?? []), node.raw.characters]
+      // Everything not inside an instance, and not the frame itself, is described —
+      // once, so the markdown and the spec can never disagree about the node set.
+      if (node.depth > 0) {
+        described.push(node)
       }
     }
 
-    for (const node of nodes) {
-      if (node.depth === 0 || inside.has(node)) {
-        continue
-      }
+    /** Ranking a node's materials is the expensive part; `--spec` restates them. */
+    const materialsFor = new Map(
+      described.map((node) => [node, materialsOf(node, tokens)]),
+    )
+
+    for (const node of described) {
       const indent = '  '.repeat(node.depth - 1)
       const as = node.component ? ` — \`${node.component}\`` : ''
       lines.push(
@@ -228,7 +230,7 @@ if (isCli) {
           `${indent}  text: ${words.map((w) => JSON.stringify(w)).join(', ')}`,
         )
       }
-      const materials = materialsOf(node, tokens)
+      const materials = materialsFor.get(node) ?? []
       if (materials.length > 0) {
         lines.push(`${indent}  ${materials.join('; ')}`)
       }
@@ -245,9 +247,6 @@ if (isCli) {
     // list of facts is not the same as being able to check your own work against them.
     const specPath = args.spec
     if (specPath) {
-      const described = nodes.filter(
-        (node) => node.depth > 0 && !inside.has(node),
-      )
       await writeFile(
         specPath,
         `${JSON.stringify(
@@ -270,7 +269,7 @@ if (isCli) {
               text: node.raw.characters ?? undefined,
               // What the design says this is made of, already resolved to the tokens the
               // system owns — so a check can ask whether the value reached the screen.
-              styles: materialsOf(node, tokens),
+              styles: materialsFor.get(node) ?? [],
             })),
           },
           null,

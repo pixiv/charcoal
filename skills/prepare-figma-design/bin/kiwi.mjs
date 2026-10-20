@@ -76,12 +76,12 @@ class Reader {
   }
 
   string() {
-    const start = this.at
-    while (this.data[this.at] !== 0) {
-      this.at++
+    const end = this.data.indexOf(0, this.at)
+    if (end === -1) {
+      throw new Error('Unterminated string: the data ran out before its NUL')
     }
-    const text = DECODER.decode(this.data.subarray(start, this.at))
-    this.at++
+    const text = DECODER.decode(this.data.subarray(this.at, end))
+    this.at = end + 1
     return text
   }
 }
@@ -104,21 +104,20 @@ export function parseSchema(bytes) {
     const name = reader.string()
     const kind = reader.byte()
     const fields = []
+    const byId = new Map()
     const fieldCount = reader.varuint()
     for (let f = 0; f < fieldCount; f++) {
-      fields.push({
+      const field = {
         name: reader.string(),
         type: reader.varint(),
         isArray: reader.byte() !== 0,
         id: reader.varuint(),
-      })
+      }
+      fields.push(field)
+      // Only a message looks a field up by id; a struct reads them in order.
+      byId.set(field.id, field)
     }
-    definitions.push({ name, kind, fields, byId: new Map() })
-  }
-  for (const definition of definitions) {
-    for (const field of definition.fields) {
-      definition.byId.set(field.id, field)
-    }
+    definitions.push({ name, kind, fields, byId })
   }
   return definitions
 }
@@ -159,13 +158,17 @@ function value(reader, definitions, type) {
   if (definition.kind === ENUM) {
     return reader.varuint()
   }
+  /** @param {{ type: number, isArray: boolean }} field */
+  const read = (field) =>
+    field.isArray
+      ? array(reader, definitions, field.type)
+      : value(reader, definitions, field.type)
+
   if (definition.kind === STRUCT) {
     /** @type {Record<string, any>} */
     const out = {}
     for (const field of definition.fields) {
-      out[field.name] = field.isArray
-        ? array(reader, definitions, field.type)
-        : value(reader, definitions, field.type)
+      out[field.name] = read(field)
     }
     return out
   }
@@ -180,9 +183,7 @@ function value(reader, definitions, type) {
     if (!field) {
       throw new Error(`Field ${id} is not in ${definition.name}`)
     }
-    out[field.name] = field.isArray
-      ? array(reader, definitions, field.type)
-      : value(reader, definitions, field.type)
+    out[field.name] = read(field)
   }
 }
 
