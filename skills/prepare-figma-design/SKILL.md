@@ -160,6 +160,10 @@ Each line is one element: its box, then its materials, then the component and va
 came from. `implement-figma-design` explains how to read it; what matters here is that
 it is complete without Figma, and that there is no markup in it on purpose.
 
+A fill the design system cannot name — a gradient, a pattern — is written as what it
+is, `background: linear gradient /* ... */`, rather than left out. A box painted with a
+gradient must not read like a box painted with nothing.
+
 If the pack comes out full of raw hex, `--tokens` is pointing at the wrong directory —
 fix that before handing it over, because a literal reads as "the design system has no
 word for this" and sends the implementer looking for one that does not exist.

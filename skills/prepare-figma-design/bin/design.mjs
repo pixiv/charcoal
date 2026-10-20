@@ -44,6 +44,32 @@ const rgba = (color) =>
   )}, ${color.a ?? 1})`
 
 /**
+ * The paint a reader sees where it is not a flat color: a gradient, a pattern, a noise
+ * fill. None of them is a value the design system has a word for, and none can be
+ * written as a length or a hex — but saying nothing is worse, because a box painted
+ * with a gradient then reads exactly like a box painted with nothing.
+ *
+ * @param {Paint[] | undefined} paints
+ * @returns {string | undefined}
+ */
+function unnameable(paints) {
+  for (const paint of paints ?? []) {
+    if (paint.visible === false || paint.type === 'SOLID') {
+      continue
+    }
+    // IMAGE is left out: a bitmap is reported on its own `image:` line, with the file
+    // it was downloaded to, so naming it here would state it twice.
+    if (paint.type === 'IMAGE') {
+      return undefined
+    }
+    // `GRADIENT_LINEAR` reads as "linear gradient", the way a reader would say it.
+    const kind = /^GRADIENT_(.+)$/.exec(paint.type)?.[1]
+    return kind ? `${kind.toLowerCase()} gradient` : paint.type.toLowerCase()
+  }
+  return undefined
+}
+
+/**
  * The first visible solid paint, which is the one a reader sees.
  *
  * @param {Paint[] | undefined} paints
@@ -304,6 +330,14 @@ export function materialsOf(node, tokens) {
 
   // What a fill means depends on what it fills: words, an icon's shape, or a surface.
   const on = surfaceRole(node, tokens)
+  const property =
+    node.kind === 'text' || node.kind === 'vector' ? 'color' : 'background'
+  const painted = solid(raw.fills) === undefined && unnameable(raw.fills)
+  if (painted) {
+    out.push(
+      `${property}: ${painted} /* no token for this; read it from the design */`,
+    )
+  }
   if (node.kind === 'text') {
     push('color', solid(raw.fills), [
       on.map((role) => `text/on-${role}/`),

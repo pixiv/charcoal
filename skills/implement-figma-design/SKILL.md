@@ -67,6 +67,11 @@ color: #ffffff /* text/on-on-img/default | text/on-primary/default | text/on-neg
 That is the design system offering several words for this color and the design not
 saying which. Choose the role the element actually plays.
 
+**A gradient or a pattern is named, not valued.** `background: linear gradient /* no
+token for this; read it from the design */` means there is a fill here that the design
+system has no word for and the pack cannot write as a value. Open the design and copy
+it. The one thing it does not mean is an unpainted box.
+
 **There is no markup, on purpose.** The pack says what the design is. Turning that into
 components, props and state is the implementation, and it is yours to write.
 

@@ -126,15 +126,38 @@ function readCanvas(zip) {
   if (canvas.toString('latin1', 0, 8) !== 'fig-kiwi') {
     throw new Error('canvas.fig is not in the format this reads')
   }
-  const schemaBytes = canvas.readUInt32LE(12)
-  const definitions = parseSchema(
-    inflateRawSync(canvas.subarray(16, 16 + schemaBytes)),
-  )
-  const at = 16 + schemaBytes
-  const body = canvas.subarray(at + 4, at + 4 + canvas.readUInt32LE(at))
+
+  // An 8-byte prelude, a version, then length-prefixed chunks: the schema, then the
+  // document. Read them as a list rather than at fixed offsets — a truncated file
+  // should say so here, not fail as an out-of-range read inside a decompressor.
+  const chunks = []
+  for (let at = 12; at < canvas.length;) {
+    if (at + 4 > canvas.length) {
+      throw new Error(
+        `Truncated canvas.fig: ${canvas.length - at} byte(s) where a chunk length should be`,
+      )
+    }
+    const length = canvas.readUInt32LE(at)
+    at += 4
+    if (at + length > canvas.length) {
+      throw new Error(
+        `Truncated canvas.fig: chunk ${chunks.length} claims ${length} bytes but ${canvas.length - at} remain`,
+      )
+    }
+    chunks.push(canvas.subarray(at, at + length))
+    at += length
+  }
+  const [schema, body] = chunks
+  if (!schema || !body) {
+    throw new Error(
+      `canvas.fig has ${chunks.length} chunk(s); a schema and a document were expected`,
+    )
+  }
+
+  const definitions = parseSchema(inflateRawSync(schema))
   // Newer exports compress the document with zstd and leave the schema on deflate.
   let data
-  if (body.readUInt32LE(0) === 0xfd2fb528) {
+  if (body.length >= 4 && body.readUInt32LE(0) === 0xfd2fb528) {
     if (!zstdDecompressSync) {
       throw new Error(
         `This .fig is zstd-compressed and this Node (${process.version}) cannot read it. Node 22.15 or newer can.`,
