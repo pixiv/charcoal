@@ -59,6 +59,10 @@ class Reader {
   /**
    * Floats are stored with their bits rotated so that the common values — whole numbers
    * and zero — end in zero bytes and cost one byte instead of four.
+   *
+   * Unrotated through a scratch view, never through the payload's own: writing the
+   * rotation back into the buffer being read overwrites the first four bytes of the
+   * document with every float decoded.
    */
   varfloat() {
     if (this.data[this.at] === 0) {
@@ -67,9 +71,8 @@ class Reader {
     }
     const bits = this.view.getUint32(this.at, true)
     this.at += 4
-    const rotated = ((bits << 23) | (bits >>> 9)) >>> 0
-    this.view.setUint32(0, rotated, true)
-    return this.view.getFloat32(0, true)
+    SCRATCH.setUint32(0, ((bits << 23) | (bits >>> 9)) >>> 0, true)
+    return SCRATCH.getFloat32(0, true)
   }
 
   string() {
@@ -84,6 +87,8 @@ class Reader {
 }
 
 const DECODER = new TextDecoder()
+/** Four bytes borrowed for bit-twiddling, so no payload is ever written to. */
+const SCRATCH = new DataView(new ArrayBuffer(4))
 
 /**
  * The schema that was written alongside the data: every type the file uses, in the
