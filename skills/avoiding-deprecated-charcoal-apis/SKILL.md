@@ -1,6 +1,6 @@
 ---
 name: avoiding-deprecated-charcoal-apis
-description: Use before writing or editing any code that imports @charcoal-ui (components, icons, styled-components themes, or Tailwind classes from the charcoal preset), and before adding an @charcoal-ui package to package.json. Several APIs look current but are deprecated with no runtime warning: all of @charcoal-ui/react-sandbox (Layout, LeftMenu, MenuListItem, Pager…), @charcoal-ui/styled in a project not already on styled-components, @charcoal-ui/tailwind-diff, Icon unsafeNonGuidelineScale / pixiv-icon unsafe-non-guideline-scale, createTheme, Tailwind black/white, and ClickableElement.
+description: Use before writing or editing any code that imports @charcoal-ui (components, icons, styled-components themes, or Tailwind classes from the charcoal preset), and before adding an @charcoal-ui package to package.json. Several APIs look current but are deprecated with no runtime warning: all of @charcoal-ui/react-sandbox (Layout, LeftMenu, MenuListItem, Pager…), @charcoal-ui/styled in a project not already on styled-components, @charcoal-ui/tailwind-diff, Icon unsafeNonGuidelineScale / pixiv-icon unsafe-non-guideline-scale, createTheme, Tailwind black/white, and ClickableElement. If the existing code already imports one of these, ask the user (AskUserQuestion) whether to migrate it before building on it or copying it.
 ---
 
 # Avoiding deprecated charcoal APIs
