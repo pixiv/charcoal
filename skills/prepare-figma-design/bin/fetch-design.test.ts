@@ -463,3 +463,41 @@ test('a surface that is two roles at once hands over both, not the shorter name'
   expect(line).toMatch(/text\/on-negative\/default/)
   expect(line).toMatch(/text\/on-discovery\/default/)
 })
+
+test('a gradient is named, because silence reads as an unpainted box', () => {
+  // A gradient has no token and no literal to write, so the pack used to emit nothing
+  // for it — making a box painted with a gradient identical to a box painted with
+  // nothing. The check loop then has no claim to verify and a transparent box passes.
+  const tokens = loadTokens(tokenDir(), 'light')
+  const painted = (kind: string, nodeKind = 'frame') =>
+    materialsOf(
+      node({
+        kind: nodeKind,
+        depth: 1,
+        raw: figma({ fills: [{ type: kind, visible: true }] }),
+      }),
+      tokens,
+    )
+
+  expect(painted('GRADIENT_LINEAR')[0]).toMatch(/^background: linear gradient/)
+  expect(painted('GRADIENT_RADIAL', 'text')[0]).toMatch(
+    /^color: radial gradient/,
+  )
+  expect(painted('PATTERN')[0]).toMatch(/^background: pattern/)
+  // An unpainted box still says nothing, which is what makes the line above mean
+  // something.
+  expect(materialsOf(node({ depth: 1 }), tokens)).toEqual([])
+  // A bitmap is already reported on its own `image:` line; naming it here too would
+  // state the same fact twice.
+  expect(
+    materialsOf(
+      node({
+        depth: 1,
+        raw: figma({
+          fills: [{ type: 'IMAGE', visible: true, imageRef: 'a' }],
+        }),
+      }),
+      tokens,
+    ),
+  ).toEqual([])
+})

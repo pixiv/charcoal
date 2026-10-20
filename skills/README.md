@@ -17,15 +17,21 @@ choose its tokens once it is in.
 | Skill                      | Use it for                                                      |
 | -------------------------- | --------------------------------------------------------------- |
 | `choosing-charcoal-tokens` | Which color, text style, spacing, radius or border token to use |
-| `implement-figma-design`   | Building a screen from a Figma link, and checking it matches    |
+| `prepare-figma-design`     | Turning a Figma link into files a teammate can build from       |
+| `implement-figma-design`   | Building a screen from those files, and checking it matches     |
 
-`implement-figma-design` ships two scripts and no dependencies. `bin/fetch-design.mjs`
-turns a figma.com link into the design's structure, each node's materials named as
-charcoal tokens, the text of every node and the bitmaps it uses — no Dev Mode
-seat, only a read-only personal access token. `bin/check-design.mjs` then renders what you
-built and names where it departs from that design, which is the only way to catch the
-failure the source cannot show you: every component imported, every value written as a
-token, and none of them applied.
+The Figma pair is split because the two jobs need different things, and only one of them
+needs Figma. `prepare-figma-design` ships `bin/fetch-design.mjs`, which turns a figma.com
+link into the design's structure, each node's materials named as charcoal tokens, the
+text of every node and the bitmaps it uses — no Dev Mode seat, only a read-only personal
+access token. Whoever has that token runs it once and commits the three files it writes.
+
+`implement-figma-design` starts from those files and needs no Figma access, no token and
+no seat. Its `bin/check-design.mjs` renders what you built and names where it departs
+from the design, which is the only way to catch the failure the source cannot show you:
+every component imported, every value written as a token, and none of them applied.
+
+Neither script has any dependencies.
 
 `choosing-charcoal-tokens` is a short decision guide over the design team's guidelines
 under `references/`, which are authored in Japanese and are the source of truth for which
@@ -100,9 +106,12 @@ charcoal/
     ├── choosing-charcoal-tokens/
     │   ├── SKILL.md
     │   └── references/        # the design team's guidelines
+    ├── prepare-figma-design/
+    │   ├── SKILL.md
+    │   └── bin/               # fetch-design.mjs and its modules
     └── implement-figma-design/
         ├── SKILL.md
-        └── bin/                 # fetch-design.mjs, check-design.mjs
+        └── bin/               # check-design.mjs
 ```
 
 Both installers read the same `skills/` directory — `npx skills` scans it directly, and also honours the `.claude-plugin/` manifest. There is one copy of every fact.

@@ -20,7 +20,8 @@ import { writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
-import { downloadAssets, fetchNode, parseUrl } from './figma.mjs'
+import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
+import { figAssets, readFig } from './fig.mjs'
 import { flatten, materialsOf } from './design.mjs'
 import { loadTokens } from './tokens.mjs'
 
@@ -36,7 +37,7 @@ const mainUrl = (() => {
   }
 })()
 const isCli = mainUrl !== undefined && import.meta.url === mainUrl
-/** @type {{ url?: string, tokens?: string, theme?: string, assets?: string, spec?: string }} */
+/** @type {{ url?: string, fig?: string, node?: string, tokens?: string, theme?: string, assets?: string, spec?: string }} */
 let args = {}
 /** @type {string | undefined} */
 let argError
@@ -45,6 +46,8 @@ if (isCli) {
     ;({ values: args } = parseArgs({
       options: {
         url: { type: 'string' },
+        fig: { type: 'string' },
+        node: { type: 'string' },
         tokens: { type: 'string' },
         theme: { type: 'string' },
         assets: { type: 'string' },
@@ -56,19 +59,37 @@ if (isCli) {
     argError = error instanceof Error ? error.message : String(error)
   }
 }
-if (isCli && (argError || !args.url || !process.env.FIGMA_TOKEN)) {
+// A .fig carries the design and its bitmaps, so that route needs no credential at all.
+const fromFig = args.fig !== undefined
+if (
+  isCli &&
+  (argError ||
+    (!args.url && !fromFig) ||
+    (args.url && fromFig) ||
+    (!fromFig && !process.env.FIGMA_TOKEN))
+) {
   if (argError) {
     console.error(argError)
   }
+  if (args.url && fromFig) {
+    console.error(
+      'Give --url or --fig, not both: they are two ways to the same design.',
+    )
+  }
   console.error(
-    'Usage: fetch-design.mjs --url <figma url>' +
-      ' [--tokens <dir>] [--theme light|dark] [--assets <dir>]',
+    'Usage: fetch-design.mjs (--url <figma url> | --fig <file.fig>)' +
+      ' [--tokens <dir>] [--theme light|dark] [--assets <dir>] [--spec <path>]',
   )
   console.error(
-    'Set FIGMA_TOKEN in the environment. Create one at' +
-      ' Figma > Settings > Security > Personal access tokens.',
+    "--url reads the design over Figma's REST API. Set FIGMA_TOKEN in the" +
+      ' environment; create one at Figma > Settings > Security > Personal access' +
+      ' tokens. Read-only scope is enough; no Dev Mode seat is required.',
   )
-  console.error('Read-only scope is enough; no Dev Mode seat is required.')
+  console.error(
+    '--fig reads a local export (File > Save local copy) and needs no token,' +
+      ' no network and no access to the original file. Name the frame with' +
+      " --node 110-8609, which is the node-id from the design's link.",
+  )
   process.exit(1)
 }
 // Always a real URL under `isCli`: the guard above exits when it is missing.
@@ -80,20 +101,30 @@ if (isCli) {
   try {
     // ---- output --------------------------------------------------------------
 
-    const { key, node: nodeId } = parseUrl(designUrl)
+    const figPath = args.fig
+    const { key, node: target } = figPath
+      ? { key: '', node: args.node && nodeId(args.node) }
+      : parseUrl(designUrl)
+    if (figPath && !target) {
+      throw new Error(
+        'Give --node <id> with --fig: a .fig holds the whole file, so there is no' +
+          " one frame to default to. The id is the node-id in the design's link.",
+      )
+    }
     // Read the tokens first: a mistyped --tokens or --theme should fail before the
-    // design is fetched, not after.
+    // design is read, not after.
     const tokens = loadTokens(args.tokens, args.theme ?? 'light')
-    const { document, components } = await fetchNode(key, nodeId)
+    const { document, components } = figPath
+      ? readFig(figPath, target)
+      : await fetchNode(key, target)
     const nodes = flatten(document, components)
     const assetDir = args.assets
-    const assets = assetDir
-      ? await downloadAssets(
-          key,
-          nodes.flatMap((node) => (node.image ? [node.image.ref] : [])),
-          assetDir,
-        )
-      : new Map()
+    const refs = nodes.flatMap((node) => (node.image ? [node.image.ref] : []))
+    const assets = !assetDir
+      ? new Map()
+      : figPath
+        ? figAssets(figPath, refs, assetDir)
+        : await downloadAssets(key, refs, assetDir)
     const round = Math.round
 
     // The frame is a box like any other: it has a ground color, a direction, a gap and
@@ -145,43 +176,46 @@ if (isCli) {
      * Outermost, not nearest: an instance nests instances, and only the one the
      * implementation actually writes survives into the pack.
      */
-    /**
-     * @param {Node} node
-     * @returns {Node | undefined}
-     */
-    const instanceAbove = (node) => {
-      /** @type {Node | undefined} */
-      let found
-      for (let at = node.parent; at; at = at.parent) {
-        if (at.kind === 'instance') {
-          found = at
-        }
-      }
-      return found
-    }
-
     // Inside an instance the design shows how Figma composed the component, and the
     // library composes it differently: a TextField is a 22px label, a 4px gap and a
     // 40px field in the design, and one 40px element in the code. Describing those
     // parts invites an implementation that reproduces them and drifts from the design
     // with every one. The words are still wanted, so they move up onto the instance's
     // own line — collected first, because a node is written before its children walk.
-    const inside = new Set()
+    //
+    // `nodes` is in document order, so the outermost enclosing instance is whatever
+    // the parent's was, or the parent itself. Asking each node to walk its own
+    // ancestors instead costs a pass over the whole chain per node.
+    /** @type {Map<Node, Node | undefined>} */
+    const owners = new Map()
+    /** @type {Node[]} */
+    const described = []
     for (const node of nodes) {
-      const owner = instanceAbove(node)
-      if (!owner) {
+      const parent = node.parent
+      const owner = parent
+        ? (owners.get(parent) ??
+          (parent.kind === 'instance' ? parent : undefined))
+        : undefined
+      owners.set(node, owner)
+      if (owner) {
+        if (node.raw.characters) {
+          ;(owner.words ??= []).push(node.raw.characters)
+        }
         continue
       }
-      inside.add(node)
-      if (node.raw.characters) {
-        owner.words = [...(owner.words ?? []), node.raw.characters]
+      // Everything not inside an instance, and not the frame itself, is described —
+      // once, so the markdown and the spec can never disagree about the node set.
+      if (node.depth > 0) {
+        described.push(node)
       }
     }
 
-    for (const node of nodes) {
-      if (node.depth === 0 || inside.has(node)) {
-        continue
-      }
+    /** Ranking a node's materials is the expensive part; `--spec` restates them. */
+    const materialsFor = new Map(
+      described.map((node) => [node, materialsOf(node, tokens)]),
+    )
+
+    for (const node of described) {
       const indent = '  '.repeat(node.depth - 1)
       const as = node.component ? ` — \`${node.component}\`` : ''
       lines.push(
@@ -196,7 +230,7 @@ if (isCli) {
           `${indent}  text: ${words.map((w) => JSON.stringify(w)).join(', ')}`,
         )
       }
-      const materials = materialsOf(node, tokens)
+      const materials = materialsFor.get(node) ?? []
       if (materials.length > 0) {
         lines.push(`${indent}  ${materials.join('; ')}`)
       }
@@ -213,9 +247,6 @@ if (isCli) {
     // list of facts is not the same as being able to check your own work against them.
     const specPath = args.spec
     if (specPath) {
-      const described = nodes.filter(
-        (node) => node.depth > 0 && !inside.has(node),
-      )
       await writeFile(
         specPath,
         `${JSON.stringify(
@@ -238,7 +269,7 @@ if (isCli) {
               text: node.raw.characters ?? undefined,
               // What the design says this is made of, already resolved to the tokens the
               // system owns — so a check can ask whether the value reached the screen.
-              styles: materialsOf(node, tokens),
+              styles: materialsFor.get(node) ?? [],
             })),
           },
           null,
