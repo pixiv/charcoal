@@ -136,9 +136,13 @@ export function loadTokens(dir, theme = 'light') {
       continue
     }
 
+    // Must stay identical to packages/token-cli/src/transformer/index.js, which is what
+    // actually names the variables in the shipped CSS. A name derived differently here
+    // is written into the pack as a token that does not exist in the stylesheet.
     const cssVar = `--charcoal-${[category, key]
       .join('-')
       .replace(/(.)([A-Z])/g, '$1-$2')
+      .replace(/([A-Z])([A-Z])/g, '$1-$2')
       .toLowerCase()
       .replaceAll('/', '-')
       .replaceAll(' ', '-')
