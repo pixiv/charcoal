@@ -23,6 +23,11 @@ For what each of the 12 `@charcoal-ui/*` packages is for, see `references/packag
 
 "No replacement" means app code, not sandbox. A hand-rolled `<nav>` with tokens is the intended outcome, not a failure to reuse charcoal.
 
+If the app already wraps sandbox in its own component and new code would use it, ask the user whether to migrate that component to `@charcoal-ui/react` (`AskUserQuestion`, or ask in chat if the agent has no such tool). Migrating changes existing screens; the user decides, not you.
+
+- "Keep as is" → do not touch the component. New code uses `@charcoal-ui/react` directly.
+- No way to ask → do not touch it. Name it as a migration candidate in your final report.
+
 **`@charcoal-ui/styled` is frozen at Design Token 1.0** (not formally deprecated; only `createTheme` is). Do not adopt it unless the codebase is already built on styled-components — then follow the `setting-up-charcoal-styled` skill. Existing use is fine; do not tell the user to remove it.
 
 **`@charcoal-ui/tailwind-diff` is scheduled for discontinuation (廃止予定).** Do not add it.
@@ -55,5 +60,6 @@ rg -n "\bClickableElement\b"
 - "react has no layout / menu component, so sandbox is the charcoal option" → sandbox is deprecated; build it in the app.
 - "the react version lacks a prop the sandbox one has" → the prop was dropped on purpose; use the react version.
 - "sandbox is just experimental, breaking changes are acceptable" → it is deprecated, not experimental.
+- "the app already wraps sandbox in its own component, so I'll reuse it" → ask whether to migrate the wrapper; until then, use `@charcoal-ui/react` directly.
 - "the existing files use `createTheme`, so I'll match them" → new code uses styled-components theming.
 - "guideline-external icon sizes use the `unsafe-` attribute" → that was the old API; use `fixed-size`.
