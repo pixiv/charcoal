@@ -1,0 +1,1 @@
+import{n as e}from"./chunk-BneVvdWh.js";import{J as t,Z as n}from"./iframe-BA0wZa7U.js";var r,i=e((()=>{t(),r=e=>{let t={};return e.handler({addBase:()=>{},addUtilities:e=>{t={...t,...e}}}),n(t,(e,t)=>[e.startsWith(`.`)?e.slice(1):e,t])}}));export{i as n,r as t};
