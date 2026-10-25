@@ -8,13 +8,21 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts",
+        "default": "./dist/index.d.ts"
+      },
       "require": "./dist/index.cjs",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
     "./token-object": {
-      "types": "./dist/token-object/index.d.ts",
+      "types": {
+        "import": "./dist/token-object/index.d.ts",
+        "require": "./dist/token-object/index.d.cts",
+        "default": "./dist/token-object/index.d.ts"
+      },
       "require": "./dist/token-object/index.cjs",
       "import": "./dist/token-object/index.js",
       "default": "./dist/token-object/index.js"
