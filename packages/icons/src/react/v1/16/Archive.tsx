@@ -19,9 +19,9 @@ const SvgArchive = (
       fill="currentColor"
     />
     <path
+      d="M4 6a1 1 0 00-1 1v4a2 2 0 002 2h6a2 2 0 002-2V7a1 1 0 00-1-1H4zm2.5 1a.5.5 0 000 1h3a.5.5 0 000-1h-3z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M4 6a1 1 0 00-1 1v4a2 2 0 002 2h6a2 2 0 002-2V7a1 1 0 00-1-1H4zm2.5 1a.5.5 0 000 1h3a.5.5 0 000-1h-3z"
       fill="currentColor"
     />
   </svg>

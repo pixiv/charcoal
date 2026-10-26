@@ -15,9 +15,9 @@ const SvgArrowLeft = (
     {...props}
   >
     <path
+      d="M4 12l6.707-6.707a1 1 0 111.414 1.414L7.828 11H19a1 1 0 110 2H7.828l4.293 4.293a1 1 0 01-1.414 1.414L4 12z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M4 12l6.707-6.707a1 1 0 111.414 1.414L7.828 11H19a1 1 0 110 2H7.828l4.293 4.293a1 1 0 01-1.414 1.414L4 12z"
       fill="currentColor"
     />
   </svg>

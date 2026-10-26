@@ -19,9 +19,9 @@ const SvgProjects = (
       fill="currentColor"
     />
     <path
+      d="M4 7a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7zm3-1a1 1 0 00-1 1v8h3.5a2.5 2.5 0 005 0H18V7a1 1 0 00-1-1H7z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M4 7a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7zm3-1a1 1 0 00-1 1v8h3.5a2.5 2.5 0 005 0H18V7a1 1 0 00-1-1H7z"
       fill="currentColor"
     />
   </svg>
