@@ -15,9 +15,9 @@ const SvgFrameEffect = (
     {...props}
   >
     <path
+      d="M6 7v10h12V7H6zM5 3a3 3 0 00-3 3v12a3 3 0 003 3h14a3 3 0 003-3V6a3 3 0 00-3-3H5zM4 6a1 1 0 011-1h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V6z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M6 7v10h12V7H6zM5 3a3 3 0 00-3 3v12a3 3 0 003 3h14a3 3 0 003-3V6a3 3 0 00-3-3H5zM4 6a1 1 0 011-1h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V6z"
       fill="currentColor"
     />
   </svg>

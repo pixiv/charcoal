@@ -12,9 +12,9 @@ const SvgCamera = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M13.828 5a2 2 0 00-1.414.586L10 8H7a2 2 0 00-2 2v14a2 2 0 002 2h18a2 2 0 002-2V10a2 2 0 00-2-2h-3l-2.414-2.414A2 2 0 0018.172 5h-4.344zM16 11a6 6 0 100 12 6 6 0 000-12zm0 2a4 4 0 100 8 4 4 0 000-8z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M13.828 5a2 2 0 00-1.414.586L10 8H7a2 2 0 00-2 2v14a2 2 0 002 2h18a2 2 0 002-2V10a2 2 0 00-2-2h-3l-2.414-2.414A2 2 0 0018.172 5h-4.344zM16 11a6 6 0 100 12 6 6 0 000-12zm0 2a4 4 0 100 8 4 4 0 000-8z"
       fill="currentColor"
     />
   </svg>

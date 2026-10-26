@@ -15,9 +15,9 @@ const SvgBookmarkOff = (
     {...props}
   >
     <path
+      d="M7 9v18.24l9-4.5 9 4.5V9a3 3 0 00-3-3H10a3 3 0 00-3 3zm2 15V9a1 1 0 011-1h12a1 1 0 011 1v15l-7-3.5L9 24z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M7 9v18.24l9-4.5 9 4.5V9a3 3 0 00-3-3H10a3 3 0 00-3 3zm2 15V9a1 1 0 011-1h12a1 1 0 011 1v15l-7-3.5L9 24z"
       fill="currentColor"
     />
   </svg>

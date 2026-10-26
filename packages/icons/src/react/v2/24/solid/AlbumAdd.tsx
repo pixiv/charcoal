@@ -19,9 +19,9 @@ const SvgAlbumadd = (
       fill="currentColor"
     />
     <path
+      d="M6.25 7.75a3 3 0 00-3 3v6.547l3.627-2.887a2.75 2.75 0 013.437.01l1.602 1.288a6.503 6.503 0 018.834-3.6V10.75a3 3 0 00-3-3H6.25zm1.396 4.016a1 1 0 11-2 0 1 1 0 012 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M6.25 7.75a3 3 0 00-3 3v6.547l3.627-2.887a2.75 2.75 0 013.437.01l1.602 1.288a6.503 6.503 0 018.834-3.6V10.75a3 3 0 00-3-3H6.25zm1.396 4.016a1 1 0 11-2 0 1 1 0 012 0z"
       fill="currentColor"
     />
     <path
@@ -29,9 +29,9 @@ const SvgAlbumadd = (
       fill="currentColor"
     />
     <path
+      d="M18 23a5 5 0 100-10 5 5 0 000 10zm.5-2.25V18.5h2.25a.5.5 0 000-1H18.5v-2.25a.5.5 0 00-1 0v2.25h-2.25a.5.5 0 000 1h2.25v2.25a.5.5 0 001 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M18 23a5 5 0 100-10 5 5 0 000 10zm.5-2.25V18.5h2.25a.5.5 0 000-1H18.5v-2.25a.5.5 0 00-1 0v2.25h-2.25a.5.5 0 000 1h2.25v2.25a.5.5 0 001 0z"
       fill="currentColor"
     />
   </svg>

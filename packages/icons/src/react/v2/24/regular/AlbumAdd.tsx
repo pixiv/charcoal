@@ -20,9 +20,9 @@ const SvgAlbumadd = (
     />
     <path d="M7.646 11.766a1 1 0 11-2 0 1 1 0 012 0z" fill="currentColor" />
     <path
+      d="M18 23a5 5 0 100-10 5 5 0 000 10zm.5-2.25V18.5h2.25a.5.5 0 000-1H18.5v-2.25a.5.5 0 00-1 0v2.25h-2.25a.5.5 0 000 1h2.25v2.25a.5.5 0 001 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M18 23a5 5 0 100-10 5 5 0 000 10zm.5-2.25V18.5h2.25a.5.5 0 000-1H18.5v-2.25a.5.5 0 00-1 0v2.25h-2.25a.5.5 0 000 1h2.25v2.25a.5.5 0 001 0z"
       fill="currentColor"
     />
   </svg>
