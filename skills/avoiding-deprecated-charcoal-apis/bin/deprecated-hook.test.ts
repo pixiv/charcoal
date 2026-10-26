@@ -45,34 +45,34 @@ test('finds imports of deprecated packages, not mentions of them', () => {
   ).toEqual([])
 })
 
-test('notes a deprecated import once per session', () => {
+test('notes a deprecated import once per session', async () => {
   const dir = stateDir()
   const out = JSON.parse(
-    respond({ ...read, session_id: 's' }, { stateDir: dir }) ?? '{}',
+    (await respond({ ...read, session_id: 's' }, { stateDir: dir })) ?? '{}',
   )
   expect(out.hookSpecificOutput).toEqual({
     hookEventName: 'PostToolUse',
     additionalContext: note(['@charcoal-ui/react-sandbox']),
   })
   expect(
-    respond({ ...read, session_id: 's' }, { stateDir: dir }),
+    await respond({ ...read, session_id: 's' }, { stateDir: dir }),
   ).toBeUndefined()
   expect(
-    respond(
+    await respond(
       { ...read, session_id: 's', tool_response: 'nothing here' },
       { stateDir: stateDir() },
     ),
   ).toBeUndefined()
 })
 
-test('denies code writes after a deprecated import is seen, until the user is asked', () => {
+test('denies code writes after a deprecated import is seen, until the user is asked', async () => {
   const dir = stateDir()
   const s = { session_id: 's' }
-  expect(respond({ ...s, ...write }, { stateDir: dir })).toBeUndefined()
-  respond({ ...s, ...read }, { stateDir: dir })
+  expect(await respond({ ...s, ...write }, { stateDir: dir })).toBeUndefined()
+  await respond({ ...s, ...read }, { stateDir: dir })
 
   expect(
-    JSON.parse(respond({ ...s, ...write }, { stateDir: dir }) ?? '{}')
+    JSON.parse((await respond({ ...s, ...write }, { stateDir: dir })) ?? '{}')
       .hookSpecificOutput,
   ).toEqual({
     hookEventName: 'PreToolUse',
@@ -85,9 +85,9 @@ test('denies code writes after a deprecated import is seen, until the user is as
     tool_name: 'Bash',
     tool_input: { command: 'npm run build' },
   }
-  expect(respond(build, { stateDir: dir })).toBeUndefined()
+  expect(await respond(build, { stateDir: dir })).toBeUndefined()
 
-  respond(
+  await respond(
     {
       ...s,
       hook_event_name: 'PreToolUse',
@@ -96,28 +96,31 @@ test('denies code writes after a deprecated import is seen, until the user is as
     },
     { stateDir: dir },
   )
-  expect(respond({ ...s, ...write }, { stateDir: dir })).toBeUndefined()
+  expect(await respond({ ...s, ...write }, { stateDir: dir })).toBeUndefined()
 })
 
-test('counts new code that imports a deprecated package as seeing it', () => {
+test('counts new code that imports a deprecated package as seeing it', async () => {
   const input = {
     ...write,
     session_id: 'n',
     tool_input: { ...write.tool_input, content: SANDBOX_FILE.file.content },
   }
   expect(
-    JSON.parse(respond(input, { stateDir: stateDir() }) ?? '{}')
+    JSON.parse((await respond(input, { stateDir: stateDir() })) ?? '{}')
       .hookSpecificOutput.permissionDecision,
   ).toBe('deny')
 })
 
-test('leaves the gate off when asked to, and still notes', () => {
+test('leaves the gate off when asked to, and still notes', async () => {
   const dir = stateDir()
   expect(
-    respond({ ...read, session_id: 'g' }, { stateDir: dir, gate: false }),
+    await respond({ ...read, session_id: 'g' }, { stateDir: dir, gate: false }),
   ).toBeDefined()
   expect(
-    respond({ ...write, session_id: 'g' }, { stateDir: dir, gate: false }),
+    await respond(
+      { ...write, session_id: 'g' },
+      { stateDir: dir, gate: false },
+    ),
   ).toBeUndefined()
 })
 

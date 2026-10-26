@@ -16,7 +16,7 @@
  * project's own tooling: signed as a plugin's advice, the note was set aside until the
  * gate blocked a write.
  */
-import { existsSync, readFileSync, realpathSync, writeFileSync } from 'node:fs'
+import { access, realpath, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -80,13 +80,23 @@ export function writesCode(input) {
   return false
 }
 
+/** @param {string} path */
+const exists = (path) =>
+  access(path).then(
+    () => true,
+    () => false,
+  )
+
 /**
  * The hook's stdout for one event, or undefined to stay silent.
  *
  * @param {HookInput} input
  * @param {{ stateDir?: string, gate?: boolean }} [options]
  */
-export function respond(input, { stateDir = tmpdir(), gate = true } = {}) {
+export async function respond(
+  input,
+  { stateDir = tmpdir(), gate = true } = {},
+) {
   const marker = (/** @type {string} */ kind) =>
     join(
       stateDir,
@@ -100,11 +110,11 @@ export function respond(input, { stateDir = tmpdir(), gate = true } = {}) {
     if (packages.length === 0) {
       return undefined
     }
-    writeFileSync(marker('seen'), '')
-    if (existsSync(marker('noted'))) {
+    await writeFile(marker('seen'), '')
+    if (await exists(marker('noted'))) {
       return undefined
     }
-    writeFileSync(marker('noted'), '')
+    await writeFile(marker('noted'), '')
     return JSON.stringify({
       hookSpecificOutput: {
         hookEventName: 'PostToolUse',
@@ -117,18 +127,18 @@ export function respond(input, { stateDir = tmpdir(), gate = true } = {}) {
     return undefined
   }
   if (input.tool_name === 'AskUserQuestion') {
-    writeFileSync(marker('asked'), '')
+    await writeFile(marker('asked'), '')
     return undefined
   }
   // New code that itself imports a deprecated package counts as having seen it.
   if (deprecatedImports(JSON.stringify(input.tool_input ?? '')).length > 0) {
-    writeFileSync(marker('seen'), '')
+    await writeFile(marker('seen'), '')
   }
   if (
     !gate ||
     !writesCode(input) ||
-    !existsSync(marker('seen')) ||
-    existsSync(marker('asked'))
+    !(await exists(marker('seen'))) ||
+    (await exists(marker('asked')))
   ) {
     return undefined
   }
@@ -142,19 +152,20 @@ export function respond(input, { stateDir = tmpdir(), gate = true } = {}) {
 }
 
 // Node realpaths the entry module, so the path in argv has to be resolved to match.
-const mainUrl = (() => {
-  try {
-    return pathToFileURL(realpathSync(resolve(process.argv[1] ?? ''))).href
-  } catch {
-    return undefined
-  }
-})()
+const mainUrl = await realpath(resolve(process.argv[1] ?? '')).then(
+  (path) => pathToFileURL(path).href,
+  () => undefined,
+)
 
 if (mainUrl !== undefined && import.meta.url === mainUrl) {
   // A broken hook must never block the agent's work, so any failure stays silent.
   try {
-    const input = JSON.parse(readFileSync(0, 'utf8') || '{}')
-    const out = respond(input, {
+    const chunks = []
+    for await (const chunk of process.stdin) {
+      chunks.push(chunk)
+    }
+    const input = JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}')
+    const out = await respond(input, {
       gate: process.env.CHARCOAL_DEPRECATED_GATE !== '0',
     })
     if (out) {
