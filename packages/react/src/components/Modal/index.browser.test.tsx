@@ -13,7 +13,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import { OverlayProvider } from 'react-aria'
 import { vi } from 'vitest'
-import { userEvent } from 'vitest/browser'
+import { page, userEvent } from 'vitest/browser'
 import Modal from '.'
 import { ModalHeader } from './ModalPlumbing'
 
@@ -95,5 +95,54 @@ describe('Modal (outside interaction)', () => {
     // 「イベントが判定に届いていないだけ」ではないことの保証
     fireEvent.click(background, { button: 0 })
     expect(onClose).toHaveBeenCalledOnce()
+  })
+})
+
+describe('Modal (mobile width)', () => {
+  const VIEWPORT_WIDTH = 375
+
+  beforeEach(async () => {
+    await page.viewport(VIEWPORT_WIDTH, 667)
+  })
+
+  afterEach(async () => {
+    await page.viewport(1280, 720)
+  })
+
+  it.each(['S', 'M', 'L'] as const)(
+    'size=%s でも左右に 24px の余白を取る',
+    (size) => {
+      render(
+        <OverlayProvider>
+          <Modal title="test modal" isOpen onClose={() => {}} size={size}>
+            <ModalHeader />
+          </Modal>
+        </OverlayProvider>,
+      )
+      const dialog = document.querySelector('.charcoal-modal-dialog')
+      if (!(dialog instanceof HTMLElement)) throw new Error('dialog not found')
+
+      expect(dialog.getBoundingClientRect().width).toBe(VIEWPORT_WIDTH - 48)
+    },
+  )
+
+  it('bottomSheet は余白なしの全幅になる', () => {
+    render(
+      <OverlayProvider>
+        <Modal
+          title="test modal"
+          isOpen
+          onClose={() => {}}
+          size="L"
+          bottomSheet
+        >
+          <ModalHeader />
+        </Modal>
+      </OverlayProvider>,
+    )
+    const dialog = document.querySelector('.charcoal-modal-dialog')
+    if (!(dialog instanceof HTMLElement)) throw new Error('dialog not found')
+
+    expect(dialog.getBoundingClientRect().width).toBe(VIEWPORT_WIDTH)
   })
 })

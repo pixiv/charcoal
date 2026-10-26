@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 743px) {
-  .charcoal-modal-dialog {
+  .charcoal-modal-dialog[data-size] {
     max-width: 440px;
     width: calc(100% - 48px);
   }
