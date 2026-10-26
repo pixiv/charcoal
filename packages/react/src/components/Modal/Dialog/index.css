@@ -8,20 +8,22 @@
   border-radius: 24px;
 }
 
-.charcoal-modal-dialog[data-size='S'] {
-  width: 336px;
-}
+@media (min-width: 744px) {
+  .charcoal-modal-dialog[data-size='S'] {
+    width: 336px;
+  }
 
-.charcoal-modal-dialog[data-size='M'] {
-  width: 440px;
-}
+  .charcoal-modal-dialog[data-size='M'] {
+    width: 440px;
+  }
 
-.charcoal-modal-dialog[data-size='L'] {
-  width: 648px;
+  .charcoal-modal-dialog[data-size='L'] {
+    width: 648px;
+  }
 }
 
 @media (max-width: 743px) {
-  .charcoal-modal-dialog[data-size] {
+  .charcoal-modal-dialog {
     max-width: 440px;
     width: calc(100% - 48px);
   }

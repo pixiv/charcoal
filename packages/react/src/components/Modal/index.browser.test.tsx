@@ -98,6 +98,30 @@ describe('Modal (outside interaction)', () => {
   })
 })
 
+describe('Modal (desktop width)', () => {
+  beforeEach(async () => {
+    await page.viewport(1280, 720)
+  })
+
+  it.each([
+    ['S', 336],
+    ['M', 440],
+    ['L', 648],
+  ] as const)('size=%s は幅 %ipx になる', (size, width) => {
+    render(
+      <OverlayProvider>
+        <Modal title="test modal" isOpen onClose={vi.fn()} size={size}>
+          <ModalHeader />
+        </Modal>
+      </OverlayProvider>,
+    )
+    const dialog = document.querySelector('.charcoal-modal-dialog')
+    if (!(dialog instanceof HTMLElement)) throw new Error('dialog not found')
+
+    expect(dialog.getBoundingClientRect().width).toBe(width)
+  })
+})
+
 describe('Modal (mobile width)', () => {
   const VIEWPORT_WIDTH = 375
 
@@ -125,6 +149,23 @@ describe('Modal (mobile width)', () => {
       expect(dialog.getBoundingClientRect().width).toBe(VIEWPORT_WIDTH - 48)
     },
   )
+
+  it('data-size が付かない場合も左右に 24px の余白を取る', () => {
+    render(
+      <OverlayProvider>
+        {/* デフォルト引数は null に効かないため data-size 属性が付かない */}
+        {/* @ts-expect-error 型の外から null が渡るケース */}
+        <Modal title="test modal" isOpen onClose={vi.fn()} size={null}>
+          <ModalHeader />
+        </Modal>
+      </OverlayProvider>,
+    )
+    const dialog = document.querySelector('.charcoal-modal-dialog')
+    if (!(dialog instanceof HTMLElement)) throw new Error('dialog not found')
+
+    expect(dialog.hasAttribute('data-size')).toBe(false)
+    expect(dialog.getBoundingClientRect().width).toBe(VIEWPORT_WIDTH - 48)
+  })
 
   it('bottomSheet は余白なしの全幅になる', () => {
     render(
