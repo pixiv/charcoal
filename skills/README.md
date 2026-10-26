@@ -5,12 +5,13 @@ choose its tokens once it is in.
 
 ### Setting it up
 
-| Skill                               | Use it for                                                      |
-| ----------------------------------- | --------------------------------------------------------------- |
-| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components |
-| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route     |
-| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                      |
-| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them    |
+| Skill                               | Use it for                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------ |
+| `choosing-charcoal-styling`         | Deciding between CSS variables, Tailwind, and styled-components                |
+| `setting-up-charcoal-css-variables` | Plain CSS, CSS Modules, vanilla-extract — the default route                    |
+| `setting-up-charcoal-tailwind`      | Adding the Tailwind preset                                                     |
+| `setting-up-charcoal-styled`        | Existing styled-components codebases, and migrating off them                   |
+| `avoiding-deprecated-charcoal-apis` | Keeping deprecated packages and APIs out of new code; what each package is for |
 
 ### Writing the UI
 
@@ -48,6 +49,12 @@ As a plugin, from this repository:
 /plugin marketplace add pixiv/charcoal
 /plugin install charcoal@charcoal
 ```
+
+### The deprecated-package hook
+
+The Claude Code plugin also ships a hook (`hooks/hooks.json`). When the agent reads existing code that imports `@charcoal-ui/react-sandbox` or `@charcoal-ui/tailwind-diff`, the hook tells it the package is deprecated and that migrating is the user's call. Until the agent has asked with AskUserQuestion, its writes to code files are blocked. Without the hook, agents read such code and built on it without asking, even with the skill installed and an instruction to ask in the skill.
+
+In a headless run where nobody can answer (`claude -p` in CI, say), set `CHARCOAL_DEPRECATED_GATE=0` to keep the note and drop the block. `npx skills` installs skills only, so this hook is Claude Code plugin only.
 
 ## Install for Codex, Cursor, and others
 
@@ -98,11 +105,17 @@ Then ask the agent something the skills cover — "charcoal のボタンに色�
 charcoal/
 ├── .claude-plugin/
 │   └── marketplace.json   # Claude Code plugin entry
+├── hooks/
+│   └── hooks.json         # the deprecated-package hook, plugin only
 └── skills/
     ├── choosing-charcoal-styling/SKILL.md
     ├── setting-up-charcoal-css-variables/SKILL.md
     ├── setting-up-charcoal-tailwind/SKILL.md
     ├── setting-up-charcoal-styled/SKILL.md
+    ├── avoiding-deprecated-charcoal-apis/
+    │   ├── SKILL.md
+    │   ├── references/packages.md
+    │   └── bin/deprecated-hook.mjs   # what hooks/hooks.json runs
     ├── choosing-charcoal-tokens/
     │   ├── SKILL.md
     │   └── references/        # the design team's guidelines
