@@ -3,46 +3,46 @@ name: avoiding-deprecated-charcoal-apis
 description: Use before writing or editing any code that imports @charcoal-ui (components, icons, styled-components themes, or Tailwind classes from the charcoal preset), and before adding an @charcoal-ui package to package.json. Several APIs look current but are deprecated with no runtime warning: all of @charcoal-ui/react-sandbox (Layout, LeftMenu, MenuListItem, Pager…), @charcoal-ui/styled in a project not already on styled-components, @charcoal-ui/tailwind-diff, Icon unsafeNonGuidelineScale / pixiv-icon unsafe-non-guideline-scale, createTheme, Tailwind black/white, and ClickableElement. If the existing code already imports one of these, ask the user (AskUserQuestion) whether to migrate it before building on it or copying it.
 ---
 
-# Avoiding deprecated charcoal APIs
+# 非推奨の charcoal API を避ける
 
-Nothing in charcoal warns at runtime when you use a deprecated API. Some APIs are tagged `@deprecated` in source, but most of `@charcoal-ui/react-sandbox` — notably `Layout`, `LeftMenu`, `MenuListItem` — carries no tag at all; its deprecation is stated only in the Storybook migration pages. Agents also write the tagged ones from memory. This skill is the list.
+charcoal は、非推奨の API を使っても実行時に何も警告しない。ソースで `@deprecated` タグが付いている API もあるが、`@charcoal-ui/react-sandbox` の大半（特に `Layout`・`LeftMenu`・`MenuListItem`）にはタグがまったく付いておらず、非推奨であることは Storybook の移行ページにしか書かれていない。タグ付きの API も、エージェントは記憶を頼りに書いてしまう。この skill はその一覧である。
 
-For what each of the 12 `@charcoal-ui/*` packages is for, see `references/packages.md`.
+12 個の `@charcoal-ui/*` パッケージがそれぞれ何のためのものかは、`references/packages.md` を参照。
 
-## Deprecated or frozen packages
+## 非推奨・凍結のパッケージ
 
-**`@charcoal-ui/react-sandbox` is deprecated since v6; removal is being considered for the next major.** Its README still only says "試験的" (experimental) — that is not the current status. Do not add new imports from it, even when `@charcoal-ui/react` has no equivalent, lacks a sandbox prop, or the request says to "use as much charcoal as possible".
+**`@charcoal-ui/react-sandbox` は v6 から非推奨で、次のメジャーで削除が検討されている。** README はいまも「試験的」としか書いていないが、それは現在の状態ではない。`@charcoal-ui/react` に同等のものが無い場合も、sandbox 版にある prop が無い場合も、依頼に「charcoal をできるだけ使って」とある場合も、新しく import しない。
 
-- `Pager`, `LinkPager` → `Pagination` from `@charcoal-ui/react` (`makeUrl` → links, `onChange` → buttons)
-- `HintText`, `TextEllipsis` → same names from `@charcoal-ui/react`
-- `useMedia` → `useMedia` from `@charcoal-ui/react` (returns `undefined` until mounted; sandbox's returned `boolean` synchronously)
-- `Carousel` → `Carousel` from `@charcoal-ui/react`. `scrollAmountCoef` → `scrollStep`; `fadeInGradient`, `buttonOffset`, `buttonPadding`, `bottomOffset`, `centerItems` were removed on purpose
-- `SwitchCheckbox` → `Switch` from `@charcoal-ui/react` (`onChange` receives `boolean`, not an event)
-- `ComponentAbstraction`, `useComponentAbstraction`, `LinkProps` → the `component` prop on `@charcoal-ui/react` components
-- Everything else — `*Layout*`, `LeftMenu*`, `MenuList*`, `Filter*`, `WithIcon`, `useElementSize`, `useMediaScreen1`, layout constants → **no replacement**. Build it in the app with plain markup, charcoal tokens (CSS variables or Tailwind), and `@charcoal-ui/react` parts such as `Switch`, `Clickable`, `Icon`
+- `Pager`、`LinkPager` → `@charcoal-ui/react` の `Pagination`（`makeUrl` → リンク、`onChange` → ボタン）
+- `HintText`、`TextEllipsis` → `@charcoal-ui/react` の同名のもの
+- `useMedia` → `@charcoal-ui/react` の `useMedia`（マウントされるまで `undefined` を返す。sandbox 版は同期的に `boolean` を返していた）
+- `Carousel` → `@charcoal-ui/react` の `Carousel`。`scrollAmountCoef` → `scrollStep`。`fadeInGradient`・`buttonOffset`・`buttonPadding`・`bottomOffset`・`centerItems` は意図的に削除された
+- `SwitchCheckbox` → `@charcoal-ui/react` の `Switch`（`onChange` が受け取るのはイベントではなく `boolean`）
+- `ComponentAbstraction`、`useComponentAbstraction`、`LinkProps` → `@charcoal-ui/react` のコンポーネントの `component` prop
+- それ以外（`*Layout*`、`LeftMenu*`、`MenuList*`、`Filter*`、`WithIcon`、`useElementSize`、`useMediaScreen1`、レイアウト用の定数）→ **置き換え先なし**。素のマークアップと charcoal のトークン（CSS 変数か Tailwind）、`Switch`・`Clickable`・`Icon` など `@charcoal-ui/react` の部品で、アプリ側に作る
 
-"No replacement" means app code, not sandbox. A hand-rolled `<nav>` with tokens is the intended outcome, not a failure to reuse charcoal.
+「置き換え先なし」は、sandbox を使えという意味ではなく、アプリのコードで書けという意味。トークンを使って自前で書いた `<nav>` が意図した結果であり、charcoal を使い損ねたわけではない。
 
-If the app already wraps sandbox in its own component and new code would use it, ask the user whether to migrate that component to `@charcoal-ui/react` (`AskUserQuestion`, or ask in chat if the agent has no such tool). Migrating changes existing screens; the user decides, not you.
+アプリがすでに sandbox を自前のコンポーネントで包んでいて、新しいコードがそれを使うことになる場合は、そのコンポーネントを `@charcoal-ui/react` に移行するかを利用者に尋ねる（`AskUserQuestion`。そのツールが無いエージェントならチャットで尋ねる）。移行すると既存の画面も変わるので、決めるのは利用者であって、あなたではない。
 
-- "Keep as is" → do not touch the component. New code uses `@charcoal-ui/react` directly.
-- No way to ask → do not touch it. Name it as a migration candidate in your final report.
+- 「そのまま」と言われた → そのコンポーネントには触らない。新しいコードは `@charcoal-ui/react` を直接使う。
+- 尋ねる手段が無い → 触らない。最後の報告で、移行の候補として名前を挙げる。
 
-**`@charcoal-ui/styled` is frozen at Design Token 1.0** (not formally deprecated; only `createTheme` is). Do not adopt it unless the codebase is already built on styled-components — then follow the `setting-up-charcoal-styled` skill. Existing use is fine; do not tell the user to remove it.
+**`@charcoal-ui/styled` は Design Token 1.0 で凍結されている**（正式に非推奨なのは `createTheme` だけ）。コードベースがすでに styled-components で作られている場合を除いて採用しない。すでに使われているなら `setting-up-charcoal-styled` skill に従う。既存の利用はそのままでよく、利用者に外すよう勧めない。
 
-**`@charcoal-ui/tailwind-diff` is scheduled for discontinuation (廃止予定).** Do not add it.
+**`@charcoal-ui/tailwind-diff` は廃止予定。** 追加しない。
 
-## Deprecated APIs
+## 非推奨の API
 
-- **`Icon` prop `unsafeNonGuidelineScale`** (`@charcoal-ui/react`) → `fixedSize={20}` — pixels, not a ratio.
-- **`<pixiv-icon unsafe-non-guideline-scale>`** → `fixed-size="20"` plus `style="--charcoal-icon-size: 20px"`, with `@charcoal-ui/icons/css/icon.css` loaded, so the pre-upgrade box is already 20px.
-- **`createTheme` / `theme(o => [...])`** (`@charcoal-ui/styled`) → styled-components theming, `${({ theme }) => theme.color.text1}`. Do this even when surrounding files use `createTheme`: matching an existing deprecated pattern adds migration work. `theme.utils` (`addThemeUtils`) exists only if the `ThemeProvider` was given `addThemeUtils(light)` — see `setting-up-charcoal-styled`.
-- **Tailwind `black` / `white`** (`bg-black`, `text-white`, `bg-black/50`, …) → a semantic token for the role. Token 1.0 preset (the default): `bg-surface4` (32% black) / `bg-surface8` (88% black), `text-text5` — dark in both themes. Token 2.0 (only with `unstableTokenV2` and `.ch-token-v2`; see `setting-up-charcoal-tailwind`): `bg-background-overlay` or `bg-container-on-img` + `text-text-on-on-img` stay dark-with-light-text in both themes. `bg-container-hud` + `text-text-on-hud` is an _inverted_ surface — it turns light in the dark theme, so it is not a substitute for black.
-- **`ClickableElement` type** (`@charcoal-ui/react`) → the element you actually render: `HTMLButtonElement`, or `HTMLAnchorElement` with `component="a"`.
+- **`Icon` の prop `unsafeNonGuidelineScale`**（`@charcoal-ui/react`）→ `fixedSize={20}`。倍率ではなくピクセルで指定する。
+- **`<pixiv-icon unsafe-non-guideline-scale>`** → `fixed-size="20"` に `style="--charcoal-icon-size: 20px"` を添え、`@charcoal-ui/icons/css/icon.css` を読み込む。こうするとアップグレード前から箱が 20px になる。
+- **`createTheme` / `theme(o => [...])`**（`@charcoal-ui/styled`）→ styled-components のテーマ機能で `${({ theme }) => theme.color.text1}` と書く。周りのファイルが `createTheme` を使っていてもそうする。既存の非推奨パターンに合わせると、移行の手間が増えるだけ。`theme.utils`（`addThemeUtils`）は、`ThemeProvider` に `addThemeUtils(light)` が渡されている場合にしか無い。`setting-up-charcoal-styled` を参照。
+- **Tailwind の `black` / `white`**（`bg-black`、`text-white`、`bg-black/50` など）→ 役割に合った意味トークンにする。Token 1.0 のプリセット（既定）では `bg-surface4`（黒 32%）/ `bg-surface8`（黒 88%）と `text-text5` で、どちらのテーマでも暗い。Token 2.0（`unstableTokenV2` と `.ch-token-v2` があるときだけ。`setting-up-charcoal-tailwind` を参照）では、`bg-background-overlay` か `bg-container-on-img` に `text-text-on-on-img` を合わせると、どちらのテーマでも暗い地に明るい文字のままになる。`bg-container-hud` + `text-text-on-hud` は _反転_ する面で、ダークテーマでは明るくなるので、黒の代わりにはならない。
+- **`ClickableElement` 型**（`@charcoal-ui/react`）→ 実際に描画する要素の型にする。`HTMLButtonElement`、または `component="a"` なら `HTMLAnchorElement`。
 
-## Detecting them
+## 見つけ方
 
-Run from the app root. Remove hits that come from code you are introducing. Pre-existing hits are migration backlog, not part of your change — in particular, a styled-components codebase keeps its existing `@charcoal-ui/styled` imports and `createTheme` helper (see above).
+アプリのルートで実行する。自分が今回足すコードから出たヒットは取り除く。もともとあったヒットは移行の積み残しで、今回の変更の範囲ではない。特に、styled-components のコードベースでは、既存の `@charcoal-ui/styled` の import と `createTheme` のヘルパーはそのまま残す（上を参照）。
 
 ```bash
 rg -n "['\"]@charcoal-ui/react-sandbox"
@@ -55,11 +55,11 @@ rg -n "(^|[\s\"'\`:!])(bg|text|border(-[tblrxyse])?|divide|ring(-offset)?|outlin
 rg -n "\bClickableElement\b"
 ```
 
-## Red flags
+## 危険信号
 
-- "react has no layout / menu component, so sandbox is the charcoal option" → sandbox is deprecated; build it in the app.
-- "the react version lacks a prop the sandbox one has" → the prop was dropped on purpose; use the react version.
-- "sandbox is just experimental, breaking changes are acceptable" → it is deprecated, not experimental.
-- "the app already wraps sandbox in its own component, so I'll reuse it" → ask whether to migrate the wrapper; until then, use `@charcoal-ui/react` directly.
-- "the existing files use `createTheme`, so I'll match them" → new code uses styled-components theming.
-- "guideline-external icon sizes use the `unsafe-` attribute" → that was the old API; use `fixed-size`.
+- 「react にはレイアウトやメニューのコンポーネントが無いから、charcoal で使えるのは sandbox だ」→ sandbox は非推奨。アプリ側に作る。
+- 「react 版には sandbox 版にある prop が無い」→ その prop は意図的に削除された。react 版を使う。
+- 「sandbox は試験的なだけだから、破壊的変更は許容できる」→ 試験的なのではなく、非推奨。
+- 「アプリがすでに sandbox を自前のコンポーネントで包んでいるから、それを再利用しよう」→ そのラッパーを移行するかを尋ねる。それまでは `@charcoal-ui/react` を直接使う。
+- 「既存のファイルが `createTheme` を使っているから合わせよう」→ 新しいコードは styled-components のテーマ機能を使う。
+- 「ガイドライン外のアイコンサイズは `unsafe-` の属性で指定する」→ それは古い API。`fixed-size` を使う。
