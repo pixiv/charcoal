@@ -114,7 +114,7 @@ describe('Modal (mobile width)', () => {
     (size) => {
       render(
         <OverlayProvider>
-          <Modal title="test modal" isOpen onClose={() => {}} size={size}>
+          <Modal title="test modal" isOpen onClose={vi.fn()} size={size}>
             <ModalHeader />
           </Modal>
         </OverlayProvider>,
@@ -129,13 +129,7 @@ describe('Modal (mobile width)', () => {
   it('bottomSheet は余白なしの全幅になる', () => {
     render(
       <OverlayProvider>
-        <Modal
-          title="test modal"
-          isOpen
-          onClose={() => {}}
-          size="L"
-          bottomSheet
-        >
+        <Modal title="test modal" isOpen onClose={vi.fn()} size="L" bottomSheet>
           <ModalHeader />
         </Modal>
       </OverlayProvider>,
