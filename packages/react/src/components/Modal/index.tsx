@@ -18,6 +18,7 @@ import { Overlay } from 'react-aria/Overlay'
 import { useObjectRef } from 'react-aria/useObjectRef'
 
 export type BottomSheet = boolean | 'full'
+export type BottomSheetAnimation = 'mobile' | 'all'
 export type Size = 'S' | 'M' | 'L'
 
 export type ModalProps = CharcoalModalOverlayProps &
@@ -27,6 +28,13 @@ export type ModalProps = CharcoalModalOverlayProps &
     title: string
     size?: Size
     bottomSheet?: BottomSheet
+    /**
+     * Controls the bottom-sheet open/close animation.
+     *
+     * When omitted, the legacy behavior is preserved: animation is enabled
+     * on mobile and disabled on desktop.
+     */
+    bottomSheetAnimation?: BottomSheetAnimation
     isOpen: boolean
     onClose: () => void
     className?: string
@@ -75,6 +83,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     title,
     size = 'M',
     bottomSheet = false,
+    bottomSheetAnimation = 'mobile',
     isDismissable,
     onClose,
     className,
@@ -98,7 +107,10 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   )
 
   const isMobile = (useWindowWidth() ?? Infinity) < 744
-  const transitionEnabled = isMobile && bottomSheet !== false
+  const animationEnabled =
+    bottomSheetAnimation === 'all' ||
+    (bottomSheetAnimation === 'mobile' && isMobile)
+  const transitionEnabled = bottomSheet !== false && animationEnabled
   const showDismiss = !isMobile || bottomSheet !== true
 
   const bgRef = React.useRef<HTMLDivElement>(null)
