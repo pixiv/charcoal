@@ -2,7 +2,12 @@ import { dur } from '@charcoal-ui/utils'
 import { isPresent } from '../util'
 import { Internal, createInternal, Context } from '../internals'
 
-// TODO: deprecate
+/**
+ * @deprecated Hardcoded fallback duration used by `transition()` and `colors.ts` when no
+ * per-property duration is available from the theme. `CharcoalAbstractTheme.transition` already
+ * models a `duration` per key, so once callers pass a theme-driven duration through instead of
+ * relying on this constant, it can be removed.
+ */
 export const TRANSITION_DURATION = 0.2
 
 /**

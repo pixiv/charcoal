@@ -10,13 +10,46 @@ async function getComponentCssFiles() {
   const entries = await fs.readdir(componentsDir, { withFileTypes: true })
   const results: { name: string; cssPath: string }[] = []
   for (const entry of entries) {
-    if (entry.isDirectory()) {
-      const cssPath = path.join(componentsDir, entry.name, 'index.css')
+    if (!entry.isDirectory()) {
+      continue
+    }
+    const cssPath = path.join(componentsDir, entry.name, 'index.css')
+    try {
+      await fs.access(cssPath)
+      results.push({ name: entry.name, cssPath })
+    } catch {
+      const layoutCssPath = path.join(componentsDir, entry.name, 'layout.css')
       try {
-        await fs.access(cssPath)
-        results.push({ name: entry.name, cssPath })
+        await fs.access(layoutCssPath)
+        results.push({
+          name: `${entry.name}/layout`,
+          cssPath: layoutCssPath,
+        })
       } catch {
-        // no index.css in this component
+        // no layout.css in this component group
+      }
+      const children = await fs.readdir(path.join(componentsDir, entry.name), {
+        withFileTypes: true,
+      })
+      for (const child of children) {
+        if (!child.isDirectory()) {
+          continue
+        }
+        const nestedCssPath = path.join(
+          componentsDir,
+          entry.name,
+          child.name,
+          'index.css',
+        )
+        try {
+          await fs.access(nestedCssPath)
+          results.push({
+            name: `${entry.name}/${child.name}`,
+            cssPath: nestedCssPath,
+          })
+        } catch {
+          // no index.css in this nested component
+        }
       }
     }
   }
@@ -70,7 +103,7 @@ describe('CSS nesting output equivalence', () => {
     const snapshotPath = path.join(
       path.dirname(cssPath),
       '__snapshots__',
-      'index.css.snap',
+      `${path.basename(cssPath)}.snap`,
     )
     await expect(canonicalize(result.root)).toMatchFileSnapshot(snapshotPath)
   })

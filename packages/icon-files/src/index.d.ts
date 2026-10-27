@@ -29,6 +29,7 @@ declare var _default: {
   "16/Search": () => Promise<string>;
   "16/Smile": () => Promise<string>;
   "16/Speaker": () => Promise<string>;
+  "16/Translation": () => Promise<string>;
   "16/Trash": () => Promise<string>;
   "16/Up": () => Promise<string>;
   "16/View": () => Promise<string>;
@@ -91,6 +92,7 @@ declare var _default: {
   "24/FaceEdit": () => Promise<string>;
   "24/Fashion": () => Promise<string>;
   "24/Feed": () => Promise<string>;
+  "24/Feedback": () => Promise<string>;
   "24/File": () => Promise<string>;
   "24/Filter": () => Promise<string>;
   "24/Flare": () => Promise<string>;
@@ -205,6 +207,7 @@ declare var _default: {
   "24/Temperature": () => Promise<string>;
   "24/Text": () => Promise<string>;
   "24/Thread": () => Promise<string>;
+  "24/Translation": () => Promise<string>;
   "24/Trash": () => Promise<string>;
   "24/TrashAlt": () => Promise<string>;
   "24/Undo": () => Promise<string>;

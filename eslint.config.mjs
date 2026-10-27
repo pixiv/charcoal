@@ -55,4 +55,14 @@ export default defineConfig([
       reportUnusedDisableDirectives: 'off',
     },
   },
+  {
+    files: [
+      'packages/icons-cli/**/*',
+      'packages/tailwind-diff/**/*',
+      'packages/token-cli/**/*',
+    ],
+    rules: {
+      'no-console': 'off',
+    },
+  },
 ])

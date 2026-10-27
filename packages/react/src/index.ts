@@ -99,6 +99,11 @@ export {
   default as Carousel,
   type CarouselProps,
   type CarouselHandlerRef,
+  type CarouselDefaultScroll,
+  type CarouselLoopProps,
+  type CarouselAutoplay,
+  type CarouselChangeSource,
+  type CarouselChangeEvent,
   type ScrollAlign,
   type ScrollSnap,
   type ScrollSnapType,
@@ -106,4 +111,24 @@ export {
   type ScrollStep,
   type ScrollStepContext,
 } from './components/Carousel'
+export {
+  default as UnstableSnackbar,
+  useSnackbar as unstable_useSnackbar,
+  type SnackbarProps as UnstableSnackbarProps,
+  type UseSnackbarProps as unstable_UseSnackbarProps,
+  type SnackbarCloseReason as unstable_SnackbarCloseReason,
+  type SnackbarRootAttributes as unstable_SnackbarRootAttributes,
+  type ShowSnackbarOptions as unstable_ShowSnackbarOptions,
+} from './components/Notification/Snackbar'
+export {
+  default as unstable_Toast,
+  useToast as unstable_useToast,
+  type ToastProps as unstable_ToastProps,
+  type ToastHandler as unstable_ToastHandler,
+  type ShowToastOptions as unstable_ShowToastOptions,
+} from './components/Notification/Toast'
+export {
+  type NotificationOrder as unstable_NotificationOrder,
+  type UseNotificationOptions as unstable_UseNotificationOptions,
+} from './components/Notification/types'
 import './components/FocusRing/index.css'

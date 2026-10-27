@@ -1,6 +1,6 @@
 {
   "name": "@charcoal-ui/react-sandbox",
-  "version": "6.0.1",
+  "version": "6.3.0",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "run-s --print-label 'build:*'",
     "build:bundle": "tsdown",
-    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly",
+    "build:dts": "tsc --project tsconfig.build.json --pretty --emitDeclarationOnly --incremental false",
     "typecheck": "tsc --project tsconfig.build.json --pretty --noEmit",
     "clean": "rimraf dist .tsbuildinfo",
     "test": "vitest run --passWithNoTests"
@@ -24,9 +24,6 @@
   "devDependencies": {
     "@babel/core": "7.28.5",
     "@babel/parser": "7.28.5",
-    "@storybook/addon-knobs": "^7.0.2",
-    "@storybook/addons": "^7.4.1",
-    "@storybook/api": "^7.4.1",
     "@testing-library/jest-dom": "catalog:",
     "@testing-library/react": "catalog:",
     "@testing-library/user-event": "catalog:",

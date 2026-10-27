@@ -118,15 +118,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   const { isPresent, animationState, handleTransitionEnd } =
     useTransitionPresence(isOpen, transitionEnabled, bgRef, ref)
 
-  const handleClick = React.useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      if (e.currentTarget === e.target) {
-        onClose()
-      }
-    },
-    [onClose],
-  )
-
   if (!isPresent) {
     return null
   }
@@ -140,7 +131,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
         style={{ zIndex }}
         data-bottom-sheet={bottomSheet}
         data-animation={transitionEnabled ? animationState : undefined}
-        onClick={handleClick}
         onTransitionEnd={handleTransitionEnd}
       >
         <ModalBackgroundContext.Provider value={bgRef.current}>

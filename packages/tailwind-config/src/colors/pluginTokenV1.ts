@@ -5,7 +5,7 @@ import {
   flatMapObject,
   mapObject,
 } from '@charcoal-ui/utils'
-import { ThemeMap } from '../types'
+import { Definition, ThemeMap } from '../types'
 import {
   CharcoalAbstractTheme,
   EffectType,
@@ -13,20 +13,24 @@ import {
   CharcoalTheme as Theme,
 } from '@charcoal-ui/theme'
 
+type CssVariablesEntryValue =
+  Record<string, string> | { ':root': Record<string, string> }
+
 export function defineCssVariablesV1(themeMap: ThemeMap) {
-  // @ts-expect-error FIXME
-  return mapObject(themeMap, (key, theme) => {
+  return mapObject(themeMap, (key, theme): [string, CssVariablesEntryValue] => {
+    const css = defineColorVariableCSS(theme)
+
     if (key.startsWith('@media')) {
       return [
         key,
         {
-          ':root': defineColorVariableCSS(theme),
+          ':root': css,
         },
       ]
     } else {
-      return [key, defineColorVariableCSS(theme)]
+      return [key, css]
     }
-  })
+  }) as Definition
 }
 
 export const defineColorVariableCSS = (theme: Theme) => {

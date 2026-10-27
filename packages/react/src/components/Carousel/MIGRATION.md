@@ -58,26 +58,30 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 
 ## props 対応表
 
-| sandbox                                           | react                                       | 備考                                                                                                      |
-| ------------------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `children`                                        | `children`                                  | ✅ そのまま対応（1 直接子要素 = 1 スライド。ラッパーは外す。上記参照）                                    |
-| `scrollAmountCoef`（既定 `0.75`）                 | `scrollStep`（既定 `0.75`）                 | `number`（表示幅比）に加え `(ctx) => px` の関数も渡せる                                                   |
-| `defaultScroll: { align, offset }`                | `defaultScroll: { align, offset }`          | `align` は `'left' \| 'center' \| 'right'`。ほぼ同等                                                      |
-| `hasGradient`                                     | `hasGradient`（既定 `false`）               | ✅ そのまま対応（mask による透過フェード）                                                                |
-| `fadeInGradient`                                  | （廃止）                                    | スクロール可能な側のみ常にフェード                                                                        |
-| `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                    | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                       |
-| `centerItems`                                     | （廃止）                                    | スライド寸法は children 側で注入する（sandbox 同様）。間隔は `gap` prop                                   |
-| `onScroll(left)`                                  | `onScroll(left)`                            | ✅ そのまま対応（scroll で発火）                                                                          |
-| `onResize(width)`                                 | `onResize(width)`                           | ✅ scroller 幅の変化で発火                                                                                |
-| `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`            | ✅ `canPrev \|\| canNext` の変化で発火                                                                    |
-| `ref`（`CarouselHandlerRef.resetScroll()`）       | `ref`（`CarouselHandlerRef.resetScroll()`） | ✅ `forwardRef` で対応。`defaultScroll` の初期位置へ戻す                                                  |
-| —                                                 | `size: 'S' \| 'M'`（既定 `'M'`）            | 新規。`S` は 1 枚全幅 + `mandatory` スナップ                                                              |
-| —                                                 | `navigationButtons?: boolean`               | 既定は `size === 'M'`                                                                                     |
-| —                                                 | `indicator?: boolean`                       | 既定は `size === 'S'`                                                                                     |
-| —                                                 | `fullWidth?: boolean`（既定 `false`）       | `100vw` 表示                                                                                              |
-| —                                                 | `className?: string`                        | ルートに付与                                                                                              |
-| —                                                 | `scrollSnap?: { type?; align? }`            | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center |
-| —                                                 | `gap?: number \| string`                    | 新規。スライド間隔。number は px、string は CSS 値をそのまま使う                                          |
+| sandbox                                           | react                                                | 備考                                                                                                                                                                       |
+| ------------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`                                        | `children`                                           | ✅ そのまま対応（1 直接子要素 = 1 スライド。ラッパーは外す。上記参照）                                                                                                     |
+| `scrollAmountCoef`（既定 `0.75`）                 | `scrollStep`（既定 `0.75`）                          | `number`（表示幅比）に加え `(ctx) => px` の関数も渡せる                                                                                                                    |
+| `defaultScroll: { align, offset }`                | `defaultScroll: { align, offset }`                   | `align` は `'left' \| 'center' \| 'right'`。ほぼ同等                                                                                                                       |
+| `hasGradient`                                     | `hasGradient`（既定 `false`）                        | ✅ そのまま対応（mask による透過フェード）                                                                                                                                 |
+| `fadeInGradient`                                  | （廃止）                                             | スクロール可能な側のみ常にフェード                                                                                                                                         |
+| `buttonOffset` / `buttonPadding` / `bottomOffset` | （廃止）                                             | ボタン配置は CSS グリッド（左右 72px ゾーン）に固定                                                                                                                        |
+| `centerItems`                                     | （廃止）                                             | スライド寸法は children 側で注入する（sandbox 同様）。間隔は `gap` prop。単数形の `centerItem` は別機能                                                                    |
+| `onScroll(left)`                                  | `onScroll(left)`                                     | ✅ そのまま対応（scroll で発火）                                                                                                                                           |
+| `onResize(width)`                                 | `onResize(width)`                                    | ✅ scroller 幅の変化で発火                                                                                                                                                 |
+| `onScrollStateChange(canScroll)`                  | `onScrollStateChange(canScroll)`                     | ✅ `canPrev \|\| canNext` の変化で発火                                                                                                                                     |
+| `ref`（`CarouselHandlerRef.resetScroll()`）       | `ref`（`CarouselHandlerRef.resetScroll()`）          | ✅ `forwardRef` で対応。`defaultScroll` の初期位置へ戻す                                                                                                                   |
+| —                                                 | `size: 'S' \| 'M'`（既定 `'M'`）                     | 新規。`S` は 1 枚全幅 + `mandatory` スナップ                                                                                                                               |
+| —                                                 | `navigationButtons?: boolean`                        | 既定は `size === 'M'`                                                                                                                                                      |
+| —                                                 | `indicator?: boolean`                                | 既定は `size === 'S'`                                                                                                                                                      |
+| —                                                 | `fullWidth?: boolean`（既定 `false`）                | `100vw` 表示                                                                                                                                                               |
+| —                                                 | `className?: string`                                 | ルートに付与                                                                                                                                                               |
+| —                                                 | `scrollSnap?: { type?; align? }`                     | `type`: `none`/`proximity`/`mandatory`、`align`: `center`/`start`。未指定で M=none / S=mandatory / center                                                                  |
+| —                                                 | `gap?: number \| string`                             | 新規。スライド間隔。number は px、string は CSS 値をそのまま使う                                                                                                           |
+| —                                                 | `loop?: boolean`（既定 `false`）                     | 新規（charcoal 独自）。clone + 端テレポートによる無限ループ。`defaultScroll` とは型レベルで排他                                                                            |
+| —                                                 | `centerItem?: number`                                | 新規（charcoal 独自）。`loop` 時のみ有効で、初期表示で指定 index のスライドを viewport 中央に置く                                                                          |
+| —                                                 | `autoplay?: boolean \| { interval?; pauseOnHover? }` | 新規（charcoal 独自）。一定時間ごとに 1 スライド進む。`true` は既定値（`interval` 5000ms、`pauseOnHover` `true`）。キーボードフォーカス中は常に停止する                    |
+| —                                                 | `onChange?: (e) => void`                             | 新規（charcoal 独自）。スクロールが静止して `activeIndex` が変わったとき `{ index, source }` を 1 回通知。`source` は `auto`/`navigation`/`indicator`/`keyboard`/`pointer` |
 
 ## 挙動の変更（移行時に確認すること）
 
@@ -93,6 +97,56 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
   非対応環境では JS フォールバック）。
 - **キーボード操作**: スクローラーが `tabIndex={0}` でフォーカス可能になり、`←` / `→` で 1 ステップスクロール。
   フォーカスリングは charcoal 標準（`box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32)`）。
+- **`loop` 時のスライド内 `id` / `name` は重複する**: clone 方式の制約として、スライドの
+  DOM は clone 帯にもそのまま複製される（複製時に剥がされるのは**ルート要素の ref のみ**で、
+  ネストした要素の ref や `id` / `name` 属性は剥がせない）。clone-before 帯が DOM 上は
+  実スライドより先に来るため、スライド内に `id` があると `document.getElementById` や
+  `label[for]` / `aria-describedby` の参照が先頭の clone 側に解決されてしまう。
+  `name` でグループ化するフォームコントロール（radio 等）も全 clone で同一グループに
+  なる。`loop` を使うスライドの中では、文書内一意の `id` や `name` グループに依存する
+  仕組みを使わないこと。
+- **`loop` 時の clone はクリックできるが、tab 順と支援技術からは外れる**: viewport に
+  見えている clone は実スライドと同じくクリック・ホバーでき、ルート要素の `href` /
+  `onClick` などの props もそのまま動く（計測用の `onClick` も発火する）。clone は
+  `aria-hidden` で、ルート要素には `tabindex="-1"` が付く（ネストしたリンクやボタンは
+  tab 順に残るため、`loop` ではスライドのルート要素自体をリンク等にすることを推奨）。clone は実スライドとは
+  別の React インスタンスなので、スライド内のローカル state（開閉状態など）は実スライドと
+  同期しない。
+- **`loop` 時の dot ナビゲーションは実スライドへ移動する**: indicator の dot は常に
+  実セットのスライドへ `scrollIntoView` する。現在位置が clone 帯寄りの場合、視覚的に
+  最寄りの複製ではなく実スライドまで（最大でおよそ半セットぶん）長くスクロールする
+  ことがある。既知の制限。
+- **`autoplay` は画面外・タブ非表示でも回り続ける**: IntersectionObserver や `document.hidden`
+  による停止は入れていない。Carousel が見えていなくても自動送りが進み `onChange` が飛ぶ。
+  imp 計測を正確にしたい場合は、利用側で可視判定を持つこと。
+- **`onChange` は初期表示では発火しない**: 発火は「スクロールが静止して `activeIndex` が
+  前回から変わったとき」だけ。初期スライドの imp は利用側の責務（初期 index は
+  `centerItem ?? 0`）。`resetScroll()` による初期位置への復帰も発火しない。フリックで複数枚を
+  通過して止まった場合、発火するのは着地したスライドの 1 回だけ。
+- **`onChange` の `source` は「その移動を起こした入口」**: 自動送りの走行中にユーザーが触れて
+  スワイプした場合は `pointer` になる。逆に、自動送り中にクリックしただけで動きが変わらなかった
+  場合も `pointer` になる（native scroll からは区別できないため受容している）。Tab フォーカスや
+  find-in-page 由来のブラウザ主導の移動は、帰属できる入力の痕跡が残っていない限り発火しない。
+  直前に動かない入力（縦ホイール・クリック）があると、その後のブラウザ主導の移動が
+  `pointer` として報告されることがある（受容している制限）。
+- **`onChange` が報告する index は「indicator が現在アクティブとみなしているスライド」**:
+  viewport 水平中央を横切ったスライド（`activeIndex`）で、`size='S'`（1 枚全幅）なら曖昧さはない。
+  `size='M'` は一度に複数枚見えており、`autoplay` は次スライドを viewport **左端**に揃えるため、
+  報告される index は autoplay が揃えたスライドより 1 枚分先行する。
+- **`autoplay` + 非 loop + `scrollSnap.align: 'center'` では末尾数枚が中央に来ない**:
+  末尾付近の静止位置がスクロール上限にクランプされて潰れるため。中央配置を末尾まで
+  保ちたい場合は `loop` を使う。
+- **`prefers-reduced-motion: reduce` は `autoplay` のみを止める**: prev/next ボタンや
+  キーボード操作の smooth scroll は従来どおり動く。
+- **タッチ端末では `autoplay` を止める手段が「触れている間」と「フォーカス」だけ**: hover が
+  無いため `pauseOnHover` は効かない。指が触れている間は自動送りが割り込まず、離せば再開する。
+  WCAG 2.2.2（Pause, Stop, Hide）が要件になる画面では、利用側で明示的な一時停止 UI を用意すること。
+- **`autoplay.interval` が無効な値（非有限・非正・32bit `setTimeout` 上限の 2147483647 を
+  超える）の場合は既定値（5000ms）にフォールバックする**: 開発時は `console.error` に警告を出す。
+- **jsdom テストで `autoplay` は既定のままだと一度も進まない**: jsdom は
+  `Element.prototype.matches(':hover')` を常に `true` と答えるため、hover 停止が効きっぱなしになる。
+  `autoplay={{ pauseOnHover: false }}` にするか、`:hover` だけ `false` を返すよう
+  `Element.prototype.matches` をスタブすること。
 
 ## スクロール量を細かく制御したい場合
 
@@ -115,3 +169,8 @@ sandbox と同じく子ノードを直接渡し、スライドの寸法は sandb
 ```
 
 戻り値は「進む量の絶対値（px）」。符号（prev / next）はコンポーネント側で付与する。
+
+なお、走行中の連打では `scrollLeft` に実座標ではなく**前回のまだ到達していない目標位置**が
+渡る（native smooth scroll は新しい呼び出しで残距離を破棄するため、目標を積算して連打を
+成立させる）。上の例のような「残り全部」計算は目標位置基準で行われ、静止後・ユーザーの
+手動スクロール後は実座標に戻る。

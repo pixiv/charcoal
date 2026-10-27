@@ -105,7 +105,7 @@ const groupedIconsV2 = groupIcons(Object.keys(iconsV2) as KnownIconFile[])
 const Global = createGlobalStyle`
   :root {
     font-family: Helvetica, Arial, sans-serif;
-    color: rgba(#000, 0.88);
+    color: rgb(0 0 0 / 88%);
   }
 
   .icon-class {

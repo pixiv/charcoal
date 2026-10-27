@@ -451,6 +451,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
       data-full-width="false"
       data-has-gradient="true"
       data-indicator="true"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -612,6 +613,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -969,6 +971,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -1130,6 +1133,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollRight 
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -1487,6 +1491,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
       data-full-width="true"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -1648,6 +1653,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > GradientOnDarkConte
       data-full-width="false"
       data-has-gradient="true"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -1865,6 +1871,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="true"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -2012,6 +2019,1356 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
 </div>
 `;
 
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="true"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="mandatory"
+      data-size="S"
+      role="region"
+      style="--charcoal-carousel-gap: 0px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="charcoal-carousel__navigation"
+          data-visible="false"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="charcoal-carousel__indicator"
+        data-visible="true"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 6"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopBanner 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="true"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="mandatory"
+      data-size="M"
+      role="region"
+      style="--charcoal-carousel-gap: 16px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 640px; height: 160px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px;"
+            >
+              Banner 
+              1
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 640px; height: 160px; display: flex; align-items: center; justify-content: center; background: rgb(143, 42, 107); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px;"
+            >
+              Banner 
+              2
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 640px; height: 160px; display: flex; align-items: center; justify-content: center; background: rgb(42, 143, 95); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px;"
+            >
+              Banner 
+              3
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 640px; height: 160px; display: flex; align-items: center; justify-content: center; background: rgb(143, 107, 42); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px;"
+            >
+              Banner 
+              4
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 640px; height: 160px; display: flex; align-items: center; justify-content: center; background: rgb(95, 42, 143); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px;"
+            >
+              Banner 
+              5
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="charcoal-carousel__indicator"
+        data-visible="true"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopCenterFirstItem 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="true"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
+      data-size="M"
+      role="region"
+      style="--charcoal-carousel-gap: 24px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              1
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              2
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              9
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              16
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              20
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="charcoal-carousel__indicator"
+        data-visible="true"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 6"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 7"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 8"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 9"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 10"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 11"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 12"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 13"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 14"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 15"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 16"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 17"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 18"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 19"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 20"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopClickableSlides 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <p>
+      最後にクリックしたスライド: 
+      なし
+    </p>
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="true"
+      data-has-gradient="false"
+      data-indicator="false"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="proximity"
+      data-size="M"
+      role="region"
+      style="--charcoal-carousel-gap: 24px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-1"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(42, 59, 143); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              1
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-2"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(143, 42, 107); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              2
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-3"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(42, 143, 95); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              3
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-4"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(143, 107, 42); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              4
+            </a>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <a
+              href="#slide-5"
+              style="width: 240px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(95, 42, 143); color: rgb(255, 255, 255); border-radius: 8px; font: sans-serif 32px bold 32px; text-decoration: none;"
+            >
+              5
+            </a>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="charcoal-carousel__indicator"
+        data-visible="false"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="true"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="mandatory"
+      data-size="S"
+      role="region"
+      style="--charcoal-carousel-gap: 0px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <img
+              alt="サンプル画像"
+              src="/carousel-sample.png"
+              style="object-fit: cover; display: block; width: 100%; height: 100%;"
+            />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="charcoal-carousel__navigation"
+          data-visible="false"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="charcoal-carousel__indicator"
+        data-visible="true"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 6"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Carousel > react/Carousel > LoopWithoutCenterItem 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      aria-label="Carousel"
+      aria-roledescription="carousel"
+      class="charcoal-carousel"
+      data-can-next="false"
+      data-can-prev="false"
+      data-full-width="false"
+      data-has-gradient="false"
+      data-indicator="false"
+      data-loop="true"
+      data-scroll-snap-align="center"
+      data-scroll-snap-type="none"
+      data-size="M"
+      role="region"
+      style="--charcoal-carousel-gap: 24px;"
+    >
+      <div
+        class="charcoal-carousel__viewport"
+      >
+        <div
+          class="charcoal-carousel__scroller"
+          tabindex="0"
+        >
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              1
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              2
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              6
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              7
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              8
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              9
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              11
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              13
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              14
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              15
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              16
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              17
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              18
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(207, 227, 255); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              19
+            </div>
+          </div>
+          <div
+            class="charcoal-carousel__item"
+          >
+            <div
+              style="width: 200px; height: 120px; display: flex; align-items: center; justify-content: center; background: rgb(255, 227, 207); border-radius: 8px; font: sans-serif 32px bold 32px; color: rgb(51, 51, 51);"
+            >
+              20
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="false"
+          class="charcoal-carousel__navigation"
+          data-visible="true"
+        >
+          <button
+            aria-label="Previous"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="prev"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Prev"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+          <button
+            aria-label="Next"
+            class="charcoal-icon-button charcoal-carousel__navigation__item"
+            data-active="false"
+            data-direction="next"
+            data-hidden="true"
+            data-size="S"
+            data-variant="Overlay"
+            disabled=""
+          >
+            <pixiv-icon
+              name="24/Next"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="charcoal-carousel__indicator"
+        data-visible="false"
+      >
+        <button
+          aria-current="true"
+          aria-label="Go to slide 1"
+          class="charcoal-carousel__indicator__item"
+          data-active="true"
+        />
+        <button
+          aria-label="Go to slide 2"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 3"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 4"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 5"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 6"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 7"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 8"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 9"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 10"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 11"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 12"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 13"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 14"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 15"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 16"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 17"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 18"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 19"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+        <button
+          aria-label="Go to slide 20"
+          class="charcoal-carousel__indicator__item"
+          data-active="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOnSizeS 1`] = `
 <div>
   <div
@@ -2026,6 +3383,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="true"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="mandatory"
       data-size="S"
@@ -2187,6 +3545,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollSnapPerItem 1
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="start"
       data-scroll-snap-type="mandatory"
       data-size="M"
@@ -2544,6 +3903,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > ScrollStepFunction 
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -2901,6 +4261,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -3062,6 +4423,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
       data-full-width="false"
       data-has-gradient="false"
       data-indicator="true"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="mandatory"
       data-size="S"
@@ -3223,6 +4585,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
       data-full-width="false"
       data-has-gradient="true"
       data-indicator="false"
+      data-loop="false"
       data-scroll-snap-align="center"
       data-scroll-snap-type="none"
       data-size="M"
@@ -4137,6 +5500,130 @@ exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > InM
       <button>
         open
       </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/DropdownSelector > react/DropdownSelector > InertWorkaroundPenOutside 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="display: flex; align-items: flex-start; gap: 64px;"
+    >
+      <div
+        style="display: flex; flex-direction: column; gap: 16px;"
+      >
+        <div
+          style="position: relative; width: 288px;"
+        >
+          <div
+            style="position: relative; z-index: 1;"
+          >
+            <div
+              class="charcoal-dropdown-selector-root"
+            >
+              <div
+                class="charcoal-field-label-root"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <label
+                  class="charcoal-field-label"
+                  id="test-id"
+                >
+                  DropdownSelector
+                </label>
+                <div
+                  class="charcoal-field-label-sub-label"
+                >
+                  <span />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+              >
+                <select
+                  tabindex="-1"
+                >
+                  <option
+                    value="1"
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3
+                  </option>
+                </select>
+              </div>
+              <button
+                aria-labelledby="test-id"
+                class="charcoal-dropdown-selector-button"
+                data-active="false"
+                type="button"
+              >
+                <span
+                  class="charcoal-ui-dropdown-selector-text"
+                  data-placeholder="false"
+                >
+                  Option 1
+                </span>
+                <pixiv-icon
+                  class="charcoal-icon charcoal-ui-dropdown-selector-icon"
+                  name="16/Menu"
+                  style="--charcoal-icon-size: 16px;"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            class="charcoal-button"
+            data-testid="behind-options-button"
+            style="position: relative; top: 0px; left: 0px; width: 100%; height: 120px;"
+          >
+            Button behind options
+          </button>
+        </div>
+        <div
+          data-testid="selected-option"
+        >
+          Selected option: 
+          1
+        </div>
+        <div
+          data-testid="behind-options-click-count"
+        >
+          Behind options click count: 
+          0
+        </div>
+      </div>
+      <div
+        style="display: flex; flex-direction: column; gap: 16px;"
+      >
+        <button
+          class="charcoal-button"
+          data-testid="background-button"
+        >
+          Outside background button
+        </button>
+        <div
+          data-testid="background-click-count"
+        >
+          Background click count: 
+          0
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -9409,6 +10896,344 @@ exports[`Storybook Tests > react/SegmentedControl > react/SegmentedControl > Uni
 </div>
 `;
 
+exports[`Storybook Tests > react/Snackbar > react/Snackbar > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px; justify-content: flex-end;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-snackbar-offset));"
+    />
+    <div
+      class="charcoal-snackbar-region"
+      data-position="bottom"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-snackbar"
+        data-dim="false"
+        data-with-action="false"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存しました
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Snackbar > react/Snackbar > Dim 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px; justify-content: flex-end;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-snackbar-offset));"
+    />
+    <div
+      class="charcoal-snackbar-region"
+      data-position="bottom"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-snackbar"
+        data-dim="true"
+        data-with-action="true"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            Dim の Snackbar
+          </div>
+        </div>
+        <div>
+          <div>
+            <button
+              class="charcoal-button"
+            >
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Snackbar > react/Snackbar > LongMessage 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px; justify-content: flex-end;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-snackbar-offset));"
+    />
+    <div
+      class="charcoal-snackbar-region"
+      data-position="bottom"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-snackbar"
+        data-dim="false"
+        data-with-action="false"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Snackbar > react/Snackbar > Top 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px; justify-content: flex-start;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-snackbar-offset));"
+    />
+    <div
+      class="charcoal-snackbar-region"
+      data-position="top"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-snackbar"
+        data-dim="false"
+        data-with-action="false"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            上部に表示します
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Snackbar > react/Snackbar > WithAction 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px; justify-content: flex-end;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-snackbar-offset));"
+    />
+    <div
+      class="charcoal-snackbar-region"
+      data-position="bottom"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-snackbar"
+        data-dim="false"
+        data-with-action="true"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存しました
+          </div>
+        </div>
+        <div>
+          <div>
+            <button
+              class="charcoal-button"
+            >
+              取り消す
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Snackbar > react/Snackbar > WithLineBreak 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-snackbar-offset: 16px; justify-content: flex-end;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-snackbar-offset));"
+    />
+    <div
+      class="charcoal-snackbar-region"
+      data-position="bottom"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-snackbar"
+        data-dim="false"
+        data-with-action="false"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存に失敗しました
+            <br />
+            通信環境を確認してください
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Switch > react/Switch > Checked 1`] = `
 <div>
   <div
@@ -12160,6 +13985,268 @@ exports[`Storybook Tests > react/TextField > react/TextField > TokenV2 1`] = `
               type="text"
               value="Disabled value"
             />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Toast > react/Toast > Bottom 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-toast-offset: 16px; justify-content: flex-end;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-toast-offset));"
+    />
+    <div
+      class="charcoal-toast-region"
+      data-position="bottom"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-toast"
+        data-type="success"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            下部に表示します
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Toast > react/Toast > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-toast-offset: 16px; justify-content: flex-start;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-toast-offset));"
+    />
+    <div
+      class="charcoal-toast-region"
+      data-position="top"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-toast"
+        data-type="success"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存しました
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Toast > react/Toast > Error 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-toast-offset: 16px; justify-content: flex-start;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-toast-offset));"
+    />
+    <div
+      class="charcoal-toast-region"
+      data-position="top"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-toast"
+        data-type="error"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存に失敗しました
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Toast > react/Toast > LongMessage 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-toast-offset: 16px; justify-content: flex-start;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-toast-offset));"
+    />
+    <div
+      class="charcoal-toast-region"
+      data-position="top"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-toast"
+        data-type="success"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存した内容はすべての端末に同期され、あとから設定画面で変更できます。長いメッセージは2行を超えると省略されます
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/Toast > react/Toast > WithLineBreak 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <button
+      class="charcoal-button"
+    >
+      show
+    </button>
+  </div>
+  <div
+    aria-label="1 notification."
+    class="charcoal-notification-region"
+    data-react-aria-top-layer="true"
+    role="region"
+    style="z-index: 20; --charcoal-toast-offset: 16px; justify-content: flex-start;"
+    tabindex="-1"
+  >
+    <div
+      style="height: calc(0px + env(safe-area-inset-top, 0px) + var(--charcoal-toast-offset));"
+    />
+    <div
+      class="charcoal-toast-region"
+      data-position="top"
+    >
+      <div
+        aria-labelledby="test-id"
+        aria-modal="false"
+        class="charcoal-notification charcoal-toast"
+        data-type="success"
+        role="alertdialog"
+        tabindex="0"
+      >
+        <div
+          aria-atomic="true"
+          class="charcoal-notification-content"
+          role="status"
+        >
+          <div
+            class="charcoal-notification-label"
+            id="test-id"
+          >
+            保存に失敗しました
+            <br />
+            通信環境を確認してください
           </div>
         </div>
       </div>

@@ -20,8 +20,9 @@ describe('createTailwindConfigIconsV2', async () => {
     plugins: [charcoalIconsV2],
   }
   const result = await TailwindBuild.run(
-    // @ts-expect-error FIXME: missing content
-    config,
+    // `config` has no `content` field; `content: []` is fine here because
+    // TailwindBuild disables purge via `safelist`.
+    { ...config, content: [] },
     `
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';
@@ -42,8 +43,9 @@ describe('createTailwindConfigIconsV1', async () => {
     plugins: [charcoalIconsV1],
   }
   const result = await TailwindBuild.run(
-    // @ts-expect-error FIXME: missing content
-    config,
+    // `config` has no `content` field; `content: []` is fine here because
+    // TailwindBuild disables purge via `safelist`.
+    { ...config, content: [] },
     `
         @import 'tailwindcss/base';
         @import 'tailwindcss/utilities';

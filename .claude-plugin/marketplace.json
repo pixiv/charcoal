@@ -1,0 +1,35 @@
+{
+  "name": "charcoal",
+  "owner": {
+    "name": "pixiv",
+    "url": "https://github.com/pixiv/charcoal"
+  },
+  "metadata": {
+    "description": "Agent skills for adopting the pixiv charcoal design system (@charcoal-ui)",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "charcoal",
+      "source": "./",
+      "description": "Set up @charcoal-ui in an app, choose the right token for a color, text style, spacing, radius or border, and turn a Figma link into files a teammate can build from without any Figma access of their own. Covers Design Token 2.0 opt-in, theme switching, and the gotchas that silently produce an unstyled or Token 1.0 app.",
+      "version": "0.1.0",
+      "author": {
+        "name": "pixiv"
+      },
+      "license": "Apache-2.0",
+      "keywords": [
+        "charcoal",
+        "pixiv",
+        "design-system",
+        "design-tokens",
+        "css-variables",
+        "tailwind",
+        "styled-components",
+        "react",
+        "figma"
+      ],
+      "category": "web-development"
+    }
+  ]
+}

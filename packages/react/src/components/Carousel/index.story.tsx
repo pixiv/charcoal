@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite'
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import Carousel from '.'
 
 const makeSampleImages = (style: CSSProperties) =>
@@ -74,6 +74,8 @@ export default {
       // Controls では数値（比率）のみ操作可能。関数形式は ScrollStepFunction story を参照。
       control: { type: 'range', min: 0.1, max: 1.5, step: 0.05 },
     },
+    loop: { control: 'boolean' },
+    centerItem: { control: { type: 'number' } },
     gap: {
       // number は px。'1rem' などの CSS 値文字列も渡せる。
       control: { type: 'number' },
@@ -176,6 +178,127 @@ export const ScrollSnapPerItem: StoryObj<typeof Carousel> = {
     size: 'M',
     children: numberedSlides,
     scrollSnap: { type: 'mandatory', align: 'start' },
+  },
+}
+
+// loop: 前後 1 セットずつの clone による無限ループ。centerItem={0} で先頭スライドを初期中央に置く。
+export const LoopCenterFirstItem: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'M',
+    children: numberedSlides,
+    loop: true,
+    centerItem: 0,
+    indicator: true,
+  },
+}
+
+// loop のみ（centerItem なし）は実セット先頭の左寄せで開始する。
+export const LoopWithoutCenterItem: StoryObj<typeof Carousel> = {
+  args: { size: 'M', children: numberedSlides, loop: true },
+}
+
+export const LoopSizeS: StoryObj<typeof Carousel> = {
+  args: { size: 'S', children: fullWidthImages, loop: true, gap: 0 },
+}
+
+// banner 用途のワイドスライド。スロット幅 = 640 + gap 16 = 656px。
+const bannerSlides = Array.from({ length: 5 }, (_, i) => (
+  <div
+    key={`banner-${i + 1}`}
+    style={{
+      width: 640,
+      height: 160,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: ['#2a3b8f', '#8f2a6b', '#2a8f5f', '#8f6b2a', '#5f2a8f'][i],
+      color: '#fff',
+      borderRadius: 8,
+      font: 'bold 32px sans-serif',
+    }}
+  >
+    Banner {i + 1}
+  </div>
+))
+
+// banner: loop + 先頭中央 + mandatory snap で常に 1 枚が中央に止まる。
+// 矢印・キーボードも 1 スロット（656px）ぶんだけ送る。
+export const LoopBanner: StoryObj<typeof Carousel> = {
+  args: {
+    size: 'M',
+    children: bannerSlides,
+    loop: true,
+    centerItem: 0,
+    indicator: true,
+    gap: 16,
+    scrollSnap: { type: 'mandatory', align: 'center' },
+    scrollStep: () => 656,
+  },
+}
+
+// 全体表示のスライドが同時に 2 枚以上ある幅では、ループの継ぎ目で clone も全体表示される。
+// 見えているスライドはどれをクリックしても反応すること（clone を含む）。
+function LoopClickableSlidesDemo(args: Parameters<typeof Carousel>[0]) {
+  const [clicked, setClicked] = useState<number | null>(null)
+  return (
+    <>
+      <p>最後にクリックしたスライド: {clicked ?? 'なし'}</p>
+      <Carousel {...args}>
+        {Array.from({ length: 5 }, (_, i) => (
+          <a
+            key={`link-${i + 1}`}
+            href={`#slide-${i + 1}`}
+            onClick={(e) => {
+              e.preventDefault()
+              setClicked(i + 1)
+            }}
+            style={{
+              width: 240,
+              height: 120,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: [
+                '#2a3b8f',
+                '#8f2a6b',
+                '#2a8f5f',
+                '#8f6b2a',
+                '#5f2a8f',
+              ][i],
+              color: '#fff',
+              borderRadius: 8,
+              font: 'bold 32px sans-serif',
+              textDecoration: 'none',
+            }}
+          >
+            {i + 1}
+          </a>
+        ))}
+      </Carousel>
+    </>
+  )
+}
+
+export const LoopClickableSlides: StoryObj<typeof Carousel> = {
+  render: (args) => <LoopClickableSlidesDemo {...args} />,
+  args: {
+    size: 'M',
+    fullWidth: true,
+    gap: 24,
+    loop: true,
+    centerItem: 0,
+    scrollSnap: { type: 'proximity', align: 'center' },
+  },
+}
+
+export const LoopAutoplay: StoryObj<typeof Carousel> = {
+  tags: ['skip-test'],
+  args: {
+    size: 'S',
+    children: fullWidthImages,
+    loop: true,
+    gap: 0,
+    autoplay: { interval: 5000 },
   },
 }
 

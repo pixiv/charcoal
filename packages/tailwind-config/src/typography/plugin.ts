@@ -38,23 +38,20 @@ const typographyPlugin = plugin(({ addUtilities }) => {
     typographyStyle(style),
   ])
 
-  addUtilities(
-    {
-      ...typographyClasses,
-      '.preserve-half-leading': {
-        '&::before': {
-          content: 'none',
-        },
-        '&::after': {
-          content: 'none',
-        },
+  // `responsive` variants are generated automatically by Tailwind 3's JIT engine for
+  // every utility, so no `variants` option is needed (Tailwind 3's `addUtilities` doesn't
+  // accept one — that was a Tailwind 1/2 API this call was never updated to drop).
+  addUtilities({
+    ...typographyClasses,
+    '.preserve-half-leading': {
+      '&::before': {
+        content: 'none',
+      },
+      '&::after': {
+        content: 'none',
       },
     },
-    {
-      // @ts-expect-error FIXME
-      variants: ['responsive'],
-    },
-  )
+  })
 })
 
 export default typographyPlugin
