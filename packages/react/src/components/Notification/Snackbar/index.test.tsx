@@ -147,6 +147,33 @@ describe('Snackbar', () => {
     ).toHaveAttribute('data-exiting', 'true')
   })
 
+  it('keeps the show function referentially stable across re-renders', () => {
+    // show を useEffect の依存に入れる利用側で、表示 → 再レンダー → show の参照が変わる →
+    // effect 再実行 → 再表示、という無限ループにならないことを保証する
+    const identities = new Set<unknown>()
+
+    function SnackbarApp() {
+      const [snackbar, show] = useSnackbar()
+      useEffect(() => {
+        identities.add(show)
+      }, [show])
+      return snackbar
+    }
+
+    render(<SnackbarApp />)
+    const [firstShow] = identities
+    act(() => {
+      ;(firstShow as (message: ReactNode) => void)('メッセージ')
+    })
+    act(() => {
+      vi.advanceTimersByTime(300)
+    })
+
+    expect(screen.getByText('メッセージ')).toBeInTheDocument()
+    // 表示に伴う再レンダー後も show は同じ参照のまま
+    expect(identities.size).toBe(1)
+  })
+
   it('queues the next snackbar until the previous one closes', async () => {
     const { show } = renderSnackbar()
 
