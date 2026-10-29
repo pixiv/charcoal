@@ -16,9 +16,9 @@ const SvgCopy = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       fill="currentColor"
     />
     <path
+      d="M19 2a3 3 0 013 3v10a3 3 0 01-3 3H9a3 3 0 01-3-3V5a3 3 0 013-3h10zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M19 2a3 3 0 013 3v10a3 3 0 01-3 3H9a3 3 0 01-3-3V5a3 3 0 013-3h10zM9 4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1H9z"
       fill="currentColor"
     />
   </svg>

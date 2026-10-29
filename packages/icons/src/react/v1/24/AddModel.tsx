@@ -16,9 +16,9 @@ const SvgAddModel = (
   >
     <path d="M14 4a2 2 0 11-4 0 2 2 0 014 0z" fill="currentColor" />
     <path
+      d="M6 8a1 1 0 011-1h10a1 1 0 110 2h-2.5v8a1 1 0 11-2 0v-4h-1v4a1 1 0 11-2 0V9H7a1 1 0 01-1-1zm5.5 1v2h1V9h-1z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M6 8a1 1 0 011-1h10a1 1 0 110 2h-2.5v8a1 1 0 11-2 0v-4h-1v4a1 1 0 11-2 0V9H7a1 1 0 01-1-1zm5.5 1v2h1V9h-1z"
       fill="currentColor"
     />
     <path

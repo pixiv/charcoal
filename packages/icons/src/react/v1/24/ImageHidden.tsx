@@ -19,9 +19,9 @@ const SvgImageHidden = (
       fill="currentColor"
     />
     <path
+      d="M21 17a3 3 0 01-2.768 2.991L17.236 18H18a1 1 0 001-1v-4.5l-3.611 1.806L10.236 4H18a3 3 0 013 3v10zm-3-8a2 2 0 11-4 0 2 2 0 014 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M21 17a3 3 0 01-2.768 2.991L17.236 18H18a1 1 0 001-1v-4.5l-3.611 1.806L10.236 4H18a3 3 0 013 3v10zm-3-8a2 2 0 11-4 0 2 2 0 014 0z"
       fill="currentColor"
     />
     <path

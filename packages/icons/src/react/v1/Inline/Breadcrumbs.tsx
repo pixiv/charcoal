@@ -15,9 +15,9 @@ const SvgBreadcrumbs = (
     {...props}
   >
     <path
+      d="M2.514.413A1 1 0 001 1.27v5.468a1 1 0 001.514.857l4.557-2.734a1 1 0 000-1.715L2.515.413z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M2.514.413A1 1 0 001 1.27v5.468a1 1 0 001.514.857l4.557-2.734a1 1 0 000-1.715L2.515.413z"
       fill="currentColor"
     />
   </svg>
