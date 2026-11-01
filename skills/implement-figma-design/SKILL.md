@@ -127,10 +127,19 @@ lines of notes, not in your head — and build from the notes and the pack toget
      restricted age, a different locale or time zone);
    - the other theme, and the end of a paginated or infinite list.
 
-   Look for each in the sibling frames prepare-figma-design listed next to this one;
-   what is drawn is the answer. What is not drawn is not yours to invent: implement the
-   project's existing pattern for it if there is one, and otherwise leave a visible
-   `TODO` naming the missing state, and say so when you hand the work back.
+   Each of these is a **branch in the code, reachable from the props**: the component
+   takes what decides it (`items` that can be empty, a `status` of loading or error, a
+   reason an image is withheld, whether the viewer is signed in) and renders something
+   for every value. A state you only wrote down is not implemented — the build that
+   shows the drawn state for the sample data and nothing else is the most common way a
+   faithful implementation fails review.
+
+   For how each branch looks, look in the sibling frames prepare-figma-design listed
+   next to this one; what is drawn is the answer. Where nothing is drawn, do not invent
+   a design: use the project's existing pattern for that state if there is one (an empty
+   state component, a spinner, a masked thumbnail), otherwise the plainest treatment the
+   design system offers, and mark it `TODO(design): <state>` so a designer can find it.
+   List every state and how it is covered when you hand the work back.
 
 4. **The units.** Split along the design's repetition and regions, not along Figma's
    layers: a component for the repeated item (the pack marks local components "used N
@@ -156,14 +165,20 @@ screens has its own words on top, and those win:
   Search for the instance name and for its role before building one.
 - **Copy goes through the project's i18n.** The words in the pack are the source
   language's; write them as translation keys the way neighbouring screens do, not as
-  literals.
+  literals. Dates, numbers and weekday names go through the locale-aware formatter the
+  project uses, never a hand-written suffix. Without an i18n setup, still keep the
+  copy in one module rather than scattered through markup.
 - **One vocabulary per file.** Do not mix Tailwind classes, styled theme paths and raw
   variables because the pack's table offered all three; match what the file's neighbours
   use.
 
 ## Check your own work
 
-**`check-design.mjs` decides when you are done.** Run it, fix what it names, run it again.
+**`check-design.mjs` decides when the drawn state is done** — and only that one: it
+compares a render with the frame, so it cannot see the states the frame does not draw.
+Render those yourself once each, with the props that select them (a test, a story, or a
+temporary sample), and confirm none crashes or overflows. Run the check, fix what it
+names, run it again.
 An implementation that has never been rendered is a guess, however carefully it was built
 from the pack — and the most expensive mistake it can make is invisible from the source:
 a screen can import every component, write every value as a token, and render with none
