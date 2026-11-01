@@ -131,6 +131,7 @@ lines of notes, not in your head — and build from the notes and the pack toget
    what is drawn is the answer. What is not drawn is not yours to invent: implement the
    project's existing pattern for it if there is one, and otherwise leave a visible
    `TODO` naming the missing state, and say so when you hand the work back.
+
 4. **The units.** Split along the design's repetition and regions, not along Figma's
    layers: a component for the repeated item (the pack marks local components "used N
    times"), one per region of the screen, and hooks for the data and the state above.
