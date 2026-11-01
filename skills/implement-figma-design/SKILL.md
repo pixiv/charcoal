@@ -99,6 +99,67 @@ components, props and state is the implementation, and it is yours to write.
 Where an element has words they are given as `text:` — use them verbatim. A node name is
 its Figma layer, which is often a label rather than what it says.
 
+## Before you write code: what the design does not tell you
+
+A frame is one moment of a screen, drawn with sample data, for one user, in one theme.
+The code is every moment of it. Most of what a reviewer sends back on a screen built
+faithfully from a design is not in the design at all, so settle these first — in a few
+lines of notes, not in your head — and build from the notes and the pack together.
+
+1. **The data.** List what the screen shows that would come from somewhere: every text
+   that is sample copy ("Title goes here", a user name, a count), every image, every
+   number. That is the shape of the props or the response the screen renders from. Type
+   it, and render the design from typed sample data instead of writing the copy into
+   the markup — the copy in the frame is one row of that data, not the screen.
+2. **Who owns each piece of state.** For every value that can change, say where it
+   lives: the server (fetched, cached, paginated), the URL (tab, filter, date, page —
+   anything a user would expect a link or the back button to keep), the component
+   (open/closed, hover, a draft), or persisted on the device. A selected tab drawn in
+   the frame is a URL parameter in most products, not a `useState`.
+3. **The states the frame does not draw.** Enumerate them before writing, and handle or
+   mark each one:
+   - nothing to show (empty list, zero results), still loading, failed to load;
+   - the longest real content: a title that wraps, a name in another script, a
+     five-digit count, a translation longer than the original;
+   - an image that is missing, still loading, or must not be shown to this user
+     (sensitive, muted, restricted);
+   - a signed-out viewer, and any viewer the product treats differently (paid,
+     restricted age, a different locale or time zone);
+   - the other theme, and the end of a paginated or infinite list.
+
+   Look for each in the sibling frames prepare-figma-design listed next to this one;
+   what is drawn is the answer. What is not drawn is not yours to invent: implement the
+   project's existing pattern for it if there is one, and otherwise leave a visible
+   `TODO` naming the missing state, and say so when you hand the work back.
+4. **The units.** Split along the design's repetition and regions, not along Figma's
+   layers: a component for the repeated item (the pack marks local components "used N
+   times"), one per region of the screen, and hooks for the data and the state above.
+   A single file that holds the screen, its sample data and its behaviour is the
+   design transliterated, not implemented.
+5. **What the screen is in the product.** Which interactive elements navigate (real
+   links, so they open in a new tab and are announced as links) and which act in place
+   (buttons). Every icon-only control needs an accessible name the frame does not show.
+
+## In an existing app
+
+The pack describes the design in the design system's words. A project that already has
+screens has its own words on top, and those win:
+
+- **Read the project's own conventions first** — `AGENTS.md`, `CLAUDE.md`, a
+  contributing guide, a project skill for implementing designs. They say which styling
+  route the project uses (so which column of the pack's role table to write), which
+  components replace raw markup, and how text is localised.
+- **Prefer the project's component, then charcoal's, then your own.** A design's
+  "Bookmark" or "Avatar" instance is usually an existing component in the project with
+  behaviour attached — tracking, permissions, sign-in prompts — that a lookalike drops.
+  Search for the instance name and for its role before building one.
+- **Copy goes through the project's i18n.** The words in the pack are the source
+  language's; write them as translation keys the way neighbouring screens do, not as
+  literals.
+- **One vocabulary per file.** Do not mix Tailwind classes, styled theme paths and raw
+  variables because the pack's table offered all three; match what the file's neighbours
+  use.
+
 ## Check your own work
 
 **`check-design.mjs` decides when you are done.** Run it, fix what it names, run it again.
@@ -151,9 +212,11 @@ It is one frame as the designer drew it. It does not carry:
   is often your `TextField`. Check the names against your library's exports rather than
   trusting them — a wrong component mapping costs more than a wrong color.
 - **Any state the frame is not drawn in.** Hover, focus, error and empty states are
-  other frames, packed separately, or not in the file at all. Ask whoever prepared the
-  pack which exist.
+  other frames, packed separately, or not in the file at all — see "Before you write
+  code" above for how to enumerate and handle them.
 - **Behaviour.** What a button does, what validates, what navigates where.
+- **Where the data comes from.** Sample copy in the frame is one row of data, not a
+  string to write into the screen.
 - **The other theme.** The header says which theme and vocabulary it was resolved
   against; a dark screen built from a light pack gets every name right and every value
   wrong.
