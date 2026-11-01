@@ -32,11 +32,15 @@ token, not patched by hand here. A hand-edited pack and a real design disagree s
 ## How to read the pack
 
 ```
-- instance "Icon Button" 32×32 at (296, 8) — `Size=S, Type=Default, State=Default`
-  flex-direction: row; padding: var(--charcoal-space-10); border-radius: var(--charcoal-radius-oval)
-  - instance "24 / Close" 24×24 at (300, 12) — `24 / Close`
-    - vector "Shape" 14×14 at (305, 17)
-      color: var(--charcoal-color-icon-tertiary-default)
+- instance "Row" 312×64 at (0, 120) — `Ranked row` `State=Default`; a local component, used 3 times — implement once and reuse
+  flex-direction: row; gap: spacing-8; padding: spacing-16
+  - text "Title" 200×22 at (16, 141)
+    text: "First"
+    color: text2; typography: typography-14
+  - instance "Icon Button" 32×32 at (264, 136) — `Icon Button` `Size=S, Type=Default, State=Default`
+    flex-direction: row; padding: var(--charcoal-space-10); border-radius: var(--charcoal-radius-oval)
+- instance "Row" 312×64 at (0, 184) — `Ranked row` `State=Default`; the same as "Row" at (0, 120) above
+  text: "Second"
 ```
 
 Each line is one element: its box, then its materials, then the component and variant it
@@ -47,6 +51,23 @@ identify an element, not to be typed into your CSS.
 Values with a token are written as that token. Values without one are literal — and that
 is information too: it means the design system has no opinion here and you should not go
 looking for a token.
+
+**A bare word is a charcoal v1 role.** `color: text2`, `padding: spacing-16`,
+`typography: typography-14` are keys of the v1 theme, which the design named through its
+styles. The pack writes each once, and its header has a table of how each is spelled:
+the Tailwind class (`text-text2`, `p-16`, `typography-14`), the styled-components theme
+path (`theme.color.text2`), the v1 CSS variable (`var(--charcoal-text2)`), and the v2
+variable with the same value where there is one. Use the column for the stack your
+project is on; do not mix them.
+
+**A comment naming a style or a variable** — `#fd9e16 /* style: Brand/Premium */` — is
+a name the designer used that neither vocabulary has. The value before it is what it
+looks like. If your project has a word for that name, use it; otherwise the literal.
+
+**A local component is built once.** An instance marked "a local component, used N
+times" is part of this design, not of the library, so its insides are described: build
+it as one component and reuse it. A line that says "the same as … above" is another use
+of it with different words — the structure is the first one's.
 
 **Widths and heights are geometry, not tokens.** The design says a card is 294px wide
 because the layout says so. There is no token for it and none is expected. If you find
@@ -99,8 +120,11 @@ node <this-skill>/bin/check-design.mjs --spec design/spec.json --url http://loca
 
 It names what is off — outermost first, because a container in the wrong place moves
 everything inside it — and says nothing about how well you did. The first thing it asks
-is whether charcoal's variables resolve at all, because that failure is the one the
-source cannot show you. Fix that before reading anything below it: until the tokens land,
+is whether charcoal's variables resolve at all — v2's, or v1's as TokenInjector and the
+Tailwind preset inject them, or for a v1 Tailwind build without variables, whether the
+design's v1 colors are on the page — because that failure is the one the source cannot
+show you. A v1 role is checked by the value it resolves to, so it passes however your
+project spells it. Fix that before reading anything below it: until the tokens land,
 every box will look wrong for the same single reason.
 
 Needs `playwright` installed in the project being checked — it is resolved from there,
@@ -122,12 +146,14 @@ what a script should branch on.
 
 It is one frame as the designer drew it. It does not carry:
 
-- **Which component in your library each instance is.** It gives you Figma's instance
+- **Which component in your library each instance is.** It gives you the component's
   name and its variant properties; the mapping is yours to make. Figma's `Search Field`
   is often your `TextField`. Check the names against your library's exports rather than
   trusting them — a wrong component mapping costs more than a wrong color.
 - **Any state the frame is not drawn in.** Hover, focus, error and empty states are
-  other frames, or not in the file at all.
+  other frames, packed separately, or not in the file at all. Ask whoever prepared the
+  pack which exist.
 - **Behaviour.** What a button does, what validates, what navigates where.
-- **Which theme it is.** `--theme dark` and `--theme light` give different token names
-  for the same drawing, and the pack does not record which was used. Ask if it matters.
+- **The other theme.** The header says which theme and vocabulary it was resolved
+  against; a dark screen built from a light pack gets every name right and every value
+  wrong.
