@@ -780,3 +780,157 @@ export function outline(nodes, components, materialsFn) {
   }
   return { described, materialsFor, repeats, uses }
 }
+
+/** What can hold frames rather than be one. */
+const CONTAINERS = new Set(['DOCUMENT', 'CANVAS', 'SECTION'])
+
+/**
+ * Whether a node is a page or a section — a place frames are laid out on, not a screen.
+ *
+ * @param {FigmaNode} raw
+ */
+export function isContainer(raw) {
+  return CONTAINERS.has(raw.type)
+}
+
+/** A screen is at least this big on both sides; a smaller box beside one is a note. */
+const SCREEN = 240
+
+/**
+ * A frame on a page or in a section, with the notes laid out beside it.
+ *
+ * @typedef {object} ListedFrame
+ * @property {string} id
+ * @property {string} name
+ * @property {string} type
+ * @property {number} width
+ * @property {number} height
+ * @property {number} nodes every visible node in it, itself included
+ * @property {string} [section] the section it sits in, if any
+ * @property {string[]} labels the words of the notes nearest it
+ * @property {boolean} obsolete its name or a note says it is not current
+ */
+
+/**
+ * The frames a page or section holds, for choosing which to pack.
+ *
+ * A designer lays a screen's states out as sibling frames — base, hover, empty, error,
+ * dark — and labels them with text or annotation instances placed beside them. The
+ * labels say which frame is which far more reliably than the frames' names do, so each
+ * is attached to the frame it sits nearest.
+ *
+ * @param {FigmaNode} root
+ * @returns {ListedFrame[]}
+ */
+export function listFrames(root) {
+  /** @type {ListedFrame[]} */
+  const frames = []
+  /** @type {{ box: { x: number, y: number, width: number, height: number }, frame: ListedFrame }[]} */
+  const placed = []
+  /** @type {{ box: { x: number, y: number, width: number, height: number }, text: string, section?: string }[]} */
+  const notes = []
+
+  /** @param {FigmaNode} raw */
+  const count = (raw) => {
+    if (raw.visible === false) {
+      return 0
+    }
+    let total = 1
+    for (const child of raw.children ?? []) {
+      total += count(child)
+    }
+    return total
+  }
+  /** @param {FigmaNode} raw */
+  const words = (raw) => {
+    /** @type {string[]} */
+    const out = []
+    const visit = (/** @type {FigmaNode} */ n) => {
+      if (n.visible === false) {
+        return
+      }
+      if (n.characters) {
+        out.push(n.characters.trim())
+      }
+      ;(n.children ?? []).forEach(visit)
+    }
+    visit(raw)
+    return out.filter(Boolean)
+  }
+
+  /**
+   * @param {FigmaNode} raw
+   * @param {string | undefined} section
+   */
+  const walk = (raw, section) => {
+    for (const child of raw.children ?? []) {
+      if (child.visible === false) {
+        continue
+      }
+      if (isContainer(child)) {
+        walk(child, child.type === 'SECTION' ? child.name : section)
+        continue
+      }
+      const box = child.absoluteBoundingBox
+      if (!box) {
+        continue
+      }
+      const screen =
+        ['FRAME', 'COMPONENT', 'COMPONENT_SET', 'INSTANCE'].includes(
+          child.type,
+        ) &&
+        box.width >= SCREEN &&
+        box.height >= SCREEN
+      if (screen) {
+        /** @type {ListedFrame} */
+        const frame = {
+          id: child.id,
+          name: child.name,
+          type: child.type,
+          width: Math.round(box.width),
+          height: Math.round(box.height),
+          nodes: count(child),
+          labels: [],
+          obsolete: false,
+          ...(section ? { section } : {}),
+        }
+        frames.push(frame)
+        placed.push({ box, frame })
+        continue
+      }
+      const text = words(child).join(' ').slice(0, 120)
+      if (text) {
+        notes.push({ box, text, section })
+      }
+    }
+  }
+  walk(root, root.type === 'SECTION' ? root.name : undefined)
+
+  // The gap between two boxes, zero where they overlap.
+  /**
+   * @param {{ x: number, y: number, width: number, height: number }} a
+   * @param {{ x: number, y: number, width: number, height: number }} b
+   */
+  const gap = (a, b) =>
+    Math.hypot(
+      Math.max(0, a.x - (b.x + b.width), b.x - (a.x + a.width)),
+      Math.max(0, a.y - (b.y + b.height), b.y - (a.y + a.height)),
+    )
+  for (const note of notes) {
+    let best
+    let bestGap = 600
+    for (const { box, frame } of placed) {
+      const d = gap(note.box, box)
+      if (d < bestGap && frame.section === note.section) {
+        best = frame
+        bestGap = d
+      }
+    }
+    best?.labels.push(note.text)
+  }
+  const stale = /\b(obsolete|obsoleted|deprecated|archived?|unused|old)\b/i
+  for (const frame of frames) {
+    frame.obsolete = [frame.name, ...frame.labels].some((t) => stale.test(t))
+  }
+  return frames
+}

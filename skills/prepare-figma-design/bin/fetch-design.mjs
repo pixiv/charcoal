@@ -22,7 +22,13 @@ import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
 import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
 import { figAssets, readFig } from './fig.mjs'
-import { flatten, materialsOf, outline } from './design.mjs'
+import {
+  flatten,
+  isContainer,
+  listFrames,
+  materialsOf,
+  outline,
+} from './design.mjs'
 import { loadTokens } from './tokens.mjs'
 import {
   countReferences,
@@ -44,7 +50,7 @@ const mainUrl = (() => {
   }
 })()
 const isCli = mainUrl !== undefined && import.meta.url === mainUrl
-/** @type {{ url?: string, fig?: string, node?: string, tokens?: string, theme?: string, vocabulary?: string, assets?: string, spec?: string }} */
+/** @type {{ list?: boolean, url?: string, fig?: string, node?: string, tokens?: string, theme?: string, vocabulary?: string, assets?: string, spec?: string }} */
 let args = {}
 /** @type {string | undefined} */
 let argError
@@ -52,6 +58,7 @@ if (isCli) {
   try {
     ;({ values: args } = parseArgs({
       options: {
+        list: { type: 'boolean' },
         url: { type: 'string' },
         fig: { type: 'string' },
         node: { type: 'string' },
@@ -92,6 +99,9 @@ if (
     'Usage: fetch-design.mjs (--url <figma url> | --fig <file.fig>)' +
       ' [--tokens <dir>] [--theme light|dark] [--vocabulary auto|v1|v2]' +
       ' [--assets <dir>] [--spec <path>]',
+  )
+  console.error(
+    'Add --list with a link to a page or section to list its frames instead of packing.',
   )
   console.error(
     "--url reads the design over Figma's REST API. Set FIGMA_TOKEN in the" +
@@ -136,6 +146,41 @@ if (isCli) {
       styles = {},
       variables = {},
     } = figPath ? readFig(figPath, target) : await fetchNode(key, target)
+
+    // A page or a section is where frames are laid out, not a screen: packing one
+    // describes every frame and every note beside them as one design. Listing them is
+    // what lets someone pick the frame they mean, and its states beside it.
+    if (args.list) {
+      const frames = listFrames(
+        isContainer(document)
+          ? document
+          : { ...document, children: [document] },
+      )
+      const cell = (/** @type {string} */ text) =>
+        text.replaceAll('|', '\\|').replaceAll('\n', ' ')
+      process.stdout.write(
+        [
+          `# Frames in ${document.name}`,
+          '',
+          'Pack one with --url and its node-id, or --fig and --node.',
+          '',
+          '| Node | Name | Size | Nodes | Section | Labels beside it |',
+          '| --- | --- | --- | --- | --- | --- |',
+          ...frames.map(
+            (f) =>
+              `| ${f.id} | ${cell(f.name)}${f.obsolete ? ' (obsolete?)' : ''} | ${f.width}×${f.height} | ${f.nodes} | ${cell(f.section ?? '')} | ${cell(f.labels.join(' / '))} |`,
+          ),
+          '',
+        ].join('\n'),
+      )
+      process.exit(0)
+    }
+    if (isContainer(document)) {
+      throw new Error(
+        `${document.name} is a ${document.type.toLowerCase()}, not a frame. Rerun with` +
+          ' --list to see the frames in it, then pack the one you mean.',
+      )
+    }
     const nodes = flatten(document, components, componentSets)
 
     // Which dialect a value nobody named is ranked in. `auto` follows the frame: a

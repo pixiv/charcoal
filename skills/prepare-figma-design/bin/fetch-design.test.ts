@@ -9,6 +9,8 @@ import {
   flatten,
   imageFill,
   isFillTransform,
+  isContainer,
+  listFrames,
   materialsOf,
   outline,
   surfaceRole,
@@ -616,4 +618,71 @@ test('a repeat whose materials differ is described in full', () => {
     n.id === 'b-t' ? ['color: red'] : [],
   )
   expect(repeats.size).toBe(0)
+})
+
+test('a page lists its frames, each with the notes laid out beside it', () => {
+  const box = (x: number, y: number, width: number, height: number) => ({
+    absoluteBoundingBox: { x, y, width, height },
+  })
+  const page = figma({
+    id: 'page',
+    type: 'CANVAS',
+    name: 'Page',
+    children: [
+      figma({
+        id: 'sec',
+        type: 'SECTION',
+        name: 'Checkout',
+        ...box(0, 0, 3000, 2000),
+        children: [
+          figma({ id: 'base', name: 'Checkout', ...box(0, 200, 375, 800) }),
+          figma({ id: 'hover', name: 'Checkout', ...box(500, 200, 375, 800) }),
+          figma({
+            id: 'old',
+            name: 'Checkout (old)',
+            ...box(1000, 200, 375, 800),
+          }),
+          // A note: words beside a frame, here an annotation instance.
+          figma({
+            id: 'n1',
+            type: 'INSTANCE',
+            name: 'Heading',
+            ...box(500, 100, 200, 60),
+            children: [
+              figma({
+                id: 'n1t',
+                type: 'TEXT',
+                name: 't',
+                characters: 'Hover',
+              }),
+            ],
+          }),
+          figma({
+            id: 'n2',
+            type: 'TEXT',
+            name: 'Label',
+            characters: 'Default',
+            ...box(0, 120, 100, 20),
+          }),
+          // Hidden frames are not candidates.
+          figma({
+            id: 'gone',
+            name: 'Hidden',
+            visible: false,
+            ...box(2000, 200, 375, 800),
+          }),
+        ],
+      }),
+    ],
+  })
+  // A page or section is refused for packing; a frame is not.
+  expect(isContainer(page)).toBe(true)
+  expect(isContainer(figma({ type: 'FRAME' }))).toBe(false)
+  const frames = listFrames(page)
+  expect(frames.map((f) => [f.id, f.section, f.labels, f.obsolete])).toEqual([
+    ['base', 'Checkout', ['Default'], false],
+    ['hover', 'Checkout', ['Hover'], false],
+    ['old', 'Checkout', [], true],
+  ])
+  expect(frames[0]).toMatchObject({ width: 375, height: 800, nodes: 1 })
 })
