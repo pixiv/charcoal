@@ -357,9 +357,10 @@ function weightOf(node) {
  * @param {any} node
  * @param {Matrix} absolute
  * @param {Record<string, Record<number, string>>} enums
+ * @param {(ref: any) => string | undefined} [styleOf] a style reference, as the id `styles` is keyed by
  * @returns {FigmaNode}
  */
-function toRest(node, absolute, enums) {
+function toRest(node, absolute, enums, styleOf = () => undefined) {
   const stack = enums.StackMode?.[node.stackMode ?? 0] ?? 'NONE'
   const kind = enums.NodeType?.[node.type] ?? 'FRAME'
   /** @type {any} */
@@ -414,6 +415,17 @@ function toRest(node, absolute, enums) {
   const symbol = idOf(node.symbolData?.symbolID)
   if (symbol) {
     out.componentId = symbol
+  }
+  // The named styles, in the keys the REST API uses for them.
+  const styles = Object.fromEntries(
+    /** @type {[string, string | undefined][]} */ ([
+      ['fill', styleOf(node.styleIdForFill)],
+      ['stroke', styleOf(node.styleIdForStrokeFill)],
+      ['text', styleOf(node.styleIdForText)],
+    ]).filter(([, id]) => id !== undefined),
+  )
+  if (Object.keys(styles).length > 0) {
+    out.styles = styles
   }
   return out
 }
@@ -482,6 +494,30 @@ export function readFig(path, nodeId) {
     /** @type {Record<string, { name: string }>} */
     const components = {}
 
+    // A style is a node of its own: a local one where it was defined, a library one as
+    // the copy the export keeps of it. A node refers to the first by id and to the
+    // second by the library's key, so both are indexed.
+    /** @type {Record<string, { name: string, styleType?: string }>} */
+    const styles = {}
+    /** @type {Map<string, string>} */
+    const styleByKey = new Map()
+    for (const node of nodes) {
+      const type = enums.StyleType?.[node.styleType]
+      const id = idOf(node.guid)
+      if (!type || type === 'NONE' || id === undefined) {
+        continue
+      }
+      styles[id] = { name: node.name ?? '', styleType: type }
+      if (typeof node.key === 'string' && node.key) {
+        styleByKey.set(node.key, id)
+      }
+    }
+    /** @param {any} ref */
+    const styleOf = (ref) => {
+      const id = idOf(ref?.guid) ?? styleByKey.get(ref?.assetRef?.key ?? '')
+      return id !== undefined && styles[id] ? id : undefined
+    }
+
     /**
      * @param {any} node
      * @param {Matrix} parentAbsolute
@@ -489,7 +525,7 @@ export function readFig(path, nodeId) {
      */
     const walk = (node, parentAbsolute) => {
       const absolute = compose(parentAbsolute, node.transform ?? IDENTITY)
-      const out = toRest(node, absolute, enums)
+      const out = toRest(node, absolute, enums, styleOf)
       const symbolId = out.componentId
       if (symbolId) {
         const symbol = byId.get(symbolId)
@@ -554,7 +590,9 @@ export function readFig(path, nodeId) {
       return out
     }
 
-    return { document: walk(root, IDENTITY), components }
+    // Variables are left unnamed here: the export keeps them in a shape this reader
+    // does not decode, so a bound value from a .fig is matched by its literal.
+    return { document: walk(root, IDENTITY), components, styles, variables: {} }
   } finally {
     closeSync(zip.fd)
   }

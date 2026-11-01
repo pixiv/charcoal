@@ -2,10 +2,12 @@
  * Figma's tree read as the thing to build: the nodes worth describing, and what each one
  * is made of, with the design system's own token names on the materials.
  */
-import { material, normalize, rankTokens } from './tokens.mjs'
+import { normalize, rankTokens } from './tokens.mjs'
+import { say, v1Style, written } from './vocabulary.mjs'
 
 /** @import { FigmaNode, Paint } from './figma.mjs' */
 /** @import { Prefer, Tokens } from './tokens.mjs' */
+/** @import { Ref, Vocabulary } from './vocabulary.mjs' */
 
 /**
  * A bitmap and the `object-fit` its crop implies.
@@ -76,15 +78,78 @@ function unnameable(paints) {
  * @returns {string | undefined}
  */
 function solid(paints) {
-  for (const paint of paints ?? []) {
+  return solidAt(paints)?.value
+}
+
+/**
+ * The first visible solid paint and where it sits in the list, which is how a bound
+ * variable on the node says which paint it is bound to.
+ *
+ * @param {Paint[] | undefined} paints
+ * @returns {{ value: string, index: number, paint: Paint } | undefined}
+ */
+function solidAt(paints) {
+  for (const [index, paint] of (paints ?? []).entries()) {
     if (paint.visible !== false && paint.type === 'SOLID' && paint.color) {
-      return rgba({
+      const value = rgba({
         ...paint.color,
         a: (paint.color.a ?? 1) * (paint.opacity ?? 1),
       })
+      return { value, index, paint }
     }
   }
   return undefined
+}
+
+/**
+ * The variable id an alias, or a list of them, points at.
+ *
+ * @param {unknown} bound
+ * @returns {string | undefined}
+ */
+function aliasId(bound) {
+  if (Array.isArray(bound)) {
+    return aliasId(bound[0])
+  }
+  if (bound && typeof bound === 'object') {
+    const alias = /** @type {{ id?: unknown }} */ (bound)
+    if (typeof alias.id === 'string') {
+      return alias.id
+    }
+    // Per-corner and per-side bindings come as an object of aliases; one is enough to
+    // say which variable the designer meant.
+    return aliasId(Object.values(bound)[0])
+  }
+  return undefined
+}
+
+/**
+ * What the design named a paint: the variable bound to it, else the style on the node.
+ *
+ * @param {FigmaNode} raw
+ * @param {'fills' | 'strokes'} which
+ * @param {{ index: number, paint: Paint } | undefined} at
+ * @returns {Ref | undefined}
+ */
+function paintRef(raw, which, at) {
+  if (!at) {
+    return undefined
+  }
+  const bound = /** @type {Record<string, unknown>} */ (
+    raw.boundVariables ?? {}
+  )
+  const own = /** @type {{ boundVariables?: Record<string, unknown> }} */ (
+    at.paint
+  )
+  const variable =
+    aliasId(own.boundVariables?.color) ??
+    aliasId(/** @type {unknown[] | undefined} */ (bound[which])?.[at.index])
+  const styles = raw.styles ?? {}
+  const style =
+    which === 'fills'
+      ? (styles.fill ?? styles.fills)
+      : (styles.stroke ?? styles.strokes)
+  return variable || style ? { variable, style } : undefined
 }
 
 /**
@@ -341,28 +406,44 @@ function walkSurface(node, tokens) {
 /**
  * Everything the design states about one node, as token-named declarations.
  *
+ * A value the design named — a style, a bound variable — is written as that name; only
+ * a value nobody named is ranked against the tokens.
+ *
  * @param {Node} node
  * @param {Tokens} tokens
+ * @param {Vocabulary} [vocab]
  * @returns {string[]}
  */
-export function materialsOf(node, tokens) {
+export function materialsOf(node, tokens, vocab) {
   const raw = node.raw
   /** @type {string[]} */
   const out = []
+  const bound = /** @type {Record<string, unknown>} */ (
+    raw.boundVariables ?? {}
+  )
   /**
    * @param {string} property
    * @param {string | number | undefined} value
    * @param {Prefer} [prefer]
+   * @param {Ref} [ref]
+   * @param {string} [use]
    */
-  const push = (property, value, prefer) => {
-    const line = material(property, value, tokens, prefer)
+  const push = (property, value, prefer, ref, use) => {
+    const line = say(property, value, tokens, prefer, vocab, ref, use)
     if (line) {
       out.push(line)
     }
   }
+  /** @param {string} field */
+  const variableOf = (field) => {
+    const variable = aliasId(bound[field])
+    return variable ? { variable } : undefined
+  }
 
   // What a fill means depends on what it fills: words, an icon's shape, or a surface.
-  const fill = solid(raw.fills)
+  const fillAt = solidAt(raw.fills)
+  const fill = fillAt?.value
+  const fillRef = paintRef(raw, 'fills', fillAt)
   const property =
     node.kind === 'text' || node.kind === 'vector' ? 'color' : 'background'
   const painted = fill === undefined && unnameable(raw.fills)
@@ -376,10 +457,13 @@ export function materialsOf(node, tokens) {
     // for the ancestor walk.
     const family = node.kind === 'text' ? 'text' : 'icon'
     const on = surfaceRole(node, tokens)
-    push('color', fill, [
-      on.map((role) => `${family}/on-${role}/`),
-      `${family}/`,
-    ])
+    push(
+      'color',
+      fill,
+      [on.map((role) => `${family}/on-${role}/`), `${family}/`],
+      fillRef,
+      node.kind,
+    )
   } else {
     // The root frame is the screen's own ground; a box inside it is a container.
     // references/color.md reserves `container.default` for Modal and Menu.
@@ -389,6 +473,8 @@ export function materialsOf(node, tokens) {
       node.depth === 0
         ? ['background/', 'container/']
         : ['container/', 'background/'],
+      fillRef,
+      node.depth === 0 ? 'ground' : 'box',
     )
   }
 
@@ -405,7 +491,7 @@ export function materialsOf(node, tokens) {
     if (raw.primaryAxisAlignItems === 'SPACE_BETWEEN') {
       out.push('justify-content: space-between')
     } else if (raw.itemSpacing) {
-      push('gap', raw.itemSpacing)
+      push('gap', raw.itemSpacing, undefined, variableOf('itemSpacing'))
     }
   }
 
@@ -431,6 +517,16 @@ export function materialsOf(node, tokens) {
           [first, pad[a]],
           [second, pad[b]],
         ]
+  /** @type {Record<string, string>} */
+  const side = {
+    padding: 'paddingTop',
+    'padding-inline': 'paddingLeft',
+    'padding-block': 'paddingTop',
+    'padding-top': 'paddingTop',
+    'padding-right': 'paddingRight',
+    'padding-bottom': 'paddingBottom',
+    'padding-left': 'paddingLeft',
+  }
   /** @type {[string, number][]} */
   const padding =
     pad.top === pad.right && pad.right === pad.bottom && pad.bottom === pad.left
@@ -452,20 +548,34 @@ export function materialsOf(node, tokens) {
           ),
         ]
   for (const [property, value] of padding.filter(([, value]) => value)) {
-    push(property, value)
+    push(property, value, undefined, variableOf(side[property] ?? ''))
   }
 
   if (raw.cornerRadius) {
-    push('border-radius', raw.cornerRadius)
+    push(
+      'border-radius',
+      raw.cornerRadius,
+      undefined,
+      variableOf('cornerRadius') ??
+        variableOf('topLeftRadius') ??
+        variableOf('rectangleCornerRadii'),
+    )
   } else if (raw.rectangleCornerRadii?.some((r) => r > 0)) {
     // Mixed corners have no single token; state the four so the radius is not lost.
     out.push(
       `border-radius: ${raw.rectangleCornerRadii.map((r) => `${r}px`).join(' ')}`,
     )
   }
-  const stroke = solid(raw.strokes)
+  const strokeAt = solidAt(raw.strokes)
+  const stroke = strokeAt?.value
   if (stroke) {
-    push('border-color', stroke, ['border/'])
+    push(
+      'border-color',
+      stroke,
+      ['border/'],
+      paintRef(raw, 'strokes', strokeAt),
+      'border',
+    )
     // A list divider is a stroke on one side only. Stating `border-width` alone boxes
     // every row, which is the opposite of what references/border.md asks for.
     const sides = raw.individualStrokeWeights
@@ -481,14 +591,56 @@ export function materialsOf(node, tokens) {
       push('border-width', raw.strokeWeight)
     }
   }
-  if (raw.style?.fontSize) {
-    push('font-size', raw.style.fontSize)
-  }
-  if (raw.style?.lineHeightPx) {
-    push('line-height', raw.style.lineHeightPx)
+  const text = typography(raw, vocab)
+  if (text.role) {
+    out.push(written('typography', text.role, tokens, undefined, vocab))
+  } else {
+    if (raw.style?.fontSize) {
+      const line = say('font-size', raw.style.fontSize, tokens, undefined)
+      out.push(text.named && line ? `${line} /* ${text.named} */` : `${line}`)
+    }
+    if (raw.style?.lineHeightPx) {
+      push('line-height', raw.style.lineHeightPx)
+    }
   }
   if (raw.style?.fontWeight && raw.style.fontWeight !== 400) {
     out.push(`font-weight: ${raw.style.fontWeight}`)
   }
   return out
+}
+
+/**
+ * The type a text node is set in, as one v1 role where the pack writes v1.
+ *
+ * The role carries both the size and the line height, so where it applies the two
+ * separate lines would only say the same thing again. A text style whose name the
+ * theme has no size for is kept as a comment: it is what the designer called it.
+ *
+ * @param {FigmaNode} raw
+ * @param {Vocabulary | undefined} vocab
+ * @returns {{ role?: import('./vocabulary.mjs').Role, named?: string }}
+ */
+function typography(raw, vocab) {
+  const size = raw.style?.fontSize
+  if (!size) {
+    return {}
+  }
+  const styleId = raw.styles?.text
+  const name = styleId ? vocab?.styles[styleId]?.name : undefined
+  if (name) {
+    const role = v1Style(vocab?.v1, 'typography', name)
+    if (role && vocab?.mode === 'v1') {
+      return { role }
+    }
+    // The v2 pack writes the size and line height as v2 tokens either way; the style
+    // name only needs saying where it did not resolve to the v1 scale.
+    return role ? {} : { named: `style: ${name}` }
+  }
+  if (vocab?.mode === 'v1' && vocab.v1) {
+    const role = vocab.v1.typography.get(String(size))
+    if (role && role.lineHeight === raw.style?.lineHeightPx) {
+      return { role }
+    }
+  }
+  return {}
 }

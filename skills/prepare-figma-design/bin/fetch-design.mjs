@@ -24,8 +24,10 @@ import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
 import { figAssets, readFig } from './fig.mjs'
 import { flatten, materialsOf } from './design.mjs'
 import { loadTokens } from './tokens.mjs'
+import { countReferences, loadV1Theme, v1Vocabulary } from './vocabulary.mjs'
 
 /** @import { Node } from './design.mjs' */
+/** @import { Vocabulary } from './vocabulary.mjs' */
 
 // Comparing basenames made any importer called `pack.mjs` run as the CLI and exit.
 // Node realpaths the entry module, so a `bin` symlink has to be resolved to match.
@@ -37,7 +39,7 @@ const mainUrl = (() => {
   }
 })()
 const isCli = mainUrl !== undefined && import.meta.url === mainUrl
-/** @type {{ url?: string, fig?: string, node?: string, tokens?: string, theme?: string, assets?: string, spec?: string }} */
+/** @type {{ url?: string, fig?: string, node?: string, tokens?: string, theme?: string, vocabulary?: string, assets?: string, spec?: string }} */
 let args = {}
 /** @type {string | undefined} */
 let argError
@@ -50,6 +52,7 @@ if (isCli) {
         node: { type: 'string' },
         tokens: { type: 'string' },
         theme: { type: 'string' },
+        vocabulary: { type: 'string' },
         assets: { type: 'string' },
         spec: { type: 'string' },
       },
@@ -66,10 +69,14 @@ if (
   (argError ||
     (!args.url && !fromFig) ||
     (args.url && fromFig) ||
-    (!fromFig && !process.env.FIGMA_TOKEN))
+    (!fromFig && !process.env.FIGMA_TOKEN) ||
+    !['auto', 'v1', 'v2'].includes(args.vocabulary ?? 'auto'))
 ) {
   if (argError) {
     console.error(argError)
+  }
+  if (!['auto', 'v1', 'v2'].includes(args.vocabulary ?? 'auto')) {
+    console.error(`--vocabulary takes auto, v1 or v2, not ${args.vocabulary}.`)
   }
   if (args.url && fromFig) {
     console.error(
@@ -78,7 +85,8 @@ if (
   }
   console.error(
     'Usage: fetch-design.mjs (--url <figma url> | --fig <file.fig>)' +
-      ' [--tokens <dir>] [--theme light|dark] [--assets <dir>] [--spec <path>]',
+      ' [--tokens <dir>] [--theme light|dark] [--vocabulary auto|v1|v2]' +
+      ' [--assets <dir>] [--spec <path>]',
   )
   console.error(
     "--url reads the design over Figma's REST API. Set FIGMA_TOKEN in the" +
@@ -113,11 +121,45 @@ if (isCli) {
     }
     // Read the tokens first: a mistyped --tokens or --theme should fail before the
     // design is read, not after.
-    const tokens = loadTokens(args.tokens, args.theme ?? 'light')
-    const { document, components } = figPath
-      ? readFig(figPath, target)
-      : await fetchNode(key, target)
+    const theme = args.theme ?? 'light'
+    const tokens = loadTokens(args.tokens, theme)
+    const v1 = v1Vocabulary(await loadV1Theme(args.tokens, theme))
+    const {
+      document,
+      components,
+      styles = {},
+      variables = {},
+    } = figPath ? readFig(figPath, target) : await fetchNode(key, target)
     const nodes = flatten(document, components)
+
+    // Which dialect a value nobody named is ranked in. `auto` follows the frame: a
+    // design built from the v1 library's styles is read in v1, one bound to v2
+    // variables in v2, so the pack speaks the words the design already uses.
+    const references = countReferences(
+      nodes.map((node) => node.raw),
+      { styles, variables, v1 },
+      tokens,
+    )
+    const asked = args.vocabulary ?? 'auto'
+    /** @type {Vocabulary} */
+    const vocab = {
+      mode:
+        asked === 'v1' || asked === 'v2'
+          ? asked
+          : references.v1 > references.v2 && v1
+            ? 'v1'
+            : 'v2',
+      v1,
+      styles,
+      variables,
+      used: new Map(),
+    }
+    if (references.v1 > 0 && !v1) {
+      console.error(
+        'The design uses named styles, but @charcoal-ui/theme was not found next to' +
+          ' --tokens or in this project, so they are written as comments, not as v1 keys.',
+      )
+    }
     const assetDir = args.assets
     const refs = nodes.flatMap((node) => (node.image ? [node.image.ref] : []))
     const assets = !assetDir
@@ -130,7 +172,7 @@ if (isCli) {
     // The frame is a box like any other: it has a ground color, a direction, a gap and
     // its own padding. Describing only its size loses the screen's own layout.
     const root = nodes.find((node) => node.depth === 0)
-    const rootMaterials = root ? materialsOf(root, tokens) : []
+    const rootMaterials = root ? materialsOf(root, tokens, vocab) : []
     // A frame can be a photograph with the UI over it. The bitmap is downloaded either
     // way, so leaving it out of the header loses the thing the screen is built on.
     const rootImage = root?.image
@@ -157,6 +199,11 @@ if (isCli) {
       '`var(--…)` has a design token and should be written as that token; a bare value with',
       "no comment after it has none. Widths and heights are the design's geometry — no token",
       'owns those.',
+      '',
+      'A bare word such as `text2`, `spacing-16` or `typography-14` is a charcoal v1 theme',
+      'key the design named through its styles; write it the way your project spells v1.',
+      'A `/* style: … */` or `/* variable: … */` comment is a name the design used that',
+      'neither vocabulary has: the value before it is what that name looks like.',
       '',
       'A literal followed by `/* a | b */` means the system has several names for that',
       'value and the design does not say which: pick the one whose meaning fits the',
@@ -212,7 +259,7 @@ if (isCli) {
 
     /** Ranking a node's materials is the expensive part; `--spec` restates them. */
     const materialsFor = new Map(
-      described.map((node) => [node, materialsOf(node, tokens)]),
+      described.map((node) => [node, materialsOf(node, tokens, vocab)]),
     )
 
     for (const node of described) {

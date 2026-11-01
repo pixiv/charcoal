@@ -46,6 +46,14 @@ import { join } from 'node:path'
  * @property {number} [strokeWeight]
  * @property {{ top: number, right: number, bottom: number, left: number }} [individualStrokeWeights]
  * @property {{ fontSize?: number, lineHeightPx?: number, fontWeight?: number }} [style]
+ * @property {Record<string, string>} [styles] the named style each property uses, by style id
+ * @property {Record<string, unknown>} [boundVariables] the variable each property is bound to
+ */
+
+/**
+ * What the file calls its named styles, by the id a node's `styles` refers to them by.
+ *
+ * @typedef {Record<string, { name: string, styleType?: string }>} Styles
  */
 
 /**
@@ -98,9 +106,12 @@ export function parseUrl(url) {
 /**
  * @param {string} key
  * @param {string | undefined} node
- * @returns {Promise<{ document: FigmaNode, components: Record<string, { name: string }> }>}
+ * @returns {Promise<{ document: FigmaNode, components: Record<string, { name: string }>, styles: Styles, variables: Record<string, { name: string }> }>}
  */
 export async function fetchNode(key, node) {
+  // The variable names are a second call, made alongside the first: a node only says
+  // which variable id it is bound to, and the id means nothing to an implementer.
+  const variables = fetchVariables(key)
   const path = node
     ? `files/${key}/nodes?ids=${encodeURIComponent(node)}`
     : `files/${key}`
@@ -121,7 +132,51 @@ export async function fetchNode(key, node) {
     )
   }
   const found = node ? body.nodes[node] : body
-  return { document: found.document, components: found.components ?? {} }
+  return {
+    document: found.document,
+    components: found.components ?? {},
+    // The design's own names for its colors and type. Dropping them leaves only the
+    // literal to match, which is a guess where the designer already gave an answer.
+    styles: found.styles ?? {},
+    variables: await variables,
+  }
+}
+
+/**
+ * Every variable the file can see, by id, with its name.
+ *
+ * Figma serves this only on plans with the Variables REST API; anywhere else it answers
+ * 403. That is not a failure of the pack — bound values are still matched by their
+ * literal — so it is said once on stderr and the pack goes on without the names.
+ *
+ * @param {string} key
+ * @returns {Promise<Record<string, { name: string }>>}
+ */
+async function fetchVariables(key) {
+  try {
+    const response = await fetch(
+      `https://api.figma.com/v1/files/${key}/variables/local`,
+      { headers: figmaAuth() },
+    )
+    if (!response.ok) {
+      console.error(
+        `Variable names unavailable (${response.status}); bound values are matched by value.`,
+      )
+      return {}
+    }
+    const body = await response.json()
+    /** @type {Record<string, { name: string }>} */
+    const out = {}
+    for (const [id, variable] of Object.entries(body?.meta?.variables ?? {})) {
+      const name = /** @type {{ name?: unknown }} */ (variable)?.name
+      if (typeof name === 'string') {
+        out[id] = { name }
+      }
+    }
+    return out
+  } catch {
+    return {}
+  }
 }
 
 /** @type {Record<string, string>} */
