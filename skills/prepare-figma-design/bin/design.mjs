@@ -40,6 +40,8 @@ import { say, v1Style, written } from './vocabulary.mjs'
  * @property {string} id
  * @property {string} [component] the component's name — the set's, for a variant
  * @property {string} [variant] the variant's properties, `Size=S, State=Default`
+ * @property {string} [componentKey] the set's id for a variant, else the component's
+ * @property {boolean} [remote] false for a component defined in this file
  * @property {string} [parentId]
  * @property {Node} [parent]
  * @property {ImageFill} [image]
@@ -299,6 +301,8 @@ export function flatten(document, components, componentSets = {}) {
     if (component) {
       node.component = set?.name ?? component.name
       node.variant = set ? component.name : undefined
+      node.componentKey = component.componentSetId ?? raw.componentId
+      node.remote = component.remote
     }
     if (node.kind === 'rectangle' && (raw.cornerRadius ?? 0) > 0) {
       node.kind = 'rounded-rectangle'
@@ -658,4 +662,121 @@ function typography(raw, vocab) {
     }
   }
   return {}
+}
+
+/**
+ * Which nodes the pack describes, and how.
+ *
+ * Inside a library instance the design shows how Figma composed the component, and the
+ * library composes it differently: a TextField is a 22px label, a 4px gap and a 40px
+ * field in the design, and one 40px element in the code. Describing those parts invites
+ * an implementation that reproduces them, so a library instance is one line, with the
+ * words inside it lifted onto that line.
+ *
+ * A component defined in the file itself is different. It is the screen's own unit — a
+ * list row, a tab bar — and nothing but the design says what is inside it, so it is
+ * described. Where the same one repeats with only its words and pictures changed, the
+ * first is described in full and the rest are one line each, so a list of fifty rows
+ * does not become fifty copies of the same structure.
+ *
+ * A payload that does not say whether a component is the library's — a `.fig` — is
+ * treated as the library's, which is what the pack always did.
+ *
+ * The packed root is never collapsed: packing an instance means wanting its insides.
+ *
+ * @param {Node[]} nodes in document order, as `flatten` returns them
+ * @param {Record<string, Component>} components
+ * @param {(node: Node) => string[]} materialsFn
+ */
+export function outline(nodes, components, materialsFn) {
+  /** @param {Node} n */
+  const collapses = (n) =>
+    n.kind === 'instance' &&
+    n.depth > 0 &&
+    components[n.raw.componentId ?? '']?.remote !== false
+
+  // `nodes` is in document order, so the outermost enclosing library instance is
+  // whatever the parent's was, or the parent itself.
+  /** @type {Map<Node, Node | undefined>} */
+  const owners = new Map()
+  /** @type {Node[]} */
+  const all = []
+  for (const node of nodes) {
+    const parent = node.parent
+    const owner = parent
+      ? (owners.get(parent) ?? (collapses(parent) ? parent : undefined))
+      : undefined
+    owners.set(node, owner)
+    if (owner) {
+      if (node.raw.characters) {
+        ;(owner.words ??= []).push(node.raw.characters)
+      }
+      continue
+    }
+    if (node.depth > 0) {
+      all.push(node)
+    }
+  }
+
+  const materialsFor = new Map(all.map((node) => [node, materialsFn(node)]))
+
+  /** @type {Map<string, number>} */
+  const uses = new Map()
+  for (const node of all) {
+    if (node.remote === false && node.componentKey) {
+      uses.set(node.componentKey, (uses.get(node.componentKey) ?? 0) + 1)
+    }
+  }
+
+  /** @type {Map<Node, { of: Node, words: string[], images: ImageFill[] }>} */
+  const repeats = new Map()
+  /** @type {Map<string, Node>} */
+  const firstBySignature = new Map()
+  /** @type {Node[]} */
+  const described = []
+  for (let i = 0; i < all.length; i++) {
+    const node = /** @type {Node} */ (all[i])
+    described.push(node)
+    if (node.remote !== false || !node.componentKey) {
+      continue
+    }
+    let end = i + 1
+    while (
+      end < all.length &&
+      /** @type {Node} */ (all[end]).depth > node.depth
+    ) {
+      end++
+    }
+    const subtree = all.slice(i, end)
+    // What makes two rows the same: their structure and materials. Their words, their
+    // pictures and the boxes those push around are what a list is expected to vary.
+    const signature = [
+      node.componentKey,
+      node.variant ?? '',
+      ...subtree.map((n) =>
+        [
+          n.depth - node.depth,
+          n.kind,
+          n.name,
+          n.image ? 'image' : '',
+          (materialsFor.get(n) ?? []).join(';'),
+        ].join('|'),
+      ),
+    ].join('\n')
+    const first = firstBySignature.get(signature)
+    if (!first) {
+      firstBySignature.set(signature, node)
+      continue
+    }
+    repeats.set(node, {
+      of: first,
+      words: subtree.flatMap((n) => [
+        ...(n.raw.characters ? [n.raw.characters] : []),
+        ...(n.words ?? []),
+      ]),
+      images: subtree.flatMap((n) => (n.image ? [n.image] : [])),
+    })
+    i = end - 1
+  }
+  return { described, materialsFor, repeats, uses }
 }

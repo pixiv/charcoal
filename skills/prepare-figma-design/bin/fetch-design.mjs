@@ -22,7 +22,7 @@ import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
 import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
 import { figAssets, readFig } from './fig.mjs'
-import { flatten, materialsOf } from './design.mjs'
+import { flatten, materialsOf, outline } from './design.mjs'
 import { loadTokens } from './tokens.mjs'
 import {
   countReferences,
@@ -235,49 +235,10 @@ if (isCli) {
 
     const tableAt = lines.length
 
-    /**
-     * The outermost ancestor that is a component instance, if any.
-     *
-     * Outermost, not nearest: an instance nests instances, and only the one the
-     * implementation actually writes survives into the pack.
-     */
-    // Inside an instance the design shows how Figma composed the component, and the
-    // library composes it differently: a TextField is a 22px label, a 4px gap and a
-    // 40px field in the design, and one 40px element in the code. Describing those
-    // parts invites an implementation that reproduces them and drifts from the design
-    // with every one. The words are still wanted, so they move up onto the instance's
-    // own line — collected first, because a node is written before its children walk.
-    //
-    // `nodes` is in document order, so the outermost enclosing instance is whatever
-    // the parent's was, or the parent itself. Asking each node to walk its own
-    // ancestors instead costs a pass over the whole chain per node.
-    /** @type {Map<Node, Node | undefined>} */
-    const owners = new Map()
-    /** @type {Node[]} */
-    const described = []
-    for (const node of nodes) {
-      const parent = node.parent
-      const owner = parent
-        ? (owners.get(parent) ??
-          (parent.kind === 'instance' ? parent : undefined))
-        : undefined
-      owners.set(node, owner)
-      if (owner) {
-        if (node.raw.characters) {
-          ;(owner.words ??= []).push(node.raw.characters)
-        }
-        continue
-      }
-      // Everything not inside an instance, and not the frame itself, is described —
-      // once, so the markdown and the spec can never disagree about the node set.
-      if (node.depth > 0) {
-        described.push(node)
-      }
-    }
-
-    /** Ranking a node's materials is the expensive part; `--spec` restates them. */
-    const materialsFor = new Map(
-      described.map((node) => [node, materialsOf(node, tokens, vocab)]),
+    const { described, materialsFor, repeats, uses } = outline(
+      nodes,
+      components,
+      (node) => materialsOf(node, tokens, vocab),
     )
 
     for (const node of described) {
@@ -285,10 +246,36 @@ if (isCli) {
       const as = node.component
         ? ` — \`${node.component}\`${node.variant ? ` \`${node.variant}\`` : ''}`
         : ''
-      lines.push(
+      // A component defined in this file is part of the screen, not of the library,
+      // so it is described — and said to be one unit, so it is built once.
+      const count = node.componentKey ? (uses.get(node.componentKey) ?? 0) : 0
+      const local =
+        node.remote === false
+          ? count > 1
+            ? `; a local component, used ${count} times — implement once and reuse`
+            : '; a local component'
+          : ''
+      const box =
         `${indent}- ${node.kind} "${node.name}" ${round(node.width)}×${round(node.height)}` +
-          ` at (${round(node.x)}, ${round(node.y)})${as}`,
-      )
+        ` at (${round(node.x)}, ${round(node.y)})${as}`
+      const repeat = repeats.get(node)
+      if (repeat) {
+        // The same unit again with other words: its structure is the first one's.
+        lines.push(
+          `${box}; the same as "${repeat.of.name}" at (${round(repeat.of.x)}, ${round(repeat.of.y)}) above`,
+        )
+        if (repeat.words.length > 0) {
+          lines.push(
+            `${indent}  text: ${repeat.words.map((w) => JSON.stringify(w)).join(', ')}`,
+          )
+        }
+        for (const image of repeat.images) {
+          const file = assets.get(image.ref) ?? NOT_DOWNLOADED
+          lines.push(`${indent}  image: ${file}; object-fit: ${image.fit}`)
+        }
+        continue
+      }
+      lines.push(`${box}${local}`)
       const words = node.raw.characters
         ? [node.raw.characters, ...(node.words ?? [])]
         : (node.words ?? [])
@@ -366,6 +353,8 @@ if (isCli) {
               text: node.raw.characters ?? undefined,
               component: node.component,
               variant: node.variant,
+              local: node.remote === false ? true : undefined,
+              sameAs: repeats.get(node)?.of.id,
               // What the design says this is made of, already resolved to the tokens the
               // system owns — so a check can ask whether the value reached the screen.
               styles: materialsFor.get(node) ?? [],
