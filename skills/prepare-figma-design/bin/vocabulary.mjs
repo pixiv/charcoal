@@ -414,6 +414,62 @@ export function written(property, role, tokens, prefer, vocab) {
   return `${property}: ${role.id}`
 }
 
+/** @type {Record<string, Prefer>} */
+const PREFER_V2 = {
+  color: ['text/', 'icon/'],
+  'background-color': ['container/', 'background/'],
+  'border-color': ['border/'],
+}
+
+/** Tailwind's utility prefix for a property, under @charcoal-ui/tailwind-config. */
+/** @type {Record<string, string>} */
+const TAILWIND = {
+  color: 'text',
+  'background-color': 'bg',
+  'border-color': 'border',
+  gap: 'gap',
+  padding: 'p',
+  'padding-inline': 'px',
+  'padding-block': 'py',
+  'padding-top': 'pt',
+  'padding-right': 'pr',
+  'padding-bottom': 'pb',
+  'padding-left': 'pl',
+  'border-radius': 'rounded',
+  typography: 'typography',
+}
+
+/**
+ * How one v1 role is spelled on each route an implementation can take.
+ *
+ * @param {Role} role
+ * @param {Set<string>} properties where the pack used it
+ * @param {Tokens} tokens
+ */
+export function spellings(role, properties, tokens) {
+  const first = [...properties][0] ?? ''
+  const tailwind = [...properties]
+    .map((p) => (TAILWIND[p] ? `${TAILWIND[p]}-${role.key}` : undefined))
+    .filter(Boolean)
+  const index = /^\d+$/.test(role.key) ? `[${role.key}]` : `.${role.key}`
+  const styled = {
+    color: `theme.color.${role.key}`,
+    spacing: `theme.spacing${index}`,
+    radius: `theme.borderRadius${index}`,
+    typography: `theme.typography.size${index}`,
+  }[role.group]
+  // Asked as the property the pack used it for, so a gray used on text is named as a
+  // text token rather than tied with the icon token that shares its value.
+  const v2 = v2Equivalent(role, first, tokens, PREFER_V2[first])
+  return {
+    value: role.value,
+    v2: v2 ? (v2.startsWith('var(') ? v2 : `var(${v2})`) : undefined,
+    tailwind: [...new Set(tailwind)].join(' '),
+    styled,
+    cssVar: role.group === 'color' ? `var(--charcoal-${role.key})` : undefined,
+  }
+}
+
 /**
  * Which vocabulary a frame mostly speaks: every named style and every bound variable
  * in it, counted by the dialect it resolves to.

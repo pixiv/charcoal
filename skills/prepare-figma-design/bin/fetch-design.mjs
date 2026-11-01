@@ -24,7 +24,12 @@ import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
 import { figAssets, readFig } from './fig.mjs'
 import { flatten, materialsOf } from './design.mjs'
 import { loadTokens } from './tokens.mjs'
-import { countReferences, loadV1Theme, v1Vocabulary } from './vocabulary.mjs'
+import {
+  countReferences,
+  loadV1Theme,
+  spellings,
+  v1Vocabulary,
+} from './vocabulary.mjs'
 
 /** @import { Node } from './design.mjs' */
 /** @import { Vocabulary } from './vocabulary.mjs' */
@@ -127,10 +132,11 @@ if (isCli) {
     const {
       document,
       components,
+      componentSets,
       styles = {},
       variables = {},
     } = figPath ? readFig(figPath, target) : await fetchNode(key, target)
-    const nodes = flatten(document, components)
+    const nodes = flatten(document, components, componentSets)
 
     // Which dialect a value nobody named is ranked in. `auto` follows the frame: a
     // design built from the v1 library's styles is read in v1, one bound to v2
@@ -181,12 +187,21 @@ if (isCli) {
       rootMaterials.push(`image: ${file}; object-fit: ${rootImage.fit}`)
     }
 
+    // Which frame, which theme and which vocabulary: the same drawing resolves to
+    // different token names under each, and a pack that does not say which was used
+    // cannot be checked against the one the implementation chose.
+    const vocabularyWhy =
+      asked === 'auto'
+        ? ` (auto: the frame references ${references.v1} v1 name(s) and ${references.v2} v2)`
+        : ''
     const lines = [
       `# ${document.name}`,
       '',
-      `Frame: ${round(document.absoluteBoundingBox?.width ?? 0)}×${round(
-        document.absoluteBoundingBox?.height ?? 0,
-      )}px.`,
+      `- Frame: "${document.name}", node ${document.id}, ${round(
+        document.absoluteBoundingBox?.width ?? 0,
+      )}×${round(document.absoluteBoundingBox?.height ?? 0)}px`,
+      `- Theme: ${theme}`,
+      `- Vocabulary: ${vocab.mode}${vocabularyWhy}`,
       // Labelled: an unlabelled declaration list under the size reads as a stray
       // fragment with nothing saying what it applies to. Measured against a scored
       // benchmark this did not by itself recover the frame's padding, which
@@ -201,7 +216,8 @@ if (isCli) {
       'owns those.',
       '',
       'A bare word such as `text2`, `spacing-16` or `typography-14` is a charcoal v1 theme',
-      'key the design named through its styles; write it the way your project spells v1.',
+      'key. It is written once, as the role, because a project spells v1 one of several',
+      'ways; the table below gives each spelling, and the v2 variable with the same value.',
       'A `/* style: … */` or `/* variable: … */` comment is a name the design used that',
       'neither vocabulary has: the value before it is what that name looks like.',
       '',
@@ -216,6 +232,8 @@ if (isCli) {
       'is its Figma layer, which is often a label rather than what it says.',
       '',
     ]
+
+    const tableAt = lines.length
 
     /**
      * The outermost ancestor that is a component instance, if any.
@@ -264,7 +282,9 @@ if (isCli) {
 
     for (const node of described) {
       const indent = '  '.repeat(node.depth - 1)
-      const as = node.component ? ` — \`${node.component}\`` : ''
+      const as = node.component
+        ? ` — \`${node.component}\`${node.variant ? ` \`${node.variant}\`` : ''}`
+        : ''
       lines.push(
         `${indent}- ${node.kind} "${node.name}" ${round(node.width)}×${round(node.height)}` +
           ` at (${round(node.x)}, ${round(node.y)})${as}`,
@@ -287,6 +307,25 @@ if (isCli) {
       }
     }
 
+    // The roles are only known once every material has been named, so the table is
+    // placed into the header afterwards, ahead of the elements it explains.
+    if (vocab.used.size > 0) {
+      const table = [
+        'Each v1 role used below, spelled for each route (— where that route has no word for it):',
+        '',
+        '| Role | Value | v2 CSS variable | Tailwind (v1) | styled theme (v1) | v1 CSS variable |',
+        '| --- | --- | --- | --- | --- | --- |',
+        ...[...vocab.used.values()].map(({ role, properties }) => {
+          const s = spellings(role, properties, tokens)
+          const cell = (/** @type {string | undefined} */ v) =>
+            v ? `\`${v}\`` : '—'
+          return `| \`${role.id}\` | ${s.value} | ${cell(s.v2)} | ${cell(s.tailwind)} | ${cell(s.styled)} | ${cell(s.cssVar)} |`
+        }),
+        '',
+      ]
+      lines.splice(tableAt, 0, ...table)
+    }
+
     process.stdout.write(`${lines.join('\n')}\n`)
 
     // The same design, in the form a script can hold a render up against. Nothing here
@@ -299,6 +338,17 @@ if (isCli) {
         `${JSON.stringify(
           {
             name: document.name,
+            nodeId: document.id,
+            theme,
+            vocabulary: vocab.mode,
+            // What each v1 role resolves to, so a check can ask the rendered page for the
+            // value whichever way the implementation spelled it.
+            roles: Object.fromEntries(
+              [...vocab.used.values()].map(({ role, properties }) => [
+                role.id,
+                spellings(role, properties, tokens),
+              ]),
+            ),
             frame: {
               width: round(document.absoluteBoundingBox?.width ?? 0),
               height: round(document.absoluteBoundingBox?.height ?? 0),
@@ -314,6 +364,8 @@ if (isCli) {
               width: round(node.width),
               height: round(node.height),
               text: node.raw.characters ?? undefined,
+              component: node.component,
+              variant: node.variant,
               // What the design says this is made of, already resolved to the tokens the
               // system owns — so a check can ask whether the value reached the screen.
               styles: materialsFor.get(node) ?? [],

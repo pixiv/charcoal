@@ -3,10 +3,11 @@ import { mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { loadTokens } from './tokens.mjs'
-import { materialsOf } from './design.mjs'
+import { flatten, materialsOf } from './design.mjs'
 import {
   countReferences,
   loadV1Theme,
+  spellings,
   v1Style,
   v1Vocabulary,
 } from './vocabulary.mjs'
@@ -217,4 +218,60 @@ test('no installed theme is not an error: styles are then named as comments', as
   } finally {
     process.chdir(original)
   }
+})
+
+test('a v1 role is spelled once per route, with the v2 variable that shares its value', () => {
+  const v1 = v1Vocabulary(THEME)!
+  const text2 = v1.colors.get('text2')!
+  expect(spellings(text2, new Set(['color']), tokens())).toEqual({
+    value: '#474747',
+    v2: 'var(--charcoal-color-text-secondary-default)',
+    tailwind: 'text-text2',
+    styled: 'theme.color.text2',
+    cssVar: 'var(--charcoal-text2)',
+  })
+  const gap = v1.spacing.get('16px')!
+  expect(spellings(gap, new Set(['gap', 'padding-inline']), tokens())).toEqual({
+    value: '16px',
+    v2: 'var(--charcoal-space-30)',
+    tailwind: 'gap-16 px-16',
+    styled: 'theme.spacing[16]',
+    cssVar: undefined,
+  })
+  // surface4 is translucent black and v2 has no single word for it here.
+  const surface4 = v1.colors.get('surface4')!
+  expect(spellings(surface4, new Set(['background-color']), tokens()).v2).toBe(
+    undefined,
+  )
+})
+
+test('an instance carries its component and its variant separately', () => {
+  const [, instance] = flatten(
+    {
+      id: '1:1',
+      type: 'FRAME',
+      name: 'Screen',
+      children: [
+        { id: '1:2', type: 'INSTANCE', name: 'b', componentId: 'c:1' },
+      ],
+    },
+    { 'c:1': { name: 'Size=S, State=Default', componentSetId: 'set:1' } },
+    { 'set:1': { name: 'Button' } },
+  )
+  expect(instance?.component).toBe('Button')
+  expect(instance?.variant).toBe('Size=S, State=Default')
+  // A component outside a set has no variant: its own name is the component's.
+  const [, plain] = flatten(
+    {
+      id: '1:1',
+      type: 'FRAME',
+      name: 'Screen',
+      children: [
+        { id: '1:2', type: 'INSTANCE', name: 'b', componentId: 'c:2' },
+      ],
+    },
+    { 'c:2': { name: 'Logo' } },
+  )
+  expect(plain?.component).toBe('Logo')
+  expect(plain?.variant).toBe(undefined)
 })

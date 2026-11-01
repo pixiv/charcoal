@@ -106,7 +106,7 @@ export function parseUrl(url) {
 /**
  * @param {string} key
  * @param {string | undefined} node
- * @returns {Promise<{ document: FigmaNode, components: Record<string, { name: string }>, styles: Styles, variables: Record<string, { name: string }> }>}
+ * @returns {Promise<{ document: FigmaNode, components: Record<string, { name: string, componentSetId?: string, remote?: boolean }>, componentSets: Record<string, { name: string }>, styles: Styles, variables: Record<string, { name: string }> }>}
  */
 export async function fetchNode(key, node) {
   // The variable names are a second call, made alongside the first: a node only says
@@ -135,6 +135,8 @@ export async function fetchNode(key, node) {
   return {
     document: found.document,
     components: found.components ?? {},
+    // A variant's own name is only its properties; the set carries the component's.
+    componentSets: found.componentSets ?? {},
     // The design's own names for its colors and type. Dropping them leaves only the
     // literal to match, which is a guess where the designer already gave an answer.
     styles: found.styles ?? {},

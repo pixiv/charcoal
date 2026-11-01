@@ -491,8 +491,10 @@ export function readFig(path, nodeId) {
       )
     }
 
-    /** @type {Record<string, { name: string }>} */
+    /** @type {Record<string, { name: string, componentSetId?: string }>} */
     const components = {}
+    /** @type {Record<string, { name: string }>} */
+    const componentSets = {}
 
     // A style is a node of its own: a local one where it was defined, a library one as
     // the copy the export keeps of it. A node refers to the first by id and to the
@@ -530,7 +532,16 @@ export function readFig(path, nodeId) {
       if (symbolId) {
         const symbol = byId.get(symbolId)
         if (symbol) {
-          components[symbolId] = { name: symbol.name ?? '' }
+          // A variant sits in a component set, which is a frame marked as one.
+          const setId = idOf(symbol.parentIndex?.guid)
+          const set = setId === undefined ? undefined : byId.get(setId)
+          components[symbolId] = {
+            name: symbol.name ?? '',
+            ...(set?.isStateGroup && setId ? { componentSetId: setId } : {}),
+          }
+          if (set?.isStateGroup && setId) {
+            componentSets[setId] = { name: set.name ?? '' }
+          }
         }
         out.children = wordsOf(node, symbolId, out)
         return out
@@ -592,7 +603,13 @@ export function readFig(path, nodeId) {
 
     // Variables are left unnamed here: the export keeps them in a shape this reader
     // does not decode, so a bound value from a .fig is matched by its literal.
-    return { document: walk(root, IDENTITY), components, styles, variables: {} }
+    return {
+      document: walk(root, IDENTITY),
+      components,
+      componentSets,
+      styles,
+      variables: {},
+    }
   } finally {
     closeSync(zip.fd)
   }

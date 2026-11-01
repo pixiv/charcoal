@@ -18,6 +18,12 @@ import { say, v1Style, written } from './vocabulary.mjs'
  */
 
 /**
+ * A component as the payload describes it.
+ *
+ * @typedef {{ name: string, componentSetId?: string, remote?: boolean }} Component
+ */
+
+/**
  * One element of the flattened design: its box, the Figma node it came from, and where it
  * sits in the tree.
  *
@@ -32,7 +38,8 @@ import { say, v1Style, written } from './vocabulary.mjs'
  * @property {FigmaNode} raw
  * @property {FigmaNode[]} children
  * @property {string} id
- * @property {string} [component]
+ * @property {string} [component] the component's name — the set's, for a variant
+ * @property {string} [variant] the variant's properties, `Size=S, State=Default`
  * @property {string} [parentId]
  * @property {Node} [parent]
  * @property {ImageFill} [image]
@@ -247,10 +254,11 @@ export function imageFill(raw) {
  * Flattens Figma's tree into the nodes worth describing, in document order.
  *
  * @param {FigmaNode} document
- * @param {Record<string, { name: string }>} components
+ * @param {Record<string, Component>} components
+ * @param {Record<string, { name: string }>} [componentSets]
  * @returns {Node[]}
  */
-export function flatten(document, components) {
+export function flatten(document, components, componentSets = {}) {
   const origin = document.absoluteBoundingBox ?? { x: 0, y: 0 }
   /** @type {Node[]} */
   const out = []
@@ -278,12 +286,19 @@ export function flatten(document, components) {
       // A rounded rectangle is a rectangle in Figma's vocabulary; the pack distinguishes
       // them because the radius is what tells an implementation which it is.
       children: raw.children ?? [],
-      component: raw.componentId
-        ? components[raw.componentId]?.name
-        : undefined,
       id: raw.id,
       parentId: parent?.raw?.id,
       parent,
+    }
+    // A variant is named for its properties and its set for the component, so an
+    // instance is both: `Icon Button` with `Size=S, State=Default`.
+    const component = raw.componentId ? components[raw.componentId] : undefined
+    const set = component?.componentSetId
+      ? componentSets[component.componentSetId]
+      : undefined
+    if (component) {
+      node.component = set?.name ?? component.name
+      node.variant = set ? component.name : undefined
     }
     if (node.kind === 'rectangle' && (raw.cornerRadius ?? 0) > 0) {
       node.kind = 'rounded-rectangle'
