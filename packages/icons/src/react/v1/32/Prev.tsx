@@ -12,9 +12,9 @@ const SvgPrev = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M14.657 16l4.586 4.586a2 2 0 11-2.829 2.828L9 16l7.414-7.414a2 2 0 112.829 2.828L14.657 16z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M14.657 16l4.586 4.586a2 2 0 11-2.829 2.828L9 16l7.414-7.414a2 2 0 112.829 2.828L14.657 16z"
       fill="currentColor"
     />
   </svg>

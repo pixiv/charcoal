@@ -15,9 +15,9 @@ const SvgDiscovery = (
     {...props}
   >
     <path
+      d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zM6 18l4-8 8-4-4 8-8 4zm6-5a1 1 0 100-2 1 1 0 000 2z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zM6 18l4-8 8-4-4 8-8 4zm6-5a1 1 0 100-2 1 1 0 000 2z"
       fill="currentColor"
     />
   </svg>
