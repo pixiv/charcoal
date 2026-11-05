@@ -53,3 +53,12 @@ pnpm clean
 ### Commit
 
 `@charcoal-ui` is using [commitlint](https://github.com/conventional-changelog/commitlint) and following the [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) rules.
+
+The pre-commit hook runs `lint-staged` to format supported staged files and run
+ESLint with automatic fixes on staged JavaScript and TypeScript files. Formatting
+and ESLint run sequentially on these files. Unstaged changes are left untouched,
+and lint errors or warnings prevent the commit.
+
+To fix formatting and lint issues across the repository manually, run `pnpm fmt`.
+For a work-in-progress commit, `git commit --no-verify` skips the pre-commit and
+commit-msg hooks; run the checks before opening a pull request.
