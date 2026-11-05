@@ -64,6 +64,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           expires: 7d
           projectId: pixiv-charcoal-web
+          firebaseToolsVersion: '15.34.0'
           firebaseServiceAccount: ${{ env.SERVICE_ACCOUNT_KEY }}
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
