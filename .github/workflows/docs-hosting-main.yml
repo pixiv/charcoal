@@ -58,5 +58,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           projectId: pixiv-charcoal-web
+          firebaseToolsVersion: "15.34.0"
           channelId: live
           firebaseServiceAccount: ${{ env.SERVICE_ACCOUNT_KEY }}
