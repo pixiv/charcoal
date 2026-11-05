@@ -88,8 +88,9 @@ export class PixivIcon extends HTMLElement {
   }
 
   private svgContent?: string
-  private observer?: IntersectionObserver
+  private connectionController?: AbortController
   private isVisible = false
+  private loadSeq = 0
 
   get props(): {
     name: string
@@ -125,22 +126,27 @@ export class PixivIcon extends HTMLElement {
   }
 
   async connectedCallback(): Promise<void> {
+    this.connectionController?.abort()
+    const controller = new AbortController()
+    this.connectionController = controller
     this.render()
-    await this.waitUntilVisible()
+    await this.waitUntilVisible(controller.signal)
+    if (controller.signal.aborted) return
     this.isVisible = true
-    await this.loadSvg(this.props.name)
+    const name = this.getAttribute('name')
+    if (name !== null) await this.loadSvg(name, controller.signal)
   }
 
   disconnectedCallback(): void {
-    this.observer?.disconnect()
-    this.observer = undefined
+    this.connectionController?.abort()
+    this.connectionController = undefined
     this.isVisible = false
   }
 
   attributeChangedCallback(
     attr: string,
     _oldValue: string | null,
-    newValue: string,
+    newValue: string | null,
   ): void {
     // 非表示の場合はロードしない
     if (!this.isVisible) {
@@ -149,7 +155,13 @@ export class PixivIcon extends HTMLElement {
 
     // name が変更された場合必ず再読み込みを試みる
     if (attr === 'name') {
-      void this.loadSvg(newValue)
+      if (newValue !== null) {
+        void this.loadSvg(newValue)
+      } else {
+        this.loadSeq++
+        this.svgContent = undefined
+        this.render()
+      }
       return
     }
 
@@ -160,10 +172,19 @@ export class PixivIcon extends HTMLElement {
     }
 
     // まだ SVG が読み込めてないなら load
-    void this.loadSvg(this.props.name)
+    const name = this.getAttribute('name')
+    if (name !== null) void this.loadSvg(name)
   }
 
   render(): void {
+    if (this.getAttribute('name') === null) {
+      this.shadowRoot?.replaceChildren()
+      if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
+        console.warn('<pixiv-icon> requires a "name" attribute.')
+      }
+      return
+    }
     const { name, scale, ...rest } = this.props
     const unsafeNonGuidelineScale = rest['unsafe-non-guideline-scale']
     const fixedSize = rest['fixed-size']
@@ -202,28 +223,48 @@ export class PixivIcon extends HTMLElement {
     this.shadowRoot!.innerHTML = style + svg
   }
 
-  private async loadSvg(name: string) {
-    this.svgContent = await getIcon(name)
+  private async loadSvg(
+    name: string,
+    signal = this.connectionController?.signal,
+  ) {
+    const seq = ++this.loadSeq
+    this.svgContent = undefined
     this.render()
+    try {
+      const content = await getIcon(name)
+      if (seq !== this.loadSeq || signal?.aborted) return
+      this.svgContent = content
+      this.render()
+    } catch (error) {
+      if (seq !== this.loadSeq || signal?.aborted) return
+      this.dispatchEvent(new CustomEvent('error', { detail: error }))
+    }
   }
 
-  private waitUntilVisible() {
+  private waitUntilVisible(signal: AbortSignal) {
     return new Promise<void>((resolve) => {
-      this.observer = new IntersectionObserver(
+      if (signal.aborted) return resolve()
+
+      const finish = () => {
+        observer.disconnect()
+        signal.removeEventListener('abort', finish)
+        resolve()
+      }
+      const observer = new IntersectionObserver(
         (entries) => {
+          if (signal.aborted) return
           // In Chromium based browsers, multiple entries can be returned even only observe once.
           // Here, we don't care about the entry time but only if isIntersecting happened.
           const isIntersecting = entries.some((entry) => entry.isIntersecting)
           if (isIntersecting) {
-            this.observer?.disconnect()
-            this.observer = undefined
-            resolve()
+            finish()
           }
         },
         { rootMargin: `${ROOT_MARGIN}px` },
       )
 
-      this.observer.observe(this)
+      signal.addEventListener('abort', finish, { once: true })
+      observer.observe(this)
     })
   }
 }
