@@ -12,9 +12,9 @@ const SvgSave = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M7.293 10.293L12 15l4.707-4.707a1 1 0 00-1.414-1.414L13 11.172V4a1 1 0 10-2 0v7.172L8.707 8.879a1 1 0 00-1.414 1.414zM7 19a1 1 0 01-1-1v-6H4v6a3 3 0 003 3h10a3 3 0 003-3v-6h-2v6a1 1 0 01-1 1H7z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M7.293 10.293L12 15l4.707-4.707a1 1 0 00-1.414-1.414L13 11.172V4a1 1 0 10-2 0v7.172L8.707 8.879a1 1 0 00-1.414 1.414zM7 19a1 1 0 01-1-1v-6H4v6a3 3 0 003 3h10a3 3 0 003-3v-6h-2v6a1 1 0 01-1 1H7z"
       fill="currentColor"
     />
   </svg>
