@@ -95,21 +95,13 @@ describe('Design Token 1.0互換: 旧 index.css の見た目を壊さない', ()
       .join('\n')
 
     expect(breaking).toMatchInlineSnapshot(`
-      "1) --charcoal-color-text-default は旧の {--charcoal-text1, --charcoal-text2} を破壊的に統合:
-          - .charcoal-button | color → --charcoal-text2
-          - .charcoal-checkbox__label_div | color → --charcoal-text2
-          - .charcoal-ui-dropdown-selector-text | color → --charcoal-text2
-          - .charcoal-modal-header-title | color → --charcoal-text1
-          - .charcoal-multi-select-label | color → --charcoal-text2
-          - .charcoal-radio__label_div | color → --charcoal-text2
-          - .charcoal-switch__label_div | color → --charcoal-text2
-      2) --charcoal-color-border-default は旧の {--charcoal-text3, --charcoal-text4} を破壊的に統合:
+      "1) --charcoal-color-border-default は旧の {--charcoal-text3, --charcoal-text4} を破壊的に統合:
           - .charcoal-checkbox-input:not(:checked) | border-color → --charcoal-text4
           - .charcoal-radio-input:not(:checked) | border-color → --charcoal-text3
-      3) --charcoal-color-icon-tertiary-default は旧の {--charcoal-text3, --charcoal-text4} を破壊的に統合:
+      2) --charcoal-color-icon-tertiary-default は旧の {--charcoal-text3, --charcoal-text4} を破壊的に統合:
           - .charcoal-hint-text-icon | color → --charcoal-text3
           - .charcoal-loading-spinner | color → --charcoal-text4
-      4) --charcoal-color-container-neutral-default は旧の {--charcoal-text3, --charcoal-text4} を破壊的に統合:
+      3) --charcoal-color-container-neutral-default は旧の {--charcoal-text3, --charcoal-text4} を破壊的に統合:
           - .charcoal-multi-select-input[type='checkbox'] | background-color → --charcoal-text3
           - .charcoal-switch-input | background-color → --charcoal-text4"
     `)
