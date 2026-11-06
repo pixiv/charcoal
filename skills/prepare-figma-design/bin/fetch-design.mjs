@@ -22,10 +22,23 @@ import { parseArgs } from 'node:util'
 import { pathToFileURL } from 'node:url'
 import { downloadAssets, fetchNode, nodeId, parseUrl } from './figma.mjs'
 import { figAssets, readFig } from './fig.mjs'
-import { flatten, materialsOf } from './design.mjs'
+import {
+  flatten,
+  isContainer,
+  listFrames,
+  materialsOf,
+  outline,
+} from './design.mjs'
 import { loadTokens } from './tokens.mjs'
+import {
+  countReferences,
+  loadV1Theme,
+  spellings,
+  v1Vocabulary,
+} from './vocabulary.mjs'
 
 /** @import { Node } from './design.mjs' */
+/** @import { Vocabulary } from './vocabulary.mjs' */
 
 // Comparing basenames made any importer called `pack.mjs` run as the CLI and exit.
 // Node realpaths the entry module, so a `bin` symlink has to be resolved to match.
@@ -37,7 +50,7 @@ const mainUrl = (() => {
   }
 })()
 const isCli = mainUrl !== undefined && import.meta.url === mainUrl
-/** @type {{ url?: string, fig?: string, node?: string, tokens?: string, theme?: string, assets?: string, spec?: string }} */
+/** @type {{ list?: boolean, url?: string, fig?: string, node?: string, tokens?: string, theme?: string, vocabulary?: string, assets?: string, spec?: string }} */
 let args = {}
 /** @type {string | undefined} */
 let argError
@@ -45,11 +58,13 @@ if (isCli) {
   try {
     ;({ values: args } = parseArgs({
       options: {
+        list: { type: 'boolean' },
         url: { type: 'string' },
         fig: { type: 'string' },
         node: { type: 'string' },
         tokens: { type: 'string' },
         theme: { type: 'string' },
+        vocabulary: { type: 'string' },
         assets: { type: 'string' },
         spec: { type: 'string' },
       },
@@ -66,10 +81,14 @@ if (
   (argError ||
     (!args.url && !fromFig) ||
     (args.url && fromFig) ||
-    (!fromFig && !process.env.FIGMA_TOKEN))
+    (!fromFig && !process.env.FIGMA_TOKEN) ||
+    !['auto', 'v1', 'v2'].includes(args.vocabulary ?? 'auto'))
 ) {
   if (argError) {
     console.error(argError)
+  }
+  if (!['auto', 'v1', 'v2'].includes(args.vocabulary ?? 'auto')) {
+    console.error(`--vocabulary takes auto, v1 or v2, not ${args.vocabulary}.`)
   }
   if (args.url && fromFig) {
     console.error(
@@ -78,7 +97,11 @@ if (
   }
   console.error(
     'Usage: fetch-design.mjs (--url <figma url> | --fig <file.fig>)' +
-      ' [--tokens <dir>] [--theme light|dark] [--assets <dir>] [--spec <path>]',
+      ' [--tokens <dir>] [--theme light|dark] [--vocabulary auto|v1|v2]' +
+      ' [--assets <dir>] [--spec <path>]',
+  )
+  console.error(
+    'Add --list with a link to a page or section to list its frames instead of packing.',
   )
   console.error(
     "--url reads the design over Figma's REST API. Set FIGMA_TOKEN in the" +
@@ -113,11 +136,81 @@ if (isCli) {
     }
     // Read the tokens first: a mistyped --tokens or --theme should fail before the
     // design is read, not after.
-    const tokens = loadTokens(args.tokens, args.theme ?? 'light')
-    const { document, components } = figPath
-      ? readFig(figPath, target)
-      : await fetchNode(key, target)
-    const nodes = flatten(document, components)
+    const theme = args.theme ?? 'light'
+    const tokens = loadTokens(args.tokens, theme)
+    const v1 = v1Vocabulary(await loadV1Theme(args.tokens, theme))
+    const {
+      document,
+      components,
+      componentSets,
+      styles = {},
+      variables = {},
+    } = figPath ? readFig(figPath, target) : await fetchNode(key, target)
+
+    // A page or a section is where frames are laid out, not a screen: packing one
+    // describes every frame and every note beside them as one design. Listing them is
+    // what lets someone pick the frame they mean, and its states beside it.
+    if (args.list) {
+      const frames = listFrames(
+        isContainer(document)
+          ? document
+          : { ...document, children: [document] },
+      )
+      const cell = (/** @type {string} */ text) =>
+        text.replaceAll('|', '\\|').replaceAll('\n', ' ')
+      process.stdout.write(
+        [
+          `# Frames in ${document.name}`,
+          '',
+          'Pack one with --url and its node-id, or --fig and --node.',
+          '',
+          '| Node | Name | Size | Nodes | Section | Labels beside it |',
+          '| --- | --- | --- | --- | --- | --- |',
+          ...frames.map(
+            (f) =>
+              `| ${f.id} | ${cell(f.name)}${f.obsolete ? ' (obsolete?)' : ''} | ${f.width}×${f.height} | ${f.nodes} | ${cell(f.section ?? '')} | ${cell(f.labels.join(' / '))} |`,
+          ),
+          '',
+        ].join('\n'),
+      )
+      process.exit(0)
+    }
+    if (isContainer(document)) {
+      throw new Error(
+        `${document.name} is a ${document.type.toLowerCase()}, not a frame. Rerun with` +
+          ' --list to see the frames in it, then pack the one you mean.',
+      )
+    }
+    const nodes = flatten(document, components, componentSets)
+
+    // Which dialect a value nobody named is ranked in. `auto` follows the frame: a
+    // design built from the v1 library's styles is read in v1, one bound to v2
+    // variables in v2, so the pack speaks the words the design already uses.
+    const references = countReferences(
+      nodes.map((node) => node.raw),
+      { styles, variables, v1 },
+      tokens,
+    )
+    const asked = args.vocabulary ?? 'auto'
+    /** @type {Vocabulary} */
+    const vocab = {
+      mode:
+        asked === 'v1' || asked === 'v2'
+          ? asked
+          : references.v1 > references.v2 && v1
+            ? 'v1'
+            : 'v2',
+      v1,
+      styles,
+      variables,
+      used: new Map(),
+    }
+    if (references.v1 > 0 && !v1) {
+      console.error(
+        'The design uses named styles, but @charcoal-ui/theme was not found next to' +
+          ' --tokens or in this project, so they are written as comments, not as v1 keys.',
+      )
+    }
     const assetDir = args.assets
     const refs = nodes.flatMap((node) => (node.image ? [node.image.ref] : []))
     const assets = !assetDir
@@ -130,7 +223,7 @@ if (isCli) {
     // The frame is a box like any other: it has a ground color, a direction, a gap and
     // its own padding. Describing only its size loses the screen's own layout.
     const root = nodes.find((node) => node.depth === 0)
-    const rootMaterials = root ? materialsOf(root, tokens) : []
+    const rootMaterials = root ? materialsOf(root, tokens, vocab) : []
     // A frame can be a photograph with the UI over it. The bitmap is downloaded either
     // way, so leaving it out of the header loses the thing the screen is built on.
     const rootImage = root?.image
@@ -139,12 +232,21 @@ if (isCli) {
       rootMaterials.push(`image: ${file}; object-fit: ${rootImage.fit}`)
     }
 
+    // Which frame, which theme and which vocabulary: the same drawing resolves to
+    // different token names under each, and a pack that does not say which was used
+    // cannot be checked against the one the implementation chose.
+    const vocabularyWhy =
+      asked === 'auto'
+        ? ` (auto: the frame references ${references.v1} v1 name(s) and ${references.v2} v2)`
+        : ''
     const lines = [
       `# ${document.name}`,
       '',
-      `Frame: ${round(document.absoluteBoundingBox?.width ?? 0)}×${round(
-        document.absoluteBoundingBox?.height ?? 0,
-      )}px.`,
+      `- Frame: "${document.name}", node ${document.id}, ${round(
+        document.absoluteBoundingBox?.width ?? 0,
+      )}×${round(document.absoluteBoundingBox?.height ?? 0)}px`,
+      `- Theme: ${theme}`,
+      `- Vocabulary: ${vocab.mode}${vocabularyWhy}`,
       // Labelled: an unlabelled declaration list under the size reads as a stray
       // fragment with nothing saying what it applies to. Measured against a scored
       // benchmark this did not by itself recover the frame's padding, which
@@ -158,6 +260,12 @@ if (isCli) {
       "no comment after it has none. Widths and heights are the design's geometry — no token",
       'owns those.',
       '',
+      'A bare word such as `text2`, `spacing-16` or `typography-14` is a charcoal v1 theme',
+      'key. It is written once, as the role, because a project spells v1 one of several',
+      'ways; the table below gives each spelling, and the v2 variable with the same value.',
+      'A `/* style: … */` or `/* variable: … */` comment is a name the design used that',
+      'neither vocabulary has: the value before it is what that name looks like.',
+      '',
       'A literal followed by `/* a | b */` means the system has several names for that',
       'value and the design does not say which: pick the one whose meaning fits the',
       'element, and write it as the token.',
@@ -170,58 +278,49 @@ if (isCli) {
       '',
     ]
 
-    /**
-     * The outermost ancestor that is a component instance, if any.
-     *
-     * Outermost, not nearest: an instance nests instances, and only the one the
-     * implementation actually writes survives into the pack.
-     */
-    // Inside an instance the design shows how Figma composed the component, and the
-    // library composes it differently: a TextField is a 22px label, a 4px gap and a
-    // 40px field in the design, and one 40px element in the code. Describing those
-    // parts invites an implementation that reproduces them and drifts from the design
-    // with every one. The words are still wanted, so they move up onto the instance's
-    // own line — collected first, because a node is written before its children walk.
-    //
-    // `nodes` is in document order, so the outermost enclosing instance is whatever
-    // the parent's was, or the parent itself. Asking each node to walk its own
-    // ancestors instead costs a pass over the whole chain per node.
-    /** @type {Map<Node, Node | undefined>} */
-    const owners = new Map()
-    /** @type {Node[]} */
-    const described = []
-    for (const node of nodes) {
-      const parent = node.parent
-      const owner = parent
-        ? (owners.get(parent) ??
-          (parent.kind === 'instance' ? parent : undefined))
-        : undefined
-      owners.set(node, owner)
-      if (owner) {
-        if (node.raw.characters) {
-          ;(owner.words ??= []).push(node.raw.characters)
-        }
-        continue
-      }
-      // Everything not inside an instance, and not the frame itself, is described —
-      // once, so the markdown and the spec can never disagree about the node set.
-      if (node.depth > 0) {
-        described.push(node)
-      }
-    }
+    const tableAt = lines.length
 
-    /** Ranking a node's materials is the expensive part; `--spec` restates them. */
-    const materialsFor = new Map(
-      described.map((node) => [node, materialsOf(node, tokens)]),
+    const { described, materialsFor, repeats, uses } = outline(
+      nodes,
+      components,
+      (node) => materialsOf(node, tokens, vocab),
     )
 
     for (const node of described) {
       const indent = '  '.repeat(node.depth - 1)
-      const as = node.component ? ` — \`${node.component}\`` : ''
-      lines.push(
+      const as = node.component
+        ? ` — \`${node.component}\`${node.variant ? ` \`${node.variant}\`` : ''}`
+        : ''
+      // A component defined in this file is part of the screen, not of the library,
+      // so it is described — and said to be one unit, so it is built once.
+      const count = node.componentKey ? (uses.get(node.componentKey) ?? 0) : 0
+      const local =
+        node.remote === false
+          ? count > 1
+            ? `; a local component, used ${count} times — implement once and reuse`
+            : '; a local component'
+          : ''
+      const box =
         `${indent}- ${node.kind} "${node.name}" ${round(node.width)}×${round(node.height)}` +
-          ` at (${round(node.x)}, ${round(node.y)})${as}`,
-      )
+        ` at (${round(node.x)}, ${round(node.y)})${as}`
+      const repeat = repeats.get(node)
+      if (repeat) {
+        // The same unit again with other words: its structure is the first one's.
+        lines.push(
+          `${box}; the same as "${repeat.of.name}" at (${round(repeat.of.x)}, ${round(repeat.of.y)}) above`,
+        )
+        if (repeat.words.length > 0) {
+          lines.push(
+            `${indent}  text: ${repeat.words.map((w) => JSON.stringify(w)).join(', ')}`,
+          )
+        }
+        for (const image of repeat.images) {
+          const file = assets.get(image.ref) ?? NOT_DOWNLOADED
+          lines.push(`${indent}  image: ${file}; object-fit: ${image.fit}`)
+        }
+        continue
+      }
+      lines.push(`${box}${local}`)
       const words = node.raw.characters
         ? [node.raw.characters, ...(node.words ?? [])]
         : (node.words ?? [])
@@ -240,6 +339,25 @@ if (isCli) {
       }
     }
 
+    // The roles are only known once every material has been named, so the table is
+    // placed into the header afterwards, ahead of the elements it explains.
+    if (vocab.used.size > 0) {
+      const table = [
+        'Each v1 role used below, spelled for each route (— where that route has no word for it):',
+        '',
+        '| Role | Value | v2 CSS variable | Tailwind (v1) | styled theme (v1) | v1 CSS variable |',
+        '| --- | --- | --- | --- | --- | --- |',
+        ...[...vocab.used.values()].map(({ role, properties }) => {
+          const s = spellings(role, properties, tokens)
+          const cell = (/** @type {string | undefined} */ v) =>
+            v ? `\`${v}\`` : '—'
+          return `| \`${role.id}\` | ${s.value} | ${cell(s.v2)} | ${cell(s.tailwind)} | ${cell(s.styled)} | ${cell(s.cssVar)} |`
+        }),
+        '',
+      ]
+      lines.splice(tableAt, 0, ...table)
+    }
+
     process.stdout.write(`${lines.join('\n')}\n`)
 
     // The same design, in the form a script can hold a render up against. Nothing here
@@ -252,6 +370,17 @@ if (isCli) {
         `${JSON.stringify(
           {
             name: document.name,
+            nodeId: document.id,
+            theme,
+            vocabulary: vocab.mode,
+            // What each v1 role resolves to, so a check can ask the rendered page for the
+            // value whichever way the implementation spelled it.
+            roles: Object.fromEntries(
+              [...vocab.used.values()].map(({ role, properties }) => [
+                role.id,
+                spellings(role, properties, tokens),
+              ]),
+            ),
             frame: {
               width: round(document.absoluteBoundingBox?.width ?? 0),
               height: round(document.absoluteBoundingBox?.height ?? 0),
@@ -267,6 +396,10 @@ if (isCli) {
               width: round(node.width),
               height: round(node.height),
               text: node.raw.characters ?? undefined,
+              component: node.component,
+              variant: node.variant,
+              local: node.remote === false ? true : undefined,
+              sameAs: repeats.get(node)?.of.id,
               // What the design says this is made of, already resolved to the tokens the
               // system owns — so a check can ask whether the value reached the screen.
               styles: materialsFor.get(node) ?? [],
