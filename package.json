@@ -111,11 +111,12 @@
     "@types/react": "^18.3.3"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write"
-    ],
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+      "prettier --write",
+      "eslint --fix --max-warnings=0 --no-warn-ignored"
+    ],
+    "!(*.{js,jsx,ts,tsx})": [
+      "prettier --write --ignore-unknown"
     ]
   }
 }
