@@ -28,7 +28,7 @@ import { parseArgs } from 'node:util'
  * carries a type of its own.
  *
  * @typedef {{ tag: string, cls: string, text: string, x: number, y: number, width: number, height: number }} Box
- * @typedef {{ property: string, token: string }} Wanted
+ * @typedef {{ property: string, label: string, token?: string, value?: string }} Wanted
  */
 
 /** @type {{ spec?: string, url?: string }} */
@@ -106,18 +106,60 @@ try {
 
   // Does the design system's vocabulary actually resolve? A screen can import every
   // component, write every value as a token, and render with none of them applied.
+  //
+  // charcoal has two stacks and an app uses one of them: v2's variables, or v1's —
+  // injected as `--charcoal-text1` by TokenInjector or the Tailwind preset. A v1
+  // Tailwind app built without the variables has neither, and is live when the colors
+  // the design named are on the page anyway.
+  /** @type {Record<string, { value: string }>} */
+  const roles = spec.roles ?? {}
+  const colorValues = Object.entries(roles)
+    .filter(([id]) => !/^(spacing|radius|typography)-/.test(id))
+    .map(([, role]) => role.value)
   const tokenIsLive = await page.evaluate(
-    () =>
-      getComputedStyle(document.documentElement)
-        .getPropertyValue('--charcoal-color-text-default')
-        .trim().length > 0,
+    (/** @type {string[]} */ colorValues) => {
+      const root = getComputedStyle(document.documentElement)
+      if (
+        ['--charcoal-color-text-default', '--charcoal-text1'].some(
+          (name) => root.getPropertyValue(name).trim().length > 0,
+        )
+      ) {
+        return true
+      }
+      if (colorValues.length === 0) {
+        return false
+      }
+      const probe = document.createElement('span')
+      document.body.append(probe)
+      const wanted = new Set(
+        colorValues.map((value) => {
+          probe.style.setProperty('color', value)
+          return getComputedStyle(probe).color
+        }),
+      )
+      probe.remove()
+      const seen = new Set()
+      for (const el of document.querySelectorAll('body *')) {
+        const style = getComputedStyle(el)
+        for (const value of [style.color, style.backgroundColor]) {
+          if (wanted.has(value)) {
+            seen.add(value)
+          }
+        }
+      }
+      // Half is a deliberately low bar: this asks whether the theme is there at all,
+      // and the per-token check below names exactly which colors are missing.
+      return seen.size * 2 >= wanted.size
+    },
+    colorValues,
   )
   if (!tokenIsLive) {
     problems.push({
       depth: -1,
       line:
-        'charcoal variables do not resolve on the page — none of its styles are ' +
-        'applied.\n  Finish the setup before reading anything below: every box will ' +
+        'charcoal variables do not resolve on the page (neither v2 nor v1), and the ' +
+        "design's v1 colors are not on it either — none of its styles are applied." +
+        '\n  Finish the setup before reading anything below: every box will ' +
         'look wrong until the tokens land.',
     })
   }
@@ -210,16 +252,29 @@ try {
   // Asked of the whole page rather than of the element each node matched: that matching
   // is good enough to say a box is in the wrong place, but not good enough to pin which
   // tag carries a color, and a gate that cries wolf is worse than no gate.
+  //
+  // A v1 role (`color: text2`) is asked for by its value, which the spec's role table
+  // carries: the app may spell it `text-text2`, `theme.color.text2` or
+  // `var(--charcoal-text2)`, and all three compute to the same color.
   /** @type {Wanted[]} */
   const wanted = []
   const seen = new Set()
   for (const node of spec.nodes) {
     for (const style of node.styles ?? []) {
-      const [, property, token] =
-        /^([a-z-]+):\s*var\((--charcoal-[a-z0-9-]+)\)$/.exec(style.trim()) ?? []
-      if (property && token && !seen.has(`${property} ${token}`)) {
-        seen.add(`${property} ${token}`)
-        wanted.push({ property, token })
+      // A trailing comment is what the design called the value; it is not the value.
+      const [, property, value] =
+        /^([a-z-]+):\s*(\S+)(?:\s*\/\*.*\*\/)?$/.exec(style.trim()) ?? []
+      if (!property || !value || seen.has(`${property} ${value}`)) {
+        continue
+      }
+      const token = /^var\((--charcoal-[a-z0-9-]+)\)$/.exec(value)?.[1]
+      const role = roles[value]
+      if (token) {
+        seen.add(`${property} ${value}`)
+        wanted.push({ property, label: token, token })
+      } else if (role) {
+        seen.add(`${property} ${value}`)
+        wanted.push({ property, label: value, value: role.value })
       }
     }
   }
@@ -228,14 +283,13 @@ try {
     const root = getComputedStyle(document.documentElement)
     const elements = [...document.querySelectorAll('body *')]
     const out = []
-    for (const { property, token } of wanted) {
-      const value = root.getPropertyValue(token).trim()
-      if (!value) {
-        out.push({ token, why: 'no such variable in the theme' })
-        continue
-      }
-      // Colors come back as rgb(); let the browser resolve both sides rather than
-      // comparing the text of either.
+    /**
+     * The value as the browser computes it, for comparing with what elements compute.
+     *
+     * @param {string} property
+     * @param {string} value
+     */
+    const computed = (property, value) => {
       const probe = document.createElement('span')
       // A width with no style is not a border: `border-width` computes to 0px unless
       // something is drawn, so without this every border token resolves to 0px — which
@@ -247,6 +301,34 @@ try {
       document.body.append(probe)
       const want = getComputedStyle(probe).getPropertyValue(property).trim()
       probe.remove()
+      return want
+    }
+    for (const { property, label, token, value: literal } of wanted) {
+      const value = token ? root.getPropertyValue(token).trim() : literal
+      if (!value) {
+        out.push({ token: label, why: 'no such variable in the theme' })
+        continue
+      }
+      // A v1 typography role is a size and a line height together.
+      if (property === 'typography') {
+        const [size = '', line = ''] = value.split('/')
+        const wantSize = computed('font-size', size)
+        const wantLine = computed('line-height', line)
+        const landed = elements.some((el) => {
+          const style = getComputedStyle(el)
+          return style.fontSize === wantSize && style.lineHeight === wantLine
+        })
+        if (!landed) {
+          out.push({
+            token: label,
+            why: `nothing on the page is set in ${wantSize}/${wantLine}`,
+          })
+        }
+        continue
+      }
+      // Colors come back as rgb(); let the browser resolve both sides rather than
+      // comparing the text of either.
+      const want = computed(property, value)
       if (!want) {
         continue
       }
@@ -256,7 +338,10 @@ try {
         (el) => getComputedStyle(el).getPropertyValue(property).trim() === want,
       )
       if (!landed) {
-        out.push({ token, why: `nothing on the page has ${property}: ${want}` })
+        out.push({
+          token: label,
+          why: `nothing on the page has ${property}: ${want}`,
+        })
       }
     }
     return out
