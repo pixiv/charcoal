@@ -181,3 +181,65 @@ describe('Modal (mobile width)', () => {
     expect(dialog.getBoundingClientRect().width).toBe(VIEWPORT_WIDTH)
   })
 })
+
+describe('Modal (accessible name)', () => {
+  const getDialog = () => {
+    const dialog = document.querySelector('.charcoal-modal-dialog')
+    if (!(dialog instanceof HTMLElement)) throw new Error('dialog not found')
+    return dialog
+  }
+
+  it('ModalHeader のタイトルがダイアログの名前になる', () => {
+    const { getByRole } = render(
+      <OverlayProvider>
+        <Modal title="test modal" isOpen onClose={vi.fn()}>
+          <ModalHeader />
+        </Modal>
+      </OverlayProvider>,
+    )
+
+    const dialog = getDialog()
+    const labelledby = dialog.getAttribute('aria-labelledby')
+    expect(labelledby).not.toBeNull()
+    expect(document.getElementById(labelledby ?? '')).toHaveTextContent(
+      'test modal',
+    )
+    expect(getByRole('dialog', { name: 'test modal' })).toBe(dialog)
+  })
+
+  it('aria-label を渡すとそれが名前になる', () => {
+    const { getByRole } = render(
+      <OverlayProvider>
+        <Modal
+          title="test modal"
+          aria-label="custom label"
+          isOpen
+          onClose={vi.fn()}
+        >
+          <div>custom header</div>
+        </Modal>
+      </OverlayProvider>,
+    )
+
+    const dialog = getDialog()
+    expect(dialog).not.toHaveAttribute('aria-labelledby')
+    expect(getByRole('dialog', { name: 'custom label' })).toBe(dialog)
+  })
+
+  it('aria-labelledby を渡すとそれが名前になる', () => {
+    const { getByRole } = render(
+      <OverlayProvider>
+        <Modal
+          title="test modal"
+          aria-labelledby="custom-heading"
+          isOpen
+          onClose={vi.fn()}
+        >
+          <h2 id="custom-heading">custom heading</h2>
+        </Modal>
+      </OverlayProvider>,
+    )
+
+    expect(getByRole('dialog', { name: 'custom heading' })).toBe(getDialog())
+  })
+})

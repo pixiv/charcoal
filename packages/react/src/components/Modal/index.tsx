@@ -128,24 +128,28 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             size={size}
             bottomSheet={bottomSheet}
             className={className}
+            aria-label={props['aria-label']}
+            aria-labelledby={props['aria-labelledby']}
           >
-            <ModalContext.Provider
-              value={{
-                titleProps: {},
-                title,
-                close: onClose,
-                showDismiss,
-                bottomSheet,
-              }}
-            >
-              {children}
-              {isDismissable === true && (
-                <ModalCloseButton
-                  aria-label={closeButtonAriaLabel}
-                  onClick={onClose}
-                />
-              )}
-            </ModalContext.Provider>
+            {(titleProps) => (
+              <ModalContext.Provider
+                value={{
+                  titleProps,
+                  title,
+                  close: onClose,
+                  showDismiss,
+                  bottomSheet,
+                }}
+              >
+                {children}
+                {isDismissable === true && (
+                  <ModalCloseButton
+                    aria-label={closeButtonAriaLabel}
+                    onClick={onClose}
+                  />
+                )}
+              </ModalContext.Provider>
+            )}
           </Dialog>
         </ModalBackgroundContext.Provider>
       </div>
@@ -156,9 +160,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
 export default memo(Modal)
 
 export const ModalContext = React.createContext<{
-  /**
-   * @deprecated
-   */
   titleProps: React.HTMLAttributes<HTMLElement>
   title: string
   close?: () => void
