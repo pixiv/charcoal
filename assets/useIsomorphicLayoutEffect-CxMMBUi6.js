@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./chunk-BneVvdWh.js";import{bt as n}from"./iframe-DhEVc4f6.js";var r,i,a=t((()=>{r=e(n(),1),i=typeof window<`u`?r.useLayoutEffect:r.useEffect}));export{i as n,a as t};
