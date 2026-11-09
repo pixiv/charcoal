@@ -16,9 +16,9 @@ const SvgSaturation = (
   >
     <path d="M15 11a2 2 0 100-4 2 2 0 000 4z" fill="currentColor" />
     <path
+      d="M12 3a9 9 0 100 18 9 9 0 000-18zm-7 9a7 7 0 1114 0 7 7 0 01-14 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 3a9 9 0 100 18 9 9 0 000-18zm-7 9a7 7 0 1114 0 7 7 0 01-14 0z"
       fill="currentColor"
     />
   </svg>

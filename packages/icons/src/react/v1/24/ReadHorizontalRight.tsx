@@ -19,9 +19,9 @@ const SvgReadHorizontalRight = (
       fill="currentColor"
     />
     <path
+      d="M3 7v10a4 4 0 004 4h10a4 4 0 004-4V7a4 4 0 00-4-4H7a4 4 0 00-4 4zm4 12a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M3 7v10a4 4 0 004 4h10a4 4 0 004-4V7a4 4 0 00-4-4H7a4 4 0 00-4 4zm4 12a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7z"
       fill="currentColor"
     />
   </svg>

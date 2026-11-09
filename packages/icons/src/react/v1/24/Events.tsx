@@ -12,9 +12,9 @@ const SvgEvents = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M4 7a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7zm7 1h2a1 1 0 100-2h-2a1 1 0 100 2zm-5 2v7a1 1 0 001 1h10a1 1 0 001-1v-7H6z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M4 7a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7zm7 1h2a1 1 0 100-2h-2a1 1 0 100 2zm-5 2v7a1 1 0 001 1h10a1 1 0 001-1v-7H6z"
       fill="currentColor"
     />
   </svg>

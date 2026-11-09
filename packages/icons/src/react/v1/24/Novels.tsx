@@ -16,9 +16,9 @@ const SvgNovels = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       fill="currentColor"
     />
     <path
+      d="M17 3a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V6a3 3 0 013-3h10zm1 3a1 1 0 00-1-1H7a1 1 0 00-1 1v12a1 1 0 001 1h10a1 1 0 001-1V6z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M17 3a3 3 0 013 3v12a3 3 0 01-3 3H7a3 3 0 01-3-3V6a3 3 0 013-3h10zm1 3a1 1 0 00-1-1H7a1 1 0 00-1 1v12a1 1 0 001 1h10a1 1 0 001-1V6z"
       fill="currentColor"
     />
   </svg>

@@ -16,9 +16,9 @@ const SvgSun = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       fill="currentColor"
     />
     <path
+      d="M6.25 12a5.75 5.75 0 1111.5 0 5.75 5.75 0 01-11.5 0zM12 7.75a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M6.25 12a5.75 5.75 0 1111.5 0 5.75 5.75 0 01-11.5 0zM12 7.75a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5z"
       fill="currentColor"
     />
     <path
