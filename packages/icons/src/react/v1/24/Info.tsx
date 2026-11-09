@@ -12,9 +12,9 @@ const SvgInfo = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.5 9a1 1 0 011-1H12a1 1 0 011 1v5h1a1 1 0 110 2h-4a1 1 0 110-2h1v-4h-.5a1 1 0 01-1-1zM12 5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.5 9a1 1 0 011-1H12a1 1 0 011 1v5h1a1 1 0 110 2h-4a1 1 0 110-2h1v-4h-.5a1 1 0 01-1-1zM12 5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"
       fill="currentColor"
     />
   </svg>

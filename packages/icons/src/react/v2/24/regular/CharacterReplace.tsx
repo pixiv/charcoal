@@ -19,9 +19,9 @@ const SvgCharacterreplace = (
       fill="currentColor"
     />
     <path
+      d="M20.389 3.61a5.5 5.5 0 10-7.778 7.779 5.5 5.5 0 007.778-7.778zm-6.717 1.062a4 4 0 115.656 5.657 4 4 0 01-5.656-5.657z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M20.389 3.61a5.5 5.5 0 10-7.778 7.779 5.5 5.5 0 007.778-7.778zm-6.717 1.062a4 4 0 115.656 5.657 4 4 0 01-5.656-5.657z"
       fill="currentColor"
     />
     <path
@@ -29,9 +29,9 @@ const SvgCharacterreplace = (
       fill="currentColor"
     />
     <path
+      d="M3.61 12.61a5.5 5.5 0 117.779 7.779 5.5 5.5 0 01-7.778-7.778zm6.718 1.062a4 4 0 10-5.656 5.657 4 4 0 005.656-5.657z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M3.61 12.61a5.5 5.5 0 117.779 7.779 5.5 5.5 0 01-7.778-7.778zm6.718 1.062a4 4 0 10-5.656 5.657 4 4 0 005.656-5.657z"
       fill="currentColor"
     />
   </svg>

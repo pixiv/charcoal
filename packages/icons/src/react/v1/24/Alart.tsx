@@ -12,9 +12,9 @@ const SvgAlart = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M8 2a4 4 0 00-4 4v11h16V6a4 4 0 00-4-4H8zm0 2a2 2 0 00-2 2v1a1 1 0 002 0V6h2a1 1 0 100-2H8z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M8 2a4 4 0 00-4 4v11h16V6a4 4 0 00-4-4H8zm0 2a2 2 0 00-2 2v1a1 1 0 002 0V6h2a1 1 0 100-2H8z"
       fill="currentColor"
     />
     <path
