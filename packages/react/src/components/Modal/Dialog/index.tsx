@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import * as React from 'react'
 import { useDialog } from 'react-aria/useDialog'
 import { useForwardedRef } from '../../../_lib/useForwardedRef'
-import { Size, BottomSheet } from '..'
+import { Size, BottomSheet, Scroll } from '..'
 
 import './index.css'
 import { useClassNames } from '../../../_lib/useClassNames'
@@ -12,8 +12,12 @@ export const Dialog = forwardRef<
   React.ComponentPropsWithoutRef<'div'> & {
     size: Size
     bottomSheet: BottomSheet
+    scroll: Scroll
   }
->(function Dialog({ size, bottomSheet, className, ...props }, forwardRef) {
+>(function Dialog(
+  { size, bottomSheet, scroll, className, ...props },
+  forwardRef,
+) {
   const ref = useForwardedRef(forwardRef)
   const { dialogProps } = useDialog(
     {
@@ -32,6 +36,7 @@ export const Dialog = forwardRef<
       aria-labelledby={dialogProps['aria-labelledby']}
       onBlur={dialogProps.onBlur}
       data-size={size}
+      data-scroll={scroll}
       ref={ref}
       {...props}
     />

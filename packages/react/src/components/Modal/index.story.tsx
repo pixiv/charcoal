@@ -38,6 +38,13 @@ export default {
       },
       defaultValue: false,
     },
+    scroll: {
+      options: ['outside', 'inside'],
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: 'outside',
+    },
   },
   render: function Render(args) {
     const state = useOverlayTriggerState({ defaultOpen })
@@ -290,6 +297,47 @@ export const BackgroundScroll: StoryObj<typeof Modal> = {
           isOpen={state.isOpen}
           onClose={() => state.close()}
         />
+      </OverlayProvider>
+    )
+  },
+}
+
+export const ScrollInside: StoryObj<typeof Modal> = {
+  args: {
+    scroll: 'inside',
+  },
+  render: function Render(args) {
+    const state = useOverlayTriggerState({ defaultOpen })
+    return (
+      <OverlayProvider>
+        <Button onClick={() => state.open()}>Open Modal</Button>
+        <Modal
+          {...args}
+          isDismissable
+          isOpen={state.isOpen}
+          onClose={() => state.close()}
+        >
+          <ModalHeader />
+          <ModalBody>
+            <ModalVStack>
+              {Array.from({ length: 12 }, (_, i) => (
+                <StyledModalText key={i}>
+                  {i + 1}. Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Quod placeat tenetur, necessitatibus laudantium cumque
+                  exercitationem provident. Quaerat iure enim, eveniet dolores
+                  earum odio quo possimus fugiat aspernatur, numquam, commodi
+                  repellat.
+                </StyledModalText>
+              ))}
+            </ModalVStack>
+          </ModalBody>
+          <ModalButtons>
+            <Button variant="Primary" onClick={() => state.close()} fullWidth>
+              Apply
+            </Button>
+            <ModalDismissButton>Cancel</ModalDismissButton>
+          </ModalButtons>
+        </Modal>
       </OverlayProvider>
     )
   },

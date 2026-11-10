@@ -15,7 +15,7 @@ import { OverlayProvider } from 'react-aria'
 import { vi } from 'vitest'
 import { page, userEvent } from 'vitest/browser'
 import Modal from '.'
-import { ModalHeader } from './ModalPlumbing'
+import { ModalBody, ModalButtons, ModalHeader } from './ModalPlumbing'
 
 const getBackground = () => {
   const bg = document.querySelector('.charcoal-modal-background')
@@ -179,5 +179,118 @@ describe('Modal (mobile width)', () => {
     if (!(dialog instanceof HTMLElement)) throw new Error('dialog not found')
 
     expect(dialog.getBoundingClientRect().width).toBe(VIEWPORT_WIDTH)
+  })
+})
+
+describe('Modal (scroll)', () => {
+  const VIEWPORT_HEIGHT = 720
+
+  beforeEach(async () => {
+    await page.viewport(1280, VIEWPORT_HEIGHT)
+  })
+
+  const renderLongModal = (scroll: 'outside' | 'inside') => {
+    render(
+      <OverlayProvider>
+        <Modal title="test modal" isOpen onClose={vi.fn()} scroll={scroll}>
+          <ModalHeader />
+          <ModalBody>
+            <div style={{ height: 2000 }} />
+          </ModalBody>
+          <ModalButtons>
+            <button type="button">OK</button>
+          </ModalButtons>
+        </Modal>
+      </OverlayProvider>,
+    )
+    const query = (selector: string) => {
+      const el = document.querySelector(selector)
+      if (!(el instanceof HTMLElement)) throw new Error(`${selector} not found`)
+      return el
+    }
+    return {
+      background: query('.charcoal-modal-background'),
+      dialog: query('.charcoal-modal-dialog'),
+      header: query('.charcoal-modal-header-root'),
+      body: query('.charcoal-modal-body'),
+      buttons: query('.charcoal-modal-buttons'),
+    }
+  }
+
+  it('既定 (outside) ではダイアログが伸びて背景がスクロールする', () => {
+    const { background, dialog, body } = renderLongModal('outside')
+
+    expect(dialog.getBoundingClientRect().height).toBeGreaterThan(
+      VIEWPORT_HEIGHT,
+    )
+    expect(background.scrollHeight).toBeGreaterThan(background.clientHeight)
+    expect(body.scrollHeight).toBe(body.clientHeight)
+  })
+
+  it('inside では上下 40px の余白内に収まり ModalBody だけがスクロールする', () => {
+    const { background, dialog, header, body } = renderLongModal('inside')
+
+    const rect = dialog.getBoundingClientRect()
+    expect(rect.top).toBe(40)
+    expect(rect.bottom).toBe(VIEWPORT_HEIGHT - 40)
+    expect(header.getBoundingClientRect().height).toBe(64)
+    expect(background.scrollHeight).toBe(background.clientHeight)
+    expect(body.scrollHeight).toBeGreaterThan(body.clientHeight)
+  })
+
+  it('inside で ModalBody の外に置いた ModalButtons はスクロールしても動かない', () => {
+    const { dialog, body, buttons } = renderLongModal('inside')
+
+    const before = buttons.getBoundingClientRect()
+    body.scrollTop = 1000
+    const after = buttons.getBoundingClientRect()
+
+    expect(body.scrollTop).toBe(1000)
+    expect(after.top).toBe(before.top)
+    expect(after.bottom).toBe(dialog.getBoundingClientRect().bottom - 40)
+  })
+})
+
+describe('Modal (scroll, mobile bottomSheet full)', () => {
+  beforeEach(async () => {
+    await page.viewport(375, 667)
+  })
+
+  afterEach(async () => {
+    await page.viewport(1280, 720)
+  })
+
+  it('画面全体を占めて ModalBody だけがスクロールする', () => {
+    render(
+      <OverlayProvider>
+        <Modal
+          title="test modal"
+          isOpen
+          onClose={vi.fn()}
+          scroll="inside"
+          bottomSheet="full"
+        >
+          <ModalHeader />
+          <ModalBody>
+            <div style={{ height: 2000 }} />
+          </ModalBody>
+        </Modal>
+      </OverlayProvider>,
+    )
+    const dialog = document.querySelector('.charcoal-modal-dialog')
+    const header = document.querySelector('.charcoal-modal-header-root')
+    const body = document.querySelector('.charcoal-modal-body')
+    if (
+      !(dialog instanceof HTMLElement) ||
+      !(header instanceof HTMLElement) ||
+      !(body instanceof HTMLElement)
+    )
+      throw new Error('dialog not found')
+
+    // 開きアニメーション中は transform がかかるので、transform の影響を受けない offset で測る
+    expect(dialog.offsetTop).toBe(0)
+    expect(dialog.offsetHeight).toBe(667)
+    expect(header.offsetHeight).toBe(48)
+    expect(body.scrollHeight).toBeGreaterThan(body.clientHeight)
   })
 })
