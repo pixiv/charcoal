@@ -11957,7 +11957,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightAndRows 1
 </div>
 `;
 
-exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
+exports[`Storybook Tests > react/TextArea > react/TextArea > AutoHeightWithFieldSizing 1`] = `
 <div>
   <div
     data-dark="false"
@@ -11965,6 +11965,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
     <div
       aria-disabled="false"
       class="charcoal-text-area-root"
+      data-field-sizing="true"
     >
       <div
         class="charcoal-field-label-root"
@@ -11980,29 +11981,83 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
         <div
           class="charcoal-field-label-sub-label"
         >
-          <span>
-            <button
-              class="charcoal-clickable"
-            >
-              Text Link
-            </button>
-          </span>
+          <span />
         </div>
       </div>
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
+        data-field-sizing="true"
+        style="--charcoal-text-area-rows: 3; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
-          aria-invalid="false"
           aria-labelledby="test-id"
           class="charcoal-text-area-textarea"
-          data-no-bottom-padding="false"
+          data-no-bottom-padding="true"
           id="test-id"
-          placeholder="Text Area"
-          rows="4"
+          rows="3"
         />
+        <span
+          class="charcoal-text-area-counter"
+        >
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Tests > react/TextArea > react/TextArea > Default 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      style="width: 300px;"
+    >
+      <div
+        aria-disabled="false"
+        class="charcoal-text-area-root"
+      >
+        <div
+          class="charcoal-field-label-root"
+          style="border: 0px; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;"
+        >
+          <label
+            class="charcoal-field-label"
+            for="test-id"
+            id="test-id"
+          >
+            Label
+          </label>
+          <div
+            class="charcoal-field-label-sub-label"
+          >
+            <span>
+              <button
+                class="charcoal-clickable"
+              >
+                Text Link
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-invalid="false"
+          class="charcoal-text-area-container"
+          style="--charcoal-text-area-rows: 4;"
+        >
+          <textarea
+            aria-invalid="false"
+            aria-labelledby="test-id"
+            class="charcoal-text-area-textarea"
+            data-no-bottom-padding="false"
+            id="test-id"
+            placeholder="Text Area"
+            rows="4"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -12335,7 +12390,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRows 1`] = `
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 4;"
+        style="--charcoal-text-area-rows: 4; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -12384,7 +12439,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsAndRows 1`] 
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 3;"
+        style="--charcoal-text-area-rows: 3; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
@@ -12433,7 +12488,7 @@ exports[`Storybook Tests > react/TextArea > react/TextArea > MaxRowsOverInitialR
       <div
         aria-invalid="false"
         class="charcoal-text-area-container"
-        style="--charcoal-text-area-rows: 6;"
+        style="--charcoal-text-area-rows: 6; --charcoal-text-area-max-rows: 6;"
       >
         <textarea
           aria-labelledby="test-id"
