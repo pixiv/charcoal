@@ -46,6 +46,8 @@ export type TextAreaProps = {
   disabled?: boolean
   subLabel?: React.ReactNode
   autoHeight?: boolean
+  /** field-sizing: content で入力内容に応じて高さを調整する */
+  autoHeightWithFieldSizing?: boolean
 
   maxRows?: number
 
@@ -68,6 +70,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       assistiveText,
       maxLength,
       autoHeight = false,
+      autoHeightWithFieldSizing = false,
       rows: initialRows = 4,
       maxRows,
       invalid,
@@ -91,8 +94,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const { visuallyHiddenProps } = useVisuallyHidden()
 
     const isEnableAutoHeight = useMemo(
-      () => autoHeight || (maxRows && maxRows >= 0),
-      [autoHeight, maxRows],
+      () =>
+        !autoHeightWithFieldSizing && (autoHeight || (maxRows && maxRows >= 0)),
+      [autoHeight, autoHeightWithFieldSizing, maxRows],
     )
     const classNames = useClassNames('charcoal-text-area-root', className)
     const showAssistiveText =
@@ -190,7 +194,11 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     ])
 
     return (
-      <div className={classNames} aria-disabled={disabled}>
+      <div
+        className={classNames}
+        aria-disabled={disabled}
+        data-field-sizing={autoHeightWithFieldSizing || undefined}
+      >
         <FieldLabel
           htmlFor={textAreaId}
           id={labelledbyId}
@@ -205,8 +213,17 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           aria-disabled={disabled === true ? 'true' : undefined}
           aria-invalid={invalid === true}
           ref={containerRef}
+          data-field-sizing={autoHeightWithFieldSizing || undefined}
           style={{
             '--charcoal-text-area-rows': rows,
+            ...(maxRows && maxRows >= 1
+              ? {
+                  '--charcoal-text-area-max-rows': Math.max(
+                    initialRows,
+                    maxRows,
+                  ),
+                }
+              : {}),
           }}
         >
           <textarea
