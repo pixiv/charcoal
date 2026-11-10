@@ -53,7 +53,12 @@ export default function DropdownSelector({
 
   const propsArray = getValuesRecursive(props.children)
   const hasMatchedValue = useMemo(
-    () => propsArray.some((itemProps) => itemProps.value === props.value),
+    () =>
+      propsArray.some((itemProps) =>
+        itemProps.noSelection
+          ? props.value === ''
+          : itemProps.value === props.value,
+      ),
     [propsArray, props.value],
   )
 
@@ -128,6 +133,7 @@ export default function DropdownSelector({
             <option value={props.value}>{props.value}</option>
           )}
           {propsArray.map((itemProps) => {
+            if (itemProps.noSelection) return <option key="" value="" />
             return (
               <option
                 key={itemProps.value}
@@ -168,10 +174,9 @@ export default function DropdownSelector({
           isOpen={isOpen}
           onClose={handleClose}
           triggerRef={triggerRef}
-          value={props.value}
           inertWorkaround={props.inertWorkaround}
         >
-          <MenuList value={props.value} onChange={handleSelect}>
+          <MenuList autoFocus value={props.value} onChange={handleSelect}>
             {props.children}
           </MenuList>
         </DropdownPopover>
