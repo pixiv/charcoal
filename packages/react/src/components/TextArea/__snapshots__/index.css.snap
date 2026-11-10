@@ -11,6 +11,7 @@
 .charcoal-text-area-container {
   /* Runtime variable overridden by the React component. */
   --charcoal-text-area-rows: 4;
+  --charcoal-text-area-max-rows: 100000;
   position: relative;
   overflow: hidden;
   color: var(--charcoal-color-text-secondary-default);
@@ -97,5 +98,37 @@
   line-height: 22px;
   font-size: 14px;
   color: var(--charcoal-color-text-tertiary-default);
+}
+
+.charcoal-text-area-container[data-field-sizing='true'] {
+  height: auto;
+}
+
+.charcoal-text-area-container[data-field-sizing='true']:has([data-no-bottom-padding='true']) {
+  height: auto;
+  padding-bottom: 22px;
+}
+
+.charcoal-text-area-container[data-field-sizing='true'] .charcoal-text-area-textarea {
+  display: block;
+  field-sizing: content;
+  transform: none;
+  zoom: var(--charcoal-textarea-safari-prevent-zoom-scale);
+  width: 100%;
+  height: auto;
+  min-height: calc(
+      var(--charcoal-textarea-line-height) * var(--charcoal-text-area-rows) +
+        var(--charcoal-textarea-padding-y) * 2
+    );
+  max-height: calc(
+      var(--charcoal-textarea-line-height) *
+        var(--charcoal-text-area-max-rows, 100000) +
+        var(--charcoal-textarea-padding-y) * 2
+    );
+}
+
+.charcoal-text-area-root[data-field-sizing='true'] {
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
 }
 
