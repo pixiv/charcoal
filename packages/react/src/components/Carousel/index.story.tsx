@@ -6,7 +6,7 @@ const makeSampleImages = (style: CSSProperties) =>
   Array.from({ length: 6 }, (_, i) => (
     <img
       key={`item-${i + 1}`}
-      src="/carousel-sample.png"
+      src="./carousel-sample.png"
       alt="サンプル画像"
       style={{
         objectFit: 'cover',
