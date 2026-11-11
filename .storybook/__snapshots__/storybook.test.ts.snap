@@ -470,7 +470,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -479,7 +479,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -488,7 +488,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -497,7 +497,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -506,7 +506,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -515,7 +515,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > AllControls 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -990,7 +990,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -999,7 +999,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1008,7 +1008,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1017,7 +1017,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1026,7 +1026,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1035,7 +1035,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > DefaultScrollCenter
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1510,7 +1510,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1519,7 +1519,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1528,7 +1528,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1537,7 +1537,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1546,7 +1546,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1555,7 +1555,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > FullWidth 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1890,7 +1890,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1899,7 +1899,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1908,7 +1908,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1917,7 +1917,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1926,7 +1926,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -1935,7 +1935,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > IndicatorOnSizeM 1`
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -2052,7 +2052,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2061,7 +2061,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2070,7 +2070,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2079,7 +2079,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2088,7 +2088,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2097,7 +2097,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopAutoplay 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2882,7 +2882,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2891,7 +2891,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2900,7 +2900,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2909,7 +2909,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2918,7 +2918,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -2927,7 +2927,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > LoopSizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -3402,7 +3402,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -3411,7 +3411,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -3420,7 +3420,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -3429,7 +3429,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -3438,7 +3438,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -3447,7 +3447,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > NavigationButtonsOn
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4280,7 +4280,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4289,7 +4289,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4298,7 +4298,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4307,7 +4307,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4316,7 +4316,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4325,7 +4325,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeM 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4442,7 +4442,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4451,7 +4451,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4460,7 +4460,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4469,7 +4469,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4478,7 +4478,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4487,7 +4487,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > SizeS 1`] = `
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 100%; height: 100%;"
             />
           </div>
@@ -4604,7 +4604,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4613,7 +4613,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4622,7 +4622,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4631,7 +4631,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4640,7 +4640,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
@@ -4649,7 +4649,7 @@ exports[`Storybook Tests > react/Carousel > react/Carousel > WithGradient 1`] = 
           >
             <img
               alt="サンプル画像"
-              src="/carousel-sample.png"
+              src="./carousel-sample.png"
               style="object-fit: cover; display: block; width: 280px; height: 210px;"
             />
           </div>
