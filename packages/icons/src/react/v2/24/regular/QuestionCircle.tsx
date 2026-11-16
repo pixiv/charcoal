@@ -19,9 +19,9 @@ const SvgQuestioncircle = (
       fill="currentColor"
     />
     <path
+      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 1.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 1.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17z"
       fill="currentColor"
     />
   </svg>

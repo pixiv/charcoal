@@ -19,9 +19,9 @@ const SvgContest = (
       fill="currentColor"
     />
     <path
+      d="M12 7.25a7.5 7.5 0 100 15 7.5 7.5 0 000-15zm-3.5 7.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 7.25a7.5 7.5 0 100 15 7.5 7.5 0 000-15zm-3.5 7.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z"
       fill="currentColor"
     />
   </svg>

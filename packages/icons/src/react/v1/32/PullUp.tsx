@@ -12,9 +12,9 @@ const SvgPullUp = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
+      d="M23.414 17.586a2 2 0 11-2.828 2.828L16 15.828l-4.586 4.586a2 2 0 01-2.828-2.828L16 10.172l7.414 7.414z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M23.414 17.586a2 2 0 11-2.828 2.828L16 15.828l-4.586 4.586a2 2 0 01-2.828-2.828L16 10.172l7.414 7.414z"
       fill="currentColor"
     />
   </svg>
