@@ -15,15 +15,15 @@ const SvgBookmarkOff = (
     {...props}
   >
     <path
+      d="M5 11l5 2.5V3a2 2 0 00-2-2H2a2 2 0 00-2 2v10.5L5 11zm-4 .882l4-2 4 2V3a1 1 0 00-1-1H2a1 1 0 00-1 1v8.882z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M5 11l5 2.5V3a2 2 0 00-2-2H2a2 2 0 00-2 2v10.5L5 11zm-4 .882l4-2 4 2V3a1 1 0 00-1-1H2a1 1 0 00-1 1v8.882z"
       fill="currentColor"
     />
     <path
+      d="M1 11.882l4-2 4 2V3a1 1 0 00-1-1H2a1 1 0 00-1 1v8.882z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M1 11.882l4-2 4 2V3a1 1 0 00-1-1H2a1 1 0 00-1 1v8.882z"
       fill="#fff"
     />
     <path

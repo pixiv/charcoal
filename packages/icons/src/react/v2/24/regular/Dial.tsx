@@ -16,9 +16,9 @@ const SvgDial = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       fill="currentColor"
     />
     <path
+      d="M5.504 12.994a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zm6.5-5a5 5 0 00-4.032 7.958l3.09-3.09a.75.75 0 011.06 1.06l-3.091 3.093a5 5 0 102.973-9.02z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M5.504 12.994a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zm6.5-5a5 5 0 00-4.032 7.958l3.09-3.09a.75.75 0 011.06 1.06l-3.091 3.093a5 5 0 102.973-9.02z"
       fill="currentColor"
     />
   </svg>

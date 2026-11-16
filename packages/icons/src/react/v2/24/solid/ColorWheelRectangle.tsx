@@ -15,9 +15,9 @@ const SvgColorWheelrectangle = (
     {...props}
   >
     <path
+      d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM7.75 6.75a1 1 0 00-1 1v8.5a1 1 0 001 1h8.5a1 1 0 001-1v-8.5a1 1 0 00-1-1h-8.5z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM7.75 6.75a1 1 0 00-1 1v8.5a1 1 0 001 1h8.5a1 1 0 001-1v-8.5a1 1 0 00-1-1h-8.5z"
       fill="currentColor"
     />
   </svg>
