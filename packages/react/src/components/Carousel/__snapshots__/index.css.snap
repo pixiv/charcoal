@@ -14,10 +14,18 @@
 }
 
 /* フォーカスリングは scroller ではなく viewport に描く。scroller に置くと
-     hasGradient の mask（mask-clip: border-box）で外側の box-shadow ごと消えるため。 */
+     hasGradient の mask（mask-clip: border-box）で外側の box-shadow ごと消えるため。
+     inset はスライドに覆われるので focus-1 も外側に描く。 */
 
 .charcoal-carousel__viewport[data-focus-visible] {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: 0 0 0 var(--charcoal-border-width-focus-1)
+        var(--charcoal-color-border-focus-1),
+      0 0 0
+        calc(
+          var(--charcoal-border-width-focus-1) +
+            var(--charcoal-border-width-focus-2)
+        )
+        var(--charcoal-color-border-focus-2);
 }
 
 /* スライド間隔は gap prop（--charcoal-carousel-gap）で注入する。

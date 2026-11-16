@@ -43,10 +43,30 @@
 
 .charcoal-checkbox-input:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow:
+    inset 0 0 0 var(--charcoal-border-width-focus-1)
+      var(--charcoal-color-border-focus-1),
+    0 0 0 var(--charcoal-border-width-focus-2)
+      var(--charcoal-color-border-focus-2);
 }
 .charcoal-checkbox-input:not(:disabled):focus-visible {
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow:
+    inset 0 0 0 var(--charcoal-border-width-focus-1)
+      var(--charcoal-color-border-focus-1),
+    0 0 0 var(--charcoal-border-width-focus-2)
+      var(--charcoal-color-border-focus-2);
+}
+/* 未チェック時は inset が border の内側に入るので focus-1 も外側に描く */
+.charcoal-checkbox-input:not(:checked):not(:disabled):focus-visible {
+  box-shadow:
+    0 0 0 var(--charcoal-border-width-focus-1)
+      var(--charcoal-color-border-focus-1),
+    0 0 0
+      calc(
+        var(--charcoal-border-width-focus-1) +
+          var(--charcoal-border-width-focus-2)
+      )
+      var(--charcoal-color-border-focus-2);
 }
 .charcoal-checkbox-input:not(:disabled):focus:not(:focus-visible) {
   box-shadow: none;
@@ -61,7 +81,7 @@
 
 .charcoal-checkbox-input[aria-invalid='true'],
 .charcoal-checkbox-input[aria-invalid='true']:not(:disabled):focus {
-  box-shadow: 0 0 0 4px rgba(255, 43, 0, 0.32);
+  box-shadow: 0 0 0 4px var(--charcoal-color-border-negative);
 }
 
 .charcoal-checkbox-input[data-rounded='true'] {
@@ -82,7 +102,15 @@
 }
 
 .charcoal-checkbox-input[data-rounded='true']:not(:disabled):focus-visible {
-  box-shadow: 0 0 0 6px rgba(0, 150, 250, 0.32);
+  box-shadow:
+    0 0 0 calc(2px + var(--charcoal-border-width-focus-1))
+      var(--charcoal-color-border-focus-1),
+    0 0 0
+      calc(
+        2px + var(--charcoal-border-width-focus-1) +
+          var(--charcoal-border-width-focus-2)
+      )
+      var(--charcoal-color-border-focus-2);
 }
 
 .charcoal-checkbox-input[data-rounded='true']:checked:not(:disabled):hover {
@@ -96,7 +124,7 @@
 .charcoal-checkbox-input[data-rounded='true'][aria-invalid='true']:not(
     :disabled
   ):focus {
-  box-shadow: 0 0 0 6px rgba(255, 43, 0, 0.32);
+  box-shadow: 0 0 0 6px var(--charcoal-color-border-negative);
 }
 
 .charcoal-checkbox-input[data-rounded='true']::before {
