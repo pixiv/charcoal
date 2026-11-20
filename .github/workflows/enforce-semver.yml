@@ -11,7 +11,7 @@ env:
 
 jobs:
   enforce-semver:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/github-script@v9
         with:

@@ -12,7 +12,7 @@ permissions:
 jobs:
   metadata:
     if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'pixiv/charcoal'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       dependency-names: ${{ steps.metadata.outputs.dependency-names }}
       update-type: ${{ steps.metadata.outputs.update-type }}
@@ -27,7 +27,7 @@ jobs:
 
   label:
     needs: metadata
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Add semver label
         uses: actions/github-script@v9
@@ -54,7 +54,7 @@ jobs:
 
   comment:
     needs: metadata
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Post release notes comment
         uses: actions/github-script@v9
@@ -93,7 +93,7 @@ jobs:
     if: |
       needs.metadata.outputs.dependency-type == 'direct:development' &&
       needs.metadata.outputs.update-type != 'version-update:semver-major'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Auto-approve dev dependency updates
         uses: actions/github-script@v9

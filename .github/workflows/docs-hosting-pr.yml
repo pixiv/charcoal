@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build_and_preview:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     # NOTE: forkされたリポジトリからのPullRequestだと権限の関係でOIDCによる認証が利用できないためスキップする
     # c.f. https://github.com/pixiv/charcoal/issues/277
