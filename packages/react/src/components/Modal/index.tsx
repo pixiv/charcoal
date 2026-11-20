@@ -19,6 +19,7 @@ import { useObjectRef } from 'react-aria/useObjectRef'
 
 export type BottomSheet = boolean | 'full'
 export type Size = 'S' | 'M' | 'L'
+export type Scroll = 'outside' | 'inside'
 
 export type ModalProps = CharcoalModalOverlayProps &
   AriaDialogProps & {
@@ -27,6 +28,11 @@ export type ModalProps = CharcoalModalOverlayProps &
     title: string
     size?: Size
     bottomSheet?: BottomSheet
+    /**
+     * `inside` にするとダイアログの高さを画面内に収め、`ModalBody` だけをスクロールさせる。
+     * `ModalButtons` を `ModalBody` の外（後ろ）に置くとボタンは下に固定される
+     */
+    scroll?: Scroll
     isOpen: boolean
     onClose: () => void
     className?: string
@@ -75,6 +81,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
     title,
     size = 'M',
     bottomSheet = false,
+    scroll = 'outside',
     isDismissable,
     onClose,
     className,
@@ -127,6 +134,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             {...modalProps}
             size={size}
             bottomSheet={bottomSheet}
+            scroll={scroll}
             className={className}
           >
             <ModalContext.Provider

@@ -38,3 +38,11 @@
   padding-left: 16px;
   padding-right: 16px;
 }
+
+/* 下余白は Dialog 側が持つ。ModalButtons を ModalBody の外に置いたとき間が空きすぎないように */
+.charcoal-modal-dialog[data-scroll='inside'] .charcoal-modal-body {
+  flex-shrink: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 0;
+}
