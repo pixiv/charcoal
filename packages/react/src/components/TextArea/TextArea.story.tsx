@@ -26,7 +26,11 @@ export const Default: StoryObj<typeof TextArea> = {
     placeholder: 'Text Area',
   },
   render(args) {
-    return <TextArea {...args} />
+    return (
+      <div style={{ width: 300 }}>
+        <TextArea {...args} />
+      </div>
+    )
   },
 }
 
@@ -131,6 +135,20 @@ export const DefaultValue: StoryObj<typeof TextArea> = {
 export const AutoHeight: StoryObj<typeof TextArea> = {
   render: function Render() {
     return <TextArea autoHeight label="Label" />
+  },
+}
+
+export const AutoHeightWithFieldSizing: StoryObj<typeof TextArea> = {
+  render() {
+    return (
+      <TextArea
+        autoHeightWithFieldSizing
+        rows={3}
+        maxRows={6}
+        label="Label"
+        showCount
+      />
+    )
   },
 }
 
