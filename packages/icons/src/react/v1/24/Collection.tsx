@@ -15,9 +15,9 @@ const SvgCollection = (
     {...props}
   >
     <path
+      d="M20 7a2 2 0 012 2v6a2 2 0 01-1.796 1.99L20 17h-6l-.204-.01a2 2 0 01-1.785-1.786L12 15V9a2 2 0 012-2h6zm-6 8h6V9h-6v6z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M20 7a2 2 0 012 2v6a2 2 0 01-1.796 1.99L20 17h-6l-.204-.01a2 2 0 01-1.785-1.786L12 15V9a2 2 0 012-2h6zm-6 8h6V9h-6v6z"
       fill="currentColor"
     />
     <path
