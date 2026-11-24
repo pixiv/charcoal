@@ -11,10 +11,11 @@
  *    useInteractOutside が本番と同じ pointerdown + click の経路を通らない。
  */
 import { fireEvent, render } from '@testing-library/react'
+import { memo, useContext } from 'react'
 import { OverlayProvider } from 'react-aria'
 import { vi } from 'vitest'
 import { page, userEvent } from 'vitest/browser'
-import Modal from '.'
+import Modal, { ModalContext } from '.'
 import { ModalHeader } from './ModalPlumbing'
 
 const getBackground = () => {
@@ -241,5 +242,36 @@ describe('Modal (accessible name)', () => {
     )
 
     expect(getByRole('dialog', { name: 'custom heading' })).toBe(getDialog())
+  })
+})
+
+describe('Modal (context)', () => {
+  it('context に含まれない props が変わっても ModalContext の consumer は再レンダーしない', () => {
+    const renderCount = vi.fn()
+    const Consumer = memo(function Consumer() {
+      useContext(ModalContext)
+      renderCount()
+      return null
+    })
+    const onClose = vi.fn()
+    const renderWith = (className: string) => (
+      <OverlayProvider>
+        <Modal
+          title="test modal"
+          isOpen
+          onClose={onClose}
+          className={className}
+        >
+          <ModalHeader />
+          <Consumer />
+        </Modal>
+      </OverlayProvider>
+    )
+
+    const { rerender } = render(renderWith('a'))
+    renderCount.mockClear()
+    rerender(renderWith('b'))
+
+    expect(renderCount).not.toHaveBeenCalled()
   })
 })

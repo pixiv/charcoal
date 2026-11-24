@@ -1,18 +1,18 @@
-import { forwardRef } from 'react'
+import { forwardRef, useMemo } from 'react'
 import * as React from 'react'
 import { useDialog } from 'react-aria/useDialog'
 import { useForwardedRef } from '../../../_lib/useForwardedRef'
-import { Size, BottomSheet } from '..'
+import { Size, BottomSheet, ModalContext, ModalContextValue } from '..'
 
 import './index.css'
 import { useClassNames } from '../../../_lib/useClassNames'
 
 export const Dialog = forwardRef<
   HTMLDivElement,
-  Omit<React.ComponentPropsWithoutRef<'div'>, 'children'> & {
+  React.ComponentPropsWithoutRef<'div'> & {
     size: Size
     bottomSheet: BottomSheet
-    children: (titleProps: React.HTMLAttributes<HTMLElement>) => React.ReactNode
+    context: Omit<ModalContextValue, 'titleProps'>
   }
 >(function Dialog(
   {
@@ -20,6 +20,7 @@ export const Dialog = forwardRef<
     bottomSheet,
     className,
     children,
+    context,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledby,
     ...props
@@ -36,6 +37,12 @@ export const Dialog = forwardRef<
     ref,
   )
 
+  const titleId = titleProps.id
+  const contextValue = useMemo(
+    () => ({ ...context, titleProps: { id: titleId } }),
+    [context, titleId],
+  )
+
   const classNames = useClassNames('charcoal-modal-dialog', className)
   return (
     <div
@@ -50,7 +57,9 @@ export const Dialog = forwardRef<
       ref={ref}
       {...props}
     >
-      {children(titleProps)}
+      <ModalContext.Provider value={contextValue}>
+        {children}
+      </ModalContext.Provider>
     </div>
   )
 })
