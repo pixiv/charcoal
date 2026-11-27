@@ -1,4 +1,4 @@
-import { useContext, forwardRef, memo } from 'react'
+import { useContext, forwardRef, memo, useMemo } from 'react'
 import * as React from 'react'
 import type { AriaDialogProps } from 'react-aria/useDialog'
 import Button, { ButtonProps } from '../Button'
@@ -108,6 +108,11 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
   const transitionEnabled = isMobile && bottomSheet !== false
   const showDismiss = !isMobile || bottomSheet !== true
 
+  const context = useMemo(
+    () => ({ title, close: onClose, showDismiss, bottomSheet }),
+    [title, onClose, showDismiss, bottomSheet],
+  )
+
   const bgRef = React.useRef<HTMLDivElement>(null)
 
   const { isPresent, animationState, handleTransitionEnd } =
@@ -136,24 +141,17 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
             bottomSheet={bottomSheet}
             scroll={scroll}
             className={className}
+            aria-label={props['aria-label']}
+            aria-labelledby={props['aria-labelledby']}
+            context={context}
           >
-            <ModalContext.Provider
-              value={{
-                titleProps: {},
-                title,
-                close: onClose,
-                showDismiss,
-                bottomSheet,
-              }}
-            >
-              {children}
-              {isDismissable === true && (
-                <ModalCloseButton
-                  aria-label={closeButtonAriaLabel}
-                  onClick={onClose}
-                />
-              )}
-            </ModalContext.Provider>
+            {children}
+            {isDismissable === true && (
+              <ModalCloseButton
+                aria-label={closeButtonAriaLabel}
+                onClick={onClose}
+              />
+            )}
           </Dialog>
         </ModalBackgroundContext.Provider>
       </div>
@@ -163,16 +161,15 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(function ModalInner(
 
 export default memo(Modal)
 
-export const ModalContext = React.createContext<{
-  /**
-   * @deprecated
-   */
+export type ModalContextValue = {
   titleProps: React.HTMLAttributes<HTMLElement>
   title: string
   close?: () => void
   showDismiss: boolean
   bottomSheet: BottomSheet
-}>({
+}
+
+export const ModalContext = React.createContext<ModalContextValue>({
   titleProps: {},
   title: '',
   close: undefined,

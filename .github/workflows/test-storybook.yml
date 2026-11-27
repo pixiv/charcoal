@@ -14,7 +14,7 @@ jobs:
   prepare-base-branch:
     name: Prepare base branch image snapshots
     timeout-minutes: 20
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout base branch
         uses: actions/checkout@v7
@@ -29,7 +29,7 @@ jobs:
         id: cache-image-snapshots
         with:
           path: __image_snapshots__
-          key: image-snapshots-${{ steps.commit-hash.outputs.hash }}
+          key: image-snapshots-ubuntu-26.04-${{ steps.commit-hash.outputs.hash }}
       - name: setup pnpm
         uses: pnpm/action-setup@v6
         with:
@@ -48,7 +48,7 @@ jobs:
         with:
           path: |
             /home/runner/.cache/ms-playwright/
-          key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ubuntu-26.04-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install Playwright
         if: steps.cache-image-snapshots.outputs.cache-hit != 'true'
         run: pnpm playwright install --with-deps
@@ -71,7 +71,7 @@ jobs:
   test-storybook:
     name: Run image snapshot test
     timeout-minutes: 20
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     needs: prepare-base-branch
     steps:
       - name: Checkout branch
@@ -94,7 +94,7 @@ jobs:
         with:
           path: |
             /home/runner/.cache/ms-playwright/
-          key: ${{ runner.os }}-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ubuntu-26.04-playwright-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install Playwright
         run: pnpm playwright install --with-deps
       - name: Build Storybook
