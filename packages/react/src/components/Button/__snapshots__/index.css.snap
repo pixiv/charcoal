@@ -44,7 +44,10 @@
 
 .charcoal-button:not(:disabled):not([aria-disabled]):focus-visible, .charcoal-button[aria-disabled='false']:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 150, 250, 0.32);
+  box-shadow: inset 0 0 0 var(--charcoal-border-width-focus-1)
+        var(--charcoal-color-border-focus-1),
+      0 0 0 var(--charcoal-border-width-focus-2)
+        var(--charcoal-color-border-focus-2);
 }
 
 .charcoal-button:not(:disabled):not([aria-disabled]):hover, .charcoal-button[aria-disabled='false']:hover {
