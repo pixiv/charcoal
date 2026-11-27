@@ -24,10 +24,10 @@ describe('TextField component', () => {
     expect(screen.queryByText('任意')).not.toBeInTheDocument()
   })
 
-  it('passes required to the input element', () => {
-    const { getByRole } = render(<TextField required />)
+  it('does not enable native required validation', () => {
+    render(<TextField required />)
 
-    expect(getByRole('textbox')).toBeRequired()
+    expect(screen.getByRole('textbox')).not.toBeRequired()
   })
 
   it('should not render prefix and suffix when not provided', () => {

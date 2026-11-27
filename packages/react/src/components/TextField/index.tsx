@@ -124,7 +124,6 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
               maxLength={maxLength}
               onChange={handleChange}
               disabled={disabled}
-              required={required}
               ref={mergeRefs(forwardRef, inputRef)}
               type={type}
               value={value}
