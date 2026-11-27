@@ -44,3 +44,17 @@
 .charcoal-modal-dialog:focus {
   outline: none;
 }
+
+/* 子は縮ませず、ModalBody だけが縮んでスクロールする（子の並び順に依存しない）。
+   ModalHeader は height 指定なので、flex-shrink: 0 がないと中身の高さまで潰れる */
+.charcoal-modal-dialog[data-scroll='inside'] {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.charcoal-modal-dialog[data-scroll='inside'] > * {
+  flex-shrink: 0;
+}

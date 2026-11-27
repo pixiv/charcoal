@@ -2,7 +2,7 @@ import { forwardRef, useMemo } from 'react'
 import * as React from 'react'
 import { useDialog } from 'react-aria/useDialog'
 import { useForwardedRef } from '../../../_lib/useForwardedRef'
-import { Size, BottomSheet, ModalContext, ModalContextValue } from '..'
+import { Size, BottomSheet, Scroll, ModalContext, ModalContextValue } from '..'
 
 import './index.css'
 import { useClassNames } from '../../../_lib/useClassNames'
@@ -12,12 +12,14 @@ export const Dialog = forwardRef<
   React.ComponentPropsWithoutRef<'div'> & {
     size: Size
     bottomSheet: BottomSheet
+    scroll: Scroll
     context: Omit<ModalContextValue, 'titleProps'>
   }
 >(function Dialog(
   {
     size,
     bottomSheet,
+    scroll,
     className,
     children,
     context,
@@ -54,6 +56,7 @@ export const Dialog = forwardRef<
       aria-labelledby={dialogProps['aria-labelledby']}
       onBlur={dialogProps.onBlur}
       data-size={size}
+      data-scroll={scroll}
       ref={ref}
       {...props}
     >

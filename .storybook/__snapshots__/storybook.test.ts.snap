@@ -6914,6 +6914,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
           aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
+          data-scroll="outside"
           data-size="M"
           role="dialog"
           tabindex="-1"
@@ -7153,6 +7154,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
           aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="true"
+          data-scroll="outside"
           data-size="M"
           role="dialog"
           tabindex="-1"
@@ -7257,6 +7259,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
           aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
+          data-scroll="outside"
           data-size="M"
           role="dialog"
           tabindex="-1"
@@ -7496,6 +7499,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
           aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="full"
+          data-scroll="outside"
           data-size="M"
           role="dialog"
           tabindex="-1"
@@ -7670,6 +7674,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
           aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
+          data-scroll="outside"
           data-size="M"
           role="dialog"
           tabindex="-1"
@@ -7716,6 +7721,162 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
 </div>
 `;
 
+exports[`Storybook Tests > react/Modal > react/Modal > ScrollInside 1`] = `
+<div>
+  <div
+    data-dark="false"
+  >
+    <div
+      data-overlay-container="true"
+    >
+      <button
+        aria-hidden="true"
+        class="charcoal-button"
+      >
+        Open Modal
+      </button>
+      <div
+        class="charcoal-modal-background"
+        data-bottom-sheet="false"
+        style="z-index: 10;"
+      >
+        <div
+          aria-labelledby="test-id"
+          class="charcoal-modal-dialog"
+          data-bottom-sheet="false"
+          data-scroll="inside"
+          data-size="M"
+          role="dialog"
+          tabindex="-1"
+        >
+          <div
+            class="charcoal-modal-header-root"
+            data-bottom-sheet="false"
+          >
+            <div
+              class="charcoal-modal-header-title"
+              id="test-id"
+            >
+              react/Title
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-body"
+          >
+            <div
+              style="display: grid; gap: 24px;"
+            >
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                1
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                2
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                3
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                4
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                5
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                6
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                7
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                8
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                9
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                10
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                11
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+              <div
+                style="font-size: 14px; line-height: 22px; padding: 0px 16px; color: var(--charcoal-text2);"
+              >
+                12
+                . Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod placeat tenetur, necessitatibus laudantium cumque exercitationem provident. Quaerat iure enim, eveniet dolores earum odio quo possimus fugiat aspernatur, numquam, commodi repellat.
+              </div>
+            </div>
+          </div>
+          <div
+            class="charcoal-modal-buttons"
+          >
+            <button
+              class="charcoal-button"
+              data-full-width="true"
+              data-variant="Primary"
+            >
+              Apply
+            </button>
+            <button
+              class="charcoal-button"
+              data-full-width="true"
+            >
+              Cancel
+            </button>
+          </div>
+          <button
+            aria-label="Close"
+            class="charcoal-icon-button charcoal-modal-close-button"
+            data-active="false"
+            data-size="S"
+            data-variant="Default"
+            type="button"
+          >
+            <pixiv-icon
+              name="24/Close"
+              style="--charcoal-icon-size: 24px;"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Tests > react/Modal > react/Modal > TokenV2 1`] = `
 <div>
   <div
@@ -7739,6 +7900,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > TokenV2 1`] = `
           aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
+          data-scroll="outside"
           data-size="M"
           role="dialog"
           tabindex="-1"
