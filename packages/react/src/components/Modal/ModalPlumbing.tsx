@@ -11,7 +11,9 @@ export function ModalHeader() {
       className="charcoal-modal-header-root"
       data-bottom-sheet={modalCtx.bottomSheet}
     >
-      <div className="charcoal-modal-header-title">{modalCtx.title}</div>
+      <div {...modalCtx.titleProps} className="charcoal-modal-header-title">
+        {modalCtx.title}
+      </div>
     </div>
   )
 }

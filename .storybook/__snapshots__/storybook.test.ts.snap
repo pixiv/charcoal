@@ -6911,6 +6911,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
         style="z-index: 10;"
       >
         <div
+          aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
           data-size="M"
@@ -6923,6 +6924,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BackgroundScroll 1`] = `
           >
             <div
               class="charcoal-modal-header-title"
+              id="test-id"
             >
               react/Title
             </div>
@@ -7148,6 +7150,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
         style="z-index: 10;"
       >
         <div
+          aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="true"
           data-size="M"
@@ -7160,6 +7163,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > BottomSheet 1`] = `
           >
             <div
               class="charcoal-modal-header-title"
+              id="test-id"
             >
               react/Title
             </div>
@@ -7250,6 +7254,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
         style="z-index: 10;"
       >
         <div
+          aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
           data-size="M"
@@ -7262,6 +7267,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > Default 1`] = `
           >
             <div
               class="charcoal-modal-header-title"
+              id="test-id"
             >
               react/Title
             </div>
@@ -7487,6 +7493,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
         style="z-index: 10;"
       >
         <div
+          aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="full"
           data-size="M"
@@ -7499,6 +7506,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > FullBottomSheet 1`] = `
           >
             <div
               class="charcoal-modal-header-title"
+              id="test-id"
             >
               react/Title
             </div>
@@ -7659,6 +7667,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
         style="z-index: 10;"
       >
         <div
+          aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
           data-size="M"
@@ -7671,6 +7680,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > NotDismmissableStory 1`] 
           >
             <div
               class="charcoal-modal-header-title"
+              id="test-id"
             >
               react/Title
             </div>
@@ -7726,6 +7736,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > TokenV2 1`] = `
         style="z-index: 10;"
       >
         <div
+          aria-labelledby="test-id"
           class="charcoal-modal-dialog"
           data-bottom-sheet="false"
           data-size="M"
@@ -7738,6 +7749,7 @@ exports[`Storybook Tests > react/Modal > react/Modal > TokenV2 1`] = `
           >
             <div
               class="charcoal-modal-header-title"
+              id="test-id"
             >
               react/Title
             </div>
