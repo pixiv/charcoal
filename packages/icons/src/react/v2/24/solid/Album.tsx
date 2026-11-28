@@ -16,9 +16,9 @@ const SvgAlbum = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       fill="currentColor"
     />
     <path
+      d="M6.25 7.75a3 3 0 00-3 3v6.547l3.627-2.887a2.75 2.75 0 013.437.01l3.134 2.522a.25.25 0 00.302.009l1.732-1.23a2.75 2.75 0 013.155-.02l2.113 1.46V10.75a3 3 0 00-3-3H6.25zm1.396 4.016a1 1 0 11-2 0 1 1 0 012 0z"
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M6.25 7.75a3 3 0 00-3 3v6.547l3.627-2.887a2.75 2.75 0 013.437.01l3.134 2.522a.25.25 0 00.302.009l1.732-1.23a2.75 2.75 0 013.155-.02l2.113 1.46V10.75a3 3 0 00-3-3H6.25zm1.396 4.016a1 1 0 11-2 0 1 1 0 012 0z"
       fill="currentColor"
     />
     <path
