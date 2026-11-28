@@ -2,10 +2,12 @@
  * Figma's tree read as the thing to build: the nodes worth describing, and what each one
  * is made of, with the design system's own token names on the materials.
  */
-import { material, normalize, rankTokens } from './tokens.mjs'
+import { normalize, rankTokens } from './tokens.mjs'
+import { say, v1Style, written } from './vocabulary.mjs'
 
 /** @import { FigmaNode, Paint } from './figma.mjs' */
 /** @import { Prefer, Tokens } from './tokens.mjs' */
+/** @import { Ref, Vocabulary } from './vocabulary.mjs' */
 
 /**
  * A bitmap and the `object-fit` its crop implies.
@@ -13,6 +15,12 @@ import { material, normalize, rankTokens } from './tokens.mjs'
  * @typedef {object} ImageFill
  * @property {string} ref
  * @property {string} fit
+ */
+
+/**
+ * A component as the payload describes it.
+ *
+ * @typedef {{ name: string, componentSetId?: string, remote?: boolean }} Component
  */
 
 /**
@@ -30,7 +38,10 @@ import { material, normalize, rankTokens } from './tokens.mjs'
  * @property {FigmaNode} raw
  * @property {FigmaNode[]} children
  * @property {string} id
- * @property {string} [component]
+ * @property {string} [component] the component's name — the set's, for a variant
+ * @property {string} [variant] the variant's properties, `Size=S, State=Default`
+ * @property {string} [componentKey] the set's id for a variant, else the component's
+ * @property {boolean} [remote] false for a component defined in this file
  * @property {string} [parentId]
  * @property {Node} [parent]
  * @property {ImageFill} [image]
@@ -76,15 +87,78 @@ function unnameable(paints) {
  * @returns {string | undefined}
  */
 function solid(paints) {
-  for (const paint of paints ?? []) {
+  return solidAt(paints)?.value
+}
+
+/**
+ * The first visible solid paint and where it sits in the list, which is how a bound
+ * variable on the node says which paint it is bound to.
+ *
+ * @param {Paint[] | undefined} paints
+ * @returns {{ value: string, index: number, paint: Paint } | undefined}
+ */
+function solidAt(paints) {
+  for (const [index, paint] of (paints ?? []).entries()) {
     if (paint.visible !== false && paint.type === 'SOLID' && paint.color) {
-      return rgba({
+      const value = rgba({
         ...paint.color,
         a: (paint.color.a ?? 1) * (paint.opacity ?? 1),
       })
+      return { value, index, paint }
     }
   }
   return undefined
+}
+
+/**
+ * The variable id an alias, or a list of them, points at.
+ *
+ * @param {unknown} bound
+ * @returns {string | undefined}
+ */
+function aliasId(bound) {
+  if (Array.isArray(bound)) {
+    return aliasId(bound[0])
+  }
+  if (bound && typeof bound === 'object') {
+    const alias = /** @type {{ id?: unknown }} */ (bound)
+    if (typeof alias.id === 'string') {
+      return alias.id
+    }
+    // Per-corner and per-side bindings come as an object of aliases; one is enough to
+    // say which variable the designer meant.
+    return aliasId(Object.values(bound)[0])
+  }
+  return undefined
+}
+
+/**
+ * What the design named a paint: the variable bound to it, else the style on the node.
+ *
+ * @param {FigmaNode} raw
+ * @param {'fills' | 'strokes'} which
+ * @param {{ index: number, paint: Paint } | undefined} at
+ * @returns {Ref | undefined}
+ */
+function paintRef(raw, which, at) {
+  if (!at) {
+    return undefined
+  }
+  const bound = /** @type {Record<string, unknown>} */ (
+    raw.boundVariables ?? {}
+  )
+  const own = /** @type {{ boundVariables?: Record<string, unknown> }} */ (
+    at.paint
+  )
+  const variable =
+    aliasId(own.boundVariables?.color) ??
+    aliasId(/** @type {unknown[] | undefined} */ (bound[which])?.[at.index])
+  const styles = raw.styles ?? {}
+  const style =
+    which === 'fills'
+      ? (styles.fill ?? styles.fills)
+      : (styles.stroke ?? styles.strokes)
+  return variable || style ? { variable, style } : undefined
 }
 
 /**
@@ -182,10 +256,11 @@ export function imageFill(raw) {
  * Flattens Figma's tree into the nodes worth describing, in document order.
  *
  * @param {FigmaNode} document
- * @param {Record<string, { name: string }>} components
+ * @param {Record<string, Component>} components
+ * @param {Record<string, { name: string }>} [componentSets]
  * @returns {Node[]}
  */
-export function flatten(document, components) {
+export function flatten(document, components, componentSets = {}) {
   const origin = document.absoluteBoundingBox ?? { x: 0, y: 0 }
   /** @type {Node[]} */
   const out = []
@@ -213,12 +288,21 @@ export function flatten(document, components) {
       // A rounded rectangle is a rectangle in Figma's vocabulary; the pack distinguishes
       // them because the radius is what tells an implementation which it is.
       children: raw.children ?? [],
-      component: raw.componentId
-        ? components[raw.componentId]?.name
-        : undefined,
       id: raw.id,
       parentId: parent?.raw?.id,
       parent,
+    }
+    // A variant is named for its properties and its set for the component, so an
+    // instance is both: `Icon Button` with `Size=S, State=Default`.
+    const component = raw.componentId ? components[raw.componentId] : undefined
+    const set = component?.componentSetId
+      ? componentSets[component.componentSetId]
+      : undefined
+    if (component) {
+      node.component = set?.name ?? component.name
+      node.variant = set ? component.name : undefined
+      node.componentKey = component.componentSetId ?? raw.componentId
+      node.remote = component.remote
     }
     if (node.kind === 'rectangle' && (raw.cornerRadius ?? 0) > 0) {
       node.kind = 'rounded-rectangle'
@@ -341,28 +425,44 @@ function walkSurface(node, tokens) {
 /**
  * Everything the design states about one node, as token-named declarations.
  *
+ * A value the design named — a style, a bound variable — is written as that name; only
+ * a value nobody named is ranked against the tokens.
+ *
  * @param {Node} node
  * @param {Tokens} tokens
+ * @param {Vocabulary} [vocab]
  * @returns {string[]}
  */
-export function materialsOf(node, tokens) {
+export function materialsOf(node, tokens, vocab) {
   const raw = node.raw
   /** @type {string[]} */
   const out = []
+  const bound = /** @type {Record<string, unknown>} */ (
+    raw.boundVariables ?? {}
+  )
   /**
    * @param {string} property
    * @param {string | number | undefined} value
    * @param {Prefer} [prefer]
+   * @param {Ref} [ref]
+   * @param {string} [use]
    */
-  const push = (property, value, prefer) => {
-    const line = material(property, value, tokens, prefer)
+  const push = (property, value, prefer, ref, use) => {
+    const line = say(property, value, tokens, prefer, vocab, ref, use)
     if (line) {
       out.push(line)
     }
   }
+  /** @param {string} field */
+  const variableOf = (field) => {
+    const variable = aliasId(bound[field])
+    return variable ? { variable } : undefined
+  }
 
   // What a fill means depends on what it fills: words, an icon's shape, or a surface.
-  const fill = solid(raw.fills)
+  const fillAt = solidAt(raw.fills)
+  const fill = fillAt?.value
+  const fillRef = paintRef(raw, 'fills', fillAt)
   const property =
     node.kind === 'text' || node.kind === 'vector' ? 'color' : 'background'
   const painted = fill === undefined && unnameable(raw.fills)
@@ -376,10 +476,13 @@ export function materialsOf(node, tokens) {
     // for the ancestor walk.
     const family = node.kind === 'text' ? 'text' : 'icon'
     const on = surfaceRole(node, tokens)
-    push('color', fill, [
-      on.map((role) => `${family}/on-${role}/`),
-      `${family}/`,
-    ])
+    push(
+      'color',
+      fill,
+      [on.map((role) => `${family}/on-${role}/`), `${family}/`],
+      fillRef,
+      node.kind,
+    )
   } else {
     // The root frame is the screen's own ground; a box inside it is a container.
     // references/color.md reserves `container.default` for Modal and Menu.
@@ -389,6 +492,8 @@ export function materialsOf(node, tokens) {
       node.depth === 0
         ? ['background/', 'container/']
         : ['container/', 'background/'],
+      fillRef,
+      node.depth === 0 ? 'ground' : 'box',
     )
   }
 
@@ -405,7 +510,7 @@ export function materialsOf(node, tokens) {
     if (raw.primaryAxisAlignItems === 'SPACE_BETWEEN') {
       out.push('justify-content: space-between')
     } else if (raw.itemSpacing) {
-      push('gap', raw.itemSpacing)
+      push('gap', raw.itemSpacing, undefined, variableOf('itemSpacing'))
     }
   }
 
@@ -431,6 +536,16 @@ export function materialsOf(node, tokens) {
           [first, pad[a]],
           [second, pad[b]],
         ]
+  /** @type {Record<string, string>} */
+  const side = {
+    padding: 'paddingTop',
+    'padding-inline': 'paddingLeft',
+    'padding-block': 'paddingTop',
+    'padding-top': 'paddingTop',
+    'padding-right': 'paddingRight',
+    'padding-bottom': 'paddingBottom',
+    'padding-left': 'paddingLeft',
+  }
   /** @type {[string, number][]} */
   const padding =
     pad.top === pad.right && pad.right === pad.bottom && pad.bottom === pad.left
@@ -452,20 +567,34 @@ export function materialsOf(node, tokens) {
           ),
         ]
   for (const [property, value] of padding.filter(([, value]) => value)) {
-    push(property, value)
+    push(property, value, undefined, variableOf(side[property] ?? ''))
   }
 
   if (raw.cornerRadius) {
-    push('border-radius', raw.cornerRadius)
+    push(
+      'border-radius',
+      raw.cornerRadius,
+      undefined,
+      variableOf('cornerRadius') ??
+        variableOf('topLeftRadius') ??
+        variableOf('rectangleCornerRadii'),
+    )
   } else if (raw.rectangleCornerRadii?.some((r) => r > 0)) {
     // Mixed corners have no single token; state the four so the radius is not lost.
     out.push(
       `border-radius: ${raw.rectangleCornerRadii.map((r) => `${r}px`).join(' ')}`,
     )
   }
-  const stroke = solid(raw.strokes)
+  const strokeAt = solidAt(raw.strokes)
+  const stroke = strokeAt?.value
   if (stroke) {
-    push('border-color', stroke, ['border/'])
+    push(
+      'border-color',
+      stroke,
+      ['border/'],
+      paintRef(raw, 'strokes', strokeAt),
+      'border',
+    )
     // A list divider is a stroke on one side only. Stating `border-width` alone boxes
     // every row, which is the opposite of what references/border.md asks for.
     const sides = raw.individualStrokeWeights
@@ -481,14 +610,327 @@ export function materialsOf(node, tokens) {
       push('border-width', raw.strokeWeight)
     }
   }
-  if (raw.style?.fontSize) {
-    push('font-size', raw.style.fontSize)
-  }
-  if (raw.style?.lineHeightPx) {
-    push('line-height', raw.style.lineHeightPx)
+  const text = typography(raw, vocab)
+  if (text.role) {
+    out.push(written('typography', text.role, tokens, undefined, vocab))
+  } else {
+    if (raw.style?.fontSize) {
+      const line = say('font-size', raw.style.fontSize, tokens, undefined)
+      out.push(text.named && line ? `${line} /* ${text.named} */` : `${line}`)
+    }
+    if (raw.style?.lineHeightPx) {
+      push('line-height', raw.style.lineHeightPx)
+    }
   }
   if (raw.style?.fontWeight && raw.style.fontWeight !== 400) {
     out.push(`font-weight: ${raw.style.fontWeight}`)
   }
   return out
+}
+
+/**
+ * The type a text node is set in, as one v1 role where the pack writes v1.
+ *
+ * The role carries both the size and the line height, so where it applies the two
+ * separate lines would only say the same thing again. A text style whose name the
+ * theme has no size for is kept as a comment: it is what the designer called it.
+ *
+ * @param {FigmaNode} raw
+ * @param {Vocabulary | undefined} vocab
+ * @returns {{ role?: import('./vocabulary.mjs').Role, named?: string }}
+ */
+function typography(raw, vocab) {
+  const size = raw.style?.fontSize
+  if (!size) {
+    return {}
+  }
+  const styleId = raw.styles?.text
+  const name = styleId ? vocab?.styles[styleId]?.name : undefined
+  if (name) {
+    const role = v1Style(vocab?.v1, 'typography', name)
+    if (role && vocab?.mode === 'v1') {
+      return { role }
+    }
+    // The v2 pack writes the size and line height as v2 tokens either way; the style
+    // name only needs saying where it did not resolve to the v1 scale.
+    return role ? {} : { named: `style: ${name}` }
+  }
+  if (vocab?.mode === 'v1' && vocab.v1) {
+    const role = vocab.v1.typography.get(String(size))
+    if (role && role.lineHeight === raw.style?.lineHeightPx) {
+      return { role }
+    }
+  }
+  return {}
+}
+
+/**
+ * Which nodes the pack describes, and how.
+ *
+ * Inside a library instance the design shows how Figma composed the component, and the
+ * library composes it differently: a TextField is a 22px label, a 4px gap and a 40px
+ * field in the design, and one 40px element in the code. Describing those parts invites
+ * an implementation that reproduces them, so a library instance is one line, with the
+ * words inside it lifted onto that line.
+ *
+ * A component defined in the file itself is different. It is the screen's own unit — a
+ * list row, a tab bar — and nothing but the design says what is inside it, so it is
+ * described. Where the same one repeats with only its words and pictures changed, the
+ * first is described in full and the rest are one line each, so a list of fifty rows
+ * does not become fifty copies of the same structure.
+ *
+ * A payload that does not say whether a component is the library's — a `.fig` — is
+ * treated as the library's, which is what the pack always did.
+ *
+ * The packed root is never collapsed: packing an instance means wanting its insides.
+ *
+ * @param {Node[]} nodes in document order, as `flatten` returns them
+ * @param {Record<string, Component>} components
+ * @param {(node: Node) => string[]} materialsFn
+ */
+export function outline(nodes, components, materialsFn) {
+  /** @param {Node} n */
+  const collapses = (n) =>
+    n.kind === 'instance' &&
+    n.depth > 0 &&
+    components[n.raw.componentId ?? '']?.remote !== false
+
+  // `nodes` is in document order, so the outermost enclosing library instance is
+  // whatever the parent's was, or the parent itself.
+  /** @type {Map<Node, Node | undefined>} */
+  const owners = new Map()
+  /** @type {Node[]} */
+  const all = []
+  for (const node of nodes) {
+    const parent = node.parent
+    const owner = parent
+      ? (owners.get(parent) ?? (collapses(parent) ? parent : undefined))
+      : undefined
+    owners.set(node, owner)
+    if (owner) {
+      if (node.raw.characters) {
+        ;(owner.words ??= []).push(node.raw.characters)
+      }
+      continue
+    }
+    if (node.depth > 0) {
+      all.push(node)
+    }
+  }
+
+  const materialsFor = new Map(all.map((node) => [node, materialsFn(node)]))
+
+  /** @type {Map<string, number>} */
+  const uses = new Map()
+  for (const node of all) {
+    if (node.remote === false && node.componentKey) {
+      uses.set(node.componentKey, (uses.get(node.componentKey) ?? 0) + 1)
+    }
+  }
+
+  /** @type {Map<Node, { of: Node, words: string[], images: ImageFill[] }>} */
+  const repeats = new Map()
+  /** @type {Map<string, Node>} */
+  const firstBySignature = new Map()
+  /** @type {Node[]} */
+  const described = []
+  for (let i = 0; i < all.length; i++) {
+    const node = /** @type {Node} */ (all[i])
+    described.push(node)
+    if (node.remote !== false || !node.componentKey) {
+      continue
+    }
+    let end = i + 1
+    while (
+      end < all.length &&
+      /** @type {Node} */ (all[end]).depth > node.depth
+    ) {
+      end++
+    }
+    const subtree = all.slice(i, end)
+    // What makes two rows the same: their structure and materials. Their words, their
+    // pictures and the boxes those push around are what a list is expected to vary.
+    const signature = [
+      node.componentKey,
+      node.variant ?? '',
+      ...subtree.map((n) =>
+        [
+          n.depth - node.depth,
+          n.kind,
+          n.name,
+          n.image ? 'image' : '',
+          (materialsFor.get(n) ?? []).join(';'),
+        ].join('|'),
+      ),
+    ].join('\n')
+    const first = firstBySignature.get(signature)
+    if (!first) {
+      firstBySignature.set(signature, node)
+      continue
+    }
+    repeats.set(node, {
+      of: first,
+      words: subtree.flatMap((n) => [
+        ...(n.raw.characters ? [n.raw.characters] : []),
+        ...(n.words ?? []),
+      ]),
+      images: subtree.flatMap((n) => (n.image ? [n.image] : [])),
+    })
+    i = end - 1
+  }
+  return { described, materialsFor, repeats, uses }
+}
+
+/** What can hold frames rather than be one. */
+const CONTAINERS = new Set(['DOCUMENT', 'CANVAS', 'SECTION'])
+
+/**
+ * Whether a node is a page or a section — a place frames are laid out on, not a screen.
+ *
+ * @param {FigmaNode} raw
+ */
+export function isContainer(raw) {
+  return CONTAINERS.has(raw.type)
+}
+
+/** A screen is at least this big on both sides; a smaller box beside one is a note. */
+const SCREEN = 240
+
+/**
+ * A frame on a page or in a section, with the notes laid out beside it.
+ *
+ * @typedef {object} ListedFrame
+ * @property {string} id
+ * @property {string} name
+ * @property {string} type
+ * @property {number} width
+ * @property {number} height
+ * @property {number} nodes every visible node in it, itself included
+ * @property {string} [section] the section it sits in, if any
+ * @property {string[]} labels the words of the notes nearest it
+ * @property {boolean} obsolete its name or a note says it is not current
+ */
+
+/**
+ * The frames a page or section holds, for choosing which to pack.
+ *
+ * A designer lays a screen's states out as sibling frames — base, hover, empty, error,
+ * dark — and labels them with text or annotation instances placed beside them. The
+ * labels say which frame is which far more reliably than the frames' names do, so each
+ * is attached to the frame it sits nearest.
+ *
+ * @param {FigmaNode} root
+ * @returns {ListedFrame[]}
+ */
+export function listFrames(root) {
+  /** @type {ListedFrame[]} */
+  const frames = []
+  /** @type {{ box: { x: number, y: number, width: number, height: number }, frame: ListedFrame }[]} */
+  const placed = []
+  /** @type {{ box: { x: number, y: number, width: number, height: number }, text: string, section?: string }[]} */
+  const notes = []
+
+  /** @param {FigmaNode} raw */
+  const count = (raw) => {
+    if (raw.visible === false) {
+      return 0
+    }
+    let total = 1
+    for (const child of raw.children ?? []) {
+      total += count(child)
+    }
+    return total
+  }
+  /** @param {FigmaNode} raw */
+  const words = (raw) => {
+    /** @type {string[]} */
+    const out = []
+    const visit = (/** @type {FigmaNode} */ n) => {
+      if (n.visible === false) {
+        return
+      }
+      if (n.characters) {
+        out.push(n.characters.trim())
+      }
+      ;(n.children ?? []).forEach(visit)
+    }
+    visit(raw)
+    return out.filter(Boolean)
+  }
+
+  /**
+   * @param {FigmaNode} raw
+   * @param {string | undefined} section
+   */
+  const walk = (raw, section) => {
+    for (const child of raw.children ?? []) {
+      if (child.visible === false) {
+        continue
+      }
+      if (isContainer(child)) {
+        walk(child, child.type === 'SECTION' ? child.name : section)
+        continue
+      }
+      const box = child.absoluteBoundingBox
+      if (!box) {
+        continue
+      }
+      const screen =
+        ['FRAME', 'COMPONENT', 'COMPONENT_SET', 'INSTANCE'].includes(
+          child.type,
+        ) &&
+        box.width >= SCREEN &&
+        box.height >= SCREEN
+      if (screen) {
+        /** @type {ListedFrame} */
+        const frame = {
+          id: child.id,
+          name: child.name,
+          type: child.type,
+          width: Math.round(box.width),
+          height: Math.round(box.height),
+          nodes: count(child),
+          labels: [],
+          obsolete: false,
+          ...(section ? { section } : {}),
+        }
+        frames.push(frame)
+        placed.push({ box, frame })
+        continue
+      }
+      const text = words(child).join(' ').slice(0, 120)
+      if (text) {
+        notes.push({ box, text, section })
+      }
+    }
+  }
+  walk(root, root.type === 'SECTION' ? root.name : undefined)
+
+  // The gap between two boxes, zero where they overlap.
+  /**
+   * @param {{ x: number, y: number, width: number, height: number }} a
+   * @param {{ x: number, y: number, width: number, height: number }} b
+   */
+  const gap = (a, b) =>
+    Math.hypot(
+      Math.max(0, a.x - (b.x + b.width), b.x - (a.x + a.width)),
+      Math.max(0, a.y - (b.y + b.height), b.y - (a.y + a.height)),
+    )
+  for (const note of notes) {
+    let best
+    let bestGap = 600
+    for (const { box, frame } of placed) {
+      const d = gap(note.box, box)
+      if (d < bestGap && frame.section === note.section) {
+        best = frame
+        bestGap = d
+      }
+    }
+    best?.labels.push(note.text)
+  }
+  const stale = /\b(obsolete|obsoleted|deprecated|archived?|unused|old)\b/i
+  for (const frame of frames) {
+    frame.obsolete = [frame.name, ...frame.labels].some((t) => stale.test(t))
+  }
+  return frames
 }

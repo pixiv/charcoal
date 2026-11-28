@@ -6,9 +6,13 @@ import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
 import { loadTokens, normalize, rankTokens } from './tokens.mjs'
 import {
+  flatten,
   imageFill,
   isFillTransform,
+  isContainer,
+  listFrames,
   materialsOf,
+  outline,
   surfaceRole,
 } from './design.mjs'
 import { parseUrl } from './figma.mjs'
@@ -500,4 +504,185 @@ test('a gradient is named, because silence reads as an unpainted box', () => {
       tokens,
     ),
   ).toEqual([])
+})
+
+/** A row: a local component holding a title and a library button. */
+const row = (id: string, y: number, title: string, componentId = 'row') =>
+  figma({
+    id,
+    type: 'INSTANCE',
+    name: 'Row',
+    componentId,
+    absoluteBoundingBox: { x: 0, y, width: 300, height: 40 },
+    children: [
+      figma({
+        id: `${id}-t`,
+        type: 'TEXT',
+        name: 'Title',
+        characters: title,
+        absoluteBoundingBox: { x: 8, y, width: 100, height: 20 },
+      }),
+      figma({
+        id: `${id}-b`,
+        type: 'INSTANCE',
+        name: 'Button',
+        componentId: 'button',
+        absoluteBoundingBox: { x: 200, y, width: 80, height: 32 },
+        children: [
+          figma({
+            id: `${id}-bl`,
+            type: 'TEXT',
+            name: 'Label',
+            characters: 'Follow',
+          }),
+        ],
+      }),
+    ],
+  })
+
+const COMPONENTS = {
+  row: { name: 'Row', remote: false },
+  other: { name: 'Other row', remote: false },
+  button: { name: 'Button', remote: true },
+}
+
+test('a local component is described; a library one is a single line', () => {
+  const nodes = flatten(
+    figma({ id: 'root', children: [row('a', 0, 'First')] }),
+    COMPONENTS,
+  )
+  const { described, uses } = outline(nodes, COMPONENTS, () => [])
+  // The row's insides are the screen's own, so they are there…
+  expect(described.map((n) => n.name)).toEqual(['Row', 'Title', 'Button'])
+  // …and the library button's label is lifted onto the button's line.
+  expect(described.find((n) => n.name === 'Button')?.words).toEqual(['Follow'])
+  expect(uses.get('row')).toBe(1)
+})
+
+test('a payload that does not say where a component lives keeps collapsing it', () => {
+  // A .fig carries no `remote`: the pack behaves as it always did.
+  const unknown = { row: { name: 'Row' }, button: { name: 'Button' } }
+  const nodes = flatten(
+    figma({ id: 'root', children: [row('a', 0, 'First')] }),
+    unknown,
+  )
+  const { described } = outline(nodes, unknown, () => [])
+  expect(described.map((n) => n.name)).toEqual(['Row'])
+  expect(described[0]?.words).toEqual(['First', 'Follow'])
+})
+
+test('packing an instance describes what is inside it, not nothing', () => {
+  const nodes = flatten(row('a', 0, 'Only'), {
+    ...COMPONENTS,
+    row: { name: 'Row', remote: true },
+  })
+  const { described } = outline(nodes, COMPONENTS, () => [])
+  expect(described.map((n) => n.name)).toEqual(['Title', 'Button'])
+})
+
+test('a repeated local component is described once, then one line per repeat', () => {
+  const nodes = flatten(
+    figma({
+      id: 'root',
+      children: [
+        row('a', 0, 'First'),
+        row('b', 40, 'Second'),
+        // Same structure under another component is not a repeat of the first.
+        row('c', 80, 'Third', 'other'),
+      ],
+    }),
+    COMPONENTS,
+  )
+  const { described, repeats, uses } = outline(nodes, COMPONENTS, () => [])
+  expect(described.map((n) => n.id)).toEqual([
+    'a',
+    'a-t',
+    'a-b',
+    'b',
+    'c',
+    'c-t',
+    'c-b',
+  ])
+  const second = described.find((n) => n.id === 'b')!
+  expect(repeats.get(second)?.of.id).toBe('a')
+  expect(repeats.get(second)?.words).toEqual(['Second', 'Follow'])
+  expect(uses.get('row')).toBe(2)
+})
+
+test('a repeat whose materials differ is described in full', () => {
+  const nodes = flatten(
+    figma({ id: 'root', children: [row('a', 0, 'A'), row('b', 40, 'B')] }),
+    COMPONENTS,
+  )
+  const { repeats } = outline(nodes, COMPONENTS, (n) =>
+    n.id === 'b-t' ? ['color: red'] : [],
+  )
+  expect(repeats.size).toBe(0)
+})
+
+test('a page lists its frames, each with the notes laid out beside it', () => {
+  const box = (x: number, y: number, width: number, height: number) => ({
+    absoluteBoundingBox: { x, y, width, height },
+  })
+  const page = figma({
+    id: 'page',
+    type: 'CANVAS',
+    name: 'Page',
+    children: [
+      figma({
+        id: 'sec',
+        type: 'SECTION',
+        name: 'Checkout',
+        ...box(0, 0, 3000, 2000),
+        children: [
+          figma({ id: 'base', name: 'Checkout', ...box(0, 200, 375, 800) }),
+          figma({ id: 'hover', name: 'Checkout', ...box(500, 200, 375, 800) }),
+          figma({
+            id: 'old',
+            name: 'Checkout (old)',
+            ...box(1000, 200, 375, 800),
+          }),
+          // A note: words beside a frame, here an annotation instance.
+          figma({
+            id: 'n1',
+            type: 'INSTANCE',
+            name: 'Heading',
+            ...box(500, 100, 200, 60),
+            children: [
+              figma({
+                id: 'n1t',
+                type: 'TEXT',
+                name: 't',
+                characters: 'Hover',
+              }),
+            ],
+          }),
+          figma({
+            id: 'n2',
+            type: 'TEXT',
+            name: 'Label',
+            characters: 'Default',
+            ...box(0, 120, 100, 20),
+          }),
+          // Hidden frames are not candidates.
+          figma({
+            id: 'gone',
+            name: 'Hidden',
+            visible: false,
+            ...box(2000, 200, 375, 800),
+          }),
+        ],
+      }),
+    ],
+  })
+  // A page or section is refused for packing; a frame is not.
+  expect(isContainer(page)).toBe(true)
+  expect(isContainer(figma({ type: 'FRAME' }))).toBe(false)
+  const frames = listFrames(page)
+  expect(frames.map((f) => [f.id, f.section, f.labels, f.obsolete])).toEqual([
+    ['base', 'Checkout', ['Default'], false],
+    ['hover', 'Checkout', ['Hover'], false],
+    ['old', 'Checkout', [], true],
+  ])
+  expect(frames[0]).toMatchObject({ width: 375, height: 800, nodes: 1 })
 })

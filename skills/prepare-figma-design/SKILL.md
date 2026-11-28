@@ -37,6 +37,36 @@ transliterating it: the implementer rewrites someone else's DOM instead of build
 design, and inherits a structure that was never meant to be code — wrapper divs that
 exist for Figma's layout engine, absolute positioning where the design means a gap.
 
+## Which frame to pack
+
+A link copied from a page or a section points at where frames are laid out, not at a
+screen, and packing it would describe every frame and every note beside them as one
+design. The command refuses it. List what is there instead:
+
+```bash
+node <this-skill>/bin/fetch-design.mjs --list \
+  --url "https://www.figma.com/design/<key>/<name>?node-id=<page-or-section>"
+```
+
+Each row is a frame: its node id, name, size, how many nodes it holds, the section it
+sits in, and the words of the notes laid out beside it. Designers name the state of a
+frame in those notes far more often than in the frame's own name, which is usually a
+copy of its neighbour's.
+
+Then choose, and write down what you chose:
+
+- **The frame whose width matches the container you are building into.** The same
+  screen is often drawn at several widths; the one you implement is the one your layout
+  actually renders at.
+- **The screen's base state** — signed in, populated, light — as the frame to build.
+- **Its sibling states too**: hover, signed out, empty, error, dark. Pack each one that
+  exists, because a state that is not packed is a state the implementer will invent. If
+  one does not exist, say so, so nobody goes looking for it.
+- **Skip frames marked obsolete.** The list flags names and notes that say so; a frame
+  left beside the current one is not a second opinion.
+- **Record the frame, the theme and the vocabulary.** The pack's header states all
+  three; keep them next to the pack so a re-run produces the same thing.
+
 ## Do this
 
 There are two ways in, and they produce the same three files. Use the link if you can
@@ -91,6 +121,10 @@ Two things to know. It needs Node 22.15 or newer, because a recent export compre
 document with zstd. And it reads the design as the export froze it, so a `.fig` taken
 last month describes last month's design however current the link looks.
 
+A `.fig` also says less than the API does. It does not say which components come from a
+library, so every instance is folded to one line as a library one would be, and bound
+variables are matched by their literal because their names are not read from it.
+
 ### Either way
 
 `--tokens` points at your design system's Style Dictionary JSON. Without it values come
@@ -100,6 +134,27 @@ path that holds no tokens is an error rather than a pack full of raw hex.
 `--theme light|dark` picks which theme file to resolve against, defaulting to `light`.
 The other theme's values are left out entirely, so a light design never gets named with
 a dark token.
+
+**The design's own names come first.** Where a node uses a named style (`Text/2`,
+`Surface/4`, `14 / Regular`) or is bound to a variable (`container/default`,
+`spacing/16`), that name is what the designer chose, and it wins outright. Matching
+the literal against the tokens is only the fallback for a value nobody named — it is a
+guess, and `#ffffff` is five roles at once. A name neither vocabulary has is kept as a
+comment after the value rather than dropped.
+
+charcoal has two vocabularies. v2 is the token JSON above. v1 is the older theme —
+`text2`, `surface4`, `spacing[16]`, `typography.size[14]` — which the Figma library's
+styles still carry, and which most existing apps are written in. Its keys are read
+from the `@charcoal-ui/theme` installed next to `--tokens` (or in the current
+project), never from a copy kept here; without it, styles are named only as comments.
+
+`--vocabulary auto|v1|v2` decides which of the two a value nobody named is ranked in.
+`auto`, the default, follows the frame: a frame that mostly references v1 styles is
+read in v1, one mostly bound to v2 variables in v2.
+
+Variable names come from Figma's variables endpoint, which only some plans serve.
+Elsewhere it answers 403, the command says so once, and bound values are matched by
+their literal like any other.
 
 `--assets` downloads the design's bitmaps and names each on the box that paints it,
 together with the `object-fit` its crop implies. Leave it out and the pack describes the
@@ -116,9 +171,9 @@ whoever is building at `implement-figma-design`. They are the complete input. No
 else from Figma is needed, and no part of this step has to be repeated until the design
 itself changes.
 
-Say which frame it is and which theme you resolved against. `--theme dark` and
-`--theme light` produce different token names for the same drawing, and nothing in the
-pack records which you picked.
+The pack's header records the frame, its node id, the theme and the vocabulary,
+because `--theme dark` and `--theme light` — or v1 and v2 — produce different names
+for the same drawing. Say which sibling states you packed, and which do not exist.
 
 **Re-run this when the design changes, not when the implementation does.** The pack is a
 snapshot of one frame as the designer drew it; a stale pack is worse than none, because
@@ -136,6 +191,7 @@ what the implementation was built from.
 | `FIGMA_TOKEN` (environment) | read  | The credential, for `--url` only. Read only when a request is about to be made, never stored. Never read on the `--fig` route.                                   |
 | `--fig <file>`              | read  | A local Figma export. The only input the `--fig` route has: no network call is made at all.                                                                      |
 | `--tokens <dir>`            | read  | Your design system's Style Dictionary JSON. For charcoal: `node_modules/@charcoal-ui/theme/src/json`. Read-only; one `*.json` per theme plus the shared palette. |
+| `@charcoal-ui/theme`        | read  | The v1 theme, resolved from `--tokens` and then from the working directory. Imported, never written. Optional.                                                   |
 | stdout                      | write | The pack. Redirect it where you want it — the examples use `design/design.md`.                                                                                   |
 | `--spec <path>`             | write | The same design as facts `check-design.mjs` can compare a render against. Only written when the flag is given.                                                   |
 | `--assets <dir>/`           | write | The design's bitmaps, one file per image, named from its Figma reference. The directory is created if it is missing. Only written when the flag is given.        |
@@ -149,16 +205,33 @@ tell a role from a state from a palette entry.
 ## What you are handing over
 
 ```
-- instance "Icon Button" 32×32 at (296, 8) — `Size=S, Type=Default, State=Default`
-  flex-direction: row; padding: var(--charcoal-space-10); border-radius: var(--charcoal-radius-oval)
-  - instance "24 / Close" 24×24 at (300, 12) — `24 / Close`
-    - vector "Shape" 14×14 at (305, 17)
-      color: var(--charcoal-color-icon-tertiary-default)
+- instance "Row" 312×64 at (0, 120) — `Ranked row` `State=Default`; a local component, used 3 times — implement once and reuse
+  flex-direction: row; gap: spacing-8; padding: spacing-16
+  - text "Title" 200×22 at (16, 141)
+    text: "First"
+    color: text2; typography: typography-14
+  - instance "Icon Button" 32×32 at (264, 136) — `Icon Button` `Size=S, Type=Default, State=Default`
+    flex-direction: row; padding: var(--charcoal-space-10); border-radius: var(--charcoal-radius-oval)
+- instance "Row" 312×64 at (0, 184) — `Ranked row` `State=Default`; the same as "Row" at (0, 120) above
+  text: "Second"
 ```
 
 Each line is one element: its box, then its materials, then the component and variant it
 came from. `implement-figma-design` explains how to read it; what matters here is that
 it is complete without Figma, and that there is no markup in it on purpose.
+
+A library component is one line, with the words inside it lifted onto that line: the
+library composes it its own way, so its Figma parts are not something to rebuild. A
+component defined in the design file itself is the screen's own unit — a row, a tab
+bar — so it is described in full and marked as one, and where it repeats with only
+its words and pictures changed, each repeat is one line after the first. Packing an
+instance directly describes what is inside it.
+
+A v1 role such as `text2` is written once, as the role, and the header carries a table
+of how each one is spelled per route: the v2 variable with the same value where there
+is exactly one, the Tailwind class, the styled-components theme path and the v1 CSS
+variable. Which route a project takes is its own business; the pack should not have to
+be regenerated for it.
 
 A fill the design system cannot name — a gradient, a pattern — is written as what it
 is, `background: linear gradient /* ... */`, rather than left out. A box painted with a
