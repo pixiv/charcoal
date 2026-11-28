@@ -38,6 +38,13 @@ export default {
       },
       defaultValue: false,
     },
+    bottomSheetAnimation: {
+      options: ['mobile', 'all'],
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: 'mobile',
+    },
   },
   render: function Render(args) {
     const state = useOverlayTriggerState({ defaultOpen })
