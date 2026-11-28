@@ -22,15 +22,15 @@ import cssVariableColorPlugin from './colors/plugin'
 import { charcoalFocusRing } from './focusring'
 import cssVariableGradientPlugin from './gradient/plugin'
 import typographyPlugin from './typography/plugin'
-import { unstable_createTailwindConfigTokenV2 } from './tokenV2'
+import { createTailwindConfigTokenV2 } from './tokenV2'
 import { charcoalIconsV1, charcoalIconsV2 } from './icons'
-export { unstable_createTailwindConfigTokenV2 }
+export { createTailwindConfigTokenV2 }
 
 interface Options {
   version?: TailwindVersion
   theme?: ThemeMap
   cssVariablesV1?: boolean
-  unstableTokenV2?: boolean
+  tokenV2?: boolean
   iconsV2?: boolean
   iconsV1?: boolean
 }
@@ -39,7 +39,7 @@ export function createTailwindConfig({
   theme = { ':root': light },
   version = 'v3',
   cssVariablesV1 = true,
-  unstableTokenV2 = false,
+  tokenV2 = false,
   iconsV2 = false,
   iconsV1 = false,
 }: Options): Omit<Config, 'content'> {
@@ -59,8 +59,8 @@ export function createTailwindConfig({
     spacing: spacingV2,
     gap: gapV2,
     width: widthV2,
-  }: Partial<NonNullable<Config['theme']>> = unstableTokenV2
-    ? unstable_createTailwindConfigTokenV2().theme
+  }: Partial<NonNullable<Config['theme']>> = tokenV2
+    ? createTailwindConfigTokenV2().theme
     : {}
 
   return {
@@ -142,7 +142,7 @@ export function createTailwindConfig({
       transitionDuration: {
         [DEFAULT]: '0.2s',
       },
-      ...(unstableTokenV2
+      ...(tokenV2
         ? {
             extend: {
               borderWidth: borderWidthV2,
